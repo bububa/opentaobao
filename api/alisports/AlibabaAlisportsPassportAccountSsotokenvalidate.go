@@ -11,7 +11,7 @@ alibaba.alisports.passport.account.ssotokenvalidate
 
 sso_token验证
 */
-func AlibabaAlisportsPassportAccountSsotokenvalidate(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountSsotokenvalidateRequest, session string) (*alisports.AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse, error) {
+func AlibabaAlisportsPassportAccountSsotokenvalidate(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest, session string) (*alisports.AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse, error) {
     var resp alisports.AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

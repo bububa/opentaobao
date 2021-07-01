@@ -12,26 +12,26 @@ alibaba.alicom.exchange.createbymixnick
 
 代理商调用该接口来进行积分兑换，tae
 */
-type AlibabaAlicomExchangeCreatebymixnickRequest struct {
+type AlibabaAlicomExchangeCreatebymixnickAPIRequest struct {
     model.Params
     // 入参
     _exchangeModel   *ExchangeModel
 }
 
-// 初始化AlibabaAlicomExchangeCreatebymixnickRequest对象
-func NewAlibabaAlicomExchangeCreatebymixnickRequest() *AlibabaAlicomExchangeCreatebymixnickRequest{
-    return &AlibabaAlicomExchangeCreatebymixnickRequest{
+// 初始化AlibabaAlicomExchangeCreatebymixnickAPIRequest对象
+func NewAlibabaAlicomExchangeCreatebymixnickRequest() *AlibabaAlicomExchangeCreatebymixnickAPIRequest{
+    return &AlibabaAlicomExchangeCreatebymixnickAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlicomExchangeCreatebymixnickRequest) GetApiMethodName() string {
+func (r AlibabaAlicomExchangeCreatebymixnickAPIRequest) GetApiMethodName() string {
     return "alibaba.alicom.exchange.createbymixnick"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlicomExchangeCreatebymixnickRequest) GetApiParams() url.Values {
+func (r AlibabaAlicomExchangeCreatebymixnickAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlicomExchangeCreatebymixnickRequest) GetApiParams() url.Values {
 }
 // ExchangeModel Setter
 // 入参
-func (r *AlibabaAlicomExchangeCreatebymixnickRequest) SetExchangeModel(_exchangeModel *ExchangeModel) error {
+func (r *AlibabaAlicomExchangeCreatebymixnickAPIRequest) SetExchangeModel(_exchangeModel *ExchangeModel) error {
     r._exchangeModel = _exchangeModel
     r.Set("exchange_model", _exchangeModel)
     return nil
 }
 
 // ExchangeModel Getter
-func (r AlibabaAlicomExchangeCreatebymixnickRequest) GetExchangeModel() *ExchangeModel {
+func (r AlibabaAlicomExchangeCreatebymixnickAPIRequest) GetExchangeModel() *ExchangeModel {
     return r._exchangeModel
 }

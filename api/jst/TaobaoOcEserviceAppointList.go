@@ -11,7 +11,7 @@ taobao.oc.eservice.appoint.list
 
 允许外部的isv通过该接口读取门店预约信息
 */
-func TaobaoOcEserviceAppointList(clt *core.SDKClient, req *jst.TaobaoOcEserviceAppointListRequest, session string) (*jst.TaobaoOcEserviceAppointListAPIResponse, error) {
+func TaobaoOcEserviceAppointList(clt *core.SDKClient, req *jst.TaobaoOcEserviceAppointListAPIRequest, session string) (*jst.TaobaoOcEserviceAppointListAPIResponse, error) {
     var resp jst.TaobaoOcEserviceAppointListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

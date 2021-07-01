@@ -11,7 +11,7 @@ alitrip.tripvp.agent.order.get
 
 【国际机票】查询辅营订单详情
 */
-func AlitripTripvpAgentOrderGet(clt *core.SDKClient, req *flight.AlitripTripvpAgentOrderGetRequest, session string) (*flight.AlitripTripvpAgentOrderGetAPIResponse, error) {
+func AlitripTripvpAgentOrderGet(clt *core.SDKClient, req *flight.AlitripTripvpAgentOrderGetAPIRequest, session string) (*flight.AlitripTripvpAgentOrderGetAPIResponse, error) {
     var resp flight.AlitripTripvpAgentOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

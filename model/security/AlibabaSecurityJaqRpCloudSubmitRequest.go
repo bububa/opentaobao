@@ -12,26 +12,26 @@ alibaba.security.jaq.rp.cloud.submit
 
 聚安全实人认证提交认证接口
 */
-type AlibabaSecurityJaqRpCloudSubmitRequest struct {
+type AlibabaSecurityJaqRpCloudSubmitAPIRequest struct {
     model.Params
     // 认证token
     _verifyToken   string
 }
 
-// 初始化AlibabaSecurityJaqRpCloudSubmitRequest对象
-func NewAlibabaSecurityJaqRpCloudSubmitRequest() *AlibabaSecurityJaqRpCloudSubmitRequest{
-    return &AlibabaSecurityJaqRpCloudSubmitRequest{
+// 初始化AlibabaSecurityJaqRpCloudSubmitAPIRequest对象
+func NewAlibabaSecurityJaqRpCloudSubmitRequest() *AlibabaSecurityJaqRpCloudSubmitAPIRequest{
+    return &AlibabaSecurityJaqRpCloudSubmitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqRpCloudSubmitRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqRpCloudSubmitAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.rp.cloud.submit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqRpCloudSubmitRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqRpCloudSubmitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqRpCloudSubmitRequest) GetApiParams() url.Values {
 }
 // VerifyToken Setter
 // 认证token
-func (r *AlibabaSecurityJaqRpCloudSubmitRequest) SetVerifyToken(_verifyToken string) error {
+func (r *AlibabaSecurityJaqRpCloudSubmitAPIRequest) SetVerifyToken(_verifyToken string) error {
     r._verifyToken = _verifyToken
     r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
-func (r AlibabaSecurityJaqRpCloudSubmitRequest) GetVerifyToken() string {
+func (r AlibabaSecurityJaqRpCloudSubmitAPIRequest) GetVerifyToken() string {
     return r._verifyToken
 }

@@ -11,7 +11,7 @@ taobao.jds.refund.traces.get
 
 获取聚石塔数据共享的交易全链路的退款信息
 */
-func TaobaoJdsRefundTracesGet(clt *core.SDKClient, req *jst.TaobaoJdsRefundTracesGetRequest, session string) (*jst.TaobaoJdsRefundTracesGetAPIResponse, error) {
+func TaobaoJdsRefundTracesGet(clt *core.SDKClient, req *jst.TaobaoJdsRefundTracesGetAPIRequest, session string) (*jst.TaobaoJdsRefundTracesGetAPIResponse, error) {
     var resp jst.TaobaoJdsRefundTracesGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

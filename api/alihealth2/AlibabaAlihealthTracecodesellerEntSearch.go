@@ -11,7 +11,7 @@ alibaba.alihealth.tracecodeseller.ent.search
 
 查询商家信息
 */
-func AlibabaAlihealthTracecodesellerEntSearch(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodesellerEntSearchRequest, session string) (*alihealth2.AlibabaAlihealthTracecodesellerEntSearchAPIResponse, error) {
+func AlibabaAlihealthTracecodesellerEntSearch(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodesellerEntSearchAPIRequest, session string) (*alihealth2.AlibabaAlihealthTracecodesellerEntSearchAPIResponse, error) {
     var resp alihealth2.AlibabaAlihealthTracecodesellerEntSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

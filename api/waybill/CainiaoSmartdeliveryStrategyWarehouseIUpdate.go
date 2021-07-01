@@ -11,7 +11,7 @@ cainiao.smartdelivery.strategy.warehouse.i.update
 
 智能发货引擎发货策略设置仓维度
 */
-func CainiaoSmartdeliveryStrategyWarehouseIUpdate(clt *core.SDKClient, req *waybill.CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest, session string) (*waybill.CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponse, error) {
+func CainiaoSmartdeliveryStrategyWarehouseIUpdate(clt *core.SDKClient, req *waybill.CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest, session string) (*waybill.CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponse, error) {
     var resp waybill.CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

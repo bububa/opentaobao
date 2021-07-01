@@ -12,7 +12,7 @@ alibaba.alihealth.pregnancy.data.sync
 
 经期调整；基础体温；排卵试纸；B超测排数据同步
 */
-type AlibabaAlihealthPregnancyDataSyncRequest struct {
+type AlibabaAlihealthPregnancyDataSyncAPIRequest struct {
     model.Params
     // 用户id
     _userId   int64
@@ -30,20 +30,20 @@ type AlibabaAlihealthPregnancyDataSyncRequest struct {
     _periodMsg   string
 }
 
-// 初始化AlibabaAlihealthPregnancyDataSyncRequest对象
-func NewAlibabaAlihealthPregnancyDataSyncRequest() *AlibabaAlihealthPregnancyDataSyncRequest{
-    return &AlibabaAlihealthPregnancyDataSyncRequest{
+// 初始化AlibabaAlihealthPregnancyDataSyncAPIRequest对象
+func NewAlibabaAlihealthPregnancyDataSyncRequest() *AlibabaAlihealthPregnancyDataSyncAPIRequest{
+    return &AlibabaAlihealthPregnancyDataSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthPregnancyDataSyncRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.pregnancy.data.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthPregnancyDataSyncRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,85 +52,85 @@ func (r AlibabaAlihealthPregnancyDataSyncRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetUserId(_userId int64) error {
+func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetUserId(_userId int64) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r AlibabaAlihealthPregnancyDataSyncRequest) GetUserId() int64 {
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetUserId() int64 {
     return r._userId
 }
 // OuterId Setter
 // 三方id
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetOuterId(_outerId int64) error {
+func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetOuterId(_outerId int64) error {
     r._outerId = _outerId
     r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
-func (r AlibabaAlihealthPregnancyDataSyncRequest) GetOuterId() int64 {
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetOuterId() int64 {
     return r._outerId
 }
 // EventType Setter
 // 4经期调整；1基础体温；2排卵试纸；3 B超测排
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetEventType(_eventType int64) error {
+func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetEventType(_eventType int64) error {
     r._eventType = _eventType
     r.Set("event_type", _eventType)
     return nil
 }
 
 // EventType Getter
-func (r AlibabaAlihealthPregnancyDataSyncRequest) GetEventType() int64 {
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetEventType() int64 {
     return r._eventType
 }
 // Data Setter
 // 四类数据定制化详情
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetData(_data string) error {
+func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetData(_data string) error {
     r._data = _data
     r.Set("data", _data)
     return nil
 }
 
 // Data Getter
-func (r AlibabaAlihealthPregnancyDataSyncRequest) GetData() string {
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetData() string {
     return r._data
 }
 // MeasureDate Setter
 // 测量日期
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetMeasureDate(_measureDate int64) error {
+func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetMeasureDate(_measureDate int64) error {
     r._measureDate = _measureDate
     r.Set("measure_date", _measureDate)
     return nil
 }
 
 // MeasureDate Getter
-func (r AlibabaAlihealthPregnancyDataSyncRequest) GetMeasureDate() int64 {
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetMeasureDate() int64 {
     return r._measureDate
 }
 // OperationType Setter
 // 0-新增 1-修改 2-删除
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetOperationType(_operationType int64) error {
+func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetOperationType(_operationType int64) error {
     r._operationType = _operationType
     r.Set("operation_type", _operationType)
     return nil
 }
 
 // OperationType Getter
-func (r AlibabaAlihealthPregnancyDataSyncRequest) GetOperationType() int64 {
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetOperationType() int64 {
     return r._operationType
 }
 // PeriodMsg Setter
 // 经期数据json串
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetPeriodMsg(_periodMsg string) error {
+func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetPeriodMsg(_periodMsg string) error {
     r._periodMsg = _periodMsg
     r.Set("period_msg", _periodMsg)
     return nil
 }
 
 // PeriodMsg Getter
-func (r AlibabaAlihealthPregnancyDataSyncRequest) GetPeriodMsg() string {
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetPeriodMsg() string {
     return r._periodMsg
 }

@@ -12,26 +12,26 @@ alibaba.mos.delivery.send
 
 订单发货填写快递单
 */
-type AlibabaMosDeliverySendRequest struct {
+type AlibabaMosDeliverySendAPIRequest struct {
     model.Params
     // 发货信息
     _deliveryDto   *DeliveryDTO
 }
 
-// 初始化AlibabaMosDeliverySendRequest对象
-func NewAlibabaMosDeliverySendRequest() *AlibabaMosDeliverySendRequest{
-    return &AlibabaMosDeliverySendRequest{
+// 初始化AlibabaMosDeliverySendAPIRequest对象
+func NewAlibabaMosDeliverySendRequest() *AlibabaMosDeliverySendAPIRequest{
+    return &AlibabaMosDeliverySendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosDeliverySendRequest) GetApiMethodName() string {
+func (r AlibabaMosDeliverySendAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.delivery.send"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosDeliverySendRequest) GetApiParams() url.Values {
+func (r AlibabaMosDeliverySendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMosDeliverySendRequest) GetApiParams() url.Values {
 }
 // DeliveryDto Setter
 // 发货信息
-func (r *AlibabaMosDeliverySendRequest) SetDeliveryDto(_deliveryDto *DeliveryDTO) error {
+func (r *AlibabaMosDeliverySendAPIRequest) SetDeliveryDto(_deliveryDto *DeliveryDTO) error {
     r._deliveryDto = _deliveryDto
     r.Set("delivery_dto", _deliveryDto)
     return nil
 }
 
 // DeliveryDto Getter
-func (r AlibabaMosDeliverySendRequest) GetDeliveryDto() *DeliveryDTO {
+func (r AlibabaMosDeliverySendAPIRequest) GetDeliveryDto() *DeliveryDTO {
     return r._deliveryDto
 }

@@ -12,7 +12,7 @@ taobao.cloudbridge.caseinvest.execute
 
 通过API接口直接提供政府部门录入及查询函件服务
 */
-type TaobaoCloudbridgeCaseinvestExecuteRequest struct {
+type TaobaoCloudbridgeCaseinvestExecuteAPIRequest struct {
     model.Params
     // 方法名称
     _apiName   string
@@ -20,20 +20,20 @@ type TaobaoCloudbridgeCaseinvestExecuteRequest struct {
     _data   string
 }
 
-// 初始化TaobaoCloudbridgeCaseinvestExecuteRequest对象
-func NewTaobaoCloudbridgeCaseinvestExecuteRequest() *TaobaoCloudbridgeCaseinvestExecuteRequest{
-    return &TaobaoCloudbridgeCaseinvestExecuteRequest{
+// 初始化TaobaoCloudbridgeCaseinvestExecuteAPIRequest对象
+func NewTaobaoCloudbridgeCaseinvestExecuteRequest() *TaobaoCloudbridgeCaseinvestExecuteAPIRequest{
+    return &TaobaoCloudbridgeCaseinvestExecuteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoCloudbridgeCaseinvestExecuteRequest) GetApiMethodName() string {
+func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiMethodName() string {
     return "taobao.cloudbridge.caseinvest.execute"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoCloudbridgeCaseinvestExecuteRequest) GetApiParams() url.Values {
+func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoCloudbridgeCaseinvestExecuteRequest) GetApiParams() url.Values {
 }
 // ApiName Setter
 // 方法名称
-func (r *TaobaoCloudbridgeCaseinvestExecuteRequest) SetApiName(_apiName string) error {
+func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetApiName(_apiName string) error {
     r._apiName = _apiName
     r.Set("api_name", _apiName)
     return nil
 }
 
 // ApiName Getter
-func (r TaobaoCloudbridgeCaseinvestExecuteRequest) GetApiName() string {
+func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiName() string {
     return r._apiName
 }
 // Data Setter
 // 方法参数
-func (r *TaobaoCloudbridgeCaseinvestExecuteRequest) SetData(_data string) error {
+func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetData(_data string) error {
     r._data = _data
     r.Set("data", _data)
     return nil
 }
 
 // Data Getter
-func (r TaobaoCloudbridgeCaseinvestExecuteRequest) GetData() string {
+func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetData() string {
     return r._data
 }

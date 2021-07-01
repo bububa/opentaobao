@@ -12,26 +12,26 @@ taobao.rdc.aligenius.warehouse.resend.logistics.msg.post
 
 补发单erp物流信息回传平台
 */
-type TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest struct {
+type TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest struct {
     model.Params
     // 参数
     _param0   *SendResendLogisticsMsgDTO
 }
 
-// 初始化TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest对象
-func NewTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest() *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest{
-    return &TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest{
+// 初始化TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest对象
+func NewTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest() *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest{
+    return &TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest) GetApiMethodName() string {
+func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest) GetApiMethodName() string {
     return "taobao.rdc.aligenius.warehouse.resend.logistics.msg.post"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest) GetApiParams() url.Values {
+func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest) GetApiParams()
 }
 // Param0 Setter
 // 参数
-func (r *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest) SetParam0(_param0 *SendResendLogisticsMsgDTO) error {
+func (r *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest) SetParam0(_param0 *SendResendLogisticsMsgDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest) GetParam0() *SendResendLogisticsMsgDTO {
+func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest) GetParam0() *SendResendLogisticsMsgDTO {
     return r._param0
 }

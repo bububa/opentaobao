@@ -11,7 +11,7 @@ taobao.alitrip.car.order.complete
 
 用来接收服务商订单流程完成信息
 */
-func TaobaoAlitripCarOrderComplete(clt *core.SDKClient, req *car.TaobaoAlitripCarOrderCompleteRequest, session string) (*car.TaobaoAlitripCarOrderCompleteAPIResponse, error) {
+func TaobaoAlitripCarOrderComplete(clt *core.SDKClient, req *car.TaobaoAlitripCarOrderCompleteAPIRequest, session string) (*car.TaobaoAlitripCarOrderCompleteAPIResponse, error) {
     var resp car.TaobaoAlitripCarOrderCompleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

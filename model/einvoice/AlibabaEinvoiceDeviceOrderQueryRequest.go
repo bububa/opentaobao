@@ -12,26 +12,26 @@ alibaba.einvoice.device.order.query
 
 查询税控设备订购单详情
 */
-type AlibabaEinvoiceDeviceOrderQueryRequest struct {
+type AlibabaEinvoiceDeviceOrderQueryAPIRequest struct {
     model.Params
     // 税控设备订购单ID
     _flowId   string
 }
 
-// 初始化AlibabaEinvoiceDeviceOrderQueryRequest对象
-func NewAlibabaEinvoiceDeviceOrderQueryRequest() *AlibabaEinvoiceDeviceOrderQueryRequest{
-    return &AlibabaEinvoiceDeviceOrderQueryRequest{
+// 初始化AlibabaEinvoiceDeviceOrderQueryAPIRequest对象
+func NewAlibabaEinvoiceDeviceOrderQueryRequest() *AlibabaEinvoiceDeviceOrderQueryAPIRequest{
+    return &AlibabaEinvoiceDeviceOrderQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceDeviceOrderQueryRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceDeviceOrderQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.einvoice.device.order.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceDeviceOrderQueryRequest) GetApiParams() url.Values {
+func (r AlibabaEinvoiceDeviceOrderQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceDeviceOrderQueryRequest) GetApiParams() url.Values {
 }
 // FlowId Setter
 // 税控设备订购单ID
-func (r *AlibabaEinvoiceDeviceOrderQueryRequest) SetFlowId(_flowId string) error {
+func (r *AlibabaEinvoiceDeviceOrderQueryAPIRequest) SetFlowId(_flowId string) error {
     r._flowId = _flowId
     r.Set("flow_id", _flowId)
     return nil
 }
 
 // FlowId Getter
-func (r AlibabaEinvoiceDeviceOrderQueryRequest) GetFlowId() string {
+func (r AlibabaEinvoiceDeviceOrderQueryAPIRequest) GetFlowId() string {
     return r._flowId
 }

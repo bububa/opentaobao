@@ -22,26 +22,26 @@ https://gw.alicdn.com/tfs/TB1tzpNSXXXXXacXVXXXXXXXXXX-790-280.png
 https://gw.alicdn.com/tfs/TB1UXdxSXXXXXXsapXXXXXXXXXX-790-280.png
 https://gw.alicdn.com/tfs/TB1_gV.SXXXXXbZXpXXXXXXXXXX-790-280.png
 */
-type TaobaoCaipiaoMarketingPutRequest struct {
+type TaobaoCaipiaoMarketingPutAPIRequest struct {
     model.Params
     // 活动详情设置
     _detail   *WangcaiMarketingDetail
 }
 
-// 初始化TaobaoCaipiaoMarketingPutRequest对象
-func NewTaobaoCaipiaoMarketingPutRequest() *TaobaoCaipiaoMarketingPutRequest{
-    return &TaobaoCaipiaoMarketingPutRequest{
+// 初始化TaobaoCaipiaoMarketingPutAPIRequest对象
+func NewTaobaoCaipiaoMarketingPutRequest() *TaobaoCaipiaoMarketingPutAPIRequest{
+    return &TaobaoCaipiaoMarketingPutAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoCaipiaoMarketingPutRequest) GetApiMethodName() string {
+func (r TaobaoCaipiaoMarketingPutAPIRequest) GetApiMethodName() string {
     return "taobao.caipiao.marketing.put"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoCaipiaoMarketingPutRequest) GetApiParams() url.Values {
+func (r TaobaoCaipiaoMarketingPutAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -50,13 +50,13 @@ func (r TaobaoCaipiaoMarketingPutRequest) GetApiParams() url.Values {
 }
 // Detail Setter
 // 活动详情设置
-func (r *TaobaoCaipiaoMarketingPutRequest) SetDetail(_detail *WangcaiMarketingDetail) error {
+func (r *TaobaoCaipiaoMarketingPutAPIRequest) SetDetail(_detail *WangcaiMarketingDetail) error {
     r._detail = _detail
     r.Set("detail", _detail)
     return nil
 }
 
 // Detail Getter
-func (r TaobaoCaipiaoMarketingPutRequest) GetDetail() *WangcaiMarketingDetail {
+func (r TaobaoCaipiaoMarketingPutAPIRequest) GetDetail() *WangcaiMarketingDetail {
     return r._detail
 }

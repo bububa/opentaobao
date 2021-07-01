@@ -12,7 +12,7 @@ alibaba.retail.marketing.itempool.activity.delete
 
 同城零售商品池活动删除
 */
-type AlibabaRetailMarketingItempoolActivityDeleteRequest struct {
+type AlibabaRetailMarketingItempoolActivityDeleteAPIRequest struct {
     model.Params
     // 同城零售活动Id
     _actId   int64
@@ -22,20 +22,20 @@ type AlibabaRetailMarketingItempoolActivityDeleteRequest struct {
     _creatorName   string
 }
 
-// 初始化AlibabaRetailMarketingItempoolActivityDeleteRequest对象
-func NewAlibabaRetailMarketingItempoolActivityDeleteRequest() *AlibabaRetailMarketingItempoolActivityDeleteRequest{
-    return &AlibabaRetailMarketingItempoolActivityDeleteRequest{
+// 初始化AlibabaRetailMarketingItempoolActivityDeleteAPIRequest对象
+func NewAlibabaRetailMarketingItempoolActivityDeleteRequest() *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest{
+    return &AlibabaRetailMarketingItempoolActivityDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingItempoolActivityDeleteRequest) GetApiMethodName() string {
+func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.marketing.itempool.activity.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingItempoolActivityDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaRetailMarketingItempoolActivityDeleteRequest) GetApiParams() url.
 }
 // ActId Setter
 // 同城零售活动Id
-func (r *AlibabaRetailMarketingItempoolActivityDeleteRequest) SetActId(_actId int64) error {
+func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetActId(_actId int64) error {
     r._actId = _actId
     r.Set("act_id", _actId)
     return nil
 }
 
 // ActId Getter
-func (r AlibabaRetailMarketingItempoolActivityDeleteRequest) GetActId() int64 {
+func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetActId() int64 {
     return r._actId
 }
 // CreatorId Setter
 // 操作人id
-func (r *AlibabaRetailMarketingItempoolActivityDeleteRequest) SetCreatorId(_creatorId string) error {
+func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetCreatorId(_creatorId string) error {
     r._creatorId = _creatorId
     r.Set("creator_id", _creatorId)
     return nil
 }
 
 // CreatorId Getter
-func (r AlibabaRetailMarketingItempoolActivityDeleteRequest) GetCreatorId() string {
+func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetCreatorId() string {
     return r._creatorId
 }
 // CreatorName Setter
 // 操作人名称
-func (r *AlibabaRetailMarketingItempoolActivityDeleteRequest) SetCreatorName(_creatorName string) error {
+func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetCreatorName(_creatorName string) error {
     r._creatorName = _creatorName
     r.Set("creator_name", _creatorName)
     return nil
 }
 
 // CreatorName Getter
-func (r AlibabaRetailMarketingItempoolActivityDeleteRequest) GetCreatorName() string {
+func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetCreatorName() string {
     return r._creatorName
 }

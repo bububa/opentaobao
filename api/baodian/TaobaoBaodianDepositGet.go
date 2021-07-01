@@ -11,7 +11,7 @@ taobao.baodian.deposit.get
 
 查询用户宝点帐户信息及当前宝点价格
 */
-func TaobaoBaodianDepositGet(clt *core.SDKClient, req *baodian.TaobaoBaodianDepositGetRequest, session string) (*baodian.TaobaoBaodianDepositGetAPIResponse, error) {
+func TaobaoBaodianDepositGet(clt *core.SDKClient, req *baodian.TaobaoBaodianDepositGetAPIRequest, session string) (*baodian.TaobaoBaodianDepositGetAPIResponse, error) {
     var resp baodian.TaobaoBaodianDepositGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

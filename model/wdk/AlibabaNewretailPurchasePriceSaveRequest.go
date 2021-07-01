@@ -12,26 +12,26 @@ alibaba.newretail.purchase.price.save
 
 共享库存业务 供应商上传商品采购价
 */
-type AlibabaNewretailPurchasePriceSaveRequest struct {
+type AlibabaNewretailPurchasePriceSaveAPIRequest struct {
     model.Params
     // 接口入参
     _savePurchasePriceRequest   *SavePurchasePriceRequest
 }
 
-// 初始化AlibabaNewretailPurchasePriceSaveRequest对象
-func NewAlibabaNewretailPurchasePriceSaveRequest() *AlibabaNewretailPurchasePriceSaveRequest{
-    return &AlibabaNewretailPurchasePriceSaveRequest{
+// 初始化AlibabaNewretailPurchasePriceSaveAPIRequest对象
+func NewAlibabaNewretailPurchasePriceSaveRequest() *AlibabaNewretailPurchasePriceSaveAPIRequest{
+    return &AlibabaNewretailPurchasePriceSaveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaNewretailPurchasePriceSaveRequest) GetApiMethodName() string {
+func (r AlibabaNewretailPurchasePriceSaveAPIRequest) GetApiMethodName() string {
     return "alibaba.newretail.purchase.price.save"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaNewretailPurchasePriceSaveRequest) GetApiParams() url.Values {
+func (r AlibabaNewretailPurchasePriceSaveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaNewretailPurchasePriceSaveRequest) GetApiParams() url.Values {
 }
 // SavePurchasePriceRequest Setter
 // 接口入参
-func (r *AlibabaNewretailPurchasePriceSaveRequest) SetSavePurchasePriceRequest(_savePurchasePriceRequest *SavePurchasePriceRequest) error {
+func (r *AlibabaNewretailPurchasePriceSaveAPIRequest) SetSavePurchasePriceRequest(_savePurchasePriceRequest *SavePurchasePriceRequest) error {
     r._savePurchasePriceRequest = _savePurchasePriceRequest
     r.Set("save_purchase_price_request", _savePurchasePriceRequest)
     return nil
 }
 
 // SavePurchasePriceRequest Getter
-func (r AlibabaNewretailPurchasePriceSaveRequest) GetSavePurchasePriceRequest() *SavePurchasePriceRequest {
+func (r AlibabaNewretailPurchasePriceSaveAPIRequest) GetSavePurchasePriceRequest() *SavePurchasePriceRequest {
     return r._savePurchasePriceRequest
 }

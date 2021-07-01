@@ -13,7 +13,7 @@ alibaba.campus.space.unit.getlistmapbygroupid
 HSF接口名称：	com.alibaba.campus.api.space.service.top.SpaceUnitApiTopService
 HSF方法名称：	getListMapByGroupIds
 */
-func AlibabaCampusSpaceUnitGetlistmapbygroupid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetlistmapbygroupidRequest, session string) (*campus.AlibabaCampusSpaceUnitGetlistmapbygroupidAPIResponse, error) {
+func AlibabaCampusSpaceUnitGetlistmapbygroupid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest, session string) (*campus.AlibabaCampusSpaceUnitGetlistmapbygroupidAPIResponse, error) {
     var resp campus.AlibabaCampusSpaceUnitGetlistmapbygroupidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

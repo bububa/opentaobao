@@ -12,7 +12,7 @@ yunos.tvpubadmin.device.updateosstatus
 
 更新系统版本审核状态
 */
-type YunosTvpubadminDeviceUpdateosstatusRequest struct {
+type YunosTvpubadminDeviceUpdateosstatusAPIRequest struct {
     model.Params
     // 升级ID
     _versionId   int64
@@ -24,20 +24,20 @@ type YunosTvpubadminDeviceUpdateosstatusRequest struct {
     _auditComment   string
 }
 
-// 初始化YunosTvpubadminDeviceUpdateosstatusRequest对象
-func NewYunosTvpubadminDeviceUpdateosstatusRequest() *YunosTvpubadminDeviceUpdateosstatusRequest{
-    return &YunosTvpubadminDeviceUpdateosstatusRequest{
+// 初始化YunosTvpubadminDeviceUpdateosstatusAPIRequest对象
+func NewYunosTvpubadminDeviceUpdateosstatusRequest() *YunosTvpubadminDeviceUpdateosstatusAPIRequest{
+    return &YunosTvpubadminDeviceUpdateosstatusAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminDeviceUpdateosstatusRequest) GetApiMethodName() string {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.device.updateosstatus"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminDeviceUpdateosstatusRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r YunosTvpubadminDeviceUpdateosstatusRequest) GetApiParams() url.Values {
 }
 // VersionId Setter
 // 升级ID
-func (r *YunosTvpubadminDeviceUpdateosstatusRequest) SetVersionId(_versionId int64) error {
+func (r *YunosTvpubadminDeviceUpdateosstatusAPIRequest) SetVersionId(_versionId int64) error {
     r._versionId = _versionId
     r.Set("version_id", _versionId)
     return nil
 }
 
 // VersionId Getter
-func (r YunosTvpubadminDeviceUpdateosstatusRequest) GetVersionId() int64 {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetVersionId() int64 {
     return r._versionId
 }
 // License Setter
 // 牌照方
-func (r *YunosTvpubadminDeviceUpdateosstatusRequest) SetLicense(_license int64) error {
+func (r *YunosTvpubadminDeviceUpdateosstatusAPIRequest) SetLicense(_license int64) error {
     r._license = _license
     r.Set("license", _license)
     return nil
 }
 
 // License Getter
-func (r YunosTvpubadminDeviceUpdateosstatusRequest) GetLicense() int64 {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetLicense() int64 {
     return r._license
 }
 // Status Setter
 // 审核状态
-func (r *YunosTvpubadminDeviceUpdateosstatusRequest) SetStatus(_status string) error {
+func (r *YunosTvpubadminDeviceUpdateosstatusAPIRequest) SetStatus(_status string) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r YunosTvpubadminDeviceUpdateosstatusRequest) GetStatus() string {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetStatus() string {
     return r._status
 }
 // AuditComment Setter
 // 审核意见
-func (r *YunosTvpubadminDeviceUpdateosstatusRequest) SetAuditComment(_auditComment string) error {
+func (r *YunosTvpubadminDeviceUpdateosstatusAPIRequest) SetAuditComment(_auditComment string) error {
     r._auditComment = _auditComment
     r.Set("audit_comment", _auditComment)
     return nil
 }
 
 // AuditComment Getter
-func (r YunosTvpubadminDeviceUpdateosstatusRequest) GetAuditComment() string {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetAuditComment() string {
     return r._auditComment
 }

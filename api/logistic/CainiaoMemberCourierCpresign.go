@@ -11,7 +11,7 @@ cainiao.member.courier.cpresign
 
 CP清理内部离职的用户信息
 */
-func CainiaoMemberCourierCpresign(clt *core.SDKClient, req *logistic.CainiaoMemberCourierCpresignRequest, session string) (*logistic.CainiaoMemberCourierCpresignAPIResponse, error) {
+func CainiaoMemberCourierCpresign(clt *core.SDKClient, req *logistic.CainiaoMemberCourierCpresignAPIRequest, session string) (*logistic.CainiaoMemberCourierCpresignAPIResponse, error) {
     var resp logistic.CainiaoMemberCourierCpresignAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

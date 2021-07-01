@@ -11,7 +11,7 @@ alibaba.wdk.sku.barcode.query
 
 查询商品编码，支持一品多码
 */
-func AlibabaWdkSkuBarcodeQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuBarcodeQueryRequest, session string) (*wdk.AlibabaWdkSkuBarcodeQueryAPIResponse, error) {
+func AlibabaWdkSkuBarcodeQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuBarcodeQueryAPIRequest, session string) (*wdk.AlibabaWdkSkuBarcodeQueryAPIResponse, error) {
     var resp wdk.AlibabaWdkSkuBarcodeQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

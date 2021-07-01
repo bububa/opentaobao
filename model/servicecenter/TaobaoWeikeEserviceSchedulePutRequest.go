@@ -12,7 +12,7 @@ taobao.weike.eservice.schedule.put
 
 添加、更新、删除排班信息
 */
-type TaobaoWeikeEserviceSchedulePutRequest struct {
+type TaobaoWeikeEserviceSchedulePutAPIRequest struct {
     model.Params
     // 订单ID
     _orderId   int64
@@ -20,20 +20,20 @@ type TaobaoWeikeEserviceSchedulePutRequest struct {
     _csSchedulings   []CsSchedulingOneDayDTO
 }
 
-// 初始化TaobaoWeikeEserviceSchedulePutRequest对象
-func NewTaobaoWeikeEserviceSchedulePutRequest() *TaobaoWeikeEserviceSchedulePutRequest{
-    return &TaobaoWeikeEserviceSchedulePutRequest{
+// 初始化TaobaoWeikeEserviceSchedulePutAPIRequest对象
+func NewTaobaoWeikeEserviceSchedulePutRequest() *TaobaoWeikeEserviceSchedulePutAPIRequest{
+    return &TaobaoWeikeEserviceSchedulePutAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWeikeEserviceSchedulePutRequest) GetApiMethodName() string {
+func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetApiMethodName() string {
     return "taobao.weike.eservice.schedule.put"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWeikeEserviceSchedulePutRequest) GetApiParams() url.Values {
+func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoWeikeEserviceSchedulePutRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单ID
-func (r *TaobaoWeikeEserviceSchedulePutRequest) SetOrderId(_orderId int64) error {
+func (r *TaobaoWeikeEserviceSchedulePutAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r TaobaoWeikeEserviceSchedulePutRequest) GetOrderId() int64 {
+func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetOrderId() int64 {
     return r._orderId
 }
 // CsSchedulings Setter
 // 按天排班信息
-func (r *TaobaoWeikeEserviceSchedulePutRequest) SetCsSchedulings(_csSchedulings []CsSchedulingOneDayDTO) error {
+func (r *TaobaoWeikeEserviceSchedulePutAPIRequest) SetCsSchedulings(_csSchedulings []CsSchedulingOneDayDTO) error {
     r._csSchedulings = _csSchedulings
     r.Set("cs_schedulings", _csSchedulings)
     return nil
 }
 
 // CsSchedulings Getter
-func (r TaobaoWeikeEserviceSchedulePutRequest) GetCsSchedulings() []CsSchedulingOneDayDTO {
+func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetCsSchedulings() []CsSchedulingOneDayDTO {
     return r._csSchedulings
 }

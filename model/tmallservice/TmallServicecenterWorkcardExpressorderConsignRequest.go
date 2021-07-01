@@ -12,7 +12,7 @@ tmall.servicecenter.workcard.expressorder.consign
 
 天猫服务寄送类业务，服务商履约完成后进行寄回操作呼叫运力
 */
-type TmallServicecenterWorkcardExpressorderConsignRequest struct {
+type TmallServicecenterWorkcardExpressorderConsignAPIRequest struct {
     model.Params
     // 物流寄件单号（废弃）
     _expressOrderId   int64
@@ -24,20 +24,20 @@ type TmallServicecenterWorkcardExpressorderConsignRequest struct {
     _logisticsOrderId   int64
 }
 
-// 初始化TmallServicecenterWorkcardExpressorderConsignRequest对象
-func NewTmallServicecenterWorkcardExpressorderConsignRequest() *TmallServicecenterWorkcardExpressorderConsignRequest{
-    return &TmallServicecenterWorkcardExpressorderConsignRequest{
+// 初始化TmallServicecenterWorkcardExpressorderConsignAPIRequest对象
+func NewTmallServicecenterWorkcardExpressorderConsignRequest() *TmallServicecenterWorkcardExpressorderConsignAPIRequest{
+    return &TmallServicecenterWorkcardExpressorderConsignAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkcardExpressorderConsignRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.workcard.expressorder.consign"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkcardExpressorderConsignRequest) GetApiParams() url.Values {
+func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TmallServicecenterWorkcardExpressorderConsignRequest) GetApiParams() url
 }
 // ExpressOrderId Setter
 // 物流寄件单号（废弃）
-func (r *TmallServicecenterWorkcardExpressorderConsignRequest) SetExpressOrderId(_expressOrderId int64) error {
+func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetExpressOrderId(_expressOrderId int64) error {
     r._expressOrderId = _expressOrderId
     r.Set("express_order_id", _expressOrderId)
     return nil
 }
 
 // ExpressOrderId Getter
-func (r TmallServicecenterWorkcardExpressorderConsignRequest) GetExpressOrderId() int64 {
+func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetExpressOrderId() int64 {
     return r._expressOrderId
 }
 // WorkcardIdList Setter
 // 工单List
-func (r *TmallServicecenterWorkcardExpressorderConsignRequest) SetWorkcardIdList(_workcardIdList []int64) error {
+func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetWorkcardIdList(_workcardIdList []int64) error {
     r._workcardIdList = _workcardIdList
     r.Set("workcard_id_list", _workcardIdList)
     return nil
 }
 
 // WorkcardIdList Getter
-func (r TmallServicecenterWorkcardExpressorderConsignRequest) GetWorkcardIdList() []int64 {
+func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetWorkcardIdList() []int64 {
     return r._workcardIdList
 }
 // RealTpNick Setter
 // 真实接单服务商
-func (r *TmallServicecenterWorkcardExpressorderConsignRequest) SetRealTpNick(_realTpNick string) error {
+func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetRealTpNick(_realTpNick string) error {
     r._realTpNick = _realTpNick
     r.Set("real_tp_nick", _realTpNick)
     return nil
 }
 
 // RealTpNick Getter
-func (r TmallServicecenterWorkcardExpressorderConsignRequest) GetRealTpNick() string {
+func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetRealTpNick() string {
     return r._realTpNick
 }
 // LogisticsOrderId Setter
 // 物流订单号
-func (r *TmallServicecenterWorkcardExpressorderConsignRequest) SetLogisticsOrderId(_logisticsOrderId int64) error {
+func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetLogisticsOrderId(_logisticsOrderId int64) error {
     r._logisticsOrderId = _logisticsOrderId
     r.Set("logistics_order_id", _logisticsOrderId)
     return nil
 }
 
 // LogisticsOrderId Getter
-func (r TmallServicecenterWorkcardExpressorderConsignRequest) GetLogisticsOrderId() int64 {
+func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetLogisticsOrderId() int64 {
     return r._logisticsOrderId
 }

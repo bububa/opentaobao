@@ -11,7 +11,7 @@ alibaba.wdk.order.refund.list
 
 按照条件查询退款数据
 */
-func AlibabaWdkOrderRefundList(clt *core.SDKClient, req *wdk.AlibabaWdkOrderRefundListRequest, session string) (*wdk.AlibabaWdkOrderRefundListAPIResponse, error) {
+func AlibabaWdkOrderRefundList(clt *core.SDKClient, req *wdk.AlibabaWdkOrderRefundListAPIRequest, session string) (*wdk.AlibabaWdkOrderRefundListAPIResponse, error) {
     var resp wdk.AlibabaWdkOrderRefundListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

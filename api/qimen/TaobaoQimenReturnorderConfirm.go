@@ -11,7 +11,7 @@ taobao.qimen.returnorder.confirm
 
 taobao.qimen.returnorder.confirm
 */
-func TaobaoQimenReturnorderConfirm(clt *core.SDKClient, req *qimen.TaobaoQimenReturnorderConfirmRequest, session string) (*qimen.TaobaoQimenReturnorderConfirmAPIResponse, error) {
+func TaobaoQimenReturnorderConfirm(clt *core.SDKClient, req *qimen.TaobaoQimenReturnorderConfirmAPIRequest, session string) (*qimen.TaobaoQimenReturnorderConfirmAPIResponse, error) {
     var resp qimen.TaobaoQimenReturnorderConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

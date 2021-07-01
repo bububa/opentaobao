@@ -12,7 +12,7 @@ alibaba.mj.oc.getproductbyscancode
 
 此API用于在银泰商场中，POS端扫码获取商品信息
 */
-type AlibabaMjOcGetproductbyscancodeRequest struct {
+type AlibabaMjOcGetproductbyscancodeAPIRequest struct {
     model.Params
     // 码, 对应的信息可能是款号，也有可能是具体的某一个商品
     _code   string
@@ -24,20 +24,20 @@ type AlibabaMjOcGetproductbyscancodeRequest struct {
     _storeCode   string
 }
 
-// 初始化AlibabaMjOcGetproductbyscancodeRequest对象
-func NewAlibabaMjOcGetproductbyscancodeRequest() *AlibabaMjOcGetproductbyscancodeRequest{
-    return &AlibabaMjOcGetproductbyscancodeRequest{
+// 初始化AlibabaMjOcGetproductbyscancodeAPIRequest对象
+func NewAlibabaMjOcGetproductbyscancodeRequest() *AlibabaMjOcGetproductbyscancodeAPIRequest{
+    return &AlibabaMjOcGetproductbyscancodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMjOcGetproductbyscancodeRequest) GetApiMethodName() string {
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetApiMethodName() string {
     return "alibaba.mj.oc.getproductbyscancode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMjOcGetproductbyscancodeRequest) GetApiParams() url.Values {
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaMjOcGetproductbyscancodeRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 码, 对应的信息可能是款号，也有可能是具体的某一个商品
-func (r *AlibabaMjOcGetproductbyscancodeRequest) SetCode(_code string) error {
+func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaMjOcGetproductbyscancodeRequest) GetCode() string {
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetCode() string {
     return r._code
 }
 // CodeType Setter
 // 条码/二维码/rfid(电子标签),货号、条码、零售+唯一码;ARTNO、BARCODE、UNIQUECODE
-func (r *AlibabaMjOcGetproductbyscancodeRequest) SetCodeType(_codeType string) error {
+func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetCodeType(_codeType string) error {
     r._codeType = _codeType
     r.Set("code_type", _codeType)
     return nil
 }
 
 // CodeType Getter
-func (r AlibabaMjOcGetproductbyscancodeRequest) GetCodeType() string {
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetCodeType() string {
     return r._codeType
 }
 // ShopCode Setter
 // 专柜编码
-func (r *AlibabaMjOcGetproductbyscancodeRequest) SetShopCode(_shopCode string) error {
+func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetShopCode(_shopCode string) error {
     r._shopCode = _shopCode
     r.Set("shop_code", _shopCode)
     return nil
 }
 
 // ShopCode Getter
-func (r AlibabaMjOcGetproductbyscancodeRequest) GetShopCode() string {
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetShopCode() string {
     return r._shopCode
 }
 // StoreCode Setter
 // 门店编码
-func (r *AlibabaMjOcGetproductbyscancodeRequest) SetStoreCode(_storeCode string) error {
+func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetStoreCode(_storeCode string) error {
     r._storeCode = _storeCode
     r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
-func (r AlibabaMjOcGetproductbyscancodeRequest) GetStoreCode() string {
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetStoreCode() string {
     return r._storeCode
 }

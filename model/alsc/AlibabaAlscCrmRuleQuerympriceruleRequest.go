@@ -12,26 +12,26 @@ alibaba.alsc.crm.rule.querympricerule
 
 查询品牌下的会员价规则
 */
-type AlibabaAlscCrmRuleQuerympriceruleRequest struct {
+type AlibabaAlscCrmRuleQuerympriceruleAPIRequest struct {
     model.Params
     // 系统自动生成
     _paramPlanRuleQueryOpenReq   *PlanRuleQueryOpenReq
 }
 
-// 初始化AlibabaAlscCrmRuleQuerympriceruleRequest对象
-func NewAlibabaAlscCrmRuleQuerympriceruleRequest() *AlibabaAlscCrmRuleQuerympriceruleRequest{
-    return &AlibabaAlscCrmRuleQuerympriceruleRequest{
+// 初始化AlibabaAlscCrmRuleQuerympriceruleAPIRequest对象
+func NewAlibabaAlscCrmRuleQuerympriceruleRequest() *AlibabaAlscCrmRuleQuerympriceruleAPIRequest{
+    return &AlibabaAlscCrmRuleQuerympriceruleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRuleQuerympriceruleRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRuleQuerympriceruleAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.rule.querympricerule"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRuleQuerympriceruleRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRuleQuerympriceruleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRuleQuerympriceruleRequest) GetApiParams() url.Values {
 }
 // ParamPlanRuleQueryOpenReq Setter
 // 系统自动生成
-func (r *AlibabaAlscCrmRuleQuerympriceruleRequest) SetParamPlanRuleQueryOpenReq(_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
+func (r *AlibabaAlscCrmRuleQuerympriceruleAPIRequest) SetParamPlanRuleQueryOpenReq(_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
     r._paramPlanRuleQueryOpenReq = _paramPlanRuleQueryOpenReq
     r.Set("param_plan_rule_query_open_req", _paramPlanRuleQueryOpenReq)
     return nil
 }
 
 // ParamPlanRuleQueryOpenReq Getter
-func (r AlibabaAlscCrmRuleQuerympriceruleRequest) GetParamPlanRuleQueryOpenReq() *PlanRuleQueryOpenReq {
+func (r AlibabaAlscCrmRuleQuerympriceruleAPIRequest) GetParamPlanRuleQueryOpenReq() *PlanRuleQueryOpenReq {
     return r._paramPlanRuleQueryOpenReq
 }

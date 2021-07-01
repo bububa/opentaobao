@@ -12,24 +12,24 @@ taobao.simba.customers.sid.get
 
 查询用户是否拥有某个功能权限
 */
-type TaobaoSimbaCustomersSidGetRequest struct {
+type TaobaoSimbaCustomersSidGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoSimbaCustomersSidGetRequest对象
-func NewTaobaoSimbaCustomersSidGetRequest() *TaobaoSimbaCustomersSidGetRequest{
-    return &TaobaoSimbaCustomersSidGetRequest{
+// 初始化TaobaoSimbaCustomersSidGetAPIRequest对象
+func NewTaobaoSimbaCustomersSidGetRequest() *TaobaoSimbaCustomersSidGetAPIRequest{
+    return &TaobaoSimbaCustomersSidGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaCustomersSidGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaCustomersSidGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.customers.sid.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaCustomersSidGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaCustomersSidGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

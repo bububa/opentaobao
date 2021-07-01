@@ -11,7 +11,7 @@ alibaba.idle.parttime.synclog
 
 提供给供应商查询的接口
 */
-func AlibabaIdleParttimeSynclog(clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeSynclogRequest, session string) (*idleparttime.AlibabaIdleParttimeSynclogAPIResponse, error) {
+func AlibabaIdleParttimeSynclog(clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeSynclogAPIRequest, session string) (*idleparttime.AlibabaIdleParttimeSynclogAPIResponse, error) {
     var resp idleparttime.AlibabaIdleParttimeSynclogAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.damai.maitix.distribution.cmb.paramencrypt
 
 encryptParam4Cmb
 */
-func AlibabaDamaiMaitixDistributionCmbParamencrypt(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbParamencryptRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse, error) {
+func AlibabaDamaiMaitixDistributionCmbParamencrypt(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

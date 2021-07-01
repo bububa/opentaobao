@@ -1,7 +1,7 @@
 package btrip
 
-// HotelDetailRs 
-type HotelDetailRs struct {
+// HotelDetailRS 
+type HotelDetailRS struct {
     // 入住时间
     CheckIn   string `json:"check_in,omitempty" xml:"check_in,omitempty"`
     // 离店时间

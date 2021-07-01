@@ -11,7 +11,7 @@ tmall.car.lease.statussynchronize
 
 天猫开新车租后状态同步
 */
-func TmallCarLeaseStatussynchronize(clt *core.SDKClient, req *tmallcar.TmallCarLeaseStatussynchronizeRequest, session string) (*tmallcar.TmallCarLeaseStatussynchronizeAPIResponse, error) {
+func TmallCarLeaseStatussynchronize(clt *core.SDKClient, req *tmallcar.TmallCarLeaseStatussynchronizeAPIRequest, session string) (*tmallcar.TmallCarLeaseStatussynchronizeAPIResponse, error) {
     var resp tmallcar.TmallCarLeaseStatussynchronizeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

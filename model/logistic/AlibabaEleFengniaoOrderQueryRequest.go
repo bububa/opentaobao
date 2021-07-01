@@ -12,26 +12,26 @@ alibaba.ele.fengniao.order.query
 
 查询订单基本信息
 */
-type AlibabaEleFengniaoOrderQueryRequest struct {
+type AlibabaEleFengniaoOrderQueryAPIRequest struct {
     model.Params
     // 参数
     _param   *Param
 }
 
-// 初始化AlibabaEleFengniaoOrderQueryRequest对象
-func NewAlibabaEleFengniaoOrderQueryRequest() *AlibabaEleFengniaoOrderQueryRequest{
-    return &AlibabaEleFengniaoOrderQueryRequest{
+// 初始化AlibabaEleFengniaoOrderQueryAPIRequest对象
+func NewAlibabaEleFengniaoOrderQueryRequest() *AlibabaEleFengniaoOrderQueryAPIRequest{
+    return &AlibabaEleFengniaoOrderQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleFengniaoOrderQueryRequest) GetApiMethodName() string {
+func (r AlibabaEleFengniaoOrderQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.fengniao.order.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleFengniaoOrderQueryRequest) GetApiParams() url.Values {
+func (r AlibabaEleFengniaoOrderQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoOrderQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 参数
-func (r *AlibabaEleFengniaoOrderQueryRequest) SetParam(_param *Param) error {
+func (r *AlibabaEleFengniaoOrderQueryAPIRequest) SetParam(_param *Param) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaEleFengniaoOrderQueryRequest) GetParam() *Param {
+func (r AlibabaEleFengniaoOrderQueryAPIRequest) GetParam() *Param {
     return r._param
 }

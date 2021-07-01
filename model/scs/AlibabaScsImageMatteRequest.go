@@ -12,7 +12,7 @@ alibaba.scs.image.matte
 
 该API对外输出一个在线抠图(Deep Image Matting)接口，合作方可以通过该接口利用深度学习抠图算法从图片中抠出目标对象(比如商品或者人物轮廓)
 */
-type AlibabaScsImageMatteRequest struct {
+type AlibabaScsImageMatteAPIRequest struct {
     model.Params
     // 资源位ID，接入前由智能创意平台分配
     _pid   string
@@ -28,20 +28,20 @@ type AlibabaScsImageMatteRequest struct {
     _ts   string
 }
 
-// 初始化AlibabaScsImageMatteRequest对象
-func NewAlibabaScsImageMatteRequest() *AlibabaScsImageMatteRequest{
-    return &AlibabaScsImageMatteRequest{
+// 初始化AlibabaScsImageMatteAPIRequest对象
+func NewAlibabaScsImageMatteRequest() *AlibabaScsImageMatteAPIRequest{
+    return &AlibabaScsImageMatteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScsImageMatteRequest) GetApiMethodName() string {
+func (r AlibabaScsImageMatteAPIRequest) GetApiMethodName() string {
     return "alibaba.scs.image.matte"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScsImageMatteRequest) GetApiParams() url.Values {
+func (r AlibabaScsImageMatteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -50,73 +50,73 @@ func (r AlibabaScsImageMatteRequest) GetApiParams() url.Values {
 }
 // Pid Setter
 // 资源位ID，接入前由智能创意平台分配
-func (r *AlibabaScsImageMatteRequest) SetPid(_pid string) error {
+func (r *AlibabaScsImageMatteAPIRequest) SetPid(_pid string) error {
     r._pid = _pid
     r.Set("pid", _pid)
     return nil
 }
 
 // Pid Getter
-func (r AlibabaScsImageMatteRequest) GetPid() string {
+func (r AlibabaScsImageMatteAPIRequest) GetPid() string {
     return r._pid
 }
 // Name Setter
 // 服务名称，可选值: scs
-func (r *AlibabaScsImageMatteRequest) SetName(_name string) error {
+func (r *AlibabaScsImageMatteAPIRequest) SetName(_name string) error {
     r._name = _name
     r.Set("name", _name)
     return nil
 }
 
 // Name Getter
-func (r AlibabaScsImageMatteRequest) GetName() string {
+func (r AlibabaScsImageMatteAPIRequest) GetName() string {
     return r._name
 }
 // Scenes Setter
 // 场景名称，可选值: image_cutout
-func (r *AlibabaScsImageMatteRequest) SetScenes(_scenes string) error {
+func (r *AlibabaScsImageMatteAPIRequest) SetScenes(_scenes string) error {
     r._scenes = _scenes
     r.Set("scenes", _scenes)
     return nil
 }
 
 // Scenes Getter
-func (r AlibabaScsImageMatteRequest) GetScenes() string {
+func (r AlibabaScsImageMatteAPIRequest) GetScenes() string {
     return r._scenes
 }
 // ObExt Setter
 // 抠图上下文信息，json字符串格式，json中matting_type字段可选值: external_matting，url: 需要抠图的目标图片url
-func (r *AlibabaScsImageMatteRequest) SetObExt(_obExt string) error {
+func (r *AlibabaScsImageMatteAPIRequest) SetObExt(_obExt string) error {
     r._obExt = _obExt
     r.Set("ob_ext", _obExt)
     return nil
 }
 
 // ObExt Getter
-func (r AlibabaScsImageMatteRequest) GetObExt() string {
+func (r AlibabaScsImageMatteAPIRequest) GetObExt() string {
     return r._obExt
 }
 // Sessionid Setter
 // 32位uuid
-func (r *AlibabaScsImageMatteRequest) SetSessionid(_sessionid string) error {
+func (r *AlibabaScsImageMatteAPIRequest) SetSessionid(_sessionid string) error {
     r._sessionid = _sessionid
     r.Set("sessionid", _sessionid)
     return nil
 }
 
 // Sessionid Getter
-func (r AlibabaScsImageMatteRequest) GetSessionid() string {
+func (r AlibabaScsImageMatteAPIRequest) GetSessionid() string {
     return r._sessionid
 }
 // Ts Setter
 // 当前秒级时间戳
-func (r *AlibabaScsImageMatteRequest) SetTs(_ts string) error {
+func (r *AlibabaScsImageMatteAPIRequest) SetTs(_ts string) error {
     r._ts = _ts
     r.Set("ts", _ts)
     return nil
 }
 
 // Ts Getter
-func (r AlibabaScsImageMatteRequest) GetTs() string {
+func (r AlibabaScsImageMatteAPIRequest) GetTs() string {
     return r._ts
 }

@@ -11,7 +11,7 @@ taobao.opentrade.tools.items.unbind
 
 交易开放商品解绑
 */
-func TaobaoOpentradeToolsItemsUnbind(clt *core.SDKClient, req *opentrade.TaobaoOpentradeToolsItemsUnbindRequest, session string) (*opentrade.TaobaoOpentradeToolsItemsUnbindAPIResponse, error) {
+func TaobaoOpentradeToolsItemsUnbind(clt *core.SDKClient, req *opentrade.TaobaoOpentradeToolsItemsUnbindAPIRequest, session string) (*opentrade.TaobaoOpentradeToolsItemsUnbindAPIResponse, error) {
     var resp opentrade.TaobaoOpentradeToolsItemsUnbindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

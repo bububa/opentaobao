@@ -12,7 +12,7 @@ alibaba.ssc.supplyplatform.servicecapacity.delete
 
 服务容量删除
 */
-type AlibabaSscSupplyplatformServicecapacityDeleteRequest struct {
+type AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest struct {
     model.Params
     // 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
     _providerType   string
@@ -20,20 +20,20 @@ type AlibabaSscSupplyplatformServicecapacityDeleteRequest struct {
     _providerId   int64
 }
 
-// 初始化AlibabaSscSupplyplatformServicecapacityDeleteRequest对象
-func NewAlibabaSscSupplyplatformServicecapacityDeleteRequest() *AlibabaSscSupplyplatformServicecapacityDeleteRequest{
-    return &AlibabaSscSupplyplatformServicecapacityDeleteRequest{
+// 初始化AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest对象
+func NewAlibabaSscSupplyplatformServicecapacityDeleteRequest() *AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest{
+    return &AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSscSupplyplatformServicecapacityDeleteRequest) GetApiMethodName() string {
+func (r AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.ssc.supplyplatform.servicecapacity.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSscSupplyplatformServicecapacityDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaSscSupplyplatformServicecapacityDeleteRequest) GetApiParams() url
 }
 // ProviderType Setter
 // 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
-func (r *AlibabaSscSupplyplatformServicecapacityDeleteRequest) SetProviderType(_providerType string) error {
+func (r *AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) SetProviderType(_providerType string) error {
     r._providerType = _providerType
     r.Set("provider_type", _providerType)
     return nil
 }
 
 // ProviderType Getter
-func (r AlibabaSscSupplyplatformServicecapacityDeleteRequest) GetProviderType() string {
+func (r AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) GetProviderType() string {
     return r._providerType
 }
 // ProviderId Setter
 // 服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id
-func (r *AlibabaSscSupplyplatformServicecapacityDeleteRequest) SetProviderId(_providerId int64) error {
+func (r *AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) SetProviderId(_providerId int64) error {
     r._providerId = _providerId
     r.Set("provider_id", _providerId)
     return nil
 }
 
 // ProviderId Getter
-func (r AlibabaSscSupplyplatformServicecapacityDeleteRequest) GetProviderId() int64 {
+func (r AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) GetProviderId() int64 {
     return r._providerId
 }

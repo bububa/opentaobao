@@ -11,7 +11,7 @@ alibaba.ele.fengniao.trade.update
 
 汇金扣费成功后，回调该接口更新扣费状态
 */
-func AlibabaEleFengniaoTradeUpdate(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoTradeUpdateRequest, session string) (*logistic.AlibabaEleFengniaoTradeUpdateAPIResponse, error) {
+func AlibabaEleFengniaoTradeUpdate(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoTradeUpdateAPIRequest, session string) (*logistic.AlibabaEleFengniaoTradeUpdateAPIResponse, error) {
     var resp logistic.AlibabaEleFengniaoTradeUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

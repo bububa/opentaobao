@@ -12,7 +12,7 @@ yunos.service.cmns.coa.message.ack
 
 第三方应用开发者调用此接口查询设备是否收到消息，只能查询此appKey床发的消息
 */
-type YunosServiceCmnsCoaMessageAckRequest struct {
+type YunosServiceCmnsCoaMessageAckAPIRequest struct {
     model.Params
     // 设备唯一值deviceToken
     _deviceToken   string
@@ -24,20 +24,20 @@ type YunosServiceCmnsCoaMessageAckRequest struct {
     _mid   int64
 }
 
-// 初始化YunosServiceCmnsCoaMessageAckRequest对象
-func NewYunosServiceCmnsCoaMessageAckRequest() *YunosServiceCmnsCoaMessageAckRequest{
-    return &YunosServiceCmnsCoaMessageAckRequest{
+// 初始化YunosServiceCmnsCoaMessageAckAPIRequest对象
+func NewYunosServiceCmnsCoaMessageAckRequest() *YunosServiceCmnsCoaMessageAckAPIRequest{
+    return &YunosServiceCmnsCoaMessageAckAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosServiceCmnsCoaMessageAckRequest) GetApiMethodName() string {
+func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetApiMethodName() string {
     return "yunos.service.cmns.coa.message.ack"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosServiceCmnsCoaMessageAckRequest) GetApiParams() url.Values {
+func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r YunosServiceCmnsCoaMessageAckRequest) GetApiParams() url.Values {
 }
 // DeviceToken Setter
 // 设备唯一值deviceToken
-func (r *YunosServiceCmnsCoaMessageAckRequest) SetDeviceToken(_deviceToken string) error {
+func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetDeviceToken(_deviceToken string) error {
     r._deviceToken = _deviceToken
     r.Set("device_token", _deviceToken)
     return nil
 }
 
 // DeviceToken Getter
-func (r YunosServiceCmnsCoaMessageAckRequest) GetDeviceToken() string {
+func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetDeviceToken() string {
     return r._deviceToken
 }
 // Imei Setter
 // 设备imei
-func (r *YunosServiceCmnsCoaMessageAckRequest) SetImei(_imei string) error {
+func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetImei(_imei string) error {
     r._imei = _imei
     r.Set("imei", _imei)
     return nil
 }
 
 // Imei Getter
-func (r YunosServiceCmnsCoaMessageAckRequest) GetImei() string {
+func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetImei() string {
     return r._imei
 }
 // Uuid Setter
 // 设备uuid
-func (r *YunosServiceCmnsCoaMessageAckRequest) SetUuid(_uuid string) error {
+func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetUuid(_uuid string) error {
     r._uuid = _uuid
     r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
-func (r YunosServiceCmnsCoaMessageAckRequest) GetUuid() string {
+func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetUuid() string {
     return r._uuid
 }
 // Mid Setter
 // 消息ID
-func (r *YunosServiceCmnsCoaMessageAckRequest) SetMid(_mid int64) error {
+func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetMid(_mid int64) error {
     r._mid = _mid
     r.Set("mid", _mid)
     return nil
 }
 
 // Mid Getter
-func (r YunosServiceCmnsCoaMessageAckRequest) GetMid() int64 {
+func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetMid() int64 {
     return r._mid
 }

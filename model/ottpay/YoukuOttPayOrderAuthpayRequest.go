@@ -12,7 +12,7 @@ youku.ott.pay.order.authpay
 
 应用中心sdk连续包月委托代扣服务
 */
-type YoukuOttPayOrderAuthpayRequest struct {
+type YoukuOttPayOrderAuthpayAPIRequest struct {
     model.Params
     // cp用户名
     _buyer   string
@@ -26,20 +26,20 @@ type YoukuOttPayOrderAuthpayRequest struct {
     _callbackUrl   string
 }
 
-// 初始化YoukuOttPayOrderAuthpayRequest对象
-func NewYoukuOttPayOrderAuthpayRequest() *YoukuOttPayOrderAuthpayRequest{
-    return &YoukuOttPayOrderAuthpayRequest{
+// 初始化YoukuOttPayOrderAuthpayAPIRequest对象
+func NewYoukuOttPayOrderAuthpayRequest() *YoukuOttPayOrderAuthpayAPIRequest{
+    return &YoukuOttPayOrderAuthpayAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YoukuOttPayOrderAuthpayRequest) GetApiMethodName() string {
+func (r YoukuOttPayOrderAuthpayAPIRequest) GetApiMethodName() string {
     return "youku.ott.pay.order.authpay"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YoukuOttPayOrderAuthpayRequest) GetApiParams() url.Values {
+func (r YoukuOttPayOrderAuthpayAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r YoukuOttPayOrderAuthpayRequest) GetApiParams() url.Values {
 }
 // Buyer Setter
 // cp用户名
-func (r *YoukuOttPayOrderAuthpayRequest) SetBuyer(_buyer string) error {
+func (r *YoukuOttPayOrderAuthpayAPIRequest) SetBuyer(_buyer string) error {
     r._buyer = _buyer
     r.Set("buyer", _buyer)
     return nil
 }
 
 // Buyer Getter
-func (r YoukuOttPayOrderAuthpayRequest) GetBuyer() string {
+func (r YoukuOttPayOrderAuthpayAPIRequest) GetBuyer() string {
     return r._buyer
 }
 // OriginalOrderNo Setter
 // 连续包月原始cp订单号
-func (r *YoukuOttPayOrderAuthpayRequest) SetOriginalOrderNo(_originalOrderNo string) error {
+func (r *YoukuOttPayOrderAuthpayAPIRequest) SetOriginalOrderNo(_originalOrderNo string) error {
     r._originalOrderNo = _originalOrderNo
     r.Set("original_order_no", _originalOrderNo)
     return nil
 }
 
 // OriginalOrderNo Getter
-func (r YoukuOttPayOrderAuthpayRequest) GetOriginalOrderNo() string {
+func (r YoukuOttPayOrderAuthpayAPIRequest) GetOriginalOrderNo() string {
     return r._originalOrderNo
 }
 // OrderNo Setter
 // 委托扣款cp订单号
-func (r *YoukuOttPayOrderAuthpayRequest) SetOrderNo(_orderNo string) error {
+func (r *YoukuOttPayOrderAuthpayAPIRequest) SetOrderNo(_orderNo string) error {
     r._orderNo = _orderNo
     r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
-func (r YoukuOttPayOrderAuthpayRequest) GetOrderNo() string {
+func (r YoukuOttPayOrderAuthpayAPIRequest) GetOrderNo() string {
     return r._orderNo
 }
 // ProductId Setter
 // 已配置开通连续包月的产品id
-func (r *YoukuOttPayOrderAuthpayRequest) SetProductId(_productId string) error {
+func (r *YoukuOttPayOrderAuthpayAPIRequest) SetProductId(_productId string) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r YoukuOttPayOrderAuthpayRequest) GetProductId() string {
+func (r YoukuOttPayOrderAuthpayAPIRequest) GetProductId() string {
     return r._productId
 }
 // CallbackUrl Setter
 // 回调
-func (r *YoukuOttPayOrderAuthpayRequest) SetCallbackUrl(_callbackUrl string) error {
+func (r *YoukuOttPayOrderAuthpayAPIRequest) SetCallbackUrl(_callbackUrl string) error {
     r._callbackUrl = _callbackUrl
     r.Set("callback_url", _callbackUrl)
     return nil
 }
 
 // CallbackUrl Getter
-func (r YoukuOttPayOrderAuthpayRequest) GetCallbackUrl() string {
+func (r YoukuOttPayOrderAuthpayAPIRequest) GetCallbackUrl() string {
     return r._callbackUrl
 }

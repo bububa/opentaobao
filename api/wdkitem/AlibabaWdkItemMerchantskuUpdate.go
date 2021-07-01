@@ -11,7 +11,7 @@ alibaba.wdk.item.merchantsku.update
 
 商家商品修改
 */
-func AlibabaWdkItemMerchantskuUpdate(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMerchantskuUpdateRequest, session string) (*wdkitem.AlibabaWdkItemMerchantskuUpdateAPIResponse, error) {
+func AlibabaWdkItemMerchantskuUpdate(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMerchantskuUpdateAPIRequest, session string) (*wdkitem.AlibabaWdkItemMerchantskuUpdateAPIResponse, error) {
     var resp wdkitem.AlibabaWdkItemMerchantskuUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

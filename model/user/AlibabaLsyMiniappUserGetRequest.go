@@ -12,7 +12,7 @@ alibaba.lsy.miniapp.user.get
 
 零售云小程序，通过授权码获取登录的卖家账号信息
 */
-type AlibabaLsyMiniappUserGetRequest struct {
+type AlibabaLsyMiniappUserGetAPIRequest struct {
     model.Params
     // 当前时间戳，毫秒
     _timeStamp   string
@@ -24,20 +24,20 @@ type AlibabaLsyMiniappUserGetRequest struct {
     _appId   string
 }
 
-// 初始化AlibabaLsyMiniappUserGetRequest对象
-func NewAlibabaLsyMiniappUserGetRequest() *AlibabaLsyMiniappUserGetRequest{
-    return &AlibabaLsyMiniappUserGetRequest{
+// 初始化AlibabaLsyMiniappUserGetAPIRequest对象
+func NewAlibabaLsyMiniappUserGetRequest() *AlibabaLsyMiniappUserGetAPIRequest{
+    return &AlibabaLsyMiniappUserGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLsyMiniappUserGetRequest) GetApiMethodName() string {
+func (r AlibabaLsyMiniappUserGetAPIRequest) GetApiMethodName() string {
     return "alibaba.lsy.miniapp.user.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLsyMiniappUserGetRequest) GetApiParams() url.Values {
+func (r AlibabaLsyMiniappUserGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaLsyMiniappUserGetRequest) GetApiParams() url.Values {
 }
 // TimeStamp Setter
 // 当前时间戳，毫秒
-func (r *AlibabaLsyMiniappUserGetRequest) SetTimeStamp(_timeStamp string) error {
+func (r *AlibabaLsyMiniappUserGetAPIRequest) SetTimeStamp(_timeStamp string) error {
     r._timeStamp = _timeStamp
     r.Set("time_stamp", _timeStamp)
     return nil
 }
 
 // TimeStamp Getter
-func (r AlibabaLsyMiniappUserGetRequest) GetTimeStamp() string {
+func (r AlibabaLsyMiniappUserGetAPIRequest) GetTimeStamp() string {
     return r._timeStamp
 }
 // Code Setter
 // 获取用户信息的授权码，在小程序中获取
-func (r *AlibabaLsyMiniappUserGetRequest) SetCode(_code string) error {
+func (r *AlibabaLsyMiniappUserGetAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaLsyMiniappUserGetRequest) GetCode() string {
+func (r AlibabaLsyMiniappUserGetAPIRequest) GetCode() string {
     return r._code
 }
 // Signature Setter
 // 请求参数签名，sha1(所有入参+appSecret，按字符串升序排列)
-func (r *AlibabaLsyMiniappUserGetRequest) SetSignature(_signature string) error {
+func (r *AlibabaLsyMiniappUserGetAPIRequest) SetSignature(_signature string) error {
     r._signature = _signature
     r.Set("signature", _signature)
     return nil
 }
 
 // Signature Getter
-func (r AlibabaLsyMiniappUserGetRequest) GetSignature() string {
+func (r AlibabaLsyMiniappUserGetAPIRequest) GetSignature() string {
     return r._signature
 }
 // AppId Setter
 // 系统分配的小程序ID
-func (r *AlibabaLsyMiniappUserGetRequest) SetAppId(_appId string) error {
+func (r *AlibabaLsyMiniappUserGetAPIRequest) SetAppId(_appId string) error {
     r._appId = _appId
     r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
-func (r AlibabaLsyMiniappUserGetRequest) GetAppId() string {
+func (r AlibabaLsyMiniappUserGetAPIRequest) GetAppId() string {
     return r._appId
 }

@@ -12,26 +12,26 @@ youku.mediaapi.video.snapshot.get
 
 根据视频ID查询视频缩微图
 */
-type YoukuMediaapiVideoSnapshotGetRequest struct {
+type YoukuMediaapiVideoSnapshotGetAPIRequest struct {
     model.Params
     // 视频id
     _vid   string
 }
 
-// 初始化YoukuMediaapiVideoSnapshotGetRequest对象
-func NewYoukuMediaapiVideoSnapshotGetRequest() *YoukuMediaapiVideoSnapshotGetRequest{
-    return &YoukuMediaapiVideoSnapshotGetRequest{
+// 初始化YoukuMediaapiVideoSnapshotGetAPIRequest对象
+func NewYoukuMediaapiVideoSnapshotGetRequest() *YoukuMediaapiVideoSnapshotGetAPIRequest{
+    return &YoukuMediaapiVideoSnapshotGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YoukuMediaapiVideoSnapshotGetRequest) GetApiMethodName() string {
+func (r YoukuMediaapiVideoSnapshotGetAPIRequest) GetApiMethodName() string {
     return "youku.mediaapi.video.snapshot.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YoukuMediaapiVideoSnapshotGetRequest) GetApiParams() url.Values {
+func (r YoukuMediaapiVideoSnapshotGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YoukuMediaapiVideoSnapshotGetRequest) GetApiParams() url.Values {
 }
 // Vid Setter
 // 视频id
-func (r *YoukuMediaapiVideoSnapshotGetRequest) SetVid(_vid string) error {
+func (r *YoukuMediaapiVideoSnapshotGetAPIRequest) SetVid(_vid string) error {
     r._vid = _vid
     r.Set("vid", _vid)
     return nil
 }
 
 // Vid Getter
-func (r YoukuMediaapiVideoSnapshotGetRequest) GetVid() string {
+func (r YoukuMediaapiVideoSnapshotGetAPIRequest) GetVid() string {
     return r._vid
 }

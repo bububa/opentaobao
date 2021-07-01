@@ -11,7 +11,7 @@ alibaba.item.operate.delete
 
 商品删除
 */
-func AlibabaItemOperateDelete(clt *core.SDKClient, req *product.AlibabaItemOperateDeleteRequest, session string) (*product.AlibabaItemOperateDeleteAPIResponse, error) {
+func AlibabaItemOperateDelete(clt *core.SDKClient, req *product.AlibabaItemOperateDeleteAPIRequest, session string) (*product.AlibabaItemOperateDeleteAPIResponse, error) {
     var resp product.AlibabaItemOperateDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

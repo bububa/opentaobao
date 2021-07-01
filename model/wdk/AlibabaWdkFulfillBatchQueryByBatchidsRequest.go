@@ -12,7 +12,7 @@ alibaba.wdk.fulfill.batch.query.by.batchids
 
 根据节点等条件查询履约单小票信息
 */
-type AlibabaWdkFulfillBatchQueryByBatchidsRequest struct {
+type AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest struct {
     model.Params
     // 作业节点类型： WAREHOUSE：仓  DELIVERY_DOCK：配送站 SHOP：经营店
     _nodeType   string
@@ -22,20 +22,20 @@ type AlibabaWdkFulfillBatchQueryByBatchidsRequest struct {
     _batchIds   []string
 }
 
-// 初始化AlibabaWdkFulfillBatchQueryByBatchidsRequest对象
-func NewAlibabaWdkFulfillBatchQueryByBatchidsRequest() *AlibabaWdkFulfillBatchQueryByBatchidsRequest{
-    return &AlibabaWdkFulfillBatchQueryByBatchidsRequest{
+// 初始化AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest对象
+func NewAlibabaWdkFulfillBatchQueryByBatchidsRequest() *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest{
+    return &AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetApiMethodName() string {
+func (r AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.fulfill.batch.query.by.batchids"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetApiParams() url.Values {
+func (r AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetApiParams() url.Values 
 }
 // NodeType Setter
 // 作业节点类型： WAREHOUSE：仓  DELIVERY_DOCK：配送站 SHOP：经营店
-func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetNodeType(_nodeType string) error {
+func (r *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) SetNodeType(_nodeType string) error {
     r._nodeType = _nodeType
     r.Set("node_type", _nodeType)
     return nil
 }
 
 // NodeType Getter
-func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetNodeType() string {
+func (r AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) GetNodeType() string {
     return r._nodeType
 }
 // NodeCode Setter
 // warehouseCode, 出库仓，由基础店仓维护，盒马全域统一,
-func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetNodeCode(_nodeCode string) error {
+func (r *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) SetNodeCode(_nodeCode string) error {
     r._nodeCode = _nodeCode
     r.Set("node_code", _nodeCode)
     return nil
 }
 
 // NodeCode Getter
-func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetNodeCode() string {
+func (r AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) GetNodeCode() string {
     return r._nodeCode
 }
 // BatchIds Setter
 // 批次号列表
-func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetBatchIds(_batchIds []string) error {
+func (r *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) SetBatchIds(_batchIds []string) error {
     r._batchIds = _batchIds
     r.Set("batch_ids", _batchIds)
     return nil
 }
 
 // BatchIds Getter
-func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetBatchIds() []string {
+func (r AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) GetBatchIds() []string {
     return r._batchIds
 }

@@ -11,7 +11,7 @@ alibaba.wdk.ums.inventory.check.get
 
 盘点结果单-回流单
 */
-func AlibabaWdkUmsInventoryCheckGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsInventoryCheckGetRequest, session string) (*wdk.AlibabaWdkUmsInventoryCheckGetAPIResponse, error) {
+func AlibabaWdkUmsInventoryCheckGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsInventoryCheckGetAPIRequest, session string) (*wdk.AlibabaWdkUmsInventoryCheckGetAPIResponse, error) {
     var resp wdk.AlibabaWdkUmsInventoryCheckGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.rhino.supplychain.inbound.confirm
 
 【WMS003】【同步成衣入库完成信息】
 */
-type TaobaoRhinoSupplychainInboundConfirmRequest struct {
+type TaobaoRhinoSupplychainInboundConfirmAPIRequest struct {
     model.Params
     // 入库单确认对象
     _clothingInboundConfirm   *ClothingInboundConfirmDTO
 }
 
-// 初始化TaobaoRhinoSupplychainInboundConfirmRequest对象
-func NewTaobaoRhinoSupplychainInboundConfirmRequest() *TaobaoRhinoSupplychainInboundConfirmRequest{
-    return &TaobaoRhinoSupplychainInboundConfirmRequest{
+// 初始化TaobaoRhinoSupplychainInboundConfirmAPIRequest对象
+func NewTaobaoRhinoSupplychainInboundConfirmRequest() *TaobaoRhinoSupplychainInboundConfirmAPIRequest{
+    return &TaobaoRhinoSupplychainInboundConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRhinoSupplychainInboundConfirmRequest) GetApiMethodName() string {
+func (r TaobaoRhinoSupplychainInboundConfirmAPIRequest) GetApiMethodName() string {
     return "taobao.rhino.supplychain.inbound.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRhinoSupplychainInboundConfirmRequest) GetApiParams() url.Values {
+func (r TaobaoRhinoSupplychainInboundConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoRhinoSupplychainInboundConfirmRequest) GetApiParams() url.Values {
 }
 // ClothingInboundConfirm Setter
 // 入库单确认对象
-func (r *TaobaoRhinoSupplychainInboundConfirmRequest) SetClothingInboundConfirm(_clothingInboundConfirm *ClothingInboundConfirmDTO) error {
+func (r *TaobaoRhinoSupplychainInboundConfirmAPIRequest) SetClothingInboundConfirm(_clothingInboundConfirm *ClothingInboundConfirmDTO) error {
     r._clothingInboundConfirm = _clothingInboundConfirm
     r.Set("clothing_inbound_confirm", _clothingInboundConfirm)
     return nil
 }
 
 // ClothingInboundConfirm Getter
-func (r TaobaoRhinoSupplychainInboundConfirmRequest) GetClothingInboundConfirm() *ClothingInboundConfirmDTO {
+func (r TaobaoRhinoSupplychainInboundConfirmAPIRequest) GetClothingInboundConfirm() *ClothingInboundConfirmDTO {
     return r._clothingInboundConfirm
 }

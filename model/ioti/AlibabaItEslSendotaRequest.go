@@ -12,7 +12,7 @@ alibaba.it.esl.sendota
 
 厂测接口，电子价签ota接口
 */
-type AlibabaItEslSendotaRequest struct {
+type AlibabaItEslSendotaAPIRequest struct {
     model.Params
     // mac
     _macAp   string
@@ -20,20 +20,20 @@ type AlibabaItEslSendotaRequest struct {
     _otaDataBase64String   string
 }
 
-// 初始化AlibabaItEslSendotaRequest对象
-func NewAlibabaItEslSendotaRequest() *AlibabaItEslSendotaRequest{
-    return &AlibabaItEslSendotaRequest{
+// 初始化AlibabaItEslSendotaAPIRequest对象
+func NewAlibabaItEslSendotaRequest() *AlibabaItEslSendotaAPIRequest{
+    return &AlibabaItEslSendotaAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaItEslSendotaRequest) GetApiMethodName() string {
+func (r AlibabaItEslSendotaAPIRequest) GetApiMethodName() string {
     return "alibaba.it.esl.sendota"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaItEslSendotaRequest) GetApiParams() url.Values {
+func (r AlibabaItEslSendotaAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaItEslSendotaRequest) GetApiParams() url.Values {
 }
 // MacAp Setter
 // mac
-func (r *AlibabaItEslSendotaRequest) SetMacAp(_macAp string) error {
+func (r *AlibabaItEslSendotaAPIRequest) SetMacAp(_macAp string) error {
     r._macAp = _macAp
     r.Set("mac_ap", _macAp)
     return nil
 }
 
 // MacAp Getter
-func (r AlibabaItEslSendotaRequest) GetMacAp() string {
+func (r AlibabaItEslSendotaAPIRequest) GetMacAp() string {
     return r._macAp
 }
 // OtaDataBase64String Setter
 // base64的ota包
-func (r *AlibabaItEslSendotaRequest) SetOtaDataBase64String(_otaDataBase64String string) error {
+func (r *AlibabaItEslSendotaAPIRequest) SetOtaDataBase64String(_otaDataBase64String string) error {
     r._otaDataBase64String = _otaDataBase64String
     r.Set("ota_data_base64_string", _otaDataBase64String)
     return nil
 }
 
 // OtaDataBase64String Getter
-func (r AlibabaItEslSendotaRequest) GetOtaDataBase64String() string {
+func (r AlibabaItEslSendotaAPIRequest) GetOtaDataBase64String() string {
     return r._otaDataBase64String
 }

@@ -12,26 +12,26 @@ tmall.item.hscode.detail.get
 
 通过hscode获取计量单位和销售单位
 */
-type TmallItemHscodeDetailGetRequest struct {
+type TmallItemHscodeDetailGetAPIRequest struct {
     model.Params
     // hscode
     _hscode   string
 }
 
-// 初始化TmallItemHscodeDetailGetRequest对象
-func NewTmallItemHscodeDetailGetRequest() *TmallItemHscodeDetailGetRequest{
-    return &TmallItemHscodeDetailGetRequest{
+// 初始化TmallItemHscodeDetailGetAPIRequest对象
+func NewTmallItemHscodeDetailGetRequest() *TmallItemHscodeDetailGetAPIRequest{
+    return &TmallItemHscodeDetailGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallItemHscodeDetailGetRequest) GetApiMethodName() string {
+func (r TmallItemHscodeDetailGetAPIRequest) GetApiMethodName() string {
     return "tmall.item.hscode.detail.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallItemHscodeDetailGetRequest) GetApiParams() url.Values {
+func (r TmallItemHscodeDetailGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallItemHscodeDetailGetRequest) GetApiParams() url.Values {
 }
 // Hscode Setter
 // hscode
-func (r *TmallItemHscodeDetailGetRequest) SetHscode(_hscode string) error {
+func (r *TmallItemHscodeDetailGetAPIRequest) SetHscode(_hscode string) error {
     r._hscode = _hscode
     r.Set("hscode", _hscode)
     return nil
 }
 
 // Hscode Getter
-func (r TmallItemHscodeDetailGetRequest) GetHscode() string {
+func (r TmallItemHscodeDetailGetAPIRequest) GetHscode() string {
     return r._hscode
 }

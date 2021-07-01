@@ -12,26 +12,26 @@ alibaba.security.jaq.rp.submit
 
 聚安全实人认证提交认证接口
 */
-type AlibabaSecurityJaqRpSubmitRequest struct {
+type AlibabaSecurityJaqRpSubmitAPIRequest struct {
     model.Params
     // 认证token
     _verifyToken   string
 }
 
-// 初始化AlibabaSecurityJaqRpSubmitRequest对象
-func NewAlibabaSecurityJaqRpSubmitRequest() *AlibabaSecurityJaqRpSubmitRequest{
-    return &AlibabaSecurityJaqRpSubmitRequest{
+// 初始化AlibabaSecurityJaqRpSubmitAPIRequest对象
+func NewAlibabaSecurityJaqRpSubmitRequest() *AlibabaSecurityJaqRpSubmitAPIRequest{
+    return &AlibabaSecurityJaqRpSubmitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqRpSubmitRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqRpSubmitAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.rp.submit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqRpSubmitRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqRpSubmitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqRpSubmitRequest) GetApiParams() url.Values {
 }
 // VerifyToken Setter
 // 认证token
-func (r *AlibabaSecurityJaqRpSubmitRequest) SetVerifyToken(_verifyToken string) error {
+func (r *AlibabaSecurityJaqRpSubmitAPIRequest) SetVerifyToken(_verifyToken string) error {
     r._verifyToken = _verifyToken
     r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
-func (r AlibabaSecurityJaqRpSubmitRequest) GetVerifyToken() string {
+func (r AlibabaSecurityJaqRpSubmitAPIRequest) GetVerifyToken() string {
     return r._verifyToken
 }

@@ -12,26 +12,26 @@ alibaba.alihealth.drug.getbarcode.bytraccode
 
 根据追溯码获取69码
 */
-type AlibabaAlihealthDrugGetbarcodeBytraccodeRequest struct {
+type AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest struct {
     model.Params
     // 追溯码
     _traceCode   string
 }
 
-// 初始化AlibabaAlihealthDrugGetbarcodeBytraccodeRequest对象
-func NewAlibabaAlihealthDrugGetbarcodeBytraccodeRequest() *AlibabaAlihealthDrugGetbarcodeBytraccodeRequest{
-    return &AlibabaAlihealthDrugGetbarcodeBytraccodeRequest{
+// 初始化AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest对象
+func NewAlibabaAlihealthDrugGetbarcodeBytraccodeRequest() *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest{
+    return &AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugGetbarcodeBytraccodeRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.getbarcode.bytraccode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugGetbarcodeBytraccodeRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugGetbarcodeBytraccodeRequest) GetApiParams() url.Valu
 }
 // TraceCode Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugGetbarcodeBytraccodeRequest) SetTraceCode(_traceCode string) error {
+func (r *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) SetTraceCode(_traceCode string) error {
     r._traceCode = _traceCode
     r.Set("trace_code", _traceCode)
     return nil
 }
 
 // TraceCode Getter
-func (r AlibabaAlihealthDrugGetbarcodeBytraccodeRequest) GetTraceCode() string {
+func (r AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) GetTraceCode() string {
     return r._traceCode
 }

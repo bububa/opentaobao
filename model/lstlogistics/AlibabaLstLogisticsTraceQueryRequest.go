@@ -12,26 +12,26 @@ alibaba.lst.logistics.trace.query
 
 查询LP单物流追踪信息
 */
-type AlibabaLstLogisticsTraceQueryRequest struct {
+type AlibabaLstLogisticsTraceQueryAPIRequest struct {
     model.Params
     // 入参
     _query   *LstLogisticsTraceQuery
 }
 
-// 初始化AlibabaLstLogisticsTraceQueryRequest对象
-func NewAlibabaLstLogisticsTraceQueryRequest() *AlibabaLstLogisticsTraceQueryRequest{
-    return &AlibabaLstLogisticsTraceQueryRequest{
+// 初始化AlibabaLstLogisticsTraceQueryAPIRequest对象
+func NewAlibabaLstLogisticsTraceQueryRequest() *AlibabaLstLogisticsTraceQueryAPIRequest{
+    return &AlibabaLstLogisticsTraceQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstLogisticsTraceQueryRequest) GetApiMethodName() string {
+func (r AlibabaLstLogisticsTraceQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.logistics.trace.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstLogisticsTraceQueryRequest) GetApiParams() url.Values {
+func (r AlibabaLstLogisticsTraceQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstLogisticsTraceQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 入参
-func (r *AlibabaLstLogisticsTraceQueryRequest) SetQuery(_query *LstLogisticsTraceQuery) error {
+func (r *AlibabaLstLogisticsTraceQueryAPIRequest) SetQuery(_query *LstLogisticsTraceQuery) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r AlibabaLstLogisticsTraceQueryRequest) GetQuery() *LstLogisticsTraceQuery {
+func (r AlibabaLstLogisticsTraceQueryAPIRequest) GetQuery() *LstLogisticsTraceQuery {
     return r._query
 }

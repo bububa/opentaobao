@@ -12,24 +12,24 @@ taobao.oc.ap.contractsigned.get
 
 用户是否签署支付宝代扣协议
 */
-type TaobaoOcApContractsignedGetRequest struct {
+type TaobaoOcApContractsignedGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoOcApContractsignedGetRequest对象
-func NewTaobaoOcApContractsignedGetRequest() *TaobaoOcApContractsignedGetRequest{
-    return &TaobaoOcApContractsignedGetRequest{
+// 初始化TaobaoOcApContractsignedGetAPIRequest对象
+func NewTaobaoOcApContractsignedGetRequest() *TaobaoOcApContractsignedGetAPIRequest{
+    return &TaobaoOcApContractsignedGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOcApContractsignedGetRequest) GetApiMethodName() string {
+func (r TaobaoOcApContractsignedGetAPIRequest) GetApiMethodName() string {
     return "taobao.oc.ap.contractsigned.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOcApContractsignedGetRequest) GetApiParams() url.Values {
+func (r TaobaoOcApContractsignedGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

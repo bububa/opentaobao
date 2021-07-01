@@ -11,7 +11,7 @@ alibaba.marketing.lottery.draw.dodraw
 
 抽奖平台PC端抽奖接口
 */
-func AlibabaMarketingLotteryDrawDodraw(clt *core.SDKClient, req *promotion.AlibabaMarketingLotteryDrawDodrawRequest, session string) (*promotion.AlibabaMarketingLotteryDrawDodrawAPIResponse, error) {
+func AlibabaMarketingLotteryDrawDodraw(clt *core.SDKClient, req *promotion.AlibabaMarketingLotteryDrawDodrawAPIRequest, session string) (*promotion.AlibabaMarketingLotteryDrawDodrawAPIResponse, error) {
     var resp promotion.AlibabaMarketingLotteryDrawDodrawAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

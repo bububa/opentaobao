@@ -11,7 +11,7 @@ alibaba.campus.acl.insertrole
 
 新增角色
 */
-func AlibabaCampusAclInsertrole(clt *core.SDKClient, req *campus.AlibabaCampusAclInsertroleRequest, session string) (*campus.AlibabaCampusAclInsertroleAPIResponse, error) {
+func AlibabaCampusAclInsertrole(clt *core.SDKClient, req *campus.AlibabaCampusAclInsertroleAPIRequest, session string) (*campus.AlibabaCampusAclInsertroleAPIResponse, error) {
     var resp campus.AlibabaCampusAclInsertroleAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

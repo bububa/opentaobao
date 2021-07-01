@@ -11,7 +11,7 @@ alibaba.mozi.fusion.dimission.employee.account
 
 人员离职并且回收账号
 */
-func AlibabaMoziFusionDimissionEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionDimissionEmployeeAccountRequest, session string) (*mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIResponse, error) {
+func AlibabaMoziFusionDimissionEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIRequest, session string) (*mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIResponse, error) {
     var resp mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

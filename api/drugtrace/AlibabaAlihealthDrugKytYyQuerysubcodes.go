@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.yy.querysubcodes
 
 单码的了码查询
 */
-func AlibabaAlihealthDrugKytYyQuerysubcodes(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytYyQuerysubcodesRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytYyQuerysubcodesAPIResponse, error) {
+func AlibabaAlihealthDrugKytYyQuerysubcodes(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytYyQuerysubcodesAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytYyQuerysubcodesAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytYyQuerysubcodesAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

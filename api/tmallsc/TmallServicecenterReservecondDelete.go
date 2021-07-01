@@ -11,7 +11,7 @@ tmall.servicecenter.reservecond.delete
 
 删除主动预约开通条件
 */
-func TmallServicecenterReservecondDelete(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondDeleteRequest, session string) (*tmallsc.TmallServicecenterReservecondDeleteAPIResponse, error) {
+func TmallServicecenterReservecondDelete(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondDeleteAPIRequest, session string) (*tmallsc.TmallServicecenterReservecondDeleteAPIResponse, error) {
     var resp tmallsc.TmallServicecenterReservecondDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

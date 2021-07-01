@@ -12,26 +12,26 @@ alibaba.aliqin.axb.vendor.sms.intercept
 
 用于给供应商推送需要托收的短信
 */
-type AlibabaAliqinAxbVendorSmsInterceptRequest struct {
+type AlibabaAliqinAxbVendorSmsInterceptAPIRequest struct {
     model.Params
     // 短信托收结构体
     _smsInterceptRequest   *SmsInterceptRequest
 }
 
-// 初始化AlibabaAliqinAxbVendorSmsInterceptRequest对象
-func NewAlibabaAliqinAxbVendorSmsInterceptRequest() *AlibabaAliqinAxbVendorSmsInterceptRequest{
-    return &AlibabaAliqinAxbVendorSmsInterceptRequest{
+// 初始化AlibabaAliqinAxbVendorSmsInterceptAPIRequest对象
+func NewAlibabaAliqinAxbVendorSmsInterceptRequest() *AlibabaAliqinAxbVendorSmsInterceptAPIRequest{
+    return &AlibabaAliqinAxbVendorSmsInterceptAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAliqinAxbVendorSmsInterceptRequest) GetApiMethodName() string {
+func (r AlibabaAliqinAxbVendorSmsInterceptAPIRequest) GetApiMethodName() string {
     return "alibaba.aliqin.axb.vendor.sms.intercept"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinAxbVendorSmsInterceptRequest) GetApiParams() url.Values {
+func (r AlibabaAliqinAxbVendorSmsInterceptAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAliqinAxbVendorSmsInterceptRequest) GetApiParams() url.Values {
 }
 // SmsInterceptRequest Setter
 // 短信托收结构体
-func (r *AlibabaAliqinAxbVendorSmsInterceptRequest) SetSmsInterceptRequest(_smsInterceptRequest *SmsInterceptRequest) error {
+func (r *AlibabaAliqinAxbVendorSmsInterceptAPIRequest) SetSmsInterceptRequest(_smsInterceptRequest *SmsInterceptRequest) error {
     r._smsInterceptRequest = _smsInterceptRequest
     r.Set("sms_intercept_request", _smsInterceptRequest)
     return nil
 }
 
 // SmsInterceptRequest Getter
-func (r AlibabaAliqinAxbVendorSmsInterceptRequest) GetSmsInterceptRequest() *SmsInterceptRequest {
+func (r AlibabaAliqinAxbVendorSmsInterceptAPIRequest) GetSmsInterceptRequest() *SmsInterceptRequest {
     return r._smsInterceptRequest
 }

@@ -11,7 +11,7 @@ taobao.singletreasure.activity.update
 
 修改活动接口
 */
-func TaobaoSingletreasureActivityUpdate(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityUpdateRequest, session string) (*singletreasure.TaobaoSingletreasureActivityUpdateAPIResponse, error) {
+func TaobaoSingletreasureActivityUpdate(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityUpdateAPIRequest, session string) (*singletreasure.TaobaoSingletreasureActivityUpdateAPIResponse, error) {
     var resp singletreasure.TaobaoSingletreasureActivityUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

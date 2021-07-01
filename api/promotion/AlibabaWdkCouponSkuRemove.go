@@ -11,7 +11,7 @@ alibaba.wdk.coupon.sku.remove
 
 优惠券商品删除
 */
-func AlibabaWdkCouponSkuRemove(clt *core.SDKClient, req *promotion.AlibabaWdkCouponSkuRemoveRequest, session string) (*promotion.AlibabaWdkCouponSkuRemoveAPIResponse, error) {
+func AlibabaWdkCouponSkuRemove(clt *core.SDKClient, req *promotion.AlibabaWdkCouponSkuRemoveAPIRequest, session string) (*promotion.AlibabaWdkCouponSkuRemoveAPIResponse, error) {
     var resp promotion.AlibabaWdkCouponSkuRemoveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

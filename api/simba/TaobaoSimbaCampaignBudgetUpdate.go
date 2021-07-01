@@ -11,7 +11,7 @@ taobao.simba.campaign.budget.update
 
 更新一个推广计划的日限额
 */
-func TaobaoSimbaCampaignBudgetUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignBudgetUpdateRequest, session string) (*simba.TaobaoSimbaCampaignBudgetUpdateAPIResponse, error) {
+func TaobaoSimbaCampaignBudgetUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignBudgetUpdateAPIRequest, session string) (*simba.TaobaoSimbaCampaignBudgetUpdateAPIResponse, error) {
     var resp simba.TaobaoSimbaCampaignBudgetUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

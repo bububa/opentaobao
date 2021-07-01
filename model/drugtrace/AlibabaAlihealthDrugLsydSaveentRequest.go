@@ -12,7 +12,7 @@ alibaba.alihealth.drug.lsyd.saveent
 
 新增往来单位企业记录
 */
-type AlibabaAlihealthDrugLsydSaveentRequest struct {
+type AlibabaAlihealthDrugLsydSaveentAPIRequest struct {
     model.Params
     // 添加企业唯一标识
     _refEntId   string
@@ -22,20 +22,20 @@ type AlibabaAlihealthDrugLsydSaveentRequest struct {
     _licPictureByte   *model.File
 }
 
-// 初始化AlibabaAlihealthDrugLsydSaveentRequest对象
-func NewAlibabaAlihealthDrugLsydSaveentRequest() *AlibabaAlihealthDrugLsydSaveentRequest{
-    return &AlibabaAlihealthDrugLsydSaveentRequest{
+// 初始化AlibabaAlihealthDrugLsydSaveentAPIRequest对象
+func NewAlibabaAlihealthDrugLsydSaveentRequest() *AlibabaAlihealthDrugLsydSaveentAPIRequest{
+    return &AlibabaAlihealthDrugLsydSaveentAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugLsydSaveentRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugLsydSaveentAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.lsyd.saveent"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugLsydSaveentRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugLsydSaveentAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthDrugLsydSaveentRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 添加企业唯一标识
-func (r *AlibabaAlihealthDrugLsydSaveentRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugLsydSaveentAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugLsydSaveentRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugLsydSaveentAPIRequest) GetRefEntId() string {
     return r._refEntId
 }
 // AddEntReq Setter
 // 新增企业信息
-func (r *AlibabaAlihealthDrugLsydSaveentRequest) SetAddEntReq(_addEntReq *AddEntReqDTO) error {
+func (r *AlibabaAlihealthDrugLsydSaveentAPIRequest) SetAddEntReq(_addEntReq *AddEntReqDTO) error {
     r._addEntReq = _addEntReq
     r.Set("add_ent_req", _addEntReq)
     return nil
 }
 
 // AddEntReq Getter
-func (r AlibabaAlihealthDrugLsydSaveentRequest) GetAddEntReq() *AddEntReqDTO {
+func (r AlibabaAlihealthDrugLsydSaveentAPIRequest) GetAddEntReq() *AddEntReqDTO {
     return r._addEntReq
 }
 // LicPictureByte Setter
 // 图片数据流。图片大小务必控制在2M以内
-func (r *AlibabaAlihealthDrugLsydSaveentRequest) SetLicPictureByte(_licPictureByte *model.File) error {
+func (r *AlibabaAlihealthDrugLsydSaveentAPIRequest) SetLicPictureByte(_licPictureByte *model.File) error {
     r._licPictureByte = _licPictureByte
     r.Set("lic_picture_byte", _licPictureByte)
     return nil
 }
 
 // LicPictureByte Getter
-func (r AlibabaAlihealthDrugLsydSaveentRequest) GetLicPictureByte() *model.File {
+func (r AlibabaAlihealthDrugLsydSaveentAPIRequest) GetLicPictureByte() *model.File {
     return r._licPictureByte
 }

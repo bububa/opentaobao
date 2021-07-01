@@ -11,7 +11,7 @@ taobao.xhotel.item.selection.seller.stat.summary
 
 商家数据-选品整体概况
 */
-func TaobaoXhotelItemSelectionSellerStatSummary(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelItemSelectionSellerStatSummaryRequest, session string) (*xhotelitem.TaobaoXhotelItemSelectionSellerStatSummaryAPIResponse, error) {
+func TaobaoXhotelItemSelectionSellerStatSummary(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest, session string) (*xhotelitem.TaobaoXhotelItemSelectionSellerStatSummaryAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelItemSelectionSellerStatSummaryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

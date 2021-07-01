@@ -11,7 +11,7 @@ alibaba.alihealth.outflow.prescription.syncstatus
 
 阿里健康-处方外流-对外提供同步处方状态功能
 */
-func AlibabaAlihealthOutflowPrescriptionSyncstatus(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowPrescriptionSyncstatusRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowPrescriptionSyncstatusAPIResponse, error) {
+func AlibabaAlihealthOutflowPrescriptionSyncstatus(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowPrescriptionSyncstatusAPIResponse, error) {
     var resp alihealthoutflow.AlibabaAlihealthOutflowPrescriptionSyncstatusAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

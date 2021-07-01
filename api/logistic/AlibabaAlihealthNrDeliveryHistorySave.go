@@ -11,7 +11,7 @@ alibaba.alihealth.nr.delivery.history.save
 
 商家ERP回传物流信息
 */
-func AlibabaAlihealthNrDeliveryHistorySave(clt *core.SDKClient, req *logistic.AlibabaAlihealthNrDeliveryHistorySaveRequest, session string) (*logistic.AlibabaAlihealthNrDeliveryHistorySaveAPIResponse, error) {
+func AlibabaAlihealthNrDeliveryHistorySave(clt *core.SDKClient, req *logistic.AlibabaAlihealthNrDeliveryHistorySaveAPIRequest, session string) (*logistic.AlibabaAlihealthNrDeliveryHistorySaveAPIResponse, error) {
     var resp logistic.AlibabaAlihealthNrDeliveryHistorySaveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

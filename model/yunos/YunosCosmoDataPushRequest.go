@@ -12,7 +12,7 @@ yunos.cosmo.data.push
 
 YunOS提供外部数据源接入，并输出到多端设备上，该接口提供了PUSH模式的数据接入
 */
-type YunosCosmoDataPushRequest struct {
+type YunosCosmoDataPushAPIRequest struct {
     model.Params
     // 业务方数据源唯一标识，由COSMO平台颁发
     _appId   string
@@ -20,20 +20,20 @@ type YunosCosmoDataPushRequest struct {
     _jsonModel   string
 }
 
-// 初始化YunosCosmoDataPushRequest对象
-func NewYunosCosmoDataPushRequest() *YunosCosmoDataPushRequest{
-    return &YunosCosmoDataPushRequest{
+// 初始化YunosCosmoDataPushAPIRequest对象
+func NewYunosCosmoDataPushRequest() *YunosCosmoDataPushAPIRequest{
+    return &YunosCosmoDataPushAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosCosmoDataPushRequest) GetApiMethodName() string {
+func (r YunosCosmoDataPushAPIRequest) GetApiMethodName() string {
     return "yunos.cosmo.data.push"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosCosmoDataPushRequest) GetApiParams() url.Values {
+func (r YunosCosmoDataPushAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r YunosCosmoDataPushRequest) GetApiParams() url.Values {
 }
 // AppId Setter
 // 业务方数据源唯一标识，由COSMO平台颁发
-func (r *YunosCosmoDataPushRequest) SetAppId(_appId string) error {
+func (r *YunosCosmoDataPushAPIRequest) SetAppId(_appId string) error {
     r._appId = _appId
     r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
-func (r YunosCosmoDataPushRequest) GetAppId() string {
+func (r YunosCosmoDataPushAPIRequest) GetAppId() string {
     return r._appId
 }
 // JsonModel Setter
 // 业务方推送数据，List结构的JSON序列化字符串
-func (r *YunosCosmoDataPushRequest) SetJsonModel(_jsonModel string) error {
+func (r *YunosCosmoDataPushAPIRequest) SetJsonModel(_jsonModel string) error {
     r._jsonModel = _jsonModel
     r.Set("json_model", _jsonModel)
     return nil
 }
 
 // JsonModel Getter
-func (r YunosCosmoDataPushRequest) GetJsonModel() string {
+func (r YunosCosmoDataPushAPIRequest) GetJsonModel() string {
     return r._jsonModel
 }

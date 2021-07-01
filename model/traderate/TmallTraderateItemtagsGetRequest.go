@@ -12,26 +12,26 @@ tmall.traderate.itemtags.get
 
 通过商品ID获取标签详细信息
 */
-type TmallTraderateItemtagsGetRequest struct {
+type TmallTraderateItemtagsGetAPIRequest struct {
     model.Params
     // 商品ID
     _itemId   int64
 }
 
-// 初始化TmallTraderateItemtagsGetRequest对象
-func NewTmallTraderateItemtagsGetRequest() *TmallTraderateItemtagsGetRequest{
-    return &TmallTraderateItemtagsGetRequest{
+// 初始化TmallTraderateItemtagsGetAPIRequest对象
+func NewTmallTraderateItemtagsGetRequest() *TmallTraderateItemtagsGetAPIRequest{
+    return &TmallTraderateItemtagsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallTraderateItemtagsGetRequest) GetApiMethodName() string {
+func (r TmallTraderateItemtagsGetAPIRequest) GetApiMethodName() string {
     return "tmall.traderate.itemtags.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallTraderateItemtagsGetRequest) GetApiParams() url.Values {
+func (r TmallTraderateItemtagsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallTraderateItemtagsGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *TmallTraderateItemtagsGetRequest) SetItemId(_itemId int64) error {
+func (r *TmallTraderateItemtagsGetAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TmallTraderateItemtagsGetRequest) GetItemId() int64 {
+func (r TmallTraderateItemtagsGetAPIRequest) GetItemId() int64 {
     return r._itemId
 }

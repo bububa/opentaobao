@@ -12,26 +12,26 @@ alibaba.tcls.aelophy.merchant.order.upload
 
 商家订单数据上传
 */
-type AlibabaTclsAelophyMerchantOrderUploadRequest struct {
+type AlibabaTclsAelophyMerchantOrderUploadAPIRequest struct {
     model.Params
     // 商家订单信息
     _orderInfo   *MerchantOrderInfo
 }
 
-// 初始化AlibabaTclsAelophyMerchantOrderUploadRequest对象
-func NewAlibabaTclsAelophyMerchantOrderUploadRequest() *AlibabaTclsAelophyMerchantOrderUploadRequest{
-    return &AlibabaTclsAelophyMerchantOrderUploadRequest{
+// 初始化AlibabaTclsAelophyMerchantOrderUploadAPIRequest对象
+func NewAlibabaTclsAelophyMerchantOrderUploadRequest() *AlibabaTclsAelophyMerchantOrderUploadAPIRequest{
+    return &AlibabaTclsAelophyMerchantOrderUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTclsAelophyMerchantOrderUploadRequest) GetApiMethodName() string {
+func (r AlibabaTclsAelophyMerchantOrderUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.tcls.aelophy.merchant.order.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTclsAelophyMerchantOrderUploadRequest) GetApiParams() url.Values {
+func (r AlibabaTclsAelophyMerchantOrderUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantOrderUploadRequest) GetApiParams() url.Values 
 }
 // OrderInfo Setter
 // 商家订单信息
-func (r *AlibabaTclsAelophyMerchantOrderUploadRequest) SetOrderInfo(_orderInfo *MerchantOrderInfo) error {
+func (r *AlibabaTclsAelophyMerchantOrderUploadAPIRequest) SetOrderInfo(_orderInfo *MerchantOrderInfo) error {
     r._orderInfo = _orderInfo
     r.Set("order_info", _orderInfo)
     return nil
 }
 
 // OrderInfo Getter
-func (r AlibabaTclsAelophyMerchantOrderUploadRequest) GetOrderInfo() *MerchantOrderInfo {
+func (r AlibabaTclsAelophyMerchantOrderUploadAPIRequest) GetOrderInfo() *MerchantOrderInfo {
     return r._orderInfo
 }

@@ -12,26 +12,26 @@ alibaba.damai.maitix.eticket.distribution.query
 
 分销电子票查询接口
 */
-type AlibabaDamaiMaitixEticketDistributionQueryRequest struct {
+type AlibabaDamaiMaitixEticketDistributionQueryAPIRequest struct {
     model.Params
     // 入参param
     _param   *EticketQueryParam
 }
 
-// 初始化AlibabaDamaiMaitixEticketDistributionQueryRequest对象
-func NewAlibabaDamaiMaitixEticketDistributionQueryRequest() *AlibabaDamaiMaitixEticketDistributionQueryRequest{
-    return &AlibabaDamaiMaitixEticketDistributionQueryRequest{
+// 初始化AlibabaDamaiMaitixEticketDistributionQueryAPIRequest对象
+func NewAlibabaDamaiMaitixEticketDistributionQueryRequest() *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest{
+    return &AlibabaDamaiMaitixEticketDistributionQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixEticketDistributionQueryRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.eticket.distribution.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixEticketDistributionQueryRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixEticketDistributionQueryRequest) GetApiParams() url.Va
 }
 // Param Setter
 // 入参param
-func (r *AlibabaDamaiMaitixEticketDistributionQueryRequest) SetParam(_param *EticketQueryParam) error {
+func (r *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) SetParam(_param *EticketQueryParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaDamaiMaitixEticketDistributionQueryRequest) GetParam() *EticketQueryParam {
+func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetParam() *EticketQueryParam {
     return r._param
 }

@@ -12,7 +12,7 @@ tmall.nr.fulfill.cancel.reason.query
 
 新零售门店业务查询取消上门揽件的原因列表
 */
-type TmallNrFulfillCancelReasonQueryRequest struct {
+type TmallNrFulfillCancelReasonQueryAPIRequest struct {
     model.Params
     // 商家的sellerID
     _sellerId   int64
@@ -20,20 +20,20 @@ type TmallNrFulfillCancelReasonQueryRequest struct {
     _mainOrderId   int64
 }
 
-// 初始化TmallNrFulfillCancelReasonQueryRequest对象
-func NewTmallNrFulfillCancelReasonQueryRequest() *TmallNrFulfillCancelReasonQueryRequest{
-    return &TmallNrFulfillCancelReasonQueryRequest{
+// 初始化TmallNrFulfillCancelReasonQueryAPIRequest对象
+func NewTmallNrFulfillCancelReasonQueryRequest() *TmallNrFulfillCancelReasonQueryAPIRequest{
+    return &TmallNrFulfillCancelReasonQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrFulfillCancelReasonQueryRequest) GetApiMethodName() string {
+func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetApiMethodName() string {
     return "tmall.nr.fulfill.cancel.reason.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrFulfillCancelReasonQueryRequest) GetApiParams() url.Values {
+func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallNrFulfillCancelReasonQueryRequest) GetApiParams() url.Values {
 }
 // SellerId Setter
 // 商家的sellerID
-func (r *TmallNrFulfillCancelReasonQueryRequest) SetSellerId(_sellerId int64) error {
+func (r *TmallNrFulfillCancelReasonQueryAPIRequest) SetSellerId(_sellerId int64) error {
     r._sellerId = _sellerId
     r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
-func (r TmallNrFulfillCancelReasonQueryRequest) GetSellerId() int64 {
+func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetSellerId() int64 {
     return r._sellerId
 }
 // MainOrderId Setter
 // 淘宝交易的主订单号
-func (r *TmallNrFulfillCancelReasonQueryRequest) SetMainOrderId(_mainOrderId int64) error {
+func (r *TmallNrFulfillCancelReasonQueryAPIRequest) SetMainOrderId(_mainOrderId int64) error {
     r._mainOrderId = _mainOrderId
     r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
-func (r TmallNrFulfillCancelReasonQueryRequest) GetMainOrderId() int64 {
+func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetMainOrderId() int64 {
     return r._mainOrderId
 }

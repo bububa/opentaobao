@@ -11,7 +11,7 @@ tmall.traceplatform.cts.order.stop
 
 截断CTS订单
 */
-func TmallTraceplatformCtsOrderStop(clt *core.SDKClient, req *tmallhk.TmallTraceplatformCtsOrderStopRequest, session string) (*tmallhk.TmallTraceplatformCtsOrderStopAPIResponse, error) {
+func TmallTraceplatformCtsOrderStop(clt *core.SDKClient, req *tmallhk.TmallTraceplatformCtsOrderStopAPIRequest, session string) (*tmallhk.TmallTraceplatformCtsOrderStopAPIResponse, error) {
     var resp tmallhk.TmallTraceplatformCtsOrderStopAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

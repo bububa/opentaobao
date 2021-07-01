@@ -11,7 +11,7 @@ aliexpress.solution.sku.attribute.query
 
 Query the sku attribute information belonged to a specific category, customized for oversea merchants.
 */
-func AliexpressSolutionSkuAttributeQuery(clt *core.SDKClient, req *aesolution.AliexpressSolutionSkuAttributeQueryRequest, session string) (*aesolution.AliexpressSolutionSkuAttributeQueryAPIResponse, error) {
+func AliexpressSolutionSkuAttributeQuery(clt *core.SDKClient, req *aesolution.AliexpressSolutionSkuAttributeQueryAPIRequest, session string) (*aesolution.AliexpressSolutionSkuAttributeQueryAPIResponse, error) {
     var resp aesolution.AliexpressSolutionSkuAttributeQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

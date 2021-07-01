@@ -12,7 +12,7 @@ alibaba.einvoice.tax.opt.esignresult.query
 
 查询用户是否已经签约
 */
-type AlibabaEinvoiceTaxOptEsignresultQueryRequest struct {
+type AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest struct {
     model.Params
     // 业务方编码
     _employerCode   string
@@ -20,20 +20,20 @@ type AlibabaEinvoiceTaxOptEsignresultQueryRequest struct {
     _identificationInBelongingEmployer   string
 }
 
-// 初始化AlibabaEinvoiceTaxOptEsignresultQueryRequest对象
-func NewAlibabaEinvoiceTaxOptEsignresultQueryRequest() *AlibabaEinvoiceTaxOptEsignresultQueryRequest{
-    return &AlibabaEinvoiceTaxOptEsignresultQueryRequest{
+// 初始化AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest对象
+func NewAlibabaEinvoiceTaxOptEsignresultQueryRequest() *AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest{
+    return &AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceTaxOptEsignresultQueryRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.einvoice.tax.opt.esignresult.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceTaxOptEsignresultQueryRequest) GetApiParams() url.Values {
+func (r AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaEinvoiceTaxOptEsignresultQueryRequest) GetApiParams() url.Values 
 }
 // EmployerCode Setter
 // 业务方编码
-func (r *AlibabaEinvoiceTaxOptEsignresultQueryRequest) SetEmployerCode(_employerCode string) error {
+func (r *AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest) SetEmployerCode(_employerCode string) error {
     r._employerCode = _employerCode
     r.Set("employer_code", _employerCode)
     return nil
 }
 
 // EmployerCode Getter
-func (r AlibabaEinvoiceTaxOptEsignresultQueryRequest) GetEmployerCode() string {
+func (r AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest) GetEmployerCode() string {
     return r._employerCode
 }
 // IdentificationInBelongingEmployer Setter
 // 用户在业务方平台的userid
-func (r *AlibabaEinvoiceTaxOptEsignresultQueryRequest) SetIdentificationInBelongingEmployer(_identificationInBelongingEmployer string) error {
+func (r *AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest) SetIdentificationInBelongingEmployer(_identificationInBelongingEmployer string) error {
     r._identificationInBelongingEmployer = _identificationInBelongingEmployer
     r.Set("identification_in_belonging_employer", _identificationInBelongingEmployer)
     return nil
 }
 
 // IdentificationInBelongingEmployer Getter
-func (r AlibabaEinvoiceTaxOptEsignresultQueryRequest) GetIdentificationInBelongingEmployer() string {
+func (r AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest) GetIdentificationInBelongingEmployer() string {
     return r._identificationInBelongingEmployer
 }

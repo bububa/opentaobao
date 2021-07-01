@@ -12,26 +12,26 @@ yunos.service.cmns.coa.push
 
 调用CMNS系统的pushMessage接口实现消息通知到YUNOS设备的第三方应用软件。
 */
-type YunosServiceCmnsCoaPushRequest struct {
+type YunosServiceCmnsCoaPushAPIRequest struct {
     model.Params
     // 消息结构对象
     _msgObj   *CmnsMessage
 }
 
-// 初始化YunosServiceCmnsCoaPushRequest对象
-func NewYunosServiceCmnsCoaPushRequest() *YunosServiceCmnsCoaPushRequest{
-    return &YunosServiceCmnsCoaPushRequest{
+// 初始化YunosServiceCmnsCoaPushAPIRequest对象
+func NewYunosServiceCmnsCoaPushRequest() *YunosServiceCmnsCoaPushAPIRequest{
+    return &YunosServiceCmnsCoaPushAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosServiceCmnsCoaPushRequest) GetApiMethodName() string {
+func (r YunosServiceCmnsCoaPushAPIRequest) GetApiMethodName() string {
     return "yunos.service.cmns.coa.push"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosServiceCmnsCoaPushRequest) GetApiParams() url.Values {
+func (r YunosServiceCmnsCoaPushAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosServiceCmnsCoaPushRequest) GetApiParams() url.Values {
 }
 // MsgObj Setter
 // 消息结构对象
-func (r *YunosServiceCmnsCoaPushRequest) SetMsgObj(_msgObj *CmnsMessage) error {
+func (r *YunosServiceCmnsCoaPushAPIRequest) SetMsgObj(_msgObj *CmnsMessage) error {
     r._msgObj = _msgObj
     r.Set("msg_obj", _msgObj)
     return nil
 }
 
 // MsgObj Getter
-func (r YunosServiceCmnsCoaPushRequest) GetMsgObj() *CmnsMessage {
+func (r YunosServiceCmnsCoaPushAPIRequest) GetMsgObj() *CmnsMessage {
     return r._msgObj
 }

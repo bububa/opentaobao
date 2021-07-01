@@ -12,26 +12,26 @@ taobao.omniitem.category.get
 
 全渠道商品轻发布类目信息
 */
-type TaobaoOmniitemCategoryGetRequest struct {
+type TaobaoOmniitemCategoryGetAPIRequest struct {
     model.Params
     // 全渠道商品类目ID，不填表示获取所有全渠道商品类目信息
     _categoryId   int64
 }
 
-// 初始化TaobaoOmniitemCategoryGetRequest对象
-func NewTaobaoOmniitemCategoryGetRequest() *TaobaoOmniitemCategoryGetRequest{
-    return &TaobaoOmniitemCategoryGetRequest{
+// 初始化TaobaoOmniitemCategoryGetAPIRequest对象
+func NewTaobaoOmniitemCategoryGetRequest() *TaobaoOmniitemCategoryGetAPIRequest{
+    return &TaobaoOmniitemCategoryGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniitemCategoryGetRequest) GetApiMethodName() string {
+func (r TaobaoOmniitemCategoryGetAPIRequest) GetApiMethodName() string {
     return "taobao.omniitem.category.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniitemCategoryGetRequest) GetApiParams() url.Values {
+func (r TaobaoOmniitemCategoryGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOmniitemCategoryGetRequest) GetApiParams() url.Values {
 }
 // CategoryId Setter
 // 全渠道商品类目ID，不填表示获取所有全渠道商品类目信息
-func (r *TaobaoOmniitemCategoryGetRequest) SetCategoryId(_categoryId int64) error {
+func (r *TaobaoOmniitemCategoryGetAPIRequest) SetCategoryId(_categoryId int64) error {
     r._categoryId = _categoryId
     r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
-func (r TaobaoOmniitemCategoryGetRequest) GetCategoryId() int64 {
+func (r TaobaoOmniitemCategoryGetAPIRequest) GetCategoryId() int64 {
     return r._categoryId
 }

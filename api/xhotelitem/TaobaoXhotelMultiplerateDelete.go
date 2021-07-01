@@ -11,7 +11,7 @@ taobao.xhotel.multiplerate.delete
 
 酒店产品库rate删除
 */
-func TaobaoXhotelMultiplerateDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultiplerateDeleteRequest, session string) (*xhotelitem.TaobaoXhotelMultiplerateDeleteAPIResponse, error) {
+func TaobaoXhotelMultiplerateDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultiplerateDeleteAPIRequest, session string) (*xhotelitem.TaobaoXhotelMultiplerateDeleteAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelMultiplerateDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

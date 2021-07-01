@@ -11,7 +11,7 @@ tmall.car.lease.exceptionflowsynchronize
 
 天猫开新车租后异常流线下处理状态通知接口
 */
-func TmallCarLeaseExceptionflowsynchronize(clt *core.SDKClient, req *tmallcar.TmallCarLeaseExceptionflowsynchronizeRequest, session string) (*tmallcar.TmallCarLeaseExceptionflowsynchronizeAPIResponse, error) {
+func TmallCarLeaseExceptionflowsynchronize(clt *core.SDKClient, req *tmallcar.TmallCarLeaseExceptionflowsynchronizeAPIRequest, session string) (*tmallcar.TmallCarLeaseExceptionflowsynchronizeAPIResponse, error) {
     var resp tmallcar.TmallCarLeaseExceptionflowsynchronizeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

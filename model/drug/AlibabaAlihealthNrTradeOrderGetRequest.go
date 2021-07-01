@@ -12,26 +12,26 @@ alibaba.alihealth.nr.trade.order.get
 
 阿里健康O2O，获取订单详情
 */
-type AlibabaAlihealthNrTradeOrderGetRequest struct {
+type AlibabaAlihealthNrTradeOrderGetAPIRequest struct {
     model.Params
     // 淘宝订单ID
     _orderId   int64
 }
 
-// 初始化AlibabaAlihealthNrTradeOrderGetRequest对象
-func NewAlibabaAlihealthNrTradeOrderGetRequest() *AlibabaAlihealthNrTradeOrderGetRequest{
-    return &AlibabaAlihealthNrTradeOrderGetRequest{
+// 初始化AlibabaAlihealthNrTradeOrderGetAPIRequest对象
+func NewAlibabaAlihealthNrTradeOrderGetRequest() *AlibabaAlihealthNrTradeOrderGetAPIRequest{
+    return &AlibabaAlihealthNrTradeOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthNrTradeOrderGetRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthNrTradeOrderGetAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.nr.trade.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthNrTradeOrderGetRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthNrTradeOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthNrTradeOrderGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 淘宝订单ID
-func (r *AlibabaAlihealthNrTradeOrderGetRequest) SetOrderId(_orderId int64) error {
+func (r *AlibabaAlihealthNrTradeOrderGetAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaAlihealthNrTradeOrderGetRequest) GetOrderId() int64 {
+func (r AlibabaAlihealthNrTradeOrderGetAPIRequest) GetOrderId() int64 {
     return r._orderId
 }

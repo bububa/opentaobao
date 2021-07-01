@@ -12,26 +12,26 @@ tmall.carcenter.vehicleinfo.register
 
 基本车型信息维护
 */
-type TmallCarcenterVehicleinfoRegisterRequest struct {
+type TmallCarcenterVehicleinfoRegisterAPIRequest struct {
     model.Params
     // 车型数据对象
     _vehicleInfo   *OriginVehicleInfoDTO
 }
 
-// 初始化TmallCarcenterVehicleinfoRegisterRequest对象
-func NewTmallCarcenterVehicleinfoRegisterRequest() *TmallCarcenterVehicleinfoRegisterRequest{
-    return &TmallCarcenterVehicleinfoRegisterRequest{
+// 初始化TmallCarcenterVehicleinfoRegisterAPIRequest对象
+func NewTmallCarcenterVehicleinfoRegisterRequest() *TmallCarcenterVehicleinfoRegisterAPIRequest{
+    return &TmallCarcenterVehicleinfoRegisterAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarcenterVehicleinfoRegisterRequest) GetApiMethodName() string {
+func (r TmallCarcenterVehicleinfoRegisterAPIRequest) GetApiMethodName() string {
     return "tmall.carcenter.vehicleinfo.register"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarcenterVehicleinfoRegisterRequest) GetApiParams() url.Values {
+func (r TmallCarcenterVehicleinfoRegisterAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallCarcenterVehicleinfoRegisterRequest) GetApiParams() url.Values {
 }
 // VehicleInfo Setter
 // 车型数据对象
-func (r *TmallCarcenterVehicleinfoRegisterRequest) SetVehicleInfo(_vehicleInfo *OriginVehicleInfoDTO) error {
+func (r *TmallCarcenterVehicleinfoRegisterAPIRequest) SetVehicleInfo(_vehicleInfo *OriginVehicleInfoDTO) error {
     r._vehicleInfo = _vehicleInfo
     r.Set("vehicle_info", _vehicleInfo)
     return nil
 }
 
 // VehicleInfo Getter
-func (r TmallCarcenterVehicleinfoRegisterRequest) GetVehicleInfo() *OriginVehicleInfoDTO {
+func (r TmallCarcenterVehicleinfoRegisterAPIRequest) GetVehicleInfo() *OriginVehicleInfoDTO {
     return r._vehicleInfo
 }

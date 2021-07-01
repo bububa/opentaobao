@@ -12,26 +12,26 @@ alibaba.scbp.effect.keyword.single.get
 
 单个关键词效果报表
 */
-type AlibabaScbpEffectKeywordSingleGetRequest struct {
+type AlibabaScbpEffectKeywordSingleGetAPIRequest struct {
     model.Params
     // IKeywordQuery
     _p4pKeywordReportQuery   *IKeywordQuery
 }
 
-// 初始化AlibabaScbpEffectKeywordSingleGetRequest对象
-func NewAlibabaScbpEffectKeywordSingleGetRequest() *AlibabaScbpEffectKeywordSingleGetRequest{
-    return &AlibabaScbpEffectKeywordSingleGetRequest{
+// 初始化AlibabaScbpEffectKeywordSingleGetAPIRequest对象
+func NewAlibabaScbpEffectKeywordSingleGetRequest() *AlibabaScbpEffectKeywordSingleGetAPIRequest{
+    return &AlibabaScbpEffectKeywordSingleGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpEffectKeywordSingleGetRequest) GetApiMethodName() string {
+func (r AlibabaScbpEffectKeywordSingleGetAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.effect.keyword.single.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpEffectKeywordSingleGetRequest) GetApiParams() url.Values {
+func (r AlibabaScbpEffectKeywordSingleGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpEffectKeywordSingleGetRequest) GetApiParams() url.Values {
 }
 // P4pKeywordReportQuery Setter
 // IKeywordQuery
-func (r *AlibabaScbpEffectKeywordSingleGetRequest) SetP4pKeywordReportQuery(_p4pKeywordReportQuery *IKeywordQuery) error {
+func (r *AlibabaScbpEffectKeywordSingleGetAPIRequest) SetP4pKeywordReportQuery(_p4pKeywordReportQuery *IKeywordQuery) error {
     r._p4pKeywordReportQuery = _p4pKeywordReportQuery
     r.Set("p4p_keyword_report_query", _p4pKeywordReportQuery)
     return nil
 }
 
 // P4pKeywordReportQuery Getter
-func (r AlibabaScbpEffectKeywordSingleGetRequest) GetP4pKeywordReportQuery() *IKeywordQuery {
+func (r AlibabaScbpEffectKeywordSingleGetAPIRequest) GetP4pKeywordReportQuery() *IKeywordQuery {
     return r._p4pKeywordReportQuery
 }

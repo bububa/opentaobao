@@ -12,26 +12,26 @@ alitrip.btrip.openplatform.address.get
 
 获取类目预定页跳转地址
 */
-type AlitripBtripOpenplatformAddressGetRequest struct {
+type AlitripBtripOpenplatformAddressGetAPIRequest struct {
     model.Params
     // 入参
     _rq   *OpenApiJumpInfoRq
 }
 
-// 初始化AlitripBtripOpenplatformAddressGetRequest对象
-func NewAlitripBtripOpenplatformAddressGetRequest() *AlitripBtripOpenplatformAddressGetRequest{
-    return &AlitripBtripOpenplatformAddressGetRequest{
+// 初始化AlitripBtripOpenplatformAddressGetAPIRequest对象
+func NewAlitripBtripOpenplatformAddressGetRequest() *AlitripBtripOpenplatformAddressGetAPIRequest{
+    return &AlitripBtripOpenplatformAddressGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripOpenplatformAddressGetRequest) GetApiMethodName() string {
+func (r AlitripBtripOpenplatformAddressGetAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.openplatform.address.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripOpenplatformAddressGetRequest) GetApiParams() url.Values {
+func (r AlitripBtripOpenplatformAddressGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripOpenplatformAddressGetRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripOpenplatformAddressGetRequest) SetRq(_rq *OpenApiJumpInfoRq) error {
+func (r *AlitripBtripOpenplatformAddressGetAPIRequest) SetRq(_rq *OpenApiJumpInfoRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripOpenplatformAddressGetRequest) GetRq() *OpenApiJumpInfoRq {
+func (r AlitripBtripOpenplatformAddressGetAPIRequest) GetRq() *OpenApiJumpInfoRq {
     return r._rq
 }

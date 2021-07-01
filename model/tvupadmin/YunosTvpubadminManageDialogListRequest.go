@@ -12,26 +12,26 @@ yunos.tvpubadmin.manage.dialog.list
 
 分页获取弹窗配置列表
 */
-type YunosTvpubadminManageDialogListRequest struct {
+type YunosTvpubadminManageDialogListAPIRequest struct {
     model.Params
     // 查询的query参数
     _query   string
 }
 
-// 初始化YunosTvpubadminManageDialogListRequest对象
-func NewYunosTvpubadminManageDialogListRequest() *YunosTvpubadminManageDialogListRequest{
-    return &YunosTvpubadminManageDialogListRequest{
+// 初始化YunosTvpubadminManageDialogListAPIRequest对象
+func NewYunosTvpubadminManageDialogListRequest() *YunosTvpubadminManageDialogListAPIRequest{
+    return &YunosTvpubadminManageDialogListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminManageDialogListRequest) GetApiMethodName() string {
+func (r YunosTvpubadminManageDialogListAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.manage.dialog.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminManageDialogListRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminManageDialogListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageDialogListRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 查询的query参数
-func (r *YunosTvpubadminManageDialogListRequest) SetQuery(_query string) error {
+func (r *YunosTvpubadminManageDialogListAPIRequest) SetQuery(_query string) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r YunosTvpubadminManageDialogListRequest) GetQuery() string {
+func (r YunosTvpubadminManageDialogListAPIRequest) GetQuery() string {
     return r._query
 }

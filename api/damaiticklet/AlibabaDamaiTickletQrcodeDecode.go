@@ -11,7 +11,7 @@ alibaba.damai.ticklet.qrcode.decode
 
 对于票夹的动态二维码进行解码
 */
-func AlibabaDamaiTickletQrcodeDecode(clt *core.SDKClient, req *damaiticklet.AlibabaDamaiTickletQrcodeDecodeRequest, session string) (*damaiticklet.AlibabaDamaiTickletQrcodeDecodeAPIResponse, error) {
+func AlibabaDamaiTickletQrcodeDecode(clt *core.SDKClient, req *damaiticklet.AlibabaDamaiTickletQrcodeDecodeAPIRequest, session string) (*damaiticklet.AlibabaDamaiTickletQrcodeDecodeAPIResponse, error) {
     var resp damaiticklet.AlibabaDamaiTickletQrcodeDecodeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.wdk.sku.query
 
 查询商品
 */
-func AlibabaWdkSkuQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuQueryRequest, session string) (*wdk.AlibabaWdkSkuQueryAPIResponse, error) {
+func AlibabaWdkSkuQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuQueryAPIRequest, session string) (*wdk.AlibabaWdkSkuQueryAPIResponse, error) {
     var resp wdk.AlibabaWdkSkuQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ aliexpress.ascp.ro.item.query
 
 AE仓发 单个退供单明细查询
 */
-type AliexpressAscpRoItemQueryRequest struct {
+type AliexpressAscpRoItemQueryAPIRequest struct {
     model.Params
     // dto
     _returnOrderItemQuery   *ReturnOrderItemQueryDTO
 }
 
-// 初始化AliexpressAscpRoItemQueryRequest对象
-func NewAliexpressAscpRoItemQueryRequest() *AliexpressAscpRoItemQueryRequest{
-    return &AliexpressAscpRoItemQueryRequest{
+// 初始化AliexpressAscpRoItemQueryAPIRequest对象
+func NewAliexpressAscpRoItemQueryRequest() *AliexpressAscpRoItemQueryAPIRequest{
+    return &AliexpressAscpRoItemQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressAscpRoItemQueryRequest) GetApiMethodName() string {
+func (r AliexpressAscpRoItemQueryAPIRequest) GetApiMethodName() string {
     return "aliexpress.ascp.ro.item.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressAscpRoItemQueryRequest) GetApiParams() url.Values {
+func (r AliexpressAscpRoItemQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressAscpRoItemQueryRequest) GetApiParams() url.Values {
 }
 // ReturnOrderItemQuery Setter
 // dto
-func (r *AliexpressAscpRoItemQueryRequest) SetReturnOrderItemQuery(_returnOrderItemQuery *ReturnOrderItemQueryDTO) error {
+func (r *AliexpressAscpRoItemQueryAPIRequest) SetReturnOrderItemQuery(_returnOrderItemQuery *ReturnOrderItemQueryDTO) error {
     r._returnOrderItemQuery = _returnOrderItemQuery
     r.Set("return_order_item_query", _returnOrderItemQuery)
     return nil
 }
 
 // ReturnOrderItemQuery Getter
-func (r AliexpressAscpRoItemQueryRequest) GetReturnOrderItemQuery() *ReturnOrderItemQueryDTO {
+func (r AliexpressAscpRoItemQueryAPIRequest) GetReturnOrderItemQuery() *ReturnOrderItemQueryDTO {
     return r._returnOrderItemQuery
 }

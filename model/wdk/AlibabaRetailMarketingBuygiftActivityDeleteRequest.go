@@ -12,26 +12,26 @@ alibaba.retail.marketing.buygift.activity.delete
 
 同城零售单品特价活动删除
 */
-type AlibabaRetailMarketingBuygiftActivityDeleteRequest struct {
+type AlibabaRetailMarketingBuygiftActivityDeleteAPIRequest struct {
     model.Params
     // 删除活动参数
     _param   *ItemDiscountActivityOperateRequest
 }
 
-// 初始化AlibabaRetailMarketingBuygiftActivityDeleteRequest对象
-func NewAlibabaRetailMarketingBuygiftActivityDeleteRequest() *AlibabaRetailMarketingBuygiftActivityDeleteRequest{
-    return &AlibabaRetailMarketingBuygiftActivityDeleteRequest{
+// 初始化AlibabaRetailMarketingBuygiftActivityDeleteAPIRequest对象
+func NewAlibabaRetailMarketingBuygiftActivityDeleteRequest() *AlibabaRetailMarketingBuygiftActivityDeleteAPIRequest{
+    return &AlibabaRetailMarketingBuygiftActivityDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingBuygiftActivityDeleteRequest) GetApiMethodName() string {
+func (r AlibabaRetailMarketingBuygiftActivityDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.marketing.buygift.activity.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingBuygiftActivityDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaRetailMarketingBuygiftActivityDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingBuygiftActivityDeleteRequest) GetApiParams() url.V
 }
 // Param Setter
 // 删除活动参数
-func (r *AlibabaRetailMarketingBuygiftActivityDeleteRequest) SetParam(_param *ItemDiscountActivityOperateRequest) error {
+func (r *AlibabaRetailMarketingBuygiftActivityDeleteAPIRequest) SetParam(_param *ItemDiscountActivityOperateRequest) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaRetailMarketingBuygiftActivityDeleteRequest) GetParam() *ItemDiscountActivityOperateRequest {
+func (r AlibabaRetailMarketingBuygiftActivityDeleteAPIRequest) GetParam() *ItemDiscountActivityOperateRequest {
     return r._param
 }

@@ -12,7 +12,7 @@ alibaba.baichuan.taopassword.check
 
 检查当前文本是否为淘口令
 */
-type AlibabaBaichuanTaopasswordCheckRequest struct {
+type AlibabaBaichuanTaopasswordCheckAPIRequest struct {
     model.Params
     // 参数DTO
     _paramDto   *ParamDTO
@@ -20,20 +20,20 @@ type AlibabaBaichuanTaopasswordCheckRequest struct {
     _clientInfo   *RichClientInfo
 }
 
-// 初始化AlibabaBaichuanTaopasswordCheckRequest对象
-func NewAlibabaBaichuanTaopasswordCheckRequest() *AlibabaBaichuanTaopasswordCheckRequest{
-    return &AlibabaBaichuanTaopasswordCheckRequest{
+// 初始化AlibabaBaichuanTaopasswordCheckAPIRequest对象
+func NewAlibabaBaichuanTaopasswordCheckRequest() *AlibabaBaichuanTaopasswordCheckAPIRequest{
+    return &AlibabaBaichuanTaopasswordCheckAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaBaichuanTaopasswordCheckRequest) GetApiMethodName() string {
+func (r AlibabaBaichuanTaopasswordCheckAPIRequest) GetApiMethodName() string {
     return "alibaba.baichuan.taopassword.check"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaBaichuanTaopasswordCheckRequest) GetApiParams() url.Values {
+func (r AlibabaBaichuanTaopasswordCheckAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaBaichuanTaopasswordCheckRequest) GetApiParams() url.Values {
 }
 // ParamDto Setter
 // 参数DTO
-func (r *AlibabaBaichuanTaopasswordCheckRequest) SetParamDto(_paramDto *ParamDTO) error {
+func (r *AlibabaBaichuanTaopasswordCheckAPIRequest) SetParamDto(_paramDto *ParamDTO) error {
     r._paramDto = _paramDto
     r.Set("param_dto", _paramDto)
     return nil
 }
 
 // ParamDto Getter
-func (r AlibabaBaichuanTaopasswordCheckRequest) GetParamDto() *ParamDTO {
+func (r AlibabaBaichuanTaopasswordCheckAPIRequest) GetParamDto() *ParamDTO {
     return r._paramDto
 }
 // ClientInfo Setter
 // 系统自动生成
-func (r *AlibabaBaichuanTaopasswordCheckRequest) SetClientInfo(_clientInfo *RichClientInfo) error {
+func (r *AlibabaBaichuanTaopasswordCheckAPIRequest) SetClientInfo(_clientInfo *RichClientInfo) error {
     r._clientInfo = _clientInfo
     r.Set("client_info", _clientInfo)
     return nil
 }
 
 // ClientInfo Getter
-func (r AlibabaBaichuanTaopasswordCheckRequest) GetClientInfo() *RichClientInfo {
+func (r AlibabaBaichuanTaopasswordCheckAPIRequest) GetClientInfo() *RichClientInfo {
     return r._clientInfo
 }

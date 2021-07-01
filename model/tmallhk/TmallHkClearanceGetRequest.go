@@ -12,7 +12,7 @@ tmall.hk.clearance.get
 
 提供订单收货人身份信息查询功能。
 */
-type TmallHkClearanceGetRequest struct {
+type TmallHkClearanceGetAPIRequest struct {
     model.Params
     // 天猫国际订单号
     _orderId   int64
@@ -20,20 +20,20 @@ type TmallHkClearanceGetRequest struct {
     _needImage   bool
 }
 
-// 初始化TmallHkClearanceGetRequest对象
-func NewTmallHkClearanceGetRequest() *TmallHkClearanceGetRequest{
-    return &TmallHkClearanceGetRequest{
+// 初始化TmallHkClearanceGetAPIRequest对象
+func NewTmallHkClearanceGetRequest() *TmallHkClearanceGetAPIRequest{
+    return &TmallHkClearanceGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallHkClearanceGetRequest) GetApiMethodName() string {
+func (r TmallHkClearanceGetAPIRequest) GetApiMethodName() string {
     return "tmall.hk.clearance.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallHkClearanceGetRequest) GetApiParams() url.Values {
+func (r TmallHkClearanceGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallHkClearanceGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 天猫国际订单号
-func (r *TmallHkClearanceGetRequest) SetOrderId(_orderId int64) error {
+func (r *TmallHkClearanceGetAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r TmallHkClearanceGetRequest) GetOrderId() int64 {
+func (r TmallHkClearanceGetAPIRequest) GetOrderId() int64 {
     return r._orderId
 }
 // NeedImage Setter
 // 是否需要身份证图片，不需要可以缩短接口响应时间
-func (r *TmallHkClearanceGetRequest) SetNeedImage(_needImage bool) error {
+func (r *TmallHkClearanceGetAPIRequest) SetNeedImage(_needImage bool) error {
     r._needImage = _needImage
     r.Set("need_image", _needImage)
     return nil
 }
 
 // NeedImage Getter
-func (r TmallHkClearanceGetRequest) GetNeedImage() bool {
+func (r TmallHkClearanceGetAPIRequest) GetNeedImage() bool {
     return r._needImage
 }

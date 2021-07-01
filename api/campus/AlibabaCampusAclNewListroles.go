@@ -11,7 +11,7 @@ alibaba.campus.acl.new.listroles
 
 查询全部角色
 */
-func AlibabaCampusAclNewListroles(clt *core.SDKClient, req *campus.AlibabaCampusAclNewListrolesRequest, session string) (*campus.AlibabaCampusAclNewListrolesAPIResponse, error) {
+func AlibabaCampusAclNewListroles(clt *core.SDKClient, req *campus.AlibabaCampusAclNewListrolesAPIRequest, session string) (*campus.AlibabaCampusAclNewListrolesAPIResponse, error) {
     var resp campus.AlibabaCampusAclNewListrolesAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

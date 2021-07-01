@@ -11,7 +11,7 @@ alibaba.cfda.xtpt.app.accept.info
 
 协同平台数据下行接口
 */
-func AlibabaCfdaXtptAppAcceptInfo(clt *core.SDKClient, req *drugtrace.AlibabaCfdaXtptAppAcceptInfoRequest, session string) (*drugtrace.AlibabaCfdaXtptAppAcceptInfoAPIResponse, error) {
+func AlibabaCfdaXtptAppAcceptInfo(clt *core.SDKClient, req *drugtrace.AlibabaCfdaXtptAppAcceptInfoAPIRequest, session string) (*drugtrace.AlibabaCfdaXtptAppAcceptInfoAPIResponse, error) {
     var resp drugtrace.AlibabaCfdaXtptAppAcceptInfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

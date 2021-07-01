@@ -11,7 +11,7 @@ alibaba.scbp.tag.list
 
 查询所有分组
 */
-func AlibabaScbpTagList(clt *core.SDKClient, req *scbp.AlibabaScbpTagListRequest, session string) (*scbp.AlibabaScbpTagListAPIResponse, error) {
+func AlibabaScbpTagList(clt *core.SDKClient, req *scbp.AlibabaScbpTagListAPIRequest, session string) (*scbp.AlibabaScbpTagListAPIResponse, error) {
     var resp scbp.AlibabaScbpTagListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

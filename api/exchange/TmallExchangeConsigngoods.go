@@ -11,7 +11,7 @@ tmall.exchange.consigngoods
 
 卖家发货
 */
-func TmallExchangeConsigngoods(clt *core.SDKClient, req *exchange.TmallExchangeConsigngoodsRequest, session string) (*exchange.TmallExchangeConsigngoodsAPIResponse, error) {
+func TmallExchangeConsigngoods(clt *core.SDKClient, req *exchange.TmallExchangeConsigngoodsAPIRequest, session string) (*exchange.TmallExchangeConsigngoodsAPIResponse, error) {
     var resp exchange.TmallExchangeConsigngoodsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

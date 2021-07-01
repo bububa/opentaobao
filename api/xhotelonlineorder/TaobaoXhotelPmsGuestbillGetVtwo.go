@@ -11,7 +11,7 @@ taobao.xhotel.pms.guestbill.get.vtwo
 
 从pms获取客人账单信息
 */
-func TaobaoXhotelPmsGuestbillGetVtwo(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelPmsGuestbillGetVtwoRequest, session string) (*xhotelonlineorder.TaobaoXhotelPmsGuestbillGetVtwoAPIResponse, error) {
+func TaobaoXhotelPmsGuestbillGetVtwo(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelPmsGuestbillGetVtwoAPIRequest, session string) (*xhotelonlineorder.TaobaoXhotelPmsGuestbillGetVtwoAPIResponse, error) {
     var resp xhotelonlineorder.TaobaoXhotelPmsGuestbillGetVtwoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

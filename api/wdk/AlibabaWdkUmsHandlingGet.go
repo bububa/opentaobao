@@ -11,7 +11,7 @@ alibaba.wdk.ums.handling.get
 
 加工单-回流单（新接口）
 */
-func AlibabaWdkUmsHandlingGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsHandlingGetRequest, session string) (*wdk.AlibabaWdkUmsHandlingGetAPIResponse, error) {
+func AlibabaWdkUmsHandlingGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsHandlingGetAPIRequest, session string) (*wdk.AlibabaWdkUmsHandlingGetAPIResponse, error) {
     var resp wdk.AlibabaWdkUmsHandlingGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

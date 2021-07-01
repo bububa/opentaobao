@@ -12,26 +12,26 @@ taobao.alitrip.ie.agent.shopping.push
 
 用于国际机票大卖家主动推送Shopping结果更新缓存报价。
 */
-type TaobaoAlitripIeAgentShoppingPushRequest struct {
+type TaobaoAlitripIeAgentShoppingPushAPIRequest struct {
     model.Params
     // 政策推送结构体
     _param0   *ShoppingPushRq
 }
 
-// 初始化TaobaoAlitripIeAgentShoppingPushRequest对象
-func NewTaobaoAlitripIeAgentShoppingPushRequest() *TaobaoAlitripIeAgentShoppingPushRequest{
-    return &TaobaoAlitripIeAgentShoppingPushRequest{
+// 初始化TaobaoAlitripIeAgentShoppingPushAPIRequest对象
+func NewTaobaoAlitripIeAgentShoppingPushRequest() *TaobaoAlitripIeAgentShoppingPushAPIRequest{
+    return &TaobaoAlitripIeAgentShoppingPushAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripIeAgentShoppingPushRequest) GetApiMethodName() string {
+func (r TaobaoAlitripIeAgentShoppingPushAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.ie.agent.shopping.push"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripIeAgentShoppingPushRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripIeAgentShoppingPushAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripIeAgentShoppingPushRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 政策推送结构体
-func (r *TaobaoAlitripIeAgentShoppingPushRequest) SetParam0(_param0 *ShoppingPushRq) error {
+func (r *TaobaoAlitripIeAgentShoppingPushAPIRequest) SetParam0(_param0 *ShoppingPushRq) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoAlitripIeAgentShoppingPushRequest) GetParam0() *ShoppingPushRq {
+func (r TaobaoAlitripIeAgentShoppingPushAPIRequest) GetParam0() *ShoppingPushRq {
     return r._param0
 }

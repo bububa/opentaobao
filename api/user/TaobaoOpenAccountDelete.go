@@ -11,7 +11,7 @@ taobao.open.account.delete
 
 OpenAccount删除数据
 */
-func TaobaoOpenAccountDelete(clt *core.SDKClient, req *user.TaobaoOpenAccountDeleteRequest, session string) (*user.TaobaoOpenAccountDeleteAPIResponse, error) {
+func TaobaoOpenAccountDelete(clt *core.SDKClient, req *user.TaobaoOpenAccountDeleteAPIRequest, session string) (*user.TaobaoOpenAccountDeleteAPIResponse, error) {
     var resp user.TaobaoOpenAccountDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

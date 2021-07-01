@@ -12,7 +12,7 @@ aliyun.viapi.facebody.recognizeface
 
 输入图片之后，在人脸检测定位返回结果的基础上，识别各个检测人脸的四种属性，返回性别（男/女）、年龄、表情（笑/不笑）、眼镜（戴/不戴）；并可返回人脸的1024维深度学习特征。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )
 */
-type AliyunViapiFacebodyRecognizefaceRequest struct {
+type AliyunViapiFacebodyRecognizefaceAPIRequest struct {
     model.Params
     // 待检测图片链接
     _imageUrl   string
@@ -20,20 +20,20 @@ type AliyunViapiFacebodyRecognizefaceRequest struct {
     _imageType   int64
 }
 
-// 初始化AliyunViapiFacebodyRecognizefaceRequest对象
-func NewAliyunViapiFacebodyRecognizefaceRequest() *AliyunViapiFacebodyRecognizefaceRequest{
-    return &AliyunViapiFacebodyRecognizefaceRequest{
+// 初始化AliyunViapiFacebodyRecognizefaceAPIRequest对象
+func NewAliyunViapiFacebodyRecognizefaceRequest() *AliyunViapiFacebodyRecognizefaceAPIRequest{
+    return &AliyunViapiFacebodyRecognizefaceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliyunViapiFacebodyRecognizefaceRequest) GetApiMethodName() string {
+func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetApiMethodName() string {
     return "aliyun.viapi.facebody.recognizeface"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliyunViapiFacebodyRecognizefaceRequest) GetApiParams() url.Values {
+func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AliyunViapiFacebodyRecognizefaceRequest) GetApiParams() url.Values {
 }
 // ImageUrl Setter
 // 待检测图片链接
-func (r *AliyunViapiFacebodyRecognizefaceRequest) SetImageUrl(_imageUrl string) error {
+func (r *AliyunViapiFacebodyRecognizefaceAPIRequest) SetImageUrl(_imageUrl string) error {
     r._imageUrl = _imageUrl
     r.Set("image_url", _imageUrl)
     return nil
 }
 
 // ImageUrl Getter
-func (r AliyunViapiFacebodyRecognizefaceRequest) GetImageUrl() string {
+func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetImageUrl() string {
     return r._imageUrl
 }
 // ImageType Setter
 // 图片类型, ,取值范围[0:ImageURL, 1:ImageContent]
-func (r *AliyunViapiFacebodyRecognizefaceRequest) SetImageType(_imageType int64) error {
+func (r *AliyunViapiFacebodyRecognizefaceAPIRequest) SetImageType(_imageType int64) error {
     r._imageType = _imageType
     r.Set("image_type", _imageType)
     return nil
 }
 
 // ImageType Getter
-func (r AliyunViapiFacebodyRecognizefaceRequest) GetImageType() int64 {
+func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetImageType() int64 {
     return r._imageType
 }

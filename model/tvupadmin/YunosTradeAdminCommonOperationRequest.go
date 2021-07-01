@@ -12,7 +12,7 @@ yunos.trade.admin.common.operation
 
 迎客松交易相关通用接口
 */
-type YunosTradeAdminCommonOperationRequest struct {
+type YunosTradeAdminCommonOperationAPIRequest struct {
     model.Params
     // 入参数据，json格式
     _parameter   string
@@ -22,20 +22,20 @@ type YunosTradeAdminCommonOperationRequest struct {
     _interfaceName   string
 }
 
-// 初始化YunosTradeAdminCommonOperationRequest对象
-func NewYunosTradeAdminCommonOperationRequest() *YunosTradeAdminCommonOperationRequest{
-    return &YunosTradeAdminCommonOperationRequest{
+// 初始化YunosTradeAdminCommonOperationAPIRequest对象
+func NewYunosTradeAdminCommonOperationRequest() *YunosTradeAdminCommonOperationAPIRequest{
+    return &YunosTradeAdminCommonOperationAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTradeAdminCommonOperationRequest) GetApiMethodName() string {
+func (r YunosTradeAdminCommonOperationAPIRequest) GetApiMethodName() string {
     return "yunos.trade.admin.common.operation"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTradeAdminCommonOperationRequest) GetApiParams() url.Values {
+func (r YunosTradeAdminCommonOperationAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r YunosTradeAdminCommonOperationRequest) GetApiParams() url.Values {
 }
 // Parameter Setter
 // 入参数据，json格式
-func (r *YunosTradeAdminCommonOperationRequest) SetParameter(_parameter string) error {
+func (r *YunosTradeAdminCommonOperationAPIRequest) SetParameter(_parameter string) error {
     r._parameter = _parameter
     r.Set("parameter", _parameter)
     return nil
 }
 
 // Parameter Getter
-func (r YunosTradeAdminCommonOperationRequest) GetParameter() string {
+func (r YunosTradeAdminCommonOperationAPIRequest) GetParameter() string {
     return r._parameter
 }
 // MethodName Setter
 // 调用方法
-func (r *YunosTradeAdminCommonOperationRequest) SetMethodName(_methodName string) error {
+func (r *YunosTradeAdminCommonOperationAPIRequest) SetMethodName(_methodName string) error {
     r._methodName = _methodName
     r.Set("method_name", _methodName)
     return nil
 }
 
 // MethodName Getter
-func (r YunosTradeAdminCommonOperationRequest) GetMethodName() string {
+func (r YunosTradeAdminCommonOperationAPIRequest) GetMethodName() string {
     return r._methodName
 }
 // InterfaceName Setter
 // 调用接口
-func (r *YunosTradeAdminCommonOperationRequest) SetInterfaceName(_interfaceName string) error {
+func (r *YunosTradeAdminCommonOperationAPIRequest) SetInterfaceName(_interfaceName string) error {
     r._interfaceName = _interfaceName
     r.Set("interface_name", _interfaceName)
     return nil
 }
 
 // InterfaceName Getter
-func (r YunosTradeAdminCommonOperationRequest) GetInterfaceName() string {
+func (r YunosTradeAdminCommonOperationAPIRequest) GetInterfaceName() string {
     return r._interfaceName
 }

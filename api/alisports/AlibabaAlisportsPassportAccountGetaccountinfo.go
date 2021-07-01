@@ -11,7 +11,7 @@ alibaba.alisports.passport.account.getaccountinfo
 
 获取阿里体育会员信息
 */
-func AlibabaAlisportsPassportAccountGetaccountinfo(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountGetaccountinfoRequest, session string) (*alisports.AlibabaAlisportsPassportAccountGetaccountinfoAPIResponse, error) {
+func AlibabaAlisportsPassportAccountGetaccountinfo(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest, session string) (*alisports.AlibabaAlisportsPassportAccountGetaccountinfoAPIResponse, error) {
     var resp alisports.AlibabaAlisportsPassportAccountGetaccountinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

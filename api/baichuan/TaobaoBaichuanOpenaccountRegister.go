@@ -11,7 +11,7 @@ taobao.baichuan.openaccount.register
 
 百川账号注册
 */
-func TaobaoBaichuanOpenaccountRegister(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountRegisterRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountRegisterAPIResponse, error) {
+func TaobaoBaichuanOpenaccountRegister(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountRegisterAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountRegisterAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanOpenaccountRegisterAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

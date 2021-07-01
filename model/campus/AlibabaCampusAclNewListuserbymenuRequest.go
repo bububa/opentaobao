@@ -12,7 +12,7 @@ alibaba.campus.acl.new.listuserbymenu
 
 查询拥有菜单权限的用户
 */
-type AlibabaCampusAclNewListuserbymenuRequest struct {
+type AlibabaCampusAclNewListuserbymenuAPIRequest struct {
     model.Params
     // 系统入参
     _context   *WorkBenchContext
@@ -20,20 +20,20 @@ type AlibabaCampusAclNewListuserbymenuRequest struct {
     _menuUrl   string
 }
 
-// 初始化AlibabaCampusAclNewListuserbymenuRequest对象
-func NewAlibabaCampusAclNewListuserbymenuRequest() *AlibabaCampusAclNewListuserbymenuRequest{
-    return &AlibabaCampusAclNewListuserbymenuRequest{
+// 初始化AlibabaCampusAclNewListuserbymenuAPIRequest对象
+func NewAlibabaCampusAclNewListuserbymenuRequest() *AlibabaCampusAclNewListuserbymenuAPIRequest{
+    return &AlibabaCampusAclNewListuserbymenuAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusAclNewListuserbymenuRequest) GetApiMethodName() string {
+func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.acl.new.listuserbymenu"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusAclNewListuserbymenuRequest) GetApiParams() url.Values {
+func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaCampusAclNewListuserbymenuRequest) GetApiParams() url.Values {
 }
 // Context Setter
 // 系统入参
-func (r *AlibabaCampusAclNewListuserbymenuRequest) SetContext(_context *WorkBenchContext) error {
+func (r *AlibabaCampusAclNewListuserbymenuAPIRequest) SetContext(_context *WorkBenchContext) error {
     r._context = _context
     r.Set("context", _context)
     return nil
 }
 
 // Context Getter
-func (r AlibabaCampusAclNewListuserbymenuRequest) GetContext() *WorkBenchContext {
+func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetContext() *WorkBenchContext {
     return r._context
 }
 // MenuUrl Setter
 // /workbench/space/application
-func (r *AlibabaCampusAclNewListuserbymenuRequest) SetMenuUrl(_menuUrl string) error {
+func (r *AlibabaCampusAclNewListuserbymenuAPIRequest) SetMenuUrl(_menuUrl string) error {
     r._menuUrl = _menuUrl
     r.Set("menu_url", _menuUrl)
     return nil
 }
 
 // MenuUrl Getter
-func (r AlibabaCampusAclNewListuserbymenuRequest) GetMenuUrl() string {
+func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetMenuUrl() string {
     return r._menuUrl
 }

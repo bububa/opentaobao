@@ -12,26 +12,26 @@ alibaba.lsy.crm.activity.update
 
 ISV活动修改
 */
-type AlibabaLsyCrmActivityUpdateRequest struct {
+type AlibabaLsyCrmActivityUpdateAPIRequest struct {
     model.Params
     // 入参
     _nrtUpdateActivityReq   *NrtUpdateActivityReq
 }
 
-// 初始化AlibabaLsyCrmActivityUpdateRequest对象
-func NewAlibabaLsyCrmActivityUpdateRequest() *AlibabaLsyCrmActivityUpdateRequest{
-    return &AlibabaLsyCrmActivityUpdateRequest{
+// 初始化AlibabaLsyCrmActivityUpdateAPIRequest对象
+func NewAlibabaLsyCrmActivityUpdateRequest() *AlibabaLsyCrmActivityUpdateAPIRequest{
+    return &AlibabaLsyCrmActivityUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLsyCrmActivityUpdateRequest) GetApiMethodName() string {
+func (r AlibabaLsyCrmActivityUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.lsy.crm.activity.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLsyCrmActivityUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaLsyCrmActivityUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmActivityUpdateRequest) GetApiParams() url.Values {
 }
 // NrtUpdateActivityReq Setter
 // 入参
-func (r *AlibabaLsyCrmActivityUpdateRequest) SetNrtUpdateActivityReq(_nrtUpdateActivityReq *NrtUpdateActivityReq) error {
+func (r *AlibabaLsyCrmActivityUpdateAPIRequest) SetNrtUpdateActivityReq(_nrtUpdateActivityReq *NrtUpdateActivityReq) error {
     r._nrtUpdateActivityReq = _nrtUpdateActivityReq
     r.Set("nrt_update_activity_req", _nrtUpdateActivityReq)
     return nil
 }
 
 // NrtUpdateActivityReq Getter
-func (r AlibabaLsyCrmActivityUpdateRequest) GetNrtUpdateActivityReq() *NrtUpdateActivityReq {
+func (r AlibabaLsyCrmActivityUpdateAPIRequest) GetNrtUpdateActivityReq() *NrtUpdateActivityReq {
     return r._nrtUpdateActivityReq
 }

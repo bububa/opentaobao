@@ -12,26 +12,26 @@ alibaba.ailabs.iot.business.recipestep.insertorupdate
 
 插入或更新食谱步骤
 */
-type AlibabaAilabsIotBusinessRecipestepInsertorupdateRequest struct {
+type AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest struct {
     model.Params
     // 食谱步骤开放参数
     _paramBusinessRecipeStepOpenParam   *BusinessRecipeStepOpenParam
 }
 
-// 初始化AlibabaAilabsIotBusinessRecipestepInsertorupdateRequest对象
-func NewAlibabaAilabsIotBusinessRecipestepInsertorupdateRequest() *AlibabaAilabsIotBusinessRecipestepInsertorupdateRequest{
-    return &AlibabaAilabsIotBusinessRecipestepInsertorupdateRequest{
+// 初始化AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest对象
+func NewAlibabaAilabsIotBusinessRecipestepInsertorupdateRequest() *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest{
+    return &AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAilabsIotBusinessRecipestepInsertorupdateRequest) GetApiMethodName() string {
+func (r AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest) GetApiMethodName() string {
     return "alibaba.ailabs.iot.business.recipestep.insertorupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsIotBusinessRecipestepInsertorupdateRequest) GetApiParams() url.Values {
+func (r AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAilabsIotBusinessRecipestepInsertorupdateRequest) GetApiParams() 
 }
 // ParamBusinessRecipeStepOpenParam Setter
 // 食谱步骤开放参数
-func (r *AlibabaAilabsIotBusinessRecipestepInsertorupdateRequest) SetParamBusinessRecipeStepOpenParam(_paramBusinessRecipeStepOpenParam *BusinessRecipeStepOpenParam) error {
+func (r *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest) SetParamBusinessRecipeStepOpenParam(_paramBusinessRecipeStepOpenParam *BusinessRecipeStepOpenParam) error {
     r._paramBusinessRecipeStepOpenParam = _paramBusinessRecipeStepOpenParam
     r.Set("param_business_recipe_step_open_param", _paramBusinessRecipeStepOpenParam)
     return nil
 }
 
 // ParamBusinessRecipeStepOpenParam Getter
-func (r AlibabaAilabsIotBusinessRecipestepInsertorupdateRequest) GetParamBusinessRecipeStepOpenParam() *BusinessRecipeStepOpenParam {
+func (r AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest) GetParamBusinessRecipeStepOpenParam() *BusinessRecipeStepOpenParam {
     return r._paramBusinessRecipeStepOpenParam
 }

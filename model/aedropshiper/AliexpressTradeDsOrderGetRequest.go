@@ -12,26 +12,26 @@ aliexpress.trade.ds.order.get
 
 买家查询订单详情，用于dropshipper
 */
-type AliexpressTradeDsOrderGetRequest struct {
+type AliexpressTradeDsOrderGetAPIRequest struct {
     model.Params
     // 订单查询条件
     _singleOrderQuery   *AeopSingleOrderQuery
 }
 
-// 初始化AliexpressTradeDsOrderGetRequest对象
-func NewAliexpressTradeDsOrderGetRequest() *AliexpressTradeDsOrderGetRequest{
-    return &AliexpressTradeDsOrderGetRequest{
+// 初始化AliexpressTradeDsOrderGetAPIRequest对象
+func NewAliexpressTradeDsOrderGetRequest() *AliexpressTradeDsOrderGetAPIRequest{
+    return &AliexpressTradeDsOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressTradeDsOrderGetRequest) GetApiMethodName() string {
+func (r AliexpressTradeDsOrderGetAPIRequest) GetApiMethodName() string {
     return "aliexpress.trade.ds.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressTradeDsOrderGetRequest) GetApiParams() url.Values {
+func (r AliexpressTradeDsOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressTradeDsOrderGetRequest) GetApiParams() url.Values {
 }
 // SingleOrderQuery Setter
 // 订单查询条件
-func (r *AliexpressTradeDsOrderGetRequest) SetSingleOrderQuery(_singleOrderQuery *AeopSingleOrderQuery) error {
+func (r *AliexpressTradeDsOrderGetAPIRequest) SetSingleOrderQuery(_singleOrderQuery *AeopSingleOrderQuery) error {
     r._singleOrderQuery = _singleOrderQuery
     r.Set("single_order_query", _singleOrderQuery)
     return nil
 }
 
 // SingleOrderQuery Getter
-func (r AliexpressTradeDsOrderGetRequest) GetSingleOrderQuery() *AeopSingleOrderQuery {
+func (r AliexpressTradeDsOrderGetAPIRequest) GetSingleOrderQuery() *AeopSingleOrderQuery {
     return r._singleOrderQuery
 }

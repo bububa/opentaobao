@@ -12,7 +12,7 @@ alibaba.tuike.single.offer.get
 
 查询单个推客商品信息的接口
 */
-type AlibabaTuikeSingleOfferGetRequest struct {
+type AlibabaTuikeSingleOfferGetAPIRequest struct {
     model.Params
     // 推客id
     _loginId   string
@@ -20,20 +20,20 @@ type AlibabaTuikeSingleOfferGetRequest struct {
     _offerId   int64
 }
 
-// 初始化AlibabaTuikeSingleOfferGetRequest对象
-func NewAlibabaTuikeSingleOfferGetRequest() *AlibabaTuikeSingleOfferGetRequest{
-    return &AlibabaTuikeSingleOfferGetRequest{
+// 初始化AlibabaTuikeSingleOfferGetAPIRequest对象
+func NewAlibabaTuikeSingleOfferGetRequest() *AlibabaTuikeSingleOfferGetAPIRequest{
+    return &AlibabaTuikeSingleOfferGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTuikeSingleOfferGetRequest) GetApiMethodName() string {
+func (r AlibabaTuikeSingleOfferGetAPIRequest) GetApiMethodName() string {
     return "alibaba.tuike.single.offer.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTuikeSingleOfferGetRequest) GetApiParams() url.Values {
+func (r AlibabaTuikeSingleOfferGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaTuikeSingleOfferGetRequest) GetApiParams() url.Values {
 }
 // LoginId Setter
 // 推客id
-func (r *AlibabaTuikeSingleOfferGetRequest) SetLoginId(_loginId string) error {
+func (r *AlibabaTuikeSingleOfferGetAPIRequest) SetLoginId(_loginId string) error {
     r._loginId = _loginId
     r.Set("login_id", _loginId)
     return nil
 }
 
 // LoginId Getter
-func (r AlibabaTuikeSingleOfferGetRequest) GetLoginId() string {
+func (r AlibabaTuikeSingleOfferGetAPIRequest) GetLoginId() string {
     return r._loginId
 }
 // OfferId Setter
 // 商品id
-func (r *AlibabaTuikeSingleOfferGetRequest) SetOfferId(_offerId int64) error {
+func (r *AlibabaTuikeSingleOfferGetAPIRequest) SetOfferId(_offerId int64) error {
     r._offerId = _offerId
     r.Set("offer_id", _offerId)
     return nil
 }
 
 // OfferId Getter
-func (r AlibabaTuikeSingleOfferGetRequest) GetOfferId() int64 {
+func (r AlibabaTuikeSingleOfferGetAPIRequest) GetOfferId() int64 {
     return r._offerId
 }

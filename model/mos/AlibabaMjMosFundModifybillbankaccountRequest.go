@@ -12,26 +12,26 @@ alibaba.mj.mos.fund.modifybillbankaccount
 
 修改付款单的银行账户信息
 */
-type AlibabaMjMosFundModifybillbankaccountRequest struct {
+type AlibabaMjMosFundModifybillbankaccountAPIRequest struct {
     model.Params
     // 修改入参
     _modifyDto   *ModifyBillDTO
 }
 
-// 初始化AlibabaMjMosFundModifybillbankaccountRequest对象
-func NewAlibabaMjMosFundModifybillbankaccountRequest() *AlibabaMjMosFundModifybillbankaccountRequest{
-    return &AlibabaMjMosFundModifybillbankaccountRequest{
+// 初始化AlibabaMjMosFundModifybillbankaccountAPIRequest对象
+func NewAlibabaMjMosFundModifybillbankaccountRequest() *AlibabaMjMosFundModifybillbankaccountAPIRequest{
+    return &AlibabaMjMosFundModifybillbankaccountAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMjMosFundModifybillbankaccountRequest) GetApiMethodName() string {
+func (r AlibabaMjMosFundModifybillbankaccountAPIRequest) GetApiMethodName() string {
     return "alibaba.mj.mos.fund.modifybillbankaccount"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMjMosFundModifybillbankaccountRequest) GetApiParams() url.Values {
+func (r AlibabaMjMosFundModifybillbankaccountAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMjMosFundModifybillbankaccountRequest) GetApiParams() url.Values 
 }
 // ModifyDto Setter
 // 修改入参
-func (r *AlibabaMjMosFundModifybillbankaccountRequest) SetModifyDto(_modifyDto *ModifyBillDTO) error {
+func (r *AlibabaMjMosFundModifybillbankaccountAPIRequest) SetModifyDto(_modifyDto *ModifyBillDTO) error {
     r._modifyDto = _modifyDto
     r.Set("modify_dto", _modifyDto)
     return nil
 }
 
 // ModifyDto Getter
-func (r AlibabaMjMosFundModifybillbankaccountRequest) GetModifyDto() *ModifyBillDTO {
+func (r AlibabaMjMosFundModifybillbankaccountAPIRequest) GetModifyDto() *ModifyBillDTO {
     return r._modifyDto
 }

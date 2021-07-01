@@ -12,24 +12,24 @@ alitrip.ship.product.synccall
 
 全量同步接口
 */
-type AlitripShipProductSynccallRequest struct {
+type AlitripShipProductSynccallAPIRequest struct {
     model.Params
 }
 
-// 初始化AlitripShipProductSynccallRequest对象
-func NewAlitripShipProductSynccallRequest() *AlitripShipProductSynccallRequest{
-    return &AlitripShipProductSynccallRequest{
+// 初始化AlitripShipProductSynccallAPIRequest对象
+func NewAlitripShipProductSynccallRequest() *AlitripShipProductSynccallAPIRequest{
+    return &AlitripShipProductSynccallAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripShipProductSynccallRequest) GetApiMethodName() string {
+func (r AlitripShipProductSynccallAPIRequest) GetApiMethodName() string {
     return "alitrip.ship.product.synccall"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripShipProductSynccallRequest) GetApiParams() url.Values {
+func (r AlitripShipProductSynccallAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

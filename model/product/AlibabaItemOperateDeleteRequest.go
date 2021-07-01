@@ -12,26 +12,26 @@ alibaba.item.operate.delete
 
 商品删除
 */
-type AlibabaItemOperateDeleteRequest struct {
+type AlibabaItemOperateDeleteAPIRequest struct {
     model.Params
     // 商品ID
     _itemId   int64
 }
 
-// 初始化AlibabaItemOperateDeleteRequest对象
-func NewAlibabaItemOperateDeleteRequest() *AlibabaItemOperateDeleteRequest{
-    return &AlibabaItemOperateDeleteRequest{
+// 初始化AlibabaItemOperateDeleteAPIRequest对象
+func NewAlibabaItemOperateDeleteRequest() *AlibabaItemOperateDeleteAPIRequest{
+    return &AlibabaItemOperateDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaItemOperateDeleteRequest) GetApiMethodName() string {
+func (r AlibabaItemOperateDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.item.operate.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaItemOperateDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaItemOperateDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaItemOperateDeleteRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *AlibabaItemOperateDeleteRequest) SetItemId(_itemId int64) error {
+func (r *AlibabaItemOperateDeleteAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r AlibabaItemOperateDeleteRequest) GetItemId() int64 {
+func (r AlibabaItemOperateDeleteAPIRequest) GetItemId() int64 {
     return r._itemId
 }

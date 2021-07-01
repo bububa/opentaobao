@@ -11,7 +11,7 @@ taobao.simba.serchcrowd.state.batch.update
 
 暂停或启用单品推广搜索人群溢价
 */
-func TaobaoSimbaSerchcrowdStateBatchUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaSerchcrowdStateBatchUpdateRequest, session string) (*simba.TaobaoSimbaSerchcrowdStateBatchUpdateAPIResponse, error) {
+func TaobaoSimbaSerchcrowdStateBatchUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest, session string) (*simba.TaobaoSimbaSerchcrowdStateBatchUpdateAPIResponse, error) {
     var resp simba.TaobaoSimbaSerchcrowdStateBatchUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.simba.keyword.update
 
 （新）关键词更新相关接口
 */
-type TaobaoSimbaKeywordUpdateRequest struct {
+type TaobaoSimbaKeywordUpdateAPIRequest struct {
     model.Params
     // 关键词相关信息
     _bidwords   []SiriusBidwordDTO
 }
 
-// 初始化TaobaoSimbaKeywordUpdateRequest对象
-func NewTaobaoSimbaKeywordUpdateRequest() *TaobaoSimbaKeywordUpdateRequest{
-    return &TaobaoSimbaKeywordUpdateRequest{
+// 初始化TaobaoSimbaKeywordUpdateAPIRequest对象
+func NewTaobaoSimbaKeywordUpdateRequest() *TaobaoSimbaKeywordUpdateAPIRequest{
+    return &TaobaoSimbaKeywordUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaKeywordUpdateRequest) GetApiMethodName() string {
+func (r TaobaoSimbaKeywordUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.simba.keyword.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaKeywordUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaKeywordUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSimbaKeywordUpdateRequest) GetApiParams() url.Values {
 }
 // Bidwords Setter
 // 关键词相关信息
-func (r *TaobaoSimbaKeywordUpdateRequest) SetBidwords(_bidwords []SiriusBidwordDTO) error {
+func (r *TaobaoSimbaKeywordUpdateAPIRequest) SetBidwords(_bidwords []SiriusBidwordDTO) error {
     r._bidwords = _bidwords
     r.Set("bidwords", _bidwords)
     return nil
 }
 
 // Bidwords Getter
-func (r TaobaoSimbaKeywordUpdateRequest) GetBidwords() []SiriusBidwordDTO {
+func (r TaobaoSimbaKeywordUpdateAPIRequest) GetBidwords() []SiriusBidwordDTO {
     return r._bidwords
 }

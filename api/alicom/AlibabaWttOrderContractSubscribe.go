@@ -11,7 +11,7 @@ alibaba.wtt.order.contract.subscribe
 
 分销商合约生产
 */
-func AlibabaWttOrderContractSubscribe(clt *core.SDKClient, req *alicom.AlibabaWttOrderContractSubscribeRequest, session string) (*alicom.AlibabaWttOrderContractSubscribeAPIResponse, error) {
+func AlibabaWttOrderContractSubscribe(clt *core.SDKClient, req *alicom.AlibabaWttOrderContractSubscribeAPIRequest, session string) (*alicom.AlibabaWttOrderContractSubscribeAPIResponse, error) {
     var resp alicom.AlibabaWttOrderContractSubscribeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

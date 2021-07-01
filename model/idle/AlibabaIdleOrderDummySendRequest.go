@@ -12,26 +12,26 @@ alibaba.idle.order.dummy.send
 
 适用于电子卡券等虚拟商品不需要物流的商品发货。
 */
-type AlibabaIdleOrderDummySendRequest struct {
+type AlibabaIdleOrderDummySendAPIRequest struct {
     model.Params
     // 请求
     _paramOrderDummySendRequest   *OrderDummySendRequest
 }
 
-// 初始化AlibabaIdleOrderDummySendRequest对象
-func NewAlibabaIdleOrderDummySendRequest() *AlibabaIdleOrderDummySendRequest{
-    return &AlibabaIdleOrderDummySendRequest{
+// 初始化AlibabaIdleOrderDummySendAPIRequest对象
+func NewAlibabaIdleOrderDummySendRequest() *AlibabaIdleOrderDummySendAPIRequest{
+    return &AlibabaIdleOrderDummySendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleOrderDummySendRequest) GetApiMethodName() string {
+func (r AlibabaIdleOrderDummySendAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.order.dummy.send"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleOrderDummySendRequest) GetApiParams() url.Values {
+func (r AlibabaIdleOrderDummySendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleOrderDummySendRequest) GetApiParams() url.Values {
 }
 // ParamOrderDummySendRequest Setter
 // 请求
-func (r *AlibabaIdleOrderDummySendRequest) SetParamOrderDummySendRequest(_paramOrderDummySendRequest *OrderDummySendRequest) error {
+func (r *AlibabaIdleOrderDummySendAPIRequest) SetParamOrderDummySendRequest(_paramOrderDummySendRequest *OrderDummySendRequest) error {
     r._paramOrderDummySendRequest = _paramOrderDummySendRequest
     r.Set("param_order_dummy_send_request", _paramOrderDummySendRequest)
     return nil
 }
 
 // ParamOrderDummySendRequest Getter
-func (r AlibabaIdleOrderDummySendRequest) GetParamOrderDummySendRequest() *OrderDummySendRequest {
+func (r AlibabaIdleOrderDummySendAPIRequest) GetParamOrderDummySendRequest() *OrderDummySendRequest {
     return r._paramOrderDummySendRequest
 }

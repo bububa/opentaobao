@@ -12,26 +12,26 @@ alibaba.lst.vas.tradeflow.save
 
 自动售货机交易信息同步接口，ISV通过此接口上传售货机交易信息。
 */
-type AlibabaLstVasTradeflowSaveRequest struct {
+type AlibabaLstVasTradeflowSaveAPIRequest struct {
     model.Params
     // 交易流水信息
     _tradeFlowModelList   *TradeFlowModel
 }
 
-// 初始化AlibabaLstVasTradeflowSaveRequest对象
-func NewAlibabaLstVasTradeflowSaveRequest() *AlibabaLstVasTradeflowSaveRequest{
-    return &AlibabaLstVasTradeflowSaveRequest{
+// 初始化AlibabaLstVasTradeflowSaveAPIRequest对象
+func NewAlibabaLstVasTradeflowSaveRequest() *AlibabaLstVasTradeflowSaveAPIRequest{
+    return &AlibabaLstVasTradeflowSaveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstVasTradeflowSaveRequest) GetApiMethodName() string {
+func (r AlibabaLstVasTradeflowSaveAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.vas.tradeflow.save"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstVasTradeflowSaveRequest) GetApiParams() url.Values {
+func (r AlibabaLstVasTradeflowSaveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstVasTradeflowSaveRequest) GetApiParams() url.Values {
 }
 // TradeFlowModelList Setter
 // 交易流水信息
-func (r *AlibabaLstVasTradeflowSaveRequest) SetTradeFlowModelList(_tradeFlowModelList *TradeFlowModel) error {
+func (r *AlibabaLstVasTradeflowSaveAPIRequest) SetTradeFlowModelList(_tradeFlowModelList *TradeFlowModel) error {
     r._tradeFlowModelList = _tradeFlowModelList
     r.Set("trade_flow_model_list", _tradeFlowModelList)
     return nil
 }
 
 // TradeFlowModelList Getter
-func (r AlibabaLstVasTradeflowSaveRequest) GetTradeFlowModelList() *TradeFlowModel {
+func (r AlibabaLstVasTradeflowSaveAPIRequest) GetTradeFlowModelList() *TradeFlowModel {
     return r._tradeFlowModelList
 }

@@ -11,7 +11,7 @@ taobao.cloudpush.push
 
 百川用户使用云推送高级推送接口
 */
-func TaobaoCloudpushPush(clt *core.SDKClient, req *cloudpush.TaobaoCloudpushPushRequest, session string) (*cloudpush.TaobaoCloudpushPushAPIResponse, error) {
+func TaobaoCloudpushPush(clt *core.SDKClient, req *cloudpush.TaobaoCloudpushPushAPIRequest, session string) (*cloudpush.TaobaoCloudpushPushAPIResponse, error) {
     var resp cloudpush.TaobaoCloudpushPushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.wms.order.warehouse.route.get
 
 获取订单仓库路由信息
 */
-func TaobaoWmsOrderWarehouseRouteGet(clt *core.SDKClient, req *logistic.TaobaoWmsOrderWarehouseRouteGetRequest, session string) (*logistic.TaobaoWmsOrderWarehouseRouteGetAPIResponse, error) {
+func TaobaoWmsOrderWarehouseRouteGet(clt *core.SDKClient, req *logistic.TaobaoWmsOrderWarehouseRouteGetAPIRequest, session string) (*logistic.TaobaoWmsOrderWarehouseRouteGetAPIResponse, error) {
     var resp logistic.TaobaoWmsOrderWarehouseRouteGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

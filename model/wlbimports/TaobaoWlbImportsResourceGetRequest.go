@@ -12,7 +12,7 @@ taobao.wlb.imports.resource.get
 
 一般进口TOP接口，获取所有服务列表。
 */
-type TaobaoWlbImportsResourceGetRequest struct {
+type TaobaoWlbImportsResourceGetAPIRequest struct {
     model.Params
     // 卖家发货地区域ID
     _fromId   int64
@@ -20,20 +20,20 @@ type TaobaoWlbImportsResourceGetRequest struct {
     _toAddress   *ReciverAddressDO
 }
 
-// 初始化TaobaoWlbImportsResourceGetRequest对象
-func NewTaobaoWlbImportsResourceGetRequest() *TaobaoWlbImportsResourceGetRequest{
-    return &TaobaoWlbImportsResourceGetRequest{
+// 初始化TaobaoWlbImportsResourceGetAPIRequest对象
+func NewTaobaoWlbImportsResourceGetRequest() *TaobaoWlbImportsResourceGetAPIRequest{
+    return &TaobaoWlbImportsResourceGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbImportsResourceGetRequest) GetApiMethodName() string {
+func (r TaobaoWlbImportsResourceGetAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.imports.resource.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbImportsResourceGetRequest) GetApiParams() url.Values {
+func (r TaobaoWlbImportsResourceGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoWlbImportsResourceGetRequest) GetApiParams() url.Values {
 }
 // FromId Setter
 // 卖家发货地区域ID
-func (r *TaobaoWlbImportsResourceGetRequest) SetFromId(_fromId int64) error {
+func (r *TaobaoWlbImportsResourceGetAPIRequest) SetFromId(_fromId int64) error {
     r._fromId = _fromId
     r.Set("from_id", _fromId)
     return nil
 }
 
 // FromId Getter
-func (r TaobaoWlbImportsResourceGetRequest) GetFromId() int64 {
+func (r TaobaoWlbImportsResourceGetAPIRequest) GetFromId() int64 {
     return r._fromId
 }
 // ToAddress Setter
 // 买家收货地信息
-func (r *TaobaoWlbImportsResourceGetRequest) SetToAddress(_toAddress *ReciverAddressDO) error {
+func (r *TaobaoWlbImportsResourceGetAPIRequest) SetToAddress(_toAddress *ReciverAddressDO) error {
     r._toAddress = _toAddress
     r.Set("to_address", _toAddress)
     return nil
 }
 
 // ToAddress Getter
-func (r TaobaoWlbImportsResourceGetRequest) GetToAddress() *ReciverAddressDO {
+func (r TaobaoWlbImportsResourceGetAPIRequest) GetToAddress() *ReciverAddressDO {
     return r._toAddress
 }

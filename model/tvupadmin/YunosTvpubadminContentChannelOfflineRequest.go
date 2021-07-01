@@ -12,26 +12,26 @@ yunos.tvpubadmin.content.channel.offline
 
 迎客松影视频道下线
 */
-type YunosTvpubadminContentChannelOfflineRequest struct {
+type YunosTvpubadminContentChannelOfflineAPIRequest struct {
     model.Params
     // id
     _id   int64
 }
 
-// 初始化YunosTvpubadminContentChannelOfflineRequest对象
-func NewYunosTvpubadminContentChannelOfflineRequest() *YunosTvpubadminContentChannelOfflineRequest{
-    return &YunosTvpubadminContentChannelOfflineRequest{
+// 初始化YunosTvpubadminContentChannelOfflineAPIRequest对象
+func NewYunosTvpubadminContentChannelOfflineRequest() *YunosTvpubadminContentChannelOfflineAPIRequest{
+    return &YunosTvpubadminContentChannelOfflineAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentChannelOfflineRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentChannelOfflineAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.channel.offline"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentChannelOfflineRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentChannelOfflineAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentChannelOfflineRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // id
-func (r *YunosTvpubadminContentChannelOfflineRequest) SetId(_id int64) error {
+func (r *YunosTvpubadminContentChannelOfflineAPIRequest) SetId(_id int64) error {
     r._id = _id
     r.Set("id", _id)
     return nil
 }
 
 // Id Getter
-func (r YunosTvpubadminContentChannelOfflineRequest) GetId() int64 {
+func (r YunosTvpubadminContentChannelOfflineAPIRequest) GetId() int64 {
     return r._id
 }

@@ -11,7 +11,7 @@ taobao.item.delete
 
 删除单条商品
 */
-func TaobaoItemDelete(clt *core.SDKClient, req *product.TaobaoItemDeleteRequest, session string) (*product.TaobaoItemDeleteAPIResponse, error) {
+func TaobaoItemDelete(clt *core.SDKClient, req *product.TaobaoItemDeleteAPIRequest, session string) (*product.TaobaoItemDeleteAPIResponse, error) {
     var resp product.TaobaoItemDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

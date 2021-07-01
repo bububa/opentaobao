@@ -1,7 +1,7 @@
 package btrip
 
-// PageInfoRs 
-type PageInfoRs struct {
+// PageInfoRS 
+type PageInfoRS struct {
     // 当前页
     Page   int64 `json:"page,omitempty" xml:"page,omitempty"`
     // 每页大小

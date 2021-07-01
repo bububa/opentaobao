@@ -11,7 +11,7 @@ taobao.openim.tribe.gettribeinfo
 
 获取群信息
 */
-func TaobaoOpenimTribeGettribeinfo(clt *core.SDKClient, req *openim.TaobaoOpenimTribeGettribeinfoRequest, session string) (*openim.TaobaoOpenimTribeGettribeinfoAPIResponse, error) {
+func TaobaoOpenimTribeGettribeinfo(clt *core.SDKClient, req *openim.TaobaoOpenimTribeGettribeinfoAPIRequest, session string) (*openim.TaobaoOpenimTribeGettribeinfoAPIResponse, error) {
     var resp openim.TaobaoOpenimTribeGettribeinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

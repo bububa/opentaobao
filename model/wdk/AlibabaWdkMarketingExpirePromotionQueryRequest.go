@@ -12,7 +12,7 @@ alibaba.wdk.marketing.expire.promotion.query
 
 短保优惠查询
 */
-type AlibabaWdkMarketingExpirePromotionQueryRequest struct {
+type AlibabaWdkMarketingExpirePromotionQueryAPIRequest struct {
     model.Params
     // 店铺id
     _shopId   string
@@ -20,20 +20,20 @@ type AlibabaWdkMarketingExpirePromotionQueryRequest struct {
     _skuCode   string
 }
 
-// 初始化AlibabaWdkMarketingExpirePromotionQueryRequest对象
-func NewAlibabaWdkMarketingExpirePromotionQueryRequest() *AlibabaWdkMarketingExpirePromotionQueryRequest{
-    return &AlibabaWdkMarketingExpirePromotionQueryRequest{
+// 初始化AlibabaWdkMarketingExpirePromotionQueryAPIRequest对象
+func NewAlibabaWdkMarketingExpirePromotionQueryRequest() *AlibabaWdkMarketingExpirePromotionQueryAPIRequest{
+    return &AlibabaWdkMarketingExpirePromotionQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingExpirePromotionQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.expire.promotion.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingExpirePromotionQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaWdkMarketingExpirePromotionQueryRequest) GetApiParams() url.Value
 }
 // ShopId Setter
 // 店铺id
-func (r *AlibabaWdkMarketingExpirePromotionQueryRequest) SetShopId(_shopId string) error {
+func (r *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) SetShopId(_shopId string) error {
     r._shopId = _shopId
     r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
-func (r AlibabaWdkMarketingExpirePromotionQueryRequest) GetShopId() string {
+func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetShopId() string {
     return r._shopId
 }
 // SkuCode Setter
 // 商品skucode
-func (r *AlibabaWdkMarketingExpirePromotionQueryRequest) SetSkuCode(_skuCode string) error {
+func (r *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) SetSkuCode(_skuCode string) error {
     r._skuCode = _skuCode
     r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
-func (r AlibabaWdkMarketingExpirePromotionQueryRequest) GetSkuCode() string {
+func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetSkuCode() string {
     return r._skuCode
 }

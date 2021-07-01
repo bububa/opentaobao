@@ -12,7 +12,7 @@ alibaba.scbp.ad.campaign.find.campaign.effect
 
 批量查询计划效果数据
 */
-type AlibabaScbpAdCampaignFindCampaignEffectRequest struct {
+type AlibabaScbpAdCampaignFindCampaignEffectAPIRequest struct {
     model.Params
     // 计划id集合
     _campaignIdList   []int64
@@ -24,20 +24,20 @@ type AlibabaScbpAdCampaignFindCampaignEffectRequest struct {
     _topContext   *TopContextDTO
 }
 
-// 初始化AlibabaScbpAdCampaignFindCampaignEffectRequest对象
-func NewAlibabaScbpAdCampaignFindCampaignEffectRequest() *AlibabaScbpAdCampaignFindCampaignEffectRequest{
-    return &AlibabaScbpAdCampaignFindCampaignEffectRequest{
+// 初始化AlibabaScbpAdCampaignFindCampaignEffectAPIRequest对象
+func NewAlibabaScbpAdCampaignFindCampaignEffectRequest() *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest{
+    return &AlibabaScbpAdCampaignFindCampaignEffectAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.campaign.find.campaign.effect"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetApiParams() url.Value
 }
 // CampaignIdList Setter
 // 计划id集合
-func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetCampaignIdList(_campaignIdList []int64) error {
+func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetCampaignIdList(_campaignIdList []int64) error {
     r._campaignIdList = _campaignIdList
     r.Set("campaign_id_list", _campaignIdList)
     return nil
 }
 
 // CampaignIdList Getter
-func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetCampaignIdList() []int64 {
+func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetCampaignIdList() []int64 {
     return r._campaignIdList
 }
 // BeginDate Setter
 // 开始时间
-func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetBeginDate(_beginDate string) error {
+func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetBeginDate(_beginDate string) error {
     r._beginDate = _beginDate
     r.Set("begin_date", _beginDate)
     return nil
 }
 
 // BeginDate Getter
-func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetBeginDate() string {
+func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetBeginDate() string {
     return r._beginDate
 }
 // EndDate Setter
 // 结束时间
-func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetEndDate(_endDate string) error {
+func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetEndDate(_endDate string) error {
     r._endDate = _endDate
     r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
-func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetEndDate() string {
+func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetEndDate() string {
     return r._endDate
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetTopContext(_topContext *TopContextDTO) error {
+func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetTopContext() *TopContextDTO {
+func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

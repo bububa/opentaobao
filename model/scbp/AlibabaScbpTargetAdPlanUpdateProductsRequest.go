@@ -12,26 +12,26 @@ alibaba.scbp.target.ad.plan.update.products
 
 定向推广 按照id操作推广计划的产品，包括新增，删除和更新
 */
-type AlibabaScbpTargetAdPlanUpdateProductsRequest struct {
+type AlibabaScbpTargetAdPlanUpdateProductsAPIRequest struct {
     model.Params
     // 系统生成
     _paramTopP4pModifyQuickCampaignProductDTO   *TopP4pModifyQuickCampaignProductDTO
 }
 
-// 初始化AlibabaScbpTargetAdPlanUpdateProductsRequest对象
-func NewAlibabaScbpTargetAdPlanUpdateProductsRequest() *AlibabaScbpTargetAdPlanUpdateProductsRequest{
-    return &AlibabaScbpTargetAdPlanUpdateProductsRequest{
+// 初始化AlibabaScbpTargetAdPlanUpdateProductsAPIRequest对象
+func NewAlibabaScbpTargetAdPlanUpdateProductsRequest() *AlibabaScbpTargetAdPlanUpdateProductsAPIRequest{
+    return &AlibabaScbpTargetAdPlanUpdateProductsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpTargetAdPlanUpdateProductsRequest) GetApiMethodName() string {
+func (r AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.target.ad.plan.update.products"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTargetAdPlanUpdateProductsRequest) GetApiParams() url.Values {
+func (r AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpTargetAdPlanUpdateProductsRequest) GetApiParams() url.Values 
 }
 // ParamTopP4pModifyQuickCampaignProductDTO Setter
 // 系统生成
-func (r *AlibabaScbpTargetAdPlanUpdateProductsRequest) SetParamTopP4pModifyQuickCampaignProductDTO(_paramTopP4pModifyQuickCampaignProductDTO *TopP4pModifyQuickCampaignProductDTO) error {
+func (r *AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) SetParamTopP4pModifyQuickCampaignProductDTO(_paramTopP4pModifyQuickCampaignProductDTO *TopP4pModifyQuickCampaignProductDTO) error {
     r._paramTopP4pModifyQuickCampaignProductDTO = _paramTopP4pModifyQuickCampaignProductDTO
     r.Set("param_top_p4p_modify_quick_campaign_product_d_t_o", _paramTopP4pModifyQuickCampaignProductDTO)
     return nil
 }
 
 // ParamTopP4pModifyQuickCampaignProductDTO Getter
-func (r AlibabaScbpTargetAdPlanUpdateProductsRequest) GetParamTopP4pModifyQuickCampaignProductDTO() *TopP4pModifyQuickCampaignProductDTO {
+func (r AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) GetParamTopP4pModifyQuickCampaignProductDTO() *TopP4pModifyQuickCampaignProductDTO {
     return r._paramTopP4pModifyQuickCampaignProductDTO
 }

@@ -12,26 +12,26 @@ alibaba.wdk.sku.category.update
 
 商家类目修改接口
 */
-type AlibabaWdkSkuCategoryUpdateRequest struct {
+type AlibabaWdkSkuCategoryUpdateAPIRequest struct {
     model.Params
     // 更新请求模型
     _param   *CategoryDO
 }
 
-// 初始化AlibabaWdkSkuCategoryUpdateRequest对象
-func NewAlibabaWdkSkuCategoryUpdateRequest() *AlibabaWdkSkuCategoryUpdateRequest{
-    return &AlibabaWdkSkuCategoryUpdateRequest{
+// 初始化AlibabaWdkSkuCategoryUpdateAPIRequest对象
+func NewAlibabaWdkSkuCategoryUpdateRequest() *AlibabaWdkSkuCategoryUpdateAPIRequest{
+    return &AlibabaWdkSkuCategoryUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuCategoryUpdateRequest) GetApiMethodName() string {
+func (r AlibabaWdkSkuCategoryUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.category.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuCategoryUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSkuCategoryUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuCategoryUpdateRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 更新请求模型
-func (r *AlibabaWdkSkuCategoryUpdateRequest) SetParam(_param *CategoryDO) error {
+func (r *AlibabaWdkSkuCategoryUpdateAPIRequest) SetParam(_param *CategoryDO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkSkuCategoryUpdateRequest) GetParam() *CategoryDO {
+func (r AlibabaWdkSkuCategoryUpdateAPIRequest) GetParam() *CategoryDO {
     return r._param
 }

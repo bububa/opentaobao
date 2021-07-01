@@ -12,26 +12,26 @@ taobao.mtop.upload.token.get
 
 获取mtop文件上传授权
 */
-type TaobaoMtopUploadTokenGetRequest struct {
+type TaobaoMtopUploadTokenGetAPIRequest struct {
     model.Params
     // 系统自动生成
     _paramUploadTokenRequest   *UploadTokenRequestV
 }
 
-// 初始化TaobaoMtopUploadTokenGetRequest对象
-func NewTaobaoMtopUploadTokenGetRequest() *TaobaoMtopUploadTokenGetRequest{
-    return &TaobaoMtopUploadTokenGetRequest{
+// 初始化TaobaoMtopUploadTokenGetAPIRequest对象
+func NewTaobaoMtopUploadTokenGetRequest() *TaobaoMtopUploadTokenGetAPIRequest{
+    return &TaobaoMtopUploadTokenGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMtopUploadTokenGetRequest) GetApiMethodName() string {
+func (r TaobaoMtopUploadTokenGetAPIRequest) GetApiMethodName() string {
     return "taobao.mtop.upload.token.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMtopUploadTokenGetRequest) GetApiParams() url.Values {
+func (r TaobaoMtopUploadTokenGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoMtopUploadTokenGetRequest) GetApiParams() url.Values {
 }
 // ParamUploadTokenRequest Setter
 // 系统自动生成
-func (r *TaobaoMtopUploadTokenGetRequest) SetParamUploadTokenRequest(_paramUploadTokenRequest *UploadTokenRequestV) error {
+func (r *TaobaoMtopUploadTokenGetAPIRequest) SetParamUploadTokenRequest(_paramUploadTokenRequest *UploadTokenRequestV) error {
     r._paramUploadTokenRequest = _paramUploadTokenRequest
     r.Set("param_upload_token_request", _paramUploadTokenRequest)
     return nil
 }
 
 // ParamUploadTokenRequest Getter
-func (r TaobaoMtopUploadTokenGetRequest) GetParamUploadTokenRequest() *UploadTokenRequestV {
+func (r TaobaoMtopUploadTokenGetAPIRequest) GetParamUploadTokenRequest() *UploadTokenRequestV {
     return r._paramUploadTokenRequest
 }

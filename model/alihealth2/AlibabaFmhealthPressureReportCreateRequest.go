@@ -12,7 +12,7 @@ alibaba.fmhealth.pressure.report.create
 
 生成用户血压测量报告
 */
-type AlibabaFmhealthPressureReportCreateRequest struct {
+type AlibabaFmhealthPressureReportCreateAPIRequest struct {
     model.Params
     // 用户id
     _userId   int64
@@ -30,20 +30,20 @@ type AlibabaFmhealthPressureReportCreateRequest struct {
     _reportSource   string
 }
 
-// 初始化AlibabaFmhealthPressureReportCreateRequest对象
-func NewAlibabaFmhealthPressureReportCreateRequest() *AlibabaFmhealthPressureReportCreateRequest{
-    return &AlibabaFmhealthPressureReportCreateRequest{
+// 初始化AlibabaFmhealthPressureReportCreateAPIRequest对象
+func NewAlibabaFmhealthPressureReportCreateRequest() *AlibabaFmhealthPressureReportCreateAPIRequest{
+    return &AlibabaFmhealthPressureReportCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaFmhealthPressureReportCreateRequest) GetApiMethodName() string {
+func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.fmhealth.pressure.report.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaFmhealthPressureReportCreateRequest) GetApiParams() url.Values {
+func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,85 +52,85 @@ func (r AlibabaFmhealthPressureReportCreateRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetUserId(_userId int64) error {
+func (r *AlibabaFmhealthPressureReportCreateAPIRequest) SetUserId(_userId int64) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r AlibabaFmhealthPressureReportCreateRequest) GetUserId() int64 {
+func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetUserId() int64 {
     return r._userId
 }
 // ReportType Setter
 // 报告类型
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportType(_reportType string) error {
+func (r *AlibabaFmhealthPressureReportCreateAPIRequest) SetReportType(_reportType string) error {
     r._reportType = _reportType
     r.Set("report_type", _reportType)
     return nil
 }
 
 // ReportType Getter
-func (r AlibabaFmhealthPressureReportCreateRequest) GetReportType() string {
+func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetReportType() string {
     return r._reportType
 }
 // ReportData Setter
 // 报告内容
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportData(_reportData string) error {
+func (r *AlibabaFmhealthPressureReportCreateAPIRequest) SetReportData(_reportData string) error {
     r._reportData = _reportData
     r.Set("report_data", _reportData)
     return nil
 }
 
 // ReportData Getter
-func (r AlibabaFmhealthPressureReportCreateRequest) GetReportData() string {
+func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetReportData() string {
     return r._reportData
 }
 // ReportPeriod Setter
 // 报告周期
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportPeriod(_reportPeriod string) error {
+func (r *AlibabaFmhealthPressureReportCreateAPIRequest) SetReportPeriod(_reportPeriod string) error {
     r._reportPeriod = _reportPeriod
     r.Set("report_period", _reportPeriod)
     return nil
 }
 
 // ReportPeriod Getter
-func (r AlibabaFmhealthPressureReportCreateRequest) GetReportPeriod() string {
+func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetReportPeriod() string {
     return r._reportPeriod
 }
 // ReportTime Setter
 // 报告时间
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportTime(_reportTime string) error {
+func (r *AlibabaFmhealthPressureReportCreateAPIRequest) SetReportTime(_reportTime string) error {
     r._reportTime = _reportTime
     r.Set("report_time", _reportTime)
     return nil
 }
 
 // ReportTime Getter
-func (r AlibabaFmhealthPressureReportCreateRequest) GetReportTime() string {
+func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetReportTime() string {
     return r._reportTime
 }
 // ReportPeriodDays Setter
 // 报告周期天数
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportPeriodDays(_reportPeriodDays string) error {
+func (r *AlibabaFmhealthPressureReportCreateAPIRequest) SetReportPeriodDays(_reportPeriodDays string) error {
     r._reportPeriodDays = _reportPeriodDays
     r.Set("report_period_days", _reportPeriodDays)
     return nil
 }
 
 // ReportPeriodDays Getter
-func (r AlibabaFmhealthPressureReportCreateRequest) GetReportPeriodDays() string {
+func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetReportPeriodDays() string {
     return r._reportPeriodDays
 }
 // ReportSource Setter
 // 数据来源
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportSource(_reportSource string) error {
+func (r *AlibabaFmhealthPressureReportCreateAPIRequest) SetReportSource(_reportSource string) error {
     r._reportSource = _reportSource
     r.Set("report_source", _reportSource)
     return nil
 }
 
 // ReportSource Getter
-func (r AlibabaFmhealthPressureReportCreateRequest) GetReportSource() string {
+func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetReportSource() string {
     return r._reportSource
 }

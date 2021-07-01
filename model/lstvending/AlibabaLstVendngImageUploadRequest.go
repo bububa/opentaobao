@@ -12,26 +12,26 @@ alibaba.lst.vendng.image.upload
 
 零售通自动售货机商品图片上传接口，主要为ISV厂商提供图片同步的通道，从而建立统一的商品图片库。
 */
-type AlibabaLstVendngImageUploadRequest struct {
+type AlibabaLstVendngImageUploadAPIRequest struct {
     model.Params
     // 图片文件字节数组
     _imgBytes   *model.File
 }
 
-// 初始化AlibabaLstVendngImageUploadRequest对象
-func NewAlibabaLstVendngImageUploadRequest() *AlibabaLstVendngImageUploadRequest{
-    return &AlibabaLstVendngImageUploadRequest{
+// 初始化AlibabaLstVendngImageUploadAPIRequest对象
+func NewAlibabaLstVendngImageUploadRequest() *AlibabaLstVendngImageUploadAPIRequest{
+    return &AlibabaLstVendngImageUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstVendngImageUploadRequest) GetApiMethodName() string {
+func (r AlibabaLstVendngImageUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.vendng.image.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstVendngImageUploadRequest) GetApiParams() url.Values {
+func (r AlibabaLstVendngImageUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstVendngImageUploadRequest) GetApiParams() url.Values {
 }
 // ImgBytes Setter
 // 图片文件字节数组
-func (r *AlibabaLstVendngImageUploadRequest) SetImgBytes(_imgBytes *model.File) error {
+func (r *AlibabaLstVendngImageUploadAPIRequest) SetImgBytes(_imgBytes *model.File) error {
     r._imgBytes = _imgBytes
     r.Set("img_bytes", _imgBytes)
     return nil
 }
 
 // ImgBytes Getter
-func (r AlibabaLstVendngImageUploadRequest) GetImgBytes() *model.File {
+func (r AlibabaLstVendngImageUploadAPIRequest) GetImgBytes() *model.File {
     return r._imgBytes
 }

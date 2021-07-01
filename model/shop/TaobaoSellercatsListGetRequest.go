@@ -12,24 +12,24 @@ taobao.sellercats.list.get
 
 此API获取当前卖家店铺在淘宝前端被展示的浏览导航类目（面向买家）
 */
-type TaobaoSellercatsListGetRequest struct {
+type TaobaoSellercatsListGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoSellercatsListGetRequest对象
-func NewTaobaoSellercatsListGetRequest() *TaobaoSellercatsListGetRequest{
-    return &TaobaoSellercatsListGetRequest{
+// 初始化TaobaoSellercatsListGetAPIRequest对象
+func NewTaobaoSellercatsListGetRequest() *TaobaoSellercatsListGetAPIRequest{
+    return &TaobaoSellercatsListGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSellercatsListGetRequest) GetApiMethodName() string {
+func (r TaobaoSellercatsListGetAPIRequest) GetApiMethodName() string {
     return "taobao.sellercats.list.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSellercatsListGetRequest) GetApiParams() url.Values {
+func (r TaobaoSellercatsListGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

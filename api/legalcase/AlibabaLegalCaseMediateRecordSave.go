@@ -11,7 +11,7 @@ alibaba.legal.case.mediate.record.save
 
 增加调解沟通记录
 */
-func AlibabaLegalCaseMediateRecordSave(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseMediateRecordSaveRequest, session string) (*legalcase.AlibabaLegalCaseMediateRecordSaveAPIResponse, error) {
+func AlibabaLegalCaseMediateRecordSave(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseMediateRecordSaveAPIRequest, session string) (*legalcase.AlibabaLegalCaseMediateRecordSaveAPIResponse, error) {
     var resp legalcase.AlibabaLegalCaseMediateRecordSaveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

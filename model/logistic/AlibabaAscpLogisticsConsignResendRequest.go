@@ -14,7 +14,7 @@ alibaba.ascp.logistics.consign.resend
 1、必须是已发货订单，自己联系发货的必须24小时内才可修改；在线下单的，必须下单后物流公司未揽收成功前才可修改；
 2、自己联系只能切换为自己联系的公司，在线下单也只能切换为在线下单的物流公司
 */
-type AlibabaAscpLogisticsConsignResendRequest struct {
+type AlibabaAscpLogisticsConsignResendAPIRequest struct {
     model.Params
     // 订单id
     _tid   string
@@ -24,20 +24,20 @@ type AlibabaAscpLogisticsConsignResendRequest struct {
     _consignPkgs   []TopConsignPkgRequest
 }
 
-// 初始化AlibabaAscpLogisticsConsignResendRequest对象
-func NewAlibabaAscpLogisticsConsignResendRequest() *AlibabaAscpLogisticsConsignResendRequest{
-    return &AlibabaAscpLogisticsConsignResendRequest{
+// 初始化AlibabaAscpLogisticsConsignResendAPIRequest对象
+func NewAlibabaAscpLogisticsConsignResendRequest() *AlibabaAscpLogisticsConsignResendAPIRequest{
+    return &AlibabaAscpLogisticsConsignResendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAscpLogisticsConsignResendRequest) GetApiMethodName() string {
+func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetApiMethodName() string {
     return "alibaba.ascp.logistics.consign.resend"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAscpLogisticsConsignResendRequest) GetApiParams() url.Values {
+func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,37 +46,37 @@ func (r AlibabaAscpLogisticsConsignResendRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 订单id
-func (r *AlibabaAscpLogisticsConsignResendRequest) SetTid(_tid string) error {
+func (r *AlibabaAscpLogisticsConsignResendAPIRequest) SetTid(_tid string) error {
     r._tid = _tid
     r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
-func (r AlibabaAscpLogisticsConsignResendRequest) GetTid() string {
+func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetTid() string {
     return r._tid
 }
 // SubTids Setter
 // 拆单子订单列表，对应的数据是：子订单号列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集
-func (r *AlibabaAscpLogisticsConsignResendRequest) SetSubTids(_subTids string) error {
+func (r *AlibabaAscpLogisticsConsignResendAPIRequest) SetSubTids(_subTids string) error {
     r._subTids = _subTids
     r.Set("sub_tids", _subTids)
     return nil
 }
 
 // SubTids Getter
-func (r AlibabaAscpLogisticsConsignResendRequest) GetSubTids() string {
+func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetSubTids() string {
     return r._subTids
 }
 // ConsignPkgs Setter
 // 包裹包含的运单号及快递公司编号,多包裹时，需要包含所有包裹的运单号等信息
-func (r *AlibabaAscpLogisticsConsignResendRequest) SetConsignPkgs(_consignPkgs []TopConsignPkgRequest) error {
+func (r *AlibabaAscpLogisticsConsignResendAPIRequest) SetConsignPkgs(_consignPkgs []TopConsignPkgRequest) error {
     r._consignPkgs = _consignPkgs
     r.Set("consign_pkgs", _consignPkgs)
     return nil
 }
 
 // ConsignPkgs Getter
-func (r AlibabaAscpLogisticsConsignResendRequest) GetConsignPkgs() []TopConsignPkgRequest {
+func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetConsignPkgs() []TopConsignPkgRequest {
     return r._consignPkgs
 }

@@ -11,7 +11,7 @@ alipay.xiaodai.user.permit
 
 阿里金融为用户开通消息通道接口
 */
-func AlipayXiaodaiUserPermit(clt *core.SDKClient, req *tmc.AlipayXiaodaiUserPermitRequest, session string) (*tmc.AlipayXiaodaiUserPermitAPIResponse, error) {
+func AlipayXiaodaiUserPermit(clt *core.SDKClient, req *tmc.AlipayXiaodaiUserPermitAPIRequest, session string) (*tmc.AlipayXiaodaiUserPermitAPIResponse, error) {
     var resp tmc.AlipayXiaodaiUserPermitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

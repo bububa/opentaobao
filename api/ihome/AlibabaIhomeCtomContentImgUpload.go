@@ -11,7 +11,7 @@ alibaba.ihome.ctom.content.img.upload
 
 实拍图投稿链路上传图片
 */
-func AlibabaIhomeCtomContentImgUpload(clt *core.SDKClient, req *ihome.AlibabaIhomeCtomContentImgUploadRequest, session string) (*ihome.AlibabaIhomeCtomContentImgUploadAPIResponse, error) {
+func AlibabaIhomeCtomContentImgUpload(clt *core.SDKClient, req *ihome.AlibabaIhomeCtomContentImgUploadAPIRequest, session string) (*ihome.AlibabaIhomeCtomContentImgUploadAPIResponse, error) {
     var resp ihome.AlibabaIhomeCtomContentImgUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

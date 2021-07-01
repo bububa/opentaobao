@@ -11,7 +11,7 @@ alibaba.tmallgenie.scp.plan.materiel.get
 
 IBP同步物料接口
 */
-func AlibabaTmallgenieScpPlanMaterielGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanMaterielGetRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanMaterielGetAPIResponse, error) {
+func AlibabaTmallgenieScpPlanMaterielGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanMaterielGetAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanMaterielGetAPIResponse, error) {
     var resp tmallgeniescp.AlibabaTmallgenieScpPlanMaterielGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.txp.item.itemlistget
 
 淘小铺商品的查询服务。
 */
-func TaobaoTxpItemItemlistget(clt *core.SDKClient, req *c2m.TaobaoTxpItemItemlistgetRequest, session string) (*c2m.TaobaoTxpItemItemlistgetAPIResponse, error) {
+func TaobaoTxpItemItemlistget(clt *core.SDKClient, req *c2m.TaobaoTxpItemItemlistgetAPIRequest, session string) (*c2m.TaobaoTxpItemItemlistgetAPIResponse, error) {
     var resp c2m.TaobaoTxpItemItemlistgetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

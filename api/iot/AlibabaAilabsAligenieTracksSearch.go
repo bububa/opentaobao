@@ -11,7 +11,7 @@ alibaba.ailabs.aligenie.tracks.search
 
 搜索类目下的音频信息
 */
-func AlibabaAilabsAligenieTracksSearch(clt *core.SDKClient, req *iot.AlibabaAilabsAligenieTracksSearchRequest, session string) (*iot.AlibabaAilabsAligenieTracksSearchAPIResponse, error) {
+func AlibabaAilabsAligenieTracksSearch(clt *core.SDKClient, req *iot.AlibabaAilabsAligenieTracksSearchAPIRequest, session string) (*iot.AlibabaAilabsAligenieTracksSearchAPIResponse, error) {
     var resp iot.AlibabaAilabsAligenieTracksSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

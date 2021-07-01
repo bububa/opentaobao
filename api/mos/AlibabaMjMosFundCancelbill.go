@@ -11,7 +11,7 @@ alibaba.mj.mos.fund.cancelbill
 
 取消付款单
 */
-func AlibabaMjMosFundCancelbill(clt *core.SDKClient, req *mos.AlibabaMjMosFundCancelbillRequest, session string) (*mos.AlibabaMjMosFundCancelbillAPIResponse, error) {
+func AlibabaMjMosFundCancelbill(clt *core.SDKClient, req *mos.AlibabaMjMosFundCancelbillAPIRequest, session string) (*mos.AlibabaMjMosFundCancelbillAPIResponse, error) {
     var resp mos.AlibabaMjMosFundCancelbillAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

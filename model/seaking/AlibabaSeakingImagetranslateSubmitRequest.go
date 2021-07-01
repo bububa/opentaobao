@@ -12,7 +12,7 @@ alibaba.seaking.imagetranslate.submit
 
 提交图片翻译任务
 */
-type AlibabaSeakingImagetranslateSubmitRequest struct {
+type AlibabaSeakingImagetranslateSubmitAPIRequest struct {
     model.Params
     // token来源站点
     _tokenFrom   string
@@ -22,20 +22,20 @@ type AlibabaSeakingImagetranslateSubmitRequest struct {
     _token   string
 }
 
-// 初始化AlibabaSeakingImagetranslateSubmitRequest对象
-func NewAlibabaSeakingImagetranslateSubmitRequest() *AlibabaSeakingImagetranslateSubmitRequest{
-    return &AlibabaSeakingImagetranslateSubmitRequest{
+// 初始化AlibabaSeakingImagetranslateSubmitAPIRequest对象
+func NewAlibabaSeakingImagetranslateSubmitRequest() *AlibabaSeakingImagetranslateSubmitAPIRequest{
+    return &AlibabaSeakingImagetranslateSubmitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSeakingImagetranslateSubmitRequest) GetApiMethodName() string {
+func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetApiMethodName() string {
     return "alibaba.seaking.imagetranslate.submit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSeakingImagetranslateSubmitRequest) GetApiParams() url.Values {
+func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaSeakingImagetranslateSubmitRequest) GetApiParams() url.Values {
 }
 // TokenFrom Setter
 // token来源站点
-func (r *AlibabaSeakingImagetranslateSubmitRequest) SetTokenFrom(_tokenFrom string) error {
+func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetTokenFrom(_tokenFrom string) error {
     r._tokenFrom = _tokenFrom
     r.Set("token_from", _tokenFrom)
     return nil
 }
 
 // TokenFrom Getter
-func (r AlibabaSeakingImagetranslateSubmitRequest) GetTokenFrom() string {
+func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetTokenFrom() string {
     return r._tokenFrom
 }
 // ImageTranslateDetailList Setter
 // 子任务列表
-func (r *AlibabaSeakingImagetranslateSubmitRequest) SetImageTranslateDetailList(_imageTranslateDetailList []ImageTranslateDetailDTO) error {
+func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetImageTranslateDetailList(_imageTranslateDetailList []ImageTranslateDetailDTO) error {
     r._imageTranslateDetailList = _imageTranslateDetailList
     r.Set("image_translate_detail_list", _imageTranslateDetailList)
     return nil
 }
 
 // ImageTranslateDetailList Getter
-func (r AlibabaSeakingImagetranslateSubmitRequest) GetImageTranslateDetailList() []ImageTranslateDetailDTO {
+func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetImageTranslateDetailList() []ImageTranslateDetailDTO {
     return r._imageTranslateDetailList
 }
 // Token Setter
 // 用户token
-func (r *AlibabaSeakingImagetranslateSubmitRequest) SetToken(_token string) error {
+func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetToken(_token string) error {
     r._token = _token
     r.Set("token", _token)
     return nil
 }
 
 // Token Getter
-func (r AlibabaSeakingImagetranslateSubmitRequest) GetToken() string {
+func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetToken() string {
     return r._token
 }

@@ -12,7 +12,7 @@ alibaba.security.jaq.rp.ocr.check
 
 聚安全实人认证证件OCR识别功能接口
 */
-type AlibabaSecurityJaqRpOcrCheckRequest struct {
+type AlibabaSecurityJaqRpOcrCheckAPIRequest struct {
     model.Params
     // token
     _verifyToken   string
@@ -20,20 +20,20 @@ type AlibabaSecurityJaqRpOcrCheckRequest struct {
     _imageUrls   string
 }
 
-// 初始化AlibabaSecurityJaqRpOcrCheckRequest对象
-func NewAlibabaSecurityJaqRpOcrCheckRequest() *AlibabaSecurityJaqRpOcrCheckRequest{
-    return &AlibabaSecurityJaqRpOcrCheckRequest{
+// 初始化AlibabaSecurityJaqRpOcrCheckAPIRequest对象
+func NewAlibabaSecurityJaqRpOcrCheckRequest() *AlibabaSecurityJaqRpOcrCheckAPIRequest{
+    return &AlibabaSecurityJaqRpOcrCheckAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqRpOcrCheckRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqRpOcrCheckAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.rp.ocr.check"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqRpOcrCheckRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqRpOcrCheckAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaSecurityJaqRpOcrCheckRequest) GetApiParams() url.Values {
 }
 // VerifyToken Setter
 // token
-func (r *AlibabaSecurityJaqRpOcrCheckRequest) SetVerifyToken(_verifyToken string) error {
+func (r *AlibabaSecurityJaqRpOcrCheckAPIRequest) SetVerifyToken(_verifyToken string) error {
     r._verifyToken = _verifyToken
     r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
-func (r AlibabaSecurityJaqRpOcrCheckRequest) GetVerifyToken() string {
+func (r AlibabaSecurityJaqRpOcrCheckAPIRequest) GetVerifyToken() string {
     return r._verifyToken
 }
 // ImageUrls Setter
 // 要识别的信息
-func (r *AlibabaSecurityJaqRpOcrCheckRequest) SetImageUrls(_imageUrls string) error {
+func (r *AlibabaSecurityJaqRpOcrCheckAPIRequest) SetImageUrls(_imageUrls string) error {
     r._imageUrls = _imageUrls
     r.Set("image_urls", _imageUrls)
     return nil
 }
 
 // ImageUrls Getter
-func (r AlibabaSecurityJaqRpOcrCheckRequest) GetImageUrls() string {
+func (r AlibabaSecurityJaqRpOcrCheckAPIRequest) GetImageUrls() string {
     return r._imageUrls
 }

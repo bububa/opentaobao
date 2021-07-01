@@ -11,7 +11,7 @@ alibaba.scbp.reckeyword.search
 
 推荐词-词推词
 */
-func AlibabaScbpReckeywordSearch(clt *core.SDKClient, req *scbp.AlibabaScbpReckeywordSearchRequest, session string) (*scbp.AlibabaScbpReckeywordSearchAPIResponse, error) {
+func AlibabaScbpReckeywordSearch(clt *core.SDKClient, req *scbp.AlibabaScbpReckeywordSearchAPIRequest, session string) (*scbp.AlibabaScbpReckeywordSearchAPIResponse, error) {
     var resp scbp.AlibabaScbpReckeywordSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.alsc.crm.point.extra.consume
 
 积分补扣
 */
-func AlibabaAlscCrmPointExtraConsume(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointExtraConsumeRequest, session string) (*alsc.AlibabaAlscCrmPointExtraConsumeAPIResponse, error) {
+func AlibabaAlscCrmPointExtraConsume(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointExtraConsumeAPIRequest, session string) (*alsc.AlibabaAlscCrmPointExtraConsumeAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmPointExtraConsumeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

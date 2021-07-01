@@ -12,26 +12,26 @@ alibaba.damai.mev.open.pushfaceelement
 
 pushFaceElement
 */
-type AlibabaDamaiMevOpenPushfaceelementRequest struct {
+type AlibabaDamaiMevOpenPushfaceelementAPIRequest struct {
     model.Params
     // 入参pushFaceElementParamList
     _pushFaceElementParamList   []ThirdFaceElementPushOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenPushfaceelementRequest对象
-func NewAlibabaDamaiMevOpenPushfaceelementRequest() *AlibabaDamaiMevOpenPushfaceelementRequest{
-    return &AlibabaDamaiMevOpenPushfaceelementRequest{
+// 初始化AlibabaDamaiMevOpenPushfaceelementAPIRequest对象
+func NewAlibabaDamaiMevOpenPushfaceelementRequest() *AlibabaDamaiMevOpenPushfaceelementAPIRequest{
+    return &AlibabaDamaiMevOpenPushfaceelementAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenPushfaceelementRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenPushfaceelementAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.pushfaceelement"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenPushfaceelementRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenPushfaceelementAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushfaceelementRequest) GetApiParams() url.Values {
 }
 // PushFaceElementParamList Setter
 // 入参pushFaceElementParamList
-func (r *AlibabaDamaiMevOpenPushfaceelementRequest) SetPushFaceElementParamList(_pushFaceElementParamList []ThirdFaceElementPushOpenParam) error {
+func (r *AlibabaDamaiMevOpenPushfaceelementAPIRequest) SetPushFaceElementParamList(_pushFaceElementParamList []ThirdFaceElementPushOpenParam) error {
     r._pushFaceElementParamList = _pushFaceElementParamList
     r.Set("push_face_element_param_list", _pushFaceElementParamList)
     return nil
 }
 
 // PushFaceElementParamList Getter
-func (r AlibabaDamaiMevOpenPushfaceelementRequest) GetPushFaceElementParamList() []ThirdFaceElementPushOpenParam {
+func (r AlibabaDamaiMevOpenPushfaceelementAPIRequest) GetPushFaceElementParamList() []ThirdFaceElementPushOpenParam {
     return r._pushFaceElementParamList
 }

@@ -11,7 +11,7 @@ tmall.hk.order.clearance.query
 
 天猫国际订单清关信息查询
 */
-func TmallHkOrderClearanceQuery(clt *core.SDKClient, req *tmallhk.TmallHkOrderClearanceQueryRequest, session string) (*tmallhk.TmallHkOrderClearanceQueryAPIResponse, error) {
+func TmallHkOrderClearanceQuery(clt *core.SDKClient, req *tmallhk.TmallHkOrderClearanceQueryAPIRequest, session string) (*tmallhk.TmallHkOrderClearanceQueryAPIResponse, error) {
     var resp tmallhk.TmallHkOrderClearanceQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

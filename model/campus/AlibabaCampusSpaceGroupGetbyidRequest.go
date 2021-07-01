@@ -14,7 +14,7 @@ alibaba.campus.space.group.getbyid
 HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService
 HSF方法名称：getById
 */
-type AlibabaCampusSpaceGroupGetbyidRequest struct {
+type AlibabaCampusSpaceGroupGetbyidAPIRequest struct {
     model.Params
     // 用户环境
     _param0   *WorkBenchContext
@@ -22,20 +22,20 @@ type AlibabaCampusSpaceGroupGetbyidRequest struct {
     _param1   int64
 }
 
-// 初始化AlibabaCampusSpaceGroupGetbyidRequest对象
-func NewAlibabaCampusSpaceGroupGetbyidRequest() *AlibabaCampusSpaceGroupGetbyidRequest{
-    return &AlibabaCampusSpaceGroupGetbyidRequest{
+// 初始化AlibabaCampusSpaceGroupGetbyidAPIRequest对象
+func NewAlibabaCampusSpaceGroupGetbyidRequest() *AlibabaCampusSpaceGroupGetbyidAPIRequest{
+    return &AlibabaCampusSpaceGroupGetbyidAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceGroupGetbyidRequest) GetApiMethodName() string {
+func (r AlibabaCampusSpaceGroupGetbyidAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.space.group.getbyid"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceGroupGetbyidRequest) GetApiParams() url.Values {
+func (r AlibabaCampusSpaceGroupGetbyidAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceGroupGetbyidRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 用户环境
-func (r *AlibabaCampusSpaceGroupGetbyidRequest) SetParam0(_param0 *WorkBenchContext) error {
+func (r *AlibabaCampusSpaceGroupGetbyidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaCampusSpaceGroupGetbyidRequest) GetParam0() *WorkBenchContext {
+func (r AlibabaCampusSpaceGroupGetbyidAPIRequest) GetParam0() *WorkBenchContext {
     return r._param0
 }
 // Param1 Setter
 // 分组ID
-func (r *AlibabaCampusSpaceGroupGetbyidRequest) SetParam1(_param1 int64) error {
+func (r *AlibabaCampusSpaceGroupGetbyidAPIRequest) SetParam1(_param1 int64) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaCampusSpaceGroupGetbyidRequest) GetParam1() int64 {
+func (r AlibabaCampusSpaceGroupGetbyidAPIRequest) GetParam1() int64 {
     return r._param1
 }

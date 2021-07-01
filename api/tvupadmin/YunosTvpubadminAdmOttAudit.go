@@ -11,7 +11,7 @@ yunos.tvpubadmin.adm.ott.audit
 
 审核优酷OTT端广告素材
 */
-func YunosTvpubadminAdmOttAudit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminAdmOttAuditRequest, session string) (*tvupadmin.YunosTvpubadminAdmOttAuditAPIResponse, error) {
+func YunosTvpubadminAdmOttAudit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminAdmOttAuditAPIRequest, session string) (*tvupadmin.YunosTvpubadminAdmOttAuditAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminAdmOttAuditAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

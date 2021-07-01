@@ -11,7 +11,7 @@ taobao.wtt.trade.service.get
 
 查询网厅订单信息
 */
-func TaobaoWttTradeServiceGet(clt *core.SDKClient, req *trade.TaobaoWttTradeServiceGetRequest, session string) (*trade.TaobaoWttTradeServiceGetAPIResponse, error) {
+func TaobaoWttTradeServiceGet(clt *core.SDKClient, req *trade.TaobaoWttTradeServiceGetAPIRequest, session string) (*trade.TaobaoWttTradeServiceGetAPIResponse, error) {
     var resp trade.TaobaoWttTradeServiceGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

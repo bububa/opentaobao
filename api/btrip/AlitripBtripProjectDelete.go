@@ -11,7 +11,7 @@ alitrip.btrip.project.delete
 
 删除项目
 */
-func AlitripBtripProjectDelete(clt *core.SDKClient, req *btrip.AlitripBtripProjectDeleteRequest, session string) (*btrip.AlitripBtripProjectDeleteAPIResponse, error) {
+func AlitripBtripProjectDelete(clt *core.SDKClient, req *btrip.AlitripBtripProjectDeleteAPIRequest, session string) (*btrip.AlitripBtripProjectDeleteAPIResponse, error) {
     var resp btrip.AlitripBtripProjectDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.baichuan.taoke.trace
 
 百川淘客打点
 */
-func TaobaoBaichuanTaokeTrace(clt *core.SDKClient, req *baichuan.TaobaoBaichuanTaokeTraceRequest, session string) (*baichuan.TaobaoBaichuanTaokeTraceAPIResponse, error) {
+func TaobaoBaichuanTaokeTrace(clt *core.SDKClient, req *baichuan.TaobaoBaichuanTaokeTraceAPIRequest, session string) (*baichuan.TaobaoBaichuanTaokeTraceAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanTaokeTraceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

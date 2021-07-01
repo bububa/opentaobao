@@ -12,26 +12,26 @@ taobao.omniorder.dtd.query
 
 门店自送根据核销码码查询订单信息
 */
-type TaobaoOmniorderDtdQueryRequest struct {
+type TaobaoOmniorderDtdQueryAPIRequest struct {
     model.Params
     // 核销码
     _code   string
 }
 
-// 初始化TaobaoOmniorderDtdQueryRequest对象
-func NewTaobaoOmniorderDtdQueryRequest() *TaobaoOmniorderDtdQueryRequest{
-    return &TaobaoOmniorderDtdQueryRequest{
+// 初始化TaobaoOmniorderDtdQueryAPIRequest对象
+func NewTaobaoOmniorderDtdQueryRequest() *TaobaoOmniorderDtdQueryAPIRequest{
+    return &TaobaoOmniorderDtdQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniorderDtdQueryRequest) GetApiMethodName() string {
+func (r TaobaoOmniorderDtdQueryAPIRequest) GetApiMethodName() string {
     return "taobao.omniorder.dtd.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderDtdQueryRequest) GetApiParams() url.Values {
+func (r TaobaoOmniorderDtdQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOmniorderDtdQueryRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 核销码
-func (r *TaobaoOmniorderDtdQueryRequest) SetCode(_code string) error {
+func (r *TaobaoOmniorderDtdQueryAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r TaobaoOmniorderDtdQueryRequest) GetCode() string {
+func (r TaobaoOmniorderDtdQueryAPIRequest) GetCode() string {
     return r._code
 }

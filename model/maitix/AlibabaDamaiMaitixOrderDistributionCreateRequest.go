@@ -12,26 +12,26 @@ alibaba.damai.maitix.order.distribution.create
 
 createDistributionOrder
 */
-type AlibabaDamaiMaitixOrderDistributionCreateRequest struct {
+type AlibabaDamaiMaitixOrderDistributionCreateAPIRequest struct {
     model.Params
     // 下单参数param
     _param   *MoaOrderParam
 }
 
-// 初始化AlibabaDamaiMaitixOrderDistributionCreateRequest对象
-func NewAlibabaDamaiMaitixOrderDistributionCreateRequest() *AlibabaDamaiMaitixOrderDistributionCreateRequest{
-    return &AlibabaDamaiMaitixOrderDistributionCreateRequest{
+// 初始化AlibabaDamaiMaitixOrderDistributionCreateAPIRequest对象
+func NewAlibabaDamaiMaitixOrderDistributionCreateRequest() *AlibabaDamaiMaitixOrderDistributionCreateAPIRequest{
+    return &AlibabaDamaiMaitixOrderDistributionCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixOrderDistributionCreateRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixOrderDistributionCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.order.distribution.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixOrderDistributionCreateRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixOrderDistributionCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOrderDistributionCreateRequest) GetApiParams() url.Val
 }
 // Param Setter
 // 下单参数param
-func (r *AlibabaDamaiMaitixOrderDistributionCreateRequest) SetParam(_param *MoaOrderParam) error {
+func (r *AlibabaDamaiMaitixOrderDistributionCreateAPIRequest) SetParam(_param *MoaOrderParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaDamaiMaitixOrderDistributionCreateRequest) GetParam() *MoaOrderParam {
+func (r AlibabaDamaiMaitixOrderDistributionCreateAPIRequest) GetParam() *MoaOrderParam {
     return r._param
 }

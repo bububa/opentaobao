@@ -12,24 +12,24 @@ taobao.jst.interactive.point.query
 
 查询用户的互动积分
 */
-type TaobaoJstInteractivePointQueryRequest struct {
+type TaobaoJstInteractivePointQueryAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoJstInteractivePointQueryRequest对象
-func NewTaobaoJstInteractivePointQueryRequest() *TaobaoJstInteractivePointQueryRequest{
-    return &TaobaoJstInteractivePointQueryRequest{
+// 初始化TaobaoJstInteractivePointQueryAPIRequest对象
+func NewTaobaoJstInteractivePointQueryRequest() *TaobaoJstInteractivePointQueryAPIRequest{
+    return &TaobaoJstInteractivePointQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJstInteractivePointQueryRequest) GetApiMethodName() string {
+func (r TaobaoJstInteractivePointQueryAPIRequest) GetApiMethodName() string {
     return "taobao.jst.interactive.point.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJstInteractivePointQueryRequest) GetApiParams() url.Values {
+func (r TaobaoJstInteractivePointQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

@@ -12,26 +12,26 @@ alitrip.rail.trade.refund
 
 退票接口
 */
-type AlitripRailTradeRefundRequest struct {
+type AlitripRailTradeRefundAPIRequest struct {
     model.Params
     // 入参
     _refundParam   *RefundReq
 }
 
-// 初始化AlitripRailTradeRefundRequest对象
-func NewAlitripRailTradeRefundRequest() *AlitripRailTradeRefundRequest{
-    return &AlitripRailTradeRefundRequest{
+// 初始化AlitripRailTradeRefundAPIRequest对象
+func NewAlitripRailTradeRefundRequest() *AlitripRailTradeRefundAPIRequest{
+    return &AlitripRailTradeRefundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripRailTradeRefundRequest) GetApiMethodName() string {
+func (r AlitripRailTradeRefundAPIRequest) GetApiMethodName() string {
     return "alitrip.rail.trade.refund"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripRailTradeRefundRequest) GetApiParams() url.Values {
+func (r AlitripRailTradeRefundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripRailTradeRefundRequest) GetApiParams() url.Values {
 }
 // RefundParam Setter
 // 入参
-func (r *AlitripRailTradeRefundRequest) SetRefundParam(_refundParam *RefundReq) error {
+func (r *AlitripRailTradeRefundAPIRequest) SetRefundParam(_refundParam *RefundReq) error {
     r._refundParam = _refundParam
     r.Set("refund_param", _refundParam)
     return nil
 }
 
 // RefundParam Getter
-func (r AlitripRailTradeRefundRequest) GetRefundParam() *RefundReq {
+func (r AlitripRailTradeRefundAPIRequest) GetRefundParam() *RefundReq {
     return r._refundParam
 }

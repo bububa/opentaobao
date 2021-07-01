@@ -12,26 +12,26 @@ taobao.miniapp.distribution.order.create
 
 帮助商家，创建小程序的投放计划。
 */
-type TaobaoMiniappDistributionOrderCreateRequest struct {
+type TaobaoMiniappDistributionOrderCreateAPIRequest struct {
     model.Params
     // 投放计划信息
     _orderRequest   *DistributionOrderSaveOpenRequest
 }
 
-// 初始化TaobaoMiniappDistributionOrderCreateRequest对象
-func NewTaobaoMiniappDistributionOrderCreateRequest() *TaobaoMiniappDistributionOrderCreateRequest{
-    return &TaobaoMiniappDistributionOrderCreateRequest{
+// 初始化TaobaoMiniappDistributionOrderCreateAPIRequest对象
+func NewTaobaoMiniappDistributionOrderCreateRequest() *TaobaoMiniappDistributionOrderCreateAPIRequest{
+    return &TaobaoMiniappDistributionOrderCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMiniappDistributionOrderCreateRequest) GetApiMethodName() string {
+func (r TaobaoMiniappDistributionOrderCreateAPIRequest) GetApiMethodName() string {
     return "taobao.miniapp.distribution.order.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappDistributionOrderCreateRequest) GetApiParams() url.Values {
+func (r TaobaoMiniappDistributionOrderCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoMiniappDistributionOrderCreateRequest) GetApiParams() url.Values {
 }
 // OrderRequest Setter
 // 投放计划信息
-func (r *TaobaoMiniappDistributionOrderCreateRequest) SetOrderRequest(_orderRequest *DistributionOrderSaveOpenRequest) error {
+func (r *TaobaoMiniappDistributionOrderCreateAPIRequest) SetOrderRequest(_orderRequest *DistributionOrderSaveOpenRequest) error {
     r._orderRequest = _orderRequest
     r.Set("order_request", _orderRequest)
     return nil
 }
 
 // OrderRequest Getter
-func (r TaobaoMiniappDistributionOrderCreateRequest) GetOrderRequest() *DistributionOrderSaveOpenRequest {
+func (r TaobaoMiniappDistributionOrderCreateAPIRequest) GetOrderRequest() *DistributionOrderSaveOpenRequest {
     return r._orderRequest
 }

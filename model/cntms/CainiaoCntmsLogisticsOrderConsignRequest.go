@@ -12,26 +12,26 @@ cainiao.cntms.logistics.order.consign
 
 商家包装打印面单结束后，通知菜鸟包裹要发货
 */
-type CainiaoCntmsLogisticsOrderConsignRequest struct {
+type CainiaoCntmsLogisticsOrderConsignAPIRequest struct {
     model.Params
     // 配送发货信息
     _content   *CnTmsLogisticsOrderConsignContent
 }
 
-// 初始化CainiaoCntmsLogisticsOrderConsignRequest对象
-func NewCainiaoCntmsLogisticsOrderConsignRequest() *CainiaoCntmsLogisticsOrderConsignRequest{
-    return &CainiaoCntmsLogisticsOrderConsignRequest{
+// 初始化CainiaoCntmsLogisticsOrderConsignAPIRequest对象
+func NewCainiaoCntmsLogisticsOrderConsignRequest() *CainiaoCntmsLogisticsOrderConsignAPIRequest{
+    return &CainiaoCntmsLogisticsOrderConsignAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCntmsLogisticsOrderConsignRequest) GetApiMethodName() string {
+func (r CainiaoCntmsLogisticsOrderConsignAPIRequest) GetApiMethodName() string {
     return "cainiao.cntms.logistics.order.consign"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCntmsLogisticsOrderConsignRequest) GetApiParams() url.Values {
+func (r CainiaoCntmsLogisticsOrderConsignAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoCntmsLogisticsOrderConsignRequest) GetApiParams() url.Values {
 }
 // Content Setter
 // 配送发货信息
-func (r *CainiaoCntmsLogisticsOrderConsignRequest) SetContent(_content *CnTmsLogisticsOrderConsignContent) error {
+func (r *CainiaoCntmsLogisticsOrderConsignAPIRequest) SetContent(_content *CnTmsLogisticsOrderConsignContent) error {
     r._content = _content
     r.Set("content", _content)
     return nil
 }
 
 // Content Getter
-func (r CainiaoCntmsLogisticsOrderConsignRequest) GetContent() *CnTmsLogisticsOrderConsignContent {
+func (r CainiaoCntmsLogisticsOrderConsignAPIRequest) GetContent() *CnTmsLogisticsOrderConsignContent {
     return r._content
 }

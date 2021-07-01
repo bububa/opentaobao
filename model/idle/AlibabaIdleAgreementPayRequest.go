@@ -12,26 +12,26 @@ alibaba.idle.agreement.pay
 
 闲鱼平台代扣能力：用户和闲鱼签约代扣协议 服务商通过直付通产品挂载成为闲鱼二级商户 来完成用户和服务商的结算
 */
-type AlibabaIdleAgreementPayRequest struct {
+type AlibabaIdleAgreementPayAPIRequest struct {
     model.Params
     // 协议代扣参数
     _agreementPayParam   *AgreementPayParam
 }
 
-// 初始化AlibabaIdleAgreementPayRequest对象
-func NewAlibabaIdleAgreementPayRequest() *AlibabaIdleAgreementPayRequest{
-    return &AlibabaIdleAgreementPayRequest{
+// 初始化AlibabaIdleAgreementPayAPIRequest对象
+func NewAlibabaIdleAgreementPayRequest() *AlibabaIdleAgreementPayAPIRequest{
+    return &AlibabaIdleAgreementPayAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleAgreementPayRequest) GetApiMethodName() string {
+func (r AlibabaIdleAgreementPayAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.agreement.pay"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleAgreementPayRequest) GetApiParams() url.Values {
+func (r AlibabaIdleAgreementPayAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleAgreementPayRequest) GetApiParams() url.Values {
 }
 // AgreementPayParam Setter
 // 协议代扣参数
-func (r *AlibabaIdleAgreementPayRequest) SetAgreementPayParam(_agreementPayParam *AgreementPayParam) error {
+func (r *AlibabaIdleAgreementPayAPIRequest) SetAgreementPayParam(_agreementPayParam *AgreementPayParam) error {
     r._agreementPayParam = _agreementPayParam
     r.Set("agreement_pay_param", _agreementPayParam)
     return nil
 }
 
 // AgreementPayParam Getter
-func (r AlibabaIdleAgreementPayRequest) GetAgreementPayParam() *AgreementPayParam {
+func (r AlibabaIdleAgreementPayAPIRequest) GetAgreementPayParam() *AgreementPayParam {
     return r._agreementPayParam
 }

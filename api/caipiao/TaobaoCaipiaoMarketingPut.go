@@ -21,7 +21,7 @@ https://gw.alicdn.com/tfs/TB1tzpNSXXXXXacXVXXXXXXXXXX-790-280.png
 https://gw.alicdn.com/tfs/TB1UXdxSXXXXXXsapXXXXXXXXXX-790-280.png
 https://gw.alicdn.com/tfs/TB1_gV.SXXXXXbZXpXXXXXXXXXX-790-280.png
 */
-func TaobaoCaipiaoMarketingPut(clt *core.SDKClient, req *caipiao.TaobaoCaipiaoMarketingPutRequest, session string) (*caipiao.TaobaoCaipiaoMarketingPutAPIResponse, error) {
+func TaobaoCaipiaoMarketingPut(clt *core.SDKClient, req *caipiao.TaobaoCaipiaoMarketingPutAPIRequest, session string) (*caipiao.TaobaoCaipiaoMarketingPutAPIResponse, error) {
     var resp caipiao.TaobaoCaipiaoMarketingPutAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

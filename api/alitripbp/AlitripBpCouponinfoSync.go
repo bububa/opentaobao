@@ -11,7 +11,7 @@ alitrip.bp.couponinfo.sync
 
 飞猪商业化券信息同步
 */
-func AlitripBpCouponinfoSync(clt *core.SDKClient, req *alitripbp.AlitripBpCouponinfoSyncRequest, session string) (*alitripbp.AlitripBpCouponinfoSyncAPIResponse, error) {
+func AlitripBpCouponinfoSync(clt *core.SDKClient, req *alitripbp.AlitripBpCouponinfoSyncAPIRequest, session string) (*alitripbp.AlitripBpCouponinfoSyncAPIResponse, error) {
     var resp alitripbp.AlitripBpCouponinfoSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

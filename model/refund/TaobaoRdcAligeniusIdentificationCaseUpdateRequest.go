@@ -12,26 +12,26 @@ taobao.rdc.aligenius.identification.case.update
 
 同步商家鉴定工单信息
 */
-type TaobaoRdcAligeniusIdentificationCaseUpdateRequest struct {
+type TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest struct {
     model.Params
     // 请求参数
     _param   *SyncIdentifyRefundCaseDTO
 }
 
-// 初始化TaobaoRdcAligeniusIdentificationCaseUpdateRequest对象
-func NewTaobaoRdcAligeniusIdentificationCaseUpdateRequest() *TaobaoRdcAligeniusIdentificationCaseUpdateRequest{
-    return &TaobaoRdcAligeniusIdentificationCaseUpdateRequest{
+// 初始化TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest对象
+func NewTaobaoRdcAligeniusIdentificationCaseUpdateRequest() *TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest{
+    return &TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRdcAligeniusIdentificationCaseUpdateRequest) GetApiMethodName() string {
+func (r TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.rdc.aligenius.identification.case.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRdcAligeniusIdentificationCaseUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusIdentificationCaseUpdateRequest) GetApiParams() url.Va
 }
 // Param Setter
 // 请求参数
-func (r *TaobaoRdcAligeniusIdentificationCaseUpdateRequest) SetParam(_param *SyncIdentifyRefundCaseDTO) error {
+func (r *TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest) SetParam(_param *SyncIdentifyRefundCaseDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoRdcAligeniusIdentificationCaseUpdateRequest) GetParam() *SyncIdentifyRefundCaseDTO {
+func (r TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest) GetParam() *SyncIdentifyRefundCaseDTO {
     return r._param
 }

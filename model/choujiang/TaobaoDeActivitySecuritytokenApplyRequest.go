@@ -12,26 +12,26 @@ taobao.de.activity.securitytoken.apply
 
 新增接口，这个接口是用于在手机端进行抽奖时候的验证使用
 */
-type TaobaoDeActivitySecuritytokenApplyRequest struct {
+type TaobaoDeActivitySecuritytokenApplyAPIRequest struct {
     model.Params
     // 运营和cp约定的事件唯一标示
     _eventKey   string
 }
 
-// 初始化TaobaoDeActivitySecuritytokenApplyRequest对象
-func NewTaobaoDeActivitySecuritytokenApplyRequest() *TaobaoDeActivitySecuritytokenApplyRequest{
-    return &TaobaoDeActivitySecuritytokenApplyRequest{
+// 初始化TaobaoDeActivitySecuritytokenApplyAPIRequest对象
+func NewTaobaoDeActivitySecuritytokenApplyRequest() *TaobaoDeActivitySecuritytokenApplyAPIRequest{
+    return &TaobaoDeActivitySecuritytokenApplyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoDeActivitySecuritytokenApplyRequest) GetApiMethodName() string {
+func (r TaobaoDeActivitySecuritytokenApplyAPIRequest) GetApiMethodName() string {
     return "taobao.de.activity.securitytoken.apply"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoDeActivitySecuritytokenApplyRequest) GetApiParams() url.Values {
+func (r TaobaoDeActivitySecuritytokenApplyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoDeActivitySecuritytokenApplyRequest) GetApiParams() url.Values {
 }
 // EventKey Setter
 // 运营和cp约定的事件唯一标示
-func (r *TaobaoDeActivitySecuritytokenApplyRequest) SetEventKey(_eventKey string) error {
+func (r *TaobaoDeActivitySecuritytokenApplyAPIRequest) SetEventKey(_eventKey string) error {
     r._eventKey = _eventKey
     r.Set("event_key", _eventKey)
     return nil
 }
 
 // EventKey Getter
-func (r TaobaoDeActivitySecuritytokenApplyRequest) GetEventKey() string {
+func (r TaobaoDeActivitySecuritytokenApplyAPIRequest) GetEventKey() string {
     return r._eventKey
 }

@@ -11,7 +11,7 @@ taobao.omniorder.store.sdtconsign
 
 ISV取完单号后通知菜鸟裹裹发货
 */
-func TaobaoOmniorderStoreSdtconsign(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtconsignRequest, session string) (*omniorder.TaobaoOmniorderStoreSdtconsignAPIResponse, error) {
+func TaobaoOmniorderStoreSdtconsign(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtconsignAPIRequest, session string) (*omniorder.TaobaoOmniorderStoreSdtconsignAPIResponse, error) {
     var resp omniorder.TaobaoOmniorderStoreSdtconsignAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

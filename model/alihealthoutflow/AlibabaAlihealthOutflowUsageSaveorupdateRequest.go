@@ -12,26 +12,26 @@ alibaba.alihealth.outflow.usage.saveorupdate
 
 阿里健康-处方外流-对外提供用法字典表维护功能
 */
-type AlibabaAlihealthOutflowUsageSaveorupdateRequest struct {
+type AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest struct {
     model.Params
     // 用法数据
     _usageRequest   *UsageRequest
 }
 
-// 初始化AlibabaAlihealthOutflowUsageSaveorupdateRequest对象
-func NewAlibabaAlihealthOutflowUsageSaveorupdateRequest() *AlibabaAlihealthOutflowUsageSaveorupdateRequest{
-    return &AlibabaAlihealthOutflowUsageSaveorupdateRequest{
+// 初始化AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest对象
+func NewAlibabaAlihealthOutflowUsageSaveorupdateRequest() *AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest{
+    return &AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowUsageSaveorupdateRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.usage.saveorupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowUsageSaveorupdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowUsageSaveorupdateRequest) GetApiParams() url.Valu
 }
 // UsageRequest Setter
 // 用法数据
-func (r *AlibabaAlihealthOutflowUsageSaveorupdateRequest) SetUsageRequest(_usageRequest *UsageRequest) error {
+func (r *AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest) SetUsageRequest(_usageRequest *UsageRequest) error {
     r._usageRequest = _usageRequest
     r.Set("usage_request", _usageRequest)
     return nil
 }
 
 // UsageRequest Getter
-func (r AlibabaAlihealthOutflowUsageSaveorupdateRequest) GetUsageRequest() *UsageRequest {
+func (r AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest) GetUsageRequest() *UsageRequest {
     return r._usageRequest
 }

@@ -12,26 +12,26 @@ alibaba.wdk.finance.order.backflow
 
 星巴克拉取财务订单回流数据
 */
-type AlibabaWdkFinanceOrderBackflowRequest struct {
+type AlibabaWdkFinanceOrderBackflowAPIRequest struct {
     model.Params
     // 财务订单回流入参
     _financeOrderDetailRequest   *FinanceOrderDetailRequest
 }
 
-// 初始化AlibabaWdkFinanceOrderBackflowRequest对象
-func NewAlibabaWdkFinanceOrderBackflowRequest() *AlibabaWdkFinanceOrderBackflowRequest{
-    return &AlibabaWdkFinanceOrderBackflowRequest{
+// 初始化AlibabaWdkFinanceOrderBackflowAPIRequest对象
+func NewAlibabaWdkFinanceOrderBackflowRequest() *AlibabaWdkFinanceOrderBackflowAPIRequest{
+    return &AlibabaWdkFinanceOrderBackflowAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkFinanceOrderBackflowRequest) GetApiMethodName() string {
+func (r AlibabaWdkFinanceOrderBackflowAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.finance.order.backflow"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkFinanceOrderBackflowRequest) GetApiParams() url.Values {
+func (r AlibabaWdkFinanceOrderBackflowAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkFinanceOrderBackflowRequest) GetApiParams() url.Values {
 }
 // FinanceOrderDetailRequest Setter
 // 财务订单回流入参
-func (r *AlibabaWdkFinanceOrderBackflowRequest) SetFinanceOrderDetailRequest(_financeOrderDetailRequest *FinanceOrderDetailRequest) error {
+func (r *AlibabaWdkFinanceOrderBackflowAPIRequest) SetFinanceOrderDetailRequest(_financeOrderDetailRequest *FinanceOrderDetailRequest) error {
     r._financeOrderDetailRequest = _financeOrderDetailRequest
     r.Set("finance_order_detail_request", _financeOrderDetailRequest)
     return nil
 }
 
 // FinanceOrderDetailRequest Getter
-func (r AlibabaWdkFinanceOrderBackflowRequest) GetFinanceOrderDetailRequest() *FinanceOrderDetailRequest {
+func (r AlibabaWdkFinanceOrderBackflowAPIRequest) GetFinanceOrderDetailRequest() *FinanceOrderDetailRequest {
     return r._financeOrderDetailRequest
 }

@@ -12,26 +12,26 @@ alibaba.alihealth.codeseller.getuseraward
 
 贩卖机扫码查询领奖状态
 */
-type AlibabaAlihealthCodesellerGetuserawardRequest struct {
+type AlibabaAlihealthCodesellerGetuserawardAPIRequest struct {
     model.Params
     // 追溯码
     _code   string
 }
 
-// 初始化AlibabaAlihealthCodesellerGetuserawardRequest对象
-func NewAlibabaAlihealthCodesellerGetuserawardRequest() *AlibabaAlihealthCodesellerGetuserawardRequest{
-    return &AlibabaAlihealthCodesellerGetuserawardRequest{
+// 初始化AlibabaAlihealthCodesellerGetuserawardAPIRequest对象
+func NewAlibabaAlihealthCodesellerGetuserawardRequest() *AlibabaAlihealthCodesellerGetuserawardAPIRequest{
+    return &AlibabaAlihealthCodesellerGetuserawardAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthCodesellerGetuserawardRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthCodesellerGetuserawardAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.codeseller.getuseraward"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthCodesellerGetuserawardRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthCodesellerGetuserawardAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthCodesellerGetuserawardRequest) GetApiParams() url.Values
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthCodesellerGetuserawardRequest) SetCode(_code string) error {
+func (r *AlibabaAlihealthCodesellerGetuserawardAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaAlihealthCodesellerGetuserawardRequest) GetCode() string {
+func (r AlibabaAlihealthCodesellerGetuserawardAPIRequest) GetCode() string {
     return r._code
 }

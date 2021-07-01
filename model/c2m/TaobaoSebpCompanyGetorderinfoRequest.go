@@ -12,7 +12,7 @@ taobao.sebp.company.getorderinfo
 
 淘小铺合作公司获取公司订单信息，用于公司结算使用
 */
-type TaobaoSebpCompanyGetorderinfoRequest struct {
+type TaobaoSebpCompanyGetorderinfoAPIRequest struct {
     model.Params
     // null-请求所有，20200616-请求2020年6月16号的变更信息
     _modifyDate   string
@@ -20,20 +20,20 @@ type TaobaoSebpCompanyGetorderinfoRequest struct {
     _pageNum   int64
 }
 
-// 初始化TaobaoSebpCompanyGetorderinfoRequest对象
-func NewTaobaoSebpCompanyGetorderinfoRequest() *TaobaoSebpCompanyGetorderinfoRequest{
-    return &TaobaoSebpCompanyGetorderinfoRequest{
+// 初始化TaobaoSebpCompanyGetorderinfoAPIRequest对象
+func NewTaobaoSebpCompanyGetorderinfoRequest() *TaobaoSebpCompanyGetorderinfoAPIRequest{
+    return &TaobaoSebpCompanyGetorderinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSebpCompanyGetorderinfoRequest) GetApiMethodName() string {
+func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetApiMethodName() string {
     return "taobao.sebp.company.getorderinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSebpCompanyGetorderinfoRequest) GetApiParams() url.Values {
+func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSebpCompanyGetorderinfoRequest) GetApiParams() url.Values {
 }
 // ModifyDate Setter
 // null-请求所有，20200616-请求2020年6月16号的变更信息
-func (r *TaobaoSebpCompanyGetorderinfoRequest) SetModifyDate(_modifyDate string) error {
+func (r *TaobaoSebpCompanyGetorderinfoAPIRequest) SetModifyDate(_modifyDate string) error {
     r._modifyDate = _modifyDate
     r.Set("modify_date", _modifyDate)
     return nil
 }
 
 // ModifyDate Getter
-func (r TaobaoSebpCompanyGetorderinfoRequest) GetModifyDate() string {
+func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetModifyDate() string {
     return r._modifyDate
 }
 // PageNum Setter
 // 第几页
-func (r *TaobaoSebpCompanyGetorderinfoRequest) SetPageNum(_pageNum int64) error {
+func (r *TaobaoSebpCompanyGetorderinfoAPIRequest) SetPageNum(_pageNum int64) error {
     r._pageNum = _pageNum
     r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
-func (r TaobaoSebpCompanyGetorderinfoRequest) GetPageNum() int64 {
+func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetPageNum() int64 {
     return r._pageNum
 }

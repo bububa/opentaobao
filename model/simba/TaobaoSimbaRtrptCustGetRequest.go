@@ -12,7 +12,7 @@ taobao.simba.rtrpt.cust.get
 
 获取账户实时报表数据
 */
-type TaobaoSimbaRtrptCustGetRequest struct {
+type TaobaoSimbaRtrptCustGetAPIRequest struct {
     model.Params
     // 昵称
     _nick   string
@@ -20,20 +20,20 @@ type TaobaoSimbaRtrptCustGetRequest struct {
     _theDate   string
 }
 
-// 初始化TaobaoSimbaRtrptCustGetRequest对象
-func NewTaobaoSimbaRtrptCustGetRequest() *TaobaoSimbaRtrptCustGetRequest{
-    return &TaobaoSimbaRtrptCustGetRequest{
+// 初始化TaobaoSimbaRtrptCustGetAPIRequest对象
+func NewTaobaoSimbaRtrptCustGetRequest() *TaobaoSimbaRtrptCustGetAPIRequest{
+    return &TaobaoSimbaRtrptCustGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaRtrptCustGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaRtrptCustGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.rtrpt.cust.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaRtrptCustGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaRtrptCustGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSimbaRtrptCustGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 昵称
-func (r *TaobaoSimbaRtrptCustGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaRtrptCustGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaRtrptCustGetRequest) GetNick() string {
+func (r TaobaoSimbaRtrptCustGetAPIRequest) GetNick() string {
     return r._nick
 }
 // TheDate Setter
 // 日期，格式yyyy-mm-dd
-func (r *TaobaoSimbaRtrptCustGetRequest) SetTheDate(_theDate string) error {
+func (r *TaobaoSimbaRtrptCustGetAPIRequest) SetTheDate(_theDate string) error {
     r._theDate = _theDate
     r.Set("the_date", _theDate)
     return nil
 }
 
 // TheDate Getter
-func (r TaobaoSimbaRtrptCustGetRequest) GetTheDate() string {
+func (r TaobaoSimbaRtrptCustGetAPIRequest) GetTheDate() string {
     return r._theDate
 }

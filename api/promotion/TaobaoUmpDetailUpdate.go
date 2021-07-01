@@ -11,7 +11,7 @@ taobao.ump.detail.update
 
 更新活动详情
 */
-func TaobaoUmpDetailUpdate(clt *core.SDKClient, req *promotion.TaobaoUmpDetailUpdateRequest, session string) (*promotion.TaobaoUmpDetailUpdateAPIResponse, error) {
+func TaobaoUmpDetailUpdate(clt *core.SDKClient, req *promotion.TaobaoUmpDetailUpdateAPIRequest, session string) (*promotion.TaobaoUmpDetailUpdateAPIResponse, error) {
     var resp promotion.TaobaoUmpDetailUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

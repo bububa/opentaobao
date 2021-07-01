@@ -12,26 +12,26 @@ taobao.alitrip.travel.baseinfo.cruise.get
 
 旅行度假新商品发布时可用的扩展接口，用于获取邮轮类目相关扩展信息。
 */
-type TaobaoAlitripTravelBaseinfoCruiseGetRequest struct {
+type TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest struct {
     model.Params
     // true-获取国际邮轮类目扩展信息；false-获取国内邮轮类目扩展信息
     _isOverseas   bool
 }
 
-// 初始化TaobaoAlitripTravelBaseinfoCruiseGetRequest对象
-func NewTaobaoAlitripTravelBaseinfoCruiseGetRequest() *TaobaoAlitripTravelBaseinfoCruiseGetRequest{
-    return &TaobaoAlitripTravelBaseinfoCruiseGetRequest{
+// 初始化TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest对象
+func NewTaobaoAlitripTravelBaseinfoCruiseGetRequest() *TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest{
+    return &TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripTravelBaseinfoCruiseGetRequest) GetApiMethodName() string {
+func (r TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.travel.baseinfo.cruise.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelBaseinfoCruiseGetRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripTravelBaseinfoCruiseGetRequest) GetApiParams() url.Values {
 }
 // IsOverseas Setter
 // true-获取国际邮轮类目扩展信息；false-获取国内邮轮类目扩展信息
-func (r *TaobaoAlitripTravelBaseinfoCruiseGetRequest) SetIsOverseas(_isOverseas bool) error {
+func (r *TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) SetIsOverseas(_isOverseas bool) error {
     r._isOverseas = _isOverseas
     r.Set("is_overseas", _isOverseas)
     return nil
 }
 
 // IsOverseas Getter
-func (r TaobaoAlitripTravelBaseinfoCruiseGetRequest) GetIsOverseas() bool {
+func (r TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) GetIsOverseas() bool {
     return r._isOverseas
 }

@@ -12,7 +12,7 @@ alibaba.seaking.task.report
 
 跳转任务发布成功商品ID回传
 */
-type AlibabaSeakingTaskReportRequest struct {
+type AlibabaSeakingTaskReportAPIRequest struct {
     model.Params
     // 上报数据详情
     _reportDetail   []TaskDetailReportDTO
@@ -24,20 +24,20 @@ type AlibabaSeakingTaskReportRequest struct {
     _tokenFrom   string
 }
 
-// 初始化AlibabaSeakingTaskReportRequest对象
-func NewAlibabaSeakingTaskReportRequest() *AlibabaSeakingTaskReportRequest{
-    return &AlibabaSeakingTaskReportRequest{
+// 初始化AlibabaSeakingTaskReportAPIRequest对象
+func NewAlibabaSeakingTaskReportRequest() *AlibabaSeakingTaskReportAPIRequest{
+    return &AlibabaSeakingTaskReportAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSeakingTaskReportRequest) GetApiMethodName() string {
+func (r AlibabaSeakingTaskReportAPIRequest) GetApiMethodName() string {
     return "alibaba.seaking.task.report"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSeakingTaskReportRequest) GetApiParams() url.Values {
+func (r AlibabaSeakingTaskReportAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaSeakingTaskReportRequest) GetApiParams() url.Values {
 }
 // ReportDetail Setter
 // 上报数据详情
-func (r *AlibabaSeakingTaskReportRequest) SetReportDetail(_reportDetail []TaskDetailReportDTO) error {
+func (r *AlibabaSeakingTaskReportAPIRequest) SetReportDetail(_reportDetail []TaskDetailReportDTO) error {
     r._reportDetail = _reportDetail
     r.Set("report_detail", _reportDetail)
     return nil
 }
 
 // ReportDetail Getter
-func (r AlibabaSeakingTaskReportRequest) GetReportDetail() []TaskDetailReportDTO {
+func (r AlibabaSeakingTaskReportAPIRequest) GetReportDetail() []TaskDetailReportDTO {
     return r._reportDetail
 }
 // TaskType Setter
 // 任务类型(title/image)
-func (r *AlibabaSeakingTaskReportRequest) SetTaskType(_taskType string) error {
+func (r *AlibabaSeakingTaskReportAPIRequest) SetTaskType(_taskType string) error {
     r._taskType = _taskType
     r.Set("task_type", _taskType)
     return nil
 }
 
 // TaskType Getter
-func (r AlibabaSeakingTaskReportRequest) GetTaskType() string {
+func (r AlibabaSeakingTaskReportAPIRequest) GetTaskType() string {
     return r._taskType
 }
 // Token Setter
 // 用户token
-func (r *AlibabaSeakingTaskReportRequest) SetToken(_token string) error {
+func (r *AlibabaSeakingTaskReportAPIRequest) SetToken(_token string) error {
     r._token = _token
     r.Set("token", _token)
     return nil
 }
 
 // Token Getter
-func (r AlibabaSeakingTaskReportRequest) GetToken() string {
+func (r AlibabaSeakingTaskReportAPIRequest) GetToken() string {
     return r._token
 }
 // TokenFrom Setter
 // token来源站点
-func (r *AlibabaSeakingTaskReportRequest) SetTokenFrom(_tokenFrom string) error {
+func (r *AlibabaSeakingTaskReportAPIRequest) SetTokenFrom(_tokenFrom string) error {
     r._tokenFrom = _tokenFrom
     r.Set("token_from", _tokenFrom)
     return nil
 }
 
 // TokenFrom Getter
-func (r AlibabaSeakingTaskReportRequest) GetTokenFrom() string {
+func (r AlibabaSeakingTaskReportAPIRequest) GetTokenFrom() string {
     return r._tokenFrom
 }

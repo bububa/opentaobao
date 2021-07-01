@@ -12,26 +12,26 @@ wdk.logistic.network.resource.group.query
 
 查询网格仓-区块-自提点关系
 */
-type WdkLogisticNetworkResourceGroupQueryRequest struct {
+type WdkLogisticNetworkResourceGroupQueryAPIRequest struct {
     model.Params
     // 入参
     _paramResourceGroupPageQueryRequest   *ResourceGroupPageQueryRequest
 }
 
-// 初始化WdkLogisticNetworkResourceGroupQueryRequest对象
-func NewWdkLogisticNetworkResourceGroupQueryRequest() *WdkLogisticNetworkResourceGroupQueryRequest{
-    return &WdkLogisticNetworkResourceGroupQueryRequest{
+// 初始化WdkLogisticNetworkResourceGroupQueryAPIRequest对象
+func NewWdkLogisticNetworkResourceGroupQueryRequest() *WdkLogisticNetworkResourceGroupQueryAPIRequest{
+    return &WdkLogisticNetworkResourceGroupQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r WdkLogisticNetworkResourceGroupQueryRequest) GetApiMethodName() string {
+func (r WdkLogisticNetworkResourceGroupQueryAPIRequest) GetApiMethodName() string {
     return "wdk.logistic.network.resource.group.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r WdkLogisticNetworkResourceGroupQueryRequest) GetApiParams() url.Values {
+func (r WdkLogisticNetworkResourceGroupQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r WdkLogisticNetworkResourceGroupQueryRequest) GetApiParams() url.Values {
 }
 // ParamResourceGroupPageQueryRequest Setter
 // 入参
-func (r *WdkLogisticNetworkResourceGroupQueryRequest) SetParamResourceGroupPageQueryRequest(_paramResourceGroupPageQueryRequest *ResourceGroupPageQueryRequest) error {
+func (r *WdkLogisticNetworkResourceGroupQueryAPIRequest) SetParamResourceGroupPageQueryRequest(_paramResourceGroupPageQueryRequest *ResourceGroupPageQueryRequest) error {
     r._paramResourceGroupPageQueryRequest = _paramResourceGroupPageQueryRequest
     r.Set("param_resource_group_page_query_request", _paramResourceGroupPageQueryRequest)
     return nil
 }
 
 // ParamResourceGroupPageQueryRequest Getter
-func (r WdkLogisticNetworkResourceGroupQueryRequest) GetParamResourceGroupPageQueryRequest() *ResourceGroupPageQueryRequest {
+func (r WdkLogisticNetworkResourceGroupQueryAPIRequest) GetParamResourceGroupPageQueryRequest() *ResourceGroupPageQueryRequest {
     return r._paramResourceGroupPageQueryRequest
 }

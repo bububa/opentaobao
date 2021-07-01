@@ -12,26 +12,26 @@ alibaba.security.jaq.url.scan
 
 url扫描接口
 */
-type AlibabaSecurityJaqUrlScanRequest struct {
+type AlibabaSecurityJaqUrlScanAPIRequest struct {
     model.Params
     // 扫描参数
     _paramUrlScanParamList   *UrlScanParamList
 }
 
-// 初始化AlibabaSecurityJaqUrlScanRequest对象
-func NewAlibabaSecurityJaqUrlScanRequest() *AlibabaSecurityJaqUrlScanRequest{
-    return &AlibabaSecurityJaqUrlScanRequest{
+// 初始化AlibabaSecurityJaqUrlScanAPIRequest对象
+func NewAlibabaSecurityJaqUrlScanRequest() *AlibabaSecurityJaqUrlScanAPIRequest{
+    return &AlibabaSecurityJaqUrlScanAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqUrlScanRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqUrlScanAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.url.scan"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqUrlScanRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqUrlScanAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqUrlScanRequest) GetApiParams() url.Values {
 }
 // ParamUrlScanParamList Setter
 // 扫描参数
-func (r *AlibabaSecurityJaqUrlScanRequest) SetParamUrlScanParamList(_paramUrlScanParamList *UrlScanParamList) error {
+func (r *AlibabaSecurityJaqUrlScanAPIRequest) SetParamUrlScanParamList(_paramUrlScanParamList *UrlScanParamList) error {
     r._paramUrlScanParamList = _paramUrlScanParamList
     r.Set("param_url_scan_param_list", _paramUrlScanParamList)
     return nil
 }
 
 // ParamUrlScanParamList Getter
-func (r AlibabaSecurityJaqUrlScanRequest) GetParamUrlScanParamList() *UrlScanParamList {
+func (r AlibabaSecurityJaqUrlScanAPIRequest) GetParamUrlScanParamList() *UrlScanParamList {
     return r._paramUrlScanParamList
 }

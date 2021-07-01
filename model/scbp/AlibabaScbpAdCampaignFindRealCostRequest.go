@@ -12,7 +12,7 @@ alibaba.scbp.ad.campaign.find.real.cost
 
 批量查询计划消耗数据
 */
-type AlibabaScbpAdCampaignFindRealCostRequest struct {
+type AlibabaScbpAdCampaignFindRealCostAPIRequest struct {
     model.Params
     // 系统自动生成
     _campaignQuery   *CampaignQueryDTO
@@ -20,20 +20,20 @@ type AlibabaScbpAdCampaignFindRealCostRequest struct {
     _topContext   *TopContextDTO
 }
 
-// 初始化AlibabaScbpAdCampaignFindRealCostRequest对象
-func NewAlibabaScbpAdCampaignFindRealCostRequest() *AlibabaScbpAdCampaignFindRealCostRequest{
-    return &AlibabaScbpAdCampaignFindRealCostRequest{
+// 初始化AlibabaScbpAdCampaignFindRealCostAPIRequest对象
+func NewAlibabaScbpAdCampaignFindRealCostRequest() *AlibabaScbpAdCampaignFindRealCostAPIRequest{
+    return &AlibabaScbpAdCampaignFindRealCostAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdCampaignFindRealCostRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdCampaignFindRealCostAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.campaign.find.real.cost"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdCampaignFindRealCostRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdCampaignFindRealCostAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdCampaignFindRealCostRequest) GetApiParams() url.Values {
 }
 // CampaignQuery Setter
 // 系统自动生成
-func (r *AlibabaScbpAdCampaignFindRealCostRequest) SetCampaignQuery(_campaignQuery *CampaignQueryDTO) error {
+func (r *AlibabaScbpAdCampaignFindRealCostAPIRequest) SetCampaignQuery(_campaignQuery *CampaignQueryDTO) error {
     r._campaignQuery = _campaignQuery
     r.Set("campaign_query", _campaignQuery)
     return nil
 }
 
 // CampaignQuery Getter
-func (r AlibabaScbpAdCampaignFindRealCostRequest) GetCampaignQuery() *CampaignQueryDTO {
+func (r AlibabaScbpAdCampaignFindRealCostAPIRequest) GetCampaignQuery() *CampaignQueryDTO {
     return r._campaignQuery
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignFindRealCostRequest) SetTopContext(_topContext *TopContextDTO) error {
+func (r *AlibabaScbpAdCampaignFindRealCostAPIRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdCampaignFindRealCostRequest) GetTopContext() *TopContextDTO {
+func (r AlibabaScbpAdCampaignFindRealCostAPIRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

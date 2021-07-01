@@ -12,7 +12,7 @@ alibaba.westcrm.customer.info.get
 
 会员信息查询接口
 */
-type AlibabaWestcrmCustomerInfoGetRequest struct {
+type AlibabaWestcrmCustomerInfoGetAPIRequest struct {
     model.Params
     // 园区id
     _campusId   int64
@@ -22,20 +22,20 @@ type AlibabaWestcrmCustomerInfoGetRequest struct {
     _alipayId   string
 }
 
-// 初始化AlibabaWestcrmCustomerInfoGetRequest对象
-func NewAlibabaWestcrmCustomerInfoGetRequest() *AlibabaWestcrmCustomerInfoGetRequest{
-    return &AlibabaWestcrmCustomerInfoGetRequest{
+// 初始化AlibabaWestcrmCustomerInfoGetAPIRequest对象
+func NewAlibabaWestcrmCustomerInfoGetRequest() *AlibabaWestcrmCustomerInfoGetAPIRequest{
+    return &AlibabaWestcrmCustomerInfoGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWestcrmCustomerInfoGetRequest) GetApiMethodName() string {
+func (r AlibabaWestcrmCustomerInfoGetAPIRequest) GetApiMethodName() string {
     return "alibaba.westcrm.customer.info.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWestcrmCustomerInfoGetRequest) GetApiParams() url.Values {
+func (r AlibabaWestcrmCustomerInfoGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaWestcrmCustomerInfoGetRequest) GetApiParams() url.Values {
 }
 // CampusId Setter
 // 园区id
-func (r *AlibabaWestcrmCustomerInfoGetRequest) SetCampusId(_campusId int64) error {
+func (r *AlibabaWestcrmCustomerInfoGetAPIRequest) SetCampusId(_campusId int64) error {
     r._campusId = _campusId
     r.Set("campus_id", _campusId)
     return nil
 }
 
 // CampusId Getter
-func (r AlibabaWestcrmCustomerInfoGetRequest) GetCampusId() int64 {
+func (r AlibabaWestcrmCustomerInfoGetAPIRequest) GetCampusId() int64 {
     return r._campusId
 }
 // IbUserId Setter
 // 会员id
-func (r *AlibabaWestcrmCustomerInfoGetRequest) SetIbUserId(_ibUserId int64) error {
+func (r *AlibabaWestcrmCustomerInfoGetAPIRequest) SetIbUserId(_ibUserId int64) error {
     r._ibUserId = _ibUserId
     r.Set("ib_user_id", _ibUserId)
     return nil
 }
 
 // IbUserId Getter
-func (r AlibabaWestcrmCustomerInfoGetRequest) GetIbUserId() int64 {
+func (r AlibabaWestcrmCustomerInfoGetAPIRequest) GetIbUserId() int64 {
     return r._ibUserId
 }
 // AlipayId Setter
 // 支付宝id
-func (r *AlibabaWestcrmCustomerInfoGetRequest) SetAlipayId(_alipayId string) error {
+func (r *AlibabaWestcrmCustomerInfoGetAPIRequest) SetAlipayId(_alipayId string) error {
     r._alipayId = _alipayId
     r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
-func (r AlibabaWestcrmCustomerInfoGetRequest) GetAlipayId() string {
+func (r AlibabaWestcrmCustomerInfoGetAPIRequest) GetAlipayId() string {
     return r._alipayId
 }

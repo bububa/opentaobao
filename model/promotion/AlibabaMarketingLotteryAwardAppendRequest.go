@@ -12,26 +12,26 @@ alibaba.marketing.lottery.award.append
 
 抽奖平台奖品添加接口，目前仅用于奖池众筹项目
 */
-type AlibabaMarketingLotteryAwardAppendRequest struct {
+type AlibabaMarketingLotteryAwardAppendAPIRequest struct {
     model.Params
     // 奖品添加请求对象
     _lotteryAwardAppend   *LotteryAwardAppendDTO
 }
 
-// 初始化AlibabaMarketingLotteryAwardAppendRequest对象
-func NewAlibabaMarketingLotteryAwardAppendRequest() *AlibabaMarketingLotteryAwardAppendRequest{
-    return &AlibabaMarketingLotteryAwardAppendRequest{
+// 初始化AlibabaMarketingLotteryAwardAppendAPIRequest对象
+func NewAlibabaMarketingLotteryAwardAppendRequest() *AlibabaMarketingLotteryAwardAppendAPIRequest{
+    return &AlibabaMarketingLotteryAwardAppendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMarketingLotteryAwardAppendRequest) GetApiMethodName() string {
+func (r AlibabaMarketingLotteryAwardAppendAPIRequest) GetApiMethodName() string {
     return "alibaba.marketing.lottery.award.append"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMarketingLotteryAwardAppendRequest) GetApiParams() url.Values {
+func (r AlibabaMarketingLotteryAwardAppendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryAwardAppendRequest) GetApiParams() url.Values {
 }
 // LotteryAwardAppend Setter
 // 奖品添加请求对象
-func (r *AlibabaMarketingLotteryAwardAppendRequest) SetLotteryAwardAppend(_lotteryAwardAppend *LotteryAwardAppendDTO) error {
+func (r *AlibabaMarketingLotteryAwardAppendAPIRequest) SetLotteryAwardAppend(_lotteryAwardAppend *LotteryAwardAppendDTO) error {
     r._lotteryAwardAppend = _lotteryAwardAppend
     r.Set("lottery_award_append", _lotteryAwardAppend)
     return nil
 }
 
 // LotteryAwardAppend Getter
-func (r AlibabaMarketingLotteryAwardAppendRequest) GetLotteryAwardAppend() *LotteryAwardAppendDTO {
+func (r AlibabaMarketingLotteryAwardAppendAPIRequest) GetLotteryAwardAppend() *LotteryAwardAppendDTO {
     return r._lotteryAwardAppend
 }

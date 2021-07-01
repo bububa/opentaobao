@@ -12,26 +12,26 @@ alitrip.btrip.approval.modify
 
 修改审批单
 */
-type AlitripBtripApprovalModifyRequest struct {
+type AlitripBtripApprovalModifyAPIRequest struct {
     model.Params
     // 申请单
     _addApplyRequest   *OpenApiNewApplyRq
 }
 
-// 初始化AlitripBtripApprovalModifyRequest对象
-func NewAlitripBtripApprovalModifyRequest() *AlitripBtripApprovalModifyRequest{
-    return &AlitripBtripApprovalModifyRequest{
+// 初始化AlitripBtripApprovalModifyAPIRequest对象
+func NewAlitripBtripApprovalModifyRequest() *AlitripBtripApprovalModifyAPIRequest{
+    return &AlitripBtripApprovalModifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripApprovalModifyRequest) GetApiMethodName() string {
+func (r AlitripBtripApprovalModifyAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.approval.modify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripApprovalModifyRequest) GetApiParams() url.Values {
+func (r AlitripBtripApprovalModifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripApprovalModifyRequest) GetApiParams() url.Values {
 }
 // AddApplyRequest Setter
 // 申请单
-func (r *AlitripBtripApprovalModifyRequest) SetAddApplyRequest(_addApplyRequest *OpenApiNewApplyRq) error {
+func (r *AlitripBtripApprovalModifyAPIRequest) SetAddApplyRequest(_addApplyRequest *OpenApiNewApplyRq) error {
     r._addApplyRequest = _addApplyRequest
     r.Set("add_apply_request", _addApplyRequest)
     return nil
 }
 
 // AddApplyRequest Getter
-func (r AlitripBtripApprovalModifyRequest) GetAddApplyRequest() *OpenApiNewApplyRq {
+func (r AlitripBtripApprovalModifyAPIRequest) GetAddApplyRequest() *OpenApiNewApplyRq {
     return r._addApplyRequest
 }

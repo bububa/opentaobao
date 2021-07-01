@@ -11,7 +11,7 @@ tmall.item.add.simpleschema.get
 
 通过商家信息获取商品发布字段和规则。
 */
-func TmallItemAddSimpleschemaGet(clt *core.SDKClient, req *product.TmallItemAddSimpleschemaGetRequest, session string) (*product.TmallItemAddSimpleschemaGetAPIResponse, error) {
+func TmallItemAddSimpleschemaGet(clt *core.SDKClient, req *product.TmallItemAddSimpleschemaGetAPIRequest, session string) (*product.TmallItemAddSimpleschemaGetAPIResponse, error) {
     var resp product.TmallItemAddSimpleschemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

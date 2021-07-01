@@ -12,26 +12,26 @@ yunos.tvpubadmin.manage.dialog.add
 
 新增全局弹窗
 */
-type YunosTvpubadminManageDialogAddRequest struct {
+type YunosTvpubadminManageDialogAddAPIRequest struct {
     model.Params
     // 新增的全局弹窗json
     _dialogJson   string
 }
 
-// 初始化YunosTvpubadminManageDialogAddRequest对象
-func NewYunosTvpubadminManageDialogAddRequest() *YunosTvpubadminManageDialogAddRequest{
-    return &YunosTvpubadminManageDialogAddRequest{
+// 初始化YunosTvpubadminManageDialogAddAPIRequest对象
+func NewYunosTvpubadminManageDialogAddRequest() *YunosTvpubadminManageDialogAddAPIRequest{
+    return &YunosTvpubadminManageDialogAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminManageDialogAddRequest) GetApiMethodName() string {
+func (r YunosTvpubadminManageDialogAddAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.manage.dialog.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminManageDialogAddRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminManageDialogAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageDialogAddRequest) GetApiParams() url.Values {
 }
 // DialogJson Setter
 // 新增的全局弹窗json
-func (r *YunosTvpubadminManageDialogAddRequest) SetDialogJson(_dialogJson string) error {
+func (r *YunosTvpubadminManageDialogAddAPIRequest) SetDialogJson(_dialogJson string) error {
     r._dialogJson = _dialogJson
     r.Set("dialog_json", _dialogJson)
     return nil
 }
 
 // DialogJson Getter
-func (r YunosTvpubadminManageDialogAddRequest) GetDialogJson() string {
+func (r YunosTvpubadminManageDialogAddAPIRequest) GetDialogJson() string {
     return r._dialogJson
 }

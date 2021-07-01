@@ -15,26 +15,26 @@ A 和 B 在2016-09-01 和 2016-09-02 都说过话。以A为查询账号，则该
 2016-09-01， B
 2016-09-02， B
 */
-type TaobaoWangwangEserviceChatrelationGetRequest struct {
+type TaobaoWangwangEserviceChatrelationGetAPIRequest struct {
     model.Params
     // 请求参数
     _chatRelationRequest   *ChatRelationRequest
 }
 
-// 初始化TaobaoWangwangEserviceChatrelationGetRequest对象
-func NewTaobaoWangwangEserviceChatrelationGetRequest() *TaobaoWangwangEserviceChatrelationGetRequest{
-    return &TaobaoWangwangEserviceChatrelationGetRequest{
+// 初始化TaobaoWangwangEserviceChatrelationGetAPIRequest对象
+func NewTaobaoWangwangEserviceChatrelationGetRequest() *TaobaoWangwangEserviceChatrelationGetAPIRequest{
+    return &TaobaoWangwangEserviceChatrelationGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWangwangEserviceChatrelationGetRequest) GetApiMethodName() string {
+func (r TaobaoWangwangEserviceChatrelationGetAPIRequest) GetApiMethodName() string {
     return "taobao.wangwang.eservice.chatrelation.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWangwangEserviceChatrelationGetRequest) GetApiParams() url.Values {
+func (r TaobaoWangwangEserviceChatrelationGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -43,13 +43,13 @@ func (r TaobaoWangwangEserviceChatrelationGetRequest) GetApiParams() url.Values 
 }
 // ChatRelationRequest Setter
 // 请求参数
-func (r *TaobaoWangwangEserviceChatrelationGetRequest) SetChatRelationRequest(_chatRelationRequest *ChatRelationRequest) error {
+func (r *TaobaoWangwangEserviceChatrelationGetAPIRequest) SetChatRelationRequest(_chatRelationRequest *ChatRelationRequest) error {
     r._chatRelationRequest = _chatRelationRequest
     r.Set("chat_relation_request", _chatRelationRequest)
     return nil
 }
 
 // ChatRelationRequest Getter
-func (r TaobaoWangwangEserviceChatrelationGetRequest) GetChatRelationRequest() *ChatRelationRequest {
+func (r TaobaoWangwangEserviceChatrelationGetAPIRequest) GetChatRelationRequest() *ChatRelationRequest {
     return r._chatRelationRequest
 }

@@ -11,7 +11,7 @@ taobao.auction.gov.get.latestbid
 
 获取司法拍卖最新出价数据
 */
-func TaobaoAuctionGovGetLatestbid(clt *core.SDKClient, req *auction.TaobaoAuctionGovGetLatestbidRequest, session string) (*auction.TaobaoAuctionGovGetLatestbidAPIResponse, error) {
+func TaobaoAuctionGovGetLatestbid(clt *core.SDKClient, req *auction.TaobaoAuctionGovGetLatestbidAPIRequest, session string) (*auction.TaobaoAuctionGovGetLatestbidAPIResponse, error) {
     var resp auction.TaobaoAuctionGovGetLatestbidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

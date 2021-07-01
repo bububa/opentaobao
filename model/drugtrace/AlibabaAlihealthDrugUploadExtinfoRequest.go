@@ -12,7 +12,7 @@ alibaba.alihealth.drug.upload.extinfo
 
 中药饮片及器械对接
 */
-type AlibabaAlihealthDrugUploadExtinfoRequest struct {
+type AlibabaAlihealthDrugUploadExtinfoAPIRequest struct {
     model.Params
     // 企业ID
     _refEntId   string
@@ -24,20 +24,20 @@ type AlibabaAlihealthDrugUploadExtinfoRequest struct {
     _extInfoDto   *ExtInfoDTO
 }
 
-// 初始化AlibabaAlihealthDrugUploadExtinfoRequest对象
-func NewAlibabaAlihealthDrugUploadExtinfoRequest() *AlibabaAlihealthDrugUploadExtinfoRequest{
-    return &AlibabaAlihealthDrugUploadExtinfoRequest{
+// 初始化AlibabaAlihealthDrugUploadExtinfoAPIRequest对象
+func NewAlibabaAlihealthDrugUploadExtinfoRequest() *AlibabaAlihealthDrugUploadExtinfoAPIRequest{
+    return &AlibabaAlihealthDrugUploadExtinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugUploadExtinfoRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugUploadExtinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.upload.extinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugUploadExtinfoRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugUploadExtinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthDrugUploadExtinfoRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugUploadExtinfoRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugUploadExtinfoAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugUploadExtinfoRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugUploadExtinfoAPIRequest) GetRefEntId() string {
     return r._refEntId
 }
 // DrugId Setter
 // 药品ID
-func (r *AlibabaAlihealthDrugUploadExtinfoRequest) SetDrugId(_drugId string) error {
+func (r *AlibabaAlihealthDrugUploadExtinfoAPIRequest) SetDrugId(_drugId string) error {
     r._drugId = _drugId
     r.Set("drug_id", _drugId)
     return nil
 }
 
 // DrugId Getter
-func (r AlibabaAlihealthDrugUploadExtinfoRequest) GetDrugId() string {
+func (r AlibabaAlihealthDrugUploadExtinfoAPIRequest) GetDrugId() string {
     return r._drugId
 }
 // BatchNo Setter
 // 批次
-func (r *AlibabaAlihealthDrugUploadExtinfoRequest) SetBatchNo(_batchNo string) error {
+func (r *AlibabaAlihealthDrugUploadExtinfoAPIRequest) SetBatchNo(_batchNo string) error {
     r._batchNo = _batchNo
     r.Set("batch_no", _batchNo)
     return nil
 }
 
 // BatchNo Getter
-func (r AlibabaAlihealthDrugUploadExtinfoRequest) GetBatchNo() string {
+func (r AlibabaAlihealthDrugUploadExtinfoAPIRequest) GetBatchNo() string {
     return r._batchNo
 }
 // ExtInfoDto Setter
 // 扩展信息
-func (r *AlibabaAlihealthDrugUploadExtinfoRequest) SetExtInfoDto(_extInfoDto *ExtInfoDTO) error {
+func (r *AlibabaAlihealthDrugUploadExtinfoAPIRequest) SetExtInfoDto(_extInfoDto *ExtInfoDTO) error {
     r._extInfoDto = _extInfoDto
     r.Set("ext_info_dto", _extInfoDto)
     return nil
 }
 
 // ExtInfoDto Getter
-func (r AlibabaAlihealthDrugUploadExtinfoRequest) GetExtInfoDto() *ExtInfoDTO {
+func (r AlibabaAlihealthDrugUploadExtinfoAPIRequest) GetExtInfoDto() *ExtInfoDTO {
     return r._extInfoDto
 }

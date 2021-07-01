@@ -11,7 +11,7 @@ taobao.trade.drug.refuseorder
 
 阿里健康020拒单
 */
-func TaobaoTradeDrugRefuseorder(clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugRefuseorderRequest, session string) (*alihealth2.TaobaoTradeDrugRefuseorderAPIResponse, error) {
+func TaobaoTradeDrugRefuseorder(clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugRefuseorderAPIRequest, session string) (*alihealth2.TaobaoTradeDrugRefuseorderAPIResponse, error) {
     var resp alihealth2.TaobaoTradeDrugRefuseorderAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

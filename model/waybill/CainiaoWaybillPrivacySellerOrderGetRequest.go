@@ -12,24 +12,24 @@ cainiao.waybill.privacy.seller.order.get
 
 商家查询最近100天隐私面单记录
 */
-type CainiaoWaybillPrivacySellerOrderGetRequest struct {
+type CainiaoWaybillPrivacySellerOrderGetAPIRequest struct {
     model.Params
 }
 
-// 初始化CainiaoWaybillPrivacySellerOrderGetRequest对象
-func NewCainiaoWaybillPrivacySellerOrderGetRequest() *CainiaoWaybillPrivacySellerOrderGetRequest{
-    return &CainiaoWaybillPrivacySellerOrderGetRequest{
+// 初始化CainiaoWaybillPrivacySellerOrderGetAPIRequest对象
+func NewCainiaoWaybillPrivacySellerOrderGetRequest() *CainiaoWaybillPrivacySellerOrderGetAPIRequest{
+    return &CainiaoWaybillPrivacySellerOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoWaybillPrivacySellerOrderGetRequest) GetApiMethodName() string {
+func (r CainiaoWaybillPrivacySellerOrderGetAPIRequest) GetApiMethodName() string {
     return "cainiao.waybill.privacy.seller.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillPrivacySellerOrderGetRequest) GetApiParams() url.Values {
+func (r CainiaoWaybillPrivacySellerOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

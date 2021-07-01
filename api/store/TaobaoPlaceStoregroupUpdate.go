@@ -11,7 +11,7 @@ taobao.place.storegroup.update
 
 门店库修改基本信息
 */
-func TaobaoPlaceStoregroupUpdate(clt *core.SDKClient, req *store.TaobaoPlaceStoregroupUpdateRequest, session string) (*store.TaobaoPlaceStoregroupUpdateAPIResponse, error) {
+func TaobaoPlaceStoregroupUpdate(clt *core.SDKClient, req *store.TaobaoPlaceStoregroupUpdateAPIRequest, session string) (*store.TaobaoPlaceStoregroupUpdateAPIResponse, error) {
     var resp store.TaobaoPlaceStoregroupUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

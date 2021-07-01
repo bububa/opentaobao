@@ -11,7 +11,7 @@ alibaba.alihealth.outflow.getbyverifycode
 
 阿里健康对合作药店提供通过核销码查看处方的功能
 */
-func AlibabaAlihealthOutflowGetbyverifycode(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowGetbyverifycodeRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowGetbyverifycodeAPIResponse, error) {
+func AlibabaAlihealthOutflowGetbyverifycode(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowGetbyverifycodeAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowGetbyverifycodeAPIResponse, error) {
     var resp alihealthoutflow.AlibabaAlihealthOutflowGetbyverifycodeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

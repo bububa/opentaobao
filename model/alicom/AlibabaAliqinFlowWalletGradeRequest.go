@@ -12,26 +12,26 @@ alibaba.aliqin.flow.wallet.grade
 
 获取直充流量档位
 */
-type AlibabaAliqinFlowWalletGradeRequest struct {
+type AlibabaAliqinFlowWalletGradeAPIRequest struct {
     model.Params
     // 手机号码
     _phoneNum   string
 }
 
-// 初始化AlibabaAliqinFlowWalletGradeRequest对象
-func NewAlibabaAliqinFlowWalletGradeRequest() *AlibabaAliqinFlowWalletGradeRequest{
-    return &AlibabaAliqinFlowWalletGradeRequest{
+// 初始化AlibabaAliqinFlowWalletGradeAPIRequest对象
+func NewAlibabaAliqinFlowWalletGradeRequest() *AlibabaAliqinFlowWalletGradeAPIRequest{
+    return &AlibabaAliqinFlowWalletGradeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAliqinFlowWalletGradeRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFlowWalletGradeAPIRequest) GetApiMethodName() string {
     return "alibaba.aliqin.flow.wallet.grade"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinFlowWalletGradeRequest) GetApiParams() url.Values {
+func (r AlibabaAliqinFlowWalletGradeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAliqinFlowWalletGradeRequest) GetApiParams() url.Values {
 }
 // PhoneNum Setter
 // 手机号码
-func (r *AlibabaAliqinFlowWalletGradeRequest) SetPhoneNum(_phoneNum string) error {
+func (r *AlibabaAliqinFlowWalletGradeAPIRequest) SetPhoneNum(_phoneNum string) error {
     r._phoneNum = _phoneNum
     r.Set("phone_num", _phoneNum)
     return nil
 }
 
 // PhoneNum Getter
-func (r AlibabaAliqinFlowWalletGradeRequest) GetPhoneNum() string {
+func (r AlibabaAliqinFlowWalletGradeAPIRequest) GetPhoneNum() string {
     return r._phoneNum
 }

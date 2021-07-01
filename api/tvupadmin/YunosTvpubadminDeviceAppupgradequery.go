@@ -11,7 +11,7 @@ yunos.tvpubadmin.device.appupgradequery
 
 应用升级查询
 */
-func YunosTvpubadminDeviceAppupgradequery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceAppupgradequeryRequest, session string) (*tvupadmin.YunosTvpubadminDeviceAppupgradequeryAPIResponse, error) {
+func YunosTvpubadminDeviceAppupgradequery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceAppupgradequeryAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceAppupgradequeryAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminDeviceAppupgradequeryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

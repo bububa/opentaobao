@@ -12,7 +12,7 @@ taobao.tmallgenie.hotelplayerpause
 
 酒店推送指令给天猫精灵停止播放音乐
 */
-type TaobaoTmallgenieHotelplayerpauseRequest struct {
+type TaobaoTmallgenieHotelplayerpauseAPIRequest struct {
     model.Params
     // 房间号
     _roomNo   string
@@ -20,20 +20,20 @@ type TaobaoTmallgenieHotelplayerpauseRequest struct {
     _hotelId   int64
 }
 
-// 初始化TaobaoTmallgenieHotelplayerpauseRequest对象
-func NewTaobaoTmallgenieHotelplayerpauseRequest() *TaobaoTmallgenieHotelplayerpauseRequest{
-    return &TaobaoTmallgenieHotelplayerpauseRequest{
+// 初始化TaobaoTmallgenieHotelplayerpauseAPIRequest对象
+func NewTaobaoTmallgenieHotelplayerpauseRequest() *TaobaoTmallgenieHotelplayerpauseAPIRequest{
+    return &TaobaoTmallgenieHotelplayerpauseAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTmallgenieHotelplayerpauseRequest) GetApiMethodName() string {
+func (r TaobaoTmallgenieHotelplayerpauseAPIRequest) GetApiMethodName() string {
     return "taobao.tmallgenie.hotelplayerpause"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTmallgenieHotelplayerpauseRequest) GetApiParams() url.Values {
+func (r TaobaoTmallgenieHotelplayerpauseAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoTmallgenieHotelplayerpauseRequest) GetApiParams() url.Values {
 }
 // RoomNo Setter
 // 房间号
-func (r *TaobaoTmallgenieHotelplayerpauseRequest) SetRoomNo(_roomNo string) error {
+func (r *TaobaoTmallgenieHotelplayerpauseAPIRequest) SetRoomNo(_roomNo string) error {
     r._roomNo = _roomNo
     r.Set("room_no", _roomNo)
     return nil
 }
 
 // RoomNo Getter
-func (r TaobaoTmallgenieHotelplayerpauseRequest) GetRoomNo() string {
+func (r TaobaoTmallgenieHotelplayerpauseAPIRequest) GetRoomNo() string {
     return r._roomNo
 }
 // HotelId Setter
 // 酒店ID
-func (r *TaobaoTmallgenieHotelplayerpauseRequest) SetHotelId(_hotelId int64) error {
+func (r *TaobaoTmallgenieHotelplayerpauseAPIRequest) SetHotelId(_hotelId int64) error {
     r._hotelId = _hotelId
     r.Set("hotel_id", _hotelId)
     return nil
 }
 
 // HotelId Getter
-func (r TaobaoTmallgenieHotelplayerpauseRequest) GetHotelId() int64 {
+func (r TaobaoTmallgenieHotelplayerpauseAPIRequest) GetHotelId() int64 {
     return r._hotelId
 }

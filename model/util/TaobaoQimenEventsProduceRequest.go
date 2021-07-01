@@ -12,26 +12,26 @@ taobao.qimen.events.produce
 
 批量发送消息
 */
-type TaobaoQimenEventsProduceRequest struct {
+type TaobaoQimenEventsProduceAPIRequest struct {
     model.Params
     // 奇门事件列表, 最多50条
     _messages   []QimenEvent
 }
 
-// 初始化TaobaoQimenEventsProduceRequest对象
-func NewTaobaoQimenEventsProduceRequest() *TaobaoQimenEventsProduceRequest{
-    return &TaobaoQimenEventsProduceRequest{
+// 初始化TaobaoQimenEventsProduceAPIRequest对象
+func NewTaobaoQimenEventsProduceRequest() *TaobaoQimenEventsProduceAPIRequest{
+    return &TaobaoQimenEventsProduceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoQimenEventsProduceRequest) GetApiMethodName() string {
+func (r TaobaoQimenEventsProduceAPIRequest) GetApiMethodName() string {
     return "taobao.qimen.events.produce"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoQimenEventsProduceRequest) GetApiParams() url.Values {
+func (r TaobaoQimenEventsProduceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoQimenEventsProduceRequest) GetApiParams() url.Values {
 }
 // Messages Setter
 // 奇门事件列表, 最多50条
-func (r *TaobaoQimenEventsProduceRequest) SetMessages(_messages []QimenEvent) error {
+func (r *TaobaoQimenEventsProduceAPIRequest) SetMessages(_messages []QimenEvent) error {
     r._messages = _messages
     r.Set("messages", _messages)
     return nil
 }
 
 // Messages Getter
-func (r TaobaoQimenEventsProduceRequest) GetMessages() []QimenEvent {
+func (r TaobaoQimenEventsProduceAPIRequest) GetMessages() []QimenEvent {
     return r._messages
 }

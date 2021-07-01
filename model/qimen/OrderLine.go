@@ -33,7 +33,7 @@ type OrderLine struct {
     // 生产批号
     ProduceCode   string `json:"produceCode,omitempty" xml:"produceCode,omitempty"`
     // 批次列表
-    Batchs   []Batch `json:"batchs,omitempty" xml:"batchs>batch,omitempty"`
+    Batchs   []TaobaoQimenDeliveryorderBatchconfirmBatch `json:"batchs,omitempty" xml:"batchs>taobao_qimen_deliveryorder_batchconfirm_batch,omitempty"`
     // 商品的二维码(类似电子产品的SN码;用来进行商品的溯源;多个二维码之间用分号;隔开)
     QrCode   string `json:"qrCode,omitempty" xml:"qrCode,omitempty"`
     // 仓库拆单子发货单号

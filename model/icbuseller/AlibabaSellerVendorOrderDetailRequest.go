@@ -12,26 +12,26 @@ alibaba.seller.vendor.order.detail
 
 国际站服务市场订单列表接口
 */
-type AlibabaSellerVendorOrderDetailRequest struct {
+type AlibabaSellerVendorOrderDetailAPIRequest struct {
     model.Params
     // 订单编号
     _orderNo   string
 }
 
-// 初始化AlibabaSellerVendorOrderDetailRequest对象
-func NewAlibabaSellerVendorOrderDetailRequest() *AlibabaSellerVendorOrderDetailRequest{
-    return &AlibabaSellerVendorOrderDetailRequest{
+// 初始化AlibabaSellerVendorOrderDetailAPIRequest对象
+func NewAlibabaSellerVendorOrderDetailRequest() *AlibabaSellerVendorOrderDetailAPIRequest{
+    return &AlibabaSellerVendorOrderDetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSellerVendorOrderDetailRequest) GetApiMethodName() string {
+func (r AlibabaSellerVendorOrderDetailAPIRequest) GetApiMethodName() string {
     return "alibaba.seller.vendor.order.detail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSellerVendorOrderDetailRequest) GetApiParams() url.Values {
+func (r AlibabaSellerVendorOrderDetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSellerVendorOrderDetailRequest) GetApiParams() url.Values {
 }
 // OrderNo Setter
 // 订单编号
-func (r *AlibabaSellerVendorOrderDetailRequest) SetOrderNo(_orderNo string) error {
+func (r *AlibabaSellerVendorOrderDetailAPIRequest) SetOrderNo(_orderNo string) error {
     r._orderNo = _orderNo
     r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
-func (r AlibabaSellerVendorOrderDetailRequest) GetOrderNo() string {
+func (r AlibabaSellerVendorOrderDetailAPIRequest) GetOrderNo() string {
     return r._orderNo
 }

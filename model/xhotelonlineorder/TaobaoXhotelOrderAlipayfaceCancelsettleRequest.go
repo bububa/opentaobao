@@ -12,7 +12,7 @@ taobao.xhotel.order.alipayface.cancelsettle
 
 信用住订单由于客人为出现等原因，最终取消结算,一定要在结算后2个小时之内调用，否则不会成功。
 */
-type TaobaoXhotelOrderAlipayfaceCancelsettleRequest struct {
+type TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest struct {
     model.Params
     // 阿里旅行订单号，淘宝订单号或外部订单号二选一必填
     _tid   int64
@@ -22,20 +22,20 @@ type TaobaoXhotelOrderAlipayfaceCancelsettleRequest struct {
     _outId   string
 }
 
-// 初始化TaobaoXhotelOrderAlipayfaceCancelsettleRequest对象
-func NewTaobaoXhotelOrderAlipayfaceCancelsettleRequest() *TaobaoXhotelOrderAlipayfaceCancelsettleRequest{
-    return &TaobaoXhotelOrderAlipayfaceCancelsettleRequest{
+// 初始化TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest对象
+func NewTaobaoXhotelOrderAlipayfaceCancelsettleRequest() *TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest{
+    return &TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelOrderAlipayfaceCancelsettleRequest) GetApiMethodName() string {
+func (r TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest) GetApiMethodName() string {
     return "taobao.xhotel.order.alipayface.cancelsettle"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelOrderAlipayfaceCancelsettleRequest) GetApiParams() url.Values {
+func (r TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoXhotelOrderAlipayfaceCancelsettleRequest) GetApiParams() url.Value
 }
 // Tid Setter
 // 阿里旅行订单号，淘宝订单号或外部订单号二选一必填
-func (r *TaobaoXhotelOrderAlipayfaceCancelsettleRequest) SetTid(_tid int64) error {
+func (r *TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest) SetTid(_tid int64) error {
     r._tid = _tid
     r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
-func (r TaobaoXhotelOrderAlipayfaceCancelsettleRequest) GetTid() int64 {
+func (r TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest) GetTid() int64 {
     return r._tid
 }
 // Reason Setter
 // 取消结账的原因
-func (r *TaobaoXhotelOrderAlipayfaceCancelsettleRequest) SetReason(_reason string) error {
+func (r *TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest) SetReason(_reason string) error {
     r._reason = _reason
     r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
-func (r TaobaoXhotelOrderAlipayfaceCancelsettleRequest) GetReason() string {
+func (r TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest) GetReason() string {
     return r._reason
 }
 // OutId Setter
 // 外部订单号，和tid二选一必填
-func (r *TaobaoXhotelOrderAlipayfaceCancelsettleRequest) SetOutId(_outId string) error {
+func (r *TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest) SetOutId(_outId string) error {
     r._outId = _outId
     r.Set("out_id", _outId)
     return nil
 }
 
 // OutId Getter
-func (r TaobaoXhotelOrderAlipayfaceCancelsettleRequest) GetOutId() string {
+func (r TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest) GetOutId() string {
     return r._outId
 }

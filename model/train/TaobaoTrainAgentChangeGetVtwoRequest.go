@@ -12,7 +12,7 @@ taobao.train.agent.change.get.vtwo
 
 卖家获取待处理的改签单详情
 */
-type TaobaoTrainAgentChangeGetVtwoRequest struct {
+type TaobaoTrainAgentChangeGetVtwoAPIRequest struct {
     model.Params
     // 代理商id
     _agentId   int64
@@ -20,20 +20,20 @@ type TaobaoTrainAgentChangeGetVtwoRequest struct {
     _applyId   int64
 }
 
-// 初始化TaobaoTrainAgentChangeGetVtwoRequest对象
-func NewTaobaoTrainAgentChangeGetVtwoRequest() *TaobaoTrainAgentChangeGetVtwoRequest{
-    return &TaobaoTrainAgentChangeGetVtwoRequest{
+// 初始化TaobaoTrainAgentChangeGetVtwoAPIRequest对象
+func NewTaobaoTrainAgentChangeGetVtwoRequest() *TaobaoTrainAgentChangeGetVtwoAPIRequest{
+    return &TaobaoTrainAgentChangeGetVtwoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentChangeGetVtwoRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentChangeGetVtwoAPIRequest) GetApiMethodName() string {
     return "taobao.train.agent.change.get.vtwo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentChangeGetVtwoRequest) GetApiParams() url.Values {
+func (r TaobaoTrainAgentChangeGetVtwoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoTrainAgentChangeGetVtwoRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoTrainAgentChangeGetVtwoRequest) SetAgentId(_agentId int64) error {
+func (r *TaobaoTrainAgentChangeGetVtwoAPIRequest) SetAgentId(_agentId int64) error {
     r._agentId = _agentId
     r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
-func (r TaobaoTrainAgentChangeGetVtwoRequest) GetAgentId() int64 {
+func (r TaobaoTrainAgentChangeGetVtwoAPIRequest) GetAgentId() int64 {
     return r._agentId
 }
 // ApplyId Setter
 // 申请单id
-func (r *TaobaoTrainAgentChangeGetVtwoRequest) SetApplyId(_applyId int64) error {
+func (r *TaobaoTrainAgentChangeGetVtwoAPIRequest) SetApplyId(_applyId int64) error {
     r._applyId = _applyId
     r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
-func (r TaobaoTrainAgentChangeGetVtwoRequest) GetApplyId() int64 {
+func (r TaobaoTrainAgentChangeGetVtwoAPIRequest) GetApplyId() int64 {
     return r._applyId
 }

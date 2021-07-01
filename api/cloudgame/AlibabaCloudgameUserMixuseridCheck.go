@@ -11,7 +11,7 @@ alibaba.cloudgame.user.mixuserid.check
 
 验证混淆用户ID是否合法
 */
-func AlibabaCloudgameUserMixuseridCheck(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameUserMixuseridCheckRequest, session string) (*cloudgame.AlibabaCloudgameUserMixuseridCheckAPIResponse, error) {
+func AlibabaCloudgameUserMixuseridCheck(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameUserMixuseridCheckAPIRequest, session string) (*cloudgame.AlibabaCloudgameUserMixuseridCheckAPIResponse, error) {
     var resp cloudgame.AlibabaCloudgameUserMixuseridCheckAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.ele.enterprise.restaurant.search
 
 餐厅列表
 */
-func AlibabaEleEnterpriseRestaurantSearch(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantSearchRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantSearchAPIResponse, error) {
+func AlibabaEleEnterpriseRestaurantSearch(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantSearchAPIRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantSearchAPIResponse, error) {
     var resp eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

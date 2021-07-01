@@ -12,7 +12,7 @@ tmall.promotag.taguser.judge
 
 查询用户是否有标签
 */
-type TmallPromotagTaguserJudgeRequest struct {
+type TmallPromotagTaguserJudgeAPIRequest struct {
     model.Params
     // 标签ID
     _tagId   int64
@@ -20,20 +20,20 @@ type TmallPromotagTaguserJudgeRequest struct {
     _nick   string
 }
 
-// 初始化TmallPromotagTaguserJudgeRequest对象
-func NewTmallPromotagTaguserJudgeRequest() *TmallPromotagTaguserJudgeRequest{
-    return &TmallPromotagTaguserJudgeRequest{
+// 初始化TmallPromotagTaguserJudgeAPIRequest对象
+func NewTmallPromotagTaguserJudgeRequest() *TmallPromotagTaguserJudgeAPIRequest{
+    return &TmallPromotagTaguserJudgeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallPromotagTaguserJudgeRequest) GetApiMethodName() string {
+func (r TmallPromotagTaguserJudgeAPIRequest) GetApiMethodName() string {
     return "tmall.promotag.taguser.judge"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallPromotagTaguserJudgeRequest) GetApiParams() url.Values {
+func (r TmallPromotagTaguserJudgeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallPromotagTaguserJudgeRequest) GetApiParams() url.Values {
 }
 // TagId Setter
 // 标签ID
-func (r *TmallPromotagTaguserJudgeRequest) SetTagId(_tagId int64) error {
+func (r *TmallPromotagTaguserJudgeAPIRequest) SetTagId(_tagId int64) error {
     r._tagId = _tagId
     r.Set("tag_id", _tagId)
     return nil
 }
 
 // TagId Getter
-func (r TmallPromotagTaguserJudgeRequest) GetTagId() int64 {
+func (r TmallPromotagTaguserJudgeAPIRequest) GetTagId() int64 {
     return r._tagId
 }
 // Nick Setter
 // 买家昵称
-func (r *TmallPromotagTaguserJudgeRequest) SetNick(_nick string) error {
+func (r *TmallPromotagTaguserJudgeAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TmallPromotagTaguserJudgeRequest) GetNick() string {
+func (r TmallPromotagTaguserJudgeAPIRequest) GetNick() string {
     return r._nick
 }

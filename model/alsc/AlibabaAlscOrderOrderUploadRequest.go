@@ -12,26 +12,26 @@ alibaba.alsc.order.order.upload
 
 第三方订单回流
 */
-type AlibabaAlscOrderOrderUploadRequest struct {
+type AlibabaAlscOrderOrderUploadAPIRequest struct {
     model.Params
     // 订单回流参数
     _paramBackflowRequest   *BackflowRequest
 }
 
-// 初始化AlibabaAlscOrderOrderUploadRequest对象
-func NewAlibabaAlscOrderOrderUploadRequest() *AlibabaAlscOrderOrderUploadRequest{
-    return &AlibabaAlscOrderOrderUploadRequest{
+// 初始化AlibabaAlscOrderOrderUploadAPIRequest对象
+func NewAlibabaAlscOrderOrderUploadRequest() *AlibabaAlscOrderOrderUploadAPIRequest{
+    return &AlibabaAlscOrderOrderUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscOrderOrderUploadRequest) GetApiMethodName() string {
+func (r AlibabaAlscOrderOrderUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.order.order.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscOrderOrderUploadRequest) GetApiParams() url.Values {
+func (r AlibabaAlscOrderOrderUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscOrderOrderUploadRequest) GetApiParams() url.Values {
 }
 // ParamBackflowRequest Setter
 // 订单回流参数
-func (r *AlibabaAlscOrderOrderUploadRequest) SetParamBackflowRequest(_paramBackflowRequest *BackflowRequest) error {
+func (r *AlibabaAlscOrderOrderUploadAPIRequest) SetParamBackflowRequest(_paramBackflowRequest *BackflowRequest) error {
     r._paramBackflowRequest = _paramBackflowRequest
     r.Set("param_backflow_request", _paramBackflowRequest)
     return nil
 }
 
 // ParamBackflowRequest Getter
-func (r AlibabaAlscOrderOrderUploadRequest) GetParamBackflowRequest() *BackflowRequest {
+func (r AlibabaAlscOrderOrderUploadAPIRequest) GetParamBackflowRequest() *BackflowRequest {
     return r._paramBackflowRequest
 }

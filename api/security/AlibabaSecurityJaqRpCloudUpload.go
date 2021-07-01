@@ -11,7 +11,7 @@ alibaba.security.jaq.rp.cloud.upload
 
 聚安全实人认证上传认证信息
 */
-func AlibabaSecurityJaqRpCloudUpload(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudUploadRequest, session string) (*security.AlibabaSecurityJaqRpCloudUploadAPIResponse, error) {
+func AlibabaSecurityJaqRpCloudUpload(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudUploadAPIRequest, session string) (*security.AlibabaSecurityJaqRpCloudUploadAPIResponse, error) {
     var resp security.AlibabaSecurityJaqRpCloudUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

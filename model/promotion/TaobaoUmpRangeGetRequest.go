@@ -12,26 +12,26 @@ taobao.ump.range.get
 
 查询某个卖家所有参加或者不参加某项活动的物品
 */
-type TaobaoUmpRangeGetRequest struct {
+type TaobaoUmpRangeGetAPIRequest struct {
     model.Params
     // 活动id
     _actId   int64
 }
 
-// 初始化TaobaoUmpRangeGetRequest对象
-func NewTaobaoUmpRangeGetRequest() *TaobaoUmpRangeGetRequest{
-    return &TaobaoUmpRangeGetRequest{
+// 初始化TaobaoUmpRangeGetAPIRequest对象
+func NewTaobaoUmpRangeGetRequest() *TaobaoUmpRangeGetAPIRequest{
+    return &TaobaoUmpRangeGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoUmpRangeGetRequest) GetApiMethodName() string {
+func (r TaobaoUmpRangeGetAPIRequest) GetApiMethodName() string {
     return "taobao.ump.range.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoUmpRangeGetRequest) GetApiParams() url.Values {
+func (r TaobaoUmpRangeGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoUmpRangeGetRequest) GetApiParams() url.Values {
 }
 // ActId Setter
 // 活动id
-func (r *TaobaoUmpRangeGetRequest) SetActId(_actId int64) error {
+func (r *TaobaoUmpRangeGetAPIRequest) SetActId(_actId int64) error {
     r._actId = _actId
     r.Set("act_id", _actId)
     return nil
 }
 
 // ActId Getter
-func (r TaobaoUmpRangeGetRequest) GetActId() int64 {
+func (r TaobaoUmpRangeGetAPIRequest) GetActId() int64 {
     return r._actId
 }

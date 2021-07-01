@@ -11,7 +11,7 @@ alibaba.scbp.account.status.update
 
 修改账户级别关键词推广状态
 */
-func AlibabaScbpAccountStatusUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAccountStatusUpdateRequest, session string) (*scbp.AlibabaScbpAccountStatusUpdateAPIResponse, error) {
+func AlibabaScbpAccountStatusUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAccountStatusUpdateAPIRequest, session string) (*scbp.AlibabaScbpAccountStatusUpdateAPIResponse, error) {
     var resp scbp.AlibabaScbpAccountStatusUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

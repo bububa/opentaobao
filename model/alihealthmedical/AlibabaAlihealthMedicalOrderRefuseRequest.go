@@ -12,26 +12,26 @@ alibaba.alihealth.medical.order.refuse
 
 三方机构通知平台"医生拒诊"
 */
-type AlibabaAlihealthMedicalOrderRefuseRequest struct {
+type AlibabaAlihealthMedicalOrderRefuseAPIRequest struct {
     model.Params
     // 请求入参
     _requestInfo   *RefuseOrderRequestDTO
 }
 
-// 初始化AlibabaAlihealthMedicalOrderRefuseRequest对象
-func NewAlibabaAlihealthMedicalOrderRefuseRequest() *AlibabaAlihealthMedicalOrderRefuseRequest{
-    return &AlibabaAlihealthMedicalOrderRefuseRequest{
+// 初始化AlibabaAlihealthMedicalOrderRefuseAPIRequest对象
+func NewAlibabaAlihealthMedicalOrderRefuseRequest() *AlibabaAlihealthMedicalOrderRefuseAPIRequest{
+    return &AlibabaAlihealthMedicalOrderRefuseAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalOrderRefuseRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalOrderRefuseAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medical.order.refuse"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalOrderRefuseRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMedicalOrderRefuseAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalOrderRefuseRequest) GetApiParams() url.Values {
 }
 // RequestInfo Setter
 // 请求入参
-func (r *AlibabaAlihealthMedicalOrderRefuseRequest) SetRequestInfo(_requestInfo *RefuseOrderRequestDTO) error {
+func (r *AlibabaAlihealthMedicalOrderRefuseAPIRequest) SetRequestInfo(_requestInfo *RefuseOrderRequestDTO) error {
     r._requestInfo = _requestInfo
     r.Set("request_info", _requestInfo)
     return nil
 }
 
 // RequestInfo Getter
-func (r AlibabaAlihealthMedicalOrderRefuseRequest) GetRequestInfo() *RefuseOrderRequestDTO {
+func (r AlibabaAlihealthMedicalOrderRefuseAPIRequest) GetRequestInfo() *RefuseOrderRequestDTO {
     return r._requestInfo
 }

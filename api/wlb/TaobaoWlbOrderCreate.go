@@ -11,7 +11,7 @@ taobao.wlb.order.create
 
 创建物流宝订单，由外部ISV或者ERP，Elink，淘宝交易产生
 */
-func TaobaoWlbOrderCreate(clt *core.SDKClient, req *wlb.TaobaoWlbOrderCreateRequest, session string) (*wlb.TaobaoWlbOrderCreateAPIResponse, error) {
+func TaobaoWlbOrderCreate(clt *core.SDKClient, req *wlb.TaobaoWlbOrderCreateAPIRequest, session string) (*wlb.TaobaoWlbOrderCreateAPIResponse, error) {
     var resp wlb.TaobaoWlbOrderCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

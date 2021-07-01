@@ -11,7 +11,7 @@ yunos.tvpubadmin.epg.desktop.operation
 
 影视桌面运营通用接口
 */
-func YunosTvpubadminEpgDesktopOperation(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminEpgDesktopOperationRequest, session string) (*tvupadmin.YunosTvpubadminEpgDesktopOperationAPIResponse, error) {
+func YunosTvpubadminEpgDesktopOperation(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminEpgDesktopOperationAPIRequest, session string) (*tvupadmin.YunosTvpubadminEpgDesktopOperationAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminEpgDesktopOperationAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

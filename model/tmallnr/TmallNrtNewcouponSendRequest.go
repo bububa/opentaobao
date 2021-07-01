@@ -12,26 +12,26 @@ tmall.nrt.newcoupon.send
 
 券发放接口
 */
-type TmallNrtNewcouponSendRequest struct {
+type TmallNrtNewcouponSendAPIRequest struct {
     model.Params
     // 发券dto
     _nrtCouponSendDto   *NrtCouponSendDTO
 }
 
-// 初始化TmallNrtNewcouponSendRequest对象
-func NewTmallNrtNewcouponSendRequest() *TmallNrtNewcouponSendRequest{
-    return &TmallNrtNewcouponSendRequest{
+// 初始化TmallNrtNewcouponSendAPIRequest对象
+func NewTmallNrtNewcouponSendRequest() *TmallNrtNewcouponSendAPIRequest{
+    return &TmallNrtNewcouponSendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrtNewcouponSendRequest) GetApiMethodName() string {
+func (r TmallNrtNewcouponSendAPIRequest) GetApiMethodName() string {
     return "tmall.nrt.newcoupon.send"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrtNewcouponSendRequest) GetApiParams() url.Values {
+func (r TmallNrtNewcouponSendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallNrtNewcouponSendRequest) GetApiParams() url.Values {
 }
 // NrtCouponSendDto Setter
 // 发券dto
-func (r *TmallNrtNewcouponSendRequest) SetNrtCouponSendDto(_nrtCouponSendDto *NrtCouponSendDTO) error {
+func (r *TmallNrtNewcouponSendAPIRequest) SetNrtCouponSendDto(_nrtCouponSendDto *NrtCouponSendDTO) error {
     r._nrtCouponSendDto = _nrtCouponSendDto
     r.Set("nrt_coupon_send_dto", _nrtCouponSendDto)
     return nil
 }
 
 // NrtCouponSendDto Getter
-func (r TmallNrtNewcouponSendRequest) GetNrtCouponSendDto() *NrtCouponSendDTO {
+func (r TmallNrtNewcouponSendAPIRequest) GetNrtCouponSendDto() *NrtCouponSendDTO {
     return r._nrtCouponSendDto
 }

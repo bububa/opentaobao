@@ -12,26 +12,26 @@ alibaba.wdk.fulfill.dms.delivery.work.order.callback
 
 末端配配送作业回传。
 */
-type AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest struct {
+type AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIRequest struct {
     model.Params
     // 作业单回传对象
     _callbackOrder   *DeliveryCallbackOrder
 }
 
-// 初始化AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest对象
-func NewAlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest() *AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest{
-    return &AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest{
+// 初始化AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIRequest对象
+func NewAlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest() *AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIRequest{
+    return &AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest) GetApiMethodName() string {
+func (r AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.fulfill.dms.delivery.work.order.callback"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest) GetApiParams() url.Values {
+func (r AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest) GetApiParams() url
 }
 // CallbackOrder Setter
 // 作业单回传对象
-func (r *AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest) SetCallbackOrder(_callbackOrder *DeliveryCallbackOrder) error {
+func (r *AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIRequest) SetCallbackOrder(_callbackOrder *DeliveryCallbackOrder) error {
     r._callbackOrder = _callbackOrder
     r.Set("callback_order", _callbackOrder)
     return nil
 }
 
 // CallbackOrder Getter
-func (r AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest) GetCallbackOrder() *DeliveryCallbackOrder {
+func (r AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIRequest) GetCallbackOrder() *DeliveryCallbackOrder {
     return r._callbackOrder
 }

@@ -11,7 +11,7 @@ taobao.simba.keywords.recommend.get
 
 取得一个推广组的推荐关键词列表
 */
-func TaobaoSimbaKeywordsRecommendGet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsRecommendGetRequest, session string) (*simba.TaobaoSimbaKeywordsRecommendGetAPIResponse, error) {
+func TaobaoSimbaKeywordsRecommendGet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsRecommendGetAPIRequest, session string) (*simba.TaobaoSimbaKeywordsRecommendGetAPIResponse, error) {
     var resp simba.TaobaoSimbaKeywordsRecommendGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

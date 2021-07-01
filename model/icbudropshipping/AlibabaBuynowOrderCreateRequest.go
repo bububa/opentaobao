@@ -12,26 +12,26 @@ alibaba.buynow.order.create
 
 阿里巴巴买家下单接口
 */
-type AlibabaBuynowOrderCreateRequest struct {
+type AlibabaBuynowOrderCreateAPIRequest struct {
     model.Params
     // Order creation parameter
     _paramOrderCreateRequest   *OrderCreateRequest
 }
 
-// 初始化AlibabaBuynowOrderCreateRequest对象
-func NewAlibabaBuynowOrderCreateRequest() *AlibabaBuynowOrderCreateRequest{
-    return &AlibabaBuynowOrderCreateRequest{
+// 初始化AlibabaBuynowOrderCreateAPIRequest对象
+func NewAlibabaBuynowOrderCreateRequest() *AlibabaBuynowOrderCreateAPIRequest{
+    return &AlibabaBuynowOrderCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaBuynowOrderCreateRequest) GetApiMethodName() string {
+func (r AlibabaBuynowOrderCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.buynow.order.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaBuynowOrderCreateRequest) GetApiParams() url.Values {
+func (r AlibabaBuynowOrderCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaBuynowOrderCreateRequest) GetApiParams() url.Values {
 }
 // ParamOrderCreateRequest Setter
 // Order creation parameter
-func (r *AlibabaBuynowOrderCreateRequest) SetParamOrderCreateRequest(_paramOrderCreateRequest *OrderCreateRequest) error {
+func (r *AlibabaBuynowOrderCreateAPIRequest) SetParamOrderCreateRequest(_paramOrderCreateRequest *OrderCreateRequest) error {
     r._paramOrderCreateRequest = _paramOrderCreateRequest
     r.Set("param_order_create_request", _paramOrderCreateRequest)
     return nil
 }
 
 // ParamOrderCreateRequest Getter
-func (r AlibabaBuynowOrderCreateRequest) GetParamOrderCreateRequest() *OrderCreateRequest {
+func (r AlibabaBuynowOrderCreateAPIRequest) GetParamOrderCreateRequest() *OrderCreateRequest {
     return r._paramOrderCreateRequest
 }

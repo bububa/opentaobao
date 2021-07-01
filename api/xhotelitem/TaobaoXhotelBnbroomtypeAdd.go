@@ -11,7 +11,7 @@ taobao.xhotel.bnbroomtype.add
 
 添加民宿房源
 */
-func TaobaoXhotelBnbroomtypeAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbroomtypeAddRequest, session string) (*xhotelitem.TaobaoXhotelBnbroomtypeAddAPIResponse, error) {
+func TaobaoXhotelBnbroomtypeAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbroomtypeAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelBnbroomtypeAddAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelBnbroomtypeAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,24 +12,24 @@ alibaba.interact.sensor.shake
 
 摇一摇
 */
-type AlibabaInteractSensorShakeRequest struct {
+type AlibabaInteractSensorShakeAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractSensorShakeRequest对象
-func NewAlibabaInteractSensorShakeRequest() *AlibabaInteractSensorShakeRequest{
-    return &AlibabaInteractSensorShakeRequest{
+// 初始化AlibabaInteractSensorShakeAPIRequest对象
+func NewAlibabaInteractSensorShakeRequest() *AlibabaInteractSensorShakeAPIRequest{
+    return &AlibabaInteractSensorShakeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorShakeRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorShakeAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.shake"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorShakeRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorShakeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

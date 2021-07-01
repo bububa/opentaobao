@@ -12,7 +12,7 @@ taobao.xhotel.rateplan.get
 
 酒店产品库rateplan查询
 */
-type TaobaoXhotelRateplanGetRequest struct {
+type TaobaoXhotelRateplanGetAPIRequest struct {
     model.Params
     // 废弃，使用rateplan_code
     _rpid   int64
@@ -22,20 +22,20 @@ type TaobaoXhotelRateplanGetRequest struct {
     _vendor   string
 }
 
-// 初始化TaobaoXhotelRateplanGetRequest对象
-func NewTaobaoXhotelRateplanGetRequest() *TaobaoXhotelRateplanGetRequest{
-    return &TaobaoXhotelRateplanGetRequest{
+// 初始化TaobaoXhotelRateplanGetAPIRequest对象
+func NewTaobaoXhotelRateplanGetRequest() *TaobaoXhotelRateplanGetAPIRequest{
+    return &TaobaoXhotelRateplanGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelRateplanGetRequest) GetApiMethodName() string {
+func (r TaobaoXhotelRateplanGetAPIRequest) GetApiMethodName() string {
     return "taobao.xhotel.rateplan.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelRateplanGetRequest) GetApiParams() url.Values {
+func (r TaobaoXhotelRateplanGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoXhotelRateplanGetRequest) GetApiParams() url.Values {
 }
 // Rpid Setter
 // 废弃，使用rateplan_code
-func (r *TaobaoXhotelRateplanGetRequest) SetRpid(_rpid int64) error {
+func (r *TaobaoXhotelRateplanGetAPIRequest) SetRpid(_rpid int64) error {
     r._rpid = _rpid
     r.Set("rpid", _rpid)
     return nil
 }
 
 // Rpid Getter
-func (r TaobaoXhotelRateplanGetRequest) GetRpid() int64 {
+func (r TaobaoXhotelRateplanGetAPIRequest) GetRpid() int64 {
     return r._rpid
 }
 // RateplanCode Setter
 // 卖家自己系统的Code，简称RateCode
-func (r *TaobaoXhotelRateplanGetRequest) SetRateplanCode(_rateplanCode string) error {
+func (r *TaobaoXhotelRateplanGetAPIRequest) SetRateplanCode(_rateplanCode string) error {
     r._rateplanCode = _rateplanCode
     r.Set("rateplan_code", _rateplanCode)
     return nil
 }
 
 // RateplanCode Getter
-func (r TaobaoXhotelRateplanGetRequest) GetRateplanCode() string {
+func (r TaobaoXhotelRateplanGetAPIRequest) GetRateplanCode() string {
     return r._rateplanCode
 }
 // Vendor Setter
 // 系统商，一般不填写，使用须申请
-func (r *TaobaoXhotelRateplanGetRequest) SetVendor(_vendor string) error {
+func (r *TaobaoXhotelRateplanGetAPIRequest) SetVendor(_vendor string) error {
     r._vendor = _vendor
     r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
-func (r TaobaoXhotelRateplanGetRequest) GetVendor() string {
+func (r TaobaoXhotelRateplanGetAPIRequest) GetVendor() string {
     return r._vendor
 }

@@ -11,7 +11,7 @@ alibaba.alicom.exchange.createbymixnick
 
 代理商调用该接口来进行积分兑换，tae
 */
-func AlibabaAlicomExchangeCreatebymixnick(clt *core.SDKClient, req *alicom.AlibabaAlicomExchangeCreatebymixnickRequest, session string) (*alicom.AlibabaAlicomExchangeCreatebymixnickAPIResponse, error) {
+func AlibabaAlicomExchangeCreatebymixnick(clt *core.SDKClient, req *alicom.AlibabaAlicomExchangeCreatebymixnickAPIRequest, session string) (*alicom.AlibabaAlicomExchangeCreatebymixnickAPIResponse, error) {
     var resp alicom.AlibabaAlicomExchangeCreatebymixnickAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

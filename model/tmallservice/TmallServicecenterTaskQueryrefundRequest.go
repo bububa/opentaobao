@@ -12,26 +12,26 @@ tmall.servicecenter.task.queryrefund
 
 查询任务类工单是否退款
 */
-type TmallServicecenterTaskQueryrefundRequest struct {
+type TmallServicecenterTaskQueryrefundAPIRequest struct {
     model.Params
     // 工单id列表
     _workcardList   []int64
 }
 
-// 初始化TmallServicecenterTaskQueryrefundRequest对象
-func NewTmallServicecenterTaskQueryrefundRequest() *TmallServicecenterTaskQueryrefundRequest{
-    return &TmallServicecenterTaskQueryrefundRequest{
+// 初始化TmallServicecenterTaskQueryrefundAPIRequest对象
+func NewTmallServicecenterTaskQueryrefundRequest() *TmallServicecenterTaskQueryrefundAPIRequest{
+    return &TmallServicecenterTaskQueryrefundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterTaskQueryrefundRequest) GetApiMethodName() string {
+func (r TmallServicecenterTaskQueryrefundAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.task.queryrefund"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterTaskQueryrefundRequest) GetApiParams() url.Values {
+func (r TmallServicecenterTaskQueryrefundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterTaskQueryrefundRequest) GetApiParams() url.Values {
 }
 // WorkcardList Setter
 // 工单id列表
-func (r *TmallServicecenterTaskQueryrefundRequest) SetWorkcardList(_workcardList []int64) error {
+func (r *TmallServicecenterTaskQueryrefundAPIRequest) SetWorkcardList(_workcardList []int64) error {
     r._workcardList = _workcardList
     r.Set("workcard_list", _workcardList)
     return nil
 }
 
 // WorkcardList Getter
-func (r TmallServicecenterTaskQueryrefundRequest) GetWorkcardList() []int64 {
+func (r TmallServicecenterTaskQueryrefundAPIRequest) GetWorkcardList() []int64 {
     return r._workcardList
 }

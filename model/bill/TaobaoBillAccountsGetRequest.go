@@ -12,7 +12,7 @@ taobao.bill.accounts.get
 
 查询费用账户信息
 */
-type TaobaoBillAccountsGetRequest struct {
+type TaobaoBillAccountsGetAPIRequest struct {
     model.Params
     // 需要返回的字段
     _fields   []string
@@ -20,20 +20,20 @@ type TaobaoBillAccountsGetRequest struct {
     _aids   []int64
 }
 
-// 初始化TaobaoBillAccountsGetRequest对象
-func NewTaobaoBillAccountsGetRequest() *TaobaoBillAccountsGetRequest{
-    return &TaobaoBillAccountsGetRequest{
+// 初始化TaobaoBillAccountsGetAPIRequest对象
+func NewTaobaoBillAccountsGetRequest() *TaobaoBillAccountsGetAPIRequest{
+    return &TaobaoBillAccountsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBillAccountsGetRequest) GetApiMethodName() string {
+func (r TaobaoBillAccountsGetAPIRequest) GetApiMethodName() string {
     return "taobao.bill.accounts.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBillAccountsGetRequest) GetApiParams() url.Values {
+func (r TaobaoBillAccountsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoBillAccountsGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的字段
-func (r *TaobaoBillAccountsGetRequest) SetFields(_fields []string) error {
+func (r *TaobaoBillAccountsGetAPIRequest) SetFields(_fields []string) error {
     r._fields = _fields
     r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
-func (r TaobaoBillAccountsGetRequest) GetFields() []string {
+func (r TaobaoBillAccountsGetAPIRequest) GetFields() []string {
     return r._fields
 }
 // Aids Setter
 // 需要获取的科目ID
-func (r *TaobaoBillAccountsGetRequest) SetAids(_aids []int64) error {
+func (r *TaobaoBillAccountsGetAPIRequest) SetAids(_aids []int64) error {
     r._aids = _aids
     r.Set("aids", _aids)
     return nil
 }
 
 // Aids Getter
-func (r TaobaoBillAccountsGetRequest) GetAids() []int64 {
+func (r TaobaoBillAccountsGetAPIRequest) GetAids() []int64 {
     return r._aids
 }

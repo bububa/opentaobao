@@ -12,7 +12,7 @@ alitrip.merchant.galaxy.member.logout
 
 星河=微信小程序用户登出
 */
-type AlitripMerchantGalaxyMemberLogoutRequest struct {
+type AlitripMerchantGalaxyMemberLogoutAPIRequest struct {
     model.Params
     // 租户信息
     _tenantKey   string
@@ -20,20 +20,20 @@ type AlitripMerchantGalaxyMemberLogoutRequest struct {
     _token   string
 }
 
-// 初始化AlitripMerchantGalaxyMemberLogoutRequest对象
-func NewAlitripMerchantGalaxyMemberLogoutRequest() *AlitripMerchantGalaxyMemberLogoutRequest{
-    return &AlitripMerchantGalaxyMemberLogoutRequest{
+// 初始化AlitripMerchantGalaxyMemberLogoutAPIRequest对象
+func NewAlitripMerchantGalaxyMemberLogoutRequest() *AlitripMerchantGalaxyMemberLogoutAPIRequest{
+    return &AlitripMerchantGalaxyMemberLogoutAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripMerchantGalaxyMemberLogoutRequest) GetApiMethodName() string {
+func (r AlitripMerchantGalaxyMemberLogoutAPIRequest) GetApiMethodName() string {
     return "alitrip.merchant.galaxy.member.logout"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripMerchantGalaxyMemberLogoutRequest) GetApiParams() url.Values {
+func (r AlitripMerchantGalaxyMemberLogoutAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyMemberLogoutRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户信息
-func (r *AlitripMerchantGalaxyMemberLogoutRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripMerchantGalaxyMemberLogoutAPIRequest) SetTenantKey(_tenantKey string) error {
     r._tenantKey = _tenantKey
     r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
-func (r AlitripMerchantGalaxyMemberLogoutRequest) GetTenantKey() string {
+func (r AlitripMerchantGalaxyMemberLogoutAPIRequest) GetTenantKey() string {
     return r._tenantKey
 }
 // Token Setter
 // 用户登录token
-func (r *AlitripMerchantGalaxyMemberLogoutRequest) SetToken(_token string) error {
+func (r *AlitripMerchantGalaxyMemberLogoutAPIRequest) SetToken(_token string) error {
     r._token = _token
     r.Set("token", _token)
     return nil
 }
 
 // Token Getter
-func (r AlitripMerchantGalaxyMemberLogoutRequest) GetToken() string {
+func (r AlitripMerchantGalaxyMemberLogoutAPIRequest) GetToken() string {
     return r._token
 }

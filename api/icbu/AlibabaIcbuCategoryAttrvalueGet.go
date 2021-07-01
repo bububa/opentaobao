@@ -11,7 +11,7 @@ alibaba.icbu.category.attrvalue.get
 
 属性值获取
 */
-func AlibabaIcbuCategoryAttrvalueGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryAttrvalueGetRequest, session string) (*icbu.AlibabaIcbuCategoryAttrvalueGetAPIResponse, error) {
+func AlibabaIcbuCategoryAttrvalueGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryAttrvalueGetAPIRequest, session string) (*icbu.AlibabaIcbuCategoryAttrvalueGetAPIResponse, error) {
     var resp icbu.AlibabaIcbuCategoryAttrvalueGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

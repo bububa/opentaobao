@@ -12,26 +12,26 @@ alibaba.tmallgenie.scp.plan.location.quote.upload
 
 同步地点配额
 */
-type AlibabaTmallgenieScpPlanLocationQuoteUploadRequest struct {
+type AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest struct {
     model.Params
     // 对象
     _netDemandRequest   *NetDemandRequest
 }
 
-// 初始化AlibabaTmallgenieScpPlanLocationQuoteUploadRequest对象
-func NewAlibabaTmallgenieScpPlanLocationQuoteUploadRequest() *AlibabaTmallgenieScpPlanLocationQuoteUploadRequest{
-    return &AlibabaTmallgenieScpPlanLocationQuoteUploadRequest{
+// 初始化AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest对象
+func NewAlibabaTmallgenieScpPlanLocationQuoteUploadRequest() *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest{
+    return &AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTmallgenieScpPlanLocationQuoteUploadRequest) GetApiMethodName() string {
+func (r AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.tmallgenie.scp.plan.location.quote.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTmallgenieScpPlanLocationQuoteUploadRequest) GetApiParams() url.Values {
+func (r AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanLocationQuoteUploadRequest) GetApiParams() url.V
 }
 // NetDemandRequest Setter
 // 对象
-func (r *AlibabaTmallgenieScpPlanLocationQuoteUploadRequest) SetNetDemandRequest(_netDemandRequest *NetDemandRequest) error {
+func (r *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest) SetNetDemandRequest(_netDemandRequest *NetDemandRequest) error {
     r._netDemandRequest = _netDemandRequest
     r.Set("net_demand_request", _netDemandRequest)
     return nil
 }
 
 // NetDemandRequest Getter
-func (r AlibabaTmallgenieScpPlanLocationQuoteUploadRequest) GetNetDemandRequest() *NetDemandRequest {
+func (r AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest) GetNetDemandRequest() *NetDemandRequest {
     return r._netDemandRequest
 }

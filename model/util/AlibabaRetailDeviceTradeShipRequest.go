@@ -12,7 +12,7 @@ alibaba.retail.device.trade.ship
 
 贩卖机发货
 */
-type AlibabaRetailDeviceTradeShipRequest struct {
+type AlibabaRetailDeviceTradeShipAPIRequest struct {
     model.Params
     // 设备类型
     _deviceType   string
@@ -26,20 +26,20 @@ type AlibabaRetailDeviceTradeShipRequest struct {
     _orderUpdateOption   *OrderUpdateOption
 }
 
-// 初始化AlibabaRetailDeviceTradeShipRequest对象
-func NewAlibabaRetailDeviceTradeShipRequest() *AlibabaRetailDeviceTradeShipRequest{
-    return &AlibabaRetailDeviceTradeShipRequest{
+// 初始化AlibabaRetailDeviceTradeShipAPIRequest对象
+func NewAlibabaRetailDeviceTradeShipRequest() *AlibabaRetailDeviceTradeShipAPIRequest{
+    return &AlibabaRetailDeviceTradeShipAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailDeviceTradeShipRequest) GetApiMethodName() string {
+func (r AlibabaRetailDeviceTradeShipAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.device.trade.ship"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailDeviceTradeShipRequest) GetApiParams() url.Values {
+func (r AlibabaRetailDeviceTradeShipAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaRetailDeviceTradeShipRequest) GetApiParams() url.Values {
 }
 // DeviceType Setter
 // 设备类型
-func (r *AlibabaRetailDeviceTradeShipRequest) SetDeviceType(_deviceType string) error {
+func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetDeviceType(_deviceType string) error {
     r._deviceType = _deviceType
     r.Set("device_type", _deviceType)
     return nil
 }
 
 // DeviceType Getter
-func (r AlibabaRetailDeviceTradeShipRequest) GetDeviceType() string {
+func (r AlibabaRetailDeviceTradeShipAPIRequest) GetDeviceType() string {
     return r._deviceType
 }
 // DeviceId Setter
 // 设备ID
-func (r *AlibabaRetailDeviceTradeShipRequest) SetDeviceId(_deviceId string) error {
+func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetDeviceId(_deviceId string) error {
     r._deviceId = _deviceId
     r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
-func (r AlibabaRetailDeviceTradeShipRequest) GetDeviceId() string {
+func (r AlibabaRetailDeviceTradeShipAPIRequest) GetDeviceId() string {
     return r._deviceId
 }
 // TradeNo Setter
 // 内部订单编号
-func (r *AlibabaRetailDeviceTradeShipRequest) SetTradeNo(_tradeNo string) error {
+func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetTradeNo(_tradeNo string) error {
     r._tradeNo = _tradeNo
     r.Set("trade_no", _tradeNo)
     return nil
 }
 
 // TradeNo Getter
-func (r AlibabaRetailDeviceTradeShipRequest) GetTradeNo() string {
+func (r AlibabaRetailDeviceTradeShipAPIRequest) GetTradeNo() string {
     return r._tradeNo
 }
 // ShipDetailList Setter
 // 详情
-func (r *AlibabaRetailDeviceTradeShipRequest) SetShipDetailList(_shipDetailList []ShipDetailDTO) error {
+func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetShipDetailList(_shipDetailList []ShipDetailDTO) error {
     r._shipDetailList = _shipDetailList
     r.Set("ship_detail_list", _shipDetailList)
     return nil
 }
 
 // ShipDetailList Getter
-func (r AlibabaRetailDeviceTradeShipRequest) GetShipDetailList() []ShipDetailDTO {
+func (r AlibabaRetailDeviceTradeShipAPIRequest) GetShipDetailList() []ShipDetailDTO {
     return r._shipDetailList
 }
 // OrderUpdateOption Setter
 // 选项
-func (r *AlibabaRetailDeviceTradeShipRequest) SetOrderUpdateOption(_orderUpdateOption *OrderUpdateOption) error {
+func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetOrderUpdateOption(_orderUpdateOption *OrderUpdateOption) error {
     r._orderUpdateOption = _orderUpdateOption
     r.Set("order_update_option", _orderUpdateOption)
     return nil
 }
 
 // OrderUpdateOption Getter
-func (r AlibabaRetailDeviceTradeShipRequest) GetOrderUpdateOption() *OrderUpdateOption {
+func (r AlibabaRetailDeviceTradeShipAPIRequest) GetOrderUpdateOption() *OrderUpdateOption {
     return r._orderUpdateOption
 }

@@ -12,26 +12,26 @@ alibaba.mozi.vds.tenant.api.service.pagesubadmins
 
 分页查询租户子管理员
 */
-type AlibabaMoziVdsTenantApiServicePagesubadminsRequest struct {
+type AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest struct {
     model.Params
     // 入参
     _par0   *PageTenantSubAdminsRequest
 }
 
-// 初始化AlibabaMoziVdsTenantApiServicePagesubadminsRequest对象
-func NewAlibabaMoziVdsTenantApiServicePagesubadminsRequest() *AlibabaMoziVdsTenantApiServicePagesubadminsRequest{
-    return &AlibabaMoziVdsTenantApiServicePagesubadminsRequest{
+// 初始化AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest对象
+func NewAlibabaMoziVdsTenantApiServicePagesubadminsRequest() *AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest{
+    return &AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziVdsTenantApiServicePagesubadminsRequest) GetApiMethodName() string {
+func (r AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.vds.tenant.api.service.pagesubadmins"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziVdsTenantApiServicePagesubadminsRequest) GetApiParams() url.Values {
+func (r AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziVdsTenantApiServicePagesubadminsRequest) GetApiParams() url.V
 }
 // Par0 Setter
 // 入参
-func (r *AlibabaMoziVdsTenantApiServicePagesubadminsRequest) SetPar0(_par0 *PageTenantSubAdminsRequest) error {
+func (r *AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest) SetPar0(_par0 *PageTenantSubAdminsRequest) error {
     r._par0 = _par0
     r.Set("par0", _par0)
     return nil
 }
 
 // Par0 Getter
-func (r AlibabaMoziVdsTenantApiServicePagesubadminsRequest) GetPar0() *PageTenantSubAdminsRequest {
+func (r AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest) GetPar0() *PageTenantSubAdminsRequest {
     return r._par0
 }

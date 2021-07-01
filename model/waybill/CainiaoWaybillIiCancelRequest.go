@@ -12,7 +12,7 @@ cainiao.waybill.ii.cancel
 
 面单号有误需要取消的时候，调用该接口取消获取的电子面单。
 */
-type CainiaoWaybillIiCancelRequest struct {
+type CainiaoWaybillIiCancelAPIRequest struct {
     model.Params
     // 快递公司code
     _cpCode   string
@@ -20,20 +20,20 @@ type CainiaoWaybillIiCancelRequest struct {
     _waybillCode   string
 }
 
-// 初始化CainiaoWaybillIiCancelRequest对象
-func NewCainiaoWaybillIiCancelRequest() *CainiaoWaybillIiCancelRequest{
-    return &CainiaoWaybillIiCancelRequest{
+// 初始化CainiaoWaybillIiCancelAPIRequest对象
+func NewCainiaoWaybillIiCancelRequest() *CainiaoWaybillIiCancelAPIRequest{
+    return &CainiaoWaybillIiCancelAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoWaybillIiCancelRequest) GetApiMethodName() string {
+func (r CainiaoWaybillIiCancelAPIRequest) GetApiMethodName() string {
     return "cainiao.waybill.ii.cancel"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillIiCancelRequest) GetApiParams() url.Values {
+func (r CainiaoWaybillIiCancelAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r CainiaoWaybillIiCancelRequest) GetApiParams() url.Values {
 }
 // CpCode Setter
 // 快递公司code
-func (r *CainiaoWaybillIiCancelRequest) SetCpCode(_cpCode string) error {
+func (r *CainiaoWaybillIiCancelAPIRequest) SetCpCode(_cpCode string) error {
     r._cpCode = _cpCode
     r.Set("cp_code", _cpCode)
     return nil
 }
 
 // CpCode Getter
-func (r CainiaoWaybillIiCancelRequest) GetCpCode() string {
+func (r CainiaoWaybillIiCancelAPIRequest) GetCpCode() string {
     return r._cpCode
 }
 // WaybillCode Setter
 // 电子面单号
-func (r *CainiaoWaybillIiCancelRequest) SetWaybillCode(_waybillCode string) error {
+func (r *CainiaoWaybillIiCancelAPIRequest) SetWaybillCode(_waybillCode string) error {
     r._waybillCode = _waybillCode
     r.Set("waybill_code", _waybillCode)
     return nil
 }
 
 // WaybillCode Getter
-func (r CainiaoWaybillIiCancelRequest) GetWaybillCode() string {
+func (r CainiaoWaybillIiCancelAPIRequest) GetWaybillCode() string {
     return r._waybillCode
 }

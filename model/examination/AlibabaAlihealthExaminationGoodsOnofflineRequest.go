@@ -12,7 +12,7 @@ alibaba.alihealth.examination.goods.onoffline
 
 第三方体检机构对接钉钉体检中的产品 上线／下线
 */
-type AlibabaAlihealthExaminationGoodsOnofflineRequest struct {
+type AlibabaAlihealthExaminationGoodsOnofflineAPIRequest struct {
     model.Params
     // 商品组code，机构保证唯一
     _groupId   string
@@ -22,20 +22,20 @@ type AlibabaAlihealthExaminationGoodsOnofflineRequest struct {
     _hospitalCodes   string
 }
 
-// 初始化AlibabaAlihealthExaminationGoodsOnofflineRequest对象
-func NewAlibabaAlihealthExaminationGoodsOnofflineRequest() *AlibabaAlihealthExaminationGoodsOnofflineRequest{
-    return &AlibabaAlihealthExaminationGoodsOnofflineRequest{
+// 初始化AlibabaAlihealthExaminationGoodsOnofflineAPIRequest对象
+func NewAlibabaAlihealthExaminationGoodsOnofflineRequest() *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest{
+    return &AlibabaAlihealthExaminationGoodsOnofflineAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationGoodsOnofflineRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.examination.goods.onoffline"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationGoodsOnofflineRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthExaminationGoodsOnofflineRequest) GetApiParams() url.Val
 }
 // GroupId Setter
 // 商品组code，机构保证唯一
-func (r *AlibabaAlihealthExaminationGoodsOnofflineRequest) SetGroupId(_groupId string) error {
+func (r *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) SetGroupId(_groupId string) error {
     r._groupId = _groupId
     r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
-func (r AlibabaAlihealthExaminationGoodsOnofflineRequest) GetGroupId() string {
+func (r AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) GetGroupId() string {
     return r._groupId
 }
 // Type Setter
 // 操作类型: online=上线，offline=下线
-func (r *AlibabaAlihealthExaminationGoodsOnofflineRequest) SetType(_type string) error {
+func (r *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) SetType(_type string) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r AlibabaAlihealthExaminationGoodsOnofflineRequest) GetType() string {
+func (r AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) GetType() string {
     return r._type
 }
 // HospitalCodes Setter
 // 门店code列表
-func (r *AlibabaAlihealthExaminationGoodsOnofflineRequest) SetHospitalCodes(_hospitalCodes string) error {
+func (r *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) SetHospitalCodes(_hospitalCodes string) error {
     r._hospitalCodes = _hospitalCodes
     r.Set("hospital_codes", _hospitalCodes)
     return nil
 }
 
 // HospitalCodes Getter
-func (r AlibabaAlihealthExaminationGoodsOnofflineRequest) GetHospitalCodes() string {
+func (r AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) GetHospitalCodes() string {
     return r._hospitalCodes
 }

@@ -12,7 +12,7 @@ taobao.subway.wordpackage.get
 
 获取流量智选、捡漏词包等词包列表
 */
-type TaobaoSubwayWordpackageGetRequest struct {
+type TaobaoSubwayWordpackageGetAPIRequest struct {
     model.Params
     // 主人昵称
     _nick   string
@@ -20,20 +20,20 @@ type TaobaoSubwayWordpackageGetRequest struct {
     _adgroupId   int64
 }
 
-// 初始化TaobaoSubwayWordpackageGetRequest对象
-func NewTaobaoSubwayWordpackageGetRequest() *TaobaoSubwayWordpackageGetRequest{
-    return &TaobaoSubwayWordpackageGetRequest{
+// 初始化TaobaoSubwayWordpackageGetAPIRequest对象
+func NewTaobaoSubwayWordpackageGetRequest() *TaobaoSubwayWordpackageGetAPIRequest{
+    return &TaobaoSubwayWordpackageGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSubwayWordpackageGetRequest) GetApiMethodName() string {
+func (r TaobaoSubwayWordpackageGetAPIRequest) GetApiMethodName() string {
     return "taobao.subway.wordpackage.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSubwayWordpackageGetRequest) GetApiParams() url.Values {
+func (r TaobaoSubwayWordpackageGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSubwayWordpackageGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSubwayWordpackageGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSubwayWordpackageGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSubwayWordpackageGetRequest) GetNick() string {
+func (r TaobaoSubwayWordpackageGetAPIRequest) GetNick() string {
     return r._nick
 }
 // AdgroupId Setter
 // 推广组id
-func (r *TaobaoSubwayWordpackageGetRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoSubwayWordpackageGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
     r._adgroupId = _adgroupId
     r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
-func (r TaobaoSubwayWordpackageGetRequest) GetAdgroupId() int64 {
+func (r TaobaoSubwayWordpackageGetAPIRequest) GetAdgroupId() int64 {
     return r._adgroupId
 }

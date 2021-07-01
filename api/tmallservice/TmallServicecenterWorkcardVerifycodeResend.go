@@ -11,7 +11,7 @@ tmall.servicecenter.workcard.verifycode.resend
 
 重发核销码
 */
-func TmallServicecenterWorkcardVerifycodeResend(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardVerifycodeResendRequest, session string) (*tmallservice.TmallServicecenterWorkcardVerifycodeResendAPIResponse, error) {
+func TmallServicecenterWorkcardVerifycodeResend(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardVerifycodeResendAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardVerifycodeResendAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardVerifycodeResendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

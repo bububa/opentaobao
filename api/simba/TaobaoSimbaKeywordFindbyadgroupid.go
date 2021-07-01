@@ -11,7 +11,7 @@ taobao.simba.keyword.findbyadgroupid
 
 根据一个关键词Id列表取得一组关键词
 */
-func TaobaoSimbaKeywordFindbyadgroupid(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordFindbyadgroupidRequest, session string) (*simba.TaobaoSimbaKeywordFindbyadgroupidAPIResponse, error) {
+func TaobaoSimbaKeywordFindbyadgroupid(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordFindbyadgroupidAPIRequest, session string) (*simba.TaobaoSimbaKeywordFindbyadgroupidAPIResponse, error) {
     var resp simba.TaobaoSimbaKeywordFindbyadgroupidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

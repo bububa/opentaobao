@@ -12,26 +12,26 @@ alibaba.mozi.acl.role.add.permissions
 
 往角色中添加一批功能权限
 */
-type AlibabaMoziAclRoleAddPermissionsRequest struct {
+type AlibabaMoziAclRoleAddPermissionsAPIRequest struct {
     model.Params
     // 角色添加功能权限请求对象
     _addPermissionsToRole   *AddPermissionToRoleRequest
 }
 
-// 初始化AlibabaMoziAclRoleAddPermissionsRequest对象
-func NewAlibabaMoziAclRoleAddPermissionsRequest() *AlibabaMoziAclRoleAddPermissionsRequest{
-    return &AlibabaMoziAclRoleAddPermissionsRequest{
+// 初始化AlibabaMoziAclRoleAddPermissionsAPIRequest对象
+func NewAlibabaMoziAclRoleAddPermissionsRequest() *AlibabaMoziAclRoleAddPermissionsAPIRequest{
+    return &AlibabaMoziAclRoleAddPermissionsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziAclRoleAddPermissionsRequest) GetApiMethodName() string {
+func (r AlibabaMoziAclRoleAddPermissionsAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.acl.role.add.permissions"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziAclRoleAddPermissionsRequest) GetApiParams() url.Values {
+func (r AlibabaMoziAclRoleAddPermissionsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclRoleAddPermissionsRequest) GetApiParams() url.Values {
 }
 // AddPermissionsToRole Setter
 // 角色添加功能权限请求对象
-func (r *AlibabaMoziAclRoleAddPermissionsRequest) SetAddPermissionsToRole(_addPermissionsToRole *AddPermissionToRoleRequest) error {
+func (r *AlibabaMoziAclRoleAddPermissionsAPIRequest) SetAddPermissionsToRole(_addPermissionsToRole *AddPermissionToRoleRequest) error {
     r._addPermissionsToRole = _addPermissionsToRole
     r.Set("add_permissions_to_role", _addPermissionsToRole)
     return nil
 }
 
 // AddPermissionsToRole Getter
-func (r AlibabaMoziAclRoleAddPermissionsRequest) GetAddPermissionsToRole() *AddPermissionToRoleRequest {
+func (r AlibabaMoziAclRoleAddPermissionsAPIRequest) GetAddPermissionsToRole() *AddPermissionToRoleRequest {
     return r._addPermissionsToRole
 }

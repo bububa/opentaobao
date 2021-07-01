@@ -12,24 +12,24 @@ alibaba.scbp.target.ad.plan.crowd.id.get
 
 定向推广-人群标签ID获取(店铺老客、优选人群)
 */
-type AlibabaScbpTargetAdPlanCrowdIdGetRequest struct {
+type AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaScbpTargetAdPlanCrowdIdGetRequest对象
-func NewAlibabaScbpTargetAdPlanCrowdIdGetRequest() *AlibabaScbpTargetAdPlanCrowdIdGetRequest{
-    return &AlibabaScbpTargetAdPlanCrowdIdGetRequest{
+// 初始化AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest对象
+func NewAlibabaScbpTargetAdPlanCrowdIdGetRequest() *AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest{
+    return &AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpTargetAdPlanCrowdIdGetRequest) GetApiMethodName() string {
+func (r AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.target.ad.plan.crowd.id.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTargetAdPlanCrowdIdGetRequest) GetApiParams() url.Values {
+func (r AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

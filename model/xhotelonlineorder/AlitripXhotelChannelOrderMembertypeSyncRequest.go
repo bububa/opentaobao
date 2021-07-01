@@ -12,26 +12,26 @@ alitrip.xhotel.channel.order.membertype.sync
 
 酒店分销渠道会员类型同步
 */
-type AlitripXhotelChannelOrderMembertypeSyncRequest struct {
+type AlitripXhotelChannelOrderMembertypeSyncAPIRequest struct {
     model.Params
     // 入参
     _channelSyncOrderMemberType   *ChannelSyncOrderMemberType
 }
 
-// 初始化AlitripXhotelChannelOrderMembertypeSyncRequest对象
-func NewAlitripXhotelChannelOrderMembertypeSyncRequest() *AlitripXhotelChannelOrderMembertypeSyncRequest{
-    return &AlitripXhotelChannelOrderMembertypeSyncRequest{
+// 初始化AlitripXhotelChannelOrderMembertypeSyncAPIRequest对象
+func NewAlitripXhotelChannelOrderMembertypeSyncRequest() *AlitripXhotelChannelOrderMembertypeSyncAPIRequest{
+    return &AlitripXhotelChannelOrderMembertypeSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripXhotelChannelOrderMembertypeSyncRequest) GetApiMethodName() string {
+func (r AlitripXhotelChannelOrderMembertypeSyncAPIRequest) GetApiMethodName() string {
     return "alitrip.xhotel.channel.order.membertype.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripXhotelChannelOrderMembertypeSyncRequest) GetApiParams() url.Values {
+func (r AlitripXhotelChannelOrderMembertypeSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripXhotelChannelOrderMembertypeSyncRequest) GetApiParams() url.Value
 }
 // ChannelSyncOrderMemberType Setter
 // 入参
-func (r *AlitripXhotelChannelOrderMembertypeSyncRequest) SetChannelSyncOrderMemberType(_channelSyncOrderMemberType *ChannelSyncOrderMemberType) error {
+func (r *AlitripXhotelChannelOrderMembertypeSyncAPIRequest) SetChannelSyncOrderMemberType(_channelSyncOrderMemberType *ChannelSyncOrderMemberType) error {
     r._channelSyncOrderMemberType = _channelSyncOrderMemberType
     r.Set("channel_sync_order_member_type", _channelSyncOrderMemberType)
     return nil
 }
 
 // ChannelSyncOrderMemberType Getter
-func (r AlitripXhotelChannelOrderMembertypeSyncRequest) GetChannelSyncOrderMemberType() *ChannelSyncOrderMemberType {
+func (r AlitripXhotelChannelOrderMembertypeSyncAPIRequest) GetChannelSyncOrderMemberType() *ChannelSyncOrderMemberType {
     return r._channelSyncOrderMemberType
 }

@@ -12,7 +12,7 @@ alibaba.alihealth.tracecodeseller.bill.rootcode.get
 
 获取最外层包装码
 */
-type AlibabaAlihealthTracecodesellerBillRootcodeGetRequest struct {
+type AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest struct {
     model.Params
     // 用户身份认证
     _appCode   string
@@ -20,20 +20,20 @@ type AlibabaAlihealthTracecodesellerBillRootcodeGetRequest struct {
     _code   string
 }
 
-// 初始化AlibabaAlihealthTracecodesellerBillRootcodeGetRequest对象
-func NewAlibabaAlihealthTracecodesellerBillRootcodeGetRequest() *AlibabaAlihealthTracecodesellerBillRootcodeGetRequest{
-    return &AlibabaAlihealthTracecodesellerBillRootcodeGetRequest{
+// 初始化AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest对象
+func NewAlibabaAlihealthTracecodesellerBillRootcodeGetRequest() *AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest{
+    return &AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.tracecodeseller.bill.rootcode.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) GetApiParams() ur
 }
 // AppCode Setter
 // 用户身份认证
-func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) SetAppCode(_appCode string) error {
+func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) SetAppCode(_appCode string) error {
     r._appCode = _appCode
     r.Set("app_code", _appCode)
     return nil
 }
 
 // AppCode Getter
-func (r AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) GetAppCode() string {
+func (r AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) GetAppCode() string {
     return r._appCode
 }
 // Code Setter
 // 码
-func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) SetCode(_code string) error {
+func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) GetCode() string {
+func (r AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) GetCode() string {
     return r._code
 }

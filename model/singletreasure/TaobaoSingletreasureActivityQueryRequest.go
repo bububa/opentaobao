@@ -12,26 +12,26 @@ taobao.singletreasure.activity.query
 
 查询活动列表接口
 */
-type TaobaoSingletreasureActivityQueryRequest struct {
+type TaobaoSingletreasureActivityQueryAPIRequest struct {
     model.Params
     // 查询对象
     _query   *PageQueryDTO
 }
 
-// 初始化TaobaoSingletreasureActivityQueryRequest对象
-func NewTaobaoSingletreasureActivityQueryRequest() *TaobaoSingletreasureActivityQueryRequest{
-    return &TaobaoSingletreasureActivityQueryRequest{
+// 初始化TaobaoSingletreasureActivityQueryAPIRequest对象
+func NewTaobaoSingletreasureActivityQueryRequest() *TaobaoSingletreasureActivityQueryAPIRequest{
+    return &TaobaoSingletreasureActivityQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSingletreasureActivityQueryRequest) GetApiMethodName() string {
+func (r TaobaoSingletreasureActivityQueryAPIRequest) GetApiMethodName() string {
     return "taobao.singletreasure.activity.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSingletreasureActivityQueryRequest) GetApiParams() url.Values {
+func (r TaobaoSingletreasureActivityQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSingletreasureActivityQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 查询对象
-func (r *TaobaoSingletreasureActivityQueryRequest) SetQuery(_query *PageQueryDTO) error {
+func (r *TaobaoSingletreasureActivityQueryAPIRequest) SetQuery(_query *PageQueryDTO) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r TaobaoSingletreasureActivityQueryRequest) GetQuery() *PageQueryDTO {
+func (r TaobaoSingletreasureActivityQueryAPIRequest) GetQuery() *PageQueryDTO {
     return r._query
 }

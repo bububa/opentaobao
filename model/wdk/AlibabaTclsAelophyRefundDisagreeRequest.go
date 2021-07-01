@@ -12,7 +12,7 @@ alibaba.tcls.aelophy.refund.disagree
 
 saas 售后逆向 商户拒绝用户逆向申请
 */
-type AlibabaTclsAelophyRefundDisagreeRequest struct {
+type AlibabaTclsAelophyRefundDisagreeAPIRequest struct {
     model.Params
     // 退款单ID
     _refundId   string
@@ -20,20 +20,20 @@ type AlibabaTclsAelophyRefundDisagreeRequest struct {
     _rejectReason   string
 }
 
-// 初始化AlibabaTclsAelophyRefundDisagreeRequest对象
-func NewAlibabaTclsAelophyRefundDisagreeRequest() *AlibabaTclsAelophyRefundDisagreeRequest{
-    return &AlibabaTclsAelophyRefundDisagreeRequest{
+// 初始化AlibabaTclsAelophyRefundDisagreeAPIRequest对象
+func NewAlibabaTclsAelophyRefundDisagreeRequest() *AlibabaTclsAelophyRefundDisagreeAPIRequest{
+    return &AlibabaTclsAelophyRefundDisagreeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTclsAelophyRefundDisagreeRequest) GetApiMethodName() string {
+func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetApiMethodName() string {
     return "alibaba.tcls.aelophy.refund.disagree"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTclsAelophyRefundDisagreeRequest) GetApiParams() url.Values {
+func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaTclsAelophyRefundDisagreeRequest) GetApiParams() url.Values {
 }
 // RefundId Setter
 // 退款单ID
-func (r *AlibabaTclsAelophyRefundDisagreeRequest) SetRefundId(_refundId string) error {
+func (r *AlibabaTclsAelophyRefundDisagreeAPIRequest) SetRefundId(_refundId string) error {
     r._refundId = _refundId
     r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
-func (r AlibabaTclsAelophyRefundDisagreeRequest) GetRefundId() string {
+func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetRefundId() string {
     return r._refundId
 }
 // RejectReason Setter
 // 拒绝原因
-func (r *AlibabaTclsAelophyRefundDisagreeRequest) SetRejectReason(_rejectReason string) error {
+func (r *AlibabaTclsAelophyRefundDisagreeAPIRequest) SetRejectReason(_rejectReason string) error {
     r._rejectReason = _rejectReason
     r.Set("reject_reason", _rejectReason)
     return nil
 }
 
 // RejectReason Getter
-func (r AlibabaTclsAelophyRefundDisagreeRequest) GetRejectReason() string {
+func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetRejectReason() string {
     return r._rejectReason
 }

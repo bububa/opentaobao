@@ -11,7 +11,7 @@ alibaba.alihealth.medical.im.data.upload
 
 三方IM图片音频消息上传
 */
-func AlibabaAlihealthMedicalImDataUpload(clt *core.SDKClient, req *alihealthmedical.AlibabaAlihealthMedicalImDataUploadRequest, session string) (*alihealthmedical.AlibabaAlihealthMedicalImDataUploadAPIResponse, error) {
+func AlibabaAlihealthMedicalImDataUpload(clt *core.SDKClient, req *alihealthmedical.AlibabaAlihealthMedicalImDataUploadAPIRequest, session string) (*alihealthmedical.AlibabaAlihealthMedicalImDataUploadAPIResponse, error) {
     var resp alihealthmedical.AlibabaAlihealthMedicalImDataUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

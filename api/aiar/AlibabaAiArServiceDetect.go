@@ -11,7 +11,7 @@ alibaba.ai.ar.service.detect
 
 ailab AR图像检索
 */
-func AlibabaAiArServiceDetect(clt *core.SDKClient, req *aiar.AlibabaAiArServiceDetectRequest, session string) (*aiar.AlibabaAiArServiceDetectAPIResponse, error) {
+func AlibabaAiArServiceDetect(clt *core.SDKClient, req *aiar.AlibabaAiArServiceDetectAPIRequest, session string) (*aiar.AlibabaAiArServiceDetectAPIResponse, error) {
     var resp aiar.AlibabaAiArServiceDetectAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

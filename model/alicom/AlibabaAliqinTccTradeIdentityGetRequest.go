@@ -12,7 +12,7 @@ alibaba.aliqin.tcc.trade.identity.get
 
 天猫网厅运营商官方旗舰店获取用户身份信息
 */
-type AlibabaAliqinTccTradeIdentityGetRequest struct {
+type AlibabaAliqinTccTradeIdentityGetAPIRequest struct {
     model.Params
     // 订单编号
     _bizOrderId   int64
@@ -20,20 +20,20 @@ type AlibabaAliqinTccTradeIdentityGetRequest struct {
     _sellerNick   string
 }
 
-// 初始化AlibabaAliqinTccTradeIdentityGetRequest对象
-func NewAlibabaAliqinTccTradeIdentityGetRequest() *AlibabaAliqinTccTradeIdentityGetRequest{
-    return &AlibabaAliqinTccTradeIdentityGetRequest{
+// 初始化AlibabaAliqinTccTradeIdentityGetAPIRequest对象
+func NewAlibabaAliqinTccTradeIdentityGetRequest() *AlibabaAliqinTccTradeIdentityGetAPIRequest{
+    return &AlibabaAliqinTccTradeIdentityGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAliqinTccTradeIdentityGetRequest) GetApiMethodName() string {
+func (r AlibabaAliqinTccTradeIdentityGetAPIRequest) GetApiMethodName() string {
     return "alibaba.aliqin.tcc.trade.identity.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinTccTradeIdentityGetRequest) GetApiParams() url.Values {
+func (r AlibabaAliqinTccTradeIdentityGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAliqinTccTradeIdentityGetRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 订单编号
-func (r *AlibabaAliqinTccTradeIdentityGetRequest) SetBizOrderId(_bizOrderId int64) error {
+func (r *AlibabaAliqinTccTradeIdentityGetAPIRequest) SetBizOrderId(_bizOrderId int64) error {
     r._bizOrderId = _bizOrderId
     r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
-func (r AlibabaAliqinTccTradeIdentityGetRequest) GetBizOrderId() int64 {
+func (r AlibabaAliqinTccTradeIdentityGetAPIRequest) GetBizOrderId() int64 {
     return r._bizOrderId
 }
 // SellerNick Setter
 // 店铺名称
-func (r *AlibabaAliqinTccTradeIdentityGetRequest) SetSellerNick(_sellerNick string) error {
+func (r *AlibabaAliqinTccTradeIdentityGetAPIRequest) SetSellerNick(_sellerNick string) error {
     r._sellerNick = _sellerNick
     r.Set("seller_nick", _sellerNick)
     return nil
 }
 
 // SellerNick Getter
-func (r AlibabaAliqinTccTradeIdentityGetRequest) GetSellerNick() string {
+func (r AlibabaAliqinTccTradeIdentityGetAPIRequest) GetSellerNick() string {
     return r._sellerNick
 }

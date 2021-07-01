@@ -12,26 +12,26 @@ tmall.servicecenter.tp.funds.send.query
 
 服务商资金权益发放结果的查询接口
 */
-type TmallServicecenterTpFundsSendQueryRequest struct {
+type TmallServicecenterTpFundsSendQueryAPIRequest struct {
     model.Params
     // 入参对象
     _query   *TpFundsSendQuery
 }
 
-// 初始化TmallServicecenterTpFundsSendQueryRequest对象
-func NewTmallServicecenterTpFundsSendQueryRequest() *TmallServicecenterTpFundsSendQueryRequest{
-    return &TmallServicecenterTpFundsSendQueryRequest{
+// 初始化TmallServicecenterTpFundsSendQueryAPIRequest对象
+func NewTmallServicecenterTpFundsSendQueryRequest() *TmallServicecenterTpFundsSendQueryAPIRequest{
+    return &TmallServicecenterTpFundsSendQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterTpFundsSendQueryRequest) GetApiMethodName() string {
+func (r TmallServicecenterTpFundsSendQueryAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.tp.funds.send.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterTpFundsSendQueryRequest) GetApiParams() url.Values {
+func (r TmallServicecenterTpFundsSendQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterTpFundsSendQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 入参对象
-func (r *TmallServicecenterTpFundsSendQueryRequest) SetQuery(_query *TpFundsSendQuery) error {
+func (r *TmallServicecenterTpFundsSendQueryAPIRequest) SetQuery(_query *TpFundsSendQuery) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r TmallServicecenterTpFundsSendQueryRequest) GetQuery() *TpFundsSendQuery {
+func (r TmallServicecenterTpFundsSendQueryAPIRequest) GetQuery() *TpFundsSendQuery {
     return r._query
 }

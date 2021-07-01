@@ -11,7 +11,7 @@ taobao.uscesl.biz.item.light.up
 
 亮灯API
 */
-func TaobaoUsceslBizItemLightUp(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizItemLightUpRequest, session string) (*uscesl.TaobaoUsceslBizItemLightUpAPIResponse, error) {
+func TaobaoUsceslBizItemLightUp(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizItemLightUpAPIRequest, session string) (*uscesl.TaobaoUsceslBizItemLightUpAPIResponse, error) {
     var resp uscesl.TaobaoUsceslBizItemLightUpAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

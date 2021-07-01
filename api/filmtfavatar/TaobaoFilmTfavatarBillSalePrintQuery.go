@@ -12,7 +12,7 @@ taobao.film.tfavatar.bill.sale.print.query
 获取影院卖品账单-核销账单
 返回值data属于加密字段, 并非大字段.
 */
-func TaobaoFilmTfavatarBillSalePrintQuery(clt *core.SDKClient, req *filmtfavatar.TaobaoFilmTfavatarBillSalePrintQueryRequest, session string) (*filmtfavatar.TaobaoFilmTfavatarBillSalePrintQueryAPIResponse, error) {
+func TaobaoFilmTfavatarBillSalePrintQuery(clt *core.SDKClient, req *filmtfavatar.TaobaoFilmTfavatarBillSalePrintQueryAPIRequest, session string) (*filmtfavatar.TaobaoFilmTfavatarBillSalePrintQueryAPIResponse, error) {
     var resp filmtfavatar.TaobaoFilmTfavatarBillSalePrintQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

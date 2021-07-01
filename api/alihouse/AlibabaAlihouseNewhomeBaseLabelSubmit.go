@@ -11,7 +11,7 @@ alibaba.alihouse.newhome.base.label.submit
 
 提交标签库
 */
-func AlibabaAlihouseNewhomeBaseLabelSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeBaseLabelSubmitRequest, session string) (*alihouse.AlibabaAlihouseNewhomeBaseLabelSubmitAPIResponse, error) {
+func AlibabaAlihouseNewhomeBaseLabelSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeBaseLabelSubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeBaseLabelSubmitAPIResponse, error) {
     var resp alihouse.AlibabaAlihouseNewhomeBaseLabelSubmitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

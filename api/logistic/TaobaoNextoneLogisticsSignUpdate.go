@@ -11,7 +11,7 @@ taobao.nextone.logistics.sign.update
 
 商家上传退货的签收状态给AG
 */
-func TaobaoNextoneLogisticsSignUpdate(clt *core.SDKClient, req *logistic.TaobaoNextoneLogisticsSignUpdateRequest, session string) (*logistic.TaobaoNextoneLogisticsSignUpdateAPIResponse, error) {
+func TaobaoNextoneLogisticsSignUpdate(clt *core.SDKClient, req *logistic.TaobaoNextoneLogisticsSignUpdateAPIRequest, session string) (*logistic.TaobaoNextoneLogisticsSignUpdateAPIResponse, error) {
     var resp logistic.TaobaoNextoneLogisticsSignUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

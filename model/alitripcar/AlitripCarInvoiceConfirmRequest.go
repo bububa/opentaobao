@@ -12,26 +12,26 @@ alitrip.car.invoice.confirm
 
 飞猪发票回调接口
 */
-type AlitripCarInvoiceConfirmRequest struct {
+type AlitripCarInvoiceConfirmAPIRequest struct {
     model.Params
     // 入参对象
     _receiptDo   *ReceiptDO
 }
 
-// 初始化AlitripCarInvoiceConfirmRequest对象
-func NewAlitripCarInvoiceConfirmRequest() *AlitripCarInvoiceConfirmRequest{
-    return &AlitripCarInvoiceConfirmRequest{
+// 初始化AlitripCarInvoiceConfirmAPIRequest对象
+func NewAlitripCarInvoiceConfirmRequest() *AlitripCarInvoiceConfirmAPIRequest{
+    return &AlitripCarInvoiceConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripCarInvoiceConfirmRequest) GetApiMethodName() string {
+func (r AlitripCarInvoiceConfirmAPIRequest) GetApiMethodName() string {
     return "alitrip.car.invoice.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripCarInvoiceConfirmRequest) GetApiParams() url.Values {
+func (r AlitripCarInvoiceConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripCarInvoiceConfirmRequest) GetApiParams() url.Values {
 }
 // ReceiptDo Setter
 // 入参对象
-func (r *AlitripCarInvoiceConfirmRequest) SetReceiptDo(_receiptDo *ReceiptDO) error {
+func (r *AlitripCarInvoiceConfirmAPIRequest) SetReceiptDo(_receiptDo *ReceiptDO) error {
     r._receiptDo = _receiptDo
     r.Set("receipt_do", _receiptDo)
     return nil
 }
 
 // ReceiptDo Getter
-func (r AlitripCarInvoiceConfirmRequest) GetReceiptDo() *ReceiptDO {
+func (r AlitripCarInvoiceConfirmAPIRequest) GetReceiptDo() *ReceiptDO {
     return r._receiptDo
 }

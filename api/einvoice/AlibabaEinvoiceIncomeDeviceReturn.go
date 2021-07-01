@@ -11,7 +11,7 @@ alibaba.einvoice.income.device.return
 
 服务商回传客户端agent所处环境的设备列表，比如扫描仪
 */
-func AlibabaEinvoiceIncomeDeviceReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceIncomeDeviceReturnRequest, session string) (*einvoice.AlibabaEinvoiceIncomeDeviceReturnAPIResponse, error) {
+func AlibabaEinvoiceIncomeDeviceReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceIncomeDeviceReturnAPIRequest, session string) (*einvoice.AlibabaEinvoiceIncomeDeviceReturnAPIResponse, error) {
     var resp einvoice.AlibabaEinvoiceIncomeDeviceReturnAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

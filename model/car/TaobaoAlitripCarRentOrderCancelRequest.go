@@ -12,26 +12,26 @@ taobao.alitrip.car.rent.order.cancel
 
 服务商主动取消用户订单或者拒绝取消订单.
 */
-type TaobaoAlitripCarRentOrderCancelRequest struct {
+type TaobaoAlitripCarRentOrderCancelAPIRequest struct {
     model.Params
     // 取消请求对象
     _param0   *RentProviderCancelRequest
 }
 
-// 初始化TaobaoAlitripCarRentOrderCancelRequest对象
-func NewTaobaoAlitripCarRentOrderCancelRequest() *TaobaoAlitripCarRentOrderCancelRequest{
-    return &TaobaoAlitripCarRentOrderCancelRequest{
+// 初始化TaobaoAlitripCarRentOrderCancelAPIRequest对象
+func NewTaobaoAlitripCarRentOrderCancelRequest() *TaobaoAlitripCarRentOrderCancelAPIRequest{
+    return &TaobaoAlitripCarRentOrderCancelAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripCarRentOrderCancelRequest) GetApiMethodName() string {
+func (r TaobaoAlitripCarRentOrderCancelAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.car.rent.order.cancel"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripCarRentOrderCancelRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripCarRentOrderCancelAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripCarRentOrderCancelRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 取消请求对象
-func (r *TaobaoAlitripCarRentOrderCancelRequest) SetParam0(_param0 *RentProviderCancelRequest) error {
+func (r *TaobaoAlitripCarRentOrderCancelAPIRequest) SetParam0(_param0 *RentProviderCancelRequest) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoAlitripCarRentOrderCancelRequest) GetParam0() *RentProviderCancelRequest {
+func (r TaobaoAlitripCarRentOrderCancelAPIRequest) GetParam0() *RentProviderCancelRequest {
     return r._param0
 }

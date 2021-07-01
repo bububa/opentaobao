@@ -12,26 +12,26 @@ tmall.servicecenter.servicestore.create
 
 用于创建门店/网点。多个业务共用
 */
-type TmallServicecenterServicestoreCreateRequest struct {
+type TmallServicecenterServicestoreCreateAPIRequest struct {
     model.Params
     // 网点/门店
     _serviceStore   *ServiceStoreDTO
 }
 
-// 初始化TmallServicecenterServicestoreCreateRequest对象
-func NewTmallServicecenterServicestoreCreateRequest() *TmallServicecenterServicestoreCreateRequest{
-    return &TmallServicecenterServicestoreCreateRequest{
+// 初始化TmallServicecenterServicestoreCreateAPIRequest对象
+func NewTmallServicecenterServicestoreCreateRequest() *TmallServicecenterServicestoreCreateAPIRequest{
+    return &TmallServicecenterServicestoreCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicestoreCreateRequest) GetApiMethodName() string {
+func (r TmallServicecenterServicestoreCreateAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicestore.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicestoreCreateRequest) GetApiParams() url.Values {
+func (r TmallServicecenterServicestoreCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterServicestoreCreateRequest) GetApiParams() url.Values {
 }
 // ServiceStore Setter
 // 网点/门店
-func (r *TmallServicecenterServicestoreCreateRequest) SetServiceStore(_serviceStore *ServiceStoreDTO) error {
+func (r *TmallServicecenterServicestoreCreateAPIRequest) SetServiceStore(_serviceStore *ServiceStoreDTO) error {
     r._serviceStore = _serviceStore
     r.Set("service_store", _serviceStore)
     return nil
 }
 
 // ServiceStore Getter
-func (r TmallServicecenterServicestoreCreateRequest) GetServiceStore() *ServiceStoreDTO {
+func (r TmallServicecenterServicestoreCreateAPIRequest) GetServiceStore() *ServiceStoreDTO {
     return r._serviceStore
 }

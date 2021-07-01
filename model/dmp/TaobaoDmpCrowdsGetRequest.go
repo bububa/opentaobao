@@ -12,24 +12,24 @@ taobao.dmp.crowds.get
 
 查询人群服务
 */
-type TaobaoDmpCrowdsGetRequest struct {
+type TaobaoDmpCrowdsGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoDmpCrowdsGetRequest对象
-func NewTaobaoDmpCrowdsGetRequest() *TaobaoDmpCrowdsGetRequest{
-    return &TaobaoDmpCrowdsGetRequest{
+// 初始化TaobaoDmpCrowdsGetAPIRequest对象
+func NewTaobaoDmpCrowdsGetRequest() *TaobaoDmpCrowdsGetAPIRequest{
+    return &TaobaoDmpCrowdsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoDmpCrowdsGetRequest) GetApiMethodName() string {
+func (r TaobaoDmpCrowdsGetAPIRequest) GetApiMethodName() string {
     return "taobao.dmp.crowds.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoDmpCrowdsGetRequest) GetApiParams() url.Values {
+func (r TaobaoDmpCrowdsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

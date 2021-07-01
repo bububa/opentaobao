@@ -11,7 +11,7 @@ alibaba.retail.vending.price.whitelist.add
 
 贩卖机价格修改白名单
 */
-func AlibabaRetailVendingPriceWhitelistAdd(clt *core.SDKClient, req *retail.AlibabaRetailVendingPriceWhitelistAddRequest, session string) (*retail.AlibabaRetailVendingPriceWhitelistAddAPIResponse, error) {
+func AlibabaRetailVendingPriceWhitelistAdd(clt *core.SDKClient, req *retail.AlibabaRetailVendingPriceWhitelistAddAPIRequest, session string) (*retail.AlibabaRetailVendingPriceWhitelistAddAPIResponse, error) {
     var resp retail.AlibabaRetailVendingPriceWhitelistAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

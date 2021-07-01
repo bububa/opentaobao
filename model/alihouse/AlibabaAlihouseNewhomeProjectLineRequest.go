@@ -12,7 +12,7 @@ alibaba.alihouse.newhome.project.line
 
 上下架楼盘
 */
-type AlibabaAlihouseNewhomeProjectLineRequest struct {
+type AlibabaAlihouseNewhomeProjectLineAPIRequest struct {
     model.Params
     // 外部id
     _outerId   string
@@ -20,20 +20,20 @@ type AlibabaAlihouseNewhomeProjectLineRequest struct {
     _type   *model.File
 }
 
-// 初始化AlibabaAlihouseNewhomeProjectLineRequest对象
-func NewAlibabaAlihouseNewhomeProjectLineRequest() *AlibabaAlihouseNewhomeProjectLineRequest{
-    return &AlibabaAlihouseNewhomeProjectLineRequest{
+// 初始化AlibabaAlihouseNewhomeProjectLineAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectLineRequest() *AlibabaAlihouseNewhomeProjectLineAPIRequest{
+    return &AlibabaAlihouseNewhomeProjectLineAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectLineRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.project.line"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectLineRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihouseNewhomeProjectLineRequest) GetApiParams() url.Values {
 }
 // OuterId Setter
 // 外部id
-func (r *AlibabaAlihouseNewhomeProjectLineRequest) SetOuterId(_outerId string) error {
+func (r *AlibabaAlihouseNewhomeProjectLineAPIRequest) SetOuterId(_outerId string) error {
     r._outerId = _outerId
     r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
-func (r AlibabaAlihouseNewhomeProjectLineRequest) GetOuterId() string {
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetOuterId() string {
     return r._outerId
 }
 // Type Setter
 // 0-下架 1-上架
-func (r *AlibabaAlihouseNewhomeProjectLineRequest) SetType(_type *model.File) error {
+func (r *AlibabaAlihouseNewhomeProjectLineAPIRequest) SetType(_type *model.File) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r AlibabaAlihouseNewhomeProjectLineRequest) GetType() *model.File {
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetType() *model.File {
     return r._type
 }

@@ -11,7 +11,7 @@ alibaba.aliqin.ta.sms.num.query
 
 查询短信发送揭露
 */
-func AlibabaAliqinTaSmsNumQuery(clt *core.SDKClient, req *alicom.AlibabaAliqinTaSmsNumQueryRequest, session string) (*alicom.AlibabaAliqinTaSmsNumQueryAPIResponse, error) {
+func AlibabaAliqinTaSmsNumQuery(clt *core.SDKClient, req *alicom.AlibabaAliqinTaSmsNumQueryAPIRequest, session string) (*alicom.AlibabaAliqinTaSmsNumQueryAPIResponse, error) {
     var resp alicom.AlibabaAliqinTaSmsNumQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

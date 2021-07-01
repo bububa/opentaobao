@@ -11,7 +11,7 @@ taobao.itempropvalues.get
 
 获取标准类目属性值
 */
-func TaobaoItempropvaluesGet(clt *core.SDKClient, req *category.TaobaoItempropvaluesGetRequest, session string) (*category.TaobaoItempropvaluesGetAPIResponse, error) {
+func TaobaoItempropvaluesGet(clt *core.SDKClient, req *category.TaobaoItempropvaluesGetAPIRequest, session string) (*category.TaobaoItempropvaluesGetAPIResponse, error) {
     var resp category.TaobaoItempropvaluesGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

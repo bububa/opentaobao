@@ -12,26 +12,26 @@ taobao.wireless.bunting.shop.shorturl.create
 
 通过店铺id取得短链
 */
-type TaobaoWirelessBuntingShopShorturlCreateRequest struct {
+type TaobaoWirelessBuntingShopShorturlCreateAPIRequest struct {
     model.Params
     // 商店id
     _shopId   string
 }
 
-// 初始化TaobaoWirelessBuntingShopShorturlCreateRequest对象
-func NewTaobaoWirelessBuntingShopShorturlCreateRequest() *TaobaoWirelessBuntingShopShorturlCreateRequest{
-    return &TaobaoWirelessBuntingShopShorturlCreateRequest{
+// 初始化TaobaoWirelessBuntingShopShorturlCreateAPIRequest对象
+func NewTaobaoWirelessBuntingShopShorturlCreateRequest() *TaobaoWirelessBuntingShopShorturlCreateAPIRequest{
+    return &TaobaoWirelessBuntingShopShorturlCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWirelessBuntingShopShorturlCreateRequest) GetApiMethodName() string {
+func (r TaobaoWirelessBuntingShopShorturlCreateAPIRequest) GetApiMethodName() string {
     return "taobao.wireless.bunting.shop.shorturl.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWirelessBuntingShopShorturlCreateRequest) GetApiParams() url.Values {
+func (r TaobaoWirelessBuntingShopShorturlCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWirelessBuntingShopShorturlCreateRequest) GetApiParams() url.Value
 }
 // ShopId Setter
 // 商店id
-func (r *TaobaoWirelessBuntingShopShorturlCreateRequest) SetShopId(_shopId string) error {
+func (r *TaobaoWirelessBuntingShopShorturlCreateAPIRequest) SetShopId(_shopId string) error {
     r._shopId = _shopId
     r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
-func (r TaobaoWirelessBuntingShopShorturlCreateRequest) GetShopId() string {
+func (r TaobaoWirelessBuntingShopShorturlCreateAPIRequest) GetShopId() string {
     return r._shopId
 }

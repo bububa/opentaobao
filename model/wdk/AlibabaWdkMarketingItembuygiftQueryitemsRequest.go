@@ -12,26 +12,26 @@ alibaba.wdk.marketing.itembuygift.queryitems
 
 查询买赠活动下的商品
 */
-type AlibabaWdkMarketingItembuygiftQueryitemsRequest struct {
+type AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest struct {
     model.Params
     // 查询入参
     _param   *ActivitySkuQuery
 }
 
-// 初始化AlibabaWdkMarketingItembuygiftQueryitemsRequest对象
-func NewAlibabaWdkMarketingItembuygiftQueryitemsRequest() *AlibabaWdkMarketingItembuygiftQueryitemsRequest{
-    return &AlibabaWdkMarketingItembuygiftQueryitemsRequest{
+// 初始化AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest对象
+func NewAlibabaWdkMarketingItembuygiftQueryitemsRequest() *AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest{
+    return &AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingItembuygiftQueryitemsRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.itembuygift.queryitems"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingItembuygiftQueryitemsRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItembuygiftQueryitemsRequest) GetApiParams() url.Valu
 }
 // Param Setter
 // 查询入参
-func (r *AlibabaWdkMarketingItembuygiftQueryitemsRequest) SetParam(_param *ActivitySkuQuery) error {
+func (r *AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest) SetParam(_param *ActivitySkuQuery) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkMarketingItembuygiftQueryitemsRequest) GetParam() *ActivitySkuQuery {
+func (r AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest) GetParam() *ActivitySkuQuery {
     return r._param
 }

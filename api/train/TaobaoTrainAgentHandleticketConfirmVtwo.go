@@ -11,7 +11,7 @@ taobao.train.agent.handleticket.confirm.vtwo
 
 代理商出票中
 */
-func TaobaoTrainAgentHandleticketConfirmVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentHandleticketConfirmVtwoRequest, session string) (*train.TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse, error) {
+func TaobaoTrainAgentHandleticketConfirmVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest, session string) (*train.TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse, error) {
     var resp train.TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

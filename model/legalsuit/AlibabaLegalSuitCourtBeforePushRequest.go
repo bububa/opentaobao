@@ -12,26 +12,26 @@ alibaba.legal.suit.court.before.push
 
 更新或者保存庭前信息
 */
-type AlibabaLegalSuitCourtBeforePushRequest struct {
+type AlibabaLegalSuitCourtBeforePushAPIRequest struct {
     model.Params
     // 庭前信息
     _beforeCourtModel   *BeforeCourtModel
 }
 
-// 初始化AlibabaLegalSuitCourtBeforePushRequest对象
-func NewAlibabaLegalSuitCourtBeforePushRequest() *AlibabaLegalSuitCourtBeforePushRequest{
-    return &AlibabaLegalSuitCourtBeforePushRequest{
+// 初始化AlibabaLegalSuitCourtBeforePushAPIRequest对象
+func NewAlibabaLegalSuitCourtBeforePushRequest() *AlibabaLegalSuitCourtBeforePushAPIRequest{
+    return &AlibabaLegalSuitCourtBeforePushAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLegalSuitCourtBeforePushRequest) GetApiMethodName() string {
+func (r AlibabaLegalSuitCourtBeforePushAPIRequest) GetApiMethodName() string {
     return "alibaba.legal.suit.court.before.push"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLegalSuitCourtBeforePushRequest) GetApiParams() url.Values {
+func (r AlibabaLegalSuitCourtBeforePushAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLegalSuitCourtBeforePushRequest) GetApiParams() url.Values {
 }
 // BeforeCourtModel Setter
 // 庭前信息
-func (r *AlibabaLegalSuitCourtBeforePushRequest) SetBeforeCourtModel(_beforeCourtModel *BeforeCourtModel) error {
+func (r *AlibabaLegalSuitCourtBeforePushAPIRequest) SetBeforeCourtModel(_beforeCourtModel *BeforeCourtModel) error {
     r._beforeCourtModel = _beforeCourtModel
     r.Set("before_court_model", _beforeCourtModel)
     return nil
 }
 
 // BeforeCourtModel Getter
-func (r AlibabaLegalSuitCourtBeforePushRequest) GetBeforeCourtModel() *BeforeCourtModel {
+func (r AlibabaLegalSuitCourtBeforePushAPIRequest) GetBeforeCourtModel() *BeforeCourtModel {
     return r._beforeCourtModel
 }

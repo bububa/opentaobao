@@ -11,7 +11,7 @@ alibaba.damai.mev.open.pushfloor
 
 pushFloor
 */
-func AlibabaDamaiMevOpenPushfloor(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushfloorRequest, session string) (*damai.AlibabaDamaiMevOpenPushfloorAPIResponse, error) {
+func AlibabaDamaiMevOpenPushfloor(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushfloorAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushfloorAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenPushfloorAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

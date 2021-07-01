@@ -12,26 +12,26 @@ alibaba.alisports.efsp.getuserinfo
 
 阿里体育-体育健身-获取用户详细信息
 */
-type AlibabaAlisportsEfspGetuserinfoRequest struct {
+type AlibabaAlisportsEfspGetuserinfoAPIRequest struct {
     model.Params
     // 支付宝ID
     _alipayId   string
 }
 
-// 初始化AlibabaAlisportsEfspGetuserinfoRequest对象
-func NewAlibabaAlisportsEfspGetuserinfoRequest() *AlibabaAlisportsEfspGetuserinfoRequest{
-    return &AlibabaAlisportsEfspGetuserinfoRequest{
+// 初始化AlibabaAlisportsEfspGetuserinfoAPIRequest对象
+func NewAlibabaAlisportsEfspGetuserinfoRequest() *AlibabaAlisportsEfspGetuserinfoAPIRequest{
+    return &AlibabaAlisportsEfspGetuserinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlisportsEfspGetuserinfoRequest) GetApiMethodName() string {
+func (r AlibabaAlisportsEfspGetuserinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.alisports.efsp.getuserinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlisportsEfspGetuserinfoRequest) GetApiParams() url.Values {
+func (r AlibabaAlisportsEfspGetuserinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlisportsEfspGetuserinfoRequest) GetApiParams() url.Values {
 }
 // AlipayId Setter
 // 支付宝ID
-func (r *AlibabaAlisportsEfspGetuserinfoRequest) SetAlipayId(_alipayId string) error {
+func (r *AlibabaAlisportsEfspGetuserinfoAPIRequest) SetAlipayId(_alipayId string) error {
     r._alipayId = _alipayId
     r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
-func (r AlibabaAlisportsEfspGetuserinfoRequest) GetAlipayId() string {
+func (r AlibabaAlisportsEfspGetuserinfoAPIRequest) GetAlipayId() string {
     return r._alipayId
 }

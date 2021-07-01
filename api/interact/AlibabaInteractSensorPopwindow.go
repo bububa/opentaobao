@@ -11,7 +11,7 @@ alibaba.interact.sensor.popwindow
 
 popwindow
 */
-func AlibabaInteractSensorPopwindow(clt *core.SDKClient, req *interact.AlibabaInteractSensorPopwindowRequest, session string) (*interact.AlibabaInteractSensorPopwindowAPIResponse, error) {
+func AlibabaInteractSensorPopwindow(clt *core.SDKClient, req *interact.AlibabaInteractSensorPopwindowAPIRequest, session string) (*interact.AlibabaInteractSensorPopwindowAPIResponse, error) {
     var resp interact.AlibabaInteractSensorPopwindowAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

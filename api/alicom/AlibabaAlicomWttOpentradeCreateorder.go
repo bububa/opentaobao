@@ -11,7 +11,7 @@ alibaba.alicom.wtt.opentrade.createorder
 
 提供给话费宝创建淘宝订单
 */
-func AlibabaAlicomWttOpentradeCreateorder(clt *core.SDKClient, req *alicom.AlibabaAlicomWttOpentradeCreateorderRequest, session string) (*alicom.AlibabaAlicomWttOpentradeCreateorderAPIResponse, error) {
+func AlibabaAlicomWttOpentradeCreateorder(clt *core.SDKClient, req *alicom.AlibabaAlicomWttOpentradeCreateorderAPIRequest, session string) (*alicom.AlibabaAlicomWttOpentradeCreateorderAPIResponse, error) {
     var resp alicom.AlibabaAlicomWttOpentradeCreateorderAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

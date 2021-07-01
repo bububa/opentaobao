@@ -12,26 +12,26 @@ taobao.rdc.aligenius.warehouse.reverse.uploading
 
 主要用于商家上传仓库销退单信息
 */
-type TaobaoRdcAligeniusWarehouseReverseUploadingRequest struct {
+type TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest struct {
     model.Params
     // 参数
     _param0   *WarehouseReverseUploadingDTO
 }
 
-// 初始化TaobaoRdcAligeniusWarehouseReverseUploadingRequest对象
-func NewTaobaoRdcAligeniusWarehouseReverseUploadingRequest() *TaobaoRdcAligeniusWarehouseReverseUploadingRequest{
-    return &TaobaoRdcAligeniusWarehouseReverseUploadingRequest{
+// 初始化TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest对象
+func NewTaobaoRdcAligeniusWarehouseReverseUploadingRequest() *TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest{
+    return &TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRdcAligeniusWarehouseReverseUploadingRequest) GetApiMethodName() string {
+func (r TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) GetApiMethodName() string {
     return "taobao.rdc.aligenius.warehouse.reverse.uploading"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRdcAligeniusWarehouseReverseUploadingRequest) GetApiParams() url.Values {
+func (r TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusWarehouseReverseUploadingRequest) GetApiParams() url.V
 }
 // Param0 Setter
 // 参数
-func (r *TaobaoRdcAligeniusWarehouseReverseUploadingRequest) SetParam0(_param0 *WarehouseReverseUploadingDTO) error {
+func (r *TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) SetParam0(_param0 *WarehouseReverseUploadingDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoRdcAligeniusWarehouseReverseUploadingRequest) GetParam0() *WarehouseReverseUploadingDTO {
+func (r TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) GetParam0() *WarehouseReverseUploadingDTO {
     return r._param0
 }

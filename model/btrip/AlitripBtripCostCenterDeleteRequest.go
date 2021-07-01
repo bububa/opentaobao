@@ -12,26 +12,26 @@ alitrip.btrip.cost.center.delete
 
 删除外部成本中心
 */
-type AlitripBtripCostCenterDeleteRequest struct {
+type AlitripBtripCostCenterDeleteAPIRequest struct {
     model.Params
     // 请求对象
     _rq   *OpenCostCenterDeleteRq
 }
 
-// 初始化AlitripBtripCostCenterDeleteRequest对象
-func NewAlitripBtripCostCenterDeleteRequest() *AlitripBtripCostCenterDeleteRequest{
-    return &AlitripBtripCostCenterDeleteRequest{
+// 初始化AlitripBtripCostCenterDeleteAPIRequest对象
+func NewAlitripBtripCostCenterDeleteRequest() *AlitripBtripCostCenterDeleteAPIRequest{
+    return &AlitripBtripCostCenterDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripCostCenterDeleteRequest) GetApiMethodName() string {
+func (r AlitripBtripCostCenterDeleteAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.cost.center.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripCostCenterDeleteRequest) GetApiParams() url.Values {
+func (r AlitripBtripCostCenterDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripCostCenterDeleteRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripCostCenterDeleteRequest) SetRq(_rq *OpenCostCenterDeleteRq) error {
+func (r *AlitripBtripCostCenterDeleteAPIRequest) SetRq(_rq *OpenCostCenterDeleteRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripCostCenterDeleteRequest) GetRq() *OpenCostCenterDeleteRq {
+func (r AlitripBtripCostCenterDeleteAPIRequest) GetRq() *OpenCostCenterDeleteRq {
     return r._rq
 }

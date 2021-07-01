@@ -11,7 +11,7 @@ alibaba.ailabs.iot.business.recipe.getpage
 
 分页查询食谱数据
 */
-func AlibabaAilabsIotBusinessRecipeGetpage(clt *core.SDKClient, req *iot.AlibabaAilabsIotBusinessRecipeGetpageRequest, session string) (*iot.AlibabaAilabsIotBusinessRecipeGetpageAPIResponse, error) {
+func AlibabaAilabsIotBusinessRecipeGetpage(clt *core.SDKClient, req *iot.AlibabaAilabsIotBusinessRecipeGetpageAPIRequest, session string) (*iot.AlibabaAilabsIotBusinessRecipeGetpageAPIResponse, error) {
     var resp iot.AlibabaAilabsIotBusinessRecipeGetpageAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

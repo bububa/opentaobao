@@ -12,26 +12,26 @@ tmall.servicecenter.task.feedbacknoneedservice
 
 服务商反馈无需安装工单接口
 */
-type TmallServicecenterTaskFeedbacknoneedserviceRequest struct {
+type TmallServicecenterTaskFeedbacknoneedserviceAPIRequest struct {
     model.Params
     // 入参对象
     _param   *SuspendServiceDO
 }
 
-// 初始化TmallServicecenterTaskFeedbacknoneedserviceRequest对象
-func NewTmallServicecenterTaskFeedbacknoneedserviceRequest() *TmallServicecenterTaskFeedbacknoneedserviceRequest{
-    return &TmallServicecenterTaskFeedbacknoneedserviceRequest{
+// 初始化TmallServicecenterTaskFeedbacknoneedserviceAPIRequest对象
+func NewTmallServicecenterTaskFeedbacknoneedserviceRequest() *TmallServicecenterTaskFeedbacknoneedserviceAPIRequest{
+    return &TmallServicecenterTaskFeedbacknoneedserviceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterTaskFeedbacknoneedserviceRequest) GetApiMethodName() string {
+func (r TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.task.feedbacknoneedservice"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterTaskFeedbacknoneedserviceRequest) GetApiParams() url.Values {
+func (r TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterTaskFeedbacknoneedserviceRequest) GetApiParams() url.V
 }
 // Param Setter
 // 入参对象
-func (r *TmallServicecenterTaskFeedbacknoneedserviceRequest) SetParam(_param *SuspendServiceDO) error {
+func (r *TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) SetParam(_param *SuspendServiceDO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TmallServicecenterTaskFeedbacknoneedserviceRequest) GetParam() *SuspendServiceDO {
+func (r TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) GetParam() *SuspendServiceDO {
     return r._param
 }

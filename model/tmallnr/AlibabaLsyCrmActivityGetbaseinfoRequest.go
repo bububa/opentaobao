@@ -12,26 +12,26 @@ alibaba.lsy.crm.activity.getbaseinfo
 
 ISV查询活动
 */
-type AlibabaLsyCrmActivityGetbaseinfoRequest struct {
+type AlibabaLsyCrmActivityGetbaseinfoAPIRequest struct {
     model.Params
     // 入参
     _nrtQueryActivityReq   *NrtQueryActivityReq
 }
 
-// 初始化AlibabaLsyCrmActivityGetbaseinfoRequest对象
-func NewAlibabaLsyCrmActivityGetbaseinfoRequest() *AlibabaLsyCrmActivityGetbaseinfoRequest{
-    return &AlibabaLsyCrmActivityGetbaseinfoRequest{
+// 初始化AlibabaLsyCrmActivityGetbaseinfoAPIRequest对象
+func NewAlibabaLsyCrmActivityGetbaseinfoRequest() *AlibabaLsyCrmActivityGetbaseinfoAPIRequest{
+    return &AlibabaLsyCrmActivityGetbaseinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLsyCrmActivityGetbaseinfoRequest) GetApiMethodName() string {
+func (r AlibabaLsyCrmActivityGetbaseinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.lsy.crm.activity.getbaseinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLsyCrmActivityGetbaseinfoRequest) GetApiParams() url.Values {
+func (r AlibabaLsyCrmActivityGetbaseinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmActivityGetbaseinfoRequest) GetApiParams() url.Values {
 }
 // NrtQueryActivityReq Setter
 // 入参
-func (r *AlibabaLsyCrmActivityGetbaseinfoRequest) SetNrtQueryActivityReq(_nrtQueryActivityReq *NrtQueryActivityReq) error {
+func (r *AlibabaLsyCrmActivityGetbaseinfoAPIRequest) SetNrtQueryActivityReq(_nrtQueryActivityReq *NrtQueryActivityReq) error {
     r._nrtQueryActivityReq = _nrtQueryActivityReq
     r.Set("nrt_query_activity_req", _nrtQueryActivityReq)
     return nil
 }
 
 // NrtQueryActivityReq Getter
-func (r AlibabaLsyCrmActivityGetbaseinfoRequest) GetNrtQueryActivityReq() *NrtQueryActivityReq {
+func (r AlibabaLsyCrmActivityGetbaseinfoAPIRequest) GetNrtQueryActivityReq() *NrtQueryActivityReq {
     return r._nrtQueryActivityReq
 }

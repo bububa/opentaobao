@@ -12,26 +12,26 @@ alibaba.nazca.token.issuecertapply.get
 
 根据token获取出证申请信息
 */
-type AlibabaNazcaTokenIssuecertapplyGetRequest struct {
+type AlibabaNazcaTokenIssuecertapplyGetAPIRequest struct {
     model.Params
     // token
     _token   string
 }
 
-// 初始化AlibabaNazcaTokenIssuecertapplyGetRequest对象
-func NewAlibabaNazcaTokenIssuecertapplyGetRequest() *AlibabaNazcaTokenIssuecertapplyGetRequest{
-    return &AlibabaNazcaTokenIssuecertapplyGetRequest{
+// 初始化AlibabaNazcaTokenIssuecertapplyGetAPIRequest对象
+func NewAlibabaNazcaTokenIssuecertapplyGetRequest() *AlibabaNazcaTokenIssuecertapplyGetAPIRequest{
+    return &AlibabaNazcaTokenIssuecertapplyGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaNazcaTokenIssuecertapplyGetRequest) GetApiMethodName() string {
+func (r AlibabaNazcaTokenIssuecertapplyGetAPIRequest) GetApiMethodName() string {
     return "alibaba.nazca.token.issuecertapply.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaNazcaTokenIssuecertapplyGetRequest) GetApiParams() url.Values {
+func (r AlibabaNazcaTokenIssuecertapplyGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaNazcaTokenIssuecertapplyGetRequest) GetApiParams() url.Values {
 }
 // Token Setter
 // token
-func (r *AlibabaNazcaTokenIssuecertapplyGetRequest) SetToken(_token string) error {
+func (r *AlibabaNazcaTokenIssuecertapplyGetAPIRequest) SetToken(_token string) error {
     r._token = _token
     r.Set("token", _token)
     return nil
 }
 
 // Token Getter
-func (r AlibabaNazcaTokenIssuecertapplyGetRequest) GetToken() string {
+func (r AlibabaNazcaTokenIssuecertapplyGetAPIRequest) GetToken() string {
     return r._token
 }

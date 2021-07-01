@@ -11,7 +11,7 @@ alibaba.tuike.offer.zhitoken
 
 推荐链接生产吱口令
 */
-func AlibabaTuikeOfferZhitoken(clt *core.SDKClient, req *tuike.AlibabaTuikeOfferZhitokenRequest, session string) (*tuike.AlibabaTuikeOfferZhitokenAPIResponse, error) {
+func AlibabaTuikeOfferZhitoken(clt *core.SDKClient, req *tuike.AlibabaTuikeOfferZhitokenAPIRequest, session string) (*tuike.AlibabaTuikeOfferZhitokenAPIResponse, error) {
     var resp tuike.AlibabaTuikeOfferZhitokenAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

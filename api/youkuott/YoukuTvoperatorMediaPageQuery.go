@@ -11,7 +11,7 @@ youku.tvoperator.media.page.query
 
 分页获取渠道全量媒资
 */
-func YoukuTvoperatorMediaPageQuery(clt *core.SDKClient, req *youkuott.YoukuTvoperatorMediaPageQueryRequest, session string) (*youkuott.YoukuTvoperatorMediaPageQueryAPIResponse, error) {
+func YoukuTvoperatorMediaPageQuery(clt *core.SDKClient, req *youkuott.YoukuTvoperatorMediaPageQueryAPIRequest, session string) (*youkuott.YoukuTvoperatorMediaPageQueryAPIResponse, error) {
     var resp youkuott.YoukuTvoperatorMediaPageQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

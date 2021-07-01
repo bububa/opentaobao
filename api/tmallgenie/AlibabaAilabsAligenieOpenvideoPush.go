@@ -11,7 +11,7 @@ alibaba.ailabs.aligenie.openvideo.push
 
 天猫精灵内容库视频分集数据推送接口
 */
-func AlibabaAilabsAligenieOpenvideoPush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpenvideoPushRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpenvideoPushAPIResponse, error) {
+func AlibabaAilabsAligenieOpenvideoPush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpenvideoPushAPIRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpenvideoPushAPIResponse, error) {
     var resp tmallgenie.AlibabaAilabsAligenieOpenvideoPushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ taobao.simba.report.city.get
 
 获取城市维度报表
 */
-type TaobaoSimbaReportCityGetRequest struct {
+type TaobaoSimbaReportCityGetAPIRequest struct {
     model.Params
     // 昵称
     _nick   string
@@ -24,20 +24,20 @@ type TaobaoSimbaReportCityGetRequest struct {
     _campaignId   string
 }
 
-// 初始化TaobaoSimbaReportCityGetRequest对象
-func NewTaobaoSimbaReportCityGetRequest() *TaobaoSimbaReportCityGetRequest{
-    return &TaobaoSimbaReportCityGetRequest{
+// 初始化TaobaoSimbaReportCityGetAPIRequest对象
+func NewTaobaoSimbaReportCityGetRequest() *TaobaoSimbaReportCityGetAPIRequest{
+    return &TaobaoSimbaReportCityGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaReportCityGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaReportCityGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.report.city.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaReportCityGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaReportCityGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoSimbaReportCityGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 昵称
-func (r *TaobaoSimbaReportCityGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaReportCityGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaReportCityGetRequest) GetNick() string {
+func (r TaobaoSimbaReportCityGetAPIRequest) GetNick() string {
     return r._nick
 }
 // TheDate Setter
 // 时间
-func (r *TaobaoSimbaReportCityGetRequest) SetTheDate(_theDate string) error {
+func (r *TaobaoSimbaReportCityGetAPIRequest) SetTheDate(_theDate string) error {
     r._theDate = _theDate
     r.Set("the_date", _theDate)
     return nil
 }
 
 // TheDate Getter
-func (r TaobaoSimbaReportCityGetRequest) GetTheDate() string {
+func (r TaobaoSimbaReportCityGetAPIRequest) GetTheDate() string {
     return r._theDate
 }
 // Hour Setter
 // 当前小时
-func (r *TaobaoSimbaReportCityGetRequest) SetHour(_hour string) error {
+func (r *TaobaoSimbaReportCityGetAPIRequest) SetHour(_hour string) error {
     r._hour = _hour
     r.Set("hour", _hour)
     return nil
 }
 
 // Hour Getter
-func (r TaobaoSimbaReportCityGetRequest) GetHour() string {
+func (r TaobaoSimbaReportCityGetAPIRequest) GetHour() string {
     return r._hour
 }
 // CampaignId Setter
 // 计划id
-func (r *TaobaoSimbaReportCityGetRequest) SetCampaignId(_campaignId string) error {
+func (r *TaobaoSimbaReportCityGetAPIRequest) SetCampaignId(_campaignId string) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r TaobaoSimbaReportCityGetRequest) GetCampaignId() string {
+func (r TaobaoSimbaReportCityGetAPIRequest) GetCampaignId() string {
     return r._campaignId
 }

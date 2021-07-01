@@ -12,26 +12,26 @@ taobao.ump.mbbs.list.get
 
 通过营销积木id列表来获取营销积木块列表。
 */
-type TaobaoUmpMbbsListGetRequest struct {
+type TaobaoUmpMbbsListGetAPIRequest struct {
     model.Params
     // 营销积木块id组成的字符串。
     _ids   []int64
 }
 
-// 初始化TaobaoUmpMbbsListGetRequest对象
-func NewTaobaoUmpMbbsListGetRequest() *TaobaoUmpMbbsListGetRequest{
-    return &TaobaoUmpMbbsListGetRequest{
+// 初始化TaobaoUmpMbbsListGetAPIRequest对象
+func NewTaobaoUmpMbbsListGetRequest() *TaobaoUmpMbbsListGetAPIRequest{
+    return &TaobaoUmpMbbsListGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoUmpMbbsListGetRequest) GetApiMethodName() string {
+func (r TaobaoUmpMbbsListGetAPIRequest) GetApiMethodName() string {
     return "taobao.ump.mbbs.list.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoUmpMbbsListGetRequest) GetApiParams() url.Values {
+func (r TaobaoUmpMbbsListGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoUmpMbbsListGetRequest) GetApiParams() url.Values {
 }
 // Ids Setter
 // 营销积木块id组成的字符串。
-func (r *TaobaoUmpMbbsListGetRequest) SetIds(_ids []int64) error {
+func (r *TaobaoUmpMbbsListGetAPIRequest) SetIds(_ids []int64) error {
     r._ids = _ids
     r.Set("ids", _ids)
     return nil
 }
 
 // Ids Getter
-func (r TaobaoUmpMbbsListGetRequest) GetIds() []int64 {
+func (r TaobaoUmpMbbsListGetAPIRequest) GetIds() []int64 {
     return r._ids
 }

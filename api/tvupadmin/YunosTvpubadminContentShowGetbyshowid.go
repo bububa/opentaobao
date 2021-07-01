@@ -11,7 +11,7 @@ yunos.tvpubadmin.content.show.getbyshowid
 
 迎客松根据节目id获取节目元数据
 */
-func YunosTvpubadminContentShowGetbyshowid(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentShowGetbyshowidRequest, session string) (*tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIResponse, error) {
+func YunosTvpubadminContentShowGetbyshowid(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

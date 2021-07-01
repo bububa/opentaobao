@@ -12,26 +12,26 @@ alibaba.wdk.wholesale.inboundorder.commit
 
 盒马帮退货信息回传接口
 */
-type AlibabaWdkWholesaleInboundorderCommitRequest struct {
+type AlibabaWdkWholesaleInboundorderCommitAPIRequest struct {
     model.Params
     // 退货信息参数
     _inboundInfoCommitReq   *InboundInfoCommitReq
 }
 
-// 初始化AlibabaWdkWholesaleInboundorderCommitRequest对象
-func NewAlibabaWdkWholesaleInboundorderCommitRequest() *AlibabaWdkWholesaleInboundorderCommitRequest{
-    return &AlibabaWdkWholesaleInboundorderCommitRequest{
+// 初始化AlibabaWdkWholesaleInboundorderCommitAPIRequest对象
+func NewAlibabaWdkWholesaleInboundorderCommitRequest() *AlibabaWdkWholesaleInboundorderCommitAPIRequest{
+    return &AlibabaWdkWholesaleInboundorderCommitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkWholesaleInboundorderCommitRequest) GetApiMethodName() string {
+func (r AlibabaWdkWholesaleInboundorderCommitAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.wholesale.inboundorder.commit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkWholesaleInboundorderCommitRequest) GetApiParams() url.Values {
+func (r AlibabaWdkWholesaleInboundorderCommitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkWholesaleInboundorderCommitRequest) GetApiParams() url.Values 
 }
 // InboundInfoCommitReq Setter
 // 退货信息参数
-func (r *AlibabaWdkWholesaleInboundorderCommitRequest) SetInboundInfoCommitReq(_inboundInfoCommitReq *InboundInfoCommitReq) error {
+func (r *AlibabaWdkWholesaleInboundorderCommitAPIRequest) SetInboundInfoCommitReq(_inboundInfoCommitReq *InboundInfoCommitReq) error {
     r._inboundInfoCommitReq = _inboundInfoCommitReq
     r.Set("inbound_info_commit_req", _inboundInfoCommitReq)
     return nil
 }
 
 // InboundInfoCommitReq Getter
-func (r AlibabaWdkWholesaleInboundorderCommitRequest) GetInboundInfoCommitReq() *InboundInfoCommitReq {
+func (r AlibabaWdkWholesaleInboundorderCommitAPIRequest) GetInboundInfoCommitReq() *InboundInfoCommitReq {
     return r._inboundInfoCommitReq
 }

@@ -11,7 +11,7 @@ taobao.promotion.benefit.activity.relation
 
 卖家活动中需要通过该API来关联的对应的权益。
 */
-func TaobaoPromotionBenefitActivityRelation(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityRelationRequest, session string) (*promotion.TaobaoPromotionBenefitActivityRelationAPIResponse, error) {
+func TaobaoPromotionBenefitActivityRelation(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityRelationAPIRequest, session string) (*promotion.TaobaoPromotionBenefitActivityRelationAPIResponse, error) {
     var resp promotion.TaobaoPromotionBenefitActivityRelationAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

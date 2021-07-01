@@ -12,7 +12,7 @@ alibaba.ib.shenjing.visitor.pad.uploadface
 
 访客PAD端上传人脸。
 */
-type AlibabaIbShenjingVisitorPadUploadfaceRequest struct {
+type AlibabaIbShenjingVisitorPadUploadfaceAPIRequest struct {
     model.Params
     // 访客ID
     _id   string
@@ -20,20 +20,20 @@ type AlibabaIbShenjingVisitorPadUploadfaceRequest struct {
     _image   string
 }
 
-// 初始化AlibabaIbShenjingVisitorPadUploadfaceRequest对象
-func NewAlibabaIbShenjingVisitorPadUploadfaceRequest() *AlibabaIbShenjingVisitorPadUploadfaceRequest{
-    return &AlibabaIbShenjingVisitorPadUploadfaceRequest{
+// 初始化AlibabaIbShenjingVisitorPadUploadfaceAPIRequest对象
+func NewAlibabaIbShenjingVisitorPadUploadfaceRequest() *AlibabaIbShenjingVisitorPadUploadfaceAPIRequest{
+    return &AlibabaIbShenjingVisitorPadUploadfaceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIbShenjingVisitorPadUploadfaceRequest) GetApiMethodName() string {
+func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetApiMethodName() string {
     return "alibaba.ib.shenjing.visitor.pad.uploadface"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIbShenjingVisitorPadUploadfaceRequest) GetApiParams() url.Values {
+func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaIbShenjingVisitorPadUploadfaceRequest) GetApiParams() url.Values 
 }
 // Id Setter
 // 访客ID
-func (r *AlibabaIbShenjingVisitorPadUploadfaceRequest) SetId(_id string) error {
+func (r *AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) SetId(_id string) error {
     r._id = _id
     r.Set("id", _id)
     return nil
 }
 
 // Id Getter
-func (r AlibabaIbShenjingVisitorPadUploadfaceRequest) GetId() string {
+func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetId() string {
     return r._id
 }
 // Image Setter
 // 图片URL
-func (r *AlibabaIbShenjingVisitorPadUploadfaceRequest) SetImage(_image string) error {
+func (r *AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) SetImage(_image string) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r AlibabaIbShenjingVisitorPadUploadfaceRequest) GetImage() string {
+func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetImage() string {
     return r._image
 }

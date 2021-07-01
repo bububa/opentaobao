@@ -12,26 +12,26 @@ taobao.train.agent.direct.compensate
 
 代购直连订单平台关单但是代理商出票成功补偿接口
 */
-type TaobaoTrainAgentDirectCompensateRequest struct {
+type TaobaoTrainAgentDirectCompensateAPIRequest struct {
     model.Params
     // 出票成功补偿入参
     _compensateParam   *CompensateParam
 }
 
-// 初始化TaobaoTrainAgentDirectCompensateRequest对象
-func NewTaobaoTrainAgentDirectCompensateRequest() *TaobaoTrainAgentDirectCompensateRequest{
-    return &TaobaoTrainAgentDirectCompensateRequest{
+// 初始化TaobaoTrainAgentDirectCompensateAPIRequest对象
+func NewTaobaoTrainAgentDirectCompensateRequest() *TaobaoTrainAgentDirectCompensateAPIRequest{
+    return &TaobaoTrainAgentDirectCompensateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentDirectCompensateRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentDirectCompensateAPIRequest) GetApiMethodName() string {
     return "taobao.train.agent.direct.compensate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentDirectCompensateRequest) GetApiParams() url.Values {
+func (r TaobaoTrainAgentDirectCompensateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentDirectCompensateRequest) GetApiParams() url.Values {
 }
 // CompensateParam Setter
 // 出票成功补偿入参
-func (r *TaobaoTrainAgentDirectCompensateRequest) SetCompensateParam(_compensateParam *CompensateParam) error {
+func (r *TaobaoTrainAgentDirectCompensateAPIRequest) SetCompensateParam(_compensateParam *CompensateParam) error {
     r._compensateParam = _compensateParam
     r.Set("compensate_param", _compensateParam)
     return nil
 }
 
 // CompensateParam Getter
-func (r TaobaoTrainAgentDirectCompensateRequest) GetCompensateParam() *CompensateParam {
+func (r TaobaoTrainAgentDirectCompensateAPIRequest) GetCompensateParam() *CompensateParam {
     return r._compensateParam
 }

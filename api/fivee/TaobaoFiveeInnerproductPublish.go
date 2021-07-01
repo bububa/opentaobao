@@ -11,7 +11,7 @@ taobao.fivee.innerproduct.publish
 
 资质共享平台国产商品发布
 */
-func TaobaoFiveeInnerproductPublish(clt *core.SDKClient, req *fivee.TaobaoFiveeInnerproductPublishRequest, session string) (*fivee.TaobaoFiveeInnerproductPublishAPIResponse, error) {
+func TaobaoFiveeInnerproductPublish(clt *core.SDKClient, req *fivee.TaobaoFiveeInnerproductPublishAPIRequest, session string) (*fivee.TaobaoFiveeInnerproductPublishAPIResponse, error) {
     var resp fivee.TaobaoFiveeInnerproductPublishAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

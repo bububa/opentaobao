@@ -12,26 +12,26 @@ alibaba.ele.fengniao.trade.update
 
 汇金扣费成功后，回调该接口更新扣费状态
 */
-type AlibabaEleFengniaoTradeUpdateRequest struct {
+type AlibabaEleFengniaoTradeUpdateAPIRequest struct {
     model.Params
     // param 参数
     _param   *Param
 }
 
-// 初始化AlibabaEleFengniaoTradeUpdateRequest对象
-func NewAlibabaEleFengniaoTradeUpdateRequest() *AlibabaEleFengniaoTradeUpdateRequest{
-    return &AlibabaEleFengniaoTradeUpdateRequest{
+// 初始化AlibabaEleFengniaoTradeUpdateAPIRequest对象
+func NewAlibabaEleFengniaoTradeUpdateRequest() *AlibabaEleFengniaoTradeUpdateAPIRequest{
+    return &AlibabaEleFengniaoTradeUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleFengniaoTradeUpdateRequest) GetApiMethodName() string {
+func (r AlibabaEleFengniaoTradeUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.fengniao.trade.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleFengniaoTradeUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaEleFengniaoTradeUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoTradeUpdateRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // param 参数
-func (r *AlibabaEleFengniaoTradeUpdateRequest) SetParam(_param *Param) error {
+func (r *AlibabaEleFengniaoTradeUpdateAPIRequest) SetParam(_param *Param) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaEleFengniaoTradeUpdateRequest) GetParam() *Param {
+func (r AlibabaEleFengniaoTradeUpdateAPIRequest) GetParam() *Param {
     return r._param
 }

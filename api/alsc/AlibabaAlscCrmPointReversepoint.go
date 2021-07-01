@@ -11,7 +11,7 @@ alibaba.alsc.crm.point.reversepoint
 
 积分消费回退
 */
-func AlibabaAlscCrmPointReversepoint(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointReversepointRequest, session string) (*alsc.AlibabaAlscCrmPointReversepointAPIResponse, error) {
+func AlibabaAlscCrmPointReversepoint(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointReversepointAPIRequest, session string) (*alsc.AlibabaAlscCrmPointReversepointAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmPointReversepointAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

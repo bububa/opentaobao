@@ -12,7 +12,7 @@ taobao.simba.searchcrowd.batch.add
 
 推广单元新增搜索人群
 */
-type TaobaoSimbaSearchcrowdBatchAddRequest struct {
+type TaobaoSimbaSearchcrowdBatchAddAPIRequest struct {
     model.Params
     // 被操作者的淘宝昵称
     _nick   string
@@ -22,20 +22,20 @@ type TaobaoSimbaSearchcrowdBatchAddRequest struct {
     _adgroupTargetingTags   string
 }
 
-// 初始化TaobaoSimbaSearchcrowdBatchAddRequest对象
-func NewTaobaoSimbaSearchcrowdBatchAddRequest() *TaobaoSimbaSearchcrowdBatchAddRequest{
-    return &TaobaoSimbaSearchcrowdBatchAddRequest{
+// 初始化TaobaoSimbaSearchcrowdBatchAddAPIRequest对象
+func NewTaobaoSimbaSearchcrowdBatchAddRequest() *TaobaoSimbaSearchcrowdBatchAddAPIRequest{
+    return &TaobaoSimbaSearchcrowdBatchAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaSearchcrowdBatchAddRequest) GetApiMethodName() string {
+func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetApiMethodName() string {
     return "taobao.simba.searchcrowd.batch.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSearchcrowdBatchAddRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoSimbaSearchcrowdBatchAddRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaoSimbaSearchcrowdBatchAddRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaSearchcrowdBatchAddRequest) GetNick() string {
+func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetNick() string {
     return r._nick
 }
 // AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaSearchcrowdBatchAddRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
     r._adgroupId = _adgroupId
     r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
-func (r TaobaoSimbaSearchcrowdBatchAddRequest) GetAdgroupId() int64 {
+func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetAdgroupId() int64 {
     return r._adgroupId
 }
 // AdgroupTargetingTags Setter
 // 新增人群信息,批量接口,入参为list,溢价(discount)范围为[105,400]
-func (r *TaobaoSimbaSearchcrowdBatchAddRequest) SetAdgroupTargetingTags(_adgroupTargetingTags string) error {
+func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetAdgroupTargetingTags(_adgroupTargetingTags string) error {
     r._adgroupTargetingTags = _adgroupTargetingTags
     r.Set("adgroup_targeting_tags", _adgroupTargetingTags)
     return nil
 }
 
 // AdgroupTargetingTags Getter
-func (r TaobaoSimbaSearchcrowdBatchAddRequest) GetAdgroupTargetingTags() string {
+func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetAdgroupTargetingTags() string {
     return r._adgroupTargetingTags
 }

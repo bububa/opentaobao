@@ -11,7 +11,7 @@ alibaba.einvoice.tax.opt.salaryrequest.singleaccept
 
 单明细发薪受理
 */
-func AlibabaEinvoiceTaxOptSalaryrequestSingleaccept(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryrequestSingleacceptRequest, session string) (*einvoice.AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse, error) {
+func AlibabaEinvoiceTaxOptSalaryrequestSingleaccept(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest, session string) (*einvoice.AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse, error) {
     var resp einvoice.AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alitrip.xhotel.channel.notify
 
 分销渠道支付通知
 */
-func AlitripXhotelChannelNotify(clt *core.SDKClient, req *xhotelonlineorder.AlitripXhotelChannelNotifyRequest, session string) (*xhotelonlineorder.AlitripXhotelChannelNotifyAPIResponse, error) {
+func AlitripXhotelChannelNotify(clt *core.SDKClient, req *xhotelonlineorder.AlitripXhotelChannelNotifyAPIRequest, session string) (*xhotelonlineorder.AlitripXhotelChannelNotifyAPIResponse, error) {
     var resp xhotelonlineorder.AlitripXhotelChannelNotifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

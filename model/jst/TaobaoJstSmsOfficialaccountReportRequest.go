@@ -12,26 +12,26 @@ taobao.jst.sms.officialaccount.report
 
 聚石塔公众号信息上报
 */
-type TaobaoJstSmsOfficialaccountReportRequest struct {
+type TaobaoJstSmsOfficialaccountReportAPIRequest struct {
     model.Params
     // 公众号信息上报接口入参
     _officialAccountInfoReportRequest   *OfficialAccountInfoReportRequest
 }
 
-// 初始化TaobaoJstSmsOfficialaccountReportRequest对象
-func NewTaobaoJstSmsOfficialaccountReportRequest() *TaobaoJstSmsOfficialaccountReportRequest{
-    return &TaobaoJstSmsOfficialaccountReportRequest{
+// 初始化TaobaoJstSmsOfficialaccountReportAPIRequest对象
+func NewTaobaoJstSmsOfficialaccountReportRequest() *TaobaoJstSmsOfficialaccountReportAPIRequest{
+    return &TaobaoJstSmsOfficialaccountReportAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJstSmsOfficialaccountReportRequest) GetApiMethodName() string {
+func (r TaobaoJstSmsOfficialaccountReportAPIRequest) GetApiMethodName() string {
     return "taobao.jst.sms.officialaccount.report"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJstSmsOfficialaccountReportRequest) GetApiParams() url.Values {
+func (r TaobaoJstSmsOfficialaccountReportAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsOfficialaccountReportRequest) GetApiParams() url.Values {
 }
 // OfficialAccountInfoReportRequest Setter
 // 公众号信息上报接口入参
-func (r *TaobaoJstSmsOfficialaccountReportRequest) SetOfficialAccountInfoReportRequest(_officialAccountInfoReportRequest *OfficialAccountInfoReportRequest) error {
+func (r *TaobaoJstSmsOfficialaccountReportAPIRequest) SetOfficialAccountInfoReportRequest(_officialAccountInfoReportRequest *OfficialAccountInfoReportRequest) error {
     r._officialAccountInfoReportRequest = _officialAccountInfoReportRequest
     r.Set("official_account_info_report_request", _officialAccountInfoReportRequest)
     return nil
 }
 
 // OfficialAccountInfoReportRequest Getter
-func (r TaobaoJstSmsOfficialaccountReportRequest) GetOfficialAccountInfoReportRequest() *OfficialAccountInfoReportRequest {
+func (r TaobaoJstSmsOfficialaccountReportAPIRequest) GetOfficialAccountInfoReportRequest() *OfficialAccountInfoReportRequest {
     return r._officialAccountInfoReportRequest
 }

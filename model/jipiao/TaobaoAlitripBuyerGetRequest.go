@@ -12,26 +12,26 @@ taobao.alitrip.buyer.get
 
 针对商家提供统一的TOP接口，可以根据订单获取订单对应买家联系电话（阿里小号）。
 */
-type TaobaoAlitripBuyerGetRequest struct {
+type TaobaoAlitripBuyerGetAPIRequest struct {
     model.Params
     // 敏感信息查询请求参数
     _requestAxb   *RequestAxbDO
 }
 
-// 初始化TaobaoAlitripBuyerGetRequest对象
-func NewTaobaoAlitripBuyerGetRequest() *TaobaoAlitripBuyerGetRequest{
-    return &TaobaoAlitripBuyerGetRequest{
+// 初始化TaobaoAlitripBuyerGetAPIRequest对象
+func NewTaobaoAlitripBuyerGetRequest() *TaobaoAlitripBuyerGetAPIRequest{
+    return &TaobaoAlitripBuyerGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripBuyerGetRequest) GetApiMethodName() string {
+func (r TaobaoAlitripBuyerGetAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.buyer.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripBuyerGetRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripBuyerGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripBuyerGetRequest) GetApiParams() url.Values {
 }
 // RequestAxb Setter
 // 敏感信息查询请求参数
-func (r *TaobaoAlitripBuyerGetRequest) SetRequestAxb(_requestAxb *RequestAxbDO) error {
+func (r *TaobaoAlitripBuyerGetAPIRequest) SetRequestAxb(_requestAxb *RequestAxbDO) error {
     r._requestAxb = _requestAxb
     r.Set("request_axb", _requestAxb)
     return nil
 }
 
 // RequestAxb Getter
-func (r TaobaoAlitripBuyerGetRequest) GetRequestAxb() *RequestAxbDO {
+func (r TaobaoAlitripBuyerGetAPIRequest) GetRequestAxb() *RequestAxbDO {
     return r._requestAxb
 }

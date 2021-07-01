@@ -12,26 +12,26 @@ tmall.servicecenter.worker.create
 
 服务商工人信息创建
 */
-type TmallServicecenterWorkerCreateRequest struct {
+type TmallServicecenterWorkerCreateAPIRequest struct {
     model.Params
     // 11
     _workerDto   *WorkerDTO
 }
 
-// 初始化TmallServicecenterWorkerCreateRequest对象
-func NewTmallServicecenterWorkerCreateRequest() *TmallServicecenterWorkerCreateRequest{
-    return &TmallServicecenterWorkerCreateRequest{
+// 初始化TmallServicecenterWorkerCreateAPIRequest对象
+func NewTmallServicecenterWorkerCreateRequest() *TmallServicecenterWorkerCreateAPIRequest{
+    return &TmallServicecenterWorkerCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkerCreateRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkerCreateAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.worker.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkerCreateRequest) GetApiParams() url.Values {
+func (r TmallServicecenterWorkerCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkerCreateRequest) GetApiParams() url.Values {
 }
 // WorkerDto Setter
 // 11
-func (r *TmallServicecenterWorkerCreateRequest) SetWorkerDto(_workerDto *WorkerDTO) error {
+func (r *TmallServicecenterWorkerCreateAPIRequest) SetWorkerDto(_workerDto *WorkerDTO) error {
     r._workerDto = _workerDto
     r.Set("worker_dto", _workerDto)
     return nil
 }
 
 // WorkerDto Getter
-func (r TmallServicecenterWorkerCreateRequest) GetWorkerDto() *WorkerDTO {
+func (r TmallServicecenterWorkerCreateAPIRequest) GetWorkerDto() *WorkerDTO {
     return r._workerDto
 }

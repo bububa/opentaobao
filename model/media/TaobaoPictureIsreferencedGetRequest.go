@@ -12,26 +12,26 @@ taobao.picture.isreferenced.get
 
 查询图片是否被引用，被引用返回true，未被引用返回false
 */
-type TaobaoPictureIsreferencedGetRequest struct {
+type TaobaoPictureIsreferencedGetAPIRequest struct {
     model.Params
     // 图片id
     _pictureId   int64
 }
 
-// 初始化TaobaoPictureIsreferencedGetRequest对象
-func NewTaobaoPictureIsreferencedGetRequest() *TaobaoPictureIsreferencedGetRequest{
-    return &TaobaoPictureIsreferencedGetRequest{
+// 初始化TaobaoPictureIsreferencedGetAPIRequest对象
+func NewTaobaoPictureIsreferencedGetRequest() *TaobaoPictureIsreferencedGetAPIRequest{
+    return &TaobaoPictureIsreferencedGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPictureIsreferencedGetRequest) GetApiMethodName() string {
+func (r TaobaoPictureIsreferencedGetAPIRequest) GetApiMethodName() string {
     return "taobao.picture.isreferenced.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPictureIsreferencedGetRequest) GetApiParams() url.Values {
+func (r TaobaoPictureIsreferencedGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPictureIsreferencedGetRequest) GetApiParams() url.Values {
 }
 // PictureId Setter
 // 图片id
-func (r *TaobaoPictureIsreferencedGetRequest) SetPictureId(_pictureId int64) error {
+func (r *TaobaoPictureIsreferencedGetAPIRequest) SetPictureId(_pictureId int64) error {
     r._pictureId = _pictureId
     r.Set("picture_id", _pictureId)
     return nil
 }
 
 // PictureId Getter
-func (r TaobaoPictureIsreferencedGetRequest) GetPictureId() int64 {
+func (r TaobaoPictureIsreferencedGetAPIRequest) GetPictureId() int64 {
     return r._pictureId
 }

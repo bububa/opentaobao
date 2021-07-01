@@ -11,7 +11,7 @@ alibaba.alihealth.examination.goods.publish
 
 体检机构对接_商品发布／更新
 */
-func AlibabaAlihealthExaminationGoodsPublish(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationGoodsPublishRequest, session string) (*examination.AlibabaAlihealthExaminationGoodsPublishAPIResponse, error) {
+func AlibabaAlihealthExaminationGoodsPublish(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationGoodsPublishAPIRequest, session string) (*examination.AlibabaAlihealthExaminationGoodsPublishAPIResponse, error) {
     var resp examination.AlibabaAlihealthExaminationGoodsPublishAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

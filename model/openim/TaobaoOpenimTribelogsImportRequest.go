@@ -12,7 +12,7 @@ taobao.openim.tribelogs.import
 
 openim群聊天记录导入
 */
-type TaobaoOpenimTribelogsImportRequest struct {
+type TaobaoOpenimTribelogsImportAPIRequest struct {
     model.Params
     // 群号。必须为已存在的群，且群主属于本app
     _tribeId   int64
@@ -20,20 +20,20 @@ type TaobaoOpenimTribelogsImportRequest struct {
     _messages   []TribeTextMessage
 }
 
-// 初始化TaobaoOpenimTribelogsImportRequest对象
-func NewTaobaoOpenimTribelogsImportRequest() *TaobaoOpenimTribelogsImportRequest{
-    return &TaobaoOpenimTribelogsImportRequest{
+// 初始化TaobaoOpenimTribelogsImportAPIRequest对象
+func NewTaobaoOpenimTribelogsImportRequest() *TaobaoOpenimTribelogsImportAPIRequest{
+    return &TaobaoOpenimTribelogsImportAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenimTribelogsImportRequest) GetApiMethodName() string {
+func (r TaobaoOpenimTribelogsImportAPIRequest) GetApiMethodName() string {
     return "taobao.openim.tribelogs.import"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimTribelogsImportRequest) GetApiParams() url.Values {
+func (r TaobaoOpenimTribelogsImportAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOpenimTribelogsImportRequest) GetApiParams() url.Values {
 }
 // TribeId Setter
 // 群号。必须为已存在的群，且群主属于本app
-func (r *TaobaoOpenimTribelogsImportRequest) SetTribeId(_tribeId int64) error {
+func (r *TaobaoOpenimTribelogsImportAPIRequest) SetTribeId(_tribeId int64) error {
     r._tribeId = _tribeId
     r.Set("tribe_id", _tribeId)
     return nil
 }
 
 // TribeId Getter
-func (r TaobaoOpenimTribelogsImportRequest) GetTribeId() int64 {
+func (r TaobaoOpenimTribelogsImportAPIRequest) GetTribeId() int64 {
     return r._tribeId
 }
 // Messages Setter
 // 消息列表
-func (r *TaobaoOpenimTribelogsImportRequest) SetMessages(_messages []TribeTextMessage) error {
+func (r *TaobaoOpenimTribelogsImportAPIRequest) SetMessages(_messages []TribeTextMessage) error {
     r._messages = _messages
     r.Set("messages", _messages)
     return nil
 }
 
 // Messages Getter
-func (r TaobaoOpenimTribelogsImportRequest) GetMessages() []TribeTextMessage {
+func (r TaobaoOpenimTribelogsImportAPIRequest) GetMessages() []TribeTextMessage {
     return r._messages
 }

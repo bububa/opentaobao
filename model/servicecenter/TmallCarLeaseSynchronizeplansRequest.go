@@ -12,7 +12,7 @@ tmall.car.lease.synchronizeplans
 
 租赁公司同步还款计划
 */
-type TmallCarLeaseSynchronizeplansRequest struct {
+type TmallCarLeaseSynchronizeplansAPIRequest struct {
     model.Params
     // 商品id
     _itemId   int64
@@ -20,20 +20,20 @@ type TmallCarLeaseSynchronizeplansRequest struct {
     _plans   []CarLeasePlanDO
 }
 
-// 初始化TmallCarLeaseSynchronizeplansRequest对象
-func NewTmallCarLeaseSynchronizeplansRequest() *TmallCarLeaseSynchronizeplansRequest{
-    return &TmallCarLeaseSynchronizeplansRequest{
+// 初始化TmallCarLeaseSynchronizeplansAPIRequest对象
+func NewTmallCarLeaseSynchronizeplansRequest() *TmallCarLeaseSynchronizeplansAPIRequest{
+    return &TmallCarLeaseSynchronizeplansAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarLeaseSynchronizeplansRequest) GetApiMethodName() string {
+func (r TmallCarLeaseSynchronizeplansAPIRequest) GetApiMethodName() string {
     return "tmall.car.lease.synchronizeplans"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarLeaseSynchronizeplansRequest) GetApiParams() url.Values {
+func (r TmallCarLeaseSynchronizeplansAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallCarLeaseSynchronizeplansRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TmallCarLeaseSynchronizeplansRequest) SetItemId(_itemId int64) error {
+func (r *TmallCarLeaseSynchronizeplansAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TmallCarLeaseSynchronizeplansRequest) GetItemId() int64 {
+func (r TmallCarLeaseSynchronizeplansAPIRequest) GetItemId() int64 {
     return r._itemId
 }
 // Plans Setter
 // 租赁计划
-func (r *TmallCarLeaseSynchronizeplansRequest) SetPlans(_plans []CarLeasePlanDO) error {
+func (r *TmallCarLeaseSynchronizeplansAPIRequest) SetPlans(_plans []CarLeasePlanDO) error {
     r._plans = _plans
     r.Set("plans", _plans)
     return nil
 }
 
 // Plans Getter
-func (r TmallCarLeaseSynchronizeplansRequest) GetPlans() []CarLeasePlanDO {
+func (r TmallCarLeaseSynchronizeplansAPIRequest) GetPlans() []CarLeasePlanDO {
     return r._plans
 }

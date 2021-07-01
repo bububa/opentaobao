@@ -12,26 +12,26 @@ alibaba.wdk.marketing.fullrange.deleteactivity
 
 全场活动删除活动
 */
-type AlibabaWdkMarketingFullrangeDeleteactivityRequest struct {
+type AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest struct {
     model.Params
     // 需要删除的活动的信息
     _param   *CommonActivityParam
 }
 
-// 初始化AlibabaWdkMarketingFullrangeDeleteactivityRequest对象
-func NewAlibabaWdkMarketingFullrangeDeleteactivityRequest() *AlibabaWdkMarketingFullrangeDeleteactivityRequest{
-    return &AlibabaWdkMarketingFullrangeDeleteactivityRequest{
+// 初始化AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest对象
+func NewAlibabaWdkMarketingFullrangeDeleteactivityRequest() *AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest{
+    return &AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingFullrangeDeleteactivityRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.fullrange.deleteactivity"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingFullrangeDeleteactivityRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingFullrangeDeleteactivityRequest) GetApiParams() url.Va
 }
 // Param Setter
 // 需要删除的活动的信息
-func (r *AlibabaWdkMarketingFullrangeDeleteactivityRequest) SetParam(_param *CommonActivityParam) error {
+func (r *AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest) SetParam(_param *CommonActivityParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkMarketingFullrangeDeleteactivityRequest) GetParam() *CommonActivityParam {
+func (r AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest) GetParam() *CommonActivityParam {
     return r._param
 }

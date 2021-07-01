@@ -12,26 +12,26 @@ alibaba.tmallgenie.scp.plan.forecast.raw.upload
 
 供应商预测（原料-二级物料）回传接口
 */
-type AlibabaTmallgenieScpPlanForecastRawUploadRequest struct {
+type AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest struct {
     model.Params
     // 入参对象
     _supplierForecastRawRequest   *SupplierForecastRawRequest
 }
 
-// 初始化AlibabaTmallgenieScpPlanForecastRawUploadRequest对象
-func NewAlibabaTmallgenieScpPlanForecastRawUploadRequest() *AlibabaTmallgenieScpPlanForecastRawUploadRequest{
-    return &AlibabaTmallgenieScpPlanForecastRawUploadRequest{
+// 初始化AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest对象
+func NewAlibabaTmallgenieScpPlanForecastRawUploadRequest() *AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest{
+    return &AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTmallgenieScpPlanForecastRawUploadRequest) GetApiMethodName() string {
+func (r AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.tmallgenie.scp.plan.forecast.raw.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTmallgenieScpPlanForecastRawUploadRequest) GetApiParams() url.Values {
+func (r AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanForecastRawUploadRequest) GetApiParams() url.Val
 }
 // SupplierForecastRawRequest Setter
 // 入参对象
-func (r *AlibabaTmallgenieScpPlanForecastRawUploadRequest) SetSupplierForecastRawRequest(_supplierForecastRawRequest *SupplierForecastRawRequest) error {
+func (r *AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest) SetSupplierForecastRawRequest(_supplierForecastRawRequest *SupplierForecastRawRequest) error {
     r._supplierForecastRawRequest = _supplierForecastRawRequest
     r.Set("supplier_forecast_raw_request", _supplierForecastRawRequest)
     return nil
 }
 
 // SupplierForecastRawRequest Getter
-func (r AlibabaTmallgenieScpPlanForecastRawUploadRequest) GetSupplierForecastRawRequest() *SupplierForecastRawRequest {
+func (r AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest) GetSupplierForecastRawRequest() *SupplierForecastRawRequest {
     return r._supplierForecastRawRequest
 }

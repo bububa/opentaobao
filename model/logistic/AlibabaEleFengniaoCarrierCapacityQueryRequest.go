@@ -12,26 +12,26 @@ alibaba.ele.fengniao.carrier.capacity.query
 
 提供给大润发，用于按照站点纬度查询大润发每个配送站的实时上班骑手数、到店骑手数、活跃骑手数量
 */
-type AlibabaEleFengniaoCarrierCapacityQueryRequest struct {
+type AlibabaEleFengniaoCarrierCapacityQueryAPIRequest struct {
     model.Params
     // 系统自动生成
     _param   *Param
 }
 
-// 初始化AlibabaEleFengniaoCarrierCapacityQueryRequest对象
-func NewAlibabaEleFengniaoCarrierCapacityQueryRequest() *AlibabaEleFengniaoCarrierCapacityQueryRequest{
-    return &AlibabaEleFengniaoCarrierCapacityQueryRequest{
+// 初始化AlibabaEleFengniaoCarrierCapacityQueryAPIRequest对象
+func NewAlibabaEleFengniaoCarrierCapacityQueryRequest() *AlibabaEleFengniaoCarrierCapacityQueryAPIRequest{
+    return &AlibabaEleFengniaoCarrierCapacityQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleFengniaoCarrierCapacityQueryRequest) GetApiMethodName() string {
+func (r AlibabaEleFengniaoCarrierCapacityQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.fengniao.carrier.capacity.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleFengniaoCarrierCapacityQueryRequest) GetApiParams() url.Values {
+func (r AlibabaEleFengniaoCarrierCapacityQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoCarrierCapacityQueryRequest) GetApiParams() url.Values
 }
 // Param Setter
 // 系统自动生成
-func (r *AlibabaEleFengniaoCarrierCapacityQueryRequest) SetParam(_param *Param) error {
+func (r *AlibabaEleFengniaoCarrierCapacityQueryAPIRequest) SetParam(_param *Param) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaEleFengniaoCarrierCapacityQueryRequest) GetParam() *Param {
+func (r AlibabaEleFengniaoCarrierCapacityQueryAPIRequest) GetParam() *Param {
     return r._param
 }

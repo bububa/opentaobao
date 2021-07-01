@@ -13,7 +13,7 @@ tmall.nrt.simpleitem.query
 
 后续合资公司服务会迁移到内网 暂时过渡用
 */
-func TmallNrtSimpleitemQuery(clt *core.SDKClient, req *nrt.TmallNrtSimpleitemQueryRequest, session string) (*nrt.TmallNrtSimpleitemQueryAPIResponse, error) {
+func TmallNrtSimpleitemQuery(clt *core.SDKClient, req *nrt.TmallNrtSimpleitemQueryAPIRequest, session string) (*nrt.TmallNrtSimpleitemQueryAPIResponse, error) {
     var resp nrt.TmallNrtSimpleitemQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

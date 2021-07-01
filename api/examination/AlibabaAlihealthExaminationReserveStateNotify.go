@@ -11,7 +11,7 @@ alibaba.alihealth.examination.reserve.state.notify
 
 到了体检当天后，服务商主动通知体检预约状态
 */
-func AlibabaAlihealthExaminationReserveStateNotify(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReserveStateNotifyRequest, session string) (*examination.AlibabaAlihealthExaminationReserveStateNotifyAPIResponse, error) {
+func AlibabaAlihealthExaminationReserveStateNotify(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReserveStateNotifyAPIRequest, session string) (*examination.AlibabaAlihealthExaminationReserveStateNotifyAPIResponse, error) {
     var resp examination.AlibabaAlihealthExaminationReserveStateNotifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

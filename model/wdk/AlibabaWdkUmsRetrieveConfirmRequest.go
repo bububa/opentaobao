@@ -12,7 +12,7 @@ alibaba.wdk.ums.retrieve.confirm
 
 回流单－外部对已拉取到的UMS单据进行确认
 */
-type AlibabaWdkUmsRetrieveConfirmRequest struct {
+type AlibabaWdkUmsRetrieveConfirmAPIRequest struct {
     model.Params
     // 店仓code，指的是作业对象，对应一个物理店或仓编码
     _warehouseCode   string
@@ -20,20 +20,20 @@ type AlibabaWdkUmsRetrieveConfirmRequest struct {
     _uuid   string
 }
 
-// 初始化AlibabaWdkUmsRetrieveConfirmRequest对象
-func NewAlibabaWdkUmsRetrieveConfirmRequest() *AlibabaWdkUmsRetrieveConfirmRequest{
-    return &AlibabaWdkUmsRetrieveConfirmRequest{
+// 初始化AlibabaWdkUmsRetrieveConfirmAPIRequest对象
+func NewAlibabaWdkUmsRetrieveConfirmRequest() *AlibabaWdkUmsRetrieveConfirmAPIRequest{
+    return &AlibabaWdkUmsRetrieveConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkUmsRetrieveConfirmRequest) GetApiMethodName() string {
+func (r AlibabaWdkUmsRetrieveConfirmAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.ums.retrieve.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkUmsRetrieveConfirmRequest) GetApiParams() url.Values {
+func (r AlibabaWdkUmsRetrieveConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaWdkUmsRetrieveConfirmRequest) GetApiParams() url.Values {
 }
 // WarehouseCode Setter
 // 店仓code，指的是作业对象，对应一个物理店或仓编码
-func (r *AlibabaWdkUmsRetrieveConfirmRequest) SetWarehouseCode(_warehouseCode string) error {
+func (r *AlibabaWdkUmsRetrieveConfirmAPIRequest) SetWarehouseCode(_warehouseCode string) error {
     r._warehouseCode = _warehouseCode
     r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
-func (r AlibabaWdkUmsRetrieveConfirmRequest) GetWarehouseCode() string {
+func (r AlibabaWdkUmsRetrieveConfirmAPIRequest) GetWarehouseCode() string {
     return r._warehouseCode
 }
 // Uuid Setter
 // 唯一识别码
-func (r *AlibabaWdkUmsRetrieveConfirmRequest) SetUuid(_uuid string) error {
+func (r *AlibabaWdkUmsRetrieveConfirmAPIRequest) SetUuid(_uuid string) error {
     r._uuid = _uuid
     r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
-func (r AlibabaWdkUmsRetrieveConfirmRequest) GetUuid() string {
+func (r AlibabaWdkUmsRetrieveConfirmAPIRequest) GetUuid() string {
     return r._uuid
 }

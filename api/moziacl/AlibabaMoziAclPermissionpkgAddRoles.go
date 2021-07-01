@@ -11,7 +11,7 @@ alibaba.mozi.acl.permissionpkg.add.roles
 
 此接口是将应用下的一批角色添加到该应用的某个权限套餐中
 */
-func AlibabaMoziAclPermissionpkgAddRoles(clt *core.SDKClient, req *moziacl.AlibabaMoziAclPermissionpkgAddRolesRequest, session string) (*moziacl.AlibabaMoziAclPermissionpkgAddRolesAPIResponse, error) {
+func AlibabaMoziAclPermissionpkgAddRoles(clt *core.SDKClient, req *moziacl.AlibabaMoziAclPermissionpkgAddRolesAPIRequest, session string) (*moziacl.AlibabaMoziAclPermissionpkgAddRolesAPIResponse, error) {
     var resp moziacl.AlibabaMoziAclPermissionpkgAddRolesAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

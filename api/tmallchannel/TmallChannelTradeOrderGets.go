@@ -11,7 +11,7 @@ tmall.channel.trade.order.gets
 
 分页查询采购单
 */
-func TmallChannelTradeOrderGets(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeOrderGetsRequest, session string) (*tmallchannel.TmallChannelTradeOrderGetsAPIResponse, error) {
+func TmallChannelTradeOrderGets(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeOrderGetsAPIRequest, session string) (*tmallchannel.TmallChannelTradeOrderGetsAPIResponse, error) {
     var resp tmallchannel.TmallChannelTradeOrderGetsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

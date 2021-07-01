@@ -11,7 +11,7 @@ alibaba.alihealth.nr.trade.order.get
 
 阿里健康O2O，获取订单详情
 */
-func AlibabaAlihealthNrTradeOrderGet(clt *core.SDKClient, req *drug.AlibabaAlihealthNrTradeOrderGetRequest, session string) (*drug.AlibabaAlihealthNrTradeOrderGetAPIResponse, error) {
+func AlibabaAlihealthNrTradeOrderGet(clt *core.SDKClient, req *drug.AlibabaAlihealthNrTradeOrderGetAPIRequest, session string) (*drug.AlibabaAlihealthNrTradeOrderGetAPIResponse, error) {
     var resp drug.AlibabaAlihealthNrTradeOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

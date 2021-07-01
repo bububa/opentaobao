@@ -12,7 +12,7 @@ alibaba.alihealth.alipaypfm.userid.decrypt
 
 用户唯一表示加密传输，调用方解密
 */
-type AlibabaAlihealthAlipaypfmUseridDecryptRequest struct {
+type AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest struct {
     model.Params
     // 小程序appid
     _appId   string
@@ -20,20 +20,20 @@ type AlibabaAlihealthAlipaypfmUseridDecryptRequest struct {
     _content   string
 }
 
-// 初始化AlibabaAlihealthAlipaypfmUseridDecryptRequest对象
-func NewAlibabaAlihealthAlipaypfmUseridDecryptRequest() *AlibabaAlihealthAlipaypfmUseridDecryptRequest{
-    return &AlibabaAlihealthAlipaypfmUseridDecryptRequest{
+// 初始化AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest对象
+func NewAlibabaAlihealthAlipaypfmUseridDecryptRequest() *AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest{
+    return &AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthAlipaypfmUseridDecryptRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.alipaypfm.userid.decrypt"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthAlipaypfmUseridDecryptRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthAlipaypfmUseridDecryptRequest) GetApiParams() url.Values
 }
 // AppId Setter
 // 小程序appid
-func (r *AlibabaAlihealthAlipaypfmUseridDecryptRequest) SetAppId(_appId string) error {
+func (r *AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) SetAppId(_appId string) error {
     r._appId = _appId
     r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
-func (r AlibabaAlihealthAlipaypfmUseridDecryptRequest) GetAppId() string {
+func (r AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) GetAppId() string {
     return r._appId
 }
 // Content Setter
 // 加密后的userId
-func (r *AlibabaAlihealthAlipaypfmUseridDecryptRequest) SetContent(_content string) error {
+func (r *AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) SetContent(_content string) error {
     r._content = _content
     r.Set("content", _content)
     return nil
 }
 
 // Content Getter
-func (r AlibabaAlihealthAlipaypfmUseridDecryptRequest) GetContent() string {
+func (r AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) GetContent() string {
     return r._content
 }

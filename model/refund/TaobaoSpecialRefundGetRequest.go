@@ -12,7 +12,7 @@ taobao.special.refund.get
 
 获取单笔特殊部分退的纠纷单查询
 */
-type TaobaoSpecialRefundGetRequest struct {
+type TaobaoSpecialRefundGetAPIRequest struct {
     model.Params
     // 需要返回的字段。目前支持有：refund_id, alipay_no, tid, oid, buyer_nick, seller_nick, total_fee, status, created, refund_fee, good_status, has_good_return, payment, reason, desc, num_iid, title, price, num, good_return_time, company_name, sid, address, shipping_type, refund_remind_timeout, refund_phase, refund_version, operation_contraint, attribute, outer_id, sku
     _fields   []string
@@ -20,20 +20,20 @@ type TaobaoSpecialRefundGetRequest struct {
     _refundId   int64
 }
 
-// 初始化TaobaoSpecialRefundGetRequest对象
-func NewTaobaoSpecialRefundGetRequest() *TaobaoSpecialRefundGetRequest{
-    return &TaobaoSpecialRefundGetRequest{
+// 初始化TaobaoSpecialRefundGetAPIRequest对象
+func NewTaobaoSpecialRefundGetRequest() *TaobaoSpecialRefundGetAPIRequest{
+    return &TaobaoSpecialRefundGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSpecialRefundGetRequest) GetApiMethodName() string {
+func (r TaobaoSpecialRefundGetAPIRequest) GetApiMethodName() string {
     return "taobao.special.refund.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSpecialRefundGetRequest) GetApiParams() url.Values {
+func (r TaobaoSpecialRefundGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSpecialRefundGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的字段。目前支持有：refund_id, alipay_no, tid, oid, buyer_nick, seller_nick, total_fee, status, created, refund_fee, good_status, has_good_return, payment, reason, desc, num_iid, title, price, num, good_return_time, company_name, sid, address, shipping_type, refund_remind_timeout, refund_phase, refund_version, operation_contraint, attribute, outer_id, sku
-func (r *TaobaoSpecialRefundGetRequest) SetFields(_fields []string) error {
+func (r *TaobaoSpecialRefundGetAPIRequest) SetFields(_fields []string) error {
     r._fields = _fields
     r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
-func (r TaobaoSpecialRefundGetRequest) GetFields() []string {
+func (r TaobaoSpecialRefundGetAPIRequest) GetFields() []string {
     return r._fields
 }
 // RefundId Setter
 // 退款单号
-func (r *TaobaoSpecialRefundGetRequest) SetRefundId(_refundId int64) error {
+func (r *TaobaoSpecialRefundGetAPIRequest) SetRefundId(_refundId int64) error {
     r._refundId = _refundId
     r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
-func (r TaobaoSpecialRefundGetRequest) GetRefundId() int64 {
+func (r TaobaoSpecialRefundGetAPIRequest) GetRefundId() int64 {
     return r._refundId
 }

@@ -11,7 +11,7 @@ alibaba.alihealth.drugtrace.top.lsyd.uploadretail
 
 快易通多融零售上传接口
 */
-func AlibabaAlihealthDrugtraceTopLsydUploadretail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadretailRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadretailAPIResponse, error) {
+func AlibabaAlihealthDrugtraceTopLsydUploadretail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadretailAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadretailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -13,7 +13,7 @@ alibaba.campus.space.building.getbycampusid
 HSF接口名称：com.alibaba.campus.api.space.service.top.BuildingApiTopService
 HSF方法名称：getBuildingList
 */
-func AlibabaCampusSpaceBuildingGetbycampusid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceBuildingGetbycampusidRequest, session string) (*campus.AlibabaCampusSpaceBuildingGetbycampusidAPIResponse, error) {
+func AlibabaCampusSpaceBuildingGetbycampusid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceBuildingGetbycampusidAPIRequest, session string) (*campus.AlibabaCampusSpaceBuildingGetbycampusidAPIResponse, error) {
     var resp campus.AlibabaCampusSpaceBuildingGetbycampusidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.lst.vending.equipment.query
 
 为零售通品牌商提供已租赁的设备信息查询。
 */
-func AlibabaLstVendingEquipmentQuery(clt *core.SDKClient, req *lstvending.AlibabaLstVendingEquipmentQueryRequest, session string) (*lstvending.AlibabaLstVendingEquipmentQueryAPIResponse, error) {
+func AlibabaLstVendingEquipmentQuery(clt *core.SDKClient, req *lstvending.AlibabaLstVendingEquipmentQueryAPIRequest, session string) (*lstvending.AlibabaLstVendingEquipmentQueryAPIResponse, error) {
     var resp lstvending.AlibabaLstVendingEquipmentQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

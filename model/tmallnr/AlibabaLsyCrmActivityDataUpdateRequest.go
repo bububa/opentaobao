@@ -12,26 +12,26 @@ alibaba.lsy.crm.activity.data.update
 
 私域导购数据回流接口
 */
-type AlibabaLsyCrmActivityDataUpdateRequest struct {
+type AlibabaLsyCrmActivityDataUpdateAPIRequest struct {
     model.Params
     // 入参对象
     _reqDTO   *NrtCrmActivityStatisticsDataReq
 }
 
-// 初始化AlibabaLsyCrmActivityDataUpdateRequest对象
-func NewAlibabaLsyCrmActivityDataUpdateRequest() *AlibabaLsyCrmActivityDataUpdateRequest{
-    return &AlibabaLsyCrmActivityDataUpdateRequest{
+// 初始化AlibabaLsyCrmActivityDataUpdateAPIRequest对象
+func NewAlibabaLsyCrmActivityDataUpdateRequest() *AlibabaLsyCrmActivityDataUpdateAPIRequest{
+    return &AlibabaLsyCrmActivityDataUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLsyCrmActivityDataUpdateRequest) GetApiMethodName() string {
+func (r AlibabaLsyCrmActivityDataUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.lsy.crm.activity.data.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLsyCrmActivityDataUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaLsyCrmActivityDataUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmActivityDataUpdateRequest) GetApiParams() url.Values {
 }
 // ReqDTO Setter
 // 入参对象
-func (r *AlibabaLsyCrmActivityDataUpdateRequest) SetReqDTO(_reqDTO *NrtCrmActivityStatisticsDataReq) error {
+func (r *AlibabaLsyCrmActivityDataUpdateAPIRequest) SetReqDTO(_reqDTO *NrtCrmActivityStatisticsDataReq) error {
     r._reqDTO = _reqDTO
     r.Set("req_d_t_o", _reqDTO)
     return nil
 }
 
 // ReqDTO Getter
-func (r AlibabaLsyCrmActivityDataUpdateRequest) GetReqDTO() *NrtCrmActivityStatisticsDataReq {
+func (r AlibabaLsyCrmActivityDataUpdateAPIRequest) GetReqDTO() *NrtCrmActivityStatisticsDataReq {
     return r._reqDTO
 }

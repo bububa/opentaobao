@@ -12,24 +12,24 @@ alibaba.xiami.api.contract.issign
 
 查询是否签约
 */
-type AlibabaXiamiApiContractIssignRequest struct {
+type AlibabaXiamiApiContractIssignAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaXiamiApiContractIssignRequest对象
-func NewAlibabaXiamiApiContractIssignRequest() *AlibabaXiamiApiContractIssignRequest{
-    return &AlibabaXiamiApiContractIssignRequest{
+// 初始化AlibabaXiamiApiContractIssignAPIRequest对象
+func NewAlibabaXiamiApiContractIssignRequest() *AlibabaXiamiApiContractIssignAPIRequest{
+    return &AlibabaXiamiApiContractIssignAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaXiamiApiContractIssignRequest) GetApiMethodName() string {
+func (r AlibabaXiamiApiContractIssignAPIRequest) GetApiMethodName() string {
     return "alibaba.xiami.api.contract.issign"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaXiamiApiContractIssignRequest) GetApiParams() url.Values {
+func (r AlibabaXiamiApiContractIssignAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

@@ -12,7 +12,7 @@ taobao.wlb.orderdetail.date.get
 
 外部ERP可通过该接口查询一段时间内的物流宝订单，以及订单详情
 */
-type TaobaoWlbOrderdetailDateGetRequest struct {
+type TaobaoWlbOrderdetailDateGetAPIRequest struct {
     model.Params
     // 创建时间起始
     _startTime   string
@@ -24,20 +24,20 @@ type TaobaoWlbOrderdetailDateGetRequest struct {
     _pageNo   int64
 }
 
-// 初始化TaobaoWlbOrderdetailDateGetRequest对象
-func NewTaobaoWlbOrderdetailDateGetRequest() *TaobaoWlbOrderdetailDateGetRequest{
-    return &TaobaoWlbOrderdetailDateGetRequest{
+// 初始化TaobaoWlbOrderdetailDateGetAPIRequest对象
+func NewTaobaoWlbOrderdetailDateGetRequest() *TaobaoWlbOrderdetailDateGetAPIRequest{
+    return &TaobaoWlbOrderdetailDateGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbOrderdetailDateGetRequest) GetApiMethodName() string {
+func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.orderdetail.date.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbOrderdetailDateGetRequest) GetApiParams() url.Values {
+func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoWlbOrderdetailDateGetRequest) GetApiParams() url.Values {
 }
 // StartTime Setter
 // 创建时间起始
-func (r *TaobaoWlbOrderdetailDateGetRequest) SetStartTime(_startTime string) error {
+func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetStartTime(_startTime string) error {
     r._startTime = _startTime
     r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
-func (r TaobaoWlbOrderdetailDateGetRequest) GetStartTime() string {
+func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetStartTime() string {
     return r._startTime
 }
 // EndTime Setter
 // 创建时间结束
-func (r *TaobaoWlbOrderdetailDateGetRequest) SetEndTime(_endTime string) error {
+func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetEndTime(_endTime string) error {
     r._endTime = _endTime
     r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
-func (r TaobaoWlbOrderdetailDateGetRequest) GetEndTime() string {
+func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetEndTime() string {
     return r._endTime
 }
 // PageSize Setter
 // 分页大小
-func (r *TaobaoWlbOrderdetailDateGetRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoWlbOrderdetailDateGetRequest) GetPageSize() int64 {
+func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // PageNo Setter
 // 分页下标
-func (r *TaobaoWlbOrderdetailDateGetRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r TaobaoWlbOrderdetailDateGetRequest) GetPageNo() int64 {
+func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }

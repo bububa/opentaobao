@@ -11,7 +11,7 @@ alibaba.wdk.shop.query
 
 根据门店code查询门店信息
 */
-func AlibabaWdkShopQuery(clt *core.SDKClient, req *wdk.AlibabaWdkShopQueryRequest, session string) (*wdk.AlibabaWdkShopQueryAPIResponse, error) {
+func AlibabaWdkShopQuery(clt *core.SDKClient, req *wdk.AlibabaWdkShopQueryAPIRequest, session string) (*wdk.AlibabaWdkShopQueryAPIResponse, error) {
     var resp wdk.AlibabaWdkShopQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

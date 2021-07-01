@@ -11,7 +11,7 @@ alibaba.damai.mev.open.deleteproject
 
 deleteProject
 */
-func AlibabaDamaiMevOpenDeleteproject(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeleteprojectRequest, session string) (*damai.AlibabaDamaiMevOpenDeleteprojectAPIResponse, error) {
+func AlibabaDamaiMevOpenDeleteproject(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeleteprojectAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeleteprojectAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenDeleteprojectAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

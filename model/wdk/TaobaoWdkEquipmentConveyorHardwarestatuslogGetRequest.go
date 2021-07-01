@@ -12,7 +12,7 @@ taobao.wdk.equipment.conveyor.hardwarestatuslog.get
 
 硬件状态变化日志查询
 */
-type TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest struct {
+type TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest struct {
     model.Params
     // 仓库Id
     _warehouseId   int64
@@ -22,20 +22,20 @@ type TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest struct {
     _startId   int64
 }
 
-// 初始化TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest对象
-func NewTaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest() *TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest{
-    return &TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest{
+// 初始化TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest对象
+func NewTaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest() *TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest{
+    return &TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest) GetApiMethodName() string {
+func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest) GetApiMethodName() string {
     return "taobao.wdk.equipment.conveyor.hardwarestatuslog.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest) GetApiParams() url.Values {
+func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest) GetApiParams() ur
 }
 // WarehouseId Setter
 // 仓库Id
-func (r *TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest) SetWarehouseId(_warehouseId int64) error {
+func (r *TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest) SetWarehouseId(_warehouseId int64) error {
     r._warehouseId = _warehouseId
     r.Set("warehouse_id", _warehouseId)
     return nil
 }
 
 // WarehouseId Getter
-func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest) GetWarehouseId() int64 {
+func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest) GetWarehouseId() int64 {
     return r._warehouseId
 }
 // ConveyorId Setter
 // 悬挂链Id，即wcsNum
-func (r *TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest) SetConveyorId(_conveyorId int64) error {
+func (r *TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest) SetConveyorId(_conveyorId int64) error {
     r._conveyorId = _conveyorId
     r.Set("conveyor_id", _conveyorId)
     return nil
 }
 
 // ConveyorId Getter
-func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest) GetConveyorId() int64 {
+func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest) GetConveyorId() int64 {
     return r._conveyorId
 }
 // StartId Setter
 // 数据库id最小值
-func (r *TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest) SetStartId(_startId int64) error {
+func (r *TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest) SetStartId(_startId int64) error {
     r._startId = _startId
     r.Set("start_id", _startId)
     return nil
 }
 
 // StartId Getter
-func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest) GetStartId() int64 {
+func (r TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest) GetStartId() int64 {
     return r._startId
 }

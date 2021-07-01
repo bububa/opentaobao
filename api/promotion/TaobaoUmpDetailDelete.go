@@ -11,7 +11,7 @@ taobao.ump.detail.delete
 
 删除活动详情
 */
-func TaobaoUmpDetailDelete(clt *core.SDKClient, req *promotion.TaobaoUmpDetailDeleteRequest, session string) (*promotion.TaobaoUmpDetailDeleteAPIResponse, error) {
+func TaobaoUmpDetailDelete(clt *core.SDKClient, req *promotion.TaobaoUmpDetailDeleteAPIRequest, session string) (*promotion.TaobaoUmpDetailDeleteAPIResponse, error) {
     var resp promotion.TaobaoUmpDetailDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

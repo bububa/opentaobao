@@ -11,7 +11,7 @@ taobao.opentrade.group.open
 
 组团购场景下，团长开团
 */
-func TaobaoOpentradeGroupOpen(clt *core.SDKClient, req *opentrade.TaobaoOpentradeGroupOpenRequest, session string) (*opentrade.TaobaoOpentradeGroupOpenAPIResponse, error) {
+func TaobaoOpentradeGroupOpen(clt *core.SDKClient, req *opentrade.TaobaoOpentradeGroupOpenAPIRequest, session string) (*opentrade.TaobaoOpentradeGroupOpenAPIResponse, error) {
     var resp opentrade.TaobaoOpentradeGroupOpenAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

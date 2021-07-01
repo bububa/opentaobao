@@ -12,26 +12,26 @@ alibaba.damai.maitix.distribution.cmb.paramencrypt
 
 encryptParam4Cmb
 */
-type AlibabaDamaiMaitixDistributionCmbParamencryptRequest struct {
+type AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest struct {
     model.Params
     // 入参param
     _param   *DisEncrypt4CmbParam
 }
 
-// 初始化AlibabaDamaiMaitixDistributionCmbParamencryptRequest对象
-func NewAlibabaDamaiMaitixDistributionCmbParamencryptRequest() *AlibabaDamaiMaitixDistributionCmbParamencryptRequest{
-    return &AlibabaDamaiMaitixDistributionCmbParamencryptRequest{
+// 初始化AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest对象
+func NewAlibabaDamaiMaitixDistributionCmbParamencryptRequest() *AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest{
+    return &AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixDistributionCmbParamencryptRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.distribution.cmb.paramencrypt"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixDistributionCmbParamencryptRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixDistributionCmbParamencryptRequest) GetApiParams() url
 }
 // Param Setter
 // 入参param
-func (r *AlibabaDamaiMaitixDistributionCmbParamencryptRequest) SetParam(_param *DisEncrypt4CmbParam) error {
+func (r *AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) SetParam(_param *DisEncrypt4CmbParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaDamaiMaitixDistributionCmbParamencryptRequest) GetParam() *DisEncrypt4CmbParam {
+func (r AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) GetParam() *DisEncrypt4CmbParam {
     return r._param
 }

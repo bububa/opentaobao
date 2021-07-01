@@ -11,7 +11,7 @@ alibaba.alicom.order.preauthorize.query.fulfillment
 
 预授权-履约结果查询
 */
-func AlibabaAlicomOrderPreauthorizeQueryFulfillment(clt *core.SDKClient, req *alicom.AlibabaAlicomOrderPreauthorizeQueryFulfillmentRequest, session string) (*alicom.AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIResponse, error) {
+func AlibabaAlicomOrderPreauthorizeQueryFulfillment(clt *core.SDKClient, req *alicom.AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIRequest, session string) (*alicom.AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIResponse, error) {
     var resp alicom.AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.openim.tribe.expel
 
 OPENIM群踢出成员
 */
-func TaobaoOpenimTribeExpel(clt *core.SDKClient, req *openim.TaobaoOpenimTribeExpelRequest, session string) (*openim.TaobaoOpenimTribeExpelAPIResponse, error) {
+func TaobaoOpenimTribeExpel(clt *core.SDKClient, req *openim.TaobaoOpenimTribeExpelAPIRequest, session string) (*openim.TaobaoOpenimTribeExpelAPIResponse, error) {
     var resp openim.TaobaoOpenimTribeExpelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

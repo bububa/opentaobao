@@ -12,26 +12,26 @@ cainiao.bms.order.consign.confirm
 
 BMS出库后，通知ISV
 */
-type CainiaoBmsOrderConsignConfirmRequest struct {
+type CainiaoBmsOrderConsignConfirmAPIRequest struct {
     model.Params
     // 通知消息主体
     _content   *BmsConsignOrderConfirm
 }
 
-// 初始化CainiaoBmsOrderConsignConfirmRequest对象
-func NewCainiaoBmsOrderConsignConfirmRequest() *CainiaoBmsOrderConsignConfirmRequest{
-    return &CainiaoBmsOrderConsignConfirmRequest{
+// 初始化CainiaoBmsOrderConsignConfirmAPIRequest对象
+func NewCainiaoBmsOrderConsignConfirmRequest() *CainiaoBmsOrderConsignConfirmAPIRequest{
+    return &CainiaoBmsOrderConsignConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoBmsOrderConsignConfirmRequest) GetApiMethodName() string {
+func (r CainiaoBmsOrderConsignConfirmAPIRequest) GetApiMethodName() string {
     return "cainiao.bms.order.consign.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoBmsOrderConsignConfirmRequest) GetApiParams() url.Values {
+func (r CainiaoBmsOrderConsignConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoBmsOrderConsignConfirmRequest) GetApiParams() url.Values {
 }
 // Content Setter
 // 通知消息主体
-func (r *CainiaoBmsOrderConsignConfirmRequest) SetContent(_content *BmsConsignOrderConfirm) error {
+func (r *CainiaoBmsOrderConsignConfirmAPIRequest) SetContent(_content *BmsConsignOrderConfirm) error {
     r._content = _content
     r.Set("content", _content)
     return nil
 }
 
 // Content Getter
-func (r CainiaoBmsOrderConsignConfirmRequest) GetContent() *BmsConsignOrderConfirm {
+func (r CainiaoBmsOrderConsignConfirmAPIRequest) GetContent() *BmsConsignOrderConfirm {
     return r._content
 }

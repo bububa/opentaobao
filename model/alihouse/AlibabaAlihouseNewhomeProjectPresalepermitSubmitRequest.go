@@ -12,26 +12,26 @@ alibaba.alihouse.newhome.project.presalepermit.submit
 
 提交楼盘预售证信息
 */
-type AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest struct {
+type AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest struct {
     model.Params
     // 预售证对象
     _preSalePermitDto   *ProjectPreSalePermitDTO
 }
 
-// 初始化AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest对象
-func NewAlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest() *AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest{
-    return &AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest{
+// 初始化AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest() *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest{
+    return &AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.project.presalepermit.submit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest) GetApiParams() 
 }
 // PreSalePermitDto Setter
 // 预售证对象
-func (r *AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest) SetPreSalePermitDto(_preSalePermitDto *ProjectPreSalePermitDTO) error {
+func (r *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) SetPreSalePermitDto(_preSalePermitDto *ProjectPreSalePermitDTO) error {
     r._preSalePermitDto = _preSalePermitDto
     r.Set("pre_sale_permit_dto", _preSalePermitDto)
     return nil
 }
 
 // PreSalePermitDto Getter
-func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest) GetPreSalePermitDto() *ProjectPreSalePermitDTO {
+func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) GetPreSalePermitDto() *ProjectPreSalePermitDTO {
     return r._preSalePermitDto
 }

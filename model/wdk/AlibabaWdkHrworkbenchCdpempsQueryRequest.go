@@ -12,7 +12,7 @@ alibaba.wdk.hrworkbench.cdpemps.query
 
 给盒马可靠软件服务商Cdp系统，做非阿里编员工数据一致性核对检查
 */
-type AlibabaWdkHrworkbenchCdpempsQueryRequest struct {
+type AlibabaWdkHrworkbenchCdpempsQueryAPIRequest struct {
     model.Params
     // 页面大小
     _pageSize   int64
@@ -24,20 +24,20 @@ type AlibabaWdkHrworkbenchCdpempsQueryRequest struct {
     _currentPage   int64
 }
 
-// 初始化AlibabaWdkHrworkbenchCdpempsQueryRequest对象
-func NewAlibabaWdkHrworkbenchCdpempsQueryRequest() *AlibabaWdkHrworkbenchCdpempsQueryRequest{
-    return &AlibabaWdkHrworkbenchCdpempsQueryRequest{
+// 初始化AlibabaWdkHrworkbenchCdpempsQueryAPIRequest对象
+func NewAlibabaWdkHrworkbenchCdpempsQueryRequest() *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest{
+    return &AlibabaWdkHrworkbenchCdpempsQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkHrworkbenchCdpempsQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.hrworkbench.cdpemps.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkHrworkbenchCdpempsQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaWdkHrworkbenchCdpempsQueryRequest) GetApiParams() url.Values {
 }
 // PageSize Setter
 // 页面大小
-func (r *AlibabaWdkHrworkbenchCdpempsQueryRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r AlibabaWdkHrworkbenchCdpempsQueryRequest) GetPageSize() int64 {
+func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // BizKey Setter
 // 业务授权key
-func (r *AlibabaWdkHrworkbenchCdpempsQueryRequest) SetBizKey(_bizKey string) error {
+func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetBizKey(_bizKey string) error {
     r._bizKey = _bizKey
     r.Set("biz_key", _bizKey)
     return nil
 }
 
 // BizKey Getter
-func (r AlibabaWdkHrworkbenchCdpempsQueryRequest) GetBizKey() string {
+func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetBizKey() string {
     return r._bizKey
 }
 // BizCode Setter
 // 业务授权code
-func (r *AlibabaWdkHrworkbenchCdpempsQueryRequest) SetBizCode(_bizCode string) error {
+func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetBizCode(_bizCode string) error {
     r._bizCode = _bizCode
     r.Set("biz_code", _bizCode)
     return nil
 }
 
 // BizCode Getter
-func (r AlibabaWdkHrworkbenchCdpempsQueryRequest) GetBizCode() string {
+func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetBizCode() string {
     return r._bizCode
 }
 // CurrentPage Setter
 // 起始页
-func (r *AlibabaWdkHrworkbenchCdpempsQueryRequest) SetCurrentPage(_currentPage int64) error {
+func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
     r._currentPage = _currentPage
     r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
-func (r AlibabaWdkHrworkbenchCdpempsQueryRequest) GetCurrentPage() int64 {
+func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetCurrentPage() int64 {
     return r._currentPage
 }

@@ -13,7 +13,7 @@ alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo
 HSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService
 HSF方法名称：insertActualUserLocationInfo
 */
-func AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfo(clt *core.SDKClient, req *campus.AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest, session string) (*campus.AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIResponse, error) {
+func AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfo(clt *core.SDKClient, req *campus.AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest, session string) (*campus.AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIResponse, error) {
     var resp campus.AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

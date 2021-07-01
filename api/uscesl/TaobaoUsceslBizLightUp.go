@@ -11,7 +11,7 @@ taobao.uscesl.biz.light.up
 
 价签LED等点亮
 */
-func TaobaoUsceslBizLightUp(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizLightUpRequest, session string) (*uscesl.TaobaoUsceslBizLightUpAPIResponse, error) {
+func TaobaoUsceslBizLightUp(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizLightUpAPIRequest, session string) (*uscesl.TaobaoUsceslBizLightUpAPIResponse, error) {
     var resp uscesl.TaobaoUsceslBizLightUpAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

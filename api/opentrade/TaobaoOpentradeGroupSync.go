@@ -11,7 +11,7 @@ taobao.opentrade.group.sync
 
 组团购场景中创建团购活动
 */
-func TaobaoOpentradeGroupSync(clt *core.SDKClient, req *opentrade.TaobaoOpentradeGroupSyncRequest, session string) (*opentrade.TaobaoOpentradeGroupSyncAPIResponse, error) {
+func TaobaoOpentradeGroupSync(clt *core.SDKClient, req *opentrade.TaobaoOpentradeGroupSyncAPIRequest, session string) (*opentrade.TaobaoOpentradeGroupSyncAPIResponse, error) {
     var resp opentrade.TaobaoOpentradeGroupSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

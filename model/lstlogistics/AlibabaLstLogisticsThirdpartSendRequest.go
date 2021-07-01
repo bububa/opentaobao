@@ -12,26 +12,26 @@ alibaba.lst.logistics.thirdpart.send
 
 异地云仓的订单，使用第三方物流的发货方式来变更订单发货状态
 */
-type AlibabaLstLogisticsThirdpartSendRequest struct {
+type AlibabaLstLogisticsThirdpartSendAPIRequest struct {
     model.Params
     // 入参
     _param   *SendOfflineOrderParam
 }
 
-// 初始化AlibabaLstLogisticsThirdpartSendRequest对象
-func NewAlibabaLstLogisticsThirdpartSendRequest() *AlibabaLstLogisticsThirdpartSendRequest{
-    return &AlibabaLstLogisticsThirdpartSendRequest{
+// 初始化AlibabaLstLogisticsThirdpartSendAPIRequest对象
+func NewAlibabaLstLogisticsThirdpartSendRequest() *AlibabaLstLogisticsThirdpartSendAPIRequest{
+    return &AlibabaLstLogisticsThirdpartSendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstLogisticsThirdpartSendRequest) GetApiMethodName() string {
+func (r AlibabaLstLogisticsThirdpartSendAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.logistics.thirdpart.send"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstLogisticsThirdpartSendRequest) GetApiParams() url.Values {
+func (r AlibabaLstLogisticsThirdpartSendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstLogisticsThirdpartSendRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaLstLogisticsThirdpartSendRequest) SetParam(_param *SendOfflineOrderParam) error {
+func (r *AlibabaLstLogisticsThirdpartSendAPIRequest) SetParam(_param *SendOfflineOrderParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaLstLogisticsThirdpartSendRequest) GetParam() *SendOfflineOrderParam {
+func (r AlibabaLstLogisticsThirdpartSendAPIRequest) GetParam() *SendOfflineOrderParam {
     return r._param
 }

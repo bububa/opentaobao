@@ -11,7 +11,7 @@ alibaba.alsc.crm.open.assert.verify
 
 核销储值，积分，券资产
 */
-func AlibabaAlscCrmOpenAssertVerify(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenAssertVerifyRequest, session string) (*alsc.AlibabaAlscCrmOpenAssertVerifyAPIResponse, error) {
+func AlibabaAlscCrmOpenAssertVerify(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenAssertVerifyAPIRequest, session string) (*alsc.AlibabaAlscCrmOpenAssertVerifyAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmOpenAssertVerifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

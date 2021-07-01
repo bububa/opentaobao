@@ -12,7 +12,7 @@ taobao.vmarket.eticket.codes.get
 
 查询某个订单的所有码的列表
 */
-type TaobaoVmarketEticketCodesGetRequest struct {
+type TaobaoVmarketEticketCodesGetAPIRequest struct {
     model.Params
     // 订单号
     _orderId   int64
@@ -20,20 +20,20 @@ type TaobaoVmarketEticketCodesGetRequest struct {
     _codemerchantId   int64
 }
 
-// 初始化TaobaoVmarketEticketCodesGetRequest对象
-func NewTaobaoVmarketEticketCodesGetRequest() *TaobaoVmarketEticketCodesGetRequest{
-    return &TaobaoVmarketEticketCodesGetRequest{
+// 初始化TaobaoVmarketEticketCodesGetAPIRequest对象
+func NewTaobaoVmarketEticketCodesGetRequest() *TaobaoVmarketEticketCodesGetAPIRequest{
+    return &TaobaoVmarketEticketCodesGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoVmarketEticketCodesGetRequest) GetApiMethodName() string {
+func (r TaobaoVmarketEticketCodesGetAPIRequest) GetApiMethodName() string {
     return "taobao.vmarket.eticket.codes.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoVmarketEticketCodesGetRequest) GetApiParams() url.Values {
+func (r TaobaoVmarketEticketCodesGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoVmarketEticketCodesGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单号
-func (r *TaobaoVmarketEticketCodesGetRequest) SetOrderId(_orderId int64) error {
+func (r *TaobaoVmarketEticketCodesGetAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r TaobaoVmarketEticketCodesGetRequest) GetOrderId() int64 {
+func (r TaobaoVmarketEticketCodesGetAPIRequest) GetOrderId() int64 {
     return r._orderId
 }
 // CodemerchantId Setter
 // 码商ID
-func (r *TaobaoVmarketEticketCodesGetRequest) SetCodemerchantId(_codemerchantId int64) error {
+func (r *TaobaoVmarketEticketCodesGetAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
     r._codemerchantId = _codemerchantId
     r.Set("codemerchant_id", _codemerchantId)
     return nil
 }
 
 // CodemerchantId Getter
-func (r TaobaoVmarketEticketCodesGetRequest) GetCodemerchantId() int64 {
+func (r TaobaoVmarketEticketCodesGetAPIRequest) GetCodemerchantId() int64 {
     return r._codemerchantId
 }

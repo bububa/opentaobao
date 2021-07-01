@@ -12,26 +12,26 @@ taobao.baichuan.openaccount.logindoublecheck
 
 百川登录二次验证
 */
-type TaobaoBaichuanOpenaccountLogindoublecheckRequest struct {
+type TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest struct {
     model.Params
     // name
     _name   string
 }
 
-// 初始化TaobaoBaichuanOpenaccountLogindoublecheckRequest对象
-func NewTaobaoBaichuanOpenaccountLogindoublecheckRequest() *TaobaoBaichuanOpenaccountLogindoublecheckRequest{
-    return &TaobaoBaichuanOpenaccountLogindoublecheckRequest{
+// 初始化TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest对象
+func NewTaobaoBaichuanOpenaccountLogindoublecheckRequest() *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest{
+    return &TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanOpenaccountLogindoublecheckRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) GetApiMethodName() string {
     return "taobao.baichuan.openaccount.logindoublecheck"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanOpenaccountLogindoublecheckRequest) GetApiParams() url.Values {
+func (r TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanOpenaccountLogindoublecheckRequest) GetApiParams() url.Val
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanOpenaccountLogindoublecheckRequest) SetName(_name string) error {
+func (r *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) SetName(_name string) error {
     r._name = _name
     r.Set("name", _name)
     return nil
 }
 
 // Name Getter
-func (r TaobaoBaichuanOpenaccountLogindoublecheckRequest) GetName() string {
+func (r TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) GetName() string {
     return r._name
 }

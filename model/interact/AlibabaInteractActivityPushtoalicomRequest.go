@@ -12,7 +12,7 @@ alibaba.interact.activity.pushtoalicom
 
 涉及到流量包的小铺isv，将活动推送到流量聚乐部
 */
-type AlibabaInteractActivityPushtoalicomRequest struct {
+type AlibabaInteractActivityPushtoalicomAPIRequest struct {
     model.Params
     // 推送到流量聚乐部的banner图
     _bannerUrl   string
@@ -20,20 +20,20 @@ type AlibabaInteractActivityPushtoalicomRequest struct {
     _bizId   string
 }
 
-// 初始化AlibabaInteractActivityPushtoalicomRequest对象
-func NewAlibabaInteractActivityPushtoalicomRequest() *AlibabaInteractActivityPushtoalicomRequest{
-    return &AlibabaInteractActivityPushtoalicomRequest{
+// 初始化AlibabaInteractActivityPushtoalicomAPIRequest对象
+func NewAlibabaInteractActivityPushtoalicomRequest() *AlibabaInteractActivityPushtoalicomAPIRequest{
+    return &AlibabaInteractActivityPushtoalicomAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractActivityPushtoalicomRequest) GetApiMethodName() string {
+func (r AlibabaInteractActivityPushtoalicomAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.activity.pushtoalicom"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractActivityPushtoalicomRequest) GetApiParams() url.Values {
+func (r AlibabaInteractActivityPushtoalicomAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaInteractActivityPushtoalicomRequest) GetApiParams() url.Values {
 }
 // BannerUrl Setter
 // 推送到流量聚乐部的banner图
-func (r *AlibabaInteractActivityPushtoalicomRequest) SetBannerUrl(_bannerUrl string) error {
+func (r *AlibabaInteractActivityPushtoalicomAPIRequest) SetBannerUrl(_bannerUrl string) error {
     r._bannerUrl = _bannerUrl
     r.Set("banner_url", _bannerUrl)
     return nil
 }
 
 // BannerUrl Getter
-func (r AlibabaInteractActivityPushtoalicomRequest) GetBannerUrl() string {
+func (r AlibabaInteractActivityPushtoalicomAPIRequest) GetBannerUrl() string {
     return r._bannerUrl
 }
 // BizId Setter
 // 推送到流量聚乐部的活动bizid
-func (r *AlibabaInteractActivityPushtoalicomRequest) SetBizId(_bizId string) error {
+func (r *AlibabaInteractActivityPushtoalicomAPIRequest) SetBizId(_bizId string) error {
     r._bizId = _bizId
     r.Set("biz_id", _bizId)
     return nil
 }
 
 // BizId Getter
-func (r AlibabaInteractActivityPushtoalicomRequest) GetBizId() string {
+func (r AlibabaInteractActivityPushtoalicomAPIRequest) GetBizId() string {
     return r._bizId
 }

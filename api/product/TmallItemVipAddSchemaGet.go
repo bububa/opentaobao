@@ -11,7 +11,7 @@ tmall.item.vip.add.schema.get
 
 获取vip商家发布商品的规则
 */
-func TmallItemVipAddSchemaGet(clt *core.SDKClient, req *product.TmallItemVipAddSchemaGetRequest, session string) (*product.TmallItemVipAddSchemaGetAPIResponse, error) {
+func TmallItemVipAddSchemaGet(clt *core.SDKClient, req *product.TmallItemVipAddSchemaGetAPIRequest, session string) (*product.TmallItemVipAddSchemaGetAPIResponse, error) {
     var resp product.TmallItemVipAddSchemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.icbu.rfq.recommend
 
 rfq推荐
 */
-type AlibabaIcbuRfqRecommendRequest struct {
+type AlibabaIcbuRfqRecommendAPIRequest struct {
     model.Params
     // 入参数据
     _queryDto   *QueryDTO
 }
 
-// 初始化AlibabaIcbuRfqRecommendRequest对象
-func NewAlibabaIcbuRfqRecommendRequest() *AlibabaIcbuRfqRecommendRequest{
-    return &AlibabaIcbuRfqRecommendRequest{
+// 初始化AlibabaIcbuRfqRecommendAPIRequest对象
+func NewAlibabaIcbuRfqRecommendRequest() *AlibabaIcbuRfqRecommendAPIRequest{
+    return &AlibabaIcbuRfqRecommendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuRfqRecommendRequest) GetApiMethodName() string {
+func (r AlibabaIcbuRfqRecommendAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.rfq.recommend"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuRfqRecommendRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuRfqRecommendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIcbuRfqRecommendRequest) GetApiParams() url.Values {
 }
 // QueryDto Setter
 // 入参数据
-func (r *AlibabaIcbuRfqRecommendRequest) SetQueryDto(_queryDto *QueryDTO) error {
+func (r *AlibabaIcbuRfqRecommendAPIRequest) SetQueryDto(_queryDto *QueryDTO) error {
     r._queryDto = _queryDto
     r.Set("query_dto", _queryDto)
     return nil
 }
 
 // QueryDto Getter
-func (r AlibabaIcbuRfqRecommendRequest) GetQueryDto() *QueryDTO {
+func (r AlibabaIcbuRfqRecommendAPIRequest) GetQueryDto() *QueryDTO {
     return r._queryDto
 }

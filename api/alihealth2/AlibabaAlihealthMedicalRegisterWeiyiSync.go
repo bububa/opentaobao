@@ -11,7 +11,7 @@ alibaba.alihealth.medical.register.weiyi.sync
 
 微医号源数据回传
 */
-func AlibabaAlihealthMedicalRegisterWeiyiSync(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalRegisterWeiyiSyncRequest, session string) (*alihealth2.AlibabaAlihealthMedicalRegisterWeiyiSyncAPIResponse, error) {
+func AlibabaAlihealthMedicalRegisterWeiyiSync(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest, session string) (*alihealth2.AlibabaAlihealthMedicalRegisterWeiyiSyncAPIResponse, error) {
     var resp alihealth2.AlibabaAlihealthMedicalRegisterWeiyiSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

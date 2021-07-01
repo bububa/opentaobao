@@ -11,7 +11,7 @@ alibaba.alihealth.drugcode.drugfactory.exportproject
 
 导出临床项目及其药品目录
 */
-func AlibabaAlihealthDrugcodeDrugfactoryExportproject(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIResponse, error) {
+func AlibabaAlihealthDrugcodeDrugfactoryExportproject(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ alitrip.merchant.galaxy.wechat.info
 
 获取微信用户的openId和unionId
 */
-type AlitripMerchantGalaxyWechatInfoRequest struct {
+type AlitripMerchantGalaxyWechatInfoAPIRequest struct {
     model.Params
     // 租户的id
     _tenantKey   string
@@ -20,20 +20,20 @@ type AlitripMerchantGalaxyWechatInfoRequest struct {
     _code   string
 }
 
-// 初始化AlitripMerchantGalaxyWechatInfoRequest对象
-func NewAlitripMerchantGalaxyWechatInfoRequest() *AlitripMerchantGalaxyWechatInfoRequest{
-    return &AlitripMerchantGalaxyWechatInfoRequest{
+// 初始化AlitripMerchantGalaxyWechatInfoAPIRequest对象
+func NewAlitripMerchantGalaxyWechatInfoRequest() *AlitripMerchantGalaxyWechatInfoAPIRequest{
+    return &AlitripMerchantGalaxyWechatInfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripMerchantGalaxyWechatInfoRequest) GetApiMethodName() string {
+func (r AlitripMerchantGalaxyWechatInfoAPIRequest) GetApiMethodName() string {
     return "alitrip.merchant.galaxy.wechat.info"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripMerchantGalaxyWechatInfoRequest) GetApiParams() url.Values {
+func (r AlitripMerchantGalaxyWechatInfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyWechatInfoRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户的id
-func (r *AlitripMerchantGalaxyWechatInfoRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripMerchantGalaxyWechatInfoAPIRequest) SetTenantKey(_tenantKey string) error {
     r._tenantKey = _tenantKey
     r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
-func (r AlitripMerchantGalaxyWechatInfoRequest) GetTenantKey() string {
+func (r AlitripMerchantGalaxyWechatInfoAPIRequest) GetTenantKey() string {
     return r._tenantKey
 }
 // Code Setter
 // 微信小程序获取的code
-func (r *AlitripMerchantGalaxyWechatInfoRequest) SetCode(_code string) error {
+func (r *AlitripMerchantGalaxyWechatInfoAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlitripMerchantGalaxyWechatInfoRequest) GetCode() string {
+func (r AlitripMerchantGalaxyWechatInfoAPIRequest) GetCode() string {
     return r._code
 }

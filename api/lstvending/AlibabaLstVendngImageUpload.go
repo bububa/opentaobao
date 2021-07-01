@@ -11,7 +11,7 @@ alibaba.lst.vendng.image.upload
 
 零售通自动售货机商品图片上传接口，主要为ISV厂商提供图片同步的通道，从而建立统一的商品图片库。
 */
-func AlibabaLstVendngImageUpload(clt *core.SDKClient, req *lstvending.AlibabaLstVendngImageUploadRequest, session string) (*lstvending.AlibabaLstVendngImageUploadAPIResponse, error) {
+func AlibabaLstVendngImageUpload(clt *core.SDKClient, req *lstvending.AlibabaLstVendngImageUploadAPIRequest, session string) (*lstvending.AlibabaLstVendngImageUploadAPIResponse, error) {
     var resp lstvending.AlibabaLstVendngImageUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

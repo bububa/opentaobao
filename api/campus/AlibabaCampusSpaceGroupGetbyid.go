@@ -13,7 +13,7 @@ alibaba.campus.space.group.getbyid
 HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService
 HSF方法名称：getById
 */
-func AlibabaCampusSpaceGroupGetbyid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceGroupGetbyidRequest, session string) (*campus.AlibabaCampusSpaceGroupGetbyidAPIResponse, error) {
+func AlibabaCampusSpaceGroupGetbyid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceGroupGetbyidAPIRequest, session string) (*campus.AlibabaCampusSpaceGroupGetbyidAPIResponse, error) {
     var resp campus.AlibabaCampusSpaceGroupGetbyidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

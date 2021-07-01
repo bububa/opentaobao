@@ -12,26 +12,26 @@ taobao.idle.recycle.refund.cancleapply
 
 回收商的回收订单取消退款申请
 */
-type TaobaoIdleRecycleRefundCancleapplyRequest struct {
+type TaobaoIdleRecycleRefundCancleapplyAPIRequest struct {
     model.Params
     // 订单号
     _bizOrderId   int64
 }
 
-// 初始化TaobaoIdleRecycleRefundCancleapplyRequest对象
-func NewTaobaoIdleRecycleRefundCancleapplyRequest() *TaobaoIdleRecycleRefundCancleapplyRequest{
-    return &TaobaoIdleRecycleRefundCancleapplyRequest{
+// 初始化TaobaoIdleRecycleRefundCancleapplyAPIRequest对象
+func NewTaobaoIdleRecycleRefundCancleapplyRequest() *TaobaoIdleRecycleRefundCancleapplyAPIRequest{
+    return &TaobaoIdleRecycleRefundCancleapplyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoIdleRecycleRefundCancleapplyRequest) GetApiMethodName() string {
+func (r TaobaoIdleRecycleRefundCancleapplyAPIRequest) GetApiMethodName() string {
     return "taobao.idle.recycle.refund.cancleapply"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoIdleRecycleRefundCancleapplyRequest) GetApiParams() url.Values {
+func (r TaobaoIdleRecycleRefundCancleapplyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoIdleRecycleRefundCancleapplyRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 订单号
-func (r *TaobaoIdleRecycleRefundCancleapplyRequest) SetBizOrderId(_bizOrderId int64) error {
+func (r *TaobaoIdleRecycleRefundCancleapplyAPIRequest) SetBizOrderId(_bizOrderId int64) error {
     r._bizOrderId = _bizOrderId
     r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
-func (r TaobaoIdleRecycleRefundCancleapplyRequest) GetBizOrderId() int64 {
+func (r TaobaoIdleRecycleRefundCancleapplyAPIRequest) GetBizOrderId() int64 {
     return r._bizOrderId
 }

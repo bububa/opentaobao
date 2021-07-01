@@ -11,7 +11,7 @@ taobao.qimen.stockout.create
 
 ERP调用奇门接口，创建出库单信息
 */
-func TaobaoQimenStockoutCreate(clt *core.SDKClient, req *qimen.TaobaoQimenStockoutCreateRequest, session string) (*qimen.TaobaoQimenStockoutCreateAPIResponse, error) {
+func TaobaoQimenStockoutCreate(clt *core.SDKClient, req *qimen.TaobaoQimenStockoutCreateAPIRequest, session string) (*qimen.TaobaoQimenStockoutCreateAPIResponse, error) {
     var resp qimen.TaobaoQimenStockoutCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

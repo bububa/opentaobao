@@ -12,26 +12,26 @@ alibaba.mozi.fusion.addorupdate.employee.account
 
 添加人员和账号复合接口
 */
-type AlibabaMoziFusionAddorupdateEmployeeAccountRequest struct {
+type AlibabaMoziFusionAddorupdateEmployeeAccountAPIRequest struct {
     model.Params
     // 人员账号
     _employeeAccount   *AddOrUpdateTenantEmployeeAndAccountRequest
 }
 
-// 初始化AlibabaMoziFusionAddorupdateEmployeeAccountRequest对象
-func NewAlibabaMoziFusionAddorupdateEmployeeAccountRequest() *AlibabaMoziFusionAddorupdateEmployeeAccountRequest{
-    return &AlibabaMoziFusionAddorupdateEmployeeAccountRequest{
+// 初始化AlibabaMoziFusionAddorupdateEmployeeAccountAPIRequest对象
+func NewAlibabaMoziFusionAddorupdateEmployeeAccountRequest() *AlibabaMoziFusionAddorupdateEmployeeAccountAPIRequest{
+    return &AlibabaMoziFusionAddorupdateEmployeeAccountAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziFusionAddorupdateEmployeeAccountRequest) GetApiMethodName() string {
+func (r AlibabaMoziFusionAddorupdateEmployeeAccountAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.fusion.addorupdate.employee.account"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziFusionAddorupdateEmployeeAccountRequest) GetApiParams() url.Values {
+func (r AlibabaMoziFusionAddorupdateEmployeeAccountAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziFusionAddorupdateEmployeeAccountRequest) GetApiParams() url.V
 }
 // EmployeeAccount Setter
 // 人员账号
-func (r *AlibabaMoziFusionAddorupdateEmployeeAccountRequest) SetEmployeeAccount(_employeeAccount *AddOrUpdateTenantEmployeeAndAccountRequest) error {
+func (r *AlibabaMoziFusionAddorupdateEmployeeAccountAPIRequest) SetEmployeeAccount(_employeeAccount *AddOrUpdateTenantEmployeeAndAccountRequest) error {
     r._employeeAccount = _employeeAccount
     r.Set("employee_account", _employeeAccount)
     return nil
 }
 
 // EmployeeAccount Getter
-func (r AlibabaMoziFusionAddorupdateEmployeeAccountRequest) GetEmployeeAccount() *AddOrUpdateTenantEmployeeAndAccountRequest {
+func (r AlibabaMoziFusionAddorupdateEmployeeAccountAPIRequest) GetEmployeeAccount() *AddOrUpdateTenantEmployeeAndAccountRequest {
     return r._employeeAccount
 }

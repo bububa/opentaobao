@@ -11,7 +11,7 @@ taobao.nrrs.acceptance.task.updateResult
 
 智慧门店商家验收任务检查相关接口-更新支付宝的验收结果。
 */
-func TaobaoNrrsAcceptanceTaskUpdateResult(clt *core.SDKClient, req *smartstore.TaobaoNrrsAcceptanceTaskUpdateResultRequest, session string) (*smartstore.TaobaoNrrsAcceptanceTaskUpdateResultAPIResponse, error) {
+func TaobaoNrrsAcceptanceTaskUpdateResult(clt *core.SDKClient, req *smartstore.TaobaoNrrsAcceptanceTaskUpdateResultAPIRequest, session string) (*smartstore.TaobaoNrrsAcceptanceTaskUpdateResultAPIResponse, error) {
     var resp smartstore.TaobaoNrrsAcceptanceTaskUpdateResultAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.inventory.warehouse.manage
 
 创建商家仓或者更新商家仓信息
 */
-type TaobaoInventoryWarehouseManageRequest struct {
+type TaobaoInventoryWarehouseManageAPIRequest struct {
     model.Params
     // 仓库信息
     _wareHouseDto   *WareHouseDTO
 }
 
-// 初始化TaobaoInventoryWarehouseManageRequest对象
-func NewTaobaoInventoryWarehouseManageRequest() *TaobaoInventoryWarehouseManageRequest{
-    return &TaobaoInventoryWarehouseManageRequest{
+// 初始化TaobaoInventoryWarehouseManageAPIRequest对象
+func NewTaobaoInventoryWarehouseManageRequest() *TaobaoInventoryWarehouseManageAPIRequest{
+    return &TaobaoInventoryWarehouseManageAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoInventoryWarehouseManageRequest) GetApiMethodName() string {
+func (r TaobaoInventoryWarehouseManageAPIRequest) GetApiMethodName() string {
     return "taobao.inventory.warehouse.manage"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoInventoryWarehouseManageRequest) GetApiParams() url.Values {
+func (r TaobaoInventoryWarehouseManageAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoInventoryWarehouseManageRequest) GetApiParams() url.Values {
 }
 // WareHouseDto Setter
 // 仓库信息
-func (r *TaobaoInventoryWarehouseManageRequest) SetWareHouseDto(_wareHouseDto *WareHouseDTO) error {
+func (r *TaobaoInventoryWarehouseManageAPIRequest) SetWareHouseDto(_wareHouseDto *WareHouseDTO) error {
     r._wareHouseDto = _wareHouseDto
     r.Set("ware_house_dto", _wareHouseDto)
     return nil
 }
 
 // WareHouseDto Getter
-func (r TaobaoInventoryWarehouseManageRequest) GetWareHouseDto() *WareHouseDTO {
+func (r TaobaoInventoryWarehouseManageAPIRequest) GetWareHouseDto() *WareHouseDTO {
     return r._wareHouseDto
 }

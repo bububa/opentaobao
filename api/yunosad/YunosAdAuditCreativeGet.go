@@ -11,7 +11,7 @@ yunos.ad.audit.creative.get
 
 获取单个创意审核状态
 */
-func YunosAdAuditCreativeGet(clt *core.SDKClient, req *yunosad.YunosAdAuditCreativeGetRequest, session string) (*yunosad.YunosAdAuditCreativeGetAPIResponse, error) {
+func YunosAdAuditCreativeGet(clt *core.SDKClient, req *yunosad.YunosAdAuditCreativeGetAPIRequest, session string) (*yunosad.YunosAdAuditCreativeGetAPIResponse, error) {
     var resp yunosad.YunosAdAuditCreativeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

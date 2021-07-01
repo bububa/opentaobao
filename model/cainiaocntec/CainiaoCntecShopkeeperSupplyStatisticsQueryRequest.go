@@ -12,26 +12,26 @@ cainiao.cntec.shopkeeper.supply.statistics.query
 
 查询门店售卖商品统计数据
 */
-type CainiaoCntecShopkeeperSupplyStatisticsQueryRequest struct {
+type CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest struct {
     model.Params
     // 查询参数
     _queryActivityDto   *QueryActivityDTO
 }
 
-// 初始化CainiaoCntecShopkeeperSupplyStatisticsQueryRequest对象
-func NewCainiaoCntecShopkeeperSupplyStatisticsQueryRequest() *CainiaoCntecShopkeeperSupplyStatisticsQueryRequest{
-    return &CainiaoCntecShopkeeperSupplyStatisticsQueryRequest{
+// 初始化CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest对象
+func NewCainiaoCntecShopkeeperSupplyStatisticsQueryRequest() *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest{
+    return &CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCntecShopkeeperSupplyStatisticsQueryRequest) GetApiMethodName() string {
+func (r CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) GetApiMethodName() string {
     return "cainiao.cntec.shopkeeper.supply.statistics.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCntecShopkeeperSupplyStatisticsQueryRequest) GetApiParams() url.Values {
+func (r CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoCntecShopkeeperSupplyStatisticsQueryRequest) GetApiParams() url.V
 }
 // QueryActivityDto Setter
 // 查询参数
-func (r *CainiaoCntecShopkeeperSupplyStatisticsQueryRequest) SetQueryActivityDto(_queryActivityDto *QueryActivityDTO) error {
+func (r *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) SetQueryActivityDto(_queryActivityDto *QueryActivityDTO) error {
     r._queryActivityDto = _queryActivityDto
     r.Set("query_activity_dto", _queryActivityDto)
     return nil
 }
 
 // QueryActivityDto Getter
-func (r CainiaoCntecShopkeeperSupplyStatisticsQueryRequest) GetQueryActivityDto() *QueryActivityDTO {
+func (r CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) GetQueryActivityDto() *QueryActivityDTO {
     return r._queryActivityDto
 }

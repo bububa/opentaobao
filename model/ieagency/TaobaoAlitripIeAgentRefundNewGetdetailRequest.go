@@ -12,26 +12,26 @@ taobao.alitrip.ie.agent.refund.new.getdetail
 
 查询申请单详情
 */
-type TaobaoAlitripIeAgentRefundNewGetdetailRequest struct {
+type TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest struct {
     model.Params
     // 请求
     _paramRefundOrderQueryDetailRq   *RefundOrderQueryDetailRq
 }
 
-// 初始化TaobaoAlitripIeAgentRefundNewGetdetailRequest对象
-func NewTaobaoAlitripIeAgentRefundNewGetdetailRequest() *TaobaoAlitripIeAgentRefundNewGetdetailRequest{
-    return &TaobaoAlitripIeAgentRefundNewGetdetailRequest{
+// 初始化TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest对象
+func NewTaobaoAlitripIeAgentRefundNewGetdetailRequest() *TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest{
+    return &TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripIeAgentRefundNewGetdetailRequest) GetApiMethodName() string {
+func (r TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.ie.agent.refund.new.getdetail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripIeAgentRefundNewGetdetailRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripIeAgentRefundNewGetdetailRequest) GetApiParams() url.Values
 }
 // ParamRefundOrderQueryDetailRq Setter
 // 请求
-func (r *TaobaoAlitripIeAgentRefundNewGetdetailRequest) SetParamRefundOrderQueryDetailRq(_paramRefundOrderQueryDetailRq *RefundOrderQueryDetailRq) error {
+func (r *TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest) SetParamRefundOrderQueryDetailRq(_paramRefundOrderQueryDetailRq *RefundOrderQueryDetailRq) error {
     r._paramRefundOrderQueryDetailRq = _paramRefundOrderQueryDetailRq
     r.Set("param_refund_order_query_detail_rq", _paramRefundOrderQueryDetailRq)
     return nil
 }
 
 // ParamRefundOrderQueryDetailRq Getter
-func (r TaobaoAlitripIeAgentRefundNewGetdetailRequest) GetParamRefundOrderQueryDetailRq() *RefundOrderQueryDetailRq {
+func (r TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest) GetParamRefundOrderQueryDetailRq() *RefundOrderQueryDetailRq {
     return r._paramRefundOrderQueryDetailRq
 }

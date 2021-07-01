@@ -11,7 +11,7 @@ alibaba.tmallgenie.scp.plan.bom.upload
 
 计划BOM同步
 */
-func AlibabaTmallgenieScpPlanBomUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanBomUploadRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanBomUploadAPIResponse, error) {
+func AlibabaTmallgenieScpPlanBomUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanBomUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanBomUploadAPIResponse, error) {
     var resp tmallgeniescp.AlibabaTmallgenieScpPlanBomUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

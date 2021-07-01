@@ -12,26 +12,26 @@ taobao.shopcats.list.get
 
 获取淘宝面向买家的浏览导航类目（跟后台卖家商品管理的类目有差异）
 */
-type TaobaoShopcatsListGetRequest struct {
+type TaobaoShopcatsListGetAPIRequest struct {
     model.Params
     // 需要返回的字段列表，见ShopCat，默认返回：cid,parent_cid,name,is_parent
     _fields   []string
 }
 
-// 初始化TaobaoShopcatsListGetRequest对象
-func NewTaobaoShopcatsListGetRequest() *TaobaoShopcatsListGetRequest{
-    return &TaobaoShopcatsListGetRequest{
+// 初始化TaobaoShopcatsListGetAPIRequest对象
+func NewTaobaoShopcatsListGetRequest() *TaobaoShopcatsListGetAPIRequest{
+    return &TaobaoShopcatsListGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoShopcatsListGetRequest) GetApiMethodName() string {
+func (r TaobaoShopcatsListGetAPIRequest) GetApiMethodName() string {
     return "taobao.shopcats.list.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoShopcatsListGetRequest) GetApiParams() url.Values {
+func (r TaobaoShopcatsListGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoShopcatsListGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的字段列表，见ShopCat，默认返回：cid,parent_cid,name,is_parent
-func (r *TaobaoShopcatsListGetRequest) SetFields(_fields []string) error {
+func (r *TaobaoShopcatsListGetAPIRequest) SetFields(_fields []string) error {
     r._fields = _fields
     r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
-func (r TaobaoShopcatsListGetRequest) GetFields() []string {
+func (r TaobaoShopcatsListGetAPIRequest) GetFields() []string {
     return r._fields
 }

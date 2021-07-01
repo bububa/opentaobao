@@ -12,7 +12,7 @@ alibaba.ailab.tb.user.skill.oauth
 
 定制机厂商，在用户配网完成后，厂商调用此接口，写入特定技能的 Oauth 信息
 */
-type AlibabaAilabTbUserSkillOauthRequest struct {
+type AlibabaAilabTbUserSkillOauthAPIRequest struct {
     model.Params
     // taobao open id
     _taobaoId   string
@@ -24,20 +24,20 @@ type AlibabaAilabTbUserSkillOauthRequest struct {
     _refreshToken   string
 }
 
-// 初始化AlibabaAilabTbUserSkillOauthRequest对象
-func NewAlibabaAilabTbUserSkillOauthRequest() *AlibabaAilabTbUserSkillOauthRequest{
-    return &AlibabaAilabTbUserSkillOauthRequest{
+// 初始化AlibabaAilabTbUserSkillOauthAPIRequest对象
+func NewAlibabaAilabTbUserSkillOauthRequest() *AlibabaAilabTbUserSkillOauthAPIRequest{
+    return &AlibabaAilabTbUserSkillOauthAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAilabTbUserSkillOauthRequest) GetApiMethodName() string {
+func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetApiMethodName() string {
     return "alibaba.ailab.tb.user.skill.oauth"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAilabTbUserSkillOauthRequest) GetApiParams() url.Values {
+func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaAilabTbUserSkillOauthRequest) GetApiParams() url.Values {
 }
 // TaobaoId Setter
 // taobao open id
-func (r *AlibabaAilabTbUserSkillOauthRequest) SetTaobaoId(_taobaoId string) error {
+func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetTaobaoId(_taobaoId string) error {
     r._taobaoId = _taobaoId
     r.Set("taobao_id", _taobaoId)
     return nil
 }
 
 // TaobaoId Getter
-func (r AlibabaAilabTbUserSkillOauthRequest) GetTaobaoId() string {
+func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetTaobaoId() string {
     return r._taobaoId
 }
 // ExpireIn Setter
 // access token 过期时间，单位：秒
-func (r *AlibabaAilabTbUserSkillOauthRequest) SetExpireIn(_expireIn int64) error {
+func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetExpireIn(_expireIn int64) error {
     r._expireIn = _expireIn
     r.Set("expire_in", _expireIn)
     return nil
 }
 
 // ExpireIn Getter
-func (r AlibabaAilabTbUserSkillOauthRequest) GetExpireIn() int64 {
+func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetExpireIn() int64 {
     return r._expireIn
 }
 // OauthAccessToken Setter
 // access token
-func (r *AlibabaAilabTbUserSkillOauthRequest) SetOauthAccessToken(_oauthAccessToken string) error {
+func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetOauthAccessToken(_oauthAccessToken string) error {
     r._oauthAccessToken = _oauthAccessToken
     r.Set("oauth_access_token", _oauthAccessToken)
     return nil
 }
 
 // OauthAccessToken Getter
-func (r AlibabaAilabTbUserSkillOauthRequest) GetOauthAccessToken() string {
+func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetOauthAccessToken() string {
     return r._oauthAccessToken
 }
 // RefreshToken Setter
 // refresh token
-func (r *AlibabaAilabTbUserSkillOauthRequest) SetRefreshToken(_refreshToken string) error {
+func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetRefreshToken(_refreshToken string) error {
     r._refreshToken = _refreshToken
     r.Set("refresh_token", _refreshToken)
     return nil
 }
 
 // RefreshToken Getter
-func (r AlibabaAilabTbUserSkillOauthRequest) GetRefreshToken() string {
+func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetRefreshToken() string {
     return r._refreshToken
 }

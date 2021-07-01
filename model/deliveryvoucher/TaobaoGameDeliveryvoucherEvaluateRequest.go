@@ -12,26 +12,26 @@ taobao.game.deliveryvoucher.evaluate
 
 卡券ISV回传商品评价
 */
-type TaobaoGameDeliveryvoucherEvaluateRequest struct {
+type TaobaoGameDeliveryvoucherEvaluateAPIRequest struct {
     model.Params
     // 系统自动生成
     _param0   *VoucherEvaluateRequest
 }
 
-// 初始化TaobaoGameDeliveryvoucherEvaluateRequest对象
-func NewTaobaoGameDeliveryvoucherEvaluateRequest() *TaobaoGameDeliveryvoucherEvaluateRequest{
-    return &TaobaoGameDeliveryvoucherEvaluateRequest{
+// 初始化TaobaoGameDeliveryvoucherEvaluateAPIRequest对象
+func NewTaobaoGameDeliveryvoucherEvaluateRequest() *TaobaoGameDeliveryvoucherEvaluateAPIRequest{
+    return &TaobaoGameDeliveryvoucherEvaluateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoGameDeliveryvoucherEvaluateRequest) GetApiMethodName() string {
+func (r TaobaoGameDeliveryvoucherEvaluateAPIRequest) GetApiMethodName() string {
     return "taobao.game.deliveryvoucher.evaluate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoGameDeliveryvoucherEvaluateRequest) GetApiParams() url.Values {
+func (r TaobaoGameDeliveryvoucherEvaluateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoGameDeliveryvoucherEvaluateRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 系统自动生成
-func (r *TaobaoGameDeliveryvoucherEvaluateRequest) SetParam0(_param0 *VoucherEvaluateRequest) error {
+func (r *TaobaoGameDeliveryvoucherEvaluateAPIRequest) SetParam0(_param0 *VoucherEvaluateRequest) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoGameDeliveryvoucherEvaluateRequest) GetParam0() *VoucherEvaluateRequest {
+func (r TaobaoGameDeliveryvoucherEvaluateAPIRequest) GetParam0() *VoucherEvaluateRequest {
     return r._param0
 }

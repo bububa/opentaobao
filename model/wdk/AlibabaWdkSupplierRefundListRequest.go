@@ -12,26 +12,26 @@ alibaba.wdk.supplier.refund.list
 
 五道口按供应商拉取退款单
 */
-type AlibabaWdkSupplierRefundListRequest struct {
+type AlibabaWdkSupplierRefundListAPIRequest struct {
     model.Params
     // 查询参数
     _supplierRefundQueryRequest   *SupplierRefundQueryRequest
 }
 
-// 初始化AlibabaWdkSupplierRefundListRequest对象
-func NewAlibabaWdkSupplierRefundListRequest() *AlibabaWdkSupplierRefundListRequest{
-    return &AlibabaWdkSupplierRefundListRequest{
+// 初始化AlibabaWdkSupplierRefundListAPIRequest对象
+func NewAlibabaWdkSupplierRefundListRequest() *AlibabaWdkSupplierRefundListAPIRequest{
+    return &AlibabaWdkSupplierRefundListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSupplierRefundListRequest) GetApiMethodName() string {
+func (r AlibabaWdkSupplierRefundListAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.supplier.refund.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSupplierRefundListRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSupplierRefundListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSupplierRefundListRequest) GetApiParams() url.Values {
 }
 // SupplierRefundQueryRequest Setter
 // 查询参数
-func (r *AlibabaWdkSupplierRefundListRequest) SetSupplierRefundQueryRequest(_supplierRefundQueryRequest *SupplierRefundQueryRequest) error {
+func (r *AlibabaWdkSupplierRefundListAPIRequest) SetSupplierRefundQueryRequest(_supplierRefundQueryRequest *SupplierRefundQueryRequest) error {
     r._supplierRefundQueryRequest = _supplierRefundQueryRequest
     r.Set("supplier_refund_query_request", _supplierRefundQueryRequest)
     return nil
 }
 
 // SupplierRefundQueryRequest Getter
-func (r AlibabaWdkSupplierRefundListRequest) GetSupplierRefundQueryRequest() *SupplierRefundQueryRequest {
+func (r AlibabaWdkSupplierRefundListAPIRequest) GetSupplierRefundQueryRequest() *SupplierRefundQueryRequest {
     return r._supplierRefundQueryRequest
 }

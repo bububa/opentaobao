@@ -12,26 +12,26 @@ alibaba.alsc.crm.point.chkpntbypay
 
 校验支付链路中的积分抵扣是否合法
 */
-type AlibabaAlscCrmPointChkpntbypayRequest struct {
+type AlibabaAlscCrmPointChkpntbypayAPIRequest struct {
     model.Params
     // 入参
     _paramConsumePointByPayOpenReq   *ConsumePointByPayOpenReq
 }
 
-// 初始化AlibabaAlscCrmPointChkpntbypayRequest对象
-func NewAlibabaAlscCrmPointChkpntbypayRequest() *AlibabaAlscCrmPointChkpntbypayRequest{
-    return &AlibabaAlscCrmPointChkpntbypayRequest{
+// 初始化AlibabaAlscCrmPointChkpntbypayAPIRequest对象
+func NewAlibabaAlscCrmPointChkpntbypayRequest() *AlibabaAlscCrmPointChkpntbypayAPIRequest{
+    return &AlibabaAlscCrmPointChkpntbypayAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmPointChkpntbypayRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmPointChkpntbypayAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.point.chkpntbypay"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmPointChkpntbypayRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmPointChkpntbypayAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmPointChkpntbypayRequest) GetApiParams() url.Values {
 }
 // ParamConsumePointByPayOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmPointChkpntbypayRequest) SetParamConsumePointByPayOpenReq(_paramConsumePointByPayOpenReq *ConsumePointByPayOpenReq) error {
+func (r *AlibabaAlscCrmPointChkpntbypayAPIRequest) SetParamConsumePointByPayOpenReq(_paramConsumePointByPayOpenReq *ConsumePointByPayOpenReq) error {
     r._paramConsumePointByPayOpenReq = _paramConsumePointByPayOpenReq
     r.Set("param_consume_point_by_pay_open_req", _paramConsumePointByPayOpenReq)
     return nil
 }
 
 // ParamConsumePointByPayOpenReq Getter
-func (r AlibabaAlscCrmPointChkpntbypayRequest) GetParamConsumePointByPayOpenReq() *ConsumePointByPayOpenReq {
+func (r AlibabaAlscCrmPointChkpntbypayAPIRequest) GetParamConsumePointByPayOpenReq() *ConsumePointByPayOpenReq {
     return r._paramConsumePointByPayOpenReq
 }

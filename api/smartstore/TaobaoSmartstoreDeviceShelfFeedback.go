@@ -14,7 +14,7 @@ taobao.smartstore.device.shelf.feedback
 1. 回流的设备属于当前授权的用户
 2. 回流的设备属于当前应用添加
 */
-func TaobaoSmartstoreDeviceShelfFeedback(clt *core.SDKClient, req *smartstore.TaobaoSmartstoreDeviceShelfFeedbackRequest, session string) (*smartstore.TaobaoSmartstoreDeviceShelfFeedbackAPIResponse, error) {
+func TaobaoSmartstoreDeviceShelfFeedback(clt *core.SDKClient, req *smartstore.TaobaoSmartstoreDeviceShelfFeedbackAPIRequest, session string) (*smartstore.TaobaoSmartstoreDeviceShelfFeedbackAPIResponse, error) {
     var resp smartstore.TaobaoSmartstoreDeviceShelfFeedbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.icbu.product.schema.render
 
 获取ICBU商品发布的字段填写规则和单个商品对应填写数据，适用于单个商品编辑场景，不包括草稿。
 */
-type AlibabaIcbuProductSchemaRenderRequest struct {
+type AlibabaIcbuProductSchemaRenderAPIRequest struct {
     model.Params
     // 商品规则渲染请求
     _paramProductTopPublishRequest   *ProductTopPublishRequest
 }
 
-// 初始化AlibabaIcbuProductSchemaRenderRequest对象
-func NewAlibabaIcbuProductSchemaRenderRequest() *AlibabaIcbuProductSchemaRenderRequest{
-    return &AlibabaIcbuProductSchemaRenderRequest{
+// 初始化AlibabaIcbuProductSchemaRenderAPIRequest对象
+func NewAlibabaIcbuProductSchemaRenderRequest() *AlibabaIcbuProductSchemaRenderAPIRequest{
+    return &AlibabaIcbuProductSchemaRenderAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuProductSchemaRenderRequest) GetApiMethodName() string {
+func (r AlibabaIcbuProductSchemaRenderAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.product.schema.render"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuProductSchemaRenderRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuProductSchemaRenderAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIcbuProductSchemaRenderRequest) GetApiParams() url.Values {
 }
 // ParamProductTopPublishRequest Setter
 // 商品规则渲染请求
-func (r *AlibabaIcbuProductSchemaRenderRequest) SetParamProductTopPublishRequest(_paramProductTopPublishRequest *ProductTopPublishRequest) error {
+func (r *AlibabaIcbuProductSchemaRenderAPIRequest) SetParamProductTopPublishRequest(_paramProductTopPublishRequest *ProductTopPublishRequest) error {
     r._paramProductTopPublishRequest = _paramProductTopPublishRequest
     r.Set("param_product_top_publish_request", _paramProductTopPublishRequest)
     return nil
 }
 
 // ParamProductTopPublishRequest Getter
-func (r AlibabaIcbuProductSchemaRenderRequest) GetParamProductTopPublishRequest() *ProductTopPublishRequest {
+func (r AlibabaIcbuProductSchemaRenderAPIRequest) GetParamProductTopPublishRequest() *ProductTopPublishRequest {
     return r._paramProductTopPublishRequest
 }

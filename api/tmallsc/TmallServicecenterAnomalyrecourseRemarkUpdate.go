@@ -11,7 +11,7 @@ tmall.servicecenter.anomalyrecourse.remark.update
 
 一键求助服务商可以回传备注
 */
-func TmallServicecenterAnomalyrecourseRemarkUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateRequest, session string) (*tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse, error) {
+func TmallServicecenterAnomalyrecourseRemarkUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest, session string) (*tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse, error) {
     var resp tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

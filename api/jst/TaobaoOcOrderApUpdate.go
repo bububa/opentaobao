@@ -11,7 +11,7 @@ taobao.oc.order.ap.update
 
 对OC订单执行分账操作
 */
-func TaobaoOcOrderApUpdate(clt *core.SDKClient, req *jst.TaobaoOcOrderApUpdateRequest, session string) (*jst.TaobaoOcOrderApUpdateAPIResponse, error) {
+func TaobaoOcOrderApUpdate(clt *core.SDKClient, req *jst.TaobaoOcOrderApUpdateAPIRequest, session string) (*jst.TaobaoOcOrderApUpdateAPIResponse, error) {
     var resp jst.TaobaoOcOrderApUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

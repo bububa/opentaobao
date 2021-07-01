@@ -11,7 +11,7 @@ taobao.tvpay.order.precreate
 
 tv支付预下单
 */
-func TaobaoTvpayOrderPrecreate(clt *core.SDKClient, req *tvpay.TaobaoTvpayOrderPrecreateRequest, session string) (*tvpay.TaobaoTvpayOrderPrecreateAPIResponse, error) {
+func TaobaoTvpayOrderPrecreate(clt *core.SDKClient, req *tvpay.TaobaoTvpayOrderPrecreateAPIRequest, session string) (*tvpay.TaobaoTvpayOrderPrecreateAPIResponse, error) {
     var resp tvpay.TaobaoTvpayOrderPrecreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

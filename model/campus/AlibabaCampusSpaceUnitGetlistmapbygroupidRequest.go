@@ -14,7 +14,7 @@ alibaba.campus.space.unit.getlistmapbygroupid
 HSF接口名称：	com.alibaba.campus.api.space.service.top.SpaceUnitApiTopService
 HSF方法名称：	getListMapByGroupIds
 */
-type AlibabaCampusSpaceUnitGetlistmapbygroupidRequest struct {
+type AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest struct {
     model.Params
     // 用户环境
     _param0   *WorkBenchContext
@@ -22,20 +22,20 @@ type AlibabaCampusSpaceUnitGetlistmapbygroupidRequest struct {
     _param1   *SpaceUnitQuery
 }
 
-// 初始化AlibabaCampusSpaceUnitGetlistmapbygroupidRequest对象
-func NewAlibabaCampusSpaceUnitGetlistmapbygroupidRequest() *AlibabaCampusSpaceUnitGetlistmapbygroupidRequest{
-    return &AlibabaCampusSpaceUnitGetlistmapbygroupidRequest{
+// 初始化AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest对象
+func NewAlibabaCampusSpaceUnitGetlistmapbygroupidRequest() *AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest{
+    return &AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) GetApiMethodName() string {
+func (r AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.space.unit.getlistmapbygroupid"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) GetApiParams() url.Values {
+func (r AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) GetApiParams() url.Val
 }
 // Param0 Setter
 // 用户环境
-func (r *AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) SetParam0(_param0 *WorkBenchContext) error {
+func (r *AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) GetParam0() *WorkBenchContext {
+func (r AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest) GetParam0() *WorkBenchContext {
     return r._param0
 }
 // Param1 Setter
 // 查询封装
-func (r *AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) SetParam1(_param1 *SpaceUnitQuery) error {
+func (r *AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest) SetParam1(_param1 *SpaceUnitQuery) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) GetParam1() *SpaceUnitQuery {
+func (r AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest) GetParam1() *SpaceUnitQuery {
     return r._param1
 }

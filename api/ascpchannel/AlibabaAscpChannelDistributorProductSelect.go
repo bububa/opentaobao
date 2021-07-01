@@ -11,7 +11,7 @@ alibaba.ascp.channel.distributor.product.select
 
 此api为淘外分销的品的选品标准api，淘外分销商专用
 */
-func AlibabaAscpChannelDistributorProductSelect(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelDistributorProductSelectRequest, session string) (*ascpchannel.AlibabaAscpChannelDistributorProductSelectAPIResponse, error) {
+func AlibabaAscpChannelDistributorProductSelect(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelDistributorProductSelectAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelDistributorProductSelectAPIResponse, error) {
     var resp ascpchannel.AlibabaAscpChannelDistributorProductSelectAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

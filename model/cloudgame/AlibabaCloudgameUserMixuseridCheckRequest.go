@@ -12,26 +12,26 @@ alibaba.cloudgame.user.mixuserid.check
 
 验证混淆用户ID是否合法
 */
-type AlibabaCloudgameUserMixuseridCheckRequest struct {
+type AlibabaCloudgameUserMixuseridCheckAPIRequest struct {
     model.Params
     // 云游戏混淆用户ID
     _mixUserId   string
 }
 
-// 初始化AlibabaCloudgameUserMixuseridCheckRequest对象
-func NewAlibabaCloudgameUserMixuseridCheckRequest() *AlibabaCloudgameUserMixuseridCheckRequest{
-    return &AlibabaCloudgameUserMixuseridCheckRequest{
+// 初始化AlibabaCloudgameUserMixuseridCheckAPIRequest对象
+func NewAlibabaCloudgameUserMixuseridCheckRequest() *AlibabaCloudgameUserMixuseridCheckAPIRequest{
+    return &AlibabaCloudgameUserMixuseridCheckAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCloudgameUserMixuseridCheckRequest) GetApiMethodName() string {
+func (r AlibabaCloudgameUserMixuseridCheckAPIRequest) GetApiMethodName() string {
     return "alibaba.cloudgame.user.mixuserid.check"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCloudgameUserMixuseridCheckRequest) GetApiParams() url.Values {
+func (r AlibabaCloudgameUserMixuseridCheckAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaCloudgameUserMixuseridCheckRequest) GetApiParams() url.Values {
 }
 // MixUserId Setter
 // 云游戏混淆用户ID
-func (r *AlibabaCloudgameUserMixuseridCheckRequest) SetMixUserId(_mixUserId string) error {
+func (r *AlibabaCloudgameUserMixuseridCheckAPIRequest) SetMixUserId(_mixUserId string) error {
     r._mixUserId = _mixUserId
     r.Set("mix_user_id", _mixUserId)
     return nil
 }
 
 // MixUserId Getter
-func (r AlibabaCloudgameUserMixuseridCheckRequest) GetMixUserId() string {
+func (r AlibabaCloudgameUserMixuseridCheckAPIRequest) GetMixUserId() string {
     return r._mixUserId
 }

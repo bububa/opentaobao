@@ -1,7 +1,7 @@
 package ieagency
 
-// QueryChangeAgentListRs 
-type QueryChangeAgentListRs struct {
+// QueryChangeAgentListRS 
+type QueryChangeAgentListRS struct {
     // 错误码
     ApiErrorCode   int64 `json:"api_error_code,omitempty" xml:"api_error_code,omitempty"`
     // 错误信息

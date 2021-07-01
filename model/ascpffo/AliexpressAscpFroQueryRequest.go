@@ -12,26 +12,26 @@ aliexpress.ascp.fro.query
 
 AE履约销退单查询接口
 */
-type AliexpressAscpFroQueryRequest struct {
+type AliexpressAscpFroQueryAPIRequest struct {
     model.Params
     // dto
     _fulfillmentReverseOrderQuery   *FulfillmentReverseOrderQueryDTO
 }
 
-// 初始化AliexpressAscpFroQueryRequest对象
-func NewAliexpressAscpFroQueryRequest() *AliexpressAscpFroQueryRequest{
-    return &AliexpressAscpFroQueryRequest{
+// 初始化AliexpressAscpFroQueryAPIRequest对象
+func NewAliexpressAscpFroQueryRequest() *AliexpressAscpFroQueryAPIRequest{
+    return &AliexpressAscpFroQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressAscpFroQueryRequest) GetApiMethodName() string {
+func (r AliexpressAscpFroQueryAPIRequest) GetApiMethodName() string {
     return "aliexpress.ascp.fro.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressAscpFroQueryRequest) GetApiParams() url.Values {
+func (r AliexpressAscpFroQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressAscpFroQueryRequest) GetApiParams() url.Values {
 }
 // FulfillmentReverseOrderQuery Setter
 // dto
-func (r *AliexpressAscpFroQueryRequest) SetFulfillmentReverseOrderQuery(_fulfillmentReverseOrderQuery *FulfillmentReverseOrderQueryDTO) error {
+func (r *AliexpressAscpFroQueryAPIRequest) SetFulfillmentReverseOrderQuery(_fulfillmentReverseOrderQuery *FulfillmentReverseOrderQueryDTO) error {
     r._fulfillmentReverseOrderQuery = _fulfillmentReverseOrderQuery
     r.Set("fulfillment_reverse_order_query", _fulfillmentReverseOrderQuery)
     return nil
 }
 
 // FulfillmentReverseOrderQuery Getter
-func (r AliexpressAscpFroQueryRequest) GetFulfillmentReverseOrderQuery() *FulfillmentReverseOrderQueryDTO {
+func (r AliexpressAscpFroQueryAPIRequest) GetFulfillmentReverseOrderQuery() *FulfillmentReverseOrderQueryDTO {
     return r._fulfillmentReverseOrderQuery
 }

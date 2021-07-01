@@ -12,26 +12,26 @@ wdk.logistic.network.warehouse.delivery.relation.query
 
 盒马集市，仓站（网格仓自提点）关系查询
 */
-type WdkLogisticNetworkWarehouseDeliveryRelationQueryRequest struct {
+type WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest struct {
     model.Params
     // 参数
     _paramWarehouseDeliveryRelationPageQueryRequest   *WarehouseDeliveryRelationPageQueryRequest
 }
 
-// 初始化WdkLogisticNetworkWarehouseDeliveryRelationQueryRequest对象
-func NewWdkLogisticNetworkWarehouseDeliveryRelationQueryRequest() *WdkLogisticNetworkWarehouseDeliveryRelationQueryRequest{
-    return &WdkLogisticNetworkWarehouseDeliveryRelationQueryRequest{
+// 初始化WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest对象
+func NewWdkLogisticNetworkWarehouseDeliveryRelationQueryRequest() *WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest{
+    return &WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryRequest) GetApiMethodName() string {
+func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) GetApiMethodName() string {
     return "wdk.logistic.network.warehouse.delivery.relation.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryRequest) GetApiParams() url.Values {
+func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryRequest) GetApiParams() 
 }
 // ParamWarehouseDeliveryRelationPageQueryRequest Setter
 // 参数
-func (r *WdkLogisticNetworkWarehouseDeliveryRelationQueryRequest) SetParamWarehouseDeliveryRelationPageQueryRequest(_paramWarehouseDeliveryRelationPageQueryRequest *WarehouseDeliveryRelationPageQueryRequest) error {
+func (r *WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) SetParamWarehouseDeliveryRelationPageQueryRequest(_paramWarehouseDeliveryRelationPageQueryRequest *WarehouseDeliveryRelationPageQueryRequest) error {
     r._paramWarehouseDeliveryRelationPageQueryRequest = _paramWarehouseDeliveryRelationPageQueryRequest
     r.Set("param_warehouse_delivery_relation_page_query_request", _paramWarehouseDeliveryRelationPageQueryRequest)
     return nil
 }
 
 // ParamWarehouseDeliveryRelationPageQueryRequest Getter
-func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryRequest) GetParamWarehouseDeliveryRelationPageQueryRequest() *WarehouseDeliveryRelationPageQueryRequest {
+func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) GetParamWarehouseDeliveryRelationPageQueryRequest() *WarehouseDeliveryRelationPageQueryRequest {
     return r._paramWarehouseDeliveryRelationPageQueryRequest
 }

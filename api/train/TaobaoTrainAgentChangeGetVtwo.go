@@ -11,7 +11,7 @@ taobao.train.agent.change.get.vtwo
 
 卖家获取待处理的改签单详情
 */
-func TaobaoTrainAgentChangeGetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentChangeGetVtwoRequest, session string) (*train.TaobaoTrainAgentChangeGetVtwoAPIResponse, error) {
+func TaobaoTrainAgentChangeGetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentChangeGetVtwoAPIRequest, session string) (*train.TaobaoTrainAgentChangeGetVtwoAPIResponse, error) {
     var resp train.TaobaoTrainAgentChangeGetVtwoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

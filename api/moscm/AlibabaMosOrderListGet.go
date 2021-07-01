@@ -11,7 +11,7 @@ alibaba.mos.order.list.get
 
 批量查询交易信息
 */
-func AlibabaMosOrderListGet(clt *core.SDKClient, req *moscm.AlibabaMosOrderListGetRequest, session string) (*moscm.AlibabaMosOrderListGetAPIResponse, error) {
+func AlibabaMosOrderListGet(clt *core.SDKClient, req *moscm.AlibabaMosOrderListGetAPIRequest, session string) (*moscm.AlibabaMosOrderListGetAPIResponse, error) {
     var resp moscm.AlibabaMosOrderListGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

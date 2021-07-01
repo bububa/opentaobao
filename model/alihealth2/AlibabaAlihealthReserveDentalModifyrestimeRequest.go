@@ -12,7 +12,7 @@ alibaba.alihealth.reserve.dental.modifyrestime
 
 修改预约时间
 */
-type AlibabaAlihealthReserveDentalModifyrestimeRequest struct {
+type AlibabaAlihealthReserveDentalModifyrestimeAPIRequest struct {
     model.Params
     // 预约单ID
     _reserveId   int64
@@ -20,20 +20,20 @@ type AlibabaAlihealthReserveDentalModifyrestimeRequest struct {
     _reserveTime   string
 }
 
-// 初始化AlibabaAlihealthReserveDentalModifyrestimeRequest对象
-func NewAlibabaAlihealthReserveDentalModifyrestimeRequest() *AlibabaAlihealthReserveDentalModifyrestimeRequest{
-    return &AlibabaAlihealthReserveDentalModifyrestimeRequest{
+// 初始化AlibabaAlihealthReserveDentalModifyrestimeAPIRequest对象
+func NewAlibabaAlihealthReserveDentalModifyrestimeRequest() *AlibabaAlihealthReserveDentalModifyrestimeAPIRequest{
+    return &AlibabaAlihealthReserveDentalModifyrestimeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthReserveDentalModifyrestimeRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.reserve.dental.modifyrestime"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthReserveDentalModifyrestimeRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthReserveDentalModifyrestimeRequest) GetApiParams() url.Va
 }
 // ReserveId Setter
 // 预约单ID
-func (r *AlibabaAlihealthReserveDentalModifyrestimeRequest) SetReserveId(_reserveId int64) error {
+func (r *AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) SetReserveId(_reserveId int64) error {
     r._reserveId = _reserveId
     r.Set("reserve_id", _reserveId)
     return nil
 }
 
 // ReserveId Getter
-func (r AlibabaAlihealthReserveDentalModifyrestimeRequest) GetReserveId() int64 {
+func (r AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) GetReserveId() int64 {
     return r._reserveId
 }
 // ReserveTime Setter
 // 预约时间
-func (r *AlibabaAlihealthReserveDentalModifyrestimeRequest) SetReserveTime(_reserveTime string) error {
+func (r *AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) SetReserveTime(_reserveTime string) error {
     r._reserveTime = _reserveTime
     r.Set("reserve_time", _reserveTime)
     return nil
 }
 
 // ReserveTime Getter
-func (r AlibabaAlihealthReserveDentalModifyrestimeRequest) GetReserveTime() string {
+func (r AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) GetReserveTime() string {
     return r._reserveTime
 }

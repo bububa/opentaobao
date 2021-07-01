@@ -12,26 +12,26 @@ alibaba.cgame.avatar.userbody.query
 
 Avatar用户body数据查询
 */
-type AlibabaCgameAvatarUserbodyQueryRequest struct {
+type AlibabaCgameAvatarUserbodyQueryAPIRequest struct {
     model.Params
     // 查询数据所属用户的mixUserId
     _mixUserId   string
 }
 
-// 初始化AlibabaCgameAvatarUserbodyQueryRequest对象
-func NewAlibabaCgameAvatarUserbodyQueryRequest() *AlibabaCgameAvatarUserbodyQueryRequest{
-    return &AlibabaCgameAvatarUserbodyQueryRequest{
+// 初始化AlibabaCgameAvatarUserbodyQueryAPIRequest对象
+func NewAlibabaCgameAvatarUserbodyQueryRequest() *AlibabaCgameAvatarUserbodyQueryAPIRequest{
+    return &AlibabaCgameAvatarUserbodyQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCgameAvatarUserbodyQueryRequest) GetApiMethodName() string {
+func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.cgame.avatar.userbody.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCgameAvatarUserbodyQueryRequest) GetApiParams() url.Values {
+func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaCgameAvatarUserbodyQueryRequest) GetApiParams() url.Values {
 }
 // MixUserId Setter
 // 查询数据所属用户的mixUserId
-func (r *AlibabaCgameAvatarUserbodyQueryRequest) SetMixUserId(_mixUserId string) error {
+func (r *AlibabaCgameAvatarUserbodyQueryAPIRequest) SetMixUserId(_mixUserId string) error {
     r._mixUserId = _mixUserId
     r.Set("mix_user_id", _mixUserId)
     return nil
 }
 
 // MixUserId Getter
-func (r AlibabaCgameAvatarUserbodyQueryRequest) GetMixUserId() string {
+func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetMixUserId() string {
     return r._mixUserId
 }

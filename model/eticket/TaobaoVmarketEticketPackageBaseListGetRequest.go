@@ -12,24 +12,24 @@ taobao.vmarket.eticket.package.base.list.get
 
 根据卖家id，获取关联的所有包
 */
-type TaobaoVmarketEticketPackageBaseListGetRequest struct {
+type TaobaoVmarketEticketPackageBaseListGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoVmarketEticketPackageBaseListGetRequest对象
-func NewTaobaoVmarketEticketPackageBaseListGetRequest() *TaobaoVmarketEticketPackageBaseListGetRequest{
-    return &TaobaoVmarketEticketPackageBaseListGetRequest{
+// 初始化TaobaoVmarketEticketPackageBaseListGetAPIRequest对象
+func NewTaobaoVmarketEticketPackageBaseListGetRequest() *TaobaoVmarketEticketPackageBaseListGetAPIRequest{
+    return &TaobaoVmarketEticketPackageBaseListGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoVmarketEticketPackageBaseListGetRequest) GetApiMethodName() string {
+func (r TaobaoVmarketEticketPackageBaseListGetAPIRequest) GetApiMethodName() string {
     return "taobao.vmarket.eticket.package.base.list.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoVmarketEticketPackageBaseListGetRequest) GetApiParams() url.Values {
+func (r TaobaoVmarketEticketPackageBaseListGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

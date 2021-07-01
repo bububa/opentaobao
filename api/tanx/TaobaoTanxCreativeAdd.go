@@ -11,7 +11,7 @@ taobao.tanx.creative.add
 
 创意预审新增接口
 */
-func TaobaoTanxCreativeAdd(clt *core.SDKClient, req *tanx.TaobaoTanxCreativeAddRequest, session string) (*tanx.TaobaoTanxCreativeAddAPIResponse, error) {
+func TaobaoTanxCreativeAdd(clt *core.SDKClient, req *tanx.TaobaoTanxCreativeAddAPIRequest, session string) (*tanx.TaobaoTanxCreativeAddAPIResponse, error) {
     var resp tanx.TaobaoTanxCreativeAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

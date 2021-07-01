@@ -12,7 +12,7 @@ tmall.exchange.refusereason.get
 
 获取拒绝换货原因列表
 */
-type TmallExchangeRefusereasonGetRequest struct {
+type TmallExchangeRefusereasonGetAPIRequest struct {
     model.Params
     // 换货单号ID
     _disputeId   int64
@@ -22,20 +22,20 @@ type TmallExchangeRefusereasonGetRequest struct {
     _disputeType   int64
 }
 
-// 初始化TmallExchangeRefusereasonGetRequest对象
-func NewTmallExchangeRefusereasonGetRequest() *TmallExchangeRefusereasonGetRequest{
-    return &TmallExchangeRefusereasonGetRequest{
+// 初始化TmallExchangeRefusereasonGetAPIRequest对象
+func NewTmallExchangeRefusereasonGetRequest() *TmallExchangeRefusereasonGetAPIRequest{
+    return &TmallExchangeRefusereasonGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallExchangeRefusereasonGetRequest) GetApiMethodName() string {
+func (r TmallExchangeRefusereasonGetAPIRequest) GetApiMethodName() string {
     return "tmall.exchange.refusereason.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallExchangeRefusereasonGetRequest) GetApiParams() url.Values {
+func (r TmallExchangeRefusereasonGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TmallExchangeRefusereasonGetRequest) GetApiParams() url.Values {
 }
 // DisputeId Setter
 // 换货单号ID
-func (r *TmallExchangeRefusereasonGetRequest) SetDisputeId(_disputeId int64) error {
+func (r *TmallExchangeRefusereasonGetAPIRequest) SetDisputeId(_disputeId int64) error {
     r._disputeId = _disputeId
     r.Set("dispute_id", _disputeId)
     return nil
 }
 
 // DisputeId Getter
-func (r TmallExchangeRefusereasonGetRequest) GetDisputeId() int64 {
+func (r TmallExchangeRefusereasonGetAPIRequest) GetDisputeId() int64 {
     return r._disputeId
 }
 // Fields Setter
 // 返回字段
-func (r *TmallExchangeRefusereasonGetRequest) SetFields(_fields []string) error {
+func (r *TmallExchangeRefusereasonGetAPIRequest) SetFields(_fields []string) error {
     r._fields = _fields
     r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
-func (r TmallExchangeRefusereasonGetRequest) GetFields() []string {
+func (r TmallExchangeRefusereasonGetAPIRequest) GetFields() []string {
     return r._fields
 }
 // DisputeType Setter
 // 换货申请类型：0-任意类型；1-售中；2-售后
-func (r *TmallExchangeRefusereasonGetRequest) SetDisputeType(_disputeType int64) error {
+func (r *TmallExchangeRefusereasonGetAPIRequest) SetDisputeType(_disputeType int64) error {
     r._disputeType = _disputeType
     r.Set("dispute_type", _disputeType)
     return nil
 }
 
 // DisputeType Getter
-func (r TmallExchangeRefusereasonGetRequest) GetDisputeType() int64 {
+func (r TmallExchangeRefusereasonGetAPIRequest) GetDisputeType() int64 {
     return r._disputeType
 }

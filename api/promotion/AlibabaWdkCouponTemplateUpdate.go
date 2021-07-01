@@ -11,7 +11,7 @@ alibaba.wdk.coupon.template.update
 
 优惠券模版修改
 */
-func AlibabaWdkCouponTemplateUpdate(clt *core.SDKClient, req *promotion.AlibabaWdkCouponTemplateUpdateRequest, session string) (*promotion.AlibabaWdkCouponTemplateUpdateAPIResponse, error) {
+func AlibabaWdkCouponTemplateUpdate(clt *core.SDKClient, req *promotion.AlibabaWdkCouponTemplateUpdateAPIRequest, session string) (*promotion.AlibabaWdkCouponTemplateUpdateAPIResponse, error) {
     var resp promotion.AlibabaWdkCouponTemplateUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

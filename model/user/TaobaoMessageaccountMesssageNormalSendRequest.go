@@ -12,26 +12,26 @@ taobao.messageaccount.messsage.normal.send
 
 消息号下行单个普通消息
 */
-type TaobaoMessageaccountMesssageNormalSendRequest struct {
+type TaobaoMessageaccountMesssageNormalSendAPIRequest struct {
     model.Params
     // 下行普通消息
     _param   *NormalMessageDTO
 }
 
-// 初始化TaobaoMessageaccountMesssageNormalSendRequest对象
-func NewTaobaoMessageaccountMesssageNormalSendRequest() *TaobaoMessageaccountMesssageNormalSendRequest{
-    return &TaobaoMessageaccountMesssageNormalSendRequest{
+// 初始化TaobaoMessageaccountMesssageNormalSendAPIRequest对象
+func NewTaobaoMessageaccountMesssageNormalSendRequest() *TaobaoMessageaccountMesssageNormalSendAPIRequest{
+    return &TaobaoMessageaccountMesssageNormalSendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMessageaccountMesssageNormalSendRequest) GetApiMethodName() string {
+func (r TaobaoMessageaccountMesssageNormalSendAPIRequest) GetApiMethodName() string {
     return "taobao.messageaccount.messsage.normal.send"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMessageaccountMesssageNormalSendRequest) GetApiParams() url.Values {
+func (r TaobaoMessageaccountMesssageNormalSendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoMessageaccountMesssageNormalSendRequest) GetApiParams() url.Values
 }
 // Param Setter
 // 下行普通消息
-func (r *TaobaoMessageaccountMesssageNormalSendRequest) SetParam(_param *NormalMessageDTO) error {
+func (r *TaobaoMessageaccountMesssageNormalSendAPIRequest) SetParam(_param *NormalMessageDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoMessageaccountMesssageNormalSendRequest) GetParam() *NormalMessageDTO {
+func (r TaobaoMessageaccountMesssageNormalSendAPIRequest) GetParam() *NormalMessageDTO {
     return r._param
 }

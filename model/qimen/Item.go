@@ -159,7 +159,7 @@ type Item struct {
     // test
     OriginCode   string `json:"originCode,omitempty" xml:"originCode,omitempty"`
     // test
-    Batchs   []Batch `json:"batchs,omitempty" xml:"batchs>batch,omitempty"`
+    Batchs   []TaobaoQimenCombineitemSynchronizeBatch `json:"batchs,omitempty" xml:"batchs>taobao_qimen_combineitem_synchronize_batch,omitempty"`
     // 商品名称
     ItemName   string `json:"itemName,omitempty" xml:"itemName,omitempty"`
     // 备注

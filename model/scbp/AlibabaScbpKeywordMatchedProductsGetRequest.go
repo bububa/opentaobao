@@ -12,26 +12,26 @@ alibaba.scbp.keyword.matched.products.get
 
 查询和词匹配的推广产品
 */
-type AlibabaScbpKeywordMatchedProductsGetRequest struct {
+type AlibabaScbpKeywordMatchedProductsGetAPIRequest struct {
     model.Params
     // 已购买的关键词
     _adKeyword   string
 }
 
-// 初始化AlibabaScbpKeywordMatchedProductsGetRequest对象
-func NewAlibabaScbpKeywordMatchedProductsGetRequest() *AlibabaScbpKeywordMatchedProductsGetRequest{
-    return &AlibabaScbpKeywordMatchedProductsGetRequest{
+// 初始化AlibabaScbpKeywordMatchedProductsGetAPIRequest对象
+func NewAlibabaScbpKeywordMatchedProductsGetRequest() *AlibabaScbpKeywordMatchedProductsGetAPIRequest{
+    return &AlibabaScbpKeywordMatchedProductsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpKeywordMatchedProductsGetRequest) GetApiMethodName() string {
+func (r AlibabaScbpKeywordMatchedProductsGetAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.keyword.matched.products.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpKeywordMatchedProductsGetRequest) GetApiParams() url.Values {
+func (r AlibabaScbpKeywordMatchedProductsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpKeywordMatchedProductsGetRequest) GetApiParams() url.Values {
 }
 // AdKeyword Setter
 // 已购买的关键词
-func (r *AlibabaScbpKeywordMatchedProductsGetRequest) SetAdKeyword(_adKeyword string) error {
+func (r *AlibabaScbpKeywordMatchedProductsGetAPIRequest) SetAdKeyword(_adKeyword string) error {
     r._adKeyword = _adKeyword
     r.Set("ad_keyword", _adKeyword)
     return nil
 }
 
 // AdKeyword Getter
-func (r AlibabaScbpKeywordMatchedProductsGetRequest) GetAdKeyword() string {
+func (r AlibabaScbpKeywordMatchedProductsGetAPIRequest) GetAdKeyword() string {
     return r._adKeyword
 }

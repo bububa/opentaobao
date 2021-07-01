@@ -11,7 +11,7 @@ taobao.picture.upload
 
 图片空间上传接口
 */
-func TaobaoPictureUpload(clt *core.SDKClient, req *media.TaobaoPictureUploadRequest, session string) (*media.TaobaoPictureUploadAPIResponse, error) {
+func TaobaoPictureUpload(clt *core.SDKClient, req *media.TaobaoPictureUploadAPIRequest, session string) (*media.TaobaoPictureUploadAPIResponse, error) {
     var resp media.TaobaoPictureUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.top.secret.register
 
 提供给isv注册非淘系账号秘钥，isv依赖sdk自主加、解密
 */
-type TaobaoTopSecretRegisterRequest struct {
+type TaobaoTopSecretRegisterAPIRequest struct {
     model.Params
     // 用户id，保证唯一
     _userId   int64
 }
 
-// 初始化TaobaoTopSecretRegisterRequest对象
-func NewTaobaoTopSecretRegisterRequest() *TaobaoTopSecretRegisterRequest{
-    return &TaobaoTopSecretRegisterRequest{
+// 初始化TaobaoTopSecretRegisterAPIRequest对象
+func NewTaobaoTopSecretRegisterRequest() *TaobaoTopSecretRegisterAPIRequest{
+    return &TaobaoTopSecretRegisterAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTopSecretRegisterRequest) GetApiMethodName() string {
+func (r TaobaoTopSecretRegisterAPIRequest) GetApiMethodName() string {
     return "taobao.top.secret.register"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTopSecretRegisterRequest) GetApiParams() url.Values {
+func (r TaobaoTopSecretRegisterAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTopSecretRegisterRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id，保证唯一
-func (r *TaobaoTopSecretRegisterRequest) SetUserId(_userId int64) error {
+func (r *TaobaoTopSecretRegisterAPIRequest) SetUserId(_userId int64) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r TaobaoTopSecretRegisterRequest) GetUserId() int64 {
+func (r TaobaoTopSecretRegisterAPIRequest) GetUserId() int64 {
     return r._userId
 }

@@ -14,7 +14,7 @@ alibaba.ssc.supplyplatform.service.inventory.edit
 要先查询当前库存值，并基于返回结果做编辑操作。
 参考alibaba.ssc.supplyplatform.service.inventory.query和alibaba.ssc.supplyplatform.servicecapacity.save
 */
-func AlibabaSscSupplyplatformServiceInventoryEdit(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceInventoryEditRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIResponse, error) {
+func AlibabaSscSupplyplatformServiceInventoryEdit(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIResponse, error) {
     var resp tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.destbill.list
 
 为药企提供直调单据查询功能
 */
-func AlibabaAlihealthDrugKytDestbillList(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDestbillListRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDestbillListAPIResponse, error) {
+func AlibabaAlihealthDrugKytDestbillList(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDestbillListAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDestbillListAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytDestbillListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

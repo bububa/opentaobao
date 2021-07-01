@@ -12,7 +12,7 @@ alibaba.alihealth.tracecodesearch.getshowurl.vivo
 
 获取药品扫码落地页vivo
 */
-type AlibabaAlihealthTracecodesearchGetshowurlVivoRequest struct {
+type AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest struct {
     model.Params
     // 追溯码
     _code   string
@@ -20,20 +20,20 @@ type AlibabaAlihealthTracecodesearchGetshowurlVivoRequest struct {
     _channel   string
 }
 
-// 初始化AlibabaAlihealthTracecodesearchGetshowurlVivoRequest对象
-func NewAlibabaAlihealthTracecodesearchGetshowurlVivoRequest() *AlibabaAlihealthTracecodesearchGetshowurlVivoRequest{
-    return &AlibabaAlihealthTracecodesearchGetshowurlVivoRequest{
+// 初始化AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest对象
+func NewAlibabaAlihealthTracecodesearchGetshowurlVivoRequest() *AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest{
+    return &AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.tracecodesearch.getshowurl.vivo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) GetApiParams() url
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) SetCode(_code string) error {
+func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) GetCode() string {
+func (r AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) GetCode() string {
     return r._code
 }
 // Channel Setter
 // 来源
-func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) SetChannel(_channel string) error {
+func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) SetChannel(_channel string) error {
     r._channel = _channel
     r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
-func (r AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) GetChannel() string {
+func (r AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) GetChannel() string {
     return r._channel
 }

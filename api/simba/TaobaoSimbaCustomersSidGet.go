@@ -11,7 +11,7 @@ taobao.simba.customers.sid.get
 
 查询用户是否拥有某个功能权限
 */
-func TaobaoSimbaCustomersSidGet(clt *core.SDKClient, req *simba.TaobaoSimbaCustomersSidGetRequest, session string) (*simba.TaobaoSimbaCustomersSidGetAPIResponse, error) {
+func TaobaoSimbaCustomersSidGet(clt *core.SDKClient, req *simba.TaobaoSimbaCustomersSidGetAPIRequest, session string) (*simba.TaobaoSimbaCustomersSidGetAPIResponse, error) {
     var resp simba.TaobaoSimbaCustomersSidGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

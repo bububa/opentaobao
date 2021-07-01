@@ -11,7 +11,7 @@ alibaba.interact.sensor.clipbroad
 
 Weex页面设置或读取剪切板
 */
-func AlibabaInteractSensorClipbroad(clt *core.SDKClient, req *shop.AlibabaInteractSensorClipbroadRequest, session string) (*shop.AlibabaInteractSensorClipbroadAPIResponse, error) {
+func AlibabaInteractSensorClipbroad(clt *core.SDKClient, req *shop.AlibabaInteractSensorClipbroadAPIRequest, session string) (*shop.AlibabaInteractSensorClipbroadAPIResponse, error) {
     var resp shop.AlibabaInteractSensorClipbroadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

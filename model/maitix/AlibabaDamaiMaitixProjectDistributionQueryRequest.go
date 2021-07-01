@@ -12,26 +12,26 @@ alibaba.damai.maitix.project.distribution.query
 
 发布分销项目查询单个项目信息接口
 */
-type AlibabaDamaiMaitixProjectDistributionQueryRequest struct {
+type AlibabaDamaiMaitixProjectDistributionQueryAPIRequest struct {
     model.Params
     // 项目id
     _projectId   int64
 }
 
-// 初始化AlibabaDamaiMaitixProjectDistributionQueryRequest对象
-func NewAlibabaDamaiMaitixProjectDistributionQueryRequest() *AlibabaDamaiMaitixProjectDistributionQueryRequest{
-    return &AlibabaDamaiMaitixProjectDistributionQueryRequest{
+// 初始化AlibabaDamaiMaitixProjectDistributionQueryAPIRequest对象
+func NewAlibabaDamaiMaitixProjectDistributionQueryRequest() *AlibabaDamaiMaitixProjectDistributionQueryAPIRequest{
+    return &AlibabaDamaiMaitixProjectDistributionQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixProjectDistributionQueryRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixProjectDistributionQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.project.distribution.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixProjectDistributionQueryRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixProjectDistributionQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixProjectDistributionQueryRequest) GetApiParams() url.Va
 }
 // ProjectId Setter
 // 项目id
-func (r *AlibabaDamaiMaitixProjectDistributionQueryRequest) SetProjectId(_projectId int64) error {
+func (r *AlibabaDamaiMaitixProjectDistributionQueryAPIRequest) SetProjectId(_projectId int64) error {
     r._projectId = _projectId
     r.Set("project_id", _projectId)
     return nil
 }
 
 // ProjectId Getter
-func (r AlibabaDamaiMaitixProjectDistributionQueryRequest) GetProjectId() int64 {
+func (r AlibabaDamaiMaitixProjectDistributionQueryAPIRequest) GetProjectId() int64 {
     return r._projectId
 }

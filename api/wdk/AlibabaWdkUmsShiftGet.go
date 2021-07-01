@@ -11,7 +11,7 @@ alibaba.wdk.ums.shift.get
 
 移库单获取
 */
-func AlibabaWdkUmsShiftGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsShiftGetRequest, session string) (*wdk.AlibabaWdkUmsShiftGetAPIResponse, error) {
+func AlibabaWdkUmsShiftGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsShiftGetAPIRequest, session string) (*wdk.AlibabaWdkUmsShiftGetAPIResponse, error) {
     var resp wdk.AlibabaWdkUmsShiftGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

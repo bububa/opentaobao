@@ -14,7 +14,7 @@ taobao.open.trades.sold.get
 注意：type字段的说明，如果该字段不传，接口默认只查4种类型订单，非默认查询的订单是不返回。遇到订单查不到的情况的，通常都是这个原因造成。解决办法就是type加上订单类型就可正常返回了。<br/>
 2.入参fields中传入buyer_nick ，才能返回buyer_open_id
 */
-func TaobaoOpenTradesSoldGet(clt *core.SDKClient, req *trade.TaobaoOpenTradesSoldGetRequest, session string) (*trade.TaobaoOpenTradesSoldGetAPIResponse, error) {
+func TaobaoOpenTradesSoldGet(clt *core.SDKClient, req *trade.TaobaoOpenTradesSoldGetAPIRequest, session string) (*trade.TaobaoOpenTradesSoldGetAPIResponse, error) {
     var resp trade.TaobaoOpenTradesSoldGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

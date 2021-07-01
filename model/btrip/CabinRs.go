@@ -1,5 +1,5 @@
 package btrip
 
-// CabinRs 
-type CabinRs struct {
+// CabinRS 
+type CabinRS struct {
 }

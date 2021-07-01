@@ -11,7 +11,7 @@ taobao.jst.interactive.assets.configured.query
 
 查询已配置任务素材列表
 */
-func TaobaoJstInteractiveAssetsConfiguredQuery(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveAssetsConfiguredQueryRequest, session string) (*jstinteractive.TaobaoJstInteractiveAssetsConfiguredQueryAPIResponse, error) {
+func TaobaoJstInteractiveAssetsConfiguredQuery(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveAssetsConfiguredQueryAPIRequest, session string) (*jstinteractive.TaobaoJstInteractiveAssetsConfiguredQueryAPIResponse, error) {
     var resp jstinteractive.TaobaoJstInteractiveAssetsConfiguredQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

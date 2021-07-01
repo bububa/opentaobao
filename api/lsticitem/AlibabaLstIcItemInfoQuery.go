@@ -11,7 +11,7 @@ alibaba.lst.ic.item.info.query
 
 查询商品信息
 */
-func AlibabaLstIcItemInfoQuery(clt *core.SDKClient, req *lsticitem.AlibabaLstIcItemInfoQueryRequest, session string) (*lsticitem.AlibabaLstIcItemInfoQueryAPIResponse, error) {
+func AlibabaLstIcItemInfoQuery(clt *core.SDKClient, req *lsticitem.AlibabaLstIcItemInfoQueryAPIRequest, session string) (*lsticitem.AlibabaLstIcItemInfoQueryAPIResponse, error) {
     var resp lsticitem.AlibabaLstIcItemInfoQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

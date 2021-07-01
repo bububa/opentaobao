@@ -12,26 +12,26 @@ yunos.tvpubadmin.content.tableaudit.querymetaitem
 
 运营位管控-查询魔盒运营位元数据列表
 */
-type YunosTvpubadminContentTableauditQuerymetaitemRequest struct {
+type YunosTvpubadminContentTableauditQuerymetaitemAPIRequest struct {
     model.Params
     // 查询条件，json格式
     _tableAuditQueryBo   string
 }
 
-// 初始化YunosTvpubadminContentTableauditQuerymetaitemRequest对象
-func NewYunosTvpubadminContentTableauditQuerymetaitemRequest() *YunosTvpubadminContentTableauditQuerymetaitemRequest{
-    return &YunosTvpubadminContentTableauditQuerymetaitemRequest{
+// 初始化YunosTvpubadminContentTableauditQuerymetaitemAPIRequest对象
+func NewYunosTvpubadminContentTableauditQuerymetaitemRequest() *YunosTvpubadminContentTableauditQuerymetaitemAPIRequest{
+    return &YunosTvpubadminContentTableauditQuerymetaitemAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentTableauditQuerymetaitemRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentTableauditQuerymetaitemAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.tableaudit.querymetaitem"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentTableauditQuerymetaitemRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentTableauditQuerymetaitemAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentTableauditQuerymetaitemRequest) GetApiParams() url
 }
 // TableAuditQueryBo Setter
 // 查询条件，json格式
-func (r *YunosTvpubadminContentTableauditQuerymetaitemRequest) SetTableAuditQueryBo(_tableAuditQueryBo string) error {
+func (r *YunosTvpubadminContentTableauditQuerymetaitemAPIRequest) SetTableAuditQueryBo(_tableAuditQueryBo string) error {
     r._tableAuditQueryBo = _tableAuditQueryBo
     r.Set("table_audit_query_bo", _tableAuditQueryBo)
     return nil
 }
 
 // TableAuditQueryBo Getter
-func (r YunosTvpubadminContentTableauditQuerymetaitemRequest) GetTableAuditQueryBo() string {
+func (r YunosTvpubadminContentTableauditQuerymetaitemAPIRequest) GetTableAuditQueryBo() string {
     return r._tableAuditQueryBo
 }

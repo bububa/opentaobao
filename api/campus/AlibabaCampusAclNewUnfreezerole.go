@@ -11,7 +11,7 @@ alibaba.campus.acl.new.unfreezerole
 
 解冻角色
 */
-func AlibabaCampusAclNewUnfreezerole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewUnfreezeroleRequest, session string) (*campus.AlibabaCampusAclNewUnfreezeroleAPIResponse, error) {
+func AlibabaCampusAclNewUnfreezerole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewUnfreezeroleAPIRequest, session string) (*campus.AlibabaCampusAclNewUnfreezeroleAPIResponse, error) {
     var resp campus.AlibabaCampusAclNewUnfreezeroleAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

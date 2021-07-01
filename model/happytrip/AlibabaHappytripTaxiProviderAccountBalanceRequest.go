@@ -12,26 +12,26 @@ alibaba.happytrip.taxi.provider.account.balance
 
 查询不同供应商不同渠道账户余额
 */
-type AlibabaHappytripTaxiProviderAccountBalanceRequest struct {
+type AlibabaHappytripTaxiProviderAccountBalanceAPIRequest struct {
     model.Params
     // 成本中心代码，用于区分不同的分账账号
     _costCenter   string
 }
 
-// 初始化AlibabaHappytripTaxiProviderAccountBalanceRequest对象
-func NewAlibabaHappytripTaxiProviderAccountBalanceRequest() *AlibabaHappytripTaxiProviderAccountBalanceRequest{
-    return &AlibabaHappytripTaxiProviderAccountBalanceRequest{
+// 初始化AlibabaHappytripTaxiProviderAccountBalanceAPIRequest对象
+func NewAlibabaHappytripTaxiProviderAccountBalanceRequest() *AlibabaHappytripTaxiProviderAccountBalanceAPIRequest{
+    return &AlibabaHappytripTaxiProviderAccountBalanceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHappytripTaxiProviderAccountBalanceRequest) GetApiMethodName() string {
+func (r AlibabaHappytripTaxiProviderAccountBalanceAPIRequest) GetApiMethodName() string {
     return "alibaba.happytrip.taxi.provider.account.balance"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHappytripTaxiProviderAccountBalanceRequest) GetApiParams() url.Values {
+func (r AlibabaHappytripTaxiProviderAccountBalanceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaHappytripTaxiProviderAccountBalanceRequest) GetApiParams() url.Va
 }
 // CostCenter Setter
 // 成本中心代码，用于区分不同的分账账号
-func (r *AlibabaHappytripTaxiProviderAccountBalanceRequest) SetCostCenter(_costCenter string) error {
+func (r *AlibabaHappytripTaxiProviderAccountBalanceAPIRequest) SetCostCenter(_costCenter string) error {
     r._costCenter = _costCenter
     r.Set("cost_center", _costCenter)
     return nil
 }
 
 // CostCenter Getter
-func (r AlibabaHappytripTaxiProviderAccountBalanceRequest) GetCostCenter() string {
+func (r AlibabaHappytripTaxiProviderAccountBalanceAPIRequest) GetCostCenter() string {
     return r._costCenter
 }

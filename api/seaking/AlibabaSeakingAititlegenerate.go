@@ -11,7 +11,7 @@ alibaba.seaking.aititlegenerate
 
 标题智能优化
 */
-func AlibabaSeakingAititlegenerate(clt *core.SDKClient, req *seaking.AlibabaSeakingAititlegenerateRequest, session string) (*seaking.AlibabaSeakingAititlegenerateAPIResponse, error) {
+func AlibabaSeakingAititlegenerate(clt *core.SDKClient, req *seaking.AlibabaSeakingAititlegenerateAPIRequest, session string) (*seaking.AlibabaSeakingAititlegenerateAPIResponse, error) {
     var resp seaking.AlibabaSeakingAititlegenerateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

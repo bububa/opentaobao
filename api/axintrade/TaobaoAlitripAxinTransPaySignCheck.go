@@ -11,7 +11,7 @@ taobao.alitrip.axin.trans.pay.sign.check
 
 阿信支付宝验签服务
 */
-func TaobaoAlitripAxinTransPaySignCheck(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransPaySignCheckRequest, session string) (*axintrade.TaobaoAlitripAxinTransPaySignCheckAPIResponse, error) {
+func TaobaoAlitripAxinTransPaySignCheck(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransPaySignCheckAPIRequest, session string) (*axintrade.TaobaoAlitripAxinTransPaySignCheckAPIResponse, error) {
     var resp axintrade.TaobaoAlitripAxinTransPaySignCheckAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

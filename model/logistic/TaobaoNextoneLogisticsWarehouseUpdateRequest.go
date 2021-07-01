@@ -12,7 +12,7 @@ taobao.nextone.logistics.warehouse.update
 
 商家上传退货入仓状态给ag
 */
-type TaobaoNextoneLogisticsWarehouseUpdateRequest struct {
+type TaobaoNextoneLogisticsWarehouseUpdateAPIRequest struct {
     model.Params
     // 退款编号
     _refundId   int64
@@ -20,20 +20,20 @@ type TaobaoNextoneLogisticsWarehouseUpdateRequest struct {
     _warehouseStatus   int64
 }
 
-// 初始化TaobaoNextoneLogisticsWarehouseUpdateRequest对象
-func NewTaobaoNextoneLogisticsWarehouseUpdateRequest() *TaobaoNextoneLogisticsWarehouseUpdateRequest{
-    return &TaobaoNextoneLogisticsWarehouseUpdateRequest{
+// 初始化TaobaoNextoneLogisticsWarehouseUpdateAPIRequest对象
+func NewTaobaoNextoneLogisticsWarehouseUpdateRequest() *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest{
+    return &TaobaoNextoneLogisticsWarehouseUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoNextoneLogisticsWarehouseUpdateRequest) GetApiMethodName() string {
+func (r TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.nextone.logistics.warehouse.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoNextoneLogisticsWarehouseUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoNextoneLogisticsWarehouseUpdateRequest) GetApiParams() url.Values 
 }
 // RefundId Setter
 // 退款编号
-func (r *TaobaoNextoneLogisticsWarehouseUpdateRequest) SetRefundId(_refundId int64) error {
+func (r *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) SetRefundId(_refundId int64) error {
     r._refundId = _refundId
     r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
-func (r TaobaoNextoneLogisticsWarehouseUpdateRequest) GetRefundId() int64 {
+func (r TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) GetRefundId() int64 {
     return r._refundId
 }
 // WarehouseStatus Setter
 // 退货入仓状态 1.已入仓
-func (r *TaobaoNextoneLogisticsWarehouseUpdateRequest) SetWarehouseStatus(_warehouseStatus int64) error {
+func (r *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) SetWarehouseStatus(_warehouseStatus int64) error {
     r._warehouseStatus = _warehouseStatus
     r.Set("warehouse_status", _warehouseStatus)
     return nil
 }
 
 // WarehouseStatus Getter
-func (r TaobaoNextoneLogisticsWarehouseUpdateRequest) GetWarehouseStatus() int64 {
+func (r TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) GetWarehouseStatus() int64 {
     return r._warehouseStatus
 }

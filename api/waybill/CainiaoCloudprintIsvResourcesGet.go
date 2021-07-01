@@ -11,7 +11,7 @@ cainiao.cloudprint.isv.resources.get
 
 isv资源查询，包括isv模板、打印项、预设的自定义区等
 */
-func CainiaoCloudprintIsvResourcesGet(clt *core.SDKClient, req *waybill.CainiaoCloudprintIsvResourcesGetRequest, session string) (*waybill.CainiaoCloudprintIsvResourcesGetAPIResponse, error) {
+func CainiaoCloudprintIsvResourcesGet(clt *core.SDKClient, req *waybill.CainiaoCloudprintIsvResourcesGetAPIRequest, session string) (*waybill.CainiaoCloudprintIsvResourcesGetAPIResponse, error) {
     var resp waybill.CainiaoCloudprintIsvResourcesGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

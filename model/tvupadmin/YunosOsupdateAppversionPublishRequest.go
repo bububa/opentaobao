@@ -12,26 +12,26 @@ yunos.osupdate.appversion.publish
 
 发布应用升级任务
 */
-type YunosOsupdateAppversionPublishRequest struct {
+type YunosOsupdateAppversionPublishAPIRequest struct {
     model.Params
     // 发布应用升级入参json
     _publishJson   string
 }
 
-// 初始化YunosOsupdateAppversionPublishRequest对象
-func NewYunosOsupdateAppversionPublishRequest() *YunosOsupdateAppversionPublishRequest{
-    return &YunosOsupdateAppversionPublishRequest{
+// 初始化YunosOsupdateAppversionPublishAPIRequest对象
+func NewYunosOsupdateAppversionPublishRequest() *YunosOsupdateAppversionPublishAPIRequest{
+    return &YunosOsupdateAppversionPublishAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosOsupdateAppversionPublishRequest) GetApiMethodName() string {
+func (r YunosOsupdateAppversionPublishAPIRequest) GetApiMethodName() string {
     return "yunos.osupdate.appversion.publish"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosOsupdateAppversionPublishRequest) GetApiParams() url.Values {
+func (r YunosOsupdateAppversionPublishAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosOsupdateAppversionPublishRequest) GetApiParams() url.Values {
 }
 // PublishJson Setter
 // 发布应用升级入参json
-func (r *YunosOsupdateAppversionPublishRequest) SetPublishJson(_publishJson string) error {
+func (r *YunosOsupdateAppversionPublishAPIRequest) SetPublishJson(_publishJson string) error {
     r._publishJson = _publishJson
     r.Set("publish_json", _publishJson)
     return nil
 }
 
 // PublishJson Getter
-func (r YunosOsupdateAppversionPublishRequest) GetPublishJson() string {
+func (r YunosOsupdateAppversionPublishAPIRequest) GetPublishJson() string {
     return r._publishJson
 }

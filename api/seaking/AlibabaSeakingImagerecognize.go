@@ -11,7 +11,7 @@ alibaba.seaking.imagerecognize
 
 图片语种识别
 */
-func AlibabaSeakingImagerecognize(clt *core.SDKClient, req *seaking.AlibabaSeakingImagerecognizeRequest, session string) (*seaking.AlibabaSeakingImagerecognizeAPIResponse, error) {
+func AlibabaSeakingImagerecognize(clt *core.SDKClient, req *seaking.AlibabaSeakingImagerecognizeAPIRequest, session string) (*seaking.AlibabaSeakingImagerecognizeAPIResponse, error) {
     var resp seaking.AlibabaSeakingImagerecognizeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

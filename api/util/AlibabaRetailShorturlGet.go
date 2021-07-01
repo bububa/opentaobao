@@ -11,7 +11,7 @@ alibaba.retail.shorturl.get
 
 短链接获取
 */
-func AlibabaRetailShorturlGet(clt *core.SDKClient, req *util.AlibabaRetailShorturlGetRequest, session string) (*util.AlibabaRetailShorturlGetAPIResponse, error) {
+func AlibabaRetailShorturlGet(clt *core.SDKClient, req *util.AlibabaRetailShorturlGetAPIRequest, session string) (*util.AlibabaRetailShorturlGetAPIResponse, error) {
     var resp util.AlibabaRetailShorturlGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

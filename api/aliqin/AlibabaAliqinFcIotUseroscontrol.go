@@ -11,7 +11,7 @@ alibaba.aliqin.fc.iot.useroscontrol
 
 物联网针对用户级管理停开支持
 */
-func AlibabaAliqinFcIotUseroscontrol(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotUseroscontrolRequest, session string) (*aliqin.AlibabaAliqinFcIotUseroscontrolAPIResponse, error) {
+func AlibabaAliqinFcIotUseroscontrol(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotUseroscontrolAPIRequest, session string) (*aliqin.AlibabaAliqinFcIotUseroscontrolAPIResponse, error) {
     var resp aliqin.AlibabaAliqinFcIotUseroscontrolAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

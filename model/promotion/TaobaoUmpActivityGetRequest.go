@@ -12,26 +12,26 @@ taobao.ump.activity.get
 
 查询营销活动
 */
-type TaobaoUmpActivityGetRequest struct {
+type TaobaoUmpActivityGetAPIRequest struct {
     model.Params
     // 活动id
     _actId   int64
 }
 
-// 初始化TaobaoUmpActivityGetRequest对象
-func NewTaobaoUmpActivityGetRequest() *TaobaoUmpActivityGetRequest{
-    return &TaobaoUmpActivityGetRequest{
+// 初始化TaobaoUmpActivityGetAPIRequest对象
+func NewTaobaoUmpActivityGetRequest() *TaobaoUmpActivityGetAPIRequest{
+    return &TaobaoUmpActivityGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoUmpActivityGetRequest) GetApiMethodName() string {
+func (r TaobaoUmpActivityGetAPIRequest) GetApiMethodName() string {
     return "taobao.ump.activity.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoUmpActivityGetRequest) GetApiParams() url.Values {
+func (r TaobaoUmpActivityGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoUmpActivityGetRequest) GetApiParams() url.Values {
 }
 // ActId Setter
 // 活动id
-func (r *TaobaoUmpActivityGetRequest) SetActId(_actId int64) error {
+func (r *TaobaoUmpActivityGetAPIRequest) SetActId(_actId int64) error {
     r._actId = _actId
     r.Set("act_id", _actId)
     return nil
 }
 
 // ActId Getter
-func (r TaobaoUmpActivityGetRequest) GetActId() int64 {
+func (r TaobaoUmpActivityGetAPIRequest) GetActId() int64 {
     return r._actId
 }

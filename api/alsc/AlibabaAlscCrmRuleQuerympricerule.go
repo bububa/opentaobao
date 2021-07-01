@@ -11,7 +11,7 @@ alibaba.alsc.crm.rule.querympricerule
 
 查询品牌下的会员价规则
 */
-func AlibabaAlscCrmRuleQuerympricerule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQuerympriceruleRequest, session string) (*alsc.AlibabaAlscCrmRuleQuerympriceruleAPIResponse, error) {
+func AlibabaAlscCrmRuleQuerympricerule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQuerympriceruleAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleQuerympriceruleAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmRuleQuerympriceruleAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

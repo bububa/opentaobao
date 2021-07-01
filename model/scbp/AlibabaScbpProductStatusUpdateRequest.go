@@ -12,7 +12,7 @@ alibaba.scbp.product.status.update
 
 修改P4P产品推广状态
 */
-type AlibabaScbpProductStatusUpdateRequest struct {
+type AlibabaScbpProductStatusUpdateAPIRequest struct {
     model.Params
     // 产品ID列表
     _productIdList   []int64
@@ -20,20 +20,20 @@ type AlibabaScbpProductStatusUpdateRequest struct {
     _status   string
 }
 
-// 初始化AlibabaScbpProductStatusUpdateRequest对象
-func NewAlibabaScbpProductStatusUpdateRequest() *AlibabaScbpProductStatusUpdateRequest{
-    return &AlibabaScbpProductStatusUpdateRequest{
+// 初始化AlibabaScbpProductStatusUpdateAPIRequest对象
+func NewAlibabaScbpProductStatusUpdateRequest() *AlibabaScbpProductStatusUpdateAPIRequest{
+    return &AlibabaScbpProductStatusUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpProductStatusUpdateRequest) GetApiMethodName() string {
+func (r AlibabaScbpProductStatusUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.product.status.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpProductStatusUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaScbpProductStatusUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaScbpProductStatusUpdateRequest) GetApiParams() url.Values {
 }
 // ProductIdList Setter
 // 产品ID列表
-func (r *AlibabaScbpProductStatusUpdateRequest) SetProductIdList(_productIdList []int64) error {
+func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetProductIdList(_productIdList []int64) error {
     r._productIdList = _productIdList
     r.Set("product_id_list", _productIdList)
     return nil
 }
 
 // ProductIdList Getter
-func (r AlibabaScbpProductStatusUpdateRequest) GetProductIdList() []int64 {
+func (r AlibabaScbpProductStatusUpdateAPIRequest) GetProductIdList() []int64 {
     return r._productIdList
 }
 // Status Setter
 // enabled:开启,disabled:暂停
-func (r *AlibabaScbpProductStatusUpdateRequest) SetStatus(_status string) error {
+func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetStatus(_status string) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r AlibabaScbpProductStatusUpdateRequest) GetStatus() string {
+func (r AlibabaScbpProductStatusUpdateAPIRequest) GetStatus() string {
     return r._status
 }

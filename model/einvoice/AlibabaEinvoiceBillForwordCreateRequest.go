@@ -12,7 +12,7 @@ alibaba.einvoice.bill.forword.create
 
 扫码开票结算单同步前开发票，会将数据同步到结算单中
 */
-type AlibabaEinvoiceBillForwordCreateRequest struct {
+type AlibabaEinvoiceBillForwordCreateAPIRequest struct {
     model.Params
     // 发票商品明细
     _invoiceItems   []BillItemDO
@@ -46,20 +46,20 @@ type AlibabaEinvoiceBillForwordCreateRequest struct {
     _businessType   int64
 }
 
-// 初始化AlibabaEinvoiceBillForwordCreateRequest对象
-func NewAlibabaEinvoiceBillForwordCreateRequest() *AlibabaEinvoiceBillForwordCreateRequest{
-    return &AlibabaEinvoiceBillForwordCreateRequest{
+// 初始化AlibabaEinvoiceBillForwordCreateAPIRequest对象
+func NewAlibabaEinvoiceBillForwordCreateRequest() *AlibabaEinvoiceBillForwordCreateAPIRequest{
+    return &AlibabaEinvoiceBillForwordCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.einvoice.bill.forword.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetApiParams() url.Values {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -68,181 +68,181 @@ func (r AlibabaEinvoiceBillForwordCreateRequest) GetApiParams() url.Values {
 }
 // InvoiceItems Setter
 // 发票商品明细
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetInvoiceItems(_invoiceItems []BillItemDO) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetInvoiceItems(_invoiceItems []BillItemDO) error {
     r._invoiceItems = _invoiceItems
     r.Set("invoice_items", _invoiceItems)
     return nil
 }
 
 // InvoiceItems Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetInvoiceItems() []BillItemDO {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetInvoiceItems() []BillItemDO {
     return r._invoiceItems
 }
 // OrderId Setter
 // 结算单订单ID
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetOrderId(_orderId string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetOrderId(_orderId string) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetOrderId() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetOrderId() string {
     return r._orderId
 }
 // PayeeRegisterNo Setter
 // 收款方税号
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
     r._payeeRegisterNo = _payeeRegisterNo
     r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetPayeeRegisterNo() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayeeRegisterNo() string {
     return r._payeeRegisterNo
 }
 // Platform Setter
 // 调用平台，用以区分不同的订单ID，不填默认为default
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetPlatform(_platform string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPlatform(_platform string) error {
     r._platform = _platform
     r.Set("platform", _platform)
     return nil
 }
 
 // Platform Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetPlatform() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPlatform() string {
     return r._platform
 }
 // SeriNo Setter
 // 开票流水号，若不填则系统默认生成
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetSeriNo(_seriNo string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetSeriNo(_seriNo string) error {
     r._seriNo = _seriNo
     r.Set("seri_no", _seriNo)
     return nil
 }
 
 // SeriNo Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetSeriNo() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetSeriNo() string {
     return r._seriNo
 }
 // ShopName Setter
 // 店铺名称
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetShopName(_shopName string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetShopName(_shopName string) error {
     r._shopName = _shopName
     r.Set("shop_name", _shopName)
     return nil
 }
 
 // ShopName Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetShopName() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetShopName() string {
     return r._shopName
 }
 // SumPrice Setter
 // 开票金额，和明细累计总金额需相同
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetSumPrice(_sumPrice string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetSumPrice(_sumPrice string) error {
     r._sumPrice = _sumPrice
     r.Set("sum_price", _sumPrice)
     return nil
 }
 
 // SumPrice Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetSumPrice() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetSumPrice() string {
     return r._sumPrice
 }
 // PayerAddress Setter
 // 付款方地址
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetPayerAddress(_payerAddress string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerAddress(_payerAddress string) error {
     r._payerAddress = _payerAddress
     r.Set("payer_address", _payerAddress)
     return nil
 }
 
 // PayerAddress Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetPayerAddress() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerAddress() string {
     return r._payerAddress
 }
 // PayerBankaccount Setter
 // 付款方银行账户
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetPayerBankaccount(_payerBankaccount string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerBankaccount(_payerBankaccount string) error {
     r._payerBankaccount = _payerBankaccount
     r.Set("payer_bankaccount", _payerBankaccount)
     return nil
 }
 
 // PayerBankaccount Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetPayerBankaccount() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerBankaccount() string {
     return r._payerBankaccount
 }
 // PayerEmail Setter
 // 付款方开票邮件通知邮箱
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetPayerEmail(_payerEmail string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerEmail(_payerEmail string) error {
     r._payerEmail = _payerEmail
     r.Set("payer_email", _payerEmail)
     return nil
 }
 
 // PayerEmail Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetPayerEmail() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerEmail() string {
     return r._payerEmail
 }
 // PayerName Setter
 // 付款方发票抬头
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetPayerName(_payerName string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerName(_payerName string) error {
     r._payerName = _payerName
     r.Set("payer_name", _payerName)
     return nil
 }
 
 // PayerName Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetPayerName() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerName() string {
     return r._payerName
 }
 // PayerPhone Setter
 // 企业电话
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetPayerPhone(_payerPhone string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerPhone(_payerPhone string) error {
     r._payerPhone = _payerPhone
     r.Set("payer_phone", _payerPhone)
     return nil
 }
 
 // PayerPhone Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetPayerPhone() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerPhone() string {
     return r._payerPhone
 }
 // PayerRegisterNo Setter
 // 付款方税号
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetPayerRegisterNo(_payerRegisterNo string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerRegisterNo(_payerRegisterNo string) error {
     r._payerRegisterNo = _payerRegisterNo
     r.Set("payer_register_no", _payerRegisterNo)
     return nil
 }
 
 // PayerRegisterNo Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetPayerRegisterNo() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerRegisterNo() string {
     return r._payerRegisterNo
 }
 // PhoneNumber Setter
 // 个人电话，接收发票通知
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetPhoneNumber(_phoneNumber string) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPhoneNumber(_phoneNumber string) error {
     r._phoneNumber = _phoneNumber
     r.Set("phone_number", _phoneNumber)
     return nil
 }
 
 // PhoneNumber Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetPhoneNumber() string {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPhoneNumber() string {
     return r._phoneNumber
 }
 // BusinessType Setter
 // 企业或个人抬头发票，0=个人，1=企业。默认=1
-func (r *AlibabaEinvoiceBillForwordCreateRequest) SetBusinessType(_businessType int64) error {
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetBusinessType(_businessType int64) error {
     r._businessType = _businessType
     r.Set("business_type", _businessType)
     return nil
 }
 
 // BusinessType Getter
-func (r AlibabaEinvoiceBillForwordCreateRequest) GetBusinessType() int64 {
+func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetBusinessType() int64 {
     return r._businessType
 }

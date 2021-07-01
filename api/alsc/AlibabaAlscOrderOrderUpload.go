@@ -11,7 +11,7 @@ alibaba.alsc.order.order.upload
 
 第三方订单回流
 */
-func AlibabaAlscOrderOrderUpload(clt *core.SDKClient, req *alsc.AlibabaAlscOrderOrderUploadRequest, session string) (*alsc.AlibabaAlscOrderOrderUploadAPIResponse, error) {
+func AlibabaAlscOrderOrderUpload(clt *core.SDKClient, req *alsc.AlibabaAlscOrderOrderUploadAPIRequest, session string) (*alsc.AlibabaAlscOrderOrderUploadAPIResponse, error) {
     var resp alsc.AlibabaAlscOrderOrderUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

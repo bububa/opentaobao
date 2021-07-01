@@ -11,7 +11,7 @@ taobao.feedflow.item.campaign.get
 
 通过计划id查询计划
 */
-func TaobaoFeedflowItemCampaignGet(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignGetRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignGetAPIResponse, error) {
+func TaobaoFeedflowItemCampaignGet(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignGetAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignGetAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemCampaignGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

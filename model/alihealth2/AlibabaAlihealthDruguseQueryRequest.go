@@ -12,26 +12,26 @@ alibaba.alihealth.druguse.query
 
 查询用户购买的药品命中的风险规则
 */
-type AlibabaAlihealthDruguseQueryRequest struct {
+type AlibabaAlihealthDruguseQueryAPIRequest struct {
     model.Params
     // 入参
     _command   *SafeMedicationReqCommand
 }
 
-// 初始化AlibabaAlihealthDruguseQueryRequest对象
-func NewAlibabaAlihealthDruguseQueryRequest() *AlibabaAlihealthDruguseQueryRequest{
-    return &AlibabaAlihealthDruguseQueryRequest{
+// 初始化AlibabaAlihealthDruguseQueryAPIRequest对象
+func NewAlibabaAlihealthDruguseQueryRequest() *AlibabaAlihealthDruguseQueryAPIRequest{
+    return &AlibabaAlihealthDruguseQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDruguseQueryRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDruguseQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.druguse.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDruguseQueryRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDruguseQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDruguseQueryRequest) GetApiParams() url.Values {
 }
 // Command Setter
 // 入参
-func (r *AlibabaAlihealthDruguseQueryRequest) SetCommand(_command *SafeMedicationReqCommand) error {
+func (r *AlibabaAlihealthDruguseQueryAPIRequest) SetCommand(_command *SafeMedicationReqCommand) error {
     r._command = _command
     r.Set("command", _command)
     return nil
 }
 
 // Command Getter
-func (r AlibabaAlihealthDruguseQueryRequest) GetCommand() *SafeMedicationReqCommand {
+func (r AlibabaAlihealthDruguseQueryAPIRequest) GetCommand() *SafeMedicationReqCommand {
     return r._command
 }

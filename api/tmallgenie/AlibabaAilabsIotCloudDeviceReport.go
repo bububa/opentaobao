@@ -11,7 +11,7 @@ alibaba.ailabs.iot.cloud.device.report
 
 承接天猫精灵云云接入设备的状态、事件上报
 */
-func AlibabaAilabsIotCloudDeviceReport(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsIotCloudDeviceReportRequest, session string) (*tmallgenie.AlibabaAilabsIotCloudDeviceReportAPIResponse, error) {
+func AlibabaAilabsIotCloudDeviceReport(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsIotCloudDeviceReportAPIRequest, session string) (*tmallgenie.AlibabaAilabsIotCloudDeviceReportAPIResponse, error) {
     var resp tmallgenie.AlibabaAilabsIotCloudDeviceReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

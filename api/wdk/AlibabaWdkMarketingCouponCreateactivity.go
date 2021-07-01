@@ -11,7 +11,7 @@ alibaba.wdk.marketing.coupon.createactivity
 
 添加优惠券活动
 */
-func AlibabaWdkMarketingCouponCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingCouponCreateactivityRequest, session string) (*wdk.AlibabaWdkMarketingCouponCreateactivityAPIResponse, error) {
+func AlibabaWdkMarketingCouponCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingCouponCreateactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingCouponCreateactivityAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingCouponCreateactivityAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

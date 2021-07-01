@@ -12,26 +12,26 @@ alibaba.alihouse.newhome.project.phone.submit
 
 提交楼盘电话
 */
-type AlibabaAlihouseNewhomeProjectPhoneSubmitRequest struct {
+type AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest struct {
     model.Params
     // 楼盘电话
     _projectPhoneDto   *ProjectPhoneDTO
 }
 
-// 初始化AlibabaAlihouseNewhomeProjectPhoneSubmitRequest对象
-func NewAlibabaAlihouseNewhomeProjectPhoneSubmitRequest() *AlibabaAlihouseNewhomeProjectPhoneSubmitRequest{
-    return &AlibabaAlihouseNewhomeProjectPhoneSubmitRequest{
+// 初始化AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectPhoneSubmitRequest() *AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest{
+    return &AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectPhoneSubmitRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.project.phone.submit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectPhoneSubmitRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectPhoneSubmitRequest) GetApiParams() url.Valu
 }
 // ProjectPhoneDto Setter
 // 楼盘电话
-func (r *AlibabaAlihouseNewhomeProjectPhoneSubmitRequest) SetProjectPhoneDto(_projectPhoneDto *ProjectPhoneDTO) error {
+func (r *AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) SetProjectPhoneDto(_projectPhoneDto *ProjectPhoneDTO) error {
     r._projectPhoneDto = _projectPhoneDto
     r.Set("project_phone_dto", _projectPhoneDto)
     return nil
 }
 
 // ProjectPhoneDto Getter
-func (r AlibabaAlihouseNewhomeProjectPhoneSubmitRequest) GetProjectPhoneDto() *ProjectPhoneDTO {
+func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetProjectPhoneDto() *ProjectPhoneDTO {
     return r._projectPhoneDto
 }

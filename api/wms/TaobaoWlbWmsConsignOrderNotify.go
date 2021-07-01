@@ -11,7 +11,7 @@ taobao.wlb.wms.consign.order.notify
 
 发货订单通知
 */
-func TaobaoWlbWmsConsignOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsConsignOrderNotifyRequest, session string) (*wms.TaobaoWlbWmsConsignOrderNotifyAPIResponse, error) {
+func TaobaoWlbWmsConsignOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsConsignOrderNotifyAPIRequest, session string) (*wms.TaobaoWlbWmsConsignOrderNotifyAPIResponse, error) {
     var resp wms.TaobaoWlbWmsConsignOrderNotifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

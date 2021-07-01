@@ -11,7 +11,7 @@ yunos.tvpubadmin.manage.topic.add
 
 专题新增
 */
-func YunosTvpubadminManageTopicAdd(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageTopicAddRequest, session string) (*tvupadmin.YunosTvpubadminManageTopicAddAPIResponse, error) {
+func YunosTvpubadminManageTopicAdd(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageTopicAddAPIRequest, session string) (*tvupadmin.YunosTvpubadminManageTopicAddAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminManageTopicAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

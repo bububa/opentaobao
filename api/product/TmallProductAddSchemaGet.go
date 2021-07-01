@@ -11,7 +11,7 @@ tmall.product.add.schema.get
 
 获取用户发布产品的规则
 */
-func TmallProductAddSchemaGet(clt *core.SDKClient, req *product.TmallProductAddSchemaGetRequest, session string) (*product.TmallProductAddSchemaGetAPIResponse, error) {
+func TmallProductAddSchemaGet(clt *core.SDKClient, req *product.TmallProductAddSchemaGetAPIRequest, session string) (*product.TmallProductAddSchemaGetAPIResponse, error) {
     var resp product.TmallProductAddSchemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.onetouch.logistics.express.address.province.list
 
 四级地址库-省
 */
-func AlibabaOnetouchLogisticsExpressAddressProvinceList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressAddressProvinceListRequest, session string) (*icbulogistics.AlibabaOnetouchLogisticsExpressAddressProvinceListAPIResponse, error) {
+func AlibabaOnetouchLogisticsExpressAddressProvinceList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressAddressProvinceListAPIRequest, session string) (*icbulogistics.AlibabaOnetouchLogisticsExpressAddressProvinceListAPIResponse, error) {
     var resp icbulogistics.AlibabaOnetouchLogisticsExpressAddressProvinceListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

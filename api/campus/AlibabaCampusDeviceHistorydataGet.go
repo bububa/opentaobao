@@ -11,7 +11,7 @@ alibaba.campus.device.historydata.get
 
 设备历史数据批量获取
 */
-func AlibabaCampusDeviceHistorydataGet(clt *core.SDKClient, req *campus.AlibabaCampusDeviceHistorydataGetRequest, session string) (*campus.AlibabaCampusDeviceHistorydataGetAPIResponse, error) {
+func AlibabaCampusDeviceHistorydataGet(clt *core.SDKClient, req *campus.AlibabaCampusDeviceHistorydataGetAPIRequest, session string) (*campus.AlibabaCampusDeviceHistorydataGetAPIResponse, error) {
     var resp campus.AlibabaCampusDeviceHistorydataGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

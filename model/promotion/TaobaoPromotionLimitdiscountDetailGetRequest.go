@@ -12,26 +12,26 @@ taobao.promotion.limitdiscount.detail.get
 
 限时打折详情查询。查询出指定限时打折的对应商品记录信息。
 */
-type TaobaoPromotionLimitdiscountDetailGetRequest struct {
+type TaobaoPromotionLimitdiscountDetailGetAPIRequest struct {
     model.Params
     // 限时打折ID。这个针对查询唯一限时打折情况。
     _limitDiscountId   int64
 }
 
-// 初始化TaobaoPromotionLimitdiscountDetailGetRequest对象
-func NewTaobaoPromotionLimitdiscountDetailGetRequest() *TaobaoPromotionLimitdiscountDetailGetRequest{
-    return &TaobaoPromotionLimitdiscountDetailGetRequest{
+// 初始化TaobaoPromotionLimitdiscountDetailGetAPIRequest对象
+func NewTaobaoPromotionLimitdiscountDetailGetRequest() *TaobaoPromotionLimitdiscountDetailGetAPIRequest{
+    return &TaobaoPromotionLimitdiscountDetailGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPromotionLimitdiscountDetailGetRequest) GetApiMethodName() string {
+func (r TaobaoPromotionLimitdiscountDetailGetAPIRequest) GetApiMethodName() string {
     return "taobao.promotion.limitdiscount.detail.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionLimitdiscountDetailGetRequest) GetApiParams() url.Values {
+func (r TaobaoPromotionLimitdiscountDetailGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPromotionLimitdiscountDetailGetRequest) GetApiParams() url.Values 
 }
 // LimitDiscountId Setter
 // 限时打折ID。这个针对查询唯一限时打折情况。
-func (r *TaobaoPromotionLimitdiscountDetailGetRequest) SetLimitDiscountId(_limitDiscountId int64) error {
+func (r *TaobaoPromotionLimitdiscountDetailGetAPIRequest) SetLimitDiscountId(_limitDiscountId int64) error {
     r._limitDiscountId = _limitDiscountId
     r.Set("limit_discount_id", _limitDiscountId)
     return nil
 }
 
 // LimitDiscountId Getter
-func (r TaobaoPromotionLimitdiscountDetailGetRequest) GetLimitDiscountId() int64 {
+func (r TaobaoPromotionLimitdiscountDetailGetAPIRequest) GetLimitDiscountId() int64 {
     return r._limitDiscountId
 }

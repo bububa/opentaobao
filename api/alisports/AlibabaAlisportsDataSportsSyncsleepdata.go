@@ -11,7 +11,7 @@ alibaba.alisports.data.sports.syncsleepdata
 
 阿里体育数据中心用户睡眠数据同步接口
 */
-func AlibabaAlisportsDataSportsSyncsleepdata(clt *core.SDKClient, req *alisports.AlibabaAlisportsDataSportsSyncsleepdataRequest, session string) (*alisports.AlibabaAlisportsDataSportsSyncsleepdataAPIResponse, error) {
+func AlibabaAlisportsDataSportsSyncsleepdata(clt *core.SDKClient, req *alisports.AlibabaAlisportsDataSportsSyncsleepdataAPIRequest, session string) (*alisports.AlibabaAlisportsDataSportsSyncsleepdataAPIResponse, error) {
     var resp alisports.AlibabaAlisportsDataSportsSyncsleepdataAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

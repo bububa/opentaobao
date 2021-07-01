@@ -12,7 +12,7 @@ alibaba.idle.rent.order.checkstatus.upload
 
 上传验收结果
 */
-type AlibabaIdleRentOrderCheckstatusUploadRequest struct {
+type AlibabaIdleRentOrderCheckstatusUploadAPIRequest struct {
     model.Params
     // 订单id
     _orderId   int64
@@ -20,20 +20,20 @@ type AlibabaIdleRentOrderCheckstatusUploadRequest struct {
     _checkResult   *CheckResultDTO
 }
 
-// 初始化AlibabaIdleRentOrderCheckstatusUploadRequest对象
-func NewAlibabaIdleRentOrderCheckstatusUploadRequest() *AlibabaIdleRentOrderCheckstatusUploadRequest{
-    return &AlibabaIdleRentOrderCheckstatusUploadRequest{
+// 初始化AlibabaIdleRentOrderCheckstatusUploadAPIRequest对象
+func NewAlibabaIdleRentOrderCheckstatusUploadRequest() *AlibabaIdleRentOrderCheckstatusUploadAPIRequest{
+    return &AlibabaIdleRentOrderCheckstatusUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleRentOrderCheckstatusUploadRequest) GetApiMethodName() string {
+func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.rent.order.checkstatus.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleRentOrderCheckstatusUploadRequest) GetApiParams() url.Values {
+func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaIdleRentOrderCheckstatusUploadRequest) GetApiParams() url.Values 
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaIdleRentOrderCheckstatusUploadRequest) SetOrderId(_orderId int64) error {
+func (r *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaIdleRentOrderCheckstatusUploadRequest) GetOrderId() int64 {
+func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetOrderId() int64 {
     return r._orderId
 }
 // CheckResult Setter
 // 校验结果
-func (r *AlibabaIdleRentOrderCheckstatusUploadRequest) SetCheckResult(_checkResult *CheckResultDTO) error {
+func (r *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) SetCheckResult(_checkResult *CheckResultDTO) error {
     r._checkResult = _checkResult
     r.Set("check_result", _checkResult)
     return nil
 }
 
 // CheckResult Getter
-func (r AlibabaIdleRentOrderCheckstatusUploadRequest) GetCheckResult() *CheckResultDTO {
+func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetCheckResult() *CheckResultDTO {
     return r._checkResult
 }

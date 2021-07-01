@@ -13,7 +13,7 @@ taobao.item.sku.get
 sku_id对应的sku要属于传入的nick对应的卖家
 <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 */
-func TaobaoItemSkuGet(clt *core.SDKClient, req *product.TaobaoItemSkuGetRequest, session string) (*product.TaobaoItemSkuGetAPIResponse, error) {
+func TaobaoItemSkuGet(clt *core.SDKClient, req *product.TaobaoItemSkuGetAPIRequest, session string) (*product.TaobaoItemSkuGetAPIResponse, error) {
     var resp product.TaobaoItemSkuGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

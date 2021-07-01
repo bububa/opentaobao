@@ -11,7 +11,7 @@ alitrip.btrip.approval.new
 
 用户新建审批单
 */
-func AlitripBtripApprovalNew(clt *core.SDKClient, req *btrip.AlitripBtripApprovalNewRequest, session string) (*btrip.AlitripBtripApprovalNewAPIResponse, error) {
+func AlitripBtripApprovalNew(clt *core.SDKClient, req *btrip.AlitripBtripApprovalNewAPIRequest, session string) (*btrip.AlitripBtripApprovalNewAPIResponse, error) {
     var resp btrip.AlitripBtripApprovalNewAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

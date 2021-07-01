@@ -11,7 +11,7 @@ alibaba.gpu.schema.catsearch
 
 按类目查询spu的schema接口
 */
-func AlibabaGpuSchemaCatsearch(clt *core.SDKClient, req *product.AlibabaGpuSchemaCatsearchRequest, session string) (*product.AlibabaGpuSchemaCatsearchAPIResponse, error) {
+func AlibabaGpuSchemaCatsearch(clt *core.SDKClient, req *product.AlibabaGpuSchemaCatsearchAPIRequest, session string) (*product.AlibabaGpuSchemaCatsearchAPIResponse, error) {
     var resp product.AlibabaGpuSchemaCatsearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

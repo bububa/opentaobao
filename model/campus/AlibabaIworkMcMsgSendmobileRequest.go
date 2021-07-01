@@ -12,26 +12,26 @@ alibaba.iwork.mc.msg.sendmobile
 
 给手机用户发送对应操作结果的消息
 */
-type AlibabaIworkMcMsgSendmobileRequest struct {
+type AlibabaIworkMcMsgSendmobileAPIRequest struct {
     model.Params
     // 消息对象
     _mobileReceiverMessageEvent   *MobileReceiverMessageEvent
 }
 
-// 初始化AlibabaIworkMcMsgSendmobileRequest对象
-func NewAlibabaIworkMcMsgSendmobileRequest() *AlibabaIworkMcMsgSendmobileRequest{
-    return &AlibabaIworkMcMsgSendmobileRequest{
+// 初始化AlibabaIworkMcMsgSendmobileAPIRequest对象
+func NewAlibabaIworkMcMsgSendmobileRequest() *AlibabaIworkMcMsgSendmobileAPIRequest{
+    return &AlibabaIworkMcMsgSendmobileAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIworkMcMsgSendmobileRequest) GetApiMethodName() string {
+func (r AlibabaIworkMcMsgSendmobileAPIRequest) GetApiMethodName() string {
     return "alibaba.iwork.mc.msg.sendmobile"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIworkMcMsgSendmobileRequest) GetApiParams() url.Values {
+func (r AlibabaIworkMcMsgSendmobileAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIworkMcMsgSendmobileRequest) GetApiParams() url.Values {
 }
 // MobileReceiverMessageEvent Setter
 // 消息对象
-func (r *AlibabaIworkMcMsgSendmobileRequest) SetMobileReceiverMessageEvent(_mobileReceiverMessageEvent *MobileReceiverMessageEvent) error {
+func (r *AlibabaIworkMcMsgSendmobileAPIRequest) SetMobileReceiverMessageEvent(_mobileReceiverMessageEvent *MobileReceiverMessageEvent) error {
     r._mobileReceiverMessageEvent = _mobileReceiverMessageEvent
     r.Set("mobile_receiver_message_event", _mobileReceiverMessageEvent)
     return nil
 }
 
 // MobileReceiverMessageEvent Getter
-func (r AlibabaIworkMcMsgSendmobileRequest) GetMobileReceiverMessageEvent() *MobileReceiverMessageEvent {
+func (r AlibabaIworkMcMsgSendmobileAPIRequest) GetMobileReceiverMessageEvent() *MobileReceiverMessageEvent {
     return r._mobileReceiverMessageEvent
 }

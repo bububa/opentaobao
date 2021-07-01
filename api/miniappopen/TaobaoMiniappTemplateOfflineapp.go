@@ -11,7 +11,7 @@ taobao.miniapp.template.offlineapp
 
 对指定的实例化小程序进行下线,需要指定clients和app_version
 */
-func TaobaoMiniappTemplateOfflineapp(clt *core.SDKClient, req *miniappopen.TaobaoMiniappTemplateOfflineappRequest, session string) (*miniappopen.TaobaoMiniappTemplateOfflineappAPIResponse, error) {
+func TaobaoMiniappTemplateOfflineapp(clt *core.SDKClient, req *miniappopen.TaobaoMiniappTemplateOfflineappAPIRequest, session string) (*miniappopen.TaobaoMiniappTemplateOfflineappAPIResponse, error) {
     var resp miniappopen.TaobaoMiniappTemplateOfflineappAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

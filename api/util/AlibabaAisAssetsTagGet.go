@@ -11,7 +11,7 @@ alibaba.ais.assets.tag.get
 
 提供浪潮，英业达等厂商供应阿里巴巴基础设施资产的标签QR code获取
 */
-func AlibabaAisAssetsTagGet(clt *core.SDKClient, req *util.AlibabaAisAssetsTagGetRequest, session string) (*util.AlibabaAisAssetsTagGetAPIResponse, error) {
+func AlibabaAisAssetsTagGet(clt *core.SDKClient, req *util.AlibabaAisAssetsTagGetAPIRequest, session string) (*util.AlibabaAisAssetsTagGetAPIResponse, error) {
     var resp util.AlibabaAisAssetsTagGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

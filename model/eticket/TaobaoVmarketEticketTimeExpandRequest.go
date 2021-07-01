@@ -12,7 +12,7 @@ taobao.vmarket.eticket.time.expand
 
 提供码商操作订单延期接口
 */
-type TaobaoVmarketEticketTimeExpandRequest struct {
+type TaobaoVmarketEticketTimeExpandAPIRequest struct {
     model.Params
     // 订单ID
     _orderId   int64
@@ -20,20 +20,20 @@ type TaobaoVmarketEticketTimeExpandRequest struct {
     _expandDays   int64
 }
 
-// 初始化TaobaoVmarketEticketTimeExpandRequest对象
-func NewTaobaoVmarketEticketTimeExpandRequest() *TaobaoVmarketEticketTimeExpandRequest{
-    return &TaobaoVmarketEticketTimeExpandRequest{
+// 初始化TaobaoVmarketEticketTimeExpandAPIRequest对象
+func NewTaobaoVmarketEticketTimeExpandRequest() *TaobaoVmarketEticketTimeExpandAPIRequest{
+    return &TaobaoVmarketEticketTimeExpandAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoVmarketEticketTimeExpandRequest) GetApiMethodName() string {
+func (r TaobaoVmarketEticketTimeExpandAPIRequest) GetApiMethodName() string {
     return "taobao.vmarket.eticket.time.expand"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoVmarketEticketTimeExpandRequest) GetApiParams() url.Values {
+func (r TaobaoVmarketEticketTimeExpandAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoVmarketEticketTimeExpandRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单ID
-func (r *TaobaoVmarketEticketTimeExpandRequest) SetOrderId(_orderId int64) error {
+func (r *TaobaoVmarketEticketTimeExpandAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r TaobaoVmarketEticketTimeExpandRequest) GetOrderId() int64 {
+func (r TaobaoVmarketEticketTimeExpandAPIRequest) GetOrderId() int64 {
     return r._orderId
 }
 // ExpandDays Setter
 // 延长天数，延长时间=当前过期时间+延长天数
-func (r *TaobaoVmarketEticketTimeExpandRequest) SetExpandDays(_expandDays int64) error {
+func (r *TaobaoVmarketEticketTimeExpandAPIRequest) SetExpandDays(_expandDays int64) error {
     r._expandDays = _expandDays
     r.Set("expand_days", _expandDays)
     return nil
 }
 
 // ExpandDays Getter
-func (r TaobaoVmarketEticketTimeExpandRequest) GetExpandDays() int64 {
+func (r TaobaoVmarketEticketTimeExpandAPIRequest) GetExpandDays() int64 {
     return r._expandDays
 }

@@ -1,52 +1,17 @@
 package qimen
 
-import (
-    "net/url"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-订单SN通知接口 API请求
-taobao.qimen.order.sn.report
-
-WMS调用奇门的接口,在出库、发货、入库等场景下，ERP和WMS之间同步操作的SN列表
-*/
+// TaobaoQimenOrderSnReportRequest 
 type TaobaoQimenOrderSnReportRequest struct {
-    model.Params
-    // 
-    _request   *Request
-}
-
-// 初始化TaobaoQimenOrderSnReportRequest对象
-func NewTaobaoQimenOrderSnReportRequest() *TaobaoQimenOrderSnReportRequest{
-    return &TaobaoQimenOrderSnReportRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TaobaoQimenOrderSnReportRequest) GetApiMethodName() string {
-    return "taobao.qimen.order.sn.report"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TaobaoQimenOrderSnReportRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// Request Setter
-// 
-func (r *TaobaoQimenOrderSnReportRequest) SetRequest(_request *Request) error {
-    r._request = _request
-    r.Set("request", _request)
-    return nil
-}
-
-// Request Getter
-func (r TaobaoQimenOrderSnReportRequest) GetRequest() *Request {
-    return r._request
+    // 总页数
+    TotalPage   int64 `json:"totalPage,omitempty" xml:"totalPage,omitempty"`
+    // 当前页(从1开始)
+    CurrentPage   int64 `json:"currentPage,omitempty" xml:"currentPage,omitempty"`
+    // 每页记录的条数
+    PageSize   int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+    // 单据列表
+    Order   *Order `json:"order,omitempty" xml:"order,omitempty"`
+    // 商品列表
+    Items   *Items `json:"items,omitempty" xml:"items,omitempty"`
+    // 扩展属性
+    ExtendProps   *TaobaoQimenOrderSnReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

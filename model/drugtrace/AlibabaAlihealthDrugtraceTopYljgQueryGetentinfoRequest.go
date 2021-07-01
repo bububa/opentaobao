@@ -12,26 +12,26 @@ alibaba.alihealth.drugtrace.top.yljg.query.getentinfo
 
 根据企业名称查询ID
 */
-type AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest struct {
+type AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest struct {
     model.Params
     // 公司名称(全称)
     _entName   string
 }
 
-// 初始化AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest对象
-func NewAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest() *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest{
-    return &AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest{
+// 初始化AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest对象
+func NewAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest() *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest{
+    return &AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drugtrace.top.yljg.query.getentinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest) GetApiParams() u
 }
 // EntName Setter
 // 公司名称(全称)
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest) SetEntName(_entName string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest) SetEntName(_entName string) error {
     r._entName = _entName
     r.Set("ent_name", _entName)
     return nil
 }
 
 // EntName Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest) GetEntName() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest) GetEntName() string {
     return r._entName
 }

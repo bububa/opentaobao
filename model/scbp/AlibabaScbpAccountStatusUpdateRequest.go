@@ -12,26 +12,26 @@ alibaba.scbp.account.status.update
 
 修改账户级别关键词推广状态
 */
-type AlibabaScbpAccountStatusUpdateRequest struct {
+type AlibabaScbpAccountStatusUpdateAPIRequest struct {
     model.Params
     // on:开启,off:暂停
     _status   string
 }
 
-// 初始化AlibabaScbpAccountStatusUpdateRequest对象
-func NewAlibabaScbpAccountStatusUpdateRequest() *AlibabaScbpAccountStatusUpdateRequest{
-    return &AlibabaScbpAccountStatusUpdateRequest{
+// 初始化AlibabaScbpAccountStatusUpdateAPIRequest对象
+func NewAlibabaScbpAccountStatusUpdateRequest() *AlibabaScbpAccountStatusUpdateAPIRequest{
+    return &AlibabaScbpAccountStatusUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAccountStatusUpdateRequest) GetApiMethodName() string {
+func (r AlibabaScbpAccountStatusUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.account.status.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAccountStatusUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAccountStatusUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpAccountStatusUpdateRequest) GetApiParams() url.Values {
 }
 // Status Setter
 // on:开启,off:暂停
-func (r *AlibabaScbpAccountStatusUpdateRequest) SetStatus(_status string) error {
+func (r *AlibabaScbpAccountStatusUpdateAPIRequest) SetStatus(_status string) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r AlibabaScbpAccountStatusUpdateRequest) GetStatus() string {
+func (r AlibabaScbpAccountStatusUpdateAPIRequest) GetStatus() string {
     return r._status
 }

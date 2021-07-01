@@ -12,26 +12,26 @@ alibaba.wdk.coupon.sku.remove
 
 优惠券商品删除
 */
-type AlibabaWdkCouponSkuRemoveRequest struct {
+type AlibabaWdkCouponSkuRemoveAPIRequest struct {
     model.Params
     // 请求
     _paramCouponTemplateItemRequest   *CouponTemplateItemRequest
 }
 
-// 初始化AlibabaWdkCouponSkuRemoveRequest对象
-func NewAlibabaWdkCouponSkuRemoveRequest() *AlibabaWdkCouponSkuRemoveRequest{
-    return &AlibabaWdkCouponSkuRemoveRequest{
+// 初始化AlibabaWdkCouponSkuRemoveAPIRequest对象
+func NewAlibabaWdkCouponSkuRemoveRequest() *AlibabaWdkCouponSkuRemoveAPIRequest{
+    return &AlibabaWdkCouponSkuRemoveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkCouponSkuRemoveRequest) GetApiMethodName() string {
+func (r AlibabaWdkCouponSkuRemoveAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.coupon.sku.remove"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkCouponSkuRemoveRequest) GetApiParams() url.Values {
+func (r AlibabaWdkCouponSkuRemoveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkCouponSkuRemoveRequest) GetApiParams() url.Values {
 }
 // ParamCouponTemplateItemRequest Setter
 // 请求
-func (r *AlibabaWdkCouponSkuRemoveRequest) SetParamCouponTemplateItemRequest(_paramCouponTemplateItemRequest *CouponTemplateItemRequest) error {
+func (r *AlibabaWdkCouponSkuRemoveAPIRequest) SetParamCouponTemplateItemRequest(_paramCouponTemplateItemRequest *CouponTemplateItemRequest) error {
     r._paramCouponTemplateItemRequest = _paramCouponTemplateItemRequest
     r.Set("param_coupon_template_item_request", _paramCouponTemplateItemRequest)
     return nil
 }
 
 // ParamCouponTemplateItemRequest Getter
-func (r AlibabaWdkCouponSkuRemoveRequest) GetParamCouponTemplateItemRequest() *CouponTemplateItemRequest {
+func (r AlibabaWdkCouponSkuRemoveAPIRequest) GetParamCouponTemplateItemRequest() *CouponTemplateItemRequest {
     return r._paramCouponTemplateItemRequest
 }

@@ -11,7 +11,7 @@ taobao.wlb.wms.sku.create
 
 商品同步
 */
-func TaobaoWlbWmsSkuCreate(clt *core.SDKClient, req *wms.TaobaoWlbWmsSkuCreateRequest, session string) (*wms.TaobaoWlbWmsSkuCreateAPIResponse, error) {
+func TaobaoWlbWmsSkuCreate(clt *core.SDKClient, req *wms.TaobaoWlbWmsSkuCreateAPIRequest, session string) (*wms.TaobaoWlbWmsSkuCreateAPIResponse, error) {
     var resp wms.TaobaoWlbWmsSkuCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

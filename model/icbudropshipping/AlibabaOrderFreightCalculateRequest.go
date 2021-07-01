@@ -13,26 +13,26 @@ alibaba.order.freight.calculate
 icbu开展 drop shipping 业务，阿里巴巴下单场景运费方案计算
 alibaba Create order scenario freight calculation
 */
-type AlibabaOrderFreightCalculateRequest struct {
+type AlibabaOrderFreightCalculateAPIRequest struct {
     model.Params
     // {}
     _paramMultiFreightTemplateRequest   *MultiFreightTemplateRequest
 }
 
-// 初始化AlibabaOrderFreightCalculateRequest对象
-func NewAlibabaOrderFreightCalculateRequest() *AlibabaOrderFreightCalculateRequest{
-    return &AlibabaOrderFreightCalculateRequest{
+// 初始化AlibabaOrderFreightCalculateAPIRequest对象
+func NewAlibabaOrderFreightCalculateRequest() *AlibabaOrderFreightCalculateAPIRequest{
+    return &AlibabaOrderFreightCalculateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaOrderFreightCalculateRequest) GetApiMethodName() string {
+func (r AlibabaOrderFreightCalculateAPIRequest) GetApiMethodName() string {
     return "alibaba.order.freight.calculate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaOrderFreightCalculateRequest) GetApiParams() url.Values {
+func (r AlibabaOrderFreightCalculateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -41,13 +41,13 @@ func (r AlibabaOrderFreightCalculateRequest) GetApiParams() url.Values {
 }
 // ParamMultiFreightTemplateRequest Setter
 // {}
-func (r *AlibabaOrderFreightCalculateRequest) SetParamMultiFreightTemplateRequest(_paramMultiFreightTemplateRequest *MultiFreightTemplateRequest) error {
+func (r *AlibabaOrderFreightCalculateAPIRequest) SetParamMultiFreightTemplateRequest(_paramMultiFreightTemplateRequest *MultiFreightTemplateRequest) error {
     r._paramMultiFreightTemplateRequest = _paramMultiFreightTemplateRequest
     r.Set("param_multi_freight_template_request", _paramMultiFreightTemplateRequest)
     return nil
 }
 
 // ParamMultiFreightTemplateRequest Getter
-func (r AlibabaOrderFreightCalculateRequest) GetParamMultiFreightTemplateRequest() *MultiFreightTemplateRequest {
+func (r AlibabaOrderFreightCalculateAPIRequest) GetParamMultiFreightTemplateRequest() *MultiFreightTemplateRequest {
     return r._paramMultiFreightTemplateRequest
 }

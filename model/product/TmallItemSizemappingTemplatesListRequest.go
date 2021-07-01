@@ -12,24 +12,24 @@ tmall.item.sizemapping.templates.list
 
 获取所有尺码表模板列表。
 */
-type TmallItemSizemappingTemplatesListRequest struct {
+type TmallItemSizemappingTemplatesListAPIRequest struct {
     model.Params
 }
 
-// 初始化TmallItemSizemappingTemplatesListRequest对象
-func NewTmallItemSizemappingTemplatesListRequest() *TmallItemSizemappingTemplatesListRequest{
-    return &TmallItemSizemappingTemplatesListRequest{
+// 初始化TmallItemSizemappingTemplatesListAPIRequest对象
+func NewTmallItemSizemappingTemplatesListRequest() *TmallItemSizemappingTemplatesListAPIRequest{
+    return &TmallItemSizemappingTemplatesListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallItemSizemappingTemplatesListRequest) GetApiMethodName() string {
+func (r TmallItemSizemappingTemplatesListAPIRequest) GetApiMethodName() string {
     return "tmall.item.sizemapping.templates.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallItemSizemappingTemplatesListRequest) GetApiParams() url.Values {
+func (r TmallItemSizemappingTemplatesListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

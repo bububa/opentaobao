@@ -17,7 +17,7 @@ taobao.auction.gov.data.annually.get
 
 最长6年，年起始时间2017年
 */
-type TaobaoAuctionGovDataAnnuallyGetRequest struct {
+type TaobaoAuctionGovDataAnnuallyGetAPIRequest struct {
     model.Params
     // 法院名称
     _courtName   string
@@ -29,20 +29,20 @@ type TaobaoAuctionGovDataAnnuallyGetRequest struct {
     _endYear   string
 }
 
-// 初始化TaobaoAuctionGovDataAnnuallyGetRequest对象
-func NewTaobaoAuctionGovDataAnnuallyGetRequest() *TaobaoAuctionGovDataAnnuallyGetRequest{
-    return &TaobaoAuctionGovDataAnnuallyGetRequest{
+// 初始化TaobaoAuctionGovDataAnnuallyGetAPIRequest对象
+func NewTaobaoAuctionGovDataAnnuallyGetRequest() *TaobaoAuctionGovDataAnnuallyGetAPIRequest{
+    return &TaobaoAuctionGovDataAnnuallyGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAuctionGovDataAnnuallyGetRequest) GetApiMethodName() string {
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetApiMethodName() string {
     return "taobao.auction.gov.data.annually.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAuctionGovDataAnnuallyGetRequest) GetApiParams() url.Values {
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -51,49 +51,49 @@ func (r TaobaoAuctionGovDataAnnuallyGetRequest) GetApiParams() url.Values {
 }
 // CourtName Setter
 // 法院名称
-func (r *TaobaoAuctionGovDataAnnuallyGetRequest) SetCourtName(_courtName string) error {
+func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetCourtName(_courtName string) error {
     r._courtName = _courtName
     r.Set("court_name", _courtName)
     return nil
 }
 
 // CourtName Getter
-func (r TaobaoAuctionGovDataAnnuallyGetRequest) GetCourtName() string {
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetCourtName() string {
     return r._courtName
 }
 // IsIncludeSub Setter
 // 统计数据是够包含下属法院
-func (r *TaobaoAuctionGovDataAnnuallyGetRequest) SetIsIncludeSub(_isIncludeSub bool) error {
+func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
     r._isIncludeSub = _isIncludeSub
     r.Set("is_include_sub", _isIncludeSub)
     return nil
 }
 
 // IsIncludeSub Getter
-func (r TaobaoAuctionGovDataAnnuallyGetRequest) GetIsIncludeSub() bool {
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetIsIncludeSub() bool {
     return r._isIncludeSub
 }
 // StartYear Setter
 // 开始年份
-func (r *TaobaoAuctionGovDataAnnuallyGetRequest) SetStartYear(_startYear string) error {
+func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetStartYear(_startYear string) error {
     r._startYear = _startYear
     r.Set("start_year", _startYear)
     return nil
 }
 
 // StartYear Getter
-func (r TaobaoAuctionGovDataAnnuallyGetRequest) GetStartYear() string {
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetStartYear() string {
     return r._startYear
 }
 // EndYear Setter
 // 结束年份
-func (r *TaobaoAuctionGovDataAnnuallyGetRequest) SetEndYear(_endYear string) error {
+func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetEndYear(_endYear string) error {
     r._endYear = _endYear
     r.Set("end_year", _endYear)
     return nil
 }
 
 // EndYear Getter
-func (r TaobaoAuctionGovDataAnnuallyGetRequest) GetEndYear() string {
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetEndYear() string {
     return r._endYear
 }

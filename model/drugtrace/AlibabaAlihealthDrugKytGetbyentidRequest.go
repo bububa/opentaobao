@@ -12,7 +12,7 @@ alibaba.alihealth.drug.kyt.getbyentid
 
 根据企业主键查看企业详细信息
 */
-type AlibabaAlihealthDrugKytGetbyentidRequest struct {
+type AlibabaAlihealthDrugKytGetbyentidAPIRequest struct {
     model.Params
     // 接口调用企业的唯一标识（接口调用者）
     _refEntId   string
@@ -20,20 +20,20 @@ type AlibabaAlihealthDrugKytGetbyentidRequest struct {
     _entId   string
 }
 
-// 初始化AlibabaAlihealthDrugKytGetbyentidRequest对象
-func NewAlibabaAlihealthDrugKytGetbyentidRequest() *AlibabaAlihealthDrugKytGetbyentidRequest{
-    return &AlibabaAlihealthDrugKytGetbyentidRequest{
+// 初始化AlibabaAlihealthDrugKytGetbyentidAPIRequest对象
+func NewAlibabaAlihealthDrugKytGetbyentidRequest() *AlibabaAlihealthDrugKytGetbyentidAPIRequest{
+    return &AlibabaAlihealthDrugKytGetbyentidAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytGetbyentidRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytGetbyentidAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.kyt.getbyentid"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytGetbyentidRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugKytGetbyentidAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugKytGetbyentidRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 接口调用企业的唯一标识（接口调用者）
-func (r *AlibabaAlihealthDrugKytGetbyentidRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugKytGetbyentidAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugKytGetbyentidRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugKytGetbyentidAPIRequest) GetRefEntId() string {
     return r._refEntId
 }
 // EntId Setter
 // 准备要查询的企业ID（返回该企业ID的详细信息）
-func (r *AlibabaAlihealthDrugKytGetbyentidRequest) SetEntId(_entId string) error {
+func (r *AlibabaAlihealthDrugKytGetbyentidAPIRequest) SetEntId(_entId string) error {
     r._entId = _entId
     r.Set("ent_id", _entId)
     return nil
 }
 
 // EntId Getter
-func (r AlibabaAlihealthDrugKytGetbyentidRequest) GetEntId() string {
+func (r AlibabaAlihealthDrugKytGetbyentidAPIRequest) GetEntId() string {
     return r._entId
 }

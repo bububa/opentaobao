@@ -11,7 +11,7 @@ taobao.ailab.aicloud.top.memo.meeting.delete
 
 天猫精灵会议删除
 */
-func TaobaoAilabAicloudTopMemoMeetingDelete(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMemoMeetingDeleteRequest, session string) (*tmallgenie.TaobaoAilabAicloudTopMemoMeetingDeleteAPIResponse, error) {
+func TaobaoAilabAicloudTopMemoMeetingDelete(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest, session string) (*tmallgenie.TaobaoAilabAicloudTopMemoMeetingDeleteAPIResponse, error) {
     var resp tmallgenie.TaobaoAilabAicloudTopMemoMeetingDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

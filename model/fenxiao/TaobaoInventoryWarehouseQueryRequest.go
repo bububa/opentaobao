@@ -12,7 +12,7 @@ taobao.inventory.warehouse.query
 
 分页查询商家仓信息
 */
-type TaobaoInventoryWarehouseQueryRequest struct {
+type TaobaoInventoryWarehouseQueryAPIRequest struct {
     model.Params
     // 页码
     _pageNo   int64
@@ -20,20 +20,20 @@ type TaobaoInventoryWarehouseQueryRequest struct {
     _pageSize   int64
 }
 
-// 初始化TaobaoInventoryWarehouseQueryRequest对象
-func NewTaobaoInventoryWarehouseQueryRequest() *TaobaoInventoryWarehouseQueryRequest{
-    return &TaobaoInventoryWarehouseQueryRequest{
+// 初始化TaobaoInventoryWarehouseQueryAPIRequest对象
+func NewTaobaoInventoryWarehouseQueryRequest() *TaobaoInventoryWarehouseQueryAPIRequest{
+    return &TaobaoInventoryWarehouseQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoInventoryWarehouseQueryRequest) GetApiMethodName() string {
+func (r TaobaoInventoryWarehouseQueryAPIRequest) GetApiMethodName() string {
     return "taobao.inventory.warehouse.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoInventoryWarehouseQueryRequest) GetApiParams() url.Values {
+func (r TaobaoInventoryWarehouseQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoInventoryWarehouseQueryRequest) GetApiParams() url.Values {
 }
 // PageNo Setter
 // 页码
-func (r *TaobaoInventoryWarehouseQueryRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoInventoryWarehouseQueryAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r TaobaoInventoryWarehouseQueryRequest) GetPageNo() int64 {
+func (r TaobaoInventoryWarehouseQueryAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }
 // PageSize Setter
 // 页大小
-func (r *TaobaoInventoryWarehouseQueryRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoInventoryWarehouseQueryAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoInventoryWarehouseQueryRequest) GetPageSize() int64 {
+func (r TaobaoInventoryWarehouseQueryAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

@@ -12,26 +12,26 @@ cainiao.endpoint.locker.top.station.addorupdate
 
 新增或者修改代收点相关信息
 */
-type CainiaoEndpointLockerTopStationAddorupdateRequest struct {
+type CainiaoEndpointLockerTopStationAddorupdateAPIRequest struct {
     model.Params
     // 站点信息
     _stationInfo   *StationInfo
 }
 
-// 初始化CainiaoEndpointLockerTopStationAddorupdateRequest对象
-func NewCainiaoEndpointLockerTopStationAddorupdateRequest() *CainiaoEndpointLockerTopStationAddorupdateRequest{
-    return &CainiaoEndpointLockerTopStationAddorupdateRequest{
+// 初始化CainiaoEndpointLockerTopStationAddorupdateAPIRequest对象
+func NewCainiaoEndpointLockerTopStationAddorupdateRequest() *CainiaoEndpointLockerTopStationAddorupdateAPIRequest{
+    return &CainiaoEndpointLockerTopStationAddorupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoEndpointLockerTopStationAddorupdateRequest) GetApiMethodName() string {
+func (r CainiaoEndpointLockerTopStationAddorupdateAPIRequest) GetApiMethodName() string {
     return "cainiao.endpoint.locker.top.station.addorupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoEndpointLockerTopStationAddorupdateRequest) GetApiParams() url.Values {
+func (r CainiaoEndpointLockerTopStationAddorupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoEndpointLockerTopStationAddorupdateRequest) GetApiParams() url.Va
 }
 // StationInfo Setter
 // 站点信息
-func (r *CainiaoEndpointLockerTopStationAddorupdateRequest) SetStationInfo(_stationInfo *StationInfo) error {
+func (r *CainiaoEndpointLockerTopStationAddorupdateAPIRequest) SetStationInfo(_stationInfo *StationInfo) error {
     r._stationInfo = _stationInfo
     r.Set("station_info", _stationInfo)
     return nil
 }
 
 // StationInfo Getter
-func (r CainiaoEndpointLockerTopStationAddorupdateRequest) GetStationInfo() *StationInfo {
+func (r CainiaoEndpointLockerTopStationAddorupdateAPIRequest) GetStationInfo() *StationInfo {
     return r._stationInfo
 }

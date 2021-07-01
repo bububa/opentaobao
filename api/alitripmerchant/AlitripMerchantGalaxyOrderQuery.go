@@ -11,7 +11,7 @@ alitrip.merchant.galaxy.order.query
 
 为用户提供酒店订单的详细信息查询能力
 */
-func AlitripMerchantGalaxyOrderQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderQueryRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyOrderQueryAPIResponse, error) {
+func AlitripMerchantGalaxyOrderQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderQueryAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyOrderQueryAPIResponse, error) {
     var resp alitripmerchant.AlitripMerchantGalaxyOrderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

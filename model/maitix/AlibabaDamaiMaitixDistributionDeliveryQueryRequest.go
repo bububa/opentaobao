@@ -12,26 +12,26 @@ alibaba.damai.maitix.distribution.delivery.query
 
 渠道查询物流订单
 */
-type AlibabaDamaiMaitixDistributionDeliveryQueryRequest struct {
+type AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest struct {
     model.Params
     // 主订单号
     _mainOrderId   string
 }
 
-// 初始化AlibabaDamaiMaitixDistributionDeliveryQueryRequest对象
-func NewAlibabaDamaiMaitixDistributionDeliveryQueryRequest() *AlibabaDamaiMaitixDistributionDeliveryQueryRequest{
-    return &AlibabaDamaiMaitixDistributionDeliveryQueryRequest{
+// 初始化AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest对象
+func NewAlibabaDamaiMaitixDistributionDeliveryQueryRequest() *AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest{
+    return &AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixDistributionDeliveryQueryRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.distribution.delivery.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixDistributionDeliveryQueryRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixDistributionDeliveryQueryRequest) GetApiParams() url.V
 }
 // MainOrderId Setter
 // 主订单号
-func (r *AlibabaDamaiMaitixDistributionDeliveryQueryRequest) SetMainOrderId(_mainOrderId string) error {
+func (r *AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest) SetMainOrderId(_mainOrderId string) error {
     r._mainOrderId = _mainOrderId
     r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
-func (r AlibabaDamaiMaitixDistributionDeliveryQueryRequest) GetMainOrderId() string {
+func (r AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest) GetMainOrderId() string {
     return r._mainOrderId
 }

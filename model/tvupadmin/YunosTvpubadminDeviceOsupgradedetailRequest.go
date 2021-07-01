@@ -12,7 +12,7 @@ yunos.tvpubadmin.device.osupgradedetail
 
 获取系统升级详情
 */
-type YunosTvpubadminDeviceOsupgradedetailRequest struct {
+type YunosTvpubadminDeviceOsupgradedetailAPIRequest struct {
     model.Params
     // 版本ID
     _versionId   int64
@@ -20,20 +20,20 @@ type YunosTvpubadminDeviceOsupgradedetailRequest struct {
     _license   int64
 }
 
-// 初始化YunosTvpubadminDeviceOsupgradedetailRequest对象
-func NewYunosTvpubadminDeviceOsupgradedetailRequest() *YunosTvpubadminDeviceOsupgradedetailRequest{
-    return &YunosTvpubadminDeviceOsupgradedetailRequest{
+// 初始化YunosTvpubadminDeviceOsupgradedetailAPIRequest对象
+func NewYunosTvpubadminDeviceOsupgradedetailRequest() *YunosTvpubadminDeviceOsupgradedetailAPIRequest{
+    return &YunosTvpubadminDeviceOsupgradedetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminDeviceOsupgradedetailRequest) GetApiMethodName() string {
+func (r YunosTvpubadminDeviceOsupgradedetailAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.device.osupgradedetail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminDeviceOsupgradedetailRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminDeviceOsupgradedetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r YunosTvpubadminDeviceOsupgradedetailRequest) GetApiParams() url.Values {
 }
 // VersionId Setter
 // 版本ID
-func (r *YunosTvpubadminDeviceOsupgradedetailRequest) SetVersionId(_versionId int64) error {
+func (r *YunosTvpubadminDeviceOsupgradedetailAPIRequest) SetVersionId(_versionId int64) error {
     r._versionId = _versionId
     r.Set("version_id", _versionId)
     return nil
 }
 
 // VersionId Getter
-func (r YunosTvpubadminDeviceOsupgradedetailRequest) GetVersionId() int64 {
+func (r YunosTvpubadminDeviceOsupgradedetailAPIRequest) GetVersionId() int64 {
     return r._versionId
 }
 // License Setter
 // 牌照方
-func (r *YunosTvpubadminDeviceOsupgradedetailRequest) SetLicense(_license int64) error {
+func (r *YunosTvpubadminDeviceOsupgradedetailAPIRequest) SetLicense(_license int64) error {
     r._license = _license
     r.Set("license", _license)
     return nil
 }
 
 // License Getter
-func (r YunosTvpubadminDeviceOsupgradedetailRequest) GetLicense() int64 {
+func (r YunosTvpubadminDeviceOsupgradedetailAPIRequest) GetLicense() int64 {
     return r._license
 }

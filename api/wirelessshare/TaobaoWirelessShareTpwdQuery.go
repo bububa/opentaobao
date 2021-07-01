@@ -11,7 +11,7 @@ taobao.wireless.share.tpwd.query
 
 查询解析淘口令
 */
-func TaobaoWirelessShareTpwdQuery(clt *core.SDKClient, req *wirelessshare.TaobaoWirelessShareTpwdQueryRequest, session string) (*wirelessshare.TaobaoWirelessShareTpwdQueryAPIResponse, error) {
+func TaobaoWirelessShareTpwdQuery(clt *core.SDKClient, req *wirelessshare.TaobaoWirelessShareTpwdQueryAPIRequest, session string) (*wirelessshare.TaobaoWirelessShareTpwdQueryAPIResponse, error) {
     var resp wirelessshare.TaobaoWirelessShareTpwdQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

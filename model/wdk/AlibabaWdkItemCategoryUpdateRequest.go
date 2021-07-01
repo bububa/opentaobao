@@ -12,26 +12,26 @@ alibaba.wdk.item.category.update
 
 修改类目
 */
-type AlibabaWdkItemCategoryUpdateRequest struct {
+type AlibabaWdkItemCategoryUpdateAPIRequest struct {
     model.Params
     // 入参
     _bean   *UpdateCategoryRequestBean
 }
 
-// 初始化AlibabaWdkItemCategoryUpdateRequest对象
-func NewAlibabaWdkItemCategoryUpdateRequest() *AlibabaWdkItemCategoryUpdateRequest{
-    return &AlibabaWdkItemCategoryUpdateRequest{
+// 初始化AlibabaWdkItemCategoryUpdateAPIRequest对象
+func NewAlibabaWdkItemCategoryUpdateRequest() *AlibabaWdkItemCategoryUpdateAPIRequest{
+    return &AlibabaWdkItemCategoryUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkItemCategoryUpdateRequest) GetApiMethodName() string {
+func (r AlibabaWdkItemCategoryUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.item.category.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkItemCategoryUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaWdkItemCategoryUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkItemCategoryUpdateRequest) GetApiParams() url.Values {
 }
 // Bean Setter
 // 入参
-func (r *AlibabaWdkItemCategoryUpdateRequest) SetBean(_bean *UpdateCategoryRequestBean) error {
+func (r *AlibabaWdkItemCategoryUpdateAPIRequest) SetBean(_bean *UpdateCategoryRequestBean) error {
     r._bean = _bean
     r.Set("bean", _bean)
     return nil
 }
 
 // Bean Getter
-func (r AlibabaWdkItemCategoryUpdateRequest) GetBean() *UpdateCategoryRequestBean {
+func (r AlibabaWdkItemCategoryUpdateAPIRequest) GetBean() *UpdateCategoryRequestBean {
     return r._bean
 }

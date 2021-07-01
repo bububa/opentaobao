@@ -12,7 +12,7 @@ taobao.simba.campaigns.get
 
 取得一个客户的推广计划；
 */
-type TaobaoSimbaCampaignsGetRequest struct {
+type TaobaoSimbaCampaignsGetAPIRequest struct {
     model.Params
     // 主人昵称
     _nick   string
@@ -20,20 +20,20 @@ type TaobaoSimbaCampaignsGetRequest struct {
     _type   int64
 }
 
-// 初始化TaobaoSimbaCampaignsGetRequest对象
-func NewTaobaoSimbaCampaignsGetRequest() *TaobaoSimbaCampaignsGetRequest{
-    return &TaobaoSimbaCampaignsGetRequest{
+// 初始化TaobaoSimbaCampaignsGetAPIRequest对象
+func NewTaobaoSimbaCampaignsGetRequest() *TaobaoSimbaCampaignsGetAPIRequest{
+    return &TaobaoSimbaCampaignsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaCampaignsGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaCampaignsGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.campaigns.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaCampaignsGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaCampaignsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSimbaCampaignsGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignsGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaCampaignsGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaCampaignsGetRequest) GetNick() string {
+func (r TaobaoSimbaCampaignsGetAPIRequest) GetNick() string {
     return r._nick
 }
 // Type Setter
 // 计划类型0位标准计划，16位销量明星计划
-func (r *TaobaoSimbaCampaignsGetRequest) SetType(_type int64) error {
+func (r *TaobaoSimbaCampaignsGetAPIRequest) SetType(_type int64) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r TaobaoSimbaCampaignsGetRequest) GetType() int64 {
+func (r TaobaoSimbaCampaignsGetAPIRequest) GetType() int64 {
     return r._type
 }

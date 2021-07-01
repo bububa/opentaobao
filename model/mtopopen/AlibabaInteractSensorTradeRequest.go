@@ -12,26 +12,26 @@ alibaba.interact.sensor.trade
 
 交易流程
 */
-type AlibabaInteractSensorTradeRequest struct {
+type AlibabaInteractSensorTradeAPIRequest struct {
     model.Params
     // 系统自动生成
     _id   string
 }
 
-// 初始化AlibabaInteractSensorTradeRequest对象
-func NewAlibabaInteractSensorTradeRequest() *AlibabaInteractSensorTradeRequest{
-    return &AlibabaInteractSensorTradeRequest{
+// 初始化AlibabaInteractSensorTradeAPIRequest对象
+func NewAlibabaInteractSensorTradeRequest() *AlibabaInteractSensorTradeAPIRequest{
+    return &AlibabaInteractSensorTradeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorTradeRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorTradeAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.trade"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorTradeRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorTradeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaInteractSensorTradeRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 系统自动生成
-func (r *AlibabaInteractSensorTradeRequest) SetId(_id string) error {
+func (r *AlibabaInteractSensorTradeAPIRequest) SetId(_id string) error {
     r._id = _id
     r.Set("id", _id)
     return nil
 }
 
 // Id Getter
-func (r AlibabaInteractSensorTradeRequest) GetId() string {
+func (r AlibabaInteractSensorTradeAPIRequest) GetId() string {
     return r._id
 }

@@ -11,7 +11,7 @@ alibaba.scbp.ad.keyword.delete
 
 外贸直通车删除关键词
 */
-func AlibabaScbpAdKeywordDelete(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordDeleteRequest, session string) (*scbp.AlibabaScbpAdKeywordDeleteAPIResponse, error) {
+func AlibabaScbpAdKeywordDelete(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordDeleteAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordDeleteAPIResponse, error) {
     var resp scbp.AlibabaScbpAdKeywordDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.wlb.waybill.i.get
 
 商家根据订单信息，实时、批量获取指定物流服务商的电子面单号。
 */
-type TaobaoWlbWaybillIGetRequest struct {
+type TaobaoWlbWaybillIGetAPIRequest struct {
     model.Params
     // 面单申请
     _waybillApplyNewRequest   *WaybillApplyNewRequest
 }
 
-// 初始化TaobaoWlbWaybillIGetRequest对象
-func NewTaobaoWlbWaybillIGetRequest() *TaobaoWlbWaybillIGetRequest{
-    return &TaobaoWlbWaybillIGetRequest{
+// 初始化TaobaoWlbWaybillIGetAPIRequest对象
+func NewTaobaoWlbWaybillIGetRequest() *TaobaoWlbWaybillIGetAPIRequest{
+    return &TaobaoWlbWaybillIGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbWaybillIGetRequest) GetApiMethodName() string {
+func (r TaobaoWlbWaybillIGetAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.waybill.i.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbWaybillIGetRequest) GetApiParams() url.Values {
+func (r TaobaoWlbWaybillIGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWlbWaybillIGetRequest) GetApiParams() url.Values {
 }
 // WaybillApplyNewRequest Setter
 // 面单申请
-func (r *TaobaoWlbWaybillIGetRequest) SetWaybillApplyNewRequest(_waybillApplyNewRequest *WaybillApplyNewRequest) error {
+func (r *TaobaoWlbWaybillIGetAPIRequest) SetWaybillApplyNewRequest(_waybillApplyNewRequest *WaybillApplyNewRequest) error {
     r._waybillApplyNewRequest = _waybillApplyNewRequest
     r.Set("waybill_apply_new_request", _waybillApplyNewRequest)
     return nil
 }
 
 // WaybillApplyNewRequest Getter
-func (r TaobaoWlbWaybillIGetRequest) GetWaybillApplyNewRequest() *WaybillApplyNewRequest {
+func (r TaobaoWlbWaybillIGetAPIRequest) GetWaybillApplyNewRequest() *WaybillApplyNewRequest {
     return r._waybillApplyNewRequest
 }

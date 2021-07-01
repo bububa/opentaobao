@@ -12,26 +12,26 @@ youku.ott.pay.order.queryauthstate
 
 查询CP用户连包商品签约状态
 */
-type YoukuOttPayOrderQueryauthstateRequest struct {
+type YoukuOttPayOrderQueryauthstateAPIRequest struct {
     model.Params
     // 原始签约订单号
     _originalCpOrderNo   string
 }
 
-// 初始化YoukuOttPayOrderQueryauthstateRequest对象
-func NewYoukuOttPayOrderQueryauthstateRequest() *YoukuOttPayOrderQueryauthstateRequest{
-    return &YoukuOttPayOrderQueryauthstateRequest{
+// 初始化YoukuOttPayOrderQueryauthstateAPIRequest对象
+func NewYoukuOttPayOrderQueryauthstateRequest() *YoukuOttPayOrderQueryauthstateAPIRequest{
+    return &YoukuOttPayOrderQueryauthstateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YoukuOttPayOrderQueryauthstateRequest) GetApiMethodName() string {
+func (r YoukuOttPayOrderQueryauthstateAPIRequest) GetApiMethodName() string {
     return "youku.ott.pay.order.queryauthstate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YoukuOttPayOrderQueryauthstateRequest) GetApiParams() url.Values {
+func (r YoukuOttPayOrderQueryauthstateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YoukuOttPayOrderQueryauthstateRequest) GetApiParams() url.Values {
 }
 // OriginalCpOrderNo Setter
 // 原始签约订单号
-func (r *YoukuOttPayOrderQueryauthstateRequest) SetOriginalCpOrderNo(_originalCpOrderNo string) error {
+func (r *YoukuOttPayOrderQueryauthstateAPIRequest) SetOriginalCpOrderNo(_originalCpOrderNo string) error {
     r._originalCpOrderNo = _originalCpOrderNo
     r.Set("original_cp_order_no", _originalCpOrderNo)
     return nil
 }
 
 // OriginalCpOrderNo Getter
-func (r YoukuOttPayOrderQueryauthstateRequest) GetOriginalCpOrderNo() string {
+func (r YoukuOttPayOrderQueryauthstateAPIRequest) GetOriginalCpOrderNo() string {
     return r._originalCpOrderNo
 }

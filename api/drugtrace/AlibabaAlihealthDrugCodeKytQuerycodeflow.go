@@ -11,7 +11,7 @@ alibaba.alihealth.drug.code.kyt.querycodeflow
 
 追溯码流向查询
 */
-func AlibabaAlihealthDrugCodeKytQuerycodeflow(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeKytQuerycodeflowRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeKytQuerycodeflowAPIResponse, error) {
+func AlibabaAlihealthDrugCodeKytQuerycodeflow(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeKytQuerycodeflowAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugCodeKytQuerycodeflowAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

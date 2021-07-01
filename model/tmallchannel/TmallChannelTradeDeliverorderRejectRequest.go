@@ -12,7 +12,7 @@ tmall.channel.trade.deliverorder.reject
 
 供应商拒绝收货确认单
 */
-type TmallChannelTradeDeliverorderRejectRequest struct {
+type TmallChannelTradeDeliverorderRejectAPIRequest struct {
     model.Params
     // 发货单号
     _mainDeliverOrderNo   int64
@@ -20,20 +20,20 @@ type TmallChannelTradeDeliverorderRejectRequest struct {
     _operateDesc   string
 }
 
-// 初始化TmallChannelTradeDeliverorderRejectRequest对象
-func NewTmallChannelTradeDeliverorderRejectRequest() *TmallChannelTradeDeliverorderRejectRequest{
-    return &TmallChannelTradeDeliverorderRejectRequest{
+// 初始化TmallChannelTradeDeliverorderRejectAPIRequest对象
+func NewTmallChannelTradeDeliverorderRejectRequest() *TmallChannelTradeDeliverorderRejectAPIRequest{
+    return &TmallChannelTradeDeliverorderRejectAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallChannelTradeDeliverorderRejectRequest) GetApiMethodName() string {
+func (r TmallChannelTradeDeliverorderRejectAPIRequest) GetApiMethodName() string {
     return "tmall.channel.trade.deliverorder.reject"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallChannelTradeDeliverorderRejectRequest) GetApiParams() url.Values {
+func (r TmallChannelTradeDeliverorderRejectAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallChannelTradeDeliverorderRejectRequest) GetApiParams() url.Values {
 }
 // MainDeliverOrderNo Setter
 // 发货单号
-func (r *TmallChannelTradeDeliverorderRejectRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
+func (r *TmallChannelTradeDeliverorderRejectAPIRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
     r._mainDeliverOrderNo = _mainDeliverOrderNo
     r.Set("main_deliver_order_no", _mainDeliverOrderNo)
     return nil
 }
 
 // MainDeliverOrderNo Getter
-func (r TmallChannelTradeDeliverorderRejectRequest) GetMainDeliverOrderNo() int64 {
+func (r TmallChannelTradeDeliverorderRejectAPIRequest) GetMainDeliverOrderNo() int64 {
     return r._mainDeliverOrderNo
 }
 // OperateDesc Setter
 // 拒绝原因
-func (r *TmallChannelTradeDeliverorderRejectRequest) SetOperateDesc(_operateDesc string) error {
+func (r *TmallChannelTradeDeliverorderRejectAPIRequest) SetOperateDesc(_operateDesc string) error {
     r._operateDesc = _operateDesc
     r.Set("operate_desc", _operateDesc)
     return nil
 }
 
 // OperateDesc Getter
-func (r TmallChannelTradeDeliverorderRejectRequest) GetOperateDesc() string {
+func (r TmallChannelTradeDeliverorderRejectAPIRequest) GetOperateDesc() string {
     return r._operateDesc
 }

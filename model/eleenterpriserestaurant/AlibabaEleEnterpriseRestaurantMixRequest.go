@@ -12,7 +12,7 @@ alibaba.ele.enterprise.restaurant.mix
 
 混合搜索店铺
 */
-type AlibabaEleEnterpriseRestaurantMixRequest struct {
+type AlibabaEleEnterpriseRestaurantMixAPIRequest struct {
     model.Params
     // longitude和latitude用英文逗号分隔
     _geo   string
@@ -46,20 +46,20 @@ type AlibabaEleEnterpriseRestaurantMixRequest struct {
     _isBookable   int64
 }
 
-// 初始化AlibabaEleEnterpriseRestaurantMixRequest对象
-func NewAlibabaEleEnterpriseRestaurantMixRequest() *AlibabaEleEnterpriseRestaurantMixRequest{
-    return &AlibabaEleEnterpriseRestaurantMixRequest{
+// 初始化AlibabaEleEnterpriseRestaurantMixAPIRequest对象
+func NewAlibabaEleEnterpriseRestaurantMixRequest() *AlibabaEleEnterpriseRestaurantMixAPIRequest{
+    return &AlibabaEleEnterpriseRestaurantMixAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetApiMethodName() string {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.enterprise.restaurant.mix"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetApiParams() url.Values {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -68,181 +68,181 @@ func (r AlibabaEleEnterpriseRestaurantMixRequest) GetApiParams() url.Values {
 }
 // Geo Setter
 // longitude和latitude用英文逗号分隔
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetGeo(_geo string) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetGeo(_geo string) error {
     r._geo = _geo
     r.Set("geo", _geo)
     return nil
 }
 
 // Geo Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetGeo() string {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetGeo() string {
     return r._geo
 }
 // RankId Setter
 // 首次查询无需传入，后续需要传入前次返回
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetRankId(_rankId string) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetRankId(_rankId string) error {
     r._rankId = _rankId
     r.Set("rank_id", _rankId)
     return nil
 }
 
 // RankId Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetRankId() string {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetRankId() string {
     return r._rankId
 }
 // Start Setter
 // 查询起始位置，默认为0。如果传的是10，那么餐厅会从第11个开始返回
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetStart(_start int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetStart(_start int64) error {
     r._start = _start
     r.Set("start", _start)
     return nil
 }
 
 // Start Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetStart() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetStart() int64 {
     return r._start
 }
 // Limit Setter
 // 查询数量，默认是10，最大50
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetLimit(_limit int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetLimit(_limit int64) error {
     r._limit = _limit
     r.Set("limit", _limit)
     return nil
 }
 
 // Limit Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetLimit() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetLimit() int64 {
     return r._limit
 }
 // CostTo Setter
 // 人均消费金额上限，需要高于costFrom，不传表示不限
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetCostTo(_costTo int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetCostTo(_costTo int64) error {
     r._costTo = _costTo
     r.Set("cost_to", _costTo)
     return nil
 }
 
 // CostTo Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetCostTo() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetCostTo() int64 {
     return r._costTo
 }
 // CostFrom Setter
 // 人均消费金额下限，最低为0，不传表示不限
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetCostFrom(_costFrom int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetCostFrom(_costFrom int64) error {
     r._costFrom = _costFrom
     r.Set("cost_from", _costFrom)
     return nil
 }
 
 // CostFrom Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetCostFrom() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetCostFrom() int64 {
     return r._costFrom
 }
 // Insurance Setter
 // 是否支持食安保（0-不限，1-支持食安保）不传表示不限
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetInsurance(_insurance int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetInsurance(_insurance int64) error {
     r._insurance = _insurance
     r.Set("insurance", _insurance)
     return nil
 }
 
 // Insurance Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetInsurance() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetInsurance() int64 {
     return r._insurance
 }
 // Invoice Setter
 // 是否可开发票（0-不限，1-可开发票）不传表示不限
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetInvoice(_invoice int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetInvoice(_invoice int64) error {
     r._invoice = _invoice
     r.Set("invoice", _invoice)
     return nil
 }
 
 // Invoice Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetInvoice() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetInvoice() int64 {
     return r._invoice
 }
 // IsPremium Setter
 // 是否品牌商家（0-不限，1-品牌商家）不传表示不限
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetIsPremium(_isPremium int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetIsPremium(_isPremium int64) error {
     r._isPremium = _isPremium
     r.Set("is_premium", _isPremium)
     return nil
 }
 
 // IsPremium Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetIsPremium() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetIsPremium() int64 {
     return r._isPremium
 }
 // NewRestaurant Setter
 // 是否新店（0-不限，1-新店）不传表示不限
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetNewRestaurant(_newRestaurant int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetNewRestaurant(_newRestaurant int64) error {
     r._newRestaurant = _newRestaurant
     r.Set("new_restaurant", _newRestaurant)
     return nil
 }
 
 // NewRestaurant Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetNewRestaurant() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetNewRestaurant() int64 {
     return r._newRestaurant
 }
 // DeliveryMode Setter
 // 配送方式（0-不限， 1-蜂鸟专送）不传表示不限
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetDeliveryMode(_deliveryMode int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetDeliveryMode(_deliveryMode int64) error {
     r._deliveryMode = _deliveryMode
     r.Set("delivery_mode", _deliveryMode)
     return nil
 }
 
 // DeliveryMode Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetDeliveryMode() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetDeliveryMode() int64 {
     return r._deliveryMode
 }
 // OrderBy Setter
 // 排序选项（1-默认排序（热门）， 2-评价星级由高到低， 3-起送价由低到高， 4-销量由高到低， 5-送餐速度由快到慢， 6-餐厅距离由近到远， 7-订单量由高到低）
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetOrderBy(_orderBy int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetOrderBy(_orderBy int64) error {
     r._orderBy = _orderBy
     r.Set("order_by", _orderBy)
     return nil
 }
 
 // OrderBy Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetOrderBy() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetOrderBy() int64 {
     return r._orderBy
 }
 // CategoryIds Setter
 // 餐厅分类ids
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetCategoryIds(_categoryIds []int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetCategoryIds(_categoryIds []int64) error {
     r._categoryIds = _categoryIds
     r.Set("category_ids", _categoryIds)
     return nil
 }
 
 // CategoryIds Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetCategoryIds() []int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetCategoryIds() []int64 {
     return r._categoryIds
 }
 // Keyword Setter
 // 搜索关键词（关键字需要urlencode处理
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetKeyword(_keyword string) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetKeyword(_keyword string) error {
     r._keyword = _keyword
     r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetKeyword() string {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetKeyword() string {
     return r._keyword
 }
 // IsBookable Setter
 // 是否筛选支持预定 0:不需要 1:需要（不传该字段则不筛选）
-func (r *AlibabaEleEnterpriseRestaurantMixRequest) SetIsBookable(_isBookable int64) error {
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetIsBookable(_isBookable int64) error {
     r._isBookable = _isBookable
     r.Set("is_bookable", _isBookable)
     return nil
 }
 
 // IsBookable Getter
-func (r AlibabaEleEnterpriseRestaurantMixRequest) GetIsBookable() int64 {
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetIsBookable() int64 {
     return r._isBookable
 }

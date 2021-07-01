@@ -11,7 +11,7 @@ alitrip.hotel.hstdf.businessarea.get
 
 根据cityId分页查询商圈信息
 */
-func AlitripHotelHstdfBusinessareaGet(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfBusinessareaGetRequest, session string) (*hotelhstdf.AlitripHotelHstdfBusinessareaGetAPIResponse, error) {
+func AlitripHotelHstdfBusinessareaGet(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfBusinessareaGetAPIRequest, session string) (*hotelhstdf.AlitripHotelHstdfBusinessareaGetAPIResponse, error) {
     var resp hotelhstdf.AlitripHotelHstdfBusinessareaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

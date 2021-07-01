@@ -12,26 +12,26 @@ taobao.location.relation.edit
 
 地点关联关系增量编辑
 */
-type TaobaoLocationRelationEditRequest struct {
+type TaobaoLocationRelationEditAPIRequest struct {
     model.Params
     // 关系对象列表
     _locationRelationList   []LocationRelationDTO
 }
 
-// 初始化TaobaoLocationRelationEditRequest对象
-func NewTaobaoLocationRelationEditRequest() *TaobaoLocationRelationEditRequest{
-    return &TaobaoLocationRelationEditRequest{
+// 初始化TaobaoLocationRelationEditAPIRequest对象
+func NewTaobaoLocationRelationEditRequest() *TaobaoLocationRelationEditAPIRequest{
+    return &TaobaoLocationRelationEditAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoLocationRelationEditRequest) GetApiMethodName() string {
+func (r TaobaoLocationRelationEditAPIRequest) GetApiMethodName() string {
     return "taobao.location.relation.edit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoLocationRelationEditRequest) GetApiParams() url.Values {
+func (r TaobaoLocationRelationEditAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoLocationRelationEditRequest) GetApiParams() url.Values {
 }
 // LocationRelationList Setter
 // 关系对象列表
-func (r *TaobaoLocationRelationEditRequest) SetLocationRelationList(_locationRelationList []LocationRelationDTO) error {
+func (r *TaobaoLocationRelationEditAPIRequest) SetLocationRelationList(_locationRelationList []LocationRelationDTO) error {
     r._locationRelationList = _locationRelationList
     r.Set("location_relation_list", _locationRelationList)
     return nil
 }
 
 // LocationRelationList Getter
-func (r TaobaoLocationRelationEditRequest) GetLocationRelationList() []LocationRelationDTO {
+func (r TaobaoLocationRelationEditAPIRequest) GetLocationRelationList() []LocationRelationDTO {
     return r._locationRelationList
 }

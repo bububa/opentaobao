@@ -12,26 +12,26 @@ alibaba.wdk.marketing.itemdiscount.createactivity
 
 创建商品特价活动
 */
-type AlibabaWdkMarketingItemdiscountCreateactivityRequest struct {
+type AlibabaWdkMarketingItemdiscountCreateactivityAPIRequest struct {
     model.Params
     // 创建活动请求入参
     _param   *ItemDiscountActivityRequest
 }
 
-// 初始化AlibabaWdkMarketingItemdiscountCreateactivityRequest对象
-func NewAlibabaWdkMarketingItemdiscountCreateactivityRequest() *AlibabaWdkMarketingItemdiscountCreateactivityRequest{
-    return &AlibabaWdkMarketingItemdiscountCreateactivityRequest{
+// 初始化AlibabaWdkMarketingItemdiscountCreateactivityAPIRequest对象
+func NewAlibabaWdkMarketingItemdiscountCreateactivityRequest() *AlibabaWdkMarketingItemdiscountCreateactivityAPIRequest{
+    return &AlibabaWdkMarketingItemdiscountCreateactivityAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingItemdiscountCreateactivityRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingItemdiscountCreateactivityAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.itemdiscount.createactivity"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingItemdiscountCreateactivityRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingItemdiscountCreateactivityAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItemdiscountCreateactivityRequest) GetApiParams() url
 }
 // Param Setter
 // 创建活动请求入参
-func (r *AlibabaWdkMarketingItemdiscountCreateactivityRequest) SetParam(_param *ItemDiscountActivityRequest) error {
+func (r *AlibabaWdkMarketingItemdiscountCreateactivityAPIRequest) SetParam(_param *ItemDiscountActivityRequest) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkMarketingItemdiscountCreateactivityRequest) GetParam() *ItemDiscountActivityRequest {
+func (r AlibabaWdkMarketingItemdiscountCreateactivityAPIRequest) GetParam() *ItemDiscountActivityRequest {
     return r._param
 }

@@ -12,26 +12,26 @@ alitrip.btrip.monthbill.url.get
 
 月账单数据查询
 */
-type AlitripBtripMonthbillUrlGetRequest struct {
+type AlitripBtripMonthbillUrlGetAPIRequest struct {
     model.Params
     // 请求对象
     _rq   *OpenAccountRq
 }
 
-// 初始化AlitripBtripMonthbillUrlGetRequest对象
-func NewAlitripBtripMonthbillUrlGetRequest() *AlitripBtripMonthbillUrlGetRequest{
-    return &AlitripBtripMonthbillUrlGetRequest{
+// 初始化AlitripBtripMonthbillUrlGetAPIRequest对象
+func NewAlitripBtripMonthbillUrlGetRequest() *AlitripBtripMonthbillUrlGetAPIRequest{
+    return &AlitripBtripMonthbillUrlGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripMonthbillUrlGetRequest) GetApiMethodName() string {
+func (r AlitripBtripMonthbillUrlGetAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.monthbill.url.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripMonthbillUrlGetRequest) GetApiParams() url.Values {
+func (r AlitripBtripMonthbillUrlGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripMonthbillUrlGetRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripMonthbillUrlGetRequest) SetRq(_rq *OpenAccountRq) error {
+func (r *AlitripBtripMonthbillUrlGetAPIRequest) SetRq(_rq *OpenAccountRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripMonthbillUrlGetRequest) GetRq() *OpenAccountRq {
+func (r AlitripBtripMonthbillUrlGetAPIRequest) GetRq() *OpenAccountRq {
     return r._rq
 }

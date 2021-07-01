@@ -11,7 +11,7 @@ tmall.carcenter.vehicleinfo.register
 
 基本车型信息维护
 */
-func TmallCarcenterVehicleinfoRegister(clt *core.SDKClient, req *tmallcarenter.TmallCarcenterVehicleinfoRegisterRequest, session string) (*tmallcarenter.TmallCarcenterVehicleinfoRegisterAPIResponse, error) {
+func TmallCarcenterVehicleinfoRegister(clt *core.SDKClient, req *tmallcarenter.TmallCarcenterVehicleinfoRegisterAPIRequest, session string) (*tmallcarenter.TmallCarcenterVehicleinfoRegisterAPIResponse, error) {
     var resp tmallcarenter.TmallCarcenterVehicleinfoRegisterAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

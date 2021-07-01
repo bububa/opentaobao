@@ -16,24 +16,24 @@ alibaba.modifyaddress.isv.bindseller.check
 3. 没有签约
 4. 与其他服务商软件签约，如果是同一个isv name，返回appkey，否则不返回。
 */
-type AlibabaModifyaddressIsvBindsellerCheckRequest struct {
+type AlibabaModifyaddressIsvBindsellerCheckAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaModifyaddressIsvBindsellerCheckRequest对象
-func NewAlibabaModifyaddressIsvBindsellerCheckRequest() *AlibabaModifyaddressIsvBindsellerCheckRequest{
-    return &AlibabaModifyaddressIsvBindsellerCheckRequest{
+// 初始化AlibabaModifyaddressIsvBindsellerCheckAPIRequest对象
+func NewAlibabaModifyaddressIsvBindsellerCheckRequest() *AlibabaModifyaddressIsvBindsellerCheckAPIRequest{
+    return &AlibabaModifyaddressIsvBindsellerCheckAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaModifyaddressIsvBindsellerCheckRequest) GetApiMethodName() string {
+func (r AlibabaModifyaddressIsvBindsellerCheckAPIRequest) GetApiMethodName() string {
     return "alibaba.modifyaddress.isv.bindseller.check"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaModifyaddressIsvBindsellerCheckRequest) GetApiParams() url.Values {
+func (r AlibabaModifyaddressIsvBindsellerCheckAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

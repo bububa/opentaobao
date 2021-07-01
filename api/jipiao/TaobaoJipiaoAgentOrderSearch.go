@@ -11,7 +11,7 @@ taobao.jipiao.agent.order.search
 
 卖家根据条件查询淘宝订单id列表
 */
-func TaobaoJipiaoAgentOrderSearch(clt *core.SDKClient, req *jipiao.TaobaoJipiaoAgentOrderSearchRequest, session string) (*jipiao.TaobaoJipiaoAgentOrderSearchAPIResponse, error) {
+func TaobaoJipiaoAgentOrderSearch(clt *core.SDKClient, req *jipiao.TaobaoJipiaoAgentOrderSearchAPIRequest, session string) (*jipiao.TaobaoJipiaoAgentOrderSearchAPIResponse, error) {
     var resp jipiao.TaobaoJipiaoAgentOrderSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

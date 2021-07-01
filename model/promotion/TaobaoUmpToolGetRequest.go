@@ -12,26 +12,26 @@ taobao.ump.tool.get
 
 根据工具id获取一个工具对象
 */
-type TaobaoUmpToolGetRequest struct {
+type TaobaoUmpToolGetAPIRequest struct {
     model.Params
     // 工具的id
     _toolId   int64
 }
 
-// 初始化TaobaoUmpToolGetRequest对象
-func NewTaobaoUmpToolGetRequest() *TaobaoUmpToolGetRequest{
-    return &TaobaoUmpToolGetRequest{
+// 初始化TaobaoUmpToolGetAPIRequest对象
+func NewTaobaoUmpToolGetRequest() *TaobaoUmpToolGetAPIRequest{
+    return &TaobaoUmpToolGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoUmpToolGetRequest) GetApiMethodName() string {
+func (r TaobaoUmpToolGetAPIRequest) GetApiMethodName() string {
     return "taobao.ump.tool.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoUmpToolGetRequest) GetApiParams() url.Values {
+func (r TaobaoUmpToolGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoUmpToolGetRequest) GetApiParams() url.Values {
 }
 // ToolId Setter
 // 工具的id
-func (r *TaobaoUmpToolGetRequest) SetToolId(_toolId int64) error {
+func (r *TaobaoUmpToolGetAPIRequest) SetToolId(_toolId int64) error {
     r._toolId = _toolId
     r.Set("tool_id", _toolId)
     return nil
 }
 
 // ToolId Getter
-func (r TaobaoUmpToolGetRequest) GetToolId() int64 {
+func (r TaobaoUmpToolGetAPIRequest) GetToolId() int64 {
     return r._toolId
 }

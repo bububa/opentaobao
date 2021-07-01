@@ -11,7 +11,7 @@ taobao.train.agent.express.set
 
 线下票回填物流信息服务
 */
-func TaobaoTrainAgentExpressSet(clt *core.SDKClient, req *train.TaobaoTrainAgentExpressSetRequest, session string) (*train.TaobaoTrainAgentExpressSetAPIResponse, error) {
+func TaobaoTrainAgentExpressSet(clt *core.SDKClient, req *train.TaobaoTrainAgentExpressSetAPIRequest, session string) (*train.TaobaoTrainAgentExpressSetAPIResponse, error) {
     var resp train.TaobaoTrainAgentExpressSetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

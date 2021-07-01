@@ -11,7 +11,7 @@ alibaba.legal.suit.domination.push
 
 ISV推送管辖信息到诉讼平台
 */
-func AlibabaLegalSuitDominationPush(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitDominationPushRequest, session string) (*legalsuit.AlibabaLegalSuitDominationPushAPIResponse, error) {
+func AlibabaLegalSuitDominationPush(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitDominationPushAPIRequest, session string) (*legalsuit.AlibabaLegalSuitDominationPushAPIResponse, error) {
     var resp legalsuit.AlibabaLegalSuitDominationPushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.alihealth.outflow.prescription.create
 
 阿里健康-处方外流-对外提供保存处方功能
 */
-type AlibabaAlihealthOutflowPrescriptionCreateRequest struct {
+type AlibabaAlihealthOutflowPrescriptionCreateAPIRequest struct {
     model.Params
     // 保存处方入参
     _createRequest   *PrescriptionOutflowUpdateRequest
 }
 
-// 初始化AlibabaAlihealthOutflowPrescriptionCreateRequest对象
-func NewAlibabaAlihealthOutflowPrescriptionCreateRequest() *AlibabaAlihealthOutflowPrescriptionCreateRequest{
-    return &AlibabaAlihealthOutflowPrescriptionCreateRequest{
+// 初始化AlibabaAlihealthOutflowPrescriptionCreateAPIRequest对象
+func NewAlibabaAlihealthOutflowPrescriptionCreateRequest() *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest{
+    return &AlibabaAlihealthOutflowPrescriptionCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowPrescriptionCreateRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.prescription.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowPrescriptionCreateRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowPrescriptionCreateRequest) GetApiParams() url.Val
 }
 // CreateRequest Setter
 // 保存处方入参
-func (r *AlibabaAlihealthOutflowPrescriptionCreateRequest) SetCreateRequest(_createRequest *PrescriptionOutflowUpdateRequest) error {
+func (r *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) SetCreateRequest(_createRequest *PrescriptionOutflowUpdateRequest) error {
     r._createRequest = _createRequest
     r.Set("create_request", _createRequest)
     return nil
 }
 
 // CreateRequest Getter
-func (r AlibabaAlihealthOutflowPrescriptionCreateRequest) GetCreateRequest() *PrescriptionOutflowUpdateRequest {
+func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetCreateRequest() *PrescriptionOutflowUpdateRequest {
     return r._createRequest
 }

@@ -12,26 +12,26 @@ cainiao.waybill.ii.query.by.waybillcode
 
 通过面单号查看面单号的当前状态，如签收、发货、失效等。
 */
-type CainiaoWaybillIiQueryByWaybillcodeRequest struct {
+type CainiaoWaybillIiQueryByWaybillcodeAPIRequest struct {
     model.Params
     // 系统自动生成
     _paramList   []WaybillDetailQueryByWaybillCodeRequest
 }
 
-// 初始化CainiaoWaybillIiQueryByWaybillcodeRequest对象
-func NewCainiaoWaybillIiQueryByWaybillcodeRequest() *CainiaoWaybillIiQueryByWaybillcodeRequest{
-    return &CainiaoWaybillIiQueryByWaybillcodeRequest{
+// 初始化CainiaoWaybillIiQueryByWaybillcodeAPIRequest对象
+func NewCainiaoWaybillIiQueryByWaybillcodeRequest() *CainiaoWaybillIiQueryByWaybillcodeAPIRequest{
+    return &CainiaoWaybillIiQueryByWaybillcodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoWaybillIiQueryByWaybillcodeRequest) GetApiMethodName() string {
+func (r CainiaoWaybillIiQueryByWaybillcodeAPIRequest) GetApiMethodName() string {
     return "cainiao.waybill.ii.query.by.waybillcode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillIiQueryByWaybillcodeRequest) GetApiParams() url.Values {
+func (r CainiaoWaybillIiQueryByWaybillcodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoWaybillIiQueryByWaybillcodeRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 系统自动生成
-func (r *CainiaoWaybillIiQueryByWaybillcodeRequest) SetParamList(_paramList []WaybillDetailQueryByWaybillCodeRequest) error {
+func (r *CainiaoWaybillIiQueryByWaybillcodeAPIRequest) SetParamList(_paramList []WaybillDetailQueryByWaybillCodeRequest) error {
     r._paramList = _paramList
     r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
-func (r CainiaoWaybillIiQueryByWaybillcodeRequest) GetParamList() []WaybillDetailQueryByWaybillCodeRequest {
+func (r CainiaoWaybillIiQueryByWaybillcodeAPIRequest) GetParamList() []WaybillDetailQueryByWaybillCodeRequest {
     return r._paramList
 }

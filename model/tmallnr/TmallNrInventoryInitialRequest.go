@@ -12,26 +12,26 @@ tmall.nr.inventory.initial
 
 用于门店业务的商品的初始化，前端商品和后端商品绑定，走后端库存模式
 */
-type TmallNrInventoryInitialRequest struct {
+type TmallNrInventoryInitialAPIRequest struct {
     model.Params
     // 请求入参
     _param0   *NrStoreInvItemInitialReqDTO
 }
 
-// 初始化TmallNrInventoryInitialRequest对象
-func NewTmallNrInventoryInitialRequest() *TmallNrInventoryInitialRequest{
-    return &TmallNrInventoryInitialRequest{
+// 初始化TmallNrInventoryInitialAPIRequest对象
+func NewTmallNrInventoryInitialRequest() *TmallNrInventoryInitialAPIRequest{
+    return &TmallNrInventoryInitialAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrInventoryInitialRequest) GetApiMethodName() string {
+func (r TmallNrInventoryInitialAPIRequest) GetApiMethodName() string {
     return "tmall.nr.inventory.initial"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrInventoryInitialRequest) GetApiParams() url.Values {
+func (r TmallNrInventoryInitialAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallNrInventoryInitialRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 请求入参
-func (r *TmallNrInventoryInitialRequest) SetParam0(_param0 *NrStoreInvItemInitialReqDTO) error {
+func (r *TmallNrInventoryInitialAPIRequest) SetParam0(_param0 *NrStoreInvItemInitialReqDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TmallNrInventoryInitialRequest) GetParam0() *NrStoreInvItemInitialReqDTO {
+func (r TmallNrInventoryInitialAPIRequest) GetParam0() *NrStoreInvItemInitialReqDTO {
     return r._param0
 }

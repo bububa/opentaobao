@@ -140,11 +140,17 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 		param.Type = "string"
 	default:
 		paramType = strings.Title(paramType)
-		if strings.HasSuffix(paramType, "Dto") {
-			paramType = strings.TrimSuffix(paramType, "Dto") + "DTO"
+		replaceMp := map[string]string{
+			"Dto": "DTO",
+			"DTo": "DTO",
+			"Do":  "DO",
+			"Rs":  "RS",
 		}
-		if strings.HasSuffix(paramType, "Do") {
-			paramType = strings.TrimSuffix(paramType, "Do") + "DO"
+		for fromSuffix, toSuffix := range replaceMp {
+			if strings.HasSuffix(paramType, fromSuffix) {
+				paramType = strings.TrimSuffix(paramType, fromSuffix) + toSuffix
+				break
+			}
 		}
 		param.ObjType = paramType
 		param.SnakeType = util.SnakeCase(paramType)

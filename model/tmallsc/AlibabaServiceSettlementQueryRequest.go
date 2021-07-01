@@ -12,7 +12,7 @@ alibaba.service.settlement.query
 
 给服务商提供结算单明细查询功能
 */
-type AlibabaServiceSettlementQueryRequest struct {
+type AlibabaServiceSettlementQueryAPIRequest struct {
     model.Params
     // 账单查询开始时间。格式示例 2019-03-26 17:15:28
     _gmtCreateStart   string
@@ -38,20 +38,20 @@ type AlibabaServiceSettlementQueryRequest struct {
     _gmtModifiedStart   string
 }
 
-// 初始化AlibabaServiceSettlementQueryRequest对象
-func NewAlibabaServiceSettlementQueryRequest() *AlibabaServiceSettlementQueryRequest{
-    return &AlibabaServiceSettlementQueryRequest{
+// 初始化AlibabaServiceSettlementQueryAPIRequest对象
+func NewAlibabaServiceSettlementQueryRequest() *AlibabaServiceSettlementQueryAPIRequest{
+    return &AlibabaServiceSettlementQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaServiceSettlementQueryRequest) GetApiMethodName() string {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.service.settlement.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaServiceSettlementQueryRequest) GetApiParams() url.Values {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -60,133 +60,133 @@ func (r AlibabaServiceSettlementQueryRequest) GetApiParams() url.Values {
 }
 // GmtCreateStart Setter
 // 账单查询开始时间。格式示例 2019-03-26 17:15:28
-func (r *AlibabaServiceSettlementQueryRequest) SetGmtCreateStart(_gmtCreateStart string) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtCreateStart(_gmtCreateStart string) error {
     r._gmtCreateStart = _gmtCreateStart
     r.Set("gmt_create_start", _gmtCreateStart)
     return nil
 }
 
 // GmtCreateStart Getter
-func (r AlibabaServiceSettlementQueryRequest) GetGmtCreateStart() string {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtCreateStart() string {
     return r._gmtCreateStart
 }
 // GmtCreateEnd Setter
 // 账单查询结束时间，时间区间限制未15分钟。 格式示例 2019-03-26 17:15:28
-func (r *AlibabaServiceSettlementQueryRequest) SetGmtCreateEnd(_gmtCreateEnd string) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtCreateEnd(_gmtCreateEnd string) error {
     r._gmtCreateEnd = _gmtCreateEnd
     r.Set("gmt_create_end", _gmtCreateEnd)
     return nil
 }
 
 // GmtCreateEnd Getter
-func (r AlibabaServiceSettlementQueryRequest) GetGmtCreateEnd() string {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtCreateEnd() string {
     return r._gmtCreateEnd
 }
 // CurrentPage Setter
 // 当前页面，开始值为1
-func (r *AlibabaServiceSettlementQueryRequest) SetCurrentPage(_currentPage int64) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
     r._currentPage = _currentPage
     r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
-func (r AlibabaServiceSettlementQueryRequest) GetCurrentPage() int64 {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetCurrentPage() int64 {
     return r._currentPage
 }
 // PageSize Setter
 // 页面展示条数大小
-func (r *AlibabaServiceSettlementQueryRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r AlibabaServiceSettlementQueryRequest) GetPageSize() int64 {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // WorkcardId Setter
 // 工单ID
-func (r *AlibabaServiceSettlementQueryRequest) SetWorkcardId(_workcardId int64) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetWorkcardId(_workcardId int64) error {
     r._workcardId = _workcardId
     r.Set("workcard_id", _workcardId)
     return nil
 }
 
 // WorkcardId Getter
-func (r AlibabaServiceSettlementQueryRequest) GetWorkcardId() int64 {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetWorkcardId() int64 {
     return r._workcardId
 }
 // ParentTradeOrderId Setter
 // 交易主订单号码
-func (r *AlibabaServiceSettlementQueryRequest) SetParentTradeOrderId(_parentTradeOrderId int64) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetParentTradeOrderId(_parentTradeOrderId int64) error {
     r._parentTradeOrderId = _parentTradeOrderId
     r.Set("parent_trade_order_id", _parentTradeOrderId)
     return nil
 }
 
 // ParentTradeOrderId Getter
-func (r AlibabaServiceSettlementQueryRequest) GetParentTradeOrderId() int64 {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetParentTradeOrderId() int64 {
     return r._parentTradeOrderId
 }
 // ServiceOrderId Setter
 // 服务单号
-func (r *AlibabaServiceSettlementQueryRequest) SetServiceOrderId(_serviceOrderId int64) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetServiceOrderId(_serviceOrderId int64) error {
     r._serviceOrderId = _serviceOrderId
     r.Set("service_order_id", _serviceOrderId)
     return nil
 }
 
 // ServiceOrderId Getter
-func (r AlibabaServiceSettlementQueryRequest) GetServiceOrderId() int64 {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetServiceOrderId() int64 {
     return r._serviceOrderId
 }
 // MasterTradeOrderId Setter
 // 交易实物订单号
-func (r *AlibabaServiceSettlementQueryRequest) SetMasterTradeOrderId(_masterTradeOrderId int64) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetMasterTradeOrderId(_masterTradeOrderId int64) error {
     r._masterTradeOrderId = _masterTradeOrderId
     r.Set("master_trade_order_id", _masterTradeOrderId)
     return nil
 }
 
 // MasterTradeOrderId Getter
-func (r AlibabaServiceSettlementQueryRequest) GetMasterTradeOrderId() int64 {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetMasterTradeOrderId() int64 {
     return r._masterTradeOrderId
 }
 // ServiceTradeOrderId Setter
 // 交易服务订单号
-func (r *AlibabaServiceSettlementQueryRequest) SetServiceTradeOrderId(_serviceTradeOrderId int64) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetServiceTradeOrderId(_serviceTradeOrderId int64) error {
     r._serviceTradeOrderId = _serviceTradeOrderId
     r.Set("service_trade_order_id", _serviceTradeOrderId)
     return nil
 }
 
 // ServiceTradeOrderId Getter
-func (r AlibabaServiceSettlementQueryRequest) GetServiceTradeOrderId() int64 {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetServiceTradeOrderId() int64 {
     return r._serviceTradeOrderId
 }
 // GmtModifiedEnd Setter
 // 账单修改开始时间。
-func (r *AlibabaServiceSettlementQueryRequest) SetGmtModifiedEnd(_gmtModifiedEnd string) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtModifiedEnd(_gmtModifiedEnd string) error {
     r._gmtModifiedEnd = _gmtModifiedEnd
     r.Set("gmt_modified_end", _gmtModifiedEnd)
     return nil
 }
 
 // GmtModifiedEnd Getter
-func (r AlibabaServiceSettlementQueryRequest) GetGmtModifiedEnd() string {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtModifiedEnd() string {
     return r._gmtModifiedEnd
 }
 // GmtModifiedStart Setter
 // 账单修改结束时间，时间区间限制未15分钟。
-func (r *AlibabaServiceSettlementQueryRequest) SetGmtModifiedStart(_gmtModifiedStart string) error {
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtModifiedStart(_gmtModifiedStart string) error {
     r._gmtModifiedStart = _gmtModifiedStart
     r.Set("gmt_modified_start", _gmtModifiedStart)
     return nil
 }
 
 // GmtModifiedStart Getter
-func (r AlibabaServiceSettlementQueryRequest) GetGmtModifiedStart() string {
+func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtModifiedStart() string {
     return r._gmtModifiedStart
 }

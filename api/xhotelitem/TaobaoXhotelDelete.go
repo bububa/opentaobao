@@ -11,7 +11,7 @@ taobao.xhotel.delete
 
 删除飞猪酒店数据接口
 */
-func TaobaoXhotelDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelDeleteRequest, session string) (*xhotelitem.TaobaoXhotelDeleteAPIResponse, error) {
+func TaobaoXhotelDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelDeleteAPIRequest, session string) (*xhotelitem.TaobaoXhotelDeleteAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

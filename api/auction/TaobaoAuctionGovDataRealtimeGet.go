@@ -11,7 +11,7 @@ taobao.auction.gov.data.realtime.get
 
 提供查询当日法院及下属法院的拍卖统计数据
 */
-func TaobaoAuctionGovDataRealtimeGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataRealtimeGetRequest, session string) (*auction.TaobaoAuctionGovDataRealtimeGetAPIResponse, error) {
+func TaobaoAuctionGovDataRealtimeGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataRealtimeGetAPIRequest, session string) (*auction.TaobaoAuctionGovDataRealtimeGetAPIResponse, error) {
     var resp auction.TaobaoAuctionGovDataRealtimeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

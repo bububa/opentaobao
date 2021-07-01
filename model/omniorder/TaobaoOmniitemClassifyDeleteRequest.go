@@ -12,7 +12,7 @@ taobao.omniitem.classify.delete
 
 删除一个分类
 */
-type TaobaoOmniitemClassifyDeleteRequest struct {
+type TaobaoOmniitemClassifyDeleteAPIRequest struct {
     model.Params
     // 分类ID
     _classifyId   int64
@@ -20,20 +20,20 @@ type TaobaoOmniitemClassifyDeleteRequest struct {
     _operator   string
 }
 
-// 初始化TaobaoOmniitemClassifyDeleteRequest对象
-func NewTaobaoOmniitemClassifyDeleteRequest() *TaobaoOmniitemClassifyDeleteRequest{
-    return &TaobaoOmniitemClassifyDeleteRequest{
+// 初始化TaobaoOmniitemClassifyDeleteAPIRequest对象
+func NewTaobaoOmniitemClassifyDeleteRequest() *TaobaoOmniitemClassifyDeleteAPIRequest{
+    return &TaobaoOmniitemClassifyDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniitemClassifyDeleteRequest) GetApiMethodName() string {
+func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.omniitem.classify.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniitemClassifyDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOmniitemClassifyDeleteRequest) GetApiParams() url.Values {
 }
 // ClassifyId Setter
 // 分类ID
-func (r *TaobaoOmniitemClassifyDeleteRequest) SetClassifyId(_classifyId int64) error {
+func (r *TaobaoOmniitemClassifyDeleteAPIRequest) SetClassifyId(_classifyId int64) error {
     r._classifyId = _classifyId
     r.Set("classify_id", _classifyId)
     return nil
 }
 
 // ClassifyId Getter
-func (r TaobaoOmniitemClassifyDeleteRequest) GetClassifyId() int64 {
+func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetClassifyId() int64 {
     return r._classifyId
 }
 // Operator Setter
 // 操作人信息（暂时不填）
-func (r *TaobaoOmniitemClassifyDeleteRequest) SetOperator(_operator string) error {
+func (r *TaobaoOmniitemClassifyDeleteAPIRequest) SetOperator(_operator string) error {
     r._operator = _operator
     r.Set("operator", _operator)
     return nil
 }
 
 // Operator Getter
-func (r TaobaoOmniitemClassifyDeleteRequest) GetOperator() string {
+func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetOperator() string {
     return r._operator
 }

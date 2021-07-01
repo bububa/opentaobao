@@ -12,7 +12,7 @@ tmall.supplychain.channel.product.release.status.get
 
 巴拿马战役渠道产品状态查询
 */
-type TmallSupplychainChannelProductReleaseStatusGetRequest struct {
+type TmallSupplychainChannelProductReleaseStatusGetAPIRequest struct {
     model.Params
     // 产品ID
     _productId   int64
@@ -20,20 +20,20 @@ type TmallSupplychainChannelProductReleaseStatusGetRequest struct {
     _channelCode   int64
 }
 
-// 初始化TmallSupplychainChannelProductReleaseStatusGetRequest对象
-func NewTmallSupplychainChannelProductReleaseStatusGetRequest() *TmallSupplychainChannelProductReleaseStatusGetRequest{
-    return &TmallSupplychainChannelProductReleaseStatusGetRequest{
+// 初始化TmallSupplychainChannelProductReleaseStatusGetAPIRequest对象
+func NewTmallSupplychainChannelProductReleaseStatusGetRequest() *TmallSupplychainChannelProductReleaseStatusGetAPIRequest{
+    return &TmallSupplychainChannelProductReleaseStatusGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallSupplychainChannelProductReleaseStatusGetRequest) GetApiMethodName() string {
+func (r TmallSupplychainChannelProductReleaseStatusGetAPIRequest) GetApiMethodName() string {
     return "tmall.supplychain.channel.product.release.status.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallSupplychainChannelProductReleaseStatusGetRequest) GetApiParams() url.Values {
+func (r TmallSupplychainChannelProductReleaseStatusGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallSupplychainChannelProductReleaseStatusGetRequest) GetApiParams() ur
 }
 // ProductId Setter
 // 产品ID
-func (r *TmallSupplychainChannelProductReleaseStatusGetRequest) SetProductId(_productId int64) error {
+func (r *TmallSupplychainChannelProductReleaseStatusGetAPIRequest) SetProductId(_productId int64) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r TmallSupplychainChannelProductReleaseStatusGetRequest) GetProductId() int64 {
+func (r TmallSupplychainChannelProductReleaseStatusGetAPIRequest) GetProductId() int64 {
     return r._productId
 }
 // ChannelCode Setter
 // 渠道ID ( 台湾 : 111002 )
-func (r *TmallSupplychainChannelProductReleaseStatusGetRequest) SetChannelCode(_channelCode int64) error {
+func (r *TmallSupplychainChannelProductReleaseStatusGetAPIRequest) SetChannelCode(_channelCode int64) error {
     r._channelCode = _channelCode
     r.Set("channel_code", _channelCode)
     return nil
 }
 
 // ChannelCode Getter
-func (r TmallSupplychainChannelProductReleaseStatusGetRequest) GetChannelCode() int64 {
+func (r TmallSupplychainChannelProductReleaseStatusGetAPIRequest) GetChannelCode() int64 {
     return r._channelCode
 }

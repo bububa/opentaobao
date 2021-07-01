@@ -11,7 +11,7 @@ alitrip.uppc.member.gain
 
 航司权益数据回流
 */
-func AlitripUppcMemberGain(clt *core.SDKClient, req *flightuppc.AlitripUppcMemberGainRequest, session string) (*flightuppc.AlitripUppcMemberGainAPIResponse, error) {
+func AlitripUppcMemberGain(clt *core.SDKClient, req *flightuppc.AlitripUppcMemberGainAPIRequest, session string) (*flightuppc.AlitripUppcMemberGainAPIResponse, error) {
     var resp flightuppc.AlitripUppcMemberGainAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

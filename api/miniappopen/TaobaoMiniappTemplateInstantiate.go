@@ -11,7 +11,7 @@ taobao.miniapp.template.instantiate
 
 实例化saas化的小程序
 */
-func TaobaoMiniappTemplateInstantiate(clt *core.SDKClient, req *miniappopen.TaobaoMiniappTemplateInstantiateRequest, session string) (*miniappopen.TaobaoMiniappTemplateInstantiateAPIResponse, error) {
+func TaobaoMiniappTemplateInstantiate(clt *core.SDKClient, req *miniappopen.TaobaoMiniappTemplateInstantiateAPIRequest, session string) (*miniappopen.TaobaoMiniappTemplateInstantiateAPIResponse, error) {
     var resp miniappopen.TaobaoMiniappTemplateInstantiateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

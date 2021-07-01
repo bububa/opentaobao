@@ -12,26 +12,26 @@ alibaba.alicom.order.preauthorize.create
 
 授授权:签约结果通知
 */
-type AlibabaAlicomOrderPreauthorizeCreateRequest struct {
+type AlibabaAlicomOrderPreauthorizeCreateAPIRequest struct {
     model.Params
     // 入参
     _preAuthorizeModel   *PreAuthorizeModel
 }
 
-// 初始化AlibabaAlicomOrderPreauthorizeCreateRequest对象
-func NewAlibabaAlicomOrderPreauthorizeCreateRequest() *AlibabaAlicomOrderPreauthorizeCreateRequest{
-    return &AlibabaAlicomOrderPreauthorizeCreateRequest{
+// 初始化AlibabaAlicomOrderPreauthorizeCreateAPIRequest对象
+func NewAlibabaAlicomOrderPreauthorizeCreateRequest() *AlibabaAlicomOrderPreauthorizeCreateAPIRequest{
+    return &AlibabaAlicomOrderPreauthorizeCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlicomOrderPreauthorizeCreateRequest) GetApiMethodName() string {
+func (r AlibabaAlicomOrderPreauthorizeCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.alicom.order.preauthorize.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlicomOrderPreauthorizeCreateRequest) GetApiParams() url.Values {
+func (r AlibabaAlicomOrderPreauthorizeCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlicomOrderPreauthorizeCreateRequest) GetApiParams() url.Values {
 }
 // PreAuthorizeModel Setter
 // 入参
-func (r *AlibabaAlicomOrderPreauthorizeCreateRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
+func (r *AlibabaAlicomOrderPreauthorizeCreateAPIRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
     r._preAuthorizeModel = _preAuthorizeModel
     r.Set("pre_authorize_model", _preAuthorizeModel)
     return nil
 }
 
 // PreAuthorizeModel Getter
-func (r AlibabaAlicomOrderPreauthorizeCreateRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
+func (r AlibabaAlicomOrderPreauthorizeCreateAPIRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
     return r._preAuthorizeModel
 }

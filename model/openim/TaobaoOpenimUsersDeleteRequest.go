@@ -12,26 +12,26 @@ taobao.openim.users.delete
 
 批量删除用户
 */
-type TaobaoOpenimUsersDeleteRequest struct {
+type TaobaoOpenimUsersDeleteAPIRequest struct {
     model.Params
     // 需要删除的用户列表，多个用户用半角逗号分隔，最多一次可以删除100个用户
     _userids   []string
 }
 
-// 初始化TaobaoOpenimUsersDeleteRequest对象
-func NewTaobaoOpenimUsersDeleteRequest() *TaobaoOpenimUsersDeleteRequest{
-    return &TaobaoOpenimUsersDeleteRequest{
+// 初始化TaobaoOpenimUsersDeleteAPIRequest对象
+func NewTaobaoOpenimUsersDeleteRequest() *TaobaoOpenimUsersDeleteAPIRequest{
+    return &TaobaoOpenimUsersDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenimUsersDeleteRequest) GetApiMethodName() string {
+func (r TaobaoOpenimUsersDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.openim.users.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimUsersDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoOpenimUsersDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOpenimUsersDeleteRequest) GetApiParams() url.Values {
 }
 // Userids Setter
 // 需要删除的用户列表，多个用户用半角逗号分隔，最多一次可以删除100个用户
-func (r *TaobaoOpenimUsersDeleteRequest) SetUserids(_userids []string) error {
+func (r *TaobaoOpenimUsersDeleteAPIRequest) SetUserids(_userids []string) error {
     r._userids = _userids
     r.Set("userids", _userids)
     return nil
 }
 
 // Userids Getter
-func (r TaobaoOpenimUsersDeleteRequest) GetUserids() []string {
+func (r TaobaoOpenimUsersDeleteAPIRequest) GetUserids() []string {
     return r._userids
 }

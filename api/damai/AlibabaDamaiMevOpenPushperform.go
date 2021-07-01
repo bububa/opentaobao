@@ -11,7 +11,7 @@ alibaba.damai.mev.open.pushperform
 
 pushPerform
 */
-func AlibabaDamaiMevOpenPushperform(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushperformRequest, session string) (*damai.AlibabaDamaiMevOpenPushperformAPIResponse, error) {
+func AlibabaDamaiMevOpenPushperform(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushperformAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushperformAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenPushperformAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

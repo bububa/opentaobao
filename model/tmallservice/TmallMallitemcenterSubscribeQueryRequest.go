@@ -12,26 +12,26 @@ tmall.mallitemcenter.subscribe.query
 
 查询商家服务订购信息
 */
-type TmallMallitemcenterSubscribeQueryRequest struct {
+type TmallMallitemcenterSubscribeQueryAPIRequest struct {
     model.Params
     // 入参query
     _query   *Spb2bOderQuery
 }
 
-// 初始化TmallMallitemcenterSubscribeQueryRequest对象
-func NewTmallMallitemcenterSubscribeQueryRequest() *TmallMallitemcenterSubscribeQueryRequest{
-    return &TmallMallitemcenterSubscribeQueryRequest{
+// 初始化TmallMallitemcenterSubscribeQueryAPIRequest对象
+func NewTmallMallitemcenterSubscribeQueryRequest() *TmallMallitemcenterSubscribeQueryAPIRequest{
+    return &TmallMallitemcenterSubscribeQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallMallitemcenterSubscribeQueryRequest) GetApiMethodName() string {
+func (r TmallMallitemcenterSubscribeQueryAPIRequest) GetApiMethodName() string {
     return "tmall.mallitemcenter.subscribe.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallMallitemcenterSubscribeQueryRequest) GetApiParams() url.Values {
+func (r TmallMallitemcenterSubscribeQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallMallitemcenterSubscribeQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 入参query
-func (r *TmallMallitemcenterSubscribeQueryRequest) SetQuery(_query *Spb2bOderQuery) error {
+func (r *TmallMallitemcenterSubscribeQueryAPIRequest) SetQuery(_query *Spb2bOderQuery) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r TmallMallitemcenterSubscribeQueryRequest) GetQuery() *Spb2bOderQuery {
+func (r TmallMallitemcenterSubscribeQueryAPIRequest) GetQuery() *Spb2bOderQuery {
     return r._query
 }

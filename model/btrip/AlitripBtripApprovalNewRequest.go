@@ -12,26 +12,26 @@ alitrip.btrip.approval.new
 
 用户新建审批单
 */
-type AlitripBtripApprovalNewRequest struct {
+type AlitripBtripApprovalNewAPIRequest struct {
     model.Params
     // 申请单
     _addApplyRequest   *OpenAddApplyRq
 }
 
-// 初始化AlitripBtripApprovalNewRequest对象
-func NewAlitripBtripApprovalNewRequest() *AlitripBtripApprovalNewRequest{
-    return &AlitripBtripApprovalNewRequest{
+// 初始化AlitripBtripApprovalNewAPIRequest对象
+func NewAlitripBtripApprovalNewRequest() *AlitripBtripApprovalNewAPIRequest{
+    return &AlitripBtripApprovalNewAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripApprovalNewRequest) GetApiMethodName() string {
+func (r AlitripBtripApprovalNewAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.approval.new"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripApprovalNewRequest) GetApiParams() url.Values {
+func (r AlitripBtripApprovalNewAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripApprovalNewRequest) GetApiParams() url.Values {
 }
 // AddApplyRequest Setter
 // 申请单
-func (r *AlitripBtripApprovalNewRequest) SetAddApplyRequest(_addApplyRequest *OpenAddApplyRq) error {
+func (r *AlitripBtripApprovalNewAPIRequest) SetAddApplyRequest(_addApplyRequest *OpenAddApplyRq) error {
     r._addApplyRequest = _addApplyRequest
     r.Set("add_apply_request", _addApplyRequest)
     return nil
 }
 
 // AddApplyRequest Getter
-func (r AlitripBtripApprovalNewRequest) GetAddApplyRequest() *OpenAddApplyRq {
+func (r AlitripBtripApprovalNewAPIRequest) GetAddApplyRequest() *OpenAddApplyRq {
     return r._addApplyRequest
 }

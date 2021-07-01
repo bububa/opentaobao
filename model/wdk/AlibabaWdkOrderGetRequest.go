@@ -12,26 +12,26 @@ alibaba.wdk.order.get
 
 五道口三江单据查询接口
 */
-type AlibabaWdkOrderGetRequest struct {
+type AlibabaWdkOrderGetAPIRequest struct {
     model.Params
     // 系统自动生成
     _idListQueryReq   *IdListQueryRequest
 }
 
-// 初始化AlibabaWdkOrderGetRequest对象
-func NewAlibabaWdkOrderGetRequest() *AlibabaWdkOrderGetRequest{
-    return &AlibabaWdkOrderGetRequest{
+// 初始化AlibabaWdkOrderGetAPIRequest对象
+func NewAlibabaWdkOrderGetRequest() *AlibabaWdkOrderGetAPIRequest{
+    return &AlibabaWdkOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkOrderGetRequest) GetApiMethodName() string {
+func (r AlibabaWdkOrderGetAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkOrderGetRequest) GetApiParams() url.Values {
+func (r AlibabaWdkOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkOrderGetRequest) GetApiParams() url.Values {
 }
 // IdListQueryReq Setter
 // 系统自动生成
-func (r *AlibabaWdkOrderGetRequest) SetIdListQueryReq(_idListQueryReq *IdListQueryRequest) error {
+func (r *AlibabaWdkOrderGetAPIRequest) SetIdListQueryReq(_idListQueryReq *IdListQueryRequest) error {
     r._idListQueryReq = _idListQueryReq
     r.Set("id_list_query_req", _idListQueryReq)
     return nil
 }
 
 // IdListQueryReq Getter
-func (r AlibabaWdkOrderGetRequest) GetIdListQueryReq() *IdListQueryRequest {
+func (r AlibabaWdkOrderGetAPIRequest) GetIdListQueryReq() *IdListQueryRequest {
     return r._idListQueryReq
 }

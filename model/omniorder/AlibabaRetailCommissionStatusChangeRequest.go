@@ -12,26 +12,26 @@ alibaba.retail.commission.status.change
 
 分佣系统，分佣状态变更接口
 */
-type AlibabaRetailCommissionStatusChangeRequest struct {
+type AlibabaRetailCommissionStatusChangeAPIRequest struct {
     model.Params
     // 请求参数
     _param0   *UniverseOrderVo
 }
 
-// 初始化AlibabaRetailCommissionStatusChangeRequest对象
-func NewAlibabaRetailCommissionStatusChangeRequest() *AlibabaRetailCommissionStatusChangeRequest{
-    return &AlibabaRetailCommissionStatusChangeRequest{
+// 初始化AlibabaRetailCommissionStatusChangeAPIRequest对象
+func NewAlibabaRetailCommissionStatusChangeRequest() *AlibabaRetailCommissionStatusChangeAPIRequest{
+    return &AlibabaRetailCommissionStatusChangeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailCommissionStatusChangeRequest) GetApiMethodName() string {
+func (r AlibabaRetailCommissionStatusChangeAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.commission.status.change"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailCommissionStatusChangeRequest) GetApiParams() url.Values {
+func (r AlibabaRetailCommissionStatusChangeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaRetailCommissionStatusChangeRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 请求参数
-func (r *AlibabaRetailCommissionStatusChangeRequest) SetParam0(_param0 *UniverseOrderVo) error {
+func (r *AlibabaRetailCommissionStatusChangeAPIRequest) SetParam0(_param0 *UniverseOrderVo) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaRetailCommissionStatusChangeRequest) GetParam0() *UniverseOrderVo {
+func (r AlibabaRetailCommissionStatusChangeAPIRequest) GetParam0() *UniverseOrderVo {
     return r._param0
 }

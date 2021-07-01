@@ -11,7 +11,7 @@ taobao.miniapp.cloud.store.relation.add
 
 用于用户上传文件之后回写云存储的关联关系
 */
-func TaobaoMiniappCloudStoreRelationAdd(clt *core.SDKClient, req *miniapp.TaobaoMiniappCloudStoreRelationAddRequest, session string) (*miniapp.TaobaoMiniappCloudStoreRelationAddAPIResponse, error) {
+func TaobaoMiniappCloudStoreRelationAdd(clt *core.SDKClient, req *miniapp.TaobaoMiniappCloudStoreRelationAddAPIRequest, session string) (*miniapp.TaobaoMiniappCloudStoreRelationAddAPIResponse, error) {
     var resp miniapp.TaobaoMiniappCloudStoreRelationAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

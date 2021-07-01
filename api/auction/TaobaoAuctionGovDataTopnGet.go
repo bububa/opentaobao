@@ -11,7 +11,7 @@ taobao.auction.gov.data.topn.get
 
 根据不同时间维度(周,月,年)，获取(成交额或发拍件数)排行榜列表
 */
-func TaobaoAuctionGovDataTopnGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataTopnGetRequest, session string) (*auction.TaobaoAuctionGovDataTopnGetAPIResponse, error) {
+func TaobaoAuctionGovDataTopnGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataTopnGetAPIRequest, session string) (*auction.TaobaoAuctionGovDataTopnGetAPIResponse, error) {
     var resp auction.TaobaoAuctionGovDataTopnGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.lst.speaker.status.get
 
 音箱设备在线状态查询
 */
-type AlibabaLstSpeakerStatusGetRequest struct {
+type AlibabaLstSpeakerStatusGetAPIRequest struct {
     model.Params
     // 设备编码
     _deviceCode   string
 }
 
-// 初始化AlibabaLstSpeakerStatusGetRequest对象
-func NewAlibabaLstSpeakerStatusGetRequest() *AlibabaLstSpeakerStatusGetRequest{
-    return &AlibabaLstSpeakerStatusGetRequest{
+// 初始化AlibabaLstSpeakerStatusGetAPIRequest对象
+func NewAlibabaLstSpeakerStatusGetRequest() *AlibabaLstSpeakerStatusGetAPIRequest{
+    return &AlibabaLstSpeakerStatusGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstSpeakerStatusGetRequest) GetApiMethodName() string {
+func (r AlibabaLstSpeakerStatusGetAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.speaker.status.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstSpeakerStatusGetRequest) GetApiParams() url.Values {
+func (r AlibabaLstSpeakerStatusGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstSpeakerStatusGetRequest) GetApiParams() url.Values {
 }
 // DeviceCode Setter
 // 设备编码
-func (r *AlibabaLstSpeakerStatusGetRequest) SetDeviceCode(_deviceCode string) error {
+func (r *AlibabaLstSpeakerStatusGetAPIRequest) SetDeviceCode(_deviceCode string) error {
     r._deviceCode = _deviceCode
     r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
-func (r AlibabaLstSpeakerStatusGetRequest) GetDeviceCode() string {
+func (r AlibabaLstSpeakerStatusGetAPIRequest) GetDeviceCode() string {
     return r._deviceCode
 }

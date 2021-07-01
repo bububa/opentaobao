@@ -11,7 +11,7 @@ alibaba.wdk.fulfill.rt.btoc.warehouse.work.order.callback
 
 大润发B2C仓作业单回传接口
 */
-func AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallback(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackRequest, session string) (*wdk.AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackAPIResponse, error) {
+func AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallback(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackAPIRequest, session string) (*wdk.AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackAPIResponse, error) {
     var resp wdk.AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

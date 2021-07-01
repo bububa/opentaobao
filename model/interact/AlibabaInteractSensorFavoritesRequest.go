@@ -12,24 +12,24 @@ alibaba.interact.sensor.favorites
 
 手淘开放鉴权专用接口，无数据输出输入，仅用于鉴权。
 */
-type AlibabaInteractSensorFavoritesRequest struct {
+type AlibabaInteractSensorFavoritesAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractSensorFavoritesRequest对象
-func NewAlibabaInteractSensorFavoritesRequest() *AlibabaInteractSensorFavoritesRequest{
-    return &AlibabaInteractSensorFavoritesRequest{
+// 初始化AlibabaInteractSensorFavoritesAPIRequest对象
+func NewAlibabaInteractSensorFavoritesRequest() *AlibabaInteractSensorFavoritesAPIRequest{
+    return &AlibabaInteractSensorFavoritesAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorFavoritesRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorFavoritesAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.favorites"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorFavoritesRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorFavoritesAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

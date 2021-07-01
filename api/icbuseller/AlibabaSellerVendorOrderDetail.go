@@ -11,7 +11,7 @@ alibaba.seller.vendor.order.detail
 
 国际站服务市场订单列表接口
 */
-func AlibabaSellerVendorOrderDetail(clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorOrderDetailRequest, session string) (*icbuseller.AlibabaSellerVendorOrderDetailAPIResponse, error) {
+func AlibabaSellerVendorOrderDetail(clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorOrderDetailAPIRequest, session string) (*icbuseller.AlibabaSellerVendorOrderDetailAPIResponse, error) {
     var resp icbuseller.AlibabaSellerVendorOrderDetailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

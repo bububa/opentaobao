@@ -11,7 +11,7 @@ alitrip.travel.trade.close
 
 卖家关单（快速退款接口），不支持二次预约商品的订单
 */
-func AlitripTravelTradeClose(clt *core.SDKClient, req *traveltrade.AlitripTravelTradeCloseRequest, session string) (*traveltrade.AlitripTravelTradeCloseAPIResponse, error) {
+func AlitripTravelTradeClose(clt *core.SDKClient, req *traveltrade.AlitripTravelTradeCloseAPIRequest, session string) (*traveltrade.AlitripTravelTradeCloseAPIResponse, error) {
     var resp traveltrade.AlitripTravelTradeCloseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

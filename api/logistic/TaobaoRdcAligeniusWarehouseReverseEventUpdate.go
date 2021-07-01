@@ -11,7 +11,7 @@ taobao.rdc.aligenius.warehouse.reverse.event.update
 
 用于erp回传销退单相关信息到平台
 */
-func TaobaoRdcAligeniusWarehouseReverseEventUpdate(clt *core.SDKClient, req *logistic.TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest, session string) (*logistic.TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIResponse, error) {
+func TaobaoRdcAligeniusWarehouseReverseEventUpdate(clt *core.SDKClient, req *logistic.TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest, session string) (*logistic.TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIResponse, error) {
     var resp logistic.TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

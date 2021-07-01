@@ -12,26 +12,26 @@ taobao.train.agent.change.holdseat.confirm
 
 火车票代理商接口——确认改签占座是否成功
 */
-type TaobaoTrainAgentChangeHoldseatConfirmRequest struct {
+type TaobaoTrainAgentChangeHoldseatConfirmAPIRequest struct {
     model.Params
     // 改签占座入参
     _changeHoldSeatParam   *ChangeHoldSeatParam
 }
 
-// 初始化TaobaoTrainAgentChangeHoldseatConfirmRequest对象
-func NewTaobaoTrainAgentChangeHoldseatConfirmRequest() *TaobaoTrainAgentChangeHoldseatConfirmRequest{
-    return &TaobaoTrainAgentChangeHoldseatConfirmRequest{
+// 初始化TaobaoTrainAgentChangeHoldseatConfirmAPIRequest对象
+func NewTaobaoTrainAgentChangeHoldseatConfirmRequest() *TaobaoTrainAgentChangeHoldseatConfirmAPIRequest{
+    return &TaobaoTrainAgentChangeHoldseatConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentChangeHoldseatConfirmRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentChangeHoldseatConfirmAPIRequest) GetApiMethodName() string {
     return "taobao.train.agent.change.holdseat.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentChangeHoldseatConfirmRequest) GetApiParams() url.Values {
+func (r TaobaoTrainAgentChangeHoldseatConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentChangeHoldseatConfirmRequest) GetApiParams() url.Values 
 }
 // ChangeHoldSeatParam Setter
 // 改签占座入参
-func (r *TaobaoTrainAgentChangeHoldseatConfirmRequest) SetChangeHoldSeatParam(_changeHoldSeatParam *ChangeHoldSeatParam) error {
+func (r *TaobaoTrainAgentChangeHoldseatConfirmAPIRequest) SetChangeHoldSeatParam(_changeHoldSeatParam *ChangeHoldSeatParam) error {
     r._changeHoldSeatParam = _changeHoldSeatParam
     r.Set("change_hold_seat_param", _changeHoldSeatParam)
     return nil
 }
 
 // ChangeHoldSeatParam Getter
-func (r TaobaoTrainAgentChangeHoldseatConfirmRequest) GetChangeHoldSeatParam() *ChangeHoldSeatParam {
+func (r TaobaoTrainAgentChangeHoldseatConfirmAPIRequest) GetChangeHoldSeatParam() *ChangeHoldSeatParam {
     return r._changeHoldSeatParam
 }

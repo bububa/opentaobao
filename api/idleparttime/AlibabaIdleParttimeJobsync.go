@@ -11,7 +11,7 @@ alibaba.idle.parttime.jobsync
 
 服务商同步岗位信息给闲鱼
 */
-func AlibabaIdleParttimeJobsync(clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeJobsyncRequest, session string) (*idleparttime.AlibabaIdleParttimeJobsyncAPIResponse, error) {
+func AlibabaIdleParttimeJobsync(clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeJobsyncAPIRequest, session string) (*idleparttime.AlibabaIdleParttimeJobsyncAPIResponse, error) {
     var resp idleparttime.AlibabaIdleParttimeJobsyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

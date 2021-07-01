@@ -11,7 +11,7 @@ taobao.cloudpush.notice.ios
 
 推送通知给ios设备
 */
-func TaobaoCloudpushNoticeIos(clt *core.SDKClient, req *cloudpush.TaobaoCloudpushNoticeIosRequest, session string) (*cloudpush.TaobaoCloudpushNoticeIosAPIResponse, error) {
+func TaobaoCloudpushNoticeIos(clt *core.SDKClient, req *cloudpush.TaobaoCloudpushNoticeIosAPIRequest, session string) (*cloudpush.TaobaoCloudpushNoticeIosAPIResponse, error) {
     var resp cloudpush.TaobaoCloudpushNoticeIosAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

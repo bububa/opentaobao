@@ -12,7 +12,7 @@ taobao.train.agent.get.refund
 
 代理商获取订单信息回调API
 */
-type TaobaoTrainAgentGetRefundRequest struct {
+type TaobaoTrainAgentGetRefundAPIRequest struct {
     model.Params
     // 淘宝的主订单号
     _mainOrderId   int64
@@ -20,20 +20,20 @@ type TaobaoTrainAgentGetRefundRequest struct {
     _agentId   int64
 }
 
-// 初始化TaobaoTrainAgentGetRefundRequest对象
-func NewTaobaoTrainAgentGetRefundRequest() *TaobaoTrainAgentGetRefundRequest{
-    return &TaobaoTrainAgentGetRefundRequest{
+// 初始化TaobaoTrainAgentGetRefundAPIRequest对象
+func NewTaobaoTrainAgentGetRefundRequest() *TaobaoTrainAgentGetRefundAPIRequest{
+    return &TaobaoTrainAgentGetRefundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentGetRefundRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentGetRefundAPIRequest) GetApiMethodName() string {
     return "taobao.train.agent.get.refund"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentGetRefundRequest) GetApiParams() url.Values {
+func (r TaobaoTrainAgentGetRefundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoTrainAgentGetRefundRequest) GetApiParams() url.Values {
 }
 // MainOrderId Setter
 // 淘宝的主订单号
-func (r *TaobaoTrainAgentGetRefundRequest) SetMainOrderId(_mainOrderId int64) error {
+func (r *TaobaoTrainAgentGetRefundAPIRequest) SetMainOrderId(_mainOrderId int64) error {
     r._mainOrderId = _mainOrderId
     r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
-func (r TaobaoTrainAgentGetRefundRequest) GetMainOrderId() int64 {
+func (r TaobaoTrainAgentGetRefundAPIRequest) GetMainOrderId() int64 {
     return r._mainOrderId
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoTrainAgentGetRefundRequest) SetAgentId(_agentId int64) error {
+func (r *TaobaoTrainAgentGetRefundAPIRequest) SetAgentId(_agentId int64) error {
     r._agentId = _agentId
     r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
-func (r TaobaoTrainAgentGetRefundRequest) GetAgentId() int64 {
+func (r TaobaoTrainAgentGetRefundAPIRequest) GetAgentId() int64 {
     return r._agentId
 }

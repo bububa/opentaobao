@@ -12,7 +12,7 @@ taobao.omniitem.classify.item.query
 
 商家根据分类查商品
 */
-type TaobaoOmniitemClassifyItemQueryRequest struct {
+type TaobaoOmniitemClassifyItemQueryAPIRequest struct {
     model.Params
     // 分类ID
     _classifyId   int64
@@ -22,20 +22,20 @@ type TaobaoOmniitemClassifyItemQueryRequest struct {
     _pageSize   int64
 }
 
-// 初始化TaobaoOmniitemClassifyItemQueryRequest对象
-func NewTaobaoOmniitemClassifyItemQueryRequest() *TaobaoOmniitemClassifyItemQueryRequest{
-    return &TaobaoOmniitemClassifyItemQueryRequest{
+// 初始化TaobaoOmniitemClassifyItemQueryAPIRequest对象
+func NewTaobaoOmniitemClassifyItemQueryRequest() *TaobaoOmniitemClassifyItemQueryAPIRequest{
+    return &TaobaoOmniitemClassifyItemQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniitemClassifyItemQueryRequest) GetApiMethodName() string {
+func (r TaobaoOmniitemClassifyItemQueryAPIRequest) GetApiMethodName() string {
     return "taobao.omniitem.classify.item.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniitemClassifyItemQueryRequest) GetApiParams() url.Values {
+func (r TaobaoOmniitemClassifyItemQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoOmniitemClassifyItemQueryRequest) GetApiParams() url.Values {
 }
 // ClassifyId Setter
 // 分类ID
-func (r *TaobaoOmniitemClassifyItemQueryRequest) SetClassifyId(_classifyId int64) error {
+func (r *TaobaoOmniitemClassifyItemQueryAPIRequest) SetClassifyId(_classifyId int64) error {
     r._classifyId = _classifyId
     r.Set("classify_id", _classifyId)
     return nil
 }
 
 // ClassifyId Getter
-func (r TaobaoOmniitemClassifyItemQueryRequest) GetClassifyId() int64 {
+func (r TaobaoOmniitemClassifyItemQueryAPIRequest) GetClassifyId() int64 {
     return r._classifyId
 }
 // PageNum Setter
 // 页码
-func (r *TaobaoOmniitemClassifyItemQueryRequest) SetPageNum(_pageNum int64) error {
+func (r *TaobaoOmniitemClassifyItemQueryAPIRequest) SetPageNum(_pageNum int64) error {
     r._pageNum = _pageNum
     r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
-func (r TaobaoOmniitemClassifyItemQueryRequest) GetPageNum() int64 {
+func (r TaobaoOmniitemClassifyItemQueryAPIRequest) GetPageNum() int64 {
     return r._pageNum
 }
 // PageSize Setter
 // 每页大小
-func (r *TaobaoOmniitemClassifyItemQueryRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoOmniitemClassifyItemQueryAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoOmniitemClassifyItemQueryRequest) GetPageSize() int64 {
+func (r TaobaoOmniitemClassifyItemQueryAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

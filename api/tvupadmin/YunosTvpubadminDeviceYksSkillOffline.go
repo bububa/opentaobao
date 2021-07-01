@@ -11,7 +11,7 @@ yunos.tvpubadmin.device.yks.skill.offline
 
 迎客松平台技能下架
 */
-func YunosTvpubadminDeviceYksSkillOffline(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillOfflineRequest, session string) (*tvupadmin.YunosTvpubadminDeviceYksSkillOfflineAPIResponse, error) {
+func YunosTvpubadminDeviceYksSkillOffline(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillOfflineAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceYksSkillOfflineAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminDeviceYksSkillOfflineAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

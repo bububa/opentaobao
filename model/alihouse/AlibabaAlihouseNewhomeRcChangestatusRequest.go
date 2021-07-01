@@ -12,7 +12,7 @@ alibaba.alihouse.newhome.rc.changestatus
 
 图文草稿状态更新
 */
-type AlibabaAlihouseNewhomeRcChangestatusRequest struct {
+type AlibabaAlihouseNewhomeRcChangestatusAPIRequest struct {
     model.Params
     // 外部图文id
     _outerId   string
@@ -20,20 +20,20 @@ type AlibabaAlihouseNewhomeRcChangestatusRequest struct {
     _status   int64
 }
 
-// 初始化AlibabaAlihouseNewhomeRcChangestatusRequest对象
-func NewAlibabaAlihouseNewhomeRcChangestatusRequest() *AlibabaAlihouseNewhomeRcChangestatusRequest{
-    return &AlibabaAlihouseNewhomeRcChangestatusRequest{
+// 初始化AlibabaAlihouseNewhomeRcChangestatusAPIRequest对象
+func NewAlibabaAlihouseNewhomeRcChangestatusRequest() *AlibabaAlihouseNewhomeRcChangestatusAPIRequest{
+    return &AlibabaAlihouseNewhomeRcChangestatusAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeRcChangestatusRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.rc.changestatus"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeRcChangestatusRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihouseNewhomeRcChangestatusRequest) GetApiParams() url.Values {
 }
 // OuterId Setter
 // 外部图文id
-func (r *AlibabaAlihouseNewhomeRcChangestatusRequest) SetOuterId(_outerId string) error {
+func (r *AlibabaAlihouseNewhomeRcChangestatusAPIRequest) SetOuterId(_outerId string) error {
     r._outerId = _outerId
     r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
-func (r AlibabaAlihouseNewhomeRcChangestatusRequest) GetOuterId() string {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetOuterId() string {
     return r._outerId
 }
 // Status Setter
 // 0 失效 1 有效
-func (r *AlibabaAlihouseNewhomeRcChangestatusRequest) SetStatus(_status int64) error {
+func (r *AlibabaAlihouseNewhomeRcChangestatusAPIRequest) SetStatus(_status int64) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r AlibabaAlihouseNewhomeRcChangestatusRequest) GetStatus() int64 {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetStatus() int64 {
     return r._status
 }

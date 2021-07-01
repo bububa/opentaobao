@@ -13,7 +13,7 @@ alibaba.dt.tmllcar.pricevalidate
 入参：车型ID，城市名称，价格
 输出：N 校验失败，校验成功不返回值
 */
-func AlibabaDtTmllcarPricevalidate(clt *core.SDKClient, req *dt.AlibabaDtTmllcarPricevalidateRequest, session string) (*dt.AlibabaDtTmllcarPricevalidateAPIResponse, error) {
+func AlibabaDtTmllcarPricevalidate(clt *core.SDKClient, req *dt.AlibabaDtTmllcarPricevalidateAPIRequest, session string) (*dt.AlibabaDtTmllcarPricevalidateAPIResponse, error) {
     var resp dt.AlibabaDtTmllcarPricevalidateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

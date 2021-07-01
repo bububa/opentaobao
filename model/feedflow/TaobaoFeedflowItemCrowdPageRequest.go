@@ -12,26 +12,26 @@ taobao.feedflow.item.crowd.page
 
 分页查询单品单元下人群列表
 */
-type TaobaoFeedflowItemCrowdPageRequest struct {
+type TaobaoFeedflowItemCrowdPageAPIRequest struct {
     model.Params
     // 查询条件
     _crowdQuery   *CrowdQueryDTO
 }
 
-// 初始化TaobaoFeedflowItemCrowdPageRequest对象
-func NewTaobaoFeedflowItemCrowdPageRequest() *TaobaoFeedflowItemCrowdPageRequest{
-    return &TaobaoFeedflowItemCrowdPageRequest{
+// 初始化TaobaoFeedflowItemCrowdPageAPIRequest对象
+func NewTaobaoFeedflowItemCrowdPageRequest() *TaobaoFeedflowItemCrowdPageAPIRequest{
+    return &TaobaoFeedflowItemCrowdPageAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemCrowdPageRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemCrowdPageAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.crowd.page"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemCrowdPageRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemCrowdPageAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCrowdPageRequest) GetApiParams() url.Values {
 }
 // CrowdQuery Setter
 // 查询条件
-func (r *TaobaoFeedflowItemCrowdPageRequest) SetCrowdQuery(_crowdQuery *CrowdQueryDTO) error {
+func (r *TaobaoFeedflowItemCrowdPageAPIRequest) SetCrowdQuery(_crowdQuery *CrowdQueryDTO) error {
     r._crowdQuery = _crowdQuery
     r.Set("crowd_query", _crowdQuery)
     return nil
 }
 
 // CrowdQuery Getter
-func (r TaobaoFeedflowItemCrowdPageRequest) GetCrowdQuery() *CrowdQueryDTO {
+func (r TaobaoFeedflowItemCrowdPageAPIRequest) GetCrowdQuery() *CrowdQueryDTO {
     return r._crowdQuery
 }

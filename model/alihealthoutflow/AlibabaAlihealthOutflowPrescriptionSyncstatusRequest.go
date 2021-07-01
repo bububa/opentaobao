@@ -12,26 +12,26 @@ alibaba.alihealth.outflow.prescription.syncstatus
 
 阿里健康-处方外流-对外提供同步处方状态功能
 */
-type AlibabaAlihealthOutflowPrescriptionSyncstatusRequest struct {
+type AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest struct {
     model.Params
     // 入参
     _syncStatusRequest   *SyncPrescriptionStatusRequest
 }
 
-// 初始化AlibabaAlihealthOutflowPrescriptionSyncstatusRequest对象
-func NewAlibabaAlihealthOutflowPrescriptionSyncstatusRequest() *AlibabaAlihealthOutflowPrescriptionSyncstatusRequest{
-    return &AlibabaAlihealthOutflowPrescriptionSyncstatusRequest{
+// 初始化AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest对象
+func NewAlibabaAlihealthOutflowPrescriptionSyncstatusRequest() *AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest{
+    return &AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.prescription.syncstatus"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) GetApiParams() url
 }
 // SyncStatusRequest Setter
 // 入参
-func (r *AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) SetSyncStatusRequest(_syncStatusRequest *SyncPrescriptionStatusRequest) error {
+func (r *AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest) SetSyncStatusRequest(_syncStatusRequest *SyncPrescriptionStatusRequest) error {
     r._syncStatusRequest = _syncStatusRequest
     r.Set("sync_status_request", _syncStatusRequest)
     return nil
 }
 
 // SyncStatusRequest Getter
-func (r AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) GetSyncStatusRequest() *SyncPrescriptionStatusRequest {
+func (r AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest) GetSyncStatusRequest() *SyncPrescriptionStatusRequest {
     return r._syncStatusRequest
 }

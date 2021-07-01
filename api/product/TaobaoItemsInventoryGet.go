@@ -13,7 +13,7 @@ taobao.items.inventory.get
 只能获得商品的部分信息，商品的详细信息请通过taobao.item.seller.get获取<br/>
 <strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 */
-func TaobaoItemsInventoryGet(clt *core.SDKClient, req *product.TaobaoItemsInventoryGetRequest, session string) (*product.TaobaoItemsInventoryGetAPIResponse, error) {
+func TaobaoItemsInventoryGet(clt *core.SDKClient, req *product.TaobaoItemsInventoryGetAPIRequest, session string) (*product.TaobaoItemsInventoryGetAPIResponse, error) {
     var resp product.TaobaoItemsInventoryGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

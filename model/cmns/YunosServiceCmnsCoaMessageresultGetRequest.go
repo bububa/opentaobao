@@ -12,26 +12,26 @@ yunos.service.cmns.coa.messageresult.get
 
 CMNS消息发送到达查询,根据消息ID查询，仅能查询该appKey所发送的消息
 */
-type YunosServiceCmnsCoaMessageresultGetRequest struct {
+type YunosServiceCmnsCoaMessageresultGetAPIRequest struct {
     model.Params
     // 消息ID
     _mid   int64
 }
 
-// 初始化YunosServiceCmnsCoaMessageresultGetRequest对象
-func NewYunosServiceCmnsCoaMessageresultGetRequest() *YunosServiceCmnsCoaMessageresultGetRequest{
-    return &YunosServiceCmnsCoaMessageresultGetRequest{
+// 初始化YunosServiceCmnsCoaMessageresultGetAPIRequest对象
+func NewYunosServiceCmnsCoaMessageresultGetRequest() *YunosServiceCmnsCoaMessageresultGetAPIRequest{
+    return &YunosServiceCmnsCoaMessageresultGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosServiceCmnsCoaMessageresultGetRequest) GetApiMethodName() string {
+func (r YunosServiceCmnsCoaMessageresultGetAPIRequest) GetApiMethodName() string {
     return "yunos.service.cmns.coa.messageresult.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosServiceCmnsCoaMessageresultGetRequest) GetApiParams() url.Values {
+func (r YunosServiceCmnsCoaMessageresultGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosServiceCmnsCoaMessageresultGetRequest) GetApiParams() url.Values {
 }
 // Mid Setter
 // 消息ID
-func (r *YunosServiceCmnsCoaMessageresultGetRequest) SetMid(_mid int64) error {
+func (r *YunosServiceCmnsCoaMessageresultGetAPIRequest) SetMid(_mid int64) error {
     r._mid = _mid
     r.Set("mid", _mid)
     return nil
 }
 
 // Mid Getter
-func (r YunosServiceCmnsCoaMessageresultGetRequest) GetMid() int64 {
+func (r YunosServiceCmnsCoaMessageresultGetAPIRequest) GetMid() int64 {
     return r._mid
 }

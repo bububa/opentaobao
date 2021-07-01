@@ -12,26 +12,26 @@ alibaba.mozi.fusion.reentry.employee.account
 
 重新入职并且重新启用账号
 */
-type AlibabaMoziFusionReentryEmployeeAccountRequest struct {
+type AlibabaMoziFusionReentryEmployeeAccountAPIRequest struct {
     model.Params
     // 入参
     _reentryEmployeeAccount   *ReEntryTenantEmployeeAndAccountRequest
 }
 
-// 初始化AlibabaMoziFusionReentryEmployeeAccountRequest对象
-func NewAlibabaMoziFusionReentryEmployeeAccountRequest() *AlibabaMoziFusionReentryEmployeeAccountRequest{
-    return &AlibabaMoziFusionReentryEmployeeAccountRequest{
+// 初始化AlibabaMoziFusionReentryEmployeeAccountAPIRequest对象
+func NewAlibabaMoziFusionReentryEmployeeAccountRequest() *AlibabaMoziFusionReentryEmployeeAccountAPIRequest{
+    return &AlibabaMoziFusionReentryEmployeeAccountAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziFusionReentryEmployeeAccountRequest) GetApiMethodName() string {
+func (r AlibabaMoziFusionReentryEmployeeAccountAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.fusion.reentry.employee.account"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziFusionReentryEmployeeAccountRequest) GetApiParams() url.Values {
+func (r AlibabaMoziFusionReentryEmployeeAccountAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziFusionReentryEmployeeAccountRequest) GetApiParams() url.Value
 }
 // ReentryEmployeeAccount Setter
 // 入参
-func (r *AlibabaMoziFusionReentryEmployeeAccountRequest) SetReentryEmployeeAccount(_reentryEmployeeAccount *ReEntryTenantEmployeeAndAccountRequest) error {
+func (r *AlibabaMoziFusionReentryEmployeeAccountAPIRequest) SetReentryEmployeeAccount(_reentryEmployeeAccount *ReEntryTenantEmployeeAndAccountRequest) error {
     r._reentryEmployeeAccount = _reentryEmployeeAccount
     r.Set("reentry.employee.account", _reentryEmployeeAccount)
     return nil
 }
 
 // ReentryEmployeeAccount Getter
-func (r AlibabaMoziFusionReentryEmployeeAccountRequest) GetReentryEmployeeAccount() *ReEntryTenantEmployeeAndAccountRequest {
+func (r AlibabaMoziFusionReentryEmployeeAccountAPIRequest) GetReentryEmployeeAccount() *ReEntryTenantEmployeeAndAccountRequest {
     return r._reentryEmployeeAccount
 }

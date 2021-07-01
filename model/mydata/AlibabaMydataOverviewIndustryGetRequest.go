@@ -12,26 +12,26 @@ alibaba.mydata.overview.industry.get
 
 获取数据管家我的效果API可以使用的行业
 */
-type AlibabaMydataOverviewIndustryGetRequest struct {
+type AlibabaMydataOverviewIndustryGetAPIRequest struct {
     model.Params
     // 系统自动生成
     _dateRange   *DateRange
 }
 
-// 初始化AlibabaMydataOverviewIndustryGetRequest对象
-func NewAlibabaMydataOverviewIndustryGetRequest() *AlibabaMydataOverviewIndustryGetRequest{
-    return &AlibabaMydataOverviewIndustryGetRequest{
+// 初始化AlibabaMydataOverviewIndustryGetAPIRequest对象
+func NewAlibabaMydataOverviewIndustryGetRequest() *AlibabaMydataOverviewIndustryGetAPIRequest{
+    return &AlibabaMydataOverviewIndustryGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMydataOverviewIndustryGetRequest) GetApiMethodName() string {
+func (r AlibabaMydataOverviewIndustryGetAPIRequest) GetApiMethodName() string {
     return "alibaba.mydata.overview.industry.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMydataOverviewIndustryGetRequest) GetApiParams() url.Values {
+func (r AlibabaMydataOverviewIndustryGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMydataOverviewIndustryGetRequest) GetApiParams() url.Values {
 }
 // DateRange Setter
 // 系统自动生成
-func (r *AlibabaMydataOverviewIndustryGetRequest) SetDateRange(_dateRange *DateRange) error {
+func (r *AlibabaMydataOverviewIndustryGetAPIRequest) SetDateRange(_dateRange *DateRange) error {
     r._dateRange = _dateRange
     r.Set("date_range", _dateRange)
     return nil
 }
 
 // DateRange Getter
-func (r AlibabaMydataOverviewIndustryGetRequest) GetDateRange() *DateRange {
+func (r AlibabaMydataOverviewIndustryGetAPIRequest) GetDateRange() *DateRange {
     return r._dateRange
 }

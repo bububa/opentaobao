@@ -12,26 +12,26 @@ tmall.car.lease.riskcallback
 
 租赁公司回调风控结果
 */
-type TmallCarLeaseRiskcallbackRequest struct {
+type TmallCarLeaseRiskcallbackAPIRequest struct {
     model.Params
     // 授信结果
     _creditInfo   *CreditInfoTopDTO
 }
 
-// 初始化TmallCarLeaseRiskcallbackRequest对象
-func NewTmallCarLeaseRiskcallbackRequest() *TmallCarLeaseRiskcallbackRequest{
-    return &TmallCarLeaseRiskcallbackRequest{
+// 初始化TmallCarLeaseRiskcallbackAPIRequest对象
+func NewTmallCarLeaseRiskcallbackRequest() *TmallCarLeaseRiskcallbackAPIRequest{
+    return &TmallCarLeaseRiskcallbackAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarLeaseRiskcallbackRequest) GetApiMethodName() string {
+func (r TmallCarLeaseRiskcallbackAPIRequest) GetApiMethodName() string {
     return "tmall.car.lease.riskcallback"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarLeaseRiskcallbackRequest) GetApiParams() url.Values {
+func (r TmallCarLeaseRiskcallbackAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallCarLeaseRiskcallbackRequest) GetApiParams() url.Values {
 }
 // CreditInfo Setter
 // 授信结果
-func (r *TmallCarLeaseRiskcallbackRequest) SetCreditInfo(_creditInfo *CreditInfoTopDTO) error {
+func (r *TmallCarLeaseRiskcallbackAPIRequest) SetCreditInfo(_creditInfo *CreditInfoTopDTO) error {
     r._creditInfo = _creditInfo
     r.Set("credit_info", _creditInfo)
     return nil
 }
 
 // CreditInfo Getter
-func (r TmallCarLeaseRiskcallbackRequest) GetCreditInfo() *CreditInfoTopDTO {
+func (r TmallCarLeaseRiskcallbackAPIRequest) GetCreditInfo() *CreditInfoTopDTO {
     return r._creditInfo
 }

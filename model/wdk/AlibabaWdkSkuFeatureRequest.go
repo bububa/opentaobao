@@ -12,26 +12,26 @@ alibaba.wdk.sku.feature
 
 给淘鲜达商品属性之外的打标通用能力，满足商品一些特殊的需求，比如是否参加营销。
 */
-type AlibabaWdkSkuFeatureRequest struct {
+type AlibabaWdkSkuFeatureAPIRequest struct {
     model.Params
     // SkuFeatureDo
     _param   *SkuFeatureDO
 }
 
-// 初始化AlibabaWdkSkuFeatureRequest对象
-func NewAlibabaWdkSkuFeatureRequest() *AlibabaWdkSkuFeatureRequest{
-    return &AlibabaWdkSkuFeatureRequest{
+// 初始化AlibabaWdkSkuFeatureAPIRequest对象
+func NewAlibabaWdkSkuFeatureRequest() *AlibabaWdkSkuFeatureAPIRequest{
+    return &AlibabaWdkSkuFeatureAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuFeatureRequest) GetApiMethodName() string {
+func (r AlibabaWdkSkuFeatureAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.feature"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuFeatureRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSkuFeatureAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuFeatureRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // SkuFeatureDo
-func (r *AlibabaWdkSkuFeatureRequest) SetParam(_param *SkuFeatureDO) error {
+func (r *AlibabaWdkSkuFeatureAPIRequest) SetParam(_param *SkuFeatureDO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkSkuFeatureRequest) GetParam() *SkuFeatureDO {
+func (r AlibabaWdkSkuFeatureAPIRequest) GetParam() *SkuFeatureDO {
     return r._param
 }

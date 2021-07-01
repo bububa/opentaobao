@@ -12,26 +12,26 @@ alibaba.wdk.channel.order.refund.confirm
 
 退款确认
 */
-type AlibabaWdkChannelOrderRefundConfirmRequest struct {
+type AlibabaWdkChannelOrderRefundConfirmAPIRequest struct {
     model.Params
     // 退款确认信息
     _orderRefundConfirmInfo   *OrderRefundConfirmInfo
 }
 
-// 初始化AlibabaWdkChannelOrderRefundConfirmRequest对象
-func NewAlibabaWdkChannelOrderRefundConfirmRequest() *AlibabaWdkChannelOrderRefundConfirmRequest{
-    return &AlibabaWdkChannelOrderRefundConfirmRequest{
+// 初始化AlibabaWdkChannelOrderRefundConfirmAPIRequest对象
+func NewAlibabaWdkChannelOrderRefundConfirmRequest() *AlibabaWdkChannelOrderRefundConfirmAPIRequest{
+    return &AlibabaWdkChannelOrderRefundConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkChannelOrderRefundConfirmRequest) GetApiMethodName() string {
+func (r AlibabaWdkChannelOrderRefundConfirmAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.channel.order.refund.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkChannelOrderRefundConfirmRequest) GetApiParams() url.Values {
+func (r AlibabaWdkChannelOrderRefundConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkChannelOrderRefundConfirmRequest) GetApiParams() url.Values {
 }
 // OrderRefundConfirmInfo Setter
 // 退款确认信息
-func (r *AlibabaWdkChannelOrderRefundConfirmRequest) SetOrderRefundConfirmInfo(_orderRefundConfirmInfo *OrderRefundConfirmInfo) error {
+func (r *AlibabaWdkChannelOrderRefundConfirmAPIRequest) SetOrderRefundConfirmInfo(_orderRefundConfirmInfo *OrderRefundConfirmInfo) error {
     r._orderRefundConfirmInfo = _orderRefundConfirmInfo
     r.Set("order_refund_confirm_info", _orderRefundConfirmInfo)
     return nil
 }
 
 // OrderRefundConfirmInfo Getter
-func (r AlibabaWdkChannelOrderRefundConfirmRequest) GetOrderRefundConfirmInfo() *OrderRefundConfirmInfo {
+func (r AlibabaWdkChannelOrderRefundConfirmAPIRequest) GetOrderRefundConfirmInfo() *OrderRefundConfirmInfo {
     return r._orderRefundConfirmInfo
 }

@@ -12,26 +12,26 @@ alibaba.idle.isv.order.adjustprice
 
 闲鱼用户通过授权的服务商修改订单价格和邮费
 */
-type AlibabaIdleIsvOrderAdjustpriceRequest struct {
+type AlibabaIdleIsvOrderAdjustpriceAPIRequest struct {
     model.Params
     // 输入参数
     _paramAdjustOrderPrice   *IsvAdjustOrderPriceDTO
 }
 
-// 初始化AlibabaIdleIsvOrderAdjustpriceRequest对象
-func NewAlibabaIdleIsvOrderAdjustpriceRequest() *AlibabaIdleIsvOrderAdjustpriceRequest{
-    return &AlibabaIdleIsvOrderAdjustpriceRequest{
+// 初始化AlibabaIdleIsvOrderAdjustpriceAPIRequest对象
+func NewAlibabaIdleIsvOrderAdjustpriceRequest() *AlibabaIdleIsvOrderAdjustpriceAPIRequest{
+    return &AlibabaIdleIsvOrderAdjustpriceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleIsvOrderAdjustpriceRequest) GetApiMethodName() string {
+func (r AlibabaIdleIsvOrderAdjustpriceAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.isv.order.adjustprice"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvOrderAdjustpriceRequest) GetApiParams() url.Values {
+func (r AlibabaIdleIsvOrderAdjustpriceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvOrderAdjustpriceRequest) GetApiParams() url.Values {
 }
 // ParamAdjustOrderPrice Setter
 // 输入参数
-func (r *AlibabaIdleIsvOrderAdjustpriceRequest) SetParamAdjustOrderPrice(_paramAdjustOrderPrice *IsvAdjustOrderPriceDTO) error {
+func (r *AlibabaIdleIsvOrderAdjustpriceAPIRequest) SetParamAdjustOrderPrice(_paramAdjustOrderPrice *IsvAdjustOrderPriceDTO) error {
     r._paramAdjustOrderPrice = _paramAdjustOrderPrice
     r.Set("param_adjust_order_price", _paramAdjustOrderPrice)
     return nil
 }
 
 // ParamAdjustOrderPrice Getter
-func (r AlibabaIdleIsvOrderAdjustpriceRequest) GetParamAdjustOrderPrice() *IsvAdjustOrderPriceDTO {
+func (r AlibabaIdleIsvOrderAdjustpriceAPIRequest) GetParamAdjustOrderPrice() *IsvAdjustOrderPriceDTO {
     return r._paramAdjustOrderPrice
 }

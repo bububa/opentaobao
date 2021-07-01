@@ -12,26 +12,26 @@ youku.ott.pay.order.querycporder
 
 根据支付订单查询对应cp订单号
 */
-type YoukuOttPayOrderQuerycporderRequest struct {
+type YoukuOttPayOrderQuerycporderAPIRequest struct {
     model.Params
     // 支付对应订单
     _gatewayOrder   string
 }
 
-// 初始化YoukuOttPayOrderQuerycporderRequest对象
-func NewYoukuOttPayOrderQuerycporderRequest() *YoukuOttPayOrderQuerycporderRequest{
-    return &YoukuOttPayOrderQuerycporderRequest{
+// 初始化YoukuOttPayOrderQuerycporderAPIRequest对象
+func NewYoukuOttPayOrderQuerycporderRequest() *YoukuOttPayOrderQuerycporderAPIRequest{
+    return &YoukuOttPayOrderQuerycporderAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YoukuOttPayOrderQuerycporderRequest) GetApiMethodName() string {
+func (r YoukuOttPayOrderQuerycporderAPIRequest) GetApiMethodName() string {
     return "youku.ott.pay.order.querycporder"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YoukuOttPayOrderQuerycporderRequest) GetApiParams() url.Values {
+func (r YoukuOttPayOrderQuerycporderAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YoukuOttPayOrderQuerycporderRequest) GetApiParams() url.Values {
 }
 // GatewayOrder Setter
 // 支付对应订单
-func (r *YoukuOttPayOrderQuerycporderRequest) SetGatewayOrder(_gatewayOrder string) error {
+func (r *YoukuOttPayOrderQuerycporderAPIRequest) SetGatewayOrder(_gatewayOrder string) error {
     r._gatewayOrder = _gatewayOrder
     r.Set("gateway_order", _gatewayOrder)
     return nil
 }
 
 // GatewayOrder Getter
-func (r YoukuOttPayOrderQuerycporderRequest) GetGatewayOrder() string {
+func (r YoukuOttPayOrderQuerycporderAPIRequest) GetGatewayOrder() string {
     return r._gatewayOrder
 }

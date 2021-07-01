@@ -11,7 +11,7 @@ alibaba.scbp.account.isarrears.get
 
 查询关键词推广账户是否欠款
 */
-func AlibabaScbpAccountIsarrearsGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountIsarrearsGetRequest, session string) (*scbp.AlibabaScbpAccountIsarrearsGetAPIResponse, error) {
+func AlibabaScbpAccountIsarrearsGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountIsarrearsGetAPIRequest, session string) (*scbp.AlibabaScbpAccountIsarrearsGetAPIResponse, error) {
     var resp scbp.AlibabaScbpAccountIsarrearsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ tmall.exchange.returngoods.refuse
 
 卖家拒绝买家换货申请
 */
-func TmallExchangeReturngoodsRefuse(clt *core.SDKClient, req *exchange.TmallExchangeReturngoodsRefuseRequest, session string) (*exchange.TmallExchangeReturngoodsRefuseAPIResponse, error) {
+func TmallExchangeReturngoodsRefuse(clt *core.SDKClient, req *exchange.TmallExchangeReturngoodsRefuseAPIRequest, session string) (*exchange.TmallExchangeReturngoodsRefuseAPIResponse, error) {
     var resp exchange.TmallExchangeReturngoodsRefuseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

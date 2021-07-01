@@ -11,7 +11,7 @@ alibaba.damai.maitix.order.directrefund
 
 大麦-退票
 */
-func AlibabaDamaiMaitixOrderDirectrefund(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderDirectrefundRequest, session string) (*maitix.AlibabaDamaiMaitixOrderDirectrefundAPIResponse, error) {
+func AlibabaDamaiMaitixOrderDirectrefund(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderDirectrefundAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOrderDirectrefundAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixOrderDirectrefundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

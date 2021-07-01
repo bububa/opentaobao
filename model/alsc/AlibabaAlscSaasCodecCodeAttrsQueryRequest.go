@@ -12,26 +12,26 @@ alibaba.alsc.saas.codec.code.attrs.query
 
 码业务属性查询
 */
-type AlibabaAlscSaasCodecCodeAttrsQueryRequest struct {
+type AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest struct {
     model.Params
     // 请求入参
     _queryCodeRequest   *QueryCodeBizAttrRequest
 }
 
-// 初始化AlibabaAlscSaasCodecCodeAttrsQueryRequest对象
-func NewAlibabaAlscSaasCodecCodeAttrsQueryRequest() *AlibabaAlscSaasCodecCodeAttrsQueryRequest{
-    return &AlibabaAlscSaasCodecCodeAttrsQueryRequest{
+// 初始化AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest对象
+func NewAlibabaAlscSaasCodecCodeAttrsQueryRequest() *AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest{
+    return &AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscSaasCodecCodeAttrsQueryRequest) GetApiMethodName() string {
+func (r AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.saas.codec.code.attrs.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscSaasCodecCodeAttrsQueryRequest) GetApiParams() url.Values {
+func (r AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscSaasCodecCodeAttrsQueryRequest) GetApiParams() url.Values {
 }
 // QueryCodeRequest Setter
 // 请求入参
-func (r *AlibabaAlscSaasCodecCodeAttrsQueryRequest) SetQueryCodeRequest(_queryCodeRequest *QueryCodeBizAttrRequest) error {
+func (r *AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) SetQueryCodeRequest(_queryCodeRequest *QueryCodeBizAttrRequest) error {
     r._queryCodeRequest = _queryCodeRequest
     r.Set("query_code_request", _queryCodeRequest)
     return nil
 }
 
 // QueryCodeRequest Getter
-func (r AlibabaAlscSaasCodecCodeAttrsQueryRequest) GetQueryCodeRequest() *QueryCodeBizAttrRequest {
+func (r AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) GetQueryCodeRequest() *QueryCodeBizAttrRequest {
     return r._queryCodeRequest
 }

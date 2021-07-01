@@ -11,7 +11,7 @@ taobao.qimen.order.query
 
 WMS 调用该接口，根据收件人信息查询平台交易订单号。
 */
-func TaobaoQimenOrderQuery(clt *core.SDKClient, req *qimen.TaobaoQimenOrderQueryRequest, session string) (*qimen.TaobaoQimenOrderQueryAPIResponse, error) {
+func TaobaoQimenOrderQuery(clt *core.SDKClient, req *qimen.TaobaoQimenOrderQueryAPIRequest, session string) (*qimen.TaobaoQimenOrderQueryAPIResponse, error) {
     var resp qimen.TaobaoQimenOrderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

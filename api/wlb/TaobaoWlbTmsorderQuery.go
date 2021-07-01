@@ -11,7 +11,7 @@ taobao.wlb.tmsorder.query
 
 通过物流订单编号分页查询物流信息
 */
-func TaobaoWlbTmsorderQuery(clt *core.SDKClient, req *wlb.TaobaoWlbTmsorderQueryRequest, session string) (*wlb.TaobaoWlbTmsorderQueryAPIResponse, error) {
+func TaobaoWlbTmsorderQuery(clt *core.SDKClient, req *wlb.TaobaoWlbTmsorderQueryAPIRequest, session string) (*wlb.TaobaoWlbTmsorderQueryAPIResponse, error) {
     var resp wlb.TaobaoWlbTmsorderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

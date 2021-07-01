@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiZzdVehicleOrderRs 
-type OpenApiZzdVehicleOrderRs struct {
+// OpenApiZzdVehicleOrderRS 
+type OpenApiZzdVehicleOrderRS struct {
     // 第三方交易ID
     TradeId   string `json:"trade_id,omitempty" xml:"trade_id,omitempty"`
     // 1. 用车支付 2. 服务费 3. 用车取消后收费 101. 用车退款 102. 用车赔付

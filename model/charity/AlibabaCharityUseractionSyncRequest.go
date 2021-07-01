@@ -12,26 +12,26 @@ alibaba.charity.useraction.sync
 
 外部公益活动，用户公益行为同步
 */
-type AlibabaCharityUseractionSyncRequest struct {
+type AlibabaCharityUseractionSyncAPIRequest struct {
     model.Params
     // 用户公益行为
     _channelUserActionDto   *ChannelUserActionDTO
 }
 
-// 初始化AlibabaCharityUseractionSyncRequest对象
-func NewAlibabaCharityUseractionSyncRequest() *AlibabaCharityUseractionSyncRequest{
-    return &AlibabaCharityUseractionSyncRequest{
+// 初始化AlibabaCharityUseractionSyncAPIRequest对象
+func NewAlibabaCharityUseractionSyncRequest() *AlibabaCharityUseractionSyncAPIRequest{
+    return &AlibabaCharityUseractionSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCharityUseractionSyncRequest) GetApiMethodName() string {
+func (r AlibabaCharityUseractionSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.charity.useraction.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCharityUseractionSyncRequest) GetApiParams() url.Values {
+func (r AlibabaCharityUseractionSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaCharityUseractionSyncRequest) GetApiParams() url.Values {
 }
 // ChannelUserActionDto Setter
 // 用户公益行为
-func (r *AlibabaCharityUseractionSyncRequest) SetChannelUserActionDto(_channelUserActionDto *ChannelUserActionDTO) error {
+func (r *AlibabaCharityUseractionSyncAPIRequest) SetChannelUserActionDto(_channelUserActionDto *ChannelUserActionDTO) error {
     r._channelUserActionDto = _channelUserActionDto
     r.Set("channel_user_action_dto", _channelUserActionDto)
     return nil
 }
 
 // ChannelUserActionDto Getter
-func (r AlibabaCharityUseractionSyncRequest) GetChannelUserActionDto() *ChannelUserActionDTO {
+func (r AlibabaCharityUseractionSyncAPIRequest) GetChannelUserActionDto() *ChannelUserActionDTO {
     return r._channelUserActionDto
 }

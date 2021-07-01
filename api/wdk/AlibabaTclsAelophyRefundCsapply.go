@@ -11,7 +11,7 @@ alibaba.tcls.aelophy.refund.csapply
 
 商家代客售后提交逆向申请
 */
-func AlibabaTclsAelophyRefundCsapply(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundCsapplyRequest, session string) (*wdk.AlibabaTclsAelophyRefundCsapplyAPIResponse, error) {
+func AlibabaTclsAelophyRefundCsapply(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundCsapplyAPIRequest, session string) (*wdk.AlibabaTclsAelophyRefundCsapplyAPIResponse, error) {
     var resp wdk.AlibabaTclsAelophyRefundCsapplyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.wlb.order.page.get
 
 分页查询物流宝订单
 */
-func TaobaoWlbOrderPageGet(clt *core.SDKClient, req *wlb.TaobaoWlbOrderPageGetRequest, session string) (*wlb.TaobaoWlbOrderPageGetAPIResponse, error) {
+func TaobaoWlbOrderPageGet(clt *core.SDKClient, req *wlb.TaobaoWlbOrderPageGetAPIRequest, session string) (*wlb.TaobaoWlbOrderPageGetAPIResponse, error) {
     var resp wlb.TaobaoWlbOrderPageGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

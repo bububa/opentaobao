@@ -12,7 +12,7 @@ alibaba.isv.digitalsms.createtemplate
 
 数字短信模板创建，给聚石塔，类型：2
 */
-type AlibabaIsvDigitalsmsCreatetemplateRequest struct {
+type AlibabaIsvDigitalsmsCreatetemplateAPIRequest struct {
     model.Params
     // 模板名称
     _templateName   string
@@ -22,20 +22,20 @@ type AlibabaIsvDigitalsmsCreatetemplateRequest struct {
     _applyRemark   string
 }
 
-// 初始化AlibabaIsvDigitalsmsCreatetemplateRequest对象
-func NewAlibabaIsvDigitalsmsCreatetemplateRequest() *AlibabaIsvDigitalsmsCreatetemplateRequest{
-    return &AlibabaIsvDigitalsmsCreatetemplateRequest{
+// 初始化AlibabaIsvDigitalsmsCreatetemplateAPIRequest对象
+func NewAlibabaIsvDigitalsmsCreatetemplateRequest() *AlibabaIsvDigitalsmsCreatetemplateAPIRequest{
+    return &AlibabaIsvDigitalsmsCreatetemplateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetApiMethodName() string {
+func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetApiMethodName() string {
     return "alibaba.isv.digitalsms.createtemplate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetApiParams() url.Values {
+func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetApiParams() url.Values {
 }
 // TemplateName Setter
 // 模板名称
-func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetTemplateName(_templateName string) error {
+func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetTemplateName(_templateName string) error {
     r._templateName = _templateName
     r.Set("template_name", _templateName)
     return nil
 }
 
 // TemplateName Getter
-func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetTemplateName() string {
+func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetTemplateName() string {
     return r._templateName
 }
 // TemplateContents Setter
 // 系统自动生成
-func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDTO) error {
+func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDTO) error {
     r._templateContents = _templateContents
     r.Set("template_contents", _templateContents)
     return nil
 }
 
 // TemplateContents Getter
-func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetTemplateContents() []DigitalSmsTemplateContentDTO {
+func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetTemplateContents() []DigitalSmsTemplateContentDTO {
     return r._templateContents
 }
 // ApplyRemark Setter
 // 申请说明
-func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetApplyRemark(_applyRemark string) error {
+func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetApplyRemark(_applyRemark string) error {
     r._applyRemark = _applyRemark
     r.Set("apply_remark", _applyRemark)
     return nil
 }
 
 // ApplyRemark Getter
-func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetApplyRemark() string {
+func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetApplyRemark() string {
     return r._applyRemark
 }

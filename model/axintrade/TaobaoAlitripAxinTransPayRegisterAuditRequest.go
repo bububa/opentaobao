@@ -12,26 +12,26 @@ taobao.alitrip.axin.trans.pay.register.audit
 
 阿信支付入驻审核通知
 */
-type TaobaoAlitripAxinTransPayRegisterAuditRequest struct {
+type TaobaoAlitripAxinTransPayRegisterAuditAPIRequest struct {
     model.Params
     // 支付入驻审核对象
     _axinPayRegisterAuditDto   *AxinPayRegisterAuditDTO
 }
 
-// 初始化TaobaoAlitripAxinTransPayRegisterAuditRequest对象
-func NewTaobaoAlitripAxinTransPayRegisterAuditRequest() *TaobaoAlitripAxinTransPayRegisterAuditRequest{
-    return &TaobaoAlitripAxinTransPayRegisterAuditRequest{
+// 初始化TaobaoAlitripAxinTransPayRegisterAuditAPIRequest对象
+func NewTaobaoAlitripAxinTransPayRegisterAuditRequest() *TaobaoAlitripAxinTransPayRegisterAuditAPIRequest{
+    return &TaobaoAlitripAxinTransPayRegisterAuditAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripAxinTransPayRegisterAuditRequest) GetApiMethodName() string {
+func (r TaobaoAlitripAxinTransPayRegisterAuditAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.axin.trans.pay.register.audit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripAxinTransPayRegisterAuditRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripAxinTransPayRegisterAuditAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransPayRegisterAuditRequest) GetApiParams() url.Values
 }
 // AxinPayRegisterAuditDto Setter
 // 支付入驻审核对象
-func (r *TaobaoAlitripAxinTransPayRegisterAuditRequest) SetAxinPayRegisterAuditDto(_axinPayRegisterAuditDto *AxinPayRegisterAuditDTO) error {
+func (r *TaobaoAlitripAxinTransPayRegisterAuditAPIRequest) SetAxinPayRegisterAuditDto(_axinPayRegisterAuditDto *AxinPayRegisterAuditDTO) error {
     r._axinPayRegisterAuditDto = _axinPayRegisterAuditDto
     r.Set("axin_pay_register_audit_dto", _axinPayRegisterAuditDto)
     return nil
 }
 
 // AxinPayRegisterAuditDto Getter
-func (r TaobaoAlitripAxinTransPayRegisterAuditRequest) GetAxinPayRegisterAuditDto() *AxinPayRegisterAuditDTO {
+func (r TaobaoAlitripAxinTransPayRegisterAuditAPIRequest) GetAxinPayRegisterAuditDto() *AxinPayRegisterAuditDTO {
     return r._axinPayRegisterAuditDto
 }

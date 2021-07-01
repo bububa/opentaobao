@@ -11,7 +11,7 @@ alibaba.alihealth.outflow.operationinfo.sync
 
 阿里健康-处方外流-对外提供同步操作信息功能
 */
-func AlibabaAlihealthOutflowOperationinfoSync(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowOperationinfoSyncRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowOperationinfoSyncAPIResponse, error) {
+func AlibabaAlihealthOutflowOperationinfoSync(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowOperationinfoSyncAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowOperationinfoSyncAPIResponse, error) {
     var resp alihealthoutflow.AlibabaAlihealthOutflowOperationinfoSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

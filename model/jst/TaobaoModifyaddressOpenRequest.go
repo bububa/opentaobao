@@ -12,24 +12,24 @@ taobao.modifyaddress.open
 
 商家自助修改地址服务开通
 */
-type TaobaoModifyaddressOpenRequest struct {
+type TaobaoModifyaddressOpenAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoModifyaddressOpenRequest对象
-func NewTaobaoModifyaddressOpenRequest() *TaobaoModifyaddressOpenRequest{
-    return &TaobaoModifyaddressOpenRequest{
+// 初始化TaobaoModifyaddressOpenAPIRequest对象
+func NewTaobaoModifyaddressOpenRequest() *TaobaoModifyaddressOpenAPIRequest{
+    return &TaobaoModifyaddressOpenAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoModifyaddressOpenRequest) GetApiMethodName() string {
+func (r TaobaoModifyaddressOpenAPIRequest) GetApiMethodName() string {
     return "taobao.modifyaddress.open"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoModifyaddressOpenRequest) GetApiParams() url.Values {
+func (r TaobaoModifyaddressOpenAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

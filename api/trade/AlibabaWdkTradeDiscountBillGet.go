@@ -11,7 +11,7 @@ alibaba.wdk.trade.discount.bill.get
 
 商家查询订单优惠账单
 */
-func AlibabaWdkTradeDiscountBillGet(clt *core.SDKClient, req *trade.AlibabaWdkTradeDiscountBillGetRequest, session string) (*trade.AlibabaWdkTradeDiscountBillGetAPIResponse, error) {
+func AlibabaWdkTradeDiscountBillGet(clt *core.SDKClient, req *trade.AlibabaWdkTradeDiscountBillGetAPIRequest, session string) (*trade.AlibabaWdkTradeDiscountBillGetAPIResponse, error) {
     var resp trade.AlibabaWdkTradeDiscountBillGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

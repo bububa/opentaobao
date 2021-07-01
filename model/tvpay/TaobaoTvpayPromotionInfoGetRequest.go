@@ -12,7 +12,7 @@ taobao.tvpay.promotion.info.get
 
 查询消费抽奖配置
 */
-type TaobaoTvpayPromotionInfoGetRequest struct {
+type TaobaoTvpayPromotionInfoGetAPIRequest struct {
     model.Params
     // 设备id
     _deviceId   string
@@ -28,20 +28,20 @@ type TaobaoTvpayPromotionInfoGetRequest struct {
     _subject   string
 }
 
-// 初始化TaobaoTvpayPromotionInfoGetRequest对象
-func NewTaobaoTvpayPromotionInfoGetRequest() *TaobaoTvpayPromotionInfoGetRequest{
-    return &TaobaoTvpayPromotionInfoGetRequest{
+// 初始化TaobaoTvpayPromotionInfoGetAPIRequest对象
+func NewTaobaoTvpayPromotionInfoGetRequest() *TaobaoTvpayPromotionInfoGetAPIRequest{
+    return &TaobaoTvpayPromotionInfoGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTvpayPromotionInfoGetRequest) GetApiMethodName() string {
+func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetApiMethodName() string {
     return "taobao.tvpay.promotion.info.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTvpayPromotionInfoGetRequest) GetApiParams() url.Values {
+func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -50,73 +50,73 @@ func (r TaobaoTvpayPromotionInfoGetRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetDeviceId(_deviceId string) error {
+func (r *TaobaoTvpayPromotionInfoGetAPIRequest) SetDeviceId(_deviceId string) error {
     r._deviceId = _deviceId
     r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
-func (r TaobaoTvpayPromotionInfoGetRequest) GetDeviceId() string {
+func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetDeviceId() string {
     return r._deviceId
 }
 // From Setter
 // 来源
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetFrom(_from string) error {
+func (r *TaobaoTvpayPromotionInfoGetAPIRequest) SetFrom(_from string) error {
     r._from = _from
     r.Set("from", _from)
     return nil
 }
 
 // From Getter
-func (r TaobaoTvpayPromotionInfoGetRequest) GetFrom() string {
+func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetFrom() string {
     return r._from
 }
 // SubjectId Setter
 // 商品id
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetSubjectId(_subjectId string) error {
+func (r *TaobaoTvpayPromotionInfoGetAPIRequest) SetSubjectId(_subjectId string) error {
     r._subjectId = _subjectId
     r.Set("subject_id", _subjectId)
     return nil
 }
 
 // SubjectId Getter
-func (r TaobaoTvpayPromotionInfoGetRequest) GetSubjectId() string {
+func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetSubjectId() string {
     return r._subjectId
 }
 // ExtOrderId Setter
 // 淘系订单号
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetExtOrderId(_extOrderId string) error {
+func (r *TaobaoTvpayPromotionInfoGetAPIRequest) SetExtOrderId(_extOrderId string) error {
     r._extOrderId = _extOrderId
     r.Set("ext_order_id", _extOrderId)
     return nil
 }
 
 // ExtOrderId Getter
-func (r TaobaoTvpayPromotionInfoGetRequest) GetExtOrderId() string {
+func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetExtOrderId() string {
     return r._extOrderId
 }
 // IsTao Setter
 // 是否淘系
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetIsTao(_isTao bool) error {
+func (r *TaobaoTvpayPromotionInfoGetAPIRequest) SetIsTao(_isTao bool) error {
     r._isTao = _isTao
     r.Set("is_tao", _isTao)
     return nil
 }
 
 // IsTao Getter
-func (r TaobaoTvpayPromotionInfoGetRequest) GetIsTao() bool {
+func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetIsTao() bool {
     return r._isTao
 }
 // Subject Setter
 // 标题
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetSubject(_subject string) error {
+func (r *TaobaoTvpayPromotionInfoGetAPIRequest) SetSubject(_subject string) error {
     r._subject = _subject
     r.Set("subject", _subject)
     return nil
 }
 
 // Subject Getter
-func (r TaobaoTvpayPromotionInfoGetRequest) GetSubject() string {
+func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetSubject() string {
     return r._subject
 }

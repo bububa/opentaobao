@@ -12,7 +12,7 @@ taobao.simba.salestar.adgroup.add
 
 创建一个推广组
 */
-type TaobaoSimbaSalestarAdgroupAddRequest struct {
+type TaobaoSimbaSalestarAdgroupAddAPIRequest struct {
     model.Params
     // 推广计划Id
     _campaignId   int64
@@ -24,20 +24,20 @@ type TaobaoSimbaSalestarAdgroupAddRequest struct {
     _imgUrl   string
 }
 
-// 初始化TaobaoSimbaSalestarAdgroupAddRequest对象
-func NewTaobaoSimbaSalestarAdgroupAddRequest() *TaobaoSimbaSalestarAdgroupAddRequest{
-    return &TaobaoSimbaSalestarAdgroupAddRequest{
+// 初始化TaobaoSimbaSalestarAdgroupAddAPIRequest对象
+func NewTaobaoSimbaSalestarAdgroupAddRequest() *TaobaoSimbaSalestarAdgroupAddAPIRequest{
+    return &TaobaoSimbaSalestarAdgroupAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaSalestarAdgroupAddRequest) GetApiMethodName() string {
+func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetApiMethodName() string {
     return "taobao.simba.salestar.adgroup.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSalestarAdgroupAddRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoSimbaSalestarAdgroupAddRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r TaobaoSimbaSalestarAdgroupAddRequest) GetCampaignId() int64 {
+func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }
 // ItemId Setter
 // 商品Id
-func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoSimbaSalestarAdgroupAddRequest) GetItemId() int64 {
+func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetItemId() int64 {
     return r._itemId
 }
 // Title Setter
 // 创意标题，最多20个汉字
-func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetTitle(_title string) error {
+func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetTitle(_title string) error {
     r._title = _title
     r.Set("title", _title)
     return nil
 }
 
 // Title Getter
-func (r TaobaoSimbaSalestarAdgroupAddRequest) GetTitle() string {
+func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetTitle() string {
     return r._title
 }
 // ImgUrl Setter
 // 创意图片地址，必须是商品的图片之一
-func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetImgUrl(_imgUrl string) error {
+func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetImgUrl(_imgUrl string) error {
     r._imgUrl = _imgUrl
     r.Set("img_url", _imgUrl)
     return nil
 }
 
 // ImgUrl Getter
-func (r TaobaoSimbaSalestarAdgroupAddRequest) GetImgUrl() string {
+func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetImgUrl() string {
     return r._imgUrl
 }

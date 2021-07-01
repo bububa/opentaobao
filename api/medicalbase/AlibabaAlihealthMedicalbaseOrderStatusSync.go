@@ -11,7 +11,7 @@ alibaba.alihealth.medicalbase.order.status.sync
 
 互联网医院isv批量通过接口批量导入
 */
-func AlibabaAlihealthMedicalbaseOrderStatusSync(clt *core.SDKClient, req *medicalbase.AlibabaAlihealthMedicalbaseOrderStatusSyncRequest, session string) (*medicalbase.AlibabaAlihealthMedicalbaseOrderStatusSyncAPIResponse, error) {
+func AlibabaAlihealthMedicalbaseOrderStatusSync(clt *core.SDKClient, req *medicalbase.AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest, session string) (*medicalbase.AlibabaAlihealthMedicalbaseOrderStatusSyncAPIResponse, error) {
     var resp medicalbase.AlibabaAlihealthMedicalbaseOrderStatusSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

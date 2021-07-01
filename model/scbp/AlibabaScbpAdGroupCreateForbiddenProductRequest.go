@@ -12,7 +12,7 @@ alibaba.scbp.ad.group.create.forbidden.product
 
 创建屏蔽品
 */
-type AlibabaScbpAdGroupCreateForbiddenProductRequest struct {
+type AlibabaScbpAdGroupCreateForbiddenProductAPIRequest struct {
     model.Params
     // 计划id
     _campaignId   int64
@@ -22,20 +22,20 @@ type AlibabaScbpAdGroupCreateForbiddenProductRequest struct {
     _topContext   *TopContextDTO
 }
 
-// 初始化AlibabaScbpAdGroupCreateForbiddenProductRequest对象
-func NewAlibabaScbpAdGroupCreateForbiddenProductRequest() *AlibabaScbpAdGroupCreateForbiddenProductRequest{
-    return &AlibabaScbpAdGroupCreateForbiddenProductRequest{
+// 初始化AlibabaScbpAdGroupCreateForbiddenProductAPIRequest对象
+func NewAlibabaScbpAdGroupCreateForbiddenProductRequest() *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest{
+    return &AlibabaScbpAdGroupCreateForbiddenProductAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.group.create.forbidden.product"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetApiParams() url.Valu
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdGroupCreateForbiddenProductRequest) SetCampaignId(_campaignId int64) error {
+func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetCampaignId() int64 {
+func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }
 // ForbiddenProductBatchOperation Setter
 // 查询条件
-func (r *AlibabaScbpAdGroupCreateForbiddenProductRequest) SetForbiddenProductBatchOperation(_forbiddenProductBatchOperation *ForbiddenProductBatchOperationDTO) error {
+func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetForbiddenProductBatchOperation(_forbiddenProductBatchOperation *ForbiddenProductBatchOperationDTO) error {
     r._forbiddenProductBatchOperation = _forbiddenProductBatchOperation
     r.Set("forbidden_product_batch_operation", _forbiddenProductBatchOperation)
     return nil
 }
 
 // ForbiddenProductBatchOperation Getter
-func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetForbiddenProductBatchOperation() *ForbiddenProductBatchOperationDTO {
+func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetForbiddenProductBatchOperation() *ForbiddenProductBatchOperationDTO {
     return r._forbiddenProductBatchOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdGroupCreateForbiddenProductRequest) SetTopContext(_topContext *TopContextDTO) error {
+func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetTopContext() *TopContextDTO {
+func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

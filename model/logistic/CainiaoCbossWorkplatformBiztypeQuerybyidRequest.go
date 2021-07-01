@@ -12,26 +12,26 @@ cainiao.cboss.workplatform.biztype.querybyid
 
 菜鸟工单平台根据业务类型id查询业务类型详细信息。 目前调用者ISV
 */
-type CainiaoCbossWorkplatformBiztypeQuerybyidRequest struct {
+type CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest struct {
     model.Params
     // 业务类型id
     _bizTypeId   string
 }
 
-// 初始化CainiaoCbossWorkplatformBiztypeQuerybyidRequest对象
-func NewCainiaoCbossWorkplatformBiztypeQuerybyidRequest() *CainiaoCbossWorkplatformBiztypeQuerybyidRequest{
-    return &CainiaoCbossWorkplatformBiztypeQuerybyidRequest{
+// 初始化CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest对象
+func NewCainiaoCbossWorkplatformBiztypeQuerybyidRequest() *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest{
+    return &CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCbossWorkplatformBiztypeQuerybyidRequest) GetApiMethodName() string {
+func (r CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) GetApiMethodName() string {
     return "cainiao.cboss.workplatform.biztype.querybyid"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCbossWorkplatformBiztypeQuerybyidRequest) GetApiParams() url.Values {
+func (r CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoCbossWorkplatformBiztypeQuerybyidRequest) GetApiParams() url.Valu
 }
 // BizTypeId Setter
 // 业务类型id
-func (r *CainiaoCbossWorkplatformBiztypeQuerybyidRequest) SetBizTypeId(_bizTypeId string) error {
+func (r *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) SetBizTypeId(_bizTypeId string) error {
     r._bizTypeId = _bizTypeId
     r.Set("biz_type_id", _bizTypeId)
     return nil
 }
 
 // BizTypeId Getter
-func (r CainiaoCbossWorkplatformBiztypeQuerybyidRequest) GetBizTypeId() string {
+func (r CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) GetBizTypeId() string {
     return r._bizTypeId
 }

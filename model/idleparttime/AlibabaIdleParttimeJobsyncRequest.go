@@ -12,7 +12,7 @@ alibaba.idle.parttime.jobsync
 
 服务商同步岗位信息给闲鱼
 */
-type AlibabaIdleParttimeJobsyncRequest struct {
+type AlibabaIdleParttimeJobsyncAPIRequest struct {
     model.Params
     // 岗位列表
     _jobList   []PartTimeJob
@@ -20,20 +20,20 @@ type AlibabaIdleParttimeJobsyncRequest struct {
     _syncTime   int64
 }
 
-// 初始化AlibabaIdleParttimeJobsyncRequest对象
-func NewAlibabaIdleParttimeJobsyncRequest() *AlibabaIdleParttimeJobsyncRequest{
-    return &AlibabaIdleParttimeJobsyncRequest{
+// 初始化AlibabaIdleParttimeJobsyncAPIRequest对象
+func NewAlibabaIdleParttimeJobsyncRequest() *AlibabaIdleParttimeJobsyncAPIRequest{
+    return &AlibabaIdleParttimeJobsyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleParttimeJobsyncRequest) GetApiMethodName() string {
+func (r AlibabaIdleParttimeJobsyncAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.parttime.jobsync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleParttimeJobsyncRequest) GetApiParams() url.Values {
+func (r AlibabaIdleParttimeJobsyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaIdleParttimeJobsyncRequest) GetApiParams() url.Values {
 }
 // JobList Setter
 // 岗位列表
-func (r *AlibabaIdleParttimeJobsyncRequest) SetJobList(_jobList []PartTimeJob) error {
+func (r *AlibabaIdleParttimeJobsyncAPIRequest) SetJobList(_jobList []PartTimeJob) error {
     r._jobList = _jobList
     r.Set("job_list", _jobList)
     return nil
 }
 
 // JobList Getter
-func (r AlibabaIdleParttimeJobsyncRequest) GetJobList() []PartTimeJob {
+func (r AlibabaIdleParttimeJobsyncAPIRequest) GetJobList() []PartTimeJob {
     return r._jobList
 }
 // SyncTime Setter
 // 同步数据的时间
-func (r *AlibabaIdleParttimeJobsyncRequest) SetSyncTime(_syncTime int64) error {
+func (r *AlibabaIdleParttimeJobsyncAPIRequest) SetSyncTime(_syncTime int64) error {
     r._syncTime = _syncTime
     r.Set("sync_time", _syncTime)
     return nil
 }
 
 // SyncTime Getter
-func (r AlibabaIdleParttimeJobsyncRequest) GetSyncTime() int64 {
+func (r AlibabaIdleParttimeJobsyncAPIRequest) GetSyncTime() int64 {
     return r._syncTime
 }

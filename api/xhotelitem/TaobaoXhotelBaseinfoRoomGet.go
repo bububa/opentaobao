@@ -11,7 +11,7 @@ taobao.xhotel.baseinfo.room.get
 
 根据outHid/hid获取酒店的房型和价格信息
 */
-func TaobaoXhotelBaseinfoRoomGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBaseinfoRoomGetRequest, session string) (*xhotelitem.TaobaoXhotelBaseinfoRoomGetAPIResponse, error) {
+func TaobaoXhotelBaseinfoRoomGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBaseinfoRoomGetAPIRequest, session string) (*xhotelitem.TaobaoXhotelBaseinfoRoomGetAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelBaseinfoRoomGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

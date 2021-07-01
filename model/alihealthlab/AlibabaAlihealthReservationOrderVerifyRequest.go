@@ -12,26 +12,26 @@ alibaba.alihealth.reservation.order.verify
 
 预约单核销
 */
-type AlibabaAlihealthReservationOrderVerifyRequest struct {
+type AlibabaAlihealthReservationOrderVerifyAPIRequest struct {
     model.Params
     // 请求参数
     _verify   *VerifyOrderRequest
 }
 
-// 初始化AlibabaAlihealthReservationOrderVerifyRequest对象
-func NewAlibabaAlihealthReservationOrderVerifyRequest() *AlibabaAlihealthReservationOrderVerifyRequest{
-    return &AlibabaAlihealthReservationOrderVerifyRequest{
+// 初始化AlibabaAlihealthReservationOrderVerifyAPIRequest对象
+func NewAlibabaAlihealthReservationOrderVerifyRequest() *AlibabaAlihealthReservationOrderVerifyAPIRequest{
+    return &AlibabaAlihealthReservationOrderVerifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthReservationOrderVerifyRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthReservationOrderVerifyAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.reservation.order.verify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthReservationOrderVerifyRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthReservationOrderVerifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthReservationOrderVerifyRequest) GetApiParams() url.Values
 }
 // Verify Setter
 // 请求参数
-func (r *AlibabaAlihealthReservationOrderVerifyRequest) SetVerify(_verify *VerifyOrderRequest) error {
+func (r *AlibabaAlihealthReservationOrderVerifyAPIRequest) SetVerify(_verify *VerifyOrderRequest) error {
     r._verify = _verify
     r.Set("verify", _verify)
     return nil
 }
 
 // Verify Getter
-func (r AlibabaAlihealthReservationOrderVerifyRequest) GetVerify() *VerifyOrderRequest {
+func (r AlibabaAlihealthReservationOrderVerifyAPIRequest) GetVerify() *VerifyOrderRequest {
     return r._verify
 }

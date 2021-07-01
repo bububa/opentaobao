@@ -11,7 +11,7 @@ taobao.sebp.company.getorderinfo
 
 淘小铺合作公司获取公司订单信息，用于公司结算使用
 */
-func TaobaoSebpCompanyGetorderinfo(clt *core.SDKClient, req *c2m.TaobaoSebpCompanyGetorderinfoRequest, session string) (*c2m.TaobaoSebpCompanyGetorderinfoAPIResponse, error) {
+func TaobaoSebpCompanyGetorderinfo(clt *core.SDKClient, req *c2m.TaobaoSebpCompanyGetorderinfoAPIRequest, session string) (*c2m.TaobaoSebpCompanyGetorderinfoAPIResponse, error) {
     var resp c2m.TaobaoSebpCompanyGetorderinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.seller.vendor.order.list
 
 返回服务商在服务市场的客户订单
 */
-type AlibabaSellerVendorOrderListRequest struct {
+type AlibabaSellerVendorOrderListAPIRequest struct {
     model.Params
     // 查询参数
     _queryTradeDto   *QueryTradeDTO
 }
 
-// 初始化AlibabaSellerVendorOrderListRequest对象
-func NewAlibabaSellerVendorOrderListRequest() *AlibabaSellerVendorOrderListRequest{
-    return &AlibabaSellerVendorOrderListRequest{
+// 初始化AlibabaSellerVendorOrderListAPIRequest对象
+func NewAlibabaSellerVendorOrderListRequest() *AlibabaSellerVendorOrderListAPIRequest{
+    return &AlibabaSellerVendorOrderListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSellerVendorOrderListRequest) GetApiMethodName() string {
+func (r AlibabaSellerVendorOrderListAPIRequest) GetApiMethodName() string {
     return "alibaba.seller.vendor.order.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSellerVendorOrderListRequest) GetApiParams() url.Values {
+func (r AlibabaSellerVendorOrderListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSellerVendorOrderListRequest) GetApiParams() url.Values {
 }
 // QueryTradeDto Setter
 // 查询参数
-func (r *AlibabaSellerVendorOrderListRequest) SetQueryTradeDto(_queryTradeDto *QueryTradeDTO) error {
+func (r *AlibabaSellerVendorOrderListAPIRequest) SetQueryTradeDto(_queryTradeDto *QueryTradeDTO) error {
     r._queryTradeDto = _queryTradeDto
     r.Set("query_trade_dto", _queryTradeDto)
     return nil
 }
 
 // QueryTradeDto Getter
-func (r AlibabaSellerVendorOrderListRequest) GetQueryTradeDto() *QueryTradeDTO {
+func (r AlibabaSellerVendorOrderListAPIRequest) GetQueryTradeDto() *QueryTradeDTO {
     return r._queryTradeDto
 }

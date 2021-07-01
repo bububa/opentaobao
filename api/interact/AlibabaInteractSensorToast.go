@@ -11,7 +11,7 @@ alibaba.interact.sensor.toast
 
 toast提示
 */
-func AlibabaInteractSensorToast(clt *core.SDKClient, req *interact.AlibabaInteractSensorToastRequest, session string) (*interact.AlibabaInteractSensorToastAPIResponse, error) {
+func AlibabaInteractSensorToast(clt *core.SDKClient, req *interact.AlibabaInteractSensorToastAPIRequest, session string) (*interact.AlibabaInteractSensorToastAPIResponse, error) {
     var resp interact.AlibabaInteractSensorToastAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

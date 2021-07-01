@@ -11,7 +11,7 @@ alibaba.scbp.tag.delete
 
 删除关键词分组
 */
-func AlibabaScbpTagDelete(clt *core.SDKClient, req *scbp.AlibabaScbpTagDeleteRequest, session string) (*scbp.AlibabaScbpTagDeleteAPIResponse, error) {
+func AlibabaScbpTagDelete(clt *core.SDKClient, req *scbp.AlibabaScbpTagDeleteAPIRequest, session string) (*scbp.AlibabaScbpTagDeleteAPIResponse, error) {
     var resp scbp.AlibabaScbpTagDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

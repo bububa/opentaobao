@@ -12,7 +12,7 @@ yunos.dm.sys.get.domain
 
 返回alios ucp后端域名
 */
-type YunosDmSysGetDomainRequest struct {
+type YunosDmSysGetDomainAPIRequest struct {
     model.Params
     // 制造商
     _make   string
@@ -22,20 +22,20 @@ type YunosDmSysGetDomainRequest struct {
     _sn   string
 }
 
-// 初始化YunosDmSysGetDomainRequest对象
-func NewYunosDmSysGetDomainRequest() *YunosDmSysGetDomainRequest{
-    return &YunosDmSysGetDomainRequest{
+// 初始化YunosDmSysGetDomainAPIRequest对象
+func NewYunosDmSysGetDomainRequest() *YunosDmSysGetDomainAPIRequest{
+    return &YunosDmSysGetDomainAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosDmSysGetDomainRequest) GetApiMethodName() string {
+func (r YunosDmSysGetDomainAPIRequest) GetApiMethodName() string {
     return "yunos.dm.sys.get.domain"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosDmSysGetDomainRequest) GetApiParams() url.Values {
+func (r YunosDmSysGetDomainAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r YunosDmSysGetDomainRequest) GetApiParams() url.Values {
 }
 // Make Setter
 // 制造商
-func (r *YunosDmSysGetDomainRequest) SetMake(_make string) error {
+func (r *YunosDmSysGetDomainAPIRequest) SetMake(_make string) error {
     r._make = _make
     r.Set("make", _make)
     return nil
 }
 
 // Make Getter
-func (r YunosDmSysGetDomainRequest) GetMake() string {
+func (r YunosDmSysGetDomainAPIRequest) GetMake() string {
     return r._make
 }
 // Model Setter
 // 设备类型
-func (r *YunosDmSysGetDomainRequest) SetModel(_model string) error {
+func (r *YunosDmSysGetDomainAPIRequest) SetModel(_model string) error {
     r._model = _model
     r.Set("model", _model)
     return nil
 }
 
 // Model Getter
-func (r YunosDmSysGetDomainRequest) GetModel() string {
+func (r YunosDmSysGetDomainAPIRequest) GetModel() string {
     return r._model
 }
 // Sn Setter
 // 序列号
-func (r *YunosDmSysGetDomainRequest) SetSn(_sn string) error {
+func (r *YunosDmSysGetDomainAPIRequest) SetSn(_sn string) error {
     r._sn = _sn
     r.Set("sn", _sn)
     return nil
 }
 
 // Sn Getter
-func (r YunosDmSysGetDomainRequest) GetSn() string {
+func (r YunosDmSysGetDomainAPIRequest) GetSn() string {
     return r._sn
 }

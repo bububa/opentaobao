@@ -12,7 +12,7 @@ aliexpress.social.item.promotion
 
 获取商品社交推广链接
 */
-type AliexpressSocialItemPromotionRequest struct {
+type AliexpressSocialItemPromotionAPIRequest struct {
     model.Params
     // 推广的商品链接
     _targetUrl   string
@@ -26,20 +26,20 @@ type AliexpressSocialItemPromotionRequest struct {
     _dp   string
 }
 
-// 初始化AliexpressSocialItemPromotionRequest对象
-func NewAliexpressSocialItemPromotionRequest() *AliexpressSocialItemPromotionRequest{
-    return &AliexpressSocialItemPromotionRequest{
+// 初始化AliexpressSocialItemPromotionAPIRequest对象
+func NewAliexpressSocialItemPromotionRequest() *AliexpressSocialItemPromotionAPIRequest{
+    return &AliexpressSocialItemPromotionAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSocialItemPromotionRequest) GetApiMethodName() string {
+func (r AliexpressSocialItemPromotionAPIRequest) GetApiMethodName() string {
     return "aliexpress.social.item.promotion"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSocialItemPromotionRequest) GetApiParams() url.Values {
+func (r AliexpressSocialItemPromotionAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AliexpressSocialItemPromotionRequest) GetApiParams() url.Values {
 }
 // TargetUrl Setter
 // 推广的商品链接
-func (r *AliexpressSocialItemPromotionRequest) SetTargetUrl(_targetUrl string) error {
+func (r *AliexpressSocialItemPromotionAPIRequest) SetTargetUrl(_targetUrl string) error {
     r._targetUrl = _targetUrl
     r.Set("target_url", _targetUrl)
     return nil
 }
 
 // TargetUrl Getter
-func (r AliexpressSocialItemPromotionRequest) GetTargetUrl() string {
+func (r AliexpressSocialItemPromotionAPIRequest) GetTargetUrl() string {
     return r._targetUrl
 }
 // Af Setter
 // 子渠道号
-func (r *AliexpressSocialItemPromotionRequest) SetAf(_af string) error {
+func (r *AliexpressSocialItemPromotionAPIRequest) SetAf(_af string) error {
     r._af = _af
     r.Set("af", _af)
     return nil
 }
 
 // Af Getter
-func (r AliexpressSocialItemPromotionRequest) GetAf() string {
+func (r AliexpressSocialItemPromotionAPIRequest) GetAf() string {
     return r._af
 }
 // Cn Setter
 // campaign Id
-func (r *AliexpressSocialItemPromotionRequest) SetCn(_cn string) error {
+func (r *AliexpressSocialItemPromotionAPIRequest) SetCn(_cn string) error {
     r._cn = _cn
     r.Set("cn", _cn)
     return nil
 }
 
 // Cn Getter
-func (r AliexpressSocialItemPromotionRequest) GetCn() string {
+func (r AliexpressSocialItemPromotionAPIRequest) GetCn() string {
     return r._cn
 }
 // Cv Setter
 // creative id
-func (r *AliexpressSocialItemPromotionRequest) SetCv(_cv string) error {
+func (r *AliexpressSocialItemPromotionAPIRequest) SetCv(_cv string) error {
     r._cv = _cv
     r.Set("cv", _cv)
     return nil
 }
 
 // Cv Getter
-func (r AliexpressSocialItemPromotionRequest) GetCv() string {
+func (r AliexpressSocialItemPromotionAPIRequest) GetCv() string {
     return r._cv
 }
 // Dp Setter
 // click id
-func (r *AliexpressSocialItemPromotionRequest) SetDp(_dp string) error {
+func (r *AliexpressSocialItemPromotionAPIRequest) SetDp(_dp string) error {
     r._dp = _dp
     r.Set("dp", _dp)
     return nil
 }
 
 // Dp Getter
-func (r AliexpressSocialItemPromotionRequest) GetDp() string {
+func (r AliexpressSocialItemPromotionAPIRequest) GetDp() string {
     return r._dp
 }

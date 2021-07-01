@@ -11,7 +11,7 @@ alibaba.einvoice.amount.check
 
 跟开票服务商核对历史开票量，用来对账
 */
-func AlibabaEinvoiceAmountCheck(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceAmountCheckRequest, session string) (*einvoice.AlibabaEinvoiceAmountCheckAPIResponse, error) {
+func AlibabaEinvoiceAmountCheck(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceAmountCheckAPIRequest, session string) (*einvoice.AlibabaEinvoiceAmountCheckAPIResponse, error) {
     var resp einvoice.AlibabaEinvoiceAmountCheckAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

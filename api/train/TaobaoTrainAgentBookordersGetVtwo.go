@@ -11,7 +11,7 @@ taobao.train.agent.bookorders.get.vtwo
 
 代理商获取待出票订单列表，只返回订单号
 */
-func TaobaoTrainAgentBookordersGetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentBookordersGetVtwoRequest, session string) (*train.TaobaoTrainAgentBookordersGetVtwoAPIResponse, error) {
+func TaobaoTrainAgentBookordersGetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentBookordersGetVtwoAPIRequest, session string) (*train.TaobaoTrainAgentBookordersGetVtwoAPIResponse, error) {
     var resp train.TaobaoTrainAgentBookordersGetVtwoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

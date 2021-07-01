@@ -12,7 +12,7 @@ alibaba.westcrm.member.score.get
 
 获取会员某时间段积分
 */
-type AlibabaWestcrmMemberScoreGetRequest struct {
+type AlibabaWestcrmMemberScoreGetAPIRequest struct {
     model.Params
     // requestId
     _requestId   string
@@ -24,20 +24,20 @@ type AlibabaWestcrmMemberScoreGetRequest struct {
     _endTime   string
 }
 
-// 初始化AlibabaWestcrmMemberScoreGetRequest对象
-func NewAlibabaWestcrmMemberScoreGetRequest() *AlibabaWestcrmMemberScoreGetRequest{
-    return &AlibabaWestcrmMemberScoreGetRequest{
+// 初始化AlibabaWestcrmMemberScoreGetAPIRequest对象
+func NewAlibabaWestcrmMemberScoreGetRequest() *AlibabaWestcrmMemberScoreGetAPIRequest{
+    return &AlibabaWestcrmMemberScoreGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWestcrmMemberScoreGetRequest) GetApiMethodName() string {
+func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetApiMethodName() string {
     return "alibaba.westcrm.member.score.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWestcrmMemberScoreGetRequest) GetApiParams() url.Values {
+func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaWestcrmMemberScoreGetRequest) GetApiParams() url.Values {
 }
 // RequestId Setter
 // requestId
-func (r *AlibabaWestcrmMemberScoreGetRequest) SetRequestId(_requestId string) error {
+func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetRequestId(_requestId string) error {
     r._requestId = _requestId
     r.Set("request_id", _requestId)
     return nil
 }
 
 // RequestId Getter
-func (r AlibabaWestcrmMemberScoreGetRequest) GetRequestId() string {
+func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetRequestId() string {
     return r._requestId
 }
 // AlipayId Setter
 // 支付宝id
-func (r *AlibabaWestcrmMemberScoreGetRequest) SetAlipayId(_alipayId string) error {
+func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetAlipayId(_alipayId string) error {
     r._alipayId = _alipayId
     r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
-func (r AlibabaWestcrmMemberScoreGetRequest) GetAlipayId() string {
+func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetAlipayId() string {
     return r._alipayId
 }
 // StartTime Setter
 // 开始时间
-func (r *AlibabaWestcrmMemberScoreGetRequest) SetStartTime(_startTime string) error {
+func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetStartTime(_startTime string) error {
     r._startTime = _startTime
     r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
-func (r AlibabaWestcrmMemberScoreGetRequest) GetStartTime() string {
+func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetStartTime() string {
     return r._startTime
 }
 // EndTime Setter
 // 结束时间
-func (r *AlibabaWestcrmMemberScoreGetRequest) SetEndTime(_endTime string) error {
+func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetEndTime(_endTime string) error {
     r._endTime = _endTime
     r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
-func (r AlibabaWestcrmMemberScoreGetRequest) GetEndTime() string {
+func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetEndTime() string {
     return r._endTime
 }

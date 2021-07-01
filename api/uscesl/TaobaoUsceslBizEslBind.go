@@ -11,7 +11,7 @@ taobao.uscesl.biz.esl.bind
 
 电子价签商品绑定接口
 */
-func TaobaoUsceslBizEslBind(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizEslBindRequest, session string) (*uscesl.TaobaoUsceslBizEslBindAPIResponse, error) {
+func TaobaoUsceslBizEslBind(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizEslBindAPIRequest, session string) (*uscesl.TaobaoUsceslBizEslBindAPIResponse, error) {
     var resp uscesl.TaobaoUsceslBizEslBindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

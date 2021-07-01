@@ -11,7 +11,7 @@ xiami.content.artist.info.query
 
 根据查询条件，搜索相关艺人列表
 */
-func XiamiContentArtistInfoQuery(clt *core.SDKClient, req *xiamiatrist.XiamiContentArtistInfoQueryRequest, session string) (*xiamiatrist.XiamiContentArtistInfoQueryAPIResponse, error) {
+func XiamiContentArtistInfoQuery(clt *core.SDKClient, req *xiamiatrist.XiamiContentArtistInfoQueryAPIRequest, session string) (*xiamiatrist.XiamiContentArtistInfoQueryAPIResponse, error) {
     var resp xiamiatrist.XiamiContentArtistInfoQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

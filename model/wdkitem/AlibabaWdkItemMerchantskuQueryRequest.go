@@ -12,7 +12,7 @@ alibaba.wdk.item.merchantsku.query
 
 商家商品信息查询
 */
-type AlibabaWdkItemMerchantskuQueryRequest struct {
+type AlibabaWdkItemMerchantskuQueryAPIRequest struct {
     model.Params
     // 商品编码
     _skuCode   string
@@ -20,20 +20,20 @@ type AlibabaWdkItemMerchantskuQueryRequest struct {
     _orgCode   string
 }
 
-// 初始化AlibabaWdkItemMerchantskuQueryRequest对象
-func NewAlibabaWdkItemMerchantskuQueryRequest() *AlibabaWdkItemMerchantskuQueryRequest{
-    return &AlibabaWdkItemMerchantskuQueryRequest{
+// 初始化AlibabaWdkItemMerchantskuQueryAPIRequest对象
+func NewAlibabaWdkItemMerchantskuQueryRequest() *AlibabaWdkItemMerchantskuQueryAPIRequest{
+    return &AlibabaWdkItemMerchantskuQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkItemMerchantskuQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkItemMerchantskuQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.item.merchantsku.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkItemMerchantskuQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkItemMerchantskuQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaWdkItemMerchantskuQueryRequest) GetApiParams() url.Values {
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkItemMerchantskuQueryRequest) SetSkuCode(_skuCode string) error {
+func (r *AlibabaWdkItemMerchantskuQueryAPIRequest) SetSkuCode(_skuCode string) error {
     r._skuCode = _skuCode
     r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
-func (r AlibabaWdkItemMerchantskuQueryRequest) GetSkuCode() string {
+func (r AlibabaWdkItemMerchantskuQueryAPIRequest) GetSkuCode() string {
     return r._skuCode
 }
 // OrgCode Setter
 // 机构编码
-func (r *AlibabaWdkItemMerchantskuQueryRequest) SetOrgCode(_orgCode string) error {
+func (r *AlibabaWdkItemMerchantskuQueryAPIRequest) SetOrgCode(_orgCode string) error {
     r._orgCode = _orgCode
     r.Set("org_code", _orgCode)
     return nil
 }
 
 // OrgCode Getter
-func (r AlibabaWdkItemMerchantskuQueryRequest) GetOrgCode() string {
+func (r AlibabaWdkItemMerchantskuQueryAPIRequest) GetOrgCode() string {
     return r._orgCode
 }

@@ -12,26 +12,26 @@ taobao.place.store.delete
 
 用于商家删除线下门店
 */
-type TaobaoPlaceStoreDeleteRequest struct {
+type TaobaoPlaceStoreDeleteAPIRequest struct {
     model.Params
     // 门店id
     _storeId   int64
 }
 
-// 初始化TaobaoPlaceStoreDeleteRequest对象
-func NewTaobaoPlaceStoreDeleteRequest() *TaobaoPlaceStoreDeleteRequest{
-    return &TaobaoPlaceStoreDeleteRequest{
+// 初始化TaobaoPlaceStoreDeleteAPIRequest对象
+func NewTaobaoPlaceStoreDeleteRequest() *TaobaoPlaceStoreDeleteAPIRequest{
+    return &TaobaoPlaceStoreDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPlaceStoreDeleteRequest) GetApiMethodName() string {
+func (r TaobaoPlaceStoreDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.place.store.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPlaceStoreDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoPlaceStoreDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPlaceStoreDeleteRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店id
-func (r *TaobaoPlaceStoreDeleteRequest) SetStoreId(_storeId int64) error {
+func (r *TaobaoPlaceStoreDeleteAPIRequest) SetStoreId(_storeId int64) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r TaobaoPlaceStoreDeleteRequest) GetStoreId() int64 {
+func (r TaobaoPlaceStoreDeleteAPIRequest) GetStoreId() int64 {
     return r._storeId
 }

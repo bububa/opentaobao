@@ -12,26 +12,26 @@ alibaba.scbp.tag.add
 
 创建关键词分组
 */
-type AlibabaScbpTagAddRequest struct {
+type AlibabaScbpTagAddAPIRequest struct {
     model.Params
     // 分组名称，最多允许创建100个
     _tagName   string
 }
 
-// 初始化AlibabaScbpTagAddRequest对象
-func NewAlibabaScbpTagAddRequest() *AlibabaScbpTagAddRequest{
-    return &AlibabaScbpTagAddRequest{
+// 初始化AlibabaScbpTagAddAPIRequest对象
+func NewAlibabaScbpTagAddRequest() *AlibabaScbpTagAddAPIRequest{
+    return &AlibabaScbpTagAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpTagAddRequest) GetApiMethodName() string {
+func (r AlibabaScbpTagAddAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.tag.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTagAddRequest) GetApiParams() url.Values {
+func (r AlibabaScbpTagAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpTagAddRequest) GetApiParams() url.Values {
 }
 // TagName Setter
 // 分组名称，最多允许创建100个
-func (r *AlibabaScbpTagAddRequest) SetTagName(_tagName string) error {
+func (r *AlibabaScbpTagAddAPIRequest) SetTagName(_tagName string) error {
     r._tagName = _tagName
     r.Set("tag_name", _tagName)
     return nil
 }
 
 // TagName Getter
-func (r AlibabaScbpTagAddRequest) GetTagName() string {
+func (r AlibabaScbpTagAddAPIRequest) GetTagName() string {
     return r._tagName
 }

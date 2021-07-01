@@ -11,7 +11,7 @@ taobao.media.video.list
 
 用于获取授权商家的视频列表
 */
-func TaobaoMediaVideoList(clt *core.SDKClient, req *media.TaobaoMediaVideoListRequest, session string) (*media.TaobaoMediaVideoListAPIResponse, error) {
+func TaobaoMediaVideoList(clt *core.SDKClient, req *media.TaobaoMediaVideoListAPIRequest, session string) (*media.TaobaoMediaVideoListAPIResponse, error) {
     var resp media.TaobaoMediaVideoListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

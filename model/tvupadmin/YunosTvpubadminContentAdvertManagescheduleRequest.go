@@ -12,26 +12,26 @@ yunos.tvpubadmin.content.advert.manageschedule
 
 广告牌照管控修改
 */
-type YunosTvpubadminContentAdvertManagescheduleRequest struct {
+type YunosTvpubadminContentAdvertManagescheduleAPIRequest struct {
     model.Params
     // 管理参数
     _req   string
 }
 
-// 初始化YunosTvpubadminContentAdvertManagescheduleRequest对象
-func NewYunosTvpubadminContentAdvertManagescheduleRequest() *YunosTvpubadminContentAdvertManagescheduleRequest{
-    return &YunosTvpubadminContentAdvertManagescheduleRequest{
+// 初始化YunosTvpubadminContentAdvertManagescheduleAPIRequest对象
+func NewYunosTvpubadminContentAdvertManagescheduleRequest() *YunosTvpubadminContentAdvertManagescheduleAPIRequest{
+    return &YunosTvpubadminContentAdvertManagescheduleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentAdvertManagescheduleRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentAdvertManagescheduleAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.advert.manageschedule"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentAdvertManagescheduleRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentAdvertManagescheduleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentAdvertManagescheduleRequest) GetApiParams() url.Va
 }
 // Req Setter
 // 管理参数
-func (r *YunosTvpubadminContentAdvertManagescheduleRequest) SetReq(_req string) error {
+func (r *YunosTvpubadminContentAdvertManagescheduleAPIRequest) SetReq(_req string) error {
     r._req = _req
     r.Set("req", _req)
     return nil
 }
 
 // Req Getter
-func (r YunosTvpubadminContentAdvertManagescheduleRequest) GetReq() string {
+func (r YunosTvpubadminContentAdvertManagescheduleAPIRequest) GetReq() string {
     return r._req
 }

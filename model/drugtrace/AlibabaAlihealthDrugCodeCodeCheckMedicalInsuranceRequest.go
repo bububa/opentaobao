@@ -17,7 +17,7 @@ alibaba.alihealth.drug.code.code.check.medical.insurance
 发起，按单据鉴核时间顺序组织，向码上放心平台同步每笔单据核销的码状态信息；
 入参采用数组方式提供，一次同步最多支持100条记录
 */
-type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest struct {
+type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest struct {
     model.Params
     // 行政区域
     _bureauName   string
@@ -33,20 +33,20 @@ type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest struct {
     _terminalEntId   string
 }
 
-// 初始化AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest对象
-func NewAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest() *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest{
-    return &AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest{
+// 初始化AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest对象
+func NewAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest() *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest{
+    return &AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.code.code.check.medical.insurance"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -55,73 +55,73 @@ func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetApiParams()
 }
 // BureauName Setter
 // 行政区域
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetBureauName(_bureauName string) error {
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetBureauName(_bureauName string) error {
     r._bureauName = _bureauName
     r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
-func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetBureauName() string {
+func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetBureauName() string {
     return r._bureauName
 }
 // TerminalId Setter
 // 终端id
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetTerminalId(_terminalId string) error {
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTerminalId(_terminalId string) error {
     r._terminalId = _terminalId
     r.Set("terminal_id", _terminalId)
     return nil
 }
 
 // TerminalId Getter
-func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetTerminalId() string {
+func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetTerminalId() string {
     return r._terminalId
 }
 // TerminalType Setter
 // 终端类型（1005100-零售药店；1005200-医疗机构）
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetTerminalType(_terminalType string) error {
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTerminalType(_terminalType string) error {
     r._terminalType = _terminalType
     r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
-func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetTerminalType() string {
+func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetTerminalType() string {
     return r._terminalType
 }
 // CType Setter
 // 核销类型(1012100：核销；1012900：退库)
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetCType(_cType string) error {
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCType(_cType string) error {
     r._cType = _cType
     r.Set("c_type", _cType)
     return nil
 }
 
 // CType Getter
-func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetCType() string {
+func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetCType() string {
     return r._cType
 }
 // Codes Setter
 // 码列表
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetCodes(_codes []string) error {
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCodes(_codes []string) error {
     r._codes = _codes
     r.Set("codes", _codes)
     return nil
 }
 
 // Codes Getter
-func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetCodes() []string {
+func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetCodes() []string {
     return r._codes
 }
 // TerminalEntId Setter
 // 平台返回的终端id
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetTerminalEntId(_terminalEntId string) error {
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTerminalEntId(_terminalEntId string) error {
     r._terminalEntId = _terminalEntId
     r.Set("terminal_ent_id", _terminalEntId)
     return nil
 }
 
 // TerminalEntId Getter
-func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetTerminalEntId() string {
+func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetTerminalEntId() string {
     return r._terminalEntId
 }

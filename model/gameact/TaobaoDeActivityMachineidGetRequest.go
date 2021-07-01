@@ -12,24 +12,24 @@ taobao.de.activity.machineid.get
 
 获取机器设备id
 */
-type TaobaoDeActivityMachineidGetRequest struct {
+type TaobaoDeActivityMachineidGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoDeActivityMachineidGetRequest对象
-func NewTaobaoDeActivityMachineidGetRequest() *TaobaoDeActivityMachineidGetRequest{
-    return &TaobaoDeActivityMachineidGetRequest{
+// 初始化TaobaoDeActivityMachineidGetAPIRequest对象
+func NewTaobaoDeActivityMachineidGetRequest() *TaobaoDeActivityMachineidGetAPIRequest{
+    return &TaobaoDeActivityMachineidGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoDeActivityMachineidGetRequest) GetApiMethodName() string {
+func (r TaobaoDeActivityMachineidGetAPIRequest) GetApiMethodName() string {
     return "taobao.de.activity.machineid.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoDeActivityMachineidGetRequest) GetApiParams() url.Values {
+func (r TaobaoDeActivityMachineidGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

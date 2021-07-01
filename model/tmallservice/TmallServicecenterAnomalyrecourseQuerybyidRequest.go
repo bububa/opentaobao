@@ -12,26 +12,26 @@ tmall.servicecenter.anomalyrecourse.querybyid
 
 根据一键求助id查询指定服务商的一键求助单
 */
-type TmallServicecenterAnomalyrecourseQuerybyidRequest struct {
+type TmallServicecenterAnomalyrecourseQuerybyidAPIRequest struct {
     model.Params
     // 一键求助的id
     _anomalyRecourseId   int64
 }
 
-// 初始化TmallServicecenterAnomalyrecourseQuerybyidRequest对象
-func NewTmallServicecenterAnomalyrecourseQuerybyidRequest() *TmallServicecenterAnomalyrecourseQuerybyidRequest{
-    return &TmallServicecenterAnomalyrecourseQuerybyidRequest{
+// 初始化TmallServicecenterAnomalyrecourseQuerybyidAPIRequest对象
+func NewTmallServicecenterAnomalyrecourseQuerybyidRequest() *TmallServicecenterAnomalyrecourseQuerybyidAPIRequest{
+    return &TmallServicecenterAnomalyrecourseQuerybyidAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterAnomalyrecourseQuerybyidRequest) GetApiMethodName() string {
+func (r TmallServicecenterAnomalyrecourseQuerybyidAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.anomalyrecourse.querybyid"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterAnomalyrecourseQuerybyidRequest) GetApiParams() url.Values {
+func (r TmallServicecenterAnomalyrecourseQuerybyidAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterAnomalyrecourseQuerybyidRequest) GetApiParams() url.Va
 }
 // AnomalyRecourseId Setter
 // 一键求助的id
-func (r *TmallServicecenterAnomalyrecourseQuerybyidRequest) SetAnomalyRecourseId(_anomalyRecourseId int64) error {
+func (r *TmallServicecenterAnomalyrecourseQuerybyidAPIRequest) SetAnomalyRecourseId(_anomalyRecourseId int64) error {
     r._anomalyRecourseId = _anomalyRecourseId
     r.Set("anomaly_recourse_id", _anomalyRecourseId)
     return nil
 }
 
 // AnomalyRecourseId Getter
-func (r TmallServicecenterAnomalyrecourseQuerybyidRequest) GetAnomalyRecourseId() int64 {
+func (r TmallServicecenterAnomalyrecourseQuerybyidAPIRequest) GetAnomalyRecourseId() int64 {
     return r._anomalyRecourseId
 }

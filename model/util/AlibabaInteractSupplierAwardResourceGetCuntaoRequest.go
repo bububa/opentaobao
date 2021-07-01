@@ -12,7 +12,7 @@ alibaba.interact.supplier.award.resource.get.cuntao
 
 农村淘宝营销互动权益池信息查询
 */
-type AlibabaInteractSupplierAwardResourceGetCuntaoRequest struct {
+type AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest struct {
     model.Params
     // 用户昵称
     _userNick   string
@@ -24,20 +24,20 @@ type AlibabaInteractSupplierAwardResourceGetCuntaoRequest struct {
     _lat   string
 }
 
-// 初始化AlibabaInteractSupplierAwardResourceGetCuntaoRequest对象
-func NewAlibabaInteractSupplierAwardResourceGetCuntaoRequest() *AlibabaInteractSupplierAwardResourceGetCuntaoRequest{
-    return &AlibabaInteractSupplierAwardResourceGetCuntaoRequest{
+// 初始化AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest对象
+func NewAlibabaInteractSupplierAwardResourceGetCuntaoRequest() *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest{
+    return &AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetApiMethodName() string {
+func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.supplier.award.resource.get.cuntao"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetApiParams() url
 }
 // UserNick Setter
 // 用户昵称
-func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetUserNick(_userNick string) error {
+func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetUserNick(_userNick string) error {
     r._userNick = _userNick
     r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
-func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetUserNick() string {
+func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetUserNick() string {
     return r._userNick
 }
 // ActivityKey Setter
 // 活动code
-func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetActivityKey(_activityKey string) error {
+func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetActivityKey(_activityKey string) error {
     r._activityKey = _activityKey
     r.Set("activity_key", _activityKey)
     return nil
 }
 
 // ActivityKey Getter
-func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetActivityKey() string {
+func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetActivityKey() string {
     return r._activityKey
 }
 // Lng Setter
 // 经度
-func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetLng(_lng string) error {
+func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetLng(_lng string) error {
     r._lng = _lng
     r.Set("lng", _lng)
     return nil
 }
 
 // Lng Getter
-func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetLng() string {
+func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetLng() string {
     return r._lng
 }
 // Lat Setter
 // 纬度
-func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetLat(_lat string) error {
+func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetLat(_lat string) error {
     r._lat = _lat
     r.Set("lat", _lat)
     return nil
 }
 
 // Lat Getter
-func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetLat() string {
+func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetLat() string {
     return r._lat
 }

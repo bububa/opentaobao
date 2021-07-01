@@ -11,7 +11,7 @@ alibaba.alisports.datacenter.datasync.sportsdatas
 
 给单方提供同步运动数据到阿里体育的接口
 */
-func AlibabaAlisportsDatacenterDatasyncSportsdatas(clt *core.SDKClient, req *alisports.AlibabaAlisportsDatacenterDatasyncSportsdatasRequest, session string) (*alisports.AlibabaAlisportsDatacenterDatasyncSportsdatasAPIResponse, error) {
+func AlibabaAlisportsDatacenterDatasyncSportsdatas(clt *core.SDKClient, req *alisports.AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest, session string) (*alisports.AlibabaAlisportsDatacenterDatasyncSportsdatasAPIResponse, error) {
     var resp alisports.AlibabaAlisportsDatacenterDatasyncSportsdatasAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

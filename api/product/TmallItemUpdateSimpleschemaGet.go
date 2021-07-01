@@ -11,7 +11,7 @@ tmall.item.update.simpleschema.get
 
 官网同购编辑商品的get接口
 */
-func TmallItemUpdateSimpleschemaGet(clt *core.SDKClient, req *product.TmallItemUpdateSimpleschemaGetRequest, session string) (*product.TmallItemUpdateSimpleschemaGetAPIResponse, error) {
+func TmallItemUpdateSimpleschemaGet(clt *core.SDKClient, req *product.TmallItemUpdateSimpleschemaGetAPIRequest, session string) (*product.TmallItemUpdateSimpleschemaGetAPIResponse, error) {
     var resp product.TmallItemUpdateSimpleschemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

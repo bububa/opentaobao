@@ -11,7 +11,7 @@ alibaba.wdk.series.sku.add
 
 系列品商品变更-添加商品
 */
-func AlibabaWdkSeriesSkuAdd(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesSkuAddRequest, session string) (*wdk.AlibabaWdkSeriesSkuAddAPIResponse, error) {
+func AlibabaWdkSeriesSkuAdd(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesSkuAddAPIRequest, session string) (*wdk.AlibabaWdkSeriesSkuAddAPIResponse, error) {
     var resp wdk.AlibabaWdkSeriesSkuAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.mozi.acl.role.remove.permissions
 
 从角色中移除一批功能权限
 */
-type AlibabaMoziAclRoleRemovePermissionsRequest struct {
+type AlibabaMoziAclRoleRemovePermissionsAPIRequest struct {
     model.Params
     // 角色移除功能权限请求对象
     _removePermissionsFromRole   *RemovePermissionsFromRoleRequest
 }
 
-// 初始化AlibabaMoziAclRoleRemovePermissionsRequest对象
-func NewAlibabaMoziAclRoleRemovePermissionsRequest() *AlibabaMoziAclRoleRemovePermissionsRequest{
-    return &AlibabaMoziAclRoleRemovePermissionsRequest{
+// 初始化AlibabaMoziAclRoleRemovePermissionsAPIRequest对象
+func NewAlibabaMoziAclRoleRemovePermissionsRequest() *AlibabaMoziAclRoleRemovePermissionsAPIRequest{
+    return &AlibabaMoziAclRoleRemovePermissionsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziAclRoleRemovePermissionsRequest) GetApiMethodName() string {
+func (r AlibabaMoziAclRoleRemovePermissionsAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.acl.role.remove.permissions"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziAclRoleRemovePermissionsRequest) GetApiParams() url.Values {
+func (r AlibabaMoziAclRoleRemovePermissionsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclRoleRemovePermissionsRequest) GetApiParams() url.Values {
 }
 // RemovePermissionsFromRole Setter
 // 角色移除功能权限请求对象
-func (r *AlibabaMoziAclRoleRemovePermissionsRequest) SetRemovePermissionsFromRole(_removePermissionsFromRole *RemovePermissionsFromRoleRequest) error {
+func (r *AlibabaMoziAclRoleRemovePermissionsAPIRequest) SetRemovePermissionsFromRole(_removePermissionsFromRole *RemovePermissionsFromRoleRequest) error {
     r._removePermissionsFromRole = _removePermissionsFromRole
     r.Set("remove_permissions_from_role", _removePermissionsFromRole)
     return nil
 }
 
 // RemovePermissionsFromRole Getter
-func (r AlibabaMoziAclRoleRemovePermissionsRequest) GetRemovePermissionsFromRole() *RemovePermissionsFromRoleRequest {
+func (r AlibabaMoziAclRoleRemovePermissionsAPIRequest) GetRemovePermissionsFromRole() *RemovePermissionsFromRoleRequest {
     return r._removePermissionsFromRole
 }

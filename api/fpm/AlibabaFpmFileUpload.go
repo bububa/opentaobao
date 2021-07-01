@@ -11,7 +11,7 @@ alibaba.fpm.file.upload
 
 结算单文件上传
 */
-func AlibabaFpmFileUpload(clt *core.SDKClient, req *fpm.AlibabaFpmFileUploadRequest, session string) (*fpm.AlibabaFpmFileUploadAPIResponse, error) {
+func AlibabaFpmFileUpload(clt *core.SDKClient, req *fpm.AlibabaFpmFileUploadAPIRequest, session string) (*fpm.AlibabaFpmFileUploadAPIResponse, error) {
     var resp fpm.AlibabaFpmFileUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

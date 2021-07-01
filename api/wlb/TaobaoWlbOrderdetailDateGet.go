@@ -11,7 +11,7 @@ taobao.wlb.orderdetail.date.get
 
 外部ERP可通过该接口查询一段时间内的物流宝订单，以及订单详情
 */
-func TaobaoWlbOrderdetailDateGet(clt *core.SDKClient, req *wlb.TaobaoWlbOrderdetailDateGetRequest, session string) (*wlb.TaobaoWlbOrderdetailDateGetAPIResponse, error) {
+func TaobaoWlbOrderdetailDateGet(clt *core.SDKClient, req *wlb.TaobaoWlbOrderdetailDateGetAPIRequest, session string) (*wlb.TaobaoWlbOrderdetailDateGetAPIResponse, error) {
     var resp wlb.TaobaoWlbOrderdetailDateGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.wdk.txd.crm.statement.backflow
 
 淘鲜达商家会员账单回流
 */
-func AlibabaWdkTxdCrmStatementBackflow(clt *core.SDKClient, req *trade.AlibabaWdkTxdCrmStatementBackflowRequest, session string) (*trade.AlibabaWdkTxdCrmStatementBackflowAPIResponse, error) {
+func AlibabaWdkTxdCrmStatementBackflow(clt *core.SDKClient, req *trade.AlibabaWdkTxdCrmStatementBackflowAPIRequest, session string) (*trade.AlibabaWdkTxdCrmStatementBackflowAPIResponse, error) {
     var resp trade.AlibabaWdkTxdCrmStatementBackflowAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

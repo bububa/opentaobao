@@ -12,26 +12,26 @@ alibaba.damai.mev.open.deletefloor
 
 deleteFloor
 */
-type AlibabaDamaiMevOpenDeletefloorRequest struct {
+type AlibabaDamaiMevOpenDeletefloorAPIRequest struct {
     model.Params
     // 入参deleteFloorParam
     _deleteFloorParam   *FloorIdOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenDeletefloorRequest对象
-func NewAlibabaDamaiMevOpenDeletefloorRequest() *AlibabaDamaiMevOpenDeletefloorRequest{
-    return &AlibabaDamaiMevOpenDeletefloorRequest{
+// 初始化AlibabaDamaiMevOpenDeletefloorAPIRequest对象
+func NewAlibabaDamaiMevOpenDeletefloorRequest() *AlibabaDamaiMevOpenDeletefloorAPIRequest{
+    return &AlibabaDamaiMevOpenDeletefloorAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenDeletefloorRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenDeletefloorAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.deletefloor"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenDeletefloorRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenDeletefloorAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeletefloorRequest) GetApiParams() url.Values {
 }
 // DeleteFloorParam Setter
 // 入参deleteFloorParam
-func (r *AlibabaDamaiMevOpenDeletefloorRequest) SetDeleteFloorParam(_deleteFloorParam *FloorIdOpenParam) error {
+func (r *AlibabaDamaiMevOpenDeletefloorAPIRequest) SetDeleteFloorParam(_deleteFloorParam *FloorIdOpenParam) error {
     r._deleteFloorParam = _deleteFloorParam
     r.Set("delete_floor_param", _deleteFloorParam)
     return nil
 }
 
 // DeleteFloorParam Getter
-func (r AlibabaDamaiMevOpenDeletefloorRequest) GetDeleteFloorParam() *FloorIdOpenParam {
+func (r AlibabaDamaiMevOpenDeletefloorAPIRequest) GetDeleteFloorParam() *FloorIdOpenParam {
     return r._deleteFloorParam
 }

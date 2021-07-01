@@ -11,7 +11,7 @@ alitrip.tuan.hotel.shop.category.get
 
 查询商家店铺类目信息
 */
-func AlitripTuanHotelShopCategoryGet(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelShopCategoryGetRequest, session string) (*tuanhotel.AlitripTuanHotelShopCategoryGetAPIResponse, error) {
+func AlitripTuanHotelShopCategoryGet(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelShopCategoryGetAPIRequest, session string) (*tuanhotel.AlitripTuanHotelShopCategoryGetAPIResponse, error) {
     var resp tuanhotel.AlitripTuanHotelShopCategoryGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

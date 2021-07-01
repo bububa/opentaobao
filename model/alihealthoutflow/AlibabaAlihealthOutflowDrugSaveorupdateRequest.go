@@ -12,26 +12,26 @@ alibaba.alihealth.outflow.drug.saveorupdate
 
 处方外流-药品同步接口
 */
-type AlibabaAlihealthOutflowDrugSaveorupdateRequest struct {
+type AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest struct {
     model.Params
     // 结果集
     _drugRequest   *DrugRequest
 }
 
-// 初始化AlibabaAlihealthOutflowDrugSaveorupdateRequest对象
-func NewAlibabaAlihealthOutflowDrugSaveorupdateRequest() *AlibabaAlihealthOutflowDrugSaveorupdateRequest{
-    return &AlibabaAlihealthOutflowDrugSaveorupdateRequest{
+// 初始化AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest对象
+func NewAlibabaAlihealthOutflowDrugSaveorupdateRequest() *AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest{
+    return &AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowDrugSaveorupdateRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.drug.saveorupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowDrugSaveorupdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowDrugSaveorupdateRequest) GetApiParams() url.Value
 }
 // DrugRequest Setter
 // 结果集
-func (r *AlibabaAlihealthOutflowDrugSaveorupdateRequest) SetDrugRequest(_drugRequest *DrugRequest) error {
+func (r *AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest) SetDrugRequest(_drugRequest *DrugRequest) error {
     r._drugRequest = _drugRequest
     r.Set("drug_request", _drugRequest)
     return nil
 }
 
 // DrugRequest Getter
-func (r AlibabaAlihealthOutflowDrugSaveorupdateRequest) GetDrugRequest() *DrugRequest {
+func (r AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest) GetDrugRequest() *DrugRequest {
     return r._drugRequest
 }

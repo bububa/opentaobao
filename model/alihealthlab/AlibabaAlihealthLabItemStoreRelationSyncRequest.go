@@ -12,7 +12,7 @@ alibaba.alihealth.lab.item.store.relation.sync
 
 阿里健康检验检测业务，isv检验检测项目门店关系同步到健康，支持检验检测项目门店关系的增加和删除
 */
-type AlibabaAlihealthLabItemStoreRelationSyncRequest struct {
+type AlibabaAlihealthLabItemStoreRelationSyncAPIRequest struct {
     model.Params
     // EFFECTIVE 有效，INVALID 无效
     _isvRelationStatus   string
@@ -22,20 +22,20 @@ type AlibabaAlihealthLabItemStoreRelationSyncRequest struct {
     _isvItemCode   string
 }
 
-// 初始化AlibabaAlihealthLabItemStoreRelationSyncRequest对象
-func NewAlibabaAlihealthLabItemStoreRelationSyncRequest() *AlibabaAlihealthLabItemStoreRelationSyncRequest{
-    return &AlibabaAlihealthLabItemStoreRelationSyncRequest{
+// 初始化AlibabaAlihealthLabItemStoreRelationSyncAPIRequest对象
+func NewAlibabaAlihealthLabItemStoreRelationSyncRequest() *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest{
+    return &AlibabaAlihealthLabItemStoreRelationSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthLabItemStoreRelationSyncRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.lab.item.store.relation.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthLabItemStoreRelationSyncRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthLabItemStoreRelationSyncRequest) GetApiParams() url.Valu
 }
 // IsvRelationStatus Setter
 // EFFECTIVE 有效，INVALID 无效
-func (r *AlibabaAlihealthLabItemStoreRelationSyncRequest) SetIsvRelationStatus(_isvRelationStatus string) error {
+func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvRelationStatus(_isvRelationStatus string) error {
     r._isvRelationStatus = _isvRelationStatus
     r.Set("isv_relation_status", _isvRelationStatus)
     return nil
 }
 
 // IsvRelationStatus Getter
-func (r AlibabaAlihealthLabItemStoreRelationSyncRequest) GetIsvRelationStatus() string {
+func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetIsvRelationStatus() string {
     return r._isvRelationStatus
 }
 // IsvStoreCodes Setter
 // isv门店编码
-func (r *AlibabaAlihealthLabItemStoreRelationSyncRequest) SetIsvStoreCodes(_isvStoreCodes []string) error {
+func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvStoreCodes(_isvStoreCodes []string) error {
     r._isvStoreCodes = _isvStoreCodes
     r.Set("isv_store_codes", _isvStoreCodes)
     return nil
 }
 
 // IsvStoreCodes Getter
-func (r AlibabaAlihealthLabItemStoreRelationSyncRequest) GetIsvStoreCodes() []string {
+func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetIsvStoreCodes() []string {
     return r._isvStoreCodes
 }
 // IsvItemCode Setter
 // 检验检测项目isv侧编码
-func (r *AlibabaAlihealthLabItemStoreRelationSyncRequest) SetIsvItemCode(_isvItemCode string) error {
+func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvItemCode(_isvItemCode string) error {
     r._isvItemCode = _isvItemCode
     r.Set("isv_item_code", _isvItemCode)
     return nil
 }
 
 // IsvItemCode Getter
-func (r AlibabaAlihealthLabItemStoreRelationSyncRequest) GetIsvItemCode() string {
+func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetIsvItemCode() string {
     return r._isvItemCode
 }

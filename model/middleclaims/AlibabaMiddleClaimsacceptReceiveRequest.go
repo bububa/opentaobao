@@ -12,26 +12,26 @@ alibaba.middle.claimsaccept.receive
 
 国际化中台服务域与保险公司交互对接一个订单在保险公司方对该订单进行理赔受理结果的处理后，将该结果返回至服务域
 */
-type AlibabaMiddleClaimsacceptReceiveRequest struct {
+type AlibabaMiddleClaimsacceptReceiveAPIRequest struct {
     model.Params
     // 理赔受理结果实体类
     _claimsAcceptDto   *ClaimsAcceptDTO
 }
 
-// 初始化AlibabaMiddleClaimsacceptReceiveRequest对象
-func NewAlibabaMiddleClaimsacceptReceiveRequest() *AlibabaMiddleClaimsacceptReceiveRequest{
-    return &AlibabaMiddleClaimsacceptReceiveRequest{
+// 初始化AlibabaMiddleClaimsacceptReceiveAPIRequest对象
+func NewAlibabaMiddleClaimsacceptReceiveRequest() *AlibabaMiddleClaimsacceptReceiveAPIRequest{
+    return &AlibabaMiddleClaimsacceptReceiveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMiddleClaimsacceptReceiveRequest) GetApiMethodName() string {
+func (r AlibabaMiddleClaimsacceptReceiveAPIRequest) GetApiMethodName() string {
     return "alibaba.middle.claimsaccept.receive"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMiddleClaimsacceptReceiveRequest) GetApiParams() url.Values {
+func (r AlibabaMiddleClaimsacceptReceiveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMiddleClaimsacceptReceiveRequest) GetApiParams() url.Values {
 }
 // ClaimsAcceptDto Setter
 // 理赔受理结果实体类
-func (r *AlibabaMiddleClaimsacceptReceiveRequest) SetClaimsAcceptDto(_claimsAcceptDto *ClaimsAcceptDTO) error {
+func (r *AlibabaMiddleClaimsacceptReceiveAPIRequest) SetClaimsAcceptDto(_claimsAcceptDto *ClaimsAcceptDTO) error {
     r._claimsAcceptDto = _claimsAcceptDto
     r.Set("claims_accept_dto", _claimsAcceptDto)
     return nil
 }
 
 // ClaimsAcceptDto Getter
-func (r AlibabaMiddleClaimsacceptReceiveRequest) GetClaimsAcceptDto() *ClaimsAcceptDTO {
+func (r AlibabaMiddleClaimsacceptReceiveAPIRequest) GetClaimsAcceptDto() *ClaimsAcceptDTO {
     return r._claimsAcceptDto
 }

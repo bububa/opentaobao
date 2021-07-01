@@ -11,7 +11,7 @@ alibaba.security.jaq.spamregisterprevention.result.fetch
 
 获取垃圾注册防控结果
 */
-func AlibabaSecurityJaqSpamregisterpreventionResultFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqSpamregisterpreventionResultFetchRequest, session string) (*security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse, error) {
+func AlibabaSecurityJaqSpamregisterpreventionResultFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest, session string) (*security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse, error) {
     var resp security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.wdk.marketing.coupon.endactivity
 
 结束优惠券活动。优惠券变为结束领取状态，已领取的优惠券可以继续使用
 */
-type AlibabaWdkMarketingCouponEndactivityRequest struct {
+type AlibabaWdkMarketingCouponEndactivityAPIRequest struct {
     model.Params
     // 需要删除的活动的信息
     _param   *CommonActivityParam
 }
 
-// 初始化AlibabaWdkMarketingCouponEndactivityRequest对象
-func NewAlibabaWdkMarketingCouponEndactivityRequest() *AlibabaWdkMarketingCouponEndactivityRequest{
-    return &AlibabaWdkMarketingCouponEndactivityRequest{
+// 初始化AlibabaWdkMarketingCouponEndactivityAPIRequest对象
+func NewAlibabaWdkMarketingCouponEndactivityRequest() *AlibabaWdkMarketingCouponEndactivityAPIRequest{
+    return &AlibabaWdkMarketingCouponEndactivityAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingCouponEndactivityRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingCouponEndactivityAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.coupon.endactivity"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingCouponEndactivityRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingCouponEndactivityAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingCouponEndactivityRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 需要删除的活动的信息
-func (r *AlibabaWdkMarketingCouponEndactivityRequest) SetParam(_param *CommonActivityParam) error {
+func (r *AlibabaWdkMarketingCouponEndactivityAPIRequest) SetParam(_param *CommonActivityParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkMarketingCouponEndactivityRequest) GetParam() *CommonActivityParam {
+func (r AlibabaWdkMarketingCouponEndactivityAPIRequest) GetParam() *CommonActivityParam {
     return r._param
 }

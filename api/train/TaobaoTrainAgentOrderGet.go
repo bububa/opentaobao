@@ -11,7 +11,7 @@ taobao.train.agent.order.get
 
 代理商获取订单信息回调API
 */
-func TaobaoTrainAgentOrderGet(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderGetRequest, session string) (*train.TaobaoTrainAgentOrderGetAPIResponse, error) {
+func TaobaoTrainAgentOrderGet(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderGetAPIRequest, session string) (*train.TaobaoTrainAgentOrderGetAPIResponse, error) {
     var resp train.TaobaoTrainAgentOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

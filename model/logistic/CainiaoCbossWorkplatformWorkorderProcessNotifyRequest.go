@@ -12,26 +12,26 @@ cainiao.cboss.workplatform.workorder.process.notify
 
 菜鸟工单系统的工单进度下发（SPI）
 */
-type CainiaoCbossWorkplatformWorkorderProcessNotifyRequest struct {
+type CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest struct {
     model.Params
     // 服务入参
     _content   *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct
 }
 
-// 初始化CainiaoCbossWorkplatformWorkorderProcessNotifyRequest对象
-func NewCainiaoCbossWorkplatformWorkorderProcessNotifyRequest() *CainiaoCbossWorkplatformWorkorderProcessNotifyRequest{
-    return &CainiaoCbossWorkplatformWorkorderProcessNotifyRequest{
+// 初始化CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest对象
+func NewCainiaoCbossWorkplatformWorkorderProcessNotifyRequest() *CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest{
+    return &CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCbossWorkplatformWorkorderProcessNotifyRequest) GetApiMethodName() string {
+func (r CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest) GetApiMethodName() string {
     return "cainiao.cboss.workplatform.workorder.process.notify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCbossWorkplatformWorkorderProcessNotifyRequest) GetApiParams() url.Values {
+func (r CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoCbossWorkplatformWorkorderProcessNotifyRequest) GetApiParams() ur
 }
 // Content Setter
 // 服务入参
-func (r *CainiaoCbossWorkplatformWorkorderProcessNotifyRequest) SetContent(_content *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct) error {
+func (r *CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest) SetContent(_content *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct) error {
     r._content = _content
     r.Set("content", _content)
     return nil
 }
 
 // Content Getter
-func (r CainiaoCbossWorkplatformWorkorderProcessNotifyRequest) GetContent() *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct {
+func (r CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest) GetContent() *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct {
     return r._content
 }

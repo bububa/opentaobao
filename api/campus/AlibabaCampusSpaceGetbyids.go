@@ -11,7 +11,7 @@ alibaba.campus.space.getbyids
 
 根据ids和类型查询空间列表
 */
-func AlibabaCampusSpaceGetbyids(clt *core.SDKClient, req *campus.AlibabaCampusSpaceGetbyidsRequest, session string) (*campus.AlibabaCampusSpaceGetbyidsAPIResponse, error) {
+func AlibabaCampusSpaceGetbyids(clt *core.SDKClient, req *campus.AlibabaCampusSpaceGetbyidsAPIRequest, session string) (*campus.AlibabaCampusSpaceGetbyidsAPIResponse, error) {
     var resp campus.AlibabaCampusSpaceGetbyidsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

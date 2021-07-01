@@ -12,7 +12,7 @@ taobao.lark.pos.itemprod.findterminal
 
 终端配置支持,读取如果不存在则创建和远程的连接配置并返回
 */
-type TaobaoLarkPosItemprodFindterminalRequest struct {
+type TaobaoLarkPosItemprodFindterminalAPIRequest struct {
     model.Params
     // 终端id
     _deviceId   string
@@ -28,20 +28,20 @@ type TaobaoLarkPosItemprodFindterminalRequest struct {
     _cinemaName   string
 }
 
-// 初始化TaobaoLarkPosItemprodFindterminalRequest对象
-func NewTaobaoLarkPosItemprodFindterminalRequest() *TaobaoLarkPosItemprodFindterminalRequest{
-    return &TaobaoLarkPosItemprodFindterminalRequest{
+// 初始化TaobaoLarkPosItemprodFindterminalAPIRequest对象
+func NewTaobaoLarkPosItemprodFindterminalRequest() *TaobaoLarkPosItemprodFindterminalAPIRequest{
+    return &TaobaoLarkPosItemprodFindterminalAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoLarkPosItemprodFindterminalRequest) GetApiMethodName() string {
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetApiMethodName() string {
     return "taobao.lark.pos.itemprod.findterminal"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoLarkPosItemprodFindterminalRequest) GetApiParams() url.Values {
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -50,73 +50,73 @@ func (r TaobaoLarkPosItemprodFindterminalRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 终端id
-func (r *TaobaoLarkPosItemprodFindterminalRequest) SetDeviceId(_deviceId string) error {
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetDeviceId(_deviceId string) error {
     r._deviceId = _deviceId
     r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
-func (r TaobaoLarkPosItemprodFindterminalRequest) GetDeviceId() string {
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetDeviceId() string {
     return r._deviceId
 }
 // DeviceType Setter
 // 终端类型
-func (r *TaobaoLarkPosItemprodFindterminalRequest) SetDeviceType(_deviceType string) error {
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetDeviceType(_deviceType string) error {
     r._deviceType = _deviceType
     r.Set("device_type", _deviceType)
     return nil
 }
 
 // DeviceType Getter
-func (r TaobaoLarkPosItemprodFindterminalRequest) GetDeviceType() string {
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetDeviceType() string {
     return r._deviceType
 }
 // CreateUser Setter
 // 912874323429834
-func (r *TaobaoLarkPosItemprodFindterminalRequest) SetCreateUser(_createUser string) error {
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCreateUser(_createUser string) error {
     r._createUser = _createUser
     r.Set("create_user", _createUser)
     return nil
 }
 
 // CreateUser Getter
-func (r TaobaoLarkPosItemprodFindterminalRequest) GetCreateUser() string {
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetCreateUser() string {
     return r._createUser
 }
 // LeaseCode Setter
 // 租户编码
-func (r *TaobaoLarkPosItemprodFindterminalRequest) SetLeaseCode(_leaseCode string) error {
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetLeaseCode(_leaseCode string) error {
     r._leaseCode = _leaseCode
     r.Set("lease_code", _leaseCode)
     return nil
 }
 
 // LeaseCode Getter
-func (r TaobaoLarkPosItemprodFindterminalRequest) GetLeaseCode() string {
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetLeaseCode() string {
     return r._leaseCode
 }
 // CinemaId Setter
 // 影城id
-func (r *TaobaoLarkPosItemprodFindterminalRequest) SetCinemaId(_cinemaId string) error {
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCinemaId(_cinemaId string) error {
     r._cinemaId = _cinemaId
     r.Set("cinema_id", _cinemaId)
     return nil
 }
 
 // CinemaId Getter
-func (r TaobaoLarkPosItemprodFindterminalRequest) GetCinemaId() string {
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetCinemaId() string {
     return r._cinemaId
 }
 // CinemaName Setter
 // 影城名称
-func (r *TaobaoLarkPosItemprodFindterminalRequest) SetCinemaName(_cinemaName string) error {
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCinemaName(_cinemaName string) error {
     r._cinemaName = _cinemaName
     r.Set("cinema_name", _cinemaName)
     return nil
 }
 
 // CinemaName Getter
-func (r TaobaoLarkPosItemprodFindterminalRequest) GetCinemaName() string {
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetCinemaName() string {
     return r._cinemaName
 }

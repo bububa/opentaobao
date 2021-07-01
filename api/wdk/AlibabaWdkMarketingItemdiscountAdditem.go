@@ -11,7 +11,7 @@ alibaba.wdk.marketing.itemdiscount.additem
 
 在商品特价活动中报名特价商品
 */
-func AlibabaWdkMarketingItemdiscountAdditem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItemdiscountAdditemRequest, session string) (*wdk.AlibabaWdkMarketingItemdiscountAdditemAPIResponse, error) {
+func AlibabaWdkMarketingItemdiscountAdditem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItemdiscountAdditemAPIRequest, session string) (*wdk.AlibabaWdkMarketingItemdiscountAdditemAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItemdiscountAdditemAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

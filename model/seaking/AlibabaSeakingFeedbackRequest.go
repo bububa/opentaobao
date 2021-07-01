@@ -12,7 +12,7 @@ alibaba.seaking.feedback
 
 API服务发布成功商品ID回传，用于跟进商品id后续的使用情况
 */
-type AlibabaSeakingFeedbackRequest struct {
+type AlibabaSeakingFeedbackAPIRequest struct {
     model.Params
     // api 接口名字
     _invokeApiName   string
@@ -30,20 +30,20 @@ type AlibabaSeakingFeedbackRequest struct {
     _identifierType   string
 }
 
-// 初始化AlibabaSeakingFeedbackRequest对象
-func NewAlibabaSeakingFeedbackRequest() *AlibabaSeakingFeedbackRequest{
-    return &AlibabaSeakingFeedbackRequest{
+// 初始化AlibabaSeakingFeedbackAPIRequest对象
+func NewAlibabaSeakingFeedbackRequest() *AlibabaSeakingFeedbackAPIRequest{
+    return &AlibabaSeakingFeedbackAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSeakingFeedbackRequest) GetApiMethodName() string {
+func (r AlibabaSeakingFeedbackAPIRequest) GetApiMethodName() string {
     return "alibaba.seaking.feedback"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSeakingFeedbackRequest) GetApiParams() url.Values {
+func (r AlibabaSeakingFeedbackAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,85 +52,85 @@ func (r AlibabaSeakingFeedbackRequest) GetApiParams() url.Values {
 }
 // InvokeApiName Setter
 // api 接口名字
-func (r *AlibabaSeakingFeedbackRequest) SetInvokeApiName(_invokeApiName string) error {
+func (r *AlibabaSeakingFeedbackAPIRequest) SetInvokeApiName(_invokeApiName string) error {
     r._invokeApiName = _invokeApiName
     r.Set("invoke_api_name", _invokeApiName)
     return nil
 }
 
 // InvokeApiName Getter
-func (r AlibabaSeakingFeedbackRequest) GetInvokeApiName() string {
+func (r AlibabaSeakingFeedbackAPIRequest) GetInvokeApiName() string {
     return r._invokeApiName
 }
 // Platform Setter
 // 商品投放平台
-func (r *AlibabaSeakingFeedbackRequest) SetPlatform(_platform string) error {
+func (r *AlibabaSeakingFeedbackAPIRequest) SetPlatform(_platform string) error {
     r._platform = _platform
     r.Set("platform", _platform)
     return nil
 }
 
 // Platform Getter
-func (r AlibabaSeakingFeedbackRequest) GetPlatform() string {
+func (r AlibabaSeakingFeedbackAPIRequest) GetPlatform() string {
     return r._platform
 }
 // ProductId Setter
 // 商品id
-func (r *AlibabaSeakingFeedbackRequest) SetProductId(_productId string) error {
+func (r *AlibabaSeakingFeedbackAPIRequest) SetProductId(_productId string) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r AlibabaSeakingFeedbackRequest) GetProductId() string {
+func (r AlibabaSeakingFeedbackAPIRequest) GetProductId() string {
     return r._productId
 }
 // SubIdentifier Setter
 // 店铺id(ae为cn开头的店铺id, lazada为邮箱)
-func (r *AlibabaSeakingFeedbackRequest) SetSubIdentifier(_subIdentifier string) error {
+func (r *AlibabaSeakingFeedbackAPIRequest) SetSubIdentifier(_subIdentifier string) error {
     r._subIdentifier = _subIdentifier
     r.Set("sub_identifier", _subIdentifier)
     return nil
 }
 
 // SubIdentifier Getter
-func (r AlibabaSeakingFeedbackRequest) GetSubIdentifier() string {
+func (r AlibabaSeakingFeedbackAPIRequest) GetSubIdentifier() string {
     return r._subIdentifier
 }
 // SubIdentifierType Setter
 // 店铺所在平台
-func (r *AlibabaSeakingFeedbackRequest) SetSubIdentifierType(_subIdentifierType string) error {
+func (r *AlibabaSeakingFeedbackAPIRequest) SetSubIdentifierType(_subIdentifierType string) error {
     r._subIdentifierType = _subIdentifierType
     r.Set("sub_identifier_type", _subIdentifierType)
     return nil
 }
 
 // SubIdentifierType Getter
-func (r AlibabaSeakingFeedbackRequest) GetSubIdentifierType() string {
+func (r AlibabaSeakingFeedbackAPIRequest) GetSubIdentifierType() string {
     return r._subIdentifierType
 }
 // Identifier Setter
 // erp名称
-func (r *AlibabaSeakingFeedbackRequest) SetIdentifier(_identifier string) error {
+func (r *AlibabaSeakingFeedbackAPIRequest) SetIdentifier(_identifier string) error {
     r._identifier = _identifier
     r.Set("identifier", _identifier)
     return nil
 }
 
 // Identifier Getter
-func (r AlibabaSeakingFeedbackRequest) GetIdentifier() string {
+func (r AlibabaSeakingFeedbackAPIRequest) GetIdentifier() string {
     return r._identifier
 }
 // IdentifierType Setter
 // erp用户id
-func (r *AlibabaSeakingFeedbackRequest) SetIdentifierType(_identifierType string) error {
+func (r *AlibabaSeakingFeedbackAPIRequest) SetIdentifierType(_identifierType string) error {
     r._identifierType = _identifierType
     r.Set("identifier_type", _identifierType)
     return nil
 }
 
 // IdentifierType Getter
-func (r AlibabaSeakingFeedbackRequest) GetIdentifierType() string {
+func (r AlibabaSeakingFeedbackAPIRequest) GetIdentifierType() string {
     return r._identifierType
 }

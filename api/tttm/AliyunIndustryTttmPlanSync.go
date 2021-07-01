@@ -11,7 +11,7 @@ aliyun.industry.tttm.plan.sync
 
 ERP系统向天天特卖同步生产计划单的数据
 */
-func AliyunIndustryTttmPlanSync(clt *core.SDKClient, req *tttm.AliyunIndustryTttmPlanSyncRequest, session string) (*tttm.AliyunIndustryTttmPlanSyncAPIResponse, error) {
+func AliyunIndustryTttmPlanSync(clt *core.SDKClient, req *tttm.AliyunIndustryTttmPlanSyncAPIRequest, session string) (*tttm.AliyunIndustryTttmPlanSyncAPIResponse, error) {
     var resp tttm.AliyunIndustryTttmPlanSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

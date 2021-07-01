@@ -11,7 +11,7 @@ alibaba.einvoice.closereq
 
 关闭失败开票请求，避免造成重复开票
 */
-func AlibabaEinvoiceClosereq(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceClosereqRequest, session string) (*einvoice.AlibabaEinvoiceClosereqAPIResponse, error) {
+func AlibabaEinvoiceClosereq(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceClosereqAPIRequest, session string) (*einvoice.AlibabaEinvoiceClosereqAPIResponse, error) {
     var resp einvoice.AlibabaEinvoiceClosereqAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

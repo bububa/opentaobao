@@ -11,7 +11,7 @@ alibaba.item.edit.submit
 
 商品编辑提交schema信息
 */
-func AlibabaItemEditSubmit(clt *core.SDKClient, req *product.AlibabaItemEditSubmitRequest, session string) (*product.AlibabaItemEditSubmitAPIResponse, error) {
+func AlibabaItemEditSubmit(clt *core.SDKClient, req *product.AlibabaItemEditSubmitAPIRequest, session string) (*product.AlibabaItemEditSubmitAPIResponse, error) {
     var resp product.AlibabaItemEditSubmitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

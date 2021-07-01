@@ -12,7 +12,7 @@ alibaba.alihealth.examination.reserve.state
 
 体检机构对接_体检状态查询
 */
-type AlibabaAlihealthExaminationReserveStateRequest struct {
+type AlibabaAlihealthExaminationReserveStateAPIRequest struct {
     model.Params
     // 商户唯一码
     _merchantCode   string
@@ -22,20 +22,20 @@ type AlibabaAlihealthExaminationReserveStateRequest struct {
     _uniqReserveCode   string
 }
 
-// 初始化AlibabaAlihealthExaminationReserveStateRequest对象
-func NewAlibabaAlihealthExaminationReserveStateRequest() *AlibabaAlihealthExaminationReserveStateRequest{
-    return &AlibabaAlihealthExaminationReserveStateRequest{
+// 初始化AlibabaAlihealthExaminationReserveStateAPIRequest对象
+func NewAlibabaAlihealthExaminationReserveStateRequest() *AlibabaAlihealthExaminationReserveStateAPIRequest{
+    return &AlibabaAlihealthExaminationReserveStateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationReserveStateRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.examination.reserve.state"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationReserveStateRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthExaminationReserveStateRequest) GetApiParams() url.Value
 }
 // MerchantCode Setter
 // 商户唯一码
-func (r *AlibabaAlihealthExaminationReserveStateRequest) SetMerchantCode(_merchantCode string) error {
+func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetMerchantCode(_merchantCode string) error {
     r._merchantCode = _merchantCode
     r.Set("merchant_code", _merchantCode)
     return nil
 }
 
 // MerchantCode Getter
-func (r AlibabaAlihealthExaminationReserveStateRequest) GetMerchantCode() string {
+func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetMerchantCode() string {
     return r._merchantCode
 }
 // ReserveNumber Setter
 // 阿里健康预约唯一标识
-func (r *AlibabaAlihealthExaminationReserveStateRequest) SetReserveNumber(_reserveNumber string) error {
+func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetReserveNumber(_reserveNumber string) error {
     r._reserveNumber = _reserveNumber
     r.Set("reserve_number", _reserveNumber)
     return nil
 }
 
 // ReserveNumber Getter
-func (r AlibabaAlihealthExaminationReserveStateRequest) GetReserveNumber() string {
+func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetReserveNumber() string {
     return r._reserveNumber
 }
 // UniqReserveCode Setter
 // 体检机构预约唯一标识码
-func (r *AlibabaAlihealthExaminationReserveStateRequest) SetUniqReserveCode(_uniqReserveCode string) error {
+func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
     r._uniqReserveCode = _uniqReserveCode
     r.Set("uniq_reserve_code", _uniqReserveCode)
     return nil
 }
 
 // UniqReserveCode Getter
-func (r AlibabaAlihealthExaminationReserveStateRequest) GetUniqReserveCode() string {
+func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetUniqReserveCode() string {
     return r._uniqReserveCode
 }

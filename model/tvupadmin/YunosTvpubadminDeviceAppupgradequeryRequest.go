@@ -12,7 +12,7 @@ yunos.tvpubadmin.device.appupgradequery
 
 应用升级查询
 */
-type YunosTvpubadminDeviceAppupgradequeryRequest struct {
+type YunosTvpubadminDeviceAppupgradequeryAPIRequest struct {
     model.Params
     // 牌照方
     _license   int64
@@ -26,20 +26,20 @@ type YunosTvpubadminDeviceAppupgradequeryRequest struct {
     _pageSize   int64
 }
 
-// 初始化YunosTvpubadminDeviceAppupgradequeryRequest对象
-func NewYunosTvpubadminDeviceAppupgradequeryRequest() *YunosTvpubadminDeviceAppupgradequeryRequest{
-    return &YunosTvpubadminDeviceAppupgradequeryRequest{
+// 初始化YunosTvpubadminDeviceAppupgradequeryAPIRequest对象
+func NewYunosTvpubadminDeviceAppupgradequeryRequest() *YunosTvpubadminDeviceAppupgradequeryAPIRequest{
+    return &YunosTvpubadminDeviceAppupgradequeryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminDeviceAppupgradequeryRequest) GetApiMethodName() string {
+func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.device.appupgradequery"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminDeviceAppupgradequeryRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r YunosTvpubadminDeviceAppupgradequeryRequest) GetApiParams() url.Values {
 }
 // License Setter
 // 牌照方
-func (r *YunosTvpubadminDeviceAppupgradequeryRequest) SetLicense(_license int64) error {
+func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetLicense(_license int64) error {
     r._license = _license
     r.Set("license", _license)
     return nil
 }
 
 // License Getter
-func (r YunosTvpubadminDeviceAppupgradequeryRequest) GetLicense() int64 {
+func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetLicense() int64 {
     return r._license
 }
 // Status Setter
 // 审核状态
-func (r *YunosTvpubadminDeviceAppupgradequeryRequest) SetStatus(_status string) error {
+func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetStatus(_status string) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r YunosTvpubadminDeviceAppupgradequeryRequest) GetStatus() string {
+func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetStatus() string {
     return r._status
 }
 // DayRange Setter
 // 时间范围
-func (r *YunosTvpubadminDeviceAppupgradequeryRequest) SetDayRange(_dayRange int64) error {
+func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetDayRange(_dayRange int64) error {
     r._dayRange = _dayRange
     r.Set("day_range", _dayRange)
     return nil
 }
 
 // DayRange Getter
-func (r YunosTvpubadminDeviceAppupgradequeryRequest) GetDayRange() int64 {
+func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetDayRange() int64 {
     return r._dayRange
 }
 // PageNo Setter
 // 第几页
-func (r *YunosTvpubadminDeviceAppupgradequeryRequest) SetPageNo(_pageNo int64) error {
+func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r YunosTvpubadminDeviceAppupgradequeryRequest) GetPageNo() int64 {
+func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }
 // PageSize Setter
 // 数据大小
-func (r *YunosTvpubadminDeviceAppupgradequeryRequest) SetPageSize(_pageSize int64) error {
+func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r YunosTvpubadminDeviceAppupgradequeryRequest) GetPageSize() int64 {
+func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

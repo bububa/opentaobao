@@ -12,7 +12,7 @@ taobao.crm.grademkt.member.detail.create
 
 创建商品等级营销明细
 */
-type TaobaoCrmGrademktMemberDetailCreateRequest struct {
+type TaobaoCrmGrademktMemberDetailCreateAPIRequest struct {
     model.Params
     // 扩展字段
     _feather   string
@@ -20,20 +20,20 @@ type TaobaoCrmGrademktMemberDetailCreateRequest struct {
     _parameter   string
 }
 
-// 初始化TaobaoCrmGrademktMemberDetailCreateRequest对象
-func NewTaobaoCrmGrademktMemberDetailCreateRequest() *TaobaoCrmGrademktMemberDetailCreateRequest{
-    return &TaobaoCrmGrademktMemberDetailCreateRequest{
+// 初始化TaobaoCrmGrademktMemberDetailCreateAPIRequest对象
+func NewTaobaoCrmGrademktMemberDetailCreateRequest() *TaobaoCrmGrademktMemberDetailCreateAPIRequest{
+    return &TaobaoCrmGrademktMemberDetailCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoCrmGrademktMemberDetailCreateRequest) GetApiMethodName() string {
+func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetApiMethodName() string {
     return "taobao.crm.grademkt.member.detail.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoCrmGrademktMemberDetailCreateRequest) GetApiParams() url.Values {
+func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoCrmGrademktMemberDetailCreateRequest) GetApiParams() url.Values {
 }
 // Feather Setter
 // 扩展字段
-func (r *TaobaoCrmGrademktMemberDetailCreateRequest) SetFeather(_feather string) error {
+func (r *TaobaoCrmGrademktMemberDetailCreateAPIRequest) SetFeather(_feather string) error {
     r._feather = _feather
     r.Set("feather", _feather)
     return nil
 }
 
 // Feather Getter
-func (r TaobaoCrmGrademktMemberDetailCreateRequest) GetFeather() string {
+func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetFeather() string {
     return r._feather
 }
 // Parameter Setter
 // 创建营销详情，生成方法见http://open.taobao.com/doc/detail.htm?id=101281
-func (r *TaobaoCrmGrademktMemberDetailCreateRequest) SetParameter(_parameter string) error {
+func (r *TaobaoCrmGrademktMemberDetailCreateAPIRequest) SetParameter(_parameter string) error {
     r._parameter = _parameter
     r.Set("parameter", _parameter)
     return nil
 }
 
 // Parameter Getter
-func (r TaobaoCrmGrademktMemberDetailCreateRequest) GetParameter() string {
+func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetParameter() string {
     return r._parameter
 }

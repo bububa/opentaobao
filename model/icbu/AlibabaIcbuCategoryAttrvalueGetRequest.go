@@ -12,26 +12,26 @@ alibaba.icbu.category.attrvalue.get
 
 属性值获取
 */
-type AlibabaIcbuCategoryAttrvalueGetRequest struct {
+type AlibabaIcbuCategoryAttrvalueGetAPIRequest struct {
     model.Params
     // 属性值request对象
     _attributeValueRequest   *AttributeValueRequest
 }
 
-// 初始化AlibabaIcbuCategoryAttrvalueGetRequest对象
-func NewAlibabaIcbuCategoryAttrvalueGetRequest() *AlibabaIcbuCategoryAttrvalueGetRequest{
-    return &AlibabaIcbuCategoryAttrvalueGetRequest{
+// 初始化AlibabaIcbuCategoryAttrvalueGetAPIRequest对象
+func NewAlibabaIcbuCategoryAttrvalueGetRequest() *AlibabaIcbuCategoryAttrvalueGetAPIRequest{
+    return &AlibabaIcbuCategoryAttrvalueGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuCategoryAttrvalueGetRequest) GetApiMethodName() string {
+func (r AlibabaIcbuCategoryAttrvalueGetAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.category.attrvalue.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuCategoryAttrvalueGetRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuCategoryAttrvalueGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIcbuCategoryAttrvalueGetRequest) GetApiParams() url.Values {
 }
 // AttributeValueRequest Setter
 // 属性值request对象
-func (r *AlibabaIcbuCategoryAttrvalueGetRequest) SetAttributeValueRequest(_attributeValueRequest *AttributeValueRequest) error {
+func (r *AlibabaIcbuCategoryAttrvalueGetAPIRequest) SetAttributeValueRequest(_attributeValueRequest *AttributeValueRequest) error {
     r._attributeValueRequest = _attributeValueRequest
     r.Set("attribute_value_request", _attributeValueRequest)
     return nil
 }
 
 // AttributeValueRequest Getter
-func (r AlibabaIcbuCategoryAttrvalueGetRequest) GetAttributeValueRequest() *AttributeValueRequest {
+func (r AlibabaIcbuCategoryAttrvalueGetAPIRequest) GetAttributeValueRequest() *AttributeValueRequest {
     return r._attributeValueRequest
 }

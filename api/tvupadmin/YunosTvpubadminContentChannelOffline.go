@@ -11,7 +11,7 @@ yunos.tvpubadmin.content.channel.offline
 
 迎客松影视频道下线
 */
-func YunosTvpubadminContentChannelOffline(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChannelOfflineRequest, session string) (*tvupadmin.YunosTvpubadminContentChannelOfflineAPIResponse, error) {
+func YunosTvpubadminContentChannelOffline(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChannelOfflineAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentChannelOfflineAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminContentChannelOfflineAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

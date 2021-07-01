@@ -12,26 +12,26 @@ taobao.newretail.division.record.list.get
 
 提供分页查询导购分佣明细的能力
 */
-type TaobaoNewretailDivisionRecordListGetRequest struct {
+type TaobaoNewretailDivisionRecordListGetAPIRequest struct {
     model.Params
     // 入参
     _param   *TopDivisionRecordReqDTO
 }
 
-// 初始化TaobaoNewretailDivisionRecordListGetRequest对象
-func NewTaobaoNewretailDivisionRecordListGetRequest() *TaobaoNewretailDivisionRecordListGetRequest{
-    return &TaobaoNewretailDivisionRecordListGetRequest{
+// 初始化TaobaoNewretailDivisionRecordListGetAPIRequest对象
+func NewTaobaoNewretailDivisionRecordListGetRequest() *TaobaoNewretailDivisionRecordListGetAPIRequest{
+    return &TaobaoNewretailDivisionRecordListGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoNewretailDivisionRecordListGetRequest) GetApiMethodName() string {
+func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetApiMethodName() string {
     return "taobao.newretail.division.record.list.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoNewretailDivisionRecordListGetRequest) GetApiParams() url.Values {
+func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoNewretailDivisionRecordListGetRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *TaobaoNewretailDivisionRecordListGetRequest) SetParam(_param *TopDivisionRecordReqDTO) error {
+func (r *TaobaoNewretailDivisionRecordListGetAPIRequest) SetParam(_param *TopDivisionRecordReqDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoNewretailDivisionRecordListGetRequest) GetParam() *TopDivisionRecordReqDTO {
+func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetParam() *TopDivisionRecordReqDTO {
     return r._param
 }

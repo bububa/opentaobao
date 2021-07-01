@@ -11,7 +11,7 @@ alibaba.wdk.item.merchant.category.query
 
 查询商品的商家叶子类目
 */
-func AlibabaWdkItemMerchantCategoryQuery(clt *core.SDKClient, req *wdk.AlibabaWdkItemMerchantCategoryQueryRequest, session string) (*wdk.AlibabaWdkItemMerchantCategoryQueryAPIResponse, error) {
+func AlibabaWdkItemMerchantCategoryQuery(clt *core.SDKClient, req *wdk.AlibabaWdkItemMerchantCategoryQueryAPIRequest, session string) (*wdk.AlibabaWdkItemMerchantCategoryQueryAPIResponse, error) {
     var resp wdk.AlibabaWdkItemMerchantCategoryQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

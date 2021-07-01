@@ -12,26 +12,26 @@ taobao.wdk.equipment.wcs.wcsinfo.upload
 
 五道口仓库悬挂链信息上传
 */
-type TaobaoWdkEquipmentWcsWcsinfoUploadRequest struct {
+type TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest struct {
     model.Params
     // 上传信息
     _param0   string
 }
 
-// 初始化TaobaoWdkEquipmentWcsWcsinfoUploadRequest对象
-func NewTaobaoWdkEquipmentWcsWcsinfoUploadRequest() *TaobaoWdkEquipmentWcsWcsinfoUploadRequest{
-    return &TaobaoWdkEquipmentWcsWcsinfoUploadRequest{
+// 初始化TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest对象
+func NewTaobaoWdkEquipmentWcsWcsinfoUploadRequest() *TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest{
+    return &TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWdkEquipmentWcsWcsinfoUploadRequest) GetApiMethodName() string {
+func (r TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest) GetApiMethodName() string {
     return "taobao.wdk.equipment.wcs.wcsinfo.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWdkEquipmentWcsWcsinfoUploadRequest) GetApiParams() url.Values {
+func (r TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWdkEquipmentWcsWcsinfoUploadRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 上传信息
-func (r *TaobaoWdkEquipmentWcsWcsinfoUploadRequest) SetParam0(_param0 string) error {
+func (r *TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest) SetParam0(_param0 string) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoWdkEquipmentWcsWcsinfoUploadRequest) GetParam0() string {
+func (r TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest) GetParam0() string {
     return r._param0
 }

@@ -12,26 +12,26 @@ alibaba.wdk.fulfill.batch.on.task.status.changed
 
 物流管控作业状态回传
 */
-type AlibabaWdkFulfillBatchOnTaskStatusChangedRequest struct {
+type AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest struct {
     model.Params
     // 作业状态回传对象
     _taskStatus   *TaskStatus
 }
 
-// 初始化AlibabaWdkFulfillBatchOnTaskStatusChangedRequest对象
-func NewAlibabaWdkFulfillBatchOnTaskStatusChangedRequest() *AlibabaWdkFulfillBatchOnTaskStatusChangedRequest{
-    return &AlibabaWdkFulfillBatchOnTaskStatusChangedRequest{
+// 初始化AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest对象
+func NewAlibabaWdkFulfillBatchOnTaskStatusChangedRequest() *AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest{
+    return &AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) GetApiMethodName() string {
+func (r AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.fulfill.batch.on.task.status.changed"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) GetApiParams() url.Values {
+func (r AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) GetApiParams() url.Val
 }
 // TaskStatus Setter
 // 作业状态回传对象
-func (r *AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) SetTaskStatus(_taskStatus *TaskStatus) error {
+func (r *AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) SetTaskStatus(_taskStatus *TaskStatus) error {
     r._taskStatus = _taskStatus
     r.Set("task_status", _taskStatus)
     return nil
 }
 
 // TaskStatus Getter
-func (r AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) GetTaskStatus() *TaskStatus {
+func (r AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) GetTaskStatus() *TaskStatus {
     return r._taskStatus
 }

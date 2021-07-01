@@ -12,24 +12,24 @@ taobao.qimen.trade.user.delete
 
 删除奇门订单链路用户
 */
-type TaobaoQimenTradeUserDeleteRequest struct {
+type TaobaoQimenTradeUserDeleteAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoQimenTradeUserDeleteRequest对象
-func NewTaobaoQimenTradeUserDeleteRequest() *TaobaoQimenTradeUserDeleteRequest{
-    return &TaobaoQimenTradeUserDeleteRequest{
+// 初始化TaobaoQimenTradeUserDeleteAPIRequest对象
+func NewTaobaoQimenTradeUserDeleteRequest() *TaobaoQimenTradeUserDeleteAPIRequest{
+    return &TaobaoQimenTradeUserDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoQimenTradeUserDeleteRequest) GetApiMethodName() string {
+func (r TaobaoQimenTradeUserDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.qimen.trade.user.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoQimenTradeUserDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoQimenTradeUserDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

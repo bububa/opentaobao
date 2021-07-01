@@ -12,7 +12,7 @@ alibaba.campus.acl.new.checkusermenu
 
 校验用户是否有菜单权限
 */
-type AlibabaCampusAclNewCheckusermenuRequest struct {
+type AlibabaCampusAclNewCheckusermenuAPIRequest struct {
     model.Params
     // 系统入参
     _workbenchcontext   *WorkBenchContext
@@ -20,20 +20,20 @@ type AlibabaCampusAclNewCheckusermenuRequest struct {
     _param   *CheckUserMenuParam
 }
 
-// 初始化AlibabaCampusAclNewCheckusermenuRequest对象
-func NewAlibabaCampusAclNewCheckusermenuRequest() *AlibabaCampusAclNewCheckusermenuRequest{
-    return &AlibabaCampusAclNewCheckusermenuRequest{
+// 初始化AlibabaCampusAclNewCheckusermenuAPIRequest对象
+func NewAlibabaCampusAclNewCheckusermenuRequest() *AlibabaCampusAclNewCheckusermenuAPIRequest{
+    return &AlibabaCampusAclNewCheckusermenuAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusAclNewCheckusermenuRequest) GetApiMethodName() string {
+func (r AlibabaCampusAclNewCheckusermenuAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.acl.new.checkusermenu"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusAclNewCheckusermenuRequest) GetApiParams() url.Values {
+func (r AlibabaCampusAclNewCheckusermenuAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaCampusAclNewCheckusermenuRequest) GetApiParams() url.Values {
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewCheckusermenuRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+func (r *AlibabaCampusAclNewCheckusermenuAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
     r._workbenchcontext = _workbenchcontext
     r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
-func (r AlibabaCampusAclNewCheckusermenuRequest) GetWorkbenchcontext() *WorkBenchContext {
+func (r AlibabaCampusAclNewCheckusermenuAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
     return r._workbenchcontext
 }
 // Param Setter
 // 入参
-func (r *AlibabaCampusAclNewCheckusermenuRequest) SetParam(_param *CheckUserMenuParam) error {
+func (r *AlibabaCampusAclNewCheckusermenuAPIRequest) SetParam(_param *CheckUserMenuParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaCampusAclNewCheckusermenuRequest) GetParam() *CheckUserMenuParam {
+func (r AlibabaCampusAclNewCheckusermenuAPIRequest) GetParam() *CheckUserMenuParam {
     return r._param
 }

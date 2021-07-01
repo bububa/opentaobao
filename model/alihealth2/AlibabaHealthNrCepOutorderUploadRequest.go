@@ -12,26 +12,26 @@ alibaba.health.nr.cep.outorder.upload
 
 线上订单收货验收单、出入库单据生成接口
 */
-type AlibabaHealthNrCepOutorderUploadRequest struct {
+type AlibabaHealthNrCepOutorderUploadAPIRequest struct {
     model.Params
     // 出库单对象
     _topWarOutDto   *TopWarOutDTO
 }
 
-// 初始化AlibabaHealthNrCepOutorderUploadRequest对象
-func NewAlibabaHealthNrCepOutorderUploadRequest() *AlibabaHealthNrCepOutorderUploadRequest{
-    return &AlibabaHealthNrCepOutorderUploadRequest{
+// 初始化AlibabaHealthNrCepOutorderUploadAPIRequest对象
+func NewAlibabaHealthNrCepOutorderUploadRequest() *AlibabaHealthNrCepOutorderUploadAPIRequest{
+    return &AlibabaHealthNrCepOutorderUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHealthNrCepOutorderUploadRequest) GetApiMethodName() string {
+func (r AlibabaHealthNrCepOutorderUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.health.nr.cep.outorder.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHealthNrCepOutorderUploadRequest) GetApiParams() url.Values {
+func (r AlibabaHealthNrCepOutorderUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaHealthNrCepOutorderUploadRequest) GetApiParams() url.Values {
 }
 // TopWarOutDto Setter
 // 出库单对象
-func (r *AlibabaHealthNrCepOutorderUploadRequest) SetTopWarOutDto(_topWarOutDto *TopWarOutDTO) error {
+func (r *AlibabaHealthNrCepOutorderUploadAPIRequest) SetTopWarOutDto(_topWarOutDto *TopWarOutDTO) error {
     r._topWarOutDto = _topWarOutDto
     r.Set("top_war_out_dto", _topWarOutDto)
     return nil
 }
 
 // TopWarOutDto Getter
-func (r AlibabaHealthNrCepOutorderUploadRequest) GetTopWarOutDto() *TopWarOutDTO {
+func (r AlibabaHealthNrCepOutorderUploadAPIRequest) GetTopWarOutDto() *TopWarOutDTO {
     return r._topWarOutDto
 }

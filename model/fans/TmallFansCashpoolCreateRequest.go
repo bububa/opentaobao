@@ -12,26 +12,26 @@ tmall.fans.cashpool.create
 
 商家创建资金池接口
 */
-type TmallFansCashpoolCreateRequest struct {
+type TmallFansCashpoolCreateAPIRequest struct {
     model.Params
     // 创建资奖池输入对象
     _createCashPoolParamDo   *CreateCashPoolParamDO
 }
 
-// 初始化TmallFansCashpoolCreateRequest对象
-func NewTmallFansCashpoolCreateRequest() *TmallFansCashpoolCreateRequest{
-    return &TmallFansCashpoolCreateRequest{
+// 初始化TmallFansCashpoolCreateAPIRequest对象
+func NewTmallFansCashpoolCreateRequest() *TmallFansCashpoolCreateAPIRequest{
+    return &TmallFansCashpoolCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallFansCashpoolCreateRequest) GetApiMethodName() string {
+func (r TmallFansCashpoolCreateAPIRequest) GetApiMethodName() string {
     return "tmall.fans.cashpool.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallFansCashpoolCreateRequest) GetApiParams() url.Values {
+func (r TmallFansCashpoolCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallFansCashpoolCreateRequest) GetApiParams() url.Values {
 }
 // CreateCashPoolParamDo Setter
 // 创建资奖池输入对象
-func (r *TmallFansCashpoolCreateRequest) SetCreateCashPoolParamDo(_createCashPoolParamDo *CreateCashPoolParamDO) error {
+func (r *TmallFansCashpoolCreateAPIRequest) SetCreateCashPoolParamDo(_createCashPoolParamDo *CreateCashPoolParamDO) error {
     r._createCashPoolParamDo = _createCashPoolParamDo
     r.Set("create_cash_pool_param_do", _createCashPoolParamDo)
     return nil
 }
 
 // CreateCashPoolParamDo Getter
-func (r TmallFansCashpoolCreateRequest) GetCreateCashPoolParamDo() *CreateCashPoolParamDO {
+func (r TmallFansCashpoolCreateAPIRequest) GetCreateCashPoolParamDo() *CreateCashPoolParamDO {
     return r._createCashPoolParamDo
 }

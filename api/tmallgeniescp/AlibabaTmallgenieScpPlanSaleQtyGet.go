@@ -11,7 +11,7 @@ alibaba.tmallgenie.scp.plan.sale.qty.get
 
 同步销售数据
 */
-func AlibabaTmallgenieScpPlanSaleQtyGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanSaleQtyGetRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanSaleQtyGetAPIResponse, error) {
+func AlibabaTmallgenieScpPlanSaleQtyGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanSaleQtyGetAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanSaleQtyGetAPIResponse, error) {
     var resp tmallgeniescp.AlibabaTmallgenieScpPlanSaleQtyGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

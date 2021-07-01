@@ -12,26 +12,26 @@ taobao.fenxiao.productcat.delete
 
 删除产品线
 */
-type TaobaoFenxiaoProductcatDeleteRequest struct {
+type TaobaoFenxiaoProductcatDeleteAPIRequest struct {
     model.Params
     // 产品线ID
     _productLineId   int64
 }
 
-// 初始化TaobaoFenxiaoProductcatDeleteRequest对象
-func NewTaobaoFenxiaoProductcatDeleteRequest() *TaobaoFenxiaoProductcatDeleteRequest{
-    return &TaobaoFenxiaoProductcatDeleteRequest{
+// 初始化TaobaoFenxiaoProductcatDeleteAPIRequest对象
+func NewTaobaoFenxiaoProductcatDeleteRequest() *TaobaoFenxiaoProductcatDeleteAPIRequest{
+    return &TaobaoFenxiaoProductcatDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFenxiaoProductcatDeleteRequest) GetApiMethodName() string {
+func (r TaobaoFenxiaoProductcatDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.fenxiao.productcat.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFenxiaoProductcatDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoFenxiaoProductcatDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFenxiaoProductcatDeleteRequest) GetApiParams() url.Values {
 }
 // ProductLineId Setter
 // 产品线ID
-func (r *TaobaoFenxiaoProductcatDeleteRequest) SetProductLineId(_productLineId int64) error {
+func (r *TaobaoFenxiaoProductcatDeleteAPIRequest) SetProductLineId(_productLineId int64) error {
     r._productLineId = _productLineId
     r.Set("product_line_id", _productLineId)
     return nil
 }
 
 // ProductLineId Getter
-func (r TaobaoFenxiaoProductcatDeleteRequest) GetProductLineId() int64 {
+func (r TaobaoFenxiaoProductcatDeleteAPIRequest) GetProductLineId() int64 {
     return r._productLineId
 }

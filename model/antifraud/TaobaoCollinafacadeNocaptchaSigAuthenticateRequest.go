@@ -12,26 +12,26 @@ taobao.collinafacade.nocaptcha.sig.authenticate
 
 人机识别颁发签名串后,本接口负责向ISV提供签名串校验服务
 */
-type TaobaoCollinafacadeNocaptchaSigAuthenticateRequest struct {
+type TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest struct {
     model.Params
     // 签名串校验接口入参
     _sigAuthenticateContext   *SigAuthenticateContext
 }
 
-// 初始化TaobaoCollinafacadeNocaptchaSigAuthenticateRequest对象
-func NewTaobaoCollinafacadeNocaptchaSigAuthenticateRequest() *TaobaoCollinafacadeNocaptchaSigAuthenticateRequest{
-    return &TaobaoCollinafacadeNocaptchaSigAuthenticateRequest{
+// 初始化TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest对象
+func NewTaobaoCollinafacadeNocaptchaSigAuthenticateRequest() *TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest{
+    return &TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoCollinafacadeNocaptchaSigAuthenticateRequest) GetApiMethodName() string {
+func (r TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) GetApiMethodName() string {
     return "taobao.collinafacade.nocaptcha.sig.authenticate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoCollinafacadeNocaptchaSigAuthenticateRequest) GetApiParams() url.Values {
+func (r TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoCollinafacadeNocaptchaSigAuthenticateRequest) GetApiParams() url.V
 }
 // SigAuthenticateContext Setter
 // 签名串校验接口入参
-func (r *TaobaoCollinafacadeNocaptchaSigAuthenticateRequest) SetSigAuthenticateContext(_sigAuthenticateContext *SigAuthenticateContext) error {
+func (r *TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) SetSigAuthenticateContext(_sigAuthenticateContext *SigAuthenticateContext) error {
     r._sigAuthenticateContext = _sigAuthenticateContext
     r.Set("sig_authenticate_context", _sigAuthenticateContext)
     return nil
 }
 
 // SigAuthenticateContext Getter
-func (r TaobaoCollinafacadeNocaptchaSigAuthenticateRequest) GetSigAuthenticateContext() *SigAuthenticateContext {
+func (r TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) GetSigAuthenticateContext() *SigAuthenticateContext {
     return r._sigAuthenticateContext
 }

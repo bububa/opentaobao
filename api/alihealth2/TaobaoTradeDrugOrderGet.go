@@ -11,7 +11,7 @@ taobao.trade.drug.order.get
 
 商家查看订单详情
 */
-func TaobaoTradeDrugOrderGet(clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugOrderGetRequest, session string) (*alihealth2.TaobaoTradeDrugOrderGetAPIResponse, error) {
+func TaobaoTradeDrugOrderGet(clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugOrderGetAPIRequest, session string) (*alihealth2.TaobaoTradeDrugOrderGetAPIResponse, error) {
     var resp alihealth2.TaobaoTradeDrugOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

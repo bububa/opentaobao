@@ -12,7 +12,7 @@ alibaba.price.promotion.activity.query
 
 查询盒马帮档期活动详情
 */
-type AlibabaPricePromotionActivityQueryRequest struct {
+type AlibabaPricePromotionActivityQueryAPIRequest struct {
     model.Params
     // 页码
     _page   int64
@@ -24,20 +24,20 @@ type AlibabaPricePromotionActivityQueryRequest struct {
     _pageSize   int64
 }
 
-// 初始化AlibabaPricePromotionActivityQueryRequest对象
-func NewAlibabaPricePromotionActivityQueryRequest() *AlibabaPricePromotionActivityQueryRequest{
-    return &AlibabaPricePromotionActivityQueryRequest{
+// 初始化AlibabaPricePromotionActivityQueryAPIRequest对象
+func NewAlibabaPricePromotionActivityQueryRequest() *AlibabaPricePromotionActivityQueryAPIRequest{
+    return &AlibabaPricePromotionActivityQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaPricePromotionActivityQueryRequest) GetApiMethodName() string {
+func (r AlibabaPricePromotionActivityQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.price.promotion.activity.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaPricePromotionActivityQueryRequest) GetApiParams() url.Values {
+func (r AlibabaPricePromotionActivityQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaPricePromotionActivityQueryRequest) GetApiParams() url.Values {
 }
 // Page Setter
 // 页码
-func (r *AlibabaPricePromotionActivityQueryRequest) SetPage(_page int64) error {
+func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetPage(_page int64) error {
     r._page = _page
     r.Set("page", _page)
     return nil
 }
 
 // Page Getter
-func (r AlibabaPricePromotionActivityQueryRequest) GetPage() int64 {
+func (r AlibabaPricePromotionActivityQueryAPIRequest) GetPage() int64 {
     return r._page
 }
 // OuterPromotionCode Setter
 // 外部档期code
-func (r *AlibabaPricePromotionActivityQueryRequest) SetOuterPromotionCode(_outerPromotionCode string) error {
+func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetOuterPromotionCode(_outerPromotionCode string) error {
     r._outerPromotionCode = _outerPromotionCode
     r.Set("outer_promotion_code", _outerPromotionCode)
     return nil
 }
 
 // OuterPromotionCode Getter
-func (r AlibabaPricePromotionActivityQueryRequest) GetOuterPromotionCode() string {
+func (r AlibabaPricePromotionActivityQueryAPIRequest) GetOuterPromotionCode() string {
     return r._outerPromotionCode
 }
 // OuCode Setter
 // TOB店仓编码
-func (r *AlibabaPricePromotionActivityQueryRequest) SetOuCode(_ouCode string) error {
+func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetOuCode(_ouCode string) error {
     r._ouCode = _ouCode
     r.Set("ou_code", _ouCode)
     return nil
 }
 
 // OuCode Getter
-func (r AlibabaPricePromotionActivityQueryRequest) GetOuCode() string {
+func (r AlibabaPricePromotionActivityQueryAPIRequest) GetOuCode() string {
     return r._ouCode
 }
 // PageSize Setter
 // 页码大小
-func (r *AlibabaPricePromotionActivityQueryRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r AlibabaPricePromotionActivityQueryRequest) GetPageSize() int64 {
+func (r AlibabaPricePromotionActivityQueryAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

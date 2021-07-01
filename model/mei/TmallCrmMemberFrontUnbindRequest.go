@@ -12,26 +12,26 @@ tmall.crm.member.front.unbind
 
 品牌会员解绑功能
 */
-type TmallCrmMemberFrontUnbindRequest struct {
+type TmallCrmMemberFrontUnbindAPIRequest struct {
     model.Params
     // 会员昵称
     _userNick   string
 }
 
-// 初始化TmallCrmMemberFrontUnbindRequest对象
-func NewTmallCrmMemberFrontUnbindRequest() *TmallCrmMemberFrontUnbindRequest{
-    return &TmallCrmMemberFrontUnbindRequest{
+// 初始化TmallCrmMemberFrontUnbindAPIRequest对象
+func NewTmallCrmMemberFrontUnbindRequest() *TmallCrmMemberFrontUnbindAPIRequest{
+    return &TmallCrmMemberFrontUnbindAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCrmMemberFrontUnbindRequest) GetApiMethodName() string {
+func (r TmallCrmMemberFrontUnbindAPIRequest) GetApiMethodName() string {
     return "tmall.crm.member.front.unbind"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCrmMemberFrontUnbindRequest) GetApiParams() url.Values {
+func (r TmallCrmMemberFrontUnbindAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallCrmMemberFrontUnbindRequest) GetApiParams() url.Values {
 }
 // UserNick Setter
 // 会员昵称
-func (r *TmallCrmMemberFrontUnbindRequest) SetUserNick(_userNick string) error {
+func (r *TmallCrmMemberFrontUnbindAPIRequest) SetUserNick(_userNick string) error {
     r._userNick = _userNick
     r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
-func (r TmallCrmMemberFrontUnbindRequest) GetUserNick() string {
+func (r TmallCrmMemberFrontUnbindAPIRequest) GetUserNick() string {
     return r._userNick
 }

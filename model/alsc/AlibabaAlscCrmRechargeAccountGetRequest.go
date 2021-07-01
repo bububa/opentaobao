@@ -12,26 +12,26 @@ alibaba.alsc.crm.recharge.account.get
 
 查询储值账户信息接口
 */
-type AlibabaAlscCrmRechargeAccountGetRequest struct {
+type AlibabaAlscCrmRechargeAccountGetAPIRequest struct {
     model.Params
     // 入参
     _paramQueryRechargeAccountOpenReq   *QueryRechargeAccountOpenReq
 }
 
-// 初始化AlibabaAlscCrmRechargeAccountGetRequest对象
-func NewAlibabaAlscCrmRechargeAccountGetRequest() *AlibabaAlscCrmRechargeAccountGetRequest{
-    return &AlibabaAlscCrmRechargeAccountGetRequest{
+// 初始化AlibabaAlscCrmRechargeAccountGetAPIRequest对象
+func NewAlibabaAlscCrmRechargeAccountGetRequest() *AlibabaAlscCrmRechargeAccountGetAPIRequest{
+    return &AlibabaAlscCrmRechargeAccountGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRechargeAccountGetRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRechargeAccountGetAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.recharge.account.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRechargeAccountGetRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRechargeAccountGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeAccountGetRequest) GetApiParams() url.Values {
 }
 // ParamQueryRechargeAccountOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeAccountGetRequest) SetParamQueryRechargeAccountOpenReq(_paramQueryRechargeAccountOpenReq *QueryRechargeAccountOpenReq) error {
+func (r *AlibabaAlscCrmRechargeAccountGetAPIRequest) SetParamQueryRechargeAccountOpenReq(_paramQueryRechargeAccountOpenReq *QueryRechargeAccountOpenReq) error {
     r._paramQueryRechargeAccountOpenReq = _paramQueryRechargeAccountOpenReq
     r.Set("param_query_recharge_account_open_req", _paramQueryRechargeAccountOpenReq)
     return nil
 }
 
 // ParamQueryRechargeAccountOpenReq Getter
-func (r AlibabaAlscCrmRechargeAccountGetRequest) GetParamQueryRechargeAccountOpenReq() *QueryRechargeAccountOpenReq {
+func (r AlibabaAlscCrmRechargeAccountGetAPIRequest) GetParamQueryRechargeAccountOpenReq() *QueryRechargeAccountOpenReq {
     return r._paramQueryRechargeAccountOpenReq
 }

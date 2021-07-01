@@ -12,26 +12,26 @@ alibaba.wdk.sku.channelsku.add
 
 盒马帮1期新增渠道商品
 */
-type AlibabaWdkSkuChannelskuAddRequest struct {
+type AlibabaWdkSkuChannelskuAddAPIRequest struct {
     model.Params
     // 入参模型
     _chSkuDOList   []ChannelSkuDO
 }
 
-// 初始化AlibabaWdkSkuChannelskuAddRequest对象
-func NewAlibabaWdkSkuChannelskuAddRequest() *AlibabaWdkSkuChannelskuAddRequest{
-    return &AlibabaWdkSkuChannelskuAddRequest{
+// 初始化AlibabaWdkSkuChannelskuAddAPIRequest对象
+func NewAlibabaWdkSkuChannelskuAddRequest() *AlibabaWdkSkuChannelskuAddAPIRequest{
+    return &AlibabaWdkSkuChannelskuAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuChannelskuAddRequest) GetApiMethodName() string {
+func (r AlibabaWdkSkuChannelskuAddAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.channelsku.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuChannelskuAddRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSkuChannelskuAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuChannelskuAddRequest) GetApiParams() url.Values {
 }
 // ChSkuDOList Setter
 // 入参模型
-func (r *AlibabaWdkSkuChannelskuAddRequest) SetChSkuDOList(_chSkuDOList []ChannelSkuDO) error {
+func (r *AlibabaWdkSkuChannelskuAddAPIRequest) SetChSkuDOList(_chSkuDOList []ChannelSkuDO) error {
     r._chSkuDOList = _chSkuDOList
     r.Set("ch_sku_d_o_list", _chSkuDOList)
     return nil
 }
 
 // ChSkuDOList Getter
-func (r AlibabaWdkSkuChannelskuAddRequest) GetChSkuDOList() []ChannelSkuDO {
+func (r AlibabaWdkSkuChannelskuAddAPIRequest) GetChSkuDOList() []ChannelSkuDO {
     return r._chSkuDOList
 }

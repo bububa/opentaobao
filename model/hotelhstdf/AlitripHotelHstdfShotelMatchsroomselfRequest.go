@@ -12,26 +12,26 @@ alitrip.hotel.hstdf.shotel.matchsroomself
 
 匹配卖家房型以及标准房型，返回匹配结果
 */
-type AlitripHotelHstdfShotelMatchsroomselfRequest struct {
+type AlitripHotelHstdfShotelMatchsroomselfAPIRequest struct {
     model.Params
     // SroomTypeMatchParam
     _param0   *SroomTypeMatchParam
 }
 
-// 初始化AlitripHotelHstdfShotelMatchsroomselfRequest对象
-func NewAlitripHotelHstdfShotelMatchsroomselfRequest() *AlitripHotelHstdfShotelMatchsroomselfRequest{
-    return &AlitripHotelHstdfShotelMatchsroomselfRequest{
+// 初始化AlitripHotelHstdfShotelMatchsroomselfAPIRequest对象
+func NewAlitripHotelHstdfShotelMatchsroomselfRequest() *AlitripHotelHstdfShotelMatchsroomselfAPIRequest{
+    return &AlitripHotelHstdfShotelMatchsroomselfAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripHotelHstdfShotelMatchsroomselfRequest) GetApiMethodName() string {
+func (r AlitripHotelHstdfShotelMatchsroomselfAPIRequest) GetApiMethodName() string {
     return "alitrip.hotel.hstdf.shotel.matchsroomself"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripHotelHstdfShotelMatchsroomselfRequest) GetApiParams() url.Values {
+func (r AlitripHotelHstdfShotelMatchsroomselfAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripHotelHstdfShotelMatchsroomselfRequest) GetApiParams() url.Values 
 }
 // Param0 Setter
 // SroomTypeMatchParam
-func (r *AlitripHotelHstdfShotelMatchsroomselfRequest) SetParam0(_param0 *SroomTypeMatchParam) error {
+func (r *AlitripHotelHstdfShotelMatchsroomselfAPIRequest) SetParam0(_param0 *SroomTypeMatchParam) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlitripHotelHstdfShotelMatchsroomselfRequest) GetParam0() *SroomTypeMatchParam {
+func (r AlitripHotelHstdfShotelMatchsroomselfAPIRequest) GetParam0() *SroomTypeMatchParam {
     return r._param0
 }

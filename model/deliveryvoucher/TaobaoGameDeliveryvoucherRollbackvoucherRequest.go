@@ -12,26 +12,26 @@ taobao.game.deliveryvoucher.rollbackvoucher
 
 提货券发券接口：同步券和订单的关联信息
 */
-type TaobaoGameDeliveryvoucherRollbackvoucherRequest struct {
+type TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest struct {
     model.Params
     // 发券参数
     _param0   *RollbackVoucherRequest
 }
 
-// 初始化TaobaoGameDeliveryvoucherRollbackvoucherRequest对象
-func NewTaobaoGameDeliveryvoucherRollbackvoucherRequest() *TaobaoGameDeliveryvoucherRollbackvoucherRequest{
-    return &TaobaoGameDeliveryvoucherRollbackvoucherRequest{
+// 初始化TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest对象
+func NewTaobaoGameDeliveryvoucherRollbackvoucherRequest() *TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest{
+    return &TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoGameDeliveryvoucherRollbackvoucherRequest) GetApiMethodName() string {
+func (r TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest) GetApiMethodName() string {
     return "taobao.game.deliveryvoucher.rollbackvoucher"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoGameDeliveryvoucherRollbackvoucherRequest) GetApiParams() url.Values {
+func (r TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoGameDeliveryvoucherRollbackvoucherRequest) GetApiParams() url.Valu
 }
 // Param0 Setter
 // 发券参数
-func (r *TaobaoGameDeliveryvoucherRollbackvoucherRequest) SetParam0(_param0 *RollbackVoucherRequest) error {
+func (r *TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest) SetParam0(_param0 *RollbackVoucherRequest) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoGameDeliveryvoucherRollbackvoucherRequest) GetParam0() *RollbackVoucherRequest {
+func (r TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest) GetParam0() *RollbackVoucherRequest {
     return r._param0
 }

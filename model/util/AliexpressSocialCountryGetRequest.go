@@ -12,26 +12,26 @@ aliexpress.social.country.get
 
 获取目前AE支持的国家列表
 */
-type AliexpressSocialCountryGetRequest struct {
+type AliexpressSocialCountryGetAPIRequest struct {
     model.Params
     // 语言
     _language   string
 }
 
-// 初始化AliexpressSocialCountryGetRequest对象
-func NewAliexpressSocialCountryGetRequest() *AliexpressSocialCountryGetRequest{
-    return &AliexpressSocialCountryGetRequest{
+// 初始化AliexpressSocialCountryGetAPIRequest对象
+func NewAliexpressSocialCountryGetRequest() *AliexpressSocialCountryGetAPIRequest{
+    return &AliexpressSocialCountryGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSocialCountryGetRequest) GetApiMethodName() string {
+func (r AliexpressSocialCountryGetAPIRequest) GetApiMethodName() string {
     return "aliexpress.social.country.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSocialCountryGetRequest) GetApiParams() url.Values {
+func (r AliexpressSocialCountryGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressSocialCountryGetRequest) GetApiParams() url.Values {
 }
 // Language Setter
 // 语言
-func (r *AliexpressSocialCountryGetRequest) SetLanguage(_language string) error {
+func (r *AliexpressSocialCountryGetAPIRequest) SetLanguage(_language string) error {
     r._language = _language
     r.Set("language", _language)
     return nil
 }
 
 // Language Getter
-func (r AliexpressSocialCountryGetRequest) GetLanguage() string {
+func (r AliexpressSocialCountryGetAPIRequest) GetLanguage() string {
     return r._language
 }

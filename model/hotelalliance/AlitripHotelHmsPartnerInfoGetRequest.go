@@ -12,26 +12,26 @@ alitrip.hotel.hms.partner.info.get
 
 用于给到未来酒店读取与飞猪酒店合作的合作商信息，开展单体联盟业务
 */
-type AlitripHotelHmsPartnerInfoGetRequest struct {
+type AlitripHotelHmsPartnerInfoGetAPIRequest struct {
     model.Params
     // 查询合作商信息query参数
     _queryPartnerInfoParam   *QueryPartnerInfoParam
 }
 
-// 初始化AlitripHotelHmsPartnerInfoGetRequest对象
-func NewAlitripHotelHmsPartnerInfoGetRequest() *AlitripHotelHmsPartnerInfoGetRequest{
-    return &AlitripHotelHmsPartnerInfoGetRequest{
+// 初始化AlitripHotelHmsPartnerInfoGetAPIRequest对象
+func NewAlitripHotelHmsPartnerInfoGetRequest() *AlitripHotelHmsPartnerInfoGetAPIRequest{
+    return &AlitripHotelHmsPartnerInfoGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripHotelHmsPartnerInfoGetRequest) GetApiMethodName() string {
+func (r AlitripHotelHmsPartnerInfoGetAPIRequest) GetApiMethodName() string {
     return "alitrip.hotel.hms.partner.info.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripHotelHmsPartnerInfoGetRequest) GetApiParams() url.Values {
+func (r AlitripHotelHmsPartnerInfoGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripHotelHmsPartnerInfoGetRequest) GetApiParams() url.Values {
 }
 // QueryPartnerInfoParam Setter
 // 查询合作商信息query参数
-func (r *AlitripHotelHmsPartnerInfoGetRequest) SetQueryPartnerInfoParam(_queryPartnerInfoParam *QueryPartnerInfoParam) error {
+func (r *AlitripHotelHmsPartnerInfoGetAPIRequest) SetQueryPartnerInfoParam(_queryPartnerInfoParam *QueryPartnerInfoParam) error {
     r._queryPartnerInfoParam = _queryPartnerInfoParam
     r.Set("query_partner_info_param", _queryPartnerInfoParam)
     return nil
 }
 
 // QueryPartnerInfoParam Getter
-func (r AlitripHotelHmsPartnerInfoGetRequest) GetQueryPartnerInfoParam() *QueryPartnerInfoParam {
+func (r AlitripHotelHmsPartnerInfoGetAPIRequest) GetQueryPartnerInfoParam() *QueryPartnerInfoParam {
     return r._queryPartnerInfoParam
 }

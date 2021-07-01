@@ -11,7 +11,7 @@ taobao.film.lottery.sendcode
 
 淘票票外部直发券
 */
-func TaobaoFilmLotterySendcode(clt *core.SDKClient, req *film.TaobaoFilmLotterySendcodeRequest, session string) (*film.TaobaoFilmLotterySendcodeAPIResponse, error) {
+func TaobaoFilmLotterySendcode(clt *core.SDKClient, req *film.TaobaoFilmLotterySendcodeAPIRequest, session string) (*film.TaobaoFilmLotterySendcodeAPIResponse, error) {
     var resp film.TaobaoFilmLotterySendcodeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

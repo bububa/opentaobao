@@ -11,7 +11,7 @@ alibaba.lst.nicetuan.order.save
 
 十荟团订单同步至零售通，十荟团单向写到零售通
 */
-func AlibabaLstNicetuanOrderSave(clt *core.SDKClient, req *lsttrade.AlibabaLstNicetuanOrderSaveRequest, session string) (*lsttrade.AlibabaLstNicetuanOrderSaveAPIResponse, error) {
+func AlibabaLstNicetuanOrderSave(clt *core.SDKClient, req *lsttrade.AlibabaLstNicetuanOrderSaveAPIRequest, session string) (*lsttrade.AlibabaLstNicetuanOrderSaveAPIResponse, error) {
     var resp lsttrade.AlibabaLstNicetuanOrderSaveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

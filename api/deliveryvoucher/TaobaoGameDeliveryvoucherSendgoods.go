@@ -11,7 +11,7 @@ taobao.game.deliveryvoucher.sendgoods
 
 提货券发券接口：同步券和订单的关联信息
 */
-func TaobaoGameDeliveryvoucherSendgoods(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherSendgoodsRequest, session string) (*deliveryvoucher.TaobaoGameDeliveryvoucherSendgoodsAPIResponse, error) {
+func TaobaoGameDeliveryvoucherSendgoods(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherSendgoodsAPIRequest, session string) (*deliveryvoucher.TaobaoGameDeliveryvoucherSendgoodsAPIResponse, error) {
     var resp deliveryvoucher.TaobaoGameDeliveryvoucherSendgoodsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

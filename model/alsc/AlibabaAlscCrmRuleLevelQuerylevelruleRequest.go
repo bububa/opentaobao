@@ -12,26 +12,26 @@ alibaba.alsc.crm.rule.level.querylevelrule
 
 查询会员等级规则
 */
-type AlibabaAlscCrmRuleLevelQuerylevelruleRequest struct {
+type AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest struct {
     model.Params
     // 请求参数
     _planRuleQueryRequest   *PlanRuleQueryOpenReq
 }
 
-// 初始化AlibabaAlscCrmRuleLevelQuerylevelruleRequest对象
-func NewAlibabaAlscCrmRuleLevelQuerylevelruleRequest() *AlibabaAlscCrmRuleLevelQuerylevelruleRequest{
-    return &AlibabaAlscCrmRuleLevelQuerylevelruleRequest{
+// 初始化AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest对象
+func NewAlibabaAlscCrmRuleLevelQuerylevelruleRequest() *AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest{
+    return &AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRuleLevelQuerylevelruleRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.rule.level.querylevelrule"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRuleLevelQuerylevelruleRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRuleLevelQuerylevelruleRequest) GetApiParams() url.Values 
 }
 // PlanRuleQueryRequest Setter
 // 请求参数
-func (r *AlibabaAlscCrmRuleLevelQuerylevelruleRequest) SetPlanRuleQueryRequest(_planRuleQueryRequest *PlanRuleQueryOpenReq) error {
+func (r *AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest) SetPlanRuleQueryRequest(_planRuleQueryRequest *PlanRuleQueryOpenReq) error {
     r._planRuleQueryRequest = _planRuleQueryRequest
     r.Set("plan_rule_query_request", _planRuleQueryRequest)
     return nil
 }
 
 // PlanRuleQueryRequest Getter
-func (r AlibabaAlscCrmRuleLevelQuerylevelruleRequest) GetPlanRuleQueryRequest() *PlanRuleQueryOpenReq {
+func (r AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest) GetPlanRuleQueryRequest() *PlanRuleQueryOpenReq {
     return r._planRuleQueryRequest
 }

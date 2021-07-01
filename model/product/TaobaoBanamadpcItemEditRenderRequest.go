@@ -12,26 +12,26 @@ taobao.banamadpc.item.edit.render
 
 巴拿马供应商通过此接口获取编辑商品发布页
 */
-type TaobaoBanamadpcItemEditRenderRequest struct {
+type TaobaoBanamadpcItemEditRenderAPIRequest struct {
     model.Params
     // 商品id
     _itemId   int64
 }
 
-// 初始化TaobaoBanamadpcItemEditRenderRequest对象
-func NewTaobaoBanamadpcItemEditRenderRequest() *TaobaoBanamadpcItemEditRenderRequest{
-    return &TaobaoBanamadpcItemEditRenderRequest{
+// 初始化TaobaoBanamadpcItemEditRenderAPIRequest对象
+func NewTaobaoBanamadpcItemEditRenderRequest() *TaobaoBanamadpcItemEditRenderAPIRequest{
+    return &TaobaoBanamadpcItemEditRenderAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBanamadpcItemEditRenderRequest) GetApiMethodName() string {
+func (r TaobaoBanamadpcItemEditRenderAPIRequest) GetApiMethodName() string {
     return "taobao.banamadpc.item.edit.render"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBanamadpcItemEditRenderRequest) GetApiParams() url.Values {
+func (r TaobaoBanamadpcItemEditRenderAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBanamadpcItemEditRenderRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoBanamadpcItemEditRenderRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoBanamadpcItemEditRenderAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoBanamadpcItemEditRenderRequest) GetItemId() int64 {
+func (r TaobaoBanamadpcItemEditRenderAPIRequest) GetItemId() int64 {
     return r._itemId
 }

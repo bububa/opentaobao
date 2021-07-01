@@ -12,7 +12,7 @@ taobao.region.price.cancle
 
 取消区域价格
 */
-type TaobaoRegionPriceCancleRequest struct {
+type TaobaoRegionPriceCancleAPIRequest struct {
     model.Params
     // 商品
     _itemId   int64
@@ -20,20 +20,20 @@ type TaobaoRegionPriceCancleRequest struct {
     _skuId   int64
 }
 
-// 初始化TaobaoRegionPriceCancleRequest对象
-func NewTaobaoRegionPriceCancleRequest() *TaobaoRegionPriceCancleRequest{
-    return &TaobaoRegionPriceCancleRequest{
+// 初始化TaobaoRegionPriceCancleAPIRequest对象
+func NewTaobaoRegionPriceCancleRequest() *TaobaoRegionPriceCancleAPIRequest{
+    return &TaobaoRegionPriceCancleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRegionPriceCancleRequest) GetApiMethodName() string {
+func (r TaobaoRegionPriceCancleAPIRequest) GetApiMethodName() string {
     return "taobao.region.price.cancle"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRegionPriceCancleRequest) GetApiParams() url.Values {
+func (r TaobaoRegionPriceCancleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoRegionPriceCancleRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品
-func (r *TaobaoRegionPriceCancleRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoRegionPriceCancleAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoRegionPriceCancleRequest) GetItemId() int64 {
+func (r TaobaoRegionPriceCancleAPIRequest) GetItemId() int64 {
     return r._itemId
 }
 // SkuId Setter
 // 无sku传0
-func (r *TaobaoRegionPriceCancleRequest) SetSkuId(_skuId int64) error {
+func (r *TaobaoRegionPriceCancleAPIRequest) SetSkuId(_skuId int64) error {
     r._skuId = _skuId
     r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
-func (r TaobaoRegionPriceCancleRequest) GetSkuId() int64 {
+func (r TaobaoRegionPriceCancleAPIRequest) GetSkuId() int64 {
     return r._skuId
 }

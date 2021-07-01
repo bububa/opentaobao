@@ -11,7 +11,7 @@ taobao.koubei.mall.common.item.super.discount.list
 
 查询商圈超值特惠商品信息列表
 */
-func TaobaoKoubeiMallCommonItemSuperDiscountList(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonItemSuperDiscountListRequest, session string) (*koubeimall.TaobaoKoubeiMallCommonItemSuperDiscountListAPIResponse, error) {
+func TaobaoKoubeiMallCommonItemSuperDiscountList(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest, session string) (*koubeimall.TaobaoKoubeiMallCommonItemSuperDiscountListAPIResponse, error) {
     var resp koubeimall.TaobaoKoubeiMallCommonItemSuperDiscountListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

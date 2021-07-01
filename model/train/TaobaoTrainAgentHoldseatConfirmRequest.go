@@ -12,26 +12,26 @@ taobao.train.agent.holdseat.confirm
 
 火车票代理商接口——确认占座是否成功
 */
-type TaobaoTrainAgentHoldseatConfirmRequest struct {
+type TaobaoTrainAgentHoldseatConfirmAPIRequest struct {
     model.Params
     // 占座入参
     _holdSeatParam   *HoldSeatParam
 }
 
-// 初始化TaobaoTrainAgentHoldseatConfirmRequest对象
-func NewTaobaoTrainAgentHoldseatConfirmRequest() *TaobaoTrainAgentHoldseatConfirmRequest{
-    return &TaobaoTrainAgentHoldseatConfirmRequest{
+// 初始化TaobaoTrainAgentHoldseatConfirmAPIRequest对象
+func NewTaobaoTrainAgentHoldseatConfirmRequest() *TaobaoTrainAgentHoldseatConfirmAPIRequest{
+    return &TaobaoTrainAgentHoldseatConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentHoldseatConfirmRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentHoldseatConfirmAPIRequest) GetApiMethodName() string {
     return "taobao.train.agent.holdseat.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentHoldseatConfirmRequest) GetApiParams() url.Values {
+func (r TaobaoTrainAgentHoldseatConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentHoldseatConfirmRequest) GetApiParams() url.Values {
 }
 // HoldSeatParam Setter
 // 占座入参
-func (r *TaobaoTrainAgentHoldseatConfirmRequest) SetHoldSeatParam(_holdSeatParam *HoldSeatParam) error {
+func (r *TaobaoTrainAgentHoldseatConfirmAPIRequest) SetHoldSeatParam(_holdSeatParam *HoldSeatParam) error {
     r._holdSeatParam = _holdSeatParam
     r.Set("hold_seat_param", _holdSeatParam)
     return nil
 }
 
 // HoldSeatParam Getter
-func (r TaobaoTrainAgentHoldseatConfirmRequest) GetHoldSeatParam() *HoldSeatParam {
+func (r TaobaoTrainAgentHoldseatConfirmAPIRequest) GetHoldSeatParam() *HoldSeatParam {
     return r._holdSeatParam
 }

@@ -12,26 +12,26 @@ alibaba.campus.devicehub.openapi.reportdata
 
 设备数据上报
 */
-type AlibabaCampusDevicehubOpenapiReportdataRequest struct {
+type AlibabaCampusDevicehubOpenapiReportdataAPIRequest struct {
     model.Params
     // 自动生成
     _deviceEventData   *DeviceReportEventDTO
 }
 
-// 初始化AlibabaCampusDevicehubOpenapiReportdataRequest对象
-func NewAlibabaCampusDevicehubOpenapiReportdataRequest() *AlibabaCampusDevicehubOpenapiReportdataRequest{
-    return &AlibabaCampusDevicehubOpenapiReportdataRequest{
+// 初始化AlibabaCampusDevicehubOpenapiReportdataAPIRequest对象
+func NewAlibabaCampusDevicehubOpenapiReportdataRequest() *AlibabaCampusDevicehubOpenapiReportdataAPIRequest{
+    return &AlibabaCampusDevicehubOpenapiReportdataAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusDevicehubOpenapiReportdataRequest) GetApiMethodName() string {
+func (r AlibabaCampusDevicehubOpenapiReportdataAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.devicehub.openapi.reportdata"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusDevicehubOpenapiReportdataRequest) GetApiParams() url.Values {
+func (r AlibabaCampusDevicehubOpenapiReportdataAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaCampusDevicehubOpenapiReportdataRequest) GetApiParams() url.Value
 }
 // DeviceEventData Setter
 // 自动生成
-func (r *AlibabaCampusDevicehubOpenapiReportdataRequest) SetDeviceEventData(_deviceEventData *DeviceReportEventDTO) error {
+func (r *AlibabaCampusDevicehubOpenapiReportdataAPIRequest) SetDeviceEventData(_deviceEventData *DeviceReportEventDTO) error {
     r._deviceEventData = _deviceEventData
     r.Set("device_event_data", _deviceEventData)
     return nil
 }
 
 // DeviceEventData Getter
-func (r AlibabaCampusDevicehubOpenapiReportdataRequest) GetDeviceEventData() *DeviceReportEventDTO {
+func (r AlibabaCampusDevicehubOpenapiReportdataAPIRequest) GetDeviceEventData() *DeviceReportEventDTO {
     return r._deviceEventData
 }

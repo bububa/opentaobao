@@ -12,26 +12,26 @@ alibaba.ailabs.user.speech.guide
 
 根据用户的语音query，返回相应的引导语推荐
 */
-type AlibabaAilabsUserSpeechGuideRequest struct {
+type AlibabaAilabsUserSpeechGuideAPIRequest struct {
     model.Params
     // 用户query
     _query   string
 }
 
-// 初始化AlibabaAilabsUserSpeechGuideRequest对象
-func NewAlibabaAilabsUserSpeechGuideRequest() *AlibabaAilabsUserSpeechGuideRequest{
-    return &AlibabaAilabsUserSpeechGuideRequest{
+// 初始化AlibabaAilabsUserSpeechGuideAPIRequest对象
+func NewAlibabaAilabsUserSpeechGuideRequest() *AlibabaAilabsUserSpeechGuideAPIRequest{
+    return &AlibabaAilabsUserSpeechGuideAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAilabsUserSpeechGuideRequest) GetApiMethodName() string {
+func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetApiMethodName() string {
     return "alibaba.ailabs.user.speech.guide"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsUserSpeechGuideRequest) GetApiParams() url.Values {
+func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAilabsUserSpeechGuideRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 用户query
-func (r *AlibabaAilabsUserSpeechGuideRequest) SetQuery(_query string) error {
+func (r *AlibabaAilabsUserSpeechGuideAPIRequest) SetQuery(_query string) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r AlibabaAilabsUserSpeechGuideRequest) GetQuery() string {
+func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetQuery() string {
     return r._query
 }

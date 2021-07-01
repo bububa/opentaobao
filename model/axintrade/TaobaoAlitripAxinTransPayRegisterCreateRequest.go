@@ -12,26 +12,26 @@ taobao.alitrip.axin.trans.pay.register.create
 
 阿信供销平台-提交支付服务开通接口
 */
-type TaobaoAlitripAxinTransPayRegisterCreateRequest struct {
+type TaobaoAlitripAxinTransPayRegisterCreateAPIRequest struct {
     model.Params
     // 提交支付服务开通接口入参
     _createDTO   *AxinPayRegisterCreateDTO
 }
 
-// 初始化TaobaoAlitripAxinTransPayRegisterCreateRequest对象
-func NewTaobaoAlitripAxinTransPayRegisterCreateRequest() *TaobaoAlitripAxinTransPayRegisterCreateRequest{
-    return &TaobaoAlitripAxinTransPayRegisterCreateRequest{
+// 初始化TaobaoAlitripAxinTransPayRegisterCreateAPIRequest对象
+func NewTaobaoAlitripAxinTransPayRegisterCreateRequest() *TaobaoAlitripAxinTransPayRegisterCreateAPIRequest{
+    return &TaobaoAlitripAxinTransPayRegisterCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripAxinTransPayRegisterCreateRequest) GetApiMethodName() string {
+func (r TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.axin.trans.pay.register.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripAxinTransPayRegisterCreateRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransPayRegisterCreateRequest) GetApiParams() url.Value
 }
 // CreateDTO Setter
 // 提交支付服务开通接口入参
-func (r *TaobaoAlitripAxinTransPayRegisterCreateRequest) SetCreateDTO(_createDTO *AxinPayRegisterCreateDTO) error {
+func (r *TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) SetCreateDTO(_createDTO *AxinPayRegisterCreateDTO) error {
     r._createDTO = _createDTO
     r.Set("create_d_t_o", _createDTO)
     return nil
 }
 
 // CreateDTO Getter
-func (r TaobaoAlitripAxinTransPayRegisterCreateRequest) GetCreateDTO() *AxinPayRegisterCreateDTO {
+func (r TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) GetCreateDTO() *AxinPayRegisterCreateDTO {
     return r._createDTO
 }

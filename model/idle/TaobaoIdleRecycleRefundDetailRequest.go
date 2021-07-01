@@ -12,26 +12,26 @@ taobao.idle.recycle.refund.detail
 
 回收订单退款详情，主要包括退款状态，超时时间，和同意退款的卖家退货地址信息
 */
-type TaobaoIdleRecycleRefundDetailRequest struct {
+type TaobaoIdleRecycleRefundDetailAPIRequest struct {
     model.Params
     // 订单号
     _bizOrderId   int64
 }
 
-// 初始化TaobaoIdleRecycleRefundDetailRequest对象
-func NewTaobaoIdleRecycleRefundDetailRequest() *TaobaoIdleRecycleRefundDetailRequest{
-    return &TaobaoIdleRecycleRefundDetailRequest{
+// 初始化TaobaoIdleRecycleRefundDetailAPIRequest对象
+func NewTaobaoIdleRecycleRefundDetailRequest() *TaobaoIdleRecycleRefundDetailAPIRequest{
+    return &TaobaoIdleRecycleRefundDetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoIdleRecycleRefundDetailRequest) GetApiMethodName() string {
+func (r TaobaoIdleRecycleRefundDetailAPIRequest) GetApiMethodName() string {
     return "taobao.idle.recycle.refund.detail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoIdleRecycleRefundDetailRequest) GetApiParams() url.Values {
+func (r TaobaoIdleRecycleRefundDetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoIdleRecycleRefundDetailRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 订单号
-func (r *TaobaoIdleRecycleRefundDetailRequest) SetBizOrderId(_bizOrderId int64) error {
+func (r *TaobaoIdleRecycleRefundDetailAPIRequest) SetBizOrderId(_bizOrderId int64) error {
     r._bizOrderId = _bizOrderId
     r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
-func (r TaobaoIdleRecycleRefundDetailRequest) GetBizOrderId() int64 {
+func (r TaobaoIdleRecycleRefundDetailAPIRequest) GetBizOrderId() int64 {
     return r._bizOrderId
 }

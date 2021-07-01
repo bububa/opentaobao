@@ -11,7 +11,7 @@ tmall.supplychain.channel.product.upshelf
 
 上架渠道产品
 */
-func TmallSupplychainChannelProductUpshelf(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductUpshelfRequest, session string) (*fenxiao.TmallSupplychainChannelProductUpshelfAPIResponse, error) {
+func TmallSupplychainChannelProductUpshelf(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductUpshelfAPIRequest, session string) (*fenxiao.TmallSupplychainChannelProductUpshelfAPIResponse, error) {
     var resp fenxiao.TmallSupplychainChannelProductUpshelfAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

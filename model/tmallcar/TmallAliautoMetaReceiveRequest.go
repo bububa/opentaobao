@@ -12,26 +12,26 @@ tmall.aliauto.meta.receive
 
 天猫汽车对外提供的汽车资源元数据上传接口
 */
-type TmallAliautoMetaReceiveRequest struct {
+type TmallAliautoMetaReceiveAPIRequest struct {
     model.Params
     // 元数据参数集
     _command   *ResourceMetaCommand
 }
 
-// 初始化TmallAliautoMetaReceiveRequest对象
-func NewTmallAliautoMetaReceiveRequest() *TmallAliautoMetaReceiveRequest{
-    return &TmallAliautoMetaReceiveRequest{
+// 初始化TmallAliautoMetaReceiveAPIRequest对象
+func NewTmallAliautoMetaReceiveRequest() *TmallAliautoMetaReceiveAPIRequest{
+    return &TmallAliautoMetaReceiveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallAliautoMetaReceiveRequest) GetApiMethodName() string {
+func (r TmallAliautoMetaReceiveAPIRequest) GetApiMethodName() string {
     return "tmall.aliauto.meta.receive"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallAliautoMetaReceiveRequest) GetApiParams() url.Values {
+func (r TmallAliautoMetaReceiveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallAliautoMetaReceiveRequest) GetApiParams() url.Values {
 }
 // Command Setter
 // 元数据参数集
-func (r *TmallAliautoMetaReceiveRequest) SetCommand(_command *ResourceMetaCommand) error {
+func (r *TmallAliautoMetaReceiveAPIRequest) SetCommand(_command *ResourceMetaCommand) error {
     r._command = _command
     r.Set("command", _command)
     return nil
 }
 
 // Command Getter
-func (r TmallAliautoMetaReceiveRequest) GetCommand() *ResourceMetaCommand {
+func (r TmallAliautoMetaReceiveAPIRequest) GetCommand() *ResourceMetaCommand {
     return r._command
 }

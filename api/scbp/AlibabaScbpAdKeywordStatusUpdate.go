@@ -11,7 +11,7 @@ alibaba.scbp.ad.keyword.status.update
 
 关键词启动暂停推广
 */
-func AlibabaScbpAdKeywordStatusUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordStatusUpdateRequest, session string) (*scbp.AlibabaScbpAdKeywordStatusUpdateAPIResponse, error) {
+func AlibabaScbpAdKeywordStatusUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordStatusUpdateAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordStatusUpdateAPIResponse, error) {
     var resp scbp.AlibabaScbpAdKeywordStatusUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

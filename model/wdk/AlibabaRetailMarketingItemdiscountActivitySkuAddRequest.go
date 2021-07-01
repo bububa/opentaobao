@@ -12,26 +12,26 @@ alibaba.retail.marketing.itemdiscount.activity.sku.add
 
 新增或更新活动商品信息【同城零售】
 */
-type AlibabaRetailMarketingItemdiscountActivitySkuAddRequest struct {
+type AlibabaRetailMarketingItemdiscountActivitySkuAddAPIRequest struct {
     model.Params
     // 添加活动商品参数
     _param   *ItemDiscountActivityElementOperateRequest
 }
 
-// 初始化AlibabaRetailMarketingItemdiscountActivitySkuAddRequest对象
-func NewAlibabaRetailMarketingItemdiscountActivitySkuAddRequest() *AlibabaRetailMarketingItemdiscountActivitySkuAddRequest{
-    return &AlibabaRetailMarketingItemdiscountActivitySkuAddRequest{
+// 初始化AlibabaRetailMarketingItemdiscountActivitySkuAddAPIRequest对象
+func NewAlibabaRetailMarketingItemdiscountActivitySkuAddRequest() *AlibabaRetailMarketingItemdiscountActivitySkuAddAPIRequest{
+    return &AlibabaRetailMarketingItemdiscountActivitySkuAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingItemdiscountActivitySkuAddRequest) GetApiMethodName() string {
+func (r AlibabaRetailMarketingItemdiscountActivitySkuAddAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.marketing.itemdiscount.activity.sku.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingItemdiscountActivitySkuAddRequest) GetApiParams() url.Values {
+func (r AlibabaRetailMarketingItemdiscountActivitySkuAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingItemdiscountActivitySkuAddRequest) GetApiParams() 
 }
 // Param Setter
 // 添加活动商品参数
-func (r *AlibabaRetailMarketingItemdiscountActivitySkuAddRequest) SetParam(_param *ItemDiscountActivityElementOperateRequest) error {
+func (r *AlibabaRetailMarketingItemdiscountActivitySkuAddAPIRequest) SetParam(_param *ItemDiscountActivityElementOperateRequest) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaRetailMarketingItemdiscountActivitySkuAddRequest) GetParam() *ItemDiscountActivityElementOperateRequest {
+func (r AlibabaRetailMarketingItemdiscountActivitySkuAddAPIRequest) GetParam() *ItemDiscountActivityElementOperateRequest {
     return r._param
 }

@@ -12,26 +12,26 @@ taobao.promotion.benefit.activity.delete
 
 删除关联的活动权益
 */
-type TaobaoPromotionBenefitActivityDeleteRequest struct {
+type TaobaoPromotionBenefitActivityDeleteAPIRequest struct {
     model.Params
     // ISV活动关联权益后获得的关联ID
     _relationId   int64
 }
 
-// 初始化TaobaoPromotionBenefitActivityDeleteRequest对象
-func NewTaobaoPromotionBenefitActivityDeleteRequest() *TaobaoPromotionBenefitActivityDeleteRequest{
-    return &TaobaoPromotionBenefitActivityDeleteRequest{
+// 初始化TaobaoPromotionBenefitActivityDeleteAPIRequest对象
+func NewTaobaoPromotionBenefitActivityDeleteRequest() *TaobaoPromotionBenefitActivityDeleteAPIRequest{
+    return &TaobaoPromotionBenefitActivityDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPromotionBenefitActivityDeleteRequest) GetApiMethodName() string {
+func (r TaobaoPromotionBenefitActivityDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.promotion.benefit.activity.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionBenefitActivityDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoPromotionBenefitActivityDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPromotionBenefitActivityDeleteRequest) GetApiParams() url.Values {
 }
 // RelationId Setter
 // ISV活动关联权益后获得的关联ID
-func (r *TaobaoPromotionBenefitActivityDeleteRequest) SetRelationId(_relationId int64) error {
+func (r *TaobaoPromotionBenefitActivityDeleteAPIRequest) SetRelationId(_relationId int64) error {
     r._relationId = _relationId
     r.Set("relation_id", _relationId)
     return nil
 }
 
 // RelationId Getter
-func (r TaobaoPromotionBenefitActivityDeleteRequest) GetRelationId() int64 {
+func (r TaobaoPromotionBenefitActivityDeleteAPIRequest) GetRelationId() int64 {
     return r._relationId
 }

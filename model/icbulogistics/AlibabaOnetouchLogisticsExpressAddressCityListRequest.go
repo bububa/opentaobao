@@ -12,26 +12,26 @@ alibaba.onetouch.logistics.express.address.city.list
 
 四级地址库-市
 */
-type AlibabaOnetouchLogisticsExpressAddressCityListRequest struct {
+type AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest struct {
     model.Params
     // 请求参数
     _paramQuery   *AddressQueryDTO
 }
 
-// 初始化AlibabaOnetouchLogisticsExpressAddressCityListRequest对象
-func NewAlibabaOnetouchLogisticsExpressAddressCityListRequest() *AlibabaOnetouchLogisticsExpressAddressCityListRequest{
-    return &AlibabaOnetouchLogisticsExpressAddressCityListRequest{
+// 初始化AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest对象
+func NewAlibabaOnetouchLogisticsExpressAddressCityListRequest() *AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest{
+    return &AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaOnetouchLogisticsExpressAddressCityListRequest) GetApiMethodName() string {
+func (r AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest) GetApiMethodName() string {
     return "alibaba.onetouch.logistics.express.address.city.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaOnetouchLogisticsExpressAddressCityListRequest) GetApiParams() url.Values {
+func (r AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaOnetouchLogisticsExpressAddressCityListRequest) GetApiParams() ur
 }
 // ParamQuery Setter
 // 请求参数
-func (r *AlibabaOnetouchLogisticsExpressAddressCityListRequest) SetParamQuery(_paramQuery *AddressQueryDTO) error {
+func (r *AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest) SetParamQuery(_paramQuery *AddressQueryDTO) error {
     r._paramQuery = _paramQuery
     r.Set("param_query", _paramQuery)
     return nil
 }
 
 // ParamQuery Getter
-func (r AlibabaOnetouchLogisticsExpressAddressCityListRequest) GetParamQuery() *AddressQueryDTO {
+func (r AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest) GetParamQuery() *AddressQueryDTO {
     return r._paramQuery
 }

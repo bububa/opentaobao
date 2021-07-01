@@ -13,7 +13,7 @@ alibaba.alihealth.drug.code.kyt.va.querycode
 此接口，针对有码药品，提供可通过追溯码获取该药品的基础信息和生产状况信息。
 核查平台优先过滤非8开头的，长度非20位数字的码信息。
 */
-func AlibabaAlihealthDrugCodeKytVaQuerycode(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeKytVaQuerycodeRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeKytVaQuerycodeAPIResponse, error) {
+func AlibabaAlihealthDrugCodeKytVaQuerycode(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeKytVaQuerycodeAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeKytVaQuerycodeAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugCodeKytVaQuerycodeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

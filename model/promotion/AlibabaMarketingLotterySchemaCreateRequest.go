@@ -12,26 +12,26 @@ alibaba.marketing.lottery.schema.create
 
 抽奖平台抽奖方案创建接口
 */
-type AlibabaMarketingLotterySchemaCreateRequest struct {
+type AlibabaMarketingLotterySchemaCreateAPIRequest struct {
     model.Params
     // 创建抽奖方案请求对象
     _lotterySchemaCreate   *LotterySchemaCreateDTO
 }
 
-// 初始化AlibabaMarketingLotterySchemaCreateRequest对象
-func NewAlibabaMarketingLotterySchemaCreateRequest() *AlibabaMarketingLotterySchemaCreateRequest{
-    return &AlibabaMarketingLotterySchemaCreateRequest{
+// 初始化AlibabaMarketingLotterySchemaCreateAPIRequest对象
+func NewAlibabaMarketingLotterySchemaCreateRequest() *AlibabaMarketingLotterySchemaCreateAPIRequest{
+    return &AlibabaMarketingLotterySchemaCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMarketingLotterySchemaCreateRequest) GetApiMethodName() string {
+func (r AlibabaMarketingLotterySchemaCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.marketing.lottery.schema.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMarketingLotterySchemaCreateRequest) GetApiParams() url.Values {
+func (r AlibabaMarketingLotterySchemaCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotterySchemaCreateRequest) GetApiParams() url.Values {
 }
 // LotterySchemaCreate Setter
 // 创建抽奖方案请求对象
-func (r *AlibabaMarketingLotterySchemaCreateRequest) SetLotterySchemaCreate(_lotterySchemaCreate *LotterySchemaCreateDTO) error {
+func (r *AlibabaMarketingLotterySchemaCreateAPIRequest) SetLotterySchemaCreate(_lotterySchemaCreate *LotterySchemaCreateDTO) error {
     r._lotterySchemaCreate = _lotterySchemaCreate
     r.Set("lottery_schema_create", _lotterySchemaCreate)
     return nil
 }
 
 // LotterySchemaCreate Getter
-func (r AlibabaMarketingLotterySchemaCreateRequest) GetLotterySchemaCreate() *LotterySchemaCreateDTO {
+func (r AlibabaMarketingLotterySchemaCreateAPIRequest) GetLotterySchemaCreate() *LotterySchemaCreateDTO {
     return r._lotterySchemaCreate
 }

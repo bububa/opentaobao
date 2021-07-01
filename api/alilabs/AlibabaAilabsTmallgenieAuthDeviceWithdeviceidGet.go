@@ -11,7 +11,7 @@ alibaba.ailabs.tmallgenie.auth.device.withdeviceid.get
 
 根据三方ID查询设备注册激活信息
 */
-func AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGet(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIResponse, error) {
+func AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGet(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIResponse, error) {
     var resp alilabs.AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

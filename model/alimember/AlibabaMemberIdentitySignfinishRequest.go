@@ -12,26 +12,26 @@ alibaba.member.identity.signfinish
 
 签约确认
 */
-type AlibabaMemberIdentitySignfinishRequest struct {
+type AlibabaMemberIdentitySignfinishAPIRequest struct {
     model.Params
     // 签约确认信息
     _signFinish   *SignIdentityFinishRequest
 }
 
-// 初始化AlibabaMemberIdentitySignfinishRequest对象
-func NewAlibabaMemberIdentitySignfinishRequest() *AlibabaMemberIdentitySignfinishRequest{
-    return &AlibabaMemberIdentitySignfinishRequest{
+// 初始化AlibabaMemberIdentitySignfinishAPIRequest对象
+func NewAlibabaMemberIdentitySignfinishRequest() *AlibabaMemberIdentitySignfinishAPIRequest{
+    return &AlibabaMemberIdentitySignfinishAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMemberIdentitySignfinishRequest) GetApiMethodName() string {
+func (r AlibabaMemberIdentitySignfinishAPIRequest) GetApiMethodName() string {
     return "alibaba.member.identity.signfinish"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMemberIdentitySignfinishRequest) GetApiParams() url.Values {
+func (r AlibabaMemberIdentitySignfinishAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMemberIdentitySignfinishRequest) GetApiParams() url.Values {
 }
 // SignFinish Setter
 // 签约确认信息
-func (r *AlibabaMemberIdentitySignfinishRequest) SetSignFinish(_signFinish *SignIdentityFinishRequest) error {
+func (r *AlibabaMemberIdentitySignfinishAPIRequest) SetSignFinish(_signFinish *SignIdentityFinishRequest) error {
     r._signFinish = _signFinish
     r.Set("sign_finish", _signFinish)
     return nil
 }
 
 // SignFinish Getter
-func (r AlibabaMemberIdentitySignfinishRequest) GetSignFinish() *SignIdentityFinishRequest {
+func (r AlibabaMemberIdentitySignfinishAPIRequest) GetSignFinish() *SignIdentityFinishRequest {
     return r._signFinish
 }

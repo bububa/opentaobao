@@ -29,5 +29,5 @@ type TaobaoJstAstrolabeStoreinventoryItemupdateResponse struct {
     // 响应信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 错误信息列表
-    ErrorDescriptions   []Error `json:"error_descriptions,omitempty" xml:"error_descriptions>error,omitempty"`
+    ErrorDescriptions   []TaobaoJstAstrolabeStoreinventoryItemupdateError `json:"error_descriptions,omitempty" xml:"error_descriptions>taobao_jst_astrolabe_storeinventory_itemupdate_error,omitempty"`
 }

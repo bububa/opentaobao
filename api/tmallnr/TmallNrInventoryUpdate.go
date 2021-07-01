@@ -11,7 +11,7 @@ tmall.nr.inventory.update
 
 用于商家每日同步更新门店库存
 */
-func TmallNrInventoryUpdate(clt *core.SDKClient, req *tmallnr.TmallNrInventoryUpdateRequest, session string) (*tmallnr.TmallNrInventoryUpdateAPIResponse, error) {
+func TmallNrInventoryUpdate(clt *core.SDKClient, req *tmallnr.TmallNrInventoryUpdateAPIRequest, session string) (*tmallnr.TmallNrInventoryUpdateAPIResponse, error) {
     var resp tmallnr.TmallNrInventoryUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

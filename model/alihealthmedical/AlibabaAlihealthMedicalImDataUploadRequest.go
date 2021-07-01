@@ -12,7 +12,7 @@ alibaba.alihealth.medical.im.data.upload
 
 三方IM图片音频消息上传
 */
-type AlibabaAlihealthMedicalImDataUploadRequest struct {
+type AlibabaAlihealthMedicalImDataUploadAPIRequest struct {
     model.Params
     // request
     _uploadDataRequest   *UploadDataRequest
@@ -20,20 +20,20 @@ type AlibabaAlihealthMedicalImDataUploadRequest struct {
     _file   *model.File
 }
 
-// 初始化AlibabaAlihealthMedicalImDataUploadRequest对象
-func NewAlibabaAlihealthMedicalImDataUploadRequest() *AlibabaAlihealthMedicalImDataUploadRequest{
-    return &AlibabaAlihealthMedicalImDataUploadRequest{
+// 初始化AlibabaAlihealthMedicalImDataUploadAPIRequest对象
+func NewAlibabaAlihealthMedicalImDataUploadRequest() *AlibabaAlihealthMedicalImDataUploadAPIRequest{
+    return &AlibabaAlihealthMedicalImDataUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalImDataUploadRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalImDataUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medical.im.data.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalImDataUploadRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMedicalImDataUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthMedicalImDataUploadRequest) GetApiParams() url.Values {
 }
 // UploadDataRequest Setter
 // request
-func (r *AlibabaAlihealthMedicalImDataUploadRequest) SetUploadDataRequest(_uploadDataRequest *UploadDataRequest) error {
+func (r *AlibabaAlihealthMedicalImDataUploadAPIRequest) SetUploadDataRequest(_uploadDataRequest *UploadDataRequest) error {
     r._uploadDataRequest = _uploadDataRequest
     r.Set("upload_data_request", _uploadDataRequest)
     return nil
 }
 
 // UploadDataRequest Getter
-func (r AlibabaAlihealthMedicalImDataUploadRequest) GetUploadDataRequest() *UploadDataRequest {
+func (r AlibabaAlihealthMedicalImDataUploadAPIRequest) GetUploadDataRequest() *UploadDataRequest {
     return r._uploadDataRequest
 }
 // File Setter
 // 文件字节流
-func (r *AlibabaAlihealthMedicalImDataUploadRequest) SetFile(_file *model.File) error {
+func (r *AlibabaAlihealthMedicalImDataUploadAPIRequest) SetFile(_file *model.File) error {
     r._file = _file
     r.Set("file", _file)
     return nil
 }
 
 // File Getter
-func (r AlibabaAlihealthMedicalImDataUploadRequest) GetFile() *model.File {
+func (r AlibabaAlihealthMedicalImDataUploadAPIRequest) GetFile() *model.File {
     return r._file
 }

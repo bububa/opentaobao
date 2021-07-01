@@ -11,7 +11,7 @@ alibaba.ele.fengniao.carrierdriver.location
 
 查询骑手当前位置
 */
-func AlibabaEleFengniaoCarrierdriverLocation(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoCarrierdriverLocationRequest, session string) (*logistic.AlibabaEleFengniaoCarrierdriverLocationAPIResponse, error) {
+func AlibabaEleFengniaoCarrierdriverLocation(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoCarrierdriverLocationAPIRequest, session string) (*logistic.AlibabaEleFengniaoCarrierdriverLocationAPIResponse, error) {
     var resp logistic.AlibabaEleFengniaoCarrierdriverLocationAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

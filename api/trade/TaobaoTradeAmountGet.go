@@ -13,7 +13,7 @@ taobao.trade.amount.get
 1. 只供卖家使用，买家不可使用
 2. 可查询所有的状态的交易，但不同状态时交易的相关数据可能会有不同
 */
-func TaobaoTradeAmountGet(clt *core.SDKClient, req *trade.TaobaoTradeAmountGetRequest, session string) (*trade.TaobaoTradeAmountGetAPIResponse, error) {
+func TaobaoTradeAmountGet(clt *core.SDKClient, req *trade.TaobaoTradeAmountGetAPIRequest, session string) (*trade.TaobaoTradeAmountGetAPIResponse, error) {
     var resp trade.TaobaoTradeAmountGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

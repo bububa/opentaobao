@@ -12,26 +12,26 @@ tmall.popupstore.item.discount.price
 
 商品优惠价格查询
 */
-type TmallPopupstoreItemDiscountPriceRequest struct {
+type TmallPopupstoreItemDiscountPriceAPIRequest struct {
     model.Params
     // 商品id列表
     _itemIds   []int64
 }
 
-// 初始化TmallPopupstoreItemDiscountPriceRequest对象
-func NewTmallPopupstoreItemDiscountPriceRequest() *TmallPopupstoreItemDiscountPriceRequest{
-    return &TmallPopupstoreItemDiscountPriceRequest{
+// 初始化TmallPopupstoreItemDiscountPriceAPIRequest对象
+func NewTmallPopupstoreItemDiscountPriceRequest() *TmallPopupstoreItemDiscountPriceAPIRequest{
+    return &TmallPopupstoreItemDiscountPriceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallPopupstoreItemDiscountPriceRequest) GetApiMethodName() string {
+func (r TmallPopupstoreItemDiscountPriceAPIRequest) GetApiMethodName() string {
     return "tmall.popupstore.item.discount.price"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallPopupstoreItemDiscountPriceRequest) GetApiParams() url.Values {
+func (r TmallPopupstoreItemDiscountPriceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallPopupstoreItemDiscountPriceRequest) GetApiParams() url.Values {
 }
 // ItemIds Setter
 // 商品id列表
-func (r *TmallPopupstoreItemDiscountPriceRequest) SetItemIds(_itemIds []int64) error {
+func (r *TmallPopupstoreItemDiscountPriceAPIRequest) SetItemIds(_itemIds []int64) error {
     r._itemIds = _itemIds
     r.Set("item_ids", _itemIds)
     return nil
 }
 
 // ItemIds Getter
-func (r TmallPopupstoreItemDiscountPriceRequest) GetItemIds() []int64 {
+func (r TmallPopupstoreItemDiscountPriceAPIRequest) GetItemIds() []int64 {
     return r._itemIds
 }

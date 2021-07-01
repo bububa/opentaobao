@@ -12,24 +12,24 @@ alibaba.interact.onecode.issue
 
 手淘开放鉴权接口，仅用于tida接口鉴权，无输入输出。
 */
-type AlibabaInteractOnecodeIssueRequest struct {
+type AlibabaInteractOnecodeIssueAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractOnecodeIssueRequest对象
-func NewAlibabaInteractOnecodeIssueRequest() *AlibabaInteractOnecodeIssueRequest{
-    return &AlibabaInteractOnecodeIssueRequest{
+// 初始化AlibabaInteractOnecodeIssueAPIRequest对象
+func NewAlibabaInteractOnecodeIssueRequest() *AlibabaInteractOnecodeIssueAPIRequest{
+    return &AlibabaInteractOnecodeIssueAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractOnecodeIssueRequest) GetApiMethodName() string {
+func (r AlibabaInteractOnecodeIssueAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.onecode.issue"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractOnecodeIssueRequest) GetApiParams() url.Values {
+func (r AlibabaInteractOnecodeIssueAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

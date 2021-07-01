@@ -12,26 +12,26 @@ alibaba.damai.mev.open.pushproject
 
 pushProject
 */
-type AlibabaDamaiMevOpenPushprojectRequest struct {
+type AlibabaDamaiMevOpenPushprojectAPIRequest struct {
     model.Params
     // 入参pushProjectParam
     _pushProjectParam   *ThirdProjectPushOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenPushprojectRequest对象
-func NewAlibabaDamaiMevOpenPushprojectRequest() *AlibabaDamaiMevOpenPushprojectRequest{
-    return &AlibabaDamaiMevOpenPushprojectRequest{
+// 初始化AlibabaDamaiMevOpenPushprojectAPIRequest对象
+func NewAlibabaDamaiMevOpenPushprojectRequest() *AlibabaDamaiMevOpenPushprojectAPIRequest{
+    return &AlibabaDamaiMevOpenPushprojectAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenPushprojectRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenPushprojectAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.pushproject"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenPushprojectRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenPushprojectAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushprojectRequest) GetApiParams() url.Values {
 }
 // PushProjectParam Setter
 // 入参pushProjectParam
-func (r *AlibabaDamaiMevOpenPushprojectRequest) SetPushProjectParam(_pushProjectParam *ThirdProjectPushOpenParam) error {
+func (r *AlibabaDamaiMevOpenPushprojectAPIRequest) SetPushProjectParam(_pushProjectParam *ThirdProjectPushOpenParam) error {
     r._pushProjectParam = _pushProjectParam
     r.Set("push_project_param", _pushProjectParam)
     return nil
 }
 
 // PushProjectParam Getter
-func (r AlibabaDamaiMevOpenPushprojectRequest) GetPushProjectParam() *ThirdProjectPushOpenParam {
+func (r AlibabaDamaiMevOpenPushprojectAPIRequest) GetPushProjectParam() *ThirdProjectPushOpenParam {
     return r._pushProjectParam
 }

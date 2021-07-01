@@ -11,7 +11,7 @@ alibaba.alihouse.newhome.region.sync
 
 城区数据同步
 */
-func AlibabaAlihouseNewhomeRegionSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeRegionSyncRequest, session string) (*alihouse.AlibabaAlihouseNewhomeRegionSyncAPIResponse, error) {
+func AlibabaAlihouseNewhomeRegionSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeRegionSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeRegionSyncAPIResponse, error) {
     var resp alihouse.AlibabaAlihouseNewhomeRegionSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

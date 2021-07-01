@@ -12,26 +12,26 @@ alibaba.ele.fengniao.user.time.query
 
 蜂鸟询用户T
 */
-type AlibabaEleFengniaoUserTimeQueryRequest struct {
+type AlibabaEleFengniaoUserTimeQueryAPIRequest struct {
     model.Params
     // 询T入参
     _param   *PredictDeliveryTimeParam
 }
 
-// 初始化AlibabaEleFengniaoUserTimeQueryRequest对象
-func NewAlibabaEleFengniaoUserTimeQueryRequest() *AlibabaEleFengniaoUserTimeQueryRequest{
-    return &AlibabaEleFengniaoUserTimeQueryRequest{
+// 初始化AlibabaEleFengniaoUserTimeQueryAPIRequest对象
+func NewAlibabaEleFengniaoUserTimeQueryRequest() *AlibabaEleFengniaoUserTimeQueryAPIRequest{
+    return &AlibabaEleFengniaoUserTimeQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleFengniaoUserTimeQueryRequest) GetApiMethodName() string {
+func (r AlibabaEleFengniaoUserTimeQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.fengniao.user.time.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleFengniaoUserTimeQueryRequest) GetApiParams() url.Values {
+func (r AlibabaEleFengniaoUserTimeQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoUserTimeQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 询T入参
-func (r *AlibabaEleFengniaoUserTimeQueryRequest) SetParam(_param *PredictDeliveryTimeParam) error {
+func (r *AlibabaEleFengniaoUserTimeQueryAPIRequest) SetParam(_param *PredictDeliveryTimeParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaEleFengniaoUserTimeQueryRequest) GetParam() *PredictDeliveryTimeParam {
+func (r AlibabaEleFengniaoUserTimeQueryAPIRequest) GetParam() *PredictDeliveryTimeParam {
     return r._param
 }

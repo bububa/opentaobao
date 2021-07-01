@@ -11,7 +11,7 @@ taobao.tmc.messages.produce
 
 批量发送消息
 */
-func TaobaoTmcMessagesProduce(clt *core.SDKClient, req *tmc.TaobaoTmcMessagesProduceRequest, session string) (*tmc.TaobaoTmcMessagesProduceAPIResponse, error) {
+func TaobaoTmcMessagesProduce(clt *core.SDKClient, req *tmc.TaobaoTmcMessagesProduceAPIRequest, session string) (*tmc.TaobaoTmcMessagesProduceAPIResponse, error) {
     var resp tmc.TaobaoTmcMessagesProduceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

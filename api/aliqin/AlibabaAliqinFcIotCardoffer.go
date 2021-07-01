@@ -11,7 +11,7 @@ alibaba.aliqin.fc.iot.cardoffer
 
 查询物联网卡上订购的offer
 */
-func AlibabaAliqinFcIotCardoffer(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotCardofferRequest, session string) (*aliqin.AlibabaAliqinFcIotCardofferAPIResponse, error) {
+func AlibabaAliqinFcIotCardoffer(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotCardofferAPIRequest, session string) (*aliqin.AlibabaAliqinFcIotCardofferAPIResponse, error) {
     var resp aliqin.AlibabaAliqinFcIotCardofferAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

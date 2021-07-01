@@ -12,7 +12,7 @@ alibaba.einvoice.qrcode.create
 
 扫码开票功能中的二维码生成接口，pos机等发起请求生成二维码
 */
-type AlibabaEinvoiceQrcodeCreateRequest struct {
+type AlibabaEinvoiceQrcodeCreateAPIRequest struct {
     model.Params
     // 发票商品明细
     _invoiceItems   []BillItemDO
@@ -36,20 +36,20 @@ type AlibabaEinvoiceQrcodeCreateRequest struct {
     _platform   string
 }
 
-// 初始化AlibabaEinvoiceQrcodeCreateRequest对象
-func NewAlibabaEinvoiceQrcodeCreateRequest() *AlibabaEinvoiceQrcodeCreateRequest{
-    return &AlibabaEinvoiceQrcodeCreateRequest{
+// 初始化AlibabaEinvoiceQrcodeCreateAPIRequest对象
+func NewAlibabaEinvoiceQrcodeCreateRequest() *AlibabaEinvoiceQrcodeCreateAPIRequest{
+    return &AlibabaEinvoiceQrcodeCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.einvoice.qrcode.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetApiParams() url.Values {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -58,121 +58,121 @@ func (r AlibabaEinvoiceQrcodeCreateRequest) GetApiParams() url.Values {
 }
 // InvoiceItems Setter
 // 发票商品明细
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetInvoiceItems(_invoiceItems []BillItemDO) error {
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetInvoiceItems(_invoiceItems []BillItemDO) error {
     r._invoiceItems = _invoiceItems
     r.Set("invoice_items", _invoiceItems)
     return nil
 }
 
 // InvoiceItems Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetInvoiceItems() []BillItemDO {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetInvoiceItems() []BillItemDO {
     return r._invoiceItems
 }
 // PayeeRegisterNo Setter
 // 收款方税务登记证号
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
     r._payeeRegisterNo = _payeeRegisterNo
     r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetPayeeRegisterNo() string {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetPayeeRegisterNo() string {
     return r._payeeRegisterNo
 }
 // OrderId Setter
 // 开票的订单号，同结算单订单号
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetOrderId(_orderId string) error {
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetOrderId(_orderId string) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetOrderId() string {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetOrderId() string {
     return r._orderId
 }
 // SumPrice Setter
 // 开票金额
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetSumPrice(_sumPrice string) error {
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetSumPrice(_sumPrice string) error {
     r._sumPrice = _sumPrice
     r.Set("sum_price", _sumPrice)
     return nil
 }
 
 // SumPrice Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetSumPrice() string {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetSumPrice() string {
     return r._sumPrice
 }
 // SourceId Setter
 // 请求方唯一标识ID，例如POS机编码
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetSourceId(_sourceId string) error {
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetSourceId(_sourceId string) error {
     r._sourceId = _sourceId
     r.Set("source_id", _sourceId)
     return nil
 }
 
 // SourceId Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetSourceId() string {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetSourceId() string {
     return r._sourceId
 }
 // QrLogo Setter
 // 二维码图片中间的logo
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetQrLogo(_qrLogo string) error {
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetQrLogo(_qrLogo string) error {
     r._qrLogo = _qrLogo
     r.Set("qr_logo", _qrLogo)
     return nil
 }
 
 // QrLogo Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetQrLogo() string {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetQrLogo() string {
     return r._qrLogo
 }
 // Width Setter
 // 二维码图片宽度，默认=450
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetWidth(_width int64) error {
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetWidth(_width int64) error {
     r._width = _width
     r.Set("width", _width)
     return nil
 }
 
 // Width Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetWidth() int64 {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetWidth() int64 {
     return r._width
 }
 // Height Setter
 // 二维码图片高度，默认=450
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetHeight(_height int64) error {
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetHeight(_height int64) error {
     r._height = _height
     r.Set("height", _height)
     return nil
 }
 
 // Height Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetHeight() int64 {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetHeight() int64 {
     return r._height
 }
 // QrType Setter
 // 二维码返回类型：1=二维码背后的URL，2=二维码图片CDN URL，3=二维码二进制数据流
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetQrType(_qrType int64) error {
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetQrType(_qrType int64) error {
     r._qrType = _qrType
     r.Set("qr_type", _qrType)
     return nil
 }
 
 // QrType Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetQrType() int64 {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetQrType() int64 {
     return r._qrType
 }
 // Platform Setter
 // 请求方ERP系统平台，同结算单同步的platform，不填默认=platform
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetPlatform(_platform string) error {
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetPlatform(_platform string) error {
     r._platform = _platform
     r.Set("platform", _platform)
     return nil
 }
 
 // Platform Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetPlatform() string {
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetPlatform() string {
     return r._platform
 }

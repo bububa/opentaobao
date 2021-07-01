@@ -11,7 +11,7 @@ alibaba.scbp.effect.keyword.single.get
 
 单个关键词效果报表
 */
-func AlibabaScbpEffectKeywordSingleGet(clt *core.SDKClient, req *scbp.AlibabaScbpEffectKeywordSingleGetRequest, session string) (*scbp.AlibabaScbpEffectKeywordSingleGetAPIResponse, error) {
+func AlibabaScbpEffectKeywordSingleGet(clt *core.SDKClient, req *scbp.AlibabaScbpEffectKeywordSingleGetAPIRequest, session string) (*scbp.AlibabaScbpEffectKeywordSingleGetAPIResponse, error) {
     var resp scbp.AlibabaScbpEffectKeywordSingleGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

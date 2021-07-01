@@ -12,26 +12,26 @@ alibaba.lst.trade.seller.order.detail.query
 
 订单详情查看(卖家视角)
 */
-type AlibabaLstTradeSellerOrderDetailQueryRequest struct {
+type AlibabaLstTradeSellerOrderDetailQueryAPIRequest struct {
     model.Params
     // 入参
     _param   *LstTradeGetSellerOrderListParam
 }
 
-// 初始化AlibabaLstTradeSellerOrderDetailQueryRequest对象
-func NewAlibabaLstTradeSellerOrderDetailQueryRequest() *AlibabaLstTradeSellerOrderDetailQueryRequest{
-    return &AlibabaLstTradeSellerOrderDetailQueryRequest{
+// 初始化AlibabaLstTradeSellerOrderDetailQueryAPIRequest对象
+func NewAlibabaLstTradeSellerOrderDetailQueryRequest() *AlibabaLstTradeSellerOrderDetailQueryAPIRequest{
+    return &AlibabaLstTradeSellerOrderDetailQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstTradeSellerOrderDetailQueryRequest) GetApiMethodName() string {
+func (r AlibabaLstTradeSellerOrderDetailQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.trade.seller.order.detail.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstTradeSellerOrderDetailQueryRequest) GetApiParams() url.Values {
+func (r AlibabaLstTradeSellerOrderDetailQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstTradeSellerOrderDetailQueryRequest) GetApiParams() url.Values 
 }
 // Param Setter
 // 入参
-func (r *AlibabaLstTradeSellerOrderDetailQueryRequest) SetParam(_param *LstTradeGetSellerOrderListParam) error {
+func (r *AlibabaLstTradeSellerOrderDetailQueryAPIRequest) SetParam(_param *LstTradeGetSellerOrderListParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaLstTradeSellerOrderDetailQueryRequest) GetParam() *LstTradeGetSellerOrderListParam {
+func (r AlibabaLstTradeSellerOrderDetailQueryAPIRequest) GetParam() *LstTradeGetSellerOrderListParam {
     return r._param
 }

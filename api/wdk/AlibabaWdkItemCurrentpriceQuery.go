@@ -11,7 +11,7 @@ alibaba.wdk.item.currentprice.query
 
 通过渠道店id/sku编码/渠道查询商品当前价格，一次请求商品数量<=20,返回结果key为skuCode
 */
-func AlibabaWdkItemCurrentpriceQuery(clt *core.SDKClient, req *wdk.AlibabaWdkItemCurrentpriceQueryRequest, session string) (*wdk.AlibabaWdkItemCurrentpriceQueryAPIResponse, error) {
+func AlibabaWdkItemCurrentpriceQuery(clt *core.SDKClient, req *wdk.AlibabaWdkItemCurrentpriceQueryAPIRequest, session string) (*wdk.AlibabaWdkItemCurrentpriceQueryAPIResponse, error) {
     var resp wdk.AlibabaWdkItemCurrentpriceQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.alitrip.travel.normalvisa.getdetail
 
 获取单笔签证的详细记录
 */
-type TaobaoAlitripTravelNormalvisaGetdetailRequest struct {
+type TaobaoAlitripTravelNormalvisaGetdetailAPIRequest struct {
     model.Params
     // 订单id
     _bizOrderId   int64
 }
 
-// 初始化TaobaoAlitripTravelNormalvisaGetdetailRequest对象
-func NewTaobaoAlitripTravelNormalvisaGetdetailRequest() *TaobaoAlitripTravelNormalvisaGetdetailRequest{
-    return &TaobaoAlitripTravelNormalvisaGetdetailRequest{
+// 初始化TaobaoAlitripTravelNormalvisaGetdetailAPIRequest对象
+func NewTaobaoAlitripTravelNormalvisaGetdetailRequest() *TaobaoAlitripTravelNormalvisaGetdetailAPIRequest{
+    return &TaobaoAlitripTravelNormalvisaGetdetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripTravelNormalvisaGetdetailRequest) GetApiMethodName() string {
+func (r TaobaoAlitripTravelNormalvisaGetdetailAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.travel.normalvisa.getdetail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelNormalvisaGetdetailRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripTravelNormalvisaGetdetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripTravelNormalvisaGetdetailRequest) GetApiParams() url.Values
 }
 // BizOrderId Setter
 // 订单id
-func (r *TaobaoAlitripTravelNormalvisaGetdetailRequest) SetBizOrderId(_bizOrderId int64) error {
+func (r *TaobaoAlitripTravelNormalvisaGetdetailAPIRequest) SetBizOrderId(_bizOrderId int64) error {
     r._bizOrderId = _bizOrderId
     r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
-func (r TaobaoAlitripTravelNormalvisaGetdetailRequest) GetBizOrderId() int64 {
+func (r TaobaoAlitripTravelNormalvisaGetdetailAPIRequest) GetBizOrderId() int64 {
     return r._bizOrderId
 }

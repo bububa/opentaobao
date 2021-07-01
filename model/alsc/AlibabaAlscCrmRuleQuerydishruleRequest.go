@@ -12,26 +12,26 @@ alibaba.alsc.crm.rule.querydishrule
 
 查询品牌下的入会菜品规则
 */
-type AlibabaAlscCrmRuleQuerydishruleRequest struct {
+type AlibabaAlscCrmRuleQuerydishruleAPIRequest struct {
     model.Params
     // 系统自动生成
     _paramPlanRuleQueryOpenReq   *PlanRuleQueryOpenReq
 }
 
-// 初始化AlibabaAlscCrmRuleQuerydishruleRequest对象
-func NewAlibabaAlscCrmRuleQuerydishruleRequest() *AlibabaAlscCrmRuleQuerydishruleRequest{
-    return &AlibabaAlscCrmRuleQuerydishruleRequest{
+// 初始化AlibabaAlscCrmRuleQuerydishruleAPIRequest对象
+func NewAlibabaAlscCrmRuleQuerydishruleRequest() *AlibabaAlscCrmRuleQuerydishruleAPIRequest{
+    return &AlibabaAlscCrmRuleQuerydishruleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRuleQuerydishruleRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRuleQuerydishruleAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.rule.querydishrule"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRuleQuerydishruleRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRuleQuerydishruleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRuleQuerydishruleRequest) GetApiParams() url.Values {
 }
 // ParamPlanRuleQueryOpenReq Setter
 // 系统自动生成
-func (r *AlibabaAlscCrmRuleQuerydishruleRequest) SetParamPlanRuleQueryOpenReq(_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
+func (r *AlibabaAlscCrmRuleQuerydishruleAPIRequest) SetParamPlanRuleQueryOpenReq(_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
     r._paramPlanRuleQueryOpenReq = _paramPlanRuleQueryOpenReq
     r.Set("param_plan_rule_query_open_req", _paramPlanRuleQueryOpenReq)
     return nil
 }
 
 // ParamPlanRuleQueryOpenReq Getter
-func (r AlibabaAlscCrmRuleQuerydishruleRequest) GetParamPlanRuleQueryOpenReq() *PlanRuleQueryOpenReq {
+func (r AlibabaAlscCrmRuleQuerydishruleAPIRequest) GetParamPlanRuleQueryOpenReq() *PlanRuleQueryOpenReq {
     return r._paramPlanRuleQueryOpenReq
 }

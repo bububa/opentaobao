@@ -11,7 +11,7 @@ taobao.ailab.aicloud.top.device.control.volume
 
 设备音量
 */
-func TaobaoAilabAicloudTopDeviceControlVolume(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlVolumeRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse, error) {
+func TaobaoAilabAicloudTopDeviceControlVolume(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

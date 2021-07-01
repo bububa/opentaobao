@@ -12,26 +12,26 @@ alibaba.htorder.hotel.sync.config
 
 同步配置信息
 */
-type AlibabaHtorderHotelSyncConfigRequest struct {
+type AlibabaHtorderHotelSyncConfigAPIRequest struct {
     model.Params
     // 配置信息
     _dataEntity   *HotelMessageConfigDTO
 }
 
-// 初始化AlibabaHtorderHotelSyncConfigRequest对象
-func NewAlibabaHtorderHotelSyncConfigRequest() *AlibabaHtorderHotelSyncConfigRequest{
-    return &AlibabaHtorderHotelSyncConfigRequest{
+// 初始化AlibabaHtorderHotelSyncConfigAPIRequest对象
+func NewAlibabaHtorderHotelSyncConfigRequest() *AlibabaHtorderHotelSyncConfigAPIRequest{
+    return &AlibabaHtorderHotelSyncConfigAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHtorderHotelSyncConfigRequest) GetApiMethodName() string {
+func (r AlibabaHtorderHotelSyncConfigAPIRequest) GetApiMethodName() string {
     return "alibaba.htorder.hotel.sync.config"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHtorderHotelSyncConfigRequest) GetApiParams() url.Values {
+func (r AlibabaHtorderHotelSyncConfigAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaHtorderHotelSyncConfigRequest) GetApiParams() url.Values {
 }
 // DataEntity Setter
 // 配置信息
-func (r *AlibabaHtorderHotelSyncConfigRequest) SetDataEntity(_dataEntity *HotelMessageConfigDTO) error {
+func (r *AlibabaHtorderHotelSyncConfigAPIRequest) SetDataEntity(_dataEntity *HotelMessageConfigDTO) error {
     r._dataEntity = _dataEntity
     r.Set("data_entity", _dataEntity)
     return nil
 }
 
 // DataEntity Getter
-func (r AlibabaHtorderHotelSyncConfigRequest) GetDataEntity() *HotelMessageConfigDTO {
+func (r AlibabaHtorderHotelSyncConfigAPIRequest) GetDataEntity() *HotelMessageConfigDTO {
     return r._dataEntity
 }

@@ -12,26 +12,26 @@ alibaba.idle.isv.item.edit
 
 服务商ISV闲鱼商品编辑操作
 */
-type AlibabaIdleIsvItemEditRequest struct {
+type AlibabaIdleIsvItemEditAPIRequest struct {
     model.Params
     // 商品数据参数
     _param   *IdleItemApiDO
 }
 
-// 初始化AlibabaIdleIsvItemEditRequest对象
-func NewAlibabaIdleIsvItemEditRequest() *AlibabaIdleIsvItemEditRequest{
-    return &AlibabaIdleIsvItemEditRequest{
+// 初始化AlibabaIdleIsvItemEditAPIRequest对象
+func NewAlibabaIdleIsvItemEditRequest() *AlibabaIdleIsvItemEditAPIRequest{
+    return &AlibabaIdleIsvItemEditAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleIsvItemEditRequest) GetApiMethodName() string {
+func (r AlibabaIdleIsvItemEditAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.isv.item.edit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvItemEditRequest) GetApiParams() url.Values {
+func (r AlibabaIdleIsvItemEditAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvItemEditRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 商品数据参数
-func (r *AlibabaIdleIsvItemEditRequest) SetParam(_param *IdleItemApiDO) error {
+func (r *AlibabaIdleIsvItemEditAPIRequest) SetParam(_param *IdleItemApiDO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaIdleIsvItemEditRequest) GetParam() *IdleItemApiDO {
+func (r AlibabaIdleIsvItemEditAPIRequest) GetParam() *IdleItemApiDO {
     return r._param
 }

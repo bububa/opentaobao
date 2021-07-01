@@ -11,7 +11,7 @@ alibaba.idle.appraise.order.perform
 
 闲鱼验货担保业务中,外部服务商作为鉴定方 需要驱动交易节点变化
 */
-func AlibabaIdleAppraiseOrderPerform(clt *core.SDKClient, req *idle.AlibabaIdleAppraiseOrderPerformRequest, session string) (*idle.AlibabaIdleAppraiseOrderPerformAPIResponse, error) {
+func AlibabaIdleAppraiseOrderPerform(clt *core.SDKClient, req *idle.AlibabaIdleAppraiseOrderPerformAPIRequest, session string) (*idle.AlibabaIdleAppraiseOrderPerformAPIResponse, error) {
     var resp idle.AlibabaIdleAppraiseOrderPerformAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.logistics.address.reachablebatch.get
 
 批量判定服务是否可达
 */
-func TaobaoLogisticsAddressReachablebatchGet(clt *core.SDKClient, req *logistic.TaobaoLogisticsAddressReachablebatchGetRequest, session string) (*logistic.TaobaoLogisticsAddressReachablebatchGetAPIResponse, error) {
+func TaobaoLogisticsAddressReachablebatchGet(clt *core.SDKClient, req *logistic.TaobaoLogisticsAddressReachablebatchGetAPIRequest, session string) (*logistic.TaobaoLogisticsAddressReachablebatchGetAPIResponse, error) {
     var resp logistic.TaobaoLogisticsAddressReachablebatchGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.alihealth.drugcode.applycert
 
 申请证书 为对接方(当前是药厂和中心化系统)
 */
-func AlibabaAlihealthDrugcodeApplycert(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeApplycertRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeApplycertAPIResponse, error) {
+func AlibabaAlihealthDrugcodeApplycert(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeApplycertAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeApplycertAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugcodeApplycertAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

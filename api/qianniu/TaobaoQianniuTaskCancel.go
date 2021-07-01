@@ -11,7 +11,7 @@ taobao.qianniu.task.cancel
 
 由任务发起者调用
 */
-func TaobaoQianniuTaskCancel(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskCancelRequest, session string) (*qianniu.TaobaoQianniuTaskCancelAPIResponse, error) {
+func TaobaoQianniuTaskCancel(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskCancelAPIRequest, session string) (*qianniu.TaobaoQianniuTaskCancelAPIResponse, error) {
     var resp qianniu.TaobaoQianniuTaskCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

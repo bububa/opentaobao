@@ -11,7 +11,7 @@ alibaba.alihouse.newhome.project.presalepermit.submit
 
 提交楼盘预售证信息
 */
-func AlibabaAlihouseNewhomeProjectPresalepermitSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIResponse, error) {
+func AlibabaAlihouseNewhomeProjectPresalepermitSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIResponse, error) {
     var resp alihouse.AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

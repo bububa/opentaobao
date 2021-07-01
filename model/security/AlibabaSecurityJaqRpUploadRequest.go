@@ -12,7 +12,7 @@ alibaba.security.jaq.rp.upload
 
 聚安全实人认证上传认证信息
 */
-type AlibabaSecurityJaqRpUploadRequest struct {
+type AlibabaSecurityJaqRpUploadAPIRequest struct {
     model.Params
     // 认证会话token
     _verifyToken   string
@@ -20,20 +20,20 @@ type AlibabaSecurityJaqRpUploadRequest struct {
     _elements   []Element
 }
 
-// 初始化AlibabaSecurityJaqRpUploadRequest对象
-func NewAlibabaSecurityJaqRpUploadRequest() *AlibabaSecurityJaqRpUploadRequest{
-    return &AlibabaSecurityJaqRpUploadRequest{
+// 初始化AlibabaSecurityJaqRpUploadAPIRequest对象
+func NewAlibabaSecurityJaqRpUploadRequest() *AlibabaSecurityJaqRpUploadAPIRequest{
+    return &AlibabaSecurityJaqRpUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqRpUploadRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqRpUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.rp.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqRpUploadRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqRpUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaSecurityJaqRpUploadRequest) GetApiParams() url.Values {
 }
 // VerifyToken Setter
 // 认证会话token
-func (r *AlibabaSecurityJaqRpUploadRequest) SetVerifyToken(_verifyToken string) error {
+func (r *AlibabaSecurityJaqRpUploadAPIRequest) SetVerifyToken(_verifyToken string) error {
     r._verifyToken = _verifyToken
     r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
-func (r AlibabaSecurityJaqRpUploadRequest) GetVerifyToken() string {
+func (r AlibabaSecurityJaqRpUploadAPIRequest) GetVerifyToken() string {
     return r._verifyToken
 }
 // Elements Setter
 // 此次需要上传的认证信息的列表
-func (r *AlibabaSecurityJaqRpUploadRequest) SetElements(_elements []Element) error {
+func (r *AlibabaSecurityJaqRpUploadAPIRequest) SetElements(_elements []Element) error {
     r._elements = _elements
     r.Set("elements", _elements)
     return nil
 }
 
 // Elements Getter
-func (r AlibabaSecurityJaqRpUploadRequest) GetElements() []Element {
+func (r AlibabaSecurityJaqRpUploadAPIRequest) GetElements() []Element {
     return r._elements
 }

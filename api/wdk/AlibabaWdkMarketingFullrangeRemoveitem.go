@@ -11,7 +11,7 @@ alibaba.wdk.marketing.fullrange.removeitem
 
 删除换购商品
 */
-func AlibabaWdkMarketingFullrangeRemoveitem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeRemoveitemRequest, session string) (*wdk.AlibabaWdkMarketingFullrangeRemoveitemAPIResponse, error) {
+func AlibabaWdkMarketingFullrangeRemoveitem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeRemoveitemAPIRequest, session string) (*wdk.AlibabaWdkMarketingFullrangeRemoveitemAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingFullrangeRemoveitemAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

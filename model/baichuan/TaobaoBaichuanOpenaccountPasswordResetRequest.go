@@ -12,26 +12,26 @@ taobao.baichuan.openaccount.password.reset
 
 百川找回密码
 */
-type TaobaoBaichuanOpenaccountPasswordResetRequest struct {
+type TaobaoBaichuanOpenaccountPasswordResetAPIRequest struct {
     model.Params
     // name
     _name   string
 }
 
-// 初始化TaobaoBaichuanOpenaccountPasswordResetRequest对象
-func NewTaobaoBaichuanOpenaccountPasswordResetRequest() *TaobaoBaichuanOpenaccountPasswordResetRequest{
-    return &TaobaoBaichuanOpenaccountPasswordResetRequest{
+// 初始化TaobaoBaichuanOpenaccountPasswordResetAPIRequest对象
+func NewTaobaoBaichuanOpenaccountPasswordResetRequest() *TaobaoBaichuanOpenaccountPasswordResetAPIRequest{
+    return &TaobaoBaichuanOpenaccountPasswordResetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanOpenaccountPasswordResetRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanOpenaccountPasswordResetAPIRequest) GetApiMethodName() string {
     return "taobao.baichuan.openaccount.password.reset"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanOpenaccountPasswordResetRequest) GetApiParams() url.Values {
+func (r TaobaoBaichuanOpenaccountPasswordResetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanOpenaccountPasswordResetRequest) GetApiParams() url.Values
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanOpenaccountPasswordResetRequest) SetName(_name string) error {
+func (r *TaobaoBaichuanOpenaccountPasswordResetAPIRequest) SetName(_name string) error {
     r._name = _name
     r.Set("name", _name)
     return nil
 }
 
 // Name Getter
-func (r TaobaoBaichuanOpenaccountPasswordResetRequest) GetName() string {
+func (r TaobaoBaichuanOpenaccountPasswordResetAPIRequest) GetName() string {
     return r._name
 }

@@ -12,7 +12,7 @@ alibaba.ele.fengniao.carrierdriver.location
 
 查询骑手当前位置
 */
-type AlibabaEleFengniaoCarrierdriverLocationRequest struct {
+type AlibabaEleFengniaoCarrierdriverLocationAPIRequest struct {
     model.Params
     // appid
     _appId   string
@@ -20,20 +20,20 @@ type AlibabaEleFengniaoCarrierdriverLocationRequest struct {
     _partnerOrderCode   string
 }
 
-// 初始化AlibabaEleFengniaoCarrierdriverLocationRequest对象
-func NewAlibabaEleFengniaoCarrierdriverLocationRequest() *AlibabaEleFengniaoCarrierdriverLocationRequest{
-    return &AlibabaEleFengniaoCarrierdriverLocationRequest{
+// 初始化AlibabaEleFengniaoCarrierdriverLocationAPIRequest对象
+func NewAlibabaEleFengniaoCarrierdriverLocationRequest() *AlibabaEleFengniaoCarrierdriverLocationAPIRequest{
+    return &AlibabaEleFengniaoCarrierdriverLocationAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleFengniaoCarrierdriverLocationRequest) GetApiMethodName() string {
+func (r AlibabaEleFengniaoCarrierdriverLocationAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.fengniao.carrierdriver.location"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleFengniaoCarrierdriverLocationRequest) GetApiParams() url.Values {
+func (r AlibabaEleFengniaoCarrierdriverLocationAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaEleFengniaoCarrierdriverLocationRequest) GetApiParams() url.Value
 }
 // AppId Setter
 // appid
-func (r *AlibabaEleFengniaoCarrierdriverLocationRequest) SetAppId(_appId string) error {
+func (r *AlibabaEleFengniaoCarrierdriverLocationAPIRequest) SetAppId(_appId string) error {
     r._appId = _appId
     r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
-func (r AlibabaEleFengniaoCarrierdriverLocationRequest) GetAppId() string {
+func (r AlibabaEleFengniaoCarrierdriverLocationAPIRequest) GetAppId() string {
     return r._appId
 }
 // PartnerOrderCode Setter
 // 外部订单号
-func (r *AlibabaEleFengniaoCarrierdriverLocationRequest) SetPartnerOrderCode(_partnerOrderCode string) error {
+func (r *AlibabaEleFengniaoCarrierdriverLocationAPIRequest) SetPartnerOrderCode(_partnerOrderCode string) error {
     r._partnerOrderCode = _partnerOrderCode
     r.Set("partner_order_code", _partnerOrderCode)
     return nil
 }
 
 // PartnerOrderCode Getter
-func (r AlibabaEleFengniaoCarrierdriverLocationRequest) GetPartnerOrderCode() string {
+func (r AlibabaEleFengniaoCarrierdriverLocationAPIRequest) GetPartnerOrderCode() string {
     return r._partnerOrderCode
 }

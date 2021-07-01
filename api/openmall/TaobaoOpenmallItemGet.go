@@ -11,7 +11,7 @@ taobao.openmall.item.get
 
 获取联盟开放的openmall商品
 */
-func TaobaoOpenmallItemGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallItemGetRequest, session string) (*openmall.TaobaoOpenmallItemGetAPIResponse, error) {
+func TaobaoOpenmallItemGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallItemGetAPIRequest, session string) (*openmall.TaobaoOpenmallItemGetAPIResponse, error) {
     var resp openmall.TaobaoOpenmallItemGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

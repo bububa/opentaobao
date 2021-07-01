@@ -12,7 +12,7 @@ alibaba.alink.device.unify.status.set
 
 操作用户绑定的设备
 */
-type AlibabaAlinkDeviceUnifyStatusSetRequest struct {
+type AlibabaAlinkDeviceUnifyStatusSetAPIRequest struct {
     model.Params
     // uuid
     _uuid   string
@@ -20,20 +20,20 @@ type AlibabaAlinkDeviceUnifyStatusSetRequest struct {
     _instructions   string
 }
 
-// 初始化AlibabaAlinkDeviceUnifyStatusSetRequest对象
-func NewAlibabaAlinkDeviceUnifyStatusSetRequest() *AlibabaAlinkDeviceUnifyStatusSetRequest{
-    return &AlibabaAlinkDeviceUnifyStatusSetRequest{
+// 初始化AlibabaAlinkDeviceUnifyStatusSetAPIRequest对象
+func NewAlibabaAlinkDeviceUnifyStatusSetRequest() *AlibabaAlinkDeviceUnifyStatusSetAPIRequest{
+    return &AlibabaAlinkDeviceUnifyStatusSetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlinkDeviceUnifyStatusSetRequest) GetApiMethodName() string {
+func (r AlibabaAlinkDeviceUnifyStatusSetAPIRequest) GetApiMethodName() string {
     return "alibaba.alink.device.unify.status.set"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlinkDeviceUnifyStatusSetRequest) GetApiParams() url.Values {
+func (r AlibabaAlinkDeviceUnifyStatusSetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlinkDeviceUnifyStatusSetRequest) GetApiParams() url.Values {
 }
 // Uuid Setter
 // uuid
-func (r *AlibabaAlinkDeviceUnifyStatusSetRequest) SetUuid(_uuid string) error {
+func (r *AlibabaAlinkDeviceUnifyStatusSetAPIRequest) SetUuid(_uuid string) error {
     r._uuid = _uuid
     r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
-func (r AlibabaAlinkDeviceUnifyStatusSetRequest) GetUuid() string {
+func (r AlibabaAlinkDeviceUnifyStatusSetAPIRequest) GetUuid() string {
     return r._uuid
 }
 // Instructions Setter
 // 设备的设置参数数据
-func (r *AlibabaAlinkDeviceUnifyStatusSetRequest) SetInstructions(_instructions string) error {
+func (r *AlibabaAlinkDeviceUnifyStatusSetAPIRequest) SetInstructions(_instructions string) error {
     r._instructions = _instructions
     r.Set("instructions", _instructions)
     return nil
 }
 
 // Instructions Getter
-func (r AlibabaAlinkDeviceUnifyStatusSetRequest) GetInstructions() string {
+func (r AlibabaAlinkDeviceUnifyStatusSetAPIRequest) GetInstructions() string {
     return r._instructions
 }

@@ -12,26 +12,26 @@ alibaba.lst.vending.tradeflow.query
 
 零售通自动售卖机交易流水查询接口，品牌商通过此接口同步商品交易数据。
 */
-type AlibabaLstVendingTradeflowQueryRequest struct {
+type AlibabaLstVendingTradeflowQueryAPIRequest struct {
     model.Params
     // 交易流水查询条件
     _openTradeFlowQuery   *OpenTradeFlowQuery
 }
 
-// 初始化AlibabaLstVendingTradeflowQueryRequest对象
-func NewAlibabaLstVendingTradeflowQueryRequest() *AlibabaLstVendingTradeflowQueryRequest{
-    return &AlibabaLstVendingTradeflowQueryRequest{
+// 初始化AlibabaLstVendingTradeflowQueryAPIRequest对象
+func NewAlibabaLstVendingTradeflowQueryRequest() *AlibabaLstVendingTradeflowQueryAPIRequest{
+    return &AlibabaLstVendingTradeflowQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstVendingTradeflowQueryRequest) GetApiMethodName() string {
+func (r AlibabaLstVendingTradeflowQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.vending.tradeflow.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstVendingTradeflowQueryRequest) GetApiParams() url.Values {
+func (r AlibabaLstVendingTradeflowQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstVendingTradeflowQueryRequest) GetApiParams() url.Values {
 }
 // OpenTradeFlowQuery Setter
 // 交易流水查询条件
-func (r *AlibabaLstVendingTradeflowQueryRequest) SetOpenTradeFlowQuery(_openTradeFlowQuery *OpenTradeFlowQuery) error {
+func (r *AlibabaLstVendingTradeflowQueryAPIRequest) SetOpenTradeFlowQuery(_openTradeFlowQuery *OpenTradeFlowQuery) error {
     r._openTradeFlowQuery = _openTradeFlowQuery
     r.Set("open_trade_flow_query", _openTradeFlowQuery)
     return nil
 }
 
 // OpenTradeFlowQuery Getter
-func (r AlibabaLstVendingTradeflowQueryRequest) GetOpenTradeFlowQuery() *OpenTradeFlowQuery {
+func (r AlibabaLstVendingTradeflowQueryAPIRequest) GetOpenTradeFlowQuery() *OpenTradeFlowQuery {
     return r._openTradeFlowQuery
 }

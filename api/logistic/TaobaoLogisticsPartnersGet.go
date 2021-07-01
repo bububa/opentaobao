@@ -11,7 +11,7 @@ taobao.logistics.partners.get
 
 查询物流公司信息（可以查询目的地可不可达情况）
 */
-func TaobaoLogisticsPartnersGet(clt *core.SDKClient, req *logistic.TaobaoLogisticsPartnersGetRequest, session string) (*logistic.TaobaoLogisticsPartnersGetAPIResponse, error) {
+func TaobaoLogisticsPartnersGet(clt *core.SDKClient, req *logistic.TaobaoLogisticsPartnersGetAPIRequest, session string) (*logistic.TaobaoLogisticsPartnersGetAPIResponse, error) {
     var resp logistic.TaobaoLogisticsPartnersGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

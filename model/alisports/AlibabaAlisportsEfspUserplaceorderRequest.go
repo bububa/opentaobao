@@ -12,26 +12,26 @@ alibaba.alisports.efsp.userplaceorder
 
 用户完成支付同步订单
 */
-type AlibabaAlisportsEfspUserplaceorderRequest struct {
+type AlibabaAlisportsEfspUserplaceorderAPIRequest struct {
     model.Params
     // 青橙订单的json
     _orderJson   string
 }
 
-// 初始化AlibabaAlisportsEfspUserplaceorderRequest对象
-func NewAlibabaAlisportsEfspUserplaceorderRequest() *AlibabaAlisportsEfspUserplaceorderRequest{
-    return &AlibabaAlisportsEfspUserplaceorderRequest{
+// 初始化AlibabaAlisportsEfspUserplaceorderAPIRequest对象
+func NewAlibabaAlisportsEfspUserplaceorderRequest() *AlibabaAlisportsEfspUserplaceorderAPIRequest{
+    return &AlibabaAlisportsEfspUserplaceorderAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlisportsEfspUserplaceorderRequest) GetApiMethodName() string {
+func (r AlibabaAlisportsEfspUserplaceorderAPIRequest) GetApiMethodName() string {
     return "alibaba.alisports.efsp.userplaceorder"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlisportsEfspUserplaceorderRequest) GetApiParams() url.Values {
+func (r AlibabaAlisportsEfspUserplaceorderAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlisportsEfspUserplaceorderRequest) GetApiParams() url.Values {
 }
 // OrderJson Setter
 // 青橙订单的json
-func (r *AlibabaAlisportsEfspUserplaceorderRequest) SetOrderJson(_orderJson string) error {
+func (r *AlibabaAlisportsEfspUserplaceorderAPIRequest) SetOrderJson(_orderJson string) error {
     r._orderJson = _orderJson
     r.Set("order_json", _orderJson)
     return nil
 }
 
 // OrderJson Getter
-func (r AlibabaAlisportsEfspUserplaceorderRequest) GetOrderJson() string {
+func (r AlibabaAlisportsEfspUserplaceorderAPIRequest) GetOrderJson() string {
     return r._orderJson
 }

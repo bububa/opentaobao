@@ -12,26 +12,26 @@ alibaba.idle.consignmentii.order.perform
 
 寄卖V2订单履约，服务商同步订单信息，驱动交易流转
 */
-type AlibabaIdleConsignmentiiOrderPerformRequest struct {
+type AlibabaIdleConsignmentiiOrderPerformAPIRequest struct {
     model.Params
     // 同步参数
     _consignmentV2OrderSynDto   *ConsignmentV2OrderSynDTO
 }
 
-// 初始化AlibabaIdleConsignmentiiOrderPerformRequest对象
-func NewAlibabaIdleConsignmentiiOrderPerformRequest() *AlibabaIdleConsignmentiiOrderPerformRequest{
-    return &AlibabaIdleConsignmentiiOrderPerformRequest{
+// 初始化AlibabaIdleConsignmentiiOrderPerformAPIRequest对象
+func NewAlibabaIdleConsignmentiiOrderPerformRequest() *AlibabaIdleConsignmentiiOrderPerformAPIRequest{
+    return &AlibabaIdleConsignmentiiOrderPerformAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleConsignmentiiOrderPerformRequest) GetApiMethodName() string {
+func (r AlibabaIdleConsignmentiiOrderPerformAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.consignmentii.order.perform"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleConsignmentiiOrderPerformRequest) GetApiParams() url.Values {
+func (r AlibabaIdleConsignmentiiOrderPerformAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleConsignmentiiOrderPerformRequest) GetApiParams() url.Values {
 }
 // ConsignmentV2OrderSynDto Setter
 // 同步参数
-func (r *AlibabaIdleConsignmentiiOrderPerformRequest) SetConsignmentV2OrderSynDto(_consignmentV2OrderSynDto *ConsignmentV2OrderSynDTO) error {
+func (r *AlibabaIdleConsignmentiiOrderPerformAPIRequest) SetConsignmentV2OrderSynDto(_consignmentV2OrderSynDto *ConsignmentV2OrderSynDTO) error {
     r._consignmentV2OrderSynDto = _consignmentV2OrderSynDto
     r.Set("consignment_v2_order_syn_dto", _consignmentV2OrderSynDto)
     return nil
 }
 
 // ConsignmentV2OrderSynDto Getter
-func (r AlibabaIdleConsignmentiiOrderPerformRequest) GetConsignmentV2OrderSynDto() *ConsignmentV2OrderSynDTO {
+func (r AlibabaIdleConsignmentiiOrderPerformAPIRequest) GetConsignmentV2OrderSynDto() *ConsignmentV2OrderSynDTO {
     return r._consignmentV2OrderSynDto
 }

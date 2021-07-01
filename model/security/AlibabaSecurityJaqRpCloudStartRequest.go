@@ -12,7 +12,7 @@ alibaba.security.jaq.rp.cloud.start
 
 聚安全实人认证开始
 */
-type AlibabaSecurityJaqRpCloudStartRequest struct {
+type AlibabaSecurityJaqRpCloudStartAPIRequest struct {
     model.Params
     // token
     _verifyToken   string
@@ -22,20 +22,20 @@ type AlibabaSecurityJaqRpCloudStartRequest struct {
     _extraData   string
 }
 
-// 初始化AlibabaSecurityJaqRpCloudStartRequest对象
-func NewAlibabaSecurityJaqRpCloudStartRequest() *AlibabaSecurityJaqRpCloudStartRequest{
-    return &AlibabaSecurityJaqRpCloudStartRequest{
+// 初始化AlibabaSecurityJaqRpCloudStartAPIRequest对象
+func NewAlibabaSecurityJaqRpCloudStartRequest() *AlibabaSecurityJaqRpCloudStartAPIRequest{
+    return &AlibabaSecurityJaqRpCloudStartAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqRpCloudStartRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqRpCloudStartAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.rp.cloud.start"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqRpCloudStartRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqRpCloudStartAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaSecurityJaqRpCloudStartRequest) GetApiParams() url.Values {
 }
 // VerifyToken Setter
 // token
-func (r *AlibabaSecurityJaqRpCloudStartRequest) SetVerifyToken(_verifyToken string) error {
+func (r *AlibabaSecurityJaqRpCloudStartAPIRequest) SetVerifyToken(_verifyToken string) error {
     r._verifyToken = _verifyToken
     r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
-func (r AlibabaSecurityJaqRpCloudStartRequest) GetVerifyToken() string {
+func (r AlibabaSecurityJaqRpCloudStartAPIRequest) GetVerifyToken() string {
     return r._verifyToken
 }
 // ClientInfo Setter
 // 客户端信息，如果是服务端接入，里面的参数可为空
-func (r *AlibabaSecurityJaqRpCloudStartRequest) SetClientInfo(_clientInfo *RpClientInfo) error {
+func (r *AlibabaSecurityJaqRpCloudStartAPIRequest) SetClientInfo(_clientInfo *RpClientInfo) error {
     r._clientInfo = _clientInfo
     r.Set("client_info", _clientInfo)
     return nil
 }
 
 // ClientInfo Getter
-func (r AlibabaSecurityJaqRpCloudStartRequest) GetClientInfo() *RpClientInfo {
+func (r AlibabaSecurityJaqRpCloudStartAPIRequest) GetClientInfo() *RpClientInfo {
     return r._clientInfo
 }
 // ExtraData Setter
 // 扩展信息
-func (r *AlibabaSecurityJaqRpCloudStartRequest) SetExtraData(_extraData string) error {
+func (r *AlibabaSecurityJaqRpCloudStartAPIRequest) SetExtraData(_extraData string) error {
     r._extraData = _extraData
     r.Set("extra_data", _extraData)
     return nil
 }
 
 // ExtraData Getter
-func (r AlibabaSecurityJaqRpCloudStartRequest) GetExtraData() string {
+func (r AlibabaSecurityJaqRpCloudStartAPIRequest) GetExtraData() string {
     return r._extraData
 }

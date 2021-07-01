@@ -12,26 +12,26 @@ tmall.fans.arena.push
 
 超级擂台消息推送
 */
-type TmallFansArenaPushRequest struct {
+type TmallFansArenaPushAPIRequest struct {
     model.Params
     // 推送列表
     _pushList   []PushMessageParamDO
 }
 
-// 初始化TmallFansArenaPushRequest对象
-func NewTmallFansArenaPushRequest() *TmallFansArenaPushRequest{
-    return &TmallFansArenaPushRequest{
+// 初始化TmallFansArenaPushAPIRequest对象
+func NewTmallFansArenaPushRequest() *TmallFansArenaPushAPIRequest{
+    return &TmallFansArenaPushAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallFansArenaPushRequest) GetApiMethodName() string {
+func (r TmallFansArenaPushAPIRequest) GetApiMethodName() string {
     return "tmall.fans.arena.push"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallFansArenaPushRequest) GetApiParams() url.Values {
+func (r TmallFansArenaPushAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallFansArenaPushRequest) GetApiParams() url.Values {
 }
 // PushList Setter
 // 推送列表
-func (r *TmallFansArenaPushRequest) SetPushList(_pushList []PushMessageParamDO) error {
+func (r *TmallFansArenaPushAPIRequest) SetPushList(_pushList []PushMessageParamDO) error {
     r._pushList = _pushList
     r.Set("push_list", _pushList)
     return nil
 }
 
 // PushList Getter
-func (r TmallFansArenaPushRequest) GetPushList() []PushMessageParamDO {
+func (r TmallFansArenaPushAPIRequest) GetPushList() []PushMessageParamDO {
     return r._pushList
 }

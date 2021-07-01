@@ -11,7 +11,7 @@ alibaba.idle.item.media.add
 
 上传图片
 */
-func AlibabaIdleItemMediaAdd(clt *core.SDKClient, req *idleitem.AlibabaIdleItemMediaAddRequest, session string) (*idleitem.AlibabaIdleItemMediaAddAPIResponse, error) {
+func AlibabaIdleItemMediaAdd(clt *core.SDKClient, req *idleitem.AlibabaIdleItemMediaAddAPIRequest, session string) (*idleitem.AlibabaIdleItemMediaAddAPIResponse, error) {
     var resp idleitem.AlibabaIdleItemMediaAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.gpu.schema.add
 
 使用Schema文件发布一个产品
 */
-func AlibabaGpuSchemaAdd(clt *core.SDKClient, req *product.AlibabaGpuSchemaAddRequest, session string) (*product.AlibabaGpuSchemaAddAPIResponse, error) {
+func AlibabaGpuSchemaAdd(clt *core.SDKClient, req *product.AlibabaGpuSchemaAddAPIRequest, session string) (*product.AlibabaGpuSchemaAddAPIResponse, error) {
     var resp product.AlibabaGpuSchemaAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

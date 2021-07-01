@@ -12,7 +12,7 @@ tmall.carcenter.vehicle.cvmapping.insert
 
 EPC车辆版本信息与底盘信息库关系绑定
 */
-type TmallCarcenterVehicleCvmappingInsertRequest struct {
+type TmallCarcenterVehicleCvmappingInsertAPIRequest struct {
     model.Params
     // 状态
     _status   int64
@@ -22,20 +22,20 @@ type TmallCarcenterVehicleCvmappingInsertRequest struct {
     _supplierChassisCid   string
 }
 
-// 初始化TmallCarcenterVehicleCvmappingInsertRequest对象
-func NewTmallCarcenterVehicleCvmappingInsertRequest() *TmallCarcenterVehicleCvmappingInsertRequest{
-    return &TmallCarcenterVehicleCvmappingInsertRequest{
+// 初始化TmallCarcenterVehicleCvmappingInsertAPIRequest对象
+func NewTmallCarcenterVehicleCvmappingInsertRequest() *TmallCarcenterVehicleCvmappingInsertAPIRequest{
+    return &TmallCarcenterVehicleCvmappingInsertAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarcenterVehicleCvmappingInsertRequest) GetApiMethodName() string {
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetApiMethodName() string {
     return "tmall.carcenter.vehicle.cvmapping.insert"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarcenterVehicleCvmappingInsertRequest) GetApiParams() url.Values {
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TmallCarcenterVehicleCvmappingInsertRequest) GetApiParams() url.Values {
 }
 // Status Setter
 // 状态
-func (r *TmallCarcenterVehicleCvmappingInsertRequest) SetStatus(_status int64) error {
+func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetStatus(_status int64) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r TmallCarcenterVehicleCvmappingInsertRequest) GetStatus() int64 {
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetStatus() int64 {
     return r._status
 }
 // SupplierVersionCid Setter
 // 版本ID
-func (r *TmallCarcenterVehicleCvmappingInsertRequest) SetSupplierVersionCid(_supplierVersionCid string) error {
+func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierVersionCid(_supplierVersionCid string) error {
     r._supplierVersionCid = _supplierVersionCid
     r.Set("supplier_version_cid", _supplierVersionCid)
     return nil
 }
 
 // SupplierVersionCid Getter
-func (r TmallCarcenterVehicleCvmappingInsertRequest) GetSupplierVersionCid() string {
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetSupplierVersionCid() string {
     return r._supplierVersionCid
 }
 // SupplierChassisCid Setter
 // 底盘ID
-func (r *TmallCarcenterVehicleCvmappingInsertRequest) SetSupplierChassisCid(_supplierChassisCid string) error {
+func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierChassisCid(_supplierChassisCid string) error {
     r._supplierChassisCid = _supplierChassisCid
     r.Set("supplier_chassis_cid", _supplierChassisCid)
     return nil
 }
 
 // SupplierChassisCid Getter
-func (r TmallCarcenterVehicleCvmappingInsertRequest) GetSupplierChassisCid() string {
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetSupplierChassisCid() string {
     return r._supplierChassisCid
 }

@@ -12,26 +12,26 @@ tmall.nr.inventory.update
 
 用于商家每日同步更新门店库存
 */
-type TmallNrInventoryUpdateRequest struct {
+type TmallNrInventoryUpdateAPIRequest struct {
     model.Params
     // 入参
     _param0   *NrInventoryUpdateReqDTO
 }
 
-// 初始化TmallNrInventoryUpdateRequest对象
-func NewTmallNrInventoryUpdateRequest() *TmallNrInventoryUpdateRequest{
-    return &TmallNrInventoryUpdateRequest{
+// 初始化TmallNrInventoryUpdateAPIRequest对象
+func NewTmallNrInventoryUpdateRequest() *TmallNrInventoryUpdateAPIRequest{
+    return &TmallNrInventoryUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrInventoryUpdateRequest) GetApiMethodName() string {
+func (r TmallNrInventoryUpdateAPIRequest) GetApiMethodName() string {
     return "tmall.nr.inventory.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrInventoryUpdateRequest) GetApiParams() url.Values {
+func (r TmallNrInventoryUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallNrInventoryUpdateRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参
-func (r *TmallNrInventoryUpdateRequest) SetParam0(_param0 *NrInventoryUpdateReqDTO) error {
+func (r *TmallNrInventoryUpdateAPIRequest) SetParam0(_param0 *NrInventoryUpdateReqDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TmallNrInventoryUpdateRequest) GetParam0() *NrInventoryUpdateReqDTO {
+func (r TmallNrInventoryUpdateAPIRequest) GetParam0() *NrInventoryUpdateReqDTO {
     return r._param0
 }

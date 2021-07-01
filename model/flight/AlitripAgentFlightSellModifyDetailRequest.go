@@ -12,7 +12,7 @@ alitrip.agent.flight.sell.modify.detail
 
 销售改签详情
 */
-type AlitripAgentFlightSellModifyDetailRequest struct {
+type AlitripAgentFlightSellModifyDetailAPIRequest struct {
     model.Params
     // 申请单号
     _applyId   string
@@ -20,20 +20,20 @@ type AlitripAgentFlightSellModifyDetailRequest struct {
     _domesticIntl   int64
 }
 
-// 初始化AlitripAgentFlightSellModifyDetailRequest对象
-func NewAlitripAgentFlightSellModifyDetailRequest() *AlitripAgentFlightSellModifyDetailRequest{
-    return &AlitripAgentFlightSellModifyDetailRequest{
+// 初始化AlitripAgentFlightSellModifyDetailAPIRequest对象
+func NewAlitripAgentFlightSellModifyDetailRequest() *AlitripAgentFlightSellModifyDetailAPIRequest{
+    return &AlitripAgentFlightSellModifyDetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripAgentFlightSellModifyDetailRequest) GetApiMethodName() string {
+func (r AlitripAgentFlightSellModifyDetailAPIRequest) GetApiMethodName() string {
     return "alitrip.agent.flight.sell.modify.detail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripAgentFlightSellModifyDetailRequest) GetApiParams() url.Values {
+func (r AlitripAgentFlightSellModifyDetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlitripAgentFlightSellModifyDetailRequest) GetApiParams() url.Values {
 }
 // ApplyId Setter
 // 申请单号
-func (r *AlitripAgentFlightSellModifyDetailRequest) SetApplyId(_applyId string) error {
+func (r *AlitripAgentFlightSellModifyDetailAPIRequest) SetApplyId(_applyId string) error {
     r._applyId = _applyId
     r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
-func (r AlitripAgentFlightSellModifyDetailRequest) GetApplyId() string {
+func (r AlitripAgentFlightSellModifyDetailAPIRequest) GetApplyId() string {
     return r._applyId
 }
 // DomesticIntl Setter
 // 国内国际标识
-func (r *AlitripAgentFlightSellModifyDetailRequest) SetDomesticIntl(_domesticIntl int64) error {
+func (r *AlitripAgentFlightSellModifyDetailAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
     r._domesticIntl = _domesticIntl
     r.Set("domestic_intl", _domesticIntl)
     return nil
 }
 
 // DomesticIntl Getter
-func (r AlitripAgentFlightSellModifyDetailRequest) GetDomesticIntl() int64 {
+func (r AlitripAgentFlightSellModifyDetailAPIRequest) GetDomesticIntl() int64 {
     return r._domesticIntl
 }

@@ -12,26 +12,26 @@ alibaba.wdk.ums.inbound
 
 入库-ERP下发单
 */
-type AlibabaWdkUmsInboundRequest struct {
+type AlibabaWdkUmsInboundAPIRequest struct {
     model.Params
     // 1
     _erpArrivalnoticeDto   *ErpArrivalNoticeDTO
 }
 
-// 初始化AlibabaWdkUmsInboundRequest对象
-func NewAlibabaWdkUmsInboundRequest() *AlibabaWdkUmsInboundRequest{
-    return &AlibabaWdkUmsInboundRequest{
+// 初始化AlibabaWdkUmsInboundAPIRequest对象
+func NewAlibabaWdkUmsInboundRequest() *AlibabaWdkUmsInboundAPIRequest{
+    return &AlibabaWdkUmsInboundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkUmsInboundRequest) GetApiMethodName() string {
+func (r AlibabaWdkUmsInboundAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.ums.inbound"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkUmsInboundRequest) GetApiParams() url.Values {
+func (r AlibabaWdkUmsInboundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkUmsInboundRequest) GetApiParams() url.Values {
 }
 // ErpArrivalnoticeDto Setter
 // 1
-func (r *AlibabaWdkUmsInboundRequest) SetErpArrivalnoticeDto(_erpArrivalnoticeDto *ErpArrivalNoticeDTO) error {
+func (r *AlibabaWdkUmsInboundAPIRequest) SetErpArrivalnoticeDto(_erpArrivalnoticeDto *ErpArrivalNoticeDTO) error {
     r._erpArrivalnoticeDto = _erpArrivalnoticeDto
     r.Set("erp_arrivalnotice_dto", _erpArrivalnoticeDto)
     return nil
 }
 
 // ErpArrivalnoticeDto Getter
-func (r AlibabaWdkUmsInboundRequest) GetErpArrivalnoticeDto() *ErpArrivalNoticeDTO {
+func (r AlibabaWdkUmsInboundAPIRequest) GetErpArrivalnoticeDto() *ErpArrivalNoticeDTO {
     return r._erpArrivalnoticeDto
 }

@@ -12,26 +12,26 @@ alibaba.alihealth.drug.kyt.va.getentinfo
 
 根据企业名称查询企业唯一标识（ref_ent_id）及企业ID(ent_id)
 */
-type AlibabaAlihealthDrugKytVaGetentinfoRequest struct {
+type AlibabaAlihealthDrugKytVaGetentinfoAPIRequest struct {
     model.Params
     // 公司名称(全称)
     _entName   string
 }
 
-// 初始化AlibabaAlihealthDrugKytVaGetentinfoRequest对象
-func NewAlibabaAlihealthDrugKytVaGetentinfoRequest() *AlibabaAlihealthDrugKytVaGetentinfoRequest{
-    return &AlibabaAlihealthDrugKytVaGetentinfoRequest{
+// 初始化AlibabaAlihealthDrugKytVaGetentinfoAPIRequest对象
+func NewAlibabaAlihealthDrugKytVaGetentinfoRequest() *AlibabaAlihealthDrugKytVaGetentinfoAPIRequest{
+    return &AlibabaAlihealthDrugKytVaGetentinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytVaGetentinfoRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytVaGetentinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.kyt.va.getentinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytVaGetentinfoRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugKytVaGetentinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugKytVaGetentinfoRequest) GetApiParams() url.Values {
 }
 // EntName Setter
 // 公司名称(全称)
-func (r *AlibabaAlihealthDrugKytVaGetentinfoRequest) SetEntName(_entName string) error {
+func (r *AlibabaAlihealthDrugKytVaGetentinfoAPIRequest) SetEntName(_entName string) error {
     r._entName = _entName
     r.Set("ent_name", _entName)
     return nil
 }
 
 // EntName Getter
-func (r AlibabaAlihealthDrugKytVaGetentinfoRequest) GetEntName() string {
+func (r AlibabaAlihealthDrugKytVaGetentinfoAPIRequest) GetEntName() string {
     return r._entName
 }

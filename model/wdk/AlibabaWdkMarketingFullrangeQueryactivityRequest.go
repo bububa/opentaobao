@@ -12,26 +12,26 @@ alibaba.wdk.marketing.fullrange.queryactivity
 
 全场活动查询活动
 */
-type AlibabaWdkMarketingFullrangeQueryactivityRequest struct {
+type AlibabaWdkMarketingFullrangeQueryactivityAPIRequest struct {
     model.Params
     // 查询活动入参
     _param0   *CommonActivityParam
 }
 
-// 初始化AlibabaWdkMarketingFullrangeQueryactivityRequest对象
-func NewAlibabaWdkMarketingFullrangeQueryactivityRequest() *AlibabaWdkMarketingFullrangeQueryactivityRequest{
-    return &AlibabaWdkMarketingFullrangeQueryactivityRequest{
+// 初始化AlibabaWdkMarketingFullrangeQueryactivityAPIRequest对象
+func NewAlibabaWdkMarketingFullrangeQueryactivityRequest() *AlibabaWdkMarketingFullrangeQueryactivityAPIRequest{
+    return &AlibabaWdkMarketingFullrangeQueryactivityAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingFullrangeQueryactivityRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingFullrangeQueryactivityAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.fullrange.queryactivity"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingFullrangeQueryactivityRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingFullrangeQueryactivityAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingFullrangeQueryactivityRequest) GetApiParams() url.Val
 }
 // Param0 Setter
 // 查询活动入参
-func (r *AlibabaWdkMarketingFullrangeQueryactivityRequest) SetParam0(_param0 *CommonActivityParam) error {
+func (r *AlibabaWdkMarketingFullrangeQueryactivityAPIRequest) SetParam0(_param0 *CommonActivityParam) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaWdkMarketingFullrangeQueryactivityRequest) GetParam0() *CommonActivityParam {
+func (r AlibabaWdkMarketingFullrangeQueryactivityAPIRequest) GetParam0() *CommonActivityParam {
     return r._param0
 }

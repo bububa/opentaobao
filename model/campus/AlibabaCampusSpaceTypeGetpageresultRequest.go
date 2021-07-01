@@ -14,7 +14,7 @@ alibaba.campus.space.type.getpageresult
 HSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService
 HSF方法名称：getPageResult
 */
-type AlibabaCampusSpaceTypeGetpageresultRequest struct {
+type AlibabaCampusSpaceTypeGetpageresultAPIRequest struct {
     model.Params
     // 环境参数
     _param0   *WorkBenchContext
@@ -22,20 +22,20 @@ type AlibabaCampusSpaceTypeGetpageresultRequest struct {
     _param1   *SpaceTypeQuery
 }
 
-// 初始化AlibabaCampusSpaceTypeGetpageresultRequest对象
-func NewAlibabaCampusSpaceTypeGetpageresultRequest() *AlibabaCampusSpaceTypeGetpageresultRequest{
-    return &AlibabaCampusSpaceTypeGetpageresultRequest{
+// 初始化AlibabaCampusSpaceTypeGetpageresultAPIRequest对象
+func NewAlibabaCampusSpaceTypeGetpageresultRequest() *AlibabaCampusSpaceTypeGetpageresultAPIRequest{
+    return &AlibabaCampusSpaceTypeGetpageresultAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceTypeGetpageresultRequest) GetApiMethodName() string {
+func (r AlibabaCampusSpaceTypeGetpageresultAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.space.type.getpageresult"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceTypeGetpageresultRequest) GetApiParams() url.Values {
+func (r AlibabaCampusSpaceTypeGetpageresultAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceTypeGetpageresultRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 环境参数
-func (r *AlibabaCampusSpaceTypeGetpageresultRequest) SetParam0(_param0 *WorkBenchContext) error {
+func (r *AlibabaCampusSpaceTypeGetpageresultAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaCampusSpaceTypeGetpageresultRequest) GetParam0() *WorkBenchContext {
+func (r AlibabaCampusSpaceTypeGetpageresultAPIRequest) GetParam0() *WorkBenchContext {
     return r._param0
 }
 // Param1 Setter
 // 查询参数
-func (r *AlibabaCampusSpaceTypeGetpageresultRequest) SetParam1(_param1 *SpaceTypeQuery) error {
+func (r *AlibabaCampusSpaceTypeGetpageresultAPIRequest) SetParam1(_param1 *SpaceTypeQuery) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaCampusSpaceTypeGetpageresultRequest) GetParam1() *SpaceTypeQuery {
+func (r AlibabaCampusSpaceTypeGetpageresultAPIRequest) GetParam1() *SpaceTypeQuery {
     return r._param1
 }

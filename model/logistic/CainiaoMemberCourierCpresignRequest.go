@@ -12,26 +12,26 @@ cainiao.member.courier.cpresign
 
 CP清理内部离职的用户信息
 */
-type CainiaoMemberCourierCpresignRequest struct {
+type CainiaoMemberCourierCpresignAPIRequest struct {
     model.Params
     // 菜鸟用户id
     _accountId   int64
 }
 
-// 初始化CainiaoMemberCourierCpresignRequest对象
-func NewCainiaoMemberCourierCpresignRequest() *CainiaoMemberCourierCpresignRequest{
-    return &CainiaoMemberCourierCpresignRequest{
+// 初始化CainiaoMemberCourierCpresignAPIRequest对象
+func NewCainiaoMemberCourierCpresignRequest() *CainiaoMemberCourierCpresignAPIRequest{
+    return &CainiaoMemberCourierCpresignAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoMemberCourierCpresignRequest) GetApiMethodName() string {
+func (r CainiaoMemberCourierCpresignAPIRequest) GetApiMethodName() string {
     return "cainiao.member.courier.cpresign"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoMemberCourierCpresignRequest) GetApiParams() url.Values {
+func (r CainiaoMemberCourierCpresignAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoMemberCourierCpresignRequest) GetApiParams() url.Values {
 }
 // AccountId Setter
 // 菜鸟用户id
-func (r *CainiaoMemberCourierCpresignRequest) SetAccountId(_accountId int64) error {
+func (r *CainiaoMemberCourierCpresignAPIRequest) SetAccountId(_accountId int64) error {
     r._accountId = _accountId
     r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
-func (r CainiaoMemberCourierCpresignRequest) GetAccountId() int64 {
+func (r CainiaoMemberCourierCpresignAPIRequest) GetAccountId() int64 {
     return r._accountId
 }

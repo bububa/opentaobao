@@ -11,7 +11,7 @@ yunos.osupdate.model.search
 
 机型检索
 */
-func YunosOsupdateModelSearch(clt *core.SDKClient, req *tvupadmin.YunosOsupdateModelSearchRequest, session string) (*tvupadmin.YunosOsupdateModelSearchAPIResponse, error) {
+func YunosOsupdateModelSearch(clt *core.SDKClient, req *tvupadmin.YunosOsupdateModelSearchAPIRequest, session string) (*tvupadmin.YunosOsupdateModelSearchAPIResponse, error) {
     var resp tvupadmin.YunosOsupdateModelSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

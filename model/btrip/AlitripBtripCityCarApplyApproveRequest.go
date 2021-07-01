@@ -12,26 +12,26 @@ alitrip.btrip.city.car.apply.approve
 
 三方市内用车申请单审批
 */
-type AlitripBtripCityCarApplyApproveRequest struct {
+type AlitripBtripCityCarApplyApproveAPIRequest struct {
     model.Params
     // 入参对象
     _rq   *CityCarApplyApproveRq
 }
 
-// 初始化AlitripBtripCityCarApplyApproveRequest对象
-func NewAlitripBtripCityCarApplyApproveRequest() *AlitripBtripCityCarApplyApproveRequest{
-    return &AlitripBtripCityCarApplyApproveRequest{
+// 初始化AlitripBtripCityCarApplyApproveAPIRequest对象
+func NewAlitripBtripCityCarApplyApproveRequest() *AlitripBtripCityCarApplyApproveAPIRequest{
+    return &AlitripBtripCityCarApplyApproveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripCityCarApplyApproveRequest) GetApiMethodName() string {
+func (r AlitripBtripCityCarApplyApproveAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.city.car.apply.approve"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripCityCarApplyApproveRequest) GetApiParams() url.Values {
+func (r AlitripBtripCityCarApplyApproveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripCityCarApplyApproveRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参对象
-func (r *AlitripBtripCityCarApplyApproveRequest) SetRq(_rq *CityCarApplyApproveRq) error {
+func (r *AlitripBtripCityCarApplyApproveAPIRequest) SetRq(_rq *CityCarApplyApproveRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripCityCarApplyApproveRequest) GetRq() *CityCarApplyApproveRq {
+func (r AlitripBtripCityCarApplyApproveAPIRequest) GetRq() *CityCarApplyApproveRq {
     return r._rq
 }

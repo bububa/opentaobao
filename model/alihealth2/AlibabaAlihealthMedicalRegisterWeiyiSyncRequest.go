@@ -12,26 +12,26 @@ alibaba.alihealth.medical.register.weiyi.sync
 
 微医号源数据回传
 */
-type AlibabaAlihealthMedicalRegisterWeiyiSyncRequest struct {
+type AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest struct {
     model.Params
     // 号源数据实体
     _serviceRequest   *SourcesReturnVo
 }
 
-// 初始化AlibabaAlihealthMedicalRegisterWeiyiSyncRequest对象
-func NewAlibabaAlihealthMedicalRegisterWeiyiSyncRequest() *AlibabaAlihealthMedicalRegisterWeiyiSyncRequest{
-    return &AlibabaAlihealthMedicalRegisterWeiyiSyncRequest{
+// 初始化AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest对象
+func NewAlibabaAlihealthMedicalRegisterWeiyiSyncRequest() *AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest{
+    return &AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medical.register.weiyi.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) GetApiParams() url.Valu
 }
 // ServiceRequest Setter
 // 号源数据实体
-func (r *AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) SetServiceRequest(_serviceRequest *SourcesReturnVo) error {
+func (r *AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest) SetServiceRequest(_serviceRequest *SourcesReturnVo) error {
     r._serviceRequest = _serviceRequest
     r.Set("service_request", _serviceRequest)
     return nil
 }
 
 // ServiceRequest Getter
-func (r AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) GetServiceRequest() *SourcesReturnVo {
+func (r AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest) GetServiceRequest() *SourcesReturnVo {
     return r._serviceRequest
 }

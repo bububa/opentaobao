@@ -12,7 +12,7 @@ tmall.exchange.returngoods.refuse
 
 卖家拒绝买家换货申请
 */
-type TmallExchangeReturngoodsRefuseRequest struct {
+type TmallExchangeReturngoodsRefuseAPIRequest struct {
     model.Params
     // 凭证图片
     _leaveMessagePics   *model.File
@@ -24,20 +24,20 @@ type TmallExchangeReturngoodsRefuseRequest struct {
     _sellerRefuseReasonId   int64
 }
 
-// 初始化TmallExchangeReturngoodsRefuseRequest对象
-func NewTmallExchangeReturngoodsRefuseRequest() *TmallExchangeReturngoodsRefuseRequest{
-    return &TmallExchangeReturngoodsRefuseRequest{
+// 初始化TmallExchangeReturngoodsRefuseAPIRequest对象
+func NewTmallExchangeReturngoodsRefuseRequest() *TmallExchangeReturngoodsRefuseAPIRequest{
+    return &TmallExchangeReturngoodsRefuseAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallExchangeReturngoodsRefuseRequest) GetApiMethodName() string {
+func (r TmallExchangeReturngoodsRefuseAPIRequest) GetApiMethodName() string {
     return "tmall.exchange.returngoods.refuse"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallExchangeReturngoodsRefuseRequest) GetApiParams() url.Values {
+func (r TmallExchangeReturngoodsRefuseAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TmallExchangeReturngoodsRefuseRequest) GetApiParams() url.Values {
 }
 // LeaveMessagePics Setter
 // 凭证图片
-func (r *TmallExchangeReturngoodsRefuseRequest) SetLeaveMessagePics(_leaveMessagePics *model.File) error {
+func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetLeaveMessagePics(_leaveMessagePics *model.File) error {
     r._leaveMessagePics = _leaveMessagePics
     r.Set("leave_message_pics", _leaveMessagePics)
     return nil
 }
 
 // LeaveMessagePics Getter
-func (r TmallExchangeReturngoodsRefuseRequest) GetLeaveMessagePics() *model.File {
+func (r TmallExchangeReturngoodsRefuseAPIRequest) GetLeaveMessagePics() *model.File {
     return r._leaveMessagePics
 }
 // LeaveMessage Setter
 // 留言说明
-func (r *TmallExchangeReturngoodsRefuseRequest) SetLeaveMessage(_leaveMessage string) error {
+func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetLeaveMessage(_leaveMessage string) error {
     r._leaveMessage = _leaveMessage
     r.Set("leave_message", _leaveMessage)
     return nil
 }
 
 // LeaveMessage Getter
-func (r TmallExchangeReturngoodsRefuseRequest) GetLeaveMessage() string {
+func (r TmallExchangeReturngoodsRefuseAPIRequest) GetLeaveMessage() string {
     return r._leaveMessage
 }
 // DisputeId Setter
 // 换货单号ID
-func (r *TmallExchangeReturngoodsRefuseRequest) SetDisputeId(_disputeId int64) error {
+func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetDisputeId(_disputeId int64) error {
     r._disputeId = _disputeId
     r.Set("dispute_id", _disputeId)
     return nil
 }
 
 // DisputeId Getter
-func (r TmallExchangeReturngoodsRefuseRequest) GetDisputeId() int64 {
+func (r TmallExchangeReturngoodsRefuseAPIRequest) GetDisputeId() int64 {
     return r._disputeId
 }
 // SellerRefuseReasonId Setter
 // 拒绝原因ID
-func (r *TmallExchangeReturngoodsRefuseRequest) SetSellerRefuseReasonId(_sellerRefuseReasonId int64) error {
+func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetSellerRefuseReasonId(_sellerRefuseReasonId int64) error {
     r._sellerRefuseReasonId = _sellerRefuseReasonId
     r.Set("seller_refuse_reason_id", _sellerRefuseReasonId)
     return nil
 }
 
 // SellerRefuseReasonId Getter
-func (r TmallExchangeReturngoodsRefuseRequest) GetSellerRefuseReasonId() int64 {
+func (r TmallExchangeReturngoodsRefuseAPIRequest) GetSellerRefuseReasonId() int64 {
     return r._sellerRefuseReasonId
 }

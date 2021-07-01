@@ -11,7 +11,7 @@ tmall.nrt.newcoupon.send
 
 券发放接口
 */
-func TmallNrtNewcouponSend(clt *core.SDKClient, req *tmallnr.TmallNrtNewcouponSendRequest, session string) (*tmallnr.TmallNrtNewcouponSendAPIResponse, error) {
+func TmallNrtNewcouponSend(clt *core.SDKClient, req *tmallnr.TmallNrtNewcouponSendAPIRequest, session string) (*tmallnr.TmallNrtNewcouponSendAPIResponse, error) {
     var resp tmallnr.TmallNrtNewcouponSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

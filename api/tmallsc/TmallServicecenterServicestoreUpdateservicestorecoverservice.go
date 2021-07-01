@@ -14,7 +14,7 @@ tmall.servicecenter.servicestore.updateservicestorecoverservice
 如果需要新增的网点覆盖的服务不存在，会更新失败。
 网点覆盖的服务包含了业务类型(比如电器预约安装)、天猫服务的servicecode列表、授权的类目和品牌
 */
-func TmallServicecenterServicestoreUpdateservicestorecoverservice(clt *core.SDKClient, req *tmallsc.TmallServicecenterServicestoreUpdateservicestorecoverserviceRequest, session string) (*tmallsc.TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse, error) {
+func TmallServicecenterServicestoreUpdateservicestorecoverservice(clt *core.SDKClient, req *tmallsc.TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIRequest, session string) (*tmallsc.TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse, error) {
     var resp tmallsc.TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

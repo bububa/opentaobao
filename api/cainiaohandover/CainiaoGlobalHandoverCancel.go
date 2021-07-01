@@ -11,7 +11,7 @@ cainiao.global.handover.cancel
 
 提供给ISV通过该接口取消交接单
 */
-func CainiaoGlobalHandoverCancel(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverCancelRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverCancelAPIResponse, error) {
+func CainiaoGlobalHandoverCancel(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverCancelAPIRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverCancelAPIResponse, error) {
     var resp cainiaohandover.CainiaoGlobalHandoverCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

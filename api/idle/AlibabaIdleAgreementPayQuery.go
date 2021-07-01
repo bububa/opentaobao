@@ -11,7 +11,7 @@ alibaba.idle.agreement.pay.query
 
 查询代扣结果
 */
-func AlibabaIdleAgreementPayQuery(clt *core.SDKClient, req *idle.AlibabaIdleAgreementPayQueryRequest, session string) (*idle.AlibabaIdleAgreementPayQueryAPIResponse, error) {
+func AlibabaIdleAgreementPayQuery(clt *core.SDKClient, req *idle.AlibabaIdleAgreementPayQueryAPIRequest, session string) (*idle.AlibabaIdleAgreementPayQueryAPIResponse, error) {
     var resp idle.AlibabaIdleAgreementPayQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

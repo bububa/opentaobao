@@ -11,7 +11,7 @@ alibaba.baichuan.ctg.toutiao.content
 
 百川头条内容获取
 */
-func AlibabaBaichuanCtgToutiaoContent(clt *core.SDKClient, req *baichuanctg.AlibabaBaichuanCtgToutiaoContentRequest, session string) (*baichuanctg.AlibabaBaichuanCtgToutiaoContentAPIResponse, error) {
+func AlibabaBaichuanCtgToutiaoContent(clt *core.SDKClient, req *baichuanctg.AlibabaBaichuanCtgToutiaoContentAPIRequest, session string) (*baichuanctg.AlibabaBaichuanCtgToutiaoContentAPIResponse, error) {
     var resp baichuanctg.AlibabaBaichuanCtgToutiaoContentAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

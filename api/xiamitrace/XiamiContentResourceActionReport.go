@@ -11,7 +11,7 @@ xiami.content.resource.action.report
 
 合作方对接入的曲库开放内容上报行为日志
 */
-func XiamiContentResourceActionReport(clt *core.SDKClient, req *xiamitrace.XiamiContentResourceActionReportRequest, session string) (*xiamitrace.XiamiContentResourceActionReportAPIResponse, error) {
+func XiamiContentResourceActionReport(clt *core.SDKClient, req *xiamitrace.XiamiContentResourceActionReportAPIRequest, session string) (*xiamitrace.XiamiContentResourceActionReportAPIResponse, error) {
     var resp xiamitrace.XiamiContentResourceActionReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

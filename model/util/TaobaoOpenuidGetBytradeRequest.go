@@ -12,26 +12,26 @@ taobao.openuid.get.bytrade
 
 通过订单获取对应买家的openUID,需要卖家授权
 */
-type TaobaoOpenuidGetBytradeRequest struct {
+type TaobaoOpenuidGetBytradeAPIRequest struct {
     model.Params
     // 订单ID
     _tid   int64
 }
 
-// 初始化TaobaoOpenuidGetBytradeRequest对象
-func NewTaobaoOpenuidGetBytradeRequest() *TaobaoOpenuidGetBytradeRequest{
-    return &TaobaoOpenuidGetBytradeRequest{
+// 初始化TaobaoOpenuidGetBytradeAPIRequest对象
+func NewTaobaoOpenuidGetBytradeRequest() *TaobaoOpenuidGetBytradeAPIRequest{
+    return &TaobaoOpenuidGetBytradeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenuidGetBytradeRequest) GetApiMethodName() string {
+func (r TaobaoOpenuidGetBytradeAPIRequest) GetApiMethodName() string {
     return "taobao.openuid.get.bytrade"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenuidGetBytradeRequest) GetApiParams() url.Values {
+func (r TaobaoOpenuidGetBytradeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOpenuidGetBytradeRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 订单ID
-func (r *TaobaoOpenuidGetBytradeRequest) SetTid(_tid int64) error {
+func (r *TaobaoOpenuidGetBytradeAPIRequest) SetTid(_tid int64) error {
     r._tid = _tid
     r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
-func (r TaobaoOpenuidGetBytradeRequest) GetTid() int64 {
+func (r TaobaoOpenuidGetBytradeAPIRequest) GetTid() int64 {
     return r._tid
 }

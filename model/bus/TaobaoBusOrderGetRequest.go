@@ -12,26 +12,26 @@ taobao.bus.order.get
 
 商家汽车票订单查询
 */
-type TaobaoBusOrderGetRequest struct {
+type TaobaoBusOrderGetAPIRequest struct {
     model.Params
     // 订单查询对象
     _paramB2BOrderQueryRQ   *B2BOrderQueryRq
 }
 
-// 初始化TaobaoBusOrderGetRequest对象
-func NewTaobaoBusOrderGetRequest() *TaobaoBusOrderGetRequest{
-    return &TaobaoBusOrderGetRequest{
+// 初始化TaobaoBusOrderGetAPIRequest对象
+func NewTaobaoBusOrderGetRequest() *TaobaoBusOrderGetAPIRequest{
+    return &TaobaoBusOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBusOrderGetRequest) GetApiMethodName() string {
+func (r TaobaoBusOrderGetAPIRequest) GetApiMethodName() string {
     return "taobao.bus.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBusOrderGetRequest) GetApiParams() url.Values {
+func (r TaobaoBusOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBusOrderGetRequest) GetApiParams() url.Values {
 }
 // ParamB2BOrderQueryRQ Setter
 // 订单查询对象
-func (r *TaobaoBusOrderGetRequest) SetParamB2BOrderQueryRQ(_paramB2BOrderQueryRQ *B2BOrderQueryRq) error {
+func (r *TaobaoBusOrderGetAPIRequest) SetParamB2BOrderQueryRQ(_paramB2BOrderQueryRQ *B2BOrderQueryRq) error {
     r._paramB2BOrderQueryRQ = _paramB2BOrderQueryRQ
     r.Set("param_b2_b_order_query_r_q", _paramB2BOrderQueryRQ)
     return nil
 }
 
 // ParamB2BOrderQueryRQ Getter
-func (r TaobaoBusOrderGetRequest) GetParamB2BOrderQueryRQ() *B2BOrderQueryRq {
+func (r TaobaoBusOrderGetAPIRequest) GetParamB2BOrderQueryRQ() *B2BOrderQueryRq {
     return r._paramB2BOrderQueryRQ
 }

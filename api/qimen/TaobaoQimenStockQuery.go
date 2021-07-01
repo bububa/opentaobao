@@ -11,7 +11,7 @@ taobao.qimen.stock.query
 
 ERP调用奇门的接口,查询商品的库存量
 */
-func TaobaoQimenStockQuery(clt *core.SDKClient, req *qimen.TaobaoQimenStockQueryRequest, session string) (*qimen.TaobaoQimenStockQueryAPIResponse, error) {
+func TaobaoQimenStockQuery(clt *core.SDKClient, req *qimen.TaobaoQimenStockQueryAPIRequest, session string) (*qimen.TaobaoQimenStockQueryAPIResponse, error) {
     var resp qimen.TaobaoQimenStockQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

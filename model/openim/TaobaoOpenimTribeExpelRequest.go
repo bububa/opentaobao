@@ -12,7 +12,7 @@ taobao.openim.tribe.expel
 
 OPENIM群踢出成员
 */
-type TaobaoOpenimTribeExpelRequest struct {
+type TaobaoOpenimTribeExpelAPIRequest struct {
     model.Params
     // 用户信息
     _user   *OpenImUser
@@ -22,20 +22,20 @@ type TaobaoOpenimTribeExpelRequest struct {
     _member   *OpenImUser
 }
 
-// 初始化TaobaoOpenimTribeExpelRequest对象
-func NewTaobaoOpenimTribeExpelRequest() *TaobaoOpenimTribeExpelRequest{
-    return &TaobaoOpenimTribeExpelRequest{
+// 初始化TaobaoOpenimTribeExpelAPIRequest对象
+func NewTaobaoOpenimTribeExpelRequest() *TaobaoOpenimTribeExpelAPIRequest{
+    return &TaobaoOpenimTribeExpelAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenimTribeExpelRequest) GetApiMethodName() string {
+func (r TaobaoOpenimTribeExpelAPIRequest) GetApiMethodName() string {
     return "taobao.openim.tribe.expel"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimTribeExpelRequest) GetApiParams() url.Values {
+func (r TaobaoOpenimTribeExpelAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoOpenimTribeExpelRequest) GetApiParams() url.Values {
 }
 // User Setter
 // 用户信息
-func (r *TaobaoOpenimTribeExpelRequest) SetUser(_user *OpenImUser) error {
+func (r *TaobaoOpenimTribeExpelAPIRequest) SetUser(_user *OpenImUser) error {
     r._user = _user
     r.Set("user", _user)
     return nil
 }
 
 // User Getter
-func (r TaobaoOpenimTribeExpelRequest) GetUser() *OpenImUser {
+func (r TaobaoOpenimTribeExpelAPIRequest) GetUser() *OpenImUser {
     return r._user
 }
 // TribeId Setter
 // 群id
-func (r *TaobaoOpenimTribeExpelRequest) SetTribeId(_tribeId int64) error {
+func (r *TaobaoOpenimTribeExpelAPIRequest) SetTribeId(_tribeId int64) error {
     r._tribeId = _tribeId
     r.Set("tribe_id", _tribeId)
     return nil
 }
 
 // TribeId Getter
-func (r TaobaoOpenimTribeExpelRequest) GetTribeId() int64 {
+func (r TaobaoOpenimTribeExpelAPIRequest) GetTribeId() int64 {
     return r._tribeId
 }
 // Member Setter
 // 用户信息
-func (r *TaobaoOpenimTribeExpelRequest) SetMember(_member *OpenImUser) error {
+func (r *TaobaoOpenimTribeExpelAPIRequest) SetMember(_member *OpenImUser) error {
     r._member = _member
     r.Set("member", _member)
     return nil
 }
 
 // Member Getter
-func (r TaobaoOpenimTribeExpelRequest) GetMember() *OpenImUser {
+func (r TaobaoOpenimTribeExpelAPIRequest) GetMember() *OpenImUser {
     return r._member
 }

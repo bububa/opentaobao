@@ -12,7 +12,7 @@ taobao.tvpay.order.partnerpay
 
 tv支付第三方发起并支付订单（使用设备授权）
 */
-type TaobaoTvpayOrderPartnerpayRequest struct {
+type TaobaoTvpayOrderPartnerpayAPIRequest struct {
     model.Params
     // 设备id
     _deviceId   string
@@ -26,20 +26,20 @@ type TaobaoTvpayOrderPartnerpayRequest struct {
     _license   string
 }
 
-// 初始化TaobaoTvpayOrderPartnerpayRequest对象
-func NewTaobaoTvpayOrderPartnerpayRequest() *TaobaoTvpayOrderPartnerpayRequest{
-    return &TaobaoTvpayOrderPartnerpayRequest{
+// 初始化TaobaoTvpayOrderPartnerpayAPIRequest对象
+func NewTaobaoTvpayOrderPartnerpayRequest() *TaobaoTvpayOrderPartnerpayAPIRequest{
+    return &TaobaoTvpayOrderPartnerpayAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTvpayOrderPartnerpayRequest) GetApiMethodName() string {
+func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetApiMethodName() string {
     return "taobao.tvpay.order.partnerpay"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTvpayOrderPartnerpayRequest) GetApiParams() url.Values {
+func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TaobaoTvpayOrderPartnerpayRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoTvpayOrderPartnerpayRequest) SetDeviceId(_deviceId string) error {
+func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetDeviceId(_deviceId string) error {
     r._deviceId = _deviceId
     r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
-func (r TaobaoTvpayOrderPartnerpayRequest) GetDeviceId() string {
+func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetDeviceId() string {
     return r._deviceId
 }
 // From Setter
 // 来源
-func (r *TaobaoTvpayOrderPartnerpayRequest) SetFrom(_from string) error {
+func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetFrom(_from string) error {
     r._from = _from
     r.Set("from", _from)
     return nil
 }
 
 // From Getter
-func (r TaobaoTvpayOrderPartnerpayRequest) GetFrom() string {
+func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetFrom() string {
     return r._from
 }
 // Data Setter
 // 订单信息
-func (r *TaobaoTvpayOrderPartnerpayRequest) SetData(_data string) error {
+func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetData(_data string) error {
     r._data = _data
     r.Set("data", _data)
     return nil
 }
 
 // Data Getter
-func (r TaobaoTvpayOrderPartnerpayRequest) GetData() string {
+func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetData() string {
     return r._data
 }
 // PayType Setter
 // 支付方式
-func (r *TaobaoTvpayOrderPartnerpayRequest) SetPayType(_payType string) error {
+func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetPayType(_payType string) error {
     r._payType = _payType
     r.Set("pay_type", _payType)
     return nil
 }
 
 // PayType Getter
-func (r TaobaoTvpayOrderPartnerpayRequest) GetPayType() string {
+func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetPayType() string {
     return r._payType
 }
 // License Setter
 // 牌照方
-func (r *TaobaoTvpayOrderPartnerpayRequest) SetLicense(_license string) error {
+func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetLicense(_license string) error {
     r._license = _license
     r.Set("license", _license)
     return nil
 }
 
 // License Getter
-func (r TaobaoTvpayOrderPartnerpayRequest) GetLicense() string {
+func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetLicense() string {
     return r._license
 }

@@ -12,26 +12,26 @@ alibaba.idle.appraise.order.query
 
 鉴定商调用该接口获取订单状态
 */
-type AlibabaIdleAppraiseOrderQueryRequest struct {
+type AlibabaIdleAppraiseOrderQueryAPIRequest struct {
     model.Params
     // orderId
     _bizOrderId   int64
 }
 
-// 初始化AlibabaIdleAppraiseOrderQueryRequest对象
-func NewAlibabaIdleAppraiseOrderQueryRequest() *AlibabaIdleAppraiseOrderQueryRequest{
-    return &AlibabaIdleAppraiseOrderQueryRequest{
+// 初始化AlibabaIdleAppraiseOrderQueryAPIRequest对象
+func NewAlibabaIdleAppraiseOrderQueryRequest() *AlibabaIdleAppraiseOrderQueryAPIRequest{
+    return &AlibabaIdleAppraiseOrderQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleAppraiseOrderQueryRequest) GetApiMethodName() string {
+func (r AlibabaIdleAppraiseOrderQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.appraise.order.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleAppraiseOrderQueryRequest) GetApiParams() url.Values {
+func (r AlibabaIdleAppraiseOrderQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleAppraiseOrderQueryRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // orderId
-func (r *AlibabaIdleAppraiseOrderQueryRequest) SetBizOrderId(_bizOrderId int64) error {
+func (r *AlibabaIdleAppraiseOrderQueryAPIRequest) SetBizOrderId(_bizOrderId int64) error {
     r._bizOrderId = _bizOrderId
     r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
-func (r AlibabaIdleAppraiseOrderQueryRequest) GetBizOrderId() int64 {
+func (r AlibabaIdleAppraiseOrderQueryAPIRequest) GetBizOrderId() int64 {
     return r._bizOrderId
 }

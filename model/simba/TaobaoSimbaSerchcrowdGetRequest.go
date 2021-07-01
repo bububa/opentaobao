@@ -12,7 +12,7 @@ taobao.simba.serchcrowd.get
 
 根据推广单元id获取搜索溢价人群
 */
-type TaobaoSimbaSerchcrowdGetRequest struct {
+type TaobaoSimbaSerchcrowdGetAPIRequest struct {
     model.Params
     // 被操作者的淘宝昵称
     _nick   string
@@ -20,20 +20,20 @@ type TaobaoSimbaSerchcrowdGetRequest struct {
     _adgroupId   int64
 }
 
-// 初始化TaobaoSimbaSerchcrowdGetRequest对象
-func NewTaobaoSimbaSerchcrowdGetRequest() *TaobaoSimbaSerchcrowdGetRequest{
-    return &TaobaoSimbaSerchcrowdGetRequest{
+// 初始化TaobaoSimbaSerchcrowdGetAPIRequest对象
+func NewTaobaoSimbaSerchcrowdGetRequest() *TaobaoSimbaSerchcrowdGetAPIRequest{
+    return &TaobaoSimbaSerchcrowdGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaSerchcrowdGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.serchcrowd.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSerchcrowdGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSimbaSerchcrowdGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaoSimbaSerchcrowdGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaSerchcrowdGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaSerchcrowdGetRequest) GetNick() string {
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetNick() string {
     return r._nick
 }
 // AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaSerchcrowdGetRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoSimbaSerchcrowdGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
     r._adgroupId = _adgroupId
     r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
-func (r TaobaoSimbaSerchcrowdGetRequest) GetAdgroupId() int64 {
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetAdgroupId() int64 {
     return r._adgroupId
 }

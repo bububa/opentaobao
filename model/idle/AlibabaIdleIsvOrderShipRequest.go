@@ -12,7 +12,7 @@ alibaba.idle.isv.order.ship
 
 闲鱼无忧购业务入仓模式下服务商订单发货的接口
 */
-type AlibabaIdleIsvOrderShipRequest struct {
+type AlibabaIdleIsvOrderShipAPIRequest struct {
     model.Params
     // 订单号
     _bizOrderId   string
@@ -22,20 +22,20 @@ type AlibabaIdleIsvOrderShipRequest struct {
     _shipMailNo   string
 }
 
-// 初始化AlibabaIdleIsvOrderShipRequest对象
-func NewAlibabaIdleIsvOrderShipRequest() *AlibabaIdleIsvOrderShipRequest{
-    return &AlibabaIdleIsvOrderShipRequest{
+// 初始化AlibabaIdleIsvOrderShipAPIRequest对象
+func NewAlibabaIdleIsvOrderShipRequest() *AlibabaIdleIsvOrderShipAPIRequest{
+    return &AlibabaIdleIsvOrderShipAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleIsvOrderShipRequest) GetApiMethodName() string {
+func (r AlibabaIdleIsvOrderShipAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.isv.order.ship"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvOrderShipRequest) GetApiParams() url.Values {
+func (r AlibabaIdleIsvOrderShipAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaIdleIsvOrderShipRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 订单号
-func (r *AlibabaIdleIsvOrderShipRequest) SetBizOrderId(_bizOrderId string) error {
+func (r *AlibabaIdleIsvOrderShipAPIRequest) SetBizOrderId(_bizOrderId string) error {
     r._bizOrderId = _bizOrderId
     r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
-func (r AlibabaIdleIsvOrderShipRequest) GetBizOrderId() string {
+func (r AlibabaIdleIsvOrderShipAPIRequest) GetBizOrderId() string {
     return r._bizOrderId
 }
 // LogisticsCompany Setter
 // 物流公司
-func (r *AlibabaIdleIsvOrderShipRequest) SetLogisticsCompany(_logisticsCompany string) error {
+func (r *AlibabaIdleIsvOrderShipAPIRequest) SetLogisticsCompany(_logisticsCompany string) error {
     r._logisticsCompany = _logisticsCompany
     r.Set("logistics_company", _logisticsCompany)
     return nil
 }
 
 // LogisticsCompany Getter
-func (r AlibabaIdleIsvOrderShipRequest) GetLogisticsCompany() string {
+func (r AlibabaIdleIsvOrderShipAPIRequest) GetLogisticsCompany() string {
     return r._logisticsCompany
 }
 // ShipMailNo Setter
 // 运单号
-func (r *AlibabaIdleIsvOrderShipRequest) SetShipMailNo(_shipMailNo string) error {
+func (r *AlibabaIdleIsvOrderShipAPIRequest) SetShipMailNo(_shipMailNo string) error {
     r._shipMailNo = _shipMailNo
     r.Set("ship_mail_no", _shipMailNo)
     return nil
 }
 
 // ShipMailNo Getter
-func (r AlibabaIdleIsvOrderShipRequest) GetShipMailNo() string {
+func (r AlibabaIdleIsvOrderShipAPIRequest) GetShipMailNo() string {
     return r._shipMailNo
 }

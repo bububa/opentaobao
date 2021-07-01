@@ -12,26 +12,26 @@ taobao.wireless.share.tpwd.query
 
 查询解析淘口令
 */
-type TaobaoWirelessShareTpwdQueryRequest struct {
+type TaobaoWirelessShareTpwdQueryAPIRequest struct {
     model.Params
     // 淘口令
     _passwordContent   string
 }
 
-// 初始化TaobaoWirelessShareTpwdQueryRequest对象
-func NewTaobaoWirelessShareTpwdQueryRequest() *TaobaoWirelessShareTpwdQueryRequest{
-    return &TaobaoWirelessShareTpwdQueryRequest{
+// 初始化TaobaoWirelessShareTpwdQueryAPIRequest对象
+func NewTaobaoWirelessShareTpwdQueryRequest() *TaobaoWirelessShareTpwdQueryAPIRequest{
+    return &TaobaoWirelessShareTpwdQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWirelessShareTpwdQueryRequest) GetApiMethodName() string {
+func (r TaobaoWirelessShareTpwdQueryAPIRequest) GetApiMethodName() string {
     return "taobao.wireless.share.tpwd.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWirelessShareTpwdQueryRequest) GetApiParams() url.Values {
+func (r TaobaoWirelessShareTpwdQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWirelessShareTpwdQueryRequest) GetApiParams() url.Values {
 }
 // PasswordContent Setter
 // 淘口令
-func (r *TaobaoWirelessShareTpwdQueryRequest) SetPasswordContent(_passwordContent string) error {
+func (r *TaobaoWirelessShareTpwdQueryAPIRequest) SetPasswordContent(_passwordContent string) error {
     r._passwordContent = _passwordContent
     r.Set("password_content", _passwordContent)
     return nil
 }
 
 // PasswordContent Getter
-func (r TaobaoWirelessShareTpwdQueryRequest) GetPasswordContent() string {
+func (r TaobaoWirelessShareTpwdQueryAPIRequest) GetPasswordContent() string {
     return r._passwordContent
 }

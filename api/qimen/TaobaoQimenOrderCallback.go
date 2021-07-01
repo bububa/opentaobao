@@ -11,7 +11,7 @@ taobao.qimen.order.callback
 
 配送拦截
 */
-func TaobaoQimenOrderCallback(clt *core.SDKClient, req *qimen.TaobaoQimenOrderCallbackRequest, session string) (*qimen.TaobaoQimenOrderCallbackAPIResponse, error) {
+func TaobaoQimenOrderCallback(clt *core.SDKClient, req *qimen.TaobaoQimenOrderCallbackAPIRequest, session string) (*qimen.TaobaoQimenOrderCallbackAPIResponse, error) {
     var resp qimen.TaobaoQimenOrderCallbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

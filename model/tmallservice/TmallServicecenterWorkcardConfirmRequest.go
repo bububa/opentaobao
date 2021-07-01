@@ -12,26 +12,26 @@ tmall.servicecenter.workcard.confirm
 
 提供给外部合作服务商，用于通知天猫，告知寄修服务厂内操作全部完成
 */
-type TmallServicecenterWorkcardConfirmRequest struct {
+type TmallServicecenterWorkcardConfirmAPIRequest struct {
     model.Params
     // 工单id
     _workcardId   int64
 }
 
-// 初始化TmallServicecenterWorkcardConfirmRequest对象
-func NewTmallServicecenterWorkcardConfirmRequest() *TmallServicecenterWorkcardConfirmRequest{
-    return &TmallServicecenterWorkcardConfirmRequest{
+// 初始化TmallServicecenterWorkcardConfirmAPIRequest对象
+func NewTmallServicecenterWorkcardConfirmRequest() *TmallServicecenterWorkcardConfirmAPIRequest{
+    return &TmallServicecenterWorkcardConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkcardConfirmRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkcardConfirmAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.workcard.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkcardConfirmRequest) GetApiParams() url.Values {
+func (r TmallServicecenterWorkcardConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkcardConfirmRequest) GetApiParams() url.Values {
 }
 // WorkcardId Setter
 // 工单id
-func (r *TmallServicecenterWorkcardConfirmRequest) SetWorkcardId(_workcardId int64) error {
+func (r *TmallServicecenterWorkcardConfirmAPIRequest) SetWorkcardId(_workcardId int64) error {
     r._workcardId = _workcardId
     r.Set("workcard_id", _workcardId)
     return nil
 }
 
 // WorkcardId Getter
-func (r TmallServicecenterWorkcardConfirmRequest) GetWorkcardId() int64 {
+func (r TmallServicecenterWorkcardConfirmAPIRequest) GetWorkcardId() int64 {
     return r._workcardId
 }

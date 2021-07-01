@@ -12,26 +12,26 @@ alibaba.happytrip.freelogin.getusercontext
 
 免登融合，提供免登相关接口给外部供应商做登录验证
 */
-type AlibabaHappytripFreeloginGetusercontextRequest struct {
+type AlibabaHappytripFreeloginGetusercontextAPIRequest struct {
     model.Params
     // 请求入参
     _req   *SsoParamDTO
 }
 
-// 初始化AlibabaHappytripFreeloginGetusercontextRequest对象
-func NewAlibabaHappytripFreeloginGetusercontextRequest() *AlibabaHappytripFreeloginGetusercontextRequest{
-    return &AlibabaHappytripFreeloginGetusercontextRequest{
+// 初始化AlibabaHappytripFreeloginGetusercontextAPIRequest对象
+func NewAlibabaHappytripFreeloginGetusercontextRequest() *AlibabaHappytripFreeloginGetusercontextAPIRequest{
+    return &AlibabaHappytripFreeloginGetusercontextAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHappytripFreeloginGetusercontextRequest) GetApiMethodName() string {
+func (r AlibabaHappytripFreeloginGetusercontextAPIRequest) GetApiMethodName() string {
     return "alibaba.happytrip.freelogin.getusercontext"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHappytripFreeloginGetusercontextRequest) GetApiParams() url.Values {
+func (r AlibabaHappytripFreeloginGetusercontextAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaHappytripFreeloginGetusercontextRequest) GetApiParams() url.Value
 }
 // Req Setter
 // 请求入参
-func (r *AlibabaHappytripFreeloginGetusercontextRequest) SetReq(_req *SsoParamDTO) error {
+func (r *AlibabaHappytripFreeloginGetusercontextAPIRequest) SetReq(_req *SsoParamDTO) error {
     r._req = _req
     r.Set("req", _req)
     return nil
 }
 
 // Req Getter
-func (r AlibabaHappytripFreeloginGetusercontextRequest) GetReq() *SsoParamDTO {
+func (r AlibabaHappytripFreeloginGetusercontextAPIRequest) GetReq() *SsoParamDTO {
     return r._req
 }

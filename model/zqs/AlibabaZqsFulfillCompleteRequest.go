@@ -12,7 +12,7 @@ alibaba.zqs.fulfill.complete
 
 周期购履约完成接口
 */
-type AlibabaZqsFulfillCompleteRequest struct {
+type AlibabaZqsFulfillCompleteAPIRequest struct {
     model.Params
     // 第几期
     _sequenceNo   int64
@@ -22,20 +22,20 @@ type AlibabaZqsFulfillCompleteRequest struct {
     _subBizOrderId   int64
 }
 
-// 初始化AlibabaZqsFulfillCompleteRequest对象
-func NewAlibabaZqsFulfillCompleteRequest() *AlibabaZqsFulfillCompleteRequest{
-    return &AlibabaZqsFulfillCompleteRequest{
+// 初始化AlibabaZqsFulfillCompleteAPIRequest对象
+func NewAlibabaZqsFulfillCompleteRequest() *AlibabaZqsFulfillCompleteAPIRequest{
+    return &AlibabaZqsFulfillCompleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaZqsFulfillCompleteRequest) GetApiMethodName() string {
+func (r AlibabaZqsFulfillCompleteAPIRequest) GetApiMethodName() string {
     return "alibaba.zqs.fulfill.complete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaZqsFulfillCompleteRequest) GetApiParams() url.Values {
+func (r AlibabaZqsFulfillCompleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaZqsFulfillCompleteRequest) GetApiParams() url.Values {
 }
 // SequenceNo Setter
 // 第几期
-func (r *AlibabaZqsFulfillCompleteRequest) SetSequenceNo(_sequenceNo int64) error {
+func (r *AlibabaZqsFulfillCompleteAPIRequest) SetSequenceNo(_sequenceNo int64) error {
     r._sequenceNo = _sequenceNo
     r.Set("sequence_no", _sequenceNo)
     return nil
 }
 
 // SequenceNo Getter
-func (r AlibabaZqsFulfillCompleteRequest) GetSequenceNo() int64 {
+func (r AlibabaZqsFulfillCompleteAPIRequest) GetSequenceNo() int64 {
     return r._sequenceNo
 }
 // MainBizOrderId Setter
 // 交易单号
-func (r *AlibabaZqsFulfillCompleteRequest) SetMainBizOrderId(_mainBizOrderId int64) error {
+func (r *AlibabaZqsFulfillCompleteAPIRequest) SetMainBizOrderId(_mainBizOrderId int64) error {
     r._mainBizOrderId = _mainBizOrderId
     r.Set("main_biz_order_id", _mainBizOrderId)
     return nil
 }
 
 // MainBizOrderId Getter
-func (r AlibabaZqsFulfillCompleteRequest) GetMainBizOrderId() int64 {
+func (r AlibabaZqsFulfillCompleteAPIRequest) GetMainBizOrderId() int64 {
     return r._mainBizOrderId
 }
 // SubBizOrderId Setter
 // 交易子单号
-func (r *AlibabaZqsFulfillCompleteRequest) SetSubBizOrderId(_subBizOrderId int64) error {
+func (r *AlibabaZqsFulfillCompleteAPIRequest) SetSubBizOrderId(_subBizOrderId int64) error {
     r._subBizOrderId = _subBizOrderId
     r.Set("sub_biz_order_id", _subBizOrderId)
     return nil
 }
 
 // SubBizOrderId Getter
-func (r AlibabaZqsFulfillCompleteRequest) GetSubBizOrderId() int64 {
+func (r AlibabaZqsFulfillCompleteAPIRequest) GetSubBizOrderId() int64 {
     return r._subBizOrderId
 }

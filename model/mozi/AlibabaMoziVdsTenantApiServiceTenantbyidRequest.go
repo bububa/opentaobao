@@ -12,26 +12,26 @@ alibaba.mozi.vds.tenant.api.service.tenantbyid
 
 按租户ID查询租户信息
 */
-type AlibabaMoziVdsTenantApiServiceTenantbyidRequest struct {
+type AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest struct {
     model.Params
     // 入参
     _par0   *GetTenantByIdRequest
 }
 
-// 初始化AlibabaMoziVdsTenantApiServiceTenantbyidRequest对象
-func NewAlibabaMoziVdsTenantApiServiceTenantbyidRequest() *AlibabaMoziVdsTenantApiServiceTenantbyidRequest{
-    return &AlibabaMoziVdsTenantApiServiceTenantbyidRequest{
+// 初始化AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest对象
+func NewAlibabaMoziVdsTenantApiServiceTenantbyidRequest() *AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest{
+    return &AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziVdsTenantApiServiceTenantbyidRequest) GetApiMethodName() string {
+func (r AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.vds.tenant.api.service.tenantbyid"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziVdsTenantApiServiceTenantbyidRequest) GetApiParams() url.Values {
+func (r AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziVdsTenantApiServiceTenantbyidRequest) GetApiParams() url.Valu
 }
 // Par0 Setter
 // 入参
-func (r *AlibabaMoziVdsTenantApiServiceTenantbyidRequest) SetPar0(_par0 *GetTenantByIdRequest) error {
+func (r *AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) SetPar0(_par0 *GetTenantByIdRequest) error {
     r._par0 = _par0
     r.Set("par0", _par0)
     return nil
 }
 
 // Par0 Getter
-func (r AlibabaMoziVdsTenantApiServiceTenantbyidRequest) GetPar0() *GetTenantByIdRequest {
+func (r AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) GetPar0() *GetTenantByIdRequest {
     return r._par0
 }

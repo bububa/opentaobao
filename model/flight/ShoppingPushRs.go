@@ -1,7 +1,7 @@
 package flight
 
-// ShoppingPushRs 
-type ShoppingPushRs struct {
+// ShoppingPushRS 
+type ShoppingPushRS struct {
     // success
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // errCode

@@ -12,7 +12,7 @@ alibaba.icbu.category.schema.level.get
 
 将表单中层级属性的子属性返回
 */
-type AlibabaIcbuCategorySchemaLevelGetRequest struct {
+type AlibabaIcbuCategorySchemaLevelGetAPIRequest struct {
     model.Params
     // 类目id
     _catId   int64
@@ -22,20 +22,20 @@ type AlibabaIcbuCategorySchemaLevelGetRequest struct {
     _xml   string
 }
 
-// 初始化AlibabaIcbuCategorySchemaLevelGetRequest对象
-func NewAlibabaIcbuCategorySchemaLevelGetRequest() *AlibabaIcbuCategorySchemaLevelGetRequest{
-    return &AlibabaIcbuCategorySchemaLevelGetRequest{
+// 初始化AlibabaIcbuCategorySchemaLevelGetAPIRequest对象
+func NewAlibabaIcbuCategorySchemaLevelGetRequest() *AlibabaIcbuCategorySchemaLevelGetAPIRequest{
+    return &AlibabaIcbuCategorySchemaLevelGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuCategorySchemaLevelGetRequest) GetApiMethodName() string {
+func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.category.schema.level.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuCategorySchemaLevelGetRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaIcbuCategorySchemaLevelGetRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 类目id
-func (r *AlibabaIcbuCategorySchemaLevelGetRequest) SetCatId(_catId int64) error {
+func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetCatId(_catId int64) error {
     r._catId = _catId
     r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
-func (r AlibabaIcbuCategorySchemaLevelGetRequest) GetCatId() int64 {
+func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetCatId() int64 {
     return r._catId
 }
 // Language Setter
 // 返回的文案的语种，可以输入en_US或者zh
-func (r *AlibabaIcbuCategorySchemaLevelGetRequest) SetLanguage(_language string) error {
+func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetLanguage(_language string) error {
     r._language = _language
     r.Set("language", _language)
     return nil
 }
 
 // Language Getter
-func (r AlibabaIcbuCategorySchemaLevelGetRequest) GetLanguage() string {
+func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetLanguage() string {
     return r._language
 }
 // Xml Setter
 // 层级属性的当前层级属性
-func (r *AlibabaIcbuCategorySchemaLevelGetRequest) SetXml(_xml string) error {
+func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetXml(_xml string) error {
     r._xml = _xml
     r.Set("xml", _xml)
     return nil
 }
 
 // Xml Getter
-func (r AlibabaIcbuCategorySchemaLevelGetRequest) GetXml() string {
+func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetXml() string {
     return r._xml
 }

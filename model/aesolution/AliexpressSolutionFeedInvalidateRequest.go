@@ -12,26 +12,26 @@ aliexpress.solution.feed.invalidate
 
 Api for invalidating specific feeds based on job Ids. Please use aliexpress.solution.feed.list.get to determine which job Ids needs to be sent for invalidation.
 */
-type AliexpressSolutionFeedInvalidateRequest struct {
+type AliexpressSolutionFeedInvalidateAPIRequest struct {
     model.Params
     // job id separated by ;  No more than 100 job Ids could be passed in one request.
     _jobIdList   string
 }
 
-// 初始化AliexpressSolutionFeedInvalidateRequest对象
-func NewAliexpressSolutionFeedInvalidateRequest() *AliexpressSolutionFeedInvalidateRequest{
-    return &AliexpressSolutionFeedInvalidateRequest{
+// 初始化AliexpressSolutionFeedInvalidateAPIRequest对象
+func NewAliexpressSolutionFeedInvalidateRequest() *AliexpressSolutionFeedInvalidateAPIRequest{
+    return &AliexpressSolutionFeedInvalidateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionFeedInvalidateRequest) GetApiMethodName() string {
+func (r AliexpressSolutionFeedInvalidateAPIRequest) GetApiMethodName() string {
     return "aliexpress.solution.feed.invalidate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionFeedInvalidateRequest) GetApiParams() url.Values {
+func (r AliexpressSolutionFeedInvalidateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressSolutionFeedInvalidateRequest) GetApiParams() url.Values {
 }
 // JobIdList Setter
 // job id separated by ;  No more than 100 job Ids could be passed in one request.
-func (r *AliexpressSolutionFeedInvalidateRequest) SetJobIdList(_jobIdList string) error {
+func (r *AliexpressSolutionFeedInvalidateAPIRequest) SetJobIdList(_jobIdList string) error {
     r._jobIdList = _jobIdList
     r.Set("job_id_list", _jobIdList)
     return nil
 }
 
 // JobIdList Getter
-func (r AliexpressSolutionFeedInvalidateRequest) GetJobIdList() string {
+func (r AliexpressSolutionFeedInvalidateAPIRequest) GetJobIdList() string {
     return r._jobIdList
 }

@@ -12,7 +12,7 @@ taobao.fivee.innerproduct.publish
 
 资质共享平台国产商品发布
 */
-type TaobaoFiveeInnerproductPublishRequest struct {
+type TaobaoFiveeInnerproductPublishAPIRequest struct {
     model.Params
     // bu身份标识
     _paramBucode   string
@@ -20,20 +20,20 @@ type TaobaoFiveeInnerproductPublishRequest struct {
     _paramInnerProduct   *InnerProduct
 }
 
-// 初始化TaobaoFiveeInnerproductPublishRequest对象
-func NewTaobaoFiveeInnerproductPublishRequest() *TaobaoFiveeInnerproductPublishRequest{
-    return &TaobaoFiveeInnerproductPublishRequest{
+// 初始化TaobaoFiveeInnerproductPublishAPIRequest对象
+func NewTaobaoFiveeInnerproductPublishRequest() *TaobaoFiveeInnerproductPublishAPIRequest{
+    return &TaobaoFiveeInnerproductPublishAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFiveeInnerproductPublishRequest) GetApiMethodName() string {
+func (r TaobaoFiveeInnerproductPublishAPIRequest) GetApiMethodName() string {
     return "taobao.fivee.innerproduct.publish"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFiveeInnerproductPublishRequest) GetApiParams() url.Values {
+func (r TaobaoFiveeInnerproductPublishAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoFiveeInnerproductPublishRequest) GetApiParams() url.Values {
 }
 // ParamBucode Setter
 // bu身份标识
-func (r *TaobaoFiveeInnerproductPublishRequest) SetParamBucode(_paramBucode string) error {
+func (r *TaobaoFiveeInnerproductPublishAPIRequest) SetParamBucode(_paramBucode string) error {
     r._paramBucode = _paramBucode
     r.Set("param_bucode", _paramBucode)
     return nil
 }
 
 // ParamBucode Getter
-func (r TaobaoFiveeInnerproductPublishRequest) GetParamBucode() string {
+func (r TaobaoFiveeInnerproductPublishAPIRequest) GetParamBucode() string {
     return r._paramBucode
 }
 // ParamInnerProduct Setter
 // 国产商品
-func (r *TaobaoFiveeInnerproductPublishRequest) SetParamInnerProduct(_paramInnerProduct *InnerProduct) error {
+func (r *TaobaoFiveeInnerproductPublishAPIRequest) SetParamInnerProduct(_paramInnerProduct *InnerProduct) error {
     r._paramInnerProduct = _paramInnerProduct
     r.Set("param_inner_product", _paramInnerProduct)
     return nil
 }
 
 // ParamInnerProduct Getter
-func (r TaobaoFiveeInnerproductPublishRequest) GetParamInnerProduct() *InnerProduct {
+func (r TaobaoFiveeInnerproductPublishAPIRequest) GetParamInnerProduct() *InnerProduct {
     return r._paramInnerProduct
 }

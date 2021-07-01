@@ -11,7 +11,7 @@ taobao.weitao.feed.isrelation
 
 判断用户是否关注对应的公共账号
 */
-func TaobaoWeitaoFeedIsrelation(clt *core.SDKClient, req *mtopopen.TaobaoWeitaoFeedIsrelationRequest, session string) (*mtopopen.TaobaoWeitaoFeedIsrelationAPIResponse, error) {
+func TaobaoWeitaoFeedIsrelation(clt *core.SDKClient, req *mtopopen.TaobaoWeitaoFeedIsrelationAPIRequest, session string) (*mtopopen.TaobaoWeitaoFeedIsrelationAPIResponse, error) {
     var resp mtopopen.TaobaoWeitaoFeedIsrelationAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

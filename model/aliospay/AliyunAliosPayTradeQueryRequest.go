@@ -12,26 +12,26 @@ aliyun.alios.pay.trade.query
 
 商户用来查询支付结果接口
 */
-type AliyunAliosPayTradeQueryRequest struct {
+type AliyunAliosPayTradeQueryAPIRequest struct {
     model.Params
     // 请求参数
     _queryTradeRequest   *QueryTradeRequest
 }
 
-// 初始化AliyunAliosPayTradeQueryRequest对象
-func NewAliyunAliosPayTradeQueryRequest() *AliyunAliosPayTradeQueryRequest{
-    return &AliyunAliosPayTradeQueryRequest{
+// 初始化AliyunAliosPayTradeQueryAPIRequest对象
+func NewAliyunAliosPayTradeQueryRequest() *AliyunAliosPayTradeQueryAPIRequest{
+    return &AliyunAliosPayTradeQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliyunAliosPayTradeQueryRequest) GetApiMethodName() string {
+func (r AliyunAliosPayTradeQueryAPIRequest) GetApiMethodName() string {
     return "aliyun.alios.pay.trade.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliyunAliosPayTradeQueryRequest) GetApiParams() url.Values {
+func (r AliyunAliosPayTradeQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliyunAliosPayTradeQueryRequest) GetApiParams() url.Values {
 }
 // QueryTradeRequest Setter
 // 请求参数
-func (r *AliyunAliosPayTradeQueryRequest) SetQueryTradeRequest(_queryTradeRequest *QueryTradeRequest) error {
+func (r *AliyunAliosPayTradeQueryAPIRequest) SetQueryTradeRequest(_queryTradeRequest *QueryTradeRequest) error {
     r._queryTradeRequest = _queryTradeRequest
     r.Set("query_trade_request", _queryTradeRequest)
     return nil
 }
 
 // QueryTradeRequest Getter
-func (r AliyunAliosPayTradeQueryRequest) GetQueryTradeRequest() *QueryTradeRequest {
+func (r AliyunAliosPayTradeQueryAPIRequest) GetQueryTradeRequest() *QueryTradeRequest {
     return r._queryTradeRequest
 }

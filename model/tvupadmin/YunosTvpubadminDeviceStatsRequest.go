@@ -12,7 +12,7 @@ yunos.tvpubadmin.device.stats
 
 获取设备统计数据
 */
-type YunosTvpubadminDeviceStatsRequest struct {
+type YunosTvpubadminDeviceStatsAPIRequest struct {
     model.Params
     // 厂商名称
     _factoryName   string
@@ -20,20 +20,20 @@ type YunosTvpubadminDeviceStatsRequest struct {
     _deviceModel   string
 }
 
-// 初始化YunosTvpubadminDeviceStatsRequest对象
-func NewYunosTvpubadminDeviceStatsRequest() *YunosTvpubadminDeviceStatsRequest{
-    return &YunosTvpubadminDeviceStatsRequest{
+// 初始化YunosTvpubadminDeviceStatsAPIRequest对象
+func NewYunosTvpubadminDeviceStatsRequest() *YunosTvpubadminDeviceStatsAPIRequest{
+    return &YunosTvpubadminDeviceStatsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminDeviceStatsRequest) GetApiMethodName() string {
+func (r YunosTvpubadminDeviceStatsAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.device.stats"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminDeviceStatsRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminDeviceStatsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r YunosTvpubadminDeviceStatsRequest) GetApiParams() url.Values {
 }
 // FactoryName Setter
 // 厂商名称
-func (r *YunosTvpubadminDeviceStatsRequest) SetFactoryName(_factoryName string) error {
+func (r *YunosTvpubadminDeviceStatsAPIRequest) SetFactoryName(_factoryName string) error {
     r._factoryName = _factoryName
     r.Set("factory_name", _factoryName)
     return nil
 }
 
 // FactoryName Getter
-func (r YunosTvpubadminDeviceStatsRequest) GetFactoryName() string {
+func (r YunosTvpubadminDeviceStatsAPIRequest) GetFactoryName() string {
     return r._factoryName
 }
 // DeviceModel Setter
 // 设备型号
-func (r *YunosTvpubadminDeviceStatsRequest) SetDeviceModel(_deviceModel string) error {
+func (r *YunosTvpubadminDeviceStatsAPIRequest) SetDeviceModel(_deviceModel string) error {
     r._deviceModel = _deviceModel
     r.Set("device_model", _deviceModel)
     return nil
 }
 
 // DeviceModel Getter
-func (r YunosTvpubadminDeviceStatsRequest) GetDeviceModel() string {
+func (r YunosTvpubadminDeviceStatsAPIRequest) GetDeviceModel() string {
     return r._deviceModel
 }

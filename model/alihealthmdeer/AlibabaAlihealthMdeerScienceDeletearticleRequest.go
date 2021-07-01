@@ -12,26 +12,26 @@ alibaba.alihealth.mdeer.science.deletearticle
 
 三方同步文章删除
 */
-type AlibabaAlihealthMdeerScienceDeletearticleRequest struct {
+type AlibabaAlihealthMdeerScienceDeletearticleAPIRequest struct {
     model.Params
     // 文章ID
     _articleId   int64
 }
 
-// 初始化AlibabaAlihealthMdeerScienceDeletearticleRequest对象
-func NewAlibabaAlihealthMdeerScienceDeletearticleRequest() *AlibabaAlihealthMdeerScienceDeletearticleRequest{
-    return &AlibabaAlihealthMdeerScienceDeletearticleRequest{
+// 初始化AlibabaAlihealthMdeerScienceDeletearticleAPIRequest对象
+func NewAlibabaAlihealthMdeerScienceDeletearticleRequest() *AlibabaAlihealthMdeerScienceDeletearticleAPIRequest{
+    return &AlibabaAlihealthMdeerScienceDeletearticleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMdeerScienceDeletearticleRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.mdeer.science.deletearticle"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMdeerScienceDeletearticleRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMdeerScienceDeletearticleRequest) GetApiParams() url.Val
 }
 // ArticleId Setter
 // 文章ID
-func (r *AlibabaAlihealthMdeerScienceDeletearticleRequest) SetArticleId(_articleId int64) error {
+func (r *AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) SetArticleId(_articleId int64) error {
     r._articleId = _articleId
     r.Set("article_id", _articleId)
     return nil
 }
 
 // ArticleId Getter
-func (r AlibabaAlihealthMdeerScienceDeletearticleRequest) GetArticleId() int64 {
+func (r AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) GetArticleId() int64 {
     return r._articleId
 }

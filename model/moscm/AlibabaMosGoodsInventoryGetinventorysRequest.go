@@ -12,26 +12,26 @@ alibaba.mos.goods.inventory.getinventorys
 
 查询商品的可售、在库和占库数量
 */
-type AlibabaMosGoodsInventoryGetinventorysRequest struct {
+type AlibabaMosGoodsInventoryGetinventorysAPIRequest struct {
     model.Params
     // 查询对象
     _paramVirtualInventoryQueryDto   *VirtualInventoryQueryDTO
 }
 
-// 初始化AlibabaMosGoodsInventoryGetinventorysRequest对象
-func NewAlibabaMosGoodsInventoryGetinventorysRequest() *AlibabaMosGoodsInventoryGetinventorysRequest{
-    return &AlibabaMosGoodsInventoryGetinventorysRequest{
+// 初始化AlibabaMosGoodsInventoryGetinventorysAPIRequest对象
+func NewAlibabaMosGoodsInventoryGetinventorysRequest() *AlibabaMosGoodsInventoryGetinventorysAPIRequest{
+    return &AlibabaMosGoodsInventoryGetinventorysAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosGoodsInventoryGetinventorysRequest) GetApiMethodName() string {
+func (r AlibabaMosGoodsInventoryGetinventorysAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.goods.inventory.getinventorys"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosGoodsInventoryGetinventorysRequest) GetApiParams() url.Values {
+func (r AlibabaMosGoodsInventoryGetinventorysAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMosGoodsInventoryGetinventorysRequest) GetApiParams() url.Values 
 }
 // ParamVirtualInventoryQueryDto Setter
 // 查询对象
-func (r *AlibabaMosGoodsInventoryGetinventorysRequest) SetParamVirtualInventoryQueryDto(_paramVirtualInventoryQueryDto *VirtualInventoryQueryDTO) error {
+func (r *AlibabaMosGoodsInventoryGetinventorysAPIRequest) SetParamVirtualInventoryQueryDto(_paramVirtualInventoryQueryDto *VirtualInventoryQueryDTO) error {
     r._paramVirtualInventoryQueryDto = _paramVirtualInventoryQueryDto
     r.Set("param_virtual_inventory_query_dto", _paramVirtualInventoryQueryDto)
     return nil
 }
 
 // ParamVirtualInventoryQueryDto Getter
-func (r AlibabaMosGoodsInventoryGetinventorysRequest) GetParamVirtualInventoryQueryDto() *VirtualInventoryQueryDTO {
+func (r AlibabaMosGoodsInventoryGetinventorysAPIRequest) GetParamVirtualInventoryQueryDto() *VirtualInventoryQueryDTO {
     return r._paramVirtualInventoryQueryDto
 }

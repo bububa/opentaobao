@@ -12,26 +12,26 @@ alibaba.txcs.brandmarketing.coupon.qrcode.get
 
 构建券页码二维码url
 */
-type AlibabaTxcsBrandmarketingCouponQrcodeGetRequest struct {
+type AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest struct {
     model.Params
     // 请求信息
     _couponQrcodeParamDo   *CouponQrcodeParamDO
 }
 
-// 初始化AlibabaTxcsBrandmarketingCouponQrcodeGetRequest对象
-func NewAlibabaTxcsBrandmarketingCouponQrcodeGetRequest() *AlibabaTxcsBrandmarketingCouponQrcodeGetRequest{
-    return &AlibabaTxcsBrandmarketingCouponQrcodeGetRequest{
+// 初始化AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest对象
+func NewAlibabaTxcsBrandmarketingCouponQrcodeGetRequest() *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest{
+    return &AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTxcsBrandmarketingCouponQrcodeGetRequest) GetApiMethodName() string {
+func (r AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) GetApiMethodName() string {
     return "alibaba.txcs.brandmarketing.coupon.qrcode.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTxcsBrandmarketingCouponQrcodeGetRequest) GetApiParams() url.Values {
+func (r AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTxcsBrandmarketingCouponQrcodeGetRequest) GetApiParams() url.Valu
 }
 // CouponQrcodeParamDo Setter
 // 请求信息
-func (r *AlibabaTxcsBrandmarketingCouponQrcodeGetRequest) SetCouponQrcodeParamDo(_couponQrcodeParamDo *CouponQrcodeParamDO) error {
+func (r *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) SetCouponQrcodeParamDo(_couponQrcodeParamDo *CouponQrcodeParamDO) error {
     r._couponQrcodeParamDo = _couponQrcodeParamDo
     r.Set("coupon_qrcode_param_do", _couponQrcodeParamDo)
     return nil
 }
 
 // CouponQrcodeParamDo Getter
-func (r AlibabaTxcsBrandmarketingCouponQrcodeGetRequest) GetCouponQrcodeParamDo() *CouponQrcodeParamDO {
+func (r AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) GetCouponQrcodeParamDo() *CouponQrcodeParamDO {
     return r._couponQrcodeParamDo
 }

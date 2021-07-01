@@ -12,7 +12,7 @@ alibaba.it.esl.sendled
 
 针对厂测生产的的价签，增加led闪灯的接口，进行led 闪灯测试
 */
-type AlibabaItEslSendledRequest struct {
+type AlibabaItEslSendledAPIRequest struct {
     model.Params
     // mac
     _macAp   string
@@ -20,20 +20,20 @@ type AlibabaItEslSendledRequest struct {
     _type   string
 }
 
-// 初始化AlibabaItEslSendledRequest对象
-func NewAlibabaItEslSendledRequest() *AlibabaItEslSendledRequest{
-    return &AlibabaItEslSendledRequest{
+// 初始化AlibabaItEslSendledAPIRequest对象
+func NewAlibabaItEslSendledRequest() *AlibabaItEslSendledAPIRequest{
+    return &AlibabaItEslSendledAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaItEslSendledRequest) GetApiMethodName() string {
+func (r AlibabaItEslSendledAPIRequest) GetApiMethodName() string {
     return "alibaba.it.esl.sendled"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaItEslSendledRequest) GetApiParams() url.Values {
+func (r AlibabaItEslSendledAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaItEslSendledRequest) GetApiParams() url.Values {
 }
 // MacAp Setter
 // mac
-func (r *AlibabaItEslSendledRequest) SetMacAp(_macAp string) error {
+func (r *AlibabaItEslSendledAPIRequest) SetMacAp(_macAp string) error {
     r._macAp = _macAp
     r.Set("mac_ap", _macAp)
     return nil
 }
 
 // MacAp Getter
-func (r AlibabaItEslSendledRequest) GetMacAp() string {
+func (r AlibabaItEslSendledAPIRequest) GetMacAp() string {
     return r._macAp
 }
 // Type Setter
 // 0、1、2、3：关蓝绿红
-func (r *AlibabaItEslSendledRequest) SetType(_type string) error {
+func (r *AlibabaItEslSendledAPIRequest) SetType(_type string) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r AlibabaItEslSendledRequest) GetType() string {
+func (r AlibabaItEslSendledAPIRequest) GetType() string {
     return r._type
 }

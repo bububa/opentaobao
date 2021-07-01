@@ -24,7 +24,7 @@ tmall.servicecenter.servicestore.createservicestore
 11, 网点不存在
 12, 系统错误
 */
-func TmallServicecenterServicestoreCreateservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreCreateservicestoreRequest, session string) (*tmallservice.TmallServicecenterServicestoreCreateservicestoreAPIResponse, error) {
+func TmallServicecenterServicestoreCreateservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreCreateservicestoreAPIRequest, session string) (*tmallservice.TmallServicecenterServicestoreCreateservicestoreAPIResponse, error) {
     var resp tmallservice.TmallServicecenterServicestoreCreateservicestoreAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

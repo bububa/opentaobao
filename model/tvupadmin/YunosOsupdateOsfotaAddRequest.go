@@ -12,26 +12,26 @@ yunos.osupdate.osfota.add
 
 添加osupdate系统升级任务
 */
-type YunosOsupdateOsfotaAddRequest struct {
+type YunosOsupdateOsfotaAddAPIRequest struct {
     model.Params
     // 系统升级任务json格式
     _osFotaJson   string
 }
 
-// 初始化YunosOsupdateOsfotaAddRequest对象
-func NewYunosOsupdateOsfotaAddRequest() *YunosOsupdateOsfotaAddRequest{
-    return &YunosOsupdateOsfotaAddRequest{
+// 初始化YunosOsupdateOsfotaAddAPIRequest对象
+func NewYunosOsupdateOsfotaAddRequest() *YunosOsupdateOsfotaAddAPIRequest{
+    return &YunosOsupdateOsfotaAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosOsupdateOsfotaAddRequest) GetApiMethodName() string {
+func (r YunosOsupdateOsfotaAddAPIRequest) GetApiMethodName() string {
     return "yunos.osupdate.osfota.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosOsupdateOsfotaAddRequest) GetApiParams() url.Values {
+func (r YunosOsupdateOsfotaAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosOsupdateOsfotaAddRequest) GetApiParams() url.Values {
 }
 // OsFotaJson Setter
 // 系统升级任务json格式
-func (r *YunosOsupdateOsfotaAddRequest) SetOsFotaJson(_osFotaJson string) error {
+func (r *YunosOsupdateOsfotaAddAPIRequest) SetOsFotaJson(_osFotaJson string) error {
     r._osFotaJson = _osFotaJson
     r.Set("os_fota_json", _osFotaJson)
     return nil
 }
 
 // OsFotaJson Getter
-func (r YunosOsupdateOsfotaAddRequest) GetOsFotaJson() string {
+func (r YunosOsupdateOsfotaAddAPIRequest) GetOsFotaJson() string {
     return r._osFotaJson
 }

@@ -11,7 +11,7 @@ taobao.simba.insight.wordsdata.get
 
 获取关键词的详细数据
 */
-func TaobaoSimbaInsightWordsdataGet(clt *core.SDKClient, req *simba.TaobaoSimbaInsightWordsdataGetRequest, session string) (*simba.TaobaoSimbaInsightWordsdataGetAPIResponse, error) {
+func TaobaoSimbaInsightWordsdataGet(clt *core.SDKClient, req *simba.TaobaoSimbaInsightWordsdataGetAPIRequest, session string) (*simba.TaobaoSimbaInsightWordsdataGetAPIResponse, error) {
     var resp simba.TaobaoSimbaInsightWordsdataGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

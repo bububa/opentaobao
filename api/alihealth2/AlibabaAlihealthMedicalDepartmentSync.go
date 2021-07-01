@@ -11,7 +11,7 @@ alibaba.alihealth.medical.department.sync
 
 阿里健康预约挂号科室同步接口
 */
-func AlibabaAlihealthMedicalDepartmentSync(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalDepartmentSyncRequest, session string) (*alihealth2.AlibabaAlihealthMedicalDepartmentSyncAPIResponse, error) {
+func AlibabaAlihealthMedicalDepartmentSync(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalDepartmentSyncAPIRequest, session string) (*alihealth2.AlibabaAlihealthMedicalDepartmentSyncAPIResponse, error) {
     var resp alihealth2.AlibabaAlihealthMedicalDepartmentSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

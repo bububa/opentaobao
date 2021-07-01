@@ -12,7 +12,7 @@ taobao.tae.accounts.get
 
 tae查询费用科目信息
 */
-type TaobaoTaeAccountsGetRequest struct {
+type TaobaoTaeAccountsGetAPIRequest struct {
     model.Params
     // 需要返回的字段
     _fields   []string
@@ -20,20 +20,20 @@ type TaobaoTaeAccountsGetRequest struct {
     _aids   []int64
 }
 
-// 初始化TaobaoTaeAccountsGetRequest对象
-func NewTaobaoTaeAccountsGetRequest() *TaobaoTaeAccountsGetRequest{
-    return &TaobaoTaeAccountsGetRequest{
+// 初始化TaobaoTaeAccountsGetAPIRequest对象
+func NewTaobaoTaeAccountsGetRequest() *TaobaoTaeAccountsGetAPIRequest{
+    return &TaobaoTaeAccountsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTaeAccountsGetRequest) GetApiMethodName() string {
+func (r TaobaoTaeAccountsGetAPIRequest) GetApiMethodName() string {
     return "taobao.tae.accounts.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTaeAccountsGetRequest) GetApiParams() url.Values {
+func (r TaobaoTaeAccountsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoTaeAccountsGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的字段
-func (r *TaobaoTaeAccountsGetRequest) SetFields(_fields []string) error {
+func (r *TaobaoTaeAccountsGetAPIRequest) SetFields(_fields []string) error {
     r._fields = _fields
     r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
-func (r TaobaoTaeAccountsGetRequest) GetFields() []string {
+func (r TaobaoTaeAccountsGetAPIRequest) GetFields() []string {
     return r._fields
 }
 // Aids Setter
 // 需要获取的科目ID
-func (r *TaobaoTaeAccountsGetRequest) SetAids(_aids []int64) error {
+func (r *TaobaoTaeAccountsGetAPIRequest) SetAids(_aids []int64) error {
     r._aids = _aids
     r.Set("aids", _aids)
     return nil
 }
 
 // Aids Getter
-func (r TaobaoTaeAccountsGetRequest) GetAids() []int64 {
+func (r TaobaoTaeAccountsGetAPIRequest) GetAids() []int64 {
     return r._aids
 }

@@ -12,7 +12,7 @@ alibaba.alihealth.examination.todoor.serviceinfo.sync
 
 isv同步上门检测服务信息给健康
 */
-type AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest struct {
+type AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest struct {
     model.Params
     // 服务商预约凭证
     _uniqReserveCode   string
@@ -26,20 +26,20 @@ type AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest struct {
     _eventOccurTime   string
 }
 
-// 初始化AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest对象
-func NewAlibabaAlihealthExaminationTodoorServiceinfoSyncRequest() *AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest{
-    return &AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest{
+// 初始化AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest对象
+func NewAlibabaAlihealthExaminationTodoorServiceinfoSyncRequest() *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest{
+    return &AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.examination.todoor.serviceinfo.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) GetApiParams() 
 }
 // UniqReserveCode Setter
 // 服务商预约凭证
-func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) SetUniqReserveCode(_uniqReserveCode string) error {
+func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
     r._uniqReserveCode = _uniqReserveCode
     r.Set("uniq_reserve_code", _uniqReserveCode)
     return nil
 }
 
 // UniqReserveCode Getter
-func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) GetUniqReserveCode() string {
+func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetUniqReserveCode() string {
     return r._uniqReserveCode
 }
 // MedicalPractitionerInfo Setter
 // 从业者信息
-func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) SetMedicalPractitionerInfo(_medicalPractitionerInfo *MedicalPractitionerInfo) error {
+func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetMedicalPractitionerInfo(_medicalPractitionerInfo *MedicalPractitionerInfo) error {
     r._medicalPractitionerInfo = _medicalPractitionerInfo
     r.Set("medical_practitioner_info", _medicalPractitionerInfo)
     return nil
 }
 
 // MedicalPractitionerInfo Getter
-func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) GetMedicalPractitionerInfo() *MedicalPractitionerInfo {
+func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetMedicalPractitionerInfo() *MedicalPractitionerInfo {
     return r._medicalPractitionerInfo
 }
 // ReserveNumber Setter
 // 健康预约凭证
-func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) SetReserveNumber(_reserveNumber string) error {
+func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetReserveNumber(_reserveNumber string) error {
     r._reserveNumber = _reserveNumber
     r.Set("reserve_number", _reserveNumber)
     return nil
 }
 
 // ReserveNumber Getter
-func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) GetReserveNumber() string {
+func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetReserveNumber() string {
     return r._reserveNumber
 }
 // Event Setter
 // 事件(ASSIGNED_PRACTITONER:已分配医护人员、PRACTITONER_GO_OUT:医护人员已出发、PRACTITONER_HOME:医护人员已到家、PRACTITONER_CHECKED:医护人员检查完成)、CHANGE_PRACTITONER(变更医护人员)
-func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) SetEvent(_event string) error {
+func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetEvent(_event string) error {
     r._event = _event
     r.Set("event", _event)
     return nil
 }
 
 // Event Getter
-func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) GetEvent() string {
+func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetEvent() string {
     return r._event
 }
 // EventOccurTime Setter
 // 事件发生时间
-func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) SetEventOccurTime(_eventOccurTime string) error {
+func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetEventOccurTime(_eventOccurTime string) error {
     r._eventOccurTime = _eventOccurTime
     r.Set("event_occur_time", _eventOccurTime)
     return nil
 }
 
 // EventOccurTime Getter
-func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncRequest) GetEventOccurTime() string {
+func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetEventOccurTime() string {
     return r._eventOccurTime
 }

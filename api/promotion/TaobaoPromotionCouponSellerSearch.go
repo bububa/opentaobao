@@ -11,7 +11,7 @@ taobao.promotion.coupon.seller.search
 
 查询绑定卖家相关优惠券信息  如isv  百川 等外部业务方
 */
-func TaobaoPromotionCouponSellerSearch(clt *core.SDKClient, req *promotion.TaobaoPromotionCouponSellerSearchRequest, session string) (*promotion.TaobaoPromotionCouponSellerSearchAPIResponse, error) {
+func TaobaoPromotionCouponSellerSearch(clt *core.SDKClient, req *promotion.TaobaoPromotionCouponSellerSearchAPIRequest, session string) (*promotion.TaobaoPromotionCouponSellerSearchAPIResponse, error) {
     var resp promotion.TaobaoPromotionCouponSellerSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

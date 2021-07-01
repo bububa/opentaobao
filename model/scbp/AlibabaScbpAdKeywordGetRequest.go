@@ -12,26 +12,26 @@ alibaba.scbp.ad.keyword.get
 
 外贸直通车查询关键词
 */
-type AlibabaScbpAdKeywordGetRequest struct {
+type AlibabaScbpAdKeywordGetAPIRequest struct {
     model.Params
     // KeywordQuery
     _queryDto   *KeywordQuery
 }
 
-// 初始化AlibabaScbpAdKeywordGetRequest对象
-func NewAlibabaScbpAdKeywordGetRequest() *AlibabaScbpAdKeywordGetRequest{
-    return &AlibabaScbpAdKeywordGetRequest{
+// 初始化AlibabaScbpAdKeywordGetAPIRequest对象
+func NewAlibabaScbpAdKeywordGetRequest() *AlibabaScbpAdKeywordGetAPIRequest{
+    return &AlibabaScbpAdKeywordGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordGetRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdKeywordGetAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.keyword.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordGetRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdKeywordGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpAdKeywordGetRequest) GetApiParams() url.Values {
 }
 // QueryDto Setter
 // KeywordQuery
-func (r *AlibabaScbpAdKeywordGetRequest) SetQueryDto(_queryDto *KeywordQuery) error {
+func (r *AlibabaScbpAdKeywordGetAPIRequest) SetQueryDto(_queryDto *KeywordQuery) error {
     r._queryDto = _queryDto
     r.Set("query_dto", _queryDto)
     return nil
 }
 
 // QueryDto Getter
-func (r AlibabaScbpAdKeywordGetRequest) GetQueryDto() *KeywordQuery {
+func (r AlibabaScbpAdKeywordGetAPIRequest) GetQueryDto() *KeywordQuery {
     return r._queryDto
 }

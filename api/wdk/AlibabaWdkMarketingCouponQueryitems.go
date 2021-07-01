@@ -11,7 +11,7 @@ alibaba.wdk.marketing.coupon.queryitems
 
 查询优惠券活动下面的商品
 */
-func AlibabaWdkMarketingCouponQueryitems(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingCouponQueryitemsRequest, session string) (*wdk.AlibabaWdkMarketingCouponQueryitemsAPIResponse, error) {
+func AlibabaWdkMarketingCouponQueryitems(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingCouponQueryitemsAPIRequest, session string) (*wdk.AlibabaWdkMarketingCouponQueryitemsAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingCouponQueryitemsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

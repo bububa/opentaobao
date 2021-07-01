@@ -12,26 +12,26 @@ youku.ott.iot.status.push
 
 ott iot设备状态通知
 */
-type YoukuOttIotStatusPushRequest struct {
+type YoukuOttIotStatusPushAPIRequest struct {
     model.Params
     // 变更信息
     _changeInfo   string
 }
 
-// 初始化YoukuOttIotStatusPushRequest对象
-func NewYoukuOttIotStatusPushRequest() *YoukuOttIotStatusPushRequest{
-    return &YoukuOttIotStatusPushRequest{
+// 初始化YoukuOttIotStatusPushAPIRequest对象
+func NewYoukuOttIotStatusPushRequest() *YoukuOttIotStatusPushAPIRequest{
+    return &YoukuOttIotStatusPushAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YoukuOttIotStatusPushRequest) GetApiMethodName() string {
+func (r YoukuOttIotStatusPushAPIRequest) GetApiMethodName() string {
     return "youku.ott.iot.status.push"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YoukuOttIotStatusPushRequest) GetApiParams() url.Values {
+func (r YoukuOttIotStatusPushAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YoukuOttIotStatusPushRequest) GetApiParams() url.Values {
 }
 // ChangeInfo Setter
 // 变更信息
-func (r *YoukuOttIotStatusPushRequest) SetChangeInfo(_changeInfo string) error {
+func (r *YoukuOttIotStatusPushAPIRequest) SetChangeInfo(_changeInfo string) error {
     r._changeInfo = _changeInfo
     r.Set("change_info", _changeInfo)
     return nil
 }
 
 // ChangeInfo Getter
-func (r YoukuOttIotStatusPushRequest) GetChangeInfo() string {
+func (r YoukuOttIotStatusPushAPIRequest) GetChangeInfo() string {
     return r._changeInfo
 }

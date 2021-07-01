@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.drugrescode
 
 查询药品码段信息
 */
-func AlibabaAlihealthDrugKytDrugrescode(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrugrescodeRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrugrescodeAPIResponse, error) {
+func AlibabaAlihealthDrugKytDrugrescode(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrugrescodeAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrugrescodeAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytDrugrescodeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

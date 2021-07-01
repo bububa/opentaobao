@@ -1,7 +1,7 @@
 package btrip
 
-// BtripHotelValidateOrderRs 
-type BtripHotelValidateOrderRs struct {
+// BtripHotelValidateOrderRS 
+type BtripHotelValidateOrderRS struct {
     // 创单Key值，下单时使用
     CreateKey   string `json:"create_key,omitempty" xml:"create_key,omitempty"`
     // 优惠信息

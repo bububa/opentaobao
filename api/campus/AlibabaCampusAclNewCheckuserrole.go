@@ -11,7 +11,7 @@ alibaba.campus.acl.new.checkuserrole
 
 校验用户是否有角色
 */
-func AlibabaCampusAclNewCheckuserrole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewCheckuserroleRequest, session string) (*campus.AlibabaCampusAclNewCheckuserroleAPIResponse, error) {
+func AlibabaCampusAclNewCheckuserrole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewCheckuserroleAPIRequest, session string) (*campus.AlibabaCampusAclNewCheckuserroleAPIResponse, error) {
     var resp campus.AlibabaCampusAclNewCheckuserroleAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

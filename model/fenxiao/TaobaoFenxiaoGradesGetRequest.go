@@ -12,24 +12,24 @@ taobao.fenxiao.grades.get
 
 根据供应商ID，查询他的分销商等级信息
 */
-type TaobaoFenxiaoGradesGetRequest struct {
+type TaobaoFenxiaoGradesGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoFenxiaoGradesGetRequest对象
-func NewTaobaoFenxiaoGradesGetRequest() *TaobaoFenxiaoGradesGetRequest{
-    return &TaobaoFenxiaoGradesGetRequest{
+// 初始化TaobaoFenxiaoGradesGetAPIRequest对象
+func NewTaobaoFenxiaoGradesGetRequest() *TaobaoFenxiaoGradesGetAPIRequest{
+    return &TaobaoFenxiaoGradesGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFenxiaoGradesGetRequest) GetApiMethodName() string {
+func (r TaobaoFenxiaoGradesGetAPIRequest) GetApiMethodName() string {
     return "taobao.fenxiao.grades.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFenxiaoGradesGetRequest) GetApiParams() url.Values {
+func (r TaobaoFenxiaoGradesGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

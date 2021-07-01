@@ -11,7 +11,7 @@ alibaba.wdk.sku.category.query
 
 商家类目获取接口
 */
-func AlibabaWdkSkuCategoryQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuCategoryQueryRequest, session string) (*wdk.AlibabaWdkSkuCategoryQueryAPIResponse, error) {
+func AlibabaWdkSkuCategoryQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuCategoryQueryAPIRequest, session string) (*wdk.AlibabaWdkSkuCategoryQueryAPIResponse, error) {
     var resp wdk.AlibabaWdkSkuCategoryQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

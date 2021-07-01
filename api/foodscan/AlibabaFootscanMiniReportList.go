@@ -11,7 +11,7 @@ alibaba.footscan.mini.report.list
 
 查询报告列表
 */
-func AlibabaFootscanMiniReportList(clt *core.SDKClient, req *foodscan.AlibabaFootscanMiniReportListRequest, session string) (*foodscan.AlibabaFootscanMiniReportListAPIResponse, error) {
+func AlibabaFootscanMiniReportList(clt *core.SDKClient, req *foodscan.AlibabaFootscanMiniReportListAPIRequest, session string) (*foodscan.AlibabaFootscanMiniReportListAPIResponse, error) {
     var resp foodscan.AlibabaFootscanMiniReportListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

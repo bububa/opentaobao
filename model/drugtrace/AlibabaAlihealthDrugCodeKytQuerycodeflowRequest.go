@@ -12,7 +12,7 @@ alibaba.alihealth.drug.code.kyt.querycodeflow
 
 追溯码流向查询
 */
-type AlibabaAlihealthDrugCodeKytQuerycodeflowRequest struct {
+type AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest struct {
     model.Params
     // 企业ID
     _refEntId   string
@@ -34,20 +34,20 @@ type AlibabaAlihealthDrugCodeKytQuerycodeflowRequest struct {
     _detail   string
 }
 
-// 初始化AlibabaAlihealthDrugCodeKytQuerycodeflowRequest对象
-func NewAlibabaAlihealthDrugCodeKytQuerycodeflowRequest() *AlibabaAlihealthDrugCodeKytQuerycodeflowRequest{
-    return &AlibabaAlihealthDrugCodeKytQuerycodeflowRequest{
+// 初始化AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest对象
+func NewAlibabaAlihealthDrugCodeKytQuerycodeflowRequest() *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest{
+    return &AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.code.kyt.querycodeflow"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -56,109 +56,109 @@ func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetApiParams() url.Valu
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetRefEntId() string {
     return r._refEntId
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) SetCode(_code string) error {
+func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetCode() string {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetCode() string {
     return r._code
 }
 // Longitude Setter
 // 经度
-func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) SetLongitude(_longitude string) error {
+func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetLongitude(_longitude string) error {
     r._longitude = _longitude
     r.Set("longitude", _longitude)
     return nil
 }
 
 // Longitude Getter
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetLongitude() string {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetLongitude() string {
     return r._longitude
 }
 // Latitude Setter
 // 纬度
-func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) SetLatitude(_latitude string) error {
+func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetLatitude(_latitude string) error {
     r._latitude = _latitude
     r.Set("latitude", _latitude)
     return nil
 }
 
 // Latitude Getter
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetLatitude() string {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetLatitude() string {
     return r._latitude
 }
 // QueryProv Setter
 // 查询地所在省
-func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) SetQueryProv(_queryProv string) error {
+func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryProv(_queryProv string) error {
     r._queryProv = _queryProv
     r.Set("query_prov", _queryProv)
     return nil
 }
 
 // QueryProv Getter
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetQueryProv() string {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetQueryProv() string {
     return r._queryProv
 }
 // QueryCity Setter
 // 查询地所在市
-func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) SetQueryCity(_queryCity string) error {
+func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryCity(_queryCity string) error {
     r._queryCity = _queryCity
     r.Set("query_city", _queryCity)
     return nil
 }
 
 // QueryCity Getter
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetQueryCity() string {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetQueryCity() string {
     return r._queryCity
 }
 // QueryArea Setter
 // 查询地所在区
-func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) SetQueryArea(_queryArea string) error {
+func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryArea(_queryArea string) error {
     r._queryArea = _queryArea
     r.Set("query_area", _queryArea)
     return nil
 }
 
 // QueryArea Getter
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetQueryArea() string {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetQueryArea() string {
     return r._queryArea
 }
 // QueryRegionCode Setter
 // 查询地所在区域代码
-func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) SetQueryRegionCode(_queryRegionCode string) error {
+func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryRegionCode(_queryRegionCode string) error {
     r._queryRegionCode = _queryRegionCode
     r.Set("query_region_code", _queryRegionCode)
     return nil
 }
 
 // QueryRegionCode Getter
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetQueryRegionCode() string {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetQueryRegionCode() string {
     return r._queryRegionCode
 }
 // Detail Setter
 // 详细地址
-func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) SetDetail(_detail string) error {
+func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetDetail(_detail string) error {
     r._detail = _detail
     r.Set("detail", _detail)
     return nil
 }
 
 // Detail Getter
-func (r AlibabaAlihealthDrugCodeKytQuerycodeflowRequest) GetDetail() string {
+func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetDetail() string {
     return r._detail
 }

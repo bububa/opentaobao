@@ -12,7 +12,7 @@ taobao.mixnick.wetoplay
 
 微淘应用的混淆nick转为互动类型混淆nick
 */
-type TaobaoMixnickWetoplayRequest struct {
+type TaobaoMixnickWetoplayAPIRequest struct {
     model.Params
     // 排查问题id
     _traceId   string
@@ -20,20 +20,20 @@ type TaobaoMixnickWetoplayRequest struct {
     _weMixnick   string
 }
 
-// 初始化TaobaoMixnickWetoplayRequest对象
-func NewTaobaoMixnickWetoplayRequest() *TaobaoMixnickWetoplayRequest{
-    return &TaobaoMixnickWetoplayRequest{
+// 初始化TaobaoMixnickWetoplayAPIRequest对象
+func NewTaobaoMixnickWetoplayRequest() *TaobaoMixnickWetoplayAPIRequest{
+    return &TaobaoMixnickWetoplayAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMixnickWetoplayRequest) GetApiMethodName() string {
+func (r TaobaoMixnickWetoplayAPIRequest) GetApiMethodName() string {
     return "taobao.mixnick.wetoplay"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMixnickWetoplayRequest) GetApiParams() url.Values {
+func (r TaobaoMixnickWetoplayAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoMixnickWetoplayRequest) GetApiParams() url.Values {
 }
 // TraceId Setter
 // 排查问题id
-func (r *TaobaoMixnickWetoplayRequest) SetTraceId(_traceId string) error {
+func (r *TaobaoMixnickWetoplayAPIRequest) SetTraceId(_traceId string) error {
     r._traceId = _traceId
     r.Set("trace_id", _traceId)
     return nil
 }
 
 // TraceId Getter
-func (r TaobaoMixnickWetoplayRequest) GetTraceId() string {
+func (r TaobaoMixnickWetoplayAPIRequest) GetTraceId() string {
     return r._traceId
 }
 // WeMixnick Setter
 // 微淘混淆nick
-func (r *TaobaoMixnickWetoplayRequest) SetWeMixnick(_weMixnick string) error {
+func (r *TaobaoMixnickWetoplayAPIRequest) SetWeMixnick(_weMixnick string) error {
     r._weMixnick = _weMixnick
     r.Set("we_mixnick", _weMixnick)
     return nil
 }
 
 // WeMixnick Getter
-func (r TaobaoMixnickWetoplayRequest) GetWeMixnick() string {
+func (r TaobaoMixnickWetoplayAPIRequest) GetWeMixnick() string {
     return r._weMixnick
 }

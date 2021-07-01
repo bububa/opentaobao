@@ -12,7 +12,7 @@ alibaba.health.vaccin.notice.user.bind
 
 支付宝疫苗绑定接种人
 */
-type AlibabaHealthVaccinNoticeUserBindRequest struct {
+type AlibabaHealthVaccinNoticeUserBindAPIRequest struct {
     model.Params
     // 支付宝ID
     _alipayUserId   string
@@ -26,20 +26,20 @@ type AlibabaHealthVaccinNoticeUserBindRequest struct {
     _appChannel   string
 }
 
-// 初始化AlibabaHealthVaccinNoticeUserBindRequest对象
-func NewAlibabaHealthVaccinNoticeUserBindRequest() *AlibabaHealthVaccinNoticeUserBindRequest{
-    return &AlibabaHealthVaccinNoticeUserBindRequest{
+// 初始化AlibabaHealthVaccinNoticeUserBindAPIRequest对象
+func NewAlibabaHealthVaccinNoticeUserBindRequest() *AlibabaHealthVaccinNoticeUserBindAPIRequest{
+    return &AlibabaHealthVaccinNoticeUserBindAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHealthVaccinNoticeUserBindRequest) GetApiMethodName() string {
+func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetApiMethodName() string {
     return "alibaba.health.vaccin.notice.user.bind"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHealthVaccinNoticeUserBindRequest) GetApiParams() url.Values {
+func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaHealthVaccinNoticeUserBindRequest) GetApiParams() url.Values {
 }
 // AlipayUserId Setter
 // 支付宝ID
-func (r *AlibabaHealthVaccinNoticeUserBindRequest) SetAlipayUserId(_alipayUserId string) error {
+func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetAlipayUserId(_alipayUserId string) error {
     r._alipayUserId = _alipayUserId
     r.Set("alipay_user_id", _alipayUserId)
     return nil
 }
 
 // AlipayUserId Getter
-func (r AlibabaHealthVaccinNoticeUserBindRequest) GetAlipayUserId() string {
+func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetAlipayUserId() string {
     return r._alipayUserId
 }
 // BindUsers Setter
 // 绑定人信息list
-func (r *AlibabaHealthVaccinNoticeUserBindRequest) SetBindUsers(_bindUsers []AlipayVaccineUserBindDTO) error {
+func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetBindUsers(_bindUsers []AlipayVaccineUserBindDTO) error {
     r._bindUsers = _bindUsers
     r.Set("bind_users", _bindUsers)
     return nil
 }
 
 // BindUsers Getter
-func (r AlibabaHealthVaccinNoticeUserBindRequest) GetBindUsers() []AlipayVaccineUserBindDTO {
+func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetBindUsers() []AlipayVaccineUserBindDTO {
     return r._bindUsers
 }
 // OuterUserId Setter
 // ISV 侧用户 ID
-func (r *AlibabaHealthVaccinNoticeUserBindRequest) SetOuterUserId(_outerUserId string) error {
+func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetOuterUserId(_outerUserId string) error {
     r._outerUserId = _outerUserId
     r.Set("outer_user_id", _outerUserId)
     return nil
 }
 
 // OuterUserId Getter
-func (r AlibabaHealthVaccinNoticeUserBindRequest) GetOuterUserId() string {
+func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetOuterUserId() string {
     return r._outerUserId
 }
 // Mobile Setter
 // 联系电话
-func (r *AlibabaHealthVaccinNoticeUserBindRequest) SetMobile(_mobile string) error {
+func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetMobile(_mobile string) error {
     r._mobile = _mobile
     r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
-func (r AlibabaHealthVaccinNoticeUserBindRequest) GetMobile() string {
+func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetMobile() string {
     return r._mobile
 }
 // AppChannel Setter
 // 用户来源：alipay或yl
-func (r *AlibabaHealthVaccinNoticeUserBindRequest) SetAppChannel(_appChannel string) error {
+func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetAppChannel(_appChannel string) error {
     r._appChannel = _appChannel
     r.Set("app_channel", _appChannel)
     return nil
 }
 
 // AppChannel Getter
-func (r AlibabaHealthVaccinNoticeUserBindRequest) GetAppChannel() string {
+func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetAppChannel() string {
     return r._appChannel
 }

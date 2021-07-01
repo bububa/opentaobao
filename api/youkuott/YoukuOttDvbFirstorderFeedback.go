@@ -11,7 +11,7 @@ youku.ott.dvb.firstorder.feedback
 
 dvb首次安装订单反馈
 */
-func YoukuOttDvbFirstorderFeedback(clt *core.SDKClient, req *youkuott.YoukuOttDvbFirstorderFeedbackRequest, session string) (*youkuott.YoukuOttDvbFirstorderFeedbackAPIResponse, error) {
+func YoukuOttDvbFirstorderFeedback(clt *core.SDKClient, req *youkuott.YoukuOttDvbFirstorderFeedbackAPIRequest, session string) (*youkuott.YoukuOttDvbFirstorderFeedbackAPIResponse, error) {
     var resp youkuott.YoukuOttDvbFirstorderFeedbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

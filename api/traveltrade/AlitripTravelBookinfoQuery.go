@@ -11,7 +11,7 @@ alitrip.travel.bookinfo.query
 
 飞猪度假订单二次预约详情查询接口
 */
-func AlitripTravelBookinfoQuery(clt *core.SDKClient, req *traveltrade.AlitripTravelBookinfoQueryRequest, session string) (*traveltrade.AlitripTravelBookinfoQueryAPIResponse, error) {
+func AlitripTravelBookinfoQuery(clt *core.SDKClient, req *traveltrade.AlitripTravelBookinfoQueryAPIRequest, session string) (*traveltrade.AlitripTravelBookinfoQueryAPIResponse, error) {
     var resp traveltrade.AlitripTravelBookinfoQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

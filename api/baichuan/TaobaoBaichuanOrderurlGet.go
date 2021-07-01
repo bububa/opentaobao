@@ -11,7 +11,7 @@ taobao.baichuan.orderurl.get
 
 百川订单详情
 */
-func TaobaoBaichuanOrderurlGet(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOrderurlGetRequest, session string) (*baichuan.TaobaoBaichuanOrderurlGetAPIResponse, error) {
+func TaobaoBaichuanOrderurlGet(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOrderurlGetAPIRequest, session string) (*baichuan.TaobaoBaichuanOrderurlGetAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanOrderurlGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ alibaba.ai.ar.tmjl.app.detect
 
 天猫精灵扫一扫入口的图像检测服务
 */
-type AlibabaAiArTmjlAppDetectRequest struct {
+type AlibabaAiArTmjlAppDetectAPIRequest struct {
     model.Params
     // 原始图像数据
     _imgData   *model.File
@@ -26,20 +26,20 @@ type AlibabaAiArTmjlAppDetectRequest struct {
     _version   string
 }
 
-// 初始化AlibabaAiArTmjlAppDetectRequest对象
-func NewAlibabaAiArTmjlAppDetectRequest() *AlibabaAiArTmjlAppDetectRequest{
-    return &AlibabaAiArTmjlAppDetectRequest{
+// 初始化AlibabaAiArTmjlAppDetectAPIRequest对象
+func NewAlibabaAiArTmjlAppDetectRequest() *AlibabaAiArTmjlAppDetectAPIRequest{
+    return &AlibabaAiArTmjlAppDetectAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAiArTmjlAppDetectRequest) GetApiMethodName() string {
+func (r AlibabaAiArTmjlAppDetectAPIRequest) GetApiMethodName() string {
     return "alibaba.ai.ar.tmjl.app.detect"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAiArTmjlAppDetectRequest) GetApiParams() url.Values {
+func (r AlibabaAiArTmjlAppDetectAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaAiArTmjlAppDetectRequest) GetApiParams() url.Values {
 }
 // ImgData Setter
 // 原始图像数据
-func (r *AlibabaAiArTmjlAppDetectRequest) SetImgData(_imgData *model.File) error {
+func (r *AlibabaAiArTmjlAppDetectAPIRequest) SetImgData(_imgData *model.File) error {
     r._imgData = _imgData
     r.Set("img_data", _imgData)
     return nil
 }
 
 // ImgData Getter
-func (r AlibabaAiArTmjlAppDetectRequest) GetImgData() *model.File {
+func (r AlibabaAiArTmjlAppDetectAPIRequest) GetImgData() *model.File {
     return r._imgData
 }
 // Num Setter
 // 最多返回的结果数，默认为1
-func (r *AlibabaAiArTmjlAppDetectRequest) SetNum(_num int64) error {
+func (r *AlibabaAiArTmjlAppDetectAPIRequest) SetNum(_num int64) error {
     r._num = _num
     r.Set("num", _num)
     return nil
 }
 
 // Num Getter
-func (r AlibabaAiArTmjlAppDetectRequest) GetNum() int64 {
+func (r AlibabaAiArTmjlAppDetectAPIRequest) GetNum() int64 {
     return r._num
 }
 // CachedTargets Setter
 // 本地已cache的target，多个target间以|||分隔
-func (r *AlibabaAiArTmjlAppDetectRequest) SetCachedTargets(_cachedTargets string) error {
+func (r *AlibabaAiArTmjlAppDetectAPIRequest) SetCachedTargets(_cachedTargets string) error {
     r._cachedTargets = _cachedTargets
     r.Set("cached_targets", _cachedTargets)
     return nil
 }
 
 // CachedTargets Getter
-func (r AlibabaAiArTmjlAppDetectRequest) GetCachedTargets() string {
+func (r AlibabaAiArTmjlAppDetectAPIRequest) GetCachedTargets() string {
     return r._cachedTargets
 }
 // DeviceInfo Setter
 // map，描述所有设备相关信息，如设备ID，分辨率等
-func (r *AlibabaAiArTmjlAppDetectRequest) SetDeviceInfo(_deviceInfo string) error {
+func (r *AlibabaAiArTmjlAppDetectAPIRequest) SetDeviceInfo(_deviceInfo string) error {
     r._deviceInfo = _deviceInfo
     r.Set("device_info", _deviceInfo)
     return nil
 }
 
 // DeviceInfo Getter
-func (r AlibabaAiArTmjlAppDetectRequest) GetDeviceInfo() string {
+func (r AlibabaAiArTmjlAppDetectAPIRequest) GetDeviceInfo() string {
     return r._deviceInfo
 }
 // Version Setter
 // 版本，默认1.0
-func (r *AlibabaAiArTmjlAppDetectRequest) SetVersion(_version string) error {
+func (r *AlibabaAiArTmjlAppDetectAPIRequest) SetVersion(_version string) error {
     r._version = _version
     r.Set("version", _version)
     return nil
 }
 
 // Version Getter
-func (r AlibabaAiArTmjlAppDetectRequest) GetVersion() string {
+func (r AlibabaAiArTmjlAppDetectAPIRequest) GetVersion() string {
     return r._version
 }

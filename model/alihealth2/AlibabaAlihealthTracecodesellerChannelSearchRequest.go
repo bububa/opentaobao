@@ -12,7 +12,7 @@ alibaba.alihealth.tracecodeseller.channel.search
 
 查询渠道商api
 */
-type AlibabaAlihealthTracecodesellerChannelSearchRequest struct {
+type AlibabaAlihealthTracecodesellerChannelSearchAPIRequest struct {
     model.Params
     // 身份认证
     _skeyCode   string
@@ -26,20 +26,20 @@ type AlibabaAlihealthTracecodesellerChannelSearchRequest struct {
     _outInType   int64
 }
 
-// 初始化AlibabaAlihealthTracecodesellerChannelSearchRequest对象
-func NewAlibabaAlihealthTracecodesellerChannelSearchRequest() *AlibabaAlihealthTracecodesellerChannelSearchRequest{
-    return &AlibabaAlihealthTracecodesellerChannelSearchRequest{
+// 初始化AlibabaAlihealthTracecodesellerChannelSearchAPIRequest对象
+func NewAlibabaAlihealthTracecodesellerChannelSearchRequest() *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest{
+    return &AlibabaAlihealthTracecodesellerChannelSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.tracecodeseller.channel.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetApiParams() url.
 }
 // SkeyCode Setter
 // 身份认证
-func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetSkeyCode(_skeyCode string) error {
+func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetSkeyCode(_skeyCode string) error {
     r._skeyCode = _skeyCode
     r.Set("skey_code", _skeyCode)
     return nil
 }
 
 // SkeyCode Getter
-func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetSkeyCode() string {
+func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetSkeyCode() string {
     return r._skeyCode
 }
 // EntInfoId Setter
 // 商家id
-func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetEntInfoId(_entInfoId int64) error {
+func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
     r._entInfoId = _entInfoId
     r.Set("ent_info_id", _entInfoId)
     return nil
 }
 
 // EntInfoId Getter
-func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetEntInfoId() int64 {
+func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetEntInfoId() int64 {
     return r._entInfoId
 }
 // Page Setter
 // 第几页
-func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetPage(_page int64) error {
+func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetPage(_page int64) error {
     r._page = _page
     r.Set("page", _page)
     return nil
 }
 
 // Page Getter
-func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetPage() int64 {
+func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetPage() int64 {
     return r._page
 }
 // PageSize Setter
 // 每页几条
-func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetPageSize() int64 {
+func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // OutInType Setter
 // 0 出库 2 入库
-func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetOutInType(_outInType int64) error {
+func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetOutInType(_outInType int64) error {
     r._outInType = _outInType
     r.Set("out_in_type", _outInType)
     return nil
 }
 
 // OutInType Getter
-func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetOutInType() int64 {
+func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetOutInType() int64 {
     return r._outInType
 }

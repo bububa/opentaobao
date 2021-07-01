@@ -12,26 +12,26 @@ alibaba.scbp.target.ad.campaign.product.effect
 
 定向推广-获取计划中产品推广效果
 */
-type AlibabaScbpTargetAdCampaignProductEffectRequest struct {
+type AlibabaScbpTargetAdCampaignProductEffectAPIRequest struct {
     model.Params
     // TopP4pQuickEffectQuery
     _topP4pQuickEffectQuery   *TopP4pQuickEffectQuery
 }
 
-// 初始化AlibabaScbpTargetAdCampaignProductEffectRequest对象
-func NewAlibabaScbpTargetAdCampaignProductEffectRequest() *AlibabaScbpTargetAdCampaignProductEffectRequest{
-    return &AlibabaScbpTargetAdCampaignProductEffectRequest{
+// 初始化AlibabaScbpTargetAdCampaignProductEffectAPIRequest对象
+func NewAlibabaScbpTargetAdCampaignProductEffectRequest() *AlibabaScbpTargetAdCampaignProductEffectAPIRequest{
+    return &AlibabaScbpTargetAdCampaignProductEffectAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpTargetAdCampaignProductEffectRequest) GetApiMethodName() string {
+func (r AlibabaScbpTargetAdCampaignProductEffectAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.target.ad.campaign.product.effect"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTargetAdCampaignProductEffectRequest) GetApiParams() url.Values {
+func (r AlibabaScbpTargetAdCampaignProductEffectAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpTargetAdCampaignProductEffectRequest) GetApiParams() url.Valu
 }
 // TopP4pQuickEffectQuery Setter
 // TopP4pQuickEffectQuery
-func (r *AlibabaScbpTargetAdCampaignProductEffectRequest) SetTopP4pQuickEffectQuery(_topP4pQuickEffectQuery *TopP4pQuickEffectQuery) error {
+func (r *AlibabaScbpTargetAdCampaignProductEffectAPIRequest) SetTopP4pQuickEffectQuery(_topP4pQuickEffectQuery *TopP4pQuickEffectQuery) error {
     r._topP4pQuickEffectQuery = _topP4pQuickEffectQuery
     r.Set("top_p4p_quick_effect_query", _topP4pQuickEffectQuery)
     return nil
 }
 
 // TopP4pQuickEffectQuery Getter
-func (r AlibabaScbpTargetAdCampaignProductEffectRequest) GetTopP4pQuickEffectQuery() *TopP4pQuickEffectQuery {
+func (r AlibabaScbpTargetAdCampaignProductEffectAPIRequest) GetTopP4pQuickEffectQuery() *TopP4pQuickEffectQuery {
     return r._topP4pQuickEffectQuery
 }

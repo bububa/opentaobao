@@ -11,7 +11,7 @@ taobao.jst.interactive.point.decrease
 
 扣减用户的互动积分
 */
-func TaobaoJstInteractivePointDecrease(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractivePointDecreaseRequest, session string) (*jstinteractive.TaobaoJstInteractivePointDecreaseAPIResponse, error) {
+func TaobaoJstInteractivePointDecrease(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractivePointDecreaseAPIRequest, session string) (*jstinteractive.TaobaoJstInteractivePointDecreaseAPIResponse, error) {
     var resp jstinteractive.TaobaoJstInteractivePointDecreaseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

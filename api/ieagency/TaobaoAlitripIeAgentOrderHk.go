@@ -11,7 +11,7 @@ taobao.alitrip.ie.agent.order.hk
 
 代理商通过手工预定PNR，并回填。
 */
-func TaobaoAlitripIeAgentOrderHk(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentOrderHkRequest, session string) (*ieagency.TaobaoAlitripIeAgentOrderHkAPIResponse, error) {
+func TaobaoAlitripIeAgentOrderHk(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentOrderHkAPIRequest, session string) (*ieagency.TaobaoAlitripIeAgentOrderHkAPIResponse, error) {
     var resp ieagency.TaobaoAlitripIeAgentOrderHkAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

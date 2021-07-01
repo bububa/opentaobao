@@ -12,26 +12,26 @@ yunos.tvpubadmin.manage.dialog.edit
 
 编辑全局弹窗
 */
-type YunosTvpubadminManageDialogEditRequest struct {
+type YunosTvpubadminManageDialogEditAPIRequest struct {
     model.Params
     // 待编辑的全局弹窗
     _dialogJson   string
 }
 
-// 初始化YunosTvpubadminManageDialogEditRequest对象
-func NewYunosTvpubadminManageDialogEditRequest() *YunosTvpubadminManageDialogEditRequest{
-    return &YunosTvpubadminManageDialogEditRequest{
+// 初始化YunosTvpubadminManageDialogEditAPIRequest对象
+func NewYunosTvpubadminManageDialogEditRequest() *YunosTvpubadminManageDialogEditAPIRequest{
+    return &YunosTvpubadminManageDialogEditAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminManageDialogEditRequest) GetApiMethodName() string {
+func (r YunosTvpubadminManageDialogEditAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.manage.dialog.edit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminManageDialogEditRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminManageDialogEditAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageDialogEditRequest) GetApiParams() url.Values {
 }
 // DialogJson Setter
 // 待编辑的全局弹窗
-func (r *YunosTvpubadminManageDialogEditRequest) SetDialogJson(_dialogJson string) error {
+func (r *YunosTvpubadminManageDialogEditAPIRequest) SetDialogJson(_dialogJson string) error {
     r._dialogJson = _dialogJson
     r.Set("dialog_json", _dialogJson)
     return nil
 }
 
 // DialogJson Getter
-func (r YunosTvpubadminManageDialogEditRequest) GetDialogJson() string {
+func (r YunosTvpubadminManageDialogEditAPIRequest) GetDialogJson() string {
     return r._dialogJson
 }

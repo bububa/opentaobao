@@ -11,7 +11,7 @@ alibaba.lsy.crm.create
 
 欢客调用该接口进行客资创建
 */
-func AlibabaLsyCrmCreate(clt *core.SDKClient, req *user.AlibabaLsyCrmCreateRequest, session string) (*user.AlibabaLsyCrmCreateAPIResponse, error) {
+func AlibabaLsyCrmCreate(clt *core.SDKClient, req *user.AlibabaLsyCrmCreateAPIRequest, session string) (*user.AlibabaLsyCrmCreateAPIResponse, error) {
     var resp user.AlibabaLsyCrmCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

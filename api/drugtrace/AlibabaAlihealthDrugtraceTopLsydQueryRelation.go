@@ -11,7 +11,7 @@ alibaba.alihealth.drugtrace.top.lsyd.query.relation
 
 单码关联关系查询
 */
-func AlibabaAlihealthDrugtraceTopLsydQueryRelation(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryRelationRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryRelationAPIResponse, error) {
+func AlibabaAlihealthDrugtraceTopLsydQueryRelation(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryRelationAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryRelationAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryRelationAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

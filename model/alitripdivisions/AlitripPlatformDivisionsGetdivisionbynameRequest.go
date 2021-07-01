@@ -12,7 +12,7 @@ alitrip.platform.divisions.getdivisionbyname
 
 根据中文名称与行政区划级别查询行政区划数据
 */
-type AlitripPlatformDivisionsGetdivisionbynameRequest struct {
+type AlitripPlatformDivisionsGetdivisionbynameAPIRequest struct {
     model.Params
     // 行政区划名称
     _name   string
@@ -20,20 +20,20 @@ type AlitripPlatformDivisionsGetdivisionbynameRequest struct {
     _level   int64
 }
 
-// 初始化AlitripPlatformDivisionsGetdivisionbynameRequest对象
-func NewAlitripPlatformDivisionsGetdivisionbynameRequest() *AlitripPlatformDivisionsGetdivisionbynameRequest{
-    return &AlitripPlatformDivisionsGetdivisionbynameRequest{
+// 初始化AlitripPlatformDivisionsGetdivisionbynameAPIRequest对象
+func NewAlitripPlatformDivisionsGetdivisionbynameRequest() *AlitripPlatformDivisionsGetdivisionbynameAPIRequest{
+    return &AlitripPlatformDivisionsGetdivisionbynameAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripPlatformDivisionsGetdivisionbynameRequest) GetApiMethodName() string {
+func (r AlitripPlatformDivisionsGetdivisionbynameAPIRequest) GetApiMethodName() string {
     return "alitrip.platform.divisions.getdivisionbyname"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripPlatformDivisionsGetdivisionbynameRequest) GetApiParams() url.Values {
+func (r AlitripPlatformDivisionsGetdivisionbynameAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlitripPlatformDivisionsGetdivisionbynameRequest) GetApiParams() url.Val
 }
 // Name Setter
 // 行政区划名称
-func (r *AlitripPlatformDivisionsGetdivisionbynameRequest) SetName(_name string) error {
+func (r *AlitripPlatformDivisionsGetdivisionbynameAPIRequest) SetName(_name string) error {
     r._name = _name
     r.Set("name", _name)
     return nil
 }
 
 // Name Getter
-func (r AlitripPlatformDivisionsGetdivisionbynameRequest) GetName() string {
+func (r AlitripPlatformDivisionsGetdivisionbynameAPIRequest) GetName() string {
     return r._name
 }
 // Level Setter
 // 行政区划级别ALL(0, "全部"),  	CONTINENT(1, "大洲"),  	COUNTRY(2, "国家"),  	PROVINCE(3, "省份"),  	CITY(4, "城市"),  	DISTRICT(5, "区县"),  	STREET(6, "街道")
-func (r *AlitripPlatformDivisionsGetdivisionbynameRequest) SetLevel(_level int64) error {
+func (r *AlitripPlatformDivisionsGetdivisionbynameAPIRequest) SetLevel(_level int64) error {
     r._level = _level
     r.Set("level", _level)
     return nil
 }
 
 // Level Getter
-func (r AlitripPlatformDivisionsGetdivisionbynameRequest) GetLevel() int64 {
+func (r AlitripPlatformDivisionsGetdivisionbynameAPIRequest) GetLevel() int64 {
     return r._level
 }

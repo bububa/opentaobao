@@ -12,26 +12,26 @@ alibaba.alihealth.outflow.patientinfo.sync
 
 阿里健康-处方外流-对外提供同步患者基础信息功能
 */
-type AlibabaAlihealthOutflowPatientinfoSyncRequest struct {
+type AlibabaAlihealthOutflowPatientinfoSyncAPIRequest struct {
     model.Params
     // 入参
     _syncPatientInfoRequest   *SyncPatientInfoRequest
 }
 
-// 初始化AlibabaAlihealthOutflowPatientinfoSyncRequest对象
-func NewAlibabaAlihealthOutflowPatientinfoSyncRequest() *AlibabaAlihealthOutflowPatientinfoSyncRequest{
-    return &AlibabaAlihealthOutflowPatientinfoSyncRequest{
+// 初始化AlibabaAlihealthOutflowPatientinfoSyncAPIRequest对象
+func NewAlibabaAlihealthOutflowPatientinfoSyncRequest() *AlibabaAlihealthOutflowPatientinfoSyncAPIRequest{
+    return &AlibabaAlihealthOutflowPatientinfoSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowPatientinfoSyncRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.patientinfo.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowPatientinfoSyncRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowPatientinfoSyncRequest) GetApiParams() url.Values
 }
 // SyncPatientInfoRequest Setter
 // 入参
-func (r *AlibabaAlihealthOutflowPatientinfoSyncRequest) SetSyncPatientInfoRequest(_syncPatientInfoRequest *SyncPatientInfoRequest) error {
+func (r *AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) SetSyncPatientInfoRequest(_syncPatientInfoRequest *SyncPatientInfoRequest) error {
     r._syncPatientInfoRequest = _syncPatientInfoRequest
     r.Set("sync_patient_info_request", _syncPatientInfoRequest)
     return nil
 }
 
 // SyncPatientInfoRequest Getter
-func (r AlibabaAlihealthOutflowPatientinfoSyncRequest) GetSyncPatientInfoRequest() *SyncPatientInfoRequest {
+func (r AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) GetSyncPatientInfoRequest() *SyncPatientInfoRequest {
     return r._syncPatientInfoRequest
 }

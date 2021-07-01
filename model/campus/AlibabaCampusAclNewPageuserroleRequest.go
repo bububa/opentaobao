@@ -12,7 +12,7 @@ alibaba.campus.acl.new.pageuserrole
 
 新增用户和角色的关系
 */
-type AlibabaCampusAclNewPageuserroleRequest struct {
+type AlibabaCampusAclNewPageuserroleAPIRequest struct {
     model.Params
     // 系统入参
     _workbenchcontext   *WorkBenchContext
@@ -20,20 +20,20 @@ type AlibabaCampusAclNewPageuserroleRequest struct {
     _usersRoleQueryParam   *UsersRoleQueryParam
 }
 
-// 初始化AlibabaCampusAclNewPageuserroleRequest对象
-func NewAlibabaCampusAclNewPageuserroleRequest() *AlibabaCampusAclNewPageuserroleRequest{
-    return &AlibabaCampusAclNewPageuserroleRequest{
+// 初始化AlibabaCampusAclNewPageuserroleAPIRequest对象
+func NewAlibabaCampusAclNewPageuserroleRequest() *AlibabaCampusAclNewPageuserroleAPIRequest{
+    return &AlibabaCampusAclNewPageuserroleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusAclNewPageuserroleRequest) GetApiMethodName() string {
+func (r AlibabaCampusAclNewPageuserroleAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.acl.new.pageuserrole"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusAclNewPageuserroleRequest) GetApiParams() url.Values {
+func (r AlibabaCampusAclNewPageuserroleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaCampusAclNewPageuserroleRequest) GetApiParams() url.Values {
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewPageuserroleRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+func (r *AlibabaCampusAclNewPageuserroleAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
     r._workbenchcontext = _workbenchcontext
     r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
-func (r AlibabaCampusAclNewPageuserroleRequest) GetWorkbenchcontext() *WorkBenchContext {
+func (r AlibabaCampusAclNewPageuserroleAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
     return r._workbenchcontext
 }
 // UsersRoleQueryParam Setter
 // 入参
-func (r *AlibabaCampusAclNewPageuserroleRequest) SetUsersRoleQueryParam(_usersRoleQueryParam *UsersRoleQueryParam) error {
+func (r *AlibabaCampusAclNewPageuserroleAPIRequest) SetUsersRoleQueryParam(_usersRoleQueryParam *UsersRoleQueryParam) error {
     r._usersRoleQueryParam = _usersRoleQueryParam
     r.Set("users_role_query_param", _usersRoleQueryParam)
     return nil
 }
 
 // UsersRoleQueryParam Getter
-func (r AlibabaCampusAclNewPageuserroleRequest) GetUsersRoleQueryParam() *UsersRoleQueryParam {
+func (r AlibabaCampusAclNewPageuserroleAPIRequest) GetUsersRoleQueryParam() *UsersRoleQueryParam {
     return r._usersRoleQueryParam
 }

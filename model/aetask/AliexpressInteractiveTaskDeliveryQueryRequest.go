@@ -12,26 +12,26 @@ aliexpress.interactive.task.delivery.query
 
 将内部配置好的任务，如浏览商品，店铺投放给外部ISV
 */
-type AliexpressInteractiveTaskDeliveryQueryRequest struct {
+type AliexpressInteractiveTaskDeliveryQueryAPIRequest struct {
     model.Params
     // 返回结果
     _requestDto   *QueryDeliveryRequestDTO
 }
 
-// 初始化AliexpressInteractiveTaskDeliveryQueryRequest对象
-func NewAliexpressInteractiveTaskDeliveryQueryRequest() *AliexpressInteractiveTaskDeliveryQueryRequest{
-    return &AliexpressInteractiveTaskDeliveryQueryRequest{
+// 初始化AliexpressInteractiveTaskDeliveryQueryAPIRequest对象
+func NewAliexpressInteractiveTaskDeliveryQueryRequest() *AliexpressInteractiveTaskDeliveryQueryAPIRequest{
+    return &AliexpressInteractiveTaskDeliveryQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressInteractiveTaskDeliveryQueryRequest) GetApiMethodName() string {
+func (r AliexpressInteractiveTaskDeliveryQueryAPIRequest) GetApiMethodName() string {
     return "aliexpress.interactive.task.delivery.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressInteractiveTaskDeliveryQueryRequest) GetApiParams() url.Values {
+func (r AliexpressInteractiveTaskDeliveryQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressInteractiveTaskDeliveryQueryRequest) GetApiParams() url.Values
 }
 // RequestDto Setter
 // 返回结果
-func (r *AliexpressInteractiveTaskDeliveryQueryRequest) SetRequestDto(_requestDto *QueryDeliveryRequestDTO) error {
+func (r *AliexpressInteractiveTaskDeliveryQueryAPIRequest) SetRequestDto(_requestDto *QueryDeliveryRequestDTO) error {
     r._requestDto = _requestDto
     r.Set("request_dto", _requestDto)
     return nil
 }
 
 // RequestDto Getter
-func (r AliexpressInteractiveTaskDeliveryQueryRequest) GetRequestDto() *QueryDeliveryRequestDTO {
+func (r AliexpressInteractiveTaskDeliveryQueryAPIRequest) GetRequestDto() *QueryDeliveryRequestDTO {
     return r._requestDto
 }

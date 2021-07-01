@@ -12,7 +12,7 @@ taobao.omniitem.classify.operator
 
 添加/修改分类
 */
-type TaobaoOmniitemClassifyOperatorRequest struct {
+type TaobaoOmniitemClassifyOperatorAPIRequest struct {
     model.Params
     // 分类信息
     _category   *OmniItemCategoryDetailDTO
@@ -24,20 +24,20 @@ type TaobaoOmniitemClassifyOperatorRequest struct {
     _operator   string
 }
 
-// 初始化TaobaoOmniitemClassifyOperatorRequest对象
-func NewTaobaoOmniitemClassifyOperatorRequest() *TaobaoOmniitemClassifyOperatorRequest{
-    return &TaobaoOmniitemClassifyOperatorRequest{
+// 初始化TaobaoOmniitemClassifyOperatorAPIRequest对象
+func NewTaobaoOmniitemClassifyOperatorRequest() *TaobaoOmniitemClassifyOperatorAPIRequest{
+    return &TaobaoOmniitemClassifyOperatorAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniitemClassifyOperatorRequest) GetApiMethodName() string {
+func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetApiMethodName() string {
     return "taobao.omniitem.classify.operator"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniitemClassifyOperatorRequest) GetApiParams() url.Values {
+func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoOmniitemClassifyOperatorRequest) GetApiParams() url.Values {
 }
 // Category Setter
 // 分类信息
-func (r *TaobaoOmniitemClassifyOperatorRequest) SetCategory(_category *OmniItemCategoryDetailDTO) error {
+func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetCategory(_category *OmniItemCategoryDetailDTO) error {
     r._category = _category
     r.Set("category", _category)
     return nil
 }
 
 // Category Getter
-func (r TaobaoOmniitemClassifyOperatorRequest) GetCategory() *OmniItemCategoryDetailDTO {
+func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetCategory() *OmniItemCategoryDetailDTO {
     return r._category
 }
 // AddItemIds Setter
 // 需要添加的关联关系的商品
-func (r *TaobaoOmniitemClassifyOperatorRequest) SetAddItemIds(_addItemIds []int64) error {
+func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetAddItemIds(_addItemIds []int64) error {
     r._addItemIds = _addItemIds
     r.Set("add_item_ids", _addItemIds)
     return nil
 }
 
 // AddItemIds Getter
-func (r TaobaoOmniitemClassifyOperatorRequest) GetAddItemIds() []int64 {
+func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetAddItemIds() []int64 {
     return r._addItemIds
 }
 // RemoveItemIds Setter
 // 需要修改的关联关系的商品
-func (r *TaobaoOmniitemClassifyOperatorRequest) SetRemoveItemIds(_removeItemIds []int64) error {
+func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetRemoveItemIds(_removeItemIds []int64) error {
     r._removeItemIds = _removeItemIds
     r.Set("remove_item_ids", _removeItemIds)
     return nil
 }
 
 // RemoveItemIds Getter
-func (r TaobaoOmniitemClassifyOperatorRequest) GetRemoveItemIds() []int64 {
+func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetRemoveItemIds() []int64 {
     return r._removeItemIds
 }
 // Operator Setter
 // 操作人信息（暂时不填）
-func (r *TaobaoOmniitemClassifyOperatorRequest) SetOperator(_operator string) error {
+func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetOperator(_operator string) error {
     r._operator = _operator
     r.Set("operator", _operator)
     return nil
 }
 
 // Operator Getter
-func (r TaobaoOmniitemClassifyOperatorRequest) GetOperator() string {
+func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetOperator() string {
     return r._operator
 }

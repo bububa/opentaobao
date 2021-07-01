@@ -12,26 +12,26 @@ tmall.channel.trade.applyorder.get
 
 通过采购申请单ID获取单据详情
 */
-type TmallChannelTradeApplyorderGetRequest struct {
+type TmallChannelTradeApplyorderGetAPIRequest struct {
     model.Params
     // 采购申请单单号
     _channelPurchaseApplyOrderNo   string
 }
 
-// 初始化TmallChannelTradeApplyorderGetRequest对象
-func NewTmallChannelTradeApplyorderGetRequest() *TmallChannelTradeApplyorderGetRequest{
-    return &TmallChannelTradeApplyorderGetRequest{
+// 初始化TmallChannelTradeApplyorderGetAPIRequest对象
+func NewTmallChannelTradeApplyorderGetRequest() *TmallChannelTradeApplyorderGetAPIRequest{
+    return &TmallChannelTradeApplyorderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallChannelTradeApplyorderGetRequest) GetApiMethodName() string {
+func (r TmallChannelTradeApplyorderGetAPIRequest) GetApiMethodName() string {
     return "tmall.channel.trade.applyorder.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallChannelTradeApplyorderGetRequest) GetApiParams() url.Values {
+func (r TmallChannelTradeApplyorderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallChannelTradeApplyorderGetRequest) GetApiParams() url.Values {
 }
 // ChannelPurchaseApplyOrderNo Setter
 // 采购申请单单号
-func (r *TmallChannelTradeApplyorderGetRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
+func (r *TmallChannelTradeApplyorderGetAPIRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
     r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
     r.Set("channel_purchase_apply_order_no", _channelPurchaseApplyOrderNo)
     return nil
 }
 
 // ChannelPurchaseApplyOrderNo Getter
-func (r TmallChannelTradeApplyorderGetRequest) GetChannelPurchaseApplyOrderNo() string {
+func (r TmallChannelTradeApplyorderGetAPIRequest) GetChannelPurchaseApplyOrderNo() string {
     return r._channelPurchaseApplyOrderNo
 }

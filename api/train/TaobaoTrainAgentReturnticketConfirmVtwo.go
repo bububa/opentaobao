@@ -11,7 +11,7 @@ taobao.train.agent.returnticket.confirm.vtwo
 
 火车票代理商接口——退票通知回调
 */
-func TaobaoTrainAgentReturnticketConfirmVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentReturnticketConfirmVtwoRequest, session string) (*train.TaobaoTrainAgentReturnticketConfirmVtwoAPIResponse, error) {
+func TaobaoTrainAgentReturnticketConfirmVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest, session string) (*train.TaobaoTrainAgentReturnticketConfirmVtwoAPIResponse, error) {
     var resp train.TaobaoTrainAgentReturnticketConfirmVtwoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

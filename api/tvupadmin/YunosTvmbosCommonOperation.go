@@ -11,7 +11,7 @@ yunos.tvmbos.common.operation
 
 应用中心相关接口的代理
 */
-func YunosTvmbosCommonOperation(clt *core.SDKClient, req *tvupadmin.YunosTvmbosCommonOperationRequest, session string) (*tvupadmin.YunosTvmbosCommonOperationAPIResponse, error) {
+func YunosTvmbosCommonOperation(clt *core.SDKClient, req *tvupadmin.YunosTvmbosCommonOperationAPIRequest, session string) (*tvupadmin.YunosTvmbosCommonOperationAPIResponse, error) {
     var resp tvupadmin.YunosTvmbosCommonOperationAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

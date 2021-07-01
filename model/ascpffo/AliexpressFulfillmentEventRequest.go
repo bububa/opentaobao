@@ -12,26 +12,26 @@ aliexpress.fulfillment.event
 
 AE用 履约底层声明发货能力
 */
-type AliexpressFulfillmentEventRequest struct {
+type AliexpressFulfillmentEventAPIRequest struct {
     model.Params
     // 入参对象
     _param   *FulfillmentOrderStatusUpdateRequest
 }
 
-// 初始化AliexpressFulfillmentEventRequest对象
-func NewAliexpressFulfillmentEventRequest() *AliexpressFulfillmentEventRequest{
-    return &AliexpressFulfillmentEventRequest{
+// 初始化AliexpressFulfillmentEventAPIRequest对象
+func NewAliexpressFulfillmentEventRequest() *AliexpressFulfillmentEventAPIRequest{
+    return &AliexpressFulfillmentEventAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressFulfillmentEventRequest) GetApiMethodName() string {
+func (r AliexpressFulfillmentEventAPIRequest) GetApiMethodName() string {
     return "aliexpress.fulfillment.event"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressFulfillmentEventRequest) GetApiParams() url.Values {
+func (r AliexpressFulfillmentEventAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressFulfillmentEventRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参对象
-func (r *AliexpressFulfillmentEventRequest) SetParam(_param *FulfillmentOrderStatusUpdateRequest) error {
+func (r *AliexpressFulfillmentEventAPIRequest) SetParam(_param *FulfillmentOrderStatusUpdateRequest) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AliexpressFulfillmentEventRequest) GetParam() *FulfillmentOrderStatusUpdateRequest {
+func (r AliexpressFulfillmentEventAPIRequest) GetParam() *FulfillmentOrderStatusUpdateRequest {
     return r._param
 }

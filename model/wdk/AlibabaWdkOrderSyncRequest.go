@@ -12,26 +12,26 @@ alibaba.wdk.order.sync
 
 外部商户使用自助POS下单订单同步到五道口
 */
-type AlibabaWdkOrderSyncRequest struct {
+type AlibabaWdkOrderSyncAPIRequest struct {
     model.Params
     // 订单
     _receiptOrder   *ReceiptOrderDO
 }
 
-// 初始化AlibabaWdkOrderSyncRequest对象
-func NewAlibabaWdkOrderSyncRequest() *AlibabaWdkOrderSyncRequest{
-    return &AlibabaWdkOrderSyncRequest{
+// 初始化AlibabaWdkOrderSyncAPIRequest对象
+func NewAlibabaWdkOrderSyncRequest() *AlibabaWdkOrderSyncAPIRequest{
+    return &AlibabaWdkOrderSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkOrderSyncRequest) GetApiMethodName() string {
+func (r AlibabaWdkOrderSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.order.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkOrderSyncRequest) GetApiParams() url.Values {
+func (r AlibabaWdkOrderSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkOrderSyncRequest) GetApiParams() url.Values {
 }
 // ReceiptOrder Setter
 // 订单
-func (r *AlibabaWdkOrderSyncRequest) SetReceiptOrder(_receiptOrder *ReceiptOrderDO) error {
+func (r *AlibabaWdkOrderSyncAPIRequest) SetReceiptOrder(_receiptOrder *ReceiptOrderDO) error {
     r._receiptOrder = _receiptOrder
     r.Set("receipt_order", _receiptOrder)
     return nil
 }
 
 // ReceiptOrder Getter
-func (r AlibabaWdkOrderSyncRequest) GetReceiptOrder() *ReceiptOrderDO {
+func (r AlibabaWdkOrderSyncAPIRequest) GetReceiptOrder() *ReceiptOrderDO {
     return r._receiptOrder
 }

@@ -11,7 +11,7 @@ alibaba.tmallgenie.scp.plan.saleforcast.pm.upload
 
 销售预测数量（产管）回传接口
 */
-func AlibabaTmallgenieScpPlanSaleforcastPmUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanSaleforcastPmUploadRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanSaleforcastPmUploadAPIResponse, error) {
+func AlibabaTmallgenieScpPlanSaleforcastPmUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanSaleforcastPmUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanSaleforcastPmUploadAPIResponse, error) {
     var resp tmallgeniescp.AlibabaTmallgenieScpPlanSaleforcastPmUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

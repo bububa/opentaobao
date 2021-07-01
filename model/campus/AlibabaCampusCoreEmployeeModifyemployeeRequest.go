@@ -12,7 +12,7 @@ alibaba.campus.core.employee.modifyemployee
 
 根据用户ID和公司ID更新员工基本信息（头像、性别、昵称）
 */
-type AlibabaCampusCoreEmployeeModifyemployeeRequest struct {
+type AlibabaCampusCoreEmployeeModifyemployeeAPIRequest struct {
     model.Params
     // WorkBenchContext
     _workBenchContext   *WorkBenchContext
@@ -22,20 +22,20 @@ type AlibabaCampusCoreEmployeeModifyemployeeRequest struct {
     _accountId   string
 }
 
-// 初始化AlibabaCampusCoreEmployeeModifyemployeeRequest对象
-func NewAlibabaCampusCoreEmployeeModifyemployeeRequest() *AlibabaCampusCoreEmployeeModifyemployeeRequest{
-    return &AlibabaCampusCoreEmployeeModifyemployeeRequest{
+// 初始化AlibabaCampusCoreEmployeeModifyemployeeAPIRequest对象
+func NewAlibabaCampusCoreEmployeeModifyemployeeRequest() *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest{
+    return &AlibabaCampusCoreEmployeeModifyemployeeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetApiMethodName() string {
+func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.core.employee.modifyemployee"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetApiParams() url.Values {
+func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetApiParams() url.Value
 }
 // WorkBenchContext Setter
 // WorkBenchContext
-func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
     r._workBenchContext = _workBenchContext
     r.Set("work_bench_context", _workBenchContext)
     return nil
 }
 
 // WorkBenchContext Getter
-func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetWorkBenchContext() *WorkBenchContext {
+func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetWorkBenchContext() *WorkBenchContext {
     return r._workBenchContext
 }
 // EmployeeDto Setter
 // EmployeeDto
-func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetEmployeeDto(_employeeDto *EmployeeDTO) error {
+func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetEmployeeDto(_employeeDto *EmployeeDTO) error {
     r._employeeDto = _employeeDto
     r.Set("employee_dto", _employeeDto)
     return nil
 }
 
 // EmployeeDto Getter
-func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetEmployeeDto() *EmployeeDTO {
+func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetEmployeeDto() *EmployeeDTO {
     return r._employeeDto
 }
 // AccountId Setter
 // 用户ID
-func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetAccountId(_accountId string) error {
+func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetAccountId(_accountId string) error {
     r._accountId = _accountId
     r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
-func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetAccountId() string {
+func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetAccountId() string {
     return r._accountId
 }

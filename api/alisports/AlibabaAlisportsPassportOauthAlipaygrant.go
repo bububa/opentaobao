@@ -11,7 +11,7 @@ alibaba.alisports.passport.oauth.alipaygrant
 
 开放给乐心运动使用的支付宝授权接口
 */
-func AlibabaAlisportsPassportOauthAlipaygrant(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportOauthAlipaygrantRequest, session string) (*alisports.AlibabaAlisportsPassportOauthAlipaygrantAPIResponse, error) {
+func AlibabaAlisportsPassportOauthAlipaygrant(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportOauthAlipaygrantAPIRequest, session string) (*alisports.AlibabaAlisportsPassportOauthAlipaygrantAPIResponse, error) {
     var resp alisports.AlibabaAlisportsPassportOauthAlipaygrantAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

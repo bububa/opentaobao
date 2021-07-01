@@ -11,7 +11,7 @@ alitrip.receipt.seller.invoice.query
 
 飞猪发票查询
 */
-func AlitripReceiptSellerInvoiceQuery(clt *core.SDKClient, req *alitripreceipt.AlitripReceiptSellerInvoiceQueryRequest, session string) (*alitripreceipt.AlitripReceiptSellerInvoiceQueryAPIResponse, error) {
+func AlitripReceiptSellerInvoiceQuery(clt *core.SDKClient, req *alitripreceipt.AlitripReceiptSellerInvoiceQueryAPIRequest, session string) (*alitripreceipt.AlitripReceiptSellerInvoiceQueryAPIResponse, error) {
     var resp alitripreceipt.AlitripReceiptSellerInvoiceQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

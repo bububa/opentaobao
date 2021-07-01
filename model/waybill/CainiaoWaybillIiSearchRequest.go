@@ -12,26 +12,26 @@ cainiao.waybill.ii.search
 
 获取发货地&CP开通状态&账户的使用情况
 */
-type CainiaoWaybillIiSearchRequest struct {
+type CainiaoWaybillIiSearchAPIRequest struct {
     model.Params
     // 物流公司code
     _cpCode   string
 }
 
-// 初始化CainiaoWaybillIiSearchRequest对象
-func NewCainiaoWaybillIiSearchRequest() *CainiaoWaybillIiSearchRequest{
-    return &CainiaoWaybillIiSearchRequest{
+// 初始化CainiaoWaybillIiSearchAPIRequest对象
+func NewCainiaoWaybillIiSearchRequest() *CainiaoWaybillIiSearchAPIRequest{
+    return &CainiaoWaybillIiSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoWaybillIiSearchRequest) GetApiMethodName() string {
+func (r CainiaoWaybillIiSearchAPIRequest) GetApiMethodName() string {
     return "cainiao.waybill.ii.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillIiSearchRequest) GetApiParams() url.Values {
+func (r CainiaoWaybillIiSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoWaybillIiSearchRequest) GetApiParams() url.Values {
 }
 // CpCode Setter
 // 物流公司code
-func (r *CainiaoWaybillIiSearchRequest) SetCpCode(_cpCode string) error {
+func (r *CainiaoWaybillIiSearchAPIRequest) SetCpCode(_cpCode string) error {
     r._cpCode = _cpCode
     r.Set("cp_code", _cpCode)
     return nil
 }
 
 // CpCode Getter
-func (r CainiaoWaybillIiSearchRequest) GetCpCode() string {
+func (r CainiaoWaybillIiSearchAPIRequest) GetCpCode() string {
     return r._cpCode
 }

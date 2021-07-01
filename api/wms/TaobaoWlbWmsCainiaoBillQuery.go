@@ -11,7 +11,7 @@ taobao.wlb.wms.cainiao.bill.query
 
 查询单据列表
 */
-func TaobaoWlbWmsCainiaoBillQuery(clt *core.SDKClient, req *wms.TaobaoWlbWmsCainiaoBillQueryRequest, session string) (*wms.TaobaoWlbWmsCainiaoBillQueryAPIResponse, error) {
+func TaobaoWlbWmsCainiaoBillQuery(clt *core.SDKClient, req *wms.TaobaoWlbWmsCainiaoBillQueryAPIRequest, session string) (*wms.TaobaoWlbWmsCainiaoBillQueryAPIResponse, error) {
     var resp wms.TaobaoWlbWmsCainiaoBillQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

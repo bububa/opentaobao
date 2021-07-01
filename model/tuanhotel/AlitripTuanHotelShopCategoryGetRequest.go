@@ -12,24 +12,24 @@ alitrip.tuan.hotel.shop.category.get
 
 查询商家店铺类目信息
 */
-type AlitripTuanHotelShopCategoryGetRequest struct {
+type AlitripTuanHotelShopCategoryGetAPIRequest struct {
     model.Params
 }
 
-// 初始化AlitripTuanHotelShopCategoryGetRequest对象
-func NewAlitripTuanHotelShopCategoryGetRequest() *AlitripTuanHotelShopCategoryGetRequest{
-    return &AlitripTuanHotelShopCategoryGetRequest{
+// 初始化AlitripTuanHotelShopCategoryGetAPIRequest对象
+func NewAlitripTuanHotelShopCategoryGetRequest() *AlitripTuanHotelShopCategoryGetAPIRequest{
+    return &AlitripTuanHotelShopCategoryGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripTuanHotelShopCategoryGetRequest) GetApiMethodName() string {
+func (r AlitripTuanHotelShopCategoryGetAPIRequest) GetApiMethodName() string {
     return "alitrip.tuan.hotel.shop.category.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripTuanHotelShopCategoryGetRequest) GetApiParams() url.Values {
+func (r AlitripTuanHotelShopCategoryGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

@@ -12,26 +12,26 @@ taobao.openim.custmsg.push
 
 isv通过该接口给openim用户推送自定义消息
 */
-type TaobaoOpenimCustmsgPushRequest struct {
+type TaobaoOpenimCustmsgPushAPIRequest struct {
     model.Params
     // 自定义消息内容
     _custmsg   *CustMsg
 }
 
-// 初始化TaobaoOpenimCustmsgPushRequest对象
-func NewTaobaoOpenimCustmsgPushRequest() *TaobaoOpenimCustmsgPushRequest{
-    return &TaobaoOpenimCustmsgPushRequest{
+// 初始化TaobaoOpenimCustmsgPushAPIRequest对象
+func NewTaobaoOpenimCustmsgPushRequest() *TaobaoOpenimCustmsgPushAPIRequest{
+    return &TaobaoOpenimCustmsgPushAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenimCustmsgPushRequest) GetApiMethodName() string {
+func (r TaobaoOpenimCustmsgPushAPIRequest) GetApiMethodName() string {
     return "taobao.openim.custmsg.push"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimCustmsgPushRequest) GetApiParams() url.Values {
+func (r TaobaoOpenimCustmsgPushAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOpenimCustmsgPushRequest) GetApiParams() url.Values {
 }
 // Custmsg Setter
 // 自定义消息内容
-func (r *TaobaoOpenimCustmsgPushRequest) SetCustmsg(_custmsg *CustMsg) error {
+func (r *TaobaoOpenimCustmsgPushAPIRequest) SetCustmsg(_custmsg *CustMsg) error {
     r._custmsg = _custmsg
     r.Set("custmsg", _custmsg)
     return nil
 }
 
 // Custmsg Getter
-func (r TaobaoOpenimCustmsgPushRequest) GetCustmsg() *CustMsg {
+func (r TaobaoOpenimCustmsgPushAPIRequest) GetCustmsg() *CustMsg {
     return r._custmsg
 }

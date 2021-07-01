@@ -11,7 +11,7 @@ taobao.tanx.qualification.add
 
 dsp客户提交客户资质和行业资质
 */
-func TaobaoTanxQualificationAdd(clt *core.SDKClient, req *tanx.TaobaoTanxQualificationAddRequest, session string) (*tanx.TaobaoTanxQualificationAddAPIResponse, error) {
+func TaobaoTanxQualificationAdd(clt *core.SDKClient, req *tanx.TaobaoTanxQualificationAddAPIRequest, session string) (*tanx.TaobaoTanxQualificationAddAPIResponse, error) {
     var resp tanx.TaobaoTanxQualificationAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

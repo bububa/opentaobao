@@ -14,7 +14,7 @@ alibaba.campus.space.floor.getbybuildingid
 HSF接口名称：com.alibaba.campus.api.space.service.top.FloorApiTopService
 HSF方法名称：getFloorList
 */
-type AlibabaCampusSpaceFloorGetbybuildingidRequest struct {
+type AlibabaCampusSpaceFloorGetbybuildingidAPIRequest struct {
     model.Params
     // 系统自动生成
     _param0   *WorkBenchContext
@@ -22,20 +22,20 @@ type AlibabaCampusSpaceFloorGetbybuildingidRequest struct {
     _param1   *FloorQuery
 }
 
-// 初始化AlibabaCampusSpaceFloorGetbybuildingidRequest对象
-func NewAlibabaCampusSpaceFloorGetbybuildingidRequest() *AlibabaCampusSpaceFloorGetbybuildingidRequest{
-    return &AlibabaCampusSpaceFloorGetbybuildingidRequest{
+// 初始化AlibabaCampusSpaceFloorGetbybuildingidAPIRequest对象
+func NewAlibabaCampusSpaceFloorGetbybuildingidRequest() *AlibabaCampusSpaceFloorGetbybuildingidAPIRequest{
+    return &AlibabaCampusSpaceFloorGetbybuildingidAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceFloorGetbybuildingidRequest) GetApiMethodName() string {
+func (r AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.space.floor.getbybuildingid"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceFloorGetbybuildingidRequest) GetApiParams() url.Values {
+func (r AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceFloorGetbybuildingidRequest) GetApiParams() url.Values
 }
 // Param0 Setter
 // 系统自动生成
-func (r *AlibabaCampusSpaceFloorGetbybuildingidRequest) SetParam0(_param0 *WorkBenchContext) error {
+func (r *AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaCampusSpaceFloorGetbybuildingidRequest) GetParam0() *WorkBenchContext {
+func (r AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) GetParam0() *WorkBenchContext {
     return r._param0
 }
 // Param1 Setter
 // 楼宇iD封装
-func (r *AlibabaCampusSpaceFloorGetbybuildingidRequest) SetParam1(_param1 *FloorQuery) error {
+func (r *AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) SetParam1(_param1 *FloorQuery) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaCampusSpaceFloorGetbybuildingidRequest) GetParam1() *FloorQuery {
+func (r AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) GetParam1() *FloorQuery {
     return r._param1
 }

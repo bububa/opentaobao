@@ -12,26 +12,26 @@ alibaba.wdk.marketing.expire.promotion.create
 
 过期优惠优惠信息录入
 */
-type AlibabaWdkMarketingExpirePromotionCreateRequest struct {
+type AlibabaWdkMarketingExpirePromotionCreateAPIRequest struct {
     model.Params
     // 创建短保优惠
     _param0   *ExpirePromotionBo
 }
 
-// 初始化AlibabaWdkMarketingExpirePromotionCreateRequest对象
-func NewAlibabaWdkMarketingExpirePromotionCreateRequest() *AlibabaWdkMarketingExpirePromotionCreateRequest{
-    return &AlibabaWdkMarketingExpirePromotionCreateRequest{
+// 初始化AlibabaWdkMarketingExpirePromotionCreateAPIRequest对象
+func NewAlibabaWdkMarketingExpirePromotionCreateRequest() *AlibabaWdkMarketingExpirePromotionCreateAPIRequest{
+    return &AlibabaWdkMarketingExpirePromotionCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingExpirePromotionCreateRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingExpirePromotionCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.expire.promotion.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingExpirePromotionCreateRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingExpirePromotionCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingExpirePromotionCreateRequest) GetApiParams() url.Valu
 }
 // Param0 Setter
 // 创建短保优惠
-func (r *AlibabaWdkMarketingExpirePromotionCreateRequest) SetParam0(_param0 *ExpirePromotionBo) error {
+func (r *AlibabaWdkMarketingExpirePromotionCreateAPIRequest) SetParam0(_param0 *ExpirePromotionBo) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaWdkMarketingExpirePromotionCreateRequest) GetParam0() *ExpirePromotionBo {
+func (r AlibabaWdkMarketingExpirePromotionCreateAPIRequest) GetParam0() *ExpirePromotionBo {
     return r._param0
 }

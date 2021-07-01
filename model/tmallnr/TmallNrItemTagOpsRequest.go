@@ -12,26 +12,26 @@ tmall.nr.item.tag.ops
 
 参加区域零售的商品，需要批量打标或去标，方便后续设置商品库存
 */
-type TmallNrItemTagOpsRequest struct {
+type TmallNrItemTagOpsAPIRequest struct {
     model.Params
     // 请求入参
     _tagReqDTO   *TagReqDTO
 }
 
-// 初始化TmallNrItemTagOpsRequest对象
-func NewTmallNrItemTagOpsRequest() *TmallNrItemTagOpsRequest{
-    return &TmallNrItemTagOpsRequest{
+// 初始化TmallNrItemTagOpsAPIRequest对象
+func NewTmallNrItemTagOpsRequest() *TmallNrItemTagOpsAPIRequest{
+    return &TmallNrItemTagOpsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrItemTagOpsRequest) GetApiMethodName() string {
+func (r TmallNrItemTagOpsAPIRequest) GetApiMethodName() string {
     return "tmall.nr.item.tag.ops"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrItemTagOpsRequest) GetApiParams() url.Values {
+func (r TmallNrItemTagOpsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallNrItemTagOpsRequest) GetApiParams() url.Values {
 }
 // TagReqDTO Setter
 // 请求入参
-func (r *TmallNrItemTagOpsRequest) SetTagReqDTO(_tagReqDTO *TagReqDTO) error {
+func (r *TmallNrItemTagOpsAPIRequest) SetTagReqDTO(_tagReqDTO *TagReqDTO) error {
     r._tagReqDTO = _tagReqDTO
     r.Set("tag_req_d_t_o", _tagReqDTO)
     return nil
 }
 
 // TagReqDTO Getter
-func (r TmallNrItemTagOpsRequest) GetTagReqDTO() *TagReqDTO {
+func (r TmallNrItemTagOpsAPIRequest) GetTagReqDTO() *TagReqDTO {
     return r._tagReqDTO
 }

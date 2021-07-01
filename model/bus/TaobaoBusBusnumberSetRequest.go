@@ -12,26 +12,26 @@ taobao.bus.busnumber.set
 
 商家汽车票车次更新后，调用该接口通知平台。
 */
-type TaobaoBusBusnumberSetRequest struct {
+type TaobaoBusBusnumberSetAPIRequest struct {
     model.Params
     // 车次更新通知参数
     _pushParam   *TopBusNumerPushRq
 }
 
-// 初始化TaobaoBusBusnumberSetRequest对象
-func NewTaobaoBusBusnumberSetRequest() *TaobaoBusBusnumberSetRequest{
-    return &TaobaoBusBusnumberSetRequest{
+// 初始化TaobaoBusBusnumberSetAPIRequest对象
+func NewTaobaoBusBusnumberSetRequest() *TaobaoBusBusnumberSetAPIRequest{
+    return &TaobaoBusBusnumberSetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBusBusnumberSetRequest) GetApiMethodName() string {
+func (r TaobaoBusBusnumberSetAPIRequest) GetApiMethodName() string {
     return "taobao.bus.busnumber.set"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBusBusnumberSetRequest) GetApiParams() url.Values {
+func (r TaobaoBusBusnumberSetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBusBusnumberSetRequest) GetApiParams() url.Values {
 }
 // PushParam Setter
 // 车次更新通知参数
-func (r *TaobaoBusBusnumberSetRequest) SetPushParam(_pushParam *TopBusNumerPushRq) error {
+func (r *TaobaoBusBusnumberSetAPIRequest) SetPushParam(_pushParam *TopBusNumerPushRq) error {
     r._pushParam = _pushParam
     r.Set("push_param", _pushParam)
     return nil
 }
 
 // PushParam Getter
-func (r TaobaoBusBusnumberSetRequest) GetPushParam() *TopBusNumerPushRq {
+func (r TaobaoBusBusnumberSetAPIRequest) GetPushParam() *TopBusNumerPushRq {
     return r._pushParam
 }

@@ -15,26 +15,26 @@ alibaba.alsc.crm.card.pagetmp
      * isDeleted,lastMaxId,gmtModified,num时,进行数据下行处理,返回结果不带分页信息
      * 否则分页查询卡模板,返回结果带有分页信息
 */
-type AlibabaAlscCrmCardPagetmpRequest struct {
+type AlibabaAlscCrmCardPagetmpAPIRequest struct {
     model.Params
     // 请求结果
     _paramPullCardTemplateOpenReq   *PullCardTemplateOpenReq
 }
 
-// 初始化AlibabaAlscCrmCardPagetmpRequest对象
-func NewAlibabaAlscCrmCardPagetmpRequest() *AlibabaAlscCrmCardPagetmpRequest{
-    return &AlibabaAlscCrmCardPagetmpRequest{
+// 初始化AlibabaAlscCrmCardPagetmpAPIRequest对象
+func NewAlibabaAlscCrmCardPagetmpRequest() *AlibabaAlscCrmCardPagetmpAPIRequest{
+    return &AlibabaAlscCrmCardPagetmpAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmCardPagetmpRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmCardPagetmpAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.card.pagetmp"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmCardPagetmpRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmCardPagetmpAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -43,13 +43,13 @@ func (r AlibabaAlscCrmCardPagetmpRequest) GetApiParams() url.Values {
 }
 // ParamPullCardTemplateOpenReq Setter
 // 请求结果
-func (r *AlibabaAlscCrmCardPagetmpRequest) SetParamPullCardTemplateOpenReq(_paramPullCardTemplateOpenReq *PullCardTemplateOpenReq) error {
+func (r *AlibabaAlscCrmCardPagetmpAPIRequest) SetParamPullCardTemplateOpenReq(_paramPullCardTemplateOpenReq *PullCardTemplateOpenReq) error {
     r._paramPullCardTemplateOpenReq = _paramPullCardTemplateOpenReq
     r.Set("param_pull_card_template_open_req", _paramPullCardTemplateOpenReq)
     return nil
 }
 
 // ParamPullCardTemplateOpenReq Getter
-func (r AlibabaAlscCrmCardPagetmpRequest) GetParamPullCardTemplateOpenReq() *PullCardTemplateOpenReq {
+func (r AlibabaAlscCrmCardPagetmpAPIRequest) GetParamPullCardTemplateOpenReq() *PullCardTemplateOpenReq {
     return r._paramPullCardTemplateOpenReq
 }

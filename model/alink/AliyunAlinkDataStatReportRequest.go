@@ -12,26 +12,26 @@ aliyun.alink.data.stat.report
 
 外部合作厂商上报设备的明细数据，或者离线统计数据。
 */
-type AliyunAlinkDataStatReportRequest struct {
+type AliyunAlinkDataStatReportAPIRequest struct {
     model.Params
     // 入参对象
     _paramBean   *OuterDataBean
 }
 
-// 初始化AliyunAlinkDataStatReportRequest对象
-func NewAliyunAlinkDataStatReportRequest() *AliyunAlinkDataStatReportRequest{
-    return &AliyunAlinkDataStatReportRequest{
+// 初始化AliyunAlinkDataStatReportAPIRequest对象
+func NewAliyunAlinkDataStatReportRequest() *AliyunAlinkDataStatReportAPIRequest{
+    return &AliyunAlinkDataStatReportAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliyunAlinkDataStatReportRequest) GetApiMethodName() string {
+func (r AliyunAlinkDataStatReportAPIRequest) GetApiMethodName() string {
     return "aliyun.alink.data.stat.report"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliyunAlinkDataStatReportRequest) GetApiParams() url.Values {
+func (r AliyunAlinkDataStatReportAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliyunAlinkDataStatReportRequest) GetApiParams() url.Values {
 }
 // ParamBean Setter
 // 入参对象
-func (r *AliyunAlinkDataStatReportRequest) SetParamBean(_paramBean *OuterDataBean) error {
+func (r *AliyunAlinkDataStatReportAPIRequest) SetParamBean(_paramBean *OuterDataBean) error {
     r._paramBean = _paramBean
     r.Set("param_bean", _paramBean)
     return nil
 }
 
 // ParamBean Getter
-func (r AliyunAlinkDataStatReportRequest) GetParamBean() *OuterDataBean {
+func (r AliyunAlinkDataStatReportAPIRequest) GetParamBean() *OuterDataBean {
     return r._paramBean
 }

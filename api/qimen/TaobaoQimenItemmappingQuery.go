@@ -11,7 +11,7 @@ taobao.qimen.itemmapping.query
 
 前后端商品映射查询接口
 */
-func TaobaoQimenItemmappingQuery(clt *core.SDKClient, req *qimen.TaobaoQimenItemmappingQueryRequest, session string) (*qimen.TaobaoQimenItemmappingQueryAPIResponse, error) {
+func TaobaoQimenItemmappingQuery(clt *core.SDKClient, req *qimen.TaobaoQimenItemmappingQueryAPIRequest, session string) (*qimen.TaobaoQimenItemmappingQueryAPIResponse, error) {
     var resp qimen.TaobaoQimenItemmappingQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

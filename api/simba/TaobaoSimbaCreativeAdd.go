@@ -11,7 +11,7 @@ taobao.simba.creative.add
 
 创建一个创意
 */
-func TaobaoSimbaCreativeAdd(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeAddRequest, session string) (*simba.TaobaoSimbaCreativeAddAPIResponse, error) {
+func TaobaoSimbaCreativeAdd(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeAddAPIRequest, session string) (*simba.TaobaoSimbaCreativeAddAPIResponse, error) {
     var resp simba.TaobaoSimbaCreativeAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

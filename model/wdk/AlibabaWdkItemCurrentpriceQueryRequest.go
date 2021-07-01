@@ -12,7 +12,7 @@ alibaba.wdk.item.currentprice.query
 
 通过渠道店id/sku编码/渠道查询商品当前价格，一次请求商品数量<=20,返回结果key为skuCode
 */
-type AlibabaWdkItemCurrentpriceQueryRequest struct {
+type AlibabaWdkItemCurrentpriceQueryAPIRequest struct {
     model.Params
     // 渠道店id
     _shopId   int64
@@ -22,20 +22,20 @@ type AlibabaWdkItemCurrentpriceQueryRequest struct {
     _orderChannelCode   string
 }
 
-// 初始化AlibabaWdkItemCurrentpriceQueryRequest对象
-func NewAlibabaWdkItemCurrentpriceQueryRequest() *AlibabaWdkItemCurrentpriceQueryRequest{
-    return &AlibabaWdkItemCurrentpriceQueryRequest{
+// 初始化AlibabaWdkItemCurrentpriceQueryAPIRequest对象
+func NewAlibabaWdkItemCurrentpriceQueryRequest() *AlibabaWdkItemCurrentpriceQueryAPIRequest{
+    return &AlibabaWdkItemCurrentpriceQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkItemCurrentpriceQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.item.currentprice.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkItemCurrentpriceQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaWdkItemCurrentpriceQueryRequest) GetApiParams() url.Values {
 }
 // ShopId Setter
 // 渠道店id
-func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetShopId(_shopId int64) error {
+func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetShopId(_shopId int64) error {
     r._shopId = _shopId
     r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
-func (r AlibabaWdkItemCurrentpriceQueryRequest) GetShopId() int64 {
+func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetShopId() int64 {
     return r._shopId
 }
 // SkuCodes Setter
 // sku编码列表
-func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetSkuCodes(_skuCodes []string) error {
+func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetSkuCodes(_skuCodes []string) error {
     r._skuCodes = _skuCodes
     r.Set("sku_codes", _skuCodes)
     return nil
 }
 
 // SkuCodes Getter
-func (r AlibabaWdkItemCurrentpriceQueryRequest) GetSkuCodes() []string {
+func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetSkuCodes() []string {
     return r._skuCodes
 }
 // OrderChannelCode Setter
 // 渠道
-func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetOrderChannelCode(_orderChannelCode string) error {
+func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetOrderChannelCode(_orderChannelCode string) error {
     r._orderChannelCode = _orderChannelCode
     r.Set("order_channel_code", _orderChannelCode)
     return nil
 }
 
 // OrderChannelCode Getter
-func (r AlibabaWdkItemCurrentpriceQueryRequest) GetOrderChannelCode() string {
+func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetOrderChannelCode() string {
     return r._orderChannelCode
 }

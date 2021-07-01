@@ -11,7 +11,7 @@ alitrip.rail.trade.issueticket
 
 出票成功回调接口
 */
-func AlitripRailTradeIssueticket(clt *core.SDKClient, req *rail.AlitripRailTradeIssueticketRequest, session string) (*rail.AlitripRailTradeIssueticketAPIResponse, error) {
+func AlitripRailTradeIssueticket(clt *core.SDKClient, req *rail.AlitripRailTradeIssueticketAPIRequest, session string) (*rail.AlitripRailTradeIssueticketAPIResponse, error) {
     var resp rail.AlitripRailTradeIssueticketAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

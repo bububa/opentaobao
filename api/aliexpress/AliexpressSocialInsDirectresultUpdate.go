@@ -11,7 +11,7 @@ aliexpress.social.ins.directresult.update
 
 ISV更新INS私信发送的结果
 */
-func AliexpressSocialInsDirectresultUpdate(clt *core.SDKClient, req *aliexpress.AliexpressSocialInsDirectresultUpdateRequest, session string) (*aliexpress.AliexpressSocialInsDirectresultUpdateAPIResponse, error) {
+func AliexpressSocialInsDirectresultUpdate(clt *core.SDKClient, req *aliexpress.AliexpressSocialInsDirectresultUpdateAPIRequest, session string) (*aliexpress.AliexpressSocialInsDirectresultUpdateAPIResponse, error) {
     var resp aliexpress.AliexpressSocialInsDirectresultUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

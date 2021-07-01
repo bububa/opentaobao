@@ -11,7 +11,7 @@ alibaba.happytrip.taxi.price.get
 
 打车价格预估
 */
-func AlibabaHappytripTaxiPriceGet(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiPriceGetRequest, session string) (*happytrip.AlibabaHappytripTaxiPriceGetAPIResponse, error) {
+func AlibabaHappytripTaxiPriceGet(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiPriceGetAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiPriceGetAPIResponse, error) {
     var resp happytrip.AlibabaHappytripTaxiPriceGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

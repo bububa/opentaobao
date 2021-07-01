@@ -13,7 +13,7 @@ alibaba.campus.space.group.getlistbycampusandtype
 HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService
 HSF方法名称：getListByCampusAndType
 */
-func AlibabaCampusSpaceGroupGetlistbycampusandtype(clt *core.SDKClient, req *campus.AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest, session string) (*campus.AlibabaCampusSpaceGroupGetlistbycampusandtypeAPIResponse, error) {
+func AlibabaCampusSpaceGroupGetlistbycampusandtype(clt *core.SDKClient, req *campus.AlibabaCampusSpaceGroupGetlistbycampusandtypeAPIRequest, session string) (*campus.AlibabaCampusSpaceGroupGetlistbycampusandtypeAPIResponse, error) {
     var resp campus.AlibabaCampusSpaceGroupGetlistbycampusandtypeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

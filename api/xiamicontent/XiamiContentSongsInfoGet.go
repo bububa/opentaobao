@@ -11,7 +11,7 @@ xiami.content.songs.info.get
 
 (批量)获取歌曲信息
 */
-func XiamiContentSongsInfoGet(clt *core.SDKClient, req *xiamicontent.XiamiContentSongsInfoGetRequest, session string) (*xiamicontent.XiamiContentSongsInfoGetAPIResponse, error) {
+func XiamiContentSongsInfoGet(clt *core.SDKClient, req *xiamicontent.XiamiContentSongsInfoGetAPIRequest, session string) (*xiamicontent.XiamiContentSongsInfoGetAPIResponse, error) {
     var resp xiamicontent.XiamiContentSongsInfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

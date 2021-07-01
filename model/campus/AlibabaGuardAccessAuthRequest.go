@@ -12,26 +12,26 @@ alibaba.guard.access.auth
 
 刷卡鉴权
 */
-type AlibabaGuardAccessAuthRequest struct {
+type AlibabaGuardAccessAuthAPIRequest struct {
     model.Params
     // 请求
     _paramIdentifyAuthDTO   *IdentifyAuthDTO
 }
 
-// 初始化AlibabaGuardAccessAuthRequest对象
-func NewAlibabaGuardAccessAuthRequest() *AlibabaGuardAccessAuthRequest{
-    return &AlibabaGuardAccessAuthRequest{
+// 初始化AlibabaGuardAccessAuthAPIRequest对象
+func NewAlibabaGuardAccessAuthRequest() *AlibabaGuardAccessAuthAPIRequest{
+    return &AlibabaGuardAccessAuthAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaGuardAccessAuthRequest) GetApiMethodName() string {
+func (r AlibabaGuardAccessAuthAPIRequest) GetApiMethodName() string {
     return "alibaba.guard.access.auth"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaGuardAccessAuthRequest) GetApiParams() url.Values {
+func (r AlibabaGuardAccessAuthAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaGuardAccessAuthRequest) GetApiParams() url.Values {
 }
 // ParamIdentifyAuthDTO Setter
 // 请求
-func (r *AlibabaGuardAccessAuthRequest) SetParamIdentifyAuthDTO(_paramIdentifyAuthDTO *IdentifyAuthDTO) error {
+func (r *AlibabaGuardAccessAuthAPIRequest) SetParamIdentifyAuthDTO(_paramIdentifyAuthDTO *IdentifyAuthDTO) error {
     r._paramIdentifyAuthDTO = _paramIdentifyAuthDTO
     r.Set("param_identify_auth_d_t_o", _paramIdentifyAuthDTO)
     return nil
 }
 
 // ParamIdentifyAuthDTO Getter
-func (r AlibabaGuardAccessAuthRequest) GetParamIdentifyAuthDTO() *IdentifyAuthDTO {
+func (r AlibabaGuardAccessAuthAPIRequest) GetParamIdentifyAuthDTO() *IdentifyAuthDTO {
     return r._paramIdentifyAuthDTO
 }

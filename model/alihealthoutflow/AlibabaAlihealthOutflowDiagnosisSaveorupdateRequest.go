@@ -12,26 +12,26 @@ alibaba.alihealth.outflow.diagnosis.saveorupdate
 
 阿里健康-处方外流-对外提供诊断字典表维护功能
 */
-type AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest struct {
+type AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest struct {
     model.Params
     // 诊断数据
     _diagnoseDictDto   *DiagnoseDictDTO
 }
 
-// 初始化AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest对象
-func NewAlibabaAlihealthOutflowDiagnosisSaveorupdateRequest() *AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest{
-    return &AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest{
+// 初始化AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest对象
+func NewAlibabaAlihealthOutflowDiagnosisSaveorupdateRequest() *AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest{
+    return &AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.diagnosis.saveorupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest) GetApiParams() url.
 }
 // DiagnoseDictDto Setter
 // 诊断数据
-func (r *AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest) SetDiagnoseDictDto(_diagnoseDictDto *DiagnoseDictDTO) error {
+func (r *AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest) SetDiagnoseDictDto(_diagnoseDictDto *DiagnoseDictDTO) error {
     r._diagnoseDictDto = _diagnoseDictDto
     r.Set("diagnose_dict_dto", _diagnoseDictDto)
     return nil
 }
 
 // DiagnoseDictDto Getter
-func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest) GetDiagnoseDictDto() *DiagnoseDictDTO {
+func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest) GetDiagnoseDictDto() *DiagnoseDictDTO {
     return r._diagnoseDictDto
 }

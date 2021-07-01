@@ -12,7 +12,7 @@ alibaba.lst.vending.shipping.callback
 
 零售通自动售货机商品出货回传接口，同步商品出库最新状态。
 */
-type AlibabaLstVendingShippingCallbackRequest struct {
+type AlibabaLstVendingShippingCallbackAPIRequest struct {
     model.Params
     // 厂商设备编码
     _equipmentCode   string
@@ -26,20 +26,20 @@ type AlibabaLstVendingShippingCallbackRequest struct {
     _time   string
 }
 
-// 初始化AlibabaLstVendingShippingCallbackRequest对象
-func NewAlibabaLstVendingShippingCallbackRequest() *AlibabaLstVendingShippingCallbackRequest{
-    return &AlibabaLstVendingShippingCallbackRequest{
+// 初始化AlibabaLstVendingShippingCallbackAPIRequest对象
+func NewAlibabaLstVendingShippingCallbackRequest() *AlibabaLstVendingShippingCallbackAPIRequest{
+    return &AlibabaLstVendingShippingCallbackAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstVendingShippingCallbackRequest) GetApiMethodName() string {
+func (r AlibabaLstVendingShippingCallbackAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.vending.shipping.callback"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstVendingShippingCallbackRequest) GetApiParams() url.Values {
+func (r AlibabaLstVendingShippingCallbackAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaLstVendingShippingCallbackRequest) GetApiParams() url.Values {
 }
 // EquipmentCode Setter
 // 厂商设备编码
-func (r *AlibabaLstVendingShippingCallbackRequest) SetEquipmentCode(_equipmentCode string) error {
+func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetEquipmentCode(_equipmentCode string) error {
     r._equipmentCode = _equipmentCode
     r.Set("equipment_code", _equipmentCode)
     return nil
 }
 
 // EquipmentCode Getter
-func (r AlibabaLstVendingShippingCallbackRequest) GetEquipmentCode() string {
+func (r AlibabaLstVendingShippingCallbackAPIRequest) GetEquipmentCode() string {
     return r._equipmentCode
 }
 // TradeFlowNo Setter
 // 交易流水号
-func (r *AlibabaLstVendingShippingCallbackRequest) SetTradeFlowNo(_tradeFlowNo string) error {
+func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetTradeFlowNo(_tradeFlowNo string) error {
     r._tradeFlowNo = _tradeFlowNo
     r.Set("trade_flow_no", _tradeFlowNo)
     return nil
 }
 
 // TradeFlowNo Getter
-func (r AlibabaLstVendingShippingCallbackRequest) GetTradeFlowNo() string {
+func (r AlibabaLstVendingShippingCallbackAPIRequest) GetTradeFlowNo() string {
     return r._tradeFlowNo
 }
 // Code Setter
 // 处理结果代码
-func (r *AlibabaLstVendingShippingCallbackRequest) SetCode(_code string) error {
+func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaLstVendingShippingCallbackRequest) GetCode() string {
+func (r AlibabaLstVendingShippingCallbackAPIRequest) GetCode() string {
     return r._code
 }
 // Message Setter
 // 处理结果代码描述
-func (r *AlibabaLstVendingShippingCallbackRequest) SetMessage(_message string) error {
+func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetMessage(_message string) error {
     r._message = _message
     r.Set("message", _message)
     return nil
 }
 
 // Message Getter
-func (r AlibabaLstVendingShippingCallbackRequest) GetMessage() string {
+func (r AlibabaLstVendingShippingCallbackAPIRequest) GetMessage() string {
     return r._message
 }
 // Time Setter
 // 出货时间
-func (r *AlibabaLstVendingShippingCallbackRequest) SetTime(_time string) error {
+func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetTime(_time string) error {
     r._time = _time
     r.Set("time", _time)
     return nil
 }
 
 // Time Getter
-func (r AlibabaLstVendingShippingCallbackRequest) GetTime() string {
+func (r AlibabaLstVendingShippingCallbackAPIRequest) GetTime() string {
     return r._time
 }

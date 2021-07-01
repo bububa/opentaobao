@@ -12,26 +12,26 @@ alibaba.alihealth.outflow.getbyverifycode
 
 阿里健康对合作药店提供通过核销码查看处方的功能
 */
-type AlibabaAlihealthOutflowGetbyverifycodeRequest struct {
+type AlibabaAlihealthOutflowGetbyverifycodeAPIRequest struct {
     model.Params
     // 入参
     _prescriptionGetByVerifyRequest   *PrescriptionGetByVerifyRequest
 }
 
-// 初始化AlibabaAlihealthOutflowGetbyverifycodeRequest对象
-func NewAlibabaAlihealthOutflowGetbyverifycodeRequest() *AlibabaAlihealthOutflowGetbyverifycodeRequest{
-    return &AlibabaAlihealthOutflowGetbyverifycodeRequest{
+// 初始化AlibabaAlihealthOutflowGetbyverifycodeAPIRequest对象
+func NewAlibabaAlihealthOutflowGetbyverifycodeRequest() *AlibabaAlihealthOutflowGetbyverifycodeAPIRequest{
+    return &AlibabaAlihealthOutflowGetbyverifycodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowGetbyverifycodeRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowGetbyverifycodeAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.getbyverifycode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowGetbyverifycodeRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthOutflowGetbyverifycodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowGetbyverifycodeRequest) GetApiParams() url.Values
 }
 // PrescriptionGetByVerifyRequest Setter
 // 入参
-func (r *AlibabaAlihealthOutflowGetbyverifycodeRequest) SetPrescriptionGetByVerifyRequest(_prescriptionGetByVerifyRequest *PrescriptionGetByVerifyRequest) error {
+func (r *AlibabaAlihealthOutflowGetbyverifycodeAPIRequest) SetPrescriptionGetByVerifyRequest(_prescriptionGetByVerifyRequest *PrescriptionGetByVerifyRequest) error {
     r._prescriptionGetByVerifyRequest = _prescriptionGetByVerifyRequest
     r.Set("prescription_get_by_verify_request", _prescriptionGetByVerifyRequest)
     return nil
 }
 
 // PrescriptionGetByVerifyRequest Getter
-func (r AlibabaAlihealthOutflowGetbyverifycodeRequest) GetPrescriptionGetByVerifyRequest() *PrescriptionGetByVerifyRequest {
+func (r AlibabaAlihealthOutflowGetbyverifycodeAPIRequest) GetPrescriptionGetByVerifyRequest() *PrescriptionGetByVerifyRequest {
     return r._prescriptionGetByVerifyRequest
 }

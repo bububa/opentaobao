@@ -12,26 +12,26 @@ tmall.txcs.finance.bill.query
 
 提供天猫超市外部合作商家财务账单对账
 */
-type TmallTxcsFinanceBillQueryRequest struct {
+type TmallTxcsFinanceBillQueryAPIRequest struct {
     model.Params
     // 对账单号
     _statementBillQuery   *StatementBillQuery
 }
 
-// 初始化TmallTxcsFinanceBillQueryRequest对象
-func NewTmallTxcsFinanceBillQueryRequest() *TmallTxcsFinanceBillQueryRequest{
-    return &TmallTxcsFinanceBillQueryRequest{
+// 初始化TmallTxcsFinanceBillQueryAPIRequest对象
+func NewTmallTxcsFinanceBillQueryRequest() *TmallTxcsFinanceBillQueryAPIRequest{
+    return &TmallTxcsFinanceBillQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallTxcsFinanceBillQueryRequest) GetApiMethodName() string {
+func (r TmallTxcsFinanceBillQueryAPIRequest) GetApiMethodName() string {
     return "tmall.txcs.finance.bill.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallTxcsFinanceBillQueryRequest) GetApiParams() url.Values {
+func (r TmallTxcsFinanceBillQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallTxcsFinanceBillQueryRequest) GetApiParams() url.Values {
 }
 // StatementBillQuery Setter
 // 对账单号
-func (r *TmallTxcsFinanceBillQueryRequest) SetStatementBillQuery(_statementBillQuery *StatementBillQuery) error {
+func (r *TmallTxcsFinanceBillQueryAPIRequest) SetStatementBillQuery(_statementBillQuery *StatementBillQuery) error {
     r._statementBillQuery = _statementBillQuery
     r.Set("statement_bill_query", _statementBillQuery)
     return nil
 }
 
 // StatementBillQuery Getter
-func (r TmallTxcsFinanceBillQueryRequest) GetStatementBillQuery() *StatementBillQuery {
+func (r TmallTxcsFinanceBillQueryAPIRequest) GetStatementBillQuery() *StatementBillQuery {
     return r._statementBillQuery
 }

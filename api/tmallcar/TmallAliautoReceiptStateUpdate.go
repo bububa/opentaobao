@@ -11,7 +11,7 @@ tmall.aliauto.receipt.state.update
 
 二轮车服务工单状态更新
 */
-func TmallAliautoReceiptStateUpdate(clt *core.SDKClient, req *tmallcar.TmallAliautoReceiptStateUpdateRequest, session string) (*tmallcar.TmallAliautoReceiptStateUpdateAPIResponse, error) {
+func TmallAliautoReceiptStateUpdate(clt *core.SDKClient, req *tmallcar.TmallAliautoReceiptStateUpdateAPIRequest, session string) (*tmallcar.TmallAliautoReceiptStateUpdateAPIResponse, error) {
     var resp tmallcar.TmallAliautoReceiptStateUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

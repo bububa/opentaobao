@@ -12,7 +12,7 @@ taobao.xhotel.multiplerates.increment
 复杂房价批量增量更新，只会更新指定日期的信息
 完全涵盖了taobao.xhotel.rates.increment接口的功能
 */
-func TaobaoXhotelMultipleratesIncrement(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultipleratesIncrementRequest, session string) (*xhotelitem.TaobaoXhotelMultipleratesIncrementAPIResponse, error) {
+func TaobaoXhotelMultipleratesIncrement(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultipleratesIncrementAPIRequest, session string) (*xhotelitem.TaobaoXhotelMultipleratesIncrementAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelMultipleratesIncrementAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

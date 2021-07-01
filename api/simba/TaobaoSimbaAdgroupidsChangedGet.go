@@ -11,7 +11,7 @@ taobao.simba.adgroupids.changed.get
 
 获取修改的推广组ID
 */
-func TaobaoSimbaAdgroupidsChangedGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupidsChangedGetRequest, session string) (*simba.TaobaoSimbaAdgroupidsChangedGetAPIResponse, error) {
+func TaobaoSimbaAdgroupidsChangedGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupidsChangedGetAPIRequest, session string) (*simba.TaobaoSimbaAdgroupidsChangedGetAPIResponse, error) {
     var resp simba.TaobaoSimbaAdgroupidsChangedGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

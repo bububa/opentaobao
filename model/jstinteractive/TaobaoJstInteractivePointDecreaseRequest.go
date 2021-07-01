@@ -12,7 +12,7 @@ taobao.jst.interactive.point.decrease
 
 扣减用户的互动积分
 */
-type TaobaoJstInteractivePointDecreaseRequest struct {
+type TaobaoJstInteractivePointDecreaseAPIRequest struct {
     model.Params
     // 扣减的积分值
     _amount   int64
@@ -20,20 +20,20 @@ type TaobaoJstInteractivePointDecreaseRequest struct {
     _operateCode   string
 }
 
-// 初始化TaobaoJstInteractivePointDecreaseRequest对象
-func NewTaobaoJstInteractivePointDecreaseRequest() *TaobaoJstInteractivePointDecreaseRequest{
-    return &TaobaoJstInteractivePointDecreaseRequest{
+// 初始化TaobaoJstInteractivePointDecreaseAPIRequest对象
+func NewTaobaoJstInteractivePointDecreaseRequest() *TaobaoJstInteractivePointDecreaseAPIRequest{
+    return &TaobaoJstInteractivePointDecreaseAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJstInteractivePointDecreaseRequest) GetApiMethodName() string {
+func (r TaobaoJstInteractivePointDecreaseAPIRequest) GetApiMethodName() string {
     return "taobao.jst.interactive.point.decrease"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJstInteractivePointDecreaseRequest) GetApiParams() url.Values {
+func (r TaobaoJstInteractivePointDecreaseAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoJstInteractivePointDecreaseRequest) GetApiParams() url.Values {
 }
 // Amount Setter
 // 扣减的积分值
-func (r *TaobaoJstInteractivePointDecreaseRequest) SetAmount(_amount int64) error {
+func (r *TaobaoJstInteractivePointDecreaseAPIRequest) SetAmount(_amount int64) error {
     r._amount = _amount
     r.Set("amount", _amount)
     return nil
 }
 
 // Amount Getter
-func (r TaobaoJstInteractivePointDecreaseRequest) GetAmount() int64 {
+func (r TaobaoJstInteractivePointDecreaseAPIRequest) GetAmount() int64 {
     return r._amount
 }
 // OperateCode Setter
 // 幂等操作码，要确保唯一性，同一个操作码只能使用一次，避免重复操作
-func (r *TaobaoJstInteractivePointDecreaseRequest) SetOperateCode(_operateCode string) error {
+func (r *TaobaoJstInteractivePointDecreaseAPIRequest) SetOperateCode(_operateCode string) error {
     r._operateCode = _operateCode
     r.Set("operate_code", _operateCode)
     return nil
 }
 
 // OperateCode Getter
-func (r TaobaoJstInteractivePointDecreaseRequest) GetOperateCode() string {
+func (r TaobaoJstInteractivePointDecreaseAPIRequest) GetOperateCode() string {
     return r._operateCode
 }

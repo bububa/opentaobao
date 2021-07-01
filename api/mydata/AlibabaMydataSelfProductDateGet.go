@@ -11,7 +11,7 @@ alibaba.mydata.self.product.date.get
 
 获取客户产品相关表现数据的可用时间范围
 */
-func AlibabaMydataSelfProductDateGet(clt *core.SDKClient, req *mydata.AlibabaMydataSelfProductDateGetRequest, session string) (*mydata.AlibabaMydataSelfProductDateGetAPIResponse, error) {
+func AlibabaMydataSelfProductDateGet(clt *core.SDKClient, req *mydata.AlibabaMydataSelfProductDateGetAPIRequest, session string) (*mydata.AlibabaMydataSelfProductDateGetAPIResponse, error) {
     var resp mydata.AlibabaMydataSelfProductDateGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

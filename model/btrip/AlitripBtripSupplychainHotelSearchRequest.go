@@ -12,26 +12,26 @@ alitrip.btrip.supplychain.hotel.search
 
 【商旅】酒店订单查询
 */
-type AlitripBtripSupplychainHotelSearchRequest struct {
+type AlitripBtripSupplychainHotelSearchAPIRequest struct {
     model.Params
     // 入参
     _rq   *OpenApiSearchRq
 }
 
-// 初始化AlitripBtripSupplychainHotelSearchRequest对象
-func NewAlitripBtripSupplychainHotelSearchRequest() *AlitripBtripSupplychainHotelSearchRequest{
-    return &AlitripBtripSupplychainHotelSearchRequest{
+// 初始化AlitripBtripSupplychainHotelSearchAPIRequest对象
+func NewAlitripBtripSupplychainHotelSearchRequest() *AlitripBtripSupplychainHotelSearchAPIRequest{
+    return &AlitripBtripSupplychainHotelSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripSupplychainHotelSearchRequest) GetApiMethodName() string {
+func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.supplychain.hotel.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripSupplychainHotelSearchRequest) GetApiParams() url.Values {
+func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripSupplychainHotelSearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripSupplychainHotelSearchRequest) SetRq(_rq *OpenApiSearchRq) error {
+func (r *AlitripBtripSupplychainHotelSearchAPIRequest) SetRq(_rq *OpenApiSearchRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripSupplychainHotelSearchRequest) GetRq() *OpenApiSearchRq {
+func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetRq() *OpenApiSearchRq {
     return r._rq
 }

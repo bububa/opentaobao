@@ -11,7 +11,7 @@ alibaba.retail.vending.road.item.sync
 
 贩卖机库存商品同步
 */
-func AlibabaRetailVendingRoadItemSync(clt *core.SDKClient, req *nrt.AlibabaRetailVendingRoadItemSyncRequest, session string) (*nrt.AlibabaRetailVendingRoadItemSyncAPIResponse, error) {
+func AlibabaRetailVendingRoadItemSync(clt *core.SDKClient, req *nrt.AlibabaRetailVendingRoadItemSyncAPIRequest, session string) (*nrt.AlibabaRetailVendingRoadItemSyncAPIResponse, error) {
     var resp nrt.AlibabaRetailVendingRoadItemSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

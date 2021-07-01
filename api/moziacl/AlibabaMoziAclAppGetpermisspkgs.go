@@ -11,7 +11,7 @@ alibaba.mozi.acl.app.getpermisspkgs
 
 分页查询应用下的权限套餐列表
 */
-func AlibabaMoziAclAppGetpermisspkgs(clt *core.SDKClient, req *moziacl.AlibabaMoziAclAppGetpermisspkgsRequest, session string) (*moziacl.AlibabaMoziAclAppGetpermisspkgsAPIResponse, error) {
+func AlibabaMoziAclAppGetpermisspkgs(clt *core.SDKClient, req *moziacl.AlibabaMoziAclAppGetpermisspkgsAPIRequest, session string) (*moziacl.AlibabaMoziAclAppGetpermisspkgsAPIResponse, error) {
     var resp moziacl.AlibabaMoziAclAppGetpermisspkgsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

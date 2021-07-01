@@ -12,26 +12,26 @@ alibaba.wdk.bm.paiyang.stock.query
 
 淘鲜达接入第三方进行派样，第三方查询派样商品的门店库存信息。
 */
-type AlibabaWdkBmPaiyangStockQueryRequest struct {
+type AlibabaWdkBmPaiyangStockQueryAPIRequest struct {
     model.Params
     // 请求入参
     _isvShopStockParam   *IsvShopStockParam
 }
 
-// 初始化AlibabaWdkBmPaiyangStockQueryRequest对象
-func NewAlibabaWdkBmPaiyangStockQueryRequest() *AlibabaWdkBmPaiyangStockQueryRequest{
-    return &AlibabaWdkBmPaiyangStockQueryRequest{
+// 初始化AlibabaWdkBmPaiyangStockQueryAPIRequest对象
+func NewAlibabaWdkBmPaiyangStockQueryRequest() *AlibabaWdkBmPaiyangStockQueryAPIRequest{
+    return &AlibabaWdkBmPaiyangStockQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkBmPaiyangStockQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkBmPaiyangStockQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.bm.paiyang.stock.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkBmPaiyangStockQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkBmPaiyangStockQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkBmPaiyangStockQueryRequest) GetApiParams() url.Values {
 }
 // IsvShopStockParam Setter
 // 请求入参
-func (r *AlibabaWdkBmPaiyangStockQueryRequest) SetIsvShopStockParam(_isvShopStockParam *IsvShopStockParam) error {
+func (r *AlibabaWdkBmPaiyangStockQueryAPIRequest) SetIsvShopStockParam(_isvShopStockParam *IsvShopStockParam) error {
     r._isvShopStockParam = _isvShopStockParam
     r.Set("isv_shop_stock_param", _isvShopStockParam)
     return nil
 }
 
 // IsvShopStockParam Getter
-func (r AlibabaWdkBmPaiyangStockQueryRequest) GetIsvShopStockParam() *IsvShopStockParam {
+func (r AlibabaWdkBmPaiyangStockQueryAPIRequest) GetIsvShopStockParam() *IsvShopStockParam {
     return r._isvShopStockParam
 }

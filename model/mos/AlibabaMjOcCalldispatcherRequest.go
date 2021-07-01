@@ -12,26 +12,26 @@ alibaba.mj.oc.calldispatcher
 
 定时达呼叫运力接口
 */
-type AlibabaMjOcCalldispatcherRequest struct {
+type AlibabaMjOcCalldispatcherAPIRequest struct {
     model.Params
     // 入参
     _callDispatcherDTO   *CallDispatcherDTO
 }
 
-// 初始化AlibabaMjOcCalldispatcherRequest对象
-func NewAlibabaMjOcCalldispatcherRequest() *AlibabaMjOcCalldispatcherRequest{
-    return &AlibabaMjOcCalldispatcherRequest{
+// 初始化AlibabaMjOcCalldispatcherAPIRequest对象
+func NewAlibabaMjOcCalldispatcherRequest() *AlibabaMjOcCalldispatcherAPIRequest{
+    return &AlibabaMjOcCalldispatcherAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMjOcCalldispatcherRequest) GetApiMethodName() string {
+func (r AlibabaMjOcCalldispatcherAPIRequest) GetApiMethodName() string {
     return "alibaba.mj.oc.calldispatcher"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMjOcCalldispatcherRequest) GetApiParams() url.Values {
+func (r AlibabaMjOcCalldispatcherAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMjOcCalldispatcherRequest) GetApiParams() url.Values {
 }
 // CallDispatcherDTO Setter
 // 入参
-func (r *AlibabaMjOcCalldispatcherRequest) SetCallDispatcherDTO(_callDispatcherDTO *CallDispatcherDTO) error {
+func (r *AlibabaMjOcCalldispatcherAPIRequest) SetCallDispatcherDTO(_callDispatcherDTO *CallDispatcherDTO) error {
     r._callDispatcherDTO = _callDispatcherDTO
     r.Set("call_dispatcher_d_t_o", _callDispatcherDTO)
     return nil
 }
 
 // CallDispatcherDTO Getter
-func (r AlibabaMjOcCalldispatcherRequest) GetCallDispatcherDTO() *CallDispatcherDTO {
+func (r AlibabaMjOcCalldispatcherAPIRequest) GetCallDispatcherDTO() *CallDispatcherDTO {
     return r._callDispatcherDTO
 }

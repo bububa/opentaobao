@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.relationdetail
 
 关联关系处理详情
 */
-func AlibabaAlihealthDrugKytRelationdetail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytRelationdetailRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytRelationdetailAPIResponse, error) {
+func AlibabaAlihealthDrugKytRelationdetail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytRelationdetailAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytRelationdetailAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytRelationdetailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

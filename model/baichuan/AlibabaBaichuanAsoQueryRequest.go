@@ -12,30 +12,30 @@ alibaba.baichuan.aso.query
 
 查询app在设备上的安装信息
 */
-type AlibabaBaichuanAsoQueryRequest struct {
+type AlibabaBaichuanAsoQueryAPIRequest struct {
     model.Params
     // 1-tmail,2-taobao
     _appId   string
     // 1-android,2-ios
     _appOs   int64
     // 设备信息，ios为idfa ，android 为imei + imsi
-    _deviceInfoList   []ASODeviceInfoDO
+    _deviceInfoList   []AsoDeviceInfoDO
 }
 
-// 初始化AlibabaBaichuanAsoQueryRequest对象
-func NewAlibabaBaichuanAsoQueryRequest() *AlibabaBaichuanAsoQueryRequest{
-    return &AlibabaBaichuanAsoQueryRequest{
+// 初始化AlibabaBaichuanAsoQueryAPIRequest对象
+func NewAlibabaBaichuanAsoQueryRequest() *AlibabaBaichuanAsoQueryAPIRequest{
+    return &AlibabaBaichuanAsoQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaBaichuanAsoQueryRequest) GetApiMethodName() string {
+func (r AlibabaBaichuanAsoQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.baichuan.aso.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaBaichuanAsoQueryRequest) GetApiParams() url.Values {
+func (r AlibabaBaichuanAsoQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaBaichuanAsoQueryRequest) GetApiParams() url.Values {
 }
 // AppId Setter
 // 1-tmail,2-taobao
-func (r *AlibabaBaichuanAsoQueryRequest) SetAppId(_appId string) error {
+func (r *AlibabaBaichuanAsoQueryAPIRequest) SetAppId(_appId string) error {
     r._appId = _appId
     r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
-func (r AlibabaBaichuanAsoQueryRequest) GetAppId() string {
+func (r AlibabaBaichuanAsoQueryAPIRequest) GetAppId() string {
     return r._appId
 }
 // AppOs Setter
 // 1-android,2-ios
-func (r *AlibabaBaichuanAsoQueryRequest) SetAppOs(_appOs int64) error {
+func (r *AlibabaBaichuanAsoQueryAPIRequest) SetAppOs(_appOs int64) error {
     r._appOs = _appOs
     r.Set("app_os", _appOs)
     return nil
 }
 
 // AppOs Getter
-func (r AlibabaBaichuanAsoQueryRequest) GetAppOs() int64 {
+func (r AlibabaBaichuanAsoQueryAPIRequest) GetAppOs() int64 {
     return r._appOs
 }
 // DeviceInfoList Setter
 // 设备信息，ios为idfa ，android 为imei + imsi
-func (r *AlibabaBaichuanAsoQueryRequest) SetDeviceInfoList(_deviceInfoList []ASODeviceInfoDO) error {
+func (r *AlibabaBaichuanAsoQueryAPIRequest) SetDeviceInfoList(_deviceInfoList []AsoDeviceInfoDO) error {
     r._deviceInfoList = _deviceInfoList
     r.Set("device_info_list", _deviceInfoList)
     return nil
 }
 
 // DeviceInfoList Getter
-func (r AlibabaBaichuanAsoQueryRequest) GetDeviceInfoList() []ASODeviceInfoDO {
+func (r AlibabaBaichuanAsoQueryAPIRequest) GetDeviceInfoList() []AsoDeviceInfoDO {
     return r._deviceInfoList
 }

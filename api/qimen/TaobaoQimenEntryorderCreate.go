@@ -11,7 +11,7 @@ taobao.qimen.entryorder.create
 
 ERP调用接口，创建入库单;
 */
-func TaobaoQimenEntryorderCreate(clt *core.SDKClient, req *qimen.TaobaoQimenEntryorderCreateRequest, session string) (*qimen.TaobaoQimenEntryorderCreateAPIResponse, error) {
+func TaobaoQimenEntryorderCreate(clt *core.SDKClient, req *qimen.TaobaoQimenEntryorderCreateAPIRequest, session string) (*qimen.TaobaoQimenEntryorderCreateAPIResponse, error) {
     var resp qimen.TaobaoQimenEntryorderCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.feedflow.item.target.validlist
 
 获取有权限的定向列表
 */
-type TaobaoFeedflowItemTargetValidlistRequest struct {
+type TaobaoFeedflowItemTargetValidlistAPIRequest struct {
     model.Params
     // 计划id
     _campaignId   int64
 }
 
-// 初始化TaobaoFeedflowItemTargetValidlistRequest对象
-func NewTaobaoFeedflowItemTargetValidlistRequest() *TaobaoFeedflowItemTargetValidlistRequest{
-    return &TaobaoFeedflowItemTargetValidlistRequest{
+// 初始化TaobaoFeedflowItemTargetValidlistAPIRequest对象
+func NewTaobaoFeedflowItemTargetValidlistRequest() *TaobaoFeedflowItemTargetValidlistAPIRequest{
+    return &TaobaoFeedflowItemTargetValidlistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemTargetValidlistRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemTargetValidlistAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.target.validlist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemTargetValidlistRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemTargetValidlistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemTargetValidlistRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 计划id
-func (r *TaobaoFeedflowItemTargetValidlistRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaoFeedflowItemTargetValidlistAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r TaobaoFeedflowItemTargetValidlistRequest) GetCampaignId() int64 {
+func (r TaobaoFeedflowItemTargetValidlistAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }

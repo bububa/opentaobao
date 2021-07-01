@@ -11,7 +11,7 @@ taobao.feedflow.item.adgroup.page
 
 通过计划id查询单元信息
 */
-func TaobaoFeedflowItemAdgroupPage(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupPageRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupPageAPIResponse, error) {
+func TaobaoFeedflowItemAdgroupPage(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupPageAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupPageAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemAdgroupPageAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

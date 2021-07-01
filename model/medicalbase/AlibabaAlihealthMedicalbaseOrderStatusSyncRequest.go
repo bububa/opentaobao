@@ -12,26 +12,26 @@ alibaba.alihealth.medicalbase.order.status.sync
 
 互联网医院isv批量通过接口批量导入
 */
-type AlibabaAlihealthMedicalbaseOrderStatusSyncRequest struct {
+type AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest struct {
     model.Params
     // 订单信息
     _orderlSyncDTO   *OrderlSyncDTO
 }
 
-// 初始化AlibabaAlihealthMedicalbaseOrderStatusSyncRequest对象
-func NewAlibabaAlihealthMedicalbaseOrderStatusSyncRequest() *AlibabaAlihealthMedicalbaseOrderStatusSyncRequest{
-    return &AlibabaAlihealthMedicalbaseOrderStatusSyncRequest{
+// 初始化AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest对象
+func NewAlibabaAlihealthMedicalbaseOrderStatusSyncRequest() *AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest{
+    return &AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalbaseOrderStatusSyncRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medicalbase.order.status.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalbaseOrderStatusSyncRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalbaseOrderStatusSyncRequest) GetApiParams() url.Va
 }
 // OrderlSyncDTO Setter
 // 订单信息
-func (r *AlibabaAlihealthMedicalbaseOrderStatusSyncRequest) SetOrderlSyncDTO(_orderlSyncDTO *OrderlSyncDTO) error {
+func (r *AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) SetOrderlSyncDTO(_orderlSyncDTO *OrderlSyncDTO) error {
     r._orderlSyncDTO = _orderlSyncDTO
     r.Set("orderl_sync_d_t_o", _orderlSyncDTO)
     return nil
 }
 
 // OrderlSyncDTO Getter
-func (r AlibabaAlihealthMedicalbaseOrderStatusSyncRequest) GetOrderlSyncDTO() *OrderlSyncDTO {
+func (r AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) GetOrderlSyncDTO() *OrderlSyncDTO {
     return r._orderlSyncDTO
 }

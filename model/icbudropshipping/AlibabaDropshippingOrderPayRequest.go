@@ -12,26 +12,26 @@ alibaba.dropshipping.order.pay
 
 alibaba dropshipping 支付代扣
 */
-type AlibabaDropshippingOrderPayRequest struct {
+type AlibabaDropshippingOrderPayAPIRequest struct {
     model.Params
     // request model
     _paramOrderPayRequest   *OrderPayRequest
 }
 
-// 初始化AlibabaDropshippingOrderPayRequest对象
-func NewAlibabaDropshippingOrderPayRequest() *AlibabaDropshippingOrderPayRequest{
-    return &AlibabaDropshippingOrderPayRequest{
+// 初始化AlibabaDropshippingOrderPayAPIRequest对象
+func NewAlibabaDropshippingOrderPayRequest() *AlibabaDropshippingOrderPayAPIRequest{
+    return &AlibabaDropshippingOrderPayAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDropshippingOrderPayRequest) GetApiMethodName() string {
+func (r AlibabaDropshippingOrderPayAPIRequest) GetApiMethodName() string {
     return "alibaba.dropshipping.order.pay"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDropshippingOrderPayRequest) GetApiParams() url.Values {
+func (r AlibabaDropshippingOrderPayAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDropshippingOrderPayRequest) GetApiParams() url.Values {
 }
 // ParamOrderPayRequest Setter
 // request model
-func (r *AlibabaDropshippingOrderPayRequest) SetParamOrderPayRequest(_paramOrderPayRequest *OrderPayRequest) error {
+func (r *AlibabaDropshippingOrderPayAPIRequest) SetParamOrderPayRequest(_paramOrderPayRequest *OrderPayRequest) error {
     r._paramOrderPayRequest = _paramOrderPayRequest
     r.Set("param_order_pay_request", _paramOrderPayRequest)
     return nil
 }
 
 // ParamOrderPayRequest Getter
-func (r AlibabaDropshippingOrderPayRequest) GetParamOrderPayRequest() *OrderPayRequest {
+func (r AlibabaDropshippingOrderPayAPIRequest) GetParamOrderPayRequest() *OrderPayRequest {
     return r._paramOrderPayRequest
 }

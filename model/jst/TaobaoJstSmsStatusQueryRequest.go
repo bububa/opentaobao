@@ -12,26 +12,26 @@ taobao.jst.sms.status.query
 
 聚石塔公众号状态查询
 */
-type TaobaoJstSmsStatusQueryRequest struct {
+type TaobaoJstSmsStatusQueryAPIRequest struct {
     model.Params
     // 公众号状态信息查询请求
     _officialAccountStatusQueryRequest   *JstBaseRequest
 }
 
-// 初始化TaobaoJstSmsStatusQueryRequest对象
-func NewTaobaoJstSmsStatusQueryRequest() *TaobaoJstSmsStatusQueryRequest{
-    return &TaobaoJstSmsStatusQueryRequest{
+// 初始化TaobaoJstSmsStatusQueryAPIRequest对象
+func NewTaobaoJstSmsStatusQueryRequest() *TaobaoJstSmsStatusQueryAPIRequest{
+    return &TaobaoJstSmsStatusQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJstSmsStatusQueryRequest) GetApiMethodName() string {
+func (r TaobaoJstSmsStatusQueryAPIRequest) GetApiMethodName() string {
     return "taobao.jst.sms.status.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJstSmsStatusQueryRequest) GetApiParams() url.Values {
+func (r TaobaoJstSmsStatusQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsStatusQueryRequest) GetApiParams() url.Values {
 }
 // OfficialAccountStatusQueryRequest Setter
 // 公众号状态信息查询请求
-func (r *TaobaoJstSmsStatusQueryRequest) SetOfficialAccountStatusQueryRequest(_officialAccountStatusQueryRequest *JstBaseRequest) error {
+func (r *TaobaoJstSmsStatusQueryAPIRequest) SetOfficialAccountStatusQueryRequest(_officialAccountStatusQueryRequest *JstBaseRequest) error {
     r._officialAccountStatusQueryRequest = _officialAccountStatusQueryRequest
     r.Set("official_account_status_query_request", _officialAccountStatusQueryRequest)
     return nil
 }
 
 // OfficialAccountStatusQueryRequest Getter
-func (r TaobaoJstSmsStatusQueryRequest) GetOfficialAccountStatusQueryRequest() *JstBaseRequest {
+func (r TaobaoJstSmsStatusQueryAPIRequest) GetOfficialAccountStatusQueryRequest() *JstBaseRequest {
     return r._officialAccountStatusQueryRequest
 }

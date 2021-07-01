@@ -11,7 +11,7 @@ taobao.files.get
 
 获取业务方暂存给ISV的文件列表
 */
-func TaobaoFilesGet(clt *core.SDKClient, req *util.TaobaoFilesGetRequest, session string) (*util.TaobaoFilesGetAPIResponse, error) {
+func TaobaoFilesGet(clt *core.SDKClient, req *util.TaobaoFilesGetAPIRequest, session string) (*util.TaobaoFilesGetAPIResponse, error) {
     var resp util.TaobaoFilesGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

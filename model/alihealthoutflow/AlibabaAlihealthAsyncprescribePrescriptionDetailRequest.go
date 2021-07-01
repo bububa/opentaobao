@@ -12,26 +12,26 @@ alibaba.alihealth.asyncprescribe.prescription.detail
 
 异步开方处方查询
 */
-type AlibabaAlihealthAsyncprescribePrescriptionDetailRequest struct {
+type AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest struct {
     model.Params
     // 入参
     _detailRequest   *AsyncPrescribeDetailRequest
 }
 
-// 初始化AlibabaAlihealthAsyncprescribePrescriptionDetailRequest对象
-func NewAlibabaAlihealthAsyncprescribePrescriptionDetailRequest() *AlibabaAlihealthAsyncprescribePrescriptionDetailRequest{
-    return &AlibabaAlihealthAsyncprescribePrescriptionDetailRequest{
+// 初始化AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest对象
+func NewAlibabaAlihealthAsyncprescribePrescriptionDetailRequest() *AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest{
+    return &AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.asyncprescribe.prescription.detail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) GetApiParams() 
 }
 // DetailRequest Setter
 // 入参
-func (r *AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) SetDetailRequest(_detailRequest *AsyncPrescribeDetailRequest) error {
+func (r *AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) SetDetailRequest(_detailRequest *AsyncPrescribeDetailRequest) error {
     r._detailRequest = _detailRequest
     r.Set("detail_request", _detailRequest)
     return nil
 }
 
 // DetailRequest Getter
-func (r AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) GetDetailRequest() *AsyncPrescribeDetailRequest {
+func (r AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) GetDetailRequest() *AsyncPrescribeDetailRequest {
     return r._detailRequest
 }

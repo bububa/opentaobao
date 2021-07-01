@@ -12,26 +12,26 @@ alibaba.alihealth.booking.reserve.modify
 
 消费医疗统一预约平台，取消预约
 */
-type AlibabaAlihealthBookingReserveModifyRequest struct {
+type AlibabaAlihealthBookingReserveModifyAPIRequest struct {
     model.Params
     // modify
     _modify   *IsvReserveRequest
 }
 
-// 初始化AlibabaAlihealthBookingReserveModifyRequest对象
-func NewAlibabaAlihealthBookingReserveModifyRequest() *AlibabaAlihealthBookingReserveModifyRequest{
-    return &AlibabaAlihealthBookingReserveModifyRequest{
+// 初始化AlibabaAlihealthBookingReserveModifyAPIRequest对象
+func NewAlibabaAlihealthBookingReserveModifyRequest() *AlibabaAlihealthBookingReserveModifyAPIRequest{
+    return &AlibabaAlihealthBookingReserveModifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthBookingReserveModifyRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthBookingReserveModifyAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.booking.reserve.modify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthBookingReserveModifyRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthBookingReserveModifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthBookingReserveModifyRequest) GetApiParams() url.Values {
 }
 // Modify Setter
 // modify
-func (r *AlibabaAlihealthBookingReserveModifyRequest) SetModify(_modify *IsvReserveRequest) error {
+func (r *AlibabaAlihealthBookingReserveModifyAPIRequest) SetModify(_modify *IsvReserveRequest) error {
     r._modify = _modify
     r.Set("modify", _modify)
     return nil
 }
 
 // Modify Getter
-func (r AlibabaAlihealthBookingReserveModifyRequest) GetModify() *IsvReserveRequest {
+func (r AlibabaAlihealthBookingReserveModifyAPIRequest) GetModify() *IsvReserveRequest {
     return r._modify
 }

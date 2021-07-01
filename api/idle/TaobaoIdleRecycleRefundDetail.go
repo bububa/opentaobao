@@ -11,7 +11,7 @@ taobao.idle.recycle.refund.detail
 
 回收订单退款详情，主要包括退款状态，超时时间，和同意退款的卖家退货地址信息
 */
-func TaobaoIdleRecycleRefundDetail(clt *core.SDKClient, req *idle.TaobaoIdleRecycleRefundDetailRequest, session string) (*idle.TaobaoIdleRecycleRefundDetailAPIResponse, error) {
+func TaobaoIdleRecycleRefundDetail(clt *core.SDKClient, req *idle.TaobaoIdleRecycleRefundDetailAPIRequest, session string) (*idle.TaobaoIdleRecycleRefundDetailAPIResponse, error) {
     var resp idle.TaobaoIdleRecycleRefundDetailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

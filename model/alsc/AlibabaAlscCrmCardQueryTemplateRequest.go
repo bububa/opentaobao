@@ -12,26 +12,26 @@ alibaba.alsc.crm.card.query.template
 
 查询卡模板详情
 */
-type AlibabaAlscCrmCardQueryTemplateRequest struct {
+type AlibabaAlscCrmCardQueryTemplateAPIRequest struct {
     model.Params
     // 请求对象
     _paramQueryCardTemplateOpenReq   *QueryCardTemplateOpenReq
 }
 
-// 初始化AlibabaAlscCrmCardQueryTemplateRequest对象
-func NewAlibabaAlscCrmCardQueryTemplateRequest() *AlibabaAlscCrmCardQueryTemplateRequest{
-    return &AlibabaAlscCrmCardQueryTemplateRequest{
+// 初始化AlibabaAlscCrmCardQueryTemplateAPIRequest对象
+func NewAlibabaAlscCrmCardQueryTemplateRequest() *AlibabaAlscCrmCardQueryTemplateAPIRequest{
+    return &AlibabaAlscCrmCardQueryTemplateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmCardQueryTemplateRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmCardQueryTemplateAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.card.query.template"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmCardQueryTemplateRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmCardQueryTemplateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCardQueryTemplateRequest) GetApiParams() url.Values {
 }
 // ParamQueryCardTemplateOpenReq Setter
 // 请求对象
-func (r *AlibabaAlscCrmCardQueryTemplateRequest) SetParamQueryCardTemplateOpenReq(_paramQueryCardTemplateOpenReq *QueryCardTemplateOpenReq) error {
+func (r *AlibabaAlscCrmCardQueryTemplateAPIRequest) SetParamQueryCardTemplateOpenReq(_paramQueryCardTemplateOpenReq *QueryCardTemplateOpenReq) error {
     r._paramQueryCardTemplateOpenReq = _paramQueryCardTemplateOpenReq
     r.Set("param_query_card_template_open_req", _paramQueryCardTemplateOpenReq)
     return nil
 }
 
 // ParamQueryCardTemplateOpenReq Getter
-func (r AlibabaAlscCrmCardQueryTemplateRequest) GetParamQueryCardTemplateOpenReq() *QueryCardTemplateOpenReq {
+func (r AlibabaAlscCrmCardQueryTemplateAPIRequest) GetParamQueryCardTemplateOpenReq() *QueryCardTemplateOpenReq {
     return r._paramQueryCardTemplateOpenReq
 }

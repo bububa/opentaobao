@@ -12,26 +12,26 @@ taobao.place.store.extend.update
 
 更新商户门店拓展信息（tags、attribute、bizAtrribute）更新接口
 */
-type TaobaoPlaceStoreExtendUpdateRequest struct {
+type TaobaoPlaceStoreExtendUpdateAPIRequest struct {
     model.Params
     // 更新数据
     _paramUpdateStoreExtendDTO   *UpdateStoreExtendDTO
 }
 
-// 初始化TaobaoPlaceStoreExtendUpdateRequest对象
-func NewTaobaoPlaceStoreExtendUpdateRequest() *TaobaoPlaceStoreExtendUpdateRequest{
-    return &TaobaoPlaceStoreExtendUpdateRequest{
+// 初始化TaobaoPlaceStoreExtendUpdateAPIRequest对象
+func NewTaobaoPlaceStoreExtendUpdateRequest() *TaobaoPlaceStoreExtendUpdateAPIRequest{
+    return &TaobaoPlaceStoreExtendUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPlaceStoreExtendUpdateRequest) GetApiMethodName() string {
+func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.place.store.extend.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPlaceStoreExtendUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPlaceStoreExtendUpdateRequest) GetApiParams() url.Values {
 }
 // ParamUpdateStoreExtendDTO Setter
 // 更新数据
-func (r *TaobaoPlaceStoreExtendUpdateRequest) SetParamUpdateStoreExtendDTO(_paramUpdateStoreExtendDTO *UpdateStoreExtendDTO) error {
+func (r *TaobaoPlaceStoreExtendUpdateAPIRequest) SetParamUpdateStoreExtendDTO(_paramUpdateStoreExtendDTO *UpdateStoreExtendDTO) error {
     r._paramUpdateStoreExtendDTO = _paramUpdateStoreExtendDTO
     r.Set("param_update_store_extend_d_t_o", _paramUpdateStoreExtendDTO)
     return nil
 }
 
 // ParamUpdateStoreExtendDTO Getter
-func (r TaobaoPlaceStoreExtendUpdateRequest) GetParamUpdateStoreExtendDTO() *UpdateStoreExtendDTO {
+func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetParamUpdateStoreExtendDTO() *UpdateStoreExtendDTO {
     return r._paramUpdateStoreExtendDTO
 }

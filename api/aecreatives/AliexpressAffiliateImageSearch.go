@@ -11,7 +11,7 @@ aliexpress.affiliate.image.search
 
 图片搜索接口
 */
-func AliexpressAffiliateImageSearch(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateImageSearchRequest, session string) (*aecreatives.AliexpressAffiliateImageSearchAPIResponse, error) {
+func AliexpressAffiliateImageSearch(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateImageSearchAPIRequest, session string) (*aecreatives.AliexpressAffiliateImageSearchAPIResponse, error) {
     var resp aecreatives.AliexpressAffiliateImageSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

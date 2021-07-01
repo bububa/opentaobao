@@ -11,7 +11,7 @@ cainiao.ncwl.jhorder.query
 
 提供给接入商家，查询农村物流集货单
 */
-func CainiaoNcwlJhorderQuery(clt *core.SDKClient, req *cainiaoncwl.CainiaoNcwlJhorderQueryRequest, session string) (*cainiaoncwl.CainiaoNcwlJhorderQueryAPIResponse, error) {
+func CainiaoNcwlJhorderQuery(clt *core.SDKClient, req *cainiaoncwl.CainiaoNcwlJhorderQueryAPIRequest, session string) (*cainiaoncwl.CainiaoNcwlJhorderQueryAPIResponse, error) {
     var resp cainiaoncwl.CainiaoNcwlJhorderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

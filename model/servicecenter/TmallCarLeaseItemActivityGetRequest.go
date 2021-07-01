@@ -12,24 +12,24 @@ tmall.car.lease.item.activity.get
 
 查询汽车租赁活动信息
 */
-type TmallCarLeaseItemActivityGetRequest struct {
+type TmallCarLeaseItemActivityGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TmallCarLeaseItemActivityGetRequest对象
-func NewTmallCarLeaseItemActivityGetRequest() *TmallCarLeaseItemActivityGetRequest{
-    return &TmallCarLeaseItemActivityGetRequest{
+// 初始化TmallCarLeaseItemActivityGetAPIRequest对象
+func NewTmallCarLeaseItemActivityGetRequest() *TmallCarLeaseItemActivityGetAPIRequest{
+    return &TmallCarLeaseItemActivityGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarLeaseItemActivityGetRequest) GetApiMethodName() string {
+func (r TmallCarLeaseItemActivityGetAPIRequest) GetApiMethodName() string {
     return "tmall.car.lease.item.activity.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarLeaseItemActivityGetRequest) GetApiParams() url.Values {
+func (r TmallCarLeaseItemActivityGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

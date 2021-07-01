@@ -11,7 +11,7 @@ taobao.item.sku.delete
 
 删除一个sku的数据<br/>需要删除的sku通过属性properties进行匹配查找
 */
-func TaobaoItemSkuDelete(clt *core.SDKClient, req *product.TaobaoItemSkuDeleteRequest, session string) (*product.TaobaoItemSkuDeleteAPIResponse, error) {
+func TaobaoItemSkuDelete(clt *core.SDKClient, req *product.TaobaoItemSkuDeleteAPIRequest, session string) (*product.TaobaoItemSkuDeleteAPIResponse, error) {
     var resp product.TaobaoItemSkuDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

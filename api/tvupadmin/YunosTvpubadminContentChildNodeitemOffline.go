@@ -11,7 +11,7 @@ yunos.tvpubadmin.content.child.nodeitem.offline
 
 少儿大厅类目内容下线接口
 */
-func YunosTvpubadminContentChildNodeitemOffline(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildNodeitemOfflineRequest, session string) (*tvupadmin.YunosTvpubadminContentChildNodeitemOfflineAPIResponse, error) {
+func YunosTvpubadminContentChildNodeitemOffline(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildNodeitemOfflineAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentChildNodeitemOfflineAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminContentChildNodeitemOfflineAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

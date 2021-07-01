@@ -11,7 +11,7 @@ alibaba.wdk.fulfill.batch.on.task.status.changed
 
 物流管控作业状态回传
 */
-func AlibabaWdkFulfillBatchOnTaskStatusChanged(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillBatchOnTaskStatusChangedRequest, session string) (*wdk.AlibabaWdkFulfillBatchOnTaskStatusChangedAPIResponse, error) {
+func AlibabaWdkFulfillBatchOnTaskStatusChanged(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest, session string) (*wdk.AlibabaWdkFulfillBatchOnTaskStatusChangedAPIResponse, error) {
     var resp wdk.AlibabaWdkFulfillBatchOnTaskStatusChangedAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

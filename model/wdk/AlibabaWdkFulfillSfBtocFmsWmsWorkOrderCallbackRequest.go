@@ -12,26 +12,26 @@ alibaba.wdk.fulfill.sf.btoc.fms.wms.work.order.callback
 
 顺丰仓作业单回传接口
 */
-type AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest struct {
+type AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest struct {
     model.Params
     // 作业单回传对象
     _callbackOrder   *SfB2CFmsCallbackOrder
 }
 
-// 初始化AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest对象
-func NewAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest() *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest{
-    return &AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest{
+// 初始化AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest对象
+func NewAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest() *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest{
+    return &AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest) GetApiMethodName() string {
+func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.fulfill.sf.btoc.fms.wms.work.order.callback"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest) GetApiParams() url.Values {
+func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest) GetApiParams() ur
 }
 // CallbackOrder Setter
 // 作业单回传对象
-func (r *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest) SetCallbackOrder(_callbackOrder *SfB2CFmsCallbackOrder) error {
+func (r *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) SetCallbackOrder(_callbackOrder *SfB2CFmsCallbackOrder) error {
     r._callbackOrder = _callbackOrder
     r.Set("callback_order", _callbackOrder)
     return nil
 }
 
 // CallbackOrder Getter
-func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest) GetCallbackOrder() *SfB2CFmsCallbackOrder {
+func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) GetCallbackOrder() *SfB2CFmsCallbackOrder {
     return r._callbackOrder
 }

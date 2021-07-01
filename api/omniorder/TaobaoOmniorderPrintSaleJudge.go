@@ -11,7 +11,7 @@ taobao.omniorder.print.sale.judge
 
 用于判断当前子账号是否导购员
 */
-func TaobaoOmniorderPrintSaleJudge(clt *core.SDKClient, req *omniorder.TaobaoOmniorderPrintSaleJudgeRequest, session string) (*omniorder.TaobaoOmniorderPrintSaleJudgeAPIResponse, error) {
+func TaobaoOmniorderPrintSaleJudge(clt *core.SDKClient, req *omniorder.TaobaoOmniorderPrintSaleJudgeAPIRequest, session string) (*omniorder.TaobaoOmniorderPrintSaleJudgeAPIResponse, error) {
     var resp omniorder.TaobaoOmniorderPrintSaleJudgeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ alibaba.oversea.exchagerate.get
 
 提供外部汇率查询接口
 */
-type AlibabaOverseaExchagerateGetRequest struct {
+type AlibabaOverseaExchagerateGetAPIRequest struct {
     model.Params
     // 业务类型
     _bizCode   string
@@ -22,20 +22,20 @@ type AlibabaOverseaExchagerateGetRequest struct {
     _targetCode   string
 }
 
-// 初始化AlibabaOverseaExchagerateGetRequest对象
-func NewAlibabaOverseaExchagerateGetRequest() *AlibabaOverseaExchagerateGetRequest{
-    return &AlibabaOverseaExchagerateGetRequest{
+// 初始化AlibabaOverseaExchagerateGetAPIRequest对象
+func NewAlibabaOverseaExchagerateGetRequest() *AlibabaOverseaExchagerateGetAPIRequest{
+    return &AlibabaOverseaExchagerateGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaOverseaExchagerateGetRequest) GetApiMethodName() string {
+func (r AlibabaOverseaExchagerateGetAPIRequest) GetApiMethodName() string {
     return "alibaba.oversea.exchagerate.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaOverseaExchagerateGetRequest) GetApiParams() url.Values {
+func (r AlibabaOverseaExchagerateGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaOverseaExchagerateGetRequest) GetApiParams() url.Values {
 }
 // BizCode Setter
 // 业务类型
-func (r *AlibabaOverseaExchagerateGetRequest) SetBizCode(_bizCode string) error {
+func (r *AlibabaOverseaExchagerateGetAPIRequest) SetBizCode(_bizCode string) error {
     r._bizCode = _bizCode
     r.Set("biz_code", _bizCode)
     return nil
 }
 
 // BizCode Getter
-func (r AlibabaOverseaExchagerateGetRequest) GetBizCode() string {
+func (r AlibabaOverseaExchagerateGetAPIRequest) GetBizCode() string {
     return r._bizCode
 }
 // BaseCode Setter
 // 原始币种
-func (r *AlibabaOverseaExchagerateGetRequest) SetBaseCode(_baseCode string) error {
+func (r *AlibabaOverseaExchagerateGetAPIRequest) SetBaseCode(_baseCode string) error {
     r._baseCode = _baseCode
     r.Set("base_code", _baseCode)
     return nil
 }
 
 // BaseCode Getter
-func (r AlibabaOverseaExchagerateGetRequest) GetBaseCode() string {
+func (r AlibabaOverseaExchagerateGetAPIRequest) GetBaseCode() string {
     return r._baseCode
 }
 // TargetCode Setter
 // 目标币种
-func (r *AlibabaOverseaExchagerateGetRequest) SetTargetCode(_targetCode string) error {
+func (r *AlibabaOverseaExchagerateGetAPIRequest) SetTargetCode(_targetCode string) error {
     r._targetCode = _targetCode
     r.Set("target_code", _targetCode)
     return nil
 }
 
 // TargetCode Getter
-func (r AlibabaOverseaExchagerateGetRequest) GetTargetCode() string {
+func (r AlibabaOverseaExchagerateGetAPIRequest) GetTargetCode() string {
     return r._targetCode
 }

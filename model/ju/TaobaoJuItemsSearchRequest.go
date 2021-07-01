@@ -12,26 +12,26 @@ taobao.ju.items.search
 
 搜索聚划算商品
 */
-type TaobaoJuItemsSearchRequest struct {
+type TaobaoJuItemsSearchAPIRequest struct {
     model.Params
     // query
     _paramTopItemQuery   *TopItemQuery
 }
 
-// 初始化TaobaoJuItemsSearchRequest对象
-func NewTaobaoJuItemsSearchRequest() *TaobaoJuItemsSearchRequest{
-    return &TaobaoJuItemsSearchRequest{
+// 初始化TaobaoJuItemsSearchAPIRequest对象
+func NewTaobaoJuItemsSearchRequest() *TaobaoJuItemsSearchAPIRequest{
+    return &TaobaoJuItemsSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJuItemsSearchRequest) GetApiMethodName() string {
+func (r TaobaoJuItemsSearchAPIRequest) GetApiMethodName() string {
     return "taobao.ju.items.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJuItemsSearchRequest) GetApiParams() url.Values {
+func (r TaobaoJuItemsSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoJuItemsSearchRequest) GetApiParams() url.Values {
 }
 // ParamTopItemQuery Setter
 // query
-func (r *TaobaoJuItemsSearchRequest) SetParamTopItemQuery(_paramTopItemQuery *TopItemQuery) error {
+func (r *TaobaoJuItemsSearchAPIRequest) SetParamTopItemQuery(_paramTopItemQuery *TopItemQuery) error {
     r._paramTopItemQuery = _paramTopItemQuery
     r.Set("param_top_item_query", _paramTopItemQuery)
     return nil
 }
 
 // ParamTopItemQuery Getter
-func (r TaobaoJuItemsSearchRequest) GetParamTopItemQuery() *TopItemQuery {
+func (r TaobaoJuItemsSearchAPIRequest) GetParamTopItemQuery() *TopItemQuery {
     return r._paramTopItemQuery
 }

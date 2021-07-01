@@ -11,7 +11,7 @@ alibaba.mozi.acl.permissionpkg.add.permissions
 
 此接口的功能为：将一批应用下的权限添加到该应用下的权限套餐中
 */
-func AlibabaMoziAclPermissionpkgAddPermissions(clt *core.SDKClient, req *moziacl.AlibabaMoziAclPermissionpkgAddPermissionsRequest, session string) (*moziacl.AlibabaMoziAclPermissionpkgAddPermissionsAPIResponse, error) {
+func AlibabaMoziAclPermissionpkgAddPermissions(clt *core.SDKClient, req *moziacl.AlibabaMoziAclPermissionpkgAddPermissionsAPIRequest, session string) (*moziacl.AlibabaMoziAclPermissionpkgAddPermissionsAPIResponse, error) {
     var resp moziacl.AlibabaMoziAclPermissionpkgAddPermissionsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

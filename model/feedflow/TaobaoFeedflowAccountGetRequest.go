@@ -15,24 +15,24 @@ taobao.feedflow.account.get
 (2) 可用余额(字段：availableBalance) = BP显示余额
 (3) 红包(字段：redPacket)
 */
-type TaobaoFeedflowAccountGetRequest struct {
+type TaobaoFeedflowAccountGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoFeedflowAccountGetRequest对象
-func NewTaobaoFeedflowAccountGetRequest() *TaobaoFeedflowAccountGetRequest{
-    return &TaobaoFeedflowAccountGetRequest{
+// 初始化TaobaoFeedflowAccountGetAPIRequest对象
+func NewTaobaoFeedflowAccountGetRequest() *TaobaoFeedflowAccountGetAPIRequest{
+    return &TaobaoFeedflowAccountGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowAccountGetRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowAccountGetAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.account.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowAccountGetRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowAccountGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

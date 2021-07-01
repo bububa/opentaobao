@@ -12,7 +12,7 @@ alibaba.ele.enterprise.ordernew.gettrackinginfo
 
 订单配送信息跟踪
 */
-type AlibabaEleEnterpriseOrdernewGettrackinginfoRequest struct {
+type AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest struct {
     model.Params
     // 饿了么订单ID
     _orderId   string
@@ -20,20 +20,20 @@ type AlibabaEleEnterpriseOrdernewGettrackinginfoRequest struct {
     _phone   string
 }
 
-// 初始化AlibabaEleEnterpriseOrdernewGettrackinginfoRequest对象
-func NewAlibabaEleEnterpriseOrdernewGettrackinginfoRequest() *AlibabaEleEnterpriseOrdernewGettrackinginfoRequest{
-    return &AlibabaEleEnterpriseOrdernewGettrackinginfoRequest{
+// 初始化AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest对象
+func NewAlibabaEleEnterpriseOrdernewGettrackinginfoRequest() *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest{
+    return &AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) GetApiMethodName() string {
+func (r AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.enterprise.ordernew.gettrackinginfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) GetApiParams() url.Values {
+func (r AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) GetApiParams() url.V
 }
 // OrderId Setter
 // 饿了么订单ID
-func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) SetOrderId(_orderId string) error {
+func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) SetOrderId(_orderId string) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) GetOrderId() string {
+func (r AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) GetOrderId() string {
     return r._orderId
 }
 // Phone Setter
 // 用户手机号
-func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) SetPhone(_phone string) error {
+func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) SetPhone(_phone string) error {
     r._phone = _phone
     r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
-func (r AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) GetPhone() string {
+func (r AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) GetPhone() string {
     return r._phone
 }

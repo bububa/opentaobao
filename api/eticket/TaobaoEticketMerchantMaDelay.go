@@ -11,7 +11,7 @@ taobao.eticket.merchant.ma.delay
 
 订单延期
 */
-func TaobaoEticketMerchantMaDelay(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaDelayRequest, session string) (*eticket.TaobaoEticketMerchantMaDelayAPIResponse, error) {
+func TaobaoEticketMerchantMaDelay(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaDelayAPIRequest, session string) (*eticket.TaobaoEticketMerchantMaDelayAPIResponse, error) {
     var resp eticket.TaobaoEticketMerchantMaDelayAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

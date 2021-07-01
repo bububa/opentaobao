@@ -12,26 +12,26 @@ alibaba.ssc.supplyplatform.serviceworker.save
 
 服务商将上传工人与服务商自己建立关系，需要将工人的服务区域和住址回传
 */
-type AlibabaSscSupplyplatformServiceworkerSaveRequest struct {
+type AlibabaSscSupplyplatformServiceworkerSaveAPIRequest struct {
     model.Params
     // 工人保存参数
     _workerSaveForTopReqDto   *WorkerSaveForTopReqDTO
 }
 
-// 初始化AlibabaSscSupplyplatformServiceworkerSaveRequest对象
-func NewAlibabaSscSupplyplatformServiceworkerSaveRequest() *AlibabaSscSupplyplatformServiceworkerSaveRequest{
-    return &AlibabaSscSupplyplatformServiceworkerSaveRequest{
+// 初始化AlibabaSscSupplyplatformServiceworkerSaveAPIRequest对象
+func NewAlibabaSscSupplyplatformServiceworkerSaveRequest() *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest{
+    return &AlibabaSscSupplyplatformServiceworkerSaveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSscSupplyplatformServiceworkerSaveRequest) GetApiMethodName() string {
+func (r AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) GetApiMethodName() string {
     return "alibaba.ssc.supplyplatform.serviceworker.save"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSscSupplyplatformServiceworkerSaveRequest) GetApiParams() url.Values {
+func (r AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSscSupplyplatformServiceworkerSaveRequest) GetApiParams() url.Val
 }
 // WorkerSaveForTopReqDto Setter
 // 工人保存参数
-func (r *AlibabaSscSupplyplatformServiceworkerSaveRequest) SetWorkerSaveForTopReqDto(_workerSaveForTopReqDto *WorkerSaveForTopReqDTO) error {
+func (r *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) SetWorkerSaveForTopReqDto(_workerSaveForTopReqDto *WorkerSaveForTopReqDTO) error {
     r._workerSaveForTopReqDto = _workerSaveForTopReqDto
     r.Set("worker_save_for_top_req_dto", _workerSaveForTopReqDto)
     return nil
 }
 
 // WorkerSaveForTopReqDto Getter
-func (r AlibabaSscSupplyplatformServiceworkerSaveRequest) GetWorkerSaveForTopReqDto() *WorkerSaveForTopReqDTO {
+func (r AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) GetWorkerSaveForTopReqDto() *WorkerSaveForTopReqDTO {
     return r._workerSaveForTopReqDto
 }

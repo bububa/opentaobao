@@ -11,7 +11,7 @@ alibaba.mos.finance.bankinfo.querybank
 
 查询供应商对应的银行账号信息
 */
-func AlibabaMosFinanceBankinfoQuerybank(clt *core.SDKClient, req *mos.AlibabaMosFinanceBankinfoQuerybankRequest, session string) (*mos.AlibabaMosFinanceBankinfoQuerybankAPIResponse, error) {
+func AlibabaMosFinanceBankinfoQuerybank(clt *core.SDKClient, req *mos.AlibabaMosFinanceBankinfoQuerybankAPIRequest, session string) (*mos.AlibabaMosFinanceBankinfoQuerybankAPIResponse, error) {
     var resp mos.AlibabaMosFinanceBankinfoQuerybankAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

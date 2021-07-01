@@ -11,7 +11,7 @@ alibaba.idle.rent.order.query
 
 查询订单信息
 */
-func AlibabaIdleRentOrderQuery(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderQueryRequest, session string) (*idle.AlibabaIdleRentOrderQueryAPIResponse, error) {
+func AlibabaIdleRentOrderQuery(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderQueryAPIRequest, session string) (*idle.AlibabaIdleRentOrderQueryAPIResponse, error) {
     var resp idle.AlibabaIdleRentOrderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

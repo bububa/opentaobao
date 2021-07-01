@@ -11,7 +11,7 @@ taobao.openim.users.delete
 
 批量删除用户
 */
-func TaobaoOpenimUsersDelete(clt *core.SDKClient, req *openim.TaobaoOpenimUsersDeleteRequest, session string) (*openim.TaobaoOpenimUsersDeleteAPIResponse, error) {
+func TaobaoOpenimUsersDelete(clt *core.SDKClient, req *openim.TaobaoOpenimUsersDeleteAPIRequest, session string) (*openim.TaobaoOpenimUsersDeleteAPIResponse, error) {
     var resp openim.TaobaoOpenimUsersDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

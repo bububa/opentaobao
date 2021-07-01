@@ -11,7 +11,7 @@ tmall.aliauto.wisdomdata.model.recive
 
 天猫汽车对外提供的汽车车型数据上传接口
 */
-func TmallAliautoWisdomdataModelRecive(clt *core.SDKClient, req *tmallcar.TmallAliautoWisdomdataModelReciveRequest, session string) (*tmallcar.TmallAliautoWisdomdataModelReciveAPIResponse, error) {
+func TmallAliautoWisdomdataModelRecive(clt *core.SDKClient, req *tmallcar.TmallAliautoWisdomdataModelReciveAPIRequest, session string) (*tmallcar.TmallAliautoWisdomdataModelReciveAPIResponse, error) {
     var resp tmallcar.TmallAliautoWisdomdataModelReciveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

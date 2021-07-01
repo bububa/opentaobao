@@ -11,7 +11,7 @@ taobao.promotion.benefit.activity.time.update
 
 更新关联权益的活动有效时间
 */
-func TaobaoPromotionBenefitActivityTimeUpdate(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityTimeUpdateRequest, session string) (*promotion.TaobaoPromotionBenefitActivityTimeUpdateAPIResponse, error) {
+func TaobaoPromotionBenefitActivityTimeUpdate(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityTimeUpdateAPIRequest, session string) (*promotion.TaobaoPromotionBenefitActivityTimeUpdateAPIResponse, error) {
     var resp promotion.TaobaoPromotionBenefitActivityTimeUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

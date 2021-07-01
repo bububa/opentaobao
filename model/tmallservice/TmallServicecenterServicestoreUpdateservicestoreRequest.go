@@ -25,26 +25,26 @@ tmall.servicecenter.servicestore.updateservicestore
 11, 网点不存在
 12, 系统错误
 */
-type TmallServicecenterServicestoreUpdateservicestoreRequest struct {
+type TmallServicecenterServicestoreUpdateservicestoreAPIRequest struct {
     model.Params
     // 网点
     _serviceStore   *ServiceStoreDTO
 }
 
-// 初始化TmallServicecenterServicestoreUpdateservicestoreRequest对象
-func NewTmallServicecenterServicestoreUpdateservicestoreRequest() *TmallServicecenterServicestoreUpdateservicestoreRequest{
-    return &TmallServicecenterServicestoreUpdateservicestoreRequest{
+// 初始化TmallServicecenterServicestoreUpdateservicestoreAPIRequest对象
+func NewTmallServicecenterServicestoreUpdateservicestoreRequest() *TmallServicecenterServicestoreUpdateservicestoreAPIRequest{
+    return &TmallServicecenterServicestoreUpdateservicestoreAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetApiMethodName() string {
+func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicestore.updateservicestore"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetApiParams() url.Values {
+func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -53,13 +53,13 @@ func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetApiParams() 
 }
 // ServiceStore Setter
 // 网点
-func (r *TmallServicecenterServicestoreUpdateservicestoreRequest) SetServiceStore(_serviceStore *ServiceStoreDTO) error {
+func (r *TmallServicecenterServicestoreUpdateservicestoreAPIRequest) SetServiceStore(_serviceStore *ServiceStoreDTO) error {
     r._serviceStore = _serviceStore
     r.Set("service_store", _serviceStore)
     return nil
 }
 
 // ServiceStore Getter
-func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetServiceStore() *ServiceStoreDTO {
+func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetServiceStore() *ServiceStoreDTO {
     return r._serviceStore
 }

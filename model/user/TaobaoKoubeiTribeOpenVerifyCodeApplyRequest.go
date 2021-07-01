@@ -12,7 +12,7 @@ taobao.koubei.tribe.open.verify.code.apply
 
 口碑综合体通过手机号获取验证码对外开放接口
 */
-type TaobaoKoubeiTribeOpenVerifyCodeApplyRequest struct {
+type TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest struct {
     model.Params
     // 数据集id
     _dataSetId   string
@@ -20,20 +20,20 @@ type TaobaoKoubeiTribeOpenVerifyCodeApplyRequest struct {
     _phone   string
 }
 
-// 初始化TaobaoKoubeiTribeOpenVerifyCodeApplyRequest对象
-func NewTaobaoKoubeiTribeOpenVerifyCodeApplyRequest() *TaobaoKoubeiTribeOpenVerifyCodeApplyRequest{
-    return &TaobaoKoubeiTribeOpenVerifyCodeApplyRequest{
+// 初始化TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest对象
+func NewTaobaoKoubeiTribeOpenVerifyCodeApplyRequest() *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest{
+    return &TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) GetApiMethodName() string {
+func (r TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) GetApiMethodName() string {
     return "taobao.koubei.tribe.open.verify.code.apply"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) GetApiParams() url.Values {
+func (r TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) GetApiParams() url.Values {
 }
 // DataSetId Setter
 // 数据集id
-func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) SetDataSetId(_dataSetId string) error {
+func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) SetDataSetId(_dataSetId string) error {
     r._dataSetId = _dataSetId
     r.Set("data_set_id", _dataSetId)
     return nil
 }
 
 // DataSetId Getter
-func (r TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) GetDataSetId() string {
+func (r TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) GetDataSetId() string {
     return r._dataSetId
 }
 // Phone Setter
 // 手机号
-func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) SetPhone(_phone string) error {
+func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) SetPhone(_phone string) error {
     r._phone = _phone
     r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
-func (r TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) GetPhone() string {
+func (r TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) GetPhone() string {
     return r._phone
 }

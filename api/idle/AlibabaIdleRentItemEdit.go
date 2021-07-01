@@ -11,7 +11,7 @@ alibaba.idle.rent.item.edit
 
 发布闲鱼租赁商品
 */
-func AlibabaIdleRentItemEdit(clt *core.SDKClient, req *idle.AlibabaIdleRentItemEditRequest, session string) (*idle.AlibabaIdleRentItemEditAPIResponse, error) {
+func AlibabaIdleRentItemEdit(clt *core.SDKClient, req *idle.AlibabaIdleRentItemEditAPIRequest, session string) (*idle.AlibabaIdleRentItemEditAPIResponse, error) {
     var resp idle.AlibabaIdleRentItemEditAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

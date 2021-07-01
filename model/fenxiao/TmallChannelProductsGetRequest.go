@@ -20,26 +20,26 @@ tmall.channel.products.get
 * 查询结果按照产品发布时间倒序，即时间近的数据在前。
 * 传入channel 渠道，会只返回相应渠道的产品
 */
-type TmallChannelProductsGetRequest struct {
+type TmallChannelProductsGetAPIRequest struct {
     model.Params
     // top_query_product_d_o
     _topQueryProductDO   *TopQueryProductDO
 }
 
-// 初始化TmallChannelProductsGetRequest对象
-func NewTmallChannelProductsGetRequest() *TmallChannelProductsGetRequest{
-    return &TmallChannelProductsGetRequest{
+// 初始化TmallChannelProductsGetAPIRequest对象
+func NewTmallChannelProductsGetRequest() *TmallChannelProductsGetAPIRequest{
+    return &TmallChannelProductsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallChannelProductsGetRequest) GetApiMethodName() string {
+func (r TmallChannelProductsGetAPIRequest) GetApiMethodName() string {
     return "tmall.channel.products.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallChannelProductsGetRequest) GetApiParams() url.Values {
+func (r TmallChannelProductsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,13 +48,13 @@ func (r TmallChannelProductsGetRequest) GetApiParams() url.Values {
 }
 // TopQueryProductDO Setter
 // top_query_product_d_o
-func (r *TmallChannelProductsGetRequest) SetTopQueryProductDO(_topQueryProductDO *TopQueryProductDO) error {
+func (r *TmallChannelProductsGetAPIRequest) SetTopQueryProductDO(_topQueryProductDO *TopQueryProductDO) error {
     r._topQueryProductDO = _topQueryProductDO
     r.Set("top_query_product_d_o", _topQueryProductDO)
     return nil
 }
 
 // TopQueryProductDO Getter
-func (r TmallChannelProductsGetRequest) GetTopQueryProductDO() *TopQueryProductDO {
+func (r TmallChannelProductsGetAPIRequest) GetTopQueryProductDO() *TopQueryProductDO {
     return r._topQueryProductDO
 }

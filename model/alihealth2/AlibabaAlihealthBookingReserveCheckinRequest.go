@@ -12,26 +12,26 @@ alibaba.alihealth.booking.reserve.checkin
 
 消费医疗统一预约平台，ISV 确认到店
 */
-type AlibabaAlihealthBookingReserveCheckinRequest struct {
+type AlibabaAlihealthBookingReserveCheckinAPIRequest struct {
     model.Params
     // check_in
     _checkIn   *IsvReserveRequest
 }
 
-// 初始化AlibabaAlihealthBookingReserveCheckinRequest对象
-func NewAlibabaAlihealthBookingReserveCheckinRequest() *AlibabaAlihealthBookingReserveCheckinRequest{
-    return &AlibabaAlihealthBookingReserveCheckinRequest{
+// 初始化AlibabaAlihealthBookingReserveCheckinAPIRequest对象
+func NewAlibabaAlihealthBookingReserveCheckinRequest() *AlibabaAlihealthBookingReserveCheckinAPIRequest{
+    return &AlibabaAlihealthBookingReserveCheckinAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthBookingReserveCheckinRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthBookingReserveCheckinAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.booking.reserve.checkin"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthBookingReserveCheckinRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthBookingReserveCheckinAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthBookingReserveCheckinRequest) GetApiParams() url.Values 
 }
 // CheckIn Setter
 // check_in
-func (r *AlibabaAlihealthBookingReserveCheckinRequest) SetCheckIn(_checkIn *IsvReserveRequest) error {
+func (r *AlibabaAlihealthBookingReserveCheckinAPIRequest) SetCheckIn(_checkIn *IsvReserveRequest) error {
     r._checkIn = _checkIn
     r.Set("check_in", _checkIn)
     return nil
 }
 
 // CheckIn Getter
-func (r AlibabaAlihealthBookingReserveCheckinRequest) GetCheckIn() *IsvReserveRequest {
+func (r AlibabaAlihealthBookingReserveCheckinAPIRequest) GetCheckIn() *IsvReserveRequest {
     return r._checkIn
 }

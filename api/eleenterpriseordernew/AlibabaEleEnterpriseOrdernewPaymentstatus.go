@@ -11,7 +11,7 @@ alibaba.ele.enterprise.ordernew.paymentstatus
 
 设置订单支付成功
 */
-func AlibabaEleEnterpriseOrdernewPaymentstatus(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse, error) {
+func AlibabaEleEnterpriseOrdernewPaymentstatus(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse, error) {
     var resp eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

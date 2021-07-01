@@ -12,24 +12,24 @@ taobao.top.ipout.get
 
 获取开放平台出口IP段
 */
-type TaobaoTopIpoutGetRequest struct {
+type TaobaoTopIpoutGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoTopIpoutGetRequest对象
-func NewTaobaoTopIpoutGetRequest() *TaobaoTopIpoutGetRequest{
-    return &TaobaoTopIpoutGetRequest{
+// 初始化TaobaoTopIpoutGetAPIRequest对象
+func NewTaobaoTopIpoutGetRequest() *TaobaoTopIpoutGetAPIRequest{
+    return &TaobaoTopIpoutGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTopIpoutGetRequest) GetApiMethodName() string {
+func (r TaobaoTopIpoutGetAPIRequest) GetApiMethodName() string {
     return "taobao.top.ipout.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTopIpoutGetRequest) GetApiParams() url.Values {
+func (r TaobaoTopIpoutGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

@@ -12,26 +12,26 @@ alibaba.damai.mev.open.invalidticket
 
 开放接口 使票无效
 */
-type AlibabaDamaiMevOpenInvalidticketRequest struct {
+type AlibabaDamaiMevOpenInvalidticketAPIRequest struct {
     model.Params
     // 入参ticketIdOpenParam
     _ticketIdOpenParam   *TicketIdOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenInvalidticketRequest对象
-func NewAlibabaDamaiMevOpenInvalidticketRequest() *AlibabaDamaiMevOpenInvalidticketRequest{
-    return &AlibabaDamaiMevOpenInvalidticketRequest{
+// 初始化AlibabaDamaiMevOpenInvalidticketAPIRequest对象
+func NewAlibabaDamaiMevOpenInvalidticketRequest() *AlibabaDamaiMevOpenInvalidticketAPIRequest{
+    return &AlibabaDamaiMevOpenInvalidticketAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenInvalidticketRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenInvalidticketAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.invalidticket"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenInvalidticketRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenInvalidticketAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenInvalidticketRequest) GetApiParams() url.Values {
 }
 // TicketIdOpenParam Setter
 // 入参ticketIdOpenParam
-func (r *AlibabaDamaiMevOpenInvalidticketRequest) SetTicketIdOpenParam(_ticketIdOpenParam *TicketIdOpenParam) error {
+func (r *AlibabaDamaiMevOpenInvalidticketAPIRequest) SetTicketIdOpenParam(_ticketIdOpenParam *TicketIdOpenParam) error {
     r._ticketIdOpenParam = _ticketIdOpenParam
     r.Set("ticket_id_open_param", _ticketIdOpenParam)
     return nil
 }
 
 // TicketIdOpenParam Getter
-func (r AlibabaDamaiMevOpenInvalidticketRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
+func (r AlibabaDamaiMevOpenInvalidticketAPIRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
     return r._ticketIdOpenParam
 }

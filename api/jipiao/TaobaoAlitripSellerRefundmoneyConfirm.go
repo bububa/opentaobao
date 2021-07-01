@@ -11,7 +11,7 @@ taobao.alitrip.seller.refundmoney.confirm
 
 代理人确认退票申请单的退款
 */
-func TaobaoAlitripSellerRefundmoneyConfirm(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundmoneyConfirmRequest, session string) (*jipiao.TaobaoAlitripSellerRefundmoneyConfirmAPIResponse, error) {
+func TaobaoAlitripSellerRefundmoneyConfirm(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundmoneyConfirmAPIRequest, session string) (*jipiao.TaobaoAlitripSellerRefundmoneyConfirmAPIResponse, error) {
     var resp jipiao.TaobaoAlitripSellerRefundmoneyConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

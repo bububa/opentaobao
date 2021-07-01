@@ -11,7 +11,7 @@ taobao.place.store.delete
 
 用于商家删除线下门店
 */
-func TaobaoPlaceStoreDelete(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreDeleteRequest, session string) (*alsc.TaobaoPlaceStoreDeleteAPIResponse, error) {
+func TaobaoPlaceStoreDelete(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreDeleteAPIRequest, session string) (*alsc.TaobaoPlaceStoreDeleteAPIResponse, error) {
     var resp alsc.TaobaoPlaceStoreDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

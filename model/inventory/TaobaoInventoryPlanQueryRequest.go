@@ -12,26 +12,26 @@ taobao.inventory.plan.query
 
 计划库存查询
 */
-type TaobaoInventoryPlanQueryRequest struct {
+type TaobaoInventoryPlanQueryAPIRequest struct {
     model.Params
     // 计划库存查询入参
     _param   *InvUnifyPlanTopQuerys
 }
 
-// 初始化TaobaoInventoryPlanQueryRequest对象
-func NewTaobaoInventoryPlanQueryRequest() *TaobaoInventoryPlanQueryRequest{
-    return &TaobaoInventoryPlanQueryRequest{
+// 初始化TaobaoInventoryPlanQueryAPIRequest对象
+func NewTaobaoInventoryPlanQueryRequest() *TaobaoInventoryPlanQueryAPIRequest{
+    return &TaobaoInventoryPlanQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoInventoryPlanQueryRequest) GetApiMethodName() string {
+func (r TaobaoInventoryPlanQueryAPIRequest) GetApiMethodName() string {
     return "taobao.inventory.plan.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoInventoryPlanQueryRequest) GetApiParams() url.Values {
+func (r TaobaoInventoryPlanQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoInventoryPlanQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 计划库存查询入参
-func (r *TaobaoInventoryPlanQueryRequest) SetParam(_param *InvUnifyPlanTopQuerys) error {
+func (r *TaobaoInventoryPlanQueryAPIRequest) SetParam(_param *InvUnifyPlanTopQuerys) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoInventoryPlanQueryRequest) GetParam() *InvUnifyPlanTopQuerys {
+func (r TaobaoInventoryPlanQueryAPIRequest) GetParam() *InvUnifyPlanTopQuerys {
     return r._param
 }

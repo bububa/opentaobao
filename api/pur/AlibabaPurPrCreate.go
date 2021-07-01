@@ -11,7 +11,7 @@ alibaba.pur.pr.create
 
 下pr单
 */
-func AlibabaPurPrCreate(clt *core.SDKClient, req *pur.AlibabaPurPrCreateRequest, session string) (*pur.AlibabaPurPrCreateAPIResponse, error) {
+func AlibabaPurPrCreate(clt *core.SDKClient, req *pur.AlibabaPurPrCreateAPIRequest, session string) (*pur.AlibabaPurPrCreateAPIResponse, error) {
     var resp pur.AlibabaPurPrCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

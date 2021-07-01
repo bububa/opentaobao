@@ -11,7 +11,7 @@ aliexpress.solution.product.info.get
 
 Get Single Product Info
 */
-func AliexpressSolutionProductInfoGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionProductInfoGetRequest, session string) (*aesolution.AliexpressSolutionProductInfoGetAPIResponse, error) {
+func AliexpressSolutionProductInfoGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionProductInfoGetAPIRequest, session string) (*aesolution.AliexpressSolutionProductInfoGetAPIResponse, error) {
     var resp aesolution.AliexpressSolutionProductInfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

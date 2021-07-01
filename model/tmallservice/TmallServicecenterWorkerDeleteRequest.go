@@ -27,7 +27,7 @@ tmall.servicecenter.worker.delete
 11001, biz_type 无效
 20001,已查询到最后一页
 */
-type TmallServicecenterWorkerDeleteRequest struct {
+type TmallServicecenterWorkerDeleteAPIRequest struct {
     model.Params
     // 工人姓名
     _name   string
@@ -37,20 +37,20 @@ type TmallServicecenterWorkerDeleteRequest struct {
     _bizType   string
 }
 
-// 初始化TmallServicecenterWorkerDeleteRequest对象
-func NewTmallServicecenterWorkerDeleteRequest() *TmallServicecenterWorkerDeleteRequest{
-    return &TmallServicecenterWorkerDeleteRequest{
+// 初始化TmallServicecenterWorkerDeleteAPIRequest对象
+func NewTmallServicecenterWorkerDeleteRequest() *TmallServicecenterWorkerDeleteAPIRequest{
+    return &TmallServicecenterWorkerDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkerDeleteRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.worker.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkerDeleteRequest) GetApiParams() url.Values {
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -59,37 +59,37 @@ func (r TmallServicecenterWorkerDeleteRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // 工人姓名
-func (r *TmallServicecenterWorkerDeleteRequest) SetName(_name string) error {
+func (r *TmallServicecenterWorkerDeleteAPIRequest) SetName(_name string) error {
     r._name = _name
     r.Set("name", _name)
     return nil
 }
 
 // Name Getter
-func (r TmallServicecenterWorkerDeleteRequest) GetName() string {
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetName() string {
     return r._name
 }
 // Phone Setter
 // 工人手机号
-func (r *TmallServicecenterWorkerDeleteRequest) SetPhone(_phone int64) error {
+func (r *TmallServicecenterWorkerDeleteAPIRequest) SetPhone(_phone int64) error {
     r._phone = _phone
     r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
-func (r TmallServicecenterWorkerDeleteRequest) GetPhone() int64 {
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetPhone() int64 {
     return r._phone
 }
 // BizType Setter
 // 业务类型,电器预约安装业务填appliance_install
-func (r *TmallServicecenterWorkerDeleteRequest) SetBizType(_bizType string) error {
+func (r *TmallServicecenterWorkerDeleteAPIRequest) SetBizType(_bizType string) error {
     r._bizType = _bizType
     r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
-func (r TmallServicecenterWorkerDeleteRequest) GetBizType() string {
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetBizType() string {
     return r._bizType
 }

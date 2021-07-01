@@ -11,7 +11,7 @@ alibaba.campus.acl.new.pageuserrole
 
 新增用户和角色的关系
 */
-func AlibabaCampusAclNewPageuserrole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewPageuserroleRequest, session string) (*campus.AlibabaCampusAclNewPageuserroleAPIResponse, error) {
+func AlibabaCampusAclNewPageuserrole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewPageuserroleAPIRequest, session string) (*campus.AlibabaCampusAclNewPageuserroleAPIResponse, error) {
     var resp campus.AlibabaCampusAclNewPageuserroleAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

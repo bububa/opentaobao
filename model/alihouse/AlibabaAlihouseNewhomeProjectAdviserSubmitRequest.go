@@ -12,26 +12,26 @@ alibaba.alihouse.newhome.project.adviser.submit
 
 提交楼盘顾问
 */
-type AlibabaAlihouseNewhomeProjectAdviserSubmitRequest struct {
+type AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest struct {
     model.Params
     // 顾问列表
     _advisers   []ProjectAdviserDTO
 }
 
-// 初始化AlibabaAlihouseNewhomeProjectAdviserSubmitRequest对象
-func NewAlibabaAlihouseNewhomeProjectAdviserSubmitRequest() *AlibabaAlihouseNewhomeProjectAdviserSubmitRequest{
-    return &AlibabaAlihouseNewhomeProjectAdviserSubmitRequest{
+// 初始化AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectAdviserSubmitRequest() *AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest{
+    return &AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectAdviserSubmitRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.project.adviser.submit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectAdviserSubmitRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectAdviserSubmitRequest) GetApiParams() url.Va
 }
 // Advisers Setter
 // 顾问列表
-func (r *AlibabaAlihouseNewhomeProjectAdviserSubmitRequest) SetAdvisers(_advisers []ProjectAdviserDTO) error {
+func (r *AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) SetAdvisers(_advisers []ProjectAdviserDTO) error {
     r._advisers = _advisers
     r.Set("advisers", _advisers)
     return nil
 }
 
 // Advisers Getter
-func (r AlibabaAlihouseNewhomeProjectAdviserSubmitRequest) GetAdvisers() []ProjectAdviserDTO {
+func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetAdvisers() []ProjectAdviserDTO {
     return r._advisers
 }

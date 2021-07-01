@@ -14,7 +14,7 @@ alibaba.alihealth.drug.kyt.uploadinoutbill
 不包括对个人的零售出库，疫苗接种，领药出库。
 本接口与uploadcircubill接口的主要区别的，本接口入参中直接上传追溯码（多个码时用逗号分隔）。uploadcircubill接口入参中，需要上传码的单据文件（用扫码枪生成的xml文件），一般情况下使用uploadcircubill接口上传单据文件。
 */
-func AlibabaAlihealthDrugKytUploadinoutbill(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUploadinoutbillRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytUploadinoutbillAPIResponse, error) {
+func AlibabaAlihealthDrugKytUploadinoutbill(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUploadinoutbillAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytUploadinoutbillAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytUploadinoutbillAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

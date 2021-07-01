@@ -12,26 +12,26 @@ tmall.popupstore.activity.device.query
 
 查询某一活动的deviceCode的部署情况
 */
-type TmallPopupstoreActivityDeviceQueryRequest struct {
+type TmallPopupstoreActivityDeviceQueryAPIRequest struct {
     model.Params
     // ISV的活动ID
     _activityId   int64
 }
 
-// 初始化TmallPopupstoreActivityDeviceQueryRequest对象
-func NewTmallPopupstoreActivityDeviceQueryRequest() *TmallPopupstoreActivityDeviceQueryRequest{
-    return &TmallPopupstoreActivityDeviceQueryRequest{
+// 初始化TmallPopupstoreActivityDeviceQueryAPIRequest对象
+func NewTmallPopupstoreActivityDeviceQueryRequest() *TmallPopupstoreActivityDeviceQueryAPIRequest{
+    return &TmallPopupstoreActivityDeviceQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallPopupstoreActivityDeviceQueryRequest) GetApiMethodName() string {
+func (r TmallPopupstoreActivityDeviceQueryAPIRequest) GetApiMethodName() string {
     return "tmall.popupstore.activity.device.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallPopupstoreActivityDeviceQueryRequest) GetApiParams() url.Values {
+func (r TmallPopupstoreActivityDeviceQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallPopupstoreActivityDeviceQueryRequest) GetApiParams() url.Values {
 }
 // ActivityId Setter
 // ISV的活动ID
-func (r *TmallPopupstoreActivityDeviceQueryRequest) SetActivityId(_activityId int64) error {
+func (r *TmallPopupstoreActivityDeviceQueryAPIRequest) SetActivityId(_activityId int64) error {
     r._activityId = _activityId
     r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
-func (r TmallPopupstoreActivityDeviceQueryRequest) GetActivityId() int64 {
+func (r TmallPopupstoreActivityDeviceQueryAPIRequest) GetActivityId() int64 {
     return r._activityId
 }

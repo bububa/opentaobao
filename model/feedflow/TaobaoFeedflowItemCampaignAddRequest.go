@@ -12,26 +12,26 @@ taobao.feedflow.item.campaign.add
 
 信息流增加推广计划
 */
-type TaobaoFeedflowItemCampaignAddRequest struct {
+type TaobaoFeedflowItemCampaignAddAPIRequest struct {
     model.Params
     // 计划信息
     _campaign   *CampaignDTO
 }
 
-// 初始化TaobaoFeedflowItemCampaignAddRequest对象
-func NewTaobaoFeedflowItemCampaignAddRequest() *TaobaoFeedflowItemCampaignAddRequest{
-    return &TaobaoFeedflowItemCampaignAddRequest{
+// 初始化TaobaoFeedflowItemCampaignAddAPIRequest对象
+func NewTaobaoFeedflowItemCampaignAddRequest() *TaobaoFeedflowItemCampaignAddAPIRequest{
+    return &TaobaoFeedflowItemCampaignAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemCampaignAddRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemCampaignAddAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.campaign.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemCampaignAddRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemCampaignAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCampaignAddRequest) GetApiParams() url.Values {
 }
 // Campaign Setter
 // 计划信息
-func (r *TaobaoFeedflowItemCampaignAddRequest) SetCampaign(_campaign *CampaignDTO) error {
+func (r *TaobaoFeedflowItemCampaignAddAPIRequest) SetCampaign(_campaign *CampaignDTO) error {
     r._campaign = _campaign
     r.Set("campaign", _campaign)
     return nil
 }
 
 // Campaign Getter
-func (r TaobaoFeedflowItemCampaignAddRequest) GetCampaign() *CampaignDTO {
+func (r TaobaoFeedflowItemCampaignAddAPIRequest) GetCampaign() *CampaignDTO {
     return r._campaign
 }

@@ -18,7 +18,7 @@ alibaba.alihealth.drug.code.list.code.alkali
 情况下，需要分多次调用该接口。
 核查平台优先过滤非8开头的，长度非20位数字的码信息。
 */
-type AlibabaAlihealthDrugCodeListCodeAlkaliRequest struct {
+type AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest struct {
     model.Params
     // 追溯码
     _codeList   []string
@@ -36,20 +36,20 @@ type AlibabaAlihealthDrugCodeListCodeAlkaliRequest struct {
     _errorMessage   string
 }
 
-// 初始化AlibabaAlihealthDrugCodeListCodeAlkaliRequest对象
-func NewAlibabaAlihealthDrugCodeListCodeAlkaliRequest() *AlibabaAlihealthDrugCodeListCodeAlkaliRequest{
-    return &AlibabaAlihealthDrugCodeListCodeAlkaliRequest{
+// 初始化AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest对象
+func NewAlibabaAlihealthDrugCodeListCodeAlkaliRequest() *AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest{
+    return &AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.code.list.code.alkali"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -58,85 +58,85 @@ func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetApiParams() url.Values
 }
 // CodeList Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetCodeList(_codeList []string) error {
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) SetCodeList(_codeList []string) error {
     r._codeList = _codeList
     r.Set("code_list", _codeList)
     return nil
 }
 
 // CodeList Getter
-func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetCodeList() []string {
+func (r AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) GetCodeList() []string {
     return r._codeList
 }
 // CertIsvNo Setter
 // 证件编号
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetCertIsvNo(_certIsvNo string) error {
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) SetCertIsvNo(_certIsvNo string) error {
     r._certIsvNo = _certIsvNo
     r.Set("cert_isv_no", _certIsvNo)
     return nil
 }
 
 // CertIsvNo Getter
-func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetCertIsvNo() string {
+func (r AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) GetCertIsvNo() string {
     return r._certIsvNo
 }
 // Invocation Setter
 // 调用方式：formal-正式、test-测试
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetInvocation(_invocation string) error {
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) SetInvocation(_invocation string) error {
     r._invocation = _invocation
     r.Set("invocation", _invocation)
     return nil
 }
 
 // Invocation Getter
-func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetInvocation() string {
+func (r AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) GetInvocation() string {
     return r._invocation
 }
 // TerminalType Setter
 // 终端类型 1：零售
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetTerminalType(_terminalType string) error {
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) SetTerminalType(_terminalType string) error {
     r._terminalType = _terminalType
     r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
-func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetTerminalType() string {
+func (r AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) GetTerminalType() string {
     return r._terminalType
 }
 // TerminalName Setter
 // 调用零售药店名称
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetTerminalName(_terminalName string) error {
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) SetTerminalName(_terminalName string) error {
     r._terminalName = _terminalName
     r.Set("terminal_name", _terminalName)
     return nil
 }
 
 // TerminalName Getter
-func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetTerminalName() string {
+func (r AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) GetTerminalName() string {
     return r._terminalName
 }
 // BureauName Setter
 // 城市名称
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetBureauName(_bureauName string) error {
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) SetBureauName(_bureauName string) error {
     r._bureauName = _bureauName
     r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
-func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetBureauName() string {
+func (r AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) GetBureauName() string {
     return r._bureauName
 }
 // ErrorMessage Setter
 // 错误信息
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetErrorMessage(_errorMessage string) error {
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) SetErrorMessage(_errorMessage string) error {
     r._errorMessage = _errorMessage
     r.Set("error_message", _errorMessage)
     return nil
 }
 
 // ErrorMessage Getter
-func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetErrorMessage() string {
+func (r AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest) GetErrorMessage() string {
     return r._errorMessage
 }

@@ -1,7 +1,7 @@
 package btrip
 
-// OpenTrainOrderRs 
-type OpenTrainOrderRs struct {
+// OpenTrainOrderRS 
+type OpenTrainOrderRS struct {
     // 订单id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 创建时间

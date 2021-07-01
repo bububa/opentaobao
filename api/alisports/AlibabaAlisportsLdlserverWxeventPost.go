@@ -11,7 +11,7 @@ alibaba.alisports.ldlserver.wxevent.post
 
 转发弹外微信服务到弹内
 */
-func AlibabaAlisportsLdlserverWxeventPost(clt *core.SDKClient, req *alisports.AlibabaAlisportsLdlserverWxeventPostRequest, session string) (*alisports.AlibabaAlisportsLdlserverWxeventPostAPIResponse, error) {
+func AlibabaAlisportsLdlserverWxeventPost(clt *core.SDKClient, req *alisports.AlibabaAlisportsLdlserverWxeventPostAPIRequest, session string) (*alisports.AlibabaAlisportsLdlserverWxeventPostAPIResponse, error) {
     var resp alisports.AlibabaAlisportsLdlserverWxeventPostAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.wdk.merchantproduct.edit
 
 商家产品服务-编辑产品
 */
-func AlibabaWdkMerchantproductEdit(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantproductEditRequest, session string) (*wdk.AlibabaWdkMerchantproductEditAPIResponse, error) {
+func AlibabaWdkMerchantproductEdit(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantproductEditAPIRequest, session string) (*wdk.AlibabaWdkMerchantproductEditAPIResponse, error) {
     var resp wdk.AlibabaWdkMerchantproductEditAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

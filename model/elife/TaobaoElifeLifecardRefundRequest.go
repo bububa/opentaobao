@@ -12,26 +12,26 @@ taobao.elife.lifecard.refund
 
 淘宝生活汇消费卡虚拟卡，线下冲正退货接口
 */
-type TaobaoElifeLifecardRefundRequest struct {
+type TaobaoElifeLifecardRefundAPIRequest struct {
     model.Params
     // 请求参数
     _refundRequest   *RefundRequest
 }
 
-// 初始化TaobaoElifeLifecardRefundRequest对象
-func NewTaobaoElifeLifecardRefundRequest() *TaobaoElifeLifecardRefundRequest{
-    return &TaobaoElifeLifecardRefundRequest{
+// 初始化TaobaoElifeLifecardRefundAPIRequest对象
+func NewTaobaoElifeLifecardRefundRequest() *TaobaoElifeLifecardRefundAPIRequest{
+    return &TaobaoElifeLifecardRefundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoElifeLifecardRefundRequest) GetApiMethodName() string {
+func (r TaobaoElifeLifecardRefundAPIRequest) GetApiMethodName() string {
     return "taobao.elife.lifecard.refund"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoElifeLifecardRefundRequest) GetApiParams() url.Values {
+func (r TaobaoElifeLifecardRefundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoElifeLifecardRefundRequest) GetApiParams() url.Values {
 }
 // RefundRequest Setter
 // 请求参数
-func (r *TaobaoElifeLifecardRefundRequest) SetRefundRequest(_refundRequest *RefundRequest) error {
+func (r *TaobaoElifeLifecardRefundAPIRequest) SetRefundRequest(_refundRequest *RefundRequest) error {
     r._refundRequest = _refundRequest
     r.Set("refund_request", _refundRequest)
     return nil
 }
 
 // RefundRequest Getter
-func (r TaobaoElifeLifecardRefundRequest) GetRefundRequest() *RefundRequest {
+func (r TaobaoElifeLifecardRefundAPIRequest) GetRefundRequest() *RefundRequest {
     return r._refundRequest
 }

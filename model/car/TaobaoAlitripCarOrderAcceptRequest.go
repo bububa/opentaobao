@@ -12,26 +12,26 @@ taobao.alitrip.car.order.accept
 
 用来接收服务商确认接单信息
 */
-type TaobaoAlitripCarOrderAcceptRequest struct {
+type TaobaoAlitripCarOrderAcceptAPIRequest struct {
     model.Params
     // 确认订单请求
     _paramOrderAccept   *OrderAccept
 }
 
-// 初始化TaobaoAlitripCarOrderAcceptRequest对象
-func NewTaobaoAlitripCarOrderAcceptRequest() *TaobaoAlitripCarOrderAcceptRequest{
-    return &TaobaoAlitripCarOrderAcceptRequest{
+// 初始化TaobaoAlitripCarOrderAcceptAPIRequest对象
+func NewTaobaoAlitripCarOrderAcceptRequest() *TaobaoAlitripCarOrderAcceptAPIRequest{
+    return &TaobaoAlitripCarOrderAcceptAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripCarOrderAcceptRequest) GetApiMethodName() string {
+func (r TaobaoAlitripCarOrderAcceptAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.car.order.accept"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripCarOrderAcceptRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripCarOrderAcceptAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripCarOrderAcceptRequest) GetApiParams() url.Values {
 }
 // ParamOrderAccept Setter
 // 确认订单请求
-func (r *TaobaoAlitripCarOrderAcceptRequest) SetParamOrderAccept(_paramOrderAccept *OrderAccept) error {
+func (r *TaobaoAlitripCarOrderAcceptAPIRequest) SetParamOrderAccept(_paramOrderAccept *OrderAccept) error {
     r._paramOrderAccept = _paramOrderAccept
     r.Set("param_order_accept", _paramOrderAccept)
     return nil
 }
 
 // ParamOrderAccept Getter
-func (r TaobaoAlitripCarOrderAcceptRequest) GetParamOrderAccept() *OrderAccept {
+func (r TaobaoAlitripCarOrderAcceptAPIRequest) GetParamOrderAccept() *OrderAccept {
     return r._paramOrderAccept
 }

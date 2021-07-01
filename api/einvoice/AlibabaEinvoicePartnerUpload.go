@@ -11,7 +11,7 @@ alibaba.einvoice.partner.upload
 
 服务商发票上传接口（非授权）
 */
-func AlibabaEinvoicePartnerUpload(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePartnerUploadRequest, session string) (*einvoice.AlibabaEinvoicePartnerUploadAPIResponse, error) {
+func AlibabaEinvoicePartnerUpload(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePartnerUploadAPIRequest, session string) (*einvoice.AlibabaEinvoicePartnerUploadAPIResponse, error) {
     var resp einvoice.AlibabaEinvoicePartnerUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

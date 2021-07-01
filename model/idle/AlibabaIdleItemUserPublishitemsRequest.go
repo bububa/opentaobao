@@ -12,26 +12,26 @@ alibaba.idle.item.user.publishitems
 
 为服务商的卖家提供发布的闲鱼商品列表
 */
-type AlibabaIdleItemUserPublishitemsRequest struct {
+type AlibabaIdleItemUserPublishitemsAPIRequest struct {
     model.Params
     // 查询参数
     _paramItemPageQuery   *ItemPageQuery
 }
 
-// 初始化AlibabaIdleItemUserPublishitemsRequest对象
-func NewAlibabaIdleItemUserPublishitemsRequest() *AlibabaIdleItemUserPublishitemsRequest{
-    return &AlibabaIdleItemUserPublishitemsRequest{
+// 初始化AlibabaIdleItemUserPublishitemsAPIRequest对象
+func NewAlibabaIdleItemUserPublishitemsRequest() *AlibabaIdleItemUserPublishitemsAPIRequest{
+    return &AlibabaIdleItemUserPublishitemsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleItemUserPublishitemsRequest) GetApiMethodName() string {
+func (r AlibabaIdleItemUserPublishitemsAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.item.user.publishitems"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleItemUserPublishitemsRequest) GetApiParams() url.Values {
+func (r AlibabaIdleItemUserPublishitemsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleItemUserPublishitemsRequest) GetApiParams() url.Values {
 }
 // ParamItemPageQuery Setter
 // 查询参数
-func (r *AlibabaIdleItemUserPublishitemsRequest) SetParamItemPageQuery(_paramItemPageQuery *ItemPageQuery) error {
+func (r *AlibabaIdleItemUserPublishitemsAPIRequest) SetParamItemPageQuery(_paramItemPageQuery *ItemPageQuery) error {
     r._paramItemPageQuery = _paramItemPageQuery
     r.Set("param_item_page_query", _paramItemPageQuery)
     return nil
 }
 
 // ParamItemPageQuery Getter
-func (r AlibabaIdleItemUserPublishitemsRequest) GetParamItemPageQuery() *ItemPageQuery {
+func (r AlibabaIdleItemUserPublishitemsAPIRequest) GetParamItemPageQuery() *ItemPageQuery {
     return r._paramItemPageQuery
 }

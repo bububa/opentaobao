@@ -11,7 +11,7 @@ alitrip.hotel.hstdf.shotel.exportshotel
 
 商家通过给出自己的卖家酒店信息，通过接口可以返回相似度高的标准酒店信息
 */
-func AlitripHotelHstdfShotelExportshotel(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfShotelExportshotelRequest, session string) (*hotelhstdf.AlitripHotelHstdfShotelExportshotelAPIResponse, error) {
+func AlitripHotelHstdfShotelExportshotel(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfShotelExportshotelAPIRequest, session string) (*hotelhstdf.AlitripHotelHstdfShotelExportshotelAPIResponse, error) {
     var resp hotelhstdf.AlitripHotelHstdfShotelExportshotelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

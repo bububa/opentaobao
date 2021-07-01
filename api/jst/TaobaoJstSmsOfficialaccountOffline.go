@@ -11,7 +11,7 @@ taobao.jst.sms.officialaccount.offline
 
 聚石塔公众号下线
 */
-func TaobaoJstSmsOfficialaccountOffline(clt *core.SDKClient, req *jst.TaobaoJstSmsOfficialaccountOfflineRequest, session string) (*jst.TaobaoJstSmsOfficialaccountOfflineAPIResponse, error) {
+func TaobaoJstSmsOfficialaccountOffline(clt *core.SDKClient, req *jst.TaobaoJstSmsOfficialaccountOfflineAPIRequest, session string) (*jst.TaobaoJstSmsOfficialaccountOfflineAPIResponse, error) {
     var resp jst.TaobaoJstSmsOfficialaccountOfflineAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

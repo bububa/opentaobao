@@ -11,7 +11,7 @@ taobao.qimen.transferorder.query
 
 调拨单查询
 */
-func TaobaoQimenTransferorderQuery(clt *core.SDKClient, req *qimen.TaobaoQimenTransferorderQueryRequest, session string) (*qimen.TaobaoQimenTransferorderQueryAPIResponse, error) {
+func TaobaoQimenTransferorderQuery(clt *core.SDKClient, req *qimen.TaobaoQimenTransferorderQueryAPIRequest, session string) (*qimen.TaobaoQimenTransferorderQueryAPIResponse, error) {
     var resp qimen.TaobaoQimenTransferorderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ tmall.item.sizemapping.template.get
 
 获取天猫商品尺码表模板
 */
-type TmallItemSizemappingTemplateGetRequest struct {
+type TmallItemSizemappingTemplateGetAPIRequest struct {
     model.Params
     // 尺码表模板ID
     _templateId   int64
 }
 
-// 初始化TmallItemSizemappingTemplateGetRequest对象
-func NewTmallItemSizemappingTemplateGetRequest() *TmallItemSizemappingTemplateGetRequest{
-    return &TmallItemSizemappingTemplateGetRequest{
+// 初始化TmallItemSizemappingTemplateGetAPIRequest对象
+func NewTmallItemSizemappingTemplateGetRequest() *TmallItemSizemappingTemplateGetAPIRequest{
+    return &TmallItemSizemappingTemplateGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallItemSizemappingTemplateGetRequest) GetApiMethodName() string {
+func (r TmallItemSizemappingTemplateGetAPIRequest) GetApiMethodName() string {
     return "tmall.item.sizemapping.template.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallItemSizemappingTemplateGetRequest) GetApiParams() url.Values {
+func (r TmallItemSizemappingTemplateGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallItemSizemappingTemplateGetRequest) GetApiParams() url.Values {
 }
 // TemplateId Setter
 // 尺码表模板ID
-func (r *TmallItemSizemappingTemplateGetRequest) SetTemplateId(_templateId int64) error {
+func (r *TmallItemSizemappingTemplateGetAPIRequest) SetTemplateId(_templateId int64) error {
     r._templateId = _templateId
     r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
-func (r TmallItemSizemappingTemplateGetRequest) GetTemplateId() int64 {
+func (r TmallItemSizemappingTemplateGetAPIRequest) GetTemplateId() int64 {
     return r._templateId
 }

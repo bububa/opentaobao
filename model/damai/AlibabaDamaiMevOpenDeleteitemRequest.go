@@ -12,26 +12,26 @@ alibaba.damai.mev.open.deleteitem
 
 deleteItem
 */
-type AlibabaDamaiMevOpenDeleteitemRequest struct {
+type AlibabaDamaiMevOpenDeleteitemAPIRequest struct {
     model.Params
     // 入参deleteItemParam
     _deleteItemParam   *TicketItemIdOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenDeleteitemRequest对象
-func NewAlibabaDamaiMevOpenDeleteitemRequest() *AlibabaDamaiMevOpenDeleteitemRequest{
-    return &AlibabaDamaiMevOpenDeleteitemRequest{
+// 初始化AlibabaDamaiMevOpenDeleteitemAPIRequest对象
+func NewAlibabaDamaiMevOpenDeleteitemRequest() *AlibabaDamaiMevOpenDeleteitemAPIRequest{
+    return &AlibabaDamaiMevOpenDeleteitemAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenDeleteitemRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenDeleteitemAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.deleteitem"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenDeleteitemRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenDeleteitemAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeleteitemRequest) GetApiParams() url.Values {
 }
 // DeleteItemParam Setter
 // 入参deleteItemParam
-func (r *AlibabaDamaiMevOpenDeleteitemRequest) SetDeleteItemParam(_deleteItemParam *TicketItemIdOpenParam) error {
+func (r *AlibabaDamaiMevOpenDeleteitemAPIRequest) SetDeleteItemParam(_deleteItemParam *TicketItemIdOpenParam) error {
     r._deleteItemParam = _deleteItemParam
     r.Set("delete_item_param", _deleteItemParam)
     return nil
 }
 
 // DeleteItemParam Getter
-func (r AlibabaDamaiMevOpenDeleteitemRequest) GetDeleteItemParam() *TicketItemIdOpenParam {
+func (r AlibabaDamaiMevOpenDeleteitemAPIRequest) GetDeleteItemParam() *TicketItemIdOpenParam {
     return r._deleteItemParam
 }

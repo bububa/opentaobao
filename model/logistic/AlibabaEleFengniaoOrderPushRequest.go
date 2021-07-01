@@ -12,26 +12,26 @@ alibaba.ele.fengniao.order.push
 
 推送淘宝订单至蜂鸟开放平台配送
 */
-type AlibabaEleFengniaoOrderPushRequest struct {
+type AlibabaEleFengniaoOrderPushAPIRequest struct {
     model.Params
     // 参数param
     _param   *Param
 }
 
-// 初始化AlibabaEleFengniaoOrderPushRequest对象
-func NewAlibabaEleFengniaoOrderPushRequest() *AlibabaEleFengniaoOrderPushRequest{
-    return &AlibabaEleFengniaoOrderPushRequest{
+// 初始化AlibabaEleFengniaoOrderPushAPIRequest对象
+func NewAlibabaEleFengniaoOrderPushRequest() *AlibabaEleFengniaoOrderPushAPIRequest{
+    return &AlibabaEleFengniaoOrderPushAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleFengniaoOrderPushRequest) GetApiMethodName() string {
+func (r AlibabaEleFengniaoOrderPushAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.fengniao.order.push"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleFengniaoOrderPushRequest) GetApiParams() url.Values {
+func (r AlibabaEleFengniaoOrderPushAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoOrderPushRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 参数param
-func (r *AlibabaEleFengniaoOrderPushRequest) SetParam(_param *Param) error {
+func (r *AlibabaEleFengniaoOrderPushAPIRequest) SetParam(_param *Param) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaEleFengniaoOrderPushRequest) GetParam() *Param {
+func (r AlibabaEleFengniaoOrderPushAPIRequest) GetParam() *Param {
     return r._param
 }

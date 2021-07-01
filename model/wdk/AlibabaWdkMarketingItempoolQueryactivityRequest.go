@@ -12,26 +12,26 @@ alibaba.wdk.marketing.itempool.queryactivity
 
 查找商品池活动
 */
-type AlibabaWdkMarketingItempoolQueryactivityRequest struct {
+type AlibabaWdkMarketingItempoolQueryactivityAPIRequest struct {
     model.Params
     // 查询商品池活动入参
     _param0   *CommonActivityParam
 }
 
-// 初始化AlibabaWdkMarketingItempoolQueryactivityRequest对象
-func NewAlibabaWdkMarketingItempoolQueryactivityRequest() *AlibabaWdkMarketingItempoolQueryactivityRequest{
-    return &AlibabaWdkMarketingItempoolQueryactivityRequest{
+// 初始化AlibabaWdkMarketingItempoolQueryactivityAPIRequest对象
+func NewAlibabaWdkMarketingItempoolQueryactivityRequest() *AlibabaWdkMarketingItempoolQueryactivityAPIRequest{
+    return &AlibabaWdkMarketingItempoolQueryactivityAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingItempoolQueryactivityRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingItempoolQueryactivityAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.itempool.queryactivity"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingItempoolQueryactivityRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingItempoolQueryactivityAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItempoolQueryactivityRequest) GetApiParams() url.Valu
 }
 // Param0 Setter
 // 查询商品池活动入参
-func (r *AlibabaWdkMarketingItempoolQueryactivityRequest) SetParam0(_param0 *CommonActivityParam) error {
+func (r *AlibabaWdkMarketingItempoolQueryactivityAPIRequest) SetParam0(_param0 *CommonActivityParam) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaWdkMarketingItempoolQueryactivityRequest) GetParam0() *CommonActivityParam {
+func (r AlibabaWdkMarketingItempoolQueryactivityAPIRequest) GetParam0() *CommonActivityParam {
     return r._param0
 }

@@ -12,7 +12,7 @@ alibaba.alihealth.drug.kyt.query.druginfo.from.billcode
 
 根据单据编号查询单据明细
 */
-type AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest struct {
+type AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest struct {
     model.Params
     // 单据号
     _billCode   string
@@ -20,20 +20,20 @@ type AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest struct {
     _refEntId   string
 }
 
-// 初始化AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest对象
-func NewAlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest() *AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest{
-    return &AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest{
+// 初始化AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest对象
+func NewAlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest() *AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest{
+    return &AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.kyt.query.druginfo.from.billcode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest) GetApiParams() 
 }
 // BillCode Setter
 // 单据号
-func (r *AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest) SetBillCode(_billCode string) error {
+func (r *AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) SetBillCode(_billCode string) error {
     r._billCode = _billCode
     r.Set("bill_code", _billCode)
     return nil
 }
 
 // BillCode Getter
-func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest) GetBillCode() string {
+func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) GetBillCode() string {
     return r._billCode
 }
 // RefEntId Setter
 // 企业id
-func (r *AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) GetRefEntId() string {
     return r._refEntId
 }

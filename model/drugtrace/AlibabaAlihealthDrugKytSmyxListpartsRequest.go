@@ -12,7 +12,7 @@ alibaba.alihealth.drug.kyt.smyx.listparts
 
 查询往来单位列表
 */
-type AlibabaAlihealthDrugKytSmyxListpartsRequest struct {
+type AlibabaAlihealthDrugKytSmyxListpartsAPIRequest struct {
     model.Params
     // 企业唯一标识
     _refEntId   string
@@ -30,20 +30,20 @@ type AlibabaAlihealthDrugKytSmyxListpartsRequest struct {
     _endDate   string
 }
 
-// 初始化AlibabaAlihealthDrugKytSmyxListpartsRequest对象
-func NewAlibabaAlihealthDrugKytSmyxListpartsRequest() *AlibabaAlihealthDrugKytSmyxListpartsRequest{
-    return &AlibabaAlihealthDrugKytSmyxListpartsRequest{
+// 初始化AlibabaAlihealthDrugKytSmyxListpartsAPIRequest对象
+func NewAlibabaAlihealthDrugKytSmyxListpartsRequest() *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest{
+    return &AlibabaAlihealthDrugKytSmyxListpartsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytSmyxListpartsRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.kyt.smyx.listparts"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytSmyxListpartsRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,85 +52,85 @@ func (r AlibabaAlihealthDrugKytSmyxListpartsRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 企业唯一标识
-func (r *AlibabaAlihealthDrugKytSmyxListpartsRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugKytSmyxListpartsRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) GetRefEntId() string {
     return r._refEntId
 }
 // EntName Setter
 // 企业名称
-func (r *AlibabaAlihealthDrugKytSmyxListpartsRequest) SetEntName(_entName string) error {
+func (r *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) SetEntName(_entName string) error {
     r._entName = _entName
     r.Set("ent_name", _entName)
     return nil
 }
 
 // EntName Getter
-func (r AlibabaAlihealthDrugKytSmyxListpartsRequest) GetEntName() string {
+func (r AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) GetEntName() string {
     return r._entName
 }
 // RefPartnerId Setter
 // 企业自定义编号
-func (r *AlibabaAlihealthDrugKytSmyxListpartsRequest) SetRefPartnerId(_refPartnerId string) error {
+func (r *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) SetRefPartnerId(_refPartnerId string) error {
     r._refPartnerId = _refPartnerId
     r.Set("ref_partner_id", _refPartnerId)
     return nil
 }
 
 // RefPartnerId Getter
-func (r AlibabaAlihealthDrugKytSmyxListpartsRequest) GetRefPartnerId() string {
+func (r AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) GetRefPartnerId() string {
     return r._refPartnerId
 }
 // PageSize Setter
 // 页大小
-func (r *AlibabaAlihealthDrugKytSmyxListpartsRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r AlibabaAlihealthDrugKytSmyxListpartsRequest) GetPageSize() int64 {
+func (r AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // Page Setter
 // 页码
-func (r *AlibabaAlihealthDrugKytSmyxListpartsRequest) SetPage(_page int64) error {
+func (r *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) SetPage(_page int64) error {
     r._page = _page
     r.Set("page", _page)
     return nil
 }
 
 // Page Getter
-func (r AlibabaAlihealthDrugKytSmyxListpartsRequest) GetPage() int64 {
+func (r AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) GetPage() int64 {
     return r._page
 }
 // BeginDate Setter
 // 开始时间
-func (r *AlibabaAlihealthDrugKytSmyxListpartsRequest) SetBeginDate(_beginDate string) error {
+func (r *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) SetBeginDate(_beginDate string) error {
     r._beginDate = _beginDate
     r.Set("begin_date", _beginDate)
     return nil
 }
 
 // BeginDate Getter
-func (r AlibabaAlihealthDrugKytSmyxListpartsRequest) GetBeginDate() string {
+func (r AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) GetBeginDate() string {
     return r._beginDate
 }
 // EndDate Setter
 // 结束时间
-func (r *AlibabaAlihealthDrugKytSmyxListpartsRequest) SetEndDate(_endDate string) error {
+func (r *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) SetEndDate(_endDate string) error {
     r._endDate = _endDate
     r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
-func (r AlibabaAlihealthDrugKytSmyxListpartsRequest) GetEndDate() string {
+func (r AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) GetEndDate() string {
     return r._endDate
 }

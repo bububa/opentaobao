@@ -11,7 +11,7 @@ yunos.tvpubadmin.content.advert.queryschedule
 
 广告牌照管控查询
 */
-func YunosTvpubadminContentAdvertQueryschedule(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentAdvertQueryscheduleRequest, session string) (*tvupadmin.YunosTvpubadminContentAdvertQueryscheduleAPIResponse, error) {
+func YunosTvpubadminContentAdvertQueryschedule(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentAdvertQueryscheduleAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentAdvertQueryscheduleAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminContentAdvertQueryscheduleAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

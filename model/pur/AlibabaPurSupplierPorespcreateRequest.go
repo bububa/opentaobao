@@ -12,26 +12,26 @@ alibaba.pur.supplier.porespcreate
 
 PO反馈接口
 */
-type AlibabaPurSupplierPorespcreateRequest struct {
+type AlibabaPurSupplierPorespcreateAPIRequest struct {
     model.Params
     // PO反馈信息
     _poResponse   []SupplierPoResponseDO
 }
 
-// 初始化AlibabaPurSupplierPorespcreateRequest对象
-func NewAlibabaPurSupplierPorespcreateRequest() *AlibabaPurSupplierPorespcreateRequest{
-    return &AlibabaPurSupplierPorespcreateRequest{
+// 初始化AlibabaPurSupplierPorespcreateAPIRequest对象
+func NewAlibabaPurSupplierPorespcreateRequest() *AlibabaPurSupplierPorespcreateAPIRequest{
+    return &AlibabaPurSupplierPorespcreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaPurSupplierPorespcreateRequest) GetApiMethodName() string {
+func (r AlibabaPurSupplierPorespcreateAPIRequest) GetApiMethodName() string {
     return "alibaba.pur.supplier.porespcreate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaPurSupplierPorespcreateRequest) GetApiParams() url.Values {
+func (r AlibabaPurSupplierPorespcreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaPurSupplierPorespcreateRequest) GetApiParams() url.Values {
 }
 // PoResponse Setter
 // PO反馈信息
-func (r *AlibabaPurSupplierPorespcreateRequest) SetPoResponse(_poResponse []SupplierPoResponseDO) error {
+func (r *AlibabaPurSupplierPorespcreateAPIRequest) SetPoResponse(_poResponse []SupplierPoResponseDO) error {
     r._poResponse = _poResponse
     r.Set("po_response", _poResponse)
     return nil
 }
 
 // PoResponse Getter
-func (r AlibabaPurSupplierPorespcreateRequest) GetPoResponse() []SupplierPoResponseDO {
+func (r AlibabaPurSupplierPorespcreateAPIRequest) GetPoResponse() []SupplierPoResponseDO {
     return r._poResponse
 }

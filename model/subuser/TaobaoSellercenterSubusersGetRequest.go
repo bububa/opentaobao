@@ -12,26 +12,26 @@ taobao.sellercenter.subusers.get
 
 根据主账号nick查询该账号下所有的子账号列表，只能查询属于自己的账号信息 (主账号以及所属子账号)
 */
-type TaobaoSellercenterSubusersGetRequest struct {
+type TaobaoSellercenterSubusersGetAPIRequest struct {
     model.Params
     // 表示卖家昵称
     _nick   string
 }
 
-// 初始化TaobaoSellercenterSubusersGetRequest对象
-func NewTaobaoSellercenterSubusersGetRequest() *TaobaoSellercenterSubusersGetRequest{
-    return &TaobaoSellercenterSubusersGetRequest{
+// 初始化TaobaoSellercenterSubusersGetAPIRequest对象
+func NewTaobaoSellercenterSubusersGetRequest() *TaobaoSellercenterSubusersGetAPIRequest{
+    return &TaobaoSellercenterSubusersGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSellercenterSubusersGetRequest) GetApiMethodName() string {
+func (r TaobaoSellercenterSubusersGetAPIRequest) GetApiMethodName() string {
     return "taobao.sellercenter.subusers.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSellercenterSubusersGetRequest) GetApiParams() url.Values {
+func (r TaobaoSellercenterSubusersGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSellercenterSubusersGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 表示卖家昵称
-func (r *TaobaoSellercenterSubusersGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSellercenterSubusersGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSellercenterSubusersGetRequest) GetNick() string {
+func (r TaobaoSellercenterSubusersGetAPIRequest) GetNick() string {
     return r._nick
 }

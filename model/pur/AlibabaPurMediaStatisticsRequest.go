@@ -12,26 +12,26 @@ alibaba.pur.media.statistics
 
 清博同步新媒体的统计信息给到采购平台
 */
-type AlibabaPurMediaStatisticsRequest struct {
+type AlibabaPurMediaStatisticsAPIRequest struct {
     model.Params
     // 新媒体统计对象
     _mediaStatisticsDTO   []MediaStatisticsDTO
 }
 
-// 初始化AlibabaPurMediaStatisticsRequest对象
-func NewAlibabaPurMediaStatisticsRequest() *AlibabaPurMediaStatisticsRequest{
-    return &AlibabaPurMediaStatisticsRequest{
+// 初始化AlibabaPurMediaStatisticsAPIRequest对象
+func NewAlibabaPurMediaStatisticsRequest() *AlibabaPurMediaStatisticsAPIRequest{
+    return &AlibabaPurMediaStatisticsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaPurMediaStatisticsRequest) GetApiMethodName() string {
+func (r AlibabaPurMediaStatisticsAPIRequest) GetApiMethodName() string {
     return "alibaba.pur.media.statistics"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaPurMediaStatisticsRequest) GetApiParams() url.Values {
+func (r AlibabaPurMediaStatisticsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaPurMediaStatisticsRequest) GetApiParams() url.Values {
 }
 // MediaStatisticsDTO Setter
 // 新媒体统计对象
-func (r *AlibabaPurMediaStatisticsRequest) SetMediaStatisticsDTO(_mediaStatisticsDTO []MediaStatisticsDTO) error {
+func (r *AlibabaPurMediaStatisticsAPIRequest) SetMediaStatisticsDTO(_mediaStatisticsDTO []MediaStatisticsDTO) error {
     r._mediaStatisticsDTO = _mediaStatisticsDTO
     r.Set("media_statistics_d_t_o", _mediaStatisticsDTO)
     return nil
 }
 
 // MediaStatisticsDTO Getter
-func (r AlibabaPurMediaStatisticsRequest) GetMediaStatisticsDTO() []MediaStatisticsDTO {
+func (r AlibabaPurMediaStatisticsAPIRequest) GetMediaStatisticsDTO() []MediaStatisticsDTO {
     return r._mediaStatisticsDTO
 }

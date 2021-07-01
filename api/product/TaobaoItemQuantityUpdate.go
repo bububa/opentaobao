@@ -11,7 +11,7 @@ taobao.item.quantity.update
 
 提供按照全量或增量形式修改宝贝/SKU库存的功能
 */
-func TaobaoItemQuantityUpdate(clt *core.SDKClient, req *product.TaobaoItemQuantityUpdateRequest, session string) (*product.TaobaoItemQuantityUpdateAPIResponse, error) {
+func TaobaoItemQuantityUpdate(clt *core.SDKClient, req *product.TaobaoItemQuantityUpdateAPIRequest, session string) (*product.TaobaoItemQuantityUpdateAPIResponse, error) {
     var resp product.TaobaoItemQuantityUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

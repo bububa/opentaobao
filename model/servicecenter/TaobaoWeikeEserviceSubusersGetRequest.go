@@ -12,26 +12,26 @@ taobao.weike.eservice.subusers.get
 
 获取客服外包订单分配的商家子账号列表，以及授权状态
 */
-type TaobaoWeikeEserviceSubusersGetRequest struct {
+type TaobaoWeikeEserviceSubusersGetAPIRequest struct {
     model.Params
     // 订单ID
     _orderId   int64
 }
 
-// 初始化TaobaoWeikeEserviceSubusersGetRequest对象
-func NewTaobaoWeikeEserviceSubusersGetRequest() *TaobaoWeikeEserviceSubusersGetRequest{
-    return &TaobaoWeikeEserviceSubusersGetRequest{
+// 初始化TaobaoWeikeEserviceSubusersGetAPIRequest对象
+func NewTaobaoWeikeEserviceSubusersGetRequest() *TaobaoWeikeEserviceSubusersGetAPIRequest{
+    return &TaobaoWeikeEserviceSubusersGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWeikeEserviceSubusersGetRequest) GetApiMethodName() string {
+func (r TaobaoWeikeEserviceSubusersGetAPIRequest) GetApiMethodName() string {
     return "taobao.weike.eservice.subusers.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWeikeEserviceSubusersGetRequest) GetApiParams() url.Values {
+func (r TaobaoWeikeEserviceSubusersGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWeikeEserviceSubusersGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单ID
-func (r *TaobaoWeikeEserviceSubusersGetRequest) SetOrderId(_orderId int64) error {
+func (r *TaobaoWeikeEserviceSubusersGetAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r TaobaoWeikeEserviceSubusersGetRequest) GetOrderId() int64 {
+func (r TaobaoWeikeEserviceSubusersGetAPIRequest) GetOrderId() int64 {
     return r._orderId
 }

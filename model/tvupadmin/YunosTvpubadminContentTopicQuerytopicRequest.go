@@ -12,26 +12,26 @@ yunos.tvpubadmin.content.topic.querytopic
 
 迎客松专题查询
 */
-type YunosTvpubadminContentTopicQuerytopicRequest struct {
+type YunosTvpubadminContentTopicQuerytopicAPIRequest struct {
     model.Params
     // TopicAuditQueryBO
     _topicAuditQuery   string
 }
 
-// 初始化YunosTvpubadminContentTopicQuerytopicRequest对象
-func NewYunosTvpubadminContentTopicQuerytopicRequest() *YunosTvpubadminContentTopicQuerytopicRequest{
-    return &YunosTvpubadminContentTopicQuerytopicRequest{
+// 初始化YunosTvpubadminContentTopicQuerytopicAPIRequest对象
+func NewYunosTvpubadminContentTopicQuerytopicRequest() *YunosTvpubadminContentTopicQuerytopicAPIRequest{
+    return &YunosTvpubadminContentTopicQuerytopicAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentTopicQuerytopicRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.topic.querytopic"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentTopicQuerytopicRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentTopicQuerytopicRequest) GetApiParams() url.Values 
 }
 // TopicAuditQuery Setter
 // TopicAuditQueryBO
-func (r *YunosTvpubadminContentTopicQuerytopicRequest) SetTopicAuditQuery(_topicAuditQuery string) error {
+func (r *YunosTvpubadminContentTopicQuerytopicAPIRequest) SetTopicAuditQuery(_topicAuditQuery string) error {
     r._topicAuditQuery = _topicAuditQuery
     r.Set("topic_audit_query", _topicAuditQuery)
     return nil
 }
 
 // TopicAuditQuery Getter
-func (r YunosTvpubadminContentTopicQuerytopicRequest) GetTopicAuditQuery() string {
+func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetTopicAuditQuery() string {
     return r._topicAuditQuery
 }

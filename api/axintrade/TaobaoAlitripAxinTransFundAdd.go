@@ -11,7 +11,7 @@ taobao.alitrip.axin.trans.fund.add
 
 创建资金单
 */
-func TaobaoAlitripAxinTransFundAdd(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransFundAddRequest, session string) (*axintrade.TaobaoAlitripAxinTransFundAddAPIResponse, error) {
+func TaobaoAlitripAxinTransFundAdd(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransFundAddAPIRequest, session string) (*axintrade.TaobaoAlitripAxinTransFundAddAPIResponse, error) {
     var resp axintrade.TaobaoAlitripAxinTransFundAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

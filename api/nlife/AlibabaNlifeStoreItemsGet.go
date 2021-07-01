@@ -11,7 +11,7 @@ alibaba.nlife.store.items.get
 
 利用该接口可以获取到零售+商品服务中符合条件的商品列表，包括在售的、已下架的或者是所有状态的商品。
 */
-func AlibabaNlifeStoreItemsGet(clt *core.SDKClient, req *nlife.AlibabaNlifeStoreItemsGetRequest, session string) (*nlife.AlibabaNlifeStoreItemsGetAPIResponse, error) {
+func AlibabaNlifeStoreItemsGet(clt *core.SDKClient, req *nlife.AlibabaNlifeStoreItemsGetAPIRequest, session string) (*nlife.AlibabaNlifeStoreItemsGetAPIResponse, error) {
     var resp nlife.AlibabaNlifeStoreItemsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

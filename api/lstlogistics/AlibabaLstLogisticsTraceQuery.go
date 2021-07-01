@@ -11,7 +11,7 @@ alibaba.lst.logistics.trace.query
 
 查询LP单物流追踪信息
 */
-func AlibabaLstLogisticsTraceQuery(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsTraceQueryRequest, session string) (*lstlogistics.AlibabaLstLogisticsTraceQueryAPIResponse, error) {
+func AlibabaLstLogisticsTraceQuery(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsTraceQueryAPIRequest, session string) (*lstlogistics.AlibabaLstLogisticsTraceQueryAPIResponse, error) {
     var resp lstlogistics.AlibabaLstLogisticsTraceQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

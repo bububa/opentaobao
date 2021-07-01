@@ -12,7 +12,7 @@ alibaba.alihealth.drugtrace.top.yljg.listupout.detail
 
 查询上游出库单明细(带追溯码信息)
 */
-type AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest struct {
+type AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest struct {
     model.Params
     // 企业id
     _refEntId   string
@@ -24,20 +24,20 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest struct {
     _toRefUserId   string
 }
 
-// 初始化AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest对象
-func NewAlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest() *AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest{
-    return &AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest{
+// 初始化AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest对象
+func NewAlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest() *AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest{
+    return &AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drugtrace.top.yljg.listupout.detail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) GetApiParams() u
 }
 // RefEntId Setter
 // 企业id
-func (r *AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) GetRefEntId() string {
     return r._refEntId
 }
 // BillCode Setter
 // 单据编码
-func (r *AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) SetBillCode(_billCode string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) SetBillCode(_billCode string) error {
     r._billCode = _billCode
     r.Set("bill_code", _billCode)
     return nil
 }
 
 // BillCode Getter
-func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) GetBillCode() string {
+func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) GetBillCode() string {
     return r._billCode
 }
 // FromRefUserId Setter
 // 发货企业renEntId
-func (r *AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) SetFromRefUserId(_fromRefUserId string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) SetFromRefUserId(_fromRefUserId string) error {
     r._fromRefUserId = _fromRefUserId
     r.Set("from_ref_user_id", _fromRefUserId)
     return nil
 }
 
 // FromRefUserId Getter
-func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) GetFromRefUserId() string {
+func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) GetFromRefUserId() string {
     return r._fromRefUserId
 }
 // ToRefUserId Setter
 // 收货企业refEntId
-func (r *AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) SetToRefUserId(_toRefUserId string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) SetToRefUserId(_toRefUserId string) error {
     r._toRefUserId = _toRefUserId
     r.Set("to_ref_user_id", _toRefUserId)
     return nil
 }
 
 // ToRefUserId Getter
-func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest) GetToRefUserId() string {
+func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) GetToRefUserId() string {
     return r._toRefUserId
 }

@@ -12,26 +12,26 @@ youku.ott.pay.order.queryorderbycp
 
 给商户服务端查询订单状态
 */
-type YoukuOttPayOrderQueryorderbycpRequest struct {
+type YoukuOttPayOrderQueryorderbycpAPIRequest struct {
     model.Params
     // cp订单号
     _cpOrderNo   string
 }
 
-// 初始化YoukuOttPayOrderQueryorderbycpRequest对象
-func NewYoukuOttPayOrderQueryorderbycpRequest() *YoukuOttPayOrderQueryorderbycpRequest{
-    return &YoukuOttPayOrderQueryorderbycpRequest{
+// 初始化YoukuOttPayOrderQueryorderbycpAPIRequest对象
+func NewYoukuOttPayOrderQueryorderbycpRequest() *YoukuOttPayOrderQueryorderbycpAPIRequest{
+    return &YoukuOttPayOrderQueryorderbycpAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YoukuOttPayOrderQueryorderbycpRequest) GetApiMethodName() string {
+func (r YoukuOttPayOrderQueryorderbycpAPIRequest) GetApiMethodName() string {
     return "youku.ott.pay.order.queryorderbycp"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YoukuOttPayOrderQueryorderbycpRequest) GetApiParams() url.Values {
+func (r YoukuOttPayOrderQueryorderbycpAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YoukuOttPayOrderQueryorderbycpRequest) GetApiParams() url.Values {
 }
 // CpOrderNo Setter
 // cp订单号
-func (r *YoukuOttPayOrderQueryorderbycpRequest) SetCpOrderNo(_cpOrderNo string) error {
+func (r *YoukuOttPayOrderQueryorderbycpAPIRequest) SetCpOrderNo(_cpOrderNo string) error {
     r._cpOrderNo = _cpOrderNo
     r.Set("cp_order_no", _cpOrderNo)
     return nil
 }
 
 // CpOrderNo Getter
-func (r YoukuOttPayOrderQueryorderbycpRequest) GetCpOrderNo() string {
+func (r YoukuOttPayOrderQueryorderbycpAPIRequest) GetCpOrderNo() string {
     return r._cpOrderNo
 }

@@ -12,26 +12,26 @@ alibaba.lst.ic.stock.items.update
 
 零售通经销商商品库存设置
 */
-type AlibabaLstIcStockItemsUpdateRequest struct {
+type AlibabaLstIcStockItemsUpdateAPIRequest struct {
     model.Params
     // 零售通经销商商品库存
     _query   *LstItemStockParam
 }
 
-// 初始化AlibabaLstIcStockItemsUpdateRequest对象
-func NewAlibabaLstIcStockItemsUpdateRequest() *AlibabaLstIcStockItemsUpdateRequest{
-    return &AlibabaLstIcStockItemsUpdateRequest{
+// 初始化AlibabaLstIcStockItemsUpdateAPIRequest对象
+func NewAlibabaLstIcStockItemsUpdateRequest() *AlibabaLstIcStockItemsUpdateAPIRequest{
+    return &AlibabaLstIcStockItemsUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstIcStockItemsUpdateRequest) GetApiMethodName() string {
+func (r AlibabaLstIcStockItemsUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.ic.stock.items.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstIcStockItemsUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaLstIcStockItemsUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstIcStockItemsUpdateRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 零售通经销商商品库存
-func (r *AlibabaLstIcStockItemsUpdateRequest) SetQuery(_query *LstItemStockParam) error {
+func (r *AlibabaLstIcStockItemsUpdateAPIRequest) SetQuery(_query *LstItemStockParam) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r AlibabaLstIcStockItemsUpdateRequest) GetQuery() *LstItemStockParam {
+func (r AlibabaLstIcStockItemsUpdateAPIRequest) GetQuery() *LstItemStockParam {
     return r._query
 }

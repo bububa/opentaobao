@@ -11,7 +11,7 @@ taobao.koubei.tribe.open.verify.code.apply
 
 口碑综合体通过手机号获取验证码对外开放接口
 */
-func TaobaoKoubeiTribeOpenVerifyCodeApply(clt *core.SDKClient, req *user.TaobaoKoubeiTribeOpenVerifyCodeApplyRequest, session string) (*user.TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse, error) {
+func TaobaoKoubeiTribeOpenVerifyCodeApply(clt *core.SDKClient, req *user.TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest, session string) (*user.TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse, error) {
     var resp user.TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

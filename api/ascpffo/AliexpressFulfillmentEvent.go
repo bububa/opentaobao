@@ -11,7 +11,7 @@ aliexpress.fulfillment.event
 
 AE用 履约底层声明发货能力
 */
-func AliexpressFulfillmentEvent(clt *core.SDKClient, req *ascpffo.AliexpressFulfillmentEventRequest, session string) (*ascpffo.AliexpressFulfillmentEventAPIResponse, error) {
+func AliexpressFulfillmentEvent(clt *core.SDKClient, req *ascpffo.AliexpressFulfillmentEventAPIRequest, session string) (*ascpffo.AliexpressFulfillmentEventAPIResponse, error) {
     var resp ascpffo.AliexpressFulfillmentEventAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

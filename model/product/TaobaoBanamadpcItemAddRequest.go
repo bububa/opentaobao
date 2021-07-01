@@ -12,7 +12,7 @@ taobao.banamadpc.item.add
 
 巴拿马供应商通过此接口新发商品
 */
-type TaobaoBanamadpcItemAddRequest struct {
+type TaobaoBanamadpcItemAddAPIRequest struct {
     model.Params
     // 类目id
     _catId   int64
@@ -20,20 +20,20 @@ type TaobaoBanamadpcItemAddRequest struct {
     _xml   string
 }
 
-// 初始化TaobaoBanamadpcItemAddRequest对象
-func NewTaobaoBanamadpcItemAddRequest() *TaobaoBanamadpcItemAddRequest{
-    return &TaobaoBanamadpcItemAddRequest{
+// 初始化TaobaoBanamadpcItemAddAPIRequest对象
+func NewTaobaoBanamadpcItemAddRequest() *TaobaoBanamadpcItemAddAPIRequest{
+    return &TaobaoBanamadpcItemAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBanamadpcItemAddRequest) GetApiMethodName() string {
+func (r TaobaoBanamadpcItemAddAPIRequest) GetApiMethodName() string {
     return "taobao.banamadpc.item.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBanamadpcItemAddRequest) GetApiParams() url.Values {
+func (r TaobaoBanamadpcItemAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoBanamadpcItemAddRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 类目id
-func (r *TaobaoBanamadpcItemAddRequest) SetCatId(_catId int64) error {
+func (r *TaobaoBanamadpcItemAddAPIRequest) SetCatId(_catId int64) error {
     r._catId = _catId
     r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
-func (r TaobaoBanamadpcItemAddRequest) GetCatId() int64 {
+func (r TaobaoBanamadpcItemAddAPIRequest) GetCatId() int64 {
     return r._catId
 }
 // Xml Setter
 // 商品的schema xml
-func (r *TaobaoBanamadpcItemAddRequest) SetXml(_xml string) error {
+func (r *TaobaoBanamadpcItemAddAPIRequest) SetXml(_xml string) error {
     r._xml = _xml
     r.Set("xml", _xml)
     return nil
 }
 
 // Xml Getter
-func (r TaobaoBanamadpcItemAddRequest) GetXml() string {
+func (r TaobaoBanamadpcItemAddAPIRequest) GetXml() string {
     return r._xml
 }

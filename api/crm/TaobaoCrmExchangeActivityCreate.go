@@ -11,7 +11,7 @@ taobao.crm.exchange.activity.create
 
 创建针对积分兑换类型的活动
 */
-func TaobaoCrmExchangeActivityCreate(clt *core.SDKClient, req *crm.TaobaoCrmExchangeActivityCreateRequest, session string) (*crm.TaobaoCrmExchangeActivityCreateAPIResponse, error) {
+func TaobaoCrmExchangeActivityCreate(clt *core.SDKClient, req *crm.TaobaoCrmExchangeActivityCreateAPIRequest, session string) (*crm.TaobaoCrmExchangeActivityCreateAPIResponse, error) {
     var resp crm.TaobaoCrmExchangeActivityCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

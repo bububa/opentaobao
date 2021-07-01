@@ -11,7 +11,7 @@ tmall.trend.style.produceinfo.upload
 
 款式生产信息同步至平台
 */
-func TmallTrendStyleProduceinfoUpload(clt *core.SDKClient, req *tmalltrend.TmallTrendStyleProduceinfoUploadRequest, session string) (*tmalltrend.TmallTrendStyleProduceinfoUploadAPIResponse, error) {
+func TmallTrendStyleProduceinfoUpload(clt *core.SDKClient, req *tmalltrend.TmallTrendStyleProduceinfoUploadAPIRequest, session string) (*tmalltrend.TmallTrendStyleProduceinfoUploadAPIResponse, error) {
     var resp tmalltrend.TmallTrendStyleProduceinfoUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

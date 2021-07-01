@@ -12,7 +12,7 @@ import (
 
 {{ .Desc }}
 */
-type {{ .Name }}Request struct {
+type {{ .Name }}APIRequest struct {
     model.Params
 {{- range $v := .RequestParams }}
     // {{ $v.Desc }}
@@ -20,20 +20,20 @@ type {{ .Name }}Request struct {
 {{- end }}
 }
 
-// 初始化{{ .Name }}Request对象
-func New{{ .Name }}Request() *{{ .Name }}Request{
-    return &{{ .Name }}Request{
+// 初始化{{ .Name }}APIRequest对象
+func New{{ .Name }}APIRequest() *{{ .Name }}APIRequest{
+    return &{{ .Name }}APIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r {{ .Name }}Request) GetApiMethodName() string {
+func (r {{ .Name }}APIRequest) GetApiMethodName() string {
     return "{{ .ApiName }}"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r {{ .Name }}Request) GetApiParams() url.Values {
+func (r {{ .Name }}APIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,14 +44,14 @@ func (r {{ .Name }}Request) GetApiParams() url.Values {
 {{- range $v := .RequestParams }}
 // {{ $v.Name }} Setter
 // {{ $v.Desc }}
-func (r *{{ $.Name }}Request) Set{{ $v.Name }}(_{{ $v.Label }} {{ $v.Type }}) error {
+func (r *{{ $.Name }}APIRequest) Set{{ $v.Name }}(_{{ $v.Label }} {{ $v.Type }}) error {
     r._{{ $v.Label }} = _{{ $v.Label }}
     r.Set("{{ $v.ParamKey }}", _{{ $v.Label }})
     return nil
 }
 
 // {{ $v.Name }} Getter
-func (r {{ $.Name }}Request) Get{{ $v.Name }}() {{ $v.Type }} {
+func (r {{ $.Name }}APIRequest) Get{{ $v.Name }}() {{ $v.Type }} {
     return r._{{ $v.Label }}
 }
 {{- end }}

@@ -13,7 +13,7 @@ alibaba.campus.space.type.getpageresult
 HSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService
 HSF方法名称：getPageResult
 */
-func AlibabaCampusSpaceTypeGetpageresult(clt *core.SDKClient, req *campus.AlibabaCampusSpaceTypeGetpageresultRequest, session string) (*campus.AlibabaCampusSpaceTypeGetpageresultAPIResponse, error) {
+func AlibabaCampusSpaceTypeGetpageresult(clt *core.SDKClient, req *campus.AlibabaCampusSpaceTypeGetpageresultAPIRequest, session string) (*campus.AlibabaCampusSpaceTypeGetpageresultAPIResponse, error) {
     var resp campus.AlibabaCampusSpaceTypeGetpageresultAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

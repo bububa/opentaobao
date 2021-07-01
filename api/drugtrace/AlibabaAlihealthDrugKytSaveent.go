@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.saveent
 
 新增往来单位企业记录
 */
-func AlibabaAlihealthDrugKytSaveent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytSaveentRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytSaveentAPIResponse, error) {
+func AlibabaAlihealthDrugKytSaveent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytSaveentAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytSaveentAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytSaveentAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

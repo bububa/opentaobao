@@ -11,7 +11,7 @@ alibaba.icbu.product.batch.update.display
 
 给国际站的三方服务商提供批量上下架接口
 */
-func AlibabaIcbuProductBatchUpdateDisplay(clt *core.SDKClient, req *icbu.AlibabaIcbuProductBatchUpdateDisplayRequest, session string) (*icbu.AlibabaIcbuProductBatchUpdateDisplayAPIResponse, error) {
+func AlibabaIcbuProductBatchUpdateDisplay(clt *core.SDKClient, req *icbu.AlibabaIcbuProductBatchUpdateDisplayAPIRequest, session string) (*icbu.AlibabaIcbuProductBatchUpdateDisplayAPIResponse, error) {
     var resp icbu.AlibabaIcbuProductBatchUpdateDisplayAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

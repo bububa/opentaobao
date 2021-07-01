@@ -11,7 +11,7 @@ taobao.alitrip.travel.item.sku.override
 
 旅行度假新商品日历价格库存信息修改接口 第三版。提供商家通过TOP API方式修改商品sku信息。
 */
-func TaobaoAlitripTravelItemSkuOverride(clt *core.SDKClient, req *travel.TaobaoAlitripTravelItemSkuOverrideRequest, session string) (*travel.TaobaoAlitripTravelItemSkuOverrideAPIResponse, error) {
+func TaobaoAlitripTravelItemSkuOverride(clt *core.SDKClient, req *travel.TaobaoAlitripTravelItemSkuOverrideAPIRequest, session string) (*travel.TaobaoAlitripTravelItemSkuOverrideAPIResponse, error) {
     var resp travel.TaobaoAlitripTravelItemSkuOverrideAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

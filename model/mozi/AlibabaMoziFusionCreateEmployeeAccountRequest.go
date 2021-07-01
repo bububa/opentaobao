@@ -12,26 +12,26 @@ alibaba.mozi.fusion.create.employee.account
 
 创建MOZI自建人员和账号
 */
-type AlibabaMoziFusionCreateEmployeeAccountRequest struct {
+type AlibabaMoziFusionCreateEmployeeAccountAPIRequest struct {
     model.Params
     // 入参
     _employeeAccount   *CreateTenantEmployeeAndAccountRequest
 }
 
-// 初始化AlibabaMoziFusionCreateEmployeeAccountRequest对象
-func NewAlibabaMoziFusionCreateEmployeeAccountRequest() *AlibabaMoziFusionCreateEmployeeAccountRequest{
-    return &AlibabaMoziFusionCreateEmployeeAccountRequest{
+// 初始化AlibabaMoziFusionCreateEmployeeAccountAPIRequest对象
+func NewAlibabaMoziFusionCreateEmployeeAccountRequest() *AlibabaMoziFusionCreateEmployeeAccountAPIRequest{
+    return &AlibabaMoziFusionCreateEmployeeAccountAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziFusionCreateEmployeeAccountRequest) GetApiMethodName() string {
+func (r AlibabaMoziFusionCreateEmployeeAccountAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.fusion.create.employee.account"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziFusionCreateEmployeeAccountRequest) GetApiParams() url.Values {
+func (r AlibabaMoziFusionCreateEmployeeAccountAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziFusionCreateEmployeeAccountRequest) GetApiParams() url.Values
 }
 // EmployeeAccount Setter
 // 入参
-func (r *AlibabaMoziFusionCreateEmployeeAccountRequest) SetEmployeeAccount(_employeeAccount *CreateTenantEmployeeAndAccountRequest) error {
+func (r *AlibabaMoziFusionCreateEmployeeAccountAPIRequest) SetEmployeeAccount(_employeeAccount *CreateTenantEmployeeAndAccountRequest) error {
     r._employeeAccount = _employeeAccount
     r.Set("employee_account", _employeeAccount)
     return nil
 }
 
 // EmployeeAccount Getter
-func (r AlibabaMoziFusionCreateEmployeeAccountRequest) GetEmployeeAccount() *CreateTenantEmployeeAndAccountRequest {
+func (r AlibabaMoziFusionCreateEmployeeAccountAPIRequest) GetEmployeeAccount() *CreateTenantEmployeeAndAccountRequest {
     return r._employeeAccount
 }

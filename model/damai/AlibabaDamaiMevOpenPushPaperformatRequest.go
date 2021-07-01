@@ -12,26 +12,26 @@ alibaba.damai.mev.open.push.paperformat
 
 pushPaperFormat
 */
-type AlibabaDamaiMevOpenPushPaperformatRequest struct {
+type AlibabaDamaiMevOpenPushPaperformatAPIRequest struct {
     model.Params
     // 入参pushPaperFormatParam
     _pushPaperFormatParam   *ThirdPaperFormatPushOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenPushPaperformatRequest对象
-func NewAlibabaDamaiMevOpenPushPaperformatRequest() *AlibabaDamaiMevOpenPushPaperformatRequest{
-    return &AlibabaDamaiMevOpenPushPaperformatRequest{
+// 初始化AlibabaDamaiMevOpenPushPaperformatAPIRequest对象
+func NewAlibabaDamaiMevOpenPushPaperformatRequest() *AlibabaDamaiMevOpenPushPaperformatAPIRequest{
+    return &AlibabaDamaiMevOpenPushPaperformatAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenPushPaperformatRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenPushPaperformatAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.push.paperformat"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenPushPaperformatRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenPushPaperformatAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushPaperformatRequest) GetApiParams() url.Values {
 }
 // PushPaperFormatParam Setter
 // 入参pushPaperFormatParam
-func (r *AlibabaDamaiMevOpenPushPaperformatRequest) SetPushPaperFormatParam(_pushPaperFormatParam *ThirdPaperFormatPushOpenParam) error {
+func (r *AlibabaDamaiMevOpenPushPaperformatAPIRequest) SetPushPaperFormatParam(_pushPaperFormatParam *ThirdPaperFormatPushOpenParam) error {
     r._pushPaperFormatParam = _pushPaperFormatParam
     r.Set("push_paper_format_param", _pushPaperFormatParam)
     return nil
 }
 
 // PushPaperFormatParam Getter
-func (r AlibabaDamaiMevOpenPushPaperformatRequest) GetPushPaperFormatParam() *ThirdPaperFormatPushOpenParam {
+func (r AlibabaDamaiMevOpenPushPaperformatAPIRequest) GetPushPaperFormatParam() *ThirdPaperFormatPushOpenParam {
     return r._pushPaperFormatParam
 }

@@ -12,26 +12,26 @@ taobao.media.video.list
 
 用于获取授权商家的视频列表
 */
-type TaobaoMediaVideoListRequest struct {
+type TaobaoMediaVideoListAPIRequest struct {
     model.Params
     // 搜索条件
     _searchCondition   *VideoSearchCondition2
 }
 
-// 初始化TaobaoMediaVideoListRequest对象
-func NewTaobaoMediaVideoListRequest() *TaobaoMediaVideoListRequest{
-    return &TaobaoMediaVideoListRequest{
+// 初始化TaobaoMediaVideoListAPIRequest对象
+func NewTaobaoMediaVideoListRequest() *TaobaoMediaVideoListAPIRequest{
+    return &TaobaoMediaVideoListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMediaVideoListRequest) GetApiMethodName() string {
+func (r TaobaoMediaVideoListAPIRequest) GetApiMethodName() string {
     return "taobao.media.video.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMediaVideoListRequest) GetApiParams() url.Values {
+func (r TaobaoMediaVideoListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoMediaVideoListRequest) GetApiParams() url.Values {
 }
 // SearchCondition Setter
 // 搜索条件
-func (r *TaobaoMediaVideoListRequest) SetSearchCondition(_searchCondition *VideoSearchCondition2) error {
+func (r *TaobaoMediaVideoListAPIRequest) SetSearchCondition(_searchCondition *VideoSearchCondition2) error {
     r._searchCondition = _searchCondition
     r.Set("search_condition", _searchCondition)
     return nil
 }
 
 // SearchCondition Getter
-func (r TaobaoMediaVideoListRequest) GetSearchCondition() *VideoSearchCondition2 {
+func (r TaobaoMediaVideoListAPIRequest) GetSearchCondition() *VideoSearchCondition2 {
     return r._searchCondition
 }

@@ -12,7 +12,7 @@ alibaba.alihealth.drugcode.user.data
 
 西安杨森同步用户行为接口
 */
-type AlibabaAlihealthDrugcodeUserDataRequest struct {
+type AlibabaAlihealthDrugcodeUserDataAPIRequest struct {
     model.Params
     // 用户信息
     _list   []HaoxinqingDataDTO
@@ -20,20 +20,20 @@ type AlibabaAlihealthDrugcodeUserDataRequest struct {
     _refEntId   string
 }
 
-// 初始化AlibabaAlihealthDrugcodeUserDataRequest对象
-func NewAlibabaAlihealthDrugcodeUserDataRequest() *AlibabaAlihealthDrugcodeUserDataRequest{
-    return &AlibabaAlihealthDrugcodeUserDataRequest{
+// 初始化AlibabaAlihealthDrugcodeUserDataAPIRequest对象
+func NewAlibabaAlihealthDrugcodeUserDataRequest() *AlibabaAlihealthDrugcodeUserDataAPIRequest{
+    return &AlibabaAlihealthDrugcodeUserDataAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugcodeUserDataRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drugcode.user.data"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugcodeUserDataRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugcodeUserDataRequest) GetApiParams() url.Values {
 }
 // List Setter
 // 用户信息
-func (r *AlibabaAlihealthDrugcodeUserDataRequest) SetList(_list []HaoxinqingDataDTO) error {
+func (r *AlibabaAlihealthDrugcodeUserDataAPIRequest) SetList(_list []HaoxinqingDataDTO) error {
     r._list = _list
     r.Set("list", _list)
     return nil
 }
 
 // List Getter
-func (r AlibabaAlihealthDrugcodeUserDataRequest) GetList() []HaoxinqingDataDTO {
+func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetList() []HaoxinqingDataDTO {
     return r._list
 }
 // RefEntId Setter
 // 企业ID，用户区分 appkey下不同企业数据隔离的
-func (r *AlibabaAlihealthDrugcodeUserDataRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugcodeUserDataAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugcodeUserDataRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetRefEntId() string {
     return r._refEntId
 }

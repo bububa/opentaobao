@@ -11,7 +11,7 @@ taobao.tanx.deals.get
 
 批量获取交易信息
 */
-func TaobaoTanxDealsGet(clt *core.SDKClient, req *tanx.TaobaoTanxDealsGetRequest, session string) (*tanx.TaobaoTanxDealsGetAPIResponse, error) {
+func TaobaoTanxDealsGet(clt *core.SDKClient, req *tanx.TaobaoTanxDealsGetAPIRequest, session string) (*tanx.TaobaoTanxDealsGetAPIResponse, error) {
     var resp tanx.TaobaoTanxDealsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

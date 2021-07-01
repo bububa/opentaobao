@@ -11,7 +11,7 @@ taobao.wdk.equipment.conveyor.batchconfirm
 
 批量消息确认
 */
-func TaobaoWdkEquipmentConveyorBatchconfirm(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorBatchconfirmRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorBatchconfirmAPIResponse, error) {
+func TaobaoWdkEquipmentConveyorBatchconfirm(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorBatchconfirmAPIResponse, error) {
     var resp wdk.TaobaoWdkEquipmentConveyorBatchconfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

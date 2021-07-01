@@ -12,24 +12,24 @@ alibaba.wholesale.category.get
 
 获取类目信息
 */
-type AlibabaWholesaleCategoryGetRequest struct {
+type AlibabaWholesaleCategoryGetAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaWholesaleCategoryGetRequest对象
-func NewAlibabaWholesaleCategoryGetRequest() *AlibabaWholesaleCategoryGetRequest{
-    return &AlibabaWholesaleCategoryGetRequest{
+// 初始化AlibabaWholesaleCategoryGetAPIRequest对象
+func NewAlibabaWholesaleCategoryGetRequest() *AlibabaWholesaleCategoryGetAPIRequest{
+    return &AlibabaWholesaleCategoryGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWholesaleCategoryGetRequest) GetApiMethodName() string {
+func (r AlibabaWholesaleCategoryGetAPIRequest) GetApiMethodName() string {
     return "alibaba.wholesale.category.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWholesaleCategoryGetRequest) GetApiParams() url.Values {
+func (r AlibabaWholesaleCategoryGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

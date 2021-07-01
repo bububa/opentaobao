@@ -12,26 +12,26 @@ taobao.appstore.subscribe.get
 
 查询appstore应用订购关系(对于新上架的多版本应用，建议使用taobao.vas.subscribe.get)
 */
-type TaobaoAppstoreSubscribeGetRequest struct {
+type TaobaoAppstoreSubscribeGetAPIRequest struct {
     model.Params
     // 用户昵称
     _nick   string
 }
 
-// 初始化TaobaoAppstoreSubscribeGetRequest对象
-func NewTaobaoAppstoreSubscribeGetRequest() *TaobaoAppstoreSubscribeGetRequest{
-    return &TaobaoAppstoreSubscribeGetRequest{
+// 初始化TaobaoAppstoreSubscribeGetAPIRequest对象
+func NewTaobaoAppstoreSubscribeGetRequest() *TaobaoAppstoreSubscribeGetAPIRequest{
+    return &TaobaoAppstoreSubscribeGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAppstoreSubscribeGetRequest) GetApiMethodName() string {
+func (r TaobaoAppstoreSubscribeGetAPIRequest) GetApiMethodName() string {
     return "taobao.appstore.subscribe.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAppstoreSubscribeGetRequest) GetApiParams() url.Values {
+func (r TaobaoAppstoreSubscribeGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAppstoreSubscribeGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 用户昵称
-func (r *TaobaoAppstoreSubscribeGetRequest) SetNick(_nick string) error {
+func (r *TaobaoAppstoreSubscribeGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoAppstoreSubscribeGetRequest) GetNick() string {
+func (r TaobaoAppstoreSubscribeGetAPIRequest) GetNick() string {
     return r._nick
 }

@@ -12,24 +12,24 @@ taobao.crm.shopvip.cancel
 
 此接口用于取消VIP优惠
 */
-type TaobaoCrmShopvipCancelRequest struct {
+type TaobaoCrmShopvipCancelAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoCrmShopvipCancelRequest对象
-func NewTaobaoCrmShopvipCancelRequest() *TaobaoCrmShopvipCancelRequest{
-    return &TaobaoCrmShopvipCancelRequest{
+// 初始化TaobaoCrmShopvipCancelAPIRequest对象
+func NewTaobaoCrmShopvipCancelRequest() *TaobaoCrmShopvipCancelAPIRequest{
+    return &TaobaoCrmShopvipCancelAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoCrmShopvipCancelRequest) GetApiMethodName() string {
+func (r TaobaoCrmShopvipCancelAPIRequest) GetApiMethodName() string {
     return "taobao.crm.shopvip.cancel"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoCrmShopvipCancelRequest) GetApiParams() url.Values {
+func (r TaobaoCrmShopvipCancelAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

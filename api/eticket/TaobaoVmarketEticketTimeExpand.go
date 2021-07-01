@@ -11,7 +11,7 @@ taobao.vmarket.eticket.time.expand
 
 提供码商操作订单延期接口
 */
-func TaobaoVmarketEticketTimeExpand(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketTimeExpandRequest, session string) (*eticket.TaobaoVmarketEticketTimeExpandAPIResponse, error) {
+func TaobaoVmarketEticketTimeExpand(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketTimeExpandAPIRequest, session string) (*eticket.TaobaoVmarketEticketTimeExpandAPIResponse, error) {
     var resp eticket.TaobaoVmarketEticketTimeExpandAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

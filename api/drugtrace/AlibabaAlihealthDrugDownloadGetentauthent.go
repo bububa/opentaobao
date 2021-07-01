@@ -11,7 +11,7 @@ alibaba.alihealth.drug.download.getentauthent
 
 D2D数据落地获取授权企业列表
 */
-func AlibabaAlihealthDrugDownloadGetentauthent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugDownloadGetentauthentRequest, session string) (*drugtrace.AlibabaAlihealthDrugDownloadGetentauthentAPIResponse, error) {
+func AlibabaAlihealthDrugDownloadGetentauthent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugDownloadGetentauthentAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugDownloadGetentauthentAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugDownloadGetentauthentAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

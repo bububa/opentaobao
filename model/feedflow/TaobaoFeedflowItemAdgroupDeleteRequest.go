@@ -12,7 +12,7 @@ taobao.feedflow.item.adgroup.delete
 
 根据单元id删除单元
 */
-type TaobaoFeedflowItemAdgroupDeleteRequest struct {
+type TaobaoFeedflowItemAdgroupDeleteAPIRequest struct {
     model.Params
     // 计划id
     _campaignId   int64
@@ -20,20 +20,20 @@ type TaobaoFeedflowItemAdgroupDeleteRequest struct {
     _adgroupIdList   []int64
 }
 
-// 初始化TaobaoFeedflowItemAdgroupDeleteRequest对象
-func NewTaobaoFeedflowItemAdgroupDeleteRequest() *TaobaoFeedflowItemAdgroupDeleteRequest{
-    return &TaobaoFeedflowItemAdgroupDeleteRequest{
+// 初始化TaobaoFeedflowItemAdgroupDeleteAPIRequest对象
+func NewTaobaoFeedflowItemAdgroupDeleteRequest() *TaobaoFeedflowItemAdgroupDeleteAPIRequest{
+    return &TaobaoFeedflowItemAdgroupDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemAdgroupDeleteRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.adgroup.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdgroupDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoFeedflowItemAdgroupDeleteRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 计划id
-func (r *TaobaoFeedflowItemAdgroupDeleteRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r TaobaoFeedflowItemAdgroupDeleteRequest) GetCampaignId() int64 {
+func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }
 // AdgroupIdList Setter
 // 单元id列表
-func (r *TaobaoFeedflowItemAdgroupDeleteRequest) SetAdgroupIdList(_adgroupIdList []int64) error {
+func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetAdgroupIdList(_adgroupIdList []int64) error {
     r._adgroupIdList = _adgroupIdList
     r.Set("adgroup_id_list", _adgroupIdList)
     return nil
 }
 
 // AdgroupIdList Getter
-func (r TaobaoFeedflowItemAdgroupDeleteRequest) GetAdgroupIdList() []int64 {
+func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetAdgroupIdList() []int64 {
     return r._adgroupIdList
 }

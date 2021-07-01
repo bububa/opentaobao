@@ -12,26 +12,26 @@ alibaba.alihealth.dental.bind.audit.query
 
 ISV查询绑定审核状态
 */
-type AlibabaAlihealthDentalBindAuditQueryRequest struct {
+type AlibabaAlihealthDentalBindAuditQueryAPIRequest struct {
     model.Params
     // 绑定ID列表
     _bindIds   []int64
 }
 
-// 初始化AlibabaAlihealthDentalBindAuditQueryRequest对象
-func NewAlibabaAlihealthDentalBindAuditQueryRequest() *AlibabaAlihealthDentalBindAuditQueryRequest{
-    return &AlibabaAlihealthDentalBindAuditQueryRequest{
+// 初始化AlibabaAlihealthDentalBindAuditQueryAPIRequest对象
+func NewAlibabaAlihealthDentalBindAuditQueryRequest() *AlibabaAlihealthDentalBindAuditQueryAPIRequest{
+    return &AlibabaAlihealthDentalBindAuditQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDentalBindAuditQueryRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.dental.bind.audit.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDentalBindAuditQueryRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDentalBindAuditQueryRequest) GetApiParams() url.Values {
 }
 // BindIds Setter
 // 绑定ID列表
-func (r *AlibabaAlihealthDentalBindAuditQueryRequest) SetBindIds(_bindIds []int64) error {
+func (r *AlibabaAlihealthDentalBindAuditQueryAPIRequest) SetBindIds(_bindIds []int64) error {
     r._bindIds = _bindIds
     r.Set("bind_ids", _bindIds)
     return nil
 }
 
 // BindIds Getter
-func (r AlibabaAlihealthDentalBindAuditQueryRequest) GetBindIds() []int64 {
+func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetBindIds() []int64 {
     return r._bindIds
 }

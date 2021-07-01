@@ -12,26 +12,26 @@ alibaba.mos.commdy.posmerchandise.getmerchandise
 
 去前置机商品在线查询接口
 */
-type AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest struct {
+type AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest struct {
     model.Params
     // 查询参数列表
     _posMerchandiseList   []QueryMerchandiseDTO
 }
 
-// 初始化AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest对象
-func NewAlibabaMosCommdyPosmerchandiseGetmerchandiseRequest() *AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest{
-    return &AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest{
+// 初始化AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest对象
+func NewAlibabaMosCommdyPosmerchandiseGetmerchandiseRequest() *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest{
+    return &AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest) GetApiMethodName() string {
+func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.commdy.posmerchandise.getmerchandise"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest) GetApiParams() url.Values {
+func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest) GetApiParams() url.
 }
 // PosMerchandiseList Setter
 // 查询参数列表
-func (r *AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest) SetPosMerchandiseList(_posMerchandiseList []QueryMerchandiseDTO) error {
+func (r *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) SetPosMerchandiseList(_posMerchandiseList []QueryMerchandiseDTO) error {
     r._posMerchandiseList = _posMerchandiseList
     r.Set("pos_merchandise_list", _posMerchandiseList)
     return nil
 }
 
 // PosMerchandiseList Getter
-func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest) GetPosMerchandiseList() []QueryMerchandiseDTO {
+func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) GetPosMerchandiseList() []QueryMerchandiseDTO {
     return r._posMerchandiseList
 }

@@ -11,7 +11,7 @@ alibaba.damai.mev.open.deleteface
 
 deleteFace
 */
-func AlibabaDamaiMevOpenDeleteface(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletefaceRequest, session string) (*damai.AlibabaDamaiMevOpenDeletefaceAPIResponse, error) {
+func AlibabaDamaiMevOpenDeleteface(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletefaceAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeletefaceAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenDeletefaceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

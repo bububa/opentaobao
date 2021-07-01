@@ -12,26 +12,26 @@ taobao.jushita.jms.user.add
 
 添加ONS消息同步用户
 */
-type TaobaoJushitaJmsUserAddRequest struct {
+type TaobaoJushitaJmsUserAddAPIRequest struct {
     model.Params
     // topic列表,不填则继承appkey所订阅的topic
     _topicNames   []string
 }
 
-// 初始化TaobaoJushitaJmsUserAddRequest对象
-func NewTaobaoJushitaJmsUserAddRequest() *TaobaoJushitaJmsUserAddRequest{
-    return &TaobaoJushitaJmsUserAddRequest{
+// 初始化TaobaoJushitaJmsUserAddAPIRequest对象
+func NewTaobaoJushitaJmsUserAddRequest() *TaobaoJushitaJmsUserAddAPIRequest{
+    return &TaobaoJushitaJmsUserAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJushitaJmsUserAddRequest) GetApiMethodName() string {
+func (r TaobaoJushitaJmsUserAddAPIRequest) GetApiMethodName() string {
     return "taobao.jushita.jms.user.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJushitaJmsUserAddRequest) GetApiParams() url.Values {
+func (r TaobaoJushitaJmsUserAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoJushitaJmsUserAddRequest) GetApiParams() url.Values {
 }
 // TopicNames Setter
 // topic列表,不填则继承appkey所订阅的topic
-func (r *TaobaoJushitaJmsUserAddRequest) SetTopicNames(_topicNames []string) error {
+func (r *TaobaoJushitaJmsUserAddAPIRequest) SetTopicNames(_topicNames []string) error {
     r._topicNames = _topicNames
     r.Set("topic_names", _topicNames)
     return nil
 }
 
 // TopicNames Getter
-func (r TaobaoJushitaJmsUserAddRequest) GetTopicNames() []string {
+func (r TaobaoJushitaJmsUserAddAPIRequest) GetTopicNames() []string {
     return r._topicNames
 }

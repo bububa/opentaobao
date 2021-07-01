@@ -12,7 +12,7 @@ alibaba.campus.acl.new.saverolewithmenu
 
 保存角色级联保存角色和权限的关系
 */
-type AlibabaCampusAclNewSaverolewithmenuRequest struct {
+type AlibabaCampusAclNewSaverolewithmenuAPIRequest struct {
     model.Params
     // 系统入参
     _workbenchcontext   *WorkBenchContext
@@ -22,20 +22,20 @@ type AlibabaCampusAclNewSaverolewithmenuRequest struct {
     _treeNodeIds   []string
 }
 
-// 初始化AlibabaCampusAclNewSaverolewithmenuRequest对象
-func NewAlibabaCampusAclNewSaverolewithmenuRequest() *AlibabaCampusAclNewSaverolewithmenuRequest{
-    return &AlibabaCampusAclNewSaverolewithmenuRequest{
+// 初始化AlibabaCampusAclNewSaverolewithmenuAPIRequest对象
+func NewAlibabaCampusAclNewSaverolewithmenuRequest() *AlibabaCampusAclNewSaverolewithmenuAPIRequest{
+    return &AlibabaCampusAclNewSaverolewithmenuAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetApiMethodName() string {
+func (r AlibabaCampusAclNewSaverolewithmenuAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.acl.new.saverolewithmenu"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetApiParams() url.Values {
+func (r AlibabaCampusAclNewSaverolewithmenuAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetApiParams() url.Values {
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+func (r *AlibabaCampusAclNewSaverolewithmenuAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
     r._workbenchcontext = _workbenchcontext
     r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
-func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetWorkbenchcontext() *WorkBenchContext {
+func (r AlibabaCampusAclNewSaverolewithmenuAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
     return r._workbenchcontext
 }
 // SysRoleDTO Setter
 // 系统自动生成
-func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetSysRoleDTO(_sysRoleDTO *SysRoleDTO) error {
+func (r *AlibabaCampusAclNewSaverolewithmenuAPIRequest) SetSysRoleDTO(_sysRoleDTO *SysRoleDTO) error {
     r._sysRoleDTO = _sysRoleDTO
     r.Set("sys_role_d_t_o", _sysRoleDTO)
     return nil
 }
 
 // SysRoleDTO Getter
-func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetSysRoleDTO() *SysRoleDTO {
+func (r AlibabaCampusAclNewSaverolewithmenuAPIRequest) GetSysRoleDTO() *SysRoleDTO {
     return r._sysRoleDTO
 }
 // TreeNodeIds Setter
 // 菜单id,权限id
-func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetTreeNodeIds(_treeNodeIds []string) error {
+func (r *AlibabaCampusAclNewSaverolewithmenuAPIRequest) SetTreeNodeIds(_treeNodeIds []string) error {
     r._treeNodeIds = _treeNodeIds
     r.Set("tree_node_ids", _treeNodeIds)
     return nil
 }
 
 // TreeNodeIds Getter
-func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetTreeNodeIds() []string {
+func (r AlibabaCampusAclNewSaverolewithmenuAPIRequest) GetTreeNodeIds() []string {
     return r._treeNodeIds
 }

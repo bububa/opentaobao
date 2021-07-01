@@ -11,7 +11,7 @@ alibaba.alink.message.config.set
 
 阿里智能消息开关
 */
-func AlibabaAlinkMessageConfigSet(clt *core.SDKClient, req *alink.AlibabaAlinkMessageConfigSetRequest, session string) (*alink.AlibabaAlinkMessageConfigSetAPIResponse, error) {
+func AlibabaAlinkMessageConfigSet(clt *core.SDKClient, req *alink.AlibabaAlinkMessageConfigSetAPIRequest, session string) (*alink.AlibabaAlinkMessageConfigSetAPIResponse, error) {
     var resp alink.AlibabaAlinkMessageConfigSetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

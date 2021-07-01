@@ -11,7 +11,7 @@ tmall.traceplatform.cts.info.upload
 
 cts上传溯源信息
 */
-func TmallTraceplatformCtsInfoUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformCtsInfoUploadRequest, session string) (*tmallhk.TmallTraceplatformCtsInfoUploadAPIResponse, error) {
+func TmallTraceplatformCtsInfoUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformCtsInfoUploadAPIRequest, session string) (*tmallhk.TmallTraceplatformCtsInfoUploadAPIResponse, error) {
     var resp tmallhk.TmallTraceplatformCtsInfoUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.qianniu.task.finish
 
 由任务执行者调用
 */
-func TaobaoQianniuTaskFinish(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskFinishRequest, session string) (*qianniu.TaobaoQianniuTaskFinishAPIResponse, error) {
+func TaobaoQianniuTaskFinish(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskFinishAPIRequest, session string) (*qianniu.TaobaoQianniuTaskFinishAPIResponse, error) {
     var resp qianniu.TaobaoQianniuTaskFinishAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

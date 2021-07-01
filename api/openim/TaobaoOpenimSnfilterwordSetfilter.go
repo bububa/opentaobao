@@ -11,7 +11,7 @@ taobao.openim.snfilterword.setfilter
 
 设置openim关键词过滤
 */
-func TaobaoOpenimSnfilterwordSetfilter(clt *core.SDKClient, req *openim.TaobaoOpenimSnfilterwordSetfilterRequest, session string) (*openim.TaobaoOpenimSnfilterwordSetfilterAPIResponse, error) {
+func TaobaoOpenimSnfilterwordSetfilter(clt *core.SDKClient, req *openim.TaobaoOpenimSnfilterwordSetfilterAPIRequest, session string) (*openim.TaobaoOpenimSnfilterwordSetfilterAPIResponse, error) {
     var resp openim.TaobaoOpenimSnfilterwordSetfilterAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

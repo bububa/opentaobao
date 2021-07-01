@@ -11,7 +11,7 @@ alibaba.wdkorder.sharestock.insurance.callback
 
 共享库存订单投保消息获取
 */
-func AlibabaWdkorderSharestockInsuranceCallback(clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockInsuranceCallbackRequest, session string) (*wdk.AlibabaWdkorderSharestockInsuranceCallbackAPIResponse, error) {
+func AlibabaWdkorderSharestockInsuranceCallback(clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockInsuranceCallbackAPIRequest, session string) (*wdk.AlibabaWdkorderSharestockInsuranceCallbackAPIResponse, error) {
     var resp wdk.AlibabaWdkorderSharestockInsuranceCallbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

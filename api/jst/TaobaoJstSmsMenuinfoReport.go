@@ -11,7 +11,7 @@ taobao.jst.sms.menuinfo.report
 
 聚石塔菜单信息上报
 */
-func TaobaoJstSmsMenuinfoReport(clt *core.SDKClient, req *jst.TaobaoJstSmsMenuinfoReportRequest, session string) (*jst.TaobaoJstSmsMenuinfoReportAPIResponse, error) {
+func TaobaoJstSmsMenuinfoReport(clt *core.SDKClient, req *jst.TaobaoJstSmsMenuinfoReportAPIRequest, session string) (*jst.TaobaoJstSmsMenuinfoReportAPIResponse, error) {
     var resp jst.TaobaoJstSmsMenuinfoReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

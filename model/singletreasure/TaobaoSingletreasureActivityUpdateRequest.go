@@ -12,26 +12,26 @@ taobao.singletreasure.activity.update
 
 修改活动接口
 */
-type TaobaoSingletreasureActivityUpdateRequest struct {
+type TaobaoSingletreasureActivityUpdateAPIRequest struct {
     model.Params
     // 系统入参
     _activityInfo   *ActivityInfoCreateDTO
 }
 
-// 初始化TaobaoSingletreasureActivityUpdateRequest对象
-func NewTaobaoSingletreasureActivityUpdateRequest() *TaobaoSingletreasureActivityUpdateRequest{
-    return &TaobaoSingletreasureActivityUpdateRequest{
+// 初始化TaobaoSingletreasureActivityUpdateAPIRequest对象
+func NewTaobaoSingletreasureActivityUpdateRequest() *TaobaoSingletreasureActivityUpdateAPIRequest{
+    return &TaobaoSingletreasureActivityUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSingletreasureActivityUpdateRequest) GetApiMethodName() string {
+func (r TaobaoSingletreasureActivityUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.singletreasure.activity.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSingletreasureActivityUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoSingletreasureActivityUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSingletreasureActivityUpdateRequest) GetApiParams() url.Values {
 }
 // ActivityInfo Setter
 // 系统入参
-func (r *TaobaoSingletreasureActivityUpdateRequest) SetActivityInfo(_activityInfo *ActivityInfoCreateDTO) error {
+func (r *TaobaoSingletreasureActivityUpdateAPIRequest) SetActivityInfo(_activityInfo *ActivityInfoCreateDTO) error {
     r._activityInfo = _activityInfo
     r.Set("activity_info", _activityInfo)
     return nil
 }
 
 // ActivityInfo Getter
-func (r TaobaoSingletreasureActivityUpdateRequest) GetActivityInfo() *ActivityInfoCreateDTO {
+func (r TaobaoSingletreasureActivityUpdateAPIRequest) GetActivityInfo() *ActivityInfoCreateDTO {
     return r._activityInfo
 }

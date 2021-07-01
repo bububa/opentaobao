@@ -12,26 +12,26 @@ alibaba.damai.maitix.order.confirm
 
 出票
 */
-type AlibabaDamaiMaitixOrderConfirmRequest struct {
+type AlibabaDamaiMaitixOrderConfirmAPIRequest struct {
     model.Params
     // 出票入参
     _param   *MoaConfirmOrderParam
 }
 
-// 初始化AlibabaDamaiMaitixOrderConfirmRequest对象
-func NewAlibabaDamaiMaitixOrderConfirmRequest() *AlibabaDamaiMaitixOrderConfirmRequest{
-    return &AlibabaDamaiMaitixOrderConfirmRequest{
+// 初始化AlibabaDamaiMaitixOrderConfirmAPIRequest对象
+func NewAlibabaDamaiMaitixOrderConfirmRequest() *AlibabaDamaiMaitixOrderConfirmAPIRequest{
+    return &AlibabaDamaiMaitixOrderConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixOrderConfirmRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixOrderConfirmAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.order.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixOrderConfirmRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixOrderConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOrderConfirmRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 出票入参
-func (r *AlibabaDamaiMaitixOrderConfirmRequest) SetParam(_param *MoaConfirmOrderParam) error {
+func (r *AlibabaDamaiMaitixOrderConfirmAPIRequest) SetParam(_param *MoaConfirmOrderParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaDamaiMaitixOrderConfirmRequest) GetParam() *MoaConfirmOrderParam {
+func (r AlibabaDamaiMaitixOrderConfirmAPIRequest) GetParam() *MoaConfirmOrderParam {
     return r._param
 }

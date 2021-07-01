@@ -11,7 +11,7 @@ alibaba.alihealth.outflow.visitinfo.sync
 
 阿里健康-处方外流-对外提供问诊、处方功能
 */
-func AlibabaAlihealthOutflowVisitinfoSync(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowVisitinfoSyncRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowVisitinfoSyncAPIResponse, error) {
+func AlibabaAlihealthOutflowVisitinfoSync(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowVisitinfoSyncAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowVisitinfoSyncAPIResponse, error) {
     var resp alihealthoutflow.AlibabaAlihealthOutflowVisitinfoSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

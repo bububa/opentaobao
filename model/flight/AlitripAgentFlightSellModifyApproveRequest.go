@@ -12,26 +12,26 @@ alitrip.agent.flight.sell.modify.approve
 
 销售改签确认
 */
-type AlitripAgentFlightSellModifyApproveRequest struct {
+type AlitripAgentFlightSellModifyApproveAPIRequest struct {
     model.Params
     // 入参对象
     _param   *ModifyApproveRequestDTO
 }
 
-// 初始化AlitripAgentFlightSellModifyApproveRequest对象
-func NewAlitripAgentFlightSellModifyApproveRequest() *AlitripAgentFlightSellModifyApproveRequest{
-    return &AlitripAgentFlightSellModifyApproveRequest{
+// 初始化AlitripAgentFlightSellModifyApproveAPIRequest对象
+func NewAlitripAgentFlightSellModifyApproveRequest() *AlitripAgentFlightSellModifyApproveAPIRequest{
+    return &AlitripAgentFlightSellModifyApproveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripAgentFlightSellModifyApproveRequest) GetApiMethodName() string {
+func (r AlitripAgentFlightSellModifyApproveAPIRequest) GetApiMethodName() string {
     return "alitrip.agent.flight.sell.modify.approve"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripAgentFlightSellModifyApproveRequest) GetApiParams() url.Values {
+func (r AlitripAgentFlightSellModifyApproveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripAgentFlightSellModifyApproveRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参对象
-func (r *AlitripAgentFlightSellModifyApproveRequest) SetParam(_param *ModifyApproveRequestDTO) error {
+func (r *AlitripAgentFlightSellModifyApproveAPIRequest) SetParam(_param *ModifyApproveRequestDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlitripAgentFlightSellModifyApproveRequest) GetParam() *ModifyApproveRequestDTO {
+func (r AlitripAgentFlightSellModifyApproveAPIRequest) GetParam() *ModifyApproveRequestDTO {
     return r._param
 }

@@ -12,24 +12,24 @@ taobao.openuid.get
 
 获取授权账号对应的OpenUid
 */
-type TaobaoOpenuidGetRequest struct {
+type TaobaoOpenuidGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoOpenuidGetRequest对象
-func NewTaobaoOpenuidGetRequest() *TaobaoOpenuidGetRequest{
-    return &TaobaoOpenuidGetRequest{
+// 初始化TaobaoOpenuidGetAPIRequest对象
+func NewTaobaoOpenuidGetRequest() *TaobaoOpenuidGetAPIRequest{
+    return &TaobaoOpenuidGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenuidGetRequest) GetApiMethodName() string {
+func (r TaobaoOpenuidGetAPIRequest) GetApiMethodName() string {
     return "taobao.openuid.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenuidGetRequest) GetApiParams() url.Values {
+func (r TaobaoOpenuidGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

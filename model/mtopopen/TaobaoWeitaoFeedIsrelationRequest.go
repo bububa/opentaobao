@@ -12,7 +12,7 @@ taobao.weitao.feed.isrelation
 
 判断用户是否关注对应的公共账号
 */
-type TaobaoWeitaoFeedIsrelationRequest struct {
+type TaobaoWeitaoFeedIsrelationAPIRequest struct {
     model.Params
     // 要查询的粉丝的淘宝昵称
     _fansNick   string
@@ -20,20 +20,20 @@ type TaobaoWeitaoFeedIsrelationRequest struct {
     _sellerNick   string
 }
 
-// 初始化TaobaoWeitaoFeedIsrelationRequest对象
-func NewTaobaoWeitaoFeedIsrelationRequest() *TaobaoWeitaoFeedIsrelationRequest{
-    return &TaobaoWeitaoFeedIsrelationRequest{
+// 初始化TaobaoWeitaoFeedIsrelationAPIRequest对象
+func NewTaobaoWeitaoFeedIsrelationRequest() *TaobaoWeitaoFeedIsrelationAPIRequest{
+    return &TaobaoWeitaoFeedIsrelationAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWeitaoFeedIsrelationRequest) GetApiMethodName() string {
+func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetApiMethodName() string {
     return "taobao.weitao.feed.isrelation"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWeitaoFeedIsrelationRequest) GetApiParams() url.Values {
+func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoWeitaoFeedIsrelationRequest) GetApiParams() url.Values {
 }
 // FansNick Setter
 // 要查询的粉丝的淘宝昵称
-func (r *TaobaoWeitaoFeedIsrelationRequest) SetFansNick(_fansNick string) error {
+func (r *TaobaoWeitaoFeedIsrelationAPIRequest) SetFansNick(_fansNick string) error {
     r._fansNick = _fansNick
     r.Set("fans_nick", _fansNick)
     return nil
 }
 
 // FansNick Getter
-func (r TaobaoWeitaoFeedIsrelationRequest) GetFansNick() string {
+func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetFansNick() string {
     return r._fansNick
 }
 // SellerNick Setter
 // 要查询的公共账号的淘宝昵称
-func (r *TaobaoWeitaoFeedIsrelationRequest) SetSellerNick(_sellerNick string) error {
+func (r *TaobaoWeitaoFeedIsrelationAPIRequest) SetSellerNick(_sellerNick string) error {
     r._sellerNick = _sellerNick
     r.Set("seller_nick", _sellerNick)
     return nil
 }
 
 // SellerNick Getter
-func (r TaobaoWeitaoFeedIsrelationRequest) GetSellerNick() string {
+func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetSellerNick() string {
     return r._sellerNick
 }

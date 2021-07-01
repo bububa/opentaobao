@@ -11,7 +11,7 @@ tmall.product.schema.get
 
 产品信息获取接口schema形式返回
 */
-func TmallProductSchemaGet(clt *core.SDKClient, req *product.TmallProductSchemaGetRequest, session string) (*product.TmallProductSchemaGetAPIResponse, error) {
+func TmallProductSchemaGet(clt *core.SDKClient, req *product.TmallProductSchemaGetAPIRequest, session string) (*product.TmallProductSchemaGetAPIResponse, error) {
     var resp product.TmallProductSchemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

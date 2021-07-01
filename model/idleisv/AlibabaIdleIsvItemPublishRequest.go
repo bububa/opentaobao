@@ -12,26 +12,26 @@ alibaba.idle.isv.item.publish
 
 服务商ISV闲鱼商品发布
 */
-type AlibabaIdleIsvItemPublishRequest struct {
+type AlibabaIdleIsvItemPublishAPIRequest struct {
     model.Params
     // 商品数据参数
     _itemParam   *IdleItemApiDO
 }
 
-// 初始化AlibabaIdleIsvItemPublishRequest对象
-func NewAlibabaIdleIsvItemPublishRequest() *AlibabaIdleIsvItemPublishRequest{
-    return &AlibabaIdleIsvItemPublishRequest{
+// 初始化AlibabaIdleIsvItemPublishAPIRequest对象
+func NewAlibabaIdleIsvItemPublishRequest() *AlibabaIdleIsvItemPublishAPIRequest{
+    return &AlibabaIdleIsvItemPublishAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleIsvItemPublishRequest) GetApiMethodName() string {
+func (r AlibabaIdleIsvItemPublishAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.isv.item.publish"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvItemPublishRequest) GetApiParams() url.Values {
+func (r AlibabaIdleIsvItemPublishAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvItemPublishRequest) GetApiParams() url.Values {
 }
 // ItemParam Setter
 // 商品数据参数
-func (r *AlibabaIdleIsvItemPublishRequest) SetItemParam(_itemParam *IdleItemApiDO) error {
+func (r *AlibabaIdleIsvItemPublishAPIRequest) SetItemParam(_itemParam *IdleItemApiDO) error {
     r._itemParam = _itemParam
     r.Set("item_param", _itemParam)
     return nil
 }
 
 // ItemParam Getter
-func (r AlibabaIdleIsvItemPublishRequest) GetItemParam() *IdleItemApiDO {
+func (r AlibabaIdleIsvItemPublishAPIRequest) GetItemParam() *IdleItemApiDO {
     return r._itemParam
 }

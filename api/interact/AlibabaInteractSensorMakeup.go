@@ -11,7 +11,7 @@ alibaba.interact.sensor.makeup
 
 手机淘宝美妆类目虚拟试妆权限，客户端能力（JS－API）
 */
-func AlibabaInteractSensorMakeup(clt *core.SDKClient, req *interact.AlibabaInteractSensorMakeupRequest, session string) (*interact.AlibabaInteractSensorMakeupAPIResponse, error) {
+func AlibabaInteractSensorMakeup(clt *core.SDKClient, req *interact.AlibabaInteractSensorMakeupAPIRequest, session string) (*interact.AlibabaInteractSensorMakeupAPIResponse, error) {
     var resp interact.AlibabaInteractSensorMakeupAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

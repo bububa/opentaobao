@@ -12,7 +12,7 @@ alitrip.btrip.train.city.suggest
 
 阿里商旅提供火车票搜索接口，方便OA厂商更精准的对接
 */
-type AlitripBtripTrainCitySuggestRequest struct {
+type AlitripBtripTrainCitySuggestAPIRequest struct {
     model.Params
     // 用户id
     _userId   string
@@ -22,20 +22,20 @@ type AlitripBtripTrainCitySuggestRequest struct {
     _corpId   string
 }
 
-// 初始化AlitripBtripTrainCitySuggestRequest对象
-func NewAlitripBtripTrainCitySuggestRequest() *AlitripBtripTrainCitySuggestRequest{
-    return &AlitripBtripTrainCitySuggestRequest{
+// 初始化AlitripBtripTrainCitySuggestAPIRequest对象
+func NewAlitripBtripTrainCitySuggestRequest() *AlitripBtripTrainCitySuggestAPIRequest{
+    return &AlitripBtripTrainCitySuggestAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripTrainCitySuggestRequest) GetApiMethodName() string {
+func (r AlitripBtripTrainCitySuggestAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.train.city.suggest"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripTrainCitySuggestRequest) GetApiParams() url.Values {
+func (r AlitripBtripTrainCitySuggestAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlitripBtripTrainCitySuggestRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlitripBtripTrainCitySuggestRequest) SetUserId(_userId string) error {
+func (r *AlitripBtripTrainCitySuggestAPIRequest) SetUserId(_userId string) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r AlitripBtripTrainCitySuggestRequest) GetUserId() string {
+func (r AlitripBtripTrainCitySuggestAPIRequest) GetUserId() string {
     return r._userId
 }
 // Keyword Setter
 // 搜索关键字
-func (r *AlitripBtripTrainCitySuggestRequest) SetKeyword(_keyword string) error {
+func (r *AlitripBtripTrainCitySuggestAPIRequest) SetKeyword(_keyword string) error {
     r._keyword = _keyword
     r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
-func (r AlitripBtripTrainCitySuggestRequest) GetKeyword() string {
+func (r AlitripBtripTrainCitySuggestAPIRequest) GetKeyword() string {
     return r._keyword
 }
 // CorpId Setter
 // 企业id
-func (r *AlitripBtripTrainCitySuggestRequest) SetCorpId(_corpId string) error {
+func (r *AlitripBtripTrainCitySuggestAPIRequest) SetCorpId(_corpId string) error {
     r._corpId = _corpId
     r.Set("corp_id", _corpId)
     return nil
 }
 
 // CorpId Getter
-func (r AlitripBtripTrainCitySuggestRequest) GetCorpId() string {
+func (r AlitripBtripTrainCitySuggestAPIRequest) GetCorpId() string {
     return r._corpId
 }

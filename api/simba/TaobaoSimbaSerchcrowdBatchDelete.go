@@ -11,7 +11,7 @@ taobao.simba.serchcrowd.batch.delete
 
 删除单品搜索人群溢价功能
 */
-func TaobaoSimbaSerchcrowdBatchDelete(clt *core.SDKClient, req *simba.TaobaoSimbaSerchcrowdBatchDeleteRequest, session string) (*simba.TaobaoSimbaSerchcrowdBatchDeleteAPIResponse, error) {
+func TaobaoSimbaSerchcrowdBatchDelete(clt *core.SDKClient, req *simba.TaobaoSimbaSerchcrowdBatchDeleteAPIRequest, session string) (*simba.TaobaoSimbaSerchcrowdBatchDeleteAPIResponse, error) {
     var resp simba.TaobaoSimbaSerchcrowdBatchDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.bus.refundfee.get
 
 查询退票的费用信息
 */
-func TaobaoBusRefundfeeGet(clt *core.SDKClient, req *bus.TaobaoBusRefundfeeGetRequest, session string) (*bus.TaobaoBusRefundfeeGetAPIResponse, error) {
+func TaobaoBusRefundfeeGet(clt *core.SDKClient, req *bus.TaobaoBusRefundfeeGetAPIRequest, session string) (*bus.TaobaoBusRefundfeeGetAPIResponse, error) {
     var resp bus.TaobaoBusRefundfeeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

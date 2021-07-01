@@ -12,7 +12,7 @@ taobao.omniorder.store.accpeted
 
 ISV Pos端门店接单，通知星盘
 */
-type TaobaoOmniorderStoreAccpetedRequest struct {
+type TaobaoOmniorderStoreAccpetedAPIRequest struct {
     model.Params
     // 淘宝交易主订单ID
     _tid   int64
@@ -24,20 +24,20 @@ type TaobaoOmniorderStoreAccpetedRequest struct {
     _traceId   string
 }
 
-// 初始化TaobaoOmniorderStoreAccpetedRequest对象
-func NewTaobaoOmniorderStoreAccpetedRequest() *TaobaoOmniorderStoreAccpetedRequest{
-    return &TaobaoOmniorderStoreAccpetedRequest{
+// 初始化TaobaoOmniorderStoreAccpetedAPIRequest对象
+func NewTaobaoOmniorderStoreAccpetedRequest() *TaobaoOmniorderStoreAccpetedAPIRequest{
+    return &TaobaoOmniorderStoreAccpetedAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniorderStoreAccpetedRequest) GetApiMethodName() string {
+func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetApiMethodName() string {
     return "taobao.omniorder.store.accpeted"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderStoreAccpetedRequest) GetApiParams() url.Values {
+func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoOmniorderStoreAccpetedRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 淘宝交易主订单ID
-func (r *TaobaoOmniorderStoreAccpetedRequest) SetTid(_tid int64) error {
+func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetTid(_tid int64) error {
     r._tid = _tid
     r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
-func (r TaobaoOmniorderStoreAccpetedRequest) GetTid() int64 {
+func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetTid() int64 {
     return r._tid
 }
 // SubOrderList Setter
 // 子订单列表
-func (r *TaobaoOmniorderStoreAccpetedRequest) SetSubOrderList(_subOrderList []StoreAcceptedResult) error {
+func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetSubOrderList(_subOrderList []StoreAcceptedResult) error {
     r._subOrderList = _subOrderList
     r.Set("sub_order_list", _subOrderList)
     return nil
 }
 
 // SubOrderList Getter
-func (r TaobaoOmniorderStoreAccpetedRequest) GetSubOrderList() []StoreAcceptedResult {
+func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetSubOrderList() []StoreAcceptedResult {
     return r._subOrderList
 }
 // ReportTimestamp Setter
 // ISV系统上报时间
-func (r *TaobaoOmniorderStoreAccpetedRequest) SetReportTimestamp(_reportTimestamp int64) error {
+func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetReportTimestamp(_reportTimestamp int64) error {
     r._reportTimestamp = _reportTimestamp
     r.Set("report_timestamp", _reportTimestamp)
     return nil
 }
 
 // ReportTimestamp Getter
-func (r TaobaoOmniorderStoreAccpetedRequest) GetReportTimestamp() int64 {
+func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetReportTimestamp() int64 {
     return r._reportTimestamp
 }
 // TraceId Setter
 // 跟踪Id
-func (r *TaobaoOmniorderStoreAccpetedRequest) SetTraceId(_traceId string) error {
+func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetTraceId(_traceId string) error {
     r._traceId = _traceId
     r.Set("trace_id", _traceId)
     return nil
 }
 
 // TraceId Getter
-func (r TaobaoOmniorderStoreAccpetedRequest) GetTraceId() string {
+func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetTraceId() string {
     return r._traceId
 }

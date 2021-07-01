@@ -11,7 +11,7 @@ alibaba.scbp.account.status.get
 
 查询账户级别关键词推广状态
 */
-func AlibabaScbpAccountStatusGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountStatusGetRequest, session string) (*scbp.AlibabaScbpAccountStatusGetAPIResponse, error) {
+func AlibabaScbpAccountStatusGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountStatusGetAPIRequest, session string) (*scbp.AlibabaScbpAccountStatusGetAPIResponse, error) {
     var resp scbp.AlibabaScbpAccountStatusGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

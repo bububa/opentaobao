@@ -12,26 +12,26 @@ taobao.bus.agent.city.change
 
 代理商通知城市变更，比如可售变为不可售等
 */
-type TaobaoBusAgentCityChangeRequest struct {
+type TaobaoBusAgentCityChangeAPIRequest struct {
     model.Params
     // 城市变更请求对象
     _paramCityChangeRQ   *CityChangeRq
 }
 
-// 初始化TaobaoBusAgentCityChangeRequest对象
-func NewTaobaoBusAgentCityChangeRequest() *TaobaoBusAgentCityChangeRequest{
-    return &TaobaoBusAgentCityChangeRequest{
+// 初始化TaobaoBusAgentCityChangeAPIRequest对象
+func NewTaobaoBusAgentCityChangeRequest() *TaobaoBusAgentCityChangeAPIRequest{
+    return &TaobaoBusAgentCityChangeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBusAgentCityChangeRequest) GetApiMethodName() string {
+func (r TaobaoBusAgentCityChangeAPIRequest) GetApiMethodName() string {
     return "taobao.bus.agent.city.change"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBusAgentCityChangeRequest) GetApiParams() url.Values {
+func (r TaobaoBusAgentCityChangeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBusAgentCityChangeRequest) GetApiParams() url.Values {
 }
 // ParamCityChangeRQ Setter
 // 城市变更请求对象
-func (r *TaobaoBusAgentCityChangeRequest) SetParamCityChangeRQ(_paramCityChangeRQ *CityChangeRq) error {
+func (r *TaobaoBusAgentCityChangeAPIRequest) SetParamCityChangeRQ(_paramCityChangeRQ *CityChangeRq) error {
     r._paramCityChangeRQ = _paramCityChangeRQ
     r.Set("param_city_change_r_q", _paramCityChangeRQ)
     return nil
 }
 
 // ParamCityChangeRQ Getter
-func (r TaobaoBusAgentCityChangeRequest) GetParamCityChangeRQ() *CityChangeRq {
+func (r TaobaoBusAgentCityChangeAPIRequest) GetParamCityChangeRQ() *CityChangeRq {
     return r._paramCityChangeRQ
 }

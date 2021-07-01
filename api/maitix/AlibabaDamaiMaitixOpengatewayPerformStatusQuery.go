@@ -11,7 +11,7 @@ alibaba.damai.maitix.opengateway.perform.status.query
 
 queryPerformStatusByPerformId
 */
-func AlibabaDamaiMaitixOpengatewayPerformStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest, session string) (*maitix.AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIResponse, error) {
+func AlibabaDamaiMaitixOpengatewayPerformStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ alibaba.it.cloudlive.getagentconfig
 
 线上巡店应用，外部Agent设备获取设备配置信息，根据配置信息链接mqtt，跟云端进行进一步的消息通信。
 */
-type AlibabaItCloudliveGetagentconfigRequest struct {
+type AlibabaItCloudliveGetagentconfigAPIRequest struct {
     model.Params
     // agent标识信息
     _agentId   string
@@ -24,20 +24,20 @@ type AlibabaItCloudliveGetagentconfigRequest struct {
     _agentIp   string
 }
 
-// 初始化AlibabaItCloudliveGetagentconfigRequest对象
-func NewAlibabaItCloudliveGetagentconfigRequest() *AlibabaItCloudliveGetagentconfigRequest{
-    return &AlibabaItCloudliveGetagentconfigRequest{
+// 初始化AlibabaItCloudliveGetagentconfigAPIRequest对象
+func NewAlibabaItCloudliveGetagentconfigRequest() *AlibabaItCloudliveGetagentconfigAPIRequest{
+    return &AlibabaItCloudliveGetagentconfigAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaItCloudliveGetagentconfigRequest) GetApiMethodName() string {
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetApiMethodName() string {
     return "alibaba.it.cloudlive.getagentconfig"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaItCloudliveGetagentconfigRequest) GetApiParams() url.Values {
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaItCloudliveGetagentconfigRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // agent标识信息
-func (r *AlibabaItCloudliveGetagentconfigRequest) SetAgentId(_agentId string) error {
+func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetAgentId(_agentId string) error {
     r._agentId = _agentId
     r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
-func (r AlibabaItCloudliveGetagentconfigRequest) GetAgentId() string {
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetAgentId() string {
     return r._agentId
 }
 // TimeStamp Setter
 // 时间戳
-func (r *AlibabaItCloudliveGetagentconfigRequest) SetTimeStamp(_timeStamp int64) error {
+func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetTimeStamp(_timeStamp int64) error {
     r._timeStamp = _timeStamp
     r.Set("time_stamp", _timeStamp)
     return nil
 }
 
 // TimeStamp Getter
-func (r AlibabaItCloudliveGetagentconfigRequest) GetTimeStamp() int64 {
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetTimeStamp() int64 {
     return r._timeStamp
 }
 // Signature Setter
 // 签名
-func (r *AlibabaItCloudliveGetagentconfigRequest) SetSignature(_signature string) error {
+func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetSignature(_signature string) error {
     r._signature = _signature
     r.Set("signature", _signature)
     return nil
 }
 
 // Signature Getter
-func (r AlibabaItCloudliveGetagentconfigRequest) GetSignature() string {
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetSignature() string {
     return r._signature
 }
 // AgentIp Setter
 // 设备所在IP地址
-func (r *AlibabaItCloudliveGetagentconfigRequest) SetAgentIp(_agentIp string) error {
+func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetAgentIp(_agentIp string) error {
     r._agentIp = _agentIp
     r.Set("agent_ip", _agentIp)
     return nil
 }
 
 // AgentIp Getter
-func (r AlibabaItCloudliveGetagentconfigRequest) GetAgentIp() string {
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetAgentIp() string {
     return r._agentIp
 }

@@ -12,7 +12,7 @@ taobao.feedflow.item.adgroup.creative.add.bind
 
 信息流新增并且绑定创意
 */
-type TaobaoFeedflowItemAdgroupCreativeAddBindRequest struct {
+type TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest struct {
     model.Params
     // 新增绑定的创意，一次最多2个
     _creativeBindList   []CreativeBindDTO
@@ -20,20 +20,20 @@ type TaobaoFeedflowItemAdgroupCreativeAddBindRequest struct {
     _adgroupId   int64
 }
 
-// 初始化TaobaoFeedflowItemAdgroupCreativeAddBindRequest对象
-func NewTaobaoFeedflowItemAdgroupCreativeAddBindRequest() *TaobaoFeedflowItemAdgroupCreativeAddBindRequest{
-    return &TaobaoFeedflowItemAdgroupCreativeAddBindRequest{
+// 初始化TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest对象
+func NewTaobaoFeedflowItemAdgroupCreativeAddBindRequest() *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest{
+    return &TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemAdgroupCreativeAddBindRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.adgroup.creative.add.bind"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdgroupCreativeAddBindRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoFeedflowItemAdgroupCreativeAddBindRequest) GetApiParams() url.Valu
 }
 // CreativeBindList Setter
 // 新增绑定的创意，一次最多2个
-func (r *TaobaoFeedflowItemAdgroupCreativeAddBindRequest) SetCreativeBindList(_creativeBindList []CreativeBindDTO) error {
+func (r *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) SetCreativeBindList(_creativeBindList []CreativeBindDTO) error {
     r._creativeBindList = _creativeBindList
     r.Set("creative_bind_list", _creativeBindList)
     return nil
 }
 
 // CreativeBindList Getter
-func (r TaobaoFeedflowItemAdgroupCreativeAddBindRequest) GetCreativeBindList() []CreativeBindDTO {
+func (r TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) GetCreativeBindList() []CreativeBindDTO {
     return r._creativeBindList
 }
 // AdgroupId Setter
 // 单元id
-func (r *TaobaoFeedflowItemAdgroupCreativeAddBindRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) SetAdgroupId(_adgroupId int64) error {
     r._adgroupId = _adgroupId
     r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
-func (r TaobaoFeedflowItemAdgroupCreativeAddBindRequest) GetAdgroupId() int64 {
+func (r TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) GetAdgroupId() int64 {
     return r._adgroupId
 }

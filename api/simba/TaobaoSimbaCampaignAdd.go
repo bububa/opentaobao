@@ -11,7 +11,7 @@ taobao.simba.campaign.add
 
 创建一个推广计划
 */
-func TaobaoSimbaCampaignAdd(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignAddRequest, session string) (*simba.TaobaoSimbaCampaignAddAPIResponse, error) {
+func TaobaoSimbaCampaignAdd(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignAddAPIRequest, session string) (*simba.TaobaoSimbaCampaignAddAPIResponse, error) {
     var resp simba.TaobaoSimbaCampaignAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

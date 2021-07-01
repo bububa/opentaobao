@@ -17,7 +17,7 @@ taobao.smartstore.device.iashelf.feedback
 5.outer_biz_id 用于硬件设备大量数据回流场景，服务商本地日志统计系统对一条日志记录生成唯一标识。 平台后端会对传入的outer_biz_id 做去重处理</br>
 6.outer_user 用于标识不能获取淘宝账号的游客</br>
 */
-func TaobaoSmartstoreDeviceIashelfFeedback(clt *core.SDKClient, req *smartstore.TaobaoSmartstoreDeviceIashelfFeedbackRequest, session string) (*smartstore.TaobaoSmartstoreDeviceIashelfFeedbackAPIResponse, error) {
+func TaobaoSmartstoreDeviceIashelfFeedback(clt *core.SDKClient, req *smartstore.TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest, session string) (*smartstore.TaobaoSmartstoreDeviceIashelfFeedbackAPIResponse, error) {
     var resp smartstore.TaobaoSmartstoreDeviceIashelfFeedbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

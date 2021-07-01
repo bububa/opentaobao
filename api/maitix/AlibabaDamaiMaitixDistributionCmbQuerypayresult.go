@@ -11,7 +11,7 @@ alibaba.damai.maitix.distribution.cmb.querypayresult
 
 queryPayResult
 */
-func AlibabaDamaiMaitixDistributionCmbQuerypayresult(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbQuerypayresultRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIResponse, error) {
+func AlibabaDamaiMaitixDistributionCmbQuerypayresult(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

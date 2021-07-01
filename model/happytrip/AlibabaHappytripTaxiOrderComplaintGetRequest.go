@@ -12,7 +12,7 @@ alibaba.happytrip.taxi.order.complaint.get
 
 获取投诉处理进度详情
 */
-type AlibabaHappytripTaxiOrderComplaintGetRequest struct {
+type AlibabaHappytripTaxiOrderComplaintGetAPIRequest struct {
     model.Params
     // 供应商订单号
     _orderId   string
@@ -20,20 +20,20 @@ type AlibabaHappytripTaxiOrderComplaintGetRequest struct {
     _caseId   string
 }
 
-// 初始化AlibabaHappytripTaxiOrderComplaintGetRequest对象
-func NewAlibabaHappytripTaxiOrderComplaintGetRequest() *AlibabaHappytripTaxiOrderComplaintGetRequest{
-    return &AlibabaHappytripTaxiOrderComplaintGetRequest{
+// 初始化AlibabaHappytripTaxiOrderComplaintGetAPIRequest对象
+func NewAlibabaHappytripTaxiOrderComplaintGetRequest() *AlibabaHappytripTaxiOrderComplaintGetAPIRequest{
+    return &AlibabaHappytripTaxiOrderComplaintGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHappytripTaxiOrderComplaintGetRequest) GetApiMethodName() string {
+func (r AlibabaHappytripTaxiOrderComplaintGetAPIRequest) GetApiMethodName() string {
     return "alibaba.happytrip.taxi.order.complaint.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHappytripTaxiOrderComplaintGetRequest) GetApiParams() url.Values {
+func (r AlibabaHappytripTaxiOrderComplaintGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaHappytripTaxiOrderComplaintGetRequest) GetApiParams() url.Values 
 }
 // OrderId Setter
 // 供应商订单号
-func (r *AlibabaHappytripTaxiOrderComplaintGetRequest) SetOrderId(_orderId string) error {
+func (r *AlibabaHappytripTaxiOrderComplaintGetAPIRequest) SetOrderId(_orderId string) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaHappytripTaxiOrderComplaintGetRequest) GetOrderId() string {
+func (r AlibabaHappytripTaxiOrderComplaintGetAPIRequest) GetOrderId() string {
     return r._orderId
 }
 // CaseId Setter
 // 供应商工单号
-func (r *AlibabaHappytripTaxiOrderComplaintGetRequest) SetCaseId(_caseId string) error {
+func (r *AlibabaHappytripTaxiOrderComplaintGetAPIRequest) SetCaseId(_caseId string) error {
     r._caseId = _caseId
     r.Set("case_id", _caseId)
     return nil
 }
 
 // CaseId Getter
-func (r AlibabaHappytripTaxiOrderComplaintGetRequest) GetCaseId() string {
+func (r AlibabaHappytripTaxiOrderComplaintGetAPIRequest) GetCaseId() string {
     return r._caseId
 }

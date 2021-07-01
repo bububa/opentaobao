@@ -12,26 +12,26 @@ tmall.product.schema.get
 
 产品信息获取接口schema形式返回
 */
-type TmallProductSchemaGetRequest struct {
+type TmallProductSchemaGetAPIRequest struct {
     model.Params
     // 产品编号
     _productId   int64
 }
 
-// 初始化TmallProductSchemaGetRequest对象
-func NewTmallProductSchemaGetRequest() *TmallProductSchemaGetRequest{
-    return &TmallProductSchemaGetRequest{
+// 初始化TmallProductSchemaGetAPIRequest对象
+func NewTmallProductSchemaGetRequest() *TmallProductSchemaGetAPIRequest{
+    return &TmallProductSchemaGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallProductSchemaGetRequest) GetApiMethodName() string {
+func (r TmallProductSchemaGetAPIRequest) GetApiMethodName() string {
     return "tmall.product.schema.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallProductSchemaGetRequest) GetApiParams() url.Values {
+func (r TmallProductSchemaGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallProductSchemaGetRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 产品编号
-func (r *TmallProductSchemaGetRequest) SetProductId(_productId int64) error {
+func (r *TmallProductSchemaGetAPIRequest) SetProductId(_productId int64) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r TmallProductSchemaGetRequest) GetProductId() int64 {
+func (r TmallProductSchemaGetAPIRequest) GetProductId() int64 {
     return r._productId
 }

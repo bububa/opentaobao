@@ -12,24 +12,24 @@ alibaba.xiami.api.contract.sign
 
 提供签约链接。in：商家id；out：签约url
 */
-type AlibabaXiamiApiContractSignRequest struct {
+type AlibabaXiamiApiContractSignAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaXiamiApiContractSignRequest对象
-func NewAlibabaXiamiApiContractSignRequest() *AlibabaXiamiApiContractSignRequest{
-    return &AlibabaXiamiApiContractSignRequest{
+// 初始化AlibabaXiamiApiContractSignAPIRequest对象
+func NewAlibabaXiamiApiContractSignRequest() *AlibabaXiamiApiContractSignAPIRequest{
+    return &AlibabaXiamiApiContractSignAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaXiamiApiContractSignRequest) GetApiMethodName() string {
+func (r AlibabaXiamiApiContractSignAPIRequest) GetApiMethodName() string {
     return "alibaba.xiami.api.contract.sign"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaXiamiApiContractSignRequest) GetApiParams() url.Values {
+func (r AlibabaXiamiApiContractSignAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

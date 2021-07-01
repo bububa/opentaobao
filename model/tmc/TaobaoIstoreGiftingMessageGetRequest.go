@@ -12,26 +12,26 @@ taobao.istore.gifting.message.get
 
 该api通过参数查询对应的gifting消息
 */
-type TaobaoIstoreGiftingMessageGetRequest struct {
+type TaobaoIstoreGiftingMessageGetAPIRequest struct {
     model.Params
     // 消息查询条件
     _giftMessageBizCondition   *GiftMessageBizCondition
 }
 
-// 初始化TaobaoIstoreGiftingMessageGetRequest对象
-func NewTaobaoIstoreGiftingMessageGetRequest() *TaobaoIstoreGiftingMessageGetRequest{
-    return &TaobaoIstoreGiftingMessageGetRequest{
+// 初始化TaobaoIstoreGiftingMessageGetAPIRequest对象
+func NewTaobaoIstoreGiftingMessageGetRequest() *TaobaoIstoreGiftingMessageGetAPIRequest{
+    return &TaobaoIstoreGiftingMessageGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoIstoreGiftingMessageGetRequest) GetApiMethodName() string {
+func (r TaobaoIstoreGiftingMessageGetAPIRequest) GetApiMethodName() string {
     return "taobao.istore.gifting.message.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoIstoreGiftingMessageGetRequest) GetApiParams() url.Values {
+func (r TaobaoIstoreGiftingMessageGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoIstoreGiftingMessageGetRequest) GetApiParams() url.Values {
 }
 // GiftMessageBizCondition Setter
 // 消息查询条件
-func (r *TaobaoIstoreGiftingMessageGetRequest) SetGiftMessageBizCondition(_giftMessageBizCondition *GiftMessageBizCondition) error {
+func (r *TaobaoIstoreGiftingMessageGetAPIRequest) SetGiftMessageBizCondition(_giftMessageBizCondition *GiftMessageBizCondition) error {
     r._giftMessageBizCondition = _giftMessageBizCondition
     r.Set("gift_message_biz_condition", _giftMessageBizCondition)
     return nil
 }
 
 // GiftMessageBizCondition Getter
-func (r TaobaoIstoreGiftingMessageGetRequest) GetGiftMessageBizCondition() *GiftMessageBizCondition {
+func (r TaobaoIstoreGiftingMessageGetAPIRequest) GetGiftMessageBizCondition() *GiftMessageBizCondition {
     return r._giftMessageBizCondition
 }

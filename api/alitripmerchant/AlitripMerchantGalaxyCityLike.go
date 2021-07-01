@@ -11,7 +11,7 @@ alitrip.merchant.galaxy.city.like
 
 根据城市模糊查询，雅高酒店所在城市的城市信息
 */
-func AlitripMerchantGalaxyCityLike(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCityLikeRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyCityLikeAPIResponse, error) {
+func AlitripMerchantGalaxyCityLike(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCityLikeAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyCityLikeAPIResponse, error) {
     var resp alitripmerchant.AlitripMerchantGalaxyCityLikeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

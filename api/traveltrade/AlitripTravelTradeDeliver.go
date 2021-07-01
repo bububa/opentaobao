@@ -11,7 +11,7 @@ alitrip.travel.trade.deliver
 
 航旅度假无需物流普通商品发货接口（不支持二次预约商品），只支持子订单级别发货
 */
-func AlitripTravelTradeDeliver(clt *core.SDKClient, req *traveltrade.AlitripTravelTradeDeliverRequest, session string) (*traveltrade.AlitripTravelTradeDeliverAPIResponse, error) {
+func AlitripTravelTradeDeliver(clt *core.SDKClient, req *traveltrade.AlitripTravelTradeDeliverAPIRequest, session string) (*traveltrade.AlitripTravelTradeDeliverAPIResponse, error) {
     var resp traveltrade.AlitripTravelTradeDeliverAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

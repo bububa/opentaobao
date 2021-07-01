@@ -12,7 +12,7 @@ alibaba.legal.case.common.enumdata
 
 获取通用枚举值接口
 */
-type AlibabaLegalCaseCommonEnumdataRequest struct {
+type AlibabaLegalCaseCommonEnumdataAPIRequest struct {
     model.Params
     // bu
     _key   string
@@ -20,20 +20,20 @@ type AlibabaLegalCaseCommonEnumdataRequest struct {
     _lang   string
 }
 
-// 初始化AlibabaLegalCaseCommonEnumdataRequest对象
-func NewAlibabaLegalCaseCommonEnumdataRequest() *AlibabaLegalCaseCommonEnumdataRequest{
-    return &AlibabaLegalCaseCommonEnumdataRequest{
+// 初始化AlibabaLegalCaseCommonEnumdataAPIRequest对象
+func NewAlibabaLegalCaseCommonEnumdataRequest() *AlibabaLegalCaseCommonEnumdataAPIRequest{
+    return &AlibabaLegalCaseCommonEnumdataAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLegalCaseCommonEnumdataRequest) GetApiMethodName() string {
+func (r AlibabaLegalCaseCommonEnumdataAPIRequest) GetApiMethodName() string {
     return "alibaba.legal.case.common.enumdata"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLegalCaseCommonEnumdataRequest) GetApiParams() url.Values {
+func (r AlibabaLegalCaseCommonEnumdataAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaLegalCaseCommonEnumdataRequest) GetApiParams() url.Values {
 }
 // Key Setter
 // bu
-func (r *AlibabaLegalCaseCommonEnumdataRequest) SetKey(_key string) error {
+func (r *AlibabaLegalCaseCommonEnumdataAPIRequest) SetKey(_key string) error {
     r._key = _key
     r.Set("key", _key)
     return nil
 }
 
 // Key Getter
-func (r AlibabaLegalCaseCommonEnumdataRequest) GetKey() string {
+func (r AlibabaLegalCaseCommonEnumdataAPIRequest) GetKey() string {
     return r._key
 }
 // Lang Setter
 // 语言
-func (r *AlibabaLegalCaseCommonEnumdataRequest) SetLang(_lang string) error {
+func (r *AlibabaLegalCaseCommonEnumdataAPIRequest) SetLang(_lang string) error {
     r._lang = _lang
     r.Set("lang", _lang)
     return nil
 }
 
 // Lang Getter
-func (r AlibabaLegalCaseCommonEnumdataRequest) GetLang() string {
+func (r AlibabaLegalCaseCommonEnumdataAPIRequest) GetLang() string {
     return r._lang
 }

@@ -11,7 +11,7 @@ alitrip.hotel.alliance.settle.order.syn
 
 用于菲住联盟分账成功订单同步
 */
-func AlitripHotelAllianceSettleOrderSyn(clt *core.SDKClient, req *hotelalliance.AlitripHotelAllianceSettleOrderSynRequest, session string) (*hotelalliance.AlitripHotelAllianceSettleOrderSynAPIResponse, error) {
+func AlitripHotelAllianceSettleOrderSyn(clt *core.SDKClient, req *hotelalliance.AlitripHotelAllianceSettleOrderSynAPIRequest, session string) (*hotelalliance.AlitripHotelAllianceSettleOrderSynAPIResponse, error) {
     var resp hotelalliance.AlitripHotelAllianceSettleOrderSynAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

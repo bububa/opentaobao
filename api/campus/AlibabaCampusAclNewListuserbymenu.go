@@ -11,7 +11,7 @@ alibaba.campus.acl.new.listuserbymenu
 
 查询拥有菜单权限的用户
 */
-func AlibabaCampusAclNewListuserbymenu(clt *core.SDKClient, req *campus.AlibabaCampusAclNewListuserbymenuRequest, session string) (*campus.AlibabaCampusAclNewListuserbymenuAPIResponse, error) {
+func AlibabaCampusAclNewListuserbymenu(clt *core.SDKClient, req *campus.AlibabaCampusAclNewListuserbymenuAPIRequest, session string) (*campus.AlibabaCampusAclNewListuserbymenuAPIResponse, error) {
     var resp campus.AlibabaCampusAclNewListuserbymenuAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

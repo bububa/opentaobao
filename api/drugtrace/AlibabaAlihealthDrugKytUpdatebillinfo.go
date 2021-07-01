@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.updatebillinfo
 
 零售端平台单据更新
 */
-func AlibabaAlihealthDrugKytUpdatebillinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUpdatebillinfoRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytUpdatebillinfoAPIResponse, error) {
+func AlibabaAlihealthDrugKytUpdatebillinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytUpdatebillinfoAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytUpdatebillinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

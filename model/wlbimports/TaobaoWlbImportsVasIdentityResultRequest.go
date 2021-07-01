@@ -12,26 +12,26 @@ taobao.wlb.imports.vas.identity.result
 
 集货鉴定结果查询
 */
-type TaobaoWlbImportsVasIdentityResultRequest struct {
+type TaobaoWlbImportsVasIdentityResultAPIRequest struct {
     model.Params
     // 物流订单编号
     _lgOrderCode   string
 }
 
-// 初始化TaobaoWlbImportsVasIdentityResultRequest对象
-func NewTaobaoWlbImportsVasIdentityResultRequest() *TaobaoWlbImportsVasIdentityResultRequest{
-    return &TaobaoWlbImportsVasIdentityResultRequest{
+// 初始化TaobaoWlbImportsVasIdentityResultAPIRequest对象
+func NewTaobaoWlbImportsVasIdentityResultRequest() *TaobaoWlbImportsVasIdentityResultAPIRequest{
+    return &TaobaoWlbImportsVasIdentityResultAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbImportsVasIdentityResultRequest) GetApiMethodName() string {
+func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.imports.vas.identity.result"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbImportsVasIdentityResultRequest) GetApiParams() url.Values {
+func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWlbImportsVasIdentityResultRequest) GetApiParams() url.Values {
 }
 // LgOrderCode Setter
 // 物流订单编号
-func (r *TaobaoWlbImportsVasIdentityResultRequest) SetLgOrderCode(_lgOrderCode string) error {
+func (r *TaobaoWlbImportsVasIdentityResultAPIRequest) SetLgOrderCode(_lgOrderCode string) error {
     r._lgOrderCode = _lgOrderCode
     r.Set("lg_order_code", _lgOrderCode)
     return nil
 }
 
 // LgOrderCode Getter
-func (r TaobaoWlbImportsVasIdentityResultRequest) GetLgOrderCode() string {
+func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetLgOrderCode() string {
     return r._lgOrderCode
 }

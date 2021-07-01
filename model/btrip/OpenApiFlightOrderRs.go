@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiFlightOrderRs 
-type OpenApiFlightOrderRs struct {
+// OpenApiFlightOrderRS 
+type OpenApiFlightOrderRS struct {
     // 机票订单id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 更新时间

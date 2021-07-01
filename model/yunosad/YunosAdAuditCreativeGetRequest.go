@@ -12,7 +12,7 @@ yunos.ad.audit.creative.get
 
 获取单个创意审核状态
 */
-type YunosAdAuditCreativeGetRequest struct {
+type YunosAdAuditCreativeGetAPIRequest struct {
     model.Params
     // 第三方的dspId
     _memberId   int64
@@ -20,20 +20,20 @@ type YunosAdAuditCreativeGetRequest struct {
     _creativeId   string
 }
 
-// 初始化YunosAdAuditCreativeGetRequest对象
-func NewYunosAdAuditCreativeGetRequest() *YunosAdAuditCreativeGetRequest{
-    return &YunosAdAuditCreativeGetRequest{
+// 初始化YunosAdAuditCreativeGetAPIRequest对象
+func NewYunosAdAuditCreativeGetRequest() *YunosAdAuditCreativeGetAPIRequest{
+    return &YunosAdAuditCreativeGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosAdAuditCreativeGetRequest) GetApiMethodName() string {
+func (r YunosAdAuditCreativeGetAPIRequest) GetApiMethodName() string {
     return "yunos.ad.audit.creative.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosAdAuditCreativeGetRequest) GetApiParams() url.Values {
+func (r YunosAdAuditCreativeGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r YunosAdAuditCreativeGetRequest) GetApiParams() url.Values {
 }
 // MemberId Setter
 // 第三方的dspId
-func (r *YunosAdAuditCreativeGetRequest) SetMemberId(_memberId int64) error {
+func (r *YunosAdAuditCreativeGetAPIRequest) SetMemberId(_memberId int64) error {
     r._memberId = _memberId
     r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
-func (r YunosAdAuditCreativeGetRequest) GetMemberId() int64 {
+func (r YunosAdAuditCreativeGetAPIRequest) GetMemberId() int64 {
     return r._memberId
 }
 // CreativeId Setter
 // 第三方广告创意id
-func (r *YunosAdAuditCreativeGetRequest) SetCreativeId(_creativeId string) error {
+func (r *YunosAdAuditCreativeGetAPIRequest) SetCreativeId(_creativeId string) error {
     r._creativeId = _creativeId
     r.Set("creative_id", _creativeId)
     return nil
 }
 
 // CreativeId Getter
-func (r YunosAdAuditCreativeGetRequest) GetCreativeId() string {
+func (r YunosAdAuditCreativeGetAPIRequest) GetCreativeId() string {
     return r._creativeId
 }

@@ -12,26 +12,26 @@ aliexpress.ascp.po.query
 
 AE仓发业务采购单查询
 */
-type AliexpressAscpPoQueryRequest struct {
+type AliexpressAscpPoQueryAPIRequest struct {
     model.Params
     // 系统自动生成
     _purchaseOrderQuery   *PurchaseOrderQueryDTO
 }
 
-// 初始化AliexpressAscpPoQueryRequest对象
-func NewAliexpressAscpPoQueryRequest() *AliexpressAscpPoQueryRequest{
-    return &AliexpressAscpPoQueryRequest{
+// 初始化AliexpressAscpPoQueryAPIRequest对象
+func NewAliexpressAscpPoQueryRequest() *AliexpressAscpPoQueryAPIRequest{
+    return &AliexpressAscpPoQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressAscpPoQueryRequest) GetApiMethodName() string {
+func (r AliexpressAscpPoQueryAPIRequest) GetApiMethodName() string {
     return "aliexpress.ascp.po.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressAscpPoQueryRequest) GetApiParams() url.Values {
+func (r AliexpressAscpPoQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressAscpPoQueryRequest) GetApiParams() url.Values {
 }
 // PurchaseOrderQuery Setter
 // 系统自动生成
-func (r *AliexpressAscpPoQueryRequest) SetPurchaseOrderQuery(_purchaseOrderQuery *PurchaseOrderQueryDTO) error {
+func (r *AliexpressAscpPoQueryAPIRequest) SetPurchaseOrderQuery(_purchaseOrderQuery *PurchaseOrderQueryDTO) error {
     r._purchaseOrderQuery = _purchaseOrderQuery
     r.Set("purchase_order_query", _purchaseOrderQuery)
     return nil
 }
 
 // PurchaseOrderQuery Getter
-func (r AliexpressAscpPoQueryRequest) GetPurchaseOrderQuery() *PurchaseOrderQueryDTO {
+func (r AliexpressAscpPoQueryAPIRequest) GetPurchaseOrderQuery() *PurchaseOrderQueryDTO {
     return r._purchaseOrderQuery
 }

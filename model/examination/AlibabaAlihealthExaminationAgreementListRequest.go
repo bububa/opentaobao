@@ -12,26 +12,26 @@ alibaba.alihealth.examination.agreement.list
 
 isv协议获取
 */
-type AlibabaAlihealthExaminationAgreementListRequest struct {
+type AlibabaAlihealthExaminationAgreementListAPIRequest struct {
     model.Params
     // isv传递过来的门店code
     _storeCode   string
 }
 
-// 初始化AlibabaAlihealthExaminationAgreementListRequest对象
-func NewAlibabaAlihealthExaminationAgreementListRequest() *AlibabaAlihealthExaminationAgreementListRequest{
-    return &AlibabaAlihealthExaminationAgreementListRequest{
+// 初始化AlibabaAlihealthExaminationAgreementListAPIRequest对象
+func NewAlibabaAlihealthExaminationAgreementListRequest() *AlibabaAlihealthExaminationAgreementListAPIRequest{
+    return &AlibabaAlihealthExaminationAgreementListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationAgreementListRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthExaminationAgreementListAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.examination.agreement.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationAgreementListRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthExaminationAgreementListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthExaminationAgreementListRequest) GetApiParams() url.Valu
 }
 // StoreCode Setter
 // isv传递过来的门店code
-func (r *AlibabaAlihealthExaminationAgreementListRequest) SetStoreCode(_storeCode string) error {
+func (r *AlibabaAlihealthExaminationAgreementListAPIRequest) SetStoreCode(_storeCode string) error {
     r._storeCode = _storeCode
     r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
-func (r AlibabaAlihealthExaminationAgreementListRequest) GetStoreCode() string {
+func (r AlibabaAlihealthExaminationAgreementListAPIRequest) GetStoreCode() string {
     return r._storeCode
 }

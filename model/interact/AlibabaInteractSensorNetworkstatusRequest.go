@@ -12,24 +12,24 @@ alibaba.interact.sensor.networkstatus
 
 客户端网络状态
 */
-type AlibabaInteractSensorNetworkstatusRequest struct {
+type AlibabaInteractSensorNetworkstatusAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractSensorNetworkstatusRequest对象
-func NewAlibabaInteractSensorNetworkstatusRequest() *AlibabaInteractSensorNetworkstatusRequest{
-    return &AlibabaInteractSensorNetworkstatusRequest{
+// 初始化AlibabaInteractSensorNetworkstatusAPIRequest对象
+func NewAlibabaInteractSensorNetworkstatusRequest() *AlibabaInteractSensorNetworkstatusAPIRequest{
+    return &AlibabaInteractSensorNetworkstatusAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorNetworkstatusRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorNetworkstatusAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.networkstatus"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorNetworkstatusRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorNetworkstatusAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

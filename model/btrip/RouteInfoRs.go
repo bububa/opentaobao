@@ -1,7 +1,7 @@
 package btrip
 
-// RouteInfoRs 
-type RouteInfoRs struct {
+// RouteInfoRS 
+type RouteInfoRS struct {
     // 组成当前线路的形成列表
-    JourneyList   []JourneyRs `json:"journey_list,omitempty" xml:"journey_list>journey_rs,omitempty"`
+    JourneyList   []JourneyRS `json:"journey_list,omitempty" xml:"journey_list>journey_rs,omitempty"`
 }

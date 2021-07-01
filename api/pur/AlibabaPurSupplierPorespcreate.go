@@ -11,7 +11,7 @@ alibaba.pur.supplier.porespcreate
 
 PO反馈接口
 */
-func AlibabaPurSupplierPorespcreate(clt *core.SDKClient, req *pur.AlibabaPurSupplierPorespcreateRequest, session string) (*pur.AlibabaPurSupplierPorespcreateAPIResponse, error) {
+func AlibabaPurSupplierPorespcreate(clt *core.SDKClient, req *pur.AlibabaPurSupplierPorespcreateAPIRequest, session string) (*pur.AlibabaPurSupplierPorespcreateAPIResponse, error) {
     var resp pur.AlibabaPurSupplierPorespcreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

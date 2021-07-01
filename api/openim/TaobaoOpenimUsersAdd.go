@@ -11,7 +11,7 @@ taobao.openim.users.add
 
 导入用户
 */
-func TaobaoOpenimUsersAdd(clt *core.SDKClient, req *openim.TaobaoOpenimUsersAddRequest, session string) (*openim.TaobaoOpenimUsersAddAPIResponse, error) {
+func TaobaoOpenimUsersAdd(clt *core.SDKClient, req *openim.TaobaoOpenimUsersAddAPIRequest, session string) (*openim.TaobaoOpenimUsersAddAPIResponse, error) {
     var resp openim.TaobaoOpenimUsersAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ tmall.servicecenter.servicestore.updatestatus
 
 修改网点/门店状态
 */
-type TmallServicecenterServicestoreUpdatestatusRequest struct {
+type TmallServicecenterServicestoreUpdatestatusAPIRequest struct {
     model.Params
     // 门店id
     _id   int64
@@ -22,20 +22,20 @@ type TmallServicecenterServicestoreUpdatestatusRequest struct {
     _bizType   string
 }
 
-// 初始化TmallServicecenterServicestoreUpdatestatusRequest对象
-func NewTmallServicecenterServicestoreUpdatestatusRequest() *TmallServicecenterServicestoreUpdatestatusRequest{
-    return &TmallServicecenterServicestoreUpdatestatusRequest{
+// 初始化TmallServicecenterServicestoreUpdatestatusAPIRequest对象
+func NewTmallServicecenterServicestoreUpdatestatusRequest() *TmallServicecenterServicestoreUpdatestatusAPIRequest{
+    return &TmallServicecenterServicestoreUpdatestatusAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicestoreUpdatestatusRequest) GetApiMethodName() string {
+func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicestore.updatestatus"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicestoreUpdatestatusRequest) GetApiParams() url.Values {
+func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TmallServicecenterServicestoreUpdatestatusRequest) GetApiParams() url.Va
 }
 // Id Setter
 // 门店id
-func (r *TmallServicecenterServicestoreUpdatestatusRequest) SetId(_id int64) error {
+func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetId(_id int64) error {
     r._id = _id
     r.Set("id", _id)
     return nil
 }
 
 // Id Getter
-func (r TmallServicecenterServicestoreUpdatestatusRequest) GetId() int64 {
+func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetId() int64 {
     return r._id
 }
 // Status Setter
 // 状态。1 营业，0歇业，-1彻底关店
-func (r *TmallServicecenterServicestoreUpdatestatusRequest) SetStatus(_status int64) error {
+func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetStatus(_status int64) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r TmallServicecenterServicestoreUpdatestatusRequest) GetStatus() int64 {
+func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetStatus() int64 {
     return r._status
 }
 // BizType Setter
 // 业务类型。不同业务传不同的值
-func (r *TmallServicecenterServicestoreUpdatestatusRequest) SetBizType(_bizType string) error {
+func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetBizType(_bizType string) error {
     r._bizType = _bizType
     r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
-func (r TmallServicecenterServicestoreUpdatestatusRequest) GetBizType() string {
+func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetBizType() string {
     return r._bizType
 }

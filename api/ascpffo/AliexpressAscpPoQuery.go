@@ -11,7 +11,7 @@ aliexpress.ascp.po.query
 
 AE仓发业务采购单查询
 */
-func AliexpressAscpPoQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpPoQueryRequest, session string) (*ascpffo.AliexpressAscpPoQueryAPIResponse, error) {
+func AliexpressAscpPoQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpPoQueryAPIRequest, session string) (*ascpffo.AliexpressAscpPoQueryAPIResponse, error) {
     var resp ascpffo.AliexpressAscpPoQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

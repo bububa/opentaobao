@@ -12,26 +12,26 @@ taobao.baichuan.items.unsubscribe.by.condition
 
 根据条件删除订阅关系
 */
-type TaobaoBaichuanItemsUnsubscribeByConditionRequest struct {
+type TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest struct {
     model.Params
     // 删除条件
     _condition   *Condition
 }
 
-// 初始化TaobaoBaichuanItemsUnsubscribeByConditionRequest对象
-func NewTaobaoBaichuanItemsUnsubscribeByConditionRequest() *TaobaoBaichuanItemsUnsubscribeByConditionRequest{
-    return &TaobaoBaichuanItemsUnsubscribeByConditionRequest{
+// 初始化TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest对象
+func NewTaobaoBaichuanItemsUnsubscribeByConditionRequest() *TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest{
+    return &TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanItemsUnsubscribeByConditionRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest) GetApiMethodName() string {
     return "taobao.baichuan.items.unsubscribe.by.condition"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanItemsUnsubscribeByConditionRequest) GetApiParams() url.Values {
+func (r TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanItemsUnsubscribeByConditionRequest) GetApiParams() url.Val
 }
 // Condition Setter
 // 删除条件
-func (r *TaobaoBaichuanItemsUnsubscribeByConditionRequest) SetCondition(_condition *Condition) error {
+func (r *TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest) SetCondition(_condition *Condition) error {
     r._condition = _condition
     r.Set("condition", _condition)
     return nil
 }
 
 // Condition Getter
-func (r TaobaoBaichuanItemsUnsubscribeByConditionRequest) GetCondition() *Condition {
+func (r TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest) GetCondition() *Condition {
     return r._condition
 }

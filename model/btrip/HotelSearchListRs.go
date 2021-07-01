@@ -1,7 +1,7 @@
 package btrip
 
-// HotelSearchListRs 
-type HotelSearchListRs struct {
+// HotelSearchListRS 
+type HotelSearchListRS struct {
     // 酒店列表
     Hotels   []HotelListDTO `json:"hotels,omitempty" xml:"hotels>hotel_list_dto,omitempty"`
     // 酒店数量

@@ -11,7 +11,7 @@ taobao.train.agent.express.set.vtwo
 
 线下票回填物流信息服务
 */
-func TaobaoTrainAgentExpressSetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentExpressSetVtwoRequest, session string) (*train.TaobaoTrainAgentExpressSetVtwoAPIResponse, error) {
+func TaobaoTrainAgentExpressSetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentExpressSetVtwoAPIRequest, session string) (*train.TaobaoTrainAgentExpressSetVtwoAPIResponse, error) {
     var resp train.TaobaoTrainAgentExpressSetVtwoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

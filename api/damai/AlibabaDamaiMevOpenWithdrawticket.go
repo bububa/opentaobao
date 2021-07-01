@@ -11,7 +11,7 @@ alibaba.damai.mev.open.withdrawticket
 
 开放接口退票
 */
-func AlibabaDamaiMevOpenWithdrawticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenWithdrawticketRequest, session string) (*damai.AlibabaDamaiMevOpenWithdrawticketAPIResponse, error) {
+func AlibabaDamaiMevOpenWithdrawticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenWithdrawticketAPIRequest, session string) (*damai.AlibabaDamaiMevOpenWithdrawticketAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenWithdrawticketAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

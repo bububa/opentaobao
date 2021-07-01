@@ -11,7 +11,7 @@ alibaba.damai.mev.open.deletestand
 
 deleteStand
 */
-func AlibabaDamaiMevOpenDeletestand(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletestandRequest, session string) (*damai.AlibabaDamaiMevOpenDeletestandAPIResponse, error) {
+func AlibabaDamaiMevOpenDeletestand(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletestandAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeletestandAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenDeletestandAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.omniorder.store.sdtstatus
 
 提供给商家查询运力单的状态。
 */
-func TaobaoOmniorderStoreSdtstatus(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtstatusRequest, session string) (*omniorder.TaobaoOmniorderStoreSdtstatusAPIResponse, error) {
+func TaobaoOmniorderStoreSdtstatus(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtstatusAPIRequest, session string) (*omniorder.TaobaoOmniorderStoreSdtstatusAPIResponse, error) {
     var resp omniorder.TaobaoOmniorderStoreSdtstatusAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

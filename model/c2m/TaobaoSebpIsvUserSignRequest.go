@@ -12,7 +12,7 @@ taobao.sebp.isv.user.sign
 
 同步淘小铺三方服务签约信息
 */
-type TaobaoSebpIsvUserSignRequest struct {
+type TaobaoSebpIsvUserSignAPIRequest struct {
     model.Params
     // 淘宝账号
     _userName   string
@@ -24,20 +24,20 @@ type TaobaoSebpIsvUserSignRequest struct {
     _startTime   string
 }
 
-// 初始化TaobaoSebpIsvUserSignRequest对象
-func NewTaobaoSebpIsvUserSignRequest() *TaobaoSebpIsvUserSignRequest{
-    return &TaobaoSebpIsvUserSignRequest{
+// 初始化TaobaoSebpIsvUserSignAPIRequest对象
+func NewTaobaoSebpIsvUserSignRequest() *TaobaoSebpIsvUserSignAPIRequest{
+    return &TaobaoSebpIsvUserSignAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSebpIsvUserSignRequest) GetApiMethodName() string {
+func (r TaobaoSebpIsvUserSignAPIRequest) GetApiMethodName() string {
     return "taobao.sebp.isv.user.sign"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSebpIsvUserSignRequest) GetApiParams() url.Values {
+func (r TaobaoSebpIsvUserSignAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoSebpIsvUserSignRequest) GetApiParams() url.Values {
 }
 // UserName Setter
 // 淘宝账号
-func (r *TaobaoSebpIsvUserSignRequest) SetUserName(_userName string) error {
+func (r *TaobaoSebpIsvUserSignAPIRequest) SetUserName(_userName string) error {
     r._userName = _userName
     r.Set("user_name", _userName)
     return nil
 }
 
 // UserName Getter
-func (r TaobaoSebpIsvUserSignRequest) GetUserName() string {
+func (r TaobaoSebpIsvUserSignAPIRequest) GetUserName() string {
     return r._userName
 }
 // Identity Setter
 // 身份证
-func (r *TaobaoSebpIsvUserSignRequest) SetIdentity(_identity string) error {
+func (r *TaobaoSebpIsvUserSignAPIRequest) SetIdentity(_identity string) error {
     r._identity = _identity
     r.Set("identity", _identity)
     return nil
 }
 
 // Identity Getter
-func (r TaobaoSebpIsvUserSignRequest) GetIdentity() string {
+func (r TaobaoSebpIsvUserSignAPIRequest) GetIdentity() string {
     return r._identity
 }
 // EndTime Setter
 // 到期日期
-func (r *TaobaoSebpIsvUserSignRequest) SetEndTime(_endTime string) error {
+func (r *TaobaoSebpIsvUserSignAPIRequest) SetEndTime(_endTime string) error {
     r._endTime = _endTime
     r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
-func (r TaobaoSebpIsvUserSignRequest) GetEndTime() string {
+func (r TaobaoSebpIsvUserSignAPIRequest) GetEndTime() string {
     return r._endTime
 }
 // StartTime Setter
 // 签约日期
-func (r *TaobaoSebpIsvUserSignRequest) SetStartTime(_startTime string) error {
+func (r *TaobaoSebpIsvUserSignAPIRequest) SetStartTime(_startTime string) error {
     r._startTime = _startTime
     r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
-func (r TaobaoSebpIsvUserSignRequest) GetStartTime() string {
+func (r TaobaoSebpIsvUserSignAPIRequest) GetStartTime() string {
     return r._startTime
 }

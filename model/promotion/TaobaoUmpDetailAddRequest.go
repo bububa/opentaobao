@@ -12,7 +12,7 @@ taobao.ump.detail.add
 
 增加活动详情。活动详情里面包括活动的范围（店铺，商品），活动的参数（比如具体的折扣），参与类型（全部，部分，部分不参加）等信息。当参与类型为部分或部分不参加的时候需要和taobao.ump.range.add来配合使用。
 */
-type TaobaoUmpDetailAddRequest struct {
+type TaobaoUmpDetailAddAPIRequest struct {
     model.Params
     // 增加工具详情
     _actId   int64
@@ -20,20 +20,20 @@ type TaobaoUmpDetailAddRequest struct {
     _content   string
 }
 
-// 初始化TaobaoUmpDetailAddRequest对象
-func NewTaobaoUmpDetailAddRequest() *TaobaoUmpDetailAddRequest{
-    return &TaobaoUmpDetailAddRequest{
+// 初始化TaobaoUmpDetailAddAPIRequest对象
+func NewTaobaoUmpDetailAddRequest() *TaobaoUmpDetailAddAPIRequest{
+    return &TaobaoUmpDetailAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoUmpDetailAddRequest) GetApiMethodName() string {
+func (r TaobaoUmpDetailAddAPIRequest) GetApiMethodName() string {
     return "taobao.ump.detail.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoUmpDetailAddRequest) GetApiParams() url.Values {
+func (r TaobaoUmpDetailAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoUmpDetailAddRequest) GetApiParams() url.Values {
 }
 // ActId Setter
 // 增加工具详情
-func (r *TaobaoUmpDetailAddRequest) SetActId(_actId int64) error {
+func (r *TaobaoUmpDetailAddAPIRequest) SetActId(_actId int64) error {
     r._actId = _actId
     r.Set("act_id", _actId)
     return nil
 }
 
 // ActId Getter
-func (r TaobaoUmpDetailAddRequest) GetActId() int64 {
+func (r TaobaoUmpDetailAddAPIRequest) GetActId() int64 {
     return r._actId
 }
 // Content Setter
 // 活动详情内容，json格式，可以通过ump sdk中的MarketingTool来进行处理
-func (r *TaobaoUmpDetailAddRequest) SetContent(_content string) error {
+func (r *TaobaoUmpDetailAddAPIRequest) SetContent(_content string) error {
     r._content = _content
     r.Set("content", _content)
     return nil
 }
 
 // Content Getter
-func (r TaobaoUmpDetailAddRequest) GetContent() string {
+func (r TaobaoUmpDetailAddAPIRequest) GetContent() string {
     return r._content
 }

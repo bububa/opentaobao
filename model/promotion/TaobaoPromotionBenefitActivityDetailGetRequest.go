@@ -12,26 +12,26 @@ taobao.promotion.benefit.activity.detail.get
 
 活动关联的权益详情获取
 */
-type TaobaoPromotionBenefitActivityDetailGetRequest struct {
+type TaobaoPromotionBenefitActivityDetailGetAPIRequest struct {
     model.Params
     // 查询活动关联权益详情的请求
     _queryRequest   *ActivityRelationDetailRequest
 }
 
-// 初始化TaobaoPromotionBenefitActivityDetailGetRequest对象
-func NewTaobaoPromotionBenefitActivityDetailGetRequest() *TaobaoPromotionBenefitActivityDetailGetRequest{
-    return &TaobaoPromotionBenefitActivityDetailGetRequest{
+// 初始化TaobaoPromotionBenefitActivityDetailGetAPIRequest对象
+func NewTaobaoPromotionBenefitActivityDetailGetRequest() *TaobaoPromotionBenefitActivityDetailGetAPIRequest{
+    return &TaobaoPromotionBenefitActivityDetailGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPromotionBenefitActivityDetailGetRequest) GetApiMethodName() string {
+func (r TaobaoPromotionBenefitActivityDetailGetAPIRequest) GetApiMethodName() string {
     return "taobao.promotion.benefit.activity.detail.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionBenefitActivityDetailGetRequest) GetApiParams() url.Values {
+func (r TaobaoPromotionBenefitActivityDetailGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPromotionBenefitActivityDetailGetRequest) GetApiParams() url.Value
 }
 // QueryRequest Setter
 // 查询活动关联权益详情的请求
-func (r *TaobaoPromotionBenefitActivityDetailGetRequest) SetQueryRequest(_queryRequest *ActivityRelationDetailRequest) error {
+func (r *TaobaoPromotionBenefitActivityDetailGetAPIRequest) SetQueryRequest(_queryRequest *ActivityRelationDetailRequest) error {
     r._queryRequest = _queryRequest
     r.Set("query_request", _queryRequest)
     return nil
 }
 
 // QueryRequest Getter
-func (r TaobaoPromotionBenefitActivityDetailGetRequest) GetQueryRequest() *ActivityRelationDetailRequest {
+func (r TaobaoPromotionBenefitActivityDetailGetAPIRequest) GetQueryRequest() *ActivityRelationDetailRequest {
     return r._queryRequest
 }

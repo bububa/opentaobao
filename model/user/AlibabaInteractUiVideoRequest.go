@@ -12,26 +12,26 @@ alibaba.interact.ui.video
 
 Weex页面播放视频
 */
-type AlibabaInteractUiVideoRequest struct {
+type AlibabaInteractUiVideoAPIRequest struct {
     model.Params
     // 仅作鉴权使用，没有实际数据传输
     _unnamed   string
 }
 
-// 初始化AlibabaInteractUiVideoRequest对象
-func NewAlibabaInteractUiVideoRequest() *AlibabaInteractUiVideoRequest{
-    return &AlibabaInteractUiVideoRequest{
+// 初始化AlibabaInteractUiVideoAPIRequest对象
+func NewAlibabaInteractUiVideoRequest() *AlibabaInteractUiVideoAPIRequest{
+    return &AlibabaInteractUiVideoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractUiVideoRequest) GetApiMethodName() string {
+func (r AlibabaInteractUiVideoAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.ui.video"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractUiVideoRequest) GetApiParams() url.Values {
+func (r AlibabaInteractUiVideoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaInteractUiVideoRequest) GetApiParams() url.Values {
 }
 // Unnamed Setter
 // 仅作鉴权使用，没有实际数据传输
-func (r *AlibabaInteractUiVideoRequest) SetUnnamed(_unnamed string) error {
+func (r *AlibabaInteractUiVideoAPIRequest) SetUnnamed(_unnamed string) error {
     r._unnamed = _unnamed
     r.Set("unnamed", _unnamed)
     return nil
 }
 
 // Unnamed Getter
-func (r AlibabaInteractUiVideoRequest) GetUnnamed() string {
+func (r AlibabaInteractUiVideoAPIRequest) GetUnnamed() string {
     return r._unnamed
 }

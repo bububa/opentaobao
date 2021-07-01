@@ -13,7 +13,7 @@ alibaba.alihealth.drugtrace.top.lsyd.uploadinoutbill
 201, "销售出库"；202, "退货出库"；203, "调拨出库"；204, "返工出库"；205, "销毁出库"；206, "抽检出库"；207, "直调出库"；208, "生产出库"；209, "供应出库"；211, "召回出库"；212,"赠品出库"；214,"盘亏出库"；215,"损坏出库"；216,"报废出库"；217,"其他出库"；237, "直调退货"。
 不包括对个人的零售出库，疫苗接种，领药出库。
 */
-func AlibabaAlihealthDrugtraceTopLsydUploadinoutbill(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadinoutbillRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse, error) {
+func AlibabaAlihealthDrugtraceTopLsydUploadinoutbill(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

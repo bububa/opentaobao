@@ -11,7 +11,7 @@ taobao.qimen.storecategory.get
 
 商家在ERP中调用该接口，获取门店类目
 */
-func TaobaoQimenStorecategoryGet(clt *core.SDKClient, req *qimen.TaobaoQimenStorecategoryGetRequest, session string) (*qimen.TaobaoQimenStorecategoryGetAPIResponse, error) {
+func TaobaoQimenStorecategoryGet(clt *core.SDKClient, req *qimen.TaobaoQimenStorecategoryGetAPIRequest, session string) (*qimen.TaobaoQimenStorecategoryGetAPIResponse, error) {
     var resp qimen.TaobaoQimenStorecategoryGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

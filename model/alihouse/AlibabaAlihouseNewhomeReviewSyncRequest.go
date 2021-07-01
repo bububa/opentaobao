@@ -12,26 +12,26 @@ alibaba.alihouse.newhome.review.sync
 
 接受楼盘测评图文信息
 */
-type AlibabaAlihouseNewhomeReviewSyncRequest struct {
+type AlibabaAlihouseNewhomeReviewSyncAPIRequest struct {
     model.Params
     // 测评草稿信息
     _review   *ProjectReviewDraftDTO
 }
 
-// 初始化AlibabaAlihouseNewhomeReviewSyncRequest对象
-func NewAlibabaAlihouseNewhomeReviewSyncRequest() *AlibabaAlihouseNewhomeReviewSyncRequest{
-    return &AlibabaAlihouseNewhomeReviewSyncRequest{
+// 初始化AlibabaAlihouseNewhomeReviewSyncAPIRequest对象
+func NewAlibabaAlihouseNewhomeReviewSyncRequest() *AlibabaAlihouseNewhomeReviewSyncAPIRequest{
+    return &AlibabaAlihouseNewhomeReviewSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeReviewSyncRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeReviewSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.review.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeReviewSyncRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeReviewSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeReviewSyncRequest) GetApiParams() url.Values {
 }
 // Review Setter
 // 测评草稿信息
-func (r *AlibabaAlihouseNewhomeReviewSyncRequest) SetReview(_review *ProjectReviewDraftDTO) error {
+func (r *AlibabaAlihouseNewhomeReviewSyncAPIRequest) SetReview(_review *ProjectReviewDraftDTO) error {
     r._review = _review
     r.Set("review", _review)
     return nil
 }
 
 // Review Getter
-func (r AlibabaAlihouseNewhomeReviewSyncRequest) GetReview() *ProjectReviewDraftDTO {
+func (r AlibabaAlihouseNewhomeReviewSyncAPIRequest) GetReview() *ProjectReviewDraftDTO {
     return r._review
 }

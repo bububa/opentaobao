@@ -12,26 +12,26 @@ alibaba.marketing.lottery.activity.bind
 
 抽奖平台奖池关联接口
 */
-type AlibabaMarketingLotteryActivityBindRequest struct {
+type AlibabaMarketingLotteryActivityBindAPIRequest struct {
     model.Params
     // 关联抽奖活动请求对象
     _lotteryActivityRel   *LotteryActivityRelDTO
 }
 
-// 初始化AlibabaMarketingLotteryActivityBindRequest对象
-func NewAlibabaMarketingLotteryActivityBindRequest() *AlibabaMarketingLotteryActivityBindRequest{
-    return &AlibabaMarketingLotteryActivityBindRequest{
+// 初始化AlibabaMarketingLotteryActivityBindAPIRequest对象
+func NewAlibabaMarketingLotteryActivityBindRequest() *AlibabaMarketingLotteryActivityBindAPIRequest{
+    return &AlibabaMarketingLotteryActivityBindAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMarketingLotteryActivityBindRequest) GetApiMethodName() string {
+func (r AlibabaMarketingLotteryActivityBindAPIRequest) GetApiMethodName() string {
     return "alibaba.marketing.lottery.activity.bind"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMarketingLotteryActivityBindRequest) GetApiParams() url.Values {
+func (r AlibabaMarketingLotteryActivityBindAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryActivityBindRequest) GetApiParams() url.Values {
 }
 // LotteryActivityRel Setter
 // 关联抽奖活动请求对象
-func (r *AlibabaMarketingLotteryActivityBindRequest) SetLotteryActivityRel(_lotteryActivityRel *LotteryActivityRelDTO) error {
+func (r *AlibabaMarketingLotteryActivityBindAPIRequest) SetLotteryActivityRel(_lotteryActivityRel *LotteryActivityRelDTO) error {
     r._lotteryActivityRel = _lotteryActivityRel
     r.Set("lottery_activity_rel", _lotteryActivityRel)
     return nil
 }
 
 // LotteryActivityRel Getter
-func (r AlibabaMarketingLotteryActivityBindRequest) GetLotteryActivityRel() *LotteryActivityRelDTO {
+func (r AlibabaMarketingLotteryActivityBindAPIRequest) GetLotteryActivityRel() *LotteryActivityRelDTO {
     return r._lotteryActivityRel
 }

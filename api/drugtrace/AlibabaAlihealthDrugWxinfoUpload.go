@@ -11,7 +11,7 @@ alibaba.alihealth.drug.wxinfo.upload
 
 小程序数据回传
 */
-func AlibabaAlihealthDrugWxinfoUpload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugWxinfoUploadRequest, session string) (*drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIResponse, error) {
+func AlibabaAlihealthDrugWxinfoUpload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

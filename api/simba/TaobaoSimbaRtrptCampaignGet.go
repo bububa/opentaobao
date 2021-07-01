@@ -11,7 +11,7 @@ taobao.simba.rtrpt.campaign.get
 
 获取推广计划实时报表数据
 */
-func TaobaoSimbaRtrptCampaignGet(clt *core.SDKClient, req *simba.TaobaoSimbaRtrptCampaignGetRequest, session string) (*simba.TaobaoSimbaRtrptCampaignGetAPIResponse, error) {
+func TaobaoSimbaRtrptCampaignGet(clt *core.SDKClient, req *simba.TaobaoSimbaRtrptCampaignGetAPIRequest, session string) (*simba.TaobaoSimbaRtrptCampaignGetAPIResponse, error) {
     var resp simba.TaobaoSimbaRtrptCampaignGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

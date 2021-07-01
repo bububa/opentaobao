@@ -12,26 +12,26 @@ alibaba.mj.presale.settlement.addlist
 
 用于预售活动结算数据的回传。
 */
-type AlibabaMjPresaleSettlementAddlistRequest struct {
+type AlibabaMjPresaleSettlementAddlistAPIRequest struct {
     model.Params
     // 订单json格式数据
     _preSaleRefundJson   string
 }
 
-// 初始化AlibabaMjPresaleSettlementAddlistRequest对象
-func NewAlibabaMjPresaleSettlementAddlistRequest() *AlibabaMjPresaleSettlementAddlistRequest{
-    return &AlibabaMjPresaleSettlementAddlistRequest{
+// 初始化AlibabaMjPresaleSettlementAddlistAPIRequest对象
+func NewAlibabaMjPresaleSettlementAddlistRequest() *AlibabaMjPresaleSettlementAddlistAPIRequest{
+    return &AlibabaMjPresaleSettlementAddlistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMjPresaleSettlementAddlistRequest) GetApiMethodName() string {
+func (r AlibabaMjPresaleSettlementAddlistAPIRequest) GetApiMethodName() string {
     return "alibaba.mj.presale.settlement.addlist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMjPresaleSettlementAddlistRequest) GetApiParams() url.Values {
+func (r AlibabaMjPresaleSettlementAddlistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMjPresaleSettlementAddlistRequest) GetApiParams() url.Values {
 }
 // PreSaleRefundJson Setter
 // 订单json格式数据
-func (r *AlibabaMjPresaleSettlementAddlistRequest) SetPreSaleRefundJson(_preSaleRefundJson string) error {
+func (r *AlibabaMjPresaleSettlementAddlistAPIRequest) SetPreSaleRefundJson(_preSaleRefundJson string) error {
     r._preSaleRefundJson = _preSaleRefundJson
     r.Set("pre_sale_refund_json", _preSaleRefundJson)
     return nil
 }
 
 // PreSaleRefundJson Getter
-func (r AlibabaMjPresaleSettlementAddlistRequest) GetPreSaleRefundJson() string {
+func (r AlibabaMjPresaleSettlementAddlistAPIRequest) GetPreSaleRefundJson() string {
     return r._preSaleRefundJson
 }

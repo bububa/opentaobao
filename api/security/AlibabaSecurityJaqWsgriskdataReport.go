@@ -11,7 +11,7 @@ alibaba.security.jaq.wsgriskdata.report
 
 无线保镖sdk根据用户的需要，上报数据到聚安全云端
 */
-func AlibabaSecurityJaqWsgriskdataReport(clt *core.SDKClient, req *security.AlibabaSecurityJaqWsgriskdataReportRequest, session string) (*security.AlibabaSecurityJaqWsgriskdataReportAPIResponse, error) {
+func AlibabaSecurityJaqWsgriskdataReport(clt *core.SDKClient, req *security.AlibabaSecurityJaqWsgriskdataReportAPIRequest, session string) (*security.AlibabaSecurityJaqWsgriskdataReportAPIResponse, error) {
     var resp security.AlibabaSecurityJaqWsgriskdataReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

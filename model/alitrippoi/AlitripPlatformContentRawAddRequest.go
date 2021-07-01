@@ -12,26 +12,26 @@ alitrip.platform.content.raw.add
 
 穷游内容写入飞猪接口
 */
-type AlitripPlatformContentRawAddRequest struct {
+type AlitripPlatformContentRawAddAPIRequest struct {
     model.Params
     // 写入入参
     _fliggyContentRequest   *FliggyContentRequest
 }
 
-// 初始化AlitripPlatformContentRawAddRequest对象
-func NewAlitripPlatformContentRawAddRequest() *AlitripPlatformContentRawAddRequest{
-    return &AlitripPlatformContentRawAddRequest{
+// 初始化AlitripPlatformContentRawAddAPIRequest对象
+func NewAlitripPlatformContentRawAddRequest() *AlitripPlatformContentRawAddAPIRequest{
+    return &AlitripPlatformContentRawAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripPlatformContentRawAddRequest) GetApiMethodName() string {
+func (r AlitripPlatformContentRawAddAPIRequest) GetApiMethodName() string {
     return "alitrip.platform.content.raw.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripPlatformContentRawAddRequest) GetApiParams() url.Values {
+func (r AlitripPlatformContentRawAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripPlatformContentRawAddRequest) GetApiParams() url.Values {
 }
 // FliggyContentRequest Setter
 // 写入入参
-func (r *AlitripPlatformContentRawAddRequest) SetFliggyContentRequest(_fliggyContentRequest *FliggyContentRequest) error {
+func (r *AlitripPlatformContentRawAddAPIRequest) SetFliggyContentRequest(_fliggyContentRequest *FliggyContentRequest) error {
     r._fliggyContentRequest = _fliggyContentRequest
     r.Set("fliggy_content_request", _fliggyContentRequest)
     return nil
 }
 
 // FliggyContentRequest Getter
-func (r AlitripPlatformContentRawAddRequest) GetFliggyContentRequest() *FliggyContentRequest {
+func (r AlitripPlatformContentRawAddAPIRequest) GetFliggyContentRequest() *FliggyContentRequest {
     return r._fliggyContentRequest
 }

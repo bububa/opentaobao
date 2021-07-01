@@ -12,26 +12,26 @@ taobao.sungari.dispose.submit
 
 商品商家处置信息接口，提供政府部门发送处置信息给阿里
 */
-type TaobaoSungariDisposeSubmitRequest struct {
+type TaobaoSungariDisposeSubmitAPIRequest struct {
     model.Params
     // 平台处置信息入参
     _info   *DisposeInfoDO
 }
 
-// 初始化TaobaoSungariDisposeSubmitRequest对象
-func NewTaobaoSungariDisposeSubmitRequest() *TaobaoSungariDisposeSubmitRequest{
-    return &TaobaoSungariDisposeSubmitRequest{
+// 初始化TaobaoSungariDisposeSubmitAPIRequest对象
+func NewTaobaoSungariDisposeSubmitRequest() *TaobaoSungariDisposeSubmitAPIRequest{
+    return &TaobaoSungariDisposeSubmitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSungariDisposeSubmitRequest) GetApiMethodName() string {
+func (r TaobaoSungariDisposeSubmitAPIRequest) GetApiMethodName() string {
     return "taobao.sungari.dispose.submit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSungariDisposeSubmitRequest) GetApiParams() url.Values {
+func (r TaobaoSungariDisposeSubmitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSungariDisposeSubmitRequest) GetApiParams() url.Values {
 }
 // Info Setter
 // 平台处置信息入参
-func (r *TaobaoSungariDisposeSubmitRequest) SetInfo(_info *DisposeInfoDO) error {
+func (r *TaobaoSungariDisposeSubmitAPIRequest) SetInfo(_info *DisposeInfoDO) error {
     r._info = _info
     r.Set("info", _info)
     return nil
 }
 
 // Info Getter
-func (r TaobaoSungariDisposeSubmitRequest) GetInfo() *DisposeInfoDO {
+func (r TaobaoSungariDisposeSubmitAPIRequest) GetInfo() *DisposeInfoDO {
     return r._info
 }

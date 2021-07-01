@@ -11,7 +11,7 @@ taobao.jym.member.realname.verify.withoutuid
 
 开放用户实名认证接口使用
 */
-func TaobaoJymMemberRealnameVerifyWithoutuid(clt *core.SDKClient, req *jym.TaobaoJymMemberRealnameVerifyWithoutuidRequest, session string) (*jym.TaobaoJymMemberRealnameVerifyWithoutuidAPIResponse, error) {
+func TaobaoJymMemberRealnameVerifyWithoutuid(clt *core.SDKClient, req *jym.TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest, session string) (*jym.TaobaoJymMemberRealnameVerifyWithoutuidAPIResponse, error) {
     var resp jym.TaobaoJymMemberRealnameVerifyWithoutuidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

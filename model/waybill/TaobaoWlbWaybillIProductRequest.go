@@ -12,26 +12,26 @@ taobao.wlb.waybill.i.product
 
 商家可以查询物流商的产品类型和服务能力。
 */
-type TaobaoWlbWaybillIProductRequest struct {
+type TaobaoWlbWaybillIProductAPIRequest struct {
     model.Params
     // 查询物流商电子面单产品类型入参
     _waybillProductTypeRequest   *WaybillProductTypeRequest
 }
 
-// 初始化TaobaoWlbWaybillIProductRequest对象
-func NewTaobaoWlbWaybillIProductRequest() *TaobaoWlbWaybillIProductRequest{
-    return &TaobaoWlbWaybillIProductRequest{
+// 初始化TaobaoWlbWaybillIProductAPIRequest对象
+func NewTaobaoWlbWaybillIProductRequest() *TaobaoWlbWaybillIProductAPIRequest{
+    return &TaobaoWlbWaybillIProductAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbWaybillIProductRequest) GetApiMethodName() string {
+func (r TaobaoWlbWaybillIProductAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.waybill.i.product"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbWaybillIProductRequest) GetApiParams() url.Values {
+func (r TaobaoWlbWaybillIProductAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWlbWaybillIProductRequest) GetApiParams() url.Values {
 }
 // WaybillProductTypeRequest Setter
 // 查询物流商电子面单产品类型入参
-func (r *TaobaoWlbWaybillIProductRequest) SetWaybillProductTypeRequest(_waybillProductTypeRequest *WaybillProductTypeRequest) error {
+func (r *TaobaoWlbWaybillIProductAPIRequest) SetWaybillProductTypeRequest(_waybillProductTypeRequest *WaybillProductTypeRequest) error {
     r._waybillProductTypeRequest = _waybillProductTypeRequest
     r.Set("waybill_product_type_request", _waybillProductTypeRequest)
     return nil
 }
 
 // WaybillProductTypeRequest Getter
-func (r TaobaoWlbWaybillIProductRequest) GetWaybillProductTypeRequest() *WaybillProductTypeRequest {
+func (r TaobaoWlbWaybillIProductAPIRequest) GetWaybillProductTypeRequest() *WaybillProductTypeRequest {
     return r._waybillProductTypeRequest
 }

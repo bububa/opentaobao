@@ -11,7 +11,7 @@ taobao.game.deliveryvoucher.evaluate
 
 卡券ISV回传商品评价
 */
-func TaobaoGameDeliveryvoucherEvaluate(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherEvaluateRequest, session string) (*deliveryvoucher.TaobaoGameDeliveryvoucherEvaluateAPIResponse, error) {
+func TaobaoGameDeliveryvoucherEvaluate(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherEvaluateAPIRequest, session string) (*deliveryvoucher.TaobaoGameDeliveryvoucherEvaluateAPIResponse, error) {
     var resp deliveryvoucher.TaobaoGameDeliveryvoucherEvaluateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

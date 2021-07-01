@@ -11,7 +11,7 @@ tmall.servicecenter.servicemonitormessage.search
 
 根据时间段查询服务商的服务预警消息列表(15分钟内)
 */
-func TmallServicecenterServicemonitormessageSearch(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicemonitormessageSearchRequest, session string) (*tmallservice.TmallServicecenterServicemonitormessageSearchAPIResponse, error) {
+func TmallServicecenterServicemonitormessageSearch(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicemonitormessageSearchAPIRequest, session string) (*tmallservice.TmallServicecenterServicemonitormessageSearchAPIResponse, error) {
     var resp tmallservice.TmallServicecenterServicemonitormessageSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

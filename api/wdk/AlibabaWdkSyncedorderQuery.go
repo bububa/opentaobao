@@ -11,7 +11,7 @@ alibaba.wdk.syncedorder.query
 
 外部商户查询同步到五道口的订单
 */
-func AlibabaWdkSyncedorderQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSyncedorderQueryRequest, session string) (*wdk.AlibabaWdkSyncedorderQueryAPIResponse, error) {
+func AlibabaWdkSyncedorderQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSyncedorderQueryAPIRequest, session string) (*wdk.AlibabaWdkSyncedorderQueryAPIResponse, error) {
     var resp wdk.AlibabaWdkSyncedorderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

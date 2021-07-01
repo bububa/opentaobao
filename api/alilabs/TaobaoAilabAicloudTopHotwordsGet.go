@@ -11,7 +11,7 @@ taobao.ailab.aicloud.top.hotwords.get
 
 获取ASR热词
 */
-func TaobaoAilabAicloudTopHotwordsGet(clt *core.SDKClient, req *alilabs.TaobaoAilabAicloudTopHotwordsGetRequest, session string) (*alilabs.TaobaoAilabAicloudTopHotwordsGetAPIResponse, error) {
+func TaobaoAilabAicloudTopHotwordsGet(clt *core.SDKClient, req *alilabs.TaobaoAilabAicloudTopHotwordsGetAPIRequest, session string) (*alilabs.TaobaoAilabAicloudTopHotwordsGetAPIResponse, error) {
     var resp alilabs.TaobaoAilabAicloudTopHotwordsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

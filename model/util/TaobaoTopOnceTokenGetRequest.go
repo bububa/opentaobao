@@ -12,26 +12,26 @@ taobao.top.once.token.get
 
 网关一次性token获取
 */
-type TaobaoTopOnceTokenGetRequest struct {
+type TaobaoTopOnceTokenGetAPIRequest struct {
     model.Params
     // sec_token
     _secToken   string
 }
 
-// 初始化TaobaoTopOnceTokenGetRequest对象
-func NewTaobaoTopOnceTokenGetRequest() *TaobaoTopOnceTokenGetRequest{
-    return &TaobaoTopOnceTokenGetRequest{
+// 初始化TaobaoTopOnceTokenGetAPIRequest对象
+func NewTaobaoTopOnceTokenGetRequest() *TaobaoTopOnceTokenGetAPIRequest{
+    return &TaobaoTopOnceTokenGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTopOnceTokenGetRequest) GetApiMethodName() string {
+func (r TaobaoTopOnceTokenGetAPIRequest) GetApiMethodName() string {
     return "taobao.top.once.token.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTopOnceTokenGetRequest) GetApiParams() url.Values {
+func (r TaobaoTopOnceTokenGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTopOnceTokenGetRequest) GetApiParams() url.Values {
 }
 // SecToken Setter
 // sec_token
-func (r *TaobaoTopOnceTokenGetRequest) SetSecToken(_secToken string) error {
+func (r *TaobaoTopOnceTokenGetAPIRequest) SetSecToken(_secToken string) error {
     r._secToken = _secToken
     r.Set("sec_token", _secToken)
     return nil
 }
 
 // SecToken Getter
-func (r TaobaoTopOnceTokenGetRequest) GetSecToken() string {
+func (r TaobaoTopOnceTokenGetAPIRequest) GetSecToken() string {
     return r._secToken
 }

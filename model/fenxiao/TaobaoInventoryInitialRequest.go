@@ -13,7 +13,7 @@ taobao.inventory.initial
 建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。
 商家仓库存初始化接口，直接按照商家指定的商品库存数进行填充，没有单据核对，不参与库存对账。
 */
-type TaobaoInventoryInitialRequest struct {
+type TaobaoInventoryInitialAPIRequest struct {
     model.Params
     // 商家仓库编码
     _storeCode   string
@@ -21,20 +21,20 @@ type TaobaoInventoryInitialRequest struct {
     _items   string
 }
 
-// 初始化TaobaoInventoryInitialRequest对象
-func NewTaobaoInventoryInitialRequest() *TaobaoInventoryInitialRequest{
-    return &TaobaoInventoryInitialRequest{
+// 初始化TaobaoInventoryInitialAPIRequest对象
+func NewTaobaoInventoryInitialRequest() *TaobaoInventoryInitialAPIRequest{
+    return &TaobaoInventoryInitialAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoInventoryInitialRequest) GetApiMethodName() string {
+func (r TaobaoInventoryInitialAPIRequest) GetApiMethodName() string {
     return "taobao.inventory.initial"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoInventoryInitialRequest) GetApiParams() url.Values {
+func (r TaobaoInventoryInitialAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -43,25 +43,25 @@ func (r TaobaoInventoryInitialRequest) GetApiParams() url.Values {
 }
 // StoreCode Setter
 // 商家仓库编码
-func (r *TaobaoInventoryInitialRequest) SetStoreCode(_storeCode string) error {
+func (r *TaobaoInventoryInitialAPIRequest) SetStoreCode(_storeCode string) error {
     r._storeCode = _storeCode
     r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
-func (r TaobaoInventoryInitialRequest) GetStoreCode() string {
+func (r TaobaoInventoryInitialAPIRequest) GetStoreCode() string {
     return r._storeCode
 }
 // Items Setter
 // 商品初始库存信息： [{"scItemId":"商品后端ID，如果有传scItemCode,参数可以为0","scItemCode":"商品商家编码","inventoryType":"库存类型  1：正常,2：损坏,3：冻结,10：质押,11-20:用户自定义","quantity":"数量"}]
-func (r *TaobaoInventoryInitialRequest) SetItems(_items string) error {
+func (r *TaobaoInventoryInitialAPIRequest) SetItems(_items string) error {
     r._items = _items
     r.Set("items", _items)
     return nil
 }
 
 // Items Getter
-func (r TaobaoInventoryInitialRequest) GetItems() string {
+func (r TaobaoInventoryInitialAPIRequest) GetItems() string {
     return r._items
 }

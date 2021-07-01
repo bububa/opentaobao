@@ -11,7 +11,7 @@ alibaba.ailabs.aligenie.albums.search
 
 搜索类目下的专辑信息
 */
-func AlibabaAilabsAligenieAlbumsSearch(clt *core.SDKClient, req *iot.AlibabaAilabsAligenieAlbumsSearchRequest, session string) (*iot.AlibabaAilabsAligenieAlbumsSearchAPIResponse, error) {
+func AlibabaAilabsAligenieAlbumsSearch(clt *core.SDKClient, req *iot.AlibabaAilabsAligenieAlbumsSearchAPIRequest, session string) (*iot.AlibabaAilabsAligenieAlbumsSearchAPIResponse, error) {
     var resp iot.AlibabaAilabsAligenieAlbumsSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

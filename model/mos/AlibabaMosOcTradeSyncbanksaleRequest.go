@@ -12,26 +12,26 @@ alibaba.mos.oc.trade.syncbanksale
 
 云闪付、银行卡销售数据回传
 */
-type AlibabaMosOcTradeSyncbanksaleRequest struct {
+type AlibabaMosOcTradeSyncbanksaleAPIRequest struct {
     model.Params
     // pos云闪付、银行卡销售数据
     _posBankSaleInfoDto   *PosBankSaleInfoDTO
 }
 
-// 初始化AlibabaMosOcTradeSyncbanksaleRequest对象
-func NewAlibabaMosOcTradeSyncbanksaleRequest() *AlibabaMosOcTradeSyncbanksaleRequest{
-    return &AlibabaMosOcTradeSyncbanksaleRequest{
+// 初始化AlibabaMosOcTradeSyncbanksaleAPIRequest对象
+func NewAlibabaMosOcTradeSyncbanksaleRequest() *AlibabaMosOcTradeSyncbanksaleAPIRequest{
+    return &AlibabaMosOcTradeSyncbanksaleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosOcTradeSyncbanksaleRequest) GetApiMethodName() string {
+func (r AlibabaMosOcTradeSyncbanksaleAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.oc.trade.syncbanksale"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosOcTradeSyncbanksaleRequest) GetApiParams() url.Values {
+func (r AlibabaMosOcTradeSyncbanksaleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMosOcTradeSyncbanksaleRequest) GetApiParams() url.Values {
 }
 // PosBankSaleInfoDto Setter
 // pos云闪付、银行卡销售数据
-func (r *AlibabaMosOcTradeSyncbanksaleRequest) SetPosBankSaleInfoDto(_posBankSaleInfoDto *PosBankSaleInfoDTO) error {
+func (r *AlibabaMosOcTradeSyncbanksaleAPIRequest) SetPosBankSaleInfoDto(_posBankSaleInfoDto *PosBankSaleInfoDTO) error {
     r._posBankSaleInfoDto = _posBankSaleInfoDto
     r.Set("pos_bank_sale_info_dto", _posBankSaleInfoDto)
     return nil
 }
 
 // PosBankSaleInfoDto Getter
-func (r AlibabaMosOcTradeSyncbanksaleRequest) GetPosBankSaleInfoDto() *PosBankSaleInfoDTO {
+func (r AlibabaMosOcTradeSyncbanksaleAPIRequest) GetPosBankSaleInfoDto() *PosBankSaleInfoDTO {
     return r._posBankSaleInfoDto
 }

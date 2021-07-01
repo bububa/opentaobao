@@ -11,7 +11,7 @@ yunos.tvpubadmin.device.updateappstatus
 
 更新应用版本审核状态
 */
-func YunosTvpubadminDeviceUpdateappstatus(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceUpdateappstatusRequest, session string) (*tvupadmin.YunosTvpubadminDeviceUpdateappstatusAPIResponse, error) {
+func YunosTvpubadminDeviceUpdateappstatus(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceUpdateappstatusAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceUpdateappstatusAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminDeviceUpdateappstatusAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

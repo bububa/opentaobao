@@ -12,26 +12,26 @@ alibaba.mozi.buc.account.list.accountids
 
 根据一批账号ID查询账号列表
 */
-type AlibabaMoziBucAccountListAccountidsRequest struct {
+type AlibabaMoziBucAccountListAccountidsAPIRequest struct {
     model.Params
     // 请求参数
     _listAccountIds   *ListAccountsByAccountIdsRequest
 }
 
-// 初始化AlibabaMoziBucAccountListAccountidsRequest对象
-func NewAlibabaMoziBucAccountListAccountidsRequest() *AlibabaMoziBucAccountListAccountidsRequest{
-    return &AlibabaMoziBucAccountListAccountidsRequest{
+// 初始化AlibabaMoziBucAccountListAccountidsAPIRequest对象
+func NewAlibabaMoziBucAccountListAccountidsRequest() *AlibabaMoziBucAccountListAccountidsAPIRequest{
+    return &AlibabaMoziBucAccountListAccountidsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziBucAccountListAccountidsRequest) GetApiMethodName() string {
+func (r AlibabaMoziBucAccountListAccountidsAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.buc.account.list.accountids"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziBucAccountListAccountidsRequest) GetApiParams() url.Values {
+func (r AlibabaMoziBucAccountListAccountidsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziBucAccountListAccountidsRequest) GetApiParams() url.Values {
 }
 // ListAccountIds Setter
 // 请求参数
-func (r *AlibabaMoziBucAccountListAccountidsRequest) SetListAccountIds(_listAccountIds *ListAccountsByAccountIdsRequest) error {
+func (r *AlibabaMoziBucAccountListAccountidsAPIRequest) SetListAccountIds(_listAccountIds *ListAccountsByAccountIdsRequest) error {
     r._listAccountIds = _listAccountIds
     r.Set("list_account_ids", _listAccountIds)
     return nil
 }
 
 // ListAccountIds Getter
-func (r AlibabaMoziBucAccountListAccountidsRequest) GetListAccountIds() *ListAccountsByAccountIdsRequest {
+func (r AlibabaMoziBucAccountListAccountidsAPIRequest) GetListAccountIds() *ListAccountsByAccountIdsRequest {
     return r._listAccountIds
 }

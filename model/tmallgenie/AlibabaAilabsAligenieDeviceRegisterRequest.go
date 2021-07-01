@@ -12,7 +12,7 @@ alibaba.ailabs.aligenie.device.register
 
 向天猫精灵inside平台注册设备mac地址，并获取设备的唯一密钥
 */
-type AlibabaAilabsAligenieDeviceRegisterRequest struct {
+type AlibabaAilabsAligenieDeviceRegisterAPIRequest struct {
     model.Params
     // 设备id
     _deviceId   int64
@@ -20,20 +20,20 @@ type AlibabaAilabsAligenieDeviceRegisterRequest struct {
     _macSections   string
 }
 
-// 初始化AlibabaAilabsAligenieDeviceRegisterRequest对象
-func NewAlibabaAilabsAligenieDeviceRegisterRequest() *AlibabaAilabsAligenieDeviceRegisterRequest{
-    return &AlibabaAilabsAligenieDeviceRegisterRequest{
+// 初始化AlibabaAilabsAligenieDeviceRegisterAPIRequest对象
+func NewAlibabaAilabsAligenieDeviceRegisterRequest() *AlibabaAilabsAligenieDeviceRegisterAPIRequest{
+    return &AlibabaAilabsAligenieDeviceRegisterAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAilabsAligenieDeviceRegisterRequest) GetApiMethodName() string {
+func (r AlibabaAilabsAligenieDeviceRegisterAPIRequest) GetApiMethodName() string {
     return "alibaba.ailabs.aligenie.device.register"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsAligenieDeviceRegisterRequest) GetApiParams() url.Values {
+func (r AlibabaAilabsAligenieDeviceRegisterAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAilabsAligenieDeviceRegisterRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *AlibabaAilabsAligenieDeviceRegisterRequest) SetDeviceId(_deviceId int64) error {
+func (r *AlibabaAilabsAligenieDeviceRegisterAPIRequest) SetDeviceId(_deviceId int64) error {
     r._deviceId = _deviceId
     r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
-func (r AlibabaAilabsAligenieDeviceRegisterRequest) GetDeviceId() int64 {
+func (r AlibabaAilabsAligenieDeviceRegisterAPIRequest) GetDeviceId() int64 {
     return r._deviceId
 }
 // MacSections Setter
 // mac区段脚本
-func (r *AlibabaAilabsAligenieDeviceRegisterRequest) SetMacSections(_macSections string) error {
+func (r *AlibabaAilabsAligenieDeviceRegisterAPIRequest) SetMacSections(_macSections string) error {
     r._macSections = _macSections
     r.Set("mac_sections", _macSections)
     return nil
 }
 
 // MacSections Getter
-func (r AlibabaAilabsAligenieDeviceRegisterRequest) GetMacSections() string {
+func (r AlibabaAilabsAligenieDeviceRegisterAPIRequest) GetMacSections() string {
     return r._macSections
 }

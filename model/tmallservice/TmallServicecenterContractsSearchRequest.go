@@ -12,7 +12,7 @@ tmall.servicecenter.contracts.search
 
 获取合同类的服务工单信息
 */
-type TmallServicecenterContractsSearchRequest struct {
+type TmallServicecenterContractsSearchAPIRequest struct {
     model.Params
     // 开始时间:  开始时间和结束时间不能超过15分钟
     _start   int64
@@ -20,20 +20,20 @@ type TmallServicecenterContractsSearchRequest struct {
     _end   int64
 }
 
-// 初始化TmallServicecenterContractsSearchRequest对象
-func NewTmallServicecenterContractsSearchRequest() *TmallServicecenterContractsSearchRequest{
-    return &TmallServicecenterContractsSearchRequest{
+// 初始化TmallServicecenterContractsSearchAPIRequest对象
+func NewTmallServicecenterContractsSearchRequest() *TmallServicecenterContractsSearchAPIRequest{
+    return &TmallServicecenterContractsSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterContractsSearchRequest) GetApiMethodName() string {
+func (r TmallServicecenterContractsSearchAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.contracts.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterContractsSearchRequest) GetApiParams() url.Values {
+func (r TmallServicecenterContractsSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallServicecenterContractsSearchRequest) GetApiParams() url.Values {
 }
 // Start Setter
 // 开始时间:  开始时间和结束时间不能超过15分钟
-func (r *TmallServicecenterContractsSearchRequest) SetStart(_start int64) error {
+func (r *TmallServicecenterContractsSearchAPIRequest) SetStart(_start int64) error {
     r._start = _start
     r.Set("start", _start)
     return nil
 }
 
 // Start Getter
-func (r TmallServicecenterContractsSearchRequest) GetStart() int64 {
+func (r TmallServicecenterContractsSearchAPIRequest) GetStart() int64 {
     return r._start
 }
 // End Setter
 // 结束时间:  开始时间和结束时间不能超过15分钟
-func (r *TmallServicecenterContractsSearchRequest) SetEnd(_end int64) error {
+func (r *TmallServicecenterContractsSearchAPIRequest) SetEnd(_end int64) error {
     r._end = _end
     r.Set("end", _end)
     return nil
 }
 
 // End Getter
-func (r TmallServicecenterContractsSearchRequest) GetEnd() int64 {
+func (r TmallServicecenterContractsSearchAPIRequest) GetEnd() int64 {
     return r._end
 }

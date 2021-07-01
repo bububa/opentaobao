@@ -12,26 +12,26 @@ alibaba.damai.mev.open.deleteproject
 
 deleteProject
 */
-type AlibabaDamaiMevOpenDeleteprojectRequest struct {
+type AlibabaDamaiMevOpenDeleteprojectAPIRequest struct {
     model.Params
     // 入参deleteProjectParam
     _deleteProjectParam   *ProjectIdOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenDeleteprojectRequest对象
-func NewAlibabaDamaiMevOpenDeleteprojectRequest() *AlibabaDamaiMevOpenDeleteprojectRequest{
-    return &AlibabaDamaiMevOpenDeleteprojectRequest{
+// 初始化AlibabaDamaiMevOpenDeleteprojectAPIRequest对象
+func NewAlibabaDamaiMevOpenDeleteprojectRequest() *AlibabaDamaiMevOpenDeleteprojectAPIRequest{
+    return &AlibabaDamaiMevOpenDeleteprojectAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenDeleteprojectRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenDeleteprojectAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.deleteproject"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenDeleteprojectRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenDeleteprojectAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeleteprojectRequest) GetApiParams() url.Values {
 }
 // DeleteProjectParam Setter
 // 入参deleteProjectParam
-func (r *AlibabaDamaiMevOpenDeleteprojectRequest) SetDeleteProjectParam(_deleteProjectParam *ProjectIdOpenParam) error {
+func (r *AlibabaDamaiMevOpenDeleteprojectAPIRequest) SetDeleteProjectParam(_deleteProjectParam *ProjectIdOpenParam) error {
     r._deleteProjectParam = _deleteProjectParam
     r.Set("delete_project_param", _deleteProjectParam)
     return nil
 }
 
 // DeleteProjectParam Getter
-func (r AlibabaDamaiMevOpenDeleteprojectRequest) GetDeleteProjectParam() *ProjectIdOpenParam {
+func (r AlibabaDamaiMevOpenDeleteprojectAPIRequest) GetDeleteProjectParam() *ProjectIdOpenParam {
     return r._deleteProjectParam
 }

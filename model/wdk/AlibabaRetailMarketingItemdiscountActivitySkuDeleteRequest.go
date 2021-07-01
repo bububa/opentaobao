@@ -12,26 +12,26 @@ alibaba.retail.marketing.itemdiscount.activity.sku.delete
 
 删除活动商品信息【同城零售】
 */
-type AlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest struct {
+type AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest struct {
     model.Params
     // 添加活动商品参数
     _param   *ItemDiscountActivityElementOperateRequest
 }
 
-// 初始化AlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest对象
-func NewAlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest() *AlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest{
-    return &AlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest{
+// 初始化AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest对象
+func NewAlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest() *AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest{
+    return &AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest) GetApiMethodName() string {
+func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.marketing.itemdiscount.activity.sku.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest) GetApiParams
 }
 // Param Setter
 // 添加活动商品参数
-func (r *AlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest) SetParam(_param *ItemDiscountActivityElementOperateRequest) error {
+func (r *AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) SetParam(_param *ItemDiscountActivityElementOperateRequest) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest) GetParam() *ItemDiscountActivityElementOperateRequest {
+func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) GetParam() *ItemDiscountActivityElementOperateRequest {
     return r._param
 }

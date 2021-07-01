@@ -12,7 +12,7 @@ alibaba.alisports.passport.account.tokenvalidate
 
 阿里体育会员系统帐号登录注册token验证接口
 */
-type AlibabaAlisportsPassportAccountTokenvalidateRequest struct {
+type AlibabaAlisportsPassportAccountTokenvalidateAPIRequest struct {
     model.Params
     // 业务方appkey
     _alispAppKey   string
@@ -32,20 +32,20 @@ type AlibabaAlisportsPassportAccountTokenvalidateRequest struct {
     _mtopAppkey   string
 }
 
-// 初始化AlibabaAlisportsPassportAccountTokenvalidateRequest对象
-func NewAlibabaAlisportsPassportAccountTokenvalidateRequest() *AlibabaAlisportsPassportAccountTokenvalidateRequest{
-    return &AlibabaAlisportsPassportAccountTokenvalidateRequest{
+// 初始化AlibabaAlisportsPassportAccountTokenvalidateAPIRequest对象
+func NewAlibabaAlisportsPassportAccountTokenvalidateRequest() *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest{
+    return &AlibabaAlisportsPassportAccountTokenvalidateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetApiMethodName() string {
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetApiMethodName() string {
     return "alibaba.alisports.passport.account.tokenvalidate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetApiParams() url.Values {
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -54,97 +54,97 @@ func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetApiParams() url.
 }
 // AlispAppKey Setter
 // 业务方appkey
-func (r *AlibabaAlisportsPassportAccountTokenvalidateRequest) SetAlispAppKey(_alispAppKey string) error {
+func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetAlispAppKey(_alispAppKey string) error {
     r._alispAppKey = _alispAppKey
     r.Set("alisp_app_key", _alispAppKey)
     return nil
 }
 
 // AlispAppKey Getter
-func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetAlispAppKey() string {
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetAlispAppKey() string {
     return r._alispAppKey
 }
 // AlispSign Setter
 // 签名
-func (r *AlibabaAlisportsPassportAccountTokenvalidateRequest) SetAlispSign(_alispSign string) error {
+func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetAlispSign(_alispSign string) error {
     r._alispSign = _alispSign
     r.Set("alisp_sign", _alispSign)
     return nil
 }
 
 // AlispSign Getter
-func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetAlispSign() string {
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetAlispSign() string {
     return r._alispSign
 }
 // Token Setter
 // token
-func (r *AlibabaAlisportsPassportAccountTokenvalidateRequest) SetToken(_token string) error {
+func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetToken(_token string) error {
     r._token = _token
     r.Set("token", _token)
     return nil
 }
 
 // Token Getter
-func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetToken() string {
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetToken() string {
     return r._token
 }
 // UserType Setter
 // 注册用户类型
-func (r *AlibabaAlisportsPassportAccountTokenvalidateRequest) SetUserType(_userType int64) error {
+func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetUserType(_userType int64) error {
     r._userType = _userType
     r.Set("user_type", _userType)
     return nil
 }
 
 // UserType Getter
-func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetUserType() int64 {
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetUserType() int64 {
     return r._userType
 }
 // AlispTime Setter
 // 时间戳
-func (r *AlibabaAlisportsPassportAccountTokenvalidateRequest) SetAlispTime(_alispTime string) error {
+func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetAlispTime(_alispTime string) error {
     r._alispTime = _alispTime
     r.Set("alisp_time", _alispTime)
     return nil
 }
 
 // AlispTime Getter
-func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetAlispTime() string {
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetAlispTime() string {
     return r._alispTime
 }
 // Secret Setter
 // 一键登录参数
-func (r *AlibabaAlisportsPassportAccountTokenvalidateRequest) SetSecret(_secret string) error {
+func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetSecret(_secret string) error {
     r._secret = _secret
     r.Set("secret", _secret)
     return nil
 }
 
 // Secret Getter
-func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetSecret() string {
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetSecret() string {
     return r._secret
 }
 // ExtInfo Setter
 // json字符串，传入扩展字段
-func (r *AlibabaAlisportsPassportAccountTokenvalidateRequest) SetExtInfo(_extInfo string) error {
+func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetExtInfo(_extInfo string) error {
     r._extInfo = _extInfo
     r.Set("ext_info", _extInfo)
     return nil
 }
 
 // ExtInfo Getter
-func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetExtInfo() string {
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetExtInfo() string {
     return r._extInfo
 }
 // MtopAppkey Setter
 // 选填，调用百川登录接口的appkey，百川登录时，需要传此字段
-func (r *AlibabaAlisportsPassportAccountTokenvalidateRequest) SetMtopAppkey(_mtopAppkey string) error {
+func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetMtopAppkey(_mtopAppkey string) error {
     r._mtopAppkey = _mtopAppkey
     r.Set("mtop_appkey", _mtopAppkey)
     return nil
 }
 
 // MtopAppkey Getter
-func (r AlibabaAlisportsPassportAccountTokenvalidateRequest) GetMtopAppkey() string {
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetMtopAppkey() string {
     return r._mtopAppkey
 }

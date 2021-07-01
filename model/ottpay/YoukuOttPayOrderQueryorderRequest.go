@@ -12,26 +12,26 @@ youku.ott.pay.order.queryorder
 
 通过订单号查询订单信息
 */
-type YoukuOttPayOrderQueryorderRequest struct {
+type YoukuOttPayOrderQueryorderAPIRequest struct {
     model.Params
     // 订单号
     _orderNo   string
 }
 
-// 初始化YoukuOttPayOrderQueryorderRequest对象
-func NewYoukuOttPayOrderQueryorderRequest() *YoukuOttPayOrderQueryorderRequest{
-    return &YoukuOttPayOrderQueryorderRequest{
+// 初始化YoukuOttPayOrderQueryorderAPIRequest对象
+func NewYoukuOttPayOrderQueryorderRequest() *YoukuOttPayOrderQueryorderAPIRequest{
+    return &YoukuOttPayOrderQueryorderAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YoukuOttPayOrderQueryorderRequest) GetApiMethodName() string {
+func (r YoukuOttPayOrderQueryorderAPIRequest) GetApiMethodName() string {
     return "youku.ott.pay.order.queryorder"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YoukuOttPayOrderQueryorderRequest) GetApiParams() url.Values {
+func (r YoukuOttPayOrderQueryorderAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YoukuOttPayOrderQueryorderRequest) GetApiParams() url.Values {
 }
 // OrderNo Setter
 // 订单号
-func (r *YoukuOttPayOrderQueryorderRequest) SetOrderNo(_orderNo string) error {
+func (r *YoukuOttPayOrderQueryorderAPIRequest) SetOrderNo(_orderNo string) error {
     r._orderNo = _orderNo
     r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
-func (r YoukuOttPayOrderQueryorderRequest) GetOrderNo() string {
+func (r YoukuOttPayOrderQueryorderAPIRequest) GetOrderNo() string {
     return r._orderNo
 }

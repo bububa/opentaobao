@@ -11,7 +11,7 @@ tmall.nrt.coupon.send
 
 新零售场景，商家自有渠道发放券
 */
-func TmallNrtCouponSend(clt *core.SDKClient, req *nrt.TmallNrtCouponSendRequest, session string) (*nrt.TmallNrtCouponSendAPIResponse, error) {
+func TmallNrtCouponSend(clt *core.SDKClient, req *nrt.TmallNrtCouponSendAPIRequest, session string) (*nrt.TmallNrtCouponSendAPIResponse, error) {
     var resp nrt.TmallNrtCouponSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

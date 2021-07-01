@@ -12,7 +12,7 @@ alitrip.merchant.galaxy.member.register
 
 星河产品=微信小程序注册雅高会员服务
 */
-type AlitripMerchantGalaxyMemberRegisterRequest struct {
+type AlitripMerchantGalaxyMemberRegisterAPIRequest struct {
     model.Params
     // 租户身份信息
     _tenantKey   string
@@ -20,20 +20,20 @@ type AlitripMerchantGalaxyMemberRegisterRequest struct {
     _memberParam   *MemberParam
 }
 
-// 初始化AlitripMerchantGalaxyMemberRegisterRequest对象
-func NewAlitripMerchantGalaxyMemberRegisterRequest() *AlitripMerchantGalaxyMemberRegisterRequest{
-    return &AlitripMerchantGalaxyMemberRegisterRequest{
+// 初始化AlitripMerchantGalaxyMemberRegisterAPIRequest对象
+func NewAlitripMerchantGalaxyMemberRegisterRequest() *AlitripMerchantGalaxyMemberRegisterAPIRequest{
+    return &AlitripMerchantGalaxyMemberRegisterAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripMerchantGalaxyMemberRegisterRequest) GetApiMethodName() string {
+func (r AlitripMerchantGalaxyMemberRegisterAPIRequest) GetApiMethodName() string {
     return "alitrip.merchant.galaxy.member.register"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripMerchantGalaxyMemberRegisterRequest) GetApiParams() url.Values {
+func (r AlitripMerchantGalaxyMemberRegisterAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyMemberRegisterRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户身份信息
-func (r *AlitripMerchantGalaxyMemberRegisterRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripMerchantGalaxyMemberRegisterAPIRequest) SetTenantKey(_tenantKey string) error {
     r._tenantKey = _tenantKey
     r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
-func (r AlitripMerchantGalaxyMemberRegisterRequest) GetTenantKey() string {
+func (r AlitripMerchantGalaxyMemberRegisterAPIRequest) GetTenantKey() string {
     return r._tenantKey
 }
 // MemberParam Setter
 // 注册入参
-func (r *AlitripMerchantGalaxyMemberRegisterRequest) SetMemberParam(_memberParam *MemberParam) error {
+func (r *AlitripMerchantGalaxyMemberRegisterAPIRequest) SetMemberParam(_memberParam *MemberParam) error {
     r._memberParam = _memberParam
     r.Set("member_param", _memberParam)
     return nil
 }
 
 // MemberParam Getter
-func (r AlitripMerchantGalaxyMemberRegisterRequest) GetMemberParam() *MemberParam {
+func (r AlitripMerchantGalaxyMemberRegisterAPIRequest) GetMemberParam() *MemberParam {
     return r._memberParam
 }

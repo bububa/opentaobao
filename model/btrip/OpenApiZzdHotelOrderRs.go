@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiZzdHotelOrderRs 
-type OpenApiZzdHotelOrderRs struct {
+// OpenApiZzdHotelOrderRS 
+type OpenApiZzdHotelOrderRS struct {
     // 订单状态：1, "等待确认";2, "等待付款"; 3, "预订成功";4, "申请退款";5, "退款成功";6, "已关闭";0,"点击详情查看状态";7, "结账成功"; 8, "支付成功";
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
     // 服务费（分）

@@ -11,7 +11,7 @@ taobao.wlb.wms.return.order.notify
 
 销售退货通知
 */
-func TaobaoWlbWmsReturnOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsReturnOrderNotifyRequest, session string) (*wms.TaobaoWlbWmsReturnOrderNotifyAPIResponse, error) {
+func TaobaoWlbWmsReturnOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsReturnOrderNotifyAPIRequest, session string) (*wms.TaobaoWlbWmsReturnOrderNotifyAPIResponse, error) {
     var resp wms.TaobaoWlbWmsReturnOrderNotifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

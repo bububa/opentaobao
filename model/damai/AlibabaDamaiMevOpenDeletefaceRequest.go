@@ -12,26 +12,26 @@ alibaba.damai.mev.open.deleteface
 
 deleteFace
 */
-type AlibabaDamaiMevOpenDeletefaceRequest struct {
+type AlibabaDamaiMevOpenDeletefaceAPIRequest struct {
     model.Params
     // 入参deleteFaceParam
     _deleteFaceParam   *TicketFaceIdOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenDeletefaceRequest对象
-func NewAlibabaDamaiMevOpenDeletefaceRequest() *AlibabaDamaiMevOpenDeletefaceRequest{
-    return &AlibabaDamaiMevOpenDeletefaceRequest{
+// 初始化AlibabaDamaiMevOpenDeletefaceAPIRequest对象
+func NewAlibabaDamaiMevOpenDeletefaceRequest() *AlibabaDamaiMevOpenDeletefaceAPIRequest{
+    return &AlibabaDamaiMevOpenDeletefaceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenDeletefaceRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenDeletefaceAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.deleteface"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenDeletefaceRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenDeletefaceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeletefaceRequest) GetApiParams() url.Values {
 }
 // DeleteFaceParam Setter
 // 入参deleteFaceParam
-func (r *AlibabaDamaiMevOpenDeletefaceRequest) SetDeleteFaceParam(_deleteFaceParam *TicketFaceIdOpenParam) error {
+func (r *AlibabaDamaiMevOpenDeletefaceAPIRequest) SetDeleteFaceParam(_deleteFaceParam *TicketFaceIdOpenParam) error {
     r._deleteFaceParam = _deleteFaceParam
     r.Set("delete_face_param", _deleteFaceParam)
     return nil
 }
 
 // DeleteFaceParam Getter
-func (r AlibabaDamaiMevOpenDeletefaceRequest) GetDeleteFaceParam() *TicketFaceIdOpenParam {
+func (r AlibabaDamaiMevOpenDeletefaceAPIRequest) GetDeleteFaceParam() *TicketFaceIdOpenParam {
     return r._deleteFaceParam
 }

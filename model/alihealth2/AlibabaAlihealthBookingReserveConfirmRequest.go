@@ -12,26 +12,26 @@ alibaba.alihealth.booking.reserve.confirm
 
 确认预约
 */
-type AlibabaAlihealthBookingReserveConfirmRequest struct {
+type AlibabaAlihealthBookingReserveConfirmAPIRequest struct {
     model.Params
     // 参数
     _confirm   *IsvReserveRequest
 }
 
-// 初始化AlibabaAlihealthBookingReserveConfirmRequest对象
-func NewAlibabaAlihealthBookingReserveConfirmRequest() *AlibabaAlihealthBookingReserveConfirmRequest{
-    return &AlibabaAlihealthBookingReserveConfirmRequest{
+// 初始化AlibabaAlihealthBookingReserveConfirmAPIRequest对象
+func NewAlibabaAlihealthBookingReserveConfirmRequest() *AlibabaAlihealthBookingReserveConfirmAPIRequest{
+    return &AlibabaAlihealthBookingReserveConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthBookingReserveConfirmRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthBookingReserveConfirmAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.booking.reserve.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthBookingReserveConfirmRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthBookingReserveConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthBookingReserveConfirmRequest) GetApiParams() url.Values 
 }
 // Confirm Setter
 // 参数
-func (r *AlibabaAlihealthBookingReserveConfirmRequest) SetConfirm(_confirm *IsvReserveRequest) error {
+func (r *AlibabaAlihealthBookingReserveConfirmAPIRequest) SetConfirm(_confirm *IsvReserveRequest) error {
     r._confirm = _confirm
     r.Set("confirm", _confirm)
     return nil
 }
 
 // Confirm Getter
-func (r AlibabaAlihealthBookingReserveConfirmRequest) GetConfirm() *IsvReserveRequest {
+func (r AlibabaAlihealthBookingReserveConfirmAPIRequest) GetConfirm() *IsvReserveRequest {
     return r._confirm
 }

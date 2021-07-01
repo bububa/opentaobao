@@ -12,7 +12,7 @@ taobao.eticket.merchant.ma.failsend
 
 针对一次发码通知，码商无法完成发码，则可以通过此接口告知电子凭证
 */
-type TaobaoEticketMerchantMaFailsendRequest struct {
+type TaobaoEticketMerchantMaFailsendAPIRequest struct {
     model.Params
     // 业务id（订单号）
     _outerId   string
@@ -26,20 +26,20 @@ type TaobaoEticketMerchantMaFailsendRequest struct {
     _bizType   int64
 }
 
-// 初始化TaobaoEticketMerchantMaFailsendRequest对象
-func NewTaobaoEticketMerchantMaFailsendRequest() *TaobaoEticketMerchantMaFailsendRequest{
-    return &TaobaoEticketMerchantMaFailsendRequest{
+// 初始化TaobaoEticketMerchantMaFailsendAPIRequest对象
+func NewTaobaoEticketMerchantMaFailsendRequest() *TaobaoEticketMerchantMaFailsendAPIRequest{
+    return &TaobaoEticketMerchantMaFailsendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoEticketMerchantMaFailsendRequest) GetApiMethodName() string {
+func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetApiMethodName() string {
     return "taobao.eticket.merchant.ma.failsend"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoEticketMerchantMaFailsendRequest) GetApiParams() url.Values {
+func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TaobaoEticketMerchantMaFailsendRequest) GetApiParams() url.Values {
 }
 // OuterId Setter
 // 业务id（订单号）
-func (r *TaobaoEticketMerchantMaFailsendRequest) SetOuterId(_outerId string) error {
+func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetOuterId(_outerId string) error {
     r._outerId = _outerId
     r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
-func (r TaobaoEticketMerchantMaFailsendRequest) GetOuterId() string {
+func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetOuterId() string {
     return r._outerId
 }
 // SubErrCode Setter
 // 错误原因码
-func (r *TaobaoEticketMerchantMaFailsendRequest) SetSubErrCode(_subErrCode string) error {
+func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetSubErrCode(_subErrCode string) error {
     r._subErrCode = _subErrCode
     r.Set("sub_err_code", _subErrCode)
     return nil
 }
 
 // SubErrCode Getter
-func (r TaobaoEticketMerchantMaFailsendRequest) GetSubErrCode() string {
+func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetSubErrCode() string {
     return r._subErrCode
 }
 // SubErrMsg Setter
 // 错误码描述
-func (r *TaobaoEticketMerchantMaFailsendRequest) SetSubErrMsg(_subErrMsg string) error {
+func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetSubErrMsg(_subErrMsg string) error {
     r._subErrMsg = _subErrMsg
     r.Set("sub_err_msg", _subErrMsg)
     return nil
 }
 
 // SubErrMsg Getter
-func (r TaobaoEticketMerchantMaFailsendRequest) GetSubErrMsg() string {
+func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetSubErrMsg() string {
     return r._subErrMsg
 }
 // Token Setter
 // 需要与发码通知获取的值一致
-func (r *TaobaoEticketMerchantMaFailsendRequest) SetToken(_token string) error {
+func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetToken(_token string) error {
     r._token = _token
     r.Set("token", _token)
     return nil
 }
 
 // Token Getter
-func (r TaobaoEticketMerchantMaFailsendRequest) GetToken() string {
+func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetToken() string {
     return r._token
 }
 // BizType Setter
 // 业务类型
-func (r *TaobaoEticketMerchantMaFailsendRequest) SetBizType(_bizType int64) error {
+func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetBizType(_bizType int64) error {
     r._bizType = _bizType
     r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
-func (r TaobaoEticketMerchantMaFailsendRequest) GetBizType() int64 {
+func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetBizType() int64 {
     return r._bizType
 }

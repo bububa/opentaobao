@@ -11,7 +11,7 @@ taobao.item.price.update
 
 更新商品价格
 */
-func TaobaoItemPriceUpdate(clt *core.SDKClient, req *product.TaobaoItemPriceUpdateRequest, session string) (*product.TaobaoItemPriceUpdateAPIResponse, error) {
+func TaobaoItemPriceUpdate(clt *core.SDKClient, req *product.TaobaoItemPriceUpdateAPIRequest, session string) (*product.TaobaoItemPriceUpdateAPIResponse, error) {
     var resp product.TaobaoItemPriceUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

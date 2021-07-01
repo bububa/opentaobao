@@ -11,7 +11,7 @@ taobao.tbk.shop.get
 
 淘宝客店铺查询
 */
-func TaobaoTbkShopGet(clt *core.SDKClient, req *tbk.TaobaoTbkShopGetRequest, session string) (*tbk.TaobaoTbkShopGetAPIResponse, error) {
+func TaobaoTbkShopGet(clt *core.SDKClient, req *tbk.TaobaoTbkShopGetAPIRequest, session string) (*tbk.TaobaoTbkShopGetAPIResponse, error) {
     var resp tbk.TaobaoTbkShopGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

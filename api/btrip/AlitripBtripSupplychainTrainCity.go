@@ -11,7 +11,7 @@ alitrip.btrip.supplychain.train.city
 
 火车站数据查询
 */
-func AlitripBtripSupplychainTrainCity(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainTrainCityRequest, session string) (*btrip.AlitripBtripSupplychainTrainCityAPIResponse, error) {
+func AlitripBtripSupplychainTrainCity(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainTrainCityAPIRequest, session string) (*btrip.AlitripBtripSupplychainTrainCityAPIResponse, error) {
     var resp btrip.AlitripBtripSupplychainTrainCityAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ tmall.item.dapei.template.query
 
 根据条件获取搭配内容
 */
-func TmallItemDapeiTemplateQuery(clt *core.SDKClient, req *product.TmallItemDapeiTemplateQueryRequest, session string) (*product.TmallItemDapeiTemplateQueryAPIResponse, error) {
+func TmallItemDapeiTemplateQuery(clt *core.SDKClient, req *product.TmallItemDapeiTemplateQueryAPIRequest, session string) (*product.TmallItemDapeiTemplateQueryAPIResponse, error) {
     var resp product.TmallItemDapeiTemplateQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

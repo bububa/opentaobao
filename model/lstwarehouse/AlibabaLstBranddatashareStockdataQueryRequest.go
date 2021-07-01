@@ -12,26 +12,26 @@ alibaba.lst.branddatashare.stockdata.query
 
 品牌商查询授权供应商实仓库存数据
 */
-type AlibabaLstBranddatashareStockdataQueryRequest struct {
+type AlibabaLstBranddatashareStockdataQueryAPIRequest struct {
     model.Params
     // 入参
     _param   *BmSupplierStockDataParam
 }
 
-// 初始化AlibabaLstBranddatashareStockdataQueryRequest对象
-func NewAlibabaLstBranddatashareStockdataQueryRequest() *AlibabaLstBranddatashareStockdataQueryRequest{
-    return &AlibabaLstBranddatashareStockdataQueryRequest{
+// 初始化AlibabaLstBranddatashareStockdataQueryAPIRequest对象
+func NewAlibabaLstBranddatashareStockdataQueryRequest() *AlibabaLstBranddatashareStockdataQueryAPIRequest{
+    return &AlibabaLstBranddatashareStockdataQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstBranddatashareStockdataQueryRequest) GetApiMethodName() string {
+func (r AlibabaLstBranddatashareStockdataQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.branddatashare.stockdata.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstBranddatashareStockdataQueryRequest) GetApiParams() url.Values {
+func (r AlibabaLstBranddatashareStockdataQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstBranddatashareStockdataQueryRequest) GetApiParams() url.Values
 }
 // Param Setter
 // 入参
-func (r *AlibabaLstBranddatashareStockdataQueryRequest) SetParam(_param *BmSupplierStockDataParam) error {
+func (r *AlibabaLstBranddatashareStockdataQueryAPIRequest) SetParam(_param *BmSupplierStockDataParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaLstBranddatashareStockdataQueryRequest) GetParam() *BmSupplierStockDataParam {
+func (r AlibabaLstBranddatashareStockdataQueryAPIRequest) GetParam() *BmSupplierStockDataParam {
     return r._param
 }

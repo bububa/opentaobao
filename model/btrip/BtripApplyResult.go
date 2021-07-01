@@ -7,7 +7,7 @@ type BtripApplyResult struct {
     // 错误码
     ResultCode   int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
     // 结果对象
-    Module   *OpenApiNewApplyRs `json:"module,omitempty" xml:"module,omitempty"`
+    Module   *OpenApiNewApplyRS `json:"module,omitempty" xml:"module,omitempty"`
     // 错误信息
     ResultMsg   string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
     // 结果码
@@ -15,7 +15,7 @@ type BtripApplyResult struct {
     // 结果描述
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 审批单列表
-    ApplyList   []OpenApplyRs `json:"apply_list,omitempty" xml:"apply_list>open_apply_rs,omitempty"`
+    ApplyList   []OpenApplyRS `json:"apply_list,omitempty" xml:"apply_list>open_apply_rs,omitempty"`
     // 总数
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
 }

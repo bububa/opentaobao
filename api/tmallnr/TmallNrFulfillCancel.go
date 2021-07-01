@@ -11,7 +11,7 @@ tmall.nr.fulfill.cancel
 
 新零售门店业务取消上门揽件
 */
-func TmallNrFulfillCancel(clt *core.SDKClient, req *tmallnr.TmallNrFulfillCancelRequest, session string) (*tmallnr.TmallNrFulfillCancelAPIResponse, error) {
+func TmallNrFulfillCancel(clt *core.SDKClient, req *tmallnr.TmallNrFulfillCancelAPIRequest, session string) (*tmallnr.TmallNrFulfillCancelAPIResponse, error) {
     var resp tmallnr.TmallNrFulfillCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

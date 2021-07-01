@@ -12,7 +12,7 @@ alibaba.seaking.servicepack
 
 获取海王用户权限包
 */
-type AlibabaSeakingServicepackRequest struct {
+type AlibabaSeakingServicepackAPIRequest struct {
     model.Params
     // 验证类型
     _identifyType   string
@@ -20,20 +20,20 @@ type AlibabaSeakingServicepackRequest struct {
     _identifier   string
 }
 
-// 初始化AlibabaSeakingServicepackRequest对象
-func NewAlibabaSeakingServicepackRequest() *AlibabaSeakingServicepackRequest{
-    return &AlibabaSeakingServicepackRequest{
+// 初始化AlibabaSeakingServicepackAPIRequest对象
+func NewAlibabaSeakingServicepackRequest() *AlibabaSeakingServicepackAPIRequest{
+    return &AlibabaSeakingServicepackAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSeakingServicepackRequest) GetApiMethodName() string {
+func (r AlibabaSeakingServicepackAPIRequest) GetApiMethodName() string {
     return "alibaba.seaking.servicepack"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSeakingServicepackRequest) GetApiParams() url.Values {
+func (r AlibabaSeakingServicepackAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaSeakingServicepackRequest) GetApiParams() url.Values {
 }
 // IdentifyType Setter
 // 验证类型
-func (r *AlibabaSeakingServicepackRequest) SetIdentifyType(_identifyType string) error {
+func (r *AlibabaSeakingServicepackAPIRequest) SetIdentifyType(_identifyType string) error {
     r._identifyType = _identifyType
     r.Set("identify_type", _identifyType)
     return nil
 }
 
 // IdentifyType Getter
-func (r AlibabaSeakingServicepackRequest) GetIdentifyType() string {
+func (r AlibabaSeakingServicepackAPIRequest) GetIdentifyType() string {
     return r._identifyType
 }
 // Identifier Setter
 // 验证类型下的唯一id
-func (r *AlibabaSeakingServicepackRequest) SetIdentifier(_identifier string) error {
+func (r *AlibabaSeakingServicepackAPIRequest) SetIdentifier(_identifier string) error {
     r._identifier = _identifier
     r.Set("identifier", _identifier)
     return nil
 }
 
 // Identifier Getter
-func (r AlibabaSeakingServicepackRequest) GetIdentifier() string {
+func (r AlibabaSeakingServicepackAPIRequest) GetIdentifier() string {
     return r._identifier
 }

@@ -12,7 +12,7 @@ alibaba.lst.pos.open.goods.syncgoodsdata
 
 门店商品批量同步接口(最多10条商品信息)
 */
-type AlibabaLstPosOpenGoodsSyncgoodsdataRequest struct {
+type AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest struct {
     model.Params
     // 商品对象列表
     _goodsDTOList   []GoodsDTO
@@ -20,20 +20,20 @@ type AlibabaLstPosOpenGoodsSyncgoodsdataRequest struct {
     _userId   int64
 }
 
-// 初始化AlibabaLstPosOpenGoodsSyncgoodsdataRequest对象
-func NewAlibabaLstPosOpenGoodsSyncgoodsdataRequest() *AlibabaLstPosOpenGoodsSyncgoodsdataRequest{
-    return &AlibabaLstPosOpenGoodsSyncgoodsdataRequest{
+// 初始化AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest对象
+func NewAlibabaLstPosOpenGoodsSyncgoodsdataRequest() *AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest{
+    return &AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstPosOpenGoodsSyncgoodsdataRequest) GetApiMethodName() string {
+func (r AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.pos.open.goods.syncgoodsdata"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstPosOpenGoodsSyncgoodsdataRequest) GetApiParams() url.Values {
+func (r AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaLstPosOpenGoodsSyncgoodsdataRequest) GetApiParams() url.Values {
 }
 // GoodsDTOList Setter
 // 商品对象列表
-func (r *AlibabaLstPosOpenGoodsSyncgoodsdataRequest) SetGoodsDTOList(_goodsDTOList []GoodsDTO) error {
+func (r *AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest) SetGoodsDTOList(_goodsDTOList []GoodsDTO) error {
     r._goodsDTOList = _goodsDTOList
     r.Set("goods_d_t_o_list", _goodsDTOList)
     return nil
 }
 
 // GoodsDTOList Getter
-func (r AlibabaLstPosOpenGoodsSyncgoodsdataRequest) GetGoodsDTOList() []GoodsDTO {
+func (r AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest) GetGoodsDTOList() []GoodsDTO {
     return r._goodsDTOList
 }
 // UserId Setter
 // 用户主账号Id
-func (r *AlibabaLstPosOpenGoodsSyncgoodsdataRequest) SetUserId(_userId int64) error {
+func (r *AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest) SetUserId(_userId int64) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r AlibabaLstPosOpenGoodsSyncgoodsdataRequest) GetUserId() int64 {
+func (r AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest) GetUserId() int64 {
     return r._userId
 }

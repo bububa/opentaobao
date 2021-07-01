@@ -14,26 +14,26 @@ tmall.nrt.simpleitem.query
 
 后续合资公司服务会迁移到内网 暂时过渡用
 */
-type TmallNrtSimpleitemQueryRequest struct {
+type TmallNrtSimpleitemQueryAPIRequest struct {
     model.Params
     // 商品编码数组
     _ids   []int64
 }
 
-// 初始化TmallNrtSimpleitemQueryRequest对象
-func NewTmallNrtSimpleitemQueryRequest() *TmallNrtSimpleitemQueryRequest{
-    return &TmallNrtSimpleitemQueryRequest{
+// 初始化TmallNrtSimpleitemQueryAPIRequest对象
+func NewTmallNrtSimpleitemQueryRequest() *TmallNrtSimpleitemQueryAPIRequest{
+    return &TmallNrtSimpleitemQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrtSimpleitemQueryRequest) GetApiMethodName() string {
+func (r TmallNrtSimpleitemQueryAPIRequest) GetApiMethodName() string {
     return "tmall.nrt.simpleitem.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrtSimpleitemQueryRequest) GetApiParams() url.Values {
+func (r TmallNrtSimpleitemQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,13 +42,13 @@ func (r TmallNrtSimpleitemQueryRequest) GetApiParams() url.Values {
 }
 // Ids Setter
 // 商品编码数组
-func (r *TmallNrtSimpleitemQueryRequest) SetIds(_ids []int64) error {
+func (r *TmallNrtSimpleitemQueryAPIRequest) SetIds(_ids []int64) error {
     r._ids = _ids
     r.Set("ids", _ids)
     return nil
 }
 
 // Ids Getter
-func (r TmallNrtSimpleitemQueryRequest) GetIds() []int64 {
+func (r TmallNrtSimpleitemQueryAPIRequest) GetIds() []int64 {
     return r._ids
 }

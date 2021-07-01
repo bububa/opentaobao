@@ -11,7 +11,7 @@ tmall.channel.trade.applyorder.agree
 
 供应商审核同意采购申请单
 */
-func TmallChannelTradeApplyorderAgree(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeApplyorderAgreeRequest, session string) (*tmallchannel.TmallChannelTradeApplyorderAgreeAPIResponse, error) {
+func TmallChannelTradeApplyorderAgree(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeApplyorderAgreeAPIRequest, session string) (*tmallchannel.TmallChannelTradeApplyorderAgreeAPIResponse, error) {
     var resp tmallchannel.TmallChannelTradeApplyorderAgreeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

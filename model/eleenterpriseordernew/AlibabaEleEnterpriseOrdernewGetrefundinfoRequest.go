@@ -12,26 +12,26 @@ alibaba.ele.enterprise.ordernew.getrefundinfo
 
 退单和申诉
 */
-type AlibabaEleEnterpriseOrdernewGetrefundinfoRequest struct {
+type AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest struct {
     model.Params
     // 饿了么订单ID
     _orderId   string
 }
 
-// 初始化AlibabaEleEnterpriseOrdernewGetrefundinfoRequest对象
-func NewAlibabaEleEnterpriseOrdernewGetrefundinfoRequest() *AlibabaEleEnterpriseOrdernewGetrefundinfoRequest{
-    return &AlibabaEleEnterpriseOrdernewGetrefundinfoRequest{
+// 初始化AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest对象
+func NewAlibabaEleEnterpriseOrdernewGetrefundinfoRequest() *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest{
+    return &AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseOrdernewGetrefundinfoRequest) GetApiMethodName() string {
+func (r AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.enterprise.ordernew.getrefundinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseOrdernewGetrefundinfoRequest) GetApiParams() url.Values {
+func (r AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEleEnterpriseOrdernewGetrefundinfoRequest) GetApiParams() url.Val
 }
 // OrderId Setter
 // 饿了么订单ID
-func (r *AlibabaEleEnterpriseOrdernewGetrefundinfoRequest) SetOrderId(_orderId string) error {
+func (r *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) SetOrderId(_orderId string) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaEleEnterpriseOrdernewGetrefundinfoRequest) GetOrderId() string {
+func (r AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) GetOrderId() string {
     return r._orderId
 }

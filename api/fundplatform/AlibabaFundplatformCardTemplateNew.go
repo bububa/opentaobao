@@ -11,7 +11,7 @@ alibaba.fundplatform.card.template.new
 
 该接口由制卡商实现，当新增一个实体卡模板的时候，需要调用该接口，通知制卡商同步新增卡模板信息。
 */
-func AlibabaFundplatformCardTemplateNew(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformCardTemplateNewRequest, session string) (*fundplatform.AlibabaFundplatformCardTemplateNewAPIResponse, error) {
+func AlibabaFundplatformCardTemplateNew(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformCardTemplateNewAPIRequest, session string) (*fundplatform.AlibabaFundplatformCardTemplateNewAPIResponse, error) {
     var resp fundplatform.AlibabaFundplatformCardTemplateNewAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

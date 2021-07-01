@@ -11,7 +11,7 @@ taobao.wdk.equipment.conveyor.wcsbtoc.containerscannedbyconveyor
 
 容器被悬挂链扫描
 */
-func TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyor(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse, error) {
+func TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyor(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse, error) {
     var resp wdk.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

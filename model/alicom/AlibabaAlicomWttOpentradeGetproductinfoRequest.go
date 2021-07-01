@@ -12,7 +12,7 @@ alibaba.alicom.wtt.opentrade.getproductinfo
 
 话费宝查询产品信息相关配置
 */
-type AlibabaAlicomWttOpentradeGetproductinfoRequest struct {
+type AlibabaAlicomWttOpentradeGetproductinfoAPIRequest struct {
     model.Params
     // 阿里通信产品ID
     _productId   string
@@ -20,20 +20,20 @@ type AlibabaAlicomWttOpentradeGetproductinfoRequest struct {
     _bizType   string
 }
 
-// 初始化AlibabaAlicomWttOpentradeGetproductinfoRequest对象
-func NewAlibabaAlicomWttOpentradeGetproductinfoRequest() *AlibabaAlicomWttOpentradeGetproductinfoRequest{
-    return &AlibabaAlicomWttOpentradeGetproductinfoRequest{
+// 初始化AlibabaAlicomWttOpentradeGetproductinfoAPIRequest对象
+func NewAlibabaAlicomWttOpentradeGetproductinfoRequest() *AlibabaAlicomWttOpentradeGetproductinfoAPIRequest{
+    return &AlibabaAlicomWttOpentradeGetproductinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlicomWttOpentradeGetproductinfoRequest) GetApiMethodName() string {
+func (r AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.alicom.wtt.opentrade.getproductinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlicomWttOpentradeGetproductinfoRequest) GetApiParams() url.Values {
+func (r AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlicomWttOpentradeGetproductinfoRequest) GetApiParams() url.Value
 }
 // ProductId Setter
 // 阿里通信产品ID
-func (r *AlibabaAlicomWttOpentradeGetproductinfoRequest) SetProductId(_productId string) error {
+func (r *AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) SetProductId(_productId string) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r AlibabaAlicomWttOpentradeGetproductinfoRequest) GetProductId() string {
+func (r AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) GetProductId() string {
     return r._productId
 }
 // BizType Setter
 // 类型
-func (r *AlibabaAlicomWttOpentradeGetproductinfoRequest) SetBizType(_bizType string) error {
+func (r *AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) SetBizType(_bizType string) error {
     r._bizType = _bizType
     r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
-func (r AlibabaAlicomWttOpentradeGetproductinfoRequest) GetBizType() string {
+func (r AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) GetBizType() string {
     return r._bizType
 }

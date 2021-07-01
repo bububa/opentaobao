@@ -11,7 +11,7 @@ alibaba.health.vaccin.vaccinate.complete
 
 ISV 将用户完成接种的疫苗同步给免疫规划中心
 */
-func AlibabaHealthVaccinVaccinateComplete(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinVaccinateCompleteRequest, session string) (*vaccin.AlibabaHealthVaccinVaccinateCompleteAPIResponse, error) {
+func AlibabaHealthVaccinVaccinateComplete(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinVaccinateCompleteAPIRequest, session string) (*vaccin.AlibabaHealthVaccinVaccinateCompleteAPIResponse, error) {
     var resp vaccin.AlibabaHealthVaccinVaccinateCompleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

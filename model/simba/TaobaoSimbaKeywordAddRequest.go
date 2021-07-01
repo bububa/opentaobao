@@ -12,7 +12,7 @@ taobao.simba.keyword.add
 
 （新）关键词更新相关接口
 */
-type TaobaoSimbaKeywordAddRequest struct {
+type TaobaoSimbaKeywordAddAPIRequest struct {
     model.Params
     // 关键词相关信息
     _bidwords   []SiriusBidwordDTO
@@ -20,20 +20,20 @@ type TaobaoSimbaKeywordAddRequest struct {
     _adgroupId   int64
 }
 
-// 初始化TaobaoSimbaKeywordAddRequest对象
-func NewTaobaoSimbaKeywordAddRequest() *TaobaoSimbaKeywordAddRequest{
-    return &TaobaoSimbaKeywordAddRequest{
+// 初始化TaobaoSimbaKeywordAddAPIRequest对象
+func NewTaobaoSimbaKeywordAddRequest() *TaobaoSimbaKeywordAddAPIRequest{
+    return &TaobaoSimbaKeywordAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaKeywordAddRequest) GetApiMethodName() string {
+func (r TaobaoSimbaKeywordAddAPIRequest) GetApiMethodName() string {
     return "taobao.simba.keyword.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaKeywordAddRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaKeywordAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSimbaKeywordAddRequest) GetApiParams() url.Values {
 }
 // Bidwords Setter
 // 关键词相关信息
-func (r *TaobaoSimbaKeywordAddRequest) SetBidwords(_bidwords []SiriusBidwordDTO) error {
+func (r *TaobaoSimbaKeywordAddAPIRequest) SetBidwords(_bidwords []SiriusBidwordDTO) error {
     r._bidwords = _bidwords
     r.Set("bidwords", _bidwords)
     return nil
 }
 
 // Bidwords Getter
-func (r TaobaoSimbaKeywordAddRequest) GetBidwords() []SiriusBidwordDTO {
+func (r TaobaoSimbaKeywordAddAPIRequest) GetBidwords() []SiriusBidwordDTO {
     return r._bidwords
 }
 // AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaKeywordAddRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoSimbaKeywordAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
     r._adgroupId = _adgroupId
     r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
-func (r TaobaoSimbaKeywordAddRequest) GetAdgroupId() int64 {
+func (r TaobaoSimbaKeywordAddAPIRequest) GetAdgroupId() int64 {
     return r._adgroupId
 }

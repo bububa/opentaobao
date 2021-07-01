@@ -11,7 +11,7 @@ alitrip.agent.flight.sell.refund.approve
 
 销售退票确认
 */
-func AlitripAgentFlightSellRefundApprove(clt *core.SDKClient, req *flight.AlitripAgentFlightSellRefundApproveRequest, session string) (*flight.AlitripAgentFlightSellRefundApproveAPIResponse, error) {
+func AlitripAgentFlightSellRefundApprove(clt *core.SDKClient, req *flight.AlitripAgentFlightSellRefundApproveAPIRequest, session string) (*flight.AlitripAgentFlightSellRefundApproveAPIResponse, error) {
     var resp flight.AlitripAgentFlightSellRefundApproveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

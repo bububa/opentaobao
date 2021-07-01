@@ -11,7 +11,7 @@ alitrip.platform.divisions.querybyparentid
 
 根据行政区划id查询下一层级行政区划数据
 */
-func AlitripPlatformDivisionsQuerybyparentid(clt *core.SDKClient, req *alitripdivisions.AlitripPlatformDivisionsQuerybyparentidRequest, session string) (*alitripdivisions.AlitripPlatformDivisionsQuerybyparentidAPIResponse, error) {
+func AlitripPlatformDivisionsQuerybyparentid(clt *core.SDKClient, req *alitripdivisions.AlitripPlatformDivisionsQuerybyparentidAPIRequest, session string) (*alitripdivisions.AlitripPlatformDivisionsQuerybyparentidAPIResponse, error) {
     var resp alitripdivisions.AlitripPlatformDivisionsQuerybyparentidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

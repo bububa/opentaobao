@@ -11,7 +11,7 @@ taobao.feedflow.item.campaign.modify
 
 信息流修改计划
 */
-func TaobaoFeedflowItemCampaignModify(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignModifyRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignModifyAPIResponse, error) {
+func TaobaoFeedflowItemCampaignModify(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignModifyAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignModifyAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemCampaignModifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

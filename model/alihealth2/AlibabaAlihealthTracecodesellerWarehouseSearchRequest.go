@@ -12,7 +12,7 @@ alibaba.alihealth.tracecodeseller.warehouse.search
 
 查询仓库api
 */
-type AlibabaAlihealthTracecodesellerWarehouseSearchRequest struct {
+type AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest struct {
     model.Params
     // 身份认证
     _appkey   string
@@ -24,20 +24,20 @@ type AlibabaAlihealthTracecodesellerWarehouseSearchRequest struct {
     _pageSize   int64
 }
 
-// 初始化AlibabaAlihealthTracecodesellerWarehouseSearchRequest对象
-func NewAlibabaAlihealthTracecodesellerWarehouseSearchRequest() *AlibabaAlihealthTracecodesellerWarehouseSearchRequest{
-    return &AlibabaAlihealthTracecodesellerWarehouseSearchRequest{
+// 初始化AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest对象
+func NewAlibabaAlihealthTracecodesellerWarehouseSearchRequest() *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest{
+    return &AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthTracecodesellerWarehouseSearchRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.tracecodeseller.warehouse.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthTracecodesellerWarehouseSearchRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthTracecodesellerWarehouseSearchRequest) GetApiParams() ur
 }
 // Appkey Setter
 // 身份认证
-func (r *AlibabaAlihealthTracecodesellerWarehouseSearchRequest) SetAppkey(_appkey string) error {
+func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetAppkey(_appkey string) error {
     r._appkey = _appkey
     r.Set("appkey", _appkey)
     return nil
 }
 
 // Appkey Getter
-func (r AlibabaAlihealthTracecodesellerWarehouseSearchRequest) GetAppkey() string {
+func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetAppkey() string {
     return r._appkey
 }
 // EntInfoId Setter
 // 商家id
-func (r *AlibabaAlihealthTracecodesellerWarehouseSearchRequest) SetEntInfoId(_entInfoId int64) error {
+func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
     r._entInfoId = _entInfoId
     r.Set("ent_info_id", _entInfoId)
     return nil
 }
 
 // EntInfoId Getter
-func (r AlibabaAlihealthTracecodesellerWarehouseSearchRequest) GetEntInfoId() int64 {
+func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetEntInfoId() int64 {
     return r._entInfoId
 }
 // Page Setter
 // 第几页
-func (r *AlibabaAlihealthTracecodesellerWarehouseSearchRequest) SetPage(_page int64) error {
+func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetPage(_page int64) error {
     r._page = _page
     r.Set("page", _page)
     return nil
 }
 
 // Page Getter
-func (r AlibabaAlihealthTracecodesellerWarehouseSearchRequest) GetPage() int64 {
+func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetPage() int64 {
     return r._page
 }
 // PageSize Setter
 // 每页多少条
-func (r *AlibabaAlihealthTracecodesellerWarehouseSearchRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r AlibabaAlihealthTracecodesellerWarehouseSearchRequest) GetPageSize() int64 {
+func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

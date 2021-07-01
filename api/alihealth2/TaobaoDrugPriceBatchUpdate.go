@@ -11,7 +11,7 @@ taobao.drug.price.batch.update
 
 商家批量更新宝贝价格
 */
-func TaobaoDrugPriceBatchUpdate(clt *core.SDKClient, req *alihealth2.TaobaoDrugPriceBatchUpdateRequest, session string) (*alihealth2.TaobaoDrugPriceBatchUpdateAPIResponse, error) {
+func TaobaoDrugPriceBatchUpdate(clt *core.SDKClient, req *alihealth2.TaobaoDrugPriceBatchUpdateAPIRequest, session string) (*alihealth2.TaobaoDrugPriceBatchUpdateAPIResponse, error) {
     var resp alihealth2.TaobaoDrugPriceBatchUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

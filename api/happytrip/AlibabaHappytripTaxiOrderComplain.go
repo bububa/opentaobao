@@ -27,7 +27,7 @@ alibaba.happytrip.taxi.order.complain
 12	危险驾驶；	
 13	不是订单显示车辆或司机；
 */
-func AlibabaHappytripTaxiOrderComplain(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderComplainRequest, session string) (*happytrip.AlibabaHappytripTaxiOrderComplainAPIResponse, error) {
+func AlibabaHappytripTaxiOrderComplain(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderComplainAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiOrderComplainAPIResponse, error) {
     var resp happytrip.AlibabaHappytripTaxiOrderComplainAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.alsc.crm.recharge.dedut.update
 
 增加储值消费接口
 */
-type AlibabaAlscCrmRechargeDedutUpdateRequest struct {
+type AlibabaAlscCrmRechargeDedutUpdateAPIRequest struct {
     model.Params
     // 入参
     _paramDedutOpenReq   *DedutOpenReq
 }
 
-// 初始化AlibabaAlscCrmRechargeDedutUpdateRequest对象
-func NewAlibabaAlscCrmRechargeDedutUpdateRequest() *AlibabaAlscCrmRechargeDedutUpdateRequest{
-    return &AlibabaAlscCrmRechargeDedutUpdateRequest{
+// 初始化AlibabaAlscCrmRechargeDedutUpdateAPIRequest对象
+func NewAlibabaAlscCrmRechargeDedutUpdateRequest() *AlibabaAlscCrmRechargeDedutUpdateAPIRequest{
+    return &AlibabaAlscCrmRechargeDedutUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRechargeDedutUpdateRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRechargeDedutUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.recharge.dedut.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRechargeDedutUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRechargeDedutUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeDedutUpdateRequest) GetApiParams() url.Values {
 }
 // ParamDedutOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeDedutUpdateRequest) SetParamDedutOpenReq(_paramDedutOpenReq *DedutOpenReq) error {
+func (r *AlibabaAlscCrmRechargeDedutUpdateAPIRequest) SetParamDedutOpenReq(_paramDedutOpenReq *DedutOpenReq) error {
     r._paramDedutOpenReq = _paramDedutOpenReq
     r.Set("param_dedut_open_req", _paramDedutOpenReq)
     return nil
 }
 
 // ParamDedutOpenReq Getter
-func (r AlibabaAlscCrmRechargeDedutUpdateRequest) GetParamDedutOpenReq() *DedutOpenReq {
+func (r AlibabaAlscCrmRechargeDedutUpdateAPIRequest) GetParamDedutOpenReq() *DedutOpenReq {
     return r._paramDedutOpenReq
 }

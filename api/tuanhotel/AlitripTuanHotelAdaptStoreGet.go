@@ -11,7 +11,7 @@ alitrip.tuan.hotel.adapt.store.get
 
 输入shid，返回关联门店详情信息
 */
-func AlitripTuanHotelAdaptStoreGet(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelAdaptStoreGetRequest, session string) (*tuanhotel.AlitripTuanHotelAdaptStoreGetAPIResponse, error) {
+func AlitripTuanHotelAdaptStoreGet(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelAdaptStoreGetAPIRequest, session string) (*tuanhotel.AlitripTuanHotelAdaptStoreGetAPIResponse, error) {
     var resp tuanhotel.AlitripTuanHotelAdaptStoreGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

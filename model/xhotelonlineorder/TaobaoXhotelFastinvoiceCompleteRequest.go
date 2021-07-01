@@ -12,26 +12,26 @@ taobao.xhotel.fastinvoice.complete
 
 极速开票开票请求回传,用于更新航信开票请求数据
 */
-type TaobaoXhotelFastinvoiceCompleteRequest struct {
+type TaobaoXhotelFastinvoiceCompleteAPIRequest struct {
     model.Params
     // 无
     _invoiceInfoParam   *InvoiceInfoParam
 }
 
-// 初始化TaobaoXhotelFastinvoiceCompleteRequest对象
-func NewTaobaoXhotelFastinvoiceCompleteRequest() *TaobaoXhotelFastinvoiceCompleteRequest{
-    return &TaobaoXhotelFastinvoiceCompleteRequest{
+// 初始化TaobaoXhotelFastinvoiceCompleteAPIRequest对象
+func NewTaobaoXhotelFastinvoiceCompleteRequest() *TaobaoXhotelFastinvoiceCompleteAPIRequest{
+    return &TaobaoXhotelFastinvoiceCompleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelFastinvoiceCompleteRequest) GetApiMethodName() string {
+func (r TaobaoXhotelFastinvoiceCompleteAPIRequest) GetApiMethodName() string {
     return "taobao.xhotel.fastinvoice.complete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelFastinvoiceCompleteRequest) GetApiParams() url.Values {
+func (r TaobaoXhotelFastinvoiceCompleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoXhotelFastinvoiceCompleteRequest) GetApiParams() url.Values {
 }
 // InvoiceInfoParam Setter
 // 无
-func (r *TaobaoXhotelFastinvoiceCompleteRequest) SetInvoiceInfoParam(_invoiceInfoParam *InvoiceInfoParam) error {
+func (r *TaobaoXhotelFastinvoiceCompleteAPIRequest) SetInvoiceInfoParam(_invoiceInfoParam *InvoiceInfoParam) error {
     r._invoiceInfoParam = _invoiceInfoParam
     r.Set("invoice_info_param", _invoiceInfoParam)
     return nil
 }
 
 // InvoiceInfoParam Getter
-func (r TaobaoXhotelFastinvoiceCompleteRequest) GetInvoiceInfoParam() *InvoiceInfoParam {
+func (r TaobaoXhotelFastinvoiceCompleteAPIRequest) GetInvoiceInfoParam() *InvoiceInfoParam {
     return r._invoiceInfoParam
 }

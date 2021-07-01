@@ -12,26 +12,26 @@ alibaba.tcls.aelophy.merchant.channel.refund.complete
 
 翱象小程序 退款完成
 */
-type AlibabaTclsAelophyMerchantChannelRefundCompleteRequest struct {
+type AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest struct {
     model.Params
     // 请求对象
     _refundCompleteInfo   *RefundCompleteInfo
 }
 
-// 初始化AlibabaTclsAelophyMerchantChannelRefundCompleteRequest对象
-func NewAlibabaTclsAelophyMerchantChannelRefundCompleteRequest() *AlibabaTclsAelophyMerchantChannelRefundCompleteRequest{
-    return &AlibabaTclsAelophyMerchantChannelRefundCompleteRequest{
+// 初始化AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest对象
+func NewAlibabaTclsAelophyMerchantChannelRefundCompleteRequest() *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest{
+    return &AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTclsAelophyMerchantChannelRefundCompleteRequest) GetApiMethodName() string {
+func (r AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) GetApiMethodName() string {
     return "alibaba.tcls.aelophy.merchant.channel.refund.complete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTclsAelophyMerchantChannelRefundCompleteRequest) GetApiParams() url.Values {
+func (r AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantChannelRefundCompleteRequest) GetApiParams() u
 }
 // RefundCompleteInfo Setter
 // 请求对象
-func (r *AlibabaTclsAelophyMerchantChannelRefundCompleteRequest) SetRefundCompleteInfo(_refundCompleteInfo *RefundCompleteInfo) error {
+func (r *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) SetRefundCompleteInfo(_refundCompleteInfo *RefundCompleteInfo) error {
     r._refundCompleteInfo = _refundCompleteInfo
     r.Set("refund_complete_info", _refundCompleteInfo)
     return nil
 }
 
 // RefundCompleteInfo Getter
-func (r AlibabaTclsAelophyMerchantChannelRefundCompleteRequest) GetRefundCompleteInfo() *RefundCompleteInfo {
+func (r AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) GetRefundCompleteInfo() *RefundCompleteInfo {
     return r._refundCompleteInfo
 }

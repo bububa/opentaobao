@@ -12,7 +12,7 @@ yunos.osupdate.model.search
 
 机型检索
 */
-type YunosOsupdateModelSearchRequest struct {
+type YunosOsupdateModelSearchAPIRequest struct {
     model.Params
     // 应用ID
     _appId   int64
@@ -20,20 +20,20 @@ type YunosOsupdateModelSearchRequest struct {
     _name   string
 }
 
-// 初始化YunosOsupdateModelSearchRequest对象
-func NewYunosOsupdateModelSearchRequest() *YunosOsupdateModelSearchRequest{
-    return &YunosOsupdateModelSearchRequest{
+// 初始化YunosOsupdateModelSearchAPIRequest对象
+func NewYunosOsupdateModelSearchRequest() *YunosOsupdateModelSearchAPIRequest{
+    return &YunosOsupdateModelSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosOsupdateModelSearchRequest) GetApiMethodName() string {
+func (r YunosOsupdateModelSearchAPIRequest) GetApiMethodName() string {
     return "yunos.osupdate.model.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosOsupdateModelSearchRequest) GetApiParams() url.Values {
+func (r YunosOsupdateModelSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r YunosOsupdateModelSearchRequest) GetApiParams() url.Values {
 }
 // AppId Setter
 // 应用ID
-func (r *YunosOsupdateModelSearchRequest) SetAppId(_appId int64) error {
+func (r *YunosOsupdateModelSearchAPIRequest) SetAppId(_appId int64) error {
     r._appId = _appId
     r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
-func (r YunosOsupdateModelSearchRequest) GetAppId() int64 {
+func (r YunosOsupdateModelSearchAPIRequest) GetAppId() int64 {
     return r._appId
 }
 // Name Setter
 // 关键词
-func (r *YunosOsupdateModelSearchRequest) SetName(_name string) error {
+func (r *YunosOsupdateModelSearchAPIRequest) SetName(_name string) error {
     r._name = _name
     r.Set("name", _name)
     return nil
 }
 
 // Name Getter
-func (r YunosOsupdateModelSearchRequest) GetName() string {
+func (r YunosOsupdateModelSearchAPIRequest) GetName() string {
     return r._name
 }

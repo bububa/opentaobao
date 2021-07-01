@@ -12,26 +12,26 @@ taobao.open.account.token.validate
 
 open account token验证
 */
-type TaobaoOpenAccountTokenValidateRequest struct {
+type TaobaoOpenAccountTokenValidateAPIRequest struct {
     model.Params
     // token
     _paramToken   string
 }
 
-// 初始化TaobaoOpenAccountTokenValidateRequest对象
-func NewTaobaoOpenAccountTokenValidateRequest() *TaobaoOpenAccountTokenValidateRequest{
-    return &TaobaoOpenAccountTokenValidateRequest{
+// 初始化TaobaoOpenAccountTokenValidateAPIRequest对象
+func NewTaobaoOpenAccountTokenValidateRequest() *TaobaoOpenAccountTokenValidateAPIRequest{
+    return &TaobaoOpenAccountTokenValidateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenAccountTokenValidateRequest) GetApiMethodName() string {
+func (r TaobaoOpenAccountTokenValidateAPIRequest) GetApiMethodName() string {
     return "taobao.open.account.token.validate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenAccountTokenValidateRequest) GetApiParams() url.Values {
+func (r TaobaoOpenAccountTokenValidateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOpenAccountTokenValidateRequest) GetApiParams() url.Values {
 }
 // ParamToken Setter
 // token
-func (r *TaobaoOpenAccountTokenValidateRequest) SetParamToken(_paramToken string) error {
+func (r *TaobaoOpenAccountTokenValidateAPIRequest) SetParamToken(_paramToken string) error {
     r._paramToken = _paramToken
     r.Set("param_token", _paramToken)
     return nil
 }
 
 // ParamToken Getter
-func (r TaobaoOpenAccountTokenValidateRequest) GetParamToken() string {
+func (r TaobaoOpenAccountTokenValidateAPIRequest) GetParamToken() string {
     return r._paramToken
 }

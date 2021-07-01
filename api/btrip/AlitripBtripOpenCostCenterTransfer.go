@@ -11,7 +11,7 @@ alitrip.btrip.open.cost.center.transfer
 
 商旅成本中心转换为外部成本中心
 */
-func AlitripBtripOpenCostCenterTransfer(clt *core.SDKClient, req *btrip.AlitripBtripOpenCostCenterTransferRequest, session string) (*btrip.AlitripBtripOpenCostCenterTransferAPIResponse, error) {
+func AlitripBtripOpenCostCenterTransfer(clt *core.SDKClient, req *btrip.AlitripBtripOpenCostCenterTransferAPIRequest, session string) (*btrip.AlitripBtripOpenCostCenterTransferAPIResponse, error) {
     var resp btrip.AlitripBtripOpenCostCenterTransferAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

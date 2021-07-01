@@ -12,26 +12,26 @@ alibaba.security.jaq.app.official.verify
 
 接入用户来查询应用是否为官方应用
 */
-type AlibabaSecurityJaqAppOfficialVerifyRequest struct {
+type AlibabaSecurityJaqAppOfficialVerifyAPIRequest struct {
     model.Params
     // 验证参数
     _officialAppVerifyRequest   *OfficialAppVerifyRequest
 }
 
-// 初始化AlibabaSecurityJaqAppOfficialVerifyRequest对象
-func NewAlibabaSecurityJaqAppOfficialVerifyRequest() *AlibabaSecurityJaqAppOfficialVerifyRequest{
-    return &AlibabaSecurityJaqAppOfficialVerifyRequest{
+// 初始化AlibabaSecurityJaqAppOfficialVerifyAPIRequest对象
+func NewAlibabaSecurityJaqAppOfficialVerifyRequest() *AlibabaSecurityJaqAppOfficialVerifyAPIRequest{
+    return &AlibabaSecurityJaqAppOfficialVerifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqAppOfficialVerifyRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqAppOfficialVerifyAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.app.official.verify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqAppOfficialVerifyRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqAppOfficialVerifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqAppOfficialVerifyRequest) GetApiParams() url.Values {
 }
 // OfficialAppVerifyRequest Setter
 // 验证参数
-func (r *AlibabaSecurityJaqAppOfficialVerifyRequest) SetOfficialAppVerifyRequest(_officialAppVerifyRequest *OfficialAppVerifyRequest) error {
+func (r *AlibabaSecurityJaqAppOfficialVerifyAPIRequest) SetOfficialAppVerifyRequest(_officialAppVerifyRequest *OfficialAppVerifyRequest) error {
     r._officialAppVerifyRequest = _officialAppVerifyRequest
     r.Set("official_app_verify_request", _officialAppVerifyRequest)
     return nil
 }
 
 // OfficialAppVerifyRequest Getter
-func (r AlibabaSecurityJaqAppOfficialVerifyRequest) GetOfficialAppVerifyRequest() *OfficialAppVerifyRequest {
+func (r AlibabaSecurityJaqAppOfficialVerifyAPIRequest) GetOfficialAppVerifyRequest() *OfficialAppVerifyRequest {
     return r._officialAppVerifyRequest
 }

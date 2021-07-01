@@ -12,7 +12,7 @@ tmall.nr.fulfill.logistics.query
 
 发布定时送&极速达物流信息查询服务
 */
-type TmallNrFulfillLogisticsQueryRequest struct {
+type TmallNrFulfillLogisticsQueryAPIRequest struct {
     model.Params
     // 交易主订单号
     _mainOrderId   int64
@@ -20,20 +20,20 @@ type TmallNrFulfillLogisticsQueryRequest struct {
     _bizIdentity   string
 }
 
-// 初始化TmallNrFulfillLogisticsQueryRequest对象
-func NewTmallNrFulfillLogisticsQueryRequest() *TmallNrFulfillLogisticsQueryRequest{
-    return &TmallNrFulfillLogisticsQueryRequest{
+// 初始化TmallNrFulfillLogisticsQueryAPIRequest对象
+func NewTmallNrFulfillLogisticsQueryRequest() *TmallNrFulfillLogisticsQueryAPIRequest{
+    return &TmallNrFulfillLogisticsQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrFulfillLogisticsQueryRequest) GetApiMethodName() string {
+func (r TmallNrFulfillLogisticsQueryAPIRequest) GetApiMethodName() string {
     return "tmall.nr.fulfill.logistics.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrFulfillLogisticsQueryRequest) GetApiParams() url.Values {
+func (r TmallNrFulfillLogisticsQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallNrFulfillLogisticsQueryRequest) GetApiParams() url.Values {
 }
 // MainOrderId Setter
 // 交易主订单号
-func (r *TmallNrFulfillLogisticsQueryRequest) SetMainOrderId(_mainOrderId int64) error {
+func (r *TmallNrFulfillLogisticsQueryAPIRequest) SetMainOrderId(_mainOrderId int64) error {
     r._mainOrderId = _mainOrderId
     r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
-func (r TmallNrFulfillLogisticsQueryRequest) GetMainOrderId() int64 {
+func (r TmallNrFulfillLogisticsQueryAPIRequest) GetMainOrderId() int64 {
     return r._mainOrderId
 }
 // BizIdentity Setter
 // 业务标识，dss标识定时送业务；jsd表示极速达业务
-func (r *TmallNrFulfillLogisticsQueryRequest) SetBizIdentity(_bizIdentity string) error {
+func (r *TmallNrFulfillLogisticsQueryAPIRequest) SetBizIdentity(_bizIdentity string) error {
     r._bizIdentity = _bizIdentity
     r.Set("biz_identity", _bizIdentity)
     return nil
 }
 
 // BizIdentity Getter
-func (r TmallNrFulfillLogisticsQueryRequest) GetBizIdentity() string {
+func (r TmallNrFulfillLogisticsQueryAPIRequest) GetBizIdentity() string {
     return r._bizIdentity
 }

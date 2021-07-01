@@ -11,7 +11,7 @@ alibaba.tmallgenie.scp.plan.feedback.oem.upload
 
 供应商反馈（OEM）同步接口
 */
-func AlibabaTmallgenieScpPlanFeedbackOemUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanFeedbackOemUploadRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanFeedbackOemUploadAPIResponse, error) {
+func AlibabaTmallgenieScpPlanFeedbackOemUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanFeedbackOemUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanFeedbackOemUploadAPIResponse, error) {
     var resp tmallgeniescp.AlibabaTmallgenieScpPlanFeedbackOemUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

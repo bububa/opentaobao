@@ -12,24 +12,24 @@ taobao.item.templates.get
 
 查询当前登录用户的店铺的宝贝详情页的模板名称
 */
-type TaobaoItemTemplatesGetRequest struct {
+type TaobaoItemTemplatesGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoItemTemplatesGetRequest对象
-func NewTaobaoItemTemplatesGetRequest() *TaobaoItemTemplatesGetRequest{
-    return &TaobaoItemTemplatesGetRequest{
+// 初始化TaobaoItemTemplatesGetAPIRequest对象
+func NewTaobaoItemTemplatesGetRequest() *TaobaoItemTemplatesGetAPIRequest{
+    return &TaobaoItemTemplatesGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoItemTemplatesGetRequest) GetApiMethodName() string {
+func (r TaobaoItemTemplatesGetAPIRequest) GetApiMethodName() string {
     return "taobao.item.templates.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoItemTemplatesGetRequest) GetApiParams() url.Values {
+func (r TaobaoItemTemplatesGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

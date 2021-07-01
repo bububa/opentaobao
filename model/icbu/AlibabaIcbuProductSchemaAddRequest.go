@@ -12,26 +12,26 @@ alibaba.icbu.product.schema.add
 
 提供发布ICBU商品的入口
 */
-type AlibabaIcbuProductSchemaAddRequest struct {
+type AlibabaIcbuProductSchemaAddAPIRequest struct {
     model.Params
     // 发布入参
     _paramProductTopPublishRequest   *ProductTopPublishRequest
 }
 
-// 初始化AlibabaIcbuProductSchemaAddRequest对象
-func NewAlibabaIcbuProductSchemaAddRequest() *AlibabaIcbuProductSchemaAddRequest{
-    return &AlibabaIcbuProductSchemaAddRequest{
+// 初始化AlibabaIcbuProductSchemaAddAPIRequest对象
+func NewAlibabaIcbuProductSchemaAddRequest() *AlibabaIcbuProductSchemaAddAPIRequest{
+    return &AlibabaIcbuProductSchemaAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuProductSchemaAddRequest) GetApiMethodName() string {
+func (r AlibabaIcbuProductSchemaAddAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.product.schema.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuProductSchemaAddRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuProductSchemaAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIcbuProductSchemaAddRequest) GetApiParams() url.Values {
 }
 // ParamProductTopPublishRequest Setter
 // 发布入参
-func (r *AlibabaIcbuProductSchemaAddRequest) SetParamProductTopPublishRequest(_paramProductTopPublishRequest *ProductTopPublishRequest) error {
+func (r *AlibabaIcbuProductSchemaAddAPIRequest) SetParamProductTopPublishRequest(_paramProductTopPublishRequest *ProductTopPublishRequest) error {
     r._paramProductTopPublishRequest = _paramProductTopPublishRequest
     r.Set("param_product_top_publish_request", _paramProductTopPublishRequest)
     return nil
 }
 
 // ParamProductTopPublishRequest Getter
-func (r AlibabaIcbuProductSchemaAddRequest) GetParamProductTopPublishRequest() *ProductTopPublishRequest {
+func (r AlibabaIcbuProductSchemaAddAPIRequest) GetParamProductTopPublishRequest() *ProductTopPublishRequest {
     return r._paramProductTopPublishRequest
 }

@@ -12,7 +12,7 @@ alibaba.seaking.titlerewrite.submit
 
 提交标题改写任务
 */
-type AlibabaSeakingTitlerewriteSubmitRequest struct {
+type AlibabaSeakingTitlerewriteSubmitAPIRequest struct {
     model.Params
     // 任务详情列表
     _titleRewriteDetailList   []TitleRewriteDetailDTO
@@ -22,20 +22,20 @@ type AlibabaSeakingTitlerewriteSubmitRequest struct {
     _token   string
 }
 
-// 初始化AlibabaSeakingTitlerewriteSubmitRequest对象
-func NewAlibabaSeakingTitlerewriteSubmitRequest() *AlibabaSeakingTitlerewriteSubmitRequest{
-    return &AlibabaSeakingTitlerewriteSubmitRequest{
+// 初始化AlibabaSeakingTitlerewriteSubmitAPIRequest对象
+func NewAlibabaSeakingTitlerewriteSubmitRequest() *AlibabaSeakingTitlerewriteSubmitAPIRequest{
+    return &AlibabaSeakingTitlerewriteSubmitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSeakingTitlerewriteSubmitRequest) GetApiMethodName() string {
+func (r AlibabaSeakingTitlerewriteSubmitAPIRequest) GetApiMethodName() string {
     return "alibaba.seaking.titlerewrite.submit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSeakingTitlerewriteSubmitRequest) GetApiParams() url.Values {
+func (r AlibabaSeakingTitlerewriteSubmitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaSeakingTitlerewriteSubmitRequest) GetApiParams() url.Values {
 }
 // TitleRewriteDetailList Setter
 // 任务详情列表
-func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetTitleRewriteDetailList(_titleRewriteDetailList []TitleRewriteDetailDTO) error {
+func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) SetTitleRewriteDetailList(_titleRewriteDetailList []TitleRewriteDetailDTO) error {
     r._titleRewriteDetailList = _titleRewriteDetailList
     r.Set("title_rewrite_detail_list", _titleRewriteDetailList)
     return nil
 }
 
 // TitleRewriteDetailList Getter
-func (r AlibabaSeakingTitlerewriteSubmitRequest) GetTitleRewriteDetailList() []TitleRewriteDetailDTO {
+func (r AlibabaSeakingTitlerewriteSubmitAPIRequest) GetTitleRewriteDetailList() []TitleRewriteDetailDTO {
     return r._titleRewriteDetailList
 }
 // TokenFrom Setter
 // token来源站点
-func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetTokenFrom(_tokenFrom string) error {
+func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) SetTokenFrom(_tokenFrom string) error {
     r._tokenFrom = _tokenFrom
     r.Set("token_from", _tokenFrom)
     return nil
 }
 
 // TokenFrom Getter
-func (r AlibabaSeakingTitlerewriteSubmitRequest) GetTokenFrom() string {
+func (r AlibabaSeakingTitlerewriteSubmitAPIRequest) GetTokenFrom() string {
     return r._tokenFrom
 }
 // Token Setter
 // 用户token
-func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetToken(_token string) error {
+func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) SetToken(_token string) error {
     r._token = _token
     r.Set("token", _token)
     return nil
 }
 
 // Token Getter
-func (r AlibabaSeakingTitlerewriteSubmitRequest) GetToken() string {
+func (r AlibabaSeakingTitlerewriteSubmitAPIRequest) GetToken() string {
     return r._token
 }

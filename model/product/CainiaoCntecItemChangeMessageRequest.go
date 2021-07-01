@@ -12,26 +12,26 @@ cainiao.cntec.item.change.message
 
 供货商商品信息变更消息
 */
-type CainiaoCntecItemChangeMessageRequest struct {
+type CainiaoCntecItemChangeMessageAPIRequest struct {
     model.Params
     // 供应商商品变更信息
     _itemChangeMessage   *SupplyItemChangeMessage
 }
 
-// 初始化CainiaoCntecItemChangeMessageRequest对象
-func NewCainiaoCntecItemChangeMessageRequest() *CainiaoCntecItemChangeMessageRequest{
-    return &CainiaoCntecItemChangeMessageRequest{
+// 初始化CainiaoCntecItemChangeMessageAPIRequest对象
+func NewCainiaoCntecItemChangeMessageRequest() *CainiaoCntecItemChangeMessageAPIRequest{
+    return &CainiaoCntecItemChangeMessageAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCntecItemChangeMessageRequest) GetApiMethodName() string {
+func (r CainiaoCntecItemChangeMessageAPIRequest) GetApiMethodName() string {
     return "cainiao.cntec.item.change.message"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCntecItemChangeMessageRequest) GetApiParams() url.Values {
+func (r CainiaoCntecItemChangeMessageAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoCntecItemChangeMessageRequest) GetApiParams() url.Values {
 }
 // ItemChangeMessage Setter
 // 供应商商品变更信息
-func (r *CainiaoCntecItemChangeMessageRequest) SetItemChangeMessage(_itemChangeMessage *SupplyItemChangeMessage) error {
+func (r *CainiaoCntecItemChangeMessageAPIRequest) SetItemChangeMessage(_itemChangeMessage *SupplyItemChangeMessage) error {
     r._itemChangeMessage = _itemChangeMessage
     r.Set("item_change_message", _itemChangeMessage)
     return nil
 }
 
 // ItemChangeMessage Getter
-func (r CainiaoCntecItemChangeMessageRequest) GetItemChangeMessage() *SupplyItemChangeMessage {
+func (r CainiaoCntecItemChangeMessageAPIRequest) GetItemChangeMessage() *SupplyItemChangeMessage {
     return r._itemChangeMessage
 }

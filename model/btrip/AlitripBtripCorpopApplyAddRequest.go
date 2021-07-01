@@ -12,26 +12,26 @@ alitrip.btrip.corpop.apply.add
 
 【商旅】isv添加审批单
 */
-type AlitripBtripCorpopApplyAddRequest struct {
+type AlitripBtripCorpopApplyAddAPIRequest struct {
     model.Params
     // 请求参数
     _rq   *OpenApiApplyRq
 }
 
-// 初始化AlitripBtripCorpopApplyAddRequest对象
-func NewAlitripBtripCorpopApplyAddRequest() *AlitripBtripCorpopApplyAddRequest{
-    return &AlitripBtripCorpopApplyAddRequest{
+// 初始化AlitripBtripCorpopApplyAddAPIRequest对象
+func NewAlitripBtripCorpopApplyAddRequest() *AlitripBtripCorpopApplyAddAPIRequest{
+    return &AlitripBtripCorpopApplyAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripCorpopApplyAddRequest) GetApiMethodName() string {
+func (r AlitripBtripCorpopApplyAddAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.corpop.apply.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripCorpopApplyAddRequest) GetApiParams() url.Values {
+func (r AlitripBtripCorpopApplyAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripCorpopApplyAddRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求参数
-func (r *AlitripBtripCorpopApplyAddRequest) SetRq(_rq *OpenApiApplyRq) error {
+func (r *AlitripBtripCorpopApplyAddAPIRequest) SetRq(_rq *OpenApiApplyRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripCorpopApplyAddRequest) GetRq() *OpenApiApplyRq {
+func (r AlitripBtripCorpopApplyAddAPIRequest) GetRq() *OpenApiApplyRq {
     return r._rq
 }

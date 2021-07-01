@@ -11,7 +11,7 @@ alibaba.alsc.crm.card.bindcustomer
 
 为卡号绑定顾客
 */
-func AlibabaAlscCrmCardBindcustomer(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardBindcustomerRequest, session string) (*alsc.AlibabaAlscCrmCardBindcustomerAPIResponse, error) {
+func AlibabaAlscCrmCardBindcustomer(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardBindcustomerAPIRequest, session string) (*alsc.AlibabaAlscCrmCardBindcustomerAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmCardBindcustomerAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

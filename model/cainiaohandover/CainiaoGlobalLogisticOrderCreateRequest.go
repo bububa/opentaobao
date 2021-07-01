@@ -12,7 +12,7 @@ cainiao.global.logistic.order.create
 
 创建物流订单
 */
-type CainiaoGlobalLogisticOrderCreateRequest struct {
+type CainiaoGlobalLogisticOrderCreateAPIRequest struct {
     model.Params
     // 订单参数
     _orderParam   *OpenOrderParam
@@ -20,20 +20,20 @@ type CainiaoGlobalLogisticOrderCreateRequest struct {
     _locale   string
 }
 
-// 初始化CainiaoGlobalLogisticOrderCreateRequest对象
-func NewCainiaoGlobalLogisticOrderCreateRequest() *CainiaoGlobalLogisticOrderCreateRequest{
-    return &CainiaoGlobalLogisticOrderCreateRequest{
+// 初始化CainiaoGlobalLogisticOrderCreateAPIRequest对象
+func NewCainiaoGlobalLogisticOrderCreateRequest() *CainiaoGlobalLogisticOrderCreateAPIRequest{
+    return &CainiaoGlobalLogisticOrderCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoGlobalLogisticOrderCreateRequest) GetApiMethodName() string {
+func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetApiMethodName() string {
     return "cainiao.global.logistic.order.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoGlobalLogisticOrderCreateRequest) GetApiParams() url.Values {
+func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r CainiaoGlobalLogisticOrderCreateRequest) GetApiParams() url.Values {
 }
 // OrderParam Setter
 // 订单参数
-func (r *CainiaoGlobalLogisticOrderCreateRequest) SetOrderParam(_orderParam *OpenOrderParam) error {
+func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetOrderParam(_orderParam *OpenOrderParam) error {
     r._orderParam = _orderParam
     r.Set("order_param", _orderParam)
     return nil
 }
 
 // OrderParam Getter
-func (r CainiaoGlobalLogisticOrderCreateRequest) GetOrderParam() *OpenOrderParam {
+func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetOrderParam() *OpenOrderParam {
     return r._orderParam
 }
 // Locale Setter
 // 多语言
-func (r *CainiaoGlobalLogisticOrderCreateRequest) SetLocale(_locale string) error {
+func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetLocale(_locale string) error {
     r._locale = _locale
     r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
-func (r CainiaoGlobalLogisticOrderCreateRequest) GetLocale() string {
+func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetLocale() string {
     return r._locale
 }

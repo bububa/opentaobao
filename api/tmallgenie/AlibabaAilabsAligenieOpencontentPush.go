@@ -11,7 +11,7 @@ alibaba.ailabs.aligenie.opencontent.push
 
 第三方内容接入天猫精灵内容库，供相关技能使用
 */
-func AlibabaAilabsAligenieOpencontentPush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpencontentPushRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpencontentPushAPIResponse, error) {
+func AlibabaAilabsAligenieOpencontentPush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpencontentPushAPIRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpencontentPushAPIResponse, error) {
     var resp tmallgenie.AlibabaAilabsAligenieOpencontentPushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.it.album.device.sendimage
 
 提供传入电子相框设备mac，mac需属于厂测白名单设备，将设备刷新为系统默认的厂测图片
 */
-type AlibabaItAlbumDeviceSendimageRequest struct {
+type AlibabaItAlbumDeviceSendimageAPIRequest struct {
     model.Params
     // 下发图片mac地址
     _mac   string
 }
 
-// 初始化AlibabaItAlbumDeviceSendimageRequest对象
-func NewAlibabaItAlbumDeviceSendimageRequest() *AlibabaItAlbumDeviceSendimageRequest{
-    return &AlibabaItAlbumDeviceSendimageRequest{
+// 初始化AlibabaItAlbumDeviceSendimageAPIRequest对象
+func NewAlibabaItAlbumDeviceSendimageRequest() *AlibabaItAlbumDeviceSendimageAPIRequest{
+    return &AlibabaItAlbumDeviceSendimageAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaItAlbumDeviceSendimageRequest) GetApiMethodName() string {
+func (r AlibabaItAlbumDeviceSendimageAPIRequest) GetApiMethodName() string {
     return "alibaba.it.album.device.sendimage"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaItAlbumDeviceSendimageRequest) GetApiParams() url.Values {
+func (r AlibabaItAlbumDeviceSendimageAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaItAlbumDeviceSendimageRequest) GetApiParams() url.Values {
 }
 // Mac Setter
 // 下发图片mac地址
-func (r *AlibabaItAlbumDeviceSendimageRequest) SetMac(_mac string) error {
+func (r *AlibabaItAlbumDeviceSendimageAPIRequest) SetMac(_mac string) error {
     r._mac = _mac
     r.Set("mac", _mac)
     return nil
 }
 
 // Mac Getter
-func (r AlibabaItAlbumDeviceSendimageRequest) GetMac() string {
+func (r AlibabaItAlbumDeviceSendimageAPIRequest) GetMac() string {
     return r._mac
 }

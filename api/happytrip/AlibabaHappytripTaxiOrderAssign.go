@@ -11,7 +11,7 @@ alibaba.happytrip.taxi.order.assign
 
 通知供应商订单指派成功
 */
-func AlibabaHappytripTaxiOrderAssign(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderAssignRequest, session string) (*happytrip.AlibabaHappytripTaxiOrderAssignAPIResponse, error) {
+func AlibabaHappytripTaxiOrderAssign(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderAssignAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiOrderAssignAPIResponse, error) {
     var resp happytrip.AlibabaHappytripTaxiOrderAssignAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

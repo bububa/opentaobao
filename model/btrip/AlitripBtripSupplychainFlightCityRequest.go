@@ -12,26 +12,26 @@ alitrip.btrip.supplychain.flight.city
 
 机场数据查询
 */
-type AlitripBtripSupplychainFlightCityRequest struct {
+type AlitripBtripSupplychainFlightCityAPIRequest struct {
     model.Params
     // 请求对象
     _rq   *OpenSuggestRq
 }
 
-// 初始化AlitripBtripSupplychainFlightCityRequest对象
-func NewAlitripBtripSupplychainFlightCityRequest() *AlitripBtripSupplychainFlightCityRequest{
-    return &AlitripBtripSupplychainFlightCityRequest{
+// 初始化AlitripBtripSupplychainFlightCityAPIRequest对象
+func NewAlitripBtripSupplychainFlightCityRequest() *AlitripBtripSupplychainFlightCityAPIRequest{
+    return &AlitripBtripSupplychainFlightCityAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripSupplychainFlightCityRequest) GetApiMethodName() string {
+func (r AlitripBtripSupplychainFlightCityAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.supplychain.flight.city"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripSupplychainFlightCityRequest) GetApiParams() url.Values {
+func (r AlitripBtripSupplychainFlightCityAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripSupplychainFlightCityRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripSupplychainFlightCityRequest) SetRq(_rq *OpenSuggestRq) error {
+func (r *AlitripBtripSupplychainFlightCityAPIRequest) SetRq(_rq *OpenSuggestRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripSupplychainFlightCityRequest) GetRq() *OpenSuggestRq {
+func (r AlitripBtripSupplychainFlightCityAPIRequest) GetRq() *OpenSuggestRq {
     return r._rq
 }

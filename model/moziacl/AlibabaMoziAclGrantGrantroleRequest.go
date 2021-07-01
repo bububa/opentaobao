@@ -12,26 +12,26 @@ alibaba.mozi.acl.grant.grantrole
 
 根据入参，将入参中的角色授权给入参的某个账户，调用此接口后，该账户就会被授予该角色
 */
-type AlibabaMoziAclGrantGrantroleRequest struct {
+type AlibabaMoziAclGrantGrantroleAPIRequest struct {
     model.Params
     // 整体入参对象
     _grantRolesRequest   *GrantRolesRequest
 }
 
-// 初始化AlibabaMoziAclGrantGrantroleRequest对象
-func NewAlibabaMoziAclGrantGrantroleRequest() *AlibabaMoziAclGrantGrantroleRequest{
-    return &AlibabaMoziAclGrantGrantroleRequest{
+// 初始化AlibabaMoziAclGrantGrantroleAPIRequest对象
+func NewAlibabaMoziAclGrantGrantroleRequest() *AlibabaMoziAclGrantGrantroleAPIRequest{
+    return &AlibabaMoziAclGrantGrantroleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziAclGrantGrantroleRequest) GetApiMethodName() string {
+func (r AlibabaMoziAclGrantGrantroleAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.acl.grant.grantrole"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziAclGrantGrantroleRequest) GetApiParams() url.Values {
+func (r AlibabaMoziAclGrantGrantroleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclGrantGrantroleRequest) GetApiParams() url.Values {
 }
 // GrantRolesRequest Setter
 // 整体入参对象
-func (r *AlibabaMoziAclGrantGrantroleRequest) SetGrantRolesRequest(_grantRolesRequest *GrantRolesRequest) error {
+func (r *AlibabaMoziAclGrantGrantroleAPIRequest) SetGrantRolesRequest(_grantRolesRequest *GrantRolesRequest) error {
     r._grantRolesRequest = _grantRolesRequest
     r.Set("grant_roles_request", _grantRolesRequest)
     return nil
 }
 
 // GrantRolesRequest Getter
-func (r AlibabaMoziAclGrantGrantroleRequest) GetGrantRolesRequest() *GrantRolesRequest {
+func (r AlibabaMoziAclGrantGrantroleAPIRequest) GetGrantRolesRequest() *GrantRolesRequest {
     return r._grantRolesRequest
 }

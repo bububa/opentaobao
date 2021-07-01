@@ -11,7 +11,7 @@ taobao.tanx.creative.get
 
 获取单个审核创意状态
 */
-func TaobaoTanxCreativeGet(clt *core.SDKClient, req *tanx.TaobaoTanxCreativeGetRequest, session string) (*tanx.TaobaoTanxCreativeGetAPIResponse, error) {
+func TaobaoTanxCreativeGet(clt *core.SDKClient, req *tanx.TaobaoTanxCreativeGetAPIRequest, session string) (*tanx.TaobaoTanxCreativeGetAPIResponse, error) {
     var resp tanx.TaobaoTanxCreativeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

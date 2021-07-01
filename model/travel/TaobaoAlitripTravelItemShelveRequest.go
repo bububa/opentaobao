@@ -13,7 +13,7 @@ taobao.alitrip.travel.item.shelve
 旅行度假新商品发布接口 第三版：度假商品上下架接口
 注意：定时上下架功能，目前只支持接送、租车类目。
 */
-type TaobaoAlitripTravelItemShelveRequest struct {
+type TaobaoAlitripTravelItemShelveAPIRequest struct {
     model.Params
     // 商品id。itemId和outProductId至少填写一个
     _itemId   int64
@@ -25,20 +25,20 @@ type TaobaoAlitripTravelItemShelveRequest struct {
     _onlineTime   string
 }
 
-// 初始化TaobaoAlitripTravelItemShelveRequest对象
-func NewTaobaoAlitripTravelItemShelveRequest() *TaobaoAlitripTravelItemShelveRequest{
-    return &TaobaoAlitripTravelItemShelveRequest{
+// 初始化TaobaoAlitripTravelItemShelveAPIRequest对象
+func NewTaobaoAlitripTravelItemShelveRequest() *TaobaoAlitripTravelItemShelveAPIRequest{
+    return &TaobaoAlitripTravelItemShelveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripTravelItemShelveRequest) GetApiMethodName() string {
+func (r TaobaoAlitripTravelItemShelveAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.travel.item.shelve"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelItemShelveRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripTravelItemShelveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -47,49 +47,49 @@ func (r TaobaoAlitripTravelItemShelveRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemShelveRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoAlitripTravelItemShelveRequest) GetItemId() int64 {
+func (r TaobaoAlitripTravelItemShelveAPIRequest) GetItemId() int64 {
     return r._itemId
 }
 // OutProductId Setter
 // 商品 外部商家编码。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemShelveRequest) SetOutProductId(_outProductId string) error {
+func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetOutProductId(_outProductId string) error {
     r._outProductId = _outProductId
     r.Set("out_product_id", _outProductId)
     return nil
 }
 
 // OutProductId Getter
-func (r TaobaoAlitripTravelItemShelveRequest) GetOutProductId() string {
+func (r TaobaoAlitripTravelItemShelveAPIRequest) GetOutProductId() string {
     return r._outProductId
 }
 // ItemStatus Setter
 // 1-上架 0-下架
-func (r *TaobaoAlitripTravelItemShelveRequest) SetItemStatus(_itemStatus int64) error {
+func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetItemStatus(_itemStatus int64) error {
     r._itemStatus = _itemStatus
     r.Set("item_status", _itemStatus)
     return nil
 }
 
 // ItemStatus Getter
-func (r TaobaoAlitripTravelItemShelveRequest) GetItemStatus() int64 {
+func (r TaobaoAlitripTravelItemShelveAPIRequest) GetItemStatus() int64 {
     return r._itemStatus
 }
 // OnlineTime Setter
 // 指定定时上架时间，格式：yyyy-MM-dd HH:mm:ss。若不设置该值且item_status为1，则表示立即上架。
-func (r *TaobaoAlitripTravelItemShelveRequest) SetOnlineTime(_onlineTime string) error {
+func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetOnlineTime(_onlineTime string) error {
     r._onlineTime = _onlineTime
     r.Set("online_time", _onlineTime)
     return nil
 }
 
 // OnlineTime Getter
-func (r TaobaoAlitripTravelItemShelveRequest) GetOnlineTime() string {
+func (r TaobaoAlitripTravelItemShelveAPIRequest) GetOnlineTime() string {
     return r._onlineTime
 }

@@ -12,24 +12,24 @@ tmall.nrt.brandinfo.query
 
 商家获取自己旗舰店授权的品牌id列表
 */
-type TmallNrtBrandinfoQueryRequest struct {
+type TmallNrtBrandinfoQueryAPIRequest struct {
     model.Params
 }
 
-// 初始化TmallNrtBrandinfoQueryRequest对象
-func NewTmallNrtBrandinfoQueryRequest() *TmallNrtBrandinfoQueryRequest{
-    return &TmallNrtBrandinfoQueryRequest{
+// 初始化TmallNrtBrandinfoQueryAPIRequest对象
+func NewTmallNrtBrandinfoQueryRequest() *TmallNrtBrandinfoQueryAPIRequest{
+    return &TmallNrtBrandinfoQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrtBrandinfoQueryRequest) GetApiMethodName() string {
+func (r TmallNrtBrandinfoQueryAPIRequest) GetApiMethodName() string {
     return "tmall.nrt.brandinfo.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrtBrandinfoQueryRequest) GetApiParams() url.Values {
+func (r TmallNrtBrandinfoQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

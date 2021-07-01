@@ -11,7 +11,7 @@ tmall.exchange.receive.get
 
 卖家查询换货列表
 */
-func TmallExchangeReceiveGet(clt *core.SDKClient, req *exchange.TmallExchangeReceiveGetRequest, session string) (*exchange.TmallExchangeReceiveGetAPIResponse, error) {
+func TmallExchangeReceiveGet(clt *core.SDKClient, req *exchange.TmallExchangeReceiveGetAPIRequest, session string) (*exchange.TmallExchangeReceiveGetAPIResponse, error) {
     var resp exchange.TmallExchangeReceiveGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

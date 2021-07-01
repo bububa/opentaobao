@@ -12,26 +12,26 @@ alibaba.wdk.sku.channelsku.update
 
 批量更新渠道商品，商家通过Top接入
 */
-type AlibabaWdkSkuChannelskuUpdateRequest struct {
+type AlibabaWdkSkuChannelskuUpdateAPIRequest struct {
     model.Params
     // 请求参数
     _paramList   []ChannelSkuDO
 }
 
-// 初始化AlibabaWdkSkuChannelskuUpdateRequest对象
-func NewAlibabaWdkSkuChannelskuUpdateRequest() *AlibabaWdkSkuChannelskuUpdateRequest{
-    return &AlibabaWdkSkuChannelskuUpdateRequest{
+// 初始化AlibabaWdkSkuChannelskuUpdateAPIRequest对象
+func NewAlibabaWdkSkuChannelskuUpdateRequest() *AlibabaWdkSkuChannelskuUpdateAPIRequest{
+    return &AlibabaWdkSkuChannelskuUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuChannelskuUpdateRequest) GetApiMethodName() string {
+func (r AlibabaWdkSkuChannelskuUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.channelsku.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuChannelskuUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSkuChannelskuUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuChannelskuUpdateRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 请求参数
-func (r *AlibabaWdkSkuChannelskuUpdateRequest) SetParamList(_paramList []ChannelSkuDO) error {
+func (r *AlibabaWdkSkuChannelskuUpdateAPIRequest) SetParamList(_paramList []ChannelSkuDO) error {
     r._paramList = _paramList
     r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
-func (r AlibabaWdkSkuChannelskuUpdateRequest) GetParamList() []ChannelSkuDO {
+func (r AlibabaWdkSkuChannelskuUpdateAPIRequest) GetParamList() []ChannelSkuDO {
     return r._paramList
 }

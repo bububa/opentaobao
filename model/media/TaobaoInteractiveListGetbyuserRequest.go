@@ -12,7 +12,7 @@ taobao.interactive.list.getbyuser
 
 根据用户来获取用户编辑的互动列表
 */
-type TaobaoInteractiveListGetbyuserRequest struct {
+type TaobaoInteractiveListGetbyuserAPIRequest struct {
     model.Params
     // 当前页
     _currentPage   int64
@@ -20,20 +20,20 @@ type TaobaoInteractiveListGetbyuserRequest struct {
     _pageSize   int64
 }
 
-// 初始化TaobaoInteractiveListGetbyuserRequest对象
-func NewTaobaoInteractiveListGetbyuserRequest() *TaobaoInteractiveListGetbyuserRequest{
-    return &TaobaoInteractiveListGetbyuserRequest{
+// 初始化TaobaoInteractiveListGetbyuserAPIRequest对象
+func NewTaobaoInteractiveListGetbyuserRequest() *TaobaoInteractiveListGetbyuserAPIRequest{
+    return &TaobaoInteractiveListGetbyuserAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoInteractiveListGetbyuserRequest) GetApiMethodName() string {
+func (r TaobaoInteractiveListGetbyuserAPIRequest) GetApiMethodName() string {
     return "taobao.interactive.list.getbyuser"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoInteractiveListGetbyuserRequest) GetApiParams() url.Values {
+func (r TaobaoInteractiveListGetbyuserAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoInteractiveListGetbyuserRequest) GetApiParams() url.Values {
 }
 // CurrentPage Setter
 // 当前页
-func (r *TaobaoInteractiveListGetbyuserRequest) SetCurrentPage(_currentPage int64) error {
+func (r *TaobaoInteractiveListGetbyuserAPIRequest) SetCurrentPage(_currentPage int64) error {
     r._currentPage = _currentPage
     r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
-func (r TaobaoInteractiveListGetbyuserRequest) GetCurrentPage() int64 {
+func (r TaobaoInteractiveListGetbyuserAPIRequest) GetCurrentPage() int64 {
     return r._currentPage
 }
 // PageSize Setter
 // 每页多少
-func (r *TaobaoInteractiveListGetbyuserRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoInteractiveListGetbyuserAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoInteractiveListGetbyuserRequest) GetPageSize() int64 {
+func (r TaobaoInteractiveListGetbyuserAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

@@ -14,7 +14,7 @@ taobao.opentrade.activity.sync
 在活动时间内，标记可购买的用户可在小程序中跳转下单页，完成购买；
 在活动结束后，对限购不再限制，平台开放购买，用户可在小程序内、商品详情、购物车下单购买；
 */
-func TaobaoOpentradeActivitySync(clt *core.SDKClient, req *opentrade.TaobaoOpentradeActivitySyncRequest, session string) (*opentrade.TaobaoOpentradeActivitySyncAPIResponse, error) {
+func TaobaoOpentradeActivitySync(clt *core.SDKClient, req *opentrade.TaobaoOpentradeActivitySyncAPIRequest, session string) (*opentrade.TaobaoOpentradeActivitySyncAPIResponse, error) {
     var resp opentrade.TaobaoOpentradeActivitySyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

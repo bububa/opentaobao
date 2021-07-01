@@ -12,26 +12,26 @@ alibaba.onetouch.logistics.express.charge.calculate
 
 计算快递运费、下单参数校验
 */
-type AlibabaOnetouchLogisticsExpressChargeCalculateRequest struct {
+type AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest struct {
     model.Params
     // 请求参数对象
     _paramnQuery   *PlaceOrderDTO
 }
 
-// 初始化AlibabaOnetouchLogisticsExpressChargeCalculateRequest对象
-func NewAlibabaOnetouchLogisticsExpressChargeCalculateRequest() *AlibabaOnetouchLogisticsExpressChargeCalculateRequest{
-    return &AlibabaOnetouchLogisticsExpressChargeCalculateRequest{
+// 初始化AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest对象
+func NewAlibabaOnetouchLogisticsExpressChargeCalculateRequest() *AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest{
+    return &AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaOnetouchLogisticsExpressChargeCalculateRequest) GetApiMethodName() string {
+func (r AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) GetApiMethodName() string {
     return "alibaba.onetouch.logistics.express.charge.calculate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaOnetouchLogisticsExpressChargeCalculateRequest) GetApiParams() url.Values {
+func (r AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaOnetouchLogisticsExpressChargeCalculateRequest) GetApiParams() ur
 }
 // ParamnQuery Setter
 // 请求参数对象
-func (r *AlibabaOnetouchLogisticsExpressChargeCalculateRequest) SetParamnQuery(_paramnQuery *PlaceOrderDTO) error {
+func (r *AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) SetParamnQuery(_paramnQuery *PlaceOrderDTO) error {
     r._paramnQuery = _paramnQuery
     r.Set("paramn_query", _paramnQuery)
     return nil
 }
 
 // ParamnQuery Getter
-func (r AlibabaOnetouchLogisticsExpressChargeCalculateRequest) GetParamnQuery() *PlaceOrderDTO {
+func (r AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) GetParamnQuery() *PlaceOrderDTO {
     return r._paramnQuery
 }

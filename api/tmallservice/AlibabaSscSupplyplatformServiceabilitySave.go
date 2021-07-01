@@ -11,7 +11,7 @@ alibaba.ssc.supplyplatform.serviceability.save
 
 保存服务能力
 */
-func AlibabaSscSupplyplatformServiceabilitySave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceabilitySaveRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceabilitySaveAPIResponse, error) {
+func AlibabaSscSupplyplatformServiceabilitySave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceabilitySaveAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceabilitySaveAPIResponse, error) {
     var resp tmallservice.AlibabaSscSupplyplatformServiceabilitySaveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

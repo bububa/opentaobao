@@ -11,7 +11,7 @@ alibaba.campus.acl.queryallrole
 
 查询全部园区
 */
-func AlibabaCampusAclQueryallrole(clt *core.SDKClient, req *campus.AlibabaCampusAclQueryallroleRequest, session string) (*campus.AlibabaCampusAclQueryallroleAPIResponse, error) {
+func AlibabaCampusAclQueryallrole(clt *core.SDKClient, req *campus.AlibabaCampusAclQueryallroleAPIRequest, session string) (*campus.AlibabaCampusAclQueryallroleAPIResponse, error) {
     var resp campus.AlibabaCampusAclQueryallroleAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

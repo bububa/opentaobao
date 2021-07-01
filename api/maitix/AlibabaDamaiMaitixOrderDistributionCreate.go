@@ -11,7 +11,7 @@ alibaba.damai.maitix.order.distribution.create
 
 createDistributionOrder
 */
-func AlibabaDamaiMaitixOrderDistributionCreate(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderDistributionCreateRequest, session string) (*maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIResponse, error) {
+func AlibabaDamaiMaitixOrderDistributionCreate(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

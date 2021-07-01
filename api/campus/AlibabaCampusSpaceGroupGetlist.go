@@ -13,7 +13,7 @@ alibaba.campus.space.group.getlist
 HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService
 HSF方法名称：getList
 */
-func AlibabaCampusSpaceGroupGetlist(clt *core.SDKClient, req *campus.AlibabaCampusSpaceGroupGetlistRequest, session string) (*campus.AlibabaCampusSpaceGroupGetlistAPIResponse, error) {
+func AlibabaCampusSpaceGroupGetlist(clt *core.SDKClient, req *campus.AlibabaCampusSpaceGroupGetlistAPIRequest, session string) (*campus.AlibabaCampusSpaceGroupGetlistAPIResponse, error) {
     var resp campus.AlibabaCampusSpaceGroupGetlistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

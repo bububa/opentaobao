@@ -11,7 +11,7 @@ alibaba.damai.mev.open.pushface
 
 pushFace
 */
-func AlibabaDamaiMevOpenPushface(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushfaceRequest, session string) (*damai.AlibabaDamaiMevOpenPushfaceAPIResponse, error) {
+func AlibabaDamaiMevOpenPushface(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushfaceAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushfaceAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenPushfaceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

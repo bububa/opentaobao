@@ -12,26 +12,26 @@ alitrip.platform.poi.raw.poiout
 
 输出指定城市poi指定信息
 */
-type AlitripPlatformPoiRawPoioutRequest struct {
+type AlitripPlatformPoiRawPoioutAPIRequest struct {
     model.Params
     // 查询参数
     _fliggyPoiOutParam   *FliggyPoiOutParam
 }
 
-// 初始化AlitripPlatformPoiRawPoioutRequest对象
-func NewAlitripPlatformPoiRawPoioutRequest() *AlitripPlatformPoiRawPoioutRequest{
-    return &AlitripPlatformPoiRawPoioutRequest{
+// 初始化AlitripPlatformPoiRawPoioutAPIRequest对象
+func NewAlitripPlatformPoiRawPoioutRequest() *AlitripPlatformPoiRawPoioutAPIRequest{
+    return &AlitripPlatformPoiRawPoioutAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripPlatformPoiRawPoioutRequest) GetApiMethodName() string {
+func (r AlitripPlatformPoiRawPoioutAPIRequest) GetApiMethodName() string {
     return "alitrip.platform.poi.raw.poiout"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripPlatformPoiRawPoioutRequest) GetApiParams() url.Values {
+func (r AlitripPlatformPoiRawPoioutAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripPlatformPoiRawPoioutRequest) GetApiParams() url.Values {
 }
 // FliggyPoiOutParam Setter
 // 查询参数
-func (r *AlitripPlatformPoiRawPoioutRequest) SetFliggyPoiOutParam(_fliggyPoiOutParam *FliggyPoiOutParam) error {
+func (r *AlitripPlatformPoiRawPoioutAPIRequest) SetFliggyPoiOutParam(_fliggyPoiOutParam *FliggyPoiOutParam) error {
     r._fliggyPoiOutParam = _fliggyPoiOutParam
     r.Set("fliggy_poi_out_param", _fliggyPoiOutParam)
     return nil
 }
 
 // FliggyPoiOutParam Getter
-func (r AlitripPlatformPoiRawPoioutRequest) GetFliggyPoiOutParam() *FliggyPoiOutParam {
+func (r AlitripPlatformPoiRawPoioutAPIRequest) GetFliggyPoiOutParam() *FliggyPoiOutParam {
     return r._fliggyPoiOutParam
 }

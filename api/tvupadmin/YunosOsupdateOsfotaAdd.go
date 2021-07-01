@@ -11,7 +11,7 @@ yunos.osupdate.osfota.add
 
 添加osupdate系统升级任务
 */
-func YunosOsupdateOsfotaAdd(clt *core.SDKClient, req *tvupadmin.YunosOsupdateOsfotaAddRequest, session string) (*tvupadmin.YunosOsupdateOsfotaAddAPIResponse, error) {
+func YunosOsupdateOsfotaAdd(clt *core.SDKClient, req *tvupadmin.YunosOsupdateOsfotaAddAPIRequest, session string) (*tvupadmin.YunosOsupdateOsfotaAddAPIResponse, error) {
     var resp tvupadmin.YunosOsupdateOsfotaAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

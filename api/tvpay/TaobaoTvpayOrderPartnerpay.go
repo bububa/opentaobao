@@ -11,7 +11,7 @@ taobao.tvpay.order.partnerpay
 
 tv支付第三方发起并支付订单（使用设备授权）
 */
-func TaobaoTvpayOrderPartnerpay(clt *core.SDKClient, req *tvpay.TaobaoTvpayOrderPartnerpayRequest, session string) (*tvpay.TaobaoTvpayOrderPartnerpayAPIResponse, error) {
+func TaobaoTvpayOrderPartnerpay(clt *core.SDKClient, req *tvpay.TaobaoTvpayOrderPartnerpayAPIRequest, session string) (*tvpay.TaobaoTvpayOrderPartnerpayAPIResponse, error) {
     var resp tvpay.TaobaoTvpayOrderPartnerpayAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

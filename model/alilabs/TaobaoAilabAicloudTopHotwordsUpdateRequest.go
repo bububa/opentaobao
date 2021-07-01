@@ -12,7 +12,7 @@ taobao.ailab.aicloud.top.hotwords.update
 
 更新ASR热词
 */
-type TaobaoAilabAicloudTopHotwordsUpdateRequest struct {
+type TaobaoAilabAicloudTopHotwordsUpdateAPIRequest struct {
     model.Params
     // schemaKey
     _schema   string
@@ -26,20 +26,20 @@ type TaobaoAilabAicloudTopHotwordsUpdateRequest struct {
     _content   *HotWordsContent
 }
 
-// 初始化TaobaoAilabAicloudTopHotwordsUpdateRequest对象
-func NewTaobaoAilabAicloudTopHotwordsUpdateRequest() *TaobaoAilabAicloudTopHotwordsUpdateRequest{
-    return &TaobaoAilabAicloudTopHotwordsUpdateRequest{
+// 初始化TaobaoAilabAicloudTopHotwordsUpdateAPIRequest对象
+func NewTaobaoAilabAicloudTopHotwordsUpdateRequest() *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest{
+    return &TaobaoAilabAicloudTopHotwordsUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAilabAicloudTopHotwordsUpdateRequest) GetApiMethodName() string {
+func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.ailab.aicloud.top.hotwords.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAilabAicloudTopHotwordsUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TaobaoAilabAicloudTopHotwordsUpdateRequest) GetApiParams() url.Values {
 }
 // Schema Setter
 // schemaKey
-func (r *TaobaoAilabAicloudTopHotwordsUpdateRequest) SetSchema(_schema string) error {
+func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetSchema(_schema string) error {
     r._schema = _schema
     r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
-func (r TaobaoAilabAicloudTopHotwordsUpdateRequest) GetSchema() string {
+func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetSchema() string {
     return r._schema
 }
 // UserId Setter
 // 三方用户id
-func (r *TaobaoAilabAicloudTopHotwordsUpdateRequest) SetUserId(_userId string) error {
+func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetUserId(_userId string) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r TaobaoAilabAicloudTopHotwordsUpdateRequest) GetUserId() string {
+func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetUserId() string {
     return r._userId
 }
 // BizClass Setter
 // 业务类型
-func (r *TaobaoAilabAicloudTopHotwordsUpdateRequest) SetBizClass(_bizClass string) error {
+func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetBizClass(_bizClass string) error {
     r._bizClass = _bizClass
     r.Set("biz_class", _bizClass)
     return nil
 }
 
 // BizClass Getter
-func (r TaobaoAilabAicloudTopHotwordsUpdateRequest) GetBizClass() string {
+func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetBizClass() string {
     return r._bizClass
 }
 // OpType Setter
 // 操作类型
-func (r *TaobaoAilabAicloudTopHotwordsUpdateRequest) SetOpType(_opType string) error {
+func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetOpType(_opType string) error {
     r._opType = _opType
     r.Set("op_type", _opType)
     return nil
 }
 
 // OpType Getter
-func (r TaobaoAilabAicloudTopHotwordsUpdateRequest) GetOpType() string {
+func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetOpType() string {
     return r._opType
 }
 // Content Setter
 // 热词内容
-func (r *TaobaoAilabAicloudTopHotwordsUpdateRequest) SetContent(_content *HotWordsContent) error {
+func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetContent(_content *HotWordsContent) error {
     r._content = _content
     r.Set("content", _content)
     return nil
 }
 
 // Content Getter
-func (r TaobaoAilabAicloudTopHotwordsUpdateRequest) GetContent() *HotWordsContent {
+func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetContent() *HotWordsContent {
     return r._content
 }

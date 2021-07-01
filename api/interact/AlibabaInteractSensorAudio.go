@@ -11,7 +11,7 @@ alibaba.interact.sensor.audio
 
 客户端声音
 */
-func AlibabaInteractSensorAudio(clt *core.SDKClient, req *interact.AlibabaInteractSensorAudioRequest, session string) (*interact.AlibabaInteractSensorAudioAPIResponse, error) {
+func AlibabaInteractSensorAudio(clt *core.SDKClient, req *interact.AlibabaInteractSensorAudioAPIRequest, session string) (*interact.AlibabaInteractSensorAudioAPIResponse, error) {
     var resp interact.AlibabaInteractSensorAudioAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

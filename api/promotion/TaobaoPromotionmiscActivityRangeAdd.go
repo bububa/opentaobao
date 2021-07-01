@@ -11,7 +11,7 @@ taobao.promotionmisc.activity.range.add
 
 增加活动参与的商品，部分商品参与的活动，最大支持指定150个商品。
 */
-func TaobaoPromotionmiscActivityRangeAdd(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscActivityRangeAddRequest, session string) (*promotion.TaobaoPromotionmiscActivityRangeAddAPIResponse, error) {
+func TaobaoPromotionmiscActivityRangeAdd(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscActivityRangeAddAPIRequest, session string) (*promotion.TaobaoPromotionmiscActivityRangeAddAPIResponse, error) {
     var resp promotion.TaobaoPromotionmiscActivityRangeAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

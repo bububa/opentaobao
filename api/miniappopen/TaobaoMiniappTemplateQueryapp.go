@@ -11,7 +11,7 @@ taobao.miniapp.template.queryapp
 
 根据模板id和商家信息，查询实例化小程序版本查询
 */
-func TaobaoMiniappTemplateQueryapp(clt *core.SDKClient, req *miniappopen.TaobaoMiniappTemplateQueryappRequest, session string) (*miniappopen.TaobaoMiniappTemplateQueryappAPIResponse, error) {
+func TaobaoMiniappTemplateQueryapp(clt *core.SDKClient, req *miniappopen.TaobaoMiniappTemplateQueryappAPIRequest, session string) (*miniappopen.TaobaoMiniappTemplateQueryappAPIResponse, error) {
     var resp miniappopen.TaobaoMiniappTemplateQueryappAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

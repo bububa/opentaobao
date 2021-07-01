@@ -12,26 +12,26 @@ tmall.nr.fulfill.logistics.consign
 
 同城配业务备货通知，商家告诉平台门店的货已经准备好，可以发货了；
 */
-type TmallNrFulfillLogisticsConsignRequest struct {
+type TmallNrFulfillLogisticsConsignAPIRequest struct {
     model.Params
     // 入参对象
     _param0   *NrStoreGoodsReadyReqDTO
 }
 
-// 初始化TmallNrFulfillLogisticsConsignRequest对象
-func NewTmallNrFulfillLogisticsConsignRequest() *TmallNrFulfillLogisticsConsignRequest{
-    return &TmallNrFulfillLogisticsConsignRequest{
+// 初始化TmallNrFulfillLogisticsConsignAPIRequest对象
+func NewTmallNrFulfillLogisticsConsignRequest() *TmallNrFulfillLogisticsConsignAPIRequest{
+    return &TmallNrFulfillLogisticsConsignAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrFulfillLogisticsConsignRequest) GetApiMethodName() string {
+func (r TmallNrFulfillLogisticsConsignAPIRequest) GetApiMethodName() string {
     return "tmall.nr.fulfill.logistics.consign"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrFulfillLogisticsConsignRequest) GetApiParams() url.Values {
+func (r TmallNrFulfillLogisticsConsignAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallNrFulfillLogisticsConsignRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参对象
-func (r *TmallNrFulfillLogisticsConsignRequest) SetParam0(_param0 *NrStoreGoodsReadyReqDTO) error {
+func (r *TmallNrFulfillLogisticsConsignAPIRequest) SetParam0(_param0 *NrStoreGoodsReadyReqDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TmallNrFulfillLogisticsConsignRequest) GetParam0() *NrStoreGoodsReadyReqDTO {
+func (r TmallNrFulfillLogisticsConsignAPIRequest) GetParam0() *NrStoreGoodsReadyReqDTO {
     return r._param0
 }

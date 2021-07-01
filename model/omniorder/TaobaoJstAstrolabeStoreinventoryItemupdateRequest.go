@@ -12,7 +12,7 @@ taobao.jst.astrolabe.storeinventory.itemupdate
 
 ERP调用该接口，增量更新门店或电商仓库存，该接口一次可以同时增量更新多个门店的多个商品的非确定性库存。
 */
-type TaobaoJstAstrolabeStoreinventoryItemupdateRequest struct {
+type TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest struct {
     model.Params
     // 门店列表
     _stores   []Store
@@ -20,20 +20,20 @@ type TaobaoJstAstrolabeStoreinventoryItemupdateRequest struct {
     _operationTime   string
 }
 
-// 初始化TaobaoJstAstrolabeStoreinventoryItemupdateRequest对象
-func NewTaobaoJstAstrolabeStoreinventoryItemupdateRequest() *TaobaoJstAstrolabeStoreinventoryItemupdateRequest{
-    return &TaobaoJstAstrolabeStoreinventoryItemupdateRequest{
+// 初始化TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest对象
+func NewTaobaoJstAstrolabeStoreinventoryItemupdateRequest() *TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest{
+    return &TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJstAstrolabeStoreinventoryItemupdateRequest) GetApiMethodName() string {
+func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetApiMethodName() string {
     return "taobao.jst.astrolabe.storeinventory.itemupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJstAstrolabeStoreinventoryItemupdateRequest) GetApiParams() url.Values {
+func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoJstAstrolabeStoreinventoryItemupdateRequest) GetApiParams() url.Va
 }
 // Stores Setter
 // 门店列表
-func (r *TaobaoJstAstrolabeStoreinventoryItemupdateRequest) SetStores(_stores []Store) error {
+func (r *TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) SetStores(_stores []Store) error {
     r._stores = _stores
     r.Set("stores", _stores)
     return nil
 }
 
 // Stores Getter
-func (r TaobaoJstAstrolabeStoreinventoryItemupdateRequest) GetStores() []Store {
+func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetStores() []Store {
     return r._stores
 }
 // OperationTime Setter
 // 操作时间
-func (r *TaobaoJstAstrolabeStoreinventoryItemupdateRequest) SetOperationTime(_operationTime string) error {
+func (r *TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) SetOperationTime(_operationTime string) error {
     r._operationTime = _operationTime
     r.Set("operation_time", _operationTime)
     return nil
 }
 
 // OperationTime Getter
-func (r TaobaoJstAstrolabeStoreinventoryItemupdateRequest) GetOperationTime() string {
+func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetOperationTime() string {
     return r._operationTime
 }

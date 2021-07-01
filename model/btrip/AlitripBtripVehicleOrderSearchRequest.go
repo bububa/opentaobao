@@ -12,26 +12,26 @@ alitrip.btrip.vehicle.order.search
 
 企业获取商旅用车订单数据
 */
-type AlitripBtripVehicleOrderSearchRequest struct {
+type AlitripBtripVehicleOrderSearchAPIRequest struct {
     model.Params
     // 请求对象
     _rq   *OpenSearchRq
 }
 
-// 初始化AlitripBtripVehicleOrderSearchRequest对象
-func NewAlitripBtripVehicleOrderSearchRequest() *AlitripBtripVehicleOrderSearchRequest{
-    return &AlitripBtripVehicleOrderSearchRequest{
+// 初始化AlitripBtripVehicleOrderSearchAPIRequest对象
+func NewAlitripBtripVehicleOrderSearchRequest() *AlitripBtripVehicleOrderSearchAPIRequest{
+    return &AlitripBtripVehicleOrderSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripVehicleOrderSearchRequest) GetApiMethodName() string {
+func (r AlitripBtripVehicleOrderSearchAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.vehicle.order.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripVehicleOrderSearchRequest) GetApiParams() url.Values {
+func (r AlitripBtripVehicleOrderSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripVehicleOrderSearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripVehicleOrderSearchRequest) SetRq(_rq *OpenSearchRq) error {
+func (r *AlitripBtripVehicleOrderSearchAPIRequest) SetRq(_rq *OpenSearchRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripVehicleOrderSearchRequest) GetRq() *OpenSearchRq {
+func (r AlitripBtripVehicleOrderSearchAPIRequest) GetRq() *OpenSearchRq {
     return r._rq
 }

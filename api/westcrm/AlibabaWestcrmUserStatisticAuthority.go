@@ -11,7 +11,7 @@ alibaba.westcrm.user.statistic.authority
 
 获取指定用户是否含有会员权益统计权限
 */
-func AlibabaWestcrmUserStatisticAuthority(clt *core.SDKClient, req *westcrm.AlibabaWestcrmUserStatisticAuthorityRequest, session string) (*westcrm.AlibabaWestcrmUserStatisticAuthorityAPIResponse, error) {
+func AlibabaWestcrmUserStatisticAuthority(clt *core.SDKClient, req *westcrm.AlibabaWestcrmUserStatisticAuthorityAPIRequest, session string) (*westcrm.AlibabaWestcrmUserStatisticAuthorityAPIResponse, error) {
     var resp westcrm.AlibabaWestcrmUserStatisticAuthorityAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

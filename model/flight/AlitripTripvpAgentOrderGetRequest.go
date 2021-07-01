@@ -12,7 +12,7 @@ alitrip.tripvp.agent.order.get
 
 【国际机票】查询辅营订单详情
 */
-type AlitripTripvpAgentOrderGetRequest struct {
+type AlitripTripvpAgentOrderGetAPIRequest struct {
     model.Params
     // 代理商ID
     _agentId   int64
@@ -20,20 +20,20 @@ type AlitripTripvpAgentOrderGetRequest struct {
     _tradeOrderId   int64
 }
 
-// 初始化AlitripTripvpAgentOrderGetRequest对象
-func NewAlitripTripvpAgentOrderGetRequest() *AlitripTripvpAgentOrderGetRequest{
-    return &AlitripTripvpAgentOrderGetRequest{
+// 初始化AlitripTripvpAgentOrderGetAPIRequest对象
+func NewAlitripTripvpAgentOrderGetRequest() *AlitripTripvpAgentOrderGetAPIRequest{
+    return &AlitripTripvpAgentOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripTripvpAgentOrderGetRequest) GetApiMethodName() string {
+func (r AlitripTripvpAgentOrderGetAPIRequest) GetApiMethodName() string {
     return "alitrip.tripvp.agent.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripTripvpAgentOrderGetRequest) GetApiParams() url.Values {
+func (r AlitripTripvpAgentOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlitripTripvpAgentOrderGetRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 代理商ID
-func (r *AlitripTripvpAgentOrderGetRequest) SetAgentId(_agentId int64) error {
+func (r *AlitripTripvpAgentOrderGetAPIRequest) SetAgentId(_agentId int64) error {
     r._agentId = _agentId
     r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
-func (r AlitripTripvpAgentOrderGetRequest) GetAgentId() int64 {
+func (r AlitripTripvpAgentOrderGetAPIRequest) GetAgentId() int64 {
     return r._agentId
 }
 // TradeOrderId Setter
 // 辅营的订单号
-func (r *AlitripTripvpAgentOrderGetRequest) SetTradeOrderId(_tradeOrderId int64) error {
+func (r *AlitripTripvpAgentOrderGetAPIRequest) SetTradeOrderId(_tradeOrderId int64) error {
     r._tradeOrderId = _tradeOrderId
     r.Set("trade_order_id", _tradeOrderId)
     return nil
 }
 
 // TradeOrderId Getter
-func (r AlitripTripvpAgentOrderGetRequest) GetTradeOrderId() int64 {
+func (r AlitripTripvpAgentOrderGetAPIRequest) GetTradeOrderId() int64 {
     return r._tradeOrderId
 }

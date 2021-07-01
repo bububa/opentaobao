@@ -11,7 +11,7 @@ tmall.nr.fulfill.logistics.query
 
 发布定时送&极速达物流信息查询服务
 */
-func TmallNrFulfillLogisticsQuery(clt *core.SDKClient, req *tmallnr.TmallNrFulfillLogisticsQueryRequest, session string) (*tmallnr.TmallNrFulfillLogisticsQueryAPIResponse, error) {
+func TmallNrFulfillLogisticsQuery(clt *core.SDKClient, req *tmallnr.TmallNrFulfillLogisticsQueryAPIRequest, session string) (*tmallnr.TmallNrFulfillLogisticsQueryAPIResponse, error) {
     var resp tmallnr.TmallNrFulfillLogisticsQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

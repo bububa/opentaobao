@@ -12,26 +12,26 @@ tmall.servicecenter.reservecond.update
 
 1、设置主动预约开通条件
 */
-type TmallServicecenterReservecondUpdateRequest struct {
+type TmallServicecenterReservecondUpdateAPIRequest struct {
     model.Params
     // 主动预约开通条件
     _rocList   []ReserveOpenConditionDTO
 }
 
-// 初始化TmallServicecenterReservecondUpdateRequest对象
-func NewTmallServicecenterReservecondUpdateRequest() *TmallServicecenterReservecondUpdateRequest{
-    return &TmallServicecenterReservecondUpdateRequest{
+// 初始化TmallServicecenterReservecondUpdateAPIRequest对象
+func NewTmallServicecenterReservecondUpdateRequest() *TmallServicecenterReservecondUpdateAPIRequest{
+    return &TmallServicecenterReservecondUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterReservecondUpdateRequest) GetApiMethodName() string {
+func (r TmallServicecenterReservecondUpdateAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.reservecond.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterReservecondUpdateRequest) GetApiParams() url.Values {
+func (r TmallServicecenterReservecondUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterReservecondUpdateRequest) GetApiParams() url.Values {
 }
 // RocList Setter
 // 主动预约开通条件
-func (r *TmallServicecenterReservecondUpdateRequest) SetRocList(_rocList []ReserveOpenConditionDTO) error {
+func (r *TmallServicecenterReservecondUpdateAPIRequest) SetRocList(_rocList []ReserveOpenConditionDTO) error {
     r._rocList = _rocList
     r.Set("roc_list", _rocList)
     return nil
 }
 
 // RocList Getter
-func (r TmallServicecenterReservecondUpdateRequest) GetRocList() []ReserveOpenConditionDTO {
+func (r TmallServicecenterReservecondUpdateAPIRequest) GetRocList() []ReserveOpenConditionDTO {
     return r._rocList
 }

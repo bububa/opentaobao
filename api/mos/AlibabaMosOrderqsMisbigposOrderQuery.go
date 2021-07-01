@@ -11,7 +11,7 @@ alibaba.mos.orderqs.misbigpos.order.query
 
 大pos新选单退
 */
-func AlibabaMosOrderqsMisbigposOrderQuery(clt *core.SDKClient, req *mos.AlibabaMosOrderqsMisbigposOrderQueryRequest, session string) (*mos.AlibabaMosOrderqsMisbigposOrderQueryAPIResponse, error) {
+func AlibabaMosOrderqsMisbigposOrderQuery(clt *core.SDKClient, req *mos.AlibabaMosOrderqsMisbigposOrderQueryAPIRequest, session string) (*mos.AlibabaMosOrderqsMisbigposOrderQueryAPIResponse, error) {
     var resp mos.AlibabaMosOrderqsMisbigposOrderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

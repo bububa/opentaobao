@@ -12,7 +12,7 @@ alibaba.alihealth.short.url.get
 
 支付宝短链跳转三方h5通用接口
 */
-type AlibabaAlihealthShortUrlGetRequest struct {
+type AlibabaAlihealthShortUrlGetAPIRequest struct {
     model.Params
     // 三方h5
     _url   string
@@ -20,20 +20,20 @@ type AlibabaAlihealthShortUrlGetRequest struct {
     _params   []string
 }
 
-// 初始化AlibabaAlihealthShortUrlGetRequest对象
-func NewAlibabaAlihealthShortUrlGetRequest() *AlibabaAlihealthShortUrlGetRequest{
-    return &AlibabaAlihealthShortUrlGetRequest{
+// 初始化AlibabaAlihealthShortUrlGetAPIRequest对象
+func NewAlibabaAlihealthShortUrlGetRequest() *AlibabaAlihealthShortUrlGetAPIRequest{
+    return &AlibabaAlihealthShortUrlGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthShortUrlGetRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthShortUrlGetAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.short.url.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthShortUrlGetRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthShortUrlGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthShortUrlGetRequest) GetApiParams() url.Values {
 }
 // Url Setter
 // 三方h5
-func (r *AlibabaAlihealthShortUrlGetRequest) SetUrl(_url string) error {
+func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetUrl(_url string) error {
     r._url = _url
     r.Set("url", _url)
     return nil
 }
 
 // Url Getter
-func (r AlibabaAlihealthShortUrlGetRequest) GetUrl() string {
+func (r AlibabaAlihealthShortUrlGetAPIRequest) GetUrl() string {
     return r._url
 }
 // Params Setter
 // 参数替换列表
-func (r *AlibabaAlihealthShortUrlGetRequest) SetParams(_params []string) error {
+func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetParams(_params []string) error {
     r._params = _params
     r.Set("params", _params)
     return nil
 }
 
 // Params Getter
-func (r AlibabaAlihealthShortUrlGetRequest) GetParams() []string {
+func (r AlibabaAlihealthShortUrlGetAPIRequest) GetParams() []string {
     return r._params
 }

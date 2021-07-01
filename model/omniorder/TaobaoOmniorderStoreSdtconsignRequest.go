@@ -12,7 +12,7 @@ taobao.omniorder.store.sdtconsign
 
 ISV取完单号后通知菜鸟裹裹发货
 */
-type TaobaoOmniorderStoreSdtconsignRequest struct {
+type TaobaoOmniorderStoreSdtconsignAPIRequest struct {
     model.Params
     // 取号接口返回的包裹id
     _packageId   string
@@ -20,20 +20,20 @@ type TaobaoOmniorderStoreSdtconsignRequest struct {
     _tagCode   string
 }
 
-// 初始化TaobaoOmniorderStoreSdtconsignRequest对象
-func NewTaobaoOmniorderStoreSdtconsignRequest() *TaobaoOmniorderStoreSdtconsignRequest{
-    return &TaobaoOmniorderStoreSdtconsignRequest{
+// 初始化TaobaoOmniorderStoreSdtconsignAPIRequest对象
+func NewTaobaoOmniorderStoreSdtconsignRequest() *TaobaoOmniorderStoreSdtconsignAPIRequest{
+    return &TaobaoOmniorderStoreSdtconsignAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniorderStoreSdtconsignRequest) GetApiMethodName() string {
+func (r TaobaoOmniorderStoreSdtconsignAPIRequest) GetApiMethodName() string {
     return "taobao.omniorder.store.sdtconsign"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderStoreSdtconsignRequest) GetApiParams() url.Values {
+func (r TaobaoOmniorderStoreSdtconsignAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOmniorderStoreSdtconsignRequest) GetApiParams() url.Values {
 }
 // PackageId Setter
 // 取号接口返回的包裹id
-func (r *TaobaoOmniorderStoreSdtconsignRequest) SetPackageId(_packageId string) error {
+func (r *TaobaoOmniorderStoreSdtconsignAPIRequest) SetPackageId(_packageId string) error {
     r._packageId = _packageId
     r.Set("package_id", _packageId)
     return nil
 }
 
 // PackageId Getter
-func (r TaobaoOmniorderStoreSdtconsignRequest) GetPackageId() string {
+func (r TaobaoOmniorderStoreSdtconsignAPIRequest) GetPackageId() string {
     return r._packageId
 }
 // TagCode Setter
 // 发货标签号
-func (r *TaobaoOmniorderStoreSdtconsignRequest) SetTagCode(_tagCode string) error {
+func (r *TaobaoOmniorderStoreSdtconsignAPIRequest) SetTagCode(_tagCode string) error {
     r._tagCode = _tagCode
     r.Set("tag_code", _tagCode)
     return nil
 }
 
 // TagCode Getter
-func (r TaobaoOmniorderStoreSdtconsignRequest) GetTagCode() string {
+func (r TaobaoOmniorderStoreSdtconsignAPIRequest) GetTagCode() string {
     return r._tagCode
 }

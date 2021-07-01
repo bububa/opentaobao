@@ -12,26 +12,26 @@ alibaba.seller.vendor.service.vendorprocess
 
 服务商客户关联信息
 */
-type AlibabaSellerVendorServiceVendorprocessRequest struct {
+type AlibabaSellerVendorServiceVendorprocessAPIRequest struct {
     model.Params
     // order_num
     _orderNum   string
 }
 
-// 初始化AlibabaSellerVendorServiceVendorprocessRequest对象
-func NewAlibabaSellerVendorServiceVendorprocessRequest() *AlibabaSellerVendorServiceVendorprocessRequest{
-    return &AlibabaSellerVendorServiceVendorprocessRequest{
+// 初始化AlibabaSellerVendorServiceVendorprocessAPIRequest对象
+func NewAlibabaSellerVendorServiceVendorprocessRequest() *AlibabaSellerVendorServiceVendorprocessAPIRequest{
+    return &AlibabaSellerVendorServiceVendorprocessAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSellerVendorServiceVendorprocessRequest) GetApiMethodName() string {
+func (r AlibabaSellerVendorServiceVendorprocessAPIRequest) GetApiMethodName() string {
     return "alibaba.seller.vendor.service.vendorprocess"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSellerVendorServiceVendorprocessRequest) GetApiParams() url.Values {
+func (r AlibabaSellerVendorServiceVendorprocessAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSellerVendorServiceVendorprocessRequest) GetApiParams() url.Value
 }
 // OrderNum Setter
 // order_num
-func (r *AlibabaSellerVendorServiceVendorprocessRequest) SetOrderNum(_orderNum string) error {
+func (r *AlibabaSellerVendorServiceVendorprocessAPIRequest) SetOrderNum(_orderNum string) error {
     r._orderNum = _orderNum
     r.Set("order_num", _orderNum)
     return nil
 }
 
 // OrderNum Getter
-func (r AlibabaSellerVendorServiceVendorprocessRequest) GetOrderNum() string {
+func (r AlibabaSellerVendorServiceVendorprocessAPIRequest) GetOrderNum() string {
     return r._orderNum
 }

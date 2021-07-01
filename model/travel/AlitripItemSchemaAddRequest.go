@@ -12,7 +12,7 @@ alitrip.item.schema.add
 
 飞猪度假商品使用schema模板进行商品发布。目前支持类目：出境自由行(50278002)、境内自由行(50272002)、出境跟团游(50258005)、境内跟团游(50258004)、境外一日游/多日游(50276003)
 */
-type AlitripItemSchemaAddRequest struct {
+type AlitripItemSchemaAddAPIRequest struct {
     model.Params
     // 类目id
     _catId   int64
@@ -20,20 +20,20 @@ type AlitripItemSchemaAddRequest struct {
     _schemaXmlFields   string
 }
 
-// 初始化AlitripItemSchemaAddRequest对象
-func NewAlitripItemSchemaAddRequest() *AlitripItemSchemaAddRequest{
-    return &AlitripItemSchemaAddRequest{
+// 初始化AlitripItemSchemaAddAPIRequest对象
+func NewAlitripItemSchemaAddRequest() *AlitripItemSchemaAddAPIRequest{
+    return &AlitripItemSchemaAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripItemSchemaAddRequest) GetApiMethodName() string {
+func (r AlitripItemSchemaAddAPIRequest) GetApiMethodName() string {
     return "alitrip.item.schema.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripItemSchemaAddRequest) GetApiParams() url.Values {
+func (r AlitripItemSchemaAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlitripItemSchemaAddRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 类目id
-func (r *AlitripItemSchemaAddRequest) SetCatId(_catId int64) error {
+func (r *AlitripItemSchemaAddAPIRequest) SetCatId(_catId int64) error {
     r._catId = _catId
     r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
-func (r AlitripItemSchemaAddRequest) GetCatId() int64 {
+func (r AlitripItemSchemaAddAPIRequest) GetCatId() int64 {
     return r._catId
 }
 // SchemaXmlFields Setter
 // 商品数据
-func (r *AlitripItemSchemaAddRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+func (r *AlitripItemSchemaAddAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
     r._schemaXmlFields = _schemaXmlFields
     r.Set("schema_xml_fields", _schemaXmlFields)
     return nil
 }
 
 // SchemaXmlFields Getter
-func (r AlitripItemSchemaAddRequest) GetSchemaXmlFields() string {
+func (r AlitripItemSchemaAddAPIRequest) GetSchemaXmlFields() string {
     return r._schemaXmlFields
 }

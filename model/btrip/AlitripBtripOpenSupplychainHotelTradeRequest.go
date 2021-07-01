@@ -12,26 +12,26 @@ alitrip.btrip.open.supplychain.hotel.trade
 
 【商旅】酒店交易查询流水接口——杭州市政府
 */
-type AlitripBtripOpenSupplychainHotelTradeRequest struct {
+type AlitripBtripOpenSupplychainHotelTradeAPIRequest struct {
     model.Params
     // 入参
     _rq   *OpenApiZzdSearchRq
 }
 
-// 初始化AlitripBtripOpenSupplychainHotelTradeRequest对象
-func NewAlitripBtripOpenSupplychainHotelTradeRequest() *AlitripBtripOpenSupplychainHotelTradeRequest{
-    return &AlitripBtripOpenSupplychainHotelTradeRequest{
+// 初始化AlitripBtripOpenSupplychainHotelTradeAPIRequest对象
+func NewAlitripBtripOpenSupplychainHotelTradeRequest() *AlitripBtripOpenSupplychainHotelTradeAPIRequest{
+    return &AlitripBtripOpenSupplychainHotelTradeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripOpenSupplychainHotelTradeRequest) GetApiMethodName() string {
+func (r AlitripBtripOpenSupplychainHotelTradeAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.open.supplychain.hotel.trade"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripOpenSupplychainHotelTradeRequest) GetApiParams() url.Values {
+func (r AlitripBtripOpenSupplychainHotelTradeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripOpenSupplychainHotelTradeRequest) GetApiParams() url.Values 
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripOpenSupplychainHotelTradeRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
+func (r *AlitripBtripOpenSupplychainHotelTradeAPIRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripOpenSupplychainHotelTradeRequest) GetRq() *OpenApiZzdSearchRq {
+func (r AlitripBtripOpenSupplychainHotelTradeAPIRequest) GetRq() *OpenApiZzdSearchRq {
     return r._rq
 }

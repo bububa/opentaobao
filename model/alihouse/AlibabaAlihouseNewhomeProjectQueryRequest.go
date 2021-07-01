@@ -12,26 +12,26 @@ alibaba.alihouse.newhome.project.query
 
 根据outerid查询楼盘相关信息
 */
-type AlibabaAlihouseNewhomeProjectQueryRequest struct {
+type AlibabaAlihouseNewhomeProjectQueryAPIRequest struct {
     model.Params
     // 外部楼盘/小区id
     _outerId   string
 }
 
-// 初始化AlibabaAlihouseNewhomeProjectQueryRequest对象
-func NewAlibabaAlihouseNewhomeProjectQueryRequest() *AlibabaAlihouseNewhomeProjectQueryRequest{
-    return &AlibabaAlihouseNewhomeProjectQueryRequest{
+// 初始化AlibabaAlihouseNewhomeProjectQueryAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectQueryRequest() *AlibabaAlihouseNewhomeProjectQueryAPIRequest{
+    return &AlibabaAlihouseNewhomeProjectQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectQueryRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeProjectQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.project.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectQueryRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeProjectQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectQueryRequest) GetApiParams() url.Values {
 }
 // OuterId Setter
 // 外部楼盘/小区id
-func (r *AlibabaAlihouseNewhomeProjectQueryRequest) SetOuterId(_outerId string) error {
+func (r *AlibabaAlihouseNewhomeProjectQueryAPIRequest) SetOuterId(_outerId string) error {
     r._outerId = _outerId
     r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
-func (r AlibabaAlihouseNewhomeProjectQueryRequest) GetOuterId() string {
+func (r AlibabaAlihouseNewhomeProjectQueryAPIRequest) GetOuterId() string {
     return r._outerId
 }

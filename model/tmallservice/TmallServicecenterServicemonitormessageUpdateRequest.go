@@ -12,7 +12,7 @@ tmall.servicecenter.servicemonitormessage.update
 
 服务商收到预警后，需要进行回复已读状态，并可填写备注
 */
-type TmallServicecenterServicemonitormessageUpdateRequest struct {
+type TmallServicecenterServicemonitormessageUpdateAPIRequest struct {
     model.Params
     // 预警消息id
     _serviceMonitorMessageId   int64
@@ -22,20 +22,20 @@ type TmallServicecenterServicemonitormessageUpdateRequest struct {
     _status   int64
 }
 
-// 初始化TmallServicecenterServicemonitormessageUpdateRequest对象
-func NewTmallServicecenterServicemonitormessageUpdateRequest() *TmallServicecenterServicemonitormessageUpdateRequest{
-    return &TmallServicecenterServicemonitormessageUpdateRequest{
+// 初始化TmallServicecenterServicemonitormessageUpdateAPIRequest对象
+func NewTmallServicecenterServicemonitormessageUpdateRequest() *TmallServicecenterServicemonitormessageUpdateAPIRequest{
+    return &TmallServicecenterServicemonitormessageUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicemonitormessageUpdateRequest) GetApiMethodName() string {
+func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicemonitormessage.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicemonitormessageUpdateRequest) GetApiParams() url.Values {
+func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TmallServicecenterServicemonitormessageUpdateRequest) GetApiParams() url
 }
 // ServiceMonitorMessageId Setter
 // 预警消息id
-func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetServiceMonitorMessageId(_serviceMonitorMessageId int64) error {
+func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetServiceMonitorMessageId(_serviceMonitorMessageId int64) error {
     r._serviceMonitorMessageId = _serviceMonitorMessageId
     r.Set("service_monitor_message_id", _serviceMonitorMessageId)
     return nil
 }
 
 // ServiceMonitorMessageId Getter
-func (r TmallServicecenterServicemonitormessageUpdateRequest) GetServiceMonitorMessageId() int64 {
+func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetServiceMonitorMessageId() int64 {
     return r._serviceMonitorMessageId
 }
 // Memo Setter
 // 预警处理备注
-func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetMemo(_memo string) error {
+func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetMemo(_memo string) error {
     r._memo = _memo
     r.Set("memo", _memo)
     return nil
 }
 
 // Memo Getter
-func (r TmallServicecenterServicemonitormessageUpdateRequest) GetMemo() string {
+func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetMemo() string {
     return r._memo
 }
 // Status Setter
 // 可更新状态：3、已读
-func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetStatus(_status int64) error {
+func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetStatus(_status int64) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r TmallServicecenterServicemonitormessageUpdateRequest) GetStatus() int64 {
+func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetStatus() int64 {
     return r._status
 }

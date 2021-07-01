@@ -12,26 +12,26 @@ alibaba.alihealth.medical.hospital.sync
 
 阿里将康支付宝挂号数据医院回传接口
 */
-type AlibabaAlihealthMedicalHospitalSyncRequest struct {
+type AlibabaAlihealthMedicalHospitalSyncAPIRequest struct {
     model.Params
     // top保存入参
     _saveRequest   *CommonRequest4Top
 }
 
-// 初始化AlibabaAlihealthMedicalHospitalSyncRequest对象
-func NewAlibabaAlihealthMedicalHospitalSyncRequest() *AlibabaAlihealthMedicalHospitalSyncRequest{
-    return &AlibabaAlihealthMedicalHospitalSyncRequest{
+// 初始化AlibabaAlihealthMedicalHospitalSyncAPIRequest对象
+func NewAlibabaAlihealthMedicalHospitalSyncRequest() *AlibabaAlihealthMedicalHospitalSyncAPIRequest{
+    return &AlibabaAlihealthMedicalHospitalSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalHospitalSyncRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalHospitalSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medical.hospital.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalHospitalSyncRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMedicalHospitalSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalHospitalSyncRequest) GetApiParams() url.Values {
 }
 // SaveRequest Setter
 // top保存入参
-func (r *AlibabaAlihealthMedicalHospitalSyncRequest) SetSaveRequest(_saveRequest *CommonRequest4Top) error {
+func (r *AlibabaAlihealthMedicalHospitalSyncAPIRequest) SetSaveRequest(_saveRequest *CommonRequest4Top) error {
     r._saveRequest = _saveRequest
     r.Set("save_request", _saveRequest)
     return nil
 }
 
 // SaveRequest Getter
-func (r AlibabaAlihealthMedicalHospitalSyncRequest) GetSaveRequest() *CommonRequest4Top {
+func (r AlibabaAlihealthMedicalHospitalSyncAPIRequest) GetSaveRequest() *CommonRequest4Top {
     return r._saveRequest
 }

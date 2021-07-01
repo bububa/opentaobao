@@ -12,26 +12,26 @@ alibaba.mos.goods.setprice
 
 价格变更接口，供供应商修改价格时使用。
 */
-type AlibabaMosGoodsSetpriceRequest struct {
+type AlibabaMosGoodsSetpriceAPIRequest struct {
     model.Params
     // 价格变更对象列表
     _priceDtoList   []PriceDTO
 }
 
-// 初始化AlibabaMosGoodsSetpriceRequest对象
-func NewAlibabaMosGoodsSetpriceRequest() *AlibabaMosGoodsSetpriceRequest{
-    return &AlibabaMosGoodsSetpriceRequest{
+// 初始化AlibabaMosGoodsSetpriceAPIRequest对象
+func NewAlibabaMosGoodsSetpriceRequest() *AlibabaMosGoodsSetpriceAPIRequest{
+    return &AlibabaMosGoodsSetpriceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosGoodsSetpriceRequest) GetApiMethodName() string {
+func (r AlibabaMosGoodsSetpriceAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.goods.setprice"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosGoodsSetpriceRequest) GetApiParams() url.Values {
+func (r AlibabaMosGoodsSetpriceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMosGoodsSetpriceRequest) GetApiParams() url.Values {
 }
 // PriceDtoList Setter
 // 价格变更对象列表
-func (r *AlibabaMosGoodsSetpriceRequest) SetPriceDtoList(_priceDtoList []PriceDTO) error {
+func (r *AlibabaMosGoodsSetpriceAPIRequest) SetPriceDtoList(_priceDtoList []PriceDTO) error {
     r._priceDtoList = _priceDtoList
     r.Set("price_dto_list", _priceDtoList)
     return nil
 }
 
 // PriceDtoList Getter
-func (r AlibabaMosGoodsSetpriceRequest) GetPriceDtoList() []PriceDTO {
+func (r AlibabaMosGoodsSetpriceAPIRequest) GetPriceDtoList() []PriceDTO {
     return r._priceDtoList
 }

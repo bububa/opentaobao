@@ -12,24 +12,24 @@ alibaba.ele.enterprise.restaurant.categories
 
 餐厅分类
 */
-type AlibabaEleEnterpriseRestaurantCategoriesRequest struct {
+type AlibabaEleEnterpriseRestaurantCategoriesAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaEleEnterpriseRestaurantCategoriesRequest对象
-func NewAlibabaEleEnterpriseRestaurantCategoriesRequest() *AlibabaEleEnterpriseRestaurantCategoriesRequest{
-    return &AlibabaEleEnterpriseRestaurantCategoriesRequest{
+// 初始化AlibabaEleEnterpriseRestaurantCategoriesAPIRequest对象
+func NewAlibabaEleEnterpriseRestaurantCategoriesRequest() *AlibabaEleEnterpriseRestaurantCategoriesAPIRequest{
+    return &AlibabaEleEnterpriseRestaurantCategoriesAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseRestaurantCategoriesRequest) GetApiMethodName() string {
+func (r AlibabaEleEnterpriseRestaurantCategoriesAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.enterprise.restaurant.categories"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseRestaurantCategoriesRequest) GetApiParams() url.Values {
+func (r AlibabaEleEnterpriseRestaurantCategoriesAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

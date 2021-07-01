@@ -11,7 +11,7 @@ alibaba.idle.rent.order.checkstatus.upload
 
 上传验收结果
 */
-func AlibabaIdleRentOrderCheckstatusUpload(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderCheckstatusUploadRequest, session string) (*idle.AlibabaIdleRentOrderCheckstatusUploadAPIResponse, error) {
+func AlibabaIdleRentOrderCheckstatusUpload(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderCheckstatusUploadAPIRequest, session string) (*idle.AlibabaIdleRentOrderCheckstatusUploadAPIResponse, error) {
     var resp idle.AlibabaIdleRentOrderCheckstatusUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

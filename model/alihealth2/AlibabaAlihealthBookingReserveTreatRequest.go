@@ -12,26 +12,26 @@ alibaba.alihealth.booking.reserve.treat
 
 统一预约平台，ISV确认就诊
 */
-type AlibabaAlihealthBookingReserveTreatRequest struct {
+type AlibabaAlihealthBookingReserveTreatAPIRequest struct {
     model.Params
     // treat
     _treat   *IsvReserveRequest
 }
 
-// 初始化AlibabaAlihealthBookingReserveTreatRequest对象
-func NewAlibabaAlihealthBookingReserveTreatRequest() *AlibabaAlihealthBookingReserveTreatRequest{
-    return &AlibabaAlihealthBookingReserveTreatRequest{
+// 初始化AlibabaAlihealthBookingReserveTreatAPIRequest对象
+func NewAlibabaAlihealthBookingReserveTreatRequest() *AlibabaAlihealthBookingReserveTreatAPIRequest{
+    return &AlibabaAlihealthBookingReserveTreatAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthBookingReserveTreatRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthBookingReserveTreatAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.booking.reserve.treat"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthBookingReserveTreatRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthBookingReserveTreatAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthBookingReserveTreatRequest) GetApiParams() url.Values {
 }
 // Treat Setter
 // treat
-func (r *AlibabaAlihealthBookingReserveTreatRequest) SetTreat(_treat *IsvReserveRequest) error {
+func (r *AlibabaAlihealthBookingReserveTreatAPIRequest) SetTreat(_treat *IsvReserveRequest) error {
     r._treat = _treat
     r.Set("treat", _treat)
     return nil
 }
 
 // Treat Getter
-func (r AlibabaAlihealthBookingReserveTreatRequest) GetTreat() *IsvReserveRequest {
+func (r AlibabaAlihealthBookingReserveTreatAPIRequest) GetTreat() *IsvReserveRequest {
     return r._treat
 }

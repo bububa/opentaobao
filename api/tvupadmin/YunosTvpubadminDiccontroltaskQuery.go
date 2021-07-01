@@ -11,7 +11,7 @@ yunos.tvpubadmin.diccontroltask.query
 
 牌照方对终端设备的停开服管理
 */
-func YunosTvpubadminDiccontroltaskQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDiccontroltaskQueryRequest, session string) (*tvupadmin.YunosTvpubadminDiccontroltaskQueryAPIResponse, error) {
+func YunosTvpubadminDiccontroltaskQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDiccontroltaskQueryAPIRequest, session string) (*tvupadmin.YunosTvpubadminDiccontroltaskQueryAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminDiccontroltaskQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.train.agent.bookorders.get.vtwo
 
 代理商获取待出票订单列表，只返回订单号
 */
-type TaobaoTrainAgentBookordersGetVtwoRequest struct {
+type TaobaoTrainAgentBookordersGetVtwoAPIRequest struct {
     model.Params
     // 代理商id
     _agentId   int64
 }
 
-// 初始化TaobaoTrainAgentBookordersGetVtwoRequest对象
-func NewTaobaoTrainAgentBookordersGetVtwoRequest() *TaobaoTrainAgentBookordersGetVtwoRequest{
-    return &TaobaoTrainAgentBookordersGetVtwoRequest{
+// 初始化TaobaoTrainAgentBookordersGetVtwoAPIRequest对象
+func NewTaobaoTrainAgentBookordersGetVtwoRequest() *TaobaoTrainAgentBookordersGetVtwoAPIRequest{
+    return &TaobaoTrainAgentBookordersGetVtwoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentBookordersGetVtwoRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentBookordersGetVtwoAPIRequest) GetApiMethodName() string {
     return "taobao.train.agent.bookorders.get.vtwo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentBookordersGetVtwoRequest) GetApiParams() url.Values {
+func (r TaobaoTrainAgentBookordersGetVtwoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentBookordersGetVtwoRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoTrainAgentBookordersGetVtwoRequest) SetAgentId(_agentId int64) error {
+func (r *TaobaoTrainAgentBookordersGetVtwoAPIRequest) SetAgentId(_agentId int64) error {
     r._agentId = _agentId
     r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
-func (r TaobaoTrainAgentBookordersGetVtwoRequest) GetAgentId() int64 {
+func (r TaobaoTrainAgentBookordersGetVtwoAPIRequest) GetAgentId() int64 {
     return r._agentId
 }

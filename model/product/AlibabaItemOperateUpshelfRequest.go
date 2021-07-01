@@ -12,7 +12,7 @@ alibaba.item.operate.upshelf
 
 商品上架
 */
-type AlibabaItemOperateUpshelfRequest struct {
+type AlibabaItemOperateUpshelfAPIRequest struct {
     model.Params
     // 商品ID
     _itemId   int64
@@ -20,20 +20,20 @@ type AlibabaItemOperateUpshelfRequest struct {
     _quantity   int64
 }
 
-// 初始化AlibabaItemOperateUpshelfRequest对象
-func NewAlibabaItemOperateUpshelfRequest() *AlibabaItemOperateUpshelfRequest{
-    return &AlibabaItemOperateUpshelfRequest{
+// 初始化AlibabaItemOperateUpshelfAPIRequest对象
+func NewAlibabaItemOperateUpshelfRequest() *AlibabaItemOperateUpshelfAPIRequest{
+    return &AlibabaItemOperateUpshelfAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaItemOperateUpshelfRequest) GetApiMethodName() string {
+func (r AlibabaItemOperateUpshelfAPIRequest) GetApiMethodName() string {
     return "alibaba.item.operate.upshelf"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaItemOperateUpshelfRequest) GetApiParams() url.Values {
+func (r AlibabaItemOperateUpshelfAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaItemOperateUpshelfRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *AlibabaItemOperateUpshelfRequest) SetItemId(_itemId int64) error {
+func (r *AlibabaItemOperateUpshelfAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r AlibabaItemOperateUpshelfRequest) GetItemId() int64 {
+func (r AlibabaItemOperateUpshelfAPIRequest) GetItemId() int64 {
     return r._itemId
 }
 // Quantity Setter
 // 商品库存
-func (r *AlibabaItemOperateUpshelfRequest) SetQuantity(_quantity int64) error {
+func (r *AlibabaItemOperateUpshelfAPIRequest) SetQuantity(_quantity int64) error {
     r._quantity = _quantity
     r.Set("quantity", _quantity)
     return nil
 }
 
 // Quantity Getter
-func (r AlibabaItemOperateUpshelfRequest) GetQuantity() int64 {
+func (r AlibabaItemOperateUpshelfAPIRequest) GetQuantity() int64 {
     return r._quantity
 }

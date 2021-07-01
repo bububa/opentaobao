@@ -12,26 +12,26 @@ aliexpress.ascp.ro.query
 
 AE仓发商家单个退供单查询接口
 */
-type AliexpressAscpRoQueryRequest struct {
+type AliexpressAscpRoQueryAPIRequest struct {
     model.Params
     // dto
     _returnOrderQuery   *ReturnOrderQueryDTO
 }
 
-// 初始化AliexpressAscpRoQueryRequest对象
-func NewAliexpressAscpRoQueryRequest() *AliexpressAscpRoQueryRequest{
-    return &AliexpressAscpRoQueryRequest{
+// 初始化AliexpressAscpRoQueryAPIRequest对象
+func NewAliexpressAscpRoQueryRequest() *AliexpressAscpRoQueryAPIRequest{
+    return &AliexpressAscpRoQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressAscpRoQueryRequest) GetApiMethodName() string {
+func (r AliexpressAscpRoQueryAPIRequest) GetApiMethodName() string {
     return "aliexpress.ascp.ro.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressAscpRoQueryRequest) GetApiParams() url.Values {
+func (r AliexpressAscpRoQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressAscpRoQueryRequest) GetApiParams() url.Values {
 }
 // ReturnOrderQuery Setter
 // dto
-func (r *AliexpressAscpRoQueryRequest) SetReturnOrderQuery(_returnOrderQuery *ReturnOrderQueryDTO) error {
+func (r *AliexpressAscpRoQueryAPIRequest) SetReturnOrderQuery(_returnOrderQuery *ReturnOrderQueryDTO) error {
     r._returnOrderQuery = _returnOrderQuery
     r.Set("return_order_query", _returnOrderQuery)
     return nil
 }
 
 // ReturnOrderQuery Getter
-func (r AliexpressAscpRoQueryRequest) GetReturnOrderQuery() *ReturnOrderQueryDTO {
+func (r AliexpressAscpRoQueryAPIRequest) GetReturnOrderQuery() *ReturnOrderQueryDTO {
     return r._returnOrderQuery
 }

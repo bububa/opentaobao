@@ -11,7 +11,7 @@ tmall.tmic.questionnaire.answer.push
 
 问卷单题回答的提交
 */
-func TmallTmicQuestionnaireAnswerPush(clt *core.SDKClient, req *tmic.TmallTmicQuestionnaireAnswerPushRequest, session string) (*tmic.TmallTmicQuestionnaireAnswerPushAPIResponse, error) {
+func TmallTmicQuestionnaireAnswerPush(clt *core.SDKClient, req *tmic.TmallTmicQuestionnaireAnswerPushAPIRequest, session string) (*tmic.TmallTmicQuestionnaireAnswerPushAPIResponse, error) {
     var resp tmic.TmallTmicQuestionnaireAnswerPushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

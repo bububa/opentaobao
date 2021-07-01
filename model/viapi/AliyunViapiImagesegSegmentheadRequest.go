@@ -12,26 +12,26 @@ aliyun.viapi.imageseg.segmenthead
 
 输入一张图片，对图中人头区域进行抠图解析，输出人头png透明图。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )
 */
-type AliyunViapiImagesegSegmentheadRequest struct {
+type AliyunViapiImagesegSegmentheadAPIRequest struct {
     model.Params
     // 待检测图片链接
     _imageUrl   string
 }
 
-// 初始化AliyunViapiImagesegSegmentheadRequest对象
-func NewAliyunViapiImagesegSegmentheadRequest() *AliyunViapiImagesegSegmentheadRequest{
-    return &AliyunViapiImagesegSegmentheadRequest{
+// 初始化AliyunViapiImagesegSegmentheadAPIRequest对象
+func NewAliyunViapiImagesegSegmentheadRequest() *AliyunViapiImagesegSegmentheadAPIRequest{
+    return &AliyunViapiImagesegSegmentheadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliyunViapiImagesegSegmentheadRequest) GetApiMethodName() string {
+func (r AliyunViapiImagesegSegmentheadAPIRequest) GetApiMethodName() string {
     return "aliyun.viapi.imageseg.segmenthead"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliyunViapiImagesegSegmentheadRequest) GetApiParams() url.Values {
+func (r AliyunViapiImagesegSegmentheadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliyunViapiImagesegSegmentheadRequest) GetApiParams() url.Values {
 }
 // ImageUrl Setter
 // 待检测图片链接
-func (r *AliyunViapiImagesegSegmentheadRequest) SetImageUrl(_imageUrl string) error {
+func (r *AliyunViapiImagesegSegmentheadAPIRequest) SetImageUrl(_imageUrl string) error {
     r._imageUrl = _imageUrl
     r.Set("image_url", _imageUrl)
     return nil
 }
 
 // ImageUrl Getter
-func (r AliyunViapiImagesegSegmentheadRequest) GetImageUrl() string {
+func (r AliyunViapiImagesegSegmentheadAPIRequest) GetImageUrl() string {
     return r._imageUrl
 }

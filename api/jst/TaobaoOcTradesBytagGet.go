@@ -11,7 +11,7 @@ taobao.oc.trades.bytag.get
 
 根据标签查询订单编号
 */
-func TaobaoOcTradesBytagGet(clt *core.SDKClient, req *jst.TaobaoOcTradesBytagGetRequest, session string) (*jst.TaobaoOcTradesBytagGetAPIResponse, error) {
+func TaobaoOcTradesBytagGet(clt *core.SDKClient, req *jst.TaobaoOcTradesBytagGetAPIRequest, session string) (*jst.TaobaoOcTradesBytagGetAPIResponse, error) {
     var resp jst.TaobaoOcTradesBytagGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

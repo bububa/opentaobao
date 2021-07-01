@@ -12,26 +12,26 @@ alibaba.security.jaq.rp.cloud.rphit
 
 聚安全实人认证日志打点接口
 */
-type AlibabaSecurityJaqRpCloudRphitRequest struct {
+type AlibabaSecurityJaqRpCloudRphitAPIRequest struct {
     model.Params
     // xxx
     _content   string
 }
 
-// 初始化AlibabaSecurityJaqRpCloudRphitRequest对象
-func NewAlibabaSecurityJaqRpCloudRphitRequest() *AlibabaSecurityJaqRpCloudRphitRequest{
-    return &AlibabaSecurityJaqRpCloudRphitRequest{
+// 初始化AlibabaSecurityJaqRpCloudRphitAPIRequest对象
+func NewAlibabaSecurityJaqRpCloudRphitRequest() *AlibabaSecurityJaqRpCloudRphitAPIRequest{
+    return &AlibabaSecurityJaqRpCloudRphitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqRpCloudRphitRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqRpCloudRphitAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.rp.cloud.rphit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqRpCloudRphitRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqRpCloudRphitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqRpCloudRphitRequest) GetApiParams() url.Values {
 }
 // Content Setter
 // xxx
-func (r *AlibabaSecurityJaqRpCloudRphitRequest) SetContent(_content string) error {
+func (r *AlibabaSecurityJaqRpCloudRphitAPIRequest) SetContent(_content string) error {
     r._content = _content
     r.Set("content", _content)
     return nil
 }
 
 // Content Getter
-func (r AlibabaSecurityJaqRpCloudRphitRequest) GetContent() string {
+func (r AlibabaSecurityJaqRpCloudRphitAPIRequest) GetContent() string {
     return r._content
 }

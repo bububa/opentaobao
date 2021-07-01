@@ -11,7 +11,7 @@ alibaba.lst.speaker.configure.syncaudioadvert
 
 如意音箱广告同步
 */
-func AlibabaLstSpeakerConfigureSyncaudioadvert(clt *core.SDKClient, req *lstspeacker.AlibabaLstSpeakerConfigureSyncaudioadvertRequest, session string) (*lstspeacker.AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse, error) {
+func AlibabaLstSpeakerConfigureSyncaudioadvert(clt *core.SDKClient, req *lstspeacker.AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest, session string) (*lstspeacker.AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse, error) {
     var resp lstspeacker.AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

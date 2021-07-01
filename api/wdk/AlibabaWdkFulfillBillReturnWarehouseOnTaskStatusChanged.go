@@ -11,7 +11,7 @@ alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed
 
 退货入仓结果回传
 */
-func AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChanged(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest, session string) (*wdk.AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIResponse, error) {
+func AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChanged(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest, session string) (*wdk.AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIResponse, error) {
     var resp wdk.AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

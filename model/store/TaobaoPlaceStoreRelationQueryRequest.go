@@ -12,26 +12,26 @@ taobao.place.store.relation.query
 
 查询门店关系
 */
-type TaobaoPlaceStoreRelationQueryRequest struct {
+type TaobaoPlaceStoreRelationQueryAPIRequest struct {
     model.Params
     // 系统自动生成
     _paramStoreRelationSimpleQuery   *StoreRelationSimpleQuery
 }
 
-// 初始化TaobaoPlaceStoreRelationQueryRequest对象
-func NewTaobaoPlaceStoreRelationQueryRequest() *TaobaoPlaceStoreRelationQueryRequest{
-    return &TaobaoPlaceStoreRelationQueryRequest{
+// 初始化TaobaoPlaceStoreRelationQueryAPIRequest对象
+func NewTaobaoPlaceStoreRelationQueryRequest() *TaobaoPlaceStoreRelationQueryAPIRequest{
+    return &TaobaoPlaceStoreRelationQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPlaceStoreRelationQueryRequest) GetApiMethodName() string {
+func (r TaobaoPlaceStoreRelationQueryAPIRequest) GetApiMethodName() string {
     return "taobao.place.store.relation.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPlaceStoreRelationQueryRequest) GetApiParams() url.Values {
+func (r TaobaoPlaceStoreRelationQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPlaceStoreRelationQueryRequest) GetApiParams() url.Values {
 }
 // ParamStoreRelationSimpleQuery Setter
 // 系统自动生成
-func (r *TaobaoPlaceStoreRelationQueryRequest) SetParamStoreRelationSimpleQuery(_paramStoreRelationSimpleQuery *StoreRelationSimpleQuery) error {
+func (r *TaobaoPlaceStoreRelationQueryAPIRequest) SetParamStoreRelationSimpleQuery(_paramStoreRelationSimpleQuery *StoreRelationSimpleQuery) error {
     r._paramStoreRelationSimpleQuery = _paramStoreRelationSimpleQuery
     r.Set("param_store_relation_simple_query", _paramStoreRelationSimpleQuery)
     return nil
 }
 
 // ParamStoreRelationSimpleQuery Getter
-func (r TaobaoPlaceStoreRelationQueryRequest) GetParamStoreRelationSimpleQuery() *StoreRelationSimpleQuery {
+func (r TaobaoPlaceStoreRelationQueryAPIRequest) GetParamStoreRelationSimpleQuery() *StoreRelationSimpleQuery {
     return r._paramStoreRelationSimpleQuery
 }

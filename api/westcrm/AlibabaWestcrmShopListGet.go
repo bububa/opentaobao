@@ -11,7 +11,7 @@ alibaba.westcrm.shop.list.get
 
 获取商圈商户信息列表
 */
-func AlibabaWestcrmShopListGet(clt *core.SDKClient, req *westcrm.AlibabaWestcrmShopListGetRequest, session string) (*westcrm.AlibabaWestcrmShopListGetAPIResponse, error) {
+func AlibabaWestcrmShopListGet(clt *core.SDKClient, req *westcrm.AlibabaWestcrmShopListGetAPIRequest, session string) (*westcrm.AlibabaWestcrmShopListGetAPIResponse, error) {
     var resp westcrm.AlibabaWestcrmShopListGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,24 +12,24 @@ alibaba.ibizapi.brand.subscribe
 
 关注品牌号服务
 */
-type AlibabaIbizapiBrandSubscribeRequest struct {
+type AlibabaIbizapiBrandSubscribeAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaIbizapiBrandSubscribeRequest对象
-func NewAlibabaIbizapiBrandSubscribeRequest() *AlibabaIbizapiBrandSubscribeRequest{
-    return &AlibabaIbizapiBrandSubscribeRequest{
+// 初始化AlibabaIbizapiBrandSubscribeAPIRequest对象
+func NewAlibabaIbizapiBrandSubscribeRequest() *AlibabaIbizapiBrandSubscribeAPIRequest{
+    return &AlibabaIbizapiBrandSubscribeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIbizapiBrandSubscribeRequest) GetApiMethodName() string {
+func (r AlibabaIbizapiBrandSubscribeAPIRequest) GetApiMethodName() string {
     return "alibaba.ibizapi.brand.subscribe"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIbizapiBrandSubscribeRequest) GetApiParams() url.Values {
+func (r AlibabaIbizapiBrandSubscribeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

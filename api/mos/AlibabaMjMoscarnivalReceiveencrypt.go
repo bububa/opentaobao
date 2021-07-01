@@ -11,7 +11,7 @@ alibaba.mj.moscarnival.receiveencrypt
 
 根据加密手机号领券
 */
-func AlibabaMjMoscarnivalReceiveencrypt(clt *core.SDKClient, req *mos.AlibabaMjMoscarnivalReceiveencryptRequest, session string) (*mos.AlibabaMjMoscarnivalReceiveencryptAPIResponse, error) {
+func AlibabaMjMoscarnivalReceiveencrypt(clt *core.SDKClient, req *mos.AlibabaMjMoscarnivalReceiveencryptAPIRequest, session string) (*mos.AlibabaMjMoscarnivalReceiveencryptAPIResponse, error) {
     var resp mos.AlibabaMjMoscarnivalReceiveencryptAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

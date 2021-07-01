@@ -12,7 +12,7 @@ alibaba.wdk.marketing.discount.item.add.async
 
 新分组模型下新增商品
 */
-type AlibabaWdkMarketingDiscountItemAddAsyncRequest struct {
+type AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest struct {
     model.Params
     // sku信息
     _param0   []ItemDiscountSku
@@ -22,20 +22,20 @@ type AlibabaWdkMarketingDiscountItemAddAsyncRequest struct {
     _version   int64
 }
 
-// 初始化AlibabaWdkMarketingDiscountItemAddAsyncRequest对象
-func NewAlibabaWdkMarketingDiscountItemAddAsyncRequest() *AlibabaWdkMarketingDiscountItemAddAsyncRequest{
-    return &AlibabaWdkMarketingDiscountItemAddAsyncRequest{
+// 初始化AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest对象
+func NewAlibabaWdkMarketingDiscountItemAddAsyncRequest() *AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest{
+    return &AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingDiscountItemAddAsyncRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.discount.item.add.async"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingDiscountItemAddAsyncRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaWdkMarketingDiscountItemAddAsyncRequest) GetApiParams() url.Value
 }
 // Param0 Setter
 // sku信息
-func (r *AlibabaWdkMarketingDiscountItemAddAsyncRequest) SetParam0(_param0 []ItemDiscountSku) error {
+func (r *AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest) SetParam0(_param0 []ItemDiscountSku) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaWdkMarketingDiscountItemAddAsyncRequest) GetParam0() []ItemDiscountSku {
+func (r AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest) GetParam0() []ItemDiscountSku {
     return r._param0
 }
 // Param1 Setter
 // 系统自动生成
-func (r *AlibabaWdkMarketingDiscountItemAddAsyncRequest) SetParam1(_param1 *CommonActivityParam) error {
+func (r *AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest) SetParam1(_param1 *CommonActivityParam) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaWdkMarketingDiscountItemAddAsyncRequest) GetParam1() *CommonActivityParam {
+func (r AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest) GetParam1() *CommonActivityParam {
     return r._param1
 }
 // Version Setter
 // alibaba.wdk.marketing.version.generate接口生成
-func (r *AlibabaWdkMarketingDiscountItemAddAsyncRequest) SetVersion(_version int64) error {
+func (r *AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest) SetVersion(_version int64) error {
     r._version = _version
     r.Set("version", _version)
     return nil
 }
 
 // Version Getter
-func (r AlibabaWdkMarketingDiscountItemAddAsyncRequest) GetVersion() int64 {
+func (r AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest) GetVersion() int64 {
     return r._version
 }

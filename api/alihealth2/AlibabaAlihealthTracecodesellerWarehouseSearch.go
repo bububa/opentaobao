@@ -11,7 +11,7 @@ alibaba.alihealth.tracecodeseller.warehouse.search
 
 查询仓库api
 */
-func AlibabaAlihealthTracecodesellerWarehouseSearch(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodesellerWarehouseSearchRequest, session string) (*alihealth2.AlibabaAlihealthTracecodesellerWarehouseSearchAPIResponse, error) {
+func AlibabaAlihealthTracecodesellerWarehouseSearch(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest, session string) (*alihealth2.AlibabaAlihealthTracecodesellerWarehouseSearchAPIResponse, error) {
     var resp alihealth2.AlibabaAlihealthTracecodesellerWarehouseSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

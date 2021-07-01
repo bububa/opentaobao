@@ -9,7 +9,7 @@ type Invoice struct {
     // 发票内容
     Content   string `json:"content,omitempty" xml:"content,omitempty"`
     // 订单详情
-    Detail   *Detail `json:"detail,omitempty" xml:"detail,omitempty"`
+    Detail   *TaobaoQimenDeliveryorderBatchconfirmDetail `json:"detail,omitempty" xml:"detail,omitempty"`
     // 发票代码(纳税企业的标识)
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 发票号码(纳税企业内部的发票号)

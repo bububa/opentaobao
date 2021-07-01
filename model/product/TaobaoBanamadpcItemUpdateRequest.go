@@ -12,7 +12,7 @@ taobao.banamadpc.item.update
 
 巴拿马供应商通过此接口编辑商品
 */
-type TaobaoBanamadpcItemUpdateRequest struct {
+type TaobaoBanamadpcItemUpdateAPIRequest struct {
     model.Params
     // 商品的schema xml
     _xml   string
@@ -20,20 +20,20 @@ type TaobaoBanamadpcItemUpdateRequest struct {
     _itemId   int64
 }
 
-// 初始化TaobaoBanamadpcItemUpdateRequest对象
-func NewTaobaoBanamadpcItemUpdateRequest() *TaobaoBanamadpcItemUpdateRequest{
-    return &TaobaoBanamadpcItemUpdateRequest{
+// 初始化TaobaoBanamadpcItemUpdateAPIRequest对象
+func NewTaobaoBanamadpcItemUpdateRequest() *TaobaoBanamadpcItemUpdateAPIRequest{
+    return &TaobaoBanamadpcItemUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBanamadpcItemUpdateRequest) GetApiMethodName() string {
+func (r TaobaoBanamadpcItemUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.banamadpc.item.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBanamadpcItemUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoBanamadpcItemUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoBanamadpcItemUpdateRequest) GetApiParams() url.Values {
 }
 // Xml Setter
 // 商品的schema xml
-func (r *TaobaoBanamadpcItemUpdateRequest) SetXml(_xml string) error {
+func (r *TaobaoBanamadpcItemUpdateAPIRequest) SetXml(_xml string) error {
     r._xml = _xml
     r.Set("xml", _xml)
     return nil
 }
 
 // Xml Getter
-func (r TaobaoBanamadpcItemUpdateRequest) GetXml() string {
+func (r TaobaoBanamadpcItemUpdateAPIRequest) GetXml() string {
     return r._xml
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoBanamadpcItemUpdateRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoBanamadpcItemUpdateAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoBanamadpcItemUpdateRequest) GetItemId() int64 {
+func (r TaobaoBanamadpcItemUpdateAPIRequest) GetItemId() int64 {
     return r._itemId
 }

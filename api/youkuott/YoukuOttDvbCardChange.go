@@ -11,7 +11,7 @@ youku.ott.dvb.card.change
 
 dvb 更换ca卡
 */
-func YoukuOttDvbCardChange(clt *core.SDKClient, req *youkuott.YoukuOttDvbCardChangeRequest, session string) (*youkuott.YoukuOttDvbCardChangeAPIResponse, error) {
+func YoukuOttDvbCardChange(clt *core.SDKClient, req *youkuott.YoukuOttDvbCardChangeAPIRequest, session string) (*youkuott.YoukuOttDvbCardChangeAPIResponse, error) {
     var resp youkuott.YoukuOttDvbCardChangeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

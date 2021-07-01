@@ -12,26 +12,26 @@ alibaba.idle.isv.item.downshelf
 
 供外部服务商ISV进行闲鱼商品下架操作
 */
-type AlibabaIdleIsvItemDownshelfRequest struct {
+type AlibabaIdleIsvItemDownshelfAPIRequest struct {
     model.Params
     // 返回结果result
     _param   *IdleItemBaseApiDO
 }
 
-// 初始化AlibabaIdleIsvItemDownshelfRequest对象
-func NewAlibabaIdleIsvItemDownshelfRequest() *AlibabaIdleIsvItemDownshelfRequest{
-    return &AlibabaIdleIsvItemDownshelfRequest{
+// 初始化AlibabaIdleIsvItemDownshelfAPIRequest对象
+func NewAlibabaIdleIsvItemDownshelfRequest() *AlibabaIdleIsvItemDownshelfAPIRequest{
+    return &AlibabaIdleIsvItemDownshelfAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleIsvItemDownshelfRequest) GetApiMethodName() string {
+func (r AlibabaIdleIsvItemDownshelfAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.isv.item.downshelf"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvItemDownshelfRequest) GetApiParams() url.Values {
+func (r AlibabaIdleIsvItemDownshelfAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvItemDownshelfRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 返回结果result
-func (r *AlibabaIdleIsvItemDownshelfRequest) SetParam(_param *IdleItemBaseApiDO) error {
+func (r *AlibabaIdleIsvItemDownshelfAPIRequest) SetParam(_param *IdleItemBaseApiDO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaIdleIsvItemDownshelfRequest) GetParam() *IdleItemBaseApiDO {
+func (r AlibabaIdleIsvItemDownshelfAPIRequest) GetParam() *IdleItemBaseApiDO {
     return r._param
 }

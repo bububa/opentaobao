@@ -12,26 +12,26 @@ alibaba.idle.rent.item.sku.update
 
 更新/增加sku信息
 */
-type AlibabaIdleRentItemSkuUpdateRequest struct {
+type AlibabaIdleRentItemSkuUpdateAPIRequest struct {
     model.Params
     // sku信息，更新后skuId保持不变
     _sku   *ItemSkuDTO
 }
 
-// 初始化AlibabaIdleRentItemSkuUpdateRequest对象
-func NewAlibabaIdleRentItemSkuUpdateRequest() *AlibabaIdleRentItemSkuUpdateRequest{
-    return &AlibabaIdleRentItemSkuUpdateRequest{
+// 初始化AlibabaIdleRentItemSkuUpdateAPIRequest对象
+func NewAlibabaIdleRentItemSkuUpdateRequest() *AlibabaIdleRentItemSkuUpdateAPIRequest{
+    return &AlibabaIdleRentItemSkuUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleRentItemSkuUpdateRequest) GetApiMethodName() string {
+func (r AlibabaIdleRentItemSkuUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.rent.item.sku.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleRentItemSkuUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaIdleRentItemSkuUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleRentItemSkuUpdateRequest) GetApiParams() url.Values {
 }
 // Sku Setter
 // sku信息，更新后skuId保持不变
-func (r *AlibabaIdleRentItemSkuUpdateRequest) SetSku(_sku *ItemSkuDTO) error {
+func (r *AlibabaIdleRentItemSkuUpdateAPIRequest) SetSku(_sku *ItemSkuDTO) error {
     r._sku = _sku
     r.Set("sku", _sku)
     return nil
 }
 
 // Sku Getter
-func (r AlibabaIdleRentItemSkuUpdateRequest) GetSku() *ItemSkuDTO {
+func (r AlibabaIdleRentItemSkuUpdateAPIRequest) GetSku() *ItemSkuDTO {
     return r._sku
 }

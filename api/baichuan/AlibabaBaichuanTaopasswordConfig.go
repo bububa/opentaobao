@@ -11,7 +11,7 @@ alibaba.baichuan.taopassword.config
 
 百川淘口令规则配置接口
 */
-func AlibabaBaichuanTaopasswordConfig(clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordConfigRequest, session string) (*baichuan.AlibabaBaichuanTaopasswordConfigAPIResponse, error) {
+func AlibabaBaichuanTaopasswordConfig(clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordConfigAPIRequest, session string) (*baichuan.AlibabaBaichuanTaopasswordConfigAPIResponse, error) {
     var resp baichuan.AlibabaBaichuanTaopasswordConfigAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

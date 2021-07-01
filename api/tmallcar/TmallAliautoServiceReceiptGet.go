@@ -11,7 +11,7 @@ tmall.aliauto.service.receipt.get
 
 isv查询服务工单详情
 */
-func TmallAliautoServiceReceiptGet(clt *core.SDKClient, req *tmallcar.TmallAliautoServiceReceiptGetRequest, session string) (*tmallcar.TmallAliautoServiceReceiptGetAPIResponse, error) {
+func TmallAliautoServiceReceiptGet(clt *core.SDKClient, req *tmallcar.TmallAliautoServiceReceiptGetAPIRequest, session string) (*tmallcar.TmallAliautoServiceReceiptGetAPIResponse, error) {
     var resp tmallcar.TmallAliautoServiceReceiptGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

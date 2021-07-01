@@ -254,7 +254,7 @@ func genRequestModel(templatePath string, modelPath string, tpl metadata.ApiTpl)
 	if err != nil {
 		return err
 	}
-	targetFile := filepath.Join(modelPath, fmt.Sprintf("%sRequest.go", tpl.Name))
+	targetFile := filepath.Join(modelPath, fmt.Sprintf("%sAPIRequest.go", tpl.Name))
 	fd, err := os.Create(targetFile)
 	if err != nil {
 		return err

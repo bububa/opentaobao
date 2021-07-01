@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiHotelOrderRs 
-type OpenApiHotelOrderRs struct {
+// OpenApiHotelOrderRS 
+type OpenApiHotelOrderRS struct {
     // 订单id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 创建时间

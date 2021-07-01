@@ -12,26 +12,26 @@ alibaba.tmallgenie.scp.plan.ctom.consensus.demand.upload
 
 C2M 共识需求回传接口
 */
-type AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest struct {
+type AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest struct {
     model.Params
     // 对象
     _c2MConsensusDemandRequest   *C2MConsensusDemandRequest
 }
 
-// 初始化AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest对象
-func NewAlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest() *AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest{
-    return &AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest{
+// 初始化AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest对象
+func NewAlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest() *AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest{
+    return &AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest) GetApiMethodName() string {
+func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.tmallgenie.scp.plan.ctom.consensus.demand.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest) GetApiParams() url.Values {
+func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest) GetApiParams()
 }
 // C2MConsensusDemandRequest Setter
 // 对象
-func (r *AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest) SetC2MConsensusDemandRequest(_c2MConsensusDemandRequest *C2MConsensusDemandRequest) error {
+func (r *AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest) SetC2MConsensusDemandRequest(_c2MConsensusDemandRequest *C2MConsensusDemandRequest) error {
     r._c2MConsensusDemandRequest = _c2MConsensusDemandRequest
     r.Set("c2_m_consensus_demand_request", _c2MConsensusDemandRequest)
     return nil
 }
 
 // C2MConsensusDemandRequest Getter
-func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest) GetC2MConsensusDemandRequest() *C2MConsensusDemandRequest {
+func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest) GetC2MConsensusDemandRequest() *C2MConsensusDemandRequest {
     return r._c2MConsensusDemandRequest
 }

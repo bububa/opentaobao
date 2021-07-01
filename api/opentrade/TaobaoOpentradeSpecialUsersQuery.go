@@ -11,7 +11,7 @@ taobao.opentrade.special.users.query
 
 专属下单标记信息查询
 */
-func TaobaoOpentradeSpecialUsersQuery(clt *core.SDKClient, req *opentrade.TaobaoOpentradeSpecialUsersQueryRequest, session string) (*opentrade.TaobaoOpentradeSpecialUsersQueryAPIResponse, error) {
+func TaobaoOpentradeSpecialUsersQuery(clt *core.SDKClient, req *opentrade.TaobaoOpentradeSpecialUsersQueryAPIRequest, session string) (*opentrade.TaobaoOpentradeSpecialUsersQueryAPIResponse, error) {
     var resp opentrade.TaobaoOpentradeSpecialUsersQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

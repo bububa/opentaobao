@@ -11,7 +11,7 @@ tmall.item.hscode.detail.get
 
 通过hscode获取计量单位和销售单位
 */
-func TmallItemHscodeDetailGet(clt *core.SDKClient, req *product.TmallItemHscodeDetailGetRequest, session string) (*product.TmallItemHscodeDetailGetAPIResponse, error) {
+func TmallItemHscodeDetailGet(clt *core.SDKClient, req *product.TmallItemHscodeDetailGetAPIRequest, session string) (*product.TmallItemHscodeDetailGetAPIResponse, error) {
     var resp product.TmallItemHscodeDetailGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -13,7 +13,7 @@ alibaba.idle.rent.order.logistics.deliver
 创建揽收物流
 商家去物流公司创建物流订单
 */
-type AlibabaIdleRentOrderLogisticsDeliverRequest struct {
+type AlibabaIdleRentOrderLogisticsDeliverAPIRequest struct {
     model.Params
     // 订单id
     _orderId   int64
@@ -21,20 +21,20 @@ type AlibabaIdleRentOrderLogisticsDeliverRequest struct {
     _logistics   *LogisticsDTO
 }
 
-// 初始化AlibabaIdleRentOrderLogisticsDeliverRequest对象
-func NewAlibabaIdleRentOrderLogisticsDeliverRequest() *AlibabaIdleRentOrderLogisticsDeliverRequest{
-    return &AlibabaIdleRentOrderLogisticsDeliverRequest{
+// 初始化AlibabaIdleRentOrderLogisticsDeliverAPIRequest对象
+func NewAlibabaIdleRentOrderLogisticsDeliverRequest() *AlibabaIdleRentOrderLogisticsDeliverAPIRequest{
+    return &AlibabaIdleRentOrderLogisticsDeliverAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleRentOrderLogisticsDeliverRequest) GetApiMethodName() string {
+func (r AlibabaIdleRentOrderLogisticsDeliverAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.rent.order.logistics.deliver"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleRentOrderLogisticsDeliverRequest) GetApiParams() url.Values {
+func (r AlibabaIdleRentOrderLogisticsDeliverAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -43,25 +43,25 @@ func (r AlibabaIdleRentOrderLogisticsDeliverRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaIdleRentOrderLogisticsDeliverRequest) SetOrderId(_orderId int64) error {
+func (r *AlibabaIdleRentOrderLogisticsDeliverAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaIdleRentOrderLogisticsDeliverRequest) GetOrderId() int64 {
+func (r AlibabaIdleRentOrderLogisticsDeliverAPIRequest) GetOrderId() int64 {
     return r._orderId
 }
 // Logistics Setter
 // 物流信息
-func (r *AlibabaIdleRentOrderLogisticsDeliverRequest) SetLogistics(_logistics *LogisticsDTO) error {
+func (r *AlibabaIdleRentOrderLogisticsDeliverAPIRequest) SetLogistics(_logistics *LogisticsDTO) error {
     r._logistics = _logistics
     r.Set("logistics", _logistics)
     return nil
 }
 
 // Logistics Getter
-func (r AlibabaIdleRentOrderLogisticsDeliverRequest) GetLogistics() *LogisticsDTO {
+func (r AlibabaIdleRentOrderLogisticsDeliverAPIRequest) GetLogistics() *LogisticsDTO {
     return r._logistics
 }

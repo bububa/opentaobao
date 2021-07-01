@@ -11,7 +11,7 @@ alibaba.scbp.ad.report.get.target.report
 
 定向报告
 */
-func AlibabaScbpAdReportGetTargetReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetTargetReportRequest, session string) (*scbp.AlibabaScbpAdReportGetTargetReportAPIResponse, error) {
+func AlibabaScbpAdReportGetTargetReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetTargetReportAPIRequest, session string) (*scbp.AlibabaScbpAdReportGetTargetReportAPIResponse, error) {
     var resp scbp.AlibabaScbpAdReportGetTargetReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

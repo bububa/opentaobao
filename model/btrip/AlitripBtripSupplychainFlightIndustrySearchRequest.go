@@ -12,26 +12,26 @@ alitrip.btrip.supplychain.flight.industry.search
 
 【商旅】机票行业搜索
 */
-type AlitripBtripSupplychainFlightIndustrySearchRequest struct {
+type AlitripBtripSupplychainFlightIndustrySearchAPIRequest struct {
     model.Params
     // 入参
     _rq   *FlightSearchRq
 }
 
-// 初始化AlitripBtripSupplychainFlightIndustrySearchRequest对象
-func NewAlitripBtripSupplychainFlightIndustrySearchRequest() *AlitripBtripSupplychainFlightIndustrySearchRequest{
-    return &AlitripBtripSupplychainFlightIndustrySearchRequest{
+// 初始化AlitripBtripSupplychainFlightIndustrySearchAPIRequest对象
+func NewAlitripBtripSupplychainFlightIndustrySearchRequest() *AlitripBtripSupplychainFlightIndustrySearchAPIRequest{
+    return &AlitripBtripSupplychainFlightIndustrySearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripSupplychainFlightIndustrySearchRequest) GetApiMethodName() string {
+func (r AlitripBtripSupplychainFlightIndustrySearchAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.supplychain.flight.industry.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripSupplychainFlightIndustrySearchRequest) GetApiParams() url.Values {
+func (r AlitripBtripSupplychainFlightIndustrySearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripSupplychainFlightIndustrySearchRequest) GetApiParams() url.V
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripSupplychainFlightIndustrySearchRequest) SetRq(_rq *FlightSearchRq) error {
+func (r *AlitripBtripSupplychainFlightIndustrySearchAPIRequest) SetRq(_rq *FlightSearchRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripSupplychainFlightIndustrySearchRequest) GetRq() *FlightSearchRq {
+func (r AlitripBtripSupplychainFlightIndustrySearchAPIRequest) GetRq() *FlightSearchRq {
     return r._rq
 }

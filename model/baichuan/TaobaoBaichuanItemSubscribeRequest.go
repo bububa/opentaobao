@@ -12,26 +12,26 @@ taobao.baichuan.item.subscribe
 
 百川单个商品订阅
 */
-type TaobaoBaichuanItemSubscribeRequest struct {
+type TaobaoBaichuanItemSubscribeAPIRequest struct {
     model.Params
     // 商品id
     _itemId   int64
 }
 
-// 初始化TaobaoBaichuanItemSubscribeRequest对象
-func NewTaobaoBaichuanItemSubscribeRequest() *TaobaoBaichuanItemSubscribeRequest{
-    return &TaobaoBaichuanItemSubscribeRequest{
+// 初始化TaobaoBaichuanItemSubscribeAPIRequest对象
+func NewTaobaoBaichuanItemSubscribeRequest() *TaobaoBaichuanItemSubscribeAPIRequest{
+    return &TaobaoBaichuanItemSubscribeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanItemSubscribeRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanItemSubscribeAPIRequest) GetApiMethodName() string {
     return "taobao.baichuan.item.subscribe"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanItemSubscribeRequest) GetApiParams() url.Values {
+func (r TaobaoBaichuanItemSubscribeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanItemSubscribeRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoBaichuanItemSubscribeRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoBaichuanItemSubscribeAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoBaichuanItemSubscribeRequest) GetItemId() int64 {
+func (r TaobaoBaichuanItemSubscribeAPIRequest) GetItemId() int64 {
     return r._itemId
 }

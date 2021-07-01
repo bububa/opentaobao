@@ -12,26 +12,26 @@ tmall.item.combine.get
 
 查询组合商品的SKU信息
 */
-type TmallItemCombineGetRequest struct {
+type TmallItemCombineGetAPIRequest struct {
     model.Params
     // 组合商品ID
     _itemId   int64
 }
 
-// 初始化TmallItemCombineGetRequest对象
-func NewTmallItemCombineGetRequest() *TmallItemCombineGetRequest{
-    return &TmallItemCombineGetRequest{
+// 初始化TmallItemCombineGetAPIRequest对象
+func NewTmallItemCombineGetRequest() *TmallItemCombineGetAPIRequest{
+    return &TmallItemCombineGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallItemCombineGetRequest) GetApiMethodName() string {
+func (r TmallItemCombineGetAPIRequest) GetApiMethodName() string {
     return "tmall.item.combine.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallItemCombineGetRequest) GetApiParams() url.Values {
+func (r TmallItemCombineGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallItemCombineGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 组合商品ID
-func (r *TmallItemCombineGetRequest) SetItemId(_itemId int64) error {
+func (r *TmallItemCombineGetAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TmallItemCombineGetRequest) GetItemId() int64 {
+func (r TmallItemCombineGetAPIRequest) GetItemId() int64 {
     return r._itemId
 }

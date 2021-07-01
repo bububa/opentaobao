@@ -15,7 +15,7 @@ taobao.item.img.upload
 使用taobao.item.seller.get中返回的item_imgs字段获取图片id。
 商品图片有数量和大小上的限制，根据卖家享有的服务（如：卖家订购了多图服务等），商品图片数量限制不同。
 */
-func TaobaoItemImgUpload(clt *core.SDKClient, req *product.TaobaoItemImgUploadRequest, session string) (*product.TaobaoItemImgUploadAPIResponse, error) {
+func TaobaoItemImgUpload(clt *core.SDKClient, req *product.TaobaoItemImgUploadAPIRequest, session string) (*product.TaobaoItemImgUploadAPIResponse, error) {
     var resp product.TaobaoItemImgUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

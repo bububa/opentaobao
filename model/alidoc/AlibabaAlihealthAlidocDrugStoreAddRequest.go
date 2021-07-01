@@ -12,26 +12,26 @@ alibaba.alihealth.alidoc.drug.store.add
 
 GSK上传药店信息
 */
-type AlibabaAlihealthAlidocDrugStoreAddRequest struct {
+type AlibabaAlihealthAlidocDrugStoreAddAPIRequest struct {
     model.Params
     // 新增药店
     _drugStoreAddTopRequest   *DrugStoreAddTopRequest
 }
 
-// 初始化AlibabaAlihealthAlidocDrugStoreAddRequest对象
-func NewAlibabaAlihealthAlidocDrugStoreAddRequest() *AlibabaAlihealthAlidocDrugStoreAddRequest{
-    return &AlibabaAlihealthAlidocDrugStoreAddRequest{
+// 初始化AlibabaAlihealthAlidocDrugStoreAddAPIRequest对象
+func NewAlibabaAlihealthAlidocDrugStoreAddRequest() *AlibabaAlihealthAlidocDrugStoreAddAPIRequest{
+    return &AlibabaAlihealthAlidocDrugStoreAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthAlidocDrugStoreAddRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthAlidocDrugStoreAddAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.alidoc.drug.store.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthAlidocDrugStoreAddRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthAlidocDrugStoreAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthAlidocDrugStoreAddRequest) GetApiParams() url.Values {
 }
 // DrugStoreAddTopRequest Setter
 // 新增药店
-func (r *AlibabaAlihealthAlidocDrugStoreAddRequest) SetDrugStoreAddTopRequest(_drugStoreAddTopRequest *DrugStoreAddTopRequest) error {
+func (r *AlibabaAlihealthAlidocDrugStoreAddAPIRequest) SetDrugStoreAddTopRequest(_drugStoreAddTopRequest *DrugStoreAddTopRequest) error {
     r._drugStoreAddTopRequest = _drugStoreAddTopRequest
     r.Set("drug_store_add_top_request", _drugStoreAddTopRequest)
     return nil
 }
 
 // DrugStoreAddTopRequest Getter
-func (r AlibabaAlihealthAlidocDrugStoreAddRequest) GetDrugStoreAddTopRequest() *DrugStoreAddTopRequest {
+func (r AlibabaAlihealthAlidocDrugStoreAddAPIRequest) GetDrugStoreAddTopRequest() *DrugStoreAddTopRequest {
     return r._drugStoreAddTopRequest
 }

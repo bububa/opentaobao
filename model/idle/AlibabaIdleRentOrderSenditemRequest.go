@@ -12,7 +12,7 @@ alibaba.idle.rent.order.senditem
 
 确认发货
 */
-type AlibabaIdleRentOrderSenditemRequest struct {
+type AlibabaIdleRentOrderSenditemAPIRequest struct {
     model.Params
     // 订单id
     _orderId   int64
@@ -20,20 +20,20 @@ type AlibabaIdleRentOrderSenditemRequest struct {
     _logisticsList   []LogisticsDTO
 }
 
-// 初始化AlibabaIdleRentOrderSenditemRequest对象
-func NewAlibabaIdleRentOrderSenditemRequest() *AlibabaIdleRentOrderSenditemRequest{
-    return &AlibabaIdleRentOrderSenditemRequest{
+// 初始化AlibabaIdleRentOrderSenditemAPIRequest对象
+func NewAlibabaIdleRentOrderSenditemRequest() *AlibabaIdleRentOrderSenditemAPIRequest{
+    return &AlibabaIdleRentOrderSenditemAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleRentOrderSenditemRequest) GetApiMethodName() string {
+func (r AlibabaIdleRentOrderSenditemAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.rent.order.senditem"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleRentOrderSenditemRequest) GetApiParams() url.Values {
+func (r AlibabaIdleRentOrderSenditemAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaIdleRentOrderSenditemRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaIdleRentOrderSenditemRequest) SetOrderId(_orderId int64) error {
+func (r *AlibabaIdleRentOrderSenditemAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaIdleRentOrderSenditemRequest) GetOrderId() int64 {
+func (r AlibabaIdleRentOrderSenditemAPIRequest) GetOrderId() int64 {
     return r._orderId
 }
 // LogisticsList Setter
 // 物流信息
-func (r *AlibabaIdleRentOrderSenditemRequest) SetLogisticsList(_logisticsList []LogisticsDTO) error {
+func (r *AlibabaIdleRentOrderSenditemAPIRequest) SetLogisticsList(_logisticsList []LogisticsDTO) error {
     r._logisticsList = _logisticsList
     r.Set("logistics_list", _logisticsList)
     return nil
 }
 
 // LogisticsList Getter
-func (r AlibabaIdleRentOrderSenditemRequest) GetLogisticsList() []LogisticsDTO {
+func (r AlibabaIdleRentOrderSenditemAPIRequest) GetLogisticsList() []LogisticsDTO {
     return r._logisticsList
 }

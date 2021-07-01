@@ -11,7 +11,7 @@ alibaba.wdk.marketing.itemdiscount.createactivity
 
 创建商品特价活动
 */
-func AlibabaWdkMarketingItemdiscountCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItemdiscountCreateactivityRequest, session string) (*wdk.AlibabaWdkMarketingItemdiscountCreateactivityAPIResponse, error) {
+func AlibabaWdkMarketingItemdiscountCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItemdiscountCreateactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingItemdiscountCreateactivityAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItemdiscountCreateactivityAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

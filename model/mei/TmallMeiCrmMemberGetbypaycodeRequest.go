@@ -12,26 +12,26 @@ tmall.mei.crm.member.getbypaycode
 
 通过支付码获取会员信息
 */
-type TmallMeiCrmMemberGetbypaycodeRequest struct {
+type TmallMeiCrmMemberGetbypaycodeAPIRequest struct {
     model.Params
     // 会员码
     _payCode   string
 }
 
-// 初始化TmallMeiCrmMemberGetbypaycodeRequest对象
-func NewTmallMeiCrmMemberGetbypaycodeRequest() *TmallMeiCrmMemberGetbypaycodeRequest{
-    return &TmallMeiCrmMemberGetbypaycodeRequest{
+// 初始化TmallMeiCrmMemberGetbypaycodeAPIRequest对象
+func NewTmallMeiCrmMemberGetbypaycodeRequest() *TmallMeiCrmMemberGetbypaycodeAPIRequest{
+    return &TmallMeiCrmMemberGetbypaycodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallMeiCrmMemberGetbypaycodeRequest) GetApiMethodName() string {
+func (r TmallMeiCrmMemberGetbypaycodeAPIRequest) GetApiMethodName() string {
     return "tmall.mei.crm.member.getbypaycode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallMeiCrmMemberGetbypaycodeRequest) GetApiParams() url.Values {
+func (r TmallMeiCrmMemberGetbypaycodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallMeiCrmMemberGetbypaycodeRequest) GetApiParams() url.Values {
 }
 // PayCode Setter
 // 会员码
-func (r *TmallMeiCrmMemberGetbypaycodeRequest) SetPayCode(_payCode string) error {
+func (r *TmallMeiCrmMemberGetbypaycodeAPIRequest) SetPayCode(_payCode string) error {
     r._payCode = _payCode
     r.Set("pay_code", _payCode)
     return nil
 }
 
 // PayCode Getter
-func (r TmallMeiCrmMemberGetbypaycodeRequest) GetPayCode() string {
+func (r TmallMeiCrmMemberGetbypaycodeAPIRequest) GetPayCode() string {
     return r._payCode
 }

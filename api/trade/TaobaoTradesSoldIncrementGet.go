@@ -15,7 +15,7 @@ taobao.trades.sold.increment.get
 <br/>3. 返回的数据结果只包含了订单的部分数据，可通过taobao.trade.fullinfo.get获取订单详情。
 <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=tradeapi" target="_blank">点击查看更多交易API说明</a></strong>
 */
-func TaobaoTradesSoldIncrementGet(clt *core.SDKClient, req *trade.TaobaoTradesSoldIncrementGetRequest, session string) (*trade.TaobaoTradesSoldIncrementGetAPIResponse, error) {
+func TaobaoTradesSoldIncrementGet(clt *core.SDKClient, req *trade.TaobaoTradesSoldIncrementGetAPIRequest, session string) (*trade.TaobaoTradesSoldIncrementGetAPIResponse, error) {
     var resp trade.TaobaoTradesSoldIncrementGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

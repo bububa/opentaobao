@@ -11,7 +11,7 @@ alibaba.alsc.crm.point.extracharge
 
 积分补录
 */
-func AlibabaAlscCrmPointExtracharge(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointExtrachargeRequest, session string) (*alsc.AlibabaAlscCrmPointExtrachargeAPIResponse, error) {
+func AlibabaAlscCrmPointExtracharge(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointExtrachargeAPIRequest, session string) (*alsc.AlibabaAlscCrmPointExtrachargeAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmPointExtrachargeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

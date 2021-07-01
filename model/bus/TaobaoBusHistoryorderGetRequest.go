@@ -12,7 +12,7 @@ taobao.bus.historyorder.get
 
 历史订单查询，对账接口
 */
-type TaobaoBusHistoryorderGetRequest struct {
+type TaobaoBusHistoryorderGetAPIRequest struct {
     model.Params
     // 开始时间 2017-04-23 13:33:43
     _fromDate   string
@@ -26,20 +26,20 @@ type TaobaoBusHistoryorderGetRequest struct {
     _pageIndex   int64
 }
 
-// 初始化TaobaoBusHistoryorderGetRequest对象
-func NewTaobaoBusHistoryorderGetRequest() *TaobaoBusHistoryorderGetRequest{
-    return &TaobaoBusHistoryorderGetRequest{
+// 初始化TaobaoBusHistoryorderGetAPIRequest对象
+func NewTaobaoBusHistoryorderGetRequest() *TaobaoBusHistoryorderGetAPIRequest{
+    return &TaobaoBusHistoryorderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBusHistoryorderGetRequest) GetApiMethodName() string {
+func (r TaobaoBusHistoryorderGetAPIRequest) GetApiMethodName() string {
     return "taobao.bus.historyorder.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBusHistoryorderGetRequest) GetApiParams() url.Values {
+func (r TaobaoBusHistoryorderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TaobaoBusHistoryorderGetRequest) GetApiParams() url.Values {
 }
 // FromDate Setter
 // 开始时间 2017-04-23 13:33:43
-func (r *TaobaoBusHistoryorderGetRequest) SetFromDate(_fromDate string) error {
+func (r *TaobaoBusHistoryorderGetAPIRequest) SetFromDate(_fromDate string) error {
     r._fromDate = _fromDate
     r.Set("from_date", _fromDate)
     return nil
 }
 
 // FromDate Getter
-func (r TaobaoBusHistoryorderGetRequest) GetFromDate() string {
+func (r TaobaoBusHistoryorderGetAPIRequest) GetFromDate() string {
     return r._fromDate
 }
 // PageSize Setter
 // 分页大小 不超过1w
-func (r *TaobaoBusHistoryorderGetRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoBusHistoryorderGetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoBusHistoryorderGetRequest) GetPageSize() int64 {
+func (r TaobaoBusHistoryorderGetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // ToDate Setter
 // 结束时间 2017-04-23 13:33:43
-func (r *TaobaoBusHistoryorderGetRequest) SetToDate(_toDate string) error {
+func (r *TaobaoBusHistoryorderGetAPIRequest) SetToDate(_toDate string) error {
     r._toDate = _toDate
     r.Set("to_date", _toDate)
     return nil
 }
 
 // ToDate Getter
-func (r TaobaoBusHistoryorderGetRequest) GetToDate() string {
+func (r TaobaoBusHistoryorderGetAPIRequest) GetToDate() string {
     return r._toDate
 }
 // Type Setter
 // offline_ticket 线下自助机； online_ticket：线上售票； 空 代表查全部
-func (r *TaobaoBusHistoryorderGetRequest) SetType(_type string) error {
+func (r *TaobaoBusHistoryorderGetAPIRequest) SetType(_type string) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r TaobaoBusHistoryorderGetRequest) GetType() string {
+func (r TaobaoBusHistoryorderGetAPIRequest) GetType() string {
     return r._type
 }
 // PageIndex Setter
 // 第几页 从1开始
-func (r *TaobaoBusHistoryorderGetRequest) SetPageIndex(_pageIndex int64) error {
+func (r *TaobaoBusHistoryorderGetAPIRequest) SetPageIndex(_pageIndex int64) error {
     r._pageIndex = _pageIndex
     r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
-func (r TaobaoBusHistoryorderGetRequest) GetPageIndex() int64 {
+func (r TaobaoBusHistoryorderGetAPIRequest) GetPageIndex() int64 {
     return r._pageIndex
 }

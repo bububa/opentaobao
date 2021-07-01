@@ -11,7 +11,7 @@ taobao.alitrip.ie.agent.refund.refundmoney
 
 卖家进行退款操作
 */
-func TaobaoAlitripIeAgentRefundRefundmoney(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundRefundmoneyRequest, session string) (*ieagency.TaobaoAlitripIeAgentRefundRefundmoneyAPIResponse, error) {
+func TaobaoAlitripIeAgentRefundRefundmoney(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundRefundmoneyAPIRequest, session string) (*ieagency.TaobaoAlitripIeAgentRefundRefundmoneyAPIResponse, error) {
     var resp ieagency.TaobaoAlitripIeAgentRefundRefundmoneyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

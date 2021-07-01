@@ -11,7 +11,7 @@ alitrip.btrip.approval.update
 
 更新审批单
 */
-func AlitripBtripApprovalUpdate(clt *core.SDKClient, req *btrip.AlitripBtripApprovalUpdateRequest, session string) (*btrip.AlitripBtripApprovalUpdateAPIResponse, error) {
+func AlitripBtripApprovalUpdate(clt *core.SDKClient, req *btrip.AlitripBtripApprovalUpdateAPIRequest, session string) (*btrip.AlitripBtripApprovalUpdateAPIResponse, error) {
     var resp btrip.AlitripBtripApprovalUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.miniapp.cloud.store.listfile
 
 云存储中，根据文件名反查地址
 */
-func TaobaoMiniappCloudStoreListfile(clt *core.SDKClient, req *miniappcloud.TaobaoMiniappCloudStoreListfileRequest, session string) (*miniappcloud.TaobaoMiniappCloudStoreListfileAPIResponse, error) {
+func TaobaoMiniappCloudStoreListfile(clt *core.SDKClient, req *miniappcloud.TaobaoMiniappCloudStoreListfileAPIRequest, session string) (*miniappcloud.TaobaoMiniappCloudStoreListfileAPIResponse, error) {
     var resp miniappcloud.TaobaoMiniappCloudStoreListfileAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

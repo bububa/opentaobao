@@ -11,7 +11,7 @@ taobao.baichuan.items.subscribe
 
 百川批量添加订阅的商品
 */
-func TaobaoBaichuanItemsSubscribe(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemsSubscribeRequest, session string) (*baichuan.TaobaoBaichuanItemsSubscribeAPIResponse, error) {
+func TaobaoBaichuanItemsSubscribe(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemsSubscribeAPIRequest, session string) (*baichuan.TaobaoBaichuanItemsSubscribeAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanItemsSubscribeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

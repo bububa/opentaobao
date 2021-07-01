@@ -11,7 +11,7 @@ alibaba.campus.guard.data.sync
 
 数据同步门禁系统
 */
-func AlibabaCampusGuardDataSync(clt *core.SDKClient, req *campus.AlibabaCampusGuardDataSyncRequest, session string) (*campus.AlibabaCampusGuardDataSyncAPIResponse, error) {
+func AlibabaCampusGuardDataSync(clt *core.SDKClient, req *campus.AlibabaCampusGuardDataSyncAPIRequest, session string) (*campus.AlibabaCampusGuardDataSyncAPIResponse, error) {
     var resp campus.AlibabaCampusGuardDataSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

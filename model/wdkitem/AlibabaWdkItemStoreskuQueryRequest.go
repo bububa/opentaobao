@@ -12,7 +12,7 @@ alibaba.wdk.item.storesku.query
 
 门店商品信息查询
 */
-type AlibabaWdkItemStoreskuQueryRequest struct {
+type AlibabaWdkItemStoreskuQueryAPIRequest struct {
     model.Params
     // 商品编码
     _skuCode   string
@@ -20,20 +20,20 @@ type AlibabaWdkItemStoreskuQueryRequest struct {
     _storeId   string
 }
 
-// 初始化AlibabaWdkItemStoreskuQueryRequest对象
-func NewAlibabaWdkItemStoreskuQueryRequest() *AlibabaWdkItemStoreskuQueryRequest{
-    return &AlibabaWdkItemStoreskuQueryRequest{
+// 初始化AlibabaWdkItemStoreskuQueryAPIRequest对象
+func NewAlibabaWdkItemStoreskuQueryRequest() *AlibabaWdkItemStoreskuQueryAPIRequest{
+    return &AlibabaWdkItemStoreskuQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkItemStoreskuQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkItemStoreskuQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.item.storesku.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkItemStoreskuQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkItemStoreskuQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaWdkItemStoreskuQueryRequest) GetApiParams() url.Values {
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkItemStoreskuQueryRequest) SetSkuCode(_skuCode string) error {
+func (r *AlibabaWdkItemStoreskuQueryAPIRequest) SetSkuCode(_skuCode string) error {
     r._skuCode = _skuCode
     r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
-func (r AlibabaWdkItemStoreskuQueryRequest) GetSkuCode() string {
+func (r AlibabaWdkItemStoreskuQueryAPIRequest) GetSkuCode() string {
     return r._skuCode
 }
 // StoreId Setter
 // 门店ID
-func (r *AlibabaWdkItemStoreskuQueryRequest) SetStoreId(_storeId string) error {
+func (r *AlibabaWdkItemStoreskuQueryAPIRequest) SetStoreId(_storeId string) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r AlibabaWdkItemStoreskuQueryRequest) GetStoreId() string {
+func (r AlibabaWdkItemStoreskuQueryAPIRequest) GetStoreId() string {
     return r._storeId
 }

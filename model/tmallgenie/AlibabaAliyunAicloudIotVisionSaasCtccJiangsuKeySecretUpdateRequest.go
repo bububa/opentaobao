@@ -12,7 +12,7 @@ alibaba.aliyun.aicloud.iot.vision.saas.ctcc.jiangsu.key.secret.update
 
 天猫精灵 IoT 视频 SaaS 服务-江苏电信-appKeySecret 更新
 */
-type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest struct {
+type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest struct {
     model.Params
     // 一次请求的唯一标识符
     _seqId   string
@@ -20,20 +20,20 @@ type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest struct {
     _secret   string
 }
 
-// 初始化AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest对象
-func NewAlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest() *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest{
-    return &AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest{
+// 初始化AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest对象
+func NewAlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest() *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest{
+    return &AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) GetApiMethodName() string {
+func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.aliyun.aicloud.iot.vision.saas.ctcc.jiangsu.key.secret.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) GetA
 }
 // SeqId Setter
 // 一次请求的唯一标识符
-func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) SetSeqId(_seqId string) error {
+func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) SetSeqId(_seqId string) error {
     r._seqId = _seqId
     r.Set("seq_id", _seqId)
     return nil
 }
 
 // SeqId Getter
-func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) GetSeqId() string {
+func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) GetSeqId() string {
     return r._seqId
 }
 // Secret Setter
 // 新的 key
-func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) SetSecret(_secret string) error {
+func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) SetSecret(_secret string) error {
     r._secret = _secret
     r.Set("secret", _secret)
     return nil
 }
 
 // Secret Getter
-func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) GetSecret() string {
+func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) GetSecret() string {
     return r._secret
 }

@@ -12,26 +12,26 @@ alibaba.mozi.acl.userroles.revoke
 
 调用此接口，会根据入参回收该账户下的该批角色
 */
-type AlibabaMoziAclUserrolesRevokeRequest struct {
+type AlibabaMoziAclUserrolesRevokeAPIRequest struct {
     model.Params
     // 回收角色入参对象
     _revokeRolesRequest   *RevokeRolesRequest
 }
 
-// 初始化AlibabaMoziAclUserrolesRevokeRequest对象
-func NewAlibabaMoziAclUserrolesRevokeRequest() *AlibabaMoziAclUserrolesRevokeRequest{
-    return &AlibabaMoziAclUserrolesRevokeRequest{
+// 初始化AlibabaMoziAclUserrolesRevokeAPIRequest对象
+func NewAlibabaMoziAclUserrolesRevokeRequest() *AlibabaMoziAclUserrolesRevokeAPIRequest{
+    return &AlibabaMoziAclUserrolesRevokeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziAclUserrolesRevokeRequest) GetApiMethodName() string {
+func (r AlibabaMoziAclUserrolesRevokeAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.acl.userroles.revoke"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziAclUserrolesRevokeRequest) GetApiParams() url.Values {
+func (r AlibabaMoziAclUserrolesRevokeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclUserrolesRevokeRequest) GetApiParams() url.Values {
 }
 // RevokeRolesRequest Setter
 // 回收角色入参对象
-func (r *AlibabaMoziAclUserrolesRevokeRequest) SetRevokeRolesRequest(_revokeRolesRequest *RevokeRolesRequest) error {
+func (r *AlibabaMoziAclUserrolesRevokeAPIRequest) SetRevokeRolesRequest(_revokeRolesRequest *RevokeRolesRequest) error {
     r._revokeRolesRequest = _revokeRolesRequest
     r.Set("revoke_roles_request", _revokeRolesRequest)
     return nil
 }
 
 // RevokeRolesRequest Getter
-func (r AlibabaMoziAclUserrolesRevokeRequest) GetRevokeRolesRequest() *RevokeRolesRequest {
+func (r AlibabaMoziAclUserrolesRevokeAPIRequest) GetRevokeRolesRequest() *RevokeRolesRequest {
     return r._revokeRolesRequest
 }

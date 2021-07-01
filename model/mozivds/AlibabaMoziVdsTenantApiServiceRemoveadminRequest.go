@@ -12,26 +12,26 @@ alibaba.mozi.vds.tenant.api.service.removeadmin
 
 删除租户管理员top服务
 */
-type AlibabaMoziVdsTenantApiServiceRemoveadminRequest struct {
+type AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest struct {
     model.Params
     // 请求入参
     _param   *RemoveTenantAdminsRequest
 }
 
-// 初始化AlibabaMoziVdsTenantApiServiceRemoveadminRequest对象
-func NewAlibabaMoziVdsTenantApiServiceRemoveadminRequest() *AlibabaMoziVdsTenantApiServiceRemoveadminRequest{
-    return &AlibabaMoziVdsTenantApiServiceRemoveadminRequest{
+// 初始化AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest对象
+func NewAlibabaMoziVdsTenantApiServiceRemoveadminRequest() *AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest{
+    return &AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziVdsTenantApiServiceRemoveadminRequest) GetApiMethodName() string {
+func (r AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.vds.tenant.api.service.removeadmin"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziVdsTenantApiServiceRemoveadminRequest) GetApiParams() url.Values {
+func (r AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziVdsTenantApiServiceRemoveadminRequest) GetApiParams() url.Val
 }
 // Param Setter
 // 请求入参
-func (r *AlibabaMoziVdsTenantApiServiceRemoveadminRequest) SetParam(_param *RemoveTenantAdminsRequest) error {
+func (r *AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) SetParam(_param *RemoveTenantAdminsRequest) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaMoziVdsTenantApiServiceRemoveadminRequest) GetParam() *RemoveTenantAdminsRequest {
+func (r AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) GetParam() *RemoveTenantAdminsRequest {
     return r._param
 }

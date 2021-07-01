@@ -11,7 +11,7 @@ youku.wenyuvideo.seeta.get
 
 只看Ta对外输出
 */
-func YoukuWenyuvideoSeetaGet(clt *core.SDKClient, req *wenyuvideo.YoukuWenyuvideoSeetaGetRequest, session string) (*wenyuvideo.YoukuWenyuvideoSeetaGetAPIResponse, error) {
+func YoukuWenyuvideoSeetaGet(clt *core.SDKClient, req *wenyuvideo.YoukuWenyuvideoSeetaGetAPIRequest, session string) (*wenyuvideo.YoukuWenyuvideoSeetaGetAPIResponse, error) {
     var resp wenyuvideo.YoukuWenyuvideoSeetaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

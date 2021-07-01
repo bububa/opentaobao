@@ -12,26 +12,26 @@ alibaba.mozi.acl.role.remove
 
 根据传入的角色code、租户id，删除租户内对应的角色
 */
-type AlibabaMoziAclRoleRemoveRequest struct {
+type AlibabaMoziAclRoleRemoveAPIRequest struct {
     model.Params
     // 删除角色请求对象
     _deleteRolesRequest   *DeleteRolesRequest
 }
 
-// 初始化AlibabaMoziAclRoleRemoveRequest对象
-func NewAlibabaMoziAclRoleRemoveRequest() *AlibabaMoziAclRoleRemoveRequest{
-    return &AlibabaMoziAclRoleRemoveRequest{
+// 初始化AlibabaMoziAclRoleRemoveAPIRequest对象
+func NewAlibabaMoziAclRoleRemoveRequest() *AlibabaMoziAclRoleRemoveAPIRequest{
+    return &AlibabaMoziAclRoleRemoveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziAclRoleRemoveRequest) GetApiMethodName() string {
+func (r AlibabaMoziAclRoleRemoveAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.acl.role.remove"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziAclRoleRemoveRequest) GetApiParams() url.Values {
+func (r AlibabaMoziAclRoleRemoveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclRoleRemoveRequest) GetApiParams() url.Values {
 }
 // DeleteRolesRequest Setter
 // 删除角色请求对象
-func (r *AlibabaMoziAclRoleRemoveRequest) SetDeleteRolesRequest(_deleteRolesRequest *DeleteRolesRequest) error {
+func (r *AlibabaMoziAclRoleRemoveAPIRequest) SetDeleteRolesRequest(_deleteRolesRequest *DeleteRolesRequest) error {
     r._deleteRolesRequest = _deleteRolesRequest
     r.Set("delete_roles_request", _deleteRolesRequest)
     return nil
 }
 
 // DeleteRolesRequest Getter
-func (r AlibabaMoziAclRoleRemoveRequest) GetDeleteRolesRequest() *DeleteRolesRequest {
+func (r AlibabaMoziAclRoleRemoveAPIRequest) GetDeleteRolesRequest() *DeleteRolesRequest {
     return r._deleteRolesRequest
 }

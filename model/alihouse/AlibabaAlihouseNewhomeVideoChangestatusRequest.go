@@ -12,7 +12,7 @@ alibaba.alihouse.newhome.video.changestatus
 
 视频草稿状态更新
 */
-type AlibabaAlihouseNewhomeVideoChangestatusRequest struct {
+type AlibabaAlihouseNewhomeVideoChangestatusAPIRequest struct {
     model.Params
     // 外部视频id
     _outerId   string
@@ -20,20 +20,20 @@ type AlibabaAlihouseNewhomeVideoChangestatusRequest struct {
     _status   int64
 }
 
-// 初始化AlibabaAlihouseNewhomeVideoChangestatusRequest对象
-func NewAlibabaAlihouseNewhomeVideoChangestatusRequest() *AlibabaAlihouseNewhomeVideoChangestatusRequest{
-    return &AlibabaAlihouseNewhomeVideoChangestatusRequest{
+// 初始化AlibabaAlihouseNewhomeVideoChangestatusAPIRequest对象
+func NewAlibabaAlihouseNewhomeVideoChangestatusRequest() *AlibabaAlihouseNewhomeVideoChangestatusAPIRequest{
+    return &AlibabaAlihouseNewhomeVideoChangestatusAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeVideoChangestatusRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.video.changestatus"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeVideoChangestatusRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihouseNewhomeVideoChangestatusRequest) GetApiParams() url.Value
 }
 // OuterId Setter
 // 外部视频id
-func (r *AlibabaAlihouseNewhomeVideoChangestatusRequest) SetOuterId(_outerId string) error {
+func (r *AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) SetOuterId(_outerId string) error {
     r._outerId = _outerId
     r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
-func (r AlibabaAlihouseNewhomeVideoChangestatusRequest) GetOuterId() string {
+func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetOuterId() string {
     return r._outerId
 }
 // Status Setter
 // 0 失效 1 有效
-func (r *AlibabaAlihouseNewhomeVideoChangestatusRequest) SetStatus(_status int64) error {
+func (r *AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) SetStatus(_status int64) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r AlibabaAlihouseNewhomeVideoChangestatusRequest) GetStatus() int64 {
+func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetStatus() int64 {
     return r._status
 }

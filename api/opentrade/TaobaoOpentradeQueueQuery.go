@@ -11,7 +11,7 @@ taobao.opentrade.queue.query
 
 尖货交易排队信息查询
 */
-func TaobaoOpentradeQueueQuery(clt *core.SDKClient, req *opentrade.TaobaoOpentradeQueueQueryRequest, session string) (*opentrade.TaobaoOpentradeQueueQueryAPIResponse, error) {
+func TaobaoOpentradeQueueQuery(clt *core.SDKClient, req *opentrade.TaobaoOpentradeQueueQueryAPIRequest, session string) (*opentrade.TaobaoOpentradeQueueQueryAPIResponse, error) {
     var resp opentrade.TaobaoOpentradeQueueQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

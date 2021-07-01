@@ -11,7 +11,7 @@ alibaba.interact.sensor.gmedia
 
 媒体功能
 */
-func AlibabaInteractSensorGmedia(clt *core.SDKClient, req *interact.AlibabaInteractSensorGmediaRequest, session string) (*interact.AlibabaInteractSensorGmediaAPIResponse, error) {
+func AlibabaInteractSensorGmedia(clt *core.SDKClient, req *interact.AlibabaInteractSensorGmediaAPIRequest, session string) (*interact.AlibabaInteractSensorGmediaAPIResponse, error) {
     var resp interact.AlibabaInteractSensorGmediaAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

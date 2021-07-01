@@ -12,26 +12,26 @@ tmall.product.update.schema.get
 
 获取用户更新产品的规则
 */
-type TmallProductUpdateSchemaGetRequest struct {
+type TmallProductUpdateSchemaGetAPIRequest struct {
     model.Params
     // 产品编号
     _productId   int64
 }
 
-// 初始化TmallProductUpdateSchemaGetRequest对象
-func NewTmallProductUpdateSchemaGetRequest() *TmallProductUpdateSchemaGetRequest{
-    return &TmallProductUpdateSchemaGetRequest{
+// 初始化TmallProductUpdateSchemaGetAPIRequest对象
+func NewTmallProductUpdateSchemaGetRequest() *TmallProductUpdateSchemaGetAPIRequest{
+    return &TmallProductUpdateSchemaGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallProductUpdateSchemaGetRequest) GetApiMethodName() string {
+func (r TmallProductUpdateSchemaGetAPIRequest) GetApiMethodName() string {
     return "tmall.product.update.schema.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallProductUpdateSchemaGetRequest) GetApiParams() url.Values {
+func (r TmallProductUpdateSchemaGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallProductUpdateSchemaGetRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 产品编号
-func (r *TmallProductUpdateSchemaGetRequest) SetProductId(_productId int64) error {
+func (r *TmallProductUpdateSchemaGetAPIRequest) SetProductId(_productId int64) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r TmallProductUpdateSchemaGetRequest) GetProductId() int64 {
+func (r TmallProductUpdateSchemaGetAPIRequest) GetProductId() int64 {
     return r._productId
 }

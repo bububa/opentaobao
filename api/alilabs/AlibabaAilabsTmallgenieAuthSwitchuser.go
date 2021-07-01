@@ -11,7 +11,7 @@ alibaba.ailabs.tmallgenie.auth.switchuser
 
 设备切换授权用户
 */
-func AlibabaAilabsTmallgenieAuthSwitchuser(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthSwitchuserRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthSwitchuserAPIResponse, error) {
+func AlibabaAilabsTmallgenieAuthSwitchuser(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthSwitchuserAPIResponse, error) {
     var resp alilabs.AlibabaAilabsTmallgenieAuthSwitchuserAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

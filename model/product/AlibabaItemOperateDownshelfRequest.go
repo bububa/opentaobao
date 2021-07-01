@@ -12,26 +12,26 @@ alibaba.item.operate.downshelf
 
 商品下架
 */
-type AlibabaItemOperateDownshelfRequest struct {
+type AlibabaItemOperateDownshelfAPIRequest struct {
     model.Params
     // 商品ID
     _itemId   int64
 }
 
-// 初始化AlibabaItemOperateDownshelfRequest对象
-func NewAlibabaItemOperateDownshelfRequest() *AlibabaItemOperateDownshelfRequest{
-    return &AlibabaItemOperateDownshelfRequest{
+// 初始化AlibabaItemOperateDownshelfAPIRequest对象
+func NewAlibabaItemOperateDownshelfRequest() *AlibabaItemOperateDownshelfAPIRequest{
+    return &AlibabaItemOperateDownshelfAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaItemOperateDownshelfRequest) GetApiMethodName() string {
+func (r AlibabaItemOperateDownshelfAPIRequest) GetApiMethodName() string {
     return "alibaba.item.operate.downshelf"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaItemOperateDownshelfRequest) GetApiParams() url.Values {
+func (r AlibabaItemOperateDownshelfAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaItemOperateDownshelfRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *AlibabaItemOperateDownshelfRequest) SetItemId(_itemId int64) error {
+func (r *AlibabaItemOperateDownshelfAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r AlibabaItemOperateDownshelfRequest) GetItemId() int64 {
+func (r AlibabaItemOperateDownshelfAPIRequest) GetItemId() int64 {
     return r._itemId
 }

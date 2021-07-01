@@ -11,7 +11,7 @@ cainiao.global.logistic.order.create
 
 创建物流订单
 */
-func CainiaoGlobalLogisticOrderCreate(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalLogisticOrderCreateRequest, session string) (*cainiaohandover.CainiaoGlobalLogisticOrderCreateAPIResponse, error) {
+func CainiaoGlobalLogisticOrderCreate(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalLogisticOrderCreateAPIRequest, session string) (*cainiaohandover.CainiaoGlobalLogisticOrderCreateAPIResponse, error) {
     var resp cainiaohandover.CainiaoGlobalLogisticOrderCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

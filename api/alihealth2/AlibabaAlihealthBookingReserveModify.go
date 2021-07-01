@@ -11,7 +11,7 @@ alibaba.alihealth.booking.reserve.modify
 
 消费医疗统一预约平台，取消预约
 */
-func AlibabaAlihealthBookingReserveModify(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthBookingReserveModifyRequest, session string) (*alihealth2.AlibabaAlihealthBookingReserveModifyAPIResponse, error) {
+func AlibabaAlihealthBookingReserveModify(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthBookingReserveModifyAPIRequest, session string) (*alihealth2.AlibabaAlihealthBookingReserveModifyAPIResponse, error) {
     var resp alihealth2.AlibabaAlihealthBookingReserveModifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

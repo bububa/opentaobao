@@ -11,7 +11,7 @@ taobao.baodian.deposit.get.with.sdkversion
 
 获取用户宝点信息（带sdk版本，已迁移）
 */
-func TaobaoBaodianDepositGetWithSdkversion(clt *core.SDKClient, req *baodian.TaobaoBaodianDepositGetWithSdkversionRequest, session string) (*baodian.TaobaoBaodianDepositGetWithSdkversionAPIResponse, error) {
+func TaobaoBaodianDepositGetWithSdkversion(clt *core.SDKClient, req *baodian.TaobaoBaodianDepositGetWithSdkversionAPIRequest, session string) (*baodian.TaobaoBaodianDepositGetWithSdkversionAPIResponse, error) {
     var resp baodian.TaobaoBaodianDepositGetWithSdkversionAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

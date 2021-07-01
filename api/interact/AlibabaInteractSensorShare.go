@@ -11,7 +11,7 @@ alibaba.interact.sensor.share
 
 客户端分享
 */
-func AlibabaInteractSensorShare(clt *core.SDKClient, req *interact.AlibabaInteractSensorShareRequest, session string) (*interact.AlibabaInteractSensorShareAPIResponse, error) {
+func AlibabaInteractSensorShare(clt *core.SDKClient, req *interact.AlibabaInteractSensorShareAPIRequest, session string) (*interact.AlibabaInteractSensorShareAPIResponse, error) {
     var resp interact.AlibabaInteractSensorShareAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

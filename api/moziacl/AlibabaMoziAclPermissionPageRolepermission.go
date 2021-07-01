@@ -11,7 +11,7 @@ alibaba.mozi.acl.permission.page.rolepermission
 
 根据传入的角色name，分页查询该角色包含的权限列表
 */
-func AlibabaMoziAclPermissionPageRolepermission(clt *core.SDKClient, req *moziacl.AlibabaMoziAclPermissionPageRolepermissionRequest, session string) (*moziacl.AlibabaMoziAclPermissionPageRolepermissionAPIResponse, error) {
+func AlibabaMoziAclPermissionPageRolepermission(clt *core.SDKClient, req *moziacl.AlibabaMoziAclPermissionPageRolepermissionAPIRequest, session string) (*moziacl.AlibabaMoziAclPermissionPageRolepermissionAPIResponse, error) {
     var resp moziacl.AlibabaMoziAclPermissionPageRolepermissionAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

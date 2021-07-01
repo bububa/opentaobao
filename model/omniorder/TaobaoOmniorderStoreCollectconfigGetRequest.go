@@ -12,7 +12,7 @@ taobao.omniorder.store.collectconfig.get
 
 查询门店自提配置内容
 */
-type TaobaoOmniorderStoreCollectconfigGetRequest struct {
+type TaobaoOmniorderStoreCollectconfigGetAPIRequest struct {
     model.Params
     // 门店ID
     _storeId   int64
@@ -20,20 +20,20 @@ type TaobaoOmniorderStoreCollectconfigGetRequest struct {
     _activity   bool
 }
 
-// 初始化TaobaoOmniorderStoreCollectconfigGetRequest对象
-func NewTaobaoOmniorderStoreCollectconfigGetRequest() *TaobaoOmniorderStoreCollectconfigGetRequest{
-    return &TaobaoOmniorderStoreCollectconfigGetRequest{
+// 初始化TaobaoOmniorderStoreCollectconfigGetAPIRequest对象
+func NewTaobaoOmniorderStoreCollectconfigGetRequest() *TaobaoOmniorderStoreCollectconfigGetAPIRequest{
+    return &TaobaoOmniorderStoreCollectconfigGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniorderStoreCollectconfigGetRequest) GetApiMethodName() string {
+func (r TaobaoOmniorderStoreCollectconfigGetAPIRequest) GetApiMethodName() string {
     return "taobao.omniorder.store.collectconfig.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderStoreCollectconfigGetRequest) GetApiParams() url.Values {
+func (r TaobaoOmniorderStoreCollectconfigGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOmniorderStoreCollectconfigGetRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoOmniorderStoreCollectconfigGetRequest) SetStoreId(_storeId int64) error {
+func (r *TaobaoOmniorderStoreCollectconfigGetAPIRequest) SetStoreId(_storeId int64) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r TaobaoOmniorderStoreCollectconfigGetRequest) GetStoreId() int64 {
+func (r TaobaoOmniorderStoreCollectconfigGetAPIRequest) GetStoreId() int64 {
     return r._storeId
 }
 // Activity Setter
 // 是否是活动期
-func (r *TaobaoOmniorderStoreCollectconfigGetRequest) SetActivity(_activity bool) error {
+func (r *TaobaoOmniorderStoreCollectconfigGetAPIRequest) SetActivity(_activity bool) error {
     r._activity = _activity
     r.Set("activity", _activity)
     return nil
 }
 
 // Activity Getter
-func (r TaobaoOmniorderStoreCollectconfigGetRequest) GetActivity() bool {
+func (r TaobaoOmniorderStoreCollectconfigGetAPIRequest) GetActivity() bool {
     return r._activity
 }

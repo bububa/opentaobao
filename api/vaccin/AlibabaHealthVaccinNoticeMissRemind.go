@@ -11,7 +11,7 @@ alibaba.health.vaccin.notice.miss.remind
 
 医生消息提醒适龄儿童按计划接种
 */
-func AlibabaHealthVaccinNoticeMissRemind(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeMissRemindRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeMissRemindAPIResponse, error) {
+func AlibabaHealthVaccinNoticeMissRemind(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeMissRemindAPIRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeMissRemindAPIResponse, error) {
     var resp vaccin.AlibabaHealthVaccinNoticeMissRemindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

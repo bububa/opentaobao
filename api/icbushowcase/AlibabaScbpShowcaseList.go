@@ -11,7 +11,7 @@ alibaba.scbp.showcase.list
 
 橱窗查询
 */
-func AlibabaScbpShowcaseList(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseListRequest, session string) (*icbushowcase.AlibabaScbpShowcaseListAPIResponse, error) {
+func AlibabaScbpShowcaseList(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseListAPIRequest, session string) (*icbushowcase.AlibabaScbpShowcaseListAPIResponse, error) {
     var resp icbushowcase.AlibabaScbpShowcaseListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

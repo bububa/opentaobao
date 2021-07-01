@@ -12,26 +12,26 @@ alibaba.ceres.supplier.po.querydetail
 
 采购供应商订单明细查询接口
 */
-type AlibabaCeresSupplierPoQuerydetailRequest struct {
+type AlibabaCeresSupplierPoQuerydetailAPIRequest struct {
     model.Params
     // 订单编号
     _poNo   string
 }
 
-// 初始化AlibabaCeresSupplierPoQuerydetailRequest对象
-func NewAlibabaCeresSupplierPoQuerydetailRequest() *AlibabaCeresSupplierPoQuerydetailRequest{
-    return &AlibabaCeresSupplierPoQuerydetailRequest{
+// 初始化AlibabaCeresSupplierPoQuerydetailAPIRequest对象
+func NewAlibabaCeresSupplierPoQuerydetailRequest() *AlibabaCeresSupplierPoQuerydetailAPIRequest{
+    return &AlibabaCeresSupplierPoQuerydetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCeresSupplierPoQuerydetailRequest) GetApiMethodName() string {
+func (r AlibabaCeresSupplierPoQuerydetailAPIRequest) GetApiMethodName() string {
     return "alibaba.ceres.supplier.po.querydetail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCeresSupplierPoQuerydetailRequest) GetApiParams() url.Values {
+func (r AlibabaCeresSupplierPoQuerydetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaCeresSupplierPoQuerydetailRequest) GetApiParams() url.Values {
 }
 // PoNo Setter
 // 订单编号
-func (r *AlibabaCeresSupplierPoQuerydetailRequest) SetPoNo(_poNo string) error {
+func (r *AlibabaCeresSupplierPoQuerydetailAPIRequest) SetPoNo(_poNo string) error {
     r._poNo = _poNo
     r.Set("po_no", _poNo)
     return nil
 }
 
 // PoNo Getter
-func (r AlibabaCeresSupplierPoQuerydetailRequest) GetPoNo() string {
+func (r AlibabaCeresSupplierPoQuerydetailAPIRequest) GetPoNo() string {
     return r._poNo
 }

@@ -12,24 +12,24 @@ alibaba.interact.sensor.popwindow
 
 popwindow
 */
-type AlibabaInteractSensorPopwindowRequest struct {
+type AlibabaInteractSensorPopwindowAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractSensorPopwindowRequest对象
-func NewAlibabaInteractSensorPopwindowRequest() *AlibabaInteractSensorPopwindowRequest{
-    return &AlibabaInteractSensorPopwindowRequest{
+// 初始化AlibabaInteractSensorPopwindowAPIRequest对象
+func NewAlibabaInteractSensorPopwindowRequest() *AlibabaInteractSensorPopwindowAPIRequest{
+    return &AlibabaInteractSensorPopwindowAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorPopwindowRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorPopwindowAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.popwindow"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorPopwindowRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorPopwindowAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

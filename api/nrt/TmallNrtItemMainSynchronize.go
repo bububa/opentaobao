@@ -11,7 +11,7 @@ tmall.nrt.item.main.synchronize
 
 同步红星美凯龙存量商品到阿里
 */
-func TmallNrtItemMainSynchronize(clt *core.SDKClient, req *nrt.TmallNrtItemMainSynchronizeRequest, session string) (*nrt.TmallNrtItemMainSynchronizeAPIResponse, error) {
+func TmallNrtItemMainSynchronize(clt *core.SDKClient, req *nrt.TmallNrtItemMainSynchronizeAPIRequest, session string) (*nrt.TmallNrtItemMainSynchronizeAPIResponse, error) {
     var resp nrt.TmallNrtItemMainSynchronizeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

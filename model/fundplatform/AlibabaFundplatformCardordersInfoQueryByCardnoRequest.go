@@ -12,26 +12,26 @@ alibaba.fundplatform.cardorders.info.query.by.cardno
 
 该接口由汇金实现，外部调用。通过制卡单号分页查询卡信息
 */
-type AlibabaFundplatformCardordersInfoQueryByCardnoRequest struct {
+type AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest struct {
     model.Params
     // 请求结构体
     _parameters   *CardMakingInfoQueryRequest
 }
 
-// 初始化AlibabaFundplatformCardordersInfoQueryByCardnoRequest对象
-func NewAlibabaFundplatformCardordersInfoQueryByCardnoRequest() *AlibabaFundplatformCardordersInfoQueryByCardnoRequest{
-    return &AlibabaFundplatformCardordersInfoQueryByCardnoRequest{
+// 初始化AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest对象
+func NewAlibabaFundplatformCardordersInfoQueryByCardnoRequest() *AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest{
+    return &AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaFundplatformCardordersInfoQueryByCardnoRequest) GetApiMethodName() string {
+func (r AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest) GetApiMethodName() string {
     return "alibaba.fundplatform.cardorders.info.query.by.cardno"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaFundplatformCardordersInfoQueryByCardnoRequest) GetApiParams() url.Values {
+func (r AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaFundplatformCardordersInfoQueryByCardnoRequest) GetApiParams() ur
 }
 // Parameters Setter
 // 请求结构体
-func (r *AlibabaFundplatformCardordersInfoQueryByCardnoRequest) SetParameters(_parameters *CardMakingInfoQueryRequest) error {
+func (r *AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest) SetParameters(_parameters *CardMakingInfoQueryRequest) error {
     r._parameters = _parameters
     r.Set("parameters", _parameters)
     return nil
 }
 
 // Parameters Getter
-func (r AlibabaFundplatformCardordersInfoQueryByCardnoRequest) GetParameters() *CardMakingInfoQueryRequest {
+func (r AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest) GetParameters() *CardMakingInfoQueryRequest {
     return r._parameters
 }

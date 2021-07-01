@@ -11,7 +11,7 @@ taobao.opentrade.group.member.infos
 
 组团购场景下，获取用户参团信息
 */
-func TaobaoOpentradeGroupMemberInfos(clt *core.SDKClient, req *opentrade.TaobaoOpentradeGroupMemberInfosRequest, session string) (*opentrade.TaobaoOpentradeGroupMemberInfosAPIResponse, error) {
+func TaobaoOpentradeGroupMemberInfos(clt *core.SDKClient, req *opentrade.TaobaoOpentradeGroupMemberInfosAPIRequest, session string) (*opentrade.TaobaoOpentradeGroupMemberInfosAPIResponse, error) {
     var resp opentrade.TaobaoOpentradeGroupMemberInfosAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

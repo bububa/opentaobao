@@ -11,7 +11,7 @@ alitrip.tuan.hotel.relate.poi.get
 
 查询酒店团购关联POI
 */
-func AlitripTuanHotelRelatePoiGet(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelRelatePoiGetRequest, session string) (*tuanhotel.AlitripTuanHotelRelatePoiGetAPIResponse, error) {
+func AlitripTuanHotelRelatePoiGet(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelRelatePoiGetAPIRequest, session string) (*tuanhotel.AlitripTuanHotelRelatePoiGetAPIResponse, error) {
     var resp tuanhotel.AlitripTuanHotelRelatePoiGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

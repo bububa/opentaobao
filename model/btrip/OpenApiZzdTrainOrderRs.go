@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiZzdTrainOrderRs 
-type OpenApiZzdTrainOrderRs struct {
+// OpenApiZzdTrainOrderRS 
+type OpenApiZzdTrainOrderRS struct {
     // tmc收取的服务费（分）
     ServiceFee   int64 `json:"service_fee,omitempty" xml:"service_fee,omitempty"`
     // tmc收取的退订服务费（分）

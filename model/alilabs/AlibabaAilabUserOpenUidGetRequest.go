@@ -12,7 +12,7 @@ alibaba.ailab.user.open.uid.get
 
 access token 获取精灵用户 id
 */
-type AlibabaAilabUserOpenUidGetRequest struct {
+type AlibabaAilabUserOpenUidGetAPIRequest struct {
     model.Params
     // access token
     _skillAccessToken   string
@@ -20,20 +20,20 @@ type AlibabaAilabUserOpenUidGetRequest struct {
     _skillId   int64
 }
 
-// 初始化AlibabaAilabUserOpenUidGetRequest对象
-func NewAlibabaAilabUserOpenUidGetRequest() *AlibabaAilabUserOpenUidGetRequest{
-    return &AlibabaAilabUserOpenUidGetRequest{
+// 初始化AlibabaAilabUserOpenUidGetAPIRequest对象
+func NewAlibabaAilabUserOpenUidGetRequest() *AlibabaAilabUserOpenUidGetAPIRequest{
+    return &AlibabaAilabUserOpenUidGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAilabUserOpenUidGetRequest) GetApiMethodName() string {
+func (r AlibabaAilabUserOpenUidGetAPIRequest) GetApiMethodName() string {
     return "alibaba.ailab.user.open.uid.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAilabUserOpenUidGetRequest) GetApiParams() url.Values {
+func (r AlibabaAilabUserOpenUidGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAilabUserOpenUidGetRequest) GetApiParams() url.Values {
 }
 // SkillAccessToken Setter
 // access token
-func (r *AlibabaAilabUserOpenUidGetRequest) SetSkillAccessToken(_skillAccessToken string) error {
+func (r *AlibabaAilabUserOpenUidGetAPIRequest) SetSkillAccessToken(_skillAccessToken string) error {
     r._skillAccessToken = _skillAccessToken
     r.Set("skill_access_token", _skillAccessToken)
     return nil
 }
 
 // SkillAccessToken Getter
-func (r AlibabaAilabUserOpenUidGetRequest) GetSkillAccessToken() string {
+func (r AlibabaAilabUserOpenUidGetAPIRequest) GetSkillAccessToken() string {
     return r._skillAccessToken
 }
 // SkillId Setter
 // skill id
-func (r *AlibabaAilabUserOpenUidGetRequest) SetSkillId(_skillId int64) error {
+func (r *AlibabaAilabUserOpenUidGetAPIRequest) SetSkillId(_skillId int64) error {
     r._skillId = _skillId
     r.Set("skill_id", _skillId)
     return nil
 }
 
 // SkillId Getter
-func (r AlibabaAilabUserOpenUidGetRequest) GetSkillId() int64 {
+func (r AlibabaAilabUserOpenUidGetAPIRequest) GetSkillId() int64 {
     return r._skillId
 }

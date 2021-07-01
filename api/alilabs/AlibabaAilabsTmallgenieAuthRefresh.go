@@ -11,7 +11,7 @@ alibaba.ailabs.tmallgenie.auth.refresh
 
 通过此接口刷新天猫精灵授权token
 */
-func AlibabaAilabsTmallgenieAuthRefresh(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthRefreshRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthRefreshAPIResponse, error) {
+func AlibabaAilabsTmallgenieAuthRefresh(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthRefreshAPIRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthRefreshAPIResponse, error) {
     var resp alilabs.AlibabaAilabsTmallgenieAuthRefreshAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.alihealth.codeseller.getuseraward
 
 贩卖机扫码查询领奖状态
 */
-func AlibabaAlihealthCodesellerGetuseraward(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthCodesellerGetuserawardRequest, session string) (*drugtrace.AlibabaAlihealthCodesellerGetuserawardAPIResponse, error) {
+func AlibabaAlihealthCodesellerGetuseraward(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthCodesellerGetuserawardAPIRequest, session string) (*drugtrace.AlibabaAlihealthCodesellerGetuserawardAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthCodesellerGetuserawardAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

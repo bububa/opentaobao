@@ -12,7 +12,7 @@ tmall.msf.identify.status.query
 
 喵师傅定案核销状态查询，供服务商erp系统调用
 */
-type TmallMsfIdentifyStatusQueryRequest struct {
+type TmallMsfIdentifyStatusQueryAPIRequest struct {
     model.Params
     // 天猫订单号
     _orderId   int64
@@ -20,20 +20,20 @@ type TmallMsfIdentifyStatusQueryRequest struct {
     _serviceType   int64
 }
 
-// 初始化TmallMsfIdentifyStatusQueryRequest对象
-func NewTmallMsfIdentifyStatusQueryRequest() *TmallMsfIdentifyStatusQueryRequest{
-    return &TmallMsfIdentifyStatusQueryRequest{
+// 初始化TmallMsfIdentifyStatusQueryAPIRequest对象
+func NewTmallMsfIdentifyStatusQueryRequest() *TmallMsfIdentifyStatusQueryAPIRequest{
+    return &TmallMsfIdentifyStatusQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallMsfIdentifyStatusQueryRequest) GetApiMethodName() string {
+func (r TmallMsfIdentifyStatusQueryAPIRequest) GetApiMethodName() string {
     return "tmall.msf.identify.status.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallMsfIdentifyStatusQueryRequest) GetApiParams() url.Values {
+func (r TmallMsfIdentifyStatusQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallMsfIdentifyStatusQueryRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 天猫订单号
-func (r *TmallMsfIdentifyStatusQueryRequest) SetOrderId(_orderId int64) error {
+func (r *TmallMsfIdentifyStatusQueryAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r TmallMsfIdentifyStatusQueryRequest) GetOrderId() int64 {
+func (r TmallMsfIdentifyStatusQueryAPIRequest) GetOrderId() int64 {
     return r._orderId
 }
 // ServiceType Setter
 // 服务类型，0 家装的送货上门并安装 1 单向安装 2 建材的送货上门 3 建材的安装
-func (r *TmallMsfIdentifyStatusQueryRequest) SetServiceType(_serviceType int64) error {
+func (r *TmallMsfIdentifyStatusQueryAPIRequest) SetServiceType(_serviceType int64) error {
     r._serviceType = _serviceType
     r.Set("service_type", _serviceType)
     return nil
 }
 
 // ServiceType Getter
-func (r TmallMsfIdentifyStatusQueryRequest) GetServiceType() int64 {
+func (r TmallMsfIdentifyStatusQueryAPIRequest) GetServiceType() int64 {
     return r._serviceType
 }

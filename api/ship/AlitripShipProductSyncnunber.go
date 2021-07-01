@@ -11,7 +11,7 @@ alitrip.ship.product.syncnunber
 
 船票班次变更回调
 */
-func AlitripShipProductSyncnunber(clt *core.SDKClient, req *ship.AlitripShipProductSyncnunberRequest, session string) (*ship.AlitripShipProductSyncnunberAPIResponse, error) {
+func AlitripShipProductSyncnunber(clt *core.SDKClient, req *ship.AlitripShipProductSyncnunberAPIRequest, session string) (*ship.AlitripShipProductSyncnunberAPIResponse, error) {
     var resp ship.AlitripShipProductSyncnunberAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

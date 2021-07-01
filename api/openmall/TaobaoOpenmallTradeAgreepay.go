@@ -11,7 +11,7 @@ taobao.openmall.trade.agreepay
 
 openmall订单支付
 */
-func TaobaoOpenmallTradeAgreepay(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeAgreepayRequest, session string) (*openmall.TaobaoOpenmallTradeAgreepayAPIResponse, error) {
+func TaobaoOpenmallTradeAgreepay(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeAgreepayAPIRequest, session string) (*openmall.TaobaoOpenmallTradeAgreepayAPIResponse, error) {
     var resp openmall.TaobaoOpenmallTradeAgreepayAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

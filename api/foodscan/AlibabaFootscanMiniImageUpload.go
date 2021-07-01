@@ -11,7 +11,7 @@ alibaba.footscan.mini.image.upload
 
 提供图片上传功能，同时进行图片的检测
 */
-func AlibabaFootscanMiniImageUpload(clt *core.SDKClient, req *foodscan.AlibabaFootscanMiniImageUploadRequest, session string) (*foodscan.AlibabaFootscanMiniImageUploadAPIResponse, error) {
+func AlibabaFootscanMiniImageUpload(clt *core.SDKClient, req *foodscan.AlibabaFootscanMiniImageUploadAPIRequest, session string) (*foodscan.AlibabaFootscanMiniImageUploadAPIResponse, error) {
     var resp foodscan.AlibabaFootscanMiniImageUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.idle.isv.item.edit
 
 服务商ISV闲鱼商品编辑操作
 */
-func AlibabaIdleIsvItemEdit(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvItemEditRequest, session string) (*idleisv.AlibabaIdleIsvItemEditAPIResponse, error) {
+func AlibabaIdleIsvItemEdit(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvItemEditAPIRequest, session string) (*idleisv.AlibabaIdleIsvItemEditAPIResponse, error) {
     var resp idleisv.AlibabaIdleIsvItemEditAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

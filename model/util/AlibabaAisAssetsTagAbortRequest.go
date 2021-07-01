@@ -12,26 +12,26 @@ alibaba.ais.assets.tag.abort
 
 提供浪潮，英业达等厂商供应阿里巴巴基础设施资产的标签QR code未使用的废弃
 */
-type AlibabaAisAssetsTagAbortRequest struct {
+type AlibabaAisAssetsTagAbortAPIRequest struct {
     model.Params
     // 请求资产信息
     _requestParam   string
 }
 
-// 初始化AlibabaAisAssetsTagAbortRequest对象
-func NewAlibabaAisAssetsTagAbortRequest() *AlibabaAisAssetsTagAbortRequest{
-    return &AlibabaAisAssetsTagAbortRequest{
+// 初始化AlibabaAisAssetsTagAbortAPIRequest对象
+func NewAlibabaAisAssetsTagAbortRequest() *AlibabaAisAssetsTagAbortAPIRequest{
+    return &AlibabaAisAssetsTagAbortAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAisAssetsTagAbortRequest) GetApiMethodName() string {
+func (r AlibabaAisAssetsTagAbortAPIRequest) GetApiMethodName() string {
     return "alibaba.ais.assets.tag.abort"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAisAssetsTagAbortRequest) GetApiParams() url.Values {
+func (r AlibabaAisAssetsTagAbortAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAisAssetsTagAbortRequest) GetApiParams() url.Values {
 }
 // RequestParam Setter
 // 请求资产信息
-func (r *AlibabaAisAssetsTagAbortRequest) SetRequestParam(_requestParam string) error {
+func (r *AlibabaAisAssetsTagAbortAPIRequest) SetRequestParam(_requestParam string) error {
     r._requestParam = _requestParam
     r.Set("request_param", _requestParam)
     return nil
 }
 
 // RequestParam Getter
-func (r AlibabaAisAssetsTagAbortRequest) GetRequestParam() string {
+func (r AlibabaAisAssetsTagAbortAPIRequest) GetRequestParam() string {
     return r._requestParam
 }

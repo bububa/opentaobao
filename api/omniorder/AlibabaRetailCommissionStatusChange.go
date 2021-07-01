@@ -11,7 +11,7 @@ alibaba.retail.commission.status.change
 
 分佣系统，分佣状态变更接口
 */
-func AlibabaRetailCommissionStatusChange(clt *core.SDKClient, req *omniorder.AlibabaRetailCommissionStatusChangeRequest, session string) (*omniorder.AlibabaRetailCommissionStatusChangeAPIResponse, error) {
+func AlibabaRetailCommissionStatusChange(clt *core.SDKClient, req *omniorder.AlibabaRetailCommissionStatusChangeAPIRequest, session string) (*omniorder.AlibabaRetailCommissionStatusChangeAPIResponse, error) {
     var resp omniorder.AlibabaRetailCommissionStatusChangeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

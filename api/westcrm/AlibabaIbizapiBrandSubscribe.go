@@ -11,7 +11,7 @@ alibaba.ibizapi.brand.subscribe
 
 关注品牌号服务
 */
-func AlibabaIbizapiBrandSubscribe(clt *core.SDKClient, req *westcrm.AlibabaIbizapiBrandSubscribeRequest, session string) (*westcrm.AlibabaIbizapiBrandSubscribeAPIResponse, error) {
+func AlibabaIbizapiBrandSubscribe(clt *core.SDKClient, req *westcrm.AlibabaIbizapiBrandSubscribeAPIRequest, session string) (*westcrm.AlibabaIbizapiBrandSubscribeAPIResponse, error) {
     var resp westcrm.AlibabaIbizapiBrandSubscribeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

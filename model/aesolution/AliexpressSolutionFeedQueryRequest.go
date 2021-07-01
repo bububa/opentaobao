@@ -12,26 +12,26 @@ aliexpress.solution.feed.query
 
 API for query the execution result of feed.
 */
-type AliexpressSolutionFeedQueryRequest struct {
+type AliexpressSolutionFeedQueryAPIRequest struct {
     model.Params
     // job id
     _jobId   int64
 }
 
-// 初始化AliexpressSolutionFeedQueryRequest对象
-func NewAliexpressSolutionFeedQueryRequest() *AliexpressSolutionFeedQueryRequest{
-    return &AliexpressSolutionFeedQueryRequest{
+// 初始化AliexpressSolutionFeedQueryAPIRequest对象
+func NewAliexpressSolutionFeedQueryRequest() *AliexpressSolutionFeedQueryAPIRequest{
+    return &AliexpressSolutionFeedQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionFeedQueryRequest) GetApiMethodName() string {
+func (r AliexpressSolutionFeedQueryAPIRequest) GetApiMethodName() string {
     return "aliexpress.solution.feed.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionFeedQueryRequest) GetApiParams() url.Values {
+func (r AliexpressSolutionFeedQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressSolutionFeedQueryRequest) GetApiParams() url.Values {
 }
 // JobId Setter
 // job id
-func (r *AliexpressSolutionFeedQueryRequest) SetJobId(_jobId int64) error {
+func (r *AliexpressSolutionFeedQueryAPIRequest) SetJobId(_jobId int64) error {
     r._jobId = _jobId
     r.Set("job_id", _jobId)
     return nil
 }
 
 // JobId Getter
-func (r AliexpressSolutionFeedQueryRequest) GetJobId() int64 {
+func (r AliexpressSolutionFeedQueryAPIRequest) GetJobId() int64 {
     return r._jobId
 }

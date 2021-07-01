@@ -12,26 +12,26 @@ alibaba.mos.commdy.offline.getfileurl
 
 去前置机-pos查询离线文件下载地址接口
 */
-type AlibabaMosCommdyOfflineGetfileurlRequest struct {
+type AlibabaMosCommdyOfflineGetfileurlAPIRequest struct {
     model.Params
     // 离线文件名称
     _fileKeys   []string
 }
 
-// 初始化AlibabaMosCommdyOfflineGetfileurlRequest对象
-func NewAlibabaMosCommdyOfflineGetfileurlRequest() *AlibabaMosCommdyOfflineGetfileurlRequest{
-    return &AlibabaMosCommdyOfflineGetfileurlRequest{
+// 初始化AlibabaMosCommdyOfflineGetfileurlAPIRequest对象
+func NewAlibabaMosCommdyOfflineGetfileurlRequest() *AlibabaMosCommdyOfflineGetfileurlAPIRequest{
+    return &AlibabaMosCommdyOfflineGetfileurlAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosCommdyOfflineGetfileurlRequest) GetApiMethodName() string {
+func (r AlibabaMosCommdyOfflineGetfileurlAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.commdy.offline.getfileurl"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosCommdyOfflineGetfileurlRequest) GetApiParams() url.Values {
+func (r AlibabaMosCommdyOfflineGetfileurlAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMosCommdyOfflineGetfileurlRequest) GetApiParams() url.Values {
 }
 // FileKeys Setter
 // 离线文件名称
-func (r *AlibabaMosCommdyOfflineGetfileurlRequest) SetFileKeys(_fileKeys []string) error {
+func (r *AlibabaMosCommdyOfflineGetfileurlAPIRequest) SetFileKeys(_fileKeys []string) error {
     r._fileKeys = _fileKeys
     r.Set("file_keys", _fileKeys)
     return nil
 }
 
 // FileKeys Getter
-func (r AlibabaMosCommdyOfflineGetfileurlRequest) GetFileKeys() []string {
+func (r AlibabaMosCommdyOfflineGetfileurlAPIRequest) GetFileKeys() []string {
     return r._fileKeys
 }

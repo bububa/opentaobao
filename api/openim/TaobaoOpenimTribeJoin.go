@@ -11,7 +11,7 @@ taobao.openim.tribe.join
 
 OPENIM群主动加入
 */
-func TaobaoOpenimTribeJoin(clt *core.SDKClient, req *openim.TaobaoOpenimTribeJoinRequest, session string) (*openim.TaobaoOpenimTribeJoinAPIResponse, error) {
+func TaobaoOpenimTribeJoin(clt *core.SDKClient, req *openim.TaobaoOpenimTribeJoinAPIRequest, session string) (*openim.TaobaoOpenimTribeJoinAPIResponse, error) {
     var resp openim.TaobaoOpenimTribeJoinAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

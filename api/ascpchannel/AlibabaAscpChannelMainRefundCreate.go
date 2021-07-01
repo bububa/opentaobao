@@ -11,7 +11,7 @@ alibaba.ascp.channel.main.refund.create
 
 淘外分销解决方案--订单--逆向创单（未发货整单退）
 */
-func AlibabaAscpChannelMainRefundCreate(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelMainRefundCreateRequest, session string) (*ascpchannel.AlibabaAscpChannelMainRefundCreateAPIResponse, error) {
+func AlibabaAscpChannelMainRefundCreate(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelMainRefundCreateAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelMainRefundCreateAPIResponse, error) {
     var resp ascpchannel.AlibabaAscpChannelMainRefundCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

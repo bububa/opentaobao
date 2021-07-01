@@ -11,7 +11,7 @@ alibaba.ascp.channel.sales.order.create
 
 阿里巴巴供应链渠道销售订单创建接口
 */
-func AlibabaAscpChannelSalesOrderCreate(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSalesOrderCreateRequest, session string) (*ascpchannel.AlibabaAscpChannelSalesOrderCreateAPIResponse, error) {
+func AlibabaAscpChannelSalesOrderCreate(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSalesOrderCreateAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelSalesOrderCreateAPIResponse, error) {
     var resp ascpchannel.AlibabaAscpChannelSalesOrderCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

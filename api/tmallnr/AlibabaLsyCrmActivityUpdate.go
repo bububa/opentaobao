@@ -11,7 +11,7 @@ alibaba.lsy.crm.activity.update
 
 ISV活动修改
 */
-func AlibabaLsyCrmActivityUpdate(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityUpdateRequest, session string) (*tmallnr.AlibabaLsyCrmActivityUpdateAPIResponse, error) {
+func AlibabaLsyCrmActivityUpdate(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityUpdateAPIRequest, session string) (*tmallnr.AlibabaLsyCrmActivityUpdateAPIResponse, error) {
     var resp tmallnr.AlibabaLsyCrmActivityUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

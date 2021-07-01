@@ -11,7 +11,7 @@ taobao.miniapp.distribution.order.get
 
 服务商可通过该API，读取自己开发的小程序对应的投放计划的相关信息
 */
-func TaobaoMiniappDistributionOrderGet(clt *core.SDKClient, req *miniappopen.TaobaoMiniappDistributionOrderGetRequest, session string) (*miniappopen.TaobaoMiniappDistributionOrderGetAPIResponse, error) {
+func TaobaoMiniappDistributionOrderGet(clt *core.SDKClient, req *miniappopen.TaobaoMiniappDistributionOrderGetAPIRequest, session string) (*miniappopen.TaobaoMiniappDistributionOrderGetAPIResponse, error) {
     var resp miniappopen.TaobaoMiniappDistributionOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

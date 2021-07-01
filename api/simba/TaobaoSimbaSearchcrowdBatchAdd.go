@@ -11,7 +11,7 @@ taobao.simba.searchcrowd.batch.add
 
 推广单元新增搜索人群
 */
-func TaobaoSimbaSearchcrowdBatchAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSearchcrowdBatchAddRequest, session string) (*simba.TaobaoSimbaSearchcrowdBatchAddAPIResponse, error) {
+func TaobaoSimbaSearchcrowdBatchAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSearchcrowdBatchAddAPIRequest, session string) (*simba.TaobaoSimbaSearchcrowdBatchAddAPIResponse, error) {
     var resp simba.TaobaoSimbaSearchcrowdBatchAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

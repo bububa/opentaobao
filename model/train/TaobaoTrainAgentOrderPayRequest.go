@@ -12,26 +12,26 @@ taobao.train.agent.order.pay
 
 代购订单代付接口
 */
-type TaobaoTrainAgentOrderPayRequest struct {
+type TaobaoTrainAgentOrderPayAPIRequest struct {
     model.Params
     // 入参对象
     _agentPayOrderParam   *AgentPayOrderParam
 }
 
-// 初始化TaobaoTrainAgentOrderPayRequest对象
-func NewTaobaoTrainAgentOrderPayRequest() *TaobaoTrainAgentOrderPayRequest{
-    return &TaobaoTrainAgentOrderPayRequest{
+// 初始化TaobaoTrainAgentOrderPayAPIRequest对象
+func NewTaobaoTrainAgentOrderPayRequest() *TaobaoTrainAgentOrderPayAPIRequest{
+    return &TaobaoTrainAgentOrderPayAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentOrderPayRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentOrderPayAPIRequest) GetApiMethodName() string {
     return "taobao.train.agent.order.pay"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentOrderPayRequest) GetApiParams() url.Values {
+func (r TaobaoTrainAgentOrderPayAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentOrderPayRequest) GetApiParams() url.Values {
 }
 // AgentPayOrderParam Setter
 // 入参对象
-func (r *TaobaoTrainAgentOrderPayRequest) SetAgentPayOrderParam(_agentPayOrderParam *AgentPayOrderParam) error {
+func (r *TaobaoTrainAgentOrderPayAPIRequest) SetAgentPayOrderParam(_agentPayOrderParam *AgentPayOrderParam) error {
     r._agentPayOrderParam = _agentPayOrderParam
     r.Set("agent_pay_order_param", _agentPayOrderParam)
     return nil
 }
 
 // AgentPayOrderParam Getter
-func (r TaobaoTrainAgentOrderPayRequest) GetAgentPayOrderParam() *AgentPayOrderParam {
+func (r TaobaoTrainAgentOrderPayAPIRequest) GetAgentPayOrderParam() *AgentPayOrderParam {
     return r._agentPayOrderParam
 }

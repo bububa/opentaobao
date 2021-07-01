@@ -12,26 +12,26 @@ alibaba.alsc.crm.open.recharge.operate
 
 储值操作接口
 */
-type AlibabaAlscCrmOpenRechargeOperateRequest struct {
+type AlibabaAlscCrmOpenRechargeOperateAPIRequest struct {
     model.Params
     // 储值操作参数
     _paramRechargeOperateOpenReq   *RechargeOperateOpenReq
 }
 
-// 初始化AlibabaAlscCrmOpenRechargeOperateRequest对象
-func NewAlibabaAlscCrmOpenRechargeOperateRequest() *AlibabaAlscCrmOpenRechargeOperateRequest{
-    return &AlibabaAlscCrmOpenRechargeOperateRequest{
+// 初始化AlibabaAlscCrmOpenRechargeOperateAPIRequest对象
+func NewAlibabaAlscCrmOpenRechargeOperateRequest() *AlibabaAlscCrmOpenRechargeOperateAPIRequest{
+    return &AlibabaAlscCrmOpenRechargeOperateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmOpenRechargeOperateRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmOpenRechargeOperateAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.open.recharge.operate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmOpenRechargeOperateRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmOpenRechargeOperateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenRechargeOperateRequest) GetApiParams() url.Values {
 }
 // ParamRechargeOperateOpenReq Setter
 // 储值操作参数
-func (r *AlibabaAlscCrmOpenRechargeOperateRequest) SetParamRechargeOperateOpenReq(_paramRechargeOperateOpenReq *RechargeOperateOpenReq) error {
+func (r *AlibabaAlscCrmOpenRechargeOperateAPIRequest) SetParamRechargeOperateOpenReq(_paramRechargeOperateOpenReq *RechargeOperateOpenReq) error {
     r._paramRechargeOperateOpenReq = _paramRechargeOperateOpenReq
     r.Set("param_recharge_operate_open_req", _paramRechargeOperateOpenReq)
     return nil
 }
 
 // ParamRechargeOperateOpenReq Getter
-func (r AlibabaAlscCrmOpenRechargeOperateRequest) GetParamRechargeOperateOpenReq() *RechargeOperateOpenReq {
+func (r AlibabaAlscCrmOpenRechargeOperateAPIRequest) GetParamRechargeOperateOpenReq() *RechargeOperateOpenReq {
     return r._paramRechargeOperateOpenReq
 }

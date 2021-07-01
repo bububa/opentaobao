@@ -12,26 +12,26 @@ taobao.messageaccount.messsage.mass.send
 
 外部 isv 调用该进口来进行消息号消息的群发
 */
-type TaobaoMessageaccountMesssageMassSendRequest struct {
+type TaobaoMessageaccountMesssageMassSendAPIRequest struct {
     model.Params
     // 参数
     _param   *MassMessageDTO
 }
 
-// 初始化TaobaoMessageaccountMesssageMassSendRequest对象
-func NewTaobaoMessageaccountMesssageMassSendRequest() *TaobaoMessageaccountMesssageMassSendRequest{
-    return &TaobaoMessageaccountMesssageMassSendRequest{
+// 初始化TaobaoMessageaccountMesssageMassSendAPIRequest对象
+func NewTaobaoMessageaccountMesssageMassSendRequest() *TaobaoMessageaccountMesssageMassSendAPIRequest{
+    return &TaobaoMessageaccountMesssageMassSendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMessageaccountMesssageMassSendRequest) GetApiMethodName() string {
+func (r TaobaoMessageaccountMesssageMassSendAPIRequest) GetApiMethodName() string {
     return "taobao.messageaccount.messsage.mass.send"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMessageaccountMesssageMassSendRequest) GetApiParams() url.Values {
+func (r TaobaoMessageaccountMesssageMassSendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoMessageaccountMesssageMassSendRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 参数
-func (r *TaobaoMessageaccountMesssageMassSendRequest) SetParam(_param *MassMessageDTO) error {
+func (r *TaobaoMessageaccountMesssageMassSendAPIRequest) SetParam(_param *MassMessageDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoMessageaccountMesssageMassSendRequest) GetParam() *MassMessageDTO {
+func (r TaobaoMessageaccountMesssageMassSendAPIRequest) GetParam() *MassMessageDTO {
     return r._param
 }

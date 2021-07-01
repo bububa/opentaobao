@@ -12,26 +12,26 @@ alibaba.ele.enterprise.restaurant.multispecmenu
 
 查询餐厅菜单
 */
-type AlibabaEleEnterpriseRestaurantMultispecmenuRequest struct {
+type AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest struct {
     model.Params
     // 餐厅ID
     _erestaurantId   string
 }
 
-// 初始化AlibabaEleEnterpriseRestaurantMultispecmenuRequest对象
-func NewAlibabaEleEnterpriseRestaurantMultispecmenuRequest() *AlibabaEleEnterpriseRestaurantMultispecmenuRequest{
-    return &AlibabaEleEnterpriseRestaurantMultispecmenuRequest{
+// 初始化AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest对象
+func NewAlibabaEleEnterpriseRestaurantMultispecmenuRequest() *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest{
+    return &AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseRestaurantMultispecmenuRequest) GetApiMethodName() string {
+func (r AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.enterprise.restaurant.multispecmenu"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseRestaurantMultispecmenuRequest) GetApiParams() url.Values {
+func (r AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEleEnterpriseRestaurantMultispecmenuRequest) GetApiParams() url.V
 }
 // ErestaurantId Setter
 // 餐厅ID
-func (r *AlibabaEleEnterpriseRestaurantMultispecmenuRequest) SetErestaurantId(_erestaurantId string) error {
+func (r *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) SetErestaurantId(_erestaurantId string) error {
     r._erestaurantId = _erestaurantId
     r.Set("erestaurant_id", _erestaurantId)
     return nil
 }
 
 // ErestaurantId Getter
-func (r AlibabaEleEnterpriseRestaurantMultispecmenuRequest) GetErestaurantId() string {
+func (r AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) GetErestaurantId() string {
     return r._erestaurantId
 }

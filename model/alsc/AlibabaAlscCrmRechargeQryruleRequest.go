@@ -12,26 +12,26 @@ alibaba.alsc.crm.recharge.qryrule
 
 储值规则下行
 */
-type AlibabaAlscCrmRechargeQryruleRequest struct {
+type AlibabaAlscCrmRechargeQryruleAPIRequest struct {
     model.Params
     // 请求对象
     _paramPullRechargeRuleByShopReq   *PullRechargeRuleByShopReq
 }
 
-// 初始化AlibabaAlscCrmRechargeQryruleRequest对象
-func NewAlibabaAlscCrmRechargeQryruleRequest() *AlibabaAlscCrmRechargeQryruleRequest{
-    return &AlibabaAlscCrmRechargeQryruleRequest{
+// 初始化AlibabaAlscCrmRechargeQryruleAPIRequest对象
+func NewAlibabaAlscCrmRechargeQryruleRequest() *AlibabaAlscCrmRechargeQryruleAPIRequest{
+    return &AlibabaAlscCrmRechargeQryruleAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRechargeQryruleRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRechargeQryruleAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.recharge.qryrule"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRechargeQryruleRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRechargeQryruleAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeQryruleRequest) GetApiParams() url.Values {
 }
 // ParamPullRechargeRuleByShopReq Setter
 // 请求对象
-func (r *AlibabaAlscCrmRechargeQryruleRequest) SetParamPullRechargeRuleByShopReq(_paramPullRechargeRuleByShopReq *PullRechargeRuleByShopReq) error {
+func (r *AlibabaAlscCrmRechargeQryruleAPIRequest) SetParamPullRechargeRuleByShopReq(_paramPullRechargeRuleByShopReq *PullRechargeRuleByShopReq) error {
     r._paramPullRechargeRuleByShopReq = _paramPullRechargeRuleByShopReq
     r.Set("param_pull_recharge_rule_by_shop_req", _paramPullRechargeRuleByShopReq)
     return nil
 }
 
 // ParamPullRechargeRuleByShopReq Getter
-func (r AlibabaAlscCrmRechargeQryruleRequest) GetParamPullRechargeRuleByShopReq() *PullRechargeRuleByShopReq {
+func (r AlibabaAlscCrmRechargeQryruleAPIRequest) GetParamPullRechargeRuleByShopReq() *PullRechargeRuleByShopReq {
     return r._paramPullRechargeRuleByShopReq
 }

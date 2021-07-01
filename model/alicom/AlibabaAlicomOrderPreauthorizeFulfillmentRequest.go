@@ -12,26 +12,26 @@ alibaba.alicom.order.preauthorize.fulfillment
 
 预授权-履约结果
 */
-type AlibabaAlicomOrderPreauthorizeFulfillmentRequest struct {
+type AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest struct {
     model.Params
     // 入参
     _preAuthorizeModel   *PreAuthorizeModel
 }
 
-// 初始化AlibabaAlicomOrderPreauthorizeFulfillmentRequest对象
-func NewAlibabaAlicomOrderPreauthorizeFulfillmentRequest() *AlibabaAlicomOrderPreauthorizeFulfillmentRequest{
-    return &AlibabaAlicomOrderPreauthorizeFulfillmentRequest{
+// 初始化AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest对象
+func NewAlibabaAlicomOrderPreauthorizeFulfillmentRequest() *AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest{
+    return &AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlicomOrderPreauthorizeFulfillmentRequest) GetApiMethodName() string {
+func (r AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest) GetApiMethodName() string {
     return "alibaba.alicom.order.preauthorize.fulfillment"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlicomOrderPreauthorizeFulfillmentRequest) GetApiParams() url.Values {
+func (r AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlicomOrderPreauthorizeFulfillmentRequest) GetApiParams() url.Val
 }
 // PreAuthorizeModel Setter
 // 入参
-func (r *AlibabaAlicomOrderPreauthorizeFulfillmentRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
+func (r *AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
     r._preAuthorizeModel = _preAuthorizeModel
     r.Set("pre_authorize_model", _preAuthorizeModel)
     return nil
 }
 
 // PreAuthorizeModel Getter
-func (r AlibabaAlicomOrderPreauthorizeFulfillmentRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
+func (r AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
     return r._preAuthorizeModel
 }

@@ -11,7 +11,7 @@ taobao.xhotel.order.detail.search
 
 提供订单详情查询
 */
-func TaobaoXhotelOrderDetailSearch(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderDetailSearchRequest, session string) (*xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIResponse, error) {
+func TaobaoXhotelOrderDetailSearch(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIRequest, session string) (*xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIResponse, error) {
     var resp xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

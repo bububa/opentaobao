@@ -11,7 +11,7 @@ alibaba.ele.enterprise.employee.batchupdate
 
 批量新增更新员工
 */
-func AlibabaEleEnterpriseEmployeeBatchupdate(clt *core.SDKClient, req *eleenterpriseemployee.AlibabaEleEnterpriseEmployeeBatchupdateRequest, session string) (*eleenterpriseemployee.AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse, error) {
+func AlibabaEleEnterpriseEmployeeBatchupdate(clt *core.SDKClient, req *eleenterpriseemployee.AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest, session string) (*eleenterpriseemployee.AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse, error) {
     var resp eleenterpriseemployee.AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

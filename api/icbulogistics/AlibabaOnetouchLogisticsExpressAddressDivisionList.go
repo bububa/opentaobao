@@ -11,7 +11,7 @@ alibaba.onetouch.logistics.express.address.division.list
 
 四级地址库-区
 */
-func AlibabaOnetouchLogisticsExpressAddressDivisionList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListRequest, session string) (*icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIResponse, error) {
+func AlibabaOnetouchLogisticsExpressAddressDivisionList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest, session string) (*icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIResponse, error) {
     var resp icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ cainiao.iot.ticket.sp.vtwo.accept
 
 IoT售后服务商确认接单
 */
-type CainiaoIotTicketSpVtwoAcceptRequest struct {
+type CainiaoIotTicketSpVtwoAcceptAPIRequest struct {
     model.Params
     // 受理接口请求参数
     _acceptTicketTopRequest   *AcceptTicketV2TopRequest
 }
 
-// 初始化CainiaoIotTicketSpVtwoAcceptRequest对象
-func NewCainiaoIotTicketSpVtwoAcceptRequest() *CainiaoIotTicketSpVtwoAcceptRequest{
-    return &CainiaoIotTicketSpVtwoAcceptRequest{
+// 初始化CainiaoIotTicketSpVtwoAcceptAPIRequest对象
+func NewCainiaoIotTicketSpVtwoAcceptRequest() *CainiaoIotTicketSpVtwoAcceptAPIRequest{
+    return &CainiaoIotTicketSpVtwoAcceptAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoIotTicketSpVtwoAcceptRequest) GetApiMethodName() string {
+func (r CainiaoIotTicketSpVtwoAcceptAPIRequest) GetApiMethodName() string {
     return "cainiao.iot.ticket.sp.vtwo.accept"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoIotTicketSpVtwoAcceptRequest) GetApiParams() url.Values {
+func (r CainiaoIotTicketSpVtwoAcceptAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoIotTicketSpVtwoAcceptRequest) GetApiParams() url.Values {
 }
 // AcceptTicketTopRequest Setter
 // 受理接口请求参数
-func (r *CainiaoIotTicketSpVtwoAcceptRequest) SetAcceptTicketTopRequest(_acceptTicketTopRequest *AcceptTicketV2TopRequest) error {
+func (r *CainiaoIotTicketSpVtwoAcceptAPIRequest) SetAcceptTicketTopRequest(_acceptTicketTopRequest *AcceptTicketV2TopRequest) error {
     r._acceptTicketTopRequest = _acceptTicketTopRequest
     r.Set("accept_ticket_top_request", _acceptTicketTopRequest)
     return nil
 }
 
 // AcceptTicketTopRequest Getter
-func (r CainiaoIotTicketSpVtwoAcceptRequest) GetAcceptTicketTopRequest() *AcceptTicketV2TopRequest {
+func (r CainiaoIotTicketSpVtwoAcceptAPIRequest) GetAcceptTicketTopRequest() *AcceptTicketV2TopRequest {
     return r._acceptTicketTopRequest
 }

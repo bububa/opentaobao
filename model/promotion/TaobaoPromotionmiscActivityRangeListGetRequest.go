@@ -12,26 +12,26 @@ taobao.promotionmisc.activity.range.list.get
 
 查询活动参与的商品
 */
-type TaobaoPromotionmiscActivityRangeListGetRequest struct {
+type TaobaoPromotionmiscActivityRangeListGetAPIRequest struct {
     model.Params
     // 活动id
     _activityId   int64
 }
 
-// 初始化TaobaoPromotionmiscActivityRangeListGetRequest对象
-func NewTaobaoPromotionmiscActivityRangeListGetRequest() *TaobaoPromotionmiscActivityRangeListGetRequest{
-    return &TaobaoPromotionmiscActivityRangeListGetRequest{
+// 初始化TaobaoPromotionmiscActivityRangeListGetAPIRequest对象
+func NewTaobaoPromotionmiscActivityRangeListGetRequest() *TaobaoPromotionmiscActivityRangeListGetAPIRequest{
+    return &TaobaoPromotionmiscActivityRangeListGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPromotionmiscActivityRangeListGetRequest) GetApiMethodName() string {
+func (r TaobaoPromotionmiscActivityRangeListGetAPIRequest) GetApiMethodName() string {
     return "taobao.promotionmisc.activity.range.list.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionmiscActivityRangeListGetRequest) GetApiParams() url.Values {
+func (r TaobaoPromotionmiscActivityRangeListGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPromotionmiscActivityRangeListGetRequest) GetApiParams() url.Value
 }
 // ActivityId Setter
 // 活动id
-func (r *TaobaoPromotionmiscActivityRangeListGetRequest) SetActivityId(_activityId int64) error {
+func (r *TaobaoPromotionmiscActivityRangeListGetAPIRequest) SetActivityId(_activityId int64) error {
     r._activityId = _activityId
     r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
-func (r TaobaoPromotionmiscActivityRangeListGetRequest) GetActivityId() int64 {
+func (r TaobaoPromotionmiscActivityRangeListGetAPIRequest) GetActivityId() int64 {
     return r._activityId
 }

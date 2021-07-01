@@ -12,7 +12,7 @@ taobao.top.auth.token.create
 
 用户通过code换获取access_token，https only
 */
-type TaobaoTopAuthTokenCreateRequest struct {
+type TaobaoTopAuthTokenCreateAPIRequest struct {
     model.Params
     // 授权code，grantType==authorization_code 时需要
     _code   string
@@ -20,20 +20,20 @@ type TaobaoTopAuthTokenCreateRequest struct {
     _uuid   string
 }
 
-// 初始化TaobaoTopAuthTokenCreateRequest对象
-func NewTaobaoTopAuthTokenCreateRequest() *TaobaoTopAuthTokenCreateRequest{
-    return &TaobaoTopAuthTokenCreateRequest{
+// 初始化TaobaoTopAuthTokenCreateAPIRequest对象
+func NewTaobaoTopAuthTokenCreateRequest() *TaobaoTopAuthTokenCreateAPIRequest{
+    return &TaobaoTopAuthTokenCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTopAuthTokenCreateRequest) GetApiMethodName() string {
+func (r TaobaoTopAuthTokenCreateAPIRequest) GetApiMethodName() string {
     return "taobao.top.auth.token.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTopAuthTokenCreateRequest) GetApiParams() url.Values {
+func (r TaobaoTopAuthTokenCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoTopAuthTokenCreateRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 授权code，grantType==authorization_code 时需要
-func (r *TaobaoTopAuthTokenCreateRequest) SetCode(_code string) error {
+func (r *TaobaoTopAuthTokenCreateAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r TaobaoTopAuthTokenCreateRequest) GetCode() string {
+func (r TaobaoTopAuthTokenCreateAPIRequest) GetCode() string {
     return r._code
 }
 // Uuid Setter
 // 与生成code的uuid配对
-func (r *TaobaoTopAuthTokenCreateRequest) SetUuid(_uuid string) error {
+func (r *TaobaoTopAuthTokenCreateAPIRequest) SetUuid(_uuid string) error {
     r._uuid = _uuid
     r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
-func (r TaobaoTopAuthTokenCreateRequest) GetUuid() string {
+func (r TaobaoTopAuthTokenCreateAPIRequest) GetUuid() string {
     return r._uuid
 }

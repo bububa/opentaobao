@@ -11,7 +11,7 @@ taobao.jst.interactive.point.increase
 
 向用户发放互动积分
 */
-func TaobaoJstInteractivePointIncrease(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractivePointIncreaseRequest, session string) (*jstinteractive.TaobaoJstInteractivePointIncreaseAPIResponse, error) {
+func TaobaoJstInteractivePointIncrease(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractivePointIncreaseAPIRequest, session string) (*jstinteractive.TaobaoJstInteractivePointIncreaseAPIResponse, error) {
     var resp jstinteractive.TaobaoJstInteractivePointIncreaseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

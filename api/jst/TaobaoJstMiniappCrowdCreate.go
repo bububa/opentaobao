@@ -11,7 +11,7 @@ taobao.jst.miniapp.crowd.create
 
 小程序活动创建
 */
-func TaobaoJstMiniappCrowdCreate(clt *core.SDKClient, req *jst.TaobaoJstMiniappCrowdCreateRequest, session string) (*jst.TaobaoJstMiniappCrowdCreateAPIResponse, error) {
+func TaobaoJstMiniappCrowdCreate(clt *core.SDKClient, req *jst.TaobaoJstMiniappCrowdCreateAPIRequest, session string) (*jst.TaobaoJstMiniappCrowdCreateAPIResponse, error) {
     var resp jst.TaobaoJstMiniappCrowdCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

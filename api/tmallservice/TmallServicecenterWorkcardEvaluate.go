@@ -11,7 +11,7 @@ tmall.servicecenter.workcard.evaluate
 
 服务商反馈鉴定结果
 */
-func TmallServicecenterWorkcardEvaluate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardEvaluateRequest, session string) (*tmallservice.TmallServicecenterWorkcardEvaluateAPIResponse, error) {
+func TmallServicecenterWorkcardEvaluate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardEvaluateAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardEvaluateAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardEvaluateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

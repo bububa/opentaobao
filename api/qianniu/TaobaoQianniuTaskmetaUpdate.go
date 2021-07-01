@@ -11,7 +11,7 @@ taobao.qianniu.taskmeta.update
 
 由任务发起者调用
 */
-func TaobaoQianniuTaskmetaUpdate(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskmetaUpdateRequest, session string) (*qianniu.TaobaoQianniuTaskmetaUpdateAPIResponse, error) {
+func TaobaoQianniuTaskmetaUpdate(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskmetaUpdateAPIRequest, session string) (*qianniu.TaobaoQianniuTaskmetaUpdateAPIResponse, error) {
     var resp qianniu.TaobaoQianniuTaskmetaUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

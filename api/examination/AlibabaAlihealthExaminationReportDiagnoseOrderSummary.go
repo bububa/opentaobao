@@ -11,7 +11,7 @@ alibaba.alihealth.examination.report.diagnose.order.summary
 
 记录体检报告人工解读总结
 */
-func AlibabaAlihealthExaminationReportDiagnoseOrderSummary(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest, session string) (*examination.AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIResponse, error) {
+func AlibabaAlihealthExaminationReportDiagnoseOrderSummary(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest, session string) (*examination.AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIResponse, error) {
     var resp examination.AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.scbp.target.ad.plan.update
 
 定向推广-更新推广计划的基础信息
 */
-type AlibabaScbpTargetAdPlanUpdateRequest struct {
+type AlibabaScbpTargetAdPlanUpdateAPIRequest struct {
     model.Params
     // TopP4pBasicQuickCampaign
     _topP4pBasicQuickCampaign   *TopP4pBasicQuickCampaign
 }
 
-// 初始化AlibabaScbpTargetAdPlanUpdateRequest对象
-func NewAlibabaScbpTargetAdPlanUpdateRequest() *AlibabaScbpTargetAdPlanUpdateRequest{
-    return &AlibabaScbpTargetAdPlanUpdateRequest{
+// 初始化AlibabaScbpTargetAdPlanUpdateAPIRequest对象
+func NewAlibabaScbpTargetAdPlanUpdateRequest() *AlibabaScbpTargetAdPlanUpdateAPIRequest{
+    return &AlibabaScbpTargetAdPlanUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpTargetAdPlanUpdateRequest) GetApiMethodName() string {
+func (r AlibabaScbpTargetAdPlanUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.target.ad.plan.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTargetAdPlanUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaScbpTargetAdPlanUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpTargetAdPlanUpdateRequest) GetApiParams() url.Values {
 }
 // TopP4pBasicQuickCampaign Setter
 // TopP4pBasicQuickCampaign
-func (r *AlibabaScbpTargetAdPlanUpdateRequest) SetTopP4pBasicQuickCampaign(_topP4pBasicQuickCampaign *TopP4pBasicQuickCampaign) error {
+func (r *AlibabaScbpTargetAdPlanUpdateAPIRequest) SetTopP4pBasicQuickCampaign(_topP4pBasicQuickCampaign *TopP4pBasicQuickCampaign) error {
     r._topP4pBasicQuickCampaign = _topP4pBasicQuickCampaign
     r.Set("top_p4p_basic_quick_campaign", _topP4pBasicQuickCampaign)
     return nil
 }
 
 // TopP4pBasicQuickCampaign Getter
-func (r AlibabaScbpTargetAdPlanUpdateRequest) GetTopP4pBasicQuickCampaign() *TopP4pBasicQuickCampaign {
+func (r AlibabaScbpTargetAdPlanUpdateAPIRequest) GetTopP4pBasicQuickCampaign() *TopP4pBasicQuickCampaign {
     return r._topP4pBasicQuickCampaign
 }

@@ -13,7 +13,7 @@ taobao.logistics.consign.tc.confirm
 1、发货过程分为多段操作，在确定发货之前，不需要通知交易，当货确认已发出之后，才通知交易发货。
 2、发货过程涉及到多个订单，其中一个订单是跟实操的发货操作同步的，剩下的订单，需要在实操的订单发货之后，一并通知交易发货。
 */
-func TaobaoLogisticsConsignTcConfirm(clt *core.SDKClient, req *logistic.TaobaoLogisticsConsignTcConfirmRequest, session string) (*logistic.TaobaoLogisticsConsignTcConfirmAPIResponse, error) {
+func TaobaoLogisticsConsignTcConfirm(clt *core.SDKClient, req *logistic.TaobaoLogisticsConsignTcConfirmAPIRequest, session string) (*logistic.TaobaoLogisticsConsignTcConfirmAPIResponse, error) {
     var resp logistic.TaobaoLogisticsConsignTcConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

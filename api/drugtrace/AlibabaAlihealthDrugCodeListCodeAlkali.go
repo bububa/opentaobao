@@ -17,7 +17,7 @@ alibaba.alihealth.drug.code.list.code.alkali
 情况下，需要分多次调用该接口。
 核查平台优先过滤非8开头的，长度非20位数字的码信息。
 */
-func AlibabaAlihealthDrugCodeListCodeAlkali(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeAlkaliRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse, error) {
+func AlibabaAlihealthDrugCodeListCodeAlkali(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

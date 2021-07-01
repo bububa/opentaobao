@@ -11,7 +11,7 @@ taobao.xhotel.rateplan.add
 
 酒店产品库rateplan
 */
-func TaobaoXhotelRateplanAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateplanAddRequest, session string) (*xhotelitem.TaobaoXhotelRateplanAddAPIResponse, error) {
+func TaobaoXhotelRateplanAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateplanAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelRateplanAddAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelRateplanAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

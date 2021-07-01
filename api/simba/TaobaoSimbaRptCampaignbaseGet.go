@@ -11,7 +11,7 @@ taobao.simba.rpt.campaignbase.get
 
 推广计划报表基础数据对象
 */
-func TaobaoSimbaRptCampaignbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCampaignbaseGetRequest, session string) (*simba.TaobaoSimbaRptCampaignbaseGetAPIResponse, error) {
+func TaobaoSimbaRptCampaignbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCampaignbaseGetAPIRequest, session string) (*simba.TaobaoSimbaRptCampaignbaseGetAPIResponse, error) {
     var resp simba.TaobaoSimbaRptCampaignbaseGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

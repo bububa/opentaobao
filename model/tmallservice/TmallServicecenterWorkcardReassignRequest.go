@@ -12,26 +12,26 @@ tmall.servicecenter.workcard.reassign
 
 工单改派门店
 */
-type TmallServicecenterWorkcardReassignRequest struct {
+type TmallServicecenterWorkcardReassignAPIRequest struct {
     model.Params
     // 请求入参
     _reassignStoreRequest   *ReassignStoreRequest
 }
 
-// 初始化TmallServicecenterWorkcardReassignRequest对象
-func NewTmallServicecenterWorkcardReassignRequest() *TmallServicecenterWorkcardReassignRequest{
-    return &TmallServicecenterWorkcardReassignRequest{
+// 初始化TmallServicecenterWorkcardReassignAPIRequest对象
+func NewTmallServicecenterWorkcardReassignRequest() *TmallServicecenterWorkcardReassignAPIRequest{
+    return &TmallServicecenterWorkcardReassignAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkcardReassignRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkcardReassignAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.workcard.reassign"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkcardReassignRequest) GetApiParams() url.Values {
+func (r TmallServicecenterWorkcardReassignAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkcardReassignRequest) GetApiParams() url.Values {
 }
 // ReassignStoreRequest Setter
 // 请求入参
-func (r *TmallServicecenterWorkcardReassignRequest) SetReassignStoreRequest(_reassignStoreRequest *ReassignStoreRequest) error {
+func (r *TmallServicecenterWorkcardReassignAPIRequest) SetReassignStoreRequest(_reassignStoreRequest *ReassignStoreRequest) error {
     r._reassignStoreRequest = _reassignStoreRequest
     r.Set("reassign_store_request", _reassignStoreRequest)
     return nil
 }
 
 // ReassignStoreRequest Getter
-func (r TmallServicecenterWorkcardReassignRequest) GetReassignStoreRequest() *ReassignStoreRequest {
+func (r TmallServicecenterWorkcardReassignAPIRequest) GetReassignStoreRequest() *ReassignStoreRequest {
     return r._reassignStoreRequest
 }

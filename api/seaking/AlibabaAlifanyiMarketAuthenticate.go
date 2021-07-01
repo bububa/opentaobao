@@ -11,7 +11,7 @@ alibaba.alifanyi.market.authenticate
 
 第三方授权，获取授权码
 */
-func AlibabaAlifanyiMarketAuthenticate(clt *core.SDKClient, req *seaking.AlibabaAlifanyiMarketAuthenticateRequest, session string) (*seaking.AlibabaAlifanyiMarketAuthenticateAPIResponse, error) {
+func AlibabaAlifanyiMarketAuthenticate(clt *core.SDKClient, req *seaking.AlibabaAlifanyiMarketAuthenticateAPIRequest, session string) (*seaking.AlibabaAlifanyiMarketAuthenticateAPIResponse, error) {
     var resp seaking.AlibabaAlifanyiMarketAuthenticateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

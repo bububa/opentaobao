@@ -11,7 +11,7 @@ alitrip.travel.crsdriver.arrange
 
 提供给CRS接送机商家派司机的API
 */
-func AlitripTravelCrsdriverArrange(clt *core.SDKClient, req *car.AlitripTravelCrsdriverArrangeRequest, session string) (*car.AlitripTravelCrsdriverArrangeAPIResponse, error) {
+func AlitripTravelCrsdriverArrange(clt *core.SDKClient, req *car.AlitripTravelCrsdriverArrangeAPIRequest, session string) (*car.AlitripTravelCrsdriverArrangeAPIResponse, error) {
     var resp car.AlitripTravelCrsdriverArrangeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

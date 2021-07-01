@@ -12,26 +12,26 @@ taobao.feedflow.item.adgroup.add
 
 信息流增加单元
 */
-type TaobaoFeedflowItemAdgroupAddRequest struct {
+type TaobaoFeedflowItemAdgroupAddAPIRequest struct {
     model.Params
     // 单元信息
     _adgroup   *AdgroupDTO
 }
 
-// 初始化TaobaoFeedflowItemAdgroupAddRequest对象
-func NewTaobaoFeedflowItemAdgroupAddRequest() *TaobaoFeedflowItemAdgroupAddRequest{
-    return &TaobaoFeedflowItemAdgroupAddRequest{
+// 初始化TaobaoFeedflowItemAdgroupAddAPIRequest对象
+func NewTaobaoFeedflowItemAdgroupAddRequest() *TaobaoFeedflowItemAdgroupAddAPIRequest{
+    return &TaobaoFeedflowItemAdgroupAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemAdgroupAddRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemAdgroupAddAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.adgroup.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdgroupAddRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemAdgroupAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemAdgroupAddRequest) GetApiParams() url.Values {
 }
 // Adgroup Setter
 // 单元信息
-func (r *TaobaoFeedflowItemAdgroupAddRequest) SetAdgroup(_adgroup *AdgroupDTO) error {
+func (r *TaobaoFeedflowItemAdgroupAddAPIRequest) SetAdgroup(_adgroup *AdgroupDTO) error {
     r._adgroup = _adgroup
     r.Set("adgroup", _adgroup)
     return nil
 }
 
 // Adgroup Getter
-func (r TaobaoFeedflowItemAdgroupAddRequest) GetAdgroup() *AdgroupDTO {
+func (r TaobaoFeedflowItemAdgroupAddAPIRequest) GetAdgroup() *AdgroupDTO {
     return r._adgroup
 }

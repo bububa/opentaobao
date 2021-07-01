@@ -11,7 +11,7 @@ yunos.osupdate.osfota.query
 
 分页查询osoupdate系统升级列表
 */
-func YunosOsupdateOsfotaQuery(clt *core.SDKClient, req *tvupadmin.YunosOsupdateOsfotaQueryRequest, session string) (*tvupadmin.YunosOsupdateOsfotaQueryAPIResponse, error) {
+func YunosOsupdateOsfotaQuery(clt *core.SDKClient, req *tvupadmin.YunosOsupdateOsfotaQueryAPIRequest, session string) (*tvupadmin.YunosOsupdateOsfotaQueryAPIResponse, error) {
     var resp tvupadmin.YunosOsupdateOsfotaQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

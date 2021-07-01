@@ -11,7 +11,7 @@ alibaba.alihealth.drug.updatebarcode.bytraccode
 
 根据追溯码修改69码
 */
-func AlibabaAlihealthDrugUpdatebarcodeBytraccode(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugUpdatebarcodeBytraccodeRequest, session string) (*drugtrace.AlibabaAlihealthDrugUpdatebarcodeBytraccodeAPIResponse, error) {
+func AlibabaAlihealthDrugUpdatebarcodeBytraccode(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugUpdatebarcodeBytraccodeAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugUpdatebarcodeBytraccodeAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugUpdatebarcodeBytraccodeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

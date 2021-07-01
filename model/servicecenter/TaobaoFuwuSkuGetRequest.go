@@ -12,7 +12,7 @@ taobao.fuwu.sku.get
 
 通过服务code和用户nick，获取该服务对应的收费项目的sku信息，包括价格、可购买周期、用户能否购买等信息
 */
-type TaobaoFuwuSkuGetRequest struct {
+type TaobaoFuwuSkuGetAPIRequest struct {
     model.Params
     // 服务code
     _articleCode   string
@@ -20,20 +20,20 @@ type TaobaoFuwuSkuGetRequest struct {
     _nick   string
 }
 
-// 初始化TaobaoFuwuSkuGetRequest对象
-func NewTaobaoFuwuSkuGetRequest() *TaobaoFuwuSkuGetRequest{
-    return &TaobaoFuwuSkuGetRequest{
+// 初始化TaobaoFuwuSkuGetAPIRequest对象
+func NewTaobaoFuwuSkuGetRequest() *TaobaoFuwuSkuGetAPIRequest{
+    return &TaobaoFuwuSkuGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFuwuSkuGetRequest) GetApiMethodName() string {
+func (r TaobaoFuwuSkuGetAPIRequest) GetApiMethodName() string {
     return "taobao.fuwu.sku.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFuwuSkuGetRequest) GetApiParams() url.Values {
+func (r TaobaoFuwuSkuGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoFuwuSkuGetRequest) GetApiParams() url.Values {
 }
 // ArticleCode Setter
 // 服务code
-func (r *TaobaoFuwuSkuGetRequest) SetArticleCode(_articleCode string) error {
+func (r *TaobaoFuwuSkuGetAPIRequest) SetArticleCode(_articleCode string) error {
     r._articleCode = _articleCode
     r.Set("article_code", _articleCode)
     return nil
 }
 
 // ArticleCode Getter
-func (r TaobaoFuwuSkuGetRequest) GetArticleCode() string {
+func (r TaobaoFuwuSkuGetAPIRequest) GetArticleCode() string {
     return r._articleCode
 }
 // Nick Setter
 // 用户的淘宝nick
-func (r *TaobaoFuwuSkuGetRequest) SetNick(_nick string) error {
+func (r *TaobaoFuwuSkuGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoFuwuSkuGetRequest) GetNick() string {
+func (r TaobaoFuwuSkuGetAPIRequest) GetNick() string {
     return r._nick
 }

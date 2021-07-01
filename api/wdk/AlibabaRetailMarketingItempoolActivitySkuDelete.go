@@ -11,7 +11,7 @@ alibaba.retail.marketing.itempool.activity.sku.delete
 
 删除商品池活动商品信息【同城零售】
 */
-func AlibabaRetailMarketingItempoolActivitySkuDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItempoolActivitySkuDeleteRequest, session string) (*wdk.AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponse, error) {
+func AlibabaRetailMarketingItempoolActivitySkuDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest, session string) (*wdk.AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponse, error) {
     var resp wdk.AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

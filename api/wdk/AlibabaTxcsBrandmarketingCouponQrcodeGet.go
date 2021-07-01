@@ -11,7 +11,7 @@ alibaba.txcs.brandmarketing.coupon.qrcode.get
 
 构建券页码二维码url
 */
-func AlibabaTxcsBrandmarketingCouponQrcodeGet(clt *core.SDKClient, req *wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetRequest, session string) (*wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse, error) {
+func AlibabaTxcsBrandmarketingCouponQrcodeGet(clt *core.SDKClient, req *wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest, session string) (*wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse, error) {
     var resp wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

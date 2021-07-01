@@ -12,26 +12,26 @@ taobao.fuwu.sp.billreord.add
 
 isv能通过该接口上传确认单明细数据
 */
-type TaobaoFuwuSpBillreordAddRequest struct {
+type TaobaoFuwuSpBillreordAddAPIRequest struct {
     model.Params
     // 确认单的账单明细
     _paramBillRecordDTO   *BillRecordDTO
 }
 
-// 初始化TaobaoFuwuSpBillreordAddRequest对象
-func NewTaobaoFuwuSpBillreordAddRequest() *TaobaoFuwuSpBillreordAddRequest{
-    return &TaobaoFuwuSpBillreordAddRequest{
+// 初始化TaobaoFuwuSpBillreordAddAPIRequest对象
+func NewTaobaoFuwuSpBillreordAddRequest() *TaobaoFuwuSpBillreordAddAPIRequest{
+    return &TaobaoFuwuSpBillreordAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFuwuSpBillreordAddRequest) GetApiMethodName() string {
+func (r TaobaoFuwuSpBillreordAddAPIRequest) GetApiMethodName() string {
     return "taobao.fuwu.sp.billreord.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFuwuSpBillreordAddRequest) GetApiParams() url.Values {
+func (r TaobaoFuwuSpBillreordAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFuwuSpBillreordAddRequest) GetApiParams() url.Values {
 }
 // ParamBillRecordDTO Setter
 // 确认单的账单明细
-func (r *TaobaoFuwuSpBillreordAddRequest) SetParamBillRecordDTO(_paramBillRecordDTO *BillRecordDTO) error {
+func (r *TaobaoFuwuSpBillreordAddAPIRequest) SetParamBillRecordDTO(_paramBillRecordDTO *BillRecordDTO) error {
     r._paramBillRecordDTO = _paramBillRecordDTO
     r.Set("param_bill_record_d_t_o", _paramBillRecordDTO)
     return nil
 }
 
 // ParamBillRecordDTO Getter
-func (r TaobaoFuwuSpBillreordAddRequest) GetParamBillRecordDTO() *BillRecordDTO {
+func (r TaobaoFuwuSpBillreordAddAPIRequest) GetParamBillRecordDTO() *BillRecordDTO {
     return r._paramBillRecordDTO
 }

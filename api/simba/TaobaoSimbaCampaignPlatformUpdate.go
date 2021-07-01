@@ -11,7 +11,7 @@ taobao.simba.campaign.platform.update
 
 更新一个推广计划的平台设置
 */
-func TaobaoSimbaCampaignPlatformUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignPlatformUpdateRequest, session string) (*simba.TaobaoSimbaCampaignPlatformUpdateAPIResponse, error) {
+func TaobaoSimbaCampaignPlatformUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignPlatformUpdateAPIRequest, session string) (*simba.TaobaoSimbaCampaignPlatformUpdateAPIResponse, error) {
     var resp simba.TaobaoSimbaCampaignPlatformUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

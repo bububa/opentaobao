@@ -11,7 +11,7 @@ alibaba.ailab.user.authorized.cancel
 
 三方用户取消授权给天猫精灵用户
 */
-func AlibabaAilabUserAuthorizedCancel(clt *core.SDKClient, req *alilabs.AlibabaAilabUserAuthorizedCancelRequest, session string) (*alilabs.AlibabaAilabUserAuthorizedCancelAPIResponse, error) {
+func AlibabaAilabUserAuthorizedCancel(clt *core.SDKClient, req *alilabs.AlibabaAilabUserAuthorizedCancelAPIRequest, session string) (*alilabs.AlibabaAilabUserAuthorizedCancelAPIResponse, error) {
     var resp alilabs.AlibabaAilabUserAuthorizedCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

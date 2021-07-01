@@ -12,7 +12,7 @@ taobao.qianniu.task.increase
 
 根据任务元id增加任务接收人
 */
-type TaobaoQianniuTaskIncreaseRequest struct {
+type TaobaoQianniuTaskIncreaseAPIRequest struct {
     model.Params
     // 任务元id
     _metadataId   int64
@@ -20,20 +20,20 @@ type TaobaoQianniuTaskIncreaseRequest struct {
     _tasks   string
 }
 
-// 初始化TaobaoQianniuTaskIncreaseRequest对象
-func NewTaobaoQianniuTaskIncreaseRequest() *TaobaoQianniuTaskIncreaseRequest{
-    return &TaobaoQianniuTaskIncreaseRequest{
+// 初始化TaobaoQianniuTaskIncreaseAPIRequest对象
+func NewTaobaoQianniuTaskIncreaseRequest() *TaobaoQianniuTaskIncreaseAPIRequest{
+    return &TaobaoQianniuTaskIncreaseAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoQianniuTaskIncreaseRequest) GetApiMethodName() string {
+func (r TaobaoQianniuTaskIncreaseAPIRequest) GetApiMethodName() string {
     return "taobao.qianniu.task.increase"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoQianniuTaskIncreaseRequest) GetApiParams() url.Values {
+func (r TaobaoQianniuTaskIncreaseAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoQianniuTaskIncreaseRequest) GetApiParams() url.Values {
 }
 // MetadataId Setter
 // 任务元id
-func (r *TaobaoQianniuTaskIncreaseRequest) SetMetadataId(_metadataId int64) error {
+func (r *TaobaoQianniuTaskIncreaseAPIRequest) SetMetadataId(_metadataId int64) error {
     r._metadataId = _metadataId
     r.Set("metadata_id", _metadataId)
     return nil
 }
 
 // MetadataId Getter
-func (r TaobaoQianniuTaskIncreaseRequest) GetMetadataId() int64 {
+func (r TaobaoQianniuTaskIncreaseAPIRequest) GetMetadataId() int64 {
     return r._metadataId
 }
 // Tasks Setter
 // 任务列表，JSON格式，例如： tasks =[{ "receiver_uid" : 123, "receiver_nick" : "nick"}, { "receiver_uid" : 456, "receiver_nick" : "nick2"} ]
-func (r *TaobaoQianniuTaskIncreaseRequest) SetTasks(_tasks string) error {
+func (r *TaobaoQianniuTaskIncreaseAPIRequest) SetTasks(_tasks string) error {
     r._tasks = _tasks
     r.Set("tasks", _tasks)
     return nil
 }
 
 // Tasks Getter
-func (r TaobaoQianniuTaskIncreaseRequest) GetTasks() string {
+func (r TaobaoQianniuTaskIncreaseAPIRequest) GetTasks() string {
     return r._tasks
 }

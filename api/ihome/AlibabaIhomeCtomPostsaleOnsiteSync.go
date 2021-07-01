@@ -11,7 +11,7 @@ alibaba.ihome.ctom.postsale.onsite.sync
 
 用于三维家同步售后单上门人员和时间信息
 */
-func AlibabaIhomeCtomPostsaleOnsiteSync(clt *core.SDKClient, req *ihome.AlibabaIhomeCtomPostsaleOnsiteSyncRequest, session string) (*ihome.AlibabaIhomeCtomPostsaleOnsiteSyncAPIResponse, error) {
+func AlibabaIhomeCtomPostsaleOnsiteSync(clt *core.SDKClient, req *ihome.AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest, session string) (*ihome.AlibabaIhomeCtomPostsaleOnsiteSyncAPIResponse, error) {
     var resp ihome.AlibabaIhomeCtomPostsaleOnsiteSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

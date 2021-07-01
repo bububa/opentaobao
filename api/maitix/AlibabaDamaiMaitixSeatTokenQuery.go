@@ -11,7 +11,7 @@ alibaba.damai.maitix.seat.token.query
 
 选座分销，分销商查询token
 */
-func AlibabaDamaiMaitixSeatTokenQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixSeatTokenQueryRequest, session string) (*maitix.AlibabaDamaiMaitixSeatTokenQueryAPIResponse, error) {
+func AlibabaDamaiMaitixSeatTokenQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixSeatTokenQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixSeatTokenQueryAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixSeatTokenQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

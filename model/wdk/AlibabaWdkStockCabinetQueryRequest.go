@@ -12,26 +12,26 @@ alibaba.wdk.stock.cabinet.query
 
 查询仓内实时库位库存信息
 */
-type AlibabaWdkStockCabinetQueryRequest struct {
+type AlibabaWdkStockCabinetQueryAPIRequest struct {
     model.Params
     // 系统自动生成
     _query   *WmsInventoryTopQuery
 }
 
-// 初始化AlibabaWdkStockCabinetQueryRequest对象
-func NewAlibabaWdkStockCabinetQueryRequest() *AlibabaWdkStockCabinetQueryRequest{
-    return &AlibabaWdkStockCabinetQueryRequest{
+// 初始化AlibabaWdkStockCabinetQueryAPIRequest对象
+func NewAlibabaWdkStockCabinetQueryRequest() *AlibabaWdkStockCabinetQueryAPIRequest{
+    return &AlibabaWdkStockCabinetQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkStockCabinetQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkStockCabinetQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.stock.cabinet.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkStockCabinetQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkStockCabinetQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkStockCabinetQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 系统自动生成
-func (r *AlibabaWdkStockCabinetQueryRequest) SetQuery(_query *WmsInventoryTopQuery) error {
+func (r *AlibabaWdkStockCabinetQueryAPIRequest) SetQuery(_query *WmsInventoryTopQuery) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r AlibabaWdkStockCabinetQueryRequest) GetQuery() *WmsInventoryTopQuery {
+func (r AlibabaWdkStockCabinetQueryAPIRequest) GetQuery() *WmsInventoryTopQuery {
     return r._query
 }

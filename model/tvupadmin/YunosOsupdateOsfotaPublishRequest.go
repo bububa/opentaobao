@@ -12,26 +12,26 @@ yunos.osupdate.osfota.publish
 
 发布osupdate系统升级任务
 */
-type YunosOsupdateOsfotaPublishRequest struct {
+type YunosOsupdateOsfotaPublishAPIRequest struct {
     model.Params
     // 入参json格式
     _publishJson   string
 }
 
-// 初始化YunosOsupdateOsfotaPublishRequest对象
-func NewYunosOsupdateOsfotaPublishRequest() *YunosOsupdateOsfotaPublishRequest{
-    return &YunosOsupdateOsfotaPublishRequest{
+// 初始化YunosOsupdateOsfotaPublishAPIRequest对象
+func NewYunosOsupdateOsfotaPublishRequest() *YunosOsupdateOsfotaPublishAPIRequest{
+    return &YunosOsupdateOsfotaPublishAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosOsupdateOsfotaPublishRequest) GetApiMethodName() string {
+func (r YunosOsupdateOsfotaPublishAPIRequest) GetApiMethodName() string {
     return "yunos.osupdate.osfota.publish"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosOsupdateOsfotaPublishRequest) GetApiParams() url.Values {
+func (r YunosOsupdateOsfotaPublishAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosOsupdateOsfotaPublishRequest) GetApiParams() url.Values {
 }
 // PublishJson Setter
 // 入参json格式
-func (r *YunosOsupdateOsfotaPublishRequest) SetPublishJson(_publishJson string) error {
+func (r *YunosOsupdateOsfotaPublishAPIRequest) SetPublishJson(_publishJson string) error {
     r._publishJson = _publishJson
     r.Set("publish_json", _publishJson)
     return nil
 }
 
 // PublishJson Getter
-func (r YunosOsupdateOsfotaPublishRequest) GetPublishJson() string {
+func (r YunosOsupdateOsfotaPublishAPIRequest) GetPublishJson() string {
     return r._publishJson
 }

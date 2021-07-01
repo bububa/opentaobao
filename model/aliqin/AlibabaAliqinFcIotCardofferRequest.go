@@ -12,7 +12,7 @@ alibaba.aliqin.fc.iot.cardoffer
 
 查询物联网卡上订购的offer
 */
-type AlibabaAliqinFcIotCardofferRequest struct {
+type AlibabaAliqinFcIotCardofferAPIRequest struct {
     model.Params
     // 具体ICCID的值
     _billreal   string
@@ -20,20 +20,20 @@ type AlibabaAliqinFcIotCardofferRequest struct {
     _billsource   string
 }
 
-// 初始化AlibabaAliqinFcIotCardofferRequest对象
-func NewAlibabaAliqinFcIotCardofferRequest() *AlibabaAliqinFcIotCardofferRequest{
-    return &AlibabaAliqinFcIotCardofferRequest{
+// 初始化AlibabaAliqinFcIotCardofferAPIRequest对象
+func NewAlibabaAliqinFcIotCardofferRequest() *AlibabaAliqinFcIotCardofferAPIRequest{
+    return &AlibabaAliqinFcIotCardofferAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAliqinFcIotCardofferRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFcIotCardofferAPIRequest) GetApiMethodName() string {
     return "alibaba.aliqin.fc.iot.cardoffer"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinFcIotCardofferRequest) GetApiParams() url.Values {
+func (r AlibabaAliqinFcIotCardofferAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAliqinFcIotCardofferRequest) GetApiParams() url.Values {
 }
 // Billreal Setter
 // 具体ICCID的值
-func (r *AlibabaAliqinFcIotCardofferRequest) SetBillreal(_billreal string) error {
+func (r *AlibabaAliqinFcIotCardofferAPIRequest) SetBillreal(_billreal string) error {
     r._billreal = _billreal
     r.Set("billreal", _billreal)
     return nil
 }
 
 // Billreal Getter
-func (r AlibabaAliqinFcIotCardofferRequest) GetBillreal() string {
+func (r AlibabaAliqinFcIotCardofferAPIRequest) GetBillreal() string {
     return r._billreal
 }
 // Billsource Setter
 // ICCID
-func (r *AlibabaAliqinFcIotCardofferRequest) SetBillsource(_billsource string) error {
+func (r *AlibabaAliqinFcIotCardofferAPIRequest) SetBillsource(_billsource string) error {
     r._billsource = _billsource
     r.Set("billsource", _billsource)
     return nil
 }
 
 // Billsource Getter
-func (r AlibabaAliqinFcIotCardofferRequest) GetBillsource() string {
+func (r AlibabaAliqinFcIotCardofferAPIRequest) GetBillsource() string {
     return r._billsource
 }

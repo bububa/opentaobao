@@ -12,7 +12,7 @@ taobao.mobile.promotion.benefit.activity.send.share
 
 卖家活动中需要通过该API来发放对应的权益。手淘专用、验证分享链路。
 */
-type TaobaoMobilePromotionBenefitActivitySendShareRequest struct {
+type TaobaoMobilePromotionBenefitActivitySendShareAPIRequest struct {
     model.Params
     // 权益类型    其中ALIPAY_COUPON 对应的type值是1
     _benefitType   int64
@@ -36,20 +36,20 @@ type TaobaoMobilePromotionBenefitActivitySendShareRequest struct {
     _uniqueId   string
 }
 
-// 初始化TaobaoMobilePromotionBenefitActivitySendShareRequest对象
-func NewTaobaoMobilePromotionBenefitActivitySendShareRequest() *TaobaoMobilePromotionBenefitActivitySendShareRequest{
-    return &TaobaoMobilePromotionBenefitActivitySendShareRequest{
+// 初始化TaobaoMobilePromotionBenefitActivitySendShareAPIRequest对象
+func NewTaobaoMobilePromotionBenefitActivitySendShareRequest() *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest{
+    return &TaobaoMobilePromotionBenefitActivitySendShareAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetApiMethodName() string {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetApiMethodName() string {
     return "taobao.mobile.promotion.benefit.activity.send.share"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetApiParams() url.Values {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -58,121 +58,121 @@ func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetApiParams() url
 }
 // BenefitType Setter
 // 权益类型    其中ALIPAY_COUPON 对应的type值是1
-func (r *TaobaoMobilePromotionBenefitActivitySendShareRequest) SetBenefitType(_benefitType int64) error {
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetBenefitType(_benefitType int64) error {
     r._benefitType = _benefitType
     r.Set("benefit_type", _benefitType)
     return nil
 }
 
 // BenefitType Getter
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetBenefitType() int64 {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetBenefitType() int64 {
     return r._benefitType
 }
 // BizId Setter
 // 权益关联的活动ID
-func (r *TaobaoMobilePromotionBenefitActivitySendShareRequest) SetBizId(_bizId string) error {
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetBizId(_bizId string) error {
     r._bizId = _bizId
     r.Set("biz_id", _bizId)
     return nil
 }
 
 // BizId Getter
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetBizId() string {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetBizId() string {
     return r._bizId
 }
 // DetailId Setter
 // 活动详情id
-func (r *TaobaoMobilePromotionBenefitActivitySendShareRequest) SetDetailId(_detailId int64) error {
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetDetailId(_detailId int64) error {
     r._detailId = _detailId
     r.Set("detail_id", _detailId)
     return nil
 }
 
 // DetailId Getter
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetDetailId() int64 {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetDetailId() int64 {
     return r._detailId
 }
 // FeedId Setter
 // 广播ID
-func (r *TaobaoMobilePromotionBenefitActivitySendShareRequest) SetFeedId(_feedId int64) error {
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetFeedId(_feedId int64) error {
     r._feedId = _feedId
     r.Set("feed_id", _feedId)
     return nil
 }
 
 // FeedId Getter
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetFeedId() int64 {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetFeedId() int64 {
     return r._feedId
 }
 // RelationId Setter
 // 关联活动id
-func (r *TaobaoMobilePromotionBenefitActivitySendShareRequest) SetRelationId(_relationId int64) error {
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetRelationId(_relationId int64) error {
     r._relationId = _relationId
     r.Set("relation_id", _relationId)
     return nil
 }
 
 // RelationId Getter
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetRelationId() int64 {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetRelationId() int64 {
     return r._relationId
 }
 // SendCount Setter
 // 权益发放数量
-func (r *TaobaoMobilePromotionBenefitActivitySendShareRequest) SetSendCount(_sendCount int64) error {
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetSendCount(_sendCount int64) error {
     r._sendCount = _sendCount
     r.Set("send_count", _sendCount)
     return nil
 }
 
 // SendCount Getter
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetSendCount() int64 {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetSendCount() int64 {
     return r._sendCount
 }
 // ShareKey Setter
 // 和bizId一起使用，标记分享链路的key。
-func (r *TaobaoMobilePromotionBenefitActivitySendShareRequest) SetShareKey(_shareKey string) error {
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetShareKey(_shareKey string) error {
     r._shareKey = _shareKey
     r.Set("share_key", _shareKey)
     return nil
 }
 
 // ShareKey Getter
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetShareKey() string {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetShareKey() string {
     return r._shareKey
 }
 // ShareUsers Setter
 // 分享链路上的用户及用户是否发奖，u1_true,u2_true
-func (r *TaobaoMobilePromotionBenefitActivitySendShareRequest) SetShareUsers(_shareUsers string) error {
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetShareUsers(_shareUsers string) error {
     r._shareUsers = _shareUsers
     r.Set("share_users", _shareUsers)
     return nil
 }
 
 // ShareUsers Getter
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetShareUsers() string {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetShareUsers() string {
     return r._shareUsers
 }
 // TraceId Setter
 // 调试线索
-func (r *TaobaoMobilePromotionBenefitActivitySendShareRequest) SetTraceId(_traceId string) error {
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetTraceId(_traceId string) error {
     r._traceId = _traceId
     r.Set("trace_id", _traceId)
     return nil
 }
 
 // TraceId Getter
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetTraceId() string {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetTraceId() string {
     return r._traceId
 }
 // UniqueId Setter
 // 事务id
-func (r *TaobaoMobilePromotionBenefitActivitySendShareRequest) SetUniqueId(_uniqueId string) error {
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetUniqueId(_uniqueId string) error {
     r._uniqueId = _uniqueId
     r.Set("unique_id", _uniqueId)
     return nil
 }
 
 // UniqueId Getter
-func (r TaobaoMobilePromotionBenefitActivitySendShareRequest) GetUniqueId() string {
+func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetUniqueId() string {
     return r._uniqueId
 }

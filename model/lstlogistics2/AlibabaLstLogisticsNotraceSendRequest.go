@@ -12,26 +12,26 @@ alibaba.lst.logistics.notrace.send
 
 异地云仓的订单，使用无需物流的发货方式来变更订单发货状态
 */
-type AlibabaLstLogisticsNotraceSendRequest struct {
+type AlibabaLstLogisticsNotraceSendAPIRequest struct {
     model.Params
     // 入参
     _param   *SendDummyOrderParam
 }
 
-// 初始化AlibabaLstLogisticsNotraceSendRequest对象
-func NewAlibabaLstLogisticsNotraceSendRequest() *AlibabaLstLogisticsNotraceSendRequest{
-    return &AlibabaLstLogisticsNotraceSendRequest{
+// 初始化AlibabaLstLogisticsNotraceSendAPIRequest对象
+func NewAlibabaLstLogisticsNotraceSendRequest() *AlibabaLstLogisticsNotraceSendAPIRequest{
+    return &AlibabaLstLogisticsNotraceSendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstLogisticsNotraceSendRequest) GetApiMethodName() string {
+func (r AlibabaLstLogisticsNotraceSendAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.logistics.notrace.send"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstLogisticsNotraceSendRequest) GetApiParams() url.Values {
+func (r AlibabaLstLogisticsNotraceSendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstLogisticsNotraceSendRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaLstLogisticsNotraceSendRequest) SetParam(_param *SendDummyOrderParam) error {
+func (r *AlibabaLstLogisticsNotraceSendAPIRequest) SetParam(_param *SendDummyOrderParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaLstLogisticsNotraceSendRequest) GetParam() *SendDummyOrderParam {
+func (r AlibabaLstLogisticsNotraceSendAPIRequest) GetParam() *SendDummyOrderParam {
     return r._param
 }

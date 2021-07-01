@@ -11,7 +11,7 @@ alibaba.campus.device.openapi.feedbackeventinfo
 
 提供给第三方ISV的的事件信息处理反馈的接口
 */
-func AlibabaCampusDeviceOpenapiFeedbackeventinfo(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiFeedbackeventinfoRequest, session string) (*campus.AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIResponse, error) {
+func AlibabaCampusDeviceOpenapiFeedbackeventinfo(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest, session string) (*campus.AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIResponse, error) {
     var resp campus.AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alitrip.ticket.rule.query
 
 门票规则信息查询接口：返回商家上传的门票规则信息
 */
-type AlitripTicketRuleQueryRequest struct {
+type AlitripTicketRuleQueryAPIRequest struct {
     model.Params
     // 卖家景点规则编码
     _outRuleId   string
 }
 
-// 初始化AlitripTicketRuleQueryRequest对象
-func NewAlitripTicketRuleQueryRequest() *AlitripTicketRuleQueryRequest{
-    return &AlitripTicketRuleQueryRequest{
+// 初始化AlitripTicketRuleQueryAPIRequest对象
+func NewAlitripTicketRuleQueryRequest() *AlitripTicketRuleQueryAPIRequest{
+    return &AlitripTicketRuleQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripTicketRuleQueryRequest) GetApiMethodName() string {
+func (r AlitripTicketRuleQueryAPIRequest) GetApiMethodName() string {
     return "alitrip.ticket.rule.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripTicketRuleQueryRequest) GetApiParams() url.Values {
+func (r AlitripTicketRuleQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripTicketRuleQueryRequest) GetApiParams() url.Values {
 }
 // OutRuleId Setter
 // 卖家景点规则编码
-func (r *AlitripTicketRuleQueryRequest) SetOutRuleId(_outRuleId string) error {
+func (r *AlitripTicketRuleQueryAPIRequest) SetOutRuleId(_outRuleId string) error {
     r._outRuleId = _outRuleId
     r.Set("out_rule_id", _outRuleId)
     return nil
 }
 
 // OutRuleId Getter
-func (r AlitripTicketRuleQueryRequest) GetOutRuleId() string {
+func (r AlitripTicketRuleQueryAPIRequest) GetOutRuleId() string {
     return r._outRuleId
 }

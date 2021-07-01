@@ -12,24 +12,24 @@ taobao.httpdns.get
 
 获取TOP DNS配置
 */
-type TaobaoHttpdnsGetRequest struct {
+type TaobaoHttpdnsGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoHttpdnsGetRequest对象
-func NewTaobaoHttpdnsGetRequest() *TaobaoHttpdnsGetRequest{
-    return &TaobaoHttpdnsGetRequest{
+// 初始化TaobaoHttpdnsGetAPIRequest对象
+func NewTaobaoHttpdnsGetRequest() *TaobaoHttpdnsGetAPIRequest{
+    return &TaobaoHttpdnsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoHttpdnsGetRequest) GetApiMethodName() string {
+func (r TaobaoHttpdnsGetAPIRequest) GetApiMethodName() string {
     return "taobao.httpdns.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoHttpdnsGetRequest) GetApiParams() url.Values {
+func (r TaobaoHttpdnsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

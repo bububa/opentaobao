@@ -11,7 +11,7 @@ alibaba.idle.isv.item.publish
 
 服务商ISV闲鱼商品发布
 */
-func AlibabaIdleIsvItemPublish(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvItemPublishRequest, session string) (*idleisv.AlibabaIdleIsvItemPublishAPIResponse, error) {
+func AlibabaIdleIsvItemPublish(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvItemPublishAPIRequest, session string) (*idleisv.AlibabaIdleIsvItemPublishAPIResponse, error) {
     var resp idleisv.AlibabaIdleIsvItemPublishAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

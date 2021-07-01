@@ -12,7 +12,7 @@ taobao.simba.insight.wordspricedata.get
 
 获取关键词按竞价区间进行细分的数据
 */
-type TaobaoSimbaInsightWordspricedataGetRequest struct {
+type TaobaoSimbaInsightWordspricedataGetAPIRequest struct {
     model.Params
     // 关键词
     _bidword   string
@@ -22,20 +22,20 @@ type TaobaoSimbaInsightWordspricedataGetRequest struct {
     _endDate   string
 }
 
-// 初始化TaobaoSimbaInsightWordspricedataGetRequest对象
-func NewTaobaoSimbaInsightWordspricedataGetRequest() *TaobaoSimbaInsightWordspricedataGetRequest{
-    return &TaobaoSimbaInsightWordspricedataGetRequest{
+// 初始化TaobaoSimbaInsightWordspricedataGetAPIRequest对象
+func NewTaobaoSimbaInsightWordspricedataGetRequest() *TaobaoSimbaInsightWordspricedataGetAPIRequest{
+    return &TaobaoSimbaInsightWordspricedataGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaInsightWordspricedataGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaInsightWordspricedataGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.insight.wordspricedata.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaInsightWordspricedataGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaInsightWordspricedataGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoSimbaInsightWordspricedataGetRequest) GetApiParams() url.Values {
 }
 // Bidword Setter
 // 关键词
-func (r *TaobaoSimbaInsightWordspricedataGetRequest) SetBidword(_bidword string) error {
+func (r *TaobaoSimbaInsightWordspricedataGetAPIRequest) SetBidword(_bidword string) error {
     r._bidword = _bidword
     r.Set("bidword", _bidword)
     return nil
 }
 
 // Bidword Getter
-func (r TaobaoSimbaInsightWordspricedataGetRequest) GetBidword() string {
+func (r TaobaoSimbaInsightWordspricedataGetAPIRequest) GetBidword() string {
     return r._bidword
 }
 // StartDate Setter
 // 开始时间，格式：yyyy-MM-dd
-func (r *TaobaoSimbaInsightWordspricedataGetRequest) SetStartDate(_startDate string) error {
+func (r *TaobaoSimbaInsightWordspricedataGetAPIRequest) SetStartDate(_startDate string) error {
     r._startDate = _startDate
     r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
-func (r TaobaoSimbaInsightWordspricedataGetRequest) GetStartDate() string {
+func (r TaobaoSimbaInsightWordspricedataGetAPIRequest) GetStartDate() string {
     return r._startDate
 }
 // EndDate Setter
 // 结束时间，格式：yyyy-MM-dd
-func (r *TaobaoSimbaInsightWordspricedataGetRequest) SetEndDate(_endDate string) error {
+func (r *TaobaoSimbaInsightWordspricedataGetAPIRequest) SetEndDate(_endDate string) error {
     r._endDate = _endDate
     r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
-func (r TaobaoSimbaInsightWordspricedataGetRequest) GetEndDate() string {
+func (r TaobaoSimbaInsightWordspricedataGetAPIRequest) GetEndDate() string {
     return r._endDate
 }

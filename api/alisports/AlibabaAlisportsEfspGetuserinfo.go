@@ -11,7 +11,7 @@ alibaba.alisports.efsp.getuserinfo
 
 阿里体育-体育健身-获取用户详细信息
 */
-func AlibabaAlisportsEfspGetuserinfo(clt *core.SDKClient, req *alisports.AlibabaAlisportsEfspGetuserinfoRequest, session string) (*alisports.AlibabaAlisportsEfspGetuserinfoAPIResponse, error) {
+func AlibabaAlisportsEfspGetuserinfo(clt *core.SDKClient, req *alisports.AlibabaAlisportsEfspGetuserinfoAPIRequest, session string) (*alisports.AlibabaAlisportsEfspGetuserinfoAPIResponse, error) {
     var resp alisports.AlibabaAlisportsEfspGetuserinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

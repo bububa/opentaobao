@@ -12,26 +12,26 @@ alibaba.idle.spu.register.modify
 
 闲鱼服务商通过此接口进行spu挂载，指明自己支持对该spu的服务(回收、验货等)
 */
-type AlibabaIdleSpuRegisterModifyRequest struct {
+type AlibabaIdleSpuRegisterModifyAPIRequest struct {
     model.Params
     // 入参
     _idleSpuRegister4TopDto   *IdleSpuRegister4TopDTO
 }
 
-// 初始化AlibabaIdleSpuRegisterModifyRequest对象
-func NewAlibabaIdleSpuRegisterModifyRequest() *AlibabaIdleSpuRegisterModifyRequest{
-    return &AlibabaIdleSpuRegisterModifyRequest{
+// 初始化AlibabaIdleSpuRegisterModifyAPIRequest对象
+func NewAlibabaIdleSpuRegisterModifyRequest() *AlibabaIdleSpuRegisterModifyAPIRequest{
+    return &AlibabaIdleSpuRegisterModifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleSpuRegisterModifyRequest) GetApiMethodName() string {
+func (r AlibabaIdleSpuRegisterModifyAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.spu.register.modify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleSpuRegisterModifyRequest) GetApiParams() url.Values {
+func (r AlibabaIdleSpuRegisterModifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleSpuRegisterModifyRequest) GetApiParams() url.Values {
 }
 // IdleSpuRegister4TopDto Setter
 // 入参
-func (r *AlibabaIdleSpuRegisterModifyRequest) SetIdleSpuRegister4TopDto(_idleSpuRegister4TopDto *IdleSpuRegister4TopDTO) error {
+func (r *AlibabaIdleSpuRegisterModifyAPIRequest) SetIdleSpuRegister4TopDto(_idleSpuRegister4TopDto *IdleSpuRegister4TopDTO) error {
     r._idleSpuRegister4TopDto = _idleSpuRegister4TopDto
     r.Set("idle_spu_register4_top_dto", _idleSpuRegister4TopDto)
     return nil
 }
 
 // IdleSpuRegister4TopDto Getter
-func (r AlibabaIdleSpuRegisterModifyRequest) GetIdleSpuRegister4TopDto() *IdleSpuRegister4TopDTO {
+func (r AlibabaIdleSpuRegisterModifyAPIRequest) GetIdleSpuRegister4TopDto() *IdleSpuRegister4TopDTO {
     return r._idleSpuRegister4TopDto
 }

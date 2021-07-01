@@ -12,26 +12,26 @@ alitrip.btrip.corpop.apply.search
 
 【商旅】搜索审批单列表
 */
-type AlitripBtripCorpopApplySearchRequest struct {
+type AlitripBtripCorpopApplySearchAPIRequest struct {
     model.Params
     // 请求对象
     _rq   *OpenIsvSearchRq
 }
 
-// 初始化AlitripBtripCorpopApplySearchRequest对象
-func NewAlitripBtripCorpopApplySearchRequest() *AlitripBtripCorpopApplySearchRequest{
-    return &AlitripBtripCorpopApplySearchRequest{
+// 初始化AlitripBtripCorpopApplySearchAPIRequest对象
+func NewAlitripBtripCorpopApplySearchRequest() *AlitripBtripCorpopApplySearchAPIRequest{
+    return &AlitripBtripCorpopApplySearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripCorpopApplySearchRequest) GetApiMethodName() string {
+func (r AlitripBtripCorpopApplySearchAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.corpop.apply.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripCorpopApplySearchRequest) GetApiParams() url.Values {
+func (r AlitripBtripCorpopApplySearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripCorpopApplySearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripCorpopApplySearchRequest) SetRq(_rq *OpenIsvSearchRq) error {
+func (r *AlitripBtripCorpopApplySearchAPIRequest) SetRq(_rq *OpenIsvSearchRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripCorpopApplySearchRequest) GetRq() *OpenIsvSearchRq {
+func (r AlitripBtripCorpopApplySearchAPIRequest) GetRq() *OpenIsvSearchRq {
     return r._rq
 }

@@ -12,26 +12,26 @@ tmall.servicecenter.servicestore.update
 
 用于修改门店/网点信息。多个业务共用
 */
-type TmallServicecenterServicestoreUpdateRequest struct {
+type TmallServicecenterServicestoreUpdateAPIRequest struct {
     model.Params
     // 网点/门店
     _paramServiceStoreDTO   *ServiceStoreDTO
 }
 
-// 初始化TmallServicecenterServicestoreUpdateRequest对象
-func NewTmallServicecenterServicestoreUpdateRequest() *TmallServicecenterServicestoreUpdateRequest{
-    return &TmallServicecenterServicestoreUpdateRequest{
+// 初始化TmallServicecenterServicestoreUpdateAPIRequest对象
+func NewTmallServicecenterServicestoreUpdateRequest() *TmallServicecenterServicestoreUpdateAPIRequest{
+    return &TmallServicecenterServicestoreUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicestoreUpdateRequest) GetApiMethodName() string {
+func (r TmallServicecenterServicestoreUpdateAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicestore.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicestoreUpdateRequest) GetApiParams() url.Values {
+func (r TmallServicecenterServicestoreUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterServicestoreUpdateRequest) GetApiParams() url.Values {
 }
 // ParamServiceStoreDTO Setter
 // 网点/门店
-func (r *TmallServicecenterServicestoreUpdateRequest) SetParamServiceStoreDTO(_paramServiceStoreDTO *ServiceStoreDTO) error {
+func (r *TmallServicecenterServicestoreUpdateAPIRequest) SetParamServiceStoreDTO(_paramServiceStoreDTO *ServiceStoreDTO) error {
     r._paramServiceStoreDTO = _paramServiceStoreDTO
     r.Set("param_service_store_d_t_o", _paramServiceStoreDTO)
     return nil
 }
 
 // ParamServiceStoreDTO Getter
-func (r TmallServicecenterServicestoreUpdateRequest) GetParamServiceStoreDTO() *ServiceStoreDTO {
+func (r TmallServicecenterServicestoreUpdateAPIRequest) GetParamServiceStoreDTO() *ServiceStoreDTO {
     return r._paramServiceStoreDTO
 }

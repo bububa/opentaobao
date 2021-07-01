@@ -12,7 +12,7 @@ taobao.promotionmisc.common.item.activity.list.get
 
 查询通用单品优惠活动列表。
 */
-type TaobaoPromotionmiscCommonItemActivityListGetRequest struct {
+type TaobaoPromotionmiscCommonItemActivityListGetAPIRequest struct {
     model.Params
     // 分页页码，页码从1开始
     _pageNo   int64
@@ -20,20 +20,20 @@ type TaobaoPromotionmiscCommonItemActivityListGetRequest struct {
     _pageSize   int64
 }
 
-// 初始化TaobaoPromotionmiscCommonItemActivityListGetRequest对象
-func NewTaobaoPromotionmiscCommonItemActivityListGetRequest() *TaobaoPromotionmiscCommonItemActivityListGetRequest{
-    return &TaobaoPromotionmiscCommonItemActivityListGetRequest{
+// 初始化TaobaoPromotionmiscCommonItemActivityListGetAPIRequest对象
+func NewTaobaoPromotionmiscCommonItemActivityListGetRequest() *TaobaoPromotionmiscCommonItemActivityListGetAPIRequest{
+    return &TaobaoPromotionmiscCommonItemActivityListGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPromotionmiscCommonItemActivityListGetRequest) GetApiMethodName() string {
+func (r TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) GetApiMethodName() string {
     return "taobao.promotionmisc.common.item.activity.list.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionmiscCommonItemActivityListGetRequest) GetApiParams() url.Values {
+func (r TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoPromotionmiscCommonItemActivityListGetRequest) GetApiParams() url.
 }
 // PageNo Setter
 // 分页页码，页码从1开始
-func (r *TaobaoPromotionmiscCommonItemActivityListGetRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r TaobaoPromotionmiscCommonItemActivityListGetRequest) GetPageNo() int64 {
+func (r TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }
 // PageSize Setter
 // 分页大小，不能超过50
-func (r *TaobaoPromotionmiscCommonItemActivityListGetRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoPromotionmiscCommonItemActivityListGetRequest) GetPageSize() int64 {
+func (r TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

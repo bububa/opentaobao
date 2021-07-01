@@ -11,7 +11,7 @@ alibaba.seaking.imagetranslate.result
 
 获取图片翻译任务结果
 */
-func AlibabaSeakingImagetranslateResult(clt *core.SDKClient, req *seaking.AlibabaSeakingImagetranslateResultRequest, session string) (*seaking.AlibabaSeakingImagetranslateResultAPIResponse, error) {
+func AlibabaSeakingImagetranslateResult(clt *core.SDKClient, req *seaking.AlibabaSeakingImagetranslateResultAPIRequest, session string) (*seaking.AlibabaSeakingImagetranslateResultAPIResponse, error) {
     var resp seaking.AlibabaSeakingImagetranslateResultAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

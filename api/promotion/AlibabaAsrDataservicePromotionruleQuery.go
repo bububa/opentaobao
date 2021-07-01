@@ -11,7 +11,7 @@ alibaba.asr.dataservice.promotionrule.query
 
 查询优惠规则，例如星巴克查询优惠规则
 */
-func AlibabaAsrDataservicePromotionruleQuery(clt *core.SDKClient, req *promotion.AlibabaAsrDataservicePromotionruleQueryRequest, session string) (*promotion.AlibabaAsrDataservicePromotionruleQueryAPIResponse, error) {
+func AlibabaAsrDataservicePromotionruleQuery(clt *core.SDKClient, req *promotion.AlibabaAsrDataservicePromotionruleQueryAPIRequest, session string) (*promotion.AlibabaAsrDataservicePromotionruleQueryAPIResponse, error) {
     var resp promotion.AlibabaAsrDataservicePromotionruleQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.wdk.marketing.open.heartbeat
 
 商家数据同步心跳服务
 */
-type AlibabaWdkMarketingOpenHeartbeatRequest struct {
+type AlibabaWdkMarketingOpenHeartbeatAPIRequest struct {
     model.Params
     // 心跳信息
     _heartBeat   *HeartBeatBo
 }
 
-// 初始化AlibabaWdkMarketingOpenHeartbeatRequest对象
-func NewAlibabaWdkMarketingOpenHeartbeatRequest() *AlibabaWdkMarketingOpenHeartbeatRequest{
-    return &AlibabaWdkMarketingOpenHeartbeatRequest{
+// 初始化AlibabaWdkMarketingOpenHeartbeatAPIRequest对象
+func NewAlibabaWdkMarketingOpenHeartbeatRequest() *AlibabaWdkMarketingOpenHeartbeatAPIRequest{
+    return &AlibabaWdkMarketingOpenHeartbeatAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingOpenHeartbeatRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.open.heartbeat"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingOpenHeartbeatRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingOpenHeartbeatRequest) GetApiParams() url.Values {
 }
 // HeartBeat Setter
 // 心跳信息
-func (r *AlibabaWdkMarketingOpenHeartbeatRequest) SetHeartBeat(_heartBeat *HeartBeatBo) error {
+func (r *AlibabaWdkMarketingOpenHeartbeatAPIRequest) SetHeartBeat(_heartBeat *HeartBeatBo) error {
     r._heartBeat = _heartBeat
     r.Set("heart_beat", _heartBeat)
     return nil
 }
 
 // HeartBeat Getter
-func (r AlibabaWdkMarketingOpenHeartbeatRequest) GetHeartBeat() *HeartBeatBo {
+func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetHeartBeat() *HeartBeatBo {
     return r._heartBeat
 }

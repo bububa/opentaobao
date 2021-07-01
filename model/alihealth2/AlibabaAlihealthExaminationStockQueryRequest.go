@@ -12,7 +12,7 @@ alibaba.alihealth.examination.stock.query
 
 体检机构对接_体检套餐库存查询
 */
-type AlibabaAlihealthExaminationStockQueryRequest struct {
+type AlibabaAlihealthExaminationStockQueryAPIRequest struct {
     model.Params
     // 商户唯一码
     _merchantCode   string
@@ -26,20 +26,20 @@ type AlibabaAlihealthExaminationStockQueryRequest struct {
     _timeTo   string
 }
 
-// 初始化AlibabaAlihealthExaminationStockQueryRequest对象
-func NewAlibabaAlihealthExaminationStockQueryRequest() *AlibabaAlihealthExaminationStockQueryRequest{
-    return &AlibabaAlihealthExaminationStockQueryRequest{
+// 初始化AlibabaAlihealthExaminationStockQueryAPIRequest对象
+func NewAlibabaAlihealthExaminationStockQueryRequest() *AlibabaAlihealthExaminationStockQueryAPIRequest{
+    return &AlibabaAlihealthExaminationStockQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationStockQueryRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthExaminationStockQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.examination.stock.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationStockQueryRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthExaminationStockQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaAlihealthExaminationStockQueryRequest) GetApiParams() url.Values 
 }
 // MerchantCode Setter
 // 商户唯一码
-func (r *AlibabaAlihealthExaminationStockQueryRequest) SetMerchantCode(_merchantCode string) error {
+func (r *AlibabaAlihealthExaminationStockQueryAPIRequest) SetMerchantCode(_merchantCode string) error {
     r._merchantCode = _merchantCode
     r.Set("merchant_code", _merchantCode)
     return nil
 }
 
 // MerchantCode Getter
-func (r AlibabaAlihealthExaminationStockQueryRequest) GetMerchantCode() string {
+func (r AlibabaAlihealthExaminationStockQueryAPIRequest) GetMerchantCode() string {
     return r._merchantCode
 }
 // HospitalId Setter
 // 分院ID
-func (r *AlibabaAlihealthExaminationStockQueryRequest) SetHospitalId(_hospitalId string) error {
+func (r *AlibabaAlihealthExaminationStockQueryAPIRequest) SetHospitalId(_hospitalId string) error {
     r._hospitalId = _hospitalId
     r.Set("hospital_id", _hospitalId)
     return nil
 }
 
 // HospitalId Getter
-func (r AlibabaAlihealthExaminationStockQueryRequest) GetHospitalId() string {
+func (r AlibabaAlihealthExaminationStockQueryAPIRequest) GetHospitalId() string {
     return r._hospitalId
 }
 // PackageId Setter
 // 套餐id
-func (r *AlibabaAlihealthExaminationStockQueryRequest) SetPackageId(_packageId string) error {
+func (r *AlibabaAlihealthExaminationStockQueryAPIRequest) SetPackageId(_packageId string) error {
     r._packageId = _packageId
     r.Set("package_id", _packageId)
     return nil
 }
 
 // PackageId Getter
-func (r AlibabaAlihealthExaminationStockQueryRequest) GetPackageId() string {
+func (r AlibabaAlihealthExaminationStockQueryAPIRequest) GetPackageId() string {
     return r._packageId
 }
 // TimeFrom Setter
 // 开始日期
-func (r *AlibabaAlihealthExaminationStockQueryRequest) SetTimeFrom(_timeFrom string) error {
+func (r *AlibabaAlihealthExaminationStockQueryAPIRequest) SetTimeFrom(_timeFrom string) error {
     r._timeFrom = _timeFrom
     r.Set("time_from", _timeFrom)
     return nil
 }
 
 // TimeFrom Getter
-func (r AlibabaAlihealthExaminationStockQueryRequest) GetTimeFrom() string {
+func (r AlibabaAlihealthExaminationStockQueryAPIRequest) GetTimeFrom() string {
     return r._timeFrom
 }
 // TimeTo Setter
 // 结束日期
-func (r *AlibabaAlihealthExaminationStockQueryRequest) SetTimeTo(_timeTo string) error {
+func (r *AlibabaAlihealthExaminationStockQueryAPIRequest) SetTimeTo(_timeTo string) error {
     r._timeTo = _timeTo
     r.Set("time_to", _timeTo)
     return nil
 }
 
 // TimeTo Getter
-func (r AlibabaAlihealthExaminationStockQueryRequest) GetTimeTo() string {
+func (r AlibabaAlihealthExaminationStockQueryAPIRequest) GetTimeTo() string {
     return r._timeTo
 }

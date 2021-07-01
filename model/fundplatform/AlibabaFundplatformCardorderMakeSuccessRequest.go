@@ -12,26 +12,26 @@ alibaba.fundplatform.cardorder.make.success
 
 当外部业务方调用资金平台异步制卡接口后，资金平台制卡成功后通知异步通知业务方
 */
-type AlibabaFundplatformCardorderMakeSuccessRequest struct {
+type AlibabaFundplatformCardorderMakeSuccessAPIRequest struct {
     model.Params
     // 入参对象
     _request   *AlibabaFundplatformCardorderMakeSuccessStruct
 }
 
-// 初始化AlibabaFundplatformCardorderMakeSuccessRequest对象
-func NewAlibabaFundplatformCardorderMakeSuccessRequest() *AlibabaFundplatformCardorderMakeSuccessRequest{
-    return &AlibabaFundplatformCardorderMakeSuccessRequest{
+// 初始化AlibabaFundplatformCardorderMakeSuccessAPIRequest对象
+func NewAlibabaFundplatformCardorderMakeSuccessRequest() *AlibabaFundplatformCardorderMakeSuccessAPIRequest{
+    return &AlibabaFundplatformCardorderMakeSuccessAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaFundplatformCardorderMakeSuccessRequest) GetApiMethodName() string {
+func (r AlibabaFundplatformCardorderMakeSuccessAPIRequest) GetApiMethodName() string {
     return "alibaba.fundplatform.cardorder.make.success"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaFundplatformCardorderMakeSuccessRequest) GetApiParams() url.Values {
+func (r AlibabaFundplatformCardorderMakeSuccessAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaFundplatformCardorderMakeSuccessRequest) GetApiParams() url.Value
 }
 // Request Setter
 // 入参对象
-func (r *AlibabaFundplatformCardorderMakeSuccessRequest) SetRequest(_request *AlibabaFundplatformCardorderMakeSuccessStruct) error {
+func (r *AlibabaFundplatformCardorderMakeSuccessAPIRequest) SetRequest(_request *AlibabaFundplatformCardorderMakeSuccessStruct) error {
     r._request = _request
     r.Set("request", _request)
     return nil
 }
 
 // Request Getter
-func (r AlibabaFundplatformCardorderMakeSuccessRequest) GetRequest() *AlibabaFundplatformCardorderMakeSuccessStruct {
+func (r AlibabaFundplatformCardorderMakeSuccessAPIRequest) GetRequest() *AlibabaFundplatformCardorderMakeSuccessStruct {
     return r._request
 }

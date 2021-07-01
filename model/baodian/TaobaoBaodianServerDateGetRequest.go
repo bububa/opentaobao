@@ -12,24 +12,24 @@ taobao.baodian.server.date.get
 
 获取服务器时间
 */
-type TaobaoBaodianServerDateGetRequest struct {
+type TaobaoBaodianServerDateGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoBaodianServerDateGetRequest对象
-func NewTaobaoBaodianServerDateGetRequest() *TaobaoBaodianServerDateGetRequest{
-    return &TaobaoBaodianServerDateGetRequest{
+// 初始化TaobaoBaodianServerDateGetAPIRequest对象
+func NewTaobaoBaodianServerDateGetRequest() *TaobaoBaodianServerDateGetAPIRequest{
+    return &TaobaoBaodianServerDateGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBaodianServerDateGetRequest) GetApiMethodName() string {
+func (r TaobaoBaodianServerDateGetAPIRequest) GetApiMethodName() string {
     return "taobao.baodian.server.date.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBaodianServerDateGetRequest) GetApiParams() url.Values {
+func (r TaobaoBaodianServerDateGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

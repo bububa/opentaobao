@@ -12,26 +12,26 @@ alibaba.lsy.crm.activity.store.getstorelist
 
 ISV查询门店
 */
-type AlibabaLsyCrmActivityStoreGetstorelistRequest struct {
+type AlibabaLsyCrmActivityStoreGetstorelistAPIRequest struct {
     model.Params
     // 系统自动生成
     _queryStoreReq   *NrtQueryStoreReq
 }
 
-// 初始化AlibabaLsyCrmActivityStoreGetstorelistRequest对象
-func NewAlibabaLsyCrmActivityStoreGetstorelistRequest() *AlibabaLsyCrmActivityStoreGetstorelistRequest{
-    return &AlibabaLsyCrmActivityStoreGetstorelistRequest{
+// 初始化AlibabaLsyCrmActivityStoreGetstorelistAPIRequest对象
+func NewAlibabaLsyCrmActivityStoreGetstorelistRequest() *AlibabaLsyCrmActivityStoreGetstorelistAPIRequest{
+    return &AlibabaLsyCrmActivityStoreGetstorelistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLsyCrmActivityStoreGetstorelistRequest) GetApiMethodName() string {
+func (r AlibabaLsyCrmActivityStoreGetstorelistAPIRequest) GetApiMethodName() string {
     return "alibaba.lsy.crm.activity.store.getstorelist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLsyCrmActivityStoreGetstorelistRequest) GetApiParams() url.Values {
+func (r AlibabaLsyCrmActivityStoreGetstorelistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmActivityStoreGetstorelistRequest) GetApiParams() url.Values
 }
 // QueryStoreReq Setter
 // 系统自动生成
-func (r *AlibabaLsyCrmActivityStoreGetstorelistRequest) SetQueryStoreReq(_queryStoreReq *NrtQueryStoreReq) error {
+func (r *AlibabaLsyCrmActivityStoreGetstorelistAPIRequest) SetQueryStoreReq(_queryStoreReq *NrtQueryStoreReq) error {
     r._queryStoreReq = _queryStoreReq
     r.Set("query_store_req", _queryStoreReq)
     return nil
 }
 
 // QueryStoreReq Getter
-func (r AlibabaLsyCrmActivityStoreGetstorelistRequest) GetQueryStoreReq() *NrtQueryStoreReq {
+func (r AlibabaLsyCrmActivityStoreGetstorelistAPIRequest) GetQueryStoreReq() *NrtQueryStoreReq {
     return r._queryStoreReq
 }

@@ -11,7 +11,7 @@ taobao.top.ipout.get
 
 获取开放平台出口IP段
 */
-func TaobaoTopIpoutGet(clt *core.SDKClient, req *util.TaobaoTopIpoutGetRequest, session string) (*util.TaobaoTopIpoutGetAPIResponse, error) {
+func TaobaoTopIpoutGet(clt *core.SDKClient, req *util.TaobaoTopIpoutGetAPIRequest, session string) (*util.TaobaoTopIpoutGetAPIResponse, error) {
     var resp util.TaobaoTopIpoutGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

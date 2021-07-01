@@ -12,26 +12,26 @@ taobao.feedflow.item.adzone.rpthourlist
 
 广告主资源包分时数据查询，支持广告主查询最近90天内某一天的资源包维度分时报表数据
 */
-type TaobaoFeedflowItemAdzoneRpthourlistRequest struct {
+type TaobaoFeedflowItemAdzoneRpthourlistAPIRequest struct {
     model.Params
     // 查询参数
     _rptQuery   *RptQueryDTO
 }
 
-// 初始化TaobaoFeedflowItemAdzoneRpthourlistRequest对象
-func NewTaobaoFeedflowItemAdzoneRpthourlistRequest() *TaobaoFeedflowItemAdzoneRpthourlistRequest{
-    return &TaobaoFeedflowItemAdzoneRpthourlistRequest{
+// 初始化TaobaoFeedflowItemAdzoneRpthourlistAPIRequest对象
+func NewTaobaoFeedflowItemAdzoneRpthourlistRequest() *TaobaoFeedflowItemAdzoneRpthourlistAPIRequest{
+    return &TaobaoFeedflowItemAdzoneRpthourlistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemAdzoneRpthourlistRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemAdzoneRpthourlistAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.adzone.rpthourlist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdzoneRpthourlistRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemAdzoneRpthourlistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemAdzoneRpthourlistRequest) GetApiParams() url.Values {
 }
 // RptQuery Setter
 // 查询参数
-func (r *TaobaoFeedflowItemAdzoneRpthourlistRequest) SetRptQuery(_rptQuery *RptQueryDTO) error {
+func (r *TaobaoFeedflowItemAdzoneRpthourlistAPIRequest) SetRptQuery(_rptQuery *RptQueryDTO) error {
     r._rptQuery = _rptQuery
     r.Set("rpt_query", _rptQuery)
     return nil
 }
 
 // RptQuery Getter
-func (r TaobaoFeedflowItemAdzoneRpthourlistRequest) GetRptQuery() *RptQueryDTO {
+func (r TaobaoFeedflowItemAdzoneRpthourlistAPIRequest) GetRptQuery() *RptQueryDTO {
     return r._rptQuery
 }

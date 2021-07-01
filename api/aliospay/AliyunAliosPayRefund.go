@@ -11,7 +11,7 @@ aliyun.alios.pay.refund
 
 商户用来发起退款的接口
 */
-func AliyunAliosPayRefund(clt *core.SDKClient, req *aliospay.AliyunAliosPayRefundRequest, session string) (*aliospay.AliyunAliosPayRefundAPIResponse, error) {
+func AliyunAliosPayRefund(clt *core.SDKClient, req *aliospay.AliyunAliosPayRefundAPIRequest, session string) (*aliospay.AliyunAliosPayRefundAPIResponse, error) {
     var resp aliospay.AliyunAliosPayRefundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

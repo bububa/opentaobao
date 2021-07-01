@@ -12,7 +12,7 @@ taobao.place.store.extend.add
 
 新增授权用户的门店扩展属性
 */
-type TaobaoPlaceStoreExtendAddRequest struct {
+type TaobaoPlaceStoreExtendAddAPIRequest struct {
     model.Params
     // 门店ID
     _storeId   int64
@@ -20,20 +20,20 @@ type TaobaoPlaceStoreExtendAddRequest struct {
     _etv   []ExtendTypeValueTopDTO
 }
 
-// 初始化TaobaoPlaceStoreExtendAddRequest对象
-func NewTaobaoPlaceStoreExtendAddRequest() *TaobaoPlaceStoreExtendAddRequest{
-    return &TaobaoPlaceStoreExtendAddRequest{
+// 初始化TaobaoPlaceStoreExtendAddAPIRequest对象
+func NewTaobaoPlaceStoreExtendAddRequest() *TaobaoPlaceStoreExtendAddAPIRequest{
+    return &TaobaoPlaceStoreExtendAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPlaceStoreExtendAddRequest) GetApiMethodName() string {
+func (r TaobaoPlaceStoreExtendAddAPIRequest) GetApiMethodName() string {
     return "taobao.place.store.extend.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPlaceStoreExtendAddRequest) GetApiParams() url.Values {
+func (r TaobaoPlaceStoreExtendAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoPlaceStoreExtendAddRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoPlaceStoreExtendAddRequest) SetStoreId(_storeId int64) error {
+func (r *TaobaoPlaceStoreExtendAddAPIRequest) SetStoreId(_storeId int64) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r TaobaoPlaceStoreExtendAddRequest) GetStoreId() int64 {
+func (r TaobaoPlaceStoreExtendAddAPIRequest) GetStoreId() int64 {
     return r._storeId
 }
 // Etv Setter
 // 扩展信息
-func (r *TaobaoPlaceStoreExtendAddRequest) SetEtv(_etv []ExtendTypeValueTopDTO) error {
+func (r *TaobaoPlaceStoreExtendAddAPIRequest) SetEtv(_etv []ExtendTypeValueTopDTO) error {
     r._etv = _etv
     r.Set("etv", _etv)
     return nil
 }
 
 // Etv Getter
-func (r TaobaoPlaceStoreExtendAddRequest) GetEtv() []ExtendTypeValueTopDTO {
+func (r TaobaoPlaceStoreExtendAddAPIRequest) GetEtv() []ExtendTypeValueTopDTO {
     return r._etv
 }

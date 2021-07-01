@@ -11,7 +11,7 @@ alibaba.seaking.authmachineapi
 
 机翻Api授权
 */
-func AlibabaSeakingAuthmachineapi(clt *core.SDKClient, req *seaking.AlibabaSeakingAuthmachineapiRequest, session string) (*seaking.AlibabaSeakingAuthmachineapiAPIResponse, error) {
+func AlibabaSeakingAuthmachineapi(clt *core.SDKClient, req *seaking.AlibabaSeakingAuthmachineapiAPIRequest, session string) (*seaking.AlibabaSeakingAuthmachineapiAPIResponse, error) {
     var resp seaking.AlibabaSeakingAuthmachineapiAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

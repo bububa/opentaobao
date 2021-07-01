@@ -12,26 +12,26 @@ alitrip.ship.return.notify
 
 此接口为接入商调用飞猪接口回填退票状态，飞猪平台给用户进行退票退款。飞猪平台保证数据幂等。
 */
-type AlitripShipReturnNotifyRequest struct {
+type AlitripShipReturnNotifyAPIRequest struct {
     model.Params
     // 退票请求入参
     _confirmRefundRQ   *ShipAgentConfirmRefundRq
 }
 
-// 初始化AlitripShipReturnNotifyRequest对象
-func NewAlitripShipReturnNotifyRequest() *AlitripShipReturnNotifyRequest{
-    return &AlitripShipReturnNotifyRequest{
+// 初始化AlitripShipReturnNotifyAPIRequest对象
+func NewAlitripShipReturnNotifyRequest() *AlitripShipReturnNotifyAPIRequest{
+    return &AlitripShipReturnNotifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripShipReturnNotifyRequest) GetApiMethodName() string {
+func (r AlitripShipReturnNotifyAPIRequest) GetApiMethodName() string {
     return "alitrip.ship.return.notify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripShipReturnNotifyRequest) GetApiParams() url.Values {
+func (r AlitripShipReturnNotifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripShipReturnNotifyRequest) GetApiParams() url.Values {
 }
 // ConfirmRefundRQ Setter
 // 退票请求入参
-func (r *AlitripShipReturnNotifyRequest) SetConfirmRefundRQ(_confirmRefundRQ *ShipAgentConfirmRefundRq) error {
+func (r *AlitripShipReturnNotifyAPIRequest) SetConfirmRefundRQ(_confirmRefundRQ *ShipAgentConfirmRefundRq) error {
     r._confirmRefundRQ = _confirmRefundRQ
     r.Set("confirm_refund_r_q", _confirmRefundRQ)
     return nil
 }
 
 // ConfirmRefundRQ Getter
-func (r AlitripShipReturnNotifyRequest) GetConfirmRefundRQ() *ShipAgentConfirmRefundRq {
+func (r AlitripShipReturnNotifyAPIRequest) GetConfirmRefundRQ() *ShipAgentConfirmRefundRq {
     return r._confirmRefundRQ
 }

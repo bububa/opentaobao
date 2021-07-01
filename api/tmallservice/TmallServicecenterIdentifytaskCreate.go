@@ -11,7 +11,7 @@ tmall.servicecenter.identifytask.create
 
 服务商调用该接口进行创建核销单操作
 */
-func TmallServicecenterIdentifytaskCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterIdentifytaskCreateRequest, session string) (*tmallservice.TmallServicecenterIdentifytaskCreateAPIResponse, error) {
+func TmallServicecenterIdentifytaskCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterIdentifytaskCreateAPIRequest, session string) (*tmallservice.TmallServicecenterIdentifytaskCreateAPIResponse, error) {
     var resp tmallservice.TmallServicecenterIdentifytaskCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

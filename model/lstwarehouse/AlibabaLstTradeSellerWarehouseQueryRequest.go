@@ -12,26 +12,26 @@ alibaba.lst.trade.seller.warehouse.query
 
 查询本地云仓商家的仓库
 */
-type AlibabaLstTradeSellerWarehouseQueryRequest struct {
+type AlibabaLstTradeSellerWarehouseQueryAPIRequest struct {
     model.Params
     // 入参
     _warehouseQueryParam   *WarehouseQueryParam
 }
 
-// 初始化AlibabaLstTradeSellerWarehouseQueryRequest对象
-func NewAlibabaLstTradeSellerWarehouseQueryRequest() *AlibabaLstTradeSellerWarehouseQueryRequest{
-    return &AlibabaLstTradeSellerWarehouseQueryRequest{
+// 初始化AlibabaLstTradeSellerWarehouseQueryAPIRequest对象
+func NewAlibabaLstTradeSellerWarehouseQueryRequest() *AlibabaLstTradeSellerWarehouseQueryAPIRequest{
+    return &AlibabaLstTradeSellerWarehouseQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstTradeSellerWarehouseQueryRequest) GetApiMethodName() string {
+func (r AlibabaLstTradeSellerWarehouseQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.trade.seller.warehouse.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstTradeSellerWarehouseQueryRequest) GetApiParams() url.Values {
+func (r AlibabaLstTradeSellerWarehouseQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstTradeSellerWarehouseQueryRequest) GetApiParams() url.Values {
 }
 // WarehouseQueryParam Setter
 // 入参
-func (r *AlibabaLstTradeSellerWarehouseQueryRequest) SetWarehouseQueryParam(_warehouseQueryParam *WarehouseQueryParam) error {
+func (r *AlibabaLstTradeSellerWarehouseQueryAPIRequest) SetWarehouseQueryParam(_warehouseQueryParam *WarehouseQueryParam) error {
     r._warehouseQueryParam = _warehouseQueryParam
     r.Set("warehouse_query_param", _warehouseQueryParam)
     return nil
 }
 
 // WarehouseQueryParam Getter
-func (r AlibabaLstTradeSellerWarehouseQueryRequest) GetWarehouseQueryParam() *WarehouseQueryParam {
+func (r AlibabaLstTradeSellerWarehouseQueryAPIRequest) GetWarehouseQueryParam() *WarehouseQueryParam {
     return r._warehouseQueryParam
 }

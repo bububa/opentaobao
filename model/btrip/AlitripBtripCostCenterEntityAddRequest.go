@@ -12,26 +12,26 @@ alitrip.btrip.cost.center.entity.add
 
 增加外部成本中心人员信息
 */
-type AlitripBtripCostCenterEntityAddRequest struct {
+type AlitripBtripCostCenterEntityAddAPIRequest struct {
     model.Params
     // 请求对象
     _rq   *OpenCostCenterAddEntityRq
 }
 
-// 初始化AlitripBtripCostCenterEntityAddRequest对象
-func NewAlitripBtripCostCenterEntityAddRequest() *AlitripBtripCostCenterEntityAddRequest{
-    return &AlitripBtripCostCenterEntityAddRequest{
+// 初始化AlitripBtripCostCenterEntityAddAPIRequest对象
+func NewAlitripBtripCostCenterEntityAddRequest() *AlitripBtripCostCenterEntityAddAPIRequest{
+    return &AlitripBtripCostCenterEntityAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripCostCenterEntityAddRequest) GetApiMethodName() string {
+func (r AlitripBtripCostCenterEntityAddAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.cost.center.entity.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripCostCenterEntityAddRequest) GetApiParams() url.Values {
+func (r AlitripBtripCostCenterEntityAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripCostCenterEntityAddRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripCostCenterEntityAddRequest) SetRq(_rq *OpenCostCenterAddEntityRq) error {
+func (r *AlitripBtripCostCenterEntityAddAPIRequest) SetRq(_rq *OpenCostCenterAddEntityRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripCostCenterEntityAddRequest) GetRq() *OpenCostCenterAddEntityRq {
+func (r AlitripBtripCostCenterEntityAddAPIRequest) GetRq() *OpenCostCenterAddEntityRq {
     return r._rq
 }

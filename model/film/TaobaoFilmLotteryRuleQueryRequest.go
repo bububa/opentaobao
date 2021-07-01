@@ -12,7 +12,7 @@ taobao.film.lottery.rule.query
 
 淘票票抽奖活动查询API，渠道维度查询
 */
-type TaobaoFilmLotteryRuleQueryRequest struct {
+type TaobaoFilmLotteryRuleQueryAPIRequest struct {
     model.Params
     // 账号类型（TAOBAO\ALIPAY\PHONE）
     _accountType   string
@@ -22,20 +22,20 @@ type TaobaoFilmLotteryRuleQueryRequest struct {
     _accountNo   string
 }
 
-// 初始化TaobaoFilmLotteryRuleQueryRequest对象
-func NewTaobaoFilmLotteryRuleQueryRequest() *TaobaoFilmLotteryRuleQueryRequest{
-    return &TaobaoFilmLotteryRuleQueryRequest{
+// 初始化TaobaoFilmLotteryRuleQueryAPIRequest对象
+func NewTaobaoFilmLotteryRuleQueryRequest() *TaobaoFilmLotteryRuleQueryAPIRequest{
+    return &TaobaoFilmLotteryRuleQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFilmLotteryRuleQueryRequest) GetApiMethodName() string {
+func (r TaobaoFilmLotteryRuleQueryAPIRequest) GetApiMethodName() string {
     return "taobao.film.lottery.rule.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFilmLotteryRuleQueryRequest) GetApiParams() url.Values {
+func (r TaobaoFilmLotteryRuleQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoFilmLotteryRuleQueryRequest) GetApiParams() url.Values {
 }
 // AccountType Setter
 // 账号类型（TAOBAO\ALIPAY\PHONE）
-func (r *TaobaoFilmLotteryRuleQueryRequest) SetAccountType(_accountType string) error {
+func (r *TaobaoFilmLotteryRuleQueryAPIRequest) SetAccountType(_accountType string) error {
     r._accountType = _accountType
     r.Set("account_type", _accountType)
     return nil
 }
 
 // AccountType Getter
-func (r TaobaoFilmLotteryRuleQueryRequest) GetAccountType() string {
+func (r TaobaoFilmLotteryRuleQueryAPIRequest) GetAccountType() string {
     return r._accountType
 }
 // Channel Setter
 // 渠道来源
-func (r *TaobaoFilmLotteryRuleQueryRequest) SetChannel(_channel string) error {
+func (r *TaobaoFilmLotteryRuleQueryAPIRequest) SetChannel(_channel string) error {
     r._channel = _channel
     r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
-func (r TaobaoFilmLotteryRuleQueryRequest) GetChannel() string {
+func (r TaobaoFilmLotteryRuleQueryAPIRequest) GetChannel() string {
     return r._channel
 }
 // AccountNo Setter
 // 账号ID
-func (r *TaobaoFilmLotteryRuleQueryRequest) SetAccountNo(_accountNo string) error {
+func (r *TaobaoFilmLotteryRuleQueryAPIRequest) SetAccountNo(_accountNo string) error {
     r._accountNo = _accountNo
     r.Set("account_no", _accountNo)
     return nil
 }
 
 // AccountNo Getter
-func (r TaobaoFilmLotteryRuleQueryRequest) GetAccountNo() string {
+func (r TaobaoFilmLotteryRuleQueryAPIRequest) GetAccountNo() string {
     return r._accountNo
 }

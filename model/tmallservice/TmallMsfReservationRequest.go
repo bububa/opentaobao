@@ -12,26 +12,26 @@ tmall.msf.reservation
 
 喵师傅预约api
 */
-type TmallMsfReservationRequest struct {
+type TmallMsfReservationAPIRequest struct {
     model.Params
     // 预约内容
     _reservInfo   *ReservationDTO
 }
 
-// 初始化TmallMsfReservationRequest对象
-func NewTmallMsfReservationRequest() *TmallMsfReservationRequest{
-    return &TmallMsfReservationRequest{
+// 初始化TmallMsfReservationAPIRequest对象
+func NewTmallMsfReservationRequest() *TmallMsfReservationAPIRequest{
+    return &TmallMsfReservationAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallMsfReservationRequest) GetApiMethodName() string {
+func (r TmallMsfReservationAPIRequest) GetApiMethodName() string {
     return "tmall.msf.reservation"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallMsfReservationRequest) GetApiParams() url.Values {
+func (r TmallMsfReservationAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallMsfReservationRequest) GetApiParams() url.Values {
 }
 // ReservInfo Setter
 // 预约内容
-func (r *TmallMsfReservationRequest) SetReservInfo(_reservInfo *ReservationDTO) error {
+func (r *TmallMsfReservationAPIRequest) SetReservInfo(_reservInfo *ReservationDTO) error {
     r._reservInfo = _reservInfo
     r.Set("reserv_info", _reservInfo)
     return nil
 }
 
 // ReservInfo Getter
-func (r TmallMsfReservationRequest) GetReservInfo() *ReservationDTO {
+func (r TmallMsfReservationAPIRequest) GetReservInfo() *ReservationDTO {
     return r._reservInfo
 }

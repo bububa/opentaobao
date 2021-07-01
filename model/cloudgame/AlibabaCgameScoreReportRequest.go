@@ -12,26 +12,26 @@ alibaba.cgame.score.report
 
 阿里云游戏, CP游戏合作方通用游戏结果回传接口
 */
-type AlibabaCgameScoreReportRequest struct {
+type AlibabaCgameScoreReportAPIRequest struct {
     model.Params
     // 通用战绩回传数据
     _reportData   *CpCallbackReportDTO
 }
 
-// 初始化AlibabaCgameScoreReportRequest对象
-func NewAlibabaCgameScoreReportRequest() *AlibabaCgameScoreReportRequest{
-    return &AlibabaCgameScoreReportRequest{
+// 初始化AlibabaCgameScoreReportAPIRequest对象
+func NewAlibabaCgameScoreReportRequest() *AlibabaCgameScoreReportAPIRequest{
+    return &AlibabaCgameScoreReportAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCgameScoreReportRequest) GetApiMethodName() string {
+func (r AlibabaCgameScoreReportAPIRequest) GetApiMethodName() string {
     return "alibaba.cgame.score.report"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCgameScoreReportRequest) GetApiParams() url.Values {
+func (r AlibabaCgameScoreReportAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaCgameScoreReportRequest) GetApiParams() url.Values {
 }
 // ReportData Setter
 // 通用战绩回传数据
-func (r *AlibabaCgameScoreReportRequest) SetReportData(_reportData *CpCallbackReportDTO) error {
+func (r *AlibabaCgameScoreReportAPIRequest) SetReportData(_reportData *CpCallbackReportDTO) error {
     r._reportData = _reportData
     r.Set("report_data", _reportData)
     return nil
 }
 
 // ReportData Getter
-func (r AlibabaCgameScoreReportRequest) GetReportData() *CpCallbackReportDTO {
+func (r AlibabaCgameScoreReportAPIRequest) GetReportData() *CpCallbackReportDTO {
     return r._reportData
 }

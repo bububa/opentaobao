@@ -11,7 +11,7 @@ yunos.appstore.open.reportad
 
 外投广告回流上报接口
 */
-func YunosAppstoreOpenReportad(clt *core.SDKClient, req *yunosappstore.YunosAppstoreOpenReportadRequest, session string) (*yunosappstore.YunosAppstoreOpenReportadAPIResponse, error) {
+func YunosAppstoreOpenReportad(clt *core.SDKClient, req *yunosappstore.YunosAppstoreOpenReportadAPIRequest, session string) (*yunosappstore.YunosAppstoreOpenReportadAPIResponse, error) {
     var resp yunosappstore.YunosAppstoreOpenReportadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

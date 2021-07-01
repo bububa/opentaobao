@@ -11,7 +11,7 @@ taobao.simba.rtrpt.bidword.get
 
 获取推广词报表数据
 */
-func TaobaoSimbaRtrptBidwordGet(clt *core.SDKClient, req *simba.TaobaoSimbaRtrptBidwordGetRequest, session string) (*simba.TaobaoSimbaRtrptBidwordGetAPIResponse, error) {
+func TaobaoSimbaRtrptBidwordGet(clt *core.SDKClient, req *simba.TaobaoSimbaRtrptBidwordGetAPIRequest, session string) (*simba.TaobaoSimbaRtrptBidwordGetAPIResponse, error) {
     var resp simba.TaobaoSimbaRtrptBidwordGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

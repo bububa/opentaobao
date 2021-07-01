@@ -12,26 +12,26 @@ alibaba.damai.maitix.opengateway.project.status.query
 
 queryProjectStatusByProjectId
 */
-type AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest struct {
+type AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest struct {
     model.Params
     // 入参dto
     _disProjectStatusQueryParam   *DisProjectStatusQueryDTO
 }
 
-// 初始化AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest对象
-func NewAlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest() *AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest{
-    return &AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest{
+// 初始化AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest对象
+func NewAlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest() *AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest{
+    return &AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.opengateway.project.status.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest) GetApiParams() u
 }
 // DisProjectStatusQueryParam Setter
 // 入参dto
-func (r *AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest) SetDisProjectStatusQueryParam(_disProjectStatusQueryParam *DisProjectStatusQueryDTO) error {
+func (r *AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest) SetDisProjectStatusQueryParam(_disProjectStatusQueryParam *DisProjectStatusQueryDTO) error {
     r._disProjectStatusQueryParam = _disProjectStatusQueryParam
     r.Set("dis_project_status_query_param", _disProjectStatusQueryParam)
     return nil
 }
 
 // DisProjectStatusQueryParam Getter
-func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest) GetDisProjectStatusQueryParam() *DisProjectStatusQueryDTO {
+func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest) GetDisProjectStatusQueryParam() *DisProjectStatusQueryDTO {
     return r._disProjectStatusQueryParam
 }

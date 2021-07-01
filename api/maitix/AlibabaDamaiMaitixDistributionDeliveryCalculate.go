@@ -11,7 +11,7 @@ alibaba.damai.maitix.distribution.delivery.calculate
 
 计算渠道用户下单快递费
 */
-func AlibabaDamaiMaitixDistributionDeliveryCalculate(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse, error) {
+func AlibabaDamaiMaitixDistributionDeliveryCalculate(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

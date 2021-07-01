@@ -12,26 +12,26 @@ taobao.rdc.aligenius.warehouse.reverse.event.update
 
 用于erp回传销退单相关信息到平台
 */
-type TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest struct {
+type TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest struct {
     model.Params
     // 参数
     _param0   *ReverseEventInfoDTO
 }
 
-// 初始化TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest对象
-func NewTaobaoRdcAligeniusWarehouseReverseEventUpdateRequest() *TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest{
-    return &TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest{
+// 初始化TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest对象
+func NewTaobaoRdcAligeniusWarehouseReverseEventUpdateRequest() *TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest{
+    return &TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest) GetApiMethodName() string {
+func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.rdc.aligenius.warehouse.reverse.event.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest) GetApiParams() url
 }
 // Param0 Setter
 // 参数
-func (r *TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest) SetParam0(_param0 *ReverseEventInfoDTO) error {
+func (r *TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest) SetParam0(_param0 *ReverseEventInfoDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest) GetParam0() *ReverseEventInfoDTO {
+func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest) GetParam0() *ReverseEventInfoDTO {
     return r._param0
 }

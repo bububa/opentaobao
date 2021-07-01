@@ -11,7 +11,7 @@ alibaba.einvoice.paper.return
 
 纸质发票结果回传
 */
-func AlibabaEinvoicePaperReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePaperReturnRequest, session string) (*einvoice.AlibabaEinvoicePaperReturnAPIResponse, error) {
+func AlibabaEinvoicePaperReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePaperReturnAPIRequest, session string) (*einvoice.AlibabaEinvoicePaperReturnAPIResponse, error) {
     var resp einvoice.AlibabaEinvoicePaperReturnAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

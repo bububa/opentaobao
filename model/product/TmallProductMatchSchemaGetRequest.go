@@ -12,26 +12,26 @@ tmall.product.match.schema.get
 
 ISV发布商品前，需要先查找到产品ID，这个接口返回查找产品规则入参规则
 */
-type TmallProductMatchSchemaGetRequest struct {
+type TmallProductMatchSchemaGetAPIRequest struct {
     model.Params
     // 商品发布的目标类目，必须是叶子类目
     _categoryId   int64
 }
 
-// 初始化TmallProductMatchSchemaGetRequest对象
-func NewTmallProductMatchSchemaGetRequest() *TmallProductMatchSchemaGetRequest{
-    return &TmallProductMatchSchemaGetRequest{
+// 初始化TmallProductMatchSchemaGetAPIRequest对象
+func NewTmallProductMatchSchemaGetRequest() *TmallProductMatchSchemaGetAPIRequest{
+    return &TmallProductMatchSchemaGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallProductMatchSchemaGetRequest) GetApiMethodName() string {
+func (r TmallProductMatchSchemaGetAPIRequest) GetApiMethodName() string {
     return "tmall.product.match.schema.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallProductMatchSchemaGetRequest) GetApiParams() url.Values {
+func (r TmallProductMatchSchemaGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallProductMatchSchemaGetRequest) GetApiParams() url.Values {
 }
 // CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目
-func (r *TmallProductMatchSchemaGetRequest) SetCategoryId(_categoryId int64) error {
+func (r *TmallProductMatchSchemaGetAPIRequest) SetCategoryId(_categoryId int64) error {
     r._categoryId = _categoryId
     r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
-func (r TmallProductMatchSchemaGetRequest) GetCategoryId() int64 {
+func (r TmallProductMatchSchemaGetAPIRequest) GetCategoryId() int64 {
     return r._categoryId
 }

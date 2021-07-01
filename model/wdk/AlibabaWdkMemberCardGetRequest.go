@@ -12,26 +12,26 @@ alibaba.wdk.member.card.get
 
 根据会员卡查询会员信息
 */
-type AlibabaWdkMemberCardGetRequest struct {
+type AlibabaWdkMemberCardGetAPIRequest struct {
     model.Params
     // 系统自动生成
     _memberQuery   *MemberQueryRequest
 }
 
-// 初始化AlibabaWdkMemberCardGetRequest对象
-func NewAlibabaWdkMemberCardGetRequest() *AlibabaWdkMemberCardGetRequest{
-    return &AlibabaWdkMemberCardGetRequest{
+// 初始化AlibabaWdkMemberCardGetAPIRequest对象
+func NewAlibabaWdkMemberCardGetRequest() *AlibabaWdkMemberCardGetAPIRequest{
+    return &AlibabaWdkMemberCardGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMemberCardGetRequest) GetApiMethodName() string {
+func (r AlibabaWdkMemberCardGetAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.member.card.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMemberCardGetRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMemberCardGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMemberCardGetRequest) GetApiParams() url.Values {
 }
 // MemberQuery Setter
 // 系统自动生成
-func (r *AlibabaWdkMemberCardGetRequest) SetMemberQuery(_memberQuery *MemberQueryRequest) error {
+func (r *AlibabaWdkMemberCardGetAPIRequest) SetMemberQuery(_memberQuery *MemberQueryRequest) error {
     r._memberQuery = _memberQuery
     r.Set("member_query", _memberQuery)
     return nil
 }
 
 // MemberQuery Getter
-func (r AlibabaWdkMemberCardGetRequest) GetMemberQuery() *MemberQueryRequest {
+func (r AlibabaWdkMemberCardGetAPIRequest) GetMemberQuery() *MemberQueryRequest {
     return r._memberQuery
 }

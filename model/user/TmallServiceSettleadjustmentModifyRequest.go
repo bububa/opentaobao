@@ -13,26 +13,26 @@ tmall.service.settleadjustment.modify
 提供给服务商在对结算有异议时，发起结算调整单。
 通过说明调整单ID，调整费用值，调整原因进行结算调整单修改。
 */
-type TmallServiceSettleadjustmentModifyRequest struct {
+type TmallServiceSettleadjustmentModifyAPIRequest struct {
     model.Params
     // 结算调整单父节点
     _paramSettleAdjustmentRequest   *SettleAdjustmentRequest
 }
 
-// 初始化TmallServiceSettleadjustmentModifyRequest对象
-func NewTmallServiceSettleadjustmentModifyRequest() *TmallServiceSettleadjustmentModifyRequest{
-    return &TmallServiceSettleadjustmentModifyRequest{
+// 初始化TmallServiceSettleadjustmentModifyAPIRequest对象
+func NewTmallServiceSettleadjustmentModifyRequest() *TmallServiceSettleadjustmentModifyAPIRequest{
+    return &TmallServiceSettleadjustmentModifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServiceSettleadjustmentModifyRequest) GetApiMethodName() string {
+func (r TmallServiceSettleadjustmentModifyAPIRequest) GetApiMethodName() string {
     return "tmall.service.settleadjustment.modify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServiceSettleadjustmentModifyRequest) GetApiParams() url.Values {
+func (r TmallServiceSettleadjustmentModifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -41,13 +41,13 @@ func (r TmallServiceSettleadjustmentModifyRequest) GetApiParams() url.Values {
 }
 // ParamSettleAdjustmentRequest Setter
 // 结算调整单父节点
-func (r *TmallServiceSettleadjustmentModifyRequest) SetParamSettleAdjustmentRequest(_paramSettleAdjustmentRequest *SettleAdjustmentRequest) error {
+func (r *TmallServiceSettleadjustmentModifyAPIRequest) SetParamSettleAdjustmentRequest(_paramSettleAdjustmentRequest *SettleAdjustmentRequest) error {
     r._paramSettleAdjustmentRequest = _paramSettleAdjustmentRequest
     r.Set("param_settle_adjustment_request", _paramSettleAdjustmentRequest)
     return nil
 }
 
 // ParamSettleAdjustmentRequest Getter
-func (r TmallServiceSettleadjustmentModifyRequest) GetParamSettleAdjustmentRequest() *SettleAdjustmentRequest {
+func (r TmallServiceSettleadjustmentModifyAPIRequest) GetParamSettleAdjustmentRequest() *SettleAdjustmentRequest {
     return r._paramSettleAdjustmentRequest
 }

@@ -12,26 +12,26 @@ alibaba.scbp.target.ad.plan.add
 
 定向推广-新建单条计划
 */
-type AlibabaScbpTargetAdPlanAddRequest struct {
+type AlibabaScbpTargetAdPlanAddAPIRequest struct {
     model.Params
     // 定向推广基础信息
     _topP4pBasicQuickCampaign   *BasicQuickCampaign
 }
 
-// 初始化AlibabaScbpTargetAdPlanAddRequest对象
-func NewAlibabaScbpTargetAdPlanAddRequest() *AlibabaScbpTargetAdPlanAddRequest{
-    return &AlibabaScbpTargetAdPlanAddRequest{
+// 初始化AlibabaScbpTargetAdPlanAddAPIRequest对象
+func NewAlibabaScbpTargetAdPlanAddRequest() *AlibabaScbpTargetAdPlanAddAPIRequest{
+    return &AlibabaScbpTargetAdPlanAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpTargetAdPlanAddRequest) GetApiMethodName() string {
+func (r AlibabaScbpTargetAdPlanAddAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.target.ad.plan.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTargetAdPlanAddRequest) GetApiParams() url.Values {
+func (r AlibabaScbpTargetAdPlanAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpTargetAdPlanAddRequest) GetApiParams() url.Values {
 }
 // TopP4pBasicQuickCampaign Setter
 // 定向推广基础信息
-func (r *AlibabaScbpTargetAdPlanAddRequest) SetTopP4pBasicQuickCampaign(_topP4pBasicQuickCampaign *BasicQuickCampaign) error {
+func (r *AlibabaScbpTargetAdPlanAddAPIRequest) SetTopP4pBasicQuickCampaign(_topP4pBasicQuickCampaign *BasicQuickCampaign) error {
     r._topP4pBasicQuickCampaign = _topP4pBasicQuickCampaign
     r.Set("top_p4p_basic_quick_campaign", _topP4pBasicQuickCampaign)
     return nil
 }
 
 // TopP4pBasicQuickCampaign Getter
-func (r AlibabaScbpTargetAdPlanAddRequest) GetTopP4pBasicQuickCampaign() *BasicQuickCampaign {
+func (r AlibabaScbpTargetAdPlanAddAPIRequest) GetTopP4pBasicQuickCampaign() *BasicQuickCampaign {
     return r._topP4pBasicQuickCampaign
 }

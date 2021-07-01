@@ -11,7 +11,7 @@ taobao.jipiao.agent.order.detail
 
 根据淘宝系统订单号获取订单详情信息
 */
-func TaobaoJipiaoAgentOrderDetail(clt *core.SDKClient, req *jipiao.TaobaoJipiaoAgentOrderDetailRequest, session string) (*jipiao.TaobaoJipiaoAgentOrderDetailAPIResponse, error) {
+func TaobaoJipiaoAgentOrderDetail(clt *core.SDKClient, req *jipiao.TaobaoJipiaoAgentOrderDetailAPIRequest, session string) (*jipiao.TaobaoJipiaoAgentOrderDetailAPIResponse, error) {
     var resp jipiao.TaobaoJipiaoAgentOrderDetailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

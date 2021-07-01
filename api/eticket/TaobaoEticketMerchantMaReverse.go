@@ -11,7 +11,7 @@ taobao.eticket.merchant.ma.reverse
 
 电子凭证平台冲正接口
 */
-func TaobaoEticketMerchantMaReverse(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaReverseRequest, session string) (*eticket.TaobaoEticketMerchantMaReverseAPIResponse, error) {
+func TaobaoEticketMerchantMaReverse(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaReverseAPIRequest, session string) (*eticket.TaobaoEticketMerchantMaReverseAPIResponse, error) {
     var resp eticket.TaobaoEticketMerchantMaReverseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.qimen.stockout.confirm
 
 货品出库后，WMS将状态回传给ERP
 */
-func TaobaoQimenStockoutConfirm(clt *core.SDKClient, req *qimen.TaobaoQimenStockoutConfirmRequest, session string) (*qimen.TaobaoQimenStockoutConfirmAPIResponse, error) {
+func TaobaoQimenStockoutConfirm(clt *core.SDKClient, req *qimen.TaobaoQimenStockoutConfirmAPIRequest, session string) (*qimen.TaobaoQimenStockoutConfirmAPIResponse, error) {
     var resp qimen.TaobaoQimenStockoutConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ taobao.auction.gov.data.realtime.get
 
 提供查询当日法院及下属法院的拍卖统计数据
 */
-type TaobaoAuctionGovDataRealtimeGetRequest struct {
+type TaobaoAuctionGovDataRealtimeGetAPIRequest struct {
     model.Params
     // 法院名称
     _courtName   string
@@ -20,20 +20,20 @@ type TaobaoAuctionGovDataRealtimeGetRequest struct {
     _isIncludeSub   bool
 }
 
-// 初始化TaobaoAuctionGovDataRealtimeGetRequest对象
-func NewTaobaoAuctionGovDataRealtimeGetRequest() *TaobaoAuctionGovDataRealtimeGetRequest{
-    return &TaobaoAuctionGovDataRealtimeGetRequest{
+// 初始化TaobaoAuctionGovDataRealtimeGetAPIRequest对象
+func NewTaobaoAuctionGovDataRealtimeGetRequest() *TaobaoAuctionGovDataRealtimeGetAPIRequest{
+    return &TaobaoAuctionGovDataRealtimeGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAuctionGovDataRealtimeGetRequest) GetApiMethodName() string {
+func (r TaobaoAuctionGovDataRealtimeGetAPIRequest) GetApiMethodName() string {
     return "taobao.auction.gov.data.realtime.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAuctionGovDataRealtimeGetRequest) GetApiParams() url.Values {
+func (r TaobaoAuctionGovDataRealtimeGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoAuctionGovDataRealtimeGetRequest) GetApiParams() url.Values {
 }
 // CourtName Setter
 // 法院名称
-func (r *TaobaoAuctionGovDataRealtimeGetRequest) SetCourtName(_courtName string) error {
+func (r *TaobaoAuctionGovDataRealtimeGetAPIRequest) SetCourtName(_courtName string) error {
     r._courtName = _courtName
     r.Set("court_name", _courtName)
     return nil
 }
 
 // CourtName Getter
-func (r TaobaoAuctionGovDataRealtimeGetRequest) GetCourtName() string {
+func (r TaobaoAuctionGovDataRealtimeGetAPIRequest) GetCourtName() string {
     return r._courtName
 }
 // IsIncludeSub Setter
 // 统计数据是否包含下级法院
-func (r *TaobaoAuctionGovDataRealtimeGetRequest) SetIsIncludeSub(_isIncludeSub bool) error {
+func (r *TaobaoAuctionGovDataRealtimeGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
     r._isIncludeSub = _isIncludeSub
     r.Set("is_include_sub", _isIncludeSub)
     return nil
 }
 
 // IsIncludeSub Getter
-func (r TaobaoAuctionGovDataRealtimeGetRequest) GetIsIncludeSub() bool {
+func (r TaobaoAuctionGovDataRealtimeGetAPIRequest) GetIsIncludeSub() bool {
     return r._isIncludeSub
 }

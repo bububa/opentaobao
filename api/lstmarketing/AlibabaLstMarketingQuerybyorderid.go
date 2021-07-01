@@ -11,7 +11,7 @@ alibaba.lst.marketing.querybyorderid
 
 根据订单查询营销信息
 */
-func AlibabaLstMarketingQuerybyorderid(clt *core.SDKClient, req *lstmarketing.AlibabaLstMarketingQuerybyorderidRequest, session string) (*lstmarketing.AlibabaLstMarketingQuerybyorderidAPIResponse, error) {
+func AlibabaLstMarketingQuerybyorderid(clt *core.SDKClient, req *lstmarketing.AlibabaLstMarketingQuerybyorderidAPIRequest, session string) (*lstmarketing.AlibabaLstMarketingQuerybyorderidAPIResponse, error) {
     var resp lstmarketing.AlibabaLstMarketingQuerybyorderidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

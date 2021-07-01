@@ -12,26 +12,26 @@ yunos.tvpubadmin.content.app.querybylicence
 
 按牌照查询应用
 */
-type YunosTvpubadminContentAppQuerybylicenceRequest struct {
+type YunosTvpubadminContentAppQuerybylicenceAPIRequest struct {
     model.Params
     // 查询条件
     _query   string
 }
 
-// 初始化YunosTvpubadminContentAppQuerybylicenceRequest对象
-func NewYunosTvpubadminContentAppQuerybylicenceRequest() *YunosTvpubadminContentAppQuerybylicenceRequest{
-    return &YunosTvpubadminContentAppQuerybylicenceRequest{
+// 初始化YunosTvpubadminContentAppQuerybylicenceAPIRequest对象
+func NewYunosTvpubadminContentAppQuerybylicenceRequest() *YunosTvpubadminContentAppQuerybylicenceAPIRequest{
+    return &YunosTvpubadminContentAppQuerybylicenceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentAppQuerybylicenceRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentAppQuerybylicenceAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.app.querybylicence"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentAppQuerybylicenceRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentAppQuerybylicenceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentAppQuerybylicenceRequest) GetApiParams() url.Value
 }
 // Query Setter
 // 查询条件
-func (r *YunosTvpubadminContentAppQuerybylicenceRequest) SetQuery(_query string) error {
+func (r *YunosTvpubadminContentAppQuerybylicenceAPIRequest) SetQuery(_query string) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r YunosTvpubadminContentAppQuerybylicenceRequest) GetQuery() string {
+func (r YunosTvpubadminContentAppQuerybylicenceAPIRequest) GetQuery() string {
     return r._query
 }

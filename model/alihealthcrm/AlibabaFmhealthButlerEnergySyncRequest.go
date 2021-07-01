@@ -12,7 +12,7 @@ alibaba.fmhealth.butler.energy.sync
 
 同步用户消耗能量，用户消耗s点或卡路里后，同步给健康平台
 */
-type AlibabaFmhealthButlerEnergySyncRequest struct {
+type AlibabaFmhealthButlerEnergySyncAPIRequest struct {
     model.Params
     // 阿里用户id
     _userId   int64
@@ -26,20 +26,20 @@ type AlibabaFmhealthButlerEnergySyncRequest struct {
     _sport   *BigDecimal
 }
 
-// 初始化AlibabaFmhealthButlerEnergySyncRequest对象
-func NewAlibabaFmhealthButlerEnergySyncRequest() *AlibabaFmhealthButlerEnergySyncRequest{
-    return &AlibabaFmhealthButlerEnergySyncRequest{
+// 初始化AlibabaFmhealthButlerEnergySyncAPIRequest对象
+func NewAlibabaFmhealthButlerEnergySyncRequest() *AlibabaFmhealthButlerEnergySyncAPIRequest{
+    return &AlibabaFmhealthButlerEnergySyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaFmhealthButlerEnergySyncRequest) GetApiMethodName() string {
+func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetApiMethodName() string {
     return "alibaba.fmhealth.butler.energy.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaFmhealthButlerEnergySyncRequest) GetApiParams() url.Values {
+func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaFmhealthButlerEnergySyncRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 阿里用户id
-func (r *AlibabaFmhealthButlerEnergySyncRequest) SetUserId(_userId int64) error {
+func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) SetUserId(_userId int64) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r AlibabaFmhealthButlerEnergySyncRequest) GetUserId() int64 {
+func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetUserId() int64 {
     return r._userId
 }
 // Value Setter
 // 每日已消耗能量
-func (r *AlibabaFmhealthButlerEnergySyncRequest) SetValue(_value *BigDecimal) error {
+func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) SetValue(_value *BigDecimal) error {
     r._value = _value
     r.Set("value", _value)
     return nil
 }
 
 // Value Getter
-func (r AlibabaFmhealthButlerEnergySyncRequest) GetValue() *BigDecimal {
+func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetValue() *BigDecimal {
     return r._value
 }
 // EnergyType Setter
 // “S”- s点 “CAL”- 卡路里
-func (r *AlibabaFmhealthButlerEnergySyncRequest) SetEnergyType(_energyType string) error {
+func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) SetEnergyType(_energyType string) error {
     r._energyType = _energyType
     r.Set("energy_type", _energyType)
     return nil
 }
 
 // EnergyType Getter
-func (r AlibabaFmhealthButlerEnergySyncRequest) GetEnergyType() string {
+func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetEnergyType() string {
     return r._energyType
 }
 // Target Setter
 // 每日可消耗能量
-func (r *AlibabaFmhealthButlerEnergySyncRequest) SetTarget(_target *BigDecimal) error {
+func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) SetTarget(_target *BigDecimal) error {
     r._target = _target
     r.Set("target", _target)
     return nil
 }
 
 // Target Getter
-func (r AlibabaFmhealthButlerEnergySyncRequest) GetTarget() *BigDecimal {
+func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetTarget() *BigDecimal {
     return r._target
 }
 // Sport Setter
 // 每日运动消耗能量值
-func (r *AlibabaFmhealthButlerEnergySyncRequest) SetSport(_sport *BigDecimal) error {
+func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) SetSport(_sport *BigDecimal) error {
     r._sport = _sport
     r.Set("sport", _sport)
     return nil
 }
 
 // Sport Getter
-func (r AlibabaFmhealthButlerEnergySyncRequest) GetSport() *BigDecimal {
+func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetSport() *BigDecimal {
     return r._sport
 }

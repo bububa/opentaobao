@@ -11,7 +11,7 @@ yunos.appstore.open.getads
 
 将广告外投给外部合作伙伴
 */
-func YunosAppstoreOpenGetads(clt *core.SDKClient, req *yunosappstore.YunosAppstoreOpenGetadsRequest, session string) (*yunosappstore.YunosAppstoreOpenGetadsAPIResponse, error) {
+func YunosAppstoreOpenGetads(clt *core.SDKClient, req *yunosappstore.YunosAppstoreOpenGetadsAPIRequest, session string) (*yunosappstore.YunosAppstoreOpenGetadsAPIResponse, error) {
     var resp yunosappstore.YunosAppstoreOpenGetadsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

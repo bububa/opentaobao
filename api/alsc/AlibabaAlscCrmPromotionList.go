@@ -11,7 +11,7 @@ alibaba.alsc.crm.promotion.list
 
 获取品牌的促销规则列表
 */
-func AlibabaAlscCrmPromotionList(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPromotionListRequest, session string) (*alsc.AlibabaAlscCrmPromotionListAPIResponse, error) {
+func AlibabaAlscCrmPromotionList(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPromotionListAPIRequest, session string) (*alsc.AlibabaAlscCrmPromotionListAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmPromotionListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

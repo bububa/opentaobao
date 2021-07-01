@@ -12,24 +12,24 @@ alitrip.ship.product.syncbase
 
 基础信息修改回调
 */
-type AlitripShipProductSyncbaseRequest struct {
+type AlitripShipProductSyncbaseAPIRequest struct {
     model.Params
 }
 
-// 初始化AlitripShipProductSyncbaseRequest对象
-func NewAlitripShipProductSyncbaseRequest() *AlitripShipProductSyncbaseRequest{
-    return &AlitripShipProductSyncbaseRequest{
+// 初始化AlitripShipProductSyncbaseAPIRequest对象
+func NewAlitripShipProductSyncbaseRequest() *AlitripShipProductSyncbaseAPIRequest{
+    return &AlitripShipProductSyncbaseAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripShipProductSyncbaseRequest) GetApiMethodName() string {
+func (r AlitripShipProductSyncbaseAPIRequest) GetApiMethodName() string {
     return "alitrip.ship.product.syncbase"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripShipProductSyncbaseRequest) GetApiParams() url.Values {
+func (r AlitripShipProductSyncbaseAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

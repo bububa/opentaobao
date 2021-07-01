@@ -11,7 +11,7 @@ taobao.taotv.carousel.channel.all
 
 获取所有频道列表，按照序号升序
 */
-func TaobaoTaotvCarouselChannelAll(clt *core.SDKClient, req *taotv.TaobaoTaotvCarouselChannelAllRequest, session string) (*taotv.TaobaoTaotvCarouselChannelAllAPIResponse, error) {
+func TaobaoTaotvCarouselChannelAll(clt *core.SDKClient, req *taotv.TaobaoTaotvCarouselChannelAllAPIRequest, session string) (*taotv.TaobaoTaotvCarouselChannelAllAPIResponse, error) {
     var resp taotv.TaobaoTaotvCarouselChannelAllAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

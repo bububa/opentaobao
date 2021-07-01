@@ -11,7 +11,7 @@ taobao.xhotel.rate.update
 
 酒店产品库rate更新
 */
-func TaobaoXhotelRateUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateUpdateRequest, session string) (*xhotelitem.TaobaoXhotelRateUpdateAPIResponse, error) {
+func TaobaoXhotelRateUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateUpdateAPIRequest, session string) (*xhotelitem.TaobaoXhotelRateUpdateAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelRateUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

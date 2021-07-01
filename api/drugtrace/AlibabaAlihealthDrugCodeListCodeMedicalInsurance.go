@@ -17,7 +17,7 @@ alibaba.alihealth.drug.code.list.code.medical.insurance
 情况下，需要分多次调用该接口。
 核查平台优先过滤非8开头的，长度非20位数字的码信息。
 */
-func AlibabaAlihealthDrugCodeListCodeMedicalInsurance(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeMedicalInsuranceRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse, error) {
+func AlibabaAlihealthDrugCodeListCodeMedicalInsurance(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

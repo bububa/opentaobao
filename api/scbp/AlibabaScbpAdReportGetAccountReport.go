@@ -11,7 +11,7 @@ alibaba.scbp.ad.report.get.account.report
 
 账户报告
 */
-func AlibabaScbpAdReportGetAccountReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetAccountReportRequest, session string) (*scbp.AlibabaScbpAdReportGetAccountReportAPIResponse, error) {
+func AlibabaScbpAdReportGetAccountReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetAccountReportAPIRequest, session string) (*scbp.AlibabaScbpAdReportGetAccountReportAPIResponse, error) {
     var resp scbp.AlibabaScbpAdReportGetAccountReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

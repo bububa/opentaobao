@@ -12,26 +12,26 @@ taobao.bus.ticket.set
 
 提供给汽车票商家出票使用
 */
-type TaobaoBusTicketSetRequest struct {
+type TaobaoBusTicketSetAPIRequest struct {
     model.Params
     // 系统自动生成
     _ticketParams   *B2BBookOrderRq
 }
 
-// 初始化TaobaoBusTicketSetRequest对象
-func NewTaobaoBusTicketSetRequest() *TaobaoBusTicketSetRequest{
-    return &TaobaoBusTicketSetRequest{
+// 初始化TaobaoBusTicketSetAPIRequest对象
+func NewTaobaoBusTicketSetRequest() *TaobaoBusTicketSetAPIRequest{
+    return &TaobaoBusTicketSetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBusTicketSetRequest) GetApiMethodName() string {
+func (r TaobaoBusTicketSetAPIRequest) GetApiMethodName() string {
     return "taobao.bus.ticket.set"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBusTicketSetRequest) GetApiParams() url.Values {
+func (r TaobaoBusTicketSetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBusTicketSetRequest) GetApiParams() url.Values {
 }
 // TicketParams Setter
 // 系统自动生成
-func (r *TaobaoBusTicketSetRequest) SetTicketParams(_ticketParams *B2BBookOrderRq) error {
+func (r *TaobaoBusTicketSetAPIRequest) SetTicketParams(_ticketParams *B2BBookOrderRq) error {
     r._ticketParams = _ticketParams
     r.Set("ticket_params", _ticketParams)
     return nil
 }
 
 // TicketParams Getter
-func (r TaobaoBusTicketSetRequest) GetTicketParams() *B2BBookOrderRq {
+func (r TaobaoBusTicketSetAPIRequest) GetTicketParams() *B2BBookOrderRq {
     return r._ticketParams
 }

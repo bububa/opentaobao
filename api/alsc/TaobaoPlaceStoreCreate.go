@@ -11,7 +11,7 @@ taobao.place.store.create
 
 用于商家创建线下门店
 */
-func TaobaoPlaceStoreCreate(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreCreateRequest, session string) (*alsc.TaobaoPlaceStoreCreateAPIResponse, error) {
+func TaobaoPlaceStoreCreate(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreCreateAPIRequest, session string) (*alsc.TaobaoPlaceStoreCreateAPIResponse, error) {
     var resp alsc.TaobaoPlaceStoreCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

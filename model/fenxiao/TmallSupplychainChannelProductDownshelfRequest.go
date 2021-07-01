@@ -12,26 +12,26 @@ tmall.supplychain.channel.product.downshelf
 
 产品下架
 */
-type TmallSupplychainChannelProductDownshelfRequest struct {
+type TmallSupplychainChannelProductDownshelfAPIRequest struct {
     model.Params
     // 产品ID
     _productId   int64
 }
 
-// 初始化TmallSupplychainChannelProductDownshelfRequest对象
-func NewTmallSupplychainChannelProductDownshelfRequest() *TmallSupplychainChannelProductDownshelfRequest{
-    return &TmallSupplychainChannelProductDownshelfRequest{
+// 初始化TmallSupplychainChannelProductDownshelfAPIRequest对象
+func NewTmallSupplychainChannelProductDownshelfRequest() *TmallSupplychainChannelProductDownshelfAPIRequest{
+    return &TmallSupplychainChannelProductDownshelfAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallSupplychainChannelProductDownshelfRequest) GetApiMethodName() string {
+func (r TmallSupplychainChannelProductDownshelfAPIRequest) GetApiMethodName() string {
     return "tmall.supplychain.channel.product.downshelf"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallSupplychainChannelProductDownshelfRequest) GetApiParams() url.Values {
+func (r TmallSupplychainChannelProductDownshelfAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallSupplychainChannelProductDownshelfRequest) GetApiParams() url.Value
 }
 // ProductId Setter
 // 产品ID
-func (r *TmallSupplychainChannelProductDownshelfRequest) SetProductId(_productId int64) error {
+func (r *TmallSupplychainChannelProductDownshelfAPIRequest) SetProductId(_productId int64) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r TmallSupplychainChannelProductDownshelfRequest) GetProductId() int64 {
+func (r TmallSupplychainChannelProductDownshelfAPIRequest) GetProductId() int64 {
     return r._productId
 }

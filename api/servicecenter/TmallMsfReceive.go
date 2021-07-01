@@ -11,7 +11,7 @@ tmall.msf.receive
 
 签收接口
 */
-func TmallMsfReceive(clt *core.SDKClient, req *servicecenter.TmallMsfReceiveRequest, session string) (*servicecenter.TmallMsfReceiveAPIResponse, error) {
+func TmallMsfReceive(clt *core.SDKClient, req *servicecenter.TmallMsfReceiveAPIRequest, session string) (*servicecenter.TmallMsfReceiveAPIResponse, error) {
     var resp servicecenter.TmallMsfReceiveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

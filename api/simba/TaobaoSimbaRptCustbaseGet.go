@@ -11,7 +11,7 @@ taobao.simba.rpt.custbase.get
 
 客户账户报表基础数据对象
 */
-func TaobaoSimbaRptCustbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCustbaseGetRequest, session string) (*simba.TaobaoSimbaRptCustbaseGetAPIResponse, error) {
+func TaobaoSimbaRptCustbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCustbaseGetAPIRequest, session string) (*simba.TaobaoSimbaRptCustbaseGetAPIResponse, error) {
     var resp simba.TaobaoSimbaRptCustbaseGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

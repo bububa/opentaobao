@@ -11,7 +11,7 @@ alibaba.idle.rent.item.add
 
 发布闲鱼租赁商品
 */
-func AlibabaIdleRentItemAdd(clt *core.SDKClient, req *idle.AlibabaIdleRentItemAddRequest, session string) (*idle.AlibabaIdleRentItemAddAPIResponse, error) {
+func AlibabaIdleRentItemAdd(clt *core.SDKClient, req *idle.AlibabaIdleRentItemAddAPIRequest, session string) (*idle.AlibabaIdleRentItemAddAPIResponse, error) {
     var resp idle.AlibabaIdleRentItemAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

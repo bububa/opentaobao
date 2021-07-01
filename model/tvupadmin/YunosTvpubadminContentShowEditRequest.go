@@ -12,26 +12,26 @@ yunos.tvpubadmin.content.show.edit
 
 供迎客松修改媒资节目信息
 */
-type YunosTvpubadminContentShowEditRequest struct {
+type YunosTvpubadminContentShowEditAPIRequest struct {
     model.Params
     // 请求入参，JSON格式
     _data   string
 }
 
-// 初始化YunosTvpubadminContentShowEditRequest对象
-func NewYunosTvpubadminContentShowEditRequest() *YunosTvpubadminContentShowEditRequest{
-    return &YunosTvpubadminContentShowEditRequest{
+// 初始化YunosTvpubadminContentShowEditAPIRequest对象
+func NewYunosTvpubadminContentShowEditRequest() *YunosTvpubadminContentShowEditAPIRequest{
+    return &YunosTvpubadminContentShowEditAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentShowEditRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentShowEditAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.show.edit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentShowEditRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentShowEditAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentShowEditRequest) GetApiParams() url.Values {
 }
 // Data Setter
 // 请求入参，JSON格式
-func (r *YunosTvpubadminContentShowEditRequest) SetData(_data string) error {
+func (r *YunosTvpubadminContentShowEditAPIRequest) SetData(_data string) error {
     r._data = _data
     r.Set("data", _data)
     return nil
 }
 
 // Data Getter
-func (r YunosTvpubadminContentShowEditRequest) GetData() string {
+func (r YunosTvpubadminContentShowEditAPIRequest) GetData() string {
     return r._data
 }

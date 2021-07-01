@@ -11,7 +11,7 @@ alibaba.wdk.marketing.open.darunfa.activity.sync
 
 大润发活动数据同步
 */
-func AlibabaWdkMarketingOpenDarunfaActivitySync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenDarunfaActivitySyncRequest, session string) (*wdk.AlibabaWdkMarketingOpenDarunfaActivitySyncAPIResponse, error) {
+func AlibabaWdkMarketingOpenDarunfaActivitySync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest, session string) (*wdk.AlibabaWdkMarketingOpenDarunfaActivitySyncAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingOpenDarunfaActivitySyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

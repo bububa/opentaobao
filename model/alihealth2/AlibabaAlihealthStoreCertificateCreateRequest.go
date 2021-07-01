@@ -12,7 +12,7 @@ alibaba.alihealth.store.certificate.create
 
 仓库侧换证发起审批
 */
-type AlibabaAlihealthStoreCertificateCreateRequest struct {
+type AlibabaAlihealthStoreCertificateCreateAPIRequest struct {
     model.Params
     // 仓库code
     _storeCode   string
@@ -24,20 +24,20 @@ type AlibabaAlihealthStoreCertificateCreateRequest struct {
     _bizNo   string
 }
 
-// 初始化AlibabaAlihealthStoreCertificateCreateRequest对象
-func NewAlibabaAlihealthStoreCertificateCreateRequest() *AlibabaAlihealthStoreCertificateCreateRequest{
-    return &AlibabaAlihealthStoreCertificateCreateRequest{
+// 初始化AlibabaAlihealthStoreCertificateCreateAPIRequest对象
+func NewAlibabaAlihealthStoreCertificateCreateRequest() *AlibabaAlihealthStoreCertificateCreateAPIRequest{
+    return &AlibabaAlihealthStoreCertificateCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthStoreCertificateCreateRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.store.certificate.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthStoreCertificateCreateRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthStoreCertificateCreateRequest) GetApiParams() url.Values
 }
 // StoreCode Setter
 // 仓库code
-func (r *AlibabaAlihealthStoreCertificateCreateRequest) SetStoreCode(_storeCode string) error {
+func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetStoreCode(_storeCode string) error {
     r._storeCode = _storeCode
     r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
-func (r AlibabaAlihealthStoreCertificateCreateRequest) GetStoreCode() string {
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetStoreCode() string {
     return r._storeCode
 }
 // AuditType Setter
 // 审批业务类型
-func (r *AlibabaAlihealthStoreCertificateCreateRequest) SetAuditType(_auditType string) error {
+func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetAuditType(_auditType string) error {
     r._auditType = _auditType
     r.Set("audit_type", _auditType)
     return nil
 }
 
 // AuditType Getter
-func (r AlibabaAlihealthStoreCertificateCreateRequest) GetAuditType() string {
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetAuditType() string {
     return r._auditType
 }
 // Content Setter
 // 审批内容
-func (r *AlibabaAlihealthStoreCertificateCreateRequest) SetContent(_content string) error {
+func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetContent(_content string) error {
     r._content = _content
     r.Set("content", _content)
     return nil
 }
 
 // Content Getter
-func (r AlibabaAlihealthStoreCertificateCreateRequest) GetContent() string {
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetContent() string {
     return r._content
 }
 // BizNo Setter
 // 业务单号
-func (r *AlibabaAlihealthStoreCertificateCreateRequest) SetBizNo(_bizNo string) error {
+func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetBizNo(_bizNo string) error {
     r._bizNo = _bizNo
     r.Set("biz_no", _bizNo)
     return nil
 }
 
 // BizNo Getter
-func (r AlibabaAlihealthStoreCertificateCreateRequest) GetBizNo() string {
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetBizNo() string {
     return r._bizNo
 }

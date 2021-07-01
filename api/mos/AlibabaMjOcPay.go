@@ -11,7 +11,7 @@ alibaba.mj.oc.pay
 
 此API用于在银泰商场中，消费者在收银台收银/退款时， POS系统在收银或退款成功后，调用此接口进行订单同步
 */
-func AlibabaMjOcPay(clt *core.SDKClient, req *mos.AlibabaMjOcPayRequest, session string) (*mos.AlibabaMjOcPayAPIResponse, error) {
+func AlibabaMjOcPay(clt *core.SDKClient, req *mos.AlibabaMjOcPayAPIRequest, session string) (*mos.AlibabaMjOcPayAPIResponse, error) {
     var resp mos.AlibabaMjOcPayAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

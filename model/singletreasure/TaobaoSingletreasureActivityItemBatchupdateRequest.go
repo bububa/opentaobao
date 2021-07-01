@@ -12,26 +12,26 @@ taobao.singletreasure.activity.item.batchupdate
 
 批量修改商品优惠接口
 */
-type TaobaoSingletreasureActivityItemBatchupdateRequest struct {
+type TaobaoSingletreasureActivityItemBatchupdateAPIRequest struct {
     model.Params
     // 系统入参
     _itemDetailInfo   *ItemDetailInfoBatchCreateDTO
 }
 
-// 初始化TaobaoSingletreasureActivityItemBatchupdateRequest对象
-func NewTaobaoSingletreasureActivityItemBatchupdateRequest() *TaobaoSingletreasureActivityItemBatchupdateRequest{
-    return &TaobaoSingletreasureActivityItemBatchupdateRequest{
+// 初始化TaobaoSingletreasureActivityItemBatchupdateAPIRequest对象
+func NewTaobaoSingletreasureActivityItemBatchupdateRequest() *TaobaoSingletreasureActivityItemBatchupdateAPIRequest{
+    return &TaobaoSingletreasureActivityItemBatchupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSingletreasureActivityItemBatchupdateRequest) GetApiMethodName() string {
+func (r TaobaoSingletreasureActivityItemBatchupdateAPIRequest) GetApiMethodName() string {
     return "taobao.singletreasure.activity.item.batchupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSingletreasureActivityItemBatchupdateRequest) GetApiParams() url.Values {
+func (r TaobaoSingletreasureActivityItemBatchupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSingletreasureActivityItemBatchupdateRequest) GetApiParams() url.V
 }
 // ItemDetailInfo Setter
 // 系统入参
-func (r *TaobaoSingletreasureActivityItemBatchupdateRequest) SetItemDetailInfo(_itemDetailInfo *ItemDetailInfoBatchCreateDTO) error {
+func (r *TaobaoSingletreasureActivityItemBatchupdateAPIRequest) SetItemDetailInfo(_itemDetailInfo *ItemDetailInfoBatchCreateDTO) error {
     r._itemDetailInfo = _itemDetailInfo
     r.Set("item_detail_info", _itemDetailInfo)
     return nil
 }
 
 // ItemDetailInfo Getter
-func (r TaobaoSingletreasureActivityItemBatchupdateRequest) GetItemDetailInfo() *ItemDetailInfoBatchCreateDTO {
+func (r TaobaoSingletreasureActivityItemBatchupdateAPIRequest) GetItemDetailInfo() *ItemDetailInfoBatchCreateDTO {
     return r._itemDetailInfo
 }

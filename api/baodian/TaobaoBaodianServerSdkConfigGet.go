@@ -11,7 +11,7 @@ taobao.baodian.server.sdk.config.get
 
 获取SDK各种配置项（已迁移）
 */
-func TaobaoBaodianServerSdkConfigGet(clt *core.SDKClient, req *baodian.TaobaoBaodianServerSdkConfigGetRequest, session string) (*baodian.TaobaoBaodianServerSdkConfigGetAPIResponse, error) {
+func TaobaoBaodianServerSdkConfigGet(clt *core.SDKClient, req *baodian.TaobaoBaodianServerSdkConfigGetAPIRequest, session string) (*baodian.TaobaoBaodianServerSdkConfigGetAPIResponse, error) {
     var resp baodian.TaobaoBaodianServerSdkConfigGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

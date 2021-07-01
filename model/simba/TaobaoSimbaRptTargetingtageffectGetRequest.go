@@ -12,7 +12,7 @@ taobao.simba.rpt.targetingtageffect.get
 
 获取定向效果报表数据
 */
-type TaobaoSimbaRptTargetingtageffectGetRequest struct {
+type TaobaoSimbaRptTargetingtageffectGetAPIRequest struct {
     model.Params
     // 被操作者昵称
     _nick   string
@@ -30,20 +30,20 @@ type TaobaoSimbaRptTargetingtageffectGetRequest struct {
     _pageNumber   int64
 }
 
-// 初始化TaobaoSimbaRptTargetingtageffectGetRequest对象
-func NewTaobaoSimbaRptTargetingtageffectGetRequest() *TaobaoSimbaRptTargetingtageffectGetRequest{
-    return &TaobaoSimbaRptTargetingtageffectGetRequest{
+// 初始化TaobaoSimbaRptTargetingtageffectGetAPIRequest对象
+func NewTaobaoSimbaRptTargetingtageffectGetRequest() *TaobaoSimbaRptTargetingtageffectGetAPIRequest{
+    return &TaobaoSimbaRptTargetingtageffectGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.rpt.targetingtageffect.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,85 +52,85 @@ func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 被操作者昵称
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetNick() string {
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetNick() string {
     return r._nick
 }
 // CampaignId Setter
 // 计划id
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetCampaignId() int64 {
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }
 // AdgroupId Setter
 // 推广组id
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
     r._adgroupId = _adgroupId
     r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
-func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetAdgroupId() int64 {
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetAdgroupId() int64 {
     return r._adgroupId
 }
 // StartTime Setter
 // 起始时间
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetStartTime(_startTime string) error {
+func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetStartTime(_startTime string) error {
     r._startTime = _startTime
     r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
-func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetStartTime() string {
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetStartTime() string {
     return r._startTime
 }
 // EndTime Setter
 // 终止时间 ,必须小于今天
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetEndTime(_endTime string) error {
+func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetEndTime(_endTime string) error {
     r._endTime = _endTime
     r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
-func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetEndTime() string {
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetEndTime() string {
     return r._endTime
 }
 // PageSize Setter
 // 页面大小
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetPageSize() int64 {
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // PageNumber Setter
 // 页码
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetPageNumber(_pageNumber int64) error {
+func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetPageNumber(_pageNumber int64) error {
     r._pageNumber = _pageNumber
     r.Set("page_number", _pageNumber)
     return nil
 }
 
 // PageNumber Getter
-func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetPageNumber() int64 {
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetPageNumber() int64 {
     return r._pageNumber
 }

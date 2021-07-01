@@ -12,26 +12,26 @@ alibaba.wdk.marketing.itempool.activity.create
 
 创建活动新接口，支持新工具玩法
 */
-type AlibabaWdkMarketingItempoolActivityCreateRequest struct {
+type AlibabaWdkMarketingItempoolActivityCreateAPIRequest struct {
     model.Params
     // 创建活动请求入参
     _param   *ItemPoolActivity
 }
 
-// 初始化AlibabaWdkMarketingItempoolActivityCreateRequest对象
-func NewAlibabaWdkMarketingItempoolActivityCreateRequest() *AlibabaWdkMarketingItempoolActivityCreateRequest{
-    return &AlibabaWdkMarketingItempoolActivityCreateRequest{
+// 初始化AlibabaWdkMarketingItempoolActivityCreateAPIRequest对象
+func NewAlibabaWdkMarketingItempoolActivityCreateRequest() *AlibabaWdkMarketingItempoolActivityCreateAPIRequest{
+    return &AlibabaWdkMarketingItempoolActivityCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingItempoolActivityCreateRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingItempoolActivityCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.itempool.activity.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingItempoolActivityCreateRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingItempoolActivityCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItempoolActivityCreateRequest) GetApiParams() url.Val
 }
 // Param Setter
 // 创建活动请求入参
-func (r *AlibabaWdkMarketingItempoolActivityCreateRequest) SetParam(_param *ItemPoolActivity) error {
+func (r *AlibabaWdkMarketingItempoolActivityCreateAPIRequest) SetParam(_param *ItemPoolActivity) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkMarketingItempoolActivityCreateRequest) GetParam() *ItemPoolActivity {
+func (r AlibabaWdkMarketingItempoolActivityCreateAPIRequest) GetParam() *ItemPoolActivity {
     return r._param
 }

@@ -12,26 +12,26 @@ yunos.admarket.material.audit
 
 用于厂商上报广告平台审核结果
 */
-type YunosAdmarketMaterialAuditRequest struct {
+type YunosAdmarketMaterialAuditAPIRequest struct {
     model.Params
     // 创意审核结果
     _sspMaterialAuditResult   *SspMaterialAuditResult
 }
 
-// 初始化YunosAdmarketMaterialAuditRequest对象
-func NewYunosAdmarketMaterialAuditRequest() *YunosAdmarketMaterialAuditRequest{
-    return &YunosAdmarketMaterialAuditRequest{
+// 初始化YunosAdmarketMaterialAuditAPIRequest对象
+func NewYunosAdmarketMaterialAuditRequest() *YunosAdmarketMaterialAuditAPIRequest{
+    return &YunosAdmarketMaterialAuditAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosAdmarketMaterialAuditRequest) GetApiMethodName() string {
+func (r YunosAdmarketMaterialAuditAPIRequest) GetApiMethodName() string {
     return "yunos.admarket.material.audit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosAdmarketMaterialAuditRequest) GetApiParams() url.Values {
+func (r YunosAdmarketMaterialAuditAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosAdmarketMaterialAuditRequest) GetApiParams() url.Values {
 }
 // SspMaterialAuditResult Setter
 // 创意审核结果
-func (r *YunosAdmarketMaterialAuditRequest) SetSspMaterialAuditResult(_sspMaterialAuditResult *SspMaterialAuditResult) error {
+func (r *YunosAdmarketMaterialAuditAPIRequest) SetSspMaterialAuditResult(_sspMaterialAuditResult *SspMaterialAuditResult) error {
     r._sspMaterialAuditResult = _sspMaterialAuditResult
     r.Set("ssp_material_audit_result", _sspMaterialAuditResult)
     return nil
 }
 
 // SspMaterialAuditResult Getter
-func (r YunosAdmarketMaterialAuditRequest) GetSspMaterialAuditResult() *SspMaterialAuditResult {
+func (r YunosAdmarketMaterialAuditAPIRequest) GetSspMaterialAuditResult() *SspMaterialAuditResult {
     return r._sspMaterialAuditResult
 }

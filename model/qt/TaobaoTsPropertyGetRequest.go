@@ -12,26 +12,26 @@ taobao.ts.property.get
 
 淘宝服务属性查询
 */
-type TaobaoTsPropertyGetRequest struct {
+type TaobaoTsPropertyGetAPIRequest struct {
     model.Params
     // 服务收费项code
     _serviceItemCode   string
 }
 
-// 初始化TaobaoTsPropertyGetRequest对象
-func NewTaobaoTsPropertyGetRequest() *TaobaoTsPropertyGetRequest{
-    return &TaobaoTsPropertyGetRequest{
+// 初始化TaobaoTsPropertyGetAPIRequest对象
+func NewTaobaoTsPropertyGetRequest() *TaobaoTsPropertyGetAPIRequest{
+    return &TaobaoTsPropertyGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTsPropertyGetRequest) GetApiMethodName() string {
+func (r TaobaoTsPropertyGetAPIRequest) GetApiMethodName() string {
     return "taobao.ts.property.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTsPropertyGetRequest) GetApiParams() url.Values {
+func (r TaobaoTsPropertyGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTsPropertyGetRequest) GetApiParams() url.Values {
 }
 // ServiceItemCode Setter
 // 服务收费项code
-func (r *TaobaoTsPropertyGetRequest) SetServiceItemCode(_serviceItemCode string) error {
+func (r *TaobaoTsPropertyGetAPIRequest) SetServiceItemCode(_serviceItemCode string) error {
     r._serviceItemCode = _serviceItemCode
     r.Set("service_item_code", _serviceItemCode)
     return nil
 }
 
 // ServiceItemCode Getter
-func (r TaobaoTsPropertyGetRequest) GetServiceItemCode() string {
+func (r TaobaoTsPropertyGetAPIRequest) GetServiceItemCode() string {
     return r._serviceItemCode
 }

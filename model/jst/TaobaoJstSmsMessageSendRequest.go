@@ -12,26 +12,26 @@ taobao.jst.sms.message.send
 
 聚石塔短信PAAS场景中，ISV通过该API帮商家发送短信给用户。
 */
-type TaobaoJstSmsMessageSendRequest struct {
+type TaobaoJstSmsMessageSendAPIRequest struct {
     model.Params
     // 短信发送请求
     _sendMessageRequest   *SendMessageRequest
 }
 
-// 初始化TaobaoJstSmsMessageSendRequest对象
-func NewTaobaoJstSmsMessageSendRequest() *TaobaoJstSmsMessageSendRequest{
-    return &TaobaoJstSmsMessageSendRequest{
+// 初始化TaobaoJstSmsMessageSendAPIRequest对象
+func NewTaobaoJstSmsMessageSendRequest() *TaobaoJstSmsMessageSendAPIRequest{
+    return &TaobaoJstSmsMessageSendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJstSmsMessageSendRequest) GetApiMethodName() string {
+func (r TaobaoJstSmsMessageSendAPIRequest) GetApiMethodName() string {
     return "taobao.jst.sms.message.send"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJstSmsMessageSendRequest) GetApiParams() url.Values {
+func (r TaobaoJstSmsMessageSendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsMessageSendRequest) GetApiParams() url.Values {
 }
 // SendMessageRequest Setter
 // 短信发送请求
-func (r *TaobaoJstSmsMessageSendRequest) SetSendMessageRequest(_sendMessageRequest *SendMessageRequest) error {
+func (r *TaobaoJstSmsMessageSendAPIRequest) SetSendMessageRequest(_sendMessageRequest *SendMessageRequest) error {
     r._sendMessageRequest = _sendMessageRequest
     r.Set("send_message_request", _sendMessageRequest)
     return nil
 }
 
 // SendMessageRequest Getter
-func (r TaobaoJstSmsMessageSendRequest) GetSendMessageRequest() *SendMessageRequest {
+func (r TaobaoJstSmsMessageSendAPIRequest) GetSendMessageRequest() *SendMessageRequest {
     return r._sendMessageRequest
 }

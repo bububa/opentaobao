@@ -12,26 +12,26 @@ alibaba.wdk.bm.coupon.query
 
 淘鲜达品牌营销的券信息查询接口，基于券id查询券相关信息：券id、券名称、分摊信息、面额、创建时间、开始时间、结束时间
 */
-type AlibabaWdkBmCouponQueryRequest struct {
+type AlibabaWdkBmCouponQueryAPIRequest struct {
     model.Params
     // 查询券参数
     _isvQueryCouponParam   *IsvQueryCouponParam
 }
 
-// 初始化AlibabaWdkBmCouponQueryRequest对象
-func NewAlibabaWdkBmCouponQueryRequest() *AlibabaWdkBmCouponQueryRequest{
-    return &AlibabaWdkBmCouponQueryRequest{
+// 初始化AlibabaWdkBmCouponQueryAPIRequest对象
+func NewAlibabaWdkBmCouponQueryRequest() *AlibabaWdkBmCouponQueryAPIRequest{
+    return &AlibabaWdkBmCouponQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkBmCouponQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkBmCouponQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.bm.coupon.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkBmCouponQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkBmCouponQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkBmCouponQueryRequest) GetApiParams() url.Values {
 }
 // IsvQueryCouponParam Setter
 // 查询券参数
-func (r *AlibabaWdkBmCouponQueryRequest) SetIsvQueryCouponParam(_isvQueryCouponParam *IsvQueryCouponParam) error {
+func (r *AlibabaWdkBmCouponQueryAPIRequest) SetIsvQueryCouponParam(_isvQueryCouponParam *IsvQueryCouponParam) error {
     r._isvQueryCouponParam = _isvQueryCouponParam
     r.Set("isv_query_coupon_param", _isvQueryCouponParam)
     return nil
 }
 
 // IsvQueryCouponParam Getter
-func (r AlibabaWdkBmCouponQueryRequest) GetIsvQueryCouponParam() *IsvQueryCouponParam {
+func (r AlibabaWdkBmCouponQueryAPIRequest) GetIsvQueryCouponParam() *IsvQueryCouponParam {
     return r._isvQueryCouponParam
 }

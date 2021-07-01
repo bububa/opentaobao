@@ -11,7 +11,7 @@ alibaba.damai.mev.open.delete.paperformat
 
 deletePaperFormat
 */
-func AlibabaDamaiMevOpenDeletePaperformat(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletePaperformatRequest, session string) (*damai.AlibabaDamaiMevOpenDeletePaperformatAPIResponse, error) {
+func AlibabaDamaiMevOpenDeletePaperformat(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletePaperformatAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeletePaperformatAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenDeletePaperformatAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

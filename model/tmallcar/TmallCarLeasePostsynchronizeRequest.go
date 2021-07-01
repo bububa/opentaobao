@@ -12,26 +12,26 @@ tmall.car.lease.postsynchronize
 
 商家同步天猫开新车租后方案
 */
-type TmallCarLeasePostsynchronizeRequest struct {
+type TmallCarLeasePostsynchronizeAPIRequest struct {
     model.Params
     // 租后方案信息
     _schemeDto   *CarLeasePostSchemeSynchronizeDTO
 }
 
-// 初始化TmallCarLeasePostsynchronizeRequest对象
-func NewTmallCarLeasePostsynchronizeRequest() *TmallCarLeasePostsynchronizeRequest{
-    return &TmallCarLeasePostsynchronizeRequest{
+// 初始化TmallCarLeasePostsynchronizeAPIRequest对象
+func NewTmallCarLeasePostsynchronizeRequest() *TmallCarLeasePostsynchronizeAPIRequest{
+    return &TmallCarLeasePostsynchronizeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarLeasePostsynchronizeRequest) GetApiMethodName() string {
+func (r TmallCarLeasePostsynchronizeAPIRequest) GetApiMethodName() string {
     return "tmall.car.lease.postsynchronize"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarLeasePostsynchronizeRequest) GetApiParams() url.Values {
+func (r TmallCarLeasePostsynchronizeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallCarLeasePostsynchronizeRequest) GetApiParams() url.Values {
 }
 // SchemeDto Setter
 // 租后方案信息
-func (r *TmallCarLeasePostsynchronizeRequest) SetSchemeDto(_schemeDto *CarLeasePostSchemeSynchronizeDTO) error {
+func (r *TmallCarLeasePostsynchronizeAPIRequest) SetSchemeDto(_schemeDto *CarLeasePostSchemeSynchronizeDTO) error {
     r._schemeDto = _schemeDto
     r.Set("scheme_dto", _schemeDto)
     return nil
 }
 
 // SchemeDto Getter
-func (r TmallCarLeasePostsynchronizeRequest) GetSchemeDto() *CarLeasePostSchemeSynchronizeDTO {
+func (r TmallCarLeasePostsynchronizeAPIRequest) GetSchemeDto() *CarLeasePostSchemeSynchronizeDTO {
     return r._schemeDto
 }

@@ -11,7 +11,7 @@ alibaba.alihealth.tracecodeseller.milk.trace.tosource.add.data
 
 奶粉溯源-同步数据
 */
-func AlibabaAlihealthTracecodesellerMilkTraceTosourceAddData(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest, session string) (*drugtrace.AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse, error) {
+func AlibabaAlihealthTracecodesellerMilkTraceTosourceAddData(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest, session string) (*drugtrace.AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

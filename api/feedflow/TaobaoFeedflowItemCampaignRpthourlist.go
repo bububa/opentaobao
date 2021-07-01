@@ -11,7 +11,7 @@ taobao.feedflow.item.campaign.rpthourlist
 
 广告主推广计划分时数据查询，支持广告主查询最近90天内某一天的计划维度分时报表数据
 */
-func TaobaoFeedflowItemCampaignRpthourlist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignRpthourlistRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignRpthourlistAPIResponse, error) {
+func TaobaoFeedflowItemCampaignRpthourlist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignRpthourlistAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignRpthourlistAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemCampaignRpthourlistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

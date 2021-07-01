@@ -12,26 +12,26 @@ alibaba.idle.appraise.order.perform
 
 闲鱼验货担保业务中,外部服务商作为鉴定方 需要驱动交易节点变化
 */
-type AlibabaIdleAppraiseOrderPerformRequest struct {
+type AlibabaIdleAppraiseOrderPerformAPIRequest struct {
     model.Params
     // AppraiseOrderSynDto
     _appraiseOrderSynDto   *AppraiseOrderSynDTO
 }
 
-// 初始化AlibabaIdleAppraiseOrderPerformRequest对象
-func NewAlibabaIdleAppraiseOrderPerformRequest() *AlibabaIdleAppraiseOrderPerformRequest{
-    return &AlibabaIdleAppraiseOrderPerformRequest{
+// 初始化AlibabaIdleAppraiseOrderPerformAPIRequest对象
+func NewAlibabaIdleAppraiseOrderPerformRequest() *AlibabaIdleAppraiseOrderPerformAPIRequest{
+    return &AlibabaIdleAppraiseOrderPerformAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleAppraiseOrderPerformRequest) GetApiMethodName() string {
+func (r AlibabaIdleAppraiseOrderPerformAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.appraise.order.perform"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleAppraiseOrderPerformRequest) GetApiParams() url.Values {
+func (r AlibabaIdleAppraiseOrderPerformAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleAppraiseOrderPerformRequest) GetApiParams() url.Values {
 }
 // AppraiseOrderSynDto Setter
 // AppraiseOrderSynDto
-func (r *AlibabaIdleAppraiseOrderPerformRequest) SetAppraiseOrderSynDto(_appraiseOrderSynDto *AppraiseOrderSynDTO) error {
+func (r *AlibabaIdleAppraiseOrderPerformAPIRequest) SetAppraiseOrderSynDto(_appraiseOrderSynDto *AppraiseOrderSynDTO) error {
     r._appraiseOrderSynDto = _appraiseOrderSynDto
     r.Set("appraise_order_syn_dto", _appraiseOrderSynDto)
     return nil
 }
 
 // AppraiseOrderSynDto Getter
-func (r AlibabaIdleAppraiseOrderPerformRequest) GetAppraiseOrderSynDto() *AppraiseOrderSynDTO {
+func (r AlibabaIdleAppraiseOrderPerformAPIRequest) GetAppraiseOrderSynDto() *AppraiseOrderSynDTO {
     return r._appraiseOrderSynDto
 }

@@ -11,7 +11,7 @@ tmall.servicecenter.workcard.updatelogistics
 
 提供给外部合作服务商的物流进度更改接口
 */
-func TmallServicecenterWorkcardUpdatelogistics(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardUpdatelogisticsRequest, session string) (*tmallservice.TmallServicecenterWorkcardUpdatelogisticsAPIResponse, error) {
+func TmallServicecenterWorkcardUpdatelogistics(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardUpdatelogisticsAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardUpdatelogisticsAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardUpdatelogisticsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

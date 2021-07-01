@@ -11,7 +11,7 @@ tmall.promotag.taguser.judge
 
 查询用户是否有标签
 */
-func TmallPromotagTaguserJudge(clt *core.SDKClient, req *promotion.TmallPromotagTaguserJudgeRequest, session string) (*promotion.TmallPromotagTaguserJudgeAPIResponse, error) {
+func TmallPromotagTaguserJudge(clt *core.SDKClient, req *promotion.TmallPromotagTaguserJudgeAPIRequest, session string) (*promotion.TmallPromotagTaguserJudgeAPIResponse, error) {
     var resp promotion.TmallPromotagTaguserJudgeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

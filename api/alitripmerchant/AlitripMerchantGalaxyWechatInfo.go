@@ -11,7 +11,7 @@ alitrip.merchant.galaxy.wechat.info
 
 获取微信用户的openId和unionId
 */
-func AlitripMerchantGalaxyWechatInfo(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatInfoRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyWechatInfoAPIResponse, error) {
+func AlitripMerchantGalaxyWechatInfo(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatInfoAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyWechatInfoAPIResponse, error) {
     var resp alitripmerchant.AlitripMerchantGalaxyWechatInfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

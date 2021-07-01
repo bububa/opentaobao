@@ -11,7 +11,7 @@ taobao.de.activity.info.get
 
 根据appKey和活动id获取活动
 */
-func TaobaoDeActivityInfoGet(clt *core.SDKClient, req *gameact.TaobaoDeActivityInfoGetRequest, session string) (*gameact.TaobaoDeActivityInfoGetAPIResponse, error) {
+func TaobaoDeActivityInfoGet(clt *core.SDKClient, req *gameact.TaobaoDeActivityInfoGetAPIRequest, session string) (*gameact.TaobaoDeActivityInfoGetAPIResponse, error) {
     var resp gameact.TaobaoDeActivityInfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

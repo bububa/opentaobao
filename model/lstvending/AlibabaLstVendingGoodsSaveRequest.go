@@ -12,26 +12,26 @@ alibaba.lst.vending.goods.save
 
 零售通自动售卖机商品数据回流。
 */
-type AlibabaLstVendingGoodsSaveRequest struct {
+type AlibabaLstVendingGoodsSaveAPIRequest struct {
     model.Params
     // 商品信息
     _goodsDTOList   []VendingGoodsDTO
 }
 
-// 初始化AlibabaLstVendingGoodsSaveRequest对象
-func NewAlibabaLstVendingGoodsSaveRequest() *AlibabaLstVendingGoodsSaveRequest{
-    return &AlibabaLstVendingGoodsSaveRequest{
+// 初始化AlibabaLstVendingGoodsSaveAPIRequest对象
+func NewAlibabaLstVendingGoodsSaveRequest() *AlibabaLstVendingGoodsSaveAPIRequest{
+    return &AlibabaLstVendingGoodsSaveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstVendingGoodsSaveRequest) GetApiMethodName() string {
+func (r AlibabaLstVendingGoodsSaveAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.vending.goods.save"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstVendingGoodsSaveRequest) GetApiParams() url.Values {
+func (r AlibabaLstVendingGoodsSaveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstVendingGoodsSaveRequest) GetApiParams() url.Values {
 }
 // GoodsDTOList Setter
 // 商品信息
-func (r *AlibabaLstVendingGoodsSaveRequest) SetGoodsDTOList(_goodsDTOList []VendingGoodsDTO) error {
+func (r *AlibabaLstVendingGoodsSaveAPIRequest) SetGoodsDTOList(_goodsDTOList []VendingGoodsDTO) error {
     r._goodsDTOList = _goodsDTOList
     r.Set("goods_d_t_o_list", _goodsDTOList)
     return nil
 }
 
 // GoodsDTOList Getter
-func (r AlibabaLstVendingGoodsSaveRequest) GetGoodsDTOList() []VendingGoodsDTO {
+func (r AlibabaLstVendingGoodsSaveAPIRequest) GetGoodsDTOList() []VendingGoodsDTO {
     return r._goodsDTOList
 }

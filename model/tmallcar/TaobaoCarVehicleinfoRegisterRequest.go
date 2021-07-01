@@ -12,26 +12,26 @@ taobao.car.vehicleinfo.register
 
 全量车型导入
 */
-type TaobaoCarVehicleinfoRegisterRequest struct {
+type TaobaoCarVehicleinfoRegisterAPIRequest struct {
     model.Params
     // 参数集合
     _paramList   []FullInfoCarModelDTO
 }
 
-// 初始化TaobaoCarVehicleinfoRegisterRequest对象
-func NewTaobaoCarVehicleinfoRegisterRequest() *TaobaoCarVehicleinfoRegisterRequest{
-    return &TaobaoCarVehicleinfoRegisterRequest{
+// 初始化TaobaoCarVehicleinfoRegisterAPIRequest对象
+func NewTaobaoCarVehicleinfoRegisterRequest() *TaobaoCarVehicleinfoRegisterAPIRequest{
+    return &TaobaoCarVehicleinfoRegisterAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoCarVehicleinfoRegisterRequest) GetApiMethodName() string {
+func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetApiMethodName() string {
     return "taobao.car.vehicleinfo.register"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoCarVehicleinfoRegisterRequest) GetApiParams() url.Values {
+func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoCarVehicleinfoRegisterRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 参数集合
-func (r *TaobaoCarVehicleinfoRegisterRequest) SetParamList(_paramList []FullInfoCarModelDTO) error {
+func (r *TaobaoCarVehicleinfoRegisterAPIRequest) SetParamList(_paramList []FullInfoCarModelDTO) error {
     r._paramList = _paramList
     r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
-func (r TaobaoCarVehicleinfoRegisterRequest) GetParamList() []FullInfoCarModelDTO {
+func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetParamList() []FullInfoCarModelDTO {
     return r._paramList
 }

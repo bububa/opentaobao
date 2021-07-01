@@ -12,26 +12,26 @@ alibaba.scbp.product.group.get
 
 查询指定产品分组的下一层子分组
 */
-type AlibabaScbpProductGroupGetRequest struct {
+type AlibabaScbpProductGroupGetAPIRequest struct {
     model.Params
     // 产品分组标识，null表示查询第一层分组
     _groupId   string
 }
 
-// 初始化AlibabaScbpProductGroupGetRequest对象
-func NewAlibabaScbpProductGroupGetRequest() *AlibabaScbpProductGroupGetRequest{
-    return &AlibabaScbpProductGroupGetRequest{
+// 初始化AlibabaScbpProductGroupGetAPIRequest对象
+func NewAlibabaScbpProductGroupGetRequest() *AlibabaScbpProductGroupGetAPIRequest{
+    return &AlibabaScbpProductGroupGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpProductGroupGetRequest) GetApiMethodName() string {
+func (r AlibabaScbpProductGroupGetAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.product.group.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpProductGroupGetRequest) GetApiParams() url.Values {
+func (r AlibabaScbpProductGroupGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpProductGroupGetRequest) GetApiParams() url.Values {
 }
 // GroupId Setter
 // 产品分组标识，null表示查询第一层分组
-func (r *AlibabaScbpProductGroupGetRequest) SetGroupId(_groupId string) error {
+func (r *AlibabaScbpProductGroupGetAPIRequest) SetGroupId(_groupId string) error {
     r._groupId = _groupId
     r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
-func (r AlibabaScbpProductGroupGetRequest) GetGroupId() string {
+func (r AlibabaScbpProductGroupGetAPIRequest) GetGroupId() string {
     return r._groupId
 }

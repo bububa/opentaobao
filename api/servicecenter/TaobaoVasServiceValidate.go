@@ -11,7 +11,7 @@ taobao.vas.service.validate
 
 增值服务订购服务验证
 */
-func TaobaoVasServiceValidate(clt *core.SDKClient, req *servicecenter.TaobaoVasServiceValidateRequest, session string) (*servicecenter.TaobaoVasServiceValidateAPIResponse, error) {
+func TaobaoVasServiceValidate(clt *core.SDKClient, req *servicecenter.TaobaoVasServiceValidateAPIRequest, session string) (*servicecenter.TaobaoVasServiceValidateAPIResponse, error) {
     var resp servicecenter.TaobaoVasServiceValidateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

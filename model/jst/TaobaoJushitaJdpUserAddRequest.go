@@ -12,7 +12,7 @@ taobao.jushita.jdp.user.add
 
 提供给接入数据推送的应用添加数据推送服务的用户
 */
-type TaobaoJushitaJdpUserAddRequest struct {
+type TaobaoJushitaJdpUserAddAPIRequest struct {
     model.Params
     // RDS实例名称
     _rdsName   string
@@ -20,20 +20,20 @@ type TaobaoJushitaJdpUserAddRequest struct {
     _historyDays   int64
 }
 
-// 初始化TaobaoJushitaJdpUserAddRequest对象
-func NewTaobaoJushitaJdpUserAddRequest() *TaobaoJushitaJdpUserAddRequest{
-    return &TaobaoJushitaJdpUserAddRequest{
+// 初始化TaobaoJushitaJdpUserAddAPIRequest对象
+func NewTaobaoJushitaJdpUserAddRequest() *TaobaoJushitaJdpUserAddAPIRequest{
+    return &TaobaoJushitaJdpUserAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJushitaJdpUserAddRequest) GetApiMethodName() string {
+func (r TaobaoJushitaJdpUserAddAPIRequest) GetApiMethodName() string {
     return "taobao.jushita.jdp.user.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJushitaJdpUserAddRequest) GetApiParams() url.Values {
+func (r TaobaoJushitaJdpUserAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoJushitaJdpUserAddRequest) GetApiParams() url.Values {
 }
 // RdsName Setter
 // RDS实例名称
-func (r *TaobaoJushitaJdpUserAddRequest) SetRdsName(_rdsName string) error {
+func (r *TaobaoJushitaJdpUserAddAPIRequest) SetRdsName(_rdsName string) error {
     r._rdsName = _rdsName
     r.Set("rds_name", _rdsName)
     return nil
 }
 
 // RdsName Getter
-func (r TaobaoJushitaJdpUserAddRequest) GetRdsName() string {
+func (r TaobaoJushitaJdpUserAddAPIRequest) GetRdsName() string {
     return r._rdsName
 }
 // HistoryDays Setter
 // 推送历史数据天数，只能为90天内，包含90天。当此参数不填时，表示以页面中应用配置的历史天数为准；如果为0表示这个用户不推送历史数据；其它表示推送的历史天数。
-func (r *TaobaoJushitaJdpUserAddRequest) SetHistoryDays(_historyDays int64) error {
+func (r *TaobaoJushitaJdpUserAddAPIRequest) SetHistoryDays(_historyDays int64) error {
     r._historyDays = _historyDays
     r.Set("history_days", _historyDays)
     return nil
 }
 
 // HistoryDays Getter
-func (r TaobaoJushitaJdpUserAddRequest) GetHistoryDays() int64 {
+func (r TaobaoJushitaJdpUserAddAPIRequest) GetHistoryDays() int64 {
     return r._historyDays
 }

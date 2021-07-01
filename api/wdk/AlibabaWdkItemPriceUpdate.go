@@ -11,7 +11,7 @@ alibaba.wdk.item.price.update
 
 修改门店商品售价和会员价
 */
-func AlibabaWdkItemPriceUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkItemPriceUpdateRequest, session string) (*wdk.AlibabaWdkItemPriceUpdateAPIResponse, error) {
+func AlibabaWdkItemPriceUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkItemPriceUpdateAPIRequest, session string) (*wdk.AlibabaWdkItemPriceUpdateAPIResponse, error) {
     var resp wdk.AlibabaWdkItemPriceUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

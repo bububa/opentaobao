@@ -12,24 +12,24 @@ cainiao.cloudprint.stdtemplates.get
 
 获取菜鸟标准电子面单模板
 */
-type CainiaoCloudprintStdtemplatesGetRequest struct {
+type CainiaoCloudprintStdtemplatesGetAPIRequest struct {
     model.Params
 }
 
-// 初始化CainiaoCloudprintStdtemplatesGetRequest对象
-func NewCainiaoCloudprintStdtemplatesGetRequest() *CainiaoCloudprintStdtemplatesGetRequest{
-    return &CainiaoCloudprintStdtemplatesGetRequest{
+// 初始化CainiaoCloudprintStdtemplatesGetAPIRequest对象
+func NewCainiaoCloudprintStdtemplatesGetRequest() *CainiaoCloudprintStdtemplatesGetAPIRequest{
+    return &CainiaoCloudprintStdtemplatesGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCloudprintStdtemplatesGetRequest) GetApiMethodName() string {
+func (r CainiaoCloudprintStdtemplatesGetAPIRequest) GetApiMethodName() string {
     return "cainiao.cloudprint.stdtemplates.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCloudprintStdtemplatesGetRequest) GetApiParams() url.Values {
+func (r CainiaoCloudprintStdtemplatesGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

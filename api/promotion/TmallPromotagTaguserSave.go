@@ -11,7 +11,7 @@ tmall.promotag.taguser.save
 
 给用户载体打标
 */
-func TmallPromotagTaguserSave(clt *core.SDKClient, req *promotion.TmallPromotagTaguserSaveRequest, session string) (*promotion.TmallPromotagTaguserSaveAPIResponse, error) {
+func TmallPromotagTaguserSave(clt *core.SDKClient, req *promotion.TmallPromotagTaguserSaveAPIRequest, session string) (*promotion.TmallPromotagTaguserSaveAPIResponse, error) {
     var resp promotion.TmallPromotagTaguserSaveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

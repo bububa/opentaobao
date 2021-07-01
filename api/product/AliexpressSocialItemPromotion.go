@@ -11,7 +11,7 @@ aliexpress.social.item.promotion
 
 获取商品社交推广链接
 */
-func AliexpressSocialItemPromotion(clt *core.SDKClient, req *product.AliexpressSocialItemPromotionRequest, session string) (*product.AliexpressSocialItemPromotionAPIResponse, error) {
+func AliexpressSocialItemPromotion(clt *core.SDKClient, req *product.AliexpressSocialItemPromotionAPIRequest, session string) (*product.AliexpressSocialItemPromotionAPIResponse, error) {
     var resp product.AliexpressSocialItemPromotionAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

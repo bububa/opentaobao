@@ -12,7 +12,7 @@ taobao.miniapp.template.rollback
 
 将实例化小程序回滚到指定版本
 */
-type TaobaoMiniappTemplateRollbackRequest struct {
+type TaobaoMiniappTemplateRollbackAPIRequest struct {
     model.Params
     // 要回滚的投放端,目前可投放： taobao,tmall
     _clients   []string
@@ -26,20 +26,20 @@ type TaobaoMiniappTemplateRollbackRequest struct {
     _templateVersion   string
 }
 
-// 初始化TaobaoMiniappTemplateRollbackRequest对象
-func NewTaobaoMiniappTemplateRollbackRequest() *TaobaoMiniappTemplateRollbackRequest{
-    return &TaobaoMiniappTemplateRollbackRequest{
+// 初始化TaobaoMiniappTemplateRollbackAPIRequest对象
+func NewTaobaoMiniappTemplateRollbackRequest() *TaobaoMiniappTemplateRollbackAPIRequest{
+    return &TaobaoMiniappTemplateRollbackAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMiniappTemplateRollbackRequest) GetApiMethodName() string {
+func (r TaobaoMiniappTemplateRollbackAPIRequest) GetApiMethodName() string {
     return "taobao.miniapp.template.rollback"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappTemplateRollbackRequest) GetApiParams() url.Values {
+func (r TaobaoMiniappTemplateRollbackAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TaobaoMiniappTemplateRollbackRequest) GetApiParams() url.Values {
 }
 // Clients Setter
 // 要回滚的投放端,目前可投放： taobao,tmall
-func (r *TaobaoMiniappTemplateRollbackRequest) SetClients(_clients []string) error {
+func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetClients(_clients []string) error {
     r._clients = _clients
     r.Set("clients", _clients)
     return nil
 }
 
 // Clients Getter
-func (r TaobaoMiniappTemplateRollbackRequest) GetClients() []string {
+func (r TaobaoMiniappTemplateRollbackAPIRequest) GetClients() []string {
     return r._clients
 }
 // AppId Setter
 // 小程序app_id
-func (r *TaobaoMiniappTemplateRollbackRequest) SetAppId(_appId string) error {
+func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetAppId(_appId string) error {
     r._appId = _appId
     r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
-func (r TaobaoMiniappTemplateRollbackRequest) GetAppId() string {
+func (r TaobaoMiniappTemplateRollbackAPIRequest) GetAppId() string {
     return r._appId
 }
 // AppVersion Setter
 // 回到到该app_version
-func (r *TaobaoMiniappTemplateRollbackRequest) SetAppVersion(_appVersion string) error {
+func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetAppVersion(_appVersion string) error {
     r._appVersion = _appVersion
     r.Set("app_version", _appVersion)
     return nil
 }
 
 // AppVersion Getter
-func (r TaobaoMiniappTemplateRollbackRequest) GetAppVersion() string {
+func (r TaobaoMiniappTemplateRollbackAPIRequest) GetAppVersion() string {
     return r._appVersion
 }
 // TemplateId Setter
 // 实例化小程序对应的模板id
-func (r *TaobaoMiniappTemplateRollbackRequest) SetTemplateId(_templateId string) error {
+func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetTemplateId(_templateId string) error {
     r._templateId = _templateId
     r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
-func (r TaobaoMiniappTemplateRollbackRequest) GetTemplateId() string {
+func (r TaobaoMiniappTemplateRollbackAPIRequest) GetTemplateId() string {
     return r._templateId
 }
 // TemplateVersion Setter
 // 与app_version对应的模板版本
-func (r *TaobaoMiniappTemplateRollbackRequest) SetTemplateVersion(_templateVersion string) error {
+func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetTemplateVersion(_templateVersion string) error {
     r._templateVersion = _templateVersion
     r.Set("template_version", _templateVersion)
     return nil
 }
 
 // TemplateVersion Getter
-func (r TaobaoMiniappTemplateRollbackRequest) GetTemplateVersion() string {
+func (r TaobaoMiniappTemplateRollbackAPIRequest) GetTemplateVersion() string {
     return r._templateVersion
 }

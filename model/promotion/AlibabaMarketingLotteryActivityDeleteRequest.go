@@ -12,26 +12,26 @@ alibaba.marketing.lottery.activity.delete
 
 抽奖平台活动删除接口
 */
-type AlibabaMarketingLotteryActivityDeleteRequest struct {
+type AlibabaMarketingLotteryActivityDeleteAPIRequest struct {
     model.Params
     // 抽奖活动删除对象
     _lotteryActivityDelete   *LotteryActivityDeleteDTO
 }
 
-// 初始化AlibabaMarketingLotteryActivityDeleteRequest对象
-func NewAlibabaMarketingLotteryActivityDeleteRequest() *AlibabaMarketingLotteryActivityDeleteRequest{
-    return &AlibabaMarketingLotteryActivityDeleteRequest{
+// 初始化AlibabaMarketingLotteryActivityDeleteAPIRequest对象
+func NewAlibabaMarketingLotteryActivityDeleteRequest() *AlibabaMarketingLotteryActivityDeleteAPIRequest{
+    return &AlibabaMarketingLotteryActivityDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMarketingLotteryActivityDeleteRequest) GetApiMethodName() string {
+func (r AlibabaMarketingLotteryActivityDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.marketing.lottery.activity.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMarketingLotteryActivityDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaMarketingLotteryActivityDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryActivityDeleteRequest) GetApiParams() url.Values 
 }
 // LotteryActivityDelete Setter
 // 抽奖活动删除对象
-func (r *AlibabaMarketingLotteryActivityDeleteRequest) SetLotteryActivityDelete(_lotteryActivityDelete *LotteryActivityDeleteDTO) error {
+func (r *AlibabaMarketingLotteryActivityDeleteAPIRequest) SetLotteryActivityDelete(_lotteryActivityDelete *LotteryActivityDeleteDTO) error {
     r._lotteryActivityDelete = _lotteryActivityDelete
     r.Set("lottery_activity_delete", _lotteryActivityDelete)
     return nil
 }
 
 // LotteryActivityDelete Getter
-func (r AlibabaMarketingLotteryActivityDeleteRequest) GetLotteryActivityDelete() *LotteryActivityDeleteDTO {
+func (r AlibabaMarketingLotteryActivityDeleteAPIRequest) GetLotteryActivityDelete() *LotteryActivityDeleteDTO {
     return r._lotteryActivityDelete
 }

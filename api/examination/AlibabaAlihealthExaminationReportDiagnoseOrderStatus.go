@@ -11,7 +11,7 @@ alibaba.alihealth.examination.report.diagnose.order.status
 
 报告解读订单状态更新
 */
-func AlibabaAlihealthExaminationReportDiagnoseOrderStatus(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest, session string) (*examination.AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIResponse, error) {
+func AlibabaAlihealthExaminationReportDiagnoseOrderStatus(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest, session string) (*examination.AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIResponse, error) {
     var resp examination.AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

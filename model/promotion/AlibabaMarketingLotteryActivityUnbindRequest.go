@@ -12,26 +12,26 @@ alibaba.marketing.lottery.activity.unbind
 
 抽奖平台奖池解绑接口
 */
-type AlibabaMarketingLotteryActivityUnbindRequest struct {
+type AlibabaMarketingLotteryActivityUnbindAPIRequest struct {
     model.Params
     // 解绑抽奖活动请求对象
     _lotteryActivityRel   *LotteryActivityRelDTO
 }
 
-// 初始化AlibabaMarketingLotteryActivityUnbindRequest对象
-func NewAlibabaMarketingLotteryActivityUnbindRequest() *AlibabaMarketingLotteryActivityUnbindRequest{
-    return &AlibabaMarketingLotteryActivityUnbindRequest{
+// 初始化AlibabaMarketingLotteryActivityUnbindAPIRequest对象
+func NewAlibabaMarketingLotteryActivityUnbindRequest() *AlibabaMarketingLotteryActivityUnbindAPIRequest{
+    return &AlibabaMarketingLotteryActivityUnbindAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMarketingLotteryActivityUnbindRequest) GetApiMethodName() string {
+func (r AlibabaMarketingLotteryActivityUnbindAPIRequest) GetApiMethodName() string {
     return "alibaba.marketing.lottery.activity.unbind"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMarketingLotteryActivityUnbindRequest) GetApiParams() url.Values {
+func (r AlibabaMarketingLotteryActivityUnbindAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryActivityUnbindRequest) GetApiParams() url.Values 
 }
 // LotteryActivityRel Setter
 // 解绑抽奖活动请求对象
-func (r *AlibabaMarketingLotteryActivityUnbindRequest) SetLotteryActivityRel(_lotteryActivityRel *LotteryActivityRelDTO) error {
+func (r *AlibabaMarketingLotteryActivityUnbindAPIRequest) SetLotteryActivityRel(_lotteryActivityRel *LotteryActivityRelDTO) error {
     r._lotteryActivityRel = _lotteryActivityRel
     r.Set("lottery_activity_rel", _lotteryActivityRel)
     return nil
 }
 
 // LotteryActivityRel Getter
-func (r AlibabaMarketingLotteryActivityUnbindRequest) GetLotteryActivityRel() *LotteryActivityRelDTO {
+func (r AlibabaMarketingLotteryActivityUnbindAPIRequest) GetLotteryActivityRel() *LotteryActivityRelDTO {
     return r._lotteryActivityRel
 }

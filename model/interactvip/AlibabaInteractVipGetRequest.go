@@ -12,24 +12,24 @@ alibaba.interact.vip.get
 
 提供用户淘气值&用户角色身份查询
 */
-type AlibabaInteractVipGetRequest struct {
+type AlibabaInteractVipGetAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractVipGetRequest对象
-func NewAlibabaInteractVipGetRequest() *AlibabaInteractVipGetRequest{
-    return &AlibabaInteractVipGetRequest{
+// 初始化AlibabaInteractVipGetAPIRequest对象
+func NewAlibabaInteractVipGetRequest() *AlibabaInteractVipGetAPIRequest{
+    return &AlibabaInteractVipGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractVipGetRequest) GetApiMethodName() string {
+func (r AlibabaInteractVipGetAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.vip.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractVipGetRequest) GetApiParams() url.Values {
+func (r AlibabaInteractVipGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

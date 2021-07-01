@@ -12,26 +12,26 @@ taobao.train.agent.change.refuse.vtwo
 
 代理商拒绝火车票改签服务
 */
-type TaobaoTrainAgentChangeRefuseVtwoRequest struct {
+type TaobaoTrainAgentChangeRefuseVtwoAPIRequest struct {
     model.Params
     // 代理商拒绝改签参数
     _param   *AgentRefuseChangeParam
 }
 
-// 初始化TaobaoTrainAgentChangeRefuseVtwoRequest对象
-func NewTaobaoTrainAgentChangeRefuseVtwoRequest() *TaobaoTrainAgentChangeRefuseVtwoRequest{
-    return &TaobaoTrainAgentChangeRefuseVtwoRequest{
+// 初始化TaobaoTrainAgentChangeRefuseVtwoAPIRequest对象
+func NewTaobaoTrainAgentChangeRefuseVtwoRequest() *TaobaoTrainAgentChangeRefuseVtwoAPIRequest{
+    return &TaobaoTrainAgentChangeRefuseVtwoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentChangeRefuseVtwoRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentChangeRefuseVtwoAPIRequest) GetApiMethodName() string {
     return "taobao.train.agent.change.refuse.vtwo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentChangeRefuseVtwoRequest) GetApiParams() url.Values {
+func (r TaobaoTrainAgentChangeRefuseVtwoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentChangeRefuseVtwoRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 代理商拒绝改签参数
-func (r *TaobaoTrainAgentChangeRefuseVtwoRequest) SetParam(_param *AgentRefuseChangeParam) error {
+func (r *TaobaoTrainAgentChangeRefuseVtwoAPIRequest) SetParam(_param *AgentRefuseChangeParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoTrainAgentChangeRefuseVtwoRequest) GetParam() *AgentRefuseChangeParam {
+func (r TaobaoTrainAgentChangeRefuseVtwoAPIRequest) GetParam() *AgentRefuseChangeParam {
     return r._param
 }

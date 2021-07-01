@@ -12,26 +12,26 @@ alibaba.einvoice.income.agent.check
 
 agent注册是，需要交易用户填写的agentId是否有效
 */
-type AlibabaEinvoiceIncomeAgentCheckRequest struct {
+type AlibabaEinvoiceIncomeAgentCheckAPIRequest struct {
     model.Params
     // 阿里发票平台分配的agentId
     _agentId   string
 }
 
-// 初始化AlibabaEinvoiceIncomeAgentCheckRequest对象
-func NewAlibabaEinvoiceIncomeAgentCheckRequest() *AlibabaEinvoiceIncomeAgentCheckRequest{
-    return &AlibabaEinvoiceIncomeAgentCheckRequest{
+// 初始化AlibabaEinvoiceIncomeAgentCheckAPIRequest对象
+func NewAlibabaEinvoiceIncomeAgentCheckRequest() *AlibabaEinvoiceIncomeAgentCheckAPIRequest{
+    return &AlibabaEinvoiceIncomeAgentCheckAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceIncomeAgentCheckRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceIncomeAgentCheckAPIRequest) GetApiMethodName() string {
     return "alibaba.einvoice.income.agent.check"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceIncomeAgentCheckRequest) GetApiParams() url.Values {
+func (r AlibabaEinvoiceIncomeAgentCheckAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceIncomeAgentCheckRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 阿里发票平台分配的agentId
-func (r *AlibabaEinvoiceIncomeAgentCheckRequest) SetAgentId(_agentId string) error {
+func (r *AlibabaEinvoiceIncomeAgentCheckAPIRequest) SetAgentId(_agentId string) error {
     r._agentId = _agentId
     r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
-func (r AlibabaEinvoiceIncomeAgentCheckRequest) GetAgentId() string {
+func (r AlibabaEinvoiceIncomeAgentCheckAPIRequest) GetAgentId() string {
     return r._agentId
 }

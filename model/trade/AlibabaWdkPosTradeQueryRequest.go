@@ -12,26 +12,26 @@ alibaba.wdk.pos.trade.query
 
 轻pos品牌营销场景，外部商家查询营销信息
 */
-type AlibabaWdkPosTradeQueryRequest struct {
+type AlibabaWdkPosTradeQueryAPIRequest struct {
     model.Params
     // 查询请求
     _queryRequest   *FastBuyPosQueryRequest
 }
 
-// 初始化AlibabaWdkPosTradeQueryRequest对象
-func NewAlibabaWdkPosTradeQueryRequest() *AlibabaWdkPosTradeQueryRequest{
-    return &AlibabaWdkPosTradeQueryRequest{
+// 初始化AlibabaWdkPosTradeQueryAPIRequest对象
+func NewAlibabaWdkPosTradeQueryRequest() *AlibabaWdkPosTradeQueryAPIRequest{
+    return &AlibabaWdkPosTradeQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkPosTradeQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkPosTradeQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.pos.trade.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkPosTradeQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkPosTradeQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkPosTradeQueryRequest) GetApiParams() url.Values {
 }
 // QueryRequest Setter
 // 查询请求
-func (r *AlibabaWdkPosTradeQueryRequest) SetQueryRequest(_queryRequest *FastBuyPosQueryRequest) error {
+func (r *AlibabaWdkPosTradeQueryAPIRequest) SetQueryRequest(_queryRequest *FastBuyPosQueryRequest) error {
     r._queryRequest = _queryRequest
     r.Set("query_request", _queryRequest)
     return nil
 }
 
 // QueryRequest Getter
-func (r AlibabaWdkPosTradeQueryRequest) GetQueryRequest() *FastBuyPosQueryRequest {
+func (r AlibabaWdkPosTradeQueryAPIRequest) GetQueryRequest() *FastBuyPosQueryRequest {
     return r._queryRequest
 }

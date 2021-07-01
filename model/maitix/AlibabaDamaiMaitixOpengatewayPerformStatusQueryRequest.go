@@ -12,26 +12,26 @@ alibaba.damai.maitix.opengateway.perform.status.query
 
 queryPerformStatusByPerformId
 */
-type AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest struct {
+type AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest struct {
     model.Params
     // 入参
     _disPerformStatusQueryParam   *DisPerformStatusQueryDTO
 }
 
-// 初始化AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest对象
-func NewAlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest() *AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest{
-    return &AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest{
+// 初始化AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest对象
+func NewAlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest() *AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest{
+    return &AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.opengateway.perform.status.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest) GetApiParams() u
 }
 // DisPerformStatusQueryParam Setter
 // 入参
-func (r *AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest) SetDisPerformStatusQueryParam(_disPerformStatusQueryParam *DisPerformStatusQueryDTO) error {
+func (r *AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest) SetDisPerformStatusQueryParam(_disPerformStatusQueryParam *DisPerformStatusQueryDTO) error {
     r._disPerformStatusQueryParam = _disPerformStatusQueryParam
     r.Set("dis_perform_status_query_param", _disPerformStatusQueryParam)
     return nil
 }
 
 // DisPerformStatusQueryParam Getter
-func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest) GetDisPerformStatusQueryParam() *DisPerformStatusQueryDTO {
+func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest) GetDisPerformStatusQueryParam() *DisPerformStatusQueryDTO {
     return r._disPerformStatusQueryParam
 }

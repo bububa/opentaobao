@@ -12,7 +12,7 @@ taobao.tvpay.auth.apply
 
 为用户在指定设备上申请支付授权
 */
-type TaobaoTvpayAuthApplyRequest struct {
+type TaobaoTvpayAuthApplyAPIRequest struct {
     model.Params
     // 设备id
     _deviceId   string
@@ -30,20 +30,20 @@ type TaobaoTvpayAuthApplyRequest struct {
     _totalFee   string
 }
 
-// 初始化TaobaoTvpayAuthApplyRequest对象
-func NewTaobaoTvpayAuthApplyRequest() *TaobaoTvpayAuthApplyRequest{
-    return &TaobaoTvpayAuthApplyRequest{
+// 初始化TaobaoTvpayAuthApplyAPIRequest对象
+func NewTaobaoTvpayAuthApplyRequest() *TaobaoTvpayAuthApplyAPIRequest{
+    return &TaobaoTvpayAuthApplyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTvpayAuthApplyRequest) GetApiMethodName() string {
+func (r TaobaoTvpayAuthApplyAPIRequest) GetApiMethodName() string {
     return "taobao.tvpay.auth.apply"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTvpayAuthApplyRequest) GetApiParams() url.Values {
+func (r TaobaoTvpayAuthApplyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,85 +52,85 @@ func (r TaobaoTvpayAuthApplyRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoTvpayAuthApplyRequest) SetDeviceId(_deviceId string) error {
+func (r *TaobaoTvpayAuthApplyAPIRequest) SetDeviceId(_deviceId string) error {
     r._deviceId = _deviceId
     r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
-func (r TaobaoTvpayAuthApplyRequest) GetDeviceId() string {
+func (r TaobaoTvpayAuthApplyAPIRequest) GetDeviceId() string {
     return r._deviceId
 }
 // From Setter
 // 请求来源
-func (r *TaobaoTvpayAuthApplyRequest) SetFrom(_from string) error {
+func (r *TaobaoTvpayAuthApplyAPIRequest) SetFrom(_from string) error {
     r._from = _from
     r.Set("from", _from)
     return nil
 }
 
 // From Getter
-func (r TaobaoTvpayAuthApplyRequest) GetFrom() string {
+func (r TaobaoTvpayAuthApplyAPIRequest) GetFrom() string {
     return r._from
 }
 // BizScene Setter
 // 场景
-func (r *TaobaoTvpayAuthApplyRequest) SetBizScene(_bizScene string) error {
+func (r *TaobaoTvpayAuthApplyAPIRequest) SetBizScene(_bizScene string) error {
     r._bizScene = _bizScene
     r.Set("biz_scene", _bizScene)
     return nil
 }
 
 // BizScene Getter
-func (r TaobaoTvpayAuthApplyRequest) GetBizScene() string {
+func (r TaobaoTvpayAuthApplyAPIRequest) GetBizScene() string {
     return r._bizScene
 }
 // ItemName Setter
 // 商品名称
-func (r *TaobaoTvpayAuthApplyRequest) SetItemName(_itemName string) error {
+func (r *TaobaoTvpayAuthApplyAPIRequest) SetItemName(_itemName string) error {
     r._itemName = _itemName
     r.Set("item_name", _itemName)
     return nil
 }
 
 // ItemName Getter
-func (r TaobaoTvpayAuthApplyRequest) GetItemName() string {
+func (r TaobaoTvpayAuthApplyAPIRequest) GetItemName() string {
     return r._itemName
 }
 // OperateType Setter
 // 授权类型
-func (r *TaobaoTvpayAuthApplyRequest) SetOperateType(_operateType string) error {
+func (r *TaobaoTvpayAuthApplyAPIRequest) SetOperateType(_operateType string) error {
     r._operateType = _operateType
     r.Set("operate_type", _operateType)
     return nil
 }
 
 // OperateType Getter
-func (r TaobaoTvpayAuthApplyRequest) GetOperateType() string {
+func (r TaobaoTvpayAuthApplyAPIRequest) GetOperateType() string {
     return r._operateType
 }
 // OutApproveId Setter
 // 外部订单号
-func (r *TaobaoTvpayAuthApplyRequest) SetOutApproveId(_outApproveId string) error {
+func (r *TaobaoTvpayAuthApplyAPIRequest) SetOutApproveId(_outApproveId string) error {
     r._outApproveId = _outApproveId
     r.Set("out_approve_id", _outApproveId)
     return nil
 }
 
 // OutApproveId Getter
-func (r TaobaoTvpayAuthApplyRequest) GetOutApproveId() string {
+func (r TaobaoTvpayAuthApplyAPIRequest) GetOutApproveId() string {
     return r._outApproveId
 }
 // TotalFee Setter
 // 金额
-func (r *TaobaoTvpayAuthApplyRequest) SetTotalFee(_totalFee string) error {
+func (r *TaobaoTvpayAuthApplyAPIRequest) SetTotalFee(_totalFee string) error {
     r._totalFee = _totalFee
     r.Set("total_fee", _totalFee)
     return nil
 }
 
 // TotalFee Getter
-func (r TaobaoTvpayAuthApplyRequest) GetTotalFee() string {
+func (r TaobaoTvpayAuthApplyAPIRequest) GetTotalFee() string {
     return r._totalFee
 }

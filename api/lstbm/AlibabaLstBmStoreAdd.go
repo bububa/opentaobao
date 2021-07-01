@@ -11,7 +11,7 @@ alibaba.lst.bm.store.add
 
 导入品牌商自有门店
 */
-func AlibabaLstBmStoreAdd(clt *core.SDKClient, req *lstbm.AlibabaLstBmStoreAddRequest, session string) (*lstbm.AlibabaLstBmStoreAddAPIResponse, error) {
+func AlibabaLstBmStoreAdd(clt *core.SDKClient, req *lstbm.AlibabaLstBmStoreAddAPIRequest, session string) (*lstbm.AlibabaLstBmStoreAddAPIResponse, error) {
     var resp lstbm.AlibabaLstBmStoreAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

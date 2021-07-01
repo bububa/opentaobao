@@ -11,7 +11,7 @@ tmall.txcs.finance.invoice.input
 
 提供天猫超市外部合作商家财务：供应商发票录入
 */
-func TmallTxcsFinanceInvoiceInput(clt *core.SDKClient, req *txcs.TmallTxcsFinanceInvoiceInputRequest, session string) (*txcs.TmallTxcsFinanceInvoiceInputAPIResponse, error) {
+func TmallTxcsFinanceInvoiceInput(clt *core.SDKClient, req *txcs.TmallTxcsFinanceInvoiceInputAPIRequest, session string) (*txcs.TmallTxcsFinanceInvoiceInputAPIResponse, error) {
     var resp txcs.TmallTxcsFinanceInvoiceInputAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

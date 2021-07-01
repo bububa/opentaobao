@@ -12,7 +12,7 @@ taobao.ailab.aicloud.smarthome.top.genielink.reportdevice
 
 零配方案中设备联网成功之后上报设备
 */
-type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest struct {
+type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest struct {
     model.Params
     // 供应商id
     _vendorId   int64
@@ -24,20 +24,20 @@ type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest struct {
     _extensions   string
 }
 
-// 初始化TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest对象
-func NewTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest() *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest{
-    return &TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest{
+// 初始化TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest对象
+func NewTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest() *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest{
+    return &TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetApiMethodName() string {
+func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetApiMethodName() string {
     return "taobao.ailab.aicloud.smarthome.top.genielink.reportdevice"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetApiParams() url.Values {
+func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetApiParams
 }
 // VendorId Setter
 // 供应商id
-func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetVendorId(_vendorId int64) error {
+func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetVendorId(_vendorId int64) error {
     r._vendorId = _vendorId
     r.Set("vendor_id", _vendorId)
     return nil
 }
 
 // VendorId Getter
-func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetVendorId() int64 {
+func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetVendorId() int64 {
     return r._vendorId
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetDeviceId(_deviceId string) error {
+func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetDeviceId(_deviceId string) error {
     r._deviceId = _deviceId
     r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
-func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetDeviceId() string {
+func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetDeviceId() string {
     return r._deviceId
 }
 // Status Setter
 // 设备状态，online上线，offline下线
-func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetStatus(_status string) error {
+func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetStatus(_status string) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetStatus() string {
+func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetStatus() string {
     return r._status
 }
 // Extensions Setter
 // 保留字段json字符串
-func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetExtensions(_extensions string) error {
+func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetExtensions(_extensions string) error {
     r._extensions = _extensions
     r.Set("extensions", _extensions)
     return nil
 }
 
 // Extensions Getter
-func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetExtensions() string {
+func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetExtensions() string {
     return r._extensions
 }

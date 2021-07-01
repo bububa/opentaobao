@@ -12,26 +12,26 @@ alibaba.idle.consignment.spu.statistics
 
 闲鱼帮卖同步服务商交易统计信息
 */
-type AlibabaIdleConsignmentSpuStatisticsRequest struct {
+type AlibabaIdleConsignmentSpuStatisticsAPIRequest struct {
     model.Params
     // 入参
     _param   *SpuStatistics
 }
 
-// 初始化AlibabaIdleConsignmentSpuStatisticsRequest对象
-func NewAlibabaIdleConsignmentSpuStatisticsRequest() *AlibabaIdleConsignmentSpuStatisticsRequest{
-    return &AlibabaIdleConsignmentSpuStatisticsRequest{
+// 初始化AlibabaIdleConsignmentSpuStatisticsAPIRequest对象
+func NewAlibabaIdleConsignmentSpuStatisticsRequest() *AlibabaIdleConsignmentSpuStatisticsAPIRequest{
+    return &AlibabaIdleConsignmentSpuStatisticsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleConsignmentSpuStatisticsRequest) GetApiMethodName() string {
+func (r AlibabaIdleConsignmentSpuStatisticsAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.consignment.spu.statistics"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleConsignmentSpuStatisticsRequest) GetApiParams() url.Values {
+func (r AlibabaIdleConsignmentSpuStatisticsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleConsignmentSpuStatisticsRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaIdleConsignmentSpuStatisticsRequest) SetParam(_param *SpuStatistics) error {
+func (r *AlibabaIdleConsignmentSpuStatisticsAPIRequest) SetParam(_param *SpuStatistics) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaIdleConsignmentSpuStatisticsRequest) GetParam() *SpuStatistics {
+func (r AlibabaIdleConsignmentSpuStatisticsAPIRequest) GetParam() *SpuStatistics {
     return r._param
 }

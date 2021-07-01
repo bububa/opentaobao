@@ -11,7 +11,7 @@ alibaba.xiami.api.tag.genre.album.get
 
 虾米音乐－风格，流派专辑列表
 */
-func AlibabaXiamiApiTagGenreAlbumGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiTagGenreAlbumGetRequest, session string) (*xiami.AlibabaXiamiApiTagGenreAlbumGetAPIResponse, error) {
+func AlibabaXiamiApiTagGenreAlbumGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiTagGenreAlbumGetAPIRequest, session string) (*xiami.AlibabaXiamiApiTagGenreAlbumGetAPIResponse, error) {
     var resp xiami.AlibabaXiamiApiTagGenreAlbumGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

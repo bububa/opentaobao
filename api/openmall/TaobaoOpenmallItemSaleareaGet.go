@@ -11,7 +11,7 @@ taobao.openmall.item.salearea.get
 
 获取openmall商品的可售区域
 */
-func TaobaoOpenmallItemSaleareaGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallItemSaleareaGetRequest, session string) (*openmall.TaobaoOpenmallItemSaleareaGetAPIResponse, error) {
+func TaobaoOpenmallItemSaleareaGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallItemSaleareaGetAPIRequest, session string) (*openmall.TaobaoOpenmallItemSaleareaGetAPIResponse, error) {
     var resp openmall.TaobaoOpenmallItemSaleareaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

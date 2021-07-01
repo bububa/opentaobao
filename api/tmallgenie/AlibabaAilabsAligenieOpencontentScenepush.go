@@ -11,7 +11,7 @@ alibaba.ailabs.aligenie.opencontent.scenepush
 
 天猫精灵音频挂靠场景接入
 */
-func AlibabaAilabsAligenieOpencontentScenepush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpencontentScenepushRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIResponse, error) {
+func AlibabaAilabsAligenieOpencontentScenepush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIResponse, error) {
     var resp tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

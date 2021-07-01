@@ -12,7 +12,7 @@ taobao.caipiao.lottery.sendbynick
 
 卖家使用nick给买家送彩票，可以指定彩种和注数。赠送成功，返回true; 以下几种情况情况， 返回false: 注数超过100注、卖家未签署支付宝代扣协议、卖家或者买家信息不存在等。
 */
-type TaobaoCaipiaoLotterySendbynickRequest struct {
+type TaobaoCaipiaoLotterySendbynickAPIRequest struct {
     model.Params
     // 彩票接收方nick， 不可为空、""。
     _buyerNick   string
@@ -24,20 +24,20 @@ type TaobaoCaipiaoLotterySendbynickRequest struct {
     _sweetyWords   string
 }
 
-// 初始化TaobaoCaipiaoLotterySendbynickRequest对象
-func NewTaobaoCaipiaoLotterySendbynickRequest() *TaobaoCaipiaoLotterySendbynickRequest{
-    return &TaobaoCaipiaoLotterySendbynickRequest{
+// 初始化TaobaoCaipiaoLotterySendbynickAPIRequest对象
+func NewTaobaoCaipiaoLotterySendbynickRequest() *TaobaoCaipiaoLotterySendbynickAPIRequest{
+    return &TaobaoCaipiaoLotterySendbynickAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoCaipiaoLotterySendbynickRequest) GetApiMethodName() string {
+func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetApiMethodName() string {
     return "taobao.caipiao.lottery.sendbynick"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoCaipiaoLotterySendbynickRequest) GetApiParams() url.Values {
+func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoCaipiaoLotterySendbynickRequest) GetApiParams() url.Values {
 }
 // BuyerNick Setter
 // 彩票接收方nick， 不可为空、""。
-func (r *TaobaoCaipiaoLotterySendbynickRequest) SetBuyerNick(_buyerNick string) error {
+func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetBuyerNick(_buyerNick string) error {
     r._buyerNick = _buyerNick
     r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
-func (r TaobaoCaipiaoLotterySendbynickRequest) GetBuyerNick() string {
+func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetBuyerNick() string {
     return r._buyerNick
 }
 // LotteryTypeId Setter
 // 彩种ID，此彩种ID为彩票系统中的序号。
-func (r *TaobaoCaipiaoLotterySendbynickRequest) SetLotteryTypeId(_lotteryTypeId int64) error {
+func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetLotteryTypeId(_lotteryTypeId int64) error {
     r._lotteryTypeId = _lotteryTypeId
     r.Set("lottery_type_id", _lotteryTypeId)
     return nil
 }
 
 // LotteryTypeId Getter
-func (r TaobaoCaipiaoLotterySendbynickRequest) GetLotteryTypeId() int64 {
+func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetLotteryTypeId() int64 {
     return r._lotteryTypeId
 }
 // StakeCount Setter
 // 彩票注数，不可为空、0和负数，最大值为100。
-func (r *TaobaoCaipiaoLotterySendbynickRequest) SetStakeCount(_stakeCount int64) error {
+func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetStakeCount(_stakeCount int64) error {
     r._stakeCount = _stakeCount
     r.Set("stake_count", _stakeCount)
     return nil
 }
 
 // StakeCount Getter
-func (r TaobaoCaipiaoLotterySendbynickRequest) GetStakeCount() int64 {
+func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetStakeCount() int64 {
     return r._stakeCount
 }
 // SweetyWords Setter
 // 送彩票给接收方的赠言。 不能超过20个字符，1个中文字符、1个英文字母及1个数字等均当作一个字符，如果超过，则会截取。
-func (r *TaobaoCaipiaoLotterySendbynickRequest) SetSweetyWords(_sweetyWords string) error {
+func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetSweetyWords(_sweetyWords string) error {
     r._sweetyWords = _sweetyWords
     r.Set("sweety_words", _sweetyWords)
     return nil
 }
 
 // SweetyWords Getter
-func (r TaobaoCaipiaoLotterySendbynickRequest) GetSweetyWords() string {
+func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetSweetyWords() string {
     return r._sweetyWords
 }

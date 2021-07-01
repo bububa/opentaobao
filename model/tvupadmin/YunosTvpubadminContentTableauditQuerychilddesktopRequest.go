@@ -12,26 +12,26 @@ yunos.tvpubadmin.content.tableaudit.querychilddesktop
 
 迎客松查看小酷宝桌面坑位元数据列表
 */
-type YunosTvpubadminContentTableauditQuerychilddesktopRequest struct {
+type YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest struct {
     model.Params
     // 小酷宝桌面坑位查询参数
     _query   string
 }
 
-// 初始化YunosTvpubadminContentTableauditQuerychilddesktopRequest对象
-func NewYunosTvpubadminContentTableauditQuerychilddesktopRequest() *YunosTvpubadminContentTableauditQuerychilddesktopRequest{
-    return &YunosTvpubadminContentTableauditQuerychilddesktopRequest{
+// 初始化YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest对象
+func NewYunosTvpubadminContentTableauditQuerychilddesktopRequest() *YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest{
+    return &YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentTableauditQuerychilddesktopRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.tableaudit.querychilddesktop"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentTableauditQuerychilddesktopRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentTableauditQuerychilddesktopRequest) GetApiParams()
 }
 // Query Setter
 // 小酷宝桌面坑位查询参数
-func (r *YunosTvpubadminContentTableauditQuerychilddesktopRequest) SetQuery(_query string) error {
+func (r *YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest) SetQuery(_query string) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r YunosTvpubadminContentTableauditQuerychilddesktopRequest) GetQuery() string {
+func (r YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest) GetQuery() string {
     return r._query
 }

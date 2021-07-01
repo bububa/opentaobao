@@ -11,7 +11,7 @@ taobao.top.once.token.get
 
 网关一次性token获取
 */
-func TaobaoTopOnceTokenGet(clt *core.SDKClient, req *util.TaobaoTopOnceTokenGetRequest, session string) (*util.TaobaoTopOnceTokenGetAPIResponse, error) {
+func TaobaoTopOnceTokenGet(clt *core.SDKClient, req *util.TaobaoTopOnceTokenGetAPIRequest, session string) (*util.TaobaoTopOnceTokenGetAPIResponse, error) {
     var resp util.TaobaoTopOnceTokenGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

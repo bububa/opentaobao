@@ -12,26 +12,26 @@ alibaba.idle.agreement.pay.query
 
 查询代扣结果
 */
-type AlibabaIdleAgreementPayQueryRequest struct {
+type AlibabaIdleAgreementPayQueryAPIRequest struct {
     model.Params
     // 入参
     _param   *AgreementPayBillQueryParam
 }
 
-// 初始化AlibabaIdleAgreementPayQueryRequest对象
-func NewAlibabaIdleAgreementPayQueryRequest() *AlibabaIdleAgreementPayQueryRequest{
-    return &AlibabaIdleAgreementPayQueryRequest{
+// 初始化AlibabaIdleAgreementPayQueryAPIRequest对象
+func NewAlibabaIdleAgreementPayQueryRequest() *AlibabaIdleAgreementPayQueryAPIRequest{
+    return &AlibabaIdleAgreementPayQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleAgreementPayQueryRequest) GetApiMethodName() string {
+func (r AlibabaIdleAgreementPayQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.agreement.pay.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleAgreementPayQueryRequest) GetApiParams() url.Values {
+func (r AlibabaIdleAgreementPayQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleAgreementPayQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaIdleAgreementPayQueryRequest) SetParam(_param *AgreementPayBillQueryParam) error {
+func (r *AlibabaIdleAgreementPayQueryAPIRequest) SetParam(_param *AgreementPayBillQueryParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaIdleAgreementPayQueryRequest) GetParam() *AgreementPayBillQueryParam {
+func (r AlibabaIdleAgreementPayQueryAPIRequest) GetParam() *AgreementPayBillQueryParam {
     return r._param
 }

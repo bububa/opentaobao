@@ -12,26 +12,26 @@ alibaba.damai.maitix.order.directrefund
 
 大麦-退票
 */
-type AlibabaDamaiMaitixOrderDirectrefundRequest struct {
+type AlibabaDamaiMaitixOrderDirectrefundAPIRequest struct {
     model.Params
     // 退票入参
     _param   *MoaRefundAuditParam
 }
 
-// 初始化AlibabaDamaiMaitixOrderDirectrefundRequest对象
-func NewAlibabaDamaiMaitixOrderDirectrefundRequest() *AlibabaDamaiMaitixOrderDirectrefundRequest{
-    return &AlibabaDamaiMaitixOrderDirectrefundRequest{
+// 初始化AlibabaDamaiMaitixOrderDirectrefundAPIRequest对象
+func NewAlibabaDamaiMaitixOrderDirectrefundRequest() *AlibabaDamaiMaitixOrderDirectrefundAPIRequest{
+    return &AlibabaDamaiMaitixOrderDirectrefundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixOrderDirectrefundRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixOrderDirectrefundAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.order.directrefund"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixOrderDirectrefundRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixOrderDirectrefundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOrderDirectrefundRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 退票入参
-func (r *AlibabaDamaiMaitixOrderDirectrefundRequest) SetParam(_param *MoaRefundAuditParam) error {
+func (r *AlibabaDamaiMaitixOrderDirectrefundAPIRequest) SetParam(_param *MoaRefundAuditParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaDamaiMaitixOrderDirectrefundRequest) GetParam() *MoaRefundAuditParam {
+func (r AlibabaDamaiMaitixOrderDirectrefundAPIRequest) GetParam() *MoaRefundAuditParam {
     return r._param
 }

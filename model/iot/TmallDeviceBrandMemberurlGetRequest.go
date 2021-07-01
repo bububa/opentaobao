@@ -12,7 +12,7 @@ tmall.device.brand.memberurl.get
 
 获取旗舰店在智能硬件上的入会码
 */
-type TmallDeviceBrandMemberurlGetRequest struct {
+type TmallDeviceBrandMemberurlGetAPIRequest struct {
     model.Params
     // 设备DeviceCode
     _deviceCode   string
@@ -26,20 +26,20 @@ type TmallDeviceBrandMemberurlGetRequest struct {
     _followRetailAccount   bool
 }
 
-// 初始化TmallDeviceBrandMemberurlGetRequest对象
-func NewTmallDeviceBrandMemberurlGetRequest() *TmallDeviceBrandMemberurlGetRequest{
-    return &TmallDeviceBrandMemberurlGetRequest{
+// 初始化TmallDeviceBrandMemberurlGetAPIRequest对象
+func NewTmallDeviceBrandMemberurlGetRequest() *TmallDeviceBrandMemberurlGetAPIRequest{
+    return &TmallDeviceBrandMemberurlGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallDeviceBrandMemberurlGetRequest) GetApiMethodName() string {
+func (r TmallDeviceBrandMemberurlGetAPIRequest) GetApiMethodName() string {
     return "tmall.device.brand.memberurl.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallDeviceBrandMemberurlGetRequest) GetApiParams() url.Values {
+func (r TmallDeviceBrandMemberurlGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TmallDeviceBrandMemberurlGetRequest) GetApiParams() url.Values {
 }
 // DeviceCode Setter
 // 设备DeviceCode
-func (r *TmallDeviceBrandMemberurlGetRequest) SetDeviceCode(_deviceCode string) error {
+func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetDeviceCode(_deviceCode string) error {
     r._deviceCode = _deviceCode
     r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
-func (r TmallDeviceBrandMemberurlGetRequest) GetDeviceCode() string {
+func (r TmallDeviceBrandMemberurlGetAPIRequest) GetDeviceCode() string {
     return r._deviceCode
 }
 // CallbackUrl Setter
 // 入会后的回调地址
-func (r *TmallDeviceBrandMemberurlGetRequest) SetCallbackUrl(_callbackUrl string) error {
+func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetCallbackUrl(_callbackUrl string) error {
     r._callbackUrl = _callbackUrl
     r.Set("callback_url", _callbackUrl)
     return nil
 }
 
 // CallbackUrl Getter
-func (r TmallDeviceBrandMemberurlGetRequest) GetCallbackUrl() string {
+func (r TmallDeviceBrandMemberurlGetAPIRequest) GetCallbackUrl() string {
     return r._callbackUrl
 }
 // Longterm Setter
 // 是否使用长期链接
-func (r *TmallDeviceBrandMemberurlGetRequest) SetLongterm(_longterm bool) error {
+func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetLongterm(_longterm bool) error {
     r._longterm = _longterm
     r.Set("longterm", _longterm)
     return nil
 }
 
 // Longterm Getter
-func (r TmallDeviceBrandMemberurlGetRequest) GetLongterm() bool {
+func (r TmallDeviceBrandMemberurlGetAPIRequest) GetLongterm() bool {
     return r._longterm
 }
 // BannerImg Setter
 // 页面banner的图片，如果没有传入，会使用系统默认图
-func (r *TmallDeviceBrandMemberurlGetRequest) SetBannerImg(_bannerImg string) error {
+func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetBannerImg(_bannerImg string) error {
     r._bannerImg = _bannerImg
     r.Set("banner_img", _bannerImg)
     return nil
 }
 
 // BannerImg Getter
-func (r TmallDeviceBrandMemberurlGetRequest) GetBannerImg() string {
+func (r TmallDeviceBrandMemberurlGetAPIRequest) GetBannerImg() string {
     return r._bannerImg
 }
 // FollowRetailAccount Setter
 // 是否同时关注天猫理想站
-func (r *TmallDeviceBrandMemberurlGetRequest) SetFollowRetailAccount(_followRetailAccount bool) error {
+func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetFollowRetailAccount(_followRetailAccount bool) error {
     r._followRetailAccount = _followRetailAccount
     r.Set("follow_retail_account", _followRetailAccount)
     return nil
 }
 
 // FollowRetailAccount Getter
-func (r TmallDeviceBrandMemberurlGetRequest) GetFollowRetailAccount() bool {
+func (r TmallDeviceBrandMemberurlGetAPIRequest) GetFollowRetailAccount() bool {
     return r._followRetailAccount
 }

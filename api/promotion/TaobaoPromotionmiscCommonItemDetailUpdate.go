@@ -14,7 +14,7 @@ taobao.promotionmisc.common.item.detail.update
 2、使用该接口时需要把未做修改的字段值也传入；
 3、此接口受卖家最低折扣限制，如果优惠力度大于卖家设置的最低折扣则不能修改
 */
-func TaobaoPromotionmiscCommonItemDetailUpdate(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscCommonItemDetailUpdateRequest, session string) (*promotion.TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse, error) {
+func TaobaoPromotionmiscCommonItemDetailUpdate(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest, session string) (*promotion.TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse, error) {
     var resp promotion.TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

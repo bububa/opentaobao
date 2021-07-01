@@ -1,7 +1,7 @@
 package btrip
 
-// OpenFlightOrderRs 
-type OpenFlightOrderRs struct {
+// OpenFlightOrderRS 
+type OpenFlightOrderRS struct {
     // 机票订单id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 创建时间

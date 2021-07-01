@@ -12,7 +12,7 @@ alibaba.ailabs.tmallgenie.auth.device.status.get
 
 提供给天猫精灵定制机厂商 查询设备在线状态值
 */
-type AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest struct {
+type AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest struct {
     model.Params
     // 给产品分配的唯一ID（22位）
     _clientId   string
@@ -22,20 +22,20 @@ type AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest struct {
     _uuid   string
 }
 
-// 初始化AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest对象
-func NewAlibabaAilabsTmallgenieAuthDeviceStatusGetRequest() *AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest{
-    return &AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest{
+// 初始化AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest对象
+func NewAlibabaAilabsTmallgenieAuthDeviceStatusGetRequest() *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest{
+    return &AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) GetApiMethodName() string {
+func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) GetApiMethodName() string {
     return "alibaba.ailabs.tmallgenie.auth.device.status.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) GetApiParams() url.Values {
+func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) GetApiParams() url.Va
 }
 // ClientId Setter
 // 给产品分配的唯一ID（22位）
-func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) SetClientId(_clientId string) error {
+func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) SetClientId(_clientId string) error {
     r._clientId = _clientId
     r.Set("client_id", _clientId)
     return nil
 }
 
 // ClientId Getter
-func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) GetClientId() string {
+func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) GetClientId() string {
     return r._clientId
 }
 // UserOpenId Setter
 // 精灵用户的唯一外部ID
-func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) SetUserOpenId(_userOpenId string) error {
+func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) SetUserOpenId(_userOpenId string) error {
     r._userOpenId = _userOpenId
     r.Set("user_open_id", _userOpenId)
     return nil
 }
 
 // UserOpenId Getter
-func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) GetUserOpenId() string {
+func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) GetUserOpenId() string {
     return r._userOpenId
 }
 // Uuid Setter
 // 精灵设备的唯一ID
-func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) SetUuid(_uuid string) error {
+func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) SetUuid(_uuid string) error {
     r._uuid = _uuid
     r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
-func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) GetUuid() string {
+func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) GetUuid() string {
     return r._uuid
 }

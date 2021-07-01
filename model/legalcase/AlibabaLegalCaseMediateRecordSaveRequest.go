@@ -12,7 +12,7 @@ alibaba.legal.case.mediate.record.save
 
 增加调解沟通记录
 */
-type AlibabaLegalCaseMediateRecordSaveRequest struct {
+type AlibabaLegalCaseMediateRecordSaveAPIRequest struct {
     model.Params
     // 案件id
     _caseId   int64
@@ -22,20 +22,20 @@ type AlibabaLegalCaseMediateRecordSaveRequest struct {
     _record   *MediateCommunicationModel
 }
 
-// 初始化AlibabaLegalCaseMediateRecordSaveRequest对象
-func NewAlibabaLegalCaseMediateRecordSaveRequest() *AlibabaLegalCaseMediateRecordSaveRequest{
-    return &AlibabaLegalCaseMediateRecordSaveRequest{
+// 初始化AlibabaLegalCaseMediateRecordSaveAPIRequest对象
+func NewAlibabaLegalCaseMediateRecordSaveRequest() *AlibabaLegalCaseMediateRecordSaveAPIRequest{
+    return &AlibabaLegalCaseMediateRecordSaveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLegalCaseMediateRecordSaveRequest) GetApiMethodName() string {
+func (r AlibabaLegalCaseMediateRecordSaveAPIRequest) GetApiMethodName() string {
     return "alibaba.legal.case.mediate.record.save"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLegalCaseMediateRecordSaveRequest) GetApiParams() url.Values {
+func (r AlibabaLegalCaseMediateRecordSaveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaLegalCaseMediateRecordSaveRequest) GetApiParams() url.Values {
 }
 // CaseId Setter
 // 案件id
-func (r *AlibabaLegalCaseMediateRecordSaveRequest) SetCaseId(_caseId int64) error {
+func (r *AlibabaLegalCaseMediateRecordSaveAPIRequest) SetCaseId(_caseId int64) error {
     r._caseId = _caseId
     r.Set("case_id", _caseId)
     return nil
 }
 
 // CaseId Getter
-func (r AlibabaLegalCaseMediateRecordSaveRequest) GetCaseId() int64 {
+func (r AlibabaLegalCaseMediateRecordSaveAPIRequest) GetCaseId() int64 {
     return r._caseId
 }
 // EntrustId Setter
 // 委托id
-func (r *AlibabaLegalCaseMediateRecordSaveRequest) SetEntrustId(_entrustId int64) error {
+func (r *AlibabaLegalCaseMediateRecordSaveAPIRequest) SetEntrustId(_entrustId int64) error {
     r._entrustId = _entrustId
     r.Set("entrust_id", _entrustId)
     return nil
 }
 
 // EntrustId Getter
-func (r AlibabaLegalCaseMediateRecordSaveRequest) GetEntrustId() int64 {
+func (r AlibabaLegalCaseMediateRecordSaveAPIRequest) GetEntrustId() int64 {
     return r._entrustId
 }
 // Record Setter
 // 记录
-func (r *AlibabaLegalCaseMediateRecordSaveRequest) SetRecord(_record *MediateCommunicationModel) error {
+func (r *AlibabaLegalCaseMediateRecordSaveAPIRequest) SetRecord(_record *MediateCommunicationModel) error {
     r._record = _record
     r.Set("record", _record)
     return nil
 }
 
 // Record Getter
-func (r AlibabaLegalCaseMediateRecordSaveRequest) GetRecord() *MediateCommunicationModel {
+func (r AlibabaLegalCaseMediateRecordSaveAPIRequest) GetRecord() *MediateCommunicationModel {
     return r._record
 }

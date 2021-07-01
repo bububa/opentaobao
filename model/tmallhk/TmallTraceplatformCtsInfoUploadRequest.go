@@ -12,26 +12,26 @@ tmall.traceplatform.cts.info.upload
 
 cts上传溯源信息
 */
-type TmallTraceplatformCtsInfoUploadRequest struct {
+type TmallTraceplatformCtsInfoUploadAPIRequest struct {
     model.Params
     // 入参traceInfo
     _traceInfo   *CtsInfo
 }
 
-// 初始化TmallTraceplatformCtsInfoUploadRequest对象
-func NewTmallTraceplatformCtsInfoUploadRequest() *TmallTraceplatformCtsInfoUploadRequest{
-    return &TmallTraceplatformCtsInfoUploadRequest{
+// 初始化TmallTraceplatformCtsInfoUploadAPIRequest对象
+func NewTmallTraceplatformCtsInfoUploadRequest() *TmallTraceplatformCtsInfoUploadAPIRequest{
+    return &TmallTraceplatformCtsInfoUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallTraceplatformCtsInfoUploadRequest) GetApiMethodName() string {
+func (r TmallTraceplatformCtsInfoUploadAPIRequest) GetApiMethodName() string {
     return "tmall.traceplatform.cts.info.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallTraceplatformCtsInfoUploadRequest) GetApiParams() url.Values {
+func (r TmallTraceplatformCtsInfoUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallTraceplatformCtsInfoUploadRequest) GetApiParams() url.Values {
 }
 // TraceInfo Setter
 // 入参traceInfo
-func (r *TmallTraceplatformCtsInfoUploadRequest) SetTraceInfo(_traceInfo *CtsInfo) error {
+func (r *TmallTraceplatformCtsInfoUploadAPIRequest) SetTraceInfo(_traceInfo *CtsInfo) error {
     r._traceInfo = _traceInfo
     r.Set("trace_info", _traceInfo)
     return nil
 }
 
 // TraceInfo Getter
-func (r TmallTraceplatformCtsInfoUploadRequest) GetTraceInfo() *CtsInfo {
+func (r TmallTraceplatformCtsInfoUploadAPIRequest) GetTraceInfo() *CtsInfo {
     return r._traceInfo
 }

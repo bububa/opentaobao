@@ -11,7 +11,7 @@ alibaba.ele.enterprise.ordernew.cancel
 
 订单取消
 */
-func AlibabaEleEnterpriseOrdernewCancel(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCancelRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCancelAPIResponse, error) {
+func AlibabaEleEnterpriseOrdernewCancel(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCancelAPIRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCancelAPIResponse, error) {
     var resp eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.lst.pos.open.goods.getgoodsbybarcode
 
 ISV条码库查询接口
 */
-type AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest struct {
+type AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest struct {
     model.Params
     // 商品条码
     _barcode   string
 }
 
-// 初始化AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest对象
-func NewAlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest() *AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest{
-    return &AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest{
+// 初始化AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest对象
+func NewAlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest() *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest{
+    return &AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest) GetApiMethodName() string {
+func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.pos.open.goods.getgoodsbybarcode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest) GetApiParams() url.Values {
+func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest) GetApiParams() url.Value
 }
 // Barcode Setter
 // 商品条码
-func (r *AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest) SetBarcode(_barcode string) error {
+func (r *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) SetBarcode(_barcode string) error {
     r._barcode = _barcode
     r.Set("barcode", _barcode)
     return nil
 }
 
 // Barcode Getter
-func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest) GetBarcode() string {
+func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) GetBarcode() string {
     return r._barcode
 }

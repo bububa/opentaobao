@@ -12,26 +12,26 @@ taobao.jst.sms.menuinfo.report
 
 聚石塔菜单信息上报
 */
-type TaobaoJstSmsMenuinfoReportRequest struct {
+type TaobaoJstSmsMenuinfoReportAPIRequest struct {
     model.Params
     // 菜单信息上报接口的请求参数
     _menuInfoReportRequest   *MenuInfoReportRequest
 }
 
-// 初始化TaobaoJstSmsMenuinfoReportRequest对象
-func NewTaobaoJstSmsMenuinfoReportRequest() *TaobaoJstSmsMenuinfoReportRequest{
-    return &TaobaoJstSmsMenuinfoReportRequest{
+// 初始化TaobaoJstSmsMenuinfoReportAPIRequest对象
+func NewTaobaoJstSmsMenuinfoReportRequest() *TaobaoJstSmsMenuinfoReportAPIRequest{
+    return &TaobaoJstSmsMenuinfoReportAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJstSmsMenuinfoReportRequest) GetApiMethodName() string {
+func (r TaobaoJstSmsMenuinfoReportAPIRequest) GetApiMethodName() string {
     return "taobao.jst.sms.menuinfo.report"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJstSmsMenuinfoReportRequest) GetApiParams() url.Values {
+func (r TaobaoJstSmsMenuinfoReportAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsMenuinfoReportRequest) GetApiParams() url.Values {
 }
 // MenuInfoReportRequest Setter
 // 菜单信息上报接口的请求参数
-func (r *TaobaoJstSmsMenuinfoReportRequest) SetMenuInfoReportRequest(_menuInfoReportRequest *MenuInfoReportRequest) error {
+func (r *TaobaoJstSmsMenuinfoReportAPIRequest) SetMenuInfoReportRequest(_menuInfoReportRequest *MenuInfoReportRequest) error {
     r._menuInfoReportRequest = _menuInfoReportRequest
     r.Set("menu_info_report_request", _menuInfoReportRequest)
     return nil
 }
 
 // MenuInfoReportRequest Getter
-func (r TaobaoJstSmsMenuinfoReportRequest) GetMenuInfoReportRequest() *MenuInfoReportRequest {
+func (r TaobaoJstSmsMenuinfoReportAPIRequest) GetMenuInfoReportRequest() *MenuInfoReportRequest {
     return r._menuInfoReportRequest
 }

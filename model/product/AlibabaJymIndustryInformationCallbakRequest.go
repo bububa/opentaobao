@@ -12,7 +12,7 @@ alibaba.jym.industry.information.callbak
 
 VMOS回调交易猫行业信息系统
 */
-type AlibabaJymIndustryInformationCallbakRequest struct {
+type AlibabaJymIndustryInformationCallbakAPIRequest struct {
     model.Params
     // 任务ID
     _taskId   string
@@ -24,20 +24,20 @@ type AlibabaJymIndustryInformationCallbakRequest struct {
     _content   string
 }
 
-// 初始化AlibabaJymIndustryInformationCallbakRequest对象
-func NewAlibabaJymIndustryInformationCallbakRequest() *AlibabaJymIndustryInformationCallbakRequest{
-    return &AlibabaJymIndustryInformationCallbakRequest{
+// 初始化AlibabaJymIndustryInformationCallbakAPIRequest对象
+func NewAlibabaJymIndustryInformationCallbakRequest() *AlibabaJymIndustryInformationCallbakAPIRequest{
+    return &AlibabaJymIndustryInformationCallbakAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaJymIndustryInformationCallbakRequest) GetApiMethodName() string {
+func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetApiMethodName() string {
     return "alibaba.jym.industry.information.callbak"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaJymIndustryInformationCallbakRequest) GetApiParams() url.Values {
+func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaJymIndustryInformationCallbakRequest) GetApiParams() url.Values {
 }
 // TaskId Setter
 // 任务ID
-func (r *AlibabaJymIndustryInformationCallbakRequest) SetTaskId(_taskId string) error {
+func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetTaskId(_taskId string) error {
     r._taskId = _taskId
     r.Set("task_id", _taskId)
     return nil
 }
 
 // TaskId Getter
-func (r AlibabaJymIndustryInformationCallbakRequest) GetTaskId() string {
+func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetTaskId() string {
     return r._taskId
 }
 // BizId Setter
 // 幂等ID
-func (r *AlibabaJymIndustryInformationCallbakRequest) SetBizId(_bizId string) error {
+func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetBizId(_bizId string) error {
     r._bizId = _bizId
     r.Set("biz_id", _bizId)
     return nil
 }
 
 // BizId Getter
-func (r AlibabaJymIndustryInformationCallbakRequest) GetBizId() string {
+func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetBizId() string {
     return r._bizId
 }
 // Status Setter
 // 状态
-func (r *AlibabaJymIndustryInformationCallbakRequest) SetStatus(_status int64) error {
+func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetStatus(_status int64) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r AlibabaJymIndustryInformationCallbakRequest) GetStatus() int64 {
+func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetStatus() int64 {
     return r._status
 }
 // Content Setter
 // 内容
-func (r *AlibabaJymIndustryInformationCallbakRequest) SetContent(_content string) error {
+func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetContent(_content string) error {
     r._content = _content
     r.Set("content", _content)
     return nil
 }
 
 // Content Getter
-func (r AlibabaJymIndustryInformationCallbakRequest) GetContent() string {
+func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetContent() string {
     return r._content
 }

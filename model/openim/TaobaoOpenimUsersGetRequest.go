@@ -12,26 +12,26 @@ taobao.openim.users.get
 
 批量获取用户信息
 */
-type TaobaoOpenimUsersGetRequest struct {
+type TaobaoOpenimUsersGetAPIRequest struct {
     model.Params
     // 用户id序列
     _userids   []string
 }
 
-// 初始化TaobaoOpenimUsersGetRequest对象
-func NewTaobaoOpenimUsersGetRequest() *TaobaoOpenimUsersGetRequest{
-    return &TaobaoOpenimUsersGetRequest{
+// 初始化TaobaoOpenimUsersGetAPIRequest对象
+func NewTaobaoOpenimUsersGetRequest() *TaobaoOpenimUsersGetAPIRequest{
+    return &TaobaoOpenimUsersGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenimUsersGetRequest) GetApiMethodName() string {
+func (r TaobaoOpenimUsersGetAPIRequest) GetApiMethodName() string {
     return "taobao.openim.users.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimUsersGetRequest) GetApiParams() url.Values {
+func (r TaobaoOpenimUsersGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOpenimUsersGetRequest) GetApiParams() url.Values {
 }
 // Userids Setter
 // 用户id序列
-func (r *TaobaoOpenimUsersGetRequest) SetUserids(_userids []string) error {
+func (r *TaobaoOpenimUsersGetAPIRequest) SetUserids(_userids []string) error {
     r._userids = _userids
     r.Set("userids", _userids)
     return nil
 }
 
 // Userids Getter
-func (r TaobaoOpenimUsersGetRequest) GetUserids() []string {
+func (r TaobaoOpenimUsersGetAPIRequest) GetUserids() []string {
     return r._userids
 }

@@ -11,7 +11,7 @@ alibaba.mozi.fusion.reentry.employee.account
 
 重新入职并且重新启用账号
 */
-func AlibabaMoziFusionReentryEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionReentryEmployeeAccountRequest, session string) (*mozi.AlibabaMoziFusionReentryEmployeeAccountAPIResponse, error) {
+func AlibabaMoziFusionReentryEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionReentryEmployeeAccountAPIRequest, session string) (*mozi.AlibabaMoziFusionReentryEmployeeAccountAPIResponse, error) {
     var resp mozi.AlibabaMoziFusionReentryEmployeeAccountAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

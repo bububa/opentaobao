@@ -11,7 +11,7 @@ taobao.xhotel.roomtype.conflict.data
 
 商家床型冲突数据接口
 */
-func TaobaoXhotelRoomtypeConflictData(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeConflictDataRequest, session string) (*xhotelitem.TaobaoXhotelRoomtypeConflictDataAPIResponse, error) {
+func TaobaoXhotelRoomtypeConflictData(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeConflictDataAPIRequest, session string) (*xhotelitem.TaobaoXhotelRoomtypeConflictDataAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelRoomtypeConflictDataAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

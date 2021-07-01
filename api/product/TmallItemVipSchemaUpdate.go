@@ -11,7 +11,7 @@ tmall.item.vip.schema.update
 
 大商家编辑商品
 */
-func TmallItemVipSchemaUpdate(clt *core.SDKClient, req *product.TmallItemVipSchemaUpdateRequest, session string) (*product.TmallItemVipSchemaUpdateAPIResponse, error) {
+func TmallItemVipSchemaUpdate(clt *core.SDKClient, req *product.TmallItemVipSchemaUpdateAPIRequest, session string) (*product.TmallItemVipSchemaUpdateAPIResponse, error) {
     var resp product.TmallItemVipSchemaUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

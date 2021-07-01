@@ -12,24 +12,24 @@ cainiao.ecc.exceptions.delay.count
 
 菜鸟控制塔包裹滞留异常统计信息获取
 */
-type CainiaoEccExceptionsDelayCountRequest struct {
+type CainiaoEccExceptionsDelayCountAPIRequest struct {
     model.Params
 }
 
-// 初始化CainiaoEccExceptionsDelayCountRequest对象
-func NewCainiaoEccExceptionsDelayCountRequest() *CainiaoEccExceptionsDelayCountRequest{
-    return &CainiaoEccExceptionsDelayCountRequest{
+// 初始化CainiaoEccExceptionsDelayCountAPIRequest对象
+func NewCainiaoEccExceptionsDelayCountRequest() *CainiaoEccExceptionsDelayCountAPIRequest{
+    return &CainiaoEccExceptionsDelayCountAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoEccExceptionsDelayCountRequest) GetApiMethodName() string {
+func (r CainiaoEccExceptionsDelayCountAPIRequest) GetApiMethodName() string {
     return "cainiao.ecc.exceptions.delay.count"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoEccExceptionsDelayCountRequest) GetApiParams() url.Values {
+func (r CainiaoEccExceptionsDelayCountAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

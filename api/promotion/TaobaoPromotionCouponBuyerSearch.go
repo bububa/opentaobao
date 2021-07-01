@@ -11,7 +11,7 @@ taobao.promotion.coupon.buyer.search
 
 查询买家在相关app领取的优惠券信息
 */
-func TaobaoPromotionCouponBuyerSearch(clt *core.SDKClient, req *promotion.TaobaoPromotionCouponBuyerSearchRequest, session string) (*promotion.TaobaoPromotionCouponBuyerSearchAPIResponse, error) {
+func TaobaoPromotionCouponBuyerSearch(clt *core.SDKClient, req *promotion.TaobaoPromotionCouponBuyerSearchAPIRequest, session string) (*promotion.TaobaoPromotionCouponBuyerSearchAPIResponse, error) {
     var resp promotion.TaobaoPromotionCouponBuyerSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

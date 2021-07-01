@@ -12,26 +12,26 @@ alitrip.tuan.hotel.item.info.get
 
 商家查询发布的宝贝详情信息
 */
-type AlitripTuanHotelItemInfoGetRequest struct {
+type AlitripTuanHotelItemInfoGetAPIRequest struct {
     model.Params
     // 宝贝ID
     _itemId   int64
 }
 
-// 初始化AlitripTuanHotelItemInfoGetRequest对象
-func NewAlitripTuanHotelItemInfoGetRequest() *AlitripTuanHotelItemInfoGetRequest{
-    return &AlitripTuanHotelItemInfoGetRequest{
+// 初始化AlitripTuanHotelItemInfoGetAPIRequest对象
+func NewAlitripTuanHotelItemInfoGetRequest() *AlitripTuanHotelItemInfoGetAPIRequest{
+    return &AlitripTuanHotelItemInfoGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripTuanHotelItemInfoGetRequest) GetApiMethodName() string {
+func (r AlitripTuanHotelItemInfoGetAPIRequest) GetApiMethodName() string {
     return "alitrip.tuan.hotel.item.info.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripTuanHotelItemInfoGetRequest) GetApiParams() url.Values {
+func (r AlitripTuanHotelItemInfoGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripTuanHotelItemInfoGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 宝贝ID
-func (r *AlitripTuanHotelItemInfoGetRequest) SetItemId(_itemId int64) error {
+func (r *AlitripTuanHotelItemInfoGetAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r AlitripTuanHotelItemInfoGetRequest) GetItemId() int64 {
+func (r AlitripTuanHotelItemInfoGetAPIRequest) GetItemId() int64 {
     return r._itemId
 }

@@ -11,7 +11,7 @@ taobao.sungari.inspection.submit
 
 抽检指令录入
 */
-func TaobaoSungariInspectionSubmit(clt *core.SDKClient, req *sungari.TaobaoSungariInspectionSubmitRequest, session string) (*sungari.TaobaoSungariInspectionSubmitAPIResponse, error) {
+func TaobaoSungariInspectionSubmit(clt *core.SDKClient, req *sungari.TaobaoSungariInspectionSubmitAPIRequest, session string) (*sungari.TaobaoSungariInspectionSubmitAPIResponse, error) {
     var resp sungari.TaobaoSungariInspectionSubmitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

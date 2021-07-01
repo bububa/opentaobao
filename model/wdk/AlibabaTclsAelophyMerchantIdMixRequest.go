@@ -12,26 +12,26 @@ alibaba.tcls.aelophy.merchant.id.mix
 
 商家用户id混淆
 */
-type AlibabaTclsAelophyMerchantIdMixRequest struct {
+type AlibabaTclsAelophyMerchantIdMixAPIRequest struct {
     model.Params
     // 商家用户id
     _unionUid   string
 }
 
-// 初始化AlibabaTclsAelophyMerchantIdMixRequest对象
-func NewAlibabaTclsAelophyMerchantIdMixRequest() *AlibabaTclsAelophyMerchantIdMixRequest{
-    return &AlibabaTclsAelophyMerchantIdMixRequest{
+// 初始化AlibabaTclsAelophyMerchantIdMixAPIRequest对象
+func NewAlibabaTclsAelophyMerchantIdMixRequest() *AlibabaTclsAelophyMerchantIdMixAPIRequest{
+    return &AlibabaTclsAelophyMerchantIdMixAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTclsAelophyMerchantIdMixRequest) GetApiMethodName() string {
+func (r AlibabaTclsAelophyMerchantIdMixAPIRequest) GetApiMethodName() string {
     return "alibaba.tcls.aelophy.merchant.id.mix"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTclsAelophyMerchantIdMixRequest) GetApiParams() url.Values {
+func (r AlibabaTclsAelophyMerchantIdMixAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantIdMixRequest) GetApiParams() url.Values {
 }
 // UnionUid Setter
 // 商家用户id
-func (r *AlibabaTclsAelophyMerchantIdMixRequest) SetUnionUid(_unionUid string) error {
+func (r *AlibabaTclsAelophyMerchantIdMixAPIRequest) SetUnionUid(_unionUid string) error {
     r._unionUid = _unionUid
     r.Set("union_uid", _unionUid)
     return nil
 }
 
 // UnionUid Getter
-func (r AlibabaTclsAelophyMerchantIdMixRequest) GetUnionUid() string {
+func (r AlibabaTclsAelophyMerchantIdMixAPIRequest) GetUnionUid() string {
     return r._unionUid
 }

@@ -1,7 +1,7 @@
 package btrip
 
-// OpenInvoiceRuleRs 
-type OpenInvoiceRuleRs struct {
+// OpenInvoiceRuleRS 
+type OpenInvoiceRuleRS struct {
     // 新增数
     AddNum   int64 `json:"add_num,omitempty" xml:"add_num,omitempty"`
     // 删除数

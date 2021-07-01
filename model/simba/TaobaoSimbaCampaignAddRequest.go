@@ -12,7 +12,7 @@ taobao.simba.campaign.add
 
 创建一个推广计划
 */
-type TaobaoSimbaCampaignAddRequest struct {
+type TaobaoSimbaCampaignAddAPIRequest struct {
     model.Params
     // 推广计划名称，不能多余20个汉字，不能和客户其他推广计划同名。
     _title   string
@@ -22,20 +22,20 @@ type TaobaoSimbaCampaignAddRequest struct {
     _type   int64
 }
 
-// 初始化TaobaoSimbaCampaignAddRequest对象
-func NewTaobaoSimbaCampaignAddRequest() *TaobaoSimbaCampaignAddRequest{
-    return &TaobaoSimbaCampaignAddRequest{
+// 初始化TaobaoSimbaCampaignAddAPIRequest对象
+func NewTaobaoSimbaCampaignAddRequest() *TaobaoSimbaCampaignAddAPIRequest{
+    return &TaobaoSimbaCampaignAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaCampaignAddRequest) GetApiMethodName() string {
+func (r TaobaoSimbaCampaignAddAPIRequest) GetApiMethodName() string {
     return "taobao.simba.campaign.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaCampaignAddRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaCampaignAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoSimbaCampaignAddRequest) GetApiParams() url.Values {
 }
 // Title Setter
 // 推广计划名称，不能多余20个汉字，不能和客户其他推广计划同名。
-func (r *TaobaoSimbaCampaignAddRequest) SetTitle(_title string) error {
+func (r *TaobaoSimbaCampaignAddAPIRequest) SetTitle(_title string) error {
     r._title = _title
     r.Set("title", _title)
     return nil
 }
 
 // Title Getter
-func (r TaobaoSimbaCampaignAddRequest) GetTitle() string {
+func (r TaobaoSimbaCampaignAddAPIRequest) GetTitle() string {
     return r._title
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignAddRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaCampaignAddAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaCampaignAddRequest) GetNick() string {
+func (r TaobaoSimbaCampaignAddAPIRequest) GetNick() string {
     return r._nick
 }
 // Type Setter
 // 计划类型，当前仅支持两种标准推广0，销量明星16，默认为0
-func (r *TaobaoSimbaCampaignAddRequest) SetType(_type int64) error {
+func (r *TaobaoSimbaCampaignAddAPIRequest) SetType(_type int64) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r TaobaoSimbaCampaignAddRequest) GetType() int64 {
+func (r TaobaoSimbaCampaignAddAPIRequest) GetType() int64 {
     return r._type
 }

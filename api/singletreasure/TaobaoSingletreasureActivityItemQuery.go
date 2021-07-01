@@ -11,7 +11,7 @@ taobao.singletreasure.activity.item.query
 
 分页查询活动下的商品优惠信息
 */
-func TaobaoSingletreasureActivityItemQuery(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityItemQueryRequest, session string) (*singletreasure.TaobaoSingletreasureActivityItemQueryAPIResponse, error) {
+func TaobaoSingletreasureActivityItemQuery(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityItemQueryAPIRequest, session string) (*singletreasure.TaobaoSingletreasureActivityItemQueryAPIResponse, error) {
     var resp singletreasure.TaobaoSingletreasureActivityItemQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

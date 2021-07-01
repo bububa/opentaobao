@@ -11,7 +11,7 @@ tmall.exchange.agree
 
 卖家同意换货申请
 */
-func TmallExchangeAgree(clt *core.SDKClient, req *exchange.TmallExchangeAgreeRequest, session string) (*exchange.TmallExchangeAgreeAPIResponse, error) {
+func TmallExchangeAgree(clt *core.SDKClient, req *exchange.TmallExchangeAgreeAPIRequest, session string) (*exchange.TmallExchangeAgreeAPIResponse, error) {
     var resp exchange.TmallExchangeAgreeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

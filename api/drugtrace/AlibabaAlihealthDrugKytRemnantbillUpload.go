@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.remnantbill.upload
 
 零头出入库单据上传
 */
-func AlibabaAlihealthDrugKytRemnantbillUpload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIResponse, error) {
+func AlibabaAlihealthDrugKytRemnantbillUpload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.alihealth.nr.rx.queryimage
 
 o2o商家查看处方图片，包括电子图片与纸质图片
 */
-func AlibabaAlihealthNrRxQueryimage(clt *core.SDKClient, req *drug.AlibabaAlihealthNrRxQueryimageRequest, session string) (*drug.AlibabaAlihealthNrRxQueryimageAPIResponse, error) {
+func AlibabaAlihealthNrRxQueryimage(clt *core.SDKClient, req *drug.AlibabaAlihealthNrRxQueryimageAPIRequest, session string) (*drug.AlibabaAlihealthNrRxQueryimageAPIResponse, error) {
     var resp drug.AlibabaAlihealthNrRxQueryimageAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

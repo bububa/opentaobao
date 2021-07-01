@@ -12,26 +12,26 @@ alibaba.alihealth.outflow.prescription.update
 
 阿里健康-处方外流-对外提供处方修改功能
 */
-type AlibabaAlihealthOutflowPrescriptionUpdateRequest struct {
+type AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest struct {
     model.Params
     // 入参对象
     _updateRequest   *PrescriptionOutflowUpdateRequest
 }
 
-// 初始化AlibabaAlihealthOutflowPrescriptionUpdateRequest对象
-func NewAlibabaAlihealthOutflowPrescriptionUpdateRequest() *AlibabaAlihealthOutflowPrescriptionUpdateRequest{
-    return &AlibabaAlihealthOutflowPrescriptionUpdateRequest{
+// 初始化AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest对象
+func NewAlibabaAlihealthOutflowPrescriptionUpdateRequest() *AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest{
+    return &AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowPrescriptionUpdateRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.prescription.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowPrescriptionUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowPrescriptionUpdateRequest) GetApiParams() url.Val
 }
 // UpdateRequest Setter
 // 入参对象
-func (r *AlibabaAlihealthOutflowPrescriptionUpdateRequest) SetUpdateRequest(_updateRequest *PrescriptionOutflowUpdateRequest) error {
+func (r *AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) SetUpdateRequest(_updateRequest *PrescriptionOutflowUpdateRequest) error {
     r._updateRequest = _updateRequest
     r.Set("update_request", _updateRequest)
     return nil
 }
 
 // UpdateRequest Getter
-func (r AlibabaAlihealthOutflowPrescriptionUpdateRequest) GetUpdateRequest() *PrescriptionOutflowUpdateRequest {
+func (r AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) GetUpdateRequest() *PrescriptionOutflowUpdateRequest {
     return r._updateRequest
 }

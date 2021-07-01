@@ -12,7 +12,7 @@ alibaba.mosflow.work.startprocess
 
 业务发起流程审批
 */
-type AlibabaMosflowWorkStartprocessRequest struct {
+type AlibabaMosflowWorkStartprocessAPIRequest struct {
     model.Params
     // 参数二:额外业务参数,Map的JSON串
     _variables   string
@@ -20,20 +20,20 @@ type AlibabaMosflowWorkStartprocessRequest struct {
     _parameterEntity   *ParameterEntity
 }
 
-// 初始化AlibabaMosflowWorkStartprocessRequest对象
-func NewAlibabaMosflowWorkStartprocessRequest() *AlibabaMosflowWorkStartprocessRequest{
-    return &AlibabaMosflowWorkStartprocessRequest{
+// 初始化AlibabaMosflowWorkStartprocessAPIRequest对象
+func NewAlibabaMosflowWorkStartprocessRequest() *AlibabaMosflowWorkStartprocessAPIRequest{
+    return &AlibabaMosflowWorkStartprocessAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosflowWorkStartprocessRequest) GetApiMethodName() string {
+func (r AlibabaMosflowWorkStartprocessAPIRequest) GetApiMethodName() string {
     return "alibaba.mosflow.work.startprocess"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosflowWorkStartprocessRequest) GetApiParams() url.Values {
+func (r AlibabaMosflowWorkStartprocessAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaMosflowWorkStartprocessRequest) GetApiParams() url.Values {
 }
 // Variables Setter
 // 参数二:额外业务参数,Map的JSON串
-func (r *AlibabaMosflowWorkStartprocessRequest) SetVariables(_variables string) error {
+func (r *AlibabaMosflowWorkStartprocessAPIRequest) SetVariables(_variables string) error {
     r._variables = _variables
     r.Set("variables", _variables)
     return nil
 }
 
 // Variables Getter
-func (r AlibabaMosflowWorkStartprocessRequest) GetVariables() string {
+func (r AlibabaMosflowWorkStartprocessAPIRequest) GetVariables() string {
     return r._variables
 }
 // ParameterEntity Setter
 // 流程必传参数
-func (r *AlibabaMosflowWorkStartprocessRequest) SetParameterEntity(_parameterEntity *ParameterEntity) error {
+func (r *AlibabaMosflowWorkStartprocessAPIRequest) SetParameterEntity(_parameterEntity *ParameterEntity) error {
     r._parameterEntity = _parameterEntity
     r.Set("parameter_entity", _parameterEntity)
     return nil
 }
 
 // ParameterEntity Getter
-func (r AlibabaMosflowWorkStartprocessRequest) GetParameterEntity() *ParameterEntity {
+func (r AlibabaMosflowWorkStartprocessAPIRequest) GetParameterEntity() *ParameterEntity {
     return r._parameterEntity
 }

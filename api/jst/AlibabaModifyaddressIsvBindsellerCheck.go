@@ -15,7 +15,7 @@ alibaba.modifyaddress.isv.bindseller.check
 3. 没有签约
 4. 与其他服务商软件签约，如果是同一个isv name，返回appkey，否则不返回。
 */
-func AlibabaModifyaddressIsvBindsellerCheck(clt *core.SDKClient, req *jst.AlibabaModifyaddressIsvBindsellerCheckRequest, session string) (*jst.AlibabaModifyaddressIsvBindsellerCheckAPIResponse, error) {
+func AlibabaModifyaddressIsvBindsellerCheck(clt *core.SDKClient, req *jst.AlibabaModifyaddressIsvBindsellerCheckAPIRequest, session string) (*jst.AlibabaModifyaddressIsvBindsellerCheckAPIResponse, error) {
     var resp jst.AlibabaModifyaddressIsvBindsellerCheckAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

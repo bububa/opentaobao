@@ -12,26 +12,26 @@ aliexpress.trade.buy.placeorder
 
 A006_INVALID_ACCOUNT_INFO
 */
-type AliexpressTradeBuyPlaceorderRequest struct {
+type AliexpressTradeBuyPlaceorderAPIRequest struct {
     model.Params
     // 下单具体参数
     _paramPlaceOrderRequest4OpenApiDTO   *PlaceOrderRequest4OpenApiDTO
 }
 
-// 初始化AliexpressTradeBuyPlaceorderRequest对象
-func NewAliexpressTradeBuyPlaceorderRequest() *AliexpressTradeBuyPlaceorderRequest{
-    return &AliexpressTradeBuyPlaceorderRequest{
+// 初始化AliexpressTradeBuyPlaceorderAPIRequest对象
+func NewAliexpressTradeBuyPlaceorderRequest() *AliexpressTradeBuyPlaceorderAPIRequest{
+    return &AliexpressTradeBuyPlaceorderAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressTradeBuyPlaceorderRequest) GetApiMethodName() string {
+func (r AliexpressTradeBuyPlaceorderAPIRequest) GetApiMethodName() string {
     return "aliexpress.trade.buy.placeorder"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressTradeBuyPlaceorderRequest) GetApiParams() url.Values {
+func (r AliexpressTradeBuyPlaceorderAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressTradeBuyPlaceorderRequest) GetApiParams() url.Values {
 }
 // ParamPlaceOrderRequest4OpenApiDTO Setter
 // 下单具体参数
-func (r *AliexpressTradeBuyPlaceorderRequest) SetParamPlaceOrderRequest4OpenApiDTO(_paramPlaceOrderRequest4OpenApiDTO *PlaceOrderRequest4OpenApiDTO) error {
+func (r *AliexpressTradeBuyPlaceorderAPIRequest) SetParamPlaceOrderRequest4OpenApiDTO(_paramPlaceOrderRequest4OpenApiDTO *PlaceOrderRequest4OpenApiDTO) error {
     r._paramPlaceOrderRequest4OpenApiDTO = _paramPlaceOrderRequest4OpenApiDTO
     r.Set("param_place_order_request4_open_api_d_t_o", _paramPlaceOrderRequest4OpenApiDTO)
     return nil
 }
 
 // ParamPlaceOrderRequest4OpenApiDTO Getter
-func (r AliexpressTradeBuyPlaceorderRequest) GetParamPlaceOrderRequest4OpenApiDTO() *PlaceOrderRequest4OpenApiDTO {
+func (r AliexpressTradeBuyPlaceorderAPIRequest) GetParamPlaceOrderRequest4OpenApiDTO() *PlaceOrderRequest4OpenApiDTO {
     return r._paramPlaceOrderRequest4OpenApiDTO
 }

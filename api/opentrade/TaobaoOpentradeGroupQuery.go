@@ -11,7 +11,7 @@ taobao.opentrade.group.query
 
 组团购场景下，查询商品开团详情
 */
-func TaobaoOpentradeGroupQuery(clt *core.SDKClient, req *opentrade.TaobaoOpentradeGroupQueryRequest, session string) (*opentrade.TaobaoOpentradeGroupQueryAPIResponse, error) {
+func TaobaoOpentradeGroupQuery(clt *core.SDKClient, req *opentrade.TaobaoOpentradeGroupQueryAPIRequest, session string) (*opentrade.TaobaoOpentradeGroupQueryAPIResponse, error) {
     var resp opentrade.TaobaoOpentradeGroupQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

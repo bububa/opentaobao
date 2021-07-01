@@ -12,7 +12,7 @@ alibaba.alihealth.reserve.dental.markitem
 
 标记商品是否可预约
 */
-type AlibabaAlihealthReserveDentalMarkitemRequest struct {
+type AlibabaAlihealthReserveDentalMarkitemAPIRequest struct {
     model.Params
     // 平台商品id
     _itemId   int64
@@ -20,20 +20,20 @@ type AlibabaAlihealthReserveDentalMarkitemRequest struct {
     _status   int64
 }
 
-// 初始化AlibabaAlihealthReserveDentalMarkitemRequest对象
-func NewAlibabaAlihealthReserveDentalMarkitemRequest() *AlibabaAlihealthReserveDentalMarkitemRequest{
-    return &AlibabaAlihealthReserveDentalMarkitemRequest{
+// 初始化AlibabaAlihealthReserveDentalMarkitemAPIRequest对象
+func NewAlibabaAlihealthReserveDentalMarkitemRequest() *AlibabaAlihealthReserveDentalMarkitemAPIRequest{
+    return &AlibabaAlihealthReserveDentalMarkitemAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthReserveDentalMarkitemRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthReserveDentalMarkitemAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.reserve.dental.markitem"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthReserveDentalMarkitemRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthReserveDentalMarkitemAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthReserveDentalMarkitemRequest) GetApiParams() url.Values 
 }
 // ItemId Setter
 // 平台商品id
-func (r *AlibabaAlihealthReserveDentalMarkitemRequest) SetItemId(_itemId int64) error {
+func (r *AlibabaAlihealthReserveDentalMarkitemAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r AlibabaAlihealthReserveDentalMarkitemRequest) GetItemId() int64 {
+func (r AlibabaAlihealthReserveDentalMarkitemAPIRequest) GetItemId() int64 {
     return r._itemId
 }
 // Status Setter
 // 是否可预约，1.可预约 0.不可预约
-func (r *AlibabaAlihealthReserveDentalMarkitemRequest) SetStatus(_status int64) error {
+func (r *AlibabaAlihealthReserveDentalMarkitemAPIRequest) SetStatus(_status int64) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r AlibabaAlihealthReserveDentalMarkitemRequest) GetStatus() int64 {
+func (r AlibabaAlihealthReserveDentalMarkitemAPIRequest) GetStatus() int64 {
     return r._status
 }

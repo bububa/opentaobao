@@ -11,7 +11,7 @@ alibaba.ascp.presalespackage.consign
 
 预售预包尾款发货后推单处理
 */
-func AlibabaAscpPresalespackageConsign(clt *core.SDKClient, req *ascpchannel.AlibabaAscpPresalespackageConsignRequest, session string) (*ascpchannel.AlibabaAscpPresalespackageConsignAPIResponse, error) {
+func AlibabaAscpPresalespackageConsign(clt *core.SDKClient, req *ascpchannel.AlibabaAscpPresalespackageConsignAPIRequest, session string) (*ascpchannel.AlibabaAscpPresalespackageConsignAPIResponse, error) {
     var resp ascpchannel.AlibabaAscpPresalespackageConsignAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

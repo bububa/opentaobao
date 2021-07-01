@@ -12,7 +12,7 @@ alitrip.rail.ir.division.get
 国际火车票提供给代理商用于查询标准城市信息，全部城市数据量209530条，含除中国大陆以外的全部海外区域。
 代理商通过分页查询的方式，拉取飞猪平台方全部境外标准城市，用于自身城市与飞猪平台城市的映射。
 */
-func AlitripRailIrDivisionGet(clt *core.SDKClient, req *rail.AlitripRailIrDivisionGetRequest, session string) (*rail.AlitripRailIrDivisionGetAPIResponse, error) {
+func AlitripRailIrDivisionGet(clt *core.SDKClient, req *rail.AlitripRailIrDivisionGetAPIRequest, session string) (*rail.AlitripRailIrDivisionGetAPIResponse, error) {
     var resp rail.AlitripRailIrDivisionGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

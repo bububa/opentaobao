@@ -12,7 +12,7 @@ yunos.service.cmns.coa.device.isonline
 
 根据设备id查询设备是否在线
 */
-type YunosServiceCmnsCoaDeviceIsonlineRequest struct {
+type YunosServiceCmnsCoaDeviceIsonlineAPIRequest struct {
     model.Params
     // 设备id类型，取值"uuid"或者"imei"或者"deviceToken"
     _type   string
@@ -20,20 +20,20 @@ type YunosServiceCmnsCoaDeviceIsonlineRequest struct {
     _value   string
 }
 
-// 初始化YunosServiceCmnsCoaDeviceIsonlineRequest对象
-func NewYunosServiceCmnsCoaDeviceIsonlineRequest() *YunosServiceCmnsCoaDeviceIsonlineRequest{
-    return &YunosServiceCmnsCoaDeviceIsonlineRequest{
+// 初始化YunosServiceCmnsCoaDeviceIsonlineAPIRequest对象
+func NewYunosServiceCmnsCoaDeviceIsonlineRequest() *YunosServiceCmnsCoaDeviceIsonlineAPIRequest{
+    return &YunosServiceCmnsCoaDeviceIsonlineAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosServiceCmnsCoaDeviceIsonlineRequest) GetApiMethodName() string {
+func (r YunosServiceCmnsCoaDeviceIsonlineAPIRequest) GetApiMethodName() string {
     return "yunos.service.cmns.coa.device.isonline"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosServiceCmnsCoaDeviceIsonlineRequest) GetApiParams() url.Values {
+func (r YunosServiceCmnsCoaDeviceIsonlineAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r YunosServiceCmnsCoaDeviceIsonlineRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 设备id类型，取值"uuid"或者"imei"或者"deviceToken"
-func (r *YunosServiceCmnsCoaDeviceIsonlineRequest) SetType(_type string) error {
+func (r *YunosServiceCmnsCoaDeviceIsonlineAPIRequest) SetType(_type string) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r YunosServiceCmnsCoaDeviceIsonlineRequest) GetType() string {
+func (r YunosServiceCmnsCoaDeviceIsonlineAPIRequest) GetType() string {
     return r._type
 }
 // Value Setter
 // 对应的设备id值
-func (r *YunosServiceCmnsCoaDeviceIsonlineRequest) SetValue(_value string) error {
+func (r *YunosServiceCmnsCoaDeviceIsonlineAPIRequest) SetValue(_value string) error {
     r._value = _value
     r.Set("value", _value)
     return nil
 }
 
 // Value Getter
-func (r YunosServiceCmnsCoaDeviceIsonlineRequest) GetValue() string {
+func (r YunosServiceCmnsCoaDeviceIsonlineAPIRequest) GetValue() string {
     return r._value
 }

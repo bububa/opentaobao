@@ -11,7 +11,7 @@ cainiao.global.logistics.carrier.querylist
 
 查询出所有的实际承运商
 */
-func CainiaoGlobalLogisticsCarrierQuerylist(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalLogisticsCarrierQuerylistRequest, session string) (*cainiaohandover.CainiaoGlobalLogisticsCarrierQuerylistAPIResponse, error) {
+func CainiaoGlobalLogisticsCarrierQuerylist(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalLogisticsCarrierQuerylistAPIRequest, session string) (*cainiaohandover.CainiaoGlobalLogisticsCarrierQuerylistAPIResponse, error) {
     var resp cainiaohandover.CainiaoGlobalLogisticsCarrierQuerylistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

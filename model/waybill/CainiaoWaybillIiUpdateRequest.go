@@ -12,26 +12,26 @@ cainiao.waybill.ii.update
 
 商家更新电子面单号对应的面单信息。
 */
-type CainiaoWaybillIiUpdateRequest struct {
+type CainiaoWaybillIiUpdateAPIRequest struct {
     model.Params
     // 更新请求信息
     _paramWaybillCloudPrintUpdateRequest   *WaybillCloudPrintUpdateRequest
 }
 
-// 初始化CainiaoWaybillIiUpdateRequest对象
-func NewCainiaoWaybillIiUpdateRequest() *CainiaoWaybillIiUpdateRequest{
-    return &CainiaoWaybillIiUpdateRequest{
+// 初始化CainiaoWaybillIiUpdateAPIRequest对象
+func NewCainiaoWaybillIiUpdateRequest() *CainiaoWaybillIiUpdateAPIRequest{
+    return &CainiaoWaybillIiUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoWaybillIiUpdateRequest) GetApiMethodName() string {
+func (r CainiaoWaybillIiUpdateAPIRequest) GetApiMethodName() string {
     return "cainiao.waybill.ii.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillIiUpdateRequest) GetApiParams() url.Values {
+func (r CainiaoWaybillIiUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoWaybillIiUpdateRequest) GetApiParams() url.Values {
 }
 // ParamWaybillCloudPrintUpdateRequest Setter
 // 更新请求信息
-func (r *CainiaoWaybillIiUpdateRequest) SetParamWaybillCloudPrintUpdateRequest(_paramWaybillCloudPrintUpdateRequest *WaybillCloudPrintUpdateRequest) error {
+func (r *CainiaoWaybillIiUpdateAPIRequest) SetParamWaybillCloudPrintUpdateRequest(_paramWaybillCloudPrintUpdateRequest *WaybillCloudPrintUpdateRequest) error {
     r._paramWaybillCloudPrintUpdateRequest = _paramWaybillCloudPrintUpdateRequest
     r.Set("param_waybill_cloud_print_update_request", _paramWaybillCloudPrintUpdateRequest)
     return nil
 }
 
 // ParamWaybillCloudPrintUpdateRequest Getter
-func (r CainiaoWaybillIiUpdateRequest) GetParamWaybillCloudPrintUpdateRequest() *WaybillCloudPrintUpdateRequest {
+func (r CainiaoWaybillIiUpdateAPIRequest) GetParamWaybillCloudPrintUpdateRequest() *WaybillCloudPrintUpdateRequest {
     return r._paramWaybillCloudPrintUpdateRequest
 }

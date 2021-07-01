@@ -1,52 +1,11 @@
 package qimen
 
-import (
-    "net/url"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-组合货品关系查询接口 API请求
-taobao.qimen.combineitem.query
-
-组合货品关系查询
-*/
+// TaobaoQimenCombineitemQueryRequest 
 type TaobaoQimenCombineitemQueryRequest struct {
-    model.Params
-    // 
-    _request   *Request
-}
-
-// 初始化TaobaoQimenCombineitemQueryRequest对象
-func NewTaobaoQimenCombineitemQueryRequest() *TaobaoQimenCombineitemQueryRequest{
-    return &TaobaoQimenCombineitemQueryRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TaobaoQimenCombineitemQueryRequest) GetApiMethodName() string {
-    return "taobao.qimen.combineitem.query"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TaobaoQimenCombineitemQueryRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// Request Setter
-// 
-func (r *TaobaoQimenCombineitemQueryRequest) SetRequest(_request *Request) error {
-    r._request = _request
-    r.Set("request", _request)
-    return nil
-}
-
-// Request Getter
-func (r TaobaoQimenCombineitemQueryRequest) GetRequest() *Request {
-    return r._request
+    // 奇门仓储字段
+    OwnerCode   string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
+    // 奇门仓储字段
+    ItemId   string `json:"itemId,omitempty" xml:"itemId,omitempty"`
+    // 扩展属性
+    ExtendProps   *TaobaoQimenCombineitemQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

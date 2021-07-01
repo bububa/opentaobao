@@ -12,7 +12,7 @@ alibaba.lst.pos.open.inventory.syncinventorydata
 
 商品库存修改同步接口(最多20条库存信息)
 */
-type AlibabaLstPosOpenInventorySyncinventorydataRequest struct {
+type AlibabaLstPosOpenInventorySyncinventorydataAPIRequest struct {
     model.Params
     // 库存对象列表
     _inventoryDTOList   []InventoryDTO
@@ -20,20 +20,20 @@ type AlibabaLstPosOpenInventorySyncinventorydataRequest struct {
     _userId   int64
 }
 
-// 初始化AlibabaLstPosOpenInventorySyncinventorydataRequest对象
-func NewAlibabaLstPosOpenInventorySyncinventorydataRequest() *AlibabaLstPosOpenInventorySyncinventorydataRequest{
-    return &AlibabaLstPosOpenInventorySyncinventorydataRequest{
+// 初始化AlibabaLstPosOpenInventorySyncinventorydataAPIRequest对象
+func NewAlibabaLstPosOpenInventorySyncinventorydataRequest() *AlibabaLstPosOpenInventorySyncinventorydataAPIRequest{
+    return &AlibabaLstPosOpenInventorySyncinventorydataAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstPosOpenInventorySyncinventorydataRequest) GetApiMethodName() string {
+func (r AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.pos.open.inventory.syncinventorydata"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstPosOpenInventorySyncinventorydataRequest) GetApiParams() url.Values {
+func (r AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaLstPosOpenInventorySyncinventorydataRequest) GetApiParams() url.V
 }
 // InventoryDTOList Setter
 // 库存对象列表
-func (r *AlibabaLstPosOpenInventorySyncinventorydataRequest) SetInventoryDTOList(_inventoryDTOList []InventoryDTO) error {
+func (r *AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) SetInventoryDTOList(_inventoryDTOList []InventoryDTO) error {
     r._inventoryDTOList = _inventoryDTOList
     r.Set("inventory_d_t_o_list", _inventoryDTOList)
     return nil
 }
 
 // InventoryDTOList Getter
-func (r AlibabaLstPosOpenInventorySyncinventorydataRequest) GetInventoryDTOList() []InventoryDTO {
+func (r AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) GetInventoryDTOList() []InventoryDTO {
     return r._inventoryDTOList
 }
 // UserId Setter
 // 门店对应的主账号id
-func (r *AlibabaLstPosOpenInventorySyncinventorydataRequest) SetUserId(_userId int64) error {
+func (r *AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) SetUserId(_userId int64) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r AlibabaLstPosOpenInventorySyncinventorydataRequest) GetUserId() int64 {
+func (r AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) GetUserId() int64 {
     return r._userId
 }

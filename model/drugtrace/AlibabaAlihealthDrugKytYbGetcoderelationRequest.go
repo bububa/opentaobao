@@ -13,7 +13,7 @@ alibaba.alihealth.drug.kyt.yb.getcoderelation
 应用于药店或医院入库环节，通过扫码获取下级码进行入库；
 通过码查询所有子码以及包装比例
 */
-type AlibabaAlihealthDrugKytYbGetcoderelationRequest struct {
+type AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest struct {
     model.Params
     // 社保局(所属地市名称)
     _bureauName   string
@@ -27,20 +27,20 @@ type AlibabaAlihealthDrugKytYbGetcoderelationRequest struct {
     _code   string
 }
 
-// 初始化AlibabaAlihealthDrugKytYbGetcoderelationRequest对象
-func NewAlibabaAlihealthDrugKytYbGetcoderelationRequest() *AlibabaAlihealthDrugKytYbGetcoderelationRequest{
-    return &AlibabaAlihealthDrugKytYbGetcoderelationRequest{
+// 初始化AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest对象
+func NewAlibabaAlihealthDrugKytYbGetcoderelationRequest() *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest{
+    return &AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.kyt.yb.getcoderelation"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -49,61 +49,61 @@ func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetApiParams() url.Valu
 }
 // BureauName Setter
 // 社保局(所属地市名称)
-func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetBureauName(_bureauName string) error {
+func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetBureauName(_bureauName string) error {
     r._bureauName = _bureauName
     r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
-func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetBureauName() string {
+func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetBureauName() string {
     return r._bureauName
 }
 // TerminalName Setter
 // 请求终端名称
-func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetTerminalName(_terminalName string) error {
+func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetTerminalName(_terminalName string) error {
     r._terminalName = _terminalName
     r.Set("terminal_name", _terminalName)
     return nil
 }
 
 // TerminalName Getter
-func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetTerminalName() string {
+func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetTerminalName() string {
     return r._terminalName
 }
 // TerminalType Setter
 // 终端类型：1005100-零售，1005200-医疗
-func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetTerminalType(_terminalType string) error {
+func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetTerminalType(_terminalType string) error {
     r._terminalType = _terminalType
     r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
-func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetTerminalType() string {
+func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetTerminalType() string {
     return r._terminalType
 }
 // Invocation Setter
 // 调用方式：formal-正式、test-测试
-func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetInvocation(_invocation string) error {
+func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetInvocation(_invocation string) error {
     r._invocation = _invocation
     r.Set("invocation", _invocation)
     return nil
 }
 
 // Invocation Getter
-func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetInvocation() string {
+func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetInvocation() string {
     return r._invocation
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetCode(_code string) error {
+func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetCode() string {
+func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetCode() string {
     return r._code
 }

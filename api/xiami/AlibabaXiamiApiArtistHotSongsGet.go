@@ -11,7 +11,7 @@ alibaba.xiami.api.artist.hotSongs.get
 
 热门歌曲
 */
-func AlibabaXiamiApiArtistHotSongsGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiArtistHotSongsGetRequest, session string) (*xiami.AlibabaXiamiApiArtistHotSongsGetAPIResponse, error) {
+func AlibabaXiamiApiArtistHotSongsGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiArtistHotSongsGetAPIRequest, session string) (*xiami.AlibabaXiamiApiArtistHotSongsGetAPIResponse, error) {
     var resp xiami.AlibabaXiamiApiArtistHotSongsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

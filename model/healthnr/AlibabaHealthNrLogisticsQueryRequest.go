@@ -12,26 +12,26 @@ alibaba.health.nr.logistics.query
 
 对阿里健康o2o对接的商户提供查询物流单详情的能力
 */
-type AlibabaHealthNrLogisticsQueryRequest struct {
+type AlibabaHealthNrLogisticsQueryAPIRequest struct {
     model.Params
     // 订单id
     _orderId   int64
 }
 
-// 初始化AlibabaHealthNrLogisticsQueryRequest对象
-func NewAlibabaHealthNrLogisticsQueryRequest() *AlibabaHealthNrLogisticsQueryRequest{
-    return &AlibabaHealthNrLogisticsQueryRequest{
+// 初始化AlibabaHealthNrLogisticsQueryAPIRequest对象
+func NewAlibabaHealthNrLogisticsQueryRequest() *AlibabaHealthNrLogisticsQueryAPIRequest{
+    return &AlibabaHealthNrLogisticsQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHealthNrLogisticsQueryRequest) GetApiMethodName() string {
+func (r AlibabaHealthNrLogisticsQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.health.nr.logistics.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHealthNrLogisticsQueryRequest) GetApiParams() url.Values {
+func (r AlibabaHealthNrLogisticsQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaHealthNrLogisticsQueryRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaHealthNrLogisticsQueryRequest) SetOrderId(_orderId int64) error {
+func (r *AlibabaHealthNrLogisticsQueryAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaHealthNrLogisticsQueryRequest) GetOrderId() int64 {
+func (r AlibabaHealthNrLogisticsQueryAPIRequest) GetOrderId() int64 {
     return r._orderId
 }

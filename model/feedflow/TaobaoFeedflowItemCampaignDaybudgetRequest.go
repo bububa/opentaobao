@@ -12,24 +12,24 @@ taobao.feedflow.item.campaign.daybudget
 
 获取当日投放日预算总额
 */
-type TaobaoFeedflowItemCampaignDaybudgetRequest struct {
+type TaobaoFeedflowItemCampaignDaybudgetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoFeedflowItemCampaignDaybudgetRequest对象
-func NewTaobaoFeedflowItemCampaignDaybudgetRequest() *TaobaoFeedflowItemCampaignDaybudgetRequest{
-    return &TaobaoFeedflowItemCampaignDaybudgetRequest{
+// 初始化TaobaoFeedflowItemCampaignDaybudgetAPIRequest对象
+func NewTaobaoFeedflowItemCampaignDaybudgetRequest() *TaobaoFeedflowItemCampaignDaybudgetAPIRequest{
+    return &TaobaoFeedflowItemCampaignDaybudgetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemCampaignDaybudgetRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemCampaignDaybudgetAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.campaign.daybudget"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemCampaignDaybudgetRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemCampaignDaybudgetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

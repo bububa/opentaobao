@@ -11,7 +11,7 @@ yunos.tvpubadmin.manage.topic.contentedit
 
 编辑专题关联的内容
 */
-func YunosTvpubadminManageTopicContentedit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageTopicContenteditRequest, session string) (*tvupadmin.YunosTvpubadminManageTopicContenteditAPIResponse, error) {
+func YunosTvpubadminManageTopicContentedit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageTopicContenteditAPIRequest, session string) (*tvupadmin.YunosTvpubadminManageTopicContenteditAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminManageTopicContenteditAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

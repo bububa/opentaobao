@@ -11,7 +11,7 @@ alibaba.idle.item.user.publishitems
 
 为服务商的卖家提供发布的闲鱼商品列表
 */
-func AlibabaIdleItemUserPublishitems(clt *core.SDKClient, req *idle.AlibabaIdleItemUserPublishitemsRequest, session string) (*idle.AlibabaIdleItemUserPublishitemsAPIResponse, error) {
+func AlibabaIdleItemUserPublishitems(clt *core.SDKClient, req *idle.AlibabaIdleItemUserPublishitemsAPIRequest, session string) (*idle.AlibabaIdleItemUserPublishitemsAPIResponse, error) {
     var resp idle.AlibabaIdleItemUserPublishitemsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

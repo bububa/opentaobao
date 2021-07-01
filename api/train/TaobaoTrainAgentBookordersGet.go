@@ -11,7 +11,7 @@ taobao.train.agent.bookorders.get
 
 代理商获取待出票订单列表，只返回订单号
 */
-func TaobaoTrainAgentBookordersGet(clt *core.SDKClient, req *train.TaobaoTrainAgentBookordersGetRequest, session string) (*train.TaobaoTrainAgentBookordersGetAPIResponse, error) {
+func TaobaoTrainAgentBookordersGet(clt *core.SDKClient, req *train.TaobaoTrainAgentBookordersGetAPIRequest, session string) (*train.TaobaoTrainAgentBookordersGetAPIResponse, error) {
     var resp train.TaobaoTrainAgentBookordersGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

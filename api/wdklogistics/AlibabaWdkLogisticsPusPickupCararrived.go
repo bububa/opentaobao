@@ -11,7 +11,7 @@ alibaba.wdk.logistics.pus.pickup.cararrived
 
 自提业务-汽车自提,车辆到达上报车牌号
 */
-func AlibabaWdkLogisticsPusPickupCararrived(clt *core.SDKClient, req *wdklogistics.AlibabaWdkLogisticsPusPickupCararrivedRequest, session string) (*wdklogistics.AlibabaWdkLogisticsPusPickupCararrivedAPIResponse, error) {
+func AlibabaWdkLogisticsPusPickupCararrived(clt *core.SDKClient, req *wdklogistics.AlibabaWdkLogisticsPusPickupCararrivedAPIRequest, session string) (*wdklogistics.AlibabaWdkLogisticsPusPickupCararrivedAPIResponse, error) {
     var resp wdklogistics.AlibabaWdkLogisticsPusPickupCararrivedAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

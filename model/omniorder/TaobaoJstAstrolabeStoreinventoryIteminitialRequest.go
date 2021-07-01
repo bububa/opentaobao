@@ -12,7 +12,7 @@ taobao.jst.astrolabe.storeinventory.iteminitial
 
 ERP调用奇门的接口，对门店的库存进行初始化
 */
-type TaobaoJstAstrolabeStoreinventoryIteminitialRequest struct {
+type TaobaoJstAstrolabeStoreinventoryIteminitialAPIRequest struct {
     model.Params
     // 门店列表
     _stores   []Store
@@ -20,20 +20,20 @@ type TaobaoJstAstrolabeStoreinventoryIteminitialRequest struct {
     _operationTime   string
 }
 
-// 初始化TaobaoJstAstrolabeStoreinventoryIteminitialRequest对象
-func NewTaobaoJstAstrolabeStoreinventoryIteminitialRequest() *TaobaoJstAstrolabeStoreinventoryIteminitialRequest{
-    return &TaobaoJstAstrolabeStoreinventoryIteminitialRequest{
+// 初始化TaobaoJstAstrolabeStoreinventoryIteminitialAPIRequest对象
+func NewTaobaoJstAstrolabeStoreinventoryIteminitialRequest() *TaobaoJstAstrolabeStoreinventoryIteminitialAPIRequest{
+    return &TaobaoJstAstrolabeStoreinventoryIteminitialAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJstAstrolabeStoreinventoryIteminitialRequest) GetApiMethodName() string {
+func (r TaobaoJstAstrolabeStoreinventoryIteminitialAPIRequest) GetApiMethodName() string {
     return "taobao.jst.astrolabe.storeinventory.iteminitial"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJstAstrolabeStoreinventoryIteminitialRequest) GetApiParams() url.Values {
+func (r TaobaoJstAstrolabeStoreinventoryIteminitialAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoJstAstrolabeStoreinventoryIteminitialRequest) GetApiParams() url.V
 }
 // Stores Setter
 // 门店列表
-func (r *TaobaoJstAstrolabeStoreinventoryIteminitialRequest) SetStores(_stores []Store) error {
+func (r *TaobaoJstAstrolabeStoreinventoryIteminitialAPIRequest) SetStores(_stores []Store) error {
     r._stores = _stores
     r.Set("stores", _stores)
     return nil
 }
 
 // Stores Getter
-func (r TaobaoJstAstrolabeStoreinventoryIteminitialRequest) GetStores() []Store {
+func (r TaobaoJstAstrolabeStoreinventoryIteminitialAPIRequest) GetStores() []Store {
     return r._stores
 }
 // OperationTime Setter
 // 操作时间
-func (r *TaobaoJstAstrolabeStoreinventoryIteminitialRequest) SetOperationTime(_operationTime string) error {
+func (r *TaobaoJstAstrolabeStoreinventoryIteminitialAPIRequest) SetOperationTime(_operationTime string) error {
     r._operationTime = _operationTime
     r.Set("operation_time", _operationTime)
     return nil
 }
 
 // OperationTime Getter
-func (r TaobaoJstAstrolabeStoreinventoryIteminitialRequest) GetOperationTime() string {
+func (r TaobaoJstAstrolabeStoreinventoryIteminitialAPIRequest) GetOperationTime() string {
     return r._operationTime
 }

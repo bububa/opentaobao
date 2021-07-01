@@ -12,7 +12,7 @@ taobao.miniapp.template.onlineapp
 
 将指定的预览版本发布上线，预览版本号由构建实例化或更新实例化接口返回。
 */
-type TaobaoMiniappTemplateOnlineappRequest struct {
+type TaobaoMiniappTemplateOnlineappAPIRequest struct {
     model.Params
     // 要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)
     _clients   []string
@@ -26,20 +26,20 @@ type TaobaoMiniappTemplateOnlineappRequest struct {
     _appVersion   string
 }
 
-// 初始化TaobaoMiniappTemplateOnlineappRequest对象
-func NewTaobaoMiniappTemplateOnlineappRequest() *TaobaoMiniappTemplateOnlineappRequest{
-    return &TaobaoMiniappTemplateOnlineappRequest{
+// 初始化TaobaoMiniappTemplateOnlineappAPIRequest对象
+func NewTaobaoMiniappTemplateOnlineappRequest() *TaobaoMiniappTemplateOnlineappAPIRequest{
+    return &TaobaoMiniappTemplateOnlineappAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMiniappTemplateOnlineappRequest) GetApiMethodName() string {
+func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetApiMethodName() string {
     return "taobao.miniapp.template.onlineapp"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappTemplateOnlineappRequest) GetApiParams() url.Values {
+func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TaobaoMiniappTemplateOnlineappRequest) GetApiParams() url.Values {
 }
 // Clients Setter
 // 要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)
-func (r *TaobaoMiniappTemplateOnlineappRequest) SetClients(_clients []string) error {
+func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetClients(_clients []string) error {
     r._clients = _clients
     r.Set("clients", _clients)
     return nil
 }
 
 // Clients Getter
-func (r TaobaoMiniappTemplateOnlineappRequest) GetClients() []string {
+func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetClients() []string {
     return r._clients
 }
 // AppId Setter
 // 小程序app_id
-func (r *TaobaoMiniappTemplateOnlineappRequest) SetAppId(_appId string) error {
+func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetAppId(_appId string) error {
     r._appId = _appId
     r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
-func (r TaobaoMiniappTemplateOnlineappRequest) GetAppId() string {
+func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetAppId() string {
     return r._appId
 }
 // TemplateId Setter
 // 模板id
-func (r *TaobaoMiniappTemplateOnlineappRequest) SetTemplateId(_templateId string) error {
+func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetTemplateId(_templateId string) error {
     r._templateId = _templateId
     r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
-func (r TaobaoMiniappTemplateOnlineappRequest) GetTemplateId() string {
+func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetTemplateId() string {
     return r._templateId
 }
 // TemplateVersion Setter
 // 模板版本
-func (r *TaobaoMiniappTemplateOnlineappRequest) SetTemplateVersion(_templateVersion string) error {
+func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetTemplateVersion(_templateVersion string) error {
     r._templateVersion = _templateVersion
     r.Set("template_version", _templateVersion)
     return nil
 }
 
 // TemplateVersion Getter
-func (r TaobaoMiniappTemplateOnlineappRequest) GetTemplateVersion() string {
+func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetTemplateVersion() string {
     return r._templateVersion
 }
 // AppVersion Setter
 // 待上线的预览版本号
-func (r *TaobaoMiniappTemplateOnlineappRequest) SetAppVersion(_appVersion string) error {
+func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetAppVersion(_appVersion string) error {
     r._appVersion = _appVersion
     r.Set("app_version", _appVersion)
     return nil
 }
 
 // AppVersion Getter
-func (r TaobaoMiniappTemplateOnlineappRequest) GetAppVersion() string {
+func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetAppVersion() string {
     return r._appVersion
 }

@@ -12,26 +12,26 @@ yunos.tvpubadmin.manage.topic.contentlist
 
 查看专题内容列表
 */
-type YunosTvpubadminManageTopicContentlistRequest struct {
+type YunosTvpubadminManageTopicContentlistAPIRequest struct {
     model.Params
     // 节目查询参数
     _programQuery   string
 }
 
-// 初始化YunosTvpubadminManageTopicContentlistRequest对象
-func NewYunosTvpubadminManageTopicContentlistRequest() *YunosTvpubadminManageTopicContentlistRequest{
-    return &YunosTvpubadminManageTopicContentlistRequest{
+// 初始化YunosTvpubadminManageTopicContentlistAPIRequest对象
+func NewYunosTvpubadminManageTopicContentlistRequest() *YunosTvpubadminManageTopicContentlistAPIRequest{
+    return &YunosTvpubadminManageTopicContentlistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminManageTopicContentlistRequest) GetApiMethodName() string {
+func (r YunosTvpubadminManageTopicContentlistAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.manage.topic.contentlist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminManageTopicContentlistRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminManageTopicContentlistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageTopicContentlistRequest) GetApiParams() url.Values 
 }
 // ProgramQuery Setter
 // 节目查询参数
-func (r *YunosTvpubadminManageTopicContentlistRequest) SetProgramQuery(_programQuery string) error {
+func (r *YunosTvpubadminManageTopicContentlistAPIRequest) SetProgramQuery(_programQuery string) error {
     r._programQuery = _programQuery
     r.Set("program_query", _programQuery)
     return nil
 }
 
 // ProgramQuery Getter
-func (r YunosTvpubadminManageTopicContentlistRequest) GetProgramQuery() string {
+func (r YunosTvpubadminManageTopicContentlistAPIRequest) GetProgramQuery() string {
     return r._programQuery
 }

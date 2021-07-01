@@ -11,7 +11,7 @@ alibaba.interact.open.isattention
 
 判断用户是否收藏某个店铺
 */
-func AlibabaInteractOpenIsattention(clt *core.SDKClient, req *interact.AlibabaInteractOpenIsattentionRequest, session string) (*interact.AlibabaInteractOpenIsattentionAPIResponse, error) {
+func AlibabaInteractOpenIsattention(clt *core.SDKClient, req *interact.AlibabaInteractOpenIsattentionAPIRequest, session string) (*interact.AlibabaInteractOpenIsattentionAPIResponse, error) {
     var resp interact.AlibabaInteractOpenIsattentionAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

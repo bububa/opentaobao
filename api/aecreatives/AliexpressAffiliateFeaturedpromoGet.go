@@ -11,7 +11,7 @@ aliexpress.affiliate.featuredpromo.get
 
 获取联盟主题推广活动信息
 */
-func AliexpressAffiliateFeaturedpromoGet(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateFeaturedpromoGetRequest, session string) (*aecreatives.AliexpressAffiliateFeaturedpromoGetAPIResponse, error) {
+func AliexpressAffiliateFeaturedpromoGet(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateFeaturedpromoGetAPIRequest, session string) (*aecreatives.AliexpressAffiliateFeaturedpromoGetAPIResponse, error) {
     var resp aecreatives.AliexpressAffiliateFeaturedpromoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ taobao.wlb.import.threepl.resource.get
 
 获取3pl直邮的发货可用资源
 */
-type TaobaoWlbImportThreeplResourceGetRequest struct {
+type TaobaoWlbImportThreeplResourceGetAPIRequest struct {
     model.Params
     // ONLINE或者OFFLINE
     _type   string
@@ -22,20 +22,20 @@ type TaobaoWlbImportThreeplResourceGetRequest struct {
     _toAddress   *AddressDTO
 }
 
-// 初始化TaobaoWlbImportThreeplResourceGetRequest对象
-func NewTaobaoWlbImportThreeplResourceGetRequest() *TaobaoWlbImportThreeplResourceGetRequest{
-    return &TaobaoWlbImportThreeplResourceGetRequest{
+// 初始化TaobaoWlbImportThreeplResourceGetAPIRequest对象
+func NewTaobaoWlbImportThreeplResourceGetRequest() *TaobaoWlbImportThreeplResourceGetAPIRequest{
+    return &TaobaoWlbImportThreeplResourceGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbImportThreeplResourceGetRequest) GetApiMethodName() string {
+func (r TaobaoWlbImportThreeplResourceGetAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.import.threepl.resource.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbImportThreeplResourceGetRequest) GetApiParams() url.Values {
+func (r TaobaoWlbImportThreeplResourceGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoWlbImportThreeplResourceGetRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // ONLINE或者OFFLINE
-func (r *TaobaoWlbImportThreeplResourceGetRequest) SetType(_type string) error {
+func (r *TaobaoWlbImportThreeplResourceGetAPIRequest) SetType(_type string) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r TaobaoWlbImportThreeplResourceGetRequest) GetType() string {
+func (r TaobaoWlbImportThreeplResourceGetAPIRequest) GetType() string {
     return r._type
 }
 // FromId Setter
 // 发货地区域id
-func (r *TaobaoWlbImportThreeplResourceGetRequest) SetFromId(_fromId int64) error {
+func (r *TaobaoWlbImportThreeplResourceGetAPIRequest) SetFromId(_fromId int64) error {
     r._fromId = _fromId
     r.Set("from_id", _fromId)
     return nil
 }
 
 // FromId Getter
-func (r TaobaoWlbImportThreeplResourceGetRequest) GetFromId() int64 {
+func (r TaobaoWlbImportThreeplResourceGetAPIRequest) GetFromId() int64 {
     return r._fromId
 }
 // ToAddress Setter
 // 收件人地址
-func (r *TaobaoWlbImportThreeplResourceGetRequest) SetToAddress(_toAddress *AddressDTO) error {
+func (r *TaobaoWlbImportThreeplResourceGetAPIRequest) SetToAddress(_toAddress *AddressDTO) error {
     r._toAddress = _toAddress
     r.Set("to_address", _toAddress)
     return nil
 }
 
 // ToAddress Getter
-func (r TaobaoWlbImportThreeplResourceGetRequest) GetToAddress() *AddressDTO {
+func (r TaobaoWlbImportThreeplResourceGetAPIRequest) GetToAddress() *AddressDTO {
     return r._toAddress
 }

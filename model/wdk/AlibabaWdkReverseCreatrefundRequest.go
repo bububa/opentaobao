@@ -12,26 +12,26 @@ alibaba.wdk.reverse.creatrefund
 
 逆向申请提交
 */
-type AlibabaWdkReverseCreatrefundRequest struct {
+type AlibabaWdkReverseCreatrefundAPIRequest struct {
     model.Params
     // CreateReverseReq
     _paramCreateReverseReq   *CreateReverseReq
 }
 
-// 初始化AlibabaWdkReverseCreatrefundRequest对象
-func NewAlibabaWdkReverseCreatrefundRequest() *AlibabaWdkReverseCreatrefundRequest{
-    return &AlibabaWdkReverseCreatrefundRequest{
+// 初始化AlibabaWdkReverseCreatrefundAPIRequest对象
+func NewAlibabaWdkReverseCreatrefundRequest() *AlibabaWdkReverseCreatrefundAPIRequest{
+    return &AlibabaWdkReverseCreatrefundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkReverseCreatrefundRequest) GetApiMethodName() string {
+func (r AlibabaWdkReverseCreatrefundAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.reverse.creatrefund"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkReverseCreatrefundRequest) GetApiParams() url.Values {
+func (r AlibabaWdkReverseCreatrefundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkReverseCreatrefundRequest) GetApiParams() url.Values {
 }
 // ParamCreateReverseReq Setter
 // CreateReverseReq
-func (r *AlibabaWdkReverseCreatrefundRequest) SetParamCreateReverseReq(_paramCreateReverseReq *CreateReverseReq) error {
+func (r *AlibabaWdkReverseCreatrefundAPIRequest) SetParamCreateReverseReq(_paramCreateReverseReq *CreateReverseReq) error {
     r._paramCreateReverseReq = _paramCreateReverseReq
     r.Set("param_create_reverse_req", _paramCreateReverseReq)
     return nil
 }
 
 // ParamCreateReverseReq Getter
-func (r AlibabaWdkReverseCreatrefundRequest) GetParamCreateReverseReq() *CreateReverseReq {
+func (r AlibabaWdkReverseCreatrefundAPIRequest) GetParamCreateReverseReq() *CreateReverseReq {
     return r._paramCreateReverseReq
 }

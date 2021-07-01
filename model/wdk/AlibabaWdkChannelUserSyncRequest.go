@@ -12,26 +12,26 @@ alibaba.wdk.channel.user.sync
 
 会员同步
 */
-type AlibabaWdkChannelUserSyncRequest struct {
+type AlibabaWdkChannelUserSyncAPIRequest struct {
     model.Params
     // 会员信息
     _userSyncInfo   *UserSyncInfo
 }
 
-// 初始化AlibabaWdkChannelUserSyncRequest对象
-func NewAlibabaWdkChannelUserSyncRequest() *AlibabaWdkChannelUserSyncRequest{
-    return &AlibabaWdkChannelUserSyncRequest{
+// 初始化AlibabaWdkChannelUserSyncAPIRequest对象
+func NewAlibabaWdkChannelUserSyncRequest() *AlibabaWdkChannelUserSyncAPIRequest{
+    return &AlibabaWdkChannelUserSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkChannelUserSyncRequest) GetApiMethodName() string {
+func (r AlibabaWdkChannelUserSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.channel.user.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkChannelUserSyncRequest) GetApiParams() url.Values {
+func (r AlibabaWdkChannelUserSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkChannelUserSyncRequest) GetApiParams() url.Values {
 }
 // UserSyncInfo Setter
 // 会员信息
-func (r *AlibabaWdkChannelUserSyncRequest) SetUserSyncInfo(_userSyncInfo *UserSyncInfo) error {
+func (r *AlibabaWdkChannelUserSyncAPIRequest) SetUserSyncInfo(_userSyncInfo *UserSyncInfo) error {
     r._userSyncInfo = _userSyncInfo
     r.Set("user_sync_info", _userSyncInfo)
     return nil
 }
 
 // UserSyncInfo Getter
-func (r AlibabaWdkChannelUserSyncRequest) GetUserSyncInfo() *UserSyncInfo {
+func (r AlibabaWdkChannelUserSyncAPIRequest) GetUserSyncInfo() *UserSyncInfo {
     return r._userSyncInfo
 }

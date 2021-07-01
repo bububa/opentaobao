@@ -11,7 +11,7 @@ alibaba.wholesale.shippingline.template.init
 
 创建默认的几种运费模板
 */
-func AlibabaWholesaleShippinglineTemplateInit(clt *core.SDKClient, req *product.AlibabaWholesaleShippinglineTemplateInitRequest, session string) (*product.AlibabaWholesaleShippinglineTemplateInitAPIResponse, error) {
+func AlibabaWholesaleShippinglineTemplateInit(clt *core.SDKClient, req *product.AlibabaWholesaleShippinglineTemplateInitAPIRequest, session string) (*product.AlibabaWholesaleShippinglineTemplateInitAPIResponse, error) {
     var resp product.AlibabaWholesaleShippinglineTemplateInitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.feedflow.item.campaign.page
 
 批量查询计划列表
 */
-func TaobaoFeedflowItemCampaignPage(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignPageRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignPageAPIResponse, error) {
+func TaobaoFeedflowItemCampaignPage(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignPageAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignPageAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemCampaignPageAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

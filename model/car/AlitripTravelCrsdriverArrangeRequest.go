@@ -12,26 +12,26 @@ alitrip.travel.crsdriver.arrange
 
 提供给CRS接送机商家派司机的API
 */
-type AlitripTravelCrsdriverArrangeRequest struct {
+type AlitripTravelCrsdriverArrangeAPIRequest struct {
     model.Params
     // 请求对象
     _crsDriverArrangeParam   *CrsDriverArrangeParam
 }
 
-// 初始化AlitripTravelCrsdriverArrangeRequest对象
-func NewAlitripTravelCrsdriverArrangeRequest() *AlitripTravelCrsdriverArrangeRequest{
-    return &AlitripTravelCrsdriverArrangeRequest{
+// 初始化AlitripTravelCrsdriverArrangeAPIRequest对象
+func NewAlitripTravelCrsdriverArrangeRequest() *AlitripTravelCrsdriverArrangeAPIRequest{
+    return &AlitripTravelCrsdriverArrangeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripTravelCrsdriverArrangeRequest) GetApiMethodName() string {
+func (r AlitripTravelCrsdriverArrangeAPIRequest) GetApiMethodName() string {
     return "alitrip.travel.crsdriver.arrange"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripTravelCrsdriverArrangeRequest) GetApiParams() url.Values {
+func (r AlitripTravelCrsdriverArrangeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripTravelCrsdriverArrangeRequest) GetApiParams() url.Values {
 }
 // CrsDriverArrangeParam Setter
 // 请求对象
-func (r *AlitripTravelCrsdriverArrangeRequest) SetCrsDriverArrangeParam(_crsDriverArrangeParam *CrsDriverArrangeParam) error {
+func (r *AlitripTravelCrsdriverArrangeAPIRequest) SetCrsDriverArrangeParam(_crsDriverArrangeParam *CrsDriverArrangeParam) error {
     r._crsDriverArrangeParam = _crsDriverArrangeParam
     r.Set("crs_driver_arrange_param", _crsDriverArrangeParam)
     return nil
 }
 
 // CrsDriverArrangeParam Getter
-func (r AlitripTravelCrsdriverArrangeRequest) GetCrsDriverArrangeParam() *CrsDriverArrangeParam {
+func (r AlitripTravelCrsdriverArrangeAPIRequest) GetCrsDriverArrangeParam() *CrsDriverArrangeParam {
     return r._crsDriverArrangeParam
 }

@@ -11,7 +11,7 @@ alibaba.ele.enterprise.ordernew.getstatus
 
 订单状态查询接口
 */
-func AlibabaEleEnterpriseOrdernewGetstatus(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetstatusRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetstatusAPIResponse, error) {
+func AlibabaEleEnterpriseOrdernewGetstatus(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetstatusAPIRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetstatusAPIResponse, error) {
     var resp eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetstatusAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

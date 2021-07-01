@@ -12,26 +12,26 @@ alibaba.damai.mev.open.deletevenue
 
 开放接口，删除场馆
 */
-type AlibabaDamaiMevOpenDeletevenueRequest struct {
+type AlibabaDamaiMevOpenDeletevenueAPIRequest struct {
     model.Params
     // 入参deleteVenueParam
     _deleteVenueParam   *VenueIdOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenDeletevenueRequest对象
-func NewAlibabaDamaiMevOpenDeletevenueRequest() *AlibabaDamaiMevOpenDeletevenueRequest{
-    return &AlibabaDamaiMevOpenDeletevenueRequest{
+// 初始化AlibabaDamaiMevOpenDeletevenueAPIRequest对象
+func NewAlibabaDamaiMevOpenDeletevenueRequest() *AlibabaDamaiMevOpenDeletevenueAPIRequest{
+    return &AlibabaDamaiMevOpenDeletevenueAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenDeletevenueRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenDeletevenueAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.deletevenue"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenDeletevenueRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenDeletevenueAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeletevenueRequest) GetApiParams() url.Values {
 }
 // DeleteVenueParam Setter
 // 入参deleteVenueParam
-func (r *AlibabaDamaiMevOpenDeletevenueRequest) SetDeleteVenueParam(_deleteVenueParam *VenueIdOpenParam) error {
+func (r *AlibabaDamaiMevOpenDeletevenueAPIRequest) SetDeleteVenueParam(_deleteVenueParam *VenueIdOpenParam) error {
     r._deleteVenueParam = _deleteVenueParam
     r.Set("delete_venue_param", _deleteVenueParam)
     return nil
 }
 
 // DeleteVenueParam Getter
-func (r AlibabaDamaiMevOpenDeletevenueRequest) GetDeleteVenueParam() *VenueIdOpenParam {
+func (r AlibabaDamaiMevOpenDeletevenueAPIRequest) GetDeleteVenueParam() *VenueIdOpenParam {
     return r._deleteVenueParam
 }

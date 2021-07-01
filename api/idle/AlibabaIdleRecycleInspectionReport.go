@@ -11,7 +11,7 @@ alibaba.idle.recycle.inspection.report
 
 回收商鉴定报告
 */
-func AlibabaIdleRecycleInspectionReport(clt *core.SDKClient, req *idle.AlibabaIdleRecycleInspectionReportRequest, session string) (*idle.AlibabaIdleRecycleInspectionReportAPIResponse, error) {
+func AlibabaIdleRecycleInspectionReport(clt *core.SDKClient, req *idle.AlibabaIdleRecycleInspectionReportAPIRequest, session string) (*idle.AlibabaIdleRecycleInspectionReportAPIResponse, error) {
     var resp idle.AlibabaIdleRecycleInspectionReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.smartstore.device.status.feedback
 
 智能硬件设备状态回流
 */
-func TaobaoSmartstoreDeviceStatusFeedback(clt *core.SDKClient, req *smartstore.TaobaoSmartstoreDeviceStatusFeedbackRequest, session string) (*smartstore.TaobaoSmartstoreDeviceStatusFeedbackAPIResponse, error) {
+func TaobaoSmartstoreDeviceStatusFeedback(clt *core.SDKClient, req *smartstore.TaobaoSmartstoreDeviceStatusFeedbackAPIRequest, session string) (*smartstore.TaobaoSmartstoreDeviceStatusFeedbackAPIResponse, error) {
     var resp smartstore.TaobaoSmartstoreDeviceStatusFeedbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

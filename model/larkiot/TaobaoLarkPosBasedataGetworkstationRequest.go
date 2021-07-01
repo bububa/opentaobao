@@ -12,7 +12,7 @@ taobao.lark.pos.basedata.getworkstation
 
 获取单独工作站
 */
-type TaobaoLarkPosBasedataGetworkstationRequest struct {
+type TaobaoLarkPosBasedataGetworkstationAPIRequest struct {
     model.Params
     // 影城cinemaLinkId
     _cinemaLinkId   string
@@ -20,20 +20,20 @@ type TaobaoLarkPosBasedataGetworkstationRequest struct {
     _posCode   string
 }
 
-// 初始化TaobaoLarkPosBasedataGetworkstationRequest对象
-func NewTaobaoLarkPosBasedataGetworkstationRequest() *TaobaoLarkPosBasedataGetworkstationRequest{
-    return &TaobaoLarkPosBasedataGetworkstationRequest{
+// 初始化TaobaoLarkPosBasedataGetworkstationAPIRequest对象
+func NewTaobaoLarkPosBasedataGetworkstationRequest() *TaobaoLarkPosBasedataGetworkstationAPIRequest{
+    return &TaobaoLarkPosBasedataGetworkstationAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoLarkPosBasedataGetworkstationRequest) GetApiMethodName() string {
+func (r TaobaoLarkPosBasedataGetworkstationAPIRequest) GetApiMethodName() string {
     return "taobao.lark.pos.basedata.getworkstation"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoLarkPosBasedataGetworkstationRequest) GetApiParams() url.Values {
+func (r TaobaoLarkPosBasedataGetworkstationAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoLarkPosBasedataGetworkstationRequest) GetApiParams() url.Values {
 }
 // CinemaLinkId Setter
 // 影城cinemaLinkId
-func (r *TaobaoLarkPosBasedataGetworkstationRequest) SetCinemaLinkId(_cinemaLinkId string) error {
+func (r *TaobaoLarkPosBasedataGetworkstationAPIRequest) SetCinemaLinkId(_cinemaLinkId string) error {
     r._cinemaLinkId = _cinemaLinkId
     r.Set("cinema_link_id", _cinemaLinkId)
     return nil
 }
 
 // CinemaLinkId Getter
-func (r TaobaoLarkPosBasedataGetworkstationRequest) GetCinemaLinkId() string {
+func (r TaobaoLarkPosBasedataGetworkstationAPIRequest) GetCinemaLinkId() string {
     return r._cinemaLinkId
 }
 // PosCode Setter
 // 终端编码
-func (r *TaobaoLarkPosBasedataGetworkstationRequest) SetPosCode(_posCode string) error {
+func (r *TaobaoLarkPosBasedataGetworkstationAPIRequest) SetPosCode(_posCode string) error {
     r._posCode = _posCode
     r.Set("pos_code", _posCode)
     return nil
 }
 
 // PosCode Getter
-func (r TaobaoLarkPosBasedataGetworkstationRequest) GetPosCode() string {
+func (r TaobaoLarkPosBasedataGetworkstationAPIRequest) GetPosCode() string {
     return r._posCode
 }

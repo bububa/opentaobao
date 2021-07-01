@@ -11,7 +11,7 @@ tmall.car.lease.synchronizeplans
 
 租赁公司同步还款计划
 */
-func TmallCarLeaseSynchronizeplans(clt *core.SDKClient, req *servicecenter.TmallCarLeaseSynchronizeplansRequest, session string) (*servicecenter.TmallCarLeaseSynchronizeplansAPIResponse, error) {
+func TmallCarLeaseSynchronizeplans(clt *core.SDKClient, req *servicecenter.TmallCarLeaseSynchronizeplansAPIRequest, session string) (*servicecenter.TmallCarLeaseSynchronizeplansAPIResponse, error) {
     var resp servicecenter.TmallCarLeaseSynchronizeplansAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ alibaba.alihealth.drugtrace.top.yljg.query.billstatus
 
 单据处理状态查询
 */
-type AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest struct {
+type AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest struct {
     model.Params
     // 企业ID
     _refEntId   string
@@ -40,20 +40,20 @@ type AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest struct {
     _page   int64
 }
 
-// 初始化AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest对象
-func NewAlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest() *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest{
-    return &AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest{
+// 初始化AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest对象
+func NewAlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest() *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest{
+    return &AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drugtrace.top.yljg.query.billstatus"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -62,145 +62,145 @@ func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetApiParams() u
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetRefEntId() string {
     return r._refEntId
 }
 // BeginDate Setter
 // 开始日期
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetBeginDate(_beginDate string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetBeginDate(_beginDate string) error {
     r._beginDate = _beginDate
     r.Set("begin_date", _beginDate)
     return nil
 }
 
 // BeginDate Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetBeginDate() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetBeginDate() string {
     return r._beginDate
 }
 // EndDate Setter
 // 结束日期
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetEndDate(_endDate string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetEndDate(_endDate string) error {
     r._endDate = _endDate
     r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetEndDate() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetEndDate() string {
     return r._endDate
 }
 // BillType Setter
 // 单据类型 A：全部 AI：全部入库 AO：全部出库
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetBillType(_billType string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetBillType(_billType string) error {
     r._billType = _billType
     r.Set("bill_type", _billType)
     return nil
 }
 
 // BillType Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetBillType() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetBillType() string {
     return r._billType
 }
 // BillCode Setter
 // 单据号
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetBillCode(_billCode string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetBillCode(_billCode string) error {
     r._billCode = _billCode
     r.Set("bill_code", _billCode)
     return nil
 }
 
 // BillCode Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetBillCode() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetBillCode() string {
     return r._billCode
 }
 // DrugType Setter
 // 药品类型
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetDrugType(_drugType string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetDrugType(_drugType string) error {
     r._drugType = _drugType
     r.Set("drug_type", _drugType)
     return nil
 }
 
 // DrugType Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetDrugType() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetDrugType() string {
     return r._drugType
 }
 // DealStatus Setter
 // 状态  0, 上传成功     3, 处理成功     4, 处理失败
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetDealStatus(_dealStatus string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetDealStatus(_dealStatus string) error {
     r._dealStatus = _dealStatus
     r.Set("deal_status", _dealStatus)
     return nil
 }
 
 // DealStatus Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetDealStatus() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetDealStatus() string {
     return r._dealStatus
 }
 // FromUserId Setter
 // 发货商
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetFromUserId(_fromUserId string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetFromUserId(_fromUserId string) error {
     r._fromUserId = _fromUserId
     r.Set("from_user_id", _fromUserId)
     return nil
 }
 
 // FromUserId Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetFromUserId() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetFromUserId() string {
     return r._fromUserId
 }
 // ToUserId Setter
 // 收货商
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetToUserId(_toUserId string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetToUserId(_toUserId string) error {
     r._toUserId = _toUserId
     r.Set("to_user_id", _toUserId)
     return nil
 }
 
 // ToUserId Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetToUserId() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetToUserId() string {
     return r._toUserId
 }
 // AgentRefUserId Setter
 // 代理商
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetAgentRefUserId(_agentRefUserId string) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetAgentRefUserId(_agentRefUserId string) error {
     r._agentRefUserId = _agentRefUserId
     r.Set("agent_ref_user_id", _agentRefUserId)
     return nil
 }
 
 // AgentRefUserId Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetAgentRefUserId() string {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetAgentRefUserId() string {
     return r._agentRefUserId
 }
 // PageSize Setter
 // 页大小
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetPageSize() int64 {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // Page Setter
 // 页码
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) SetPage(_page int64) error {
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) SetPage(_page int64) error {
     r._page = _page
     r.Set("page", _page)
     return nil
 }
 
 // Page Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusRequest) GetPage() int64 {
+func (r AlibabaAlihealthDrugtraceTopYljgQueryBillstatusAPIRequest) GetPage() int64 {
     return r._page
 }

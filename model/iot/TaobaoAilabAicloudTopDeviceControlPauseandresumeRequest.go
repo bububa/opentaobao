@@ -12,7 +12,7 @@ taobao.ailab.aicloud.top.device.control.pauseandresume
 
 设备播放暂停
 */
-type TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest struct {
+type TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest struct {
     model.Params
     // 用户信息
     _param0   *OpenBaseInfo
@@ -22,20 +22,20 @@ type TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest struct {
     _param2   bool
 }
 
-// 初始化TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest对象
-func NewTaobaoAilabAicloudTopDeviceControlPauseandresumeRequest() *TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest{
-    return &TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest{
+// 初始化TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest对象
+func NewTaobaoAilabAicloudTopDeviceControlPauseandresumeRequest() *TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest{
+    return &TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) GetApiMethodName() string {
+func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) GetApiMethodName() string {
     return "taobao.ailab.aicloud.top.device.control.pauseandresume"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) GetApiParams() url.Values {
+func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) GetApiParams() 
 }
 // Param0 Setter
 // 用户信息
-func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) SetParam0(_param0 *OpenBaseInfo) error {
+func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) GetParam0() *OpenBaseInfo {
+func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) GetParam0() *OpenBaseInfo {
     return r._param0
 }
 // Param1 Setter
 // 设备id
-func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) SetParam1(_param1 string) error {
+func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) SetParam1(_param1 string) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) GetParam1() string {
+func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) GetParam1() string {
     return r._param1
 }
 // Param2 Setter
 // 是暂停还是继续
-func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) SetParam2(_param2 bool) error {
+func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) SetParam2(_param2 bool) error {
     r._param2 = _param2
     r.Set("param2", _param2)
     return nil
 }
 
 // Param2 Getter
-func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) GetParam2() bool {
+func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) GetParam2() bool {
     return r._param2
 }

@@ -11,7 +11,7 @@ alibaba.alisports.efsp.userwriteoff
 
 用户核销
 */
-func AlibabaAlisportsEfspUserwriteoff(clt *core.SDKClient, req *alisports.AlibabaAlisportsEfspUserwriteoffRequest, session string) (*alisports.AlibabaAlisportsEfspUserwriteoffAPIResponse, error) {
+func AlibabaAlisportsEfspUserwriteoff(clt *core.SDKClient, req *alisports.AlibabaAlisportsEfspUserwriteoffAPIRequest, session string) (*alisports.AlibabaAlisportsEfspUserwriteoffAPIResponse, error) {
     var resp alisports.AlibabaAlisportsEfspUserwriteoffAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

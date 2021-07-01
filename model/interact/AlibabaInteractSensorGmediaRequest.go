@@ -12,24 +12,24 @@ alibaba.interact.sensor.gmedia
 
 媒体功能
 */
-type AlibabaInteractSensorGmediaRequest struct {
+type AlibabaInteractSensorGmediaAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractSensorGmediaRequest对象
-func NewAlibabaInteractSensorGmediaRequest() *AlibabaInteractSensorGmediaRequest{
-    return &AlibabaInteractSensorGmediaRequest{
+// 初始化AlibabaInteractSensorGmediaAPIRequest对象
+func NewAlibabaInteractSensorGmediaRequest() *AlibabaInteractSensorGmediaAPIRequest{
+    return &AlibabaInteractSensorGmediaAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorGmediaRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorGmediaAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.gmedia"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorGmediaRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorGmediaAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

@@ -11,7 +11,7 @@ taobao.openmall.refund.image.upload
 
 OpenMall退款图片上传
 */
-func TaobaoOpenmallRefundImageUpload(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundImageUploadRequest, session string) (*openmall.TaobaoOpenmallRefundImageUploadAPIResponse, error) {
+func TaobaoOpenmallRefundImageUpload(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundImageUploadAPIRequest, session string) (*openmall.TaobaoOpenmallRefundImageUploadAPIResponse, error) {
     var resp openmall.TaobaoOpenmallRefundImageUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

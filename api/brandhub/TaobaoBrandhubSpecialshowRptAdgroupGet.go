@@ -11,7 +11,7 @@ taobao.brandhub.specialshow.rpt.adgroup.get
 
 获取品牌号品牌特秀广告adgroup分日报表数据，只能查询近90天内的数据，包括展现量，点击量等
 */
-func TaobaoBrandhubSpecialshowRptAdgroupGet(clt *core.SDKClient, req *brandhub.TaobaoBrandhubSpecialshowRptAdgroupGetRequest, session string) (*brandhub.TaobaoBrandhubSpecialshowRptAdgroupGetAPIResponse, error) {
+func TaobaoBrandhubSpecialshowRptAdgroupGet(clt *core.SDKClient, req *brandhub.TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest, session string) (*brandhub.TaobaoBrandhubSpecialshowRptAdgroupGetAPIResponse, error) {
     var resp brandhub.TaobaoBrandhubSpecialshowRptAdgroupGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

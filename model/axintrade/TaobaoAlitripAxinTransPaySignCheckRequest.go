@@ -12,26 +12,26 @@ taobao.alitrip.axin.trans.pay.sign.check
 
 阿信支付宝验签服务
 */
-type TaobaoAlitripAxinTransPaySignCheckRequest struct {
+type TaobaoAlitripAxinTransPaySignCheckAPIRequest struct {
     model.Params
     // 验签对象
     _axinPayCheckSignDto   *AxinPayCheckSignDTO
 }
 
-// 初始化TaobaoAlitripAxinTransPaySignCheckRequest对象
-func NewTaobaoAlitripAxinTransPaySignCheckRequest() *TaobaoAlitripAxinTransPaySignCheckRequest{
-    return &TaobaoAlitripAxinTransPaySignCheckRequest{
+// 初始化TaobaoAlitripAxinTransPaySignCheckAPIRequest对象
+func NewTaobaoAlitripAxinTransPaySignCheckRequest() *TaobaoAlitripAxinTransPaySignCheckAPIRequest{
+    return &TaobaoAlitripAxinTransPaySignCheckAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripAxinTransPaySignCheckRequest) GetApiMethodName() string {
+func (r TaobaoAlitripAxinTransPaySignCheckAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.axin.trans.pay.sign.check"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripAxinTransPaySignCheckRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripAxinTransPaySignCheckAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransPaySignCheckRequest) GetApiParams() url.Values {
 }
 // AxinPayCheckSignDto Setter
 // 验签对象
-func (r *TaobaoAlitripAxinTransPaySignCheckRequest) SetAxinPayCheckSignDto(_axinPayCheckSignDto *AxinPayCheckSignDTO) error {
+func (r *TaobaoAlitripAxinTransPaySignCheckAPIRequest) SetAxinPayCheckSignDto(_axinPayCheckSignDto *AxinPayCheckSignDTO) error {
     r._axinPayCheckSignDto = _axinPayCheckSignDto
     r.Set("axin_pay_check_sign_dto", _axinPayCheckSignDto)
     return nil
 }
 
 // AxinPayCheckSignDto Getter
-func (r TaobaoAlitripAxinTransPaySignCheckRequest) GetAxinPayCheckSignDto() *AxinPayCheckSignDTO {
+func (r TaobaoAlitripAxinTransPaySignCheckAPIRequest) GetAxinPayCheckSignDto() *AxinPayCheckSignDTO {
     return r._axinPayCheckSignDto
 }

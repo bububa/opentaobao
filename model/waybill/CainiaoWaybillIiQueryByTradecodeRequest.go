@@ -12,26 +12,26 @@ cainiao.waybill.ii.query.by.tradecode
 
 通过订单号查看面单的信息
 */
-type CainiaoWaybillIiQueryByTradecodeRequest struct {
+type CainiaoWaybillIiQueryByTradecodeAPIRequest struct {
     model.Params
     // 订单号列表
     _paramList   []WaybillDetailQueryByBizSubCodeRequest
 }
 
-// 初始化CainiaoWaybillIiQueryByTradecodeRequest对象
-func NewCainiaoWaybillIiQueryByTradecodeRequest() *CainiaoWaybillIiQueryByTradecodeRequest{
-    return &CainiaoWaybillIiQueryByTradecodeRequest{
+// 初始化CainiaoWaybillIiQueryByTradecodeAPIRequest对象
+func NewCainiaoWaybillIiQueryByTradecodeRequest() *CainiaoWaybillIiQueryByTradecodeAPIRequest{
+    return &CainiaoWaybillIiQueryByTradecodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoWaybillIiQueryByTradecodeRequest) GetApiMethodName() string {
+func (r CainiaoWaybillIiQueryByTradecodeAPIRequest) GetApiMethodName() string {
     return "cainiao.waybill.ii.query.by.tradecode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillIiQueryByTradecodeRequest) GetApiParams() url.Values {
+func (r CainiaoWaybillIiQueryByTradecodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoWaybillIiQueryByTradecodeRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 订单号列表
-func (r *CainiaoWaybillIiQueryByTradecodeRequest) SetParamList(_paramList []WaybillDetailQueryByBizSubCodeRequest) error {
+func (r *CainiaoWaybillIiQueryByTradecodeAPIRequest) SetParamList(_paramList []WaybillDetailQueryByBizSubCodeRequest) error {
     r._paramList = _paramList
     r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
-func (r CainiaoWaybillIiQueryByTradecodeRequest) GetParamList() []WaybillDetailQueryByBizSubCodeRequest {
+func (r CainiaoWaybillIiQueryByTradecodeAPIRequest) GetParamList() []WaybillDetailQueryByBizSubCodeRequest {
     return r._paramList
 }

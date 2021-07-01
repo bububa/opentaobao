@@ -12,7 +12,7 @@ taobao.subway.cia.update
 
 批量修改直通车推广单元的智能出价配置
 */
-type TaobaoSubwayCiaUpdateRequest struct {
+type TaobaoSubwayCiaUpdateAPIRequest struct {
     model.Params
     // 主人昵称
     _nick   string
@@ -20,20 +20,20 @@ type TaobaoSubwayCiaUpdateRequest struct {
     _ciaConfigs   []CiaUpdateDTO
 }
 
-// 初始化TaobaoSubwayCiaUpdateRequest对象
-func NewTaobaoSubwayCiaUpdateRequest() *TaobaoSubwayCiaUpdateRequest{
-    return &TaobaoSubwayCiaUpdateRequest{
+// 初始化TaobaoSubwayCiaUpdateAPIRequest对象
+func NewTaobaoSubwayCiaUpdateRequest() *TaobaoSubwayCiaUpdateAPIRequest{
+    return &TaobaoSubwayCiaUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSubwayCiaUpdateRequest) GetApiMethodName() string {
+func (r TaobaoSubwayCiaUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.subway.cia.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSubwayCiaUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoSubwayCiaUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSubwayCiaUpdateRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSubwayCiaUpdateRequest) SetNick(_nick string) error {
+func (r *TaobaoSubwayCiaUpdateAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSubwayCiaUpdateRequest) GetNick() string {
+func (r TaobaoSubwayCiaUpdateAPIRequest) GetNick() string {
     return r._nick
 }
 // CiaConfigs Setter
 // 系统自动生成
-func (r *TaobaoSubwayCiaUpdateRequest) SetCiaConfigs(_ciaConfigs []CiaUpdateDTO) error {
+func (r *TaobaoSubwayCiaUpdateAPIRequest) SetCiaConfigs(_ciaConfigs []CiaUpdateDTO) error {
     r._ciaConfigs = _ciaConfigs
     r.Set("cia_configs", _ciaConfigs)
     return nil
 }
 
 // CiaConfigs Getter
-func (r TaobaoSubwayCiaUpdateRequest) GetCiaConfigs() []CiaUpdateDTO {
+func (r TaobaoSubwayCiaUpdateAPIRequest) GetCiaConfigs() []CiaUpdateDTO {
     return r._ciaConfigs
 }

@@ -11,7 +11,7 @@ cainiao.nborderfront.user.outside.queryoutsideuser
 
 采用SPI方式查询外部公司的小件员信息
 */
-func CainiaoNborderfrontUserOutsideQueryoutsideuser(clt *core.SDKClient, req *cainiaolocker.CainiaoNborderfrontUserOutsideQueryoutsideuserRequest, session string) (*cainiaolocker.CainiaoNborderfrontUserOutsideQueryoutsideuserAPIResponse, error) {
+func CainiaoNborderfrontUserOutsideQueryoutsideuser(clt *core.SDKClient, req *cainiaolocker.CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest, session string) (*cainiaolocker.CainiaoNborderfrontUserOutsideQueryoutsideuserAPIResponse, error) {
     var resp cainiaolocker.CainiaoNborderfrontUserOutsideQueryoutsideuserAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

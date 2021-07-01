@@ -11,7 +11,7 @@ alibaba.einvoice.deduct.get
 
 获取历史发票扣减量、每日发票扣减量的接口
 */
-func AlibabaEinvoiceDeductGet(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceDeductGetRequest, session string) (*einvoice.AlibabaEinvoiceDeductGetAPIResponse, error) {
+func AlibabaEinvoiceDeductGet(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceDeductGetAPIRequest, session string) (*einvoice.AlibabaEinvoiceDeductGetAPIResponse, error) {
     var resp einvoice.AlibabaEinvoiceDeductGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

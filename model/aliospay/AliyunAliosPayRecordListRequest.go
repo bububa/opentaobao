@@ -12,26 +12,26 @@ aliyun.alios.pay.record.list
 
 商户用来对账的接口
 */
-type AliyunAliosPayRecordListRequest struct {
+type AliyunAliosPayRecordListAPIRequest struct {
     model.Params
     // 请求参数
     _searchRecordRequest   *SearchRecordRequest
 }
 
-// 初始化AliyunAliosPayRecordListRequest对象
-func NewAliyunAliosPayRecordListRequest() *AliyunAliosPayRecordListRequest{
-    return &AliyunAliosPayRecordListRequest{
+// 初始化AliyunAliosPayRecordListAPIRequest对象
+func NewAliyunAliosPayRecordListRequest() *AliyunAliosPayRecordListAPIRequest{
+    return &AliyunAliosPayRecordListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliyunAliosPayRecordListRequest) GetApiMethodName() string {
+func (r AliyunAliosPayRecordListAPIRequest) GetApiMethodName() string {
     return "aliyun.alios.pay.record.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliyunAliosPayRecordListRequest) GetApiParams() url.Values {
+func (r AliyunAliosPayRecordListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliyunAliosPayRecordListRequest) GetApiParams() url.Values {
 }
 // SearchRecordRequest Setter
 // 请求参数
-func (r *AliyunAliosPayRecordListRequest) SetSearchRecordRequest(_searchRecordRequest *SearchRecordRequest) error {
+func (r *AliyunAliosPayRecordListAPIRequest) SetSearchRecordRequest(_searchRecordRequest *SearchRecordRequest) error {
     r._searchRecordRequest = _searchRecordRequest
     r.Set("search_record_request", _searchRecordRequest)
     return nil
 }
 
 // SearchRecordRequest Getter
-func (r AliyunAliosPayRecordListRequest) GetSearchRecordRequest() *SearchRecordRequest {
+func (r AliyunAliosPayRecordListAPIRequest) GetSearchRecordRequest() *SearchRecordRequest {
     return r._searchRecordRequest
 }

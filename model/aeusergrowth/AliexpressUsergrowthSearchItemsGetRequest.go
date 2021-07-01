@@ -12,7 +12,7 @@ aliexpress.usergrowth.search.items.get
 
 第三方平台的搜索服务   获取AE商品list
 */
-type AliexpressUsergrowthSearchItemsGetRequest struct {
+type AliexpressUsergrowthSearchItemsGetAPIRequest struct {
     model.Params
     // user input keypods
     _keywords   string
@@ -30,20 +30,20 @@ type AliexpressUsergrowthSearchItemsGetRequest struct {
     _countryCode   string
 }
 
-// 初始化AliexpressUsergrowthSearchItemsGetRequest对象
-func NewAliexpressUsergrowthSearchItemsGetRequest() *AliexpressUsergrowthSearchItemsGetRequest{
-    return &AliexpressUsergrowthSearchItemsGetRequest{
+// 初始化AliexpressUsergrowthSearchItemsGetAPIRequest对象
+func NewAliexpressUsergrowthSearchItemsGetRequest() *AliexpressUsergrowthSearchItemsGetAPIRequest{
+    return &AliexpressUsergrowthSearchItemsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressUsergrowthSearchItemsGetRequest) GetApiMethodName() string {
+func (r AliexpressUsergrowthSearchItemsGetAPIRequest) GetApiMethodName() string {
     return "aliexpress.usergrowth.search.items.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressUsergrowthSearchItemsGetRequest) GetApiParams() url.Values {
+func (r AliexpressUsergrowthSearchItemsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,85 +52,85 @@ func (r AliexpressUsergrowthSearchItemsGetRequest) GetApiParams() url.Values {
 }
 // Keywords Setter
 // user input keypods
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetKeywords(_keywords string) error {
+func (r *AliexpressUsergrowthSearchItemsGetAPIRequest) SetKeywords(_keywords string) error {
     r._keywords = _keywords
     r.Set("keywords", _keywords)
     return nil
 }
 
 // Keywords Getter
-func (r AliexpressUsergrowthSearchItemsGetRequest) GetKeywords() string {
+func (r AliexpressUsergrowthSearchItemsGetAPIRequest) GetKeywords() string {
     return r._keywords
 }
 // TrackingId Setter
 // Third party tracking_id
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetTrackingId(_trackingId string) error {
+func (r *AliexpressUsergrowthSearchItemsGetAPIRequest) SetTrackingId(_trackingId string) error {
     r._trackingId = _trackingId
     r.Set("tracking_id", _trackingId)
     return nil
 }
 
 // TrackingId Getter
-func (r AliexpressUsergrowthSearchItemsGetRequest) GetTrackingId() string {
+func (r AliexpressUsergrowthSearchItemsGetAPIRequest) GetTrackingId() string {
     return r._trackingId
 }
 // CurrencyCode Setter
 // currency code
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetCurrencyCode(_currencyCode string) error {
+func (r *AliexpressUsergrowthSearchItemsGetAPIRequest) SetCurrencyCode(_currencyCode string) error {
     r._currencyCode = _currencyCode
     r.Set("currency_code", _currencyCode)
     return nil
 }
 
 // CurrencyCode Getter
-func (r AliexpressUsergrowthSearchItemsGetRequest) GetCurrencyCode() string {
+func (r AliexpressUsergrowthSearchItemsGetAPIRequest) GetCurrencyCode() string {
     return r._currencyCode
 }
 // Language Setter
 // language
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetLanguage(_language string) error {
+func (r *AliexpressUsergrowthSearchItemsGetAPIRequest) SetLanguage(_language string) error {
     r._language = _language
     r.Set("language", _language)
     return nil
 }
 
 // Language Getter
-func (r AliexpressUsergrowthSearchItemsGetRequest) GetLanguage() string {
+func (r AliexpressUsergrowthSearchItemsGetAPIRequest) GetLanguage() string {
     return r._language
 }
 // PageSize Setter
 // page size
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetPageSize(_pageSize string) error {
+func (r *AliexpressUsergrowthSearchItemsGetAPIRequest) SetPageSize(_pageSize string) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r AliexpressUsergrowthSearchItemsGetRequest) GetPageSize() string {
+func (r AliexpressUsergrowthSearchItemsGetAPIRequest) GetPageSize() string {
     return r._pageSize
 }
 // PageIndex Setter
 // page index
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetPageIndex(_pageIndex string) error {
+func (r *AliexpressUsergrowthSearchItemsGetAPIRequest) SetPageIndex(_pageIndex string) error {
     r._pageIndex = _pageIndex
     r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
-func (r AliexpressUsergrowthSearchItemsGetRequest) GetPageIndex() string {
+func (r AliexpressUsergrowthSearchItemsGetAPIRequest) GetPageIndex() string {
     return r._pageIndex
 }
 // CountryCode Setter
 // ship to country
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetCountryCode(_countryCode string) error {
+func (r *AliexpressUsergrowthSearchItemsGetAPIRequest) SetCountryCode(_countryCode string) error {
     r._countryCode = _countryCode
     r.Set("country_code", _countryCode)
     return nil
 }
 
 // CountryCode Getter
-func (r AliexpressUsergrowthSearchItemsGetRequest) GetCountryCode() string {
+func (r AliexpressUsergrowthSearchItemsGetAPIRequest) GetCountryCode() string {
     return r._countryCode
 }

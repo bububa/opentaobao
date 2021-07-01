@@ -11,7 +11,7 @@ alibaba.wdk.time.get
 
 获得当前系统时间
 */
-func AlibabaWdkTimeGet(clt *core.SDKClient, req *wdk.AlibabaWdkTimeGetRequest, session string) (*wdk.AlibabaWdkTimeGetAPIResponse, error) {
+func AlibabaWdkTimeGet(clt *core.SDKClient, req *wdk.AlibabaWdkTimeGetAPIRequest, session string) (*wdk.AlibabaWdkTimeGetAPIResponse, error) {
     var resp wdk.AlibabaWdkTimeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

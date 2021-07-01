@@ -11,7 +11,7 @@ tmall.mc.device.circle.check
 
 云码设备圈选情况查询
 */
-func TmallMcDeviceCircleCheck(clt *core.SDKClient, req *mc.TmallMcDeviceCircleCheckRequest, session string) (*mc.TmallMcDeviceCircleCheckAPIResponse, error) {
+func TmallMcDeviceCircleCheck(clt *core.SDKClient, req *mc.TmallMcDeviceCircleCheckAPIRequest, session string) (*mc.TmallMcDeviceCircleCheckAPIResponse, error) {
     var resp mc.TmallMcDeviceCircleCheckAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

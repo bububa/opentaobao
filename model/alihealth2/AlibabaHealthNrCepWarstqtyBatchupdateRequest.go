@@ -12,26 +12,26 @@ alibaba.health.nr.cep.warstqty.batchupdate
 
 青岛医保服务-ISV批量更新孔雀翎中库存数据
 */
-type AlibabaHealthNrCepWarstqtyBatchupdateRequest struct {
+type AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest struct {
     model.Params
     // 库存更新对象
     _warStqtyList   []TopIsvStqtyLstDTO
 }
 
-// 初始化AlibabaHealthNrCepWarstqtyBatchupdateRequest对象
-func NewAlibabaHealthNrCepWarstqtyBatchupdateRequest() *AlibabaHealthNrCepWarstqtyBatchupdateRequest{
-    return &AlibabaHealthNrCepWarstqtyBatchupdateRequest{
+// 初始化AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest对象
+func NewAlibabaHealthNrCepWarstqtyBatchupdateRequest() *AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest{
+    return &AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHealthNrCepWarstqtyBatchupdateRequest) GetApiMethodName() string {
+func (r AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) GetApiMethodName() string {
     return "alibaba.health.nr.cep.warstqty.batchupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHealthNrCepWarstqtyBatchupdateRequest) GetApiParams() url.Values {
+func (r AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaHealthNrCepWarstqtyBatchupdateRequest) GetApiParams() url.Values 
 }
 // WarStqtyList Setter
 // 库存更新对象
-func (r *AlibabaHealthNrCepWarstqtyBatchupdateRequest) SetWarStqtyList(_warStqtyList []TopIsvStqtyLstDTO) error {
+func (r *AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) SetWarStqtyList(_warStqtyList []TopIsvStqtyLstDTO) error {
     r._warStqtyList = _warStqtyList
     r.Set("war_stqty_list", _warStqtyList)
     return nil
 }
 
 // WarStqtyList Getter
-func (r AlibabaHealthNrCepWarstqtyBatchupdateRequest) GetWarStqtyList() []TopIsvStqtyLstDTO {
+func (r AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) GetWarStqtyList() []TopIsvStqtyLstDTO {
     return r._warStqtyList
 }

@@ -12,26 +12,26 @@ alibaba.einvoice.tax.opt.salarybill.commitbill
 
 提交发薪账单
 */
-type AlibabaEinvoiceTaxOptSalarybillCommitbillRequest struct {
+type AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest struct {
     model.Params
     // 入参
     _paramTaxOptimizationSalaryBillCommitReqDTO   *TaxOptimizationSalaryBillCommitReqDTO
 }
 
-// 初始化AlibabaEinvoiceTaxOptSalarybillCommitbillRequest对象
-func NewAlibabaEinvoiceTaxOptSalarybillCommitbillRequest() *AlibabaEinvoiceTaxOptSalarybillCommitbillRequest{
-    return &AlibabaEinvoiceTaxOptSalarybillCommitbillRequest{
+// 初始化AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest对象
+func NewAlibabaEinvoiceTaxOptSalarybillCommitbillRequest() *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest{
+    return &AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceTaxOptSalarybillCommitbillRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) GetApiMethodName() string {
     return "alibaba.einvoice.tax.opt.salarybill.commitbill"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceTaxOptSalarybillCommitbillRequest) GetApiParams() url.Values {
+func (r AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceTaxOptSalarybillCommitbillRequest) GetApiParams() url.Val
 }
 // ParamTaxOptimizationSalaryBillCommitReqDTO Setter
 // 入参
-func (r *AlibabaEinvoiceTaxOptSalarybillCommitbillRequest) SetParamTaxOptimizationSalaryBillCommitReqDTO(_paramTaxOptimizationSalaryBillCommitReqDTO *TaxOptimizationSalaryBillCommitReqDTO) error {
+func (r *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) SetParamTaxOptimizationSalaryBillCommitReqDTO(_paramTaxOptimizationSalaryBillCommitReqDTO *TaxOptimizationSalaryBillCommitReqDTO) error {
     r._paramTaxOptimizationSalaryBillCommitReqDTO = _paramTaxOptimizationSalaryBillCommitReqDTO
     r.Set("param_tax_optimization_salary_bill_commit_req_d_t_o", _paramTaxOptimizationSalaryBillCommitReqDTO)
     return nil
 }
 
 // ParamTaxOptimizationSalaryBillCommitReqDTO Getter
-func (r AlibabaEinvoiceTaxOptSalarybillCommitbillRequest) GetParamTaxOptimizationSalaryBillCommitReqDTO() *TaxOptimizationSalaryBillCommitReqDTO {
+func (r AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) GetParamTaxOptimizationSalaryBillCommitReqDTO() *TaxOptimizationSalaryBillCommitReqDTO {
     return r._paramTaxOptimizationSalaryBillCommitReqDTO
 }

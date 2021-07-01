@@ -12,26 +12,26 @@ alibaba.alicom.order.preauthorize.query.fund
 
 预授权-资金流水查询
 */
-type AlibabaAlicomOrderPreauthorizeQueryFundRequest struct {
+type AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest struct {
     model.Params
     // 入参
     _preAuthorizeModel   *PreAuthorizeModel
 }
 
-// 初始化AlibabaAlicomOrderPreauthorizeQueryFundRequest对象
-func NewAlibabaAlicomOrderPreauthorizeQueryFundRequest() *AlibabaAlicomOrderPreauthorizeQueryFundRequest{
-    return &AlibabaAlicomOrderPreauthorizeQueryFundRequest{
+// 初始化AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest对象
+func NewAlibabaAlicomOrderPreauthorizeQueryFundRequest() *AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest{
+    return &AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlicomOrderPreauthorizeQueryFundRequest) GetApiMethodName() string {
+func (r AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest) GetApiMethodName() string {
     return "alibaba.alicom.order.preauthorize.query.fund"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlicomOrderPreauthorizeQueryFundRequest) GetApiParams() url.Values {
+func (r AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlicomOrderPreauthorizeQueryFundRequest) GetApiParams() url.Value
 }
 // PreAuthorizeModel Setter
 // 入参
-func (r *AlibabaAlicomOrderPreauthorizeQueryFundRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
+func (r *AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
     r._preAuthorizeModel = _preAuthorizeModel
     r.Set("pre_authorize_model", _preAuthorizeModel)
     return nil
 }
 
 // PreAuthorizeModel Getter
-func (r AlibabaAlicomOrderPreauthorizeQueryFundRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
+func (r AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
     return r._preAuthorizeModel
 }

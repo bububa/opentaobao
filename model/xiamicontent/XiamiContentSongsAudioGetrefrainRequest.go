@@ -12,26 +12,26 @@ xiami.content.songs.audio.getrefrain
 
 获取歌曲音频副歌
 */
-type XiamiContentSongsAudioGetrefrainRequest struct {
+type XiamiContentSongsAudioGetrefrainAPIRequest struct {
     model.Params
     // 歌曲ID
     _songIds   []int64
 }
 
-// 初始化XiamiContentSongsAudioGetrefrainRequest对象
-func NewXiamiContentSongsAudioGetrefrainRequest() *XiamiContentSongsAudioGetrefrainRequest{
-    return &XiamiContentSongsAudioGetrefrainRequest{
+// 初始化XiamiContentSongsAudioGetrefrainAPIRequest对象
+func NewXiamiContentSongsAudioGetrefrainRequest() *XiamiContentSongsAudioGetrefrainAPIRequest{
+    return &XiamiContentSongsAudioGetrefrainAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r XiamiContentSongsAudioGetrefrainRequest) GetApiMethodName() string {
+func (r XiamiContentSongsAudioGetrefrainAPIRequest) GetApiMethodName() string {
     return "xiami.content.songs.audio.getrefrain"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r XiamiContentSongsAudioGetrefrainRequest) GetApiParams() url.Values {
+func (r XiamiContentSongsAudioGetrefrainAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r XiamiContentSongsAudioGetrefrainRequest) GetApiParams() url.Values {
 }
 // SongIds Setter
 // 歌曲ID
-func (r *XiamiContentSongsAudioGetrefrainRequest) SetSongIds(_songIds []int64) error {
+func (r *XiamiContentSongsAudioGetrefrainAPIRequest) SetSongIds(_songIds []int64) error {
     r._songIds = _songIds
     r.Set("song_ids", _songIds)
     return nil
 }
 
 // SongIds Getter
-func (r XiamiContentSongsAudioGetrefrainRequest) GetSongIds() []int64 {
+func (r XiamiContentSongsAudioGetrefrainAPIRequest) GetSongIds() []int64 {
     return r._songIds
 }

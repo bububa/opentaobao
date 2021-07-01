@@ -11,7 +11,7 @@ alibaba.damai.mev.open.resetticket
 
 开放接口重打票
 */
-func AlibabaDamaiMevOpenResetticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenResetticketRequest, session string) (*damai.AlibabaDamaiMevOpenResetticketAPIResponse, error) {
+func AlibabaDamaiMevOpenResetticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenResetticketAPIRequest, session string) (*damai.AlibabaDamaiMevOpenResetticketAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenResetticketAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

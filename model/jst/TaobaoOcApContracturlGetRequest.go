@@ -12,24 +12,24 @@ taobao.oc.ap.contracturl.get
 
 按用户获取支付宝代扣协议链接地址
 */
-type TaobaoOcApContracturlGetRequest struct {
+type TaobaoOcApContracturlGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoOcApContracturlGetRequest对象
-func NewTaobaoOcApContracturlGetRequest() *TaobaoOcApContracturlGetRequest{
-    return &TaobaoOcApContracturlGetRequest{
+// 初始化TaobaoOcApContracturlGetAPIRequest对象
+func NewTaobaoOcApContracturlGetRequest() *TaobaoOcApContracturlGetAPIRequest{
+    return &TaobaoOcApContracturlGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOcApContracturlGetRequest) GetApiMethodName() string {
+func (r TaobaoOcApContracturlGetAPIRequest) GetApiMethodName() string {
     return "taobao.oc.ap.contracturl.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOcApContracturlGetRequest) GetApiParams() url.Values {
+func (r TaobaoOcApContracturlGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

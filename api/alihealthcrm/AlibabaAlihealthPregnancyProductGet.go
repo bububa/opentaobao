@@ -11,7 +11,7 @@ alibaba.alihealth.pregnancy.product.get
 
 备孕首页获取达人配置商品
 */
-func AlibabaAlihealthPregnancyProductGet(clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthPregnancyProductGetRequest, session string) (*alihealthcrm.AlibabaAlihealthPregnancyProductGetAPIResponse, error) {
+func AlibabaAlihealthPregnancyProductGet(clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthPregnancyProductGetAPIRequest, session string) (*alihealthcrm.AlibabaAlihealthPregnancyProductGetAPIResponse, error) {
     var resp alihealthcrm.AlibabaAlihealthPregnancyProductGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

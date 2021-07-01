@@ -12,26 +12,26 @@ taobao.item.update.delisting.tmall
 
 * 单个商品下架<br/>    * 输入的num_iid必须属于当前会话用户
 */
-type TaobaoItemUpdateDelistingTmallRequest struct {
+type TaobaoItemUpdateDelistingTmallAPIRequest struct {
     model.Params
     // 商品数字ID，该参数必须
     _numIid   int64
 }
 
-// 初始化TaobaoItemUpdateDelistingTmallRequest对象
-func NewTaobaoItemUpdateDelistingTmallRequest() *TaobaoItemUpdateDelistingTmallRequest{
-    return &TaobaoItemUpdateDelistingTmallRequest{
+// 初始化TaobaoItemUpdateDelistingTmallAPIRequest对象
+func NewTaobaoItemUpdateDelistingTmallRequest() *TaobaoItemUpdateDelistingTmallAPIRequest{
+    return &TaobaoItemUpdateDelistingTmallAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoItemUpdateDelistingTmallRequest) GetApiMethodName() string {
+func (r TaobaoItemUpdateDelistingTmallAPIRequest) GetApiMethodName() string {
     return "taobao.item.update.delisting.tmall"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoItemUpdateDelistingTmallRequest) GetApiParams() url.Values {
+func (r TaobaoItemUpdateDelistingTmallAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoItemUpdateDelistingTmallRequest) GetApiParams() url.Values {
 }
 // NumIid Setter
 // 商品数字ID，该参数必须
-func (r *TaobaoItemUpdateDelistingTmallRequest) SetNumIid(_numIid int64) error {
+func (r *TaobaoItemUpdateDelistingTmallAPIRequest) SetNumIid(_numIid int64) error {
     r._numIid = _numIid
     r.Set("num_iid", _numIid)
     return nil
 }
 
 // NumIid Getter
-func (r TaobaoItemUpdateDelistingTmallRequest) GetNumIid() int64 {
+func (r TaobaoItemUpdateDelistingTmallAPIRequest) GetNumIid() int64 {
     return r._numIid
 }

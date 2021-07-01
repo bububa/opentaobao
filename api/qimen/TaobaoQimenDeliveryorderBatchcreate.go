@@ -11,7 +11,7 @@ taobao.qimen.deliveryorder.batchcreate
 
 ERP调用接口，将发货信息批量推送给WMS
 */
-func TaobaoQimenDeliveryorderBatchcreate(clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderBatchcreateRequest, session string) (*qimen.TaobaoQimenDeliveryorderBatchcreateAPIResponse, error) {
+func TaobaoQimenDeliveryorderBatchcreate(clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderBatchcreateAPIRequest, session string) (*qimen.TaobaoQimenDeliveryorderBatchcreateAPIResponse, error) {
     var resp qimen.TaobaoQimenDeliveryorderBatchcreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

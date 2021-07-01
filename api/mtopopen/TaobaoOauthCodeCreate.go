@@ -11,7 +11,7 @@ taobao.oauth.code.create
 
 手淘无线开放的oauthCode颁发接口
 */
-func TaobaoOauthCodeCreate(clt *core.SDKClient, req *mtopopen.TaobaoOauthCodeCreateRequest, session string) (*mtopopen.TaobaoOauthCodeCreateAPIResponse, error) {
+func TaobaoOauthCodeCreate(clt *core.SDKClient, req *mtopopen.TaobaoOauthCodeCreateAPIRequest, session string) (*mtopopen.TaobaoOauthCodeCreateAPIResponse, error) {
     var resp mtopopen.TaobaoOauthCodeCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

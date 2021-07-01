@@ -12,26 +12,26 @@ alibaba.legal.case.standpoint.feedback
 
 新增或更新 反馈口径(采纳口径/不采纳口径)
 */
-type AlibabaLegalCaseStandpointFeedbackRequest struct {
+type AlibabaLegalCaseStandpointFeedbackAPIRequest struct {
     model.Params
     // 反馈对象
     _feedbackRequestModel   *FeedbackRequestModel
 }
 
-// 初始化AlibabaLegalCaseStandpointFeedbackRequest对象
-func NewAlibabaLegalCaseStandpointFeedbackRequest() *AlibabaLegalCaseStandpointFeedbackRequest{
-    return &AlibabaLegalCaseStandpointFeedbackRequest{
+// 初始化AlibabaLegalCaseStandpointFeedbackAPIRequest对象
+func NewAlibabaLegalCaseStandpointFeedbackRequest() *AlibabaLegalCaseStandpointFeedbackAPIRequest{
+    return &AlibabaLegalCaseStandpointFeedbackAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLegalCaseStandpointFeedbackRequest) GetApiMethodName() string {
+func (r AlibabaLegalCaseStandpointFeedbackAPIRequest) GetApiMethodName() string {
     return "alibaba.legal.case.standpoint.feedback"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLegalCaseStandpointFeedbackRequest) GetApiParams() url.Values {
+func (r AlibabaLegalCaseStandpointFeedbackAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLegalCaseStandpointFeedbackRequest) GetApiParams() url.Values {
 }
 // FeedbackRequestModel Setter
 // 反馈对象
-func (r *AlibabaLegalCaseStandpointFeedbackRequest) SetFeedbackRequestModel(_feedbackRequestModel *FeedbackRequestModel) error {
+func (r *AlibabaLegalCaseStandpointFeedbackAPIRequest) SetFeedbackRequestModel(_feedbackRequestModel *FeedbackRequestModel) error {
     r._feedbackRequestModel = _feedbackRequestModel
     r.Set("feedback_request_model", _feedbackRequestModel)
     return nil
 }
 
 // FeedbackRequestModel Getter
-func (r AlibabaLegalCaseStandpointFeedbackRequest) GetFeedbackRequestModel() *FeedbackRequestModel {
+func (r AlibabaLegalCaseStandpointFeedbackAPIRequest) GetFeedbackRequestModel() *FeedbackRequestModel {
     return r._feedbackRequestModel
 }

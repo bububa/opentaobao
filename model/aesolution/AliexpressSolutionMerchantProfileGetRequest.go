@@ -12,24 +12,24 @@ aliexpress.solution.merchant.profile.get
 
 API for oversea sellers to obtain the normal information, e.g. store id, registration country code.
 */
-type AliexpressSolutionMerchantProfileGetRequest struct {
+type AliexpressSolutionMerchantProfileGetAPIRequest struct {
     model.Params
 }
 
-// 初始化AliexpressSolutionMerchantProfileGetRequest对象
-func NewAliexpressSolutionMerchantProfileGetRequest() *AliexpressSolutionMerchantProfileGetRequest{
-    return &AliexpressSolutionMerchantProfileGetRequest{
+// 初始化AliexpressSolutionMerchantProfileGetAPIRequest对象
+func NewAliexpressSolutionMerchantProfileGetRequest() *AliexpressSolutionMerchantProfileGetAPIRequest{
+    return &AliexpressSolutionMerchantProfileGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionMerchantProfileGetRequest) GetApiMethodName() string {
+func (r AliexpressSolutionMerchantProfileGetAPIRequest) GetApiMethodName() string {
     return "aliexpress.solution.merchant.profile.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionMerchantProfileGetRequest) GetApiParams() url.Values {
+func (r AliexpressSolutionMerchantProfileGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

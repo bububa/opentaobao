@@ -12,7 +12,7 @@ alibaba.seaking.imagerecognize
 
 图片语种识别
 */
-type AlibabaSeakingImagerecognizeRequest struct {
+type AlibabaSeakingImagerecognizeAPIRequest struct {
     model.Params
     // 扩展信息
     _extra   *Extra
@@ -24,20 +24,20 @@ type AlibabaSeakingImagerecognizeRequest struct {
     _url   string
 }
 
-// 初始化AlibabaSeakingImagerecognizeRequest对象
-func NewAlibabaSeakingImagerecognizeRequest() *AlibabaSeakingImagerecognizeRequest{
-    return &AlibabaSeakingImagerecognizeRequest{
+// 初始化AlibabaSeakingImagerecognizeAPIRequest对象
+func NewAlibabaSeakingImagerecognizeRequest() *AlibabaSeakingImagerecognizeAPIRequest{
+    return &AlibabaSeakingImagerecognizeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSeakingImagerecognizeRequest) GetApiMethodName() string {
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetApiMethodName() string {
     return "alibaba.seaking.imagerecognize"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSeakingImagerecognizeRequest) GetApiParams() url.Values {
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaSeakingImagerecognizeRequest) GetApiParams() url.Values {
 }
 // Extra Setter
 // 扩展信息
-func (r *AlibabaSeakingImagerecognizeRequest) SetExtra(_extra *Extra) error {
+func (r *AlibabaSeakingImagerecognizeAPIRequest) SetExtra(_extra *Extra) error {
     r._extra = _extra
     r.Set("extra", _extra)
     return nil
 }
 
 // Extra Getter
-func (r AlibabaSeakingImagerecognizeRequest) GetExtra() *Extra {
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetExtra() *Extra {
     return r._extra
 }
 // Identifier Setter
 // erp用户id
-func (r *AlibabaSeakingImagerecognizeRequest) SetIdentifier(_identifier string) error {
+func (r *AlibabaSeakingImagerecognizeAPIRequest) SetIdentifier(_identifier string) error {
     r._identifier = _identifier
     r.Set("identifier", _identifier)
     return nil
 }
 
 // Identifier Getter
-func (r AlibabaSeakingImagerecognizeRequest) GetIdentifier() string {
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetIdentifier() string {
     return r._identifier
 }
 // IdentifierType Setter
 // 调用来源(erp名称)
-func (r *AlibabaSeakingImagerecognizeRequest) SetIdentifierType(_identifierType string) error {
+func (r *AlibabaSeakingImagerecognizeAPIRequest) SetIdentifierType(_identifierType string) error {
     r._identifierType = _identifierType
     r.Set("identifier_type", _identifierType)
     return nil
 }
 
 // IdentifierType Getter
-func (r AlibabaSeakingImagerecognizeRequest) GetIdentifierType() string {
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetIdentifierType() string {
     return r._identifierType
 }
 // Url Setter
 // 图片url
-func (r *AlibabaSeakingImagerecognizeRequest) SetUrl(_url string) error {
+func (r *AlibabaSeakingImagerecognizeAPIRequest) SetUrl(_url string) error {
     r._url = _url
     r.Set("url", _url)
     return nil
 }
 
 // Url Getter
-func (r AlibabaSeakingImagerecognizeRequest) GetUrl() string {
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetUrl() string {
     return r._url
 }

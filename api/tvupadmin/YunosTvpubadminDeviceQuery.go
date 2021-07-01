@@ -11,7 +11,7 @@ yunos.tvpubadmin.device.query
 
 获取设备列表
 */
-func YunosTvpubadminDeviceQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceQueryRequest, session string) (*tvupadmin.YunosTvpubadminDeviceQueryAPIResponse, error) {
+func YunosTvpubadminDeviceQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceQueryAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceQueryAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminDeviceQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

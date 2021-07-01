@@ -11,7 +11,7 @@ alibaba.campus.space.floor.getbyid
 
 根据id获取楼层
 */
-func AlibabaCampusSpaceFloorGetbyid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceFloorGetbyidRequest, session string) (*campus.AlibabaCampusSpaceFloorGetbyidAPIResponse, error) {
+func AlibabaCampusSpaceFloorGetbyid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceFloorGetbyidAPIRequest, session string) (*campus.AlibabaCampusSpaceFloorGetbyidAPIResponse, error) {
     var resp campus.AlibabaCampusSpaceFloorGetbyidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

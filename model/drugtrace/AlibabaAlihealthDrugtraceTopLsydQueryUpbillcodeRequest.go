@@ -12,7 +12,7 @@ alibaba.alihealth.drugtrace.top.lsyd.query.upbillcode
 
 一个查询上游出库单号的接口。企业在扫码入库时，接口通过扫到的码判定这个码对应的上游企业所属的出库单据号
 */
-type AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest struct {
+type AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeAPIRequest struct {
     model.Params
     // 追溯码
     _code   string
@@ -20,20 +20,20 @@ type AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest struct {
     _refEntId   string
 }
 
-// 初始化AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest对象
-func NewAlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest() *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest{
-    return &AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest{
+// 初始化AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeAPIRequest对象
+func NewAlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest() *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeAPIRequest{
+    return &AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drugtrace.top.lsyd.query.upbillcode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) GetApiParams() u
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) SetCode(_code string) error {
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) GetCode() string {
+func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeAPIRequest) GetCode() string {
     return r._code
 }
 // RefEntId Setter
 // 企业REF_ENT_ID （当前企业的唯一标识）
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeAPIRequest) GetRefEntId() string {
     return r._refEntId
 }

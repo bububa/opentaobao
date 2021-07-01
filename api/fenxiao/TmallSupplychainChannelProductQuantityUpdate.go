@@ -11,7 +11,7 @@ tmall.supplychain.channel.product.quantity.update
 
 渠道无仓库存更新接口
 */
-func TmallSupplychainChannelProductQuantityUpdate(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductQuantityUpdateRequest, session string) (*fenxiao.TmallSupplychainChannelProductQuantityUpdateAPIResponse, error) {
+func TmallSupplychainChannelProductQuantityUpdate(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductQuantityUpdateAPIRequest, session string) (*fenxiao.TmallSupplychainChannelProductQuantityUpdateAPIResponse, error) {
     var resp fenxiao.TmallSupplychainChannelProductQuantityUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.qimen.storeprocess.create
 
 ERP调用奇门的接口,创建仓内加工单
 */
-func TaobaoQimenStoreprocessCreate(clt *core.SDKClient, req *qimen.TaobaoQimenStoreprocessCreateRequest, session string) (*qimen.TaobaoQimenStoreprocessCreateAPIResponse, error) {
+func TaobaoQimenStoreprocessCreate(clt *core.SDKClient, req *qimen.TaobaoQimenStoreprocessCreateAPIRequest, session string) (*qimen.TaobaoQimenStoreprocessCreateAPIResponse, error) {
     var resp qimen.TaobaoQimenStoreprocessCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

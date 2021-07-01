@@ -12,26 +12,26 @@ taobao.bus.numbers.stockprice.update
 
 用于汽车票代理商更新价格库存
 */
-type TaobaoBusNumbersStockpriceUpdateRequest struct {
+type TaobaoBusNumbersStockpriceUpdateAPIRequest struct {
     model.Params
     // 请求参数
     _paramTopBusPriceAndStockUpdateRQ   *TopBusPriceAndStockUpdateRq
 }
 
-// 初始化TaobaoBusNumbersStockpriceUpdateRequest对象
-func NewTaobaoBusNumbersStockpriceUpdateRequest() *TaobaoBusNumbersStockpriceUpdateRequest{
-    return &TaobaoBusNumbersStockpriceUpdateRequest{
+// 初始化TaobaoBusNumbersStockpriceUpdateAPIRequest对象
+func NewTaobaoBusNumbersStockpriceUpdateRequest() *TaobaoBusNumbersStockpriceUpdateAPIRequest{
+    return &TaobaoBusNumbersStockpriceUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBusNumbersStockpriceUpdateRequest) GetApiMethodName() string {
+func (r TaobaoBusNumbersStockpriceUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.bus.numbers.stockprice.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBusNumbersStockpriceUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoBusNumbersStockpriceUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBusNumbersStockpriceUpdateRequest) GetApiParams() url.Values {
 }
 // ParamTopBusPriceAndStockUpdateRQ Setter
 // 请求参数
-func (r *TaobaoBusNumbersStockpriceUpdateRequest) SetParamTopBusPriceAndStockUpdateRQ(_paramTopBusPriceAndStockUpdateRQ *TopBusPriceAndStockUpdateRq) error {
+func (r *TaobaoBusNumbersStockpriceUpdateAPIRequest) SetParamTopBusPriceAndStockUpdateRQ(_paramTopBusPriceAndStockUpdateRQ *TopBusPriceAndStockUpdateRq) error {
     r._paramTopBusPriceAndStockUpdateRQ = _paramTopBusPriceAndStockUpdateRQ
     r.Set("param_top_bus_price_and_stock_update_r_q", _paramTopBusPriceAndStockUpdateRQ)
     return nil
 }
 
 // ParamTopBusPriceAndStockUpdateRQ Getter
-func (r TaobaoBusNumbersStockpriceUpdateRequest) GetParamTopBusPriceAndStockUpdateRQ() *TopBusPriceAndStockUpdateRq {
+func (r TaobaoBusNumbersStockpriceUpdateAPIRequest) GetParamTopBusPriceAndStockUpdateRQ() *TopBusPriceAndStockUpdateRq {
     return r._paramTopBusPriceAndStockUpdateRQ
 }

@@ -11,7 +11,7 @@ alibaba.wdk.order.get
 
 五道口三江单据查询接口
 */
-func AlibabaWdkOrderGet(clt *core.SDKClient, req *wdk.AlibabaWdkOrderGetRequest, session string) (*wdk.AlibabaWdkOrderGetAPIResponse, error) {
+func AlibabaWdkOrderGet(clt *core.SDKClient, req *wdk.AlibabaWdkOrderGetAPIRequest, session string) (*wdk.AlibabaWdkOrderGetAPIResponse, error) {
     var resp wdk.AlibabaWdkOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

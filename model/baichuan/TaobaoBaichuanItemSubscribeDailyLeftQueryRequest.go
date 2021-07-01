@@ -12,24 +12,24 @@ taobao.baichuan.item.subscribe.daily.left.query
 
 查询当天可添加的余量
 */
-type TaobaoBaichuanItemSubscribeDailyLeftQueryRequest struct {
+type TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoBaichuanItemSubscribeDailyLeftQueryRequest对象
-func NewTaobaoBaichuanItemSubscribeDailyLeftQueryRequest() *TaobaoBaichuanItemSubscribeDailyLeftQueryRequest{
-    return &TaobaoBaichuanItemSubscribeDailyLeftQueryRequest{
+// 初始化TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest对象
+func NewTaobaoBaichuanItemSubscribeDailyLeftQueryRequest() *TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest{
+    return &TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanItemSubscribeDailyLeftQueryRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest) GetApiMethodName() string {
     return "taobao.baichuan.item.subscribe.daily.left.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanItemSubscribeDailyLeftQueryRequest) GetApiParams() url.Values {
+func (r TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

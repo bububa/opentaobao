@@ -12,26 +12,26 @@ alibaba.alsc.crm.card.batch.sell
 
 批量开卡（售卡）
 */
-type AlibabaAlscCrmCardBatchSellRequest struct {
+type AlibabaAlscCrmCardBatchSellAPIRequest struct {
     model.Params
     // 请求对象
     _paramBatchOpenCardOpenReq   *BatchOpenCardOpenReq
 }
 
-// 初始化AlibabaAlscCrmCardBatchSellRequest对象
-func NewAlibabaAlscCrmCardBatchSellRequest() *AlibabaAlscCrmCardBatchSellRequest{
-    return &AlibabaAlscCrmCardBatchSellRequest{
+// 初始化AlibabaAlscCrmCardBatchSellAPIRequest对象
+func NewAlibabaAlscCrmCardBatchSellRequest() *AlibabaAlscCrmCardBatchSellAPIRequest{
+    return &AlibabaAlscCrmCardBatchSellAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmCardBatchSellRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmCardBatchSellAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.card.batch.sell"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmCardBatchSellRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmCardBatchSellAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCardBatchSellRequest) GetApiParams() url.Values {
 }
 // ParamBatchOpenCardOpenReq Setter
 // 请求对象
-func (r *AlibabaAlscCrmCardBatchSellRequest) SetParamBatchOpenCardOpenReq(_paramBatchOpenCardOpenReq *BatchOpenCardOpenReq) error {
+func (r *AlibabaAlscCrmCardBatchSellAPIRequest) SetParamBatchOpenCardOpenReq(_paramBatchOpenCardOpenReq *BatchOpenCardOpenReq) error {
     r._paramBatchOpenCardOpenReq = _paramBatchOpenCardOpenReq
     r.Set("param_batch_open_card_open_req", _paramBatchOpenCardOpenReq)
     return nil
 }
 
 // ParamBatchOpenCardOpenReq Getter
-func (r AlibabaAlscCrmCardBatchSellRequest) GetParamBatchOpenCardOpenReq() *BatchOpenCardOpenReq {
+func (r AlibabaAlscCrmCardBatchSellAPIRequest) GetParamBatchOpenCardOpenReq() *BatchOpenCardOpenReq {
     return r._paramBatchOpenCardOpenReq
 }

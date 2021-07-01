@@ -11,7 +11,7 @@ alibaba.security.jaq.url.scan
 
 url扫描接口
 */
-func AlibabaSecurityJaqUrlScan(clt *core.SDKClient, req *security.AlibabaSecurityJaqUrlScanRequest, session string) (*security.AlibabaSecurityJaqUrlScanAPIResponse, error) {
+func AlibabaSecurityJaqUrlScan(clt *core.SDKClient, req *security.AlibabaSecurityJaqUrlScanAPIRequest, session string) (*security.AlibabaSecurityJaqUrlScanAPIResponse, error) {
     var resp security.AlibabaSecurityJaqUrlScanAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.ailab.aicloud.top.device.control.pauseandresume
 
 设备播放暂停
 */
-func TaobaoAilabAicloudTopDeviceControlPauseandresume(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponse, error) {
+func TaobaoAilabAicloudTopDeviceControlPauseandresume(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

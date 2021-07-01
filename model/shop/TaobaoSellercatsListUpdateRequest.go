@@ -12,7 +12,7 @@ taobao.sellercats.list.update
 
 此API更新卖家店铺内自定义类目 <br/>注：因为缓存的关系，添加的新类目需8个小时后才可以在淘宝页面上正常显示，但是不影响在该类目下商品发布
 */
-type TaobaoSellercatsListUpdateRequest struct {
+type TaobaoSellercatsListUpdateAPIRequest struct {
     model.Params
     // 卖家自定义类目编号
     _cid   int64
@@ -24,20 +24,20 @@ type TaobaoSellercatsListUpdateRequest struct {
     _sortOrder   int64
 }
 
-// 初始化TaobaoSellercatsListUpdateRequest对象
-func NewTaobaoSellercatsListUpdateRequest() *TaobaoSellercatsListUpdateRequest{
-    return &TaobaoSellercatsListUpdateRequest{
+// 初始化TaobaoSellercatsListUpdateAPIRequest对象
+func NewTaobaoSellercatsListUpdateRequest() *TaobaoSellercatsListUpdateAPIRequest{
+    return &TaobaoSellercatsListUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSellercatsListUpdateRequest) GetApiMethodName() string {
+func (r TaobaoSellercatsListUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.sellercats.list.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSellercatsListUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoSellercatsListUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoSellercatsListUpdateRequest) GetApiParams() url.Values {
 }
 // Cid Setter
 // 卖家自定义类目编号
-func (r *TaobaoSellercatsListUpdateRequest) SetCid(_cid int64) error {
+func (r *TaobaoSellercatsListUpdateAPIRequest) SetCid(_cid int64) error {
     r._cid = _cid
     r.Set("cid", _cid)
     return nil
 }
 
 // Cid Getter
-func (r TaobaoSellercatsListUpdateRequest) GetCid() int64 {
+func (r TaobaoSellercatsListUpdateAPIRequest) GetCid() int64 {
     return r._cid
 }
 // Name Setter
 // 卖家自定义类目名称。不超过20个字符
-func (r *TaobaoSellercatsListUpdateRequest) SetName(_name string) error {
+func (r *TaobaoSellercatsListUpdateAPIRequest) SetName(_name string) error {
     r._name = _name
     r.Set("name", _name)
     return nil
 }
 
 // Name Getter
-func (r TaobaoSellercatsListUpdateRequest) GetName() string {
+func (r TaobaoSellercatsListUpdateAPIRequest) GetName() string {
     return r._name
 }
 // PictUrl Setter
 // 链接图片URL地址
-func (r *TaobaoSellercatsListUpdateRequest) SetPictUrl(_pictUrl string) error {
+func (r *TaobaoSellercatsListUpdateAPIRequest) SetPictUrl(_pictUrl string) error {
     r._pictUrl = _pictUrl
     r.Set("pict_url", _pictUrl)
     return nil
 }
 
 // PictUrl Getter
-func (r TaobaoSellercatsListUpdateRequest) GetPictUrl() string {
+func (r TaobaoSellercatsListUpdateAPIRequest) GetPictUrl() string {
     return r._pictUrl
 }
 // SortOrder Setter
 // 该类目在页面上的排序位置,取值范围:大于零的整数
-func (r *TaobaoSellercatsListUpdateRequest) SetSortOrder(_sortOrder int64) error {
+func (r *TaobaoSellercatsListUpdateAPIRequest) SetSortOrder(_sortOrder int64) error {
     r._sortOrder = _sortOrder
     r.Set("sort_order", _sortOrder)
     return nil
 }
 
 // SortOrder Getter
-func (r TaobaoSellercatsListUpdateRequest) GetSortOrder() int64 {
+func (r TaobaoSellercatsListUpdateAPIRequest) GetSortOrder() int64 {
     return r._sortOrder
 }

@@ -11,7 +11,7 @@ alitrip.btip.cost.center.query
 
 查询外部成本中心
 */
-func AlitripBtipCostCenterQuery(clt *core.SDKClient, req *btrip.AlitripBtipCostCenterQueryRequest, session string) (*btrip.AlitripBtipCostCenterQueryAPIResponse, error) {
+func AlitripBtipCostCenterQuery(clt *core.SDKClient, req *btrip.AlitripBtipCostCenterQueryAPIRequest, session string) (*btrip.AlitripBtipCostCenterQueryAPIResponse, error) {
     var resp btrip.AlitripBtipCostCenterQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

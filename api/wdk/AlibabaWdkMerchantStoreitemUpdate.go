@@ -11,7 +11,7 @@ alibaba.wdk.merchant.storeitem.update
 
 修改门店商品
 */
-func AlibabaWdkMerchantStoreitemUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantStoreitemUpdateRequest, session string) (*wdk.AlibabaWdkMerchantStoreitemUpdateAPIResponse, error) {
+func AlibabaWdkMerchantStoreitemUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantStoreitemUpdateAPIRequest, session string) (*wdk.AlibabaWdkMerchantStoreitemUpdateAPIResponse, error) {
     var resp wdk.AlibabaWdkMerchantStoreitemUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.crm.exchange.crowdinstance.delete
 
 删除人群实例中的指定买家
 */
-func TaobaoCrmExchangeCrowdinstanceDelete(clt *core.SDKClient, req *crm.TaobaoCrmExchangeCrowdinstanceDeleteRequest, session string) (*crm.TaobaoCrmExchangeCrowdinstanceDeleteAPIResponse, error) {
+func TaobaoCrmExchangeCrowdinstanceDelete(clt *core.SDKClient, req *crm.TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest, session string) (*crm.TaobaoCrmExchangeCrowdinstanceDeleteAPIResponse, error) {
     var resp crm.TaobaoCrmExchangeCrowdinstanceDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

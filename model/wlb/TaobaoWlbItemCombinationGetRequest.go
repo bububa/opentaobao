@@ -12,26 +12,26 @@ taobao.wlb.item.combination.get
 
 根据商品id查询商品组合关系
 */
-type TaobaoWlbItemCombinationGetRequest struct {
+type TaobaoWlbItemCombinationGetAPIRequest struct {
     model.Params
     // 要查询的组合商品id
     _itemId   int64
 }
 
-// 初始化TaobaoWlbItemCombinationGetRequest对象
-func NewTaobaoWlbItemCombinationGetRequest() *TaobaoWlbItemCombinationGetRequest{
-    return &TaobaoWlbItemCombinationGetRequest{
+// 初始化TaobaoWlbItemCombinationGetAPIRequest对象
+func NewTaobaoWlbItemCombinationGetRequest() *TaobaoWlbItemCombinationGetAPIRequest{
+    return &TaobaoWlbItemCombinationGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbItemCombinationGetRequest) GetApiMethodName() string {
+func (r TaobaoWlbItemCombinationGetAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.item.combination.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbItemCombinationGetRequest) GetApiParams() url.Values {
+func (r TaobaoWlbItemCombinationGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWlbItemCombinationGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 要查询的组合商品id
-func (r *TaobaoWlbItemCombinationGetRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoWlbItemCombinationGetAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoWlbItemCombinationGetRequest) GetItemId() int64 {
+func (r TaobaoWlbItemCombinationGetAPIRequest) GetItemId() int64 {
     return r._itemId
 }

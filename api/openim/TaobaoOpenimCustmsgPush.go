@@ -11,7 +11,7 @@ taobao.openim.custmsg.push
 
 isv通过该接口给openim用户推送自定义消息
 */
-func TaobaoOpenimCustmsgPush(clt *core.SDKClient, req *openim.TaobaoOpenimCustmsgPushRequest, session string) (*openim.TaobaoOpenimCustmsgPushAPIResponse, error) {
+func TaobaoOpenimCustmsgPush(clt *core.SDKClient, req *openim.TaobaoOpenimCustmsgPushAPIRequest, session string) (*openim.TaobaoOpenimCustmsgPushAPIResponse, error) {
     var resp openim.TaobaoOpenimCustmsgPushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

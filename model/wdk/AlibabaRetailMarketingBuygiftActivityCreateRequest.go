@@ -12,26 +12,26 @@ alibaba.retail.marketing.buygift.activity.create
 
 同城供给买赠活动创建
 */
-type AlibabaRetailMarketingBuygiftActivityCreateRequest struct {
+type AlibabaRetailMarketingBuygiftActivityCreateAPIRequest struct {
     model.Params
     // 创建活动参数
     _param   *BuyGiftActivityOperateRequest
 }
 
-// 初始化AlibabaRetailMarketingBuygiftActivityCreateRequest对象
-func NewAlibabaRetailMarketingBuygiftActivityCreateRequest() *AlibabaRetailMarketingBuygiftActivityCreateRequest{
-    return &AlibabaRetailMarketingBuygiftActivityCreateRequest{
+// 初始化AlibabaRetailMarketingBuygiftActivityCreateAPIRequest对象
+func NewAlibabaRetailMarketingBuygiftActivityCreateRequest() *AlibabaRetailMarketingBuygiftActivityCreateAPIRequest{
+    return &AlibabaRetailMarketingBuygiftActivityCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingBuygiftActivityCreateRequest) GetApiMethodName() string {
+func (r AlibabaRetailMarketingBuygiftActivityCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.marketing.buygift.activity.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingBuygiftActivityCreateRequest) GetApiParams() url.Values {
+func (r AlibabaRetailMarketingBuygiftActivityCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingBuygiftActivityCreateRequest) GetApiParams() url.V
 }
 // Param Setter
 // 创建活动参数
-func (r *AlibabaRetailMarketingBuygiftActivityCreateRequest) SetParam(_param *BuyGiftActivityOperateRequest) error {
+func (r *AlibabaRetailMarketingBuygiftActivityCreateAPIRequest) SetParam(_param *BuyGiftActivityOperateRequest) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaRetailMarketingBuygiftActivityCreateRequest) GetParam() *BuyGiftActivityOperateRequest {
+func (r AlibabaRetailMarketingBuygiftActivityCreateAPIRequest) GetParam() *BuyGiftActivityOperateRequest {
     return r._param
 }

@@ -11,7 +11,7 @@ taobao.openmall.refund.message.get
 
 openmall获取退款单留言
 */
-func TaobaoOpenmallRefundMessageGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundMessageGetRequest, session string) (*openmall.TaobaoOpenmallRefundMessageGetAPIResponse, error) {
+func TaobaoOpenmallRefundMessageGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundMessageGetAPIRequest, session string) (*openmall.TaobaoOpenmallRefundMessageGetAPIResponse, error) {
     var resp openmall.TaobaoOpenmallRefundMessageGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

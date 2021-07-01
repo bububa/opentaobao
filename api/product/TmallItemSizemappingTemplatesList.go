@@ -11,7 +11,7 @@ tmall.item.sizemapping.templates.list
 
 获取所有尺码表模板列表。
 */
-func TmallItemSizemappingTemplatesList(clt *core.SDKClient, req *product.TmallItemSizemappingTemplatesListRequest, session string) (*product.TmallItemSizemappingTemplatesListAPIResponse, error) {
+func TmallItemSizemappingTemplatesList(clt *core.SDKClient, req *product.TmallItemSizemappingTemplatesListAPIRequest, session string) (*product.TmallItemSizemappingTemplatesListAPIResponse, error) {
     var resp product.TmallItemSizemappingTemplatesListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.perfect.performance.item.query
 
 同城零售商品完美履约信息查询
 */
-func AlibabaPerfectPerformanceItemQuery(clt *core.SDKClient, req *perfect.AlibabaPerfectPerformanceItemQueryRequest, session string) (*perfect.AlibabaPerfectPerformanceItemQueryAPIResponse, error) {
+func AlibabaPerfectPerformanceItemQuery(clt *core.SDKClient, req *perfect.AlibabaPerfectPerformanceItemQueryAPIRequest, session string) (*perfect.AlibabaPerfectPerformanceItemQueryAPIResponse, error) {
     var resp perfect.AlibabaPerfectPerformanceItemQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

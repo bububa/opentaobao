@@ -1,7 +1,7 @@
 package btrip
 
-// OpenCostCenterQueryRs 
-type OpenCostCenterQueryRs struct {
+// OpenCostCenterQueryRS 
+type OpenCostCenterQueryRS struct {
     // 商旅成本中心id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 企业id

@@ -11,7 +11,7 @@ alibaba.ele.enterprise.restaurant.multispecmenu
 
 查询餐厅菜单
 */
-func AlibabaEleEnterpriseRestaurantMultispecmenu(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantMultispecmenuRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantMultispecmenuAPIResponse, error) {
+func AlibabaEleEnterpriseRestaurantMultispecmenu(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantMultispecmenuAPIResponse, error) {
     var resp eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantMultispecmenuAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

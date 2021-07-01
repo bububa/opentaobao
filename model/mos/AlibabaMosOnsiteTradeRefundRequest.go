@@ -15,26 +15,26 @@ alibaba.mos.onsite.trade.refund
 1. 交易超过可退款时间（签约时设置的可退款时间）的订单无法进行退款。
 2. 只支持全额退款。
 */
-type AlibabaMosOnsiteTradeRefundRequest struct {
+type AlibabaMosOnsiteTradeRefundAPIRequest struct {
     model.Params
     // 交易退款请求
     _onsiteRefundRequest   *OnsiteRefundRequest
 }
 
-// 初始化AlibabaMosOnsiteTradeRefundRequest对象
-func NewAlibabaMosOnsiteTradeRefundRequest() *AlibabaMosOnsiteTradeRefundRequest{
-    return &AlibabaMosOnsiteTradeRefundRequest{
+// 初始化AlibabaMosOnsiteTradeRefundAPIRequest对象
+func NewAlibabaMosOnsiteTradeRefundRequest() *AlibabaMosOnsiteTradeRefundAPIRequest{
+    return &AlibabaMosOnsiteTradeRefundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosOnsiteTradeRefundRequest) GetApiMethodName() string {
+func (r AlibabaMosOnsiteTradeRefundAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.onsite.trade.refund"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosOnsiteTradeRefundRequest) GetApiParams() url.Values {
+func (r AlibabaMosOnsiteTradeRefundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -43,13 +43,13 @@ func (r AlibabaMosOnsiteTradeRefundRequest) GetApiParams() url.Values {
 }
 // OnsiteRefundRequest Setter
 // 交易退款请求
-func (r *AlibabaMosOnsiteTradeRefundRequest) SetOnsiteRefundRequest(_onsiteRefundRequest *OnsiteRefundRequest) error {
+func (r *AlibabaMosOnsiteTradeRefundAPIRequest) SetOnsiteRefundRequest(_onsiteRefundRequest *OnsiteRefundRequest) error {
     r._onsiteRefundRequest = _onsiteRefundRequest
     r.Set("onsite_refund_request", _onsiteRefundRequest)
     return nil
 }
 
 // OnsiteRefundRequest Getter
-func (r AlibabaMosOnsiteTradeRefundRequest) GetOnsiteRefundRequest() *OnsiteRefundRequest {
+func (r AlibabaMosOnsiteTradeRefundAPIRequest) GetOnsiteRefundRequest() *OnsiteRefundRequest {
     return r._onsiteRefundRequest
 }

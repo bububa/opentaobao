@@ -11,7 +11,7 @@ alibaba.perfect.performance.localitem.edit
 
 同城购业务定制化发品接口，同城购业务线专用
 */
-func AlibabaPerfectPerformanceLocalitemEdit(clt *core.SDKClient, req *perfect.AlibabaPerfectPerformanceLocalitemEditRequest, session string) (*perfect.AlibabaPerfectPerformanceLocalitemEditAPIResponse, error) {
+func AlibabaPerfectPerformanceLocalitemEdit(clt *core.SDKClient, req *perfect.AlibabaPerfectPerformanceLocalitemEditAPIRequest, session string) (*perfect.AlibabaPerfectPerformanceLocalitemEditAPIResponse, error) {
     var resp perfect.AlibabaPerfectPerformanceLocalitemEditAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

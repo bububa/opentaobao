@@ -12,26 +12,26 @@ taobao.alihealth.drug.user.shop.get
 
 提供给千牛智能客服，获取用户当前咨询的店铺ID
 */
-type TaobaoAlihealthDrugUserShopGetRequest struct {
+type TaobaoAlihealthDrugUserShopGetAPIRequest struct {
     model.Params
     // 用户昵称
     _userNick   string
 }
 
-// 初始化TaobaoAlihealthDrugUserShopGetRequest对象
-func NewTaobaoAlihealthDrugUserShopGetRequest() *TaobaoAlihealthDrugUserShopGetRequest{
-    return &TaobaoAlihealthDrugUserShopGetRequest{
+// 初始化TaobaoAlihealthDrugUserShopGetAPIRequest对象
+func NewTaobaoAlihealthDrugUserShopGetRequest() *TaobaoAlihealthDrugUserShopGetAPIRequest{
+    return &TaobaoAlihealthDrugUserShopGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlihealthDrugUserShopGetRequest) GetApiMethodName() string {
+func (r TaobaoAlihealthDrugUserShopGetAPIRequest) GetApiMethodName() string {
     return "taobao.alihealth.drug.user.shop.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlihealthDrugUserShopGetRequest) GetApiParams() url.Values {
+func (r TaobaoAlihealthDrugUserShopGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlihealthDrugUserShopGetRequest) GetApiParams() url.Values {
 }
 // UserNick Setter
 // 用户昵称
-func (r *TaobaoAlihealthDrugUserShopGetRequest) SetUserNick(_userNick string) error {
+func (r *TaobaoAlihealthDrugUserShopGetAPIRequest) SetUserNick(_userNick string) error {
     r._userNick = _userNick
     r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
-func (r TaobaoAlihealthDrugUserShopGetRequest) GetUserNick() string {
+func (r TaobaoAlihealthDrugUserShopGetAPIRequest) GetUserNick() string {
     return r._userNick
 }

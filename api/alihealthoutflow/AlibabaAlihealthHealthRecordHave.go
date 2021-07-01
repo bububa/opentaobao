@@ -11,7 +11,7 @@ alibaba.alihealth.health.record.have
 
 判断用户的慢健康健康档案是否建设完成
 */
-func AlibabaAlihealthHealthRecordHave(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthHealthRecordHaveRequest, session string) (*alihealthoutflow.AlibabaAlihealthHealthRecordHaveAPIResponse, error) {
+func AlibabaAlihealthHealthRecordHave(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthHealthRecordHaveAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthHealthRecordHaveAPIResponse, error) {
     var resp alihealthoutflow.AlibabaAlihealthHealthRecordHaveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

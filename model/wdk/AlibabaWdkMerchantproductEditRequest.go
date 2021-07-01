@@ -12,26 +12,26 @@ alibaba.wdk.merchantproduct.edit
 
 商家产品服务-编辑产品
 */
-type AlibabaWdkMerchantproductEditRequest struct {
+type AlibabaWdkMerchantproductEditAPIRequest struct {
     model.Params
     // 产品编辑入参
     _req   *MerchantProductRequest
 }
 
-// 初始化AlibabaWdkMerchantproductEditRequest对象
-func NewAlibabaWdkMerchantproductEditRequest() *AlibabaWdkMerchantproductEditRequest{
-    return &AlibabaWdkMerchantproductEditRequest{
+// 初始化AlibabaWdkMerchantproductEditAPIRequest对象
+func NewAlibabaWdkMerchantproductEditRequest() *AlibabaWdkMerchantproductEditAPIRequest{
+    return &AlibabaWdkMerchantproductEditAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMerchantproductEditRequest) GetApiMethodName() string {
+func (r AlibabaWdkMerchantproductEditAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.merchantproduct.edit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMerchantproductEditRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMerchantproductEditAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMerchantproductEditRequest) GetApiParams() url.Values {
 }
 // Req Setter
 // 产品编辑入参
-func (r *AlibabaWdkMerchantproductEditRequest) SetReq(_req *MerchantProductRequest) error {
+func (r *AlibabaWdkMerchantproductEditAPIRequest) SetReq(_req *MerchantProductRequest) error {
     r._req = _req
     r.Set("req", _req)
     return nil
 }
 
 // Req Getter
-func (r AlibabaWdkMerchantproductEditRequest) GetReq() *MerchantProductRequest {
+func (r AlibabaWdkMerchantproductEditAPIRequest) GetReq() *MerchantProductRequest {
     return r._req
 }

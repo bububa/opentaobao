@@ -12,26 +12,26 @@ taobao.item.promotion.rule.get
 
 获取商品已生效的更新规则信息，主要包含库存禁止修改，商品一口价禁止修改，库存减少锁定等规则生效信息
 */
-type TaobaoItemPromotionRuleGetRequest struct {
+type TaobaoItemPromotionRuleGetAPIRequest struct {
     model.Params
     // 商品ID
     _itemId   int64
 }
 
-// 初始化TaobaoItemPromotionRuleGetRequest对象
-func NewTaobaoItemPromotionRuleGetRequest() *TaobaoItemPromotionRuleGetRequest{
-    return &TaobaoItemPromotionRuleGetRequest{
+// 初始化TaobaoItemPromotionRuleGetAPIRequest对象
+func NewTaobaoItemPromotionRuleGetRequest() *TaobaoItemPromotionRuleGetAPIRequest{
+    return &TaobaoItemPromotionRuleGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoItemPromotionRuleGetRequest) GetApiMethodName() string {
+func (r TaobaoItemPromotionRuleGetAPIRequest) GetApiMethodName() string {
     return "taobao.item.promotion.rule.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoItemPromotionRuleGetRequest) GetApiParams() url.Values {
+func (r TaobaoItemPromotionRuleGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoItemPromotionRuleGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *TaobaoItemPromotionRuleGetRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoItemPromotionRuleGetAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoItemPromotionRuleGetRequest) GetItemId() int64 {
+func (r TaobaoItemPromotionRuleGetAPIRequest) GetItemId() int64 {
     return r._itemId
 }

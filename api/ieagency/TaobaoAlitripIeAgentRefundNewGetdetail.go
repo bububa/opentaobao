@@ -11,7 +11,7 @@ taobao.alitrip.ie.agent.refund.new.getdetail
 
 查询申请单详情
 */
-func TaobaoAlitripIeAgentRefundNewGetdetail(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundNewGetdetailRequest, session string) (*ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIResponse, error) {
+func TaobaoAlitripIeAgentRefundNewGetdetail(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest, session string) (*ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIResponse, error) {
     var resp ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

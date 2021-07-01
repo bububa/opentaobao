@@ -11,7 +11,7 @@ taobao.store.followurl.get
 
 获取关注店铺的URL
 */
-func TaobaoStoreFollowurlGet(clt *core.SDKClient, req *shop.TaobaoStoreFollowurlGetRequest, session string) (*shop.TaobaoStoreFollowurlGetAPIResponse, error) {
+func TaobaoStoreFollowurlGet(clt *core.SDKClient, req *shop.TaobaoStoreFollowurlGetAPIRequest, session string) (*shop.TaobaoStoreFollowurlGetAPIResponse, error) {
     var resp shop.TaobaoStoreFollowurlGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

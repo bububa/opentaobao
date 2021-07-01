@@ -11,7 +11,7 @@ taobao.wlb.wms.stock.out.bill.get
 
 通过订单号获取单个出库单发货信息
 */
-func TaobaoWlbWmsStockOutBillGet(clt *core.SDKClient, req *wms.TaobaoWlbWmsStockOutBillGetRequest, session string) (*wms.TaobaoWlbWmsStockOutBillGetAPIResponse, error) {
+func TaobaoWlbWmsStockOutBillGet(clt *core.SDKClient, req *wms.TaobaoWlbWmsStockOutBillGetAPIRequest, session string) (*wms.TaobaoWlbWmsStockOutBillGetAPIResponse, error) {
     var resp wms.TaobaoWlbWmsStockOutBillGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

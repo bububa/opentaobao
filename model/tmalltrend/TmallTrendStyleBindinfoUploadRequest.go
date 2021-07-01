@@ -12,26 +12,26 @@ tmall.trend.style.bindinfo.upload
 
 趋势词&款式(服饰行业)绑定信息同步至平台
 */
-type TmallTrendStyleBindinfoUploadRequest struct {
+type TmallTrendStyleBindinfoUploadAPIRequest struct {
     model.Params
     // 趋势词&款式绑定信息列表，一次最多1000条
     _trendStyleBindInfoBoList   []TrendStyleBindInfoBO
 }
 
-// 初始化TmallTrendStyleBindinfoUploadRequest对象
-func NewTmallTrendStyleBindinfoUploadRequest() *TmallTrendStyleBindinfoUploadRequest{
-    return &TmallTrendStyleBindinfoUploadRequest{
+// 初始化TmallTrendStyleBindinfoUploadAPIRequest对象
+func NewTmallTrendStyleBindinfoUploadRequest() *TmallTrendStyleBindinfoUploadAPIRequest{
+    return &TmallTrendStyleBindinfoUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallTrendStyleBindinfoUploadRequest) GetApiMethodName() string {
+func (r TmallTrendStyleBindinfoUploadAPIRequest) GetApiMethodName() string {
     return "tmall.trend.style.bindinfo.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallTrendStyleBindinfoUploadRequest) GetApiParams() url.Values {
+func (r TmallTrendStyleBindinfoUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallTrendStyleBindinfoUploadRequest) GetApiParams() url.Values {
 }
 // TrendStyleBindInfoBoList Setter
 // 趋势词&款式绑定信息列表，一次最多1000条
-func (r *TmallTrendStyleBindinfoUploadRequest) SetTrendStyleBindInfoBoList(_trendStyleBindInfoBoList []TrendStyleBindInfoBO) error {
+func (r *TmallTrendStyleBindinfoUploadAPIRequest) SetTrendStyleBindInfoBoList(_trendStyleBindInfoBoList []TrendStyleBindInfoBO) error {
     r._trendStyleBindInfoBoList = _trendStyleBindInfoBoList
     r.Set("trend_style_bind_info_bo_list", _trendStyleBindInfoBoList)
     return nil
 }
 
 // TrendStyleBindInfoBoList Getter
-func (r TmallTrendStyleBindinfoUploadRequest) GetTrendStyleBindInfoBoList() []TrendStyleBindInfoBO {
+func (r TmallTrendStyleBindinfoUploadAPIRequest) GetTrendStyleBindInfoBoList() []TrendStyleBindInfoBO {
     return r._trendStyleBindInfoBoList
 }

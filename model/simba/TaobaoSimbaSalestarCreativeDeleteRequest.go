@@ -12,26 +12,26 @@ taobao.simba.salestar.creative.delete
 
 删除一个创意
 */
-type TaobaoSimbaSalestarCreativeDeleteRequest struct {
+type TaobaoSimbaSalestarCreativeDeleteAPIRequest struct {
     model.Params
     // 创意Id
     _creativeId   int64
 }
 
-// 初始化TaobaoSimbaSalestarCreativeDeleteRequest对象
-func NewTaobaoSimbaSalestarCreativeDeleteRequest() *TaobaoSimbaSalestarCreativeDeleteRequest{
-    return &TaobaoSimbaSalestarCreativeDeleteRequest{
+// 初始化TaobaoSimbaSalestarCreativeDeleteAPIRequest对象
+func NewTaobaoSimbaSalestarCreativeDeleteRequest() *TaobaoSimbaSalestarCreativeDeleteAPIRequest{
+    return &TaobaoSimbaSalestarCreativeDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaSalestarCreativeDeleteRequest) GetApiMethodName() string {
+func (r TaobaoSimbaSalestarCreativeDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.simba.salestar.creative.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSalestarCreativeDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaSalestarCreativeDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSimbaSalestarCreativeDeleteRequest) GetApiParams() url.Values {
 }
 // CreativeId Setter
 // 创意Id
-func (r *TaobaoSimbaSalestarCreativeDeleteRequest) SetCreativeId(_creativeId int64) error {
+func (r *TaobaoSimbaSalestarCreativeDeleteAPIRequest) SetCreativeId(_creativeId int64) error {
     r._creativeId = _creativeId
     r.Set("creative_id", _creativeId)
     return nil
 }
 
 // CreativeId Getter
-func (r TaobaoSimbaSalestarCreativeDeleteRequest) GetCreativeId() int64 {
+func (r TaobaoSimbaSalestarCreativeDeleteAPIRequest) GetCreativeId() int64 {
     return r._creativeId
 }

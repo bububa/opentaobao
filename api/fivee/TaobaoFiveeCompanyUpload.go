@@ -11,7 +11,7 @@ taobao.fivee.company.upload
 
 资质共享平台上传资质证照
 */
-func TaobaoFiveeCompanyUpload(clt *core.SDKClient, req *fivee.TaobaoFiveeCompanyUploadRequest, session string) (*fivee.TaobaoFiveeCompanyUploadAPIResponse, error) {
+func TaobaoFiveeCompanyUpload(clt *core.SDKClient, req *fivee.TaobaoFiveeCompanyUploadAPIRequest, session string) (*fivee.TaobaoFiveeCompanyUploadAPIResponse, error) {
     var resp fivee.TaobaoFiveeCompanyUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

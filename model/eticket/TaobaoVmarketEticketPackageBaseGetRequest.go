@@ -12,26 +12,26 @@ taobao.vmarket.eticket.package.base.get
 
 获取包基本信息
 */
-type TaobaoVmarketEticketPackageBaseGetRequest struct {
+type TaobaoVmarketEticketPackageBaseGetAPIRequest struct {
     model.Params
     // 包id
     _packageId   int64
 }
 
-// 初始化TaobaoVmarketEticketPackageBaseGetRequest对象
-func NewTaobaoVmarketEticketPackageBaseGetRequest() *TaobaoVmarketEticketPackageBaseGetRequest{
-    return &TaobaoVmarketEticketPackageBaseGetRequest{
+// 初始化TaobaoVmarketEticketPackageBaseGetAPIRequest对象
+func NewTaobaoVmarketEticketPackageBaseGetRequest() *TaobaoVmarketEticketPackageBaseGetAPIRequest{
+    return &TaobaoVmarketEticketPackageBaseGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoVmarketEticketPackageBaseGetRequest) GetApiMethodName() string {
+func (r TaobaoVmarketEticketPackageBaseGetAPIRequest) GetApiMethodName() string {
     return "taobao.vmarket.eticket.package.base.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoVmarketEticketPackageBaseGetRequest) GetApiParams() url.Values {
+func (r TaobaoVmarketEticketPackageBaseGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoVmarketEticketPackageBaseGetRequest) GetApiParams() url.Values {
 }
 // PackageId Setter
 // 包id
-func (r *TaobaoVmarketEticketPackageBaseGetRequest) SetPackageId(_packageId int64) error {
+func (r *TaobaoVmarketEticketPackageBaseGetAPIRequest) SetPackageId(_packageId int64) error {
     r._packageId = _packageId
     r.Set("package_id", _packageId)
     return nil
 }
 
 // PackageId Getter
-func (r TaobaoVmarketEticketPackageBaseGetRequest) GetPackageId() int64 {
+func (r TaobaoVmarketEticketPackageBaseGetAPIRequest) GetPackageId() int64 {
     return r._packageId
 }

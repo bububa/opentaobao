@@ -11,7 +11,7 @@ aliyun.alios.pay.token.get
 
 商户用来获取支付的授权token
 */
-func AliyunAliosPayTokenGet(clt *core.SDKClient, req *aliospay.AliyunAliosPayTokenGetRequest, session string) (*aliospay.AliyunAliosPayTokenGetAPIResponse, error) {
+func AliyunAliosPayTokenGet(clt *core.SDKClient, req *aliospay.AliyunAliosPayTokenGetAPIRequest, session string) (*aliospay.AliyunAliosPayTokenGetAPIResponse, error) {
     var resp aliospay.AliyunAliosPayTokenGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

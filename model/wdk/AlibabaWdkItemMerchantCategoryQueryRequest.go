@@ -12,26 +12,26 @@ alibaba.wdk.item.merchant.category.query
 
 查询商品的商家叶子类目
 */
-type AlibabaWdkItemMerchantCategoryQueryRequest struct {
+type AlibabaWdkItemMerchantCategoryQueryAPIRequest struct {
     model.Params
     // 请求
     _queryRequest   *WdkOpenSkuMerchantCatServiceQueryRequest
 }
 
-// 初始化AlibabaWdkItemMerchantCategoryQueryRequest对象
-func NewAlibabaWdkItemMerchantCategoryQueryRequest() *AlibabaWdkItemMerchantCategoryQueryRequest{
-    return &AlibabaWdkItemMerchantCategoryQueryRequest{
+// 初始化AlibabaWdkItemMerchantCategoryQueryAPIRequest对象
+func NewAlibabaWdkItemMerchantCategoryQueryRequest() *AlibabaWdkItemMerchantCategoryQueryAPIRequest{
+    return &AlibabaWdkItemMerchantCategoryQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkItemMerchantCategoryQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkItemMerchantCategoryQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.item.merchant.category.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkItemMerchantCategoryQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkItemMerchantCategoryQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkItemMerchantCategoryQueryRequest) GetApiParams() url.Values {
 }
 // QueryRequest Setter
 // 请求
-func (r *AlibabaWdkItemMerchantCategoryQueryRequest) SetQueryRequest(_queryRequest *WdkOpenSkuMerchantCatServiceQueryRequest) error {
+func (r *AlibabaWdkItemMerchantCategoryQueryAPIRequest) SetQueryRequest(_queryRequest *WdkOpenSkuMerchantCatServiceQueryRequest) error {
     r._queryRequest = _queryRequest
     r.Set("query_request", _queryRequest)
     return nil
 }
 
 // QueryRequest Getter
-func (r AlibabaWdkItemMerchantCategoryQueryRequest) GetQueryRequest() *WdkOpenSkuMerchantCatServiceQueryRequest {
+func (r AlibabaWdkItemMerchantCategoryQueryAPIRequest) GetQueryRequest() *WdkOpenSkuMerchantCatServiceQueryRequest {
     return r._queryRequest
 }

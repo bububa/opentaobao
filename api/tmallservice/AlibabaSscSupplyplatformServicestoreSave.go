@@ -11,7 +11,7 @@ alibaba.ssc.supplyplatform.servicestore.save
 
 网点创建、修改
 */
-func AlibabaSscSupplyplatformServicestoreSave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicestoreSaveRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIResponse, error) {
+func AlibabaSscSupplyplatformServicestoreSave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIResponse, error) {
     var resp tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

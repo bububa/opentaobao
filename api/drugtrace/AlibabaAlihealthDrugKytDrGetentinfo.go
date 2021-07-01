@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.dr.getentinfo
 
 根据企业名称查询ID
 */
-func AlibabaAlihealthDrugKytDrGetentinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrGetentinfoRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrGetentinfoAPIResponse, error) {
+func AlibabaAlihealthDrugKytDrGetentinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrGetentinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrGetentinfoAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytDrGetentinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

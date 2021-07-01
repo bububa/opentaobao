@@ -12,26 +12,26 @@ alibaba.alihealth.dental.store.insertorupdate
 
 ISV新增/修改口腔门店
 */
-type AlibabaAlihealthDentalStoreInsertorupdateRequest struct {
+type AlibabaAlihealthDentalStoreInsertorupdateAPIRequest struct {
     model.Params
     // 门店
     _store   *DentalOuterStoreRequest
 }
 
-// 初始化AlibabaAlihealthDentalStoreInsertorupdateRequest对象
-func NewAlibabaAlihealthDentalStoreInsertorupdateRequest() *AlibabaAlihealthDentalStoreInsertorupdateRequest{
-    return &AlibabaAlihealthDentalStoreInsertorupdateRequest{
+// 初始化AlibabaAlihealthDentalStoreInsertorupdateAPIRequest对象
+func NewAlibabaAlihealthDentalStoreInsertorupdateRequest() *AlibabaAlihealthDentalStoreInsertorupdateAPIRequest{
+    return &AlibabaAlihealthDentalStoreInsertorupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDentalStoreInsertorupdateRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.dental.store.insertorupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDentalStoreInsertorupdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDentalStoreInsertorupdateRequest) GetApiParams() url.Val
 }
 // Store Setter
 // 门店
-func (r *AlibabaAlihealthDentalStoreInsertorupdateRequest) SetStore(_store *DentalOuterStoreRequest) error {
+func (r *AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) SetStore(_store *DentalOuterStoreRequest) error {
     r._store = _store
     r.Set("store", _store)
     return nil
 }
 
 // Store Getter
-func (r AlibabaAlihealthDentalStoreInsertorupdateRequest) GetStore() *DentalOuterStoreRequest {
+func (r AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) GetStore() *DentalOuterStoreRequest {
     return r._store
 }

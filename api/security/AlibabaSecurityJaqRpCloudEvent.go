@@ -11,7 +11,7 @@ alibaba.security.jaq.rp.cloud.event
 
 事件上报接口
 */
-func AlibabaSecurityJaqRpCloudEvent(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudEventRequest, session string) (*security.AlibabaSecurityJaqRpCloudEventAPIResponse, error) {
+func AlibabaSecurityJaqRpCloudEvent(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudEventAPIRequest, session string) (*security.AlibabaSecurityJaqRpCloudEventAPIResponse, error) {
     var resp security.AlibabaSecurityJaqRpCloudEventAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

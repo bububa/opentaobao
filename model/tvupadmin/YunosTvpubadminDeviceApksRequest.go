@@ -12,26 +12,26 @@ yunos.tvpubadmin.device.apks
 
 获取停开服apk列表
 */
-type YunosTvpubadminDeviceApksRequest struct {
+type YunosTvpubadminDeviceApksAPIRequest struct {
     model.Params
     // 牌照
     _license   int64
 }
 
-// 初始化YunosTvpubadminDeviceApksRequest对象
-func NewYunosTvpubadminDeviceApksRequest() *YunosTvpubadminDeviceApksRequest{
-    return &YunosTvpubadminDeviceApksRequest{
+// 初始化YunosTvpubadminDeviceApksAPIRequest对象
+func NewYunosTvpubadminDeviceApksRequest() *YunosTvpubadminDeviceApksAPIRequest{
+    return &YunosTvpubadminDeviceApksAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminDeviceApksRequest) GetApiMethodName() string {
+func (r YunosTvpubadminDeviceApksAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.device.apks"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminDeviceApksRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminDeviceApksAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminDeviceApksRequest) GetApiParams() url.Values {
 }
 // License Setter
 // 牌照
-func (r *YunosTvpubadminDeviceApksRequest) SetLicense(_license int64) error {
+func (r *YunosTvpubadminDeviceApksAPIRequest) SetLicense(_license int64) error {
     r._license = _license
     r.Set("license", _license)
     return nil
 }
 
 // License Getter
-func (r YunosTvpubadminDeviceApksRequest) GetLicense() int64 {
+func (r YunosTvpubadminDeviceApksAPIRequest) GetLicense() int64 {
     return r._license
 }

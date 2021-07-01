@@ -12,26 +12,26 @@ taobao.tbk.dg.vegas.tlj.instance.report
 
 淘礼金实例维度相关报表数据查询
 */
-type TaobaoTbkDgVegasTljInstanceReportRequest struct {
+type TaobaoTbkDgVegasTljInstanceReportAPIRequest struct {
     model.Params
     // 实例ID
     _rightsId   string
 }
 
-// 初始化TaobaoTbkDgVegasTljInstanceReportRequest对象
-func NewTaobaoTbkDgVegasTljInstanceReportRequest() *TaobaoTbkDgVegasTljInstanceReportRequest{
-    return &TaobaoTbkDgVegasTljInstanceReportRequest{
+// 初始化TaobaoTbkDgVegasTljInstanceReportAPIRequest对象
+func NewTaobaoTbkDgVegasTljInstanceReportRequest() *TaobaoTbkDgVegasTljInstanceReportAPIRequest{
+    return &TaobaoTbkDgVegasTljInstanceReportAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTbkDgVegasTljInstanceReportRequest) GetApiMethodName() string {
+func (r TaobaoTbkDgVegasTljInstanceReportAPIRequest) GetApiMethodName() string {
     return "taobao.tbk.dg.vegas.tlj.instance.report"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTbkDgVegasTljInstanceReportRequest) GetApiParams() url.Values {
+func (r TaobaoTbkDgVegasTljInstanceReportAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTbkDgVegasTljInstanceReportRequest) GetApiParams() url.Values {
 }
 // RightsId Setter
 // 实例ID
-func (r *TaobaoTbkDgVegasTljInstanceReportRequest) SetRightsId(_rightsId string) error {
+func (r *TaobaoTbkDgVegasTljInstanceReportAPIRequest) SetRightsId(_rightsId string) error {
     r._rightsId = _rightsId
     r.Set("rights_id", _rightsId)
     return nil
 }
 
 // RightsId Getter
-func (r TaobaoTbkDgVegasTljInstanceReportRequest) GetRightsId() string {
+func (r TaobaoTbkDgVegasTljInstanceReportAPIRequest) GetRightsId() string {
     return r._rightsId
 }

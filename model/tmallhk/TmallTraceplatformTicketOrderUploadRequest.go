@@ -12,26 +12,26 @@ tmall.traceplatform.ticket.order.upload
 
 upsertOrderBySeller
 */
-type TmallTraceplatformTicketOrderUploadRequest struct {
+type TmallTraceplatformTicketOrderUploadAPIRequest struct {
     model.Params
     // 上传小票参数
     _ticketOrder   *TicketOrderUpdator
 }
 
-// 初始化TmallTraceplatformTicketOrderUploadRequest对象
-func NewTmallTraceplatformTicketOrderUploadRequest() *TmallTraceplatformTicketOrderUploadRequest{
-    return &TmallTraceplatformTicketOrderUploadRequest{
+// 初始化TmallTraceplatformTicketOrderUploadAPIRequest对象
+func NewTmallTraceplatformTicketOrderUploadRequest() *TmallTraceplatformTicketOrderUploadAPIRequest{
+    return &TmallTraceplatformTicketOrderUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallTraceplatformTicketOrderUploadRequest) GetApiMethodName() string {
+func (r TmallTraceplatformTicketOrderUploadAPIRequest) GetApiMethodName() string {
     return "tmall.traceplatform.ticket.order.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallTraceplatformTicketOrderUploadRequest) GetApiParams() url.Values {
+func (r TmallTraceplatformTicketOrderUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallTraceplatformTicketOrderUploadRequest) GetApiParams() url.Values {
 }
 // TicketOrder Setter
 // 上传小票参数
-func (r *TmallTraceplatformTicketOrderUploadRequest) SetTicketOrder(_ticketOrder *TicketOrderUpdator) error {
+func (r *TmallTraceplatformTicketOrderUploadAPIRequest) SetTicketOrder(_ticketOrder *TicketOrderUpdator) error {
     r._ticketOrder = _ticketOrder
     r.Set("ticket_order", _ticketOrder)
     return nil
 }
 
 // TicketOrder Getter
-func (r TmallTraceplatformTicketOrderUploadRequest) GetTicketOrder() *TicketOrderUpdator {
+func (r TmallTraceplatformTicketOrderUploadAPIRequest) GetTicketOrder() *TicketOrderUpdator {
     return r._ticketOrder
 }

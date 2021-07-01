@@ -16,7 +16,7 @@ taobao.item.add
 当关键属性值选择了“其他”的时候，需要输入input_pids和input_str商品才能添加成功。
 <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 */
-func TaobaoItemAdd(clt *core.SDKClient, req *product.TaobaoItemAddRequest, session string) (*product.TaobaoItemAddAPIResponse, error) {
+func TaobaoItemAdd(clt *core.SDKClient, req *product.TaobaoItemAddAPIRequest, session string) (*product.TaobaoItemAddAPIResponse, error) {
     var resp product.TaobaoItemAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

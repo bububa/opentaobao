@@ -11,7 +11,7 @@ taobao.weike.performance.put
 
 提交客服绩效接口
 */
-func TaobaoWeikePerformancePut(clt *core.SDKClient, req *servicecenter.TaobaoWeikePerformancePutRequest, session string) (*servicecenter.TaobaoWeikePerformancePutAPIResponse, error) {
+func TaobaoWeikePerformancePut(clt *core.SDKClient, req *servicecenter.TaobaoWeikePerformancePutAPIRequest, session string) (*servicecenter.TaobaoWeikePerformancePutAPIResponse, error) {
     var resp servicecenter.TaobaoWeikePerformancePutAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ alibaba.alihealth.tracecodeplatform.code.entscan
 
 药品商家扫描药品监管码，只有该商家的药才返回
 */
-type AlibabaAlihealthTracecodeplatformCodeEntscanRequest struct {
+type AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest struct {
     model.Params
     // 药监码
     _code   string
@@ -20,20 +20,20 @@ type AlibabaAlihealthTracecodeplatformCodeEntscanRequest struct {
     _serviceFlag   string
 }
 
-// 初始化AlibabaAlihealthTracecodeplatformCodeEntscanRequest对象
-func NewAlibabaAlihealthTracecodeplatformCodeEntscanRequest() *AlibabaAlihealthTracecodeplatformCodeEntscanRequest{
-    return &AlibabaAlihealthTracecodeplatformCodeEntscanRequest{
+// 初始化AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest对象
+func NewAlibabaAlihealthTracecodeplatformCodeEntscanRequest() *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest{
+    return &AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthTracecodeplatformCodeEntscanRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.tracecodeplatform.code.entscan"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthTracecodeplatformCodeEntscanRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthTracecodeplatformCodeEntscanRequest) GetApiParams() url.
 }
 // Code Setter
 // 药监码
-func (r *AlibabaAlihealthTracecodeplatformCodeEntscanRequest) SetCode(_code string) error {
+func (r *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaAlihealthTracecodeplatformCodeEntscanRequest) GetCode() string {
+func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetCode() string {
     return r._code
 }
 // ServiceFlag Setter
 // 不同企业有不同的标识
-func (r *AlibabaAlihealthTracecodeplatformCodeEntscanRequest) SetServiceFlag(_serviceFlag string) error {
+func (r *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) SetServiceFlag(_serviceFlag string) error {
     r._serviceFlag = _serviceFlag
     r.Set("service_flag", _serviceFlag)
     return nil
 }
 
 // ServiceFlag Getter
-func (r AlibabaAlihealthTracecodeplatformCodeEntscanRequest) GetServiceFlag() string {
+func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetServiceFlag() string {
     return r._serviceFlag
 }

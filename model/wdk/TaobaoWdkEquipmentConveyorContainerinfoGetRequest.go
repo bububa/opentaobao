@@ -12,7 +12,7 @@ taobao.wdk.equipment.conveyor.containerinfo.get
 
 获取批次或波次中容器的信息
 */
-type TaobaoWdkEquipmentConveyorContainerinfoGetRequest struct {
+type TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest struct {
     model.Params
     // 仓库id
     _warehouseId   int64
@@ -24,20 +24,20 @@ type TaobaoWdkEquipmentConveyorContainerinfoGetRequest struct {
     _waveCode   string
 }
 
-// 初始化TaobaoWdkEquipmentConveyorContainerinfoGetRequest对象
-func NewTaobaoWdkEquipmentConveyorContainerinfoGetRequest() *TaobaoWdkEquipmentConveyorContainerinfoGetRequest{
-    return &TaobaoWdkEquipmentConveyorContainerinfoGetRequest{
+// 初始化TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest对象
+func NewTaobaoWdkEquipmentConveyorContainerinfoGetRequest() *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest{
+    return &TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWdkEquipmentConveyorContainerinfoGetRequest) GetApiMethodName() string {
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetApiMethodName() string {
     return "taobao.wdk.equipment.conveyor.containerinfo.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWdkEquipmentConveyorContainerinfoGetRequest) GetApiParams() url.Values {
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoWdkEquipmentConveyorContainerinfoGetRequest) GetApiParams() url.Va
 }
 // WarehouseId Setter
 // 仓库id
-func (r *TaobaoWdkEquipmentConveyorContainerinfoGetRequest) SetWarehouseId(_warehouseId int64) error {
+func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetWarehouseId(_warehouseId int64) error {
     r._warehouseId = _warehouseId
     r.Set("warehouse_id", _warehouseId)
     return nil
 }
 
 // WarehouseId Getter
-func (r TaobaoWdkEquipmentConveyorContainerinfoGetRequest) GetWarehouseId() int64 {
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetWarehouseId() int64 {
     return r._warehouseId
 }
 // ContainerCode Setter
 // 容器号
-func (r *TaobaoWdkEquipmentConveyorContainerinfoGetRequest) SetContainerCode(_containerCode string) error {
+func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetContainerCode(_containerCode string) error {
     r._containerCode = _containerCode
     r.Set("container_code", _containerCode)
     return nil
 }
 
 // ContainerCode Getter
-func (r TaobaoWdkEquipmentConveyorContainerinfoGetRequest) GetContainerCode() string {
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetContainerCode() string {
     return r._containerCode
 }
 // BatchCode Setter
 // 批次号，可以为空串
-func (r *TaobaoWdkEquipmentConveyorContainerinfoGetRequest) SetBatchCode(_batchCode string) error {
+func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetBatchCode(_batchCode string) error {
     r._batchCode = _batchCode
     r.Set("batch_code", _batchCode)
     return nil
 }
 
 // BatchCode Getter
-func (r TaobaoWdkEquipmentConveyorContainerinfoGetRequest) GetBatchCode() string {
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetBatchCode() string {
     return r._batchCode
 }
 // WaveCode Setter
 // 波次号，可以为空串
-func (r *TaobaoWdkEquipmentConveyorContainerinfoGetRequest) SetWaveCode(_waveCode string) error {
+func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetWaveCode(_waveCode string) error {
     r._waveCode = _waveCode
     r.Set("wave_code", _waveCode)
     return nil
 }
 
 // WaveCode Getter
-func (r TaobaoWdkEquipmentConveyorContainerinfoGetRequest) GetWaveCode() string {
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetWaveCode() string {
     return r._waveCode
 }

@@ -11,7 +11,7 @@ alibaba.pur.supplier.invoicecreate
 
 preInvoice创建
 */
-func AlibabaPurSupplierInvoicecreate(clt *core.SDKClient, req *pur.AlibabaPurSupplierInvoicecreateRequest, session string) (*pur.AlibabaPurSupplierInvoicecreateAPIResponse, error) {
+func AlibabaPurSupplierInvoicecreate(clt *core.SDKClient, req *pur.AlibabaPurSupplierInvoicecreateAPIRequest, session string) (*pur.AlibabaPurSupplierInvoicecreateAPIResponse, error) {
     var resp pur.AlibabaPurSupplierInvoicecreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

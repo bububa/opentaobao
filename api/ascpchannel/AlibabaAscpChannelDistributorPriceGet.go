@@ -11,7 +11,7 @@ alibaba.ascp.channel.distributor.price.get
 
 此api为淘外分销的渠道产品价格查询标准api，淘外分销商专用
 */
-func AlibabaAscpChannelDistributorPriceGet(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelDistributorPriceGetRequest, session string) (*ascpchannel.AlibabaAscpChannelDistributorPriceGetAPIResponse, error) {
+func AlibabaAscpChannelDistributorPriceGet(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelDistributorPriceGetAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelDistributorPriceGetAPIResponse, error) {
     var resp ascpchannel.AlibabaAscpChannelDistributorPriceGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

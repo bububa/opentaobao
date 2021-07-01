@@ -11,7 +11,7 @@ alibaba.alihealth.reserve.dental.unbinditem
 
 绑定门店信息，商品信息
 */
-func AlibabaAlihealthReserveDentalUnbinditem(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthReserveDentalUnbinditemRequest, session string) (*alihealth2.AlibabaAlihealthReserveDentalUnbinditemAPIResponse, error) {
+func AlibabaAlihealthReserveDentalUnbinditem(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthReserveDentalUnbinditemAPIRequest, session string) (*alihealth2.AlibabaAlihealthReserveDentalUnbinditemAPIResponse, error) {
     var resp alihealth2.AlibabaAlihealthReserveDentalUnbinditemAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

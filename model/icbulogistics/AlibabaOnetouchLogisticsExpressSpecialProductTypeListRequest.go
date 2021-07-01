@@ -12,24 +12,24 @@ alibaba.onetouch.logistics.express.special.product.type.list
 
 获取商品类型配置项
 */
-type AlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest struct {
+type AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest对象
-func NewAlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest() *AlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest{
-    return &AlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest{
+// 初始化AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest对象
+func NewAlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest() *AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest{
+    return &AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest) GetApiMethodName() string {
+func (r AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest) GetApiMethodName() string {
     return "alibaba.onetouch.logistics.express.special.product.type.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest) GetApiParams() url.Values {
+func (r AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

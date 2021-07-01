@@ -11,7 +11,7 @@ taobao.wangwang.abstract.getwordlist
 
 获取关键词列表，只支持json返回
 */
-func TaobaoWangwangAbstractGetwordlist(clt *core.SDKClient, req *wangwang.TaobaoWangwangAbstractGetwordlistRequest, session string) (*wangwang.TaobaoWangwangAbstractGetwordlistAPIResponse, error) {
+func TaobaoWangwangAbstractGetwordlist(clt *core.SDKClient, req *wangwang.TaobaoWangwangAbstractGetwordlistAPIRequest, session string) (*wangwang.TaobaoWangwangAbstractGetwordlistAPIResponse, error) {
     var resp wangwang.TaobaoWangwangAbstractGetwordlistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

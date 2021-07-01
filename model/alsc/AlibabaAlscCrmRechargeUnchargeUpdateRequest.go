@@ -12,26 +12,26 @@ alibaba.alsc.crm.recharge.uncharge.update
 
 充值退款
 */
-type AlibabaAlscCrmRechargeUnchargeUpdateRequest struct {
+type AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest struct {
     model.Params
     // 入参
     _paramUnchargeOpenReq   *UnchargeOpenReq
 }
 
-// 初始化AlibabaAlscCrmRechargeUnchargeUpdateRequest对象
-func NewAlibabaAlscCrmRechargeUnchargeUpdateRequest() *AlibabaAlscCrmRechargeUnchargeUpdateRequest{
-    return &AlibabaAlscCrmRechargeUnchargeUpdateRequest{
+// 初始化AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest对象
+func NewAlibabaAlscCrmRechargeUnchargeUpdateRequest() *AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest{
+    return &AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRechargeUnchargeUpdateRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.recharge.uncharge.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRechargeUnchargeUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeUnchargeUpdateRequest) GetApiParams() url.Values {
 }
 // ParamUnchargeOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeUnchargeUpdateRequest) SetParamUnchargeOpenReq(_paramUnchargeOpenReq *UnchargeOpenReq) error {
+func (r *AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest) SetParamUnchargeOpenReq(_paramUnchargeOpenReq *UnchargeOpenReq) error {
     r._paramUnchargeOpenReq = _paramUnchargeOpenReq
     r.Set("param_uncharge_open_req", _paramUnchargeOpenReq)
     return nil
 }
 
 // ParamUnchargeOpenReq Getter
-func (r AlibabaAlscCrmRechargeUnchargeUpdateRequest) GetParamUnchargeOpenReq() *UnchargeOpenReq {
+func (r AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest) GetParamUnchargeOpenReq() *UnchargeOpenReq {
     return r._paramUnchargeOpenReq
 }

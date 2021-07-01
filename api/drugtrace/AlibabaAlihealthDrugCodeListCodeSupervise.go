@@ -17,7 +17,7 @@ alibaba.alihealth.drug.code.list.code.supervise
 情况下，需要分多次调用该接口。
 核查平台优先过滤非8开头的，长度非20位数字的码信息。
 */
-func AlibabaAlihealthDrugCodeListCodeSupervise(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeSuperviseRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeListCodeSuperviseAPIResponse, error) {
+func AlibabaAlihealthDrugCodeListCodeSupervise(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeListCodeSuperviseAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugCodeListCodeSuperviseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

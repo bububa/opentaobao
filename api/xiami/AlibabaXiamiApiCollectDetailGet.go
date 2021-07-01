@@ -11,7 +11,7 @@ alibaba.xiami.api.collect.detail.get
 
 虾米音乐精选集详情接口
 */
-func AlibabaXiamiApiCollectDetailGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiCollectDetailGetRequest, session string) (*xiami.AlibabaXiamiApiCollectDetailGetAPIResponse, error) {
+func AlibabaXiamiApiCollectDetailGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiCollectDetailGetAPIRequest, session string) (*xiami.AlibabaXiamiApiCollectDetailGetAPIResponse, error) {
     var resp xiami.AlibabaXiamiApiCollectDetailGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

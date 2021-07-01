@@ -12,7 +12,7 @@ taobao.feedflow.item.crowd.modify
 
 覆盖单元下同类型定向人群
 */
-type TaobaoFeedflowItemCrowdModifyRequest struct {
+type TaobaoFeedflowItemCrowdModifyAPIRequest struct {
     model.Params
     // 人群信息
     _crowds   []CrowdDTO
@@ -20,20 +20,20 @@ type TaobaoFeedflowItemCrowdModifyRequest struct {
     _adgroupId   int64
 }
 
-// 初始化TaobaoFeedflowItemCrowdModifyRequest对象
-func NewTaobaoFeedflowItemCrowdModifyRequest() *TaobaoFeedflowItemCrowdModifyRequest{
-    return &TaobaoFeedflowItemCrowdModifyRequest{
+// 初始化TaobaoFeedflowItemCrowdModifyAPIRequest对象
+func NewTaobaoFeedflowItemCrowdModifyRequest() *TaobaoFeedflowItemCrowdModifyAPIRequest{
+    return &TaobaoFeedflowItemCrowdModifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemCrowdModifyRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemCrowdModifyAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.crowd.modify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemCrowdModifyRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemCrowdModifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoFeedflowItemCrowdModifyRequest) GetApiParams() url.Values {
 }
 // Crowds Setter
 // 人群信息
-func (r *TaobaoFeedflowItemCrowdModifyRequest) SetCrowds(_crowds []CrowdDTO) error {
+func (r *TaobaoFeedflowItemCrowdModifyAPIRequest) SetCrowds(_crowds []CrowdDTO) error {
     r._crowds = _crowds
     r.Set("crowds", _crowds)
     return nil
 }
 
 // Crowds Getter
-func (r TaobaoFeedflowItemCrowdModifyRequest) GetCrowds() []CrowdDTO {
+func (r TaobaoFeedflowItemCrowdModifyAPIRequest) GetCrowds() []CrowdDTO {
     return r._crowds
 }
 // AdgroupId Setter
 // 单元id
-func (r *TaobaoFeedflowItemCrowdModifyRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoFeedflowItemCrowdModifyAPIRequest) SetAdgroupId(_adgroupId int64) error {
     r._adgroupId = _adgroupId
     r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
-func (r TaobaoFeedflowItemCrowdModifyRequest) GetAdgroupId() int64 {
+func (r TaobaoFeedflowItemCrowdModifyAPIRequest) GetAdgroupId() int64 {
     return r._adgroupId
 }

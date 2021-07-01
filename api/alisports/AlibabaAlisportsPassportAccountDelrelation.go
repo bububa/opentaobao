@@ -11,7 +11,7 @@ alibaba.alisports.passport.account.delrelation
 
 阿里体育会员系统--取消三方关联接口
 */
-func AlibabaAlisportsPassportAccountDelrelation(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountDelrelationRequest, session string) (*alisports.AlibabaAlisportsPassportAccountDelrelationAPIResponse, error) {
+func AlibabaAlisportsPassportAccountDelrelation(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountDelrelationAPIRequest, session string) (*alisports.AlibabaAlisportsPassportAccountDelrelationAPIResponse, error) {
     var resp alisports.AlibabaAlisportsPassportAccountDelrelationAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.tbk.dg.newuser.order.get
 
 拉新API
 */
-func TaobaoTbkDgNewuserOrderGet(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderGetRequest, session string) (*tbk.TaobaoTbkDgNewuserOrderGetAPIResponse, error) {
+func TaobaoTbkDgNewuserOrderGet(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderGetAPIRequest, session string) (*tbk.TaobaoTbkDgNewuserOrderGetAPIResponse, error) {
     var resp tbk.TaobaoTbkDgNewuserOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

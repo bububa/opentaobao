@@ -11,7 +11,7 @@ alibaba.aliqin.flow.wallet.query.charge
 
 查询流量充值状态
 */
-func AlibabaAliqinFlowWalletQueryCharge(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletQueryChargeRequest, session string) (*alicom.AlibabaAliqinFlowWalletQueryChargeAPIResponse, error) {
+func AlibabaAliqinFlowWalletQueryCharge(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletQueryChargeAPIRequest, session string) (*alicom.AlibabaAliqinFlowWalletQueryChargeAPIResponse, error) {
     var resp alicom.AlibabaAliqinFlowWalletQueryChargeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

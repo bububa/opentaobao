@@ -12,26 +12,26 @@ taobao.wlb.wms.inventory.lack.upload
 
 缺货通知
 */
-type TaobaoWlbWmsInventoryLackUploadRequest struct {
+type TaobaoWlbWmsInventoryLackUploadAPIRequest struct {
     model.Params
     // 缺货通知信息
     _content   *WlbWmsInventoryLackUpload
 }
 
-// 初始化TaobaoWlbWmsInventoryLackUploadRequest对象
-func NewTaobaoWlbWmsInventoryLackUploadRequest() *TaobaoWlbWmsInventoryLackUploadRequest{
-    return &TaobaoWlbWmsInventoryLackUploadRequest{
+// 初始化TaobaoWlbWmsInventoryLackUploadAPIRequest对象
+func NewTaobaoWlbWmsInventoryLackUploadRequest() *TaobaoWlbWmsInventoryLackUploadAPIRequest{
+    return &TaobaoWlbWmsInventoryLackUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbWmsInventoryLackUploadRequest) GetApiMethodName() string {
+func (r TaobaoWlbWmsInventoryLackUploadAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.wms.inventory.lack.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbWmsInventoryLackUploadRequest) GetApiParams() url.Values {
+func (r TaobaoWlbWmsInventoryLackUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWlbWmsInventoryLackUploadRequest) GetApiParams() url.Values {
 }
 // Content Setter
 // 缺货通知信息
-func (r *TaobaoWlbWmsInventoryLackUploadRequest) SetContent(_content *WlbWmsInventoryLackUpload) error {
+func (r *TaobaoWlbWmsInventoryLackUploadAPIRequest) SetContent(_content *WlbWmsInventoryLackUpload) error {
     r._content = _content
     r.Set("content", _content)
     return nil
 }
 
 // Content Getter
-func (r TaobaoWlbWmsInventoryLackUploadRequest) GetContent() *WlbWmsInventoryLackUpload {
+func (r TaobaoWlbWmsInventoryLackUploadAPIRequest) GetContent() *WlbWmsInventoryLackUpload {
     return r._content
 }

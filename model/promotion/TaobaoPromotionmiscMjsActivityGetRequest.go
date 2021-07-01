@@ -12,26 +12,26 @@ taobao.promotionmisc.mjs.activity.get
 
 查询满就送活动
 */
-type TaobaoPromotionmiscMjsActivityGetRequest struct {
+type TaobaoPromotionmiscMjsActivityGetAPIRequest struct {
     model.Params
     // 活动id。
     _activityId   int64
 }
 
-// 初始化TaobaoPromotionmiscMjsActivityGetRequest对象
-func NewTaobaoPromotionmiscMjsActivityGetRequest() *TaobaoPromotionmiscMjsActivityGetRequest{
-    return &TaobaoPromotionmiscMjsActivityGetRequest{
+// 初始化TaobaoPromotionmiscMjsActivityGetAPIRequest对象
+func NewTaobaoPromotionmiscMjsActivityGetRequest() *TaobaoPromotionmiscMjsActivityGetAPIRequest{
+    return &TaobaoPromotionmiscMjsActivityGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPromotionmiscMjsActivityGetRequest) GetApiMethodName() string {
+func (r TaobaoPromotionmiscMjsActivityGetAPIRequest) GetApiMethodName() string {
     return "taobao.promotionmisc.mjs.activity.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionmiscMjsActivityGetRequest) GetApiParams() url.Values {
+func (r TaobaoPromotionmiscMjsActivityGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPromotionmiscMjsActivityGetRequest) GetApiParams() url.Values {
 }
 // ActivityId Setter
 // 活动id。
-func (r *TaobaoPromotionmiscMjsActivityGetRequest) SetActivityId(_activityId int64) error {
+func (r *TaobaoPromotionmiscMjsActivityGetAPIRequest) SetActivityId(_activityId int64) error {
     r._activityId = _activityId
     r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
-func (r TaobaoPromotionmiscMjsActivityGetRequest) GetActivityId() int64 {
+func (r TaobaoPromotionmiscMjsActivityGetAPIRequest) GetActivityId() int64 {
     return r._activityId
 }

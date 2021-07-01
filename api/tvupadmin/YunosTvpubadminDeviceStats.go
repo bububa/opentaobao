@@ -11,7 +11,7 @@ yunos.tvpubadmin.device.stats
 
 获取设备统计数据
 */
-func YunosTvpubadminDeviceStats(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceStatsRequest, session string) (*tvupadmin.YunosTvpubadminDeviceStatsAPIResponse, error) {
+func YunosTvpubadminDeviceStats(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceStatsAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceStatsAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminDeviceStatsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

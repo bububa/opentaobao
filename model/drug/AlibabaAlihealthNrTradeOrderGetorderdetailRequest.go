@@ -12,26 +12,26 @@ alibaba.alihealth.nr.trade.order.getorderdetail
 
 阿里健康O2O，获取订单详情，修复组合商品价格精度问题
 */
-type AlibabaAlihealthNrTradeOrderGetorderdetailRequest struct {
+type AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest struct {
     model.Params
     // 淘宝订单ID
     _orderId   int64
 }
 
-// 初始化AlibabaAlihealthNrTradeOrderGetorderdetailRequest对象
-func NewAlibabaAlihealthNrTradeOrderGetorderdetailRequest() *AlibabaAlihealthNrTradeOrderGetorderdetailRequest{
-    return &AlibabaAlihealthNrTradeOrderGetorderdetailRequest{
+// 初始化AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest对象
+func NewAlibabaAlihealthNrTradeOrderGetorderdetailRequest() *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest{
+    return &AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthNrTradeOrderGetorderdetailRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.nr.trade.order.getorderdetail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthNrTradeOrderGetorderdetailRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthNrTradeOrderGetorderdetailRequest) GetApiParams() url.Va
 }
 // OrderId Setter
 // 淘宝订单ID
-func (r *AlibabaAlihealthNrTradeOrderGetorderdetailRequest) SetOrderId(_orderId int64) error {
+func (r *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaAlihealthNrTradeOrderGetorderdetailRequest) GetOrderId() int64 {
+func (r AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) GetOrderId() int64 {
     return r._orderId
 }

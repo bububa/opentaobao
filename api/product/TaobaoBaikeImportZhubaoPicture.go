@@ -11,7 +11,7 @@ taobao.baike.import.zhubao.picture
 
 用于接入外部--图片--录入到商品百科中
 */
-func TaobaoBaikeImportZhubaoPicture(clt *core.SDKClient, req *product.TaobaoBaikeImportZhubaoPictureRequest, session string) (*product.TaobaoBaikeImportZhubaoPictureAPIResponse, error) {
+func TaobaoBaikeImportZhubaoPicture(clt *core.SDKClient, req *product.TaobaoBaikeImportZhubaoPictureAPIRequest, session string) (*product.TaobaoBaikeImportZhubaoPictureAPIResponse, error) {
     var resp product.TaobaoBaikeImportZhubaoPictureAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

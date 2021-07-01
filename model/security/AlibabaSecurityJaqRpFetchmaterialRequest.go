@@ -12,26 +12,26 @@ alibaba.security.jaq.rp.fetchmaterial
 
 聚安全实人认证获取结果接口
 */
-type AlibabaSecurityJaqRpFetchmaterialRequest struct {
+type AlibabaSecurityJaqRpFetchmaterialAPIRequest struct {
     model.Params
     // 消息服务推送的key
     _securityKey   string
 }
 
-// 初始化AlibabaSecurityJaqRpFetchmaterialRequest对象
-func NewAlibabaSecurityJaqRpFetchmaterialRequest() *AlibabaSecurityJaqRpFetchmaterialRequest{
-    return &AlibabaSecurityJaqRpFetchmaterialRequest{
+// 初始化AlibabaSecurityJaqRpFetchmaterialAPIRequest对象
+func NewAlibabaSecurityJaqRpFetchmaterialRequest() *AlibabaSecurityJaqRpFetchmaterialAPIRequest{
+    return &AlibabaSecurityJaqRpFetchmaterialAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqRpFetchmaterialRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqRpFetchmaterialAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.rp.fetchmaterial"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqRpFetchmaterialRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqRpFetchmaterialAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqRpFetchmaterialRequest) GetApiParams() url.Values {
 }
 // SecurityKey Setter
 // 消息服务推送的key
-func (r *AlibabaSecurityJaqRpFetchmaterialRequest) SetSecurityKey(_securityKey string) error {
+func (r *AlibabaSecurityJaqRpFetchmaterialAPIRequest) SetSecurityKey(_securityKey string) error {
     r._securityKey = _securityKey
     r.Set("security_key", _securityKey)
     return nil
 }
 
 // SecurityKey Getter
-func (r AlibabaSecurityJaqRpFetchmaterialRequest) GetSecurityKey() string {
+func (r AlibabaSecurityJaqRpFetchmaterialAPIRequest) GetSecurityKey() string {
     return r._securityKey
 }

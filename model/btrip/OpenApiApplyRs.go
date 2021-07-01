@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiApplyRs 
-type OpenApiApplyRs struct {
+// OpenApiApplyRS 
+type OpenApiApplyRS struct {
     // 商旅申请单id
     ApplyId   int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     // 外部申请单id

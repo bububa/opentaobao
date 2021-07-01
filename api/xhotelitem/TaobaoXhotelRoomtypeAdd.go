@@ -11,7 +11,7 @@ taobao.xhotel.roomtype.add
 
 房型添加或更新
 */
-func TaobaoXhotelRoomtypeAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeAddRequest, session string) (*xhotelitem.TaobaoXhotelRoomtypeAddAPIResponse, error) {
+func TaobaoXhotelRoomtypeAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelRoomtypeAddAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelRoomtypeAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

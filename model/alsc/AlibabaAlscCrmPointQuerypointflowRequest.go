@@ -12,26 +12,26 @@ alibaba.alsc.crm.point.querypointflow
 
 分页查询积分流水
 */
-type AlibabaAlscCrmPointQuerypointflowRequest struct {
+type AlibabaAlscCrmPointQuerypointflowAPIRequest struct {
     model.Params
     // 入参
     _paramPageQueryPointFlowOpenReq   *PageQueryPointFlowOpenReq
 }
 
-// 初始化AlibabaAlscCrmPointQuerypointflowRequest对象
-func NewAlibabaAlscCrmPointQuerypointflowRequest() *AlibabaAlscCrmPointQuerypointflowRequest{
-    return &AlibabaAlscCrmPointQuerypointflowRequest{
+// 初始化AlibabaAlscCrmPointQuerypointflowAPIRequest对象
+func NewAlibabaAlscCrmPointQuerypointflowRequest() *AlibabaAlscCrmPointQuerypointflowAPIRequest{
+    return &AlibabaAlscCrmPointQuerypointflowAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmPointQuerypointflowRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmPointQuerypointflowAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.point.querypointflow"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmPointQuerypointflowRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmPointQuerypointflowAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmPointQuerypointflowRequest) GetApiParams() url.Values {
 }
 // ParamPageQueryPointFlowOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmPointQuerypointflowRequest) SetParamPageQueryPointFlowOpenReq(_paramPageQueryPointFlowOpenReq *PageQueryPointFlowOpenReq) error {
+func (r *AlibabaAlscCrmPointQuerypointflowAPIRequest) SetParamPageQueryPointFlowOpenReq(_paramPageQueryPointFlowOpenReq *PageQueryPointFlowOpenReq) error {
     r._paramPageQueryPointFlowOpenReq = _paramPageQueryPointFlowOpenReq
     r.Set("param_page_query_point_flow_open_req", _paramPageQueryPointFlowOpenReq)
     return nil
 }
 
 // ParamPageQueryPointFlowOpenReq Getter
-func (r AlibabaAlscCrmPointQuerypointflowRequest) GetParamPageQueryPointFlowOpenReq() *PageQueryPointFlowOpenReq {
+func (r AlibabaAlscCrmPointQuerypointflowAPIRequest) GetParamPageQueryPointFlowOpenReq() *PageQueryPointFlowOpenReq {
     return r._paramPageQueryPointFlowOpenReq
 }

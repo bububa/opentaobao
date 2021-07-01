@@ -12,7 +12,7 @@ taobao.logistics.companies.get
 
 查询淘宝网合作的物流公司信息，用于发货接口。
 */
-type TaobaoLogisticsCompaniesGetRequest struct {
+type TaobaoLogisticsCompaniesGetAPIRequest struct {
     model.Params
     // 需返回的字段列表。可选值:LogisticCompany 结构中的所有字段;多个字段间用","逗号隔开.<br/>如:id,code,name,reg_mail_no<br/><br><font color='red'>说明：</font><br/><br>id：物流公司ID<br/><br>code：物流公司code<br/><br>name：物流公司名称<br/><br>reg_mail_no：物流公司对应的运单规则
     _fields   []string
@@ -22,20 +22,20 @@ type TaobaoLogisticsCompaniesGetRequest struct {
     _orderMode   string
 }
 
-// 初始化TaobaoLogisticsCompaniesGetRequest对象
-func NewTaobaoLogisticsCompaniesGetRequest() *TaobaoLogisticsCompaniesGetRequest{
-    return &TaobaoLogisticsCompaniesGetRequest{
+// 初始化TaobaoLogisticsCompaniesGetAPIRequest对象
+func NewTaobaoLogisticsCompaniesGetRequest() *TaobaoLogisticsCompaniesGetAPIRequest{
+    return &TaobaoLogisticsCompaniesGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoLogisticsCompaniesGetRequest) GetApiMethodName() string {
+func (r TaobaoLogisticsCompaniesGetAPIRequest) GetApiMethodName() string {
     return "taobao.logistics.companies.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoLogisticsCompaniesGetRequest) GetApiParams() url.Values {
+func (r TaobaoLogisticsCompaniesGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoLogisticsCompaniesGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需返回的字段列表。可选值:LogisticCompany 结构中的所有字段;多个字段间用","逗号隔开.<br/>如:id,code,name,reg_mail_no<br/><br><font color='red'>说明：</font><br/><br>id：物流公司ID<br/><br>code：物流公司code<br/><br>name：物流公司名称<br/><br>reg_mail_no：物流公司对应的运单规则
-func (r *TaobaoLogisticsCompaniesGetRequest) SetFields(_fields []string) error {
+func (r *TaobaoLogisticsCompaniesGetAPIRequest) SetFields(_fields []string) error {
     r._fields = _fields
     r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
-func (r TaobaoLogisticsCompaniesGetRequest) GetFields() []string {
+func (r TaobaoLogisticsCompaniesGetAPIRequest) GetFields() []string {
     return r._fields
 }
 // IsRecommended Setter
 // 是否查询推荐物流公司.可选值:true,false.如果不提供此参数,将会返回所有支持电话联系的物流公司.
-func (r *TaobaoLogisticsCompaniesGetRequest) SetIsRecommended(_isRecommended bool) error {
+func (r *TaobaoLogisticsCompaniesGetAPIRequest) SetIsRecommended(_isRecommended bool) error {
     r._isRecommended = _isRecommended
     r.Set("is_recommended", _isRecommended)
     return nil
 }
 
 // IsRecommended Getter
-func (r TaobaoLogisticsCompaniesGetRequest) GetIsRecommended() bool {
+func (r TaobaoLogisticsCompaniesGetAPIRequest) GetIsRecommended() bool {
     return r._isRecommended
 }
 // OrderMode Setter
 // 推荐物流公司的下单方式.可选值:offline(电话联系/自己联系),online(在线下单),all(即电话联系又在线下单). 此参数仅仅用于is_recommended 为ture时。就是说对于推荐物流公司才可用.如果不选择此参数将会返回推荐物流中支持电话联系的物流公司.
-func (r *TaobaoLogisticsCompaniesGetRequest) SetOrderMode(_orderMode string) error {
+func (r *TaobaoLogisticsCompaniesGetAPIRequest) SetOrderMode(_orderMode string) error {
     r._orderMode = _orderMode
     r.Set("order_mode", _orderMode)
     return nil
 }
 
 // OrderMode Getter
-func (r TaobaoLogisticsCompaniesGetRequest) GetOrderMode() string {
+func (r TaobaoLogisticsCompaniesGetAPIRequest) GetOrderMode() string {
     return r._orderMode
 }

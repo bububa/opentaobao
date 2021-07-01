@@ -12,26 +12,26 @@ alibaba.wdk.pos.afterbuy.benefit.send
 
 生态pos购后发放权益接口开放
 */
-type AlibabaWdkPosAfterbuyBenefitSendRequest struct {
+type AlibabaWdkPosAfterbuyBenefitSendAPIRequest struct {
     model.Params
     // 入参
     _sendBenefitParam   *IsvSendBenefitParam
 }
 
-// 初始化AlibabaWdkPosAfterbuyBenefitSendRequest对象
-func NewAlibabaWdkPosAfterbuyBenefitSendRequest() *AlibabaWdkPosAfterbuyBenefitSendRequest{
-    return &AlibabaWdkPosAfterbuyBenefitSendRequest{
+// 初始化AlibabaWdkPosAfterbuyBenefitSendAPIRequest对象
+func NewAlibabaWdkPosAfterbuyBenefitSendRequest() *AlibabaWdkPosAfterbuyBenefitSendAPIRequest{
+    return &AlibabaWdkPosAfterbuyBenefitSendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkPosAfterbuyBenefitSendRequest) GetApiMethodName() string {
+func (r AlibabaWdkPosAfterbuyBenefitSendAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.pos.afterbuy.benefit.send"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkPosAfterbuyBenefitSendRequest) GetApiParams() url.Values {
+func (r AlibabaWdkPosAfterbuyBenefitSendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkPosAfterbuyBenefitSendRequest) GetApiParams() url.Values {
 }
 // SendBenefitParam Setter
 // 入参
-func (r *AlibabaWdkPosAfterbuyBenefitSendRequest) SetSendBenefitParam(_sendBenefitParam *IsvSendBenefitParam) error {
+func (r *AlibabaWdkPosAfterbuyBenefitSendAPIRequest) SetSendBenefitParam(_sendBenefitParam *IsvSendBenefitParam) error {
     r._sendBenefitParam = _sendBenefitParam
     r.Set("send_benefit_param", _sendBenefitParam)
     return nil
 }
 
 // SendBenefitParam Getter
-func (r AlibabaWdkPosAfterbuyBenefitSendRequest) GetSendBenefitParam() *IsvSendBenefitParam {
+func (r AlibabaWdkPosAfterbuyBenefitSendAPIRequest) GetSendBenefitParam() *IsvSendBenefitParam {
     return r._sendBenefitParam
 }

@@ -11,7 +11,7 @@ cainiao.reachable.batchjudge
 
 提供给商家在发货之前做截单处理，输入物流商编码和收发货地址进行可达判定，目前支持国内主流的物流服务商, 支持快运和快递两种类型
 */
-func CainiaoReachableBatchjudge(clt *core.SDKClient, req *logistic.CainiaoReachableBatchjudgeRequest, session string) (*logistic.CainiaoReachableBatchjudgeAPIResponse, error) {
+func CainiaoReachableBatchjudge(clt *core.SDKClient, req *logistic.CainiaoReachableBatchjudgeAPIRequest, session string) (*logistic.CainiaoReachableBatchjudgeAPIResponse, error) {
     var resp logistic.CainiaoReachableBatchjudgeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

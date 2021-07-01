@@ -12,7 +12,7 @@ wdk.wms.pick.medicine.query
 
 联营商药机查询拣货单中的药品信息
 */
-type WdkWmsPickMedicineQueryRequest struct {
+type WdkWmsPickMedicineQueryAPIRequest struct {
     model.Params
     // shopId
     _shopId   int64
@@ -20,20 +20,20 @@ type WdkWmsPickMedicineQueryRequest struct {
     _uuid   string
 }
 
-// 初始化WdkWmsPickMedicineQueryRequest对象
-func NewWdkWmsPickMedicineQueryRequest() *WdkWmsPickMedicineQueryRequest{
-    return &WdkWmsPickMedicineQueryRequest{
+// 初始化WdkWmsPickMedicineQueryAPIRequest对象
+func NewWdkWmsPickMedicineQueryRequest() *WdkWmsPickMedicineQueryAPIRequest{
+    return &WdkWmsPickMedicineQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r WdkWmsPickMedicineQueryRequest) GetApiMethodName() string {
+func (r WdkWmsPickMedicineQueryAPIRequest) GetApiMethodName() string {
     return "wdk.wms.pick.medicine.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r WdkWmsPickMedicineQueryRequest) GetApiParams() url.Values {
+func (r WdkWmsPickMedicineQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r WdkWmsPickMedicineQueryRequest) GetApiParams() url.Values {
 }
 // ShopId Setter
 // shopId
-func (r *WdkWmsPickMedicineQueryRequest) SetShopId(_shopId int64) error {
+func (r *WdkWmsPickMedicineQueryAPIRequest) SetShopId(_shopId int64) error {
     r._shopId = _shopId
     r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
-func (r WdkWmsPickMedicineQueryRequest) GetShopId() int64 {
+func (r WdkWmsPickMedicineQueryAPIRequest) GetShopId() int64 {
     return r._shopId
 }
 // Uuid Setter
 // uuid
-func (r *WdkWmsPickMedicineQueryRequest) SetUuid(_uuid string) error {
+func (r *WdkWmsPickMedicineQueryAPIRequest) SetUuid(_uuid string) error {
     r._uuid = _uuid
     r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
-func (r WdkWmsPickMedicineQueryRequest) GetUuid() string {
+func (r WdkWmsPickMedicineQueryAPIRequest) GetUuid() string {
     return r._uuid
 }

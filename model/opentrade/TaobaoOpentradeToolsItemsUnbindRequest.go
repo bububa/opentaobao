@@ -12,7 +12,7 @@ taobao.opentrade.tools.items.unbind
 
 交易开放商品解绑
 */
-type TaobaoOpentradeToolsItemsUnbindRequest struct {
+type TaobaoOpentradeToolsItemsUnbindAPIRequest struct {
     model.Params
     // 绑定交易开放场景的C端小程序ID
     _miniappId   int64
@@ -20,20 +20,20 @@ type TaobaoOpentradeToolsItemsUnbindRequest struct {
     _itemIds   []int64
 }
 
-// 初始化TaobaoOpentradeToolsItemsUnbindRequest对象
-func NewTaobaoOpentradeToolsItemsUnbindRequest() *TaobaoOpentradeToolsItemsUnbindRequest{
-    return &TaobaoOpentradeToolsItemsUnbindRequest{
+// 初始化TaobaoOpentradeToolsItemsUnbindAPIRequest对象
+func NewTaobaoOpentradeToolsItemsUnbindRequest() *TaobaoOpentradeToolsItemsUnbindAPIRequest{
+    return &TaobaoOpentradeToolsItemsUnbindAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpentradeToolsItemsUnbindRequest) GetApiMethodName() string {
+func (r TaobaoOpentradeToolsItemsUnbindAPIRequest) GetApiMethodName() string {
     return "taobao.opentrade.tools.items.unbind"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpentradeToolsItemsUnbindRequest) GetApiParams() url.Values {
+func (r TaobaoOpentradeToolsItemsUnbindAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOpentradeToolsItemsUnbindRequest) GetApiParams() url.Values {
 }
 // MiniappId Setter
 // 绑定交易开放场景的C端小程序ID
-func (r *TaobaoOpentradeToolsItemsUnbindRequest) SetMiniappId(_miniappId int64) error {
+func (r *TaobaoOpentradeToolsItemsUnbindAPIRequest) SetMiniappId(_miniappId int64) error {
     r._miniappId = _miniappId
     r.Set("miniapp_id", _miniappId)
     return nil
 }
 
 // MiniappId Getter
-func (r TaobaoOpentradeToolsItemsUnbindRequest) GetMiniappId() int64 {
+func (r TaobaoOpentradeToolsItemsUnbindAPIRequest) GetMiniappId() int64 {
     return r._miniappId
 }
 // ItemIds Setter
 // 商品id
-func (r *TaobaoOpentradeToolsItemsUnbindRequest) SetItemIds(_itemIds []int64) error {
+func (r *TaobaoOpentradeToolsItemsUnbindAPIRequest) SetItemIds(_itemIds []int64) error {
     r._itemIds = _itemIds
     r.Set("item_ids", _itemIds)
     return nil
 }
 
 // ItemIds Getter
-func (r TaobaoOpentradeToolsItemsUnbindRequest) GetItemIds() []int64 {
+func (r TaobaoOpentradeToolsItemsUnbindAPIRequest) GetItemIds() []int64 {
     return r._itemIds
 }

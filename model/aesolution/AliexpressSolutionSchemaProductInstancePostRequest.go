@@ -12,26 +12,26 @@ aliexpress.solution.schema.product.instance.post
 
 Upload product based on json schema instance.QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller.
 */
-type AliexpressSolutionSchemaProductInstancePostRequest struct {
+type AliexpressSolutionSchemaProductInstancePostAPIRequest struct {
     model.Params
     // Product instance data. Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456&docType=2
     _productInstanceRequest   string
 }
 
-// 初始化AliexpressSolutionSchemaProductInstancePostRequest对象
-func NewAliexpressSolutionSchemaProductInstancePostRequest() *AliexpressSolutionSchemaProductInstancePostRequest{
-    return &AliexpressSolutionSchemaProductInstancePostRequest{
+// 初始化AliexpressSolutionSchemaProductInstancePostAPIRequest对象
+func NewAliexpressSolutionSchemaProductInstancePostRequest() *AliexpressSolutionSchemaProductInstancePostAPIRequest{
+    return &AliexpressSolutionSchemaProductInstancePostAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionSchemaProductInstancePostRequest) GetApiMethodName() string {
+func (r AliexpressSolutionSchemaProductInstancePostAPIRequest) GetApiMethodName() string {
     return "aliexpress.solution.schema.product.instance.post"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionSchemaProductInstancePostRequest) GetApiParams() url.Values {
+func (r AliexpressSolutionSchemaProductInstancePostAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressSolutionSchemaProductInstancePostRequest) GetApiParams() url.V
 }
 // ProductInstanceRequest Setter
 // Product instance data. Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456&docType=2
-func (r *AliexpressSolutionSchemaProductInstancePostRequest) SetProductInstanceRequest(_productInstanceRequest string) error {
+func (r *AliexpressSolutionSchemaProductInstancePostAPIRequest) SetProductInstanceRequest(_productInstanceRequest string) error {
     r._productInstanceRequest = _productInstanceRequest
     r.Set("product_instance_request", _productInstanceRequest)
     return nil
 }
 
 // ProductInstanceRequest Getter
-func (r AliexpressSolutionSchemaProductInstancePostRequest) GetProductInstanceRequest() string {
+func (r AliexpressSolutionSchemaProductInstancePostAPIRequest) GetProductInstanceRequest() string {
     return r._productInstanceRequest
 }

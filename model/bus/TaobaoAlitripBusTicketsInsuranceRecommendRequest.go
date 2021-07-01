@@ -12,26 +12,26 @@ taobao.alitrip.bus.tickets.insurance.recommend
 
 获取推荐保险内容
 */
-type TaobaoAlitripBusTicketsInsuranceRecommendRequest struct {
+type TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest struct {
     model.Params
     // 请求对象
     _recommendReq   *TopStandardInsRecommendRequest
 }
 
-// 初始化TaobaoAlitripBusTicketsInsuranceRecommendRequest对象
-func NewTaobaoAlitripBusTicketsInsuranceRecommendRequest() *TaobaoAlitripBusTicketsInsuranceRecommendRequest{
-    return &TaobaoAlitripBusTicketsInsuranceRecommendRequest{
+// 初始化TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest对象
+func NewTaobaoAlitripBusTicketsInsuranceRecommendRequest() *TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest{
+    return &TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripBusTicketsInsuranceRecommendRequest) GetApiMethodName() string {
+func (r TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.bus.tickets.insurance.recommend"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripBusTicketsInsuranceRecommendRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripBusTicketsInsuranceRecommendRequest) GetApiParams() url.Val
 }
 // RecommendReq Setter
 // 请求对象
-func (r *TaobaoAlitripBusTicketsInsuranceRecommendRequest) SetRecommendReq(_recommendReq *TopStandardInsRecommendRequest) error {
+func (r *TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) SetRecommendReq(_recommendReq *TopStandardInsRecommendRequest) error {
     r._recommendReq = _recommendReq
     r.Set("recommend_req", _recommendReq)
     return nil
 }
 
 // RecommendReq Getter
-func (r TaobaoAlitripBusTicketsInsuranceRecommendRequest) GetRecommendReq() *TopStandardInsRecommendRequest {
+func (r TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) GetRecommendReq() *TopStandardInsRecommendRequest {
     return r._recommendReq
 }

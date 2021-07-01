@@ -12,24 +12,24 @@ alibaba.scbp.ad.account.balance.get
 
 查询推广账户余额
 */
-type AlibabaScbpAdAccountBalanceGetRequest struct {
+type AlibabaScbpAdAccountBalanceGetAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaScbpAdAccountBalanceGetRequest对象
-func NewAlibabaScbpAdAccountBalanceGetRequest() *AlibabaScbpAdAccountBalanceGetRequest{
-    return &AlibabaScbpAdAccountBalanceGetRequest{
+// 初始化AlibabaScbpAdAccountBalanceGetAPIRequest对象
+func NewAlibabaScbpAdAccountBalanceGetRequest() *AlibabaScbpAdAccountBalanceGetAPIRequest{
+    return &AlibabaScbpAdAccountBalanceGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdAccountBalanceGetRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdAccountBalanceGetAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.account.balance.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdAccountBalanceGetRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdAccountBalanceGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

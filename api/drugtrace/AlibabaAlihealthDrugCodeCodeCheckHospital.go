@@ -11,7 +11,7 @@ alibaba.alihealth.drug.code.code.check.hospital
 
 码核查状态同步-医院
 */
-func AlibabaAlihealthDrugCodeCodeCheckHospital(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeCodeCheckHospitalRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeCodeCheckHospitalAPIResponse, error) {
+func AlibabaAlihealthDrugCodeCodeCheckHospital(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeCodeCheckHospitalAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugCodeCodeCheckHospitalAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

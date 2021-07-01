@@ -12,7 +12,7 @@ alibaba.alihealth.drug.kyt.storebilldelete
 
 零售端单据删除
 */
-type AlibabaAlihealthDrugKytStorebilldeleteRequest struct {
+type AlibabaAlihealthDrugKytStorebilldeleteAPIRequest struct {
     model.Params
     // 企业ID
     _refEntId   string
@@ -24,20 +24,20 @@ type AlibabaAlihealthDrugKytStorebilldeleteRequest struct {
     _billType   string
 }
 
-// 初始化AlibabaAlihealthDrugKytStorebilldeleteRequest对象
-func NewAlibabaAlihealthDrugKytStorebilldeleteRequest() *AlibabaAlihealthDrugKytStorebilldeleteRequest{
-    return &AlibabaAlihealthDrugKytStorebilldeleteRequest{
+// 初始化AlibabaAlihealthDrugKytStorebilldeleteAPIRequest对象
+func NewAlibabaAlihealthDrugKytStorebilldeleteRequest() *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest{
+    return &AlibabaAlihealthDrugKytStorebilldeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.kyt.storebilldelete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetApiParams() url.Values
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetRefEntId() string {
     return r._refEntId
 }
 // IcCode Setter
 // 操作人编码
-func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetIcCode(_icCode string) error {
+func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetIcCode(_icCode string) error {
     r._icCode = _icCode
     r.Set("ic_code", _icCode)
     return nil
 }
 
 // IcCode Getter
-func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetIcCode() string {
+func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetIcCode() string {
     return r._icCode
 }
 // BillId Setter
 // 单据ID
-func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetBillId(_billId string) error {
+func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetBillId(_billId string) error {
     r._billId = _billId
     r.Set("bill_id", _billId)
     return nil
 }
 
 // BillId Getter
-func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetBillId() string {
+func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetBillId() string {
     return r._billId
 }
 // BillType Setter
 // 单据类型
-func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetBillType(_billType string) error {
+func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetBillType(_billType string) error {
     r._billType = _billType
     r.Set("bill_type", _billType)
     return nil
 }
 
 // BillType Getter
-func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetBillType() string {
+func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetBillType() string {
     return r._billType
 }

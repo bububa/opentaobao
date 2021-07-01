@@ -11,7 +11,7 @@ alibaba.alihealth.dental.item.list
 
 ISV获取口腔标品列表
 */
-func AlibabaAlihealthDentalItemList(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalItemListRequest, session string) (*alihealth2.AlibabaAlihealthDentalItemListAPIResponse, error) {
+func AlibabaAlihealthDentalItemList(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalItemListAPIRequest, session string) (*alihealth2.AlibabaAlihealthDentalItemListAPIResponse, error) {
     var resp alihealth2.AlibabaAlihealthDentalItemListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

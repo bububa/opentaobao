@@ -11,7 +11,7 @@ aliexpress.solution.product.list.get
 
 Get product list
 */
-func AliexpressSolutionProductListGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionProductListGetRequest, session string) (*aesolution.AliexpressSolutionProductListGetAPIResponse, error) {
+func AliexpressSolutionProductListGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionProductListGetAPIRequest, session string) (*aesolution.AliexpressSolutionProductListGetAPIResponse, error) {
     var resp aesolution.AliexpressSolutionProductListGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

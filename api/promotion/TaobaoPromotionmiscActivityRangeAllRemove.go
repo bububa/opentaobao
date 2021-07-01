@@ -11,7 +11,7 @@ taobao.promotionmisc.activity.range.all.remove
 
 清空活动参与的商品
 */
-func TaobaoPromotionmiscActivityRangeAllRemove(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscActivityRangeAllRemoveRequest, session string) (*promotion.TaobaoPromotionmiscActivityRangeAllRemoveAPIResponse, error) {
+func TaobaoPromotionmiscActivityRangeAllRemove(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest, session string) (*promotion.TaobaoPromotionmiscActivityRangeAllRemoveAPIResponse, error) {
     var resp promotion.TaobaoPromotionmiscActivityRangeAllRemoveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

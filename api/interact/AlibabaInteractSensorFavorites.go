@@ -11,7 +11,7 @@ alibaba.interact.sensor.favorites
 
 手淘开放鉴权专用接口，无数据输出输入，仅用于鉴权。
 */
-func AlibabaInteractSensorFavorites(clt *core.SDKClient, req *interact.AlibabaInteractSensorFavoritesRequest, session string) (*interact.AlibabaInteractSensorFavoritesAPIResponse, error) {
+func AlibabaInteractSensorFavorites(clt *core.SDKClient, req *interact.AlibabaInteractSensorFavoritesAPIRequest, session string) (*interact.AlibabaInteractSensorFavoritesAPIResponse, error) {
     var resp interact.AlibabaInteractSensorFavoritesAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.mj.oc.offline.maxticketno.get
 
 给pos机提供线下最大小票号查询
 */
-func AlibabaMjOcOfflineMaxticketnoGet(clt *core.SDKClient, req *mos.AlibabaMjOcOfflineMaxticketnoGetRequest, session string) (*mos.AlibabaMjOcOfflineMaxticketnoGetAPIResponse, error) {
+func AlibabaMjOcOfflineMaxticketnoGet(clt *core.SDKClient, req *mos.AlibabaMjOcOfflineMaxticketnoGetAPIRequest, session string) (*mos.AlibabaMjOcOfflineMaxticketnoGetAPIResponse, error) {
     var resp mos.AlibabaMjOcOfflineMaxticketnoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

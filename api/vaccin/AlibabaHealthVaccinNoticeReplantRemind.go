@@ -11,7 +11,7 @@ alibaba.health.vaccin.notice.replant.remind
 
 支付宝疫苗补种提醒
 */
-func AlibabaHealthVaccinNoticeReplantRemind(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeReplantRemindRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeReplantRemindAPIResponse, error) {
+func AlibabaHealthVaccinNoticeReplantRemind(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeReplantRemindAPIRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeReplantRemindAPIResponse, error) {
     var resp vaccin.AlibabaHealthVaccinNoticeReplantRemindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.damai.mev.open.unlockticket
 
 开放接口 解锁票单
 */
-type AlibabaDamaiMevOpenUnlockticketRequest struct {
+type AlibabaDamaiMevOpenUnlockticketAPIRequest struct {
     model.Params
     // 入参ticketIdOpenParam
     _ticketIdOpenParam   *TicketIdOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenUnlockticketRequest对象
-func NewAlibabaDamaiMevOpenUnlockticketRequest() *AlibabaDamaiMevOpenUnlockticketRequest{
-    return &AlibabaDamaiMevOpenUnlockticketRequest{
+// 初始化AlibabaDamaiMevOpenUnlockticketAPIRequest对象
+func NewAlibabaDamaiMevOpenUnlockticketRequest() *AlibabaDamaiMevOpenUnlockticketAPIRequest{
+    return &AlibabaDamaiMevOpenUnlockticketAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenUnlockticketRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenUnlockticketAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.unlockticket"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenUnlockticketRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenUnlockticketAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenUnlockticketRequest) GetApiParams() url.Values {
 }
 // TicketIdOpenParam Setter
 // 入参ticketIdOpenParam
-func (r *AlibabaDamaiMevOpenUnlockticketRequest) SetTicketIdOpenParam(_ticketIdOpenParam *TicketIdOpenParam) error {
+func (r *AlibabaDamaiMevOpenUnlockticketAPIRequest) SetTicketIdOpenParam(_ticketIdOpenParam *TicketIdOpenParam) error {
     r._ticketIdOpenParam = _ticketIdOpenParam
     r.Set("ticket_id_open_param", _ticketIdOpenParam)
     return nil
 }
 
 // TicketIdOpenParam Getter
-func (r AlibabaDamaiMevOpenUnlockticketRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
+func (r AlibabaDamaiMevOpenUnlockticketAPIRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
     return r._ticketIdOpenParam
 }

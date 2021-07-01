@@ -12,7 +12,7 @@ alibaba.ele.enterprise.cartnew.query
 
 新版购物车查询
 */
-type AlibabaEleEnterpriseCartnewQueryRequest struct {
+type AlibabaEleEnterpriseCartnewQueryAPIRequest struct {
     model.Params
     // 1212
     _phone   string
@@ -24,20 +24,20 @@ type AlibabaEleEnterpriseCartnewQueryRequest struct {
     _erestaurantId   string
 }
 
-// 初始化AlibabaEleEnterpriseCartnewQueryRequest对象
-func NewAlibabaEleEnterpriseCartnewQueryRequest() *AlibabaEleEnterpriseCartnewQueryRequest{
-    return &AlibabaEleEnterpriseCartnewQueryRequest{
+// 初始化AlibabaEleEnterpriseCartnewQueryAPIRequest对象
+func NewAlibabaEleEnterpriseCartnewQueryRequest() *AlibabaEleEnterpriseCartnewQueryAPIRequest{
+    return &AlibabaEleEnterpriseCartnewQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseCartnewQueryRequest) GetApiMethodName() string {
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.enterprise.cartnew.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseCartnewQueryRequest) GetApiParams() url.Values {
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaEleEnterpriseCartnewQueryRequest) GetApiParams() url.Values {
 }
 // Phone Setter
 // 1212
-func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetPhone(_phone string) error {
+func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetPhone(_phone string) error {
     r._phone = _phone
     r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
-func (r AlibabaEleEnterpriseCartnewQueryRequest) GetPhone() string {
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetPhone() string {
     return r._phone
 }
 // Latitude Setter
 // 1212
-func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetLatitude(_latitude string) error {
+func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetLatitude(_latitude string) error {
     r._latitude = _latitude
     r.Set("latitude", _latitude)
     return nil
 }
 
 // Latitude Getter
-func (r AlibabaEleEnterpriseCartnewQueryRequest) GetLatitude() string {
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetLatitude() string {
     return r._latitude
 }
 // Longitude Setter
 // 1212
-func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetLongitude(_longitude string) error {
+func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetLongitude(_longitude string) error {
     r._longitude = _longitude
     r.Set("longitude", _longitude)
     return nil
 }
 
 // Longitude Getter
-func (r AlibabaEleEnterpriseCartnewQueryRequest) GetLongitude() string {
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetLongitude() string {
     return r._longitude
 }
 // ErestaurantId Setter
 // 餐厅id
-func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetErestaurantId(_erestaurantId string) error {
+func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetErestaurantId(_erestaurantId string) error {
     r._erestaurantId = _erestaurantId
     r.Set("erestaurant_id", _erestaurantId)
     return nil
 }
 
 // ErestaurantId Getter
-func (r AlibabaEleEnterpriseCartnewQueryRequest) GetErestaurantId() string {
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetErestaurantId() string {
     return r._erestaurantId
 }

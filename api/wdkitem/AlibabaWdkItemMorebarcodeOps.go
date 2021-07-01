@@ -11,7 +11,7 @@ alibaba.wdk.item.morebarcode.ops
 
 商品一品多码维护操作
 */
-func AlibabaWdkItemMorebarcodeOps(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMorebarcodeOpsRequest, session string) (*wdkitem.AlibabaWdkItemMorebarcodeOpsAPIResponse, error) {
+func AlibabaWdkItemMorebarcodeOps(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMorebarcodeOpsAPIRequest, session string) (*wdkitem.AlibabaWdkItemMorebarcodeOpsAPIResponse, error) {
     var resp wdkitem.AlibabaWdkItemMorebarcodeOpsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

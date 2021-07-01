@@ -11,7 +11,7 @@ alibaba.einvoice.unitorder.check
 
 开票服务商回传收到的订购单用于电子发票平台核对
 */
-func AlibabaEinvoiceUnitorderCheck(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceUnitorderCheckRequest, session string) (*einvoice.AlibabaEinvoiceUnitorderCheckAPIResponse, error) {
+func AlibabaEinvoiceUnitorderCheck(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceUnitorderCheckAPIRequest, session string) (*einvoice.AlibabaEinvoiceUnitorderCheckAPIResponse, error) {
     var resp einvoice.AlibabaEinvoiceUnitorderCheckAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

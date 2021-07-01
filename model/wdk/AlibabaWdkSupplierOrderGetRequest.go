@@ -12,26 +12,26 @@ alibaba.wdk.supplier.order.get
 
 五道口按订单号批量查询供应商正向订单
 */
-type AlibabaWdkSupplierOrderGetRequest struct {
+type AlibabaWdkSupplierOrderGetAPIRequest struct {
     model.Params
     // 查询参数
     _supplierOrderQueryListRequest   *SupplierOrderQueryListRequest
 }
 
-// 初始化AlibabaWdkSupplierOrderGetRequest对象
-func NewAlibabaWdkSupplierOrderGetRequest() *AlibabaWdkSupplierOrderGetRequest{
-    return &AlibabaWdkSupplierOrderGetRequest{
+// 初始化AlibabaWdkSupplierOrderGetAPIRequest对象
+func NewAlibabaWdkSupplierOrderGetRequest() *AlibabaWdkSupplierOrderGetAPIRequest{
+    return &AlibabaWdkSupplierOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSupplierOrderGetRequest) GetApiMethodName() string {
+func (r AlibabaWdkSupplierOrderGetAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.supplier.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSupplierOrderGetRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSupplierOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSupplierOrderGetRequest) GetApiParams() url.Values {
 }
 // SupplierOrderQueryListRequest Setter
 // 查询参数
-func (r *AlibabaWdkSupplierOrderGetRequest) SetSupplierOrderQueryListRequest(_supplierOrderQueryListRequest *SupplierOrderQueryListRequest) error {
+func (r *AlibabaWdkSupplierOrderGetAPIRequest) SetSupplierOrderQueryListRequest(_supplierOrderQueryListRequest *SupplierOrderQueryListRequest) error {
     r._supplierOrderQueryListRequest = _supplierOrderQueryListRequest
     r.Set("supplier_order_query_list_request", _supplierOrderQueryListRequest)
     return nil
 }
 
 // SupplierOrderQueryListRequest Getter
-func (r AlibabaWdkSupplierOrderGetRequest) GetSupplierOrderQueryListRequest() *SupplierOrderQueryListRequest {
+func (r AlibabaWdkSupplierOrderGetAPIRequest) GetSupplierOrderQueryListRequest() *SupplierOrderQueryListRequest {
     return r._supplierOrderQueryListRequest
 }

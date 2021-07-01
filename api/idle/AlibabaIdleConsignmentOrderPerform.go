@@ -11,7 +11,7 @@ alibaba.idle.consignment.order.perform
 
 帮卖订单履约，回收商同步订单信息，驱动交易流转
 */
-func AlibabaIdleConsignmentOrderPerform(clt *core.SDKClient, req *idle.AlibabaIdleConsignmentOrderPerformRequest, session string) (*idle.AlibabaIdleConsignmentOrderPerformAPIResponse, error) {
+func AlibabaIdleConsignmentOrderPerform(clt *core.SDKClient, req *idle.AlibabaIdleConsignmentOrderPerformAPIRequest, session string) (*idle.AlibabaIdleConsignmentOrderPerformAPIResponse, error) {
     var resp idle.AlibabaIdleConsignmentOrderPerformAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

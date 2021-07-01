@@ -11,7 +11,7 @@ alibaba.ib.shenjing.visitor.pad.uploadface
 
 访客PAD端上传人脸。
 */
-func AlibabaIbShenjingVisitorPadUploadface(clt *core.SDKClient, req *shenjing.AlibabaIbShenjingVisitorPadUploadfaceRequest, session string) (*shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIResponse, error) {
+func AlibabaIbShenjingVisitorPadUploadface(clt *core.SDKClient, req *shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIRequest, session string) (*shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIResponse, error) {
     var resp shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

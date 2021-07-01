@@ -12,26 +12,26 @@ taobao.omniorder.print.sale.judge
 
 用于判断当前子账号是否导购员
 */
-type TaobaoOmniorderPrintSaleJudgeRequest struct {
+type TaobaoOmniorderPrintSaleJudgeAPIRequest struct {
     model.Params
     // 用户子账号ID
     _subUid   int64
 }
 
-// 初始化TaobaoOmniorderPrintSaleJudgeRequest对象
-func NewTaobaoOmniorderPrintSaleJudgeRequest() *TaobaoOmniorderPrintSaleJudgeRequest{
-    return &TaobaoOmniorderPrintSaleJudgeRequest{
+// 初始化TaobaoOmniorderPrintSaleJudgeAPIRequest对象
+func NewTaobaoOmniorderPrintSaleJudgeRequest() *TaobaoOmniorderPrintSaleJudgeAPIRequest{
+    return &TaobaoOmniorderPrintSaleJudgeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniorderPrintSaleJudgeRequest) GetApiMethodName() string {
+func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetApiMethodName() string {
     return "taobao.omniorder.print.sale.judge"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderPrintSaleJudgeRequest) GetApiParams() url.Values {
+func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOmniorderPrintSaleJudgeRequest) GetApiParams() url.Values {
 }
 // SubUid Setter
 // 用户子账号ID
-func (r *TaobaoOmniorderPrintSaleJudgeRequest) SetSubUid(_subUid int64) error {
+func (r *TaobaoOmniorderPrintSaleJudgeAPIRequest) SetSubUid(_subUid int64) error {
     r._subUid = _subUid
     r.Set("sub_uid", _subUid)
     return nil
 }
 
 // SubUid Getter
-func (r TaobaoOmniorderPrintSaleJudgeRequest) GetSubUid() int64 {
+func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetSubUid() int64 {
     return r._subUid
 }

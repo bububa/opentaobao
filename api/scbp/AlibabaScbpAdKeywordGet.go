@@ -11,7 +11,7 @@ alibaba.scbp.ad.keyword.get
 
 外贸直通车查询关键词
 */
-func AlibabaScbpAdKeywordGet(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordGetRequest, session string) (*scbp.AlibabaScbpAdKeywordGetAPIResponse, error) {
+func AlibabaScbpAdKeywordGet(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordGetAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordGetAPIResponse, error) {
     var resp scbp.AlibabaScbpAdKeywordGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

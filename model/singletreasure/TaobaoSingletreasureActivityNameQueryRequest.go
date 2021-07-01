@@ -12,24 +12,24 @@ taobao.singletreasure.activity.name.query
 
 查询官方的活动名称列表接口
 */
-type TaobaoSingletreasureActivityNameQueryRequest struct {
+type TaobaoSingletreasureActivityNameQueryAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoSingletreasureActivityNameQueryRequest对象
-func NewTaobaoSingletreasureActivityNameQueryRequest() *TaobaoSingletreasureActivityNameQueryRequest{
-    return &TaobaoSingletreasureActivityNameQueryRequest{
+// 初始化TaobaoSingletreasureActivityNameQueryAPIRequest对象
+func NewTaobaoSingletreasureActivityNameQueryRequest() *TaobaoSingletreasureActivityNameQueryAPIRequest{
+    return &TaobaoSingletreasureActivityNameQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSingletreasureActivityNameQueryRequest) GetApiMethodName() string {
+func (r TaobaoSingletreasureActivityNameQueryAPIRequest) GetApiMethodName() string {
     return "taobao.singletreasure.activity.name.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSingletreasureActivityNameQueryRequest) GetApiParams() url.Values {
+func (r TaobaoSingletreasureActivityNameQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

@@ -11,7 +11,7 @@ alibaba.iwork.mc.msg.sendmobile
 
 给手机用户发送对应操作结果的消息
 */
-func AlibabaIworkMcMsgSendmobile(clt *core.SDKClient, req *campus.AlibabaIworkMcMsgSendmobileRequest, session string) (*campus.AlibabaIworkMcMsgSendmobileAPIResponse, error) {
+func AlibabaIworkMcMsgSendmobile(clt *core.SDKClient, req *campus.AlibabaIworkMcMsgSendmobileAPIRequest, session string) (*campus.AlibabaIworkMcMsgSendmobileAPIResponse, error) {
     var resp campus.AlibabaIworkMcMsgSendmobileAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

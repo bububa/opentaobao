@@ -12,26 +12,26 @@ alibaba.alihealth.nr.delivery.history.save
 
 商家ERP回传物流信息
 */
-type AlibabaAlihealthNrDeliveryHistorySaveRequest struct {
+type AlibabaAlihealthNrDeliveryHistorySaveAPIRequest struct {
     model.Params
     // 入参
     _deliveryEvent   *DeliveryEventDTO
 }
 
-// 初始化AlibabaAlihealthNrDeliveryHistorySaveRequest对象
-func NewAlibabaAlihealthNrDeliveryHistorySaveRequest() *AlibabaAlihealthNrDeliveryHistorySaveRequest{
-    return &AlibabaAlihealthNrDeliveryHistorySaveRequest{
+// 初始化AlibabaAlihealthNrDeliveryHistorySaveAPIRequest对象
+func NewAlibabaAlihealthNrDeliveryHistorySaveRequest() *AlibabaAlihealthNrDeliveryHistorySaveAPIRequest{
+    return &AlibabaAlihealthNrDeliveryHistorySaveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthNrDeliveryHistorySaveRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthNrDeliveryHistorySaveAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.nr.delivery.history.save"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthNrDeliveryHistorySaveRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthNrDeliveryHistorySaveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthNrDeliveryHistorySaveRequest) GetApiParams() url.Values 
 }
 // DeliveryEvent Setter
 // 入参
-func (r *AlibabaAlihealthNrDeliveryHistorySaveRequest) SetDeliveryEvent(_deliveryEvent *DeliveryEventDTO) error {
+func (r *AlibabaAlihealthNrDeliveryHistorySaveAPIRequest) SetDeliveryEvent(_deliveryEvent *DeliveryEventDTO) error {
     r._deliveryEvent = _deliveryEvent
     r.Set("delivery_event", _deliveryEvent)
     return nil
 }
 
 // DeliveryEvent Getter
-func (r AlibabaAlihealthNrDeliveryHistorySaveRequest) GetDeliveryEvent() *DeliveryEventDTO {
+func (r AlibabaAlihealthNrDeliveryHistorySaveAPIRequest) GetDeliveryEvent() *DeliveryEventDTO {
     return r._deliveryEvent
 }

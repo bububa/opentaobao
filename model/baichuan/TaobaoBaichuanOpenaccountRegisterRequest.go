@@ -12,26 +12,26 @@ taobao.baichuan.openaccount.register
 
 百川账号注册
 */
-type TaobaoBaichuanOpenaccountRegisterRequest struct {
+type TaobaoBaichuanOpenaccountRegisterAPIRequest struct {
     model.Params
     // name
     _name   string
 }
 
-// 初始化TaobaoBaichuanOpenaccountRegisterRequest对象
-func NewTaobaoBaichuanOpenaccountRegisterRequest() *TaobaoBaichuanOpenaccountRegisterRequest{
-    return &TaobaoBaichuanOpenaccountRegisterRequest{
+// 初始化TaobaoBaichuanOpenaccountRegisterAPIRequest对象
+func NewTaobaoBaichuanOpenaccountRegisterRequest() *TaobaoBaichuanOpenaccountRegisterAPIRequest{
+    return &TaobaoBaichuanOpenaccountRegisterAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanOpenaccountRegisterRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanOpenaccountRegisterAPIRequest) GetApiMethodName() string {
     return "taobao.baichuan.openaccount.register"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanOpenaccountRegisterRequest) GetApiParams() url.Values {
+func (r TaobaoBaichuanOpenaccountRegisterAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanOpenaccountRegisterRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanOpenaccountRegisterRequest) SetName(_name string) error {
+func (r *TaobaoBaichuanOpenaccountRegisterAPIRequest) SetName(_name string) error {
     r._name = _name
     r.Set("name", _name)
     return nil
 }
 
 // Name Getter
-func (r TaobaoBaichuanOpenaccountRegisterRequest) GetName() string {
+func (r TaobaoBaichuanOpenaccountRegisterAPIRequest) GetName() string {
     return r._name
 }

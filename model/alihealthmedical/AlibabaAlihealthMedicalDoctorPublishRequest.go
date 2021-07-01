@@ -12,26 +12,26 @@ alibaba.alihealth.medical.doctor.publish
 
 三方机构上传医生信息
 */
-type AlibabaAlihealthMedicalDoctorPublishRequest struct {
+type AlibabaAlihealthMedicalDoctorPublishAPIRequest struct {
     model.Params
     // 三方机构医生上传request
     _outerDoctorPublishRequest   *OuterDoctorPublishRequest
 }
 
-// 初始化AlibabaAlihealthMedicalDoctorPublishRequest对象
-func NewAlibabaAlihealthMedicalDoctorPublishRequest() *AlibabaAlihealthMedicalDoctorPublishRequest{
-    return &AlibabaAlihealthMedicalDoctorPublishRequest{
+// 初始化AlibabaAlihealthMedicalDoctorPublishAPIRequest对象
+func NewAlibabaAlihealthMedicalDoctorPublishRequest() *AlibabaAlihealthMedicalDoctorPublishAPIRequest{
+    return &AlibabaAlihealthMedicalDoctorPublishAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalDoctorPublishRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalDoctorPublishAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medical.doctor.publish"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalDoctorPublishRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMedicalDoctorPublishAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalDoctorPublishRequest) GetApiParams() url.Values {
 }
 // OuterDoctorPublishRequest Setter
 // 三方机构医生上传request
-func (r *AlibabaAlihealthMedicalDoctorPublishRequest) SetOuterDoctorPublishRequest(_outerDoctorPublishRequest *OuterDoctorPublishRequest) error {
+func (r *AlibabaAlihealthMedicalDoctorPublishAPIRequest) SetOuterDoctorPublishRequest(_outerDoctorPublishRequest *OuterDoctorPublishRequest) error {
     r._outerDoctorPublishRequest = _outerDoctorPublishRequest
     r.Set("outer_doctor_publish_request", _outerDoctorPublishRequest)
     return nil
 }
 
 // OuterDoctorPublishRequest Getter
-func (r AlibabaAlihealthMedicalDoctorPublishRequest) GetOuterDoctorPublishRequest() *OuterDoctorPublishRequest {
+func (r AlibabaAlihealthMedicalDoctorPublishAPIRequest) GetOuterDoctorPublishRequest() *OuterDoctorPublishRequest {
     return r._outerDoctorPublishRequest
 }

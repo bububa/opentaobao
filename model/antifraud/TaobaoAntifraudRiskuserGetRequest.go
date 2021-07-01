@@ -12,26 +12,26 @@ taobao.antifraud.riskuser.get
 
 根据用户基础信息，核实平台上的用户是否存在欺诈风险
 */
-type TaobaoAntifraudRiskuserGetRequest struct {
+type TaobaoAntifraudRiskuserGetAPIRequest struct {
     model.Params
     // 风险用户查询条件
     _paramAccountQuery   *ParamAccountQuery
 }
 
-// 初始化TaobaoAntifraudRiskuserGetRequest对象
-func NewTaobaoAntifraudRiskuserGetRequest() *TaobaoAntifraudRiskuserGetRequest{
-    return &TaobaoAntifraudRiskuserGetRequest{
+// 初始化TaobaoAntifraudRiskuserGetAPIRequest对象
+func NewTaobaoAntifraudRiskuserGetRequest() *TaobaoAntifraudRiskuserGetAPIRequest{
+    return &TaobaoAntifraudRiskuserGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAntifraudRiskuserGetRequest) GetApiMethodName() string {
+func (r TaobaoAntifraudRiskuserGetAPIRequest) GetApiMethodName() string {
     return "taobao.antifraud.riskuser.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAntifraudRiskuserGetRequest) GetApiParams() url.Values {
+func (r TaobaoAntifraudRiskuserGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAntifraudRiskuserGetRequest) GetApiParams() url.Values {
 }
 // ParamAccountQuery Setter
 // 风险用户查询条件
-func (r *TaobaoAntifraudRiskuserGetRequest) SetParamAccountQuery(_paramAccountQuery *ParamAccountQuery) error {
+func (r *TaobaoAntifraudRiskuserGetAPIRequest) SetParamAccountQuery(_paramAccountQuery *ParamAccountQuery) error {
     r._paramAccountQuery = _paramAccountQuery
     r.Set("param_account_query", _paramAccountQuery)
     return nil
 }
 
 // ParamAccountQuery Getter
-func (r TaobaoAntifraudRiskuserGetRequest) GetParamAccountQuery() *ParamAccountQuery {
+func (r TaobaoAntifraudRiskuserGetAPIRequest) GetParamAccountQuery() *ParamAccountQuery {
     return r._paramAccountQuery
 }

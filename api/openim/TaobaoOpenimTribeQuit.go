@@ -11,7 +11,7 @@ taobao.openim.tribe.quit
 
 OPENIM群成员退出
 */
-func TaobaoOpenimTribeQuit(clt *core.SDKClient, req *openim.TaobaoOpenimTribeQuitRequest, session string) (*openim.TaobaoOpenimTribeQuitAPIResponse, error) {
+func TaobaoOpenimTribeQuit(clt *core.SDKClient, req *openim.TaobaoOpenimTribeQuitAPIRequest, session string) (*openim.TaobaoOpenimTribeQuitAPIResponse, error) {
     var resp openim.TaobaoOpenimTribeQuitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

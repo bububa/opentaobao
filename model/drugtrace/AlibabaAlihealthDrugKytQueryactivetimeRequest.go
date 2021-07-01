@@ -13,7 +13,7 @@ alibaba.alihealth.drug.kyt.queryactivetime
 根据赋码资源（CodeVersion + resCode）获得最新激活时间
 应用于各地市对接前进行药品目录匹配，医保中心存在的药品可能比较陈旧杂乱
 */
-type AlibabaAlihealthDrugKytQueryactivetimeRequest struct {
+type AlibabaAlihealthDrugKytQueryactivetimeAPIRequest struct {
     model.Params
     // 社保局(所属地市名称)
     _bureauName   string
@@ -27,20 +27,20 @@ type AlibabaAlihealthDrugKytQueryactivetimeRequest struct {
     _resProdCodeList   []string
 }
 
-// 初始化AlibabaAlihealthDrugKytQueryactivetimeRequest对象
-func NewAlibabaAlihealthDrugKytQueryactivetimeRequest() *AlibabaAlihealthDrugKytQueryactivetimeRequest{
-    return &AlibabaAlihealthDrugKytQueryactivetimeRequest{
+// 初始化AlibabaAlihealthDrugKytQueryactivetimeAPIRequest对象
+func NewAlibabaAlihealthDrugKytQueryactivetimeRequest() *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest{
+    return &AlibabaAlihealthDrugKytQueryactivetimeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.kyt.queryactivetime"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -49,61 +49,61 @@ func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetApiParams() url.Values
 }
 // BureauName Setter
 // 社保局(所属地市名称)
-func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetBureauName(_bureauName string) error {
+func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetBureauName(_bureauName string) error {
     r._bureauName = _bureauName
     r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
-func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetBureauName() string {
+func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetBureauName() string {
     return r._bureauName
 }
 // TerminalName Setter
 // 请求终端名称
-func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetTerminalName(_terminalName string) error {
+func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetTerminalName(_terminalName string) error {
     r._terminalName = _terminalName
     r.Set("terminal_name", _terminalName)
     return nil
 }
 
 // TerminalName Getter
-func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetTerminalName() string {
+func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetTerminalName() string {
     return r._terminalName
 }
 // TerminalType Setter
 // 终端类型：1005100-零售，1005200-医疗
-func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetTerminalType(_terminalType string) error {
+func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetTerminalType(_terminalType string) error {
     r._terminalType = _terminalType
     r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
-func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetTerminalType() string {
+func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetTerminalType() string {
     return r._terminalType
 }
 // Invocation Setter
 // 调用方式：formal-正式、test-测试
-func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetInvocation(_invocation string) error {
+func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetInvocation(_invocation string) error {
     r._invocation = _invocation
     r.Set("invocation", _invocation)
     return nil
 }
 
 // Invocation Getter
-func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetInvocation() string {
+func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetInvocation() string {
     return r._invocation
 }
 // ResProdCodeList Setter
 // 码段的数组
-func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetResProdCodeList(_resProdCodeList []string) error {
+func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetResProdCodeList(_resProdCodeList []string) error {
     r._resProdCodeList = _resProdCodeList
     r.Set("res_prod_code_list", _resProdCodeList)
     return nil
 }
 
 // ResProdCodeList Getter
-func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetResProdCodeList() []string {
+func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetResProdCodeList() []string {
     return r._resProdCodeList
 }

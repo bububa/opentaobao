@@ -12,26 +12,26 @@ alibaba.damai.maitix.seat.info.query
 
 分销查询座位文案信息
 */
-type AlibabaDamaiMaitixSeatInfoQueryRequest struct {
+type AlibabaDamaiMaitixSeatInfoQueryAPIRequest struct {
     model.Params
     // 入参
     _seatQueryParam   *SeatQueryParam
 }
 
-// 初始化AlibabaDamaiMaitixSeatInfoQueryRequest对象
-func NewAlibabaDamaiMaitixSeatInfoQueryRequest() *AlibabaDamaiMaitixSeatInfoQueryRequest{
-    return &AlibabaDamaiMaitixSeatInfoQueryRequest{
+// 初始化AlibabaDamaiMaitixSeatInfoQueryAPIRequest对象
+func NewAlibabaDamaiMaitixSeatInfoQueryRequest() *AlibabaDamaiMaitixSeatInfoQueryAPIRequest{
+    return &AlibabaDamaiMaitixSeatInfoQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixSeatInfoQueryRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixSeatInfoQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.seat.info.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixSeatInfoQueryRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixSeatInfoQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixSeatInfoQueryRequest) GetApiParams() url.Values {
 }
 // SeatQueryParam Setter
 // 入参
-func (r *AlibabaDamaiMaitixSeatInfoQueryRequest) SetSeatQueryParam(_seatQueryParam *SeatQueryParam) error {
+func (r *AlibabaDamaiMaitixSeatInfoQueryAPIRequest) SetSeatQueryParam(_seatQueryParam *SeatQueryParam) error {
     r._seatQueryParam = _seatQueryParam
     r.Set("seat_query_param", _seatQueryParam)
     return nil
 }
 
 // SeatQueryParam Getter
-func (r AlibabaDamaiMaitixSeatInfoQueryRequest) GetSeatQueryParam() *SeatQueryParam {
+func (r AlibabaDamaiMaitixSeatInfoQueryAPIRequest) GetSeatQueryParam() *SeatQueryParam {
     return r._seatQueryParam
 }

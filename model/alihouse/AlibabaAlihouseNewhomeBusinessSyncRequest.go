@@ -12,26 +12,26 @@ alibaba.alihouse.newhome.business.sync
 
 商圈数据同步
 */
-type AlibabaAlihouseNewhomeBusinessSyncRequest struct {
+type AlibabaAlihouseNewhomeBusinessSyncAPIRequest struct {
     model.Params
     // 入参数据
     _baseBusinessDto   *BaseBusinessDTO
 }
 
-// 初始化AlibabaAlihouseNewhomeBusinessSyncRequest对象
-func NewAlibabaAlihouseNewhomeBusinessSyncRequest() *AlibabaAlihouseNewhomeBusinessSyncRequest{
-    return &AlibabaAlihouseNewhomeBusinessSyncRequest{
+// 初始化AlibabaAlihouseNewhomeBusinessSyncAPIRequest对象
+func NewAlibabaAlihouseNewhomeBusinessSyncRequest() *AlibabaAlihouseNewhomeBusinessSyncAPIRequest{
+    return &AlibabaAlihouseNewhomeBusinessSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeBusinessSyncRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeBusinessSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.business.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeBusinessSyncRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeBusinessSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeBusinessSyncRequest) GetApiParams() url.Values {
 }
 // BaseBusinessDto Setter
 // 入参数据
-func (r *AlibabaAlihouseNewhomeBusinessSyncRequest) SetBaseBusinessDto(_baseBusinessDto *BaseBusinessDTO) error {
+func (r *AlibabaAlihouseNewhomeBusinessSyncAPIRequest) SetBaseBusinessDto(_baseBusinessDto *BaseBusinessDTO) error {
     r._baseBusinessDto = _baseBusinessDto
     r.Set("base_business_dto", _baseBusinessDto)
     return nil
 }
 
 // BaseBusinessDto Getter
-func (r AlibabaAlihouseNewhomeBusinessSyncRequest) GetBaseBusinessDto() *BaseBusinessDTO {
+func (r AlibabaAlihouseNewhomeBusinessSyncAPIRequest) GetBaseBusinessDto() *BaseBusinessDTO {
     return r._baseBusinessDto
 }

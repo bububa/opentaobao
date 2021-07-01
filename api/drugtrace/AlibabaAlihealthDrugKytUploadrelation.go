@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.uploadrelation
 
 关联关系上传
 */
-func AlibabaAlihealthDrugKytUploadrelation(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUploadrelationRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytUploadrelationAPIResponse, error) {
+func AlibabaAlihealthDrugKytUploadrelation(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUploadrelationAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytUploadrelationAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytUploadrelationAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

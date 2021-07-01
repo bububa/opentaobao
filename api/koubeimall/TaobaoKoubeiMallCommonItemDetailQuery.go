@@ -11,7 +11,7 @@ taobao.koubei.mall.common.item.detail.query
 
 查询口碑综合体内商品详情信息
 */
-func TaobaoKoubeiMallCommonItemDetailQuery(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonItemDetailQueryRequest, session string) (*koubeimall.TaobaoKoubeiMallCommonItemDetailQueryAPIResponse, error) {
+func TaobaoKoubeiMallCommonItemDetailQuery(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonItemDetailQueryAPIRequest, session string) (*koubeimall.TaobaoKoubeiMallCommonItemDetailQueryAPIResponse, error) {
     var resp koubeimall.TaobaoKoubeiMallCommonItemDetailQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.tmallgenie.scp.plan.rawpo.gap.return
 
 二级物料-LT内的POGAP数据回传
 */
-func AlibabaTmallgenieScpPlanRawpoGapReturn(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanRawpoGapReturnRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponse, error) {
+func AlibabaTmallgenieScpPlanRawpoGapReturn(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanRawpoGapReturnAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponse, error) {
     var resp tmallgeniescp.AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

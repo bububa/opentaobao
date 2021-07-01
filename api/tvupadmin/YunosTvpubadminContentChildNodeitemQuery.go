@@ -11,7 +11,7 @@ yunos.tvpubadmin.content.child.nodeitem.query
 
 查询少儿大厅类目内容信息
 */
-func YunosTvpubadminContentChildNodeitemQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildNodeitemQueryRequest, session string) (*tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIResponse, error) {
+func YunosTvpubadminContentChildNodeitemQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

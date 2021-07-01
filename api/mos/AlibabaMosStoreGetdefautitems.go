@@ -11,7 +11,7 @@ alibaba.mos.store.getdefautitems
 
 获取默认状态下商品列表
 */
-func AlibabaMosStoreGetdefautitems(clt *core.SDKClient, req *mos.AlibabaMosStoreGetdefautitemsRequest, session string) (*mos.AlibabaMosStoreGetdefautitemsAPIResponse, error) {
+func AlibabaMosStoreGetdefautitems(clt *core.SDKClient, req *mos.AlibabaMosStoreGetdefautitemsAPIRequest, session string) (*mos.AlibabaMosStoreGetdefautitemsAPIResponse, error) {
     var resp mos.AlibabaMosStoreGetdefautitemsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

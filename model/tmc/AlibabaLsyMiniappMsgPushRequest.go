@@ -12,7 +12,7 @@ alibaba.lsy.miniapp.msg.push
 
 零售云小程序消息推送，推送消息至零售云（喵零等）
 */
-type AlibabaLsyMiniappMsgPushRequest struct {
+type AlibabaLsyMiniappMsgPushAPIRequest struct {
     model.Params
     // 小程序ID
     _appId   string
@@ -26,20 +26,20 @@ type AlibabaLsyMiniappMsgPushRequest struct {
     _params   string
 }
 
-// 初始化AlibabaLsyMiniappMsgPushRequest对象
-func NewAlibabaLsyMiniappMsgPushRequest() *AlibabaLsyMiniappMsgPushRequest{
-    return &AlibabaLsyMiniappMsgPushRequest{
+// 初始化AlibabaLsyMiniappMsgPushAPIRequest对象
+func NewAlibabaLsyMiniappMsgPushRequest() *AlibabaLsyMiniappMsgPushAPIRequest{
+    return &AlibabaLsyMiniappMsgPushAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLsyMiniappMsgPushRequest) GetApiMethodName() string {
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetApiMethodName() string {
     return "alibaba.lsy.miniapp.msg.push"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLsyMiniappMsgPushRequest) GetApiParams() url.Values {
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaLsyMiniappMsgPushRequest) GetApiParams() url.Values {
 }
 // AppId Setter
 // 小程序ID
-func (r *AlibabaLsyMiniappMsgPushRequest) SetAppId(_appId string) error {
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetAppId(_appId string) error {
     r._appId = _appId
     r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
-func (r AlibabaLsyMiniappMsgPushRequest) GetAppId() string {
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetAppId() string {
     return r._appId
 }
 // MsgId Setter
 // 消息ID
-func (r *AlibabaLsyMiniappMsgPushRequest) SetMsgId(_msgId int64) error {
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetMsgId(_msgId int64) error {
     r._msgId = _msgId
     r.Set("msg_id", _msgId)
     return nil
 }
 
 // MsgId Getter
-func (r AlibabaLsyMiniappMsgPushRequest) GetMsgId() int64 {
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetMsgId() int64 {
     return r._msgId
 }
 // StoreId Setter
 // 摊位ID
-func (r *AlibabaLsyMiniappMsgPushRequest) SetStoreId(_storeId int64) error {
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetStoreId(_storeId int64) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r AlibabaLsyMiniappMsgPushRequest) GetStoreId() int64 {
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetStoreId() int64 {
     return r._storeId
 }
 // TemplateId Setter
 // 消息模板，miaoling_msg_isv_clue - 线索通知消息
-func (r *AlibabaLsyMiniappMsgPushRequest) SetTemplateId(_templateId string) error {
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetTemplateId(_templateId string) error {
     r._templateId = _templateId
     r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
-func (r AlibabaLsyMiniappMsgPushRequest) GetTemplateId() string {
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetTemplateId() string {
     return r._templateId
 }
 // Params Setter
 // 消息参数
-func (r *AlibabaLsyMiniappMsgPushRequest) SetParams(_params string) error {
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetParams(_params string) error {
     r._params = _params
     r.Set("params", _params)
     return nil
 }
 
 // Params Getter
-func (r AlibabaLsyMiniappMsgPushRequest) GetParams() string {
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetParams() string {
     return r._params
 }

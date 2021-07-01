@@ -12,26 +12,26 @@ alibaba.retail.marketing.itemdiscount.activity.delete
 
 同城零售单品特价活动删除
 */
-type AlibabaRetailMarketingItemdiscountActivityDeleteRequest struct {
+type AlibabaRetailMarketingItemdiscountActivityDeleteAPIRequest struct {
     model.Params
     // 删除活动参数
     _param   *ItemDiscountActivityOperateRequest
 }
 
-// 初始化AlibabaRetailMarketingItemdiscountActivityDeleteRequest对象
-func NewAlibabaRetailMarketingItemdiscountActivityDeleteRequest() *AlibabaRetailMarketingItemdiscountActivityDeleteRequest{
-    return &AlibabaRetailMarketingItemdiscountActivityDeleteRequest{
+// 初始化AlibabaRetailMarketingItemdiscountActivityDeleteAPIRequest对象
+func NewAlibabaRetailMarketingItemdiscountActivityDeleteRequest() *AlibabaRetailMarketingItemdiscountActivityDeleteAPIRequest{
+    return &AlibabaRetailMarketingItemdiscountActivityDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingItemdiscountActivityDeleteRequest) GetApiMethodName() string {
+func (r AlibabaRetailMarketingItemdiscountActivityDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.marketing.itemdiscount.activity.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingItemdiscountActivityDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaRetailMarketingItemdiscountActivityDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingItemdiscountActivityDeleteRequest) GetApiParams() 
 }
 // Param Setter
 // 删除活动参数
-func (r *AlibabaRetailMarketingItemdiscountActivityDeleteRequest) SetParam(_param *ItemDiscountActivityOperateRequest) error {
+func (r *AlibabaRetailMarketingItemdiscountActivityDeleteAPIRequest) SetParam(_param *ItemDiscountActivityOperateRequest) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaRetailMarketingItemdiscountActivityDeleteRequest) GetParam() *ItemDiscountActivityOperateRequest {
+func (r AlibabaRetailMarketingItemdiscountActivityDeleteAPIRequest) GetParam() *ItemDiscountActivityOperateRequest {
     return r._param
 }

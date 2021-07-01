@@ -12,7 +12,7 @@ taobao.tmc.user.get
 
 查询指定用户开通的消息通道和组
 */
-type TaobaoTmcUserGetRequest struct {
+type TaobaoTmcUserGetAPIRequest struct {
     model.Params
     // 需返回的字段列表，多个字段以半角逗号分隔。可选值：TmcUser结构体中的所有字段，一定要返回topic。
     _fields   string
@@ -22,20 +22,20 @@ type TaobaoTmcUserGetRequest struct {
     _userPlatform   string
 }
 
-// 初始化TaobaoTmcUserGetRequest对象
-func NewTaobaoTmcUserGetRequest() *TaobaoTmcUserGetRequest{
-    return &TaobaoTmcUserGetRequest{
+// 初始化TaobaoTmcUserGetAPIRequest对象
+func NewTaobaoTmcUserGetRequest() *TaobaoTmcUserGetAPIRequest{
+    return &TaobaoTmcUserGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTmcUserGetRequest) GetApiMethodName() string {
+func (r TaobaoTmcUserGetAPIRequest) GetApiMethodName() string {
     return "taobao.tmc.user.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTmcUserGetRequest) GetApiParams() url.Values {
+func (r TaobaoTmcUserGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoTmcUserGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需返回的字段列表，多个字段以半角逗号分隔。可选值：TmcUser结构体中的所有字段，一定要返回topic。
-func (r *TaobaoTmcUserGetRequest) SetFields(_fields string) error {
+func (r *TaobaoTmcUserGetAPIRequest) SetFields(_fields string) error {
     r._fields = _fields
     r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
-func (r TaobaoTmcUserGetRequest) GetFields() string {
+func (r TaobaoTmcUserGetAPIRequest) GetFields() string {
     return r._fields
 }
 // Nick Setter
 // 用户昵称
-func (r *TaobaoTmcUserGetRequest) SetNick(_nick string) error {
+func (r *TaobaoTmcUserGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoTmcUserGetRequest) GetNick() string {
+func (r TaobaoTmcUserGetAPIRequest) GetNick() string {
     return r._nick
 }
 // UserPlatform Setter
 // 用户所属的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
-func (r *TaobaoTmcUserGetRequest) SetUserPlatform(_userPlatform string) error {
+func (r *TaobaoTmcUserGetAPIRequest) SetUserPlatform(_userPlatform string) error {
     r._userPlatform = _userPlatform
     r.Set("user_platform", _userPlatform)
     return nil
 }
 
 // UserPlatform Getter
-func (r TaobaoTmcUserGetRequest) GetUserPlatform() string {
+func (r TaobaoTmcUserGetAPIRequest) GetUserPlatform() string {
     return r._userPlatform
 }

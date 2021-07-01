@@ -11,7 +11,7 @@ alibaba.scbp.ad.keyword.get.keyword.count.by.query
 
 计划关键词数目
 */
-func AlibabaScbpAdKeywordGetKeywordCountByQuery(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordGetKeywordCountByQueryRequest, session string) (*scbp.AlibabaScbpAdKeywordGetKeywordCountByQueryAPIResponse, error) {
+func AlibabaScbpAdKeywordGetKeywordCountByQuery(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordGetKeywordCountByQueryAPIResponse, error) {
     var resp scbp.AlibabaScbpAdKeywordGetKeywordCountByQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

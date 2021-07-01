@@ -11,7 +11,7 @@ taobao.degoperation.show.user.records
 
 用户中奖记录
 */
-func TaobaoDegoperationShowUserRecords(clt *core.SDKClient, req *degoperation.TaobaoDegoperationShowUserRecordsRequest, session string) (*degoperation.TaobaoDegoperationShowUserRecordsAPIResponse, error) {
+func TaobaoDegoperationShowUserRecords(clt *core.SDKClient, req *degoperation.TaobaoDegoperationShowUserRecordsAPIRequest, session string) (*degoperation.TaobaoDegoperationShowUserRecordsAPIResponse, error) {
     var resp degoperation.TaobaoDegoperationShowUserRecordsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

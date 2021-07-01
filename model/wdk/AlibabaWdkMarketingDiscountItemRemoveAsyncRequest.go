@@ -12,7 +12,7 @@ alibaba.wdk.marketing.discount.item.remove.async
 
 特价批量移除商品
 */
-type AlibabaWdkMarketingDiscountItemRemoveAsyncRequest struct {
+type AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest struct {
     model.Params
     // sku信息
     _param0   []ItemDiscountSku
@@ -22,20 +22,20 @@ type AlibabaWdkMarketingDiscountItemRemoveAsyncRequest struct {
     _version   int64
 }
 
-// 初始化AlibabaWdkMarketingDiscountItemRemoveAsyncRequest对象
-func NewAlibabaWdkMarketingDiscountItemRemoveAsyncRequest() *AlibabaWdkMarketingDiscountItemRemoveAsyncRequest{
-    return &AlibabaWdkMarketingDiscountItemRemoveAsyncRequest{
+// 初始化AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest对象
+func NewAlibabaWdkMarketingDiscountItemRemoveAsyncRequest() *AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest{
+    return &AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingDiscountItemRemoveAsyncRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.discount.item.remove.async"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingDiscountItemRemoveAsyncRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaWdkMarketingDiscountItemRemoveAsyncRequest) GetApiParams() url.Va
 }
 // Param0 Setter
 // sku信息
-func (r *AlibabaWdkMarketingDiscountItemRemoveAsyncRequest) SetParam0(_param0 []ItemDiscountSku) error {
+func (r *AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest) SetParam0(_param0 []ItemDiscountSku) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaWdkMarketingDiscountItemRemoveAsyncRequest) GetParam0() []ItemDiscountSku {
+func (r AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest) GetParam0() []ItemDiscountSku {
     return r._param0
 }
 // Param1 Setter
 // 系统自动生成
-func (r *AlibabaWdkMarketingDiscountItemRemoveAsyncRequest) SetParam1(_param1 *CommonActivityParam) error {
+func (r *AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest) SetParam1(_param1 *CommonActivityParam) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaWdkMarketingDiscountItemRemoveAsyncRequest) GetParam1() *CommonActivityParam {
+func (r AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest) GetParam1() *CommonActivityParam {
     return r._param1
 }
 // Version Setter
 // alibaba.wdk.marketing.version.generate接口生成
-func (r *AlibabaWdkMarketingDiscountItemRemoveAsyncRequest) SetVersion(_version int64) error {
+func (r *AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest) SetVersion(_version int64) error {
     r._version = _version
     r.Set("version", _version)
     return nil
 }
 
 // Version Getter
-func (r AlibabaWdkMarketingDiscountItemRemoveAsyncRequest) GetVersion() int64 {
+func (r AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest) GetVersion() int64 {
     return r._version
 }

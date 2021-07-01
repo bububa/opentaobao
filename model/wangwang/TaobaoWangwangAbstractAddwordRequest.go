@@ -12,7 +12,7 @@ taobao.wangwang.abstract.addword
 
 增加关键词，只支持json返回
 */
-type TaobaoWangwangAbstractAddwordRequest struct {
+type TaobaoWangwangAbstractAddwordAPIRequest struct {
     model.Params
     // 关键词，长度大于0
     _word   string
@@ -20,20 +20,20 @@ type TaobaoWangwangAbstractAddwordRequest struct {
     _charset   string
 }
 
-// 初始化TaobaoWangwangAbstractAddwordRequest对象
-func NewTaobaoWangwangAbstractAddwordRequest() *TaobaoWangwangAbstractAddwordRequest{
-    return &TaobaoWangwangAbstractAddwordRequest{
+// 初始化TaobaoWangwangAbstractAddwordAPIRequest对象
+func NewTaobaoWangwangAbstractAddwordRequest() *TaobaoWangwangAbstractAddwordAPIRequest{
+    return &TaobaoWangwangAbstractAddwordAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWangwangAbstractAddwordRequest) GetApiMethodName() string {
+func (r TaobaoWangwangAbstractAddwordAPIRequest) GetApiMethodName() string {
     return "taobao.wangwang.abstract.addword"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWangwangAbstractAddwordRequest) GetApiParams() url.Values {
+func (r TaobaoWangwangAbstractAddwordAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoWangwangAbstractAddwordRequest) GetApiParams() url.Values {
 }
 // Word Setter
 // 关键词，长度大于0
-func (r *TaobaoWangwangAbstractAddwordRequest) SetWord(_word string) error {
+func (r *TaobaoWangwangAbstractAddwordAPIRequest) SetWord(_word string) error {
     r._word = _word
     r.Set("word", _word)
     return nil
 }
 
 // Word Getter
-func (r TaobaoWangwangAbstractAddwordRequest) GetWord() string {
+func (r TaobaoWangwangAbstractAddwordAPIRequest) GetWord() string {
     return r._word
 }
 // Charset Setter
 // 传入参数的字符集
-func (r *TaobaoWangwangAbstractAddwordRequest) SetCharset(_charset string) error {
+func (r *TaobaoWangwangAbstractAddwordAPIRequest) SetCharset(_charset string) error {
     r._charset = _charset
     r.Set("charset", _charset)
     return nil
 }
 
 // Charset Getter
-func (r TaobaoWangwangAbstractAddwordRequest) GetCharset() string {
+func (r TaobaoWangwangAbstractAddwordAPIRequest) GetCharset() string {
     return r._charset
 }

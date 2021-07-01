@@ -12,26 +12,26 @@ alibaba.wdk.marketing.version.generate
 
 生成发布使用的版本号
 */
-type AlibabaWdkMarketingVersionGenerateRequest struct {
+type AlibabaWdkMarketingVersionGenerateAPIRequest struct {
     model.Params
     // 档期版本号参数信息
     _param   *SeasonVersionParam
 }
 
-// 初始化AlibabaWdkMarketingVersionGenerateRequest对象
-func NewAlibabaWdkMarketingVersionGenerateRequest() *AlibabaWdkMarketingVersionGenerateRequest{
-    return &AlibabaWdkMarketingVersionGenerateRequest{
+// 初始化AlibabaWdkMarketingVersionGenerateAPIRequest对象
+func NewAlibabaWdkMarketingVersionGenerateRequest() *AlibabaWdkMarketingVersionGenerateAPIRequest{
+    return &AlibabaWdkMarketingVersionGenerateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingVersionGenerateRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingVersionGenerateAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.version.generate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingVersionGenerateRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingVersionGenerateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingVersionGenerateRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 档期版本号参数信息
-func (r *AlibabaWdkMarketingVersionGenerateRequest) SetParam(_param *SeasonVersionParam) error {
+func (r *AlibabaWdkMarketingVersionGenerateAPIRequest) SetParam(_param *SeasonVersionParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkMarketingVersionGenerateRequest) GetParam() *SeasonVersionParam {
+func (r AlibabaWdkMarketingVersionGenerateAPIRequest) GetParam() *SeasonVersionParam {
     return r._param
 }

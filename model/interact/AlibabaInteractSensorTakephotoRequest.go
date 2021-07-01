@@ -12,24 +12,24 @@ alibaba.interact.sensor.takephoto
 
 客户端takePhoto
 */
-type AlibabaInteractSensorTakephotoRequest struct {
+type AlibabaInteractSensorTakephotoAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractSensorTakephotoRequest对象
-func NewAlibabaInteractSensorTakephotoRequest() *AlibabaInteractSensorTakephotoRequest{
-    return &AlibabaInteractSensorTakephotoRequest{
+// 初始化AlibabaInteractSensorTakephotoAPIRequest对象
+func NewAlibabaInteractSensorTakephotoRequest() *AlibabaInteractSensorTakephotoAPIRequest{
+    return &AlibabaInteractSensorTakephotoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorTakephotoRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorTakephotoAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.takephoto"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorTakephotoRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorTakephotoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

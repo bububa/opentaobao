@@ -12,26 +12,26 @@ taobao.baichuan.item.unsubscribe
 
 删除单个商品订阅关系
 */
-type TaobaoBaichuanItemUnsubscribeRequest struct {
+type TaobaoBaichuanItemUnsubscribeAPIRequest struct {
     model.Params
     // 商品id
     _itemId   int64
 }
 
-// 初始化TaobaoBaichuanItemUnsubscribeRequest对象
-func NewTaobaoBaichuanItemUnsubscribeRequest() *TaobaoBaichuanItemUnsubscribeRequest{
-    return &TaobaoBaichuanItemUnsubscribeRequest{
+// 初始化TaobaoBaichuanItemUnsubscribeAPIRequest对象
+func NewTaobaoBaichuanItemUnsubscribeRequest() *TaobaoBaichuanItemUnsubscribeAPIRequest{
+    return &TaobaoBaichuanItemUnsubscribeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanItemUnsubscribeRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanItemUnsubscribeAPIRequest) GetApiMethodName() string {
     return "taobao.baichuan.item.unsubscribe"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanItemUnsubscribeRequest) GetApiParams() url.Values {
+func (r TaobaoBaichuanItemUnsubscribeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanItemUnsubscribeRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoBaichuanItemUnsubscribeRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoBaichuanItemUnsubscribeAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoBaichuanItemUnsubscribeRequest) GetItemId() int64 {
+func (r TaobaoBaichuanItemUnsubscribeAPIRequest) GetItemId() int64 {
     return r._itemId
 }

@@ -12,26 +12,26 @@ alibaba.lsy.crm.update
 
 同步客资状态接口
 */
-type AlibabaLsyCrmUpdateRequest struct {
+type AlibabaLsyCrmUpdateAPIRequest struct {
     model.Params
     // 更新客资状态对象
     _nrtUpdateRecordStatusDto   *NrtUpdateRecordStatusDTO
 }
 
-// 初始化AlibabaLsyCrmUpdateRequest对象
-func NewAlibabaLsyCrmUpdateRequest() *AlibabaLsyCrmUpdateRequest{
-    return &AlibabaLsyCrmUpdateRequest{
+// 初始化AlibabaLsyCrmUpdateAPIRequest对象
+func NewAlibabaLsyCrmUpdateRequest() *AlibabaLsyCrmUpdateAPIRequest{
+    return &AlibabaLsyCrmUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLsyCrmUpdateRequest) GetApiMethodName() string {
+func (r AlibabaLsyCrmUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.lsy.crm.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLsyCrmUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaLsyCrmUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmUpdateRequest) GetApiParams() url.Values {
 }
 // NrtUpdateRecordStatusDto Setter
 // 更新客资状态对象
-func (r *AlibabaLsyCrmUpdateRequest) SetNrtUpdateRecordStatusDto(_nrtUpdateRecordStatusDto *NrtUpdateRecordStatusDTO) error {
+func (r *AlibabaLsyCrmUpdateAPIRequest) SetNrtUpdateRecordStatusDto(_nrtUpdateRecordStatusDto *NrtUpdateRecordStatusDTO) error {
     r._nrtUpdateRecordStatusDto = _nrtUpdateRecordStatusDto
     r.Set("nrt_update_record_status_dto", _nrtUpdateRecordStatusDto)
     return nil
 }
 
 // NrtUpdateRecordStatusDto Getter
-func (r AlibabaLsyCrmUpdateRequest) GetNrtUpdateRecordStatusDto() *NrtUpdateRecordStatusDTO {
+func (r AlibabaLsyCrmUpdateAPIRequest) GetNrtUpdateRecordStatusDto() *NrtUpdateRecordStatusDTO {
     return r._nrtUpdateRecordStatusDto
 }

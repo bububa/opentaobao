@@ -11,7 +11,7 @@ taobao.jst.sms.message.send
 
 聚石塔短信PAAS场景中，ISV通过该API帮商家发送短信给用户。
 */
-func TaobaoJstSmsMessageSend(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageSendRequest, session string) (*jst.TaobaoJstSmsMessageSendAPIResponse, error) {
+func TaobaoJstSmsMessageSend(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageSendAPIRequest, session string) (*jst.TaobaoJstSmsMessageSendAPIResponse, error) {
     var resp jst.TaobaoJstSmsMessageSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.cgame.avatar.userbody.query
 
 Avatar用户body数据查询
 */
-func AlibabaCgameAvatarUserbodyQuery(clt *core.SDKClient, req *cloudgame.AlibabaCgameAvatarUserbodyQueryRequest, session string) (*cloudgame.AlibabaCgameAvatarUserbodyQueryAPIResponse, error) {
+func AlibabaCgameAvatarUserbodyQuery(clt *core.SDKClient, req *cloudgame.AlibabaCgameAvatarUserbodyQueryAPIRequest, session string) (*cloudgame.AlibabaCgameAvatarUserbodyQueryAPIResponse, error) {
     var resp cloudgame.AlibabaCgameAvatarUserbodyQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

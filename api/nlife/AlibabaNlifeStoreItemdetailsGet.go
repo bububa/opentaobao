@@ -11,7 +11,7 @@ alibaba.nlife.store.itemdetails.get
 
 批量获取零售加平台上的商品详情信息
 */
-func AlibabaNlifeStoreItemdetailsGet(clt *core.SDKClient, req *nlife.AlibabaNlifeStoreItemdetailsGetRequest, session string) (*nlife.AlibabaNlifeStoreItemdetailsGetAPIResponse, error) {
+func AlibabaNlifeStoreItemdetailsGet(clt *core.SDKClient, req *nlife.AlibabaNlifeStoreItemdetailsGetAPIRequest, session string) (*nlife.AlibabaNlifeStoreItemdetailsGetAPIResponse, error) {
     var resp nlife.AlibabaNlifeStoreItemdetailsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

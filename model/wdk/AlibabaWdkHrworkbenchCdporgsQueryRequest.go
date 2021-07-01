@@ -12,24 +12,24 @@ alibaba.wdk.hrworkbench.cdporgs.query
 
 提供查询homs人力组织树的接口，按照商家做权限隔离。
 */
-type AlibabaWdkHrworkbenchCdporgsQueryRequest struct {
+type AlibabaWdkHrworkbenchCdporgsQueryAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaWdkHrworkbenchCdporgsQueryRequest对象
-func NewAlibabaWdkHrworkbenchCdporgsQueryRequest() *AlibabaWdkHrworkbenchCdporgsQueryRequest{
-    return &AlibabaWdkHrworkbenchCdporgsQueryRequest{
+// 初始化AlibabaWdkHrworkbenchCdporgsQueryAPIRequest对象
+func NewAlibabaWdkHrworkbenchCdporgsQueryRequest() *AlibabaWdkHrworkbenchCdporgsQueryAPIRequest{
+    return &AlibabaWdkHrworkbenchCdporgsQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkHrworkbenchCdporgsQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkHrworkbenchCdporgsQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.hrworkbench.cdporgs.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkHrworkbenchCdporgsQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkHrworkbenchCdporgsQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

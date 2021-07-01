@@ -11,7 +11,7 @@ alibaba.nazca.token.authapply.get
 
 根据token获取认证申请信息
 */
-func AlibabaNazcaTokenAuthapplyGet(clt *core.SDKClient, req *nazca.AlibabaNazcaTokenAuthapplyGetRequest, session string) (*nazca.AlibabaNazcaTokenAuthapplyGetAPIResponse, error) {
+func AlibabaNazcaTokenAuthapplyGet(clt *core.SDKClient, req *nazca.AlibabaNazcaTokenAuthapplyGetAPIRequest, session string) (*nazca.AlibabaNazcaTokenAuthapplyGetAPIResponse, error) {
     var resp nazca.AlibabaNazcaTokenAuthapplyGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.xiami.api.search.hotwords.get
 
 搜索热词
 */
-type AlibabaXiamiApiSearchHotwordsGetRequest struct {
+type AlibabaXiamiApiSearchHotwordsGetAPIRequest struct {
     model.Params
     // 数量
     _limit   int64
 }
 
-// 初始化AlibabaXiamiApiSearchHotwordsGetRequest对象
-func NewAlibabaXiamiApiSearchHotwordsGetRequest() *AlibabaXiamiApiSearchHotwordsGetRequest{
-    return &AlibabaXiamiApiSearchHotwordsGetRequest{
+// 初始化AlibabaXiamiApiSearchHotwordsGetAPIRequest对象
+func NewAlibabaXiamiApiSearchHotwordsGetRequest() *AlibabaXiamiApiSearchHotwordsGetAPIRequest{
+    return &AlibabaXiamiApiSearchHotwordsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaXiamiApiSearchHotwordsGetRequest) GetApiMethodName() string {
+func (r AlibabaXiamiApiSearchHotwordsGetAPIRequest) GetApiMethodName() string {
     return "alibaba.xiami.api.search.hotwords.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaXiamiApiSearchHotwordsGetRequest) GetApiParams() url.Values {
+func (r AlibabaXiamiApiSearchHotwordsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaXiamiApiSearchHotwordsGetRequest) GetApiParams() url.Values {
 }
 // Limit Setter
 // 数量
-func (r *AlibabaXiamiApiSearchHotwordsGetRequest) SetLimit(_limit int64) error {
+func (r *AlibabaXiamiApiSearchHotwordsGetAPIRequest) SetLimit(_limit int64) error {
     r._limit = _limit
     r.Set("limit", _limit)
     return nil
 }
 
 // Limit Getter
-func (r AlibabaXiamiApiSearchHotwordsGetRequest) GetLimit() int64 {
+func (r AlibabaXiamiApiSearchHotwordsGetAPIRequest) GetLimit() int64 {
     return r._limit
 }

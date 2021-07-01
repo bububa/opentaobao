@@ -12,26 +12,26 @@ alibaba.alihouse.newhome.project.dynamic.delete
 
 楼盘快讯删除
 */
-type AlibabaAlihouseNewhomeProjectDynamicDeleteRequest struct {
+type AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest struct {
     model.Params
     // 外部动态ID
     _outerDynamicId   string
 }
 
-// 初始化AlibabaAlihouseNewhomeProjectDynamicDeleteRequest对象
-func NewAlibabaAlihouseNewhomeProjectDynamicDeleteRequest() *AlibabaAlihouseNewhomeProjectDynamicDeleteRequest{
-    return &AlibabaAlihouseNewhomeProjectDynamicDeleteRequest{
+// 初始化AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectDynamicDeleteRequest() *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest{
+    return &AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectDynamicDeleteRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.project.dynamic.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectDynamicDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectDynamicDeleteRequest) GetApiParams() url.Va
 }
 // OuterDynamicId Setter
 // 外部动态ID
-func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteRequest) SetOuterDynamicId(_outerDynamicId string) error {
+func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) SetOuterDynamicId(_outerDynamicId string) error {
     r._outerDynamicId = _outerDynamicId
     r.Set("outer_dynamic_id", _outerDynamicId)
     return nil
 }
 
 // OuterDynamicId Getter
-func (r AlibabaAlihouseNewhomeProjectDynamicDeleteRequest) GetOuterDynamicId() string {
+func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetOuterDynamicId() string {
     return r._outerDynamicId
 }

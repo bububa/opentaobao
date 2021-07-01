@@ -12,7 +12,7 @@ taobao.koubei.mall.common.store.comment.page
 
 查询口碑综合体内的门店评论信息
 */
-type TaobaoKoubeiMallCommonStoreCommentPageRequest struct {
+type TaobaoKoubeiMallCommonStoreCommentPageAPIRequest struct {
     model.Params
     // 身份ID，识别合作方身份（可联系口碑综合体业务获取）
     _dataSetId   string
@@ -38,20 +38,20 @@ type TaobaoKoubeiMallCommonStoreCommentPageRequest struct {
     _displayChannel   string
 }
 
-// 初始化TaobaoKoubeiMallCommonStoreCommentPageRequest对象
-func NewTaobaoKoubeiMallCommonStoreCommentPageRequest() *TaobaoKoubeiMallCommonStoreCommentPageRequest{
-    return &TaobaoKoubeiMallCommonStoreCommentPageRequest{
+// 初始化TaobaoKoubeiMallCommonStoreCommentPageAPIRequest对象
+func NewTaobaoKoubeiMallCommonStoreCommentPageRequest() *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest{
+    return &TaobaoKoubeiMallCommonStoreCommentPageAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetApiMethodName() string {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetApiMethodName() string {
     return "taobao.koubei.mall.common.store.comment.page"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetApiParams() url.Values {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -60,133 +60,133 @@ func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetApiParams() url.Values
 }
 // DataSetId Setter
 // 身份ID，识别合作方身份（可联系口碑综合体业务获取）
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetDataSetId(_dataSetId string) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetDataSetId(_dataSetId string) error {
     r._dataSetId = _dataSetId
     r.Set("data_set_id", _dataSetId)
     return nil
 }
 
 // DataSetId Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetDataSetId() string {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetDataSetId() string {
     return r._dataSetId
 }
 // MallId Setter
 // 商圈ID
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetMallId(_mallId string) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetMallId(_mallId string) error {
     r._mallId = _mallId
     r.Set("mall_id", _mallId)
     return nil
 }
 
 // MallId Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetMallId() string {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetMallId() string {
     return r._mallId
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetStoreId(_storeId string) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetStoreId(_storeId string) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetStoreId() string {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetStoreId() string {
     return r._storeId
 }
 // Start Setter
 // 查询起始值，默认为0
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetStart(_start int64) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetStart(_start int64) error {
     r._start = _start
     r.Set("start", _start)
     return nil
 }
 
 // Start Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetStart() int64 {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetStart() int64 {
     return r._start
 }
 // PageSize Setter
 // 每页查询量，默认为20，最大数值20
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetPageSize() int64 {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // CityCode Setter
 // 口碑城市编码（示例：杭州市330100）
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetCityCode(_cityCode string) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetCityCode(_cityCode string) error {
     r._cityCode = _cityCode
     r.Set("city_code", _cityCode)
     return nil
 }
 
 // CityCode Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetCityCode() string {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetCityCode() string {
     return r._cityCode
 }
 // Longitude Setter
 // 纬度（终端设备地理位置）
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetLongitude(_longitude string) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetLongitude(_longitude string) error {
     r._longitude = _longitude
     r.Set("longitude", _longitude)
     return nil
 }
 
 // Longitude Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetLongitude() string {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetLongitude() string {
     return r._longitude
 }
 // Latitude Setter
 // 经度（终端设备地理位置）
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetLatitude(_latitude string) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetLatitude(_latitude string) error {
     r._latitude = _latitude
     r.Set("latitude", _latitude)
     return nil
 }
 
 // Latitude Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetLatitude() string {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetLatitude() string {
     return r._latitude
 }
 // TerminalType Setter
 // 终端设备描述(中、英文均可)
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetTerminalType(_terminalType string) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetTerminalType(_terminalType string) error {
     r._terminalType = _terminalType
     r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetTerminalType() string {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetTerminalType() string {
     return r._terminalType
 }
 // AppVersion Setter
 // 支付宝/口碑/淘宝app版本号
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetAppVersion(_appVersion string) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetAppVersion(_appVersion string) error {
     r._appVersion = _appVersion
     r.Set("app_version", _appVersion)
     return nil
 }
 
 // AppVersion Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetAppVersion() string {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetAppVersion() string {
     return r._appVersion
 }
 // DisplayChannel Setter
 // 展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）
-func (r *TaobaoKoubeiMallCommonStoreCommentPageRequest) SetDisplayChannel(_displayChannel string) error {
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetDisplayChannel(_displayChannel string) error {
     r._displayChannel = _displayChannel
     r.Set("display_channel", _displayChannel)
     return nil
 }
 
 // DisplayChannel Getter
-func (r TaobaoKoubeiMallCommonStoreCommentPageRequest) GetDisplayChannel() string {
+func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetDisplayChannel() string {
     return r._displayChannel
 }

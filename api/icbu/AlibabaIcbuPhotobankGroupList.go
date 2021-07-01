@@ -11,7 +11,7 @@ alibaba.icbu.photobank.group.list
 
 图片银行分组信息获取
 */
-func AlibabaIcbuPhotobankGroupList(clt *core.SDKClient, req *icbu.AlibabaIcbuPhotobankGroupListRequest, session string) (*icbu.AlibabaIcbuPhotobankGroupListAPIResponse, error) {
+func AlibabaIcbuPhotobankGroupList(clt *core.SDKClient, req *icbu.AlibabaIcbuPhotobankGroupListAPIRequest, session string) (*icbu.AlibabaIcbuPhotobankGroupListAPIResponse, error) {
     var resp icbu.AlibabaIcbuPhotobankGroupListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

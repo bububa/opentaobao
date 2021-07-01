@@ -12,26 +12,26 @@ cainiao.cboss.workplatform.logistics.iscainiaoorder
 
 根据交易单号判断是否为菜鸟发货订单
 */
-type CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest struct {
+type CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest struct {
     model.Params
     // 交易单号
     _tradeId   string
 }
 
-// 初始化CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest对象
-func NewCainiaoCbossWorkplatformLogisticsIscainiaoorderRequest() *CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest{
-    return &CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest{
+// 初始化CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest对象
+func NewCainiaoCbossWorkplatformLogisticsIscainiaoorderRequest() *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest{
+    return &CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest) GetApiMethodName() string {
+func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) GetApiMethodName() string {
     return "cainiao.cboss.workplatform.logistics.iscainiaoorder"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest) GetApiParams() url.Values {
+func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest) GetApiParams() u
 }
 // TradeId Setter
 // 交易单号
-func (r *CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest) SetTradeId(_tradeId string) error {
+func (r *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) SetTradeId(_tradeId string) error {
     r._tradeId = _tradeId
     r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
-func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest) GetTradeId() string {
+func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) GetTradeId() string {
     return r._tradeId
 }

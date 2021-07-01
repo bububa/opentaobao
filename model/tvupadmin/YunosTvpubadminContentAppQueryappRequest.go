@@ -12,26 +12,26 @@ yunos.tvpubadmin.content.app.queryapp
 
 查询应用信息
 */
-type YunosTvpubadminContentAppQueryappRequest struct {
+type YunosTvpubadminContentAppQueryappAPIRequest struct {
     model.Params
     // 查询条件
     _query   string
 }
 
-// 初始化YunosTvpubadminContentAppQueryappRequest对象
-func NewYunosTvpubadminContentAppQueryappRequest() *YunosTvpubadminContentAppQueryappRequest{
-    return &YunosTvpubadminContentAppQueryappRequest{
+// 初始化YunosTvpubadminContentAppQueryappAPIRequest对象
+func NewYunosTvpubadminContentAppQueryappRequest() *YunosTvpubadminContentAppQueryappAPIRequest{
+    return &YunosTvpubadminContentAppQueryappAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentAppQueryappRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentAppQueryappAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.app.queryapp"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentAppQueryappRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentAppQueryappAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentAppQueryappRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 查询条件
-func (r *YunosTvpubadminContentAppQueryappRequest) SetQuery(_query string) error {
+func (r *YunosTvpubadminContentAppQueryappAPIRequest) SetQuery(_query string) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r YunosTvpubadminContentAppQueryappRequest) GetQuery() string {
+func (r YunosTvpubadminContentAppQueryappAPIRequest) GetQuery() string {
     return r._query
 }

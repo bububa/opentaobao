@@ -12,26 +12,26 @@ taobao.rhino.supplychain.outbound.pickingcomplete
 
 接收成衣捡配完成通知,WMS005
 */
-type TaobaoRhinoSupplychainOutboundPickingcompleteRequest struct {
+type TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest struct {
     model.Params
     // 捡配完成消息
     _param0   *PickingCompleteMsg
 }
 
-// 初始化TaobaoRhinoSupplychainOutboundPickingcompleteRequest对象
-func NewTaobaoRhinoSupplychainOutboundPickingcompleteRequest() *TaobaoRhinoSupplychainOutboundPickingcompleteRequest{
-    return &TaobaoRhinoSupplychainOutboundPickingcompleteRequest{
+// 初始化TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest对象
+func NewTaobaoRhinoSupplychainOutboundPickingcompleteRequest() *TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest{
+    return &TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRhinoSupplychainOutboundPickingcompleteRequest) GetApiMethodName() string {
+func (r TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest) GetApiMethodName() string {
     return "taobao.rhino.supplychain.outbound.pickingcomplete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRhinoSupplychainOutboundPickingcompleteRequest) GetApiParams() url.Values {
+func (r TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoRhinoSupplychainOutboundPickingcompleteRequest) GetApiParams() url
 }
 // Param0 Setter
 // 捡配完成消息
-func (r *TaobaoRhinoSupplychainOutboundPickingcompleteRequest) SetParam0(_param0 *PickingCompleteMsg) error {
+func (r *TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest) SetParam0(_param0 *PickingCompleteMsg) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoRhinoSupplychainOutboundPickingcompleteRequest) GetParam0() *PickingCompleteMsg {
+func (r TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest) GetParam0() *PickingCompleteMsg {
     return r._param0
 }

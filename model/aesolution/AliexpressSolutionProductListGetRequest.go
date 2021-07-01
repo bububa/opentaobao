@@ -12,26 +12,26 @@ aliexpress.solution.product.list.get
 
 Get product list
 */
-type AliexpressSolutionProductListGetRequest struct {
+type AliexpressSolutionProductListGetAPIRequest struct {
     model.Params
     // request parameters to query
     _aeopAEProductListQuery   *ItemListQuery
 }
 
-// 初始化AliexpressSolutionProductListGetRequest对象
-func NewAliexpressSolutionProductListGetRequest() *AliexpressSolutionProductListGetRequest{
-    return &AliexpressSolutionProductListGetRequest{
+// 初始化AliexpressSolutionProductListGetAPIRequest对象
+func NewAliexpressSolutionProductListGetRequest() *AliexpressSolutionProductListGetAPIRequest{
+    return &AliexpressSolutionProductListGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionProductListGetRequest) GetApiMethodName() string {
+func (r AliexpressSolutionProductListGetAPIRequest) GetApiMethodName() string {
     return "aliexpress.solution.product.list.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionProductListGetRequest) GetApiParams() url.Values {
+func (r AliexpressSolutionProductListGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressSolutionProductListGetRequest) GetApiParams() url.Values {
 }
 // AeopAEProductListQuery Setter
 // request parameters to query
-func (r *AliexpressSolutionProductListGetRequest) SetAeopAEProductListQuery(_aeopAEProductListQuery *ItemListQuery) error {
+func (r *AliexpressSolutionProductListGetAPIRequest) SetAeopAEProductListQuery(_aeopAEProductListQuery *ItemListQuery) error {
     r._aeopAEProductListQuery = _aeopAEProductListQuery
     r.Set("aeop_a_e_product_list_query", _aeopAEProductListQuery)
     return nil
 }
 
 // AeopAEProductListQuery Getter
-func (r AliexpressSolutionProductListGetRequest) GetAeopAEProductListQuery() *ItemListQuery {
+func (r AliexpressSolutionProductListGetAPIRequest) GetAeopAEProductListQuery() *ItemListQuery {
     return r._aeopAEProductListQuery
 }

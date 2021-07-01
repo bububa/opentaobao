@@ -12,26 +12,26 @@ taobao.taotv.carousel.category.list
 
 获取轮播分类列表
 */
-type TaobaoTaotvCarouselCategoryListRequest struct {
+type TaobaoTaotvCarouselCategoryListAPIRequest struct {
     model.Params
     // 设备信息
     _systemInfo   string
 }
 
-// 初始化TaobaoTaotvCarouselCategoryListRequest对象
-func NewTaobaoTaotvCarouselCategoryListRequest() *TaobaoTaotvCarouselCategoryListRequest{
-    return &TaobaoTaotvCarouselCategoryListRequest{
+// 初始化TaobaoTaotvCarouselCategoryListAPIRequest对象
+func NewTaobaoTaotvCarouselCategoryListRequest() *TaobaoTaotvCarouselCategoryListAPIRequest{
+    return &TaobaoTaotvCarouselCategoryListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTaotvCarouselCategoryListRequest) GetApiMethodName() string {
+func (r TaobaoTaotvCarouselCategoryListAPIRequest) GetApiMethodName() string {
     return "taobao.taotv.carousel.category.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTaotvCarouselCategoryListRequest) GetApiParams() url.Values {
+func (r TaobaoTaotvCarouselCategoryListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTaotvCarouselCategoryListRequest) GetApiParams() url.Values {
 }
 // SystemInfo Setter
 // 设备信息
-func (r *TaobaoTaotvCarouselCategoryListRequest) SetSystemInfo(_systemInfo string) error {
+func (r *TaobaoTaotvCarouselCategoryListAPIRequest) SetSystemInfo(_systemInfo string) error {
     r._systemInfo = _systemInfo
     r.Set("system_info", _systemInfo)
     return nil
 }
 
 // SystemInfo Getter
-func (r TaobaoTaotvCarouselCategoryListRequest) GetSystemInfo() string {
+func (r TaobaoTaotvCarouselCategoryListAPIRequest) GetSystemInfo() string {
     return r._systemInfo
 }

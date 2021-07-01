@@ -12,7 +12,7 @@ taobao.wdk.iot.deviceadmin.mqtt.token.get
 
 智能硬件设备动态注册和获取mqtt设备信息
 */
-type TaobaoWdkIotDeviceadminMqttTokenGetRequest struct {
+type TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest struct {
     model.Params
     // accessKey
     _accessKey   string
@@ -20,20 +20,20 @@ type TaobaoWdkIotDeviceadminMqttTokenGetRequest struct {
     _applyTimestamp   int64
 }
 
-// 初始化TaobaoWdkIotDeviceadminMqttTokenGetRequest对象
-func NewTaobaoWdkIotDeviceadminMqttTokenGetRequest() *TaobaoWdkIotDeviceadminMqttTokenGetRequest{
-    return &TaobaoWdkIotDeviceadminMqttTokenGetRequest{
+// 初始化TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest对象
+func NewTaobaoWdkIotDeviceadminMqttTokenGetRequest() *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest{
+    return &TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWdkIotDeviceadminMqttTokenGetRequest) GetApiMethodName() string {
+func (r TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) GetApiMethodName() string {
     return "taobao.wdk.iot.deviceadmin.mqtt.token.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWdkIotDeviceadminMqttTokenGetRequest) GetApiParams() url.Values {
+func (r TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoWdkIotDeviceadminMqttTokenGetRequest) GetApiParams() url.Values {
 }
 // AccessKey Setter
 // accessKey
-func (r *TaobaoWdkIotDeviceadminMqttTokenGetRequest) SetAccessKey(_accessKey string) error {
+func (r *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) SetAccessKey(_accessKey string) error {
     r._accessKey = _accessKey
     r.Set("access_key", _accessKey)
     return nil
 }
 
 // AccessKey Getter
-func (r TaobaoWdkIotDeviceadminMqttTokenGetRequest) GetAccessKey() string {
+func (r TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) GetAccessKey() string {
     return r._accessKey
 }
 // ApplyTimestamp Setter
 // 申请令牌的客户端时间戳
-func (r *TaobaoWdkIotDeviceadminMqttTokenGetRequest) SetApplyTimestamp(_applyTimestamp int64) error {
+func (r *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) SetApplyTimestamp(_applyTimestamp int64) error {
     r._applyTimestamp = _applyTimestamp
     r.Set("apply_timestamp", _applyTimestamp)
     return nil
 }
 
 // ApplyTimestamp Getter
-func (r TaobaoWdkIotDeviceadminMqttTokenGetRequest) GetApplyTimestamp() int64 {
+func (r TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) GetApplyTimestamp() int64 {
     return r._applyTimestamp
 }

@@ -1,52 +1,15 @@
 package qimen
 
-import (
-    "net/url"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-根据收件人信息查询交易单号接口 API请求
-taobao.qimen.order.query
-
-WMS 调用该接口，根据收件人信息查询平台交易订单号。
-*/
+// TaobaoQimenOrderQueryRequest 
 type TaobaoQimenOrderQueryRequest struct {
-    model.Params
-    // request
-    _request   *Request
-}
-
-// 初始化TaobaoQimenOrderQueryRequest对象
-func NewTaobaoQimenOrderQueryRequest() *TaobaoQimenOrderQueryRequest{
-    return &TaobaoQimenOrderQueryRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TaobaoQimenOrderQueryRequest) GetApiMethodName() string {
-    return "taobao.qimen.order.query"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TaobaoQimenOrderQueryRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// Request Setter
-// request
-func (r *TaobaoQimenOrderQueryRequest) SetRequest(_request *Request) error {
-    r._request = _request
-    r.Set("request", _request)
-    return nil
-}
-
-// Request Getter
-func (r TaobaoQimenOrderQueryRequest) GetRequest() *Request {
-    return r._request
+    // 姓名, string (50) , 必填
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
+    // 开始时间, string (19) , YYYY-MM-DD HH:MM:SS
+    StartTime   string `json:"startTime,omitempty" xml:"startTime,omitempty"`
+    // 结束时间, string (19) , YYYY-MM-DD HH:MM:SS
+    EndTime   string `json:"endTime,omitempty" xml:"endTime,omitempty"`
+    // 固定电话, string (50)
+    Tel   string `json:"tel,omitempty" xml:"tel,omitempty"`
+    // 移动电话, string (50) , 必填
+    Mobile   string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 }

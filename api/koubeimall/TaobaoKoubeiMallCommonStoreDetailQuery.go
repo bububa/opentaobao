@@ -11,7 +11,7 @@ taobao.koubei.mall.common.store.detail.query
 
 查询口碑综合体内的门店详情信息
 */
-func TaobaoKoubeiMallCommonStoreDetailQuery(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonStoreDetailQueryRequest, session string) (*koubeimall.TaobaoKoubeiMallCommonStoreDetailQueryAPIResponse, error) {
+func TaobaoKoubeiMallCommonStoreDetailQuery(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonStoreDetailQueryAPIRequest, session string) (*koubeimall.TaobaoKoubeiMallCommonStoreDetailQueryAPIResponse, error) {
     var resp koubeimall.TaobaoKoubeiMallCommonStoreDetailQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

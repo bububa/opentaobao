@@ -11,7 +11,7 @@ alibaba.oversea.exchagerate.get
 
 提供外部汇率查询接口
 */
-func AlibabaOverseaExchagerateGet(clt *core.SDKClient, req *oversea.AlibabaOverseaExchagerateGetRequest, session string) (*oversea.AlibabaOverseaExchagerateGetAPIResponse, error) {
+func AlibabaOverseaExchagerateGet(clt *core.SDKClient, req *oversea.AlibabaOverseaExchagerateGetAPIRequest, session string) (*oversea.AlibabaOverseaExchagerateGetAPIResponse, error) {
     var resp oversea.AlibabaOverseaExchagerateGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

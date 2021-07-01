@@ -11,7 +11,7 @@ tmall.item.simpleschema.add
 
 天猫简化版schema发布商品。
 */
-func TmallItemSimpleschemaAdd(clt *core.SDKClient, req *product.TmallItemSimpleschemaAddRequest, session string) (*product.TmallItemSimpleschemaAddAPIResponse, error) {
+func TmallItemSimpleschemaAdd(clt *core.SDKClient, req *product.TmallItemSimpleschemaAddAPIRequest, session string) (*product.TmallItemSimpleschemaAddAPIResponse, error) {
     var resp product.TmallItemSimpleschemaAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

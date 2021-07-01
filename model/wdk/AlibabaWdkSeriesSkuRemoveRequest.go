@@ -12,26 +12,26 @@ alibaba.wdk.series.sku.remove
 
 系列品商品变更-移除商品
 */
-type AlibabaWdkSeriesSkuRemoveRequest struct {
+type AlibabaWdkSeriesSkuRemoveAPIRequest struct {
     model.Params
     // 系列品移除商品请求
     _seriesSkus   *SeriesSkuRequest
 }
 
-// 初始化AlibabaWdkSeriesSkuRemoveRequest对象
-func NewAlibabaWdkSeriesSkuRemoveRequest() *AlibabaWdkSeriesSkuRemoveRequest{
-    return &AlibabaWdkSeriesSkuRemoveRequest{
+// 初始化AlibabaWdkSeriesSkuRemoveAPIRequest对象
+func NewAlibabaWdkSeriesSkuRemoveRequest() *AlibabaWdkSeriesSkuRemoveAPIRequest{
+    return &AlibabaWdkSeriesSkuRemoveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSeriesSkuRemoveRequest) GetApiMethodName() string {
+func (r AlibabaWdkSeriesSkuRemoveAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.series.sku.remove"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSeriesSkuRemoveRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSeriesSkuRemoveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSeriesSkuRemoveRequest) GetApiParams() url.Values {
 }
 // SeriesSkus Setter
 // 系列品移除商品请求
-func (r *AlibabaWdkSeriesSkuRemoveRequest) SetSeriesSkus(_seriesSkus *SeriesSkuRequest) error {
+func (r *AlibabaWdkSeriesSkuRemoveAPIRequest) SetSeriesSkus(_seriesSkus *SeriesSkuRequest) error {
     r._seriesSkus = _seriesSkus
     r.Set("series_skus", _seriesSkus)
     return nil
 }
 
 // SeriesSkus Getter
-func (r AlibabaWdkSeriesSkuRemoveRequest) GetSeriesSkus() *SeriesSkuRequest {
+func (r AlibabaWdkSeriesSkuRemoveAPIRequest) GetSeriesSkus() *SeriesSkuRequest {
     return r._seriesSkus
 }

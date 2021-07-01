@@ -12,26 +12,26 @@ alibaba.alicom.order.exchange.create
 
 代理商调用该接口来进行积分兑换
 */
-type AlibabaAlicomOrderExchangeCreateRequest struct {
+type AlibabaAlicomOrderExchangeCreateAPIRequest struct {
     model.Params
     // 入参
     _exchangeModel   *ExchangeModel
 }
 
-// 初始化AlibabaAlicomOrderExchangeCreateRequest对象
-func NewAlibabaAlicomOrderExchangeCreateRequest() *AlibabaAlicomOrderExchangeCreateRequest{
-    return &AlibabaAlicomOrderExchangeCreateRequest{
+// 初始化AlibabaAlicomOrderExchangeCreateAPIRequest对象
+func NewAlibabaAlicomOrderExchangeCreateRequest() *AlibabaAlicomOrderExchangeCreateAPIRequest{
+    return &AlibabaAlicomOrderExchangeCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlicomOrderExchangeCreateRequest) GetApiMethodName() string {
+func (r AlibabaAlicomOrderExchangeCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.alicom.order.exchange.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlicomOrderExchangeCreateRequest) GetApiParams() url.Values {
+func (r AlibabaAlicomOrderExchangeCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlicomOrderExchangeCreateRequest) GetApiParams() url.Values {
 }
 // ExchangeModel Setter
 // 入参
-func (r *AlibabaAlicomOrderExchangeCreateRequest) SetExchangeModel(_exchangeModel *ExchangeModel) error {
+func (r *AlibabaAlicomOrderExchangeCreateAPIRequest) SetExchangeModel(_exchangeModel *ExchangeModel) error {
     r._exchangeModel = _exchangeModel
     r.Set("exchange_model", _exchangeModel)
     return nil
 }
 
 // ExchangeModel Getter
-func (r AlibabaAlicomOrderExchangeCreateRequest) GetExchangeModel() *ExchangeModel {
+func (r AlibabaAlicomOrderExchangeCreateAPIRequest) GetExchangeModel() *ExchangeModel {
     return r._exchangeModel
 }

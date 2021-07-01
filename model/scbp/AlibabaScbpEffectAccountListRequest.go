@@ -12,26 +12,26 @@ alibaba.scbp.effect.account.list
 
 账户-报表,支持最近7天，最近30天，以及180天内时间区间。
 */
-type AlibabaScbpEffectAccountListRequest struct {
+type AlibabaScbpEffectAccountListAPIRequest struct {
     model.Params
     // AccountQuery
     _p4pAccountReportQuery   *AccountQuery
 }
 
-// 初始化AlibabaScbpEffectAccountListRequest对象
-func NewAlibabaScbpEffectAccountListRequest() *AlibabaScbpEffectAccountListRequest{
-    return &AlibabaScbpEffectAccountListRequest{
+// 初始化AlibabaScbpEffectAccountListAPIRequest对象
+func NewAlibabaScbpEffectAccountListRequest() *AlibabaScbpEffectAccountListAPIRequest{
+    return &AlibabaScbpEffectAccountListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpEffectAccountListRequest) GetApiMethodName() string {
+func (r AlibabaScbpEffectAccountListAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.effect.account.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpEffectAccountListRequest) GetApiParams() url.Values {
+func (r AlibabaScbpEffectAccountListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpEffectAccountListRequest) GetApiParams() url.Values {
 }
 // P4pAccountReportQuery Setter
 // AccountQuery
-func (r *AlibabaScbpEffectAccountListRequest) SetP4pAccountReportQuery(_p4pAccountReportQuery *AccountQuery) error {
+func (r *AlibabaScbpEffectAccountListAPIRequest) SetP4pAccountReportQuery(_p4pAccountReportQuery *AccountQuery) error {
     r._p4pAccountReportQuery = _p4pAccountReportQuery
     r.Set("p4p_account_report_query", _p4pAccountReportQuery)
     return nil
 }
 
 // P4pAccountReportQuery Getter
-func (r AlibabaScbpEffectAccountListRequest) GetP4pAccountReportQuery() *AccountQuery {
+func (r AlibabaScbpEffectAccountListAPIRequest) GetP4pAccountReportQuery() *AccountQuery {
     return r._p4pAccountReportQuery
 }

@@ -11,7 +11,7 @@ yunos.tvpubadmin.common.file.upload
 
 文件上传服务
 */
-func YunosTvpubadminCommonFileUpload(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminCommonFileUploadRequest, session string) (*tvupadmin.YunosTvpubadminCommonFileUploadAPIResponse, error) {
+func YunosTvpubadminCommonFileUpload(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminCommonFileUploadAPIRequest, session string) (*tvupadmin.YunosTvpubadminCommonFileUploadAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminCommonFileUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.usergrowth.offline.convertion.summary.eight.get
 
 淘系用户增长团队-线下拉新业务，对线下渠道提供mapi，目的是为了给有开发能力的渠道提供返数功能，方便渠道对手下的推广者结算（t+8汇总）
 */
-type TaobaoUsergrowthOfflineConvertionSummaryEightGetRequest struct {
+type TaobaoUsergrowthOfflineConvertionSummaryEightGetAPIRequest struct {
     model.Params
     // 入参
     _query   *OfflineMapiQuery
 }
 
-// 初始化TaobaoUsergrowthOfflineConvertionSummaryEightGetRequest对象
-func NewTaobaoUsergrowthOfflineConvertionSummaryEightGetRequest() *TaobaoUsergrowthOfflineConvertionSummaryEightGetRequest{
-    return &TaobaoUsergrowthOfflineConvertionSummaryEightGetRequest{
+// 初始化TaobaoUsergrowthOfflineConvertionSummaryEightGetAPIRequest对象
+func NewTaobaoUsergrowthOfflineConvertionSummaryEightGetRequest() *TaobaoUsergrowthOfflineConvertionSummaryEightGetAPIRequest{
+    return &TaobaoUsergrowthOfflineConvertionSummaryEightGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoUsergrowthOfflineConvertionSummaryEightGetRequest) GetApiMethodName() string {
+func (r TaobaoUsergrowthOfflineConvertionSummaryEightGetAPIRequest) GetApiMethodName() string {
     return "taobao.usergrowth.offline.convertion.summary.eight.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoUsergrowthOfflineConvertionSummaryEightGetRequest) GetApiParams() url.Values {
+func (r TaobaoUsergrowthOfflineConvertionSummaryEightGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoUsergrowthOfflineConvertionSummaryEightGetRequest) GetApiParams() 
 }
 // Query Setter
 // 入参
-func (r *TaobaoUsergrowthOfflineConvertionSummaryEightGetRequest) SetQuery(_query *OfflineMapiQuery) error {
+func (r *TaobaoUsergrowthOfflineConvertionSummaryEightGetAPIRequest) SetQuery(_query *OfflineMapiQuery) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r TaobaoUsergrowthOfflineConvertionSummaryEightGetRequest) GetQuery() *OfflineMapiQuery {
+func (r TaobaoUsergrowthOfflineConvertionSummaryEightGetAPIRequest) GetQuery() *OfflineMapiQuery {
     return r._query
 }

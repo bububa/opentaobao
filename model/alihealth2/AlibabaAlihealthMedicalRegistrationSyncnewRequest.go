@@ -12,26 +12,26 @@ alibaba.alihealth.medical.registration.syncnew
 
 阿里健康新挂号记录回传接口
 */
-type AlibabaAlihealthMedicalRegistrationSyncnewRequest struct {
+type AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest struct {
     model.Params
     // 接口入参
     _saveRequest   *CommonRequest4Top
 }
 
-// 初始化AlibabaAlihealthMedicalRegistrationSyncnewRequest对象
-func NewAlibabaAlihealthMedicalRegistrationSyncnewRequest() *AlibabaAlihealthMedicalRegistrationSyncnewRequest{
-    return &AlibabaAlihealthMedicalRegistrationSyncnewRequest{
+// 初始化AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest对象
+func NewAlibabaAlihealthMedicalRegistrationSyncnewRequest() *AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest{
+    return &AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalRegistrationSyncnewRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medical.registration.syncnew"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalRegistrationSyncnewRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalRegistrationSyncnewRequest) GetApiParams() url.Va
 }
 // SaveRequest Setter
 // 接口入参
-func (r *AlibabaAlihealthMedicalRegistrationSyncnewRequest) SetSaveRequest(_saveRequest *CommonRequest4Top) error {
+func (r *AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) SetSaveRequest(_saveRequest *CommonRequest4Top) error {
     r._saveRequest = _saveRequest
     r.Set("save_request", _saveRequest)
     return nil
 }
 
 // SaveRequest Getter
-func (r AlibabaAlihealthMedicalRegistrationSyncnewRequest) GetSaveRequest() *CommonRequest4Top {
+func (r AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) GetSaveRequest() *CommonRequest4Top {
     return r._saveRequest
 }

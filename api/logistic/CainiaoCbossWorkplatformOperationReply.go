@@ -11,7 +11,7 @@ cainiao.cboss.workplatform.operation.reply
 
 菜鸟工单进度下发接口，目前调用者ISV
 */
-func CainiaoCbossWorkplatformOperationReply(clt *core.SDKClient, req *logistic.CainiaoCbossWorkplatformOperationReplyRequest, session string) (*logistic.CainiaoCbossWorkplatformOperationReplyAPIResponse, error) {
+func CainiaoCbossWorkplatformOperationReply(clt *core.SDKClient, req *logistic.CainiaoCbossWorkplatformOperationReplyAPIRequest, session string) (*logistic.CainiaoCbossWorkplatformOperationReplyAPIResponse, error) {
     var resp logistic.CainiaoCbossWorkplatformOperationReplyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

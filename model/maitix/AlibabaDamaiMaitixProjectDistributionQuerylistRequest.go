@@ -12,24 +12,24 @@ alibaba.damai.maitix.project.distribution.querylist
 
 分销项目列表查询接口（已过时，不推荐使用）
 */
-type AlibabaDamaiMaitixProjectDistributionQuerylistRequest struct {
+type AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaDamaiMaitixProjectDistributionQuerylistRequest对象
-func NewAlibabaDamaiMaitixProjectDistributionQuerylistRequest() *AlibabaDamaiMaitixProjectDistributionQuerylistRequest{
-    return &AlibabaDamaiMaitixProjectDistributionQuerylistRequest{
+// 初始化AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest对象
+func NewAlibabaDamaiMaitixProjectDistributionQuerylistRequest() *AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest{
+    return &AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixProjectDistributionQuerylistRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.project.distribution.querylist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixProjectDistributionQuerylistRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

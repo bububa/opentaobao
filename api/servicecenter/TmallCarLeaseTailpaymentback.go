@@ -11,7 +11,7 @@ tmall.car.lease.tailpaymentback
 
 尾款处置方案回传
 */
-func TmallCarLeaseTailpaymentback(clt *core.SDKClient, req *servicecenter.TmallCarLeaseTailpaymentbackRequest, session string) (*servicecenter.TmallCarLeaseTailpaymentbackAPIResponse, error) {
+func TmallCarLeaseTailpaymentback(clt *core.SDKClient, req *servicecenter.TmallCarLeaseTailpaymentbackAPIRequest, session string) (*servicecenter.TmallCarLeaseTailpaymentbackAPIResponse, error) {
     var resp servicecenter.TmallCarLeaseTailpaymentbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.wdk.channel.comment.create
 
 差评导入
 */
-type AlibabaWdkChannelCommentCreateRequest struct {
+type AlibabaWdkChannelCommentCreateAPIRequest struct {
     model.Params
     // 差评信息
     _commentCreateInfo   *CommentCreateInfo
 }
 
-// 初始化AlibabaWdkChannelCommentCreateRequest对象
-func NewAlibabaWdkChannelCommentCreateRequest() *AlibabaWdkChannelCommentCreateRequest{
-    return &AlibabaWdkChannelCommentCreateRequest{
+// 初始化AlibabaWdkChannelCommentCreateAPIRequest对象
+func NewAlibabaWdkChannelCommentCreateRequest() *AlibabaWdkChannelCommentCreateAPIRequest{
+    return &AlibabaWdkChannelCommentCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkChannelCommentCreateRequest) GetApiMethodName() string {
+func (r AlibabaWdkChannelCommentCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.channel.comment.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkChannelCommentCreateRequest) GetApiParams() url.Values {
+func (r AlibabaWdkChannelCommentCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkChannelCommentCreateRequest) GetApiParams() url.Values {
 }
 // CommentCreateInfo Setter
 // 差评信息
-func (r *AlibabaWdkChannelCommentCreateRequest) SetCommentCreateInfo(_commentCreateInfo *CommentCreateInfo) error {
+func (r *AlibabaWdkChannelCommentCreateAPIRequest) SetCommentCreateInfo(_commentCreateInfo *CommentCreateInfo) error {
     r._commentCreateInfo = _commentCreateInfo
     r.Set("comment_create_info", _commentCreateInfo)
     return nil
 }
 
 // CommentCreateInfo Getter
-func (r AlibabaWdkChannelCommentCreateRequest) GetCommentCreateInfo() *CommentCreateInfo {
+func (r AlibabaWdkChannelCommentCreateAPIRequest) GetCommentCreateInfo() *CommentCreateInfo {
     return r._commentCreateInfo
 }

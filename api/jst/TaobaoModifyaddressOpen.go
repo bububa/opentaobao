@@ -11,7 +11,7 @@ taobao.modifyaddress.open
 
 商家自助修改地址服务开通
 */
-func TaobaoModifyaddressOpen(clt *core.SDKClient, req *jst.TaobaoModifyaddressOpenRequest, session string) (*jst.TaobaoModifyaddressOpenAPIResponse, error) {
+func TaobaoModifyaddressOpen(clt *core.SDKClient, req *jst.TaobaoModifyaddressOpenAPIRequest, session string) (*jst.TaobaoModifyaddressOpenAPIResponse, error) {
     var resp jst.TaobaoModifyaddressOpenAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

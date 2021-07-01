@@ -11,7 +11,7 @@ alibaba.retail.commission.result.query
 
 查询导购分佣记录
 */
-func AlibabaRetailCommissionResultQuery(clt *core.SDKClient, req *omniorder.AlibabaRetailCommissionResultQueryRequest, session string) (*omniorder.AlibabaRetailCommissionResultQueryAPIResponse, error) {
+func AlibabaRetailCommissionResultQuery(clt *core.SDKClient, req *omniorder.AlibabaRetailCommissionResultQueryAPIRequest, session string) (*omniorder.AlibabaRetailCommissionResultQueryAPIResponse, error) {
     var resp omniorder.AlibabaRetailCommissionResultQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

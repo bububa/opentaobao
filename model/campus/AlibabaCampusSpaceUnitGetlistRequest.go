@@ -14,7 +14,7 @@ alibaba.campus.space.unit.getlist
 HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceUnitApiTopService
 HSF方法名称：getList
 */
-type AlibabaCampusSpaceUnitGetlistRequest struct {
+type AlibabaCampusSpaceUnitGetlistAPIRequest struct {
     model.Params
     // 查询条件封装
     _param0   *WorkBenchContext
@@ -22,20 +22,20 @@ type AlibabaCampusSpaceUnitGetlistRequest struct {
     _param1   *SpaceUnitQuery
 }
 
-// 初始化AlibabaCampusSpaceUnitGetlistRequest对象
-func NewAlibabaCampusSpaceUnitGetlistRequest() *AlibabaCampusSpaceUnitGetlistRequest{
-    return &AlibabaCampusSpaceUnitGetlistRequest{
+// 初始化AlibabaCampusSpaceUnitGetlistAPIRequest对象
+func NewAlibabaCampusSpaceUnitGetlistRequest() *AlibabaCampusSpaceUnitGetlistAPIRequest{
+    return &AlibabaCampusSpaceUnitGetlistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceUnitGetlistRequest) GetApiMethodName() string {
+func (r AlibabaCampusSpaceUnitGetlistAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.space.unit.getlist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceUnitGetlistRequest) GetApiParams() url.Values {
+func (r AlibabaCampusSpaceUnitGetlistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceUnitGetlistRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 查询条件封装
-func (r *AlibabaCampusSpaceUnitGetlistRequest) SetParam0(_param0 *WorkBenchContext) error {
+func (r *AlibabaCampusSpaceUnitGetlistAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaCampusSpaceUnitGetlistRequest) GetParam0() *WorkBenchContext {
+func (r AlibabaCampusSpaceUnitGetlistAPIRequest) GetParam0() *WorkBenchContext {
     return r._param0
 }
 // Param1 Setter
 // 查询参数封装
-func (r *AlibabaCampusSpaceUnitGetlistRequest) SetParam1(_param1 *SpaceUnitQuery) error {
+func (r *AlibabaCampusSpaceUnitGetlistAPIRequest) SetParam1(_param1 *SpaceUnitQuery) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaCampusSpaceUnitGetlistRequest) GetParam1() *SpaceUnitQuery {
+func (r AlibabaCampusSpaceUnitGetlistAPIRequest) GetParam1() *SpaceUnitQuery {
     return r._param1
 }

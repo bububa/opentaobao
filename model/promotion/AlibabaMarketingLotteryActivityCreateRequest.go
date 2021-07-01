@@ -12,26 +12,26 @@ alibaba.marketing.lottery.activity.create
 
 抽奖平台奖池创建接口
 */
-type AlibabaMarketingLotteryActivityCreateRequest struct {
+type AlibabaMarketingLotteryActivityCreateAPIRequest struct {
     model.Params
     // 抽奖活动创建请求对象
     _lotteryActivityCreate   *LotteryActivityCreateDTO
 }
 
-// 初始化AlibabaMarketingLotteryActivityCreateRequest对象
-func NewAlibabaMarketingLotteryActivityCreateRequest() *AlibabaMarketingLotteryActivityCreateRequest{
-    return &AlibabaMarketingLotteryActivityCreateRequest{
+// 初始化AlibabaMarketingLotteryActivityCreateAPIRequest对象
+func NewAlibabaMarketingLotteryActivityCreateRequest() *AlibabaMarketingLotteryActivityCreateAPIRequest{
+    return &AlibabaMarketingLotteryActivityCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMarketingLotteryActivityCreateRequest) GetApiMethodName() string {
+func (r AlibabaMarketingLotteryActivityCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.marketing.lottery.activity.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMarketingLotteryActivityCreateRequest) GetApiParams() url.Values {
+func (r AlibabaMarketingLotteryActivityCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryActivityCreateRequest) GetApiParams() url.Values 
 }
 // LotteryActivityCreate Setter
 // 抽奖活动创建请求对象
-func (r *AlibabaMarketingLotteryActivityCreateRequest) SetLotteryActivityCreate(_lotteryActivityCreate *LotteryActivityCreateDTO) error {
+func (r *AlibabaMarketingLotteryActivityCreateAPIRequest) SetLotteryActivityCreate(_lotteryActivityCreate *LotteryActivityCreateDTO) error {
     r._lotteryActivityCreate = _lotteryActivityCreate
     r.Set("lottery_activity_create", _lotteryActivityCreate)
     return nil
 }
 
 // LotteryActivityCreate Getter
-func (r AlibabaMarketingLotteryActivityCreateRequest) GetLotteryActivityCreate() *LotteryActivityCreateDTO {
+func (r AlibabaMarketingLotteryActivityCreateAPIRequest) GetLotteryActivityCreate() *LotteryActivityCreateDTO {
     return r._lotteryActivityCreate
 }

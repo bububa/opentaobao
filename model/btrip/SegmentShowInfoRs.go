@@ -1,5 +1,5 @@
 package btrip
 
-// SegmentShowInfoRs 
-type SegmentShowInfoRs struct {
+// SegmentShowInfoRS 
+type SegmentShowInfoRS struct {
 }

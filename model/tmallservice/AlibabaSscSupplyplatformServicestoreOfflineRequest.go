@@ -12,7 +12,7 @@ alibaba.ssc.supplyplatform.servicestore.offline
 
 网点下线功能
 */
-type AlibabaSscSupplyplatformServicestoreOfflineRequest struct {
+type AlibabaSscSupplyplatformServicestoreOfflineAPIRequest struct {
     model.Params
     // 网点编码列表集合,最大支持1000
     _serviceStoreCodeList   []string
@@ -20,20 +20,20 @@ type AlibabaSscSupplyplatformServicestoreOfflineRequest struct {
     _serviceStoreIdList   []int64
 }
 
-// 初始化AlibabaSscSupplyplatformServicestoreOfflineRequest对象
-func NewAlibabaSscSupplyplatformServicestoreOfflineRequest() *AlibabaSscSupplyplatformServicestoreOfflineRequest{
-    return &AlibabaSscSupplyplatformServicestoreOfflineRequest{
+// 初始化AlibabaSscSupplyplatformServicestoreOfflineAPIRequest对象
+func NewAlibabaSscSupplyplatformServicestoreOfflineRequest() *AlibabaSscSupplyplatformServicestoreOfflineAPIRequest{
+    return &AlibabaSscSupplyplatformServicestoreOfflineAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSscSupplyplatformServicestoreOfflineRequest) GetApiMethodName() string {
+func (r AlibabaSscSupplyplatformServicestoreOfflineAPIRequest) GetApiMethodName() string {
     return "alibaba.ssc.supplyplatform.servicestore.offline"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSscSupplyplatformServicestoreOfflineRequest) GetApiParams() url.Values {
+func (r AlibabaSscSupplyplatformServicestoreOfflineAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaSscSupplyplatformServicestoreOfflineRequest) GetApiParams() url.V
 }
 // ServiceStoreCodeList Setter
 // 网点编码列表集合,最大支持1000
-func (r *AlibabaSscSupplyplatformServicestoreOfflineRequest) SetServiceStoreCodeList(_serviceStoreCodeList []string) error {
+func (r *AlibabaSscSupplyplatformServicestoreOfflineAPIRequest) SetServiceStoreCodeList(_serviceStoreCodeList []string) error {
     r._serviceStoreCodeList = _serviceStoreCodeList
     r.Set("service_store_code_list", _serviceStoreCodeList)
     return nil
 }
 
 // ServiceStoreCodeList Getter
-func (r AlibabaSscSupplyplatformServicestoreOfflineRequest) GetServiceStoreCodeList() []string {
+func (r AlibabaSscSupplyplatformServicestoreOfflineAPIRequest) GetServiceStoreCodeList() []string {
     return r._serviceStoreCodeList
 }
 // ServiceStoreIdList Setter
 // 网点id列表集合,最大支持1000
-func (r *AlibabaSscSupplyplatformServicestoreOfflineRequest) SetServiceStoreIdList(_serviceStoreIdList []int64) error {
+func (r *AlibabaSscSupplyplatformServicestoreOfflineAPIRequest) SetServiceStoreIdList(_serviceStoreIdList []int64) error {
     r._serviceStoreIdList = _serviceStoreIdList
     r.Set("service_store_id_list", _serviceStoreIdList)
     return nil
 }
 
 // ServiceStoreIdList Getter
-func (r AlibabaSscSupplyplatformServicestoreOfflineRequest) GetServiceStoreIdList() []int64 {
+func (r AlibabaSscSupplyplatformServicestoreOfflineAPIRequest) GetServiceStoreIdList() []int64 {
     return r._serviceStoreIdList
 }

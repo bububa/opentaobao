@@ -11,7 +11,7 @@ taobao.fenxiao.productcat.add
 
 新增产品线
 */
-func TaobaoFenxiaoProductcatAdd(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatAddRequest, session string) (*fenxiao.TaobaoFenxiaoProductcatAddAPIResponse, error) {
+func TaobaoFenxiaoProductcatAdd(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatAddAPIRequest, session string) (*fenxiao.TaobaoFenxiaoProductcatAddAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoProductcatAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

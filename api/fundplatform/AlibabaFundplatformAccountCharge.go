@@ -11,7 +11,7 @@ alibaba.fundplatform.account.charge
 
 资金平台余额账户充值【创建账户&返回付款URL】
 */
-func AlibabaFundplatformAccountCharge(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformAccountChargeRequest, session string) (*fundplatform.AlibabaFundplatformAccountChargeAPIResponse, error) {
+func AlibabaFundplatformAccountCharge(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformAccountChargeAPIRequest, session string) (*fundplatform.AlibabaFundplatformAccountChargeAPIResponse, error) {
     var resp fundplatform.AlibabaFundplatformAccountChargeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ tmall.servicecenter.anomalyrecourse.search
 
 天猫服务平台服务商一键求助单查询
 */
-func TmallServicecenterAnomalyrecourseSearch(clt *core.SDKClient, req *tmallsc.TmallServicecenterAnomalyrecourseSearchRequest, session string) (*tmallsc.TmallServicecenterAnomalyrecourseSearchAPIResponse, error) {
+func TmallServicecenterAnomalyrecourseSearch(clt *core.SDKClient, req *tmallsc.TmallServicecenterAnomalyrecourseSearchAPIRequest, session string) (*tmallsc.TmallServicecenterAnomalyrecourseSearchAPIResponse, error) {
     var resp tmallsc.TmallServicecenterAnomalyrecourseSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

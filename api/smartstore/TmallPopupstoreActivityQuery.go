@@ -11,7 +11,7 @@ tmall.popupstore.activity.query
 
 提供给ISV查询某一时间段内包含指定appKey的活动列表
 */
-func TmallPopupstoreActivityQuery(clt *core.SDKClient, req *smartstore.TmallPopupstoreActivityQueryRequest, session string) (*smartstore.TmallPopupstoreActivityQueryAPIResponse, error) {
+func TmallPopupstoreActivityQuery(clt *core.SDKClient, req *smartstore.TmallPopupstoreActivityQueryAPIRequest, session string) (*smartstore.TmallPopupstoreActivityQueryAPIResponse, error) {
     var resp smartstore.TmallPopupstoreActivityQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

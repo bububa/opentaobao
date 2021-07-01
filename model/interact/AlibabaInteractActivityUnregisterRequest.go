@@ -12,26 +12,26 @@ alibaba.interact.activity.unregister
 
 卖家在ISV互动应用中设置的活动主动关闭的服务
 */
-type AlibabaInteractActivityUnregisterRequest struct {
+type AlibabaInteractActivityUnregisterAPIRequest struct {
     model.Params
     // 互动活动ID
     _bizId   string
 }
 
-// 初始化AlibabaInteractActivityUnregisterRequest对象
-func NewAlibabaInteractActivityUnregisterRequest() *AlibabaInteractActivityUnregisterRequest{
-    return &AlibabaInteractActivityUnregisterRequest{
+// 初始化AlibabaInteractActivityUnregisterAPIRequest对象
+func NewAlibabaInteractActivityUnregisterRequest() *AlibabaInteractActivityUnregisterAPIRequest{
+    return &AlibabaInteractActivityUnregisterAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractActivityUnregisterRequest) GetApiMethodName() string {
+func (r AlibabaInteractActivityUnregisterAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.activity.unregister"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractActivityUnregisterRequest) GetApiParams() url.Values {
+func (r AlibabaInteractActivityUnregisterAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaInteractActivityUnregisterRequest) GetApiParams() url.Values {
 }
 // BizId Setter
 // 互动活动ID
-func (r *AlibabaInteractActivityUnregisterRequest) SetBizId(_bizId string) error {
+func (r *AlibabaInteractActivityUnregisterAPIRequest) SetBizId(_bizId string) error {
     r._bizId = _bizId
     r.Set("biz_id", _bizId)
     return nil
 }
 
 // BizId Getter
-func (r AlibabaInteractActivityUnregisterRequest) GetBizId() string {
+func (r AlibabaInteractActivityUnregisterAPIRequest) GetBizId() string {
     return r._bizId
 }

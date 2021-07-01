@@ -12,7 +12,7 @@ taobao.txp.item.itemlistget
 
 淘小铺商品的查询服务。
 */
-type TaobaoTxpItemItemlistgetRequest struct {
+type TaobaoTxpItemItemlistgetAPIRequest struct {
     model.Params
     // 第几页
     _beginPage   int64
@@ -20,20 +20,20 @@ type TaobaoTxpItemItemlistgetRequest struct {
     _pageSize   int64
 }
 
-// 初始化TaobaoTxpItemItemlistgetRequest对象
-func NewTaobaoTxpItemItemlistgetRequest() *TaobaoTxpItemItemlistgetRequest{
-    return &TaobaoTxpItemItemlistgetRequest{
+// 初始化TaobaoTxpItemItemlistgetAPIRequest对象
+func NewTaobaoTxpItemItemlistgetRequest() *TaobaoTxpItemItemlistgetAPIRequest{
+    return &TaobaoTxpItemItemlistgetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTxpItemItemlistgetRequest) GetApiMethodName() string {
+func (r TaobaoTxpItemItemlistgetAPIRequest) GetApiMethodName() string {
     return "taobao.txp.item.itemlistget"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTxpItemItemlistgetRequest) GetApiParams() url.Values {
+func (r TaobaoTxpItemItemlistgetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoTxpItemItemlistgetRequest) GetApiParams() url.Values {
 }
 // BeginPage Setter
 // 第几页
-func (r *TaobaoTxpItemItemlistgetRequest) SetBeginPage(_beginPage int64) error {
+func (r *TaobaoTxpItemItemlistgetAPIRequest) SetBeginPage(_beginPage int64) error {
     r._beginPage = _beginPage
     r.Set("begin_page", _beginPage)
     return nil
 }
 
 // BeginPage Getter
-func (r TaobaoTxpItemItemlistgetRequest) GetBeginPage() int64 {
+func (r TaobaoTxpItemItemlistgetAPIRequest) GetBeginPage() int64 {
     return r._beginPage
 }
 // PageSize Setter
 // 每页多少条
-func (r *TaobaoTxpItemItemlistgetRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoTxpItemItemlistgetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoTxpItemItemlistgetRequest) GetPageSize() int64 {
+func (r TaobaoTxpItemItemlistgetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

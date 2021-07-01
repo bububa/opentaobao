@@ -12,26 +12,26 @@ alibaba.damai.mev.open.pushitem
 
 开放接口 推送票品
 */
-type AlibabaDamaiMevOpenPushitemRequest struct {
+type AlibabaDamaiMevOpenPushitemAPIRequest struct {
     model.Params
     // 入参pushItemParam
     _pushItemParam   *PushTicketItemPushOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenPushitemRequest对象
-func NewAlibabaDamaiMevOpenPushitemRequest() *AlibabaDamaiMevOpenPushitemRequest{
-    return &AlibabaDamaiMevOpenPushitemRequest{
+// 初始化AlibabaDamaiMevOpenPushitemAPIRequest对象
+func NewAlibabaDamaiMevOpenPushitemRequest() *AlibabaDamaiMevOpenPushitemAPIRequest{
+    return &AlibabaDamaiMevOpenPushitemAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenPushitemRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenPushitemAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.pushitem"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenPushitemRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenPushitemAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushitemRequest) GetApiParams() url.Values {
 }
 // PushItemParam Setter
 // 入参pushItemParam
-func (r *AlibabaDamaiMevOpenPushitemRequest) SetPushItemParam(_pushItemParam *PushTicketItemPushOpenParam) error {
+func (r *AlibabaDamaiMevOpenPushitemAPIRequest) SetPushItemParam(_pushItemParam *PushTicketItemPushOpenParam) error {
     r._pushItemParam = _pushItemParam
     r.Set("push_item_param", _pushItemParam)
     return nil
 }
 
 // PushItemParam Getter
-func (r AlibabaDamaiMevOpenPushitemRequest) GetPushItemParam() *PushTicketItemPushOpenParam {
+func (r AlibabaDamaiMevOpenPushitemAPIRequest) GetPushItemParam() *PushTicketItemPushOpenParam {
     return r._pushItemParam
 }

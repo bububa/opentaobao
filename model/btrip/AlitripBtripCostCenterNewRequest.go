@@ -12,26 +12,26 @@ alitrip.btrip.cost.center.new
 
 新建外部成本中心
 */
-type AlitripBtripCostCenterNewRequest struct {
+type AlitripBtripCostCenterNewAPIRequest struct {
     model.Params
     // 请求对象
     _rq   *OpenCostCenterSaveRq
 }
 
-// 初始化AlitripBtripCostCenterNewRequest对象
-func NewAlitripBtripCostCenterNewRequest() *AlitripBtripCostCenterNewRequest{
-    return &AlitripBtripCostCenterNewRequest{
+// 初始化AlitripBtripCostCenterNewAPIRequest对象
+func NewAlitripBtripCostCenterNewRequest() *AlitripBtripCostCenterNewAPIRequest{
+    return &AlitripBtripCostCenterNewAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripCostCenterNewRequest) GetApiMethodName() string {
+func (r AlitripBtripCostCenterNewAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.cost.center.new"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripCostCenterNewRequest) GetApiParams() url.Values {
+func (r AlitripBtripCostCenterNewAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripCostCenterNewRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripCostCenterNewRequest) SetRq(_rq *OpenCostCenterSaveRq) error {
+func (r *AlitripBtripCostCenterNewAPIRequest) SetRq(_rq *OpenCostCenterSaveRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripCostCenterNewRequest) GetRq() *OpenCostCenterSaveRq {
+func (r AlitripBtripCostCenterNewAPIRequest) GetRq() *OpenCostCenterSaveRq {
     return r._rq
 }

@@ -12,7 +12,7 @@ alibaba.lst.marketing.querybyorderid
 
 根据订单查询营销信息
 */
-type AlibabaLstMarketingQuerybyorderidRequest struct {
+type AlibabaLstMarketingQuerybyorderidAPIRequest struct {
     model.Params
     // 主订单
     _mainOrderId   int64
@@ -20,20 +20,20 @@ type AlibabaLstMarketingQuerybyorderidRequest struct {
     _subOrderId   int64
 }
 
-// 初始化AlibabaLstMarketingQuerybyorderidRequest对象
-func NewAlibabaLstMarketingQuerybyorderidRequest() *AlibabaLstMarketingQuerybyorderidRequest{
-    return &AlibabaLstMarketingQuerybyorderidRequest{
+// 初始化AlibabaLstMarketingQuerybyorderidAPIRequest对象
+func NewAlibabaLstMarketingQuerybyorderidRequest() *AlibabaLstMarketingQuerybyorderidAPIRequest{
+    return &AlibabaLstMarketingQuerybyorderidAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstMarketingQuerybyorderidRequest) GetApiMethodName() string {
+func (r AlibabaLstMarketingQuerybyorderidAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.marketing.querybyorderid"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstMarketingQuerybyorderidRequest) GetApiParams() url.Values {
+func (r AlibabaLstMarketingQuerybyorderidAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaLstMarketingQuerybyorderidRequest) GetApiParams() url.Values {
 }
 // MainOrderId Setter
 // 主订单
-func (r *AlibabaLstMarketingQuerybyorderidRequest) SetMainOrderId(_mainOrderId int64) error {
+func (r *AlibabaLstMarketingQuerybyorderidAPIRequest) SetMainOrderId(_mainOrderId int64) error {
     r._mainOrderId = _mainOrderId
     r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
-func (r AlibabaLstMarketingQuerybyorderidRequest) GetMainOrderId() int64 {
+func (r AlibabaLstMarketingQuerybyorderidAPIRequest) GetMainOrderId() int64 {
     return r._mainOrderId
 }
 // SubOrderId Setter
 // 子订单
-func (r *AlibabaLstMarketingQuerybyorderidRequest) SetSubOrderId(_subOrderId int64) error {
+func (r *AlibabaLstMarketingQuerybyorderidAPIRequest) SetSubOrderId(_subOrderId int64) error {
     r._subOrderId = _subOrderId
     r.Set("sub_order_id", _subOrderId)
     return nil
 }
 
 // SubOrderId Getter
-func (r AlibabaLstMarketingQuerybyorderidRequest) GetSubOrderId() int64 {
+func (r AlibabaLstMarketingQuerybyorderidAPIRequest) GetSubOrderId() int64 {
     return r._subOrderId
 }

@@ -12,26 +12,26 @@ alibaba.alihealth.outflow.operationinfo.sync
 
 阿里健康-处方外流-对外提供同步操作信息功能
 */
-type AlibabaAlihealthOutflowOperationinfoSyncRequest struct {
+type AlibabaAlihealthOutflowOperationinfoSyncAPIRequest struct {
     model.Params
     // 入参
     _syncOperationInfoRequest   *SyncOperationInfoRequest
 }
 
-// 初始化AlibabaAlihealthOutflowOperationinfoSyncRequest对象
-func NewAlibabaAlihealthOutflowOperationinfoSyncRequest() *AlibabaAlihealthOutflowOperationinfoSyncRequest{
-    return &AlibabaAlihealthOutflowOperationinfoSyncRequest{
+// 初始化AlibabaAlihealthOutflowOperationinfoSyncAPIRequest对象
+func NewAlibabaAlihealthOutflowOperationinfoSyncRequest() *AlibabaAlihealthOutflowOperationinfoSyncAPIRequest{
+    return &AlibabaAlihealthOutflowOperationinfoSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowOperationinfoSyncRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.operationinfo.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowOperationinfoSyncRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowOperationinfoSyncRequest) GetApiParams() url.Valu
 }
 // SyncOperationInfoRequest Setter
 // 入参
-func (r *AlibabaAlihealthOutflowOperationinfoSyncRequest) SetSyncOperationInfoRequest(_syncOperationInfoRequest *SyncOperationInfoRequest) error {
+func (r *AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) SetSyncOperationInfoRequest(_syncOperationInfoRequest *SyncOperationInfoRequest) error {
     r._syncOperationInfoRequest = _syncOperationInfoRequest
     r.Set("sync_operation_info_request", _syncOperationInfoRequest)
     return nil
 }
 
 // SyncOperationInfoRequest Getter
-func (r AlibabaAlihealthOutflowOperationinfoSyncRequest) GetSyncOperationInfoRequest() *SyncOperationInfoRequest {
+func (r AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) GetSyncOperationInfoRequest() *SyncOperationInfoRequest {
     return r._syncOperationInfoRequest
 }

@@ -12,26 +12,26 @@ alibaba.wdk.bm.stock.publish
 
 用于操作sku的库存
 */
-type AlibabaWdkBmStockPublishRequest struct {
+type AlibabaWdkBmStockPublishAPIRequest struct {
     model.Params
     // 批量入参
     _skuStockPublishParamList   []SkuStockPublishParamDO
 }
 
-// 初始化AlibabaWdkBmStockPublishRequest对象
-func NewAlibabaWdkBmStockPublishRequest() *AlibabaWdkBmStockPublishRequest{
-    return &AlibabaWdkBmStockPublishRequest{
+// 初始化AlibabaWdkBmStockPublishAPIRequest对象
+func NewAlibabaWdkBmStockPublishRequest() *AlibabaWdkBmStockPublishAPIRequest{
+    return &AlibabaWdkBmStockPublishAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkBmStockPublishRequest) GetApiMethodName() string {
+func (r AlibabaWdkBmStockPublishAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.bm.stock.publish"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkBmStockPublishRequest) GetApiParams() url.Values {
+func (r AlibabaWdkBmStockPublishAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkBmStockPublishRequest) GetApiParams() url.Values {
 }
 // SkuStockPublishParamList Setter
 // 批量入参
-func (r *AlibabaWdkBmStockPublishRequest) SetSkuStockPublishParamList(_skuStockPublishParamList []SkuStockPublishParamDO) error {
+func (r *AlibabaWdkBmStockPublishAPIRequest) SetSkuStockPublishParamList(_skuStockPublishParamList []SkuStockPublishParamDO) error {
     r._skuStockPublishParamList = _skuStockPublishParamList
     r.Set("sku_stock_publish_param_list", _skuStockPublishParamList)
     return nil
 }
 
 // SkuStockPublishParamList Getter
-func (r AlibabaWdkBmStockPublishRequest) GetSkuStockPublishParamList() []SkuStockPublishParamDO {
+func (r AlibabaWdkBmStockPublishAPIRequest) GetSkuStockPublishParamList() []SkuStockPublishParamDO {
     return r._skuStockPublishParamList
 }

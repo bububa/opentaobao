@@ -11,7 +11,7 @@ alibaba.mj.member.bindmember
 
 用于绑定喵街数字化会员
 */
-func AlibabaMjMemberBindmember(clt *core.SDKClient, req *mos.AlibabaMjMemberBindmemberRequest, session string) (*mos.AlibabaMjMemberBindmemberAPIResponse, error) {
+func AlibabaMjMemberBindmember(clt *core.SDKClient, req *mos.AlibabaMjMemberBindmemberAPIRequest, session string) (*mos.AlibabaMjMemberBindmemberAPIResponse, error) {
     var resp mos.AlibabaMjMemberBindmemberAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

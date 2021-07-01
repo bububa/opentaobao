@@ -11,7 +11,7 @@ taobao.feedflow.account.rptdailylist
 
 获取广告主分日数据
 */
-func TaobaoFeedflowAccountRptdailylist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowAccountRptdailylistRequest, session string) (*feedflow.TaobaoFeedflowAccountRptdailylistAPIResponse, error) {
+func TaobaoFeedflowAccountRptdailylist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowAccountRptdailylistAPIRequest, session string) (*feedflow.TaobaoFeedflowAccountRptdailylistAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowAccountRptdailylistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

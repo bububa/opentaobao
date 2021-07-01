@@ -11,7 +11,7 @@ tmall.car.lease.queryloanplans
 
 天猫开新车租后查询还款计划
 */
-func TmallCarLeaseQueryloanplans(clt *core.SDKClient, req *tmallcar.TmallCarLeaseQueryloanplansRequest, session string) (*tmallcar.TmallCarLeaseQueryloanplansAPIResponse, error) {
+func TmallCarLeaseQueryloanplans(clt *core.SDKClient, req *tmallcar.TmallCarLeaseQueryloanplansAPIRequest, session string) (*tmallcar.TmallCarLeaseQueryloanplansAPIResponse, error) {
     var resp tmallcar.TmallCarLeaseQueryloanplansAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

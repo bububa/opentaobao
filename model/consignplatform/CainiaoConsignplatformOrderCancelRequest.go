@@ -12,26 +12,26 @@ cainiao.consignplatform.order.cancel
 
 菜鸟发货工作台，商家或者isv通过api取消包裹、回收单号，如果是裹裹运力会取消小件员上门。最后删除订单信息。
 */
-type CainiaoConsignplatformOrderCancelRequest struct {
+type CainiaoConsignplatformOrderCancelAPIRequest struct {
     model.Params
     // 取消参数
     _cancelRequest   *OrderCancelRequest
 }
 
-// 初始化CainiaoConsignplatformOrderCancelRequest对象
-func NewCainiaoConsignplatformOrderCancelRequest() *CainiaoConsignplatformOrderCancelRequest{
-    return &CainiaoConsignplatformOrderCancelRequest{
+// 初始化CainiaoConsignplatformOrderCancelAPIRequest对象
+func NewCainiaoConsignplatformOrderCancelRequest() *CainiaoConsignplatformOrderCancelAPIRequest{
+    return &CainiaoConsignplatformOrderCancelAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoConsignplatformOrderCancelRequest) GetApiMethodName() string {
+func (r CainiaoConsignplatformOrderCancelAPIRequest) GetApiMethodName() string {
     return "cainiao.consignplatform.order.cancel"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoConsignplatformOrderCancelRequest) GetApiParams() url.Values {
+func (r CainiaoConsignplatformOrderCancelAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoConsignplatformOrderCancelRequest) GetApiParams() url.Values {
 }
 // CancelRequest Setter
 // 取消参数
-func (r *CainiaoConsignplatformOrderCancelRequest) SetCancelRequest(_cancelRequest *OrderCancelRequest) error {
+func (r *CainiaoConsignplatformOrderCancelAPIRequest) SetCancelRequest(_cancelRequest *OrderCancelRequest) error {
     r._cancelRequest = _cancelRequest
     r.Set("cancel_request", _cancelRequest)
     return nil
 }
 
 // CancelRequest Getter
-func (r CainiaoConsignplatformOrderCancelRequest) GetCancelRequest() *OrderCancelRequest {
+func (r CainiaoConsignplatformOrderCancelAPIRequest) GetCancelRequest() *OrderCancelRequest {
     return r._cancelRequest
 }

@@ -1,7 +1,7 @@
 package btrip
 
-// OpenAccountRs 
-type OpenAccountRs struct {
+// OpenAccountRS 
+type OpenAccountRS struct {
     // 账期结束时间
     EndDate   string `json:"end_date,omitempty" xml:"end_date,omitempty"`
     // 账期开始时间

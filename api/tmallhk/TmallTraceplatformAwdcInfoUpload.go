@@ -11,7 +11,7 @@ tmall.traceplatform.awdc.info.upload
 
 天猫溯源-AWDC-上传溯源信息
 */
-func TmallTraceplatformAwdcInfoUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformAwdcInfoUploadRequest, session string) (*tmallhk.TmallTraceplatformAwdcInfoUploadAPIResponse, error) {
+func TmallTraceplatformAwdcInfoUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformAwdcInfoUploadAPIRequest, session string) (*tmallhk.TmallTraceplatformAwdcInfoUploadAPIResponse, error) {
     var resp tmallhk.TmallTraceplatformAwdcInfoUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

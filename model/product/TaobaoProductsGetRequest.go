@@ -13,7 +13,7 @@ taobao.products.get
 根据淘宝会员帐号搜索所有产品信息，推荐使用taobao.products.search
 注意：支持分页，每页最多返回100条,默认值为40,页码从1开始，默认为第一页
 */
-type TaobaoProductsGetRequest struct {
+type TaobaoProductsGetAPIRequest struct {
     model.Params
     // 需返回的字段列表.可选值:Product数据结构中的所有字段;多个字段之间用","分隔
     _fields   []string
@@ -25,20 +25,20 @@ type TaobaoProductsGetRequest struct {
     _pageSize   int64
 }
 
-// 初始化TaobaoProductsGetRequest对象
-func NewTaobaoProductsGetRequest() *TaobaoProductsGetRequest{
-    return &TaobaoProductsGetRequest{
+// 初始化TaobaoProductsGetAPIRequest对象
+func NewTaobaoProductsGetRequest() *TaobaoProductsGetAPIRequest{
+    return &TaobaoProductsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoProductsGetRequest) GetApiMethodName() string {
+func (r TaobaoProductsGetAPIRequest) GetApiMethodName() string {
     return "taobao.products.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoProductsGetRequest) GetApiParams() url.Values {
+func (r TaobaoProductsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -47,49 +47,49 @@ func (r TaobaoProductsGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需返回的字段列表.可选值:Product数据结构中的所有字段;多个字段之间用","分隔
-func (r *TaobaoProductsGetRequest) SetFields(_fields []string) error {
+func (r *TaobaoProductsGetAPIRequest) SetFields(_fields []string) error {
     r._fields = _fields
     r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
-func (r TaobaoProductsGetRequest) GetFields() []string {
+func (r TaobaoProductsGetAPIRequest) GetFields() []string {
     return r._fields
 }
 // Nick Setter
 // 用户昵称
-func (r *TaobaoProductsGetRequest) SetNick(_nick string) error {
+func (r *TaobaoProductsGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoProductsGetRequest) GetNick() string {
+func (r TaobaoProductsGetAPIRequest) GetNick() string {
     return r._nick
 }
 // PageNo Setter
 // 页码.传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始.
-func (r *TaobaoProductsGetRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoProductsGetAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r TaobaoProductsGetRequest) GetPageNo() int64 {
+func (r TaobaoProductsGetAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }
 // PageSize Setter
 // 每页条数.每页返回最多返回100条,默认值为40
-func (r *TaobaoProductsGetRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoProductsGetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoProductsGetRequest) GetPageSize() int64 {
+func (r TaobaoProductsGetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

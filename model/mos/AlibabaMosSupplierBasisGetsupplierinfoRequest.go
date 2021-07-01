@@ -12,26 +12,26 @@ alibaba.mos.supplier.basis.getsupplierinfo
 
 基于供应商id获取供应商基础脱敏信息
 */
-type AlibabaMosSupplierBasisGetsupplierinfoRequest struct {
+type AlibabaMosSupplierBasisGetsupplierinfoAPIRequest struct {
     model.Params
     // 供应商id
     _supplierId   string
 }
 
-// 初始化AlibabaMosSupplierBasisGetsupplierinfoRequest对象
-func NewAlibabaMosSupplierBasisGetsupplierinfoRequest() *AlibabaMosSupplierBasisGetsupplierinfoRequest{
-    return &AlibabaMosSupplierBasisGetsupplierinfoRequest{
+// 初始化AlibabaMosSupplierBasisGetsupplierinfoAPIRequest对象
+func NewAlibabaMosSupplierBasisGetsupplierinfoRequest() *AlibabaMosSupplierBasisGetsupplierinfoAPIRequest{
+    return &AlibabaMosSupplierBasisGetsupplierinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosSupplierBasisGetsupplierinfoRequest) GetApiMethodName() string {
+func (r AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.supplier.basis.getsupplierinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosSupplierBasisGetsupplierinfoRequest) GetApiParams() url.Values {
+func (r AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMosSupplierBasisGetsupplierinfoRequest) GetApiParams() url.Values
 }
 // SupplierId Setter
 // 供应商id
-func (r *AlibabaMosSupplierBasisGetsupplierinfoRequest) SetSupplierId(_supplierId string) error {
+func (r *AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) SetSupplierId(_supplierId string) error {
     r._supplierId = _supplierId
     r.Set("supplier_id", _supplierId)
     return nil
 }
 
 // SupplierId Getter
-func (r AlibabaMosSupplierBasisGetsupplierinfoRequest) GetSupplierId() string {
+func (r AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) GetSupplierId() string {
     return r._supplierId
 }

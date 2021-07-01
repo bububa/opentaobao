@@ -12,7 +12,7 @@ taobao.alitrip.travel.normalvisa.updatepersonstauts
 
 更新签证办理进度
 */
-type TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest struct {
+type TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest struct {
     model.Params
     // 更新信息
     _normalVisaUpdateUnitList   []NormalVisaUpdateUnit
@@ -20,20 +20,20 @@ type TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest struct {
     _bizOrderId   int64
 }
 
-// 初始化TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest对象
-func NewTaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest() *TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest{
-    return &TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest{
+// 初始化TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest对象
+func NewTaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest() *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest{
+    return &TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest) GetApiMethodName() string {
+func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.travel.normalvisa.updatepersonstauts"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest) GetApiParams() u
 }
 // NormalVisaUpdateUnitList Setter
 // 更新信息
-func (r *TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest) SetNormalVisaUpdateUnitList(_normalVisaUpdateUnitList []NormalVisaUpdateUnit) error {
+func (r *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) SetNormalVisaUpdateUnitList(_normalVisaUpdateUnitList []NormalVisaUpdateUnit) error {
     r._normalVisaUpdateUnitList = _normalVisaUpdateUnitList
     r.Set("normal_visa_update_unit_list", _normalVisaUpdateUnitList)
     return nil
 }
 
 // NormalVisaUpdateUnitList Getter
-func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest) GetNormalVisaUpdateUnitList() []NormalVisaUpdateUnit {
+func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetNormalVisaUpdateUnitList() []NormalVisaUpdateUnit {
     return r._normalVisaUpdateUnitList
 }
 // BizOrderId Setter
 // 订单号
-func (r *TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest) SetBizOrderId(_bizOrderId int64) error {
+func (r *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) SetBizOrderId(_bizOrderId int64) error {
     r._bizOrderId = _bizOrderId
     r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
-func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest) GetBizOrderId() int64 {
+func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetBizOrderId() int64 {
     return r._bizOrderId
 }

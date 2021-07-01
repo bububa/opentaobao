@@ -12,7 +12,7 @@ taobao.vmarket.eticket.qrcode.upload
 
 电子凭证的码商可以通过这个接口，上传他们发送的二维码图片
 */
-type TaobaoVmarketEticketQrcodeUploadRequest struct {
+type TaobaoVmarketEticketQrcodeUploadAPIRequest struct {
     model.Params
     // 码商ID
     _codeMerchantId   int64
@@ -20,20 +20,20 @@ type TaobaoVmarketEticketQrcodeUploadRequest struct {
     _imgBytes   *model.File
 }
 
-// 初始化TaobaoVmarketEticketQrcodeUploadRequest对象
-func NewTaobaoVmarketEticketQrcodeUploadRequest() *TaobaoVmarketEticketQrcodeUploadRequest{
-    return &TaobaoVmarketEticketQrcodeUploadRequest{
+// 初始化TaobaoVmarketEticketQrcodeUploadAPIRequest对象
+func NewTaobaoVmarketEticketQrcodeUploadRequest() *TaobaoVmarketEticketQrcodeUploadAPIRequest{
+    return &TaobaoVmarketEticketQrcodeUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoVmarketEticketQrcodeUploadRequest) GetApiMethodName() string {
+func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetApiMethodName() string {
     return "taobao.vmarket.eticket.qrcode.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoVmarketEticketQrcodeUploadRequest) GetApiParams() url.Values {
+func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoVmarketEticketQrcodeUploadRequest) GetApiParams() url.Values {
 }
 // CodeMerchantId Setter
 // 码商ID
-func (r *TaobaoVmarketEticketQrcodeUploadRequest) SetCodeMerchantId(_codeMerchantId int64) error {
+func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) SetCodeMerchantId(_codeMerchantId int64) error {
     r._codeMerchantId = _codeMerchantId
     r.Set("code_merchant_id", _codeMerchantId)
     return nil
 }
 
 // CodeMerchantId Getter
-func (r TaobaoVmarketEticketQrcodeUploadRequest) GetCodeMerchantId() int64 {
+func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetCodeMerchantId() int64 {
     return r._codeMerchantId
 }
 // ImgBytes Setter
 // 上传的图片byte[]  小于300K，图片尺寸400*400以内
-func (r *TaobaoVmarketEticketQrcodeUploadRequest) SetImgBytes(_imgBytes *model.File) error {
+func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) SetImgBytes(_imgBytes *model.File) error {
     r._imgBytes = _imgBytes
     r.Set("img_bytes", _imgBytes)
     return nil
 }
 
 // ImgBytes Getter
-func (r TaobaoVmarketEticketQrcodeUploadRequest) GetImgBytes() *model.File {
+func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetImgBytes() *model.File {
     return r._imgBytes
 }

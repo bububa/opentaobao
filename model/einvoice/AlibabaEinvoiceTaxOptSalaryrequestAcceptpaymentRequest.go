@@ -12,26 +12,26 @@ alibaba.einvoice.tax.opt.salaryrequest.acceptpayment
 
 发薪受理接口
 */
-type AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest struct {
+type AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest struct {
     model.Params
     // 请求入参
     _paramTaxOptimizationSalaryPaymentAccessReqDTO   *TaxOptimizationSalaryPaymentAccessReqDTO
 }
 
-// 初始化AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest对象
-func NewAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest() *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest{
-    return &AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest{
+// 初始化AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest对象
+func NewAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest() *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest{
+    return &AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) GetApiMethodName() string {
     return "alibaba.einvoice.tax.opt.salaryrequest.acceptpayment"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest) GetApiParams() url.Values {
+func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest) GetApiParams() u
 }
 // ParamTaxOptimizationSalaryPaymentAccessReqDTO Setter
 // 请求入参
-func (r *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest) SetParamTaxOptimizationSalaryPaymentAccessReqDTO(_paramTaxOptimizationSalaryPaymentAccessReqDTO *TaxOptimizationSalaryPaymentAccessReqDTO) error {
+func (r *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) SetParamTaxOptimizationSalaryPaymentAccessReqDTO(_paramTaxOptimizationSalaryPaymentAccessReqDTO *TaxOptimizationSalaryPaymentAccessReqDTO) error {
     r._paramTaxOptimizationSalaryPaymentAccessReqDTO = _paramTaxOptimizationSalaryPaymentAccessReqDTO
     r.Set("param_tax_optimization_salary_payment_access_req_d_t_o", _paramTaxOptimizationSalaryPaymentAccessReqDTO)
     return nil
 }
 
 // ParamTaxOptimizationSalaryPaymentAccessReqDTO Getter
-func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest) GetParamTaxOptimizationSalaryPaymentAccessReqDTO() *TaxOptimizationSalaryPaymentAccessReqDTO {
+func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) GetParamTaxOptimizationSalaryPaymentAccessReqDTO() *TaxOptimizationSalaryPaymentAccessReqDTO {
     return r._paramTaxOptimizationSalaryPaymentAccessReqDTO
 }

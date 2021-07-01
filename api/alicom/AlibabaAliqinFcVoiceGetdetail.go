@@ -11,7 +11,7 @@ alibaba.aliqin.fc.voice.getdetail
 
 通过呼叫id获取呼叫相关的数据
 */
-func AlibabaAliqinFcVoiceGetdetail(clt *core.SDKClient, req *alicom.AlibabaAliqinFcVoiceGetdetailRequest, session string) (*alicom.AlibabaAliqinFcVoiceGetdetailAPIResponse, error) {
+func AlibabaAliqinFcVoiceGetdetail(clt *core.SDKClient, req *alicom.AlibabaAliqinFcVoiceGetdetailAPIRequest, session string) (*alicom.AlibabaAliqinFcVoiceGetdetailAPIResponse, error) {
     var resp alicom.AlibabaAliqinFcVoiceGetdetailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

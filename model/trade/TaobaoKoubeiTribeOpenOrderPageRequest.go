@@ -12,7 +12,7 @@ taobao.koubei.tribe.open.order.page
 
 查询口碑商圈用户的订单列表信息
 */
-type TaobaoKoubeiTribeOpenOrderPageRequest struct {
+type TaobaoKoubeiTribeOpenOrderPageAPIRequest struct {
     model.Params
     // 订单状态；ALL（全部），WAIT_PAY（代付款），WAIT_CONSUME（代消费）
     _orderStatus   string
@@ -26,20 +26,20 @@ type TaobaoKoubeiTribeOpenOrderPageRequest struct {
     _openId   string
 }
 
-// 初始化TaobaoKoubeiTribeOpenOrderPageRequest对象
-func NewTaobaoKoubeiTribeOpenOrderPageRequest() *TaobaoKoubeiTribeOpenOrderPageRequest{
-    return &TaobaoKoubeiTribeOpenOrderPageRequest{
+// 初始化TaobaoKoubeiTribeOpenOrderPageAPIRequest对象
+func NewTaobaoKoubeiTribeOpenOrderPageRequest() *TaobaoKoubeiTribeOpenOrderPageAPIRequest{
+    return &TaobaoKoubeiTribeOpenOrderPageAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoKoubeiTribeOpenOrderPageRequest) GetApiMethodName() string {
+func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetApiMethodName() string {
     return "taobao.koubei.tribe.open.order.page"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoKoubeiTribeOpenOrderPageRequest) GetApiParams() url.Values {
+func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TaobaoKoubeiTribeOpenOrderPageRequest) GetApiParams() url.Values {
 }
 // OrderStatus Setter
 // 订单状态；ALL（全部），WAIT_PAY（代付款），WAIT_CONSUME（代消费）
-func (r *TaobaoKoubeiTribeOpenOrderPageRequest) SetOrderStatus(_orderStatus string) error {
+func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetOrderStatus(_orderStatus string) error {
     r._orderStatus = _orderStatus
     r.Set("order_status", _orderStatus)
     return nil
 }
 
 // OrderStatus Getter
-func (r TaobaoKoubeiTribeOpenOrderPageRequest) GetOrderStatus() string {
+func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetOrderStatus() string {
     return r._orderStatus
 }
 // PageSize Setter
 // 每页大小
-func (r *TaobaoKoubeiTribeOpenOrderPageRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoKoubeiTribeOpenOrderPageRequest) GetPageSize() int64 {
+func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // PageNo Setter
 // 起始页
-func (r *TaobaoKoubeiTribeOpenOrderPageRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r TaobaoKoubeiTribeOpenOrderPageRequest) GetPageNo() int64 {
+func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }
 // DataSetId Setter
 // 数据集Id
-func (r *TaobaoKoubeiTribeOpenOrderPageRequest) SetDataSetId(_dataSetId string) error {
+func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetDataSetId(_dataSetId string) error {
     r._dataSetId = _dataSetId
     r.Set("data_set_id", _dataSetId)
     return nil
 }
 
 // DataSetId Getter
-func (r TaobaoKoubeiTribeOpenOrderPageRequest) GetDataSetId() string {
+func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetDataSetId() string {
     return r._dataSetId
 }
 // OpenId Setter
 // 用户openId
-func (r *TaobaoKoubeiTribeOpenOrderPageRequest) SetOpenId(_openId string) error {
+func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetOpenId(_openId string) error {
     r._openId = _openId
     r.Set("open_id", _openId)
     return nil
 }
 
 // OpenId Getter
-func (r TaobaoKoubeiTribeOpenOrderPageRequest) GetOpenId() string {
+func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetOpenId() string {
     return r._openId
 }

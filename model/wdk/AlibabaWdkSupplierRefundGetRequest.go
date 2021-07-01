@@ -12,26 +12,26 @@ alibaba.wdk.supplier.refund.get
 
 五道口按订单号批量查询供应商退款单
 */
-type AlibabaWdkSupplierRefundGetRequest struct {
+type AlibabaWdkSupplierRefundGetAPIRequest struct {
     model.Params
     // 查询入参
     _supplierRefundQueryListRequest   *SupplierRefundQueryListRequest
 }
 
-// 初始化AlibabaWdkSupplierRefundGetRequest对象
-func NewAlibabaWdkSupplierRefundGetRequest() *AlibabaWdkSupplierRefundGetRequest{
-    return &AlibabaWdkSupplierRefundGetRequest{
+// 初始化AlibabaWdkSupplierRefundGetAPIRequest对象
+func NewAlibabaWdkSupplierRefundGetRequest() *AlibabaWdkSupplierRefundGetAPIRequest{
+    return &AlibabaWdkSupplierRefundGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSupplierRefundGetRequest) GetApiMethodName() string {
+func (r AlibabaWdkSupplierRefundGetAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.supplier.refund.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSupplierRefundGetRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSupplierRefundGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSupplierRefundGetRequest) GetApiParams() url.Values {
 }
 // SupplierRefundQueryListRequest Setter
 // 查询入参
-func (r *AlibabaWdkSupplierRefundGetRequest) SetSupplierRefundQueryListRequest(_supplierRefundQueryListRequest *SupplierRefundQueryListRequest) error {
+func (r *AlibabaWdkSupplierRefundGetAPIRequest) SetSupplierRefundQueryListRequest(_supplierRefundQueryListRequest *SupplierRefundQueryListRequest) error {
     r._supplierRefundQueryListRequest = _supplierRefundQueryListRequest
     r.Set("supplier_refund_query_list_request", _supplierRefundQueryListRequest)
     return nil
 }
 
 // SupplierRefundQueryListRequest Getter
-func (r AlibabaWdkSupplierRefundGetRequest) GetSupplierRefundQueryListRequest() *SupplierRefundQueryListRequest {
+func (r AlibabaWdkSupplierRefundGetAPIRequest) GetSupplierRefundQueryListRequest() *SupplierRefundQueryListRequest {
     return r._supplierRefundQueryListRequest
 }

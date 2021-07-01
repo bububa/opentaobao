@@ -11,7 +11,7 @@ cainiao.global.handover.content.query
 
 查询大包详情
 */
-func CainiaoGlobalHandoverContentQuery(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverContentQueryRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverContentQueryAPIResponse, error) {
+func CainiaoGlobalHandoverContentQuery(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverContentQueryAPIRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverContentQueryAPIResponse, error) {
     var resp cainiaohandover.CainiaoGlobalHandoverContentQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

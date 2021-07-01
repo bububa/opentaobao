@@ -11,7 +11,7 @@ alibaba.wdk.item.category.query
 
 类目查询接口
 */
-func AlibabaWdkItemCategoryQuery(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemCategoryQueryRequest, session string) (*wdkitem.AlibabaWdkItemCategoryQueryAPIResponse, error) {
+func AlibabaWdkItemCategoryQuery(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemCategoryQueryAPIRequest, session string) (*wdkitem.AlibabaWdkItemCategoryQueryAPIResponse, error) {
     var resp wdkitem.AlibabaWdkItemCategoryQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

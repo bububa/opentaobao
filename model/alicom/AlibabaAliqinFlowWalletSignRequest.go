@@ -12,26 +12,26 @@ alibaba.aliqin.flow.wallet.sign
 
 流量平台用户签约情况查询
 */
-type AlibabaAliqinFlowWalletSignRequest struct {
+type AlibabaAliqinFlowWalletSignAPIRequest struct {
     model.Params
     // 用户昵称
     _userNick   string
 }
 
-// 初始化AlibabaAliqinFlowWalletSignRequest对象
-func NewAlibabaAliqinFlowWalletSignRequest() *AlibabaAliqinFlowWalletSignRequest{
-    return &AlibabaAliqinFlowWalletSignRequest{
+// 初始化AlibabaAliqinFlowWalletSignAPIRequest对象
+func NewAlibabaAliqinFlowWalletSignRequest() *AlibabaAliqinFlowWalletSignAPIRequest{
+    return &AlibabaAliqinFlowWalletSignAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAliqinFlowWalletSignRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFlowWalletSignAPIRequest) GetApiMethodName() string {
     return "alibaba.aliqin.flow.wallet.sign"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinFlowWalletSignRequest) GetApiParams() url.Values {
+func (r AlibabaAliqinFlowWalletSignAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAliqinFlowWalletSignRequest) GetApiParams() url.Values {
 }
 // UserNick Setter
 // 用户昵称
-func (r *AlibabaAliqinFlowWalletSignRequest) SetUserNick(_userNick string) error {
+func (r *AlibabaAliqinFlowWalletSignAPIRequest) SetUserNick(_userNick string) error {
     r._userNick = _userNick
     r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
-func (r AlibabaAliqinFlowWalletSignRequest) GetUserNick() string {
+func (r AlibabaAliqinFlowWalletSignAPIRequest) GetUserNick() string {
     return r._userNick
 }

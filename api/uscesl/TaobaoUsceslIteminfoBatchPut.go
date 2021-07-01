@@ -11,7 +11,7 @@ taobao.uscesl.iteminfo.batch.put
 
 电子架签批量写入商品数据，用于电子价签展示
 */
-func TaobaoUsceslIteminfoBatchPut(clt *core.SDKClient, req *uscesl.TaobaoUsceslIteminfoBatchPutRequest, session string) (*uscesl.TaobaoUsceslIteminfoBatchPutAPIResponse, error) {
+func TaobaoUsceslIteminfoBatchPut(clt *core.SDKClient, req *uscesl.TaobaoUsceslIteminfoBatchPutAPIRequest, session string) (*uscesl.TaobaoUsceslIteminfoBatchPutAPIResponse, error) {
     var resp uscesl.TaobaoUsceslIteminfoBatchPutAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

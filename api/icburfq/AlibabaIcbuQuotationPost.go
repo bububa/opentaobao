@@ -11,7 +11,7 @@ alibaba.icbu.quotation.post
 
 供应商对RFQ进行报价
 */
-func AlibabaIcbuQuotationPost(clt *core.SDKClient, req *icburfq.AlibabaIcbuQuotationPostRequest, session string) (*icburfq.AlibabaIcbuQuotationPostAPIResponse, error) {
+func AlibabaIcbuQuotationPost(clt *core.SDKClient, req *icburfq.AlibabaIcbuQuotationPostAPIRequest, session string) (*icburfq.AlibabaIcbuQuotationPostAPIResponse, error) {
     var resp icburfq.AlibabaIcbuQuotationPostAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

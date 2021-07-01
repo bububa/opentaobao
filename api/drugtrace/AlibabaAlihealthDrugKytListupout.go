@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.listupout
 
 查询货主/本企业上游企业出库单据信息
 */
-func AlibabaAlihealthDrugKytListupout(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytListupoutRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytListupoutAPIResponse, error) {
+func AlibabaAlihealthDrugKytListupout(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytListupoutAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytListupoutAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytListupoutAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

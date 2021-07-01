@@ -12,26 +12,26 @@ alibaba.lsy.crm.activity.page.update
 
 ISV活动页面创建修改
 */
-type AlibabaLsyCrmActivityPageUpdateRequest struct {
+type AlibabaLsyCrmActivityPageUpdateAPIRequest struct {
     model.Params
     // 入参
     _nrtCrmActivityPageCreateReq   *NrtCrmActivityPageCreateReq
 }
 
-// 初始化AlibabaLsyCrmActivityPageUpdateRequest对象
-func NewAlibabaLsyCrmActivityPageUpdateRequest() *AlibabaLsyCrmActivityPageUpdateRequest{
-    return &AlibabaLsyCrmActivityPageUpdateRequest{
+// 初始化AlibabaLsyCrmActivityPageUpdateAPIRequest对象
+func NewAlibabaLsyCrmActivityPageUpdateRequest() *AlibabaLsyCrmActivityPageUpdateAPIRequest{
+    return &AlibabaLsyCrmActivityPageUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLsyCrmActivityPageUpdateRequest) GetApiMethodName() string {
+func (r AlibabaLsyCrmActivityPageUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.lsy.crm.activity.page.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLsyCrmActivityPageUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaLsyCrmActivityPageUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmActivityPageUpdateRequest) GetApiParams() url.Values {
 }
 // NrtCrmActivityPageCreateReq Setter
 // 入参
-func (r *AlibabaLsyCrmActivityPageUpdateRequest) SetNrtCrmActivityPageCreateReq(_nrtCrmActivityPageCreateReq *NrtCrmActivityPageCreateReq) error {
+func (r *AlibabaLsyCrmActivityPageUpdateAPIRequest) SetNrtCrmActivityPageCreateReq(_nrtCrmActivityPageCreateReq *NrtCrmActivityPageCreateReq) error {
     r._nrtCrmActivityPageCreateReq = _nrtCrmActivityPageCreateReq
     r.Set("nrt_crm_activity_page_create_req", _nrtCrmActivityPageCreateReq)
     return nil
 }
 
 // NrtCrmActivityPageCreateReq Getter
-func (r AlibabaLsyCrmActivityPageUpdateRequest) GetNrtCrmActivityPageCreateReq() *NrtCrmActivityPageCreateReq {
+func (r AlibabaLsyCrmActivityPageUpdateAPIRequest) GetNrtCrmActivityPageCreateReq() *NrtCrmActivityPageCreateReq {
     return r._nrtCrmActivityPageCreateReq
 }

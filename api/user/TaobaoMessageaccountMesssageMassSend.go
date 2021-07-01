@@ -11,7 +11,7 @@ taobao.messageaccount.messsage.mass.send
 
 外部 isv 调用该进口来进行消息号消息的群发
 */
-func TaobaoMessageaccountMesssageMassSend(clt *core.SDKClient, req *user.TaobaoMessageaccountMesssageMassSendRequest, session string) (*user.TaobaoMessageaccountMesssageMassSendAPIResponse, error) {
+func TaobaoMessageaccountMesssageMassSend(clt *core.SDKClient, req *user.TaobaoMessageaccountMesssageMassSendAPIRequest, session string) (*user.TaobaoMessageaccountMesssageMassSendAPIResponse, error) {
     var resp user.TaobaoMessageaccountMesssageMassSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

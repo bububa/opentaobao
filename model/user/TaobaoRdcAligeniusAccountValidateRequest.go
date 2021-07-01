@@ -12,24 +12,24 @@ taobao.rdc.aligenius.account.validate
 
 提供应对接AG的erp系统查询其旗下的商家是否为AG商家
 */
-type TaobaoRdcAligeniusAccountValidateRequest struct {
+type TaobaoRdcAligeniusAccountValidateAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoRdcAligeniusAccountValidateRequest对象
-func NewTaobaoRdcAligeniusAccountValidateRequest() *TaobaoRdcAligeniusAccountValidateRequest{
-    return &TaobaoRdcAligeniusAccountValidateRequest{
+// 初始化TaobaoRdcAligeniusAccountValidateAPIRequest对象
+func NewTaobaoRdcAligeniusAccountValidateRequest() *TaobaoRdcAligeniusAccountValidateAPIRequest{
+    return &TaobaoRdcAligeniusAccountValidateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRdcAligeniusAccountValidateRequest) GetApiMethodName() string {
+func (r TaobaoRdcAligeniusAccountValidateAPIRequest) GetApiMethodName() string {
     return "taobao.rdc.aligenius.account.validate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRdcAligeniusAccountValidateRequest) GetApiParams() url.Values {
+func (r TaobaoRdcAligeniusAccountValidateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

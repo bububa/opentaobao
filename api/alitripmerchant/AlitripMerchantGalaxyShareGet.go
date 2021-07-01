@@ -11,7 +11,7 @@ alitrip.merchant.galaxy.share.get
 
 获取 雅高微信小程序分享素材文案和图片。
 */
-func AlitripMerchantGalaxyShareGet(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyShareGetRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyShareGetAPIResponse, error) {
+func AlitripMerchantGalaxyShareGet(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyShareGetAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyShareGetAPIResponse, error) {
     var resp alitripmerchant.AlitripMerchantGalaxyShareGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

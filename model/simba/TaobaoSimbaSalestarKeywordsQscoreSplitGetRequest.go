@@ -12,7 +12,7 @@ taobao.simba.salestar.keywords.qscore.split.get
 
 获取关键词新的质量分
 */
-type TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest struct {
+type TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest struct {
     model.Params
     // 账号昵称
     _nick   string
@@ -22,20 +22,20 @@ type TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest struct {
     _bidwordIds   []int64
 }
 
-// 初始化TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest对象
-func NewTaobaoSimbaSalestarKeywordsQscoreSplitGetRequest() *TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest{
-    return &TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest{
+// 初始化TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest对象
+func NewTaobaoSimbaSalestarKeywordsQscoreSplitGetRequest() *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest{
+    return &TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.salestar.keywords.qscore.split.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) GetApiParams() url.Val
 }
 // Nick Setter
 // 账号昵称
-func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) GetNick() string {
+func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetNick() string {
     return r._nick
 }
 // AdGroupId Setter
 // 推广组id
-func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) SetAdGroupId(_adGroupId int64) error {
+func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetAdGroupId(_adGroupId int64) error {
     r._adGroupId = _adGroupId
     r.Set("ad_group_id", _adGroupId)
     return nil
 }
 
 // AdGroupId Getter
-func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) GetAdGroupId() int64 {
+func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetAdGroupId() int64 {
     return r._adGroupId
 }
 // BidwordIds Setter
 // 词id数组（最多批量获取20个）
-func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) SetBidwordIds(_bidwordIds []int64) error {
+func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
     r._bidwordIds = _bidwordIds
     r.Set("bidword_ids", _bidwordIds)
     return nil
 }
 
 // BidwordIds Getter
-func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) GetBidwordIds() []int64 {
+func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetBidwordIds() []int64 {
     return r._bidwordIds
 }

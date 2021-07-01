@@ -12,26 +12,26 @@ yunos.tvpubadmin.content.channel.query
 
 迎客松影视频道查询
 */
-type YunosTvpubadminContentChannelQueryRequest struct {
+type YunosTvpubadminContentChannelQueryAPIRequest struct {
     model.Params
     // ChannelAuditQueryBO
     _channelAuditQuery   string
 }
 
-// 初始化YunosTvpubadminContentChannelQueryRequest对象
-func NewYunosTvpubadminContentChannelQueryRequest() *YunosTvpubadminContentChannelQueryRequest{
-    return &YunosTvpubadminContentChannelQueryRequest{
+// 初始化YunosTvpubadminContentChannelQueryAPIRequest对象
+func NewYunosTvpubadminContentChannelQueryRequest() *YunosTvpubadminContentChannelQueryAPIRequest{
+    return &YunosTvpubadminContentChannelQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentChannelQueryRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentChannelQueryAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.channel.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentChannelQueryRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentChannelQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentChannelQueryRequest) GetApiParams() url.Values {
 }
 // ChannelAuditQuery Setter
 // ChannelAuditQueryBO
-func (r *YunosTvpubadminContentChannelQueryRequest) SetChannelAuditQuery(_channelAuditQuery string) error {
+func (r *YunosTvpubadminContentChannelQueryAPIRequest) SetChannelAuditQuery(_channelAuditQuery string) error {
     r._channelAuditQuery = _channelAuditQuery
     r.Set("channel_audit_query", _channelAuditQuery)
     return nil
 }
 
 // ChannelAuditQuery Getter
-func (r YunosTvpubadminContentChannelQueryRequest) GetChannelAuditQuery() string {
+func (r YunosTvpubadminContentChannelQueryAPIRequest) GetChannelAuditQuery() string {
     return r._channelAuditQuery
 }

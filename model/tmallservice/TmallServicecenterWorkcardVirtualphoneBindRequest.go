@@ -13,26 +13,26 @@ tmall.servicecenter.workcard.virtualphone.bind
 服务供应链洗护服务ERP项目中，客服呼叫消费者的功能。
 叫消费者的手机号虚拟号码给到客服。
 */
-type TmallServicecenterWorkcardVirtualphoneBindRequest struct {
+type TmallServicecenterWorkcardVirtualphoneBindAPIRequest struct {
     model.Params
     // 绑定阿里通讯号入参
     _workcardRequest   *WorkcardBaseRequest
 }
 
-// 初始化TmallServicecenterWorkcardVirtualphoneBindRequest对象
-func NewTmallServicecenterWorkcardVirtualphoneBindRequest() *TmallServicecenterWorkcardVirtualphoneBindRequest{
-    return &TmallServicecenterWorkcardVirtualphoneBindRequest{
+// 初始化TmallServicecenterWorkcardVirtualphoneBindAPIRequest对象
+func NewTmallServicecenterWorkcardVirtualphoneBindRequest() *TmallServicecenterWorkcardVirtualphoneBindAPIRequest{
+    return &TmallServicecenterWorkcardVirtualphoneBindAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkcardVirtualphoneBindRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkcardVirtualphoneBindAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.workcard.virtualphone.bind"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkcardVirtualphoneBindRequest) GetApiParams() url.Values {
+func (r TmallServicecenterWorkcardVirtualphoneBindAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -41,13 +41,13 @@ func (r TmallServicecenterWorkcardVirtualphoneBindRequest) GetApiParams() url.Va
 }
 // WorkcardRequest Setter
 // 绑定阿里通讯号入参
-func (r *TmallServicecenterWorkcardVirtualphoneBindRequest) SetWorkcardRequest(_workcardRequest *WorkcardBaseRequest) error {
+func (r *TmallServicecenterWorkcardVirtualphoneBindAPIRequest) SetWorkcardRequest(_workcardRequest *WorkcardBaseRequest) error {
     r._workcardRequest = _workcardRequest
     r.Set("workcard_request", _workcardRequest)
     return nil
 }
 
 // WorkcardRequest Getter
-func (r TmallServicecenterWorkcardVirtualphoneBindRequest) GetWorkcardRequest() *WorkcardBaseRequest {
+func (r TmallServicecenterWorkcardVirtualphoneBindAPIRequest) GetWorkcardRequest() *WorkcardBaseRequest {
     return r._workcardRequest
 }

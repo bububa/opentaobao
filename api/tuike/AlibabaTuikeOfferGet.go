@@ -11,7 +11,7 @@ alibaba.tuike.offer.get
 
 查询1688推客平台卖家推广中的商品信息
 */
-func AlibabaTuikeOfferGet(clt *core.SDKClient, req *tuike.AlibabaTuikeOfferGetRequest, session string) (*tuike.AlibabaTuikeOfferGetAPIResponse, error) {
+func AlibabaTuikeOfferGet(clt *core.SDKClient, req *tuike.AlibabaTuikeOfferGetAPIRequest, session string) (*tuike.AlibabaTuikeOfferGetAPIResponse, error) {
     var resp tuike.AlibabaTuikeOfferGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

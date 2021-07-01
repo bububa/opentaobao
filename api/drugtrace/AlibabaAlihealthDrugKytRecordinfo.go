@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.recordinfo
 
 快易通健康检查
 */
-func AlibabaAlihealthDrugKytRecordinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytRecordinfoRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytRecordinfoAPIResponse, error) {
+func AlibabaAlihealthDrugKytRecordinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytRecordinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytRecordinfoAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytRecordinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

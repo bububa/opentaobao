@@ -11,7 +11,7 @@ taobao.koubei.saas.base.operation.config.sync
 
 ISV接入口碑SAAS后, 经营设置数据同步到口碑SAAS
 */
-func TaobaoKoubeiSaasBaseOperationConfigSync(clt *core.SDKClient, req *alsc.TaobaoKoubeiSaasBaseOperationConfigSyncRequest, session string) (*alsc.TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse, error) {
+func TaobaoKoubeiSaasBaseOperationConfigSync(clt *core.SDKClient, req *alsc.TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest, session string) (*alsc.TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse, error) {
     var resp alsc.TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

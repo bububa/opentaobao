@@ -12,7 +12,7 @@ alibaba.health.vaccin.notice.user.create
 
 支付宝医疗健康疫苗用户创建
 */
-type AlibabaHealthVaccinNoticeUserCreateRequest struct {
+type AlibabaHealthVaccinNoticeUserCreateAPIRequest struct {
     model.Params
     // 支付宝用户id
     _aliPayUserId   string
@@ -22,20 +22,20 @@ type AlibabaHealthVaccinNoticeUserCreateRequest struct {
     _mobile   string
 }
 
-// 初始化AlibabaHealthVaccinNoticeUserCreateRequest对象
-func NewAlibabaHealthVaccinNoticeUserCreateRequest() *AlibabaHealthVaccinNoticeUserCreateRequest{
-    return &AlibabaHealthVaccinNoticeUserCreateRequest{
+// 初始化AlibabaHealthVaccinNoticeUserCreateAPIRequest对象
+func NewAlibabaHealthVaccinNoticeUserCreateRequest() *AlibabaHealthVaccinNoticeUserCreateAPIRequest{
+    return &AlibabaHealthVaccinNoticeUserCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHealthVaccinNoticeUserCreateRequest) GetApiMethodName() string {
+func (r AlibabaHealthVaccinNoticeUserCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.health.vaccin.notice.user.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHealthVaccinNoticeUserCreateRequest) GetApiParams() url.Values {
+func (r AlibabaHealthVaccinNoticeUserCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaHealthVaccinNoticeUserCreateRequest) GetApiParams() url.Values {
 }
 // AliPayUserId Setter
 // 支付宝用户id
-func (r *AlibabaHealthVaccinNoticeUserCreateRequest) SetAliPayUserId(_aliPayUserId string) error {
+func (r *AlibabaHealthVaccinNoticeUserCreateAPIRequest) SetAliPayUserId(_aliPayUserId string) error {
     r._aliPayUserId = _aliPayUserId
     r.Set("ali_pay_user_id", _aliPayUserId)
     return nil
 }
 
 // AliPayUserId Getter
-func (r AlibabaHealthVaccinNoticeUserCreateRequest) GetAliPayUserId() string {
+func (r AlibabaHealthVaccinNoticeUserCreateAPIRequest) GetAliPayUserId() string {
     return r._aliPayUserId
 }
 // OuterUserId Setter
 // 外部渠道用户id
-func (r *AlibabaHealthVaccinNoticeUserCreateRequest) SetOuterUserId(_outerUserId string) error {
+func (r *AlibabaHealthVaccinNoticeUserCreateAPIRequest) SetOuterUserId(_outerUserId string) error {
     r._outerUserId = _outerUserId
     r.Set("outer_user_id", _outerUserId)
     return nil
 }
 
 // OuterUserId Getter
-func (r AlibabaHealthVaccinNoticeUserCreateRequest) GetOuterUserId() string {
+func (r AlibabaHealthVaccinNoticeUserCreateAPIRequest) GetOuterUserId() string {
     return r._outerUserId
 }
 // Mobile Setter
 // 用户电话号码
-func (r *AlibabaHealthVaccinNoticeUserCreateRequest) SetMobile(_mobile string) error {
+func (r *AlibabaHealthVaccinNoticeUserCreateAPIRequest) SetMobile(_mobile string) error {
     r._mobile = _mobile
     r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
-func (r AlibabaHealthVaccinNoticeUserCreateRequest) GetMobile() string {
+func (r AlibabaHealthVaccinNoticeUserCreateAPIRequest) GetMobile() string {
     return r._mobile
 }

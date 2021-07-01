@@ -12,26 +12,26 @@ alibaba.tmallgenie.scp.plan.saleforcast.pm.month.upload
 
 销售月预测数量（产管）回传-月度
 */
-type AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest struct {
+type AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest struct {
     model.Params
     // 入参
     _salesForecastRequest   *SalesForecastRequest
 }
 
-// 初始化AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest对象
-func NewAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest() *AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest{
-    return &AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest{
+// 初始化AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest对象
+func NewAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest() *AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest{
+    return &AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest) GetApiMethodName() string {
+func (r AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest) GetApiMethodName() string {
     return "alibaba.tmallgenie.scp.plan.saleforcast.pm.month.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest) GetApiParams() url.Values {
+func (r AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest) GetApiParams() 
 }
 // SalesForecastRequest Setter
 // 入参
-func (r *AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest) SetSalesForecastRequest(_salesForecastRequest *SalesForecastRequest) error {
+func (r *AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest) SetSalesForecastRequest(_salesForecastRequest *SalesForecastRequest) error {
     r._salesForecastRequest = _salesForecastRequest
     r.Set("sales_forecast_request", _salesForecastRequest)
     return nil
 }
 
 // SalesForecastRequest Getter
-func (r AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest) GetSalesForecastRequest() *SalesForecastRequest {
+func (r AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest) GetSalesForecastRequest() *SalesForecastRequest {
     return r._salesForecastRequest
 }

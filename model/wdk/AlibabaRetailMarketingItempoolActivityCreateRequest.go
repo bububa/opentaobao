@@ -12,26 +12,26 @@ alibaba.retail.marketing.itempool.activity.create
 
 同城零售商品池活动创建
 */
-type AlibabaRetailMarketingItempoolActivityCreateRequest struct {
+type AlibabaRetailMarketingItempoolActivityCreateAPIRequest struct {
     model.Params
     // 创建商品池活动参数
     _param   *ItemPoolActivityOperateRequest
 }
 
-// 初始化AlibabaRetailMarketingItempoolActivityCreateRequest对象
-func NewAlibabaRetailMarketingItempoolActivityCreateRequest() *AlibabaRetailMarketingItempoolActivityCreateRequest{
-    return &AlibabaRetailMarketingItempoolActivityCreateRequest{
+// 初始化AlibabaRetailMarketingItempoolActivityCreateAPIRequest对象
+func NewAlibabaRetailMarketingItempoolActivityCreateRequest() *AlibabaRetailMarketingItempoolActivityCreateAPIRequest{
+    return &AlibabaRetailMarketingItempoolActivityCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingItempoolActivityCreateRequest) GetApiMethodName() string {
+func (r AlibabaRetailMarketingItempoolActivityCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.marketing.itempool.activity.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingItempoolActivityCreateRequest) GetApiParams() url.Values {
+func (r AlibabaRetailMarketingItempoolActivityCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingItempoolActivityCreateRequest) GetApiParams() url.
 }
 // Param Setter
 // 创建商品池活动参数
-func (r *AlibabaRetailMarketingItempoolActivityCreateRequest) SetParam(_param *ItemPoolActivityOperateRequest) error {
+func (r *AlibabaRetailMarketingItempoolActivityCreateAPIRequest) SetParam(_param *ItemPoolActivityOperateRequest) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaRetailMarketingItempoolActivityCreateRequest) GetParam() *ItemPoolActivityOperateRequest {
+func (r AlibabaRetailMarketingItempoolActivityCreateAPIRequest) GetParam() *ItemPoolActivityOperateRequest {
     return r._param
 }

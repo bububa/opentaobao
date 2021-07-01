@@ -12,7 +12,7 @@ tmall.item.vip.schema.update
 
 大商家编辑商品
 */
-type TmallItemVipSchemaUpdateRequest struct {
+type TmallItemVipSchemaUpdateAPIRequest struct {
     model.Params
     // 商品编辑的schema参数
     _schemaXmlFields   string
@@ -20,20 +20,20 @@ type TmallItemVipSchemaUpdateRequest struct {
     _itemId   int64
 }
 
-// 初始化TmallItemVipSchemaUpdateRequest对象
-func NewTmallItemVipSchemaUpdateRequest() *TmallItemVipSchemaUpdateRequest{
-    return &TmallItemVipSchemaUpdateRequest{
+// 初始化TmallItemVipSchemaUpdateAPIRequest对象
+func NewTmallItemVipSchemaUpdateRequest() *TmallItemVipSchemaUpdateAPIRequest{
+    return &TmallItemVipSchemaUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallItemVipSchemaUpdateRequest) GetApiMethodName() string {
+func (r TmallItemVipSchemaUpdateAPIRequest) GetApiMethodName() string {
     return "tmall.item.vip.schema.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallItemVipSchemaUpdateRequest) GetApiParams() url.Values {
+func (r TmallItemVipSchemaUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallItemVipSchemaUpdateRequest) GetApiParams() url.Values {
 }
 // SchemaXmlFields Setter
 // 商品编辑的schema参数
-func (r *TmallItemVipSchemaUpdateRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+func (r *TmallItemVipSchemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
     r._schemaXmlFields = _schemaXmlFields
     r.Set("schema_xml_fields", _schemaXmlFields)
     return nil
 }
 
 // SchemaXmlFields Getter
-func (r TmallItemVipSchemaUpdateRequest) GetSchemaXmlFields() string {
+func (r TmallItemVipSchemaUpdateAPIRequest) GetSchemaXmlFields() string {
     return r._schemaXmlFields
 }
 // ItemId Setter
 // 商品id
-func (r *TmallItemVipSchemaUpdateRequest) SetItemId(_itemId int64) error {
+func (r *TmallItemVipSchemaUpdateAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TmallItemVipSchemaUpdateRequest) GetItemId() int64 {
+func (r TmallItemVipSchemaUpdateAPIRequest) GetItemId() int64 {
     return r._itemId
 }

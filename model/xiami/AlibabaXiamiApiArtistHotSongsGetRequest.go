@@ -12,26 +12,26 @@ alibaba.xiami.api.artist.hotSongs.get
 
 热门歌曲
 */
-type AlibabaXiamiApiArtistHotSongsGetRequest struct {
+type AlibabaXiamiApiArtistHotSongsGetAPIRequest struct {
     model.Params
     // 艺人id
     _id   int64
 }
 
-// 初始化AlibabaXiamiApiArtistHotSongsGetRequest对象
-func NewAlibabaXiamiApiArtistHotSongsGetRequest() *AlibabaXiamiApiArtistHotSongsGetRequest{
-    return &AlibabaXiamiApiArtistHotSongsGetRequest{
+// 初始化AlibabaXiamiApiArtistHotSongsGetAPIRequest对象
+func NewAlibabaXiamiApiArtistHotSongsGetRequest() *AlibabaXiamiApiArtistHotSongsGetAPIRequest{
+    return &AlibabaXiamiApiArtistHotSongsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaXiamiApiArtistHotSongsGetRequest) GetApiMethodName() string {
+func (r AlibabaXiamiApiArtistHotSongsGetAPIRequest) GetApiMethodName() string {
     return "alibaba.xiami.api.artist.hotSongs.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaXiamiApiArtistHotSongsGetRequest) GetApiParams() url.Values {
+func (r AlibabaXiamiApiArtistHotSongsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaXiamiApiArtistHotSongsGetRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 艺人id
-func (r *AlibabaXiamiApiArtistHotSongsGetRequest) SetId(_id int64) error {
+func (r *AlibabaXiamiApiArtistHotSongsGetAPIRequest) SetId(_id int64) error {
     r._id = _id
     r.Set("id", _id)
     return nil
 }
 
 // Id Getter
-func (r AlibabaXiamiApiArtistHotSongsGetRequest) GetId() int64 {
+func (r AlibabaXiamiApiArtistHotSongsGetAPIRequest) GetId() int64 {
     return r._id
 }

@@ -11,7 +11,7 @@ alibaba.mozi.vds.tenant.api.service.dismiss
 
 解除组织主管
 */
-func AlibabaMoziVdsTenantApiServiceDismiss(clt *core.SDKClient, req *mozi.AlibabaMoziVdsTenantApiServiceDismissRequest, session string) (*mozi.AlibabaMoziVdsTenantApiServiceDismissAPIResponse, error) {
+func AlibabaMoziVdsTenantApiServiceDismiss(clt *core.SDKClient, req *mozi.AlibabaMoziVdsTenantApiServiceDismissAPIRequest, session string) (*mozi.AlibabaMoziVdsTenantApiServiceDismissAPIResponse, error) {
     var resp mozi.AlibabaMoziVdsTenantApiServiceDismissAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

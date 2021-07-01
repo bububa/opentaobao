@@ -12,26 +12,26 @@ alibaba.aliqin.flow.wallet.check.balance
 
 检查商家CRM预存余额是否足够进行活动
 */
-type AlibabaAliqinFlowWalletCheckBalanceRequest struct {
+type AlibabaAliqinFlowWalletCheckBalanceAPIRequest struct {
     model.Params
     // 检查金额档位id
     _gradeId   string
 }
 
-// 初始化AlibabaAliqinFlowWalletCheckBalanceRequest对象
-func NewAlibabaAliqinFlowWalletCheckBalanceRequest() *AlibabaAliqinFlowWalletCheckBalanceRequest{
-    return &AlibabaAliqinFlowWalletCheckBalanceRequest{
+// 初始化AlibabaAliqinFlowWalletCheckBalanceAPIRequest对象
+func NewAlibabaAliqinFlowWalletCheckBalanceRequest() *AlibabaAliqinFlowWalletCheckBalanceAPIRequest{
+    return &AlibabaAliqinFlowWalletCheckBalanceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAliqinFlowWalletCheckBalanceRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFlowWalletCheckBalanceAPIRequest) GetApiMethodName() string {
     return "alibaba.aliqin.flow.wallet.check.balance"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinFlowWalletCheckBalanceRequest) GetApiParams() url.Values {
+func (r AlibabaAliqinFlowWalletCheckBalanceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAliqinFlowWalletCheckBalanceRequest) GetApiParams() url.Values {
 }
 // GradeId Setter
 // 检查金额档位id
-func (r *AlibabaAliqinFlowWalletCheckBalanceRequest) SetGradeId(_gradeId string) error {
+func (r *AlibabaAliqinFlowWalletCheckBalanceAPIRequest) SetGradeId(_gradeId string) error {
     r._gradeId = _gradeId
     r.Set("grade_id", _gradeId)
     return nil
 }
 
 // GradeId Getter
-func (r AlibabaAliqinFlowWalletCheckBalanceRequest) GetGradeId() string {
+func (r AlibabaAliqinFlowWalletCheckBalanceAPIRequest) GetGradeId() string {
     return r._gradeId
 }

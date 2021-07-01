@@ -12,26 +12,26 @@ alibaba.alsc.crm.open.customer.get
 
 查询会员身份，资产等
 */
-type AlibabaAlscCrmOpenCustomerGetRequest struct {
+type AlibabaAlscCrmOpenCustomerGetAPIRequest struct {
     model.Params
     // 入参
     _paramCustomerGetOpenReq   *CustomerGetOpenReq
 }
 
-// 初始化AlibabaAlscCrmOpenCustomerGetRequest对象
-func NewAlibabaAlscCrmOpenCustomerGetRequest() *AlibabaAlscCrmOpenCustomerGetRequest{
-    return &AlibabaAlscCrmOpenCustomerGetRequest{
+// 初始化AlibabaAlscCrmOpenCustomerGetAPIRequest对象
+func NewAlibabaAlscCrmOpenCustomerGetRequest() *AlibabaAlscCrmOpenCustomerGetAPIRequest{
+    return &AlibabaAlscCrmOpenCustomerGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmOpenCustomerGetRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmOpenCustomerGetAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.open.customer.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmOpenCustomerGetRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmOpenCustomerGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenCustomerGetRequest) GetApiParams() url.Values {
 }
 // ParamCustomerGetOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenCustomerGetRequest) SetParamCustomerGetOpenReq(_paramCustomerGetOpenReq *CustomerGetOpenReq) error {
+func (r *AlibabaAlscCrmOpenCustomerGetAPIRequest) SetParamCustomerGetOpenReq(_paramCustomerGetOpenReq *CustomerGetOpenReq) error {
     r._paramCustomerGetOpenReq = _paramCustomerGetOpenReq
     r.Set("param_customer_get_open_req", _paramCustomerGetOpenReq)
     return nil
 }
 
 // ParamCustomerGetOpenReq Getter
-func (r AlibabaAlscCrmOpenCustomerGetRequest) GetParamCustomerGetOpenReq() *CustomerGetOpenReq {
+func (r AlibabaAlscCrmOpenCustomerGetAPIRequest) GetParamCustomerGetOpenReq() *CustomerGetOpenReq {
     return r._paramCustomerGetOpenReq
 }

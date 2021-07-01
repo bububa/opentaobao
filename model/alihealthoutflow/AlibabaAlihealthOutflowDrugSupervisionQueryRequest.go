@@ -12,26 +12,26 @@ alibaba.alihealth.outflow.drug.supervision.query
 
 获取监管平台药品数据
 */
-type AlibabaAlihealthOutflowDrugSupervisionQueryRequest struct {
+type AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest struct {
     model.Params
     // 请求
     _request1   *OuterDrugVo
 }
 
-// 初始化AlibabaAlihealthOutflowDrugSupervisionQueryRequest对象
-func NewAlibabaAlihealthOutflowDrugSupervisionQueryRequest() *AlibabaAlihealthOutflowDrugSupervisionQueryRequest{
-    return &AlibabaAlihealthOutflowDrugSupervisionQueryRequest{
+// 初始化AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest对象
+func NewAlibabaAlihealthOutflowDrugSupervisionQueryRequest() *AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest{
+    return &AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowDrugSupervisionQueryRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.drug.supervision.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowDrugSupervisionQueryRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowDrugSupervisionQueryRequest) GetApiParams() url.V
 }
 // Request1 Setter
 // 请求
-func (r *AlibabaAlihealthOutflowDrugSupervisionQueryRequest) SetRequest1(_request1 *OuterDrugVo) error {
+func (r *AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) SetRequest1(_request1 *OuterDrugVo) error {
     r._request1 = _request1
     r.Set("request1", _request1)
     return nil
 }
 
 // Request1 Getter
-func (r AlibabaAlihealthOutflowDrugSupervisionQueryRequest) GetRequest1() *OuterDrugVo {
+func (r AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) GetRequest1() *OuterDrugVo {
     return r._request1
 }

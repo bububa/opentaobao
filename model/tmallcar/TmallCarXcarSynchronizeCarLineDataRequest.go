@@ -12,26 +12,26 @@ tmall.car.xcar.synchronize.car.line.data
 
 同步我的爱卡车系配置数据到天猫汽车
 */
-type TmallCarXcarSynchronizeCarLineDataRequest struct {
+type TmallCarXcarSynchronizeCarLineDataAPIRequest struct {
     model.Params
     // 入参对象
     _paramXCarSysLineDTO   *XCarSysLineDTO
 }
 
-// 初始化TmallCarXcarSynchronizeCarLineDataRequest对象
-func NewTmallCarXcarSynchronizeCarLineDataRequest() *TmallCarXcarSynchronizeCarLineDataRequest{
-    return &TmallCarXcarSynchronizeCarLineDataRequest{
+// 初始化TmallCarXcarSynchronizeCarLineDataAPIRequest对象
+func NewTmallCarXcarSynchronizeCarLineDataRequest() *TmallCarXcarSynchronizeCarLineDataAPIRequest{
+    return &TmallCarXcarSynchronizeCarLineDataAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarXcarSynchronizeCarLineDataRequest) GetApiMethodName() string {
+func (r TmallCarXcarSynchronizeCarLineDataAPIRequest) GetApiMethodName() string {
     return "tmall.car.xcar.synchronize.car.line.data"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarXcarSynchronizeCarLineDataRequest) GetApiParams() url.Values {
+func (r TmallCarXcarSynchronizeCarLineDataAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallCarXcarSynchronizeCarLineDataRequest) GetApiParams() url.Values {
 }
 // ParamXCarSysLineDTO Setter
 // 入参对象
-func (r *TmallCarXcarSynchronizeCarLineDataRequest) SetParamXCarSysLineDTO(_paramXCarSysLineDTO *XCarSysLineDTO) error {
+func (r *TmallCarXcarSynchronizeCarLineDataAPIRequest) SetParamXCarSysLineDTO(_paramXCarSysLineDTO *XCarSysLineDTO) error {
     r._paramXCarSysLineDTO = _paramXCarSysLineDTO
     r.Set("param_x_car_sys_line_d_t_o", _paramXCarSysLineDTO)
     return nil
 }
 
 // ParamXCarSysLineDTO Getter
-func (r TmallCarXcarSynchronizeCarLineDataRequest) GetParamXCarSysLineDTO() *XCarSysLineDTO {
+func (r TmallCarXcarSynchronizeCarLineDataAPIRequest) GetParamXCarSysLineDTO() *XCarSysLineDTO {
     return r._paramXCarSysLineDTO
 }

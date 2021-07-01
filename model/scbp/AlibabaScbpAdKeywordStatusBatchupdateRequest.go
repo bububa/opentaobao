@@ -12,26 +12,26 @@ alibaba.scbp.ad.keyword.status.batchupdate
 
 批量启动暂停关键词推广状态
 */
-type AlibabaScbpAdKeywordStatusBatchupdateRequest struct {
+type AlibabaScbpAdKeywordStatusBatchupdateAPIRequest struct {
     model.Params
     // 系统自动生成
     _keywordUpdateDtoList   []KeywordUpdateDTO
 }
 
-// 初始化AlibabaScbpAdKeywordStatusBatchupdateRequest对象
-func NewAlibabaScbpAdKeywordStatusBatchupdateRequest() *AlibabaScbpAdKeywordStatusBatchupdateRequest{
-    return &AlibabaScbpAdKeywordStatusBatchupdateRequest{
+// 初始化AlibabaScbpAdKeywordStatusBatchupdateAPIRequest对象
+func NewAlibabaScbpAdKeywordStatusBatchupdateRequest() *AlibabaScbpAdKeywordStatusBatchupdateAPIRequest{
+    return &AlibabaScbpAdKeywordStatusBatchupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordStatusBatchupdateRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.keyword.status.batchupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordStatusBatchupdateRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpAdKeywordStatusBatchupdateRequest) GetApiParams() url.Values 
 }
 // KeywordUpdateDtoList Setter
 // 系统自动生成
-func (r *AlibabaScbpAdKeywordStatusBatchupdateRequest) SetKeywordUpdateDtoList(_keywordUpdateDtoList []KeywordUpdateDTO) error {
+func (r *AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) SetKeywordUpdateDtoList(_keywordUpdateDtoList []KeywordUpdateDTO) error {
     r._keywordUpdateDtoList = _keywordUpdateDtoList
     r.Set("keyword_update_dto_list", _keywordUpdateDtoList)
     return nil
 }
 
 // KeywordUpdateDtoList Getter
-func (r AlibabaScbpAdKeywordStatusBatchupdateRequest) GetKeywordUpdateDtoList() []KeywordUpdateDTO {
+func (r AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) GetKeywordUpdateDtoList() []KeywordUpdateDTO {
     return r._keywordUpdateDtoList
 }

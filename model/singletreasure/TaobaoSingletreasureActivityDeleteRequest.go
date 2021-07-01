@@ -12,26 +12,26 @@ taobao.singletreasure.activity.delete
 
 删除优惠活动
 */
-type TaobaoSingletreasureActivityDeleteRequest struct {
+type TaobaoSingletreasureActivityDeleteAPIRequest struct {
     model.Params
     // 活动Id
     _activityId   int64
 }
 
-// 初始化TaobaoSingletreasureActivityDeleteRequest对象
-func NewTaobaoSingletreasureActivityDeleteRequest() *TaobaoSingletreasureActivityDeleteRequest{
-    return &TaobaoSingletreasureActivityDeleteRequest{
+// 初始化TaobaoSingletreasureActivityDeleteAPIRequest对象
+func NewTaobaoSingletreasureActivityDeleteRequest() *TaobaoSingletreasureActivityDeleteAPIRequest{
+    return &TaobaoSingletreasureActivityDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSingletreasureActivityDeleteRequest) GetApiMethodName() string {
+func (r TaobaoSingletreasureActivityDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.singletreasure.activity.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSingletreasureActivityDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoSingletreasureActivityDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSingletreasureActivityDeleteRequest) GetApiParams() url.Values {
 }
 // ActivityId Setter
 // 活动Id
-func (r *TaobaoSingletreasureActivityDeleteRequest) SetActivityId(_activityId int64) error {
+func (r *TaobaoSingletreasureActivityDeleteAPIRequest) SetActivityId(_activityId int64) error {
     r._activityId = _activityId
     r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
-func (r TaobaoSingletreasureActivityDeleteRequest) GetActivityId() int64 {
+func (r TaobaoSingletreasureActivityDeleteAPIRequest) GetActivityId() int64 {
     return r._activityId
 }

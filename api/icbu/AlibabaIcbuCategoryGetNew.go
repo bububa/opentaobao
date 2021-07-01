@@ -11,7 +11,7 @@ alibaba.icbu.category.get.new
 
 获取商品发布类目
 */
-func AlibabaIcbuCategoryGetNew(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryGetNewRequest, session string) (*icbu.AlibabaIcbuCategoryGetNewAPIResponse, error) {
+func AlibabaIcbuCategoryGetNew(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryGetNewAPIRequest, session string) (*icbu.AlibabaIcbuCategoryGetNewAPIResponse, error) {
     var resp icbu.AlibabaIcbuCategoryGetNewAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -13,7 +13,7 @@ tmall.servicecenter.servicestore.deleteservicestorecoverservice
 天猫服务平台删除网点覆盖的服务，
 必选字段：serviceStoreCode、bizType
 */
-type TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest struct {
+type TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest struct {
     model.Params
     // 网点编码
     _serviceStoreCode   string
@@ -21,20 +21,20 @@ type TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest struct 
     _bizType   string
 }
 
-// 初始化TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest对象
-func NewTmallServicecenterServicestoreDeleteservicestorecoverserviceRequest() *TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest{
-    return &TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest{
+// 初始化TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest对象
+func NewTmallServicecenterServicestoreDeleteservicestorecoverserviceRequest() *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest{
+    return &TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) GetApiMethodName() string {
+func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicestore.deleteservicestorecoverservice"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) GetApiParams() url.Values {
+func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -43,25 +43,25 @@ func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) Get
 }
 // ServiceStoreCode Setter
 // 网点编码
-func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) SetServiceStoreCode(_serviceStoreCode string) error {
+func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
     r._serviceStoreCode = _serviceStoreCode
     r.Set("service_store_code", _serviceStoreCode)
     return nil
 }
 
 // ServiceStoreCode Getter
-func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) GetServiceStoreCode() string {
+func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) GetServiceStoreCode() string {
     return r._serviceStoreCode
 }
 // BizType Setter
 // 业务类型
-func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) SetBizType(_bizType string) error {
+func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) SetBizType(_bizType string) error {
     r._bizType = _bizType
     r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
-func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) GetBizType() string {
+func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) GetBizType() string {
     return r._bizType
 }

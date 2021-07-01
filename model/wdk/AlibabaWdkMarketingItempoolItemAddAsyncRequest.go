@@ -12,7 +12,7 @@ alibaba.wdk.marketing.itempool.item.add.async
 
 新分组模型下新增商品
 */
-type AlibabaWdkMarketingItempoolItemAddAsyncRequest struct {
+type AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest struct {
     model.Params
     // 阶梯商品信息
     _param0   []ItemPoolSku
@@ -22,20 +22,20 @@ type AlibabaWdkMarketingItempoolItemAddAsyncRequest struct {
     _version   int64
 }
 
-// 初始化AlibabaWdkMarketingItempoolItemAddAsyncRequest对象
-func NewAlibabaWdkMarketingItempoolItemAddAsyncRequest() *AlibabaWdkMarketingItempoolItemAddAsyncRequest{
-    return &AlibabaWdkMarketingItempoolItemAddAsyncRequest{
+// 初始化AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest对象
+func NewAlibabaWdkMarketingItempoolItemAddAsyncRequest() *AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest{
+    return &AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingItempoolItemAddAsyncRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.itempool.item.add.async"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingItempoolItemAddAsyncRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaWdkMarketingItempoolItemAddAsyncRequest) GetApiParams() url.Value
 }
 // Param0 Setter
 // 阶梯商品信息
-func (r *AlibabaWdkMarketingItempoolItemAddAsyncRequest) SetParam0(_param0 []ItemPoolSku) error {
+func (r *AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) SetParam0(_param0 []ItemPoolSku) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaWdkMarketingItempoolItemAddAsyncRequest) GetParam0() []ItemPoolSku {
+func (r AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) GetParam0() []ItemPoolSku {
     return r._param0
 }
 // Param1 Setter
 // 系统自动生成
-func (r *AlibabaWdkMarketingItempoolItemAddAsyncRequest) SetParam1(_param1 *CommonActivityParam) error {
+func (r *AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) SetParam1(_param1 *CommonActivityParam) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaWdkMarketingItempoolItemAddAsyncRequest) GetParam1() *CommonActivityParam {
+func (r AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) GetParam1() *CommonActivityParam {
     return r._param1
 }
 // Version Setter
 // alibaba.wdk.marketing.version.generate接口生成
-func (r *AlibabaWdkMarketingItempoolItemAddAsyncRequest) SetVersion(_version int64) error {
+func (r *AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) SetVersion(_version int64) error {
     r._version = _version
     r.Set("version", _version)
     return nil
 }
 
 // Version Getter
-func (r AlibabaWdkMarketingItempoolItemAddAsyncRequest) GetVersion() int64 {
+func (r AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) GetVersion() int64 {
     return r._version
 }

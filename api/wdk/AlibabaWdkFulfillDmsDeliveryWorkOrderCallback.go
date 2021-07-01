@@ -11,7 +11,7 @@ alibaba.wdk.fulfill.dms.delivery.work.order.callback
 
 末端配配送作业回传。
 */
-func AlibabaWdkFulfillDmsDeliveryWorkOrderCallback(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest, session string) (*wdk.AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse, error) {
+func AlibabaWdkFulfillDmsDeliveryWorkOrderCallback(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIRequest, session string) (*wdk.AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse, error) {
     var resp wdk.AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

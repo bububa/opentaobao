@@ -12,7 +12,7 @@ taobao.fivee.innerproduct.get
 
 资质共享平台，国产商品查询
 */
-type TaobaoFiveeInnerproductGetRequest struct {
+type TaobaoFiveeInnerproductGetAPIRequest struct {
     model.Params
     // bu身份标识
     _paramBucode   string
@@ -20,20 +20,20 @@ type TaobaoFiveeInnerproductGetRequest struct {
     _paramBarcode   string
 }
 
-// 初始化TaobaoFiveeInnerproductGetRequest对象
-func NewTaobaoFiveeInnerproductGetRequest() *TaobaoFiveeInnerproductGetRequest{
-    return &TaobaoFiveeInnerproductGetRequest{
+// 初始化TaobaoFiveeInnerproductGetAPIRequest对象
+func NewTaobaoFiveeInnerproductGetRequest() *TaobaoFiveeInnerproductGetAPIRequest{
+    return &TaobaoFiveeInnerproductGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFiveeInnerproductGetRequest) GetApiMethodName() string {
+func (r TaobaoFiveeInnerproductGetAPIRequest) GetApiMethodName() string {
     return "taobao.fivee.innerproduct.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFiveeInnerproductGetRequest) GetApiParams() url.Values {
+func (r TaobaoFiveeInnerproductGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoFiveeInnerproductGetRequest) GetApiParams() url.Values {
 }
 // ParamBucode Setter
 // bu身份标识
-func (r *TaobaoFiveeInnerproductGetRequest) SetParamBucode(_paramBucode string) error {
+func (r *TaobaoFiveeInnerproductGetAPIRequest) SetParamBucode(_paramBucode string) error {
     r._paramBucode = _paramBucode
     r.Set("param_bucode", _paramBucode)
     return nil
 }
 
 // ParamBucode Getter
-func (r TaobaoFiveeInnerproductGetRequest) GetParamBucode() string {
+func (r TaobaoFiveeInnerproductGetAPIRequest) GetParamBucode() string {
     return r._paramBucode
 }
 // ParamBarcode Setter
 // 条形码
-func (r *TaobaoFiveeInnerproductGetRequest) SetParamBarcode(_paramBarcode string) error {
+func (r *TaobaoFiveeInnerproductGetAPIRequest) SetParamBarcode(_paramBarcode string) error {
     r._paramBarcode = _paramBarcode
     r.Set("param_barcode", _paramBarcode)
     return nil
 }
 
 // ParamBarcode Getter
-func (r TaobaoFiveeInnerproductGetRequest) GetParamBarcode() string {
+func (r TaobaoFiveeInnerproductGetAPIRequest) GetParamBarcode() string {
     return r._paramBarcode
 }

@@ -11,7 +11,7 @@ alibaba.alihealth.dental.item.unbind
 
 ISV解绑商品
 */
-func AlibabaAlihealthDentalItemUnbind(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalItemUnbindRequest, session string) (*alihealth2.AlibabaAlihealthDentalItemUnbindAPIResponse, error) {
+func AlibabaAlihealthDentalItemUnbind(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalItemUnbindAPIRequest, session string) (*alihealth2.AlibabaAlihealthDentalItemUnbindAPIResponse, error) {
     var resp alihealth2.AlibabaAlihealthDentalItemUnbindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

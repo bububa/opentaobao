@@ -11,7 +11,7 @@ alibaba.jym.requirement.orders.operation.notify
 
 交易猫需求订单操作接口
 */
-func AlibabaJymRequirementOrdersOperationNotify(clt *core.SDKClient, req *jym.AlibabaJymRequirementOrdersOperationNotifyRequest, session string) (*jym.AlibabaJymRequirementOrdersOperationNotifyAPIResponse, error) {
+func AlibabaJymRequirementOrdersOperationNotify(clt *core.SDKClient, req *jym.AlibabaJymRequirementOrdersOperationNotifyAPIRequest, session string) (*jym.AlibabaJymRequirementOrdersOperationNotifyAPIResponse, error) {
     var resp jym.AlibabaJymRequirementOrdersOperationNotifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

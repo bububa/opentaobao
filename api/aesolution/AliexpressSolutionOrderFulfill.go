@@ -11,7 +11,7 @@ aliexpress.solution.order.fulfill
 
 fulfill order for seller
 */
-func AliexpressSolutionOrderFulfill(clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderFulfillRequest, session string) (*aesolution.AliexpressSolutionOrderFulfillAPIResponse, error) {
+func AliexpressSolutionOrderFulfill(clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderFulfillAPIRequest, session string) (*aesolution.AliexpressSolutionOrderFulfillAPIResponse, error) {
     var resp aesolution.AliexpressSolutionOrderFulfillAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

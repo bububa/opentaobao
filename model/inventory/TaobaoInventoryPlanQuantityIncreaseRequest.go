@@ -12,26 +12,26 @@ taobao.inventory.plan.quantity.increase
 
 计划库存的增量编辑
 */
-type TaobaoInventoryPlanQuantityIncreaseRequest struct {
+type TaobaoInventoryPlanQuantityIncreaseAPIRequest struct {
     model.Params
     // 增量编辑计划库存入参
     _planInvAdjustTop   *PlanInvAdjustTopDTO
 }
 
-// 初始化TaobaoInventoryPlanQuantityIncreaseRequest对象
-func NewTaobaoInventoryPlanQuantityIncreaseRequest() *TaobaoInventoryPlanQuantityIncreaseRequest{
-    return &TaobaoInventoryPlanQuantityIncreaseRequest{
+// 初始化TaobaoInventoryPlanQuantityIncreaseAPIRequest对象
+func NewTaobaoInventoryPlanQuantityIncreaseRequest() *TaobaoInventoryPlanQuantityIncreaseAPIRequest{
+    return &TaobaoInventoryPlanQuantityIncreaseAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoInventoryPlanQuantityIncreaseRequest) GetApiMethodName() string {
+func (r TaobaoInventoryPlanQuantityIncreaseAPIRequest) GetApiMethodName() string {
     return "taobao.inventory.plan.quantity.increase"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoInventoryPlanQuantityIncreaseRequest) GetApiParams() url.Values {
+func (r TaobaoInventoryPlanQuantityIncreaseAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoInventoryPlanQuantityIncreaseRequest) GetApiParams() url.Values {
 }
 // PlanInvAdjustTop Setter
 // 增量编辑计划库存入参
-func (r *TaobaoInventoryPlanQuantityIncreaseRequest) SetPlanInvAdjustTop(_planInvAdjustTop *PlanInvAdjustTopDTO) error {
+func (r *TaobaoInventoryPlanQuantityIncreaseAPIRequest) SetPlanInvAdjustTop(_planInvAdjustTop *PlanInvAdjustTopDTO) error {
     r._planInvAdjustTop = _planInvAdjustTop
     r.Set("plan_inv_adjust_top", _planInvAdjustTop)
     return nil
 }
 
 // PlanInvAdjustTop Getter
-func (r TaobaoInventoryPlanQuantityIncreaseRequest) GetPlanInvAdjustTop() *PlanInvAdjustTopDTO {
+func (r TaobaoInventoryPlanQuantityIncreaseAPIRequest) GetPlanInvAdjustTop() *PlanInvAdjustTopDTO {
     return r._planInvAdjustTop
 }

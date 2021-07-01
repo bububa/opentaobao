@@ -11,7 +11,7 @@ tmall.servicecenter.workcard.querybyseller
 
 查询工单
 */
-func TmallServicecenterWorkcardQuerybyseller(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardQuerybysellerRequest, session string) (*tmallservice.TmallServicecenterWorkcardQuerybysellerAPIResponse, error) {
+func TmallServicecenterWorkcardQuerybyseller(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardQuerybysellerAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardQuerybysellerAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardQuerybysellerAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

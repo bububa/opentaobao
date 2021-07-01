@@ -12,26 +12,26 @@ alibaba.damai.mev.open.deleteperform
 
 deletePerform
 */
-type AlibabaDamaiMevOpenDeleteperformRequest struct {
+type AlibabaDamaiMevOpenDeleteperformAPIRequest struct {
     model.Params
     // 入参deletePerformParam
     _deletePerformParam   *PerformIdOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenDeleteperformRequest对象
-func NewAlibabaDamaiMevOpenDeleteperformRequest() *AlibabaDamaiMevOpenDeleteperformRequest{
-    return &AlibabaDamaiMevOpenDeleteperformRequest{
+// 初始化AlibabaDamaiMevOpenDeleteperformAPIRequest对象
+func NewAlibabaDamaiMevOpenDeleteperformRequest() *AlibabaDamaiMevOpenDeleteperformAPIRequest{
+    return &AlibabaDamaiMevOpenDeleteperformAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenDeleteperformRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenDeleteperformAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.deleteperform"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenDeleteperformRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenDeleteperformAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeleteperformRequest) GetApiParams() url.Values {
 }
 // DeletePerformParam Setter
 // 入参deletePerformParam
-func (r *AlibabaDamaiMevOpenDeleteperformRequest) SetDeletePerformParam(_deletePerformParam *PerformIdOpenParam) error {
+func (r *AlibabaDamaiMevOpenDeleteperformAPIRequest) SetDeletePerformParam(_deletePerformParam *PerformIdOpenParam) error {
     r._deletePerformParam = _deletePerformParam
     r.Set("delete_perform_param", _deletePerformParam)
     return nil
 }
 
 // DeletePerformParam Getter
-func (r AlibabaDamaiMevOpenDeleteperformRequest) GetDeletePerformParam() *PerformIdOpenParam {
+func (r AlibabaDamaiMevOpenDeleteperformAPIRequest) GetDeletePerformParam() *PerformIdOpenParam {
     return r._deletePerformParam
 }

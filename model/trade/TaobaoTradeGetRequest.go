@@ -13,7 +13,7 @@ taobao.trade.get
 获取单笔交易的部分信息
 <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=tradeapi" target="_blank">点击查看更多交易API说明</a></strong>
 */
-type TaobaoTradeGetRequest struct {
+type TaobaoTradeGetAPIRequest struct {
     model.Params
     // 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。
     _fields   string
@@ -21,20 +21,20 @@ type TaobaoTradeGetRequest struct {
     _tid   int64
 }
 
-// 初始化TaobaoTradeGetRequest对象
-func NewTaobaoTradeGetRequest() *TaobaoTradeGetRequest{
-    return &TaobaoTradeGetRequest{
+// 初始化TaobaoTradeGetAPIRequest对象
+func NewTaobaoTradeGetRequest() *TaobaoTradeGetAPIRequest{
+    return &TaobaoTradeGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTradeGetRequest) GetApiMethodName() string {
+func (r TaobaoTradeGetAPIRequest) GetApiMethodName() string {
     return "taobao.trade.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTradeGetRequest) GetApiParams() url.Values {
+func (r TaobaoTradeGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -43,25 +43,25 @@ func (r TaobaoTradeGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。
-func (r *TaobaoTradeGetRequest) SetFields(_fields string) error {
+func (r *TaobaoTradeGetAPIRequest) SetFields(_fields string) error {
     r._fields = _fields
     r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
-func (r TaobaoTradeGetRequest) GetFields() string {
+func (r TaobaoTradeGetAPIRequest) GetFields() string {
     return r._fields
 }
 // Tid Setter
 // 交易编号
-func (r *TaobaoTradeGetRequest) SetTid(_tid int64) error {
+func (r *TaobaoTradeGetAPIRequest) SetTid(_tid int64) error {
     r._tid = _tid
     r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
-func (r TaobaoTradeGetRequest) GetTid() int64 {
+func (r TaobaoTradeGetAPIRequest) GetTid() int64 {
     return r._tid
 }

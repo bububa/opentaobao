@@ -11,7 +11,7 @@ import (
 
 {{ .Desc }}
 */
-func {{ .Name }}(clt *core.SDKClient, req *{{ .Pkg }}.{{ .Name }}Request, session string) (*{{ .Pkg }}.{{ .Name }}APIResponse, error) {
+func {{ .Name }}(clt *core.SDKClient, req *{{ .Pkg }}.{{ .Name }}APIRequest, session string) (*{{ .Pkg }}.{{ .Name }}APIResponse, error) {
     var resp {{ .Pkg }}.{{ .Name }}APIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

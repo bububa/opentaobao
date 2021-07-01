@@ -11,7 +11,7 @@ alitrip.agent.flight.sell.ticketing.list
 
 销售出票列表
 */
-func AlitripAgentFlightSellTicketingList(clt *core.SDKClient, req *flight.AlitripAgentFlightSellTicketingListRequest, session string) (*flight.AlitripAgentFlightSellTicketingListAPIResponse, error) {
+func AlitripAgentFlightSellTicketingList(clt *core.SDKClient, req *flight.AlitripAgentFlightSellTicketingListAPIRequest, session string) (*flight.AlitripAgentFlightSellTicketingListAPIResponse, error) {
     var resp flight.AlitripAgentFlightSellTicketingListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

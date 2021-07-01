@@ -11,7 +11,7 @@ alibaba.ele.fengniao.user.time.query
 
 蜂鸟询用户T
 */
-func AlibabaEleFengniaoUserTimeQuery(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoUserTimeQueryRequest, session string) (*logistic.AlibabaEleFengniaoUserTimeQueryAPIResponse, error) {
+func AlibabaEleFengniaoUserTimeQuery(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoUserTimeQueryAPIRequest, session string) (*logistic.AlibabaEleFengniaoUserTimeQueryAPIResponse, error) {
     var resp logistic.AlibabaEleFengniaoUserTimeQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

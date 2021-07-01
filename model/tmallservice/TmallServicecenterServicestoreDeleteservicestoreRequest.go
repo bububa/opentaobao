@@ -25,26 +25,26 @@ tmall.servicecenter.servicestore.deleteservicestore
 11, 网点不存在
 12, 系统错误
 */
-type TmallServicecenterServicestoreDeleteservicestoreRequest struct {
+type TmallServicecenterServicestoreDeleteservicestoreAPIRequest struct {
     model.Params
     // 网点名称
     _serviceStoreCode   string
 }
 
-// 初始化TmallServicecenterServicestoreDeleteservicestoreRequest对象
-func NewTmallServicecenterServicestoreDeleteservicestoreRequest() *TmallServicecenterServicestoreDeleteservicestoreRequest{
-    return &TmallServicecenterServicestoreDeleteservicestoreRequest{
+// 初始化TmallServicecenterServicestoreDeleteservicestoreAPIRequest对象
+func NewTmallServicecenterServicestoreDeleteservicestoreRequest() *TmallServicecenterServicestoreDeleteservicestoreAPIRequest{
+    return &TmallServicecenterServicestoreDeleteservicestoreAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicestoreDeleteservicestoreRequest) GetApiMethodName() string {
+func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicestore.deleteservicestore"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicestoreDeleteservicestoreRequest) GetApiParams() url.Values {
+func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -53,13 +53,13 @@ func (r TmallServicecenterServicestoreDeleteservicestoreRequest) GetApiParams() 
 }
 // ServiceStoreCode Setter
 // 网点名称
-func (r *TmallServicecenterServicestoreDeleteservicestoreRequest) SetServiceStoreCode(_serviceStoreCode string) error {
+func (r *TmallServicecenterServicestoreDeleteservicestoreAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
     r._serviceStoreCode = _serviceStoreCode
     r.Set("service_store_code", _serviceStoreCode)
     return nil
 }
 
 // ServiceStoreCode Getter
-func (r TmallServicecenterServicestoreDeleteservicestoreRequest) GetServiceStoreCode() string {
+func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetServiceStoreCode() string {
     return r._serviceStoreCode
 }

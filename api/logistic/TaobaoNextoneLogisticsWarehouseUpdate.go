@@ -11,7 +11,7 @@ taobao.nextone.logistics.warehouse.update
 
 商家上传退货入仓状态给ag
 */
-func TaobaoNextoneLogisticsWarehouseUpdate(clt *core.SDKClient, req *logistic.TaobaoNextoneLogisticsWarehouseUpdateRequest, session string) (*logistic.TaobaoNextoneLogisticsWarehouseUpdateAPIResponse, error) {
+func TaobaoNextoneLogisticsWarehouseUpdate(clt *core.SDKClient, req *logistic.TaobaoNextoneLogisticsWarehouseUpdateAPIRequest, session string) (*logistic.TaobaoNextoneLogisticsWarehouseUpdateAPIResponse, error) {
     var resp logistic.TaobaoNextoneLogisticsWarehouseUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

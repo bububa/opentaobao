@@ -12,26 +12,26 @@ alibaba.wdk.bm.paiyang.stat.data.query
 
 派样统计数据查询
 */
-type AlibabaWdkBmPaiyangStatDataQueryRequest struct {
+type AlibabaWdkBmPaiyangStatDataQueryAPIRequest struct {
     model.Params
     // 入参对象
     _param   *PaiyangStatDataParam
 }
 
-// 初始化AlibabaWdkBmPaiyangStatDataQueryRequest对象
-func NewAlibabaWdkBmPaiyangStatDataQueryRequest() *AlibabaWdkBmPaiyangStatDataQueryRequest{
-    return &AlibabaWdkBmPaiyangStatDataQueryRequest{
+// 初始化AlibabaWdkBmPaiyangStatDataQueryAPIRequest对象
+func NewAlibabaWdkBmPaiyangStatDataQueryRequest() *AlibabaWdkBmPaiyangStatDataQueryAPIRequest{
+    return &AlibabaWdkBmPaiyangStatDataQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkBmPaiyangStatDataQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkBmPaiyangStatDataQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.bm.paiyang.stat.data.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkBmPaiyangStatDataQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkBmPaiyangStatDataQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkBmPaiyangStatDataQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参对象
-func (r *AlibabaWdkBmPaiyangStatDataQueryRequest) SetParam(_param *PaiyangStatDataParam) error {
+func (r *AlibabaWdkBmPaiyangStatDataQueryAPIRequest) SetParam(_param *PaiyangStatDataParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkBmPaiyangStatDataQueryRequest) GetParam() *PaiyangStatDataParam {
+func (r AlibabaWdkBmPaiyangStatDataQueryAPIRequest) GetParam() *PaiyangStatDataParam {
     return r._param
 }

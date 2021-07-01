@@ -11,7 +11,7 @@ cainiao.nbadd.appointdeliver.getconsigninfo
 
 获取支持定时派送服务发货信息
 */
-func CainiaoNbaddAppointdeliverGetconsigninfo(clt *core.SDKClient, req *cainiaolocker.CainiaoNbaddAppointdeliverGetconsigninfoRequest, session string) (*cainiaolocker.CainiaoNbaddAppointdeliverGetconsigninfoAPIResponse, error) {
+func CainiaoNbaddAppointdeliverGetconsigninfo(clt *core.SDKClient, req *cainiaolocker.CainiaoNbaddAppointdeliverGetconsigninfoAPIRequest, session string) (*cainiaolocker.CainiaoNbaddAppointdeliverGetconsigninfoAPIResponse, error) {
     var resp cainiaolocker.CainiaoNbaddAppointdeliverGetconsigninfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

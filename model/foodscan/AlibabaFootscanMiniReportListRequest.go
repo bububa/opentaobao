@@ -12,7 +12,7 @@ alibaba.footscan.mini.report.list
 
 查询报告列表
 */
-type AlibabaFootscanMiniReportListRequest struct {
+type AlibabaFootscanMiniReportListAPIRequest struct {
     model.Params
     // 平台分配的token
     _token   string
@@ -20,20 +20,20 @@ type AlibabaFootscanMiniReportListRequest struct {
     _reqData   *TobFeetModelMobileReportRequest
 }
 
-// 初始化AlibabaFootscanMiniReportListRequest对象
-func NewAlibabaFootscanMiniReportListRequest() *AlibabaFootscanMiniReportListRequest{
-    return &AlibabaFootscanMiniReportListRequest{
+// 初始化AlibabaFootscanMiniReportListAPIRequest对象
+func NewAlibabaFootscanMiniReportListRequest() *AlibabaFootscanMiniReportListAPIRequest{
+    return &AlibabaFootscanMiniReportListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaFootscanMiniReportListRequest) GetApiMethodName() string {
+func (r AlibabaFootscanMiniReportListAPIRequest) GetApiMethodName() string {
     return "alibaba.footscan.mini.report.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaFootscanMiniReportListRequest) GetApiParams() url.Values {
+func (r AlibabaFootscanMiniReportListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaFootscanMiniReportListRequest) GetApiParams() url.Values {
 }
 // Token Setter
 // 平台分配的token
-func (r *AlibabaFootscanMiniReportListRequest) SetToken(_token string) error {
+func (r *AlibabaFootscanMiniReportListAPIRequest) SetToken(_token string) error {
     r._token = _token
     r.Set("token", _token)
     return nil
 }
 
 // Token Getter
-func (r AlibabaFootscanMiniReportListRequest) GetToken() string {
+func (r AlibabaFootscanMiniReportListAPIRequest) GetToken() string {
     return r._token
 }
 // ReqData Setter
 // 请求数据
-func (r *AlibabaFootscanMiniReportListRequest) SetReqData(_reqData *TobFeetModelMobileReportRequest) error {
+func (r *AlibabaFootscanMiniReportListAPIRequest) SetReqData(_reqData *TobFeetModelMobileReportRequest) error {
     r._reqData = _reqData
     r.Set("req_data", _reqData)
     return nil
 }
 
 // ReqData Getter
-func (r AlibabaFootscanMiniReportListRequest) GetReqData() *TobFeetModelMobileReportRequest {
+func (r AlibabaFootscanMiniReportListAPIRequest) GetReqData() *TobFeetModelMobileReportRequest {
     return r._reqData
 }

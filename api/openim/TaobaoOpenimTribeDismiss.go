@@ -11,7 +11,7 @@ taobao.openim.tribe.dismiss
 
 OPENIM群解散
 */
-func TaobaoOpenimTribeDismiss(clt *core.SDKClient, req *openim.TaobaoOpenimTribeDismissRequest, session string) (*openim.TaobaoOpenimTribeDismissAPIResponse, error) {
+func TaobaoOpenimTribeDismiss(clt *core.SDKClient, req *openim.TaobaoOpenimTribeDismissAPIRequest, session string) (*openim.TaobaoOpenimTribeDismissAPIResponse, error) {
     var resp openim.TaobaoOpenimTribeDismissAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

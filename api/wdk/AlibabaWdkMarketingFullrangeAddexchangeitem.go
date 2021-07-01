@@ -11,7 +11,7 @@ alibaba.wdk.marketing.fullrange.addexchangeitem
 
 全场增加换购品
 */
-func AlibabaWdkMarketingFullrangeAddexchangeitem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeAddexchangeitemRequest, session string) (*wdk.AlibabaWdkMarketingFullrangeAddexchangeitemAPIResponse, error) {
+func AlibabaWdkMarketingFullrangeAddexchangeitem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeAddexchangeitemAPIRequest, session string) (*wdk.AlibabaWdkMarketingFullrangeAddexchangeitemAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingFullrangeAddexchangeitemAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

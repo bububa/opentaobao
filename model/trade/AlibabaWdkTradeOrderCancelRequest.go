@@ -12,26 +12,26 @@ alibaba.wdk.trade.order.cancel
 
 通过该接口可以再盒马取消交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理
 */
-type AlibabaWdkTradeOrderCancelRequest struct {
+type AlibabaWdkTradeOrderCancelAPIRequest struct {
     model.Params
     // 待取消的订单
     _trade   *TradeOrder
 }
 
-// 初始化AlibabaWdkTradeOrderCancelRequest对象
-func NewAlibabaWdkTradeOrderCancelRequest() *AlibabaWdkTradeOrderCancelRequest{
-    return &AlibabaWdkTradeOrderCancelRequest{
+// 初始化AlibabaWdkTradeOrderCancelAPIRequest对象
+func NewAlibabaWdkTradeOrderCancelRequest() *AlibabaWdkTradeOrderCancelAPIRequest{
+    return &AlibabaWdkTradeOrderCancelAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkTradeOrderCancelRequest) GetApiMethodName() string {
+func (r AlibabaWdkTradeOrderCancelAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.trade.order.cancel"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkTradeOrderCancelRequest) GetApiParams() url.Values {
+func (r AlibabaWdkTradeOrderCancelAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkTradeOrderCancelRequest) GetApiParams() url.Values {
 }
 // Trade Setter
 // 待取消的订单
-func (r *AlibabaWdkTradeOrderCancelRequest) SetTrade(_trade *TradeOrder) error {
+func (r *AlibabaWdkTradeOrderCancelAPIRequest) SetTrade(_trade *TradeOrder) error {
     r._trade = _trade
     r.Set("trade", _trade)
     return nil
 }
 
 // Trade Getter
-func (r AlibabaWdkTradeOrderCancelRequest) GetTrade() *TradeOrder {
+func (r AlibabaWdkTradeOrderCancelAPIRequest) GetTrade() *TradeOrder {
     return r._trade
 }

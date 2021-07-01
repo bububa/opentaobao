@@ -12,24 +12,24 @@ alibaba.scbp.tag.list
 
 查询所有分组
 */
-type AlibabaScbpTagListRequest struct {
+type AlibabaScbpTagListAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaScbpTagListRequest对象
-func NewAlibabaScbpTagListRequest() *AlibabaScbpTagListRequest{
-    return &AlibabaScbpTagListRequest{
+// 初始化AlibabaScbpTagListAPIRequest对象
+func NewAlibabaScbpTagListRequest() *AlibabaScbpTagListAPIRequest{
+    return &AlibabaScbpTagListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpTagListRequest) GetApiMethodName() string {
+func (r AlibabaScbpTagListAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.tag.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTagListRequest) GetApiParams() url.Values {
+func (r AlibabaScbpTagListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

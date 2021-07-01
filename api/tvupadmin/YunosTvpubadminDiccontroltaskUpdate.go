@@ -11,7 +11,7 @@ yunos.tvpubadmin.diccontroltask.update
 
 停开服任务状态变更
 */
-func YunosTvpubadminDiccontroltaskUpdate(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDiccontroltaskUpdateRequest, session string) (*tvupadmin.YunosTvpubadminDiccontroltaskUpdateAPIResponse, error) {
+func YunosTvpubadminDiccontroltaskUpdate(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDiccontroltaskUpdateAPIRequest, session string) (*tvupadmin.YunosTvpubadminDiccontroltaskUpdateAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminDiccontroltaskUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.feedflow.item.adgroup.rptdailylist
 
 推广单元分日数据查询
 */
-type TaobaoFeedflowItemAdgroupRptdailylistRequest struct {
+type TaobaoFeedflowItemAdgroupRptdailylistAPIRequest struct {
     model.Params
     // 查询条件
     _rptQueryDTO   *RptQueryDTO
 }
 
-// 初始化TaobaoFeedflowItemAdgroupRptdailylistRequest对象
-func NewTaobaoFeedflowItemAdgroupRptdailylistRequest() *TaobaoFeedflowItemAdgroupRptdailylistRequest{
-    return &TaobaoFeedflowItemAdgroupRptdailylistRequest{
+// 初始化TaobaoFeedflowItemAdgroupRptdailylistAPIRequest对象
+func NewTaobaoFeedflowItemAdgroupRptdailylistRequest() *TaobaoFeedflowItemAdgroupRptdailylistAPIRequest{
+    return &TaobaoFeedflowItemAdgroupRptdailylistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemAdgroupRptdailylistRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.adgroup.rptdailylist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdgroupRptdailylistRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemAdgroupRptdailylistRequest) GetApiParams() url.Values 
 }
 // RptQueryDTO Setter
 // 查询条件
-func (r *TaobaoFeedflowItemAdgroupRptdailylistRequest) SetRptQueryDTO(_rptQueryDTO *RptQueryDTO) error {
+func (r *TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) SetRptQueryDTO(_rptQueryDTO *RptQueryDTO) error {
     r._rptQueryDTO = _rptQueryDTO
     r.Set("rpt_query_d_t_o", _rptQueryDTO)
     return nil
 }
 
 // RptQueryDTO Getter
-func (r TaobaoFeedflowItemAdgroupRptdailylistRequest) GetRptQueryDTO() *RptQueryDTO {
+func (r TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) GetRptQueryDTO() *RptQueryDTO {
     return r._rptQueryDTO
 }

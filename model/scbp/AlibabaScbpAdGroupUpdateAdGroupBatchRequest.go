@@ -12,7 +12,7 @@ alibaba.scbp.ad.group.update.ad.group.batch
 
 修改推广单元
 */
-type AlibabaScbpAdGroupUpdateAdGroupBatchRequest struct {
+type AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest struct {
     model.Params
     // 计划id
     _campaignId   int64
@@ -22,20 +22,20 @@ type AlibabaScbpAdGroupUpdateAdGroupBatchRequest struct {
     _topContext   *TopContextDTO
 }
 
-// 初始化AlibabaScbpAdGroupUpdateAdGroupBatchRequest对象
-func NewAlibabaScbpAdGroupUpdateAdGroupBatchRequest() *AlibabaScbpAdGroupUpdateAdGroupBatchRequest{
-    return &AlibabaScbpAdGroupUpdateAdGroupBatchRequest{
+// 初始化AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest对象
+func NewAlibabaScbpAdGroupUpdateAdGroupBatchRequest() *AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest{
+    return &AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.group.update.ad.group.batch"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdGroupUpdateAdGroupBatchRequest) SetCampaignId(_campaignId int64) error {
+func (r *AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetCampaignId() int64 {
+func (r AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }
 // AdGroupBatchOperation Setter
 // 入参
-func (r *AlibabaScbpAdGroupUpdateAdGroupBatchRequest) SetAdGroupBatchOperation(_adGroupBatchOperation *AdGroupBatchOperationDTO) error {
+func (r *AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest) SetAdGroupBatchOperation(_adGroupBatchOperation *AdGroupBatchOperationDTO) error {
     r._adGroupBatchOperation = _adGroupBatchOperation
     r.Set("ad_group_batch_operation", _adGroupBatchOperation)
     return nil
 }
 
 // AdGroupBatchOperation Getter
-func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetAdGroupBatchOperation() *AdGroupBatchOperationDTO {
+func (r AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest) GetAdGroupBatchOperation() *AdGroupBatchOperationDTO {
     return r._adGroupBatchOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdGroupUpdateAdGroupBatchRequest) SetTopContext(_topContext *TopContextDTO) error {
+func (r *AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetTopContext() *TopContextDTO {
+func (r AlibabaScbpAdGroupUpdateAdGroupBatchAPIRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

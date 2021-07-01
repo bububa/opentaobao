@@ -12,26 +12,26 @@ alibaba.idle.recycle.inspection.report
 
 回收商鉴定报告
 */
-type AlibabaIdleRecycleInspectionReportRequest struct {
+type AlibabaIdleRecycleInspectionReportAPIRequest struct {
     model.Params
     // 鉴定报告
     _inspectionReport   *InspectionReport
 }
 
-// 初始化AlibabaIdleRecycleInspectionReportRequest对象
-func NewAlibabaIdleRecycleInspectionReportRequest() *AlibabaIdleRecycleInspectionReportRequest{
-    return &AlibabaIdleRecycleInspectionReportRequest{
+// 初始化AlibabaIdleRecycleInspectionReportAPIRequest对象
+func NewAlibabaIdleRecycleInspectionReportRequest() *AlibabaIdleRecycleInspectionReportAPIRequest{
+    return &AlibabaIdleRecycleInspectionReportAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleRecycleInspectionReportRequest) GetApiMethodName() string {
+func (r AlibabaIdleRecycleInspectionReportAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.recycle.inspection.report"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleRecycleInspectionReportRequest) GetApiParams() url.Values {
+func (r AlibabaIdleRecycleInspectionReportAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleRecycleInspectionReportRequest) GetApiParams() url.Values {
 }
 // InspectionReport Setter
 // 鉴定报告
-func (r *AlibabaIdleRecycleInspectionReportRequest) SetInspectionReport(_inspectionReport *InspectionReport) error {
+func (r *AlibabaIdleRecycleInspectionReportAPIRequest) SetInspectionReport(_inspectionReport *InspectionReport) error {
     r._inspectionReport = _inspectionReport
     r.Set("inspection_report", _inspectionReport)
     return nil
 }
 
 // InspectionReport Getter
-func (r AlibabaIdleRecycleInspectionReportRequest) GetInspectionReport() *InspectionReport {
+func (r AlibabaIdleRecycleInspectionReportAPIRequest) GetInspectionReport() *InspectionReport {
     return r._inspectionReport
 }

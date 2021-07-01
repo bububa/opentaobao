@@ -12,26 +12,26 @@ alibaba.mos.store.recordscreenpointinfo
 
 记录云屏埋点数据
 */
-type AlibabaMosStoreRecordscreenpointinfoRequest struct {
+type AlibabaMosStoreRecordscreenpointinfoAPIRequest struct {
     model.Params
     // 云屏埋点信息
     _screenPointInfo   string
 }
 
-// 初始化AlibabaMosStoreRecordscreenpointinfoRequest对象
-func NewAlibabaMosStoreRecordscreenpointinfoRequest() *AlibabaMosStoreRecordscreenpointinfoRequest{
-    return &AlibabaMosStoreRecordscreenpointinfoRequest{
+// 初始化AlibabaMosStoreRecordscreenpointinfoAPIRequest对象
+func NewAlibabaMosStoreRecordscreenpointinfoRequest() *AlibabaMosStoreRecordscreenpointinfoAPIRequest{
+    return &AlibabaMosStoreRecordscreenpointinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosStoreRecordscreenpointinfoRequest) GetApiMethodName() string {
+func (r AlibabaMosStoreRecordscreenpointinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.store.recordscreenpointinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosStoreRecordscreenpointinfoRequest) GetApiParams() url.Values {
+func (r AlibabaMosStoreRecordscreenpointinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMosStoreRecordscreenpointinfoRequest) GetApiParams() url.Values {
 }
 // ScreenPointInfo Setter
 // 云屏埋点信息
-func (r *AlibabaMosStoreRecordscreenpointinfoRequest) SetScreenPointInfo(_screenPointInfo string) error {
+func (r *AlibabaMosStoreRecordscreenpointinfoAPIRequest) SetScreenPointInfo(_screenPointInfo string) error {
     r._screenPointInfo = _screenPointInfo
     r.Set("screen_point_info", _screenPointInfo)
     return nil
 }
 
 // ScreenPointInfo Getter
-func (r AlibabaMosStoreRecordscreenpointinfoRequest) GetScreenPointInfo() string {
+func (r AlibabaMosStoreRecordscreenpointinfoAPIRequest) GetScreenPointInfo() string {
     return r._screenPointInfo
 }

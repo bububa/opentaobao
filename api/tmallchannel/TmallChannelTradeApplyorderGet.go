@@ -11,7 +11,7 @@ tmall.channel.trade.applyorder.get
 
 通过采购申请单ID获取单据详情
 */
-func TmallChannelTradeApplyorderGet(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeApplyorderGetRequest, session string) (*tmallchannel.TmallChannelTradeApplyorderGetAPIResponse, error) {
+func TmallChannelTradeApplyorderGet(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeApplyorderGetAPIRequest, session string) (*tmallchannel.TmallChannelTradeApplyorderGetAPIResponse, error) {
     var resp tmallchannel.TmallChannelTradeApplyorderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

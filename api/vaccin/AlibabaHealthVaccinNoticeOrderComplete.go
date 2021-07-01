@@ -11,7 +11,7 @@ alibaba.health.vaccin.notice.order.complete
 
 用户到店完成接种,ISV感知通知阿里健康完成接种,并通知用户!
 */
-func AlibabaHealthVaccinNoticeOrderComplete(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeOrderCompleteRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeOrderCompleteAPIResponse, error) {
+func AlibabaHealthVaccinNoticeOrderComplete(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeOrderCompleteAPIRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeOrderCompleteAPIResponse, error) {
     var resp vaccin.AlibabaHealthVaccinNoticeOrderCompleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ taobao.openim.tribe.join
 
 OPENIM群主动加入
 */
-type TaobaoOpenimTribeJoinRequest struct {
+type TaobaoOpenimTribeJoinAPIRequest struct {
     model.Params
     // 用户信息
     _user   *OpenImUser
@@ -20,20 +20,20 @@ type TaobaoOpenimTribeJoinRequest struct {
     _tribeId   int64
 }
 
-// 初始化TaobaoOpenimTribeJoinRequest对象
-func NewTaobaoOpenimTribeJoinRequest() *TaobaoOpenimTribeJoinRequest{
-    return &TaobaoOpenimTribeJoinRequest{
+// 初始化TaobaoOpenimTribeJoinAPIRequest对象
+func NewTaobaoOpenimTribeJoinRequest() *TaobaoOpenimTribeJoinAPIRequest{
+    return &TaobaoOpenimTribeJoinAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenimTribeJoinRequest) GetApiMethodName() string {
+func (r TaobaoOpenimTribeJoinAPIRequest) GetApiMethodName() string {
     return "taobao.openim.tribe.join"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimTribeJoinRequest) GetApiParams() url.Values {
+func (r TaobaoOpenimTribeJoinAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOpenimTribeJoinRequest) GetApiParams() url.Values {
 }
 // User Setter
 // 用户信息
-func (r *TaobaoOpenimTribeJoinRequest) SetUser(_user *OpenImUser) error {
+func (r *TaobaoOpenimTribeJoinAPIRequest) SetUser(_user *OpenImUser) error {
     r._user = _user
     r.Set("user", _user)
     return nil
 }
 
 // User Getter
-func (r TaobaoOpenimTribeJoinRequest) GetUser() *OpenImUser {
+func (r TaobaoOpenimTribeJoinAPIRequest) GetUser() *OpenImUser {
     return r._user
 }
 // TribeId Setter
 // 群id
-func (r *TaobaoOpenimTribeJoinRequest) SetTribeId(_tribeId int64) error {
+func (r *TaobaoOpenimTribeJoinAPIRequest) SetTribeId(_tribeId int64) error {
     r._tribeId = _tribeId
     r.Set("tribe_id", _tribeId)
     return nil
 }
 
 // TribeId Getter
-func (r TaobaoOpenimTribeJoinRequest) GetTribeId() int64 {
+func (r TaobaoOpenimTribeJoinAPIRequest) GetTribeId() int64 {
     return r._tribeId
 }

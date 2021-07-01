@@ -12,26 +12,26 @@ alibaba.lsy.crm.customer.add
 
 私域导购添加活动留资入口
 */
-type AlibabaLsyCrmCustomerAddRequest struct {
+type AlibabaLsyCrmCustomerAddAPIRequest struct {
     model.Params
     // 入参对象
     _reqDto   *NrtCrmCreateCustomerReq
 }
 
-// 初始化AlibabaLsyCrmCustomerAddRequest对象
-func NewAlibabaLsyCrmCustomerAddRequest() *AlibabaLsyCrmCustomerAddRequest{
-    return &AlibabaLsyCrmCustomerAddRequest{
+// 初始化AlibabaLsyCrmCustomerAddAPIRequest对象
+func NewAlibabaLsyCrmCustomerAddRequest() *AlibabaLsyCrmCustomerAddAPIRequest{
+    return &AlibabaLsyCrmCustomerAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLsyCrmCustomerAddRequest) GetApiMethodName() string {
+func (r AlibabaLsyCrmCustomerAddAPIRequest) GetApiMethodName() string {
     return "alibaba.lsy.crm.customer.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLsyCrmCustomerAddRequest) GetApiParams() url.Values {
+func (r AlibabaLsyCrmCustomerAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmCustomerAddRequest) GetApiParams() url.Values {
 }
 // ReqDto Setter
 // 入参对象
-func (r *AlibabaLsyCrmCustomerAddRequest) SetReqDto(_reqDto *NrtCrmCreateCustomerReq) error {
+func (r *AlibabaLsyCrmCustomerAddAPIRequest) SetReqDto(_reqDto *NrtCrmCreateCustomerReq) error {
     r._reqDto = _reqDto
     r.Set("req_dto", _reqDto)
     return nil
 }
 
 // ReqDto Getter
-func (r AlibabaLsyCrmCustomerAddRequest) GetReqDto() *NrtCrmCreateCustomerReq {
+func (r AlibabaLsyCrmCustomerAddAPIRequest) GetReqDto() *NrtCrmCreateCustomerReq {
     return r._reqDto
 }

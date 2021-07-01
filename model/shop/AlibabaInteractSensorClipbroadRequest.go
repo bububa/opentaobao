@@ -12,26 +12,26 @@ alibaba.interact.sensor.clipbroad
 
 Weex页面设置或读取剪切板
 */
-type AlibabaInteractSensorClipbroadRequest struct {
+type AlibabaInteractSensorClipbroadAPIRequest struct {
     model.Params
     // 客户端鉴权使用，实际不会发送或接收数据
     _unNamed   string
 }
 
-// 初始化AlibabaInteractSensorClipbroadRequest对象
-func NewAlibabaInteractSensorClipbroadRequest() *AlibabaInteractSensorClipbroadRequest{
-    return &AlibabaInteractSensorClipbroadRequest{
+// 初始化AlibabaInteractSensorClipbroadAPIRequest对象
+func NewAlibabaInteractSensorClipbroadRequest() *AlibabaInteractSensorClipbroadAPIRequest{
+    return &AlibabaInteractSensorClipbroadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorClipbroadRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorClipbroadAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.clipbroad"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorClipbroadRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorClipbroadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaInteractSensorClipbroadRequest) GetApiParams() url.Values {
 }
 // UnNamed Setter
 // 客户端鉴权使用，实际不会发送或接收数据
-func (r *AlibabaInteractSensorClipbroadRequest) SetUnNamed(_unNamed string) error {
+func (r *AlibabaInteractSensorClipbroadAPIRequest) SetUnNamed(_unNamed string) error {
     r._unNamed = _unNamed
     r.Set("un_named", _unNamed)
     return nil
 }
 
 // UnNamed Getter
-func (r AlibabaInteractSensorClipbroadRequest) GetUnNamed() string {
+func (r AlibabaInteractSensorClipbroadAPIRequest) GetUnNamed() string {
     return r._unNamed
 }

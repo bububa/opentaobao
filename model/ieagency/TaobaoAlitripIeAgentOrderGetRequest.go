@@ -12,7 +12,7 @@ taobao.alitrip.ie.agent.order.get
 
 根据订单ID查询订单详情
 */
-type TaobaoAlitripIeAgentOrderGetRequest struct {
+type TaobaoAlitripIeAgentOrderGetAPIRequest struct {
     model.Params
     // 代理商ID
     _agentId   int64
@@ -20,20 +20,20 @@ type TaobaoAlitripIeAgentOrderGetRequest struct {
     _tradeOrderId   int64
 }
 
-// 初始化TaobaoAlitripIeAgentOrderGetRequest对象
-func NewTaobaoAlitripIeAgentOrderGetRequest() *TaobaoAlitripIeAgentOrderGetRequest{
-    return &TaobaoAlitripIeAgentOrderGetRequest{
+// 初始化TaobaoAlitripIeAgentOrderGetAPIRequest对象
+func NewTaobaoAlitripIeAgentOrderGetRequest() *TaobaoAlitripIeAgentOrderGetAPIRequest{
+    return &TaobaoAlitripIeAgentOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripIeAgentOrderGetRequest) GetApiMethodName() string {
+func (r TaobaoAlitripIeAgentOrderGetAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.ie.agent.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripIeAgentOrderGetRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripIeAgentOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoAlitripIeAgentOrderGetRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 代理商ID
-func (r *TaobaoAlitripIeAgentOrderGetRequest) SetAgentId(_agentId int64) error {
+func (r *TaobaoAlitripIeAgentOrderGetAPIRequest) SetAgentId(_agentId int64) error {
     r._agentId = _agentId
     r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
-func (r TaobaoAlitripIeAgentOrderGetRequest) GetAgentId() int64 {
+func (r TaobaoAlitripIeAgentOrderGetAPIRequest) GetAgentId() int64 {
     return r._agentId
 }
 // TradeOrderId Setter
 // 交易订单ID
-func (r *TaobaoAlitripIeAgentOrderGetRequest) SetTradeOrderId(_tradeOrderId int64) error {
+func (r *TaobaoAlitripIeAgentOrderGetAPIRequest) SetTradeOrderId(_tradeOrderId int64) error {
     r._tradeOrderId = _tradeOrderId
     r.Set("trade_order_id", _tradeOrderId)
     return nil
 }
 
 // TradeOrderId Getter
-func (r TaobaoAlitripIeAgentOrderGetRequest) GetTradeOrderId() int64 {
+func (r TaobaoAlitripIeAgentOrderGetAPIRequest) GetTradeOrderId() int64 {
     return r._tradeOrderId
 }

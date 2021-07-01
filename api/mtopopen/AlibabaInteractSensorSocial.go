@@ -11,7 +11,7 @@ alibaba.interact.sensor.social
 
 赞，评论 ，关注 新增接口
 */
-func AlibabaInteractSensorSocial(clt *core.SDKClient, req *mtopopen.AlibabaInteractSensorSocialRequest, session string) (*mtopopen.AlibabaInteractSensorSocialAPIResponse, error) {
+func AlibabaInteractSensorSocial(clt *core.SDKClient, req *mtopopen.AlibabaInteractSensorSocialAPIRequest, session string) (*mtopopen.AlibabaInteractSensorSocialAPIResponse, error) {
     var resp mtopopen.AlibabaInteractSensorSocialAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

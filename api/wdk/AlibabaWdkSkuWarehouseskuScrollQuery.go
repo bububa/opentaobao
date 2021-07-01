@@ -11,7 +11,7 @@ alibaba.wdk.sku.warehousesku.scroll.query
 
 提供仓商品数据接口查询
 */
-func AlibabaWdkSkuWarehouseskuScrollQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuWarehouseskuScrollQueryRequest, session string) (*wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIResponse, error) {
+func AlibabaWdkSkuWarehouseskuScrollQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest, session string) (*wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIResponse, error) {
     var resp wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

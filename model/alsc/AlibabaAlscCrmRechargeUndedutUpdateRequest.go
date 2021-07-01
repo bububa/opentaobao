@@ -12,26 +12,26 @@ alibaba.alsc.crm.recharge.undedut.update
 
 新增储值消费退款接口
 */
-type AlibabaAlscCrmRechargeUndedutUpdateRequest struct {
+type AlibabaAlscCrmRechargeUndedutUpdateAPIRequest struct {
     model.Params
     // 入参
     _paramUndedutOpenReq   *UndedutOpenReq
 }
 
-// 初始化AlibabaAlscCrmRechargeUndedutUpdateRequest对象
-func NewAlibabaAlscCrmRechargeUndedutUpdateRequest() *AlibabaAlscCrmRechargeUndedutUpdateRequest{
-    return &AlibabaAlscCrmRechargeUndedutUpdateRequest{
+// 初始化AlibabaAlscCrmRechargeUndedutUpdateAPIRequest对象
+func NewAlibabaAlscCrmRechargeUndedutUpdateRequest() *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest{
+    return &AlibabaAlscCrmRechargeUndedutUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRechargeUndedutUpdateRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.recharge.undedut.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRechargeUndedutUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeUndedutUpdateRequest) GetApiParams() url.Values {
 }
 // ParamUndedutOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeUndedutUpdateRequest) SetParamUndedutOpenReq(_paramUndedutOpenReq *UndedutOpenReq) error {
+func (r *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) SetParamUndedutOpenReq(_paramUndedutOpenReq *UndedutOpenReq) error {
     r._paramUndedutOpenReq = _paramUndedutOpenReq
     r.Set("param_undedut_open_req", _paramUndedutOpenReq)
     return nil
 }
 
 // ParamUndedutOpenReq Getter
-func (r AlibabaAlscCrmRechargeUndedutUpdateRequest) GetParamUndedutOpenReq() *UndedutOpenReq {
+func (r AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) GetParamUndedutOpenReq() *UndedutOpenReq {
     return r._paramUndedutOpenReq
 }

@@ -12,26 +12,26 @@ alibaba.wdk.sopo.push.trigger
 
 猫超共享库存寄售sopo触发推送给商家
 */
-type AlibabaWdkSopoPushTriggerRequest struct {
+type AlibabaWdkSopoPushTriggerAPIRequest struct {
     model.Params
     // 系统自动生成
     _wdkOpenPushSoPoRequest   *WdkOpenPushSoPoRequest
 }
 
-// 初始化AlibabaWdkSopoPushTriggerRequest对象
-func NewAlibabaWdkSopoPushTriggerRequest() *AlibabaWdkSopoPushTriggerRequest{
-    return &AlibabaWdkSopoPushTriggerRequest{
+// 初始化AlibabaWdkSopoPushTriggerAPIRequest对象
+func NewAlibabaWdkSopoPushTriggerRequest() *AlibabaWdkSopoPushTriggerAPIRequest{
+    return &AlibabaWdkSopoPushTriggerAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSopoPushTriggerRequest) GetApiMethodName() string {
+func (r AlibabaWdkSopoPushTriggerAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.sopo.push.trigger"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSopoPushTriggerRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSopoPushTriggerAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSopoPushTriggerRequest) GetApiParams() url.Values {
 }
 // WdkOpenPushSoPoRequest Setter
 // 系统自动生成
-func (r *AlibabaWdkSopoPushTriggerRequest) SetWdkOpenPushSoPoRequest(_wdkOpenPushSoPoRequest *WdkOpenPushSoPoRequest) error {
+func (r *AlibabaWdkSopoPushTriggerAPIRequest) SetWdkOpenPushSoPoRequest(_wdkOpenPushSoPoRequest *WdkOpenPushSoPoRequest) error {
     r._wdkOpenPushSoPoRequest = _wdkOpenPushSoPoRequest
     r.Set("wdk_open_push_so_po_request", _wdkOpenPushSoPoRequest)
     return nil
 }
 
 // WdkOpenPushSoPoRequest Getter
-func (r AlibabaWdkSopoPushTriggerRequest) GetWdkOpenPushSoPoRequest() *WdkOpenPushSoPoRequest {
+func (r AlibabaWdkSopoPushTriggerAPIRequest) GetWdkOpenPushSoPoRequest() *WdkOpenPushSoPoRequest {
     return r._wdkOpenPushSoPoRequest
 }

@@ -11,7 +11,7 @@ taobao.uscesl.biz.ap.activate
 
 激活AP价签通讯模块
 */
-func TaobaoUsceslBizApActivate(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizApActivateRequest, session string) (*uscesl.TaobaoUsceslBizApActivateAPIResponse, error) {
+func TaobaoUsceslBizApActivate(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizApActivateAPIRequest, session string) (*uscesl.TaobaoUsceslBizApActivateAPIResponse, error) {
     var resp uscesl.TaobaoUsceslBizApActivateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

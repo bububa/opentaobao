@@ -12,26 +12,26 @@ taobao.trades.sold.query
 
 根据收件人信息查询交易单号。
 */
-type TaobaoTradesSoldQueryRequest struct {
+type TaobaoTradesSoldQueryAPIRequest struct {
     model.Params
     // 查询条件列表，多个条件之间是OR关系，最多支持20个。receiver_name、receiver_mobile、receiver_phone至少有一个值不为空。
     _queryList   []OrderQuery
 }
 
-// 初始化TaobaoTradesSoldQueryRequest对象
-func NewTaobaoTradesSoldQueryRequest() *TaobaoTradesSoldQueryRequest{
-    return &TaobaoTradesSoldQueryRequest{
+// 初始化TaobaoTradesSoldQueryAPIRequest对象
+func NewTaobaoTradesSoldQueryRequest() *TaobaoTradesSoldQueryAPIRequest{
+    return &TaobaoTradesSoldQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTradesSoldQueryRequest) GetApiMethodName() string {
+func (r TaobaoTradesSoldQueryAPIRequest) GetApiMethodName() string {
     return "taobao.trades.sold.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTradesSoldQueryRequest) GetApiParams() url.Values {
+func (r TaobaoTradesSoldQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTradesSoldQueryRequest) GetApiParams() url.Values {
 }
 // QueryList Setter
 // 查询条件列表，多个条件之间是OR关系，最多支持20个。receiver_name、receiver_mobile、receiver_phone至少有一个值不为空。
-func (r *TaobaoTradesSoldQueryRequest) SetQueryList(_queryList []OrderQuery) error {
+func (r *TaobaoTradesSoldQueryAPIRequest) SetQueryList(_queryList []OrderQuery) error {
     r._queryList = _queryList
     r.Set("query_list", _queryList)
     return nil
 }
 
 // QueryList Getter
-func (r TaobaoTradesSoldQueryRequest) GetQueryList() []OrderQuery {
+func (r TaobaoTradesSoldQueryAPIRequest) GetQueryList() []OrderQuery {
     return r._queryList
 }

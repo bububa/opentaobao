@@ -12,24 +12,24 @@ taobao.picture.userinfo.get
 
 查询用户的图片空间使用信息，包括：订购量，已使用容量，免费容量，总的可使用容量，订购有效期，剩余容量
 */
-type TaobaoPictureUserinfoGetRequest struct {
+type TaobaoPictureUserinfoGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoPictureUserinfoGetRequest对象
-func NewTaobaoPictureUserinfoGetRequest() *TaobaoPictureUserinfoGetRequest{
-    return &TaobaoPictureUserinfoGetRequest{
+// 初始化TaobaoPictureUserinfoGetAPIRequest对象
+func NewTaobaoPictureUserinfoGetRequest() *TaobaoPictureUserinfoGetAPIRequest{
+    return &TaobaoPictureUserinfoGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPictureUserinfoGetRequest) GetApiMethodName() string {
+func (r TaobaoPictureUserinfoGetAPIRequest) GetApiMethodName() string {
     return "taobao.picture.userinfo.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPictureUserinfoGetRequest) GetApiParams() url.Values {
+func (r TaobaoPictureUserinfoGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

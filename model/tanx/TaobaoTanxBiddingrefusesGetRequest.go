@@ -12,7 +12,7 @@ taobao.tanx.biddingrefuses.get
 
 竞价失败反馈根据创意id查询API提供
 */
-type TaobaoTanxBiddingrefusesGetRequest struct {
+type TaobaoTanxBiddingrefusesGetAPIRequest struct {
     model.Params
     // dsp的创意id
     _creativeIds   []string
@@ -28,20 +28,20 @@ type TaobaoTanxBiddingrefusesGetRequest struct {
     _endTime   string
 }
 
-// 初始化TaobaoTanxBiddingrefusesGetRequest对象
-func NewTaobaoTanxBiddingrefusesGetRequest() *TaobaoTanxBiddingrefusesGetRequest{
-    return &TaobaoTanxBiddingrefusesGetRequest{
+// 初始化TaobaoTanxBiddingrefusesGetAPIRequest对象
+func NewTaobaoTanxBiddingrefusesGetRequest() *TaobaoTanxBiddingrefusesGetAPIRequest{
+    return &TaobaoTanxBiddingrefusesGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTanxBiddingrefusesGetRequest) GetApiMethodName() string {
+func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetApiMethodName() string {
     return "taobao.tanx.biddingrefuses.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTanxBiddingrefusesGetRequest) GetApiParams() url.Values {
+func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -50,73 +50,73 @@ func (r TaobaoTanxBiddingrefusesGetRequest) GetApiParams() url.Values {
 }
 // CreativeIds Setter
 // dsp的创意id
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetCreativeIds(_creativeIds []string) error {
+func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetCreativeIds(_creativeIds []string) error {
     r._creativeIds = _creativeIds
     r.Set("creative_ids", _creativeIds)
     return nil
 }
 
 // CreativeIds Getter
-func (r TaobaoTanxBiddingrefusesGetRequest) GetCreativeIds() []string {
+func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetCreativeIds() []string {
     return r._creativeIds
 }
 // MemberId Setter
 // dsp在tanx的memberid
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetMemberId(_memberId int64) error {
+func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetMemberId(_memberId int64) error {
     r._memberId = _memberId
     r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
-func (r TaobaoTanxBiddingrefusesGetRequest) GetMemberId() int64 {
+func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetMemberId() int64 {
     return r._memberId
 }
 // Token Setter
 // dsp对应的tanx的token
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetToken(_token string) error {
+func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetToken(_token string) error {
     r._token = _token
     r.Set("token", _token)
     return nil
 }
 
 // Token Getter
-func (r TaobaoTanxBiddingrefusesGetRequest) GetToken() string {
+func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetToken() string {
     return r._token
 }
 // SignTime Setter
 // 1970年到现在的毫秒
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetSignTime(_signTime int64) error {
+func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetSignTime(_signTime int64) error {
     r._signTime = _signTime
     r.Set("sign_time", _signTime)
     return nil
 }
 
 // SignTime Getter
-func (r TaobaoTanxBiddingrefusesGetRequest) GetSignTime() int64 {
+func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetSignTime() int64 {
     return r._signTime
 }
 // StartTime Setter
 // 起始时间
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetStartTime(_startTime string) error {
+func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetStartTime(_startTime string) error {
     r._startTime = _startTime
     r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
-func (r TaobaoTanxBiddingrefusesGetRequest) GetStartTime() string {
+func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetStartTime() string {
     return r._startTime
 }
 // EndTime Setter
 // 截止时间
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetEndTime(_endTime string) error {
+func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetEndTime(_endTime string) error {
     r._endTime = _endTime
     r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
-func (r TaobaoTanxBiddingrefusesGetRequest) GetEndTime() string {
+func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetEndTime() string {
     return r._endTime
 }

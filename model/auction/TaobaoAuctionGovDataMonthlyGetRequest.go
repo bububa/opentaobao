@@ -18,7 +18,7 @@ taobao.auction.gov.data.monthly.get
 
 最长12个月，月的起始时间不能早于2017年3月
 */
-type TaobaoAuctionGovDataMonthlyGetRequest struct {
+type TaobaoAuctionGovDataMonthlyGetAPIRequest struct {
     model.Params
     // 法院名称
     _courtName   string
@@ -30,20 +30,20 @@ type TaobaoAuctionGovDataMonthlyGetRequest struct {
     _endMonth   string
 }
 
-// 初始化TaobaoAuctionGovDataMonthlyGetRequest对象
-func NewTaobaoAuctionGovDataMonthlyGetRequest() *TaobaoAuctionGovDataMonthlyGetRequest{
-    return &TaobaoAuctionGovDataMonthlyGetRequest{
+// 初始化TaobaoAuctionGovDataMonthlyGetAPIRequest对象
+func NewTaobaoAuctionGovDataMonthlyGetRequest() *TaobaoAuctionGovDataMonthlyGetAPIRequest{
+    return &TaobaoAuctionGovDataMonthlyGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAuctionGovDataMonthlyGetRequest) GetApiMethodName() string {
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetApiMethodName() string {
     return "taobao.auction.gov.data.monthly.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAuctionGovDataMonthlyGetRequest) GetApiParams() url.Values {
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,49 +52,49 @@ func (r TaobaoAuctionGovDataMonthlyGetRequest) GetApiParams() url.Values {
 }
 // CourtName Setter
 // 法院名称
-func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetCourtName(_courtName string) error {
+func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetCourtName(_courtName string) error {
     r._courtName = _courtName
     r.Set("court_name", _courtName)
     return nil
 }
 
 // CourtName Getter
-func (r TaobaoAuctionGovDataMonthlyGetRequest) GetCourtName() string {
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetCourtName() string {
     return r._courtName
 }
 // IsIncludeSub Setter
 // 统计数据是够包含下属法院
-func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetIsIncludeSub(_isIncludeSub bool) error {
+func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
     r._isIncludeSub = _isIncludeSub
     r.Set("is_include_sub", _isIncludeSub)
     return nil
 }
 
 // IsIncludeSub Getter
-func (r TaobaoAuctionGovDataMonthlyGetRequest) GetIsIncludeSub() bool {
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetIsIncludeSub() bool {
     return r._isIncludeSub
 }
 // StartMonth Setter
 // 开始月份
-func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetStartMonth(_startMonth string) error {
+func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetStartMonth(_startMonth string) error {
     r._startMonth = _startMonth
     r.Set("start_month", _startMonth)
     return nil
 }
 
 // StartMonth Getter
-func (r TaobaoAuctionGovDataMonthlyGetRequest) GetStartMonth() string {
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetStartMonth() string {
     return r._startMonth
 }
 // EndMonth Setter
 // 截止月份(统计数据包含这个月)
-func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetEndMonth(_endMonth string) error {
+func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetEndMonth(_endMonth string) error {
     r._endMonth = _endMonth
     r.Set("end_month", _endMonth)
     return nil
 }
 
 // EndMonth Getter
-func (r TaobaoAuctionGovDataMonthlyGetRequest) GetEndMonth() string {
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetEndMonth() string {
     return r._endMonth
 }

@@ -11,7 +11,7 @@ taobao.xhotel.rate.relationshipwithrp.get
 
 根据gid查询卖家下所有的rpId，可分页，默认展示第一页的数据
 */
-func TaobaoXhotelRateRelationshipwithrpGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateRelationshipwithrpGetRequest, session string) (*xhotelitem.TaobaoXhotelRateRelationshipwithrpGetAPIResponse, error) {
+func TaobaoXhotelRateRelationshipwithrpGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateRelationshipwithrpGetAPIRequest, session string) (*xhotelitem.TaobaoXhotelRateRelationshipwithrpGetAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelRateRelationshipwithrpGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

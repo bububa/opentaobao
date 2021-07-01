@@ -12,7 +12,7 @@ alibaba.happytrip.taxi.order.destination.modify
 
 通知ISV修改订单信息
 */
-type AlibabaHappytripTaxiOrderDestinationModifyRequest struct {
+type AlibabaHappytripTaxiOrderDestinationModifyAPIRequest struct {
     model.Params
     // 订单id
     _orderId   string
@@ -26,20 +26,20 @@ type AlibabaHappytripTaxiOrderDestinationModifyRequest struct {
     _endAddress   string
 }
 
-// 初始化AlibabaHappytripTaxiOrderDestinationModifyRequest对象
-func NewAlibabaHappytripTaxiOrderDestinationModifyRequest() *AlibabaHappytripTaxiOrderDestinationModifyRequest{
-    return &AlibabaHappytripTaxiOrderDestinationModifyRequest{
+// 初始化AlibabaHappytripTaxiOrderDestinationModifyAPIRequest对象
+func NewAlibabaHappytripTaxiOrderDestinationModifyRequest() *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest{
+    return &AlibabaHappytripTaxiOrderDestinationModifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetApiMethodName() string {
+func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetApiMethodName() string {
     return "alibaba.happytrip.taxi.order.destination.modify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetApiParams() url.Values {
+func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetApiParams() url.Va
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetOrderId(_orderId string) error {
+func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetOrderId(_orderId string) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetOrderId() string {
+func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetOrderId() string {
     return r._orderId
 }
 // Tlng Setter
 // 目的地经度
-func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetTlng(_tlng string) error {
+func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetTlng(_tlng string) error {
     r._tlng = _tlng
     r.Set("tlng", _tlng)
     return nil
 }
 
 // Tlng Getter
-func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetTlng() string {
+func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetTlng() string {
     return r._tlng
 }
 // Tlat Setter
 // 目的地纬度
-func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetTlat(_tlat string) error {
+func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetTlat(_tlat string) error {
     r._tlat = _tlat
     r.Set("tlat", _tlat)
     return nil
 }
 
 // Tlat Getter
-func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetTlat() string {
+func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetTlat() string {
     return r._tlat
 }
 // EndName Setter
 // 目的地名称(最多50个字)
-func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetEndName(_endName string) error {
+func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetEndName(_endName string) error {
     r._endName = _endName
     r.Set("end_name", _endName)
     return nil
 }
 
 // EndName Getter
-func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetEndName() string {
+func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetEndName() string {
     return r._endName
 }
 // EndAddress Setter
 // 目的地详细地址(最多100个字)
-func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetEndAddress(_endAddress string) error {
+func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetEndAddress(_endAddress string) error {
     r._endAddress = _endAddress
     r.Set("end_address", _endAddress)
     return nil
 }
 
 // EndAddress Getter
-func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetEndAddress() string {
+func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetEndAddress() string {
     return r._endAddress
 }

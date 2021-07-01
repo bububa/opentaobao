@@ -12,7 +12,7 @@ cainiao.global.handover.parcel.query
 
 提供给ISV通过该接口查询小包信息
 */
-type CainiaoGlobalHandoverParcelQueryRequest struct {
+type CainiaoGlobalHandoverParcelQueryAPIRequest struct {
     model.Params
     // 用户信息
     _userInfo   *UserInfoDTO
@@ -26,20 +26,20 @@ type CainiaoGlobalHandoverParcelQueryRequest struct {
     _client   string
 }
 
-// 初始化CainiaoGlobalHandoverParcelQueryRequest对象
-func NewCainiaoGlobalHandoverParcelQueryRequest() *CainiaoGlobalHandoverParcelQueryRequest{
-    return &CainiaoGlobalHandoverParcelQueryRequest{
+// 初始化CainiaoGlobalHandoverParcelQueryAPIRequest对象
+func NewCainiaoGlobalHandoverParcelQueryRequest() *CainiaoGlobalHandoverParcelQueryAPIRequest{
+    return &CainiaoGlobalHandoverParcelQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoGlobalHandoverParcelQueryRequest) GetApiMethodName() string {
+func (r CainiaoGlobalHandoverParcelQueryAPIRequest) GetApiMethodName() string {
     return "cainiao.global.handover.parcel.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoGlobalHandoverParcelQueryRequest) GetApiParams() url.Values {
+func (r CainiaoGlobalHandoverParcelQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r CainiaoGlobalHandoverParcelQueryRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 用户信息
-func (r *CainiaoGlobalHandoverParcelQueryRequest) SetUserInfo(_userInfo *UserInfoDTO) error {
+func (r *CainiaoGlobalHandoverParcelQueryAPIRequest) SetUserInfo(_userInfo *UserInfoDTO) error {
     r._userInfo = _userInfo
     r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
-func (r CainiaoGlobalHandoverParcelQueryRequest) GetUserInfo() *UserInfoDTO {
+func (r CainiaoGlobalHandoverParcelQueryAPIRequest) GetUserInfo() *UserInfoDTO {
     return r._userInfo
 }
 // Locale Setter
 // 多语言
-func (r *CainiaoGlobalHandoverParcelQueryRequest) SetLocale(_locale string) error {
+func (r *CainiaoGlobalHandoverParcelQueryAPIRequest) SetLocale(_locale string) error {
     r._locale = _locale
     r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
-func (r CainiaoGlobalHandoverParcelQueryRequest) GetLocale() string {
+func (r CainiaoGlobalHandoverParcelQueryAPIRequest) GetLocale() string {
     return r._locale
 }
 // OrderCode Setter
 // 小包的物流订单号,和小包的国际运单号参数任选其一即可
-func (r *CainiaoGlobalHandoverParcelQueryRequest) SetOrderCode(_orderCode string) error {
+func (r *CainiaoGlobalHandoverParcelQueryAPIRequest) SetOrderCode(_orderCode string) error {
     r._orderCode = _orderCode
     r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
-func (r CainiaoGlobalHandoverParcelQueryRequest) GetOrderCode() string {
+func (r CainiaoGlobalHandoverParcelQueryAPIRequest) GetOrderCode() string {
     return r._orderCode
 }
 // TrackingNumber Setter
 // 小包的国际运单号，和小包的物流订单号参数任选其一即可
-func (r *CainiaoGlobalHandoverParcelQueryRequest) SetTrackingNumber(_trackingNumber string) error {
+func (r *CainiaoGlobalHandoverParcelQueryAPIRequest) SetTrackingNumber(_trackingNumber string) error {
     r._trackingNumber = _trackingNumber
     r.Set("tracking_number", _trackingNumber)
     return nil
 }
 
 // TrackingNumber Getter
-func (r CainiaoGlobalHandoverParcelQueryRequest) GetTrackingNumber() string {
+func (r CainiaoGlobalHandoverParcelQueryAPIRequest) GetTrackingNumber() string {
     return r._trackingNumber
 }
 // Client Setter
 // 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
-func (r *CainiaoGlobalHandoverParcelQueryRequest) SetClient(_client string) error {
+func (r *CainiaoGlobalHandoverParcelQueryAPIRequest) SetClient(_client string) error {
     r._client = _client
     r.Set("client", _client)
     return nil
 }
 
 // Client Getter
-func (r CainiaoGlobalHandoverParcelQueryRequest) GetClient() string {
+func (r CainiaoGlobalHandoverParcelQueryAPIRequest) GetClient() string {
     return r._client
 }

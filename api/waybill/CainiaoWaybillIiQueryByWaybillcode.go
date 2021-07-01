@@ -11,7 +11,7 @@ cainiao.waybill.ii.query.by.waybillcode
 
 通过面单号查看面单号的当前状态，如签收、发货、失效等。
 */
-func CainiaoWaybillIiQueryByWaybillcode(clt *core.SDKClient, req *waybill.CainiaoWaybillIiQueryByWaybillcodeRequest, session string) (*waybill.CainiaoWaybillIiQueryByWaybillcodeAPIResponse, error) {
+func CainiaoWaybillIiQueryByWaybillcode(clt *core.SDKClient, req *waybill.CainiaoWaybillIiQueryByWaybillcodeAPIRequest, session string) (*waybill.CainiaoWaybillIiQueryByWaybillcodeAPIResponse, error) {
     var resp waybill.CainiaoWaybillIiQueryByWaybillcodeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

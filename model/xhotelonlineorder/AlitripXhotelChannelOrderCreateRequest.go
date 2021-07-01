@@ -12,26 +12,26 @@ alitrip.xhotel.channel.order.create
 
 创建订单接口服务（如菲住等其他渠道分销提供）
 */
-type AlitripXhotelChannelOrderCreateRequest struct {
+type AlitripXhotelChannelOrderCreateAPIRequest struct {
     model.Params
     // 创建订单参数
     _outSourceOrderCreateReq   *OutSourceOrderCreateReq
 }
 
-// 初始化AlitripXhotelChannelOrderCreateRequest对象
-func NewAlitripXhotelChannelOrderCreateRequest() *AlitripXhotelChannelOrderCreateRequest{
-    return &AlitripXhotelChannelOrderCreateRequest{
+// 初始化AlitripXhotelChannelOrderCreateAPIRequest对象
+func NewAlitripXhotelChannelOrderCreateRequest() *AlitripXhotelChannelOrderCreateAPIRequest{
+    return &AlitripXhotelChannelOrderCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripXhotelChannelOrderCreateRequest) GetApiMethodName() string {
+func (r AlitripXhotelChannelOrderCreateAPIRequest) GetApiMethodName() string {
     return "alitrip.xhotel.channel.order.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripXhotelChannelOrderCreateRequest) GetApiParams() url.Values {
+func (r AlitripXhotelChannelOrderCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripXhotelChannelOrderCreateRequest) GetApiParams() url.Values {
 }
 // OutSourceOrderCreateReq Setter
 // 创建订单参数
-func (r *AlitripXhotelChannelOrderCreateRequest) SetOutSourceOrderCreateReq(_outSourceOrderCreateReq *OutSourceOrderCreateReq) error {
+func (r *AlitripXhotelChannelOrderCreateAPIRequest) SetOutSourceOrderCreateReq(_outSourceOrderCreateReq *OutSourceOrderCreateReq) error {
     r._outSourceOrderCreateReq = _outSourceOrderCreateReq
     r.Set("out_source_order_create_req", _outSourceOrderCreateReq)
     return nil
 }
 
 // OutSourceOrderCreateReq Getter
-func (r AlitripXhotelChannelOrderCreateRequest) GetOutSourceOrderCreateReq() *OutSourceOrderCreateReq {
+func (r AlitripXhotelChannelOrderCreateAPIRequest) GetOutSourceOrderCreateReq() *OutSourceOrderCreateReq {
     return r._outSourceOrderCreateReq
 }

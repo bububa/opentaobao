@@ -11,7 +11,7 @@ alibaba.damai.mev.open.deleteitem
 
 deleteItem
 */
-func AlibabaDamaiMevOpenDeleteitem(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeleteitemRequest, session string) (*damai.AlibabaDamaiMevOpenDeleteitemAPIResponse, error) {
+func AlibabaDamaiMevOpenDeleteitem(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeleteitemAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeleteitemAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenDeleteitemAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

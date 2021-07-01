@@ -12,26 +12,26 @@ alibaba.mozi.acl.permissionpkg.add.permissions
 
 此接口的功能为：将一批应用下的权限添加到该应用下的权限套餐中
 */
-type AlibabaMoziAclPermissionpkgAddPermissionsRequest struct {
+type AlibabaMoziAclPermissionpkgAddPermissionsAPIRequest struct {
     model.Params
     // 请求对象
     _parameters   *UpdatePermissionsToPermissionPackageRequest
 }
 
-// 初始化AlibabaMoziAclPermissionpkgAddPermissionsRequest对象
-func NewAlibabaMoziAclPermissionpkgAddPermissionsRequest() *AlibabaMoziAclPermissionpkgAddPermissionsRequest{
-    return &AlibabaMoziAclPermissionpkgAddPermissionsRequest{
+// 初始化AlibabaMoziAclPermissionpkgAddPermissionsAPIRequest对象
+func NewAlibabaMoziAclPermissionpkgAddPermissionsRequest() *AlibabaMoziAclPermissionpkgAddPermissionsAPIRequest{
+    return &AlibabaMoziAclPermissionpkgAddPermissionsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziAclPermissionpkgAddPermissionsRequest) GetApiMethodName() string {
+func (r AlibabaMoziAclPermissionpkgAddPermissionsAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.acl.permissionpkg.add.permissions"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziAclPermissionpkgAddPermissionsRequest) GetApiParams() url.Values {
+func (r AlibabaMoziAclPermissionpkgAddPermissionsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclPermissionpkgAddPermissionsRequest) GetApiParams() url.Val
 }
 // Parameters Setter
 // 请求对象
-func (r *AlibabaMoziAclPermissionpkgAddPermissionsRequest) SetParameters(_parameters *UpdatePermissionsToPermissionPackageRequest) error {
+func (r *AlibabaMoziAclPermissionpkgAddPermissionsAPIRequest) SetParameters(_parameters *UpdatePermissionsToPermissionPackageRequest) error {
     r._parameters = _parameters
     r.Set("parameters", _parameters)
     return nil
 }
 
 // Parameters Getter
-func (r AlibabaMoziAclPermissionpkgAddPermissionsRequest) GetParameters() *UpdatePermissionsToPermissionPackageRequest {
+func (r AlibabaMoziAclPermissionpkgAddPermissionsAPIRequest) GetParameters() *UpdatePermissionsToPermissionPackageRequest {
     return r._parameters
 }

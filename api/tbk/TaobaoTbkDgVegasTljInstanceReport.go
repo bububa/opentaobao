@@ -11,7 +11,7 @@ taobao.tbk.dg.vegas.tlj.instance.report
 
 淘礼金实例维度相关报表数据查询
 */
-func TaobaoTbkDgVegasTljInstanceReport(clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasTljInstanceReportRequest, session string) (*tbk.TaobaoTbkDgVegasTljInstanceReportAPIResponse, error) {
+func TaobaoTbkDgVegasTljInstanceReport(clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasTljInstanceReportAPIRequest, session string) (*tbk.TaobaoTbkDgVegasTljInstanceReportAPIResponse, error) {
     var resp tbk.TaobaoTbkDgVegasTljInstanceReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

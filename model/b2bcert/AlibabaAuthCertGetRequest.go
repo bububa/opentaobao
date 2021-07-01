@@ -12,7 +12,7 @@ alibaba.auth.cert.get
 
 获取证书数据
 */
-type AlibabaAuthCertGetRequest struct {
+type AlibabaAuthCertGetAPIRequest struct {
     model.Params
     // 认证商
     _provider   string
@@ -20,20 +20,20 @@ type AlibabaAuthCertGetRequest struct {
     _receiveInfo   string
 }
 
-// 初始化AlibabaAuthCertGetRequest对象
-func NewAlibabaAuthCertGetRequest() *AlibabaAuthCertGetRequest{
-    return &AlibabaAuthCertGetRequest{
+// 初始化AlibabaAuthCertGetAPIRequest对象
+func NewAlibabaAuthCertGetRequest() *AlibabaAuthCertGetAPIRequest{
+    return &AlibabaAuthCertGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAuthCertGetRequest) GetApiMethodName() string {
+func (r AlibabaAuthCertGetAPIRequest) GetApiMethodName() string {
     return "alibaba.auth.cert.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAuthCertGetRequest) GetApiParams() url.Values {
+func (r AlibabaAuthCertGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAuthCertGetRequest) GetApiParams() url.Values {
 }
 // Provider Setter
 // 认证商
-func (r *AlibabaAuthCertGetRequest) SetProvider(_provider string) error {
+func (r *AlibabaAuthCertGetAPIRequest) SetProvider(_provider string) error {
     r._provider = _provider
     r.Set("provider", _provider)
     return nil
 }
 
 // Provider Getter
-func (r AlibabaAuthCertGetRequest) GetProvider() string {
+func (r AlibabaAuthCertGetAPIRequest) GetProvider() string {
     return r._provider
 }
 // ReceiveInfo Setter
 // 证书数据
-func (r *AlibabaAuthCertGetRequest) SetReceiveInfo(_receiveInfo string) error {
+func (r *AlibabaAuthCertGetAPIRequest) SetReceiveInfo(_receiveInfo string) error {
     r._receiveInfo = _receiveInfo
     r.Set("receive_info", _receiveInfo)
     return nil
 }
 
 // ReceiveInfo Getter
-func (r AlibabaAuthCertGetRequest) GetReceiveInfo() string {
+func (r AlibabaAuthCertGetAPIRequest) GetReceiveInfo() string {
     return r._receiveInfo
 }

@@ -11,7 +11,7 @@ taobao.openim.app.chatlogs.get
 
 查询openim应用的聊天记录
 */
-func TaobaoOpenimAppChatlogsGet(clt *core.SDKClient, req *openim.TaobaoOpenimAppChatlogsGetRequest, session string) (*openim.TaobaoOpenimAppChatlogsGetAPIResponse, error) {
+func TaobaoOpenimAppChatlogsGet(clt *core.SDKClient, req *openim.TaobaoOpenimAppChatlogsGetAPIRequest, session string) (*openim.TaobaoOpenimAppChatlogsGetAPIResponse, error) {
     var resp openim.TaobaoOpenimAppChatlogsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

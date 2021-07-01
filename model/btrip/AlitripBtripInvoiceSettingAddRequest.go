@@ -12,26 +12,26 @@ alitrip.btrip.invoice.setting.add
 
 发票设置
 */
-type AlitripBtripInvoiceSettingAddRequest struct {
+type AlitripBtripInvoiceSettingAddAPIRequest struct {
     model.Params
     // 请求对象
     _rq   *OpenInvoiceModifyAndNewRq
 }
 
-// 初始化AlitripBtripInvoiceSettingAddRequest对象
-func NewAlitripBtripInvoiceSettingAddRequest() *AlitripBtripInvoiceSettingAddRequest{
-    return &AlitripBtripInvoiceSettingAddRequest{
+// 初始化AlitripBtripInvoiceSettingAddAPIRequest对象
+func NewAlitripBtripInvoiceSettingAddRequest() *AlitripBtripInvoiceSettingAddAPIRequest{
+    return &AlitripBtripInvoiceSettingAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripInvoiceSettingAddRequest) GetApiMethodName() string {
+func (r AlitripBtripInvoiceSettingAddAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.invoice.setting.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripInvoiceSettingAddRequest) GetApiParams() url.Values {
+func (r AlitripBtripInvoiceSettingAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripInvoiceSettingAddRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripInvoiceSettingAddRequest) SetRq(_rq *OpenInvoiceModifyAndNewRq) error {
+func (r *AlitripBtripInvoiceSettingAddAPIRequest) SetRq(_rq *OpenInvoiceModifyAndNewRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripInvoiceSettingAddRequest) GetRq() *OpenInvoiceModifyAndNewRq {
+func (r AlitripBtripInvoiceSettingAddAPIRequest) GetRq() *OpenInvoiceModifyAndNewRq {
     return r._rq
 }

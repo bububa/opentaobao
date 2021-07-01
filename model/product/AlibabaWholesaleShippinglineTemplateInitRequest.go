@@ -12,26 +12,26 @@ alibaba.wholesale.shippingline.template.init
 
 创建默认的几种运费模板
 */
-type AlibabaWholesaleShippinglineTemplateInitRequest struct {
+type AlibabaWholesaleShippinglineTemplateInitAPIRequest struct {
     model.Params
     // 创建初始运费模板参数
     _initialTemplate   []InitialTemplate
 }
 
-// 初始化AlibabaWholesaleShippinglineTemplateInitRequest对象
-func NewAlibabaWholesaleShippinglineTemplateInitRequest() *AlibabaWholesaleShippinglineTemplateInitRequest{
-    return &AlibabaWholesaleShippinglineTemplateInitRequest{
+// 初始化AlibabaWholesaleShippinglineTemplateInitAPIRequest对象
+func NewAlibabaWholesaleShippinglineTemplateInitRequest() *AlibabaWholesaleShippinglineTemplateInitAPIRequest{
+    return &AlibabaWholesaleShippinglineTemplateInitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWholesaleShippinglineTemplateInitRequest) GetApiMethodName() string {
+func (r AlibabaWholesaleShippinglineTemplateInitAPIRequest) GetApiMethodName() string {
     return "alibaba.wholesale.shippingline.template.init"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWholesaleShippinglineTemplateInitRequest) GetApiParams() url.Values {
+func (r AlibabaWholesaleShippinglineTemplateInitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWholesaleShippinglineTemplateInitRequest) GetApiParams() url.Valu
 }
 // InitialTemplate Setter
 // 创建初始运费模板参数
-func (r *AlibabaWholesaleShippinglineTemplateInitRequest) SetInitialTemplate(_initialTemplate []InitialTemplate) error {
+func (r *AlibabaWholesaleShippinglineTemplateInitAPIRequest) SetInitialTemplate(_initialTemplate []InitialTemplate) error {
     r._initialTemplate = _initialTemplate
     r.Set("initial_template", _initialTemplate)
     return nil
 }
 
 // InitialTemplate Getter
-func (r AlibabaWholesaleShippinglineTemplateInitRequest) GetInitialTemplate() []InitialTemplate {
+func (r AlibabaWholesaleShippinglineTemplateInitAPIRequest) GetInitialTemplate() []InitialTemplate {
     return r._initialTemplate
 }

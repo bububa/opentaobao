@@ -11,7 +11,7 @@ taobao.delivery.template.add
 
 增加运费模板的外部接口
 */
-func TaobaoDeliveryTemplateAdd(clt *core.SDKClient, req *logistic.TaobaoDeliveryTemplateAddRequest, session string) (*logistic.TaobaoDeliveryTemplateAddAPIResponse, error) {
+func TaobaoDeliveryTemplateAdd(clt *core.SDKClient, req *logistic.TaobaoDeliveryTemplateAddAPIRequest, session string) (*logistic.TaobaoDeliveryTemplateAddAPIResponse, error) {
     var resp logistic.TaobaoDeliveryTemplateAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

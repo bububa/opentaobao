@@ -12,26 +12,26 @@ taobao.ihome.advancepic.upload
 
 ihome 定制业务编辑器投稿素材上传
 */
-type TaobaoIhomeAdvancepicUploadRequest struct {
+type TaobaoIhomeAdvancepicUploadAPIRequest struct {
     model.Params
     // 图片类
     _materials   []AdvancePicMaterialDTO
 }
 
-// 初始化TaobaoIhomeAdvancepicUploadRequest对象
-func NewTaobaoIhomeAdvancepicUploadRequest() *TaobaoIhomeAdvancepicUploadRequest{
-    return &TaobaoIhomeAdvancepicUploadRequest{
+// 初始化TaobaoIhomeAdvancepicUploadAPIRequest对象
+func NewTaobaoIhomeAdvancepicUploadRequest() *TaobaoIhomeAdvancepicUploadAPIRequest{
+    return &TaobaoIhomeAdvancepicUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoIhomeAdvancepicUploadRequest) GetApiMethodName() string {
+func (r TaobaoIhomeAdvancepicUploadAPIRequest) GetApiMethodName() string {
     return "taobao.ihome.advancepic.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoIhomeAdvancepicUploadRequest) GetApiParams() url.Values {
+func (r TaobaoIhomeAdvancepicUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoIhomeAdvancepicUploadRequest) GetApiParams() url.Values {
 }
 // Materials Setter
 // 图片类
-func (r *TaobaoIhomeAdvancepicUploadRequest) SetMaterials(_materials []AdvancePicMaterialDTO) error {
+func (r *TaobaoIhomeAdvancepicUploadAPIRequest) SetMaterials(_materials []AdvancePicMaterialDTO) error {
     r._materials = _materials
     r.Set("materials", _materials)
     return nil
 }
 
 // Materials Getter
-func (r TaobaoIhomeAdvancepicUploadRequest) GetMaterials() []AdvancePicMaterialDTO {
+func (r TaobaoIhomeAdvancepicUploadAPIRequest) GetMaterials() []AdvancePicMaterialDTO {
     return r._materials
 }

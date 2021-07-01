@@ -12,26 +12,26 @@ taobao.bus.agent.refund.confirm
 
 1.商家退票成功后，回调飞猪平台汽车票退票接口，平台进行退票和退款操作。
 */
-type TaobaoBusAgentRefundConfirmRequest struct {
+type TaobaoBusAgentRefundConfirmAPIRequest struct {
     model.Params
     // 入参
     _paramAgentConfirmReturnAndRefundRQ   *AgentConfirmReturnAndRefundRq
 }
 
-// 初始化TaobaoBusAgentRefundConfirmRequest对象
-func NewTaobaoBusAgentRefundConfirmRequest() *TaobaoBusAgentRefundConfirmRequest{
-    return &TaobaoBusAgentRefundConfirmRequest{
+// 初始化TaobaoBusAgentRefundConfirmAPIRequest对象
+func NewTaobaoBusAgentRefundConfirmRequest() *TaobaoBusAgentRefundConfirmAPIRequest{
+    return &TaobaoBusAgentRefundConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBusAgentRefundConfirmRequest) GetApiMethodName() string {
+func (r TaobaoBusAgentRefundConfirmAPIRequest) GetApiMethodName() string {
     return "taobao.bus.agent.refund.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBusAgentRefundConfirmRequest) GetApiParams() url.Values {
+func (r TaobaoBusAgentRefundConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBusAgentRefundConfirmRequest) GetApiParams() url.Values {
 }
 // ParamAgentConfirmReturnAndRefundRQ Setter
 // 入参
-func (r *TaobaoBusAgentRefundConfirmRequest) SetParamAgentConfirmReturnAndRefundRQ(_paramAgentConfirmReturnAndRefundRQ *AgentConfirmReturnAndRefundRq) error {
+func (r *TaobaoBusAgentRefundConfirmAPIRequest) SetParamAgentConfirmReturnAndRefundRQ(_paramAgentConfirmReturnAndRefundRQ *AgentConfirmReturnAndRefundRq) error {
     r._paramAgentConfirmReturnAndRefundRQ = _paramAgentConfirmReturnAndRefundRQ
     r.Set("param_agent_confirm_return_and_refund_r_q", _paramAgentConfirmReturnAndRefundRQ)
     return nil
 }
 
 // ParamAgentConfirmReturnAndRefundRQ Getter
-func (r TaobaoBusAgentRefundConfirmRequest) GetParamAgentConfirmReturnAndRefundRQ() *AgentConfirmReturnAndRefundRq {
+func (r TaobaoBusAgentRefundConfirmAPIRequest) GetParamAgentConfirmReturnAndRefundRQ() *AgentConfirmReturnAndRefundRq {
     return r._paramAgentConfirmReturnAndRefundRQ
 }

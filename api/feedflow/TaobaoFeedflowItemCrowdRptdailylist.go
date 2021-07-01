@@ -11,7 +11,7 @@ taobao.feedflow.item.crowd.rptdailylist
 
 定向分日数据查询
 */
-func TaobaoFeedflowItemCrowdRptdailylist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdRptdailylistRequest, session string) (*feedflow.TaobaoFeedflowItemCrowdRptdailylistAPIResponse, error) {
+func TaobaoFeedflowItemCrowdRptdailylist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdRptdailylistAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCrowdRptdailylistAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemCrowdRptdailylistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

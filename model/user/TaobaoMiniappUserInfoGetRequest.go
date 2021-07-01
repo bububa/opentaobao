@@ -12,24 +12,24 @@ taobao.miniapp.userInfo.get
 
 获取用户的 openId，snsNick（如果用户设置过的话），和加密头像链接
 */
-type TaobaoMiniappUserInfoGetRequest struct {
+type TaobaoMiniappUserInfoGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoMiniappUserInfoGetRequest对象
-func NewTaobaoMiniappUserInfoGetRequest() *TaobaoMiniappUserInfoGetRequest{
-    return &TaobaoMiniappUserInfoGetRequest{
+// 初始化TaobaoMiniappUserInfoGetAPIRequest对象
+func NewTaobaoMiniappUserInfoGetRequest() *TaobaoMiniappUserInfoGetAPIRequest{
+    return &TaobaoMiniappUserInfoGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMiniappUserInfoGetRequest) GetApiMethodName() string {
+func (r TaobaoMiniappUserInfoGetAPIRequest) GetApiMethodName() string {
     return "taobao.miniapp.userInfo.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappUserInfoGetRequest) GetApiParams() url.Values {
+func (r TaobaoMiniappUserInfoGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

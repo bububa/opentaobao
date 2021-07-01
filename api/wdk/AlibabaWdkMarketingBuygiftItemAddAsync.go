@@ -11,7 +11,7 @@ alibaba.wdk.marketing.buygift.item.add.async
 
 批量发布买赠商品
 */
-func AlibabaWdkMarketingBuygiftItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingBuygiftItemAddAsyncRequest, session string) (*wdk.AlibabaWdkMarketingBuygiftItemAddAsyncAPIResponse, error) {
+func AlibabaWdkMarketingBuygiftItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingBuygiftItemAddAsyncAPIRequest, session string) (*wdk.AlibabaWdkMarketingBuygiftItemAddAsyncAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingBuygiftItemAddAsyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

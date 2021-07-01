@@ -12,26 +12,26 @@ alibaba.mos.pos.alarm
 
 故障报警
 */
-type AlibabaMosPosAlarmRequest struct {
+type AlibabaMosPosAlarmAPIRequest struct {
     model.Params
     // 参数
     _param0   *PosLogDTO
 }
 
-// 初始化AlibabaMosPosAlarmRequest对象
-func NewAlibabaMosPosAlarmRequest() *AlibabaMosPosAlarmRequest{
-    return &AlibabaMosPosAlarmRequest{
+// 初始化AlibabaMosPosAlarmAPIRequest对象
+func NewAlibabaMosPosAlarmRequest() *AlibabaMosPosAlarmAPIRequest{
+    return &AlibabaMosPosAlarmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosPosAlarmRequest) GetApiMethodName() string {
+func (r AlibabaMosPosAlarmAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.pos.alarm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosPosAlarmRequest) GetApiParams() url.Values {
+func (r AlibabaMosPosAlarmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMosPosAlarmRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 参数
-func (r *AlibabaMosPosAlarmRequest) SetParam0(_param0 *PosLogDTO) error {
+func (r *AlibabaMosPosAlarmAPIRequest) SetParam0(_param0 *PosLogDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaMosPosAlarmRequest) GetParam0() *PosLogDTO {
+func (r AlibabaMosPosAlarmAPIRequest) GetParam0() *PosLogDTO {
     return r._param0
 }

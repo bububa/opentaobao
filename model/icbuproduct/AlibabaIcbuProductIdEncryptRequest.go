@@ -12,7 +12,7 @@ alibaba.icbu.product.id.encrypt
 
 ICBU国际站，对混淆的产品ID加密。
 */
-type AlibabaIcbuProductIdEncryptRequest struct {
+type AlibabaIcbuProductIdEncryptAPIRequest struct {
     model.Params
     // 语种
     _language   string
@@ -20,20 +20,20 @@ type AlibabaIcbuProductIdEncryptRequest struct {
     _productId   int64
 }
 
-// 初始化AlibabaIcbuProductIdEncryptRequest对象
-func NewAlibabaIcbuProductIdEncryptRequest() *AlibabaIcbuProductIdEncryptRequest{
-    return &AlibabaIcbuProductIdEncryptRequest{
+// 初始化AlibabaIcbuProductIdEncryptAPIRequest对象
+func NewAlibabaIcbuProductIdEncryptRequest() *AlibabaIcbuProductIdEncryptAPIRequest{
+    return &AlibabaIcbuProductIdEncryptAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuProductIdEncryptRequest) GetApiMethodName() string {
+func (r AlibabaIcbuProductIdEncryptAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.product.id.encrypt"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuProductIdEncryptRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuProductIdEncryptAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaIcbuProductIdEncryptRequest) GetApiParams() url.Values {
 }
 // Language Setter
 // 语种
-func (r *AlibabaIcbuProductIdEncryptRequest) SetLanguage(_language string) error {
+func (r *AlibabaIcbuProductIdEncryptAPIRequest) SetLanguage(_language string) error {
     r._language = _language
     r.Set("language", _language)
     return nil
 }
 
 // Language Getter
-func (r AlibabaIcbuProductIdEncryptRequest) GetLanguage() string {
+func (r AlibabaIcbuProductIdEncryptAPIRequest) GetLanguage() string {
     return r._language
 }
 // ProductId Setter
 // 明文id
-func (r *AlibabaIcbuProductIdEncryptRequest) SetProductId(_productId int64) error {
+func (r *AlibabaIcbuProductIdEncryptAPIRequest) SetProductId(_productId int64) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r AlibabaIcbuProductIdEncryptRequest) GetProductId() int64 {
+func (r AlibabaIcbuProductIdEncryptAPIRequest) GetProductId() int64 {
     return r._productId
 }

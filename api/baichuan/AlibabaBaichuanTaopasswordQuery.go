@@ -11,7 +11,7 @@ alibaba.baichuan.taopassword.query
 
 查询，解析淘口令
 */
-func AlibabaBaichuanTaopasswordQuery(clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordQueryRequest, session string) (*baichuan.AlibabaBaichuanTaopasswordQueryAPIResponse, error) {
+func AlibabaBaichuanTaopasswordQuery(clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordQueryAPIRequest, session string) (*baichuan.AlibabaBaichuanTaopasswordQueryAPIResponse, error) {
     var resp baichuan.AlibabaBaichuanTaopasswordQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

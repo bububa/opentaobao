@@ -12,26 +12,26 @@ aliexpress.solution.product.info.get
 
 Get Single Product Info
 */
-type AliexpressSolutionProductInfoGetRequest struct {
+type AliexpressSolutionProductInfoGetAPIRequest struct {
     model.Params
     // product ID
     _productId   int64
 }
 
-// 初始化AliexpressSolutionProductInfoGetRequest对象
-func NewAliexpressSolutionProductInfoGetRequest() *AliexpressSolutionProductInfoGetRequest{
-    return &AliexpressSolutionProductInfoGetRequest{
+// 初始化AliexpressSolutionProductInfoGetAPIRequest对象
+func NewAliexpressSolutionProductInfoGetRequest() *AliexpressSolutionProductInfoGetAPIRequest{
+    return &AliexpressSolutionProductInfoGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionProductInfoGetRequest) GetApiMethodName() string {
+func (r AliexpressSolutionProductInfoGetAPIRequest) GetApiMethodName() string {
     return "aliexpress.solution.product.info.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionProductInfoGetRequest) GetApiParams() url.Values {
+func (r AliexpressSolutionProductInfoGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressSolutionProductInfoGetRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // product ID
-func (r *AliexpressSolutionProductInfoGetRequest) SetProductId(_productId int64) error {
+func (r *AliexpressSolutionProductInfoGetAPIRequest) SetProductId(_productId int64) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r AliexpressSolutionProductInfoGetRequest) GetProductId() int64 {
+func (r AliexpressSolutionProductInfoGetAPIRequest) GetProductId() int64 {
     return r._productId
 }

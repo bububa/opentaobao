@@ -11,7 +11,7 @@ taobao.baichuan.openaccount.password.reset
 
 百川找回密码
 */
-func TaobaoBaichuanOpenaccountPasswordReset(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountPasswordResetRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountPasswordResetAPIResponse, error) {
+func TaobaoBaichuanOpenaccountPasswordReset(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountPasswordResetAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountPasswordResetAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanOpenaccountPasswordResetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

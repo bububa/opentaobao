@@ -12,7 +12,7 @@ alibaba.interact.allsparkisv.draw
 
 该接口没有实际对外使用。只是内部鉴权使用，不会有三方应用调用
 */
-type AlibabaInteractAllsparkisvDrawRequest struct {
+type AlibabaInteractAllsparkisvDrawAPIRequest struct {
     model.Params
     // ddd
     _test   string
@@ -20,20 +20,20 @@ type AlibabaInteractAllsparkisvDrawRequest struct {
     _ddd   string
 }
 
-// 初始化AlibabaInteractAllsparkisvDrawRequest对象
-func NewAlibabaInteractAllsparkisvDrawRequest() *AlibabaInteractAllsparkisvDrawRequest{
-    return &AlibabaInteractAllsparkisvDrawRequest{
+// 初始化AlibabaInteractAllsparkisvDrawAPIRequest对象
+func NewAlibabaInteractAllsparkisvDrawRequest() *AlibabaInteractAllsparkisvDrawAPIRequest{
+    return &AlibabaInteractAllsparkisvDrawAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractAllsparkisvDrawRequest) GetApiMethodName() string {
+func (r AlibabaInteractAllsparkisvDrawAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.allsparkisv.draw"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractAllsparkisvDrawRequest) GetApiParams() url.Values {
+func (r AlibabaInteractAllsparkisvDrawAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaInteractAllsparkisvDrawRequest) GetApiParams() url.Values {
 }
 // Test Setter
 // ddd
-func (r *AlibabaInteractAllsparkisvDrawRequest) SetTest(_test string) error {
+func (r *AlibabaInteractAllsparkisvDrawAPIRequest) SetTest(_test string) error {
     r._test = _test
     r.Set("test", _test)
     return nil
 }
 
 // Test Getter
-func (r AlibabaInteractAllsparkisvDrawRequest) GetTest() string {
+func (r AlibabaInteractAllsparkisvDrawAPIRequest) GetTest() string {
     return r._test
 }
 // Ddd Setter
 // dd
-func (r *AlibabaInteractAllsparkisvDrawRequest) SetDdd(_ddd string) error {
+func (r *AlibabaInteractAllsparkisvDrawAPIRequest) SetDdd(_ddd string) error {
     r._ddd = _ddd
     r.Set("ddd", _ddd)
     return nil
 }
 
 // Ddd Getter
-func (r AlibabaInteractAllsparkisvDrawRequest) GetDdd() string {
+func (r AlibabaInteractAllsparkisvDrawAPIRequest) GetDdd() string {
     return r._ddd
 }

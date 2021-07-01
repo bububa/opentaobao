@@ -12,7 +12,7 @@ alibaba.cuntao.interact.requisition.update
 
 村淘物料下沉，更新物料制作状态
 */
-type AlibabaCuntaoInteractRequisitionUpdateRequest struct {
+type AlibabaCuntaoInteractRequisitionUpdateAPIRequest struct {
     model.Params
     // 物料制作状态
     _status   string
@@ -20,20 +20,20 @@ type AlibabaCuntaoInteractRequisitionUpdateRequest struct {
     _uuidList   []string
 }
 
-// 初始化AlibabaCuntaoInteractRequisitionUpdateRequest对象
-func NewAlibabaCuntaoInteractRequisitionUpdateRequest() *AlibabaCuntaoInteractRequisitionUpdateRequest{
-    return &AlibabaCuntaoInteractRequisitionUpdateRequest{
+// 初始化AlibabaCuntaoInteractRequisitionUpdateAPIRequest对象
+func NewAlibabaCuntaoInteractRequisitionUpdateRequest() *AlibabaCuntaoInteractRequisitionUpdateAPIRequest{
+    return &AlibabaCuntaoInteractRequisitionUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCuntaoInteractRequisitionUpdateRequest) GetApiMethodName() string {
+func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.cuntao.interact.requisition.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCuntaoInteractRequisitionUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaCuntaoInteractRequisitionUpdateRequest) GetApiParams() url.Values
 }
 // Status Setter
 // 物料制作状态
-func (r *AlibabaCuntaoInteractRequisitionUpdateRequest) SetStatus(_status string) error {
+func (r *AlibabaCuntaoInteractRequisitionUpdateAPIRequest) SetStatus(_status string) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r AlibabaCuntaoInteractRequisitionUpdateRequest) GetStatus() string {
+func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetStatus() string {
     return r._status
 }
 // UuidList Setter
 // 申请单id列表
-func (r *AlibabaCuntaoInteractRequisitionUpdateRequest) SetUuidList(_uuidList []string) error {
+func (r *AlibabaCuntaoInteractRequisitionUpdateAPIRequest) SetUuidList(_uuidList []string) error {
     r._uuidList = _uuidList
     r.Set("uuid_list", _uuidList)
     return nil
 }
 
 // UuidList Getter
-func (r AlibabaCuntaoInteractRequisitionUpdateRequest) GetUuidList() []string {
+func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetUuidList() []string {
     return r._uuidList
 }

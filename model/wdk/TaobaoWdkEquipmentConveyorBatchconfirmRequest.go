@@ -12,7 +12,7 @@ taobao.wdk.equipment.conveyor.batchconfirm
 
 批量消息确认
 */
-type TaobaoWdkEquipmentConveyorBatchconfirmRequest struct {
+type TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest struct {
     model.Params
     // 仓库code
     _warehouseCode   string
@@ -20,20 +20,20 @@ type TaobaoWdkEquipmentConveyorBatchconfirmRequest struct {
     _uuids   []string
 }
 
-// 初始化TaobaoWdkEquipmentConveyorBatchconfirmRequest对象
-func NewTaobaoWdkEquipmentConveyorBatchconfirmRequest() *TaobaoWdkEquipmentConveyorBatchconfirmRequest{
-    return &TaobaoWdkEquipmentConveyorBatchconfirmRequest{
+// 初始化TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest对象
+func NewTaobaoWdkEquipmentConveyorBatchconfirmRequest() *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest{
+    return &TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetApiMethodName() string {
+func (r TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) GetApiMethodName() string {
     return "taobao.wdk.equipment.conveyor.batchconfirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetApiParams() url.Values {
+func (r TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetApiParams() url.Values
 }
 // WarehouseCode Setter
 // 仓库code
-func (r *TaobaoWdkEquipmentConveyorBatchconfirmRequest) SetWarehouseCode(_warehouseCode string) error {
+func (r *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) SetWarehouseCode(_warehouseCode string) error {
     r._warehouseCode = _warehouseCode
     r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
-func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetWarehouseCode() string {
+func (r TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) GetWarehouseCode() string {
     return r._warehouseCode
 }
 // Uuids Setter
 // 待确认的uuid列表
-func (r *TaobaoWdkEquipmentConveyorBatchconfirmRequest) SetUuids(_uuids []string) error {
+func (r *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) SetUuids(_uuids []string) error {
     r._uuids = _uuids
     r.Set("uuids", _uuids)
     return nil
 }
 
 // Uuids Getter
-func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetUuids() []string {
+func (r TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) GetUuids() []string {
     return r._uuids
 }

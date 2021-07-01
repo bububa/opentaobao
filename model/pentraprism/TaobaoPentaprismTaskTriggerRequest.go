@@ -12,26 +12,26 @@ taobao.pentaprism.task.trigger
 
 外网用户推进单条五棱镜任务进度
 */
-type TaobaoPentaprismTaskTriggerRequest struct {
+type TaobaoPentaprismTaskTriggerAPIRequest struct {
     model.Params
     // TOP接口标准入参
     _openPo   *OpenTaskPo
 }
 
-// 初始化TaobaoPentaprismTaskTriggerRequest对象
-func NewTaobaoPentaprismTaskTriggerRequest() *TaobaoPentaprismTaskTriggerRequest{
-    return &TaobaoPentaprismTaskTriggerRequest{
+// 初始化TaobaoPentaprismTaskTriggerAPIRequest对象
+func NewTaobaoPentaprismTaskTriggerRequest() *TaobaoPentaprismTaskTriggerAPIRequest{
+    return &TaobaoPentaprismTaskTriggerAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPentaprismTaskTriggerRequest) GetApiMethodName() string {
+func (r TaobaoPentaprismTaskTriggerAPIRequest) GetApiMethodName() string {
     return "taobao.pentaprism.task.trigger"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPentaprismTaskTriggerRequest) GetApiParams() url.Values {
+func (r TaobaoPentaprismTaskTriggerAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPentaprismTaskTriggerRequest) GetApiParams() url.Values {
 }
 // OpenPo Setter
 // TOP接口标准入参
-func (r *TaobaoPentaprismTaskTriggerRequest) SetOpenPo(_openPo *OpenTaskPo) error {
+func (r *TaobaoPentaprismTaskTriggerAPIRequest) SetOpenPo(_openPo *OpenTaskPo) error {
     r._openPo = _openPo
     r.Set("open_po", _openPo)
     return nil
 }
 
 // OpenPo Getter
-func (r TaobaoPentaprismTaskTriggerRequest) GetOpenPo() *OpenTaskPo {
+func (r TaobaoPentaprismTaskTriggerAPIRequest) GetOpenPo() *OpenTaskPo {
     return r._openPo
 }

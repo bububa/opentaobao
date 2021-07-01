@@ -12,26 +12,26 @@ taobao.rdc.aligenius.warehouse.resend.update
 
 补发单状态回传接口
 */
-type TaobaoRdcAligeniusWarehouseResendUpdateRequest struct {
+type TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest struct {
     model.Params
     // 参数
     _param0   *UpdateResendStatusDTO
 }
 
-// 初始化TaobaoRdcAligeniusWarehouseResendUpdateRequest对象
-func NewTaobaoRdcAligeniusWarehouseResendUpdateRequest() *TaobaoRdcAligeniusWarehouseResendUpdateRequest{
-    return &TaobaoRdcAligeniusWarehouseResendUpdateRequest{
+// 初始化TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest对象
+func NewTaobaoRdcAligeniusWarehouseResendUpdateRequest() *TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest{
+    return &TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRdcAligeniusWarehouseResendUpdateRequest) GetApiMethodName() string {
+func (r TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.rdc.aligenius.warehouse.resend.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRdcAligeniusWarehouseResendUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusWarehouseResendUpdateRequest) GetApiParams() url.Value
 }
 // Param0 Setter
 // 参数
-func (r *TaobaoRdcAligeniusWarehouseResendUpdateRequest) SetParam0(_param0 *UpdateResendStatusDTO) error {
+func (r *TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest) SetParam0(_param0 *UpdateResendStatusDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoRdcAligeniusWarehouseResendUpdateRequest) GetParam0() *UpdateResendStatusDTO {
+func (r TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest) GetParam0() *UpdateResendStatusDTO {
     return r._param0
 }

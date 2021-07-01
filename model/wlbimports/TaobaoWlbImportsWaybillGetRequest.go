@@ -12,26 +12,26 @@ taobao.wlb.imports.waybill.get
 
 一般进口商家，获取订单的电子面单链接地址
 */
-type TaobaoWlbImportsWaybillGetRequest struct {
+type TaobaoWlbImportsWaybillGetAPIRequest struct {
     model.Params
     // 物流订单号
     _orderCode   string
 }
 
-// 初始化TaobaoWlbImportsWaybillGetRequest对象
-func NewTaobaoWlbImportsWaybillGetRequest() *TaobaoWlbImportsWaybillGetRequest{
-    return &TaobaoWlbImportsWaybillGetRequest{
+// 初始化TaobaoWlbImportsWaybillGetAPIRequest对象
+func NewTaobaoWlbImportsWaybillGetRequest() *TaobaoWlbImportsWaybillGetAPIRequest{
+    return &TaobaoWlbImportsWaybillGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbImportsWaybillGetRequest) GetApiMethodName() string {
+func (r TaobaoWlbImportsWaybillGetAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.imports.waybill.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbImportsWaybillGetRequest) GetApiParams() url.Values {
+func (r TaobaoWlbImportsWaybillGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWlbImportsWaybillGetRequest) GetApiParams() url.Values {
 }
 // OrderCode Setter
 // 物流订单号
-func (r *TaobaoWlbImportsWaybillGetRequest) SetOrderCode(_orderCode string) error {
+func (r *TaobaoWlbImportsWaybillGetAPIRequest) SetOrderCode(_orderCode string) error {
     r._orderCode = _orderCode
     r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
-func (r TaobaoWlbImportsWaybillGetRequest) GetOrderCode() string {
+func (r TaobaoWlbImportsWaybillGetAPIRequest) GetOrderCode() string {
     return r._orderCode
 }

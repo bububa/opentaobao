@@ -11,7 +11,7 @@ alibaba.damai.maitix.order.cancel
 
 库存释放
 */
-func AlibabaDamaiMaitixOrderCancel(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderCancelRequest, session string) (*maitix.AlibabaDamaiMaitixOrderCancelAPIResponse, error) {
+func AlibabaDamaiMaitixOrderCancel(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderCancelAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOrderCancelAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixOrderCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

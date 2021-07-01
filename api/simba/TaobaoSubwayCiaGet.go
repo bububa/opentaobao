@@ -11,7 +11,7 @@ taobao.subway.cia.get
 
 查询单元智能出价信息
 */
-func TaobaoSubwayCiaGet(clt *core.SDKClient, req *simba.TaobaoSubwayCiaGetRequest, session string) (*simba.TaobaoSubwayCiaGetAPIResponse, error) {
+func TaobaoSubwayCiaGet(clt *core.SDKClient, req *simba.TaobaoSubwayCiaGetAPIRequest, session string) (*simba.TaobaoSubwayCiaGetAPIResponse, error) {
     var resp simba.TaobaoSubwayCiaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

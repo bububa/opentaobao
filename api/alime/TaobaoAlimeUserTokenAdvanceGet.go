@@ -11,7 +11,7 @@ taobao.alime.user.token.advance.get
 
 根据第三账号信息获取用户的免登录令牌
 */
-func TaobaoAlimeUserTokenAdvanceGet(clt *core.SDKClient, req *alime.TaobaoAlimeUserTokenAdvanceGetRequest, session string) (*alime.TaobaoAlimeUserTokenAdvanceGetAPIResponse, error) {
+func TaobaoAlimeUserTokenAdvanceGet(clt *core.SDKClient, req *alime.TaobaoAlimeUserTokenAdvanceGetAPIRequest, session string) (*alime.TaobaoAlimeUserTokenAdvanceGetAPIResponse, error) {
     var resp alime.TaobaoAlimeUserTokenAdvanceGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

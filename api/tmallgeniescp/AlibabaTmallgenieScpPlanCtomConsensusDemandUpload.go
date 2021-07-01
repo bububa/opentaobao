@@ -11,7 +11,7 @@ alibaba.tmallgenie.scp.plan.ctom.consensus.demand.upload
 
 C2M 共识需求回传接口
 */
-func AlibabaTmallgenieScpPlanCtomConsensusDemandUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIResponse, error) {
+func AlibabaTmallgenieScpPlanCtomConsensusDemandUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIResponse, error) {
     var resp tmallgeniescp.AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

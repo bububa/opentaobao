@@ -1,7 +1,7 @@
 package btrip
 
-// OpenVehicleOrderRs 
-type OpenVehicleOrderRs struct {
+// OpenVehicleOrderRS 
+type OpenVehicleOrderRS struct {
     // 用车原因：TRAVEL: 差旅, TRAFFIC: 市内交通, WORK: 加班, OTHER: 其它
     BusinessCategory   string `json:"business_category,omitempty" xml:"business_category,omitempty"`
     // 车牌号

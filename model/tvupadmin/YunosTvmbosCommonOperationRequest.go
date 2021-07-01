@@ -12,7 +12,7 @@ yunos.tvmbos.common.operation
 
 应用中心相关接口的代理
 */
-type YunosTvmbosCommonOperationRequest struct {
+type YunosTvmbosCommonOperationAPIRequest struct {
     model.Params
     // 接口名
     _interfaceName   string
@@ -22,20 +22,20 @@ type YunosTvmbosCommonOperationRequest struct {
     _parameter   string
 }
 
-// 初始化YunosTvmbosCommonOperationRequest对象
-func NewYunosTvmbosCommonOperationRequest() *YunosTvmbosCommonOperationRequest{
-    return &YunosTvmbosCommonOperationRequest{
+// 初始化YunosTvmbosCommonOperationAPIRequest对象
+func NewYunosTvmbosCommonOperationRequest() *YunosTvmbosCommonOperationAPIRequest{
+    return &YunosTvmbosCommonOperationAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvmbosCommonOperationRequest) GetApiMethodName() string {
+func (r YunosTvmbosCommonOperationAPIRequest) GetApiMethodName() string {
     return "yunos.tvmbos.common.operation"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvmbosCommonOperationRequest) GetApiParams() url.Values {
+func (r YunosTvmbosCommonOperationAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r YunosTvmbosCommonOperationRequest) GetApiParams() url.Values {
 }
 // InterfaceName Setter
 // 接口名
-func (r *YunosTvmbosCommonOperationRequest) SetInterfaceName(_interfaceName string) error {
+func (r *YunosTvmbosCommonOperationAPIRequest) SetInterfaceName(_interfaceName string) error {
     r._interfaceName = _interfaceName
     r.Set("interface_name", _interfaceName)
     return nil
 }
 
 // InterfaceName Getter
-func (r YunosTvmbosCommonOperationRequest) GetInterfaceName() string {
+func (r YunosTvmbosCommonOperationAPIRequest) GetInterfaceName() string {
     return r._interfaceName
 }
 // MethodName Setter
 // 方法名
-func (r *YunosTvmbosCommonOperationRequest) SetMethodName(_methodName string) error {
+func (r *YunosTvmbosCommonOperationAPIRequest) SetMethodName(_methodName string) error {
     r._methodName = _methodName
     r.Set("method_name", _methodName)
     return nil
 }
 
 // MethodName Getter
-func (r YunosTvmbosCommonOperationRequest) GetMethodName() string {
+func (r YunosTvmbosCommonOperationAPIRequest) GetMethodName() string {
     return r._methodName
 }
 // Parameter Setter
 // 入参，json格式
-func (r *YunosTvmbosCommonOperationRequest) SetParameter(_parameter string) error {
+func (r *YunosTvmbosCommonOperationAPIRequest) SetParameter(_parameter string) error {
     r._parameter = _parameter
     r.Set("parameter", _parameter)
     return nil
 }
 
 // Parameter Getter
-func (r YunosTvmbosCommonOperationRequest) GetParameter() string {
+func (r YunosTvmbosCommonOperationAPIRequest) GetParameter() string {
     return r._parameter
 }

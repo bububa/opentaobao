@@ -12,24 +12,24 @@ alibaba.interact.sensor.ma
 
 码相关API
 */
-type AlibabaInteractSensorMaRequest struct {
+type AlibabaInteractSensorMaAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractSensorMaRequest对象
-func NewAlibabaInteractSensorMaRequest() *AlibabaInteractSensorMaRequest{
-    return &AlibabaInteractSensorMaRequest{
+// 初始化AlibabaInteractSensorMaAPIRequest对象
+func NewAlibabaInteractSensorMaRequest() *AlibabaInteractSensorMaAPIRequest{
+    return &AlibabaInteractSensorMaAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorMaRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorMaAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.ma"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorMaRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorMaAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

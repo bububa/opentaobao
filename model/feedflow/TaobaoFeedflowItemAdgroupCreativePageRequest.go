@@ -12,26 +12,26 @@ taobao.feedflow.item.adgroup.creative.page
 
 信息流单元下查看创意
 */
-type TaobaoFeedflowItemAdgroupCreativePageRequest struct {
+type TaobaoFeedflowItemAdgroupCreativePageAPIRequest struct {
     model.Params
     // 绑定查询条件
     _creativeBindQuery   *CreativeBindQueryDTO
 }
 
-// 初始化TaobaoFeedflowItemAdgroupCreativePageRequest对象
-func NewTaobaoFeedflowItemAdgroupCreativePageRequest() *TaobaoFeedflowItemAdgroupCreativePageRequest{
-    return &TaobaoFeedflowItemAdgroupCreativePageRequest{
+// 初始化TaobaoFeedflowItemAdgroupCreativePageAPIRequest对象
+func NewTaobaoFeedflowItemAdgroupCreativePageRequest() *TaobaoFeedflowItemAdgroupCreativePageAPIRequest{
+    return &TaobaoFeedflowItemAdgroupCreativePageAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemAdgroupCreativePageRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.adgroup.creative.page"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdgroupCreativePageRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemAdgroupCreativePageRequest) GetApiParams() url.Values 
 }
 // CreativeBindQuery Setter
 // 绑定查询条件
-func (r *TaobaoFeedflowItemAdgroupCreativePageRequest) SetCreativeBindQuery(_creativeBindQuery *CreativeBindQueryDTO) error {
+func (r *TaobaoFeedflowItemAdgroupCreativePageAPIRequest) SetCreativeBindQuery(_creativeBindQuery *CreativeBindQueryDTO) error {
     r._creativeBindQuery = _creativeBindQuery
     r.Set("creative_bind_query", _creativeBindQuery)
     return nil
 }
 
 // CreativeBindQuery Getter
-func (r TaobaoFeedflowItemAdgroupCreativePageRequest) GetCreativeBindQuery() *CreativeBindQueryDTO {
+func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetCreativeBindQuery() *CreativeBindQueryDTO {
     return r._creativeBindQuery
 }

@@ -12,26 +12,26 @@ alibaba.baichuan.taopassword.query
 
 查询，解析淘口令
 */
-type AlibabaBaichuanTaopasswordQueryRequest struct {
+type AlibabaBaichuanTaopasswordQueryAPIRequest struct {
     model.Params
     // 淘口令
     _passwordContent   string
 }
 
-// 初始化AlibabaBaichuanTaopasswordQueryRequest对象
-func NewAlibabaBaichuanTaopasswordQueryRequest() *AlibabaBaichuanTaopasswordQueryRequest{
-    return &AlibabaBaichuanTaopasswordQueryRequest{
+// 初始化AlibabaBaichuanTaopasswordQueryAPIRequest对象
+func NewAlibabaBaichuanTaopasswordQueryRequest() *AlibabaBaichuanTaopasswordQueryAPIRequest{
+    return &AlibabaBaichuanTaopasswordQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaBaichuanTaopasswordQueryRequest) GetApiMethodName() string {
+func (r AlibabaBaichuanTaopasswordQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.baichuan.taopassword.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaBaichuanTaopasswordQueryRequest) GetApiParams() url.Values {
+func (r AlibabaBaichuanTaopasswordQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaBaichuanTaopasswordQueryRequest) GetApiParams() url.Values {
 }
 // PasswordContent Setter
 // 淘口令
-func (r *AlibabaBaichuanTaopasswordQueryRequest) SetPasswordContent(_passwordContent string) error {
+func (r *AlibabaBaichuanTaopasswordQueryAPIRequest) SetPasswordContent(_passwordContent string) error {
     r._passwordContent = _passwordContent
     r.Set("password_content", _passwordContent)
     return nil
 }
 
 // PasswordContent Getter
-func (r AlibabaBaichuanTaopasswordQueryRequest) GetPasswordContent() string {
+func (r AlibabaBaichuanTaopasswordQueryAPIRequest) GetPasswordContent() string {
     return r._passwordContent
 }

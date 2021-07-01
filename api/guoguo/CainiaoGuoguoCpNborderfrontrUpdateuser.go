@@ -11,7 +11,7 @@ cainiao.guoguo.cp.nborderfrontr.updateuser
 
 小件员信息变更
 */
-func CainiaoGuoguoCpNborderfrontrUpdateuser(clt *core.SDKClient, req *guoguo.CainiaoGuoguoCpNborderfrontrUpdateuserRequest, session string) (*guoguo.CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse, error) {
+func CainiaoGuoguoCpNborderfrontrUpdateuser(clt *core.SDKClient, req *guoguo.CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest, session string) (*guoguo.CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse, error) {
     var resp guoguo.CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.einvoice.tax.opt.salarybill.commitbill
 
 提交发薪账单
 */
-func AlibabaEinvoiceTaxOptSalarybillCommitbill(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalarybillCommitbillRequest, session string) (*einvoice.AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse, error) {
+func AlibabaEinvoiceTaxOptSalarybillCommitbill(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest, session string) (*einvoice.AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse, error) {
     var resp einvoice.AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

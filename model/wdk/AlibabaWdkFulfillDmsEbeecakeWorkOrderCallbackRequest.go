@@ -12,26 +12,26 @@ alibaba.wdk.fulfill.dms.ebeecake.work.order.callback
 
 北京小蜜蜂配作业回传。
 */
-type AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest struct {
+type AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackAPIRequest struct {
     model.Params
     // 作业单回传对象
     _callbackOrder   *EbeecakeO2OCallbackOrder
 }
 
-// 初始化AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest对象
-func NewAlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest() *AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest{
-    return &AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest{
+// 初始化AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackAPIRequest对象
+func NewAlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest() *AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackAPIRequest{
+    return &AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest) GetApiMethodName() string {
+func (r AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.fulfill.dms.ebeecake.work.order.callback"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest) GetApiParams() url.Values {
+func (r AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest) GetApiParams() url
 }
 // CallbackOrder Setter
 // 作业单回传对象
-func (r *AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest) SetCallbackOrder(_callbackOrder *EbeecakeO2OCallbackOrder) error {
+func (r *AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackAPIRequest) SetCallbackOrder(_callbackOrder *EbeecakeO2OCallbackOrder) error {
     r._callbackOrder = _callbackOrder
     r.Set("callback_order", _callbackOrder)
     return nil
 }
 
 // CallbackOrder Getter
-func (r AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest) GetCallbackOrder() *EbeecakeO2OCallbackOrder {
+func (r AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackAPIRequest) GetCallbackOrder() *EbeecakeO2OCallbackOrder {
     return r._callbackOrder
 }

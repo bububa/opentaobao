@@ -11,7 +11,7 @@ alibaba.wdk.coupon.sku.add
 
 优惠券商品增加
 */
-func AlibabaWdkCouponSkuAdd(clt *core.SDKClient, req *promotion.AlibabaWdkCouponSkuAddRequest, session string) (*promotion.AlibabaWdkCouponSkuAddAPIResponse, error) {
+func AlibabaWdkCouponSkuAdd(clt *core.SDKClient, req *promotion.AlibabaWdkCouponSkuAddAPIRequest, session string) (*promotion.AlibabaWdkCouponSkuAddAPIResponse, error) {
     var resp promotion.AlibabaWdkCouponSkuAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

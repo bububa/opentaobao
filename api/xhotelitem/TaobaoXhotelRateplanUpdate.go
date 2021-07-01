@@ -11,7 +11,7 @@ taobao.xhotel.rateplan.update
 
 酒店产品库rateplan更新或添加
 */
-func TaobaoXhotelRateplanUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateplanUpdateRequest, session string) (*xhotelitem.TaobaoXhotelRateplanUpdateAPIResponse, error) {
+func TaobaoXhotelRateplanUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateplanUpdateAPIRequest, session string) (*xhotelitem.TaobaoXhotelRateplanUpdateAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelRateplanUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

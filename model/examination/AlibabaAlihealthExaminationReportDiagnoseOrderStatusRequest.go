@@ -12,26 +12,26 @@ alibaba.alihealth.examination.report.diagnose.order.status
 
 报告解读订单状态更新
 */
-type AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest struct {
+type AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest struct {
     model.Params
     // 参数对象
     _reportOrderStatusRequest   *ReportOrderStatusRequest
 }
 
-// 初始化AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest对象
-func NewAlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest() *AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest{
-    return &AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest{
+// 初始化AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest对象
+func NewAlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest() *AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest{
+    return &AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.examination.report.diagnose.order.status"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest) GetApiParam
 }
 // ReportOrderStatusRequest Setter
 // 参数对象
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest) SetReportOrderStatusRequest(_reportOrderStatusRequest *ReportOrderStatusRequest) error {
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) SetReportOrderStatusRequest(_reportOrderStatusRequest *ReportOrderStatusRequest) error {
     r._reportOrderStatusRequest = _reportOrderStatusRequest
     r.Set("report_order_status_request", _reportOrderStatusRequest)
     return nil
 }
 
 // ReportOrderStatusRequest Getter
-func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest) GetReportOrderStatusRequest() *ReportOrderStatusRequest {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) GetReportOrderStatusRequest() *ReportOrderStatusRequest {
     return r._reportOrderStatusRequest
 }

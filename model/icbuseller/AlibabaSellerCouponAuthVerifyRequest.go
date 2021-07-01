@@ -12,7 +12,7 @@ alibaba.seller.coupon.auth.verify
 
 优惠券校验
 */
-type AlibabaSellerCouponAuthVerifyRequest struct {
+type AlibabaSellerCouponAuthVerifyAPIRequest struct {
     model.Params
     // 服务代码
     _serviceCode   string
@@ -20,20 +20,20 @@ type AlibabaSellerCouponAuthVerifyRequest struct {
     _couponSeqNumber   string
 }
 
-// 初始化AlibabaSellerCouponAuthVerifyRequest对象
-func NewAlibabaSellerCouponAuthVerifyRequest() *AlibabaSellerCouponAuthVerifyRequest{
-    return &AlibabaSellerCouponAuthVerifyRequest{
+// 初始化AlibabaSellerCouponAuthVerifyAPIRequest对象
+func NewAlibabaSellerCouponAuthVerifyRequest() *AlibabaSellerCouponAuthVerifyAPIRequest{
+    return &AlibabaSellerCouponAuthVerifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSellerCouponAuthVerifyRequest) GetApiMethodName() string {
+func (r AlibabaSellerCouponAuthVerifyAPIRequest) GetApiMethodName() string {
     return "alibaba.seller.coupon.auth.verify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSellerCouponAuthVerifyRequest) GetApiParams() url.Values {
+func (r AlibabaSellerCouponAuthVerifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaSellerCouponAuthVerifyRequest) GetApiParams() url.Values {
 }
 // ServiceCode Setter
 // 服务代码
-func (r *AlibabaSellerCouponAuthVerifyRequest) SetServiceCode(_serviceCode string) error {
+func (r *AlibabaSellerCouponAuthVerifyAPIRequest) SetServiceCode(_serviceCode string) error {
     r._serviceCode = _serviceCode
     r.Set("service_code", _serviceCode)
     return nil
 }
 
 // ServiceCode Getter
-func (r AlibabaSellerCouponAuthVerifyRequest) GetServiceCode() string {
+func (r AlibabaSellerCouponAuthVerifyAPIRequest) GetServiceCode() string {
     return r._serviceCode
 }
 // CouponSeqNumber Setter
 // 卡券验证码
-func (r *AlibabaSellerCouponAuthVerifyRequest) SetCouponSeqNumber(_couponSeqNumber string) error {
+func (r *AlibabaSellerCouponAuthVerifyAPIRequest) SetCouponSeqNumber(_couponSeqNumber string) error {
     r._couponSeqNumber = _couponSeqNumber
     r.Set("coupon_seq_number", _couponSeqNumber)
     return nil
 }
 
 // CouponSeqNumber Getter
-func (r AlibabaSellerCouponAuthVerifyRequest) GetCouponSeqNumber() string {
+func (r AlibabaSellerCouponAuthVerifyAPIRequest) GetCouponSeqNumber() string {
     return r._couponSeqNumber
 }

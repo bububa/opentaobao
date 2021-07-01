@@ -12,26 +12,26 @@ alitrip.hotel.hstdf.hotelroomstatic.get
 
 根据类型查询分页静态字段
 */
-type AlitripHotelHstdfHotelroomstaticGetRequest struct {
+type AlitripHotelHstdfHotelroomstaticGetAPIRequest struct {
     model.Params
     // 参数封装
     _paramGetHotelRoomStaticParam   *GetHotelRoomStaticParam
 }
 
-// 初始化AlitripHotelHstdfHotelroomstaticGetRequest对象
-func NewAlitripHotelHstdfHotelroomstaticGetRequest() *AlitripHotelHstdfHotelroomstaticGetRequest{
-    return &AlitripHotelHstdfHotelroomstaticGetRequest{
+// 初始化AlitripHotelHstdfHotelroomstaticGetAPIRequest对象
+func NewAlitripHotelHstdfHotelroomstaticGetRequest() *AlitripHotelHstdfHotelroomstaticGetAPIRequest{
+    return &AlitripHotelHstdfHotelroomstaticGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripHotelHstdfHotelroomstaticGetRequest) GetApiMethodName() string {
+func (r AlitripHotelHstdfHotelroomstaticGetAPIRequest) GetApiMethodName() string {
     return "alitrip.hotel.hstdf.hotelroomstatic.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripHotelHstdfHotelroomstaticGetRequest) GetApiParams() url.Values {
+func (r AlitripHotelHstdfHotelroomstaticGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripHotelHstdfHotelroomstaticGetRequest) GetApiParams() url.Values {
 }
 // ParamGetHotelRoomStaticParam Setter
 // 参数封装
-func (r *AlitripHotelHstdfHotelroomstaticGetRequest) SetParamGetHotelRoomStaticParam(_paramGetHotelRoomStaticParam *GetHotelRoomStaticParam) error {
+func (r *AlitripHotelHstdfHotelroomstaticGetAPIRequest) SetParamGetHotelRoomStaticParam(_paramGetHotelRoomStaticParam *GetHotelRoomStaticParam) error {
     r._paramGetHotelRoomStaticParam = _paramGetHotelRoomStaticParam
     r.Set("param_get_hotel_room_static_param", _paramGetHotelRoomStaticParam)
     return nil
 }
 
 // ParamGetHotelRoomStaticParam Getter
-func (r AlitripHotelHstdfHotelroomstaticGetRequest) GetParamGetHotelRoomStaticParam() *GetHotelRoomStaticParam {
+func (r AlitripHotelHstdfHotelroomstaticGetAPIRequest) GetParamGetHotelRoomStaticParam() *GetHotelRoomStaticParam {
     return r._paramGetHotelRoomStaticParam
 }

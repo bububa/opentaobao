@@ -11,7 +11,7 @@ alibaba.alihealth.outflow.frequency.saveorupdate
 
 处方外流-药品频次同步接口
 */
-func AlibabaAlihealthOutflowFrequencySaveorupdate(clt *core.SDKClient, req *alidoc.AlibabaAlihealthOutflowFrequencySaveorupdateRequest, session string) (*alidoc.AlibabaAlihealthOutflowFrequencySaveorupdateAPIResponse, error) {
+func AlibabaAlihealthOutflowFrequencySaveorupdate(clt *core.SDKClient, req *alidoc.AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest, session string) (*alidoc.AlibabaAlihealthOutflowFrequencySaveorupdateAPIResponse, error) {
     var resp alidoc.AlibabaAlihealthOutflowFrequencySaveorupdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

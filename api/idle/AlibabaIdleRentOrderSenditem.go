@@ -11,7 +11,7 @@ alibaba.idle.rent.order.senditem
 
 确认发货
 */
-func AlibabaIdleRentOrderSenditem(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderSenditemRequest, session string) (*idle.AlibabaIdleRentOrderSenditemAPIResponse, error) {
+func AlibabaIdleRentOrderSenditem(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderSenditemAPIRequest, session string) (*idle.AlibabaIdleRentOrderSenditemAPIResponse, error) {
     var resp idle.AlibabaIdleRentOrderSenditemAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

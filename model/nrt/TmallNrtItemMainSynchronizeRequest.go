@@ -12,7 +12,7 @@ tmall.nrt.item.main.synchronize
 
 同步红星美凯龙存量商品到阿里
 */
-type TmallNrtItemMainSynchronizeRequest struct {
+type TmallNrtItemMainSynchronizeAPIRequest struct {
     model.Params
     // 摊位id
     _boothId   string
@@ -34,20 +34,20 @@ type TmallNrtItemMainSynchronizeRequest struct {
     _title   string
 }
 
-// 初始化TmallNrtItemMainSynchronizeRequest对象
-func NewTmallNrtItemMainSynchronizeRequest() *TmallNrtItemMainSynchronizeRequest{
-    return &TmallNrtItemMainSynchronizeRequest{
+// 初始化TmallNrtItemMainSynchronizeAPIRequest对象
+func NewTmallNrtItemMainSynchronizeRequest() *TmallNrtItemMainSynchronizeAPIRequest{
+    return &TmallNrtItemMainSynchronizeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrtItemMainSynchronizeRequest) GetApiMethodName() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetApiMethodName() string {
     return "tmall.nrt.item.main.synchronize"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrtItemMainSynchronizeRequest) GetApiParams() url.Values {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -56,109 +56,109 @@ func (r TmallNrtItemMainSynchronizeRequest) GetApiParams() url.Values {
 }
 // BoothId Setter
 // 摊位id
-func (r *TmallNrtItemMainSynchronizeRequest) SetBoothId(_boothId string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetBoothId(_boothId string) error {
     r._boothId = _boothId
     r.Set("booth_id", _boothId)
     return nil
 }
 
 // BoothId Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetBoothId() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetBoothId() string {
     return r._boothId
 }
 // Cid Setter
 // 叶子类目id
-func (r *TmallNrtItemMainSynchronizeRequest) SetCid(_cid int64) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetCid(_cid int64) error {
     r._cid = _cid
     r.Set("cid", _cid)
     return nil
 }
 
 // Cid Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetCid() int64 {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetCid() int64 {
     return r._cid
 }
 // Props Setter
 // 类目属性
-func (r *TmallNrtItemMainSynchronizeRequest) SetProps(_props []CategoryPropDTO) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetProps(_props []CategoryPropDTO) error {
     r._props = _props
     r.Set("props", _props)
     return nil
 }
 
 // Props Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetProps() []CategoryPropDTO {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetProps() []CategoryPropDTO {
     return r._props
 }
 // DealerCode Setter
 // 经销商编码
-func (r *TmallNrtItemMainSynchronizeRequest) SetDealerCode(_dealerCode string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetDealerCode(_dealerCode string) error {
     r._dealerCode = _dealerCode
     r.Set("dealer_code", _dealerCode)
     return nil
 }
 
 // DealerCode Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetDealerCode() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetDealerCode() string {
     return r._dealerCode
 }
 // MallId Setter
 // 卖场id
-func (r *TmallNrtItemMainSynchronizeRequest) SetMallId(_mallId string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetMallId(_mallId string) error {
     r._mallId = _mallId
     r.Set("mall_id", _mallId)
     return nil
 }
 
 // MallId Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetMallId() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetMallId() string {
     return r._mallId
 }
 // OuterId Setter
 // 商家编码
-func (r *TmallNrtItemMainSynchronizeRequest) SetOuterId(_outerId string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterId(_outerId string) error {
     r._outerId = _outerId
     r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetOuterId() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetOuterId() string {
     return r._outerId
 }
 // OuterProps Setter
 // 系统自动生成
-func (r *TmallNrtItemMainSynchronizeRequest) SetOuterProps(_outerProps *MacallineItemExtDTO) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterProps(_outerProps *MacallineItemExtDTO) error {
     r._outerProps = _outerProps
     r.Set("outer_props", _outerProps)
     return nil
 }
 
 // OuterProps Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetOuterProps() *MacallineItemExtDTO {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetOuterProps() *MacallineItemExtDTO {
     return r._outerProps
 }
 // Price Setter
 // 价格
-func (r *TmallNrtItemMainSynchronizeRequest) SetPrice(_price string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetPrice(_price string) error {
     r._price = _price
     r.Set("price", _price)
     return nil
 }
 
 // Price Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetPrice() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetPrice() string {
     return r._price
 }
 // Title Setter
 // 商品名
-func (r *TmallNrtItemMainSynchronizeRequest) SetTitle(_title string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetTitle(_title string) error {
     r._title = _title
     r.Set("title", _title)
     return nil
 }
 
 // Title Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetTitle() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetTitle() string {
     return r._title
 }

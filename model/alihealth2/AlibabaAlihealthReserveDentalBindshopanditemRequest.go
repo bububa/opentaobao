@@ -12,26 +12,26 @@ alibaba.alihealth.reserve.dental.bindshopanditem
 
 绑定门店信息，商品信息
 */
-type AlibabaAlihealthReserveDentalBindshopanditemRequest struct {
+type AlibabaAlihealthReserveDentalBindshopanditemAPIRequest struct {
     model.Params
     // bind_list
     _bindList   []BindDTO
 }
 
-// 初始化AlibabaAlihealthReserveDentalBindshopanditemRequest对象
-func NewAlibabaAlihealthReserveDentalBindshopanditemRequest() *AlibabaAlihealthReserveDentalBindshopanditemRequest{
-    return &AlibabaAlihealthReserveDentalBindshopanditemRequest{
+// 初始化AlibabaAlihealthReserveDentalBindshopanditemAPIRequest对象
+func NewAlibabaAlihealthReserveDentalBindshopanditemRequest() *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest{
+    return &AlibabaAlihealthReserveDentalBindshopanditemAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthReserveDentalBindshopanditemRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.reserve.dental.bindshopanditem"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthReserveDentalBindshopanditemRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthReserveDentalBindshopanditemRequest) GetApiParams() url.
 }
 // BindList Setter
 // bind_list
-func (r *AlibabaAlihealthReserveDentalBindshopanditemRequest) SetBindList(_bindList []BindDTO) error {
+func (r *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) SetBindList(_bindList []BindDTO) error {
     r._bindList = _bindList
     r.Set("bind_list", _bindList)
     return nil
 }
 
 // BindList Getter
-func (r AlibabaAlihealthReserveDentalBindshopanditemRequest) GetBindList() []BindDTO {
+func (r AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) GetBindList() []BindDTO {
     return r._bindList
 }

@@ -12,7 +12,7 @@ taobao.fenxiao.distributor.items.get
 
 供应商查询分销商商品下载记录。
 */
-type TaobaoFenxiaoDistributorItemsGetRequest struct {
+type TaobaoFenxiaoDistributorItemsGetAPIRequest struct {
     model.Params
     // 分销商ID 。
     _distributorId   int64
@@ -28,20 +28,20 @@ type TaobaoFenxiaoDistributorItemsGetRequest struct {
     _productId   int64
 }
 
-// 初始化TaobaoFenxiaoDistributorItemsGetRequest对象
-func NewTaobaoFenxiaoDistributorItemsGetRequest() *TaobaoFenxiaoDistributorItemsGetRequest{
-    return &TaobaoFenxiaoDistributorItemsGetRequest{
+// 初始化TaobaoFenxiaoDistributorItemsGetAPIRequest对象
+func NewTaobaoFenxiaoDistributorItemsGetRequest() *TaobaoFenxiaoDistributorItemsGetAPIRequest{
+    return &TaobaoFenxiaoDistributorItemsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFenxiaoDistributorItemsGetRequest) GetApiMethodName() string {
+func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetApiMethodName() string {
     return "taobao.fenxiao.distributor.items.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFenxiaoDistributorItemsGetRequest) GetApiParams() url.Values {
+func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -50,73 +50,73 @@ func (r TaobaoFenxiaoDistributorItemsGetRequest) GetApiParams() url.Values {
 }
 // DistributorId Setter
 // 分销商ID 。
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetDistributorId(_distributorId int64) error {
+func (r *TaobaoFenxiaoDistributorItemsGetAPIRequest) SetDistributorId(_distributorId int64) error {
     r._distributorId = _distributorId
     r.Set("distributor_id", _distributorId)
     return nil
 }
 
 // DistributorId Getter
-func (r TaobaoFenxiaoDistributorItemsGetRequest) GetDistributorId() int64 {
+func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetDistributorId() int64 {
     return r._distributorId
 }
 // StartModified Setter
 // 设置开始时间。空为不设置。
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetStartModified(_startModified string) error {
+func (r *TaobaoFenxiaoDistributorItemsGetAPIRequest) SetStartModified(_startModified string) error {
     r._startModified = _startModified
     r.Set("start_modified", _startModified)
     return nil
 }
 
 // StartModified Getter
-func (r TaobaoFenxiaoDistributorItemsGetRequest) GetStartModified() string {
+func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetStartModified() string {
     return r._startModified
 }
 // EndModified Setter
 // 设置结束时间,空为不设置。
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetEndModified(_endModified string) error {
+func (r *TaobaoFenxiaoDistributorItemsGetAPIRequest) SetEndModified(_endModified string) error {
     r._endModified = _endModified
     r.Set("end_modified", _endModified)
     return nil
 }
 
 // EndModified Getter
-func (r TaobaoFenxiaoDistributorItemsGetRequest) GetEndModified() string {
+func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetEndModified() string {
     return r._endModified
 }
 // PageNo Setter
 // 页码（大于0的整数，默认1）
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoFenxiaoDistributorItemsGetAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r TaobaoFenxiaoDistributorItemsGetRequest) GetPageNo() int64 {
+func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }
 // PageSize Setter
 // 每页记录数（默认20，最大50）
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoFenxiaoDistributorItemsGetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoFenxiaoDistributorItemsGetRequest) GetPageSize() int64 {
+func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // ProductId Setter
 // 产品ID
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetProductId(_productId int64) error {
+func (r *TaobaoFenxiaoDistributorItemsGetAPIRequest) SetProductId(_productId int64) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r TaobaoFenxiaoDistributorItemsGetRequest) GetProductId() int64 {
+func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetProductId() int64 {
     return r._productId
 }

@@ -12,26 +12,26 @@ alibaba.alifanyi.market.authenticate
 
 第三方授权，获取授权码
 */
-type AlibabaAlifanyiMarketAuthenticateRequest struct {
+type AlibabaAlifanyiMarketAuthenticateAPIRequest struct {
     model.Params
     // 有效时长
     _expireTime   int64
 }
 
-// 初始化AlibabaAlifanyiMarketAuthenticateRequest对象
-func NewAlibabaAlifanyiMarketAuthenticateRequest() *AlibabaAlifanyiMarketAuthenticateRequest{
-    return &AlibabaAlifanyiMarketAuthenticateRequest{
+// 初始化AlibabaAlifanyiMarketAuthenticateAPIRequest对象
+func NewAlibabaAlifanyiMarketAuthenticateRequest() *AlibabaAlifanyiMarketAuthenticateAPIRequest{
+    return &AlibabaAlifanyiMarketAuthenticateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlifanyiMarketAuthenticateRequest) GetApiMethodName() string {
+func (r AlibabaAlifanyiMarketAuthenticateAPIRequest) GetApiMethodName() string {
     return "alibaba.alifanyi.market.authenticate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlifanyiMarketAuthenticateRequest) GetApiParams() url.Values {
+func (r AlibabaAlifanyiMarketAuthenticateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlifanyiMarketAuthenticateRequest) GetApiParams() url.Values {
 }
 // ExpireTime Setter
 // 有效时长
-func (r *AlibabaAlifanyiMarketAuthenticateRequest) SetExpireTime(_expireTime int64) error {
+func (r *AlibabaAlifanyiMarketAuthenticateAPIRequest) SetExpireTime(_expireTime int64) error {
     r._expireTime = _expireTime
     r.Set("expire_time", _expireTime)
     return nil
 }
 
 // ExpireTime Getter
-func (r AlibabaAlifanyiMarketAuthenticateRequest) GetExpireTime() int64 {
+func (r AlibabaAlifanyiMarketAuthenticateAPIRequest) GetExpireTime() int64 {
     return r._expireTime
 }

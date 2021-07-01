@@ -14,7 +14,7 @@ taobao.feedflow.account.get
 (2) 可用余额(字段：availableBalance) = BP显示余额
 (3) 红包(字段：redPacket)
 */
-func TaobaoFeedflowAccountGet(clt *core.SDKClient, req *feedflow.TaobaoFeedflowAccountGetRequest, session string) (*feedflow.TaobaoFeedflowAccountGetAPIResponse, error) {
+func TaobaoFeedflowAccountGet(clt *core.SDKClient, req *feedflow.TaobaoFeedflowAccountGetAPIRequest, session string) (*feedflow.TaobaoFeedflowAccountGetAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowAccountGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

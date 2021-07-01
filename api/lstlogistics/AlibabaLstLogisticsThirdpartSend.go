@@ -11,7 +11,7 @@ alibaba.lst.logistics.thirdpart.send
 
 异地云仓的订单，使用第三方物流的发货方式来变更订单发货状态
 */
-func AlibabaLstLogisticsThirdpartSend(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsThirdpartSendRequest, session string) (*lstlogistics.AlibabaLstLogisticsThirdpartSendAPIResponse, error) {
+func AlibabaLstLogisticsThirdpartSend(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsThirdpartSendAPIRequest, session string) (*lstlogistics.AlibabaLstLogisticsThirdpartSendAPIResponse, error) {
     var resp lstlogistics.AlibabaLstLogisticsThirdpartSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

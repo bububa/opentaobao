@@ -11,7 +11,7 @@ taobao.inventory.plan.invalid
 
 计划库存的失效服务
 */
-func TaobaoInventoryPlanInvalid(clt *core.SDKClient, req *inventory.TaobaoInventoryPlanInvalidRequest, session string) (*inventory.TaobaoInventoryPlanInvalidAPIResponse, error) {
+func TaobaoInventoryPlanInvalid(clt *core.SDKClient, req *inventory.TaobaoInventoryPlanInvalidAPIRequest, session string) (*inventory.TaobaoInventoryPlanInvalidAPIResponse, error) {
     var resp inventory.TaobaoInventoryPlanInvalidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

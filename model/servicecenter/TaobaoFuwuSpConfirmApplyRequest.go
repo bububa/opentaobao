@@ -12,26 +12,26 @@ taobao.fuwu.sp.confirm.apply
 
 isv能通过该接口发起确认申请单
 */
-type TaobaoFuwuSpConfirmApplyRequest struct {
+type TaobaoFuwuSpConfirmApplyAPIRequest struct {
     model.Params
     // 确认单申请
     _paramIncomeConfirmDTO   *IncomeConfirmDTO
 }
 
-// 初始化TaobaoFuwuSpConfirmApplyRequest对象
-func NewTaobaoFuwuSpConfirmApplyRequest() *TaobaoFuwuSpConfirmApplyRequest{
-    return &TaobaoFuwuSpConfirmApplyRequest{
+// 初始化TaobaoFuwuSpConfirmApplyAPIRequest对象
+func NewTaobaoFuwuSpConfirmApplyRequest() *TaobaoFuwuSpConfirmApplyAPIRequest{
+    return &TaobaoFuwuSpConfirmApplyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFuwuSpConfirmApplyRequest) GetApiMethodName() string {
+func (r TaobaoFuwuSpConfirmApplyAPIRequest) GetApiMethodName() string {
     return "taobao.fuwu.sp.confirm.apply"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFuwuSpConfirmApplyRequest) GetApiParams() url.Values {
+func (r TaobaoFuwuSpConfirmApplyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFuwuSpConfirmApplyRequest) GetApiParams() url.Values {
 }
 // ParamIncomeConfirmDTO Setter
 // 确认单申请
-func (r *TaobaoFuwuSpConfirmApplyRequest) SetParamIncomeConfirmDTO(_paramIncomeConfirmDTO *IncomeConfirmDTO) error {
+func (r *TaobaoFuwuSpConfirmApplyAPIRequest) SetParamIncomeConfirmDTO(_paramIncomeConfirmDTO *IncomeConfirmDTO) error {
     r._paramIncomeConfirmDTO = _paramIncomeConfirmDTO
     r.Set("param_income_confirm_d_t_o", _paramIncomeConfirmDTO)
     return nil
 }
 
 // ParamIncomeConfirmDTO Getter
-func (r TaobaoFuwuSpConfirmApplyRequest) GetParamIncomeConfirmDTO() *IncomeConfirmDTO {
+func (r TaobaoFuwuSpConfirmApplyAPIRequest) GetParamIncomeConfirmDTO() *IncomeConfirmDTO {
     return r._paramIncomeConfirmDTO
 }

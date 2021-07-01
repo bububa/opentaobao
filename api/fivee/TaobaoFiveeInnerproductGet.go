@@ -11,7 +11,7 @@ taobao.fivee.innerproduct.get
 
 资质共享平台，国产商品查询
 */
-func TaobaoFiveeInnerproductGet(clt *core.SDKClient, req *fivee.TaobaoFiveeInnerproductGetRequest, session string) (*fivee.TaobaoFiveeInnerproductGetAPIResponse, error) {
+func TaobaoFiveeInnerproductGet(clt *core.SDKClient, req *fivee.TaobaoFiveeInnerproductGetAPIRequest, session string) (*fivee.TaobaoFiveeInnerproductGetAPIResponse, error) {
     var resp fivee.TaobaoFiveeInnerproductGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

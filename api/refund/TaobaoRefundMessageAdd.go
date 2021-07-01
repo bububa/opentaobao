@@ -11,7 +11,7 @@ taobao.refund.message.add
 
 创建退款留言/凭证
 */
-func TaobaoRefundMessageAdd(clt *core.SDKClient, req *refund.TaobaoRefundMessageAddRequest, session string) (*refund.TaobaoRefundMessageAddAPIResponse, error) {
+func TaobaoRefundMessageAdd(clt *core.SDKClient, req *refund.TaobaoRefundMessageAddAPIRequest, session string) (*refund.TaobaoRefundMessageAddAPIResponse, error) {
     var resp refund.TaobaoRefundMessageAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ alibaba.tcls.aelophy.refund.fetchgoods
 
 saas 售后逆向 商户发起逆向取货
 */
-type AlibabaTclsAelophyRefundFetchgoodsRequest struct {
+type AlibabaTclsAelophyRefundFetchgoodsAPIRequest struct {
     model.Params
     // 经营店ID
     _storeId   string
@@ -30,20 +30,20 @@ type AlibabaTclsAelophyRefundFetchgoodsRequest struct {
     _subRefundList   []Subrefundlist
 }
 
-// 初始化AlibabaTclsAelophyRefundFetchgoodsRequest对象
-func NewAlibabaTclsAelophyRefundFetchgoodsRequest() *AlibabaTclsAelophyRefundFetchgoodsRequest{
-    return &AlibabaTclsAelophyRefundFetchgoodsRequest{
+// 初始化AlibabaTclsAelophyRefundFetchgoodsAPIRequest对象
+func NewAlibabaTclsAelophyRefundFetchgoodsRequest() *AlibabaTclsAelophyRefundFetchgoodsAPIRequest{
+    return &AlibabaTclsAelophyRefundFetchgoodsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetApiMethodName() string {
+func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetApiMethodName() string {
     return "alibaba.tcls.aelophy.refund.fetchgoods"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetApiParams() url.Values {
+func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,85 +52,85 @@ func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 经营店ID
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetStoreId(_storeId string) error {
+func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetStoreId(_storeId string) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetStoreId() string {
+func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetStoreId() string {
     return r._storeId
 }
 // OutOrderId Setter
 // 外部订单ID
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetOutOrderId(_outOrderId string) error {
+func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetOutOrderId(_outOrderId string) error {
     r._outOrderId = _outOrderId
     r.Set("out_order_id", _outOrderId)
     return nil
 }
 
 // OutOrderId Getter
-func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetOutOrderId() string {
+func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetOutOrderId() string {
     return r._outOrderId
 }
 // RefundId Setter
 // 退款单ID
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetRefundId(_refundId string) error {
+func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetRefundId(_refundId string) error {
     r._refundId = _refundId
     r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
-func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetRefundId() string {
+func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetRefundId() string {
     return r._refundId
 }
 // FetchStartTime Setter
 // 取货开始时间
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetFetchStartTime(_fetchStartTime string) error {
+func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetFetchStartTime(_fetchStartTime string) error {
     r._fetchStartTime = _fetchStartTime
     r.Set("fetch_start_time", _fetchStartTime)
     return nil
 }
 
 // FetchStartTime Getter
-func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetFetchStartTime() string {
+func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetFetchStartTime() string {
     return r._fetchStartTime
 }
 // FetchEndTime Setter
 // 取货结束时间
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetFetchEndTime(_fetchEndTime string) error {
+func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetFetchEndTime(_fetchEndTime string) error {
     r._fetchEndTime = _fetchEndTime
     r.Set("fetch_end_time", _fetchEndTime)
     return nil
 }
 
 // FetchEndTime Getter
-func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetFetchEndTime() string {
+func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetFetchEndTime() string {
     return r._fetchEndTime
 }
 // Remark Setter
 // 备注
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetRemark(_remark string) error {
+func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetRemark(_remark string) error {
     r._remark = _remark
     r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
-func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetRemark() string {
+func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetRemark() string {
     return r._remark
 }
 // SubRefundList Setter
 // 外部子订单列表
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetSubRefundList(_subRefundList []Subrefundlist) error {
+func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetSubRefundList(_subRefundList []Subrefundlist) error {
     r._subRefundList = _subRefundList
     r.Set("sub_refund_list", _subRefundList)
     return nil
 }
 
 // SubRefundList Getter
-func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetSubRefundList() []Subrefundlist {
+func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetSubRefundList() []Subrefundlist {
     return r._subRefundList
 }

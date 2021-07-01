@@ -12,26 +12,26 @@ alibaba.icbu.product.score.get
 
 产品质量分查询
 */
-type AlibabaIcbuProductScoreGetRequest struct {
+type AlibabaIcbuProductScoreGetAPIRequest struct {
     model.Params
     // 混淆后的商品ID
     _productId   string
 }
 
-// 初始化AlibabaIcbuProductScoreGetRequest对象
-func NewAlibabaIcbuProductScoreGetRequest() *AlibabaIcbuProductScoreGetRequest{
-    return &AlibabaIcbuProductScoreGetRequest{
+// 初始化AlibabaIcbuProductScoreGetAPIRequest对象
+func NewAlibabaIcbuProductScoreGetRequest() *AlibabaIcbuProductScoreGetAPIRequest{
+    return &AlibabaIcbuProductScoreGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuProductScoreGetRequest) GetApiMethodName() string {
+func (r AlibabaIcbuProductScoreGetAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.product.score.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuProductScoreGetRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuProductScoreGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIcbuProductScoreGetRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 混淆后的商品ID
-func (r *AlibabaIcbuProductScoreGetRequest) SetProductId(_productId string) error {
+func (r *AlibabaIcbuProductScoreGetAPIRequest) SetProductId(_productId string) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r AlibabaIcbuProductScoreGetRequest) GetProductId() string {
+func (r AlibabaIcbuProductScoreGetAPIRequest) GetProductId() string {
     return r._productId
 }

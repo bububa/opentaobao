@@ -11,7 +11,7 @@ alibaba.mos.goods.setprice
 
 价格变更接口，供供应商修改价格时使用。
 */
-func AlibabaMosGoodsSetprice(clt *core.SDKClient, req *moscm.AlibabaMosGoodsSetpriceRequest, session string) (*moscm.AlibabaMosGoodsSetpriceAPIResponse, error) {
+func AlibabaMosGoodsSetprice(clt *core.SDKClient, req *moscm.AlibabaMosGoodsSetpriceAPIRequest, session string) (*moscm.AlibabaMosGoodsSetpriceAPIResponse, error) {
     var resp moscm.AlibabaMosGoodsSetpriceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

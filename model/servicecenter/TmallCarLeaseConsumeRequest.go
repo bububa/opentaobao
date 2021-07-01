@@ -12,26 +12,26 @@ tmall.car.lease.consume
 
 租赁公司回传信息，核销
 */
-type TmallCarLeaseConsumeRequest struct {
+type TmallCarLeaseConsumeAPIRequest struct {
     model.Params
     // 核销请求
     _cosumeCodeReqDTO   *CosumeCodeReqDTO
 }
 
-// 初始化TmallCarLeaseConsumeRequest对象
-func NewTmallCarLeaseConsumeRequest() *TmallCarLeaseConsumeRequest{
-    return &TmallCarLeaseConsumeRequest{
+// 初始化TmallCarLeaseConsumeAPIRequest对象
+func NewTmallCarLeaseConsumeRequest() *TmallCarLeaseConsumeAPIRequest{
+    return &TmallCarLeaseConsumeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarLeaseConsumeRequest) GetApiMethodName() string {
+func (r TmallCarLeaseConsumeAPIRequest) GetApiMethodName() string {
     return "tmall.car.lease.consume"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarLeaseConsumeRequest) GetApiParams() url.Values {
+func (r TmallCarLeaseConsumeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallCarLeaseConsumeRequest) GetApiParams() url.Values {
 }
 // CosumeCodeReqDTO Setter
 // 核销请求
-func (r *TmallCarLeaseConsumeRequest) SetCosumeCodeReqDTO(_cosumeCodeReqDTO *CosumeCodeReqDTO) error {
+func (r *TmallCarLeaseConsumeAPIRequest) SetCosumeCodeReqDTO(_cosumeCodeReqDTO *CosumeCodeReqDTO) error {
     r._cosumeCodeReqDTO = _cosumeCodeReqDTO
     r.Set("cosume_code_req_d_t_o", _cosumeCodeReqDTO)
     return nil
 }
 
 // CosumeCodeReqDTO Getter
-func (r TmallCarLeaseConsumeRequest) GetCosumeCodeReqDTO() *CosumeCodeReqDTO {
+func (r TmallCarLeaseConsumeAPIRequest) GetCosumeCodeReqDTO() *CosumeCodeReqDTO {
     return r._cosumeCodeReqDTO
 }

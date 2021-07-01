@@ -11,7 +11,7 @@ alibaba.lsy.crm.activity.store.getstorelist
 
 ISV查询门店
 */
-func AlibabaLsyCrmActivityStoreGetstorelist(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityStoreGetstorelistRequest, session string) (*tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIResponse, error) {
+func AlibabaLsyCrmActivityStoreGetstorelist(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIRequest, session string) (*tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIResponse, error) {
     var resp tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

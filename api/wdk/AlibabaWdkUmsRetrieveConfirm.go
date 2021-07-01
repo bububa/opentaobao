@@ -11,7 +11,7 @@ alibaba.wdk.ums.retrieve.confirm
 
 回流单－外部对已拉取到的UMS单据进行确认
 */
-func AlibabaWdkUmsRetrieveConfirm(clt *core.SDKClient, req *wdk.AlibabaWdkUmsRetrieveConfirmRequest, session string) (*wdk.AlibabaWdkUmsRetrieveConfirmAPIResponse, error) {
+func AlibabaWdkUmsRetrieveConfirm(clt *core.SDKClient, req *wdk.AlibabaWdkUmsRetrieveConfirmAPIRequest, session string) (*wdk.AlibabaWdkUmsRetrieveConfirmAPIResponse, error) {
     var resp wdk.AlibabaWdkUmsRetrieveConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

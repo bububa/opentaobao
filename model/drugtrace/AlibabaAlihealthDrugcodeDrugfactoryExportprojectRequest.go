@@ -12,26 +12,26 @@ alibaba.alihealth.drugcode.drugfactory.exportproject
 
 导出临床项目及其药品目录
 */
-type AlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest struct {
+type AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest struct {
     model.Params
     // 企业id
     _refEntId   string
 }
 
-// 初始化AlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest对象
-func NewAlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest() *AlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest{
-    return &AlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest{
+// 初始化AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest对象
+func NewAlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest() *AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest{
+    return &AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drugcode.drugfactory.exportproject"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest) GetApiParams() 
 }
 // RefEntId Setter
 // 企业id
-func (r *AlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest) GetRefEntId() string {
     return r._refEntId
 }

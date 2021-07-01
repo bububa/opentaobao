@@ -11,7 +11,7 @@ alitrip.ticket.product.query
 
 门票商品查询接口：返回商家上传的门票商品信息
 */
-func AlitripTicketProductQuery(clt *core.SDKClient, req *ticket.AlitripTicketProductQueryRequest, session string) (*ticket.AlitripTicketProductQueryAPIResponse, error) {
+func AlitripTicketProductQuery(clt *core.SDKClient, req *ticket.AlitripTicketProductQueryAPIRequest, session string) (*ticket.AlitripTicketProductQueryAPIResponse, error) {
     var resp ticket.AlitripTicketProductQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

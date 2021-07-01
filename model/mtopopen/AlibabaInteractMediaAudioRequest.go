@@ -12,26 +12,26 @@ alibaba.interact.media.audio
 
 新音频包的鉴权接口
 */
-type AlibabaInteractMediaAudioRequest struct {
+type AlibabaInteractMediaAudioAPIRequest struct {
     model.Params
     // 系统自动生成
     _id   string
 }
 
-// 初始化AlibabaInteractMediaAudioRequest对象
-func NewAlibabaInteractMediaAudioRequest() *AlibabaInteractMediaAudioRequest{
-    return &AlibabaInteractMediaAudioRequest{
+// 初始化AlibabaInteractMediaAudioAPIRequest对象
+func NewAlibabaInteractMediaAudioRequest() *AlibabaInteractMediaAudioAPIRequest{
+    return &AlibabaInteractMediaAudioAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractMediaAudioRequest) GetApiMethodName() string {
+func (r AlibabaInteractMediaAudioAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.media.audio"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractMediaAudioRequest) GetApiParams() url.Values {
+func (r AlibabaInteractMediaAudioAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaInteractMediaAudioRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 系统自动生成
-func (r *AlibabaInteractMediaAudioRequest) SetId(_id string) error {
+func (r *AlibabaInteractMediaAudioAPIRequest) SetId(_id string) error {
     r._id = _id
     r.Set("id", _id)
     return nil
 }
 
 // Id Getter
-func (r AlibabaInteractMediaAudioRequest) GetId() string {
+func (r AlibabaInteractMediaAudioAPIRequest) GetId() string {
     return r._id
 }

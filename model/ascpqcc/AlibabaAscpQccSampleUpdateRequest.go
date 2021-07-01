@@ -12,26 +12,26 @@ alibaba.ascp.qcc.sample.update
 
 品控中心更新样品信息
 */
-type AlibabaAscpQccSampleUpdateRequest struct {
+type AlibabaAscpQccSampleUpdateAPIRequest struct {
     model.Params
     // 更新请求参数
     _updateRequest   *UpdateSampleRequest
 }
 
-// 初始化AlibabaAscpQccSampleUpdateRequest对象
-func NewAlibabaAscpQccSampleUpdateRequest() *AlibabaAscpQccSampleUpdateRequest{
-    return &AlibabaAscpQccSampleUpdateRequest{
+// 初始化AlibabaAscpQccSampleUpdateAPIRequest对象
+func NewAlibabaAscpQccSampleUpdateRequest() *AlibabaAscpQccSampleUpdateAPIRequest{
+    return &AlibabaAscpQccSampleUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAscpQccSampleUpdateRequest) GetApiMethodName() string {
+func (r AlibabaAscpQccSampleUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.ascp.qcc.sample.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAscpQccSampleUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaAscpQccSampleUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAscpQccSampleUpdateRequest) GetApiParams() url.Values {
 }
 // UpdateRequest Setter
 // 更新请求参数
-func (r *AlibabaAscpQccSampleUpdateRequest) SetUpdateRequest(_updateRequest *UpdateSampleRequest) error {
+func (r *AlibabaAscpQccSampleUpdateAPIRequest) SetUpdateRequest(_updateRequest *UpdateSampleRequest) error {
     r._updateRequest = _updateRequest
     r.Set("update_request", _updateRequest)
     return nil
 }
 
 // UpdateRequest Getter
-func (r AlibabaAscpQccSampleUpdateRequest) GetUpdateRequest() *UpdateSampleRequest {
+func (r AlibabaAscpQccSampleUpdateAPIRequest) GetUpdateRequest() *UpdateSampleRequest {
     return r._updateRequest
 }

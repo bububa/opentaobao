@@ -12,26 +12,26 @@ alibaba.alihealth.reserve.dental.storesanditems
 
 查询商户门店，商品列表
 */
-type AlibabaAlihealthReserveDentalStoresanditemsRequest struct {
+type AlibabaAlihealthReserveDentalStoresanditemsAPIRequest struct {
     model.Params
     // 页码，每页100个门店，超过100个门店分页请求
     _pageNo   int64
 }
 
-// 初始化AlibabaAlihealthReserveDentalStoresanditemsRequest对象
-func NewAlibabaAlihealthReserveDentalStoresanditemsRequest() *AlibabaAlihealthReserveDentalStoresanditemsRequest{
-    return &AlibabaAlihealthReserveDentalStoresanditemsRequest{
+// 初始化AlibabaAlihealthReserveDentalStoresanditemsAPIRequest对象
+func NewAlibabaAlihealthReserveDentalStoresanditemsRequest() *AlibabaAlihealthReserveDentalStoresanditemsAPIRequest{
+    return &AlibabaAlihealthReserveDentalStoresanditemsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthReserveDentalStoresanditemsRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthReserveDentalStoresanditemsAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.reserve.dental.storesanditems"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthReserveDentalStoresanditemsRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthReserveDentalStoresanditemsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthReserveDentalStoresanditemsRequest) GetApiParams() url.V
 }
 // PageNo Setter
 // 页码，每页100个门店，超过100个门店分页请求
-func (r *AlibabaAlihealthReserveDentalStoresanditemsRequest) SetPageNo(_pageNo int64) error {
+func (r *AlibabaAlihealthReserveDentalStoresanditemsAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r AlibabaAlihealthReserveDentalStoresanditemsRequest) GetPageNo() int64 {
+func (r AlibabaAlihealthReserveDentalStoresanditemsAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }

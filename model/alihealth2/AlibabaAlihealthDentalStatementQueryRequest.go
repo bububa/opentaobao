@@ -12,7 +12,7 @@ alibaba.alihealth.dental.statement.query
 
 ISV查询对账单
 */
-type AlibabaAlihealthDentalStatementQueryRequest struct {
+type AlibabaAlihealthDentalStatementQueryAPIRequest struct {
     model.Params
     // 订单ID
     _orderId   string
@@ -20,20 +20,20 @@ type AlibabaAlihealthDentalStatementQueryRequest struct {
     _statementTime   string
 }
 
-// 初始化AlibabaAlihealthDentalStatementQueryRequest对象
-func NewAlibabaAlihealthDentalStatementQueryRequest() *AlibabaAlihealthDentalStatementQueryRequest{
-    return &AlibabaAlihealthDentalStatementQueryRequest{
+// 初始化AlibabaAlihealthDentalStatementQueryAPIRequest对象
+func NewAlibabaAlihealthDentalStatementQueryRequest() *AlibabaAlihealthDentalStatementQueryAPIRequest{
+    return &AlibabaAlihealthDentalStatementQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDentalStatementQueryRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDentalStatementQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.dental.statement.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDentalStatementQueryRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDentalStatementQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDentalStatementQueryRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单ID
-func (r *AlibabaAlihealthDentalStatementQueryRequest) SetOrderId(_orderId string) error {
+func (r *AlibabaAlihealthDentalStatementQueryAPIRequest) SetOrderId(_orderId string) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaAlihealthDentalStatementQueryRequest) GetOrderId() string {
+func (r AlibabaAlihealthDentalStatementQueryAPIRequest) GetOrderId() string {
     return r._orderId
 }
 // StatementTime Setter
 // 结算周期，单位月
-func (r *AlibabaAlihealthDentalStatementQueryRequest) SetStatementTime(_statementTime string) error {
+func (r *AlibabaAlihealthDentalStatementQueryAPIRequest) SetStatementTime(_statementTime string) error {
     r._statementTime = _statementTime
     r.Set("statement_time", _statementTime)
     return nil
 }
 
 // StatementTime Getter
-func (r AlibabaAlihealthDentalStatementQueryRequest) GetStatementTime() string {
+func (r AlibabaAlihealthDentalStatementQueryAPIRequest) GetStatementTime() string {
     return r._statementTime
 }

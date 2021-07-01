@@ -12,26 +12,26 @@ taobao.qianniu.number.put
 
 ISV提供给卖家使用的业务数据，需要通过这个接口上传到千牛数据中心。
 */
-type TaobaoQianniuNumberPutRequest struct {
+type TaobaoQianniuNumberPutAPIRequest struct {
     model.Params
     // 考虑到稳定性，建议一次卖家最多为200个。标准json格式的数组构成的字符串。每个元素为{user_id:****,field:"****",value:"****"}分别是用户的userid，数据的名称，以及数据的值。
     _data   string
 }
 
-// 初始化TaobaoQianniuNumberPutRequest对象
-func NewTaobaoQianniuNumberPutRequest() *TaobaoQianniuNumberPutRequest{
-    return &TaobaoQianniuNumberPutRequest{
+// 初始化TaobaoQianniuNumberPutAPIRequest对象
+func NewTaobaoQianniuNumberPutRequest() *TaobaoQianniuNumberPutAPIRequest{
+    return &TaobaoQianniuNumberPutAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoQianniuNumberPutRequest) GetApiMethodName() string {
+func (r TaobaoQianniuNumberPutAPIRequest) GetApiMethodName() string {
     return "taobao.qianniu.number.put"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoQianniuNumberPutRequest) GetApiParams() url.Values {
+func (r TaobaoQianniuNumberPutAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoQianniuNumberPutRequest) GetApiParams() url.Values {
 }
 // Data Setter
 // 考虑到稳定性，建议一次卖家最多为200个。标准json格式的数组构成的字符串。每个元素为{user_id:****,field:"****",value:"****"}分别是用户的userid，数据的名称，以及数据的值。
-func (r *TaobaoQianniuNumberPutRequest) SetData(_data string) error {
+func (r *TaobaoQianniuNumberPutAPIRequest) SetData(_data string) error {
     r._data = _data
     r.Set("data", _data)
     return nil
 }
 
 // Data Getter
-func (r TaobaoQianniuNumberPutRequest) GetData() string {
+func (r TaobaoQianniuNumberPutAPIRequest) GetData() string {
     return r._data
 }

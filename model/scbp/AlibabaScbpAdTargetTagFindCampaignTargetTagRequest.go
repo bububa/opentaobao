@@ -12,7 +12,7 @@ alibaba.scbp.ad.target.tag.find.campaign.target.tag
 
 查询标签数据
 */
-type AlibabaScbpAdTargetTagFindCampaignTargetTagRequest struct {
+type AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest struct {
     model.Params
     // 计划id
     _campaignId   int64
@@ -22,20 +22,20 @@ type AlibabaScbpAdTargetTagFindCampaignTargetTagRequest struct {
     _topContext   *TopContextDTO
 }
 
-// 初始化AlibabaScbpAdTargetTagFindCampaignTargetTagRequest对象
-func NewAlibabaScbpAdTargetTagFindCampaignTargetTagRequest() *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest{
-    return &AlibabaScbpAdTargetTagFindCampaignTargetTagRequest{
+// 初始化AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest对象
+func NewAlibabaScbpAdTargetTagFindCampaignTargetTagRequest() *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest{
+    return &AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.target.tag.find.campaign.target.tag"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetApiParams() url.V
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetCampaignId(_campaignId int64) error {
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetCampaignId() int64 {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }
 // TargetTagOperation Setter
 // 请求参数
-func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetTargetTagOperation(_targetTagOperation *TargetTagOperationDTO) error {
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) SetTargetTagOperation(_targetTagOperation *TargetTagOperationDTO) error {
     r._targetTagOperation = _targetTagOperation
     r.Set("target_tag_operation", _targetTagOperation)
     return nil
 }
 
 // TargetTagOperation Getter
-func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetTargetTagOperation() *TargetTagOperationDTO {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetTargetTagOperation() *TargetTagOperationDTO {
     return r._targetTagOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetTopContext(_topContext *TopContextDTO) error {
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetTopContext() *TopContextDTO {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

@@ -12,26 +12,26 @@ alibaba.argus.updateredrisk
 
 商品健康中心新增红线价格规则
 */
-type AlibabaArgusUpdateredriskRequest struct {
+type AlibabaArgusUpdateredriskAPIRequest struct {
     model.Params
     // 红线价格参数
     _redRiskUpdateFactor   *RedRiskUpdateFactor
 }
 
-// 初始化AlibabaArgusUpdateredriskRequest对象
-func NewAlibabaArgusUpdateredriskRequest() *AlibabaArgusUpdateredriskRequest{
-    return &AlibabaArgusUpdateredriskRequest{
+// 初始化AlibabaArgusUpdateredriskAPIRequest对象
+func NewAlibabaArgusUpdateredriskRequest() *AlibabaArgusUpdateredriskAPIRequest{
+    return &AlibabaArgusUpdateredriskAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaArgusUpdateredriskRequest) GetApiMethodName() string {
+func (r AlibabaArgusUpdateredriskAPIRequest) GetApiMethodName() string {
     return "alibaba.argus.updateredrisk"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaArgusUpdateredriskRequest) GetApiParams() url.Values {
+func (r AlibabaArgusUpdateredriskAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaArgusUpdateredriskRequest) GetApiParams() url.Values {
 }
 // RedRiskUpdateFactor Setter
 // 红线价格参数
-func (r *AlibabaArgusUpdateredriskRequest) SetRedRiskUpdateFactor(_redRiskUpdateFactor *RedRiskUpdateFactor) error {
+func (r *AlibabaArgusUpdateredriskAPIRequest) SetRedRiskUpdateFactor(_redRiskUpdateFactor *RedRiskUpdateFactor) error {
     r._redRiskUpdateFactor = _redRiskUpdateFactor
     r.Set("red_risk_update_factor", _redRiskUpdateFactor)
     return nil
 }
 
 // RedRiskUpdateFactor Getter
-func (r AlibabaArgusUpdateredriskRequest) GetRedRiskUpdateFactor() *RedRiskUpdateFactor {
+func (r AlibabaArgusUpdateredriskAPIRequest) GetRedRiskUpdateFactor() *RedRiskUpdateFactor {
     return r._redRiskUpdateFactor
 }

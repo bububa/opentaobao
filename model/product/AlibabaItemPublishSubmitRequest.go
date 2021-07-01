@@ -12,7 +12,7 @@ alibaba.item.publish.submit
 
 新商品发布，提交商品发布信息
 */
-type AlibabaItemPublishSubmitRequest struct {
+type AlibabaItemPublishSubmitAPIRequest struct {
     model.Params
     // 业务扩展参数，需与平台约定好
     _bizType   string
@@ -28,20 +28,20 @@ type AlibabaItemPublishSubmitRequest struct {
     _schema   string
 }
 
-// 初始化AlibabaItemPublishSubmitRequest对象
-func NewAlibabaItemPublishSubmitRequest() *AlibabaItemPublishSubmitRequest{
-    return &AlibabaItemPublishSubmitRequest{
+// 初始化AlibabaItemPublishSubmitAPIRequest对象
+func NewAlibabaItemPublishSubmitRequest() *AlibabaItemPublishSubmitAPIRequest{
+    return &AlibabaItemPublishSubmitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaItemPublishSubmitRequest) GetApiMethodName() string {
+func (r AlibabaItemPublishSubmitAPIRequest) GetApiMethodName() string {
     return "alibaba.item.publish.submit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaItemPublishSubmitRequest) GetApiParams() url.Values {
+func (r AlibabaItemPublishSubmitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -50,73 +50,73 @@ func (r AlibabaItemPublishSubmitRequest) GetApiParams() url.Values {
 }
 // BizType Setter
 // 业务扩展参数，需与平台约定好
-func (r *AlibabaItemPublishSubmitRequest) SetBizType(_bizType string) error {
+func (r *AlibabaItemPublishSubmitAPIRequest) SetBizType(_bizType string) error {
     r._bizType = _bizType
     r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
-func (r AlibabaItemPublishSubmitRequest) GetBizType() string {
+func (r AlibabaItemPublishSubmitAPIRequest) GetBizType() string {
     return r._bizType
 }
 // Market Setter
 // 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版
-func (r *AlibabaItemPublishSubmitRequest) SetMarket(_market string) error {
+func (r *AlibabaItemPublishSubmitAPIRequest) SetMarket(_market string) error {
     r._market = _market
     r.Set("market", _market)
     return nil
 }
 
 // Market Getter
-func (r AlibabaItemPublishSubmitRequest) GetMarket() string {
+func (r AlibabaItemPublishSubmitAPIRequest) GetMarket() string {
     return r._market
 }
 // CatId Setter
 // 商品类目ID
-func (r *AlibabaItemPublishSubmitRequest) SetCatId(_catId int64) error {
+func (r *AlibabaItemPublishSubmitAPIRequest) SetCatId(_catId int64) error {
     r._catId = _catId
     r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
-func (r AlibabaItemPublishSubmitRequest) GetCatId() int64 {
+func (r AlibabaItemPublishSubmitAPIRequest) GetCatId() int64 {
     return r._catId
 }
 // SpuId Setter
 // 产品ID，天猫市场(market=tmall)时必填
-func (r *AlibabaItemPublishSubmitRequest) SetSpuId(_spuId int64) error {
+func (r *AlibabaItemPublishSubmitAPIRequest) SetSpuId(_spuId int64) error {
     r._spuId = _spuId
     r.Set("spu_id", _spuId)
     return nil
 }
 
 // SpuId Getter
-func (r AlibabaItemPublishSubmitRequest) GetSpuId() int64 {
+func (r AlibabaItemPublishSubmitAPIRequest) GetSpuId() int64 {
     return r._spuId
 }
 // Barcode Setter
 // 商品条码
-func (r *AlibabaItemPublishSubmitRequest) SetBarcode(_barcode string) error {
+func (r *AlibabaItemPublishSubmitAPIRequest) SetBarcode(_barcode string) error {
     r._barcode = _barcode
     r.Set("barcode", _barcode)
     return nil
 }
 
 // Barcode Getter
-func (r AlibabaItemPublishSubmitRequest) GetBarcode() string {
+func (r AlibabaItemPublishSubmitAPIRequest) GetBarcode() string {
     return r._barcode
 }
 // Schema Setter
 // 商品schema信息，通过alibaba.item.publish.props.get获取并补全后提交
-func (r *AlibabaItemPublishSubmitRequest) SetSchema(_schema string) error {
+func (r *AlibabaItemPublishSubmitAPIRequest) SetSchema(_schema string) error {
     r._schema = _schema
     r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
-func (r AlibabaItemPublishSubmitRequest) GetSchema() string {
+func (r AlibabaItemPublishSubmitAPIRequest) GetSchema() string {
     return r._schema
 }

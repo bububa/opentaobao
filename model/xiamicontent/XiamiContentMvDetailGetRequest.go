@@ -12,26 +12,26 @@ xiami.content.mv.detail.get
 
 获取mv详情
 */
-type XiamiContentMvDetailGetRequest struct {
+type XiamiContentMvDetailGetAPIRequest struct {
     model.Params
     // mvId
     _mvIds   []int64
 }
 
-// 初始化XiamiContentMvDetailGetRequest对象
-func NewXiamiContentMvDetailGetRequest() *XiamiContentMvDetailGetRequest{
-    return &XiamiContentMvDetailGetRequest{
+// 初始化XiamiContentMvDetailGetAPIRequest对象
+func NewXiamiContentMvDetailGetRequest() *XiamiContentMvDetailGetAPIRequest{
+    return &XiamiContentMvDetailGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r XiamiContentMvDetailGetRequest) GetApiMethodName() string {
+func (r XiamiContentMvDetailGetAPIRequest) GetApiMethodName() string {
     return "xiami.content.mv.detail.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r XiamiContentMvDetailGetRequest) GetApiParams() url.Values {
+func (r XiamiContentMvDetailGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r XiamiContentMvDetailGetRequest) GetApiParams() url.Values {
 }
 // MvIds Setter
 // mvId
-func (r *XiamiContentMvDetailGetRequest) SetMvIds(_mvIds []int64) error {
+func (r *XiamiContentMvDetailGetAPIRequest) SetMvIds(_mvIds []int64) error {
     r._mvIds = _mvIds
     r.Set("mv_ids", _mvIds)
     return nil
 }
 
 // MvIds Getter
-func (r XiamiContentMvDetailGetRequest) GetMvIds() []int64 {
+func (r XiamiContentMvDetailGetAPIRequest) GetMvIds() []int64 {
     return r._mvIds
 }

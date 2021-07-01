@@ -11,7 +11,7 @@ taobao.openmall.refund.modify
 
 修改OpenMall退款申请
 */
-func TaobaoOpenmallRefundModify(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundModifyRequest, session string) (*openmall.TaobaoOpenmallRefundModifyAPIResponse, error) {
+func TaobaoOpenmallRefundModify(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundModifyAPIRequest, session string) (*openmall.TaobaoOpenmallRefundModifyAPIResponse, error) {
     var resp openmall.TaobaoOpenmallRefundModifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

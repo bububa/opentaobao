@@ -11,7 +11,7 @@ alibaba.ailabs.aligenie.openvideoalbum.scenepush
 
 视频专辑场景接入接口
 */
-func AlibabaAilabsAligenieOpenvideoalbumScenepush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpenvideoalbumScenepushRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpenvideoalbumScenepushAPIResponse, error) {
+func AlibabaAilabsAligenieOpenvideoalbumScenepush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpenvideoalbumScenepushAPIResponse, error) {
     var resp tmallgenie.AlibabaAilabsAligenieOpenvideoalbumScenepushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.interact.sensor.ui
 
 Weex 基本UI操作
 */
-func AlibabaInteractSensorUi(clt *core.SDKClient, req *util.AlibabaInteractSensorUiRequest, session string) (*util.AlibabaInteractSensorUiAPIResponse, error) {
+func AlibabaInteractSensorUi(clt *core.SDKClient, req *util.AlibabaInteractSensorUiAPIRequest, session string) (*util.AlibabaInteractSensorUiAPIResponse, error) {
     var resp util.AlibabaInteractSensorUiAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.alsc.crm.open.point.operate
 
 同步积分接口
 */
-type AlibabaAlscCrmOpenPointOperateRequest struct {
+type AlibabaAlscCrmOpenPointOperateAPIRequest struct {
     model.Params
     // 入参
     _paramPointOperateOpenReq   *PointOperateOpenReq
 }
 
-// 初始化AlibabaAlscCrmOpenPointOperateRequest对象
-func NewAlibabaAlscCrmOpenPointOperateRequest() *AlibabaAlscCrmOpenPointOperateRequest{
-    return &AlibabaAlscCrmOpenPointOperateRequest{
+// 初始化AlibabaAlscCrmOpenPointOperateAPIRequest对象
+func NewAlibabaAlscCrmOpenPointOperateRequest() *AlibabaAlscCrmOpenPointOperateAPIRequest{
+    return &AlibabaAlscCrmOpenPointOperateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmOpenPointOperateRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.open.point.operate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmOpenPointOperateRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenPointOperateRequest) GetApiParams() url.Values {
 }
 // ParamPointOperateOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenPointOperateRequest) SetParamPointOperateOpenReq(_paramPointOperateOpenReq *PointOperateOpenReq) error {
+func (r *AlibabaAlscCrmOpenPointOperateAPIRequest) SetParamPointOperateOpenReq(_paramPointOperateOpenReq *PointOperateOpenReq) error {
     r._paramPointOperateOpenReq = _paramPointOperateOpenReq
     r.Set("param_point_operate_open_req", _paramPointOperateOpenReq)
     return nil
 }
 
 // ParamPointOperateOpenReq Getter
-func (r AlibabaAlscCrmOpenPointOperateRequest) GetParamPointOperateOpenReq() *PointOperateOpenReq {
+func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetParamPointOperateOpenReq() *PointOperateOpenReq {
     return r._paramPointOperateOpenReq
 }

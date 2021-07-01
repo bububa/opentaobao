@@ -11,7 +11,7 @@ taobao.feedflow.item.adgroup.adzone.unbind
 
 信息流单元内解绑资源位
 */
-func TaobaoFeedflowItemAdgroupAdzoneUnbind(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupAdzoneUnbindRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse, error) {
+func TaobaoFeedflowItemAdgroupAdzoneUnbind(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

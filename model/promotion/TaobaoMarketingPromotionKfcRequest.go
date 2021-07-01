@@ -12,7 +12,7 @@ taobao.marketing.promotion.kfc
 
 活动名称与描述违禁词检查
 */
-type TaobaoMarketingPromotionKfcRequest struct {
+type TaobaoMarketingPromotionKfcAPIRequest struct {
     model.Params
     // 活动名称
     _promotionTitle   string
@@ -20,20 +20,20 @@ type TaobaoMarketingPromotionKfcRequest struct {
     _promotionDesc   string
 }
 
-// 初始化TaobaoMarketingPromotionKfcRequest对象
-func NewTaobaoMarketingPromotionKfcRequest() *TaobaoMarketingPromotionKfcRequest{
-    return &TaobaoMarketingPromotionKfcRequest{
+// 初始化TaobaoMarketingPromotionKfcAPIRequest对象
+func NewTaobaoMarketingPromotionKfcRequest() *TaobaoMarketingPromotionKfcAPIRequest{
+    return &TaobaoMarketingPromotionKfcAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMarketingPromotionKfcRequest) GetApiMethodName() string {
+func (r TaobaoMarketingPromotionKfcAPIRequest) GetApiMethodName() string {
     return "taobao.marketing.promotion.kfc"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMarketingPromotionKfcRequest) GetApiParams() url.Values {
+func (r TaobaoMarketingPromotionKfcAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoMarketingPromotionKfcRequest) GetApiParams() url.Values {
 }
 // PromotionTitle Setter
 // 活动名称
-func (r *TaobaoMarketingPromotionKfcRequest) SetPromotionTitle(_promotionTitle string) error {
+func (r *TaobaoMarketingPromotionKfcAPIRequest) SetPromotionTitle(_promotionTitle string) error {
     r._promotionTitle = _promotionTitle
     r.Set("promotion_title", _promotionTitle)
     return nil
 }
 
 // PromotionTitle Getter
-func (r TaobaoMarketingPromotionKfcRequest) GetPromotionTitle() string {
+func (r TaobaoMarketingPromotionKfcAPIRequest) GetPromotionTitle() string {
     return r._promotionTitle
 }
 // PromotionDesc Setter
 // 活动描述
-func (r *TaobaoMarketingPromotionKfcRequest) SetPromotionDesc(_promotionDesc string) error {
+func (r *TaobaoMarketingPromotionKfcAPIRequest) SetPromotionDesc(_promotionDesc string) error {
     r._promotionDesc = _promotionDesc
     r.Set("promotion_desc", _promotionDesc)
     return nil
 }
 
 // PromotionDesc Getter
-func (r TaobaoMarketingPromotionKfcRequest) GetPromotionDesc() string {
+func (r TaobaoMarketingPromotionKfcAPIRequest) GetPromotionDesc() string {
     return r._promotionDesc
 }

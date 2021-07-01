@@ -11,7 +11,7 @@ taobao.qimen.transferorder.report
 
 调拨单通知
 */
-func TaobaoQimenTransferorderReport(clt *core.SDKClient, req *qimen.TaobaoQimenTransferorderReportRequest, session string) (*qimen.TaobaoQimenTransferorderReportAPIResponse, error) {
+func TaobaoQimenTransferorderReport(clt *core.SDKClient, req *qimen.TaobaoQimenTransferorderReportAPIRequest, session string) (*qimen.TaobaoQimenTransferorderReportAPIResponse, error) {
     var resp qimen.TaobaoQimenTransferorderReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

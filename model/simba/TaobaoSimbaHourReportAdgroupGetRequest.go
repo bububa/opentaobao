@@ -12,7 +12,7 @@ taobao.simba.hour.report.adgroup.get
 
 推广单元小时级别实时报表查询
 */
-type TaobaoSimbaHourReportAdgroupGetRequest struct {
+type TaobaoSimbaHourReportAdgroupGetAPIRequest struct {
     model.Params
     // 昵称
     _nick   string
@@ -26,20 +26,20 @@ type TaobaoSimbaHourReportAdgroupGetRequest struct {
     _adgroupId   string
 }
 
-// 初始化TaobaoSimbaHourReportAdgroupGetRequest对象
-func NewTaobaoSimbaHourReportAdgroupGetRequest() *TaobaoSimbaHourReportAdgroupGetRequest{
-    return &TaobaoSimbaHourReportAdgroupGetRequest{
+// 初始化TaobaoSimbaHourReportAdgroupGetAPIRequest对象
+func NewTaobaoSimbaHourReportAdgroupGetRequest() *TaobaoSimbaHourReportAdgroupGetAPIRequest{
+    return &TaobaoSimbaHourReportAdgroupGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaHourReportAdgroupGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.hour.report.adgroup.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaHourReportAdgroupGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TaobaoSimbaHourReportAdgroupGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 昵称
-func (r *TaobaoSimbaHourReportAdgroupGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaHourReportAdgroupGetRequest) GetNick() string {
+func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetNick() string {
     return r._nick
 }
 // TheDate Setter
 // 时间
-func (r *TaobaoSimbaHourReportAdgroupGetRequest) SetTheDate(_theDate string) error {
+func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetTheDate(_theDate string) error {
     r._theDate = _theDate
     r.Set("the_date", _theDate)
     return nil
 }
 
 // TheDate Getter
-func (r TaobaoSimbaHourReportAdgroupGetRequest) GetTheDate() string {
+func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetTheDate() string {
     return r._theDate
 }
 // Hour Setter
 // 当前小时
-func (r *TaobaoSimbaHourReportAdgroupGetRequest) SetHour(_hour string) error {
+func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetHour(_hour string) error {
     r._hour = _hour
     r.Set("hour", _hour)
     return nil
 }
 
 // Hour Getter
-func (r TaobaoSimbaHourReportAdgroupGetRequest) GetHour() string {
+func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetHour() string {
     return r._hour
 }
 // CampaignId Setter
 // 计划id
-func (r *TaobaoSimbaHourReportAdgroupGetRequest) SetCampaignId(_campaignId string) error {
+func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetCampaignId(_campaignId string) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r TaobaoSimbaHourReportAdgroupGetRequest) GetCampaignId() string {
+func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetCampaignId() string {
     return r._campaignId
 }
 // AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaHourReportAdgroupGetRequest) SetAdgroupId(_adgroupId string) error {
+func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetAdgroupId(_adgroupId string) error {
     r._adgroupId = _adgroupId
     r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
-func (r TaobaoSimbaHourReportAdgroupGetRequest) GetAdgroupId() string {
+func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetAdgroupId() string {
     return r._adgroupId
 }

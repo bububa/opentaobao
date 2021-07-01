@@ -12,26 +12,26 @@ alibaba.retail.commission.order.sync
 
 同步分佣结果
 */
-type AlibabaRetailCommissionOrderSyncRequest struct {
+type AlibabaRetailCommissionOrderSyncAPIRequest struct {
     model.Params
     // 请求参数
     _param0   *UniverseOrderVo
 }
 
-// 初始化AlibabaRetailCommissionOrderSyncRequest对象
-func NewAlibabaRetailCommissionOrderSyncRequest() *AlibabaRetailCommissionOrderSyncRequest{
-    return &AlibabaRetailCommissionOrderSyncRequest{
+// 初始化AlibabaRetailCommissionOrderSyncAPIRequest对象
+func NewAlibabaRetailCommissionOrderSyncRequest() *AlibabaRetailCommissionOrderSyncAPIRequest{
+    return &AlibabaRetailCommissionOrderSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailCommissionOrderSyncRequest) GetApiMethodName() string {
+func (r AlibabaRetailCommissionOrderSyncAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.commission.order.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailCommissionOrderSyncRequest) GetApiParams() url.Values {
+func (r AlibabaRetailCommissionOrderSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaRetailCommissionOrderSyncRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 请求参数
-func (r *AlibabaRetailCommissionOrderSyncRequest) SetParam0(_param0 *UniverseOrderVo) error {
+func (r *AlibabaRetailCommissionOrderSyncAPIRequest) SetParam0(_param0 *UniverseOrderVo) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaRetailCommissionOrderSyncRequest) GetParam0() *UniverseOrderVo {
+func (r AlibabaRetailCommissionOrderSyncAPIRequest) GetParam0() *UniverseOrderVo {
     return r._param0
 }

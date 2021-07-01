@@ -11,7 +11,7 @@ taobao.jst.interactive.assets.config
 
 任务素材配置接口
 */
-func TaobaoJstInteractiveAssetsConfig(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveAssetsConfigRequest, session string) (*jstinteractive.TaobaoJstInteractiveAssetsConfigAPIResponse, error) {
+func TaobaoJstInteractiveAssetsConfig(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveAssetsConfigAPIRequest, session string) (*jstinteractive.TaobaoJstInteractiveAssetsConfigAPIResponse, error) {
     var resp jstinteractive.TaobaoJstInteractiveAssetsConfigAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

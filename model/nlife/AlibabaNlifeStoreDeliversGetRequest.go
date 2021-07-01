@@ -12,7 +12,7 @@ alibaba.nlife.store.delivers.get
 
 获取门店采购单下的发货单列表
 */
-type AlibabaNlifeStoreDeliversGetRequest struct {
+type AlibabaNlifeStoreDeliversGetAPIRequest struct {
     model.Params
     // 门店采购订单号
     _tradeNo   string
@@ -24,20 +24,20 @@ type AlibabaNlifeStoreDeliversGetRequest struct {
     _pageNo   int64
 }
 
-// 初始化AlibabaNlifeStoreDeliversGetRequest对象
-func NewAlibabaNlifeStoreDeliversGetRequest() *AlibabaNlifeStoreDeliversGetRequest{
-    return &AlibabaNlifeStoreDeliversGetRequest{
+// 初始化AlibabaNlifeStoreDeliversGetAPIRequest对象
+func NewAlibabaNlifeStoreDeliversGetRequest() *AlibabaNlifeStoreDeliversGetAPIRequest{
+    return &AlibabaNlifeStoreDeliversGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaNlifeStoreDeliversGetRequest) GetApiMethodName() string {
+func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetApiMethodName() string {
     return "alibaba.nlife.store.delivers.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaNlifeStoreDeliversGetRequest) GetApiParams() url.Values {
+func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaNlifeStoreDeliversGetRequest) GetApiParams() url.Values {
 }
 // TradeNo Setter
 // 门店采购订单号
-func (r *AlibabaNlifeStoreDeliversGetRequest) SetTradeNo(_tradeNo string) error {
+func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetTradeNo(_tradeNo string) error {
     r._tradeNo = _tradeNo
     r.Set("trade_no", _tradeNo)
     return nil
 }
 
 // TradeNo Getter
-func (r AlibabaNlifeStoreDeliversGetRequest) GetTradeNo() string {
+func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetTradeNo() string {
     return r._tradeNo
 }
 // StoreId Setter
 // 零售商的门店id
-func (r *AlibabaNlifeStoreDeliversGetRequest) SetStoreId(_storeId int64) error {
+func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetStoreId(_storeId int64) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r AlibabaNlifeStoreDeliversGetRequest) GetStoreId() int64 {
+func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetStoreId() int64 {
     return r._storeId
 }
 // PageSize Setter
 // 每页的数量
-func (r *AlibabaNlifeStoreDeliversGetRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r AlibabaNlifeStoreDeliversGetRequest) GetPageSize() int64 {
+func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // PageNo Setter
 // 查询的页码
-func (r *AlibabaNlifeStoreDeliversGetRequest) SetPageNo(_pageNo int64) error {
+func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r AlibabaNlifeStoreDeliversGetRequest) GetPageNo() int64 {
+func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }

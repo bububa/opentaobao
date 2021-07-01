@@ -14,7 +14,7 @@ taobao.items.inventory.get
 只能获得商品的部分信息，商品的详细信息请通过taobao.item.seller.get获取<br/>
 <strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 */
-type TaobaoItemsInventoryGetRequest struct {
+type TaobaoItemsInventoryGetAPIRequest struct {
     model.Params
     // 需返回的字段列表。可选值为 Item 商品结构体中的以下字段： approve_status,num_iid,title,nick,type,cid,pic_url,num,props,valid_thru, list_time,price,has_discount,has_invoice,has_warranty,has_showcase, modified,delist_time,postage_id,seller_cids,outer_id；字段之间用“,”分隔。<br> 不支持其他字段，如果需要获取其他字段数据，调用taobao.item.seller.get。
     _fields   string
@@ -46,20 +46,20 @@ type TaobaoItemsInventoryGetRequest struct {
     _auctionType   string
 }
 
-// 初始化TaobaoItemsInventoryGetRequest对象
-func NewTaobaoItemsInventoryGetRequest() *TaobaoItemsInventoryGetRequest{
-    return &TaobaoItemsInventoryGetRequest{
+// 初始化TaobaoItemsInventoryGetAPIRequest对象
+func NewTaobaoItemsInventoryGetRequest() *TaobaoItemsInventoryGetAPIRequest{
+    return &TaobaoItemsInventoryGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoItemsInventoryGetRequest) GetApiMethodName() string {
+func (r TaobaoItemsInventoryGetAPIRequest) GetApiMethodName() string {
     return "taobao.items.inventory.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoItemsInventoryGetRequest) GetApiParams() url.Values {
+func (r TaobaoItemsInventoryGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -68,169 +68,169 @@ func (r TaobaoItemsInventoryGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需返回的字段列表。可选值为 Item 商品结构体中的以下字段： approve_status,num_iid,title,nick,type,cid,pic_url,num,props,valid_thru, list_time,price,has_discount,has_invoice,has_warranty,has_showcase, modified,delist_time,postage_id,seller_cids,outer_id；字段之间用“,”分隔。<br> 不支持其他字段，如果需要获取其他字段数据，调用taobao.item.seller.get。
-func (r *TaobaoItemsInventoryGetRequest) SetFields(_fields string) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetFields(_fields string) error {
     r._fields = _fields
     r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
-func (r TaobaoItemsInventoryGetRequest) GetFields() string {
+func (r TaobaoItemsInventoryGetAPIRequest) GetFields() string {
     return r._fields
 }
 // Q Setter
 // 搜索字段。搜索商品的title。
-func (r *TaobaoItemsInventoryGetRequest) SetQ(_q string) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetQ(_q string) error {
     r._q = _q
     r.Set("q", _q)
     return nil
 }
 
 // Q Getter
-func (r TaobaoItemsInventoryGetRequest) GetQ() string {
+func (r TaobaoItemsInventoryGetAPIRequest) GetQ() string {
     return r._q
 }
 // Banner Setter
 // 分类字段。可选值:<br>regular_shelved(定时上架)<br>never_on_shelf(从未上架)<br>off_shelf(我下架的)<br><font color='red'>for_shelved(等待所有上架)<br>sold_out(全部卖完)<br>violation_off_shelf(违规下架的)<br>默认查询for_shelved(等待所有上架)这个状态的商品<br></font>注：for_shelved(等待所有上架)=regular_shelved(定时上架)+never_on_shelf(从未上架)+off_shelf(我下架的)
-func (r *TaobaoItemsInventoryGetRequest) SetBanner(_banner string) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetBanner(_banner string) error {
     r._banner = _banner
     r.Set("banner", _banner)
     return nil
 }
 
 // Banner Getter
-func (r TaobaoItemsInventoryGetRequest) GetBanner() string {
+func (r TaobaoItemsInventoryGetAPIRequest) GetBanner() string {
     return r._banner
 }
 // Cid Setter
 // 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到
-func (r *TaobaoItemsInventoryGetRequest) SetCid(_cid int64) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetCid(_cid int64) error {
     r._cid = _cid
     r.Set("cid", _cid)
     return nil
 }
 
 // Cid Getter
-func (r TaobaoItemsInventoryGetRequest) GetCid() int64 {
+func (r TaobaoItemsInventoryGetAPIRequest) GetCid() int64 {
     return r._cid
 }
 // SellerCids Setter
 // 卖家店铺内自定义类目ID。多个之间用“,”分隔。可以根据taobao.sellercats.list.get获得.(<font color="red">注：目前最多支持32个ID号传入</font>)
-func (r *TaobaoItemsInventoryGetRequest) SetSellerCids(_sellerCids string) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetSellerCids(_sellerCids string) error {
     r._sellerCids = _sellerCids
     r.Set("seller_cids", _sellerCids)
     return nil
 }
 
 // SellerCids Getter
-func (r TaobaoItemsInventoryGetRequest) GetSellerCids() string {
+func (r TaobaoItemsInventoryGetAPIRequest) GetSellerCids() string {
     return r._sellerCids
 }
 // PageNo Setter
 // 页码。取值范围:大于零小于等于101的整数;默认值为1，即返回第一页数据。当页码超过101页时系统就会报错，故请大家在用此接口获取数据时尽可能的细化自己的搜索条件，例如根据修改时间分段获取商品。
-func (r *TaobaoItemsInventoryGetRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r TaobaoItemsInventoryGetRequest) GetPageNo() int64 {
+func (r TaobaoItemsInventoryGetAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }
 // PageSize Setter
 // 每页条数。取值范围:大于零的整数;最大值：200；默认值：40。
-func (r *TaobaoItemsInventoryGetRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoItemsInventoryGetRequest) GetPageSize() int64 {
+func (r TaobaoItemsInventoryGetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // HasDiscount Setter
 // 是否参与会员折扣。可选值：true，false。默认不过滤该条件
-func (r *TaobaoItemsInventoryGetRequest) SetHasDiscount(_hasDiscount bool) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetHasDiscount(_hasDiscount bool) error {
     r._hasDiscount = _hasDiscount
     r.Set("has_discount", _hasDiscount)
     return nil
 }
 
 // HasDiscount Getter
-func (r TaobaoItemsInventoryGetRequest) GetHasDiscount() bool {
+func (r TaobaoItemsInventoryGetAPIRequest) GetHasDiscount() bool {
     return r._hasDiscount
 }
 // OrderBy Setter
 // 排序方式。格式为column:asc/desc ，column可选值:list_time(上架时间),delist_time(下架时间),num(商品数量)，modified(最近修改时间);默认上架时间降序(即最新上架排在前面)。如按照上架时间降序排序方式为list_time:desc
-func (r *TaobaoItemsInventoryGetRequest) SetOrderBy(_orderBy string) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetOrderBy(_orderBy string) error {
     r._orderBy = _orderBy
     r.Set("order_by", _orderBy)
     return nil
 }
 
 // OrderBy Getter
-func (r TaobaoItemsInventoryGetRequest) GetOrderBy() string {
+func (r TaobaoItemsInventoryGetAPIRequest) GetOrderBy() string {
     return r._orderBy
 }
 // IsTaobao Setter
 // 商品是否在淘宝显示
-func (r *TaobaoItemsInventoryGetRequest) SetIsTaobao(_isTaobao bool) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetIsTaobao(_isTaobao bool) error {
     r._isTaobao = _isTaobao
     r.Set("is_taobao", _isTaobao)
     return nil
 }
 
 // IsTaobao Getter
-func (r TaobaoItemsInventoryGetRequest) GetIsTaobao() bool {
+func (r TaobaoItemsInventoryGetAPIRequest) GetIsTaobao() bool {
     return r._isTaobao
 }
 // IsEx Setter
 // 商品是否在外部网店显示
-func (r *TaobaoItemsInventoryGetRequest) SetIsEx(_isEx bool) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetIsEx(_isEx bool) error {
     r._isEx = _isEx
     r.Set("is_ex", _isEx)
     return nil
 }
 
 // IsEx Getter
-func (r TaobaoItemsInventoryGetRequest) GetIsEx() bool {
+func (r TaobaoItemsInventoryGetAPIRequest) GetIsEx() bool {
     return r._isEx
 }
 // StartModified Setter
 // 商品起始修改时间
-func (r *TaobaoItemsInventoryGetRequest) SetStartModified(_startModified string) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetStartModified(_startModified string) error {
     r._startModified = _startModified
     r.Set("start_modified", _startModified)
     return nil
 }
 
 // StartModified Getter
-func (r TaobaoItemsInventoryGetRequest) GetStartModified() string {
+func (r TaobaoItemsInventoryGetAPIRequest) GetStartModified() string {
     return r._startModified
 }
 // EndModified Setter
 // 商品结束修改时间
-func (r *TaobaoItemsInventoryGetRequest) SetEndModified(_endModified string) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetEndModified(_endModified string) error {
     r._endModified = _endModified
     r.Set("end_modified", _endModified)
     return nil
 }
 
 // EndModified Getter
-func (r TaobaoItemsInventoryGetRequest) GetEndModified() string {
+func (r TaobaoItemsInventoryGetAPIRequest) GetEndModified() string {
     return r._endModified
 }
 // AuctionType Setter
 // 商品类型：a-拍卖,b-一口价
-func (r *TaobaoItemsInventoryGetRequest) SetAuctionType(_auctionType string) error {
+func (r *TaobaoItemsInventoryGetAPIRequest) SetAuctionType(_auctionType string) error {
     r._auctionType = _auctionType
     r.Set("auction_type", _auctionType)
     return nil
 }
 
 // AuctionType Getter
-func (r TaobaoItemsInventoryGetRequest) GetAuctionType() string {
+func (r TaobaoItemsInventoryGetAPIRequest) GetAuctionType() string {
     return r._auctionType
 }

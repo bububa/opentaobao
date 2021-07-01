@@ -12,26 +12,26 @@ alibaba.alsc.crm.rule.queryoptplan
 
 查询运营计划
 */
-type AlibabaAlscCrmRuleQueryoptplanRequest struct {
+type AlibabaAlscCrmRuleQueryoptplanAPIRequest struct {
     model.Params
     // 请求参数
     _planRuleQueryOpenRequest   *PlanRuleQueryOpenReq
 }
 
-// 初始化AlibabaAlscCrmRuleQueryoptplanRequest对象
-func NewAlibabaAlscCrmRuleQueryoptplanRequest() *AlibabaAlscCrmRuleQueryoptplanRequest{
-    return &AlibabaAlscCrmRuleQueryoptplanRequest{
+// 初始化AlibabaAlscCrmRuleQueryoptplanAPIRequest对象
+func NewAlibabaAlscCrmRuleQueryoptplanRequest() *AlibabaAlscCrmRuleQueryoptplanAPIRequest{
+    return &AlibabaAlscCrmRuleQueryoptplanAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRuleQueryoptplanRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRuleQueryoptplanAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.rule.queryoptplan"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRuleQueryoptplanRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRuleQueryoptplanAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRuleQueryoptplanRequest) GetApiParams() url.Values {
 }
 // PlanRuleQueryOpenRequest Setter
 // 请求参数
-func (r *AlibabaAlscCrmRuleQueryoptplanRequest) SetPlanRuleQueryOpenRequest(_planRuleQueryOpenRequest *PlanRuleQueryOpenReq) error {
+func (r *AlibabaAlscCrmRuleQueryoptplanAPIRequest) SetPlanRuleQueryOpenRequest(_planRuleQueryOpenRequest *PlanRuleQueryOpenReq) error {
     r._planRuleQueryOpenRequest = _planRuleQueryOpenRequest
     r.Set("plan_rule_query_open_request", _planRuleQueryOpenRequest)
     return nil
 }
 
 // PlanRuleQueryOpenRequest Getter
-func (r AlibabaAlscCrmRuleQueryoptplanRequest) GetPlanRuleQueryOpenRequest() *PlanRuleQueryOpenReq {
+func (r AlibabaAlscCrmRuleQueryoptplanAPIRequest) GetPlanRuleQueryOpenRequest() *PlanRuleQueryOpenReq {
     return r._planRuleQueryOpenRequest
 }

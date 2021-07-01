@@ -11,7 +11,7 @@ taobao.inventory.adjust.trade
 
 商家交易调整库存，淘宝交易、B2B经销等
 */
-func TaobaoInventoryAdjustTrade(clt *core.SDKClient, req *fenxiao.TaobaoInventoryAdjustTradeRequest, session string) (*fenxiao.TaobaoInventoryAdjustTradeAPIResponse, error) {
+func TaobaoInventoryAdjustTrade(clt *core.SDKClient, req *fenxiao.TaobaoInventoryAdjustTradeAPIRequest, session string) (*fenxiao.TaobaoInventoryAdjustTradeAPIResponse, error) {
     var resp fenxiao.TaobaoInventoryAdjustTradeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

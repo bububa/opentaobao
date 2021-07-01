@@ -11,7 +11,7 @@ tmall.channel.trade.deliverorder.agree
 
 供应商通过收货确认单
 */
-func TmallChannelTradeDeliverorderAgree(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeDeliverorderAgreeRequest, session string) (*tmallchannel.TmallChannelTradeDeliverorderAgreeAPIResponse, error) {
+func TmallChannelTradeDeliverorderAgree(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeDeliverorderAgreeAPIRequest, session string) (*tmallchannel.TmallChannelTradeDeliverorderAgreeAPIResponse, error) {
     var resp tmallchannel.TmallChannelTradeDeliverorderAgreeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

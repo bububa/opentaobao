@@ -11,7 +11,7 @@ tmall.channel.trade.order.get
 
 通过主采购单号查询采购单
 */
-func TmallChannelTradeOrderGet(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeOrderGetRequest, session string) (*tmallchannel.TmallChannelTradeOrderGetAPIResponse, error) {
+func TmallChannelTradeOrderGet(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeOrderGetAPIRequest, session string) (*tmallchannel.TmallChannelTradeOrderGetAPIResponse, error) {
     var resp tmallchannel.TmallChannelTradeOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

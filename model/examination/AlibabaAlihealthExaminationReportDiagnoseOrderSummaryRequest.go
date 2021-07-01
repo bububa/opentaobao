@@ -12,26 +12,26 @@ alibaba.alihealth.examination.report.diagnose.order.summary
 
 记录体检报告人工解读总结
 */
-type AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest struct {
+type AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest struct {
     model.Params
     // 入参对象
     _reportOrderSummaryRequest   *ReportOrderSummaryRequest
 }
 
-// 初始化AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest对象
-func NewAlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest() *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest{
-    return &AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest{
+// 初始化AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest对象
+func NewAlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest() *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest{
+    return &AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.examination.report.diagnose.order.summary"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest) GetApiPara
 }
 // ReportOrderSummaryRequest Setter
 // 入参对象
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest) SetReportOrderSummaryRequest(_reportOrderSummaryRequest *ReportOrderSummaryRequest) error {
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) SetReportOrderSummaryRequest(_reportOrderSummaryRequest *ReportOrderSummaryRequest) error {
     r._reportOrderSummaryRequest = _reportOrderSummaryRequest
     r.Set("report_order_summary_request", _reportOrderSummaryRequest)
     return nil
 }
 
 // ReportOrderSummaryRequest Getter
-func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest) GetReportOrderSummaryRequest() *ReportOrderSummaryRequest {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetReportOrderSummaryRequest() *ReportOrderSummaryRequest {
     return r._reportOrderSummaryRequest
 }

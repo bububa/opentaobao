@@ -12,26 +12,26 @@ taobao.feedflow.item.campaign.delete
 
 删除计划
 */
-type TaobaoFeedflowItemCampaignDeleteRequest struct {
+type TaobaoFeedflowItemCampaignDeleteAPIRequest struct {
     model.Params
     // 计划id
     _campaignId   int64
 }
 
-// 初始化TaobaoFeedflowItemCampaignDeleteRequest对象
-func NewTaobaoFeedflowItemCampaignDeleteRequest() *TaobaoFeedflowItemCampaignDeleteRequest{
-    return &TaobaoFeedflowItemCampaignDeleteRequest{
+// 初始化TaobaoFeedflowItemCampaignDeleteAPIRequest对象
+func NewTaobaoFeedflowItemCampaignDeleteRequest() *TaobaoFeedflowItemCampaignDeleteAPIRequest{
+    return &TaobaoFeedflowItemCampaignDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemCampaignDeleteRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemCampaignDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.campaign.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemCampaignDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemCampaignDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCampaignDeleteRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 计划id
-func (r *TaobaoFeedflowItemCampaignDeleteRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaoFeedflowItemCampaignDeleteAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r TaobaoFeedflowItemCampaignDeleteRequest) GetCampaignId() int64 {
+func (r TaobaoFeedflowItemCampaignDeleteAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }

@@ -11,7 +11,7 @@ taobao.alitrip.it.fare.querytask
 
 批量操作同步返回任务id，后台生成异步任务，通过此接口查询批量操作的执行结果
 */
-func TaobaoAlitripItFareQuerytask(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareQuerytaskRequest, session string) (*itpolicy.TaobaoAlitripItFareQuerytaskAPIResponse, error) {
+func TaobaoAlitripItFareQuerytask(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareQuerytaskAPIRequest, session string) (*itpolicy.TaobaoAlitripItFareQuerytaskAPIResponse, error) {
     var resp itpolicy.TaobaoAlitripItFareQuerytaskAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

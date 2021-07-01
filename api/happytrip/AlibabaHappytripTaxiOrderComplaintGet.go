@@ -11,7 +11,7 @@ alibaba.happytrip.taxi.order.complaint.get
 
 获取投诉处理进度详情
 */
-func AlibabaHappytripTaxiOrderComplaintGet(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderComplaintGetRequest, session string) (*happytrip.AlibabaHappytripTaxiOrderComplaintGetAPIResponse, error) {
+func AlibabaHappytripTaxiOrderComplaintGet(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderComplaintGetAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiOrderComplaintGetAPIResponse, error) {
     var resp happytrip.AlibabaHappytripTaxiOrderComplaintGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

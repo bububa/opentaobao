@@ -11,7 +11,7 @@ taobao.feedflow.item.adzone.rpthourlist
 
 广告主资源包分时数据查询，支持广告主查询最近90天内某一天的资源包维度分时报表数据
 */
-func TaobaoFeedflowItemAdzoneRpthourlist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdzoneRpthourlistRequest, session string) (*feedflow.TaobaoFeedflowItemAdzoneRpthourlistAPIResponse, error) {
+func TaobaoFeedflowItemAdzoneRpthourlist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdzoneRpthourlistAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdzoneRpthourlistAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemAdzoneRpthourlistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

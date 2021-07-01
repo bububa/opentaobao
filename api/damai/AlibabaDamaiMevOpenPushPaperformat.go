@@ -11,7 +11,7 @@ alibaba.damai.mev.open.push.paperformat
 
 pushPaperFormat
 */
-func AlibabaDamaiMevOpenPushPaperformat(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushPaperformatRequest, session string) (*damai.AlibabaDamaiMevOpenPushPaperformatAPIResponse, error) {
+func AlibabaDamaiMevOpenPushPaperformat(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushPaperformatAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushPaperformatAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenPushPaperformatAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

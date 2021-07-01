@@ -12,24 +12,24 @@ alibaba.interact.isvadmin.getinteractbysellernick
 
 根据sellerNick获取互动实例列表
 */
-type AlibabaInteractIsvadminGetinteractbysellernickRequest struct {
+type AlibabaInteractIsvadminGetinteractbysellernickAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractIsvadminGetinteractbysellernickRequest对象
-func NewAlibabaInteractIsvadminGetinteractbysellernickRequest() *AlibabaInteractIsvadminGetinteractbysellernickRequest{
-    return &AlibabaInteractIsvadminGetinteractbysellernickRequest{
+// 初始化AlibabaInteractIsvadminGetinteractbysellernickAPIRequest对象
+func NewAlibabaInteractIsvadminGetinteractbysellernickRequest() *AlibabaInteractIsvadminGetinteractbysellernickAPIRequest{
+    return &AlibabaInteractIsvadminGetinteractbysellernickAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractIsvadminGetinteractbysellernickRequest) GetApiMethodName() string {
+func (r AlibabaInteractIsvadminGetinteractbysellernickAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.isvadmin.getinteractbysellernick"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractIsvadminGetinteractbysellernickRequest) GetApiParams() url.Values {
+func (r AlibabaInteractIsvadminGetinteractbysellernickAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

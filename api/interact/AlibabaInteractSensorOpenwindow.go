@@ -11,7 +11,7 @@ alibaba.interact.sensor.openwindow
 
 客户端打开新页面
 */
-func AlibabaInteractSensorOpenwindow(clt *core.SDKClient, req *interact.AlibabaInteractSensorOpenwindowRequest, session string) (*interact.AlibabaInteractSensorOpenwindowAPIResponse, error) {
+func AlibabaInteractSensorOpenwindow(clt *core.SDKClient, req *interact.AlibabaInteractSensorOpenwindowAPIRequest, session string) (*interact.AlibabaInteractSensorOpenwindowAPIResponse, error) {
     var resp interact.AlibabaInteractSensorOpenwindowAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -15,7 +15,7 @@ taobao.promotionmisc.common.item.detail.update
 2、使用该接口时需要把未做修改的字段值也传入；
 3、此接口受卖家最低折扣限制，如果优惠力度大于卖家设置的最低折扣则不能修改
 */
-type TaobaoPromotionmiscCommonItemDetailUpdateRequest struct {
+type TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest struct {
     model.Params
     // 优惠活动ID
     _activityId   int64
@@ -29,20 +29,20 @@ type TaobaoPromotionmiscCommonItemDetailUpdateRequest struct {
     _promotionValue   int64
 }
 
-// 初始化TaobaoPromotionmiscCommonItemDetailUpdateRequest对象
-func NewTaobaoPromotionmiscCommonItemDetailUpdateRequest() *TaobaoPromotionmiscCommonItemDetailUpdateRequest{
-    return &TaobaoPromotionmiscCommonItemDetailUpdateRequest{
+// 初始化TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest对象
+func NewTaobaoPromotionmiscCommonItemDetailUpdateRequest() *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest{
+    return &TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPromotionmiscCommonItemDetailUpdateRequest) GetApiMethodName() string {
+func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.promotionmisc.common.item.detail.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionmiscCommonItemDetailUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -51,61 +51,61 @@ func (r TaobaoPromotionmiscCommonItemDetailUpdateRequest) GetApiParams() url.Val
 }
 // ActivityId Setter
 // 优惠活动ID
-func (r *TaobaoPromotionmiscCommonItemDetailUpdateRequest) SetActivityId(_activityId int64) error {
+func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetActivityId(_activityId int64) error {
     r._activityId = _activityId
     r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
-func (r TaobaoPromotionmiscCommonItemDetailUpdateRequest) GetActivityId() int64 {
+func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetActivityId() int64 {
     return r._activityId
 }
 // DetailId Setter
 // 优惠详情ID
-func (r *TaobaoPromotionmiscCommonItemDetailUpdateRequest) SetDetailId(_detailId int64) error {
+func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetDetailId(_detailId int64) error {
     r._detailId = _detailId
     r.Set("detail_id", _detailId)
     return nil
 }
 
 // DetailId Getter
-func (r TaobaoPromotionmiscCommonItemDetailUpdateRequest) GetDetailId() int64 {
+func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetDetailId() int64 {
     return r._detailId
 }
 // ItemId Setter
 // 商品ID
-func (r *TaobaoPromotionmiscCommonItemDetailUpdateRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoPromotionmiscCommonItemDetailUpdateRequest) GetItemId() int64 {
+func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetItemId() int64 {
     return r._itemId
 }
 // PromotionType Setter
 // 优惠类型，只有两种可选值：0-减钱；1-打折
-func (r *TaobaoPromotionmiscCommonItemDetailUpdateRequest) SetPromotionType(_promotionType int64) error {
+func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetPromotionType(_promotionType int64) error {
     r._promotionType = _promotionType
     r.Set("promotion_type", _promotionType)
     return nil
 }
 
 // PromotionType Getter
-func (r TaobaoPromotionmiscCommonItemDetailUpdateRequest) GetPromotionType() int64 {
+func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetPromotionType() int64 {
     return r._promotionType
 }
 // PromotionValue Setter
 // 优惠力度，其值的解释方式由promotion_type定义：当为减钱时解释成减钱数量，如：900表示减9元；当为打折时解释成打折折扣，如：900表示打9折
-func (r *TaobaoPromotionmiscCommonItemDetailUpdateRequest) SetPromotionValue(_promotionValue int64) error {
+func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetPromotionValue(_promotionValue int64) error {
     r._promotionValue = _promotionValue
     r.Set("promotion_value", _promotionValue)
     return nil
 }
 
 // PromotionValue Getter
-func (r TaobaoPromotionmiscCommonItemDetailUpdateRequest) GetPromotionValue() int64 {
+func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetPromotionValue() int64 {
     return r._promotionValue
 }

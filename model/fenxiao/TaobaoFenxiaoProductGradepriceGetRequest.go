@@ -12,7 +12,7 @@ taobao.fenxiao.product.gradeprice.get
 
 等级折扣查询
 */
-type TaobaoFenxiaoProductGradepriceGetRequest struct {
+type TaobaoFenxiaoProductGradepriceGetAPIRequest struct {
     model.Params
     // 产品id
     _productId   int64
@@ -22,20 +22,20 @@ type TaobaoFenxiaoProductGradepriceGetRequest struct {
     _tradeType   int64
 }
 
-// 初始化TaobaoFenxiaoProductGradepriceGetRequest对象
-func NewTaobaoFenxiaoProductGradepriceGetRequest() *TaobaoFenxiaoProductGradepriceGetRequest{
-    return &TaobaoFenxiaoProductGradepriceGetRequest{
+// 初始化TaobaoFenxiaoProductGradepriceGetAPIRequest对象
+func NewTaobaoFenxiaoProductGradepriceGetRequest() *TaobaoFenxiaoProductGradepriceGetAPIRequest{
+    return &TaobaoFenxiaoProductGradepriceGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFenxiaoProductGradepriceGetRequest) GetApiMethodName() string {
+func (r TaobaoFenxiaoProductGradepriceGetAPIRequest) GetApiMethodName() string {
     return "taobao.fenxiao.product.gradeprice.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFenxiaoProductGradepriceGetRequest) GetApiParams() url.Values {
+func (r TaobaoFenxiaoProductGradepriceGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoFenxiaoProductGradepriceGetRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 产品id
-func (r *TaobaoFenxiaoProductGradepriceGetRequest) SetProductId(_productId int64) error {
+func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) SetProductId(_productId int64) error {
     r._productId = _productId
     r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
-func (r TaobaoFenxiaoProductGradepriceGetRequest) GetProductId() int64 {
+func (r TaobaoFenxiaoProductGradepriceGetAPIRequest) GetProductId() int64 {
     return r._productId
 }
 // SkuId Setter
 // skuId
-func (r *TaobaoFenxiaoProductGradepriceGetRequest) SetSkuId(_skuId int64) error {
+func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) SetSkuId(_skuId int64) error {
     r._skuId = _skuId
     r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
-func (r TaobaoFenxiaoProductGradepriceGetRequest) GetSkuId() int64 {
+func (r TaobaoFenxiaoProductGradepriceGetAPIRequest) GetSkuId() int64 {
     return r._skuId
 }
 // TradeType Setter
 // 经、代销模式（1：代销、2：经销）
-func (r *TaobaoFenxiaoProductGradepriceGetRequest) SetTradeType(_tradeType int64) error {
+func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) SetTradeType(_tradeType int64) error {
     r._tradeType = _tradeType
     r.Set("trade_type", _tradeType)
     return nil
 }
 
 // TradeType Getter
-func (r TaobaoFenxiaoProductGradepriceGetRequest) GetTradeType() int64 {
+func (r TaobaoFenxiaoProductGradepriceGetAPIRequest) GetTradeType() int64 {
     return r._tradeType
 }

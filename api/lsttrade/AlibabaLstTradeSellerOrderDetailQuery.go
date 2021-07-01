@@ -11,7 +11,7 @@ alibaba.lst.trade.seller.order.detail.query
 
 订单详情查看(卖家视角)
 */
-func AlibabaLstTradeSellerOrderDetailQuery(clt *core.SDKClient, req *lsttrade.AlibabaLstTradeSellerOrderDetailQueryRequest, session string) (*lsttrade.AlibabaLstTradeSellerOrderDetailQueryAPIResponse, error) {
+func AlibabaLstTradeSellerOrderDetailQuery(clt *core.SDKClient, req *lsttrade.AlibabaLstTradeSellerOrderDetailQueryAPIRequest, session string) (*lsttrade.AlibabaLstTradeSellerOrderDetailQueryAPIResponse, error) {
     var resp lsttrade.AlibabaLstTradeSellerOrderDetailQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

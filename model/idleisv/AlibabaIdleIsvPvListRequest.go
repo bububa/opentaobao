@@ -12,7 +12,7 @@ alibaba.idle.isv.pv.list
 
 根据闲鱼渠道类目查询对应的品牌和型号清单，供服务商进行选择
 */
-type AlibabaIdleIsvPvListRequest struct {
+type AlibabaIdleIsvPvListAPIRequest struct {
     model.Params
     // 闲鱼渠道类目的id
     _channelCatId   string
@@ -20,20 +20,20 @@ type AlibabaIdleIsvPvListRequest struct {
     _brandModelInfo   []IdleNewPubValueDO
 }
 
-// 初始化AlibabaIdleIsvPvListRequest对象
-func NewAlibabaIdleIsvPvListRequest() *AlibabaIdleIsvPvListRequest{
-    return &AlibabaIdleIsvPvListRequest{
+// 初始化AlibabaIdleIsvPvListAPIRequest对象
+func NewAlibabaIdleIsvPvListRequest() *AlibabaIdleIsvPvListAPIRequest{
+    return &AlibabaIdleIsvPvListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleIsvPvListRequest) GetApiMethodName() string {
+func (r AlibabaIdleIsvPvListAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.isv.pv.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvPvListRequest) GetApiParams() url.Values {
+func (r AlibabaIdleIsvPvListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaIdleIsvPvListRequest) GetApiParams() url.Values {
 }
 // ChannelCatId Setter
 // 闲鱼渠道类目的id
-func (r *AlibabaIdleIsvPvListRequest) SetChannelCatId(_channelCatId string) error {
+func (r *AlibabaIdleIsvPvListAPIRequest) SetChannelCatId(_channelCatId string) error {
     r._channelCatId = _channelCatId
     r.Set("channel_cat_id", _channelCatId)
     return nil
 }
 
 // ChannelCatId Getter
-func (r AlibabaIdleIsvPvListRequest) GetChannelCatId() string {
+func (r AlibabaIdleIsvPvListAPIRequest) GetChannelCatId() string {
     return r._channelCatId
 }
 // BrandModelInfo Setter
 // 系统自动生成
-func (r *AlibabaIdleIsvPvListRequest) SetBrandModelInfo(_brandModelInfo []IdleNewPubValueDO) error {
+func (r *AlibabaIdleIsvPvListAPIRequest) SetBrandModelInfo(_brandModelInfo []IdleNewPubValueDO) error {
     r._brandModelInfo = _brandModelInfo
     r.Set("brand_model_info", _brandModelInfo)
     return nil
 }
 
 // BrandModelInfo Getter
-func (r AlibabaIdleIsvPvListRequest) GetBrandModelInfo() []IdleNewPubValueDO {
+func (r AlibabaIdleIsvPvListAPIRequest) GetBrandModelInfo() []IdleNewPubValueDO {
     return r._brandModelInfo
 }

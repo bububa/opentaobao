@@ -11,7 +11,7 @@ taobao.ailab.aicloud.top.feedlist.delete
 
 删除指定的某一条对话流信息
 */
-func TaobaoAilabAicloudTopFeedlistDelete(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopFeedlistDeleteRequest, session string) (*iot.TaobaoAilabAicloudTopFeedlistDeleteAPIResponse, error) {
+func TaobaoAilabAicloudTopFeedlistDelete(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopFeedlistDeleteAPIRequest, session string) (*iot.TaobaoAilabAicloudTopFeedlistDeleteAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopFeedlistDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

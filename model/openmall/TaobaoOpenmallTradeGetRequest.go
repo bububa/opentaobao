@@ -12,7 +12,7 @@ taobao.openmall.trade.get
 
 查询订单详情
 */
-type TaobaoOpenmallTradeGetRequest struct {
+type TaobaoOpenmallTradeGetAPIRequest struct {
     model.Params
     // 分销者信息
     _distributor   string
@@ -20,20 +20,20 @@ type TaobaoOpenmallTradeGetRequest struct {
     _tid   int64
 }
 
-// 初始化TaobaoOpenmallTradeGetRequest对象
-func NewTaobaoOpenmallTradeGetRequest() *TaobaoOpenmallTradeGetRequest{
-    return &TaobaoOpenmallTradeGetRequest{
+// 初始化TaobaoOpenmallTradeGetAPIRequest对象
+func NewTaobaoOpenmallTradeGetRequest() *TaobaoOpenmallTradeGetAPIRequest{
+    return &TaobaoOpenmallTradeGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenmallTradeGetRequest) GetApiMethodName() string {
+func (r TaobaoOpenmallTradeGetAPIRequest) GetApiMethodName() string {
     return "taobao.openmall.trade.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallTradeGetRequest) GetApiParams() url.Values {
+func (r TaobaoOpenmallTradeGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOpenmallTradeGetRequest) GetApiParams() url.Values {
 }
 // Distributor Setter
 // 分销者信息
-func (r *TaobaoOpenmallTradeGetRequest) SetDistributor(_distributor string) error {
+func (r *TaobaoOpenmallTradeGetAPIRequest) SetDistributor(_distributor string) error {
     r._distributor = _distributor
     r.Set("distributor", _distributor)
     return nil
 }
 
 // Distributor Getter
-func (r TaobaoOpenmallTradeGetRequest) GetDistributor() string {
+func (r TaobaoOpenmallTradeGetAPIRequest) GetDistributor() string {
     return r._distributor
 }
 // Tid Setter
 // 淘宝订单号
-func (r *TaobaoOpenmallTradeGetRequest) SetTid(_tid int64) error {
+func (r *TaobaoOpenmallTradeGetAPIRequest) SetTid(_tid int64) error {
     r._tid = _tid
     r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
-func (r TaobaoOpenmallTradeGetRequest) GetTid() int64 {
+func (r TaobaoOpenmallTradeGetAPIRequest) GetTid() int64 {
     return r._tid
 }

@@ -12,26 +12,26 @@ alibaba.tmallgenie.scp.location.get
 
 天猫精灵供应链-计划域-IBP查询CDC和RDC数据接口
 */
-type AlibabaTmallgenieScpLocationGetRequest struct {
+type AlibabaTmallgenieScpLocationGetAPIRequest struct {
     model.Params
     // 扩展参数
     _requestExtendJson   string
 }
 
-// 初始化AlibabaTmallgenieScpLocationGetRequest对象
-func NewAlibabaTmallgenieScpLocationGetRequest() *AlibabaTmallgenieScpLocationGetRequest{
-    return &AlibabaTmallgenieScpLocationGetRequest{
+// 初始化AlibabaTmallgenieScpLocationGetAPIRequest对象
+func NewAlibabaTmallgenieScpLocationGetRequest() *AlibabaTmallgenieScpLocationGetAPIRequest{
+    return &AlibabaTmallgenieScpLocationGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTmallgenieScpLocationGetRequest) GetApiMethodName() string {
+func (r AlibabaTmallgenieScpLocationGetAPIRequest) GetApiMethodName() string {
     return "alibaba.tmallgenie.scp.location.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTmallgenieScpLocationGetRequest) GetApiParams() url.Values {
+func (r AlibabaTmallgenieScpLocationGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpLocationGetRequest) GetApiParams() url.Values {
 }
 // RequestExtendJson Setter
 // 扩展参数
-func (r *AlibabaTmallgenieScpLocationGetRequest) SetRequestExtendJson(_requestExtendJson string) error {
+func (r *AlibabaTmallgenieScpLocationGetAPIRequest) SetRequestExtendJson(_requestExtendJson string) error {
     r._requestExtendJson = _requestExtendJson
     r.Set("request_extend_json", _requestExtendJson)
     return nil
 }
 
 // RequestExtendJson Getter
-func (r AlibabaTmallgenieScpLocationGetRequest) GetRequestExtendJson() string {
+func (r AlibabaTmallgenieScpLocationGetAPIRequest) GetRequestExtendJson() string {
     return r._requestExtendJson
 }

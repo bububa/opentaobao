@@ -11,7 +11,7 @@ alibaba.einvoice.partner.return
 
 开票商返回开票结果数据
 */
-func AlibabaEinvoicePartnerReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePartnerReturnRequest, session string) (*einvoice.AlibabaEinvoicePartnerReturnAPIResponse, error) {
+func AlibabaEinvoicePartnerReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePartnerReturnAPIRequest, session string) (*einvoice.AlibabaEinvoicePartnerReturnAPIResponse, error) {
     var resp einvoice.AlibabaEinvoicePartnerReturnAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

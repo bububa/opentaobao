@@ -12,26 +12,26 @@ alibaba.mj.oc.syncpayinfo
 
 支付参考号同步到oc
 */
-type AlibabaMjOcSyncpayinfoRequest struct {
+type AlibabaMjOcSyncpayinfoAPIRequest struct {
     model.Params
     // 支付参考号信息
     _posPay   *PosPayDTO
 }
 
-// 初始化AlibabaMjOcSyncpayinfoRequest对象
-func NewAlibabaMjOcSyncpayinfoRequest() *AlibabaMjOcSyncpayinfoRequest{
-    return &AlibabaMjOcSyncpayinfoRequest{
+// 初始化AlibabaMjOcSyncpayinfoAPIRequest对象
+func NewAlibabaMjOcSyncpayinfoRequest() *AlibabaMjOcSyncpayinfoAPIRequest{
+    return &AlibabaMjOcSyncpayinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMjOcSyncpayinfoRequest) GetApiMethodName() string {
+func (r AlibabaMjOcSyncpayinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.mj.oc.syncpayinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMjOcSyncpayinfoRequest) GetApiParams() url.Values {
+func (r AlibabaMjOcSyncpayinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMjOcSyncpayinfoRequest) GetApiParams() url.Values {
 }
 // PosPay Setter
 // 支付参考号信息
-func (r *AlibabaMjOcSyncpayinfoRequest) SetPosPay(_posPay *PosPayDTO) error {
+func (r *AlibabaMjOcSyncpayinfoAPIRequest) SetPosPay(_posPay *PosPayDTO) error {
     r._posPay = _posPay
     r.Set("pos_pay", _posPay)
     return nil
 }
 
 // PosPay Getter
-func (r AlibabaMjOcSyncpayinfoRequest) GetPosPay() *PosPayDTO {
+func (r AlibabaMjOcSyncpayinfoAPIRequest) GetPosPay() *PosPayDTO {
     return r._posPay
 }

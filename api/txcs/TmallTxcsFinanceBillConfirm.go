@@ -11,7 +11,7 @@ tmall.txcs.finance.bill.confirm
 
 提供天猫超市外部合作商家：财务账单对账
 */
-func TmallTxcsFinanceBillConfirm(clt *core.SDKClient, req *txcs.TmallTxcsFinanceBillConfirmRequest, session string) (*txcs.TmallTxcsFinanceBillConfirmAPIResponse, error) {
+func TmallTxcsFinanceBillConfirm(clt *core.SDKClient, req *txcs.TmallTxcsFinanceBillConfirmAPIRequest, session string) (*txcs.TmallTxcsFinanceBillConfirmAPIResponse, error) {
     var resp txcs.TmallTxcsFinanceBillConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

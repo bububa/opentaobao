@@ -12,26 +12,26 @@ alibaba.alsc.crm.recharge.dedutprecheck.get
 
 储值核销预先校验接口
 */
-type AlibabaAlscCrmRechargeDedutprecheckGetRequest struct {
+type AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest struct {
     model.Params
     // 入参
     _paramDeductPreCheckOpenReq   *DeductPreCheckOpenReq
 }
 
-// 初始化AlibabaAlscCrmRechargeDedutprecheckGetRequest对象
-func NewAlibabaAlscCrmRechargeDedutprecheckGetRequest() *AlibabaAlscCrmRechargeDedutprecheckGetRequest{
-    return &AlibabaAlscCrmRechargeDedutprecheckGetRequest{
+// 初始化AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest对象
+func NewAlibabaAlscCrmRechargeDedutprecheckGetRequest() *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest{
+    return &AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRechargeDedutprecheckGetRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.recharge.dedutprecheck.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRechargeDedutprecheckGetRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeDedutprecheckGetRequest) GetApiParams() url.Values
 }
 // ParamDeductPreCheckOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeDedutprecheckGetRequest) SetParamDeductPreCheckOpenReq(_paramDeductPreCheckOpenReq *DeductPreCheckOpenReq) error {
+func (r *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) SetParamDeductPreCheckOpenReq(_paramDeductPreCheckOpenReq *DeductPreCheckOpenReq) error {
     r._paramDeductPreCheckOpenReq = _paramDeductPreCheckOpenReq
     r.Set("param_deduct_pre_check_open_req", _paramDeductPreCheckOpenReq)
     return nil
 }
 
 // ParamDeductPreCheckOpenReq Getter
-func (r AlibabaAlscCrmRechargeDedutprecheckGetRequest) GetParamDeductPreCheckOpenReq() *DeductPreCheckOpenReq {
+func (r AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) GetParamDeductPreCheckOpenReq() *DeductPreCheckOpenReq {
     return r._paramDeductPreCheckOpenReq
 }

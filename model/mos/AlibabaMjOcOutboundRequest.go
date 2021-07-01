@@ -12,26 +12,26 @@ alibaba.mj.oc.outbound
 
 用于接收发货的数据
 */
-type AlibabaMjOcOutboundRequest struct {
+type AlibabaMjOcOutboundAPIRequest struct {
     model.Params
     // 发货信息
     _goodsOutbound   *GoodsOutboundDTO
 }
 
-// 初始化AlibabaMjOcOutboundRequest对象
-func NewAlibabaMjOcOutboundRequest() *AlibabaMjOcOutboundRequest{
-    return &AlibabaMjOcOutboundRequest{
+// 初始化AlibabaMjOcOutboundAPIRequest对象
+func NewAlibabaMjOcOutboundRequest() *AlibabaMjOcOutboundAPIRequest{
+    return &AlibabaMjOcOutboundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMjOcOutboundRequest) GetApiMethodName() string {
+func (r AlibabaMjOcOutboundAPIRequest) GetApiMethodName() string {
     return "alibaba.mj.oc.outbound"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMjOcOutboundRequest) GetApiParams() url.Values {
+func (r AlibabaMjOcOutboundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMjOcOutboundRequest) GetApiParams() url.Values {
 }
 // GoodsOutbound Setter
 // 发货信息
-func (r *AlibabaMjOcOutboundRequest) SetGoodsOutbound(_goodsOutbound *GoodsOutboundDTO) error {
+func (r *AlibabaMjOcOutboundAPIRequest) SetGoodsOutbound(_goodsOutbound *GoodsOutboundDTO) error {
     r._goodsOutbound = _goodsOutbound
     r.Set("goods_outbound", _goodsOutbound)
     return nil
 }
 
 // GoodsOutbound Getter
-func (r AlibabaMjOcOutboundRequest) GetGoodsOutbound() *GoodsOutboundDTO {
+func (r AlibabaMjOcOutboundAPIRequest) GetGoodsOutbound() *GoodsOutboundDTO {
     return r._goodsOutbound
 }

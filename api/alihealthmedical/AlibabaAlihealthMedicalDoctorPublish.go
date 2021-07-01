@@ -11,7 +11,7 @@ alibaba.alihealth.medical.doctor.publish
 
 三方机构上传医生信息
 */
-func AlibabaAlihealthMedicalDoctorPublish(clt *core.SDKClient, req *alihealthmedical.AlibabaAlihealthMedicalDoctorPublishRequest, session string) (*alihealthmedical.AlibabaAlihealthMedicalDoctorPublishAPIResponse, error) {
+func AlibabaAlihealthMedicalDoctorPublish(clt *core.SDKClient, req *alihealthmedical.AlibabaAlihealthMedicalDoctorPublishAPIRequest, session string) (*alihealthmedical.AlibabaAlihealthMedicalDoctorPublishAPIResponse, error) {
     var resp alihealthmedical.AlibabaAlihealthMedicalDoctorPublishAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

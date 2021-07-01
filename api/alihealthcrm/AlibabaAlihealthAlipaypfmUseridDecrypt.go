@@ -11,7 +11,7 @@ alibaba.alihealth.alipaypfm.userid.decrypt
 
 用户唯一表示加密传输，调用方解密
 */
-func AlibabaAlihealthAlipaypfmUseridDecrypt(clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthAlipaypfmUseridDecryptRequest, session string) (*alihealthcrm.AlibabaAlihealthAlipaypfmUseridDecryptAPIResponse, error) {
+func AlibabaAlihealthAlipaypfmUseridDecrypt(clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest, session string) (*alihealthcrm.AlibabaAlihealthAlipaypfmUseridDecryptAPIResponse, error) {
     var resp alihealthcrm.AlibabaAlihealthAlipaypfmUseridDecryptAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

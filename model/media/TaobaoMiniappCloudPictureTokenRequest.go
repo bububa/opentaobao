@@ -19,26 +19,26 @@ taobao.miniapp.cloud.picture.token
 	&lt;input type=&quot;submit&quot; value=&quot;Submit &quot;/&gt;
 &lt;/form&gt;
 */
-type TaobaoMiniappCloudPictureTokenRequest struct {
+type TaobaoMiniappCloudPictureTokenAPIRequest struct {
     model.Params
     // 请求参数
     _generateTokenRequest   *GenerateTokenRequest
 }
 
-// 初始化TaobaoMiniappCloudPictureTokenRequest对象
-func NewTaobaoMiniappCloudPictureTokenRequest() *TaobaoMiniappCloudPictureTokenRequest{
-    return &TaobaoMiniappCloudPictureTokenRequest{
+// 初始化TaobaoMiniappCloudPictureTokenAPIRequest对象
+func NewTaobaoMiniappCloudPictureTokenRequest() *TaobaoMiniappCloudPictureTokenAPIRequest{
+    return &TaobaoMiniappCloudPictureTokenAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMiniappCloudPictureTokenRequest) GetApiMethodName() string {
+func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetApiMethodName() string {
     return "taobao.miniapp.cloud.picture.token"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappCloudPictureTokenRequest) GetApiParams() url.Values {
+func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -47,13 +47,13 @@ func (r TaobaoMiniappCloudPictureTokenRequest) GetApiParams() url.Values {
 }
 // GenerateTokenRequest Setter
 // 请求参数
-func (r *TaobaoMiniappCloudPictureTokenRequest) SetGenerateTokenRequest(_generateTokenRequest *GenerateTokenRequest) error {
+func (r *TaobaoMiniappCloudPictureTokenAPIRequest) SetGenerateTokenRequest(_generateTokenRequest *GenerateTokenRequest) error {
     r._generateTokenRequest = _generateTokenRequest
     r.Set("generate_token_request", _generateTokenRequest)
     return nil
 }
 
 // GenerateTokenRequest Getter
-func (r TaobaoMiniappCloudPictureTokenRequest) GetGenerateTokenRequest() *GenerateTokenRequest {
+func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetGenerateTokenRequest() *GenerateTokenRequest {
     return r._generateTokenRequest
 }

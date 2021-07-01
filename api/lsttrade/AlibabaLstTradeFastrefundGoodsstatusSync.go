@@ -11,7 +11,7 @@ alibaba.lst.trade.fastrefund.goodsstatus.sync
 
 卖家退款单商品状态同步
 */
-func AlibabaLstTradeFastrefundGoodsstatusSync(clt *core.SDKClient, req *lsttrade.AlibabaLstTradeFastrefundGoodsstatusSyncRequest, session string) (*lsttrade.AlibabaLstTradeFastrefundGoodsstatusSyncAPIResponse, error) {
+func AlibabaLstTradeFastrefundGoodsstatusSync(clt *core.SDKClient, req *lsttrade.AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest, session string) (*lsttrade.AlibabaLstTradeFastrefundGoodsstatusSyncAPIResponse, error) {
     var resp lsttrade.AlibabaLstTradeFastrefundGoodsstatusSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

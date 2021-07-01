@@ -11,7 +11,7 @@ aliexpress.ascp.ro.query
 
 AE仓发商家单个退供单查询接口
 */
-func AliexpressAscpRoQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpRoQueryRequest, session string) (*ascpffo.AliexpressAscpRoQueryAPIResponse, error) {
+func AliexpressAscpRoQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpRoQueryAPIRequest, session string) (*ascpffo.AliexpressAscpRoQueryAPIResponse, error) {
     var resp ascpffo.AliexpressAscpRoQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

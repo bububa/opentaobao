@@ -12,26 +12,26 @@ alibaba.wdk.sku.combinesku.add
 
 组合商品新增接口
 */
-type AlibabaWdkSkuCombineskuAddRequest struct {
+type AlibabaWdkSkuCombineskuAddAPIRequest struct {
     model.Params
     // 请求参数
     _paramList   []SkuDO
 }
 
-// 初始化AlibabaWdkSkuCombineskuAddRequest对象
-func NewAlibabaWdkSkuCombineskuAddRequest() *AlibabaWdkSkuCombineskuAddRequest{
-    return &AlibabaWdkSkuCombineskuAddRequest{
+// 初始化AlibabaWdkSkuCombineskuAddAPIRequest对象
+func NewAlibabaWdkSkuCombineskuAddRequest() *AlibabaWdkSkuCombineskuAddAPIRequest{
+    return &AlibabaWdkSkuCombineskuAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuCombineskuAddRequest) GetApiMethodName() string {
+func (r AlibabaWdkSkuCombineskuAddAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.combinesku.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuCombineskuAddRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSkuCombineskuAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuCombineskuAddRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 请求参数
-func (r *AlibabaWdkSkuCombineskuAddRequest) SetParamList(_paramList []SkuDO) error {
+func (r *AlibabaWdkSkuCombineskuAddAPIRequest) SetParamList(_paramList []SkuDO) error {
     r._paramList = _paramList
     r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
-func (r AlibabaWdkSkuCombineskuAddRequest) GetParamList() []SkuDO {
+func (r AlibabaWdkSkuCombineskuAddAPIRequest) GetParamList() []SkuDO {
     return r._paramList
 }

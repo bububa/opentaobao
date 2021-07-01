@@ -17,7 +17,7 @@ taobao.auction.gov.data.monthly.get
 
 最长12个月，月的起始时间不能早于2017年3月
 */
-func TaobaoAuctionGovDataMonthlyGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataMonthlyGetRequest, session string) (*auction.TaobaoAuctionGovDataMonthlyGetAPIResponse, error) {
+func TaobaoAuctionGovDataMonthlyGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataMonthlyGetAPIRequest, session string) (*auction.TaobaoAuctionGovDataMonthlyGetAPIResponse, error) {
     var resp auction.TaobaoAuctionGovDataMonthlyGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -13,26 +13,26 @@ taobao.location.relation.query
 地点关联关系查询 
 门店和仓库关联关系查询
 */
-type TaobaoLocationRelationQueryRequest struct {
+type TaobaoLocationRelationQueryAPIRequest struct {
     model.Params
     // 关系查询
     _locationRelation   *LocationRelationDTO
 }
 
-// 初始化TaobaoLocationRelationQueryRequest对象
-func NewTaobaoLocationRelationQueryRequest() *TaobaoLocationRelationQueryRequest{
-    return &TaobaoLocationRelationQueryRequest{
+// 初始化TaobaoLocationRelationQueryAPIRequest对象
+func NewTaobaoLocationRelationQueryRequest() *TaobaoLocationRelationQueryAPIRequest{
+    return &TaobaoLocationRelationQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoLocationRelationQueryRequest) GetApiMethodName() string {
+func (r TaobaoLocationRelationQueryAPIRequest) GetApiMethodName() string {
     return "taobao.location.relation.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoLocationRelationQueryRequest) GetApiParams() url.Values {
+func (r TaobaoLocationRelationQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -41,13 +41,13 @@ func (r TaobaoLocationRelationQueryRequest) GetApiParams() url.Values {
 }
 // LocationRelation Setter
 // 关系查询
-func (r *TaobaoLocationRelationQueryRequest) SetLocationRelation(_locationRelation *LocationRelationDTO) error {
+func (r *TaobaoLocationRelationQueryAPIRequest) SetLocationRelation(_locationRelation *LocationRelationDTO) error {
     r._locationRelation = _locationRelation
     r.Set("location_relation", _locationRelation)
     return nil
 }
 
 // LocationRelation Getter
-func (r TaobaoLocationRelationQueryRequest) GetLocationRelation() *LocationRelationDTO {
+func (r TaobaoLocationRelationQueryAPIRequest) GetLocationRelation() *LocationRelationDTO {
     return r._locationRelation
 }

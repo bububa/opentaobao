@@ -11,7 +11,7 @@ taobao.alitrip.supplier.modify.list
 
 提供供应商查询改签通知单列表
 */
-func TaobaoAlitripSupplierModifyList(clt *core.SDKClient, req *jipiao.TaobaoAlitripSupplierModifyListRequest, session string) (*jipiao.TaobaoAlitripSupplierModifyListAPIResponse, error) {
+func TaobaoAlitripSupplierModifyList(clt *core.SDKClient, req *jipiao.TaobaoAlitripSupplierModifyListAPIRequest, session string) (*jipiao.TaobaoAlitripSupplierModifyListAPIResponse, error) {
     var resp jipiao.TaobaoAlitripSupplierModifyListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

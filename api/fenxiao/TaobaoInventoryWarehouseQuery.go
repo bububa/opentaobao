@@ -11,7 +11,7 @@ taobao.inventory.warehouse.query
 
 分页查询商家仓信息
 */
-func TaobaoInventoryWarehouseQuery(clt *core.SDKClient, req *fenxiao.TaobaoInventoryWarehouseQueryRequest, session string) (*fenxiao.TaobaoInventoryWarehouseQueryAPIResponse, error) {
+func TaobaoInventoryWarehouseQuery(clt *core.SDKClient, req *fenxiao.TaobaoInventoryWarehouseQueryAPIRequest, session string) (*fenxiao.TaobaoInventoryWarehouseQueryAPIResponse, error) {
     var resp fenxiao.TaobaoInventoryWarehouseQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

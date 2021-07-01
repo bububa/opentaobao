@@ -17,7 +17,7 @@ cainiao.data.logistics.cp.delivery.aging.predict
 输入：发货省、市、区、详细地址，收货省、市、区、街道、详细地址，快递公司ID
 输出：预估时效（小时数）
 */
-func CainiaoDataLogisticsCpDeliveryAgingPredict(clt *core.SDKClient, req *logistic.CainiaoDataLogisticsCpDeliveryAgingPredictRequest, session string) (*logistic.CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse, error) {
+func CainiaoDataLogisticsCpDeliveryAgingPredict(clt *core.SDKClient, req *logistic.CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest, session string) (*logistic.CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse, error) {
     var resp logistic.CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -9,7 +9,7 @@ type MultiResultDTO struct {
     // 错误码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 执行失败结果集
-    ErrorList   []AlibabaLstVendingCargospaceSaveResultDTO `json:"error_list,omitempty" xml:"error_list>alibaba_lst_vending_cargospace_save_result_dto,omitempty"`
+    ErrorList   []ResultDTO `json:"error_list,omitempty" xml:"error_list>result_dto,omitempty"`
     // 执行是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
 }

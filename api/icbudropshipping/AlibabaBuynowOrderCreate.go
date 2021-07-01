@@ -11,7 +11,7 @@ alibaba.buynow.order.create
 
 阿里巴巴买家下单接口
 */
-func AlibabaBuynowOrderCreate(clt *core.SDKClient, req *icbudropshipping.AlibabaBuynowOrderCreateRequest, session string) (*icbudropshipping.AlibabaBuynowOrderCreateAPIResponse, error) {
+func AlibabaBuynowOrderCreate(clt *core.SDKClient, req *icbudropshipping.AlibabaBuynowOrderCreateAPIRequest, session string) (*icbudropshipping.AlibabaBuynowOrderCreateAPIResponse, error) {
     var resp icbudropshipping.AlibabaBuynowOrderCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

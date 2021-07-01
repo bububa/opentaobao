@@ -11,7 +11,7 @@ taobao.openim.tribe.getmembers
 
 OPENIM群成员获取
 */
-func TaobaoOpenimTribeGetmembers(clt *core.SDKClient, req *openim.TaobaoOpenimTribeGetmembersRequest, session string) (*openim.TaobaoOpenimTribeGetmembersAPIResponse, error) {
+func TaobaoOpenimTribeGetmembers(clt *core.SDKClient, req *openim.TaobaoOpenimTribeGetmembersAPIRequest, session string) (*openim.TaobaoOpenimTribeGetmembersAPIResponse, error) {
     var resp openim.TaobaoOpenimTribeGetmembersAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

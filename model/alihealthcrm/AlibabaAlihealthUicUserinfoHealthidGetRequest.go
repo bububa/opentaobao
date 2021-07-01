@@ -12,26 +12,26 @@ alibaba.alihealth.uic.userinfo.healthid.get
 
 根据支付宝用户ID获取用户健康ID
 */
-type AlibabaAlihealthUicUserinfoHealthidGetRequest struct {
+type AlibabaAlihealthUicUserinfoHealthidGetAPIRequest struct {
     model.Params
     // 支付宝用户ID
     _alipayUserId   string
 }
 
-// 初始化AlibabaAlihealthUicUserinfoHealthidGetRequest对象
-func NewAlibabaAlihealthUicUserinfoHealthidGetRequest() *AlibabaAlihealthUicUserinfoHealthidGetRequest{
-    return &AlibabaAlihealthUicUserinfoHealthidGetRequest{
+// 初始化AlibabaAlihealthUicUserinfoHealthidGetAPIRequest对象
+func NewAlibabaAlihealthUicUserinfoHealthidGetRequest() *AlibabaAlihealthUicUserinfoHealthidGetAPIRequest{
+    return &AlibabaAlihealthUicUserinfoHealthidGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthUicUserinfoHealthidGetRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.uic.userinfo.healthid.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthUicUserinfoHealthidGetRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthUicUserinfoHealthidGetRequest) GetApiParams() url.Values
 }
 // AlipayUserId Setter
 // 支付宝用户ID
-func (r *AlibabaAlihealthUicUserinfoHealthidGetRequest) SetAlipayUserId(_alipayUserId string) error {
+func (r *AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) SetAlipayUserId(_alipayUserId string) error {
     r._alipayUserId = _alipayUserId
     r.Set("alipay_user_id", _alipayUserId)
     return nil
 }
 
 // AlipayUserId Getter
-func (r AlibabaAlihealthUicUserinfoHealthidGetRequest) GetAlipayUserId() string {
+func (r AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) GetAlipayUserId() string {
     return r._alipayUserId
 }

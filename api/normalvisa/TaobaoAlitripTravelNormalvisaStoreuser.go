@@ -11,7 +11,7 @@ taobao.alitrip.travel.normalvisa.storeuser
 
 卖家代填买家填写办理人信息
 */
-func TaobaoAlitripTravelNormalvisaStoreuser(clt *core.SDKClient, req *normalvisa.TaobaoAlitripTravelNormalvisaStoreuserRequest, session string) (*normalvisa.TaobaoAlitripTravelNormalvisaStoreuserAPIResponse, error) {
+func TaobaoAlitripTravelNormalvisaStoreuser(clt *core.SDKClient, req *normalvisa.TaobaoAlitripTravelNormalvisaStoreuserAPIRequest, session string) (*normalvisa.TaobaoAlitripTravelNormalvisaStoreuserAPIResponse, error) {
     var resp normalvisa.TaobaoAlitripTravelNormalvisaStoreuserAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

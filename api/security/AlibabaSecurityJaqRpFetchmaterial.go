@@ -11,7 +11,7 @@ alibaba.security.jaq.rp.fetchmaterial
 
 聚安全实人认证获取结果接口
 */
-func AlibabaSecurityJaqRpFetchmaterial(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpFetchmaterialRequest, session string) (*security.AlibabaSecurityJaqRpFetchmaterialAPIResponse, error) {
+func AlibabaSecurityJaqRpFetchmaterial(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpFetchmaterialAPIRequest, session string) (*security.AlibabaSecurityJaqRpFetchmaterialAPIResponse, error) {
     var resp security.AlibabaSecurityJaqRpFetchmaterialAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

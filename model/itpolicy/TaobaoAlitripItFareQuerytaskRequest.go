@@ -12,7 +12,7 @@ taobao.alitrip.it.fare.querytask
 
 批量操作同步返回任务id，后台生成异步任务，通过此接口查询批量操作的执行结果
 */
-type TaobaoAlitripItFareQuerytaskRequest struct {
+type TaobaoAlitripItFareQuerytaskAPIRequest struct {
     model.Params
     // json格式的字符串，扩展属性，预留
     _extendAttributes   string
@@ -20,20 +20,20 @@ type TaobaoAlitripItFareQuerytaskRequest struct {
     _taskId   int64
 }
 
-// 初始化TaobaoAlitripItFareQuerytaskRequest对象
-func NewTaobaoAlitripItFareQuerytaskRequest() *TaobaoAlitripItFareQuerytaskRequest{
-    return &TaobaoAlitripItFareQuerytaskRequest{
+// 初始化TaobaoAlitripItFareQuerytaskAPIRequest对象
+func NewTaobaoAlitripItFareQuerytaskRequest() *TaobaoAlitripItFareQuerytaskAPIRequest{
+    return &TaobaoAlitripItFareQuerytaskAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripItFareQuerytaskRequest) GetApiMethodName() string {
+func (r TaobaoAlitripItFareQuerytaskAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.it.fare.querytask"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripItFareQuerytaskRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripItFareQuerytaskAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoAlitripItFareQuerytaskRequest) GetApiParams() url.Values {
 }
 // ExtendAttributes Setter
 // json格式的字符串，扩展属性，预留
-func (r *TaobaoAlitripItFareQuerytaskRequest) SetExtendAttributes(_extendAttributes string) error {
+func (r *TaobaoAlitripItFareQuerytaskAPIRequest) SetExtendAttributes(_extendAttributes string) error {
     r._extendAttributes = _extendAttributes
     r.Set("extendAttributes", _extendAttributes)
     return nil
 }
 
 // ExtendAttributes Getter
-func (r TaobaoAlitripItFareQuerytaskRequest) GetExtendAttributes() string {
+func (r TaobaoAlitripItFareQuerytaskAPIRequest) GetExtendAttributes() string {
     return r._extendAttributes
 }
 // TaskId Setter
 // 任务id
-func (r *TaobaoAlitripItFareQuerytaskRequest) SetTaskId(_taskId int64) error {
+func (r *TaobaoAlitripItFareQuerytaskAPIRequest) SetTaskId(_taskId int64) error {
     r._taskId = _taskId
     r.Set("taskId", _taskId)
     return nil
 }
 
 // TaskId Getter
-func (r TaobaoAlitripItFareQuerytaskRequest) GetTaskId() int64 {
+func (r TaobaoAlitripItFareQuerytaskAPIRequest) GetTaskId() int64 {
     return r._taskId
 }

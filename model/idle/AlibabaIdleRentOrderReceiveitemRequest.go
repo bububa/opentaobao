@@ -12,26 +12,26 @@ alibaba.idle.rent.order.receiveitem
 
 确认揽收/签收
 */
-type AlibabaIdleRentOrderReceiveitemRequest struct {
+type AlibabaIdleRentOrderReceiveitemAPIRequest struct {
     model.Params
     // 订单id
     _orderId   int64
 }
 
-// 初始化AlibabaIdleRentOrderReceiveitemRequest对象
-func NewAlibabaIdleRentOrderReceiveitemRequest() *AlibabaIdleRentOrderReceiveitemRequest{
-    return &AlibabaIdleRentOrderReceiveitemRequest{
+// 初始化AlibabaIdleRentOrderReceiveitemAPIRequest对象
+func NewAlibabaIdleRentOrderReceiveitemRequest() *AlibabaIdleRentOrderReceiveitemAPIRequest{
+    return &AlibabaIdleRentOrderReceiveitemAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleRentOrderReceiveitemRequest) GetApiMethodName() string {
+func (r AlibabaIdleRentOrderReceiveitemAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.rent.order.receiveitem"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleRentOrderReceiveitemRequest) GetApiParams() url.Values {
+func (r AlibabaIdleRentOrderReceiveitemAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleRentOrderReceiveitemRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaIdleRentOrderReceiveitemRequest) SetOrderId(_orderId int64) error {
+func (r *AlibabaIdleRentOrderReceiveitemAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaIdleRentOrderReceiveitemRequest) GetOrderId() int64 {
+func (r AlibabaIdleRentOrderReceiveitemAPIRequest) GetOrderId() int64 {
     return r._orderId
 }

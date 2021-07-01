@@ -11,7 +11,7 @@ alibaba.kclub.kc.qa.search.page
 
 知识云-知识搜索服务
 */
-func AlibabaKclubKcQaSearchPage(clt *core.SDKClient, req *kclub.AlibabaKclubKcQaSearchPageRequest, session string) (*kclub.AlibabaKclubKcQaSearchPageAPIResponse, error) {
+func AlibabaKclubKcQaSearchPage(clt *core.SDKClient, req *kclub.AlibabaKclubKcQaSearchPageAPIRequest, session string) (*kclub.AlibabaKclubKcQaSearchPageAPIResponse, error) {
     var resp kclub.AlibabaKclubKcQaSearchPageAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

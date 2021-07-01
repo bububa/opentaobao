@@ -11,7 +11,7 @@ alibaba.wdk.stock.cabinet.query
 
 查询仓内实时库位库存信息
 */
-func AlibabaWdkStockCabinetQuery(clt *core.SDKClient, req *wdk.AlibabaWdkStockCabinetQueryRequest, session string) (*wdk.AlibabaWdkStockCabinetQueryAPIResponse, error) {
+func AlibabaWdkStockCabinetQuery(clt *core.SDKClient, req *wdk.AlibabaWdkStockCabinetQueryAPIRequest, session string) (*wdk.AlibabaWdkStockCabinetQueryAPIResponse, error) {
     var resp wdk.AlibabaWdkStockCabinetQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

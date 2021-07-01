@@ -11,7 +11,7 @@ taobao.uscesl.biz.esl.info.get
 
 价签设备信息查询接口
 */
-func TaobaoUsceslBizEslInfoGet(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizEslInfoGetRequest, session string) (*uscesl.TaobaoUsceslBizEslInfoGetAPIResponse, error) {
+func TaobaoUsceslBizEslInfoGet(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizEslInfoGetAPIRequest, session string) (*uscesl.TaobaoUsceslBizEslInfoGetAPIResponse, error) {
     var resp uscesl.TaobaoUsceslBizEslInfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

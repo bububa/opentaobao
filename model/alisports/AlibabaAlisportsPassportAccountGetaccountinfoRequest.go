@@ -12,7 +12,7 @@ alibaba.alisports.passport.account.getaccountinfo
 
 获取阿里体育会员信息
 */
-type AlibabaAlisportsPassportAccountGetaccountinfoRequest struct {
+type AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest struct {
     model.Params
     // 是否获取详情0否1是 默认0
     _needDetail   int64
@@ -30,20 +30,20 @@ type AlibabaAlisportsPassportAccountGetaccountinfoRequest struct {
     _extInfoType   string
 }
 
-// 初始化AlibabaAlisportsPassportAccountGetaccountinfoRequest对象
-func NewAlibabaAlisportsPassportAccountGetaccountinfoRequest() *AlibabaAlisportsPassportAccountGetaccountinfoRequest{
-    return &AlibabaAlisportsPassportAccountGetaccountinfoRequest{
+// 初始化AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest对象
+func NewAlibabaAlisportsPassportAccountGetaccountinfoRequest() *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest{
+    return &AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlisportsPassportAccountGetaccountinfoRequest) GetApiMethodName() string {
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.alisports.passport.account.getaccountinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlisportsPassportAccountGetaccountinfoRequest) GetApiParams() url.Values {
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,85 +52,85 @@ func (r AlibabaAlisportsPassportAccountGetaccountinfoRequest) GetApiParams() url
 }
 // NeedDetail Setter
 // 是否获取详情0否1是 默认0
-func (r *AlibabaAlisportsPassportAccountGetaccountinfoRequest) SetNeedDetail(_needDetail int64) error {
+func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetNeedDetail(_needDetail int64) error {
     r._needDetail = _needDetail
     r.Set("need_detail", _needDetail)
     return nil
 }
 
 // NeedDetail Getter
-func (r AlibabaAlisportsPassportAccountGetaccountinfoRequest) GetNeedDetail() int64 {
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetNeedDetail() int64 {
     return r._needDetail
 }
 // AlispTime Setter
 // 当前时间戳
-func (r *AlibabaAlisportsPassportAccountGetaccountinfoRequest) SetAlispTime(_alispTime string) error {
+func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetAlispTime(_alispTime string) error {
     r._alispTime = _alispTime
     r.Set("alisp_time", _alispTime)
     return nil
 }
 
 // AlispTime Getter
-func (r AlibabaAlisportsPassportAccountGetaccountinfoRequest) GetAlispTime() string {
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetAlispTime() string {
     return r._alispTime
 }
 // AlispAppKey Setter
 // 业务appkey
-func (r *AlibabaAlisportsPassportAccountGetaccountinfoRequest) SetAlispAppKey(_alispAppKey string) error {
+func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetAlispAppKey(_alispAppKey string) error {
     r._alispAppKey = _alispAppKey
     r.Set("alisp_app_key", _alispAppKey)
     return nil
 }
 
 // AlispAppKey Getter
-func (r AlibabaAlisportsPassportAccountGetaccountinfoRequest) GetAlispAppKey() string {
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetAlispAppKey() string {
     return r._alispAppKey
 }
 // AlispSign Setter
 // 业务加密参数
-func (r *AlibabaAlisportsPassportAccountGetaccountinfoRequest) SetAlispSign(_alispSign string) error {
+func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetAlispSign(_alispSign string) error {
     r._alispSign = _alispSign
     r.Set("alisp_sign", _alispSign)
     return nil
 }
 
 // AlispSign Getter
-func (r AlibabaAlisportsPassportAccountGetaccountinfoRequest) GetAlispSign() string {
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetAlispSign() string {
     return r._alispSign
 }
 // Type Setter
 // 查询类型：1.用户的阿里体育id, 4.用户通过登录生成的sso_token
-func (r *AlibabaAlisportsPassportAccountGetaccountinfoRequest) SetType(_type int64) error {
+func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetType(_type int64) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r AlibabaAlisportsPassportAccountGetaccountinfoRequest) GetType() int64 {
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetType() int64 {
     return r._type
 }
 // Value Setter
 // 要查询的值
-func (r *AlibabaAlisportsPassportAccountGetaccountinfoRequest) SetValue(_value string) error {
+func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetValue(_value string) error {
     r._value = _value
     r.Set("value", _value)
     return nil
 }
 
 // Value Getter
-func (r AlibabaAlisportsPassportAccountGetaccountinfoRequest) GetValue() string {
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetValue() string {
     return r._value
 }
 // ExtInfoType Setter
 // 决定返回值是否包含扩展字段
-func (r *AlibabaAlisportsPassportAccountGetaccountinfoRequest) SetExtInfoType(_extInfoType string) error {
+func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetExtInfoType(_extInfoType string) error {
     r._extInfoType = _extInfoType
     r.Set("ext_info_type", _extInfoType)
     return nil
 }
 
 // ExtInfoType Getter
-func (r AlibabaAlisportsPassportAccountGetaccountinfoRequest) GetExtInfoType() string {
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetExtInfoType() string {
     return r._extInfoType
 }

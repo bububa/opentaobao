@@ -12,24 +12,24 @@ yunos.tvpubadmin.content.advert.gettypes
 
 获取广告位类型
 */
-type YunosTvpubadminContentAdvertGettypesRequest struct {
+type YunosTvpubadminContentAdvertGettypesAPIRequest struct {
     model.Params
 }
 
-// 初始化YunosTvpubadminContentAdvertGettypesRequest对象
-func NewYunosTvpubadminContentAdvertGettypesRequest() *YunosTvpubadminContentAdvertGettypesRequest{
-    return &YunosTvpubadminContentAdvertGettypesRequest{
+// 初始化YunosTvpubadminContentAdvertGettypesAPIRequest对象
+func NewYunosTvpubadminContentAdvertGettypesRequest() *YunosTvpubadminContentAdvertGettypesAPIRequest{
+    return &YunosTvpubadminContentAdvertGettypesAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentAdvertGettypesRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentAdvertGettypesAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.advert.gettypes"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentAdvertGettypesRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentAdvertGettypesAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

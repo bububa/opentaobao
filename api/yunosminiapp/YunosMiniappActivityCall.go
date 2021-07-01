@@ -11,7 +11,7 @@ yunos.miniapp.activity.call
 
 用于小程序调用活动接口
 */
-func YunosMiniappActivityCall(clt *core.SDKClient, req *yunosminiapp.YunosMiniappActivityCallRequest, session string) (*yunosminiapp.YunosMiniappActivityCallAPIResponse, error) {
+func YunosMiniappActivityCall(clt *core.SDKClient, req *yunosminiapp.YunosMiniappActivityCallAPIRequest, session string) (*yunosminiapp.YunosMiniappActivityCallAPIResponse, error) {
     var resp yunosminiapp.YunosMiniappActivityCallAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

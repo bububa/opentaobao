@@ -12,26 +12,26 @@ taobao.miniapp.eleuserinfo.get
 
 获取饿了么用户信息
 */
-type TaobaoMiniappEleuserinfoGetRequest struct {
+type TaobaoMiniappEleuserinfoGetAPIRequest struct {
     model.Params
     // 怪兽业务方
     _bizScence   string
 }
 
-// 初始化TaobaoMiniappEleuserinfoGetRequest对象
-func NewTaobaoMiniappEleuserinfoGetRequest() *TaobaoMiniappEleuserinfoGetRequest{
-    return &TaobaoMiniappEleuserinfoGetRequest{
+// 初始化TaobaoMiniappEleuserinfoGetAPIRequest对象
+func NewTaobaoMiniappEleuserinfoGetRequest() *TaobaoMiniappEleuserinfoGetAPIRequest{
+    return &TaobaoMiniappEleuserinfoGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMiniappEleuserinfoGetRequest) GetApiMethodName() string {
+func (r TaobaoMiniappEleuserinfoGetAPIRequest) GetApiMethodName() string {
     return "taobao.miniapp.eleuserinfo.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappEleuserinfoGetRequest) GetApiParams() url.Values {
+func (r TaobaoMiniappEleuserinfoGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoMiniappEleuserinfoGetRequest) GetApiParams() url.Values {
 }
 // BizScence Setter
 // 怪兽业务方
-func (r *TaobaoMiniappEleuserinfoGetRequest) SetBizScence(_bizScence string) error {
+func (r *TaobaoMiniappEleuserinfoGetAPIRequest) SetBizScence(_bizScence string) error {
     r._bizScence = _bizScence
     r.Set("biz_scence", _bizScence)
     return nil
 }
 
 // BizScence Getter
-func (r TaobaoMiniappEleuserinfoGetRequest) GetBizScence() string {
+func (r TaobaoMiniappEleuserinfoGetAPIRequest) GetBizScence() string {
     return r._bizScence
 }

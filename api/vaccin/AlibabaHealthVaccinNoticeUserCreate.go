@@ -11,7 +11,7 @@ alibaba.health.vaccin.notice.user.create
 
 支付宝医疗健康疫苗用户创建
 */
-func AlibabaHealthVaccinNoticeUserCreate(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeUserCreateRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeUserCreateAPIResponse, error) {
+func AlibabaHealthVaccinNoticeUserCreate(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeUserCreateAPIRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeUserCreateAPIResponse, error) {
     var resp vaccin.AlibabaHealthVaccinNoticeUserCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

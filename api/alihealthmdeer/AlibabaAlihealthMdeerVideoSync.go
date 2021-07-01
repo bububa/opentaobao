@@ -11,7 +11,7 @@ alibaba.alihealth.mdeer.video.sync
 
 合伙做伴内容同步接口，用来视频同步
 */
-func AlibabaAlihealthMdeerVideoSync(clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerVideoSyncRequest, session string) (*alihealthmdeer.AlibabaAlihealthMdeerVideoSyncAPIResponse, error) {
+func AlibabaAlihealthMdeerVideoSync(clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerVideoSyncAPIRequest, session string) (*alihealthmdeer.AlibabaAlihealthMdeerVideoSyncAPIResponse, error) {
     var resp alihealthmdeer.AlibabaAlihealthMdeerVideoSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

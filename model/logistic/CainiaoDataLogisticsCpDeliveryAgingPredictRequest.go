@@ -18,7 +18,7 @@ cainiao.data.logistics.cp.delivery.aging.predict
 输入：发货省、市、区、详细地址，收货省、市、区、街道、详细地址，快递公司ID
 输出：预估时效（小时数）
 */
-type CainiaoDataLogisticsCpDeliveryAgingPredictRequest struct {
+type CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest struct {
     model.Params
     // 发货城市
     _sendCityName   string
@@ -42,20 +42,20 @@ type CainiaoDataLogisticsCpDeliveryAgingPredictRequest struct {
     _cpId   string
 }
 
-// 初始化CainiaoDataLogisticsCpDeliveryAgingPredictRequest对象
-func NewCainiaoDataLogisticsCpDeliveryAgingPredictRequest() *CainiaoDataLogisticsCpDeliveryAgingPredictRequest{
-    return &CainiaoDataLogisticsCpDeliveryAgingPredictRequest{
+// 初始化CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest对象
+func NewCainiaoDataLogisticsCpDeliveryAgingPredictRequest() *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest{
+    return &CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetApiMethodName() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetApiMethodName() string {
     return "cainiao.data.logistics.cp.delivery.aging.predict"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetApiParams() url.Values {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -64,121 +64,121 @@ func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetApiParams() url.Va
 }
 // SendCityName Setter
 // 发货城市
-func (r *CainiaoDataLogisticsCpDeliveryAgingPredictRequest) SetSendCityName(_sendCityName string) error {
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetSendCityName(_sendCityName string) error {
     r._sendCityName = _sendCityName
     r.Set("send_city_name", _sendCityName)
     return nil
 }
 
 // SendCityName Getter
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetSendCityName() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetSendCityName() string {
     return r._sendCityName
 }
 // SendCountyName Setter
 // 发货区
-func (r *CainiaoDataLogisticsCpDeliveryAgingPredictRequest) SetSendCountyName(_sendCountyName string) error {
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetSendCountyName(_sendCountyName string) error {
     r._sendCountyName = _sendCountyName
     r.Set("send_county_name", _sendCountyName)
     return nil
 }
 
 // SendCountyName Getter
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetSendCountyName() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetSendCountyName() string {
     return r._sendCountyName
 }
 // SendAddr Setter
 // 自己输入的详细发货地址
-func (r *CainiaoDataLogisticsCpDeliveryAgingPredictRequest) SetSendAddr(_sendAddr string) error {
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetSendAddr(_sendAddr string) error {
     r._sendAddr = _sendAddr
     r.Set("send_addr", _sendAddr)
     return nil
 }
 
 // SendAddr Getter
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetSendAddr() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetSendAddr() string {
     return r._sendAddr
 }
 // SendProvName Setter
 // 发货省
-func (r *CainiaoDataLogisticsCpDeliveryAgingPredictRequest) SetSendProvName(_sendProvName string) error {
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetSendProvName(_sendProvName string) error {
     r._sendProvName = _sendProvName
     r.Set("send_prov_name", _sendProvName)
     return nil
 }
 
 // SendProvName Getter
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetSendProvName() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetSendProvName() string {
     return r._sendProvName
 }
 // RecCityName Setter
 // 收货城市
-func (r *CainiaoDataLogisticsCpDeliveryAgingPredictRequest) SetRecCityName(_recCityName string) error {
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetRecCityName(_recCityName string) error {
     r._recCityName = _recCityName
     r.Set("rec_city_name", _recCityName)
     return nil
 }
 
 // RecCityName Getter
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetRecCityName() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetRecCityName() string {
     return r._recCityName
 }
 // RecAddr Setter
 // 自己输入的详细收货地址
-func (r *CainiaoDataLogisticsCpDeliveryAgingPredictRequest) SetRecAddr(_recAddr string) error {
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetRecAddr(_recAddr string) error {
     r._recAddr = _recAddr
     r.Set("rec_addr", _recAddr)
     return nil
 }
 
 // RecAddr Getter
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetRecAddr() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetRecAddr() string {
     return r._recAddr
 }
 // RecCountyName Setter
 // 收货区
-func (r *CainiaoDataLogisticsCpDeliveryAgingPredictRequest) SetRecCountyName(_recCountyName string) error {
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetRecCountyName(_recCountyName string) error {
     r._recCountyName = _recCountyName
     r.Set("rec_county_name", _recCountyName)
     return nil
 }
 
 // RecCountyName Getter
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetRecCountyName() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetRecCountyName() string {
     return r._recCountyName
 }
 // RecProvName Setter
 // 收货省
-func (r *CainiaoDataLogisticsCpDeliveryAgingPredictRequest) SetRecProvName(_recProvName string) error {
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetRecProvName(_recProvName string) error {
     r._recProvName = _recProvName
     r.Set("rec_prov_name", _recProvName)
     return nil
 }
 
 // RecProvName Getter
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetRecProvName() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetRecProvName() string {
     return r._recProvName
 }
 // RecTownName Setter
 // 第四级，一般是收货街道
-func (r *CainiaoDataLogisticsCpDeliveryAgingPredictRequest) SetRecTownName(_recTownName string) error {
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetRecTownName(_recTownName string) error {
     r._recTownName = _recTownName
     r.Set("rec_town_name", _recTownName)
     return nil
 }
 
 // RecTownName Getter
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetRecTownName() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetRecTownName() string {
     return r._recTownName
 }
 // CpId Setter
 // 物流公司id
-func (r *CainiaoDataLogisticsCpDeliveryAgingPredictRequest) SetCpId(_cpId string) error {
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetCpId(_cpId string) error {
     r._cpId = _cpId
     r.Set("cp_id", _cpId)
     return nil
 }
 
 // CpId Getter
-func (r CainiaoDataLogisticsCpDeliveryAgingPredictRequest) GetCpId() string {
+func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetCpId() string {
     return r._cpId
 }

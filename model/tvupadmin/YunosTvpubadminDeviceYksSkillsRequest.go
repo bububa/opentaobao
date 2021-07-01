@@ -12,7 +12,7 @@ yunos.tvpubadmin.device.yks.skills
 
 根据设备id获取技能列表
 */
-type YunosTvpubadminDeviceYksSkillsRequest struct {
+type YunosTvpubadminDeviceYksSkillsAPIRequest struct {
     model.Params
     // 设备id
     _botId   int64
@@ -26,20 +26,20 @@ type YunosTvpubadminDeviceYksSkillsRequest struct {
     _skillId   int64
 }
 
-// 初始化YunosTvpubadminDeviceYksSkillsRequest对象
-func NewYunosTvpubadminDeviceYksSkillsRequest() *YunosTvpubadminDeviceYksSkillsRequest{
-    return &YunosTvpubadminDeviceYksSkillsRequest{
+// 初始化YunosTvpubadminDeviceYksSkillsAPIRequest对象
+func NewYunosTvpubadminDeviceYksSkillsRequest() *YunosTvpubadminDeviceYksSkillsAPIRequest{
+    return &YunosTvpubadminDeviceYksSkillsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminDeviceYksSkillsRequest) GetApiMethodName() string {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.device.yks.skills"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminDeviceYksSkillsRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r YunosTvpubadminDeviceYksSkillsRequest) GetApiParams() url.Values {
 }
 // BotId Setter
 // 设备id
-func (r *YunosTvpubadminDeviceYksSkillsRequest) SetBotId(_botId int64) error {
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetBotId(_botId int64) error {
     r._botId = _botId
     r.Set("bot_id", _botId)
     return nil
 }
 
 // BotId Getter
-func (r YunosTvpubadminDeviceYksSkillsRequest) GetBotId() int64 {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetBotId() int64 {
     return r._botId
 }
 // DeletToken Setter
 // 1234
-func (r *YunosTvpubadminDeviceYksSkillsRequest) SetDeletToken(_deletToken int64) error {
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetDeletToken(_deletToken int64) error {
     r._deletToken = _deletToken
     r.Set("delet_token", _deletToken)
     return nil
 }
 
 // DeletToken Getter
-func (r YunosTvpubadminDeviceYksSkillsRequest) GetDeletToken() int64 {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetDeletToken() int64 {
     return r._deletToken
 }
 // PageIndex Setter
 // 当前页
-func (r *YunosTvpubadminDeviceYksSkillsRequest) SetPageIndex(_pageIndex int64) error {
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetPageIndex(_pageIndex int64) error {
     r._pageIndex = _pageIndex
     r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
-func (r YunosTvpubadminDeviceYksSkillsRequest) GetPageIndex() int64 {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetPageIndex() int64 {
     return r._pageIndex
 }
 // PageSize Setter
 // 分页单位
-func (r *YunosTvpubadminDeviceYksSkillsRequest) SetPageSize(_pageSize int64) error {
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r YunosTvpubadminDeviceYksSkillsRequest) GetPageSize() int64 {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // SkillId Setter
 // 技能id
-func (r *YunosTvpubadminDeviceYksSkillsRequest) SetSkillId(_skillId int64) error {
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetSkillId(_skillId int64) error {
     r._skillId = _skillId
     r.Set("skill_id", _skillId)
     return nil
 }
 
 // SkillId Getter
-func (r YunosTvpubadminDeviceYksSkillsRequest) GetSkillId() int64 {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetSkillId() int64 {
     return r._skillId
 }

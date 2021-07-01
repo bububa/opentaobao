@@ -11,7 +11,7 @@ alibaba.einvoice.paper.print
 
 打印一张已开具成功的纸票
 */
-func AlibabaEinvoicePaperPrint(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePaperPrintRequest, session string) (*einvoice.AlibabaEinvoicePaperPrintAPIResponse, error) {
+func AlibabaEinvoicePaperPrint(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePaperPrintAPIRequest, session string) (*einvoice.AlibabaEinvoicePaperPrintAPIResponse, error) {
     var resp einvoice.AlibabaEinvoicePaperPrintAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

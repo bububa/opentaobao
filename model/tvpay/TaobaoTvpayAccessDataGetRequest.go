@@ -12,7 +12,7 @@ taobao.tvpay.access.data.get
 
 在匿名用户支付后尝试为其登陆绑定的淘宝账号
 */
-type TaobaoTvpayAccessDataGetRequest struct {
+type TaobaoTvpayAccessDataGetAPIRequest struct {
     model.Params
     // 设备id
     _deviceId   string
@@ -24,20 +24,20 @@ type TaobaoTvpayAccessDataGetRequest struct {
     _accountClientVersion   string
 }
 
-// 初始化TaobaoTvpayAccessDataGetRequest对象
-func NewTaobaoTvpayAccessDataGetRequest() *TaobaoTvpayAccessDataGetRequest{
-    return &TaobaoTvpayAccessDataGetRequest{
+// 初始化TaobaoTvpayAccessDataGetAPIRequest对象
+func NewTaobaoTvpayAccessDataGetRequest() *TaobaoTvpayAccessDataGetAPIRequest{
+    return &TaobaoTvpayAccessDataGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTvpayAccessDataGetRequest) GetApiMethodName() string {
+func (r TaobaoTvpayAccessDataGetAPIRequest) GetApiMethodName() string {
     return "taobao.tvpay.access.data.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTvpayAccessDataGetRequest) GetApiParams() url.Values {
+func (r TaobaoTvpayAccessDataGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoTvpayAccessDataGetRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoTvpayAccessDataGetRequest) SetDeviceId(_deviceId string) error {
+func (r *TaobaoTvpayAccessDataGetAPIRequest) SetDeviceId(_deviceId string) error {
     r._deviceId = _deviceId
     r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
-func (r TaobaoTvpayAccessDataGetRequest) GetDeviceId() string {
+func (r TaobaoTvpayAccessDataGetAPIRequest) GetDeviceId() string {
     return r._deviceId
 }
 // From Setter
 // 来源
-func (r *TaobaoTvpayAccessDataGetRequest) SetFrom(_from string) error {
+func (r *TaobaoTvpayAccessDataGetAPIRequest) SetFrom(_from string) error {
     r._from = _from
     r.Set("from", _from)
     return nil
 }
 
 // From Getter
-func (r TaobaoTvpayAccessDataGetRequest) GetFrom() string {
+func (r TaobaoTvpayAccessDataGetAPIRequest) GetFrom() string {
     return r._from
 }
 // OutOrderNo Setter
 // 订单id
-func (r *TaobaoTvpayAccessDataGetRequest) SetOutOrderNo(_outOrderNo string) error {
+func (r *TaobaoTvpayAccessDataGetAPIRequest) SetOutOrderNo(_outOrderNo string) error {
     r._outOrderNo = _outOrderNo
     r.Set("out_order_no", _outOrderNo)
     return nil
 }
 
 // OutOrderNo Getter
-func (r TaobaoTvpayAccessDataGetRequest) GetOutOrderNo() string {
+func (r TaobaoTvpayAccessDataGetAPIRequest) GetOutOrderNo() string {
     return r._outOrderNo
 }
 // AccountClientVersion Setter
 // 账号客户端版本
-func (r *TaobaoTvpayAccessDataGetRequest) SetAccountClientVersion(_accountClientVersion string) error {
+func (r *TaobaoTvpayAccessDataGetAPIRequest) SetAccountClientVersion(_accountClientVersion string) error {
     r._accountClientVersion = _accountClientVersion
     r.Set("account_client_version", _accountClientVersion)
     return nil
 }
 
 // AccountClientVersion Getter
-func (r TaobaoTvpayAccessDataGetRequest) GetAccountClientVersion() string {
+func (r TaobaoTvpayAccessDataGetAPIRequest) GetAccountClientVersion() string {
     return r._accountClientVersion
 }

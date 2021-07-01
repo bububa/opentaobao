@@ -12,7 +12,7 @@ taobao.simba.adgroupids.deleted.get
 
 获取删除的推广组ID
 */
-type TaobaoSimbaAdgroupidsDeletedGetRequest struct {
+type TaobaoSimbaAdgroupidsDeletedGetAPIRequest struct {
     model.Params
     // 主人昵称
     _nick   string
@@ -24,20 +24,20 @@ type TaobaoSimbaAdgroupidsDeletedGetRequest struct {
     _pageNo   int64
 }
 
-// 初始化TaobaoSimbaAdgroupidsDeletedGetRequest对象
-func NewTaobaoSimbaAdgroupidsDeletedGetRequest() *TaobaoSimbaAdgroupidsDeletedGetRequest{
-    return &TaobaoSimbaAdgroupidsDeletedGetRequest{
+// 初始化TaobaoSimbaAdgroupidsDeletedGetAPIRequest对象
+func NewTaobaoSimbaAdgroupidsDeletedGetRequest() *TaobaoSimbaAdgroupidsDeletedGetAPIRequest{
+    return &TaobaoSimbaAdgroupidsDeletedGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.adgroupids.deleted.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaAdgroupidsDeletedGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetNick() string {
+func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetNick() string {
     return r._nick
 }
 // StartTime Setter
 // 得到此时间点之后的数据，不能大于一个月
-func (r *TaobaoSimbaAdgroupidsDeletedGetRequest) SetStartTime(_startTime string) error {
+func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetStartTime(_startTime string) error {
     r._startTime = _startTime
     r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
-func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetStartTime() string {
+func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetStartTime() string {
     return r._startTime
 }
 // PageSize Setter
 // 返回的每页数据量大小,默认200最大1000
-func (r *TaobaoSimbaAdgroupidsDeletedGetRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetPageSize() int64 {
+func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // PageNo Setter
 // 返回的第几页数据，默认为1
-func (r *TaobaoSimbaAdgroupidsDeletedGetRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetPageNo() int64 {
+func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }

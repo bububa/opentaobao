@@ -12,26 +12,26 @@ yunos.tvpubadmin.content.child.recoitem.offline
 
 下线少儿推荐内容接口
 */
-type YunosTvpubadminContentChildRecoitemOfflineRequest struct {
+type YunosTvpubadminContentChildRecoitemOfflineAPIRequest struct {
     model.Params
     // 推荐内容ID
     _recItemId   int64
 }
 
-// 初始化YunosTvpubadminContentChildRecoitemOfflineRequest对象
-func NewYunosTvpubadminContentChildRecoitemOfflineRequest() *YunosTvpubadminContentChildRecoitemOfflineRequest{
-    return &YunosTvpubadminContentChildRecoitemOfflineRequest{
+// 初始化YunosTvpubadminContentChildRecoitemOfflineAPIRequest对象
+func NewYunosTvpubadminContentChildRecoitemOfflineRequest() *YunosTvpubadminContentChildRecoitemOfflineAPIRequest{
+    return &YunosTvpubadminContentChildRecoitemOfflineAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentChildRecoitemOfflineRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentChildRecoitemOfflineAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.child.recoitem.offline"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentChildRecoitemOfflineRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentChildRecoitemOfflineAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentChildRecoitemOfflineRequest) GetApiParams() url.Va
 }
 // RecItemId Setter
 // 推荐内容ID
-func (r *YunosTvpubadminContentChildRecoitemOfflineRequest) SetRecItemId(_recItemId int64) error {
+func (r *YunosTvpubadminContentChildRecoitemOfflineAPIRequest) SetRecItemId(_recItemId int64) error {
     r._recItemId = _recItemId
     r.Set("rec_item_id", _recItemId)
     return nil
 }
 
 // RecItemId Getter
-func (r YunosTvpubadminContentChildRecoitemOfflineRequest) GetRecItemId() int64 {
+func (r YunosTvpubadminContentChildRecoitemOfflineAPIRequest) GetRecItemId() int64 {
     return r._recItemId
 }

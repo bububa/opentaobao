@@ -12,26 +12,26 @@ alibaba.marketing.lottery.draw.dodraw
 
 抽奖平台PC端抽奖接口
 */
-type AlibabaMarketingLotteryDrawDodrawRequest struct {
+type AlibabaMarketingLotteryDrawDodrawAPIRequest struct {
     model.Params
     // 抽奖请求对象
     _lotteryDrawQuery   *LotteryDrawQueryDTO
 }
 
-// 初始化AlibabaMarketingLotteryDrawDodrawRequest对象
-func NewAlibabaMarketingLotteryDrawDodrawRequest() *AlibabaMarketingLotteryDrawDodrawRequest{
-    return &AlibabaMarketingLotteryDrawDodrawRequest{
+// 初始化AlibabaMarketingLotteryDrawDodrawAPIRequest对象
+func NewAlibabaMarketingLotteryDrawDodrawRequest() *AlibabaMarketingLotteryDrawDodrawAPIRequest{
+    return &AlibabaMarketingLotteryDrawDodrawAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMarketingLotteryDrawDodrawRequest) GetApiMethodName() string {
+func (r AlibabaMarketingLotteryDrawDodrawAPIRequest) GetApiMethodName() string {
     return "alibaba.marketing.lottery.draw.dodraw"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMarketingLotteryDrawDodrawRequest) GetApiParams() url.Values {
+func (r AlibabaMarketingLotteryDrawDodrawAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryDrawDodrawRequest) GetApiParams() url.Values {
 }
 // LotteryDrawQuery Setter
 // 抽奖请求对象
-func (r *AlibabaMarketingLotteryDrawDodrawRequest) SetLotteryDrawQuery(_lotteryDrawQuery *LotteryDrawQueryDTO) error {
+func (r *AlibabaMarketingLotteryDrawDodrawAPIRequest) SetLotteryDrawQuery(_lotteryDrawQuery *LotteryDrawQueryDTO) error {
     r._lotteryDrawQuery = _lotteryDrawQuery
     r.Set("lottery_draw_query", _lotteryDrawQuery)
     return nil
 }
 
 // LotteryDrawQuery Getter
-func (r AlibabaMarketingLotteryDrawDodrawRequest) GetLotteryDrawQuery() *LotteryDrawQueryDTO {
+func (r AlibabaMarketingLotteryDrawDodrawAPIRequest) GetLotteryDrawQuery() *LotteryDrawQueryDTO {
     return r._lotteryDrawQuery
 }

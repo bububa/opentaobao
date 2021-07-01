@@ -12,26 +12,26 @@ alibaba.lst.branddatashare.suppliers.list.query
 
 品牌商查询品牌数据授权的供应商列表
 */
-type AlibabaLstBranddatashareSuppliersListQueryRequest struct {
+type AlibabaLstBranddatashareSuppliersListQueryAPIRequest struct {
     model.Params
     // 入参
     _query   *LstBmSupplierQuery
 }
 
-// 初始化AlibabaLstBranddatashareSuppliersListQueryRequest对象
-func NewAlibabaLstBranddatashareSuppliersListQueryRequest() *AlibabaLstBranddatashareSuppliersListQueryRequest{
-    return &AlibabaLstBranddatashareSuppliersListQueryRequest{
+// 初始化AlibabaLstBranddatashareSuppliersListQueryAPIRequest对象
+func NewAlibabaLstBranddatashareSuppliersListQueryRequest() *AlibabaLstBranddatashareSuppliersListQueryAPIRequest{
+    return &AlibabaLstBranddatashareSuppliersListQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaLstBranddatashareSuppliersListQueryRequest) GetApiMethodName() string {
+func (r AlibabaLstBranddatashareSuppliersListQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.lst.branddatashare.suppliers.list.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaLstBranddatashareSuppliersListQueryRequest) GetApiParams() url.Values {
+func (r AlibabaLstBranddatashareSuppliersListQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaLstBranddatashareSuppliersListQueryRequest) GetApiParams() url.Va
 }
 // Query Setter
 // 入参
-func (r *AlibabaLstBranddatashareSuppliersListQueryRequest) SetQuery(_query *LstBmSupplierQuery) error {
+func (r *AlibabaLstBranddatashareSuppliersListQueryAPIRequest) SetQuery(_query *LstBmSupplierQuery) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r AlibabaLstBranddatashareSuppliersListQueryRequest) GetQuery() *LstBmSupplierQuery {
+func (r AlibabaLstBranddatashareSuppliersListQueryAPIRequest) GetQuery() *LstBmSupplierQuery {
     return r._query
 }

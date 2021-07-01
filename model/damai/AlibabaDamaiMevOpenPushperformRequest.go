@@ -12,26 +12,26 @@ alibaba.damai.mev.open.pushperform
 
 pushPerform
 */
-type AlibabaDamaiMevOpenPushperformRequest struct {
+type AlibabaDamaiMevOpenPushperformAPIRequest struct {
     model.Params
     // 入参pushPerformParam
     _pushPerformParam   *ThirdPerformPushOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenPushperformRequest对象
-func NewAlibabaDamaiMevOpenPushperformRequest() *AlibabaDamaiMevOpenPushperformRequest{
-    return &AlibabaDamaiMevOpenPushperformRequest{
+// 初始化AlibabaDamaiMevOpenPushperformAPIRequest对象
+func NewAlibabaDamaiMevOpenPushperformRequest() *AlibabaDamaiMevOpenPushperformAPIRequest{
+    return &AlibabaDamaiMevOpenPushperformAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenPushperformRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenPushperformAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.pushperform"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenPushperformRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenPushperformAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushperformRequest) GetApiParams() url.Values {
 }
 // PushPerformParam Setter
 // 入参pushPerformParam
-func (r *AlibabaDamaiMevOpenPushperformRequest) SetPushPerformParam(_pushPerformParam *ThirdPerformPushOpenParam) error {
+func (r *AlibabaDamaiMevOpenPushperformAPIRequest) SetPushPerformParam(_pushPerformParam *ThirdPerformPushOpenParam) error {
     r._pushPerformParam = _pushPerformParam
     r.Set("push_perform_param", _pushPerformParam)
     return nil
 }
 
 // PushPerformParam Getter
-func (r AlibabaDamaiMevOpenPushperformRequest) GetPushPerformParam() *ThirdPerformPushOpenParam {
+func (r AlibabaDamaiMevOpenPushperformAPIRequest) GetPushPerformParam() *ThirdPerformPushOpenParam {
     return r._pushPerformParam
 }

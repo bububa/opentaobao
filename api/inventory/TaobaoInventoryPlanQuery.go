@@ -11,7 +11,7 @@ taobao.inventory.plan.query
 
 计划库存查询
 */
-func TaobaoInventoryPlanQuery(clt *core.SDKClient, req *inventory.TaobaoInventoryPlanQueryRequest, session string) (*inventory.TaobaoInventoryPlanQueryAPIResponse, error) {
+func TaobaoInventoryPlanQuery(clt *core.SDKClient, req *inventory.TaobaoInventoryPlanQueryAPIRequest, session string) (*inventory.TaobaoInventoryPlanQueryAPIResponse, error) {
     var resp inventory.TaobaoInventoryPlanQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

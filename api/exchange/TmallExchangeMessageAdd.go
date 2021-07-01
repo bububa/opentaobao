@@ -11,7 +11,7 @@ tmall.exchange.message.add
 
 卖家创建换货留言
 */
-func TmallExchangeMessageAdd(clt *core.SDKClient, req *exchange.TmallExchangeMessageAddRequest, session string) (*exchange.TmallExchangeMessageAddAPIResponse, error) {
+func TmallExchangeMessageAdd(clt *core.SDKClient, req *exchange.TmallExchangeMessageAddAPIRequest, session string) (*exchange.TmallExchangeMessageAddAPIResponse, error) {
     var resp exchange.TmallExchangeMessageAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

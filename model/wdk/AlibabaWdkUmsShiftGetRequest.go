@@ -12,26 +12,26 @@ alibaba.wdk.ums.shift.get
 
 移库单获取
 */
-type AlibabaWdkUmsShiftGetRequest struct {
+type AlibabaWdkUmsShiftGetAPIRequest struct {
     model.Params
     // 店仓code，指的是库调对象，对应一个物理店或仓编码
     _warehouseCode   string
 }
 
-// 初始化AlibabaWdkUmsShiftGetRequest对象
-func NewAlibabaWdkUmsShiftGetRequest() *AlibabaWdkUmsShiftGetRequest{
-    return &AlibabaWdkUmsShiftGetRequest{
+// 初始化AlibabaWdkUmsShiftGetAPIRequest对象
+func NewAlibabaWdkUmsShiftGetRequest() *AlibabaWdkUmsShiftGetAPIRequest{
+    return &AlibabaWdkUmsShiftGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkUmsShiftGetRequest) GetApiMethodName() string {
+func (r AlibabaWdkUmsShiftGetAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.ums.shift.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkUmsShiftGetRequest) GetApiParams() url.Values {
+func (r AlibabaWdkUmsShiftGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkUmsShiftGetRequest) GetApiParams() url.Values {
 }
 // WarehouseCode Setter
 // 店仓code，指的是库调对象，对应一个物理店或仓编码
-func (r *AlibabaWdkUmsShiftGetRequest) SetWarehouseCode(_warehouseCode string) error {
+func (r *AlibabaWdkUmsShiftGetAPIRequest) SetWarehouseCode(_warehouseCode string) error {
     r._warehouseCode = _warehouseCode
     r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
-func (r AlibabaWdkUmsShiftGetRequest) GetWarehouseCode() string {
+func (r AlibabaWdkUmsShiftGetAPIRequest) GetWarehouseCode() string {
     return r._warehouseCode
 }

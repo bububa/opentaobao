@@ -11,7 +11,7 @@ alibaba.ele.enterprise.restaurant.categories
 
 餐厅分类
 */
-func AlibabaEleEnterpriseRestaurantCategories(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCategoriesRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCategoriesAPIResponse, error) {
+func AlibabaEleEnterpriseRestaurantCategories(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCategoriesAPIRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCategoriesAPIResponse, error) {
     var resp eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCategoriesAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

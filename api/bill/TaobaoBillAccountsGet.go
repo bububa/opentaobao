@@ -11,7 +11,7 @@ taobao.bill.accounts.get
 
 查询费用账户信息
 */
-func TaobaoBillAccountsGet(clt *core.SDKClient, req *bill.TaobaoBillAccountsGetRequest, session string) (*bill.TaobaoBillAccountsGetAPIResponse, error) {
+func TaobaoBillAccountsGet(clt *core.SDKClient, req *bill.TaobaoBillAccountsGetAPIRequest, session string) (*bill.TaobaoBillAccountsGetAPIResponse, error) {
     var resp bill.TaobaoBillAccountsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

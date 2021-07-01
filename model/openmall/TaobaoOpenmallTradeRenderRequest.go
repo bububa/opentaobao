@@ -12,26 +12,26 @@ taobao.openmall.trade.render
 
 请求渲染订单价格
 */
-type TaobaoOpenmallTradeRenderRequest struct {
+type TaobaoOpenmallTradeRenderAPIRequest struct {
     model.Params
     // 请求入参
     _paramTopTradeCreateDO   *TopTradeCreateDO
 }
 
-// 初始化TaobaoOpenmallTradeRenderRequest对象
-func NewTaobaoOpenmallTradeRenderRequest() *TaobaoOpenmallTradeRenderRequest{
-    return &TaobaoOpenmallTradeRenderRequest{
+// 初始化TaobaoOpenmallTradeRenderAPIRequest对象
+func NewTaobaoOpenmallTradeRenderRequest() *TaobaoOpenmallTradeRenderAPIRequest{
+    return &TaobaoOpenmallTradeRenderAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenmallTradeRenderRequest) GetApiMethodName() string {
+func (r TaobaoOpenmallTradeRenderAPIRequest) GetApiMethodName() string {
     return "taobao.openmall.trade.render"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallTradeRenderRequest) GetApiParams() url.Values {
+func (r TaobaoOpenmallTradeRenderAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOpenmallTradeRenderRequest) GetApiParams() url.Values {
 }
 // ParamTopTradeCreateDO Setter
 // 请求入参
-func (r *TaobaoOpenmallTradeRenderRequest) SetParamTopTradeCreateDO(_paramTopTradeCreateDO *TopTradeCreateDO) error {
+func (r *TaobaoOpenmallTradeRenderAPIRequest) SetParamTopTradeCreateDO(_paramTopTradeCreateDO *TopTradeCreateDO) error {
     r._paramTopTradeCreateDO = _paramTopTradeCreateDO
     r.Set("param_top_trade_create_d_o", _paramTopTradeCreateDO)
     return nil
 }
 
 // ParamTopTradeCreateDO Getter
-func (r TaobaoOpenmallTradeRenderRequest) GetParamTopTradeCreateDO() *TopTradeCreateDO {
+func (r TaobaoOpenmallTradeRenderAPIRequest) GetParamTopTradeCreateDO() *TopTradeCreateDO {
     return r._paramTopTradeCreateDO
 }

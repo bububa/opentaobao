@@ -12,24 +12,24 @@ odps.aliyuncs.com.DescribeOdpsService.2014-12-15
 
 查询ODPS服务
 */
-type OdpsAliyuncsComDescribeOdpsService2014_12_15Request struct {
+type OdpsAliyuncsComDescribeOdpsService2014_12_15APIRequest struct {
     model.Params
 }
 
-// 初始化OdpsAliyuncsComDescribeOdpsService2014_12_15Request对象
-func NewOdpsAliyuncsComDescribeOdpsService2014_12_15Request() *OdpsAliyuncsComDescribeOdpsService2014_12_15Request{
-    return &OdpsAliyuncsComDescribeOdpsService2014_12_15Request{
+// 初始化OdpsAliyuncsComDescribeOdpsService2014_12_15APIRequest对象
+func NewOdpsAliyuncsComDescribeOdpsService2014_12_15Request() *OdpsAliyuncsComDescribeOdpsService2014_12_15APIRequest{
+    return &OdpsAliyuncsComDescribeOdpsService2014_12_15APIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r OdpsAliyuncsComDescribeOdpsService2014_12_15Request) GetApiMethodName() string {
+func (r OdpsAliyuncsComDescribeOdpsService2014_12_15APIRequest) GetApiMethodName() string {
     return "odps.aliyuncs.com.DescribeOdpsService.2014-12-15"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r OdpsAliyuncsComDescribeOdpsService2014_12_15Request) GetApiParams() url.Values {
+func (r OdpsAliyuncsComDescribeOdpsService2014_12_15APIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

@@ -12,26 +12,26 @@ alibaba.security.jaq.app.official.apply
 
 官方应用申请接口
 */
-type AlibabaSecurityJaqAppOfficialApplyRequest struct {
+type AlibabaSecurityJaqAppOfficialApplyAPIRequest struct {
     model.Params
     // 官方应用申请入参
     _officialAppApplyRequest   *OfficialAppApplyRequest
 }
 
-// 初始化AlibabaSecurityJaqAppOfficialApplyRequest对象
-func NewAlibabaSecurityJaqAppOfficialApplyRequest() *AlibabaSecurityJaqAppOfficialApplyRequest{
-    return &AlibabaSecurityJaqAppOfficialApplyRequest{
+// 初始化AlibabaSecurityJaqAppOfficialApplyAPIRequest对象
+func NewAlibabaSecurityJaqAppOfficialApplyRequest() *AlibabaSecurityJaqAppOfficialApplyAPIRequest{
+    return &AlibabaSecurityJaqAppOfficialApplyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqAppOfficialApplyRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqAppOfficialApplyAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.app.official.apply"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqAppOfficialApplyRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqAppOfficialApplyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqAppOfficialApplyRequest) GetApiParams() url.Values {
 }
 // OfficialAppApplyRequest Setter
 // 官方应用申请入参
-func (r *AlibabaSecurityJaqAppOfficialApplyRequest) SetOfficialAppApplyRequest(_officialAppApplyRequest *OfficialAppApplyRequest) error {
+func (r *AlibabaSecurityJaqAppOfficialApplyAPIRequest) SetOfficialAppApplyRequest(_officialAppApplyRequest *OfficialAppApplyRequest) error {
     r._officialAppApplyRequest = _officialAppApplyRequest
     r.Set("official_app_apply_request", _officialAppApplyRequest)
     return nil
 }
 
 // OfficialAppApplyRequest Getter
-func (r AlibabaSecurityJaqAppOfficialApplyRequest) GetOfficialAppApplyRequest() *OfficialAppApplyRequest {
+func (r AlibabaSecurityJaqAppOfficialApplyAPIRequest) GetOfficialAppApplyRequest() *OfficialAppApplyRequest {
     return r._officialAppApplyRequest
 }

@@ -12,7 +12,7 @@ tmall.channel.trade.order.stop
 
 供应商停止发货
 */
-type TmallChannelTradeOrderStopRequest struct {
+type TmallChannelTradeOrderStopAPIRequest struct {
     model.Params
     // 主采购单号
     _mainPurchaseOrderNo   int64
@@ -20,20 +20,20 @@ type TmallChannelTradeOrderStopRequest struct {
     _requestNo   string
 }
 
-// 初始化TmallChannelTradeOrderStopRequest对象
-func NewTmallChannelTradeOrderStopRequest() *TmallChannelTradeOrderStopRequest{
-    return &TmallChannelTradeOrderStopRequest{
+// 初始化TmallChannelTradeOrderStopAPIRequest对象
+func NewTmallChannelTradeOrderStopRequest() *TmallChannelTradeOrderStopAPIRequest{
+    return &TmallChannelTradeOrderStopAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallChannelTradeOrderStopRequest) GetApiMethodName() string {
+func (r TmallChannelTradeOrderStopAPIRequest) GetApiMethodName() string {
     return "tmall.channel.trade.order.stop"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallChannelTradeOrderStopRequest) GetApiParams() url.Values {
+func (r TmallChannelTradeOrderStopAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallChannelTradeOrderStopRequest) GetApiParams() url.Values {
 }
 // MainPurchaseOrderNo Setter
 // 主采购单号
-func (r *TmallChannelTradeOrderStopRequest) SetMainPurchaseOrderNo(_mainPurchaseOrderNo int64) error {
+func (r *TmallChannelTradeOrderStopAPIRequest) SetMainPurchaseOrderNo(_mainPurchaseOrderNo int64) error {
     r._mainPurchaseOrderNo = _mainPurchaseOrderNo
     r.Set("main_purchase_order_no", _mainPurchaseOrderNo)
     return nil
 }
 
 // MainPurchaseOrderNo Getter
-func (r TmallChannelTradeOrderStopRequest) GetMainPurchaseOrderNo() int64 {
+func (r TmallChannelTradeOrderStopAPIRequest) GetMainPurchaseOrderNo() int64 {
     return r._mainPurchaseOrderNo
 }
 // RequestNo Setter
 // 幂等单号
-func (r *TmallChannelTradeOrderStopRequest) SetRequestNo(_requestNo string) error {
+func (r *TmallChannelTradeOrderStopAPIRequest) SetRequestNo(_requestNo string) error {
     r._requestNo = _requestNo
     r.Set("request_no", _requestNo)
     return nil
 }
 
 // RequestNo Getter
-func (r TmallChannelTradeOrderStopRequest) GetRequestNo() string {
+func (r TmallChannelTradeOrderStopAPIRequest) GetRequestNo() string {
     return r._requestNo
 }

@@ -12,26 +12,26 @@ tmall.servicecenter.worker.querypage
 
 服务商查询工人列表
 */
-type TmallServicecenterWorkerQuerypageRequest struct {
+type TmallServicecenterWorkerQuerypageAPIRequest struct {
     model.Params
     // 页码
     _pageIndex   int64
 }
 
-// 初始化TmallServicecenterWorkerQuerypageRequest对象
-func NewTmallServicecenterWorkerQuerypageRequest() *TmallServicecenterWorkerQuerypageRequest{
-    return &TmallServicecenterWorkerQuerypageRequest{
+// 初始化TmallServicecenterWorkerQuerypageAPIRequest对象
+func NewTmallServicecenterWorkerQuerypageRequest() *TmallServicecenterWorkerQuerypageAPIRequest{
+    return &TmallServicecenterWorkerQuerypageAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkerQuerypageRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkerQuerypageAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.worker.querypage"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkerQuerypageRequest) GetApiParams() url.Values {
+func (r TmallServicecenterWorkerQuerypageAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkerQuerypageRequest) GetApiParams() url.Values {
 }
 // PageIndex Setter
 // 页码
-func (r *TmallServicecenterWorkerQuerypageRequest) SetPageIndex(_pageIndex int64) error {
+func (r *TmallServicecenterWorkerQuerypageAPIRequest) SetPageIndex(_pageIndex int64) error {
     r._pageIndex = _pageIndex
     r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
-func (r TmallServicecenterWorkerQuerypageRequest) GetPageIndex() int64 {
+func (r TmallServicecenterWorkerQuerypageAPIRequest) GetPageIndex() int64 {
     return r._pageIndex
 }

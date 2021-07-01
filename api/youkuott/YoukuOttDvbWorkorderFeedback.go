@@ -11,7 +11,7 @@ youku.ott.dvb.workorder.feedback
 
 dvb工单处理结果反馈
 */
-func YoukuOttDvbWorkorderFeedback(clt *core.SDKClient, req *youkuott.YoukuOttDvbWorkorderFeedbackRequest, session string) (*youkuott.YoukuOttDvbWorkorderFeedbackAPIResponse, error) {
+func YoukuOttDvbWorkorderFeedback(clt *core.SDKClient, req *youkuott.YoukuOttDvbWorkorderFeedbackAPIRequest, session string) (*youkuott.YoukuOttDvbWorkorderFeedbackAPIResponse, error) {
     var resp youkuott.YoukuOttDvbWorkorderFeedbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

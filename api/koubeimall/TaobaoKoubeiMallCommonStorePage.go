@@ -11,7 +11,7 @@ taobao.koubei.mall.common.store.page
 
 分页查询综合体内的门店列表信息
 */
-func TaobaoKoubeiMallCommonStorePage(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonStorePageRequest, session string) (*koubeimall.TaobaoKoubeiMallCommonStorePageAPIResponse, error) {
+func TaobaoKoubeiMallCommonStorePage(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonStorePageAPIRequest, session string) (*koubeimall.TaobaoKoubeiMallCommonStorePageAPIResponse, error) {
     var resp koubeimall.TaobaoKoubeiMallCommonStorePageAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

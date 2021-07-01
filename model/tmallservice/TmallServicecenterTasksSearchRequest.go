@@ -12,7 +12,7 @@ tmall.servicecenter.tasks.search
 
 查询任务类工单信息
 */
-type TmallServicecenterTasksSearchRequest struct {
+type TmallServicecenterTasksSearchAPIRequest struct {
     model.Params
     // 开始时间:  开始时间和结束时间不能超过15分钟
     _start   int64
@@ -20,20 +20,20 @@ type TmallServicecenterTasksSearchRequest struct {
     _end   int64
 }
 
-// 初始化TmallServicecenterTasksSearchRequest对象
-func NewTmallServicecenterTasksSearchRequest() *TmallServicecenterTasksSearchRequest{
-    return &TmallServicecenterTasksSearchRequest{
+// 初始化TmallServicecenterTasksSearchAPIRequest对象
+func NewTmallServicecenterTasksSearchRequest() *TmallServicecenterTasksSearchAPIRequest{
+    return &TmallServicecenterTasksSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterTasksSearchRequest) GetApiMethodName() string {
+func (r TmallServicecenterTasksSearchAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.tasks.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterTasksSearchRequest) GetApiParams() url.Values {
+func (r TmallServicecenterTasksSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallServicecenterTasksSearchRequest) GetApiParams() url.Values {
 }
 // Start Setter
 // 开始时间:  开始时间和结束时间不能超过15分钟
-func (r *TmallServicecenterTasksSearchRequest) SetStart(_start int64) error {
+func (r *TmallServicecenterTasksSearchAPIRequest) SetStart(_start int64) error {
     r._start = _start
     r.Set("start", _start)
     return nil
 }
 
 // Start Getter
-func (r TmallServicecenterTasksSearchRequest) GetStart() int64 {
+func (r TmallServicecenterTasksSearchAPIRequest) GetStart() int64 {
     return r._start
 }
 // End Setter
 // 结束时间:  开始时间和结束时间不能超过15分钟
-func (r *TmallServicecenterTasksSearchRequest) SetEnd(_end int64) error {
+func (r *TmallServicecenterTasksSearchAPIRequest) SetEnd(_end int64) error {
     r._end = _end
     r.Set("end", _end)
     return nil
 }
 
 // End Getter
-func (r TmallServicecenterTasksSearchRequest) GetEnd() int64 {
+func (r TmallServicecenterTasksSearchAPIRequest) GetEnd() int64 {
     return r._end
 }

@@ -12,26 +12,26 @@ taobao.crm.exchange.activity.create
 
 创建针对积分兑换类型的活动
 */
-type TaobaoCrmExchangeActivityCreateRequest struct {
+type TaobaoCrmExchangeActivityCreateAPIRequest struct {
     model.Params
     // 创建积分兑换活动
     _exchangeActivityCreateDto   *ExchangeActivityCreateDTO
 }
 
-// 初始化TaobaoCrmExchangeActivityCreateRequest对象
-func NewTaobaoCrmExchangeActivityCreateRequest() *TaobaoCrmExchangeActivityCreateRequest{
-    return &TaobaoCrmExchangeActivityCreateRequest{
+// 初始化TaobaoCrmExchangeActivityCreateAPIRequest对象
+func NewTaobaoCrmExchangeActivityCreateRequest() *TaobaoCrmExchangeActivityCreateAPIRequest{
+    return &TaobaoCrmExchangeActivityCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoCrmExchangeActivityCreateRequest) GetApiMethodName() string {
+func (r TaobaoCrmExchangeActivityCreateAPIRequest) GetApiMethodName() string {
     return "taobao.crm.exchange.activity.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoCrmExchangeActivityCreateRequest) GetApiParams() url.Values {
+func (r TaobaoCrmExchangeActivityCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoCrmExchangeActivityCreateRequest) GetApiParams() url.Values {
 }
 // ExchangeActivityCreateDto Setter
 // 创建积分兑换活动
-func (r *TaobaoCrmExchangeActivityCreateRequest) SetExchangeActivityCreateDto(_exchangeActivityCreateDto *ExchangeActivityCreateDTO) error {
+func (r *TaobaoCrmExchangeActivityCreateAPIRequest) SetExchangeActivityCreateDto(_exchangeActivityCreateDto *ExchangeActivityCreateDTO) error {
     r._exchangeActivityCreateDto = _exchangeActivityCreateDto
     r.Set("exchange_activity_create_dto", _exchangeActivityCreateDto)
     return nil
 }
 
 // ExchangeActivityCreateDto Getter
-func (r TaobaoCrmExchangeActivityCreateRequest) GetExchangeActivityCreateDto() *ExchangeActivityCreateDTO {
+func (r TaobaoCrmExchangeActivityCreateAPIRequest) GetExchangeActivityCreateDto() *ExchangeActivityCreateDTO {
     return r._exchangeActivityCreateDto
 }

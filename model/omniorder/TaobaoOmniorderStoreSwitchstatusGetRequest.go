@@ -12,7 +12,7 @@ taobao.omniorder.store.switchstatus.get
 
 查询门店发货、门店自提状态
 */
-type TaobaoOmniorderStoreSwitchstatusGetRequest struct {
+type TaobaoOmniorderStoreSwitchstatusGetAPIRequest struct {
     model.Params
     // 门店ID
     _storeId   int64
@@ -20,20 +20,20 @@ type TaobaoOmniorderStoreSwitchstatusGetRequest struct {
     _sellerId   int64
 }
 
-// 初始化TaobaoOmniorderStoreSwitchstatusGetRequest对象
-func NewTaobaoOmniorderStoreSwitchstatusGetRequest() *TaobaoOmniorderStoreSwitchstatusGetRequest{
-    return &TaobaoOmniorderStoreSwitchstatusGetRequest{
+// 初始化TaobaoOmniorderStoreSwitchstatusGetAPIRequest对象
+func NewTaobaoOmniorderStoreSwitchstatusGetRequest() *TaobaoOmniorderStoreSwitchstatusGetAPIRequest{
+    return &TaobaoOmniorderStoreSwitchstatusGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniorderStoreSwitchstatusGetRequest) GetApiMethodName() string {
+func (r TaobaoOmniorderStoreSwitchstatusGetAPIRequest) GetApiMethodName() string {
     return "taobao.omniorder.store.switchstatus.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderStoreSwitchstatusGetRequest) GetApiParams() url.Values {
+func (r TaobaoOmniorderStoreSwitchstatusGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOmniorderStoreSwitchstatusGetRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoOmniorderStoreSwitchstatusGetRequest) SetStoreId(_storeId int64) error {
+func (r *TaobaoOmniorderStoreSwitchstatusGetAPIRequest) SetStoreId(_storeId int64) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r TaobaoOmniorderStoreSwitchstatusGetRequest) GetStoreId() int64 {
+func (r TaobaoOmniorderStoreSwitchstatusGetAPIRequest) GetStoreId() int64 {
     return r._storeId
 }
 // SellerId Setter
 // 卖家ID
-func (r *TaobaoOmniorderStoreSwitchstatusGetRequest) SetSellerId(_sellerId int64) error {
+func (r *TaobaoOmniorderStoreSwitchstatusGetAPIRequest) SetSellerId(_sellerId int64) error {
     r._sellerId = _sellerId
     r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
-func (r TaobaoOmniorderStoreSwitchstatusGetRequest) GetSellerId() int64 {
+func (r TaobaoOmniorderStoreSwitchstatusGetAPIRequest) GetSellerId() int64 {
     return r._sellerId
 }

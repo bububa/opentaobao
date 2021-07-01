@@ -12,26 +12,26 @@ alibaba.happytrip.order.get
 
 通过订单id获取欢行统一订单模型数据
 */
-type AlibabaHappytripOrderGetRequest struct {
+type AlibabaHappytripOrderGetAPIRequest struct {
     model.Params
     // 订单id
     _orderId   int64
 }
 
-// 初始化AlibabaHappytripOrderGetRequest对象
-func NewAlibabaHappytripOrderGetRequest() *AlibabaHappytripOrderGetRequest{
-    return &AlibabaHappytripOrderGetRequest{
+// 初始化AlibabaHappytripOrderGetAPIRequest对象
+func NewAlibabaHappytripOrderGetRequest() *AlibabaHappytripOrderGetAPIRequest{
+    return &AlibabaHappytripOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHappytripOrderGetRequest) GetApiMethodName() string {
+func (r AlibabaHappytripOrderGetAPIRequest) GetApiMethodName() string {
     return "alibaba.happytrip.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHappytripOrderGetRequest) GetApiParams() url.Values {
+func (r AlibabaHappytripOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaHappytripOrderGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaHappytripOrderGetRequest) SetOrderId(_orderId int64) error {
+func (r *AlibabaHappytripOrderGetAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaHappytripOrderGetRequest) GetOrderId() int64 {
+func (r AlibabaHappytripOrderGetAPIRequest) GetOrderId() int64 {
     return r._orderId
 }

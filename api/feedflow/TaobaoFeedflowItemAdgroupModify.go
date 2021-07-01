@@ -11,7 +11,7 @@ taobao.feedflow.item.adgroup.modify
 
 信息流单元修改
 */
-func TaobaoFeedflowItemAdgroupModify(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupModifyRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupModifyAPIResponse, error) {
+func TaobaoFeedflowItemAdgroupModify(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupModifyAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupModifyAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemAdgroupModifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.alsc.crm.voucher.send
 
 发送券给指定用户
 */
-func AlibabaAlscCrmVoucherSend(clt *core.SDKClient, req *alsc.AlibabaAlscCrmVoucherSendRequest, session string) (*alsc.AlibabaAlscCrmVoucherSendAPIResponse, error) {
+func AlibabaAlscCrmVoucherSend(clt *core.SDKClient, req *alsc.AlibabaAlscCrmVoucherSendAPIRequest, session string) (*alsc.AlibabaAlscCrmVoucherSendAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmVoucherSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -19,7 +19,7 @@ alibaba.wdk.item.changeprice.query
      * 返回活动结束时间在 startTime<=活动结束时间<endTime 之间的所有单品促销单据
      
 */
-type AlibabaWdkItemChangepriceQueryRequest struct {
+type AlibabaWdkItemChangepriceQueryAPIRequest struct {
     model.Params
     // 变价的类型  * 查询变价的单据专用
     _type   string
@@ -31,20 +31,20 @@ type AlibabaWdkItemChangepriceQueryRequest struct {
     _shopId   string
 }
 
-// 初始化AlibabaWdkItemChangepriceQueryRequest对象
-func NewAlibabaWdkItemChangepriceQueryRequest() *AlibabaWdkItemChangepriceQueryRequest{
-    return &AlibabaWdkItemChangepriceQueryRequest{
+// 初始化AlibabaWdkItemChangepriceQueryAPIRequest对象
+func NewAlibabaWdkItemChangepriceQueryRequest() *AlibabaWdkItemChangepriceQueryAPIRequest{
+    return &AlibabaWdkItemChangepriceQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkItemChangepriceQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.item.changeprice.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkItemChangepriceQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -53,49 +53,49 @@ func (r AlibabaWdkItemChangepriceQueryRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 变价的类型  * 查询变价的单据专用
-func (r *AlibabaWdkItemChangepriceQueryRequest) SetType(_type string) error {
+func (r *AlibabaWdkItemChangepriceQueryAPIRequest) SetType(_type string) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r AlibabaWdkItemChangepriceQueryRequest) GetType() string {
+func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetType() string {
     return r._type
 }
 // StartTime Setter
 // 开始时间
-func (r *AlibabaWdkItemChangepriceQueryRequest) SetStartTime(_startTime string) error {
+func (r *AlibabaWdkItemChangepriceQueryAPIRequest) SetStartTime(_startTime string) error {
     r._startTime = _startTime
     r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
-func (r AlibabaWdkItemChangepriceQueryRequest) GetStartTime() string {
+func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetStartTime() string {
     return r._startTime
 }
 // EndTime Setter
 // 结束时间，结束时间-开始时间不能超过48小时
-func (r *AlibabaWdkItemChangepriceQueryRequest) SetEndTime(_endTime string) error {
+func (r *AlibabaWdkItemChangepriceQueryAPIRequest) SetEndTime(_endTime string) error {
     r._endTime = _endTime
     r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
-func (r AlibabaWdkItemChangepriceQueryRequest) GetEndTime() string {
+func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetEndTime() string {
     return r._endTime
 }
 // ShopId Setter
 // 渠道店id
-func (r *AlibabaWdkItemChangepriceQueryRequest) SetShopId(_shopId string) error {
+func (r *AlibabaWdkItemChangepriceQueryAPIRequest) SetShopId(_shopId string) error {
     r._shopId = _shopId
     r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
-func (r AlibabaWdkItemChangepriceQueryRequest) GetShopId() string {
+func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetShopId() string {
     return r._shopId
 }

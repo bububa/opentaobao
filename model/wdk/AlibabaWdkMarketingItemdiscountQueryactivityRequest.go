@@ -12,26 +12,26 @@ alibaba.wdk.marketing.itemdiscount.queryactivity
 
 查找特价活动
 */
-type AlibabaWdkMarketingItemdiscountQueryactivityRequest struct {
+type AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest struct {
     model.Params
     // 商品对象
     _param0   *CommonActivityParam
 }
 
-// 初始化AlibabaWdkMarketingItemdiscountQueryactivityRequest对象
-func NewAlibabaWdkMarketingItemdiscountQueryactivityRequest() *AlibabaWdkMarketingItemdiscountQueryactivityRequest{
-    return &AlibabaWdkMarketingItemdiscountQueryactivityRequest{
+// 初始化AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest对象
+func NewAlibabaWdkMarketingItemdiscountQueryactivityRequest() *AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest{
+    return &AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingItemdiscountQueryactivityRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.itemdiscount.queryactivity"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingItemdiscountQueryactivityRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItemdiscountQueryactivityRequest) GetApiParams() url.
 }
 // Param0 Setter
 // 商品对象
-func (r *AlibabaWdkMarketingItemdiscountQueryactivityRequest) SetParam0(_param0 *CommonActivityParam) error {
+func (r *AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest) SetParam0(_param0 *CommonActivityParam) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaWdkMarketingItemdiscountQueryactivityRequest) GetParam0() *CommonActivityParam {
+func (r AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest) GetParam0() *CommonActivityParam {
     return r._param0
 }

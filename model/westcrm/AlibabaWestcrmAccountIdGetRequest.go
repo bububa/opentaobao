@@ -12,26 +12,26 @@ alibaba.westcrm.account.id.get
 
 根据支付宝id查询IB的id
 */
-type AlibabaWestcrmAccountIdGetRequest struct {
+type AlibabaWestcrmAccountIdGetAPIRequest struct {
     model.Params
     // 支付宝id
     _alipayId   string
 }
 
-// 初始化AlibabaWestcrmAccountIdGetRequest对象
-func NewAlibabaWestcrmAccountIdGetRequest() *AlibabaWestcrmAccountIdGetRequest{
-    return &AlibabaWestcrmAccountIdGetRequest{
+// 初始化AlibabaWestcrmAccountIdGetAPIRequest对象
+func NewAlibabaWestcrmAccountIdGetRequest() *AlibabaWestcrmAccountIdGetAPIRequest{
+    return &AlibabaWestcrmAccountIdGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWestcrmAccountIdGetRequest) GetApiMethodName() string {
+func (r AlibabaWestcrmAccountIdGetAPIRequest) GetApiMethodName() string {
     return "alibaba.westcrm.account.id.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWestcrmAccountIdGetRequest) GetApiParams() url.Values {
+func (r AlibabaWestcrmAccountIdGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWestcrmAccountIdGetRequest) GetApiParams() url.Values {
 }
 // AlipayId Setter
 // 支付宝id
-func (r *AlibabaWestcrmAccountIdGetRequest) SetAlipayId(_alipayId string) error {
+func (r *AlibabaWestcrmAccountIdGetAPIRequest) SetAlipayId(_alipayId string) error {
     r._alipayId = _alipayId
     r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
-func (r AlibabaWestcrmAccountIdGetRequest) GetAlipayId() string {
+func (r AlibabaWestcrmAccountIdGetAPIRequest) GetAlipayId() string {
     return r._alipayId
 }

@@ -11,7 +11,7 @@ tmall.servicecenter.workcard.complete
 
 工单完结
 */
-func TmallServicecenterWorkcardComplete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardCompleteRequest, session string) (*tmallservice.TmallServicecenterWorkcardCompleteAPIResponse, error) {
+func TmallServicecenterWorkcardComplete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardCompleteAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardCompleteAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardCompleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

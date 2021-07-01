@@ -11,7 +11,7 @@ alibaba.alihealth.outflow.usage.saveorupdate
 
 阿里健康-处方外流-对外提供用法字典表维护功能
 */
-func AlibabaAlihealthOutflowUsageSaveorupdate(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowUsageSaveorupdateRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowUsageSaveorupdateAPIResponse, error) {
+func AlibabaAlihealthOutflowUsageSaveorupdate(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowUsageSaveorupdateAPIResponse, error) {
     var resp alihealthoutflow.AlibabaAlihealthOutflowUsageSaveorupdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

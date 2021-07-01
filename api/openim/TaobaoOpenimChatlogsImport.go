@@ -11,7 +11,7 @@ taobao.openim.chatlogs.import
 
 提供openim账号的聊天消息导入功能
 */
-func TaobaoOpenimChatlogsImport(clt *core.SDKClient, req *openim.TaobaoOpenimChatlogsImportRequest, session string) (*openim.TaobaoOpenimChatlogsImportAPIResponse, error) {
+func TaobaoOpenimChatlogsImport(clt *core.SDKClient, req *openim.TaobaoOpenimChatlogsImportAPIRequest, session string) (*openim.TaobaoOpenimChatlogsImportAPIResponse, error) {
     var resp openim.TaobaoOpenimChatlogsImportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ cainiao.smartdelivery.strategy.warehouse.i.delete
 
 删除智能发货引擎仓策略
 */
-type CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest struct {
+type CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest struct {
     model.Params
     // 仓id
     _warehouseId   int64
 }
 
-// 初始化CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest对象
-func NewCainiaoSmartdeliveryStrategyWarehouseIDeleteRequest() *CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest{
-    return &CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest{
+// 初始化CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest对象
+func NewCainiaoSmartdeliveryStrategyWarehouseIDeleteRequest() *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest{
+    return &CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest) GetApiMethodName() string {
+func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) GetApiMethodName() string {
     return "cainiao.smartdelivery.strategy.warehouse.i.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest) GetApiParams() url.Values {
+func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest) GetApiParams() url.
 }
 // WarehouseId Setter
 // 仓id
-func (r *CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest) SetWarehouseId(_warehouseId int64) error {
+func (r *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) SetWarehouseId(_warehouseId int64) error {
     r._warehouseId = _warehouseId
     r.Set("warehouse_id", _warehouseId)
     return nil
 }
 
 // WarehouseId Getter
-func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest) GetWarehouseId() int64 {
+func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) GetWarehouseId() int64 {
     return r._warehouseId
 }

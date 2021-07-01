@@ -11,7 +11,7 @@ alibaba.seller.vendor.service.vendorprocess
 
 服务商客户关联信息
 */
-func AlibabaSellerVendorServiceVendorprocess(clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorServiceVendorprocessRequest, session string) (*icbuseller.AlibabaSellerVendorServiceVendorprocessAPIResponse, error) {
+func AlibabaSellerVendorServiceVendorprocess(clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorServiceVendorprocessAPIRequest, session string) (*icbuseller.AlibabaSellerVendorServiceVendorprocessAPIResponse, error) {
     var resp icbuseller.AlibabaSellerVendorServiceVendorprocessAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

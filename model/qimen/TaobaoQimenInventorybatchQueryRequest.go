@@ -1,52 +1,17 @@
 package qimen
 
-import (
-    "net/url"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-商品单仓批次库存查询接口 API请求
-taobao.qimen.inventorybatch.query
-
-ERP 通过该接口查询指定商品的单仓批次库存
-*/
+// TaobaoQimenInventorybatchQueryRequest 
 type TaobaoQimenInventorybatchQueryRequest struct {
-    model.Params
-    // request
-    _request   *Request
-}
-
-// 初始化TaobaoQimenInventorybatchQueryRequest对象
-func NewTaobaoQimenInventorybatchQueryRequest() *TaobaoQimenInventorybatchQueryRequest{
-    return &TaobaoQimenInventorybatchQueryRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TaobaoQimenInventorybatchQueryRequest) GetApiMethodName() string {
-    return "taobao.qimen.inventorybatch.query"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TaobaoQimenInventorybatchQueryRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// Request Setter
-// request
-func (r *TaobaoQimenInventorybatchQueryRequest) SetRequest(_request *Request) error {
-    r._request = _request
-    r.Set("request", _request)
-    return nil
-}
-
-// Request Getter
-func (r TaobaoQimenInventorybatchQueryRequest) GetRequest() *Request {
-    return r._request
+    // 货主编码，string(50)，必填
+    OwnerCode   string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
+    // 仓库编码，string(50)，必填
+    WarehouseCode   string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
+    // ERP 系统商品编码, string(50)，条件必填
+    ItemCode   string `json:"itemCode,omitempty" xml:"itemCode,omitempty"`
+    // 仓储系统商品编码, string(50)，条件必填
+    ItemId   string `json:"itemId,omitempty" xml:"itemId,omitempty"`
+    // 当前页，从 1 开始，必填
+    Page   int64 `json:"page,omitempty" xml:"page,omitempty"`
+    // 每页条数(最多 100 条)，必填
+    PageSize   int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
 }

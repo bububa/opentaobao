@@ -11,7 +11,7 @@ alibaba.tianji.supplier.order.delivery
 
 天机供应商发货
 */
-func AlibabaTianjiSupplierOrderDelivery(clt *core.SDKClient, req *alicom.AlibabaTianjiSupplierOrderDeliveryRequest, session string) (*alicom.AlibabaTianjiSupplierOrderDeliveryAPIResponse, error) {
+func AlibabaTianjiSupplierOrderDelivery(clt *core.SDKClient, req *alicom.AlibabaTianjiSupplierOrderDeliveryAPIRequest, session string) (*alicom.AlibabaTianjiSupplierOrderDeliveryAPIResponse, error) {
     var resp alicom.AlibabaTianjiSupplierOrderDeliveryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

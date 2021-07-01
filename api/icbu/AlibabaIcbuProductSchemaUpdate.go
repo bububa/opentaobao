@@ -11,7 +11,7 @@ alibaba.icbu.product.schema.update
 
 商品更新接口，方式为增量更新，只更新传入的字段
 */
-func AlibabaIcbuProductSchemaUpdate(clt *core.SDKClient, req *icbu.AlibabaIcbuProductSchemaUpdateRequest, session string) (*icbu.AlibabaIcbuProductSchemaUpdateAPIResponse, error) {
+func AlibabaIcbuProductSchemaUpdate(clt *core.SDKClient, req *icbu.AlibabaIcbuProductSchemaUpdateAPIRequest, session string) (*icbu.AlibabaIcbuProductSchemaUpdateAPIResponse, error) {
     var resp icbu.AlibabaIcbuProductSchemaUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

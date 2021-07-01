@@ -12,26 +12,26 @@ taobao.train.agent.change.agree.vtwo
 
 代理商同意改签接口服务
 */
-type TaobaoTrainAgentChangeAgreeVtwoRequest struct {
+type TaobaoTrainAgentChangeAgreeVtwoAPIRequest struct {
     model.Params
     // 代理商同意改签参数
     _param   *AgentAgreeChangeParam
 }
 
-// 初始化TaobaoTrainAgentChangeAgreeVtwoRequest对象
-func NewTaobaoTrainAgentChangeAgreeVtwoRequest() *TaobaoTrainAgentChangeAgreeVtwoRequest{
-    return &TaobaoTrainAgentChangeAgreeVtwoRequest{
+// 初始化TaobaoTrainAgentChangeAgreeVtwoAPIRequest对象
+func NewTaobaoTrainAgentChangeAgreeVtwoRequest() *TaobaoTrainAgentChangeAgreeVtwoAPIRequest{
+    return &TaobaoTrainAgentChangeAgreeVtwoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentChangeAgreeVtwoRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentChangeAgreeVtwoAPIRequest) GetApiMethodName() string {
     return "taobao.train.agent.change.agree.vtwo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentChangeAgreeVtwoRequest) GetApiParams() url.Values {
+func (r TaobaoTrainAgentChangeAgreeVtwoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentChangeAgreeVtwoRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 代理商同意改签参数
-func (r *TaobaoTrainAgentChangeAgreeVtwoRequest) SetParam(_param *AgentAgreeChangeParam) error {
+func (r *TaobaoTrainAgentChangeAgreeVtwoAPIRequest) SetParam(_param *AgentAgreeChangeParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoTrainAgentChangeAgreeVtwoRequest) GetParam() *AgentAgreeChangeParam {
+func (r TaobaoTrainAgentChangeAgreeVtwoAPIRequest) GetParam() *AgentAgreeChangeParam {
     return r._param
 }

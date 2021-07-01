@@ -12,26 +12,26 @@ yunos.tvpubadmin.manage.topic.list
 
 获取外部可操作编辑的专题列表
 */
-type YunosTvpubadminManageTopicListRequest struct {
+type YunosTvpubadminManageTopicListAPIRequest struct {
     model.Params
     // 查询条件
     _query   string
 }
 
-// 初始化YunosTvpubadminManageTopicListRequest对象
-func NewYunosTvpubadminManageTopicListRequest() *YunosTvpubadminManageTopicListRequest{
-    return &YunosTvpubadminManageTopicListRequest{
+// 初始化YunosTvpubadminManageTopicListAPIRequest对象
+func NewYunosTvpubadminManageTopicListRequest() *YunosTvpubadminManageTopicListAPIRequest{
+    return &YunosTvpubadminManageTopicListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminManageTopicListRequest) GetApiMethodName() string {
+func (r YunosTvpubadminManageTopicListAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.manage.topic.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminManageTopicListRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminManageTopicListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageTopicListRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 查询条件
-func (r *YunosTvpubadminManageTopicListRequest) SetQuery(_query string) error {
+func (r *YunosTvpubadminManageTopicListAPIRequest) SetQuery(_query string) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r YunosTvpubadminManageTopicListRequest) GetQuery() string {
+func (r YunosTvpubadminManageTopicListAPIRequest) GetQuery() string {
     return r._query
 }

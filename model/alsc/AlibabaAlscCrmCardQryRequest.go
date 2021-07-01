@@ -12,26 +12,26 @@ alibaba.alsc.crm.card.qry
 
 查询卡实例（优先使用卡实例ID查询，没有则用物理卡号查询）
 */
-type AlibabaAlscCrmCardQryRequest struct {
+type AlibabaAlscCrmCardQryAPIRequest struct {
     model.Params
     // 请求对象
     _paramQueryCardOpenReq   *QueryCardOpenReq
 }
 
-// 初始化AlibabaAlscCrmCardQryRequest对象
-func NewAlibabaAlscCrmCardQryRequest() *AlibabaAlscCrmCardQryRequest{
-    return &AlibabaAlscCrmCardQryRequest{
+// 初始化AlibabaAlscCrmCardQryAPIRequest对象
+func NewAlibabaAlscCrmCardQryRequest() *AlibabaAlscCrmCardQryAPIRequest{
+    return &AlibabaAlscCrmCardQryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmCardQryRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmCardQryAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.card.qry"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmCardQryRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmCardQryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCardQryRequest) GetApiParams() url.Values {
 }
 // ParamQueryCardOpenReq Setter
 // 请求对象
-func (r *AlibabaAlscCrmCardQryRequest) SetParamQueryCardOpenReq(_paramQueryCardOpenReq *QueryCardOpenReq) error {
+func (r *AlibabaAlscCrmCardQryAPIRequest) SetParamQueryCardOpenReq(_paramQueryCardOpenReq *QueryCardOpenReq) error {
     r._paramQueryCardOpenReq = _paramQueryCardOpenReq
     r.Set("param_query_card_open_req", _paramQueryCardOpenReq)
     return nil
 }
 
 // ParamQueryCardOpenReq Getter
-func (r AlibabaAlscCrmCardQryRequest) GetParamQueryCardOpenReq() *QueryCardOpenReq {
+func (r AlibabaAlscCrmCardQryAPIRequest) GetParamQueryCardOpenReq() *QueryCardOpenReq {
     return r._paramQueryCardOpenReq
 }

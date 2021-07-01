@@ -11,7 +11,7 @@ taobao.ailab.aicloud.top.device.detailinfo.get
 
 获取设备详细信息
 */
-func TaobaoAilabAicloudTopDeviceDetailinfoGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceDetailinfoGetRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceDetailinfoGetAPIResponse, error) {
+func TaobaoAilabAicloudTopDeviceDetailinfoGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceDetailinfoGetAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceDetailinfoGetAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopDeviceDetailinfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

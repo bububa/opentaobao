@@ -12,26 +12,26 @@ alitrip.btrip.corpop.user.sync
 
 同步外部平台用户信息至商旅内部
 */
-type AlitripBtripCorpopUserSyncRequest struct {
+type AlitripBtripCorpopUserSyncAPIRequest struct {
     model.Params
     // 人员同步请求
     _rq   *BtripUserSyncRq
 }
 
-// 初始化AlitripBtripCorpopUserSyncRequest对象
-func NewAlitripBtripCorpopUserSyncRequest() *AlitripBtripCorpopUserSyncRequest{
-    return &AlitripBtripCorpopUserSyncRequest{
+// 初始化AlitripBtripCorpopUserSyncAPIRequest对象
+func NewAlitripBtripCorpopUserSyncRequest() *AlitripBtripCorpopUserSyncAPIRequest{
+    return &AlitripBtripCorpopUserSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripCorpopUserSyncRequest) GetApiMethodName() string {
+func (r AlitripBtripCorpopUserSyncAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.corpop.user.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripCorpopUserSyncRequest) GetApiParams() url.Values {
+func (r AlitripBtripCorpopUserSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripCorpopUserSyncRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 人员同步请求
-func (r *AlitripBtripCorpopUserSyncRequest) SetRq(_rq *BtripUserSyncRq) error {
+func (r *AlitripBtripCorpopUserSyncAPIRequest) SetRq(_rq *BtripUserSyncRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripCorpopUserSyncRequest) GetRq() *BtripUserSyncRq {
+func (r AlitripBtripCorpopUserSyncAPIRequest) GetRq() *BtripUserSyncRq {
     return r._rq
 }

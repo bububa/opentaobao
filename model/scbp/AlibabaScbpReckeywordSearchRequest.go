@@ -12,26 +12,26 @@ alibaba.scbp.reckeyword.search
 
 推荐词-词推词
 */
-type AlibabaScbpReckeywordSearchRequest struct {
+type AlibabaScbpReckeywordSearchAPIRequest struct {
     model.Params
     // RecKeywordQuery
     _queryDto   *RecKeywordQuery
 }
 
-// 初始化AlibabaScbpReckeywordSearchRequest对象
-func NewAlibabaScbpReckeywordSearchRequest() *AlibabaScbpReckeywordSearchRequest{
-    return &AlibabaScbpReckeywordSearchRequest{
+// 初始化AlibabaScbpReckeywordSearchAPIRequest对象
+func NewAlibabaScbpReckeywordSearchRequest() *AlibabaScbpReckeywordSearchAPIRequest{
+    return &AlibabaScbpReckeywordSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpReckeywordSearchRequest) GetApiMethodName() string {
+func (r AlibabaScbpReckeywordSearchAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.reckeyword.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpReckeywordSearchRequest) GetApiParams() url.Values {
+func (r AlibabaScbpReckeywordSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpReckeywordSearchRequest) GetApiParams() url.Values {
 }
 // QueryDto Setter
 // RecKeywordQuery
-func (r *AlibabaScbpReckeywordSearchRequest) SetQueryDto(_queryDto *RecKeywordQuery) error {
+func (r *AlibabaScbpReckeywordSearchAPIRequest) SetQueryDto(_queryDto *RecKeywordQuery) error {
     r._queryDto = _queryDto
     r.Set("query_dto", _queryDto)
     return nil
 }
 
 // QueryDto Getter
-func (r AlibabaScbpReckeywordSearchRequest) GetQueryDto() *RecKeywordQuery {
+func (r AlibabaScbpReckeywordSearchAPIRequest) GetQueryDto() *RecKeywordQuery {
     return r._queryDto
 }

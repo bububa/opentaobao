@@ -11,7 +11,7 @@ tmall.nr.notice.goods.ready
 
 接收商家的配送人员信息，和第三公司信息及提货码
 */
-func TmallNrNoticeGoodsReady(clt *core.SDKClient, req *tmallnr.TmallNrNoticeGoodsReadyRequest, session string) (*tmallnr.TmallNrNoticeGoodsReadyAPIResponse, error) {
+func TmallNrNoticeGoodsReady(clt *core.SDKClient, req *tmallnr.TmallNrNoticeGoodsReadyAPIRequest, session string) (*tmallnr.TmallNrNoticeGoodsReadyAPIResponse, error) {
     var resp tmallnr.TmallNrNoticeGoodsReadyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ aliexpress.solution.issue.partner.rma.reverselogistic.state.update
 
 Updates the reverse logistics state for after sales services
 */
-type AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest struct {
+type AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest struct {
     model.Params
     // Logistic order state update request
     _logisticOrderStateUpdateRequest   *LogisticOrderStateUpdateRequest
 }
 
-// 初始化AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest对象
-func NewAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest() *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest{
-    return &AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest{
+// 初始化AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest对象
+func NewAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest() *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest{
+    return &AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest) GetApiMethodName() string {
+func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) GetApiMethodName() string {
     return "aliexpress.solution.issue.partner.rma.reverselogistic.state.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest) GetApiParams() url.Values {
+func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest) GetA
 }
 // LogisticOrderStateUpdateRequest Setter
 // Logistic order state update request
-func (r *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest) SetLogisticOrderStateUpdateRequest(_logisticOrderStateUpdateRequest *LogisticOrderStateUpdateRequest) error {
+func (r *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) SetLogisticOrderStateUpdateRequest(_logisticOrderStateUpdateRequest *LogisticOrderStateUpdateRequest) error {
     r._logisticOrderStateUpdateRequest = _logisticOrderStateUpdateRequest
     r.Set("logistic_order_state_update_request", _logisticOrderStateUpdateRequest)
     return nil
 }
 
 // LogisticOrderStateUpdateRequest Getter
-func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest) GetLogisticOrderStateUpdateRequest() *LogisticOrderStateUpdateRequest {
+func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) GetLogisticOrderStateUpdateRequest() *LogisticOrderStateUpdateRequest {
     return r._logisticOrderStateUpdateRequest
 }

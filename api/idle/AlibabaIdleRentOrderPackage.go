@@ -11,7 +11,7 @@ alibaba.idle.rent.order.package
 
 确认揽收
 */
-func AlibabaIdleRentOrderPackage(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderPackageRequest, session string) (*idle.AlibabaIdleRentOrderPackageAPIResponse, error) {
+func AlibabaIdleRentOrderPackage(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderPackageAPIRequest, session string) (*idle.AlibabaIdleRentOrderPackageAPIResponse, error) {
     var resp idle.AlibabaIdleRentOrderPackageAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

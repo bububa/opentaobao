@@ -1,7 +1,7 @@
 package btrip
 
-// SearchPriceRs 
-type SearchPriceRs struct {
+// SearchPriceRS 
+type SearchPriceRS struct {
     // 原始销售价，活动前的价格（单位：元）
     OriginalSellPrice   int64 `json:"original_sell_price,omitempty" xml:"original_sell_price,omitempty"`
     // 销售价(单位：元)

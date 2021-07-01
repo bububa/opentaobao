@@ -12,26 +12,26 @@ alitrip.receipt.seller.invoice.query
 
 飞猪发票查询
 */
-type AlitripReceiptSellerInvoiceQueryRequest struct {
+type AlitripReceiptSellerInvoiceQueryAPIRequest struct {
     model.Params
     // 入参对象
     _queryReceiptParam   *QueryReceiptParam
 }
 
-// 初始化AlitripReceiptSellerInvoiceQueryRequest对象
-func NewAlitripReceiptSellerInvoiceQueryRequest() *AlitripReceiptSellerInvoiceQueryRequest{
-    return &AlitripReceiptSellerInvoiceQueryRequest{
+// 初始化AlitripReceiptSellerInvoiceQueryAPIRequest对象
+func NewAlitripReceiptSellerInvoiceQueryRequest() *AlitripReceiptSellerInvoiceQueryAPIRequest{
+    return &AlitripReceiptSellerInvoiceQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripReceiptSellerInvoiceQueryRequest) GetApiMethodName() string {
+func (r AlitripReceiptSellerInvoiceQueryAPIRequest) GetApiMethodName() string {
     return "alitrip.receipt.seller.invoice.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripReceiptSellerInvoiceQueryRequest) GetApiParams() url.Values {
+func (r AlitripReceiptSellerInvoiceQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripReceiptSellerInvoiceQueryRequest) GetApiParams() url.Values {
 }
 // QueryReceiptParam Setter
 // 入参对象
-func (r *AlitripReceiptSellerInvoiceQueryRequest) SetQueryReceiptParam(_queryReceiptParam *QueryReceiptParam) error {
+func (r *AlitripReceiptSellerInvoiceQueryAPIRequest) SetQueryReceiptParam(_queryReceiptParam *QueryReceiptParam) error {
     r._queryReceiptParam = _queryReceiptParam
     r.Set("query_receipt_param", _queryReceiptParam)
     return nil
 }
 
 // QueryReceiptParam Getter
-func (r AlitripReceiptSellerInvoiceQueryRequest) GetQueryReceiptParam() *QueryReceiptParam {
+func (r AlitripReceiptSellerInvoiceQueryAPIRequest) GetQueryReceiptParam() *QueryReceiptParam {
     return r._queryReceiptParam
 }

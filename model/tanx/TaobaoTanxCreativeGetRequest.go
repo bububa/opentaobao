@@ -12,7 +12,7 @@ taobao.tanx.creative.get
 
 获取单个审核创意状态
 */
-type TaobaoTanxCreativeGetRequest struct {
+type TaobaoTanxCreativeGetAPIRequest struct {
     model.Params
     // DSP的memberId
     _memberId   int64
@@ -24,20 +24,20 @@ type TaobaoTanxCreativeGetRequest struct {
     _creativeId   string
 }
 
-// 初始化TaobaoTanxCreativeGetRequest对象
-func NewTaobaoTanxCreativeGetRequest() *TaobaoTanxCreativeGetRequest{
-    return &TaobaoTanxCreativeGetRequest{
+// 初始化TaobaoTanxCreativeGetAPIRequest对象
+func NewTaobaoTanxCreativeGetRequest() *TaobaoTanxCreativeGetAPIRequest{
+    return &TaobaoTanxCreativeGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTanxCreativeGetRequest) GetApiMethodName() string {
+func (r TaobaoTanxCreativeGetAPIRequest) GetApiMethodName() string {
     return "taobao.tanx.creative.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTanxCreativeGetRequest) GetApiParams() url.Values {
+func (r TaobaoTanxCreativeGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r TaobaoTanxCreativeGetRequest) GetApiParams() url.Values {
 }
 // MemberId Setter
 // DSP的memberId
-func (r *TaobaoTanxCreativeGetRequest) SetMemberId(_memberId int64) error {
+func (r *TaobaoTanxCreativeGetAPIRequest) SetMemberId(_memberId int64) error {
     r._memberId = _memberId
     r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
-func (r TaobaoTanxCreativeGetRequest) GetMemberId() int64 {
+func (r TaobaoTanxCreativeGetAPIRequest) GetMemberId() int64 {
     return r._memberId
 }
 // Token Setter
 // dsp用户身份认证的TOKEN
-func (r *TaobaoTanxCreativeGetRequest) SetToken(_token string) error {
+func (r *TaobaoTanxCreativeGetAPIRequest) SetToken(_token string) error {
     r._token = _token
     r.Set("token", _token)
     return nil
 }
 
 // Token Getter
-func (r TaobaoTanxCreativeGetRequest) GetToken() string {
+func (r TaobaoTanxCreativeGetAPIRequest) GetToken() string {
     return r._token
 }
 // SignTime Setter
 // 当前时间戳，1970-01-01后的秒数
-func (r *TaobaoTanxCreativeGetRequest) SetSignTime(_signTime int64) error {
+func (r *TaobaoTanxCreativeGetAPIRequest) SetSignTime(_signTime int64) error {
     r._signTime = _signTime
     r.Set("sign_time", _signTime)
     return nil
 }
 
 // SignTime Getter
-func (r TaobaoTanxCreativeGetRequest) GetSignTime() int64 {
+func (r TaobaoTanxCreativeGetAPIRequest) GetSignTime() int64 {
     return r._signTime
 }
 // CreativeId Setter
 // 创意ID
-func (r *TaobaoTanxCreativeGetRequest) SetCreativeId(_creativeId string) error {
+func (r *TaobaoTanxCreativeGetAPIRequest) SetCreativeId(_creativeId string) error {
     r._creativeId = _creativeId
     r.Set("creative_id", _creativeId)
     return nil
 }
 
 // CreativeId Getter
-func (r TaobaoTanxCreativeGetRequest) GetCreativeId() string {
+func (r TaobaoTanxCreativeGetAPIRequest) GetCreativeId() string {
     return r._creativeId
 }

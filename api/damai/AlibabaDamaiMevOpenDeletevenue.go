@@ -11,7 +11,7 @@ alibaba.damai.mev.open.deletevenue
 
 开放接口，删除场馆
 */
-func AlibabaDamaiMevOpenDeletevenue(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletevenueRequest, session string) (*damai.AlibabaDamaiMevOpenDeletevenueAPIResponse, error) {
+func AlibabaDamaiMevOpenDeletevenue(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletevenueAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeletevenueAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenDeletevenueAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

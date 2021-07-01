@@ -12,26 +12,26 @@ alibaba.mj.oc.pay
 
 此API用于在银泰商场中，消费者在收银台收银/退款时， POS系统在收银或退款成功后，调用此接口进行订单同步
 */
-type AlibabaMjOcPayRequest struct {
+type AlibabaMjOcPayAPIRequest struct {
     model.Params
     // 订单数据
     _posOrder   *PosOrderDTO
 }
 
-// 初始化AlibabaMjOcPayRequest对象
-func NewAlibabaMjOcPayRequest() *AlibabaMjOcPayRequest{
-    return &AlibabaMjOcPayRequest{
+// 初始化AlibabaMjOcPayAPIRequest对象
+func NewAlibabaMjOcPayRequest() *AlibabaMjOcPayAPIRequest{
+    return &AlibabaMjOcPayAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMjOcPayRequest) GetApiMethodName() string {
+func (r AlibabaMjOcPayAPIRequest) GetApiMethodName() string {
     return "alibaba.mj.oc.pay"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMjOcPayRequest) GetApiParams() url.Values {
+func (r AlibabaMjOcPayAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMjOcPayRequest) GetApiParams() url.Values {
 }
 // PosOrder Setter
 // 订单数据
-func (r *AlibabaMjOcPayRequest) SetPosOrder(_posOrder *PosOrderDTO) error {
+func (r *AlibabaMjOcPayAPIRequest) SetPosOrder(_posOrder *PosOrderDTO) error {
     r._posOrder = _posOrder
     r.Set("pos_order", _posOrder)
     return nil
 }
 
 // PosOrder Getter
-func (r AlibabaMjOcPayRequest) GetPosOrder() *PosOrderDTO {
+func (r AlibabaMjOcPayAPIRequest) GetPosOrder() *PosOrderDTO {
     return r._posOrder
 }

@@ -12,26 +12,26 @@ alibaba.wdk.order.list
 
 五道口交易订单拉取接口
 */
-type AlibabaWdkOrderListRequest struct {
+type AlibabaWdkOrderListAPIRequest struct {
     model.Params
     // 查询参数
     _batchQueryRequest   *BatchQueryRequest
 }
 
-// 初始化AlibabaWdkOrderListRequest对象
-func NewAlibabaWdkOrderListRequest() *AlibabaWdkOrderListRequest{
-    return &AlibabaWdkOrderListRequest{
+// 初始化AlibabaWdkOrderListAPIRequest对象
+func NewAlibabaWdkOrderListRequest() *AlibabaWdkOrderListAPIRequest{
+    return &AlibabaWdkOrderListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkOrderListRequest) GetApiMethodName() string {
+func (r AlibabaWdkOrderListAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.order.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkOrderListRequest) GetApiParams() url.Values {
+func (r AlibabaWdkOrderListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkOrderListRequest) GetApiParams() url.Values {
 }
 // BatchQueryRequest Setter
 // 查询参数
-func (r *AlibabaWdkOrderListRequest) SetBatchQueryRequest(_batchQueryRequest *BatchQueryRequest) error {
+func (r *AlibabaWdkOrderListAPIRequest) SetBatchQueryRequest(_batchQueryRequest *BatchQueryRequest) error {
     r._batchQueryRequest = _batchQueryRequest
     r.Set("batch_query_request", _batchQueryRequest)
     return nil
 }
 
 // BatchQueryRequest Getter
-func (r AlibabaWdkOrderListRequest) GetBatchQueryRequest() *BatchQueryRequest {
+func (r AlibabaWdkOrderListAPIRequest) GetBatchQueryRequest() *BatchQueryRequest {
     return r._batchQueryRequest
 }

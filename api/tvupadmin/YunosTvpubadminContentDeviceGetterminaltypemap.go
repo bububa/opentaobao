@@ -11,7 +11,7 @@ yunos.tvpubadmin.content.device.getterminaltypemap
 
 获取终端类型表
 */
-func YunosTvpubadminContentDeviceGetterminaltypemap(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentDeviceGetterminaltypemapRequest, session string) (*tvupadmin.YunosTvpubadminContentDeviceGetterminaltypemapAPIResponse, error) {
+func YunosTvpubadminContentDeviceGetterminaltypemap(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentDeviceGetterminaltypemapAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentDeviceGetterminaltypemapAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminContentDeviceGetterminaltypemapAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

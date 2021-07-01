@@ -12,7 +12,7 @@ alibaba.scbp.ad.keyword.get.keyword.count.by.query
 
 计划关键词数目
 */
-type AlibabaScbpAdKeywordGetKeywordCountByQueryRequest struct {
+type AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest struct {
     model.Params
     // 用户信息
     _topContext   *TopContextDTO
@@ -20,20 +20,20 @@ type AlibabaScbpAdKeywordGetKeywordCountByQueryRequest struct {
     _campaignKeywordQuery   *CampaignKeywordQuery
 }
 
-// 初始化AlibabaScbpAdKeywordGetKeywordCountByQueryRequest对象
-func NewAlibabaScbpAdKeywordGetKeywordCountByQueryRequest() *AlibabaScbpAdKeywordGetKeywordCountByQueryRequest{
-    return &AlibabaScbpAdKeywordGetKeywordCountByQueryRequest{
+// 初始化AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest对象
+func NewAlibabaScbpAdKeywordGetKeywordCountByQueryRequest() *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest{
+    return &AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordGetKeywordCountByQueryRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.keyword.get.keyword.count.by.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordGetKeywordCountByQueryRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdKeywordGetKeywordCountByQueryRequest) GetApiParams() url.Va
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordGetKeywordCountByQueryRequest) SetTopContext(_topContext *TopContextDTO) error {
+func (r *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdKeywordGetKeywordCountByQueryRequest) GetTopContext() *TopContextDTO {
+func (r AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }
 // CampaignKeywordQuery Setter
 // 请求参数
-func (r *AlibabaScbpAdKeywordGetKeywordCountByQueryRequest) SetCampaignKeywordQuery(_campaignKeywordQuery *CampaignKeywordQuery) error {
+func (r *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) SetCampaignKeywordQuery(_campaignKeywordQuery *CampaignKeywordQuery) error {
     r._campaignKeywordQuery = _campaignKeywordQuery
     r.Set("campaign_keyword_query", _campaignKeywordQuery)
     return nil
 }
 
 // CampaignKeywordQuery Getter
-func (r AlibabaScbpAdKeywordGetKeywordCountByQueryRequest) GetCampaignKeywordQuery() *CampaignKeywordQuery {
+func (r AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) GetCampaignKeywordQuery() *CampaignKeywordQuery {
     return r._campaignKeywordQuery
 }

@@ -11,7 +11,7 @@ alibaba.marketing.lottery.activity.unbind
 
 抽奖平台奖池解绑接口
 */
-func AlibabaMarketingLotteryActivityUnbind(clt *core.SDKClient, req *promotion.AlibabaMarketingLotteryActivityUnbindRequest, session string) (*promotion.AlibabaMarketingLotteryActivityUnbindAPIResponse, error) {
+func AlibabaMarketingLotteryActivityUnbind(clt *core.SDKClient, req *promotion.AlibabaMarketingLotteryActivityUnbindAPIRequest, session string) (*promotion.AlibabaMarketingLotteryActivityUnbindAPIResponse, error) {
     var resp promotion.AlibabaMarketingLotteryActivityUnbindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

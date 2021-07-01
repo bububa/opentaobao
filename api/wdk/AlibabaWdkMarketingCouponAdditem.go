@@ -13,7 +13,7 @@ alibaba.wdk.marketing.coupon.additem
 如果是商品券，则添加的商品为券适用的商品；
 如果是品类券，则添加的商品为券排除的商品；
 */
-func AlibabaWdkMarketingCouponAdditem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingCouponAdditemRequest, session string) (*wdk.AlibabaWdkMarketingCouponAdditemAPIResponse, error) {
+func AlibabaWdkMarketingCouponAdditem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingCouponAdditemAPIRequest, session string) (*wdk.AlibabaWdkMarketingCouponAdditemAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingCouponAdditemAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

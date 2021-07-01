@@ -12,26 +12,26 @@ alibaba.icbu.photobank.group.operate
 
 修改用户图片银行的分组信息，包括 新增分组，删除分组，分组重命名
 */
-type AlibabaIcbuPhotobankGroupOperateRequest struct {
+type AlibabaIcbuPhotobankGroupOperateAPIRequest struct {
     model.Params
     // 图片分组操作请求对象
     _photoGroupOperationRequest   *PhotoGroupOperationRequest
 }
 
-// 初始化AlibabaIcbuPhotobankGroupOperateRequest对象
-func NewAlibabaIcbuPhotobankGroupOperateRequest() *AlibabaIcbuPhotobankGroupOperateRequest{
-    return &AlibabaIcbuPhotobankGroupOperateRequest{
+// 初始化AlibabaIcbuPhotobankGroupOperateAPIRequest对象
+func NewAlibabaIcbuPhotobankGroupOperateRequest() *AlibabaIcbuPhotobankGroupOperateAPIRequest{
+    return &AlibabaIcbuPhotobankGroupOperateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuPhotobankGroupOperateRequest) GetApiMethodName() string {
+func (r AlibabaIcbuPhotobankGroupOperateAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.photobank.group.operate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuPhotobankGroupOperateRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuPhotobankGroupOperateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIcbuPhotobankGroupOperateRequest) GetApiParams() url.Values {
 }
 // PhotoGroupOperationRequest Setter
 // 图片分组操作请求对象
-func (r *AlibabaIcbuPhotobankGroupOperateRequest) SetPhotoGroupOperationRequest(_photoGroupOperationRequest *PhotoGroupOperationRequest) error {
+func (r *AlibabaIcbuPhotobankGroupOperateAPIRequest) SetPhotoGroupOperationRequest(_photoGroupOperationRequest *PhotoGroupOperationRequest) error {
     r._photoGroupOperationRequest = _photoGroupOperationRequest
     r.Set("photo_group_operation_request", _photoGroupOperationRequest)
     return nil
 }
 
 // PhotoGroupOperationRequest Getter
-func (r AlibabaIcbuPhotobankGroupOperateRequest) GetPhotoGroupOperationRequest() *PhotoGroupOperationRequest {
+func (r AlibabaIcbuPhotobankGroupOperateAPIRequest) GetPhotoGroupOperationRequest() *PhotoGroupOperationRequest {
     return r._photoGroupOperationRequest
 }

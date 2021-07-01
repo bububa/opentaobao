@@ -11,7 +11,7 @@ aliexpress.affiliate.hotproduct.download
 
 查询联盟爆品API
 */
-func AliexpressAffiliateHotproductDownload(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateHotproductDownloadRequest, session string) (*aecreatives.AliexpressAffiliateHotproductDownloadAPIResponse, error) {
+func AliexpressAffiliateHotproductDownload(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateHotproductDownloadAPIRequest, session string) (*aecreatives.AliexpressAffiliateHotproductDownloadAPIResponse, error) {
     var resp aecreatives.AliexpressAffiliateHotproductDownloadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ yunos.osupdate.appversion.create
 
 创建应用升级任务
 */
-type YunosOsupdateAppversionCreateRequest struct {
+type YunosOsupdateAppversionCreateAPIRequest struct {
     model.Params
     // 应用版本信息
     _appVersion   *TvAppVersion
 }
 
-// 初始化YunosOsupdateAppversionCreateRequest对象
-func NewYunosOsupdateAppversionCreateRequest() *YunosOsupdateAppversionCreateRequest{
-    return &YunosOsupdateAppversionCreateRequest{
+// 初始化YunosOsupdateAppversionCreateAPIRequest对象
+func NewYunosOsupdateAppversionCreateRequest() *YunosOsupdateAppversionCreateAPIRequest{
+    return &YunosOsupdateAppversionCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosOsupdateAppversionCreateRequest) GetApiMethodName() string {
+func (r YunosOsupdateAppversionCreateAPIRequest) GetApiMethodName() string {
     return "yunos.osupdate.appversion.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosOsupdateAppversionCreateRequest) GetApiParams() url.Values {
+func (r YunosOsupdateAppversionCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YunosOsupdateAppversionCreateRequest) GetApiParams() url.Values {
 }
 // AppVersion Setter
 // 应用版本信息
-func (r *YunosOsupdateAppversionCreateRequest) SetAppVersion(_appVersion *TvAppVersion) error {
+func (r *YunosOsupdateAppversionCreateAPIRequest) SetAppVersion(_appVersion *TvAppVersion) error {
     r._appVersion = _appVersion
     r.Set("app_version", _appVersion)
     return nil
 }
 
 // AppVersion Getter
-func (r YunosOsupdateAppversionCreateRequest) GetAppVersion() *TvAppVersion {
+func (r YunosOsupdateAppversionCreateAPIRequest) GetAppVersion() *TvAppVersion {
     return r._appVersion
 }

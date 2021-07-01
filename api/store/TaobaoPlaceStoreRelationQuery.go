@@ -11,7 +11,7 @@ taobao.place.store.relation.query
 
 查询门店关系
 */
-func TaobaoPlaceStoreRelationQuery(clt *core.SDKClient, req *store.TaobaoPlaceStoreRelationQueryRequest, session string) (*store.TaobaoPlaceStoreRelationQueryAPIResponse, error) {
+func TaobaoPlaceStoreRelationQuery(clt *core.SDKClient, req *store.TaobaoPlaceStoreRelationQueryAPIRequest, session string) (*store.TaobaoPlaceStoreRelationQueryAPIResponse, error) {
     var resp store.TaobaoPlaceStoreRelationQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

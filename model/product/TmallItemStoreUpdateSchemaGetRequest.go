@@ -12,7 +12,7 @@ tmall.item.store.update.schema.get
 
 天猫门店商品修改规则获取
 */
-type TmallItemStoreUpdateSchemaGetRequest struct {
+type TmallItemStoreUpdateSchemaGetAPIRequest struct {
     model.Params
     // 主商品ID
     _mainItemId   int64
@@ -20,20 +20,20 @@ type TmallItemStoreUpdateSchemaGetRequest struct {
     _storeId   int64
 }
 
-// 初始化TmallItemStoreUpdateSchemaGetRequest对象
-func NewTmallItemStoreUpdateSchemaGetRequest() *TmallItemStoreUpdateSchemaGetRequest{
-    return &TmallItemStoreUpdateSchemaGetRequest{
+// 初始化TmallItemStoreUpdateSchemaGetAPIRequest对象
+func NewTmallItemStoreUpdateSchemaGetRequest() *TmallItemStoreUpdateSchemaGetAPIRequest{
+    return &TmallItemStoreUpdateSchemaGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallItemStoreUpdateSchemaGetRequest) GetApiMethodName() string {
+func (r TmallItemStoreUpdateSchemaGetAPIRequest) GetApiMethodName() string {
     return "tmall.item.store.update.schema.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallItemStoreUpdateSchemaGetRequest) GetApiParams() url.Values {
+func (r TmallItemStoreUpdateSchemaGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallItemStoreUpdateSchemaGetRequest) GetApiParams() url.Values {
 }
 // MainItemId Setter
 // 主商品ID
-func (r *TmallItemStoreUpdateSchemaGetRequest) SetMainItemId(_mainItemId int64) error {
+func (r *TmallItemStoreUpdateSchemaGetAPIRequest) SetMainItemId(_mainItemId int64) error {
     r._mainItemId = _mainItemId
     r.Set("main_item_id", _mainItemId)
     return nil
 }
 
 // MainItemId Getter
-func (r TmallItemStoreUpdateSchemaGetRequest) GetMainItemId() int64 {
+func (r TmallItemStoreUpdateSchemaGetAPIRequest) GetMainItemId() int64 {
     return r._mainItemId
 }
 // StoreId Setter
 // 门店ID
-func (r *TmallItemStoreUpdateSchemaGetRequest) SetStoreId(_storeId int64) error {
+func (r *TmallItemStoreUpdateSchemaGetAPIRequest) SetStoreId(_storeId int64) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r TmallItemStoreUpdateSchemaGetRequest) GetStoreId() int64 {
+func (r TmallItemStoreUpdateSchemaGetAPIRequest) GetStoreId() int64 {
     return r._storeId
 }

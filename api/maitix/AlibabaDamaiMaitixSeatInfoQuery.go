@@ -11,7 +11,7 @@ alibaba.damai.maitix.seat.info.query
 
 分销查询座位文案信息
 */
-func AlibabaDamaiMaitixSeatInfoQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixSeatInfoQueryRequest, session string) (*maitix.AlibabaDamaiMaitixSeatInfoQueryAPIResponse, error) {
+func AlibabaDamaiMaitixSeatInfoQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixSeatInfoQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixSeatInfoQueryAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixSeatInfoQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

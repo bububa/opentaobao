@@ -12,7 +12,7 @@ alibaba.seaking.imagetranslate
 
 图片机器翻译
 */
-type AlibabaSeakingImagetranslateRequest struct {
+type AlibabaSeakingImagetranslateAPIRequest struct {
     model.Params
     // erp用户id
     _identifier   string
@@ -28,20 +28,20 @@ type AlibabaSeakingImagetranslateRequest struct {
     _extra   *Extra
 }
 
-// 初始化AlibabaSeakingImagetranslateRequest对象
-func NewAlibabaSeakingImagetranslateRequest() *AlibabaSeakingImagetranslateRequest{
-    return &AlibabaSeakingImagetranslateRequest{
+// 初始化AlibabaSeakingImagetranslateAPIRequest对象
+func NewAlibabaSeakingImagetranslateRequest() *AlibabaSeakingImagetranslateAPIRequest{
+    return &AlibabaSeakingImagetranslateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSeakingImagetranslateRequest) GetApiMethodName() string {
+func (r AlibabaSeakingImagetranslateAPIRequest) GetApiMethodName() string {
     return "alibaba.seaking.imagetranslate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSeakingImagetranslateRequest) GetApiParams() url.Values {
+func (r AlibabaSeakingImagetranslateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -50,73 +50,73 @@ func (r AlibabaSeakingImagetranslateRequest) GetApiParams() url.Values {
 }
 // Identifier Setter
 // erp用户id
-func (r *AlibabaSeakingImagetranslateRequest) SetIdentifier(_identifier string) error {
+func (r *AlibabaSeakingImagetranslateAPIRequest) SetIdentifier(_identifier string) error {
     r._identifier = _identifier
     r.Set("identifier", _identifier)
     return nil
 }
 
 // Identifier Getter
-func (r AlibabaSeakingImagetranslateRequest) GetIdentifier() string {
+func (r AlibabaSeakingImagetranslateAPIRequest) GetIdentifier() string {
     return r._identifier
 }
 // TargetLang Setter
 // 目标语种
-func (r *AlibabaSeakingImagetranslateRequest) SetTargetLang(_targetLang string) error {
+func (r *AlibabaSeakingImagetranslateAPIRequest) SetTargetLang(_targetLang string) error {
     r._targetLang = _targetLang
     r.Set("target_lang", _targetLang)
     return nil
 }
 
 // TargetLang Getter
-func (r AlibabaSeakingImagetranslateRequest) GetTargetLang() string {
+func (r AlibabaSeakingImagetranslateAPIRequest) GetTargetLang() string {
     return r._targetLang
 }
 // SourceLang Setter
 // 源语种
-func (r *AlibabaSeakingImagetranslateRequest) SetSourceLang(_sourceLang string) error {
+func (r *AlibabaSeakingImagetranslateAPIRequest) SetSourceLang(_sourceLang string) error {
     r._sourceLang = _sourceLang
     r.Set("source_lang", _sourceLang)
     return nil
 }
 
 // SourceLang Getter
-func (r AlibabaSeakingImagetranslateRequest) GetSourceLang() string {
+func (r AlibabaSeakingImagetranslateAPIRequest) GetSourceLang() string {
     return r._sourceLang
 }
 // IdentifierType Setter
 // 调用来源(erp名称)
-func (r *AlibabaSeakingImagetranslateRequest) SetIdentifierType(_identifierType string) error {
+func (r *AlibabaSeakingImagetranslateAPIRequest) SetIdentifierType(_identifierType string) error {
     r._identifierType = _identifierType
     r.Set("identifier_type", _identifierType)
     return nil
 }
 
 // IdentifierType Getter
-func (r AlibabaSeakingImagetranslateRequest) GetIdentifierType() string {
+func (r AlibabaSeakingImagetranslateAPIRequest) GetIdentifierType() string {
     return r._identifierType
 }
 // Url Setter
 // 原图url
-func (r *AlibabaSeakingImagetranslateRequest) SetUrl(_url string) error {
+func (r *AlibabaSeakingImagetranslateAPIRequest) SetUrl(_url string) error {
     r._url = _url
     r.Set("url", _url)
     return nil
 }
 
 // Url Getter
-func (r AlibabaSeakingImagetranslateRequest) GetUrl() string {
+func (r AlibabaSeakingImagetranslateAPIRequest) GetUrl() string {
     return r._url
 }
 // Extra Setter
 // 扩展信息
-func (r *AlibabaSeakingImagetranslateRequest) SetExtra(_extra *Extra) error {
+func (r *AlibabaSeakingImagetranslateAPIRequest) SetExtra(_extra *Extra) error {
     r._extra = _extra
     r.Set("extra", _extra)
     return nil
 }
 
 // Extra Getter
-func (r AlibabaSeakingImagetranslateRequest) GetExtra() *Extra {
+func (r AlibabaSeakingImagetranslateAPIRequest) GetExtra() *Extra {
     return r._extra
 }

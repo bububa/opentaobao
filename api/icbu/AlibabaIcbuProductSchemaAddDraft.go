@@ -11,7 +11,7 @@ alibaba.icbu.product.schema.add.draft
 
 提供发布ICBU商品草稿的入口
 */
-func AlibabaIcbuProductSchemaAddDraft(clt *core.SDKClient, req *icbu.AlibabaIcbuProductSchemaAddDraftRequest, session string) (*icbu.AlibabaIcbuProductSchemaAddDraftAPIResponse, error) {
+func AlibabaIcbuProductSchemaAddDraft(clt *core.SDKClient, req *icbu.AlibabaIcbuProductSchemaAddDraftAPIRequest, session string) (*icbu.AlibabaIcbuProductSchemaAddDraftAPIResponse, error) {
     var resp icbu.AlibabaIcbuProductSchemaAddDraftAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

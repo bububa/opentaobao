@@ -11,7 +11,7 @@ cainiao.waybill.ii.search
 
 获取发货地&CP开通状态&账户的使用情况
 */
-func CainiaoWaybillIiSearch(clt *core.SDKClient, req *waybill.CainiaoWaybillIiSearchRequest, session string) (*waybill.CainiaoWaybillIiSearchAPIResponse, error) {
+func CainiaoWaybillIiSearch(clt *core.SDKClient, req *waybill.CainiaoWaybillIiSearchAPIRequest, session string) (*waybill.CainiaoWaybillIiSearchAPIResponse, error) {
     var resp waybill.CainiaoWaybillIiSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

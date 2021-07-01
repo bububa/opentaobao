@@ -12,26 +12,26 @@ taobao.bus.refundticketprice.set
 
 汽车票代理商利用该接口申请退票
 */
-type TaobaoBusRefundticketpriceSetRequest struct {
+type TaobaoBusRefundticketpriceSetAPIRequest struct {
     model.Params
     // 退票申请入参
     _offlineRefundTicketRq   *OfflineRefundTicketPriceRq
 }
 
-// 初始化TaobaoBusRefundticketpriceSetRequest对象
-func NewTaobaoBusRefundticketpriceSetRequest() *TaobaoBusRefundticketpriceSetRequest{
-    return &TaobaoBusRefundticketpriceSetRequest{
+// 初始化TaobaoBusRefundticketpriceSetAPIRequest对象
+func NewTaobaoBusRefundticketpriceSetRequest() *TaobaoBusRefundticketpriceSetAPIRequest{
+    return &TaobaoBusRefundticketpriceSetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBusRefundticketpriceSetRequest) GetApiMethodName() string {
+func (r TaobaoBusRefundticketpriceSetAPIRequest) GetApiMethodName() string {
     return "taobao.bus.refundticketprice.set"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBusRefundticketpriceSetRequest) GetApiParams() url.Values {
+func (r TaobaoBusRefundticketpriceSetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBusRefundticketpriceSetRequest) GetApiParams() url.Values {
 }
 // OfflineRefundTicketRq Setter
 // 退票申请入参
-func (r *TaobaoBusRefundticketpriceSetRequest) SetOfflineRefundTicketRq(_offlineRefundTicketRq *OfflineRefundTicketPriceRq) error {
+func (r *TaobaoBusRefundticketpriceSetAPIRequest) SetOfflineRefundTicketRq(_offlineRefundTicketRq *OfflineRefundTicketPriceRq) error {
     r._offlineRefundTicketRq = _offlineRefundTicketRq
     r.Set("offline_refund_ticket_rq", _offlineRefundTicketRq)
     return nil
 }
 
 // OfflineRefundTicketRq Getter
-func (r TaobaoBusRefundticketpriceSetRequest) GetOfflineRefundTicketRq() *OfflineRefundTicketPriceRq {
+func (r TaobaoBusRefundticketpriceSetAPIRequest) GetOfflineRefundTicketRq() *OfflineRefundTicketPriceRq {
     return r._offlineRefundTicketRq
 }

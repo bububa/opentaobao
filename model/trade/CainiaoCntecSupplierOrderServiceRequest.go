@@ -13,26 +13,26 @@ cainiao.cntec.supplier.order.service
 提供给供货商查询订单信息的接口，返回给供货商的订单数据已经是脱敏精简后的，比如订单ID用户ID已经用md5加密，用户昵称已经脱敏，商品信息本身是供货商提供的。
 数据查询的范围只和供货商的身份有关系，比如大润发的用户只能查询大润发的订单，而且会校验身份和颁发的appkey之间的关系，并且目前对接的只有一个供货商
 */
-type CainiaoCntecSupplierOrderServiceRequest struct {
+type CainiaoCntecSupplierOrderServiceAPIRequest struct {
     model.Params
     // 系统自动生成
     _queryConditioin   *SupplierOrderQueryDTO
 }
 
-// 初始化CainiaoCntecSupplierOrderServiceRequest对象
-func NewCainiaoCntecSupplierOrderServiceRequest() *CainiaoCntecSupplierOrderServiceRequest{
-    return &CainiaoCntecSupplierOrderServiceRequest{
+// 初始化CainiaoCntecSupplierOrderServiceAPIRequest对象
+func NewCainiaoCntecSupplierOrderServiceRequest() *CainiaoCntecSupplierOrderServiceAPIRequest{
+    return &CainiaoCntecSupplierOrderServiceAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCntecSupplierOrderServiceRequest) GetApiMethodName() string {
+func (r CainiaoCntecSupplierOrderServiceAPIRequest) GetApiMethodName() string {
     return "cainiao.cntec.supplier.order.service"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCntecSupplierOrderServiceRequest) GetApiParams() url.Values {
+func (r CainiaoCntecSupplierOrderServiceAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -41,13 +41,13 @@ func (r CainiaoCntecSupplierOrderServiceRequest) GetApiParams() url.Values {
 }
 // QueryConditioin Setter
 // 系统自动生成
-func (r *CainiaoCntecSupplierOrderServiceRequest) SetQueryConditioin(_queryConditioin *SupplierOrderQueryDTO) error {
+func (r *CainiaoCntecSupplierOrderServiceAPIRequest) SetQueryConditioin(_queryConditioin *SupplierOrderQueryDTO) error {
     r._queryConditioin = _queryConditioin
     r.Set("query_conditioin", _queryConditioin)
     return nil
 }
 
 // QueryConditioin Getter
-func (r CainiaoCntecSupplierOrderServiceRequest) GetQueryConditioin() *SupplierOrderQueryDTO {
+func (r CainiaoCntecSupplierOrderServiceAPIRequest) GetQueryConditioin() *SupplierOrderQueryDTO {
     return r._queryConditioin
 }

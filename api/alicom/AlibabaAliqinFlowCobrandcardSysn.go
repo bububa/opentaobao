@@ -11,7 +11,7 @@ alibaba.aliqin.flow.cobrandcard.sysn
 
 提供给浙江移动同步联名卡信息接口。
 */
-func AlibabaAliqinFlowCobrandcardSysn(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowCobrandcardSysnRequest, session string) (*alicom.AlibabaAliqinFlowCobrandcardSysnAPIResponse, error) {
+func AlibabaAliqinFlowCobrandcardSysn(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowCobrandcardSysnAPIRequest, session string) (*alicom.AlibabaAliqinFlowCobrandcardSysnAPIResponse, error) {
     var resp alicom.AlibabaAliqinFlowCobrandcardSysnAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

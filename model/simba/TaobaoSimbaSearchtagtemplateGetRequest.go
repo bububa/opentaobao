@@ -12,7 +12,7 @@ taobao.simba.searchtagtemplate.get
 
 获取搜索人群用户可添加人群信息
 */
-type TaobaoSimbaSearchtagtemplateGetRequest struct {
+type TaobaoSimbaSearchtagtemplateGetAPIRequest struct {
     model.Params
     // 被操作者的淘宝昵称
     _nick   string
@@ -20,20 +20,20 @@ type TaobaoSimbaSearchtagtemplateGetRequest struct {
     _subNick   string
 }
 
-// 初始化TaobaoSimbaSearchtagtemplateGetRequest对象
-func NewTaobaoSimbaSearchtagtemplateGetRequest() *TaobaoSimbaSearchtagtemplateGetRequest{
-    return &TaobaoSimbaSearchtagtemplateGetRequest{
+// 初始化TaobaoSimbaSearchtagtemplateGetAPIRequest对象
+func NewTaobaoSimbaSearchtagtemplateGetRequest() *TaobaoSimbaSearchtagtemplateGetAPIRequest{
+    return &TaobaoSimbaSearchtagtemplateGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaSearchtagtemplateGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.searchtagtemplate.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSearchtagtemplateGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSimbaSearchtagtemplateGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaoSimbaSearchtagtemplateGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaSearchtagtemplateGetRequest) GetNick() string {
+func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetNick() string {
     return r._nick
 }
 // SubNick Setter
 // 子帐号nick
-func (r *TaobaoSimbaSearchtagtemplateGetRequest) SetSubNick(_subNick string) error {
+func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) SetSubNick(_subNick string) error {
     r._subNick = _subNick
     r.Set("sub_nick", _subNick)
     return nil
 }
 
 // SubNick Getter
-func (r TaobaoSimbaSearchtagtemplateGetRequest) GetSubNick() string {
+func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetSubNick() string {
     return r._subNick
 }

@@ -12,26 +12,26 @@ alibaba.dchain.miaoshifu.customer.complaints.put
 
 数字服务供应链平台提供给服务商上传工人客诉数据
 */
-type AlibabaDchainMiaoshifuCustomerComplaintsPutRequest struct {
+type AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest struct {
     model.Params
     // 服务工人客诉对象
     _workerCustomerComplaintSaveCmd   *WorkerCustomerComplaintSaveCmd
 }
 
-// 初始化AlibabaDchainMiaoshifuCustomerComplaintsPutRequest对象
-func NewAlibabaDchainMiaoshifuCustomerComplaintsPutRequest() *AlibabaDchainMiaoshifuCustomerComplaintsPutRequest{
-    return &AlibabaDchainMiaoshifuCustomerComplaintsPutRequest{
+// 初始化AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest对象
+func NewAlibabaDchainMiaoshifuCustomerComplaintsPutRequest() *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest{
+    return &AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDchainMiaoshifuCustomerComplaintsPutRequest) GetApiMethodName() string {
+func (r AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) GetApiMethodName() string {
     return "alibaba.dchain.miaoshifu.customer.complaints.put"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDchainMiaoshifuCustomerComplaintsPutRequest) GetApiParams() url.Values {
+func (r AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDchainMiaoshifuCustomerComplaintsPutRequest) GetApiParams() url.V
 }
 // WorkerCustomerComplaintSaveCmd Setter
 // 服务工人客诉对象
-func (r *AlibabaDchainMiaoshifuCustomerComplaintsPutRequest) SetWorkerCustomerComplaintSaveCmd(_workerCustomerComplaintSaveCmd *WorkerCustomerComplaintSaveCmd) error {
+func (r *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) SetWorkerCustomerComplaintSaveCmd(_workerCustomerComplaintSaveCmd *WorkerCustomerComplaintSaveCmd) error {
     r._workerCustomerComplaintSaveCmd = _workerCustomerComplaintSaveCmd
     r.Set("worker_customer_complaint_save_cmd", _workerCustomerComplaintSaveCmd)
     return nil
 }
 
 // WorkerCustomerComplaintSaveCmd Getter
-func (r AlibabaDchainMiaoshifuCustomerComplaintsPutRequest) GetWorkerCustomerComplaintSaveCmd() *WorkerCustomerComplaintSaveCmd {
+func (r AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) GetWorkerCustomerComplaintSaveCmd() *WorkerCustomerComplaintSaveCmd {
     return r._workerCustomerComplaintSaveCmd
 }

@@ -11,7 +11,7 @@ taobao.omni.dealer.oders.get
 
 全渠道经销商获取单笔订单的详细信息
 */
-func TaobaoOmniDealerOdersGet(clt *core.SDKClient, req *omniorder.TaobaoOmniDealerOdersGetRequest, session string) (*omniorder.TaobaoOmniDealerOdersGetAPIResponse, error) {
+func TaobaoOmniDealerOdersGet(clt *core.SDKClient, req *omniorder.TaobaoOmniDealerOdersGetAPIRequest, session string) (*omniorder.TaobaoOmniDealerOdersGetAPIResponse, error) {
     var resp omniorder.TaobaoOmniDealerOdersGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ alibaba.wdk.marketing.itemdiscount.additem
 
 在商品特价活动中报名特价商品
 */
-type AlibabaWdkMarketingItemdiscountAdditemRequest struct {
+type AlibabaWdkMarketingItemdiscountAdditemAPIRequest struct {
     model.Params
     // 商品对象
     _param0   *ItemDiscountSku
@@ -20,20 +20,20 @@ type AlibabaWdkMarketingItemdiscountAdditemRequest struct {
     _param1   *CommonActivityParam
 }
 
-// 初始化AlibabaWdkMarketingItemdiscountAdditemRequest对象
-func NewAlibabaWdkMarketingItemdiscountAdditemRequest() *AlibabaWdkMarketingItemdiscountAdditemRequest{
-    return &AlibabaWdkMarketingItemdiscountAdditemRequest{
+// 初始化AlibabaWdkMarketingItemdiscountAdditemAPIRequest对象
+func NewAlibabaWdkMarketingItemdiscountAdditemRequest() *AlibabaWdkMarketingItemdiscountAdditemAPIRequest{
+    return &AlibabaWdkMarketingItemdiscountAdditemAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingItemdiscountAdditemRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingItemdiscountAdditemAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.itemdiscount.additem"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingItemdiscountAdditemRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingItemdiscountAdditemAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaWdkMarketingItemdiscountAdditemRequest) GetApiParams() url.Values
 }
 // Param0 Setter
 // 商品对象
-func (r *AlibabaWdkMarketingItemdiscountAdditemRequest) SetParam0(_param0 *ItemDiscountSku) error {
+func (r *AlibabaWdkMarketingItemdiscountAdditemAPIRequest) SetParam0(_param0 *ItemDiscountSku) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaWdkMarketingItemdiscountAdditemRequest) GetParam0() *ItemDiscountSku {
+func (r AlibabaWdkMarketingItemdiscountAdditemAPIRequest) GetParam0() *ItemDiscountSku {
     return r._param0
 }
 // Param1 Setter
 // 活动基本信息
-func (r *AlibabaWdkMarketingItemdiscountAdditemRequest) SetParam1(_param1 *CommonActivityParam) error {
+func (r *AlibabaWdkMarketingItemdiscountAdditemAPIRequest) SetParam1(_param1 *CommonActivityParam) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaWdkMarketingItemdiscountAdditemRequest) GetParam1() *CommonActivityParam {
+func (r AlibabaWdkMarketingItemdiscountAdditemAPIRequest) GetParam1() *CommonActivityParam {
     return r._param1
 }

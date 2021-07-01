@@ -12,7 +12,7 @@ taobao.openmall.item.salearea.get
 
 获取openmall商品的可售区域
 */
-type TaobaoOpenmallItemSaleareaGetRequest struct {
+type TaobaoOpenmallItemSaleareaGetAPIRequest struct {
     model.Params
     // 商品SKU
     _skuIds   string
@@ -20,20 +20,20 @@ type TaobaoOpenmallItemSaleareaGetRequest struct {
     _itemId   int64
 }
 
-// 初始化TaobaoOpenmallItemSaleareaGetRequest对象
-func NewTaobaoOpenmallItemSaleareaGetRequest() *TaobaoOpenmallItemSaleareaGetRequest{
-    return &TaobaoOpenmallItemSaleareaGetRequest{
+// 初始化TaobaoOpenmallItemSaleareaGetAPIRequest对象
+func NewTaobaoOpenmallItemSaleareaGetRequest() *TaobaoOpenmallItemSaleareaGetAPIRequest{
+    return &TaobaoOpenmallItemSaleareaGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenmallItemSaleareaGetRequest) GetApiMethodName() string {
+func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetApiMethodName() string {
     return "taobao.openmall.item.salearea.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallItemSaleareaGetRequest) GetApiParams() url.Values {
+func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOpenmallItemSaleareaGetRequest) GetApiParams() url.Values {
 }
 // SkuIds Setter
 // 商品SKU
-func (r *TaobaoOpenmallItemSaleareaGetRequest) SetSkuIds(_skuIds string) error {
+func (r *TaobaoOpenmallItemSaleareaGetAPIRequest) SetSkuIds(_skuIds string) error {
     r._skuIds = _skuIds
     r.Set("sku_ids", _skuIds)
     return nil
 }
 
 // SkuIds Getter
-func (r TaobaoOpenmallItemSaleareaGetRequest) GetSkuIds() string {
+func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetSkuIds() string {
     return r._skuIds
 }
 // ItemId Setter
 // 商品ID
-func (r *TaobaoOpenmallItemSaleareaGetRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoOpenmallItemSaleareaGetAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoOpenmallItemSaleareaGetRequest) GetItemId() int64 {
+func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetItemId() int64 {
     return r._itemId
 }

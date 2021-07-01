@@ -11,7 +11,7 @@ taobao.fenxiao.product.map.add
 
 创建分销和供应链商品映射关系。
 */
-func TaobaoFenxiaoProductMapAdd(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductMapAddRequest, session string) (*fenxiao.TaobaoFenxiaoProductMapAddAPIResponse, error) {
+func TaobaoFenxiaoProductMapAdd(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductMapAddAPIRequest, session string) (*fenxiao.TaobaoFenxiaoProductMapAddAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoProductMapAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

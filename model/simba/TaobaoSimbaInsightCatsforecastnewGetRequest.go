@@ -12,26 +12,26 @@ taobao.simba.insight.catsforecastnew.get
 
 根据给定的词，预测这些词的相关类目
 */
-type TaobaoSimbaInsightCatsforecastnewGetRequest struct {
+type TaobaoSimbaInsightCatsforecastnewGetAPIRequest struct {
     model.Params
     // 需要查询的词列表
     _bidwordList   []string
 }
 
-// 初始化TaobaoSimbaInsightCatsforecastnewGetRequest对象
-func NewTaobaoSimbaInsightCatsforecastnewGetRequest() *TaobaoSimbaInsightCatsforecastnewGetRequest{
-    return &TaobaoSimbaInsightCatsforecastnewGetRequest{
+// 初始化TaobaoSimbaInsightCatsforecastnewGetAPIRequest对象
+func NewTaobaoSimbaInsightCatsforecastnewGetRequest() *TaobaoSimbaInsightCatsforecastnewGetAPIRequest{
+    return &TaobaoSimbaInsightCatsforecastnewGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaInsightCatsforecastnewGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaInsightCatsforecastnewGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.insight.catsforecastnew.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaInsightCatsforecastnewGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaInsightCatsforecastnewGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSimbaInsightCatsforecastnewGetRequest) GetApiParams() url.Values {
 }
 // BidwordList Setter
 // 需要查询的词列表
-func (r *TaobaoSimbaInsightCatsforecastnewGetRequest) SetBidwordList(_bidwordList []string) error {
+func (r *TaobaoSimbaInsightCatsforecastnewGetAPIRequest) SetBidwordList(_bidwordList []string) error {
     r._bidwordList = _bidwordList
     r.Set("bidword_list", _bidwordList)
     return nil
 }
 
 // BidwordList Getter
-func (r TaobaoSimbaInsightCatsforecastnewGetRequest) GetBidwordList() []string {
+func (r TaobaoSimbaInsightCatsforecastnewGetAPIRequest) GetBidwordList() []string {
     return r._bidwordList
 }

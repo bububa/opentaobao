@@ -11,7 +11,7 @@ yunos.tvpubadmin.adm.ott.query
 
 查询广告素材
 */
-func YunosTvpubadminAdmOttQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminAdmOttQueryRequest, session string) (*tvupadmin.YunosTvpubadminAdmOttQueryAPIResponse, error) {
+func YunosTvpubadminAdmOttQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminAdmOttQueryAPIRequest, session string) (*tvupadmin.YunosTvpubadminAdmOttQueryAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminAdmOttQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

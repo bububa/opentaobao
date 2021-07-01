@@ -12,26 +12,26 @@ alibaba.tmallgenie.scp.plan.inventor.qty.get
 
 同步库存现有量
 */
-type AlibabaTmallgenieScpPlanInventorQtyGetRequest struct {
+type AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest struct {
     model.Params
     // 扩展参数
     _requestExtendJson   string
 }
 
-// 初始化AlibabaTmallgenieScpPlanInventorQtyGetRequest对象
-func NewAlibabaTmallgenieScpPlanInventorQtyGetRequest() *AlibabaTmallgenieScpPlanInventorQtyGetRequest{
-    return &AlibabaTmallgenieScpPlanInventorQtyGetRequest{
+// 初始化AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest对象
+func NewAlibabaTmallgenieScpPlanInventorQtyGetRequest() *AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest{
+    return &AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTmallgenieScpPlanInventorQtyGetRequest) GetApiMethodName() string {
+func (r AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest) GetApiMethodName() string {
     return "alibaba.tmallgenie.scp.plan.inventor.qty.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTmallgenieScpPlanInventorQtyGetRequest) GetApiParams() url.Values {
+func (r AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanInventorQtyGetRequest) GetApiParams() url.Values
 }
 // RequestExtendJson Setter
 // 扩展参数
-func (r *AlibabaTmallgenieScpPlanInventorQtyGetRequest) SetRequestExtendJson(_requestExtendJson string) error {
+func (r *AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest) SetRequestExtendJson(_requestExtendJson string) error {
     r._requestExtendJson = _requestExtendJson
     r.Set("request_extend_json", _requestExtendJson)
     return nil
 }
 
 // RequestExtendJson Getter
-func (r AlibabaTmallgenieScpPlanInventorQtyGetRequest) GetRequestExtendJson() string {
+func (r AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest) GetRequestExtendJson() string {
     return r._requestExtendJson
 }

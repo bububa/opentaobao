@@ -11,7 +11,7 @@ alibaba.einvoice.qrcode.create
 
 扫码开票功能中的二维码生成接口，pos机等发起请求生成二维码
 */
-func AlibabaEinvoiceQrcodeCreate(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceQrcodeCreateRequest, session string) (*einvoice.AlibabaEinvoiceQrcodeCreateAPIResponse, error) {
+func AlibabaEinvoiceQrcodeCreate(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceQrcodeCreateAPIRequest, session string) (*einvoice.AlibabaEinvoiceQrcodeCreateAPIResponse, error) {
     var resp einvoice.AlibabaEinvoiceQrcodeCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

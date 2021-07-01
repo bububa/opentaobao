@@ -12,26 +12,26 @@ alibaba.alsc.crm.recharge.charge.update
 
 顾客储值账户充值
 */
-type AlibabaAlscCrmRechargeChargeUpdateRequest struct {
+type AlibabaAlscCrmRechargeChargeUpdateAPIRequest struct {
     model.Params
     // 入参
     _paramRechargeOpenReq   *RechargeOpenReq
 }
 
-// 初始化AlibabaAlscCrmRechargeChargeUpdateRequest对象
-func NewAlibabaAlscCrmRechargeChargeUpdateRequest() *AlibabaAlscCrmRechargeChargeUpdateRequest{
-    return &AlibabaAlscCrmRechargeChargeUpdateRequest{
+// 初始化AlibabaAlscCrmRechargeChargeUpdateAPIRequest对象
+func NewAlibabaAlscCrmRechargeChargeUpdateRequest() *AlibabaAlscCrmRechargeChargeUpdateAPIRequest{
+    return &AlibabaAlscCrmRechargeChargeUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRechargeChargeUpdateRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmRechargeChargeUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.recharge.charge.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRechargeChargeUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmRechargeChargeUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeChargeUpdateRequest) GetApiParams() url.Values {
 }
 // ParamRechargeOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeChargeUpdateRequest) SetParamRechargeOpenReq(_paramRechargeOpenReq *RechargeOpenReq) error {
+func (r *AlibabaAlscCrmRechargeChargeUpdateAPIRequest) SetParamRechargeOpenReq(_paramRechargeOpenReq *RechargeOpenReq) error {
     r._paramRechargeOpenReq = _paramRechargeOpenReq
     r.Set("param_recharge_open_req", _paramRechargeOpenReq)
     return nil
 }
 
 // ParamRechargeOpenReq Getter
-func (r AlibabaAlscCrmRechargeChargeUpdateRequest) GetParamRechargeOpenReq() *RechargeOpenReq {
+func (r AlibabaAlscCrmRechargeChargeUpdateAPIRequest) GetParamRechargeOpenReq() *RechargeOpenReq {
     return r._paramRechargeOpenReq
 }

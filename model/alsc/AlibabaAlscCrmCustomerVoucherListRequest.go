@@ -12,26 +12,26 @@ alibaba.alsc.crm.customer.voucher.list
 
 获取顾客优惠券列表
 */
-type AlibabaAlscCrmCustomerVoucherListRequest struct {
+type AlibabaAlscCrmCustomerVoucherListAPIRequest struct {
     model.Params
     // 获取顾客优惠券列表
     _customerVoucherFullOpenReq   *CustomerVoucherFullOpenReq
 }
 
-// 初始化AlibabaAlscCrmCustomerVoucherListRequest对象
-func NewAlibabaAlscCrmCustomerVoucherListRequest() *AlibabaAlscCrmCustomerVoucherListRequest{
-    return &AlibabaAlscCrmCustomerVoucherListRequest{
+// 初始化AlibabaAlscCrmCustomerVoucherListAPIRequest对象
+func NewAlibabaAlscCrmCustomerVoucherListRequest() *AlibabaAlscCrmCustomerVoucherListAPIRequest{
+    return &AlibabaAlscCrmCustomerVoucherListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmCustomerVoucherListRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.customer.voucher.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmCustomerVoucherListRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCustomerVoucherListRequest) GetApiParams() url.Values {
 }
 // CustomerVoucherFullOpenReq Setter
 // 获取顾客优惠券列表
-func (r *AlibabaAlscCrmCustomerVoucherListRequest) SetCustomerVoucherFullOpenReq(_customerVoucherFullOpenReq *CustomerVoucherFullOpenReq) error {
+func (r *AlibabaAlscCrmCustomerVoucherListAPIRequest) SetCustomerVoucherFullOpenReq(_customerVoucherFullOpenReq *CustomerVoucherFullOpenReq) error {
     r._customerVoucherFullOpenReq = _customerVoucherFullOpenReq
     r.Set("customer_voucher_full_open_req", _customerVoucherFullOpenReq)
     return nil
 }
 
 // CustomerVoucherFullOpenReq Getter
-func (r AlibabaAlscCrmCustomerVoucherListRequest) GetCustomerVoucherFullOpenReq() *CustomerVoucherFullOpenReq {
+func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetCustomerVoucherFullOpenReq() *CustomerVoucherFullOpenReq {
     return r._customerVoucherFullOpenReq
 }

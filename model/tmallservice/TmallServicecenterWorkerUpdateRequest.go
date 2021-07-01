@@ -27,26 +27,26 @@ tmall.servicecenter.worker.update
 11001, biz_type 无效
 20001,已查询到最后一页
 */
-type TmallServicecenterWorkerUpdateRequest struct {
+type TmallServicecenterWorkerUpdateAPIRequest struct {
     model.Params
     // 工人信息
     _worker   *WorkerDTO
 }
 
-// 初始化TmallServicecenterWorkerUpdateRequest对象
-func NewTmallServicecenterWorkerUpdateRequest() *TmallServicecenterWorkerUpdateRequest{
-    return &TmallServicecenterWorkerUpdateRequest{
+// 初始化TmallServicecenterWorkerUpdateAPIRequest对象
+func NewTmallServicecenterWorkerUpdateRequest() *TmallServicecenterWorkerUpdateAPIRequest{
+    return &TmallServicecenterWorkerUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkerUpdateRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkerUpdateAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.worker.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkerUpdateRequest) GetApiParams() url.Values {
+func (r TmallServicecenterWorkerUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -55,13 +55,13 @@ func (r TmallServicecenterWorkerUpdateRequest) GetApiParams() url.Values {
 }
 // Worker Setter
 // 工人信息
-func (r *TmallServicecenterWorkerUpdateRequest) SetWorker(_worker *WorkerDTO) error {
+func (r *TmallServicecenterWorkerUpdateAPIRequest) SetWorker(_worker *WorkerDTO) error {
     r._worker = _worker
     r.Set("worker", _worker)
     return nil
 }
 
 // Worker Getter
-func (r TmallServicecenterWorkerUpdateRequest) GetWorker() *WorkerDTO {
+func (r TmallServicecenterWorkerUpdateAPIRequest) GetWorker() *WorkerDTO {
     return r._worker
 }

@@ -12,26 +12,26 @@ alibaba.wdk.eleme.bill.get
 
 查询饿了么日维度对账单信息
 */
-type AlibabaWdkElemeBillGetRequest struct {
+type AlibabaWdkElemeBillGetAPIRequest struct {
     model.Params
     // 对账单查询参数
     _eleBillRequest   *EleBillRequest
 }
 
-// 初始化AlibabaWdkElemeBillGetRequest对象
-func NewAlibabaWdkElemeBillGetRequest() *AlibabaWdkElemeBillGetRequest{
-    return &AlibabaWdkElemeBillGetRequest{
+// 初始化AlibabaWdkElemeBillGetAPIRequest对象
+func NewAlibabaWdkElemeBillGetRequest() *AlibabaWdkElemeBillGetAPIRequest{
+    return &AlibabaWdkElemeBillGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkElemeBillGetRequest) GetApiMethodName() string {
+func (r AlibabaWdkElemeBillGetAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.eleme.bill.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkElemeBillGetRequest) GetApiParams() url.Values {
+func (r AlibabaWdkElemeBillGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkElemeBillGetRequest) GetApiParams() url.Values {
 }
 // EleBillRequest Setter
 // 对账单查询参数
-func (r *AlibabaWdkElemeBillGetRequest) SetEleBillRequest(_eleBillRequest *EleBillRequest) error {
+func (r *AlibabaWdkElemeBillGetAPIRequest) SetEleBillRequest(_eleBillRequest *EleBillRequest) error {
     r._eleBillRequest = _eleBillRequest
     r.Set("ele_bill_request", _eleBillRequest)
     return nil
 }
 
 // EleBillRequest Getter
-func (r AlibabaWdkElemeBillGetRequest) GetEleBillRequest() *EleBillRequest {
+func (r AlibabaWdkElemeBillGetAPIRequest) GetEleBillRequest() *EleBillRequest {
     return r._eleBillRequest
 }

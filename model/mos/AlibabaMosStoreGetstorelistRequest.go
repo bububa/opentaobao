@@ -12,26 +12,26 @@ alibaba.mos.store.getstorelist
 
 根据屏编号获取专柜集
 */
-type AlibabaMosStoreGetstorelistRequest struct {
+type AlibabaMosStoreGetstorelistAPIRequest struct {
     model.Params
     // 屏编号
     _screenNo   string
 }
 
-// 初始化AlibabaMosStoreGetstorelistRequest对象
-func NewAlibabaMosStoreGetstorelistRequest() *AlibabaMosStoreGetstorelistRequest{
-    return &AlibabaMosStoreGetstorelistRequest{
+// 初始化AlibabaMosStoreGetstorelistAPIRequest对象
+func NewAlibabaMosStoreGetstorelistRequest() *AlibabaMosStoreGetstorelistAPIRequest{
+    return &AlibabaMosStoreGetstorelistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMosStoreGetstorelistRequest) GetApiMethodName() string {
+func (r AlibabaMosStoreGetstorelistAPIRequest) GetApiMethodName() string {
     return "alibaba.mos.store.getstorelist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMosStoreGetstorelistRequest) GetApiParams() url.Values {
+func (r AlibabaMosStoreGetstorelistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMosStoreGetstorelistRequest) GetApiParams() url.Values {
 }
 // ScreenNo Setter
 // 屏编号
-func (r *AlibabaMosStoreGetstorelistRequest) SetScreenNo(_screenNo string) error {
+func (r *AlibabaMosStoreGetstorelistAPIRequest) SetScreenNo(_screenNo string) error {
     r._screenNo = _screenNo
     r.Set("screen_no", _screenNo)
     return nil
 }
 
 // ScreenNo Getter
-func (r AlibabaMosStoreGetstorelistRequest) GetScreenNo() string {
+func (r AlibabaMosStoreGetstorelistAPIRequest) GetScreenNo() string {
     return r._screenNo
 }

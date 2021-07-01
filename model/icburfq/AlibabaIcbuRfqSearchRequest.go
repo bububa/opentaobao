@@ -12,7 +12,7 @@ alibaba.icbu.rfq.search
 
 用于查询RFQ的信息
 */
-type AlibabaIcbuRfqSearchRequest struct {
+type AlibabaIcbuRfqSearchAPIRequest struct {
     model.Params
     // 验证
     _md5key   string
@@ -20,20 +20,20 @@ type AlibabaIcbuRfqSearchRequest struct {
     _cond   *RfqRequestSearchCondDTO
 }
 
-// 初始化AlibabaIcbuRfqSearchRequest对象
-func NewAlibabaIcbuRfqSearchRequest() *AlibabaIcbuRfqSearchRequest{
-    return &AlibabaIcbuRfqSearchRequest{
+// 初始化AlibabaIcbuRfqSearchAPIRequest对象
+func NewAlibabaIcbuRfqSearchRequest() *AlibabaIcbuRfqSearchAPIRequest{
+    return &AlibabaIcbuRfqSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuRfqSearchRequest) GetApiMethodName() string {
+func (r AlibabaIcbuRfqSearchAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.rfq.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuRfqSearchRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuRfqSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaIcbuRfqSearchRequest) GetApiParams() url.Values {
 }
 // Md5key Setter
 // 验证
-func (r *AlibabaIcbuRfqSearchRequest) SetMd5key(_md5key string) error {
+func (r *AlibabaIcbuRfqSearchAPIRequest) SetMd5key(_md5key string) error {
     r._md5key = _md5key
     r.Set("md5key", _md5key)
     return nil
 }
 
 // Md5key Getter
-func (r AlibabaIcbuRfqSearchRequest) GetMd5key() string {
+func (r AlibabaIcbuRfqSearchAPIRequest) GetMd5key() string {
     return r._md5key
 }
 // Cond Setter
 // 查询条件
-func (r *AlibabaIcbuRfqSearchRequest) SetCond(_cond *RfqRequestSearchCondDTO) error {
+func (r *AlibabaIcbuRfqSearchAPIRequest) SetCond(_cond *RfqRequestSearchCondDTO) error {
     r._cond = _cond
     r.Set("cond", _cond)
     return nil
 }
 
 // Cond Getter
-func (r AlibabaIcbuRfqSearchRequest) GetCond() *RfqRequestSearchCondDTO {
+func (r AlibabaIcbuRfqSearchAPIRequest) GetCond() *RfqRequestSearchCondDTO {
     return r._cond
 }

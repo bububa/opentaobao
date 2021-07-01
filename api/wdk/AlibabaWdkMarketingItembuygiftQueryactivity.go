@@ -11,7 +11,7 @@ alibaba.wdk.marketing.itembuygift.queryactivity
 
 查询买赠活动
 */
-func AlibabaWdkMarketingItembuygiftQueryactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftQueryactivityRequest, session string) (*wdk.AlibabaWdkMarketingItembuygiftQueryactivityAPIResponse, error) {
+func AlibabaWdkMarketingItembuygiftQueryactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftQueryactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingItembuygiftQueryactivityAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItembuygiftQueryactivityAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

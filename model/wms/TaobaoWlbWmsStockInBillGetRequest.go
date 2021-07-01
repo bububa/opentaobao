@@ -12,7 +12,7 @@ taobao.wlb.wms.stock.in.bill.get
 
 获取入库单信息
 */
-type TaobaoWlbWmsStockInBillGetRequest struct {
+type TaobaoWlbWmsStockInBillGetAPIRequest struct {
     model.Params
     // ERP订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据
     _orderCode   string
@@ -20,20 +20,20 @@ type TaobaoWlbWmsStockInBillGetRequest struct {
     _cnOrderCode   string
 }
 
-// 初始化TaobaoWlbWmsStockInBillGetRequest对象
-func NewTaobaoWlbWmsStockInBillGetRequest() *TaobaoWlbWmsStockInBillGetRequest{
-    return &TaobaoWlbWmsStockInBillGetRequest{
+// 初始化TaobaoWlbWmsStockInBillGetAPIRequest对象
+func NewTaobaoWlbWmsStockInBillGetRequest() *TaobaoWlbWmsStockInBillGetAPIRequest{
+    return &TaobaoWlbWmsStockInBillGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbWmsStockInBillGetRequest) GetApiMethodName() string {
+func (r TaobaoWlbWmsStockInBillGetAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.wms.stock.in.bill.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbWmsStockInBillGetRequest) GetApiParams() url.Values {
+func (r TaobaoWlbWmsStockInBillGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoWlbWmsStockInBillGetRequest) GetApiParams() url.Values {
 }
 // OrderCode Setter
 // ERP订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据
-func (r *TaobaoWlbWmsStockInBillGetRequest) SetOrderCode(_orderCode string) error {
+func (r *TaobaoWlbWmsStockInBillGetAPIRequest) SetOrderCode(_orderCode string) error {
     r._orderCode = _orderCode
     r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
-func (r TaobaoWlbWmsStockInBillGetRequest) GetOrderCode() string {
+func (r TaobaoWlbWmsStockInBillGetAPIRequest) GetOrderCode() string {
     return r._orderCode
 }
 // CnOrderCode Setter
 // 菜鸟订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据
-func (r *TaobaoWlbWmsStockInBillGetRequest) SetCnOrderCode(_cnOrderCode string) error {
+func (r *TaobaoWlbWmsStockInBillGetAPIRequest) SetCnOrderCode(_cnOrderCode string) error {
     r._cnOrderCode = _cnOrderCode
     r.Set("cn_order_code", _cnOrderCode)
     return nil
 }
 
 // CnOrderCode Getter
-func (r TaobaoWlbWmsStockInBillGetRequest) GetCnOrderCode() string {
+func (r TaobaoWlbWmsStockInBillGetAPIRequest) GetCnOrderCode() string {
     return r._cnOrderCode
 }

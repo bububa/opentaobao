@@ -11,7 +11,7 @@ alibaba.seaking.diagnosistitle
 
 标题诊断
 */
-func AlibabaSeakingDiagnosistitle(clt *core.SDKClient, req *seaking.AlibabaSeakingDiagnosistitleRequest, session string) (*seaking.AlibabaSeakingDiagnosistitleAPIResponse, error) {
+func AlibabaSeakingDiagnosistitle(clt *core.SDKClient, req *seaking.AlibabaSeakingDiagnosistitleAPIRequest, session string) (*seaking.AlibabaSeakingDiagnosistitleAPIResponse, error) {
     var resp seaking.AlibabaSeakingDiagnosistitleAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

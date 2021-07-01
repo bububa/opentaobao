@@ -12,26 +12,26 @@ taobao.wlb.wlborder.get
 
 根据物流宝订单编号查询物流宝订单概要信息
 */
-type TaobaoWlbWlborderGetRequest struct {
+type TaobaoWlbWlborderGetAPIRequest struct {
     model.Params
     // 物流宝订单编码
     _wlbOrderCode   string
 }
 
-// 初始化TaobaoWlbWlborderGetRequest对象
-func NewTaobaoWlbWlborderGetRequest() *TaobaoWlbWlborderGetRequest{
-    return &TaobaoWlbWlborderGetRequest{
+// 初始化TaobaoWlbWlborderGetAPIRequest对象
+func NewTaobaoWlbWlborderGetRequest() *TaobaoWlbWlborderGetAPIRequest{
+    return &TaobaoWlbWlborderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWlbWlborderGetRequest) GetApiMethodName() string {
+func (r TaobaoWlbWlborderGetAPIRequest) GetApiMethodName() string {
     return "taobao.wlb.wlborder.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWlbWlborderGetRequest) GetApiParams() url.Values {
+func (r TaobaoWlbWlborderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWlbWlborderGetRequest) GetApiParams() url.Values {
 }
 // WlbOrderCode Setter
 // 物流宝订单编码
-func (r *TaobaoWlbWlborderGetRequest) SetWlbOrderCode(_wlbOrderCode string) error {
+func (r *TaobaoWlbWlborderGetAPIRequest) SetWlbOrderCode(_wlbOrderCode string) error {
     r._wlbOrderCode = _wlbOrderCode
     r.Set("wlb_order_code", _wlbOrderCode)
     return nil
 }
 
 // WlbOrderCode Getter
-func (r TaobaoWlbWlborderGetRequest) GetWlbOrderCode() string {
+func (r TaobaoWlbWlborderGetAPIRequest) GetWlbOrderCode() string {
     return r._wlbOrderCode
 }

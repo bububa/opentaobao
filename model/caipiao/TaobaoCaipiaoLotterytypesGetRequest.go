@@ -12,24 +12,24 @@ taobao.caipiao.lotterytypes.get
 
 获取彩票系统支持的可用于赠送的彩种列表
 */
-type TaobaoCaipiaoLotterytypesGetRequest struct {
+type TaobaoCaipiaoLotterytypesGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoCaipiaoLotterytypesGetRequest对象
-func NewTaobaoCaipiaoLotterytypesGetRequest() *TaobaoCaipiaoLotterytypesGetRequest{
-    return &TaobaoCaipiaoLotterytypesGetRequest{
+// 初始化TaobaoCaipiaoLotterytypesGetAPIRequest对象
+func NewTaobaoCaipiaoLotterytypesGetRequest() *TaobaoCaipiaoLotterytypesGetAPIRequest{
+    return &TaobaoCaipiaoLotterytypesGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoCaipiaoLotterytypesGetRequest) GetApiMethodName() string {
+func (r TaobaoCaipiaoLotterytypesGetAPIRequest) GetApiMethodName() string {
     return "taobao.caipiao.lotterytypes.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoCaipiaoLotterytypesGetRequest) GetApiParams() url.Values {
+func (r TaobaoCaipiaoLotterytypesGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

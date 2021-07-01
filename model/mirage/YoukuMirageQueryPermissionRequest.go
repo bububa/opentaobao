@@ -12,26 +12,26 @@ youku.mirage.query.permission
 
 根据节目ID或者VID查询视频或者节目是否可以播放
 */
-type YoukuMirageQueryPermissionRequest struct {
+type YoukuMirageQueryPermissionAPIRequest struct {
     model.Params
     // 入参
     _permissionRequestDto   *PermissionRequestDTO
 }
 
-// 初始化YoukuMirageQueryPermissionRequest对象
-func NewYoukuMirageQueryPermissionRequest() *YoukuMirageQueryPermissionRequest{
-    return &YoukuMirageQueryPermissionRequest{
+// 初始化YoukuMirageQueryPermissionAPIRequest对象
+func NewYoukuMirageQueryPermissionRequest() *YoukuMirageQueryPermissionAPIRequest{
+    return &YoukuMirageQueryPermissionAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YoukuMirageQueryPermissionRequest) GetApiMethodName() string {
+func (r YoukuMirageQueryPermissionAPIRequest) GetApiMethodName() string {
     return "youku.mirage.query.permission"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YoukuMirageQueryPermissionRequest) GetApiParams() url.Values {
+func (r YoukuMirageQueryPermissionAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r YoukuMirageQueryPermissionRequest) GetApiParams() url.Values {
 }
 // PermissionRequestDto Setter
 // 入参
-func (r *YoukuMirageQueryPermissionRequest) SetPermissionRequestDto(_permissionRequestDto *PermissionRequestDTO) error {
+func (r *YoukuMirageQueryPermissionAPIRequest) SetPermissionRequestDto(_permissionRequestDto *PermissionRequestDTO) error {
     r._permissionRequestDto = _permissionRequestDto
     r.Set("permission_request_dto", _permissionRequestDto)
     return nil
 }
 
 // PermissionRequestDto Getter
-func (r YoukuMirageQueryPermissionRequest) GetPermissionRequestDto() *PermissionRequestDTO {
+func (r YoukuMirageQueryPermissionAPIRequest) GetPermissionRequestDto() *PermissionRequestDTO {
     return r._permissionRequestDto
 }

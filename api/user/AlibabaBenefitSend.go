@@ -11,7 +11,7 @@ alibaba.benefit.send
 
 发奖接口
 */
-func AlibabaBenefitSend(clt *core.SDKClient, req *user.AlibabaBenefitSendRequest, session string) (*user.AlibabaBenefitSendAPIResponse, error) {
+func AlibabaBenefitSend(clt *core.SDKClient, req *user.AlibabaBenefitSendAPIRequest, session string) (*user.AlibabaBenefitSendAPIResponse, error) {
     var resp user.AlibabaBenefitSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

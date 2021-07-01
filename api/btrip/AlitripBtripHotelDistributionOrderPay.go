@@ -11,7 +11,7 @@ alitrip.btrip.hotel.distribution.order.pay
 
 商旅酒店分销订单支付
 */
-func AlitripBtripHotelDistributionOrderPay(clt *core.SDKClient, req *btrip.AlitripBtripHotelDistributionOrderPayRequest, session string) (*btrip.AlitripBtripHotelDistributionOrderPayAPIResponse, error) {
+func AlitripBtripHotelDistributionOrderPay(clt *core.SDKClient, req *btrip.AlitripBtripHotelDistributionOrderPayAPIRequest, session string) (*btrip.AlitripBtripHotelDistributionOrderPayAPIResponse, error) {
     var resp btrip.AlitripBtripHotelDistributionOrderPayAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

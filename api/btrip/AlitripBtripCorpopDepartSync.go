@@ -11,7 +11,7 @@ alitrip.btrip.corpop.depart.sync
 
 同步外部平台部门信息至商旅内部
 */
-func AlitripBtripCorpopDepartSync(clt *core.SDKClient, req *btrip.AlitripBtripCorpopDepartSyncRequest, session string) (*btrip.AlitripBtripCorpopDepartSyncAPIResponse, error) {
+func AlitripBtripCorpopDepartSync(clt *core.SDKClient, req *btrip.AlitripBtripCorpopDepartSyncAPIRequest, session string) (*btrip.AlitripBtripCorpopDepartSyncAPIResponse, error) {
     var resp btrip.AlitripBtripCorpopDepartSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

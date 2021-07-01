@@ -12,26 +12,26 @@ taobao.feedflow.item.adgroup.page
 
 通过计划id查询单元信息
 */
-type TaobaoFeedflowItemAdgroupPageRequest struct {
+type TaobaoFeedflowItemAdgroupPageAPIRequest struct {
     model.Params
     // 系统自动生成
     _adgroupQuery   *AdgroupQueryDTO
 }
 
-// 初始化TaobaoFeedflowItemAdgroupPageRequest对象
-func NewTaobaoFeedflowItemAdgroupPageRequest() *TaobaoFeedflowItemAdgroupPageRequest{
-    return &TaobaoFeedflowItemAdgroupPageRequest{
+// 初始化TaobaoFeedflowItemAdgroupPageAPIRequest对象
+func NewTaobaoFeedflowItemAdgroupPageRequest() *TaobaoFeedflowItemAdgroupPageAPIRequest{
+    return &TaobaoFeedflowItemAdgroupPageAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemAdgroupPageRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemAdgroupPageAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.adgroup.page"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdgroupPageRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemAdgroupPageAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemAdgroupPageRequest) GetApiParams() url.Values {
 }
 // AdgroupQuery Setter
 // 系统自动生成
-func (r *TaobaoFeedflowItemAdgroupPageRequest) SetAdgroupQuery(_adgroupQuery *AdgroupQueryDTO) error {
+func (r *TaobaoFeedflowItemAdgroupPageAPIRequest) SetAdgroupQuery(_adgroupQuery *AdgroupQueryDTO) error {
     r._adgroupQuery = _adgroupQuery
     r.Set("adgroup_query", _adgroupQuery)
     return nil
 }
 
 // AdgroupQuery Getter
-func (r TaobaoFeedflowItemAdgroupPageRequest) GetAdgroupQuery() *AdgroupQueryDTO {
+func (r TaobaoFeedflowItemAdgroupPageAPIRequest) GetAdgroupQuery() *AdgroupQueryDTO {
     return r._adgroupQuery
 }

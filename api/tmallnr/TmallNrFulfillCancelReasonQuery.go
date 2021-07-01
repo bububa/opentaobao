@@ -11,7 +11,7 @@ tmall.nr.fulfill.cancel.reason.query
 
 新零售门店业务查询取消上门揽件的原因列表
 */
-func TmallNrFulfillCancelReasonQuery(clt *core.SDKClient, req *tmallnr.TmallNrFulfillCancelReasonQueryRequest, session string) (*tmallnr.TmallNrFulfillCancelReasonQueryAPIResponse, error) {
+func TmallNrFulfillCancelReasonQuery(clt *core.SDKClient, req *tmallnr.TmallNrFulfillCancelReasonQueryAPIRequest, session string) (*tmallnr.TmallNrFulfillCancelReasonQueryAPIResponse, error) {
     var resp tmallnr.TmallNrFulfillCancelReasonQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

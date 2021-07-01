@@ -11,7 +11,7 @@ alibaba.price.promotion.activity.delete
 
 删除盒马帮档期活动
 */
-func AlibabaPricePromotionActivityDelete(clt *core.SDKClient, req *wdk.AlibabaPricePromotionActivityDeleteRequest, session string) (*wdk.AlibabaPricePromotionActivityDeleteAPIResponse, error) {
+func AlibabaPricePromotionActivityDelete(clt *core.SDKClient, req *wdk.AlibabaPricePromotionActivityDeleteAPIRequest, session string) (*wdk.AlibabaPricePromotionActivityDeleteAPIResponse, error) {
     var resp wdk.AlibabaPricePromotionActivityDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

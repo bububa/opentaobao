@@ -11,7 +11,7 @@ tmall.product.schema.update
 
 产品更新接口
 */
-func TmallProductSchemaUpdate(clt *core.SDKClient, req *product.TmallProductSchemaUpdateRequest, session string) (*product.TmallProductSchemaUpdateAPIResponse, error) {
+func TmallProductSchemaUpdate(clt *core.SDKClient, req *product.TmallProductSchemaUpdateAPIRequest, session string) (*product.TmallProductSchemaUpdateAPIResponse, error) {
     var resp product.TmallProductSchemaUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

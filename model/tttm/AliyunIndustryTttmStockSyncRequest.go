@@ -12,26 +12,26 @@ aliyun.industry.tttm.stock.sync
 
 天天特卖库存同步接口
 */
-type AliyunIndustryTttmStockSyncRequest struct {
+type AliyunIndustryTttmStockSyncAPIRequest struct {
     model.Params
     // 库存
     _syncStock   *StockInfoDTO
 }
 
-// 初始化AliyunIndustryTttmStockSyncRequest对象
-func NewAliyunIndustryTttmStockSyncRequest() *AliyunIndustryTttmStockSyncRequest{
-    return &AliyunIndustryTttmStockSyncRequest{
+// 初始化AliyunIndustryTttmStockSyncAPIRequest对象
+func NewAliyunIndustryTttmStockSyncRequest() *AliyunIndustryTttmStockSyncAPIRequest{
+    return &AliyunIndustryTttmStockSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliyunIndustryTttmStockSyncRequest) GetApiMethodName() string {
+func (r AliyunIndustryTttmStockSyncAPIRequest) GetApiMethodName() string {
     return "aliyun.industry.tttm.stock.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliyunIndustryTttmStockSyncRequest) GetApiParams() url.Values {
+func (r AliyunIndustryTttmStockSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliyunIndustryTttmStockSyncRequest) GetApiParams() url.Values {
 }
 // SyncStock Setter
 // 库存
-func (r *AliyunIndustryTttmStockSyncRequest) SetSyncStock(_syncStock *StockInfoDTO) error {
+func (r *AliyunIndustryTttmStockSyncAPIRequest) SetSyncStock(_syncStock *StockInfoDTO) error {
     r._syncStock = _syncStock
     r.Set("sync_stock", _syncStock)
     return nil
 }
 
 // SyncStock Getter
-func (r AliyunIndustryTttmStockSyncRequest) GetSyncStock() *StockInfoDTO {
+func (r AliyunIndustryTttmStockSyncAPIRequest) GetSyncStock() *StockInfoDTO {
     return r._syncStock
 }

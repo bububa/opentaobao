@@ -11,7 +11,7 @@ alitrip.rail.ir.service.get
 
 国际火车票标准仓位坐席查询
 */
-func AlitripRailIrServiceGet(clt *core.SDKClient, req *rail.AlitripRailIrServiceGetRequest, session string) (*rail.AlitripRailIrServiceGetAPIResponse, error) {
+func AlitripRailIrServiceGet(clt *core.SDKClient, req *rail.AlitripRailIrServiceGetAPIRequest, session string) (*rail.AlitripRailIrServiceGetAPIResponse, error) {
     var resp rail.AlitripRailIrServiceGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

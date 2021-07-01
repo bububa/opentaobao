@@ -11,7 +11,7 @@ aliexpress.interactive.task.complete
 
 用户完成任务
 */
-func AliexpressInteractiveTaskComplete(clt *core.SDKClient, req *aetask.AliexpressInteractiveTaskCompleteRequest, session string) (*aetask.AliexpressInteractiveTaskCompleteAPIResponse, error) {
+func AliexpressInteractiveTaskComplete(clt *core.SDKClient, req *aetask.AliexpressInteractiveTaskCompleteAPIRequest, session string) (*aetask.AliexpressInteractiveTaskCompleteAPIResponse, error) {
     var resp aetask.AliexpressInteractiveTaskCompleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

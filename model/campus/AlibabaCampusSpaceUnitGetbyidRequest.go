@@ -14,7 +14,7 @@ alibaba.campus.space.unit.getbyid
 HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceUnitApiTopService
 HSF方法名称：getById
 */
-type AlibabaCampusSpaceUnitGetbyidRequest struct {
+type AlibabaCampusSpaceUnitGetbyidAPIRequest struct {
     model.Params
     // 空间单元ID
     _param0   *WorkBenchContext
@@ -22,20 +22,20 @@ type AlibabaCampusSpaceUnitGetbyidRequest struct {
     _param1   int64
 }
 
-// 初始化AlibabaCampusSpaceUnitGetbyidRequest对象
-func NewAlibabaCampusSpaceUnitGetbyidRequest() *AlibabaCampusSpaceUnitGetbyidRequest{
-    return &AlibabaCampusSpaceUnitGetbyidRequest{
+// 初始化AlibabaCampusSpaceUnitGetbyidAPIRequest对象
+func NewAlibabaCampusSpaceUnitGetbyidRequest() *AlibabaCampusSpaceUnitGetbyidAPIRequest{
+    return &AlibabaCampusSpaceUnitGetbyidAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceUnitGetbyidRequest) GetApiMethodName() string {
+func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.space.unit.getbyid"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceUnitGetbyidRequest) GetApiParams() url.Values {
+func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceUnitGetbyidRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 空间单元ID
-func (r *AlibabaCampusSpaceUnitGetbyidRequest) SetParam0(_param0 *WorkBenchContext) error {
+func (r *AlibabaCampusSpaceUnitGetbyidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaCampusSpaceUnitGetbyidRequest) GetParam0() *WorkBenchContext {
+func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetParam0() *WorkBenchContext {
     return r._param0
 }
 // Param1 Setter
 // 空间单元ID
-func (r *AlibabaCampusSpaceUnitGetbyidRequest) SetParam1(_param1 int64) error {
+func (r *AlibabaCampusSpaceUnitGetbyidAPIRequest) SetParam1(_param1 int64) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaCampusSpaceUnitGetbyidRequest) GetParam1() int64 {
+func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetParam1() int64 {
     return r._param1
 }

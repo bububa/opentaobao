@@ -11,7 +11,7 @@ alibaba.ailabs.bots.skils.list
 
 获取ai开放平台技能列表
 */
-func AlibabaAilabsBotsSkilsList(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsBotsSkilsListRequest, session string) (*tmallgenie.AlibabaAilabsBotsSkilsListAPIResponse, error) {
+func AlibabaAilabsBotsSkilsList(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsBotsSkilsListAPIRequest, session string) (*tmallgenie.AlibabaAilabsBotsSkilsListAPIResponse, error) {
     var resp tmallgenie.AlibabaAilabsBotsSkilsListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ taobao.qianniu.task.update
 
 由任务执行者调用，sub_status，tag和memo至少提供一个
 */
-type TaobaoQianniuTaskUpdateRequest struct {
+type TaobaoQianniuTaskUpdateAPIRequest struct {
     model.Params
     // 任务ID
     _taskId   int64
@@ -38,20 +38,20 @@ type TaobaoQianniuTaskUpdateRequest struct {
     _isDeleted   int64
 }
 
-// 初始化TaobaoQianniuTaskUpdateRequest对象
-func NewTaobaoQianniuTaskUpdateRequest() *TaobaoQianniuTaskUpdateRequest{
-    return &TaobaoQianniuTaskUpdateRequest{
+// 初始化TaobaoQianniuTaskUpdateAPIRequest对象
+func NewTaobaoQianniuTaskUpdateRequest() *TaobaoQianniuTaskUpdateAPIRequest{
+    return &TaobaoQianniuTaskUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoQianniuTaskUpdateRequest) GetApiMethodName() string {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.qianniu.task.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoQianniuTaskUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -60,133 +60,133 @@ func (r TaobaoQianniuTaskUpdateRequest) GetApiParams() url.Values {
 }
 // TaskId Setter
 // 任务ID
-func (r *TaobaoQianniuTaskUpdateRequest) SetTaskId(_taskId int64) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetTaskId(_taskId int64) error {
     r._taskId = _taskId
     r.Set("task_id", _taskId)
     return nil
 }
 
 // TaskId Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetTaskId() int64 {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetTaskId() int64 {
     return r._taskId
 }
 // SubStatus Setter
 // 子任务状态，由业务方自定义
-func (r *TaobaoQianniuTaskUpdateRequest) SetSubStatus(_subStatus string) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetSubStatus(_subStatus string) error {
     r._subStatus = _subStatus
     r.Set("sub_status", _subStatus)
     return nil
 }
 
 // SubStatus Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetSubStatus() string {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetSubStatus() string {
     return r._subStatus
 }
 // Tag Setter
 // 任务标签
-func (r *TaobaoQianniuTaskUpdateRequest) SetTag(_tag string) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetTag(_tag string) error {
     r._tag = _tag
     r.Set("tag", _tag)
     return nil
 }
 
 // Tag Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetTag() string {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetTag() string {
     return r._tag
 }
 // Memo Setter
 // 任务备注。当memo_mode为1时，memo将采用追加方式。
-func (r *TaobaoQianniuTaskUpdateRequest) SetMemo(_memo string) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetMemo(_memo string) error {
     r._memo = _memo
     r.Set("memo", _memo)
     return nil
 }
 
 // Memo Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetMemo() string {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetMemo() string {
     return r._memo
 }
 // Status Setter
 // 状态值，多个以逗号分隔
-func (r *TaobaoQianniuTaskUpdateRequest) SetStatus(_status string) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetStatus(_status string) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetStatus() string {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetStatus() string {
     return r._status
 }
 // RemindTime Setter
 // 提醒时间，时间的毫秒数
-func (r *TaobaoQianniuTaskUpdateRequest) SetRemindTime(_remindTime int64) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetRemindTime(_remindTime int64) error {
     r._remindTime = _remindTime
     r.Set("remind_time", _remindTime)
     return nil
 }
 
 // RemindTime Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetRemindTime() int64 {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetRemindTime() int64 {
     return r._remindTime
 }
 // BizParam Setter
 // 应用自定义参数
-func (r *TaobaoQianniuTaskUpdateRequest) SetBizParam(_bizParam string) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetBizParam(_bizParam string) error {
     r._bizParam = _bizParam
     r.Set("biz_param", _bizParam)
     return nil
 }
 
 // BizParam Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetBizParam() string {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetBizParam() string {
     return r._bizParam
 }
 // RemindFlag Setter
 // 0为不提醒，1为全部提醒，2为PC提醒，3为移动提醒，4为已提醒，5为已忽略。
-func (r *TaobaoQianniuTaskUpdateRequest) SetRemindFlag(_remindFlag int64) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetRemindFlag(_remindFlag int64) error {
     r._remindFlag = _remindFlag
     r.Set("remind_flag", _remindFlag)
     return nil
 }
 
 // RemindFlag Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetRemindFlag() int64 {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetRemindFlag() int64 {
     return r._remindFlag
 }
 // MemoMode Setter
 // 表示memo字段的更新策略。如需采用追加方式的，请将此字段设置为1。
-func (r *TaobaoQianniuTaskUpdateRequest) SetMemoMode(_memoMode int64) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetMemoMode(_memoMode int64) error {
     r._memoMode = _memoMode
     r.Set("memo_mode", _memoMode)
     return nil
 }
 
 // MemoMode Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetMemoMode() int64 {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetMemoMode() int64 {
     return r._memoMode
 }
 // Priority Setter
 // 默认填0，数字越大优化级越高。当前常用0和1.
-func (r *TaobaoQianniuTaskUpdateRequest) SetPriority(_priority int64) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetPriority(_priority int64) error {
     r._priority = _priority
     r.Set("priority", _priority)
     return nil
 }
 
 // Priority Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetPriority() int64 {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetPriority() int64 {
     return r._priority
 }
 // IsDeleted Setter
 // 0表示没有删除，1表示删除
-func (r *TaobaoQianniuTaskUpdateRequest) SetIsDeleted(_isDeleted int64) error {
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetIsDeleted(_isDeleted int64) error {
     r._isDeleted = _isDeleted
     r.Set("is_deleted", _isDeleted)
     return nil
 }
 
 // IsDeleted Getter
-func (r TaobaoQianniuTaskUpdateRequest) GetIsDeleted() int64 {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetIsDeleted() int64 {
     return r._isDeleted
 }

@@ -12,26 +12,26 @@ alibaba.alihouse.newhome.project.cooperation.submit
 
 提交KA合作楼盘
 */
-type AlibabaAlihouseNewhomeProjectCooperationSubmitRequest struct {
+type AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest struct {
     model.Params
     // ka合作对象
     _projectCooperationDto   *ProjectCooperationDTO
 }
 
-// 初始化AlibabaAlihouseNewhomeProjectCooperationSubmitRequest对象
-func NewAlibabaAlihouseNewhomeProjectCooperationSubmitRequest() *AlibabaAlihouseNewhomeProjectCooperationSubmitRequest{
-    return &AlibabaAlihouseNewhomeProjectCooperationSubmitRequest{
+// 初始化AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectCooperationSubmitRequest() *AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest{
+    return &AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectCooperationSubmitRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.project.cooperation.submit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectCooperationSubmitRequest) GetApiParams() url.Values {
+func (r AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectCooperationSubmitRequest) GetApiParams() ur
 }
 // ProjectCooperationDto Setter
 // ka合作对象
-func (r *AlibabaAlihouseNewhomeProjectCooperationSubmitRequest) SetProjectCooperationDto(_projectCooperationDto *ProjectCooperationDTO) error {
+func (r *AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) SetProjectCooperationDto(_projectCooperationDto *ProjectCooperationDTO) error {
     r._projectCooperationDto = _projectCooperationDto
     r.Set("project_cooperation_dto", _projectCooperationDto)
     return nil
 }
 
 // ProjectCooperationDto Getter
-func (r AlibabaAlihouseNewhomeProjectCooperationSubmitRequest) GetProjectCooperationDto() *ProjectCooperationDTO {
+func (r AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) GetProjectCooperationDto() *ProjectCooperationDTO {
     return r._projectCooperationDto
 }

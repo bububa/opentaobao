@@ -12,7 +12,7 @@ taobao.rds.db.delete
 
 通过api删除用户RDS的数据库
 */
-type TaobaoRdsDbDeleteRequest struct {
+type TaobaoRdsDbDeleteAPIRequest struct {
     model.Params
     // rds的实例名
     _instanceName   string
@@ -20,20 +20,20 @@ type TaobaoRdsDbDeleteRequest struct {
     _dbName   string
 }
 
-// 初始化TaobaoRdsDbDeleteRequest对象
-func NewTaobaoRdsDbDeleteRequest() *TaobaoRdsDbDeleteRequest{
-    return &TaobaoRdsDbDeleteRequest{
+// 初始化TaobaoRdsDbDeleteAPIRequest对象
+func NewTaobaoRdsDbDeleteRequest() *TaobaoRdsDbDeleteAPIRequest{
+    return &TaobaoRdsDbDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRdsDbDeleteRequest) GetApiMethodName() string {
+func (r TaobaoRdsDbDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.rds.db.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRdsDbDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoRdsDbDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoRdsDbDeleteRequest) GetApiParams() url.Values {
 }
 // InstanceName Setter
 // rds的实例名
-func (r *TaobaoRdsDbDeleteRequest) SetInstanceName(_instanceName string) error {
+func (r *TaobaoRdsDbDeleteAPIRequest) SetInstanceName(_instanceName string) error {
     r._instanceName = _instanceName
     r.Set("instance_name", _instanceName)
     return nil
 }
 
 // InstanceName Getter
-func (r TaobaoRdsDbDeleteRequest) GetInstanceName() string {
+func (r TaobaoRdsDbDeleteAPIRequest) GetInstanceName() string {
     return r._instanceName
 }
 // DbName Setter
 // 数据库的name，可以通过 taobao.rds.db.get 获取
-func (r *TaobaoRdsDbDeleteRequest) SetDbName(_dbName string) error {
+func (r *TaobaoRdsDbDeleteAPIRequest) SetDbName(_dbName string) error {
     r._dbName = _dbName
     r.Set("db_name", _dbName)
     return nil
 }
 
 // DbName Getter
-func (r TaobaoRdsDbDeleteRequest) GetDbName() string {
+func (r TaobaoRdsDbDeleteAPIRequest) GetDbName() string {
     return r._dbName
 }

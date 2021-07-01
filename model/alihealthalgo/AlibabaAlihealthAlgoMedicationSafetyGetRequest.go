@@ -12,26 +12,26 @@ alibaba.alihealth.algo.medication.safety.get
 
 合理用药规则引擎服务
 */
-type AlibabaAlihealthAlgoMedicationSafetyGetRequest struct {
+type AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest struct {
     model.Params
     // 业务请求对象
     _paramSolutionRequestTopSupport   *SolutionRequestTopSupport
 }
 
-// 初始化AlibabaAlihealthAlgoMedicationSafetyGetRequest对象
-func NewAlibabaAlihealthAlgoMedicationSafetyGetRequest() *AlibabaAlihealthAlgoMedicationSafetyGetRequest{
-    return &AlibabaAlihealthAlgoMedicationSafetyGetRequest{
+// 初始化AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest对象
+func NewAlibabaAlihealthAlgoMedicationSafetyGetRequest() *AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest{
+    return &AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthAlgoMedicationSafetyGetRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.algo.medication.safety.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthAlgoMedicationSafetyGetRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthAlgoMedicationSafetyGetRequest) GetApiParams() url.Value
 }
 // ParamSolutionRequestTopSupport Setter
 // 业务请求对象
-func (r *AlibabaAlihealthAlgoMedicationSafetyGetRequest) SetParamSolutionRequestTopSupport(_paramSolutionRequestTopSupport *SolutionRequestTopSupport) error {
+func (r *AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) SetParamSolutionRequestTopSupport(_paramSolutionRequestTopSupport *SolutionRequestTopSupport) error {
     r._paramSolutionRequestTopSupport = _paramSolutionRequestTopSupport
     r.Set("param_solution_request_top_support", _paramSolutionRequestTopSupport)
     return nil
 }
 
 // ParamSolutionRequestTopSupport Getter
-func (r AlibabaAlihealthAlgoMedicationSafetyGetRequest) GetParamSolutionRequestTopSupport() *SolutionRequestTopSupport {
+func (r AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) GetParamSolutionRequestTopSupport() *SolutionRequestTopSupport {
     return r._paramSolutionRequestTopSupport
 }

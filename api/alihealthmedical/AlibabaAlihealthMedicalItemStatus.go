@@ -11,7 +11,7 @@ alibaba.alihealth.medical.item.status
 
 医生通三方机构平台进行服务商品上下架操作
 */
-func AlibabaAlihealthMedicalItemStatus(clt *core.SDKClient, req *alihealthmedical.AlibabaAlihealthMedicalItemStatusRequest, session string) (*alihealthmedical.AlibabaAlihealthMedicalItemStatusAPIResponse, error) {
+func AlibabaAlihealthMedicalItemStatus(clt *core.SDKClient, req *alihealthmedical.AlibabaAlihealthMedicalItemStatusAPIRequest, session string) (*alihealthmedical.AlibabaAlihealthMedicalItemStatusAPIResponse, error) {
     var resp alihealthmedical.AlibabaAlihealthMedicalItemStatusAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.tmallgenie.scp.plan.history.po.get
 
 同步历史po单
 */
-func AlibabaTmallgenieScpPlanHistoryPoGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanHistoryPoGetRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanHistoryPoGetAPIResponse, error) {
+func AlibabaTmallgenieScpPlanHistoryPoGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanHistoryPoGetAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanHistoryPoGetAPIResponse, error) {
     var resp tmallgeniescp.AlibabaTmallgenieScpPlanHistoryPoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

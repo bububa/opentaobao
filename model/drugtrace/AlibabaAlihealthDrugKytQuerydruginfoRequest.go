@@ -12,7 +12,7 @@ alibaba.alihealth.drug.kyt.querydruginfo
 
 通过追溯码查询药品信息
 */
-type AlibabaAlihealthDrugKytQuerydruginfoRequest struct {
+type AlibabaAlihealthDrugKytQuerydruginfoAPIRequest struct {
     model.Params
     // 码列表
     _codeList   []string
@@ -22,20 +22,20 @@ type AlibabaAlihealthDrugKytQuerydruginfoRequest struct {
     _huozhuRefEntId   string
 }
 
-// 初始化AlibabaAlihealthDrugKytQuerydruginfoRequest对象
-func NewAlibabaAlihealthDrugKytQuerydruginfoRequest() *AlibabaAlihealthDrugKytQuerydruginfoRequest{
-    return &AlibabaAlihealthDrugKytQuerydruginfoRequest{
+// 初始化AlibabaAlihealthDrugKytQuerydruginfoAPIRequest对象
+func NewAlibabaAlihealthDrugKytQuerydruginfoRequest() *AlibabaAlihealthDrugKytQuerydruginfoAPIRequest{
+    return &AlibabaAlihealthDrugKytQuerydruginfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytQuerydruginfoRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytQuerydruginfoAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.kyt.querydruginfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytQuerydruginfoRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugKytQuerydruginfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthDrugKytQuerydruginfoRequest) GetApiParams() url.Values {
 }
 // CodeList Setter
 // 码列表
-func (r *AlibabaAlihealthDrugKytQuerydruginfoRequest) SetCodeList(_codeList []string) error {
+func (r *AlibabaAlihealthDrugKytQuerydruginfoAPIRequest) SetCodeList(_codeList []string) error {
     r._codeList = _codeList
     r.Set("code_list", _codeList)
     return nil
 }
 
 // CodeList Getter
-func (r AlibabaAlihealthDrugKytQuerydruginfoRequest) GetCodeList() []string {
+func (r AlibabaAlihealthDrugKytQuerydruginfoAPIRequest) GetCodeList() []string {
     return r._codeList
 }
 // WuliuRefEntId Setter
 // 物流企业refentid
-func (r *AlibabaAlihealthDrugKytQuerydruginfoRequest) SetWuliuRefEntId(_wuliuRefEntId string) error {
+func (r *AlibabaAlihealthDrugKytQuerydruginfoAPIRequest) SetWuliuRefEntId(_wuliuRefEntId string) error {
     r._wuliuRefEntId = _wuliuRefEntId
     r.Set("wuliu_ref_ent_id", _wuliuRefEntId)
     return nil
 }
 
 // WuliuRefEntId Getter
-func (r AlibabaAlihealthDrugKytQuerydruginfoRequest) GetWuliuRefEntId() string {
+func (r AlibabaAlihealthDrugKytQuerydruginfoAPIRequest) GetWuliuRefEntId() string {
     return r._wuliuRefEntId
 }
 // HuozhuRefEntId Setter
 // 生产企业refentid
-func (r *AlibabaAlihealthDrugKytQuerydruginfoRequest) SetHuozhuRefEntId(_huozhuRefEntId string) error {
+func (r *AlibabaAlihealthDrugKytQuerydruginfoAPIRequest) SetHuozhuRefEntId(_huozhuRefEntId string) error {
     r._huozhuRefEntId = _huozhuRefEntId
     r.Set("huozhu_ref_ent_id", _huozhuRefEntId)
     return nil
 }
 
 // HuozhuRefEntId Getter
-func (r AlibabaAlihealthDrugKytQuerydruginfoRequest) GetHuozhuRefEntId() string {
+func (r AlibabaAlihealthDrugKytQuerydruginfoAPIRequest) GetHuozhuRefEntId() string {
     return r._huozhuRefEntId
 }

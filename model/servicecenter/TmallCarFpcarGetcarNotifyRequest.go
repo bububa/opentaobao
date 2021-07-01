@@ -12,7 +12,7 @@ tmall.car.fpcar.getcar.notify
 
 提供给外部(大搜或其它合作方)的接口-门店通知用户提车
 */
-type TmallCarFpcarGetcarNotifyRequest struct {
+type TmallCarFpcarGetcarNotifyAPIRequest struct {
     model.Params
     // 商品宝贝id
     _itemId   int64
@@ -22,20 +22,20 @@ type TmallCarFpcarGetcarNotifyRequest struct {
     _sellerId   int64
 }
 
-// 初始化TmallCarFpcarGetcarNotifyRequest对象
-func NewTmallCarFpcarGetcarNotifyRequest() *TmallCarFpcarGetcarNotifyRequest{
-    return &TmallCarFpcarGetcarNotifyRequest{
+// 初始化TmallCarFpcarGetcarNotifyAPIRequest对象
+func NewTmallCarFpcarGetcarNotifyRequest() *TmallCarFpcarGetcarNotifyAPIRequest{
+    return &TmallCarFpcarGetcarNotifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarFpcarGetcarNotifyRequest) GetApiMethodName() string {
+func (r TmallCarFpcarGetcarNotifyAPIRequest) GetApiMethodName() string {
     return "tmall.car.fpcar.getcar.notify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarFpcarGetcarNotifyRequest) GetApiParams() url.Values {
+func (r TmallCarFpcarGetcarNotifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TmallCarFpcarGetcarNotifyRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品宝贝id
-func (r *TmallCarFpcarGetcarNotifyRequest) SetItemId(_itemId int64) error {
+func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TmallCarFpcarGetcarNotifyRequest) GetItemId() int64 {
+func (r TmallCarFpcarGetcarNotifyAPIRequest) GetItemId() int64 {
     return r._itemId
 }
 // OrderId Setter
 // 订单id
-func (r *TmallCarFpcarGetcarNotifyRequest) SetOrderId(_orderId int64) error {
+func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r TmallCarFpcarGetcarNotifyRequest) GetOrderId() int64 {
+func (r TmallCarFpcarGetcarNotifyAPIRequest) GetOrderId() int64 {
     return r._orderId
 }
 // SellerId Setter
 // 卖家id
-func (r *TmallCarFpcarGetcarNotifyRequest) SetSellerId(_sellerId int64) error {
+func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetSellerId(_sellerId int64) error {
     r._sellerId = _sellerId
     r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
-func (r TmallCarFpcarGetcarNotifyRequest) GetSellerId() int64 {
+func (r TmallCarFpcarGetcarNotifyAPIRequest) GetSellerId() int64 {
     return r._sellerId
 }

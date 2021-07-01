@@ -12,26 +12,26 @@ alibaba.alihealth.medical.item.publish
 
 三方入驻-开通服务
 */
-type AlibabaAlihealthMedicalItemPublishRequest struct {
+type AlibabaAlihealthMedicalItemPublishAPIRequest struct {
     model.Params
     // 请求
     _request1   *ItemPublishRequest
 }
 
-// 初始化AlibabaAlihealthMedicalItemPublishRequest对象
-func NewAlibabaAlihealthMedicalItemPublishRequest() *AlibabaAlihealthMedicalItemPublishRequest{
-    return &AlibabaAlihealthMedicalItemPublishRequest{
+// 初始化AlibabaAlihealthMedicalItemPublishAPIRequest对象
+func NewAlibabaAlihealthMedicalItemPublishRequest() *AlibabaAlihealthMedicalItemPublishAPIRequest{
+    return &AlibabaAlihealthMedicalItemPublishAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalItemPublishRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalItemPublishAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medical.item.publish"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalItemPublishRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMedicalItemPublishAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalItemPublishRequest) GetApiParams() url.Values {
 }
 // Request1 Setter
 // 请求
-func (r *AlibabaAlihealthMedicalItemPublishRequest) SetRequest1(_request1 *ItemPublishRequest) error {
+func (r *AlibabaAlihealthMedicalItemPublishAPIRequest) SetRequest1(_request1 *ItemPublishRequest) error {
     r._request1 = _request1
     r.Set("request1", _request1)
     return nil
 }
 
 // Request1 Getter
-func (r AlibabaAlihealthMedicalItemPublishRequest) GetRequest1() *ItemPublishRequest {
+func (r AlibabaAlihealthMedicalItemPublishAPIRequest) GetRequest1() *ItemPublishRequest {
     return r._request1
 }

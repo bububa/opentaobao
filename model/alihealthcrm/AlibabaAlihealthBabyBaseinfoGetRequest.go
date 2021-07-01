@@ -12,7 +12,7 @@ alibaba.alihealth.baby.baseinfo.get
 
 三方从我们这获取宝宝信息
 */
-type AlibabaAlihealthBabyBaseinfoGetRequest struct {
+type AlibabaAlihealthBabyBaseinfoGetAPIRequest struct {
     model.Params
     // 宝宝id
     _babyId   int64
@@ -20,20 +20,20 @@ type AlibabaAlihealthBabyBaseinfoGetRequest struct {
     _tpUserId   int64
 }
 
-// 初始化AlibabaAlihealthBabyBaseinfoGetRequest对象
-func NewAlibabaAlihealthBabyBaseinfoGetRequest() *AlibabaAlihealthBabyBaseinfoGetRequest{
-    return &AlibabaAlihealthBabyBaseinfoGetRequest{
+// 初始化AlibabaAlihealthBabyBaseinfoGetAPIRequest对象
+func NewAlibabaAlihealthBabyBaseinfoGetRequest() *AlibabaAlihealthBabyBaseinfoGetAPIRequest{
+    return &AlibabaAlihealthBabyBaseinfoGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthBabyBaseinfoGetRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthBabyBaseinfoGetAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.baby.baseinfo.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthBabyBaseinfoGetRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthBabyBaseinfoGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthBabyBaseinfoGetRequest) GetApiParams() url.Values {
 }
 // BabyId Setter
 // 宝宝id
-func (r *AlibabaAlihealthBabyBaseinfoGetRequest) SetBabyId(_babyId int64) error {
+func (r *AlibabaAlihealthBabyBaseinfoGetAPIRequest) SetBabyId(_babyId int64) error {
     r._babyId = _babyId
     r.Set("baby_id", _babyId)
     return nil
 }
 
 // BabyId Getter
-func (r AlibabaAlihealthBabyBaseinfoGetRequest) GetBabyId() int64 {
+func (r AlibabaAlihealthBabyBaseinfoGetAPIRequest) GetBabyId() int64 {
     return r._babyId
 }
 // TpUserId Setter
 // 宝宝所属的用户
-func (r *AlibabaAlihealthBabyBaseinfoGetRequest) SetTpUserId(_tpUserId int64) error {
+func (r *AlibabaAlihealthBabyBaseinfoGetAPIRequest) SetTpUserId(_tpUserId int64) error {
     r._tpUserId = _tpUserId
     r.Set("tp_user_id", _tpUserId)
     return nil
 }
 
 // TpUserId Getter
-func (r AlibabaAlihealthBabyBaseinfoGetRequest) GetTpUserId() int64 {
+func (r AlibabaAlihealthBabyBaseinfoGetAPIRequest) GetTpUserId() int64 {
     return r._tpUserId
 }

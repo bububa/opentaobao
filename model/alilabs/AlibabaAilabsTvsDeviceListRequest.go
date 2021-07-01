@@ -12,24 +12,24 @@ alibaba.ailabs.tvs.device.list
 
 获取用户所绑定的TVS设备列表
 */
-type AlibabaAilabsTvsDeviceListRequest struct {
+type AlibabaAilabsTvsDeviceListAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaAilabsTvsDeviceListRequest对象
-func NewAlibabaAilabsTvsDeviceListRequest() *AlibabaAilabsTvsDeviceListRequest{
-    return &AlibabaAilabsTvsDeviceListRequest{
+// 初始化AlibabaAilabsTvsDeviceListAPIRequest对象
+func NewAlibabaAilabsTvsDeviceListRequest() *AlibabaAilabsTvsDeviceListAPIRequest{
+    return &AlibabaAilabsTvsDeviceListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAilabsTvsDeviceListRequest) GetApiMethodName() string {
+func (r AlibabaAilabsTvsDeviceListAPIRequest) GetApiMethodName() string {
     return "alibaba.ailabs.tvs.device.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsTvsDeviceListRequest) GetApiParams() url.Values {
+func (r AlibabaAilabsTvsDeviceListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

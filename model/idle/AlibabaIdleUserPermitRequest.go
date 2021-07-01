@@ -12,26 +12,26 @@ alibaba.idle.user.permit
 
 用于记录登录用户与服务商的绑定关系，用于业务数据分发和授权校验
 */
-type AlibabaIdleUserPermitRequest struct {
+type AlibabaIdleUserPermitAPIRequest struct {
     model.Params
     // 授权请求
     _paramUserGrantRequest   *UserGrantRequest
 }
 
-// 初始化AlibabaIdleUserPermitRequest对象
-func NewAlibabaIdleUserPermitRequest() *AlibabaIdleUserPermitRequest{
-    return &AlibabaIdleUserPermitRequest{
+// 初始化AlibabaIdleUserPermitAPIRequest对象
+func NewAlibabaIdleUserPermitRequest() *AlibabaIdleUserPermitAPIRequest{
+    return &AlibabaIdleUserPermitAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleUserPermitRequest) GetApiMethodName() string {
+func (r AlibabaIdleUserPermitAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.user.permit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleUserPermitRequest) GetApiParams() url.Values {
+func (r AlibabaIdleUserPermitAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleUserPermitRequest) GetApiParams() url.Values {
 }
 // ParamUserGrantRequest Setter
 // 授权请求
-func (r *AlibabaIdleUserPermitRequest) SetParamUserGrantRequest(_paramUserGrantRequest *UserGrantRequest) error {
+func (r *AlibabaIdleUserPermitAPIRequest) SetParamUserGrantRequest(_paramUserGrantRequest *UserGrantRequest) error {
     r._paramUserGrantRequest = _paramUserGrantRequest
     r.Set("param_user_grant_request", _paramUserGrantRequest)
     return nil
 }
 
 // ParamUserGrantRequest Getter
-func (r AlibabaIdleUserPermitRequest) GetParamUserGrantRequest() *UserGrantRequest {
+func (r AlibabaIdleUserPermitAPIRequest) GetParamUserGrantRequest() *UserGrantRequest {
     return r._paramUserGrantRequest
 }

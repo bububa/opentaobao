@@ -11,7 +11,7 @@ cainiao.global.handover.parcel.query
 
 提供给ISV通过该接口查询小包信息
 */
-func CainiaoGlobalHandoverParcelQuery(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverParcelQueryRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverParcelQueryAPIResponse, error) {
+func CainiaoGlobalHandoverParcelQuery(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverParcelQueryAPIRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverParcelQueryAPIResponse, error) {
     var resp cainiaohandover.CainiaoGlobalHandoverParcelQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

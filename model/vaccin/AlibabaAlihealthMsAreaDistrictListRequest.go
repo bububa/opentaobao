@@ -12,26 +12,26 @@ alibaba.alihealth.ms.area.district.list
 
 微信小程序疫苗预约地市信息查询
 */
-type AlibabaAlihealthMsAreaDistrictListRequest struct {
+type AlibabaAlihealthMsAreaDistrictListAPIRequest struct {
     model.Params
     // 省份ID
     _divisionId   int64
 }
 
-// 初始化AlibabaAlihealthMsAreaDistrictListRequest对象
-func NewAlibabaAlihealthMsAreaDistrictListRequest() *AlibabaAlihealthMsAreaDistrictListRequest{
-    return &AlibabaAlihealthMsAreaDistrictListRequest{
+// 初始化AlibabaAlihealthMsAreaDistrictListAPIRequest对象
+func NewAlibabaAlihealthMsAreaDistrictListRequest() *AlibabaAlihealthMsAreaDistrictListAPIRequest{
+    return &AlibabaAlihealthMsAreaDistrictListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMsAreaDistrictListRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMsAreaDistrictListAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.ms.area.district.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMsAreaDistrictListRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMsAreaDistrictListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMsAreaDistrictListRequest) GetApiParams() url.Values {
 }
 // DivisionId Setter
 // 省份ID
-func (r *AlibabaAlihealthMsAreaDistrictListRequest) SetDivisionId(_divisionId int64) error {
+func (r *AlibabaAlihealthMsAreaDistrictListAPIRequest) SetDivisionId(_divisionId int64) error {
     r._divisionId = _divisionId
     r.Set("division_id", _divisionId)
     return nil
 }
 
 // DivisionId Getter
-func (r AlibabaAlihealthMsAreaDistrictListRequest) GetDivisionId() int64 {
+func (r AlibabaAlihealthMsAreaDistrictListAPIRequest) GetDivisionId() int64 {
     return r._divisionId
 }

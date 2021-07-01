@@ -11,7 +11,7 @@ alibaba.lst.speaker.configure.adjustvolume
 
 音箱音量调节
 */
-func AlibabaLstSpeakerConfigureAdjustvolume(clt *core.SDKClient, req *lstspeacker.AlibabaLstSpeakerConfigureAdjustvolumeRequest, session string) (*lstspeacker.AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse, error) {
+func AlibabaLstSpeakerConfigureAdjustvolume(clt *core.SDKClient, req *lstspeacker.AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest, session string) (*lstspeacker.AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse, error) {
     var resp lstspeacker.AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

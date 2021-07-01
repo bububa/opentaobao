@@ -12,26 +12,26 @@ alibaba.mozi.vds.tenant.api.service.getadmin
 
 获取员工租户管理员信息（查询员工是否为租户管理员）
 */
-type AlibabaMoziVdsTenantApiServiceGetadminRequest struct {
+type AlibabaMoziVdsTenantApiServiceGetadminAPIRequest struct {
     model.Params
     // 入参
     _par0   *GetEmployeeTenantAdminInfoRequest
 }
 
-// 初始化AlibabaMoziVdsTenantApiServiceGetadminRequest对象
-func NewAlibabaMoziVdsTenantApiServiceGetadminRequest() *AlibabaMoziVdsTenantApiServiceGetadminRequest{
-    return &AlibabaMoziVdsTenantApiServiceGetadminRequest{
+// 初始化AlibabaMoziVdsTenantApiServiceGetadminAPIRequest对象
+func NewAlibabaMoziVdsTenantApiServiceGetadminRequest() *AlibabaMoziVdsTenantApiServiceGetadminAPIRequest{
+    return &AlibabaMoziVdsTenantApiServiceGetadminAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziVdsTenantApiServiceGetadminRequest) GetApiMethodName() string {
+func (r AlibabaMoziVdsTenantApiServiceGetadminAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.vds.tenant.api.service.getadmin"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziVdsTenantApiServiceGetadminRequest) GetApiParams() url.Values {
+func (r AlibabaMoziVdsTenantApiServiceGetadminAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziVdsTenantApiServiceGetadminRequest) GetApiParams() url.Values
 }
 // Par0 Setter
 // 入参
-func (r *AlibabaMoziVdsTenantApiServiceGetadminRequest) SetPar0(_par0 *GetEmployeeTenantAdminInfoRequest) error {
+func (r *AlibabaMoziVdsTenantApiServiceGetadminAPIRequest) SetPar0(_par0 *GetEmployeeTenantAdminInfoRequest) error {
     r._par0 = _par0
     r.Set("par0", _par0)
     return nil
 }
 
 // Par0 Getter
-func (r AlibabaMoziVdsTenantApiServiceGetadminRequest) GetPar0() *GetEmployeeTenantAdminInfoRequest {
+func (r AlibabaMoziVdsTenantApiServiceGetadminAPIRequest) GetPar0() *GetEmployeeTenantAdminInfoRequest {
     return r._par0
 }

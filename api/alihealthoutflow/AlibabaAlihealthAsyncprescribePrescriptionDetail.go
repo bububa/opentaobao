@@ -11,7 +11,7 @@ alibaba.alihealth.asyncprescribe.prescription.detail
 
 异步开方处方查询
 */
-func AlibabaAlihealthAsyncprescribePrescriptionDetail(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthAsyncprescribePrescriptionDetailRequest, session string) (*alihealthoutflow.AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponse, error) {
+func AlibabaAlihealthAsyncprescribePrescriptionDetail(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponse, error) {
     var resp alihealthoutflow.AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

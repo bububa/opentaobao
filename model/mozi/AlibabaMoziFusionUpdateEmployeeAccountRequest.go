@@ -12,26 +12,26 @@ alibaba.mozi.fusion.update.employee.account
 
 更新人员和账号基本属性
 */
-type AlibabaMoziFusionUpdateEmployeeAccountRequest struct {
+type AlibabaMoziFusionUpdateEmployeeAccountAPIRequest struct {
     model.Params
     // 入参
     _employeeAccount   *UpdateTenantEmployeeAndAccountRequest
 }
 
-// 初始化AlibabaMoziFusionUpdateEmployeeAccountRequest对象
-func NewAlibabaMoziFusionUpdateEmployeeAccountRequest() *AlibabaMoziFusionUpdateEmployeeAccountRequest{
-    return &AlibabaMoziFusionUpdateEmployeeAccountRequest{
+// 初始化AlibabaMoziFusionUpdateEmployeeAccountAPIRequest对象
+func NewAlibabaMoziFusionUpdateEmployeeAccountRequest() *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest{
+    return &AlibabaMoziFusionUpdateEmployeeAccountAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMoziFusionUpdateEmployeeAccountRequest) GetApiMethodName() string {
+func (r AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) GetApiMethodName() string {
     return "alibaba.mozi.fusion.update.employee.account"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMoziFusionUpdateEmployeeAccountRequest) GetApiParams() url.Values {
+func (r AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMoziFusionUpdateEmployeeAccountRequest) GetApiParams() url.Values
 }
 // EmployeeAccount Setter
 // 入参
-func (r *AlibabaMoziFusionUpdateEmployeeAccountRequest) SetEmployeeAccount(_employeeAccount *UpdateTenantEmployeeAndAccountRequest) error {
+func (r *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) SetEmployeeAccount(_employeeAccount *UpdateTenantEmployeeAndAccountRequest) error {
     r._employeeAccount = _employeeAccount
     r.Set("employee_account", _employeeAccount)
     return nil
 }
 
 // EmployeeAccount Getter
-func (r AlibabaMoziFusionUpdateEmployeeAccountRequest) GetEmployeeAccount() *UpdateTenantEmployeeAndAccountRequest {
+func (r AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) GetEmployeeAccount() *UpdateTenantEmployeeAndAccountRequest {
     return r._employeeAccount
 }

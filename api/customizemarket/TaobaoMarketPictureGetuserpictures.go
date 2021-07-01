@@ -11,7 +11,7 @@ taobao.market.picture.getuserpictures
 
 商家通过用户信息，获取用户上传的
 */
-func TaobaoMarketPictureGetuserpictures(clt *core.SDKClient, req *customizemarket.TaobaoMarketPictureGetuserpicturesRequest, session string) (*customizemarket.TaobaoMarketPictureGetuserpicturesAPIResponse, error) {
+func TaobaoMarketPictureGetuserpictures(clt *core.SDKClient, req *customizemarket.TaobaoMarketPictureGetuserpicturesAPIRequest, session string) (*customizemarket.TaobaoMarketPictureGetuserpicturesAPIResponse, error) {
     var resp customizemarket.TaobaoMarketPictureGetuserpicturesAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

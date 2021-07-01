@@ -12,26 +12,26 @@ taobao.tmc.queue.get
 
 根据appkey和groupName获取消息队列积压情况
 */
-type TaobaoTmcQueueGetRequest struct {
+type TaobaoTmcQueueGetAPIRequest struct {
     model.Params
     // TMC组名
     _groupName   string
 }
 
-// 初始化TaobaoTmcQueueGetRequest对象
-func NewTaobaoTmcQueueGetRequest() *TaobaoTmcQueueGetRequest{
-    return &TaobaoTmcQueueGetRequest{
+// 初始化TaobaoTmcQueueGetAPIRequest对象
+func NewTaobaoTmcQueueGetRequest() *TaobaoTmcQueueGetAPIRequest{
+    return &TaobaoTmcQueueGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTmcQueueGetRequest) GetApiMethodName() string {
+func (r TaobaoTmcQueueGetAPIRequest) GetApiMethodName() string {
     return "taobao.tmc.queue.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTmcQueueGetRequest) GetApiParams() url.Values {
+func (r TaobaoTmcQueueGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTmcQueueGetRequest) GetApiParams() url.Values {
 }
 // GroupName Setter
 // TMC组名
-func (r *TaobaoTmcQueueGetRequest) SetGroupName(_groupName string) error {
+func (r *TaobaoTmcQueueGetAPIRequest) SetGroupName(_groupName string) error {
     r._groupName = _groupName
     r.Set("group_name", _groupName)
     return nil
 }
 
 // GroupName Getter
-func (r TaobaoTmcQueueGetRequest) GetGroupName() string {
+func (r TaobaoTmcQueueGetAPIRequest) GetGroupName() string {
     return r._groupName
 }

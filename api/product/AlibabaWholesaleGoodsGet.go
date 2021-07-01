@@ -11,7 +11,7 @@ alibaba.wholesale.goods.get
 
 查询阿里巴巴批发市场商品详情
 */
-func AlibabaWholesaleGoodsGet(clt *core.SDKClient, req *product.AlibabaWholesaleGoodsGetRequest, session string) (*product.AlibabaWholesaleGoodsGetAPIResponse, error) {
+func AlibabaWholesaleGoodsGet(clt *core.SDKClient, req *product.AlibabaWholesaleGoodsGetAPIRequest, session string) (*product.AlibabaWholesaleGoodsGetAPIResponse, error) {
     var resp product.AlibabaWholesaleGoodsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

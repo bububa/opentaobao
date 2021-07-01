@@ -12,26 +12,26 @@ alibaba.retail.marketing.buygift.activity.sku.delete
 
 删除单品买赠活动商品信息【同城零售】
 */
-type AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest struct {
+type AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIRequest struct {
     model.Params
     // 删除买赠活动商品参数
     _param   *BuyGiftActivitySkuOperateRequest
 }
 
-// 初始化AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest对象
-func NewAlibabaRetailMarketingBuygiftActivitySkuDeleteRequest() *AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest{
-    return &AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest{
+// 初始化AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIRequest对象
+func NewAlibabaRetailMarketingBuygiftActivitySkuDeleteRequest() *AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIRequest{
+    return &AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest) GetApiMethodName() string {
+func (r AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.retail.marketing.buygift.activity.sku.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest) GetApiParams() ur
 }
 // Param Setter
 // 删除买赠活动商品参数
-func (r *AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest) SetParam(_param *BuyGiftActivitySkuOperateRequest) error {
+func (r *AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIRequest) SetParam(_param *BuyGiftActivitySkuOperateRequest) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest) GetParam() *BuyGiftActivitySkuOperateRequest {
+func (r AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIRequest) GetParam() *BuyGiftActivitySkuOperateRequest {
     return r._param
 }

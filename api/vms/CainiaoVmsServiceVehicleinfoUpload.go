@@ -11,7 +11,7 @@ cainiao.vms.service.vehicleinfo.upload
 
 新能源车--外部车辆信息回传
 */
-func CainiaoVmsServiceVehicleinfoUpload(clt *core.SDKClient, req *vms.CainiaoVmsServiceVehicleinfoUploadRequest, session string) (*vms.CainiaoVmsServiceVehicleinfoUploadAPIResponse, error) {
+func CainiaoVmsServiceVehicleinfoUpload(clt *core.SDKClient, req *vms.CainiaoVmsServiceVehicleinfoUploadAPIRequest, session string) (*vms.CainiaoVmsServiceVehicleinfoUploadAPIResponse, error) {
     var resp vms.CainiaoVmsServiceVehicleinfoUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

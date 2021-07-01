@@ -12,7 +12,7 @@ tmall.nrt.item.get
 
 查询新零售商品信息
 */
-type TmallNrtItemGetRequest struct {
+type TmallNrtItemGetAPIRequest struct {
     model.Params
     // 城市站id
     _boothId   int64
@@ -20,20 +20,20 @@ type TmallNrtItemGetRequest struct {
     _itemId   int64
 }
 
-// 初始化TmallNrtItemGetRequest对象
-func NewTmallNrtItemGetRequest() *TmallNrtItemGetRequest{
-    return &TmallNrtItemGetRequest{
+// 初始化TmallNrtItemGetAPIRequest对象
+func NewTmallNrtItemGetRequest() *TmallNrtItemGetAPIRequest{
+    return &TmallNrtItemGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallNrtItemGetRequest) GetApiMethodName() string {
+func (r TmallNrtItemGetAPIRequest) GetApiMethodName() string {
     return "tmall.nrt.item.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallNrtItemGetRequest) GetApiParams() url.Values {
+func (r TmallNrtItemGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallNrtItemGetRequest) GetApiParams() url.Values {
 }
 // BoothId Setter
 // 城市站id
-func (r *TmallNrtItemGetRequest) SetBoothId(_boothId int64) error {
+func (r *TmallNrtItemGetAPIRequest) SetBoothId(_boothId int64) error {
     r._boothId = _boothId
     r.Set("booth_id", _boothId)
     return nil
 }
 
 // BoothId Getter
-func (r TmallNrtItemGetRequest) GetBoothId() int64 {
+func (r TmallNrtItemGetAPIRequest) GetBoothId() int64 {
     return r._boothId
 }
 // ItemId Setter
 // 商品id
-func (r *TmallNrtItemGetRequest) SetItemId(_itemId int64) error {
+func (r *TmallNrtItemGetAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TmallNrtItemGetRequest) GetItemId() int64 {
+func (r TmallNrtItemGetAPIRequest) GetItemId() int64 {
     return r._itemId
 }

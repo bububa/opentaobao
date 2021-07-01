@@ -11,7 +11,7 @@ taobao.degoperation.check.addr.status
 
 激励
 */
-func TaobaoDegoperationCheckAddrStatus(clt *core.SDKClient, req *degoperation.TaobaoDegoperationCheckAddrStatusRequest, session string) (*degoperation.TaobaoDegoperationCheckAddrStatusAPIResponse, error) {
+func TaobaoDegoperationCheckAddrStatus(clt *core.SDKClient, req *degoperation.TaobaoDegoperationCheckAddrStatusAPIRequest, session string) (*degoperation.TaobaoDegoperationCheckAddrStatusAPIResponse, error) {
     var resp degoperation.TaobaoDegoperationCheckAddrStatusAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ aliexpress.solution.order.info.get
 
 get order detail info
 */
-func AliexpressSolutionOrderInfoGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderInfoGetRequest, session string) (*aesolution.AliexpressSolutionOrderInfoGetAPIResponse, error) {
+func AliexpressSolutionOrderInfoGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderInfoGetAPIRequest, session string) (*aesolution.AliexpressSolutionOrderInfoGetAPIResponse, error) {
     var resp aesolution.AliexpressSolutionOrderInfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

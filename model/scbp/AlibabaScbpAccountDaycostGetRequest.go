@@ -12,24 +12,24 @@ alibaba.scbp.account.daycost.get
 
 查询今日消耗
 */
-type AlibabaScbpAccountDaycostGetRequest struct {
+type AlibabaScbpAccountDaycostGetAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaScbpAccountDaycostGetRequest对象
-func NewAlibabaScbpAccountDaycostGetRequest() *AlibabaScbpAccountDaycostGetRequest{
-    return &AlibabaScbpAccountDaycostGetRequest{
+// 初始化AlibabaScbpAccountDaycostGetAPIRequest对象
+func NewAlibabaScbpAccountDaycostGetRequest() *AlibabaScbpAccountDaycostGetAPIRequest{
+    return &AlibabaScbpAccountDaycostGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAccountDaycostGetRequest) GetApiMethodName() string {
+func (r AlibabaScbpAccountDaycostGetAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.account.daycost.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAccountDaycostGetRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAccountDaycostGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

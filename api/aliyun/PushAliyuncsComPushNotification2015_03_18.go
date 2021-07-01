@@ -11,7 +11,7 @@ push.aliyuncs.com.pushNotification.2015-03-18
 
 pushNotification
 */
-func PushAliyuncsComPushNotification2015_03_18(clt *core.SDKClient, req *aliyun.PushAliyuncsComPushNotification2015_03_18Request, session string) (*aliyun.PushAliyuncsComPushNotification2015_03_18APIResponse, error) {
+func PushAliyuncsComPushNotification2015_03_18(clt *core.SDKClient, req *aliyun.PushAliyuncsComPushNotification2015_03_18APIRequest, session string) (*aliyun.PushAliyuncsComPushNotification2015_03_18APIResponse, error) {
     var resp aliyun.PushAliyuncsComPushNotification2015_03_18APIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

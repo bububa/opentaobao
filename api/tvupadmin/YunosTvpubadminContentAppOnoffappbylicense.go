@@ -11,7 +11,7 @@ yunos.tvpubadmin.content.app.onoffappbylicense
 
 应用上下架操作
 */
-func YunosTvpubadminContentAppOnoffappbylicense(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentAppOnoffappbylicenseRequest, session string) (*tvupadmin.YunosTvpubadminContentAppOnoffappbylicenseAPIResponse, error) {
+func YunosTvpubadminContentAppOnoffappbylicense(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentAppOnoffappbylicenseAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentAppOnoffappbylicenseAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminContentAppOnoffappbylicenseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

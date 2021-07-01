@@ -12,26 +12,26 @@ alibaba.alihealth.examination.report.diagnose.tempmessage.receive
 
 导医通报告解读临时消息接收
 */
-type AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest struct {
+type AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest struct {
     model.Params
     // 入参对象
     _reportDiagnoseImMessageRequest   *ReportDiagnoseImMessageRequest
 }
 
-// 初始化AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest对象
-func NewAlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest() *AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest{
-    return &AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest{
+// 初始化AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest对象
+func NewAlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest() *AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest{
+    return &AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.examination.report.diagnose.tempmessage.receive"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest) GetA
 }
 // ReportDiagnoseImMessageRequest Setter
 // 入参对象
-func (r *AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest) SetReportDiagnoseImMessageRequest(_reportDiagnoseImMessageRequest *ReportDiagnoseImMessageRequest) error {
+func (r *AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) SetReportDiagnoseImMessageRequest(_reportDiagnoseImMessageRequest *ReportDiagnoseImMessageRequest) error {
     r._reportDiagnoseImMessageRequest = _reportDiagnoseImMessageRequest
     r.Set("report_diagnose_im_message_request", _reportDiagnoseImMessageRequest)
     return nil
 }
 
 // ReportDiagnoseImMessageRequest Getter
-func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest) GetReportDiagnoseImMessageRequest() *ReportDiagnoseImMessageRequest {
+func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) GetReportDiagnoseImMessageRequest() *ReportDiagnoseImMessageRequest {
     return r._reportDiagnoseImMessageRequest
 }

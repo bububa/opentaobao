@@ -11,7 +11,7 @@ alibaba.alihealth.druguse.query
 
 查询用户购买的药品命中的风险规则
 */
-func AlibabaAlihealthDruguseQuery(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDruguseQueryRequest, session string) (*alihealth2.AlibabaAlihealthDruguseQueryAPIResponse, error) {
+func AlibabaAlihealthDruguseQuery(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDruguseQueryAPIRequest, session string) (*alihealth2.AlibabaAlihealthDruguseQueryAPIResponse, error) {
     var resp alihealth2.AlibabaAlihealthDruguseQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

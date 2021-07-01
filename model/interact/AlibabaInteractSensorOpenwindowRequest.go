@@ -12,24 +12,24 @@ alibaba.interact.sensor.openwindow
 
 客户端打开新页面
 */
-type AlibabaInteractSensorOpenwindowRequest struct {
+type AlibabaInteractSensorOpenwindowAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractSensorOpenwindowRequest对象
-func NewAlibabaInteractSensorOpenwindowRequest() *AlibabaInteractSensorOpenwindowRequest{
-    return &AlibabaInteractSensorOpenwindowRequest{
+// 初始化AlibabaInteractSensorOpenwindowAPIRequest对象
+func NewAlibabaInteractSensorOpenwindowRequest() *AlibabaInteractSensorOpenwindowAPIRequest{
+    return &AlibabaInteractSensorOpenwindowAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorOpenwindowRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorOpenwindowAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.openwindow"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorOpenwindowRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorOpenwindowAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.listparts.byagent
 
 代理企业查询往来单位列表
 */
-func AlibabaAlihealthDrugKytListpartsByagent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytListpartsByagentRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytListpartsByagentAPIResponse, error) {
+func AlibabaAlihealthDrugKytListpartsByagent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytListpartsByagentAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytListpartsByagentAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytListpartsByagentAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

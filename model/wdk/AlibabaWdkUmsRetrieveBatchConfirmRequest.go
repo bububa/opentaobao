@@ -12,7 +12,7 @@ alibaba.wdk.ums.retrieve.batch.confirm
 
 批量消息确认
 */
-type AlibabaWdkUmsRetrieveBatchConfirmRequest struct {
+type AlibabaWdkUmsRetrieveBatchConfirmAPIRequest struct {
     model.Params
     // warehouse_code
     _warehouseCode   string
@@ -20,20 +20,20 @@ type AlibabaWdkUmsRetrieveBatchConfirmRequest struct {
     _uuids   []string
 }
 
-// 初始化AlibabaWdkUmsRetrieveBatchConfirmRequest对象
-func NewAlibabaWdkUmsRetrieveBatchConfirmRequest() *AlibabaWdkUmsRetrieveBatchConfirmRequest{
-    return &AlibabaWdkUmsRetrieveBatchConfirmRequest{
+// 初始化AlibabaWdkUmsRetrieveBatchConfirmAPIRequest对象
+func NewAlibabaWdkUmsRetrieveBatchConfirmRequest() *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest{
+    return &AlibabaWdkUmsRetrieveBatchConfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkUmsRetrieveBatchConfirmRequest) GetApiMethodName() string {
+func (r AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.ums.retrieve.batch.confirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkUmsRetrieveBatchConfirmRequest) GetApiParams() url.Values {
+func (r AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaWdkUmsRetrieveBatchConfirmRequest) GetApiParams() url.Values {
 }
 // WarehouseCode Setter
 // warehouse_code
-func (r *AlibabaWdkUmsRetrieveBatchConfirmRequest) SetWarehouseCode(_warehouseCode string) error {
+func (r *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) SetWarehouseCode(_warehouseCode string) error {
     r._warehouseCode = _warehouseCode
     r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
-func (r AlibabaWdkUmsRetrieveBatchConfirmRequest) GetWarehouseCode() string {
+func (r AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) GetWarehouseCode() string {
     return r._warehouseCode
 }
 // Uuids Setter
 // warehouse_code
-func (r *AlibabaWdkUmsRetrieveBatchConfirmRequest) SetUuids(_uuids []string) error {
+func (r *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) SetUuids(_uuids []string) error {
     r._uuids = _uuids
     r.Set("uuids", _uuids)
     return nil
 }
 
 // Uuids Getter
-func (r AlibabaWdkUmsRetrieveBatchConfirmRequest) GetUuids() []string {
+func (r AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) GetUuids() []string {
     return r._uuids
 }

@@ -12,7 +12,7 @@ alibaba.wdk.marketing.open.data.relation.query
 
 数据关联关系查询
 */
-type AlibabaWdkMarketingOpenDataRelationQueryRequest struct {
+type AlibabaWdkMarketingOpenDataRelationQueryAPIRequest struct {
     model.Params
     // 外部数据Id
     _outDataIds   []string
@@ -22,20 +22,20 @@ type AlibabaWdkMarketingOpenDataRelationQueryRequest struct {
     _subBizCode   string
 }
 
-// 初始化AlibabaWdkMarketingOpenDataRelationQueryRequest对象
-func NewAlibabaWdkMarketingOpenDataRelationQueryRequest() *AlibabaWdkMarketingOpenDataRelationQueryRequest{
-    return &AlibabaWdkMarketingOpenDataRelationQueryRequest{
+// 初始化AlibabaWdkMarketingOpenDataRelationQueryAPIRequest对象
+func NewAlibabaWdkMarketingOpenDataRelationQueryRequest() *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest{
+    return &AlibabaWdkMarketingOpenDataRelationQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.open.data.relation.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetApiParams() url.Valu
 }
 // OutDataIds Setter
 // 外部数据Id
-func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetOutDataIds(_outDataIds []string) error {
+func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) SetOutDataIds(_outDataIds []string) error {
     r._outDataIds = _outDataIds
     r.Set("out_data_ids", _outDataIds)
     return nil
 }
 
 // OutDataIds Getter
-func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetOutDataIds() []string {
+func (r AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) GetOutDataIds() []string {
     return r._outDataIds
 }
 // BizCode Setter
 // 数据类型：WDK_MARKET:五道口营销
-func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetBizCode(_bizCode string) error {
+func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) SetBizCode(_bizCode string) error {
     r._bizCode = _bizCode
     r.Set("biz_code", _bizCode)
     return nil
 }
 
 // BizCode Getter
-func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetBizCode() string {
+func (r AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) GetBizCode() string {
     return r._bizCode
 }
 // SubBizCode Setter
 // 数据子类型：ACTIVITY:营销活动数据
-func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetSubBizCode(_subBizCode string) error {
+func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) SetSubBizCode(_subBizCode string) error {
     r._subBizCode = _subBizCode
     r.Set("sub_biz_code", _subBizCode)
     return nil
 }
 
 // SubBizCode Getter
-func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetSubBizCode() string {
+func (r AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) GetSubBizCode() string {
     return r._subBizCode
 }

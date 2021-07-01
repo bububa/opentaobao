@@ -11,7 +11,7 @@ tmall.hk.clearance.get
 
 提供订单收货人身份信息查询功能。
 */
-func TmallHkClearanceGet(clt *core.SDKClient, req *tmallhk.TmallHkClearanceGetRequest, session string) (*tmallhk.TmallHkClearanceGetAPIResponse, error) {
+func TmallHkClearanceGet(clt *core.SDKClient, req *tmallhk.TmallHkClearanceGetAPIRequest, session string) (*tmallhk.TmallHkClearanceGetAPIResponse, error) {
     var resp tmallhk.TmallHkClearanceGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

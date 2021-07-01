@@ -11,7 +11,7 @@ taobao.feedflow.item.campaign.rptdailylist
 
 推广计划分日数据查询
 */
-func TaobaoFeedflowItemCampaignRptdailylist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignRptdailylistRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignRptdailylistAPIResponse, error) {
+func TaobaoFeedflowItemCampaignRptdailylist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignRptdailylistAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignRptdailylistAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemCampaignRptdailylistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

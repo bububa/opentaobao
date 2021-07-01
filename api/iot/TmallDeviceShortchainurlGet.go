@@ -11,7 +11,7 @@ tmall.device.shortchainurl.get
 
 获取二维码短链接
 */
-func TmallDeviceShortchainurlGet(clt *core.SDKClient, req *iot.TmallDeviceShortchainurlGetRequest, session string) (*iot.TmallDeviceShortchainurlGetAPIResponse, error) {
+func TmallDeviceShortchainurlGet(clt *core.SDKClient, req *iot.TmallDeviceShortchainurlGetAPIRequest, session string) (*iot.TmallDeviceShortchainurlGetAPIResponse, error) {
     var resp iot.TmallDeviceShortchainurlGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

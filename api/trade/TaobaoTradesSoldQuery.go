@@ -11,7 +11,7 @@ taobao.trades.sold.query
 
 根据收件人信息查询交易单号。
 */
-func TaobaoTradesSoldQuery(clt *core.SDKClient, req *trade.TaobaoTradesSoldQueryRequest, session string) (*trade.TaobaoTradesSoldQueryAPIResponse, error) {
+func TaobaoTradesSoldQuery(clt *core.SDKClient, req *trade.TaobaoTradesSoldQueryAPIRequest, session string) (*trade.TaobaoTradesSoldQueryAPIResponse, error) {
     var resp trade.TaobaoTradesSoldQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

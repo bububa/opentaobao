@@ -11,7 +11,7 @@ alibaba.security.jaq.rp.submit
 
 聚安全实人认证提交认证接口
 */
-func AlibabaSecurityJaqRpSubmit(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpSubmitRequest, session string) (*security.AlibabaSecurityJaqRpSubmitAPIResponse, error) {
+func AlibabaSecurityJaqRpSubmit(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpSubmitAPIRequest, session string) (*security.AlibabaSecurityJaqRpSubmitAPIResponse, error) {
     var resp security.AlibabaSecurityJaqRpSubmitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

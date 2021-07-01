@@ -11,7 +11,7 @@ taobao.eticket.merchant.ma.resend
 
 码商重发电子凭证回调接口
 */
-func TaobaoEticketMerchantMaResend(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaResendRequest, session string) (*eticket.TaobaoEticketMerchantMaResendAPIResponse, error) {
+func TaobaoEticketMerchantMaResend(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaResendAPIRequest, session string) (*eticket.TaobaoEticketMerchantMaResendAPIResponse, error) {
     var resp eticket.TaobaoEticketMerchantMaResendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

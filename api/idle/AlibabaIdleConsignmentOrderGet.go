@@ -11,7 +11,7 @@ alibaba.idle.consignment.order.get
 
 闲鱼帮卖服务商以闲鱼交易买家身份查询订单信息
 */
-func AlibabaIdleConsignmentOrderGet(clt *core.SDKClient, req *idle.AlibabaIdleConsignmentOrderGetRequest, session string) (*idle.AlibabaIdleConsignmentOrderGetAPIResponse, error) {
+func AlibabaIdleConsignmentOrderGet(clt *core.SDKClient, req *idle.AlibabaIdleConsignmentOrderGetAPIRequest, session string) (*idle.AlibabaIdleConsignmentOrderGetAPIResponse, error) {
     var resp idle.AlibabaIdleConsignmentOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

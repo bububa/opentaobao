@@ -11,7 +11,7 @@ taobao.bill.book.bills.get
 
 查询虚拟账户明细数据
 */
-func TaobaoBillBookBillsGet(clt *core.SDKClient, req *bill.TaobaoBillBookBillsGetRequest, session string) (*bill.TaobaoBillBookBillsGetAPIResponse, error) {
+func TaobaoBillBookBillsGet(clt *core.SDKClient, req *bill.TaobaoBillBookBillsGetAPIRequest, session string) (*bill.TaobaoBillBookBillsGetAPIResponse, error) {
     var resp bill.TaobaoBillBookBillsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

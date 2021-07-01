@@ -13,7 +13,7 @@ alibaba.alihealth.drug.code.kyt.smyx.querycode
 此接口针对有码药品，提供可通过追溯码获取该药品的基础信息和生产信息；
 核查平台优先过滤非8开头的，长度非20位数字的码信息。
 */
-type AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest struct {
+type AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIRequest struct {
     model.Params
     // 企业唯一标识
     _refEntId   string
@@ -21,20 +21,20 @@ type AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest struct {
     _codes   []string
 }
 
-// 初始化AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest对象
-func NewAlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest() *AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest{
-    return &AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest{
+// 初始化AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIRequest对象
+func NewAlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest() *AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIRequest{
+    return &AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.code.kyt.smyx.querycode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -43,25 +43,25 @@ func (r AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest) GetApiParams() url.Valu
 }
 // RefEntId Setter
 // 企业唯一标识
-func (r *AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIRequest) GetRefEntId() string {
     return r._refEntId
 }
 // Codes Setter
 // 码列表
-func (r *AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest) SetCodes(_codes []string) error {
+func (r *AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIRequest) SetCodes(_codes []string) error {
     r._codes = _codes
     r.Set("codes", _codes)
     return nil
 }
 
 // Codes Getter
-func (r AlibabaAlihealthDrugCodeKytSmyxQuerycodeRequest) GetCodes() []string {
+func (r AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIRequest) GetCodes() []string {
     return r._codes
 }

@@ -12,7 +12,7 @@ alibaba.ailabs.tmallgenie.auth.gettoken
 
 获取设备授权码
 */
-type AlibabaAilabsTmallgenieAuthGettokenRequest struct {
+type AlibabaAilabsTmallgenieAuthGettokenAPIRequest struct {
     model.Params
     // clientId
     _clientId   string
@@ -22,20 +22,20 @@ type AlibabaAilabsTmallgenieAuthGettokenRequest struct {
     _grantType   string
 }
 
-// 初始化AlibabaAilabsTmallgenieAuthGettokenRequest对象
-func NewAlibabaAilabsTmallgenieAuthGettokenRequest() *AlibabaAilabsTmallgenieAuthGettokenRequest{
-    return &AlibabaAilabsTmallgenieAuthGettokenRequest{
+// 初始化AlibabaAilabsTmallgenieAuthGettokenAPIRequest对象
+func NewAlibabaAilabsTmallgenieAuthGettokenRequest() *AlibabaAilabsTmallgenieAuthGettokenAPIRequest{
+    return &AlibabaAilabsTmallgenieAuthGettokenAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAilabsTmallgenieAuthGettokenRequest) GetApiMethodName() string {
+func (r AlibabaAilabsTmallgenieAuthGettokenAPIRequest) GetApiMethodName() string {
     return "alibaba.ailabs.tmallgenie.auth.gettoken"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsTmallgenieAuthGettokenRequest) GetApiParams() url.Values {
+func (r AlibabaAilabsTmallgenieAuthGettokenAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaAilabsTmallgenieAuthGettokenRequest) GetApiParams() url.Values {
 }
 // ClientId Setter
 // clientId
-func (r *AlibabaAilabsTmallgenieAuthGettokenRequest) SetClientId(_clientId string) error {
+func (r *AlibabaAilabsTmallgenieAuthGettokenAPIRequest) SetClientId(_clientId string) error {
     r._clientId = _clientId
     r.Set("client_id", _clientId)
     return nil
 }
 
 // ClientId Getter
-func (r AlibabaAilabsTmallgenieAuthGettokenRequest) GetClientId() string {
+func (r AlibabaAilabsTmallgenieAuthGettokenAPIRequest) GetClientId() string {
     return r._clientId
 }
 // AuthCode Setter
 // 授权码
-func (r *AlibabaAilabsTmallgenieAuthGettokenRequest) SetAuthCode(_authCode string) error {
+func (r *AlibabaAilabsTmallgenieAuthGettokenAPIRequest) SetAuthCode(_authCode string) error {
     r._authCode = _authCode
     r.Set("auth_code", _authCode)
     return nil
 }
 
 // AuthCode Getter
-func (r AlibabaAilabsTmallgenieAuthGettokenRequest) GetAuthCode() string {
+func (r AlibabaAilabsTmallgenieAuthGettokenAPIRequest) GetAuthCode() string {
     return r._authCode
 }
 // GrantType Setter
 // 授权类型，只支持authorization_code
-func (r *AlibabaAilabsTmallgenieAuthGettokenRequest) SetGrantType(_grantType string) error {
+func (r *AlibabaAilabsTmallgenieAuthGettokenAPIRequest) SetGrantType(_grantType string) error {
     r._grantType = _grantType
     r.Set("grant_type", _grantType)
     return nil
 }
 
 // GrantType Getter
-func (r AlibabaAilabsTmallgenieAuthGettokenRequest) GetGrantType() string {
+func (r AlibabaAilabsTmallgenieAuthGettokenAPIRequest) GetGrantType() string {
     return r._grantType
 }

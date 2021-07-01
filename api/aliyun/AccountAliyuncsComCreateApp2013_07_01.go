@@ -11,7 +11,7 @@ account.aliyuncs.com.CreateApp.2013-07-01
 
 为某个用户创建appkey
 */
-func AccountAliyuncsComCreateApp2013_07_01(clt *core.SDKClient, req *aliyun.AccountAliyuncsComCreateApp2013_07_01Request, session string) (*aliyun.AccountAliyuncsComCreateApp2013_07_01APIResponse, error) {
+func AccountAliyuncsComCreateApp2013_07_01(clt *core.SDKClient, req *aliyun.AccountAliyuncsComCreateApp2013_07_01APIRequest, session string) (*aliyun.AccountAliyuncsComCreateApp2013_07_01APIResponse, error) {
     var resp aliyun.AccountAliyuncsComCreateApp2013_07_01APIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

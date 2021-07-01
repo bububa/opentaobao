@@ -12,26 +12,26 @@ alibaba.wdk.ums.order.get
 
 查询店仓作业单据清单 （库存对账辅助）-回流单
 */
-type AlibabaWdkUmsOrderGetRequest struct {
+type AlibabaWdkUmsOrderGetAPIRequest struct {
     model.Params
     // 查询单据的dto
     _queryErpbillDto   *QueryErpBillDTO
 }
 
-// 初始化AlibabaWdkUmsOrderGetRequest对象
-func NewAlibabaWdkUmsOrderGetRequest() *AlibabaWdkUmsOrderGetRequest{
-    return &AlibabaWdkUmsOrderGetRequest{
+// 初始化AlibabaWdkUmsOrderGetAPIRequest对象
+func NewAlibabaWdkUmsOrderGetRequest() *AlibabaWdkUmsOrderGetAPIRequest{
+    return &AlibabaWdkUmsOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkUmsOrderGetRequest) GetApiMethodName() string {
+func (r AlibabaWdkUmsOrderGetAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.ums.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkUmsOrderGetRequest) GetApiParams() url.Values {
+func (r AlibabaWdkUmsOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkUmsOrderGetRequest) GetApiParams() url.Values {
 }
 // QueryErpbillDto Setter
 // 查询单据的dto
-func (r *AlibabaWdkUmsOrderGetRequest) SetQueryErpbillDto(_queryErpbillDto *QueryErpBillDTO) error {
+func (r *AlibabaWdkUmsOrderGetAPIRequest) SetQueryErpbillDto(_queryErpbillDto *QueryErpBillDTO) error {
     r._queryErpbillDto = _queryErpbillDto
     r.Set("query_erpbill_dto", _queryErpbillDto)
     return nil
 }
 
 // QueryErpbillDto Getter
-func (r AlibabaWdkUmsOrderGetRequest) GetQueryErpbillDto() *QueryErpBillDTO {
+func (r AlibabaWdkUmsOrderGetAPIRequest) GetQueryErpbillDto() *QueryErpBillDTO {
     return r._queryErpbillDto
 }

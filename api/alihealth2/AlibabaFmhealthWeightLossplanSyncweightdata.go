@@ -11,7 +11,7 @@ alibaba.fmhealth.weight.lossplan.syncweightdata
 
 用于三方薄荷同步数据到健康会员
 */
-func AlibabaFmhealthWeightLossplanSyncweightdata(clt *core.SDKClient, req *alihealth2.AlibabaFmhealthWeightLossplanSyncweightdataRequest, session string) (*alihealth2.AlibabaFmhealthWeightLossplanSyncweightdataAPIResponse, error) {
+func AlibabaFmhealthWeightLossplanSyncweightdata(clt *core.SDKClient, req *alihealth2.AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest, session string) (*alihealth2.AlibabaFmhealthWeightLossplanSyncweightdataAPIResponse, error) {
     var resp alihealth2.AlibabaFmhealthWeightLossplanSyncweightdataAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

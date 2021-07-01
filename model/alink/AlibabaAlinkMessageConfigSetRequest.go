@@ -12,7 +12,7 @@ alibaba.alink.message.config.set
 
 阿里智能消息开关
 */
-type AlibabaAlinkMessageConfigSetRequest struct {
+type AlibabaAlinkMessageConfigSetAPIRequest struct {
     model.Params
     // 设备id
     _uuid   string
@@ -20,20 +20,20 @@ type AlibabaAlinkMessageConfigSetRequest struct {
     _pushDisabled   string
 }
 
-// 初始化AlibabaAlinkMessageConfigSetRequest对象
-func NewAlibabaAlinkMessageConfigSetRequest() *AlibabaAlinkMessageConfigSetRequest{
-    return &AlibabaAlinkMessageConfigSetRequest{
+// 初始化AlibabaAlinkMessageConfigSetAPIRequest对象
+func NewAlibabaAlinkMessageConfigSetRequest() *AlibabaAlinkMessageConfigSetAPIRequest{
+    return &AlibabaAlinkMessageConfigSetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlinkMessageConfigSetRequest) GetApiMethodName() string {
+func (r AlibabaAlinkMessageConfigSetAPIRequest) GetApiMethodName() string {
     return "alibaba.alink.message.config.set"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlinkMessageConfigSetRequest) GetApiParams() url.Values {
+func (r AlibabaAlinkMessageConfigSetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlinkMessageConfigSetRequest) GetApiParams() url.Values {
 }
 // Uuid Setter
 // 设备id
-func (r *AlibabaAlinkMessageConfigSetRequest) SetUuid(_uuid string) error {
+func (r *AlibabaAlinkMessageConfigSetAPIRequest) SetUuid(_uuid string) error {
     r._uuid = _uuid
     r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
-func (r AlibabaAlinkMessageConfigSetRequest) GetUuid() string {
+func (r AlibabaAlinkMessageConfigSetAPIRequest) GetUuid() string {
     return r._uuid
 }
 // PushDisabled Setter
 // 0：开启，1：关闭
-func (r *AlibabaAlinkMessageConfigSetRequest) SetPushDisabled(_pushDisabled string) error {
+func (r *AlibabaAlinkMessageConfigSetAPIRequest) SetPushDisabled(_pushDisabled string) error {
     r._pushDisabled = _pushDisabled
     r.Set("push_disabled", _pushDisabled)
     return nil
 }
 
 // PushDisabled Getter
-func (r AlibabaAlinkMessageConfigSetRequest) GetPushDisabled() string {
+func (r AlibabaAlinkMessageConfigSetAPIRequest) GetPushDisabled() string {
     return r._pushDisabled
 }

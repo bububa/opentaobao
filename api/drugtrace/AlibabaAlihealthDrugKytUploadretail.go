@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.uploadretail
 
 门店在销售给顾客时，扫描追溯码的数据按照单据回传；
 */
-func AlibabaAlihealthDrugKytUploadretail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUploadretailRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytUploadretailAPIResponse, error) {
+func AlibabaAlihealthDrugKytUploadretail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUploadretailAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytUploadretailAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytUploadretailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

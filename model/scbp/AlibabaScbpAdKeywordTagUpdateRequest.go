@@ -12,7 +12,7 @@ alibaba.scbp.ad.keyword.tag.update
 
 修改关键词所属分组
 */
-type AlibabaScbpAdKeywordTagUpdateRequest struct {
+type AlibabaScbpAdKeywordTagUpdateAPIRequest struct {
     model.Params
     // 关键词ID列表
     _keywordIdList   []int64
@@ -20,20 +20,20 @@ type AlibabaScbpAdKeywordTagUpdateRequest struct {
     _tagIdList   []int64
 }
 
-// 初始化AlibabaScbpAdKeywordTagUpdateRequest对象
-func NewAlibabaScbpAdKeywordTagUpdateRequest() *AlibabaScbpAdKeywordTagUpdateRequest{
-    return &AlibabaScbpAdKeywordTagUpdateRequest{
+// 初始化AlibabaScbpAdKeywordTagUpdateAPIRequest对象
+func NewAlibabaScbpAdKeywordTagUpdateRequest() *AlibabaScbpAdKeywordTagUpdateAPIRequest{
+    return &AlibabaScbpAdKeywordTagUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordTagUpdateRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdKeywordTagUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.keyword.tag.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordTagUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdKeywordTagUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdKeywordTagUpdateRequest) GetApiParams() url.Values {
 }
 // KeywordIdList Setter
 // 关键词ID列表
-func (r *AlibabaScbpAdKeywordTagUpdateRequest) SetKeywordIdList(_keywordIdList []int64) error {
+func (r *AlibabaScbpAdKeywordTagUpdateAPIRequest) SetKeywordIdList(_keywordIdList []int64) error {
     r._keywordIdList = _keywordIdList
     r.Set("keyword_id_list", _keywordIdList)
     return nil
 }
 
 // KeywordIdList Getter
-func (r AlibabaScbpAdKeywordTagUpdateRequest) GetKeywordIdList() []int64 {
+func (r AlibabaScbpAdKeywordTagUpdateAPIRequest) GetKeywordIdList() []int64 {
     return r._keywordIdList
 }
 // TagIdList Setter
 // 关键词分组ID,不传表示取消关键词的分组
-func (r *AlibabaScbpAdKeywordTagUpdateRequest) SetTagIdList(_tagIdList []int64) error {
+func (r *AlibabaScbpAdKeywordTagUpdateAPIRequest) SetTagIdList(_tagIdList []int64) error {
     r._tagIdList = _tagIdList
     r.Set("tag_id_list", _tagIdList)
     return nil
 }
 
 // TagIdList Getter
-func (r AlibabaScbpAdKeywordTagUpdateRequest) GetTagIdList() []int64 {
+func (r AlibabaScbpAdKeywordTagUpdateAPIRequest) GetTagIdList() []int64 {
     return r._tagIdList
 }

@@ -12,26 +12,26 @@ alibaba.wdk.sku.category.delete
 
 商家类目删除接口
 */
-type AlibabaWdkSkuCategoryDeleteRequest struct {
+type AlibabaWdkSkuCategoryDeleteAPIRequest struct {
     model.Params
     // 类目删除请求模型
     _param   *CategoryDO
 }
 
-// 初始化AlibabaWdkSkuCategoryDeleteRequest对象
-func NewAlibabaWdkSkuCategoryDeleteRequest() *AlibabaWdkSkuCategoryDeleteRequest{
-    return &AlibabaWdkSkuCategoryDeleteRequest{
+// 初始化AlibabaWdkSkuCategoryDeleteAPIRequest对象
+func NewAlibabaWdkSkuCategoryDeleteRequest() *AlibabaWdkSkuCategoryDeleteAPIRequest{
+    return &AlibabaWdkSkuCategoryDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuCategoryDeleteRequest) GetApiMethodName() string {
+func (r AlibabaWdkSkuCategoryDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.category.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuCategoryDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSkuCategoryDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuCategoryDeleteRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 类目删除请求模型
-func (r *AlibabaWdkSkuCategoryDeleteRequest) SetParam(_param *CategoryDO) error {
+func (r *AlibabaWdkSkuCategoryDeleteAPIRequest) SetParam(_param *CategoryDO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkSkuCategoryDeleteRequest) GetParam() *CategoryDO {
+func (r AlibabaWdkSkuCategoryDeleteAPIRequest) GetParam() *CategoryDO {
     return r._param
 }

@@ -11,7 +11,7 @@ alibaba.mydata.overview.industry.get
 
 获取数据管家我的效果API可以使用的行业
 */
-func AlibabaMydataOverviewIndustryGet(clt *core.SDKClient, req *mydata.AlibabaMydataOverviewIndustryGetRequest, session string) (*mydata.AlibabaMydataOverviewIndustryGetAPIResponse, error) {
+func AlibabaMydataOverviewIndustryGet(clt *core.SDKClient, req *mydata.AlibabaMydataOverviewIndustryGetAPIRequest, session string) (*mydata.AlibabaMydataOverviewIndustryGetAPIResponse, error) {
     var resp mydata.AlibabaMydataOverviewIndustryGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

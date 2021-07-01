@@ -41,7 +41,7 @@ tmall.item.shiptime.update
     },
     删除商品级的发货时间
 */
-func TmallItemShiptimeUpdate(clt *core.SDKClient, req *product.TmallItemShiptimeUpdateRequest, session string) (*product.TmallItemShiptimeUpdateAPIResponse, error) {
+func TmallItemShiptimeUpdate(clt *core.SDKClient, req *product.TmallItemShiptimeUpdateAPIRequest, session string) (*product.TmallItemShiptimeUpdateAPIResponse, error) {
     var resp product.TmallItemShiptimeUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

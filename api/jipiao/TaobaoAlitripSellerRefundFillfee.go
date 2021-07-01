@@ -11,7 +11,7 @@ taobao.alitrip.seller.refund.fillfee
 
 回填手续费
 */
-func TaobaoAlitripSellerRefundFillfee(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundFillfeeRequest, session string) (*jipiao.TaobaoAlitripSellerRefundFillfeeAPIResponse, error) {
+func TaobaoAlitripSellerRefundFillfee(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundFillfeeAPIRequest, session string) (*jipiao.TaobaoAlitripSellerRefundFillfeeAPIResponse, error) {
     var resp jipiao.TaobaoAlitripSellerRefundFillfeeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

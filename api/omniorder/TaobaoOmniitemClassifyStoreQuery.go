@@ -11,7 +11,7 @@ taobao.omniitem.classify.store.query
 
 根据门店查分类信息
 */
-func TaobaoOmniitemClassifyStoreQuery(clt *core.SDKClient, req *omniorder.TaobaoOmniitemClassifyStoreQueryRequest, session string) (*omniorder.TaobaoOmniitemClassifyStoreQueryAPIResponse, error) {
+func TaobaoOmniitemClassifyStoreQuery(clt *core.SDKClient, req *omniorder.TaobaoOmniitemClassifyStoreQueryAPIRequest, session string) (*omniorder.TaobaoOmniitemClassifyStoreQueryAPIResponse, error) {
     var resp omniorder.TaobaoOmniitemClassifyStoreQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

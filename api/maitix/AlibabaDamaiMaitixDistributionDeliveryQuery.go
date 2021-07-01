@@ -11,7 +11,7 @@ alibaba.damai.maitix.distribution.delivery.query
 
 渠道查询物流订单
 */
-func AlibabaDamaiMaitixDistributionDeliveryQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionDeliveryQueryRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionDeliveryQueryAPIResponse, error) {
+func AlibabaDamaiMaitixDistributionDeliveryQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionDeliveryQueryAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixDistributionDeliveryQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

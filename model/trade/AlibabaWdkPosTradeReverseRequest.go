@@ -12,26 +12,26 @@ alibaba.wdk.pos.trade.reverse
 
 轻pos品牌营销场景，商家调用退款接口
 */
-type AlibabaWdkPosTradeReverseRequest struct {
+type AlibabaWdkPosTradeReverseAPIRequest struct {
     model.Params
     // 退款请求
     _reverseRequest   *FastBuyPosReverseRequest
 }
 
-// 初始化AlibabaWdkPosTradeReverseRequest对象
-func NewAlibabaWdkPosTradeReverseRequest() *AlibabaWdkPosTradeReverseRequest{
-    return &AlibabaWdkPosTradeReverseRequest{
+// 初始化AlibabaWdkPosTradeReverseAPIRequest对象
+func NewAlibabaWdkPosTradeReverseRequest() *AlibabaWdkPosTradeReverseAPIRequest{
+    return &AlibabaWdkPosTradeReverseAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkPosTradeReverseRequest) GetApiMethodName() string {
+func (r AlibabaWdkPosTradeReverseAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.pos.trade.reverse"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkPosTradeReverseRequest) GetApiParams() url.Values {
+func (r AlibabaWdkPosTradeReverseAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkPosTradeReverseRequest) GetApiParams() url.Values {
 }
 // ReverseRequest Setter
 // 退款请求
-func (r *AlibabaWdkPosTradeReverseRequest) SetReverseRequest(_reverseRequest *FastBuyPosReverseRequest) error {
+func (r *AlibabaWdkPosTradeReverseAPIRequest) SetReverseRequest(_reverseRequest *FastBuyPosReverseRequest) error {
     r._reverseRequest = _reverseRequest
     r.Set("reverse_request", _reverseRequest)
     return nil
 }
 
 // ReverseRequest Getter
-func (r AlibabaWdkPosTradeReverseRequest) GetReverseRequest() *FastBuyPosReverseRequest {
+func (r AlibabaWdkPosTradeReverseAPIRequest) GetReverseRequest() *FastBuyPosReverseRequest {
     return r._reverseRequest
 }

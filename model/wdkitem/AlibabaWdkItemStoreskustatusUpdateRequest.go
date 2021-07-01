@@ -12,26 +12,26 @@ alibaba.wdk.item.storeskustatus.update
 
 五道口商品 修改门店商品状态
 */
-type AlibabaWdkItemStoreskustatusUpdateRequest struct {
+type AlibabaWdkItemStoreskustatusUpdateAPIRequest struct {
     model.Params
     // bean
     _bean   *UpdateStoreSkuLifeStatusRequestBean
 }
 
-// 初始化AlibabaWdkItemStoreskustatusUpdateRequest对象
-func NewAlibabaWdkItemStoreskustatusUpdateRequest() *AlibabaWdkItemStoreskustatusUpdateRequest{
-    return &AlibabaWdkItemStoreskustatusUpdateRequest{
+// 初始化AlibabaWdkItemStoreskustatusUpdateAPIRequest对象
+func NewAlibabaWdkItemStoreskustatusUpdateRequest() *AlibabaWdkItemStoreskustatusUpdateAPIRequest{
+    return &AlibabaWdkItemStoreskustatusUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkItemStoreskustatusUpdateRequest) GetApiMethodName() string {
+func (r AlibabaWdkItemStoreskustatusUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.item.storeskustatus.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkItemStoreskustatusUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaWdkItemStoreskustatusUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkItemStoreskustatusUpdateRequest) GetApiParams() url.Values {
 }
 // Bean Setter
 // bean
-func (r *AlibabaWdkItemStoreskustatusUpdateRequest) SetBean(_bean *UpdateStoreSkuLifeStatusRequestBean) error {
+func (r *AlibabaWdkItemStoreskustatusUpdateAPIRequest) SetBean(_bean *UpdateStoreSkuLifeStatusRequestBean) error {
     r._bean = _bean
     r.Set("bean", _bean)
     return nil
 }
 
 // Bean Getter
-func (r AlibabaWdkItemStoreskustatusUpdateRequest) GetBean() *UpdateStoreSkuLifeStatusRequestBean {
+func (r AlibabaWdkItemStoreskustatusUpdateAPIRequest) GetBean() *UpdateStoreSkuLifeStatusRequestBean {
     return r._bean
 }

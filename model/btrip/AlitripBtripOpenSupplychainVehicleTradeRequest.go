@@ -12,26 +12,26 @@ alitrip.btrip.open.supplychain.vehicle.trade
 
 商旅用车交易流水接口
 */
-type AlitripBtripOpenSupplychainVehicleTradeRequest struct {
+type AlitripBtripOpenSupplychainVehicleTradeAPIRequest struct {
     model.Params
     // 入参
     _rq   *OpenApiZzdSearchRq
 }
 
-// 初始化AlitripBtripOpenSupplychainVehicleTradeRequest对象
-func NewAlitripBtripOpenSupplychainVehicleTradeRequest() *AlitripBtripOpenSupplychainVehicleTradeRequest{
-    return &AlitripBtripOpenSupplychainVehicleTradeRequest{
+// 初始化AlitripBtripOpenSupplychainVehicleTradeAPIRequest对象
+func NewAlitripBtripOpenSupplychainVehicleTradeRequest() *AlitripBtripOpenSupplychainVehicleTradeAPIRequest{
+    return &AlitripBtripOpenSupplychainVehicleTradeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripOpenSupplychainVehicleTradeRequest) GetApiMethodName() string {
+func (r AlitripBtripOpenSupplychainVehicleTradeAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.open.supplychain.vehicle.trade"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripOpenSupplychainVehicleTradeRequest) GetApiParams() url.Values {
+func (r AlitripBtripOpenSupplychainVehicleTradeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripOpenSupplychainVehicleTradeRequest) GetApiParams() url.Value
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripOpenSupplychainVehicleTradeRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
+func (r *AlitripBtripOpenSupplychainVehicleTradeAPIRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripOpenSupplychainVehicleTradeRequest) GetRq() *OpenApiZzdSearchRq {
+func (r AlitripBtripOpenSupplychainVehicleTradeAPIRequest) GetRq() *OpenApiZzdSearchRq {
     return r._rq
 }

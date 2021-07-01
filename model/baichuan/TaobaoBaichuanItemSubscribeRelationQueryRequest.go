@@ -12,26 +12,26 @@ taobao.baichuan.item.subscribe.relation.query
 
 查询单个订阅关系
 */
-type TaobaoBaichuanItemSubscribeRelationQueryRequest struct {
+type TaobaoBaichuanItemSubscribeRelationQueryAPIRequest struct {
     model.Params
     // 商品Id
     _itemId   int64
 }
 
-// 初始化TaobaoBaichuanItemSubscribeRelationQueryRequest对象
-func NewTaobaoBaichuanItemSubscribeRelationQueryRequest() *TaobaoBaichuanItemSubscribeRelationQueryRequest{
-    return &TaobaoBaichuanItemSubscribeRelationQueryRequest{
+// 初始化TaobaoBaichuanItemSubscribeRelationQueryAPIRequest对象
+func NewTaobaoBaichuanItemSubscribeRelationQueryRequest() *TaobaoBaichuanItemSubscribeRelationQueryAPIRequest{
+    return &TaobaoBaichuanItemSubscribeRelationQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanItemSubscribeRelationQueryRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanItemSubscribeRelationQueryAPIRequest) GetApiMethodName() string {
     return "taobao.baichuan.item.subscribe.relation.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanItemSubscribeRelationQueryRequest) GetApiParams() url.Values {
+func (r TaobaoBaichuanItemSubscribeRelationQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanItemSubscribeRelationQueryRequest) GetApiParams() url.Valu
 }
 // ItemId Setter
 // 商品Id
-func (r *TaobaoBaichuanItemSubscribeRelationQueryRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoBaichuanItemSubscribeRelationQueryAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TaobaoBaichuanItemSubscribeRelationQueryRequest) GetItemId() int64 {
+func (r TaobaoBaichuanItemSubscribeRelationQueryAPIRequest) GetItemId() int64 {
     return r._itemId
 }

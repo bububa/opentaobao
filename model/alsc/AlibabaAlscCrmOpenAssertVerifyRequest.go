@@ -12,26 +12,26 @@ alibaba.alsc.crm.open.assert.verify
 
 核销储值，积分，券资产
 */
-type AlibabaAlscCrmOpenAssertVerifyRequest struct {
+type AlibabaAlscCrmOpenAssertVerifyAPIRequest struct {
     model.Params
     // 入参
     _paramPropertyVerifyOpenReq   *PropertyVerifyOpenReq
 }
 
-// 初始化AlibabaAlscCrmOpenAssertVerifyRequest对象
-func NewAlibabaAlscCrmOpenAssertVerifyRequest() *AlibabaAlscCrmOpenAssertVerifyRequest{
-    return &AlibabaAlscCrmOpenAssertVerifyRequest{
+// 初始化AlibabaAlscCrmOpenAssertVerifyAPIRequest对象
+func NewAlibabaAlscCrmOpenAssertVerifyRequest() *AlibabaAlscCrmOpenAssertVerifyAPIRequest{
+    return &AlibabaAlscCrmOpenAssertVerifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmOpenAssertVerifyRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.open.assert.verify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmOpenAssertVerifyRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenAssertVerifyRequest) GetApiParams() url.Values {
 }
 // ParamPropertyVerifyOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenAssertVerifyRequest) SetParamPropertyVerifyOpenReq(_paramPropertyVerifyOpenReq *PropertyVerifyOpenReq) error {
+func (r *AlibabaAlscCrmOpenAssertVerifyAPIRequest) SetParamPropertyVerifyOpenReq(_paramPropertyVerifyOpenReq *PropertyVerifyOpenReq) error {
     r._paramPropertyVerifyOpenReq = _paramPropertyVerifyOpenReq
     r.Set("param_property_verify_open_req", _paramPropertyVerifyOpenReq)
     return nil
 }
 
 // ParamPropertyVerifyOpenReq Getter
-func (r AlibabaAlscCrmOpenAssertVerifyRequest) GetParamPropertyVerifyOpenReq() *PropertyVerifyOpenReq {
+func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetParamPropertyVerifyOpenReq() *PropertyVerifyOpenReq {
     return r._paramPropertyVerifyOpenReq
 }

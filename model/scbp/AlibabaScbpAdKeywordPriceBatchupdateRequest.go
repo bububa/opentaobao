@@ -12,26 +12,26 @@ alibaba.scbp.ad.keyword.price.batchupdate
 
 关键词批量改价
 */
-type AlibabaScbpAdKeywordPriceBatchupdateRequest struct {
+type AlibabaScbpAdKeywordPriceBatchupdateAPIRequest struct {
     model.Params
     // 系统自动生成
     _keywordUpdateDtoList   []KeywordUpdateDTO
 }
 
-// 初始化AlibabaScbpAdKeywordPriceBatchupdateRequest对象
-func NewAlibabaScbpAdKeywordPriceBatchupdateRequest() *AlibabaScbpAdKeywordPriceBatchupdateRequest{
-    return &AlibabaScbpAdKeywordPriceBatchupdateRequest{
+// 初始化AlibabaScbpAdKeywordPriceBatchupdateAPIRequest对象
+func NewAlibabaScbpAdKeywordPriceBatchupdateRequest() *AlibabaScbpAdKeywordPriceBatchupdateAPIRequest{
+    return &AlibabaScbpAdKeywordPriceBatchupdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordPriceBatchupdateRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdKeywordPriceBatchupdateAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.keyword.price.batchupdate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordPriceBatchupdateRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdKeywordPriceBatchupdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpAdKeywordPriceBatchupdateRequest) GetApiParams() url.Values {
 }
 // KeywordUpdateDtoList Setter
 // 系统自动生成
-func (r *AlibabaScbpAdKeywordPriceBatchupdateRequest) SetKeywordUpdateDtoList(_keywordUpdateDtoList []KeywordUpdateDTO) error {
+func (r *AlibabaScbpAdKeywordPriceBatchupdateAPIRequest) SetKeywordUpdateDtoList(_keywordUpdateDtoList []KeywordUpdateDTO) error {
     r._keywordUpdateDtoList = _keywordUpdateDtoList
     r.Set("keyword_update_dto_list", _keywordUpdateDtoList)
     return nil
 }
 
 // KeywordUpdateDtoList Getter
-func (r AlibabaScbpAdKeywordPriceBatchupdateRequest) GetKeywordUpdateDtoList() []KeywordUpdateDTO {
+func (r AlibabaScbpAdKeywordPriceBatchupdateAPIRequest) GetKeywordUpdateDtoList() []KeywordUpdateDTO {
     return r._keywordUpdateDtoList
 }

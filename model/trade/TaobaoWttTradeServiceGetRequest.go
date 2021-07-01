@@ -12,26 +12,26 @@ taobao.wtt.trade.service.get
 
 查询网厅订单信息
 */
-type TaobaoWttTradeServiceGetRequest struct {
+type TaobaoWttTradeServiceGetAPIRequest struct {
     model.Params
     // 订单ID
     _bizOrder   int64
 }
 
-// 初始化TaobaoWttTradeServiceGetRequest对象
-func NewTaobaoWttTradeServiceGetRequest() *TaobaoWttTradeServiceGetRequest{
-    return &TaobaoWttTradeServiceGetRequest{
+// 初始化TaobaoWttTradeServiceGetAPIRequest对象
+func NewTaobaoWttTradeServiceGetRequest() *TaobaoWttTradeServiceGetAPIRequest{
+    return &TaobaoWttTradeServiceGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWttTradeServiceGetRequest) GetApiMethodName() string {
+func (r TaobaoWttTradeServiceGetAPIRequest) GetApiMethodName() string {
     return "taobao.wtt.trade.service.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWttTradeServiceGetRequest) GetApiParams() url.Values {
+func (r TaobaoWttTradeServiceGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWttTradeServiceGetRequest) GetApiParams() url.Values {
 }
 // BizOrder Setter
 // 订单ID
-func (r *TaobaoWttTradeServiceGetRequest) SetBizOrder(_bizOrder int64) error {
+func (r *TaobaoWttTradeServiceGetAPIRequest) SetBizOrder(_bizOrder int64) error {
     r._bizOrder = _bizOrder
     r.Set("biz_order", _bizOrder)
     return nil
 }
 
 // BizOrder Getter
-func (r TaobaoWttTradeServiceGetRequest) GetBizOrder() int64 {
+func (r TaobaoWttTradeServiceGetAPIRequest) GetBizOrder() int64 {
     return r._bizOrder
 }

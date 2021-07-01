@@ -11,7 +11,7 @@ alibaba.happytrip.taxi.provider.account.balance
 
 查询不同供应商不同渠道账户余额
 */
-func AlibabaHappytripTaxiProviderAccountBalance(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiProviderAccountBalanceRequest, session string) (*happytrip.AlibabaHappytripTaxiProviderAccountBalanceAPIResponse, error) {
+func AlibabaHappytripTaxiProviderAccountBalance(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiProviderAccountBalanceAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiProviderAccountBalanceAPIResponse, error) {
     var resp happytrip.AlibabaHappytripTaxiProviderAccountBalanceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

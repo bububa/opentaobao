@@ -12,26 +12,26 @@ alibaba.ascp.inventory.sync
 
 新零售联盟商家库存同步接口，用于商家商品库存数量同步到阿里系统
 */
-type AlibabaAscpInventorySyncRequest struct {
+type AlibabaAscpInventorySyncAPIRequest struct {
     model.Params
     // 库存同步DTO
     _invSingleItemSyncDto   *InvSingleItemSyncDTO
 }
 
-// 初始化AlibabaAscpInventorySyncRequest对象
-func NewAlibabaAscpInventorySyncRequest() *AlibabaAscpInventorySyncRequest{
-    return &AlibabaAscpInventorySyncRequest{
+// 初始化AlibabaAscpInventorySyncAPIRequest对象
+func NewAlibabaAscpInventorySyncRequest() *AlibabaAscpInventorySyncAPIRequest{
+    return &AlibabaAscpInventorySyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAscpInventorySyncRequest) GetApiMethodName() string {
+func (r AlibabaAscpInventorySyncAPIRequest) GetApiMethodName() string {
     return "alibaba.ascp.inventory.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAscpInventorySyncRequest) GetApiParams() url.Values {
+func (r AlibabaAscpInventorySyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAscpInventorySyncRequest) GetApiParams() url.Values {
 }
 // InvSingleItemSyncDto Setter
 // 库存同步DTO
-func (r *AlibabaAscpInventorySyncRequest) SetInvSingleItemSyncDto(_invSingleItemSyncDto *InvSingleItemSyncDTO) error {
+func (r *AlibabaAscpInventorySyncAPIRequest) SetInvSingleItemSyncDto(_invSingleItemSyncDto *InvSingleItemSyncDTO) error {
     r._invSingleItemSyncDto = _invSingleItemSyncDto
     r.Set("inv_single_item_sync_dto", _invSingleItemSyncDto)
     return nil
 }
 
 // InvSingleItemSyncDto Getter
-func (r AlibabaAscpInventorySyncRequest) GetInvSingleItemSyncDto() *InvSingleItemSyncDTO {
+func (r AlibabaAscpInventorySyncAPIRequest) GetInvSingleItemSyncDto() *InvSingleItemSyncDTO {
     return r._invSingleItemSyncDto
 }

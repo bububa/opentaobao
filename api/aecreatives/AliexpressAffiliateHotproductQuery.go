@@ -11,7 +11,7 @@ aliexpress.affiliate.hotproduct.query
 
 查询联盟爆品API
 */
-func AliexpressAffiliateHotproductQuery(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateHotproductQueryRequest, session string) (*aecreatives.AliexpressAffiliateHotproductQueryAPIResponse, error) {
+func AliexpressAffiliateHotproductQuery(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateHotproductQueryAPIRequest, session string) (*aecreatives.AliexpressAffiliateHotproductQueryAPIResponse, error) {
     var resp aecreatives.AliexpressAffiliateHotproductQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

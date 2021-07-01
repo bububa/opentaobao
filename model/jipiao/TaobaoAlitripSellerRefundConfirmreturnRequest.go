@@ -12,26 +12,26 @@ taobao.alitrip.seller.refund.confirmreturn
 
 确认退票
 */
-type TaobaoAlitripSellerRefundConfirmreturnRequest struct {
+type TaobaoAlitripSellerRefundConfirmreturnAPIRequest struct {
     model.Params
     // 退票申请单
     _applyId   int64
 }
 
-// 初始化TaobaoAlitripSellerRefundConfirmreturnRequest对象
-func NewTaobaoAlitripSellerRefundConfirmreturnRequest() *TaobaoAlitripSellerRefundConfirmreturnRequest{
-    return &TaobaoAlitripSellerRefundConfirmreturnRequest{
+// 初始化TaobaoAlitripSellerRefundConfirmreturnAPIRequest对象
+func NewTaobaoAlitripSellerRefundConfirmreturnRequest() *TaobaoAlitripSellerRefundConfirmreturnAPIRequest{
+    return &TaobaoAlitripSellerRefundConfirmreturnAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripSellerRefundConfirmreturnRequest) GetApiMethodName() string {
+func (r TaobaoAlitripSellerRefundConfirmreturnAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.seller.refund.confirmreturn"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripSellerRefundConfirmreturnRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripSellerRefundConfirmreturnAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripSellerRefundConfirmreturnRequest) GetApiParams() url.Values
 }
 // ApplyId Setter
 // 退票申请单
-func (r *TaobaoAlitripSellerRefundConfirmreturnRequest) SetApplyId(_applyId int64) error {
+func (r *TaobaoAlitripSellerRefundConfirmreturnAPIRequest) SetApplyId(_applyId int64) error {
     r._applyId = _applyId
     r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
-func (r TaobaoAlitripSellerRefundConfirmreturnRequest) GetApplyId() int64 {
+func (r TaobaoAlitripSellerRefundConfirmreturnAPIRequest) GetApplyId() int64 {
     return r._applyId
 }

@@ -12,7 +12,7 @@ taobao.alitrip.it.policy.add
 
 销售规则新增，成功返回taobaoId
 */
-type TaobaoAlitripItPolicyAddRequest struct {
+type TaobaoAlitripItPolicyAddAPIRequest struct {
     model.Params
     // 扩展字段
     _extendAttributes   string
@@ -20,20 +20,20 @@ type TaobaoAlitripItPolicyAddRequest struct {
     _topPolicyDo   *TopPolicyDO
 }
 
-// 初始化TaobaoAlitripItPolicyAddRequest对象
-func NewTaobaoAlitripItPolicyAddRequest() *TaobaoAlitripItPolicyAddRequest{
-    return &TaobaoAlitripItPolicyAddRequest{
+// 初始化TaobaoAlitripItPolicyAddAPIRequest对象
+func NewTaobaoAlitripItPolicyAddRequest() *TaobaoAlitripItPolicyAddAPIRequest{
+    return &TaobaoAlitripItPolicyAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripItPolicyAddRequest) GetApiMethodName() string {
+func (r TaobaoAlitripItPolicyAddAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.it.policy.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripItPolicyAddRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripItPolicyAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoAlitripItPolicyAddRequest) GetApiParams() url.Values {
 }
 // ExtendAttributes Setter
 // 扩展字段
-func (r *TaobaoAlitripItPolicyAddRequest) SetExtendAttributes(_extendAttributes string) error {
+func (r *TaobaoAlitripItPolicyAddAPIRequest) SetExtendAttributes(_extendAttributes string) error {
     r._extendAttributes = _extendAttributes
     r.Set("extend_attributes", _extendAttributes)
     return nil
 }
 
 // ExtendAttributes Getter
-func (r TaobaoAlitripItPolicyAddRequest) GetExtendAttributes() string {
+func (r TaobaoAlitripItPolicyAddAPIRequest) GetExtendAttributes() string {
     return r._extendAttributes
 }
 // TopPolicyDo Setter
 // 国际机票销售规则
-func (r *TaobaoAlitripItPolicyAddRequest) SetTopPolicyDo(_topPolicyDo *TopPolicyDO) error {
+func (r *TaobaoAlitripItPolicyAddAPIRequest) SetTopPolicyDo(_topPolicyDo *TopPolicyDO) error {
     r._topPolicyDo = _topPolicyDo
     r.Set("top_policy_do", _topPolicyDo)
     return nil
 }
 
 // TopPolicyDo Getter
-func (r TaobaoAlitripItPolicyAddRequest) GetTopPolicyDo() *TopPolicyDO {
+func (r TaobaoAlitripItPolicyAddAPIRequest) GetTopPolicyDo() *TopPolicyDO {
     return r._topPolicyDo
 }

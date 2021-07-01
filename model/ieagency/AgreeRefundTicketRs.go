@@ -1,7 +1,7 @@
 package ieagency
 
-// AgreeRefundTicketRs 
-type AgreeRefundTicketRs struct {
+// AgreeRefundTicketRS 
+type AgreeRefundTicketRS struct {
     // apiErrorMsg
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     // apiErrorCode

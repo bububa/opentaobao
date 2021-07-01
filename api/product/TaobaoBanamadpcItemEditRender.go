@@ -11,7 +11,7 @@ taobao.banamadpc.item.edit.render
 
 巴拿马供应商通过此接口获取编辑商品发布页
 */
-func TaobaoBanamadpcItemEditRender(clt *core.SDKClient, req *product.TaobaoBanamadpcItemEditRenderRequest, session string) (*product.TaobaoBanamadpcItemEditRenderAPIResponse, error) {
+func TaobaoBanamadpcItemEditRender(clt *core.SDKClient, req *product.TaobaoBanamadpcItemEditRenderAPIRequest, session string) (*product.TaobaoBanamadpcItemEditRenderAPIResponse, error) {
     var resp product.TaobaoBanamadpcItemEditRenderAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

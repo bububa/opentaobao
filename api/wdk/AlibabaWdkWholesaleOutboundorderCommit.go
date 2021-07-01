@@ -11,7 +11,7 @@ alibaba.wdk.wholesale.outboundorder.commit
 
 盒马帮发货信息回传接口
 */
-func AlibabaWdkWholesaleOutboundorderCommit(clt *core.SDKClient, req *wdk.AlibabaWdkWholesaleOutboundorderCommitRequest, session string) (*wdk.AlibabaWdkWholesaleOutboundorderCommitAPIResponse, error) {
+func AlibabaWdkWholesaleOutboundorderCommit(clt *core.SDKClient, req *wdk.AlibabaWdkWholesaleOutboundorderCommitAPIRequest, session string) (*wdk.AlibabaWdkWholesaleOutboundorderCommitAPIResponse, error) {
     var resp wdk.AlibabaWdkWholesaleOutboundorderCommitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

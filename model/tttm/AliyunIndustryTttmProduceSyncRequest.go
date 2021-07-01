@@ -12,26 +12,26 @@ aliyun.industry.tttm.produce.sync
 
 天天特卖生产进度同步
 */
-type AliyunIndustryTttmProduceSyncRequest struct {
+type AliyunIndustryTttmProduceSyncAPIRequest struct {
     model.Params
     // 计划单
     _syncPlan   *SyncPlanDTO
 }
 
-// 初始化AliyunIndustryTttmProduceSyncRequest对象
-func NewAliyunIndustryTttmProduceSyncRequest() *AliyunIndustryTttmProduceSyncRequest{
-    return &AliyunIndustryTttmProduceSyncRequest{
+// 初始化AliyunIndustryTttmProduceSyncAPIRequest对象
+func NewAliyunIndustryTttmProduceSyncRequest() *AliyunIndustryTttmProduceSyncAPIRequest{
+    return &AliyunIndustryTttmProduceSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliyunIndustryTttmProduceSyncRequest) GetApiMethodName() string {
+func (r AliyunIndustryTttmProduceSyncAPIRequest) GetApiMethodName() string {
     return "aliyun.industry.tttm.produce.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliyunIndustryTttmProduceSyncRequest) GetApiParams() url.Values {
+func (r AliyunIndustryTttmProduceSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliyunIndustryTttmProduceSyncRequest) GetApiParams() url.Values {
 }
 // SyncPlan Setter
 // 计划单
-func (r *AliyunIndustryTttmProduceSyncRequest) SetSyncPlan(_syncPlan *SyncPlanDTO) error {
+func (r *AliyunIndustryTttmProduceSyncAPIRequest) SetSyncPlan(_syncPlan *SyncPlanDTO) error {
     r._syncPlan = _syncPlan
     r.Set("sync_plan", _syncPlan)
     return nil
 }
 
 // SyncPlan Getter
-func (r AliyunIndustryTttmProduceSyncRequest) GetSyncPlan() *SyncPlanDTO {
+func (r AliyunIndustryTttmProduceSyncAPIRequest) GetSyncPlan() *SyncPlanDTO {
     return r._syncPlan
 }

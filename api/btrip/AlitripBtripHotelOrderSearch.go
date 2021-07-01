@@ -11,7 +11,7 @@ alitrip.btrip.hotel.order.search
 
 企业获取商旅酒店订单数据
 */
-func AlitripBtripHotelOrderSearch(clt *core.SDKClient, req *btrip.AlitripBtripHotelOrderSearchRequest, session string) (*btrip.AlitripBtripHotelOrderSearchAPIResponse, error) {
+func AlitripBtripHotelOrderSearch(clt *core.SDKClient, req *btrip.AlitripBtripHotelOrderSearchAPIRequest, session string) (*btrip.AlitripBtripHotelOrderSearchAPIResponse, error) {
     var resp btrip.AlitripBtripHotelOrderSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

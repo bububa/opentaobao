@@ -12,7 +12,7 @@ alibaba.xiami.api.artist.detail.get
 
 艺人详情
 */
-type AlibabaXiamiApiArtistDetailGetRequest struct {
+type AlibabaXiamiApiArtistDetailGetAPIRequest struct {
     model.Params
     // 艺人id
     _id   int64
@@ -20,20 +20,20 @@ type AlibabaXiamiApiArtistDetailGetRequest struct {
     _description   string
 }
 
-// 初始化AlibabaXiamiApiArtistDetailGetRequest对象
-func NewAlibabaXiamiApiArtistDetailGetRequest() *AlibabaXiamiApiArtistDetailGetRequest{
-    return &AlibabaXiamiApiArtistDetailGetRequest{
+// 初始化AlibabaXiamiApiArtistDetailGetAPIRequest对象
+func NewAlibabaXiamiApiArtistDetailGetRequest() *AlibabaXiamiApiArtistDetailGetAPIRequest{
+    return &AlibabaXiamiApiArtistDetailGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaXiamiApiArtistDetailGetRequest) GetApiMethodName() string {
+func (r AlibabaXiamiApiArtistDetailGetAPIRequest) GetApiMethodName() string {
     return "alibaba.xiami.api.artist.detail.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaXiamiApiArtistDetailGetRequest) GetApiParams() url.Values {
+func (r AlibabaXiamiApiArtistDetailGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaXiamiApiArtistDetailGetRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 艺人id
-func (r *AlibabaXiamiApiArtistDetailGetRequest) SetId(_id int64) error {
+func (r *AlibabaXiamiApiArtistDetailGetAPIRequest) SetId(_id int64) error {
     r._id = _id
     r.Set("id", _id)
     return nil
 }
 
 // Id Getter
-func (r AlibabaXiamiApiArtistDetailGetRequest) GetId() int64 {
+func (r AlibabaXiamiApiArtistDetailGetAPIRequest) GetId() int64 {
     return r._id
 }
 // Description Setter
 // 是否显示description, show为显示, 其他为不显示
-func (r *AlibabaXiamiApiArtistDetailGetRequest) SetDescription(_description string) error {
+func (r *AlibabaXiamiApiArtistDetailGetAPIRequest) SetDescription(_description string) error {
     r._description = _description
     r.Set("description", _description)
     return nil
 }
 
 // Description Getter
-func (r AlibabaXiamiApiArtistDetailGetRequest) GetDescription() string {
+func (r AlibabaXiamiApiArtistDetailGetAPIRequest) GetDescription() string {
     return r._description
 }

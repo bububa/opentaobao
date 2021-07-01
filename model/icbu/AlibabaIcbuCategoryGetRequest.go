@@ -12,26 +12,26 @@ alibaba.icbu.category.get
 
 获取商品发布类目
 */
-type AlibabaIcbuCategoryGetRequest struct {
+type AlibabaIcbuCategoryGetAPIRequest struct {
     model.Params
     // 发布类目id,必须大于等于0， 如果为0，则查询所有一级类目
     _catId   int64
 }
 
-// 初始化AlibabaIcbuCategoryGetRequest对象
-func NewAlibabaIcbuCategoryGetRequest() *AlibabaIcbuCategoryGetRequest{
-    return &AlibabaIcbuCategoryGetRequest{
+// 初始化AlibabaIcbuCategoryGetAPIRequest对象
+func NewAlibabaIcbuCategoryGetRequest() *AlibabaIcbuCategoryGetAPIRequest{
+    return &AlibabaIcbuCategoryGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuCategoryGetRequest) GetApiMethodName() string {
+func (r AlibabaIcbuCategoryGetAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.category.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuCategoryGetRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuCategoryGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIcbuCategoryGetRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 发布类目id,必须大于等于0， 如果为0，则查询所有一级类目
-func (r *AlibabaIcbuCategoryGetRequest) SetCatId(_catId int64) error {
+func (r *AlibabaIcbuCategoryGetAPIRequest) SetCatId(_catId int64) error {
     r._catId = _catId
     r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
-func (r AlibabaIcbuCategoryGetRequest) GetCatId() int64 {
+func (r AlibabaIcbuCategoryGetAPIRequest) GetCatId() int64 {
     return r._catId
 }

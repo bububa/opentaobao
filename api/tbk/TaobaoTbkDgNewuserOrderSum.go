@@ -11,7 +11,7 @@ taobao.tbk.dg.newuser.order.sum
 
 拉新活动汇总API
 */
-func TaobaoTbkDgNewuserOrderSum(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderSumRequest, session string) (*tbk.TaobaoTbkDgNewuserOrderSumAPIResponse, error) {
+func TaobaoTbkDgNewuserOrderSum(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderSumAPIRequest, session string) (*tbk.TaobaoTbkDgNewuserOrderSumAPIResponse, error) {
     var resp tbk.TaobaoTbkDgNewuserOrderSumAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

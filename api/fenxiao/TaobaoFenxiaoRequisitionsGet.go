@@ -11,7 +11,7 @@ taobao.fenxiao.requisitions.get
 
 合作申请查询
 */
-func TaobaoFenxiaoRequisitionsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoRequisitionsGetRequest, session string) (*fenxiao.TaobaoFenxiaoRequisitionsGetAPIResponse, error) {
+func TaobaoFenxiaoRequisitionsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoRequisitionsGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoRequisitionsGetAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoRequisitionsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

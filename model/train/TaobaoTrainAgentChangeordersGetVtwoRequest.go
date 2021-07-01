@@ -12,26 +12,26 @@ taobao.train.agent.changeorders.get.vtwo
 
 代理商用来获取待改签的订单列表及数量，防止代理商掉单。
 */
-type TaobaoTrainAgentChangeordersGetVtwoRequest struct {
+type TaobaoTrainAgentChangeordersGetVtwoAPIRequest struct {
     model.Params
     // 卖家id
     _agentId   int64
 }
 
-// 初始化TaobaoTrainAgentChangeordersGetVtwoRequest对象
-func NewTaobaoTrainAgentChangeordersGetVtwoRequest() *TaobaoTrainAgentChangeordersGetVtwoRequest{
-    return &TaobaoTrainAgentChangeordersGetVtwoRequest{
+// 初始化TaobaoTrainAgentChangeordersGetVtwoAPIRequest对象
+func NewTaobaoTrainAgentChangeordersGetVtwoRequest() *TaobaoTrainAgentChangeordersGetVtwoAPIRequest{
+    return &TaobaoTrainAgentChangeordersGetVtwoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentChangeordersGetVtwoRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentChangeordersGetVtwoAPIRequest) GetApiMethodName() string {
     return "taobao.train.agent.changeorders.get.vtwo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentChangeordersGetVtwoRequest) GetApiParams() url.Values {
+func (r TaobaoTrainAgentChangeordersGetVtwoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentChangeordersGetVtwoRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 卖家id
-func (r *TaobaoTrainAgentChangeordersGetVtwoRequest) SetAgentId(_agentId int64) error {
+func (r *TaobaoTrainAgentChangeordersGetVtwoAPIRequest) SetAgentId(_agentId int64) error {
     r._agentId = _agentId
     r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
-func (r TaobaoTrainAgentChangeordersGetVtwoRequest) GetAgentId() int64 {
+func (r TaobaoTrainAgentChangeordersGetVtwoAPIRequest) GetAgentId() int64 {
     return r._agentId
 }

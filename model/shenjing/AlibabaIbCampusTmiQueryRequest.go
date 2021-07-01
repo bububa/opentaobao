@@ -12,26 +12,26 @@ alibaba.ib.campus.tmi.query
 
 获取特定银行账户的银行流水
 */
-type AlibabaIbCampusTmiQueryRequest struct {
+type AlibabaIbCampusTmiQueryAPIRequest struct {
     model.Params
     // 查询参数
     _accountQueryReqDto   *AccountQueryReqDTO
 }
 
-// 初始化AlibabaIbCampusTmiQueryRequest对象
-func NewAlibabaIbCampusTmiQueryRequest() *AlibabaIbCampusTmiQueryRequest{
-    return &AlibabaIbCampusTmiQueryRequest{
+// 初始化AlibabaIbCampusTmiQueryAPIRequest对象
+func NewAlibabaIbCampusTmiQueryRequest() *AlibabaIbCampusTmiQueryAPIRequest{
+    return &AlibabaIbCampusTmiQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIbCampusTmiQueryRequest) GetApiMethodName() string {
+func (r AlibabaIbCampusTmiQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.ib.campus.tmi.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIbCampusTmiQueryRequest) GetApiParams() url.Values {
+func (r AlibabaIbCampusTmiQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIbCampusTmiQueryRequest) GetApiParams() url.Values {
 }
 // AccountQueryReqDto Setter
 // 查询参数
-func (r *AlibabaIbCampusTmiQueryRequest) SetAccountQueryReqDto(_accountQueryReqDto *AccountQueryReqDTO) error {
+func (r *AlibabaIbCampusTmiQueryAPIRequest) SetAccountQueryReqDto(_accountQueryReqDto *AccountQueryReqDTO) error {
     r._accountQueryReqDto = _accountQueryReqDto
     r.Set("account_query_req_dto", _accountQueryReqDto)
     return nil
 }
 
 // AccountQueryReqDto Getter
-func (r AlibabaIbCampusTmiQueryRequest) GetAccountQueryReqDto() *AccountQueryReqDTO {
+func (r AlibabaIbCampusTmiQueryAPIRequest) GetAccountQueryReqDto() *AccountQueryReqDTO {
     return r._accountQueryReqDto
 }

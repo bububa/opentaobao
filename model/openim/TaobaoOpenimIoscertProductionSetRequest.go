@@ -12,7 +12,7 @@ taobao.openim.ioscert.production.set
 
 设置ios证书
 */
-type TaobaoOpenimIoscertProductionSetRequest struct {
+type TaobaoOpenimIoscertProductionSetAPIRequest struct {
     model.Params
     // 证书密码
     _password   string
@@ -20,20 +20,20 @@ type TaobaoOpenimIoscertProductionSetRequest struct {
     _cert   string
 }
 
-// 初始化TaobaoOpenimIoscertProductionSetRequest对象
-func NewTaobaoOpenimIoscertProductionSetRequest() *TaobaoOpenimIoscertProductionSetRequest{
-    return &TaobaoOpenimIoscertProductionSetRequest{
+// 初始化TaobaoOpenimIoscertProductionSetAPIRequest对象
+func NewTaobaoOpenimIoscertProductionSetRequest() *TaobaoOpenimIoscertProductionSetAPIRequest{
+    return &TaobaoOpenimIoscertProductionSetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenimIoscertProductionSetRequest) GetApiMethodName() string {
+func (r TaobaoOpenimIoscertProductionSetAPIRequest) GetApiMethodName() string {
     return "taobao.openim.ioscert.production.set"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimIoscertProductionSetRequest) GetApiParams() url.Values {
+func (r TaobaoOpenimIoscertProductionSetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOpenimIoscertProductionSetRequest) GetApiParams() url.Values {
 }
 // Password Setter
 // 证书密码
-func (r *TaobaoOpenimIoscertProductionSetRequest) SetPassword(_password string) error {
+func (r *TaobaoOpenimIoscertProductionSetAPIRequest) SetPassword(_password string) error {
     r._password = _password
     r.Set("password", _password)
     return nil
 }
 
 // Password Getter
-func (r TaobaoOpenimIoscertProductionSetRequest) GetPassword() string {
+func (r TaobaoOpenimIoscertProductionSetAPIRequest) GetPassword() string {
     return r._password
 }
 // Cert Setter
 // 证书文件内容,base64编码
-func (r *TaobaoOpenimIoscertProductionSetRequest) SetCert(_cert string) error {
+func (r *TaobaoOpenimIoscertProductionSetAPIRequest) SetCert(_cert string) error {
     r._cert = _cert
     r.Set("cert", _cert)
     return nil
 }
 
 // Cert Getter
-func (r TaobaoOpenimIoscertProductionSetRequest) GetCert() string {
+func (r TaobaoOpenimIoscertProductionSetAPIRequest) GetCert() string {
     return r._cert
 }

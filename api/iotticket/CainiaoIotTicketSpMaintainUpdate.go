@@ -11,7 +11,7 @@ cainiao.iot.ticket.sp.maintain.update
 
 IoT售后服务商维修方案更新
 */
-func CainiaoIotTicketSpMaintainUpdate(clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpMaintainUpdateRequest, session string) (*iotticket.CainiaoIotTicketSpMaintainUpdateAPIResponse, error) {
+func CainiaoIotTicketSpMaintainUpdate(clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpMaintainUpdateAPIRequest, session string) (*iotticket.CainiaoIotTicketSpMaintainUpdateAPIResponse, error) {
     var resp iotticket.CainiaoIotTicketSpMaintainUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

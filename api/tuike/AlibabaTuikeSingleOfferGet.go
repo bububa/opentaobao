@@ -11,7 +11,7 @@ alibaba.tuike.single.offer.get
 
 查询单个推客商品信息的接口
 */
-func AlibabaTuikeSingleOfferGet(clt *core.SDKClient, req *tuike.AlibabaTuikeSingleOfferGetRequest, session string) (*tuike.AlibabaTuikeSingleOfferGetAPIResponse, error) {
+func AlibabaTuikeSingleOfferGet(clt *core.SDKClient, req *tuike.AlibabaTuikeSingleOfferGetAPIRequest, session string) (*tuike.AlibabaTuikeSingleOfferGetAPIResponse, error) {
     var resp tuike.AlibabaTuikeSingleOfferGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

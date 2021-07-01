@@ -11,7 +11,7 @@ alibaba.servicecenter.workcard.create
 
 创建服务平台工单
 */
-func AlibabaServicecenterWorkcardCreate(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCreateRequest, session string) (*tmallservice.AlibabaServicecenterWorkcardCreateAPIResponse, error) {
+func AlibabaServicecenterWorkcardCreate(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCreateAPIRequest, session string) (*tmallservice.AlibabaServicecenterWorkcardCreateAPIResponse, error) {
     var resp tmallservice.AlibabaServicecenterWorkcardCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

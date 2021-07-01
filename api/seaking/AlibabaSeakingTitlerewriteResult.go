@@ -11,7 +11,7 @@ alibaba.seaking.titlerewrite.result
 
 获取标题改写任务结果
 */
-func AlibabaSeakingTitlerewriteResult(clt *core.SDKClient, req *seaking.AlibabaSeakingTitlerewriteResultRequest, session string) (*seaking.AlibabaSeakingTitlerewriteResultAPIResponse, error) {
+func AlibabaSeakingTitlerewriteResult(clt *core.SDKClient, req *seaking.AlibabaSeakingTitlerewriteResultAPIRequest, session string) (*seaking.AlibabaSeakingTitlerewriteResultAPIResponse, error) {
     var resp seaking.AlibabaSeakingTitlerewriteResultAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

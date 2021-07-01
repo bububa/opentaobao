@@ -11,7 +11,7 @@ alibaba.alisports.passport.parter.synccard
 
 运享通修改卡号的时候，通知更新到阿里体育和支付宝卡包中
 */
-func AlibabaAlisportsPassportParterSynccard(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportParterSynccardRequest, session string) (*alisports.AlibabaAlisportsPassportParterSynccardAPIResponse, error) {
+func AlibabaAlisportsPassportParterSynccard(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportParterSynccardAPIRequest, session string) (*alisports.AlibabaAlisportsPassportParterSynccardAPIResponse, error) {
     var resp alisports.AlibabaAlisportsPassportParterSynccardAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

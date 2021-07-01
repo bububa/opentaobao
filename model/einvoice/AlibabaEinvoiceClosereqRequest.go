@@ -12,7 +12,7 @@ alibaba.einvoice.closereq
 
 关闭失败开票请求，避免造成重复开票
 */
-type AlibabaEinvoiceClosereqRequest struct {
+type AlibabaEinvoiceClosereqAPIRequest struct {
     model.Params
     // 流水号
     _serialNo   string
@@ -20,20 +20,20 @@ type AlibabaEinvoiceClosereqRequest struct {
     _payeeRegisterNo   string
 }
 
-// 初始化AlibabaEinvoiceClosereqRequest对象
-func NewAlibabaEinvoiceClosereqRequest() *AlibabaEinvoiceClosereqRequest{
-    return &AlibabaEinvoiceClosereqRequest{
+// 初始化AlibabaEinvoiceClosereqAPIRequest对象
+func NewAlibabaEinvoiceClosereqRequest() *AlibabaEinvoiceClosereqAPIRequest{
+    return &AlibabaEinvoiceClosereqAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceClosereqRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceClosereqAPIRequest) GetApiMethodName() string {
     return "alibaba.einvoice.closereq"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceClosereqRequest) GetApiParams() url.Values {
+func (r AlibabaEinvoiceClosereqAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaEinvoiceClosereqRequest) GetApiParams() url.Values {
 }
 // SerialNo Setter
 // 流水号
-func (r *AlibabaEinvoiceClosereqRequest) SetSerialNo(_serialNo string) error {
+func (r *AlibabaEinvoiceClosereqAPIRequest) SetSerialNo(_serialNo string) error {
     r._serialNo = _serialNo
     r.Set("serial_no", _serialNo)
     return nil
 }
 
 // SerialNo Getter
-func (r AlibabaEinvoiceClosereqRequest) GetSerialNo() string {
+func (r AlibabaEinvoiceClosereqAPIRequest) GetSerialNo() string {
     return r._serialNo
 }
 // PayeeRegisterNo Setter
 // 税号
-func (r *AlibabaEinvoiceClosereqRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+func (r *AlibabaEinvoiceClosereqAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
     r._payeeRegisterNo = _payeeRegisterNo
     r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
-func (r AlibabaEinvoiceClosereqRequest) GetPayeeRegisterNo() string {
+func (r AlibabaEinvoiceClosereqAPIRequest) GetPayeeRegisterNo() string {
     return r._payeeRegisterNo
 }

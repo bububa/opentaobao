@@ -11,7 +11,7 @@ taobao.miniapp.cloud.function.invoke
 
 用户isv从外部触发聚石塔云函数的执行。
 */
-func TaobaoMiniappCloudFunctionInvoke(clt *core.SDKClient, req *miniapp.TaobaoMiniappCloudFunctionInvokeRequest, session string) (*miniapp.TaobaoMiniappCloudFunctionInvokeAPIResponse, error) {
+func TaobaoMiniappCloudFunctionInvoke(clt *core.SDKClient, req *miniapp.TaobaoMiniappCloudFunctionInvokeAPIRequest, session string) (*miniapp.TaobaoMiniappCloudFunctionInvokeAPIResponse, error) {
     var resp miniapp.TaobaoMiniappCloudFunctionInvokeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

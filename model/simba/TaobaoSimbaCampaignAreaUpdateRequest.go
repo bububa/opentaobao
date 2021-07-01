@@ -12,7 +12,7 @@ taobao.simba.campaign.area.update
 
 更新一个推广计划的投放地域
 */
-type TaobaoSimbaCampaignAreaUpdateRequest struct {
+type TaobaoSimbaCampaignAreaUpdateAPIRequest struct {
     model.Params
     // 推广计划Id
     _campaignId   int64
@@ -22,20 +22,20 @@ type TaobaoSimbaCampaignAreaUpdateRequest struct {
     _nick   string
 }
 
-// 初始化TaobaoSimbaCampaignAreaUpdateRequest对象
-func NewTaobaoSimbaCampaignAreaUpdateRequest() *TaobaoSimbaCampaignAreaUpdateRequest{
-    return &TaobaoSimbaCampaignAreaUpdateRequest{
+// 初始化TaobaoSimbaCampaignAreaUpdateAPIRequest对象
+func NewTaobaoSimbaCampaignAreaUpdateRequest() *TaobaoSimbaCampaignAreaUpdateAPIRequest{
+    return &TaobaoSimbaCampaignAreaUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaCampaignAreaUpdateRequest) GetApiMethodName() string {
+func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.simba.campaign.area.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaCampaignAreaUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TaobaoSimbaCampaignAreaUpdateRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaCampaignAreaUpdateRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r TaobaoSimbaCampaignAreaUpdateRequest) GetCampaignId() int64 {
+func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }
 // Area Setter
 // 值为：“all”；或者用“,”分割的数字，数字必须是直通车全国省市列表的AreaID；
-func (r *TaobaoSimbaCampaignAreaUpdateRequest) SetArea(_area string) error {
+func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetArea(_area string) error {
     r._area = _area
     r.Set("area", _area)
     return nil
 }
 
 // Area Getter
-func (r TaobaoSimbaCampaignAreaUpdateRequest) GetArea() string {
+func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetArea() string {
     return r._area
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignAreaUpdateRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaCampaignAreaUpdateRequest) GetNick() string {
+func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetNick() string {
     return r._nick
 }

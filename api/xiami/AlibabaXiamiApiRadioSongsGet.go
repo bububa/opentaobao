@@ -11,7 +11,7 @@ alibaba.xiami.api.radio.songs.get
 
 获取电台songs
 */
-func AlibabaXiamiApiRadioSongsGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiRadioSongsGetRequest, session string) (*xiami.AlibabaXiamiApiRadioSongsGetAPIResponse, error) {
+func AlibabaXiamiApiRadioSongsGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiRadioSongsGetAPIRequest, session string) (*xiami.AlibabaXiamiApiRadioSongsGetAPIResponse, error) {
     var resp xiami.AlibabaXiamiApiRadioSongsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

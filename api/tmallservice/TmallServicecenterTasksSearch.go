@@ -11,7 +11,7 @@ tmall.servicecenter.tasks.search
 
 查询任务类工单信息
 */
-func TmallServicecenterTasksSearch(clt *core.SDKClient, req *tmallservice.TmallServicecenterTasksSearchRequest, session string) (*tmallservice.TmallServicecenterTasksSearchAPIResponse, error) {
+func TmallServicecenterTasksSearch(clt *core.SDKClient, req *tmallservice.TmallServicecenterTasksSearchAPIRequest, session string) (*tmallservice.TmallServicecenterTasksSearchAPIResponse, error) {
     var resp tmallservice.TmallServicecenterTasksSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

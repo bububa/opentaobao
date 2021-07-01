@@ -11,7 +11,7 @@ alipay.baoxian.claim.survey.conclusion.submit
 
 保险退货服务商提交勘察结论
 */
-func AlipayBaoxianClaimSurveyConclusionSubmit(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimSurveyConclusionSubmitRequest, session string) (*baoxian.AlipayBaoxianClaimSurveyConclusionSubmitAPIResponse, error) {
+func AlipayBaoxianClaimSurveyConclusionSubmit(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest, session string) (*baoxian.AlipayBaoxianClaimSurveyConclusionSubmitAPIResponse, error) {
     var resp baoxian.AlipayBaoxianClaimSurveyConclusionSubmitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

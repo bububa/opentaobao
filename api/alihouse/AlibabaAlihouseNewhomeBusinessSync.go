@@ -11,7 +11,7 @@ alibaba.alihouse.newhome.business.sync
 
 商圈数据同步
 */
-func AlibabaAlihouseNewhomeBusinessSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeBusinessSyncRequest, session string) (*alihouse.AlibabaAlihouseNewhomeBusinessSyncAPIResponse, error) {
+func AlibabaAlihouseNewhomeBusinessSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeBusinessSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeBusinessSyncAPIResponse, error) {
     var resp alihouse.AlibabaAlihouseNewhomeBusinessSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

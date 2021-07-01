@@ -11,7 +11,7 @@ taobao.baichuan.item.subscribe.relation.query
 
 查询单个订阅关系
 */
-func TaobaoBaichuanItemSubscribeRelationQuery(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemSubscribeRelationQueryRequest, session string) (*baichuan.TaobaoBaichuanItemSubscribeRelationQueryAPIResponse, error) {
+func TaobaoBaichuanItemSubscribeRelationQuery(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemSubscribeRelationQueryAPIRequest, session string) (*baichuan.TaobaoBaichuanItemSubscribeRelationQueryAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanItemSubscribeRelationQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

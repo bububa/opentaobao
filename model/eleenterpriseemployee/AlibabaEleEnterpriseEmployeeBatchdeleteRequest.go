@@ -12,26 +12,26 @@ alibaba.ele.enterprise.employee.batchdelete
 
 批量删除员工
 */
-type AlibabaEleEnterpriseEmployeeBatchdeleteRequest struct {
+type AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest struct {
     model.Params
     // 员工工号
     _employeeNos   []string
 }
 
-// 初始化AlibabaEleEnterpriseEmployeeBatchdeleteRequest对象
-func NewAlibabaEleEnterpriseEmployeeBatchdeleteRequest() *AlibabaEleEnterpriseEmployeeBatchdeleteRequest{
-    return &AlibabaEleEnterpriseEmployeeBatchdeleteRequest{
+// 初始化AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest对象
+func NewAlibabaEleEnterpriseEmployeeBatchdeleteRequest() *AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest{
+    return &AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseEmployeeBatchdeleteRequest) GetApiMethodName() string {
+func (r AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.enterprise.employee.batchdelete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseEmployeeBatchdeleteRequest) GetApiParams() url.Values {
+func (r AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEleEnterpriseEmployeeBatchdeleteRequest) GetApiParams() url.Value
 }
 // EmployeeNos Setter
 // 员工工号
-func (r *AlibabaEleEnterpriseEmployeeBatchdeleteRequest) SetEmployeeNos(_employeeNos []string) error {
+func (r *AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) SetEmployeeNos(_employeeNos []string) error {
     r._employeeNos = _employeeNos
     r.Set("employee_nos", _employeeNos)
     return nil
 }
 
 // EmployeeNos Getter
-func (r AlibabaEleEnterpriseEmployeeBatchdeleteRequest) GetEmployeeNos() []string {
+func (r AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) GetEmployeeNos() []string {
     return r._employeeNos
 }

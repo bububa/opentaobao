@@ -12,26 +12,26 @@ alibaba.health.nr.logistics.waybill.get
 
 商家登录后根据订单号查询物流单号及电子面单信息
 */
-type AlibabaHealthNrLogisticsWaybillGetRequest struct {
+type AlibabaHealthNrLogisticsWaybillGetAPIRequest struct {
     model.Params
     // 订单id
     _orderId   int64
 }
 
-// 初始化AlibabaHealthNrLogisticsWaybillGetRequest对象
-func NewAlibabaHealthNrLogisticsWaybillGetRequest() *AlibabaHealthNrLogisticsWaybillGetRequest{
-    return &AlibabaHealthNrLogisticsWaybillGetRequest{
+// 初始化AlibabaHealthNrLogisticsWaybillGetAPIRequest对象
+func NewAlibabaHealthNrLogisticsWaybillGetRequest() *AlibabaHealthNrLogisticsWaybillGetAPIRequest{
+    return &AlibabaHealthNrLogisticsWaybillGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaHealthNrLogisticsWaybillGetRequest) GetApiMethodName() string {
+func (r AlibabaHealthNrLogisticsWaybillGetAPIRequest) GetApiMethodName() string {
     return "alibaba.health.nr.logistics.waybill.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaHealthNrLogisticsWaybillGetRequest) GetApiParams() url.Values {
+func (r AlibabaHealthNrLogisticsWaybillGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaHealthNrLogisticsWaybillGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaHealthNrLogisticsWaybillGetRequest) SetOrderId(_orderId int64) error {
+func (r *AlibabaHealthNrLogisticsWaybillGetAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlibabaHealthNrLogisticsWaybillGetRequest) GetOrderId() int64 {
+func (r AlibabaHealthNrLogisticsWaybillGetAPIRequest) GetOrderId() int64 {
     return r._orderId
 }

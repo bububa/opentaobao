@@ -12,26 +12,26 @@ alibaba.tianji.supplier.order.delivery
 
 天机供应商发货
 */
-type AlibabaTianjiSupplierOrderDeliveryRequest struct {
+type AlibabaTianjiSupplierOrderDeliveryAPIRequest struct {
     model.Params
     // 物流信息
     _paramDistributionOrderLogisticsModel   *DistributionOrderLogisticsModel
 }
 
-// 初始化AlibabaTianjiSupplierOrderDeliveryRequest对象
-func NewAlibabaTianjiSupplierOrderDeliveryRequest() *AlibabaTianjiSupplierOrderDeliveryRequest{
-    return &AlibabaTianjiSupplierOrderDeliveryRequest{
+// 初始化AlibabaTianjiSupplierOrderDeliveryAPIRequest对象
+func NewAlibabaTianjiSupplierOrderDeliveryRequest() *AlibabaTianjiSupplierOrderDeliveryAPIRequest{
+    return &AlibabaTianjiSupplierOrderDeliveryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTianjiSupplierOrderDeliveryRequest) GetApiMethodName() string {
+func (r AlibabaTianjiSupplierOrderDeliveryAPIRequest) GetApiMethodName() string {
     return "alibaba.tianji.supplier.order.delivery"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTianjiSupplierOrderDeliveryRequest) GetApiParams() url.Values {
+func (r AlibabaTianjiSupplierOrderDeliveryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTianjiSupplierOrderDeliveryRequest) GetApiParams() url.Values {
 }
 // ParamDistributionOrderLogisticsModel Setter
 // 物流信息
-func (r *AlibabaTianjiSupplierOrderDeliveryRequest) SetParamDistributionOrderLogisticsModel(_paramDistributionOrderLogisticsModel *DistributionOrderLogisticsModel) error {
+func (r *AlibabaTianjiSupplierOrderDeliveryAPIRequest) SetParamDistributionOrderLogisticsModel(_paramDistributionOrderLogisticsModel *DistributionOrderLogisticsModel) error {
     r._paramDistributionOrderLogisticsModel = _paramDistributionOrderLogisticsModel
     r.Set("param_distribution_order_logistics_model", _paramDistributionOrderLogisticsModel)
     return nil
 }
 
 // ParamDistributionOrderLogisticsModel Getter
-func (r AlibabaTianjiSupplierOrderDeliveryRequest) GetParamDistributionOrderLogisticsModel() *DistributionOrderLogisticsModel {
+func (r AlibabaTianjiSupplierOrderDeliveryAPIRequest) GetParamDistributionOrderLogisticsModel() *DistributionOrderLogisticsModel {
     return r._paramDistributionOrderLogisticsModel
 }

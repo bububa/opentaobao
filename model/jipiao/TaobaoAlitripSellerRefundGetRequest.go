@@ -12,26 +12,26 @@ taobao.alitrip.seller.refund.get
 
 查询退票申请单详情
 */
-type TaobaoAlitripSellerRefundGetRequest struct {
+type TaobaoAlitripSellerRefundGetAPIRequest struct {
     model.Params
     // 申请单ID
     _applyId   int64
 }
 
-// 初始化TaobaoAlitripSellerRefundGetRequest对象
-func NewTaobaoAlitripSellerRefundGetRequest() *TaobaoAlitripSellerRefundGetRequest{
-    return &TaobaoAlitripSellerRefundGetRequest{
+// 初始化TaobaoAlitripSellerRefundGetAPIRequest对象
+func NewTaobaoAlitripSellerRefundGetRequest() *TaobaoAlitripSellerRefundGetAPIRequest{
+    return &TaobaoAlitripSellerRefundGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripSellerRefundGetRequest) GetApiMethodName() string {
+func (r TaobaoAlitripSellerRefundGetAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.seller.refund.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripSellerRefundGetRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripSellerRefundGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripSellerRefundGetRequest) GetApiParams() url.Values {
 }
 // ApplyId Setter
 // 申请单ID
-func (r *TaobaoAlitripSellerRefundGetRequest) SetApplyId(_applyId int64) error {
+func (r *TaobaoAlitripSellerRefundGetAPIRequest) SetApplyId(_applyId int64) error {
     r._applyId = _applyId
     r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
-func (r TaobaoAlitripSellerRefundGetRequest) GetApplyId() int64 {
+func (r TaobaoAlitripSellerRefundGetAPIRequest) GetApplyId() int64 {
     return r._applyId
 }

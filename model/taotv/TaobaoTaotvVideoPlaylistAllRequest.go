@@ -12,26 +12,26 @@ taobao.taotv.video.playlist.all
 
 根据牌照和视频源等获取播单列表
 */
-type TaobaoTaotvVideoPlaylistAllRequest struct {
+type TaobaoTaotvVideoPlaylistAllAPIRequest struct {
     model.Params
     // 系统信息
     _systemInfo   string
 }
 
-// 初始化TaobaoTaotvVideoPlaylistAllRequest对象
-func NewTaobaoTaotvVideoPlaylistAllRequest() *TaobaoTaotvVideoPlaylistAllRequest{
-    return &TaobaoTaotvVideoPlaylistAllRequest{
+// 初始化TaobaoTaotvVideoPlaylistAllAPIRequest对象
+func NewTaobaoTaotvVideoPlaylistAllRequest() *TaobaoTaotvVideoPlaylistAllAPIRequest{
+    return &TaobaoTaotvVideoPlaylistAllAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTaotvVideoPlaylistAllRequest) GetApiMethodName() string {
+func (r TaobaoTaotvVideoPlaylistAllAPIRequest) GetApiMethodName() string {
     return "taobao.taotv.video.playlist.all"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTaotvVideoPlaylistAllRequest) GetApiParams() url.Values {
+func (r TaobaoTaotvVideoPlaylistAllAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTaotvVideoPlaylistAllRequest) GetApiParams() url.Values {
 }
 // SystemInfo Setter
 // 系统信息
-func (r *TaobaoTaotvVideoPlaylistAllRequest) SetSystemInfo(_systemInfo string) error {
+func (r *TaobaoTaotvVideoPlaylistAllAPIRequest) SetSystemInfo(_systemInfo string) error {
     r._systemInfo = _systemInfo
     r.Set("system_info", _systemInfo)
     return nil
 }
 
 // SystemInfo Getter
-func (r TaobaoTaotvVideoPlaylistAllRequest) GetSystemInfo() string {
+func (r TaobaoTaotvVideoPlaylistAllAPIRequest) GetSystemInfo() string {
     return r._systemInfo
 }

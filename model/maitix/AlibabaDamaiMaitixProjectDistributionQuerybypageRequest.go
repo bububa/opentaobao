@@ -12,26 +12,26 @@ alibaba.damai.maitix.project.distribution.querybypage
 
 分销项目分页查询项目列表服务
 */
-type AlibabaDamaiMaitixProjectDistributionQuerybypageRequest struct {
+type AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest struct {
     model.Params
     // 入参param
     _param   *ProjectPageParam
 }
 
-// 初始化AlibabaDamaiMaitixProjectDistributionQuerybypageRequest对象
-func NewAlibabaDamaiMaitixProjectDistributionQuerybypageRequest() *AlibabaDamaiMaitixProjectDistributionQuerybypageRequest{
-    return &AlibabaDamaiMaitixProjectDistributionQuerybypageRequest{
+// 初始化AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest对象
+func NewAlibabaDamaiMaitixProjectDistributionQuerybypageRequest() *AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest{
+    return &AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixProjectDistributionQuerybypageRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.project.distribution.querybypage"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixProjectDistributionQuerybypageRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixProjectDistributionQuerybypageRequest) GetApiParams() 
 }
 // Param Setter
 // 入参param
-func (r *AlibabaDamaiMaitixProjectDistributionQuerybypageRequest) SetParam(_param *ProjectPageParam) error {
+func (r *AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) SetParam(_param *ProjectPageParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaDamaiMaitixProjectDistributionQuerybypageRequest) GetParam() *ProjectPageParam {
+func (r AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) GetParam() *ProjectPageParam {
     return r._param
 }

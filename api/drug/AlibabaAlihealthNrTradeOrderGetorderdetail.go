@@ -11,7 +11,7 @@ alibaba.alihealth.nr.trade.order.getorderdetail
 
 阿里健康O2O，获取订单详情，修复组合商品价格精度问题
 */
-func AlibabaAlihealthNrTradeOrderGetorderdetail(clt *core.SDKClient, req *drug.AlibabaAlihealthNrTradeOrderGetorderdetailRequest, session string) (*drug.AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponse, error) {
+func AlibabaAlihealthNrTradeOrderGetorderdetail(clt *core.SDKClient, req *drug.AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest, session string) (*drug.AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponse, error) {
     var resp drug.AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ alitrip.tuan.hotel.relate.poi.get
 
 查询酒店团购关联POI
 */
-type AlitripTuanHotelRelatePoiGetRequest struct {
+type AlitripTuanHotelRelatePoiGetAPIRequest struct {
     model.Params
     // 关键字
     _keywords   string
@@ -22,20 +22,20 @@ type AlitripTuanHotelRelatePoiGetRequest struct {
     _catId   int64
 }
 
-// 初始化AlitripTuanHotelRelatePoiGetRequest对象
-func NewAlitripTuanHotelRelatePoiGetRequest() *AlitripTuanHotelRelatePoiGetRequest{
-    return &AlitripTuanHotelRelatePoiGetRequest{
+// 初始化AlitripTuanHotelRelatePoiGetAPIRequest对象
+func NewAlitripTuanHotelRelatePoiGetRequest() *AlitripTuanHotelRelatePoiGetAPIRequest{
+    return &AlitripTuanHotelRelatePoiGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripTuanHotelRelatePoiGetRequest) GetApiMethodName() string {
+func (r AlitripTuanHotelRelatePoiGetAPIRequest) GetApiMethodName() string {
     return "alitrip.tuan.hotel.relate.poi.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripTuanHotelRelatePoiGetRequest) GetApiParams() url.Values {
+func (r AlitripTuanHotelRelatePoiGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlitripTuanHotelRelatePoiGetRequest) GetApiParams() url.Values {
 }
 // Keywords Setter
 // 关键字
-func (r *AlitripTuanHotelRelatePoiGetRequest) SetKeywords(_keywords string) error {
+func (r *AlitripTuanHotelRelatePoiGetAPIRequest) SetKeywords(_keywords string) error {
     r._keywords = _keywords
     r.Set("keywords", _keywords)
     return nil
 }
 
 // Keywords Getter
-func (r AlitripTuanHotelRelatePoiGetRequest) GetKeywords() string {
+func (r AlitripTuanHotelRelatePoiGetAPIRequest) GetKeywords() string {
     return r._keywords
 }
 // DivisionId Setter
 // 行政区ID
-func (r *AlitripTuanHotelRelatePoiGetRequest) SetDivisionId(_divisionId int64) error {
+func (r *AlitripTuanHotelRelatePoiGetAPIRequest) SetDivisionId(_divisionId int64) error {
     r._divisionId = _divisionId
     r.Set("division_id", _divisionId)
     return nil
 }
 
 // DivisionId Getter
-func (r AlitripTuanHotelRelatePoiGetRequest) GetDivisionId() int64 {
+func (r AlitripTuanHotelRelatePoiGetAPIRequest) GetDivisionId() int64 {
     return r._divisionId
 }
 // CatId Setter
 // 类目ID：国内酒店套餐-201189402；国际酒店套餐-201188002；酒店餐饮美食-201214101；酒店服务-201214201；酒店客房优惠券-201214301
-func (r *AlitripTuanHotelRelatePoiGetRequest) SetCatId(_catId int64) error {
+func (r *AlitripTuanHotelRelatePoiGetAPIRequest) SetCatId(_catId int64) error {
     r._catId = _catId
     r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
-func (r AlitripTuanHotelRelatePoiGetRequest) GetCatId() int64 {
+func (r AlitripTuanHotelRelatePoiGetAPIRequest) GetCatId() int64 {
     return r._catId
 }

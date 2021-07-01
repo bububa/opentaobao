@@ -12,7 +12,7 @@ tmall.service.code.consume
 
 天猫服务平台－服务核销
 */
-type TmallServiceCodeConsumeRequest struct {
+type TmallServiceCodeConsumeAPIRequest struct {
     model.Params
     // 核销码
     _consumeCode   string
@@ -22,20 +22,20 @@ type TmallServiceCodeConsumeRequest struct {
     _shopId   string
 }
 
-// 初始化TmallServiceCodeConsumeRequest对象
-func NewTmallServiceCodeConsumeRequest() *TmallServiceCodeConsumeRequest{
-    return &TmallServiceCodeConsumeRequest{
+// 初始化TmallServiceCodeConsumeAPIRequest对象
+func NewTmallServiceCodeConsumeRequest() *TmallServiceCodeConsumeAPIRequest{
+    return &TmallServiceCodeConsumeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServiceCodeConsumeRequest) GetApiMethodName() string {
+func (r TmallServiceCodeConsumeAPIRequest) GetApiMethodName() string {
     return "tmall.service.code.consume"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServiceCodeConsumeRequest) GetApiParams() url.Values {
+func (r TmallServiceCodeConsumeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r TmallServiceCodeConsumeRequest) GetApiParams() url.Values {
 }
 // ConsumeCode Setter
 // 核销码
-func (r *TmallServiceCodeConsumeRequest) SetConsumeCode(_consumeCode string) error {
+func (r *TmallServiceCodeConsumeAPIRequest) SetConsumeCode(_consumeCode string) error {
     r._consumeCode = _consumeCode
     r.Set("consume_code", _consumeCode)
     return nil
 }
 
 // ConsumeCode Getter
-func (r TmallServiceCodeConsumeRequest) GetConsumeCode() string {
+func (r TmallServiceCodeConsumeAPIRequest) GetConsumeCode() string {
     return r._consumeCode
 }
 // OperatorNick Setter
 // 核销帐号
-func (r *TmallServiceCodeConsumeRequest) SetOperatorNick(_operatorNick string) error {
+func (r *TmallServiceCodeConsumeAPIRequest) SetOperatorNick(_operatorNick string) error {
     r._operatorNick = _operatorNick
     r.Set("operator_nick", _operatorNick)
     return nil
 }
 
 // OperatorNick Getter
-func (r TmallServiceCodeConsumeRequest) GetOperatorNick() string {
+func (r TmallServiceCodeConsumeAPIRequest) GetOperatorNick() string {
     return r._operatorNick
 }
 // ShopId Setter
 // 门店id
-func (r *TmallServiceCodeConsumeRequest) SetShopId(_shopId string) error {
+func (r *TmallServiceCodeConsumeAPIRequest) SetShopId(_shopId string) error {
     r._shopId = _shopId
     r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
-func (r TmallServiceCodeConsumeRequest) GetShopId() string {
+func (r TmallServiceCodeConsumeAPIRequest) GetShopId() string {
     return r._shopId
 }

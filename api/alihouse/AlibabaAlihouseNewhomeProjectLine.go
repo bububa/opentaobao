@@ -11,7 +11,7 @@ alibaba.alihouse.newhome.project.line
 
 上下架楼盘
 */
-func AlibabaAlihouseNewhomeProjectLine(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectLineRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectLineAPIResponse, error) {
+func AlibabaAlihouseNewhomeProjectLine(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectLineAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectLineAPIResponse, error) {
     var resp alihouse.AlibabaAlihouseNewhomeProjectLineAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ tmall.channel.trade.applyorder.gets
 
 分页查询采购申请单列表
 */
-type TmallChannelTradeApplyorderGetsRequest struct {
+type TmallChannelTradeApplyorderGetsAPIRequest struct {
     model.Params
     // 交易类型
     _tradeType   int64
@@ -32,20 +32,20 @@ type TmallChannelTradeApplyorderGetsRequest struct {
     _channel   int64
 }
 
-// 初始化TmallChannelTradeApplyorderGetsRequest对象
-func NewTmallChannelTradeApplyorderGetsRequest() *TmallChannelTradeApplyorderGetsRequest{
-    return &TmallChannelTradeApplyorderGetsRequest{
+// 初始化TmallChannelTradeApplyorderGetsAPIRequest对象
+func NewTmallChannelTradeApplyorderGetsRequest() *TmallChannelTradeApplyorderGetsAPIRequest{
+    return &TmallChannelTradeApplyorderGetsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallChannelTradeApplyorderGetsRequest) GetApiMethodName() string {
+func (r TmallChannelTradeApplyorderGetsAPIRequest) GetApiMethodName() string {
     return "tmall.channel.trade.applyorder.gets"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallChannelTradeApplyorderGetsRequest) GetApiParams() url.Values {
+func (r TmallChannelTradeApplyorderGetsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -54,97 +54,97 @@ func (r TmallChannelTradeApplyorderGetsRequest) GetApiParams() url.Values {
 }
 // TradeType Setter
 // 交易类型
-func (r *TmallChannelTradeApplyorderGetsRequest) SetTradeType(_tradeType int64) error {
+func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetTradeType(_tradeType int64) error {
     r._tradeType = _tradeType
     r.Set("trade_type", _tradeType)
     return nil
 }
 
 // TradeType Getter
-func (r TmallChannelTradeApplyorderGetsRequest) GetTradeType() int64 {
+func (r TmallChannelTradeApplyorderGetsAPIRequest) GetTradeType() int64 {
     return r._tradeType
 }
 // ChannelPurchaseApplyOrderNo Setter
 // 申请单号
-func (r *TmallChannelTradeApplyorderGetsRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
+func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
     r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
     r.Set("channel_purchase_apply_order_no", _channelPurchaseApplyOrderNo)
     return nil
 }
 
 // ChannelPurchaseApplyOrderNo Getter
-func (r TmallChannelTradeApplyorderGetsRequest) GetChannelPurchaseApplyOrderNo() string {
+func (r TmallChannelTradeApplyorderGetsAPIRequest) GetChannelPurchaseApplyOrderNo() string {
     return r._channelPurchaseApplyOrderNo
 }
 // PageSize Setter
 // 每页显示数量
-func (r *TmallChannelTradeApplyorderGetsRequest) SetPageSize(_pageSize int64) error {
+func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TmallChannelTradeApplyorderGetsRequest) GetPageSize() int64 {
+func (r TmallChannelTradeApplyorderGetsAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }
 // PageNumber Setter
 // 查询第几页
-func (r *TmallChannelTradeApplyorderGetsRequest) SetPageNumber(_pageNumber int64) error {
+func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetPageNumber(_pageNumber int64) error {
     r._pageNumber = _pageNumber
     r.Set("page_number", _pageNumber)
     return nil
 }
 
 // PageNumber Getter
-func (r TmallChannelTradeApplyorderGetsRequest) GetPageNumber() int64 {
+func (r TmallChannelTradeApplyorderGetsAPIRequest) GetPageNumber() int64 {
     return r._pageNumber
 }
 // NeedPagination Setter
 // 是否需要分页
-func (r *TmallChannelTradeApplyorderGetsRequest) SetNeedPagination(_needPagination bool) error {
+func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetNeedPagination(_needPagination bool) error {
     r._needPagination = _needPagination
     r.Set("need_pagination", _needPagination)
     return nil
 }
 
 // NeedPagination Getter
-func (r TmallChannelTradeApplyorderGetsRequest) GetNeedPagination() bool {
+func (r TmallChannelTradeApplyorderGetsAPIRequest) GetNeedPagination() bool {
     return r._needPagination
 }
 // AuditStatusList Setter
 // 审核状态列表
-func (r *TmallChannelTradeApplyorderGetsRequest) SetAuditStatusList(_auditStatusList []int64) error {
+func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetAuditStatusList(_auditStatusList []int64) error {
     r._auditStatusList = _auditStatusList
     r.Set("audit_status_list", _auditStatusList)
     return nil
 }
 
 // AuditStatusList Getter
-func (r TmallChannelTradeApplyorderGetsRequest) GetAuditStatusList() []int64 {
+func (r TmallChannelTradeApplyorderGetsAPIRequest) GetAuditStatusList() []int64 {
     return r._auditStatusList
 }
 // DistributorNick Setter
 // 分销商nick
-func (r *TmallChannelTradeApplyorderGetsRequest) SetDistributorNick(_distributorNick string) error {
+func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetDistributorNick(_distributorNick string) error {
     r._distributorNick = _distributorNick
     r.Set("distributor_nick", _distributorNick)
     return nil
 }
 
 // DistributorNick Getter
-func (r TmallChannelTradeApplyorderGetsRequest) GetDistributorNick() string {
+func (r TmallChannelTradeApplyorderGetsAPIRequest) GetDistributorNick() string {
     return r._distributorNick
 }
 // Channel Setter
 // 渠道
-func (r *TmallChannelTradeApplyorderGetsRequest) SetChannel(_channel int64) error {
+func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetChannel(_channel int64) error {
     r._channel = _channel
     r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
-func (r TmallChannelTradeApplyorderGetsRequest) GetChannel() int64 {
+func (r TmallChannelTradeApplyorderGetsAPIRequest) GetChannel() int64 {
     return r._channel
 }

@@ -12,26 +12,26 @@ taobao.wdk.equipment.conveyor.info.upload
 
 五道口仓库悬挂链信息上传
 */
-type TaobaoWdkEquipmentConveyorInfoUploadRequest struct {
+type TaobaoWdkEquipmentConveyorInfoUploadAPIRequest struct {
     model.Params
     // 上传信息
     _param0   string
 }
 
-// 初始化TaobaoWdkEquipmentConveyorInfoUploadRequest对象
-func NewTaobaoWdkEquipmentConveyorInfoUploadRequest() *TaobaoWdkEquipmentConveyorInfoUploadRequest{
-    return &TaobaoWdkEquipmentConveyorInfoUploadRequest{
+// 初始化TaobaoWdkEquipmentConveyorInfoUploadAPIRequest对象
+func NewTaobaoWdkEquipmentConveyorInfoUploadRequest() *TaobaoWdkEquipmentConveyorInfoUploadAPIRequest{
+    return &TaobaoWdkEquipmentConveyorInfoUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWdkEquipmentConveyorInfoUploadRequest) GetApiMethodName() string {
+func (r TaobaoWdkEquipmentConveyorInfoUploadAPIRequest) GetApiMethodName() string {
     return "taobao.wdk.equipment.conveyor.info.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWdkEquipmentConveyorInfoUploadRequest) GetApiParams() url.Values {
+func (r TaobaoWdkEquipmentConveyorInfoUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWdkEquipmentConveyorInfoUploadRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 上传信息
-func (r *TaobaoWdkEquipmentConveyorInfoUploadRequest) SetParam0(_param0 string) error {
+func (r *TaobaoWdkEquipmentConveyorInfoUploadAPIRequest) SetParam0(_param0 string) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoWdkEquipmentConveyorInfoUploadRequest) GetParam0() string {
+func (r TaobaoWdkEquipmentConveyorInfoUploadAPIRequest) GetParam0() string {
     return r._param0
 }

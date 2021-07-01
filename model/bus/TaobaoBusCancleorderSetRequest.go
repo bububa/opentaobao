@@ -12,26 +12,26 @@ taobao.bus.cancleorder.set
 
 取消订单
 */
-type TaobaoBusCancleorderSetRequest struct {
+type TaobaoBusCancleorderSetAPIRequest struct {
     model.Params
     // 阿里订单号
     _aliOrderId   string
 }
 
-// 初始化TaobaoBusCancleorderSetRequest对象
-func NewTaobaoBusCancleorderSetRequest() *TaobaoBusCancleorderSetRequest{
-    return &TaobaoBusCancleorderSetRequest{
+// 初始化TaobaoBusCancleorderSetAPIRequest对象
+func NewTaobaoBusCancleorderSetRequest() *TaobaoBusCancleorderSetAPIRequest{
+    return &TaobaoBusCancleorderSetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoBusCancleorderSetRequest) GetApiMethodName() string {
+func (r TaobaoBusCancleorderSetAPIRequest) GetApiMethodName() string {
     return "taobao.bus.cancleorder.set"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoBusCancleorderSetRequest) GetApiParams() url.Values {
+func (r TaobaoBusCancleorderSetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoBusCancleorderSetRequest) GetApiParams() url.Values {
 }
 // AliOrderId Setter
 // 阿里订单号
-func (r *TaobaoBusCancleorderSetRequest) SetAliOrderId(_aliOrderId string) error {
+func (r *TaobaoBusCancleorderSetAPIRequest) SetAliOrderId(_aliOrderId string) error {
     r._aliOrderId = _aliOrderId
     r.Set("ali_order_id", _aliOrderId)
     return nil
 }
 
 // AliOrderId Getter
-func (r TaobaoBusCancleorderSetRequest) GetAliOrderId() string {
+func (r TaobaoBusCancleorderSetAPIRequest) GetAliOrderId() string {
     return r._aliOrderId
 }

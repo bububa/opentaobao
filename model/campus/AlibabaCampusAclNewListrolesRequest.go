@@ -12,7 +12,7 @@ alibaba.campus.acl.new.listroles
 
 查询全部角色
 */
-type AlibabaCampusAclNewListrolesRequest struct {
+type AlibabaCampusAclNewListrolesAPIRequest struct {
     model.Params
     // 系统入参
     _workbenchcontext   *WorkBenchContext
@@ -20,20 +20,20 @@ type AlibabaCampusAclNewListrolesRequest struct {
     _rolequeryparam   *RoleQueryParam
 }
 
-// 初始化AlibabaCampusAclNewListrolesRequest对象
-func NewAlibabaCampusAclNewListrolesRequest() *AlibabaCampusAclNewListrolesRequest{
-    return &AlibabaCampusAclNewListrolesRequest{
+// 初始化AlibabaCampusAclNewListrolesAPIRequest对象
+func NewAlibabaCampusAclNewListrolesRequest() *AlibabaCampusAclNewListrolesAPIRequest{
+    return &AlibabaCampusAclNewListrolesAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusAclNewListrolesRequest) GetApiMethodName() string {
+func (r AlibabaCampusAclNewListrolesAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.acl.new.listroles"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusAclNewListrolesRequest) GetApiParams() url.Values {
+func (r AlibabaCampusAclNewListrolesAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaCampusAclNewListrolesRequest) GetApiParams() url.Values {
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewListrolesRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+func (r *AlibabaCampusAclNewListrolesAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
     r._workbenchcontext = _workbenchcontext
     r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
-func (r AlibabaCampusAclNewListrolesRequest) GetWorkbenchcontext() *WorkBenchContext {
+func (r AlibabaCampusAclNewListrolesAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
     return r._workbenchcontext
 }
 // Rolequeryparam Setter
 // 入参
-func (r *AlibabaCampusAclNewListrolesRequest) SetRolequeryparam(_rolequeryparam *RoleQueryParam) error {
+func (r *AlibabaCampusAclNewListrolesAPIRequest) SetRolequeryparam(_rolequeryparam *RoleQueryParam) error {
     r._rolequeryparam = _rolequeryparam
     r.Set("rolequeryparam", _rolequeryparam)
     return nil
 }
 
 // Rolequeryparam Getter
-func (r AlibabaCampusAclNewListrolesRequest) GetRolequeryparam() *RoleQueryParam {
+func (r AlibabaCampusAclNewListrolesAPIRequest) GetRolequeryparam() *RoleQueryParam {
     return r._rolequeryparam
 }

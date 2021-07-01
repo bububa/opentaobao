@@ -12,26 +12,26 @@ alibaba.wdk.series.sort
 
 系列品商品变更-商品排序
 */
-type AlibabaWdkSeriesSortRequest struct {
+type AlibabaWdkSeriesSortAPIRequest struct {
     model.Params
     // 自定义排序请求
     _sort   *SeriesSortRequest
 }
 
-// 初始化AlibabaWdkSeriesSortRequest对象
-func NewAlibabaWdkSeriesSortRequest() *AlibabaWdkSeriesSortRequest{
-    return &AlibabaWdkSeriesSortRequest{
+// 初始化AlibabaWdkSeriesSortAPIRequest对象
+func NewAlibabaWdkSeriesSortRequest() *AlibabaWdkSeriesSortAPIRequest{
+    return &AlibabaWdkSeriesSortAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSeriesSortRequest) GetApiMethodName() string {
+func (r AlibabaWdkSeriesSortAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.series.sort"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSeriesSortRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSeriesSortAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSeriesSortRequest) GetApiParams() url.Values {
 }
 // Sort Setter
 // 自定义排序请求
-func (r *AlibabaWdkSeriesSortRequest) SetSort(_sort *SeriesSortRequest) error {
+func (r *AlibabaWdkSeriesSortAPIRequest) SetSort(_sort *SeriesSortRequest) error {
     r._sort = _sort
     r.Set("sort", _sort)
     return nil
 }
 
 // Sort Getter
-func (r AlibabaWdkSeriesSortRequest) GetSort() *SeriesSortRequest {
+func (r AlibabaWdkSeriesSortAPIRequest) GetSort() *SeriesSortRequest {
     return r._sort
 }

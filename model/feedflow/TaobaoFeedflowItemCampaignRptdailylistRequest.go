@@ -12,26 +12,26 @@ taobao.feedflow.item.campaign.rptdailylist
 
 推广计划分日数据查询
 */
-type TaobaoFeedflowItemCampaignRptdailylistRequest struct {
+type TaobaoFeedflowItemCampaignRptdailylistAPIRequest struct {
     model.Params
     // 查询条件
     _rptQueryDTO   *RptQueryDTO
 }
 
-// 初始化TaobaoFeedflowItemCampaignRptdailylistRequest对象
-func NewTaobaoFeedflowItemCampaignRptdailylistRequest() *TaobaoFeedflowItemCampaignRptdailylistRequest{
-    return &TaobaoFeedflowItemCampaignRptdailylistRequest{
+// 初始化TaobaoFeedflowItemCampaignRptdailylistAPIRequest对象
+func NewTaobaoFeedflowItemCampaignRptdailylistRequest() *TaobaoFeedflowItemCampaignRptdailylistAPIRequest{
+    return &TaobaoFeedflowItemCampaignRptdailylistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemCampaignRptdailylistRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemCampaignRptdailylistAPIRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.campaign.rptdailylist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemCampaignRptdailylistRequest) GetApiParams() url.Values {
+func (r TaobaoFeedflowItemCampaignRptdailylistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCampaignRptdailylistRequest) GetApiParams() url.Values
 }
 // RptQueryDTO Setter
 // 查询条件
-func (r *TaobaoFeedflowItemCampaignRptdailylistRequest) SetRptQueryDTO(_rptQueryDTO *RptQueryDTO) error {
+func (r *TaobaoFeedflowItemCampaignRptdailylistAPIRequest) SetRptQueryDTO(_rptQueryDTO *RptQueryDTO) error {
     r._rptQueryDTO = _rptQueryDTO
     r.Set("rpt_query_d_t_o", _rptQueryDTO)
     return nil
 }
 
 // RptQueryDTO Getter
-func (r TaobaoFeedflowItemCampaignRptdailylistRequest) GetRptQueryDTO() *RptQueryDTO {
+func (r TaobaoFeedflowItemCampaignRptdailylistAPIRequest) GetRptQueryDTO() *RptQueryDTO {
     return r._rptQueryDTO
 }

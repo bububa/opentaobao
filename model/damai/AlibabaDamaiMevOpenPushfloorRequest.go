@@ -12,26 +12,26 @@ alibaba.damai.mev.open.pushfloor
 
 pushFloor
 */
-type AlibabaDamaiMevOpenPushfloorRequest struct {
+type AlibabaDamaiMevOpenPushfloorAPIRequest struct {
     model.Params
     // 入参pushFloorParam
     _pushFloorParam   *ThirdFloorPushOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenPushfloorRequest对象
-func NewAlibabaDamaiMevOpenPushfloorRequest() *AlibabaDamaiMevOpenPushfloorRequest{
-    return &AlibabaDamaiMevOpenPushfloorRequest{
+// 初始化AlibabaDamaiMevOpenPushfloorAPIRequest对象
+func NewAlibabaDamaiMevOpenPushfloorRequest() *AlibabaDamaiMevOpenPushfloorAPIRequest{
+    return &AlibabaDamaiMevOpenPushfloorAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenPushfloorRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenPushfloorAPIRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.pushfloor"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenPushfloorRequest) GetApiParams() url.Values {
+func (r AlibabaDamaiMevOpenPushfloorAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushfloorRequest) GetApiParams() url.Values {
 }
 // PushFloorParam Setter
 // 入参pushFloorParam
-func (r *AlibabaDamaiMevOpenPushfloorRequest) SetPushFloorParam(_pushFloorParam *ThirdFloorPushOpenParam) error {
+func (r *AlibabaDamaiMevOpenPushfloorAPIRequest) SetPushFloorParam(_pushFloorParam *ThirdFloorPushOpenParam) error {
     r._pushFloorParam = _pushFloorParam
     r.Set("push_floor_param", _pushFloorParam)
     return nil
 }
 
 // PushFloorParam Getter
-func (r AlibabaDamaiMevOpenPushfloorRequest) GetPushFloorParam() *ThirdFloorPushOpenParam {
+func (r AlibabaDamaiMevOpenPushfloorAPIRequest) GetPushFloorParam() *ThirdFloorPushOpenParam {
     return r._pushFloorParam
 }

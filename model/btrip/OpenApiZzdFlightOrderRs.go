@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiZzdFlightOrderRs 
-type OpenApiZzdFlightOrderRs struct {
+// OpenApiZzdFlightOrderRS 
+type OpenApiZzdFlightOrderRS struct {
     // 商旅企业ID
     CorpId   string `json:"corp_id,omitempty" xml:"corp_id,omitempty"`
     // 订单状态：0, "待支付";1, "出票中";2, "已关闭";3,"有改签单";4, "有退票单";5, "出票成功";6, "退票申请中";7, "改签申请中";10, "订单关闭";

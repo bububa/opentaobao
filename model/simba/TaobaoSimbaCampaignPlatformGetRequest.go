@@ -12,7 +12,7 @@ taobao.simba.campaign.platform.get
 
 获得一个推广计划的投放平台设置
 */
-type TaobaoSimbaCampaignPlatformGetRequest struct {
+type TaobaoSimbaCampaignPlatformGetAPIRequest struct {
     model.Params
     // 主人昵称
     _nick   string
@@ -20,20 +20,20 @@ type TaobaoSimbaCampaignPlatformGetRequest struct {
     _campaignId   int64
 }
 
-// 初始化TaobaoSimbaCampaignPlatformGetRequest对象
-func NewTaobaoSimbaCampaignPlatformGetRequest() *TaobaoSimbaCampaignPlatformGetRequest{
-    return &TaobaoSimbaCampaignPlatformGetRequest{
+// 初始化TaobaoSimbaCampaignPlatformGetAPIRequest对象
+func NewTaobaoSimbaCampaignPlatformGetRequest() *TaobaoSimbaCampaignPlatformGetAPIRequest{
+    return &TaobaoSimbaCampaignPlatformGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaCampaignPlatformGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaCampaignPlatformGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.campaign.platform.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaCampaignPlatformGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaCampaignPlatformGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSimbaCampaignPlatformGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignPlatformGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaCampaignPlatformGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaCampaignPlatformGetRequest) GetNick() string {
+func (r TaobaoSimbaCampaignPlatformGetAPIRequest) GetNick() string {
     return r._nick
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaCampaignPlatformGetRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaoSimbaCampaignPlatformGetAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r TaobaoSimbaCampaignPlatformGetRequest) GetCampaignId() int64 {
+func (r TaobaoSimbaCampaignPlatformGetAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }

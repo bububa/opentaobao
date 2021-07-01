@@ -12,26 +12,26 @@ tmall.carcenter.vehicle.chasis.insert
 
 EPC车型底盘压缩库新增接口
 */
-type TmallCarcenterVehicleChasisInsertRequest struct {
+type TmallCarcenterVehicleChasisInsertAPIRequest struct {
     model.Params
     // 底盘压缩库入参
     _dto   *ChasisVehicleInfoOriginalDTO
 }
 
-// 初始化TmallCarcenterVehicleChasisInsertRequest对象
-func NewTmallCarcenterVehicleChasisInsertRequest() *TmallCarcenterVehicleChasisInsertRequest{
-    return &TmallCarcenterVehicleChasisInsertRequest{
+// 初始化TmallCarcenterVehicleChasisInsertAPIRequest对象
+func NewTmallCarcenterVehicleChasisInsertRequest() *TmallCarcenterVehicleChasisInsertAPIRequest{
+    return &TmallCarcenterVehicleChasisInsertAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarcenterVehicleChasisInsertRequest) GetApiMethodName() string {
+func (r TmallCarcenterVehicleChasisInsertAPIRequest) GetApiMethodName() string {
     return "tmall.carcenter.vehicle.chasis.insert"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarcenterVehicleChasisInsertRequest) GetApiParams() url.Values {
+func (r TmallCarcenterVehicleChasisInsertAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallCarcenterVehicleChasisInsertRequest) GetApiParams() url.Values {
 }
 // Dto Setter
 // 底盘压缩库入参
-func (r *TmallCarcenterVehicleChasisInsertRequest) SetDto(_dto *ChasisVehicleInfoOriginalDTO) error {
+func (r *TmallCarcenterVehicleChasisInsertAPIRequest) SetDto(_dto *ChasisVehicleInfoOriginalDTO) error {
     r._dto = _dto
     r.Set("dto", _dto)
     return nil
 }
 
 // Dto Getter
-func (r TmallCarcenterVehicleChasisInsertRequest) GetDto() *ChasisVehicleInfoOriginalDTO {
+func (r TmallCarcenterVehicleChasisInsertAPIRequest) GetDto() *ChasisVehicleInfoOriginalDTO {
     return r._dto
 }

@@ -12,26 +12,26 @@ alibaba.pur.supplier.invoicecreate
 
 preInvoice创建
 */
-type AlibabaPurSupplierInvoicecreateRequest struct {
+type AlibabaPurSupplierInvoicecreateAPIRequest struct {
     model.Params
     // 预发票头信息
     _invoice   *SupplierPreInvoiceInfoVO
 }
 
-// 初始化AlibabaPurSupplierInvoicecreateRequest对象
-func NewAlibabaPurSupplierInvoicecreateRequest() *AlibabaPurSupplierInvoicecreateRequest{
-    return &AlibabaPurSupplierInvoicecreateRequest{
+// 初始化AlibabaPurSupplierInvoicecreateAPIRequest对象
+func NewAlibabaPurSupplierInvoicecreateRequest() *AlibabaPurSupplierInvoicecreateAPIRequest{
+    return &AlibabaPurSupplierInvoicecreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaPurSupplierInvoicecreateRequest) GetApiMethodName() string {
+func (r AlibabaPurSupplierInvoicecreateAPIRequest) GetApiMethodName() string {
     return "alibaba.pur.supplier.invoicecreate"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaPurSupplierInvoicecreateRequest) GetApiParams() url.Values {
+func (r AlibabaPurSupplierInvoicecreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaPurSupplierInvoicecreateRequest) GetApiParams() url.Values {
 }
 // Invoice Setter
 // 预发票头信息
-func (r *AlibabaPurSupplierInvoicecreateRequest) SetInvoice(_invoice *SupplierPreInvoiceInfoVO) error {
+func (r *AlibabaPurSupplierInvoicecreateAPIRequest) SetInvoice(_invoice *SupplierPreInvoiceInfoVO) error {
     r._invoice = _invoice
     r.Set("invoice", _invoice)
     return nil
 }
 
 // Invoice Getter
-func (r AlibabaPurSupplierInvoicecreateRequest) GetInvoice() *SupplierPreInvoiceInfoVO {
+func (r AlibabaPurSupplierInvoicecreateAPIRequest) GetInvoice() *SupplierPreInvoiceInfoVO {
     return r._invoice
 }

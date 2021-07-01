@@ -12,7 +12,7 @@ alibaba.aliqin.fc.iot.qrycard
 
 查询终端信息
 */
-type AlibabaAliqinFcIotQrycardRequest struct {
+type AlibabaAliqinFcIotQrycardAPIRequest struct {
     model.Params
     // 外部计费来源
     _billSource   string
@@ -22,20 +22,20 @@ type AlibabaAliqinFcIotQrycardRequest struct {
     _iccid   string
 }
 
-// 初始化AlibabaAliqinFcIotQrycardRequest对象
-func NewAlibabaAliqinFcIotQrycardRequest() *AlibabaAliqinFcIotQrycardRequest{
-    return &AlibabaAliqinFcIotQrycardRequest{
+// 初始化AlibabaAliqinFcIotQrycardAPIRequest对象
+func NewAlibabaAliqinFcIotQrycardRequest() *AlibabaAliqinFcIotQrycardAPIRequest{
+    return &AlibabaAliqinFcIotQrycardAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAliqinFcIotQrycardRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFcIotQrycardAPIRequest) GetApiMethodName() string {
     return "alibaba.aliqin.fc.iot.qrycard"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinFcIotQrycardRequest) GetApiParams() url.Values {
+func (r AlibabaAliqinFcIotQrycardAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaAliqinFcIotQrycardRequest) GetApiParams() url.Values {
 }
 // BillSource Setter
 // 外部计费来源
-func (r *AlibabaAliqinFcIotQrycardRequest) SetBillSource(_billSource string) error {
+func (r *AlibabaAliqinFcIotQrycardAPIRequest) SetBillSource(_billSource string) error {
     r._billSource = _billSource
     r.Set("bill_source", _billSource)
     return nil
 }
 
 // BillSource Getter
-func (r AlibabaAliqinFcIotQrycardRequest) GetBillSource() string {
+func (r AlibabaAliqinFcIotQrycardAPIRequest) GetBillSource() string {
     return r._billSource
 }
 // BillReal Setter
 // 外部计费号
-func (r *AlibabaAliqinFcIotQrycardRequest) SetBillReal(_billReal string) error {
+func (r *AlibabaAliqinFcIotQrycardAPIRequest) SetBillReal(_billReal string) error {
     r._billReal = _billReal
     r.Set("bill_real", _billReal)
     return nil
 }
 
 // BillReal Getter
-func (r AlibabaAliqinFcIotQrycardRequest) GetBillReal() string {
+func (r AlibabaAliqinFcIotQrycardAPIRequest) GetBillReal() string {
     return r._billReal
 }
 // Iccid Setter
 // ICCID
-func (r *AlibabaAliqinFcIotQrycardRequest) SetIccid(_iccid string) error {
+func (r *AlibabaAliqinFcIotQrycardAPIRequest) SetIccid(_iccid string) error {
     r._iccid = _iccid
     r.Set("iccid", _iccid)
     return nil
 }
 
 // Iccid Getter
-func (r AlibabaAliqinFcIotQrycardRequest) GetIccid() string {
+func (r AlibabaAliqinFcIotQrycardAPIRequest) GetIccid() string {
     return r._iccid
 }

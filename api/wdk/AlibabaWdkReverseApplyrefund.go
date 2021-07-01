@@ -11,7 +11,7 @@ alibaba.wdk.reverse.applyrefund
 
 逆向渲染
 */
-func AlibabaWdkReverseApplyrefund(clt *core.SDKClient, req *wdk.AlibabaWdkReverseApplyrefundRequest, session string) (*wdk.AlibabaWdkReverseApplyrefundAPIResponse, error) {
+func AlibabaWdkReverseApplyrefund(clt *core.SDKClient, req *wdk.AlibabaWdkReverseApplyrefundAPIRequest, session string) (*wdk.AlibabaWdkReverseApplyrefundAPIResponse, error) {
     var resp wdk.AlibabaWdkReverseApplyrefundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

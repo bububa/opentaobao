@@ -12,26 +12,26 @@ alitrip.rail.ir.carrier.get
 
 国际火车票提供给代理商用于查询标准铁路承运公司carrier信息，用于代理商自己的carrier与飞猪平台的carrier做映射
 */
-type AlitripRailIrCarrierGetRequest struct {
+type AlitripRailIrCarrierGetAPIRequest struct {
     model.Params
     // 商家id
     _agentId   int64
 }
 
-// 初始化AlitripRailIrCarrierGetRequest对象
-func NewAlitripRailIrCarrierGetRequest() *AlitripRailIrCarrierGetRequest{
-    return &AlitripRailIrCarrierGetRequest{
+// 初始化AlitripRailIrCarrierGetAPIRequest对象
+func NewAlitripRailIrCarrierGetRequest() *AlitripRailIrCarrierGetAPIRequest{
+    return &AlitripRailIrCarrierGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripRailIrCarrierGetRequest) GetApiMethodName() string {
+func (r AlitripRailIrCarrierGetAPIRequest) GetApiMethodName() string {
     return "alitrip.rail.ir.carrier.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripRailIrCarrierGetRequest) GetApiParams() url.Values {
+func (r AlitripRailIrCarrierGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripRailIrCarrierGetRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 商家id
-func (r *AlitripRailIrCarrierGetRequest) SetAgentId(_agentId int64) error {
+func (r *AlitripRailIrCarrierGetAPIRequest) SetAgentId(_agentId int64) error {
     r._agentId = _agentId
     r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
-func (r AlitripRailIrCarrierGetRequest) GetAgentId() int64 {
+func (r AlitripRailIrCarrierGetAPIRequest) GetAgentId() int64 {
     return r._agentId
 }

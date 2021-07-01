@@ -12,26 +12,26 @@ alibaba.tcls.aelophy.merchant.channel.refund.cancel
 
 翱象小程序 用户逆向申请取消
 */
-type AlibabaTclsAelophyMerchantChannelRefundCancelRequest struct {
+type AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest struct {
     model.Params
     // 逆向申请取消
     _refundCancelInfo   *RefundCancelInfo
 }
 
-// 初始化AlibabaTclsAelophyMerchantChannelRefundCancelRequest对象
-func NewAlibabaTclsAelophyMerchantChannelRefundCancelRequest() *AlibabaTclsAelophyMerchantChannelRefundCancelRequest{
-    return &AlibabaTclsAelophyMerchantChannelRefundCancelRequest{
+// 初始化AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest对象
+func NewAlibabaTclsAelophyMerchantChannelRefundCancelRequest() *AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest{
+    return &AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTclsAelophyMerchantChannelRefundCancelRequest) GetApiMethodName() string {
+func (r AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) GetApiMethodName() string {
     return "alibaba.tcls.aelophy.merchant.channel.refund.cancel"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTclsAelophyMerchantChannelRefundCancelRequest) GetApiParams() url.Values {
+func (r AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantChannelRefundCancelRequest) GetApiParams() url
 }
 // RefundCancelInfo Setter
 // 逆向申请取消
-func (r *AlibabaTclsAelophyMerchantChannelRefundCancelRequest) SetRefundCancelInfo(_refundCancelInfo *RefundCancelInfo) error {
+func (r *AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) SetRefundCancelInfo(_refundCancelInfo *RefundCancelInfo) error {
     r._refundCancelInfo = _refundCancelInfo
     r.Set("refund_cancel_info", _refundCancelInfo)
     return nil
 }
 
 // RefundCancelInfo Getter
-func (r AlibabaTclsAelophyMerchantChannelRefundCancelRequest) GetRefundCancelInfo() *RefundCancelInfo {
+func (r AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) GetRefundCancelInfo() *RefundCancelInfo {
     return r._refundCancelInfo
 }

@@ -12,26 +12,26 @@ alibaba.alihealth.dap.huawei.cardinfos
 
 医疗健康频道卡片华为负一屏
 */
-type AlibabaAlihealthDapHuaweiCardinfosRequest struct {
+type AlibabaAlihealthDapHuaweiCardinfosAPIRequest struct {
     model.Params
     // source     HUAWEI_HAG,OPPO_OAG
     _param   string
 }
 
-// 初始化AlibabaAlihealthDapHuaweiCardinfosRequest对象
-func NewAlibabaAlihealthDapHuaweiCardinfosRequest() *AlibabaAlihealthDapHuaweiCardinfosRequest{
-    return &AlibabaAlihealthDapHuaweiCardinfosRequest{
+// 初始化AlibabaAlihealthDapHuaweiCardinfosAPIRequest对象
+func NewAlibabaAlihealthDapHuaweiCardinfosRequest() *AlibabaAlihealthDapHuaweiCardinfosAPIRequest{
+    return &AlibabaAlihealthDapHuaweiCardinfosAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDapHuaweiCardinfosRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDapHuaweiCardinfosAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.dap.huawei.cardinfos"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDapHuaweiCardinfosRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDapHuaweiCardinfosAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDapHuaweiCardinfosRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // source     HUAWEI_HAG,OPPO_OAG
-func (r *AlibabaAlihealthDapHuaweiCardinfosRequest) SetParam(_param string) error {
+func (r *AlibabaAlihealthDapHuaweiCardinfosAPIRequest) SetParam(_param string) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaAlihealthDapHuaweiCardinfosRequest) GetParam() string {
+func (r AlibabaAlihealthDapHuaweiCardinfosAPIRequest) GetParam() string {
     return r._param
 }

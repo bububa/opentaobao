@@ -11,7 +11,7 @@ taobao.message.send
 
 消息发送接口
 */
-func TaobaoMessageSend(clt *core.SDKClient, req *msgamp.TaobaoMessageSendRequest, session string) (*msgamp.TaobaoMessageSendAPIResponse, error) {
+func TaobaoMessageSend(clt *core.SDKClient, req *msgamp.TaobaoMessageSendAPIRequest, session string) (*msgamp.TaobaoMessageSendAPIResponse, error) {
     var resp msgamp.TaobaoMessageSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

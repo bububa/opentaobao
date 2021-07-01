@@ -12,26 +12,26 @@ alibaba.alihealth.drug.code.advance.bill.flow.direction
 
 单据流向查询
 */
-type AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest struct {
+type AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest struct {
     model.Params
     // 追溯码
     _code   string
 }
 
-// 初始化AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest对象
-func NewAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest() *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest{
-    return &AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest{
+// 初始化AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest对象
+func NewAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest() *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest{
+    return &AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.code.advance.bill.flow.direction"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest) GetApiParams() 
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest) SetCode(_code string) error {
+func (r *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest) GetCode() string {
+func (r AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest) GetCode() string {
     return r._code
 }

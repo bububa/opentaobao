@@ -12,7 +12,7 @@ taobao.place.storerelatesub.add
 
 门店和子门店关系新增
 */
-type TaobaoPlaceStorerelatesubAddRequest struct {
+type TaobaoPlaceStorerelatesubAddAPIRequest struct {
     model.Params
     // 门店Id
     _storeId   int64
@@ -20,20 +20,20 @@ type TaobaoPlaceStorerelatesubAddRequest struct {
     _subStoreIds   []int64
 }
 
-// 初始化TaobaoPlaceStorerelatesubAddRequest对象
-func NewTaobaoPlaceStorerelatesubAddRequest() *TaobaoPlaceStorerelatesubAddRequest{
-    return &TaobaoPlaceStorerelatesubAddRequest{
+// 初始化TaobaoPlaceStorerelatesubAddAPIRequest对象
+func NewTaobaoPlaceStorerelatesubAddRequest() *TaobaoPlaceStorerelatesubAddAPIRequest{
+    return &TaobaoPlaceStorerelatesubAddAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPlaceStorerelatesubAddRequest) GetApiMethodName() string {
+func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetApiMethodName() string {
     return "taobao.place.storerelatesub.add"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPlaceStorerelatesubAddRequest) GetApiParams() url.Values {
+func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoPlaceStorerelatesubAddRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店Id
-func (r *TaobaoPlaceStorerelatesubAddRequest) SetStoreId(_storeId int64) error {
+func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetStoreId(_storeId int64) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r TaobaoPlaceStorerelatesubAddRequest) GetStoreId() int64 {
+func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetStoreId() int64 {
     return r._storeId
 }
 // SubStoreIds Setter
 // 子门店Id
-func (r *TaobaoPlaceStorerelatesubAddRequest) SetSubStoreIds(_subStoreIds []int64) error {
+func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetSubStoreIds(_subStoreIds []int64) error {
     r._subStoreIds = _subStoreIds
     r.Set("sub_store_ids", _subStoreIds)
     return nil
 }
 
 // SubStoreIds Getter
-func (r TaobaoPlaceStorerelatesubAddRequest) GetSubStoreIds() []int64 {
+func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetSubStoreIds() []int64 {
     return r._subStoreIds
 }

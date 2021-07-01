@@ -11,7 +11,7 @@ taobao.baichuan.item.unsubscribe
 
 删除单个商品订阅关系
 */
-func TaobaoBaichuanItemUnsubscribe(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemUnsubscribeRequest, session string) (*baichuan.TaobaoBaichuanItemUnsubscribeAPIResponse, error) {
+func TaobaoBaichuanItemUnsubscribe(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemUnsubscribeAPIRequest, session string) (*baichuan.TaobaoBaichuanItemUnsubscribeAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanItemUnsubscribeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

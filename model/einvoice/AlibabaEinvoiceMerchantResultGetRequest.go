@@ -12,7 +12,7 @@ alibaba.einvoice.merchant.result.get
 
 商家自研ERP开票结果获取
 */
-type AlibabaEinvoiceMerchantResultGetRequest struct {
+type AlibabaEinvoiceMerchantResultGetAPIRequest struct {
     model.Params
     // 流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高
     _serialNo   string
@@ -24,20 +24,20 @@ type AlibabaEinvoiceMerchantResultGetRequest struct {
     _payeeRegisterNo   string
 }
 
-// 初始化AlibabaEinvoiceMerchantResultGetRequest对象
-func NewAlibabaEinvoiceMerchantResultGetRequest() *AlibabaEinvoiceMerchantResultGetRequest{
-    return &AlibabaEinvoiceMerchantResultGetRequest{
+// 初始化AlibabaEinvoiceMerchantResultGetAPIRequest对象
+func NewAlibabaEinvoiceMerchantResultGetRequest() *AlibabaEinvoiceMerchantResultGetAPIRequest{
+    return &AlibabaEinvoiceMerchantResultGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceMerchantResultGetRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetApiMethodName() string {
     return "alibaba.einvoice.merchant.result.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceMerchantResultGetRequest) GetApiParams() url.Values {
+func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaEinvoiceMerchantResultGetRequest) GetApiParams() url.Values {
 }
 // SerialNo Setter
 // 流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高
-func (r *AlibabaEinvoiceMerchantResultGetRequest) SetSerialNo(_serialNo string) error {
+func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetSerialNo(_serialNo string) error {
     r._serialNo = _serialNo
     r.Set("serial_no", _serialNo)
     return nil
 }
 
 // SerialNo Getter
-func (r AlibabaEinvoiceMerchantResultGetRequest) GetSerialNo() string {
+func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetSerialNo() string {
     return r._serialNo
 }
 // PlatformCode Setter
 // 电商平台代码。淘宝：taobao，天猫：tmall
-func (r *AlibabaEinvoiceMerchantResultGetRequest) SetPlatformCode(_platformCode string) error {
+func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetPlatformCode(_platformCode string) error {
     r._platformCode = _platformCode
     r.Set("platform_code", _platformCode)
     return nil
 }
 
 // PlatformCode Getter
-func (r AlibabaEinvoiceMerchantResultGetRequest) GetPlatformCode() string {
+func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetPlatformCode() string {
     return r._platformCode
 }
 // PlatformTid Setter
 // 电商平台对应的订单号
-func (r *AlibabaEinvoiceMerchantResultGetRequest) SetPlatformTid(_platformTid string) error {
+func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetPlatformTid(_platformTid string) error {
     r._platformTid = _platformTid
     r.Set("platform_tid", _platformTid)
     return nil
 }
 
 // PlatformTid Getter
-func (r AlibabaEinvoiceMerchantResultGetRequest) GetPlatformTid() string {
+func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetPlatformTid() string {
     return r._platformTid
 }
 // PayeeRegisterNo Setter
 // 收款方税务登记证号
-func (r *AlibabaEinvoiceMerchantResultGetRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
     r._payeeRegisterNo = _payeeRegisterNo
     r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
-func (r AlibabaEinvoiceMerchantResultGetRequest) GetPayeeRegisterNo() string {
+func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetPayeeRegisterNo() string {
     return r._payeeRegisterNo
 }

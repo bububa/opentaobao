@@ -12,26 +12,26 @@ tmall.servicecenter.workcard.call.record
 
 客满回访信息登记
 */
-type TmallServicecenterWorkcardCallRecordRequest struct {
+type TmallServicecenterWorkcardCallRecordAPIRequest struct {
     model.Params
     // 请求入参
     _busiRequest   *UpdateAttributeRequest
 }
 
-// 初始化TmallServicecenterWorkcardCallRecordRequest对象
-func NewTmallServicecenterWorkcardCallRecordRequest() *TmallServicecenterWorkcardCallRecordRequest{
-    return &TmallServicecenterWorkcardCallRecordRequest{
+// 初始化TmallServicecenterWorkcardCallRecordAPIRequest对象
+func NewTmallServicecenterWorkcardCallRecordRequest() *TmallServicecenterWorkcardCallRecordAPIRequest{
+    return &TmallServicecenterWorkcardCallRecordAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkcardCallRecordRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkcardCallRecordAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.workcard.call.record"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkcardCallRecordRequest) GetApiParams() url.Values {
+func (r TmallServicecenterWorkcardCallRecordAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkcardCallRecordRequest) GetApiParams() url.Values {
 }
 // BusiRequest Setter
 // 请求入参
-func (r *TmallServicecenterWorkcardCallRecordRequest) SetBusiRequest(_busiRequest *UpdateAttributeRequest) error {
+func (r *TmallServicecenterWorkcardCallRecordAPIRequest) SetBusiRequest(_busiRequest *UpdateAttributeRequest) error {
     r._busiRequest = _busiRequest
     r.Set("busi_request", _busiRequest)
     return nil
 }
 
 // BusiRequest Getter
-func (r TmallServicecenterWorkcardCallRecordRequest) GetBusiRequest() *UpdateAttributeRequest {
+func (r TmallServicecenterWorkcardCallRecordAPIRequest) GetBusiRequest() *UpdateAttributeRequest {
     return r._busiRequest
 }

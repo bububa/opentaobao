@@ -11,7 +11,7 @@ alibaba.wdk.item.storesku.query
 
 门店商品信息查询
 */
-func AlibabaWdkItemStoreskuQuery(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemStoreskuQueryRequest, session string) (*wdkitem.AlibabaWdkItemStoreskuQueryAPIResponse, error) {
+func AlibabaWdkItemStoreskuQuery(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemStoreskuQueryAPIRequest, session string) (*wdkitem.AlibabaWdkItemStoreskuQueryAPIResponse, error) {
     var resp wdkitem.AlibabaWdkItemStoreskuQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

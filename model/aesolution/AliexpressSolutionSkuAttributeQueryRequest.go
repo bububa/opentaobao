@@ -12,26 +12,26 @@ aliexpress.solution.sku.attribute.query
 
 Query the sku attribute information belonged to a specific category, customized for oversea merchants.
 */
-type AliexpressSolutionSkuAttributeQueryRequest struct {
+type AliexpressSolutionSkuAttributeQueryAPIRequest struct {
     model.Params
     // input parameters
     _querySkuAttributeInfoRequest   *SkuAttributeInfoQueryRequest
 }
 
-// 初始化AliexpressSolutionSkuAttributeQueryRequest对象
-func NewAliexpressSolutionSkuAttributeQueryRequest() *AliexpressSolutionSkuAttributeQueryRequest{
-    return &AliexpressSolutionSkuAttributeQueryRequest{
+// 初始化AliexpressSolutionSkuAttributeQueryAPIRequest对象
+func NewAliexpressSolutionSkuAttributeQueryRequest() *AliexpressSolutionSkuAttributeQueryAPIRequest{
+    return &AliexpressSolutionSkuAttributeQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionSkuAttributeQueryRequest) GetApiMethodName() string {
+func (r AliexpressSolutionSkuAttributeQueryAPIRequest) GetApiMethodName() string {
     return "aliexpress.solution.sku.attribute.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionSkuAttributeQueryRequest) GetApiParams() url.Values {
+func (r AliexpressSolutionSkuAttributeQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressSolutionSkuAttributeQueryRequest) GetApiParams() url.Values {
 }
 // QuerySkuAttributeInfoRequest Setter
 // input parameters
-func (r *AliexpressSolutionSkuAttributeQueryRequest) SetQuerySkuAttributeInfoRequest(_querySkuAttributeInfoRequest *SkuAttributeInfoQueryRequest) error {
+func (r *AliexpressSolutionSkuAttributeQueryAPIRequest) SetQuerySkuAttributeInfoRequest(_querySkuAttributeInfoRequest *SkuAttributeInfoQueryRequest) error {
     r._querySkuAttributeInfoRequest = _querySkuAttributeInfoRequest
     r.Set("query_sku_attribute_info_request", _querySkuAttributeInfoRequest)
     return nil
 }
 
 // QuerySkuAttributeInfoRequest Getter
-func (r AliexpressSolutionSkuAttributeQueryRequest) GetQuerySkuAttributeInfoRequest() *SkuAttributeInfoQueryRequest {
+func (r AliexpressSolutionSkuAttributeQueryAPIRequest) GetQuerySkuAttributeInfoRequest() *SkuAttributeInfoQueryRequest {
     return r._querySkuAttributeInfoRequest
 }

@@ -11,7 +11,7 @@ taobao.idle.recycle.refund.apply
 
 回收商买家申请退款
 */
-func TaobaoIdleRecycleRefundApply(clt *core.SDKClient, req *idle.TaobaoIdleRecycleRefundApplyRequest, session string) (*idle.TaobaoIdleRecycleRefundApplyAPIResponse, error) {
+func TaobaoIdleRecycleRefundApply(clt *core.SDKClient, req *idle.TaobaoIdleRecycleRefundApplyAPIRequest, session string) (*idle.TaobaoIdleRecycleRefundApplyAPIResponse, error) {
     var resp idle.TaobaoIdleRecycleRefundApplyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alitrip.tuan.hotel.item.sku.delete
 
 商户对发布的宝贝套餐价格库存信息进行删除
 */
-func AlitripTuanHotelItemSkuDelete(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelItemSkuDeleteRequest, session string) (*tuanhotel.AlitripTuanHotelItemSkuDeleteAPIResponse, error) {
+func AlitripTuanHotelItemSkuDelete(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelItemSkuDeleteAPIRequest, session string) (*tuanhotel.AlitripTuanHotelItemSkuDeleteAPIResponse, error) {
     var resp tuanhotel.AlitripTuanHotelItemSkuDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

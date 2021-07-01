@@ -12,24 +12,24 @@ cainiao.cloudprint.isvtemplates.get
 
 获取商家使用的标准模板
 */
-type CainiaoCloudprintIsvtemplatesGetRequest struct {
+type CainiaoCloudprintIsvtemplatesGetAPIRequest struct {
     model.Params
 }
 
-// 初始化CainiaoCloudprintIsvtemplatesGetRequest对象
-func NewCainiaoCloudprintIsvtemplatesGetRequest() *CainiaoCloudprintIsvtemplatesGetRequest{
-    return &CainiaoCloudprintIsvtemplatesGetRequest{
+// 初始化CainiaoCloudprintIsvtemplatesGetAPIRequest对象
+func NewCainiaoCloudprintIsvtemplatesGetRequest() *CainiaoCloudprintIsvtemplatesGetAPIRequest{
+    return &CainiaoCloudprintIsvtemplatesGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCloudprintIsvtemplatesGetRequest) GetApiMethodName() string {
+func (r CainiaoCloudprintIsvtemplatesGetAPIRequest) GetApiMethodName() string {
     return "cainiao.cloudprint.isvtemplates.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCloudprintIsvtemplatesGetRequest) GetApiParams() url.Values {
+func (r CainiaoCloudprintIsvtemplatesGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

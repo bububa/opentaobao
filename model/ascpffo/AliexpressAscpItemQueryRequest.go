@@ -12,26 +12,26 @@ aliexpress.ascp.item.query
 
 AE货品查询API
 */
-type AliexpressAscpItemQueryRequest struct {
+type AliexpressAscpItemQueryAPIRequest struct {
     model.Params
     // DTO
     _scItemQuery   *ScItemQueryDTO
 }
 
-// 初始化AliexpressAscpItemQueryRequest对象
-func NewAliexpressAscpItemQueryRequest() *AliexpressAscpItemQueryRequest{
-    return &AliexpressAscpItemQueryRequest{
+// 初始化AliexpressAscpItemQueryAPIRequest对象
+func NewAliexpressAscpItemQueryRequest() *AliexpressAscpItemQueryAPIRequest{
+    return &AliexpressAscpItemQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressAscpItemQueryRequest) GetApiMethodName() string {
+func (r AliexpressAscpItemQueryAPIRequest) GetApiMethodName() string {
     return "aliexpress.ascp.item.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressAscpItemQueryRequest) GetApiParams() url.Values {
+func (r AliexpressAscpItemQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressAscpItemQueryRequest) GetApiParams() url.Values {
 }
 // ScItemQuery Setter
 // DTO
-func (r *AliexpressAscpItemQueryRequest) SetScItemQuery(_scItemQuery *ScItemQueryDTO) error {
+func (r *AliexpressAscpItemQueryAPIRequest) SetScItemQuery(_scItemQuery *ScItemQueryDTO) error {
     r._scItemQuery = _scItemQuery
     r.Set("sc_item_query", _scItemQuery)
     return nil
 }
 
 // ScItemQuery Getter
-func (r AliexpressAscpItemQueryRequest) GetScItemQuery() *ScItemQueryDTO {
+func (r AliexpressAscpItemQueryAPIRequest) GetScItemQuery() *ScItemQueryDTO {
     return r._scItemQuery
 }

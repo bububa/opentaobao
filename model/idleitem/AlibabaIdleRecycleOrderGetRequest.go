@@ -12,26 +12,26 @@ alibaba.idle.recycle.order.get
 
 闲鱼回收业务中,外部回收商作为交易上买家,闲鱼用户下单后,需要回收商主动拉取交易订单
 */
-type AlibabaIdleRecycleOrderGetRequest struct {
+type AlibabaIdleRecycleOrderGetAPIRequest struct {
     model.Params
     // 订单号
     _bizOrderId   int64
 }
 
-// 初始化AlibabaIdleRecycleOrderGetRequest对象
-func NewAlibabaIdleRecycleOrderGetRequest() *AlibabaIdleRecycleOrderGetRequest{
-    return &AlibabaIdleRecycleOrderGetRequest{
+// 初始化AlibabaIdleRecycleOrderGetAPIRequest对象
+func NewAlibabaIdleRecycleOrderGetRequest() *AlibabaIdleRecycleOrderGetAPIRequest{
+    return &AlibabaIdleRecycleOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleRecycleOrderGetRequest) GetApiMethodName() string {
+func (r AlibabaIdleRecycleOrderGetAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.recycle.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleRecycleOrderGetRequest) GetApiParams() url.Values {
+func (r AlibabaIdleRecycleOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleRecycleOrderGetRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 订单号
-func (r *AlibabaIdleRecycleOrderGetRequest) SetBizOrderId(_bizOrderId int64) error {
+func (r *AlibabaIdleRecycleOrderGetAPIRequest) SetBizOrderId(_bizOrderId int64) error {
     r._bizOrderId = _bizOrderId
     r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
-func (r AlibabaIdleRecycleOrderGetRequest) GetBizOrderId() int64 {
+func (r AlibabaIdleRecycleOrderGetAPIRequest) GetBizOrderId() int64 {
     return r._bizOrderId
 }

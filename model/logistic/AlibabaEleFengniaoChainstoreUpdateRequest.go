@@ -12,26 +12,26 @@ alibaba.ele.fengniao.chainstore.update
 
 修改门店的经纬度，文本地址，电话，门店名
 */
-type AlibabaEleFengniaoChainstoreUpdateRequest struct {
+type AlibabaEleFengniaoChainstoreUpdateAPIRequest struct {
     model.Params
     // 入参
     _param   *Param
 }
 
-// 初始化AlibabaEleFengniaoChainstoreUpdateRequest对象
-func NewAlibabaEleFengniaoChainstoreUpdateRequest() *AlibabaEleFengniaoChainstoreUpdateRequest{
-    return &AlibabaEleFengniaoChainstoreUpdateRequest{
+// 初始化AlibabaEleFengniaoChainstoreUpdateAPIRequest对象
+func NewAlibabaEleFengniaoChainstoreUpdateRequest() *AlibabaEleFengniaoChainstoreUpdateAPIRequest{
+    return &AlibabaEleFengniaoChainstoreUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEleFengniaoChainstoreUpdateRequest) GetApiMethodName() string {
+func (r AlibabaEleFengniaoChainstoreUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.ele.fengniao.chainstore.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEleFengniaoChainstoreUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaEleFengniaoChainstoreUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoChainstoreUpdateRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaEleFengniaoChainstoreUpdateRequest) SetParam(_param *Param) error {
+func (r *AlibabaEleFengniaoChainstoreUpdateAPIRequest) SetParam(_param *Param) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaEleFengniaoChainstoreUpdateRequest) GetParam() *Param {
+func (r AlibabaEleFengniaoChainstoreUpdateAPIRequest) GetParam() *Param {
     return r._param
 }

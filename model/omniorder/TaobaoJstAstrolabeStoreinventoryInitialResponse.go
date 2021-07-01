@@ -29,5 +29,5 @@ type TaobaoJstAstrolabeStoreinventoryInitialResponse struct {
     // 响应标示
     Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
     // 错误信息列表
-    ErrorDescriptions   []Error `json:"error_descriptions,omitempty" xml:"error_descriptions>error,omitempty"`
+    ErrorDescriptions   []TaobaoJstAstrolabeStoreinventoryInitialError `json:"error_descriptions,omitempty" xml:"error_descriptions>taobao_jst_astrolabe_storeinventory_initial_error,omitempty"`
 }

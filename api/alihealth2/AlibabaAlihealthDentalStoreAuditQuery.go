@@ -11,7 +11,7 @@ alibaba.alihealth.dental.store.audit.query
 
 ISV查询门店审核状态
 */
-func AlibabaAlihealthDentalStoreAuditQuery(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStoreAuditQueryRequest, session string) (*alihealth2.AlibabaAlihealthDentalStoreAuditQueryAPIResponse, error) {
+func AlibabaAlihealthDentalStoreAuditQuery(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStoreAuditQueryAPIRequest, session string) (*alihealth2.AlibabaAlihealthDentalStoreAuditQueryAPIResponse, error) {
     var resp alihealth2.AlibabaAlihealthDentalStoreAuditQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

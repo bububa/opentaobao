@@ -12,7 +12,7 @@ alibaba.alink.device.info.update
 
 更新设备昵称等信息
 */
-type AlibabaAlinkDeviceInfoUpdateRequest struct {
+type AlibabaAlinkDeviceInfoUpdateAPIRequest struct {
     model.Params
     // 设备id
     _uuid   string
@@ -20,20 +20,20 @@ type AlibabaAlinkDeviceInfoUpdateRequest struct {
     _nickName   string
 }
 
-// 初始化AlibabaAlinkDeviceInfoUpdateRequest对象
-func NewAlibabaAlinkDeviceInfoUpdateRequest() *AlibabaAlinkDeviceInfoUpdateRequest{
-    return &AlibabaAlinkDeviceInfoUpdateRequest{
+// 初始化AlibabaAlinkDeviceInfoUpdateAPIRequest对象
+func NewAlibabaAlinkDeviceInfoUpdateRequest() *AlibabaAlinkDeviceInfoUpdateAPIRequest{
+    return &AlibabaAlinkDeviceInfoUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlinkDeviceInfoUpdateRequest) GetApiMethodName() string {
+func (r AlibabaAlinkDeviceInfoUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alink.device.info.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlinkDeviceInfoUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlinkDeviceInfoUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAlinkDeviceInfoUpdateRequest) GetApiParams() url.Values {
 }
 // Uuid Setter
 // 设备id
-func (r *AlibabaAlinkDeviceInfoUpdateRequest) SetUuid(_uuid string) error {
+func (r *AlibabaAlinkDeviceInfoUpdateAPIRequest) SetUuid(_uuid string) error {
     r._uuid = _uuid
     r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
-func (r AlibabaAlinkDeviceInfoUpdateRequest) GetUuid() string {
+func (r AlibabaAlinkDeviceInfoUpdateAPIRequest) GetUuid() string {
     return r._uuid
 }
 // NickName Setter
 // 设备昵称
-func (r *AlibabaAlinkDeviceInfoUpdateRequest) SetNickName(_nickName string) error {
+func (r *AlibabaAlinkDeviceInfoUpdateAPIRequest) SetNickName(_nickName string) error {
     r._nickName = _nickName
     r.Set("nick_name", _nickName)
     return nil
 }
 
 // NickName Getter
-func (r AlibabaAlinkDeviceInfoUpdateRequest) GetNickName() string {
+func (r AlibabaAlinkDeviceInfoUpdateAPIRequest) GetNickName() string {
     return r._nickName
 }

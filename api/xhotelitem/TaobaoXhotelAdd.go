@@ -11,7 +11,7 @@ taobao.xhotel.add
 
 添加酒店或更新酒店
 */
-func TaobaoXhotelAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelAddRequest, session string) (*xhotelitem.TaobaoXhotelAddAPIResponse, error) {
+func TaobaoXhotelAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelAddAPIResponse, error) {
     var resp xhotelitem.TaobaoXhotelAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

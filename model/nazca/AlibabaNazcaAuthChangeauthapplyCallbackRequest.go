@@ -12,26 +12,26 @@ alibaba.nazca.auth.changeauthapply.callback
 
 变更认证回调
 */
-type AlibabaNazcaAuthChangeauthapplyCallbackRequest struct {
+type AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest struct {
     model.Params
     // 变更认证回调参数
     _paramChangeAuthCallBackDo   *ChangeAuthCallBackDO
 }
 
-// 初始化AlibabaNazcaAuthChangeauthapplyCallbackRequest对象
-func NewAlibabaNazcaAuthChangeauthapplyCallbackRequest() *AlibabaNazcaAuthChangeauthapplyCallbackRequest{
-    return &AlibabaNazcaAuthChangeauthapplyCallbackRequest{
+// 初始化AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest对象
+func NewAlibabaNazcaAuthChangeauthapplyCallbackRequest() *AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest{
+    return &AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaNazcaAuthChangeauthapplyCallbackRequest) GetApiMethodName() string {
+func (r AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) GetApiMethodName() string {
     return "alibaba.nazca.auth.changeauthapply.callback"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaNazcaAuthChangeauthapplyCallbackRequest) GetApiParams() url.Values {
+func (r AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaNazcaAuthChangeauthapplyCallbackRequest) GetApiParams() url.Value
 }
 // ParamChangeAuthCallBackDo Setter
 // 变更认证回调参数
-func (r *AlibabaNazcaAuthChangeauthapplyCallbackRequest) SetParamChangeAuthCallBackDo(_paramChangeAuthCallBackDo *ChangeAuthCallBackDO) error {
+func (r *AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) SetParamChangeAuthCallBackDo(_paramChangeAuthCallBackDo *ChangeAuthCallBackDO) error {
     r._paramChangeAuthCallBackDo = _paramChangeAuthCallBackDo
     r.Set("param_change_auth_call_back_do", _paramChangeAuthCallBackDo)
     return nil
 }
 
 // ParamChangeAuthCallBackDo Getter
-func (r AlibabaNazcaAuthChangeauthapplyCallbackRequest) GetParamChangeAuthCallBackDo() *ChangeAuthCallBackDO {
+func (r AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) GetParamChangeAuthCallBackDo() *ChangeAuthCallBackDO {
     return r._paramChangeAuthCallBackDo
 }

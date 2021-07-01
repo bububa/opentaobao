@@ -12,26 +12,26 @@ taobao.subuser.dutys.get
 
 通过主账号Nick获取该账户下的所有职务信息，职务信息中包括职务ID、职务名称以及职务等级（通过主账号登陆只能获取属于该主账号下的职务信息）
 */
-type TaobaoSubuserDutysGetRequest struct {
+type TaobaoSubuserDutysGetAPIRequest struct {
     model.Params
     // 主账号用户名
     _userNick   string
 }
 
-// 初始化TaobaoSubuserDutysGetRequest对象
-func NewTaobaoSubuserDutysGetRequest() *TaobaoSubuserDutysGetRequest{
-    return &TaobaoSubuserDutysGetRequest{
+// 初始化TaobaoSubuserDutysGetAPIRequest对象
+func NewTaobaoSubuserDutysGetRequest() *TaobaoSubuserDutysGetAPIRequest{
+    return &TaobaoSubuserDutysGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSubuserDutysGetRequest) GetApiMethodName() string {
+func (r TaobaoSubuserDutysGetAPIRequest) GetApiMethodName() string {
     return "taobao.subuser.dutys.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSubuserDutysGetRequest) GetApiParams() url.Values {
+func (r TaobaoSubuserDutysGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSubuserDutysGetRequest) GetApiParams() url.Values {
 }
 // UserNick Setter
 // 主账号用户名
-func (r *TaobaoSubuserDutysGetRequest) SetUserNick(_userNick string) error {
+func (r *TaobaoSubuserDutysGetAPIRequest) SetUserNick(_userNick string) error {
     r._userNick = _userNick
     r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
-func (r TaobaoSubuserDutysGetRequest) GetUserNick() string {
+func (r TaobaoSubuserDutysGetAPIRequest) GetUserNick() string {
     return r._userNick
 }

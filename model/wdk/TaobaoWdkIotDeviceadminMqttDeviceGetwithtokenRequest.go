@@ -12,7 +12,7 @@ taobao.wdk.iot.deviceadmin.mqtt.device.getwithtoken
 
 智能硬件设备动态注册和获取mqtt设备信息
 */
-type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest struct {
+type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest struct {
     model.Params
     // 业务编码，具体编码请联系杜尘
     _businessCode   int64
@@ -26,20 +26,20 @@ type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest struct {
     _applyAccessToken   string
 }
 
-// 初始化TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest对象
-func NewTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest() *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest{
-    return &TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest{
+// 初始化TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest对象
+func NewTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest() *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest{
+    return &TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) GetApiMethodName() string {
+func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) GetApiMethodName() string {
     return "taobao.wdk.iot.deviceadmin.mqtt.device.getwithtoken"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) GetApiParams() url.Values {
+func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) GetApiParams() url
 }
 // BusinessCode Setter
 // 业务编码，具体编码请联系杜尘
-func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) SetBusinessCode(_businessCode int64) error {
+func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) SetBusinessCode(_businessCode int64) error {
     r._businessCode = _businessCode
     r.Set("business_code", _businessCode)
     return nil
 }
 
 // BusinessCode Getter
-func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) GetBusinessCode() int64 {
+func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) GetBusinessCode() int64 {
     return r._businessCode
 }
 // DeviceType Setter
 // 设备类型编码，具体编码请联系杜尘
-func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) SetDeviceType(_deviceType int64) error {
+func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) SetDeviceType(_deviceType int64) error {
     r._deviceType = _deviceType
     r.Set("device_type", _deviceType)
     return nil
 }
 
 // DeviceType Getter
-func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) GetDeviceType() int64 {
+func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) GetDeviceType() int64 {
     return r._deviceType
 }
 // EnviroCode Setter
 // 环境编码，0日常，1预发，2线上
-func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) SetEnviroCode(_enviroCode int64) error {
+func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) SetEnviroCode(_enviroCode int64) error {
     r._enviroCode = _enviroCode
     r.Set("enviro_code", _enviroCode)
     return nil
 }
 
 // EnviroCode Getter
-func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) GetEnviroCode() int64 {
+func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) GetEnviroCode() int64 {
     return r._enviroCode
 }
 // DeviceId Setter
 // 设备的唯一标识码，比如网卡的MAC地址
-func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) SetDeviceId(_deviceId string) error {
+func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) SetDeviceId(_deviceId string) error {
     r._deviceId = _deviceId
     r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
-func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) GetDeviceId() string {
+func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) GetDeviceId() string {
     return r._deviceId
 }
 // ApplyAccessToken Setter
 // 访问令牌
-func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) SetApplyAccessToken(_applyAccessToken string) error {
+func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) SetApplyAccessToken(_applyAccessToken string) error {
     r._applyAccessToken = _applyAccessToken
     r.Set("apply_access_token", _applyAccessToken)
     return nil
 }
 
 // ApplyAccessToken Getter
-func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest) GetApplyAccessToken() string {
+func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) GetApplyAccessToken() string {
     return r._applyAccessToken
 }

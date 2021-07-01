@@ -11,7 +11,7 @@ alibaba.wdk.purchase.price
 
 猫超共享库存项目-rt回传采购价
 */
-func AlibabaWdkPurchasePrice(clt *core.SDKClient, req *wdk.AlibabaWdkPurchasePriceRequest, session string) (*wdk.AlibabaWdkPurchasePriceAPIResponse, error) {
+func AlibabaWdkPurchasePrice(clt *core.SDKClient, req *wdk.AlibabaWdkPurchasePriceAPIRequest, session string) (*wdk.AlibabaWdkPurchasePriceAPIResponse, error) {
     var resp wdk.AlibabaWdkPurchasePriceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

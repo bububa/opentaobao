@@ -12,7 +12,7 @@ alibaba.alihealth.drug.kyt.recordinfo
 
 快易通健康检查
 */
-type AlibabaAlihealthDrugKytRecordinfoRequest struct {
+type AlibabaAlihealthDrugKytRecordinfoAPIRequest struct {
     model.Params
     // 服务名
     _serviceName   string
@@ -26,20 +26,20 @@ type AlibabaAlihealthDrugKytRecordinfoRequest struct {
     _logLevel   string
 }
 
-// 初始化AlibabaAlihealthDrugKytRecordinfoRequest对象
-func NewAlibabaAlihealthDrugKytRecordinfoRequest() *AlibabaAlihealthDrugKytRecordinfoRequest{
-    return &AlibabaAlihealthDrugKytRecordinfoRequest{
+// 初始化AlibabaAlihealthDrugKytRecordinfoAPIRequest对象
+func NewAlibabaAlihealthDrugKytRecordinfoRequest() *AlibabaAlihealthDrugKytRecordinfoAPIRequest{
+    return &AlibabaAlihealthDrugKytRecordinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytRecordinfoRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.kyt.recordinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytRecordinfoRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r AlibabaAlihealthDrugKytRecordinfoRequest) GetApiParams() url.Values {
 }
 // ServiceName Setter
 // 服务名
-func (r *AlibabaAlihealthDrugKytRecordinfoRequest) SetServiceName(_serviceName string) error {
+func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetServiceName(_serviceName string) error {
     r._serviceName = _serviceName
     r.Set("service_name", _serviceName)
     return nil
 }
 
 // ServiceName Getter
-func (r AlibabaAlihealthDrugKytRecordinfoRequest) GetServiceName() string {
+func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetServiceName() string {
     return r._serviceName
 }
 // ServiceType Setter
 // 类型
-func (r *AlibabaAlihealthDrugKytRecordinfoRequest) SetServiceType(_serviceType string) error {
+func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetServiceType(_serviceType string) error {
     r._serviceType = _serviceType
     r.Set("service_type", _serviceType)
     return nil
 }
 
 // ServiceType Getter
-func (r AlibabaAlihealthDrugKytRecordinfoRequest) GetServiceType() string {
+func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetServiceType() string {
     return r._serviceType
 }
 // InputParam Setter
 // 输入参数
-func (r *AlibabaAlihealthDrugKytRecordinfoRequest) SetInputParam(_inputParam string) error {
+func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetInputParam(_inputParam string) error {
     r._inputParam = _inputParam
     r.Set("input_param", _inputParam)
     return nil
 }
 
 // InputParam Getter
-func (r AlibabaAlihealthDrugKytRecordinfoRequest) GetInputParam() string {
+func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetInputParam() string {
     return r._inputParam
 }
 // OtherParam Setter
 // 其他参数
-func (r *AlibabaAlihealthDrugKytRecordinfoRequest) SetOtherParam(_otherParam string) error {
+func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetOtherParam(_otherParam string) error {
     r._otherParam = _otherParam
     r.Set("other_param", _otherParam)
     return nil
 }
 
 // OtherParam Getter
-func (r AlibabaAlihealthDrugKytRecordinfoRequest) GetOtherParam() string {
+func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetOtherParam() string {
     return r._otherParam
 }
 // LogLevel Setter
 // 级别
-func (r *AlibabaAlihealthDrugKytRecordinfoRequest) SetLogLevel(_logLevel string) error {
+func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetLogLevel(_logLevel string) error {
     r._logLevel = _logLevel
     r.Set("log_level", _logLevel)
     return nil
 }
 
 // LogLevel Getter
-func (r AlibabaAlihealthDrugKytRecordinfoRequest) GetLogLevel() string {
+func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetLogLevel() string {
     return r._logLevel
 }

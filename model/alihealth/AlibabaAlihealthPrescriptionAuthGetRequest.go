@@ -12,26 +12,26 @@ alibaba.alihealth.prescription.auth.get
 
 获取处方用户授权
 */
-type AlibabaAlihealthPrescriptionAuthGetRequest struct {
+type AlibabaAlihealthPrescriptionAuthGetAPIRequest struct {
     model.Params
     // 请求入参
     _prescriptionRequest   *PrescriptionDoctorAuthRequest
 }
 
-// 初始化AlibabaAlihealthPrescriptionAuthGetRequest对象
-func NewAlibabaAlihealthPrescriptionAuthGetRequest() *AlibabaAlihealthPrescriptionAuthGetRequest{
-    return &AlibabaAlihealthPrescriptionAuthGetRequest{
+// 初始化AlibabaAlihealthPrescriptionAuthGetAPIRequest对象
+func NewAlibabaAlihealthPrescriptionAuthGetRequest() *AlibabaAlihealthPrescriptionAuthGetAPIRequest{
+    return &AlibabaAlihealthPrescriptionAuthGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthPrescriptionAuthGetRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthPrescriptionAuthGetAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.prescription.auth.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthPrescriptionAuthGetRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthPrescriptionAuthGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthPrescriptionAuthGetRequest) GetApiParams() url.Values {
 }
 // PrescriptionRequest Setter
 // 请求入参
-func (r *AlibabaAlihealthPrescriptionAuthGetRequest) SetPrescriptionRequest(_prescriptionRequest *PrescriptionDoctorAuthRequest) error {
+func (r *AlibabaAlihealthPrescriptionAuthGetAPIRequest) SetPrescriptionRequest(_prescriptionRequest *PrescriptionDoctorAuthRequest) error {
     r._prescriptionRequest = _prescriptionRequest
     r.Set("prescription_request", _prescriptionRequest)
     return nil
 }
 
 // PrescriptionRequest Getter
-func (r AlibabaAlihealthPrescriptionAuthGetRequest) GetPrescriptionRequest() *PrescriptionDoctorAuthRequest {
+func (r AlibabaAlihealthPrescriptionAuthGetAPIRequest) GetPrescriptionRequest() *PrescriptionDoctorAuthRequest {
     return r._prescriptionRequest
 }

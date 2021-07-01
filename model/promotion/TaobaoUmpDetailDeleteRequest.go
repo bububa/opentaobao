@@ -12,26 +12,26 @@ taobao.ump.detail.delete
 
 删除活动详情
 */
-type TaobaoUmpDetailDeleteRequest struct {
+type TaobaoUmpDetailDeleteAPIRequest struct {
     model.Params
     // 活动详情id
     _detailId   int64
 }
 
-// 初始化TaobaoUmpDetailDeleteRequest对象
-func NewTaobaoUmpDetailDeleteRequest() *TaobaoUmpDetailDeleteRequest{
-    return &TaobaoUmpDetailDeleteRequest{
+// 初始化TaobaoUmpDetailDeleteAPIRequest对象
+func NewTaobaoUmpDetailDeleteRequest() *TaobaoUmpDetailDeleteAPIRequest{
+    return &TaobaoUmpDetailDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoUmpDetailDeleteRequest) GetApiMethodName() string {
+func (r TaobaoUmpDetailDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.ump.detail.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoUmpDetailDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoUmpDetailDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoUmpDetailDeleteRequest) GetApiParams() url.Values {
 }
 // DetailId Setter
 // 活动详情id
-func (r *TaobaoUmpDetailDeleteRequest) SetDetailId(_detailId int64) error {
+func (r *TaobaoUmpDetailDeleteAPIRequest) SetDetailId(_detailId int64) error {
     r._detailId = _detailId
     r.Set("detail_id", _detailId)
     return nil
 }
 
 // DetailId Getter
-func (r TaobaoUmpDetailDeleteRequest) GetDetailId() int64 {
+func (r TaobaoUmpDetailDeleteAPIRequest) GetDetailId() int64 {
     return r._detailId
 }

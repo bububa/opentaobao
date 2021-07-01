@@ -11,7 +11,7 @@ yunos.tvpubadmin.device.yks.skill.modify
 
 修改技能
 */
-func YunosTvpubadminDeviceYksSkillModify(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillModifyRequest, session string) (*tvupadmin.YunosTvpubadminDeviceYksSkillModifyAPIResponse, error) {
+func YunosTvpubadminDeviceYksSkillModify(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillModifyAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceYksSkillModifyAPIResponse, error) {
     var resp tvupadmin.YunosTvpubadminDeviceYksSkillModifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

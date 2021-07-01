@@ -12,7 +12,7 @@ tmall.traceplatform.ticket.picture.upload
 
 uploadPicture
 */
-type TmallTraceplatformTicketPictureUploadRequest struct {
+type TmallTraceplatformTicketPictureUploadAPIRequest struct {
     model.Params
     // 子订单号
     _bizOrderId   int64
@@ -20,20 +20,20 @@ type TmallTraceplatformTicketPictureUploadRequest struct {
     _file   *model.File
 }
 
-// 初始化TmallTraceplatformTicketPictureUploadRequest对象
-func NewTmallTraceplatformTicketPictureUploadRequest() *TmallTraceplatformTicketPictureUploadRequest{
-    return &TmallTraceplatformTicketPictureUploadRequest{
+// 初始化TmallTraceplatformTicketPictureUploadAPIRequest对象
+func NewTmallTraceplatformTicketPictureUploadRequest() *TmallTraceplatformTicketPictureUploadAPIRequest{
+    return &TmallTraceplatformTicketPictureUploadAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallTraceplatformTicketPictureUploadRequest) GetApiMethodName() string {
+func (r TmallTraceplatformTicketPictureUploadAPIRequest) GetApiMethodName() string {
     return "tmall.traceplatform.ticket.picture.upload"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallTraceplatformTicketPictureUploadRequest) GetApiParams() url.Values {
+func (r TmallTraceplatformTicketPictureUploadAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallTraceplatformTicketPictureUploadRequest) GetApiParams() url.Values 
 }
 // BizOrderId Setter
 // 子订单号
-func (r *TmallTraceplatformTicketPictureUploadRequest) SetBizOrderId(_bizOrderId int64) error {
+func (r *TmallTraceplatformTicketPictureUploadAPIRequest) SetBizOrderId(_bizOrderId int64) error {
     r._bizOrderId = _bizOrderId
     r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
-func (r TmallTraceplatformTicketPictureUploadRequest) GetBizOrderId() int64 {
+func (r TmallTraceplatformTicketPictureUploadAPIRequest) GetBizOrderId() int64 {
     return r._bizOrderId
 }
 // File Setter
 // 图片二进制流，只支持jpg/jpeg/png格式
-func (r *TmallTraceplatformTicketPictureUploadRequest) SetFile(_file *model.File) error {
+func (r *TmallTraceplatformTicketPictureUploadAPIRequest) SetFile(_file *model.File) error {
     r._file = _file
     r.Set("file", _file)
     return nil
 }
 
 // File Getter
-func (r TmallTraceplatformTicketPictureUploadRequest) GetFile() *model.File {
+func (r TmallTraceplatformTicketPictureUploadAPIRequest) GetFile() *model.File {
     return r._file
 }

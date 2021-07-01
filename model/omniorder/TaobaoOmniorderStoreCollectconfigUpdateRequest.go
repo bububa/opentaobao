@@ -12,7 +12,7 @@ taobao.omniorder.store.collectconfig.update
 
 修改门店自提配置内容
 */
-type TaobaoOmniorderStoreCollectconfigUpdateRequest struct {
+type TaobaoOmniorderStoreCollectconfigUpdateAPIRequest struct {
     model.Params
     // 门店自提配置
     _storeCollectConfig   *StoreCollectConfig
@@ -20,20 +20,20 @@ type TaobaoOmniorderStoreCollectconfigUpdateRequest struct {
     _storeId   int64
 }
 
-// 初始化TaobaoOmniorderStoreCollectconfigUpdateRequest对象
-func NewTaobaoOmniorderStoreCollectconfigUpdateRequest() *TaobaoOmniorderStoreCollectconfigUpdateRequest{
-    return &TaobaoOmniorderStoreCollectconfigUpdateRequest{
+// 初始化TaobaoOmniorderStoreCollectconfigUpdateAPIRequest对象
+func NewTaobaoOmniorderStoreCollectconfigUpdateRequest() *TaobaoOmniorderStoreCollectconfigUpdateAPIRequest{
+    return &TaobaoOmniorderStoreCollectconfigUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniorderStoreCollectconfigUpdateRequest) GetApiMethodName() string {
+func (r TaobaoOmniorderStoreCollectconfigUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.omniorder.store.collectconfig.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderStoreCollectconfigUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoOmniorderStoreCollectconfigUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoOmniorderStoreCollectconfigUpdateRequest) GetApiParams() url.Value
 }
 // StoreCollectConfig Setter
 // 门店自提配置
-func (r *TaobaoOmniorderStoreCollectconfigUpdateRequest) SetStoreCollectConfig(_storeCollectConfig *StoreCollectConfig) error {
+func (r *TaobaoOmniorderStoreCollectconfigUpdateAPIRequest) SetStoreCollectConfig(_storeCollectConfig *StoreCollectConfig) error {
     r._storeCollectConfig = _storeCollectConfig
     r.Set("store_collect_config", _storeCollectConfig)
     return nil
 }
 
 // StoreCollectConfig Getter
-func (r TaobaoOmniorderStoreCollectconfigUpdateRequest) GetStoreCollectConfig() *StoreCollectConfig {
+func (r TaobaoOmniorderStoreCollectconfigUpdateAPIRequest) GetStoreCollectConfig() *StoreCollectConfig {
     return r._storeCollectConfig
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoOmniorderStoreCollectconfigUpdateRequest) SetStoreId(_storeId int64) error {
+func (r *TaobaoOmniorderStoreCollectconfigUpdateAPIRequest) SetStoreId(_storeId int64) error {
     r._storeId = _storeId
     r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
-func (r TaobaoOmniorderStoreCollectconfigUpdateRequest) GetStoreId() int64 {
+func (r TaobaoOmniorderStoreCollectconfigUpdateAPIRequest) GetStoreId() int64 {
     return r._storeId
 }

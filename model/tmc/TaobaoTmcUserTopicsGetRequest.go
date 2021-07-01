@@ -12,26 +12,26 @@ taobao.tmc.user.topics.get
 
 获取用户开通的topic列表，授权消息使用
 */
-type TaobaoTmcUserTopicsGetRequest struct {
+type TaobaoTmcUserTopicsGetAPIRequest struct {
     model.Params
     // 卖家nick
     _nick   string
 }
 
-// 初始化TaobaoTmcUserTopicsGetRequest对象
-func NewTaobaoTmcUserTopicsGetRequest() *TaobaoTmcUserTopicsGetRequest{
-    return &TaobaoTmcUserTopicsGetRequest{
+// 初始化TaobaoTmcUserTopicsGetAPIRequest对象
+func NewTaobaoTmcUserTopicsGetRequest() *TaobaoTmcUserTopicsGetAPIRequest{
+    return &TaobaoTmcUserTopicsGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTmcUserTopicsGetRequest) GetApiMethodName() string {
+func (r TaobaoTmcUserTopicsGetAPIRequest) GetApiMethodName() string {
     return "taobao.tmc.user.topics.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTmcUserTopicsGetRequest) GetApiParams() url.Values {
+func (r TaobaoTmcUserTopicsGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTmcUserTopicsGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 卖家nick
-func (r *TaobaoTmcUserTopicsGetRequest) SetNick(_nick string) error {
+func (r *TaobaoTmcUserTopicsGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoTmcUserTopicsGetRequest) GetNick() string {
+func (r TaobaoTmcUserTopicsGetAPIRequest) GetNick() string {
     return r._nick
 }

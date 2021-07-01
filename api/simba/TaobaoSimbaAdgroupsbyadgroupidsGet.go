@@ -11,7 +11,7 @@ taobao.simba.adgroupsbyadgroupids.get
 
 批量得到推广组
 */
-func TaobaoSimbaAdgroupsbyadgroupidsGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsbyadgroupidsGetRequest, session string) (*simba.TaobaoSimbaAdgroupsbyadgroupidsGetAPIResponse, error) {
+func TaobaoSimbaAdgroupsbyadgroupidsGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest, session string) (*simba.TaobaoSimbaAdgroupsbyadgroupidsGetAPIResponse, error) {
     var resp simba.TaobaoSimbaAdgroupsbyadgroupidsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

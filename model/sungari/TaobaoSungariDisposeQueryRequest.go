@@ -12,26 +12,26 @@ taobao.sungari.dispose.query
 
 红盾云桥同政府合作，将线下寄函的商品商家处置转为线上处理
 */
-type TaobaoSungariDisposeQueryRequest struct {
+type TaobaoSungariDisposeQueryAPIRequest struct {
     model.Params
     // 查询的key列表
     _paramList   []string
 }
 
-// 初始化TaobaoSungariDisposeQueryRequest对象
-func NewTaobaoSungariDisposeQueryRequest() *TaobaoSungariDisposeQueryRequest{
-    return &TaobaoSungariDisposeQueryRequest{
+// 初始化TaobaoSungariDisposeQueryAPIRequest对象
+func NewTaobaoSungariDisposeQueryRequest() *TaobaoSungariDisposeQueryAPIRequest{
+    return &TaobaoSungariDisposeQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSungariDisposeQueryRequest) GetApiMethodName() string {
+func (r TaobaoSungariDisposeQueryAPIRequest) GetApiMethodName() string {
     return "taobao.sungari.dispose.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSungariDisposeQueryRequest) GetApiParams() url.Values {
+func (r TaobaoSungariDisposeQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoSungariDisposeQueryRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 查询的key列表
-func (r *TaobaoSungariDisposeQueryRequest) SetParamList(_paramList []string) error {
+func (r *TaobaoSungariDisposeQueryAPIRequest) SetParamList(_paramList []string) error {
     r._paramList = _paramList
     r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
-func (r TaobaoSungariDisposeQueryRequest) GetParamList() []string {
+func (r TaobaoSungariDisposeQueryAPIRequest) GetParamList() []string {
     return r._paramList
 }

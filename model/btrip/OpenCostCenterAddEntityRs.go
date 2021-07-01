@@ -1,7 +1,7 @@
 package btrip
 
-// OpenCostCenterAddEntityRs 
-type OpenCostCenterAddEntityRs struct {
+// OpenCostCenterAddEntityRS 
+type OpenCostCenterAddEntityRS struct {
     // 该成本中心下员工总数
     SelectedUserNum   int64 `json:"selected_user_num,omitempty" xml:"selected_user_num,omitempty"`
     // 增加的人员信息条数

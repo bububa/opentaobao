@@ -12,26 +12,26 @@ taobao.openlink.session.get
 
 帮助第三方isv生成三方session
 */
-type TaobaoOpenlinkSessionGetRequest struct {
+type TaobaoOpenlinkSessionGetAPIRequest struct {
     model.Params
     // 授权码
     _code   string
 }
 
-// 初始化TaobaoOpenlinkSessionGetRequest对象
-func NewTaobaoOpenlinkSessionGetRequest() *TaobaoOpenlinkSessionGetRequest{
-    return &TaobaoOpenlinkSessionGetRequest{
+// 初始化TaobaoOpenlinkSessionGetAPIRequest对象
+func NewTaobaoOpenlinkSessionGetRequest() *TaobaoOpenlinkSessionGetAPIRequest{
+    return &TaobaoOpenlinkSessionGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpenlinkSessionGetRequest) GetApiMethodName() string {
+func (r TaobaoOpenlinkSessionGetAPIRequest) GetApiMethodName() string {
     return "taobao.openlink.session.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpenlinkSessionGetRequest) GetApiParams() url.Values {
+func (r TaobaoOpenlinkSessionGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOpenlinkSessionGetRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 授权码
-func (r *TaobaoOpenlinkSessionGetRequest) SetCode(_code string) error {
+func (r *TaobaoOpenlinkSessionGetAPIRequest) SetCode(_code string) error {
     r._code = _code
     r.Set("code", _code)
     return nil
 }
 
 // Code Getter
-func (r TaobaoOpenlinkSessionGetRequest) GetCode() string {
+func (r TaobaoOpenlinkSessionGetAPIRequest) GetCode() string {
     return r._code
 }

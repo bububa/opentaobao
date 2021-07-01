@@ -11,7 +11,7 @@ alibaba.damai.maitix.project.distribution.detail.query
 
 大麦分销项目内容详情查询，提供项目的内容详情
 */
-func AlibabaDamaiMaitixProjectDistributionDetailQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixProjectDistributionDetailQueryRequest, session string) (*maitix.AlibabaDamaiMaitixProjectDistributionDetailQueryAPIResponse, error) {
+func AlibabaDamaiMaitixProjectDistributionDetailQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixProjectDistributionDetailQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixProjectDistributionDetailQueryAPIResponse, error) {
     var resp maitix.AlibabaDamaiMaitixProjectDistributionDetailQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

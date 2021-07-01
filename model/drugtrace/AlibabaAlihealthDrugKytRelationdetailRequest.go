@@ -12,7 +12,7 @@ alibaba.alihealth.drug.kyt.relationdetail
 
 关联关系处理详情
 */
-type AlibabaAlihealthDrugKytRelationdetailRequest struct {
+type AlibabaAlihealthDrugKytRelationdetailAPIRequest struct {
     model.Params
     // 码激活文件上传信息标识
     _codeActiveInfoId   string
@@ -22,20 +22,20 @@ type AlibabaAlihealthDrugKytRelationdetailRequest struct {
     _clientType   string
 }
 
-// 初始化AlibabaAlihealthDrugKytRelationdetailRequest对象
-func NewAlibabaAlihealthDrugKytRelationdetailRequest() *AlibabaAlihealthDrugKytRelationdetailRequest{
-    return &AlibabaAlihealthDrugKytRelationdetailRequest{
+// 初始化AlibabaAlihealthDrugKytRelationdetailAPIRequest对象
+func NewAlibabaAlihealthDrugKytRelationdetailRequest() *AlibabaAlihealthDrugKytRelationdetailAPIRequest{
+    return &AlibabaAlihealthDrugKytRelationdetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytRelationdetailRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytRelationdetailAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.kyt.relationdetail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytRelationdetailRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthDrugKytRelationdetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthDrugKytRelationdetailRequest) GetApiParams() url.Values 
 }
 // CodeActiveInfoId Setter
 // 码激活文件上传信息标识
-func (r *AlibabaAlihealthDrugKytRelationdetailRequest) SetCodeActiveInfoId(_codeActiveInfoId string) error {
+func (r *AlibabaAlihealthDrugKytRelationdetailAPIRequest) SetCodeActiveInfoId(_codeActiveInfoId string) error {
     r._codeActiveInfoId = _codeActiveInfoId
     r.Set("code_active_info_id", _codeActiveInfoId)
     return nil
 }
 
 // CodeActiveInfoId Getter
-func (r AlibabaAlihealthDrugKytRelationdetailRequest) GetCodeActiveInfoId() string {
+func (r AlibabaAlihealthDrugKytRelationdetailAPIRequest) GetCodeActiveInfoId() string {
     return r._codeActiveInfoId
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytRelationdetailRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugKytRelationdetailAPIRequest) SetRefEntId(_refEntId string) error {
     r._refEntId = _refEntId
     r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
-func (r AlibabaAlihealthDrugKytRelationdetailRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugKytRelationdetailAPIRequest) GetRefEntId() string {
     return r._refEntId
 }
 // ClientType Setter
 // 客户端ID【默认写2】
-func (r *AlibabaAlihealthDrugKytRelationdetailRequest) SetClientType(_clientType string) error {
+func (r *AlibabaAlihealthDrugKytRelationdetailAPIRequest) SetClientType(_clientType string) error {
     r._clientType = _clientType
     r.Set("client_type", _clientType)
     return nil
 }
 
 // ClientType Getter
-func (r AlibabaAlihealthDrugKytRelationdetailRequest) GetClientType() string {
+func (r AlibabaAlihealthDrugKytRelationdetailAPIRequest) GetClientType() string {
     return r._clientType
 }

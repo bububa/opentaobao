@@ -12,7 +12,7 @@ yunos.tvpubadmin.content.child.recoitem.query
 
 查询少儿大厅推荐内容列表
 */
-type YunosTvpubadminContentChildRecoitemQueryRequest struct {
+type YunosTvpubadminContentChildRecoitemQueryAPIRequest struct {
     model.Params
     // 主键ID
     _id   int64
@@ -28,20 +28,20 @@ type YunosTvpubadminContentChildRecoitemQueryRequest struct {
     _pageSize   int64
 }
 
-// 初始化YunosTvpubadminContentChildRecoitemQueryRequest对象
-func NewYunosTvpubadminContentChildRecoitemQueryRequest() *YunosTvpubadminContentChildRecoitemQueryRequest{
-    return &YunosTvpubadminContentChildRecoitemQueryRequest{
+// 初始化YunosTvpubadminContentChildRecoitemQueryAPIRequest对象
+func NewYunosTvpubadminContentChildRecoitemQueryRequest() *YunosTvpubadminContentChildRecoitemQueryAPIRequest{
+    return &YunosTvpubadminContentChildRecoitemQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentChildRecoitemQueryRequest) GetApiMethodName() string {
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.child.recoitem.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentChildRecoitemQueryRequest) GetApiParams() url.Values {
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -50,73 +50,73 @@ func (r YunosTvpubadminContentChildRecoitemQueryRequest) GetApiParams() url.Valu
 }
 // Id Setter
 // 主键ID
-func (r *YunosTvpubadminContentChildRecoitemQueryRequest) SetId(_id int64) error {
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetId(_id int64) error {
     r._id = _id
     r.Set("id", _id)
     return nil
 }
 
 // Id Getter
-func (r YunosTvpubadminContentChildRecoitemQueryRequest) GetId() int64 {
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetId() int64 {
     return r._id
 }
 // NodeId Setter
 // 所属类目ID
-func (r *YunosTvpubadminContentChildRecoitemQueryRequest) SetNodeId(_nodeId int64) error {
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetNodeId(_nodeId int64) error {
     r._nodeId = _nodeId
     r.Set("node_id", _nodeId)
     return nil
 }
 
 // NodeId Getter
-func (r YunosTvpubadminContentChildRecoitemQueryRequest) GetNodeId() int64 {
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetNodeId() int64 {
     return r._nodeId
 }
 // Status Setter
 // 状态
-func (r *YunosTvpubadminContentChildRecoitemQueryRequest) SetStatus(_status int64) error {
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetStatus(_status int64) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r YunosTvpubadminContentChildRecoitemQueryRequest) GetStatus() int64 {
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetStatus() int64 {
     return r._status
 }
 // PageNo Setter
 // 页码
-func (r *YunosTvpubadminContentChildRecoitemQueryRequest) SetPageNo(_pageNo int64) error {
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r YunosTvpubadminContentChildRecoitemQueryRequest) GetPageNo() int64 {
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }
 // Name Setter
 // 名称
-func (r *YunosTvpubadminContentChildRecoitemQueryRequest) SetName(_name string) error {
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetName(_name string) error {
     r._name = _name
     r.Set("name", _name)
     return nil
 }
 
 // Name Getter
-func (r YunosTvpubadminContentChildRecoitemQueryRequest) GetName() string {
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetName() string {
     return r._name
 }
 // PageSize Setter
 // 单页数量
-func (r *YunosTvpubadminContentChildRecoitemQueryRequest) SetPageSize(_pageSize int64) error {
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r YunosTvpubadminContentChildRecoitemQueryRequest) GetPageSize() int64 {
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

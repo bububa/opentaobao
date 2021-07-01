@@ -11,7 +11,7 @@ alibaba.aliqin.axb.vendor.heart.beat
 
 供应商上报自己的心跳信息
 */
-func AlibabaAliqinAxbVendorHeartBeat(clt *core.SDKClient, req *alicom.AlibabaAliqinAxbVendorHeartBeatRequest, session string) (*alicom.AlibabaAliqinAxbVendorHeartBeatAPIResponse, error) {
+func AlibabaAliqinAxbVendorHeartBeat(clt *core.SDKClient, req *alicom.AlibabaAliqinAxbVendorHeartBeatAPIRequest, session string) (*alicom.AlibabaAliqinAxbVendorHeartBeatAPIResponse, error) {
     var resp alicom.AlibabaAliqinAxbVendorHeartBeatAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.trade.invoice.amount.get
 
 订单应开票金额计算
 */
-type TaobaoTradeInvoiceAmountGetRequest struct {
+type TaobaoTradeInvoiceAmountGetAPIRequest struct {
     model.Params
     // 业务订单ID
     _tid   int64
 }
 
-// 初始化TaobaoTradeInvoiceAmountGetRequest对象
-func NewTaobaoTradeInvoiceAmountGetRequest() *TaobaoTradeInvoiceAmountGetRequest{
-    return &TaobaoTradeInvoiceAmountGetRequest{
+// 初始化TaobaoTradeInvoiceAmountGetAPIRequest对象
+func NewTaobaoTradeInvoiceAmountGetRequest() *TaobaoTradeInvoiceAmountGetAPIRequest{
+    return &TaobaoTradeInvoiceAmountGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTradeInvoiceAmountGetRequest) GetApiMethodName() string {
+func (r TaobaoTradeInvoiceAmountGetAPIRequest) GetApiMethodName() string {
     return "taobao.trade.invoice.amount.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTradeInvoiceAmountGetRequest) GetApiParams() url.Values {
+func (r TaobaoTradeInvoiceAmountGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTradeInvoiceAmountGetRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 业务订单ID
-func (r *TaobaoTradeInvoiceAmountGetRequest) SetTid(_tid int64) error {
+func (r *TaobaoTradeInvoiceAmountGetAPIRequest) SetTid(_tid int64) error {
     r._tid = _tid
     r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
-func (r TaobaoTradeInvoiceAmountGetRequest) GetTid() int64 {
+func (r TaobaoTradeInvoiceAmountGetAPIRequest) GetTid() int64 {
     return r._tid
 }

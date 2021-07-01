@@ -11,7 +11,7 @@ yunos.account.callapi
 
 YunOS账号客户端对外开放的api通过top暴露
 */
-func YunosAccountCallapi(clt *core.SDKClient, req *yunosaccount.YunosAccountCallapiRequest, session string) (*yunosaccount.YunosAccountCallapiAPIResponse, error) {
+func YunosAccountCallapi(clt *core.SDKClient, req *yunosaccount.YunosAccountCallapiAPIRequest, session string) (*yunosaccount.YunosAccountCallapiAPIResponse, error) {
     var resp yunosaccount.YunosAccountCallapiAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.opentrade.customization.refund.enable
 
 定制订单设置允许仅退款
 */
-type TaobaoOpentradeCustomizationRefundEnableRequest struct {
+type TaobaoOpentradeCustomizationRefundEnableAPIRequest struct {
     model.Params
     // 主订单ID
     _tradeId   int64
 }
 
-// 初始化TaobaoOpentradeCustomizationRefundEnableRequest对象
-func NewTaobaoOpentradeCustomizationRefundEnableRequest() *TaobaoOpentradeCustomizationRefundEnableRequest{
-    return &TaobaoOpentradeCustomizationRefundEnableRequest{
+// 初始化TaobaoOpentradeCustomizationRefundEnableAPIRequest对象
+func NewTaobaoOpentradeCustomizationRefundEnableRequest() *TaobaoOpentradeCustomizationRefundEnableAPIRequest{
+    return &TaobaoOpentradeCustomizationRefundEnableAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOpentradeCustomizationRefundEnableRequest) GetApiMethodName() string {
+func (r TaobaoOpentradeCustomizationRefundEnableAPIRequest) GetApiMethodName() string {
     return "taobao.opentrade.customization.refund.enable"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOpentradeCustomizationRefundEnableRequest) GetApiParams() url.Values {
+func (r TaobaoOpentradeCustomizationRefundEnableAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOpentradeCustomizationRefundEnableRequest) GetApiParams() url.Valu
 }
 // TradeId Setter
 // 主订单ID
-func (r *TaobaoOpentradeCustomizationRefundEnableRequest) SetTradeId(_tradeId int64) error {
+func (r *TaobaoOpentradeCustomizationRefundEnableAPIRequest) SetTradeId(_tradeId int64) error {
     r._tradeId = _tradeId
     r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
-func (r TaobaoOpentradeCustomizationRefundEnableRequest) GetTradeId() int64 {
+func (r TaobaoOpentradeCustomizationRefundEnableAPIRequest) GetTradeId() int64 {
     return r._tradeId
 }

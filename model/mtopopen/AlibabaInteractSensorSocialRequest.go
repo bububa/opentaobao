@@ -12,26 +12,26 @@ alibaba.interact.sensor.social
 
 赞，评论 ，关注 新增接口
 */
-type AlibabaInteractSensorSocialRequest struct {
+type AlibabaInteractSensorSocialAPIRequest struct {
     model.Params
     // 系统自动生成
     _id   string
 }
 
-// 初始化AlibabaInteractSensorSocialRequest对象
-func NewAlibabaInteractSensorSocialRequest() *AlibabaInteractSensorSocialRequest{
-    return &AlibabaInteractSensorSocialRequest{
+// 初始化AlibabaInteractSensorSocialAPIRequest对象
+func NewAlibabaInteractSensorSocialRequest() *AlibabaInteractSensorSocialAPIRequest{
+    return &AlibabaInteractSensorSocialAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorSocialRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorSocialAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.social"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorSocialRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorSocialAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaInteractSensorSocialRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 系统自动生成
-func (r *AlibabaInteractSensorSocialRequest) SetId(_id string) error {
+func (r *AlibabaInteractSensorSocialAPIRequest) SetId(_id string) error {
     r._id = _id
     r.Set("id", _id)
     return nil
 }
 
 // Id Getter
-func (r AlibabaInteractSensorSocialRequest) GetId() string {
+func (r AlibabaInteractSensorSocialAPIRequest) GetId() string {
     return r._id
 }

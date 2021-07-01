@@ -12,26 +12,26 @@ alibaba.tmallgenie.scp.plan.materiel.get
 
 IBP同步物料接口
 */
-type AlibabaTmallgenieScpPlanMaterielGetRequest struct {
+type AlibabaTmallgenieScpPlanMaterielGetAPIRequest struct {
     model.Params
     // 扩展字段
     _requestExtendJson   string
 }
 
-// 初始化AlibabaTmallgenieScpPlanMaterielGetRequest对象
-func NewAlibabaTmallgenieScpPlanMaterielGetRequest() *AlibabaTmallgenieScpPlanMaterielGetRequest{
-    return &AlibabaTmallgenieScpPlanMaterielGetRequest{
+// 初始化AlibabaTmallgenieScpPlanMaterielGetAPIRequest对象
+func NewAlibabaTmallgenieScpPlanMaterielGetRequest() *AlibabaTmallgenieScpPlanMaterielGetAPIRequest{
+    return &AlibabaTmallgenieScpPlanMaterielGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTmallgenieScpPlanMaterielGetRequest) GetApiMethodName() string {
+func (r AlibabaTmallgenieScpPlanMaterielGetAPIRequest) GetApiMethodName() string {
     return "alibaba.tmallgenie.scp.plan.materiel.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTmallgenieScpPlanMaterielGetRequest) GetApiParams() url.Values {
+func (r AlibabaTmallgenieScpPlanMaterielGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanMaterielGetRequest) GetApiParams() url.Values {
 }
 // RequestExtendJson Setter
 // 扩展字段
-func (r *AlibabaTmallgenieScpPlanMaterielGetRequest) SetRequestExtendJson(_requestExtendJson string) error {
+func (r *AlibabaTmallgenieScpPlanMaterielGetAPIRequest) SetRequestExtendJson(_requestExtendJson string) error {
     r._requestExtendJson = _requestExtendJson
     r.Set("request_extend_json", _requestExtendJson)
     return nil
 }
 
 // RequestExtendJson Getter
-func (r AlibabaTmallgenieScpPlanMaterielGetRequest) GetRequestExtendJson() string {
+func (r AlibabaTmallgenieScpPlanMaterielGetAPIRequest) GetRequestExtendJson() string {
     return r._requestExtendJson
 }

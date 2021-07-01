@@ -12,26 +12,26 @@ taobao.omniorder.store.sdtquerystation
 
 速店通查询站点信息
 */
-type TaobaoOmniorderStoreSdtquerystationRequest struct {
+type TaobaoOmniorderStoreSdtquerystationAPIRequest struct {
     model.Params
     // 取号时返回的packageId
     _paramLong2   int64
 }
 
-// 初始化TaobaoOmniorderStoreSdtquerystationRequest对象
-func NewTaobaoOmniorderStoreSdtquerystationRequest() *TaobaoOmniorderStoreSdtquerystationRequest{
-    return &TaobaoOmniorderStoreSdtquerystationRequest{
+// 初始化TaobaoOmniorderStoreSdtquerystationAPIRequest对象
+func NewTaobaoOmniorderStoreSdtquerystationRequest() *TaobaoOmniorderStoreSdtquerystationAPIRequest{
+    return &TaobaoOmniorderStoreSdtquerystationAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoOmniorderStoreSdtquerystationRequest) GetApiMethodName() string {
+func (r TaobaoOmniorderStoreSdtquerystationAPIRequest) GetApiMethodName() string {
     return "taobao.omniorder.store.sdtquerystation"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderStoreSdtquerystationRequest) GetApiParams() url.Values {
+func (r TaobaoOmniorderStoreSdtquerystationAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoOmniorderStoreSdtquerystationRequest) GetApiParams() url.Values {
 }
 // ParamLong2 Setter
 // 取号时返回的packageId
-func (r *TaobaoOmniorderStoreSdtquerystationRequest) SetParamLong2(_paramLong2 int64) error {
+func (r *TaobaoOmniorderStoreSdtquerystationAPIRequest) SetParamLong2(_paramLong2 int64) error {
     r._paramLong2 = _paramLong2
     r.Set("param_long2", _paramLong2)
     return nil
 }
 
 // ParamLong2 Getter
-func (r TaobaoOmniorderStoreSdtquerystationRequest) GetParamLong2() int64 {
+func (r TaobaoOmniorderStoreSdtquerystationAPIRequest) GetParamLong2() int64 {
     return r._paramLong2
 }

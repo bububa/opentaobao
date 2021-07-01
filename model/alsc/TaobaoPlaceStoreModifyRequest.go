@@ -12,26 +12,26 @@ taobao.place.store.modify
 
 用于商家修改线下门店信息
 */
-type TaobaoPlaceStoreModifyRequest struct {
+type TaobaoPlaceStoreModifyAPIRequest struct {
     model.Params
     // 门店创建入参
     _storeUpdate   *StoreUpdateTopDTO
 }
 
-// 初始化TaobaoPlaceStoreModifyRequest对象
-func NewTaobaoPlaceStoreModifyRequest() *TaobaoPlaceStoreModifyRequest{
-    return &TaobaoPlaceStoreModifyRequest{
+// 初始化TaobaoPlaceStoreModifyAPIRequest对象
+func NewTaobaoPlaceStoreModifyRequest() *TaobaoPlaceStoreModifyAPIRequest{
+    return &TaobaoPlaceStoreModifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPlaceStoreModifyRequest) GetApiMethodName() string {
+func (r TaobaoPlaceStoreModifyAPIRequest) GetApiMethodName() string {
     return "taobao.place.store.modify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPlaceStoreModifyRequest) GetApiParams() url.Values {
+func (r TaobaoPlaceStoreModifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoPlaceStoreModifyRequest) GetApiParams() url.Values {
 }
 // StoreUpdate Setter
 // 门店创建入参
-func (r *TaobaoPlaceStoreModifyRequest) SetStoreUpdate(_storeUpdate *StoreUpdateTopDTO) error {
+func (r *TaobaoPlaceStoreModifyAPIRequest) SetStoreUpdate(_storeUpdate *StoreUpdateTopDTO) error {
     r._storeUpdate = _storeUpdate
     r.Set("store_update", _storeUpdate)
     return nil
 }
 
 // StoreUpdate Getter
-func (r TaobaoPlaceStoreModifyRequest) GetStoreUpdate() *StoreUpdateTopDTO {
+func (r TaobaoPlaceStoreModifyAPIRequest) GetStoreUpdate() *StoreUpdateTopDTO {
     return r._storeUpdate
 }

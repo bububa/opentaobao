@@ -11,7 +11,7 @@ tmall.supplychain.channel.product.downshelf
 
 产品下架
 */
-func TmallSupplychainChannelProductDownshelf(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductDownshelfRequest, session string) (*fenxiao.TmallSupplychainChannelProductDownshelfAPIResponse, error) {
+func TmallSupplychainChannelProductDownshelf(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductDownshelfAPIRequest, session string) (*fenxiao.TmallSupplychainChannelProductDownshelfAPIResponse, error) {
     var resp fenxiao.TmallSupplychainChannelProductDownshelfAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

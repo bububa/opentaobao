@@ -11,7 +11,7 @@ taobao.openmall.trade.confirm
 
 确认订单收货
 */
-func TaobaoOpenmallTradeConfirm(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeConfirmRequest, session string) (*openmall.TaobaoOpenmallTradeConfirmAPIResponse, error) {
+func TaobaoOpenmallTradeConfirm(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeConfirmAPIRequest, session string) (*openmall.TaobaoOpenmallTradeConfirmAPIResponse, error) {
     var resp openmall.TaobaoOpenmallTradeConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

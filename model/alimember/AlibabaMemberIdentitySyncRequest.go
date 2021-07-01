@@ -12,26 +12,26 @@ alibaba.member.identity.sync
 
 会员身份信息同步
 */
-type AlibabaMemberIdentitySyncRequest struct {
+type AlibabaMemberIdentitySyncAPIRequest struct {
     model.Params
     // 会员身份同步信息
     _syncDto   *SyncMemberIdentityDTO
 }
 
-// 初始化AlibabaMemberIdentitySyncRequest对象
-func NewAlibabaMemberIdentitySyncRequest() *AlibabaMemberIdentitySyncRequest{
-    return &AlibabaMemberIdentitySyncRequest{
+// 初始化AlibabaMemberIdentitySyncAPIRequest对象
+func NewAlibabaMemberIdentitySyncRequest() *AlibabaMemberIdentitySyncAPIRequest{
+    return &AlibabaMemberIdentitySyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaMemberIdentitySyncRequest) GetApiMethodName() string {
+func (r AlibabaMemberIdentitySyncAPIRequest) GetApiMethodName() string {
     return "alibaba.member.identity.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaMemberIdentitySyncRequest) GetApiParams() url.Values {
+func (r AlibabaMemberIdentitySyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaMemberIdentitySyncRequest) GetApiParams() url.Values {
 }
 // SyncDto Setter
 // 会员身份同步信息
-func (r *AlibabaMemberIdentitySyncRequest) SetSyncDto(_syncDto *SyncMemberIdentityDTO) error {
+func (r *AlibabaMemberIdentitySyncAPIRequest) SetSyncDto(_syncDto *SyncMemberIdentityDTO) error {
     r._syncDto = _syncDto
     r.Set("sync_dto", _syncDto)
     return nil
 }
 
 // SyncDto Getter
-func (r AlibabaMemberIdentitySyncRequest) GetSyncDto() *SyncMemberIdentityDTO {
+func (r AlibabaMemberIdentitySyncAPIRequest) GetSyncDto() *SyncMemberIdentityDTO {
     return r._syncDto
 }

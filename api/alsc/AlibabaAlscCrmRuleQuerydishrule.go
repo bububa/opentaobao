@@ -11,7 +11,7 @@ alibaba.alsc.crm.rule.querydishrule
 
 查询品牌下的入会菜品规则
 */
-func AlibabaAlscCrmRuleQuerydishrule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQuerydishruleRequest, session string) (*alsc.AlibabaAlscCrmRuleQuerydishruleAPIResponse, error) {
+func AlibabaAlscCrmRuleQuerydishrule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQuerydishruleAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleQuerydishruleAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmRuleQuerydishruleAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

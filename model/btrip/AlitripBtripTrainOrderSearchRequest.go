@@ -12,26 +12,26 @@ alitrip.btrip.train.order.search
 
 第三方OA厂商获取自己的火车票数据
 */
-type AlitripBtripTrainOrderSearchRequest struct {
+type AlitripBtripTrainOrderSearchAPIRequest struct {
     model.Params
     // 请求
     _rq   *OpenSearchRq
 }
 
-// 初始化AlitripBtripTrainOrderSearchRequest对象
-func NewAlitripBtripTrainOrderSearchRequest() *AlitripBtripTrainOrderSearchRequest{
-    return &AlitripBtripTrainOrderSearchRequest{
+// 初始化AlitripBtripTrainOrderSearchAPIRequest对象
+func NewAlitripBtripTrainOrderSearchRequest() *AlitripBtripTrainOrderSearchAPIRequest{
+    return &AlitripBtripTrainOrderSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripTrainOrderSearchRequest) GetApiMethodName() string {
+func (r AlitripBtripTrainOrderSearchAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.train.order.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripTrainOrderSearchRequest) GetApiParams() url.Values {
+func (r AlitripBtripTrainOrderSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripTrainOrderSearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求
-func (r *AlitripBtripTrainOrderSearchRequest) SetRq(_rq *OpenSearchRq) error {
+func (r *AlitripBtripTrainOrderSearchAPIRequest) SetRq(_rq *OpenSearchRq) error {
     r._rq = _rq
     r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
-func (r AlitripBtripTrainOrderSearchRequest) GetRq() *OpenSearchRq {
+func (r AlitripBtripTrainOrderSearchAPIRequest) GetRq() *OpenSearchRq {
     return r._rq
 }

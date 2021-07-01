@@ -11,7 +11,7 @@ alibaba.alihealth.drug.kyt.drugtable
 
 查询药品目录信息
 */
-func AlibabaAlihealthDrugKytDrugtable(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrugtableRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrugtableAPIResponse, error) {
+func AlibabaAlihealthDrugKytDrugtable(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrugtableAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrugtableAPIResponse, error) {
     var resp drugtrace.AlibabaAlihealthDrugKytDrugtableAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

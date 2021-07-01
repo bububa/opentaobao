@@ -12,7 +12,7 @@ youku.ott.dvb.card.change
 
 dvb 更换ca卡
 */
-type YoukuOttDvbCardChangeRequest struct {
+type YoukuOttDvbCardChangeAPIRequest struct {
     model.Params
     // 老卡id
     _oldCardId   string
@@ -22,20 +22,20 @@ type YoukuOttDvbCardChangeRequest struct {
     _cableCompanyCode   string
 }
 
-// 初始化YoukuOttDvbCardChangeRequest对象
-func NewYoukuOttDvbCardChangeRequest() *YoukuOttDvbCardChangeRequest{
-    return &YoukuOttDvbCardChangeRequest{
+// 初始化YoukuOttDvbCardChangeAPIRequest对象
+func NewYoukuOttDvbCardChangeRequest() *YoukuOttDvbCardChangeAPIRequest{
+    return &YoukuOttDvbCardChangeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YoukuOttDvbCardChangeRequest) GetApiMethodName() string {
+func (r YoukuOttDvbCardChangeAPIRequest) GetApiMethodName() string {
     return "youku.ott.dvb.card.change"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YoukuOttDvbCardChangeRequest) GetApiParams() url.Values {
+func (r YoukuOttDvbCardChangeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r YoukuOttDvbCardChangeRequest) GetApiParams() url.Values {
 }
 // OldCardId Setter
 // 老卡id
-func (r *YoukuOttDvbCardChangeRequest) SetOldCardId(_oldCardId string) error {
+func (r *YoukuOttDvbCardChangeAPIRequest) SetOldCardId(_oldCardId string) error {
     r._oldCardId = _oldCardId
     r.Set("old_card_id", _oldCardId)
     return nil
 }
 
 // OldCardId Getter
-func (r YoukuOttDvbCardChangeRequest) GetOldCardId() string {
+func (r YoukuOttDvbCardChangeAPIRequest) GetOldCardId() string {
     return r._oldCardId
 }
 // NewCardId Setter
 // 新卡id
-func (r *YoukuOttDvbCardChangeRequest) SetNewCardId(_newCardId string) error {
+func (r *YoukuOttDvbCardChangeAPIRequest) SetNewCardId(_newCardId string) error {
     r._newCardId = _newCardId
     r.Set("new_card_id", _newCardId)
     return nil
 }
 
 // NewCardId Getter
-func (r YoukuOttDvbCardChangeRequest) GetNewCardId() string {
+func (r YoukuOttDvbCardChangeAPIRequest) GetNewCardId() string {
     return r._newCardId
 }
 // CableCompanyCode Setter
 // 广电公司code(目前没用）
-func (r *YoukuOttDvbCardChangeRequest) SetCableCompanyCode(_cableCompanyCode string) error {
+func (r *YoukuOttDvbCardChangeAPIRequest) SetCableCompanyCode(_cableCompanyCode string) error {
     r._cableCompanyCode = _cableCompanyCode
     r.Set("cable_company_code", _cableCompanyCode)
     return nil
 }
 
 // CableCompanyCode Getter
-func (r YoukuOttDvbCardChangeRequest) GetCableCompanyCode() string {
+func (r YoukuOttDvbCardChangeAPIRequest) GetCableCompanyCode() string {
     return r._cableCompanyCode
 }

@@ -11,7 +11,7 @@ tmall.popupstore.item.discount.price
 
 商品优惠价格查询
 */
-func TmallPopupstoreItemDiscountPrice(clt *core.SDKClient, req *smartstore.TmallPopupstoreItemDiscountPriceRequest, session string) (*smartstore.TmallPopupstoreItemDiscountPriceAPIResponse, error) {
+func TmallPopupstoreItemDiscountPrice(clt *core.SDKClient, req *smartstore.TmallPopupstoreItemDiscountPriceAPIRequest, session string) (*smartstore.TmallPopupstoreItemDiscountPriceAPIResponse, error) {
     var resp smartstore.TmallPopupstoreItemDiscountPriceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ alibaba.aliqin.fc.iot.modbind
 
 支持用户的设备的换绑和解绑操作
 */
-type AlibabaAliqinFcIotModbindRequest struct {
+type AlibabaAliqinFcIotModbindAPIRequest struct {
     model.Params
     // chgBind：换绑；unBind：解绑
     _opionType   string
@@ -30,20 +30,20 @@ type AlibabaAliqinFcIotModbindRequest struct {
     _midPatChannel   string
 }
 
-// 初始化AlibabaAliqinFcIotModbindRequest对象
-func NewAlibabaAliqinFcIotModbindRequest() *AlibabaAliqinFcIotModbindRequest{
-    return &AlibabaAliqinFcIotModbindRequest{
+// 初始化AlibabaAliqinFcIotModbindAPIRequest对象
+func NewAlibabaAliqinFcIotModbindRequest() *AlibabaAliqinFcIotModbindAPIRequest{
+    return &AlibabaAliqinFcIotModbindAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAliqinFcIotModbindRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFcIotModbindAPIRequest) GetApiMethodName() string {
     return "alibaba.aliqin.fc.iot.modbind"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinFcIotModbindRequest) GetApiParams() url.Values {
+func (r AlibabaAliqinFcIotModbindAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -52,85 +52,85 @@ func (r AlibabaAliqinFcIotModbindRequest) GetApiParams() url.Values {
 }
 // OpionType Setter
 // chgBind：换绑；unBind：解绑
-func (r *AlibabaAliqinFcIotModbindRequest) SetOpionType(_opionType string) error {
+func (r *AlibabaAliqinFcIotModbindAPIRequest) SetOpionType(_opionType string) error {
     r._opionType = _opionType
     r.Set("opion_type", _opionType)
     return nil
 }
 
 // OpionType Getter
-func (r AlibabaAliqinFcIotModbindRequest) GetOpionType() string {
+func (r AlibabaAliqinFcIotModbindAPIRequest) GetOpionType() string {
     return r._opionType
 }
 // BillReal Setter
 // 物联卡和iccid保持一致
-func (r *AlibabaAliqinFcIotModbindRequest) SetBillReal(_billReal string) error {
+func (r *AlibabaAliqinFcIotModbindAPIRequest) SetBillReal(_billReal string) error {
     r._billReal = _billReal
     r.Set("bill_real", _billReal)
     return nil
 }
 
 // BillReal Getter
-func (r AlibabaAliqinFcIotModbindRequest) GetBillReal() string {
+func (r AlibabaAliqinFcIotModbindAPIRequest) GetBillReal() string {
     return r._billReal
 }
 // Iccid Setter
 // iccid （20位）
-func (r *AlibabaAliqinFcIotModbindRequest) SetIccid(_iccid string) error {
+func (r *AlibabaAliqinFcIotModbindAPIRequest) SetIccid(_iccid string) error {
     r._iccid = _iccid
     r.Set("iccid", _iccid)
     return nil
 }
 
 // Iccid Getter
-func (r AlibabaAliqinFcIotModbindRequest) GetIccid() string {
+func (r AlibabaAliqinFcIotModbindAPIRequest) GetIccid() string {
     return r._iccid
 }
 // Newimei Setter
 // 换绑的时候必传，换的新设备imei
-func (r *AlibabaAliqinFcIotModbindRequest) SetNewimei(_newimei string) error {
+func (r *AlibabaAliqinFcIotModbindAPIRequest) SetNewimei(_newimei string) error {
     r._newimei = _newimei
     r.Set("newimei", _newimei)
     return nil
 }
 
 // Newimei Getter
-func (r AlibabaAliqinFcIotModbindRequest) GetNewimei() string {
+func (r AlibabaAliqinFcIotModbindAPIRequest) GetNewimei() string {
     return r._newimei
 }
 // Imei Setter
 // 目前绑定的设备imei
-func (r *AlibabaAliqinFcIotModbindRequest) SetImei(_imei string) error {
+func (r *AlibabaAliqinFcIotModbindAPIRequest) SetImei(_imei string) error {
     r._imei = _imei
     r.Set("imei", _imei)
     return nil
 }
 
 // Imei Getter
-func (r AlibabaAliqinFcIotModbindRequest) GetImei() string {
+func (r AlibabaAliqinFcIotModbindAPIRequest) GetImei() string {
     return r._imei
 }
 // BillSource Setter
 // 物联卡业务：若无特殊为ICCID
-func (r *AlibabaAliqinFcIotModbindRequest) SetBillSource(_billSource string) error {
+func (r *AlibabaAliqinFcIotModbindAPIRequest) SetBillSource(_billSource string) error {
     r._billSource = _billSource
     r.Set("bill_source", _billSource)
     return nil
 }
 
 // BillSource Getter
-func (r AlibabaAliqinFcIotModbindRequest) GetBillSource() string {
+func (r AlibabaAliqinFcIotModbindAPIRequest) GetBillSource() string {
     return r._billSource
 }
 // MidPatChannel Setter
 // 若无特殊物联卡传入122
-func (r *AlibabaAliqinFcIotModbindRequest) SetMidPatChannel(_midPatChannel string) error {
+func (r *AlibabaAliqinFcIotModbindAPIRequest) SetMidPatChannel(_midPatChannel string) error {
     r._midPatChannel = _midPatChannel
     r.Set("mid_pat_channel", _midPatChannel)
     return nil
 }
 
 // MidPatChannel Getter
-func (r AlibabaAliqinFcIotModbindRequest) GetMidPatChannel() string {
+func (r AlibabaAliqinFcIotModbindAPIRequest) GetMidPatChannel() string {
     return r._midPatChannel
 }

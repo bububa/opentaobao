@@ -11,7 +11,7 @@ alibaba.scbp.ad.group.delete.ad.group.batch
 
 删除推广单元
 */
-func AlibabaScbpAdGroupDeleteAdGroupBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupDeleteAdGroupBatchRequest, session string) (*scbp.AlibabaScbpAdGroupDeleteAdGroupBatchAPIResponse, error) {
+func AlibabaScbpAdGroupDeleteAdGroupBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest, session string) (*scbp.AlibabaScbpAdGroupDeleteAdGroupBatchAPIResponse, error) {
     var resp scbp.AlibabaScbpAdGroupDeleteAdGroupBatchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

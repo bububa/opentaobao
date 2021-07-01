@@ -12,26 +12,26 @@ taobao.message.send
 
 消息发送接口
 */
-type TaobaoMessageSendRequest struct {
+type TaobaoMessageSendAPIRequest struct {
     model.Params
     // 消息发送相关参数
     _sendMessageReq   *SendMessageReq
 }
 
-// 初始化TaobaoMessageSendRequest对象
-func NewTaobaoMessageSendRequest() *TaobaoMessageSendRequest{
-    return &TaobaoMessageSendRequest{
+// 初始化TaobaoMessageSendAPIRequest对象
+func NewTaobaoMessageSendRequest() *TaobaoMessageSendAPIRequest{
+    return &TaobaoMessageSendAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoMessageSendRequest) GetApiMethodName() string {
+func (r TaobaoMessageSendAPIRequest) GetApiMethodName() string {
     return "taobao.message.send"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoMessageSendRequest) GetApiParams() url.Values {
+func (r TaobaoMessageSendAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoMessageSendRequest) GetApiParams() url.Values {
 }
 // SendMessageReq Setter
 // 消息发送相关参数
-func (r *TaobaoMessageSendRequest) SetSendMessageReq(_sendMessageReq *SendMessageReq) error {
+func (r *TaobaoMessageSendAPIRequest) SetSendMessageReq(_sendMessageReq *SendMessageReq) error {
     r._sendMessageReq = _sendMessageReq
     r.Set("send_message_req", _sendMessageReq)
     return nil
 }
 
 // SendMessageReq Getter
-func (r TaobaoMessageSendRequest) GetSendMessageReq() *SendMessageReq {
+func (r TaobaoMessageSendAPIRequest) GetSendMessageReq() *SendMessageReq {
     return r._sendMessageReq
 }

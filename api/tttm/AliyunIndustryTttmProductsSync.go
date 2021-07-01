@@ -11,7 +11,7 @@ aliyun.industry.tttm.products.sync
 
 天天特卖货品信息同步
 */
-func AliyunIndustryTttmProductsSync(clt *core.SDKClient, req *tttm.AliyunIndustryTttmProductsSyncRequest, session string) (*tttm.AliyunIndustryTttmProductsSyncAPIResponse, error) {
+func AliyunIndustryTttmProductsSync(clt *core.SDKClient, req *tttm.AliyunIndustryTttmProductsSyncAPIRequest, session string) (*tttm.AliyunIndustryTttmProductsSyncAPIResponse, error) {
     var resp tttm.AliyunIndustryTttmProductsSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.scbp.ad.keyword.delete
 
 外贸直通车删除关键词
 */
-type AlibabaScbpAdKeywordDeleteRequest struct {
+type AlibabaScbpAdKeywordDeleteAPIRequest struct {
     model.Params
     // 要删除的关键词
     _adKeyword   string
 }
 
-// 初始化AlibabaScbpAdKeywordDeleteRequest对象
-func NewAlibabaScbpAdKeywordDeleteRequest() *AlibabaScbpAdKeywordDeleteRequest{
-    return &AlibabaScbpAdKeywordDeleteRequest{
+// 初始化AlibabaScbpAdKeywordDeleteAPIRequest对象
+func NewAlibabaScbpAdKeywordDeleteRequest() *AlibabaScbpAdKeywordDeleteAPIRequest{
+    return &AlibabaScbpAdKeywordDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordDeleteRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdKeywordDeleteAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.keyword.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordDeleteRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdKeywordDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpAdKeywordDeleteRequest) GetApiParams() url.Values {
 }
 // AdKeyword Setter
 // 要删除的关键词
-func (r *AlibabaScbpAdKeywordDeleteRequest) SetAdKeyword(_adKeyword string) error {
+func (r *AlibabaScbpAdKeywordDeleteAPIRequest) SetAdKeyword(_adKeyword string) error {
     r._adKeyword = _adKeyword
     r.Set("ad_keyword", _adKeyword)
     return nil
 }
 
 // AdKeyword Getter
-func (r AlibabaScbpAdKeywordDeleteRequest) GetAdKeyword() string {
+func (r AlibabaScbpAdKeywordDeleteAPIRequest) GetAdKeyword() string {
     return r._adKeyword
 }

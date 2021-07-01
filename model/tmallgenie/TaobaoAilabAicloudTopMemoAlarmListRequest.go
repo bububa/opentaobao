@@ -12,7 +12,7 @@ taobao.ailab.aicloud.top.memo.alarm.list
 
 查询天猫精灵用户设置的所有闹钟
 */
-type TaobaoAilabAicloudTopMemoAlarmListRequest struct {
+type TaobaoAilabAicloudTopMemoAlarmListAPIRequest struct {
     model.Params
     // schema
     _schema   string
@@ -26,20 +26,20 @@ type TaobaoAilabAicloudTopMemoAlarmListRequest struct {
     _memoId   int64
 }
 
-// 初始化TaobaoAilabAicloudTopMemoAlarmListRequest对象
-func NewTaobaoAilabAicloudTopMemoAlarmListRequest() *TaobaoAilabAicloudTopMemoAlarmListRequest{
-    return &TaobaoAilabAicloudTopMemoAlarmListRequest{
+// 初始化TaobaoAilabAicloudTopMemoAlarmListAPIRequest对象
+func NewTaobaoAilabAicloudTopMemoAlarmListRequest() *TaobaoAilabAicloudTopMemoAlarmListAPIRequest{
+    return &TaobaoAilabAicloudTopMemoAlarmListAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAilabAicloudTopMemoAlarmListRequest) GetApiMethodName() string {
+func (r TaobaoAilabAicloudTopMemoAlarmListAPIRequest) GetApiMethodName() string {
     return "taobao.ailab.aicloud.top.memo.alarm.list"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAilabAicloudTopMemoAlarmListRequest) GetApiParams() url.Values {
+func (r TaobaoAilabAicloudTopMemoAlarmListAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -48,61 +48,61 @@ func (r TaobaoAilabAicloudTopMemoAlarmListRequest) GetApiParams() url.Values {
 }
 // Schema Setter
 // schema
-func (r *TaobaoAilabAicloudTopMemoAlarmListRequest) SetSchema(_schema string) error {
+func (r *TaobaoAilabAicloudTopMemoAlarmListAPIRequest) SetSchema(_schema string) error {
     r._schema = _schema
     r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
-func (r TaobaoAilabAicloudTopMemoAlarmListRequest) GetSchema() string {
+func (r TaobaoAilabAicloudTopMemoAlarmListAPIRequest) GetSchema() string {
     return r._schema
 }
 // UserId Setter
 // 企业用户ID
-func (r *TaobaoAilabAicloudTopMemoAlarmListRequest) SetUserId(_userId string) error {
+func (r *TaobaoAilabAicloudTopMemoAlarmListAPIRequest) SetUserId(_userId string) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r TaobaoAilabAicloudTopMemoAlarmListRequest) GetUserId() string {
+func (r TaobaoAilabAicloudTopMemoAlarmListAPIRequest) GetUserId() string {
     return r._userId
 }
 // UtdId Setter
 // 手持设备ID
-func (r *TaobaoAilabAicloudTopMemoAlarmListRequest) SetUtdId(_utdId string) error {
+func (r *TaobaoAilabAicloudTopMemoAlarmListAPIRequest) SetUtdId(_utdId string) error {
     r._utdId = _utdId
     r.Set("utd_id", _utdId)
     return nil
 }
 
 // UtdId Getter
-func (r TaobaoAilabAicloudTopMemoAlarmListRequest) GetUtdId() string {
+func (r TaobaoAilabAicloudTopMemoAlarmListAPIRequest) GetUtdId() string {
     return r._utdId
 }
 // Ext Setter
 // 扩展信息json段，用于存放APP类型，APP版本等等信息。
-func (r *TaobaoAilabAicloudTopMemoAlarmListRequest) SetExt(_ext string) error {
+func (r *TaobaoAilabAicloudTopMemoAlarmListAPIRequest) SetExt(_ext string) error {
     r._ext = _ext
     r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
-func (r TaobaoAilabAicloudTopMemoAlarmListRequest) GetExt() string {
+func (r TaobaoAilabAicloudTopMemoAlarmListAPIRequest) GetExt() string {
     return r._ext
 }
 // MemoId Setter
 // 闹钟ID
-func (r *TaobaoAilabAicloudTopMemoAlarmListRequest) SetMemoId(_memoId int64) error {
+func (r *TaobaoAilabAicloudTopMemoAlarmListAPIRequest) SetMemoId(_memoId int64) error {
     r._memoId = _memoId
     r.Set("memo_id", _memoId)
     return nil
 }
 
 // MemoId Getter
-func (r TaobaoAilabAicloudTopMemoAlarmListRequest) GetMemoId() int64 {
+func (r TaobaoAilabAicloudTopMemoAlarmListAPIRequest) GetMemoId() int64 {
     return r._memoId
 }

@@ -11,7 +11,7 @@ alibaba.seaking.translate
 
 MT定制接口
 */
-func AlibabaSeakingTranslate(clt *core.SDKClient, req *seaking.AlibabaSeakingTranslateRequest, session string) (*seaking.AlibabaSeakingTranslateAPIResponse, error) {
+func AlibabaSeakingTranslate(clt *core.SDKClient, req *seaking.AlibabaSeakingTranslateAPIRequest, session string) (*seaking.AlibabaSeakingTranslateAPIResponse, error) {
     var resp seaking.AlibabaSeakingTranslateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

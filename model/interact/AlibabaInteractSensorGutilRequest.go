@@ -12,24 +12,24 @@ alibaba.interact.sensor.gutil
 
 canvas工具包
 */
-type AlibabaInteractSensorGutilRequest struct {
+type AlibabaInteractSensorGutilAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractSensorGutilRequest对象
-func NewAlibabaInteractSensorGutilRequest() *AlibabaInteractSensorGutilRequest{
-    return &AlibabaInteractSensorGutilRequest{
+// 初始化AlibabaInteractSensorGutilAPIRequest对象
+func NewAlibabaInteractSensorGutilRequest() *AlibabaInteractSensorGutilAPIRequest{
+    return &AlibabaInteractSensorGutilAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorGutilRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorGutilAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.gutil"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorGutilRequest) GetApiParams() url.Values {
+func (r AlibabaInteractSensorGutilAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

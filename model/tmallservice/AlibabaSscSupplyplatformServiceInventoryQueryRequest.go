@@ -12,7 +12,7 @@ alibaba.ssc.supplyplatform.service.inventory.query
 
 查询服务库存。需要保存服务容量成功后，才能进行查询，参数中的provider信息（provider_id和provider_type）与alibaba.ssc.supplyplatform.servicecapacity.save接口中保持一致。
 */
-type AlibabaSscSupplyplatformServiceInventoryQueryRequest struct {
+type AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest struct {
     model.Params
     // 查询开始日期。yyyy-MM-dd格式
     _startDay   string
@@ -24,20 +24,20 @@ type AlibabaSscSupplyplatformServiceInventoryQueryRequest struct {
     _providerId   int64
 }
 
-// 初始化AlibabaSscSupplyplatformServiceInventoryQueryRequest对象
-func NewAlibabaSscSupplyplatformServiceInventoryQueryRequest() *AlibabaSscSupplyplatformServiceInventoryQueryRequest{
-    return &AlibabaSscSupplyplatformServiceInventoryQueryRequest{
+// 初始化AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest对象
+func NewAlibabaSscSupplyplatformServiceInventoryQueryRequest() *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest{
+    return &AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSscSupplyplatformServiceInventoryQueryRequest) GetApiMethodName() string {
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.ssc.supplyplatform.service.inventory.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSscSupplyplatformServiceInventoryQueryRequest) GetApiParams() url.Values {
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaSscSupplyplatformServiceInventoryQueryRequest) GetApiParams() url
 }
 // StartDay Setter
 // 查询开始日期。yyyy-MM-dd格式
-func (r *AlibabaSscSupplyplatformServiceInventoryQueryRequest) SetStartDay(_startDay string) error {
+func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetStartDay(_startDay string) error {
     r._startDay = _startDay
     r.Set("start_day", _startDay)
     return nil
 }
 
 // StartDay Getter
-func (r AlibabaSscSupplyplatformServiceInventoryQueryRequest) GetStartDay() string {
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetStartDay() string {
     return r._startDay
 }
 // EndDay Setter
 // 查询结束日期。与start间隔不能超过31天。yyyy-MM-dd格式
-func (r *AlibabaSscSupplyplatformServiceInventoryQueryRequest) SetEndDay(_endDay string) error {
+func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetEndDay(_endDay string) error {
     r._endDay = _endDay
     r.Set("end_day", _endDay)
     return nil
 }
 
 // EndDay Getter
-func (r AlibabaSscSupplyplatformServiceInventoryQueryRequest) GetEndDay() string {
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetEndDay() string {
     return r._endDay
 }
 // ProviderType Setter
 // 服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参
-func (r *AlibabaSscSupplyplatformServiceInventoryQueryRequest) SetProviderType(_providerType string) error {
+func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetProviderType(_providerType string) error {
     r._providerType = _providerType
     r.Set("provider_type", _providerType)
     return nil
 }
 
 // ProviderType Getter
-func (r AlibabaSscSupplyplatformServiceInventoryQueryRequest) GetProviderType() string {
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetProviderType() string {
     return r._providerType
 }
 // ProviderId Setter
 // 服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参
-func (r *AlibabaSscSupplyplatformServiceInventoryQueryRequest) SetProviderId(_providerId int64) error {
+func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetProviderId(_providerId int64) error {
     r._providerId = _providerId
     r.Set("provider_id", _providerId)
     return nil
 }
 
 // ProviderId Getter
-func (r AlibabaSscSupplyplatformServiceInventoryQueryRequest) GetProviderId() int64 {
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetProviderId() int64 {
     return r._providerId
 }

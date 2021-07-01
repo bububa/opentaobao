@@ -11,7 +11,7 @@ youku.ott.iot.status.push
 
 ott iot设备状态通知
 */
-func YoukuOttIotStatusPush(clt *core.SDKClient, req *ottpay.YoukuOttIotStatusPushRequest, session string) (*ottpay.YoukuOttIotStatusPushAPIResponse, error) {
+func YoukuOttIotStatusPush(clt *core.SDKClient, req *ottpay.YoukuOttIotStatusPushAPIRequest, session string) (*ottpay.YoukuOttIotStatusPushAPIResponse, error) {
     var resp ottpay.YoukuOttIotStatusPushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

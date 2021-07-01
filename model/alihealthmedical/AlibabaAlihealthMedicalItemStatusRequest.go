@@ -12,26 +12,26 @@ alibaba.alihealth.medical.item.status
 
 医生通三方机构平台进行服务商品上下架操作
 */
-type AlibabaAlihealthMedicalItemStatusRequest struct {
+type AlibabaAlihealthMedicalItemStatusAPIRequest struct {
     model.Params
     // 请求入参
     _shelfrequest   *ThirdAgencyUpDownShelfRequest
 }
 
-// 初始化AlibabaAlihealthMedicalItemStatusRequest对象
-func NewAlibabaAlihealthMedicalItemStatusRequest() *AlibabaAlihealthMedicalItemStatusRequest{
-    return &AlibabaAlihealthMedicalItemStatusRequest{
+// 初始化AlibabaAlihealthMedicalItemStatusAPIRequest对象
+func NewAlibabaAlihealthMedicalItemStatusRequest() *AlibabaAlihealthMedicalItemStatusAPIRequest{
+    return &AlibabaAlihealthMedicalItemStatusAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalItemStatusRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalItemStatusAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medical.item.status"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalItemStatusRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMedicalItemStatusAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalItemStatusRequest) GetApiParams() url.Values {
 }
 // Shelfrequest Setter
 // 请求入参
-func (r *AlibabaAlihealthMedicalItemStatusRequest) SetShelfrequest(_shelfrequest *ThirdAgencyUpDownShelfRequest) error {
+func (r *AlibabaAlihealthMedicalItemStatusAPIRequest) SetShelfrequest(_shelfrequest *ThirdAgencyUpDownShelfRequest) error {
     r._shelfrequest = _shelfrequest
     r.Set("shelfrequest", _shelfrequest)
     return nil
 }
 
 // Shelfrequest Getter
-func (r AlibabaAlihealthMedicalItemStatusRequest) GetShelfrequest() *ThirdAgencyUpDownShelfRequest {
+func (r AlibabaAlihealthMedicalItemStatusAPIRequest) GetShelfrequest() *ThirdAgencyUpDownShelfRequest {
     return r._shelfrequest
 }

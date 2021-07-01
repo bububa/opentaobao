@@ -12,26 +12,26 @@ tmall.car.xcar.synchronize.car.model.data
 
 爱车汽车车型数据同步到天猫
 */
-type TmallCarXcarSynchronizeCarModelDataRequest struct {
+type TmallCarXcarSynchronizeCarModelDataAPIRequest struct {
     model.Params
     // 传入对象描述
     _paramXCarSysModelDTO   *XCarSysModelDTO
 }
 
-// 初始化TmallCarXcarSynchronizeCarModelDataRequest对象
-func NewTmallCarXcarSynchronizeCarModelDataRequest() *TmallCarXcarSynchronizeCarModelDataRequest{
-    return &TmallCarXcarSynchronizeCarModelDataRequest{
+// 初始化TmallCarXcarSynchronizeCarModelDataAPIRequest对象
+func NewTmallCarXcarSynchronizeCarModelDataRequest() *TmallCarXcarSynchronizeCarModelDataAPIRequest{
+    return &TmallCarXcarSynchronizeCarModelDataAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarXcarSynchronizeCarModelDataRequest) GetApiMethodName() string {
+func (r TmallCarXcarSynchronizeCarModelDataAPIRequest) GetApiMethodName() string {
     return "tmall.car.xcar.synchronize.car.model.data"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarXcarSynchronizeCarModelDataRequest) GetApiParams() url.Values {
+func (r TmallCarXcarSynchronizeCarModelDataAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallCarXcarSynchronizeCarModelDataRequest) GetApiParams() url.Values {
 }
 // ParamXCarSysModelDTO Setter
 // 传入对象描述
-func (r *TmallCarXcarSynchronizeCarModelDataRequest) SetParamXCarSysModelDTO(_paramXCarSysModelDTO *XCarSysModelDTO) error {
+func (r *TmallCarXcarSynchronizeCarModelDataAPIRequest) SetParamXCarSysModelDTO(_paramXCarSysModelDTO *XCarSysModelDTO) error {
     r._paramXCarSysModelDTO = _paramXCarSysModelDTO
     r.Set("param_x_car_sys_model_d_t_o", _paramXCarSysModelDTO)
     return nil
 }
 
 // ParamXCarSysModelDTO Getter
-func (r TmallCarXcarSynchronizeCarModelDataRequest) GetParamXCarSysModelDTO() *XCarSysModelDTO {
+func (r TmallCarXcarSynchronizeCarModelDataAPIRequest) GetParamXCarSysModelDTO() *XCarSysModelDTO {
     return r._paramXCarSysModelDTO
 }

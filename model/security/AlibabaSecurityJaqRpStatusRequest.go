@@ -12,7 +12,7 @@ alibaba.security.jaq.rp.status
 
 聚安全实人认证查询状态接口
 */
-type AlibabaSecurityJaqRpStatusRequest struct {
+type AlibabaSecurityJaqRpStatusAPIRequest struct {
     model.Params
     // 账号id
     _accountId   string
@@ -24,20 +24,20 @@ type AlibabaSecurityJaqRpStatusRequest struct {
     _biz   string
 }
 
-// 初始化AlibabaSecurityJaqRpStatusRequest对象
-func NewAlibabaSecurityJaqRpStatusRequest() *AlibabaSecurityJaqRpStatusRequest{
-    return &AlibabaSecurityJaqRpStatusRequest{
+// 初始化AlibabaSecurityJaqRpStatusAPIRequest对象
+func NewAlibabaSecurityJaqRpStatusRequest() *AlibabaSecurityJaqRpStatusAPIRequest{
+    return &AlibabaSecurityJaqRpStatusAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaSecurityJaqRpStatusRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqRpStatusAPIRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.rp.status"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqRpStatusRequest) GetApiParams() url.Values {
+func (r AlibabaSecurityJaqRpStatusAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaSecurityJaqRpStatusRequest) GetApiParams() url.Values {
 }
 // AccountId Setter
 // 账号id
-func (r *AlibabaSecurityJaqRpStatusRequest) SetAccountId(_accountId string) error {
+func (r *AlibabaSecurityJaqRpStatusAPIRequest) SetAccountId(_accountId string) error {
     r._accountId = _accountId
     r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
-func (r AlibabaSecurityJaqRpStatusRequest) GetAccountId() string {
+func (r AlibabaSecurityJaqRpStatusAPIRequest) GetAccountId() string {
     return r._accountId
 }
 // TicketId Setter
 // 凭据id
-func (r *AlibabaSecurityJaqRpStatusRequest) SetTicketId(_ticketId string) error {
+func (r *AlibabaSecurityJaqRpStatusAPIRequest) SetTicketId(_ticketId string) error {
     r._ticketId = _ticketId
     r.Set("ticket_id", _ticketId)
     return nil
 }
 
 // TicketId Getter
-func (r AlibabaSecurityJaqRpStatusRequest) GetTicketId() string {
+func (r AlibabaSecurityJaqRpStatusAPIRequest) GetTicketId() string {
     return r._ticketId
 }
 // Source Setter
 // 客户端来源
-func (r *AlibabaSecurityJaqRpStatusRequest) SetSource(_source string) error {
+func (r *AlibabaSecurityJaqRpStatusAPIRequest) SetSource(_source string) error {
     r._source = _source
     r.Set("source", _source)
     return nil
 }
 
 // Source Getter
-func (r AlibabaSecurityJaqRpStatusRequest) GetSource() string {
+func (r AlibabaSecurityJaqRpStatusAPIRequest) GetSource() string {
     return r._source
 }
 // Biz Setter
 // 业务来源
-func (r *AlibabaSecurityJaqRpStatusRequest) SetBiz(_biz string) error {
+func (r *AlibabaSecurityJaqRpStatusAPIRequest) SetBiz(_biz string) error {
     r._biz = _biz
     r.Set("biz", _biz)
     return nil
 }
 
 // Biz Getter
-func (r AlibabaSecurityJaqRpStatusRequest) GetBiz() string {
+func (r AlibabaSecurityJaqRpStatusAPIRequest) GetBiz() string {
     return r._biz
 }

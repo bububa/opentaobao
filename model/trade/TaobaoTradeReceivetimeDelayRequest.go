@@ -12,7 +12,7 @@ taobao.trade.receivetime.delay
 
 延长交易收货时间
 */
-type TaobaoTradeReceivetimeDelayRequest struct {
+type TaobaoTradeReceivetimeDelayAPIRequest struct {
     model.Params
     // 主订单号
     _tid   int64
@@ -20,20 +20,20 @@ type TaobaoTradeReceivetimeDelayRequest struct {
     _days   int64
 }
 
-// 初始化TaobaoTradeReceivetimeDelayRequest对象
-func NewTaobaoTradeReceivetimeDelayRequest() *TaobaoTradeReceivetimeDelayRequest{
-    return &TaobaoTradeReceivetimeDelayRequest{
+// 初始化TaobaoTradeReceivetimeDelayAPIRequest对象
+func NewTaobaoTradeReceivetimeDelayRequest() *TaobaoTradeReceivetimeDelayAPIRequest{
+    return &TaobaoTradeReceivetimeDelayAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTradeReceivetimeDelayRequest) GetApiMethodName() string {
+func (r TaobaoTradeReceivetimeDelayAPIRequest) GetApiMethodName() string {
     return "taobao.trade.receivetime.delay"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTradeReceivetimeDelayRequest) GetApiParams() url.Values {
+func (r TaobaoTradeReceivetimeDelayAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoTradeReceivetimeDelayRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 主订单号
-func (r *TaobaoTradeReceivetimeDelayRequest) SetTid(_tid int64) error {
+func (r *TaobaoTradeReceivetimeDelayAPIRequest) SetTid(_tid int64) error {
     r._tid = _tid
     r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
-func (r TaobaoTradeReceivetimeDelayRequest) GetTid() int64 {
+func (r TaobaoTradeReceivetimeDelayAPIRequest) GetTid() int64 {
     return r._tid
 }
 // Days Setter
 // 延长收货的天数，可选值为：3, 5, 7, 10。
-func (r *TaobaoTradeReceivetimeDelayRequest) SetDays(_days int64) error {
+func (r *TaobaoTradeReceivetimeDelayAPIRequest) SetDays(_days int64) error {
     r._days = _days
     r.Set("days", _days)
     return nil
 }
 
 // Days Getter
-func (r TaobaoTradeReceivetimeDelayRequest) GetDays() int64 {
+func (r TaobaoTradeReceivetimeDelayAPIRequest) GetDays() int64 {
     return r._days
 }

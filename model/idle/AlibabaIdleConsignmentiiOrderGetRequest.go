@@ -12,26 +12,26 @@ alibaba.idle.consignmentii.order.get
 
 闲鱼寄卖V2服务商以闲鱼交易买家身份查询订单信息
 */
-type AlibabaIdleConsignmentiiOrderGetRequest struct {
+type AlibabaIdleConsignmentiiOrderGetAPIRequest struct {
     model.Params
     // 闲鱼订单ID
     _bizOrderId   int64
 }
 
-// 初始化AlibabaIdleConsignmentiiOrderGetRequest对象
-func NewAlibabaIdleConsignmentiiOrderGetRequest() *AlibabaIdleConsignmentiiOrderGetRequest{
-    return &AlibabaIdleConsignmentiiOrderGetRequest{
+// 初始化AlibabaIdleConsignmentiiOrderGetAPIRequest对象
+func NewAlibabaIdleConsignmentiiOrderGetRequest() *AlibabaIdleConsignmentiiOrderGetAPIRequest{
+    return &AlibabaIdleConsignmentiiOrderGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleConsignmentiiOrderGetRequest) GetApiMethodName() string {
+func (r AlibabaIdleConsignmentiiOrderGetAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.consignmentii.order.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleConsignmentiiOrderGetRequest) GetApiParams() url.Values {
+func (r AlibabaIdleConsignmentiiOrderGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleConsignmentiiOrderGetRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 闲鱼订单ID
-func (r *AlibabaIdleConsignmentiiOrderGetRequest) SetBizOrderId(_bizOrderId int64) error {
+func (r *AlibabaIdleConsignmentiiOrderGetAPIRequest) SetBizOrderId(_bizOrderId int64) error {
     r._bizOrderId = _bizOrderId
     r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
-func (r AlibabaIdleConsignmentiiOrderGetRequest) GetBizOrderId() int64 {
+func (r AlibabaIdleConsignmentiiOrderGetAPIRequest) GetBizOrderId() int64 {
     return r._bizOrderId
 }

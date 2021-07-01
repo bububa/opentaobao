@@ -12,7 +12,7 @@ taobao.simba.salestar.adgroup.delete
 
 删除一个推广组
 */
-type TaobaoSimbaSalestarAdgroupDeleteRequest struct {
+type TaobaoSimbaSalestarAdgroupDeleteAPIRequest struct {
     model.Params
     // 主人昵称
     _nick   string
@@ -20,20 +20,20 @@ type TaobaoSimbaSalestarAdgroupDeleteRequest struct {
     _adgroupId   int64
 }
 
-// 初始化TaobaoSimbaSalestarAdgroupDeleteRequest对象
-func NewTaobaoSimbaSalestarAdgroupDeleteRequest() *TaobaoSimbaSalestarAdgroupDeleteRequest{
-    return &TaobaoSimbaSalestarAdgroupDeleteRequest{
+// 初始化TaobaoSimbaSalestarAdgroupDeleteAPIRequest对象
+func NewTaobaoSimbaSalestarAdgroupDeleteRequest() *TaobaoSimbaSalestarAdgroupDeleteAPIRequest{
+    return &TaobaoSimbaSalestarAdgroupDeleteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaSalestarAdgroupDeleteRequest) GetApiMethodName() string {
+func (r TaobaoSimbaSalestarAdgroupDeleteAPIRequest) GetApiMethodName() string {
     return "taobao.simba.salestar.adgroup.delete"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSalestarAdgroupDeleteRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaSalestarAdgroupDeleteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSimbaSalestarAdgroupDeleteRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaSalestarAdgroupDeleteRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaSalestarAdgroupDeleteAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaSalestarAdgroupDeleteRequest) GetNick() string {
+func (r TaobaoSimbaSalestarAdgroupDeleteAPIRequest) GetNick() string {
     return r._nick
 }
 // AdgroupId Setter
 // 推广组Id
-func (r *TaobaoSimbaSalestarAdgroupDeleteRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoSimbaSalestarAdgroupDeleteAPIRequest) SetAdgroupId(_adgroupId int64) error {
     r._adgroupId = _adgroupId
     r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
-func (r TaobaoSimbaSalestarAdgroupDeleteRequest) GetAdgroupId() int64 {
+func (r TaobaoSimbaSalestarAdgroupDeleteAPIRequest) GetAdgroupId() int64 {
     return r._adgroupId
 }

@@ -11,7 +11,7 @@ alibaba.retail.device.inventory.sync
 
 商库存同步接口
 */
-func AlibabaRetailDeviceInventorySync(clt *core.SDKClient, req *inventory.AlibabaRetailDeviceInventorySyncRequest, session string) (*inventory.AlibabaRetailDeviceInventorySyncAPIResponse, error) {
+func AlibabaRetailDeviceInventorySync(clt *core.SDKClient, req *inventory.AlibabaRetailDeviceInventorySyncAPIRequest, session string) (*inventory.AlibabaRetailDeviceInventorySyncAPIResponse, error) {
     var resp inventory.AlibabaRetailDeviceInventorySyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.wdk.merchant.item.createdraft
 
 新建商品草稿erp接口
 */
-type AlibabaWdkMerchantItemCreatedraftRequest struct {
+type AlibabaWdkMerchantItemCreatedraftAPIRequest struct {
     model.Params
     // 商品信息json
     _params   string
 }
 
-// 初始化AlibabaWdkMerchantItemCreatedraftRequest对象
-func NewAlibabaWdkMerchantItemCreatedraftRequest() *AlibabaWdkMerchantItemCreatedraftRequest{
-    return &AlibabaWdkMerchantItemCreatedraftRequest{
+// 初始化AlibabaWdkMerchantItemCreatedraftAPIRequest对象
+func NewAlibabaWdkMerchantItemCreatedraftRequest() *AlibabaWdkMerchantItemCreatedraftAPIRequest{
+    return &AlibabaWdkMerchantItemCreatedraftAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMerchantItemCreatedraftRequest) GetApiMethodName() string {
+func (r AlibabaWdkMerchantItemCreatedraftAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.merchant.item.createdraft"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMerchantItemCreatedraftRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMerchantItemCreatedraftAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkMerchantItemCreatedraftRequest) GetApiParams() url.Values {
 }
 // Params Setter
 // 商品信息json
-func (r *AlibabaWdkMerchantItemCreatedraftRequest) SetParams(_params string) error {
+func (r *AlibabaWdkMerchantItemCreatedraftAPIRequest) SetParams(_params string) error {
     r._params = _params
     r.Set("params", _params)
     return nil
 }
 
 // Params Getter
-func (r AlibabaWdkMerchantItemCreatedraftRequest) GetParams() string {
+func (r AlibabaWdkMerchantItemCreatedraftAPIRequest) GetParams() string {
     return r._params
 }

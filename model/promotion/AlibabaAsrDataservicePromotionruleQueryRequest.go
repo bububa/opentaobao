@@ -12,7 +12,7 @@ alibaba.asr.dataservice.promotionrule.query
 
 查询优惠规则，例如星巴克查询优惠规则
 */
-type AlibabaAsrDataservicePromotionruleQueryRequest struct {
+type AlibabaAsrDataservicePromotionruleQueryAPIRequest struct {
     model.Params
     // 当前页
     _pageNo   int64
@@ -20,20 +20,20 @@ type AlibabaAsrDataservicePromotionruleQueryRequest struct {
     _pageSize   int64
 }
 
-// 初始化AlibabaAsrDataservicePromotionruleQueryRequest对象
-func NewAlibabaAsrDataservicePromotionruleQueryRequest() *AlibabaAsrDataservicePromotionruleQueryRequest{
-    return &AlibabaAsrDataservicePromotionruleQueryRequest{
+// 初始化AlibabaAsrDataservicePromotionruleQueryAPIRequest对象
+func NewAlibabaAsrDataservicePromotionruleQueryRequest() *AlibabaAsrDataservicePromotionruleQueryAPIRequest{
+    return &AlibabaAsrDataservicePromotionruleQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAsrDataservicePromotionruleQueryRequest) GetApiMethodName() string {
+func (r AlibabaAsrDataservicePromotionruleQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.asr.dataservice.promotionrule.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAsrDataservicePromotionruleQueryRequest) GetApiParams() url.Values {
+func (r AlibabaAsrDataservicePromotionruleQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaAsrDataservicePromotionruleQueryRequest) GetApiParams() url.Value
 }
 // PageNo Setter
 // 当前页
-func (r *AlibabaAsrDataservicePromotionruleQueryRequest) SetPageNo(_pageNo int64) error {
+func (r *AlibabaAsrDataservicePromotionruleQueryAPIRequest) SetPageNo(_pageNo int64) error {
     r._pageNo = _pageNo
     r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
-func (r AlibabaAsrDataservicePromotionruleQueryRequest) GetPageNo() int64 {
+func (r AlibabaAsrDataservicePromotionruleQueryAPIRequest) GetPageNo() int64 {
     return r._pageNo
 }
 // PageSize Setter
 // 每页数量
-func (r *AlibabaAsrDataservicePromotionruleQueryRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaAsrDataservicePromotionruleQueryAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r AlibabaAsrDataservicePromotionruleQueryRequest) GetPageSize() int64 {
+func (r AlibabaAsrDataservicePromotionruleQueryAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

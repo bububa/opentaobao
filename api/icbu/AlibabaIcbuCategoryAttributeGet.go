@@ -11,7 +11,7 @@ alibaba.icbu.category.attribute.get
 
 根据类目ID获取系统定义的属性
 */
-func AlibabaIcbuCategoryAttributeGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryAttributeGetRequest, session string) (*icbu.AlibabaIcbuCategoryAttributeGetAPIResponse, error) {
+func AlibabaIcbuCategoryAttributeGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryAttributeGetAPIRequest, session string) (*icbu.AlibabaIcbuCategoryAttributeGetAPIResponse, error) {
     var resp icbu.AlibabaIcbuCategoryAttributeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ taobao.simba.creative.delete
 
 删除一个创意
 */
-func TaobaoSimbaCreativeDelete(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeDeleteRequest, session string) (*simba.TaobaoSimbaCreativeDeleteAPIResponse, error) {
+func TaobaoSimbaCreativeDelete(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeDeleteAPIRequest, session string) (*simba.TaobaoSimbaCreativeDeleteAPIResponse, error) {
     var resp simba.TaobaoSimbaCreativeDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

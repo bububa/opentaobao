@@ -11,7 +11,7 @@ taobao.xhotel.order.official.settle.put
 
 用于酒店官网信用住商家结账调用
 */
-func TaobaoXhotelOrderOfficialSettlePut(clt *core.SDKClient, req *xhotelofficial.TaobaoXhotelOrderOfficialSettlePutRequest, session string) (*xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIResponse, error) {
+func TaobaoXhotelOrderOfficialSettlePut(clt *core.SDKClient, req *xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIRequest, session string) (*xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIResponse, error) {
     var resp xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

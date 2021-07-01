@@ -12,7 +12,7 @@ yunos.ad.audit.creative.getlist
 
 批量获取创意审核状态
 */
-type YunosAdAuditCreativeGetlistRequest struct {
+type YunosAdAuditCreativeGetlistAPIRequest struct {
     model.Params
     // 第三方DSP的id
     _memberId   int64
@@ -22,20 +22,20 @@ type YunosAdAuditCreativeGetlistRequest struct {
     _creativeIds   []string
 }
 
-// 初始化YunosAdAuditCreativeGetlistRequest对象
-func NewYunosAdAuditCreativeGetlistRequest() *YunosAdAuditCreativeGetlistRequest{
-    return &YunosAdAuditCreativeGetlistRequest{
+// 初始化YunosAdAuditCreativeGetlistAPIRequest对象
+func NewYunosAdAuditCreativeGetlistRequest() *YunosAdAuditCreativeGetlistAPIRequest{
+    return &YunosAdAuditCreativeGetlistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosAdAuditCreativeGetlistRequest) GetApiMethodName() string {
+func (r YunosAdAuditCreativeGetlistAPIRequest) GetApiMethodName() string {
     return "yunos.ad.audit.creative.getlist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosAdAuditCreativeGetlistRequest) GetApiParams() url.Values {
+func (r YunosAdAuditCreativeGetlistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r YunosAdAuditCreativeGetlistRequest) GetApiParams() url.Values {
 }
 // MemberId Setter
 // 第三方DSP的id
-func (r *YunosAdAuditCreativeGetlistRequest) SetMemberId(_memberId int64) error {
+func (r *YunosAdAuditCreativeGetlistAPIRequest) SetMemberId(_memberId int64) error {
     r._memberId = _memberId
     r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
-func (r YunosAdAuditCreativeGetlistRequest) GetMemberId() int64 {
+func (r YunosAdAuditCreativeGetlistAPIRequest) GetMemberId() int64 {
     return r._memberId
 }
 // Status Setter
 // 状态
-func (r *YunosAdAuditCreativeGetlistRequest) SetStatus(_status string) error {
+func (r *YunosAdAuditCreativeGetlistAPIRequest) SetStatus(_status string) error {
     r._status = _status
     r.Set("status", _status)
     return nil
 }
 
 // Status Getter
-func (r YunosAdAuditCreativeGetlistRequest) GetStatus() string {
+func (r YunosAdAuditCreativeGetlistAPIRequest) GetStatus() string {
     return r._status
 }
 // CreativeIds Setter
 // 创意列表
-func (r *YunosAdAuditCreativeGetlistRequest) SetCreativeIds(_creativeIds []string) error {
+func (r *YunosAdAuditCreativeGetlistAPIRequest) SetCreativeIds(_creativeIds []string) error {
     r._creativeIds = _creativeIds
     r.Set("creative_ids", _creativeIds)
     return nil
 }
 
 // CreativeIds Getter
-func (r YunosAdAuditCreativeGetlistRequest) GetCreativeIds() []string {
+func (r YunosAdAuditCreativeGetlistAPIRequest) GetCreativeIds() []string {
     return r._creativeIds
 }

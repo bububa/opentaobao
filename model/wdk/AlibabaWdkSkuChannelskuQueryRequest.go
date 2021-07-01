@@ -12,26 +12,26 @@ alibaba.wdk.sku.channelsku.query
 
 查询渠道商品
 */
-type AlibabaWdkSkuChannelskuQueryRequest struct {
+type AlibabaWdkSkuChannelskuQueryAPIRequest struct {
     model.Params
     // 查询渠道商品的入参
     _param   *ChannelSkuQueryDO
 }
 
-// 初始化AlibabaWdkSkuChannelskuQueryRequest对象
-func NewAlibabaWdkSkuChannelskuQueryRequest() *AlibabaWdkSkuChannelskuQueryRequest{
-    return &AlibabaWdkSkuChannelskuQueryRequest{
+// 初始化AlibabaWdkSkuChannelskuQueryAPIRequest对象
+func NewAlibabaWdkSkuChannelskuQueryRequest() *AlibabaWdkSkuChannelskuQueryAPIRequest{
+    return &AlibabaWdkSkuChannelskuQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuChannelskuQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkSkuChannelskuQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.channelsku.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuChannelskuQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSkuChannelskuQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuChannelskuQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 查询渠道商品的入参
-func (r *AlibabaWdkSkuChannelskuQueryRequest) SetParam(_param *ChannelSkuQueryDO) error {
+func (r *AlibabaWdkSkuChannelskuQueryAPIRequest) SetParam(_param *ChannelSkuQueryDO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkSkuChannelskuQueryRequest) GetParam() *ChannelSkuQueryDO {
+func (r AlibabaWdkSkuChannelskuQueryAPIRequest) GetParam() *ChannelSkuQueryDO {
     return r._param
 }

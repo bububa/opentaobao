@@ -12,7 +12,7 @@ taobao.wdk.equipment.conveyor.statusconfirm
 
 悬挂链状态回传确认
 */
-type TaobaoWdkEquipmentConveyorStatusconfirmRequest struct {
+type TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest struct {
     model.Params
     // warehouse_code
     _warehouseCode   string
@@ -20,20 +20,20 @@ type TaobaoWdkEquipmentConveyorStatusconfirmRequest struct {
     _uuid   string
 }
 
-// 初始化TaobaoWdkEquipmentConveyorStatusconfirmRequest对象
-func NewTaobaoWdkEquipmentConveyorStatusconfirmRequest() *TaobaoWdkEquipmentConveyorStatusconfirmRequest{
-    return &TaobaoWdkEquipmentConveyorStatusconfirmRequest{
+// 初始化TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest对象
+func NewTaobaoWdkEquipmentConveyorStatusconfirmRequest() *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest{
+    return &TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWdkEquipmentConveyorStatusconfirmRequest) GetApiMethodName() string {
+func (r TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) GetApiMethodName() string {
     return "taobao.wdk.equipment.conveyor.statusconfirm"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWdkEquipmentConveyorStatusconfirmRequest) GetApiParams() url.Values {
+func (r TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoWdkEquipmentConveyorStatusconfirmRequest) GetApiParams() url.Value
 }
 // WarehouseCode Setter
 // warehouse_code
-func (r *TaobaoWdkEquipmentConveyorStatusconfirmRequest) SetWarehouseCode(_warehouseCode string) error {
+func (r *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) SetWarehouseCode(_warehouseCode string) error {
     r._warehouseCode = _warehouseCode
     r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
-func (r TaobaoWdkEquipmentConveyorStatusconfirmRequest) GetWarehouseCode() string {
+func (r TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) GetWarehouseCode() string {
     return r._warehouseCode
 }
 // Uuid Setter
 // uuid
-func (r *TaobaoWdkEquipmentConveyorStatusconfirmRequest) SetUuid(_uuid string) error {
+func (r *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) SetUuid(_uuid string) error {
     r._uuid = _uuid
     r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
-func (r TaobaoWdkEquipmentConveyorStatusconfirmRequest) GetUuid() string {
+func (r TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) GetUuid() string {
     return r._uuid
 }

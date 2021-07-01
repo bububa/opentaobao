@@ -12,7 +12,7 @@ alibaba.ib.shenjing.visitor.pad.opendoor
 
 访客PAD端录入完人脸后，可以点击开门按钮开门。
 */
-type AlibabaIbShenjingVisitorPadOpendoorRequest struct {
+type AlibabaIbShenjingVisitorPadOpendoorAPIRequest struct {
     model.Params
     // 访客标识
     _id   string
@@ -20,20 +20,20 @@ type AlibabaIbShenjingVisitorPadOpendoorRequest struct {
     _padId   string
 }
 
-// 初始化AlibabaIbShenjingVisitorPadOpendoorRequest对象
-func NewAlibabaIbShenjingVisitorPadOpendoorRequest() *AlibabaIbShenjingVisitorPadOpendoorRequest{
-    return &AlibabaIbShenjingVisitorPadOpendoorRequest{
+// 初始化AlibabaIbShenjingVisitorPadOpendoorAPIRequest对象
+func NewAlibabaIbShenjingVisitorPadOpendoorRequest() *AlibabaIbShenjingVisitorPadOpendoorAPIRequest{
+    return &AlibabaIbShenjingVisitorPadOpendoorAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIbShenjingVisitorPadOpendoorRequest) GetApiMethodName() string {
+func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetApiMethodName() string {
     return "alibaba.ib.shenjing.visitor.pad.opendoor"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIbShenjingVisitorPadOpendoorRequest) GetApiParams() url.Values {
+func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaIbShenjingVisitorPadOpendoorRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 访客标识
-func (r *AlibabaIbShenjingVisitorPadOpendoorRequest) SetId(_id string) error {
+func (r *AlibabaIbShenjingVisitorPadOpendoorAPIRequest) SetId(_id string) error {
     r._id = _id
     r.Set("id", _id)
     return nil
 }
 
 // Id Getter
-func (r AlibabaIbShenjingVisitorPadOpendoorRequest) GetId() string {
+func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetId() string {
     return r._id
 }
 // PadId Setter
 // padid
-func (r *AlibabaIbShenjingVisitorPadOpendoorRequest) SetPadId(_padId string) error {
+func (r *AlibabaIbShenjingVisitorPadOpendoorAPIRequest) SetPadId(_padId string) error {
     r._padId = _padId
     r.Set("pad_id", _padId)
     return nil
 }
 
 // PadId Getter
-func (r AlibabaIbShenjingVisitorPadOpendoorRequest) GetPadId() string {
+func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetPadId() string {
     return r._padId
 }

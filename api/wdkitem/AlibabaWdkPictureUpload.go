@@ -11,7 +11,7 @@ alibaba.wdk.picture.upload
 
 上传图片
 */
-func AlibabaWdkPictureUpload(clt *core.SDKClient, req *wdkitem.AlibabaWdkPictureUploadRequest, session string) (*wdkitem.AlibabaWdkPictureUploadAPIResponse, error) {
+func AlibabaWdkPictureUpload(clt *core.SDKClient, req *wdkitem.AlibabaWdkPictureUploadAPIRequest, session string) (*wdkitem.AlibabaWdkPictureUploadAPIResponse, error) {
     var resp wdkitem.AlibabaWdkPictureUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

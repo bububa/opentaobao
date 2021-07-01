@@ -17,26 +17,26 @@ taobao.promotion.benefit.selector
 4、step=2用config_id查，即1，4，13，14  <br/>
 5、step=3权益id指具体采购的权益id，可以认为是采购的主键（权益id 可以通过step=2 获得 ）  <br/>
 */
-type TaobaoPromotionBenefitSelectorRequest struct {
+type TaobaoPromotionBenefitSelectorAPIRequest struct {
     model.Params
     // 权益选择器请求
     _query   *BenefitSelectorQuery
 }
 
-// 初始化TaobaoPromotionBenefitSelectorRequest对象
-func NewTaobaoPromotionBenefitSelectorRequest() *TaobaoPromotionBenefitSelectorRequest{
-    return &TaobaoPromotionBenefitSelectorRequest{
+// 初始化TaobaoPromotionBenefitSelectorAPIRequest对象
+func NewTaobaoPromotionBenefitSelectorRequest() *TaobaoPromotionBenefitSelectorAPIRequest{
+    return &TaobaoPromotionBenefitSelectorAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoPromotionBenefitSelectorRequest) GetApiMethodName() string {
+func (r TaobaoPromotionBenefitSelectorAPIRequest) GetApiMethodName() string {
     return "taobao.promotion.benefit.selector"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionBenefitSelectorRequest) GetApiParams() url.Values {
+func (r TaobaoPromotionBenefitSelectorAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -45,13 +45,13 @@ func (r TaobaoPromotionBenefitSelectorRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 权益选择器请求
-func (r *TaobaoPromotionBenefitSelectorRequest) SetQuery(_query *BenefitSelectorQuery) error {
+func (r *TaobaoPromotionBenefitSelectorAPIRequest) SetQuery(_query *BenefitSelectorQuery) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r TaobaoPromotionBenefitSelectorRequest) GetQuery() *BenefitSelectorQuery {
+func (r TaobaoPromotionBenefitSelectorAPIRequest) GetQuery() *BenefitSelectorQuery {
     return r._query
 }

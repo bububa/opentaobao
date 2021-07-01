@@ -14,7 +14,7 @@ alibaba.mos.onsite.trade.refund
 1. 交易超过可退款时间（签约时设置的可退款时间）的订单无法进行退款。
 2. 只支持全额退款。
 */
-func AlibabaMosOnsiteTradeRefund(clt *core.SDKClient, req *mos.AlibabaMosOnsiteTradeRefundRequest, session string) (*mos.AlibabaMosOnsiteTradeRefundAPIResponse, error) {
+func AlibabaMosOnsiteTradeRefund(clt *core.SDKClient, req *mos.AlibabaMosOnsiteTradeRefundAPIRequest, session string) (*mos.AlibabaMosOnsiteTradeRefundAPIResponse, error) {
     var resp mos.AlibabaMosOnsiteTradeRefundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

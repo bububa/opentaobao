@@ -11,7 +11,7 @@ alitrip.ie.buyer.order.bookpay
 
 【国际机票】 生单预定支付接口
 */
-func AlitripIeBuyerOrderBookpay(clt *core.SDKClient, req *ieagency.AlitripIeBuyerOrderBookpayRequest, session string) (*ieagency.AlitripIeBuyerOrderBookpayAPIResponse, error) {
+func AlitripIeBuyerOrderBookpay(clt *core.SDKClient, req *ieagency.AlitripIeBuyerOrderBookpayAPIRequest, session string) (*ieagency.AlitripIeBuyerOrderBookpayAPIResponse, error) {
     var resp ieagency.AlitripIeBuyerOrderBookpayAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

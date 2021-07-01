@@ -11,7 +11,7 @@ cainiao.merchant.inventory.adjust
 
 商家仓库存调整接口，目前仅支持全量更新
 */
-func CainiaoMerchantInventoryAdjust(clt *core.SDKClient, req *wlb.CainiaoMerchantInventoryAdjustRequest, session string) (*wlb.CainiaoMerchantInventoryAdjustAPIResponse, error) {
+func CainiaoMerchantInventoryAdjust(clt *core.SDKClient, req *wlb.CainiaoMerchantInventoryAdjustAPIRequest, session string) (*wlb.CainiaoMerchantInventoryAdjustAPIResponse, error) {
     var resp wlb.CainiaoMerchantInventoryAdjustAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

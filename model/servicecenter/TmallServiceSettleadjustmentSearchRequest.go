@@ -12,7 +12,7 @@ tmall.service.settleadjustment.search
 
 天猫服务平台，按修改时间，时间间隔在15中内（包含15分钟），获取调整单数据
 */
-type TmallServiceSettleadjustmentSearchRequest struct {
+type TmallServiceSettleadjustmentSearchAPIRequest struct {
     model.Params
     // 结束时间
     _endTime   string
@@ -20,20 +20,20 @@ type TmallServiceSettleadjustmentSearchRequest struct {
     _startTime   string
 }
 
-// 初始化TmallServiceSettleadjustmentSearchRequest对象
-func NewTmallServiceSettleadjustmentSearchRequest() *TmallServiceSettleadjustmentSearchRequest{
-    return &TmallServiceSettleadjustmentSearchRequest{
+// 初始化TmallServiceSettleadjustmentSearchAPIRequest对象
+func NewTmallServiceSettleadjustmentSearchRequest() *TmallServiceSettleadjustmentSearchAPIRequest{
+    return &TmallServiceSettleadjustmentSearchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServiceSettleadjustmentSearchRequest) GetApiMethodName() string {
+func (r TmallServiceSettleadjustmentSearchAPIRequest) GetApiMethodName() string {
     return "tmall.service.settleadjustment.search"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServiceSettleadjustmentSearchRequest) GetApiParams() url.Values {
+func (r TmallServiceSettleadjustmentSearchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallServiceSettleadjustmentSearchRequest) GetApiParams() url.Values {
 }
 // EndTime Setter
 // 结束时间
-func (r *TmallServiceSettleadjustmentSearchRequest) SetEndTime(_endTime string) error {
+func (r *TmallServiceSettleadjustmentSearchAPIRequest) SetEndTime(_endTime string) error {
     r._endTime = _endTime
     r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
-func (r TmallServiceSettleadjustmentSearchRequest) GetEndTime() string {
+func (r TmallServiceSettleadjustmentSearchAPIRequest) GetEndTime() string {
     return r._endTime
 }
 // StartTime Setter
 // 开始时间
-func (r *TmallServiceSettleadjustmentSearchRequest) SetStartTime(_startTime string) error {
+func (r *TmallServiceSettleadjustmentSearchAPIRequest) SetStartTime(_startTime string) error {
     r._startTime = _startTime
     r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
-func (r TmallServiceSettleadjustmentSearchRequest) GetStartTime() string {
+func (r TmallServiceSettleadjustmentSearchAPIRequest) GetStartTime() string {
     return r._startTime
 }

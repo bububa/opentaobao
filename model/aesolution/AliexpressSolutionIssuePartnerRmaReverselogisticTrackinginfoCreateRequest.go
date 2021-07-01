@@ -12,26 +12,26 @@ aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create
 
 Receives information about reverse logistics tracking info
 */
-type AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest struct {
+type AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest struct {
     model.Params
     // Logistic's order creation request
     _logisticsOrderCreationRequest   *LogisticOrderCreationForRmaRequest
 }
 
-// 初始化AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest对象
-func NewAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest() *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest{
-    return &AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest{
+// 初始化AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest对象
+func NewAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest() *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest{
+    return &AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest) GetApiMethodName() string {
+func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) GetApiMethodName() string {
     return "aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest) GetApiParams() url.Values {
+func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateReques
 }
 // LogisticsOrderCreationRequest Setter
 // Logistic's order creation request
-func (r *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest) SetLogisticsOrderCreationRequest(_logisticsOrderCreationRequest *LogisticOrderCreationForRmaRequest) error {
+func (r *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) SetLogisticsOrderCreationRequest(_logisticsOrderCreationRequest *LogisticOrderCreationForRmaRequest) error {
     r._logisticsOrderCreationRequest = _logisticsOrderCreationRequest
     r.Set("logistics_order_creation_request", _logisticsOrderCreationRequest)
     return nil
 }
 
 // LogisticsOrderCreationRequest Getter
-func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest) GetLogisticsOrderCreationRequest() *LogisticOrderCreationForRmaRequest {
+func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) GetLogisticsOrderCreationRequest() *LogisticOrderCreationForRmaRequest {
     return r._logisticsOrderCreationRequest
 }

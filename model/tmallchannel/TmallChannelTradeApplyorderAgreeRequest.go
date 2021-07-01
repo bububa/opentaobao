@@ -12,7 +12,7 @@ tmall.channel.trade.applyorder.agree
 
 供应商审核同意采购申请单
 */
-type TmallChannelTradeApplyorderAgreeRequest struct {
+type TmallChannelTradeApplyorderAgreeAPIRequest struct {
     model.Params
     // 操作描述
     _operateDesc   string
@@ -20,20 +20,20 @@ type TmallChannelTradeApplyorderAgreeRequest struct {
     _channelPurchaseApplyOrderNo   string
 }
 
-// 初始化TmallChannelTradeApplyorderAgreeRequest对象
-func NewTmallChannelTradeApplyorderAgreeRequest() *TmallChannelTradeApplyorderAgreeRequest{
-    return &TmallChannelTradeApplyorderAgreeRequest{
+// 初始化TmallChannelTradeApplyorderAgreeAPIRequest对象
+func NewTmallChannelTradeApplyorderAgreeRequest() *TmallChannelTradeApplyorderAgreeAPIRequest{
+    return &TmallChannelTradeApplyorderAgreeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallChannelTradeApplyorderAgreeRequest) GetApiMethodName() string {
+func (r TmallChannelTradeApplyorderAgreeAPIRequest) GetApiMethodName() string {
     return "tmall.channel.trade.applyorder.agree"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallChannelTradeApplyorderAgreeRequest) GetApiParams() url.Values {
+func (r TmallChannelTradeApplyorderAgreeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallChannelTradeApplyorderAgreeRequest) GetApiParams() url.Values {
 }
 // OperateDesc Setter
 // 操作描述
-func (r *TmallChannelTradeApplyorderAgreeRequest) SetOperateDesc(_operateDesc string) error {
+func (r *TmallChannelTradeApplyorderAgreeAPIRequest) SetOperateDesc(_operateDesc string) error {
     r._operateDesc = _operateDesc
     r.Set("operate_desc", _operateDesc)
     return nil
 }
 
 // OperateDesc Getter
-func (r TmallChannelTradeApplyorderAgreeRequest) GetOperateDesc() string {
+func (r TmallChannelTradeApplyorderAgreeAPIRequest) GetOperateDesc() string {
     return r._operateDesc
 }
 // ChannelPurchaseApplyOrderNo Setter
 // 采购申请单号
-func (r *TmallChannelTradeApplyorderAgreeRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
+func (r *TmallChannelTradeApplyorderAgreeAPIRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
     r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
     r.Set("channel_purchase_apply_order_no", _channelPurchaseApplyOrderNo)
     return nil
 }
 
 // ChannelPurchaseApplyOrderNo Getter
-func (r TmallChannelTradeApplyorderAgreeRequest) GetChannelPurchaseApplyOrderNo() string {
+func (r TmallChannelTradeApplyorderAgreeAPIRequest) GetChannelPurchaseApplyOrderNo() string {
     return r._channelPurchaseApplyOrderNo
 }

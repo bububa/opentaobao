@@ -12,26 +12,26 @@ alibaba.wdk.shop.query
 
 根据门店code查询门店信息
 */
-type AlibabaWdkShopQueryRequest struct {
+type AlibabaWdkShopQueryAPIRequest struct {
     model.Params
     // 如果不传，返回所有
     _ouCode   string
 }
 
-// 初始化AlibabaWdkShopQueryRequest对象
-func NewAlibabaWdkShopQueryRequest() *AlibabaWdkShopQueryRequest{
-    return &AlibabaWdkShopQueryRequest{
+// 初始化AlibabaWdkShopQueryAPIRequest对象
+func NewAlibabaWdkShopQueryRequest() *AlibabaWdkShopQueryAPIRequest{
+    return &AlibabaWdkShopQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkShopQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkShopQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.shop.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkShopQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkShopQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkShopQueryRequest) GetApiParams() url.Values {
 }
 // OuCode Setter
 // 如果不传，返回所有
-func (r *AlibabaWdkShopQueryRequest) SetOuCode(_ouCode string) error {
+func (r *AlibabaWdkShopQueryAPIRequest) SetOuCode(_ouCode string) error {
     r._ouCode = _ouCode
     r.Set("ou_code", _ouCode)
     return nil
 }
 
 // OuCode Getter
-func (r AlibabaWdkShopQueryRequest) GetOuCode() string {
+func (r AlibabaWdkShopQueryAPIRequest) GetOuCode() string {
     return r._ouCode
 }

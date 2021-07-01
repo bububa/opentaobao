@@ -12,26 +12,26 @@ tmall.servicecenter.spserviceorder.query
 
 查询服务单列表
 */
-type TmallServicecenterSpserviceorderQueryRequest struct {
+type TmallServicecenterSpserviceorderQueryAPIRequest struct {
     model.Params
     // 交易主订单id
     _parentBizOrderId   int64
 }
 
-// 初始化TmallServicecenterSpserviceorderQueryRequest对象
-func NewTmallServicecenterSpserviceorderQueryRequest() *TmallServicecenterSpserviceorderQueryRequest{
-    return &TmallServicecenterSpserviceorderQueryRequest{
+// 初始化TmallServicecenterSpserviceorderQueryAPIRequest对象
+func NewTmallServicecenterSpserviceorderQueryRequest() *TmallServicecenterSpserviceorderQueryAPIRequest{
+    return &TmallServicecenterSpserviceorderQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallServicecenterSpserviceorderQueryRequest) GetApiMethodName() string {
+func (r TmallServicecenterSpserviceorderQueryAPIRequest) GetApiMethodName() string {
     return "tmall.servicecenter.spserviceorder.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallServicecenterSpserviceorderQueryRequest) GetApiParams() url.Values {
+func (r TmallServicecenterSpserviceorderQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallServicecenterSpserviceorderQueryRequest) GetApiParams() url.Values 
 }
 // ParentBizOrderId Setter
 // 交易主订单id
-func (r *TmallServicecenterSpserviceorderQueryRequest) SetParentBizOrderId(_parentBizOrderId int64) error {
+func (r *TmallServicecenterSpserviceorderQueryAPIRequest) SetParentBizOrderId(_parentBizOrderId int64) error {
     r._parentBizOrderId = _parentBizOrderId
     r.Set("parent_biz_order_id", _parentBizOrderId)
     return nil
 }
 
 // ParentBizOrderId Getter
-func (r TmallServicecenterSpserviceorderQueryRequest) GetParentBizOrderId() int64 {
+func (r TmallServicecenterSpserviceorderQueryAPIRequest) GetParentBizOrderId() int64 {
     return r._parentBizOrderId
 }

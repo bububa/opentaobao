@@ -14,7 +14,7 @@ alibaba.campus.space.unit.getlistbygroupid
 HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceUnitApiTopService
 HSF方法名称：getListByGroupId
 */
-type AlibabaCampusSpaceUnitGetlistbygroupidRequest struct {
+type AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest struct {
     model.Params
     // 分组ID
     _param0   *WorkBenchContext
@@ -22,20 +22,20 @@ type AlibabaCampusSpaceUnitGetlistbygroupidRequest struct {
     _param1   int64
 }
 
-// 初始化AlibabaCampusSpaceUnitGetlistbygroupidRequest对象
-func NewAlibabaCampusSpaceUnitGetlistbygroupidRequest() *AlibabaCampusSpaceUnitGetlistbygroupidRequest{
-    return &AlibabaCampusSpaceUnitGetlistbygroupidRequest{
+// 初始化AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest对象
+func NewAlibabaCampusSpaceUnitGetlistbygroupidRequest() *AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest{
+    return &AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceUnitGetlistbygroupidRequest) GetApiMethodName() string {
+func (r AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.space.unit.getlistbygroupid"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceUnitGetlistbygroupidRequest) GetApiParams() url.Values {
+func (r AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceUnitGetlistbygroupidRequest) GetApiParams() url.Values
 }
 // Param0 Setter
 // 分组ID
-func (r *AlibabaCampusSpaceUnitGetlistbygroupidRequest) SetParam0(_param0 *WorkBenchContext) error {
+func (r *AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaCampusSpaceUnitGetlistbygroupidRequest) GetParam0() *WorkBenchContext {
+func (r AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest) GetParam0() *WorkBenchContext {
     return r._param0
 }
 // Param1 Setter
 // 分组ID
-func (r *AlibabaCampusSpaceUnitGetlistbygroupidRequest) SetParam1(_param1 int64) error {
+func (r *AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest) SetParam1(_param1 int64) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaCampusSpaceUnitGetlistbygroupidRequest) GetParam1() int64 {
+func (r AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest) GetParam1() int64 {
     return r._param1
 }

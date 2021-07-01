@@ -11,7 +11,7 @@ aliexpress.ascp.fro.item.query
 
 AE履约销退单明细查询API
 */
-func AliexpressAscpFroItemQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpFroItemQueryRequest, session string) (*ascpffo.AliexpressAscpFroItemQueryAPIResponse, error) {
+func AliexpressAscpFroItemQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpFroItemQueryAPIRequest, session string) (*ascpffo.AliexpressAscpFroItemQueryAPIResponse, error) {
     var resp ascpffo.AliexpressAscpFroItemQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

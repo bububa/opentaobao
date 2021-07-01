@@ -11,7 +11,7 @@ alibaba.gpu.update.schema.get
 
 获取产品编辑schema规则的接口
 */
-func AlibabaGpuUpdateSchemaGet(clt *core.SDKClient, req *product.AlibabaGpuUpdateSchemaGetRequest, session string) (*product.AlibabaGpuUpdateSchemaGetAPIResponse, error) {
+func AlibabaGpuUpdateSchemaGet(clt *core.SDKClient, req *product.AlibabaGpuUpdateSchemaGetAPIRequest, session string) (*product.AlibabaGpuUpdateSchemaGetAPIResponse, error) {
     var resp product.AlibabaGpuUpdateSchemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

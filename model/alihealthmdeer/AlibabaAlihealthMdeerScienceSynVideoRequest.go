@@ -12,26 +12,26 @@ alibaba.alihealth.mdeer.science.synVideo
 
 视频同步【保存/更新】
 */
-type AlibabaAlihealthMdeerScienceSynVideoRequest struct {
+type AlibabaAlihealthMdeerScienceSynVideoAPIRequest struct {
     model.Params
     // 视频信息实体
     _synVideoInfo   *SynVideoInfo
 }
 
-// 初始化AlibabaAlihealthMdeerScienceSynVideoRequest对象
-func NewAlibabaAlihealthMdeerScienceSynVideoRequest() *AlibabaAlihealthMdeerScienceSynVideoRequest{
-    return &AlibabaAlihealthMdeerScienceSynVideoRequest{
+// 初始化AlibabaAlihealthMdeerScienceSynVideoAPIRequest对象
+func NewAlibabaAlihealthMdeerScienceSynVideoRequest() *AlibabaAlihealthMdeerScienceSynVideoAPIRequest{
+    return &AlibabaAlihealthMdeerScienceSynVideoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMdeerScienceSynVideoRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMdeerScienceSynVideoAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.mdeer.science.synVideo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMdeerScienceSynVideoRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthMdeerScienceSynVideoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMdeerScienceSynVideoRequest) GetApiParams() url.Values {
 }
 // SynVideoInfo Setter
 // 视频信息实体
-func (r *AlibabaAlihealthMdeerScienceSynVideoRequest) SetSynVideoInfo(_synVideoInfo *SynVideoInfo) error {
+func (r *AlibabaAlihealthMdeerScienceSynVideoAPIRequest) SetSynVideoInfo(_synVideoInfo *SynVideoInfo) error {
     r._synVideoInfo = _synVideoInfo
     r.Set("syn_video_info", _synVideoInfo)
     return nil
 }
 
 // SynVideoInfo Getter
-func (r AlibabaAlihealthMdeerScienceSynVideoRequest) GetSynVideoInfo() *SynVideoInfo {
+func (r AlibabaAlihealthMdeerScienceSynVideoAPIRequest) GetSynVideoInfo() *SynVideoInfo {
     return r._synVideoInfo
 }

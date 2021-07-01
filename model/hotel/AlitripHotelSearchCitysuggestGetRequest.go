@@ -12,7 +12,7 @@ alitrip.hotel.search.citysuggest.get
 
 城市Suggest接口
 */
-type AlitripHotelSearchCitysuggestGetRequest struct {
+type AlitripHotelSearchCitysuggestGetAPIRequest struct {
     model.Params
     // 用户输入的词
     _keyWords   string
@@ -20,20 +20,20 @@ type AlitripHotelSearchCitysuggestGetRequest struct {
     _userId   int64
 }
 
-// 初始化AlitripHotelSearchCitysuggestGetRequest对象
-func NewAlitripHotelSearchCitysuggestGetRequest() *AlitripHotelSearchCitysuggestGetRequest{
-    return &AlitripHotelSearchCitysuggestGetRequest{
+// 初始化AlitripHotelSearchCitysuggestGetAPIRequest对象
+func NewAlitripHotelSearchCitysuggestGetRequest() *AlitripHotelSearchCitysuggestGetAPIRequest{
+    return &AlitripHotelSearchCitysuggestGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripHotelSearchCitysuggestGetRequest) GetApiMethodName() string {
+func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetApiMethodName() string {
     return "alitrip.hotel.search.citysuggest.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripHotelSearchCitysuggestGetRequest) GetApiParams() url.Values {
+func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlitripHotelSearchCitysuggestGetRequest) GetApiParams() url.Values {
 }
 // KeyWords Setter
 // 用户输入的词
-func (r *AlitripHotelSearchCitysuggestGetRequest) SetKeyWords(_keyWords string) error {
+func (r *AlitripHotelSearchCitysuggestGetAPIRequest) SetKeyWords(_keyWords string) error {
     r._keyWords = _keyWords
     r.Set("key_words", _keyWords)
     return nil
 }
 
 // KeyWords Getter
-func (r AlitripHotelSearchCitysuggestGetRequest) GetKeyWords() string {
+func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetKeyWords() string {
     return r._keyWords
 }
 // UserId Setter
 // 用户id
-func (r *AlitripHotelSearchCitysuggestGetRequest) SetUserId(_userId int64) error {
+func (r *AlitripHotelSearchCitysuggestGetAPIRequest) SetUserId(_userId int64) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r AlitripHotelSearchCitysuggestGetRequest) GetUserId() int64 {
+func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetUserId() int64 {
     return r._userId
 }

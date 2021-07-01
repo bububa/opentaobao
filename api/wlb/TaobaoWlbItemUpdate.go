@@ -11,7 +11,7 @@ taobao.wlb.item.update
 
 修改物流宝商品信息
 */
-func TaobaoWlbItemUpdate(clt *core.SDKClient, req *wlb.TaobaoWlbItemUpdateRequest, session string) (*wlb.TaobaoWlbItemUpdateAPIResponse, error) {
+func TaobaoWlbItemUpdate(clt *core.SDKClient, req *wlb.TaobaoWlbItemUpdateAPIRequest, session string) (*wlb.TaobaoWlbItemUpdateAPIResponse, error) {
     var resp wlb.TaobaoWlbItemUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

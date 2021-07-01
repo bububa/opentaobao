@@ -12,7 +12,7 @@ alibaba.wdk.sku.warehousesku.scroll.query
 
 提供仓商品数据接口查询
 */
-type AlibabaWdkSkuWarehouseskuScrollQueryRequest struct {
+type AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest struct {
     model.Params
     // 仓库编码
     _warehouseCode   string
@@ -20,20 +20,20 @@ type AlibabaWdkSkuWarehouseskuScrollQueryRequest struct {
     _scrollId   string
 }
 
-// 初始化AlibabaWdkSkuWarehouseskuScrollQueryRequest对象
-func NewAlibabaWdkSkuWarehouseskuScrollQueryRequest() *AlibabaWdkSkuWarehouseskuScrollQueryRequest{
-    return &AlibabaWdkSkuWarehouseskuScrollQueryRequest{
+// 初始化AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest对象
+func NewAlibabaWdkSkuWarehouseskuScrollQueryRequest() *AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest{
+    return &AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuWarehouseskuScrollQueryRequest) GetApiMethodName() string {
+func (r AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.warehousesku.scroll.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuWarehouseskuScrollQueryRequest) GetApiParams() url.Values {
+func (r AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlibabaWdkSkuWarehouseskuScrollQueryRequest) GetApiParams() url.Values {
 }
 // WarehouseCode Setter
 // 仓库编码
-func (r *AlibabaWdkSkuWarehouseskuScrollQueryRequest) SetWarehouseCode(_warehouseCode string) error {
+func (r *AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) SetWarehouseCode(_warehouseCode string) error {
     r._warehouseCode = _warehouseCode
     r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
-func (r AlibabaWdkSkuWarehouseskuScrollQueryRequest) GetWarehouseCode() string {
+func (r AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) GetWarehouseCode() string {
     return r._warehouseCode
 }
 // ScrollId Setter
 // 游标
-func (r *AlibabaWdkSkuWarehouseskuScrollQueryRequest) SetScrollId(_scrollId string) error {
+func (r *AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) SetScrollId(_scrollId string) error {
     r._scrollId = _scrollId
     r.Set("scroll_id", _scrollId)
     return nil
 }
 
 // ScrollId Getter
-func (r AlibabaWdkSkuWarehouseskuScrollQueryRequest) GetScrollId() string {
+func (r AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) GetScrollId() string {
     return r._scrollId
 }

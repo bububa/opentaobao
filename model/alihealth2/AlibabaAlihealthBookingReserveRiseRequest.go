@@ -12,26 +12,26 @@ alibaba.alihealth.booking.reserve.rise
 
 ISV 新增/修改复诊预约信息
 */
-type AlibabaAlihealthBookingReserveRiseRequest struct {
+type AlibabaAlihealthBookingReserveRiseAPIRequest struct {
     model.Params
     // 参数
     _riseRequest   *IsvRiseReserveRequest
 }
 
-// 初始化AlibabaAlihealthBookingReserveRiseRequest对象
-func NewAlibabaAlihealthBookingReserveRiseRequest() *AlibabaAlihealthBookingReserveRiseRequest{
-    return &AlibabaAlihealthBookingReserveRiseRequest{
+// 初始化AlibabaAlihealthBookingReserveRiseAPIRequest对象
+func NewAlibabaAlihealthBookingReserveRiseRequest() *AlibabaAlihealthBookingReserveRiseAPIRequest{
+    return &AlibabaAlihealthBookingReserveRiseAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthBookingReserveRiseRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthBookingReserveRiseAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.booking.reserve.rise"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthBookingReserveRiseRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthBookingReserveRiseAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthBookingReserveRiseRequest) GetApiParams() url.Values {
 }
 // RiseRequest Setter
 // 参数
-func (r *AlibabaAlihealthBookingReserveRiseRequest) SetRiseRequest(_riseRequest *IsvRiseReserveRequest) error {
+func (r *AlibabaAlihealthBookingReserveRiseAPIRequest) SetRiseRequest(_riseRequest *IsvRiseReserveRequest) error {
     r._riseRequest = _riseRequest
     r.Set("rise_request", _riseRequest)
     return nil
 }
 
 // RiseRequest Getter
-func (r AlibabaAlihealthBookingReserveRiseRequest) GetRiseRequest() *IsvRiseReserveRequest {
+func (r AlibabaAlihealthBookingReserveRiseAPIRequest) GetRiseRequest() *IsvRiseReserveRequest {
     return r._riseRequest
 }

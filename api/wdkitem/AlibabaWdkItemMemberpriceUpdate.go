@@ -11,7 +11,7 @@ alibaba.wdk.item.memberprice.update
 
 商品售价会员价修改
 */
-func AlibabaWdkItemMemberpriceUpdate(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMemberpriceUpdateRequest, session string) (*wdkitem.AlibabaWdkItemMemberpriceUpdateAPIResponse, error) {
+func AlibabaWdkItemMemberpriceUpdate(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMemberpriceUpdateAPIRequest, session string) (*wdkitem.AlibabaWdkItemMemberpriceUpdateAPIResponse, error) {
     var resp wdkitem.AlibabaWdkItemMemberpriceUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

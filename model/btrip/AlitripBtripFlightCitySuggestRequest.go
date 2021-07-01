@@ -12,7 +12,7 @@ alitrip.btrip.flight.city.suggest
 
 提供机票城市搜索接口，提高OA用户对接效率
 */
-type AlitripBtripFlightCitySuggestRequest struct {
+type AlitripBtripFlightCitySuggestAPIRequest struct {
     model.Params
     // 用户id
     _userId   string
@@ -22,20 +22,20 @@ type AlitripBtripFlightCitySuggestRequest struct {
     _corpId   string
 }
 
-// 初始化AlitripBtripFlightCitySuggestRequest对象
-func NewAlitripBtripFlightCitySuggestRequest() *AlitripBtripFlightCitySuggestRequest{
-    return &AlitripBtripFlightCitySuggestRequest{
+// 初始化AlitripBtripFlightCitySuggestAPIRequest对象
+func NewAlitripBtripFlightCitySuggestRequest() *AlitripBtripFlightCitySuggestAPIRequest{
+    return &AlitripBtripFlightCitySuggestAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripFlightCitySuggestRequest) GetApiMethodName() string {
+func (r AlitripBtripFlightCitySuggestAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.flight.city.suggest"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripFlightCitySuggestRequest) GetApiParams() url.Values {
+func (r AlitripBtripFlightCitySuggestAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlitripBtripFlightCitySuggestRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlitripBtripFlightCitySuggestRequest) SetUserId(_userId string) error {
+func (r *AlitripBtripFlightCitySuggestAPIRequest) SetUserId(_userId string) error {
     r._userId = _userId
     r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
-func (r AlitripBtripFlightCitySuggestRequest) GetUserId() string {
+func (r AlitripBtripFlightCitySuggestAPIRequest) GetUserId() string {
     return r._userId
 }
 // Keyword Setter
 // 搜索关键字
-func (r *AlitripBtripFlightCitySuggestRequest) SetKeyword(_keyword string) error {
+func (r *AlitripBtripFlightCitySuggestAPIRequest) SetKeyword(_keyword string) error {
     r._keyword = _keyword
     r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
-func (r AlitripBtripFlightCitySuggestRequest) GetKeyword() string {
+func (r AlitripBtripFlightCitySuggestAPIRequest) GetKeyword() string {
     return r._keyword
 }
 // CorpId Setter
 // 企业id
-func (r *AlitripBtripFlightCitySuggestRequest) SetCorpId(_corpId string) error {
+func (r *AlitripBtripFlightCitySuggestAPIRequest) SetCorpId(_corpId string) error {
     r._corpId = _corpId
     r.Set("corp_id", _corpId)
     return nil
 }
 
 // CorpId Getter
-func (r AlitripBtripFlightCitySuggestRequest) GetCorpId() string {
+func (r AlitripBtripFlightCitySuggestAPIRequest) GetCorpId() string {
     return r._corpId
 }

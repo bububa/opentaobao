@@ -11,7 +11,7 @@ cainiao.cloudprint.mystdtemplates.get
 
 获取用户使用的菜鸟电子面单
 */
-func CainiaoCloudprintMystdtemplatesGet(clt *core.SDKClient, req *waybill.CainiaoCloudprintMystdtemplatesGetRequest, session string) (*waybill.CainiaoCloudprintMystdtemplatesGetAPIResponse, error) {
+func CainiaoCloudprintMystdtemplatesGet(clt *core.SDKClient, req *waybill.CainiaoCloudprintMystdtemplatesGetAPIRequest, session string) (*waybill.CainiaoCloudprintMystdtemplatesGetAPIResponse, error) {
     var resp waybill.CainiaoCloudprintMystdtemplatesGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

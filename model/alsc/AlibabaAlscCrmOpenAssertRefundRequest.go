@@ -12,26 +12,26 @@ alibaba.alsc.crm.open.assert.refund
 
 回退已经核销的储值积分券资产
 */
-type AlibabaAlscCrmOpenAssertRefundRequest struct {
+type AlibabaAlscCrmOpenAssertRefundAPIRequest struct {
     model.Params
     // 入参
     _paramPropertyRefundOpenReq   *PropertyRefundOpenReq
 }
 
-// 初始化AlibabaAlscCrmOpenAssertRefundRequest对象
-func NewAlibabaAlscCrmOpenAssertRefundRequest() *AlibabaAlscCrmOpenAssertRefundRequest{
-    return &AlibabaAlscCrmOpenAssertRefundRequest{
+// 初始化AlibabaAlscCrmOpenAssertRefundAPIRequest对象
+func NewAlibabaAlscCrmOpenAssertRefundRequest() *AlibabaAlscCrmOpenAssertRefundAPIRequest{
+    return &AlibabaAlscCrmOpenAssertRefundAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmOpenAssertRefundRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmOpenAssertRefundAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.open.assert.refund"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmOpenAssertRefundRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmOpenAssertRefundAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenAssertRefundRequest) GetApiParams() url.Values {
 }
 // ParamPropertyRefundOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenAssertRefundRequest) SetParamPropertyRefundOpenReq(_paramPropertyRefundOpenReq *PropertyRefundOpenReq) error {
+func (r *AlibabaAlscCrmOpenAssertRefundAPIRequest) SetParamPropertyRefundOpenReq(_paramPropertyRefundOpenReq *PropertyRefundOpenReq) error {
     r._paramPropertyRefundOpenReq = _paramPropertyRefundOpenReq
     r.Set("param_property_refund_open_req", _paramPropertyRefundOpenReq)
     return nil
 }
 
 // ParamPropertyRefundOpenReq Getter
-func (r AlibabaAlscCrmOpenAssertRefundRequest) GetParamPropertyRefundOpenReq() *PropertyRefundOpenReq {
+func (r AlibabaAlscCrmOpenAssertRefundAPIRequest) GetParamPropertyRefundOpenReq() *PropertyRefundOpenReq {
     return r._paramPropertyRefundOpenReq
 }

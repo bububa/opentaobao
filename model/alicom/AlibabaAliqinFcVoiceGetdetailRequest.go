@@ -12,7 +12,7 @@ alibaba.aliqin.fc.voice.getdetail
 
 通过呼叫id获取呼叫相关的数据
 */
-type AlibabaAliqinFcVoiceGetdetailRequest struct {
+type AlibabaAliqinFcVoiceGetdetailAPIRequest struct {
     model.Params
     // 呼叫唯一ID
     _callId   string
@@ -22,20 +22,20 @@ type AlibabaAliqinFcVoiceGetdetailRequest struct {
     _queryDate   int64
 }
 
-// 初始化AlibabaAliqinFcVoiceGetdetailRequest对象
-func NewAlibabaAliqinFcVoiceGetdetailRequest() *AlibabaAliqinFcVoiceGetdetailRequest{
-    return &AlibabaAliqinFcVoiceGetdetailRequest{
+// 初始化AlibabaAliqinFcVoiceGetdetailAPIRequest对象
+func NewAlibabaAliqinFcVoiceGetdetailRequest() *AlibabaAliqinFcVoiceGetdetailAPIRequest{
+    return &AlibabaAliqinFcVoiceGetdetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAliqinFcVoiceGetdetailRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetApiMethodName() string {
     return "alibaba.aliqin.fc.voice.getdetail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinFcVoiceGetdetailRequest) GetApiParams() url.Values {
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaAliqinFcVoiceGetdetailRequest) GetApiParams() url.Values {
 }
 // CallId Setter
 // 呼叫唯一ID
-func (r *AlibabaAliqinFcVoiceGetdetailRequest) SetCallId(_callId string) error {
+func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetCallId(_callId string) error {
     r._callId = _callId
     r.Set("call_id", _callId)
     return nil
 }
 
 // CallId Getter
-func (r AlibabaAliqinFcVoiceGetdetailRequest) GetCallId() string {
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetCallId() string {
     return r._callId
 }
 // ProdId Setter
 // 语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009
-func (r *AlibabaAliqinFcVoiceGetdetailRequest) SetProdId(_prodId int64) error {
+func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetProdId(_prodId int64) error {
     r._prodId = _prodId
     r.Set("prod_id", _prodId)
     return nil
 }
 
 // ProdId Getter
-func (r AlibabaAliqinFcVoiceGetdetailRequest) GetProdId() int64 {
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetProdId() int64 {
     return r._prodId
 }
 // QueryDate Setter
 // Unix时间戳，会查询这个时间点对应那一天的记录（单位毫秒）
-func (r *AlibabaAliqinFcVoiceGetdetailRequest) SetQueryDate(_queryDate int64) error {
+func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetQueryDate(_queryDate int64) error {
     r._queryDate = _queryDate
     r.Set("query_date", _queryDate)
     return nil
 }
 
 // QueryDate Getter
-func (r AlibabaAliqinFcVoiceGetdetailRequest) GetQueryDate() int64 {
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetQueryDate() int64 {
     return r._queryDate
 }

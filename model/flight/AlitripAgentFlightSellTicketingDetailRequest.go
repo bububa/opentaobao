@@ -12,7 +12,7 @@ alitrip.agent.flight.sell.ticketing.detail
 
 销售出票详情
 */
-type AlitripAgentFlightSellTicketingDetailRequest struct {
+type AlitripAgentFlightSellTicketingDetailAPIRequest struct {
     model.Params
     // 国内国际标识
     _domesticIntl   int64
@@ -20,20 +20,20 @@ type AlitripAgentFlightSellTicketingDetailRequest struct {
     _orderId   string
 }
 
-// 初始化AlitripAgentFlightSellTicketingDetailRequest对象
-func NewAlitripAgentFlightSellTicketingDetailRequest() *AlitripAgentFlightSellTicketingDetailRequest{
-    return &AlitripAgentFlightSellTicketingDetailRequest{
+// 初始化AlitripAgentFlightSellTicketingDetailAPIRequest对象
+func NewAlitripAgentFlightSellTicketingDetailRequest() *AlitripAgentFlightSellTicketingDetailAPIRequest{
+    return &AlitripAgentFlightSellTicketingDetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripAgentFlightSellTicketingDetailRequest) GetApiMethodName() string {
+func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetApiMethodName() string {
     return "alitrip.agent.flight.sell.ticketing.detail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripAgentFlightSellTicketingDetailRequest) GetApiParams() url.Values {
+func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r AlitripAgentFlightSellTicketingDetailRequest) GetApiParams() url.Values 
 }
 // DomesticIntl Setter
 // 国内国际标识
-func (r *AlitripAgentFlightSellTicketingDetailRequest) SetDomesticIntl(_domesticIntl int64) error {
+func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
     r._domesticIntl = _domesticIntl
     r.Set("domestic_intl", _domesticIntl)
     return nil
 }
 
 // DomesticIntl Getter
-func (r AlitripAgentFlightSellTicketingDetailRequest) GetDomesticIntl() int64 {
+func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetDomesticIntl() int64 {
     return r._domesticIntl
 }
 // OrderId Setter
 // 飞猪订单号
-func (r *AlitripAgentFlightSellTicketingDetailRequest) SetOrderId(_orderId string) error {
+func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetOrderId(_orderId string) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r AlitripAgentFlightSellTicketingDetailRequest) GetOrderId() string {
+func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetOrderId() string {
     return r._orderId
 }

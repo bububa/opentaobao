@@ -12,24 +12,24 @@ tmall.item.add.simpleschema.get
 
 通过商家信息获取商品发布字段和规则。
 */
-type TmallItemAddSimpleschemaGetRequest struct {
+type TmallItemAddSimpleschemaGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TmallItemAddSimpleschemaGetRequest对象
-func NewTmallItemAddSimpleschemaGetRequest() *TmallItemAddSimpleschemaGetRequest{
-    return &TmallItemAddSimpleschemaGetRequest{
+// 初始化TmallItemAddSimpleschemaGetAPIRequest对象
+func NewTmallItemAddSimpleschemaGetRequest() *TmallItemAddSimpleschemaGetAPIRequest{
+    return &TmallItemAddSimpleschemaGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallItemAddSimpleschemaGetRequest) GetApiMethodName() string {
+func (r TmallItemAddSimpleschemaGetAPIRequest) GetApiMethodName() string {
     return "tmall.item.add.simpleschema.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallItemAddSimpleschemaGetRequest) GetApiParams() url.Values {
+func (r TmallItemAddSimpleschemaGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

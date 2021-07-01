@@ -11,7 +11,7 @@ tmall.traderate.itemtags.get
 
 通过商品ID获取标签详细信息
 */
-func TmallTraderateItemtagsGet(clt *core.SDKClient, req *traderate.TmallTraderateItemtagsGetRequest, session string) (*traderate.TmallTraderateItemtagsGetAPIResponse, error) {
+func TmallTraderateItemtagsGet(clt *core.SDKClient, req *traderate.TmallTraderateItemtagsGetAPIRequest, session string) (*traderate.TmallTraderateItemtagsGetAPIResponse, error) {
     var resp traderate.TmallTraderateItemtagsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.fundplatform.account.query.info
 
 外部查询资金平台用户账户信息
 */
-func AlibabaFundplatformAccountQueryInfo(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformAccountQueryInfoRequest, session string) (*fundplatform.AlibabaFundplatformAccountQueryInfoAPIResponse, error) {
+func AlibabaFundplatformAccountQueryInfo(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformAccountQueryInfoAPIRequest, session string) (*fundplatform.AlibabaFundplatformAccountQueryInfoAPIResponse, error) {
     var resp fundplatform.AlibabaFundplatformAccountQueryInfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

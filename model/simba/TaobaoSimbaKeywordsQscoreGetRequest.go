@@ -12,7 +12,7 @@ taobao.simba.keywords.qscore.get
 
 取得一个推广组的所有关键词的质量得分列表
 */
-type TaobaoSimbaKeywordsQscoreGetRequest struct {
+type TaobaoSimbaKeywordsQscoreGetAPIRequest struct {
     model.Params
     // 主人昵称
     _nick   string
@@ -20,20 +20,20 @@ type TaobaoSimbaKeywordsQscoreGetRequest struct {
     _adgroupId   int64
 }
 
-// 初始化TaobaoSimbaKeywordsQscoreGetRequest对象
-func NewTaobaoSimbaKeywordsQscoreGetRequest() *TaobaoSimbaKeywordsQscoreGetRequest{
-    return &TaobaoSimbaKeywordsQscoreGetRequest{
+// 初始化TaobaoSimbaKeywordsQscoreGetAPIRequest对象
+func NewTaobaoSimbaKeywordsQscoreGetRequest() *TaobaoSimbaKeywordsQscoreGetAPIRequest{
+    return &TaobaoSimbaKeywordsQscoreGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaKeywordsQscoreGetRequest) GetApiMethodName() string {
+func (r TaobaoSimbaKeywordsQscoreGetAPIRequest) GetApiMethodName() string {
     return "taobao.simba.keywords.qscore.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaKeywordsQscoreGetRequest) GetApiParams() url.Values {
+func (r TaobaoSimbaKeywordsQscoreGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoSimbaKeywordsQscoreGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaKeywordsQscoreGetRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaKeywordsQscoreGetAPIRequest) SetNick(_nick string) error {
     r._nick = _nick
     r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
-func (r TaobaoSimbaKeywordsQscoreGetRequest) GetNick() string {
+func (r TaobaoSimbaKeywordsQscoreGetAPIRequest) GetNick() string {
     return r._nick
 }
 // AdgroupId Setter
 // 推广组Id
-func (r *TaobaoSimbaKeywordsQscoreGetRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoSimbaKeywordsQscoreGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
     r._adgroupId = _adgroupId
     r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
-func (r TaobaoSimbaKeywordsQscoreGetRequest) GetAdgroupId() int64 {
+func (r TaobaoSimbaKeywordsQscoreGetAPIRequest) GetAdgroupId() int64 {
     return r._adgroupId
 }

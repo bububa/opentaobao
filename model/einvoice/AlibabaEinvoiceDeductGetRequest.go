@@ -12,7 +12,7 @@ alibaba.einvoice.deduct.get
 
 获取历史发票扣减量、每日发票扣减量的接口
 */
-type AlibabaEinvoiceDeductGetRequest struct {
+type AlibabaEinvoiceDeductGetAPIRequest struct {
     model.Params
     // 税号
     _payeeRegisterNo   string
@@ -22,20 +22,20 @@ type AlibabaEinvoiceDeductGetRequest struct {
     _type   int64
 }
 
-// 初始化AlibabaEinvoiceDeductGetRequest对象
-func NewAlibabaEinvoiceDeductGetRequest() *AlibabaEinvoiceDeductGetRequest{
-    return &AlibabaEinvoiceDeductGetRequest{
+// 初始化AlibabaEinvoiceDeductGetAPIRequest对象
+func NewAlibabaEinvoiceDeductGetRequest() *AlibabaEinvoiceDeductGetAPIRequest{
+    return &AlibabaEinvoiceDeductGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceDeductGetRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceDeductGetAPIRequest) GetApiMethodName() string {
     return "alibaba.einvoice.deduct.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceDeductGetRequest) GetApiParams() url.Values {
+func (r AlibabaEinvoiceDeductGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaEinvoiceDeductGetRequest) GetApiParams() url.Values {
 }
 // PayeeRegisterNo Setter
 // 税号
-func (r *AlibabaEinvoiceDeductGetRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+func (r *AlibabaEinvoiceDeductGetAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
     r._payeeRegisterNo = _payeeRegisterNo
     r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
-func (r AlibabaEinvoiceDeductGetRequest) GetPayeeRegisterNo() string {
+func (r AlibabaEinvoiceDeductGetAPIRequest) GetPayeeRegisterNo() string {
     return r._payeeRegisterNo
 }
 // BizDate Setter
 // 业务日期
-func (r *AlibabaEinvoiceDeductGetRequest) SetBizDate(_bizDate string) error {
+func (r *AlibabaEinvoiceDeductGetAPIRequest) SetBizDate(_bizDate string) error {
     r._bizDate = _bizDate
     r.Set("biz_date", _bizDate)
     return nil
 }
 
 // BizDate Getter
-func (r AlibabaEinvoiceDeductGetRequest) GetBizDate() string {
+func (r AlibabaEinvoiceDeductGetAPIRequest) GetBizDate() string {
     return r._bizDate
 }
 // Type Setter
 // 类型 1：所有 2：当日
-func (r *AlibabaEinvoiceDeductGetRequest) SetType(_type int64) error {
+func (r *AlibabaEinvoiceDeductGetAPIRequest) SetType(_type int64) error {
     r._type = _type
     r.Set("type", _type)
     return nil
 }
 
 // Type Getter
-func (r AlibabaEinvoiceDeductGetRequest) GetType() int64 {
+func (r AlibabaEinvoiceDeductGetAPIRequest) GetType() int64 {
     return r._type
 }

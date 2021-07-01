@@ -11,7 +11,7 @@ alibaba.ai.ar.tmjl.app.detect
 
 天猫精灵扫一扫入口的图像检测服务
 */
-func AlibabaAiArTmjlAppDetect(clt *core.SDKClient, req *aiar.AlibabaAiArTmjlAppDetectRequest, session string) (*aiar.AlibabaAiArTmjlAppDetectAPIResponse, error) {
+func AlibabaAiArTmjlAppDetect(clt *core.SDKClient, req *aiar.AlibabaAiArTmjlAppDetectAPIRequest, session string) (*aiar.AlibabaAiArTmjlAppDetectAPIResponse, error) {
     var resp aiar.AlibabaAiArTmjlAppDetectAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

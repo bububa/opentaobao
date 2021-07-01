@@ -12,7 +12,7 @@ alibaba.tcls.fulfill.qa.order.create
 
 根据历史测试履约单号，复制一个同样镜像的履约单号并下发给大润发仓（api实现已经限制了测试数据）
 */
-type AlibabaTclsFulfillQaOrderCreateRequest struct {
+type AlibabaTclsFulfillQaOrderCreateAPIRequest struct {
     model.Params
     // 原始履约单号
     _fulfillOrderId   string
@@ -24,20 +24,20 @@ type AlibabaTclsFulfillQaOrderCreateRequest struct {
     _jobNo   string
 }
 
-// 初始化AlibabaTclsFulfillQaOrderCreateRequest对象
-func NewAlibabaTclsFulfillQaOrderCreateRequest() *AlibabaTclsFulfillQaOrderCreateRequest{
-    return &AlibabaTclsFulfillQaOrderCreateRequest{
+// 初始化AlibabaTclsFulfillQaOrderCreateAPIRequest对象
+func NewAlibabaTclsFulfillQaOrderCreateRequest() *AlibabaTclsFulfillQaOrderCreateAPIRequest{
+    return &AlibabaTclsFulfillQaOrderCreateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaTclsFulfillQaOrderCreateRequest) GetApiMethodName() string {
+func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetApiMethodName() string {
     return "alibaba.tcls.fulfill.qa.order.create"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaTclsFulfillQaOrderCreateRequest) GetApiParams() url.Values {
+func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r AlibabaTclsFulfillQaOrderCreateRequest) GetApiParams() url.Values {
 }
 // FulfillOrderId Setter
 // 原始履约单号
-func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetFulfillOrderId(_fulfillOrderId string) error {
+func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetFulfillOrderId(_fulfillOrderId string) error {
     r._fulfillOrderId = _fulfillOrderId
     r.Set("fulfill_order_id", _fulfillOrderId)
     return nil
 }
 
 // FulfillOrderId Getter
-func (r AlibabaTclsFulfillQaOrderCreateRequest) GetFulfillOrderId() string {
+func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetFulfillOrderId() string {
     return r._fulfillOrderId
 }
 // TargetIp Setter
 // 目标ip
-func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetTargetIp(_targetIp string) error {
+func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetTargetIp(_targetIp string) error {
     r._targetIp = _targetIp
     r.Set("target_ip", _targetIp)
     return nil
 }
 
 // TargetIp Getter
-func (r AlibabaTclsFulfillQaOrderCreateRequest) GetTargetIp() string {
+func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetTargetIp() string {
     return r._targetIp
 }
 // Creator Setter
 // 执行人姓名
-func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetCreator(_creator string) error {
+func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetCreator(_creator string) error {
     r._creator = _creator
     r.Set("creator", _creator)
     return nil
 }
 
 // Creator Getter
-func (r AlibabaTclsFulfillQaOrderCreateRequest) GetCreator() string {
+func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetCreator() string {
     return r._creator
 }
 // JobNo Setter
 // 执行人工号
-func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetJobNo(_jobNo string) error {
+func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetJobNo(_jobNo string) error {
     r._jobNo = _jobNo
     r.Set("job_no", _jobNo)
     return nil
 }
 
 // JobNo Getter
-func (r AlibabaTclsFulfillQaOrderCreateRequest) GetJobNo() string {
+func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetJobNo() string {
     return r._jobNo
 }

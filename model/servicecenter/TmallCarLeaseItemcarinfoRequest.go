@@ -12,26 +12,26 @@ tmall.car.lease.itemcarinfo
 
 整车租赁项目发布宝贝需要4级车型库，4级车型库信息需要回传
 */
-type TmallCarLeaseItemcarinfoRequest struct {
+type TmallCarLeaseItemcarinfoAPIRequest struct {
     model.Params
     // 商品id
     _itemId   int64
 }
 
-// 初始化TmallCarLeaseItemcarinfoRequest对象
-func NewTmallCarLeaseItemcarinfoRequest() *TmallCarLeaseItemcarinfoRequest{
-    return &TmallCarLeaseItemcarinfoRequest{
+// 初始化TmallCarLeaseItemcarinfoAPIRequest对象
+func NewTmallCarLeaseItemcarinfoRequest() *TmallCarLeaseItemcarinfoAPIRequest{
+    return &TmallCarLeaseItemcarinfoAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarLeaseItemcarinfoRequest) GetApiMethodName() string {
+func (r TmallCarLeaseItemcarinfoAPIRequest) GetApiMethodName() string {
     return "tmall.car.lease.itemcarinfo"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarLeaseItemcarinfoRequest) GetApiParams() url.Values {
+func (r TmallCarLeaseItemcarinfoAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TmallCarLeaseItemcarinfoRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TmallCarLeaseItemcarinfoRequest) SetItemId(_itemId int64) error {
+func (r *TmallCarLeaseItemcarinfoAPIRequest) SetItemId(_itemId int64) error {
     r._itemId = _itemId
     r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
-func (r TmallCarLeaseItemcarinfoRequest) GetItemId() int64 {
+func (r TmallCarLeaseItemcarinfoAPIRequest) GetItemId() int64 {
     return r._itemId
 }

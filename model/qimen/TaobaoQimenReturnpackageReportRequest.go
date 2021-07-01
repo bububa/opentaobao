@@ -1,52 +1,9 @@
 package qimen
 
-import (
-    "net/url"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-退货包裹状态通知接口 API请求
-taobao.qimen.returnpackage.report
-
-退货包裹状态通知接口
-*/
+// TaobaoQimenReturnpackageReportRequest 
 type TaobaoQimenReturnpackageReportRequest struct {
-    model.Params
-    // 
-    _request   *Request
-}
-
-// 初始化TaobaoQimenReturnpackageReportRequest对象
-func NewTaobaoQimenReturnpackageReportRequest() *TaobaoQimenReturnpackageReportRequest{
-    return &TaobaoQimenReturnpackageReportRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TaobaoQimenReturnpackageReportRequest) GetApiMethodName() string {
-    return "taobao.qimen.returnpackage.report"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TaobaoQimenReturnpackageReportRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// Request Setter
-// 
-func (r *TaobaoQimenReturnpackageReportRequest) SetRequest(_request *Request) error {
-    r._request = _request
-    r.Set("request", _request)
-    return nil
-}
-
-// Request Getter
-func (r TaobaoQimenReturnpackageReportRequest) GetRequest() *Request {
-    return r._request
+    // 订单
+    Order   *Order `json:"order,omitempty" xml:"order,omitempty"`
+    // 包裹列表
+    Packages   *Packages `json:"packages,omitempty" xml:"packages,omitempty"`
 }

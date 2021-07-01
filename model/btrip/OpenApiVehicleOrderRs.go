@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiVehicleOrderRs 
-type OpenApiVehicleOrderRs struct {
+// OpenApiVehicleOrderRS 
+type OpenApiVehicleOrderRS struct {
     // 订单id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 订单创建时间

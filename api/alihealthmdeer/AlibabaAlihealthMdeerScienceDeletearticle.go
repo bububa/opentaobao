@@ -11,7 +11,7 @@ alibaba.alihealth.mdeer.science.deletearticle
 
 三方同步文章删除
 */
-func AlibabaAlihealthMdeerScienceDeletearticle(clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleRequest, session string) (*alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIResponse, error) {
+func AlibabaAlihealthMdeerScienceDeletearticle(clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIRequest, session string) (*alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIResponse, error) {
     var resp alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

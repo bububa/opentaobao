@@ -11,7 +11,7 @@ alitrip.agent.flight.sell.modify.detail
 
 销售改签详情
 */
-func AlitripAgentFlightSellModifyDetail(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyDetailRequest, session string) (*flight.AlitripAgentFlightSellModifyDetailAPIResponse, error) {
+func AlitripAgentFlightSellModifyDetail(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyDetailAPIRequest, session string) (*flight.AlitripAgentFlightSellModifyDetailAPIResponse, error) {
     var resp flight.AlitripAgentFlightSellModifyDetailAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

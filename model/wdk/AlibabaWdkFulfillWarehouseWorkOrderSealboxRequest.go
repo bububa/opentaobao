@@ -12,26 +12,26 @@ alibaba.wdk.fulfill.warehouse.work.order.sealbox
 
 仓封箱回告箱与包裹的关系
 */
-type AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest struct {
+type AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest struct {
     model.Params
     // 同城交付物箱
     _sameTownBox   *SameTownBox
 }
 
-// 初始化AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest对象
-func NewAlibabaWdkFulfillWarehouseWorkOrderSealboxRequest() *AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest{
-    return &AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest{
+// 初始化AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest对象
+func NewAlibabaWdkFulfillWarehouseWorkOrderSealboxRequest() *AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest{
+    return &AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest) GetApiMethodName() string {
+func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.fulfill.warehouse.work.order.sealbox"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest) GetApiParams() url.Values {
+func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest) GetApiParams() url.Va
 }
 // SameTownBox Setter
 // 同城交付物箱
-func (r *AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest) SetSameTownBox(_sameTownBox *SameTownBox) error {
+func (r *AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) SetSameTownBox(_sameTownBox *SameTownBox) error {
     r._sameTownBox = _sameTownBox
     r.Set("same_town_box", _sameTownBox)
     return nil
 }
 
 // SameTownBox Getter
-func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest) GetSameTownBox() *SameTownBox {
+func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) GetSameTownBox() *SameTownBox {
     return r._sameTownBox
 }

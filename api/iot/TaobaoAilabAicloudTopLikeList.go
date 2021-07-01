@@ -11,7 +11,7 @@ taobao.ailab.aicloud.top.like.list
 
 列出收藏列表
 */
-func TaobaoAilabAicloudTopLikeList(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopLikeListRequest, session string) (*iot.TaobaoAilabAicloudTopLikeListAPIResponse, error) {
+func TaobaoAilabAicloudTopLikeList(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopLikeListAPIRequest, session string) (*iot.TaobaoAilabAicloudTopLikeListAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopLikeListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

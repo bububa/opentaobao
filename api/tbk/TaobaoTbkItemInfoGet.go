@@ -11,7 +11,7 @@ taobao.tbk.item.info.get
 
 淘宝客商品详情查询（简版）
 */
-func TaobaoTbkItemInfoGet(clt *core.SDKClient, req *tbk.TaobaoTbkItemInfoGetRequest, session string) (*tbk.TaobaoTbkItemInfoGetAPIResponse, error) {
+func TaobaoTbkItemInfoGet(clt *core.SDKClient, req *tbk.TaobaoTbkItemInfoGetAPIRequest, session string) (*tbk.TaobaoTbkItemInfoGetAPIResponse, error) {
     var resp tbk.TaobaoTbkItemInfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

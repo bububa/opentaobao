@@ -12,26 +12,26 @@ alibaba.icbu.product.schema.add.draft
 
 提供发布ICBU商品草稿的入口
 */
-type AlibabaIcbuProductSchemaAddDraftRequest struct {
+type AlibabaIcbuProductSchemaAddDraftAPIRequest struct {
     model.Params
     // 发布入参
     _paramProductTopPublishRequest   *ProductTopPublishRequest
 }
 
-// 初始化AlibabaIcbuProductSchemaAddDraftRequest对象
-func NewAlibabaIcbuProductSchemaAddDraftRequest() *AlibabaIcbuProductSchemaAddDraftRequest{
-    return &AlibabaIcbuProductSchemaAddDraftRequest{
+// 初始化AlibabaIcbuProductSchemaAddDraftAPIRequest对象
+func NewAlibabaIcbuProductSchemaAddDraftRequest() *AlibabaIcbuProductSchemaAddDraftAPIRequest{
+    return &AlibabaIcbuProductSchemaAddDraftAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuProductSchemaAddDraftRequest) GetApiMethodName() string {
+func (r AlibabaIcbuProductSchemaAddDraftAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.product.schema.add.draft"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuProductSchemaAddDraftRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuProductSchemaAddDraftAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIcbuProductSchemaAddDraftRequest) GetApiParams() url.Values {
 }
 // ParamProductTopPublishRequest Setter
 // 发布入参
-func (r *AlibabaIcbuProductSchemaAddDraftRequest) SetParamProductTopPublishRequest(_paramProductTopPublishRequest *ProductTopPublishRequest) error {
+func (r *AlibabaIcbuProductSchemaAddDraftAPIRequest) SetParamProductTopPublishRequest(_paramProductTopPublishRequest *ProductTopPublishRequest) error {
     r._paramProductTopPublishRequest = _paramProductTopPublishRequest
     r.Set("param_product_top_publish_request", _paramProductTopPublishRequest)
     return nil
 }
 
 // ParamProductTopPublishRequest Getter
-func (r AlibabaIcbuProductSchemaAddDraftRequest) GetParamProductTopPublishRequest() *ProductTopPublishRequest {
+func (r AlibabaIcbuProductSchemaAddDraftAPIRequest) GetParamProductTopPublishRequest() *ProductTopPublishRequest {
     return r._paramProductTopPublishRequest
 }

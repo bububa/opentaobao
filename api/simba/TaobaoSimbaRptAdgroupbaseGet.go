@@ -11,7 +11,7 @@ taobao.simba.rpt.adgroupbase.get
 
 推广组基础报表数据对象
 */
-func TaobaoSimbaRptAdgroupbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptAdgroupbaseGetRequest, session string) (*simba.TaobaoSimbaRptAdgroupbaseGetAPIResponse, error) {
+func TaobaoSimbaRptAdgroupbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptAdgroupbaseGetAPIRequest, session string) (*simba.TaobaoSimbaRptAdgroupbaseGetAPIResponse, error) {
     var resp simba.TaobaoSimbaRptAdgroupbaseGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

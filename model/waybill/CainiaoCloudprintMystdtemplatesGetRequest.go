@@ -12,24 +12,24 @@ cainiao.cloudprint.mystdtemplates.get
 
 获取用户使用的菜鸟电子面单
 */
-type CainiaoCloudprintMystdtemplatesGetRequest struct {
+type CainiaoCloudprintMystdtemplatesGetAPIRequest struct {
     model.Params
 }
 
-// 初始化CainiaoCloudprintMystdtemplatesGetRequest对象
-func NewCainiaoCloudprintMystdtemplatesGetRequest() *CainiaoCloudprintMystdtemplatesGetRequest{
-    return &CainiaoCloudprintMystdtemplatesGetRequest{
+// 初始化CainiaoCloudprintMystdtemplatesGetAPIRequest对象
+func NewCainiaoCloudprintMystdtemplatesGetRequest() *CainiaoCloudprintMystdtemplatesGetAPIRequest{
+    return &CainiaoCloudprintMystdtemplatesGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCloudprintMystdtemplatesGetRequest) GetApiMethodName() string {
+func (r CainiaoCloudprintMystdtemplatesGetAPIRequest) GetApiMethodName() string {
     return "cainiao.cloudprint.mystdtemplates.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCloudprintMystdtemplatesGetRequest) GetApiParams() url.Values {
+func (r CainiaoCloudprintMystdtemplatesGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

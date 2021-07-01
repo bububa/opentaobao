@@ -12,26 +12,26 @@ alibaba.asr.dataservice.promotionrule.write
 
 星巴克优惠规则写入
 */
-type AlibabaAsrDataservicePromotionruleWriteRequest struct {
+type AlibabaAsrDataservicePromotionruleWriteAPIRequest struct {
     model.Params
     // 入参对象
     _poskeyPromotionRuleDto   *PosKeyPromotionRuleDTO
 }
 
-// 初始化AlibabaAsrDataservicePromotionruleWriteRequest对象
-func NewAlibabaAsrDataservicePromotionruleWriteRequest() *AlibabaAsrDataservicePromotionruleWriteRequest{
-    return &AlibabaAsrDataservicePromotionruleWriteRequest{
+// 初始化AlibabaAsrDataservicePromotionruleWriteAPIRequest对象
+func NewAlibabaAsrDataservicePromotionruleWriteRequest() *AlibabaAsrDataservicePromotionruleWriteAPIRequest{
+    return &AlibabaAsrDataservicePromotionruleWriteAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAsrDataservicePromotionruleWriteRequest) GetApiMethodName() string {
+func (r AlibabaAsrDataservicePromotionruleWriteAPIRequest) GetApiMethodName() string {
     return "alibaba.asr.dataservice.promotionrule.write"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAsrDataservicePromotionruleWriteRequest) GetApiParams() url.Values {
+func (r AlibabaAsrDataservicePromotionruleWriteAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAsrDataservicePromotionruleWriteRequest) GetApiParams() url.Value
 }
 // PoskeyPromotionRuleDto Setter
 // 入参对象
-func (r *AlibabaAsrDataservicePromotionruleWriteRequest) SetPoskeyPromotionRuleDto(_poskeyPromotionRuleDto *PosKeyPromotionRuleDTO) error {
+func (r *AlibabaAsrDataservicePromotionruleWriteAPIRequest) SetPoskeyPromotionRuleDto(_poskeyPromotionRuleDto *PosKeyPromotionRuleDTO) error {
     r._poskeyPromotionRuleDto = _poskeyPromotionRuleDto
     r.Set("poskey_promotion_rule_dto", _poskeyPromotionRuleDto)
     return nil
 }
 
 // PoskeyPromotionRuleDto Getter
-func (r AlibabaAsrDataservicePromotionruleWriteRequest) GetPoskeyPromotionRuleDto() *PosKeyPromotionRuleDTO {
+func (r AlibabaAsrDataservicePromotionruleWriteAPIRequest) GetPoskeyPromotionRuleDto() *PosKeyPromotionRuleDTO {
     return r._poskeyPromotionRuleDto
 }

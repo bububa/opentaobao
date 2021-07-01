@@ -13,7 +13,7 @@ alibaba.campus.space.type.getbycode
 HSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService
 HSF方法名称：getByCode
 */
-func AlibabaCampusSpaceTypeGetbycode(clt *core.SDKClient, req *campus.AlibabaCampusSpaceTypeGetbycodeRequest, session string) (*campus.AlibabaCampusSpaceTypeGetbycodeAPIResponse, error) {
+func AlibabaCampusSpaceTypeGetbycode(clt *core.SDKClient, req *campus.AlibabaCampusSpaceTypeGetbycodeAPIRequest, session string) (*campus.AlibabaCampusSpaceTypeGetbycodeAPIResponse, error) {
     var resp campus.AlibabaCampusSpaceTypeGetbycodeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

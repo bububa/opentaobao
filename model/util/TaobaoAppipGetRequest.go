@@ -12,24 +12,24 @@ taobao.appip.get
 
 获取ISV发起请求服务器IP
 */
-type TaobaoAppipGetRequest struct {
+type TaobaoAppipGetAPIRequest struct {
     model.Params
 }
 
-// 初始化TaobaoAppipGetRequest对象
-func NewTaobaoAppipGetRequest() *TaobaoAppipGetRequest{
-    return &TaobaoAppipGetRequest{
+// 初始化TaobaoAppipGetAPIRequest对象
+func NewTaobaoAppipGetRequest() *TaobaoAppipGetAPIRequest{
+    return &TaobaoAppipGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAppipGetRequest) GetApiMethodName() string {
+func (r TaobaoAppipGetAPIRequest) GetApiMethodName() string {
     return "taobao.appip.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAppipGetRequest) GetApiParams() url.Values {
+func (r TaobaoAppipGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

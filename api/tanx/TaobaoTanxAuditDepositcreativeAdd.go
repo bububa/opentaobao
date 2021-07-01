@@ -11,7 +11,7 @@ taobao.tanx.audit.depositcreative.add
 
 dsp托管创意新增接口
 */
-func TaobaoTanxAuditDepositcreativeAdd(clt *core.SDKClient, req *tanx.TaobaoTanxAuditDepositcreativeAddRequest, session string) (*tanx.TaobaoTanxAuditDepositcreativeAddAPIResponse, error) {
+func TaobaoTanxAuditDepositcreativeAdd(clt *core.SDKClient, req *tanx.TaobaoTanxAuditDepositcreativeAddAPIRequest, session string) (*tanx.TaobaoTanxAuditDepositcreativeAddAPIResponse, error) {
     var resp tanx.TaobaoTanxAuditDepositcreativeAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

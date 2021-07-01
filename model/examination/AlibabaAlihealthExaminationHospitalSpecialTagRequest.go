@@ -12,24 +12,24 @@ alibaba.alihealth.examination.hospital.special.tag
 
 体检机构获取特色服务标签列表
 */
-type AlibabaAlihealthExaminationHospitalSpecialTagRequest struct {
+type AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaAlihealthExaminationHospitalSpecialTagRequest对象
-func NewAlibabaAlihealthExaminationHospitalSpecialTagRequest() *AlibabaAlihealthExaminationHospitalSpecialTagRequest{
-    return &AlibabaAlihealthExaminationHospitalSpecialTagRequest{
+// 初始化AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest对象
+func NewAlibabaAlihealthExaminationHospitalSpecialTagRequest() *AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest{
+    return &AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationHospitalSpecialTagRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest) GetApiMethodName() string {
     return "alibaba.alihealth.examination.hospital.special.tag"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationHospitalSpecialTagRequest) GetApiParams() url.Values {
+func (r AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

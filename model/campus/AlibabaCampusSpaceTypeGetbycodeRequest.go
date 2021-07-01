@@ -14,7 +14,7 @@ alibaba.campus.space.type.getbycode
 HSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService
 HSF方法名称：getByCode
 */
-type AlibabaCampusSpaceTypeGetbycodeRequest struct {
+type AlibabaCampusSpaceTypeGetbycodeAPIRequest struct {
     model.Params
     // 查询条件封装
     _param0   *WorkBenchContext
@@ -22,20 +22,20 @@ type AlibabaCampusSpaceTypeGetbycodeRequest struct {
     _typeCode   string
 }
 
-// 初始化AlibabaCampusSpaceTypeGetbycodeRequest对象
-func NewAlibabaCampusSpaceTypeGetbycodeRequest() *AlibabaCampusSpaceTypeGetbycodeRequest{
-    return &AlibabaCampusSpaceTypeGetbycodeRequest{
+// 初始化AlibabaCampusSpaceTypeGetbycodeAPIRequest对象
+func NewAlibabaCampusSpaceTypeGetbycodeRequest() *AlibabaCampusSpaceTypeGetbycodeAPIRequest{
+    return &AlibabaCampusSpaceTypeGetbycodeAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceTypeGetbycodeRequest) GetApiMethodName() string {
+func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.space.type.getbycode"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceTypeGetbycodeRequest) GetApiParams() url.Values {
+func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceTypeGetbycodeRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 查询条件封装
-func (r *AlibabaCampusSpaceTypeGetbycodeRequest) SetParam0(_param0 *WorkBenchContext) error {
+func (r *AlibabaCampusSpaceTypeGetbycodeAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaCampusSpaceTypeGetbycodeRequest) GetParam0() *WorkBenchContext {
+func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetParam0() *WorkBenchContext {
     return r._param0
 }
 // TypeCode Setter
 // 空间类别编码
-func (r *AlibabaCampusSpaceTypeGetbycodeRequest) SetTypeCode(_typeCode string) error {
+func (r *AlibabaCampusSpaceTypeGetbycodeAPIRequest) SetTypeCode(_typeCode string) error {
     r._typeCode = _typeCode
     r.Set("type_code", _typeCode)
     return nil
 }
 
 // TypeCode Getter
-func (r AlibabaCampusSpaceTypeGetbycodeRequest) GetTypeCode() string {
+func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetTypeCode() string {
     return r._typeCode
 }

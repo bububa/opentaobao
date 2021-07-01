@@ -12,24 +12,24 @@ alibaba.icbu.rfq.myequity
 
 查询供应商权益接口
 */
-type AlibabaIcbuRfqMyequityRequest struct {
+type AlibabaIcbuRfqMyequityAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaIcbuRfqMyequityRequest对象
-func NewAlibabaIcbuRfqMyequityRequest() *AlibabaIcbuRfqMyequityRequest{
-    return &AlibabaIcbuRfqMyequityRequest{
+// 初始化AlibabaIcbuRfqMyequityAPIRequest对象
+func NewAlibabaIcbuRfqMyequityRequest() *AlibabaIcbuRfqMyequityAPIRequest{
+    return &AlibabaIcbuRfqMyequityAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuRfqMyequityRequest) GetApiMethodName() string {
+func (r AlibabaIcbuRfqMyequityAPIRequest) GetApiMethodName() string {
     return "alibaba.icbu.rfq.myequity"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuRfqMyequityRequest) GetApiParams() url.Values {
+func (r AlibabaIcbuRfqMyequityAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

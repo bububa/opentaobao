@@ -12,26 +12,26 @@ taobao.xhotel.intl.ari.notify
 
 国际酒店集团价库变更时通知变更内容，平台及时更新价库信息，保证价库新鲜度
 */
-type TaobaoXhotelIntlAriNotifyRequest struct {
+type TaobaoXhotelIntlAriNotifyAPIRequest struct {
     model.Params
     // 缓存变更
     _cacheChangeList   []CacheChangeInfo
 }
 
-// 初始化TaobaoXhotelIntlAriNotifyRequest对象
-func NewTaobaoXhotelIntlAriNotifyRequest() *TaobaoXhotelIntlAriNotifyRequest{
-    return &TaobaoXhotelIntlAriNotifyRequest{
+// 初始化TaobaoXhotelIntlAriNotifyAPIRequest对象
+func NewTaobaoXhotelIntlAriNotifyRequest() *TaobaoXhotelIntlAriNotifyAPIRequest{
+    return &TaobaoXhotelIntlAriNotifyAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelIntlAriNotifyRequest) GetApiMethodName() string {
+func (r TaobaoXhotelIntlAriNotifyAPIRequest) GetApiMethodName() string {
     return "taobao.xhotel.intl.ari.notify"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelIntlAriNotifyRequest) GetApiParams() url.Values {
+func (r TaobaoXhotelIntlAriNotifyAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoXhotelIntlAriNotifyRequest) GetApiParams() url.Values {
 }
 // CacheChangeList Setter
 // 缓存变更
-func (r *TaobaoXhotelIntlAriNotifyRequest) SetCacheChangeList(_cacheChangeList []CacheChangeInfo) error {
+func (r *TaobaoXhotelIntlAriNotifyAPIRequest) SetCacheChangeList(_cacheChangeList []CacheChangeInfo) error {
     r._cacheChangeList = _cacheChangeList
     r.Set("cache_change_list", _cacheChangeList)
     return nil
 }
 
 // CacheChangeList Getter
-func (r TaobaoXhotelIntlAriNotifyRequest) GetCacheChangeList() []CacheChangeInfo {
+func (r TaobaoXhotelIntlAriNotifyAPIRequest) GetCacheChangeList() []CacheChangeInfo {
     return r._cacheChangeList
 }

@@ -11,7 +11,7 @@ taobao.ump.tools.get
 
 查询工具列表
 */
-func TaobaoUmpToolsGet(clt *core.SDKClient, req *promotion.TaobaoUmpToolsGetRequest, session string) (*promotion.TaobaoUmpToolsGetAPIResponse, error) {
+func TaobaoUmpToolsGet(clt *core.SDKClient, req *promotion.TaobaoUmpToolsGetAPIRequest, session string) (*promotion.TaobaoUmpToolsGetAPIResponse, error) {
     var resp promotion.TaobaoUmpToolsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

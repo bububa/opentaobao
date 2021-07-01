@@ -12,26 +12,26 @@ alibaba.scbp.ad.keyword.rank.price.get
 
 外贸直通车关键词前五名排价
 */
-type AlibabaScbpAdKeywordRankPriceGetRequest struct {
+type AlibabaScbpAdKeywordRankPriceGetAPIRequest struct {
     model.Params
     // 关键词
     _keyword   string
 }
 
-// 初始化AlibabaScbpAdKeywordRankPriceGetRequest对象
-func NewAlibabaScbpAdKeywordRankPriceGetRequest() *AlibabaScbpAdKeywordRankPriceGetRequest{
-    return &AlibabaScbpAdKeywordRankPriceGetRequest{
+// 初始化AlibabaScbpAdKeywordRankPriceGetAPIRequest对象
+func NewAlibabaScbpAdKeywordRankPriceGetRequest() *AlibabaScbpAdKeywordRankPriceGetAPIRequest{
+    return &AlibabaScbpAdKeywordRankPriceGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordRankPriceGetRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdKeywordRankPriceGetAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.keyword.rank.price.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordRankPriceGetRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdKeywordRankPriceGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaScbpAdKeywordRankPriceGetRequest) GetApiParams() url.Values {
 }
 // Keyword Setter
 // 关键词
-func (r *AlibabaScbpAdKeywordRankPriceGetRequest) SetKeyword(_keyword string) error {
+func (r *AlibabaScbpAdKeywordRankPriceGetAPIRequest) SetKeyword(_keyword string) error {
     r._keyword = _keyword
     r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
-func (r AlibabaScbpAdKeywordRankPriceGetRequest) GetKeyword() string {
+func (r AlibabaScbpAdKeywordRankPriceGetAPIRequest) GetKeyword() string {
     return r._keyword
 }

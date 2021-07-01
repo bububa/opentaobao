@@ -12,26 +12,26 @@ alibaba.alsc.crm.customer.update
 
 更新顾客信息
 */
-type AlibabaAlscCrmCustomerUpdateRequest struct {
+type AlibabaAlscCrmCustomerUpdateAPIRequest struct {
     model.Params
     // 修改顾客参数
     _paramCustomerUpdateOpenReq   *CustomerUpdateOpenReq
 }
 
-// 初始化AlibabaAlscCrmCustomerUpdateRequest对象
-func NewAlibabaAlscCrmCustomerUpdateRequest() *AlibabaAlscCrmCustomerUpdateRequest{
-    return &AlibabaAlscCrmCustomerUpdateRequest{
+// 初始化AlibabaAlscCrmCustomerUpdateAPIRequest对象
+func NewAlibabaAlscCrmCustomerUpdateRequest() *AlibabaAlscCrmCustomerUpdateAPIRequest{
+    return &AlibabaAlscCrmCustomerUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmCustomerUpdateRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmCustomerUpdateAPIRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.customer.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmCustomerUpdateRequest) GetApiParams() url.Values {
+func (r AlibabaAlscCrmCustomerUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCustomerUpdateRequest) GetApiParams() url.Values {
 }
 // ParamCustomerUpdateOpenReq Setter
 // 修改顾客参数
-func (r *AlibabaAlscCrmCustomerUpdateRequest) SetParamCustomerUpdateOpenReq(_paramCustomerUpdateOpenReq *CustomerUpdateOpenReq) error {
+func (r *AlibabaAlscCrmCustomerUpdateAPIRequest) SetParamCustomerUpdateOpenReq(_paramCustomerUpdateOpenReq *CustomerUpdateOpenReq) error {
     r._paramCustomerUpdateOpenReq = _paramCustomerUpdateOpenReq
     r.Set("param_customer_update_open_req", _paramCustomerUpdateOpenReq)
     return nil
 }
 
 // ParamCustomerUpdateOpenReq Getter
-func (r AlibabaAlscCrmCustomerUpdateRequest) GetParamCustomerUpdateOpenReq() *CustomerUpdateOpenReq {
+func (r AlibabaAlscCrmCustomerUpdateAPIRequest) GetParamCustomerUpdateOpenReq() *CustomerUpdateOpenReq {
     return r._paramCustomerUpdateOpenReq
 }

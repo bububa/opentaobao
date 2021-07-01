@@ -11,7 +11,7 @@ taobao.feedflow.item.adgroup.delete
 
 根据单元id删除单元
 */
-func TaobaoFeedflowItemAdgroupDelete(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupDeleteRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupDeleteAPIResponse, error) {
+func TaobaoFeedflowItemAdgroupDelete(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupDeleteAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupDeleteAPIResponse, error) {
     var resp feedflow.TaobaoFeedflowItemAdgroupDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

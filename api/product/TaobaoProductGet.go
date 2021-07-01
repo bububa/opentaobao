@@ -14,7 +14,7 @@ taobao.product.get
 传入product_id来查询；传入cid和props来查询
 <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 */
-func TaobaoProductGet(clt *core.SDKClient, req *product.TaobaoProductGetRequest, session string) (*product.TaobaoProductGetAPIResponse, error) {
+func TaobaoProductGet(clt *core.SDKClient, req *product.TaobaoProductGetAPIRequest, session string) (*product.TaobaoProductGetAPIResponse, error) {
     var resp product.TaobaoProductGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

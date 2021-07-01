@@ -11,7 +11,7 @@ alibaba.alisports.passport.account.ssotokenrefresh
 
 sso_token刷新
 */
-func AlibabaAlisportsPassportAccountSsotokenrefresh(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountSsotokenrefreshRequest, session string) (*alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse, error) {
+func AlibabaAlisportsPassportAccountSsotokenrefresh(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest, session string) (*alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse, error) {
     var resp alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

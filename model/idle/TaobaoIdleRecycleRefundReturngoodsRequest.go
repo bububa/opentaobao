@@ -12,26 +12,26 @@ taobao.idle.recycle.refund.returngoods
 
 回收商买家退货，填写退货运单号
 */
-type TaobaoIdleRecycleRefundReturngoodsRequest struct {
+type TaobaoIdleRecycleRefundReturngoodsAPIRequest struct {
     model.Params
     // 退货
     _param0   *RecycleReturnGoodsRequest
 }
 
-// 初始化TaobaoIdleRecycleRefundReturngoodsRequest对象
-func NewTaobaoIdleRecycleRefundReturngoodsRequest() *TaobaoIdleRecycleRefundReturngoodsRequest{
-    return &TaobaoIdleRecycleRefundReturngoodsRequest{
+// 初始化TaobaoIdleRecycleRefundReturngoodsAPIRequest对象
+func NewTaobaoIdleRecycleRefundReturngoodsRequest() *TaobaoIdleRecycleRefundReturngoodsAPIRequest{
+    return &TaobaoIdleRecycleRefundReturngoodsAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoIdleRecycleRefundReturngoodsRequest) GetApiMethodName() string {
+func (r TaobaoIdleRecycleRefundReturngoodsAPIRequest) GetApiMethodName() string {
     return "taobao.idle.recycle.refund.returngoods"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoIdleRecycleRefundReturngoodsRequest) GetApiParams() url.Values {
+func (r TaobaoIdleRecycleRefundReturngoodsAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoIdleRecycleRefundReturngoodsRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 退货
-func (r *TaobaoIdleRecycleRefundReturngoodsRequest) SetParam0(_param0 *RecycleReturnGoodsRequest) error {
+func (r *TaobaoIdleRecycleRefundReturngoodsAPIRequest) SetParam0(_param0 *RecycleReturnGoodsRequest) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoIdleRecycleRefundReturngoodsRequest) GetParam0() *RecycleReturnGoodsRequest {
+func (r TaobaoIdleRecycleRefundReturngoodsAPIRequest) GetParam0() *RecycleReturnGoodsRequest {
     return r._param0
 }

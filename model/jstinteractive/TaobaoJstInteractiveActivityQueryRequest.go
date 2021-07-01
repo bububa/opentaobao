@@ -12,26 +12,26 @@ taobao.jst.interactive.activity.query
 
 互动任务活动查询接口
 */
-type TaobaoJstInteractiveActivityQueryRequest struct {
+type TaobaoJstInteractiveActivityQueryAPIRequest struct {
     model.Params
     // 小程序id
     _miniAppId   string
 }
 
-// 初始化TaobaoJstInteractiveActivityQueryRequest对象
-func NewTaobaoJstInteractiveActivityQueryRequest() *TaobaoJstInteractiveActivityQueryRequest{
-    return &TaobaoJstInteractiveActivityQueryRequest{
+// 初始化TaobaoJstInteractiveActivityQueryAPIRequest对象
+func NewTaobaoJstInteractiveActivityQueryRequest() *TaobaoJstInteractiveActivityQueryAPIRequest{
+    return &TaobaoJstInteractiveActivityQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJstInteractiveActivityQueryRequest) GetApiMethodName() string {
+func (r TaobaoJstInteractiveActivityQueryAPIRequest) GetApiMethodName() string {
     return "taobao.jst.interactive.activity.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJstInteractiveActivityQueryRequest) GetApiParams() url.Values {
+func (r TaobaoJstInteractiveActivityQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoJstInteractiveActivityQueryRequest) GetApiParams() url.Values {
 }
 // MiniAppId Setter
 // 小程序id
-func (r *TaobaoJstInteractiveActivityQueryRequest) SetMiniAppId(_miniAppId string) error {
+func (r *TaobaoJstInteractiveActivityQueryAPIRequest) SetMiniAppId(_miniAppId string) error {
     r._miniAppId = _miniAppId
     r.Set("mini_app_id", _miniAppId)
     return nil
 }
 
 // MiniAppId Getter
-func (r TaobaoJstInteractiveActivityQueryRequest) GetMiniAppId() string {
+func (r TaobaoJstInteractiveActivityQueryAPIRequest) GetMiniAppId() string {
     return r._miniAppId
 }

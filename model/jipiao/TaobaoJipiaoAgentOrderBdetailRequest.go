@@ -12,26 +12,26 @@ taobao.jipiao.agent.order.bdetail
 
 根据淘宝系统订单号获取订单详情信息
 */
-type TaobaoJipiaoAgentOrderBdetailRequest struct {
+type TaobaoJipiaoAgentOrderBdetailAPIRequest struct {
     model.Params
     // 订单号
     _orderId   int64
 }
 
-// 初始化TaobaoJipiaoAgentOrderBdetailRequest对象
-func NewTaobaoJipiaoAgentOrderBdetailRequest() *TaobaoJipiaoAgentOrderBdetailRequest{
-    return &TaobaoJipiaoAgentOrderBdetailRequest{
+// 初始化TaobaoJipiaoAgentOrderBdetailAPIRequest对象
+func NewTaobaoJipiaoAgentOrderBdetailRequest() *TaobaoJipiaoAgentOrderBdetailAPIRequest{
+    return &TaobaoJipiaoAgentOrderBdetailAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoJipiaoAgentOrderBdetailRequest) GetApiMethodName() string {
+func (r TaobaoJipiaoAgentOrderBdetailAPIRequest) GetApiMethodName() string {
     return "taobao.jipiao.agent.order.bdetail"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoJipiaoAgentOrderBdetailRequest) GetApiParams() url.Values {
+func (r TaobaoJipiaoAgentOrderBdetailAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoJipiaoAgentOrderBdetailRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单号
-func (r *TaobaoJipiaoAgentOrderBdetailRequest) SetOrderId(_orderId int64) error {
+func (r *TaobaoJipiaoAgentOrderBdetailAPIRequest) SetOrderId(_orderId int64) error {
     r._orderId = _orderId
     r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
-func (r TaobaoJipiaoAgentOrderBdetailRequest) GetOrderId() int64 {
+func (r TaobaoJipiaoAgentOrderBdetailAPIRequest) GetOrderId() int64 {
     return r._orderId
 }

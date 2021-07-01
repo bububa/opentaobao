@@ -12,7 +12,7 @@ cainiao.global.solution.service.resource.query
 
 返回直接解决方案的指定物流服务的可用资源列表
 */
-type CainiaoGlobalSolutionServiceResourceQueryRequest struct {
+type CainiaoGlobalSolutionServiceResourceQueryAPIRequest struct {
     model.Params
     // 多语言信息
     _locale   string
@@ -24,20 +24,20 @@ type CainiaoGlobalSolutionServiceResourceQueryRequest struct {
     _senderParam   *OpenSenderParam
 }
 
-// 初始化CainiaoGlobalSolutionServiceResourceQueryRequest对象
-func NewCainiaoGlobalSolutionServiceResourceQueryRequest() *CainiaoGlobalSolutionServiceResourceQueryRequest{
-    return &CainiaoGlobalSolutionServiceResourceQueryRequest{
+// 初始化CainiaoGlobalSolutionServiceResourceQueryAPIRequest对象
+func NewCainiaoGlobalSolutionServiceResourceQueryRequest() *CainiaoGlobalSolutionServiceResourceQueryAPIRequest{
+    return &CainiaoGlobalSolutionServiceResourceQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetApiMethodName() string {
+func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetApiMethodName() string {
     return "cainiao.global.solution.service.resource.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetApiParams() url.Values {
+func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -46,49 +46,49 @@ func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetApiParams() url.Val
 }
 // Locale Setter
 // 多语言信息
-func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetLocale(_locale string) error {
+func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetLocale(_locale string) error {
     r._locale = _locale
     r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
-func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetLocale() string {
+func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetLocale() string {
     return r._locale
 }
 // SellerParam Setter
 // 商家信息
-func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetSellerParam(_sellerParam *SellerParam) error {
+func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSellerParam(_sellerParam *SellerParam) error {
     r._sellerParam = _sellerParam
     r.Set("seller_param", _sellerParam)
     return nil
 }
 
 // SellerParam Getter
-func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetSellerParam() *SellerParam {
+func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetSellerParam() *SellerParam {
     return r._sellerParam
 }
 // SolutionServiceResParam Setter
 // 查询参数
-func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetSolutionServiceResParam(_solutionServiceResParam *QuerySolutionServiceResParam) error {
+func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSolutionServiceResParam(_solutionServiceResParam *QuerySolutionServiceResParam) error {
     r._solutionServiceResParam = _solutionServiceResParam
     r.Set("solution_service_res_param", _solutionServiceResParam)
     return nil
 }
 
 // SolutionServiceResParam Getter
-func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetSolutionServiceResParam() *QuerySolutionServiceResParam {
+func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetSolutionServiceResParam() *QuerySolutionServiceResParam {
     return r._solutionServiceResParam
 }
 // SenderParam Setter
 // 发件信息
-func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetSenderParam(_senderParam *OpenSenderParam) error {
+func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSenderParam(_senderParam *OpenSenderParam) error {
     r._senderParam = _senderParam
     r.Set("sender_param", _senderParam)
     return nil
 }
 
 // SenderParam Getter
-func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetSenderParam() *OpenSenderParam {
+func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetSenderParam() *OpenSenderParam {
     return r._senderParam
 }

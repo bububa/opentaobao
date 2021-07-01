@@ -11,7 +11,7 @@ alibaba.security.jaq.captcha.send
 
 聚安全安全验证发起
 */
-func AlibabaSecurityJaqCaptchaSend(clt *core.SDKClient, req *security.AlibabaSecurityJaqCaptchaSendRequest, session string) (*security.AlibabaSecurityJaqCaptchaSendAPIResponse, error) {
+func AlibabaSecurityJaqCaptchaSend(clt *core.SDKClient, req *security.AlibabaSecurityJaqCaptchaSendAPIRequest, session string) (*security.AlibabaSecurityJaqCaptchaSendAPIResponse, error) {
     var resp security.AlibabaSecurityJaqCaptchaSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

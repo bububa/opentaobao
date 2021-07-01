@@ -12,7 +12,7 @@ alibaba.wdk.marketing.open.darunfa.activity.sync
 
 大润发活动数据同步
 */
-type AlibabaWdkMarketingOpenDarunfaActivitySyncRequest struct {
+type AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest struct {
     model.Params
     // 大润发活动数据
     _activityList   []DrfTxdActivityBo
@@ -22,20 +22,20 @@ type AlibabaWdkMarketingOpenDarunfaActivitySyncRequest struct {
     _versionId   int64
 }
 
-// 初始化AlibabaWdkMarketingOpenDarunfaActivitySyncRequest对象
-func NewAlibabaWdkMarketingOpenDarunfaActivitySyncRequest() *AlibabaWdkMarketingOpenDarunfaActivitySyncRequest{
-    return &AlibabaWdkMarketingOpenDarunfaActivitySyncRequest{
+// 初始化AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest对象
+func NewAlibabaWdkMarketingOpenDarunfaActivitySyncRequest() *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest{
+    return &AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.open.darunfa.activity.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) GetApiParams() url.Values {
+func (r AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) GetApiParams() url.Va
 }
 // ActivityList Setter
 // 大润发活动数据
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) SetActivityList(_activityList []DrfTxdActivityBo) error {
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) SetActivityList(_activityList []DrfTxdActivityBo) error {
     r._activityList = _activityList
     r.Set("activity_list", _activityList)
     return nil
 }
 
 // ActivityList Getter
-func (r AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) GetActivityList() []DrfTxdActivityBo {
+func (r AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) GetActivityList() []DrfTxdActivityBo {
     return r._activityList
 }
 // ShopId Setter
 // 门店Id
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) SetShopId(_shopId string) error {
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) SetShopId(_shopId string) error {
     r._shopId = _shopId
     r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
-func (r AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) GetShopId() string {
+func (r AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) GetShopId() string {
     return r._shopId
 }
 // VersionId Setter
 // 版本ID
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) SetVersionId(_versionId int64) error {
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) SetVersionId(_versionId int64) error {
     r._versionId = _versionId
     r.Set("version_id", _versionId)
     return nil
 }
 
 // VersionId Getter
-func (r AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) GetVersionId() int64 {
+func (r AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) GetVersionId() int64 {
     return r._versionId
 }

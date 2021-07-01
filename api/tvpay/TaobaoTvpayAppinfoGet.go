@@ -11,7 +11,7 @@ taobao.tvpay.appinfo.get
 
 tv支付获取应用信息
 */
-func TaobaoTvpayAppinfoGet(clt *core.SDKClient, req *tvpay.TaobaoTvpayAppinfoGetRequest, session string) (*tvpay.TaobaoTvpayAppinfoGetAPIResponse, error) {
+func TaobaoTvpayAppinfoGet(clt *core.SDKClient, req *tvpay.TaobaoTvpayAppinfoGetAPIRequest, session string) (*tvpay.TaobaoTvpayAppinfoGetAPIResponse, error) {
     var resp tvpay.TaobaoTvpayAppinfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

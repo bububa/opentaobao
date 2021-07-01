@@ -11,7 +11,7 @@ taobao.bus.ticket.set
 
 提供给汽车票商家出票使用
 */
-func TaobaoBusTicketSet(clt *core.SDKClient, req *bus.TaobaoBusTicketSetRequest, session string) (*bus.TaobaoBusTicketSetAPIResponse, error) {
+func TaobaoBusTicketSet(clt *core.SDKClient, req *bus.TaobaoBusTicketSetAPIRequest, session string) (*bus.TaobaoBusTicketSetAPIResponse, error) {
     var resp bus.TaobaoBusTicketSetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

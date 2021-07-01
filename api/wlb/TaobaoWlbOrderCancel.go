@@ -11,7 +11,7 @@ taobao.wlb.order.cancel
 
 取消物流宝订单
 */
-func TaobaoWlbOrderCancel(clt *core.SDKClient, req *wlb.TaobaoWlbOrderCancelRequest, session string) (*wlb.TaobaoWlbOrderCancelAPIResponse, error) {
+func TaobaoWlbOrderCancel(clt *core.SDKClient, req *wlb.TaobaoWlbOrderCancelAPIRequest, session string) (*wlb.TaobaoWlbOrderCancelAPIResponse, error) {
     var resp wlb.TaobaoWlbOrderCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

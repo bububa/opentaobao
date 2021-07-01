@@ -12,26 +12,26 @@ taobao.alitrip.axin.trans.fund.update
 
 阿信供销平台-修改资金单接口
 */
-type TaobaoAlitripAxinTransFundUpdateRequest struct {
+type TaobaoAlitripAxinTransFundUpdateAPIRequest struct {
     model.Params
     // 更新资金单接口入参
     _axinFundUpdateDTO   *AxinFundUpdateDTO
 }
 
-// 初始化TaobaoAlitripAxinTransFundUpdateRequest对象
-func NewTaobaoAlitripAxinTransFundUpdateRequest() *TaobaoAlitripAxinTransFundUpdateRequest{
-    return &TaobaoAlitripAxinTransFundUpdateRequest{
+// 初始化TaobaoAlitripAxinTransFundUpdateAPIRequest对象
+func NewTaobaoAlitripAxinTransFundUpdateRequest() *TaobaoAlitripAxinTransFundUpdateAPIRequest{
+    return &TaobaoAlitripAxinTransFundUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripAxinTransFundUpdateRequest) GetApiMethodName() string {
+func (r TaobaoAlitripAxinTransFundUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.alitrip.axin.trans.fund.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripAxinTransFundUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoAlitripAxinTransFundUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransFundUpdateRequest) GetApiParams() url.Values {
 }
 // AxinFundUpdateDTO Setter
 // 更新资金单接口入参
-func (r *TaobaoAlitripAxinTransFundUpdateRequest) SetAxinFundUpdateDTO(_axinFundUpdateDTO *AxinFundUpdateDTO) error {
+func (r *TaobaoAlitripAxinTransFundUpdateAPIRequest) SetAxinFundUpdateDTO(_axinFundUpdateDTO *AxinFundUpdateDTO) error {
     r._axinFundUpdateDTO = _axinFundUpdateDTO
     r.Set("axin_fund_update_d_t_o", _axinFundUpdateDTO)
     return nil
 }
 
 // AxinFundUpdateDTO Getter
-func (r TaobaoAlitripAxinTransFundUpdateRequest) GetAxinFundUpdateDTO() *AxinFundUpdateDTO {
+func (r TaobaoAlitripAxinTransFundUpdateAPIRequest) GetAxinFundUpdateDTO() *AxinFundUpdateDTO {
     return r._axinFundUpdateDTO
 }

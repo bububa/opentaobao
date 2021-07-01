@@ -12,7 +12,7 @@ taobao.rds.db.get
 
 查询rds实例下的数据库
 */
-type TaobaoRdsDbGetRequest struct {
+type TaobaoRdsDbGetAPIRequest struct {
     model.Params
     // rds的实例名
     _instanceName   string
@@ -20,20 +20,20 @@ type TaobaoRdsDbGetRequest struct {
     _dbStatus   int64
 }
 
-// 初始化TaobaoRdsDbGetRequest对象
-func NewTaobaoRdsDbGetRequest() *TaobaoRdsDbGetRequest{
-    return &TaobaoRdsDbGetRequest{
+// 初始化TaobaoRdsDbGetAPIRequest对象
+func NewTaobaoRdsDbGetRequest() *TaobaoRdsDbGetAPIRequest{
+    return &TaobaoRdsDbGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoRdsDbGetRequest) GetApiMethodName() string {
+func (r TaobaoRdsDbGetAPIRequest) GetApiMethodName() string {
     return "taobao.rds.db.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoRdsDbGetRequest) GetApiParams() url.Values {
+func (r TaobaoRdsDbGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoRdsDbGetRequest) GetApiParams() url.Values {
 }
 // InstanceName Setter
 // rds的实例名
-func (r *TaobaoRdsDbGetRequest) SetInstanceName(_instanceName string) error {
+func (r *TaobaoRdsDbGetAPIRequest) SetInstanceName(_instanceName string) error {
     r._instanceName = _instanceName
     r.Set("instance_name", _instanceName)
     return nil
 }
 
 // InstanceName Getter
-func (r TaobaoRdsDbGetRequest) GetInstanceName() string {
+func (r TaobaoRdsDbGetAPIRequest) GetInstanceName() string {
     return r._instanceName
 }
 // DbStatus Setter
 // 数据库状态，默认值1
-func (r *TaobaoRdsDbGetRequest) SetDbStatus(_dbStatus int64) error {
+func (r *TaobaoRdsDbGetAPIRequest) SetDbStatus(_dbStatus int64) error {
     r._dbStatus = _dbStatus
     r.Set("db_status", _dbStatus)
     return nil
 }
 
 // DbStatus Getter
-func (r TaobaoRdsDbGetRequest) GetDbStatus() int64 {
+func (r TaobaoRdsDbGetAPIRequest) GetDbStatus() int64 {
     return r._dbStatus
 }

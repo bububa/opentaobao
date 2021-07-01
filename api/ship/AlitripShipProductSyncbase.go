@@ -11,7 +11,7 @@ alitrip.ship.product.syncbase
 
 基础信息修改回调
 */
-func AlitripShipProductSyncbase(clt *core.SDKClient, req *ship.AlitripShipProductSyncbaseRequest, session string) (*ship.AlitripShipProductSyncbaseAPIResponse, error) {
+func AlitripShipProductSyncbase(clt *core.SDKClient, req *ship.AlitripShipProductSyncbaseAPIRequest, session string) (*ship.AlitripShipProductSyncbaseAPIResponse, error) {
     var resp ship.AlitripShipProductSyncbaseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

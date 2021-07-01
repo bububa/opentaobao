@@ -12,7 +12,7 @@ taobao.nextone.logistics.sign.update
 
 商家上传退货的签收状态给AG
 */
-type TaobaoNextoneLogisticsSignUpdateRequest struct {
+type TaobaoNextoneLogisticsSignUpdateAPIRequest struct {
     model.Params
     // 退款编号
     _refundId   int64
@@ -20,20 +20,20 @@ type TaobaoNextoneLogisticsSignUpdateRequest struct {
     _signStatus   int64
 }
 
-// 初始化TaobaoNextoneLogisticsSignUpdateRequest对象
-func NewTaobaoNextoneLogisticsSignUpdateRequest() *TaobaoNextoneLogisticsSignUpdateRequest{
-    return &TaobaoNextoneLogisticsSignUpdateRequest{
+// 初始化TaobaoNextoneLogisticsSignUpdateAPIRequest对象
+func NewTaobaoNextoneLogisticsSignUpdateRequest() *TaobaoNextoneLogisticsSignUpdateAPIRequest{
+    return &TaobaoNextoneLogisticsSignUpdateAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoNextoneLogisticsSignUpdateRequest) GetApiMethodName() string {
+func (r TaobaoNextoneLogisticsSignUpdateAPIRequest) GetApiMethodName() string {
     return "taobao.nextone.logistics.sign.update"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoNextoneLogisticsSignUpdateRequest) GetApiParams() url.Values {
+func (r TaobaoNextoneLogisticsSignUpdateAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoNextoneLogisticsSignUpdateRequest) GetApiParams() url.Values {
 }
 // RefundId Setter
 // 退款编号
-func (r *TaobaoNextoneLogisticsSignUpdateRequest) SetRefundId(_refundId int64) error {
+func (r *TaobaoNextoneLogisticsSignUpdateAPIRequest) SetRefundId(_refundId int64) error {
     r._refundId = _refundId
     r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
-func (r TaobaoNextoneLogisticsSignUpdateRequest) GetRefundId() int64 {
+func (r TaobaoNextoneLogisticsSignUpdateAPIRequest) GetRefundId() int64 {
     return r._refundId
 }
 // SignStatus Setter
 // 货物签收状态
-func (r *TaobaoNextoneLogisticsSignUpdateRequest) SetSignStatus(_signStatus int64) error {
+func (r *TaobaoNextoneLogisticsSignUpdateAPIRequest) SetSignStatus(_signStatus int64) error {
     r._signStatus = _signStatus
     r.Set("sign_status", _signStatus)
     return nil
 }
 
 // SignStatus Getter
-func (r TaobaoNextoneLogisticsSignUpdateRequest) GetSignStatus() int64 {
+func (r TaobaoNextoneLogisticsSignUpdateAPIRequest) GetSignStatus() int64 {
     return r._signStatus
 }

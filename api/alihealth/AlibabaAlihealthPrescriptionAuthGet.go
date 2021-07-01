@@ -11,7 +11,7 @@ alibaba.alihealth.prescription.auth.get
 
 获取处方用户授权
 */
-func AlibabaAlihealthPrescriptionAuthGet(clt *core.SDKClient, req *alihealth.AlibabaAlihealthPrescriptionAuthGetRequest, session string) (*alihealth.AlibabaAlihealthPrescriptionAuthGetAPIResponse, error) {
+func AlibabaAlihealthPrescriptionAuthGet(clt *core.SDKClient, req *alihealth.AlibabaAlihealthPrescriptionAuthGetAPIRequest, session string) (*alihealth.AlibabaAlihealthPrescriptionAuthGetAPIResponse, error) {
     var resp alihealth.AlibabaAlihealthPrescriptionAuthGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

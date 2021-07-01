@@ -12,26 +12,26 @@ taobao.train.moment.get
 
 查询火车票车次时刻表
 */
-type TaobaoTrainMomentGetRequest struct {
+type TaobaoTrainMomentGetAPIRequest struct {
     model.Params
     // 出参
     _param   *TrainMomentTopParam
 }
 
-// 初始化TaobaoTrainMomentGetRequest对象
-func NewTaobaoTrainMomentGetRequest() *TaobaoTrainMomentGetRequest{
-    return &TaobaoTrainMomentGetRequest{
+// 初始化TaobaoTrainMomentGetAPIRequest对象
+func NewTaobaoTrainMomentGetRequest() *TaobaoTrainMomentGetAPIRequest{
+    return &TaobaoTrainMomentGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoTrainMomentGetRequest) GetApiMethodName() string {
+func (r TaobaoTrainMomentGetAPIRequest) GetApiMethodName() string {
     return "taobao.train.moment.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoTrainMomentGetRequest) GetApiParams() url.Values {
+func (r TaobaoTrainMomentGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoTrainMomentGetRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 出参
-func (r *TaobaoTrainMomentGetRequest) SetParam(_param *TrainMomentTopParam) error {
+func (r *TaobaoTrainMomentGetAPIRequest) SetParam(_param *TrainMomentTopParam) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoTrainMomentGetRequest) GetParam() *TrainMomentTopParam {
+func (r TaobaoTrainMomentGetAPIRequest) GetParam() *TrainMomentTopParam {
     return r._param
 }

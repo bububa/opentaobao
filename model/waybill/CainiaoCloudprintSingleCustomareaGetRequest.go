@@ -12,26 +12,26 @@ cainiao.cloudprint.single.customarea.get
 
 商家所有快递公司模板只有一个自定义区
 */
-type CainiaoCloudprintSingleCustomareaGetRequest struct {
+type CainiaoCloudprintSingleCustomareaGetAPIRequest struct {
     model.Params
     // 这是商家用户id
     _sellerId   int64
 }
 
-// 初始化CainiaoCloudprintSingleCustomareaGetRequest对象
-func NewCainiaoCloudprintSingleCustomareaGetRequest() *CainiaoCloudprintSingleCustomareaGetRequest{
-    return &CainiaoCloudprintSingleCustomareaGetRequest{
+// 初始化CainiaoCloudprintSingleCustomareaGetAPIRequest对象
+func NewCainiaoCloudprintSingleCustomareaGetRequest() *CainiaoCloudprintSingleCustomareaGetAPIRequest{
+    return &CainiaoCloudprintSingleCustomareaGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r CainiaoCloudprintSingleCustomareaGetRequest) GetApiMethodName() string {
+func (r CainiaoCloudprintSingleCustomareaGetAPIRequest) GetApiMethodName() string {
     return "cainiao.cloudprint.single.customarea.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r CainiaoCloudprintSingleCustomareaGetRequest) GetApiParams() url.Values {
+func (r CainiaoCloudprintSingleCustomareaGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r CainiaoCloudprintSingleCustomareaGetRequest) GetApiParams() url.Values {
 }
 // SellerId Setter
 // 这是商家用户id
-func (r *CainiaoCloudprintSingleCustomareaGetRequest) SetSellerId(_sellerId int64) error {
+func (r *CainiaoCloudprintSingleCustomareaGetAPIRequest) SetSellerId(_sellerId int64) error {
     r._sellerId = _sellerId
     r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
-func (r CainiaoCloudprintSingleCustomareaGetRequest) GetSellerId() int64 {
+func (r CainiaoCloudprintSingleCustomareaGetAPIRequest) GetSellerId() int64 {
     return r._sellerId
 }

@@ -12,24 +12,24 @@ alibaba.interact.login.alipayauth
 
 双11到店互动花呗红包获取token鉴权接口
 */
-type AlibabaInteractLoginAlipayauthRequest struct {
+type AlibabaInteractLoginAlipayauthAPIRequest struct {
     model.Params
 }
 
-// 初始化AlibabaInteractLoginAlipayauthRequest对象
-func NewAlibabaInteractLoginAlipayauthRequest() *AlibabaInteractLoginAlipayauthRequest{
-    return &AlibabaInteractLoginAlipayauthRequest{
+// 初始化AlibabaInteractLoginAlipayauthAPIRequest对象
+func NewAlibabaInteractLoginAlipayauthRequest() *AlibabaInteractLoginAlipayauthAPIRequest{
+    return &AlibabaInteractLoginAlipayauthAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaInteractLoginAlipayauthRequest) GetApiMethodName() string {
+func (r AlibabaInteractLoginAlipayauthAPIRequest) GetApiMethodName() string {
     return "alibaba.interact.login.alipayauth"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaInteractLoginAlipayauthRequest) GetApiParams() url.Values {
+func (r AlibabaInteractLoginAlipayauthAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())

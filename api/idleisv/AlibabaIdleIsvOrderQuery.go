@@ -11,7 +11,7 @@ alibaba.idle.isv.order.query
 
 服务商ISV，根据订单号，查询闲鱼订单信息
 */
-func AlibabaIdleIsvOrderQuery(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvOrderQueryRequest, session string) (*idleisv.AlibabaIdleIsvOrderQueryAPIResponse, error) {
+func AlibabaIdleIsvOrderQuery(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvOrderQueryAPIRequest, session string) (*idleisv.AlibabaIdleIsvOrderQueryAPIResponse, error) {
     var resp idleisv.AlibabaIdleIsvOrderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

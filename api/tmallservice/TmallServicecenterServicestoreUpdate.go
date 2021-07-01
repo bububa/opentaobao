@@ -11,7 +11,7 @@ tmall.servicecenter.servicestore.update
 
 用于修改门店/网点信息。多个业务共用
 */
-func TmallServicecenterServicestoreUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdateRequest, session string) (*tmallservice.TmallServicecenterServicestoreUpdateAPIResponse, error) {
+func TmallServicecenterServicestoreUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdateAPIRequest, session string) (*tmallservice.TmallServicecenterServicestoreUpdateAPIResponse, error) {
     var resp tmallservice.TmallServicecenterServicestoreUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

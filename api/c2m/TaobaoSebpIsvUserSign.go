@@ -11,7 +11,7 @@ taobao.sebp.isv.user.sign
 
 同步淘小铺三方服务签约信息
 */
-func TaobaoSebpIsvUserSign(clt *core.SDKClient, req *c2m.TaobaoSebpIsvUserSignRequest, session string) (*c2m.TaobaoSebpIsvUserSignAPIResponse, error) {
+func TaobaoSebpIsvUserSign(clt *core.SDKClient, req *c2m.TaobaoSebpIsvUserSignAPIRequest, session string) (*c2m.TaobaoSebpIsvUserSignAPIResponse, error) {
     var resp c2m.TaobaoSebpIsvUserSignAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ alibaba.campus.device.openapi.gettemplatelist
 
 查询设备模板信息
 */
-type AlibabaCampusDeviceOpenapiGettemplatelistRequest struct {
+type AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest struct {
     model.Params
     // 设备模板查询对象
     _query   *TemplateApiQuery
 }
 
-// 初始化AlibabaCampusDeviceOpenapiGettemplatelistRequest对象
-func NewAlibabaCampusDeviceOpenapiGettemplatelistRequest() *AlibabaCampusDeviceOpenapiGettemplatelistRequest{
-    return &AlibabaCampusDeviceOpenapiGettemplatelistRequest{
+// 初始化AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest对象
+func NewAlibabaCampusDeviceOpenapiGettemplatelistRequest() *AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest{
+    return &AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaCampusDeviceOpenapiGettemplatelistRequest) GetApiMethodName() string {
+func (r AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) GetApiMethodName() string {
     return "alibaba.campus.device.openapi.gettemplatelist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaCampusDeviceOpenapiGettemplatelistRequest) GetApiParams() url.Values {
+func (r AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaCampusDeviceOpenapiGettemplatelistRequest) GetApiParams() url.Val
 }
 // Query Setter
 // 设备模板查询对象
-func (r *AlibabaCampusDeviceOpenapiGettemplatelistRequest) SetQuery(_query *TemplateApiQuery) error {
+func (r *AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) SetQuery(_query *TemplateApiQuery) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r AlibabaCampusDeviceOpenapiGettemplatelistRequest) GetQuery() *TemplateApiQuery {
+func (r AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) GetQuery() *TemplateApiQuery {
     return r._query
 }

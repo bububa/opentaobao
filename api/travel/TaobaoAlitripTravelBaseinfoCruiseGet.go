@@ -11,7 +11,7 @@ taobao.alitrip.travel.baseinfo.cruise.get
 
 旅行度假新商品发布时可用的扩展接口，用于获取邮轮类目相关扩展信息。
 */
-func TaobaoAlitripTravelBaseinfoCruiseGet(clt *core.SDKClient, req *travel.TaobaoAlitripTravelBaseinfoCruiseGetRequest, session string) (*travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse, error) {
+func TaobaoAlitripTravelBaseinfoCruiseGet(clt *core.SDKClient, req *travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest, session string) (*travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse, error) {
     var resp travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,26 +12,26 @@ taobao.wangwang.abstract.getwordlist
 
 获取关键词列表，只支持json返回
 */
-type TaobaoWangwangAbstractGetwordlistRequest struct {
+type TaobaoWangwangAbstractGetwordlistAPIRequest struct {
     model.Params
     // 传入参数的字符集
     _charset   string
 }
 
-// 初始化TaobaoWangwangAbstractGetwordlistRequest对象
-func NewTaobaoWangwangAbstractGetwordlistRequest() *TaobaoWangwangAbstractGetwordlistRequest{
-    return &TaobaoWangwangAbstractGetwordlistRequest{
+// 初始化TaobaoWangwangAbstractGetwordlistAPIRequest对象
+func NewTaobaoWangwangAbstractGetwordlistRequest() *TaobaoWangwangAbstractGetwordlistAPIRequest{
+    return &TaobaoWangwangAbstractGetwordlistAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoWangwangAbstractGetwordlistRequest) GetApiMethodName() string {
+func (r TaobaoWangwangAbstractGetwordlistAPIRequest) GetApiMethodName() string {
     return "taobao.wangwang.abstract.getwordlist"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoWangwangAbstractGetwordlistRequest) GetApiParams() url.Values {
+func (r TaobaoWangwangAbstractGetwordlistAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r TaobaoWangwangAbstractGetwordlistRequest) GetApiParams() url.Values {
 }
 // Charset Setter
 // 传入参数的字符集
-func (r *TaobaoWangwangAbstractGetwordlistRequest) SetCharset(_charset string) error {
+func (r *TaobaoWangwangAbstractGetwordlistAPIRequest) SetCharset(_charset string) error {
     r._charset = _charset
     r.Set("charset", _charset)
     return nil
 }
 
 // Charset Getter
-func (r TaobaoWangwangAbstractGetwordlistRequest) GetCharset() string {
+func (r TaobaoWangwangAbstractGetwordlistAPIRequest) GetCharset() string {
     return r._charset
 }

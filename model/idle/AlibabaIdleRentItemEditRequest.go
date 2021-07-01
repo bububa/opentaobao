@@ -12,26 +12,26 @@ alibaba.idle.rent.item.edit
 
 发布闲鱼租赁商品
 */
-type AlibabaIdleRentItemEditRequest struct {
+type AlibabaIdleRentItemEditAPIRequest struct {
     model.Params
     // 商品信息
     _paramRentItemDTO   *RentItemDTO
 }
 
-// 初始化AlibabaIdleRentItemEditRequest对象
-func NewAlibabaIdleRentItemEditRequest() *AlibabaIdleRentItemEditRequest{
-    return &AlibabaIdleRentItemEditRequest{
+// 初始化AlibabaIdleRentItemEditAPIRequest对象
+func NewAlibabaIdleRentItemEditRequest() *AlibabaIdleRentItemEditAPIRequest{
+    return &AlibabaIdleRentItemEditAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaIdleRentItemEditRequest) GetApiMethodName() string {
+func (r AlibabaIdleRentItemEditAPIRequest) GetApiMethodName() string {
     return "alibaba.idle.rent.item.edit"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaIdleRentItemEditRequest) GetApiParams() url.Values {
+func (r AlibabaIdleRentItemEditAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlibabaIdleRentItemEditRequest) GetApiParams() url.Values {
 }
 // ParamRentItemDTO Setter
 // 商品信息
-func (r *AlibabaIdleRentItemEditRequest) SetParamRentItemDTO(_paramRentItemDTO *RentItemDTO) error {
+func (r *AlibabaIdleRentItemEditAPIRequest) SetParamRentItemDTO(_paramRentItemDTO *RentItemDTO) error {
     r._paramRentItemDTO = _paramRentItemDTO
     r.Set("param_rent_item_d_t_o", _paramRentItemDTO)
     return nil
 }
 
 // ParamRentItemDTO Getter
-func (r AlibabaIdleRentItemEditRequest) GetParamRentItemDTO() *RentItemDTO {
+func (r AlibabaIdleRentItemEditAPIRequest) GetParamRentItemDTO() *RentItemDTO {
     return r._paramRentItemDTO
 }

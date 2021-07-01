@@ -11,7 +11,7 @@ taobao.alitrip.it.fare.addrt
 
 自有政策往返添加接口
 */
-func TaobaoAlitripItFareAddrt(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareAddrtRequest, session string) (*itpolicy.TaobaoAlitripItFareAddrtAPIResponse, error) {
+func TaobaoAlitripItFareAddrt(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareAddrtAPIRequest, session string) (*itpolicy.TaobaoAlitripItFareAddrtAPIResponse, error) {
     var resp itpolicy.TaobaoAlitripItFareAddrtAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -12,7 +12,7 @@ taobao.qimen.trade.users.get
 
 获取已开通奇门订单服务的用户列表
 */
-type TaobaoQimenTradeUsersGetRequest struct {
+type TaobaoQimenTradeUsersGetAPIRequest struct {
     model.Params
     // 每页的数量
     _pageIndex   int64
@@ -20,20 +20,20 @@ type TaobaoQimenTradeUsersGetRequest struct {
     _pageSize   int64
 }
 
-// 初始化TaobaoQimenTradeUsersGetRequest对象
-func NewTaobaoQimenTradeUsersGetRequest() *TaobaoQimenTradeUsersGetRequest{
-    return &TaobaoQimenTradeUsersGetRequest{
+// 初始化TaobaoQimenTradeUsersGetAPIRequest对象
+func NewTaobaoQimenTradeUsersGetRequest() *TaobaoQimenTradeUsersGetAPIRequest{
+    return &TaobaoQimenTradeUsersGetAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TaobaoQimenTradeUsersGetRequest) GetApiMethodName() string {
+func (r TaobaoQimenTradeUsersGetAPIRequest) GetApiMethodName() string {
     return "taobao.qimen.trade.users.get"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TaobaoQimenTradeUsersGetRequest) GetApiParams() url.Values {
+func (r TaobaoQimenTradeUsersGetAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TaobaoQimenTradeUsersGetRequest) GetApiParams() url.Values {
 }
 // PageIndex Setter
 // 每页的数量
-func (r *TaobaoQimenTradeUsersGetRequest) SetPageIndex(_pageIndex int64) error {
+func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageIndex(_pageIndex int64) error {
     r._pageIndex = _pageIndex
     r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
-func (r TaobaoQimenTradeUsersGetRequest) GetPageIndex() int64 {
+func (r TaobaoQimenTradeUsersGetAPIRequest) GetPageIndex() int64 {
     return r._pageIndex
 }
 // PageSize Setter
 // 页数
-func (r *TaobaoQimenTradeUsersGetRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageSize(_pageSize int64) error {
     r._pageSize = _pageSize
     r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
-func (r TaobaoQimenTradeUsersGetRequest) GetPageSize() int64 {
+func (r TaobaoQimenTradeUsersGetAPIRequest) GetPageSize() int64 {
     return r._pageSize
 }

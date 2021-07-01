@@ -11,7 +11,7 @@ alibaba.alink.device.unify.status.get
 
 查询设备最新标准属性状态
 */
-func AlibabaAlinkDeviceUnifyStatusGet(clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnifyStatusGetRequest, session string) (*alink.AlibabaAlinkDeviceUnifyStatusGetAPIResponse, error) {
+func AlibabaAlinkDeviceUnifyStatusGet(clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnifyStatusGetAPIRequest, session string) (*alink.AlibabaAlinkDeviceUnifyStatusGetAPIResponse, error) {
     var resp alink.AlibabaAlinkDeviceUnifyStatusGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

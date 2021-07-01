@@ -11,7 +11,7 @@ tmall.servicecenter.worker.querypage
 
 服务商查询工人列表
 */
-func TmallServicecenterWorkerQuerypage(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerypageRequest, session string) (*tmallservice.TmallServicecenterWorkerQuerypageAPIResponse, error) {
+func TmallServicecenterWorkerQuerypage(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerypageAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerQuerypageAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkerQuerypageAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

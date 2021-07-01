@@ -11,7 +11,7 @@ tmall.nr.fulfill.logistics.sync
 
 同城配业务物流信息回传，通过接口将物流信息同步给天猫
 */
-func TmallNrFulfillLogisticsSync(clt *core.SDKClient, req *tmallnr.TmallNrFulfillLogisticsSyncRequest, session string) (*tmallnr.TmallNrFulfillLogisticsSyncAPIResponse, error) {
+func TmallNrFulfillLogisticsSync(clt *core.SDKClient, req *tmallnr.TmallNrFulfillLogisticsSyncAPIRequest, session string) (*tmallnr.TmallNrFulfillLogisticsSyncAPIResponse, error) {
     var resp tmallnr.TmallNrFulfillLogisticsSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

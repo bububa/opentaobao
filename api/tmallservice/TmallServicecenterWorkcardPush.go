@@ -11,7 +11,7 @@ tmall.servicecenter.workcard.push
 
 服务商家推送工单信息到天猫。
 */
-func TmallServicecenterWorkcardPush(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardPushRequest, session string) (*tmallservice.TmallServicecenterWorkcardPushAPIResponse, error) {
+func TmallServicecenterWorkcardPush(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardPushAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardPushAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardPushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

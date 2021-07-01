@@ -11,7 +11,7 @@ alibaba.damai.mev.open.pushproject
 
 pushProject
 */
-func AlibabaDamaiMevOpenPushproject(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushprojectRequest, session string) (*damai.AlibabaDamaiMevOpenPushprojectAPIResponse, error) {
+func AlibabaDamaiMevOpenPushproject(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushprojectAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushprojectAPIResponse, error) {
     var resp damai.AlibabaDamaiMevOpenPushprojectAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

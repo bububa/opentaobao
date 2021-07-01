@@ -11,7 +11,7 @@ taobao.rdc.aligenius.identification.case.update
 
 同步商家鉴定工单信息
 */
-func TaobaoRdcAligeniusIdentificationCaseUpdate(clt *core.SDKClient, req *refund.TaobaoRdcAligeniusIdentificationCaseUpdateRequest, session string) (*refund.TaobaoRdcAligeniusIdentificationCaseUpdateAPIResponse, error) {
+func TaobaoRdcAligeniusIdentificationCaseUpdate(clt *core.SDKClient, req *refund.TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest, session string) (*refund.TaobaoRdcAligeniusIdentificationCaseUpdateAPIResponse, error) {
     var resp refund.TaobaoRdcAligeniusIdentificationCaseUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

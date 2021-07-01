@@ -12,7 +12,7 @@ tmall.txcs.finance.invoice.input
 
 提供天猫超市外部合作商家财务：供应商发票录入
 */
-type TmallTxcsFinanceInvoiceInputRequest struct {
+type TmallTxcsFinanceInvoiceInputAPIRequest struct {
     model.Params
     // 门店ID
     _ouCode   string
@@ -20,20 +20,20 @@ type TmallTxcsFinanceInvoiceInputRequest struct {
     _invoiceInputDTO1   []InvoiceInputDTO
 }
 
-// 初始化TmallTxcsFinanceInvoiceInputRequest对象
-func NewTmallTxcsFinanceInvoiceInputRequest() *TmallTxcsFinanceInvoiceInputRequest{
-    return &TmallTxcsFinanceInvoiceInputRequest{
+// 初始化TmallTxcsFinanceInvoiceInputAPIRequest对象
+func NewTmallTxcsFinanceInvoiceInputRequest() *TmallTxcsFinanceInvoiceInputAPIRequest{
+    return &TmallTxcsFinanceInvoiceInputAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallTxcsFinanceInvoiceInputRequest) GetApiMethodName() string {
+func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetApiMethodName() string {
     return "tmall.txcs.finance.invoice.input"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallTxcsFinanceInvoiceInputRequest) GetApiParams() url.Values {
+func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallTxcsFinanceInvoiceInputRequest) GetApiParams() url.Values {
 }
 // OuCode Setter
 // 门店ID
-func (r *TmallTxcsFinanceInvoiceInputRequest) SetOuCode(_ouCode string) error {
+func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetOuCode(_ouCode string) error {
     r._ouCode = _ouCode
     r.Set("ou_code", _ouCode)
     return nil
 }
 
 // OuCode Getter
-func (r TmallTxcsFinanceInvoiceInputRequest) GetOuCode() string {
+func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetOuCode() string {
     return r._ouCode
 }
 // InvoiceInputDTO1 Setter
 // 发票内容
-func (r *TmallTxcsFinanceInvoiceInputRequest) SetInvoiceInputDTO1(_invoiceInputDTO1 []InvoiceInputDTO) error {
+func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetInvoiceInputDTO1(_invoiceInputDTO1 []InvoiceInputDTO) error {
     r._invoiceInputDTO1 = _invoiceInputDTO1
     r.Set("invoice_input_d_t_o1", _invoiceInputDTO1)
     return nil
 }
 
 // InvoiceInputDTO1 Getter
-func (r TmallTxcsFinanceInvoiceInputRequest) GetInvoiceInputDTO1() []InvoiceInputDTO {
+func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetInvoiceInputDTO1() []InvoiceInputDTO {
     return r._invoiceInputDTO1
 }

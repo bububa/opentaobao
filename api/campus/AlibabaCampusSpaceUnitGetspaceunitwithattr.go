@@ -11,7 +11,7 @@ alibaba.campus.space.unit.getspaceunitwithattr
 
 空间单元id查业务属性实例
 */
-func AlibabaCampusSpaceUnitGetspaceunitwithattr(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetspaceunitwithattrRequest, session string) (*campus.AlibabaCampusSpaceUnitGetspaceunitwithattrAPIResponse, error) {
+func AlibabaCampusSpaceUnitGetspaceunitwithattr(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetspaceunitwithattrAPIRequest, session string) (*campus.AlibabaCampusSpaceUnitGetspaceunitwithattrAPIResponse, error) {
     var resp campus.AlibabaCampusSpaceUnitGetspaceunitwithattrAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

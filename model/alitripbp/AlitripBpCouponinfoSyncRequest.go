@@ -12,26 +12,26 @@ alitrip.bp.couponinfo.sync
 
 飞猪商业化券信息同步
 */
-type AlitripBpCouponinfoSyncRequest struct {
+type AlitripBpCouponinfoSyncAPIRequest struct {
     model.Params
     // 商业化券同步接口请求
     _paramCouponDataRequest   *CouponDataRequest
 }
 
-// 初始化AlitripBpCouponinfoSyncRequest对象
-func NewAlitripBpCouponinfoSyncRequest() *AlitripBpCouponinfoSyncRequest{
-    return &AlitripBpCouponinfoSyncRequest{
+// 初始化AlitripBpCouponinfoSyncAPIRequest对象
+func NewAlitripBpCouponinfoSyncRequest() *AlitripBpCouponinfoSyncAPIRequest{
+    return &AlitripBpCouponinfoSyncAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBpCouponinfoSyncRequest) GetApiMethodName() string {
+func (r AlitripBpCouponinfoSyncAPIRequest) GetApiMethodName() string {
     return "alitrip.bp.couponinfo.sync"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBpCouponinfoSyncRequest) GetApiParams() url.Values {
+func (r AlitripBpCouponinfoSyncAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBpCouponinfoSyncRequest) GetApiParams() url.Values {
 }
 // ParamCouponDataRequest Setter
 // 商业化券同步接口请求
-func (r *AlitripBpCouponinfoSyncRequest) SetParamCouponDataRequest(_paramCouponDataRequest *CouponDataRequest) error {
+func (r *AlitripBpCouponinfoSyncAPIRequest) SetParamCouponDataRequest(_paramCouponDataRequest *CouponDataRequest) error {
     r._paramCouponDataRequest = _paramCouponDataRequest
     r.Set("param_coupon_data_request", _paramCouponDataRequest)
     return nil
 }
 
 // ParamCouponDataRequest Getter
-func (r AlitripBpCouponinfoSyncRequest) GetParamCouponDataRequest() *CouponDataRequest {
+func (r AlitripBpCouponinfoSyncAPIRequest) GetParamCouponDataRequest() *CouponDataRequest {
     return r._paramCouponDataRequest
 }

@@ -11,7 +11,7 @@ alibaba.ssc.supplyplatform.servicecapacity.delete
 
 服务容量删除
 */
-func AlibabaSscSupplyplatformServicecapacityDelete(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIResponse, error) {
+func AlibabaSscSupplyplatformServicecapacityDelete(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIResponse, error) {
     var resp tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

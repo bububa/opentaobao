@@ -12,7 +12,7 @@ alibaba.scbp.ad.keyword.create.keyword.batch
 
 关键词添加
 */
-type AlibabaScbpAdKeywordCreateKeywordBatchRequest struct {
+type AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest struct {
     model.Params
     // 计划id
     _campaignId   int64
@@ -22,20 +22,20 @@ type AlibabaScbpAdKeywordCreateKeywordBatchRequest struct {
     _topContext   *TopContextDTO
 }
 
-// 初始化AlibabaScbpAdKeywordCreateKeywordBatchRequest对象
-func NewAlibabaScbpAdKeywordCreateKeywordBatchRequest() *AlibabaScbpAdKeywordCreateKeywordBatchRequest{
-    return &AlibabaScbpAdKeywordCreateKeywordBatchRequest{
+// 初始化AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest对象
+func NewAlibabaScbpAdKeywordCreateKeywordBatchRequest() *AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest{
+    return &AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.keyword.create.keyword.batch"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetApiParams() url.Values {
+func (r AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetApiParams() url.Values
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetCampaignId(_campaignId int64) error {
+func (r *AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) SetCampaignId(_campaignId int64) error {
     r._campaignId = _campaignId
     r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
-func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetCampaignId() int64 {
+func (r AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) GetCampaignId() int64 {
     return r._campaignId
 }
 // KeywordQuery Setter
 // 请求参数
-func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetKeywordQuery(_keywordQuery *KeywordQuery) error {
+func (r *AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) SetKeywordQuery(_keywordQuery *KeywordQuery) error {
     r._keywordQuery = _keywordQuery
     r.Set("keyword_query", _keywordQuery)
     return nil
 }
 
 // KeywordQuery Getter
-func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetKeywordQuery() *KeywordQuery {
+func (r AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) GetKeywordQuery() *KeywordQuery {
     return r._keywordQuery
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetTopContext(_topContext *TopContextDTO) error {
+func (r *AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetTopContext() *TopContextDTO {
+func (r AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

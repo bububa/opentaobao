@@ -12,7 +12,7 @@ yunos.osupdate.appversion.query
 
 分页获取桌面升级任务
 */
-type YunosOsupdateAppversionQueryRequest struct {
+type YunosOsupdateAppversionQueryAPIRequest struct {
     model.Params
     // 应用ID
     _appId   int64
@@ -22,20 +22,20 @@ type YunosOsupdateAppversionQueryRequest struct {
     _size   int64
 }
 
-// 初始化YunosOsupdateAppversionQueryRequest对象
-func NewYunosOsupdateAppversionQueryRequest() *YunosOsupdateAppversionQueryRequest{
-    return &YunosOsupdateAppversionQueryRequest{
+// 初始化YunosOsupdateAppversionQueryAPIRequest对象
+func NewYunosOsupdateAppversionQueryRequest() *YunosOsupdateAppversionQueryAPIRequest{
+    return &YunosOsupdateAppversionQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r YunosOsupdateAppversionQueryRequest) GetApiMethodName() string {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetApiMethodName() string {
     return "yunos.osupdate.appversion.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r YunosOsupdateAppversionQueryRequest) GetApiParams() url.Values {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -44,37 +44,37 @@ func (r YunosOsupdateAppversionQueryRequest) GetApiParams() url.Values {
 }
 // AppId Setter
 // 应用ID
-func (r *YunosOsupdateAppversionQueryRequest) SetAppId(_appId int64) error {
+func (r *YunosOsupdateAppversionQueryAPIRequest) SetAppId(_appId int64) error {
     r._appId = _appId
     r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
-func (r YunosOsupdateAppversionQueryRequest) GetAppId() int64 {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetAppId() int64 {
     return r._appId
 }
 // Page Setter
 // 页码值
-func (r *YunosOsupdateAppversionQueryRequest) SetPage(_page int64) error {
+func (r *YunosOsupdateAppversionQueryAPIRequest) SetPage(_page int64) error {
     r._page = _page
     r.Set("page", _page)
     return nil
 }
 
 // Page Getter
-func (r YunosOsupdateAppversionQueryRequest) GetPage() int64 {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetPage() int64 {
     return r._page
 }
 // Size Setter
 // 页大小
-func (r *YunosOsupdateAppversionQueryRequest) SetSize(_size int64) error {
+func (r *YunosOsupdateAppversionQueryAPIRequest) SetSize(_size int64) error {
     r._size = _size
     r.Set("size", _size)
     return nil
 }
 
 // Size Getter
-func (r YunosOsupdateAppversionQueryRequest) GetSize() int64 {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetSize() int64 {
     return r._size
 }

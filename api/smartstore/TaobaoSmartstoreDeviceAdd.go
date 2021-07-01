@@ -11,7 +11,7 @@ taobao.smartstore.device.add
 
 智慧门店设备创建
 */
-func TaobaoSmartstoreDeviceAdd(clt *core.SDKClient, req *smartstore.TaobaoSmartstoreDeviceAddRequest, session string) (*smartstore.TaobaoSmartstoreDeviceAddAPIResponse, error) {
+func TaobaoSmartstoreDeviceAdd(clt *core.SDKClient, req *smartstore.TaobaoSmartstoreDeviceAddAPIRequest, session string) (*smartstore.TaobaoSmartstoreDeviceAddAPIResponse, error) {
     var resp smartstore.TaobaoSmartstoreDeviceAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

@@ -11,7 +11,7 @@ alibaba.alihealth.alipaypfm.assess.result.sync
 
 用户测评结果回传接口
 */
-func AlibabaAlihealthAlipaypfmAssessResultSync(clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthAlipaypfmAssessResultSyncRequest, session string) (*alihealthcrm.AlibabaAlihealthAlipaypfmAssessResultSyncAPIResponse, error) {
+func AlibabaAlihealthAlipaypfmAssessResultSync(clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest, session string) (*alihealthcrm.AlibabaAlihealthAlipaypfmAssessResultSyncAPIResponse, error) {
     var resp alihealthcrm.AlibabaAlihealthAlipaypfmAssessResultSyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

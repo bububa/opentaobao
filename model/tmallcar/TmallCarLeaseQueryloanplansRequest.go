@@ -12,7 +12,7 @@ tmall.car.lease.queryloanplans
 
 天猫开新车租后查询还款计划
 */
-type TmallCarLeaseQueryloanplansRequest struct {
+type TmallCarLeaseQueryloanplansAPIRequest struct {
     model.Params
     // 合约编号
     _loanarno   string
@@ -20,20 +20,20 @@ type TmallCarLeaseQueryloanplansRequest struct {
     _iproleid   string
 }
 
-// 初始化TmallCarLeaseQueryloanplansRequest对象
-func NewTmallCarLeaseQueryloanplansRequest() *TmallCarLeaseQueryloanplansRequest{
-    return &TmallCarLeaseQueryloanplansRequest{
+// 初始化TmallCarLeaseQueryloanplansAPIRequest对象
+func NewTmallCarLeaseQueryloanplansRequest() *TmallCarLeaseQueryloanplansAPIRequest{
+    return &TmallCarLeaseQueryloanplansAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r TmallCarLeaseQueryloanplansRequest) GetApiMethodName() string {
+func (r TmallCarLeaseQueryloanplansAPIRequest) GetApiMethodName() string {
     return "tmall.car.lease.queryloanplans"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r TmallCarLeaseQueryloanplansRequest) GetApiParams() url.Values {
+func (r TmallCarLeaseQueryloanplansAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -42,25 +42,25 @@ func (r TmallCarLeaseQueryloanplansRequest) GetApiParams() url.Values {
 }
 // Loanarno Setter
 // 合约编号
-func (r *TmallCarLeaseQueryloanplansRequest) SetLoanarno(_loanarno string) error {
+func (r *TmallCarLeaseQueryloanplansAPIRequest) SetLoanarno(_loanarno string) error {
     r._loanarno = _loanarno
     r.Set("loanarno", _loanarno)
     return nil
 }
 
 // Loanarno Getter
-func (r TmallCarLeaseQueryloanplansRequest) GetLoanarno() string {
+func (r TmallCarLeaseQueryloanplansAPIRequest) GetLoanarno() string {
     return r._loanarno
 }
 // Iproleid Setter
 // 客户的角色编号
-func (r *TmallCarLeaseQueryloanplansRequest) SetIproleid(_iproleid string) error {
+func (r *TmallCarLeaseQueryloanplansAPIRequest) SetIproleid(_iproleid string) error {
     r._iproleid = _iproleid
     r.Set("iproleid", _iproleid)
     return nil
 }
 
 // Iproleid Getter
-func (r TmallCarLeaseQueryloanplansRequest) GetIproleid() string {
+func (r TmallCarLeaseQueryloanplansAPIRequest) GetIproleid() string {
     return r._iproleid
 }

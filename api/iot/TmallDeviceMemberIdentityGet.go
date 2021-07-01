@@ -11,7 +11,7 @@ tmall.device.member.identity.get
 
 用来识别该用户是否是商家会员·
 */
-func TmallDeviceMemberIdentityGet(clt *core.SDKClient, req *iot.TmallDeviceMemberIdentityGetRequest, session string) (*iot.TmallDeviceMemberIdentityGetAPIResponse, error) {
+func TmallDeviceMemberIdentityGet(clt *core.SDKClient, req *iot.TmallDeviceMemberIdentityGetAPIRequest, session string) (*iot.TmallDeviceMemberIdentityGetAPIResponse, error) {
     var resp iot.TmallDeviceMemberIdentityGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

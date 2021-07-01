@@ -11,7 +11,7 @@ taobao.ailab.aicloud.top.device.statusinfo.get
 
 获取设备状态信息
 */
-func TaobaoAilabAicloudTopDeviceStatusinfoGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceStatusinfoGetRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceStatusinfoGetAPIResponse, error) {
+func TaobaoAilabAicloudTopDeviceStatusinfoGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceStatusinfoGetAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopDeviceStatusinfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {

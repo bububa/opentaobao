@@ -12,26 +12,26 @@ alitrip.btrip.employee.query
 
 企业员工查询
 */
-type AlitripBtripEmployeeQueryRequest struct {
+type AlitripBtripEmployeeQueryAPIRequest struct {
     model.Params
     // 入参对象。
     _paramOpenEmployeeQueryRequest   *OpenEmployeeQueryRequest
 }
 
-// 初始化AlitripBtripEmployeeQueryRequest对象
-func NewAlitripBtripEmployeeQueryRequest() *AlitripBtripEmployeeQueryRequest{
-    return &AlitripBtripEmployeeQueryRequest{
+// 初始化AlitripBtripEmployeeQueryAPIRequest对象
+func NewAlitripBtripEmployeeQueryRequest() *AlitripBtripEmployeeQueryAPIRequest{
+    return &AlitripBtripEmployeeQueryAPIRequest{
         Params: model.NewParams(),
     }
 }
 
 // IRequest interface 方法, 获取Api method
-func (r AlitripBtripEmployeeQueryRequest) GetApiMethodName() string {
+func (r AlitripBtripEmployeeQueryAPIRequest) GetApiMethodName() string {
     return "alitrip.btrip.employee.query"
 }
 
 // IRequest interface 方法, 获取API参数
-func (r AlitripBtripEmployeeQueryRequest) GetApiParams() url.Values {
+func (r AlitripBtripEmployeeQueryAPIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
         params.Set(k, v.String())
@@ -40,13 +40,13 @@ func (r AlitripBtripEmployeeQueryRequest) GetApiParams() url.Values {
 }
 // ParamOpenEmployeeQueryRequest Setter
 // 入参对象。
-func (r *AlitripBtripEmployeeQueryRequest) SetParamOpenEmployeeQueryRequest(_paramOpenEmployeeQueryRequest *OpenEmployeeQueryRequest) error {
+func (r *AlitripBtripEmployeeQueryAPIRequest) SetParamOpenEmployeeQueryRequest(_paramOpenEmployeeQueryRequest *OpenEmployeeQueryRequest) error {
     r._paramOpenEmployeeQueryRequest = _paramOpenEmployeeQueryRequest
     r.Set("param_open_employee_query_request", _paramOpenEmployeeQueryRequest)
     return nil
 }
 
 // ParamOpenEmployeeQueryRequest Getter
-func (r AlitripBtripEmployeeQueryRequest) GetParamOpenEmployeeQueryRequest() *OpenEmployeeQueryRequest {
+func (r AlitripBtripEmployeeQueryAPIRequest) GetParamOpenEmployeeQueryRequest() *OpenEmployeeQueryRequest {
     return r._paramOpenEmployeeQueryRequest
 }
