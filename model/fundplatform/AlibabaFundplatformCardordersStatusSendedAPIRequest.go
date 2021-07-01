@@ -21,4 +21,62 @@ type AlibabaFundplatformCardordersStatusSendedAPIRequest struct {
 	_logisticsCompany string
 }
 
-// New
+// NewAlibabaFundplatformCardordersStatusSendedRequest 初始化AlibabaFundplatformCardordersStatusSendedAPIRequest对象
+func NewAlibabaFundplatformCardordersStatusSendedRequest() *AlibabaFundplatformCardordersStatusSendedAPIRequest {
+	return &AlibabaFundplatformCardordersStatusSendedAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetApiMethodName() string {
+	return "alibaba.fundplatform.cardorders.status.sended"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CardOrderId Setter
+// 子制卡单ID
+func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetCardOrderId(_cardOrderId int64) error {
+	r._cardOrderId = _cardOrderId
+	r.Set("card_order_id", _cardOrderId)
+	return nil
+}
+
+// Get CardOrderId Getter
+func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetCardOrderId() int64 {
+	return r._cardOrderId
+}
+
+// Set is LogisticsOrderId Setter
+// 物流单号
+func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetLogisticsOrderId(_logisticsOrderId string) error {
+	r._logisticsOrderId = _logisticsOrderId
+	r.Set("logistics_order_id", _logisticsOrderId)
+	return nil
+}
+
+// Get LogisticsOrderId Getter
+func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetLogisticsOrderId() string {
+	return r._logisticsOrderId
+}
+
+// Set is LogisticsCompany Setter
+// 物流商名称
+func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetLogisticsCompany(_logisticsCompany string) error {
+	r._logisticsCompany = _logisticsCompany
+	r.Set("logistics_company", _logisticsCompany)
+	return nil
+}
+
+// Get LogisticsCompany Getter
+func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetLogisticsCompany() string {
+	return r._logisticsCompany
+}

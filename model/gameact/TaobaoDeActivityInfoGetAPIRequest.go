@@ -17,4 +17,36 @@ type TaobaoDeActivityInfoGetAPIRequest struct {
 	_eventKey string
 }
 
-// New
+// NewTaobaoDeActivityInfoGetRequest 初始化TaobaoDeActivityInfoGetAPIRequest对象
+func NewTaobaoDeActivityInfoGetRequest() *TaobaoDeActivityInfoGetAPIRequest {
+	return &TaobaoDeActivityInfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoDeActivityInfoGetAPIRequest) GetApiMethodName() string {
+	return "taobao.de.activity.info.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoDeActivityInfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is EventKey Setter
+// 事件唯一标识
+func (r *TaobaoDeActivityInfoGetAPIRequest) SetEventKey(_eventKey string) error {
+	r._eventKey = _eventKey
+	r.Set("event_key", _eventKey)
+	return nil
+}
+
+// Get EventKey Getter
+func (r TaobaoDeActivityInfoGetAPIRequest) GetEventKey() string {
+	return r._eventKey
+}

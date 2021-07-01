@@ -17,4 +17,36 @@ type TaobaoQimenItemsTagQueryAPIRequest struct {
 	_itemIds []int64
 }
 
-// New
+// NewTaobaoQimenItemsTagQueryRequest 初始化TaobaoQimenItemsTagQueryAPIRequest对象
+func NewTaobaoQimenItemsTagQueryRequest() *TaobaoQimenItemsTagQueryAPIRequest {
+	return &TaobaoQimenItemsTagQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenItemsTagQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.items.tag.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenItemsTagQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemIds Setter
+// 线上淘宝商品ID，long，必填
+func (r *TaobaoQimenItemsTagQueryAPIRequest) SetItemIds(_itemIds []int64) error {
+	r._itemIds = _itemIds
+	r.Set("item_ids", _itemIds)
+	return nil
+}
+
+// Get ItemIds Getter
+func (r TaobaoQimenItemsTagQueryAPIRequest) GetItemIds() []int64 {
+	return r._itemIds
+}

@@ -21,4 +21,62 @@ type TmallFansArenaRecordAPIRequest struct {
 	_mixNick string
 }
 
-// New
+// NewTmallFansArenaRecordRequest 初始化TmallFansArenaRecordAPIRequest对象
+func NewTmallFansArenaRecordRequest() *TmallFansArenaRecordAPIRequest {
+	return &TmallFansArenaRecordAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallFansArenaRecordAPIRequest) GetApiMethodName() string {
+	return "tmall.fans.arena.record"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallFansArenaRecordAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CashPoolId Setter
+// 资金池id
+func (r *TmallFansArenaRecordAPIRequest) SetCashPoolId(_cashPoolId int64) error {
+	r._cashPoolId = _cashPoolId
+	r.Set("cash_pool_id", _cashPoolId)
+	return nil
+}
+
+// Get CashPoolId Getter
+func (r TmallFansArenaRecordAPIRequest) GetCashPoolId() int64 {
+	return r._cashPoolId
+}
+
+// Set is Score Setter
+// 用户得分
+func (r *TmallFansArenaRecordAPIRequest) SetScore(_score int64) error {
+	r._score = _score
+	r.Set("score", _score)
+	return nil
+}
+
+// Get Score Getter
+func (r TmallFansArenaRecordAPIRequest) GetScore() int64 {
+	return r._score
+}
+
+// Set is MixNick Setter
+// mixnick
+func (r *TmallFansArenaRecordAPIRequest) SetMixNick(_mixNick string) error {
+	r._mixNick = _mixNick
+	r.Set("mix_nick", _mixNick)
+	return nil
+}
+
+// Get MixNick Getter
+func (r TmallFansArenaRecordAPIRequest) GetMixNick() string {
+	return r._mixNick
+}

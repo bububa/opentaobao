@@ -21,4 +21,62 @@ type AlibabaXiamiApiRadioSongsGetAPIRequest struct {
 	_limit int64
 }
 
-// New
+// NewAlibabaXiamiApiRadioSongsGetRequest 初始化AlibabaXiamiApiRadioSongsGetAPIRequest对象
+func NewAlibabaXiamiApiRadioSongsGetRequest() *AlibabaXiamiApiRadioSongsGetAPIRequest {
+	return &AlibabaXiamiApiRadioSongsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaXiamiApiRadioSongsGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.xiami.api.radio.songs.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaXiamiApiRadioSongsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Type Setter
+// 电台类型
+func (r *AlibabaXiamiApiRadioSongsGetAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r AlibabaXiamiApiRadioSongsGetAPIRequest) GetType() int64 {
+	return r._type
+}
+
+// Set is Oid Setter
+// 电台id
+func (r *AlibabaXiamiApiRadioSongsGetAPIRequest) SetOid(_oid int64) error {
+	r._oid = _oid
+	r.Set("oid", _oid)
+	return nil
+}
+
+// Get Oid Getter
+func (r AlibabaXiamiApiRadioSongsGetAPIRequest) GetOid() int64 {
+	return r._oid
+}
+
+// Set is Limit Setter
+// 歌曲个数, 不传为20
+func (r *AlibabaXiamiApiRadioSongsGetAPIRequest) SetLimit(_limit int64) error {
+	r._limit = _limit
+	r.Set("limit", _limit)
+	return nil
+}
+
+// Get Limit Getter
+func (r AlibabaXiamiApiRadioSongsGetAPIRequest) GetLimit() int64 {
+	return r._limit
+}

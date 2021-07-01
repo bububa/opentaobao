@@ -17,4 +17,36 @@ type AlibabaIdleConsignmentOrderGetAPIRequest struct {
 	_bizOrderId int64
 }
 
-// New
+// NewAlibabaIdleConsignmentOrderGetRequest 初始化AlibabaIdleConsignmentOrderGetAPIRequest对象
+func NewAlibabaIdleConsignmentOrderGetRequest() *AlibabaIdleConsignmentOrderGetAPIRequest {
+	return &AlibabaIdleConsignmentOrderGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleConsignmentOrderGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.consignment.order.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleConsignmentOrderGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BizOrderId Setter
+// 闲鱼订单ID
+func (r *AlibabaIdleConsignmentOrderGetAPIRequest) SetBizOrderId(_bizOrderId int64) error {
+	r._bizOrderId = _bizOrderId
+	r.Set("biz_order_id", _bizOrderId)
+	return nil
+}
+
+// Get BizOrderId Getter
+func (r AlibabaIdleConsignmentOrderGetAPIRequest) GetBizOrderId() int64 {
+	return r._bizOrderId
+}

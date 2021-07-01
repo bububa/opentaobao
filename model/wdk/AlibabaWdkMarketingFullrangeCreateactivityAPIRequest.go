@@ -17,4 +17,36 @@ type AlibabaWdkMarketingFullrangeCreateactivityAPIRequest struct {
 	_param *FullRangeActivity
 }
 
-// New
+// NewAlibabaWdkMarketingFullrangeCreateactivityRequest 初始化AlibabaWdkMarketingFullrangeCreateactivityAPIRequest对象
+func NewAlibabaWdkMarketingFullrangeCreateactivityRequest() *AlibabaWdkMarketingFullrangeCreateactivityAPIRequest {
+	return &AlibabaWdkMarketingFullrangeCreateactivityAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.marketing.fullrange.createactivity"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 创建活动请求入参
+func (r *AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) SetParam(_param *FullRangeActivity) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) GetParam() *FullRangeActivity {
+	return r._param
+}

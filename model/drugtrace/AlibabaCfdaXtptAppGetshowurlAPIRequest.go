@@ -17,4 +17,36 @@ type AlibabaCfdaXtptAppGetshowurlAPIRequest struct {
 	_code string
 }
 
-// New
+// NewAlibabaCfdaXtptAppGetshowurlRequest 初始化AlibabaCfdaXtptAppGetshowurlAPIRequest对象
+func NewAlibabaCfdaXtptAppGetshowurlRequest() *AlibabaCfdaXtptAppGetshowurlAPIRequest {
+	return &AlibabaCfdaXtptAppGetshowurlAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCfdaXtptAppGetshowurlAPIRequest) GetApiMethodName() string {
+	return "alibaba.cfda.xtpt.app.getshowurl"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCfdaXtptAppGetshowurlAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Code Setter
+// 码
+func (r *AlibabaCfdaXtptAppGetshowurlAPIRequest) SetCode(_code string) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// Get Code Getter
+func (r AlibabaCfdaXtptAppGetshowurlAPIRequest) GetCode() string {
+	return r._code
+}

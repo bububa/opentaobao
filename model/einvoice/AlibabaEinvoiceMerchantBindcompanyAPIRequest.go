@@ -29,4 +29,114 @@ type AlibabaEinvoiceMerchantBindcompanyAPIRequest struct {
 	_sourcePlatformCode string
 }
 
-// New
+// NewAlibabaEinvoiceMerchantBindcompanyRequest 初始化AlibabaEinvoiceMerchantBindcompanyAPIRequest对象
+func NewAlibabaEinvoiceMerchantBindcompanyRequest() *AlibabaEinvoiceMerchantBindcompanyAPIRequest {
+	return &AlibabaEinvoiceMerchantBindcompanyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.merchant.bindcompany"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OuterId Setter
+// 业务方发起首次绑定门店的唯一幂等ID, 由业务方生成。只能由字母和数字组成。
+func (r *AlibabaEinvoiceMerchantBindcompanyAPIRequest) SetOuterId(_outerId string) error {
+	r._outerId = _outerId
+	r.Set("outer_id", _outerId)
+	return nil
+}
+
+// Get OuterId Getter
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetOuterId() string {
+	return r._outerId
+}
+
+// Set is MerchantUserId Setter
+// 业务平台商户ID
+func (r *AlibabaEinvoiceMerchantBindcompanyAPIRequest) SetMerchantUserId(_merchantUserId string) error {
+	r._merchantUserId = _merchantUserId
+	r.Set("merchant_user_id", _merchantUserId)
+	return nil
+}
+
+// Get MerchantUserId Getter
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetMerchantUserId() string {
+	return r._merchantUserId
+}
+
+// Set is ActivationCode Setter
+// 激活码
+func (r *AlibabaEinvoiceMerchantBindcompanyAPIRequest) SetActivationCode(_activationCode string) error {
+	r._activationCode = _activationCode
+	r.Set("activation_code", _activationCode)
+	return nil
+}
+
+// Get ActivationCode Getter
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetActivationCode() string {
+	return r._activationCode
+}
+
+// Set is PlatformCode Setter
+// 业务平台code, 由阿里发票分配
+func (r *AlibabaEinvoiceMerchantBindcompanyAPIRequest) SetPlatformCode(_platformCode string) error {
+	r._platformCode = _platformCode
+	r.Set("platform_code", _platformCode)
+	return nil
+}
+
+// Get PlatformCode Getter
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetPlatformCode() string {
+	return r._platformCode
+}
+
+// Set is PayeeRegisterNo Setter
+// 税务登记号
+func (r *AlibabaEinvoiceMerchantBindcompanyAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+	r._payeeRegisterNo = _payeeRegisterNo
+	r.Set("payee_register_no", _payeeRegisterNo)
+	return nil
+}
+
+// Get PayeeRegisterNo Getter
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetPayeeRegisterNo() string {
+	return r._payeeRegisterNo
+}
+
+// Set is MerchantName Setter
+// 业务平台门店名称
+func (r *AlibabaEinvoiceMerchantBindcompanyAPIRequest) SetMerchantName(_merchantName string) error {
+	r._merchantName = _merchantName
+	r.Set("merchant_name", _merchantName)
+	return nil
+}
+
+// Get MerchantName Getter
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetMerchantName() string {
+	return r._merchantName
+}
+
+// Set is SourcePlatformCode Setter
+// 税号已入驻的原业务平台code
+func (r *AlibabaEinvoiceMerchantBindcompanyAPIRequest) SetSourcePlatformCode(_sourcePlatformCode string) error {
+	r._sourcePlatformCode = _sourcePlatformCode
+	r.Set("source_platform_code", _sourcePlatformCode)
+	return nil
+}
+
+// Get SourcePlatformCode Getter
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetSourcePlatformCode() string {
+	return r._sourcePlatformCode
+}

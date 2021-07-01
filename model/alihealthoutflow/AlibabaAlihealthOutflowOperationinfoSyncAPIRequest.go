@@ -17,4 +17,36 @@ type AlibabaAlihealthOutflowOperationinfoSyncAPIRequest struct {
 	_syncOperationInfoRequest *SyncOperationInfoRequest
 }
 
-// New
+// NewAlibabaAlihealthOutflowOperationinfoSyncRequest 初始化AlibabaAlihealthOutflowOperationinfoSyncAPIRequest对象
+func NewAlibabaAlihealthOutflowOperationinfoSyncRequest() *AlibabaAlihealthOutflowOperationinfoSyncAPIRequest {
+	return &AlibabaAlihealthOutflowOperationinfoSyncAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.outflow.operationinfo.sync"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SyncOperationInfoRequest Setter
+// 入参
+func (r *AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) SetSyncOperationInfoRequest(_syncOperationInfoRequest *SyncOperationInfoRequest) error {
+	r._syncOperationInfoRequest = _syncOperationInfoRequest
+	r.Set("sync_operation_info_request", _syncOperationInfoRequest)
+	return nil
+}
+
+// Get SyncOperationInfoRequest Getter
+func (r AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) GetSyncOperationInfoRequest() *SyncOperationInfoRequest {
+	return r._syncOperationInfoRequest
+}

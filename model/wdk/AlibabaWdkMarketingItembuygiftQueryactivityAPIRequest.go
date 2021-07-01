@@ -17,4 +17,36 @@ type AlibabaWdkMarketingItembuygiftQueryactivityAPIRequest struct {
 	_param *CommonActivityParam
 }
 
-// New
+// NewAlibabaWdkMarketingItembuygiftQueryactivityRequest 初始化AlibabaWdkMarketingItembuygiftQueryactivityAPIRequest对象
+func NewAlibabaWdkMarketingItembuygiftQueryactivityRequest() *AlibabaWdkMarketingItembuygiftQueryactivityAPIRequest {
+	return &AlibabaWdkMarketingItembuygiftQueryactivityAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMarketingItembuygiftQueryactivityAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.marketing.itembuygift.queryactivity"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMarketingItembuygiftQueryactivityAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 查询入参
+func (r *AlibabaWdkMarketingItembuygiftQueryactivityAPIRequest) SetParam(_param *CommonActivityParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaWdkMarketingItembuygiftQueryactivityAPIRequest) GetParam() *CommonActivityParam {
+	return r._param
+}

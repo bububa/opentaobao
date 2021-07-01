@@ -17,4 +17,36 @@ type TaobaoAlitripCarOrderRefundAPIRequest struct {
 	_paramOrderRefund *OrderRefund
 }
 
-// New
+// NewTaobaoAlitripCarOrderRefundRequest 初始化TaobaoAlitripCarOrderRefundAPIRequest对象
+func NewTaobaoAlitripCarOrderRefundRequest() *TaobaoAlitripCarOrderRefundAPIRequest {
+	return &TaobaoAlitripCarOrderRefundAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripCarOrderRefundAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.car.order.refund"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripCarOrderRefundAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamOrderRefund Setter
+// 退款对象
+func (r *TaobaoAlitripCarOrderRefundAPIRequest) SetParamOrderRefund(_paramOrderRefund *OrderRefund) error {
+	r._paramOrderRefund = _paramOrderRefund
+	r.Set("param_order_refund", _paramOrderRefund)
+	return nil
+}
+
+// Get ParamOrderRefund Getter
+func (r TaobaoAlitripCarOrderRefundAPIRequest) GetParamOrderRefund() *OrderRefund {
+	return r._paramOrderRefund
+}

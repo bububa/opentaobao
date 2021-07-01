@@ -19,4 +19,49 @@ type TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest struct {
 	_phone string
 }
 
-// New
+// NewTaobaoKoubeiTribeOpenVerifyCodeApplyRequest 初始化TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest对象
+func NewTaobaoKoubeiTribeOpenVerifyCodeApplyRequest() *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest {
+	return &TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) GetApiMethodName() string {
+	return "taobao.koubei.tribe.open.verify.code.apply"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DataSetId Setter
+// 数据集id
+func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) SetDataSetId(_dataSetId string) error {
+	r._dataSetId = _dataSetId
+	r.Set("data_set_id", _dataSetId)
+	return nil
+}
+
+// Get DataSetId Getter
+func (r TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) GetDataSetId() string {
+	return r._dataSetId
+}
+
+// Set is Phone Setter
+// 手机号
+func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) SetPhone(_phone string) error {
+	r._phone = _phone
+	r.Set("phone", _phone)
+	return nil
+}
+
+// Get Phone Getter
+func (r TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) GetPhone() string {
+	return r._phone
+}

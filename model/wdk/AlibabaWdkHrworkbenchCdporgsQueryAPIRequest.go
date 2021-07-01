@@ -15,4 +15,23 @@ type AlibabaWdkHrworkbenchCdporgsQueryAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaWdkHrworkbenchCdporgsQueryRequest 初始化AlibabaWdkHrworkbenchCdporgsQueryAPIRequest对象
+func NewAlibabaWdkHrworkbenchCdporgsQueryRequest() *AlibabaWdkHrworkbenchCdporgsQueryAPIRequest {
+	return &AlibabaWdkHrworkbenchCdporgsQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkHrworkbenchCdporgsQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.hrworkbench.cdporgs.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkHrworkbenchCdporgsQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

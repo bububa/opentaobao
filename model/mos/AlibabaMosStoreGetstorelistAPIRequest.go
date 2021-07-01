@@ -17,4 +17,36 @@ type AlibabaMosStoreGetstorelistAPIRequest struct {
 	_screenNo string
 }
 
-// New
+// NewAlibabaMosStoreGetstorelistRequest 初始化AlibabaMosStoreGetstorelistAPIRequest对象
+func NewAlibabaMosStoreGetstorelistRequest() *AlibabaMosStoreGetstorelistAPIRequest {
+	return &AlibabaMosStoreGetstorelistAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosStoreGetstorelistAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.store.getstorelist"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosStoreGetstorelistAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ScreenNo Setter
+// 屏编号
+func (r *AlibabaMosStoreGetstorelistAPIRequest) SetScreenNo(_screenNo string) error {
+	r._screenNo = _screenNo
+	r.Set("screen_no", _screenNo)
+	return nil
+}
+
+// Get ScreenNo Getter
+func (r AlibabaMosStoreGetstorelistAPIRequest) GetScreenNo() string {
+	return r._screenNo
+}

@@ -19,4 +19,49 @@ type TmallItemSizemappingTemplateCreateAPIRequest struct {
 	_templateContent string
 }
 
-// New
+// NewTmallItemSizemappingTemplateCreateRequest 初始化TmallItemSizemappingTemplateCreateAPIRequest对象
+func NewTmallItemSizemappingTemplateCreateRequest() *TmallItemSizemappingTemplateCreateAPIRequest {
+	return &TmallItemSizemappingTemplateCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallItemSizemappingTemplateCreateAPIRequest) GetApiMethodName() string {
+	return "tmall.item.sizemapping.template.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallItemSizemappingTemplateCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TemplateName Setter
+// 尺码表模板名称
+func (r *TmallItemSizemappingTemplateCreateAPIRequest) SetTemplateName(_templateName string) error {
+	r._templateName = _templateName
+	r.Set("template_name", _templateName)
+	return nil
+}
+
+// Get TemplateName Getter
+func (r TmallItemSizemappingTemplateCreateAPIRequest) GetTemplateName() string {
+	return r._templateName
+}
+
+// Set is TemplateContent Setter
+// 尺码表模板内容，格式为"尺码值:维度名称:数值,尺码值:维度名称:数值"。其中，数值的单位，长度单位为厘米（cm），体重单位为公斤（kg）。尺码值，维度数据不能包含数字，特殊字符。数值为0-999.9的数字，且最多一位小数。
+func (r *TmallItemSizemappingTemplateCreateAPIRequest) SetTemplateContent(_templateContent string) error {
+	r._templateContent = _templateContent
+	r.Set("template_content", _templateContent)
+	return nil
+}
+
+// Get TemplateContent Getter
+func (r TmallItemSizemappingTemplateCreateAPIRequest) GetTemplateContent() string {
+	return r._templateContent
+}

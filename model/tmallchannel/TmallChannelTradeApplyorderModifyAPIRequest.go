@@ -19,4 +19,49 @@ type TmallChannelTradeApplyorderModifyAPIRequest struct {
 	_applyOrderRelateItemModifyParamList []TopChannelApplyOrderRelateItemModifyParam
 }
 
-// New
+// NewTmallChannelTradeApplyorderModifyRequest 初始化TmallChannelTradeApplyorderModifyAPIRequest对象
+func NewTmallChannelTradeApplyorderModifyRequest() *TmallChannelTradeApplyorderModifyAPIRequest {
+	return &TmallChannelTradeApplyorderModifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallChannelTradeApplyorderModifyAPIRequest) GetApiMethodName() string {
+	return "tmall.channel.trade.applyorder.modify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallChannelTradeApplyorderModifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ChannelPurchaseApplyOrderNo Setter
+// 采购申请单号
+func (r *TmallChannelTradeApplyorderModifyAPIRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
+	r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
+	r.Set("channel_purchase_apply_order_no", _channelPurchaseApplyOrderNo)
+	return nil
+}
+
+// Get ChannelPurchaseApplyOrderNo Getter
+func (r TmallChannelTradeApplyorderModifyAPIRequest) GetChannelPurchaseApplyOrderNo() string {
+	return r._channelPurchaseApplyOrderNo
+}
+
+// Set is ApplyOrderRelateItemModifyParamList Setter
+// 修改关联的的宝贝信息
+func (r *TmallChannelTradeApplyorderModifyAPIRequest) SetApplyOrderRelateItemModifyParamList(_applyOrderRelateItemModifyParamList []TopChannelApplyOrderRelateItemModifyParam) error {
+	r._applyOrderRelateItemModifyParamList = _applyOrderRelateItemModifyParamList
+	r.Set("apply_order_relate_item_modify_param_list", _applyOrderRelateItemModifyParamList)
+	return nil
+}
+
+// Get ApplyOrderRelateItemModifyParamList Getter
+func (r TmallChannelTradeApplyorderModifyAPIRequest) GetApplyOrderRelateItemModifyParamList() []TopChannelApplyOrderRelateItemModifyParam {
+	return r._applyOrderRelateItemModifyParamList
+}

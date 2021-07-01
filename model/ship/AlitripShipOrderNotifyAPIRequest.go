@@ -17,4 +17,36 @@ type AlitripShipOrderNotifyAPIRequest struct {
 	_confirmBookRQ *ShipAgentConfirmBookRq
 }
 
-// New
+// NewAlitripShipOrderNotifyRequest 初始化AlitripShipOrderNotifyAPIRequest对象
+func NewAlitripShipOrderNotifyRequest() *AlitripShipOrderNotifyAPIRequest {
+	return &AlitripShipOrderNotifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripShipOrderNotifyAPIRequest) GetApiMethodName() string {
+	return "alitrip.ship.order.notify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripShipOrderNotifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ConfirmBookRQ Setter
+// 出票入参
+func (r *AlitripShipOrderNotifyAPIRequest) SetConfirmBookRQ(_confirmBookRQ *ShipAgentConfirmBookRq) error {
+	r._confirmBookRQ = _confirmBookRQ
+	r.Set("confirm_book_r_q", _confirmBookRQ)
+	return nil
+}
+
+// Get ConfirmBookRQ Getter
+func (r AlitripShipOrderNotifyAPIRequest) GetConfirmBookRQ() *ShipAgentConfirmBookRq {
+	return r._confirmBookRQ
+}

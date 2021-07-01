@@ -21,4 +21,62 @@ type TaobaoSimbaCampaignScheduleUpdateAPIRequest struct {
 	_nick string
 }
 
-// New
+// NewTaobaoSimbaCampaignScheduleUpdateRequest 初始化TaobaoSimbaCampaignScheduleUpdateAPIRequest对象
+func NewTaobaoSimbaCampaignScheduleUpdateRequest() *TaobaoSimbaCampaignScheduleUpdateAPIRequest {
+	return &TaobaoSimbaCampaignScheduleUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaCampaignScheduleUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.campaign.schedule.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaCampaignScheduleUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CampaignId Setter
+// 推广计划Id
+func (r *TaobaoSimbaCampaignScheduleUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// Get CampaignId Getter
+func (r TaobaoSimbaCampaignScheduleUpdateAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
+}
+
+// Set is Schedule Setter
+// 值为：“all”；或者用“;”分割的每天的设置字符串，该字符串为用“,”分割的时段折扣字符串，格式为：起始时间-结束时间:折扣，其中时间是24小时格式记录，折扣是1-150整数，表示折扣百分比；
+func (r *TaobaoSimbaCampaignScheduleUpdateAPIRequest) SetSchedule(_schedule string) error {
+	r._schedule = _schedule
+	r.Set("schedule", _schedule)
+	return nil
+}
+
+// Get Schedule Getter
+func (r TaobaoSimbaCampaignScheduleUpdateAPIRequest) GetSchedule() string {
+	return r._schedule
+}
+
+// Set is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaCampaignScheduleUpdateAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaCampaignScheduleUpdateAPIRequest) GetNick() string {
+	return r._nick
+}

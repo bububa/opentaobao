@@ -17,4 +17,36 @@ type AlibabaImapPvAutofillAPIRequest struct {
 	_topImapItemDo *TopImapItemDo
 }
 
-// New
+// NewAlibabaImapPvAutofillRequest 初始化AlibabaImapPvAutofillAPIRequest对象
+func NewAlibabaImapPvAutofillRequest() *AlibabaImapPvAutofillAPIRequest {
+	return &AlibabaImapPvAutofillAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaImapPvAutofillAPIRequest) GetApiMethodName() string {
+	return "alibaba.imap.pv.autofill"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaImapPvAutofillAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TopImapItemDo Setter
+// 系统入参
+func (r *AlibabaImapPvAutofillAPIRequest) SetTopImapItemDo(_topImapItemDo *TopImapItemDo) error {
+	r._topImapItemDo = _topImapItemDo
+	r.Set("top_imap_item_do", _topImapItemDo)
+	return nil
+}
+
+// Get TopImapItemDo Getter
+func (r AlibabaImapPvAutofillAPIRequest) GetTopImapItemDo() *TopImapItemDo {
+	return r._topImapItemDo
+}

@@ -20,4 +20,36 @@ type TaobaoWangwangEserviceChatrelationGetAPIRequest struct {
 	_chatRelationRequest *ChatRelationRequest
 }
 
-// New
+// NewTaobaoWangwangEserviceChatrelationGetRequest 初始化TaobaoWangwangEserviceChatrelationGetAPIRequest对象
+func NewTaobaoWangwangEserviceChatrelationGetRequest() *TaobaoWangwangEserviceChatrelationGetAPIRequest {
+	return &TaobaoWangwangEserviceChatrelationGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWangwangEserviceChatrelationGetAPIRequest) GetApiMethodName() string {
+	return "taobao.wangwang.eservice.chatrelation.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWangwangEserviceChatrelationGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ChatRelationRequest Setter
+// 请求参数
+func (r *TaobaoWangwangEserviceChatrelationGetAPIRequest) SetChatRelationRequest(_chatRelationRequest *ChatRelationRequest) error {
+	r._chatRelationRequest = _chatRelationRequest
+	r.Set("chat_relation_request", _chatRelationRequest)
+	return nil
+}
+
+// Get ChatRelationRequest Getter
+func (r TaobaoWangwangEserviceChatrelationGetAPIRequest) GetChatRelationRequest() *ChatRelationRequest {
+	return r._chatRelationRequest
+}

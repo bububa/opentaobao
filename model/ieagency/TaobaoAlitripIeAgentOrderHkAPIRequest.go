@@ -19,4 +19,49 @@ type TaobaoAlitripIeAgentOrderHkAPIRequest struct {
 	_writeBackPnrVO *IeWriteBackPnrVO
 }
 
-// New
+// NewTaobaoAlitripIeAgentOrderHkRequest 初始化TaobaoAlitripIeAgentOrderHkAPIRequest对象
+func NewTaobaoAlitripIeAgentOrderHkRequest() *TaobaoAlitripIeAgentOrderHkAPIRequest {
+	return &TaobaoAlitripIeAgentOrderHkAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripIeAgentOrderHkAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.ie.agent.order.hk"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripIeAgentOrderHkAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AgentId Setter
+// 代理商ID
+func (r *TaobaoAlitripIeAgentOrderHkAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// Get AgentId Getter
+func (r TaobaoAlitripIeAgentOrderHkAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}
+
+// Set is WriteBackPnrVO Setter
+// 回填pnr信息
+func (r *TaobaoAlitripIeAgentOrderHkAPIRequest) SetWriteBackPnrVO(_writeBackPnrVO *IeWriteBackPnrVO) error {
+	r._writeBackPnrVO = _writeBackPnrVO
+	r.Set("write_back_pnr_v_o", _writeBackPnrVO)
+	return nil
+}
+
+// Get WriteBackPnrVO Getter
+func (r TaobaoAlitripIeAgentOrderHkAPIRequest) GetWriteBackPnrVO() *IeWriteBackPnrVO {
+	return r._writeBackPnrVO
+}

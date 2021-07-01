@@ -17,4 +17,36 @@ type AlibabaWdkItemCategoryUpdateAPIRequest struct {
 	_bean *UpdateCategoryRequestBean
 }
 
-// New
+// NewAlibabaWdkItemCategoryUpdateRequest 初始化AlibabaWdkItemCategoryUpdateAPIRequest对象
+func NewAlibabaWdkItemCategoryUpdateRequest() *AlibabaWdkItemCategoryUpdateAPIRequest {
+	return &AlibabaWdkItemCategoryUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkItemCategoryUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.item.category.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkItemCategoryUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Bean Setter
+// 入参
+func (r *AlibabaWdkItemCategoryUpdateAPIRequest) SetBean(_bean *UpdateCategoryRequestBean) error {
+	r._bean = _bean
+	r.Set("bean", _bean)
+	return nil
+}
+
+// Get Bean Getter
+func (r AlibabaWdkItemCategoryUpdateAPIRequest) GetBean() *UpdateCategoryRequestBean {
+	return r._bean
+}

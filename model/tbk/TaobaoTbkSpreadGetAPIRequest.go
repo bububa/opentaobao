@@ -18,4 +18,36 @@ type TaobaoTbkSpreadGetAPIRequest struct {
 	_requests []TbkSpreadRequest
 }
 
-// New
+// NewTaobaoTbkSpreadGetRequest 初始化TaobaoTbkSpreadGetAPIRequest对象
+func NewTaobaoTbkSpreadGetRequest() *TaobaoTbkSpreadGetAPIRequest {
+	return &TaobaoTbkSpreadGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTbkSpreadGetAPIRequest) GetApiMethodName() string {
+	return "taobao.tbk.spread.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTbkSpreadGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Requests Setter
+// 请求列表，内部包含多个url
+func (r *TaobaoTbkSpreadGetAPIRequest) SetRequests(_requests []TbkSpreadRequest) error {
+	r._requests = _requests
+	r.Set("requests", _requests)
+	return nil
+}
+
+// Get Requests Getter
+func (r TaobaoTbkSpreadGetAPIRequest) GetRequests() []TbkSpreadRequest {
+	return r._requests
+}

@@ -21,4 +21,62 @@ type TaobaoCrmGrademktMemberQueryAPIRequest struct {
 	_buyerNick string
 }
 
-// New
+// NewTaobaoCrmGrademktMemberQueryRequest 初始化TaobaoCrmGrademktMemberQueryAPIRequest对象
+func NewTaobaoCrmGrademktMemberQueryRequest() *TaobaoCrmGrademktMemberQueryAPIRequest {
+	return &TaobaoCrmGrademktMemberQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCrmGrademktMemberQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.crm.grademkt.member.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCrmGrademktMemberQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Parameter Setter
+// 会员属性-json format生成方法见http://open.taobao.com/doc/detail.htm?id=101281
+func (r *TaobaoCrmGrademktMemberQueryAPIRequest) SetParameter(_parameter string) error {
+	r._parameter = _parameter
+	r.Set("parameter", _parameter)
+	return nil
+}
+
+// Get Parameter Getter
+func (r TaobaoCrmGrademktMemberQueryAPIRequest) GetParameter() string {
+	return r._parameter
+}
+
+// Set is Feather Setter
+// 系统属性，json格式
+func (r *TaobaoCrmGrademktMemberQueryAPIRequest) SetFeather(_feather string) error {
+	r._feather = _feather
+	r.Set("feather", _feather)
+	return nil
+}
+
+// Get Feather Getter
+func (r TaobaoCrmGrademktMemberQueryAPIRequest) GetFeather() string {
+	return r._feather
+}
+
+// Set is BuyerNick Setter
+// 会员nick
+func (r *TaobaoCrmGrademktMemberQueryAPIRequest) SetBuyerNick(_buyerNick string) error {
+	r._buyerNick = _buyerNick
+	r.Set("buyer_nick", _buyerNick)
+	return nil
+}
+
+// Get BuyerNick Getter
+func (r TaobaoCrmGrademktMemberQueryAPIRequest) GetBuyerNick() string {
+	return r._buyerNick
+}

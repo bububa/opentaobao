@@ -17,4 +17,36 @@ type TmallInventoryQueryForstoreAPIRequest struct {
 	_paramList []InventoryQueryForStoreRequest
 }
 
-// New
+// NewTmallInventoryQueryForstoreRequest 初始化TmallInventoryQueryForstoreAPIRequest对象
+func NewTmallInventoryQueryForstoreRequest() *TmallInventoryQueryForstoreAPIRequest {
+	return &TmallInventoryQueryForstoreAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallInventoryQueryForstoreAPIRequest) GetApiMethodName() string {
+	return "tmall.inventory.query.forstore"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallInventoryQueryForstoreAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamList Setter
+// 查询列表
+func (r *TmallInventoryQueryForstoreAPIRequest) SetParamList(_paramList []InventoryQueryForStoreRequest) error {
+	r._paramList = _paramList
+	r.Set("param_list", _paramList)
+	return nil
+}
+
+// Get ParamList Getter
+func (r TmallInventoryQueryForstoreAPIRequest) GetParamList() []InventoryQueryForStoreRequest {
+	return r._paramList
+}

@@ -17,4 +17,36 @@ type AliexpressFeedPostPublishAPIRequest struct {
 	_offsitePublishPostEntity *OffsitePublishPostEntity
 }
 
-// New
+// NewAliexpressFeedPostPublishRequest 初始化AliexpressFeedPostPublishAPIRequest对象
+func NewAliexpressFeedPostPublishRequest() *AliexpressFeedPostPublishAPIRequest {
+	return &AliexpressFeedPostPublishAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressFeedPostPublishAPIRequest) GetApiMethodName() string {
+	return "aliexpress.feed.post.publish"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressFeedPostPublishAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OffsitePublishPostEntity Setter
+// 站外导入内容请求参数
+func (r *AliexpressFeedPostPublishAPIRequest) SetOffsitePublishPostEntity(_offsitePublishPostEntity *OffsitePublishPostEntity) error {
+	r._offsitePublishPostEntity = _offsitePublishPostEntity
+	r.Set("offsite_publish_post_entity", _offsitePublishPostEntity)
+	return nil
+}
+
+// Get OffsitePublishPostEntity Getter
+func (r AliexpressFeedPostPublishAPIRequest) GetOffsitePublishPostEntity() *OffsitePublishPostEntity {
+	return r._offsitePublishPostEntity
+}

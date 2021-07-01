@@ -17,4 +17,36 @@ type AlibabaInteractSensorUiAPIRequest struct {
 	_unNamed string
 }
 
-// New
+// NewAlibabaInteractSensorUiRequest 初始化AlibabaInteractSensorUiAPIRequest对象
+func NewAlibabaInteractSensorUiRequest() *AlibabaInteractSensorUiAPIRequest {
+	return &AlibabaInteractSensorUiAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractSensorUiAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.sensor.ui"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractSensorUiAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UnNamed Setter
+// 仅作客户端鉴权使用，不会发送接收请求
+func (r *AlibabaInteractSensorUiAPIRequest) SetUnNamed(_unNamed string) error {
+	r._unNamed = _unNamed
+	r.Set("un_named", _unNamed)
+	return nil
+}
+
+// Get UnNamed Getter
+func (r AlibabaInteractSensorUiAPIRequest) GetUnNamed() string {
+	return r._unNamed
+}

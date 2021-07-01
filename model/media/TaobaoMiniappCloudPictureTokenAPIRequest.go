@@ -24,4 +24,36 @@ type TaobaoMiniappCloudPictureTokenAPIRequest struct {
 	_generateTokenRequest *GenerateTokenRequest
 }
 
-// New
+// NewTaobaoMiniappCloudPictureTokenRequest 初始化TaobaoMiniappCloudPictureTokenAPIRequest对象
+func NewTaobaoMiniappCloudPictureTokenRequest() *TaobaoMiniappCloudPictureTokenAPIRequest {
+	return &TaobaoMiniappCloudPictureTokenAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetApiMethodName() string {
+	return "taobao.miniapp.cloud.picture.token"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is GenerateTokenRequest Setter
+// 请求参数
+func (r *TaobaoMiniappCloudPictureTokenAPIRequest) SetGenerateTokenRequest(_generateTokenRequest *GenerateTokenRequest) error {
+	r._generateTokenRequest = _generateTokenRequest
+	r.Set("generate_token_request", _generateTokenRequest)
+	return nil
+}
+
+// Get GenerateTokenRequest Getter
+func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetGenerateTokenRequest() *GenerateTokenRequest {
+	return r._generateTokenRequest
+}

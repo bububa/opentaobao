@@ -17,4 +17,36 @@ type TaobaoTbkDgVegasTljInstanceReportAPIRequest struct {
 	_rightsId string
 }
 
-// New
+// NewTaobaoTbkDgVegasTljInstanceReportRequest 初始化TaobaoTbkDgVegasTljInstanceReportAPIRequest对象
+func NewTaobaoTbkDgVegasTljInstanceReportRequest() *TaobaoTbkDgVegasTljInstanceReportAPIRequest {
+	return &TaobaoTbkDgVegasTljInstanceReportAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTbkDgVegasTljInstanceReportAPIRequest) GetApiMethodName() string {
+	return "taobao.tbk.dg.vegas.tlj.instance.report"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTbkDgVegasTljInstanceReportAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RightsId Setter
+// 实例ID
+func (r *TaobaoTbkDgVegasTljInstanceReportAPIRequest) SetRightsId(_rightsId string) error {
+	r._rightsId = _rightsId
+	r.Set("rights_id", _rightsId)
+	return nil
+}
+
+// Get RightsId Getter
+func (r TaobaoTbkDgVegasTljInstanceReportAPIRequest) GetRightsId() string {
+	return r._rightsId
+}

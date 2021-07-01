@@ -17,4 +17,36 @@ type AlibabaDamaiMaitixDistributionExchangepointQueryAPIRequest struct {
 	_projectId int64
 }
 
-// New
+// NewAlibabaDamaiMaitixDistributionExchangepointQueryRequest 初始化AlibabaDamaiMaitixDistributionExchangepointQueryAPIRequest对象
+func NewAlibabaDamaiMaitixDistributionExchangepointQueryRequest() *AlibabaDamaiMaitixDistributionExchangepointQueryAPIRequest {
+	return &AlibabaDamaiMaitixDistributionExchangepointQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiMaitixDistributionExchangepointQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.maitix.distribution.exchangepoint.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiMaitixDistributionExchangepointQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ProjectId Setter
+// 必填-项目id
+func (r *AlibabaDamaiMaitixDistributionExchangepointQueryAPIRequest) SetProjectId(_projectId int64) error {
+	r._projectId = _projectId
+	r.Set("project_id", _projectId)
+	return nil
+}
+
+// Get ProjectId Getter
+func (r AlibabaDamaiMaitixDistributionExchangepointQueryAPIRequest) GetProjectId() int64 {
+	return r._projectId
+}

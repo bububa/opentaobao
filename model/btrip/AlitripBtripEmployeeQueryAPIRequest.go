@@ -17,4 +17,36 @@ type AlitripBtripEmployeeQueryAPIRequest struct {
 	_paramOpenEmployeeQueryRequest *OpenEmployeeQueryRequest
 }
 
-// New
+// NewAlitripBtripEmployeeQueryRequest 初始化AlitripBtripEmployeeQueryAPIRequest对象
+func NewAlitripBtripEmployeeQueryRequest() *AlitripBtripEmployeeQueryAPIRequest {
+	return &AlitripBtripEmployeeQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripEmployeeQueryAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.employee.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripEmployeeQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamOpenEmployeeQueryRequest Setter
+// 入参对象。
+func (r *AlitripBtripEmployeeQueryAPIRequest) SetParamOpenEmployeeQueryRequest(_paramOpenEmployeeQueryRequest *OpenEmployeeQueryRequest) error {
+	r._paramOpenEmployeeQueryRequest = _paramOpenEmployeeQueryRequest
+	r.Set("param_open_employee_query_request", _paramOpenEmployeeQueryRequest)
+	return nil
+}
+
+// Get ParamOpenEmployeeQueryRequest Getter
+func (r AlitripBtripEmployeeQueryAPIRequest) GetParamOpenEmployeeQueryRequest() *OpenEmployeeQueryRequest {
+	return r._paramOpenEmployeeQueryRequest
+}

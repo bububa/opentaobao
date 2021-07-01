@@ -17,4 +17,36 @@ type AlibabaAlscMerchantExtTicketcodeUseAPIRequest struct {
 	_useRequest *ExternalTicketUseRequest
 }
 
-// New
+// NewAlibabaAlscMerchantExtTicketcodeUseRequest 初始化AlibabaAlscMerchantExtTicketcodeUseAPIRequest对象
+func NewAlibabaAlscMerchantExtTicketcodeUseRequest() *AlibabaAlscMerchantExtTicketcodeUseAPIRequest {
+	return &AlibabaAlscMerchantExtTicketcodeUseAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscMerchantExtTicketcodeUseAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.merchant.ext.ticketcode.use"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscMerchantExtTicketcodeUseAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UseRequest Setter
+// 外部券使用请求
+func (r *AlibabaAlscMerchantExtTicketcodeUseAPIRequest) SetUseRequest(_useRequest *ExternalTicketUseRequest) error {
+	r._useRequest = _useRequest
+	r.Set("use_request", _useRequest)
+	return nil
+}
+
+// Get UseRequest Getter
+func (r AlibabaAlscMerchantExtTicketcodeUseAPIRequest) GetUseRequest() *ExternalTicketUseRequest {
+	return r._useRequest
+}

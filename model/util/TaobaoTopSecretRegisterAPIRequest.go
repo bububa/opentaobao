@@ -17,4 +17,36 @@ type TaobaoTopSecretRegisterAPIRequest struct {
 	_userId int64
 }
 
-// New
+// NewTaobaoTopSecretRegisterRequest 初始化TaobaoTopSecretRegisterAPIRequest对象
+func NewTaobaoTopSecretRegisterRequest() *TaobaoTopSecretRegisterAPIRequest {
+	return &TaobaoTopSecretRegisterAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTopSecretRegisterAPIRequest) GetApiMethodName() string {
+	return "taobao.top.secret.register"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTopSecretRegisterAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UserId Setter
+// 用户id，保证唯一
+func (r *TaobaoTopSecretRegisterAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r TaobaoTopSecretRegisterAPIRequest) GetUserId() int64 {
+	return r._userId
+}

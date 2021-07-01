@@ -17,4 +17,36 @@ type TmallCarcenterVehicleChasisInsertAPIRequest struct {
 	_dto *ChasisVehicleInfoOriginalDto
 }
 
-// New
+// NewTmallCarcenterVehicleChasisInsertRequest 初始化TmallCarcenterVehicleChasisInsertAPIRequest对象
+func NewTmallCarcenterVehicleChasisInsertRequest() *TmallCarcenterVehicleChasisInsertAPIRequest {
+	return &TmallCarcenterVehicleChasisInsertAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallCarcenterVehicleChasisInsertAPIRequest) GetApiMethodName() string {
+	return "tmall.carcenter.vehicle.chasis.insert"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallCarcenterVehicleChasisInsertAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Dto Setter
+// 底盘压缩库入参
+func (r *TmallCarcenterVehicleChasisInsertAPIRequest) SetDto(_dto *ChasisVehicleInfoOriginalDto) error {
+	r._dto = _dto
+	r.Set("dto", _dto)
+	return nil
+}
+
+// Get Dto Getter
+func (r TmallCarcenterVehicleChasisInsertAPIRequest) GetDto() *ChasisVehicleInfoOriginalDto {
+	return r._dto
+}

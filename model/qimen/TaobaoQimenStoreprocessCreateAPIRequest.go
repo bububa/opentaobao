@@ -17,4 +17,36 @@ type TaobaoQimenStoreprocessCreateAPIRequest struct {
 	_request *StoreProcessCreateRequest
 }
 
-// New
+// NewTaobaoQimenStoreprocessCreateRequest 初始化TaobaoQimenStoreprocessCreateAPIRequest对象
+func NewTaobaoQimenStoreprocessCreateRequest() *TaobaoQimenStoreprocessCreateAPIRequest {
+	return &TaobaoQimenStoreprocessCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenStoreprocessCreateAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.storeprocess.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenStoreprocessCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenStoreprocessCreateAPIRequest) SetRequest(_request *StoreProcessCreateRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenStoreprocessCreateAPIRequest) GetRequest() *StoreProcessCreateRequest {
+	return r._request
+}

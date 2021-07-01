@@ -17,4 +17,36 @@ type TaobaoTbkDgPunishOrderGetAPIRequest struct {
 	_afOrderOption *TopApiAfOrderOption
 }
 
-// New
+// NewTaobaoTbkDgPunishOrderGetRequest 初始化TaobaoTbkDgPunishOrderGetAPIRequest对象
+func NewTaobaoTbkDgPunishOrderGetRequest() *TaobaoTbkDgPunishOrderGetAPIRequest {
+	return &TaobaoTbkDgPunishOrderGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTbkDgPunishOrderGetAPIRequest) GetApiMethodName() string {
+	return "taobao.tbk.dg.punish.order.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTbkDgPunishOrderGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AfOrderOption Setter
+// 入参的对象
+func (r *TaobaoTbkDgPunishOrderGetAPIRequest) SetAfOrderOption(_afOrderOption *TopApiAfOrderOption) error {
+	r._afOrderOption = _afOrderOption
+	r.Set("af_order_option", _afOrderOption)
+	return nil
+}
+
+// Get AfOrderOption Getter
+func (r TaobaoTbkDgPunishOrderGetAPIRequest) GetAfOrderOption() *TopApiAfOrderOption {
+	return r._afOrderOption
+}

@@ -19,4 +19,49 @@ type TaobaoUmpDetailAddAPIRequest struct {
 	_content string
 }
 
-// New
+// NewTaobaoUmpDetailAddRequest 初始化TaobaoUmpDetailAddAPIRequest对象
+func NewTaobaoUmpDetailAddRequest() *TaobaoUmpDetailAddAPIRequest {
+	return &TaobaoUmpDetailAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpDetailAddAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.detail.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpDetailAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ActId Setter
+// 增加工具详情
+func (r *TaobaoUmpDetailAddAPIRequest) SetActId(_actId int64) error {
+	r._actId = _actId
+	r.Set("act_id", _actId)
+	return nil
+}
+
+// Get ActId Getter
+func (r TaobaoUmpDetailAddAPIRequest) GetActId() int64 {
+	return r._actId
+}
+
+// Set is Content Setter
+// 活动详情内容，json格式，可以通过ump sdk中的MarketingTool来进行处理
+func (r *TaobaoUmpDetailAddAPIRequest) SetContent(_content string) error {
+	r._content = _content
+	r.Set("content", _content)
+	return nil
+}
+
+// Get Content Getter
+func (r TaobaoUmpDetailAddAPIRequest) GetContent() string {
+	return r._content
+}

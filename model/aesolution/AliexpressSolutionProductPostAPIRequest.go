@@ -17,4 +17,36 @@ type AliexpressSolutionProductPostAPIRequest struct {
 	_postProductRequest *PostProductRequestDto
 }
 
-// New
+// NewAliexpressSolutionProductPostRequest 初始化AliexpressSolutionProductPostAPIRequest对象
+func NewAliexpressSolutionProductPostRequest() *AliexpressSolutionProductPostAPIRequest {
+	return &AliexpressSolutionProductPostAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressSolutionProductPostAPIRequest) GetApiMethodName() string {
+	return "aliexpress.solution.product.post"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressSolutionProductPostAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PostProductRequest Setter
+// input param
+func (r *AliexpressSolutionProductPostAPIRequest) SetPostProductRequest(_postProductRequest *PostProductRequestDto) error {
+	r._postProductRequest = _postProductRequest
+	r.Set("post_product_request", _postProductRequest)
+	return nil
+}
+
+// Get PostProductRequest Getter
+func (r AliexpressSolutionProductPostAPIRequest) GetPostProductRequest() *PostProductRequestDto {
+	return r._postProductRequest
+}

@@ -17,4 +17,36 @@ type TaobaoUmpToolGetAPIRequest struct {
 	_toolId int64
 }
 
-// New
+// NewTaobaoUmpToolGetRequest 初始化TaobaoUmpToolGetAPIRequest对象
+func NewTaobaoUmpToolGetRequest() *TaobaoUmpToolGetAPIRequest {
+	return &TaobaoUmpToolGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpToolGetAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.tool.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpToolGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ToolId Setter
+// 工具的id
+func (r *TaobaoUmpToolGetAPIRequest) SetToolId(_toolId int64) error {
+	r._toolId = _toolId
+	r.Set("tool_id", _toolId)
+	return nil
+}
+
+// Get ToolId Getter
+func (r TaobaoUmpToolGetAPIRequest) GetToolId() int64 {
+	return r._toolId
+}

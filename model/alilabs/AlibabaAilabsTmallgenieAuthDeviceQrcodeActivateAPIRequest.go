@@ -23,4 +23,75 @@ type AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest struct {
 	_extInfo string
 }
 
-// New
+// NewAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateRequest 初始化AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest对象
+func NewAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateRequest() *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest {
+	return &AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetApiMethodName() string {
+	return "alibaba.ailabs.tmallgenie.auth.device.qrcode.activate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Code Setter
+// OAUTH authcode码
+func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetCode(_code string) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// Get Code Getter
+func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetCode() string {
+	return r._code
+}
+
+// Set is ClientId Setter
+// 产品终端ID
+func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetClientId(_clientId string) error {
+	r._clientId = _clientId
+	r.Set("client_id", _clientId)
+	return nil
+}
+
+// Get ClientId Getter
+func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetClientId() string {
+	return r._clientId
+}
+
+// Set is TaobaoUserOpenid Setter
+// 淘宝授权ID
+func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetTaobaoUserOpenid(_taobaoUserOpenid string) error {
+	r._taobaoUserOpenid = _taobaoUserOpenid
+	r.Set("taobao_user_openid", _taobaoUserOpenid)
+	return nil
+}
+
+// Get TaobaoUserOpenid Getter
+func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetTaobaoUserOpenid() string {
+	return r._taobaoUserOpenid
+}
+
+// Set is ExtInfo Setter
+// 扩展数据
+func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetExtInfo(_extInfo string) error {
+	r._extInfo = _extInfo
+	r.Set("ext_info", _extInfo)
+	return nil
+}
+
+// Get ExtInfo Getter
+func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetExtInfo() string {
+	return r._extInfo
+}

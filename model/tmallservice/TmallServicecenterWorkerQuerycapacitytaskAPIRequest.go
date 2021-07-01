@@ -17,4 +17,36 @@ type TmallServicecenterWorkerQuerycapacitytaskAPIRequest struct {
 	_query *CapacityTaskQueryDto
 }
 
-// New
+// NewTmallServicecenterWorkerQuerycapacitytaskRequest 初始化TmallServicecenterWorkerQuerycapacitytaskAPIRequest对象
+func NewTmallServicecenterWorkerQuerycapacitytaskRequest() *TmallServicecenterWorkerQuerycapacitytaskAPIRequest {
+	return &TmallServicecenterWorkerQuerycapacitytaskAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterWorkerQuerycapacitytaskAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.worker.querycapacitytask"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterWorkerQuerycapacitytaskAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 查询对象
+func (r *TmallServicecenterWorkerQuerycapacitytaskAPIRequest) SetQuery(_query *CapacityTaskQueryDto) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r TmallServicecenterWorkerQuerycapacitytaskAPIRequest) GetQuery() *CapacityTaskQueryDto {
+	return r._query
+}

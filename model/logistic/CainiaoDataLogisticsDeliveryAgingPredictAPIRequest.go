@@ -37,4 +37,140 @@ type CainiaoDataLogisticsDeliveryAgingPredictAPIRequest struct {
 	_recTownName string
 }
 
-// New
+// NewCainiaoDataLogisticsDeliveryAgingPredictRequest 初始化CainiaoDataLogisticsDeliveryAgingPredictAPIRequest对象
+func NewCainiaoDataLogisticsDeliveryAgingPredictRequest() *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest {
+	return &CainiaoDataLogisticsDeliveryAgingPredictAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetApiMethodName() string {
+	return "cainiao.data.logistics.delivery.aging.predict"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SendCityName Setter
+// 发货城市
+func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendCityName(_sendCityName string) error {
+	r._sendCityName = _sendCityName
+	r.Set("send_city_name", _sendCityName)
+	return nil
+}
+
+// Get SendCityName Getter
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetSendCityName() string {
+	return r._sendCityName
+}
+
+// Set is SendCountyName Setter
+// 发货区
+func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendCountyName(_sendCountyName string) error {
+	r._sendCountyName = _sendCountyName
+	r.Set("send_county_name", _sendCountyName)
+	return nil
+}
+
+// Get SendCountyName Getter
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetSendCountyName() string {
+	return r._sendCountyName
+}
+
+// Set is SendAddr Setter
+// 发货详细地址
+func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendAddr(_sendAddr string) error {
+	r._sendAddr = _sendAddr
+	r.Set("send_addr", _sendAddr)
+	return nil
+}
+
+// Get SendAddr Getter
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetSendAddr() string {
+	return r._sendAddr
+}
+
+// Set is SendProvName Setter
+// 发货省
+func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendProvName(_sendProvName string) error {
+	r._sendProvName = _sendProvName
+	r.Set("send_prov_name", _sendProvName)
+	return nil
+}
+
+// Get SendProvName Getter
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetSendProvName() string {
+	return r._sendProvName
+}
+
+// Set is RecCityName Setter
+// 收货市
+func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecCityName(_recCityName string) error {
+	r._recCityName = _recCityName
+	r.Set("rec_city_name", _recCityName)
+	return nil
+}
+
+// Get RecCityName Getter
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecCityName() string {
+	return r._recCityName
+}
+
+// Set is RecAddr Setter
+// 收货详细地址
+func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecAddr(_recAddr string) error {
+	r._recAddr = _recAddr
+	r.Set("rec_addr", _recAddr)
+	return nil
+}
+
+// Get RecAddr Getter
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecAddr() string {
+	return r._recAddr
+}
+
+// Set is RecCountyName Setter
+// 收货区
+func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecCountyName(_recCountyName string) error {
+	r._recCountyName = _recCountyName
+	r.Set("rec_county_name", _recCountyName)
+	return nil
+}
+
+// Get RecCountyName Getter
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecCountyName() string {
+	return r._recCountyName
+}
+
+// Set is RecProvName Setter
+// 收货省
+func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecProvName(_recProvName string) error {
+	r._recProvName = _recProvName
+	r.Set("rec_prov_name", _recProvName)
+	return nil
+}
+
+// Get RecProvName Getter
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecProvName() string {
+	return r._recProvName
+}
+
+// Set is RecTownName Setter
+// 收货街道
+func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecTownName(_recTownName string) error {
+	r._recTownName = _recTownName
+	r.Set("rec_town_name", _recTownName)
+	return nil
+}
+
+// Get RecTownName Getter
+func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecTownName() string {
+	return r._recTownName
+}

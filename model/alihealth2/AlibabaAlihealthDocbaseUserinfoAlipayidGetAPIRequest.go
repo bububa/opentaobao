@@ -19,4 +19,49 @@ type AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest struct {
 	_appChannel string
 }
 
-// New
+// NewAlibabaAlihealthDocbaseUserinfoAlipayidGetRequest 初始化AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest对象
+func NewAlibabaAlihealthDocbaseUserinfoAlipayidGetRequest() *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest {
+	return &AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.docbase.userinfo.alipayid.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AlihealthUserId Setter
+// 阿里健康ID
+func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) SetAlihealthUserId(_alihealthUserId string) error {
+	r._alihealthUserId = _alihealthUserId
+	r.Set("alihealth_user_id", _alihealthUserId)
+	return nil
+}
+
+// Get AlihealthUserId Getter
+func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) GetAlihealthUserId() string {
+	return r._alihealthUserId
+}
+
+// Set is AppChannel Setter
+// 渠道alipay taobao uc gaode
+func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) SetAppChannel(_appChannel string) error {
+	r._appChannel = _appChannel
+	r.Set("app_channel", _appChannel)
+	return nil
+}
+
+// Get AppChannel Getter
+func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) GetAppChannel() string {
+	return r._appChannel
+}

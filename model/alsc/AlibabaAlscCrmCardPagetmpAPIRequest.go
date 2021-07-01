@@ -20,4 +20,36 @@ type AlibabaAlscCrmCardPagetmpAPIRequest struct {
 	_paramPullCardTemplateOpenReq *PullCardTemplateOpenReq
 }
 
-// New
+// NewAlibabaAlscCrmCardPagetmpRequest 初始化AlibabaAlscCrmCardPagetmpAPIRequest对象
+func NewAlibabaAlscCrmCardPagetmpRequest() *AlibabaAlscCrmCardPagetmpAPIRequest {
+	return &AlibabaAlscCrmCardPagetmpAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmCardPagetmpAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.card.pagetmp"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmCardPagetmpAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamPullCardTemplateOpenReq Setter
+// 请求结果
+func (r *AlibabaAlscCrmCardPagetmpAPIRequest) SetParamPullCardTemplateOpenReq(_paramPullCardTemplateOpenReq *PullCardTemplateOpenReq) error {
+	r._paramPullCardTemplateOpenReq = _paramPullCardTemplateOpenReq
+	r.Set("param_pull_card_template_open_req", _paramPullCardTemplateOpenReq)
+	return nil
+}
+
+// Get ParamPullCardTemplateOpenReq Getter
+func (r AlibabaAlscCrmCardPagetmpAPIRequest) GetParamPullCardTemplateOpenReq() *PullCardTemplateOpenReq {
+	return r._paramPullCardTemplateOpenReq
+}

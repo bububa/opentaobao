@@ -17,4 +17,36 @@ type AlibabaDamaiMevOpenDeletestandAPIRequest struct {
 	_deleteStandParam *StandIdOpenParam
 }
 
-// New
+// NewAlibabaDamaiMevOpenDeletestandRequest 初始化AlibabaDamaiMevOpenDeletestandAPIRequest对象
+func NewAlibabaDamaiMevOpenDeletestandRequest() *AlibabaDamaiMevOpenDeletestandAPIRequest {
+	return &AlibabaDamaiMevOpenDeletestandAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiMevOpenDeletestandAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.mev.open.deletestand"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiMevOpenDeletestandAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DeleteStandParam Setter
+// 入参deleteStandParam
+func (r *AlibabaDamaiMevOpenDeletestandAPIRequest) SetDeleteStandParam(_deleteStandParam *StandIdOpenParam) error {
+	r._deleteStandParam = _deleteStandParam
+	r.Set("delete_stand_param", _deleteStandParam)
+	return nil
+}
+
+// Get DeleteStandParam Getter
+func (r AlibabaDamaiMevOpenDeletestandAPIRequest) GetDeleteStandParam() *StandIdOpenParam {
+	return r._deleteStandParam
+}

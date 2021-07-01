@@ -21,4 +21,62 @@ type AlibabaMosFalconPosCounterQueryAPIRequest struct {
 	_counterNo string
 }
 
-// New
+// NewAlibabaMosFalconPosCounterQueryRequest 初始化AlibabaMosFalconPosCounterQueryAPIRequest对象
+func NewAlibabaMosFalconPosCounterQueryRequest() *AlibabaMosFalconPosCounterQueryAPIRequest {
+	return &AlibabaMosFalconPosCounterQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosFalconPosCounterQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.falcon.pos.counter.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosFalconPosCounterQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Sn Setter
+// 设备序列号
+func (r *AlibabaMosFalconPosCounterQueryAPIRequest) SetSn(_sn string) error {
+	r._sn = _sn
+	r.Set("sn", _sn)
+	return nil
+}
+
+// Get Sn Getter
+func (r AlibabaMosFalconPosCounterQueryAPIRequest) GetSn() string {
+	return r._sn
+}
+
+// Set is StoreNo Setter
+// 门店号
+func (r *AlibabaMosFalconPosCounterQueryAPIRequest) SetStoreNo(_storeNo string) error {
+	r._storeNo = _storeNo
+	r.Set("store_no", _storeNo)
+	return nil
+}
+
+// Get StoreNo Getter
+func (r AlibabaMosFalconPosCounterQueryAPIRequest) GetStoreNo() string {
+	return r._storeNo
+}
+
+// Set is CounterNo Setter
+// 专柜号
+func (r *AlibabaMosFalconPosCounterQueryAPIRequest) SetCounterNo(_counterNo string) error {
+	r._counterNo = _counterNo
+	r.Set("counter_no", _counterNo)
+	return nil
+}
+
+// Get CounterNo Getter
+func (r AlibabaMosFalconPosCounterQueryAPIRequest) GetCounterNo() string {
+	return r._counterNo
+}

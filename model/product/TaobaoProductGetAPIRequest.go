@@ -26,4 +26,75 @@ type TaobaoProductGetAPIRequest struct {
 	_props string
 }
 
-// New
+// NewTaobaoProductGetRequest 初始化TaobaoProductGetAPIRequest对象
+func NewTaobaoProductGetRequest() *TaobaoProductGetAPIRequest {
+	return &TaobaoProductGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoProductGetAPIRequest) GetApiMethodName() string {
+	return "taobao.product.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoProductGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Fields Setter
+// 需返回的字段列表.可选值:Product数据结构中的所有字段;多个字段之间用","分隔.
+func (r *TaobaoProductGetAPIRequest) SetFields(_fields string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// Get Fields Getter
+func (r TaobaoProductGetAPIRequest) GetFields() string {
+	return r._fields
+}
+
+// Set is ProductId Setter
+// Product的id.两种方式来查看一个产品:1.传入product_id来查询 2.传入cid和props来查询
+func (r *TaobaoProductGetAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// Get ProductId Getter
+func (r TaobaoProductGetAPIRequest) GetProductId() int64 {
+	return r._productId
+}
+
+// Set is Cid Setter
+// 商品类目id.调用taobao.itemcats.get获取;必须是叶子类目id,如果没有传product_id,那么cid和props必须要传.
+func (r *TaobaoProductGetAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// Get Cid Getter
+func (r TaobaoProductGetAPIRequest) GetCid() int64 {
+	return r._cid
+}
+
+// Set is Props Setter
+// 比如:诺基亚N73这个产品的关键属性列表就是:品牌:诺基亚;型号:N73,对应的PV值就是10005:10027;10006:29729.
+func (r *TaobaoProductGetAPIRequest) SetProps(_props string) error {
+	r._props = _props
+	r.Set("props", _props)
+	return nil
+}
+
+// Get Props Getter
+func (r TaobaoProductGetAPIRequest) GetProps() string {
+	return r._props
+}

@@ -17,4 +17,36 @@ type AlibabaAscpUopSupplierConsignorderShipAPIRequest struct {
 	_consignorderShipRequest *Consignordershiprequest
 }
 
-// New
+// NewAlibabaAscpUopSupplierConsignorderShipRequest 初始化AlibabaAscpUopSupplierConsignorderShipAPIRequest对象
+func NewAlibabaAscpUopSupplierConsignorderShipRequest() *AlibabaAscpUopSupplierConsignorderShipAPIRequest {
+	return &AlibabaAscpUopSupplierConsignorderShipAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpUopSupplierConsignorderShipAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.uop.supplier.consignorder.ship"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpUopSupplierConsignorderShipAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ConsignorderShipRequest Setter
+// 发货回传请求模型
+func (r *AlibabaAscpUopSupplierConsignorderShipAPIRequest) SetConsignorderShipRequest(_consignorderShipRequest *Consignordershiprequest) error {
+	r._consignorderShipRequest = _consignorderShipRequest
+	r.Set("consignorder_ship_request", _consignorderShipRequest)
+	return nil
+}
+
+// Get ConsignorderShipRequest Getter
+func (r AlibabaAscpUopSupplierConsignorderShipAPIRequest) GetConsignorderShipRequest() *Consignordershiprequest {
+	return r._consignorderShipRequest
+}

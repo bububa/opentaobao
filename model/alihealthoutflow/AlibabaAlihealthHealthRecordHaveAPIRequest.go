@@ -17,4 +17,36 @@ type AlibabaAlihealthHealthRecordHaveAPIRequest struct {
 	_request1 *HaveRecordRequest
 }
 
-// New
+// NewAlibabaAlihealthHealthRecordHaveRequest 初始化AlibabaAlihealthHealthRecordHaveAPIRequest对象
+func NewAlibabaAlihealthHealthRecordHaveRequest() *AlibabaAlihealthHealthRecordHaveAPIRequest {
+	return &AlibabaAlihealthHealthRecordHaveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthHealthRecordHaveAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.health.record.have"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthHealthRecordHaveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request1 Setter
+// 入参
+func (r *AlibabaAlihealthHealthRecordHaveAPIRequest) SetRequest1(_request1 *HaveRecordRequest) error {
+	r._request1 = _request1
+	r.Set("request1", _request1)
+	return nil
+}
+
+// Get Request1 Getter
+func (r AlibabaAlihealthHealthRecordHaveAPIRequest) GetRequest1() *HaveRecordRequest {
+	return r._request1
+}

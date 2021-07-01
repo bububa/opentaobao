@@ -23,4 +23,75 @@ type TaobaoUsergrowthDeliveryBatchaskAPIRequest struct {
 	_imeiMd5 string
 }
 
-// New
+// NewTaobaoUsergrowthDeliveryBatchaskRequest 初始化TaobaoUsergrowthDeliveryBatchaskAPIRequest对象
+func NewTaobaoUsergrowthDeliveryBatchaskRequest() *TaobaoUsergrowthDeliveryBatchaskAPIRequest {
+	return &TaobaoUsergrowthDeliveryBatchaskAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetApiMethodName() string {
+	return "taobao.usergrowth.delivery.batchask"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Channel Setter
+// 渠道标识，向淘宝技术申请
+func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetChannel(_channel string) error {
+	r._channel = _channel
+	r.Set("channel", _channel)
+	return nil
+}
+
+// Get Channel Getter
+func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetChannel() string {
+	return r._channel
+}
+
+// Set is Adid Setter
+// 广告id，淘宝和媒体协商
+func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetAdid(_adid string) error {
+	r._adid = _adid
+	r.Set("adid", _adid)
+	return nil
+}
+
+// Get Adid Getter
+func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetAdid() string {
+	return r._adid
+}
+
+// Set is IdfaMd5 Setter
+// idfa的md5值， 32位小写， 多个使用,分隔， 最多支持20个
+func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetIdfaMd5(_idfaMd5 string) error {
+	r._idfaMd5 = _idfaMd5
+	r.Set("idfa_md5", _idfaMd5)
+	return nil
+}
+
+// Get IdfaMd5 Getter
+func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetIdfaMd5() string {
+	return r._idfaMd5
+}
+
+// Set is ImeiMd5 Setter
+// imei的md5值， 32位小写， 多个之间使用,分隔， 最多支持20个
+func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetImeiMd5(_imeiMd5 string) error {
+	r._imeiMd5 = _imeiMd5
+	r.Set("imei_md5", _imeiMd5)
+	return nil
+}
+
+// Get ImeiMd5 Getter
+func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetImeiMd5() string {
+	return r._imeiMd5
+}

@@ -24,4 +24,75 @@ type TaobaoInventoryQueryAPIRequest struct {
 	_storeCodes string
 }
 
-// New
+// NewTaobaoInventoryQueryRequest 初始化TaobaoInventoryQueryAPIRequest对象
+func NewTaobaoInventoryQueryRequest() *TaobaoInventoryQueryAPIRequest {
+	return &TaobaoInventoryQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoInventoryQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.inventory.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoInventoryQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ScItemIds Setter
+// 后端商品ID 列表，控制到50个
+func (r *TaobaoInventoryQueryAPIRequest) SetScItemIds(_scItemIds string) error {
+	r._scItemIds = _scItemIds
+	r.Set("sc_item_ids", _scItemIds)
+	return nil
+}
+
+// Get ScItemIds Getter
+func (r TaobaoInventoryQueryAPIRequest) GetScItemIds() string {
+	return r._scItemIds
+}
+
+// Set is ScItemCodes Setter
+// 后端商品的商家编码列表，控制到50个
+func (r *TaobaoInventoryQueryAPIRequest) SetScItemCodes(_scItemCodes string) error {
+	r._scItemCodes = _scItemCodes
+	r.Set("sc_item_codes", _scItemCodes)
+	return nil
+}
+
+// Get ScItemCodes Getter
+func (r TaobaoInventoryQueryAPIRequest) GetScItemCodes() string {
+	return r._scItemCodes
+}
+
+// Set is SellerNick Setter
+// 卖家昵称
+func (r *TaobaoInventoryQueryAPIRequest) SetSellerNick(_sellerNick string) error {
+	r._sellerNick = _sellerNick
+	r.Set("seller_nick", _sellerNick)
+	return nil
+}
+
+// Get SellerNick Getter
+func (r TaobaoInventoryQueryAPIRequest) GetSellerNick() string {
+	return r._sellerNick
+}
+
+// Set is StoreCodes Setter
+// 仓库列表:GLY001^GLY002
+func (r *TaobaoInventoryQueryAPIRequest) SetStoreCodes(_storeCodes string) error {
+	r._storeCodes = _storeCodes
+	r.Set("store_codes", _storeCodes)
+	return nil
+}
+
+// Get StoreCodes Getter
+func (r TaobaoInventoryQueryAPIRequest) GetStoreCodes() string {
+	return r._storeCodes
+}

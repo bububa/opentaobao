@@ -19,4 +19,49 @@ type AlibabaWdkMerchantItemQueryAPIRequest struct {
 	_merchantCode string
 }
 
-// New
+// NewAlibabaWdkMerchantItemQueryRequest 初始化AlibabaWdkMerchantItemQueryAPIRequest对象
+func NewAlibabaWdkMerchantItemQueryRequest() *AlibabaWdkMerchantItemQueryAPIRequest {
+	return &AlibabaWdkMerchantItemQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMerchantItemQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.merchant.item.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMerchantItemQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SkuCode Setter
+// 商品编码
+func (r *AlibabaWdkMerchantItemQueryAPIRequest) SetSkuCode(_skuCode string) error {
+	r._skuCode = _skuCode
+	r.Set("sku_code", _skuCode)
+	return nil
+}
+
+// Get SkuCode Getter
+func (r AlibabaWdkMerchantItemQueryAPIRequest) GetSkuCode() string {
+	return r._skuCode
+}
+
+// Set is MerchantCode Setter
+// 商家编码
+func (r *AlibabaWdkMerchantItemQueryAPIRequest) SetMerchantCode(_merchantCode string) error {
+	r._merchantCode = _merchantCode
+	r.Set("merchant_code", _merchantCode)
+	return nil
+}
+
+// Get MerchantCode Getter
+func (r AlibabaWdkMerchantItemQueryAPIRequest) GetMerchantCode() string {
+	return r._merchantCode
+}

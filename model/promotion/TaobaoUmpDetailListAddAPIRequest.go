@@ -19,4 +19,49 @@ type TaobaoUmpDetailListAddAPIRequest struct {
 	_details string
 }
 
-// New
+// NewTaobaoUmpDetailListAddRequest 初始化TaobaoUmpDetailListAddAPIRequest对象
+func NewTaobaoUmpDetailListAddRequest() *TaobaoUmpDetailListAddAPIRequest {
+	return &TaobaoUmpDetailListAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpDetailListAddAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.detail.list.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpDetailListAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ActId Setter
+// 营销活动id。
+func (r *TaobaoUmpDetailListAddAPIRequest) SetActId(_actId int64) error {
+	r._actId = _actId
+	r.Set("act_id", _actId)
+	return nil
+}
+
+// Get ActId Getter
+func (r TaobaoUmpDetailListAddAPIRequest) GetActId() int64 {
+	return r._actId
+}
+
+// Set is Details Setter
+// 营销详情的列表。此列表由detail的json字符串组成。最多插入为10个。
+func (r *TaobaoUmpDetailListAddAPIRequest) SetDetails(_details string) error {
+	r._details = _details
+	r.Set("details", _details)
+	return nil
+}
+
+// Get Details Getter
+func (r TaobaoUmpDetailListAddAPIRequest) GetDetails() string {
+	return r._details
+}

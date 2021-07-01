@@ -15,4 +15,23 @@ type TaobaoSingletreasureActivityNameQueryAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoSingletreasureActivityNameQueryRequest 初始化TaobaoSingletreasureActivityNameQueryAPIRequest对象
+func NewTaobaoSingletreasureActivityNameQueryRequest() *TaobaoSingletreasureActivityNameQueryAPIRequest {
+	return &TaobaoSingletreasureActivityNameQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSingletreasureActivityNameQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.singletreasure.activity.name.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSingletreasureActivityNameQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

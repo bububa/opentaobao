@@ -17,4 +17,36 @@ type AlibabaMoziFusionCreateEmployeeAccountAPIRequest struct {
 	_employeeAccount *CreateTenantEmployeeAndAccountRequest
 }
 
-// New
+// NewAlibabaMoziFusionCreateEmployeeAccountRequest 初始化AlibabaMoziFusionCreateEmployeeAccountAPIRequest对象
+func NewAlibabaMoziFusionCreateEmployeeAccountRequest() *AlibabaMoziFusionCreateEmployeeAccountAPIRequest {
+	return &AlibabaMoziFusionCreateEmployeeAccountAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMoziFusionCreateEmployeeAccountAPIRequest) GetApiMethodName() string {
+	return "alibaba.mozi.fusion.create.employee.account"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMoziFusionCreateEmployeeAccountAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is EmployeeAccount Setter
+// 入参
+func (r *AlibabaMoziFusionCreateEmployeeAccountAPIRequest) SetEmployeeAccount(_employeeAccount *CreateTenantEmployeeAndAccountRequest) error {
+	r._employeeAccount = _employeeAccount
+	r.Set("employee_account", _employeeAccount)
+	return nil
+}
+
+// Get EmployeeAccount Getter
+func (r AlibabaMoziFusionCreateEmployeeAccountAPIRequest) GetEmployeeAccount() *CreateTenantEmployeeAndAccountRequest {
+	return r._employeeAccount
+}

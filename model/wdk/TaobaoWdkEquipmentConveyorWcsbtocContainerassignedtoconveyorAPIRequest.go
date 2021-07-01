@@ -19,4 +19,49 @@ type TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest stru
 	_wcsNum int64
 }
 
-// New
+// NewTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorRequest 初始化TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest对象
+func NewTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorRequest() *TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest {
+	return &TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest) GetApiMethodName() string {
+	return "taobao.wdk.equipment.conveyor.wcsbtoc.containerassignedtoconveyor"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WarehouseCode Setter
+// warehouse_code
+func (r *TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest) SetWarehouseCode(_warehouseCode string) error {
+	r._warehouseCode = _warehouseCode
+	r.Set("warehouse_code", _warehouseCode)
+	return nil
+}
+
+// Get WarehouseCode Getter
+func (r TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest) GetWarehouseCode() string {
+	return r._warehouseCode
+}
+
+// Set is WcsNum Setter
+// wcs_num
+func (r *TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest) SetWcsNum(_wcsNum int64) error {
+	r._wcsNum = _wcsNum
+	r.Set("wcs_num", _wcsNum)
+	return nil
+}
+
+// Get WcsNum Getter
+func (r TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest) GetWcsNum() int64 {
+	return r._wcsNum
+}

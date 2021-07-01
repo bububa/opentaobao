@@ -17,4 +17,36 @@ type TaobaoJushitaJmsTopicsGetAPIRequest struct {
 	_nick string
 }
 
-// New
+// NewTaobaoJushitaJmsTopicsGetRequest 初始化TaobaoJushitaJmsTopicsGetAPIRequest对象
+func NewTaobaoJushitaJmsTopicsGetRequest() *TaobaoJushitaJmsTopicsGetAPIRequest {
+	return &TaobaoJushitaJmsTopicsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoJushitaJmsTopicsGetAPIRequest) GetApiMethodName() string {
+	return "taobao.jushita.jms.topics.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoJushitaJmsTopicsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 卖家nick
+func (r *TaobaoJushitaJmsTopicsGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoJushitaJmsTopicsGetAPIRequest) GetNick() string {
+	return r._nick
+}

@@ -17,4 +17,36 @@ type AlitripBtripCostCenterEntityAddAPIRequest struct {
 	_rq *OpenCostCenterAddEntityRq
 }
 
-// New
+// NewAlitripBtripCostCenterEntityAddRequest 初始化AlitripBtripCostCenterEntityAddAPIRequest对象
+func NewAlitripBtripCostCenterEntityAddRequest() *AlitripBtripCostCenterEntityAddAPIRequest {
+	return &AlitripBtripCostCenterEntityAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripCostCenterEntityAddAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.cost.center.entity.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripCostCenterEntityAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Rq Setter
+// 请求对象
+func (r *AlitripBtripCostCenterEntityAddAPIRequest) SetRq(_rq *OpenCostCenterAddEntityRq) error {
+	r._rq = _rq
+	r.Set("rq", _rq)
+	return nil
+}
+
+// Get Rq Getter
+func (r AlitripBtripCostCenterEntityAddAPIRequest) GetRq() *OpenCostCenterAddEntityRq {
+	return r._rq
+}

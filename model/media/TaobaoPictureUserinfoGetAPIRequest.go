@@ -15,4 +15,23 @@ type TaobaoPictureUserinfoGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoPictureUserinfoGetRequest 初始化TaobaoPictureUserinfoGetAPIRequest对象
+func NewTaobaoPictureUserinfoGetRequest() *TaobaoPictureUserinfoGetAPIRequest {
+	return &TaobaoPictureUserinfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPictureUserinfoGetAPIRequest) GetApiMethodName() string {
+	return "taobao.picture.userinfo.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPictureUserinfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

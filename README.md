@@ -4,7 +4,7 @@
 [![Go](https://github.com/bububa/opentaobao/actions/workflows/go.yml/badge.svg)](https://github.com/bububa/opentaobao/actions/workflows/go.yml)
 [![goreleaser](https://github.com/bububa/opentaobao/actions/workflows/goreleaser.yml/badge.svg)](https://github.com/bububa/opentaobao/actions/workflows/goreleaser.yml)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/bububa/opentaobao.svg)](https://github.com/bububa/opentaobao)
-
+[![GoReportCard](https://goreportcard.com/badge/github.com/bububa/opentaobao)](https://goreportcard.com/report/github.com/bububa/opentaobao)
 
 ## 编译工具链
 ```sh

@@ -19,4 +19,49 @@ type AlibabaMosOrderQueryAPIRequest struct {
 	_paginator *Paginator
 }
 
-// New
+// NewAlibabaMosOrderQueryRequest 初始化AlibabaMosOrderQueryAPIRequest对象
+func NewAlibabaMosOrderQueryRequest() *AlibabaMosOrderQueryAPIRequest {
+	return &AlibabaMosOrderQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosOrderQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.order.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosOrderQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderCriteria Setter
+// 订单查询
+func (r *AlibabaMosOrderQueryAPIRequest) SetOrderCriteria(_orderCriteria *OrderCriteria) error {
+	r._orderCriteria = _orderCriteria
+	r.Set("order_criteria", _orderCriteria)
+	return nil
+}
+
+// Get OrderCriteria Getter
+func (r AlibabaMosOrderQueryAPIRequest) GetOrderCriteria() *OrderCriteria {
+	return r._orderCriteria
+}
+
+// Set is Paginator Setter
+// 分页信息
+func (r *AlibabaMosOrderQueryAPIRequest) SetPaginator(_paginator *Paginator) error {
+	r._paginator = _paginator
+	r.Set("paginator", _paginator)
+	return nil
+}
+
+// Get Paginator Getter
+func (r AlibabaMosOrderQueryAPIRequest) GetPaginator() *Paginator {
+	return r._paginator
+}

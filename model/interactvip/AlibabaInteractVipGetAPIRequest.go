@@ -15,4 +15,23 @@ type AlibabaInteractVipGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaInteractVipGetRequest 初始化AlibabaInteractVipGetAPIRequest对象
+func NewAlibabaInteractVipGetRequest() *AlibabaInteractVipGetAPIRequest {
+	return &AlibabaInteractVipGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractVipGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.vip.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractVipGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

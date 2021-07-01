@@ -21,4 +21,62 @@ type TaobaoRegionSaleQueryAPIRequest struct {
 	_saleRegionLevel int64
 }
 
-// New
+// NewTaobaoRegionSaleQueryRequest 初始化TaobaoRegionSaleQueryAPIRequest对象
+func NewTaobaoRegionSaleQueryRequest() *TaobaoRegionSaleQueryAPIRequest {
+	return &TaobaoRegionSaleQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoRegionSaleQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.region.sale.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoRegionSaleQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 商品id
+func (r *TaobaoRegionSaleQueryAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TaobaoRegionSaleQueryAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is SkuId Setter
+// 无sku传0
+func (r *TaobaoRegionSaleQueryAPIRequest) SetSkuId(_skuId int64) error {
+	r._skuId = _skuId
+	r.Set("sku_id", _skuId)
+	return nil
+}
+
+// Get SkuId Getter
+func (r TaobaoRegionSaleQueryAPIRequest) GetSkuId() int64 {
+	return r._skuId
+}
+
+// Set is SaleRegionLevel Setter
+// 1:国家;2:省;3: 市;4:区县
+func (r *TaobaoRegionSaleQueryAPIRequest) SetSaleRegionLevel(_saleRegionLevel int64) error {
+	r._saleRegionLevel = _saleRegionLevel
+	r.Set("sale_region_level", _saleRegionLevel)
+	return nil
+}
+
+// Get SaleRegionLevel Getter
+func (r TaobaoRegionSaleQueryAPIRequest) GetSaleRegionLevel() int64 {
+	return r._saleRegionLevel
+}

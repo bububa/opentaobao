@@ -17,4 +17,36 @@ type AlibabaSellerVendorOrderListAPIRequest struct {
 	_queryTradeDto *QueryTradeDto
 }
 
-// New
+// NewAlibabaSellerVendorOrderListRequest 初始化AlibabaSellerVendorOrderListAPIRequest对象
+func NewAlibabaSellerVendorOrderListRequest() *AlibabaSellerVendorOrderListAPIRequest {
+	return &AlibabaSellerVendorOrderListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSellerVendorOrderListAPIRequest) GetApiMethodName() string {
+	return "alibaba.seller.vendor.order.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSellerVendorOrderListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is QueryTradeDto Setter
+// 查询参数
+func (r *AlibabaSellerVendorOrderListAPIRequest) SetQueryTradeDto(_queryTradeDto *QueryTradeDto) error {
+	r._queryTradeDto = _queryTradeDto
+	r.Set("query_trade_dto", _queryTradeDto)
+	return nil
+}
+
+// Get QueryTradeDto Getter
+func (r AlibabaSellerVendorOrderListAPIRequest) GetQueryTradeDto() *QueryTradeDto {
+	return r._queryTradeDto
+}

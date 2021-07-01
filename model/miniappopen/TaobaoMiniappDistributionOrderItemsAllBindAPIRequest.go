@@ -17,4 +17,36 @@ type TaobaoMiniappDistributionOrderItemsAllBindAPIRequest struct {
 	_allItemBindRequest *DistributionOrderBindTargetEntityOpenRequestV2
 }
 
-// New
+// NewTaobaoMiniappDistributionOrderItemsAllBindRequest 初始化TaobaoMiniappDistributionOrderItemsAllBindAPIRequest对象
+func NewTaobaoMiniappDistributionOrderItemsAllBindRequest() *TaobaoMiniappDistributionOrderItemsAllBindAPIRequest {
+	return &TaobaoMiniappDistributionOrderItemsAllBindAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMiniappDistributionOrderItemsAllBindAPIRequest) GetApiMethodName() string {
+	return "taobao.miniapp.distribution.order.items.all.bind"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMiniappDistributionOrderItemsAllBindAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AllItemBindRequest Setter
+// 绑定/解绑的入参信息
+func (r *TaobaoMiniappDistributionOrderItemsAllBindAPIRequest) SetAllItemBindRequest(_allItemBindRequest *DistributionOrderBindTargetEntityOpenRequestV2) error {
+	r._allItemBindRequest = _allItemBindRequest
+	r.Set("all_item_bind_request", _allItemBindRequest)
+	return nil
+}
+
+// Get AllItemBindRequest Getter
+func (r TaobaoMiniappDistributionOrderItemsAllBindAPIRequest) GetAllItemBindRequest() *DistributionOrderBindTargetEntityOpenRequestV2 {
+	return r._allItemBindRequest
+}

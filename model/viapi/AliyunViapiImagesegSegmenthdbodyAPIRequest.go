@@ -17,4 +17,36 @@ type AliyunViapiImagesegSegmenthdbodyAPIRequest struct {
 	_imageUrl string
 }
 
-// New
+// NewAliyunViapiImagesegSegmenthdbodyRequest 初始化AliyunViapiImagesegSegmenthdbodyAPIRequest对象
+func NewAliyunViapiImagesegSegmenthdbodyRequest() *AliyunViapiImagesegSegmenthdbodyAPIRequest {
+	return &AliyunViapiImagesegSegmenthdbodyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliyunViapiImagesegSegmenthdbodyAPIRequest) GetApiMethodName() string {
+	return "aliyun.viapi.imageseg.segmenthdbody"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliyunViapiImagesegSegmenthdbodyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ImageUrl Setter
+// 待检测图片链接
+func (r *AliyunViapiImagesegSegmenthdbodyAPIRequest) SetImageUrl(_imageUrl string) error {
+	r._imageUrl = _imageUrl
+	r.Set("image_url", _imageUrl)
+	return nil
+}
+
+// Get ImageUrl Getter
+func (r AliyunViapiImagesegSegmenthdbodyAPIRequest) GetImageUrl() string {
+	return r._imageUrl
+}

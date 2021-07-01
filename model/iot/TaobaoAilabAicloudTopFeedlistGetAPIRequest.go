@@ -23,4 +23,75 @@ type TaobaoAilabAicloudTopFeedlistGetAPIRequest struct {
 	_param3 string
 }
 
-// New
+// NewTaobaoAilabAicloudTopFeedlistGetRequest 初始化TaobaoAilabAicloudTopFeedlistGetAPIRequest对象
+func NewTaobaoAilabAicloudTopFeedlistGetRequest() *TaobaoAilabAicloudTopFeedlistGetAPIRequest {
+	return &TaobaoAilabAicloudTopFeedlistGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetApiMethodName() string {
+	return "taobao.ailab.aicloud.top.feedlist.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 用户信息
+func (r *TaobaoAilabAicloudTopFeedlistGetAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetParam0() *OpenBaseInfo {
+	return r._param0
+}
+
+// Set is Param1 Setter
+// 设备id
+func (r *TaobaoAilabAicloudTopFeedlistGetAPIRequest) SetParam1(_param1 string) error {
+	r._param1 = _param1
+	r.Set("param1", _param1)
+	return nil
+}
+
+// Get Param1 Getter
+func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetParam1() string {
+	return r._param1
+}
+
+// Set is Param2 Setter
+// 最后一条对话的key
+func (r *TaobaoAilabAicloudTopFeedlistGetAPIRequest) SetParam2(_param2 string) error {
+	r._param2 = _param2
+	r.Set("param2", _param2)
+	return nil
+}
+
+// Get Param2 Getter
+func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetParam2() string {
+	return r._param2
+}
+
+// Set is Param3 Setter
+// 单页的条目数，注意，是String类型！
+func (r *TaobaoAilabAicloudTopFeedlistGetAPIRequest) SetParam3(_param3 string) error {
+	r._param3 = _param3
+	r.Set("param3", _param3)
+	return nil
+}
+
+// Get Param3 Getter
+func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetParam3() string {
+	return r._param3
+}

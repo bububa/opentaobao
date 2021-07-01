@@ -17,4 +17,36 @@ type TaobaoXhotelOrderFutureFacescanPutAPIRequest struct {
 	_faceScanParam *FaceScanParam
 }
 
-// New
+// NewTaobaoXhotelOrderFutureFacescanPutRequest 初始化TaobaoXhotelOrderFutureFacescanPutAPIRequest对象
+func NewTaobaoXhotelOrderFutureFacescanPutRequest() *TaobaoXhotelOrderFutureFacescanPutAPIRequest {
+	return &TaobaoXhotelOrderFutureFacescanPutAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelOrderFutureFacescanPutAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.order.future.facescan.put"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelOrderFutureFacescanPutAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FaceScanParam Setter
+// 扫脸参数
+func (r *TaobaoXhotelOrderFutureFacescanPutAPIRequest) SetFaceScanParam(_faceScanParam *FaceScanParam) error {
+	r._faceScanParam = _faceScanParam
+	r.Set("face_scan_param", _faceScanParam)
+	return nil
+}
+
+// Get FaceScanParam Getter
+func (r TaobaoXhotelOrderFutureFacescanPutAPIRequest) GetFaceScanParam() *FaceScanParam {
+	return r._faceScanParam
+}

@@ -17,4 +17,36 @@ type AlibabaLsyCrmCustomerAddAPIRequest struct {
 	_reqDto *NrtCrmCreateCustomerReq
 }
 
-// New
+// NewAlibabaLsyCrmCustomerAddRequest 初始化AlibabaLsyCrmCustomerAddAPIRequest对象
+func NewAlibabaLsyCrmCustomerAddRequest() *AlibabaLsyCrmCustomerAddAPIRequest {
+	return &AlibabaLsyCrmCustomerAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLsyCrmCustomerAddAPIRequest) GetApiMethodName() string {
+	return "alibaba.lsy.crm.customer.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLsyCrmCustomerAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ReqDto Setter
+// 入参对象
+func (r *AlibabaLsyCrmCustomerAddAPIRequest) SetReqDto(_reqDto *NrtCrmCreateCustomerReq) error {
+	r._reqDto = _reqDto
+	r.Set("req_dto", _reqDto)
+	return nil
+}
+
+// Get ReqDto Getter
+func (r AlibabaLsyCrmCustomerAddAPIRequest) GetReqDto() *NrtCrmCreateCustomerReq {
+	return r._reqDto
+}

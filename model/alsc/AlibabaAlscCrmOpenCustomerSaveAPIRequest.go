@@ -17,4 +17,36 @@ type AlibabaAlscCrmOpenCustomerSaveAPIRequest struct {
 	_paramCustomerSaveOpenReq *CustomerSaveOpenReq
 }
 
-// New
+// NewAlibabaAlscCrmOpenCustomerSaveRequest 初始化AlibabaAlscCrmOpenCustomerSaveAPIRequest对象
+func NewAlibabaAlscCrmOpenCustomerSaveRequest() *AlibabaAlscCrmOpenCustomerSaveAPIRequest {
+	return &AlibabaAlscCrmOpenCustomerSaveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmOpenCustomerSaveAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.open.customer.save"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmOpenCustomerSaveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamCustomerSaveOpenReq Setter
+// 入参
+func (r *AlibabaAlscCrmOpenCustomerSaveAPIRequest) SetParamCustomerSaveOpenReq(_paramCustomerSaveOpenReq *CustomerSaveOpenReq) error {
+	r._paramCustomerSaveOpenReq = _paramCustomerSaveOpenReq
+	r.Set("param_customer_save_open_req", _paramCustomerSaveOpenReq)
+	return nil
+}
+
+// Get ParamCustomerSaveOpenReq Getter
+func (r AlibabaAlscCrmOpenCustomerSaveAPIRequest) GetParamCustomerSaveOpenReq() *CustomerSaveOpenReq {
+	return r._paramCustomerSaveOpenReq
+}

@@ -21,4 +21,62 @@ type AlibabaWdkItemTraceUrlGetAPIRequest struct {
 	_skuCode string
 }
 
-// New
+// NewAlibabaWdkItemTraceUrlGetRequest 初始化AlibabaWdkItemTraceUrlGetAPIRequest对象
+func NewAlibabaWdkItemTraceUrlGetRequest() *AlibabaWdkItemTraceUrlGetAPIRequest {
+	return &AlibabaWdkItemTraceUrlGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.item.trace.url.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ShopId Setter
+// 所属门店code
+func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetShopId(_shopId string) error {
+	r._shopId = _shopId
+	r.Set("shop_id", _shopId)
+	return nil
+}
+
+// Get ShopId Getter
+func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetShopId() string {
+	return r._shopId
+}
+
+// Set is SourceCode Setter
+// 来源编码
+func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetSourceCode(_sourceCode string) error {
+	r._sourceCode = _sourceCode
+	r.Set("source_code", _sourceCode)
+	return nil
+}
+
+// Get SourceCode Getter
+func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetSourceCode() string {
+	return r._sourceCode
+}
+
+// Set is SkuCode Setter
+// 商品skuCode
+func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetSkuCode(_skuCode string) error {
+	r._skuCode = _skuCode
+	r.Set("sku_code", _skuCode)
+	return nil
+}
+
+// Get SkuCode Getter
+func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetSkuCode() string {
+	return r._skuCode
+}

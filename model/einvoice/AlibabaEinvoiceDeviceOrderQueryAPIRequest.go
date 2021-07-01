@@ -17,4 +17,36 @@ type AlibabaEinvoiceDeviceOrderQueryAPIRequest struct {
 	_flowId string
 }
 
-// New
+// NewAlibabaEinvoiceDeviceOrderQueryRequest 初始化AlibabaEinvoiceDeviceOrderQueryAPIRequest对象
+func NewAlibabaEinvoiceDeviceOrderQueryRequest() *AlibabaEinvoiceDeviceOrderQueryAPIRequest {
+	return &AlibabaEinvoiceDeviceOrderQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceDeviceOrderQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.device.order.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceDeviceOrderQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FlowId Setter
+// 税控设备订购单ID
+func (r *AlibabaEinvoiceDeviceOrderQueryAPIRequest) SetFlowId(_flowId string) error {
+	r._flowId = _flowId
+	r.Set("flow_id", _flowId)
+	return nil
+}
+
+// Get FlowId Getter
+func (r AlibabaEinvoiceDeviceOrderQueryAPIRequest) GetFlowId() string {
+	return r._flowId
+}

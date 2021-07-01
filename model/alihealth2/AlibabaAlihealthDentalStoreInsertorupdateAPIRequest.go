@@ -17,4 +17,36 @@ type AlibabaAlihealthDentalStoreInsertorupdateAPIRequest struct {
 	_store *DentalOuterStoreRequest
 }
 
-// New
+// NewAlibabaAlihealthDentalStoreInsertorupdateRequest 初始化AlibabaAlihealthDentalStoreInsertorupdateAPIRequest对象
+func NewAlibabaAlihealthDentalStoreInsertorupdateRequest() *AlibabaAlihealthDentalStoreInsertorupdateAPIRequest {
+	return &AlibabaAlihealthDentalStoreInsertorupdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.dental.store.insertorupdate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Store Setter
+// 门店
+func (r *AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) SetStore(_store *DentalOuterStoreRequest) error {
+	r._store = _store
+	r.Set("store", _store)
+	return nil
+}
+
+// Get Store Getter
+func (r AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) GetStore() *DentalOuterStoreRequest {
+	return r._store
+}

@@ -15,4 +15,23 @@ type TaobaoSellercatsListGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoSellercatsListGetRequest 初始化TaobaoSellercatsListGetAPIRequest对象
+func NewTaobaoSellercatsListGetRequest() *TaobaoSellercatsListGetAPIRequest {
+	return &TaobaoSellercatsListGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSellercatsListGetAPIRequest) GetApiMethodName() string {
+	return "taobao.sellercats.list.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSellercatsListGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

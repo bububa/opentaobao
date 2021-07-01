@@ -17,4 +17,36 @@ type YunosTvpubadminDeviceTvidAPIRequest struct {
 	_uuid string
 }
 
-// New
+// NewYunosTvpubadminDeviceTvidRequest 初始化YunosTvpubadminDeviceTvidAPIRequest对象
+func NewYunosTvpubadminDeviceTvidRequest() *YunosTvpubadminDeviceTvidAPIRequest {
+	return &YunosTvpubadminDeviceTvidAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminDeviceTvidAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.device.tvid"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminDeviceTvidAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Uuid Setter
+// 设备的UUID
+func (r *YunosTvpubadminDeviceTvidAPIRequest) SetUuid(_uuid string) error {
+	r._uuid = _uuid
+	r.Set("uuid", _uuid)
+	return nil
+}
+
+// Get Uuid Getter
+func (r YunosTvpubadminDeviceTvidAPIRequest) GetUuid() string {
+	return r._uuid
+}

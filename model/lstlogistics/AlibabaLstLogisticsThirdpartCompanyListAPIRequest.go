@@ -17,4 +17,36 @@ type AlibabaLstLogisticsThirdpartCompanyListAPIRequest struct {
 	_query *LstLogisticsCompanyQuery
 }
 
-// New
+// NewAlibabaLstLogisticsThirdpartCompanyListRequest 初始化AlibabaLstLogisticsThirdpartCompanyListAPIRequest对象
+func NewAlibabaLstLogisticsThirdpartCompanyListRequest() *AlibabaLstLogisticsThirdpartCompanyListAPIRequest {
+	return &AlibabaLstLogisticsThirdpartCompanyListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstLogisticsThirdpartCompanyListAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.logistics.thirdpart.company.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstLogisticsThirdpartCompanyListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 入参
+func (r *AlibabaLstLogisticsThirdpartCompanyListAPIRequest) SetQuery(_query *LstLogisticsCompanyQuery) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r AlibabaLstLogisticsThirdpartCompanyListAPIRequest) GetQuery() *LstLogisticsCompanyQuery {
+	return r._query
+}

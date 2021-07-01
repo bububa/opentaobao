@@ -20,4 +20,49 @@ type TmallCarContractDownloadAPIRequest struct {
 	_html bool
 }
 
-// New
+// NewTmallCarContractDownloadRequest 初始化TmallCarContractDownloadAPIRequest对象
+func NewTmallCarContractDownloadRequest() *TmallCarContractDownloadAPIRequest {
+	return &TmallCarContractDownloadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallCarContractDownloadAPIRequest) GetApiMethodName() string {
+	return "tmall.car.contract.download"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallCarContractDownloadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 天猫订单号
+func (r *TmallCarContractDownloadAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r TmallCarContractDownloadAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// Set is Html Setter
+// 是否下载html，true是html，false是pdf， html速度会快一点
+func (r *TmallCarContractDownloadAPIRequest) SetHtml(_html bool) error {
+	r._html = _html
+	r.Set("html", _html)
+	return nil
+}
+
+// Get Html Getter
+func (r TmallCarContractDownloadAPIRequest) GetHtml() bool {
+	return r._html
+}

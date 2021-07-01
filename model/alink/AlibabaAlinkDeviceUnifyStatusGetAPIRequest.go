@@ -17,4 +17,36 @@ type AlibabaAlinkDeviceUnifyStatusGetAPIRequest struct {
 	_uuid string
 }
 
-// New
+// NewAlibabaAlinkDeviceUnifyStatusGetRequest 初始化AlibabaAlinkDeviceUnifyStatusGetAPIRequest对象
+func NewAlibabaAlinkDeviceUnifyStatusGetRequest() *AlibabaAlinkDeviceUnifyStatusGetAPIRequest {
+	return &AlibabaAlinkDeviceUnifyStatusGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlinkDeviceUnifyStatusGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.alink.device.unify.status.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlinkDeviceUnifyStatusGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Uuid Setter
+// 设备id
+func (r *AlibabaAlinkDeviceUnifyStatusGetAPIRequest) SetUuid(_uuid string) error {
+	r._uuid = _uuid
+	r.Set("uuid", _uuid)
+	return nil
+}
+
+// Get Uuid Getter
+func (r AlibabaAlinkDeviceUnifyStatusGetAPIRequest) GetUuid() string {
+	return r._uuid
+}

@@ -17,4 +17,36 @@ type TaobaoSungariDisposeSubmitAPIRequest struct {
 	_info *DisposeInfoDo
 }
 
-// New
+// NewTaobaoSungariDisposeSubmitRequest 初始化TaobaoSungariDisposeSubmitAPIRequest对象
+func NewTaobaoSungariDisposeSubmitRequest() *TaobaoSungariDisposeSubmitAPIRequest {
+	return &TaobaoSungariDisposeSubmitAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSungariDisposeSubmitAPIRequest) GetApiMethodName() string {
+	return "taobao.sungari.dispose.submit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSungariDisposeSubmitAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Info Setter
+// 平台处置信息入参
+func (r *TaobaoSungariDisposeSubmitAPIRequest) SetInfo(_info *DisposeInfoDo) error {
+	r._info = _info
+	r.Set("info", _info)
+	return nil
+}
+
+// Get Info Getter
+func (r TaobaoSungariDisposeSubmitAPIRequest) GetInfo() *DisposeInfoDo {
+	return r._info
+}

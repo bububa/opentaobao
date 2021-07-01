@@ -19,4 +19,49 @@ type TaobaoXhotelRateRelationshipwithroomGetAPIRequest struct {
 	_pageNo int64
 }
 
-// New
+// NewTaobaoXhotelRateRelationshipwithroomGetRequest 初始化TaobaoXhotelRateRelationshipwithroomGetAPIRequest对象
+func NewTaobaoXhotelRateRelationshipwithroomGetRequest() *TaobaoXhotelRateRelationshipwithroomGetAPIRequest {
+	return &TaobaoXhotelRateRelationshipwithroomGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.rate.relationshipwithroom.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RpId Setter
+// rpId
+func (r *TaobaoXhotelRateRelationshipwithroomGetAPIRequest) SetRpId(_rpId int64) error {
+	r._rpId = _rpId
+	r.Set("rp_id", _rpId)
+	return nil
+}
+
+// Get RpId Getter
+func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetRpId() int64 {
+	return r._rpId
+}
+
+// Set is PageNo Setter
+// 页数
+func (r *TaobaoXhotelRateRelationshipwithroomGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}

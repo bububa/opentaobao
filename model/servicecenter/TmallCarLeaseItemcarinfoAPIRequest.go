@@ -17,4 +17,36 @@ type TmallCarLeaseItemcarinfoAPIRequest struct {
 	_itemId int64
 }
 
-// New
+// NewTmallCarLeaseItemcarinfoRequest 初始化TmallCarLeaseItemcarinfoAPIRequest对象
+func NewTmallCarLeaseItemcarinfoRequest() *TmallCarLeaseItemcarinfoAPIRequest {
+	return &TmallCarLeaseItemcarinfoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallCarLeaseItemcarinfoAPIRequest) GetApiMethodName() string {
+	return "tmall.car.lease.itemcarinfo"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallCarLeaseItemcarinfoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 商品id
+func (r *TmallCarLeaseItemcarinfoAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TmallCarLeaseItemcarinfoAPIRequest) GetItemId() int64 {
+	return r._itemId
+}

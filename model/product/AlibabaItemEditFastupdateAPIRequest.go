@@ -25,4 +25,75 @@ type AlibabaItemEditFastupdateAPIRequest struct {
 	_schema string
 }
 
-// New
+// NewAlibabaItemEditFastupdateRequest 初始化AlibabaItemEditFastupdateAPIRequest对象
+func NewAlibabaItemEditFastupdateRequest() *AlibabaItemEditFastupdateAPIRequest {
+	return &AlibabaItemEditFastupdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaItemEditFastupdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.item.edit.fastupdate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaItemEditFastupdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CatId Setter
+// 商品类目ID。若不需要修改商品类目，则不用填写
+func (r *AlibabaItemEditFastupdateAPIRequest) SetCatId(_catId int64) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// Get CatId Getter
+func (r AlibabaItemEditFastupdateAPIRequest) GetCatId() int64 {
+	return r._catId
+}
+
+// Set is SpuId Setter
+// 产品ID，若不需要修改关联的产品信息，则不需要填写
+func (r *AlibabaItemEditFastupdateAPIRequest) SetSpuId(_spuId int64) error {
+	r._spuId = _spuId
+	r.Set("spu_id", _spuId)
+	return nil
+}
+
+// Get SpuId Getter
+func (r AlibabaItemEditFastupdateAPIRequest) GetSpuId() int64 {
+	return r._spuId
+}
+
+// Set is ItemId Setter
+// 商品ID
+func (r *AlibabaItemEditFastupdateAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r AlibabaItemEditFastupdateAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is Schema Setter
+// 编辑后的schema信息(增量更新，只填写需要更新的字段)
+func (r *AlibabaItemEditFastupdateAPIRequest) SetSchema(_schema string) error {
+	r._schema = _schema
+	r.Set("schema", _schema)
+	return nil
+}
+
+// Get Schema Getter
+func (r AlibabaItemEditFastupdateAPIRequest) GetSchema() string {
+	return r._schema
+}

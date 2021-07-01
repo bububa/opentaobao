@@ -33,4 +33,140 @@ type TaobaoTaeBillsGetAPIRequest struct {
 	_fields []string
 }
 
-// New
+// NewTaobaoTaeBillsGetRequest 初始化TaobaoTaeBillsGetAPIRequest对象
+func NewTaobaoTaeBillsGetRequest() *TaobaoTaeBillsGetAPIRequest {
+	return &TaobaoTaeBillsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTaeBillsGetAPIRequest) GetApiMethodName() string {
+	return "taobao.tae.bills.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTaeBillsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is QueryStartDate Setter
+// 开始时间
+func (r *TaobaoTaeBillsGetAPIRequest) SetQueryStartDate(_queryStartDate string) error {
+	r._queryStartDate = _queryStartDate
+	r.Set("query_start_date", _queryStartDate)
+	return nil
+}
+
+// Get QueryStartDate Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetQueryStartDate() string {
+	return r._queryStartDate
+}
+
+// Set is PTradeId Setter
+// 交易编号
+func (r *TaobaoTaeBillsGetAPIRequest) SetPTradeId(_pTradeId int64) error {
+	r._pTradeId = _pTradeId
+	r.Set("p_trade_id", _pTradeId)
+	return nil
+}
+
+// Get PTradeId Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetPTradeId() int64 {
+	return r._pTradeId
+}
+
+// Set is TradeId Setter
+// 子订单编号
+func (r *TaobaoTaeBillsGetAPIRequest) SetTradeId(_tradeId int64) error {
+	r._tradeId = _tradeId
+	r.Set("trade_id", _tradeId)
+	return nil
+}
+
+// Get TradeId Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetTradeId() int64 {
+	return r._tradeId
+}
+
+// Set is PageSize Setter
+// 每页大小,默认40条,可选范围 ：40~100
+func (r *TaobaoTaeBillsGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is QueryDateType Setter
+// 查询条件中的时间类型:1-交易订单完成时间biz_time 2-支付宝扣款时间pay_time 如果不填默认为2即根据支付时间查询,查询的结果会根据该时间倒排序
+func (r *TaobaoTaeBillsGetAPIRequest) SetQueryDateType(_queryDateType int64) error {
+	r._queryDateType = _queryDateType
+	r.Set("query_date_type", _queryDateType)
+	return nil
+}
+
+// Get QueryDateType Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetQueryDateType() int64 {
+	return r._queryDateType
+}
+
+// Set is CurrentPage Setter
+// 页数,建议不要超过100页,越大性能越低,有可能会超时
+func (r *TaobaoTaeBillsGetAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// Get CurrentPage Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// Set is ItemId Setter
+// 科目编号
+func (r *TaobaoTaeBillsGetAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is QueryEndDate Setter
+// 结束时间,限制:结束时间-开始时间不能大于1天(根据order_id或者trade_id查询除外)
+func (r *TaobaoTaeBillsGetAPIRequest) SetQueryEndDate(_queryEndDate string) error {
+	r._queryEndDate = _queryEndDate
+	r.Set("query_end_date", _queryEndDate)
+	return nil
+}
+
+// Get QueryEndDate Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetQueryEndDate() string {
+	return r._queryEndDate
+}
+
+// Set is Fields Setter
+// 传入需要返回的字段,参见Bill结构体
+func (r *TaobaoTaeBillsGetAPIRequest) SetFields(_fields []string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// Get Fields Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetFields() []string {
+	return r._fields
+}

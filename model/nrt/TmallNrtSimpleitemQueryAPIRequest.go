@@ -19,4 +19,36 @@ type TmallNrtSimpleitemQueryAPIRequest struct {
 	_ids []int64
 }
 
-// New
+// NewTmallNrtSimpleitemQueryRequest 初始化TmallNrtSimpleitemQueryAPIRequest对象
+func NewTmallNrtSimpleitemQueryRequest() *TmallNrtSimpleitemQueryAPIRequest {
+	return &TmallNrtSimpleitemQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrtSimpleitemQueryAPIRequest) GetApiMethodName() string {
+	return "tmall.nrt.simpleitem.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrtSimpleitemQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Ids Setter
+// 商品编码数组
+func (r *TmallNrtSimpleitemQueryAPIRequest) SetIds(_ids []int64) error {
+	r._ids = _ids
+	r.Set("ids", _ids)
+	return nil
+}
+
+// Get Ids Getter
+func (r TmallNrtSimpleitemQueryAPIRequest) GetIds() []int64 {
+	return r._ids
+}

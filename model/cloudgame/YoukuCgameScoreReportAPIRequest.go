@@ -17,4 +17,36 @@ type YoukuCgameScoreReportAPIRequest struct {
 	_scoreReportDto *ScoreReportDto
 }
 
-// New
+// NewYoukuCgameScoreReportRequest 初始化YoukuCgameScoreReportAPIRequest对象
+func NewYoukuCgameScoreReportRequest() *YoukuCgameScoreReportAPIRequest {
+	return &YoukuCgameScoreReportAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YoukuCgameScoreReportAPIRequest) GetApiMethodName() string {
+	return "youku.cgame.score.report"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YoukuCgameScoreReportAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ScoreReportDto Setter
+// 战绩上传Dto
+func (r *YoukuCgameScoreReportAPIRequest) SetScoreReportDto(_scoreReportDto *ScoreReportDto) error {
+	r._scoreReportDto = _scoreReportDto
+	r.Set("score_report_dto", _scoreReportDto)
+	return nil
+}
+
+// Get ScoreReportDto Getter
+func (r YoukuCgameScoreReportAPIRequest) GetScoreReportDto() *ScoreReportDto {
+	return r._scoreReportDto
+}

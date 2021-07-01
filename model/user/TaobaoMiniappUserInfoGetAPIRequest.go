@@ -15,4 +15,23 @@ type TaobaoMiniappUserInfoGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoMiniappUserInfoGetRequest 初始化TaobaoMiniappUserInfoGetAPIRequest对象
+func NewTaobaoMiniappUserInfoGetRequest() *TaobaoMiniappUserInfoGetAPIRequest {
+	return &TaobaoMiniappUserInfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMiniappUserInfoGetAPIRequest) GetApiMethodName() string {
+	return "taobao.miniapp.userInfo.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMiniappUserInfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

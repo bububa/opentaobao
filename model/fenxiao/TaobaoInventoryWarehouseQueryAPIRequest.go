@@ -19,4 +19,49 @@ type TaobaoInventoryWarehouseQueryAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewTaobaoInventoryWarehouseQueryRequest 初始化TaobaoInventoryWarehouseQueryAPIRequest对象
+func NewTaobaoInventoryWarehouseQueryRequest() *TaobaoInventoryWarehouseQueryAPIRequest {
+	return &TaobaoInventoryWarehouseQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoInventoryWarehouseQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.inventory.warehouse.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoInventoryWarehouseQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PageNo Setter
+// 页码
+func (r *TaobaoInventoryWarehouseQueryAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r TaobaoInventoryWarehouseQueryAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 页大小
+func (r *TaobaoInventoryWarehouseQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoInventoryWarehouseQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

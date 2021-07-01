@@ -21,4 +21,62 @@ type TaobaoOmniorderStorecollectConsumeAPIRequest struct {
 	_operator string
 }
 
-// New
+// NewTaobaoOmniorderStorecollectConsumeRequest 初始化TaobaoOmniorderStorecollectConsumeAPIRequest对象
+func NewTaobaoOmniorderStorecollectConsumeRequest() *TaobaoOmniorderStorecollectConsumeAPIRequest {
+	return &TaobaoOmniorderStorecollectConsumeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetApiMethodName() string {
+	return "taobao.omniorder.storecollect.consume"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Code Setter
+// 核销码
+func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetCode(_code string) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// Get Code Getter
+func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetCode() string {
+	return r._code
+}
+
+// Set is MainOrderId Setter
+// 淘宝主订单ID
+func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+	r._mainOrderId = _mainOrderId
+	r.Set("main_order_id", _mainOrderId)
+	return nil
+}
+
+// Get MainOrderId Getter
+func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetMainOrderId() int64 {
+	return r._mainOrderId
+}
+
+// Set is Operator Setter
+// 核销操作人信息
+func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetOperator(_operator string) error {
+	r._operator = _operator
+	r.Set("operator", _operator)
+	return nil
+}
+
+// Get Operator Getter
+func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetOperator() string {
+	return r._operator
+}

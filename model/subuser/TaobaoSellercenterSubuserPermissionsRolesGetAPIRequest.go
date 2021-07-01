@@ -17,4 +17,36 @@ type TaobaoSellercenterSubuserPermissionsRolesGetAPIRequest struct {
 	_nick string
 }
 
-// New
+// NewTaobaoSellercenterSubuserPermissionsRolesGetRequest 初始化TaobaoSellercenterSubuserPermissionsRolesGetAPIRequest对象
+func NewTaobaoSellercenterSubuserPermissionsRolesGetRequest() *TaobaoSellercenterSubuserPermissionsRolesGetAPIRequest {
+	return &TaobaoSellercenterSubuserPermissionsRolesGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSellercenterSubuserPermissionsRolesGetAPIRequest) GetApiMethodName() string {
+	return "taobao.sellercenter.subuser.permissions.roles.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSellercenterSubuserPermissionsRolesGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 子账号昵称(子账号标识)
+func (r *TaobaoSellercenterSubuserPermissionsRolesGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSellercenterSubuserPermissionsRolesGetAPIRequest) GetNick() string {
+	return r._nick
+}

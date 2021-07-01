@@ -27,4 +27,101 @@ type YunosTvpubadminContentChildRecoitemQueryAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewYunosTvpubadminContentChildRecoitemQueryRequest 初始化YunosTvpubadminContentChildRecoitemQueryAPIRequest对象
+func NewYunosTvpubadminContentChildRecoitemQueryRequest() *YunosTvpubadminContentChildRecoitemQueryAPIRequest {
+	return &YunosTvpubadminContentChildRecoitemQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.child.recoitem.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Id Setter
+// 主键ID
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetId() int64 {
+	return r._id
+}
+
+// Set is NodeId Setter
+// 所属类目ID
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetNodeId(_nodeId int64) error {
+	r._nodeId = _nodeId
+	r.Set("node_id", _nodeId)
+	return nil
+}
+
+// Get NodeId Getter
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetNodeId() int64 {
+	return r._nodeId
+}
+
+// Set is Status Setter
+// 状态
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// Get Status Getter
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetStatus() int64 {
+	return r._status
+}
+
+// Set is PageNo Setter
+// 页码
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is Name Setter
+// 名称
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetName() string {
+	return r._name
+}
+
+// Set is PageSize Setter
+// 单页数量
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

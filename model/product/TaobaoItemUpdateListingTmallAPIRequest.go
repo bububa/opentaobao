@@ -19,4 +19,49 @@ type TaobaoItemUpdateListingTmallAPIRequest struct {
 	_num int64
 }
 
-// New
+// NewTaobaoItemUpdateListingTmallRequest 初始化TaobaoItemUpdateListingTmallAPIRequest对象
+func NewTaobaoItemUpdateListingTmallRequest() *TaobaoItemUpdateListingTmallAPIRequest {
+	return &TaobaoItemUpdateListingTmallAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoItemUpdateListingTmallAPIRequest) GetApiMethodName() string {
+	return "taobao.item.update.listing.tmall"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoItemUpdateListingTmallAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is NumIid Setter
+// 商品数字ID，该参数必须
+func (r *TaobaoItemUpdateListingTmallAPIRequest) SetNumIid(_numIid int64) error {
+	r._numIid = _numIid
+	r.Set("num_iid", _numIid)
+	return nil
+}
+
+// Get NumIid Getter
+func (r TaobaoItemUpdateListingTmallAPIRequest) GetNumIid() int64 {
+	return r._numIid
+}
+
+// Set is Num Setter
+// 需要上架的商品的数量。取值范围:大于零的整数。如果商品有sku，则上架数量默认为所有sku数量总和，不可修改。否则商品数量根据设置数量调整为num
+func (r *TaobaoItemUpdateListingTmallAPIRequest) SetNum(_num int64) error {
+	r._num = _num
+	r.Set("num", _num)
+	return nil
+}
+
+// Get Num Getter
+func (r TaobaoItemUpdateListingTmallAPIRequest) GetNum() int64 {
+	return r._num
+}

@@ -19,4 +19,49 @@ type AlibabaAilabUserAuthorizedCancelAPIRequest struct {
 	_schemaKey string
 }
 
-// New
+// NewAlibabaAilabUserAuthorizedCancelRequest 初始化AlibabaAilabUserAuthorizedCancelAPIRequest对象
+func NewAlibabaAilabUserAuthorizedCancelRequest() *AlibabaAilabUserAuthorizedCancelAPIRequest {
+	return &AlibabaAilabUserAuthorizedCancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAilabUserAuthorizedCancelAPIRequest) GetApiMethodName() string {
+	return "alibaba.ailab.user.authorized.cancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAilabUserAuthorizedCancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MerchantUserId Setter
+// 三方用户的唯一ID
+func (r *AlibabaAilabUserAuthorizedCancelAPIRequest) SetMerchantUserId(_merchantUserId string) error {
+	r._merchantUserId = _merchantUserId
+	r.Set("merchant_user_id", _merchantUserId)
+	return nil
+}
+
+// Get MerchantUserId Getter
+func (r AlibabaAilabUserAuthorizedCancelAPIRequest) GetMerchantUserId() string {
+	return r._merchantUserId
+}
+
+// Set is SchemaKey Setter
+// 开放平台申请的schema
+func (r *AlibabaAilabUserAuthorizedCancelAPIRequest) SetSchemaKey(_schemaKey string) error {
+	r._schemaKey = _schemaKey
+	r.Set("schema_key", _schemaKey)
+	return nil
+}
+
+// Get SchemaKey Getter
+func (r AlibabaAilabUserAuthorizedCancelAPIRequest) GetSchemaKey() string {
+	return r._schemaKey
+}

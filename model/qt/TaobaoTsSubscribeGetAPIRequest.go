@@ -19,4 +19,49 @@ type TaobaoTsSubscribeGetAPIRequest struct {
 	_nick string
 }
 
-// New
+// NewTaobaoTsSubscribeGetRequest 初始化TaobaoTsSubscribeGetAPIRequest对象
+func NewTaobaoTsSubscribeGetRequest() *TaobaoTsSubscribeGetAPIRequest {
+	return &TaobaoTsSubscribeGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTsSubscribeGetAPIRequest) GetApiMethodName() string {
+	return "taobao.ts.subscribe.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTsSubscribeGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ServcieItemCode Setter
+// 服务收费项code
+func (r *TaobaoTsSubscribeGetAPIRequest) SetServcieItemCode(_servcieItemCode string) error {
+	r._servcieItemCode = _servcieItemCode
+	r.Set("servcie_item_code", _servcieItemCode)
+	return nil
+}
+
+// Get ServcieItemCode Getter
+func (r TaobaoTsSubscribeGetAPIRequest) GetServcieItemCode() string {
+	return r._servcieItemCode
+}
+
+// Set is Nick Setter
+// 订购用户昵称
+func (r *TaobaoTsSubscribeGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoTsSubscribeGetAPIRequest) GetNick() string {
+	return r._nick
+}

@@ -17,4 +17,36 @@ type AlibabaLstLogisticsSendinfoQueryAPIRequest struct {
 	_query *LstLogisticsInfoQuery
 }
 
-// New
+// NewAlibabaLstLogisticsSendinfoQueryRequest 初始化AlibabaLstLogisticsSendinfoQueryAPIRequest对象
+func NewAlibabaLstLogisticsSendinfoQueryRequest() *AlibabaLstLogisticsSendinfoQueryAPIRequest {
+	return &AlibabaLstLogisticsSendinfoQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstLogisticsSendinfoQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.logistics.sendinfo.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstLogisticsSendinfoQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 入参
+func (r *AlibabaLstLogisticsSendinfoQueryAPIRequest) SetQuery(_query *LstLogisticsInfoQuery) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r AlibabaLstLogisticsSendinfoQueryAPIRequest) GetQuery() *LstLogisticsInfoQuery {
+	return r._query
+}

@@ -25,4 +25,88 @@ type AlibabaEinvoiceRedCreatereqAPIRequest struct {
 	_invoiceNo string
 }
 
-// New
+// NewAlibabaEinvoiceRedCreatereqRequest 初始化AlibabaEinvoiceRedCreatereqAPIRequest对象
+func NewAlibabaEinvoiceRedCreatereqRequest() *AlibabaEinvoiceRedCreatereqAPIRequest {
+	return &AlibabaEinvoiceRedCreatereqAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.red.createreq"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PayeeRegisterNo Setter
+// 销售方税号
+func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+	r._payeeRegisterNo = _payeeRegisterNo
+	r.Set("payee_register_no", _payeeRegisterNo)
+	return nil
+}
+
+// Get PayeeRegisterNo Getter
+func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetPayeeRegisterNo() string {
+	return r._payeeRegisterNo
+}
+
+// Set is BlueSerialNo Setter
+// 蓝票流水号，优先级高于发票代码+发票号码
+func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetBlueSerialNo(_blueSerialNo string) error {
+	r._blueSerialNo = _blueSerialNo
+	r.Set("blue_serial_no", _blueSerialNo)
+	return nil
+}
+
+// Get BlueSerialNo Getter
+func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetBlueSerialNo() string {
+	return r._blueSerialNo
+}
+
+// Set is RedSerialNo Setter
+// 红票流水号
+func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetRedSerialNo(_redSerialNo string) error {
+	r._redSerialNo = _redSerialNo
+	r.Set("red_serial_no", _redSerialNo)
+	return nil
+}
+
+// Get RedSerialNo Getter
+func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetRedSerialNo() string {
+	return r._redSerialNo
+}
+
+// Set is InvoiceCode Setter
+// 蓝票发票代码
+func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetInvoiceCode(_invoiceCode string) error {
+	r._invoiceCode = _invoiceCode
+	r.Set("invoice_code", _invoiceCode)
+	return nil
+}
+
+// Get InvoiceCode Getter
+func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetInvoiceCode() string {
+	return r._invoiceCode
+}
+
+// Set is InvoiceNo Setter
+// 蓝票发票号码
+func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetInvoiceNo(_invoiceNo string) error {
+	r._invoiceNo = _invoiceNo
+	r.Set("invoice_no", _invoiceNo)
+	return nil
+}
+
+// Get InvoiceNo Getter
+func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetInvoiceNo() string {
+	return r._invoiceNo
+}

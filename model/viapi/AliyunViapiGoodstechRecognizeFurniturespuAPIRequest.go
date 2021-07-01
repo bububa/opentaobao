@@ -23,4 +23,75 @@ type AliyunViapiGoodstechRecognizeFurniturespuAPIRequest struct {
 	_zLength string
 }
 
-// New
+// NewAliyunViapiGoodstechRecognizeFurniturespuRequest 初始化AliyunViapiGoodstechRecognizeFurniturespuAPIRequest对象
+func NewAliyunViapiGoodstechRecognizeFurniturespuRequest() *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest {
+	return &AliyunViapiGoodstechRecognizeFurniturespuAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetApiMethodName() string {
+	return "aliyun.viapi.goodstech.recognize.furniturespu"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ImageUrl Setter
+// 待检测图片链接
+func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetImageUrl(_imageUrl string) error {
+	r._imageUrl = _imageUrl
+	r.Set("image_url", _imageUrl)
+	return nil
+}
+
+// Get ImageUrl Getter
+func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetImageUrl() string {
+	return r._imageUrl
+}
+
+// Set is XLength Setter
+// 模型x方向的尺寸，单位cm，默认值100
+func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetXLength(_xLength string) error {
+	r._xLength = _xLength
+	r.Set("x_length", _xLength)
+	return nil
+}
+
+// Get XLength Getter
+func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetXLength() string {
+	return r._xLength
+}
+
+// Set is YLength Setter
+// 模型y方向的尺寸，单位cm，默认值100
+func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetYLength(_yLength string) error {
+	r._yLength = _yLength
+	r.Set("y_length", _yLength)
+	return nil
+}
+
+// Get YLength Getter
+func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetYLength() string {
+	return r._yLength
+}
+
+// Set is ZLength Setter
+// 模型z方向的尺寸，单位cm，默认值100
+func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetZLength(_zLength string) error {
+	r._zLength = _zLength
+	r.Set("z_length", _zLength)
+	return nil
+}
+
+// Get ZLength Getter
+func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetZLength() string {
+	return r._zLength
+}

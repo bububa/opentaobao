@@ -17,4 +17,36 @@ type AlibabaWdkBmPaiyangSupplyPublishAPIRequest struct {
 	_isvSupplySyncParam *IsvSupplySyncParam
 }
 
-// New
+// NewAlibabaWdkBmPaiyangSupplyPublishRequest 初始化AlibabaWdkBmPaiyangSupplyPublishAPIRequest对象
+func NewAlibabaWdkBmPaiyangSupplyPublishRequest() *AlibabaWdkBmPaiyangSupplyPublishAPIRequest {
+	return &AlibabaWdkBmPaiyangSupplyPublishAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkBmPaiyangSupplyPublishAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.bm.paiyang.supply.publish"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkBmPaiyangSupplyPublishAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is IsvSupplySyncParam Setter
+// 请求入参
+func (r *AlibabaWdkBmPaiyangSupplyPublishAPIRequest) SetIsvSupplySyncParam(_isvSupplySyncParam *IsvSupplySyncParam) error {
+	r._isvSupplySyncParam = _isvSupplySyncParam
+	r.Set("isv_supply_sync_param", _isvSupplySyncParam)
+	return nil
+}
+
+// Get IsvSupplySyncParam Getter
+func (r AlibabaWdkBmPaiyangSupplyPublishAPIRequest) GetIsvSupplySyncParam() *IsvSupplySyncParam {
+	return r._isvSupplySyncParam
+}

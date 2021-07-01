@@ -21,4 +21,62 @@ type AlitripBtripFlightCitySuggestAPIRequest struct {
 	_corpId string
 }
 
-// New
+// NewAlitripBtripFlightCitySuggestRequest 初始化AlitripBtripFlightCitySuggestAPIRequest对象
+func NewAlitripBtripFlightCitySuggestRequest() *AlitripBtripFlightCitySuggestAPIRequest {
+	return &AlitripBtripFlightCitySuggestAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripFlightCitySuggestAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.flight.city.suggest"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripFlightCitySuggestAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UserId Setter
+// 用户id
+func (r *AlitripBtripFlightCitySuggestAPIRequest) SetUserId(_userId string) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r AlitripBtripFlightCitySuggestAPIRequest) GetUserId() string {
+	return r._userId
+}
+
+// Set is Keyword Setter
+// 搜索关键字
+func (r *AlitripBtripFlightCitySuggestAPIRequest) SetKeyword(_keyword string) error {
+	r._keyword = _keyword
+	r.Set("keyword", _keyword)
+	return nil
+}
+
+// Get Keyword Getter
+func (r AlitripBtripFlightCitySuggestAPIRequest) GetKeyword() string {
+	return r._keyword
+}
+
+// Set is CorpId Setter
+// 企业id
+func (r *AlitripBtripFlightCitySuggestAPIRequest) SetCorpId(_corpId string) error {
+	r._corpId = _corpId
+	r.Set("corp_id", _corpId)
+	return nil
+}
+
+// Get CorpId Getter
+func (r AlitripBtripFlightCitySuggestAPIRequest) GetCorpId() string {
+	return r._corpId
+}

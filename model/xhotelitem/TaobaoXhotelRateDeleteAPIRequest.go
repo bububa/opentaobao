@@ -21,4 +21,62 @@ type TaobaoXhotelRateDeleteAPIRequest struct {
 	_outRid string
 }
 
-// New
+// NewTaobaoXhotelRateDeleteRequest 初始化TaobaoXhotelRateDeleteAPIRequest对象
+func NewTaobaoXhotelRateDeleteRequest() *TaobaoXhotelRateDeleteAPIRequest {
+	return &TaobaoXhotelRateDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelRateDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.rate.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelRateDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Vendor Setter
+// 系统商，一般不用填写，使用须申请
+func (r *TaobaoXhotelRateDeleteAPIRequest) SetVendor(_vendor string) error {
+	r._vendor = _vendor
+	r.Set("vendor", _vendor)
+	return nil
+}
+
+// Get Vendor Getter
+func (r TaobaoXhotelRateDeleteAPIRequest) GetVendor() string {
+	return r._vendor
+}
+
+// Set is RateplanCode Setter
+// 商家价格政策编码
+func (r *TaobaoXhotelRateDeleteAPIRequest) SetRateplanCode(_rateplanCode string) error {
+	r._rateplanCode = _rateplanCode
+	r.Set("rateplan_code", _rateplanCode)
+	return nil
+}
+
+// Get RateplanCode Getter
+func (r TaobaoXhotelRateDeleteAPIRequest) GetRateplanCode() string {
+	return r._rateplanCode
+}
+
+// Set is OutRid Setter
+// 商家房型ID
+func (r *TaobaoXhotelRateDeleteAPIRequest) SetOutRid(_outRid string) error {
+	r._outRid = _outRid
+	r.Set("out_rid", _outRid)
+	return nil
+}
+
+// Get OutRid Getter
+func (r TaobaoXhotelRateDeleteAPIRequest) GetOutRid() string {
+	return r._outRid
+}

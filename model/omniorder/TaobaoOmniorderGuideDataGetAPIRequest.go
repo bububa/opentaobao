@@ -23,4 +23,75 @@ type TaobaoOmniorderGuideDataGetAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewTaobaoOmniorderGuideDataGetRequest 初始化TaobaoOmniorderGuideDataGetAPIRequest对象
+func NewTaobaoOmniorderGuideDataGetRequest() *TaobaoOmniorderGuideDataGetAPIRequest {
+	return &TaobaoOmniorderGuideDataGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOmniorderGuideDataGetAPIRequest) GetApiMethodName() string {
+	return "taobao.omniorder.guide.data.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOmniorderGuideDataGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Type Setter
+// detail_smg_scan: 扫码购扫码明细;detail_smg_cart: 扫码购加购明细;detail_smg_order: 扫码购订单明细;detail_sxg_search: 随心购搜索明细;detail_sxg_view_item: 随心购商品浏览明细;detail_sxg_cart: 随心购加购明细;detail_sxg_order: 随心购订单明细
+func (r *TaobaoOmniorderGuideDataGetAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r TaobaoOmniorderGuideDataGetAPIRequest) GetType() string {
+	return r._type
+}
+
+// Set is StartTime Setter
+// 拉取数据开始时间
+func (r *TaobaoOmniorderGuideDataGetAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// Get StartTime Getter
+func (r TaobaoOmniorderGuideDataGetAPIRequest) GetStartTime() string {
+	return r._startTime
+}
+
+// Set is PageNo Setter
+// 页码，从1开始
+func (r *TaobaoOmniorderGuideDataGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r TaobaoOmniorderGuideDataGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 每页数量，不能大于1000
+func (r *TaobaoOmniorderGuideDataGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoOmniorderGuideDataGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

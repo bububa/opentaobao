@@ -17,4 +17,36 @@ type AlibabaIdleSpuRegisterModifyAPIRequest struct {
 	_idleSpuRegister4TopDto *IdleSpuRegister4TopDto
 }
 
-// New
+// NewAlibabaIdleSpuRegisterModifyRequest 初始化AlibabaIdleSpuRegisterModifyAPIRequest对象
+func NewAlibabaIdleSpuRegisterModifyRequest() *AlibabaIdleSpuRegisterModifyAPIRequest {
+	return &AlibabaIdleSpuRegisterModifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleSpuRegisterModifyAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.spu.register.modify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleSpuRegisterModifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is IdleSpuRegister4TopDto Setter
+// 入参
+func (r *AlibabaIdleSpuRegisterModifyAPIRequest) SetIdleSpuRegister4TopDto(_idleSpuRegister4TopDto *IdleSpuRegister4TopDto) error {
+	r._idleSpuRegister4TopDto = _idleSpuRegister4TopDto
+	r.Set("idle_spu_register4_top_dto", _idleSpuRegister4TopDto)
+	return nil
+}
+
+// Get IdleSpuRegister4TopDto Getter
+func (r AlibabaIdleSpuRegisterModifyAPIRequest) GetIdleSpuRegister4TopDto() *IdleSpuRegister4TopDto {
+	return r._idleSpuRegister4TopDto
+}

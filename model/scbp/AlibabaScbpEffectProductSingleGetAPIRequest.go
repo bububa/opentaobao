@@ -17,4 +17,36 @@ type AlibabaScbpEffectProductSingleGetAPIRequest struct {
 	_p4pProductReportQuery *ProductQuery
 }
 
-// New
+// NewAlibabaScbpEffectProductSingleGetRequest 初始化AlibabaScbpEffectProductSingleGetAPIRequest对象
+func NewAlibabaScbpEffectProductSingleGetRequest() *AlibabaScbpEffectProductSingleGetAPIRequest {
+	return &AlibabaScbpEffectProductSingleGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpEffectProductSingleGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.effect.product.single.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpEffectProductSingleGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is P4pProductReportQuery Setter
+// ProductQuery
+func (r *AlibabaScbpEffectProductSingleGetAPIRequest) SetP4pProductReportQuery(_p4pProductReportQuery *ProductQuery) error {
+	r._p4pProductReportQuery = _p4pProductReportQuery
+	r.Set("p4p_product_report_query", _p4pProductReportQuery)
+	return nil
+}
+
+// Get P4pProductReportQuery Getter
+func (r AlibabaScbpEffectProductSingleGetAPIRequest) GetP4pProductReportQuery() *ProductQuery {
+	return r._p4pProductReportQuery
+}

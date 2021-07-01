@@ -17,4 +17,36 @@ type AliyunIndustryTttmPlanSyncAPIRequest struct {
 	_syncPlan *SyncPlanDto
 }
 
-// New
+// NewAliyunIndustryTttmPlanSyncRequest 初始化AliyunIndustryTttmPlanSyncAPIRequest对象
+func NewAliyunIndustryTttmPlanSyncRequest() *AliyunIndustryTttmPlanSyncAPIRequest {
+	return &AliyunIndustryTttmPlanSyncAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliyunIndustryTttmPlanSyncAPIRequest) GetApiMethodName() string {
+	return "aliyun.industry.tttm.plan.sync"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliyunIndustryTttmPlanSyncAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SyncPlan Setter
+// 计划单
+func (r *AliyunIndustryTttmPlanSyncAPIRequest) SetSyncPlan(_syncPlan *SyncPlanDto) error {
+	r._syncPlan = _syncPlan
+	r.Set("sync_plan", _syncPlan)
+	return nil
+}
+
+// Get SyncPlan Getter
+func (r AliyunIndustryTttmPlanSyncAPIRequest) GetSyncPlan() *SyncPlanDto {
+	return r._syncPlan
+}

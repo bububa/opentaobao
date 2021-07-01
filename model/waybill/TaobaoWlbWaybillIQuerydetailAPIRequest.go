@@ -17,4 +17,36 @@ type TaobaoWlbWaybillIQuerydetailAPIRequest struct {
 	_waybillDetailQueryRequest *WaybillDetailQueryRequest
 }
 
-// New
+// NewTaobaoWlbWaybillIQuerydetailRequest 初始化TaobaoWlbWaybillIQuerydetailAPIRequest对象
+func NewTaobaoWlbWaybillIQuerydetailRequest() *TaobaoWlbWaybillIQuerydetailAPIRequest {
+	return &TaobaoWlbWaybillIQuerydetailAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbWaybillIQuerydetailAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.waybill.i.querydetail"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbWaybillIQuerydetailAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WaybillDetailQueryRequest Setter
+// 面单查询请求
+func (r *TaobaoWlbWaybillIQuerydetailAPIRequest) SetWaybillDetailQueryRequest(_waybillDetailQueryRequest *WaybillDetailQueryRequest) error {
+	r._waybillDetailQueryRequest = _waybillDetailQueryRequest
+	r.Set("waybill_detail_query_request", _waybillDetailQueryRequest)
+	return nil
+}
+
+// Get WaybillDetailQueryRequest Getter
+func (r TaobaoWlbWaybillIQuerydetailAPIRequest) GetWaybillDetailQueryRequest() *WaybillDetailQueryRequest {
+	return r._waybillDetailQueryRequest
+}

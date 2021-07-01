@@ -17,4 +17,36 @@ type AlibabaIdleConsignmentSpuStatisticsAPIRequest struct {
 	_param *SpuStatistics
 }
 
-// New
+// NewAlibabaIdleConsignmentSpuStatisticsRequest 初始化AlibabaIdleConsignmentSpuStatisticsAPIRequest对象
+func NewAlibabaIdleConsignmentSpuStatisticsRequest() *AlibabaIdleConsignmentSpuStatisticsAPIRequest {
+	return &AlibabaIdleConsignmentSpuStatisticsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleConsignmentSpuStatisticsAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.consignment.spu.statistics"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleConsignmentSpuStatisticsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参
+func (r *AlibabaIdleConsignmentSpuStatisticsAPIRequest) SetParam(_param *SpuStatistics) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaIdleConsignmentSpuStatisticsAPIRequest) GetParam() *SpuStatistics {
+	return r._param
+}

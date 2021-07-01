@@ -17,4 +17,36 @@ type TmallNrtEasyhomememberSynAPIRequest struct {
 	_param *ExternalMemberDto
 }
 
-// New
+// NewTmallNrtEasyhomememberSynRequest 初始化TmallNrtEasyhomememberSynAPIRequest对象
+func NewTmallNrtEasyhomememberSynRequest() *TmallNrtEasyhomememberSynAPIRequest {
+	return &TmallNrtEasyhomememberSynAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrtEasyhomememberSynAPIRequest) GetApiMethodName() string {
+	return "tmall.nrt.easyhomemember.syn"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrtEasyhomememberSynAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参
+func (r *TmallNrtEasyhomememberSynAPIRequest) SetParam(_param *ExternalMemberDto) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r TmallNrtEasyhomememberSynAPIRequest) GetParam() *ExternalMemberDto {
+	return r._param
+}

@@ -17,4 +17,36 @@ type TaobaoJstAstrolabeStoreinventoryQueryAPIRequest struct {
 	_stores []Store
 }
 
-// New
+// NewTaobaoJstAstrolabeStoreinventoryQueryRequest 初始化TaobaoJstAstrolabeStoreinventoryQueryAPIRequest对象
+func NewTaobaoJstAstrolabeStoreinventoryQueryRequest() *TaobaoJstAstrolabeStoreinventoryQueryAPIRequest {
+	return &TaobaoJstAstrolabeStoreinventoryQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoJstAstrolabeStoreinventoryQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.jst.astrolabe.storeinventory.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoJstAstrolabeStoreinventoryQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Stores Setter
+// 门店
+func (r *TaobaoJstAstrolabeStoreinventoryQueryAPIRequest) SetStores(_stores []Store) error {
+	r._stores = _stores
+	r.Set("stores", _stores)
+	return nil
+}
+
+// Get Stores Getter
+func (r TaobaoJstAstrolabeStoreinventoryQueryAPIRequest) GetStores() []Store {
+	return r._stores
+}

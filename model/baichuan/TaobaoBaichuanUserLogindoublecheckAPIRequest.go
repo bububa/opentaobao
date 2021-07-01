@@ -17,4 +17,36 @@ type TaobaoBaichuanUserLogindoublecheckAPIRequest struct {
 	_name string
 }
 
-// New
+// NewTaobaoBaichuanUserLogindoublecheckRequest 初始化TaobaoBaichuanUserLogindoublecheckAPIRequest对象
+func NewTaobaoBaichuanUserLogindoublecheckRequest() *TaobaoBaichuanUserLogindoublecheckAPIRequest {
+	return &TaobaoBaichuanUserLogindoublecheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBaichuanUserLogindoublecheckAPIRequest) GetApiMethodName() string {
+	return "taobao.baichuan.user.logindoublecheck"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBaichuanUserLogindoublecheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Name Setter
+// name
+func (r *TaobaoBaichuanUserLogindoublecheckAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r TaobaoBaichuanUserLogindoublecheckAPIRequest) GetName() string {
+	return r._name
+}

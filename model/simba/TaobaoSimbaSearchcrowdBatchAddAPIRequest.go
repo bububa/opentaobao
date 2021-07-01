@@ -21,4 +21,62 @@ type TaobaoSimbaSearchcrowdBatchAddAPIRequest struct {
 	_adgroupTargetingTags string
 }
 
-// New
+// NewTaobaoSimbaSearchcrowdBatchAddRequest 初始化TaobaoSimbaSearchcrowdBatchAddAPIRequest对象
+func NewTaobaoSimbaSearchcrowdBatchAddRequest() *TaobaoSimbaSearchcrowdBatchAddAPIRequest {
+	return &TaobaoSimbaSearchcrowdBatchAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.searchcrowd.batch.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 被操作者的淘宝昵称
+func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetNick() string {
+	return r._nick
+}
+
+// Set is AdgroupId Setter
+// 推广单元id
+func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}
+
+// Set is AdgroupTargetingTags Setter
+// 新增人群信息,批量接口,入参为list,溢价(discount)范围为[105,400]
+func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetAdgroupTargetingTags(_adgroupTargetingTags string) error {
+	r._adgroupTargetingTags = _adgroupTargetingTags
+	r.Set("adgroup_targeting_tags", _adgroupTargetingTags)
+	return nil
+}
+
+// Get AdgroupTargetingTags Getter
+func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetAdgroupTargetingTags() string {
+	return r._adgroupTargetingTags
+}

@@ -15,4 +15,23 @@ type TaobaoMiniappEleuserPhoneGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoMiniappEleuserPhoneGetRequest 初始化TaobaoMiniappEleuserPhoneGetAPIRequest对象
+func NewTaobaoMiniappEleuserPhoneGetRequest() *TaobaoMiniappEleuserPhoneGetAPIRequest {
+	return &TaobaoMiniappEleuserPhoneGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMiniappEleuserPhoneGetAPIRequest) GetApiMethodName() string {
+	return "taobao.miniapp.eleuser.phone.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMiniappEleuserPhoneGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

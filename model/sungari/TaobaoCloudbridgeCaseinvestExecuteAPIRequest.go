@@ -19,4 +19,49 @@ type TaobaoCloudbridgeCaseinvestExecuteAPIRequest struct {
 	_data string
 }
 
-// New
+// NewTaobaoCloudbridgeCaseinvestExecuteRequest 初始化TaobaoCloudbridgeCaseinvestExecuteAPIRequest对象
+func NewTaobaoCloudbridgeCaseinvestExecuteRequest() *TaobaoCloudbridgeCaseinvestExecuteAPIRequest {
+	return &TaobaoCloudbridgeCaseinvestExecuteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiMethodName() string {
+	return "taobao.cloudbridge.caseinvest.execute"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ApiName Setter
+// 方法名称
+func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetApiName(_apiName string) error {
+	r._apiName = _apiName
+	r.Set("api_name", _apiName)
+	return nil
+}
+
+// Get ApiName Getter
+func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiName() string {
+	return r._apiName
+}
+
+// Set is Data Setter
+// 方法参数
+func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetData(_data string) error {
+	r._data = _data
+	r.Set("data", _data)
+	return nil
+}
+
+// Get Data Getter
+func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetData() string {
+	return r._data
+}

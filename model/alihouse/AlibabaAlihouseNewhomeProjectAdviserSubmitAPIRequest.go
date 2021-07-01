@@ -17,4 +17,36 @@ type AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest struct {
 	_advisers []ProjectAdviserDto
 }
 
-// New
+// NewAlibabaAlihouseNewhomeProjectAdviserSubmitRequest 初始化AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectAdviserSubmitRequest() *AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest {
+	return &AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihouse.newhome.project.adviser.submit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Advisers Setter
+// 顾问列表
+func (r *AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) SetAdvisers(_advisers []ProjectAdviserDto) error {
+	r._advisers = _advisers
+	r.Set("advisers", _advisers)
+	return nil
+}
+
+// Get Advisers Getter
+func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetAdvisers() []ProjectAdviserDto {
+	return r._advisers
+}

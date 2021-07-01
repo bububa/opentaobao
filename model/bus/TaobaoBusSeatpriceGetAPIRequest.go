@@ -17,4 +17,36 @@ type TaobaoBusSeatpriceGetAPIRequest struct {
 	_paramBusSeatPriceRQ *BusSeatPriceRq
 }
 
-// New
+// NewTaobaoBusSeatpriceGetRequest 初始化TaobaoBusSeatpriceGetAPIRequest对象
+func NewTaobaoBusSeatpriceGetRequest() *TaobaoBusSeatpriceGetAPIRequest {
+	return &TaobaoBusSeatpriceGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBusSeatpriceGetAPIRequest) GetApiMethodName() string {
+	return "taobao.bus.seatprice.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBusSeatpriceGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamBusSeatPriceRQ Setter
+// 余票请求参数
+func (r *TaobaoBusSeatpriceGetAPIRequest) SetParamBusSeatPriceRQ(_paramBusSeatPriceRQ *BusSeatPriceRq) error {
+	r._paramBusSeatPriceRQ = _paramBusSeatPriceRQ
+	r.Set("param_bus_seat_price_r_q", _paramBusSeatPriceRQ)
+	return nil
+}
+
+// Get ParamBusSeatPriceRQ Getter
+func (r TaobaoBusSeatpriceGetAPIRequest) GetParamBusSeatPriceRQ() *BusSeatPriceRq {
+	return r._paramBusSeatPriceRQ
+}

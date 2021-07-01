@@ -17,4 +17,36 @@ type AlibabaEleFengniaoTradeUpdateAPIRequest struct {
 	_param *Param
 }
 
-// New
+// NewAlibabaEleFengniaoTradeUpdateRequest 初始化AlibabaEleFengniaoTradeUpdateAPIRequest对象
+func NewAlibabaEleFengniaoTradeUpdateRequest() *AlibabaEleFengniaoTradeUpdateAPIRequest {
+	return &AlibabaEleFengniaoTradeUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEleFengniaoTradeUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.ele.fengniao.trade.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEleFengniaoTradeUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// param 参数
+func (r *AlibabaEleFengniaoTradeUpdateAPIRequest) SetParam(_param *Param) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaEleFengniaoTradeUpdateAPIRequest) GetParam() *Param {
+	return r._param
+}

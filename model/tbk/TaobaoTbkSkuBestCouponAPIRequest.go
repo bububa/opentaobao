@@ -19,4 +19,49 @@ type TaobaoTbkSkuBestCouponAPIRequest struct {
 	_skuId int64
 }
 
-// New
+// NewTaobaoTbkSkuBestCouponRequest 初始化TaobaoTbkSkuBestCouponAPIRequest对象
+func NewTaobaoTbkSkuBestCouponRequest() *TaobaoTbkSkuBestCouponAPIRequest {
+	return &TaobaoTbkSkuBestCouponAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTbkSkuBestCouponAPIRequest) GetApiMethodName() string {
+	return "taobao.tbk.sku.best.coupon"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTbkSkuBestCouponAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 商品ID
+func (r *TaobaoTbkSkuBestCouponAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TaobaoTbkSkuBestCouponAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is SkuId Setter
+// 商品对应的skuId
+func (r *TaobaoTbkSkuBestCouponAPIRequest) SetSkuId(_skuId int64) error {
+	r._skuId = _skuId
+	r.Set("sku_id", _skuId)
+	return nil
+}
+
+// Get SkuId Getter
+func (r TaobaoTbkSkuBestCouponAPIRequest) GetSkuId() int64 {
+	return r._skuId
+}

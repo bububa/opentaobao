@@ -25,4 +25,88 @@ type TaobaoXhotelInfoListGetAPIRequest struct {
 	_shid int64
 }
 
-// New
+// NewTaobaoXhotelInfoListGetRequest 初始化TaobaoXhotelInfoListGetAPIRequest对象
+func NewTaobaoXhotelInfoListGetRequest() *TaobaoXhotelInfoListGetAPIRequest {
+	return &TaobaoXhotelInfoListGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelInfoListGetAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.info.list.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelInfoListGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CityCode Setter
+// 城市code
+func (r *TaobaoXhotelInfoListGetAPIRequest) SetCityCode(_cityCode int64) error {
+	r._cityCode = _cityCode
+	r.Set("city_code", _cityCode)
+	return nil
+}
+
+// Get CityCode Getter
+func (r TaobaoXhotelInfoListGetAPIRequest) GetCityCode() int64 {
+	return r._cityCode
+}
+
+// Set is CurrentPage Setter
+// 分页参数：当前页数，从1开始计数。<br/>默认值：1
+func (r *TaobaoXhotelInfoListGetAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// Get CurrentPage Getter
+func (r TaobaoXhotelInfoListGetAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// Set is PageSize Setter
+// 分页参数：每页酒店数量。最小值1，最大值为50。默认值：20
+func (r *TaobaoXhotelInfoListGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoXhotelInfoListGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is Pid Setter
+// pid
+func (r *TaobaoXhotelInfoListGetAPIRequest) SetPid(_pid string) error {
+	r._pid = _pid
+	r.Set("pid", _pid)
+	return nil
+}
+
+// Get Pid Getter
+func (r TaobaoXhotelInfoListGetAPIRequest) GetPid() string {
+	return r._pid
+}
+
+// Set is Shid Setter
+// 标准酒店id，如果需要查询单条酒店的信息，需要传入此参数
+func (r *TaobaoXhotelInfoListGetAPIRequest) SetShid(_shid int64) error {
+	r._shid = _shid
+	r.Set("shid", _shid)
+	return nil
+}
+
+// Get Shid Getter
+func (r TaobaoXhotelInfoListGetAPIRequest) GetShid() int64 {
+	return r._shid
+}

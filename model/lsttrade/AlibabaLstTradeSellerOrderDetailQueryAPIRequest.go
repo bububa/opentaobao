@@ -17,4 +17,36 @@ type AlibabaLstTradeSellerOrderDetailQueryAPIRequest struct {
 	_param *LstTradeGetSellerOrderListParam
 }
 
-// New
+// NewAlibabaLstTradeSellerOrderDetailQueryRequest 初始化AlibabaLstTradeSellerOrderDetailQueryAPIRequest对象
+func NewAlibabaLstTradeSellerOrderDetailQueryRequest() *AlibabaLstTradeSellerOrderDetailQueryAPIRequest {
+	return &AlibabaLstTradeSellerOrderDetailQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstTradeSellerOrderDetailQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.trade.seller.order.detail.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstTradeSellerOrderDetailQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参
+func (r *AlibabaLstTradeSellerOrderDetailQueryAPIRequest) SetParam(_param *LstTradeGetSellerOrderListParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaLstTradeSellerOrderDetailQueryAPIRequest) GetParam() *LstTradeGetSellerOrderListParam {
+	return r._param
+}

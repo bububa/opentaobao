@@ -17,4 +17,36 @@ type TaobaoAppstoreSubscribeGetAPIRequest struct {
 	_nick string
 }
 
-// New
+// NewTaobaoAppstoreSubscribeGetRequest 初始化TaobaoAppstoreSubscribeGetAPIRequest对象
+func NewTaobaoAppstoreSubscribeGetRequest() *TaobaoAppstoreSubscribeGetAPIRequest {
+	return &TaobaoAppstoreSubscribeGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAppstoreSubscribeGetAPIRequest) GetApiMethodName() string {
+	return "taobao.appstore.subscribe.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAppstoreSubscribeGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 用户昵称
+func (r *TaobaoAppstoreSubscribeGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoAppstoreSubscribeGetAPIRequest) GetNick() string {
+	return r._nick
+}

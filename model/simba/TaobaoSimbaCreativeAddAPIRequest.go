@@ -23,4 +23,75 @@ type TaobaoSimbaCreativeAddAPIRequest struct {
 	_nick string
 }
 
-// New
+// NewTaobaoSimbaCreativeAddRequest 初始化TaobaoSimbaCreativeAddAPIRequest对象
+func NewTaobaoSimbaCreativeAddRequest() *TaobaoSimbaCreativeAddAPIRequest {
+	return &TaobaoSimbaCreativeAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaCreativeAddAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.creative.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaCreativeAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AdgroupId Setter
+// 推广组Id
+func (r *TaobaoSimbaCreativeAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoSimbaCreativeAddAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}
+
+// Set is Title Setter
+// 创意标题，最多20个汉字
+func (r *TaobaoSimbaCreativeAddAPIRequest) SetTitle(_title string) error {
+	r._title = _title
+	r.Set("title", _title)
+	return nil
+}
+
+// Get Title Getter
+func (r TaobaoSimbaCreativeAddAPIRequest) GetTitle() string {
+	return r._title
+}
+
+// Set is ImgUrl Setter
+// 创意图片地址，必须是推广组对应商品的图片之一
+func (r *TaobaoSimbaCreativeAddAPIRequest) SetImgUrl(_imgUrl string) error {
+	r._imgUrl = _imgUrl
+	r.Set("img_url", _imgUrl)
+	return nil
+}
+
+// Get ImgUrl Getter
+func (r TaobaoSimbaCreativeAddAPIRequest) GetImgUrl() string {
+	return r._imgUrl
+}
+
+// Set is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaCreativeAddAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaCreativeAddAPIRequest) GetNick() string {
+	return r._nick
+}

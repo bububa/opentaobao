@@ -19,4 +19,49 @@ type AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest struct {
 	_uuid string
 }
 
-// New
+// NewAlibabaCampusDeviceOpenapiGetsimpledeviceRequest 初始化AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest对象
+func NewAlibabaCampusDeviceOpenapiGetsimpledeviceRequest() *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest {
+	return &AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetApiMethodName() string {
+	return "alibaba.campus.device.openapi.getsimpledevice"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WorkBenchContext Setter
+// 请求发送端信息
+func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+	r._workBenchContext = _workBenchContext
+	r.Set("work_bench_context", _workBenchContext)
+	return nil
+}
+
+// Get WorkBenchContext Getter
+func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetWorkBenchContext() *WorkBenchContext {
+	return r._workBenchContext
+}
+
+// Set is Uuid Setter
+// 设备uuid
+func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) SetUuid(_uuid string) error {
+	r._uuid = _uuid
+	r.Set("uuid", _uuid)
+	return nil
+}
+
+// Get Uuid Getter
+func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetUuid() string {
+	return r._uuid
+}

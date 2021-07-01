@@ -21,4 +21,62 @@ type TaobaoPlaceStoreRelationAddAPIRequest struct {
 	_storeId int64
 }
 
-// New
+// NewTaobaoPlaceStoreRelationAddRequest 初始化TaobaoPlaceStoreRelationAddAPIRequest对象
+func NewTaobaoPlaceStoreRelationAddRequest() *TaobaoPlaceStoreRelationAddAPIRequest {
+	return &TaobaoPlaceStoreRelationAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPlaceStoreRelationAddAPIRequest) GetApiMethodName() string {
+	return "taobao.place.store.relation.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPlaceStoreRelationAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OuterId Setter
+// 关系B的门店ID
+func (r *TaobaoPlaceStoreRelationAddAPIRequest) SetOuterId(_outerId string) error {
+	r._outerId = _outerId
+	r.Set("outer_id", _outerId)
+	return nil
+}
+
+// Get OuterId Getter
+func (r TaobaoPlaceStoreRelationAddAPIRequest) GetOuterId() string {
+	return r._outerId
+}
+
+// Set is RelationType Setter
+// 关系类型(outer_id是主, store_id是从)
+func (r *TaobaoPlaceStoreRelationAddAPIRequest) SetRelationType(_relationType int64) error {
+	r._relationType = _relationType
+	r.Set("relation_type", _relationType)
+	return nil
+}
+
+// Get RelationType Getter
+func (r TaobaoPlaceStoreRelationAddAPIRequest) GetRelationType() int64 {
+	return r._relationType
+}
+
+// Set is StoreId Setter
+// 门店ID
+func (r *TaobaoPlaceStoreRelationAddAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// Get StoreId Getter
+func (r TaobaoPlaceStoreRelationAddAPIRequest) GetStoreId() int64 {
+	return r._storeId
+}

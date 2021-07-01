@@ -17,4 +17,36 @@ type AlibabaSscSupplyplatformServiceworkerSaveAPIRequest struct {
 	_workerSaveForTopReqDto *WorkerSaveForTopReqDto
 }
 
-// New
+// NewAlibabaSscSupplyplatformServiceworkerSaveRequest 初始化AlibabaSscSupplyplatformServiceworkerSaveAPIRequest对象
+func NewAlibabaSscSupplyplatformServiceworkerSaveRequest() *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest {
+	return &AlibabaSscSupplyplatformServiceworkerSaveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) GetApiMethodName() string {
+	return "alibaba.ssc.supplyplatform.serviceworker.save"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WorkerSaveForTopReqDto Setter
+// 工人保存参数
+func (r *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) SetWorkerSaveForTopReqDto(_workerSaveForTopReqDto *WorkerSaveForTopReqDto) error {
+	r._workerSaveForTopReqDto = _workerSaveForTopReqDto
+	r.Set("worker_save_for_top_req_dto", _workerSaveForTopReqDto)
+	return nil
+}
+
+// Get WorkerSaveForTopReqDto Getter
+func (r AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) GetWorkerSaveForTopReqDto() *WorkerSaveForTopReqDto {
+	return r._workerSaveForTopReqDto
+}

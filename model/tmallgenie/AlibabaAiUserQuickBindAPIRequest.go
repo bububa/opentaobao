@@ -27,4 +27,101 @@ type AlibabaAiUserQuickBindAPIRequest struct {
 	_schemaKey string
 }
 
-// New
+// NewAlibabaAiUserQuickBindRequest 初始化AlibabaAiUserQuickBindAPIRequest对象
+func NewAlibabaAiUserQuickBindRequest() *AlibabaAiUserQuickBindAPIRequest {
+	return &AlibabaAiUserQuickBindAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAiUserQuickBindAPIRequest) GetApiMethodName() string {
+	return "alibaba.ai.user.quick.bind"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAiUserQuickBindAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SerialNo Setter
+// 交易流水号（唯一即可，不参与业务运算）
+func (r *AlibabaAiUserQuickBindAPIRequest) SetSerialNo(_serialNo string) error {
+	r._serialNo = _serialNo
+	r.Set("serial_no", _serialNo)
+	return nil
+}
+
+// Get SerialNo Getter
+func (r AlibabaAiUserQuickBindAPIRequest) GetSerialNo() string {
+	return r._serialNo
+}
+
+// Set is ExtUserType Setter
+// 第三方用户类型
+func (r *AlibabaAiUserQuickBindAPIRequest) SetExtUserType(_extUserType string) error {
+	r._extUserType = _extUserType
+	r.Set("ext_user_type", _extUserType)
+	return nil
+}
+
+// Get ExtUserType Getter
+func (r AlibabaAiUserQuickBindAPIRequest) GetExtUserType() string {
+	return r._extUserType
+}
+
+// Set is ExtUserId Setter
+// 第三用户ID
+func (r *AlibabaAiUserQuickBindAPIRequest) SetExtUserId(_extUserId string) error {
+	r._extUserId = _extUserId
+	r.Set("ext_user_id", _extUserId)
+	return nil
+}
+
+// Get ExtUserId Getter
+func (r AlibabaAiUserQuickBindAPIRequest) GetExtUserId() string {
+	return r._extUserId
+}
+
+// Set is ReqTime Setter
+// 请求时间
+func (r *AlibabaAiUserQuickBindAPIRequest) SetReqTime(_reqTime string) error {
+	r._reqTime = _reqTime
+	r.Set("req_time", _reqTime)
+	return nil
+}
+
+// Get ReqTime Getter
+func (r AlibabaAiUserQuickBindAPIRequest) GetReqTime() string {
+	return r._reqTime
+}
+
+// Set is MerchantUserId Setter
+// 商户的用户的唯一ID
+func (r *AlibabaAiUserQuickBindAPIRequest) SetMerchantUserId(_merchantUserId string) error {
+	r._merchantUserId = _merchantUserId
+	r.Set("merchant_user_id", _merchantUserId)
+	return nil
+}
+
+// Get MerchantUserId Getter
+func (r AlibabaAiUserQuickBindAPIRequest) GetMerchantUserId() string {
+	return r._merchantUserId
+}
+
+// Set is SchemaKey Setter
+// 开放平台申请的schema
+func (r *AlibabaAiUserQuickBindAPIRequest) SetSchemaKey(_schemaKey string) error {
+	r._schemaKey = _schemaKey
+	r.Set("schema_key", _schemaKey)
+	return nil
+}
+
+// Get SchemaKey Getter
+func (r AlibabaAiUserQuickBindAPIRequest) GetSchemaKey() string {
+	return r._schemaKey
+}

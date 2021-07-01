@@ -21,4 +21,62 @@ type AlibabaJymRequirementsReceiveAPIRequest struct {
 	_requirementOrderId string
 }
 
-// New
+// NewAlibabaJymRequirementsReceiveRequest 初始化AlibabaJymRequirementsReceiveAPIRequest对象
+func NewAlibabaJymRequirementsReceiveRequest() *AlibabaJymRequirementsReceiveAPIRequest {
+	return &AlibabaJymRequirementsReceiveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaJymRequirementsReceiveAPIRequest) GetApiMethodName() string {
+	return "alibaba.jym.requirements.receive"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaJymRequirementsReceiveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RequirementId Setter
+// 需求id
+func (r *AlibabaJymRequirementsReceiveAPIRequest) SetRequirementId(_requirementId string) error {
+	r._requirementId = _requirementId
+	r.Set("requirement_id", _requirementId)
+	return nil
+}
+
+// Get RequirementId Getter
+func (r AlibabaJymRequirementsReceiveAPIRequest) GetRequirementId() string {
+	return r._requirementId
+}
+
+// Set is ReceiverMobile Setter
+// 接单者手机号
+func (r *AlibabaJymRequirementsReceiveAPIRequest) SetReceiverMobile(_receiverMobile string) error {
+	r._receiverMobile = _receiverMobile
+	r.Set("receiver_mobile", _receiverMobile)
+	return nil
+}
+
+// Get ReceiverMobile Getter
+func (r AlibabaJymRequirementsReceiveAPIRequest) GetReceiverMobile() string {
+	return r._receiverMobile
+}
+
+// Set is RequirementOrderId Setter
+// 需求订单id
+func (r *AlibabaJymRequirementsReceiveAPIRequest) SetRequirementOrderId(_requirementOrderId string) error {
+	r._requirementOrderId = _requirementOrderId
+	r.Set("requirement_order_id", _requirementOrderId)
+	return nil
+}
+
+// Get RequirementOrderId Getter
+func (r AlibabaJymRequirementsReceiveAPIRequest) GetRequirementOrderId() string {
+	return r._requirementOrderId
+}

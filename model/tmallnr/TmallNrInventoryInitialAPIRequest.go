@@ -17,4 +17,36 @@ type TmallNrInventoryInitialAPIRequest struct {
 	_param0 *NrStoreInvItemInitialReqDto
 }
 
-// New
+// NewTmallNrInventoryInitialRequest 初始化TmallNrInventoryInitialAPIRequest对象
+func NewTmallNrInventoryInitialRequest() *TmallNrInventoryInitialAPIRequest {
+	return &TmallNrInventoryInitialAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrInventoryInitialAPIRequest) GetApiMethodName() string {
+	return "tmall.nr.inventory.initial"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrInventoryInitialAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 请求入参
+func (r *TmallNrInventoryInitialAPIRequest) SetParam0(_param0 *NrStoreInvItemInitialReqDto) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r TmallNrInventoryInitialAPIRequest) GetParam0() *NrStoreInvItemInitialReqDto {
+	return r._param0
+}

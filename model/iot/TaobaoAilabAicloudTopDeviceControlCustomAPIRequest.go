@@ -21,4 +21,62 @@ type TaobaoAilabAicloudTopDeviceControlCustomAPIRequest struct {
 	_param2 []string
 }
 
-// New
+// NewTaobaoAilabAicloudTopDeviceControlCustomRequest 初始化TaobaoAilabAicloudTopDeviceControlCustomAPIRequest对象
+func NewTaobaoAilabAicloudTopDeviceControlCustomRequest() *TaobaoAilabAicloudTopDeviceControlCustomAPIRequest {
+	return &TaobaoAilabAicloudTopDeviceControlCustomAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) GetApiMethodName() string {
+	return "taobao.ailab.aicloud.top.device.control.custom"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 用户信息
+func (r *TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) GetParam0() *OpenBaseInfo {
+	return r._param0
+}
+
+// Set is Param1 Setter
+// 设备id
+func (r *TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) SetParam1(_param1 string) error {
+	r._param1 = _param1
+	r.Set("param1", _param1)
+	return nil
+}
+
+// Get Param1 Getter
+func (r TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) GetParam1() string {
+	return r._param1
+}
+
+// Set is Param2 Setter
+// 参数key-value列表
+func (r *TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) SetParam2(_param2 []string) error {
+	r._param2 = _param2
+	r.Set("param2", _param2)
+	return nil
+}
+
+// Get Param2 Getter
+func (r TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) GetParam2() []string {
+	return r._param2
+}

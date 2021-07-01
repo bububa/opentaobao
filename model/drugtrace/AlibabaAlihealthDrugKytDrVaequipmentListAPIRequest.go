@@ -29,4 +29,114 @@ type AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewAlibabaAlihealthDrugKytDrVaequipmentListRequest 初始化AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest对象
+func NewAlibabaAlihealthDrugKytDrVaequipmentListRequest() *AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest {
+	return &AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.drug.kyt.dr.vaequipment.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RefEntId Setter
+// 操作企业ID （appkey授权）
+func (r *AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) SetRefEntId(_refEntId string) error {
+	r._refEntId = _refEntId
+	r.Set("ref_ent_id", _refEntId)
+	return nil
+}
+
+// Get RefEntId Getter
+func (r AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) GetRefEntId() string {
+	return r._refEntId
+}
+
+// Set is TargetRefEntId Setter
+// 目标企业ID
+func (r *AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) SetTargetRefEntId(_targetRefEntId string) error {
+	r._targetRefEntId = _targetRefEntId
+	r.Set("target_ref_ent_id", _targetRefEntId)
+	return nil
+}
+
+// Get TargetRefEntId Getter
+func (r AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) GetTargetRefEntId() string {
+	return r._targetRefEntId
+}
+
+// Set is EquipmentCodeOrName Setter
+// 设备编号或名称
+func (r *AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) SetEquipmentCodeOrName(_equipmentCodeOrName string) error {
+	r._equipmentCodeOrName = _equipmentCodeOrName
+	r.Set("equipment_code_or_name", _equipmentCodeOrName)
+	return nil
+}
+
+// Get EquipmentCodeOrName Getter
+func (r AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) GetEquipmentCodeOrName() string {
+	return r._equipmentCodeOrName
+}
+
+// Set is EquipmentType Setter
+// 设备类型
+func (r *AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) SetEquipmentType(_equipmentType string) error {
+	r._equipmentType = _equipmentType
+	r.Set("equipment_type", _equipmentType)
+	return nil
+}
+
+// Get EquipmentType Getter
+func (r AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) GetEquipmentType() string {
+	return r._equipmentType
+}
+
+// Set is Status Setter
+// 设备状态，1：正常；0：停止
+func (r *AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// Get Status Getter
+func (r AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) GetStatus() string {
+	return r._status
+}
+
+// Set is Page Setter
+// 页码
+func (r *AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) SetPage(_page int64) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// Get Page Getter
+func (r AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) GetPage() int64 {
+	return r._page
+}
+
+// Set is PageSize Setter
+// 每页显示数量
+func (r *AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

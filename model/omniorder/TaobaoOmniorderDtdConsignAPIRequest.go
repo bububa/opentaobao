@@ -19,4 +19,49 @@ type TaobaoOmniorderDtdConsignAPIRequest struct {
 	_storeId int64
 }
 
-// New
+// NewTaobaoOmniorderDtdConsignRequest 初始化TaobaoOmniorderDtdConsignAPIRequest对象
+func NewTaobaoOmniorderDtdConsignRequest() *TaobaoOmniorderDtdConsignAPIRequest {
+	return &TaobaoOmniorderDtdConsignAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOmniorderDtdConsignAPIRequest) GetApiMethodName() string {
+	return "taobao.omniorder.dtd.consign"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOmniorderDtdConsignAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MainOrderId Setter
+// 淘宝订单主订单号
+func (r *TaobaoOmniorderDtdConsignAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+	r._mainOrderId = _mainOrderId
+	r.Set("main_order_id", _mainOrderId)
+	return nil
+}
+
+// Get MainOrderId Getter
+func (r TaobaoOmniorderDtdConsignAPIRequest) GetMainOrderId() int64 {
+	return r._mainOrderId
+}
+
+// Set is StoreId Setter
+// 发货对应的商户中心门店ID
+func (r *TaobaoOmniorderDtdConsignAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// Get StoreId Getter
+func (r TaobaoOmniorderDtdConsignAPIRequest) GetStoreId() int64 {
+	return r._storeId
+}

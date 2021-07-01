@@ -17,4 +17,36 @@ type AlibabaAlscCrmOpenRechargeOperateAPIRequest struct {
 	_paramRechargeOperateOpenReq *RechargeOperateOpenReq
 }
 
-// New
+// NewAlibabaAlscCrmOpenRechargeOperateRequest 初始化AlibabaAlscCrmOpenRechargeOperateAPIRequest对象
+func NewAlibabaAlscCrmOpenRechargeOperateRequest() *AlibabaAlscCrmOpenRechargeOperateAPIRequest {
+	return &AlibabaAlscCrmOpenRechargeOperateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmOpenRechargeOperateAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.open.recharge.operate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmOpenRechargeOperateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamRechargeOperateOpenReq Setter
+// 储值操作参数
+func (r *AlibabaAlscCrmOpenRechargeOperateAPIRequest) SetParamRechargeOperateOpenReq(_paramRechargeOperateOpenReq *RechargeOperateOpenReq) error {
+	r._paramRechargeOperateOpenReq = _paramRechargeOperateOpenReq
+	r.Set("param_recharge_operate_open_req", _paramRechargeOperateOpenReq)
+	return nil
+}
+
+// Get ParamRechargeOperateOpenReq Getter
+func (r AlibabaAlscCrmOpenRechargeOperateAPIRequest) GetParamRechargeOperateOpenReq() *RechargeOperateOpenReq {
+	return r._paramRechargeOperateOpenReq
+}

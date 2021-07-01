@@ -17,4 +17,36 @@ type AlibabaWdkTradeOrderCancelAPIRequest struct {
 	_trade *TradeOrder
 }
 
-// New
+// NewAlibabaWdkTradeOrderCancelRequest 初始化AlibabaWdkTradeOrderCancelAPIRequest对象
+func NewAlibabaWdkTradeOrderCancelRequest() *AlibabaWdkTradeOrderCancelAPIRequest {
+	return &AlibabaWdkTradeOrderCancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkTradeOrderCancelAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.trade.order.cancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkTradeOrderCancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Trade Setter
+// 待取消的订单
+func (r *AlibabaWdkTradeOrderCancelAPIRequest) SetTrade(_trade *TradeOrder) error {
+	r._trade = _trade
+	r.Set("trade", _trade)
+	return nil
+}
+
+// Get Trade Getter
+func (r AlibabaWdkTradeOrderCancelAPIRequest) GetTrade() *TradeOrder {
+	return r._trade
+}

@@ -17,4 +17,36 @@ type AlibabaEinvoiceFlowTaxCreateAPIRequest struct {
 	_invoiceTaxFlowCreateDto *InvoiceTaxFlowCreateDto
 }
 
-// New
+// NewAlibabaEinvoiceFlowTaxCreateRequest 初始化AlibabaEinvoiceFlowTaxCreateAPIRequest对象
+func NewAlibabaEinvoiceFlowTaxCreateRequest() *AlibabaEinvoiceFlowTaxCreateAPIRequest {
+	return &AlibabaEinvoiceFlowTaxCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceFlowTaxCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.flow.tax.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceFlowTaxCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is InvoiceTaxFlowCreateDto Setter
+// 工单请求
+func (r *AlibabaEinvoiceFlowTaxCreateAPIRequest) SetInvoiceTaxFlowCreateDto(_invoiceTaxFlowCreateDto *InvoiceTaxFlowCreateDto) error {
+	r._invoiceTaxFlowCreateDto = _invoiceTaxFlowCreateDto
+	r.Set("invoice_tax_flow_create_dto", _invoiceTaxFlowCreateDto)
+	return nil
+}
+
+// Get InvoiceTaxFlowCreateDto Getter
+func (r AlibabaEinvoiceFlowTaxCreateAPIRequest) GetInvoiceTaxFlowCreateDto() *InvoiceTaxFlowCreateDto {
+	return r._invoiceTaxFlowCreateDto
+}

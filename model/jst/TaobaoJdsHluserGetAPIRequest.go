@@ -15,4 +15,23 @@ type TaobaoJdsHluserGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoJdsHluserGetRequest 初始化TaobaoJdsHluserGetAPIRequest对象
+func NewTaobaoJdsHluserGetRequest() *TaobaoJdsHluserGetAPIRequest {
+	return &TaobaoJdsHluserGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoJdsHluserGetAPIRequest) GetApiMethodName() string {
+	return "taobao.jds.hluser.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoJdsHluserGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

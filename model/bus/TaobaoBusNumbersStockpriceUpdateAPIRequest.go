@@ -17,4 +17,36 @@ type TaobaoBusNumbersStockpriceUpdateAPIRequest struct {
 	_paramTopBusPriceAndStockUpdateRQ *TopBusPriceAndStockUpdateRq
 }
 
-// New
+// NewTaobaoBusNumbersStockpriceUpdateRequest 初始化TaobaoBusNumbersStockpriceUpdateAPIRequest对象
+func NewTaobaoBusNumbersStockpriceUpdateRequest() *TaobaoBusNumbersStockpriceUpdateAPIRequest {
+	return &TaobaoBusNumbersStockpriceUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBusNumbersStockpriceUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.bus.numbers.stockprice.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBusNumbersStockpriceUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamTopBusPriceAndStockUpdateRQ Setter
+// 请求参数
+func (r *TaobaoBusNumbersStockpriceUpdateAPIRequest) SetParamTopBusPriceAndStockUpdateRQ(_paramTopBusPriceAndStockUpdateRQ *TopBusPriceAndStockUpdateRq) error {
+	r._paramTopBusPriceAndStockUpdateRQ = _paramTopBusPriceAndStockUpdateRQ
+	r.Set("param_top_bus_price_and_stock_update_r_q", _paramTopBusPriceAndStockUpdateRQ)
+	return nil
+}
+
+// Get ParamTopBusPriceAndStockUpdateRQ Getter
+func (r TaobaoBusNumbersStockpriceUpdateAPIRequest) GetParamTopBusPriceAndStockUpdateRQ() *TopBusPriceAndStockUpdateRq {
+	return r._paramTopBusPriceAndStockUpdateRQ
+}

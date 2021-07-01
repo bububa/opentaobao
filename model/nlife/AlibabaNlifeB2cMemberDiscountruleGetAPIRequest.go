@@ -19,4 +19,49 @@ type AlibabaNlifeB2cMemberDiscountruleGetAPIRequest struct {
 	_cardNo string
 }
 
-// New
+// NewAlibabaNlifeB2cMemberDiscountruleGetRequest 初始化AlibabaNlifeB2cMemberDiscountruleGetAPIRequest对象
+func NewAlibabaNlifeB2cMemberDiscountruleGetRequest() *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest {
+	return &AlibabaNlifeB2cMemberDiscountruleGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.nlife.b2c.member.discountrule.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CompanyId Setter
+// 企业ID
+func (r *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) SetCompanyId(_companyId string) error {
+	r._companyId = _companyId
+	r.Set("company_id", _companyId)
+	return nil
+}
+
+// Get CompanyId Getter
+func (r AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) GetCompanyId() string {
+	return r._companyId
+}
+
+// Set is CardNo Setter
+// 会员在ISV处的编号
+func (r *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) SetCardNo(_cardNo string) error {
+	r._cardNo = _cardNo
+	r.Set("card_no", _cardNo)
+	return nil
+}
+
+// Get CardNo Getter
+func (r AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) GetCardNo() string {
+	return r._cardNo
+}

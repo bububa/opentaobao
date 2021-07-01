@@ -17,4 +17,36 @@ type AlibabaAscpAicSupplierAicinventoryPublishAPIRequest struct {
 	_aicInventoryPublishRequest *Aicinventorypublishrequest
 }
 
-// New
+// NewAlibabaAscpAicSupplierAicinventoryPublishRequest 初始化AlibabaAscpAicSupplierAicinventoryPublishAPIRequest对象
+func NewAlibabaAscpAicSupplierAicinventoryPublishRequest() *AlibabaAscpAicSupplierAicinventoryPublishAPIRequest {
+	return &AlibabaAscpAicSupplierAicinventoryPublishAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.aic.supplier.aicinventory.publish"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AicInventoryPublishRequest Setter
+// 库存发布请求参数
+func (r *AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) SetAicInventoryPublishRequest(_aicInventoryPublishRequest *Aicinventorypublishrequest) error {
+	r._aicInventoryPublishRequest = _aicInventoryPublishRequest
+	r.Set("aic_inventory_publish_request", _aicInventoryPublishRequest)
+	return nil
+}
+
+// Get AicInventoryPublishRequest Getter
+func (r AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) GetAicInventoryPublishRequest() *Aicinventorypublishrequest {
+	return r._aicInventoryPublishRequest
+}

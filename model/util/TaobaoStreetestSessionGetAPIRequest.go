@@ -15,4 +15,23 @@ type TaobaoStreetestSessionGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoStreetestSessionGetRequest 初始化TaobaoStreetestSessionGetAPIRequest对象
+func NewTaobaoStreetestSessionGetRequest() *TaobaoStreetestSessionGetAPIRequest {
+	return &TaobaoStreetestSessionGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoStreetestSessionGetAPIRequest) GetApiMethodName() string {
+	return "taobao.streetest.session.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoStreetestSessionGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

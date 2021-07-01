@@ -17,4 +17,36 @@ type TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest struct {
 	_poiId int64
 }
 
-// New
+// NewTaobaoAlitripTravelAxinPoiDetailQueryRequest 初始化TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest对象
+func NewTaobaoAlitripTravelAxinPoiDetailQueryRequest() *TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest {
+	return &TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.travel.axin.poi.detail.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PoiId Setter
+// poiId
+func (r *TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest) SetPoiId(_poiId int64) error {
+	r._poiId = _poiId
+	r.Set("poi_id", _poiId)
+	return nil
+}
+
+// Get PoiId Getter
+func (r TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest) GetPoiId() int64 {
+	return r._poiId
+}

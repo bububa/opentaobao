@@ -19,4 +19,49 @@ type TaobaoVmarketEticketFlowResendAPIRequest struct {
 	_bizType int64
 }
 
-// New
+// NewTaobaoVmarketEticketFlowResendRequest 初始化TaobaoVmarketEticketFlowResendAPIRequest对象
+func NewTaobaoVmarketEticketFlowResendRequest() *TaobaoVmarketEticketFlowResendAPIRequest {
+	return &TaobaoVmarketEticketFlowResendAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoVmarketEticketFlowResendAPIRequest) GetApiMethodName() string {
+	return "taobao.vmarket.eticket.flow.resend"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoVmarketEticketFlowResendAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OuterId Setter
+// 业务单号
+func (r *TaobaoVmarketEticketFlowResendAPIRequest) SetOuterId(_outerId string) error {
+	r._outerId = _outerId
+	r.Set("outer_id", _outerId)
+	return nil
+}
+
+// Get OuterId Getter
+func (r TaobaoVmarketEticketFlowResendAPIRequest) GetOuterId() string {
+	return r._outerId
+}
+
+// Set is BizType Setter
+// 业务类型值，可联系淘宝业务运营取得具体值
+func (r *TaobaoVmarketEticketFlowResendAPIRequest) SetBizType(_bizType int64) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// Get BizType Getter
+func (r TaobaoVmarketEticketFlowResendAPIRequest) GetBizType() int64 {
+	return r._bizType
+}

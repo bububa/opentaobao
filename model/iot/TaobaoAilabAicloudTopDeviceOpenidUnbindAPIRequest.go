@@ -27,4 +27,101 @@ type TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest struct {
 	_utdId string
 }
 
-// New
+// NewTaobaoAilabAicloudTopDeviceOpenidUnbindRequest 初始化TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest对象
+func NewTaobaoAilabAicloudTopDeviceOpenidUnbindRequest() *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest {
+	return &TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) GetApiMethodName() string {
+	return "taobao.ailab.aicloud.top.device.openid.unbind"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OpenId Setter
+// 淘宝openId
+func (r *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) SetOpenId(_openId string) error {
+	r._openId = _openId
+	r.Set("open_id", _openId)
+	return nil
+}
+
+// Get OpenId Getter
+func (r TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) GetOpenId() string {
+	return r._openId
+}
+
+// Set is Uuid Setter
+// 设备uuid
+func (r *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) SetUuid(_uuid string) error {
+	r._uuid = _uuid
+	r.Set("uuid", _uuid)
+	return nil
+}
+
+// Get Uuid Getter
+func (r TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) GetUuid() string {
+	return r._uuid
+}
+
+// Set is Schema Setter
+// 账户体系隔离
+func (r *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) SetSchema(_schema string) error {
+	r._schema = _schema
+	r.Set("schema", _schema)
+	return nil
+}
+
+// Get Schema Getter
+func (r TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) GetSchema() string {
+	return r._schema
+}
+
+// Set is UserId Setter
+// 用户ID，此处传入第三方账户体系的用户id
+func (r *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) SetUserId(_userId string) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) GetUserId() string {
+	return r._userId
+}
+
+// Set is Ext Setter
+// 扩展信息，用于存放APP类型等
+func (r *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) SetExt(_ext string) error {
+	r._ext = _ext
+	r.Set("ext", _ext)
+	return nil
+}
+
+// Get Ext Getter
+func (r TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) GetExt() string {
+	return r._ext
+}
+
+// Set is UtdId Setter
+// 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
+func (r *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) SetUtdId(_utdId string) error {
+	r._utdId = _utdId
+	r.Set("utd_id", _utdId)
+	return nil
+}
+
+// Get UtdId Getter
+func (r TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) GetUtdId() string {
+	return r._utdId
+}

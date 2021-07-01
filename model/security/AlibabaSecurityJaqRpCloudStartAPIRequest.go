@@ -21,4 +21,62 @@ type AlibabaSecurityJaqRpCloudStartAPIRequest struct {
 	_extraData string
 }
 
-// New
+// NewAlibabaSecurityJaqRpCloudStartRequest 初始化AlibabaSecurityJaqRpCloudStartAPIRequest对象
+func NewAlibabaSecurityJaqRpCloudStartRequest() *AlibabaSecurityJaqRpCloudStartAPIRequest {
+	return &AlibabaSecurityJaqRpCloudStartAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSecurityJaqRpCloudStartAPIRequest) GetApiMethodName() string {
+	return "alibaba.security.jaq.rp.cloud.start"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSecurityJaqRpCloudStartAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is VerifyToken Setter
+// token
+func (r *AlibabaSecurityJaqRpCloudStartAPIRequest) SetVerifyToken(_verifyToken string) error {
+	r._verifyToken = _verifyToken
+	r.Set("verify_token", _verifyToken)
+	return nil
+}
+
+// Get VerifyToken Getter
+func (r AlibabaSecurityJaqRpCloudStartAPIRequest) GetVerifyToken() string {
+	return r._verifyToken
+}
+
+// Set is ClientInfo Setter
+// 客户端信息，如果是服务端接入，里面的参数可为空
+func (r *AlibabaSecurityJaqRpCloudStartAPIRequest) SetClientInfo(_clientInfo *RpClientInfo) error {
+	r._clientInfo = _clientInfo
+	r.Set("client_info", _clientInfo)
+	return nil
+}
+
+// Get ClientInfo Getter
+func (r AlibabaSecurityJaqRpCloudStartAPIRequest) GetClientInfo() *RpClientInfo {
+	return r._clientInfo
+}
+
+// Set is ExtraData Setter
+// 扩展信息
+func (r *AlibabaSecurityJaqRpCloudStartAPIRequest) SetExtraData(_extraData string) error {
+	r._extraData = _extraData
+	r.Set("extra_data", _extraData)
+	return nil
+}
+
+// Get ExtraData Getter
+func (r AlibabaSecurityJaqRpCloudStartAPIRequest) GetExtraData() string {
+	return r._extraData
+}

@@ -29,4 +29,114 @@ type AliexpressAffiliateOrderListbyindexAPIRequest struct {
 	_appSignature string
 }
 
-// New
+// NewAliexpressAffiliateOrderListbyindexRequest 初始化AliexpressAffiliateOrderListbyindexAPIRequest对象
+func NewAliexpressAffiliateOrderListbyindexRequest() *AliexpressAffiliateOrderListbyindexAPIRequest {
+	return &AliexpressAffiliateOrderListbyindexAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetApiMethodName() string {
+	return "aliexpress.affiliate.order.listbyindex"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StartTime Setter
+// 开始时间
+func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// Get StartTime Getter
+func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetStartTime() string {
+	return r._startTime
+}
+
+// Set is StartQueryIndexId Setter
+// 查询索引开始值：若不传，则只能查第一页
+func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetStartQueryIndexId(_startQueryIndexId string) error {
+	r._startQueryIndexId = _startQueryIndexId
+	r.Set("start_query_index_id", _startQueryIndexId)
+	return nil
+}
+
+// Get StartQueryIndexId Getter
+func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetStartQueryIndexId() string {
+	return r._startQueryIndexId
+}
+
+// Set is EndTime Setter
+// 结束时间
+func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// Get EndTime Getter
+func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetEndTime() string {
+	return r._endTime
+}
+
+// Set is Status Setter
+// 订单状态:Payment Completed,Buyer Confirmed Receipt
+func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// Get Status Getter
+func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetStatus() string {
+	return r._status
+}
+
+// Set is PageSize Setter
+// 每页记录数
+func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is Fields Setter
+// 返回的字段信息
+func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetFields(_fields string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// Get Fields Getter
+func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetFields() string {
+	return r._fields
+}
+
+// Set is AppSignature Setter
+// 安全签名
+func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetAppSignature(_appSignature string) error {
+	r._appSignature = _appSignature
+	r.Set("app_signature", _appSignature)
+	return nil
+}
+
+// Get AppSignature Getter
+func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetAppSignature() string {
+	return r._appSignature
+}

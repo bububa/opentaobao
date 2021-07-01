@@ -25,4 +25,88 @@ type AlibabaEinvoiceProdResultFileurlGetAPIRequest struct {
 	_platformCode string
 }
 
-// New
+// NewAlibabaEinvoiceProdResultFileurlGetRequest 初始化AlibabaEinvoiceProdResultFileurlGetAPIRequest对象
+func NewAlibabaEinvoiceProdResultFileurlGetRequest() *AlibabaEinvoiceProdResultFileurlGetAPIRequest {
+	return &AlibabaEinvoiceProdResultFileurlGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceProdResultFileurlGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.prod.result.fileurl.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceProdResultFileurlGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PlatformUserId Setter
+// 业务平台商户ID/卖家用户ID
+func (r *AlibabaEinvoiceProdResultFileurlGetAPIRequest) SetPlatformUserId(_platformUserId string) error {
+	r._platformUserId = _platformUserId
+	r.Set("platform_user_id", _platformUserId)
+	return nil
+}
+
+// Get PlatformUserId Getter
+func (r AlibabaEinvoiceProdResultFileurlGetAPIRequest) GetPlatformUserId() string {
+	return r._platformUserId
+}
+
+// Set is InvoiceNo Setter
+// 发票号码
+func (r *AlibabaEinvoiceProdResultFileurlGetAPIRequest) SetInvoiceNo(_invoiceNo string) error {
+	r._invoiceNo = _invoiceNo
+	r.Set("invoice_no", _invoiceNo)
+	return nil
+}
+
+// Get InvoiceNo Getter
+func (r AlibabaEinvoiceProdResultFileurlGetAPIRequest) GetInvoiceNo() string {
+	return r._invoiceNo
+}
+
+// Set is InvoiceCode Setter
+// 发票代码
+func (r *AlibabaEinvoiceProdResultFileurlGetAPIRequest) SetInvoiceCode(_invoiceCode string) error {
+	r._invoiceCode = _invoiceCode
+	r.Set("invoice_code", _invoiceCode)
+	return nil
+}
+
+// Get InvoiceCode Getter
+func (r AlibabaEinvoiceProdResultFileurlGetAPIRequest) GetInvoiceCode() string {
+	return r._invoiceCode
+}
+
+// Set is FileType Setter
+// 发票文件类型，小写，pdf/ofd/jpg
+func (r *AlibabaEinvoiceProdResultFileurlGetAPIRequest) SetFileType(_fileType string) error {
+	r._fileType = _fileType
+	r.Set("file_type", _fileType)
+	return nil
+}
+
+// Get FileType Getter
+func (r AlibabaEinvoiceProdResultFileurlGetAPIRequest) GetFileType() string {
+	return r._fileType
+}
+
+// Set is PlatformCode Setter
+// 业务平台code, 由发票中台分配
+func (r *AlibabaEinvoiceProdResultFileurlGetAPIRequest) SetPlatformCode(_platformCode string) error {
+	r._platformCode = _platformCode
+	r.Set("platform_code", _platformCode)
+	return nil
+}
+
+// Get PlatformCode Getter
+func (r AlibabaEinvoiceProdResultFileurlGetAPIRequest) GetPlatformCode() string {
+	return r._platformCode
+}

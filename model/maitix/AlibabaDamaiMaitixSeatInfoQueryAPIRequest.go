@@ -17,4 +17,36 @@ type AlibabaDamaiMaitixSeatInfoQueryAPIRequest struct {
 	_seatQueryParam *SeatQueryParam
 }
 
-// New
+// NewAlibabaDamaiMaitixSeatInfoQueryRequest 初始化AlibabaDamaiMaitixSeatInfoQueryAPIRequest对象
+func NewAlibabaDamaiMaitixSeatInfoQueryRequest() *AlibabaDamaiMaitixSeatInfoQueryAPIRequest {
+	return &AlibabaDamaiMaitixSeatInfoQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiMaitixSeatInfoQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.maitix.seat.info.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiMaitixSeatInfoQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SeatQueryParam Setter
+// 入参
+func (r *AlibabaDamaiMaitixSeatInfoQueryAPIRequest) SetSeatQueryParam(_seatQueryParam *SeatQueryParam) error {
+	r._seatQueryParam = _seatQueryParam
+	r.Set("seat_query_param", _seatQueryParam)
+	return nil
+}
+
+// Get SeatQueryParam Getter
+func (r AlibabaDamaiMaitixSeatInfoQueryAPIRequest) GetSeatQueryParam() *SeatQueryParam {
+	return r._seatQueryParam
+}

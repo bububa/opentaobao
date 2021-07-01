@@ -17,4 +17,36 @@ type TaobaoBaichuanOpenaccountLoginAPIRequest struct {
 	_name string
 }
 
-// New
+// NewTaobaoBaichuanOpenaccountLoginRequest 初始化TaobaoBaichuanOpenaccountLoginAPIRequest对象
+func NewTaobaoBaichuanOpenaccountLoginRequest() *TaobaoBaichuanOpenaccountLoginAPIRequest {
+	return &TaobaoBaichuanOpenaccountLoginAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBaichuanOpenaccountLoginAPIRequest) GetApiMethodName() string {
+	return "taobao.baichuan.openaccount.login"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBaichuanOpenaccountLoginAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Name Setter
+// name
+func (r *TaobaoBaichuanOpenaccountLoginAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r TaobaoBaichuanOpenaccountLoginAPIRequest) GetName() string {
+	return r._name
+}

@@ -17,4 +17,36 @@ type AlibabaLstTradeOrderRefundListQueryAPIRequest struct {
 	_param *TopLstSupplierOrderRefundQuery
 }
 
-// New
+// NewAlibabaLstTradeOrderRefundListQueryRequest 初始化AlibabaLstTradeOrderRefundListQueryAPIRequest对象
+func NewAlibabaLstTradeOrderRefundListQueryRequest() *AlibabaLstTradeOrderRefundListQueryAPIRequest {
+	return &AlibabaLstTradeOrderRefundListQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstTradeOrderRefundListQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.trade.order.refund.list.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstTradeOrderRefundListQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 输入参数
+func (r *AlibabaLstTradeOrderRefundListQueryAPIRequest) SetParam(_param *TopLstSupplierOrderRefundQuery) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaLstTradeOrderRefundListQueryAPIRequest) GetParam() *TopLstSupplierOrderRefundQuery {
+	return r._param
+}

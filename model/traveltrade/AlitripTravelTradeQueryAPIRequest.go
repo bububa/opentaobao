@@ -17,4 +17,36 @@ type AlitripTravelTradeQueryAPIRequest struct {
 	_orderId int64
 }
 
-// New
+// NewAlitripTravelTradeQueryRequest 初始化AlitripTravelTradeQueryAPIRequest对象
+func NewAlitripTravelTradeQueryRequest() *AlitripTravelTradeQueryAPIRequest {
+	return &AlitripTravelTradeQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTravelTradeQueryAPIRequest) GetApiMethodName() string {
+	return "alitrip.travel.trade.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTravelTradeQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 主订单id
+func (r *AlitripTravelTradeQueryAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r AlitripTravelTradeQueryAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}

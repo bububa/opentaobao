@@ -18,4 +18,36 @@ type AlibabaHappytripTaxiOrderConfirmAPIRequest struct {
 	_orderId string
 }
 
-// New
+// NewAlibabaHappytripTaxiOrderConfirmRequest 初始化AlibabaHappytripTaxiOrderConfirmAPIRequest对象
+func NewAlibabaHappytripTaxiOrderConfirmRequest() *AlibabaHappytripTaxiOrderConfirmAPIRequest {
+	return &AlibabaHappytripTaxiOrderConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaHappytripTaxiOrderConfirmAPIRequest) GetApiMethodName() string {
+	return "alibaba.happytrip.taxi.order.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaHappytripTaxiOrderConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 要确认支付的订单号
+func (r *AlibabaHappytripTaxiOrderConfirmAPIRequest) SetOrderId(_orderId string) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r AlibabaHappytripTaxiOrderConfirmAPIRequest) GetOrderId() string {
+	return r._orderId
+}

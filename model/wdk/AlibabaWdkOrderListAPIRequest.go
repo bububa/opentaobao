@@ -17,4 +17,36 @@ type AlibabaWdkOrderListAPIRequest struct {
 	_batchQueryRequest *BatchQueryRequest
 }
 
-// New
+// NewAlibabaWdkOrderListRequest 初始化AlibabaWdkOrderListAPIRequest对象
+func NewAlibabaWdkOrderListRequest() *AlibabaWdkOrderListAPIRequest {
+	return &AlibabaWdkOrderListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkOrderListAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.order.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkOrderListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BatchQueryRequest Setter
+// 查询参数
+func (r *AlibabaWdkOrderListAPIRequest) SetBatchQueryRequest(_batchQueryRequest *BatchQueryRequest) error {
+	r._batchQueryRequest = _batchQueryRequest
+	r.Set("batch_query_request", _batchQueryRequest)
+	return nil
+}
+
+// Get BatchQueryRequest Getter
+func (r AlibabaWdkOrderListAPIRequest) GetBatchQueryRequest() *BatchQueryRequest {
+	return r._batchQueryRequest
+}

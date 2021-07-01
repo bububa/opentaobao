@@ -19,4 +19,49 @@ type AlibabaScbpProductStatusUpdateAPIRequest struct {
 	_status string
 }
 
-// New
+// NewAlibabaScbpProductStatusUpdateRequest 初始化AlibabaScbpProductStatusUpdateAPIRequest对象
+func NewAlibabaScbpProductStatusUpdateRequest() *AlibabaScbpProductStatusUpdateAPIRequest {
+	return &AlibabaScbpProductStatusUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpProductStatusUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.product.status.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpProductStatusUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ProductIdList Setter
+// 产品ID列表
+func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetProductIdList(_productIdList []int64) error {
+	r._productIdList = _productIdList
+	r.Set("product_id_list", _productIdList)
+	return nil
+}
+
+// Get ProductIdList Getter
+func (r AlibabaScbpProductStatusUpdateAPIRequest) GetProductIdList() []int64 {
+	return r._productIdList
+}
+
+// Set is Status Setter
+// enabled:开启,disabled:暂停
+func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// Get Status Getter
+func (r AlibabaScbpProductStatusUpdateAPIRequest) GetStatus() string {
+	return r._status
+}

@@ -17,4 +17,36 @@ type AlitripBtripOpenSupplychainTrainTradeAPIRequest struct {
 	_rq *OpenApiZzdSearchRq
 }
 
-// New
+// NewAlitripBtripOpenSupplychainTrainTradeRequest 初始化AlitripBtripOpenSupplychainTrainTradeAPIRequest对象
+func NewAlitripBtripOpenSupplychainTrainTradeRequest() *AlitripBtripOpenSupplychainTrainTradeAPIRequest {
+	return &AlitripBtripOpenSupplychainTrainTradeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripOpenSupplychainTrainTradeAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.open.supplychain.train.trade"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripOpenSupplychainTrainTradeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Rq Setter
+// 入参
+func (r *AlitripBtripOpenSupplychainTrainTradeAPIRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
+	r._rq = _rq
+	r.Set("rq", _rq)
+	return nil
+}
+
+// Get Rq Getter
+func (r AlitripBtripOpenSupplychainTrainTradeAPIRequest) GetRq() *OpenApiZzdSearchRq {
+	return r._rq
+}

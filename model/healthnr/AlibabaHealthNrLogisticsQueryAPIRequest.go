@@ -17,4 +17,36 @@ type AlibabaHealthNrLogisticsQueryAPIRequest struct {
 	_orderId int64
 }
 
-// New
+// NewAlibabaHealthNrLogisticsQueryRequest 初始化AlibabaHealthNrLogisticsQueryAPIRequest对象
+func NewAlibabaHealthNrLogisticsQueryRequest() *AlibabaHealthNrLogisticsQueryAPIRequest {
+	return &AlibabaHealthNrLogisticsQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaHealthNrLogisticsQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.health.nr.logistics.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaHealthNrLogisticsQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 订单id
+func (r *AlibabaHealthNrLogisticsQueryAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r AlibabaHealthNrLogisticsQueryAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}

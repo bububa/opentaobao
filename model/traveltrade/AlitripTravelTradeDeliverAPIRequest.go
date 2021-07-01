@@ -17,4 +17,36 @@ type AlitripTravelTradeDeliverAPIRequest struct {
 	_subOrderId int64
 }
 
-// New
+// NewAlitripTravelTradeDeliverRequest 初始化AlitripTravelTradeDeliverAPIRequest对象
+func NewAlitripTravelTradeDeliverRequest() *AlitripTravelTradeDeliverAPIRequest {
+	return &AlitripTravelTradeDeliverAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTravelTradeDeliverAPIRequest) GetApiMethodName() string {
+	return "alitrip.travel.trade.deliver"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTravelTradeDeliverAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SubOrderId Setter
+// 子订单id
+func (r *AlitripTravelTradeDeliverAPIRequest) SetSubOrderId(_subOrderId int64) error {
+	r._subOrderId = _subOrderId
+	r.Set("sub_order_id", _subOrderId)
+	return nil
+}
+
+// Get SubOrderId Getter
+func (r AlitripTravelTradeDeliverAPIRequest) GetSubOrderId() int64 {
+	return r._subOrderId
+}

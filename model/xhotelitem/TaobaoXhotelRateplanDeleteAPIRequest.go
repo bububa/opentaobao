@@ -21,4 +21,62 @@ type TaobaoXhotelRateplanDeleteAPIRequest struct {
 	_rateplanCode string
 }
 
-// New
+// NewTaobaoXhotelRateplanDeleteRequest 初始化TaobaoXhotelRateplanDeleteAPIRequest对象
+func NewTaobaoXhotelRateplanDeleteRequest() *TaobaoXhotelRateplanDeleteAPIRequest {
+	return &TaobaoXhotelRateplanDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelRateplanDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.rateplan.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelRateplanDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RpId Setter
+// ratepland标识
+func (r *TaobaoXhotelRateplanDeleteAPIRequest) SetRpId(_rpId int64) error {
+	r._rpId = _rpId
+	r.Set("rp_id", _rpId)
+	return nil
+}
+
+// Get RpId Getter
+func (r TaobaoXhotelRateplanDeleteAPIRequest) GetRpId() int64 {
+	return r._rpId
+}
+
+// Set is Vendor Setter
+// 系统商，一般不用填写，使用须申请
+func (r *TaobaoXhotelRateplanDeleteAPIRequest) SetVendor(_vendor string) error {
+	r._vendor = _vendor
+	r.Set("vendor", _vendor)
+	return nil
+}
+
+// Get Vendor Getter
+func (r TaobaoXhotelRateplanDeleteAPIRequest) GetVendor() string {
+	return r._vendor
+}
+
+// Set is RateplanCode Setter
+// 商家价格政策编码
+func (r *TaobaoXhotelRateplanDeleteAPIRequest) SetRateplanCode(_rateplanCode string) error {
+	r._rateplanCode = _rateplanCode
+	r.Set("rateplan_code", _rateplanCode)
+	return nil
+}
+
+// Get RateplanCode Getter
+func (r TaobaoXhotelRateplanDeleteAPIRequest) GetRateplanCode() string {
+	return r._rateplanCode
+}

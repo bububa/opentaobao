@@ -17,4 +17,36 @@ type AlibabaAscpChannelDistributorInventoryGetAPIRequest struct {
 	_inventoryRequest *ChannelInventoryQuery
 }
 
-// New
+// NewAlibabaAscpChannelDistributorInventoryGetRequest 初始化AlibabaAscpChannelDistributorInventoryGetAPIRequest对象
+func NewAlibabaAscpChannelDistributorInventoryGetRequest() *AlibabaAscpChannelDistributorInventoryGetAPIRequest {
+	return &AlibabaAscpChannelDistributorInventoryGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpChannelDistributorInventoryGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.channel.distributor.inventory.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpChannelDistributorInventoryGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is InventoryRequest Setter
+// 入参
+func (r *AlibabaAscpChannelDistributorInventoryGetAPIRequest) SetInventoryRequest(_inventoryRequest *ChannelInventoryQuery) error {
+	r._inventoryRequest = _inventoryRequest
+	r.Set("inventory_request", _inventoryRequest)
+	return nil
+}
+
+// Get InventoryRequest Getter
+func (r AlibabaAscpChannelDistributorInventoryGetAPIRequest) GetInventoryRequest() *ChannelInventoryQuery {
+	return r._inventoryRequest
+}

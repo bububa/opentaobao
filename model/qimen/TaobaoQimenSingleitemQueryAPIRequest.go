@@ -17,4 +17,36 @@ type TaobaoQimenSingleitemQueryAPIRequest struct {
 	_request *RequestDo
 }
 
-// New
+// NewTaobaoQimenSingleitemQueryRequest 初始化TaobaoQimenSingleitemQueryAPIRequest对象
+func NewTaobaoQimenSingleitemQueryRequest() *TaobaoQimenSingleitemQueryAPIRequest {
+	return &TaobaoQimenSingleitemQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenSingleitemQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.singleitem.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenSingleitemQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenSingleitemQueryAPIRequest) SetRequest(_request *RequestDo) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenSingleitemQueryAPIRequest) GetRequest() *RequestDo {
+	return r._request
+}

@@ -21,4 +21,62 @@ type TaobaoOpenmallRefundMessageSubmitAPIRequest struct {
 	_refundMessage *RefundMessage
 }
 
-// New
+// NewTaobaoOpenmallRefundMessageSubmitRequest 初始化TaobaoOpenmallRefundMessageSubmitAPIRequest对象
+func NewTaobaoOpenmallRefundMessageSubmitRequest() *TaobaoOpenmallRefundMessageSubmitAPIRequest {
+	return &TaobaoOpenmallRefundMessageSubmitAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetApiMethodName() string {
+	return "taobao.openmall.refund.message.submit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Distributor Setter
+// 分销者身份
+func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetDistributor(_distributor string) error {
+	r._distributor = _distributor
+	r.Set("distributor", _distributor)
+	return nil
+}
+
+// Get Distributor Getter
+func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetDistributor() string {
+	return r._distributor
+}
+
+// Set is RefundId Setter
+// 退款单ID
+func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetRefundId(_refundId int64) error {
+	r._refundId = _refundId
+	r.Set("refund_id", _refundId)
+	return nil
+}
+
+// Get RefundId Getter
+func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetRefundId() int64 {
+	return r._refundId
+}
+
+// Set is RefundMessage Setter
+// 提交留言结构
+func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetRefundMessage(_refundMessage *RefundMessage) error {
+	r._refundMessage = _refundMessage
+	r.Set("refund_message", _refundMessage)
+	return nil
+}
+
+// Get RefundMessage Getter
+func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetRefundMessage() *RefundMessage {
+	return r._refundMessage
+}

@@ -20,4 +20,49 @@ type TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest struct {
 	_bizType string
 }
 
-// New
+// NewTmallServicecenterServicestoreDeleteservicestorecapacityRequest 初始化TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest对象
+func NewTmallServicecenterServicestoreDeleteservicestorecapacityRequest() *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest {
+	return &TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.servicestore.deleteservicestorecapacity"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ServiceStoreCode Setter
+// 网点编码
+func (r *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
+	r._serviceStoreCode = _serviceStoreCode
+	r.Set("service_store_code", _serviceStoreCode)
+	return nil
+}
+
+// Get ServiceStoreCode Getter
+func (r TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) GetServiceStoreCode() string {
+	return r._serviceStoreCode
+}
+
+// Set is BizType Setter
+// 业务类型
+func (r *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) SetBizType(_bizType string) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// Get BizType Getter
+func (r TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) GetBizType() string {
+	return r._bizType
+}

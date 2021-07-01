@@ -21,4 +21,49 @@ type AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIRequest struct {
 	_codes []string
 }
 
-// New
+// NewAlibabaAlihealthDrugtraceTopYljgQueryCodedetailRequest 初始化AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIRequest对象
+func NewAlibabaAlihealthDrugtraceTopYljgQueryCodedetailRequest() *AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIRequest {
+	return &AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.drugtrace.top.yljg.query.codedetail"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RefEntId Setter
+// 企业唯一标识（或appkey）
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIRequest) SetRefEntId(_refEntId string) error {
+	r._refEntId = _refEntId
+	r.Set("ref_ent_id", _refEntId)
+	return nil
+}
+
+// Get RefEntId Getter
+func (r AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIRequest) GetRefEntId() string {
+	return r._refEntId
+}
+
+// Set is Codes Setter
+// 码列表
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIRequest) SetCodes(_codes []string) error {
+	r._codes = _codes
+	r.Set("codes", _codes)
+	return nil
+}
+
+// Get Codes Getter
+func (r AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIRequest) GetCodes() []string {
+	return r._codes
+}

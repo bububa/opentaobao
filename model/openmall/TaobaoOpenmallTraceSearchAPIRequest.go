@@ -19,4 +19,49 @@ type TaobaoOpenmallTraceSearchAPIRequest struct {
 	_tid int64
 }
 
-// New
+// NewTaobaoOpenmallTraceSearchRequest 初始化TaobaoOpenmallTraceSearchAPIRequest对象
+func NewTaobaoOpenmallTraceSearchRequest() *TaobaoOpenmallTraceSearchAPIRequest {
+	return &TaobaoOpenmallTraceSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpenmallTraceSearchAPIRequest) GetApiMethodName() string {
+	return "taobao.openmall.trace.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpenmallTraceSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Distributor Setter
+// 签约支付宝代扣的账号
+func (r *TaobaoOpenmallTraceSearchAPIRequest) SetDistributor(_distributor string) error {
+	r._distributor = _distributor
+	r.Set("distributor", _distributor)
+	return nil
+}
+
+// Get Distributor Getter
+func (r TaobaoOpenmallTraceSearchAPIRequest) GetDistributor() string {
+	return r._distributor
+}
+
+// Set is Tid Setter
+// 淘宝订单编号
+func (r *TaobaoOpenmallTraceSearchAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// Get Tid Getter
+func (r TaobaoOpenmallTraceSearchAPIRequest) GetTid() int64 {
+	return r._tid
+}

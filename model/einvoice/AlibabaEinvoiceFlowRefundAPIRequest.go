@@ -17,4 +17,36 @@ type AlibabaEinvoiceFlowRefundAPIRequest struct {
 	_invoiceFlowRefund *InvoiceFlowRefundDto
 }
 
-// New
+// NewAlibabaEinvoiceFlowRefundRequest 初始化AlibabaEinvoiceFlowRefundAPIRequest对象
+func NewAlibabaEinvoiceFlowRefundRequest() *AlibabaEinvoiceFlowRefundAPIRequest {
+	return &AlibabaEinvoiceFlowRefundAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceFlowRefundAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.flow.refund"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceFlowRefundAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is InvoiceFlowRefund Setter
+// 退订请求参数
+func (r *AlibabaEinvoiceFlowRefundAPIRequest) SetInvoiceFlowRefund(_invoiceFlowRefund *InvoiceFlowRefundDto) error {
+	r._invoiceFlowRefund = _invoiceFlowRefund
+	r.Set("invoice_flow_refund", _invoiceFlowRefund)
+	return nil
+}
+
+// Get InvoiceFlowRefund Getter
+func (r AlibabaEinvoiceFlowRefundAPIRequest) GetInvoiceFlowRefund() *InvoiceFlowRefundDto {
+	return r._invoiceFlowRefund
+}

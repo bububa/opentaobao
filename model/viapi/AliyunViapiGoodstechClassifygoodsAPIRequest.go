@@ -17,4 +17,36 @@ type AliyunViapiGoodstechClassifygoodsAPIRequest struct {
 	_imageUrl string
 }
 
-// New
+// NewAliyunViapiGoodstechClassifygoodsRequest 初始化AliyunViapiGoodstechClassifygoodsAPIRequest对象
+func NewAliyunViapiGoodstechClassifygoodsRequest() *AliyunViapiGoodstechClassifygoodsAPIRequest {
+	return &AliyunViapiGoodstechClassifygoodsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliyunViapiGoodstechClassifygoodsAPIRequest) GetApiMethodName() string {
+	return "aliyun.viapi.goodstech.classifygoods"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliyunViapiGoodstechClassifygoodsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ImageUrl Setter
+// 待检测图片链接
+func (r *AliyunViapiGoodstechClassifygoodsAPIRequest) SetImageUrl(_imageUrl string) error {
+	r._imageUrl = _imageUrl
+	r.Set("image_url", _imageUrl)
+	return nil
+}
+
+// Get ImageUrl Getter
+func (r AliyunViapiGoodstechClassifygoodsAPIRequest) GetImageUrl() string {
+	return r._imageUrl
+}

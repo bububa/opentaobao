@@ -17,4 +17,36 @@ type AlitripHotelHstdfHotelroomstaticGetAPIRequest struct {
 	_paramGetHotelRoomStaticParam *GetHotelRoomStaticParam
 }
 
-// New
+// NewAlitripHotelHstdfHotelroomstaticGetRequest 初始化AlitripHotelHstdfHotelroomstaticGetAPIRequest对象
+func NewAlitripHotelHstdfHotelroomstaticGetRequest() *AlitripHotelHstdfHotelroomstaticGetAPIRequest {
+	return &AlitripHotelHstdfHotelroomstaticGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripHotelHstdfHotelroomstaticGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.hotel.hstdf.hotelroomstatic.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripHotelHstdfHotelroomstaticGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamGetHotelRoomStaticParam Setter
+// 参数封装
+func (r *AlitripHotelHstdfHotelroomstaticGetAPIRequest) SetParamGetHotelRoomStaticParam(_paramGetHotelRoomStaticParam *GetHotelRoomStaticParam) error {
+	r._paramGetHotelRoomStaticParam = _paramGetHotelRoomStaticParam
+	r.Set("param_get_hotel_room_static_param", _paramGetHotelRoomStaticParam)
+	return nil
+}
+
+// Get ParamGetHotelRoomStaticParam Getter
+func (r AlitripHotelHstdfHotelroomstaticGetAPIRequest) GetParamGetHotelRoomStaticParam() *GetHotelRoomStaticParam {
+	return r._paramGetHotelRoomStaticParam
+}

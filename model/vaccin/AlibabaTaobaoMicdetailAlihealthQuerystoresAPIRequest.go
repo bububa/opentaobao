@@ -37,4 +37,166 @@ type AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest struct {
 	_provinceId int64
 }
 
-// New
+// NewAlibabaTaobaoMicdetailAlihealthQuerystoresRequest 初始化AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest对象
+func NewAlibabaTaobaoMicdetailAlihealthQuerystoresRequest() *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest {
+	return &AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetApiMethodName() string {
+	return "alibaba.taobao.micdetail.alihealth.querystores"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is InvType Setter
+// 0不查询库存1查询库存
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetInvType(_invType int64) error {
+	r._invType = _invType
+	r.Set("inv_type", _invType)
+	return nil
+}
+
+// Get InvType Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetInvType() int64 {
+	return r._invType
+}
+
+// Set is PackageId Setter
+// 包ID
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetPackageId(_packageId int64) error {
+	r._packageId = _packageId
+	r.Set("package_id", _packageId)
+	return nil
+}
+
+// Get PackageId Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetPackageId() int64 {
+	return r._packageId
+}
+
+// Set is PageSize Setter
+// 页大小
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is PageNum Setter
+// 页码
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetPageNum(_pageNum int64) error {
+	r._pageNum = _pageNum
+	r.Set("page_num", _pageNum)
+	return nil
+}
+
+// Get PageNum Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetPageNum() int64 {
+	return r._pageNum
+}
+
+// Set is Lon Setter
+// 经度
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetLon(_lon string) error {
+	r._lon = _lon
+	r.Set("lon", _lon)
+	return nil
+}
+
+// Get Lon Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetLon() string {
+	return r._lon
+}
+
+// Set is Lat Setter
+// 维度
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetLat(_lat string) error {
+	r._lat = _lat
+	r.Set("lat", _lat)
+	return nil
+}
+
+// Get Lat Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetLat() string {
+	return r._lat
+}
+
+// Set is ItemId Setter
+// 商品ID
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetItemId(_itemId string) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetItemId() string {
+	return r._itemId
+}
+
+// Set is UserId Setter
+// 用户ID
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetUserId() int64 {
+	return r._userId
+}
+
+// Set is DistrictId Setter
+// 地区ID
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetDistrictId(_districtId int64) error {
+	r._districtId = _districtId
+	r.Set("district_id", _districtId)
+	return nil
+}
+
+// Get DistrictId Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetDistrictId() int64 {
+	return r._districtId
+}
+
+// Set is CityId Setter
+// 城市ID
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetCityId(_cityId int64) error {
+	r._cityId = _cityId
+	r.Set("city_id", _cityId)
+	return nil
+}
+
+// Get CityId Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetCityId() int64 {
+	return r._cityId
+}
+
+// Set is ProvinceId Setter
+// 省份ID
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetProvinceId(_provinceId int64) error {
+	r._provinceId = _provinceId
+	r.Set("province_id", _provinceId)
+	return nil
+}
+
+// Get ProvinceId Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetProvinceId() int64 {
+	return r._provinceId
+}

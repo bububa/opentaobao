@@ -17,4 +17,36 @@ type TaobaoSingletreasureActivityCreateAPIRequest struct {
 	_activityInfo *ActivityInfoCreateDto
 }
 
-// New
+// NewTaobaoSingletreasureActivityCreateRequest 初始化TaobaoSingletreasureActivityCreateAPIRequest对象
+func NewTaobaoSingletreasureActivityCreateRequest() *TaobaoSingletreasureActivityCreateAPIRequest {
+	return &TaobaoSingletreasureActivityCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSingletreasureActivityCreateAPIRequest) GetApiMethodName() string {
+	return "taobao.singletreasure.activity.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSingletreasureActivityCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ActivityInfo Setter
+// 系统入参
+func (r *TaobaoSingletreasureActivityCreateAPIRequest) SetActivityInfo(_activityInfo *ActivityInfoCreateDto) error {
+	r._activityInfo = _activityInfo
+	r.Set("activity_info", _activityInfo)
+	return nil
+}
+
+// Get ActivityInfo Getter
+func (r TaobaoSingletreasureActivityCreateAPIRequest) GetActivityInfo() *ActivityInfoCreateDto {
+	return r._activityInfo
+}

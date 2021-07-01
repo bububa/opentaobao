@@ -17,4 +17,36 @@ type TaobaoOpenimCustmsgPushAPIRequest struct {
 	_custmsg *CustMsg
 }
 
-// New
+// NewTaobaoOpenimCustmsgPushRequest 初始化TaobaoOpenimCustmsgPushAPIRequest对象
+func NewTaobaoOpenimCustmsgPushRequest() *TaobaoOpenimCustmsgPushAPIRequest {
+	return &TaobaoOpenimCustmsgPushAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpenimCustmsgPushAPIRequest) GetApiMethodName() string {
+	return "taobao.openim.custmsg.push"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpenimCustmsgPushAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Custmsg Setter
+// 自定义消息内容
+func (r *TaobaoOpenimCustmsgPushAPIRequest) SetCustmsg(_custmsg *CustMsg) error {
+	r._custmsg = _custmsg
+	r.Set("custmsg", _custmsg)
+	return nil
+}
+
+// Get Custmsg Getter
+func (r TaobaoOpenimCustmsgPushAPIRequest) GetCustmsg() *CustMsg {
+	return r._custmsg
+}

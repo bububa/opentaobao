@@ -17,4 +17,36 @@ type TaobaoFeedflowItemCampaignRpthourlistAPIRequest struct {
 	_rptQuery *RptQueryDto
 }
 
-// New
+// NewTaobaoFeedflowItemCampaignRpthourlistRequest 初始化TaobaoFeedflowItemCampaignRpthourlistAPIRequest对象
+func NewTaobaoFeedflowItemCampaignRpthourlistRequest() *TaobaoFeedflowItemCampaignRpthourlistAPIRequest {
+	return &TaobaoFeedflowItemCampaignRpthourlistAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFeedflowItemCampaignRpthourlistAPIRequest) GetApiMethodName() string {
+	return "taobao.feedflow.item.campaign.rpthourlist"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFeedflowItemCampaignRpthourlistAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RptQuery Setter
+// 查询参数
+func (r *TaobaoFeedflowItemCampaignRpthourlistAPIRequest) SetRptQuery(_rptQuery *RptQueryDto) error {
+	r._rptQuery = _rptQuery
+	r.Set("rpt_query", _rptQuery)
+	return nil
+}
+
+// Get RptQuery Getter
+func (r TaobaoFeedflowItemCampaignRpthourlistAPIRequest) GetRptQuery() *RptQueryDto {
+	return r._rptQuery
+}

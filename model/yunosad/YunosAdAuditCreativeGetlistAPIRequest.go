@@ -21,4 +21,62 @@ type YunosAdAuditCreativeGetlistAPIRequest struct {
 	_creativeIds []string
 }
 
-// New
+// NewYunosAdAuditCreativeGetlistRequest 初始化YunosAdAuditCreativeGetlistAPIRequest对象
+func NewYunosAdAuditCreativeGetlistRequest() *YunosAdAuditCreativeGetlistAPIRequest {
+	return &YunosAdAuditCreativeGetlistAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosAdAuditCreativeGetlistAPIRequest) GetApiMethodName() string {
+	return "yunos.ad.audit.creative.getlist"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosAdAuditCreativeGetlistAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MemberId Setter
+// 第三方DSP的id
+func (r *YunosAdAuditCreativeGetlistAPIRequest) SetMemberId(_memberId int64) error {
+	r._memberId = _memberId
+	r.Set("member_id", _memberId)
+	return nil
+}
+
+// Get MemberId Getter
+func (r YunosAdAuditCreativeGetlistAPIRequest) GetMemberId() int64 {
+	return r._memberId
+}
+
+// Set is Status Setter
+// 状态
+func (r *YunosAdAuditCreativeGetlistAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// Get Status Getter
+func (r YunosAdAuditCreativeGetlistAPIRequest) GetStatus() string {
+	return r._status
+}
+
+// Set is CreativeIds Setter
+// 创意列表
+func (r *YunosAdAuditCreativeGetlistAPIRequest) SetCreativeIds(_creativeIds []string) error {
+	r._creativeIds = _creativeIds
+	r.Set("creative_ids", _creativeIds)
+	return nil
+}
+
+// Get CreativeIds Getter
+func (r YunosAdAuditCreativeGetlistAPIRequest) GetCreativeIds() []string {
+	return r._creativeIds
+}

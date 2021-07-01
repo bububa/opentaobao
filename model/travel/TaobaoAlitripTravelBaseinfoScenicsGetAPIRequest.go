@@ -21,4 +21,62 @@ type TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest struct {
 	_scenicId int64
 }
 
-// New
+// NewTaobaoAlitripTravelBaseinfoScenicsGetRequest 初始化TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest对象
+func NewTaobaoAlitripTravelBaseinfoScenicsGetRequest() *TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest {
+	return &TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.travel.baseinfo.scenics.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is City Setter
+// 城市名称
+func (r *TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) SetCity(_city string) error {
+	r._city = _city
+	r.Set("city", _city)
+	return nil
+}
+
+// Get City Getter
+func (r TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) GetCity() string {
+	return r._city
+}
+
+// Set is Scenic Setter
+// 景点简称
+func (r *TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) SetScenic(_scenic string) error {
+	r._scenic = _scenic
+	r.Set("scenic", _scenic)
+	return nil
+}
+
+// Get Scenic Getter
+func (r TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) GetScenic() string {
+	return r._scenic
+}
+
+// Set is ScenicId Setter
+// 景点id，可选。若传了该值，则查询结果中只会保留该id的景点，其余景点信息将被过滤
+func (r *TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) SetScenicId(_scenicId int64) error {
+	r._scenicId = _scenicId
+	r.Set("scenic_id", _scenicId)
+	return nil
+}
+
+// Get ScenicId Getter
+func (r TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) GetScenicId() int64 {
+	return r._scenicId
+}

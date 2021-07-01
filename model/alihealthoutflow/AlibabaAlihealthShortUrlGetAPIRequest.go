@@ -19,4 +19,49 @@ type AlibabaAlihealthShortUrlGetAPIRequest struct {
 	_params []string
 }
 
-// New
+// NewAlibabaAlihealthShortUrlGetRequest 初始化AlibabaAlihealthShortUrlGetAPIRequest对象
+func NewAlibabaAlihealthShortUrlGetRequest() *AlibabaAlihealthShortUrlGetAPIRequest {
+	return &AlibabaAlihealthShortUrlGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthShortUrlGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.short.url.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthShortUrlGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Url Setter
+// 三方h5
+func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetUrl(_url string) error {
+	r._url = _url
+	r.Set("url", _url)
+	return nil
+}
+
+// Get Url Getter
+func (r AlibabaAlihealthShortUrlGetAPIRequest) GetUrl() string {
+	return r._url
+}
+
+// Set is Params Setter
+// 参数替换列表
+func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetParams(_params []string) error {
+	r._params = _params
+	r.Set("params", _params)
+	return nil
+}
+
+// Get Params Getter
+func (r AlibabaAlihealthShortUrlGetAPIRequest) GetParams() []string {
+	return r._params
+}

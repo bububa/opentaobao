@@ -17,4 +17,36 @@ type AlibabaWdkTradeOrderCreateAPIRequest struct {
 	_trade *TradeOrder
 }
 
-// New
+// NewAlibabaWdkTradeOrderCreateRequest 初始化AlibabaWdkTradeOrderCreateAPIRequest对象
+func NewAlibabaWdkTradeOrderCreateRequest() *AlibabaWdkTradeOrderCreateAPIRequest {
+	return &AlibabaWdkTradeOrderCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkTradeOrderCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.trade.order.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkTradeOrderCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Trade Setter
+// 待创建的订单
+func (r *AlibabaWdkTradeOrderCreateAPIRequest) SetTrade(_trade *TradeOrder) error {
+	r._trade = _trade
+	r.Set("trade", _trade)
+	return nil
+}
+
+// Get Trade Getter
+func (r AlibabaWdkTradeOrderCreateAPIRequest) GetTrade() *TradeOrder {
+	return r._trade
+}

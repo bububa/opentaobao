@@ -21,4 +21,62 @@ type TaobaoWirelessXcodeCreateAPIRequest struct {
 	_style *QrCodeStyle
 }
 
-// New
+// NewTaobaoWirelessXcodeCreateRequest 初始化TaobaoWirelessXcodeCreateAPIRequest对象
+func NewTaobaoWirelessXcodeCreateRequest() *TaobaoWirelessXcodeCreateAPIRequest {
+	return &TaobaoWirelessXcodeCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWirelessXcodeCreateAPIRequest) GetApiMethodName() string {
+	return "taobao.wireless.xcode.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWirelessXcodeCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BizCode Setter
+// 码平台开放的业务code
+func (r *TaobaoWirelessXcodeCreateAPIRequest) SetBizCode(_bizCode string) error {
+	r._bizCode = _bizCode
+	r.Set("biz_code", _bizCode)
+	return nil
+}
+
+// Get BizCode Getter
+func (r TaobaoWirelessXcodeCreateAPIRequest) GetBizCode() string {
+	return r._bizCode
+}
+
+// Set is Content Setter
+// 原始内容/原始地址
+func (r *TaobaoWirelessXcodeCreateAPIRequest) SetContent(_content string) error {
+	r._content = _content
+	r.Set("content", _content)
+	return nil
+}
+
+// Get Content Getter
+func (r TaobaoWirelessXcodeCreateAPIRequest) GetContent() string {
+	return r._content
+}
+
+// Set is Style Setter
+// 普通二维码样式参数
+func (r *TaobaoWirelessXcodeCreateAPIRequest) SetStyle(_style *QrCodeStyle) error {
+	r._style = _style
+	r.Set("style", _style)
+	return nil
+}
+
+// Get Style Getter
+func (r TaobaoWirelessXcodeCreateAPIRequest) GetStyle() *QrCodeStyle {
+	return r._style
+}

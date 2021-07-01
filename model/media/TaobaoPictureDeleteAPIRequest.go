@@ -17,4 +17,36 @@ type TaobaoPictureDeleteAPIRequest struct {
 	_pictureIds []string
 }
 
-// New
+// NewTaobaoPictureDeleteRequest 初始化TaobaoPictureDeleteAPIRequest对象
+func NewTaobaoPictureDeleteRequest() *TaobaoPictureDeleteAPIRequest {
+	return &TaobaoPictureDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPictureDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.picture.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPictureDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PictureIds Setter
+// 图片ID字符串,可以一个也可以一组,用英文逗号间隔,如450,120,155.限制数量是100
+func (r *TaobaoPictureDeleteAPIRequest) SetPictureIds(_pictureIds []string) error {
+	r._pictureIds = _pictureIds
+	r.Set("picture_ids", _pictureIds)
+	return nil
+}
+
+// Get PictureIds Getter
+func (r TaobaoPictureDeleteAPIRequest) GetPictureIds() []string {
+	return r._pictureIds
+}

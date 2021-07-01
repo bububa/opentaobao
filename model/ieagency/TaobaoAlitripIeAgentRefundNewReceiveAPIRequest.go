@@ -21,4 +21,62 @@ type TaobaoAlitripIeAgentRefundNewReceiveAPIRequest struct {
 	_orderId int64
 }
 
-// New
+// NewTaobaoAlitripIeAgentRefundNewReceiveRequest 初始化TaobaoAlitripIeAgentRefundNewReceiveAPIRequest对象
+func NewTaobaoAlitripIeAgentRefundNewReceiveRequest() *TaobaoAlitripIeAgentRefundNewReceiveAPIRequest {
+	return &TaobaoAlitripIeAgentRefundNewReceiveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.ie.agent.refund.new.receive"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ApplyId Setter
+// 退票申请单id
+func (r *TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) SetApplyId(_applyId int64) error {
+	r._applyId = _applyId
+	r.Set("apply_id", _applyId)
+	return nil
+}
+
+// Get ApplyId Getter
+func (r TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) GetApplyId() int64 {
+	return r._applyId
+}
+
+// Set is AgentId Setter
+// 代理商id
+func (r *TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// Get AgentId Getter
+func (r TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}
+
+// Set is OrderId Setter
+// 订单id
+func (r *TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}

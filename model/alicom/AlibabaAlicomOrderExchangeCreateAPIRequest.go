@@ -17,4 +17,36 @@ type AlibabaAlicomOrderExchangeCreateAPIRequest struct {
 	_exchangeModel *ExchangeModel
 }
 
-// New
+// NewAlibabaAlicomOrderExchangeCreateRequest 初始化AlibabaAlicomOrderExchangeCreateAPIRequest对象
+func NewAlibabaAlicomOrderExchangeCreateRequest() *AlibabaAlicomOrderExchangeCreateAPIRequest {
+	return &AlibabaAlicomOrderExchangeCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlicomOrderExchangeCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.alicom.order.exchange.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlicomOrderExchangeCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ExchangeModel Setter
+// 入参
+func (r *AlibabaAlicomOrderExchangeCreateAPIRequest) SetExchangeModel(_exchangeModel *ExchangeModel) error {
+	r._exchangeModel = _exchangeModel
+	r.Set("exchange_model", _exchangeModel)
+	return nil
+}
+
+// Get ExchangeModel Getter
+func (r AlibabaAlicomOrderExchangeCreateAPIRequest) GetExchangeModel() *ExchangeModel {
+	return r._exchangeModel
+}

@@ -19,4 +19,49 @@ type AlibabaMosOnsiteTradeQueryrefundAPIRequest struct {
 	_orderNo string
 }
 
-// New
+// NewAlibabaMosOnsiteTradeQueryrefundRequest 初始化AlibabaMosOnsiteTradeQueryrefundAPIRequest对象
+func NewAlibabaMosOnsiteTradeQueryrefundRequest() *AlibabaMosOnsiteTradeQueryrefundAPIRequest {
+	return &AlibabaMosOnsiteTradeQueryrefundAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.onsite.trade.queryrefund"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OutRequestNo Setter
+// 退款外部流水号
+func (r *AlibabaMosOnsiteTradeQueryrefundAPIRequest) SetOutRequestNo(_outRequestNo string) error {
+	r._outRequestNo = _outRequestNo
+	r.Set("out_request_no", _outRequestNo)
+	return nil
+}
+
+// Get OutRequestNo Getter
+func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetOutRequestNo() string {
+	return r._outRequestNo
+}
+
+// Set is OrderNo Setter
+// 订单号。可能为外部订单号，也可能为喵街订单号
+func (r *AlibabaMosOnsiteTradeQueryrefundAPIRequest) SetOrderNo(_orderNo string) error {
+	r._orderNo = _orderNo
+	r.Set("order_no", _orderNo)
+	return nil
+}
+
+// Get OrderNo Getter
+func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetOrderNo() string {
+	return r._orderNo
+}

@@ -17,4 +17,36 @@ type AlibabaAscpChannelDistributorProductListAPIRequest struct {
 	_productListRequest *Productlistrequest
 }
 
-// New
+// NewAlibabaAscpChannelDistributorProductListRequest 初始化AlibabaAscpChannelDistributorProductListAPIRequest对象
+func NewAlibabaAscpChannelDistributorProductListRequest() *AlibabaAscpChannelDistributorProductListAPIRequest {
+	return &AlibabaAscpChannelDistributorProductListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpChannelDistributorProductListAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.channel.distributor.product.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpChannelDistributorProductListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ProductListRequest Setter
+// 列表请求
+func (r *AlibabaAscpChannelDistributorProductListAPIRequest) SetProductListRequest(_productListRequest *Productlistrequest) error {
+	r._productListRequest = _productListRequest
+	r.Set("product_list_request", _productListRequest)
+	return nil
+}
+
+// Get ProductListRequest Getter
+func (r AlibabaAscpChannelDistributorProductListAPIRequest) GetProductListRequest() *Productlistrequest {
+	return r._productListRequest
+}

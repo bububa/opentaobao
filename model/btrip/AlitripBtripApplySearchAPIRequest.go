@@ -17,4 +17,36 @@ type AlitripBtripApplySearchAPIRequest struct {
 	_rq *OpenSearchRq
 }
 
-// New
+// NewAlitripBtripApplySearchRequest 初始化AlitripBtripApplySearchAPIRequest对象
+func NewAlitripBtripApplySearchRequest() *AlitripBtripApplySearchAPIRequest {
+	return &AlitripBtripApplySearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripApplySearchAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.apply.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripApplySearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Rq Setter
+// 请求对象
+func (r *AlitripBtripApplySearchAPIRequest) SetRq(_rq *OpenSearchRq) error {
+	r._rq = _rq
+	r.Set("rq", _rq)
+	return nil
+}
+
+// Get Rq Getter
+func (r AlitripBtripApplySearchAPIRequest) GetRq() *OpenSearchRq {
+	return r._rq
+}

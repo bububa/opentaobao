@@ -17,4 +17,36 @@ type AlibabaAlscCrmCardBindcustomerAPIRequest struct {
 	_paramBindCustomerOpenReq *BindCustomerOpenReq
 }
 
-// New
+// NewAlibabaAlscCrmCardBindcustomerRequest 初始化AlibabaAlscCrmCardBindcustomerAPIRequest对象
+func NewAlibabaAlscCrmCardBindcustomerRequest() *AlibabaAlscCrmCardBindcustomerAPIRequest {
+	return &AlibabaAlscCrmCardBindcustomerAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmCardBindcustomerAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.card.bindcustomer"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmCardBindcustomerAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamBindCustomerOpenReq Setter
+// 请求参数
+func (r *AlibabaAlscCrmCardBindcustomerAPIRequest) SetParamBindCustomerOpenReq(_paramBindCustomerOpenReq *BindCustomerOpenReq) error {
+	r._paramBindCustomerOpenReq = _paramBindCustomerOpenReq
+	r.Set("param_bind_customer_open_req", _paramBindCustomerOpenReq)
+	return nil
+}
+
+// Get ParamBindCustomerOpenReq Getter
+func (r AlibabaAlscCrmCardBindcustomerAPIRequest) GetParamBindCustomerOpenReq() *BindCustomerOpenReq {
+	return r._paramBindCustomerOpenReq
+}

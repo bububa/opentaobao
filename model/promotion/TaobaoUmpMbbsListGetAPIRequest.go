@@ -17,4 +17,36 @@ type TaobaoUmpMbbsListGetAPIRequest struct {
 	_ids []int64
 }
 
-// New
+// NewTaobaoUmpMbbsListGetRequest 初始化TaobaoUmpMbbsListGetAPIRequest对象
+func NewTaobaoUmpMbbsListGetRequest() *TaobaoUmpMbbsListGetAPIRequest {
+	return &TaobaoUmpMbbsListGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpMbbsListGetAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.mbbs.list.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpMbbsListGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Ids Setter
+// 营销积木块id组成的字符串。
+func (r *TaobaoUmpMbbsListGetAPIRequest) SetIds(_ids []int64) error {
+	r._ids = _ids
+	r.Set("ids", _ids)
+	return nil
+}
+
+// Get Ids Getter
+func (r TaobaoUmpMbbsListGetAPIRequest) GetIds() []int64 {
+	return r._ids
+}

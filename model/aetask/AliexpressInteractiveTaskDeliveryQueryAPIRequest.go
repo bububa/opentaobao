@@ -17,4 +17,36 @@ type AliexpressInteractiveTaskDeliveryQueryAPIRequest struct {
 	_requestDto *QueryDeliveryRequestDto
 }
 
-// New
+// NewAliexpressInteractiveTaskDeliveryQueryRequest 初始化AliexpressInteractiveTaskDeliveryQueryAPIRequest对象
+func NewAliexpressInteractiveTaskDeliveryQueryRequest() *AliexpressInteractiveTaskDeliveryQueryAPIRequest {
+	return &AliexpressInteractiveTaskDeliveryQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressInteractiveTaskDeliveryQueryAPIRequest) GetApiMethodName() string {
+	return "aliexpress.interactive.task.delivery.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressInteractiveTaskDeliveryQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RequestDto Setter
+// 返回结果
+func (r *AliexpressInteractiveTaskDeliveryQueryAPIRequest) SetRequestDto(_requestDto *QueryDeliveryRequestDto) error {
+	r._requestDto = _requestDto
+	r.Set("request_dto", _requestDto)
+	return nil
+}
+
+// Get RequestDto Getter
+func (r AliexpressInteractiveTaskDeliveryQueryAPIRequest) GetRequestDto() *QueryDeliveryRequestDto {
+	return r._requestDto
+}

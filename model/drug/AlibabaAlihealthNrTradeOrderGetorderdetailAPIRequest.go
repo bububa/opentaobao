@@ -17,4 +17,36 @@ type AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest struct {
 	_orderId int64
 }
 
-// New
+// NewAlibabaAlihealthNrTradeOrderGetorderdetailRequest 初始化AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest对象
+func NewAlibabaAlihealthNrTradeOrderGetorderdetailRequest() *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest {
+	return &AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.nr.trade.order.getorderdetail"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 淘宝订单ID
+func (r *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}

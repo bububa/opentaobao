@@ -23,4 +23,75 @@ type YoukuOttAlicbFacadeserviceGetdataAPIRequest struct {
 	_extraInfoMap string
 }
 
-// New
+// NewYoukuOttAlicbFacadeserviceGetdataRequest 初始化YoukuOttAlicbFacadeserviceGetdataAPIRequest对象
+func NewYoukuOttAlicbFacadeserviceGetdataRequest() *YoukuOttAlicbFacadeserviceGetdataAPIRequest {
+	return &YoukuOttAlicbFacadeserviceGetdataAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetApiMethodName() string {
+	return "youku.ott.alicb.facadeservice.getdata"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ServiceList Setter
+// 能力维度
+func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetServiceList(_serviceList []string) error {
+	r._serviceList = _serviceList
+	r.Set("service_list", _serviceList)
+	return nil
+}
+
+// Get ServiceList Getter
+func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetServiceList() []string {
+	return r._serviceList
+}
+
+// Set is Uuid Setter
+// 设备唯一标识
+func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetUuid(_uuid string) error {
+	r._uuid = _uuid
+	r.Set("uuid", _uuid)
+	return nil
+}
+
+// Get Uuid Getter
+func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetUuid() string {
+	return r._uuid
+}
+
+// Set is PropertyMapJson Setter
+// 属性MAP JSON串
+func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetPropertyMapJson(_propertyMapJson string) error {
+	r._propertyMapJson = _propertyMapJson
+	r.Set("property_map_json", _propertyMapJson)
+	return nil
+}
+
+// Get PropertyMapJson Getter
+func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetPropertyMapJson() string {
+	return r._propertyMapJson
+}
+
+// Set is ExtraInfoMap Setter
+// 扩展属性
+func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetExtraInfoMap(_extraInfoMap string) error {
+	r._extraInfoMap = _extraInfoMap
+	r.Set("extra_info_map", _extraInfoMap)
+	return nil
+}
+
+// Get ExtraInfoMap Getter
+func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetExtraInfoMap() string {
+	return r._extraInfoMap
+}

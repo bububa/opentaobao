@@ -17,4 +17,36 @@ type TaobaoDeliveryTemplateDeleteAPIRequest struct {
 	_templateId int64
 }
 
-// New
+// NewTaobaoDeliveryTemplateDeleteRequest 初始化TaobaoDeliveryTemplateDeleteAPIRequest对象
+func NewTaobaoDeliveryTemplateDeleteRequest() *TaobaoDeliveryTemplateDeleteAPIRequest {
+	return &TaobaoDeliveryTemplateDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoDeliveryTemplateDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.delivery.template.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoDeliveryTemplateDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TemplateId Setter
+// 运费模板ID
+func (r *TaobaoDeliveryTemplateDeleteAPIRequest) SetTemplateId(_templateId int64) error {
+	r._templateId = _templateId
+	r.Set("template_id", _templateId)
+	return nil
+}
+
+// Get TemplateId Getter
+func (r TaobaoDeliveryTemplateDeleteAPIRequest) GetTemplateId() int64 {
+	return r._templateId
+}

@@ -17,4 +17,36 @@ type AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest struct {
 	_param *ItemDiscountActivityElementOperateRequest
 }
 
-// New
+// NewAlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest 初始化AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest对象
+func NewAlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest() *AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest {
+	return &AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) GetApiMethodName() string {
+	return "alibaba.retail.marketing.itemdiscount.activity.sku.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 添加活动商品参数
+func (r *AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) SetParam(_param *ItemDiscountActivityElementOperateRequest) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) GetParam() *ItemDiscountActivityElementOperateRequest {
+	return r._param
+}

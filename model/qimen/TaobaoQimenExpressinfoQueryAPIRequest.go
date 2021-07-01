@@ -17,4 +17,36 @@ type TaobaoQimenExpressinfoQueryAPIRequest struct {
 	_request *TaobaoQimenExpressinfoQueryRequest
 }
 
-// New
+// NewTaobaoQimenExpressinfoQueryRequest 初始化TaobaoQimenExpressinfoQueryAPIRequest对象
+func NewTaobaoQimenExpressinfoQueryRequest() *TaobaoQimenExpressinfoQueryAPIRequest {
+	return &TaobaoQimenExpressinfoQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenExpressinfoQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.expressinfo.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenExpressinfoQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenExpressinfoQueryAPIRequest) SetRequest(_request *TaobaoQimenExpressinfoQueryRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenExpressinfoQueryAPIRequest) GetRequest() *TaobaoQimenExpressinfoQueryRequest {
+	return r._request
+}

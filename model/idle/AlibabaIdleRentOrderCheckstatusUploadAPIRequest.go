@@ -19,4 +19,49 @@ type AlibabaIdleRentOrderCheckstatusUploadAPIRequest struct {
 	_checkResult *CheckResultDto
 }
 
-// New
+// NewAlibabaIdleRentOrderCheckstatusUploadRequest 初始化AlibabaIdleRentOrderCheckstatusUploadAPIRequest对象
+func NewAlibabaIdleRentOrderCheckstatusUploadRequest() *AlibabaIdleRentOrderCheckstatusUploadAPIRequest {
+	return &AlibabaIdleRentOrderCheckstatusUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.rent.order.checkstatus.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 订单id
+func (r *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// Set is CheckResult Setter
+// 校验结果
+func (r *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) SetCheckResult(_checkResult *CheckResultDto) error {
+	r._checkResult = _checkResult
+	r.Set("check_result", _checkResult)
+	return nil
+}
+
+// Get CheckResult Getter
+func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetCheckResult() *CheckResultDto {
+	return r._checkResult
+}

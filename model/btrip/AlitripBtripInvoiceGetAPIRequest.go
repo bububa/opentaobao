@@ -19,4 +19,49 @@ type AlitripBtripInvoiceGetAPIRequest struct {
 	_userId string
 }
 
-// New
+// NewAlitripBtripInvoiceGetRequest 初始化AlitripBtripInvoiceGetAPIRequest对象
+func NewAlitripBtripInvoiceGetRequest() *AlitripBtripInvoiceGetAPIRequest {
+	return &AlitripBtripInvoiceGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripInvoiceGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.invoice.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripInvoiceGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CorpId Setter
+// 企业id
+func (r *AlitripBtripInvoiceGetAPIRequest) SetCorpId(_corpId string) error {
+	r._corpId = _corpId
+	r.Set("corp_id", _corpId)
+	return nil
+}
+
+// Get CorpId Getter
+func (r AlitripBtripInvoiceGetAPIRequest) GetCorpId() string {
+	return r._corpId
+}
+
+// Set is UserId Setter
+// 用户id
+func (r *AlitripBtripInvoiceGetAPIRequest) SetUserId(_userId string) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r AlitripBtripInvoiceGetAPIRequest) GetUserId() string {
+	return r._userId
+}

@@ -17,4 +17,36 @@ type AlibabaXiamiApiRadioMyselfGetAPIRequest struct {
 	_limit int64
 }
 
-// New
+// NewAlibabaXiamiApiRadioMyselfGetRequest 初始化AlibabaXiamiApiRadioMyselfGetAPIRequest对象
+func NewAlibabaXiamiApiRadioMyselfGetRequest() *AlibabaXiamiApiRadioMyselfGetAPIRequest {
+	return &AlibabaXiamiApiRadioMyselfGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaXiamiApiRadioMyselfGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.xiami.api.radio.myself.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaXiamiApiRadioMyselfGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Limit Setter
+// 歌曲数量
+func (r *AlibabaXiamiApiRadioMyselfGetAPIRequest) SetLimit(_limit int64) error {
+	r._limit = _limit
+	r.Set("limit", _limit)
+	return nil
+}
+
+// Get Limit Getter
+func (r AlibabaXiamiApiRadioMyselfGetAPIRequest) GetLimit() int64 {
+	return r._limit
+}

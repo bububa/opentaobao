@@ -18,4 +18,36 @@ type AlibabaFundplatformCardorderCardActiveAPIRequest struct {
 	_paramCardActiveRequest *CardActiveRequest
 }
 
-// New
+// NewAlibabaFundplatformCardorderCardActiveRequest 初始化AlibabaFundplatformCardorderCardActiveAPIRequest对象
+func NewAlibabaFundplatformCardorderCardActiveRequest() *AlibabaFundplatformCardorderCardActiveAPIRequest {
+	return &AlibabaFundplatformCardorderCardActiveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaFundplatformCardorderCardActiveAPIRequest) GetApiMethodName() string {
+	return "alibaba.fundplatform.cardorder.card.active"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaFundplatformCardorderCardActiveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamCardActiveRequest Setter
+// 入参对象
+func (r *AlibabaFundplatformCardorderCardActiveAPIRequest) SetParamCardActiveRequest(_paramCardActiveRequest *CardActiveRequest) error {
+	r._paramCardActiveRequest = _paramCardActiveRequest
+	r.Set("param_card_active_request", _paramCardActiveRequest)
+	return nil
+}
+
+// Get ParamCardActiveRequest Getter
+func (r AlibabaFundplatformCardorderCardActiveAPIRequest) GetParamCardActiveRequest() *CardActiveRequest {
+	return r._paramCardActiveRequest
+}

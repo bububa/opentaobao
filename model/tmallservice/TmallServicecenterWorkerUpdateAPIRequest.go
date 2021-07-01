@@ -32,4 +32,36 @@ type TmallServicecenterWorkerUpdateAPIRequest struct {
 	_worker *WorkerDto
 }
 
-// New
+// NewTmallServicecenterWorkerUpdateRequest 初始化TmallServicecenterWorkerUpdateAPIRequest对象
+func NewTmallServicecenterWorkerUpdateRequest() *TmallServicecenterWorkerUpdateAPIRequest {
+	return &TmallServicecenterWorkerUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterWorkerUpdateAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.worker.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterWorkerUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Worker Setter
+// 工人信息
+func (r *TmallServicecenterWorkerUpdateAPIRequest) SetWorker(_worker *WorkerDto) error {
+	r._worker = _worker
+	r.Set("worker", _worker)
+	return nil
+}
+
+// Get Worker Getter
+func (r TmallServicecenterWorkerUpdateAPIRequest) GetWorker() *WorkerDto {
+	return r._worker
+}

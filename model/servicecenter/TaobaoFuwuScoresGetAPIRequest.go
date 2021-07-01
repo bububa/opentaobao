@@ -21,4 +21,62 @@ type TaobaoFuwuScoresGetAPIRequest struct {
 	_date string
 }
 
-// New
+// NewTaobaoFuwuScoresGetRequest 初始化TaobaoFuwuScoresGetAPIRequest对象
+func NewTaobaoFuwuScoresGetRequest() *TaobaoFuwuScoresGetAPIRequest {
+	return &TaobaoFuwuScoresGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFuwuScoresGetAPIRequest) GetApiMethodName() string {
+	return "taobao.fuwu.scores.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFuwuScoresGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CurrentPage Setter
+// 当前页
+func (r *TaobaoFuwuScoresGetAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// Get CurrentPage Getter
+func (r TaobaoFuwuScoresGetAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// Set is PageSize Setter
+// 每页获取条数。默认值40，最小值1，最大值100。
+func (r *TaobaoFuwuScoresGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoFuwuScoresGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is Date Setter
+// 评价日期，查询某一天的评价
+func (r *TaobaoFuwuScoresGetAPIRequest) SetDate(_date string) error {
+	r._date = _date
+	r.Set("date", _date)
+	return nil
+}
+
+// Get Date Getter
+func (r TaobaoFuwuScoresGetAPIRequest) GetDate() string {
+	return r._date
+}

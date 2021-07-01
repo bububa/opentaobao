@@ -29,4 +29,114 @@ type TaobaoJstAstrolabeOrderstatusSyncAPIRequest struct {
 	_parentOrderCode int64
 }
 
-// New
+// NewTaobaoJstAstrolabeOrderstatusSyncRequest 初始化TaobaoJstAstrolabeOrderstatusSyncAPIRequest对象
+func NewTaobaoJstAstrolabeOrderstatusSyncRequest() *TaobaoJstAstrolabeOrderstatusSyncAPIRequest {
+	return &TaobaoJstAstrolabeOrderstatusSyncAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetApiMethodName() string {
+	return "taobao.jst.astrolabe.orderstatus.sync"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SubOrderIds Setter
+// 子订单Id
+func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetSubOrderIds(_subOrderIds []int64) error {
+	r._subOrderIds = _subOrderIds
+	r.Set("sub_order_ids", _subOrderIds)
+	return nil
+}
+
+// Get SubOrderIds Getter
+func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetSubOrderIds() []int64 {
+	return r._subOrderIds
+}
+
+// Set is ActionTime Setter
+// 事件发生时间
+func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetActionTime(_actionTime string) error {
+	r._actionTime = _actionTime
+	r.Set("action_time", _actionTime)
+	return nil
+}
+
+// Get ActionTime Getter
+func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetActionTime() string {
+	return r._actionTime
+}
+
+// Set is Operator Setter
+// 操作人
+func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetOperator(_operator string) error {
+	r._operator = _operator
+	r.Set("operator", _operator)
+	return nil
+}
+
+// Get Operator Getter
+func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetOperator() string {
+	return r._operator
+}
+
+// Set is Type Setter
+// 业务类型
+func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetType() string {
+	return r._type
+}
+
+// Set is Status Setter
+// 订单状态
+func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// Get Status Getter
+func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetStatus() string {
+	return r._status
+}
+
+// Set is StoreId Setter
+// 目标门店的商户中心门店编码
+func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// Get StoreId Getter
+func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetStoreId() int64 {
+	return r._storeId
+}
+
+// Set is ParentOrderCode Setter
+// 交易订单
+func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetParentOrderCode(_parentOrderCode int64) error {
+	r._parentOrderCode = _parentOrderCode
+	r.Set("parent_order_code", _parentOrderCode)
+	return nil
+}
+
+// Get ParentOrderCode Getter
+func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetParentOrderCode() int64 {
+	return r._parentOrderCode
+}

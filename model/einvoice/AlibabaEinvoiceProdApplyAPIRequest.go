@@ -17,4 +17,36 @@ type AlibabaEinvoiceProdApplyAPIRequest struct {
 	_paramInvoiceApplyDto *InvoiceApplyDto
 }
 
-// New
+// NewAlibabaEinvoiceProdApplyRequest 初始化AlibabaEinvoiceProdApplyAPIRequest对象
+func NewAlibabaEinvoiceProdApplyRequest() *AlibabaEinvoiceProdApplyAPIRequest {
+	return &AlibabaEinvoiceProdApplyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceProdApplyAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.prod.apply"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceProdApplyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamInvoiceApplyDto Setter
+// 申请开票请求
+func (r *AlibabaEinvoiceProdApplyAPIRequest) SetParamInvoiceApplyDto(_paramInvoiceApplyDto *InvoiceApplyDto) error {
+	r._paramInvoiceApplyDto = _paramInvoiceApplyDto
+	r.Set("param_invoice_apply_dto", _paramInvoiceApplyDto)
+	return nil
+}
+
+// Get ParamInvoiceApplyDto Getter
+func (r AlibabaEinvoiceProdApplyAPIRequest) GetParamInvoiceApplyDto() *InvoiceApplyDto {
+	return r._paramInvoiceApplyDto
+}

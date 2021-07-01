@@ -17,4 +17,36 @@ type YunosTvpubadminContentAppQuerybylicenceAPIRequest struct {
 	_query string
 }
 
-// New
+// NewYunosTvpubadminContentAppQuerybylicenceRequest 初始化YunosTvpubadminContentAppQuerybylicenceAPIRequest对象
+func NewYunosTvpubadminContentAppQuerybylicenceRequest() *YunosTvpubadminContentAppQuerybylicenceAPIRequest {
+	return &YunosTvpubadminContentAppQuerybylicenceAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentAppQuerybylicenceAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.app.querybylicence"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentAppQuerybylicenceAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 查询条件
+func (r *YunosTvpubadminContentAppQuerybylicenceAPIRequest) SetQuery(_query string) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r YunosTvpubadminContentAppQuerybylicenceAPIRequest) GetQuery() string {
+	return r._query
+}

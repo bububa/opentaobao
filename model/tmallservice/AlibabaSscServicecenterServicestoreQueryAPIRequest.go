@@ -17,4 +17,36 @@ type AlibabaSscServicecenterServicestoreQueryAPIRequest struct {
 	_id int64
 }
 
-// New
+// NewAlibabaSscServicecenterServicestoreQueryRequest 初始化AlibabaSscServicecenterServicestoreQueryAPIRequest对象
+func NewAlibabaSscServicecenterServicestoreQueryRequest() *AlibabaSscServicecenterServicestoreQueryAPIRequest {
+	return &AlibabaSscServicecenterServicestoreQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSscServicecenterServicestoreQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.ssc.servicecenter.servicestore.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSscServicecenterServicestoreQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Id Setter
+// 天猫id
+func (r *AlibabaSscServicecenterServicestoreQueryAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r AlibabaSscServicecenterServicestoreQueryAPIRequest) GetId() int64 {
+	return r._id
+}

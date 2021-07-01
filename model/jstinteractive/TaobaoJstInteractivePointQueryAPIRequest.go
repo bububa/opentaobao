@@ -15,4 +15,23 @@ type TaobaoJstInteractivePointQueryAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoJstInteractivePointQueryRequest 初始化TaobaoJstInteractivePointQueryAPIRequest对象
+func NewTaobaoJstInteractivePointQueryRequest() *TaobaoJstInteractivePointQueryAPIRequest {
+	return &TaobaoJstInteractivePointQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoJstInteractivePointQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.jst.interactive.point.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoJstInteractivePointQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

@@ -17,4 +17,36 @@ type AlibabaNazcaAuthAuthapplyCallbackAPIRequest struct {
 	_authApplyDoneCallbackDo *AuthApplyDoneCallBackDo
 }
 
-// New
+// NewAlibabaNazcaAuthAuthapplyCallbackRequest 初始化AlibabaNazcaAuthAuthapplyCallbackAPIRequest对象
+func NewAlibabaNazcaAuthAuthapplyCallbackRequest() *AlibabaNazcaAuthAuthapplyCallbackAPIRequest {
+	return &AlibabaNazcaAuthAuthapplyCallbackAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaNazcaAuthAuthapplyCallbackAPIRequest) GetApiMethodName() string {
+	return "alibaba.nazca.auth.authapply.callback"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaNazcaAuthAuthapplyCallbackAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AuthApplyDoneCallbackDo Setter
+// 认证回调参数
+func (r *AlibabaNazcaAuthAuthapplyCallbackAPIRequest) SetAuthApplyDoneCallbackDo(_authApplyDoneCallbackDo *AuthApplyDoneCallBackDo) error {
+	r._authApplyDoneCallbackDo = _authApplyDoneCallbackDo
+	r.Set("auth_apply_done_callback_do", _authApplyDoneCallbackDo)
+	return nil
+}
+
+// Get AuthApplyDoneCallbackDo Getter
+func (r AlibabaNazcaAuthAuthapplyCallbackAPIRequest) GetAuthApplyDoneCallbackDo() *AuthApplyDoneCallBackDo {
+	return r._authApplyDoneCallbackDo
+}

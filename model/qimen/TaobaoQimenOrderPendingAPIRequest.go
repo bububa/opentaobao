@@ -17,4 +17,36 @@ type TaobaoQimenOrderPendingAPIRequest struct {
 	_request *OrderPendingRequest
 }
 
-// New
+// NewTaobaoQimenOrderPendingRequest 初始化TaobaoQimenOrderPendingAPIRequest对象
+func NewTaobaoQimenOrderPendingRequest() *TaobaoQimenOrderPendingAPIRequest {
+	return &TaobaoQimenOrderPendingAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenOrderPendingAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.order.pending"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenOrderPendingAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenOrderPendingAPIRequest) SetRequest(_request *OrderPendingRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenOrderPendingAPIRequest) GetRequest() *OrderPendingRequest {
+	return r._request
+}

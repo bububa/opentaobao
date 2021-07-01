@@ -17,4 +17,36 @@ type TaobaoPromotionBenefitActivityDetailGetAPIRequest struct {
 	_queryRequest *ActivityRelationDetailRequest
 }
 
-// New
+// NewTaobaoPromotionBenefitActivityDetailGetRequest 初始化TaobaoPromotionBenefitActivityDetailGetAPIRequest对象
+func NewTaobaoPromotionBenefitActivityDetailGetRequest() *TaobaoPromotionBenefitActivityDetailGetAPIRequest {
+	return &TaobaoPromotionBenefitActivityDetailGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPromotionBenefitActivityDetailGetAPIRequest) GetApiMethodName() string {
+	return "taobao.promotion.benefit.activity.detail.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPromotionBenefitActivityDetailGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is QueryRequest Setter
+// 查询活动关联权益详情的请求
+func (r *TaobaoPromotionBenefitActivityDetailGetAPIRequest) SetQueryRequest(_queryRequest *ActivityRelationDetailRequest) error {
+	r._queryRequest = _queryRequest
+	r.Set("query_request", _queryRequest)
+	return nil
+}
+
+// Get QueryRequest Getter
+func (r TaobaoPromotionBenefitActivityDetailGetAPIRequest) GetQueryRequest() *ActivityRelationDetailRequest {
+	return r._queryRequest
+}

@@ -23,4 +23,75 @@ type AlibabaEleEnterpriseCartnewQueryAPIRequest struct {
 	_erestaurantId string
 }
 
-// New
+// NewAlibabaEleEnterpriseCartnewQueryRequest 初始化AlibabaEleEnterpriseCartnewQueryAPIRequest对象
+func NewAlibabaEleEnterpriseCartnewQueryRequest() *AlibabaEleEnterpriseCartnewQueryAPIRequest {
+	return &AlibabaEleEnterpriseCartnewQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.ele.enterprise.cartnew.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Phone Setter
+// 1212
+func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetPhone(_phone string) error {
+	r._phone = _phone
+	r.Set("phone", _phone)
+	return nil
+}
+
+// Get Phone Getter
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetPhone() string {
+	return r._phone
+}
+
+// Set is Latitude Setter
+// 1212
+func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetLatitude(_latitude string) error {
+	r._latitude = _latitude
+	r.Set("latitude", _latitude)
+	return nil
+}
+
+// Get Latitude Getter
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetLatitude() string {
+	return r._latitude
+}
+
+// Set is Longitude Setter
+// 1212
+func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetLongitude(_longitude string) error {
+	r._longitude = _longitude
+	r.Set("longitude", _longitude)
+	return nil
+}
+
+// Get Longitude Getter
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetLongitude() string {
+	return r._longitude
+}
+
+// Set is ErestaurantId Setter
+// 餐厅id
+func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetErestaurantId(_erestaurantId string) error {
+	r._erestaurantId = _erestaurantId
+	r.Set("erestaurant_id", _erestaurantId)
+	return nil
+}
+
+// Get ErestaurantId Getter
+func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetErestaurantId() string {
+	return r._erestaurantId
+}

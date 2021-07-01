@@ -17,4 +17,36 @@ type TaobaoQimenStockQueryAPIRequest struct {
 	_request *StockQueryRequest
 }
 
-// New
+// NewTaobaoQimenStockQueryRequest 初始化TaobaoQimenStockQueryAPIRequest对象
+func NewTaobaoQimenStockQueryRequest() *TaobaoQimenStockQueryAPIRequest {
+	return &TaobaoQimenStockQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenStockQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.stock.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenStockQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenStockQueryAPIRequest) SetRequest(_request *StockQueryRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenStockQueryAPIRequest) GetRequest() *StockQueryRequest {
+	return r._request
+}

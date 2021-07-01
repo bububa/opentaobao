@@ -20,4 +20,36 @@ type AlibabaAlscCrmPointCalAPIRequest struct {
 	_paramCalculateDeductedMoneyOpenReq *CalculateDeductedMoneyOpenReq
 }
 
-// New
+// NewAlibabaAlscCrmPointCalRequest 初始化AlibabaAlscCrmPointCalAPIRequest对象
+func NewAlibabaAlscCrmPointCalRequest() *AlibabaAlscCrmPointCalAPIRequest {
+	return &AlibabaAlscCrmPointCalAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmPointCalAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.point.cal"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmPointCalAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamCalculateDeductedMoneyOpenReq Setter
+// 入参
+func (r *AlibabaAlscCrmPointCalAPIRequest) SetParamCalculateDeductedMoneyOpenReq(_paramCalculateDeductedMoneyOpenReq *CalculateDeductedMoneyOpenReq) error {
+	r._paramCalculateDeductedMoneyOpenReq = _paramCalculateDeductedMoneyOpenReq
+	r.Set("param_calculate_deducted_money_open_req", _paramCalculateDeductedMoneyOpenReq)
+	return nil
+}
+
+// Get ParamCalculateDeductedMoneyOpenReq Getter
+func (r AlibabaAlscCrmPointCalAPIRequest) GetParamCalculateDeductedMoneyOpenReq() *CalculateDeductedMoneyOpenReq {
+	return r._paramCalculateDeductedMoneyOpenReq
+}

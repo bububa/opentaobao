@@ -17,4 +17,36 @@ type AlibabaAlisportsLdlserverWxeventPostAPIRequest struct {
 	_rawstr string
 }
 
-// New
+// NewAlibabaAlisportsLdlserverWxeventPostRequest 初始化AlibabaAlisportsLdlserverWxeventPostAPIRequest对象
+func NewAlibabaAlisportsLdlserverWxeventPostRequest() *AlibabaAlisportsLdlserverWxeventPostAPIRequest {
+	return &AlibabaAlisportsLdlserverWxeventPostAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlisportsLdlserverWxeventPostAPIRequest) GetApiMethodName() string {
+	return "alibaba.alisports.ldlserver.wxevent.post"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlisportsLdlserverWxeventPostAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Rawstr Setter
+// 微信服务器消息数据
+func (r *AlibabaAlisportsLdlserverWxeventPostAPIRequest) SetRawstr(_rawstr string) error {
+	r._rawstr = _rawstr
+	r.Set("rawstr", _rawstr)
+	return nil
+}
+
+// Get Rawstr Getter
+func (r AlibabaAlisportsLdlserverWxeventPostAPIRequest) GetRawstr() string {
+	return r._rawstr
+}

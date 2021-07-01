@@ -18,4 +18,36 @@ type TaobaoMiniappShorturlCreateAPIRequest struct {
 	_miniappUrl string
 }
 
-// New
+// NewTaobaoMiniappShorturlCreateRequest 初始化TaobaoMiniappShorturlCreateAPIRequest对象
+func NewTaobaoMiniappShorturlCreateRequest() *TaobaoMiniappShorturlCreateAPIRequest {
+	return &TaobaoMiniappShorturlCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMiniappShorturlCreateAPIRequest) GetApiMethodName() string {
+	return "taobao.miniapp.shorturl.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMiniappShorturlCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MiniappUrl Setter
+// 小程序链接地址。说明：链接地址，只允许https协议，域名只支持m.duanqu.com，链接必须包含_ariver_appid参数，链接不能够包含spm、short_name、app、tb_url_time_stamp这些系统保留参数
+func (r *TaobaoMiniappShorturlCreateAPIRequest) SetMiniappUrl(_miniappUrl string) error {
+	r._miniappUrl = _miniappUrl
+	r.Set("miniapp_url", _miniappUrl)
+	return nil
+}
+
+// Get MiniappUrl Getter
+func (r TaobaoMiniappShorturlCreateAPIRequest) GetMiniappUrl() string {
+	return r._miniappUrl
+}

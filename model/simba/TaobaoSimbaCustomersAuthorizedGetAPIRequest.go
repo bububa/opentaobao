@@ -15,4 +15,23 @@ type TaobaoSimbaCustomersAuthorizedGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoSimbaCustomersAuthorizedGetRequest 初始化TaobaoSimbaCustomersAuthorizedGetAPIRequest对象
+func NewTaobaoSimbaCustomersAuthorizedGetRequest() *TaobaoSimbaCustomersAuthorizedGetAPIRequest {
+	return &TaobaoSimbaCustomersAuthorizedGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaCustomersAuthorizedGetAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.customers.authorized.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaCustomersAuthorizedGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

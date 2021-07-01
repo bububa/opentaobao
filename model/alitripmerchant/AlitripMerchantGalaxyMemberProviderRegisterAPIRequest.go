@@ -19,4 +19,49 @@ type AlitripMerchantGalaxyMemberProviderRegisterAPIRequest struct {
 	_providerMemberParam *ProviderMemberParam
 }
 
-// New
+// NewAlitripMerchantGalaxyMemberProviderRegisterRequest 初始化AlitripMerchantGalaxyMemberProviderRegisterAPIRequest对象
+func NewAlitripMerchantGalaxyMemberProviderRegisterRequest() *AlitripMerchantGalaxyMemberProviderRegisterAPIRequest {
+	return &AlitripMerchantGalaxyMemberProviderRegisterAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripMerchantGalaxyMemberProviderRegisterAPIRequest) GetApiMethodName() string {
+	return "alitrip.merchant.galaxy.member.provider.register"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripMerchantGalaxyMemberProviderRegisterAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TenantKey Setter
+// 租户身份信息
+func (r *AlitripMerchantGalaxyMemberProviderRegisterAPIRequest) SetTenantKey(_tenantKey string) error {
+	r._tenantKey = _tenantKey
+	r.Set("tenant_key", _tenantKey)
+	return nil
+}
+
+// Get TenantKey Getter
+func (r AlitripMerchantGalaxyMemberProviderRegisterAPIRequest) GetTenantKey() string {
+	return r._tenantKey
+}
+
+// Set is ProviderMemberParam Setter
+// 注册入参
+func (r *AlitripMerchantGalaxyMemberProviderRegisterAPIRequest) SetProviderMemberParam(_providerMemberParam *ProviderMemberParam) error {
+	r._providerMemberParam = _providerMemberParam
+	r.Set("provider_member_param", _providerMemberParam)
+	return nil
+}
+
+// Get ProviderMemberParam Getter
+func (r AlitripMerchantGalaxyMemberProviderRegisterAPIRequest) GetProviderMemberParam() *ProviderMemberParam {
+	return r._providerMemberParam
+}

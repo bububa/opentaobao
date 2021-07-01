@@ -15,4 +15,23 @@ type AlibabaScbpEffectAccountDateGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaScbpEffectAccountDateGetRequest 初始化AlibabaScbpEffectAccountDateGetAPIRequest对象
+func NewAlibabaScbpEffectAccountDateGetRequest() *AlibabaScbpEffectAccountDateGetAPIRequest {
+	return &AlibabaScbpEffectAccountDateGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpEffectAccountDateGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.effect.account.date.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpEffectAccountDateGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

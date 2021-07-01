@@ -19,4 +19,49 @@ type TaobaoTraderateExplainAddAPIRequest struct {
 	_reply string
 }
 
-// New
+// NewTaobaoTraderateExplainAddRequest 初始化TaobaoTraderateExplainAddAPIRequest对象
+func NewTaobaoTraderateExplainAddRequest() *TaobaoTraderateExplainAddAPIRequest {
+	return &TaobaoTraderateExplainAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTraderateExplainAddAPIRequest) GetApiMethodName() string {
+	return "taobao.traderate.explain.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTraderateExplainAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Oid Setter
+// 子订单ID
+func (r *TaobaoTraderateExplainAddAPIRequest) SetOid(_oid int64) error {
+	r._oid = _oid
+	r.Set("oid", _oid)
+	return nil
+}
+
+// Get Oid Getter
+func (r TaobaoTraderateExplainAddAPIRequest) GetOid() int64 {
+	return r._oid
+}
+
+// Set is Reply Setter
+// 评价解释内容，最大长度：500个汉字
+func (r *TaobaoTraderateExplainAddAPIRequest) SetReply(_reply string) error {
+	r._reply = _reply
+	r.Set("reply", _reply)
+	return nil
+}
+
+// Get Reply Getter
+func (r TaobaoTraderateExplainAddAPIRequest) GetReply() string {
+	return r._reply
+}

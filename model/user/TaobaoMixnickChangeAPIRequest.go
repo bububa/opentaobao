@@ -19,4 +19,49 @@ type TaobaoMixnickChangeAPIRequest struct {
 	_srcAppkey string
 }
 
-// New
+// NewTaobaoMixnickChangeRequest 初始化TaobaoMixnickChangeAPIRequest对象
+func NewTaobaoMixnickChangeRequest() *TaobaoMixnickChangeAPIRequest {
+	return &TaobaoMixnickChangeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMixnickChangeAPIRequest) GetApiMethodName() string {
+	return "taobao.mixnick.change"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMixnickChangeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SrcMixNick Setter
+// 输入的混淆nick
+func (r *TaobaoMixnickChangeAPIRequest) SetSrcMixNick(_srcMixNick string) error {
+	r._srcMixNick = _srcMixNick
+	r.Set("src_mix_nick", _srcMixNick)
+	return nil
+}
+
+// Get SrcMixNick Getter
+func (r TaobaoMixnickChangeAPIRequest) GetSrcMixNick() string {
+	return r._srcMixNick
+}
+
+// Set is SrcAppkey Setter
+// 输入的appkey
+func (r *TaobaoMixnickChangeAPIRequest) SetSrcAppkey(_srcAppkey string) error {
+	r._srcAppkey = _srcAppkey
+	r.Set("src_appkey", _srcAppkey)
+	return nil
+}
+
+// Get SrcAppkey Getter
+func (r TaobaoMixnickChangeAPIRequest) GetSrcAppkey() string {
+	return r._srcAppkey
+}

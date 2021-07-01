@@ -17,4 +17,36 @@ type TmallNrNoticeGoodsReadyAPIRequest struct {
 	_param0 *NrZqsGoodsReadyReqDto
 }
 
-// New
+// NewTmallNrNoticeGoodsReadyRequest 初始化TmallNrNoticeGoodsReadyAPIRequest对象
+func NewTmallNrNoticeGoodsReadyRequest() *TmallNrNoticeGoodsReadyAPIRequest {
+	return &TmallNrNoticeGoodsReadyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrNoticeGoodsReadyAPIRequest) GetApiMethodName() string {
+	return "tmall.nr.notice.goods.ready"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrNoticeGoodsReadyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 入参
+func (r *TmallNrNoticeGoodsReadyAPIRequest) SetParam0(_param0 *NrZqsGoodsReadyReqDto) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r TmallNrNoticeGoodsReadyAPIRequest) GetParam0() *NrZqsGoodsReadyReqDto {
+	return r._param0
+}

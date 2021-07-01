@@ -17,4 +17,36 @@ type AliexpressSolutionProductEditAPIRequest struct {
 	_editProductRequest *PostProductRequestDto
 }
 
-// New
+// NewAliexpressSolutionProductEditRequest 初始化AliexpressSolutionProductEditAPIRequest对象
+func NewAliexpressSolutionProductEditRequest() *AliexpressSolutionProductEditAPIRequest {
+	return &AliexpressSolutionProductEditAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressSolutionProductEditAPIRequest) GetApiMethodName() string {
+	return "aliexpress.solution.product.edit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressSolutionProductEditAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is EditProductRequest Setter
+// input param
+func (r *AliexpressSolutionProductEditAPIRequest) SetEditProductRequest(_editProductRequest *PostProductRequestDto) error {
+	r._editProductRequest = _editProductRequest
+	r.Set("edit_product_request", _editProductRequest)
+	return nil
+}
+
+// Get EditProductRequest Getter
+func (r AliexpressSolutionProductEditAPIRequest) GetEditProductRequest() *PostProductRequestDto {
+	return r._editProductRequest
+}

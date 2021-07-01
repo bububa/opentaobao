@@ -17,4 +17,36 @@ type TaobaoAilabAicloudTopMessagePushUnicastAPIRequest struct {
 	_messageUnicastRequest *MessageUnicastRequest
 }
 
-// New
+// NewTaobaoAilabAicloudTopMessagePushUnicastRequest 初始化TaobaoAilabAicloudTopMessagePushUnicastAPIRequest对象
+func NewTaobaoAilabAicloudTopMessagePushUnicastRequest() *TaobaoAilabAicloudTopMessagePushUnicastAPIRequest {
+	return &TaobaoAilabAicloudTopMessagePushUnicastAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) GetApiMethodName() string {
+	return "taobao.ailab.aicloud.top.message.push.unicast"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MessageUnicastRequest Setter
+// 消息推送单播请求体
+func (r *TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) SetMessageUnicastRequest(_messageUnicastRequest *MessageUnicastRequest) error {
+	r._messageUnicastRequest = _messageUnicastRequest
+	r.Set("message_unicast_request", _messageUnicastRequest)
+	return nil
+}
+
+// Get MessageUnicastRequest Getter
+func (r TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) GetMessageUnicastRequest() *MessageUnicastRequest {
+	return r._messageUnicastRequest
+}

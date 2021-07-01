@@ -15,4 +15,23 @@ type TaobaoFenxiaoGradesGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoFenxiaoGradesGetRequest 初始化TaobaoFenxiaoGradesGetAPIRequest对象
+func NewTaobaoFenxiaoGradesGetRequest() *TaobaoFenxiaoGradesGetAPIRequest {
+	return &TaobaoFenxiaoGradesGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFenxiaoGradesGetAPIRequest) GetApiMethodName() string {
+	return "taobao.fenxiao.grades.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFenxiaoGradesGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

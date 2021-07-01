@@ -23,4 +23,75 @@ type TaobaoAilabAicloudTopMessageAddtextAPIRequest struct {
 	_param3 string
 }
 
-// New
+// NewTaobaoAilabAicloudTopMessageAddtextRequest 初始化TaobaoAilabAicloudTopMessageAddtextAPIRequest对象
+func NewTaobaoAilabAicloudTopMessageAddtextRequest() *TaobaoAilabAicloudTopMessageAddtextAPIRequest {
+	return &TaobaoAilabAicloudTopMessageAddtextAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetApiMethodName() string {
+	return "taobao.ailab.aicloud.top.message.addtext"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 用户信息
+func (r *TaobaoAilabAicloudTopMessageAddtextAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetParam0() *OpenBaseInfo {
+	return r._param0
+}
+
+// Set is Param1 Setter
+// 设备id
+func (r *TaobaoAilabAicloudTopMessageAddtextAPIRequest) SetParam1(_param1 string) error {
+	r._param1 = _param1
+	r.Set("param1", _param1)
+	return nil
+}
+
+// Get Param1 Getter
+func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetParam1() string {
+	return r._param1
+}
+
+// Set is Param2 Setter
+// 代说文本
+func (r *TaobaoAilabAicloudTopMessageAddtextAPIRequest) SetParam2(_param2 string) error {
+	r._param2 = _param2
+	r.Set("param2", _param2)
+	return nil
+}
+
+// Get Param2 Getter
+func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetParam2() string {
+	return r._param2
+}
+
+// Set is Param3 Setter
+// 扩展信息，可以为空
+func (r *TaobaoAilabAicloudTopMessageAddtextAPIRequest) SetParam3(_param3 string) error {
+	r._param3 = _param3
+	r.Set("param3", _param3)
+	return nil
+}
+
+// Get Param3 Getter
+func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetParam3() string {
+	return r._param3
+}

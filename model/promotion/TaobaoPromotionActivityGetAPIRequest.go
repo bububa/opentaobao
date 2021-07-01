@@ -17,4 +17,36 @@ type TaobaoPromotionActivityGetAPIRequest struct {
 	_activityId int64
 }
 
-// New
+// NewTaobaoPromotionActivityGetRequest 初始化TaobaoPromotionActivityGetAPIRequest对象
+func NewTaobaoPromotionActivityGetRequest() *TaobaoPromotionActivityGetAPIRequest {
+	return &TaobaoPromotionActivityGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPromotionActivityGetAPIRequest) GetApiMethodName() string {
+	return "taobao.promotion.activity.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPromotionActivityGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ActivityId Setter
+// 活动的id
+func (r *TaobaoPromotionActivityGetAPIRequest) SetActivityId(_activityId int64) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// Get ActivityId Getter
+func (r TaobaoPromotionActivityGetAPIRequest) GetActivityId() int64 {
+	return r._activityId
+}

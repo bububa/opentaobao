@@ -21,4 +21,62 @@ type YunosTvpubadminDeviceYksSkillModifyAPIRequest struct {
 	_name string
 }
 
-// New
+// NewYunosTvpubadminDeviceYksSkillModifyRequest 初始化YunosTvpubadminDeviceYksSkillModifyAPIRequest对象
+func NewYunosTvpubadminDeviceYksSkillModifyRequest() *YunosTvpubadminDeviceYksSkillModifyAPIRequest {
+	return &YunosTvpubadminDeviceYksSkillModifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.device.yks.skill.modify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SkillId Setter
+// 技能id
+func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetSkillId(_skillId int64) error {
+	r._skillId = _skillId
+	r.Set("skill_id", _skillId)
+	return nil
+}
+
+// Get SkillId Getter
+func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetSkillId() int64 {
+	return r._skillId
+}
+
+// Set is IconImageUrl Setter
+// 图片地址
+func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetIconImageUrl(_iconImageUrl string) error {
+	r._iconImageUrl = _iconImageUrl
+	r.Set("icon_image_url", _iconImageUrl)
+	return nil
+}
+
+// Get IconImageUrl Getter
+func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetIconImageUrl() string {
+	return r._iconImageUrl
+}
+
+// Set is Name Setter
+// 技能名称
+func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetName() string {
+	return r._name
+}

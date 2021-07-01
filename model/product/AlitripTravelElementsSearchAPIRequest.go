@@ -23,4 +23,75 @@ type AlitripTravelElementsSearchAPIRequest struct {
 	_type int64
 }
 
-// New
+// NewAlitripTravelElementsSearchRequest 初始化AlitripTravelElementsSearchAPIRequest对象
+func NewAlitripTravelElementsSearchRequest() *AlitripTravelElementsSearchAPIRequest {
+	return &AlitripTravelElementsSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTravelElementsSearchAPIRequest) GetApiMethodName() string {
+	return "alitrip.travel.elements.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTravelElementsSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SellerId Setter
+// 商家id
+func (r *AlitripTravelElementsSearchAPIRequest) SetSellerId(_sellerId int64) error {
+	r._sellerId = _sellerId
+	r.Set("seller_id", _sellerId)
+	return nil
+}
+
+// Get SellerId Getter
+func (r AlitripTravelElementsSearchAPIRequest) GetSellerId() int64 {
+	return r._sellerId
+}
+
+// Set is Query Setter
+// 查询关键词
+func (r *AlitripTravelElementsSearchAPIRequest) SetQuery(_query string) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r AlitripTravelElementsSearchAPIRequest) GetQuery() string {
+	return r._query
+}
+
+// Set is Count Setter
+// 查询数量，限制100
+func (r *AlitripTravelElementsSearchAPIRequest) SetCount(_count int64) error {
+	r._count = _count
+	r.Set("count", _count)
+	return nil
+}
+
+// Get Count Getter
+func (r AlitripTravelElementsSearchAPIRequest) GetCount() int64 {
+	return r._count
+}
+
+// Set is Type Setter
+// 资源类型
+func (r *AlitripTravelElementsSearchAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r AlitripTravelElementsSearchAPIRequest) GetType() int64 {
+	return r._type
+}

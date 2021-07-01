@@ -21,4 +21,62 @@ type TaobaoSubwayWordpackageUpdateAPIRequest struct {
 	_wordPackageDTOS []ItemWordPackageDto
 }
 
-// New
+// NewTaobaoSubwayWordpackageUpdateRequest 初始化TaobaoSubwayWordpackageUpdateAPIRequest对象
+func NewTaobaoSubwayWordpackageUpdateRequest() *TaobaoSubwayWordpackageUpdateAPIRequest {
+	return &TaobaoSubwayWordpackageUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSubwayWordpackageUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.subway.wordpackage.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSubwayWordpackageUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 主人昵称
+func (r *TaobaoSubwayWordpackageUpdateAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSubwayWordpackageUpdateAPIRequest) GetNick() string {
+	return r._nick
+}
+
+// Set is AdgroupId Setter
+// 推广组Id
+func (r *TaobaoSubwayWordpackageUpdateAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoSubwayWordpackageUpdateAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}
+
+// Set is WordPackageDTOS Setter
+// 词包列表
+func (r *TaobaoSubwayWordpackageUpdateAPIRequest) SetWordPackageDTOS(_wordPackageDTOS []ItemWordPackageDto) error {
+	r._wordPackageDTOS = _wordPackageDTOS
+	r.Set("word_package_d_t_o_s", _wordPackageDTOS)
+	return nil
+}
+
+// Get WordPackageDTOS Getter
+func (r TaobaoSubwayWordpackageUpdateAPIRequest) GetWordPackageDTOS() []ItemWordPackageDto {
+	return r._wordPackageDTOS
+}

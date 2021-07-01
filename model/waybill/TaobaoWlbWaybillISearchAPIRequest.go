@@ -17,4 +17,36 @@ type TaobaoWlbWaybillISearchAPIRequest struct {
 	_waybillApplyRequest *WaybillApplyRequest
 }
 
-// New
+// NewTaobaoWlbWaybillISearchRequest 初始化TaobaoWlbWaybillISearchAPIRequest对象
+func NewTaobaoWlbWaybillISearchRequest() *TaobaoWlbWaybillISearchAPIRequest {
+	return &TaobaoWlbWaybillISearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbWaybillISearchAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.waybill.i.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbWaybillISearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WaybillApplyRequest Setter
+// 查询网点信息
+func (r *TaobaoWlbWaybillISearchAPIRequest) SetWaybillApplyRequest(_waybillApplyRequest *WaybillApplyRequest) error {
+	r._waybillApplyRequest = _waybillApplyRequest
+	r.Set("waybill_apply_request", _waybillApplyRequest)
+	return nil
+}
+
+// Get WaybillApplyRequest Getter
+func (r TaobaoWlbWaybillISearchAPIRequest) GetWaybillApplyRequest() *WaybillApplyRequest {
+	return r._waybillApplyRequest
+}

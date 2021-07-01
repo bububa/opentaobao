@@ -21,4 +21,62 @@ type TaobaoPlaceStoreItemstoreBandAPIRequest struct {
 	_actionType string
 }
 
-// New
+// NewTaobaoPlaceStoreItemstoreBandRequest 初始化TaobaoPlaceStoreItemstoreBandAPIRequest对象
+func NewTaobaoPlaceStoreItemstoreBandRequest() *TaobaoPlaceStoreItemstoreBandAPIRequest {
+	return &TaobaoPlaceStoreItemstoreBandAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPlaceStoreItemstoreBandAPIRequest) GetApiMethodName() string {
+	return "taobao.place.store.itemstore.band"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPlaceStoreItemstoreBandAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 商品id
+func (r *TaobaoPlaceStoreItemstoreBandAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TaobaoPlaceStoreItemstoreBandAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is StoreIds Setter
+// 门店id
+func (r *TaobaoPlaceStoreItemstoreBandAPIRequest) SetStoreIds(_storeIds []int64) error {
+	r._storeIds = _storeIds
+	r.Set("store_ids", _storeIds)
+	return nil
+}
+
+// Get StoreIds Getter
+func (r TaobaoPlaceStoreItemstoreBandAPIRequest) GetStoreIds() []int64 {
+	return r._storeIds
+}
+
+// Set is ActionType Setter
+// 操作类型
+func (r *TaobaoPlaceStoreItemstoreBandAPIRequest) SetActionType(_actionType string) error {
+	r._actionType = _actionType
+	r.Set("action_type", _actionType)
+	return nil
+}
+
+// Get ActionType Getter
+func (r TaobaoPlaceStoreItemstoreBandAPIRequest) GetActionType() string {
+	return r._actionType
+}

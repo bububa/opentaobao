@@ -19,4 +19,49 @@ type AliyunViapiImageauditScanimageAPIRequest struct {
 	_scenes []string
 }
 
-// New
+// NewAliyunViapiImageauditScanimageRequest 初始化AliyunViapiImageauditScanimageAPIRequest对象
+func NewAliyunViapiImageauditScanimageRequest() *AliyunViapiImageauditScanimageAPIRequest {
+	return &AliyunViapiImageauditScanimageAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliyunViapiImageauditScanimageAPIRequest) GetApiMethodName() string {
+	return "aliyun.viapi.imageaudit.scanimage"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliyunViapiImageauditScanimageAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Tasks Setter
+// 系统自动生成
+func (r *AliyunViapiImageauditScanimageAPIRequest) SetTasks(_tasks []Task) error {
+	r._tasks = _tasks
+	r.Set("tasks", _tasks)
+	return nil
+}
+
+// Get Tasks Getter
+func (r AliyunViapiImageauditScanimageAPIRequest) GetTasks() []Task {
+	return r._tasks
+}
+
+// Set is Scenes Setter
+// 场景列表
+func (r *AliyunViapiImageauditScanimageAPIRequest) SetScenes(_scenes []string) error {
+	r._scenes = _scenes
+	r.Set("scenes", _scenes)
+	return nil
+}
+
+// Get Scenes Getter
+func (r AliyunViapiImageauditScanimageAPIRequest) GetScenes() []string {
+	return r._scenes
+}

@@ -27,4 +27,101 @@ type AlibabaCampusAclCancelpermiitemfromroleAPIRequest struct {
 	_userId string
 }
 
-// New
+// NewAlibabaCampusAclCancelpermiitemfromroleRequest 初始化AlibabaCampusAclCancelpermiitemfromroleAPIRequest对象
+func NewAlibabaCampusAclCancelpermiitemfromroleRequest() *AlibabaCampusAclCancelpermiitemfromroleAPIRequest {
+	return &AlibabaCampusAclCancelpermiitemfromroleAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCampusAclCancelpermiitemfromroleAPIRequest) GetApiMethodName() string {
+	return "alibaba.campus.acl.cancelpermiitemfromrole"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCampusAclCancelpermiitemfromroleAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CompanyId Setter
+// 公司ID
+func (r *AlibabaCampusAclCancelpermiitemfromroleAPIRequest) SetCompanyId(_companyId int64) error {
+	r._companyId = _companyId
+	r.Set("company_id", _companyId)
+	return nil
+}
+
+// Get CompanyId Getter
+func (r AlibabaCampusAclCancelpermiitemfromroleAPIRequest) GetCompanyId() int64 {
+	return r._companyId
+}
+
+// Set is SystemId Setter
+// 系统id
+func (r *AlibabaCampusAclCancelpermiitemfromroleAPIRequest) SetSystemId(_systemId string) error {
+	r._systemId = _systemId
+	r.Set("system_id", _systemId)
+	return nil
+}
+
+// Get SystemId Getter
+func (r AlibabaCampusAclCancelpermiitemfromroleAPIRequest) GetSystemId() string {
+	return r._systemId
+}
+
+// Set is CampusId Setter
+// 园区id
+func (r *AlibabaCampusAclCancelpermiitemfromroleAPIRequest) SetCampusId(_campusId int64) error {
+	r._campusId = _campusId
+	r.Set("campus_id", _campusId)
+	return nil
+}
+
+// Get CampusId Getter
+func (r AlibabaCampusAclCancelpermiitemfromroleAPIRequest) GetCampusId() int64 {
+	return r._campusId
+}
+
+// Set is Param1 Setter
+// 系统自动生成
+func (r *AlibabaCampusAclCancelpermiitemfromroleAPIRequest) SetParam1(_param1 *RoleReq) error {
+	r._param1 = _param1
+	r.Set("param1", _param1)
+	return nil
+}
+
+// Get Param1 Getter
+func (r AlibabaCampusAclCancelpermiitemfromroleAPIRequest) GetParam1() *RoleReq {
+	return r._param1
+}
+
+// Set is Param2 Setter
+// 系统自动生成
+func (r *AlibabaCampusAclCancelpermiitemfromroleAPIRequest) SetParam2(_param2 []PermissionReq) error {
+	r._param2 = _param2
+	r.Set("param2", _param2)
+	return nil
+}
+
+// Get Param2 Getter
+func (r AlibabaCampusAclCancelpermiitemfromroleAPIRequest) GetParam2() []PermissionReq {
+	return r._param2
+}
+
+// Set is UserId Setter
+// 操作人id(不填默认appCode)
+func (r *AlibabaCampusAclCancelpermiitemfromroleAPIRequest) SetUserId(_userId string) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r AlibabaCampusAclCancelpermiitemfromroleAPIRequest) GetUserId() string {
+	return r._userId
+}

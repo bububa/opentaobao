@@ -21,4 +21,62 @@ type TmallItemDapeiTemplateQueryAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewTmallItemDapeiTemplateQueryRequest 初始化TmallItemDapeiTemplateQueryAPIRequest对象
+func NewTmallItemDapeiTemplateQueryRequest() *TmallItemDapeiTemplateQueryAPIRequest {
+	return &TmallItemDapeiTemplateQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallItemDapeiTemplateQueryAPIRequest) GetApiMethodName() string {
+	return "tmall.item.dapei.template.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallItemDapeiTemplateQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Title Setter
+// 搭配标题
+func (r *TmallItemDapeiTemplateQueryAPIRequest) SetTitle(_title string) error {
+	r._title = _title
+	r.Set("title", _title)
+	return nil
+}
+
+// Get Title Getter
+func (r TmallItemDapeiTemplateQueryAPIRequest) GetTitle() string {
+	return r._title
+}
+
+// Set is PageIndex Setter
+// 页码
+func (r *TmallItemDapeiTemplateQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
+	r._pageIndex = _pageIndex
+	r.Set("page_index", _pageIndex)
+	return nil
+}
+
+// Get PageIndex Getter
+func (r TmallItemDapeiTemplateQueryAPIRequest) GetPageIndex() int64 {
+	return r._pageIndex
+}
+
+// Set is PageSize Setter
+// 分页大小
+func (r *TmallItemDapeiTemplateQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TmallItemDapeiTemplateQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

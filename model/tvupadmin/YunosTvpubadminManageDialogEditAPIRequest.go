@@ -17,4 +17,36 @@ type YunosTvpubadminManageDialogEditAPIRequest struct {
 	_dialogJson string
 }
 
-// New
+// NewYunosTvpubadminManageDialogEditRequest 初始化YunosTvpubadminManageDialogEditAPIRequest对象
+func NewYunosTvpubadminManageDialogEditRequest() *YunosTvpubadminManageDialogEditAPIRequest {
+	return &YunosTvpubadminManageDialogEditAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminManageDialogEditAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.manage.dialog.edit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminManageDialogEditAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DialogJson Setter
+// 待编辑的全局弹窗
+func (r *YunosTvpubadminManageDialogEditAPIRequest) SetDialogJson(_dialogJson string) error {
+	r._dialogJson = _dialogJson
+	r.Set("dialog_json", _dialogJson)
+	return nil
+}
+
+// Get DialogJson Getter
+func (r YunosTvpubadminManageDialogEditAPIRequest) GetDialogJson() string {
+	return r._dialogJson
+}

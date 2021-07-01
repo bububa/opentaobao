@@ -17,4 +17,36 @@ type TaobaoQimenOrderexceptionReportAPIRequest struct {
 	_request *TaobaoQimenOrderexceptionReportRequest
 }
 
-// New
+// NewTaobaoQimenOrderexceptionReportRequest 初始化TaobaoQimenOrderexceptionReportAPIRequest对象
+func NewTaobaoQimenOrderexceptionReportRequest() *TaobaoQimenOrderexceptionReportAPIRequest {
+	return &TaobaoQimenOrderexceptionReportAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenOrderexceptionReportAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.orderexception.report"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenOrderexceptionReportAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenOrderexceptionReportAPIRequest) SetRequest(_request *TaobaoQimenOrderexceptionReportRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenOrderexceptionReportAPIRequest) GetRequest() *TaobaoQimenOrderexceptionReportRequest {
+	return r._request
+}

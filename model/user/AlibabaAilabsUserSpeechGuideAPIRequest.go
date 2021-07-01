@@ -17,4 +17,36 @@ type AlibabaAilabsUserSpeechGuideAPIRequest struct {
 	_query string
 }
 
-// New
+// NewAlibabaAilabsUserSpeechGuideRequest 初始化AlibabaAilabsUserSpeechGuideAPIRequest对象
+func NewAlibabaAilabsUserSpeechGuideRequest() *AlibabaAilabsUserSpeechGuideAPIRequest {
+	return &AlibabaAilabsUserSpeechGuideAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetApiMethodName() string {
+	return "alibaba.ailabs.user.speech.guide"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 用户query
+func (r *AlibabaAilabsUserSpeechGuideAPIRequest) SetQuery(_query string) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetQuery() string {
+	return r._query
+}

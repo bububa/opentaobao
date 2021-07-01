@@ -23,4 +23,75 @@ type AlibabaXiamiApiTagGenreAlbumGetAPIRequest struct {
 	_limit int64
 }
 
-// New
+// NewAlibabaXiamiApiTagGenreAlbumGetRequest 初始化AlibabaXiamiApiTagGenreAlbumGetAPIRequest对象
+func NewAlibabaXiamiApiTagGenreAlbumGetRequest() *AlibabaXiamiApiTagGenreAlbumGetAPIRequest {
+	return &AlibabaXiamiApiTagGenreAlbumGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.xiami.api.tag.genre.album.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Type Setter
+// 1:风格，2:流派
+func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetType() int64 {
+	return r._type
+}
+
+// Set is Id Setter
+// 风格，流派id
+func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetId() int64 {
+	return r._id
+}
+
+// Set is Page Setter
+// 页数
+func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetPage(_page int64) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// Get Page Getter
+func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetPage() int64 {
+	return r._page
+}
+
+// Set is Limit Setter
+// 每页数量
+func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetLimit(_limit int64) error {
+	r._limit = _limit
+	r.Set("limit", _limit)
+	return nil
+}
+
+// Get Limit Getter
+func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetLimit() int64 {
+	return r._limit
+}

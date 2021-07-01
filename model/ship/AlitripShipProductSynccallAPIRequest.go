@@ -15,4 +15,23 @@ type AlitripShipProductSynccallAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlitripShipProductSynccallRequest 初始化AlitripShipProductSynccallAPIRequest对象
+func NewAlitripShipProductSynccallRequest() *AlitripShipProductSynccallAPIRequest {
+	return &AlitripShipProductSynccallAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripShipProductSynccallAPIRequest) GetApiMethodName() string {
+	return "alitrip.ship.product.synccall"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripShipProductSynccallAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

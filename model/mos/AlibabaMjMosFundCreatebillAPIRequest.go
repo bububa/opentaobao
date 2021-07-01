@@ -17,4 +17,36 @@ type AlibabaMjMosFundCreatebillAPIRequest struct {
 	_billDto *CreateBillDto
 }
 
-// New
+// NewAlibabaMjMosFundCreatebillRequest 初始化AlibabaMjMosFundCreatebillAPIRequest对象
+func NewAlibabaMjMosFundCreatebillRequest() *AlibabaMjMosFundCreatebillAPIRequest {
+	return &AlibabaMjMosFundCreatebillAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMjMosFundCreatebillAPIRequest) GetApiMethodName() string {
+	return "alibaba.mj.mos.fund.createbill"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMjMosFundCreatebillAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BillDto Setter
+// 创建付款单入参
+func (r *AlibabaMjMosFundCreatebillAPIRequest) SetBillDto(_billDto *CreateBillDto) error {
+	r._billDto = _billDto
+	r.Set("bill_dto", _billDto)
+	return nil
+}
+
+// Get BillDto Getter
+func (r AlibabaMjMosFundCreatebillAPIRequest) GetBillDto() *CreateBillDto {
+	return r._billDto
+}

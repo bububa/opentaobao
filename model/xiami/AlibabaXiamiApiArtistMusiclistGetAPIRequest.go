@@ -19,4 +19,49 @@ type AlibabaXiamiApiArtistMusiclistGetAPIRequest struct {
 	_order string
 }
 
-// New
+// NewAlibabaXiamiApiArtistMusiclistGetRequest 初始化AlibabaXiamiApiArtistMusiclistGetAPIRequest对象
+func NewAlibabaXiamiApiArtistMusiclistGetRequest() *AlibabaXiamiApiArtistMusiclistGetAPIRequest {
+	return &AlibabaXiamiApiArtistMusiclistGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaXiamiApiArtistMusiclistGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.xiami.api.artist.musiclist.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaXiamiApiArtistMusiclistGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Type Setter
+// 语种, 有all, chinese, musician, english, japanese, korea
+func (r *AlibabaXiamiApiArtistMusiclistGetAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r AlibabaXiamiApiArtistMusiclistGetAPIRequest) GetType() string {
+	return r._type
+}
+
+// Set is Order Setter
+// 所有、男、女、组合分别为(all、male、female、combination)
+func (r *AlibabaXiamiApiArtistMusiclistGetAPIRequest) SetOrder(_order string) error {
+	r._order = _order
+	r.Set("order", _order)
+	return nil
+}
+
+// Get Order Getter
+func (r AlibabaXiamiApiArtistMusiclistGetAPIRequest) GetOrder() string {
+	return r._order
+}

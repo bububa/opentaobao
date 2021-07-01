@@ -17,4 +17,36 @@ type AlibabaAlihealthOutflowGetbyverifycodeAPIRequest struct {
 	_prescriptionGetByVerifyRequest *PrescriptionGetByVerifyRequest
 }
 
-// New
+// NewAlibabaAlihealthOutflowGetbyverifycodeRequest 初始化AlibabaAlihealthOutflowGetbyverifycodeAPIRequest对象
+func NewAlibabaAlihealthOutflowGetbyverifycodeRequest() *AlibabaAlihealthOutflowGetbyverifycodeAPIRequest {
+	return &AlibabaAlihealthOutflowGetbyverifycodeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthOutflowGetbyverifycodeAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.outflow.getbyverifycode"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthOutflowGetbyverifycodeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PrescriptionGetByVerifyRequest Setter
+// 入参
+func (r *AlibabaAlihealthOutflowGetbyverifycodeAPIRequest) SetPrescriptionGetByVerifyRequest(_prescriptionGetByVerifyRequest *PrescriptionGetByVerifyRequest) error {
+	r._prescriptionGetByVerifyRequest = _prescriptionGetByVerifyRequest
+	r.Set("prescription_get_by_verify_request", _prescriptionGetByVerifyRequest)
+	return nil
+}
+
+// Get PrescriptionGetByVerifyRequest Getter
+func (r AlibabaAlihealthOutflowGetbyverifycodeAPIRequest) GetPrescriptionGetByVerifyRequest() *PrescriptionGetByVerifyRequest {
+	return r._prescriptionGetByVerifyRequest
+}

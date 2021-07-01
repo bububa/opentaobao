@@ -17,4 +17,36 @@ type AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest struct {
 	_rmaStateUpdateRequest *RmaStateUpdateRequest
 }
 
-// New
+// NewAliexpressSolutionIssuePartnerRmaStateUpdateRequest 初始化AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest对象
+func NewAliexpressSolutionIssuePartnerRmaStateUpdateRequest() *AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest {
+	return &AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) GetApiMethodName() string {
+	return "aliexpress.solution.issue.partner.rma.state.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RmaStateUpdateRequest Setter
+// RMA's order state update request
+func (r *AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) SetRmaStateUpdateRequest(_rmaStateUpdateRequest *RmaStateUpdateRequest) error {
+	r._rmaStateUpdateRequest = _rmaStateUpdateRequest
+	r.Set("rma_state_update_request", _rmaStateUpdateRequest)
+	return nil
+}
+
+// Get RmaStateUpdateRequest Getter
+func (r AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) GetRmaStateUpdateRequest() *RmaStateUpdateRequest {
+	return r._rmaStateUpdateRequest
+}

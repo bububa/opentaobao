@@ -17,4 +17,36 @@ type TmallServicecenterTaskGetAPIRequest struct {
 	_parentBizOrderId int64
 }
 
-// New
+// NewTmallServicecenterTaskGetRequest 初始化TmallServicecenterTaskGetAPIRequest对象
+func NewTmallServicecenterTaskGetRequest() *TmallServicecenterTaskGetAPIRequest {
+	return &TmallServicecenterTaskGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterTaskGetAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.task.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterTaskGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParentBizOrderId Setter
+// Taobao主交易订单ID
+func (r *TmallServicecenterTaskGetAPIRequest) SetParentBizOrderId(_parentBizOrderId int64) error {
+	r._parentBizOrderId = _parentBizOrderId
+	r.Set("parent_biz_order_id", _parentBizOrderId)
+	return nil
+}
+
+// Get ParentBizOrderId Getter
+func (r TmallServicecenterTaskGetAPIRequest) GetParentBizOrderId() int64 {
+	return r._parentBizOrderId
+}

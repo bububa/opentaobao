@@ -19,4 +19,49 @@ type TmallNrFulfillLogisticsQueryAPIRequest struct {
 	_bizIdentity string
 }
 
-// New
+// NewTmallNrFulfillLogisticsQueryRequest 初始化TmallNrFulfillLogisticsQueryAPIRequest对象
+func NewTmallNrFulfillLogisticsQueryRequest() *TmallNrFulfillLogisticsQueryAPIRequest {
+	return &TmallNrFulfillLogisticsQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrFulfillLogisticsQueryAPIRequest) GetApiMethodName() string {
+	return "tmall.nr.fulfill.logistics.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrFulfillLogisticsQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MainOrderId Setter
+// 交易主订单号
+func (r *TmallNrFulfillLogisticsQueryAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+	r._mainOrderId = _mainOrderId
+	r.Set("main_order_id", _mainOrderId)
+	return nil
+}
+
+// Get MainOrderId Getter
+func (r TmallNrFulfillLogisticsQueryAPIRequest) GetMainOrderId() int64 {
+	return r._mainOrderId
+}
+
+// Set is BizIdentity Setter
+// 业务标识，dss标识定时送业务；jsd表示极速达业务
+func (r *TmallNrFulfillLogisticsQueryAPIRequest) SetBizIdentity(_bizIdentity string) error {
+	r._bizIdentity = _bizIdentity
+	r.Set("biz_identity", _bizIdentity)
+	return nil
+}
+
+// Get BizIdentity Getter
+func (r TmallNrFulfillLogisticsQueryAPIRequest) GetBizIdentity() string {
+	return r._bizIdentity
+}

@@ -15,4 +15,23 @@ type TaobaoItemTemplatesGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoItemTemplatesGetRequest 初始化TaobaoItemTemplatesGetAPIRequest对象
+func NewTaobaoItemTemplatesGetRequest() *TaobaoItemTemplatesGetAPIRequest {
+	return &TaobaoItemTemplatesGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoItemTemplatesGetAPIRequest) GetApiMethodName() string {
+	return "taobao.item.templates.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoItemTemplatesGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

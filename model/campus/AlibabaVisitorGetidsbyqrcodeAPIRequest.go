@@ -23,4 +23,75 @@ type AlibabaVisitorGetidsbyqrcodeAPIRequest struct {
 	_qrCode string
 }
 
-// New
+// NewAlibabaVisitorGetidsbyqrcodeRequest 初始化AlibabaVisitorGetidsbyqrcodeAPIRequest对象
+func NewAlibabaVisitorGetidsbyqrcodeRequest() *AlibabaVisitorGetidsbyqrcodeAPIRequest {
+	return &AlibabaVisitorGetidsbyqrcodeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetApiMethodName() string {
+	return "alibaba.visitor.getidsbyqrcode"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CompanyId Setter
+// 公司id
+func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCompanyId(_companyId int64) error {
+	r._companyId = _companyId
+	r.Set("company_id", _companyId)
+	return nil
+}
+
+// Get CompanyId Getter
+func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetCompanyId() int64 {
+	return r._companyId
+}
+
+// Set is CampusId Setter
+// 园区id
+func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCampusId(_campusId int64) error {
+	r._campusId = _campusId
+	r.Set("campus_id", _campusId)
+	return nil
+}
+
+// Get CampusId Getter
+func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetCampusId() int64 {
+	return r._campusId
+}
+
+// Set is Date Setter
+// 来访时间
+func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetDate(_date string) error {
+	r._date = _date
+	r.Set("date", _date)
+	return nil
+}
+
+// Get Date Getter
+func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetDate() string {
+	return r._date
+}
+
+// Set is QrCode Setter
+// 二维码字符串
+func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetQrCode(_qrCode string) error {
+	r._qrCode = _qrCode
+	r.Set("qr_code", _qrCode)
+	return nil
+}
+
+// Get QrCode Getter
+func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetQrCode() string {
+	return r._qrCode
+}

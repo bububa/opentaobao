@@ -23,4 +23,75 @@ type TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest struct {
 	_state int64
 }
 
-// New
+// NewTaobaoSimbaSerchcrowdStateBatchUpdateRequest 初始化TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest对象
+func NewTaobaoSimbaSerchcrowdStateBatchUpdateRequest() *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest {
+	return &TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.serchcrowd.state.batch.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 被操作者的淘宝昵称
+func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetNick() string {
+	return r._nick
+}
+
+// Set is AdgroupCrowdIds Setter
+// 需要修改出价的人群包id,批量传入时用,分割
+func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetAdgroupCrowdIds(_adgroupCrowdIds []int64) error {
+	r._adgroupCrowdIds = _adgroupCrowdIds
+	r.Set("adgroup_crowd_ids", _adgroupCrowdIds)
+	return nil
+}
+
+// Get AdgroupCrowdIds Getter
+func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetAdgroupCrowdIds() []int64 {
+	return r._adgroupCrowdIds
+}
+
+// Set is AdgroupId Setter
+// 推广单元id
+func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}
+
+// Set is State Setter
+// 人群状态,0:暂停;1:启用
+func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetState(_state int64) error {
+	r._state = _state
+	r.Set("state", _state)
+	return nil
+}
+
+// Get State Getter
+func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetState() int64 {
+	return r._state
+}

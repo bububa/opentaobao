@@ -1,9 +1,7 @@
 package tvupadmin
 
-// TopResult 结构体
-type TopResult struct {
-	// 实际内容
-	Result string `json:"result,omitempty" xml:"result,omitempty"`
+// YunosTvpubadminManageDialogDeleteTopResult 结构体
+type YunosTvpubadminManageDialogDeleteTopResult struct {
 	// retCode
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// errorCode
@@ -11,9 +9,7 @@ type TopResult struct {
 	// errorMsg
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// object
-	Object bool `json:"object,omitempty" xml:"object,omitempty"`
+	Object int64 `json:"object,omitempty" xml:"object,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
-	// message
-	Message string `json:"message,omitempty" xml:"message,omitempty"`
 }

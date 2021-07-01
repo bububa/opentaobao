@@ -27,4 +27,101 @@ type AlitripTravelTradesSearchAPIRequest struct {
 	_category int64
 }
 
-// New
+// NewAlitripTravelTradesSearchRequest 初始化AlitripTravelTradesSearchAPIRequest对象
+func NewAlitripTravelTradesSearchRequest() *AlitripTravelTradesSearchAPIRequest {
+	return &AlitripTravelTradesSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTravelTradesSearchAPIRequest) GetApiMethodName() string {
+	return "alitrip.travel.trades.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTravelTradesSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PageSize Setter
+// 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30
+func (r *AlitripTravelTradesSearchAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r AlitripTravelTradesSearchAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is EndCreatedTime Setter
+// 订单创建 结束时间
+func (r *AlitripTravelTradesSearchAPIRequest) SetEndCreatedTime(_endCreatedTime string) error {
+	r._endCreatedTime = _endCreatedTime
+	r.Set("end_created_time", _endCreatedTime)
+	return nil
+}
+
+// Get EndCreatedTime Getter
+func (r AlitripTravelTradesSearchAPIRequest) GetEndCreatedTime() string {
+	return r._endCreatedTime
+}
+
+// Set is OrderStatus Setter
+// 订单状态 过滤。1-等待买家付款，2-等待卖家发货（买家已付款），3-等待买家确认收货，4-交易关闭（买家发起的退款），6-交易成功，8-交易关闭（订单超时 自动关单）
+func (r *AlitripTravelTradesSearchAPIRequest) SetOrderStatus(_orderStatus int64) error {
+	r._orderStatus = _orderStatus
+	r.Set("order_status", _orderStatus)
+	return nil
+}
+
+// Get OrderStatus Getter
+func (r AlitripTravelTradesSearchAPIRequest) GetOrderStatus() int64 {
+	return r._orderStatus
+}
+
+// Set is CurrentPage Setter
+// 当前页
+func (r *AlitripTravelTradesSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// Get CurrentPage Getter
+func (r AlitripTravelTradesSearchAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// Set is StartCreatedTime Setter
+// 订单创建 开始时间
+func (r *AlitripTravelTradesSearchAPIRequest) SetStartCreatedTime(_startCreatedTime string) error {
+	r._startCreatedTime = _startCreatedTime
+	r.Set("start_created_time", _startCreatedTime)
+	return nil
+}
+
+// Get StartCreatedTime Getter
+func (r AlitripTravelTradesSearchAPIRequest) GetStartCreatedTime() string {
+	return r._startCreatedTime
+}
+
+// Set is Category Setter
+// 类目筛选, 1、旅行购，旅行购定制专用字段，表示搜索旅行购订单。
+func (r *AlitripTravelTradesSearchAPIRequest) SetCategory(_category int64) error {
+	r._category = _category
+	r.Set("category", _category)
+	return nil
+}
+
+// Get Category Getter
+func (r AlitripTravelTradesSearchAPIRequest) GetCategory() int64 {
+	return r._category
+}

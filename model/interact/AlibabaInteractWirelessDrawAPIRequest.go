@@ -15,4 +15,23 @@ type AlibabaInteractWirelessDrawAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaInteractWirelessDrawRequest 初始化AlibabaInteractWirelessDrawAPIRequest对象
+func NewAlibabaInteractWirelessDrawRequest() *AlibabaInteractWirelessDrawAPIRequest {
+	return &AlibabaInteractWirelessDrawAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractWirelessDrawAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.wireless.draw"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractWirelessDrawAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

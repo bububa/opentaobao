@@ -17,4 +17,36 @@ type TmallProductTemplateGetAPIRequest struct {
 	_cid int64
 }
 
-// New
+// NewTmallProductTemplateGetRequest 初始化TmallProductTemplateGetAPIRequest对象
+func NewTmallProductTemplateGetRequest() *TmallProductTemplateGetAPIRequest {
+	return &TmallProductTemplateGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallProductTemplateGetAPIRequest) GetApiMethodName() string {
+	return "tmall.product.template.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallProductTemplateGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Cid Setter
+// 类目ID
+func (r *TmallProductTemplateGetAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// Get Cid Getter
+func (r TmallProductTemplateGetAPIRequest) GetCid() int64 {
+	return r._cid
+}

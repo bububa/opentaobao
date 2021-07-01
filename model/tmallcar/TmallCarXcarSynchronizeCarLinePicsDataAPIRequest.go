@@ -17,4 +17,36 @@ type TmallCarXcarSynchronizeCarLinePicsDataAPIRequest struct {
 	_paramXCarSysLinePicsDTO *XCarSysLinePicsDto
 }
 
-// New
+// NewTmallCarXcarSynchronizeCarLinePicsDataRequest 初始化TmallCarXcarSynchronizeCarLinePicsDataAPIRequest对象
+func NewTmallCarXcarSynchronizeCarLinePicsDataRequest() *TmallCarXcarSynchronizeCarLinePicsDataAPIRequest {
+	return &TmallCarXcarSynchronizeCarLinePicsDataAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallCarXcarSynchronizeCarLinePicsDataAPIRequest) GetApiMethodName() string {
+	return "tmall.car.xcar.synchronize.car.line.pics.data"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallCarXcarSynchronizeCarLinePicsDataAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamXCarSysLinePicsDTO Setter
+// 入参对象
+func (r *TmallCarXcarSynchronizeCarLinePicsDataAPIRequest) SetParamXCarSysLinePicsDTO(_paramXCarSysLinePicsDTO *XCarSysLinePicsDto) error {
+	r._paramXCarSysLinePicsDTO = _paramXCarSysLinePicsDTO
+	r.Set("param_x_car_sys_line_pics_d_t_o", _paramXCarSysLinePicsDTO)
+	return nil
+}
+
+// Get ParamXCarSysLinePicsDTO Getter
+func (r TmallCarXcarSynchronizeCarLinePicsDataAPIRequest) GetParamXCarSysLinePicsDTO() *XCarSysLinePicsDto {
+	return r._paramXCarSysLinePicsDTO
+}

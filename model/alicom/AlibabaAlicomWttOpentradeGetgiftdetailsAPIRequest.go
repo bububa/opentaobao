@@ -17,4 +17,36 @@ type AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest struct {
 	_activityId string
 }
 
-// New
+// NewAlibabaAlicomWttOpentradeGetgiftdetailsRequest 初始化AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest对象
+func NewAlibabaAlicomWttOpentradeGetgiftdetailsRequest() *AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest {
+	return &AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) GetApiMethodName() string {
+	return "alibaba.alicom.wtt.opentrade.getgiftdetails"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ActivityId Setter
+// 活动ID
+func (r *AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) SetActivityId(_activityId string) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// Get ActivityId Getter
+func (r AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) GetActivityId() string {
+	return r._activityId
+}

@@ -17,4 +17,36 @@ type YunosTvpubadminContentAdvertManagescheduleAPIRequest struct {
 	_req string
 }
 
-// New
+// NewYunosTvpubadminContentAdvertManagescheduleRequest 初始化YunosTvpubadminContentAdvertManagescheduleAPIRequest对象
+func NewYunosTvpubadminContentAdvertManagescheduleRequest() *YunosTvpubadminContentAdvertManagescheduleAPIRequest {
+	return &YunosTvpubadminContentAdvertManagescheduleAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentAdvertManagescheduleAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.advert.manageschedule"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentAdvertManagescheduleAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Req Setter
+// 管理参数
+func (r *YunosTvpubadminContentAdvertManagescheduleAPIRequest) SetReq(_req string) error {
+	r._req = _req
+	r.Set("req", _req)
+	return nil
+}
+
+// Get Req Getter
+func (r YunosTvpubadminContentAdvertManagescheduleAPIRequest) GetReq() string {
+	return r._req
+}

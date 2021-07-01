@@ -19,4 +19,49 @@ type TaobaoSebpCompanyGetorderinfoAPIRequest struct {
 	_pageNum int64
 }
 
-// New
+// NewTaobaoSebpCompanyGetorderinfoRequest 初始化TaobaoSebpCompanyGetorderinfoAPIRequest对象
+func NewTaobaoSebpCompanyGetorderinfoRequest() *TaobaoSebpCompanyGetorderinfoAPIRequest {
+	return &TaobaoSebpCompanyGetorderinfoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetApiMethodName() string {
+	return "taobao.sebp.company.getorderinfo"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ModifyDate Setter
+// null-请求所有，20200616-请求2020年6月16号的变更信息
+func (r *TaobaoSebpCompanyGetorderinfoAPIRequest) SetModifyDate(_modifyDate string) error {
+	r._modifyDate = _modifyDate
+	r.Set("modify_date", _modifyDate)
+	return nil
+}
+
+// Get ModifyDate Getter
+func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetModifyDate() string {
+	return r._modifyDate
+}
+
+// Set is PageNum Setter
+// 第几页
+func (r *TaobaoSebpCompanyGetorderinfoAPIRequest) SetPageNum(_pageNum int64) error {
+	r._pageNum = _pageNum
+	r.Set("page_num", _pageNum)
+	return nil
+}
+
+// Get PageNum Getter
+func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetPageNum() int64 {
+	return r._pageNum
+}

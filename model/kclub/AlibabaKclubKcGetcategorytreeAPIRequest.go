@@ -19,4 +19,49 @@ type AlibabaKclubKcGetcategorytreeAPIRequest struct {
 	_auth *TenancyAuth
 }
 
-// New
+// NewAlibabaKclubKcGetcategorytreeRequest 初始化AlibabaKclubKcGetcategorytreeAPIRequest对象
+func NewAlibabaKclubKcGetcategorytreeRequest() *AlibabaKclubKcGetcategorytreeAPIRequest {
+	return &AlibabaKclubKcGetcategorytreeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaKclubKcGetcategorytreeAPIRequest) GetApiMethodName() string {
+	return "alibaba.kclub.kc.getcategorytree"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaKclubKcGetcategorytreeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TenantId Setter
+// 租户id
+func (r *AlibabaKclubKcGetcategorytreeAPIRequest) SetTenantId(_tenantId int64) error {
+	r._tenantId = _tenantId
+	r.Set("tenant_id", _tenantId)
+	return nil
+}
+
+// Get TenantId Getter
+func (r AlibabaKclubKcGetcategorytreeAPIRequest) GetTenantId() int64 {
+	return r._tenantId
+}
+
+// Set is Auth Setter
+// 鉴权参数
+func (r *AlibabaKclubKcGetcategorytreeAPIRequest) SetAuth(_auth *TenancyAuth) error {
+	r._auth = _auth
+	r.Set("auth", _auth)
+	return nil
+}
+
+// Get Auth Getter
+func (r AlibabaKclubKcGetcategorytreeAPIRequest) GetAuth() *TenancyAuth {
+	return r._auth
+}

@@ -23,4 +23,75 @@ type TaobaoAilabAicloudTopMusicSearchAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewTaobaoAilabAicloudTopMusicSearchRequest 初始化TaobaoAilabAicloudTopMusicSearchAPIRequest对象
+func NewTaobaoAilabAicloudTopMusicSearchRequest() *TaobaoAilabAicloudTopMusicSearchAPIRequest {
+	return &TaobaoAilabAicloudTopMusicSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetApiMethodName() string {
+	return "taobao.ailab.aicloud.top.music.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BotId Setter
+// botId值
+func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetBotId(_botId int64) error {
+	r._botId = _botId
+	r.Set("bot_id", _botId)
+	return nil
+}
+
+// Get BotId Getter
+func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetBotId() int64 {
+	return r._botId
+}
+
+// Set is Params Setter
+// 筛选条件，目前只支持name、type和style
+func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetParams(_params string) error {
+	r._params = _params
+	r.Set("params", _params)
+	return nil
+}
+
+// Get Params Getter
+func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetParams() string {
+	return r._params
+}
+
+// Set is PageNo Setter
+// 分页页码
+func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 分页页大小
+func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

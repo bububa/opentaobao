@@ -17,4 +17,36 @@ type TaobaoOpensecurityUidGetAPIRequest struct {
 	_tbUserId int64
 }
 
-// New
+// NewTaobaoOpensecurityUidGetRequest 初始化TaobaoOpensecurityUidGetAPIRequest对象
+func NewTaobaoOpensecurityUidGetRequest() *TaobaoOpensecurityUidGetAPIRequest {
+	return &TaobaoOpensecurityUidGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpensecurityUidGetAPIRequest) GetApiMethodName() string {
+	return "taobao.opensecurity.uid.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpensecurityUidGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TbUserId Setter
+// 淘宝用户ID
+func (r *TaobaoOpensecurityUidGetAPIRequest) SetTbUserId(_tbUserId int64) error {
+	r._tbUserId = _tbUserId
+	r.Set("tb_user_id", _tbUserId)
+	return nil
+}
+
+// Get TbUserId Getter
+func (r TaobaoOpensecurityUidGetAPIRequest) GetTbUserId() int64 {
+	return r._tbUserId
+}

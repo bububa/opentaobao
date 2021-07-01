@@ -17,4 +17,36 @@ type AlibabaAlscCrmMarketingIssueVoucherAPIRequest struct {
 	_paramIssueVoucherReq *IssueVoucherReq
 }
 
-// New
+// NewAlibabaAlscCrmMarketingIssueVoucherRequest 初始化AlibabaAlscCrmMarketingIssueVoucherAPIRequest对象
+func NewAlibabaAlscCrmMarketingIssueVoucherRequest() *AlibabaAlscCrmMarketingIssueVoucherAPIRequest {
+	return &AlibabaAlscCrmMarketingIssueVoucherAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmMarketingIssueVoucherAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.marketing.issue.voucher"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmMarketingIssueVoucherAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamIssueVoucherReq Setter
+// 参数
+func (r *AlibabaAlscCrmMarketingIssueVoucherAPIRequest) SetParamIssueVoucherReq(_paramIssueVoucherReq *IssueVoucherReq) error {
+	r._paramIssueVoucherReq = _paramIssueVoucherReq
+	r.Set("param_issue_voucher_req", _paramIssueVoucherReq)
+	return nil
+}
+
+// Get ParamIssueVoucherReq Getter
+func (r AlibabaAlscCrmMarketingIssueVoucherAPIRequest) GetParamIssueVoucherReq() *IssueVoucherReq {
+	return r._paramIssueVoucherReq
+}

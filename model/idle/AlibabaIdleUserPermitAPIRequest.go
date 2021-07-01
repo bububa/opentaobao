@@ -17,4 +17,36 @@ type AlibabaIdleUserPermitAPIRequest struct {
 	_paramUserGrantRequest *UserGrantRequest
 }
 
-// New
+// NewAlibabaIdleUserPermitRequest 初始化AlibabaIdleUserPermitAPIRequest对象
+func NewAlibabaIdleUserPermitRequest() *AlibabaIdleUserPermitAPIRequest {
+	return &AlibabaIdleUserPermitAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleUserPermitAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.user.permit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleUserPermitAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamUserGrantRequest Setter
+// 授权请求
+func (r *AlibabaIdleUserPermitAPIRequest) SetParamUserGrantRequest(_paramUserGrantRequest *UserGrantRequest) error {
+	r._paramUserGrantRequest = _paramUserGrantRequest
+	r.Set("param_user_grant_request", _paramUserGrantRequest)
+	return nil
+}
+
+// Get ParamUserGrantRequest Getter
+func (r AlibabaIdleUserPermitAPIRequest) GetParamUserGrantRequest() *UserGrantRequest {
+	return r._paramUserGrantRequest
+}

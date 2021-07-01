@@ -17,4 +17,36 @@ type YunosTvpubadminContentShowEditAPIRequest struct {
 	_data string
 }
 
-// New
+// NewYunosTvpubadminContentShowEditRequest 初始化YunosTvpubadminContentShowEditAPIRequest对象
+func NewYunosTvpubadminContentShowEditRequest() *YunosTvpubadminContentShowEditAPIRequest {
+	return &YunosTvpubadminContentShowEditAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentShowEditAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.show.edit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentShowEditAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Data Setter
+// 请求入参，JSON格式
+func (r *YunosTvpubadminContentShowEditAPIRequest) SetData(_data string) error {
+	r._data = _data
+	r.Set("data", _data)
+	return nil
+}
+
+// Get Data Getter
+func (r YunosTvpubadminContentShowEditAPIRequest) GetData() string {
+	return r._data
+}

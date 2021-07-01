@@ -33,4 +33,140 @@ type TaobaoAlitripIeAgentOrderSearchAPIRequest struct {
 	_officeNo string
 }
 
-// New
+// NewTaobaoAlitripIeAgentOrderSearchRequest 初始化TaobaoAlitripIeAgentOrderSearchAPIRequest对象
+func NewTaobaoAlitripIeAgentOrderSearchRequest() *TaobaoAlitripIeAgentOrderSearchAPIRequest {
+	return &TaobaoAlitripIeAgentOrderSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.ie.agent.order.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AgentId Setter
+// 代理商ID
+func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// Get AgentId Getter
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}
+
+// Set is BeginTime Setter
+// 订单起始日期
+func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetBeginTime(_beginTime string) error {
+	r._beginTime = _beginTime
+	r.Set("begin_time", _beginTime)
+	return nil
+}
+
+// Get BeginTime Getter
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetBeginTime() string {
+	return r._beginTime
+}
+
+// Set is CurrentPage Setter
+// 当前页码
+func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// Get CurrentPage Getter
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// Set is EndTime Setter
+// 订单结束日期
+func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// Get EndTime Getter
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetEndTime() string {
+	return r._endTime
+}
+
+// Set is OrderStatus Setter
+// 订单状态（只能传入一个状态，不支持多个一起传）
+func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetOrderStatus(_orderStatus string) error {
+	r._orderStatus = _orderStatus
+	r.Set("order_status", _orderStatus)
+	return nil
+}
+
+// Get OrderStatus Getter
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetOrderStatus() string {
+	return r._orderStatus
+}
+
+// Set is PageSize Setter
+// 分页大小
+func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is FareSource Setter
+// 0:自有运价;3:公布运价;9:大卖家API;11私有库存
+func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetFareSource(_fareSource int64) error {
+	r._fareSource = _fareSource
+	r.Set("fare_source", _fareSource)
+	return nil
+}
+
+// Get FareSource Getter
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetFareSource() int64 {
+	return r._fareSource
+}
+
+// Set is ResourceCode Setter
+// 供应渠道/资源码
+func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetResourceCode(_resourceCode string) error {
+	r._resourceCode = _resourceCode
+	r.Set("resource_code", _resourceCode)
+	return nil
+}
+
+// Get ResourceCode Getter
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetResourceCode() string {
+	return r._resourceCode
+}
+
+// Set is OfficeNo Setter
+// officeNo
+func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetOfficeNo(_officeNo string) error {
+	r._officeNo = _officeNo
+	r.Set("office_no", _officeNo)
+	return nil
+}
+
+// Get OfficeNo Getter
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetOfficeNo() string {
+	return r._officeNo
+}

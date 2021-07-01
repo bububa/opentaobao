@@ -19,4 +19,49 @@ type TmallFuwuServiceitemListAPIRequest struct {
 	_itemids []int64
 }
 
-// New
+// NewTmallFuwuServiceitemListRequest 初始化TmallFuwuServiceitemListAPIRequest对象
+func NewTmallFuwuServiceitemListRequest() *TmallFuwuServiceitemListAPIRequest {
+	return &TmallFuwuServiceitemListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallFuwuServiceitemListAPIRequest) GetApiMethodName() string {
+	return "tmall.fuwu.serviceitem.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallFuwuServiceitemListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SellerId Setter
+// 商品所属卖家账号id
+func (r *TmallFuwuServiceitemListAPIRequest) SetSellerId(_sellerId int64) error {
+	r._sellerId = _sellerId
+	r.Set("seller_id", _sellerId)
+	return nil
+}
+
+// Get SellerId Getter
+func (r TmallFuwuServiceitemListAPIRequest) GetSellerId() int64 {
+	return r._sellerId
+}
+
+// Set is Itemids Setter
+// 商品id列表，有数量限制
+func (r *TmallFuwuServiceitemListAPIRequest) SetItemids(_itemids []int64) error {
+	r._itemids = _itemids
+	r.Set("itemids", _itemids)
+	return nil
+}
+
+// Get Itemids Getter
+func (r TmallFuwuServiceitemListAPIRequest) GetItemids() []int64 {
+	return r._itemids
+}

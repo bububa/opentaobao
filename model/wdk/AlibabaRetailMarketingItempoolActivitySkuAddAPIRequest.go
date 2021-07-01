@@ -17,4 +17,36 @@ type AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest struct {
 	_param *ItemPoolActivityElementOperateRequest
 }
 
-// New
+// NewAlibabaRetailMarketingItempoolActivitySkuAddRequest 初始化AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest对象
+func NewAlibabaRetailMarketingItempoolActivitySkuAddRequest() *AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest {
+	return &AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest) GetApiMethodName() string {
+	return "alibaba.retail.marketing.itempool.activity.sku.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参
+func (r *AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest) SetParam(_param *ItemPoolActivityElementOperateRequest) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest) GetParam() *ItemPoolActivityElementOperateRequest {
+	return r._param
+}

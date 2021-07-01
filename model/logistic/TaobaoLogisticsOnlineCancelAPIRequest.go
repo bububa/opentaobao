@@ -17,4 +17,36 @@ type TaobaoLogisticsOnlineCancelAPIRequest struct {
 	_tid int64
 }
 
-// New
+// NewTaobaoLogisticsOnlineCancelRequest 初始化TaobaoLogisticsOnlineCancelAPIRequest对象
+func NewTaobaoLogisticsOnlineCancelRequest() *TaobaoLogisticsOnlineCancelAPIRequest {
+	return &TaobaoLogisticsOnlineCancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoLogisticsOnlineCancelAPIRequest) GetApiMethodName() string {
+	return "taobao.logistics.online.cancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoLogisticsOnlineCancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Tid Setter
+// 淘宝交易ID
+func (r *TaobaoLogisticsOnlineCancelAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// Get Tid Getter
+func (r TaobaoLogisticsOnlineCancelAPIRequest) GetTid() int64 {
+	return r._tid
+}

@@ -17,4 +17,36 @@ type AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest struct {
 	_paramDeductPreCheckOpenReq *DeductPreCheckOpenReq
 }
 
-// New
+// NewAlibabaAlscCrmRechargeDedutprecheckGetRequest 初始化AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest对象
+func NewAlibabaAlscCrmRechargeDedutprecheckGetRequest() *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest {
+	return &AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.recharge.dedutprecheck.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamDeductPreCheckOpenReq Setter
+// 入参
+func (r *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) SetParamDeductPreCheckOpenReq(_paramDeductPreCheckOpenReq *DeductPreCheckOpenReq) error {
+	r._paramDeductPreCheckOpenReq = _paramDeductPreCheckOpenReq
+	r.Set("param_deduct_pre_check_open_req", _paramDeductPreCheckOpenReq)
+	return nil
+}
+
+// Get ParamDeductPreCheckOpenReq Getter
+func (r AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) GetParamDeductPreCheckOpenReq() *DeductPreCheckOpenReq {
+	return r._paramDeductPreCheckOpenReq
+}

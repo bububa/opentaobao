@@ -17,4 +17,36 @@ type AlibabaWdkMarketingItempoolDeleteactivityAPIRequest struct {
 	_param *CommonActivityParam
 }
 
-// New
+// NewAlibabaWdkMarketingItempoolDeleteactivityRequest 初始化AlibabaWdkMarketingItempoolDeleteactivityAPIRequest对象
+func NewAlibabaWdkMarketingItempoolDeleteactivityRequest() *AlibabaWdkMarketingItempoolDeleteactivityAPIRequest {
+	return &AlibabaWdkMarketingItempoolDeleteactivityAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMarketingItempoolDeleteactivityAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.marketing.itempool.deleteactivity"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMarketingItempoolDeleteactivityAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 需要删除的活动的信息
+func (r *AlibabaWdkMarketingItempoolDeleteactivityAPIRequest) SetParam(_param *CommonActivityParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaWdkMarketingItempoolDeleteactivityAPIRequest) GetParam() *CommonActivityParam {
+	return r._param
+}

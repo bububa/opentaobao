@@ -15,4 +15,23 @@ type AlibabaIbShenjingVisitorPadGetinfoAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaIbShenjingVisitorPadGetinfoRequest 初始化AlibabaIbShenjingVisitorPadGetinfoAPIRequest对象
+func NewAlibabaIbShenjingVisitorPadGetinfoRequest() *AlibabaIbShenjingVisitorPadGetinfoAPIRequest {
+	return &AlibabaIbShenjingVisitorPadGetinfoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIbShenjingVisitorPadGetinfoAPIRequest) GetApiMethodName() string {
+	return "alibaba.ib.shenjing.visitor.pad.getinfo"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIbShenjingVisitorPadGetinfoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

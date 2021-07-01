@@ -23,4 +23,75 @@ type TaobaoQimenItemstoreBandingAPIRequest struct {
 	_itemId int64
 }
 
-// New
+// NewTaobaoQimenItemstoreBandingRequest 初始化TaobaoQimenItemstoreBandingAPIRequest对象
+func NewTaobaoQimenItemstoreBandingRequest() *TaobaoQimenItemstoreBandingAPIRequest {
+	return &TaobaoQimenItemstoreBandingAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenItemstoreBandingAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.itemstore.banding"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenItemstoreBandingAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StoreIds Setter
+// 门店列表
+func (r *TaobaoQimenItemstoreBandingAPIRequest) SetStoreIds(_storeIds []int64) error {
+	r._storeIds = _storeIds
+	r.Set("store_ids", _storeIds)
+	return nil
+}
+
+// Get StoreIds Getter
+func (r TaobaoQimenItemstoreBandingAPIRequest) GetStoreIds() []int64 {
+	return r._storeIds
+}
+
+// Set is Remark Setter
+// 备注信息
+func (r *TaobaoQimenItemstoreBandingAPIRequest) SetRemark(_remark string) error {
+	r._remark = _remark
+	r.Set("remark", _remark)
+	return nil
+}
+
+// Get Remark Getter
+func (r TaobaoQimenItemstoreBandingAPIRequest) GetRemark() string {
+	return r._remark
+}
+
+// Set is ActionType Setter
+// 操作类型
+func (r *TaobaoQimenItemstoreBandingAPIRequest) SetActionType(_actionType string) error {
+	r._actionType = _actionType
+	r.Set("action_type", _actionType)
+	return nil
+}
+
+// Get ActionType Getter
+func (r TaobaoQimenItemstoreBandingAPIRequest) GetActionType() string {
+	return r._actionType
+}
+
+// Set is ItemId Setter
+// 线上商品ID
+func (r *TaobaoQimenItemstoreBandingAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TaobaoQimenItemstoreBandingAPIRequest) GetItemId() int64 {
+	return r._itemId
+}

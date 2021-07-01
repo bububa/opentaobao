@@ -17,4 +17,36 @@ type TaobaoXhotelIntlRateUpdateAPIRequest struct {
 	_updateRateParam *UpdateRateParam
 }
 
-// New
+// NewTaobaoXhotelIntlRateUpdateRequest 初始化TaobaoXhotelIntlRateUpdateAPIRequest对象
+func NewTaobaoXhotelIntlRateUpdateRequest() *TaobaoXhotelIntlRateUpdateAPIRequest {
+	return &TaobaoXhotelIntlRateUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelIntlRateUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.intl.rate.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelIntlRateUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UpdateRateParam Setter
+// rate更新参数
+func (r *TaobaoXhotelIntlRateUpdateAPIRequest) SetUpdateRateParam(_updateRateParam *UpdateRateParam) error {
+	r._updateRateParam = _updateRateParam
+	r.Set("update_rate_param", _updateRateParam)
+	return nil
+}
+
+// Get UpdateRateParam Getter
+func (r TaobaoXhotelIntlRateUpdateAPIRequest) GetUpdateRateParam() *UpdateRateParam {
+	return r._updateRateParam
+}

@@ -17,4 +17,36 @@ type TmallCarLeaseorderGetAPIRequest struct {
 	_orderId int64
 }
 
-// New
+// NewTmallCarLeaseorderGetRequest 初始化TmallCarLeaseorderGetAPIRequest对象
+func NewTmallCarLeaseorderGetRequest() *TmallCarLeaseorderGetAPIRequest {
+	return &TmallCarLeaseorderGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallCarLeaseorderGetAPIRequest) GetApiMethodName() string {
+	return "tmall.car.leaseorder.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallCarLeaseorderGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 订单号
+func (r *TmallCarLeaseorderGetAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r TmallCarLeaseorderGetAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}

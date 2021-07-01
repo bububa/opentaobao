@@ -19,4 +19,49 @@ type TmallNrtItemGetAPIRequest struct {
 	_itemId int64
 }
 
-// New
+// NewTmallNrtItemGetRequest 初始化TmallNrtItemGetAPIRequest对象
+func NewTmallNrtItemGetRequest() *TmallNrtItemGetAPIRequest {
+	return &TmallNrtItemGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrtItemGetAPIRequest) GetApiMethodName() string {
+	return "tmall.nrt.item.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrtItemGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BoothId Setter
+// 城市站id
+func (r *TmallNrtItemGetAPIRequest) SetBoothId(_boothId int64) error {
+	r._boothId = _boothId
+	r.Set("booth_id", _boothId)
+	return nil
+}
+
+// Get BoothId Getter
+func (r TmallNrtItemGetAPIRequest) GetBoothId() int64 {
+	return r._boothId
+}
+
+// Set is ItemId Setter
+// 商品id
+func (r *TmallNrtItemGetAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TmallNrtItemGetAPIRequest) GetItemId() int64 {
+	return r._itemId
+}

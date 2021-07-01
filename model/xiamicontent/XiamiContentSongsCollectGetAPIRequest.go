@@ -19,4 +19,49 @@ type XiamiContentSongsCollectGetAPIRequest struct {
 	_page *PagingVo
 }
 
-// New
+// NewXiamiContentSongsCollectGetRequest 初始化XiamiContentSongsCollectGetAPIRequest对象
+func NewXiamiContentSongsCollectGetRequest() *XiamiContentSongsCollectGetAPIRequest {
+	return &XiamiContentSongsCollectGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r XiamiContentSongsCollectGetAPIRequest) GetApiMethodName() string {
+	return "xiami.content.songs.collect.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r XiamiContentSongsCollectGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CollectId Setter
+// 歌单id
+func (r *XiamiContentSongsCollectGetAPIRequest) SetCollectId(_collectId int64) error {
+	r._collectId = _collectId
+	r.Set("collect_id", _collectId)
+	return nil
+}
+
+// Get CollectId Getter
+func (r XiamiContentSongsCollectGetAPIRequest) GetCollectId() int64 {
+	return r._collectId
+}
+
+// Set is Page Setter
+// 分页信息
+func (r *XiamiContentSongsCollectGetAPIRequest) SetPage(_page *PagingVo) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// Get Page Getter
+func (r XiamiContentSongsCollectGetAPIRequest) GetPage() *PagingVo {
+	return r._page
+}

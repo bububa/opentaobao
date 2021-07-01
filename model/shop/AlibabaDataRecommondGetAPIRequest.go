@@ -17,4 +17,36 @@ type AlibabaDataRecommondGetAPIRequest struct {
 	_unNamed string
 }
 
-// New
+// NewAlibabaDataRecommondGetRequest 初始化AlibabaDataRecommondGetAPIRequest对象
+func NewAlibabaDataRecommondGetRequest() *AlibabaDataRecommondGetAPIRequest {
+	return &AlibabaDataRecommondGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDataRecommondGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.data.recommond.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDataRecommondGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UnNamed Setter
+// 客户端鉴权虚拟api使用
+func (r *AlibabaDataRecommondGetAPIRequest) SetUnNamed(_unNamed string) error {
+	r._unNamed = _unNamed
+	r.Set("un_named", _unNamed)
+	return nil
+}
+
+// Get UnNamed Getter
+func (r AlibabaDataRecommondGetAPIRequest) GetUnNamed() string {
+	return r._unNamed
+}

@@ -17,4 +17,36 @@ type AlibabaScbpAdKeywordBatchdeleteAPIRequest struct {
 	_keywordIdList []int64
 }
 
-// New
+// NewAlibabaScbpAdKeywordBatchdeleteRequest 初始化AlibabaScbpAdKeywordBatchdeleteAPIRequest对象
+func NewAlibabaScbpAdKeywordBatchdeleteRequest() *AlibabaScbpAdKeywordBatchdeleteAPIRequest {
+	return &AlibabaScbpAdKeywordBatchdeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpAdKeywordBatchdeleteAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.ad.keyword.batchdelete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpAdKeywordBatchdeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is KeywordIdList Setter
+// 关键词Id列表
+func (r *AlibabaScbpAdKeywordBatchdeleteAPIRequest) SetKeywordIdList(_keywordIdList []int64) error {
+	r._keywordIdList = _keywordIdList
+	r.Set("keyword_id_list", _keywordIdList)
+	return nil
+}
+
+// Get KeywordIdList Getter
+func (r AlibabaScbpAdKeywordBatchdeleteAPIRequest) GetKeywordIdList() []int64 {
+	return r._keywordIdList
+}

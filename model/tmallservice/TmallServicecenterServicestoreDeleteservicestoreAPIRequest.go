@@ -30,4 +30,36 @@ type TmallServicecenterServicestoreDeleteservicestoreAPIRequest struct {
 	_serviceStoreCode string
 }
 
-// New
+// NewTmallServicecenterServicestoreDeleteservicestoreRequest 初始化TmallServicecenterServicestoreDeleteservicestoreAPIRequest对象
+func NewTmallServicecenterServicestoreDeleteservicestoreRequest() *TmallServicecenterServicestoreDeleteservicestoreAPIRequest {
+	return &TmallServicecenterServicestoreDeleteservicestoreAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.servicestore.deleteservicestore"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ServiceStoreCode Setter
+// 网点名称
+func (r *TmallServicecenterServicestoreDeleteservicestoreAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
+	r._serviceStoreCode = _serviceStoreCode
+	r.Set("service_store_code", _serviceStoreCode)
+	return nil
+}
+
+// Get ServiceStoreCode Getter
+func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetServiceStoreCode() string {
+	return r._serviceStoreCode
+}

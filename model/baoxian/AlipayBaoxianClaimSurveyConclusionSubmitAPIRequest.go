@@ -17,4 +17,36 @@ type AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest struct {
 	_facilitatorSurveyConclusions []InsFacilitatorSurveyConclusionDto
 }
 
-// New
+// NewAlipayBaoxianClaimSurveyConclusionSubmitRequest 初始化AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest对象
+func NewAlipayBaoxianClaimSurveyConclusionSubmitRequest() *AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest {
+	return &AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) GetApiMethodName() string {
+	return "alipay.baoxian.claim.survey.conclusion.submit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FacilitatorSurveyConclusions Setter
+// 勘察结论
+func (r *AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) SetFacilitatorSurveyConclusions(_facilitatorSurveyConclusions []InsFacilitatorSurveyConclusionDto) error {
+	r._facilitatorSurveyConclusions = _facilitatorSurveyConclusions
+	r.Set("facilitator_survey_conclusions", _facilitatorSurveyConclusions)
+	return nil
+}
+
+// Get FacilitatorSurveyConclusions Getter
+func (r AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) GetFacilitatorSurveyConclusions() []InsFacilitatorSurveyConclusionDto {
+	return r._facilitatorSurveyConclusions
+}

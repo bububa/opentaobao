@@ -21,4 +21,49 @@ type AlibabaCampusSpaceBuildingGetbycampusidAPIRequest struct {
 	_param1 *BuildingQuery
 }
 
-// New
+// NewAlibabaCampusSpaceBuildingGetbycampusidRequest 初始化AlibabaCampusSpaceBuildingGetbycampusidAPIRequest对象
+func NewAlibabaCampusSpaceBuildingGetbycampusidRequest() *AlibabaCampusSpaceBuildingGetbycampusidAPIRequest {
+	return &AlibabaCampusSpaceBuildingGetbycampusidAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCampusSpaceBuildingGetbycampusidAPIRequest) GetApiMethodName() string {
+	return "alibaba.campus.space.building.getbycampusid"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCampusSpaceBuildingGetbycampusidAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 系统自动生成
+func (r *AlibabaCampusSpaceBuildingGetbycampusidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r AlibabaCampusSpaceBuildingGetbycampusidAPIRequest) GetParam0() *WorkBenchContext {
+	return r._param0
+}
+
+// Set is Param1 Setter
+// 园区封装
+func (r *AlibabaCampusSpaceBuildingGetbycampusidAPIRequest) SetParam1(_param1 *BuildingQuery) error {
+	r._param1 = _param1
+	r.Set("param1", _param1)
+	return nil
+}
+
+// Get Param1 Getter
+func (r AlibabaCampusSpaceBuildingGetbycampusidAPIRequest) GetParam1() *BuildingQuery {
+	return r._param1
+}

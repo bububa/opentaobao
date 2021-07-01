@@ -17,4 +17,36 @@ type YunosTvpubadminManageDialogFindbyidAPIRequest struct {
 	_id int64
 }
 
-// New
+// NewYunosTvpubadminManageDialogFindbyidRequest 初始化YunosTvpubadminManageDialogFindbyidAPIRequest对象
+func NewYunosTvpubadminManageDialogFindbyidRequest() *YunosTvpubadminManageDialogFindbyidAPIRequest {
+	return &YunosTvpubadminManageDialogFindbyidAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminManageDialogFindbyidAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.manage.dialog.findbyid"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminManageDialogFindbyidAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Id Setter
+// 全局弹窗id
+func (r *YunosTvpubadminManageDialogFindbyidAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r YunosTvpubadminManageDialogFindbyidAPIRequest) GetId() int64 {
+	return r._id
+}

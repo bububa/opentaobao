@@ -21,4 +21,62 @@ type AlitripMerchantGalaxyOrderValidateAPIRequest struct {
 	_token string
 }
 
-// New
+// NewAlitripMerchantGalaxyOrderValidateRequest 初始化AlitripMerchantGalaxyOrderValidateAPIRequest对象
+func NewAlitripMerchantGalaxyOrderValidateRequest() *AlitripMerchantGalaxyOrderValidateAPIRequest {
+	return &AlitripMerchantGalaxyOrderValidateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripMerchantGalaxyOrderValidateAPIRequest) GetApiMethodName() string {
+	return "alitrip.merchant.galaxy.order.validate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripMerchantGalaxyOrderValidateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TenantKey Setter
+// 租户身份信息
+func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) SetTenantKey(_tenantKey string) error {
+	r._tenantKey = _tenantKey
+	r.Set("tenant_key", _tenantKey)
+	return nil
+}
+
+// Get TenantKey Getter
+func (r AlitripMerchantGalaxyOrderValidateAPIRequest) GetTenantKey() string {
+	return r._tenantKey
+}
+
+// Set is ValidateOrderParam Setter
+// 试单参数
+func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) SetValidateOrderParam(_validateOrderParam *ValidateOrderParam) error {
+	r._validateOrderParam = _validateOrderParam
+	r.Set("validate_order_param", _validateOrderParam)
+	return nil
+}
+
+// Get ValidateOrderParam Getter
+func (r AlitripMerchantGalaxyOrderValidateAPIRequest) GetValidateOrderParam() *ValidateOrderParam {
+	return r._validateOrderParam
+}
+
+// Set is Token Setter
+// 用户标识
+func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) SetToken(_token string) error {
+	r._token = _token
+	r.Set("token", _token)
+	return nil
+}
+
+// Get Token Getter
+func (r AlitripMerchantGalaxyOrderValidateAPIRequest) GetToken() string {
+	return r._token
+}

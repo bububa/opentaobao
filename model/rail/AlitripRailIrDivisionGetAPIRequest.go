@@ -24,4 +24,75 @@ type AlitripRailIrDivisionGetAPIRequest struct {
 	_pageIndex int64
 }
 
-// New
+// NewAlitripRailIrDivisionGetRequest 初始化AlitripRailIrDivisionGetAPIRequest对象
+func NewAlitripRailIrDivisionGetRequest() *AlitripRailIrDivisionGetAPIRequest {
+	return &AlitripRailIrDivisionGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripRailIrDivisionGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.rail.ir.division.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripRailIrDivisionGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AgentId Setter
+// 代理商id
+func (r *AlitripRailIrDivisionGetAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// Get AgentId Getter
+func (r AlitripRailIrDivisionGetAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}
+
+// Set is Level Setter
+// 层级，1洲，2是国家，3是省，4是市，5是区，6是街道/镇，7是村，8是逻辑行政区，境外火车票业务只需要市级别，传4就可以
+func (r *AlitripRailIrDivisionGetAPIRequest) SetLevel(_level int64) error {
+	r._level = _level
+	r.Set("level", _level)
+	return nil
+}
+
+// Get Level Getter
+func (r AlitripRailIrDivisionGetAPIRequest) GetLevel() int64 {
+	return r._level
+}
+
+// Set is PageSize Setter
+// 每页条数
+func (r *AlitripRailIrDivisionGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r AlitripRailIrDivisionGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is PageIndex Setter
+// 页数，从1开始
+func (r *AlitripRailIrDivisionGetAPIRequest) SetPageIndex(_pageIndex int64) error {
+	r._pageIndex = _pageIndex
+	r.Set("page_index", _pageIndex)
+	return nil
+}
+
+// Get PageIndex Getter
+func (r AlitripRailIrDivisionGetAPIRequest) GetPageIndex() int64 {
+	return r._pageIndex
+}

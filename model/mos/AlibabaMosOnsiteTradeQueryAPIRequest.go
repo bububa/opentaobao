@@ -24,4 +24,75 @@ type AlibabaMosOnsiteTradeQueryAPIRequest struct {
 	_outTradeNo string
 }
 
-// New
+// NewAlibabaMosOnsiteTradeQueryRequest 初始化AlibabaMosOnsiteTradeQueryAPIRequest对象
+func NewAlibabaMosOnsiteTradeQueryRequest() *AlibabaMosOnsiteTradeQueryAPIRequest {
+	return &AlibabaMosOnsiteTradeQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.onsite.trade.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TradeNo Setter
+// 喵街交易流水号。与商户支付流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号  > 商户支付流水号。
+func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetTradeNo(_tradeNo string) error {
+	r._tradeNo = _tradeNo
+	r.Set("trade_no", _tradeNo)
+	return nil
+}
+
+// Get TradeNo Getter
+func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetTradeNo() string {
+	return r._tradeNo
+}
+
+// Set is StoreIdType Setter
+// 商户ID类型，取值为miaojie或out
+func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetStoreIdType(_storeIdType string) error {
+	r._storeIdType = _storeIdType
+	r.Set("store_id_type", _storeIdType)
+	return nil
+}
+
+// Get StoreIdType Getter
+func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetStoreIdType() string {
+	return r._storeIdType
+}
+
+// Set is StoreId Setter
+// 门店号或喵街商户ID
+func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetStoreId(_storeId string) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// Get StoreId Getter
+func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetStoreId() string {
+	return r._storeId
+}
+
+// Set is OutTradeNo Setter
+// 原支付请求的商户支付流水号。与喵街交易流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号 >  商户支付流水号。
+func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetOutTradeNo(_outTradeNo string) error {
+	r._outTradeNo = _outTradeNo
+	r.Set("out_trade_no", _outTradeNo)
+	return nil
+}
+
+// Get OutTradeNo Getter
+func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetOutTradeNo() string {
+	return r._outTradeNo
+}

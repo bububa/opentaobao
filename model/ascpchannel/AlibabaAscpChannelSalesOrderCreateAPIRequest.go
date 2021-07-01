@@ -17,4 +17,36 @@ type AlibabaAscpChannelSalesOrderCreateAPIRequest struct {
 	_createOrderRequest *ExternalCreateSalesOrderRequest
 }
 
-// New
+// NewAlibabaAscpChannelSalesOrderCreateRequest 初始化AlibabaAscpChannelSalesOrderCreateAPIRequest对象
+func NewAlibabaAscpChannelSalesOrderCreateRequest() *AlibabaAscpChannelSalesOrderCreateAPIRequest {
+	return &AlibabaAscpChannelSalesOrderCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpChannelSalesOrderCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.channel.sales.order.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpChannelSalesOrderCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CreateOrderRequest Setter
+// 请求参数
+func (r *AlibabaAscpChannelSalesOrderCreateAPIRequest) SetCreateOrderRequest(_createOrderRequest *ExternalCreateSalesOrderRequest) error {
+	r._createOrderRequest = _createOrderRequest
+	r.Set("create_order_request", _createOrderRequest)
+	return nil
+}
+
+// Get CreateOrderRequest Getter
+func (r AlibabaAscpChannelSalesOrderCreateAPIRequest) GetCreateOrderRequest() *ExternalCreateSalesOrderRequest {
+	return r._createOrderRequest
+}

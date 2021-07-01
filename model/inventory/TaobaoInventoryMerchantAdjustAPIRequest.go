@@ -17,4 +17,36 @@ type TaobaoInventoryMerchantAdjustAPIRequest struct {
 	_inventoryCheck *InventoryCheckDto
 }
 
-// New
+// NewTaobaoInventoryMerchantAdjustRequest 初始化TaobaoInventoryMerchantAdjustAPIRequest对象
+func NewTaobaoInventoryMerchantAdjustRequest() *TaobaoInventoryMerchantAdjustAPIRequest {
+	return &TaobaoInventoryMerchantAdjustAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoInventoryMerchantAdjustAPIRequest) GetApiMethodName() string {
+	return "taobao.inventory.merchant.adjust"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoInventoryMerchantAdjustAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is InventoryCheck Setter
+// 调整库存对象
+func (r *TaobaoInventoryMerchantAdjustAPIRequest) SetInventoryCheck(_inventoryCheck *InventoryCheckDto) error {
+	r._inventoryCheck = _inventoryCheck
+	r.Set("inventory_check", _inventoryCheck)
+	return nil
+}
+
+// Get InventoryCheck Getter
+func (r TaobaoInventoryMerchantAdjustAPIRequest) GetInventoryCheck() *InventoryCheckDto {
+	return r._inventoryCheck
+}

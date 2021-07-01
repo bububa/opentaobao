@@ -17,4 +17,36 @@ type TaobaoTrainAgentGrabAccountAPIRequest struct {
 	_accountParam *AccountParam
 }
 
-// New
+// NewTaobaoTrainAgentGrabAccountRequest 初始化TaobaoTrainAgentGrabAccountAPIRequest对象
+func NewTaobaoTrainAgentGrabAccountRequest() *TaobaoTrainAgentGrabAccountAPIRequest {
+	return &TaobaoTrainAgentGrabAccountAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTrainAgentGrabAccountAPIRequest) GetApiMethodName() string {
+	return "taobao.train.agent.grab.account"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTrainAgentGrabAccountAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AccountParam Setter
+// 12306账户信息
+func (r *TaobaoTrainAgentGrabAccountAPIRequest) SetAccountParam(_accountParam *AccountParam) error {
+	r._accountParam = _accountParam
+	r.Set("account_param", _accountParam)
+	return nil
+}
+
+// Get AccountParam Getter
+func (r TaobaoTrainAgentGrabAccountAPIRequest) GetAccountParam() *AccountParam {
+	return r._accountParam
+}

@@ -17,4 +17,36 @@ type TaobaoQimenOrderSnReportAPIRequest struct {
 	_request *TaobaoQimenOrderSnReportRequest
 }
 
-// New
+// NewTaobaoQimenOrderSnReportRequest 初始化TaobaoQimenOrderSnReportAPIRequest对象
+func NewTaobaoQimenOrderSnReportRequest() *TaobaoQimenOrderSnReportAPIRequest {
+	return &TaobaoQimenOrderSnReportAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenOrderSnReportAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.order.sn.report"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenOrderSnReportAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenOrderSnReportAPIRequest) SetRequest(_request *TaobaoQimenOrderSnReportRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenOrderSnReportAPIRequest) GetRequest() *TaobaoQimenOrderSnReportRequest {
+	return r._request
+}

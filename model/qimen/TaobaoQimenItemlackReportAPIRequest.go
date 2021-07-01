@@ -17,4 +17,36 @@ type TaobaoQimenItemlackReportAPIRequest struct {
 	_request *ItemLackReportRequest
 }
 
-// New
+// NewTaobaoQimenItemlackReportRequest 初始化TaobaoQimenItemlackReportAPIRequest对象
+func NewTaobaoQimenItemlackReportRequest() *TaobaoQimenItemlackReportAPIRequest {
+	return &TaobaoQimenItemlackReportAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenItemlackReportAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.itemlack.report"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenItemlackReportAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenItemlackReportAPIRequest) SetRequest(_request *ItemLackReportRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenItemlackReportAPIRequest) GetRequest() *ItemLackReportRequest {
+	return r._request
+}

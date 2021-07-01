@@ -17,4 +17,36 @@ type AlibabaDamaiMevOpenBatchpushticketAPIRequest struct {
 	_thirdTicketSetOpenParamList []ThirdTicketPushOpenParam
 }
 
-// New
+// NewAlibabaDamaiMevOpenBatchpushticketRequest 初始化AlibabaDamaiMevOpenBatchpushticketAPIRequest对象
+func NewAlibabaDamaiMevOpenBatchpushticketRequest() *AlibabaDamaiMevOpenBatchpushticketAPIRequest {
+	return &AlibabaDamaiMevOpenBatchpushticketAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiMevOpenBatchpushticketAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.mev.open.batchpushticket"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiMevOpenBatchpushticketAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ThirdTicketSetOpenParamList Setter
+// 入参thirdTicketSetOpenParamList
+func (r *AlibabaDamaiMevOpenBatchpushticketAPIRequest) SetThirdTicketSetOpenParamList(_thirdTicketSetOpenParamList []ThirdTicketPushOpenParam) error {
+	r._thirdTicketSetOpenParamList = _thirdTicketSetOpenParamList
+	r.Set("third_ticket_set_open_param_list", _thirdTicketSetOpenParamList)
+	return nil
+}
+
+// Get ThirdTicketSetOpenParamList Getter
+func (r AlibabaDamaiMevOpenBatchpushticketAPIRequest) GetThirdTicketSetOpenParamList() []ThirdTicketPushOpenParam {
+	return r._thirdTicketSetOpenParamList
+}

@@ -19,4 +19,49 @@ type TaobaoSimbaSerchcrowdGetAPIRequest struct {
 	_adgroupId int64
 }
 
-// New
+// NewTaobaoSimbaSerchcrowdGetRequest 初始化TaobaoSimbaSerchcrowdGetAPIRequest对象
+func NewTaobaoSimbaSerchcrowdGetRequest() *TaobaoSimbaSerchcrowdGetAPIRequest {
+	return &TaobaoSimbaSerchcrowdGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.serchcrowd.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 被操作者的淘宝昵称
+func (r *TaobaoSimbaSerchcrowdGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetNick() string {
+	return r._nick
+}
+
+// Set is AdgroupId Setter
+// 推广单元id
+func (r *TaobaoSimbaSerchcrowdGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}

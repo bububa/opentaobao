@@ -15,4 +15,23 @@ type TaobaoVmarketEticketPackageBaseListGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoVmarketEticketPackageBaseListGetRequest 初始化TaobaoVmarketEticketPackageBaseListGetAPIRequest对象
+func NewTaobaoVmarketEticketPackageBaseListGetRequest() *TaobaoVmarketEticketPackageBaseListGetAPIRequest {
+	return &TaobaoVmarketEticketPackageBaseListGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoVmarketEticketPackageBaseListGetAPIRequest) GetApiMethodName() string {
+	return "taobao.vmarket.eticket.package.base.list.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoVmarketEticketPackageBaseListGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

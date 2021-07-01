@@ -17,4 +17,36 @@ type TaobaoXhotelPriceGetForHelloAPIRequest struct {
 	_hotelPriceParam *HotelPriceParam
 }
 
-// New
+// NewTaobaoXhotelPriceGetForHelloRequest 初始化TaobaoXhotelPriceGetForHelloAPIRequest对象
+func NewTaobaoXhotelPriceGetForHelloRequest() *TaobaoXhotelPriceGetForHelloAPIRequest {
+	return &TaobaoXhotelPriceGetForHelloAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelPriceGetForHelloAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.price.get.for.hello"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelPriceGetForHelloAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is HotelPriceParam Setter
+// 参数封装
+func (r *TaobaoXhotelPriceGetForHelloAPIRequest) SetHotelPriceParam(_hotelPriceParam *HotelPriceParam) error {
+	r._hotelPriceParam = _hotelPriceParam
+	r.Set("hotel_price_param", _hotelPriceParam)
+	return nil
+}
+
+// Get HotelPriceParam Getter
+func (r TaobaoXhotelPriceGetForHelloAPIRequest) GetHotelPriceParam() *HotelPriceParam {
+	return r._hotelPriceParam
+}

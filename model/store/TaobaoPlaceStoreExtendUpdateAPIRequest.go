@@ -17,4 +17,36 @@ type TaobaoPlaceStoreExtendUpdateAPIRequest struct {
 	_paramUpdateStoreExtendDTO *UpdateStoreExtendDto
 }
 
-// New
+// NewTaobaoPlaceStoreExtendUpdateRequest 初始化TaobaoPlaceStoreExtendUpdateAPIRequest对象
+func NewTaobaoPlaceStoreExtendUpdateRequest() *TaobaoPlaceStoreExtendUpdateAPIRequest {
+	return &TaobaoPlaceStoreExtendUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.place.store.extend.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamUpdateStoreExtendDTO Setter
+// 更新数据
+func (r *TaobaoPlaceStoreExtendUpdateAPIRequest) SetParamUpdateStoreExtendDTO(_paramUpdateStoreExtendDTO *UpdateStoreExtendDto) error {
+	r._paramUpdateStoreExtendDTO = _paramUpdateStoreExtendDTO
+	r.Set("param_update_store_extend_d_t_o", _paramUpdateStoreExtendDTO)
+	return nil
+}
+
+// Get ParamUpdateStoreExtendDTO Getter
+func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetParamUpdateStoreExtendDTO() *UpdateStoreExtendDto {
+	return r._paramUpdateStoreExtendDTO
+}

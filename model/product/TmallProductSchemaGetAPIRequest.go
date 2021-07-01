@@ -17,4 +17,36 @@ type TmallProductSchemaGetAPIRequest struct {
 	_productId int64
 }
 
-// New
+// NewTmallProductSchemaGetRequest 初始化TmallProductSchemaGetAPIRequest对象
+func NewTmallProductSchemaGetRequest() *TmallProductSchemaGetAPIRequest {
+	return &TmallProductSchemaGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallProductSchemaGetAPIRequest) GetApiMethodName() string {
+	return "tmall.product.schema.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallProductSchemaGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ProductId Setter
+// 产品编号
+func (r *TmallProductSchemaGetAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// Get ProductId Getter
+func (r TmallProductSchemaGetAPIRequest) GetProductId() int64 {
+	return r._productId
+}

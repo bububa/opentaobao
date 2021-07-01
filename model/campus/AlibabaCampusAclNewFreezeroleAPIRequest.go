@@ -19,4 +19,49 @@ type AlibabaCampusAclNewFreezeroleAPIRequest struct {
 	_roleId int64
 }
 
-// New
+// NewAlibabaCampusAclNewFreezeroleRequest 初始化AlibabaCampusAclNewFreezeroleAPIRequest对象
+func NewAlibabaCampusAclNewFreezeroleRequest() *AlibabaCampusAclNewFreezeroleAPIRequest {
+	return &AlibabaCampusAclNewFreezeroleAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCampusAclNewFreezeroleAPIRequest) GetApiMethodName() string {
+	return "alibaba.campus.acl.new.freezerole"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCampusAclNewFreezeroleAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Workbenchcontext Setter
+// 系统入参
+func (r *AlibabaCampusAclNewFreezeroleAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+	r._workbenchcontext = _workbenchcontext
+	r.Set("workbenchcontext", _workbenchcontext)
+	return nil
+}
+
+// Get Workbenchcontext Getter
+func (r AlibabaCampusAclNewFreezeroleAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
+	return r._workbenchcontext
+}
+
+// Set is RoleId Setter
+// 角色主键id
+func (r *AlibabaCampusAclNewFreezeroleAPIRequest) SetRoleId(_roleId int64) error {
+	r._roleId = _roleId
+	r.Set("role_id", _roleId)
+	return nil
+}
+
+// Get RoleId Getter
+func (r AlibabaCampusAclNewFreezeroleAPIRequest) GetRoleId() int64 {
+	return r._roleId
+}

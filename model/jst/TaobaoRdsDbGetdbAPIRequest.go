@@ -19,4 +19,49 @@ type TaobaoRdsDbGetdbAPIRequest struct {
 	_instanceName string
 }
 
-// New
+// NewTaobaoRdsDbGetdbRequest 初始化TaobaoRdsDbGetdbAPIRequest对象
+func NewTaobaoRdsDbGetdbRequest() *TaobaoRdsDbGetdbAPIRequest {
+	return &TaobaoRdsDbGetdbAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoRdsDbGetdbAPIRequest) GetApiMethodName() string {
+	return "taobao.rds.db.getdb"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoRdsDbGetdbAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AccountName Setter
+// 账户名
+func (r *TaobaoRdsDbGetdbAPIRequest) SetAccountName(_accountName string) error {
+	r._accountName = _accountName
+	r.Set("account_name", _accountName)
+	return nil
+}
+
+// Get AccountName Getter
+func (r TaobaoRdsDbGetdbAPIRequest) GetAccountName() string {
+	return r._accountName
+}
+
+// Set is InstanceName Setter
+// 实例名
+func (r *TaobaoRdsDbGetdbAPIRequest) SetInstanceName(_instanceName string) error {
+	r._instanceName = _instanceName
+	r.Set("instance_name", _instanceName)
+	return nil
+}
+
+// Get InstanceName Getter
+func (r TaobaoRdsDbGetdbAPIRequest) GetInstanceName() string {
+	return r._instanceName
+}

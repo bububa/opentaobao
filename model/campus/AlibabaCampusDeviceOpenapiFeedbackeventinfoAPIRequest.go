@@ -19,4 +19,49 @@ type AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest struct {
 	_param1 *EventInfoApiDto
 }
 
-// New
+// NewAlibabaCampusDeviceOpenapiFeedbackeventinfoRequest 初始化AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest对象
+func NewAlibabaCampusDeviceOpenapiFeedbackeventinfoRequest() *AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest {
+	return &AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) GetApiMethodName() string {
+	return "alibaba.campus.device.openapi.feedbackeventinfo"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 系统上下文
+func (r *AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) GetParam0() *WorkBenchContext {
+	return r._param0
+}
+
+// Set is Param1 Setter
+// 请求封装类
+func (r *AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) SetParam1(_param1 *EventInfoApiDto) error {
+	r._param1 = _param1
+	r.Set("param1", _param1)
+	return nil
+}
+
+// Get Param1 Getter
+func (r AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) GetParam1() *EventInfoApiDto {
+	return r._param1
+}

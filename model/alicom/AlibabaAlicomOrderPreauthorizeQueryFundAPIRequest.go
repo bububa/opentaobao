@@ -17,4 +17,36 @@ type AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest struct {
 	_preAuthorizeModel *PreAuthorizeModel
 }
 
-// New
+// NewAlibabaAlicomOrderPreauthorizeQueryFundRequest 初始化AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest对象
+func NewAlibabaAlicomOrderPreauthorizeQueryFundRequest() *AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest {
+	return &AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest) GetApiMethodName() string {
+	return "alibaba.alicom.order.preauthorize.query.fund"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PreAuthorizeModel Setter
+// 入参
+func (r *AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
+	r._preAuthorizeModel = _preAuthorizeModel
+	r.Set("pre_authorize_model", _preAuthorizeModel)
+	return nil
+}
+
+// Get PreAuthorizeModel Getter
+func (r AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
+	return r._preAuthorizeModel
+}

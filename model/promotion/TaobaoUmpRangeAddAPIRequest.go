@@ -21,4 +21,62 @@ type TaobaoUmpRangeAddAPIRequest struct {
 	_ids string
 }
 
-// New
+// NewTaobaoUmpRangeAddRequest 初始化TaobaoUmpRangeAddAPIRequest对象
+func NewTaobaoUmpRangeAddRequest() *TaobaoUmpRangeAddAPIRequest {
+	return &TaobaoUmpRangeAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpRangeAddAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.range.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpRangeAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ActId Setter
+// 活动id
+func (r *TaobaoUmpRangeAddAPIRequest) SetActId(_actId int64) error {
+	r._actId = _actId
+	r.Set("act_id", _actId)
+	return nil
+}
+
+// Get ActId Getter
+func (r TaobaoUmpRangeAddAPIRequest) GetActId() int64 {
+	return r._actId
+}
+
+// Set is Type Setter
+// 范围的类型，比如是全店，商品，见：MarketingConstants.PARTICIPATE_TYPE_*
+func (r *TaobaoUmpRangeAddAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r TaobaoUmpRangeAddAPIRequest) GetType() int64 {
+	return r._type
+}
+
+// Set is Ids Setter
+// id列表，当范围类型为商品时，该id为商品id.多个id用逗号隔开，一次不超过50个
+func (r *TaobaoUmpRangeAddAPIRequest) SetIds(_ids string) error {
+	r._ids = _ids
+	r.Set("ids", _ids)
+	return nil
+}
+
+// Get Ids Getter
+func (r TaobaoUmpRangeAddAPIRequest) GetIds() string {
+	return r._ids
+}

@@ -17,4 +17,36 @@ type AlibabaAlihealthOutflowVerifyAPIRequest struct {
 	_prescriptionVerifyRequest *PrescriptionVerifyRequest
 }
 
-// New
+// NewAlibabaAlihealthOutflowVerifyRequest 初始化AlibabaAlihealthOutflowVerifyAPIRequest对象
+func NewAlibabaAlihealthOutflowVerifyRequest() *AlibabaAlihealthOutflowVerifyAPIRequest {
+	return &AlibabaAlihealthOutflowVerifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthOutflowVerifyAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.outflow.verify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthOutflowVerifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PrescriptionVerifyRequest Setter
+// 入参
+func (r *AlibabaAlihealthOutflowVerifyAPIRequest) SetPrescriptionVerifyRequest(_prescriptionVerifyRequest *PrescriptionVerifyRequest) error {
+	r._prescriptionVerifyRequest = _prescriptionVerifyRequest
+	r.Set("prescription_verify_request", _prescriptionVerifyRequest)
+	return nil
+}
+
+// Get PrescriptionVerifyRequest Getter
+func (r AlibabaAlihealthOutflowVerifyAPIRequest) GetPrescriptionVerifyRequest() *PrescriptionVerifyRequest {
+	return r._prescriptionVerifyRequest
+}

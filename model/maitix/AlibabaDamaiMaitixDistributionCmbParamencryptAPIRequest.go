@@ -17,4 +17,36 @@ type AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest struct {
 	_param *DisEncrypt4CmbParam
 }
 
-// New
+// NewAlibabaDamaiMaitixDistributionCmbParamencryptRequest 初始化AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest对象
+func NewAlibabaDamaiMaitixDistributionCmbParamencryptRequest() *AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest {
+	return &AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.maitix.distribution.cmb.paramencrypt"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参param
+func (r *AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) SetParam(_param *DisEncrypt4CmbParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) GetParam() *DisEncrypt4CmbParam {
+	return r._param
+}

@@ -18,4 +18,36 @@ type TmallServicecenterWorkcardVirtualphoneBindAPIRequest struct {
 	_workcardRequest *WorkcardBaseRequest
 }
 
-// New
+// NewTmallServicecenterWorkcardVirtualphoneBindRequest 初始化TmallServicecenterWorkcardVirtualphoneBindAPIRequest对象
+func NewTmallServicecenterWorkcardVirtualphoneBindRequest() *TmallServicecenterWorkcardVirtualphoneBindAPIRequest {
+	return &TmallServicecenterWorkcardVirtualphoneBindAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterWorkcardVirtualphoneBindAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.workcard.virtualphone.bind"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterWorkcardVirtualphoneBindAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WorkcardRequest Setter
+// 绑定阿里通讯号入参
+func (r *TmallServicecenterWorkcardVirtualphoneBindAPIRequest) SetWorkcardRequest(_workcardRequest *WorkcardBaseRequest) error {
+	r._workcardRequest = _workcardRequest
+	r.Set("workcard_request", _workcardRequest)
+	return nil
+}
+
+// Get WorkcardRequest Getter
+func (r TmallServicecenterWorkcardVirtualphoneBindAPIRequest) GetWorkcardRequest() *WorkcardBaseRequest {
+	return r._workcardRequest
+}

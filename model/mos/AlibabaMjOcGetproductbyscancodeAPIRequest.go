@@ -23,4 +23,75 @@ type AlibabaMjOcGetproductbyscancodeAPIRequest struct {
 	_storeCode string
 }
 
-// New
+// NewAlibabaMjOcGetproductbyscancodeRequest 初始化AlibabaMjOcGetproductbyscancodeAPIRequest对象
+func NewAlibabaMjOcGetproductbyscancodeRequest() *AlibabaMjOcGetproductbyscancodeAPIRequest {
+	return &AlibabaMjOcGetproductbyscancodeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetApiMethodName() string {
+	return "alibaba.mj.oc.getproductbyscancode"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Code Setter
+// 码, 对应的信息可能是款号，也有可能是具体的某一个商品
+func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetCode(_code string) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// Get Code Getter
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetCode() string {
+	return r._code
+}
+
+// Set is CodeType Setter
+// 条码/二维码/rfid(电子标签),货号、条码、零售+唯一码;ARTNO、BARCODE、UNIQUECODE
+func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetCodeType(_codeType string) error {
+	r._codeType = _codeType
+	r.Set("code_type", _codeType)
+	return nil
+}
+
+// Get CodeType Getter
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetCodeType() string {
+	return r._codeType
+}
+
+// Set is ShopCode Setter
+// 专柜编码
+func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetShopCode(_shopCode string) error {
+	r._shopCode = _shopCode
+	r.Set("shop_code", _shopCode)
+	return nil
+}
+
+// Get ShopCode Getter
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetShopCode() string {
+	return r._shopCode
+}
+
+// Set is StoreCode Setter
+// 门店编码
+func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetStoreCode(_storeCode string) error {
+	r._storeCode = _storeCode
+	r.Set("store_code", _storeCode)
+	return nil
+}
+
+// Get StoreCode Getter
+func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetStoreCode() string {
+	return r._storeCode
+}

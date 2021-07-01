@@ -17,4 +17,36 @@ type AlibabaIdleRecycleOrderQueryAPIRequest struct {
 	_bizOrderId int64
 }
 
-// New
+// NewAlibabaIdleRecycleOrderQueryRequest 初始化AlibabaIdleRecycleOrderQueryAPIRequest对象
+func NewAlibabaIdleRecycleOrderQueryRequest() *AlibabaIdleRecycleOrderQueryAPIRequest {
+	return &AlibabaIdleRecycleOrderQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleRecycleOrderQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.recycle.order.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleRecycleOrderQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BizOrderId Setter
+// 订单号
+func (r *AlibabaIdleRecycleOrderQueryAPIRequest) SetBizOrderId(_bizOrderId int64) error {
+	r._bizOrderId = _bizOrderId
+	r.Set("biz_order_id", _bizOrderId)
+	return nil
+}
+
+// Get BizOrderId Getter
+func (r AlibabaIdleRecycleOrderQueryAPIRequest) GetBizOrderId() int64 {
+	return r._bizOrderId
+}

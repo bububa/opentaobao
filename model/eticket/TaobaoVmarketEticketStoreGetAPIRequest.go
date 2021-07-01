@@ -17,4 +17,36 @@ type TaobaoVmarketEticketStoreGetAPIRequest struct {
 	_orderId int64
 }
 
-// New
+// NewTaobaoVmarketEticketStoreGetRequest 初始化TaobaoVmarketEticketStoreGetAPIRequest对象
+func NewTaobaoVmarketEticketStoreGetRequest() *TaobaoVmarketEticketStoreGetAPIRequest {
+	return &TaobaoVmarketEticketStoreGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoVmarketEticketStoreGetAPIRequest) GetApiMethodName() string {
+	return "taobao.vmarket.eticket.store.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoVmarketEticketStoreGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 订单ID
+func (r *TaobaoVmarketEticketStoreGetAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r TaobaoVmarketEticketStoreGetAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}

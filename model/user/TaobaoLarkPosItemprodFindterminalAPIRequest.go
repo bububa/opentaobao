@@ -27,4 +27,101 @@ type TaobaoLarkPosItemprodFindterminalAPIRequest struct {
 	_cinemaName string
 }
 
-// New
+// NewTaobaoLarkPosItemprodFindterminalRequest 初始化TaobaoLarkPosItemprodFindterminalAPIRequest对象
+func NewTaobaoLarkPosItemprodFindterminalRequest() *TaobaoLarkPosItemprodFindterminalAPIRequest {
+	return &TaobaoLarkPosItemprodFindterminalAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetApiMethodName() string {
+	return "taobao.lark.pos.itemprod.findterminal"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DeviceId Setter
+// 终端id
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetDeviceId(_deviceId string) error {
+	r._deviceId = _deviceId
+	r.Set("device_id", _deviceId)
+	return nil
+}
+
+// Get DeviceId Getter
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetDeviceId() string {
+	return r._deviceId
+}
+
+// Set is DeviceType Setter
+// 终端类型
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetDeviceType(_deviceType string) error {
+	r._deviceType = _deviceType
+	r.Set("device_type", _deviceType)
+	return nil
+}
+
+// Get DeviceType Getter
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetDeviceType() string {
+	return r._deviceType
+}
+
+// Set is CreateUser Setter
+// 912874323429834
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCreateUser(_createUser string) error {
+	r._createUser = _createUser
+	r.Set("create_user", _createUser)
+	return nil
+}
+
+// Get CreateUser Getter
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetCreateUser() string {
+	return r._createUser
+}
+
+// Set is LeaseCode Setter
+// 租户编码
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetLeaseCode(_leaseCode string) error {
+	r._leaseCode = _leaseCode
+	r.Set("lease_code", _leaseCode)
+	return nil
+}
+
+// Get LeaseCode Getter
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetLeaseCode() string {
+	return r._leaseCode
+}
+
+// Set is CinemaId Setter
+// 影城id
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCinemaId(_cinemaId string) error {
+	r._cinemaId = _cinemaId
+	r.Set("cinema_id", _cinemaId)
+	return nil
+}
+
+// Get CinemaId Getter
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetCinemaId() string {
+	return r._cinemaId
+}
+
+// Set is CinemaName Setter
+// 影城名称
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCinemaName(_cinemaName string) error {
+	r._cinemaName = _cinemaName
+	r.Set("cinema_name", _cinemaName)
+	return nil
+}
+
+// Get CinemaName Getter
+func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetCinemaName() string {
+	return r._cinemaName
+}

@@ -17,4 +17,36 @@ type AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest struct {
 	_imageUrl string
 }
 
-// New
+// NewAliyunViapiGoodstechRecognizeFurnitureAttributeRequest 初始化AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest对象
+func NewAliyunViapiGoodstechRecognizeFurnitureAttributeRequest() *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest {
+	return &AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) GetApiMethodName() string {
+	return "aliyun.viapi.goodstech.recognize.furniture.attribute"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ImageUrl Setter
+// 待检测图片链接
+func (r *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) SetImageUrl(_imageUrl string) error {
+	r._imageUrl = _imageUrl
+	r.Set("image_url", _imageUrl)
+	return nil
+}
+
+// Get ImageUrl Getter
+func (r AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) GetImageUrl() string {
+	return r._imageUrl
+}

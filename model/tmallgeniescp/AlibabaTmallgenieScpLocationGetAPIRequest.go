@@ -17,4 +17,36 @@ type AlibabaTmallgenieScpLocationGetAPIRequest struct {
 	_requestExtendJson string
 }
 
-// New
+// NewAlibabaTmallgenieScpLocationGetRequest 初始化AlibabaTmallgenieScpLocationGetAPIRequest对象
+func NewAlibabaTmallgenieScpLocationGetRequest() *AlibabaTmallgenieScpLocationGetAPIRequest {
+	return &AlibabaTmallgenieScpLocationGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTmallgenieScpLocationGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.tmallgenie.scp.location.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTmallgenieScpLocationGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RequestExtendJson Setter
+// 扩展参数
+func (r *AlibabaTmallgenieScpLocationGetAPIRequest) SetRequestExtendJson(_requestExtendJson string) error {
+	r._requestExtendJson = _requestExtendJson
+	r.Set("request_extend_json", _requestExtendJson)
+	return nil
+}
+
+// Get RequestExtendJson Getter
+func (r AlibabaTmallgenieScpLocationGetAPIRequest) GetRequestExtendJson() string {
+	return r._requestExtendJson
+}

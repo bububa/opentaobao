@@ -17,4 +17,36 @@ type YunosTvpubadminContentTableauditQuerylauncherAPIRequest struct {
 	_tableAuditQuery string
 }
 
-// New
+// NewYunosTvpubadminContentTableauditQuerylauncherRequest 初始化YunosTvpubadminContentTableauditQuerylauncherAPIRequest对象
+func NewYunosTvpubadminContentTableauditQuerylauncherRequest() *YunosTvpubadminContentTableauditQuerylauncherAPIRequest {
+	return &YunosTvpubadminContentTableauditQuerylauncherAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentTableauditQuerylauncherAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.tableaudit.querylauncher"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentTableauditQuerylauncherAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TableAuditQuery Setter
+// 桌面坑位审核查询条件,json格式
+func (r *YunosTvpubadminContentTableauditQuerylauncherAPIRequest) SetTableAuditQuery(_tableAuditQuery string) error {
+	r._tableAuditQuery = _tableAuditQuery
+	r.Set("table_audit_query", _tableAuditQuery)
+	return nil
+}
+
+// Get TableAuditQuery Getter
+func (r YunosTvpubadminContentTableauditQuerylauncherAPIRequest) GetTableAuditQuery() string {
+	return r._tableAuditQuery
+}

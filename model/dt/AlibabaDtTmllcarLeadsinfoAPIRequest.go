@@ -23,4 +23,75 @@ type AlibabaDtTmllcarLeadsinfoAPIRequest struct {
 	_password string
 }
 
-// New
+// NewAlibabaDtTmllcarLeadsinfoRequest 初始化AlibabaDtTmllcarLeadsinfoAPIRequest对象
+func NewAlibabaDtTmllcarLeadsinfoRequest() *AlibabaDtTmllcarLeadsinfoAPIRequest {
+	return &AlibabaDtTmllcarLeadsinfoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetApiMethodName() string {
+	return "alibaba.dt.tmllcar.leadsinfo"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ShopCode Setter
+// shopcode
+func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetShopCode(_shopCode string) error {
+	r._shopCode = _shopCode
+	r.Set("shop_code", _shopCode)
+	return nil
+}
+
+// Get ShopCode Getter
+func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetShopCode() string {
+	return r._shopCode
+}
+
+// Set is AppName Setter
+// app_name
+func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetAppName(_appName string) error {
+	r._appName = _appName
+	r.Set("app_name", _appName)
+	return nil
+}
+
+// Get AppName Getter
+func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetAppName() string {
+	return r._appName
+}
+
+// Set is Name Setter
+// name
+func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetName() string {
+	return r._name
+}
+
+// Set is Password Setter
+// pssword
+func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetPassword(_password string) error {
+	r._password = _password
+	r.Set("password", _password)
+	return nil
+}
+
+// Get Password Getter
+func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetPassword() string {
+	return r._password
+}

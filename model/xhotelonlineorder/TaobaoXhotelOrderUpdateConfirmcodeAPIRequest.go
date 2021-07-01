@@ -17,4 +17,36 @@ type TaobaoXhotelOrderUpdateConfirmcodeAPIRequest struct {
 	_param *UpdateOrderConfirmCodeParam
 }
 
-// New
+// NewTaobaoXhotelOrderUpdateConfirmcodeRequest 初始化TaobaoXhotelOrderUpdateConfirmcodeAPIRequest对象
+func NewTaobaoXhotelOrderUpdateConfirmcodeRequest() *TaobaoXhotelOrderUpdateConfirmcodeAPIRequest {
+	return &TaobaoXhotelOrderUpdateConfirmcodeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.order.update.confirmcode"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 系统入参
+func (r *TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) SetParam(_param *UpdateOrderConfirmCodeParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) GetParam() *UpdateOrderConfirmCodeParam {
+	return r._param
+}

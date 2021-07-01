@@ -27,4 +27,101 @@ type TaobaoSimbaCreativeUpdateAPIRequest struct {
 	_pictureId int64
 }
 
-// New
+// NewTaobaoSimbaCreativeUpdateRequest 初始化TaobaoSimbaCreativeUpdateAPIRequest对象
+func NewTaobaoSimbaCreativeUpdateRequest() *TaobaoSimbaCreativeUpdateAPIRequest {
+	return &TaobaoSimbaCreativeUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaCreativeUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.creative.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaCreativeUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AdgroupId Setter
+// 推广组Id
+func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoSimbaCreativeUpdateAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}
+
+// Set is CreativeId Setter
+// 创意Id
+func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetCreativeId(_creativeId int64) error {
+	r._creativeId = _creativeId
+	r.Set("creative_id", _creativeId)
+	return nil
+}
+
+// Get CreativeId Getter
+func (r TaobaoSimbaCreativeUpdateAPIRequest) GetCreativeId() int64 {
+	return r._creativeId
+}
+
+// Set is Title Setter
+// 创意标题，最多20个汉字
+func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetTitle(_title string) error {
+	r._title = _title
+	r.Set("title", _title)
+	return nil
+}
+
+// Get Title Getter
+func (r TaobaoSimbaCreativeUpdateAPIRequest) GetTitle() string {
+	return r._title
+}
+
+// Set is ImgUrl Setter
+// 创意图片地址，必须是推广组对应商品的图片之一
+func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetImgUrl(_imgUrl string) error {
+	r._imgUrl = _imgUrl
+	r.Set("img_url", _imgUrl)
+	return nil
+}
+
+// Get ImgUrl Getter
+func (r TaobaoSimbaCreativeUpdateAPIRequest) GetImgUrl() string {
+	return r._imgUrl
+}
+
+// Set is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaCreativeUpdateAPIRequest) GetNick() string {
+	return r._nick
+}
+
+// Set is PictureId Setter
+// 如果用户开通了创意本地上传图片功能的，可以使用该用户图片空间的图片来修改创意，pictureId为图片空间中图片的pictureId，img_url为图片空间中图片链接地址，如果是使用的主图或副图修改创意，则pictureId必须为空
+func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetPictureId(_pictureId int64) error {
+	r._pictureId = _pictureId
+	r.Set("picture_id", _pictureId)
+	return nil
+}
+
+// Get PictureId Getter
+func (r TaobaoSimbaCreativeUpdateAPIRequest) GetPictureId() int64 {
+	return r._pictureId
+}

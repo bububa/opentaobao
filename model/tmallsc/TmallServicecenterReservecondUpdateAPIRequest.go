@@ -17,4 +17,36 @@ type TmallServicecenterReservecondUpdateAPIRequest struct {
 	_rocList []ReserveOpenConditionDto
 }
 
-// New
+// NewTmallServicecenterReservecondUpdateRequest 初始化TmallServicecenterReservecondUpdateAPIRequest对象
+func NewTmallServicecenterReservecondUpdateRequest() *TmallServicecenterReservecondUpdateAPIRequest {
+	return &TmallServicecenterReservecondUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterReservecondUpdateAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.reservecond.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterReservecondUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RocList Setter
+// 主动预约开通条件
+func (r *TmallServicecenterReservecondUpdateAPIRequest) SetRocList(_rocList []ReserveOpenConditionDto) error {
+	r._rocList = _rocList
+	r.Set("roc_list", _rocList)
+	return nil
+}
+
+// Get RocList Getter
+func (r TmallServicecenterReservecondUpdateAPIRequest) GetRocList() []ReserveOpenConditionDto {
+	return r._rocList
+}

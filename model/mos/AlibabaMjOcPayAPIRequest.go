@@ -17,4 +17,36 @@ type AlibabaMjOcPayAPIRequest struct {
 	_posOrder *PosOrderDto
 }
 
-// New
+// NewAlibabaMjOcPayRequest 初始化AlibabaMjOcPayAPIRequest对象
+func NewAlibabaMjOcPayRequest() *AlibabaMjOcPayAPIRequest {
+	return &AlibabaMjOcPayAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMjOcPayAPIRequest) GetApiMethodName() string {
+	return "alibaba.mj.oc.pay"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMjOcPayAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PosOrder Setter
+// 订单数据
+func (r *AlibabaMjOcPayAPIRequest) SetPosOrder(_posOrder *PosOrderDto) error {
+	r._posOrder = _posOrder
+	r.Set("pos_order", _posOrder)
+	return nil
+}
+
+// Get PosOrder Getter
+func (r AlibabaMjOcPayAPIRequest) GetPosOrder() *PosOrderDto {
+	return r._posOrder
+}

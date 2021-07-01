@@ -17,4 +17,36 @@ type AlibabaWdkMemberQrcodeIdentifyAPIRequest struct {
 	_qrCode string
 }
 
-// New
+// NewAlibabaWdkMemberQrcodeIdentifyRequest 初始化AlibabaWdkMemberQrcodeIdentifyAPIRequest对象
+func NewAlibabaWdkMemberQrcodeIdentifyRequest() *AlibabaWdkMemberQrcodeIdentifyAPIRequest {
+	return &AlibabaWdkMemberQrcodeIdentifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMemberQrcodeIdentifyAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.member.qrcode.identify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMemberQrcodeIdentifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is QrCode Setter
+// 付款码
+func (r *AlibabaWdkMemberQrcodeIdentifyAPIRequest) SetQrCode(_qrCode string) error {
+	r._qrCode = _qrCode
+	r.Set("qr_code", _qrCode)
+	return nil
+}
+
+// Get QrCode Getter
+func (r AlibabaWdkMemberQrcodeIdentifyAPIRequest) GetQrCode() string {
+	return r._qrCode
+}

@@ -19,4 +19,49 @@ type TaobaoScitemMapQueryAPIRequest struct {
 	_skuId int64
 }
 
-// New
+// NewTaobaoScitemMapQueryRequest 初始化TaobaoScitemMapQueryAPIRequest对象
+func NewTaobaoScitemMapQueryRequest() *TaobaoScitemMapQueryAPIRequest {
+	return &TaobaoScitemMapQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoScitemMapQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.scitem.map.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoScitemMapQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// map_type为1：前台ic商品id<br/>map_type为2：分销productid
+func (r *TaobaoScitemMapQueryAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TaobaoScitemMapQueryAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is SkuId Setter
+// map_type为1：前台ic商品skuid <br/>map_type为2：分销商品的skuid
+func (r *TaobaoScitemMapQueryAPIRequest) SetSkuId(_skuId int64) error {
+	r._skuId = _skuId
+	r.Set("sku_id", _skuId)
+	return nil
+}
+
+// Get SkuId Getter
+func (r TaobaoScitemMapQueryAPIRequest) GetSkuId() int64 {
+	return r._skuId
+}

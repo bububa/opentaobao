@@ -19,4 +19,49 @@ type AlitripItemSchemaUpdateAPIRequest struct {
 	_schemaXmlFields string
 }
 
-// New
+// NewAlitripItemSchemaUpdateRequest 初始化AlitripItemSchemaUpdateAPIRequest对象
+func NewAlitripItemSchemaUpdateRequest() *AlitripItemSchemaUpdateAPIRequest {
+	return &AlitripItemSchemaUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripItemSchemaUpdateAPIRequest) GetApiMethodName() string {
+	return "alitrip.item.schema.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripItemSchemaUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 商品id
+func (r *AlitripItemSchemaUpdateAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r AlitripItemSchemaUpdateAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is SchemaXmlFields Setter
+// 商品数据
+func (r *AlitripItemSchemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+	r._schemaXmlFields = _schemaXmlFields
+	r.Set("schema_xml_fields", _schemaXmlFields)
+	return nil
+}
+
+// Get SchemaXmlFields Getter
+func (r AlitripItemSchemaUpdateAPIRequest) GetSchemaXmlFields() string {
+	return r._schemaXmlFields
+}

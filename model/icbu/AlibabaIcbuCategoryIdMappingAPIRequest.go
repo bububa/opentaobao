@@ -23,4 +23,75 @@ type AlibabaIcbuCategoryIdMappingAPIRequest struct {
 	_convertType int64
 }
 
-// New
+// NewAlibabaIcbuCategoryIdMappingRequest 初始化AlibabaIcbuCategoryIdMappingAPIRequest对象
+func NewAlibabaIcbuCategoryIdMappingRequest() *AlibabaIcbuCategoryIdMappingAPIRequest {
+	return &AlibabaIcbuCategoryIdMappingAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetApiMethodName() string {
+	return "alibaba.icbu.category.id.mapping"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CatId Setter
+// 发布类目id
+func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetCatId(_catId int64) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// Get CatId Getter
+func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetCatId() int64 {
+	return r._catId
+}
+
+// Set is AttributeValueId Setter
+// 属性值id
+func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetAttributeValueId(_attributeValueId int64) error {
+	r._attributeValueId = _attributeValueId
+	r.Set("attribute_value_id", _attributeValueId)
+	return nil
+}
+
+// Get AttributeValueId Getter
+func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetAttributeValueId() int64 {
+	return r._attributeValueId
+}
+
+// Set is AttributeId Setter
+// 属性id
+func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetAttributeId(_attributeId int64) error {
+	r._attributeId = _attributeId
+	r.Set("attribute_id", _attributeId)
+	return nil
+}
+
+// Get AttributeId Getter
+func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetAttributeId() int64 {
+	return r._attributeId
+}
+
+// Set is ConvertType Setter
+// 转化类型, 1 = 转化类目id 2= 转化属性id 3= 转化属性值id
+func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetConvertType(_convertType int64) error {
+	r._convertType = _convertType
+	r.Set("convert_type", _convertType)
+	return nil
+}
+
+// Get ConvertType Getter
+func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetConvertType() int64 {
+	return r._convertType
+}

@@ -21,4 +21,62 @@ type AlitripTuanHotelItemSkuCalendarUpdateAPIRequest struct {
 	_itemSkuList []TopTuanItemSkuVO
 }
 
-// New
+// NewAlitripTuanHotelItemSkuCalendarUpdateRequest 初始化AlitripTuanHotelItemSkuCalendarUpdateAPIRequest对象
+func NewAlitripTuanHotelItemSkuCalendarUpdateRequest() *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest {
+	return &AlitripTuanHotelItemSkuCalendarUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetApiMethodName() string {
+	return "alitrip.tuan.hotel.item.sku.calendar.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 宝贝ID
+func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is CatId Setter
+// 宝贝所属类目
+func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetCatId(_catId int64) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// Get CatId Getter
+func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetCatId() int64 {
+	return r._catId
+}
+
+// Set is ItemSkuList Setter
+// 暂不支持此接口对SKU的部分属性进行更新，包括以下属性： 套餐名称、价格、原价、库存、间夜、商家编码、人数、使用次数等
+func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetItemSkuList(_itemSkuList []TopTuanItemSkuVO) error {
+	r._itemSkuList = _itemSkuList
+	r.Set("item_sku_list", _itemSkuList)
+	return nil
+}
+
+// Get ItemSkuList Getter
+func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetItemSkuList() []TopTuanItemSkuVO {
+	return r._itemSkuList
+}

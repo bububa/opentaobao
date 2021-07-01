@@ -21,4 +21,62 @@ type TmallPromotionCouponUserAPIRequest struct {
 	_extra string
 }
 
-// New
+// NewTmallPromotionCouponUserRequest 初始化TmallPromotionCouponUserAPIRequest对象
+func NewTmallPromotionCouponUserRequest() *TmallPromotionCouponUserAPIRequest {
+	return &TmallPromotionCouponUserAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallPromotionCouponUserAPIRequest) GetApiMethodName() string {
+	return "tmall.promotion.coupon.user"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallPromotionCouponUserAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BizType Setter
+// 例如：suning
+func (r *TmallPromotionCouponUserAPIRequest) SetBizType(_bizType string) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// Get BizType Getter
+func (r TmallPromotionCouponUserAPIRequest) GetBizType() string {
+	return r._bizType
+}
+
+// Set is PayCode Setter
+// 会员付款码
+func (r *TmallPromotionCouponUserAPIRequest) SetPayCode(_payCode string) error {
+	r._payCode = _payCode
+	r.Set("pay_code", _payCode)
+	return nil
+}
+
+// Get PayCode Getter
+func (r TmallPromotionCouponUserAPIRequest) GetPayCode() string {
+	return r._payCode
+}
+
+// Set is Extra Setter
+// 扩展字段
+func (r *TmallPromotionCouponUserAPIRequest) SetExtra(_extra string) error {
+	r._extra = _extra
+	r.Set("extra", _extra)
+	return nil
+}
+
+// Get Extra Getter
+func (r TmallPromotionCouponUserAPIRequest) GetExtra() string {
+	return r._extra
+}

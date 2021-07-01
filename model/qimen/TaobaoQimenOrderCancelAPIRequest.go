@@ -17,4 +17,36 @@ type TaobaoQimenOrderCancelAPIRequest struct {
 	_request *OrderCancelRequest
 }
 
-// New
+// NewTaobaoQimenOrderCancelRequest 初始化TaobaoQimenOrderCancelAPIRequest对象
+func NewTaobaoQimenOrderCancelRequest() *TaobaoQimenOrderCancelAPIRequest {
+	return &TaobaoQimenOrderCancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenOrderCancelAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.order.cancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenOrderCancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenOrderCancelAPIRequest) SetRequest(_request *OrderCancelRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenOrderCancelAPIRequest) GetRequest() *OrderCancelRequest {
+	return r._request
+}

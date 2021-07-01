@@ -21,4 +21,62 @@ type TaobaoSebpIsvWxrobotCallbackAPIRequest struct {
 	_strContext string
 }
 
-// New
+// NewTaobaoSebpIsvWxrobotCallbackRequest 初始化TaobaoSebpIsvWxrobotCallbackAPIRequest对象
+func NewTaobaoSebpIsvWxrobotCallbackRequest() *TaobaoSebpIsvWxrobotCallbackAPIRequest {
+	return &TaobaoSebpIsvWxrobotCallbackAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSebpIsvWxrobotCallbackAPIRequest) GetApiMethodName() string {
+	return "taobao.sebp.isv.wxrobot.callback"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSebpIsvWxrobotCallbackAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is NType Setter
+// 操作类型
+func (r *TaobaoSebpIsvWxrobotCallbackAPIRequest) SetNType(_nType string) error {
+	r._nType = _nType
+	r.Set("n_type", _nType)
+	return nil
+}
+
+// Get NType Getter
+func (r TaobaoSebpIsvWxrobotCallbackAPIRequest) GetNType() string {
+	return r._nType
+}
+
+// Set is StrSign Setter
+// 调用签名
+func (r *TaobaoSebpIsvWxrobotCallbackAPIRequest) SetStrSign(_strSign string) error {
+	r._strSign = _strSign
+	r.Set("str_sign", _strSign)
+	return nil
+}
+
+// Get StrSign Getter
+func (r TaobaoSebpIsvWxrobotCallbackAPIRequest) GetStrSign() string {
+	return r._strSign
+}
+
+// Set is StrContext Setter
+// 参数
+func (r *TaobaoSebpIsvWxrobotCallbackAPIRequest) SetStrContext(_strContext string) error {
+	r._strContext = _strContext
+	r.Set("str_context", _strContext)
+	return nil
+}
+
+// Get StrContext Getter
+func (r TaobaoSebpIsvWxrobotCallbackAPIRequest) GetStrContext() string {
+	return r._strContext
+}

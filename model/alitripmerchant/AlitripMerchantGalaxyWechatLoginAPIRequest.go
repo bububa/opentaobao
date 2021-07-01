@@ -19,4 +19,49 @@ type AlitripMerchantGalaxyWechatLoginAPIRequest struct {
 	_loginParam *LoginParam
 }
 
-// New
+// NewAlitripMerchantGalaxyWechatLoginRequest 初始化AlitripMerchantGalaxyWechatLoginAPIRequest对象
+func NewAlitripMerchantGalaxyWechatLoginRequest() *AlitripMerchantGalaxyWechatLoginAPIRequest {
+	return &AlitripMerchantGalaxyWechatLoginAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripMerchantGalaxyWechatLoginAPIRequest) GetApiMethodName() string {
+	return "alitrip.merchant.galaxy.wechat.login"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripMerchantGalaxyWechatLoginAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TenantKey Setter
+// 租户身份信息
+func (r *AlitripMerchantGalaxyWechatLoginAPIRequest) SetTenantKey(_tenantKey string) error {
+	r._tenantKey = _tenantKey
+	r.Set("tenant_key", _tenantKey)
+	return nil
+}
+
+// Get TenantKey Getter
+func (r AlitripMerchantGalaxyWechatLoginAPIRequest) GetTenantKey() string {
+	return r._tenantKey
+}
+
+// Set is LoginParam Setter
+// 微信小程序登陆请求参数
+func (r *AlitripMerchantGalaxyWechatLoginAPIRequest) SetLoginParam(_loginParam *LoginParam) error {
+	r._loginParam = _loginParam
+	r.Set("login_param", _loginParam)
+	return nil
+}
+
+// Get LoginParam Getter
+func (r AlitripMerchantGalaxyWechatLoginAPIRequest) GetLoginParam() *LoginParam {
+	return r._loginParam
+}

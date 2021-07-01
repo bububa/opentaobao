@@ -23,4 +23,75 @@ type AlibabaWestcrmUserConsumerGetAPIRequest struct {
 	_timeEnd string
 }
 
-// New
+// NewAlibabaWestcrmUserConsumerGetRequest 初始化AlibabaWestcrmUserConsumerGetAPIRequest对象
+func NewAlibabaWestcrmUserConsumerGetRequest() *AlibabaWestcrmUserConsumerGetAPIRequest {
+	return &AlibabaWestcrmUserConsumerGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.westcrm.user.consumer.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CampusId Setter
+// 园区id
+func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetCampusId(_campusId int64) error {
+	r._campusId = _campusId
+	r.Set("campus_id", _campusId)
+	return nil
+}
+
+// Get CampusId Getter
+func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetCampusId() int64 {
+	return r._campusId
+}
+
+// Set is IbUserId Setter
+// 用户id
+func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetIbUserId(_ibUserId int64) error {
+	r._ibUserId = _ibUserId
+	r.Set("ib_user_id", _ibUserId)
+	return nil
+}
+
+// Get IbUserId Getter
+func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetIbUserId() int64 {
+	return r._ibUserId
+}
+
+// Set is TimeBegin Setter
+// 开始时间
+func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetTimeBegin(_timeBegin string) error {
+	r._timeBegin = _timeBegin
+	r.Set("time_begin", _timeBegin)
+	return nil
+}
+
+// Get TimeBegin Getter
+func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetTimeBegin() string {
+	return r._timeBegin
+}
+
+// Set is TimeEnd Setter
+// 结束时间
+func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetTimeEnd(_timeEnd string) error {
+	r._timeEnd = _timeEnd
+	r.Set("time_end", _timeEnd)
+	return nil
+}
+
+// Get TimeEnd Getter
+func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetTimeEnd() string {
+	return r._timeEnd
+}

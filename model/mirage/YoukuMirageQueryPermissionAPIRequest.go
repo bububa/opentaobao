@@ -17,4 +17,36 @@ type YoukuMirageQueryPermissionAPIRequest struct {
 	_permissionRequestDto *PermissionRequestDto
 }
 
-// New
+// NewYoukuMirageQueryPermissionRequest 初始化YoukuMirageQueryPermissionAPIRequest对象
+func NewYoukuMirageQueryPermissionRequest() *YoukuMirageQueryPermissionAPIRequest {
+	return &YoukuMirageQueryPermissionAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YoukuMirageQueryPermissionAPIRequest) GetApiMethodName() string {
+	return "youku.mirage.query.permission"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YoukuMirageQueryPermissionAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PermissionRequestDto Setter
+// 入参
+func (r *YoukuMirageQueryPermissionAPIRequest) SetPermissionRequestDto(_permissionRequestDto *PermissionRequestDto) error {
+	r._permissionRequestDto = _permissionRequestDto
+	r.Set("permission_request_dto", _permissionRequestDto)
+	return nil
+}
+
+// Get PermissionRequestDto Getter
+func (r YoukuMirageQueryPermissionAPIRequest) GetPermissionRequestDto() *PermissionRequestDto {
+	return r._permissionRequestDto
+}

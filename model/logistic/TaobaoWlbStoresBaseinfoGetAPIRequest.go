@@ -17,4 +17,36 @@ type TaobaoWlbStoresBaseinfoGetAPIRequest struct {
 	_type int64
 }
 
-// New
+// NewTaobaoWlbStoresBaseinfoGetRequest 初始化TaobaoWlbStoresBaseinfoGetAPIRequest对象
+func NewTaobaoWlbStoresBaseinfoGetRequest() *TaobaoWlbStoresBaseinfoGetAPIRequest {
+	return &TaobaoWlbStoresBaseinfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbStoresBaseinfoGetAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.stores.baseinfo.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbStoresBaseinfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Type Setter
+// 0.商家仓库.1.菜鸟仓库.2全部被划分的仓库
+func (r *TaobaoWlbStoresBaseinfoGetAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r TaobaoWlbStoresBaseinfoGetAPIRequest) GetType() int64 {
+	return r._type
+}

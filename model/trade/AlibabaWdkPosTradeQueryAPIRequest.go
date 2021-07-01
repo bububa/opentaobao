@@ -17,4 +17,36 @@ type AlibabaWdkPosTradeQueryAPIRequest struct {
 	_queryRequest *FastBuyPosQueryRequest
 }
 
-// New
+// NewAlibabaWdkPosTradeQueryRequest 初始化AlibabaWdkPosTradeQueryAPIRequest对象
+func NewAlibabaWdkPosTradeQueryRequest() *AlibabaWdkPosTradeQueryAPIRequest {
+	return &AlibabaWdkPosTradeQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkPosTradeQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.pos.trade.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkPosTradeQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is QueryRequest Setter
+// 查询请求
+func (r *AlibabaWdkPosTradeQueryAPIRequest) SetQueryRequest(_queryRequest *FastBuyPosQueryRequest) error {
+	r._queryRequest = _queryRequest
+	r.Set("query_request", _queryRequest)
+	return nil
+}
+
+// Get QueryRequest Getter
+func (r AlibabaWdkPosTradeQueryAPIRequest) GetQueryRequest() *FastBuyPosQueryRequest {
+	return r._queryRequest
+}

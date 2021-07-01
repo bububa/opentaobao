@@ -17,4 +17,36 @@ type AlitripBtripHotelDistributionOrderCreateAPIRequest struct {
 	_paramBtripHotelCreateOrderRq *BtripHotelCreateOrderRq
 }
 
-// New
+// NewAlitripBtripHotelDistributionOrderCreateRequest 初始化AlitripBtripHotelDistributionOrderCreateAPIRequest对象
+func NewAlitripBtripHotelDistributionOrderCreateRequest() *AlitripBtripHotelDistributionOrderCreateAPIRequest {
+	return &AlitripBtripHotelDistributionOrderCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripHotelDistributionOrderCreateAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.hotel.distribution.order.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripHotelDistributionOrderCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamBtripHotelCreateOrderRq Setter
+// 创建订单请求入参
+func (r *AlitripBtripHotelDistributionOrderCreateAPIRequest) SetParamBtripHotelCreateOrderRq(_paramBtripHotelCreateOrderRq *BtripHotelCreateOrderRq) error {
+	r._paramBtripHotelCreateOrderRq = _paramBtripHotelCreateOrderRq
+	r.Set("param_btrip_hotel_create_order_rq", _paramBtripHotelCreateOrderRq)
+	return nil
+}
+
+// Get ParamBtripHotelCreateOrderRq Getter
+func (r AlitripBtripHotelDistributionOrderCreateAPIRequest) GetParamBtripHotelCreateOrderRq() *BtripHotelCreateOrderRq {
+	return r._paramBtripHotelCreateOrderRq
+}

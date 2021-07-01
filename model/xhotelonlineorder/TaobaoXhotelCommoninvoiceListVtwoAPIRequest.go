@@ -15,4 +15,23 @@ type TaobaoXhotelCommoninvoiceListVtwoAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoXhotelCommoninvoiceListVtwoRequest 初始化TaobaoXhotelCommoninvoiceListVtwoAPIRequest对象
+func NewTaobaoXhotelCommoninvoiceListVtwoRequest() *TaobaoXhotelCommoninvoiceListVtwoAPIRequest {
+	return &TaobaoXhotelCommoninvoiceListVtwoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelCommoninvoiceListVtwoAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.commoninvoice.list.vtwo"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelCommoninvoiceListVtwoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

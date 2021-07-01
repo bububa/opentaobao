@@ -17,4 +17,36 @@ type AliexpressTradeBuyPlaceorderAPIRequest struct {
 	_paramPlaceOrderRequest4OpenApiDTO *PlaceOrderRequest4OpenApiDto
 }
 
-// New
+// NewAliexpressTradeBuyPlaceorderRequest 初始化AliexpressTradeBuyPlaceorderAPIRequest对象
+func NewAliexpressTradeBuyPlaceorderRequest() *AliexpressTradeBuyPlaceorderAPIRequest {
+	return &AliexpressTradeBuyPlaceorderAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressTradeBuyPlaceorderAPIRequest) GetApiMethodName() string {
+	return "aliexpress.trade.buy.placeorder"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressTradeBuyPlaceorderAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamPlaceOrderRequest4OpenApiDTO Setter
+// 下单具体参数
+func (r *AliexpressTradeBuyPlaceorderAPIRequest) SetParamPlaceOrderRequest4OpenApiDTO(_paramPlaceOrderRequest4OpenApiDTO *PlaceOrderRequest4OpenApiDto) error {
+	r._paramPlaceOrderRequest4OpenApiDTO = _paramPlaceOrderRequest4OpenApiDTO
+	r.Set("param_place_order_request4_open_api_d_t_o", _paramPlaceOrderRequest4OpenApiDTO)
+	return nil
+}
+
+// Get ParamPlaceOrderRequest4OpenApiDTO Getter
+func (r AliexpressTradeBuyPlaceorderAPIRequest) GetParamPlaceOrderRequest4OpenApiDTO() *PlaceOrderRequest4OpenApiDto {
+	return r._paramPlaceOrderRequest4OpenApiDTO
+}

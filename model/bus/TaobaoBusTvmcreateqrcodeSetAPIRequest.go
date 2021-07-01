@@ -19,4 +19,49 @@ type TaobaoBusTvmcreateqrcodeSetAPIRequest struct {
 	_timeoutExpress int64
 }
 
-// New
+// NewTaobaoBusTvmcreateqrcodeSetRequest 初始化TaobaoBusTvmcreateqrcodeSetAPIRequest对象
+func NewTaobaoBusTvmcreateqrcodeSetRequest() *TaobaoBusTvmcreateqrcodeSetAPIRequest {
+	return &TaobaoBusTvmcreateqrcodeSetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetApiMethodName() string {
+	return "taobao.bus.tvmcreateqrcode.set"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AlitripOrderId Setter
+// 飞猪订单号
+func (r *TaobaoBusTvmcreateqrcodeSetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
+	r._alitripOrderId = _alitripOrderId
+	r.Set("alitrip_order_id", _alitripOrderId)
+	return nil
+}
+
+// Get AlitripOrderId Getter
+func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetAlitripOrderId() string {
+	return r._alitripOrderId
+}
+
+// Set is TimeoutExpress Setter
+// 超时时间（分钟）
+func (r *TaobaoBusTvmcreateqrcodeSetAPIRequest) SetTimeoutExpress(_timeoutExpress int64) error {
+	r._timeoutExpress = _timeoutExpress
+	r.Set("timeout_express", _timeoutExpress)
+	return nil
+}
+
+// Get TimeoutExpress Getter
+func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetTimeoutExpress() int64 {
+	return r._timeoutExpress
+}

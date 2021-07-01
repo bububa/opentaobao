@@ -17,4 +17,36 @@ type AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest struct {
 	_workerCustomerComplaintSaveCmd *WorkerCustomerComplaintSaveCmd
 }
 
-// New
+// NewAlibabaDchainMiaoshifuCustomerComplaintsPutRequest 初始化AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest对象
+func NewAlibabaDchainMiaoshifuCustomerComplaintsPutRequest() *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest {
+	return &AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) GetApiMethodName() string {
+	return "alibaba.dchain.miaoshifu.customer.complaints.put"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WorkerCustomerComplaintSaveCmd Setter
+// 服务工人客诉对象
+func (r *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) SetWorkerCustomerComplaintSaveCmd(_workerCustomerComplaintSaveCmd *WorkerCustomerComplaintSaveCmd) error {
+	r._workerCustomerComplaintSaveCmd = _workerCustomerComplaintSaveCmd
+	r.Set("worker_customer_complaint_save_cmd", _workerCustomerComplaintSaveCmd)
+	return nil
+}
+
+// Get WorkerCustomerComplaintSaveCmd Getter
+func (r AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) GetWorkerCustomerComplaintSaveCmd() *WorkerCustomerComplaintSaveCmd {
+	return r._workerCustomerComplaintSaveCmd
+}

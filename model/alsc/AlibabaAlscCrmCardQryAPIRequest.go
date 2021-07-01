@@ -17,4 +17,36 @@ type AlibabaAlscCrmCardQryAPIRequest struct {
 	_paramQueryCardOpenReq *QueryCardOpenReq
 }
 
-// New
+// NewAlibabaAlscCrmCardQryRequest 初始化AlibabaAlscCrmCardQryAPIRequest对象
+func NewAlibabaAlscCrmCardQryRequest() *AlibabaAlscCrmCardQryAPIRequest {
+	return &AlibabaAlscCrmCardQryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmCardQryAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.card.qry"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmCardQryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamQueryCardOpenReq Setter
+// 请求对象
+func (r *AlibabaAlscCrmCardQryAPIRequest) SetParamQueryCardOpenReq(_paramQueryCardOpenReq *QueryCardOpenReq) error {
+	r._paramQueryCardOpenReq = _paramQueryCardOpenReq
+	r.Set("param_query_card_open_req", _paramQueryCardOpenReq)
+	return nil
+}
+
+// Get ParamQueryCardOpenReq Getter
+func (r AlibabaAlscCrmCardQryAPIRequest) GetParamQueryCardOpenReq() *QueryCardOpenReq {
+	return r._paramQueryCardOpenReq
+}

@@ -17,4 +17,36 @@ type AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest struct {
 	_preSalePermitDto *ProjectPreSalePermitDto
 }
 
-// New
+// NewAlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest 初始化AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest() *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest {
+	return &AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihouse.newhome.project.presalepermit.submit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PreSalePermitDto Setter
+// 预售证对象
+func (r *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) SetPreSalePermitDto(_preSalePermitDto *ProjectPreSalePermitDto) error {
+	r._preSalePermitDto = _preSalePermitDto
+	r.Set("pre_sale_permit_dto", _preSalePermitDto)
+	return nil
+}
+
+// Get PreSalePermitDto Getter
+func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) GetPreSalePermitDto() *ProjectPreSalePermitDto {
+	return r._preSalePermitDto
+}

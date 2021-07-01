@@ -17,4 +17,36 @@ type AlitripRailIrCarrierGetAPIRequest struct {
 	_agentId int64
 }
 
-// New
+// NewAlitripRailIrCarrierGetRequest 初始化AlitripRailIrCarrierGetAPIRequest对象
+func NewAlitripRailIrCarrierGetRequest() *AlitripRailIrCarrierGetAPIRequest {
+	return &AlitripRailIrCarrierGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripRailIrCarrierGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.rail.ir.carrier.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripRailIrCarrierGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AgentId Setter
+// 商家id
+func (r *AlitripRailIrCarrierGetAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// Get AgentId Getter
+func (r AlitripRailIrCarrierGetAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}

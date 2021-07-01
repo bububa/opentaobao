@@ -17,4 +17,36 @@ type TmallCarLeaseConsumeAPIRequest struct {
 	_cosumeCodeReqDTO *CosumeCodeReqDto
 }
 
-// New
+// NewTmallCarLeaseConsumeRequest 初始化TmallCarLeaseConsumeAPIRequest对象
+func NewTmallCarLeaseConsumeRequest() *TmallCarLeaseConsumeAPIRequest {
+	return &TmallCarLeaseConsumeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallCarLeaseConsumeAPIRequest) GetApiMethodName() string {
+	return "tmall.car.lease.consume"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallCarLeaseConsumeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CosumeCodeReqDTO Setter
+// 核销请求
+func (r *TmallCarLeaseConsumeAPIRequest) SetCosumeCodeReqDTO(_cosumeCodeReqDTO *CosumeCodeReqDto) error {
+	r._cosumeCodeReqDTO = _cosumeCodeReqDTO
+	r.Set("cosume_code_req_d_t_o", _cosumeCodeReqDTO)
+	return nil
+}
+
+// Get CosumeCodeReqDTO Getter
+func (r TmallCarLeaseConsumeAPIRequest) GetCosumeCodeReqDTO() *CosumeCodeReqDto {
+	return r._cosumeCodeReqDTO
+}

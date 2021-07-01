@@ -17,4 +17,36 @@ type AlibabaWdkUmsInventoryPublishAPIRequest struct {
 	_wdkErpArrivalNotice *WdkErpArrivalNoticeDto
 }
 
-// New
+// NewAlibabaWdkUmsInventoryPublishRequest 初始化AlibabaWdkUmsInventoryPublishAPIRequest对象
+func NewAlibabaWdkUmsInventoryPublishRequest() *AlibabaWdkUmsInventoryPublishAPIRequest {
+	return &AlibabaWdkUmsInventoryPublishAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkUmsInventoryPublishAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.ums.inventory.publish"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkUmsInventoryPublishAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WdkErpArrivalNotice Setter
+// 1
+func (r *AlibabaWdkUmsInventoryPublishAPIRequest) SetWdkErpArrivalNotice(_wdkErpArrivalNotice *WdkErpArrivalNoticeDto) error {
+	r._wdkErpArrivalNotice = _wdkErpArrivalNotice
+	r.Set("wdk_erp_arrival_notice", _wdkErpArrivalNotice)
+	return nil
+}
+
+// Get WdkErpArrivalNotice Getter
+func (r AlibabaWdkUmsInventoryPublishAPIRequest) GetWdkErpArrivalNotice() *WdkErpArrivalNoticeDto {
+	return r._wdkErpArrivalNotice
+}

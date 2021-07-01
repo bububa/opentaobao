@@ -17,4 +17,36 @@ type TaobaoAlitripSellerRefundmoneyConfirmAPIRequest struct {
 	_applyId int64
 }
 
-// New
+// NewTaobaoAlitripSellerRefundmoneyConfirmRequest 初始化TaobaoAlitripSellerRefundmoneyConfirmAPIRequest对象
+func NewTaobaoAlitripSellerRefundmoneyConfirmRequest() *TaobaoAlitripSellerRefundmoneyConfirmAPIRequest {
+	return &TaobaoAlitripSellerRefundmoneyConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripSellerRefundmoneyConfirmAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.seller.refundmoney.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripSellerRefundmoneyConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ApplyId Setter
+// 申请单id
+func (r *TaobaoAlitripSellerRefundmoneyConfirmAPIRequest) SetApplyId(_applyId int64) error {
+	r._applyId = _applyId
+	r.Set("apply_id", _applyId)
+	return nil
+}
+
+// Get ApplyId Getter
+func (r TaobaoAlitripSellerRefundmoneyConfirmAPIRequest) GetApplyId() int64 {
+	return r._applyId
+}

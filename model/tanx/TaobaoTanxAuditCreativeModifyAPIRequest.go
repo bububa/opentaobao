@@ -21,4 +21,62 @@ type TaobaoTanxAuditCreativeModifyAPIRequest struct {
 	_signTime int64
 }
 
-// New
+// NewTaobaoTanxAuditCreativeModifyRequest 初始化TaobaoTanxAuditCreativeModifyAPIRequest对象
+func NewTaobaoTanxAuditCreativeModifyRequest() *TaobaoTanxAuditCreativeModifyAPIRequest {
+	return &TaobaoTanxAuditCreativeModifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetApiMethodName() string {
+	return "taobao.tanx.audit.creative.modify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MemberId Setter
+// DSP用户ID
+func (r *TaobaoTanxAuditCreativeModifyAPIRequest) SetMemberId(_memberId int64) error {
+	r._memberId = _memberId
+	r.Set("member_id", _memberId)
+	return nil
+}
+
+// Get MemberId Getter
+func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetMemberId() int64 {
+	return r._memberId
+}
+
+// Set is Token Setter
+// dsp用户身份认证的TOKEN
+func (r *TaobaoTanxAuditCreativeModifyAPIRequest) SetToken(_token string) error {
+	r._token = _token
+	r.Set("token", _token)
+	return nil
+}
+
+// Get Token Getter
+func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetToken() string {
+	return r._token
+}
+
+// Set is SignTime Setter
+// 当前时间戳，1970-01-01后的秒数
+func (r *TaobaoTanxAuditCreativeModifyAPIRequest) SetSignTime(_signTime int64) error {
+	r._signTime = _signTime
+	r.Set("sign_time", _signTime)
+	return nil
+}
+
+// Get SignTime Getter
+func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetSignTime() int64 {
+	return r._signTime
+}

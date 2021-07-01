@@ -17,4 +17,36 @@ type TaobaoIhomeAdvancepicUploadAPIRequest struct {
 	_materials []AdvancePicMaterialDto
 }
 
-// New
+// NewTaobaoIhomeAdvancepicUploadRequest 初始化TaobaoIhomeAdvancepicUploadAPIRequest对象
+func NewTaobaoIhomeAdvancepicUploadRequest() *TaobaoIhomeAdvancepicUploadAPIRequest {
+	return &TaobaoIhomeAdvancepicUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoIhomeAdvancepicUploadAPIRequest) GetApiMethodName() string {
+	return "taobao.ihome.advancepic.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoIhomeAdvancepicUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Materials Setter
+// 图片类
+func (r *TaobaoIhomeAdvancepicUploadAPIRequest) SetMaterials(_materials []AdvancePicMaterialDto) error {
+	r._materials = _materials
+	r.Set("materials", _materials)
+	return nil
+}
+
+// Get Materials Getter
+func (r TaobaoIhomeAdvancepicUploadAPIRequest) GetMaterials() []AdvancePicMaterialDto {
+	return r._materials
+}

@@ -17,4 +17,36 @@ type YunosServiceCmnsCoaMessagePushAPIRequest struct {
 	_pushRequest *PushRequest
 }
 
-// New
+// NewYunosServiceCmnsCoaMessagePushRequest 初始化YunosServiceCmnsCoaMessagePushAPIRequest对象
+func NewYunosServiceCmnsCoaMessagePushRequest() *YunosServiceCmnsCoaMessagePushAPIRequest {
+	return &YunosServiceCmnsCoaMessagePushAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosServiceCmnsCoaMessagePushAPIRequest) GetApiMethodName() string {
+	return "yunos.service.cmns.coa.message.push"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosServiceCmnsCoaMessagePushAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PushRequest Setter
+// 消息推送请求对象
+func (r *YunosServiceCmnsCoaMessagePushAPIRequest) SetPushRequest(_pushRequest *PushRequest) error {
+	r._pushRequest = _pushRequest
+	r.Set("push_request", _pushRequest)
+	return nil
+}
+
+// Get PushRequest Getter
+func (r YunosServiceCmnsCoaMessagePushAPIRequest) GetPushRequest() *PushRequest {
+	return r._pushRequest
+}

@@ -17,4 +17,36 @@ type WdkMealPosGetfetchmealcodeAPIRequest struct {
 	_channelShopId string
 }
 
-// New
+// NewWdkMealPosGetfetchmealcodeRequest 初始化WdkMealPosGetfetchmealcodeAPIRequest对象
+func NewWdkMealPosGetfetchmealcodeRequest() *WdkMealPosGetfetchmealcodeAPIRequest {
+	return &WdkMealPosGetfetchmealcodeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r WdkMealPosGetfetchmealcodeAPIRequest) GetApiMethodName() string {
+	return "wdk.meal.pos.getfetchmealcode"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r WdkMealPosGetfetchmealcodeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ChannelShopId Setter
+// 渠道店id
+func (r *WdkMealPosGetfetchmealcodeAPIRequest) SetChannelShopId(_channelShopId string) error {
+	r._channelShopId = _channelShopId
+	r.Set("channel_shop_id", _channelShopId)
+	return nil
+}
+
+// Get ChannelShopId Getter
+func (r WdkMealPosGetfetchmealcodeAPIRequest) GetChannelShopId() string {
+	return r._channelShopId
+}

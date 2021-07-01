@@ -17,4 +17,36 @@ type AlibabaRetailMarketingItemdiscountActivityUpdateAPIRequest struct {
 	_param *ItemDiscountActivityOperateRequest
 }
 
-// New
+// NewAlibabaRetailMarketingItemdiscountActivityUpdateRequest 初始化AlibabaRetailMarketingItemdiscountActivityUpdateAPIRequest对象
+func NewAlibabaRetailMarketingItemdiscountActivityUpdateRequest() *AlibabaRetailMarketingItemdiscountActivityUpdateAPIRequest {
+	return &AlibabaRetailMarketingItemdiscountActivityUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaRetailMarketingItemdiscountActivityUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.retail.marketing.itemdiscount.activity.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaRetailMarketingItemdiscountActivityUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 创建活动参数
+func (r *AlibabaRetailMarketingItemdiscountActivityUpdateAPIRequest) SetParam(_param *ItemDiscountActivityOperateRequest) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaRetailMarketingItemdiscountActivityUpdateAPIRequest) GetParam() *ItemDiscountActivityOperateRequest {
+	return r._param
+}

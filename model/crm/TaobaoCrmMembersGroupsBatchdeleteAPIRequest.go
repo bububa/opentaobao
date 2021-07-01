@@ -19,4 +19,49 @@ type TaobaoCrmMembersGroupsBatchdeleteAPIRequest struct {
 	_groupIds []int64
 }
 
-// New
+// NewTaobaoCrmMembersGroupsBatchdeleteRequest 初始化TaobaoCrmMembersGroupsBatchdeleteAPIRequest对象
+func NewTaobaoCrmMembersGroupsBatchdeleteRequest() *TaobaoCrmMembersGroupsBatchdeleteAPIRequest {
+	return &TaobaoCrmMembersGroupsBatchdeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCrmMembersGroupsBatchdeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.crm.members.groups.batchdelete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCrmMembersGroupsBatchdeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BuyerNicks Setter
+// 买家昵称列表
+func (r *TaobaoCrmMembersGroupsBatchdeleteAPIRequest) SetBuyerNicks(_buyerNicks []string) error {
+	r._buyerNicks = _buyerNicks
+	r.Set("buyer_nicks", _buyerNicks)
+	return nil
+}
+
+// Get BuyerNicks Getter
+func (r TaobaoCrmMembersGroupsBatchdeleteAPIRequest) GetBuyerNicks() []string {
+	return r._buyerNicks
+}
+
+// Set is GroupIds Setter
+// 会员需要删除的分组
+func (r *TaobaoCrmMembersGroupsBatchdeleteAPIRequest) SetGroupIds(_groupIds []int64) error {
+	r._groupIds = _groupIds
+	r.Set("group_ids", _groupIds)
+	return nil
+}
+
+// Get GroupIds Getter
+func (r TaobaoCrmMembersGroupsBatchdeleteAPIRequest) GetGroupIds() []int64 {
+	return r._groupIds
+}

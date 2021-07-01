@@ -17,4 +17,36 @@ type TaobaoBusTvmcreateorderSetAPIRequest struct {
 	_paramTVMCreateOrderRQ *TvmCreateOrderRq
 }
 
-// New
+// NewTaobaoBusTvmcreateorderSetRequest 初始化TaobaoBusTvmcreateorderSetAPIRequest对象
+func NewTaobaoBusTvmcreateorderSetRequest() *TaobaoBusTvmcreateorderSetAPIRequest {
+	return &TaobaoBusTvmcreateorderSetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBusTvmcreateorderSetAPIRequest) GetApiMethodName() string {
+	return "taobao.bus.tvmcreateorder.set"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBusTvmcreateorderSetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamTVMCreateOrderRQ Setter
+// 创建订单对象
+func (r *TaobaoBusTvmcreateorderSetAPIRequest) SetParamTVMCreateOrderRQ(_paramTVMCreateOrderRQ *TvmCreateOrderRq) error {
+	r._paramTVMCreateOrderRQ = _paramTVMCreateOrderRQ
+	r.Set("param_t_v_m_create_order_r_q", _paramTVMCreateOrderRQ)
+	return nil
+}
+
+// Get ParamTVMCreateOrderRQ Getter
+func (r TaobaoBusTvmcreateorderSetAPIRequest) GetParamTVMCreateOrderRQ() *TvmCreateOrderRq {
+	return r._paramTVMCreateOrderRQ
+}

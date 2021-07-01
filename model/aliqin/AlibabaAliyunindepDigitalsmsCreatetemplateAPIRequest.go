@@ -21,4 +21,62 @@ type AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest struct {
 	_applyRemark string
 }
 
-// New
+// NewAlibabaAliyunindepDigitalsmsCreatetemplateRequest 初始化AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest对象
+func NewAlibabaAliyunindepDigitalsmsCreatetemplateRequest() *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest {
+	return &AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetApiMethodName() string {
+	return "alibaba.aliyunindep.digitalsms.createtemplate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TemplateName Setter
+// 模板名称
+func (r *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) SetTemplateName(_templateName string) error {
+	r._templateName = _templateName
+	r.Set("template_name", _templateName)
+	return nil
+}
+
+// Get TemplateName Getter
+func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetTemplateName() string {
+	return r._templateName
+}
+
+// Set is TemplateContents Setter
+// 系统自动生成
+func (r *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDto) error {
+	r._templateContents = _templateContents
+	r.Set("template_contents", _templateContents)
+	return nil
+}
+
+// Get TemplateContents Getter
+func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetTemplateContents() []DigitalSmsTemplateContentDto {
+	return r._templateContents
+}
+
+// Set is ApplyRemark Setter
+// 申请说明
+func (r *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) SetApplyRemark(_applyRemark string) error {
+	r._applyRemark = _applyRemark
+	r.Set("apply_remark", _applyRemark)
+	return nil
+}
+
+// Get ApplyRemark Getter
+func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetApplyRemark() string {
+	return r._applyRemark
+}

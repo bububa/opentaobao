@@ -19,4 +19,36 @@ type TmallWorkcardIdentifyAPIRequest struct {
 	_verifyRequestDTO *VerifyRequestDto
 }
 
-// New
+// NewTmallWorkcardIdentifyRequest 初始化TmallWorkcardIdentifyAPIRequest对象
+func NewTmallWorkcardIdentifyRequest() *TmallWorkcardIdentifyAPIRequest {
+	return &TmallWorkcardIdentifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallWorkcardIdentifyAPIRequest) GetApiMethodName() string {
+	return "tmall.workcard.identify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallWorkcardIdentifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is VerifyRequestDTO Setter
+// 核销dto
+func (r *TmallWorkcardIdentifyAPIRequest) SetVerifyRequestDTO(_verifyRequestDTO *VerifyRequestDto) error {
+	r._verifyRequestDTO = _verifyRequestDTO
+	r.Set("verify_request_d_t_o", _verifyRequestDTO)
+	return nil
+}
+
+// Get VerifyRequestDTO Getter
+func (r TmallWorkcardIdentifyAPIRequest) GetVerifyRequestDTO() *VerifyRequestDto {
+	return r._verifyRequestDTO
+}

@@ -25,4 +25,88 @@ type TaobaoJushitaJdpUsersGetAPIRequest struct {
 	_userId int64
 }
 
-// New
+// NewTaobaoJushitaJdpUsersGetRequest 初始化TaobaoJushitaJdpUsersGetAPIRequest对象
+func NewTaobaoJushitaJdpUsersGetRequest() *TaobaoJushitaJdpUsersGetAPIRequest {
+	return &TaobaoJushitaJdpUsersGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoJushitaJdpUsersGetAPIRequest) GetApiMethodName() string {
+	return "taobao.jushita.jdp.users.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoJushitaJdpUsersGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StartModified Setter
+// 此参数一般不用传，用于查询最后更改时间在某个时间段内的用户
+func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetStartModified(_startModified string) error {
+	r._startModified = _startModified
+	r.Set("start_modified", _startModified)
+	return nil
+}
+
+// Get StartModified Getter
+func (r TaobaoJushitaJdpUsersGetAPIRequest) GetStartModified() string {
+	return r._startModified
+}
+
+// Set is EndModified Setter
+// 此参数一般不用传，用于查询最后更改时间在某个时间段内的用户
+func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetEndModified(_endModified string) error {
+	r._endModified = _endModified
+	r.Set("end_modified", _endModified)
+	return nil
+}
+
+// Get EndModified Getter
+func (r TaobaoJushitaJdpUsersGetAPIRequest) GetEndModified() string {
+	return r._endModified
+}
+
+// Set is PageSize Setter
+// 每页记录数，默认200
+func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoJushitaJdpUsersGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is PageNo Setter
+// 当前页数
+func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r TaobaoJushitaJdpUsersGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is UserId Setter
+// 如果传了user_id表示单条查询
+func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r TaobaoJushitaJdpUsersGetAPIRequest) GetUserId() int64 {
+	return r._userId
+}

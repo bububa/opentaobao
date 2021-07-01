@@ -23,4 +23,75 @@ type AlibabaAliqinFlowCobrandcardSysnAPIRequest struct {
 	_action string
 }
 
-// New
+// NewAlibabaAliqinFlowCobrandcardSysnRequest 初始化AlibabaAliqinFlowCobrandcardSysnAPIRequest对象
+func NewAlibabaAliqinFlowCobrandcardSysnRequest() *AlibabaAliqinFlowCobrandcardSysnAPIRequest {
+	return &AlibabaAliqinFlowCobrandcardSysnAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetApiMethodName() string {
+	return "alibaba.aliqin.flow.cobrandcard.sysn"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TbUserNick Setter
+// 淘宝nick
+func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetTbUserNick(_tbUserNick string) error {
+	r._tbUserNick = _tbUserNick
+	r.Set("tb_user_nick", _tbUserNick)
+	return nil
+}
+
+// Get TbUserNick Getter
+func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetTbUserNick() string {
+	return r._tbUserNick
+}
+
+// Set is Phone Setter
+// 手机号码
+func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetPhone(_phone string) error {
+	r._phone = _phone
+	r.Set("phone", _phone)
+	return nil
+}
+
+// Get Phone Getter
+func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetPhone() string {
+	return r._phone
+}
+
+// Set is CardType Setter
+// 联名卡类型cardType:1-大喵卡,2-小喵卡
+func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetCardType(_cardType string) error {
+	r._cardType = _cardType
+	r.Set("card_type", _cardType)
+	return nil
+}
+
+// Get CardType Getter
+func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetCardType() string {
+	return r._cardType
+}
+
+// Set is Action Setter
+// 1-激活，0-失效
+func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetAction(_action string) error {
+	r._action = _action
+	r.Set("action", _action)
+	return nil
+}
+
+// Get Action Getter
+func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetAction() string {
+	return r._action
+}

@@ -23,4 +23,75 @@ type TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest struct {
 	_waveCode string
 }
 
-// New
+// NewTaobaoWdkEquipmentConveyorContainerinfoGetRequest 初始化TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest对象
+func NewTaobaoWdkEquipmentConveyorContainerinfoGetRequest() *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest {
+	return &TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetApiMethodName() string {
+	return "taobao.wdk.equipment.conveyor.containerinfo.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WarehouseId Setter
+// 仓库id
+func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetWarehouseId(_warehouseId int64) error {
+	r._warehouseId = _warehouseId
+	r.Set("warehouse_id", _warehouseId)
+	return nil
+}
+
+// Get WarehouseId Getter
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetWarehouseId() int64 {
+	return r._warehouseId
+}
+
+// Set is ContainerCode Setter
+// 容器号
+func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetContainerCode(_containerCode string) error {
+	r._containerCode = _containerCode
+	r.Set("container_code", _containerCode)
+	return nil
+}
+
+// Get ContainerCode Getter
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetContainerCode() string {
+	return r._containerCode
+}
+
+// Set is BatchCode Setter
+// 批次号，可以为空串
+func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetBatchCode(_batchCode string) error {
+	r._batchCode = _batchCode
+	r.Set("batch_code", _batchCode)
+	return nil
+}
+
+// Get BatchCode Getter
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetBatchCode() string {
+	return r._batchCode
+}
+
+// Set is WaveCode Setter
+// 波次号，可以为空串
+func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetWaveCode(_waveCode string) error {
+	r._waveCode = _waveCode
+	r.Set("wave_code", _waveCode)
+	return nil
+}
+
+// Get WaveCode Getter
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetWaveCode() string {
+	return r._waveCode
+}

@@ -17,4 +17,36 @@ type AlibabaMjOcWritesaleslipAPIRequest struct {
 	_posSaleOrder *PosSaleOrderDto
 }
 
-// New
+// NewAlibabaMjOcWritesaleslipRequest 初始化AlibabaMjOcWritesaleslipAPIRequest对象
+func NewAlibabaMjOcWritesaleslipRequest() *AlibabaMjOcWritesaleslipAPIRequest {
+	return &AlibabaMjOcWritesaleslipAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMjOcWritesaleslipAPIRequest) GetApiMethodName() string {
+	return "alibaba.mj.oc.writesaleslip"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMjOcWritesaleslipAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PosSaleOrder Setter
+// 开票占库入参
+func (r *AlibabaMjOcWritesaleslipAPIRequest) SetPosSaleOrder(_posSaleOrder *PosSaleOrderDto) error {
+	r._posSaleOrder = _posSaleOrder
+	r.Set("pos_sale_order", _posSaleOrder)
+	return nil
+}
+
+// Get PosSaleOrder Getter
+func (r AlibabaMjOcWritesaleslipAPIRequest) GetPosSaleOrder() *PosSaleOrderDto {
+	return r._posSaleOrder
+}

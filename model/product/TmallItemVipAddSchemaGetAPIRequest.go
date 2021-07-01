@@ -15,4 +15,23 @@ type TmallItemVipAddSchemaGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTmallItemVipAddSchemaGetRequest 初始化TmallItemVipAddSchemaGetAPIRequest对象
+func NewTmallItemVipAddSchemaGetRequest() *TmallItemVipAddSchemaGetAPIRequest {
+	return &TmallItemVipAddSchemaGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallItemVipAddSchemaGetAPIRequest) GetApiMethodName() string {
+	return "tmall.item.vip.add.schema.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallItemVipAddSchemaGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

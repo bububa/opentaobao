@@ -19,4 +19,49 @@ type TmallStoreOrderCreateAPIRequest struct {
 	_createOrderRequest *CreateOrderRequest
 }
 
-// New
+// NewTmallStoreOrderCreateRequest 初始化TmallStoreOrderCreateAPIRequest对象
+func NewTmallStoreOrderCreateRequest() *TmallStoreOrderCreateAPIRequest {
+	return &TmallStoreOrderCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallStoreOrderCreateAPIRequest) GetApiMethodName() string {
+	return "tmall.store.order.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallStoreOrderCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AppInfo Setter
+// 系统自动生成
+func (r *TmallStoreOrderCreateAPIRequest) SetAppInfo(_appInfo *AppInfo) error {
+	r._appInfo = _appInfo
+	r.Set("app_info", _appInfo)
+	return nil
+}
+
+// Get AppInfo Getter
+func (r TmallStoreOrderCreateAPIRequest) GetAppInfo() *AppInfo {
+	return r._appInfo
+}
+
+// Set is CreateOrderRequest Setter
+// 创建订单请求
+func (r *TmallStoreOrderCreateAPIRequest) SetCreateOrderRequest(_createOrderRequest *CreateOrderRequest) error {
+	r._createOrderRequest = _createOrderRequest
+	r.Set("create_order_request", _createOrderRequest)
+	return nil
+}
+
+// Get CreateOrderRequest Getter
+func (r TmallStoreOrderCreateAPIRequest) GetCreateOrderRequest() *CreateOrderRequest {
+	return r._createOrderRequest
+}

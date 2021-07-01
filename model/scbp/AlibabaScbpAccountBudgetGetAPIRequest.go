@@ -15,4 +15,23 @@ type AlibabaScbpAccountBudgetGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaScbpAccountBudgetGetRequest 初始化AlibabaScbpAccountBudgetGetAPIRequest对象
+func NewAlibabaScbpAccountBudgetGetRequest() *AlibabaScbpAccountBudgetGetAPIRequest {
+	return &AlibabaScbpAccountBudgetGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpAccountBudgetGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.account.budget.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpAccountBudgetGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

@@ -17,4 +17,36 @@ type TaobaoNewretailDivisionRecordListGetAPIRequest struct {
 	_param *TopDivisionRecordReqDto
 }
 
-// New
+// NewTaobaoNewretailDivisionRecordListGetRequest 初始化TaobaoNewretailDivisionRecordListGetAPIRequest对象
+func NewTaobaoNewretailDivisionRecordListGetRequest() *TaobaoNewretailDivisionRecordListGetAPIRequest {
+	return &TaobaoNewretailDivisionRecordListGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetApiMethodName() string {
+	return "taobao.newretail.division.record.list.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参
+func (r *TaobaoNewretailDivisionRecordListGetAPIRequest) SetParam(_param *TopDivisionRecordReqDto) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetParam() *TopDivisionRecordReqDto {
+	return r._param
+}

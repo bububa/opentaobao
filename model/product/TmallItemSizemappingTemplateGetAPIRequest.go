@@ -17,4 +17,36 @@ type TmallItemSizemappingTemplateGetAPIRequest struct {
 	_templateId int64
 }
 
-// New
+// NewTmallItemSizemappingTemplateGetRequest 初始化TmallItemSizemappingTemplateGetAPIRequest对象
+func NewTmallItemSizemappingTemplateGetRequest() *TmallItemSizemappingTemplateGetAPIRequest {
+	return &TmallItemSizemappingTemplateGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallItemSizemappingTemplateGetAPIRequest) GetApiMethodName() string {
+	return "tmall.item.sizemapping.template.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallItemSizemappingTemplateGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TemplateId Setter
+// 尺码表模板ID
+func (r *TmallItemSizemappingTemplateGetAPIRequest) SetTemplateId(_templateId int64) error {
+	r._templateId = _templateId
+	r.Set("template_id", _templateId)
+	return nil
+}
+
+// Get TemplateId Getter
+func (r TmallItemSizemappingTemplateGetAPIRequest) GetTemplateId() int64 {
+	return r._templateId
+}

@@ -17,4 +17,36 @@ type AlibabaAliqinAxbVendorPushCallReleaseAPIRequest struct {
 	_endCallRequest *EndCallRequest
 }
 
-// New
+// NewAlibabaAliqinAxbVendorPushCallReleaseRequest 初始化AlibabaAliqinAxbVendorPushCallReleaseAPIRequest对象
+func NewAlibabaAliqinAxbVendorPushCallReleaseRequest() *AlibabaAliqinAxbVendorPushCallReleaseAPIRequest {
+	return &AlibabaAliqinAxbVendorPushCallReleaseAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) GetApiMethodName() string {
+	return "alibaba.aliqin.axb.vendor.push.call.release"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is EndCallRequest Setter
+// end_call_request
+func (r *AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) SetEndCallRequest(_endCallRequest *EndCallRequest) error {
+	r._endCallRequest = _endCallRequest
+	r.Set("end_call_request", _endCallRequest)
+	return nil
+}
+
+// Get EndCallRequest Getter
+func (r AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) GetEndCallRequest() *EndCallRequest {
+	return r._endCallRequest
+}

@@ -17,4 +17,36 @@ type TaobaoSubuserDepartmentsGetAPIRequest struct {
 	_userNick string
 }
 
-// New
+// NewTaobaoSubuserDepartmentsGetRequest 初始化TaobaoSubuserDepartmentsGetAPIRequest对象
+func NewTaobaoSubuserDepartmentsGetRequest() *TaobaoSubuserDepartmentsGetAPIRequest {
+	return &TaobaoSubuserDepartmentsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSubuserDepartmentsGetAPIRequest) GetApiMethodName() string {
+	return "taobao.subuser.departments.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSubuserDepartmentsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UserNick Setter
+// 主账号用户名
+func (r *TaobaoSubuserDepartmentsGetAPIRequest) SetUserNick(_userNick string) error {
+	r._userNick = _userNick
+	r.Set("user_nick", _userNick)
+	return nil
+}
+
+// Get UserNick Getter
+func (r TaobaoSubuserDepartmentsGetAPIRequest) GetUserNick() string {
+	return r._userNick
+}

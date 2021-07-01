@@ -26,4 +26,75 @@ type TaobaoOcTradetagsGetAPIRequest struct {
 	_tagNames []string
 }
 
-// New
+// NewTaobaoOcTradetagsGetRequest 初始化TaobaoOcTradetagsGetAPIRequest对象
+func NewTaobaoOcTradetagsGetRequest() *TaobaoOcTradetagsGetAPIRequest {
+	return &TaobaoOcTradetagsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOcTradetagsGetAPIRequest) GetApiMethodName() string {
+	return "taobao.oc.tradetags.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOcTradetagsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Tid Setter
+// 交易主订单id
+func (r *TaobaoOcTradetagsGetAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// Get Tid Getter
+func (r TaobaoOcTradetagsGetAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// Set is History Setter
+// 是否查询历史标签
+func (r *TaobaoOcTradetagsGetAPIRequest) SetHistory(_history int64) error {
+	r._history = _history
+	r.Set("history", _history)
+	return nil
+}
+
+// Get History Getter
+func (r TaobaoOcTradetagsGetAPIRequest) GetHistory() int64 {
+	return r._history
+}
+
+// Set is TagTypes Setter
+// 不填，则默认只查询1,2。1为官方标，2为自定义标，3为主站只读标签
+func (r *TaobaoOcTradetagsGetAPIRequest) SetTagTypes(_tagTypes []string) error {
+	r._tagTypes = _tagTypes
+	r.Set("tag_types", _tagTypes)
+	return nil
+}
+
+// Get TagTypes Getter
+func (r TaobaoOcTradetagsGetAPIRequest) GetTagTypes() []string {
+	return r._tagTypes
+}
+
+// Set is TagNames Setter
+// 不填，则不做标签名称过滤
+func (r *TaobaoOcTradetagsGetAPIRequest) SetTagNames(_tagNames []string) error {
+	r._tagNames = _tagNames
+	r.Set("tag_names", _tagNames)
+	return nil
+}
+
+// Get TagNames Getter
+func (r TaobaoOcTradetagsGetAPIRequest) GetTagNames() []string {
+	return r._tagNames
+}

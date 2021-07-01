@@ -17,4 +17,36 @@ type TaobaoTrainAgentBookordersGetVtwoAPIRequest struct {
 	_agentId int64
 }
 
-// New
+// NewTaobaoTrainAgentBookordersGetVtwoRequest 初始化TaobaoTrainAgentBookordersGetVtwoAPIRequest对象
+func NewTaobaoTrainAgentBookordersGetVtwoRequest() *TaobaoTrainAgentBookordersGetVtwoAPIRequest {
+	return &TaobaoTrainAgentBookordersGetVtwoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTrainAgentBookordersGetVtwoAPIRequest) GetApiMethodName() string {
+	return "taobao.train.agent.bookorders.get.vtwo"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTrainAgentBookordersGetVtwoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AgentId Setter
+// 代理商id
+func (r *TaobaoTrainAgentBookordersGetVtwoAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// Get AgentId Getter
+func (r TaobaoTrainAgentBookordersGetVtwoAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}

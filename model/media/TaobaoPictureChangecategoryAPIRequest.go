@@ -19,4 +19,49 @@ type TaobaoPictureChangecategoryAPIRequest struct {
 	_pictureCategoryId int64
 }
 
-// New
+// NewTaobaoPictureChangecategoryRequest 初始化TaobaoPictureChangecategoryAPIRequest对象
+func NewTaobaoPictureChangecategoryRequest() *TaobaoPictureChangecategoryAPIRequest {
+	return &TaobaoPictureChangecategoryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPictureChangecategoryAPIRequest) GetApiMethodName() string {
+	return "taobao.picture.changecategory"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPictureChangecategoryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PictureIds Setter
+// 要移动的图片的id
+func (r *TaobaoPictureChangecategoryAPIRequest) SetPictureIds(_pictureIds []int64) error {
+	r._pictureIds = _pictureIds
+	r.Set("picture_ids", _pictureIds)
+	return nil
+}
+
+// Get PictureIds Getter
+func (r TaobaoPictureChangecategoryAPIRequest) GetPictureIds() []int64 {
+	return r._pictureIds
+}
+
+// Set is PictureCategoryId Setter
+// 目标分类的id
+func (r *TaobaoPictureChangecategoryAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
+	r._pictureCategoryId = _pictureCategoryId
+	r.Set("picture_category_id", _pictureCategoryId)
+	return nil
+}
+
+// Get PictureCategoryId Getter
+func (r TaobaoPictureChangecategoryAPIRequest) GetPictureCategoryId() int64 {
+	return r._pictureCategoryId
+}

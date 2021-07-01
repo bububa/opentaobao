@@ -23,4 +23,75 @@ type AlibabaAlihealthStoreCertificateCreateAPIRequest struct {
 	_bizNo string
 }
 
-// New
+// NewAlibabaAlihealthStoreCertificateCreateRequest 初始化AlibabaAlihealthStoreCertificateCreateAPIRequest对象
+func NewAlibabaAlihealthStoreCertificateCreateRequest() *AlibabaAlihealthStoreCertificateCreateAPIRequest {
+	return &AlibabaAlihealthStoreCertificateCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.store.certificate.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StoreCode Setter
+// 仓库code
+func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetStoreCode(_storeCode string) error {
+	r._storeCode = _storeCode
+	r.Set("store_code", _storeCode)
+	return nil
+}
+
+// Get StoreCode Getter
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetStoreCode() string {
+	return r._storeCode
+}
+
+// Set is AuditType Setter
+// 审批业务类型
+func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetAuditType(_auditType string) error {
+	r._auditType = _auditType
+	r.Set("audit_type", _auditType)
+	return nil
+}
+
+// Get AuditType Getter
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetAuditType() string {
+	return r._auditType
+}
+
+// Set is Content Setter
+// 审批内容
+func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetContent(_content string) error {
+	r._content = _content
+	r.Set("content", _content)
+	return nil
+}
+
+// Get Content Getter
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetContent() string {
+	return r._content
+}
+
+// Set is BizNo Setter
+// 业务单号
+func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetBizNo(_bizNo string) error {
+	r._bizNo = _bizNo
+	r.Set("biz_no", _bizNo)
+	return nil
+}
+
+// Get BizNo Getter
+func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetBizNo() string {
+	return r._bizNo
+}

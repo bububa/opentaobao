@@ -15,4 +15,23 @@ type AlibabaScbpAdAccountLevelGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaScbpAdAccountLevelGetRequest 初始化AlibabaScbpAdAccountLevelGetAPIRequest对象
+func NewAlibabaScbpAdAccountLevelGetRequest() *AlibabaScbpAdAccountLevelGetAPIRequest {
+	return &AlibabaScbpAdAccountLevelGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpAdAccountLevelGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.ad.account.level.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpAdAccountLevelGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

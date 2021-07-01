@@ -17,4 +17,36 @@ type CainiaoIotTicketSpMailVoucherUploadAPIRequest struct {
 	_param *CommentTicketTopRequest
 }
 
-// New
+// NewCainiaoIotTicketSpMailVoucherUploadRequest 初始化CainiaoIotTicketSpMailVoucherUploadAPIRequest对象
+func NewCainiaoIotTicketSpMailVoucherUploadRequest() *CainiaoIotTicketSpMailVoucherUploadAPIRequest {
+	return &CainiaoIotTicketSpMailVoucherUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoIotTicketSpMailVoucherUploadAPIRequest) GetApiMethodName() string {
+	return "cainiao.iot.ticket.sp.mail.voucher.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoIotTicketSpMailVoucherUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 请求参数
+func (r *CainiaoIotTicketSpMailVoucherUploadAPIRequest) SetParam(_param *CommentTicketTopRequest) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r CainiaoIotTicketSpMailVoucherUploadAPIRequest) GetParam() *CommentTicketTopRequest {
+	return r._param
+}

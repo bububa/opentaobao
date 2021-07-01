@@ -17,4 +17,36 @@ type AlibabaWdkBmTradeActivityQueryAPIRequest struct {
 	_queryParam *IsvOrderQueryParam
 }
 
-// New
+// NewAlibabaWdkBmTradeActivityQueryRequest 初始化AlibabaWdkBmTradeActivityQueryAPIRequest对象
+func NewAlibabaWdkBmTradeActivityQueryRequest() *AlibabaWdkBmTradeActivityQueryAPIRequest {
+	return &AlibabaWdkBmTradeActivityQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkBmTradeActivityQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.bm.trade.activity.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkBmTradeActivityQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is QueryParam Setter
+// 入参
+func (r *AlibabaWdkBmTradeActivityQueryAPIRequest) SetQueryParam(_queryParam *IsvOrderQueryParam) error {
+	r._queryParam = _queryParam
+	r.Set("query_param", _queryParam)
+	return nil
+}
+
+// Get QueryParam Getter
+func (r AlibabaWdkBmTradeActivityQueryAPIRequest) GetQueryParam() *IsvOrderQueryParam {
+	return r._queryParam
+}

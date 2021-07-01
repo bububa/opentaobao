@@ -17,4 +17,36 @@ type TaobaoVmarketEticketPackageBaseGetAPIRequest struct {
 	_packageId int64
 }
 
-// New
+// NewTaobaoVmarketEticketPackageBaseGetRequest 初始化TaobaoVmarketEticketPackageBaseGetAPIRequest对象
+func NewTaobaoVmarketEticketPackageBaseGetRequest() *TaobaoVmarketEticketPackageBaseGetAPIRequest {
+	return &TaobaoVmarketEticketPackageBaseGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoVmarketEticketPackageBaseGetAPIRequest) GetApiMethodName() string {
+	return "taobao.vmarket.eticket.package.base.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoVmarketEticketPackageBaseGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PackageId Setter
+// 包id
+func (r *TaobaoVmarketEticketPackageBaseGetAPIRequest) SetPackageId(_packageId int64) error {
+	r._packageId = _packageId
+	r.Set("package_id", _packageId)
+	return nil
+}
+
+// Get PackageId Getter
+func (r TaobaoVmarketEticketPackageBaseGetAPIRequest) GetPackageId() int64 {
+	return r._packageId
+}

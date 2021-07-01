@@ -21,4 +21,62 @@ type TmallNrFulfillOrderQueryAPIRequest struct {
 	_extParam string
 }
 
-// New
+// NewTmallNrFulfillOrderQueryRequest 初始化TmallNrFulfillOrderQueryAPIRequest对象
+func NewTmallNrFulfillOrderQueryRequest() *TmallNrFulfillOrderQueryAPIRequest {
+	return &TmallNrFulfillOrderQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrFulfillOrderQueryAPIRequest) GetApiMethodName() string {
+	return "tmall.nr.fulfill.order.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrFulfillOrderQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BizIdentity Setter
+// 业务标识，dss标识定时送业务；jsd表示极速达业务
+func (r *TmallNrFulfillOrderQueryAPIRequest) SetBizIdentity(_bizIdentity string) error {
+	r._bizIdentity = _bizIdentity
+	r.Set("biz_identity", _bizIdentity)
+	return nil
+}
+
+// Get BizIdentity Getter
+func (r TmallNrFulfillOrderQueryAPIRequest) GetBizIdentity() string {
+	return r._bizIdentity
+}
+
+// Set is OrderId Setter
+// 交易主订单号
+func (r *TmallNrFulfillOrderQueryAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r TmallNrFulfillOrderQueryAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// Set is ExtParam Setter
+// 预留-扩展信息
+func (r *TmallNrFulfillOrderQueryAPIRequest) SetExtParam(_extParam string) error {
+	r._extParam = _extParam
+	r.Set("ext_param", _extParam)
+	return nil
+}
+
+// Get ExtParam Getter
+func (r TmallNrFulfillOrderQueryAPIRequest) GetExtParam() string {
+	return r._extParam
+}

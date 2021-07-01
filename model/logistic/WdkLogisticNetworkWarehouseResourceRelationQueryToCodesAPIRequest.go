@@ -17,4 +17,36 @@ type WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest struct {
 	_paramYxWarehouseResourceRelationQueryRequest *YxWarehouseResourceRelationQueryRequest
 }
 
-// New
+// NewWdkLogisticNetworkWarehouseResourceRelationQueryToCodesRequest 初始化WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest对象
+func NewWdkLogisticNetworkWarehouseResourceRelationQueryToCodesRequest() *WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest {
+	return &WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest) GetApiMethodName() string {
+	return "wdk.logistic.network.warehouse.resource.relation.query.to.codes"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamYxWarehouseResourceRelationQueryRequest Setter
+// 入参
+func (r *WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest) SetParamYxWarehouseResourceRelationQueryRequest(_paramYxWarehouseResourceRelationQueryRequest *YxWarehouseResourceRelationQueryRequest) error {
+	r._paramYxWarehouseResourceRelationQueryRequest = _paramYxWarehouseResourceRelationQueryRequest
+	r.Set("param_yx_warehouse_resource_relation_query_request", _paramYxWarehouseResourceRelationQueryRequest)
+	return nil
+}
+
+// Get ParamYxWarehouseResourceRelationQueryRequest Getter
+func (r WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest) GetParamYxWarehouseResourceRelationQueryRequest() *YxWarehouseResourceRelationQueryRequest {
+	return r._paramYxWarehouseResourceRelationQueryRequest
+}

@@ -17,4 +17,36 @@ type YoukuWenyuvideoSeetaGetAPIRequest struct {
 	_videoStrId string
 }
 
-// New
+// NewYoukuWenyuvideoSeetaGetRequest 初始化YoukuWenyuvideoSeetaGetAPIRequest对象
+func NewYoukuWenyuvideoSeetaGetRequest() *YoukuWenyuvideoSeetaGetAPIRequest {
+	return &YoukuWenyuvideoSeetaGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YoukuWenyuvideoSeetaGetAPIRequest) GetApiMethodName() string {
+	return "youku.wenyuvideo.seeta.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YoukuWenyuvideoSeetaGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is VideoStrId Setter
+// 视频字符串形式id
+func (r *YoukuWenyuvideoSeetaGetAPIRequest) SetVideoStrId(_videoStrId string) error {
+	r._videoStrId = _videoStrId
+	r.Set("video_str_id", _videoStrId)
+	return nil
+}
+
+// Get VideoStrId Getter
+func (r YoukuWenyuvideoSeetaGetAPIRequest) GetVideoStrId() string {
+	return r._videoStrId
+}

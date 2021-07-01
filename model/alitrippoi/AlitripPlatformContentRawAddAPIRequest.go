@@ -17,4 +17,36 @@ type AlitripPlatformContentRawAddAPIRequest struct {
 	_fliggyContentRequest *FliggyContentRequest
 }
 
-// New
+// NewAlitripPlatformContentRawAddRequest 初始化AlitripPlatformContentRawAddAPIRequest对象
+func NewAlitripPlatformContentRawAddRequest() *AlitripPlatformContentRawAddAPIRequest {
+	return &AlitripPlatformContentRawAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripPlatformContentRawAddAPIRequest) GetApiMethodName() string {
+	return "alitrip.platform.content.raw.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripPlatformContentRawAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FliggyContentRequest Setter
+// 写入入参
+func (r *AlitripPlatformContentRawAddAPIRequest) SetFliggyContentRequest(_fliggyContentRequest *FliggyContentRequest) error {
+	r._fliggyContentRequest = _fliggyContentRequest
+	r.Set("fliggy_content_request", _fliggyContentRequest)
+	return nil
+}
+
+// Get FliggyContentRequest Getter
+func (r AlitripPlatformContentRawAddAPIRequest) GetFliggyContentRequest() *FliggyContentRequest {
+	return r._fliggyContentRequest
+}

@@ -17,4 +17,36 @@ type TaobaoUsergrowthOfflineConvertionSummaryOneGetAPIRequest struct {
 	_query *OfflineMapiQuery
 }
 
-// New
+// NewTaobaoUsergrowthOfflineConvertionSummaryOneGetRequest 初始化TaobaoUsergrowthOfflineConvertionSummaryOneGetAPIRequest对象
+func NewTaobaoUsergrowthOfflineConvertionSummaryOneGetRequest() *TaobaoUsergrowthOfflineConvertionSummaryOneGetAPIRequest {
+	return &TaobaoUsergrowthOfflineConvertionSummaryOneGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUsergrowthOfflineConvertionSummaryOneGetAPIRequest) GetApiMethodName() string {
+	return "taobao.usergrowth.offline.convertion.summary.one.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUsergrowthOfflineConvertionSummaryOneGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 入参
+func (r *TaobaoUsergrowthOfflineConvertionSummaryOneGetAPIRequest) SetQuery(_query *OfflineMapiQuery) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r TaobaoUsergrowthOfflineConvertionSummaryOneGetAPIRequest) GetQuery() *OfflineMapiQuery {
+	return r._query
+}

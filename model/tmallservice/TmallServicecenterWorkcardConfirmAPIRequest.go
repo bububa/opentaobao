@@ -17,4 +17,36 @@ type TmallServicecenterWorkcardConfirmAPIRequest struct {
 	_workcardId int64
 }
 
-// New
+// NewTmallServicecenterWorkcardConfirmRequest 初始化TmallServicecenterWorkcardConfirmAPIRequest对象
+func NewTmallServicecenterWorkcardConfirmRequest() *TmallServicecenterWorkcardConfirmAPIRequest {
+	return &TmallServicecenterWorkcardConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterWorkcardConfirmAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.workcard.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterWorkcardConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WorkcardId Setter
+// 工单id
+func (r *TmallServicecenterWorkcardConfirmAPIRequest) SetWorkcardId(_workcardId int64) error {
+	r._workcardId = _workcardId
+	r.Set("workcard_id", _workcardId)
+	return nil
+}
+
+// Get WorkcardId Getter
+func (r TmallServicecenterWorkcardConfirmAPIRequest) GetWorkcardId() int64 {
+	return r._workcardId
+}

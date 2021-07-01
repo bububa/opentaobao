@@ -17,4 +17,36 @@ type YunosTvpubadminManageDialogAddAPIRequest struct {
 	_dialogJson string
 }
 
-// New
+// NewYunosTvpubadminManageDialogAddRequest 初始化YunosTvpubadminManageDialogAddAPIRequest对象
+func NewYunosTvpubadminManageDialogAddRequest() *YunosTvpubadminManageDialogAddAPIRequest {
+	return &YunosTvpubadminManageDialogAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminManageDialogAddAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.manage.dialog.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminManageDialogAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DialogJson Setter
+// 新增的全局弹窗json
+func (r *YunosTvpubadminManageDialogAddAPIRequest) SetDialogJson(_dialogJson string) error {
+	r._dialogJson = _dialogJson
+	r.Set("dialog_json", _dialogJson)
+	return nil
+}
+
+// Get DialogJson Getter
+func (r YunosTvpubadminManageDialogAddAPIRequest) GetDialogJson() string {
+	return r._dialogJson
+}

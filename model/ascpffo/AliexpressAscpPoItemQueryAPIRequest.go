@@ -17,4 +17,36 @@ type AliexpressAscpPoItemQueryAPIRequest struct {
 	_purchaseOrderItemQuery *PurchaseOrderItemQueryDto
 }
 
-// New
+// NewAliexpressAscpPoItemQueryRequest 初始化AliexpressAscpPoItemQueryAPIRequest对象
+func NewAliexpressAscpPoItemQueryRequest() *AliexpressAscpPoItemQueryAPIRequest {
+	return &AliexpressAscpPoItemQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressAscpPoItemQueryAPIRequest) GetApiMethodName() string {
+	return "aliexpress.ascp.po.item.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressAscpPoItemQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PurchaseOrderItemQuery Setter
+// demo
+func (r *AliexpressAscpPoItemQueryAPIRequest) SetPurchaseOrderItemQuery(_purchaseOrderItemQuery *PurchaseOrderItemQueryDto) error {
+	r._purchaseOrderItemQuery = _purchaseOrderItemQuery
+	r.Set("purchase_order_item_query", _purchaseOrderItemQuery)
+	return nil
+}
+
+// Get PurchaseOrderItemQuery Getter
+func (r AliexpressAscpPoItemQueryAPIRequest) GetPurchaseOrderItemQuery() *PurchaseOrderItemQueryDto {
+	return r._purchaseOrderItemQuery
+}

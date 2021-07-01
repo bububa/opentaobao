@@ -45,4 +45,218 @@ type AliexpressAffiliateHotproductQueryAPIRequest struct {
 	_shipToCountry string
 }
 
-// New
+// NewAliexpressAffiliateHotproductQueryRequest 初始化AliexpressAffiliateHotproductQueryAPIRequest对象
+func NewAliexpressAffiliateHotproductQueryRequest() *AliexpressAffiliateHotproductQueryAPIRequest {
+	return &AliexpressAffiliateHotproductQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetApiMethodName() string {
+	return "aliexpress.affiliate.hotproduct.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AppSignature Setter
+// 请求签名
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetAppSignature(_appSignature string) error {
+	r._appSignature = _appSignature
+	r.Set("app_signature", _appSignature)
+	return nil
+}
+
+// Get AppSignature Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetAppSignature() string {
+	return r._appSignature
+}
+
+// Set is CategoryIds Setter
+// 类目ID列表
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetCategoryIds(_categoryIds string) error {
+	r._categoryIds = _categoryIds
+	r.Set("category_ids", _categoryIds)
+	return nil
+}
+
+// Get CategoryIds Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetCategoryIds() string {
+	return r._categoryIds
+}
+
+// Set is Fields Setter
+// 返回字段列表
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetFields(_fields string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// Get Fields Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetFields() string {
+	return r._fields
+}
+
+// Set is Keywords Setter
+// 关键词
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetKeywords(_keywords string) error {
+	r._keywords = _keywords
+	r.Set("keywords", _keywords)
+	return nil
+}
+
+// Get Keywords Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetKeywords() string {
+	return r._keywords
+}
+
+// Set is MaxSalePrice Setter
+// 最大售价
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetMaxSalePrice(_maxSalePrice int64) error {
+	r._maxSalePrice = _maxSalePrice
+	r.Set("max_sale_price", _maxSalePrice)
+	return nil
+}
+
+// Get MaxSalePrice Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetMaxSalePrice() int64 {
+	return r._maxSalePrice
+}
+
+// Set is MinSalePrice Setter
+// 最小售价
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetMinSalePrice(_minSalePrice int64) error {
+	r._minSalePrice = _minSalePrice
+	r.Set("min_sale_price", _minSalePrice)
+	return nil
+}
+
+// Get MinSalePrice Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetMinSalePrice() int64 {
+	return r._minSalePrice
+}
+
+// Set is PageNo Setter
+// 请求页数
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 每次请求数量
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is PlatformProductType Setter
+// 平台商家类型：ALL,PLAZA,TMALL
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetPlatformProductType(_platformProductType string) error {
+	r._platformProductType = _platformProductType
+	r.Set("platform_product_type", _platformProductType)
+	return nil
+}
+
+// Get PlatformProductType Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetPlatformProductType() string {
+	return r._platformProductType
+}
+
+// Set is Sort Setter
+// 排序方式:SALE_PRICE_ASC, SALE_PRICE_DESC, DISCOUNT_ASC, DISCOUNT_DESC, LAST_VOLUME_ASC, LAST_VOLUME_DESC
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetSort(_sort string) error {
+	r._sort = _sort
+	r.Set("sort", _sort)
+	return nil
+}
+
+// Get Sort Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetSort() string {
+	return r._sort
+}
+
+// Set is TargetCurrency Setter
+// 目标币种:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetTargetCurrency(_targetCurrency string) error {
+	r._targetCurrency = _targetCurrency
+	r.Set("target_currency", _targetCurrency)
+	return nil
+}
+
+// Get TargetCurrency Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetTargetCurrency() string {
+	return r._targetCurrency
+}
+
+// Set is TargetLanguage Setter
+// 目标语言:EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IW,IN
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetTargetLanguage(_targetLanguage string) error {
+	r._targetLanguage = _targetLanguage
+	r.Set("target_language", _targetLanguage)
+	return nil
+}
+
+// Get TargetLanguage Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetTargetLanguage() string {
+	return r._targetLanguage
+}
+
+// Set is TrackingId Setter
+// trackingId
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetTrackingId(_trackingId string) error {
+	r._trackingId = _trackingId
+	r.Set("tracking_id", _trackingId)
+	return nil
+}
+
+// Get TrackingId Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetTrackingId() string {
+	return r._trackingId
+}
+
+// Set is DeliveryDays Setter
+// 物流到达时间。3：3日达，5：5 日达，7：7日达，10：10日达
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetDeliveryDays(_deliveryDays string) error {
+	r._deliveryDays = _deliveryDays
+	r.Set("delivery_days", _deliveryDays)
+	return nil
+}
+
+// Get DeliveryDays Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetDeliveryDays() string {
+	return r._deliveryDays
+}
+
+// Set is ShipToCountry Setter
+// 商品收货国家，根据该国家税率政策返回对应商品价格
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetShipToCountry(_shipToCountry string) error {
+	r._shipToCountry = _shipToCountry
+	r.Set("ship_to_country", _shipToCountry)
+	return nil
+}
+
+// Get ShipToCountry Getter
+func (r AliexpressAffiliateHotproductQueryAPIRequest) GetShipToCountry() string {
+	return r._shipToCountry
+}

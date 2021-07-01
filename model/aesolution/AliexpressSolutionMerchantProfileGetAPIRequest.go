@@ -15,4 +15,23 @@ type AliexpressSolutionMerchantProfileGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAliexpressSolutionMerchantProfileGetRequest 初始化AliexpressSolutionMerchantProfileGetAPIRequest对象
+func NewAliexpressSolutionMerchantProfileGetRequest() *AliexpressSolutionMerchantProfileGetAPIRequest {
+	return &AliexpressSolutionMerchantProfileGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressSolutionMerchantProfileGetAPIRequest) GetApiMethodName() string {
+	return "aliexpress.solution.merchant.profile.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressSolutionMerchantProfileGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

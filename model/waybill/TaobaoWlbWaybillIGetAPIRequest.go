@@ -17,4 +17,36 @@ type TaobaoWlbWaybillIGetAPIRequest struct {
 	_waybillApplyNewRequest *WaybillApplyNewRequest
 }
 
-// New
+// NewTaobaoWlbWaybillIGetRequest 初始化TaobaoWlbWaybillIGetAPIRequest对象
+func NewTaobaoWlbWaybillIGetRequest() *TaobaoWlbWaybillIGetAPIRequest {
+	return &TaobaoWlbWaybillIGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbWaybillIGetAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.waybill.i.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbWaybillIGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WaybillApplyNewRequest Setter
+// 面单申请
+func (r *TaobaoWlbWaybillIGetAPIRequest) SetWaybillApplyNewRequest(_waybillApplyNewRequest *WaybillApplyNewRequest) error {
+	r._waybillApplyNewRequest = _waybillApplyNewRequest
+	r.Set("waybill_apply_new_request", _waybillApplyNewRequest)
+	return nil
+}
+
+// Get WaybillApplyNewRequest Getter
+func (r TaobaoWlbWaybillIGetAPIRequest) GetWaybillApplyNewRequest() *WaybillApplyNewRequest {
+	return r._waybillApplyNewRequest
+}

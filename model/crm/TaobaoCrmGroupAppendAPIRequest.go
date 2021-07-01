@@ -19,4 +19,49 @@ type TaobaoCrmGroupAppendAPIRequest struct {
 	_toGroupId int64
 }
 
-// New
+// NewTaobaoCrmGroupAppendRequest 初始化TaobaoCrmGroupAppendAPIRequest对象
+func NewTaobaoCrmGroupAppendRequest() *TaobaoCrmGroupAppendAPIRequest {
+	return &TaobaoCrmGroupAppendAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCrmGroupAppendAPIRequest) GetApiMethodName() string {
+	return "taobao.crm.group.append"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCrmGroupAppendAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FromGroupId Setter
+// 添加的来源分组
+func (r *TaobaoCrmGroupAppendAPIRequest) SetFromGroupId(_fromGroupId int64) error {
+	r._fromGroupId = _fromGroupId
+	r.Set("from_group_id", _fromGroupId)
+	return nil
+}
+
+// Get FromGroupId Getter
+func (r TaobaoCrmGroupAppendAPIRequest) GetFromGroupId() int64 {
+	return r._fromGroupId
+}
+
+// Set is ToGroupId Setter
+// 添加的目标分组
+func (r *TaobaoCrmGroupAppendAPIRequest) SetToGroupId(_toGroupId int64) error {
+	r._toGroupId = _toGroupId
+	r.Set("to_group_id", _toGroupId)
+	return nil
+}
+
+// Get ToGroupId Getter
+func (r TaobaoCrmGroupAppendAPIRequest) GetToGroupId() int64 {
+	return r._toGroupId
+}

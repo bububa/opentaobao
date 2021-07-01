@@ -18,4 +18,36 @@ type AliyunViapiObjectdetDetectobjectAPIRequest struct {
 	_imageUrl string
 }
 
-// New
+// NewAliyunViapiObjectdetDetectobjectRequest 初始化AliyunViapiObjectdetDetectobjectAPIRequest对象
+func NewAliyunViapiObjectdetDetectobjectRequest() *AliyunViapiObjectdetDetectobjectAPIRequest {
+	return &AliyunViapiObjectdetDetectobjectAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliyunViapiObjectdetDetectobjectAPIRequest) GetApiMethodName() string {
+	return "aliyun.viapi.objectdet.detectobject"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliyunViapiObjectdetDetectobjectAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ImageUrl Setter
+// 待检测图片链接
+func (r *AliyunViapiObjectdetDetectobjectAPIRequest) SetImageUrl(_imageUrl string) error {
+	r._imageUrl = _imageUrl
+	r.Set("image_url", _imageUrl)
+	return nil
+}
+
+// Get ImageUrl Getter
+func (r AliyunViapiObjectdetDetectobjectAPIRequest) GetImageUrl() string {
+	return r._imageUrl
+}

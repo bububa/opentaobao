@@ -15,4 +15,23 @@ type AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaScbpTargetAdPlanCrowdIdGetRequest 初始化AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest对象
+func NewAlibabaScbpTargetAdPlanCrowdIdGetRequest() *AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest {
+	return &AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.target.ad.plan.crowd.id.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpTargetAdPlanCrowdIdGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

@@ -23,4 +23,75 @@ type AlibabaRetailDeviceInventorySyncAPIRequest struct {
 	_deviceOption *InventorySyncOption
 }
 
-// New
+// NewAlibabaRetailDeviceInventorySyncRequest 初始化AlibabaRetailDeviceInventorySyncAPIRequest对象
+func NewAlibabaRetailDeviceInventorySyncRequest() *AlibabaRetailDeviceInventorySyncAPIRequest {
+	return &AlibabaRetailDeviceInventorySyncAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetApiMethodName() string {
+	return "alibaba.retail.device.inventory.sync"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DeviceType Setter
+// 设备类型
+func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetDeviceType(_deviceType string) error {
+	r._deviceType = _deviceType
+	r.Set("device_type", _deviceType)
+	return nil
+}
+
+// Get DeviceType Getter
+func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetDeviceType() string {
+	return r._deviceType
+}
+
+// Set is DeviceId Setter
+// 设备Id
+func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetDeviceId(_deviceId string) error {
+	r._deviceId = _deviceId
+	r.Set("device_id", _deviceId)
+	return nil
+}
+
+// Get DeviceId Getter
+func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetDeviceId() string {
+	return r._deviceId
+}
+
+// Set is InventoryDtos Setter
+// 系统自动生成
+func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetInventoryDtos(_inventoryDtos []InventorySyncDto) error {
+	r._inventoryDtos = _inventoryDtos
+	r.Set("inventory_dtos", _inventoryDtos)
+	return nil
+}
+
+// Get InventoryDtos Getter
+func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetInventoryDtos() []InventorySyncDto {
+	return r._inventoryDtos
+}
+
+// Set is DeviceOption Setter
+// 系统自动生成
+func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetDeviceOption(_deviceOption *InventorySyncOption) error {
+	r._deviceOption = _deviceOption
+	r.Set("device_option", _deviceOption)
+	return nil
+}
+
+// Get DeviceOption Getter
+func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetDeviceOption() *InventorySyncOption {
+	return r._deviceOption
+}

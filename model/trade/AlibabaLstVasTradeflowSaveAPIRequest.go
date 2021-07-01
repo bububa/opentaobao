@@ -17,4 +17,36 @@ type AlibabaLstVasTradeflowSaveAPIRequest struct {
 	_tradeFlowModelList *TradeFlowModel
 }
 
-// New
+// NewAlibabaLstVasTradeflowSaveRequest 初始化AlibabaLstVasTradeflowSaveAPIRequest对象
+func NewAlibabaLstVasTradeflowSaveRequest() *AlibabaLstVasTradeflowSaveAPIRequest {
+	return &AlibabaLstVasTradeflowSaveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstVasTradeflowSaveAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.vas.tradeflow.save"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstVasTradeflowSaveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TradeFlowModelList Setter
+// 交易流水信息
+func (r *AlibabaLstVasTradeflowSaveAPIRequest) SetTradeFlowModelList(_tradeFlowModelList *TradeFlowModel) error {
+	r._tradeFlowModelList = _tradeFlowModelList
+	r.Set("trade_flow_model_list", _tradeFlowModelList)
+	return nil
+}
+
+// Get TradeFlowModelList Getter
+func (r AlibabaLstVasTradeflowSaveAPIRequest) GetTradeFlowModelList() *TradeFlowModel {
+	return r._tradeFlowModelList
+}

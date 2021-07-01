@@ -17,4 +17,36 @@ type AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest struct {
 	_presalesOrderCreateRequest *PresalesordercreaterequestTest
 }
 
-// New
+// NewAlibabaAscpUopTaobaoPresalesorderCreateRequest 初始化AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest对象
+func NewAlibabaAscpUopTaobaoPresalesorderCreateRequest() *AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest {
+	return &AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.uop.taobao.presalesorder.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PresalesOrderCreateRequest Setter
+// 预售商家仓接单对象
+func (r *AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) SetPresalesOrderCreateRequest(_presalesOrderCreateRequest *PresalesordercreaterequestTest) error {
+	r._presalesOrderCreateRequest = _presalesOrderCreateRequest
+	r.Set("presales_order_create_request", _presalesOrderCreateRequest)
+	return nil
+}
+
+// Get PresalesOrderCreateRequest Getter
+func (r AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) GetPresalesOrderCreateRequest() *PresalesordercreaterequestTest {
+	return r._presalesOrderCreateRequest
+}

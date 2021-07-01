@@ -19,4 +19,49 @@ type TaobaoAilabAicloudTopMessagePushAPIRequest struct {
 	_userInfoContext *OpsRequestUserInfoContext
 }
 
-// New
+// NewTaobaoAilabAicloudTopMessagePushRequest 初始化TaobaoAilabAicloudTopMessagePushAPIRequest对象
+func NewTaobaoAilabAicloudTopMessagePushRequest() *TaobaoAilabAicloudTopMessagePushAPIRequest {
+	return &TaobaoAilabAicloudTopMessagePushAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAilabAicloudTopMessagePushAPIRequest) GetApiMethodName() string {
+	return "taobao.ailab.aicloud.top.message.push"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAilabAicloudTopMessagePushAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MessageBroadcastRequest Setter
+// 消息推送请求
+func (r *TaobaoAilabAicloudTopMessagePushAPIRequest) SetMessageBroadcastRequest(_messageBroadcastRequest *MessageBroadcastRequest) error {
+	r._messageBroadcastRequest = _messageBroadcastRequest
+	r.Set("message_broadcast_request", _messageBroadcastRequest)
+	return nil
+}
+
+// Get MessageBroadcastRequest Getter
+func (r TaobaoAilabAicloudTopMessagePushAPIRequest) GetMessageBroadcastRequest() *MessageBroadcastRequest {
+	return r._messageBroadcastRequest
+}
+
+// Set is UserInfoContext Setter
+// 当前用户信息
+func (r *TaobaoAilabAicloudTopMessagePushAPIRequest) SetUserInfoContext(_userInfoContext *OpsRequestUserInfoContext) error {
+	r._userInfoContext = _userInfoContext
+	r.Set("user_info_context", _userInfoContext)
+	return nil
+}
+
+// Get UserInfoContext Getter
+func (r TaobaoAilabAicloudTopMessagePushAPIRequest) GetUserInfoContext() *OpsRequestUserInfoContext {
+	return r._userInfoContext
+}

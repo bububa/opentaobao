@@ -19,4 +19,49 @@ type AlibabaAlihealthDrugDownloadFileacceptretAPIRequest struct {
 	_fileResultJson string
 }
 
-// New
+// NewAlibabaAlihealthDrugDownloadFileacceptretRequest 初始化AlibabaAlihealthDrugDownloadFileacceptretAPIRequest对象
+func NewAlibabaAlihealthDrugDownloadFileacceptretRequest() *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest {
+	return &AlibabaAlihealthDrugDownloadFileacceptretAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.drug.download.fileacceptret"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AppKeyN Setter
+// appKey
+func (r *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) SetAppKeyN(_appKeyN string) error {
+	r._appKeyN = _appKeyN
+	r.Set("app_key_n", _appKeyN)
+	return nil
+}
+
+// Get AppKeyN Getter
+func (r AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) GetAppKeyN() string {
+	return r._appKeyN
+}
+
+// Set is FileResultJson Setter
+// fileResultJson
+func (r *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) SetFileResultJson(_fileResultJson string) error {
+	r._fileResultJson = _fileResultJson
+	r.Set("file_result_json", _fileResultJson)
+	return nil
+}
+
+// Get FileResultJson Getter
+func (r AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) GetFileResultJson() string {
+	return r._fileResultJson
+}

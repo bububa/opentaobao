@@ -33,4 +33,140 @@ type TaobaoAlitripTravelItemBaseAddAPIRequest struct {
 	_tcwlItemExt *TcwlItemExt
 }
 
-// New
+// NewTaobaoAlitripTravelItemBaseAddRequest 初始化TaobaoAlitripTravelItemBaseAddAPIRequest对象
+func NewTaobaoAlitripTravelItemBaseAddRequest() *TaobaoAlitripTravelItemBaseAddAPIRequest {
+	return &TaobaoAlitripTravelItemBaseAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.travel.item.base.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BaseInfo Setter
+// 必填，商品基本信息
+func (r *TaobaoAlitripTravelItemBaseAddAPIRequest) SetBaseInfo(_baseInfo *PontusTravelItemBaseInfo) error {
+	r._baseInfo = _baseInfo
+	r.Set("base_info", _baseInfo)
+	return nil
+}
+
+// Get BaseInfo Getter
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetBaseInfo() *PontusTravelItemBaseInfo {
+	return r._baseInfo
+}
+
+// Set is BookingRules Setter
+// 必填，预定规则结构。示例： [{  "rule_type": "fee_excluded",  "rule_desc": "费用包含描述"},{  "rule_type": "fee_included",  "rule_desc": "费用不含描述"},{  "rule_type": "order_info",  "rule_desc": "预定须知描述"}]
+func (r *TaobaoAlitripTravelItemBaseAddAPIRequest) SetBookingRules(_bookingRules []PontusTravelBookingRuleInfo) error {
+	r._bookingRules = _bookingRules
+	r.Set("booking_rules", _bookingRules)
+	return nil
+}
+
+// Get BookingRules Getter
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetBookingRules() []PontusTravelBookingRuleInfo {
+	return r._bookingRules
+}
+
+// Set is FreedomItemExt Setter
+// 特殊选填（当发布自由行商品时必填，其他情况不填）。自由行商品相关信息，自由行商品必填。大交通、酒店住宿、景点门票、租车、保险、餐饮、其他费用，自由行商品至少需要填写其中两项
+func (r *TaobaoAlitripTravelItemBaseAddAPIRequest) SetFreedomItemExt(_freedomItemExt *PontusTravelFreedomItemExt) error {
+	r._freedomItemExt = _freedomItemExt
+	r.Set("freedom_item_ext", _freedomItemExt)
+	return nil
+}
+
+// Get FreedomItemExt Getter
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetFreedomItemExt() *PontusTravelFreedomItemExt {
+	return r._freedomItemExt
+}
+
+// Set is GroupItemExt Setter
+// 特殊选填（当发布跟团游商品时必填，其他情况不填）。跟团游商品相关信息，发布跟团游商品时必填
+func (r *TaobaoAlitripTravelItemBaseAddAPIRequest) SetGroupItemExt(_groupItemExt *PontusTravelGroupItemExt) error {
+	r._groupItemExt = _groupItemExt
+	r.Set("group_item_ext", _groupItemExt)
+	return nil
+}
+
+// Get GroupItemExt Getter
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetGroupItemExt() *PontusTravelGroupItemExt {
+	return r._groupItemExt
+}
+
+// Set is Itineraries Setter
+// 选填，详细行程描述结构
+func (r *TaobaoAlitripTravelItemBaseAddAPIRequest) SetItineraries(_itineraries []PontusTravelItemItineraryInfo) error {
+	r._itineraries = _itineraries
+	r.Set("itineraries", _itineraries)
+	return nil
+}
+
+// Get Itineraries Getter
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetItineraries() []PontusTravelItemItineraryInfo {
+	return r._itineraries
+}
+
+// Set is RefundInfo Setter
+// 选填，退款规则结构
+func (r *TaobaoAlitripTravelItemBaseAddAPIRequest) SetRefundInfo(_refundInfo *PontusTravelItemRefundInfo) error {
+	r._refundInfo = _refundInfo
+	r.Set("refund_info", _refundInfo)
+	return nil
+}
+
+// Get RefundInfo Getter
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetRefundInfo() *PontusTravelItemRefundInfo {
+	return r._refundInfo
+}
+
+// Set is SalesInfo Setter
+// 选填，商品的销售属性相关信息
+func (r *TaobaoAlitripTravelItemBaseAddAPIRequest) SetSalesInfo(_salesInfo *PontusTravelItemSaleInfo) error {
+	r._salesInfo = _salesInfo
+	r.Set("sales_info", _salesInfo)
+	return nil
+}
+
+// Get SalesInfo Getter
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetSalesInfo() *PontusTravelItemSaleInfo {
+	return r._salesInfo
+}
+
+// Set is CruiseItemExt Setter
+// 特殊选填（当发布邮轮商品时必填，其他情况不填）邮轮商品相关信息，发布邮轮商品时必填
+func (r *TaobaoAlitripTravelItemBaseAddAPIRequest) SetCruiseItemExt(_cruiseItemExt *CruiseItemExt) error {
+	r._cruiseItemExt = _cruiseItemExt
+	r.Set("cruise_item_ext", _cruiseItemExt)
+	return nil
+}
+
+// Get CruiseItemExt Getter
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetCruiseItemExt() *CruiseItemExt {
+	return r._cruiseItemExt
+}
+
+// Set is TcwlItemExt Setter
+// 特殊选填（当发布同城活动商品时必填，其他情况不填）同城活动商品相关信息，发布同城活动商品时必填
+func (r *TaobaoAlitripTravelItemBaseAddAPIRequest) SetTcwlItemExt(_tcwlItemExt *TcwlItemExt) error {
+	r._tcwlItemExt = _tcwlItemExt
+	r.Set("tcwl_item_ext", _tcwlItemExt)
+	return nil
+}
+
+// Get TcwlItemExt Getter
+func (r TaobaoAlitripTravelItemBaseAddAPIRequest) GetTcwlItemExt() *TcwlItemExt {
+	return r._tcwlItemExt
+}

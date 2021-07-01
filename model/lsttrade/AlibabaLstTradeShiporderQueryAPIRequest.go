@@ -17,4 +17,36 @@ type AlibabaLstTradeShiporderQueryAPIRequest struct {
 	_paramLstShipOrderQuery *LstShipOrderQuery
 }
 
-// New
+// NewAlibabaLstTradeShiporderQueryRequest 初始化AlibabaLstTradeShiporderQueryAPIRequest对象
+func NewAlibabaLstTradeShiporderQueryRequest() *AlibabaLstTradeShiporderQueryAPIRequest {
+	return &AlibabaLstTradeShiporderQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstTradeShiporderQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.trade.shiporder.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstTradeShiporderQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamLstShipOrderQuery Setter
+// 入参
+func (r *AlibabaLstTradeShiporderQueryAPIRequest) SetParamLstShipOrderQuery(_paramLstShipOrderQuery *LstShipOrderQuery) error {
+	r._paramLstShipOrderQuery = _paramLstShipOrderQuery
+	r.Set("param_lst_ship_order_query", _paramLstShipOrderQuery)
+	return nil
+}
+
+// Get ParamLstShipOrderQuery Getter
+func (r AlibabaLstTradeShiporderQueryAPIRequest) GetParamLstShipOrderQuery() *LstShipOrderQuery {
+	return r._paramLstShipOrderQuery
+}

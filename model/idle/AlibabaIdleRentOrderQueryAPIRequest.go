@@ -17,4 +17,36 @@ type AlibabaIdleRentOrderQueryAPIRequest struct {
 	_orderId int64
 }
 
-// New
+// NewAlibabaIdleRentOrderQueryRequest 初始化AlibabaIdleRentOrderQueryAPIRequest对象
+func NewAlibabaIdleRentOrderQueryRequest() *AlibabaIdleRentOrderQueryAPIRequest {
+	return &AlibabaIdleRentOrderQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleRentOrderQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.rent.order.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleRentOrderQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 订单id
+func (r *AlibabaIdleRentOrderQueryAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r AlibabaIdleRentOrderQueryAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}

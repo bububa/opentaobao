@@ -17,4 +17,36 @@ type TaobaoBaichuanOpenaccountResetcodeCheckAPIRequest struct {
 	_name string
 }
 
-// New
+// NewTaobaoBaichuanOpenaccountResetcodeCheckRequest 初始化TaobaoBaichuanOpenaccountResetcodeCheckAPIRequest对象
+func NewTaobaoBaichuanOpenaccountResetcodeCheckRequest() *TaobaoBaichuanOpenaccountResetcodeCheckAPIRequest {
+	return &TaobaoBaichuanOpenaccountResetcodeCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBaichuanOpenaccountResetcodeCheckAPIRequest) GetApiMethodName() string {
+	return "taobao.baichuan.openaccount.resetcode.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBaichuanOpenaccountResetcodeCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Name Setter
+// name
+func (r *TaobaoBaichuanOpenaccountResetcodeCheckAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r TaobaoBaichuanOpenaccountResetcodeCheckAPIRequest) GetName() string {
+	return r._name
+}

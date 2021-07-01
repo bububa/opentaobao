@@ -17,4 +17,36 @@ type TaobaoUmpActivitiesListGetAPIRequest struct {
 	_ids []int64
 }
 
-// New
+// NewTaobaoUmpActivitiesListGetRequest 初始化TaobaoUmpActivitiesListGetAPIRequest对象
+func NewTaobaoUmpActivitiesListGetRequest() *TaobaoUmpActivitiesListGetAPIRequest {
+	return &TaobaoUmpActivitiesListGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpActivitiesListGetAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.activities.list.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpActivitiesListGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Ids Setter
+// 营销活动id列表。
+func (r *TaobaoUmpActivitiesListGetAPIRequest) SetIds(_ids []int64) error {
+	r._ids = _ids
+	r.Set("ids", _ids)
+	return nil
+}
+
+// Get Ids Getter
+func (r TaobaoUmpActivitiesListGetAPIRequest) GetIds() []int64 {
+	return r._ids
+}

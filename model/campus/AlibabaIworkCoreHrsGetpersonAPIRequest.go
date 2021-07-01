@@ -23,4 +23,75 @@ type AlibabaIworkCoreHrsGetpersonAPIRequest struct {
 	_operatorId string
 }
 
-// New
+// NewAlibabaIworkCoreHrsGetpersonRequest 初始化AlibabaIworkCoreHrsGetpersonAPIRequest对象
+func NewAlibabaIworkCoreHrsGetpersonRequest() *AlibabaIworkCoreHrsGetpersonAPIRequest {
+	return &AlibabaIworkCoreHrsGetpersonAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetApiMethodName() string {
+	return "alibaba.iwork.core.hrs.getperson"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AccountId Setter
+// 用户ACCOUNT_ID
+func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetAccountId(_accountId string) error {
+	r._accountId = _accountId
+	r.Set("account_id", _accountId)
+	return nil
+}
+
+// Get AccountId Getter
+func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetAccountId() string {
+	return r._accountId
+}
+
+// Set is PersonId Setter
+// 用户ID
+func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetPersonId(_personId int64) error {
+	r._personId = _personId
+	r.Set("person_id", _personId)
+	return nil
+}
+
+// Get PersonId Getter
+func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetPersonId() int64 {
+	return r._personId
+}
+
+// Set is AppId Setter
+// 应用ID
+func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetAppId(_appId string) error {
+	r._appId = _appId
+	r.Set("app_id", _appId)
+	return nil
+}
+
+// Get AppId Getter
+func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetAppId() string {
+	return r._appId
+}
+
+// Set is OperatorId Setter
+// 操作人ID
+func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetOperatorId(_operatorId string) error {
+	r._operatorId = _operatorId
+	r.Set("operator_id", _operatorId)
+	return nil
+}
+
+// Get OperatorId Getter
+func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetOperatorId() string {
+	return r._operatorId
+}

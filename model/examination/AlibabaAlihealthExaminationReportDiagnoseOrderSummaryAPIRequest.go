@@ -17,4 +17,36 @@ type AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest struct {
 	_reportOrderSummaryRequest *ReportOrderSummaryRequest
 }
 
-// New
+// NewAlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest 初始化AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest对象
+func NewAlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest() *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest {
+	return &AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.examination.report.diagnose.order.summary"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ReportOrderSummaryRequest Setter
+// 入参对象
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) SetReportOrderSummaryRequest(_reportOrderSummaryRequest *ReportOrderSummaryRequest) error {
+	r._reportOrderSummaryRequest = _reportOrderSummaryRequest
+	r.Set("report_order_summary_request", _reportOrderSummaryRequest)
+	return nil
+}
+
+// Get ReportOrderSummaryRequest Getter
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetReportOrderSummaryRequest() *ReportOrderSummaryRequest {
+	return r._reportOrderSummaryRequest
+}

@@ -19,4 +19,49 @@ type TaobaoMiniappCloudStoreListfileAPIRequest struct {
 	_filePath string
 }
 
-// New
+// NewTaobaoMiniappCloudStoreListfileRequest 初始化TaobaoMiniappCloudStoreListfileAPIRequest对象
+func NewTaobaoMiniappCloudStoreListfileRequest() *TaobaoMiniappCloudStoreListfileAPIRequest {
+	return &TaobaoMiniappCloudStoreListfileAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetApiMethodName() string {
+	return "taobao.miniapp.cloud.store.listfile"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Env Setter
+// 环境(online/test)
+func (r *TaobaoMiniappCloudStoreListfileAPIRequest) SetEnv(_env string) error {
+	r._env = _env
+	r.Set("env", _env)
+	return nil
+}
+
+// Get Env Getter
+func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetEnv() string {
+	return r._env
+}
+
+// Set is FilePath Setter
+// 文件全路径名
+func (r *TaobaoMiniappCloudStoreListfileAPIRequest) SetFilePath(_filePath string) error {
+	r._filePath = _filePath
+	r.Set("file_path", _filePath)
+	return nil
+}
+
+// Get FilePath Getter
+func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetFilePath() string {
+	return r._filePath
+}

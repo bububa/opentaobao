@@ -17,4 +17,36 @@ type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest struct {
 	_taskIds []string
 }
 
-// New
+// NewAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest 初始化AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest对象
+func NewAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest() *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest {
+	return &AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) GetApiMethodName() string {
+	return "alibaba.security.jaq.ocr.image.async.detect.results.fetch"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TaskIds Setter
+// 值为图像检测接口异步调用时返回的图片task_id
+func (r *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) SetTaskIds(_taskIds []string) error {
+	r._taskIds = _taskIds
+	r.Set("task_ids", _taskIds)
+	return nil
+}
+
+// Get TaskIds Getter
+func (r AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) GetTaskIds() []string {
+	return r._taskIds
+}

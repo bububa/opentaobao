@@ -21,4 +21,62 @@ type CainiaoReachableBatchjudgeAPIRequest struct {
 	_data *RoutingReachableBatchRequestDto
 }
 
-// New
+// NewCainiaoReachableBatchjudgeRequest 初始化CainiaoReachableBatchjudgeAPIRequest对象
+func NewCainiaoReachableBatchjudgeRequest() *CainiaoReachableBatchjudgeAPIRequest {
+	return &CainiaoReachableBatchjudgeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoReachableBatchjudgeAPIRequest) GetApiMethodName() string {
+	return "cainiao.reachable.batchjudge"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoReachableBatchjudgeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ClientInfo Setter
+// 调用方对象
+func (r *CainiaoReachableBatchjudgeAPIRequest) SetClientInfo(_clientInfo *ClientInfoDto) error {
+	r._clientInfo = _clientInfo
+	r.Set("client_info", _clientInfo)
+	return nil
+}
+
+// Get ClientInfo Getter
+func (r CainiaoReachableBatchjudgeAPIRequest) GetClientInfo() *ClientInfoDto {
+	return r._clientInfo
+}
+
+// Set is AddressType Setter
+// 1:快递 2:快运
+func (r *CainiaoReachableBatchjudgeAPIRequest) SetAddressType(_addressType int64) error {
+	r._addressType = _addressType
+	r.Set("address_type", _addressType)
+	return nil
+}
+
+// Get AddressType Getter
+func (r CainiaoReachableBatchjudgeAPIRequest) GetAddressType() int64 {
+	return r._addressType
+}
+
+// Set is Data Setter
+// 收发信息
+func (r *CainiaoReachableBatchjudgeAPIRequest) SetData(_data *RoutingReachableBatchRequestDto) error {
+	r._data = _data
+	r.Set("data", _data)
+	return nil
+}
+
+// Get Data Getter
+func (r CainiaoReachableBatchjudgeAPIRequest) GetData() *RoutingReachableBatchRequestDto {
+	return r._data
+}

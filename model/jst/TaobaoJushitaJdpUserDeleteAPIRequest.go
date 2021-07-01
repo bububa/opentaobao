@@ -19,4 +19,49 @@ type TaobaoJushitaJdpUserDeleteAPIRequest struct {
 	_userId int64
 }
 
-// New
+// NewTaobaoJushitaJdpUserDeleteRequest 初始化TaobaoJushitaJdpUserDeleteAPIRequest对象
+func NewTaobaoJushitaJdpUserDeleteRequest() *TaobaoJushitaJdpUserDeleteAPIRequest {
+	return &TaobaoJushitaJdpUserDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoJushitaJdpUserDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.jushita.jdp.user.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoJushitaJdpUserDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 要删除用户的昵称
+func (r *TaobaoJushitaJdpUserDeleteAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoJushitaJdpUserDeleteAPIRequest) GetNick() string {
+	return r._nick
+}
+
+// Set is UserId Setter
+// 需要删除的用户编号
+func (r *TaobaoJushitaJdpUserDeleteAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r TaobaoJushitaJdpUserDeleteAPIRequest) GetUserId() int64 {
+	return r._userId
+}

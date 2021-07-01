@@ -25,4 +25,88 @@ type TaobaoMiniappTemplateUpdateAPIRequest struct {
 	_templateVersion string
 }
 
-// New
+// NewTaobaoMiniappTemplateUpdateRequest 初始化TaobaoMiniappTemplateUpdateAPIRequest对象
+func NewTaobaoMiniappTemplateUpdateRequest() *TaobaoMiniappTemplateUpdateAPIRequest {
+	return &TaobaoMiniappTemplateUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMiniappTemplateUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.miniapp.template.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMiniappTemplateUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Clients Setter
+// 要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)
+func (r *TaobaoMiniappTemplateUpdateAPIRequest) SetClients(_clients []string) error {
+	r._clients = _clients
+	r.Set("clients", _clients)
+	return nil
+}
+
+// Get Clients Getter
+func (r TaobaoMiniappTemplateUpdateAPIRequest) GetClients() []string {
+	return r._clients
+}
+
+// Set is Id Setter
+// 应用id
+func (r *TaobaoMiniappTemplateUpdateAPIRequest) SetId(_id string) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r TaobaoMiniappTemplateUpdateAPIRequest) GetId() string {
+	return r._id
+}
+
+// Set is ExtJson Setter
+// schema信息，不填且 应用线上版本使用的templateId与传入的templateId不一致，则会报错; 一致，则复用线上版本的schema。
+func (r *TaobaoMiniappTemplateUpdateAPIRequest) SetExtJson(_extJson string) error {
+	r._extJson = _extJson
+	r.Set("ext_json", _extJson)
+	return nil
+}
+
+// Get ExtJson Getter
+func (r TaobaoMiniappTemplateUpdateAPIRequest) GetExtJson() string {
+	return r._extJson
+}
+
+// Set is TemplateId Setter
+// 模板id
+func (r *TaobaoMiniappTemplateUpdateAPIRequest) SetTemplateId(_templateId string) error {
+	r._templateId = _templateId
+	r.Set("template_id", _templateId)
+	return nil
+}
+
+// Get TemplateId Getter
+func (r TaobaoMiniappTemplateUpdateAPIRequest) GetTemplateId() string {
+	return r._templateId
+}
+
+// Set is TemplateVersion Setter
+// 模板版本
+func (r *TaobaoMiniappTemplateUpdateAPIRequest) SetTemplateVersion(_templateVersion string) error {
+	r._templateVersion = _templateVersion
+	r.Set("template_version", _templateVersion)
+	return nil
+}
+
+// Get TemplateVersion Getter
+func (r TaobaoMiniappTemplateUpdateAPIRequest) GetTemplateVersion() string {
+	return r._templateVersion
+}

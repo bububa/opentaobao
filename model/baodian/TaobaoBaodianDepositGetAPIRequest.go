@@ -15,4 +15,23 @@ type TaobaoBaodianDepositGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoBaodianDepositGetRequest 初始化TaobaoBaodianDepositGetAPIRequest对象
+func NewTaobaoBaodianDepositGetRequest() *TaobaoBaodianDepositGetAPIRequest {
+	return &TaobaoBaodianDepositGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBaodianDepositGetAPIRequest) GetApiMethodName() string {
+	return "taobao.baodian.deposit.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBaodianDepositGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

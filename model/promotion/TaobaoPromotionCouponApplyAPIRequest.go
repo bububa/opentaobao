@@ -19,4 +19,49 @@ type TaobaoPromotionCouponApplyAPIRequest struct {
 	_spreadId string
 }
 
-// New
+// NewTaobaoPromotionCouponApplyRequest 初始化TaobaoPromotionCouponApplyAPIRequest对象
+func NewTaobaoPromotionCouponApplyRequest() *TaobaoPromotionCouponApplyAPIRequest {
+	return &TaobaoPromotionCouponApplyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPromotionCouponApplyAPIRequest) GetApiMethodName() string {
+	return "taobao.promotion.coupon.apply"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPromotionCouponApplyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SellerId Setter
+// 卖家id
+func (r *TaobaoPromotionCouponApplyAPIRequest) SetSellerId(_sellerId string) error {
+	r._sellerId = _sellerId
+	r.Set("seller_id", _sellerId)
+	return nil
+}
+
+// Get SellerId Getter
+func (r TaobaoPromotionCouponApplyAPIRequest) GetSellerId() string {
+	return r._sellerId
+}
+
+// Set is SpreadId Setter
+// 传播id
+func (r *TaobaoPromotionCouponApplyAPIRequest) SetSpreadId(_spreadId string) error {
+	r._spreadId = _spreadId
+	r.Set("spread_id", _spreadId)
+	return nil
+}
+
+// Get SpreadId Getter
+func (r TaobaoPromotionCouponApplyAPIRequest) GetSpreadId() string {
+	return r._spreadId
+}

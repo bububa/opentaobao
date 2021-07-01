@@ -19,4 +19,49 @@ type AlibabaScbpAdKeywordPriceUpdateAPIRequest struct {
 	_priceStr string
 }
 
-// New
+// NewAlibabaScbpAdKeywordPriceUpdateRequest 初始化AlibabaScbpAdKeywordPriceUpdateAPIRequest对象
+func NewAlibabaScbpAdKeywordPriceUpdateRequest() *AlibabaScbpAdKeywordPriceUpdateAPIRequest {
+	return &AlibabaScbpAdKeywordPriceUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpAdKeywordPriceUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.ad.keyword.price.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpAdKeywordPriceUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AdKeyword Setter
+// 只能取ascci字符
+func (r *AlibabaScbpAdKeywordPriceUpdateAPIRequest) SetAdKeyword(_adKeyword string) error {
+	r._adKeyword = _adKeyword
+	r.Set("ad_keyword", _adKeyword)
+	return nil
+}
+
+// Get AdKeyword Getter
+func (r AlibabaScbpAdKeywordPriceUpdateAPIRequest) GetAdKeyword() string {
+	return r._adKeyword
+}
+
+// Set is PriceStr Setter
+// 关键词价格单位元，一位小数
+func (r *AlibabaScbpAdKeywordPriceUpdateAPIRequest) SetPriceStr(_priceStr string) error {
+	r._priceStr = _priceStr
+	r.Set("price_str", _priceStr)
+	return nil
+}
+
+// Get PriceStr Getter
+func (r AlibabaScbpAdKeywordPriceUpdateAPIRequest) GetPriceStr() string {
+	return r._priceStr
+}

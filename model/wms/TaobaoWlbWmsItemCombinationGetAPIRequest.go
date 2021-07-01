@@ -17,4 +17,36 @@ type TaobaoWlbWmsItemCombinationGetAPIRequest struct {
 	_itemid int64
 }
 
-// New
+// NewTaobaoWlbWmsItemCombinationGetRequest 初始化TaobaoWlbWmsItemCombinationGetAPIRequest对象
+func NewTaobaoWlbWmsItemCombinationGetRequest() *TaobaoWlbWmsItemCombinationGetAPIRequest {
+	return &TaobaoWlbWmsItemCombinationGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbWmsItemCombinationGetAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.wms.item.combination.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbWmsItemCombinationGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Itemid Setter
+// 货品Id
+func (r *TaobaoWlbWmsItemCombinationGetAPIRequest) SetItemid(_itemid int64) error {
+	r._itemid = _itemid
+	r.Set("itemid", _itemid)
+	return nil
+}
+
+// Get Itemid Getter
+func (r TaobaoWlbWmsItemCombinationGetAPIRequest) GetItemid() int64 {
+	return r._itemid
+}

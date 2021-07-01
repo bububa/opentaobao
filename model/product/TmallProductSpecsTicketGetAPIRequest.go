@@ -17,4 +17,36 @@ type TmallProductSpecsTicketGetAPIRequest struct {
 	_specIds string
 }
 
-// New
+// NewTmallProductSpecsTicketGetRequest 初始化TmallProductSpecsTicketGetAPIRequest对象
+func NewTmallProductSpecsTicketGetRequest() *TmallProductSpecsTicketGetAPIRequest {
+	return &TmallProductSpecsTicketGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallProductSpecsTicketGetAPIRequest) GetApiMethodName() string {
+	return "tmall.product.specs.ticket.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallProductSpecsTicketGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SpecIds Setter
+// 产品规格ID，多个用逗号分隔
+func (r *TmallProductSpecsTicketGetAPIRequest) SetSpecIds(_specIds string) error {
+	r._specIds = _specIds
+	r.Set("spec_ids", _specIds)
+	return nil
+}
+
+// Get SpecIds Getter
+func (r TmallProductSpecsTicketGetAPIRequest) GetSpecIds() string {
+	return r._specIds
+}

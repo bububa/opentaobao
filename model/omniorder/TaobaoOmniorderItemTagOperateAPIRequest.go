@@ -23,4 +23,75 @@ type TaobaoOmniorderItemTagOperateAPIRequest struct {
 	_omniSetting *OmniSettingDto
 }
 
-// New
+// NewTaobaoOmniorderItemTagOperateRequest 初始化TaobaoOmniorderItemTagOperateAPIRequest对象
+func NewTaobaoOmniorderItemTagOperateRequest() *TaobaoOmniorderItemTagOperateAPIRequest {
+	return &TaobaoOmniorderItemTagOperateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOmniorderItemTagOperateAPIRequest) GetApiMethodName() string {
+	return "taobao.omniorder.item.tag.operate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOmniorderItemTagOperateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 商品ID
+func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TaobaoOmniorderItemTagOperateAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is Types Setter
+// 商品标,storeDeliver代表门店发货, AllocateByFront代表前置拆单, storeCollect代表门店自提
+func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetTypes(_types []string) error {
+	r._types = _types
+	r.Set("types", _types)
+	return nil
+}
+
+// Get Types Getter
+func (r TaobaoOmniorderItemTagOperateAPIRequest) GetTypes() []string {
+	return r._types
+}
+
+// Set is Status Setter
+// 操作状态， 填 1 代表打标，填 -1 代表去标
+func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// Get Status Getter
+func (r TaobaoOmniorderItemTagOperateAPIRequest) GetStatus() int64 {
+	return r._status
+}
+
+// Set is OmniSetting Setter
+// 分单&接单设置
+func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetOmniSetting(_omniSetting *OmniSettingDto) error {
+	r._omniSetting = _omniSetting
+	r.Set("omni_setting", _omniSetting)
+	return nil
+}
+
+// Get OmniSetting Getter
+func (r TaobaoOmniorderItemTagOperateAPIRequest) GetOmniSetting() *OmniSettingDto {
+	return r._omniSetting
+}

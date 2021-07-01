@@ -17,4 +17,36 @@ type AlibabaLegalSuitCourtBeforePushAPIRequest struct {
 	_beforeCourtModel *BeforeCourtModel
 }
 
-// New
+// NewAlibabaLegalSuitCourtBeforePushRequest 初始化AlibabaLegalSuitCourtBeforePushAPIRequest对象
+func NewAlibabaLegalSuitCourtBeforePushRequest() *AlibabaLegalSuitCourtBeforePushAPIRequest {
+	return &AlibabaLegalSuitCourtBeforePushAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLegalSuitCourtBeforePushAPIRequest) GetApiMethodName() string {
+	return "alibaba.legal.suit.court.before.push"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLegalSuitCourtBeforePushAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BeforeCourtModel Setter
+// 庭前信息
+func (r *AlibabaLegalSuitCourtBeforePushAPIRequest) SetBeforeCourtModel(_beforeCourtModel *BeforeCourtModel) error {
+	r._beforeCourtModel = _beforeCourtModel
+	r.Set("before_court_model", _beforeCourtModel)
+	return nil
+}
+
+// Get BeforeCourtModel Getter
+func (r AlibabaLegalSuitCourtBeforePushAPIRequest) GetBeforeCourtModel() *BeforeCourtModel {
+	return r._beforeCourtModel
+}

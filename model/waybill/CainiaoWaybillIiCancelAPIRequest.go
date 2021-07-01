@@ -19,4 +19,49 @@ type CainiaoWaybillIiCancelAPIRequest struct {
 	_waybillCode string
 }
 
-// New
+// NewCainiaoWaybillIiCancelRequest 初始化CainiaoWaybillIiCancelAPIRequest对象
+func NewCainiaoWaybillIiCancelRequest() *CainiaoWaybillIiCancelAPIRequest {
+	return &CainiaoWaybillIiCancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoWaybillIiCancelAPIRequest) GetApiMethodName() string {
+	return "cainiao.waybill.ii.cancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoWaybillIiCancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CpCode Setter
+// 快递公司code
+func (r *CainiaoWaybillIiCancelAPIRequest) SetCpCode(_cpCode string) error {
+	r._cpCode = _cpCode
+	r.Set("cp_code", _cpCode)
+	return nil
+}
+
+// Get CpCode Getter
+func (r CainiaoWaybillIiCancelAPIRequest) GetCpCode() string {
+	return r._cpCode
+}
+
+// Set is WaybillCode Setter
+// 电子面单号
+func (r *CainiaoWaybillIiCancelAPIRequest) SetWaybillCode(_waybillCode string) error {
+	r._waybillCode = _waybillCode
+	r.Set("waybill_code", _waybillCode)
+	return nil
+}
+
+// Get WaybillCode Getter
+func (r CainiaoWaybillIiCancelAPIRequest) GetWaybillCode() string {
+	return r._waybillCode
+}

@@ -15,4 +15,23 @@ type AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaAlihealthExaminationHospitalSpecialTagRequest 初始化AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest对象
+func NewAlibabaAlihealthExaminationHospitalSpecialTagRequest() *AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest {
+	return &AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.examination.hospital.special.tag"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

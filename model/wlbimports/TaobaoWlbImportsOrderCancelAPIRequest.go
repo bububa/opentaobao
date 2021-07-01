@@ -17,4 +17,36 @@ type TaobaoWlbImportsOrderCancelAPIRequest struct {
 	_lgorderCode string
 }
 
-// New
+// NewTaobaoWlbImportsOrderCancelRequest 初始化TaobaoWlbImportsOrderCancelAPIRequest对象
+func NewTaobaoWlbImportsOrderCancelRequest() *TaobaoWlbImportsOrderCancelAPIRequest {
+	return &TaobaoWlbImportsOrderCancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbImportsOrderCancelAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.imports.order.cancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbImportsOrderCancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is LgorderCode Setter
+// 物流订单编号
+func (r *TaobaoWlbImportsOrderCancelAPIRequest) SetLgorderCode(_lgorderCode string) error {
+	r._lgorderCode = _lgorderCode
+	r.Set("lgorder_code", _lgorderCode)
+	return nil
+}
+
+// Get LgorderCode Getter
+func (r TaobaoWlbImportsOrderCancelAPIRequest) GetLgorderCode() string {
+	return r._lgorderCode
+}

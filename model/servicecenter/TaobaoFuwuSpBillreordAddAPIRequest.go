@@ -17,4 +17,36 @@ type TaobaoFuwuSpBillreordAddAPIRequest struct {
 	_paramBillRecordDTO *BillRecordDto
 }
 
-// New
+// NewTaobaoFuwuSpBillreordAddRequest 初始化TaobaoFuwuSpBillreordAddAPIRequest对象
+func NewTaobaoFuwuSpBillreordAddRequest() *TaobaoFuwuSpBillreordAddAPIRequest {
+	return &TaobaoFuwuSpBillreordAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFuwuSpBillreordAddAPIRequest) GetApiMethodName() string {
+	return "taobao.fuwu.sp.billreord.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFuwuSpBillreordAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamBillRecordDTO Setter
+// 确认单的账单明细
+func (r *TaobaoFuwuSpBillreordAddAPIRequest) SetParamBillRecordDTO(_paramBillRecordDTO *BillRecordDto) error {
+	r._paramBillRecordDTO = _paramBillRecordDTO
+	r.Set("param_bill_record_d_t_o", _paramBillRecordDTO)
+	return nil
+}
+
+// Get ParamBillRecordDTO Getter
+func (r TaobaoFuwuSpBillreordAddAPIRequest) GetParamBillRecordDTO() *BillRecordDto {
+	return r._paramBillRecordDTO
+}

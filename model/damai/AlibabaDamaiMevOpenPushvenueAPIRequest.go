@@ -17,4 +17,36 @@ type AlibabaDamaiMevOpenPushvenueAPIRequest struct {
 	_pushVenueParam *ThirdVenuePushOpenParam
 }
 
-// New
+// NewAlibabaDamaiMevOpenPushvenueRequest 初始化AlibabaDamaiMevOpenPushvenueAPIRequest对象
+func NewAlibabaDamaiMevOpenPushvenueRequest() *AlibabaDamaiMevOpenPushvenueAPIRequest {
+	return &AlibabaDamaiMevOpenPushvenueAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiMevOpenPushvenueAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.mev.open.pushvenue"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiMevOpenPushvenueAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PushVenueParam Setter
+// 入参pushVenueParam
+func (r *AlibabaDamaiMevOpenPushvenueAPIRequest) SetPushVenueParam(_pushVenueParam *ThirdVenuePushOpenParam) error {
+	r._pushVenueParam = _pushVenueParam
+	r.Set("push_venue_param", _pushVenueParam)
+	return nil
+}
+
+// Get PushVenueParam Getter
+func (r AlibabaDamaiMevOpenPushvenueAPIRequest) GetPushVenueParam() *ThirdVenuePushOpenParam {
+	return r._pushVenueParam
+}

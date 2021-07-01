@@ -26,4 +26,75 @@ type TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest struct {
 	_serviceStoreCode string
 }
 
-// New
+// NewTmallServicecenterServicestoreUpdateservicestorecapacityRequest 初始化TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest对象
+func NewTmallServicecenterServicestoreUpdateservicestorecapacityRequest() *TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest {
+	return &TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.servicestore.updateservicestorecapacity"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BizType Setter
+// 业务类型
+func (r *TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) SetBizType(_bizType string) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// Get BizType Getter
+func (r TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) GetBizType() string {
+	return r._bizType
+}
+
+// Set is CategoryIdsAndAreaCodesAndCapacity Setter
+// json格式，在某个业务类型(biz_type)下,类目所覆盖区域对应的容量。一个网点承接了空调和热水器的安装, 空调覆盖的区域是杭州市上城区和下城区，容量是10； 热水器覆盖的区域是杭州市下城区和江干区，容量是18；洗衣机和冰箱覆盖区域一样都是杭州市上城区和西湖区，合并计算容量30
+func (r *TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) SetCategoryIdsAndAreaCodesAndCapacity(_categoryIdsAndAreaCodesAndCapacity string) error {
+	r._categoryIdsAndAreaCodesAndCapacity = _categoryIdsAndAreaCodesAndCapacity
+	r.Set("category_ids_and_area_codes_and_capacity", _categoryIdsAndAreaCodesAndCapacity)
+	return nil
+}
+
+// Get CategoryIdsAndAreaCodesAndCapacity Getter
+func (r TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) GetCategoryIdsAndAreaCodesAndCapacity() string {
+	return r._categoryIdsAndAreaCodesAndCapacity
+}
+
+// Set is ServiceCodes Setter
+// serviceCodes列表,|分隔
+func (r *TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) SetServiceCodes(_serviceCodes string) error {
+	r._serviceCodes = _serviceCodes
+	r.Set("service_codes", _serviceCodes)
+	return nil
+}
+
+// Get ServiceCodes Getter
+func (r TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) GetServiceCodes() string {
+	return r._serviceCodes
+}
+
+// Set is ServiceStoreCode Setter
+// 网点编码
+func (r *TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
+	r._serviceStoreCode = _serviceStoreCode
+	r.Set("service_store_code", _serviceStoreCode)
+	return nil
+}
+
+// Get ServiceStoreCode Getter
+func (r TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) GetServiceStoreCode() string {
+	return r._serviceStoreCode
+}

@@ -17,4 +17,36 @@ type TaobaoPentaprismTaskQueryitemAPIRequest struct {
 	_openPo *OpenTaskPo
 }
 
-// New
+// NewTaobaoPentaprismTaskQueryitemRequest 初始化TaobaoPentaprismTaskQueryitemAPIRequest对象
+func NewTaobaoPentaprismTaskQueryitemRequest() *TaobaoPentaprismTaskQueryitemAPIRequest {
+	return &TaobaoPentaprismTaskQueryitemAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPentaprismTaskQueryitemAPIRequest) GetApiMethodName() string {
+	return "taobao.pentaprism.task.queryitem"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPentaprismTaskQueryitemAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OpenPo Setter
+// TOP接口标准入参
+func (r *TaobaoPentaprismTaskQueryitemAPIRequest) SetOpenPo(_openPo *OpenTaskPo) error {
+	r._openPo = _openPo
+	r.Set("open_po", _openPo)
+	return nil
+}
+
+// Get OpenPo Getter
+func (r TaobaoPentaprismTaskQueryitemAPIRequest) GetOpenPo() *OpenTaskPo {
+	return r._openPo
+}

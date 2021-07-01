@@ -17,4 +17,36 @@ type AlibabaLsyCrmActivityDataUpdateAPIRequest struct {
 	_reqDTO *NrtCrmActivityStatisticsDataReq
 }
 
-// New
+// NewAlibabaLsyCrmActivityDataUpdateRequest 初始化AlibabaLsyCrmActivityDataUpdateAPIRequest对象
+func NewAlibabaLsyCrmActivityDataUpdateRequest() *AlibabaLsyCrmActivityDataUpdateAPIRequest {
+	return &AlibabaLsyCrmActivityDataUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLsyCrmActivityDataUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.lsy.crm.activity.data.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLsyCrmActivityDataUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ReqDTO Setter
+// 入参对象
+func (r *AlibabaLsyCrmActivityDataUpdateAPIRequest) SetReqDTO(_reqDTO *NrtCrmActivityStatisticsDataReq) error {
+	r._reqDTO = _reqDTO
+	r.Set("req_d_t_o", _reqDTO)
+	return nil
+}
+
+// Get ReqDTO Getter
+func (r AlibabaLsyCrmActivityDataUpdateAPIRequest) GetReqDTO() *NrtCrmActivityStatisticsDataReq {
+	return r._reqDTO
+}

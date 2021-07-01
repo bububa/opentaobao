@@ -17,4 +17,36 @@ type TaobaoQimenSingleitemSynchronizeAPIRequest struct {
 	_request *ItemSynRequest
 }
 
-// New
+// NewTaobaoQimenSingleitemSynchronizeRequest 初始化TaobaoQimenSingleitemSynchronizeAPIRequest对象
+func NewTaobaoQimenSingleitemSynchronizeRequest() *TaobaoQimenSingleitemSynchronizeAPIRequest {
+	return &TaobaoQimenSingleitemSynchronizeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenSingleitemSynchronizeAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.singleitem.synchronize"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenSingleitemSynchronizeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenSingleitemSynchronizeAPIRequest) SetRequest(_request *ItemSynRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenSingleitemSynchronizeAPIRequest) GetRequest() *ItemSynRequest {
+	return r._request
+}

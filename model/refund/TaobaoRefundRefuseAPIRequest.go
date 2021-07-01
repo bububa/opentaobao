@@ -27,4 +27,101 @@ type TaobaoRefundRefuseAPIRequest struct {
 	_refuseReasonId int64
 }
 
-// New
+// NewTaobaoRefundRefuseRequest 初始化TaobaoRefundRefuseAPIRequest对象
+func NewTaobaoRefundRefuseRequest() *TaobaoRefundRefuseAPIRequest {
+	return &TaobaoRefundRefuseAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoRefundRefuseAPIRequest) GetApiMethodName() string {
+	return "taobao.refund.refuse"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoRefundRefuseAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RefundId Setter
+// 退款单号
+func (r *TaobaoRefundRefuseAPIRequest) SetRefundId(_refundId int64) error {
+	r._refundId = _refundId
+	r.Set("refund_id", _refundId)
+	return nil
+}
+
+// Get RefundId Getter
+func (r TaobaoRefundRefuseAPIRequest) GetRefundId() int64 {
+	return r._refundId
+}
+
+// Set is RefuseMessage Setter
+// 拒绝退款时的说明信息，长度2-200
+func (r *TaobaoRefundRefuseAPIRequest) SetRefuseMessage(_refuseMessage string) error {
+	r._refuseMessage = _refuseMessage
+	r.Set("refuse_message", _refuseMessage)
+	return nil
+}
+
+// Get RefuseMessage Getter
+func (r TaobaoRefundRefuseAPIRequest) GetRefuseMessage() string {
+	return r._refuseMessage
+}
+
+// Set is RefuseProof Setter
+// 拒绝退款时的退款凭证，一般是卖家拒绝退款时使用的发货凭证，最大长度130000字节，支持的图片格式：GIF, JPG, PNG。天猫退款为必填项。
+func (r *TaobaoRefundRefuseAPIRequest) SetRefuseProof(_refuseProof *model.File) error {
+	r._refuseProof = _refuseProof
+	r.Set("refuse_proof", _refuseProof)
+	return nil
+}
+
+// Get RefuseProof Getter
+func (r TaobaoRefundRefuseAPIRequest) GetRefuseProof() *model.File {
+	return r._refuseProof
+}
+
+// Set is RefundPhase Setter
+// 可选值为：售中：onsale，售后：aftersale，天猫退款为必填项。
+func (r *TaobaoRefundRefuseAPIRequest) SetRefundPhase(_refundPhase string) error {
+	r._refundPhase = _refundPhase
+	r.Set("refund_phase", _refundPhase)
+	return nil
+}
+
+// Get RefundPhase Getter
+func (r TaobaoRefundRefuseAPIRequest) GetRefundPhase() string {
+	return r._refundPhase
+}
+
+// Set is RefundVersion Setter
+// 退款版本号，天猫退款为必填项。
+func (r *TaobaoRefundRefuseAPIRequest) SetRefundVersion(_refundVersion int64) error {
+	r._refundVersion = _refundVersion
+	r.Set("refund_version", _refundVersion)
+	return nil
+}
+
+// Get RefundVersion Getter
+func (r TaobaoRefundRefuseAPIRequest) GetRefundVersion() int64 {
+	return r._refundVersion
+}
+
+// Set is RefuseReasonId Setter
+// 拒绝原因编号，会提供用户拒绝原因列表供选择
+func (r *TaobaoRefundRefuseAPIRequest) SetRefuseReasonId(_refuseReasonId int64) error {
+	r._refuseReasonId = _refuseReasonId
+	r.Set("refuse_reason_id", _refuseReasonId)
+	return nil
+}
+
+// Get RefuseReasonId Getter
+func (r TaobaoRefundRefuseAPIRequest) GetRefuseReasonId() int64 {
+	return r._refuseReasonId
+}

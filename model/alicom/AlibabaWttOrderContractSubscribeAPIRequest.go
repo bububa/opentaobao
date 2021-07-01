@@ -17,4 +17,36 @@ type AlibabaWttOrderContractSubscribeAPIRequest struct {
 	_distributionOrderModel *DistributionOrderModel
 }
 
-// New
+// NewAlibabaWttOrderContractSubscribeRequest 初始化AlibabaWttOrderContractSubscribeAPIRequest对象
+func NewAlibabaWttOrderContractSubscribeRequest() *AlibabaWttOrderContractSubscribeAPIRequest {
+	return &AlibabaWttOrderContractSubscribeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWttOrderContractSubscribeAPIRequest) GetApiMethodName() string {
+	return "alibaba.wtt.order.contract.subscribe"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWttOrderContractSubscribeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DistributionOrderModel Setter
+// 分销商合约生产
+func (r *AlibabaWttOrderContractSubscribeAPIRequest) SetDistributionOrderModel(_distributionOrderModel *DistributionOrderModel) error {
+	r._distributionOrderModel = _distributionOrderModel
+	r.Set("distribution_order_model", _distributionOrderModel)
+	return nil
+}
+
+// Get DistributionOrderModel Getter
+func (r AlibabaWttOrderContractSubscribeAPIRequest) GetDistributionOrderModel() *DistributionOrderModel {
+	return r._distributionOrderModel
+}

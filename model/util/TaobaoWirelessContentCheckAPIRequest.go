@@ -17,4 +17,36 @@ type TaobaoWirelessContentCheckAPIRequest struct {
 	_text string
 }
 
-// New
+// NewTaobaoWirelessContentCheckRequest 初始化TaobaoWirelessContentCheckAPIRequest对象
+func NewTaobaoWirelessContentCheckRequest() *TaobaoWirelessContentCheckAPIRequest {
+	return &TaobaoWirelessContentCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWirelessContentCheckAPIRequest) GetApiMethodName() string {
+	return "taobao.wireless.content.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWirelessContentCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Text Setter
+// 待检查的文本
+func (r *TaobaoWirelessContentCheckAPIRequest) SetText(_text string) error {
+	r._text = _text
+	r.Set("text", _text)
+	return nil
+}
+
+// Get Text Getter
+func (r TaobaoWirelessContentCheckAPIRequest) GetText() string {
+	return r._text
+}

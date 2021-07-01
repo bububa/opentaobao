@@ -17,4 +17,36 @@ type TaobaoSimbaSalestarCreativeDeleteAPIRequest struct {
 	_creativeId int64
 }
 
-// New
+// NewTaobaoSimbaSalestarCreativeDeleteRequest 初始化TaobaoSimbaSalestarCreativeDeleteAPIRequest对象
+func NewTaobaoSimbaSalestarCreativeDeleteRequest() *TaobaoSimbaSalestarCreativeDeleteAPIRequest {
+	return &TaobaoSimbaSalestarCreativeDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaSalestarCreativeDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.salestar.creative.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaSalestarCreativeDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CreativeId Setter
+// 创意Id
+func (r *TaobaoSimbaSalestarCreativeDeleteAPIRequest) SetCreativeId(_creativeId int64) error {
+	r._creativeId = _creativeId
+	r.Set("creative_id", _creativeId)
+	return nil
+}
+
+// Get CreativeId Getter
+func (r TaobaoSimbaSalestarCreativeDeleteAPIRequest) GetCreativeId() int64 {
+	return r._creativeId
+}

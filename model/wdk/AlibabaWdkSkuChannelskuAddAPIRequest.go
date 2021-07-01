@@ -17,4 +17,36 @@ type AlibabaWdkSkuChannelskuAddAPIRequest struct {
 	_chSkuDOList []ChannelSkuDo
 }
 
-// New
+// NewAlibabaWdkSkuChannelskuAddRequest 初始化AlibabaWdkSkuChannelskuAddAPIRequest对象
+func NewAlibabaWdkSkuChannelskuAddRequest() *AlibabaWdkSkuChannelskuAddAPIRequest {
+	return &AlibabaWdkSkuChannelskuAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkSkuChannelskuAddAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.sku.channelsku.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkSkuChannelskuAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ChSkuDOList Setter
+// 入参模型
+func (r *AlibabaWdkSkuChannelskuAddAPIRequest) SetChSkuDOList(_chSkuDOList []ChannelSkuDo) error {
+	r._chSkuDOList = _chSkuDOList
+	r.Set("ch_sku_d_o_list", _chSkuDOList)
+	return nil
+}
+
+// Get ChSkuDOList Getter
+func (r AlibabaWdkSkuChannelskuAddAPIRequest) GetChSkuDOList() []ChannelSkuDo {
+	return r._chSkuDOList
+}

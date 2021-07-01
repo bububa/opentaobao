@@ -17,4 +17,36 @@ type AlibabaEleFengniaoOrderPushAPIRequest struct {
 	_param *Param
 }
 
-// New
+// NewAlibabaEleFengniaoOrderPushRequest 初始化AlibabaEleFengniaoOrderPushAPIRequest对象
+func NewAlibabaEleFengniaoOrderPushRequest() *AlibabaEleFengniaoOrderPushAPIRequest {
+	return &AlibabaEleFengniaoOrderPushAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEleFengniaoOrderPushAPIRequest) GetApiMethodName() string {
+	return "alibaba.ele.fengniao.order.push"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEleFengniaoOrderPushAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 参数param
+func (r *AlibabaEleFengniaoOrderPushAPIRequest) SetParam(_param *Param) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaEleFengniaoOrderPushAPIRequest) GetParam() *Param {
+	return r._param
+}

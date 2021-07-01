@@ -21,4 +21,49 @@ type TaobaoOmniitemItemFullupdateAPIRequest struct {
 	_operateType string
 }
 
-// New
+// NewTaobaoOmniitemItemFullupdateRequest 初始化TaobaoOmniitemItemFullupdateAPIRequest对象
+func NewTaobaoOmniitemItemFullupdateRequest() *TaobaoOmniitemItemFullupdateAPIRequest {
+	return &TaobaoOmniitemItemFullupdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOmniitemItemFullupdateAPIRequest) GetApiMethodName() string {
+	return "taobao.omniitem.item.fullupdate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOmniitemItemFullupdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is LightPublishInfo Setter
+// 发布商品信息
+func (r *TaobaoOmniitemItemFullupdateAPIRequest) SetLightPublishInfo(_lightPublishInfo *ItemLightPublishDto) error {
+	r._lightPublishInfo = _lightPublishInfo
+	r.Set("light_publish_info", _lightPublishInfo)
+	return nil
+}
+
+// Get LightPublishInfo Getter
+func (r TaobaoOmniitemItemFullupdateAPIRequest) GetLightPublishInfo() *ItemLightPublishDto {
+	return r._lightPublishInfo
+}
+
+// Set is OperateType Setter
+// 操作类型，STORE表示门店域新增，ALL表示全域新增
+func (r *TaobaoOmniitemItemFullupdateAPIRequest) SetOperateType(_operateType string) error {
+	r._operateType = _operateType
+	r.Set("operate_type", _operateType)
+	return nil
+}
+
+// Get OperateType Getter
+func (r TaobaoOmniitemItemFullupdateAPIRequest) GetOperateType() string {
+	return r._operateType
+}

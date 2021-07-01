@@ -17,4 +17,36 @@ type TmallDeviceItemPromotionGetAPIRequest struct {
 	_itemId int64
 }
 
-// New
+// NewTmallDeviceItemPromotionGetRequest 初始化TmallDeviceItemPromotionGetAPIRequest对象
+func NewTmallDeviceItemPromotionGetRequest() *TmallDeviceItemPromotionGetAPIRequest {
+	return &TmallDeviceItemPromotionGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallDeviceItemPromotionGetAPIRequest) GetApiMethodName() string {
+	return "tmall.device.item.promotion.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallDeviceItemPromotionGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 商品id
+func (r *TmallDeviceItemPromotionGetAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TmallDeviceItemPromotionGetAPIRequest) GetItemId() int64 {
+	return r._itemId
+}

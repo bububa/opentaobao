@@ -17,4 +17,36 @@ type TaobaoUmpPromotionGetAPIRequest struct {
 	_itemId int64
 }
 
-// New
+// NewTaobaoUmpPromotionGetRequest 初始化TaobaoUmpPromotionGetAPIRequest对象
+func NewTaobaoUmpPromotionGetRequest() *TaobaoUmpPromotionGetAPIRequest {
+	return &TaobaoUmpPromotionGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpPromotionGetAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.promotion.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpPromotionGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 商品id
+func (r *TaobaoUmpPromotionGetAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TaobaoUmpPromotionGetAPIRequest) GetItemId() int64 {
+	return r._itemId
+}

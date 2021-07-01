@@ -17,4 +17,36 @@ type AlibabaWdkItemMorebarcodeOpsAPIRequest struct {
 	_updateMoreBarCodeRequestBean *UpdateMoreBarCodeRequestBean
 }
 
-// New
+// NewAlibabaWdkItemMorebarcodeOpsRequest 初始化AlibabaWdkItemMorebarcodeOpsAPIRequest对象
+func NewAlibabaWdkItemMorebarcodeOpsRequest() *AlibabaWdkItemMorebarcodeOpsAPIRequest {
+	return &AlibabaWdkItemMorebarcodeOpsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkItemMorebarcodeOpsAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.item.morebarcode.ops"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkItemMorebarcodeOpsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UpdateMoreBarCodeRequestBean Setter
+// bean
+func (r *AlibabaWdkItemMorebarcodeOpsAPIRequest) SetUpdateMoreBarCodeRequestBean(_updateMoreBarCodeRequestBean *UpdateMoreBarCodeRequestBean) error {
+	r._updateMoreBarCodeRequestBean = _updateMoreBarCodeRequestBean
+	r.Set("update_more_bar_code_request_bean", _updateMoreBarCodeRequestBean)
+	return nil
+}
+
+// Get UpdateMoreBarCodeRequestBean Getter
+func (r AlibabaWdkItemMorebarcodeOpsAPIRequest) GetUpdateMoreBarCodeRequestBean() *UpdateMoreBarCodeRequestBean {
+	return r._updateMoreBarCodeRequestBean
+}

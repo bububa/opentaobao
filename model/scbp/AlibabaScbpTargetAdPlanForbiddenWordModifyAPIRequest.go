@@ -17,4 +17,36 @@ type AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest struct {
 	_topP4pQuickForbiddenWord *TopP4pQuickForbiddenWordDto
 }
 
-// New
+// NewAlibabaScbpTargetAdPlanForbiddenWordModifyRequest 初始化AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest对象
+func NewAlibabaScbpTargetAdPlanForbiddenWordModifyRequest() *AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest {
+	return &AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.target.ad.plan.forbidden.word.modify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TopP4pQuickForbiddenWord Setter
+// TopP4pQuickForbiddenWord
+func (r *AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) SetTopP4pQuickForbiddenWord(_topP4pQuickForbiddenWord *TopP4pQuickForbiddenWordDto) error {
+	r._topP4pQuickForbiddenWord = _topP4pQuickForbiddenWord
+	r.Set("top_p4p_quick_forbidden_word", _topP4pQuickForbiddenWord)
+	return nil
+}
+
+// Get TopP4pQuickForbiddenWord Getter
+func (r AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) GetTopP4pQuickForbiddenWord() *TopP4pQuickForbiddenWordDto {
+	return r._topP4pQuickForbiddenWord
+}

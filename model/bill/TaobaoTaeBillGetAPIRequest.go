@@ -23,4 +23,75 @@ type TaobaoTaeBillGetAPIRequest struct {
 	_accountId int64
 }
 
-// New
+// NewTaobaoTaeBillGetRequest 初始化TaobaoTaeBillGetAPIRequest对象
+func NewTaobaoTaeBillGetRequest() *TaobaoTaeBillGetAPIRequest {
+	return &TaobaoTaeBillGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTaeBillGetAPIRequest) GetApiMethodName() string {
+	return "taobao.tae.bill.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTaeBillGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Bid Setter
+// 账单编号
+func (r *TaobaoTaeBillGetAPIRequest) SetBid(_bid int64) error {
+	r._bid = _bid
+	r.Set("bid", _bid)
+	return nil
+}
+
+// Get Bid Getter
+func (r TaobaoTaeBillGetAPIRequest) GetBid() int64 {
+	return r._bid
+}
+
+// Set is Fields Setter
+// 传入需要返回的字段
+func (r *TaobaoTaeBillGetAPIRequest) SetFields(_fields []string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// Get Fields Getter
+func (r TaobaoTaeBillGetAPIRequest) GetFields() []string {
+	return r._fields
+}
+
+// Set is Id Setter
+// 账单编号
+func (r *TaobaoTaeBillGetAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r TaobaoTaeBillGetAPIRequest) GetId() int64 {
+	return r._id
+}
+
+// Set is AccountId Setter
+// 虚拟账户科目编号
+func (r *TaobaoTaeBillGetAPIRequest) SetAccountId(_accountId int64) error {
+	r._accountId = _accountId
+	r.Set("account_id", _accountId)
+	return nil
+}
+
+// Get AccountId Getter
+func (r TaobaoTaeBillGetAPIRequest) GetAccountId() int64 {
+	return r._accountId
+}

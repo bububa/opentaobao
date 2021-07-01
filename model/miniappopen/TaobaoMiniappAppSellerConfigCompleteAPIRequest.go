@@ -19,4 +19,49 @@ type TaobaoMiniappAppSellerConfigCompleteAPIRequest struct {
 	_version string
 }
 
-// New
+// NewTaobaoMiniappAppSellerConfigCompleteRequest 初始化TaobaoMiniappAppSellerConfigCompleteAPIRequest对象
+func NewTaobaoMiniappAppSellerConfigCompleteRequest() *TaobaoMiniappAppSellerConfigCompleteAPIRequest {
+	return &TaobaoMiniappAppSellerConfigCompleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetApiMethodName() string {
+	return "taobao.miniapp.app.seller.config.complete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AppId Setter
+// 商家已完成配置的小部件/B端插件的appid
+func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetAppId(_appId int64) error {
+	r._appId = _appId
+	r.Set("app_id", _appId)
+	return nil
+}
+
+// Get AppId Getter
+func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetAppId() int64 {
+	return r._appId
+}
+
+// Set is Version Setter
+// 小部件必传，B端插件不用传。与app_id对应的已完成配置的版本号
+func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetVersion(_version string) error {
+	r._version = _version
+	r.Set("version", _version)
+	return nil
+}
+
+// Get Version Getter
+func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetVersion() string {
+	return r._version
+}

@@ -17,4 +17,36 @@ type AlibabaWdkMarketingVersionGenerateAPIRequest struct {
 	_param *SeasonVersionParam
 }
 
-// New
+// NewAlibabaWdkMarketingVersionGenerateRequest 初始化AlibabaWdkMarketingVersionGenerateAPIRequest对象
+func NewAlibabaWdkMarketingVersionGenerateRequest() *AlibabaWdkMarketingVersionGenerateAPIRequest {
+	return &AlibabaWdkMarketingVersionGenerateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMarketingVersionGenerateAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.marketing.version.generate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMarketingVersionGenerateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 档期版本号参数信息
+func (r *AlibabaWdkMarketingVersionGenerateAPIRequest) SetParam(_param *SeasonVersionParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaWdkMarketingVersionGenerateAPIRequest) GetParam() *SeasonVersionParam {
+	return r._param
+}

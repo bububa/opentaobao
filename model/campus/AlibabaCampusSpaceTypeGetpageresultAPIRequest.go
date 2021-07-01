@@ -21,4 +21,49 @@ type AlibabaCampusSpaceTypeGetpageresultAPIRequest struct {
 	_param1 *SpaceTypeQuery
 }
 
-// New
+// NewAlibabaCampusSpaceTypeGetpageresultRequest 初始化AlibabaCampusSpaceTypeGetpageresultAPIRequest对象
+func NewAlibabaCampusSpaceTypeGetpageresultRequest() *AlibabaCampusSpaceTypeGetpageresultAPIRequest {
+	return &AlibabaCampusSpaceTypeGetpageresultAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCampusSpaceTypeGetpageresultAPIRequest) GetApiMethodName() string {
+	return "alibaba.campus.space.type.getpageresult"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCampusSpaceTypeGetpageresultAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 环境参数
+func (r *AlibabaCampusSpaceTypeGetpageresultAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r AlibabaCampusSpaceTypeGetpageresultAPIRequest) GetParam0() *WorkBenchContext {
+	return r._param0
+}
+
+// Set is Param1 Setter
+// 查询参数
+func (r *AlibabaCampusSpaceTypeGetpageresultAPIRequest) SetParam1(_param1 *SpaceTypeQuery) error {
+	r._param1 = _param1
+	r.Set("param1", _param1)
+	return nil
+}
+
+// Get Param1 Getter
+func (r AlibabaCampusSpaceTypeGetpageresultAPIRequest) GetParam1() *SpaceTypeQuery {
+	return r._param1
+}

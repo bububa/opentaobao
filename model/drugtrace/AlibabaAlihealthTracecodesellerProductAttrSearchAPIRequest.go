@@ -19,4 +19,49 @@ type AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest struct {
 	_tracUserProductInfoId int64
 }
 
-// New
+// NewAlibabaAlihealthTracecodesellerProductAttrSearchRequest 初始化AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest对象
+func NewAlibabaAlihealthTracecodesellerProductAttrSearchRequest() *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest {
+	return &AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.tracecodeseller.product.attr.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is EntInfoId Setter
+// 企业id
+func (r *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
+	r._entInfoId = _entInfoId
+	r.Set("ent_info_id", _entInfoId)
+	return nil
+}
+
+// Get EntInfoId Getter
+func (r AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) GetEntInfoId() int64 {
+	return r._entInfoId
+}
+
+// Set is TracUserProductInfoId Setter
+// 货品id
+func (r *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) SetTracUserProductInfoId(_tracUserProductInfoId int64) error {
+	r._tracUserProductInfoId = _tracUserProductInfoId
+	r.Set("trac_user_product_info_id", _tracUserProductInfoId)
+	return nil
+}
+
+// Get TracUserProductInfoId Getter
+func (r AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) GetTracUserProductInfoId() int64 {
+	return r._tracUserProductInfoId
+}

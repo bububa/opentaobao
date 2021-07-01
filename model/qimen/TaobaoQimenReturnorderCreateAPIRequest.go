@@ -17,4 +17,36 @@ type TaobaoQimenReturnorderCreateAPIRequest struct {
 	_request *ReturnOrderCreateRequest
 }
 
-// New
+// NewTaobaoQimenReturnorderCreateRequest 初始化TaobaoQimenReturnorderCreateAPIRequest对象
+func NewTaobaoQimenReturnorderCreateRequest() *TaobaoQimenReturnorderCreateAPIRequest {
+	return &TaobaoQimenReturnorderCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenReturnorderCreateAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.returnorder.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenReturnorderCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenReturnorderCreateAPIRequest) SetRequest(_request *ReturnOrderCreateRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenReturnorderCreateAPIRequest) GetRequest() *ReturnOrderCreateRequest {
+	return r._request
+}

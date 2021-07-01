@@ -21,4 +21,62 @@ type AlibabaInfodeptLassenCasestatisticsGetAPIRequest struct {
 	_endTime string
 }
 
-// New
+// NewAlibabaInfodeptLassenCasestatisticsGetRequest 初始化AlibabaInfodeptLassenCasestatisticsGetAPIRequest对象
+func NewAlibabaInfodeptLassenCasestatisticsGetRequest() *AlibabaInfodeptLassenCasestatisticsGetAPIRequest {
+	return &AlibabaInfodeptLassenCasestatisticsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInfodeptLassenCasestatisticsGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.infodept.lassen.casestatistics.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInfodeptLassenCasestatisticsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AreaCode Setter
+// 地区代码
+func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) SetAreaCode(_areaCode string) error {
+	r._areaCode = _areaCode
+	r.Set("area_code", _areaCode)
+	return nil
+}
+
+// Get AreaCode Getter
+func (r AlibabaInfodeptLassenCasestatisticsGetAPIRequest) GetAreaCode() string {
+	return r._areaCode
+}
+
+// Set is StartTime Setter
+// 开始时间
+func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// Get StartTime Getter
+func (r AlibabaInfodeptLassenCasestatisticsGetAPIRequest) GetStartTime() string {
+	return r._startTime
+}
+
+// Set is EndTime Setter
+// 结束时间
+func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// Get EndTime Getter
+func (r AlibabaInfodeptLassenCasestatisticsGetAPIRequest) GetEndTime() string {
+	return r._endTime
+}

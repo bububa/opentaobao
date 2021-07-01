@@ -23,4 +23,75 @@ type TaobaoVmarketEticketFailsendAPIRequest struct {
 	_errorMsg string
 }
 
-// New
+// NewTaobaoVmarketEticketFailsendRequest 初始化TaobaoVmarketEticketFailsendAPIRequest对象
+func NewTaobaoVmarketEticketFailsendRequest() *TaobaoVmarketEticketFailsendAPIRequest {
+	return &TaobaoVmarketEticketFailsendAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoVmarketEticketFailsendAPIRequest) GetApiMethodName() string {
+	return "taobao.vmarket.eticket.failsend"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoVmarketEticketFailsendAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 订单号
+func (r *TaobaoVmarketEticketFailsendAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r TaobaoVmarketEticketFailsendAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// Set is Token Setter
+// 发码通知时的token
+func (r *TaobaoVmarketEticketFailsendAPIRequest) SetToken(_token string) error {
+	r._token = _token
+	r.Set("token", _token)
+	return nil
+}
+
+// Get Token Getter
+func (r TaobaoVmarketEticketFailsendAPIRequest) GetToken() string {
+	return r._token
+}
+
+// Set is ErrorCode Setter
+// 错误码
+func (r *TaobaoVmarketEticketFailsendAPIRequest) SetErrorCode(_errorCode int64) error {
+	r._errorCode = _errorCode
+	r.Set("error_code", _errorCode)
+	return nil
+}
+
+// Get ErrorCode Getter
+func (r TaobaoVmarketEticketFailsendAPIRequest) GetErrorCode() int64 {
+	return r._errorCode
+}
+
+// Set is ErrorMsg Setter
+// 错误信息
+func (r *TaobaoVmarketEticketFailsendAPIRequest) SetErrorMsg(_errorMsg string) error {
+	r._errorMsg = _errorMsg
+	r.Set("error_msg", _errorMsg)
+	return nil
+}
+
+// Get ErrorMsg Getter
+func (r TaobaoVmarketEticketFailsendAPIRequest) GetErrorMsg() string {
+	return r._errorMsg
+}

@@ -25,4 +25,88 @@ type TaobaoPromotionCouponsGetAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewTaobaoPromotionCouponsGetRequest 初始化TaobaoPromotionCouponsGetAPIRequest对象
+func NewTaobaoPromotionCouponsGetRequest() *TaobaoPromotionCouponsGetAPIRequest {
+	return &TaobaoPromotionCouponsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPromotionCouponsGetAPIRequest) GetApiMethodName() string {
+	return "taobao.promotion.coupons.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPromotionCouponsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CouponId Setter
+// 优惠券的id，唯一标识这个优惠券
+func (r *TaobaoPromotionCouponsGetAPIRequest) SetCouponId(_couponId int64) error {
+	r._couponId = _couponId
+	r.Set("coupon_id", _couponId)
+	return nil
+}
+
+// Get CouponId Getter
+func (r TaobaoPromotionCouponsGetAPIRequest) GetCouponId() int64 {
+	return r._couponId
+}
+
+// Set is EndTime Setter
+// 优惠券的截止日期
+func (r *TaobaoPromotionCouponsGetAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// Get EndTime Getter
+func (r TaobaoPromotionCouponsGetAPIRequest) GetEndTime() string {
+	return r._endTime
+}
+
+// Set is Denominations Setter
+// 优惠券的面额，必须是3，5，10，20，50,100
+func (r *TaobaoPromotionCouponsGetAPIRequest) SetDenominations(_denominations int64) error {
+	r._denominations = _denominations
+	r.Set("denominations", _denominations)
+	return nil
+}
+
+// Get Denominations Getter
+func (r TaobaoPromotionCouponsGetAPIRequest) GetDenominations() int64 {
+	return r._denominations
+}
+
+// Set is PageNo Setter
+// 查询的页号，结果集是分页返回的，每页20条
+func (r *TaobaoPromotionCouponsGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r TaobaoPromotionCouponsGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 每页条数
+func (r *TaobaoPromotionCouponsGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoPromotionCouponsGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

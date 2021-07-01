@@ -17,4 +17,36 @@ type TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest struct {
 	_isOverseas bool
 }
 
-// New
+// NewTaobaoAlitripTravelBaseinfoCruiseGetRequest 初始化TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest对象
+func NewTaobaoAlitripTravelBaseinfoCruiseGetRequest() *TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest {
+	return &TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.travel.baseinfo.cruise.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is IsOverseas Setter
+// true-获取国际邮轮类目扩展信息；false-获取国内邮轮类目扩展信息
+func (r *TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) SetIsOverseas(_isOverseas bool) error {
+	r._isOverseas = _isOverseas
+	r.Set("is_overseas", _isOverseas)
+	return nil
+}
+
+// Get IsOverseas Getter
+func (r TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) GetIsOverseas() bool {
+	return r._isOverseas
+}

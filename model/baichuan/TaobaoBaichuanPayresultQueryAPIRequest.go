@@ -17,4 +17,36 @@ type TaobaoBaichuanPayresultQueryAPIRequest struct {
 	_name string
 }
 
-// New
+// NewTaobaoBaichuanPayresultQueryRequest 初始化TaobaoBaichuanPayresultQueryAPIRequest对象
+func NewTaobaoBaichuanPayresultQueryRequest() *TaobaoBaichuanPayresultQueryAPIRequest {
+	return &TaobaoBaichuanPayresultQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBaichuanPayresultQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.baichuan.payresult.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBaichuanPayresultQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Name Setter
+// name
+func (r *TaobaoBaichuanPayresultQueryAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r TaobaoBaichuanPayresultQueryAPIRequest) GetName() string {
+	return r._name
+}

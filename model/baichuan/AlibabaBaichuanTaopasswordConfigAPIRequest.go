@@ -15,4 +15,23 @@ type AlibabaBaichuanTaopasswordConfigAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaBaichuanTaopasswordConfigRequest 初始化AlibabaBaichuanTaopasswordConfigAPIRequest对象
+func NewAlibabaBaichuanTaopasswordConfigRequest() *AlibabaBaichuanTaopasswordConfigAPIRequest {
+	return &AlibabaBaichuanTaopasswordConfigAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaBaichuanTaopasswordConfigAPIRequest) GetApiMethodName() string {
+	return "alibaba.baichuan.taopassword.config"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaBaichuanTaopasswordConfigAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

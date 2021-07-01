@@ -17,4 +17,36 @@ type AlibabaDamaiMevOpenDeleteprojectAPIRequest struct {
 	_deleteProjectParam *ProjectIdOpenParam
 }
 
-// New
+// NewAlibabaDamaiMevOpenDeleteprojectRequest 初始化AlibabaDamaiMevOpenDeleteprojectAPIRequest对象
+func NewAlibabaDamaiMevOpenDeleteprojectRequest() *AlibabaDamaiMevOpenDeleteprojectAPIRequest {
+	return &AlibabaDamaiMevOpenDeleteprojectAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiMevOpenDeleteprojectAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.mev.open.deleteproject"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiMevOpenDeleteprojectAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DeleteProjectParam Setter
+// 入参deleteProjectParam
+func (r *AlibabaDamaiMevOpenDeleteprojectAPIRequest) SetDeleteProjectParam(_deleteProjectParam *ProjectIdOpenParam) error {
+	r._deleteProjectParam = _deleteProjectParam
+	r.Set("delete_project_param", _deleteProjectParam)
+	return nil
+}
+
+// Get DeleteProjectParam Getter
+func (r AlibabaDamaiMevOpenDeleteprojectAPIRequest) GetDeleteProjectParam() *ProjectIdOpenParam {
+	return r._deleteProjectParam
+}

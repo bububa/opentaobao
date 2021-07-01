@@ -17,4 +17,36 @@ type XiamiContentSongsInfoGetAPIRequest struct {
 	_songIds []int64
 }
 
-// New
+// NewXiamiContentSongsInfoGetRequest 初始化XiamiContentSongsInfoGetAPIRequest对象
+func NewXiamiContentSongsInfoGetRequest() *XiamiContentSongsInfoGetAPIRequest {
+	return &XiamiContentSongsInfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r XiamiContentSongsInfoGetAPIRequest) GetApiMethodName() string {
+	return "xiami.content.songs.info.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r XiamiContentSongsInfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SongIds Setter
+// 歌曲ID
+func (r *XiamiContentSongsInfoGetAPIRequest) SetSongIds(_songIds []int64) error {
+	r._songIds = _songIds
+	r.Set("song_ids", _songIds)
+	return nil
+}
+
+// Get SongIds Getter
+func (r XiamiContentSongsInfoGetAPIRequest) GetSongIds() []int64 {
+	return r._songIds
+}

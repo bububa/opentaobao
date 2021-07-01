@@ -17,4 +17,36 @@ type AlibabaIdleAgreementPayAPIRequest struct {
 	_agreementPayParam *AgreementPayParam
 }
 
-// New
+// NewAlibabaIdleAgreementPayRequest 初始化AlibabaIdleAgreementPayAPIRequest对象
+func NewAlibabaIdleAgreementPayRequest() *AlibabaIdleAgreementPayAPIRequest {
+	return &AlibabaIdleAgreementPayAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleAgreementPayAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.agreement.pay"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleAgreementPayAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AgreementPayParam Setter
+// 协议代扣参数
+func (r *AlibabaIdleAgreementPayAPIRequest) SetAgreementPayParam(_agreementPayParam *AgreementPayParam) error {
+	r._agreementPayParam = _agreementPayParam
+	r.Set("agreement_pay_param", _agreementPayParam)
+	return nil
+}
+
+// Get AgreementPayParam Getter
+func (r AlibabaIdleAgreementPayAPIRequest) GetAgreementPayParam() *AgreementPayParam {
+	return r._agreementPayParam
+}

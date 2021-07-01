@@ -20,4 +20,49 @@ type TaobaoTradePostageUpdateAPIRequest struct {
 	_postFee string
 }
 
-// New
+// NewTaobaoTradePostageUpdateRequest 初始化TaobaoTradePostageUpdateAPIRequest对象
+func NewTaobaoTradePostageUpdateRequest() *TaobaoTradePostageUpdateAPIRequest {
+	return &TaobaoTradePostageUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTradePostageUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.trade.postage.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTradePostageUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Tid Setter
+// 主订单编号
+func (r *TaobaoTradePostageUpdateAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// Get Tid Getter
+func (r TaobaoTradePostageUpdateAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// Set is PostFee Setter
+// 邮费价格(邮费单位是元）
+func (r *TaobaoTradePostageUpdateAPIRequest) SetPostFee(_postFee string) error {
+	r._postFee = _postFee
+	r.Set("post_fee", _postFee)
+	return nil
+}
+
+// Get PostFee Getter
+func (r TaobaoTradePostageUpdateAPIRequest) GetPostFee() string {
+	return r._postFee
+}

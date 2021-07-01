@@ -21,4 +21,62 @@ type AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest struct {
 	_bureauId string
 }
 
-// New
+// NewAlibabaAlihealthDrugCodeKytYqQuerycodeRequest 初始化AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest对象
+func NewAlibabaAlihealthDrugCodeKytYqQuerycodeRequest() *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest {
+	return &AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.drug.code.kyt.yq.querycode"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CodeList Setter
+// 追溯码
+func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetCodeList(_codeList []string) error {
+	r._codeList = _codeList
+	r.Set("code_list", _codeList)
+	return nil
+}
+
+// Get CodeList Getter
+func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetCodeList() []string {
+	return r._codeList
+}
+
+// Set is TerminalName Setter
+// 调用零售药店名称
+func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetTerminalName(_terminalName string) error {
+	r._terminalName = _terminalName
+	r.Set("terminal_name", _terminalName)
+	return nil
+}
+
+// Get TerminalName Getter
+func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetTerminalName() string {
+	return r._terminalName
+}
+
+// Set is BureauId Setter
+// 门店所属的行政区域ID
+func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetBureauId(_bureauId string) error {
+	r._bureauId = _bureauId
+	r.Set("bureau_id", _bureauId)
+	return nil
+}
+
+// Get BureauId Getter
+func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetBureauId() string {
+	return r._bureauId
+}

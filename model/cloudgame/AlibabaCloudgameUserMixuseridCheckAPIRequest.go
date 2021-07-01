@@ -17,4 +17,36 @@ type AlibabaCloudgameUserMixuseridCheckAPIRequest struct {
 	_mixUserId string
 }
 
-// New
+// NewAlibabaCloudgameUserMixuseridCheckRequest 初始化AlibabaCloudgameUserMixuseridCheckAPIRequest对象
+func NewAlibabaCloudgameUserMixuseridCheckRequest() *AlibabaCloudgameUserMixuseridCheckAPIRequest {
+	return &AlibabaCloudgameUserMixuseridCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCloudgameUserMixuseridCheckAPIRequest) GetApiMethodName() string {
+	return "alibaba.cloudgame.user.mixuserid.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCloudgameUserMixuseridCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MixUserId Setter
+// 云游戏混淆用户ID
+func (r *AlibabaCloudgameUserMixuseridCheckAPIRequest) SetMixUserId(_mixUserId string) error {
+	r._mixUserId = _mixUserId
+	r.Set("mix_user_id", _mixUserId)
+	return nil
+}
+
+// Get MixUserId Getter
+func (r AlibabaCloudgameUserMixuseridCheckAPIRequest) GetMixUserId() string {
+	return r._mixUserId
+}

@@ -17,4 +17,36 @@ type AlitripTuanHotelImageUploadAPIRequest struct {
 	_imageInfoList []ImageInfoVOList
 }
 
-// New
+// NewAlitripTuanHotelImageUploadRequest 初始化AlitripTuanHotelImageUploadAPIRequest对象
+func NewAlitripTuanHotelImageUploadRequest() *AlitripTuanHotelImageUploadAPIRequest {
+	return &AlitripTuanHotelImageUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTuanHotelImageUploadAPIRequest) GetApiMethodName() string {
+	return "alitrip.tuan.hotel.image.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTuanHotelImageUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ImageInfoList Setter
+// 上传图片信息列表，最多一次支持5张图片上传。单张图片大小限制为1M
+func (r *AlitripTuanHotelImageUploadAPIRequest) SetImageInfoList(_imageInfoList []ImageInfoVOList) error {
+	r._imageInfoList = _imageInfoList
+	r.Set("image_info_list", _imageInfoList)
+	return nil
+}
+
+// Get ImageInfoList Getter
+func (r AlitripTuanHotelImageUploadAPIRequest) GetImageInfoList() []ImageInfoVOList {
+	return r._imageInfoList
+}

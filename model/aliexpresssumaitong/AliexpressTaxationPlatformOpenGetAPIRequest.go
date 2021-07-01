@@ -15,4 +15,23 @@ type AliexpressTaxationPlatformOpenGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAliexpressTaxationPlatformOpenGetRequest 初始化AliexpressTaxationPlatformOpenGetAPIRequest对象
+func NewAliexpressTaxationPlatformOpenGetRequest() *AliexpressTaxationPlatformOpenGetAPIRequest {
+	return &AliexpressTaxationPlatformOpenGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressTaxationPlatformOpenGetAPIRequest) GetApiMethodName() string {
+	return "aliexpress.taxation.platform.open.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressTaxationPlatformOpenGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

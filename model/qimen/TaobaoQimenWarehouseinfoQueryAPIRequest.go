@@ -17,4 +17,36 @@ type TaobaoQimenWarehouseinfoQueryAPIRequest struct {
 	_request *TaobaoQimenWarehouseinfoQueryRequest
 }
 
-// New
+// NewTaobaoQimenWarehouseinfoQueryRequest 初始化TaobaoQimenWarehouseinfoQueryAPIRequest对象
+func NewTaobaoQimenWarehouseinfoQueryRequest() *TaobaoQimenWarehouseinfoQueryAPIRequest {
+	return &TaobaoQimenWarehouseinfoQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenWarehouseinfoQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.warehouseinfo.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenWarehouseinfoQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenWarehouseinfoQueryAPIRequest) SetRequest(_request *TaobaoQimenWarehouseinfoQueryRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenWarehouseinfoQueryAPIRequest) GetRequest() *TaobaoQimenWarehouseinfoQueryRequest {
+	return r._request
+}

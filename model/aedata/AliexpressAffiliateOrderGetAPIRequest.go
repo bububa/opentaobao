@@ -21,4 +21,62 @@ type AliexpressAffiliateOrderGetAPIRequest struct {
 	_orderIds string
 }
 
-// New
+// NewAliexpressAffiliateOrderGetRequest 初始化AliexpressAffiliateOrderGetAPIRequest对象
+func NewAliexpressAffiliateOrderGetRequest() *AliexpressAffiliateOrderGetAPIRequest {
+	return &AliexpressAffiliateOrderGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressAffiliateOrderGetAPIRequest) GetApiMethodName() string {
+	return "aliexpress.affiliate.order.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressAffiliateOrderGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AppSignature Setter
+// 安全签名
+func (r *AliexpressAffiliateOrderGetAPIRequest) SetAppSignature(_appSignature string) error {
+	r._appSignature = _appSignature
+	r.Set("app_signature", _appSignature)
+	return nil
+}
+
+// Get AppSignature Getter
+func (r AliexpressAffiliateOrderGetAPIRequest) GetAppSignature() string {
+	return r._appSignature
+}
+
+// Set is Fields Setter
+// 返回的字段列表
+func (r *AliexpressAffiliateOrderGetAPIRequest) SetFields(_fields string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// Get Fields Getter
+func (r AliexpressAffiliateOrderGetAPIRequest) GetFields() string {
+	return r._fields
+}
+
+// Set is OrderIds Setter
+// 订单ID列表，以逗号分隔，当前只支持子订单ID查询
+func (r *AliexpressAffiliateOrderGetAPIRequest) SetOrderIds(_orderIds string) error {
+	r._orderIds = _orderIds
+	r.Set("order_ids", _orderIds)
+	return nil
+}
+
+// Get OrderIds Getter
+func (r AliexpressAffiliateOrderGetAPIRequest) GetOrderIds() string {
+	return r._orderIds
+}

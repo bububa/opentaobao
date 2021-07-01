@@ -21,4 +21,62 @@ type TaobaoMiniappCloudMongoInsertAPIRequest struct {
 	_env string
 }
 
-// New
+// NewTaobaoMiniappCloudMongoInsertRequest 初始化TaobaoMiniappCloudMongoInsertAPIRequest对象
+func NewTaobaoMiniappCloudMongoInsertRequest() *TaobaoMiniappCloudMongoInsertAPIRequest {
+	return &TaobaoMiniappCloudMongoInsertAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMiniappCloudMongoInsertAPIRequest) GetApiMethodName() string {
+	return "taobao.miniapp.cloud.mongo.insert"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMiniappCloudMongoInsertAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Record Setter
+// 待插入的数据，JSON格式
+func (r *TaobaoMiniappCloudMongoInsertAPIRequest) SetRecord(_record string) error {
+	r._record = _record
+	r.Set("record", _record)
+	return nil
+}
+
+// Get Record Getter
+func (r TaobaoMiniappCloudMongoInsertAPIRequest) GetRecord() string {
+	return r._record
+}
+
+// Set is Collection Setter
+// MongoDB表名
+func (r *TaobaoMiniappCloudMongoInsertAPIRequest) SetCollection(_collection string) error {
+	r._collection = _collection
+	r.Set("collection", _collection)
+	return nil
+}
+
+// Get Collection Getter
+func (r TaobaoMiniappCloudMongoInsertAPIRequest) GetCollection() string {
+	return r._collection
+}
+
+// Set is Env Setter
+// 要操作的环境，默认是测试环境
+func (r *TaobaoMiniappCloudMongoInsertAPIRequest) SetEnv(_env string) error {
+	r._env = _env
+	r.Set("env", _env)
+	return nil
+}
+
+// Get Env Getter
+func (r TaobaoMiniappCloudMongoInsertAPIRequest) GetEnv() string {
+	return r._env
+}

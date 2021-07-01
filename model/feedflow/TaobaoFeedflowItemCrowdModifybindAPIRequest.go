@@ -19,4 +19,49 @@ type TaobaoFeedflowItemCrowdModifybindAPIRequest struct {
 	_adgroupId int64
 }
 
-// New
+// NewTaobaoFeedflowItemCrowdModifybindRequest 初始化TaobaoFeedflowItemCrowdModifybindAPIRequest对象
+func NewTaobaoFeedflowItemCrowdModifybindRequest() *TaobaoFeedflowItemCrowdModifybindAPIRequest {
+	return &TaobaoFeedflowItemCrowdModifybindAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFeedflowItemCrowdModifybindAPIRequest) GetApiMethodName() string {
+	return "taobao.feedflow.item.crowd.modifybind"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFeedflowItemCrowdModifybindAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Crowds Setter
+// 人群信息
+func (r *TaobaoFeedflowItemCrowdModifybindAPIRequest) SetCrowds(_crowds []CrowdDto) error {
+	r._crowds = _crowds
+	r.Set("crowds", _crowds)
+	return nil
+}
+
+// Get Crowds Getter
+func (r TaobaoFeedflowItemCrowdModifybindAPIRequest) GetCrowds() []CrowdDto {
+	return r._crowds
+}
+
+// Set is AdgroupId Setter
+// 单元id
+func (r *TaobaoFeedflowItemCrowdModifybindAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoFeedflowItemCrowdModifybindAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}

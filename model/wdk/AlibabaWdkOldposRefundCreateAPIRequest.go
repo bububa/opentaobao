@@ -17,4 +17,36 @@ type AlibabaWdkOldposRefundCreateAPIRequest struct {
 	_posRefundCreateRequest *PosRefundCreateRequest
 }
 
-// New
+// NewAlibabaWdkOldposRefundCreateRequest 初始化AlibabaWdkOldposRefundCreateAPIRequest对象
+func NewAlibabaWdkOldposRefundCreateRequest() *AlibabaWdkOldposRefundCreateAPIRequest {
+	return &AlibabaWdkOldposRefundCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkOldposRefundCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.oldpos.refund.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkOldposRefundCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PosRefundCreateRequest Setter
+// 入参
+func (r *AlibabaWdkOldposRefundCreateAPIRequest) SetPosRefundCreateRequest(_posRefundCreateRequest *PosRefundCreateRequest) error {
+	r._posRefundCreateRequest = _posRefundCreateRequest
+	r.Set("pos_refund_create_request", _posRefundCreateRequest)
+	return nil
+}
+
+// Get PosRefundCreateRequest Getter
+func (r AlibabaWdkOldposRefundCreateAPIRequest) GetPosRefundCreateRequest() *PosRefundCreateRequest {
+	return r._posRefundCreateRequest
+}

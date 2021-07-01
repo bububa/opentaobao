@@ -17,4 +17,36 @@ type AlibabaHealthNrCepOutorderUploadAPIRequest struct {
 	_topWarOutDto *TopWarOutDto
 }
 
-// New
+// NewAlibabaHealthNrCepOutorderUploadRequest 初始化AlibabaHealthNrCepOutorderUploadAPIRequest对象
+func NewAlibabaHealthNrCepOutorderUploadRequest() *AlibabaHealthNrCepOutorderUploadAPIRequest {
+	return &AlibabaHealthNrCepOutorderUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaHealthNrCepOutorderUploadAPIRequest) GetApiMethodName() string {
+	return "alibaba.health.nr.cep.outorder.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaHealthNrCepOutorderUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TopWarOutDto Setter
+// 出库单对象
+func (r *AlibabaHealthNrCepOutorderUploadAPIRequest) SetTopWarOutDto(_topWarOutDto *TopWarOutDto) error {
+	r._topWarOutDto = _topWarOutDto
+	r.Set("top_war_out_dto", _topWarOutDto)
+	return nil
+}
+
+// Get TopWarOutDto Getter
+func (r AlibabaHealthNrCepOutorderUploadAPIRequest) GetTopWarOutDto() *TopWarOutDto {
+	return r._topWarOutDto
+}

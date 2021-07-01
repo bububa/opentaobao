@@ -19,4 +19,23 @@ type AlibabaModifyaddressIsvBindsellerCheckAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaModifyaddressIsvBindsellerCheckRequest 初始化AlibabaModifyaddressIsvBindsellerCheckAPIRequest对象
+func NewAlibabaModifyaddressIsvBindsellerCheckRequest() *AlibabaModifyaddressIsvBindsellerCheckAPIRequest {
+	return &AlibabaModifyaddressIsvBindsellerCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaModifyaddressIsvBindsellerCheckAPIRequest) GetApiMethodName() string {
+	return "alibaba.modifyaddress.isv.bindseller.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaModifyaddressIsvBindsellerCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

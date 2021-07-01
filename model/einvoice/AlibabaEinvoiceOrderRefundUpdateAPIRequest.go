@@ -17,4 +17,36 @@ type AlibabaEinvoiceOrderRefundUpdateAPIRequest struct {
 	_orderRefundResultDto *InvoiceOrderRefundResultDto
 }
 
-// New
+// NewAlibabaEinvoiceOrderRefundUpdateRequest 初始化AlibabaEinvoiceOrderRefundUpdateAPIRequest对象
+func NewAlibabaEinvoiceOrderRefundUpdateRequest() *AlibabaEinvoiceOrderRefundUpdateAPIRequest {
+	return &AlibabaEinvoiceOrderRefundUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceOrderRefundUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.order.refund.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceOrderRefundUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderRefundResultDto Setter
+// 退款审核结果DTO
+func (r *AlibabaEinvoiceOrderRefundUpdateAPIRequest) SetOrderRefundResultDto(_orderRefundResultDto *InvoiceOrderRefundResultDto) error {
+	r._orderRefundResultDto = _orderRefundResultDto
+	r.Set("order_refund_result_dto", _orderRefundResultDto)
+	return nil
+}
+
+// Get OrderRefundResultDto Getter
+func (r AlibabaEinvoiceOrderRefundUpdateAPIRequest) GetOrderRefundResultDto() *InvoiceOrderRefundResultDto {
+	return r._orderRefundResultDto
+}

@@ -25,4 +25,88 @@ type YoukuDspDeliveryResourceMultigetAPIRequest struct {
 	_deliveryType string
 }
 
-// New
+// NewYoukuDspDeliveryResourceMultigetRequest 初始化YoukuDspDeliveryResourceMultigetAPIRequest对象
+func NewYoukuDspDeliveryResourceMultigetRequest() *YoukuDspDeliveryResourceMultigetAPIRequest {
+	return &YoukuDspDeliveryResourceMultigetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetApiMethodName() string {
+	return "youku.dsp.delivery.resource.multiget"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ChannelId Setter
+// 渠道id
+func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetChannelId(_channelId int64) error {
+	r._channelId = _channelId
+	r.Set("channel_id", _channelId)
+	return nil
+}
+
+// Get ChannelId Getter
+func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetChannelId() int64 {
+	return r._channelId
+}
+
+// Set is SubChannelId Setter
+// 子渠道id
+func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetSubChannelId(_subChannelId int64) error {
+	r._subChannelId = _subChannelId
+	r.Set("sub_channel_id", _subChannelId)
+	return nil
+}
+
+// Get SubChannelId Getter
+func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetSubChannelId() int64 {
+	return r._subChannelId
+}
+
+// Set is DeviceIds Setter
+// 设备id串(md5加密)，多个设备逗号隔开
+func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetDeviceIds(_deviceIds string) error {
+	r._deviceIds = _deviceIds
+	r.Set("device_ids", _deviceIds)
+	return nil
+}
+
+// Get DeviceIds Getter
+func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetDeviceIds() string {
+	return r._deviceIds
+}
+
+// Set is DeviceIdType Setter
+// 设备类型imei或者idfa
+func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetDeviceIdType(_deviceIdType string) error {
+	r._deviceIdType = _deviceIdType
+	r.Set("device_id_type", _deviceIdType)
+	return nil
+}
+
+// Get DeviceIdType Getter
+func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetDeviceIdType() string {
+	return r._deviceIdType
+}
+
+// Set is DeliveryType Setter
+// 投放类型push或者feed
+func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetDeliveryType(_deliveryType string) error {
+	r._deliveryType = _deliveryType
+	r.Set("delivery_type", _deliveryType)
+	return nil
+}
+
+// Get DeliveryType Getter
+func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetDeliveryType() string {
+	return r._deliveryType
+}

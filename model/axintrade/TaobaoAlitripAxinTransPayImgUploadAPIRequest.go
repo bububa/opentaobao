@@ -19,4 +19,49 @@ type TaobaoAlitripAxinTransPayImgUploadAPIRequest struct {
 	_imgContents *model.File
 }
 
-// New
+// NewTaobaoAlitripAxinTransPayImgUploadRequest 初始化TaobaoAlitripAxinTransPayImgUploadAPIRequest对象
+func NewTaobaoAlitripAxinTransPayImgUploadRequest() *TaobaoAlitripAxinTransPayImgUploadAPIRequest {
+	return &TaobaoAlitripAxinTransPayImgUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.axin.trans.pay.img.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AxinPayImgUploadDTO Setter
+// 上传图片到支付宝图片空间接口入参
+func (r *TaobaoAlitripAxinTransPayImgUploadAPIRequest) SetAxinPayImgUploadDTO(_axinPayImgUploadDTO *AxinPayImgUploadDto) error {
+	r._axinPayImgUploadDTO = _axinPayImgUploadDTO
+	r.Set("axin_pay_img_upload_d_t_o", _axinPayImgUploadDTO)
+	return nil
+}
+
+// Get AxinPayImgUploadDTO Getter
+func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetAxinPayImgUploadDTO() *AxinPayImgUploadDto {
+	return r._axinPayImgUploadDTO
+}
+
+// Set is ImgContents Setter
+// 图片字节流
+func (r *TaobaoAlitripAxinTransPayImgUploadAPIRequest) SetImgContents(_imgContents *model.File) error {
+	r._imgContents = _imgContents
+	r.Set("img_contents", _imgContents)
+	return nil
+}
+
+// Get ImgContents Getter
+func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetImgContents() *model.File {
+	return r._imgContents
+}

@@ -17,4 +17,36 @@ type AlitripMerchantGalaxyBrandSearchAPIRequest struct {
 	_tenantKey string
 }
 
-// New
+// NewAlitripMerchantGalaxyBrandSearchRequest 初始化AlitripMerchantGalaxyBrandSearchAPIRequest对象
+func NewAlitripMerchantGalaxyBrandSearchRequest() *AlitripMerchantGalaxyBrandSearchAPIRequest {
+	return &AlitripMerchantGalaxyBrandSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripMerchantGalaxyBrandSearchAPIRequest) GetApiMethodName() string {
+	return "alitrip.merchant.galaxy.brand.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripMerchantGalaxyBrandSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TenantKey Setter
+// 租户信息
+func (r *AlitripMerchantGalaxyBrandSearchAPIRequest) SetTenantKey(_tenantKey string) error {
+	r._tenantKey = _tenantKey
+	r.Set("tenant_key", _tenantKey)
+	return nil
+}
+
+// Get TenantKey Getter
+func (r AlitripMerchantGalaxyBrandSearchAPIRequest) GetTenantKey() string {
+	return r._tenantKey
+}

@@ -17,4 +17,36 @@ type AlibabaSecurityJaqRpCloudRphitAPIRequest struct {
 	_content string
 }
 
-// New
+// NewAlibabaSecurityJaqRpCloudRphitRequest 初始化AlibabaSecurityJaqRpCloudRphitAPIRequest对象
+func NewAlibabaSecurityJaqRpCloudRphitRequest() *AlibabaSecurityJaqRpCloudRphitAPIRequest {
+	return &AlibabaSecurityJaqRpCloudRphitAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSecurityJaqRpCloudRphitAPIRequest) GetApiMethodName() string {
+	return "alibaba.security.jaq.rp.cloud.rphit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSecurityJaqRpCloudRphitAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Content Setter
+// xxx
+func (r *AlibabaSecurityJaqRpCloudRphitAPIRequest) SetContent(_content string) error {
+	r._content = _content
+	r.Set("content", _content)
+	return nil
+}
+
+// Get Content Getter
+func (r AlibabaSecurityJaqRpCloudRphitAPIRequest) GetContent() string {
+	return r._content
+}

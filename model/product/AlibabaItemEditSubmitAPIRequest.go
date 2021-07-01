@@ -25,4 +25,88 @@ type AlibabaItemEditSubmitAPIRequest struct {
 	_schema string
 }
 
-// New
+// NewAlibabaItemEditSubmitRequest 初始化AlibabaItemEditSubmitAPIRequest对象
+func NewAlibabaItemEditSubmitRequest() *AlibabaItemEditSubmitAPIRequest {
+	return &AlibabaItemEditSubmitAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaItemEditSubmitAPIRequest) GetApiMethodName() string {
+	return "alibaba.item.edit.submit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaItemEditSubmitAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BizType Setter
+// 业务扩展参数，需与平台约定好
+func (r *AlibabaItemEditSubmitAPIRequest) SetBizType(_bizType string) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// Get BizType Getter
+func (r AlibabaItemEditSubmitAPIRequest) GetBizType() string {
+	return r._bizType
+}
+
+// Set is CatId Setter
+// 商品类目ID。若不需要修改商品类目，则不用填写
+func (r *AlibabaItemEditSubmitAPIRequest) SetCatId(_catId int64) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// Get CatId Getter
+func (r AlibabaItemEditSubmitAPIRequest) GetCatId() int64 {
+	return r._catId
+}
+
+// Set is SpuId Setter
+// 产品ID，若不需要修改关联的产品信息，则不需要填写
+func (r *AlibabaItemEditSubmitAPIRequest) SetSpuId(_spuId int64) error {
+	r._spuId = _spuId
+	r.Set("spu_id", _spuId)
+	return nil
+}
+
+// Get SpuId Getter
+func (r AlibabaItemEditSubmitAPIRequest) GetSpuId() int64 {
+	return r._spuId
+}
+
+// Set is ItemId Setter
+// 商品ID
+func (r *AlibabaItemEditSubmitAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r AlibabaItemEditSubmitAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is Schema Setter
+// 编辑后的schema信息，通过alibaba.item.edit.schema.get获取
+func (r *AlibabaItemEditSubmitAPIRequest) SetSchema(_schema string) error {
+	r._schema = _schema
+	r.Set("schema", _schema)
+	return nil
+}
+
+// Get Schema Getter
+func (r AlibabaItemEditSubmitAPIRequest) GetSchema() string {
+	return r._schema
+}

@@ -35,4 +35,153 @@ type TaobaoVmarketEticketOplogsGetAPIRequest struct {
 	_codemerchantId int64
 }
 
-// New
+// NewTaobaoVmarketEticketOplogsGetRequest 初始化TaobaoVmarketEticketOplogsGetAPIRequest对象
+func NewTaobaoVmarketEticketOplogsGetRequest() *TaobaoVmarketEticketOplogsGetAPIRequest {
+	return &TaobaoVmarketEticketOplogsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetApiMethodName() string {
+	return "taobao.vmarket.eticket.oplogs.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Type Setter
+// 0:全部 1:核销 2:冲正
+func (r *TaobaoVmarketEticketOplogsGetAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetType() int64 {
+	return r._type
+}
+
+// Set is StartTime Setter
+// 开始时间
+func (r *TaobaoVmarketEticketOplogsGetAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// Get StartTime Getter
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetStartTime() string {
+	return r._startTime
+}
+
+// Set is EndTime Setter
+// 结束时间
+func (r *TaobaoVmarketEticketOplogsGetAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// Get EndTime Getter
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetEndTime() string {
+	return r._endTime
+}
+
+// Set is Code Setter
+// 核销码
+func (r *TaobaoVmarketEticketOplogsGetAPIRequest) SetCode(_code string) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// Get Code Getter
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetCode() string {
+	return r._code
+}
+
+// Set is Mobile Setter
+// 手机号后四位
+func (r *TaobaoVmarketEticketOplogsGetAPIRequest) SetMobile(_mobile string) error {
+	r._mobile = _mobile
+	r.Set("mobile", _mobile)
+	return nil
+}
+
+// Get Mobile Getter
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetMobile() string {
+	return r._mobile
+}
+
+// Set is PageNo Setter
+// 当前页码
+func (r *TaobaoVmarketEticketOplogsGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 每页显示的记录数，最大为40，默认为40
+func (r *TaobaoVmarketEticketOplogsGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is Sort Setter
+// 排序方式
+func (r *TaobaoVmarketEticketOplogsGetAPIRequest) SetSort(_sort string) error {
+	r._sort = _sort
+	r.Set("sort", _sort)
+	return nil
+}
+
+// Get Sort Getter
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetSort() string {
+	return r._sort
+}
+
+// Set is Posid Setter
+// 核销身份
+func (r *TaobaoVmarketEticketOplogsGetAPIRequest) SetPosid(_posid string) error {
+	r._posid = _posid
+	r.Set("posid", _posid)
+	return nil
+}
+
+// Get Posid Getter
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetPosid() string {
+	return r._posid
+}
+
+// Set is CodemerchantId Setter
+// 码商ID
+func (r *TaobaoVmarketEticketOplogsGetAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
+	r._codemerchantId = _codemerchantId
+	r.Set("codemerchant_id", _codemerchantId)
+	return nil
+}
+
+// Get CodemerchantId Getter
+func (r TaobaoVmarketEticketOplogsGetAPIRequest) GetCodemerchantId() int64 {
+	return r._codemerchantId
+}

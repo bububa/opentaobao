@@ -41,4 +41,192 @@ type TaobaoItempropsGetAPIRequest struct {
 	_attrKeys []string
 }
 
-// New
+// NewTaobaoItempropsGetRequest 初始化TaobaoItempropsGetAPIRequest对象
+func NewTaobaoItempropsGetRequest() *TaobaoItempropsGetAPIRequest {
+	return &TaobaoItempropsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoItempropsGetAPIRequest) GetApiMethodName() string {
+	return "taobao.itemprops.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoItempropsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Fields Setter
+// 需要返回的字段列表，见：ItemProp，默认返回：pid, name, must, multi, prop_values
+func (r *TaobaoItempropsGetAPIRequest) SetFields(_fields string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// Get Fields Getter
+func (r TaobaoItempropsGetAPIRequest) GetFields() string {
+	return r._fields
+}
+
+// Set is Cid Setter
+// 叶子类目ID，如果只传cid，则只返回一级属性,通过taobao.itemcats.get获得叶子类目ID
+func (r *TaobaoItempropsGetAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// Get Cid Getter
+func (r TaobaoItempropsGetAPIRequest) GetCid() int64 {
+	return r._cid
+}
+
+// Set is Pid Setter
+// 属性id (取类目属性时，传pid，不用同时传PID和parent_pid)
+func (r *TaobaoItempropsGetAPIRequest) SetPid(_pid int64) error {
+	r._pid = _pid
+	r.Set("pid", _pid)
+	return nil
+}
+
+// Get Pid Getter
+func (r TaobaoItempropsGetAPIRequest) GetPid() int64 {
+	return r._pid
+}
+
+// Set is ParentPid Setter
+// 父属性ID
+func (r *TaobaoItempropsGetAPIRequest) SetParentPid(_parentPid int64) error {
+	r._parentPid = _parentPid
+	r.Set("parent_pid", _parentPid)
+	return nil
+}
+
+// Get ParentPid Getter
+func (r TaobaoItempropsGetAPIRequest) GetParentPid() int64 {
+	return r._parentPid
+}
+
+// Set is IsKeyProp Setter
+// 是否关键属性。可选值:true(是),false(否)
+func (r *TaobaoItempropsGetAPIRequest) SetIsKeyProp(_isKeyProp bool) error {
+	r._isKeyProp = _isKeyProp
+	r.Set("is_key_prop", _isKeyProp)
+	return nil
+}
+
+// Get IsKeyProp Getter
+func (r TaobaoItempropsGetAPIRequest) GetIsKeyProp() bool {
+	return r._isKeyProp
+}
+
+// Set is IsSaleProp Setter
+// 是否销售属性。可选值:true(是),false(否)
+func (r *TaobaoItempropsGetAPIRequest) SetIsSaleProp(_isSaleProp bool) error {
+	r._isSaleProp = _isSaleProp
+	r.Set("is_sale_prop", _isSaleProp)
+	return nil
+}
+
+// Get IsSaleProp Getter
+func (r TaobaoItempropsGetAPIRequest) GetIsSaleProp() bool {
+	return r._isSaleProp
+}
+
+// Set is IsColorProp Setter
+// 是否颜色属性。可选值:true(是),false(否) (删除的属性不会匹配和返回这个条件)
+func (r *TaobaoItempropsGetAPIRequest) SetIsColorProp(_isColorProp bool) error {
+	r._isColorProp = _isColorProp
+	r.Set("is_color_prop", _isColorProp)
+	return nil
+}
+
+// Get IsColorProp Getter
+func (r TaobaoItempropsGetAPIRequest) GetIsColorProp() bool {
+	return r._isColorProp
+}
+
+// Set is IsEnumProp Setter
+// 是否枚举属性。可选值:true(是),false(否) (删除的属性不会匹配和返回这个条件)。如果返回true，属性值是下拉框选择输入，如果返回false，属性值是用户自行手工输入。
+func (r *TaobaoItempropsGetAPIRequest) SetIsEnumProp(_isEnumProp bool) error {
+	r._isEnumProp = _isEnumProp
+	r.Set("is_enum_prop", _isEnumProp)
+	return nil
+}
+
+// Get IsEnumProp Getter
+func (r TaobaoItempropsGetAPIRequest) GetIsEnumProp() bool {
+	return r._isEnumProp
+}
+
+// Set is IsInputProp Setter
+// 在is_enum_prop是true的前提下，是否是卖家可以自行输入的属性（注：如果is_enum_prop返回false，该参数统一返回false）。可选值:true(是),false(否) (删除的属性不会匹配和返回这个条件)
+func (r *TaobaoItempropsGetAPIRequest) SetIsInputProp(_isInputProp bool) error {
+	r._isInputProp = _isInputProp
+	r.Set("is_input_prop", _isInputProp)
+	return nil
+}
+
+// Get IsInputProp Getter
+func (r TaobaoItempropsGetAPIRequest) GetIsInputProp() bool {
+	return r._isInputProp
+}
+
+// Set is IsItemProp Setter
+// 是否商品属性，这个属性只能放于发布商品时使用。可选值:true(是),false(否)
+func (r *TaobaoItempropsGetAPIRequest) SetIsItemProp(_isItemProp bool) error {
+	r._isItemProp = _isItemProp
+	r.Set("is_item_prop", _isItemProp)
+	return nil
+}
+
+// Get IsItemProp Getter
+func (r TaobaoItempropsGetAPIRequest) GetIsItemProp() bool {
+	return r._isItemProp
+}
+
+// Set is ChildPath Setter
+// 类目子属性路径,由该子属性上层的类目属性和类目属性值组成,格式pid:vid;pid:vid.取类目子属性需要传child_path,cid
+func (r *TaobaoItempropsGetAPIRequest) SetChildPath(_childPath string) error {
+	r._childPath = _childPath
+	r.Set("child_path", _childPath)
+	return nil
+}
+
+// Get ChildPath Getter
+func (r TaobaoItempropsGetAPIRequest) GetChildPath() string {
+	return r._childPath
+}
+
+// Set is Type Setter
+// 获取类目的类型：1代表集市、2代表天猫
+func (r *TaobaoItempropsGetAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r TaobaoItempropsGetAPIRequest) GetType() int64 {
+	return r._type
+}
+
+// Set is AttrKeys Setter
+// 属性的Key，支持多条，以“,”分隔
+func (r *TaobaoItempropsGetAPIRequest) SetAttrKeys(_attrKeys []string) error {
+	r._attrKeys = _attrKeys
+	r.Set("attr_keys", _attrKeys)
+	return nil
+}
+
+// Get AttrKeys Getter
+func (r TaobaoItempropsGetAPIRequest) GetAttrKeys() []string {
+	return r._attrKeys
+}

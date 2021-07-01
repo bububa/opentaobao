@@ -17,4 +17,36 @@ type AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest struct {
 	_paramUnchargeCheckOpenReq *UnchargeCheckOpenReq
 }
 
-// New
+// NewAlibabaAlscCrmRechargeUnchargecheckGetRequest 初始化AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest对象
+func NewAlibabaAlscCrmRechargeUnchargecheckGetRequest() *AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest {
+	return &AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.recharge.unchargecheck.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamUnchargeCheckOpenReq Setter
+// 入参
+func (r *AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest) SetParamUnchargeCheckOpenReq(_paramUnchargeCheckOpenReq *UnchargeCheckOpenReq) error {
+	r._paramUnchargeCheckOpenReq = _paramUnchargeCheckOpenReq
+	r.Set("param_uncharge_check_open_req", _paramUnchargeCheckOpenReq)
+	return nil
+}
+
+// Get ParamUnchargeCheckOpenReq Getter
+func (r AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest) GetParamUnchargeCheckOpenReq() *UnchargeCheckOpenReq {
+	return r._paramUnchargeCheckOpenReq
+}

@@ -19,4 +19,49 @@ type CainiaoGuoguoBackupGraborderTakepackageAPIRequest struct {
 	_packageCode string
 }
 
-// New
+// NewCainiaoGuoguoBackupGraborderTakepackageRequest 初始化CainiaoGuoguoBackupGraborderTakepackageAPIRequest对象
+func NewCainiaoGuoguoBackupGraborderTakepackageRequest() *CainiaoGuoguoBackupGraborderTakepackageAPIRequest {
+	return &CainiaoGuoguoBackupGraborderTakepackageAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoGuoguoBackupGraborderTakepackageAPIRequest) GetApiMethodName() string {
+	return "cainiao.guoguo.backup.graborder.takepackage"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoGuoguoBackupGraborderTakepackageAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderCode Setter
+// 物流订单号
+func (r *CainiaoGuoguoBackupGraborderTakepackageAPIRequest) SetOrderCode(_orderCode string) error {
+	r._orderCode = _orderCode
+	r.Set("orderCode", _orderCode)
+	return nil
+}
+
+// Get OrderCode Getter
+func (r CainiaoGuoguoBackupGraborderTakepackageAPIRequest) GetOrderCode() string {
+	return r._orderCode
+}
+
+// Set is PackageCode Setter
+// 包裹四位码
+func (r *CainiaoGuoguoBackupGraborderTakepackageAPIRequest) SetPackageCode(_packageCode string) error {
+	r._packageCode = _packageCode
+	r.Set("packageCode", _packageCode)
+	return nil
+}
+
+// Get PackageCode Getter
+func (r CainiaoGuoguoBackupGraborderTakepackageAPIRequest) GetPackageCode() string {
+	return r._packageCode
+}

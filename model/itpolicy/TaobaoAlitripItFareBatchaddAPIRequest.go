@@ -23,4 +23,75 @@ type TaobaoAlitripItFareBatchaddAPIRequest struct {
 	_extendAttributes string
 }
 
-// New
+// NewTaobaoAlitripItFareBatchaddRequest 初始化TaobaoAlitripItFareBatchaddAPIRequest对象
+func NewTaobaoAlitripItFareBatchaddRequest() *TaobaoAlitripItFareBatchaddAPIRequest {
+	return &TaobaoAlitripItFareBatchaddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripItFareBatchaddAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.it.fare.batchadd"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripItFareBatchaddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AddType Setter
+// 新增类型，1 自有政策单程 2 自有政策往返 3 销售规则
+func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetAddType(_addType int64) error {
+	r._addType = _addType
+	r.Set("addType", _addType)
+	return nil
+}
+
+// Get AddType Getter
+func (r TaobaoAlitripItFareBatchaddAPIRequest) GetAddType() int64 {
+	return r._addType
+}
+
+// Set is Bytes Setter
+// 文本zip压缩后的数据字节流
+func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetBytes(_bytes *model.File) error {
+	r._bytes = _bytes
+	r.Set("bytes", _bytes)
+	return nil
+}
+
+// Get Bytes Getter
+func (r TaobaoAlitripItFareBatchaddAPIRequest) GetBytes() *model.File {
+	return r._bytes
+}
+
+// Set is DataType Setter
+// 数据格式类型，1 淘宝 2 携程
+func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetDataType(_dataType int64) error {
+	r._dataType = _dataType
+	r.Set("dataType", _dataType)
+	return nil
+}
+
+// Get DataType Getter
+func (r TaobaoAlitripItFareBatchaddAPIRequest) GetDataType() int64 {
+	return r._dataType
+}
+
+// Set is ExtendAttributes Setter
+// json格式的字符串，扩展属性，预留
+func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetExtendAttributes(_extendAttributes string) error {
+	r._extendAttributes = _extendAttributes
+	r.Set("extendAttributes", _extendAttributes)
+	return nil
+}
+
+// Get ExtendAttributes Getter
+func (r TaobaoAlitripItFareBatchaddAPIRequest) GetExtendAttributes() string {
+	return r._extendAttributes
+}

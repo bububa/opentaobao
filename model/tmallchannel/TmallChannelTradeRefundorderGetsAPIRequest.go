@@ -23,4 +23,75 @@ type TmallChannelTradeRefundorderGetsAPIRequest struct {
 	_pageNumber int64
 }
 
-// New
+// NewTmallChannelTradeRefundorderGetsRequest 初始化TmallChannelTradeRefundorderGetsAPIRequest对象
+func NewTmallChannelTradeRefundorderGetsRequest() *TmallChannelTradeRefundorderGetsAPIRequest {
+	return &TmallChannelTradeRefundorderGetsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallChannelTradeRefundorderGetsAPIRequest) GetApiMethodName() string {
+	return "tmall.channel.trade.refundorder.gets"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallChannelTradeRefundorderGetsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RefundId Setter
+// 退款单号
+func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetRefundId(_refundId int64) error {
+	r._refundId = _refundId
+	r.Set("refund_id", _refundId)
+	return nil
+}
+
+// Get RefundId Getter
+func (r TmallChannelTradeRefundorderGetsAPIRequest) GetRefundId() int64 {
+	return r._refundId
+}
+
+// Set is MainChannelOrderNo Setter
+// 采购单号
+func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetMainChannelOrderNo(_mainChannelOrderNo string) error {
+	r._mainChannelOrderNo = _mainChannelOrderNo
+	r.Set("main_channel_order_no", _mainChannelOrderNo)
+	return nil
+}
+
+// Get MainChannelOrderNo Getter
+func (r TmallChannelTradeRefundorderGetsAPIRequest) GetMainChannelOrderNo() string {
+	return r._mainChannelOrderNo
+}
+
+// Set is PageSize Setter
+// 每页数据条数
+func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TmallChannelTradeRefundorderGetsAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is PageNumber Setter
+// 页码
+func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetPageNumber(_pageNumber int64) error {
+	r._pageNumber = _pageNumber
+	r.Set("page_number", _pageNumber)
+	return nil
+}
+
+// Get PageNumber Getter
+func (r TmallChannelTradeRefundorderGetsAPIRequest) GetPageNumber() int64 {
+	return r._pageNumber
+}

@@ -36,4 +36,62 @@ type TmallServicecenterWorkerDeleteAPIRequest struct {
 	_bizType string
 }
 
-// New
+// NewTmallServicecenterWorkerDeleteRequest 初始化TmallServicecenterWorkerDeleteAPIRequest对象
+func NewTmallServicecenterWorkerDeleteRequest() *TmallServicecenterWorkerDeleteAPIRequest {
+	return &TmallServicecenterWorkerDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.worker.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Name Setter
+// 工人姓名
+func (r *TmallServicecenterWorkerDeleteAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetName() string {
+	return r._name
+}
+
+// Set is Phone Setter
+// 工人手机号
+func (r *TmallServicecenterWorkerDeleteAPIRequest) SetPhone(_phone int64) error {
+	r._phone = _phone
+	r.Set("phone", _phone)
+	return nil
+}
+
+// Get Phone Getter
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetPhone() int64 {
+	return r._phone
+}
+
+// Set is BizType Setter
+// 业务类型,电器预约安装业务填appliance_install
+func (r *TmallServicecenterWorkerDeleteAPIRequest) SetBizType(_bizType string) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// Get BizType Getter
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetBizType() string {
+	return r._bizType
+}

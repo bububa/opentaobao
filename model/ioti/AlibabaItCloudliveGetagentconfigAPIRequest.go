@@ -23,4 +23,75 @@ type AlibabaItCloudliveGetagentconfigAPIRequest struct {
 	_agentIp string
 }
 
-// New
+// NewAlibabaItCloudliveGetagentconfigRequest 初始化AlibabaItCloudliveGetagentconfigAPIRequest对象
+func NewAlibabaItCloudliveGetagentconfigRequest() *AlibabaItCloudliveGetagentconfigAPIRequest {
+	return &AlibabaItCloudliveGetagentconfigAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetApiMethodName() string {
+	return "alibaba.it.cloudlive.getagentconfig"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AgentId Setter
+// agent标识信息
+func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetAgentId(_agentId string) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// Get AgentId Getter
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetAgentId() string {
+	return r._agentId
+}
+
+// Set is TimeStamp Setter
+// 时间戳
+func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetTimeStamp(_timeStamp int64) error {
+	r._timeStamp = _timeStamp
+	r.Set("time_stamp", _timeStamp)
+	return nil
+}
+
+// Get TimeStamp Getter
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetTimeStamp() int64 {
+	return r._timeStamp
+}
+
+// Set is Signature Setter
+// 签名
+func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetSignature(_signature string) error {
+	r._signature = _signature
+	r.Set("signature", _signature)
+	return nil
+}
+
+// Get Signature Getter
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetSignature() string {
+	return r._signature
+}
+
+// Set is AgentIp Setter
+// 设备所在IP地址
+func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetAgentIp(_agentIp string) error {
+	r._agentIp = _agentIp
+	r.Set("agent_ip", _agentIp)
+	return nil
+}
+
+// Get AgentIp Getter
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetAgentIp() string {
+	return r._agentIp
+}

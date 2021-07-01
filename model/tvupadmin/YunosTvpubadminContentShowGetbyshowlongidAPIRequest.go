@@ -17,4 +17,36 @@ type YunosTvpubadminContentShowGetbyshowlongidAPIRequest struct {
 	_showLongId int64
 }
 
-// New
+// NewYunosTvpubadminContentShowGetbyshowlongidRequest 初始化YunosTvpubadminContentShowGetbyshowlongidAPIRequest对象
+func NewYunosTvpubadminContentShowGetbyshowlongidRequest() *YunosTvpubadminContentShowGetbyshowlongidAPIRequest {
+	return &YunosTvpubadminContentShowGetbyshowlongidAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentShowGetbyshowlongidAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.show.getbyshowlongid"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentShowGetbyshowlongidAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ShowLongId Setter
+// 节目longid
+func (r *YunosTvpubadminContentShowGetbyshowlongidAPIRequest) SetShowLongId(_showLongId int64) error {
+	r._showLongId = _showLongId
+	r.Set("show_long_id", _showLongId)
+	return nil
+}
+
+// Get ShowLongId Getter
+func (r YunosTvpubadminContentShowGetbyshowlongidAPIRequest) GetShowLongId() int64 {
+	return r._showLongId
+}

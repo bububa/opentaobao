@@ -17,4 +17,36 @@ type TaobaoQimenSupplierSynchronizeAPIRequest struct {
 	_request *TaobaoQimenSupplierSynchronizeRequest
 }
 
-// New
+// NewTaobaoQimenSupplierSynchronizeRequest 初始化TaobaoQimenSupplierSynchronizeAPIRequest对象
+func NewTaobaoQimenSupplierSynchronizeRequest() *TaobaoQimenSupplierSynchronizeAPIRequest {
+	return &TaobaoQimenSupplierSynchronizeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenSupplierSynchronizeAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.supplier.synchronize"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenSupplierSynchronizeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenSupplierSynchronizeAPIRequest) SetRequest(_request *TaobaoQimenSupplierSynchronizeRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenSupplierSynchronizeAPIRequest) GetRequest() *TaobaoQimenSupplierSynchronizeRequest {
+	return r._request
+}

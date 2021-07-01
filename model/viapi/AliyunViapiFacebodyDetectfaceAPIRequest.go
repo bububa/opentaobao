@@ -19,4 +19,49 @@ type AliyunViapiFacebodyDetectfaceAPIRequest struct {
 	_imageType int64
 }
 
-// New
+// NewAliyunViapiFacebodyDetectfaceRequest 初始化AliyunViapiFacebodyDetectfaceAPIRequest对象
+func NewAliyunViapiFacebodyDetectfaceRequest() *AliyunViapiFacebodyDetectfaceAPIRequest {
+	return &AliyunViapiFacebodyDetectfaceAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliyunViapiFacebodyDetectfaceAPIRequest) GetApiMethodName() string {
+	return "aliyun.viapi.facebody.detectface"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliyunViapiFacebodyDetectfaceAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ImageUrl Setter
+// 图片url地址(http/https)
+func (r *AliyunViapiFacebodyDetectfaceAPIRequest) SetImageUrl(_imageUrl string) error {
+	r._imageUrl = _imageUrl
+	r.Set("image_url", _imageUrl)
+	return nil
+}
+
+// Get ImageUrl Getter
+func (r AliyunViapiFacebodyDetectfaceAPIRequest) GetImageUrl() string {
+	return r._imageUrl
+}
+
+// Set is ImageType Setter
+// 0: 通过url识别，参数image_url不为空；1: 通过图片content识别，参数content不为空 支持图片格式：JPEG、JPG、BMP、PNG
+func (r *AliyunViapiFacebodyDetectfaceAPIRequest) SetImageType(_imageType int64) error {
+	r._imageType = _imageType
+	r.Set("image_type", _imageType)
+	return nil
+}
+
+// Get ImageType Getter
+func (r AliyunViapiFacebodyDetectfaceAPIRequest) GetImageType() int64 {
+	return r._imageType
+}

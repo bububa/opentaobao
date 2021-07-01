@@ -21,4 +21,62 @@ type TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest struct {
 	_startId int64
 }
 
-// New
+// NewTaobaoWdkEquipmentConveyorSystemeventGetRequest 初始化TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest对象
+func NewTaobaoWdkEquipmentConveyorSystemeventGetRequest() *TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest {
+	return &TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest) GetApiMethodName() string {
+	return "taobao.wdk.equipment.conveyor.systemevent.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WarehouseId Setter
+// 仓库Id
+func (r *TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest) SetWarehouseId(_warehouseId int64) error {
+	r._warehouseId = _warehouseId
+	r.Set("warehouse_id", _warehouseId)
+	return nil
+}
+
+// Get WarehouseId Getter
+func (r TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest) GetWarehouseId() int64 {
+	return r._warehouseId
+}
+
+// Set is ConveyorId Setter
+// 悬挂链Id，即wcsNum
+func (r *TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest) SetConveyorId(_conveyorId int64) error {
+	r._conveyorId = _conveyorId
+	r.Set("conveyor_id", _conveyorId)
+	return nil
+}
+
+// Get ConveyorId Getter
+func (r TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest) GetConveyorId() int64 {
+	return r._conveyorId
+}
+
+// Set is StartId Setter
+// 数据库id最小值
+func (r *TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest) SetStartId(_startId int64) error {
+	r._startId = _startId
+	r.Set("start_id", _startId)
+	return nil
+}
+
+// Get StartId Getter
+func (r TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest) GetStartId() int64 {
+	return r._startId
+}

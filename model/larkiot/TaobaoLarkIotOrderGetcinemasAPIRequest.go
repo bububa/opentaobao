@@ -17,4 +17,36 @@ type TaobaoLarkIotOrderGetcinemasAPIRequest struct {
 	_channelCode string
 }
 
-// New
+// NewTaobaoLarkIotOrderGetcinemasRequest 初始化TaobaoLarkIotOrderGetcinemasAPIRequest对象
+func NewTaobaoLarkIotOrderGetcinemasRequest() *TaobaoLarkIotOrderGetcinemasAPIRequest {
+	return &TaobaoLarkIotOrderGetcinemasAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoLarkIotOrderGetcinemasAPIRequest) GetApiMethodName() string {
+	return "taobao.lark.iot.order.getcinemas"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoLarkIotOrderGetcinemasAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ChannelCode Setter
+// 渠道编码
+func (r *TaobaoLarkIotOrderGetcinemasAPIRequest) SetChannelCode(_channelCode string) error {
+	r._channelCode = _channelCode
+	r.Set("channel_code", _channelCode)
+	return nil
+}
+
+// Get ChannelCode Getter
+func (r TaobaoLarkIotOrderGetcinemasAPIRequest) GetChannelCode() string {
+	return r._channelCode
+}

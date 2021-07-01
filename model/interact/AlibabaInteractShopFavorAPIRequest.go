@@ -15,4 +15,23 @@ type AlibabaInteractShopFavorAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaInteractShopFavorRequest 初始化AlibabaInteractShopFavorAPIRequest对象
+func NewAlibabaInteractShopFavorRequest() *AlibabaInteractShopFavorAPIRequest {
+	return &AlibabaInteractShopFavorAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractShopFavorAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.shop.favor"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractShopFavorAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

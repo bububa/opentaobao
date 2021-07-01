@@ -18,4 +18,36 @@ type AlibabaTaobaoWtUserCrowdAPIRequest struct {
 	_phone int64
 }
 
-// New
+// NewAlibabaTaobaoWtUserCrowdRequest 初始化AlibabaTaobaoWtUserCrowdAPIRequest对象
+func NewAlibabaTaobaoWtUserCrowdRequest() *AlibabaTaobaoWtUserCrowdAPIRequest {
+	return &AlibabaTaobaoWtUserCrowdAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTaobaoWtUserCrowdAPIRequest) GetApiMethodName() string {
+	return "alibaba.taobao.wt.user.crowd"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTaobaoWtUserCrowdAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Phone Setter
+// 手机号
+func (r *AlibabaTaobaoWtUserCrowdAPIRequest) SetPhone(_phone int64) error {
+	r._phone = _phone
+	r.Set("phone", _phone)
+	return nil
+}
+
+// Get Phone Getter
+func (r AlibabaTaobaoWtUserCrowdAPIRequest) GetPhone() int64 {
+	return r._phone
+}

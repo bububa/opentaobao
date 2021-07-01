@@ -17,4 +17,36 @@ type AlibabaFundplatformAccountChargeNotifyAPIRequest struct {
 	_request *AlibabaFundplatformAccountChargeNotifyStruct
 }
 
-// New
+// NewAlibabaFundplatformAccountChargeNotifyRequest 初始化AlibabaFundplatformAccountChargeNotifyAPIRequest对象
+func NewAlibabaFundplatformAccountChargeNotifyRequest() *AlibabaFundplatformAccountChargeNotifyAPIRequest {
+	return &AlibabaFundplatformAccountChargeNotifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaFundplatformAccountChargeNotifyAPIRequest) GetApiMethodName() string {
+	return "alibaba.fundplatform.account.charge.notify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaFundplatformAccountChargeNotifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+// 入参对象
+func (r *AlibabaFundplatformAccountChargeNotifyAPIRequest) SetRequest(_request *AlibabaFundplatformAccountChargeNotifyStruct) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r AlibabaFundplatformAccountChargeNotifyAPIRequest) GetRequest() *AlibabaFundplatformAccountChargeNotifyStruct {
+	return r._request
+}

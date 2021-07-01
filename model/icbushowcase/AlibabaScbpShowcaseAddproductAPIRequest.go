@@ -17,4 +17,36 @@ type AlibabaScbpShowcaseAddproductAPIRequest struct {
 	_productIdList []int64
 }
 
-// New
+// NewAlibabaScbpShowcaseAddproductRequest 初始化AlibabaScbpShowcaseAddproductAPIRequest对象
+func NewAlibabaScbpShowcaseAddproductRequest() *AlibabaScbpShowcaseAddproductAPIRequest {
+	return &AlibabaScbpShowcaseAddproductAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpShowcaseAddproductAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.showcase.addproduct"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpShowcaseAddproductAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ProductIdList Setter
+// 需要添加的产品ids
+func (r *AlibabaScbpShowcaseAddproductAPIRequest) SetProductIdList(_productIdList []int64) error {
+	r._productIdList = _productIdList
+	r.Set("product_id_list", _productIdList)
+	return nil
+}
+
+// Get ProductIdList Getter
+func (r AlibabaScbpShowcaseAddproductAPIRequest) GetProductIdList() []int64 {
+	return r._productIdList
+}

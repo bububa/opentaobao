@@ -17,4 +17,36 @@ type AlibabaEleEnterpriseCouponGetAPIRequest struct {
 	_phone string
 }
 
-// New
+// NewAlibabaEleEnterpriseCouponGetRequest 初始化AlibabaEleEnterpriseCouponGetAPIRequest对象
+func NewAlibabaEleEnterpriseCouponGetRequest() *AlibabaEleEnterpriseCouponGetAPIRequest {
+	return &AlibabaEleEnterpriseCouponGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEleEnterpriseCouponGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.ele.enterprise.coupon.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEleEnterpriseCouponGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Phone Setter
+// 手机号
+func (r *AlibabaEleEnterpriseCouponGetAPIRequest) SetPhone(_phone string) error {
+	r._phone = _phone
+	r.Set("phone", _phone)
+	return nil
+}
+
+// Get Phone Getter
+func (r AlibabaEleEnterpriseCouponGetAPIRequest) GetPhone() string {
+	return r._phone
+}

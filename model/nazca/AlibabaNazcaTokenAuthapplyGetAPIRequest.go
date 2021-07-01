@@ -17,4 +17,36 @@ type AlibabaNazcaTokenAuthapplyGetAPIRequest struct {
 	_token string
 }
 
-// New
+// NewAlibabaNazcaTokenAuthapplyGetRequest 初始化AlibabaNazcaTokenAuthapplyGetAPIRequest对象
+func NewAlibabaNazcaTokenAuthapplyGetRequest() *AlibabaNazcaTokenAuthapplyGetAPIRequest {
+	return &AlibabaNazcaTokenAuthapplyGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaNazcaTokenAuthapplyGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.nazca.token.authapply.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaNazcaTokenAuthapplyGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Token Setter
+// token
+func (r *AlibabaNazcaTokenAuthapplyGetAPIRequest) SetToken(_token string) error {
+	r._token = _token
+	r.Set("token", _token)
+	return nil
+}
+
+// Get Token Getter
+func (r AlibabaNazcaTokenAuthapplyGetAPIRequest) GetToken() string {
+	return r._token
+}

@@ -17,4 +17,36 @@ type TaobaoOpentradeSpecialItemsQueryAPIRequest struct {
 	_miniappId int64
 }
 
-// New
+// NewTaobaoOpentradeSpecialItemsQueryRequest 初始化TaobaoOpentradeSpecialItemsQueryAPIRequest对象
+func NewTaobaoOpentradeSpecialItemsQueryRequest() *TaobaoOpentradeSpecialItemsQueryAPIRequest {
+	return &TaobaoOpentradeSpecialItemsQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpentradeSpecialItemsQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.opentrade.special.items.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpentradeSpecialItemsQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MiniappId Setter
+// 绑定专属下单场景的C端小程序ID
+func (r *TaobaoOpentradeSpecialItemsQueryAPIRequest) SetMiniappId(_miniappId int64) error {
+	r._miniappId = _miniappId
+	r.Set("miniapp_id", _miniappId)
+	return nil
+}
+
+// Get MiniappId Getter
+func (r TaobaoOpentradeSpecialItemsQueryAPIRequest) GetMiniappId() int64 {
+	return r._miniappId
+}

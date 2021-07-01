@@ -15,4 +15,23 @@ type TaobaoPlaceStorecategoryGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoPlaceStorecategoryGetRequest 初始化TaobaoPlaceStorecategoryGetAPIRequest对象
+func NewTaobaoPlaceStorecategoryGetRequest() *TaobaoPlaceStorecategoryGetAPIRequest {
+	return &TaobaoPlaceStorecategoryGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPlaceStorecategoryGetAPIRequest) GetApiMethodName() string {
+	return "taobao.place.storecategory.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPlaceStorecategoryGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

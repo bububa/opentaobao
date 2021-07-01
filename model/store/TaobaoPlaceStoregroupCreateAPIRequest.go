@@ -19,4 +19,49 @@ type TaobaoPlaceStoregroupCreateAPIRequest struct {
 	_desc string
 }
 
-// New
+// NewTaobaoPlaceStoregroupCreateRequest 初始化TaobaoPlaceStoregroupCreateAPIRequest对象
+func NewTaobaoPlaceStoregroupCreateRequest() *TaobaoPlaceStoregroupCreateAPIRequest {
+	return &TaobaoPlaceStoregroupCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPlaceStoregroupCreateAPIRequest) GetApiMethodName() string {
+	return "taobao.place.storegroup.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPlaceStoregroupCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Name Setter
+// 库名
+func (r *TaobaoPlaceStoregroupCreateAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r TaobaoPlaceStoregroupCreateAPIRequest) GetName() string {
+	return r._name
+}
+
+// Set is Desc Setter
+// 备注
+func (r *TaobaoPlaceStoregroupCreateAPIRequest) SetDesc(_desc string) error {
+	r._desc = _desc
+	r.Set("desc", _desc)
+	return nil
+}
+
+// Get Desc Getter
+func (r TaobaoPlaceStoregroupCreateAPIRequest) GetDesc() string {
+	return r._desc
+}

@@ -15,4 +15,23 @@ type CainiaoCloudprintIsvtemplatesGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewCainiaoCloudprintIsvtemplatesGetRequest 初始化CainiaoCloudprintIsvtemplatesGetAPIRequest对象
+func NewCainiaoCloudprintIsvtemplatesGetRequest() *CainiaoCloudprintIsvtemplatesGetAPIRequest {
+	return &CainiaoCloudprintIsvtemplatesGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoCloudprintIsvtemplatesGetAPIRequest) GetApiMethodName() string {
+	return "cainiao.cloudprint.isvtemplates.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoCloudprintIsvtemplatesGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

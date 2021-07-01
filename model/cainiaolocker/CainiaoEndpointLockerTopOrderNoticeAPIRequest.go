@@ -23,4 +23,75 @@ type CainiaoEndpointLockerTopOrderNoticeAPIRequest struct {
 	_sceneCode int64
 }
 
-// New
+// NewCainiaoEndpointLockerTopOrderNoticeRequest 初始化CainiaoEndpointLockerTopOrderNoticeAPIRequest对象
+func NewCainiaoEndpointLockerTopOrderNoticeRequest() *CainiaoEndpointLockerTopOrderNoticeAPIRequest {
+	return &CainiaoEndpointLockerTopOrderNoticeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetApiMethodName() string {
+	return "cainiao.endpoint.locker.top.order.notice"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderCode Setter
+// 合作公司唯一订单编号
+func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetOrderCode(_orderCode string) error {
+	r._orderCode = _orderCode
+	r.Set("order_code", _orderCode)
+	return nil
+}
+
+// Get OrderCode Getter
+func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetOrderCode() string {
+	return r._orderCode
+}
+
+// Set is StationId Setter
+// 站点ID
+func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetStationId(_stationId string) error {
+	r._stationId = _stationId
+	r.Set("station_id", _stationId)
+	return nil
+}
+
+// Get StationId Getter
+func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetStationId() string {
+	return r._stationId
+}
+
+// Set is MailNo Setter
+// 运单号
+func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetMailNo(_mailNo string) error {
+	r._mailNo = _mailNo
+	r.Set("mail_no", _mailNo)
+	return nil
+}
+
+// Get MailNo Getter
+func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetMailNo() string {
+	return r._mailNo
+}
+
+// Set is SceneCode Setter
+// 场景编号：0：重发短信，1：催取短信
+func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetSceneCode(_sceneCode int64) error {
+	r._sceneCode = _sceneCode
+	r.Set("scene_code", _sceneCode)
+	return nil
+}
+
+// Get SceneCode Getter
+func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetSceneCode() int64 {
+	return r._sceneCode
+}

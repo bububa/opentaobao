@@ -17,4 +17,36 @@ type AlibabaBaseOrderSupplierNotifyAPIRequest struct {
 	_paramFlowSuppllierNotifyModel *FlowSuppllierNotifyModel
 }
 
-// New
+// NewAlibabaBaseOrderSupplierNotifyRequest 初始化AlibabaBaseOrderSupplierNotifyAPIRequest对象
+func NewAlibabaBaseOrderSupplierNotifyRequest() *AlibabaBaseOrderSupplierNotifyAPIRequest {
+	return &AlibabaBaseOrderSupplierNotifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaBaseOrderSupplierNotifyAPIRequest) GetApiMethodName() string {
+	return "alibaba.base.order.supplier.notify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaBaseOrderSupplierNotifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamFlowSuppllierNotifyModel Setter
+// 入参对象
+func (r *AlibabaBaseOrderSupplierNotifyAPIRequest) SetParamFlowSuppllierNotifyModel(_paramFlowSuppllierNotifyModel *FlowSuppllierNotifyModel) error {
+	r._paramFlowSuppllierNotifyModel = _paramFlowSuppllierNotifyModel
+	r.Set("param_flow_suppllier_notify_model", _paramFlowSuppllierNotifyModel)
+	return nil
+}
+
+// Get ParamFlowSuppllierNotifyModel Getter
+func (r AlibabaBaseOrderSupplierNotifyAPIRequest) GetParamFlowSuppllierNotifyModel() *FlowSuppllierNotifyModel {
+	return r._paramFlowSuppllierNotifyModel
+}

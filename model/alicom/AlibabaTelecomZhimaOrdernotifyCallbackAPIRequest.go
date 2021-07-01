@@ -17,4 +17,36 @@ type AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest struct {
 	_param0 *OrderStatusNotifyRequest
 }
 
-// New
+// NewAlibabaTelecomZhimaOrdernotifyCallbackRequest 初始化AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest对象
+func NewAlibabaTelecomZhimaOrdernotifyCallbackRequest() *AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest {
+	return &AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest) GetApiMethodName() string {
+	return "alibaba.telecom.zhima.ordernotify.callback"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 入参对象
+func (r *AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest) SetParam0(_param0 *OrderStatusNotifyRequest) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest) GetParam0() *OrderStatusNotifyRequest {
+	return r._param0
+}

@@ -21,4 +21,62 @@ type AlitripTicketScenicQueryAPIRequest struct {
 	_outScenicId string
 }
 
-// New
+// NewAlitripTicketScenicQueryRequest 初始化AlitripTicketScenicQueryAPIRequest对象
+func NewAlitripTicketScenicQueryRequest() *AlitripTicketScenicQueryAPIRequest {
+	return &AlitripTicketScenicQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTicketScenicQueryAPIRequest) GetApiMethodName() string {
+	return "alitrip.ticket.scenic.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTicketScenicQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AliScenicId Setter
+// 标准景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
+func (r *AlitripTicketScenicQueryAPIRequest) SetAliScenicId(_aliScenicId int64) error {
+	r._aliScenicId = _aliScenicId
+	r.Set("ali_scenic_id", _aliScenicId)
+	return nil
+}
+
+// Get AliScenicId Getter
+func (r AlitripTicketScenicQueryAPIRequest) GetAliScenicId() int64 {
+	return r._aliScenicId
+}
+
+// Set is CurrentPage Setter
+// 当前分页。每页默认最多返回20条数据
+func (r *AlitripTicketScenicQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// Get CurrentPage Getter
+func (r AlitripTicketScenicQueryAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// Set is OutScenicId Setter
+// 商家景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
+func (r *AlitripTicketScenicQueryAPIRequest) SetOutScenicId(_outScenicId string) error {
+	r._outScenicId = _outScenicId
+	r.Set("out_scenic_id", _outScenicId)
+	return nil
+}
+
+// Get OutScenicId Getter
+func (r AlitripTicketScenicQueryAPIRequest) GetOutScenicId() string {
+	return r._outScenicId
+}

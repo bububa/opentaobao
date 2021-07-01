@@ -19,4 +19,49 @@ type TaobaoHomeaiAlgPredictAPIRequest struct {
 	_toCase string
 }
 
-// New
+// NewTaobaoHomeaiAlgPredictRequest 初始化TaobaoHomeaiAlgPredictAPIRequest对象
+func NewTaobaoHomeaiAlgPredictRequest() *TaobaoHomeaiAlgPredictAPIRequest {
+	return &TaobaoHomeaiAlgPredictAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoHomeaiAlgPredictAPIRequest) GetApiMethodName() string {
+	return "taobao.homeai.alg.predict"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoHomeaiAlgPredictAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FromCase Setter
+// 来源房间json
+func (r *TaobaoHomeaiAlgPredictAPIRequest) SetFromCase(_fromCase string) error {
+	r._fromCase = _fromCase
+	r.Set("from_case", _fromCase)
+	return nil
+}
+
+// Get FromCase Getter
+func (r TaobaoHomeaiAlgPredictAPIRequest) GetFromCase() string {
+	return r._fromCase
+}
+
+// Set is ToCase Setter
+// 我的家房间json
+func (r *TaobaoHomeaiAlgPredictAPIRequest) SetToCase(_toCase string) error {
+	r._toCase = _toCase
+	r.Set("to_case", _toCase)
+	return nil
+}
+
+// Get ToCase Getter
+func (r TaobaoHomeaiAlgPredictAPIRequest) GetToCase() string {
+	return r._toCase
+}

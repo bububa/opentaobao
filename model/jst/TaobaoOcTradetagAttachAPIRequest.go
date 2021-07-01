@@ -25,4 +25,88 @@ type TaobaoOcTradetagAttachAPIRequest struct {
 	_visible int64
 }
 
-// New
+// NewTaobaoOcTradetagAttachRequest 初始化TaobaoOcTradetagAttachAPIRequest对象
+func NewTaobaoOcTradetagAttachRequest() *TaobaoOcTradetagAttachAPIRequest {
+	return &TaobaoOcTradetagAttachAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOcTradetagAttachAPIRequest) GetApiMethodName() string {
+	return "taobao.oc.tradetag.attach"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOcTradetagAttachAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TagType Setter
+// 标签类型       1：官方标签      2：自定义标签
+func (r *TaobaoOcTradetagAttachAPIRequest) SetTagType(_tagType int64) error {
+	r._tagType = _tagType
+	r.Set("tag_type", _tagType)
+	return nil
+}
+
+// Get TagType Getter
+func (r TaobaoOcTradetagAttachAPIRequest) GetTagType() int64 {
+	return r._tagType
+}
+
+// Set is Tid Setter
+// 订单id
+func (r *TaobaoOcTradetagAttachAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// Get Tid Getter
+func (r TaobaoOcTradetagAttachAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// Set is TagName Setter
+// 标签名称
+func (r *TaobaoOcTradetagAttachAPIRequest) SetTagName(_tagName string) error {
+	r._tagName = _tagName
+	r.Set("tag_name", _tagName)
+	return nil
+}
+
+// Get TagName Getter
+func (r TaobaoOcTradetagAttachAPIRequest) GetTagName() string {
+	return r._tagName
+}
+
+// Set is TagValue Setter
+// 标签值，json格式
+func (r *TaobaoOcTradetagAttachAPIRequest) SetTagValue(_tagValue string) error {
+	r._tagValue = _tagValue
+	r.Set("tag_value", _tagValue)
+	return nil
+}
+
+// Get TagValue Getter
+func (r TaobaoOcTradetagAttachAPIRequest) GetTagValue() string {
+	return r._tagValue
+}
+
+// Set is Visible Setter
+// 该标签在消费者端是否显示,0:不显示,1：显示
+func (r *TaobaoOcTradetagAttachAPIRequest) SetVisible(_visible int64) error {
+	r._visible = _visible
+	r.Set("visible", _visible)
+	return nil
+}
+
+// Get Visible Getter
+func (r TaobaoOcTradetagAttachAPIRequest) GetVisible() int64 {
+	return r._visible
+}

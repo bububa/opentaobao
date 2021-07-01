@@ -22,5 +22,5 @@ type TaobaoFenxiaoTradePrepayOfflineReduceAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *ResultTopDo `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoFenxiaoTradePrepayOfflineReduceResultTopDo `json:"result,omitempty" xml:"result,omitempty"`
 }

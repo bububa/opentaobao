@@ -17,4 +17,36 @@ type TaobaoOmniorderDtdQueryAPIRequest struct {
 	_code string
 }
 
-// New
+// NewTaobaoOmniorderDtdQueryRequest 初始化TaobaoOmniorderDtdQueryAPIRequest对象
+func NewTaobaoOmniorderDtdQueryRequest() *TaobaoOmniorderDtdQueryAPIRequest {
+	return &TaobaoOmniorderDtdQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOmniorderDtdQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.omniorder.dtd.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOmniorderDtdQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Code Setter
+// 核销码
+func (r *TaobaoOmniorderDtdQueryAPIRequest) SetCode(_code string) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// Get Code Getter
+func (r TaobaoOmniorderDtdQueryAPIRequest) GetCode() string {
+	return r._code
+}

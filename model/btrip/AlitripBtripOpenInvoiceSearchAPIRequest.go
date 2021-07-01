@@ -17,4 +17,36 @@ type AlitripBtripOpenInvoiceSearchAPIRequest struct {
 	_rq *OpenInvoiceRq
 }
 
-// New
+// NewAlitripBtripOpenInvoiceSearchRequest 初始化AlitripBtripOpenInvoiceSearchAPIRequest对象
+func NewAlitripBtripOpenInvoiceSearchRequest() *AlitripBtripOpenInvoiceSearchAPIRequest {
+	return &AlitripBtripOpenInvoiceSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripOpenInvoiceSearchAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.open.invoice.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripOpenInvoiceSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Rq Setter
+// 入参对象
+func (r *AlitripBtripOpenInvoiceSearchAPIRequest) SetRq(_rq *OpenInvoiceRq) error {
+	r._rq = _rq
+	r.Set("rq", _rq)
+	return nil
+}
+
+// Get Rq Getter
+func (r AlitripBtripOpenInvoiceSearchAPIRequest) GetRq() *OpenInvoiceRq {
+	return r._rq
+}

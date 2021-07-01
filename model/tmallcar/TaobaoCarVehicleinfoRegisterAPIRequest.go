@@ -17,4 +17,36 @@ type TaobaoCarVehicleinfoRegisterAPIRequest struct {
 	_paramList []FullInfoCarModelDto
 }
 
-// New
+// NewTaobaoCarVehicleinfoRegisterRequest 初始化TaobaoCarVehicleinfoRegisterAPIRequest对象
+func NewTaobaoCarVehicleinfoRegisterRequest() *TaobaoCarVehicleinfoRegisterAPIRequest {
+	return &TaobaoCarVehicleinfoRegisterAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetApiMethodName() string {
+	return "taobao.car.vehicleinfo.register"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamList Setter
+// 参数集合
+func (r *TaobaoCarVehicleinfoRegisterAPIRequest) SetParamList(_paramList []FullInfoCarModelDto) error {
+	r._paramList = _paramList
+	r.Set("param_list", _paramList)
+	return nil
+}
+
+// Get ParamList Getter
+func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetParamList() []FullInfoCarModelDto {
+	return r._paramList
+}

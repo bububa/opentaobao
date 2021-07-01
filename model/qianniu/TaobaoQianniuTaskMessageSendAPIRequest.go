@@ -19,4 +19,49 @@ type TaobaoQianniuTaskMessageSendAPIRequest struct {
 	_metadataId int64
 }
 
-// New
+// NewTaobaoQianniuTaskMessageSendRequest 初始化TaobaoQianniuTaskMessageSendAPIRequest对象
+func NewTaobaoQianniuTaskMessageSendRequest() *TaobaoQianniuTaskMessageSendAPIRequest {
+	return &TaobaoQianniuTaskMessageSendAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQianniuTaskMessageSendAPIRequest) GetApiMethodName() string {
+	return "taobao.qianniu.task.message.send"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQianniuTaskMessageSendAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TaskId Setter
+// 任务ID。如果taskid不为空，则只发给task对应的单个接收人。如果taskid为空，则发给metadata_id对应的所有接收人。
+func (r *TaobaoQianniuTaskMessageSendAPIRequest) SetTaskId(_taskId int64) error {
+	r._taskId = _taskId
+	r.Set("task_id", _taskId)
+	return nil
+}
+
+// Get TaskId Getter
+func (r TaobaoQianniuTaskMessageSendAPIRequest) GetTaskId() int64 {
+	return r._taskId
+}
+
+// Set is MetadataId Setter
+// 任务元id，如果taskid不为空，则只发给task对应的单个接收人。如果taskid为空，则发给metadata_id对应的所有接收人。
+func (r *TaobaoQianniuTaskMessageSendAPIRequest) SetMetadataId(_metadataId int64) error {
+	r._metadataId = _metadataId
+	r.Set("metadata_id", _metadataId)
+	return nil
+}
+
+// Get MetadataId Getter
+func (r TaobaoQianniuTaskMessageSendAPIRequest) GetMetadataId() int64 {
+	return r._metadataId
+}

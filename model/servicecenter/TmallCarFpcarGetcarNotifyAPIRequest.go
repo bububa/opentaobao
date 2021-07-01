@@ -21,4 +21,62 @@ type TmallCarFpcarGetcarNotifyAPIRequest struct {
 	_sellerId int64
 }
 
-// New
+// NewTmallCarFpcarGetcarNotifyRequest 初始化TmallCarFpcarGetcarNotifyAPIRequest对象
+func NewTmallCarFpcarGetcarNotifyRequest() *TmallCarFpcarGetcarNotifyAPIRequest {
+	return &TmallCarFpcarGetcarNotifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallCarFpcarGetcarNotifyAPIRequest) GetApiMethodName() string {
+	return "tmall.car.fpcar.getcar.notify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallCarFpcarGetcarNotifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 商品宝贝id
+func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TmallCarFpcarGetcarNotifyAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is OrderId Setter
+// 订单id
+func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r TmallCarFpcarGetcarNotifyAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// Set is SellerId Setter
+// 卖家id
+func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetSellerId(_sellerId int64) error {
+	r._sellerId = _sellerId
+	r.Set("seller_id", _sellerId)
+	return nil
+}
+
+// Get SellerId Getter
+func (r TmallCarFpcarGetcarNotifyAPIRequest) GetSellerId() int64 {
+	return r._sellerId
+}

@@ -19,4 +19,49 @@ type AlibabaAlihealthDrugcodeUserDataAPIRequest struct {
 	_refEntId string
 }
 
-// New
+// NewAlibabaAlihealthDrugcodeUserDataRequest 初始化AlibabaAlihealthDrugcodeUserDataAPIRequest对象
+func NewAlibabaAlihealthDrugcodeUserDataRequest() *AlibabaAlihealthDrugcodeUserDataAPIRequest {
+	return &AlibabaAlihealthDrugcodeUserDataAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.drugcode.user.data"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is List Setter
+// 用户信息
+func (r *AlibabaAlihealthDrugcodeUserDataAPIRequest) SetList(_list []HaoxinqingDataDto) error {
+	r._list = _list
+	r.Set("list", _list)
+	return nil
+}
+
+// Get List Getter
+func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetList() []HaoxinqingDataDto {
+	return r._list
+}
+
+// Set is RefEntId Setter
+// 企业ID，用户区分 appkey下不同企业数据隔离的
+func (r *AlibabaAlihealthDrugcodeUserDataAPIRequest) SetRefEntId(_refEntId string) error {
+	r._refEntId = _refEntId
+	r.Set("ref_ent_id", _refEntId)
+	return nil
+}
+
+// Get RefEntId Getter
+func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetRefEntId() string {
+	return r._refEntId
+}

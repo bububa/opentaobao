@@ -17,4 +17,36 @@ type TmallNrtMemberOpenidAPIRequest struct {
 	_nrtMemberDto *NrtMemberDto
 }
 
-// New
+// NewTmallNrtMemberOpenidRequest 初始化TmallNrtMemberOpenidAPIRequest对象
+func NewTmallNrtMemberOpenidRequest() *TmallNrtMemberOpenidAPIRequest {
+	return &TmallNrtMemberOpenidAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrtMemberOpenidAPIRequest) GetApiMethodName() string {
+	return "tmall.nrt.member.openid"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrtMemberOpenidAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is NrtMemberDto Setter
+// 会员DTO
+func (r *TmallNrtMemberOpenidAPIRequest) SetNrtMemberDto(_nrtMemberDto *NrtMemberDto) error {
+	r._nrtMemberDto = _nrtMemberDto
+	r.Set("nrt_member_dto", _nrtMemberDto)
+	return nil
+}
+
+// Get NrtMemberDto Getter
+func (r TmallNrtMemberOpenidAPIRequest) GetNrtMemberDto() *NrtMemberDto {
+	return r._nrtMemberDto
+}

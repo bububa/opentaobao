@@ -17,4 +17,36 @@ type AlibabaDamaiMevOpenDeleteitemAPIRequest struct {
 	_deleteItemParam *TicketItemIdOpenParam
 }
 
-// New
+// NewAlibabaDamaiMevOpenDeleteitemRequest 初始化AlibabaDamaiMevOpenDeleteitemAPIRequest对象
+func NewAlibabaDamaiMevOpenDeleteitemRequest() *AlibabaDamaiMevOpenDeleteitemAPIRequest {
+	return &AlibabaDamaiMevOpenDeleteitemAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiMevOpenDeleteitemAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.mev.open.deleteitem"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiMevOpenDeleteitemAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DeleteItemParam Setter
+// 入参deleteItemParam
+func (r *AlibabaDamaiMevOpenDeleteitemAPIRequest) SetDeleteItemParam(_deleteItemParam *TicketItemIdOpenParam) error {
+	r._deleteItemParam = _deleteItemParam
+	r.Set("delete_item_param", _deleteItemParam)
+	return nil
+}
+
+// Get DeleteItemParam Getter
+func (r AlibabaDamaiMevOpenDeleteitemAPIRequest) GetDeleteItemParam() *TicketItemIdOpenParam {
+	return r._deleteItemParam
+}

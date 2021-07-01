@@ -17,4 +17,36 @@ type TaobaoQimenEventsProduceAPIRequest struct {
 	_messages []QimenEvent
 }
 
-// New
+// NewTaobaoQimenEventsProduceRequest 初始化TaobaoQimenEventsProduceAPIRequest对象
+func NewTaobaoQimenEventsProduceRequest() *TaobaoQimenEventsProduceAPIRequest {
+	return &TaobaoQimenEventsProduceAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenEventsProduceAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.events.produce"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenEventsProduceAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Messages Setter
+// 奇门事件列表, 最多50条
+func (r *TaobaoQimenEventsProduceAPIRequest) SetMessages(_messages []QimenEvent) error {
+	r._messages = _messages
+	r.Set("messages", _messages)
+	return nil
+}
+
+// Get Messages Getter
+func (r TaobaoQimenEventsProduceAPIRequest) GetMessages() []QimenEvent {
+	return r._messages
+}

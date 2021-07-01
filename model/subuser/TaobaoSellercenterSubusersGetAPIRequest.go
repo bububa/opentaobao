@@ -17,4 +17,36 @@ type TaobaoSellercenterSubusersGetAPIRequest struct {
 	_nick string
 }
 
-// New
+// NewTaobaoSellercenterSubusersGetRequest 初始化TaobaoSellercenterSubusersGetAPIRequest对象
+func NewTaobaoSellercenterSubusersGetRequest() *TaobaoSellercenterSubusersGetAPIRequest {
+	return &TaobaoSellercenterSubusersGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSellercenterSubusersGetAPIRequest) GetApiMethodName() string {
+	return "taobao.sellercenter.subusers.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSellercenterSubusersGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 表示卖家昵称
+func (r *TaobaoSellercenterSubusersGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSellercenterSubusersGetAPIRequest) GetNick() string {
+	return r._nick
+}

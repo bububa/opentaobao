@@ -17,4 +17,36 @@ type AlibabaAlihealthDentalBindAuditQueryAPIRequest struct {
 	_bindIds []int64
 }
 
-// New
+// NewAlibabaAlihealthDentalBindAuditQueryRequest 初始化AlibabaAlihealthDentalBindAuditQueryAPIRequest对象
+func NewAlibabaAlihealthDentalBindAuditQueryRequest() *AlibabaAlihealthDentalBindAuditQueryAPIRequest {
+	return &AlibabaAlihealthDentalBindAuditQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.dental.bind.audit.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BindIds Setter
+// 绑定ID列表
+func (r *AlibabaAlihealthDentalBindAuditQueryAPIRequest) SetBindIds(_bindIds []int64) error {
+	r._bindIds = _bindIds
+	r.Set("bind_ids", _bindIds)
+	return nil
+}
+
+// Get BindIds Getter
+func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetBindIds() []int64 {
+	return r._bindIds
+}

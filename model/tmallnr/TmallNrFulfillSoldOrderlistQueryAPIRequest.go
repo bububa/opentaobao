@@ -17,4 +17,36 @@ type TmallNrFulfillSoldOrderlistQueryAPIRequest struct {
 	_param0 *NrTimingOrderSoldQueryReqDto
 }
 
-// New
+// NewTmallNrFulfillSoldOrderlistQueryRequest 初始化TmallNrFulfillSoldOrderlistQueryAPIRequest对象
+func NewTmallNrFulfillSoldOrderlistQueryRequest() *TmallNrFulfillSoldOrderlistQueryAPIRequest {
+	return &TmallNrFulfillSoldOrderlistQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrFulfillSoldOrderlistQueryAPIRequest) GetApiMethodName() string {
+	return "tmall.nr.fulfill.sold.orderlist.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrFulfillSoldOrderlistQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 入参对象
+func (r *TmallNrFulfillSoldOrderlistQueryAPIRequest) SetParam0(_param0 *NrTimingOrderSoldQueryReqDto) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r TmallNrFulfillSoldOrderlistQueryAPIRequest) GetParam0() *NrTimingOrderSoldQueryReqDto {
+	return r._param0
+}

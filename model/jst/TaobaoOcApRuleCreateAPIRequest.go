@@ -19,4 +19,49 @@ type TaobaoOcApRuleCreateAPIRequest struct {
 	_extAttributes string
 }
 
-// New
+// NewTaobaoOcApRuleCreateRequest 初始化TaobaoOcApRuleCreateAPIRequest对象
+func NewTaobaoOcApRuleCreateRequest() *TaobaoOcApRuleCreateAPIRequest {
+	return &TaobaoOcApRuleCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOcApRuleCreateAPIRequest) GetApiMethodName() string {
+	return "taobao.oc.ap.rule.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOcApRuleCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DivisionRule Setter
+// 传入比例数组后者金额数组
+func (r *TaobaoOcApRuleCreateAPIRequest) SetDivisionRule(_divisionRule []int64) error {
+	r._divisionRule = _divisionRule
+	r.Set("division_rule", _divisionRule)
+	return nil
+}
+
+// Get DivisionRule Getter
+func (r TaobaoOcApRuleCreateAPIRequest) GetDivisionRule() []int64 {
+	return r._divisionRule
+}
+
+// Set is ExtAttributes Setter
+// 规则描述相关扩展信息，divisonRule的值包含（"byAmount" 或者 "byPercentage"），excutionPeriod的值包含（ "month" 或者 "day" 或者 "now"）
+func (r *TaobaoOcApRuleCreateAPIRequest) SetExtAttributes(_extAttributes string) error {
+	r._extAttributes = _extAttributes
+	r.Set("ext_attributes", _extAttributes)
+	return nil
+}
+
+// Get ExtAttributes Getter
+func (r TaobaoOcApRuleCreateAPIRequest) GetExtAttributes() string {
+	return r._extAttributes
+}

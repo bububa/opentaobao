@@ -17,4 +17,36 @@ type TaobaoPromotionmiscMjsActivityDeleteAPIRequest struct {
 	_activityId int64
 }
 
-// New
+// NewTaobaoPromotionmiscMjsActivityDeleteRequest 初始化TaobaoPromotionmiscMjsActivityDeleteAPIRequest对象
+func NewTaobaoPromotionmiscMjsActivityDeleteRequest() *TaobaoPromotionmiscMjsActivityDeleteAPIRequest {
+	return &TaobaoPromotionmiscMjsActivityDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPromotionmiscMjsActivityDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.promotionmisc.mjs.activity.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPromotionmiscMjsActivityDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ActivityId Setter
+// 活动id。
+func (r *TaobaoPromotionmiscMjsActivityDeleteAPIRequest) SetActivityId(_activityId int64) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// Get ActivityId Getter
+func (r TaobaoPromotionmiscMjsActivityDeleteAPIRequest) GetActivityId() int64 {
+	return r._activityId
+}

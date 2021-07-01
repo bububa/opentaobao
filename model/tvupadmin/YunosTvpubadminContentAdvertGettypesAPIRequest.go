@@ -15,4 +15,23 @@ type YunosTvpubadminContentAdvertGettypesAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewYunosTvpubadminContentAdvertGettypesRequest 初始化YunosTvpubadminContentAdvertGettypesAPIRequest对象
+func NewYunosTvpubadminContentAdvertGettypesRequest() *YunosTvpubadminContentAdvertGettypesAPIRequest {
+	return &YunosTvpubadminContentAdvertGettypesAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentAdvertGettypesAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.advert.gettypes"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentAdvertGettypesAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

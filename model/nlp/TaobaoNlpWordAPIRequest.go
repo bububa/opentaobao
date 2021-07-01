@@ -19,4 +19,49 @@ type TaobaoNlpWordAPIRequest struct {
 	_text *Text
 }
 
-// New
+// NewTaobaoNlpWordRequest 初始化TaobaoNlpWordAPIRequest对象
+func NewTaobaoNlpWordRequest() *TaobaoNlpWordAPIRequest {
+	return &TaobaoNlpWordAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoNlpWordAPIRequest) GetApiMethodName() string {
+	return "taobao.nlp.word"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoNlpWordAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WType Setter
+// 功能类型选择：1)wType=1时提供分词功能，type=0时为基本粒度，type=1时为混合粒度，type=3时为基本粒度和混合粒度共同输出；
+func (r *TaobaoNlpWordAPIRequest) SetWType(_wType int64) error {
+	r._wType = _wType
+	r.Set("w_type", _wType)
+	return nil
+}
+
+// Get WType Getter
+func (r TaobaoNlpWordAPIRequest) GetWType() int64 {
+	return r._wType
+}
+
+// Set is Text Setter
+// 文本内容
+func (r *TaobaoNlpWordAPIRequest) SetText(_text *Text) error {
+	r._text = _text
+	r.Set("text", _text)
+	return nil
+}
+
+// Get Text Getter
+func (r TaobaoNlpWordAPIRequest) GetText() *Text {
+	return r._text
+}

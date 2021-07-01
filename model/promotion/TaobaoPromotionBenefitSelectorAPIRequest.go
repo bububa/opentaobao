@@ -22,4 +22,36 @@ type TaobaoPromotionBenefitSelectorAPIRequest struct {
 	_query *BenefitSelectorQuery
 }
 
-// New
+// NewTaobaoPromotionBenefitSelectorRequest 初始化TaobaoPromotionBenefitSelectorAPIRequest对象
+func NewTaobaoPromotionBenefitSelectorRequest() *TaobaoPromotionBenefitSelectorAPIRequest {
+	return &TaobaoPromotionBenefitSelectorAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPromotionBenefitSelectorAPIRequest) GetApiMethodName() string {
+	return "taobao.promotion.benefit.selector"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPromotionBenefitSelectorAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 权益选择器请求
+func (r *TaobaoPromotionBenefitSelectorAPIRequest) SetQuery(_query *BenefitSelectorQuery) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r TaobaoPromotionBenefitSelectorAPIRequest) GetQuery() *BenefitSelectorQuery {
+	return r._query
+}

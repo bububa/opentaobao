@@ -17,4 +17,36 @@ type AlibabaAlihouseNewhomeRcSyncAPIRequest struct {
 	_rc *RichContentDraftDto
 }
 
-// New
+// NewAlibabaAlihouseNewhomeRcSyncRequest 初始化AlibabaAlihouseNewhomeRcSyncAPIRequest对象
+func NewAlibabaAlihouseNewhomeRcSyncRequest() *AlibabaAlihouseNewhomeRcSyncAPIRequest {
+	return &AlibabaAlihouseNewhomeRcSyncAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihouseNewhomeRcSyncAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihouse.newhome.rc.sync"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihouseNewhomeRcSyncAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Rc Setter
+// 图文内容
+func (r *AlibabaAlihouseNewhomeRcSyncAPIRequest) SetRc(_rc *RichContentDraftDto) error {
+	r._rc = _rc
+	r.Set("rc", _rc)
+	return nil
+}
+
+// Get Rc Getter
+func (r AlibabaAlihouseNewhomeRcSyncAPIRequest) GetRc() *RichContentDraftDto {
+	return r._rc
+}

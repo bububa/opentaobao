@@ -15,4 +15,23 @@ type TaobaoSimbaCampaignTimetemplateFindAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoSimbaCampaignTimetemplateFindRequest 初始化TaobaoSimbaCampaignTimetemplateFindAPIRequest对象
+func NewTaobaoSimbaCampaignTimetemplateFindRequest() *TaobaoSimbaCampaignTimetemplateFindAPIRequest {
+	return &TaobaoSimbaCampaignTimetemplateFindAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaCampaignTimetemplateFindAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.campaign.timetemplate.find"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaCampaignTimetemplateFindAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

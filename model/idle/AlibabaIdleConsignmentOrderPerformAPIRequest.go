@@ -17,4 +17,36 @@ type AlibabaIdleConsignmentOrderPerformAPIRequest struct {
 	_param *ConsignmentOrderSynDto
 }
 
-// New
+// NewAlibabaIdleConsignmentOrderPerformRequest 初始化AlibabaIdleConsignmentOrderPerformAPIRequest对象
+func NewAlibabaIdleConsignmentOrderPerformRequest() *AlibabaIdleConsignmentOrderPerformAPIRequest {
+	return &AlibabaIdleConsignmentOrderPerformAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleConsignmentOrderPerformAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.consignment.order.perform"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleConsignmentOrderPerformAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 帮卖订单同步DTO
+func (r *AlibabaIdleConsignmentOrderPerformAPIRequest) SetParam(_param *ConsignmentOrderSynDto) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaIdleConsignmentOrderPerformAPIRequest) GetParam() *ConsignmentOrderSynDto {
+	return r._param
+}

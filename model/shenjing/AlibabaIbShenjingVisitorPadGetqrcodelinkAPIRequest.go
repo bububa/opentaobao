@@ -17,4 +17,36 @@ type AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest struct {
 	_termId string
 }
 
-// New
+// NewAlibabaIbShenjingVisitorPadGetqrcodelinkRequest 初始化AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest对象
+func NewAlibabaIbShenjingVisitorPadGetqrcodelinkRequest() *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest {
+	return &AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) GetApiMethodName() string {
+	return "alibaba.ib.shenjing.visitor.pad.getqrcodelink"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TermId Setter
+// 终端id
+func (r *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) SetTermId(_termId string) error {
+	r._termId = _termId
+	r.Set("term_id", _termId)
+	return nil
+}
+
+// Get TermId Getter
+func (r AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) GetTermId() string {
+	return r._termId
+}

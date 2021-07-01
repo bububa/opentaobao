@@ -17,4 +17,36 @@ type AlibabaInteractUserIsloginAPIRequest struct {
 	_buyerNick string
 }
 
-// New
+// NewAlibabaInteractUserIsloginRequest 初始化AlibabaInteractUserIsloginAPIRequest对象
+func NewAlibabaInteractUserIsloginRequest() *AlibabaInteractUserIsloginAPIRequest {
+	return &AlibabaInteractUserIsloginAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractUserIsloginAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.user.islogin"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractUserIsloginAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BuyerNick Setter
+// 用户nick
+func (r *AlibabaInteractUserIsloginAPIRequest) SetBuyerNick(_buyerNick string) error {
+	r._buyerNick = _buyerNick
+	r.Set("buyer_nick", _buyerNick)
+	return nil
+}
+
+// Get BuyerNick Getter
+func (r AlibabaInteractUserIsloginAPIRequest) GetBuyerNick() string {
+	return r._buyerNick
+}

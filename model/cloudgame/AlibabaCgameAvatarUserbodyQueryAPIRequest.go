@@ -17,4 +17,36 @@ type AlibabaCgameAvatarUserbodyQueryAPIRequest struct {
 	_mixUserId string
 }
 
-// New
+// NewAlibabaCgameAvatarUserbodyQueryRequest 初始化AlibabaCgameAvatarUserbodyQueryAPIRequest对象
+func NewAlibabaCgameAvatarUserbodyQueryRequest() *AlibabaCgameAvatarUserbodyQueryAPIRequest {
+	return &AlibabaCgameAvatarUserbodyQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.cgame.avatar.userbody.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MixUserId Setter
+// 查询数据所属用户的mixUserId
+func (r *AlibabaCgameAvatarUserbodyQueryAPIRequest) SetMixUserId(_mixUserId string) error {
+	r._mixUserId = _mixUserId
+	r.Set("mix_user_id", _mixUserId)
+	return nil
+}
+
+// Get MixUserId Getter
+func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetMixUserId() string {
+	return r._mixUserId
+}

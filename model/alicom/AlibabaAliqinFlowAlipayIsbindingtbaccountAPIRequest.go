@@ -17,4 +17,36 @@ type AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest struct {
 	_alipayId string
 }
 
-// New
+// NewAlibabaAliqinFlowAlipayIsbindingtbaccountRequest 初始化AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest对象
+func NewAlibabaAliqinFlowAlipayIsbindingtbaccountRequest() *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest {
+	return &AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) GetApiMethodName() string {
+	return "alibaba.aliqin.flow.alipay.isbindingtbaccount"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AlipayId Setter
+// 支付宝ID
+func (r *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) SetAlipayId(_alipayId string) error {
+	r._alipayId = _alipayId
+	r.Set("alipay_id", _alipayId)
+	return nil
+}
+
+// Get AlipayId Getter
+func (r AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) GetAlipayId() string {
+	return r._alipayId
+}

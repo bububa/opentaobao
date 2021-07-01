@@ -17,4 +17,36 @@ type TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest struct {
 	_paramRefundOrderFillConfirmFeeRq *RefundOrderFillConfirmFeeRq
 }
 
-// New
+// NewTaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest 初始化TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest对象
+func NewTaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest() *TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest {
+	return &TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.ie.agent.refund.new.fillconfirmfee"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamRefundOrderFillConfirmFeeRq Setter
+// 请求
+func (r *TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) SetParamRefundOrderFillConfirmFeeRq(_paramRefundOrderFillConfirmFeeRq *RefundOrderFillConfirmFeeRq) error {
+	r._paramRefundOrderFillConfirmFeeRq = _paramRefundOrderFillConfirmFeeRq
+	r.Set("param_refund_order_fill_confirm_fee_rq", _paramRefundOrderFillConfirmFeeRq)
+	return nil
+}
+
+// Get ParamRefundOrderFillConfirmFeeRq Getter
+func (r TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) GetParamRefundOrderFillConfirmFeeRq() *RefundOrderFillConfirmFeeRq {
+	return r._paramRefundOrderFillConfirmFeeRq
+}

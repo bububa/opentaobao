@@ -17,4 +17,36 @@ type TmallCarLeasePostsynchronizeAPIRequest struct {
 	_schemeDto *CarLeasePostSchemeSynchronizeDto
 }
 
-// New
+// NewTmallCarLeasePostsynchronizeRequest 初始化TmallCarLeasePostsynchronizeAPIRequest对象
+func NewTmallCarLeasePostsynchronizeRequest() *TmallCarLeasePostsynchronizeAPIRequest {
+	return &TmallCarLeasePostsynchronizeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallCarLeasePostsynchronizeAPIRequest) GetApiMethodName() string {
+	return "tmall.car.lease.postsynchronize"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallCarLeasePostsynchronizeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SchemeDto Setter
+// 租后方案信息
+func (r *TmallCarLeasePostsynchronizeAPIRequest) SetSchemeDto(_schemeDto *CarLeasePostSchemeSynchronizeDto) error {
+	r._schemeDto = _schemeDto
+	r.Set("scheme_dto", _schemeDto)
+	return nil
+}
+
+// Get SchemeDto Getter
+func (r TmallCarLeasePostsynchronizeAPIRequest) GetSchemeDto() *CarLeasePostSchemeSynchronizeDto {
+	return r._schemeDto
+}

@@ -23,4 +23,75 @@ type YoukuTvoperatorMediaPageQueryAPIRequest struct {
 	_programId int64
 }
 
-// New
+// NewYoukuTvoperatorMediaPageQueryRequest 初始化YoukuTvoperatorMediaPageQueryAPIRequest对象
+func NewYoukuTvoperatorMediaPageQueryRequest() *YoukuTvoperatorMediaPageQueryAPIRequest {
+	return &YoukuTvoperatorMediaPageQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetApiMethodName() string {
+	return "youku.tvoperator.media.page.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SystemInfo Setter
+// 系统信息（和服务提供方确认)
+func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetSystemInfo(_systemInfo string) error {
+	r._systemInfo = _systemInfo
+	r.Set("system_info", _systemInfo)
+	return nil
+}
+
+// Get SystemInfo Getter
+func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetSystemInfo() string {
+	return r._systemInfo
+}
+
+// Set is PageNo Setter
+// 从第一页开始
+func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 页面大小
+func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is ProgramId Setter
+// 节目programId
+func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetProgramId(_programId int64) error {
+	r._programId = _programId
+	r.Set("program_id", _programId)
+	return nil
+}
+
+// Get ProgramId Getter
+func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetProgramId() int64 {
+	return r._programId
+}

@@ -21,4 +21,62 @@ type AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest struct {
 	_topContext *TopContextDto
 }
 
-// New
+// NewAlibabaScbpAdTargetTagMergeCampaignTargetTagRequest 初始化AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest对象
+func NewAlibabaScbpAdTargetTagMergeCampaignTargetTagRequest() *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest {
+	return &AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.ad.target.tag.merge.campaign.target.tag"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CampaignId Setter
+// 计划id
+func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// Get CampaignId Getter
+func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
+}
+
+// Set is Data Setter
+// 标签数据，json格式。 最外层key：人群标签crowd/地域标签region、priceMode，第二层key: 增add、删del、改mod，第三层key：optionValue、bidRate、tagId  eg: 删除：{"crowd":{"del":[{"tagId":3595769030}]}}   修改：{"crowd":{"mod":[{"optionValue":"high_potential_order_user","bidRate":"151"}]}} 增加：{"crowd":{"add":[{"optionValue":"user_area_CA","bidRate":"133"}]}}
+func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetData(_data string) error {
+	r._data = _data
+	r.Set("data", _data)
+	return nil
+}
+
+// Get Data Getter
+func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetData() string {
+	return r._data
+}
+
+// Set is TopContext Setter
+// 用户信息
+func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+	r._topContext = _topContext
+	r.Set("top_context", _topContext)
+	return nil
+}
+
+// Get TopContext Getter
+func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetTopContext() *TopContextDto {
+	return r._topContext
+}

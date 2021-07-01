@@ -19,4 +19,49 @@ type TmallItemDescModulesGetAPIRequest struct {
 	_usrId string
 }
 
-// New
+// NewTmallItemDescModulesGetRequest 初始化TmallItemDescModulesGetAPIRequest对象
+func NewTmallItemDescModulesGetRequest() *TmallItemDescModulesGetAPIRequest {
+	return &TmallItemDescModulesGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallItemDescModulesGetAPIRequest) GetApiMethodName() string {
+	return "tmall.item.desc.modules.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallItemDescModulesGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CatId Setter
+// 淘宝后台发布商品的叶子类目id，可通过taobao.itemcats.get查到。api 访问地址http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.CFhhk4&path=cid:3-apiId:122
+func (r *TmallItemDescModulesGetAPIRequest) SetCatId(_catId int64) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// Get CatId Getter
+func (r TmallItemDescModulesGetAPIRequest) GetCatId() int64 {
+	return r._catId
+}
+
+// Set is UsrId Setter
+// 商家主帐号id
+func (r *TmallItemDescModulesGetAPIRequest) SetUsrId(_usrId string) error {
+	r._usrId = _usrId
+	r.Set("usr_id", _usrId)
+	return nil
+}
+
+// Get UsrId Getter
+func (r TmallItemDescModulesGetAPIRequest) GetUsrId() string {
+	return r._usrId
+}

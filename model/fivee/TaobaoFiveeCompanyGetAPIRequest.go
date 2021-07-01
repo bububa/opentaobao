@@ -19,4 +19,49 @@ type TaobaoFiveeCompanyGetAPIRequest struct {
 	_paramUniqueCode string
 }
 
-// New
+// NewTaobaoFiveeCompanyGetRequest 初始化TaobaoFiveeCompanyGetAPIRequest对象
+func NewTaobaoFiveeCompanyGetRequest() *TaobaoFiveeCompanyGetAPIRequest {
+	return &TaobaoFiveeCompanyGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFiveeCompanyGetAPIRequest) GetApiMethodName() string {
+	return "taobao.fivee.company.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFiveeCompanyGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamBucode Setter
+// bu身份标识
+func (r *TaobaoFiveeCompanyGetAPIRequest) SetParamBucode(_paramBucode string) error {
+	r._paramBucode = _paramBucode
+	r.Set("param_bucode", _paramBucode)
+	return nil
+}
+
+// Get ParamBucode Getter
+func (r TaobaoFiveeCompanyGetAPIRequest) GetParamBucode() string {
+	return r._paramBucode
+}
+
+// Set is ParamUniqueCode Setter
+// 统一社会信息用代码
+func (r *TaobaoFiveeCompanyGetAPIRequest) SetParamUniqueCode(_paramUniqueCode string) error {
+	r._paramUniqueCode = _paramUniqueCode
+	r.Set("param_unique_code", _paramUniqueCode)
+	return nil
+}
+
+// Get ParamUniqueCode Getter
+func (r TaobaoFiveeCompanyGetAPIRequest) GetParamUniqueCode() string {
+	return r._paramUniqueCode
+}

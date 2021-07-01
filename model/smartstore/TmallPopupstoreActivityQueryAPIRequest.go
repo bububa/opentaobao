@@ -19,4 +19,49 @@ type TmallPopupstoreActivityQueryAPIRequest struct {
 	_endDate string
 }
 
-// New
+// NewTmallPopupstoreActivityQueryRequest 初始化TmallPopupstoreActivityQueryAPIRequest对象
+func NewTmallPopupstoreActivityQueryRequest() *TmallPopupstoreActivityQueryAPIRequest {
+	return &TmallPopupstoreActivityQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallPopupstoreActivityQueryAPIRequest) GetApiMethodName() string {
+	return "tmall.popupstore.activity.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallPopupstoreActivityQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StartDate Setter
+// 查询开始时间,yyyy-MM-dd
+func (r *TmallPopupstoreActivityQueryAPIRequest) SetStartDate(_startDate string) error {
+	r._startDate = _startDate
+	r.Set("start_date", _startDate)
+	return nil
+}
+
+// Get StartDate Getter
+func (r TmallPopupstoreActivityQueryAPIRequest) GetStartDate() string {
+	return r._startDate
+}
+
+// Set is EndDate Setter
+// 查询结束时间，yyyy-MM-dd
+func (r *TmallPopupstoreActivityQueryAPIRequest) SetEndDate(_endDate string) error {
+	r._endDate = _endDate
+	r.Set("end_date", _endDate)
+	return nil
+}
+
+// Get EndDate Getter
+func (r TmallPopupstoreActivityQueryAPIRequest) GetEndDate() string {
+	return r._endDate
+}

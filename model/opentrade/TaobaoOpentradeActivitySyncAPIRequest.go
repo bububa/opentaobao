@@ -28,4 +28,88 @@ type TaobaoOpentradeActivitySyncAPIRequest struct {
 	_itemIdList []int64
 }
 
-// New
+// NewTaobaoOpentradeActivitySyncRequest 初始化TaobaoOpentradeActivitySyncAPIRequest对象
+func NewTaobaoOpentradeActivitySyncRequest() *TaobaoOpentradeActivitySyncAPIRequest {
+	return &TaobaoOpentradeActivitySyncAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpentradeActivitySyncAPIRequest) GetApiMethodName() string {
+	return "taobao.opentrade.activity.sync"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpentradeActivitySyncAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ActivityId Setter
+// 排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传
+func (r *TaobaoOpentradeActivitySyncAPIRequest) SetActivityId(_activityId string) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// Get ActivityId Getter
+func (r TaobaoOpentradeActivitySyncAPIRequest) GetActivityId() string {
+	return r._activityId
+}
+
+// Set is StartTime Setter
+// 活动开始时间
+func (r *TaobaoOpentradeActivitySyncAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// Get StartTime Getter
+func (r TaobaoOpentradeActivitySyncAPIRequest) GetStartTime() string {
+	return r._startTime
+}
+
+// Set is EndTime Setter
+// 活动结束时间（全流程结束时间，非排队结束时间）
+func (r *TaobaoOpentradeActivitySyncAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// Get EndTime Getter
+func (r TaobaoOpentradeActivitySyncAPIRequest) GetEndTime() string {
+	return r._endTime
+}
+
+// Set is ActivityName Setter
+// 活动名称
+func (r *TaobaoOpentradeActivitySyncAPIRequest) SetActivityName(_activityName string) error {
+	r._activityName = _activityName
+	r.Set("activity_name", _activityName)
+	return nil
+}
+
+// Get ActivityName Getter
+func (r TaobaoOpentradeActivitySyncAPIRequest) GetActivityName() string {
+	return r._activityName
+}
+
+// Set is ItemIdList Setter
+// 活动关联的商品列表，使用逗号(,)分割
+func (r *TaobaoOpentradeActivitySyncAPIRequest) SetItemIdList(_itemIdList []int64) error {
+	r._itemIdList = _itemIdList
+	r.Set("item_id_list", _itemIdList)
+	return nil
+}
+
+// Get ItemIdList Getter
+func (r TaobaoOpentradeActivitySyncAPIRequest) GetItemIdList() []int64 {
+	return r._itemIdList
+}

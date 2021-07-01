@@ -17,4 +17,36 @@ type CainiaoIotTicketSpMaintainUpdateAPIRequest struct {
 	_param *UpdateMaintainPlanTopRequest
 }
 
-// New
+// NewCainiaoIotTicketSpMaintainUpdateRequest 初始化CainiaoIotTicketSpMaintainUpdateAPIRequest对象
+func NewCainiaoIotTicketSpMaintainUpdateRequest() *CainiaoIotTicketSpMaintainUpdateAPIRequest {
+	return &CainiaoIotTicketSpMaintainUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoIotTicketSpMaintainUpdateAPIRequest) GetApiMethodName() string {
+	return "cainiao.iot.ticket.sp.maintain.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoIotTicketSpMaintainUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 请求参数
+func (r *CainiaoIotTicketSpMaintainUpdateAPIRequest) SetParam(_param *UpdateMaintainPlanTopRequest) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r CainiaoIotTicketSpMaintainUpdateAPIRequest) GetParam() *UpdateMaintainPlanTopRequest {
+	return r._param
+}

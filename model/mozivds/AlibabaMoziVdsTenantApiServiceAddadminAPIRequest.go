@@ -18,4 +18,36 @@ type AlibabaMoziVdsTenantApiServiceAddadminAPIRequest struct {
 	_param0 *AddTenantAdminsRequest
 }
 
-// New
+// NewAlibabaMoziVdsTenantApiServiceAddadminRequest 初始化AlibabaMoziVdsTenantApiServiceAddadminAPIRequest对象
+func NewAlibabaMoziVdsTenantApiServiceAddadminRequest() *AlibabaMoziVdsTenantApiServiceAddadminAPIRequest {
+	return &AlibabaMoziVdsTenantApiServiceAddadminAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) GetApiMethodName() string {
+	return "alibaba.mozi.vds.tenant.api.service.addadmin"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 请求参数
+func (r *AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) SetParam0(_param0 *AddTenantAdminsRequest) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) GetParam0() *AddTenantAdminsRequest {
+	return r._param0
+}

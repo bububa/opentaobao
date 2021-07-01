@@ -17,4 +17,36 @@ type AlibabaWdkPosTradeCreateAPIRequest struct {
 	_createRequest *FastBuyPosCreateRequest
 }
 
-// New
+// NewAlibabaWdkPosTradeCreateRequest 初始化AlibabaWdkPosTradeCreateAPIRequest对象
+func NewAlibabaWdkPosTradeCreateRequest() *AlibabaWdkPosTradeCreateAPIRequest {
+	return &AlibabaWdkPosTradeCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkPosTradeCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.pos.trade.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkPosTradeCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CreateRequest Setter
+// 下单请求
+func (r *AlibabaWdkPosTradeCreateAPIRequest) SetCreateRequest(_createRequest *FastBuyPosCreateRequest) error {
+	r._createRequest = _createRequest
+	r.Set("create_request", _createRequest)
+	return nil
+}
+
+// Get CreateRequest Getter
+func (r AlibabaWdkPosTradeCreateAPIRequest) GetCreateRequest() *FastBuyPosCreateRequest {
+	return r._createRequest
+}

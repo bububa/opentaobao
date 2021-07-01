@@ -17,4 +17,36 @@ type AlibabaLstIcItemInfoQueryAPIRequest struct {
 	_query *LstItemListParam
 }
 
-// New
+// NewAlibabaLstIcItemInfoQueryRequest 初始化AlibabaLstIcItemInfoQueryAPIRequest对象
+func NewAlibabaLstIcItemInfoQueryRequest() *AlibabaLstIcItemInfoQueryAPIRequest {
+	return &AlibabaLstIcItemInfoQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstIcItemInfoQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.ic.item.info.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstIcItemInfoQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 零售通商品查询参数
+func (r *AlibabaLstIcItemInfoQueryAPIRequest) SetQuery(_query *LstItemListParam) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r AlibabaLstIcItemInfoQueryAPIRequest) GetQuery() *LstItemListParam {
+	return r._query
+}

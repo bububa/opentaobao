@@ -17,4 +17,36 @@ type AlibabaAlihealthDentalItemListAPIRequest struct {
 	_needTestItem bool
 }
 
-// New
+// NewAlibabaAlihealthDentalItemListRequest 初始化AlibabaAlihealthDentalItemListAPIRequest对象
+func NewAlibabaAlihealthDentalItemListRequest() *AlibabaAlihealthDentalItemListAPIRequest {
+	return &AlibabaAlihealthDentalItemListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDentalItemListAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.dental.item.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDentalItemListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is NeedTestItem Setter
+// 是否需要测试商品
+func (r *AlibabaAlihealthDentalItemListAPIRequest) SetNeedTestItem(_needTestItem bool) error {
+	r._needTestItem = _needTestItem
+	r.Set("need_test_item", _needTestItem)
+	return nil
+}
+
+// Get NeedTestItem Getter
+func (r AlibabaAlihealthDentalItemListAPIRequest) GetNeedTestItem() bool {
+	return r._needTestItem
+}

@@ -17,4 +17,36 @@ type TaobaoInventoryWarehouseManageAPIRequest struct {
 	_wareHouseDto *WareHouseDto
 }
 
-// New
+// NewTaobaoInventoryWarehouseManageRequest 初始化TaobaoInventoryWarehouseManageAPIRequest对象
+func NewTaobaoInventoryWarehouseManageRequest() *TaobaoInventoryWarehouseManageAPIRequest {
+	return &TaobaoInventoryWarehouseManageAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoInventoryWarehouseManageAPIRequest) GetApiMethodName() string {
+	return "taobao.inventory.warehouse.manage"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoInventoryWarehouseManageAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WareHouseDto Setter
+// 仓库信息
+func (r *TaobaoInventoryWarehouseManageAPIRequest) SetWareHouseDto(_wareHouseDto *WareHouseDto) error {
+	r._wareHouseDto = _wareHouseDto
+	r.Set("ware_house_dto", _wareHouseDto)
+	return nil
+}
+
+// Get WareHouseDto Getter
+func (r TaobaoInventoryWarehouseManageAPIRequest) GetWareHouseDto() *WareHouseDto {
+	return r._wareHouseDto
+}

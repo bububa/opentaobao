@@ -21,4 +21,62 @@ type TaobaoPlaceStoregroupUpdateAPIRequest struct {
 	_desc string
 }
 
-// New
+// NewTaobaoPlaceStoregroupUpdateRequest 初始化TaobaoPlaceStoregroupUpdateAPIRequest对象
+func NewTaobaoPlaceStoregroupUpdateRequest() *TaobaoPlaceStoregroupUpdateAPIRequest {
+	return &TaobaoPlaceStoregroupUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.place.storegroup.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Id Setter
+// 库id
+func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetId() int64 {
+	return r._id
+}
+
+// Set is Name Setter
+// 库名称
+func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetName() string {
+	return r._name
+}
+
+// Set is Desc Setter
+// 库备注
+func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetDesc(_desc string) error {
+	r._desc = _desc
+	r.Set("desc", _desc)
+	return nil
+}
+
+// Get Desc Getter
+func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetDesc() string {
+	return r._desc
+}

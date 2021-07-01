@@ -15,4 +15,23 @@ type AlibabaIcbuRfqMyequityAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaIcbuRfqMyequityRequest 初始化AlibabaIcbuRfqMyequityAPIRequest对象
+func NewAlibabaIcbuRfqMyequityRequest() *AlibabaIcbuRfqMyequityAPIRequest {
+	return &AlibabaIcbuRfqMyequityAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIcbuRfqMyequityAPIRequest) GetApiMethodName() string {
+	return "alibaba.icbu.rfq.myequity"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIcbuRfqMyequityAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

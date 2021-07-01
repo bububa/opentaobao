@@ -17,4 +17,36 @@ type TmallTraderateFeedsGetAPIRequest struct {
 	_childTradeId int64
 }
 
-// New
+// NewTmallTraderateFeedsGetRequest 初始化TmallTraderateFeedsGetAPIRequest对象
+func NewTmallTraderateFeedsGetRequest() *TmallTraderateFeedsGetAPIRequest {
+	return &TmallTraderateFeedsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallTraderateFeedsGetAPIRequest) GetApiMethodName() string {
+	return "tmall.traderate.feeds.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallTraderateFeedsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ChildTradeId Setter
+// 交易子订单ID
+func (r *TmallTraderateFeedsGetAPIRequest) SetChildTradeId(_childTradeId int64) error {
+	r._childTradeId = _childTradeId
+	r.Set("child_trade_id", _childTradeId)
+	return nil
+}
+
+// Get ChildTradeId Getter
+func (r TmallTraderateFeedsGetAPIRequest) GetChildTradeId() int64 {
+	return r._childTradeId
+}

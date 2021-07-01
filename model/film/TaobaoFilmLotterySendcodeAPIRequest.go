@@ -17,4 +17,36 @@ type TaobaoFilmLotterySendcodeAPIRequest struct {
 	_paramFCodeMerchantSendCodeRequest *FCodeMerchantSendCodeRq
 }
 
-// New
+// NewTaobaoFilmLotterySendcodeRequest 初始化TaobaoFilmLotterySendcodeAPIRequest对象
+func NewTaobaoFilmLotterySendcodeRequest() *TaobaoFilmLotterySendcodeAPIRequest {
+	return &TaobaoFilmLotterySendcodeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFilmLotterySendcodeAPIRequest) GetApiMethodName() string {
+	return "taobao.film.lottery.sendcode"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFilmLotterySendcodeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamFCodeMerchantSendCodeRequest Setter
+// 外部商户发码请求
+func (r *TaobaoFilmLotterySendcodeAPIRequest) SetParamFCodeMerchantSendCodeRequest(_paramFCodeMerchantSendCodeRequest *FCodeMerchantSendCodeRq) error {
+	r._paramFCodeMerchantSendCodeRequest = _paramFCodeMerchantSendCodeRequest
+	r.Set("param_f_code_merchant_send_code_request", _paramFCodeMerchantSendCodeRequest)
+	return nil
+}
+
+// Get ParamFCodeMerchantSendCodeRequest Getter
+func (r TaobaoFilmLotterySendcodeAPIRequest) GetParamFCodeMerchantSendCodeRequest() *FCodeMerchantSendCodeRq {
+	return r._paramFCodeMerchantSendCodeRequest
+}

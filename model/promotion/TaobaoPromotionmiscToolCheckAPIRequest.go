@@ -19,4 +19,49 @@ type TaobaoPromotionmiscToolCheckAPIRequest struct {
 	_metaAllow string
 }
 
-// New
+// NewTaobaoPromotionmiscToolCheckRequest 初始化TaobaoPromotionmiscToolCheckAPIRequest对象
+func NewTaobaoPromotionmiscToolCheckRequest() *TaobaoPromotionmiscToolCheckAPIRequest {
+	return &TaobaoPromotionmiscToolCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPromotionmiscToolCheckAPIRequest) GetApiMethodName() string {
+	return "taobao.promotionmisc.tool.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPromotionmiscToolCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ToolId Setter
+// 工具ID, taobao.ump.tool.add成功后返回的id。
+func (r *TaobaoPromotionmiscToolCheckAPIRequest) SetToolId(_toolId int64) error {
+	r._toolId = _toolId
+	r.Set("tool_id", _toolId)
+	return nil
+}
+
+// Get ToolId Getter
+func (r TaobaoPromotionmiscToolCheckAPIRequest) GetToolId() int64 {
+	return r._toolId
+}
+
+// Set is MetaAllow Setter
+// 可使用的元数据。PRD审核后，会告诉isv可使用的元数据。
+func (r *TaobaoPromotionmiscToolCheckAPIRequest) SetMetaAllow(_metaAllow string) error {
+	r._metaAllow = _metaAllow
+	r.Set("meta_allow", _metaAllow)
+	return nil
+}
+
+// Get MetaAllow Getter
+func (r TaobaoPromotionmiscToolCheckAPIRequest) GetMetaAllow() string {
+	return r._metaAllow
+}

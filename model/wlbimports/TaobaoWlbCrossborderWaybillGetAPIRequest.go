@@ -18,4 +18,36 @@ type TaobaoWlbCrossborderWaybillGetAPIRequest struct {
 	_orderCode string
 }
 
-// New
+// NewTaobaoWlbCrossborderWaybillGetRequest 初始化TaobaoWlbCrossborderWaybillGetAPIRequest对象
+func NewTaobaoWlbCrossborderWaybillGetRequest() *TaobaoWlbCrossborderWaybillGetAPIRequest {
+	return &TaobaoWlbCrossborderWaybillGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbCrossborderWaybillGetAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.crossborder.waybill.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbCrossborderWaybillGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderCode Setter
+// 菜鸟物流单号
+func (r *TaobaoWlbCrossborderWaybillGetAPIRequest) SetOrderCode(_orderCode string) error {
+	r._orderCode = _orderCode
+	r.Set("order_code", _orderCode)
+	return nil
+}
+
+// Get OrderCode Getter
+func (r TaobaoWlbCrossborderWaybillGetAPIRequest) GetOrderCode() string {
+	return r._orderCode
+}

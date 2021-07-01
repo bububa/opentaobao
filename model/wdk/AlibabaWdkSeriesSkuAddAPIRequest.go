@@ -17,4 +17,36 @@ type AlibabaWdkSeriesSkuAddAPIRequest struct {
 	_seriesSkus *SeriesSkuRequest
 }
 
-// New
+// NewAlibabaWdkSeriesSkuAddRequest 初始化AlibabaWdkSeriesSkuAddAPIRequest对象
+func NewAlibabaWdkSeriesSkuAddRequest() *AlibabaWdkSeriesSkuAddAPIRequest {
+	return &AlibabaWdkSeriesSkuAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkSeriesSkuAddAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.series.sku.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkSeriesSkuAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SeriesSkus Setter
+// 系列品添加商品请求
+func (r *AlibabaWdkSeriesSkuAddAPIRequest) SetSeriesSkus(_seriesSkus *SeriesSkuRequest) error {
+	r._seriesSkus = _seriesSkus
+	r.Set("series_skus", _seriesSkus)
+	return nil
+}
+
+// Get SeriesSkus Getter
+func (r AlibabaWdkSeriesSkuAddAPIRequest) GetSeriesSkus() *SeriesSkuRequest {
+	return r._seriesSkus
+}

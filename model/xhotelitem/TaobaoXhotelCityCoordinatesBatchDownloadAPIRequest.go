@@ -17,4 +17,36 @@ type TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest struct {
 	_batchId int64
 }
 
-// New
+// NewTaobaoXhotelCityCoordinatesBatchDownloadRequest 初始化TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest对象
+func NewTaobaoXhotelCityCoordinatesBatchDownloadRequest() *TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest {
+	return &TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.city.coordinates.batch.download"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BatchId Setter
+// 上传的经纬度批次号
+func (r *TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest) SetBatchId(_batchId int64) error {
+	r._batchId = _batchId
+	r.Set("batch_id", _batchId)
+	return nil
+}
+
+// Get BatchId Getter
+func (r TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest) GetBatchId() int64 {
+	return r._batchId
+}

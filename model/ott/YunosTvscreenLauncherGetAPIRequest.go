@@ -19,4 +19,49 @@ type YunosTvscreenLauncherGetAPIRequest struct {
 	_ip string
 }
 
-// New
+// NewYunosTvscreenLauncherGetRequest 初始化YunosTvscreenLauncherGetAPIRequest对象
+func NewYunosTvscreenLauncherGetRequest() *YunosTvscreenLauncherGetAPIRequest {
+	return &YunosTvscreenLauncherGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvscreenLauncherGetAPIRequest) GetApiMethodName() string {
+	return "yunos.tvscreen.launcher.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvscreenLauncherGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Property Setter
+// 设备属性
+func (r *YunosTvscreenLauncherGetAPIRequest) SetProperty(_property string) error {
+	r._property = _property
+	r.Set("property", _property)
+	return nil
+}
+
+// Get Property Getter
+func (r YunosTvscreenLauncherGetAPIRequest) GetProperty() string {
+	return r._property
+}
+
+// Set is Ip Setter
+// IP来源
+func (r *YunosTvscreenLauncherGetAPIRequest) SetIp(_ip string) error {
+	r._ip = _ip
+	r.Set("ip", _ip)
+	return nil
+}
+
+// Get Ip Getter
+func (r YunosTvscreenLauncherGetAPIRequest) GetIp() string {
+	return r._ip
+}

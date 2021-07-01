@@ -17,4 +17,36 @@ type AlibabaDamaiEcSearchProjectSearchAPIRequest struct {
 	_param *TopSearchProjectParam
 }
 
-// New
+// NewAlibabaDamaiEcSearchProjectSearchRequest 初始化AlibabaDamaiEcSearchProjectSearchAPIRequest对象
+func NewAlibabaDamaiEcSearchProjectSearchRequest() *AlibabaDamaiEcSearchProjectSearchAPIRequest {
+	return &AlibabaDamaiEcSearchProjectSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiEcSearchProjectSearchAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.ec.search.project.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiEcSearchProjectSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参对象
+func (r *AlibabaDamaiEcSearchProjectSearchAPIRequest) SetParam(_param *TopSearchProjectParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaDamaiEcSearchProjectSearchAPIRequest) GetParam() *TopSearchProjectParam {
+	return r._param
+}

@@ -21,4 +21,62 @@ type TaobaoFenxiaoProductImportFromAuctionAPIRequest struct {
 	_productLineId int64
 }
 
-// New
+// NewTaobaoFenxiaoProductImportFromAuctionRequest 初始化TaobaoFenxiaoProductImportFromAuctionAPIRequest对象
+func NewTaobaoFenxiaoProductImportFromAuctionRequest() *TaobaoFenxiaoProductImportFromAuctionAPIRequest {
+	return &TaobaoFenxiaoProductImportFromAuctionAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFenxiaoProductImportFromAuctionAPIRequest) GetApiMethodName() string {
+	return "taobao.fenxiao.product.import.from.auction"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFenxiaoProductImportFromAuctionAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TradeType Setter
+// 导入产品需要支持的交易类型：[1 代销][ 2 经销 ][3 代销和经销]
+func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) SetTradeType(_tradeType int64) error {
+	r._tradeType = _tradeType
+	r.Set("trade_type", _tradeType)
+	return nil
+}
+
+// Get TradeType Getter
+func (r TaobaoFenxiaoProductImportFromAuctionAPIRequest) GetTradeType() int64 {
+	return r._tradeType
+}
+
+// Set is AuctionId Setter
+// 店铺宝贝id
+func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) SetAuctionId(_auctionId int64) error {
+	r._auctionId = _auctionId
+	r.Set("auction_id", _auctionId)
+	return nil
+}
+
+// Get AuctionId Getter
+func (r TaobaoFenxiaoProductImportFromAuctionAPIRequest) GetAuctionId() int64 {
+	return r._auctionId
+}
+
+// Set is ProductLineId Setter
+// 产品线id
+func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) SetProductLineId(_productLineId int64) error {
+	r._productLineId = _productLineId
+	r.Set("product_line_id", _productLineId)
+	return nil
+}
+
+// Get ProductLineId Getter
+func (r TaobaoFenxiaoProductImportFromAuctionAPIRequest) GetProductLineId() int64 {
+	return r._productLineId
+}

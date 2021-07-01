@@ -17,4 +17,36 @@ type AlibabaInteractActivityUnregisterAPIRequest struct {
 	_bizId string
 }
 
-// New
+// NewAlibabaInteractActivityUnregisterRequest 初始化AlibabaInteractActivityUnregisterAPIRequest对象
+func NewAlibabaInteractActivityUnregisterRequest() *AlibabaInteractActivityUnregisterAPIRequest {
+	return &AlibabaInteractActivityUnregisterAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractActivityUnregisterAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.activity.unregister"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractActivityUnregisterAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BizId Setter
+// 互动活动ID
+func (r *AlibabaInteractActivityUnregisterAPIRequest) SetBizId(_bizId string) error {
+	r._bizId = _bizId
+	r.Set("biz_id", _bizId)
+	return nil
+}
+
+// Get BizId Getter
+func (r AlibabaInteractActivityUnregisterAPIRequest) GetBizId() string {
+	return r._bizId
+}

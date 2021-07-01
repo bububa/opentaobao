@@ -17,4 +17,36 @@ type AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest struct {
 	_refundCompleteInfo *RefundCompleteInfo
 }
 
-// New
+// NewAlibabaTclsAelophyMerchantChannelRefundCompleteRequest 初始化AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest对象
+func NewAlibabaTclsAelophyMerchantChannelRefundCompleteRequest() *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest {
+	return &AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) GetApiMethodName() string {
+	return "alibaba.tcls.aelophy.merchant.channel.refund.complete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RefundCompleteInfo Setter
+// 请求对象
+func (r *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) SetRefundCompleteInfo(_refundCompleteInfo *RefundCompleteInfo) error {
+	r._refundCompleteInfo = _refundCompleteInfo
+	r.Set("refund_complete_info", _refundCompleteInfo)
+	return nil
+}
+
+// Get RefundCompleteInfo Getter
+func (r AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) GetRefundCompleteInfo() *RefundCompleteInfo {
+	return r._refundCompleteInfo
+}

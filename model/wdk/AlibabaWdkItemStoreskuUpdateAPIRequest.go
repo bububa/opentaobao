@@ -21,4 +21,62 @@ type AlibabaWdkItemStoreskuUpdateAPIRequest struct {
 	_saleFlag int64
 }
 
-// New
+// NewAlibabaWdkItemStoreskuUpdateRequest 初始化AlibabaWdkItemStoreskuUpdateAPIRequest对象
+func NewAlibabaWdkItemStoreskuUpdateRequest() *AlibabaWdkItemStoreskuUpdateAPIRequest {
+	return &AlibabaWdkItemStoreskuUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkItemStoreskuUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.item.storesku.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkItemStoreskuUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StoreId Setter
+// 盒马门店id
+func (r *AlibabaWdkItemStoreskuUpdateAPIRequest) SetStoreId(_storeId string) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// Get StoreId Getter
+func (r AlibabaWdkItemStoreskuUpdateAPIRequest) GetStoreId() string {
+	return r._storeId
+}
+
+// Set is SkuCode Setter
+// 商品编码
+func (r *AlibabaWdkItemStoreskuUpdateAPIRequest) SetSkuCode(_skuCode string) error {
+	r._skuCode = _skuCode
+	r.Set("sku_code", _skuCode)
+	return nil
+}
+
+// Get SkuCode Getter
+func (r AlibabaWdkItemStoreskuUpdateAPIRequest) GetSkuCode() string {
+	return r._skuCode
+}
+
+// Set is SaleFlag Setter
+// 1-可售   0-不可售
+func (r *AlibabaWdkItemStoreskuUpdateAPIRequest) SetSaleFlag(_saleFlag int64) error {
+	r._saleFlag = _saleFlag
+	r.Set("sale_flag", _saleFlag)
+	return nil
+}
+
+// Get SaleFlag Getter
+func (r AlibabaWdkItemStoreskuUpdateAPIRequest) GetSaleFlag() int64 {
+	return r._saleFlag
+}

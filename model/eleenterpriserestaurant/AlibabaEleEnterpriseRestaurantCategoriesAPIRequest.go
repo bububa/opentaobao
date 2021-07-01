@@ -15,4 +15,23 @@ type AlibabaEleEnterpriseRestaurantCategoriesAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaEleEnterpriseRestaurantCategoriesRequest 初始化AlibabaEleEnterpriseRestaurantCategoriesAPIRequest对象
+func NewAlibabaEleEnterpriseRestaurantCategoriesRequest() *AlibabaEleEnterpriseRestaurantCategoriesAPIRequest {
+	return &AlibabaEleEnterpriseRestaurantCategoriesAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEleEnterpriseRestaurantCategoriesAPIRequest) GetApiMethodName() string {
+	return "alibaba.ele.enterprise.restaurant.categories"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEleEnterpriseRestaurantCategoriesAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

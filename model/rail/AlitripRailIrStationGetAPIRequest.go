@@ -21,4 +21,62 @@ type AlitripRailIrStationGetAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewAlitripRailIrStationGetRequest 初始化AlitripRailIrStationGetAPIRequest对象
+func NewAlitripRailIrStationGetRequest() *AlitripRailIrStationGetAPIRequest {
+	return &AlitripRailIrStationGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripRailIrStationGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.rail.ir.station.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripRailIrStationGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AgentId Setter
+// 商家id
+func (r *AlitripRailIrStationGetAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// Get AgentId Getter
+func (r AlitripRailIrStationGetAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}
+
+// Set is PageIndex Setter
+// 页数 从1开始
+func (r *AlitripRailIrStationGetAPIRequest) SetPageIndex(_pageIndex int64) error {
+	r._pageIndex = _pageIndex
+	r.Set("page_index", _pageIndex)
+	return nil
+}
+
+// Get PageIndex Getter
+func (r AlitripRailIrStationGetAPIRequest) GetPageIndex() int64 {
+	return r._pageIndex
+}
+
+// Set is PageSize Setter
+// 每页条数
+func (r *AlitripRailIrStationGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r AlitripRailIrStationGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

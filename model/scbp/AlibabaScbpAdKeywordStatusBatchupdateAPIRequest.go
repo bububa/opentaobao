@@ -17,4 +17,36 @@ type AlibabaScbpAdKeywordStatusBatchupdateAPIRequest struct {
 	_keywordUpdateDtoList []KeywordUpdateDto
 }
 
-// New
+// NewAlibabaScbpAdKeywordStatusBatchupdateRequest 初始化AlibabaScbpAdKeywordStatusBatchupdateAPIRequest对象
+func NewAlibabaScbpAdKeywordStatusBatchupdateRequest() *AlibabaScbpAdKeywordStatusBatchupdateAPIRequest {
+	return &AlibabaScbpAdKeywordStatusBatchupdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.ad.keyword.status.batchupdate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is KeywordUpdateDtoList Setter
+// 系统自动生成
+func (r *AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) SetKeywordUpdateDtoList(_keywordUpdateDtoList []KeywordUpdateDto) error {
+	r._keywordUpdateDtoList = _keywordUpdateDtoList
+	r.Set("keyword_update_dto_list", _keywordUpdateDtoList)
+	return nil
+}
+
+// Get KeywordUpdateDtoList Getter
+func (r AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) GetKeywordUpdateDtoList() []KeywordUpdateDto {
+	return r._keywordUpdateDtoList
+}

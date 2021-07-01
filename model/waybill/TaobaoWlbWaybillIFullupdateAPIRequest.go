@@ -17,4 +17,36 @@ type TaobaoWlbWaybillIFullupdateAPIRequest struct {
 	_waybillApplyFullUpdateRequest *WaybillApplyFullUpdateRequest
 }
 
-// New
+// NewTaobaoWlbWaybillIFullupdateRequest 初始化TaobaoWlbWaybillIFullupdateAPIRequest对象
+func NewTaobaoWlbWaybillIFullupdateRequest() *TaobaoWlbWaybillIFullupdateAPIRequest {
+	return &TaobaoWlbWaybillIFullupdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbWaybillIFullupdateAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.waybill.i.fullupdate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbWaybillIFullupdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WaybillApplyFullUpdateRequest Setter
+// 更新面单信息请求
+func (r *TaobaoWlbWaybillIFullupdateAPIRequest) SetWaybillApplyFullUpdateRequest(_waybillApplyFullUpdateRequest *WaybillApplyFullUpdateRequest) error {
+	r._waybillApplyFullUpdateRequest = _waybillApplyFullUpdateRequest
+	r.Set("waybill_apply_full_update_request", _waybillApplyFullUpdateRequest)
+	return nil
+}
+
+// Get WaybillApplyFullUpdateRequest Getter
+func (r TaobaoWlbWaybillIFullupdateAPIRequest) GetWaybillApplyFullUpdateRequest() *WaybillApplyFullUpdateRequest {
+	return r._waybillApplyFullUpdateRequest
+}

@@ -19,4 +19,49 @@ type TaobaoUsceslBizBrandInsertAPIRequest struct {
 	_brandOutCode string
 }
 
-// New
+// NewTaobaoUsceslBizBrandInsertRequest 初始化TaobaoUsceslBizBrandInsertAPIRequest对象
+func NewTaobaoUsceslBizBrandInsertRequest() *TaobaoUsceslBizBrandInsertAPIRequest {
+	return &TaobaoUsceslBizBrandInsertAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUsceslBizBrandInsertAPIRequest) GetApiMethodName() string {
+	return "taobao.uscesl.biz.brand.insert"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUsceslBizBrandInsertAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BrandName Setter
+// 商家名称
+func (r *TaobaoUsceslBizBrandInsertAPIRequest) SetBrandName(_brandName string) error {
+	r._brandName = _brandName
+	r.Set("brand_name", _brandName)
+	return nil
+}
+
+// Get BrandName Getter
+func (r TaobaoUsceslBizBrandInsertAPIRequest) GetBrandName() string {
+	return r._brandName
+}
+
+// Set is BrandOutCode Setter
+// 商家外部编号
+func (r *TaobaoUsceslBizBrandInsertAPIRequest) SetBrandOutCode(_brandOutCode string) error {
+	r._brandOutCode = _brandOutCode
+	r.Set("brand_out_code", _brandOutCode)
+	return nil
+}
+
+// Get BrandOutCode Getter
+func (r TaobaoUsceslBizBrandInsertAPIRequest) GetBrandOutCode() string {
+	return r._brandOutCode
+}

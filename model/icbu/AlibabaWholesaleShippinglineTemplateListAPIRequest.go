@@ -19,4 +19,49 @@ type AlibabaWholesaleShippinglineTemplateListAPIRequest struct {
 	_count int64
 }
 
-// New
+// NewAlibabaWholesaleShippinglineTemplateListRequest 初始化AlibabaWholesaleShippinglineTemplateListAPIRequest对象
+func NewAlibabaWholesaleShippinglineTemplateListRequest() *AlibabaWholesaleShippinglineTemplateListAPIRequest {
+	return &AlibabaWholesaleShippinglineTemplateListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWholesaleShippinglineTemplateListAPIRequest) GetApiMethodName() string {
+	return "alibaba.wholesale.shippingline.template.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWholesaleShippinglineTemplateListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PageNum Setter
+// 第几页从1开始
+func (r *AlibabaWholesaleShippinglineTemplateListAPIRequest) SetPageNum(_pageNum int64) error {
+	r._pageNum = _pageNum
+	r.Set("page_num", _pageNum)
+	return nil
+}
+
+// Get PageNum Getter
+func (r AlibabaWholesaleShippinglineTemplateListAPIRequest) GetPageNum() int64 {
+	return r._pageNum
+}
+
+// Set is Count Setter
+// 每页返回的数据个数
+func (r *AlibabaWholesaleShippinglineTemplateListAPIRequest) SetCount(_count int64) error {
+	r._count = _count
+	r.Set("count", _count)
+	return nil
+}
+
+// Get Count Getter
+func (r AlibabaWholesaleShippinglineTemplateListAPIRequest) GetCount() int64 {
+	return r._count
+}

@@ -25,4 +25,88 @@ type AlibabaEinvoiceDeviceOrderUpdateAPIRequest struct {
 	_payeeRegisterNo string
 }
 
-// New
+// NewAlibabaEinvoiceDeviceOrderUpdateRequest 初始化AlibabaEinvoiceDeviceOrderUpdateAPIRequest对象
+func NewAlibabaEinvoiceDeviceOrderUpdateRequest() *AlibabaEinvoiceDeviceOrderUpdateAPIRequest {
+	return &AlibabaEinvoiceDeviceOrderUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.device.order.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Action Setter
+// 订购单工单事件：  deploy_finish: 设备就绪，部署完成  isv_reject: 服务商驳回订购单
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetAction(_action string) error {
+	r._action = _action
+	r.Set("action", _action)
+	return nil
+}
+
+// Get Action Getter
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetAction() string {
+	return r._action
+}
+
+// Set is DeviceId Setter
+// 税控设备ID
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetDeviceId(_deviceId string) error {
+	r._deviceId = _deviceId
+	r.Set("device_id", _deviceId)
+	return nil
+}
+
+// Get DeviceId Getter
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetDeviceId() string {
+	return r._deviceId
+}
+
+// Set is ExtJson Setter
+// 拓展字段。  ①当action=deploy_finish时，拓展字段中必须包含：  serv_start_time: 服务有效周期-起始时间  serv_end_time: 服务有效周期-结束时间  时间格式：yyyy-MM-dd HH:mm:ss  ②当action=isv_reject时，拓展字段中必须包含：  message: 驳回原因
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetExtJson(_extJson string) error {
+	r._extJson = _extJson
+	r.Set("ext_json", _extJson)
+	return nil
+}
+
+// Get ExtJson Getter
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetExtJson() string {
+	return r._extJson
+}
+
+// Set is FlowId Setter
+// 订购开通单ID
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetFlowId(_flowId string) error {
+	r._flowId = _flowId
+	r.Set("flow_id", _flowId)
+	return nil
+}
+
+// Get FlowId Getter
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetFlowId() string {
+	return r._flowId
+}
+
+// Set is PayeeRegisterNo Setter
+// 税号
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+	r._payeeRegisterNo = _payeeRegisterNo
+	r.Set("payee_register_no", _payeeRegisterNo)
+	return nil
+}
+
+// Get PayeeRegisterNo Getter
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetPayeeRegisterNo() string {
+	return r._payeeRegisterNo
+}

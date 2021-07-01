@@ -17,4 +17,36 @@ type TaobaoQianniuNumberPutAPIRequest struct {
 	_data string
 }
 
-// New
+// NewTaobaoQianniuNumberPutRequest 初始化TaobaoQianniuNumberPutAPIRequest对象
+func NewTaobaoQianniuNumberPutRequest() *TaobaoQianniuNumberPutAPIRequest {
+	return &TaobaoQianniuNumberPutAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQianniuNumberPutAPIRequest) GetApiMethodName() string {
+	return "taobao.qianniu.number.put"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQianniuNumberPutAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Data Setter
+// 考虑到稳定性，建议一次卖家最多为200个。标准json格式的数组构成的字符串。每个元素为{user_id:****,field:"****",value:"****"}分别是用户的userid，数据的名称，以及数据的值。
+func (r *TaobaoQianniuNumberPutAPIRequest) SetData(_data string) error {
+	r._data = _data
+	r.Set("data", _data)
+	return nil
+}
+
+// Get Data Getter
+func (r TaobaoQianniuNumberPutAPIRequest) GetData() string {
+	return r._data
+}

@@ -21,4 +21,62 @@ type AlitripTuanHotelItemSkuUpdateAPIRequest struct {
 	_itemSkuList []TopTuanItemSkuVO
 }
 
-// New
+// NewAlitripTuanHotelItemSkuUpdateRequest 初始化AlitripTuanHotelItemSkuUpdateAPIRequest对象
+func NewAlitripTuanHotelItemSkuUpdateRequest() *AlitripTuanHotelItemSkuUpdateAPIRequest {
+	return &AlitripTuanHotelItemSkuUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTuanHotelItemSkuUpdateAPIRequest) GetApiMethodName() string {
+	return "alitrip.tuan.hotel.item.sku.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTuanHotelItemSkuUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 宝贝ID
+func (r *AlitripTuanHotelItemSkuUpdateAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r AlitripTuanHotelItemSkuUpdateAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is CatId Setter
+// 宝贝所属类目
+func (r *AlitripTuanHotelItemSkuUpdateAPIRequest) SetCatId(_catId int64) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// Get CatId Getter
+func (r AlitripTuanHotelItemSkuUpdateAPIRequest) GetCatId() int64 {
+	return r._catId
+}
+
+// Set is ItemSkuList Setter
+// 关于sku（价格策略）的字段填写的说明  国内酒店套餐类目(日历库存必填选项：套餐名称、原价、间夜;普通库存必填选项：套餐名称、价格、原价、库存、间夜)。  国际酒店套餐类目(日历库存必填选型：套餐名称、原价、间夜、人数;普通库存必填选项：套餐名称、价格、原件、库存、间夜、人数)。  酒店餐饮美食类目(日历库存必填选项：套餐名称、原价、人数、次数;普通库存必填选项：套餐名称、价格、原价、库存、人数，次数)。  酒店服务类目(日历库存必填选项：套餐名称、原价、使用次数;普通库存必填选项：套餐名称、价格、原价、库存、使用次数)。  酒店客房优惠券类目(无sku（价格策略）选项，不填写)。
+func (r *AlitripTuanHotelItemSkuUpdateAPIRequest) SetItemSkuList(_itemSkuList []TopTuanItemSkuVO) error {
+	r._itemSkuList = _itemSkuList
+	r.Set("item_sku_list", _itemSkuList)
+	return nil
+}
+
+// Get ItemSkuList Getter
+func (r AlitripTuanHotelItemSkuUpdateAPIRequest) GetItemSkuList() []TopTuanItemSkuVO {
+	return r._itemSkuList
+}

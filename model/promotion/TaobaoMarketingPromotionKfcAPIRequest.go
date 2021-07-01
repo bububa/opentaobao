@@ -19,4 +19,49 @@ type TaobaoMarketingPromotionKfcAPIRequest struct {
 	_promotionDesc string
 }
 
-// New
+// NewTaobaoMarketingPromotionKfcRequest 初始化TaobaoMarketingPromotionKfcAPIRequest对象
+func NewTaobaoMarketingPromotionKfcRequest() *TaobaoMarketingPromotionKfcAPIRequest {
+	return &TaobaoMarketingPromotionKfcAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMarketingPromotionKfcAPIRequest) GetApiMethodName() string {
+	return "taobao.marketing.promotion.kfc"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMarketingPromotionKfcAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PromotionTitle Setter
+// 活动名称
+func (r *TaobaoMarketingPromotionKfcAPIRequest) SetPromotionTitle(_promotionTitle string) error {
+	r._promotionTitle = _promotionTitle
+	r.Set("promotion_title", _promotionTitle)
+	return nil
+}
+
+// Get PromotionTitle Getter
+func (r TaobaoMarketingPromotionKfcAPIRequest) GetPromotionTitle() string {
+	return r._promotionTitle
+}
+
+// Set is PromotionDesc Setter
+// 活动描述
+func (r *TaobaoMarketingPromotionKfcAPIRequest) SetPromotionDesc(_promotionDesc string) error {
+	r._promotionDesc = _promotionDesc
+	r.Set("promotion_desc", _promotionDesc)
+	return nil
+}
+
+// Get PromotionDesc Getter
+func (r TaobaoMarketingPromotionKfcAPIRequest) GetPromotionDesc() string {
+	return r._promotionDesc
+}

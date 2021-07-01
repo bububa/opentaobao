@@ -17,4 +17,36 @@ type AlibabaTaxInvoiceSyncLedgerAPIRequest struct {
 	_paramSyncLedgerInvoiceRequest *SyncLedgerInvoiceRequest
 }
 
-// New
+// NewAlibabaTaxInvoiceSyncLedgerRequest 初始化AlibabaTaxInvoiceSyncLedgerAPIRequest对象
+func NewAlibabaTaxInvoiceSyncLedgerRequest() *AlibabaTaxInvoiceSyncLedgerAPIRequest {
+	return &AlibabaTaxInvoiceSyncLedgerAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetApiMethodName() string {
+	return "alibaba.tax.invoice.sync.ledger"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamSyncLedgerInvoiceRequest Setter
+// 参数
+func (r *AlibabaTaxInvoiceSyncLedgerAPIRequest) SetParamSyncLedgerInvoiceRequest(_paramSyncLedgerInvoiceRequest *SyncLedgerInvoiceRequest) error {
+	r._paramSyncLedgerInvoiceRequest = _paramSyncLedgerInvoiceRequest
+	r.Set("param_sync_ledger_invoice_request", _paramSyncLedgerInvoiceRequest)
+	return nil
+}
+
+// Get ParamSyncLedgerInvoiceRequest Getter
+func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetParamSyncLedgerInvoiceRequest() *SyncLedgerInvoiceRequest {
+	return r._paramSyncLedgerInvoiceRequest
+}

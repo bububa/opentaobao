@@ -15,4 +15,23 @@ type AlibabaAlinkMessageConfigListAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaAlinkMessageConfigListRequest 初始化AlibabaAlinkMessageConfigListAPIRequest对象
+func NewAlibabaAlinkMessageConfigListRequest() *AlibabaAlinkMessageConfigListAPIRequest {
+	return &AlibabaAlinkMessageConfigListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlinkMessageConfigListAPIRequest) GetApiMethodName() string {
+	return "alibaba.alink.message.config.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlinkMessageConfigListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

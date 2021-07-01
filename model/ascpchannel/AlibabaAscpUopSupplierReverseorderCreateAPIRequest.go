@@ -17,4 +17,36 @@ type AlibabaAscpUopSupplierReverseorderCreateAPIRequest struct {
 	_reverseCreateRequest *ReverseCreateRequest
 }
 
-// New
+// NewAlibabaAscpUopSupplierReverseorderCreateRequest 初始化AlibabaAscpUopSupplierReverseorderCreateAPIRequest对象
+func NewAlibabaAscpUopSupplierReverseorderCreateRequest() *AlibabaAscpUopSupplierReverseorderCreateAPIRequest {
+	return &AlibabaAscpUopSupplierReverseorderCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpUopSupplierReverseorderCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.uop.supplier.reverseorder.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpUopSupplierReverseorderCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ReverseCreateRequest Setter
+// 逆向销退单创建请求
+func (r *AlibabaAscpUopSupplierReverseorderCreateAPIRequest) SetReverseCreateRequest(_reverseCreateRequest *ReverseCreateRequest) error {
+	r._reverseCreateRequest = _reverseCreateRequest
+	r.Set("reverse_create_request", _reverseCreateRequest)
+	return nil
+}
+
+// Get ReverseCreateRequest Getter
+func (r AlibabaAscpUopSupplierReverseorderCreateAPIRequest) GetReverseCreateRequest() *ReverseCreateRequest {
+	return r._reverseCreateRequest
+}

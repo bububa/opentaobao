@@ -17,4 +17,36 @@ type AlitripTravelBookinfoQueryAPIRequest struct {
 	_bookinfoId int64
 }
 
-// New
+// NewAlitripTravelBookinfoQueryRequest 初始化AlitripTravelBookinfoQueryAPIRequest对象
+func NewAlitripTravelBookinfoQueryRequest() *AlitripTravelBookinfoQueryAPIRequest {
+	return &AlitripTravelBookinfoQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTravelBookinfoQueryAPIRequest) GetApiMethodName() string {
+	return "alitrip.travel.bookinfo.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTravelBookinfoQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BookinfoId Setter
+// 预定信息id
+func (r *AlitripTravelBookinfoQueryAPIRequest) SetBookinfoId(_bookinfoId int64) error {
+	r._bookinfoId = _bookinfoId
+	r.Set("bookinfo_id", _bookinfoId)
+	return nil
+}
+
+// Get BookinfoId Getter
+func (r AlitripTravelBookinfoQueryAPIRequest) GetBookinfoId() int64 {
+	return r._bookinfoId
+}

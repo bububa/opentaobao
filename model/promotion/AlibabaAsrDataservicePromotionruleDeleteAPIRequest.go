@@ -17,4 +17,36 @@ type AlibabaAsrDataservicePromotionruleDeleteAPIRequest struct {
 	_posKey int64
 }
 
-// New
+// NewAlibabaAsrDataservicePromotionruleDeleteRequest 初始化AlibabaAsrDataservicePromotionruleDeleteAPIRequest对象
+func NewAlibabaAsrDataservicePromotionruleDeleteRequest() *AlibabaAsrDataservicePromotionruleDeleteAPIRequest {
+	return &AlibabaAsrDataservicePromotionruleDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAsrDataservicePromotionruleDeleteAPIRequest) GetApiMethodName() string {
+	return "alibaba.asr.dataservice.promotionrule.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAsrDataservicePromotionruleDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PosKey Setter
+// poskey
+func (r *AlibabaAsrDataservicePromotionruleDeleteAPIRequest) SetPosKey(_posKey int64) error {
+	r._posKey = _posKey
+	r.Set("pos_key", _posKey)
+	return nil
+}
+
+// Get PosKey Getter
+func (r AlibabaAsrDataservicePromotionruleDeleteAPIRequest) GetPosKey() int64 {
+	return r._posKey
+}

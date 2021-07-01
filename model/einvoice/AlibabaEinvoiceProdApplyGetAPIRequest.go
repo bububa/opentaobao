@@ -18,4 +18,36 @@ type AlibabaEinvoiceProdApplyGetAPIRequest struct {
 	_invoiceApplyQueryDto *InvoiceApplyDtlQueryDto
 }
 
-// New
+// NewAlibabaEinvoiceProdApplyGetRequest 初始化AlibabaEinvoiceProdApplyGetAPIRequest对象
+func NewAlibabaEinvoiceProdApplyGetRequest() *AlibabaEinvoiceProdApplyGetAPIRequest {
+	return &AlibabaEinvoiceProdApplyGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceProdApplyGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.prod.apply.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceProdApplyGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is InvoiceApplyQueryDto Setter
+// 查询申请请求
+func (r *AlibabaEinvoiceProdApplyGetAPIRequest) SetInvoiceApplyQueryDto(_invoiceApplyQueryDto *InvoiceApplyDtlQueryDto) error {
+	r._invoiceApplyQueryDto = _invoiceApplyQueryDto
+	r.Set("invoice_apply_query_dto", _invoiceApplyQueryDto)
+	return nil
+}
+
+// Get InvoiceApplyQueryDto Getter
+func (r AlibabaEinvoiceProdApplyGetAPIRequest) GetInvoiceApplyQueryDto() *InvoiceApplyDtlQueryDto {
+	return r._invoiceApplyQueryDto
+}

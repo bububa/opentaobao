@@ -19,4 +19,49 @@ type YunosTvpubadminContentDeviceGetvendorAPIRequest struct {
 	_brandId int64
 }
 
-// New
+// NewYunosTvpubadminContentDeviceGetvendorRequest 初始化YunosTvpubadminContentDeviceGetvendorAPIRequest对象
+func NewYunosTvpubadminContentDeviceGetvendorRequest() *YunosTvpubadminContentDeviceGetvendorAPIRequest {
+	return &YunosTvpubadminContentDeviceGetvendorAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentDeviceGetvendorAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.device.getvendor"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentDeviceGetvendorAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is License Setter
+// license
+func (r *YunosTvpubadminContentDeviceGetvendorAPIRequest) SetLicense(_license int64) error {
+	r._license = _license
+	r.Set("license", _license)
+	return nil
+}
+
+// Get License Getter
+func (r YunosTvpubadminContentDeviceGetvendorAPIRequest) GetLicense() int64 {
+	return r._license
+}
+
+// Set is BrandId Setter
+// brand_id
+func (r *YunosTvpubadminContentDeviceGetvendorAPIRequest) SetBrandId(_brandId int64) error {
+	r._brandId = _brandId
+	r.Set("brand_id", _brandId)
+	return nil
+}
+
+// Get BrandId Getter
+func (r YunosTvpubadminContentDeviceGetvendorAPIRequest) GetBrandId() int64 {
+	return r._brandId
+}

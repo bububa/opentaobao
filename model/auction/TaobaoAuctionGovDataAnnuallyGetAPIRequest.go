@@ -28,4 +28,75 @@ type TaobaoAuctionGovDataAnnuallyGetAPIRequest struct {
 	_endYear string
 }
 
-// New
+// NewTaobaoAuctionGovDataAnnuallyGetRequest 初始化TaobaoAuctionGovDataAnnuallyGetAPIRequest对象
+func NewTaobaoAuctionGovDataAnnuallyGetRequest() *TaobaoAuctionGovDataAnnuallyGetAPIRequest {
+	return &TaobaoAuctionGovDataAnnuallyGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetApiMethodName() string {
+	return "taobao.auction.gov.data.annually.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CourtName Setter
+// 法院名称
+func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetCourtName(_courtName string) error {
+	r._courtName = _courtName
+	r.Set("court_name", _courtName)
+	return nil
+}
+
+// Get CourtName Getter
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetCourtName() string {
+	return r._courtName
+}
+
+// Set is IsIncludeSub Setter
+// 统计数据是够包含下属法院
+func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
+	r._isIncludeSub = _isIncludeSub
+	r.Set("is_include_sub", _isIncludeSub)
+	return nil
+}
+
+// Get IsIncludeSub Getter
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetIsIncludeSub() bool {
+	return r._isIncludeSub
+}
+
+// Set is StartYear Setter
+// 开始年份
+func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetStartYear(_startYear string) error {
+	r._startYear = _startYear
+	r.Set("start_year", _startYear)
+	return nil
+}
+
+// Get StartYear Getter
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetStartYear() string {
+	return r._startYear
+}
+
+// Set is EndYear Setter
+// 结束年份
+func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetEndYear(_endYear string) error {
+	r._endYear = _endYear
+	r.Set("end_year", _endYear)
+	return nil
+}
+
+// Get EndYear Getter
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetEndYear() string {
+	return r._endYear
+}

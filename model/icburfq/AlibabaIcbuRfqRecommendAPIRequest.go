@@ -17,4 +17,36 @@ type AlibabaIcbuRfqRecommendAPIRequest struct {
 	_queryDto *QueryDto
 }
 
-// New
+// NewAlibabaIcbuRfqRecommendRequest 初始化AlibabaIcbuRfqRecommendAPIRequest对象
+func NewAlibabaIcbuRfqRecommendRequest() *AlibabaIcbuRfqRecommendAPIRequest {
+	return &AlibabaIcbuRfqRecommendAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIcbuRfqRecommendAPIRequest) GetApiMethodName() string {
+	return "alibaba.icbu.rfq.recommend"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIcbuRfqRecommendAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is QueryDto Setter
+// 入参数据
+func (r *AlibabaIcbuRfqRecommendAPIRequest) SetQueryDto(_queryDto *QueryDto) error {
+	r._queryDto = _queryDto
+	r.Set("query_dto", _queryDto)
+	return nil
+}
+
+// Get QueryDto Getter
+func (r AlibabaIcbuRfqRecommendAPIRequest) GetQueryDto() *QueryDto {
+	return r._queryDto
+}

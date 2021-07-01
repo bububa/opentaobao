@@ -15,4 +15,23 @@ type AlibabaWestcrmIsMemberGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaWestcrmIsMemberGetRequest 初始化AlibabaWestcrmIsMemberGetAPIRequest对象
+func NewAlibabaWestcrmIsMemberGetRequest() *AlibabaWestcrmIsMemberGetAPIRequest {
+	return &AlibabaWestcrmIsMemberGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWestcrmIsMemberGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.westcrm.is.member.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWestcrmIsMemberGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

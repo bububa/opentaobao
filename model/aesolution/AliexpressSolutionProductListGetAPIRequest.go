@@ -17,4 +17,36 @@ type AliexpressSolutionProductListGetAPIRequest struct {
 	_aeopAEProductListQuery *ItemListQuery
 }
 
-// New
+// NewAliexpressSolutionProductListGetRequest 初始化AliexpressSolutionProductListGetAPIRequest对象
+func NewAliexpressSolutionProductListGetRequest() *AliexpressSolutionProductListGetAPIRequest {
+	return &AliexpressSolutionProductListGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressSolutionProductListGetAPIRequest) GetApiMethodName() string {
+	return "aliexpress.solution.product.list.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressSolutionProductListGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AeopAEProductListQuery Setter
+// request parameters to query
+func (r *AliexpressSolutionProductListGetAPIRequest) SetAeopAEProductListQuery(_aeopAEProductListQuery *ItemListQuery) error {
+	r._aeopAEProductListQuery = _aeopAEProductListQuery
+	r.Set("aeop_a_e_product_list_query", _aeopAEProductListQuery)
+	return nil
+}
+
+// Get AeopAEProductListQuery Getter
+func (r AliexpressSolutionProductListGetAPIRequest) GetAeopAEProductListQuery() *ItemListQuery {
+	return r._aeopAEProductListQuery
+}

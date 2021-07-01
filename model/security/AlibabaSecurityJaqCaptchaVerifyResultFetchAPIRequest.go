@@ -17,4 +17,36 @@ type AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest struct {
 	_sessionId string
 }
 
-// New
+// NewAlibabaSecurityJaqCaptchaVerifyResultFetchRequest 初始化AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest对象
+func NewAlibabaSecurityJaqCaptchaVerifyResultFetchRequest() *AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest {
+	return &AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) GetApiMethodName() string {
+	return "alibaba.security.jaq.captcha.verify.result.fetch"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SessionId Setter
+// 二次验证获取验证检查结果所需的seesionId
+func (r *AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) SetSessionId(_sessionId string) error {
+	r._sessionId = _sessionId
+	r.Set("session_id", _sessionId)
+	return nil
+}
+
+// Get SessionId Getter
+func (r AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) GetSessionId() string {
+	return r._sessionId
+}

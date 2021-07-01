@@ -17,4 +17,36 @@ type AliexpressTradeDsOrderGetAPIRequest struct {
 	_singleOrderQuery *AeopSingleOrderQuery
 }
 
-// New
+// NewAliexpressTradeDsOrderGetRequest 初始化AliexpressTradeDsOrderGetAPIRequest对象
+func NewAliexpressTradeDsOrderGetRequest() *AliexpressTradeDsOrderGetAPIRequest {
+	return &AliexpressTradeDsOrderGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressTradeDsOrderGetAPIRequest) GetApiMethodName() string {
+	return "aliexpress.trade.ds.order.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressTradeDsOrderGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SingleOrderQuery Setter
+// 订单查询条件
+func (r *AliexpressTradeDsOrderGetAPIRequest) SetSingleOrderQuery(_singleOrderQuery *AeopSingleOrderQuery) error {
+	r._singleOrderQuery = _singleOrderQuery
+	r.Set("single_order_query", _singleOrderQuery)
+	return nil
+}
+
+// Get SingleOrderQuery Getter
+func (r AliexpressTradeDsOrderGetAPIRequest) GetSingleOrderQuery() *AeopSingleOrderQuery {
+	return r._singleOrderQuery
+}

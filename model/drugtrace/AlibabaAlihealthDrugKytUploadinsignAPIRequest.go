@@ -27,4 +27,101 @@ type AlibabaAlihealthDrugKytUploadinsignAPIRequest struct {
 	_traceCodes []string
 }
 
-// New
+// NewAlibabaAlihealthDrugKytUploadinsignRequest 初始化AlibabaAlihealthDrugKytUploadinsignAPIRequest对象
+func NewAlibabaAlihealthDrugKytUploadinsignRequest() *AlibabaAlihealthDrugKytUploadinsignAPIRequest {
+	return &AlibabaAlihealthDrugKytUploadinsignAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.drug.kyt.uploadinsign"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BillCode Setter
+// 单据编号（小于20位字符串，唯一）
+func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetBillCode(_billCode string) error {
+	r._billCode = _billCode
+	r.Set("bill_code", _billCode)
+	return nil
+}
+
+// Get BillCode Getter
+func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetBillCode() string {
+	return r._billCode
+}
+
+// Set is BillTime Setter
+// 单据生成时间
+func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetBillTime(_billTime string) error {
+	r._billTime = _billTime
+	r.Set("bill_time", _billTime)
+	return nil
+}
+
+// Get BillTime Getter
+func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetBillTime() string {
+	return r._billTime
+}
+
+// Set is RefUserId Setter
+// 码上放心平台企业编码（仓库所有者）
+func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetRefUserId(_refUserId string) error {
+	r._refUserId = _refUserId
+	r.Set("ref_user_id", _refUserId)
+	return nil
+}
+
+// Get RefUserId Getter
+func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetRefUserId() string {
+	return r._refUserId
+}
+
+// Set is WarehouseId Setter
+// 仓库名称（企业自定义）
+func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetWarehouseId(_warehouseId string) error {
+	r._warehouseId = _warehouseId
+	r.Set("warehouse_id", _warehouseId)
+	return nil
+}
+
+// Get WarehouseId Getter
+func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetWarehouseId() string {
+	return r._warehouseId
+}
+
+// Set is DrugId Setter
+// 药品ID
+func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetDrugId(_drugId string) error {
+	r._drugId = _drugId
+	r.Set("drug_id", _drugId)
+	return nil
+}
+
+// Get DrugId Getter
+func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetDrugId() string {
+	return r._drugId
+}
+
+// Set is TraceCodes Setter
+// 追溯码[多个时用逗号分开]
+func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetTraceCodes(_traceCodes []string) error {
+	r._traceCodes = _traceCodes
+	r.Set("trace_codes", _traceCodes)
+	return nil
+}
+
+// Get TraceCodes Getter
+func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetTraceCodes() []string {
+	return r._traceCodes
+}

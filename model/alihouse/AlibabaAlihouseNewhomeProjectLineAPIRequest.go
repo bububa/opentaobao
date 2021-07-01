@@ -19,4 +19,49 @@ type AlibabaAlihouseNewhomeProjectLineAPIRequest struct {
 	_type *model.File
 }
 
-// New
+// NewAlibabaAlihouseNewhomeProjectLineRequest 初始化AlibabaAlihouseNewhomeProjectLineAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectLineRequest() *AlibabaAlihouseNewhomeProjectLineAPIRequest {
+	return &AlibabaAlihouseNewhomeProjectLineAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihouse.newhome.project.line"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OuterId Setter
+// 外部id
+func (r *AlibabaAlihouseNewhomeProjectLineAPIRequest) SetOuterId(_outerId string) error {
+	r._outerId = _outerId
+	r.Set("outer_id", _outerId)
+	return nil
+}
+
+// Get OuterId Getter
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetOuterId() string {
+	return r._outerId
+}
+
+// Set is Type Setter
+// 0-下架 1-上架
+func (r *AlibabaAlihouseNewhomeProjectLineAPIRequest) SetType(_type *model.File) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetType() *model.File {
+	return r._type
+}

@@ -17,4 +17,36 @@ type TaobaoUmpDetailDeleteAPIRequest struct {
 	_detailId int64
 }
 
-// New
+// NewTaobaoUmpDetailDeleteRequest 初始化TaobaoUmpDetailDeleteAPIRequest对象
+func NewTaobaoUmpDetailDeleteRequest() *TaobaoUmpDetailDeleteAPIRequest {
+	return &TaobaoUmpDetailDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpDetailDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.detail.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpDetailDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DetailId Setter
+// 活动详情id
+func (r *TaobaoUmpDetailDeleteAPIRequest) SetDetailId(_detailId int64) error {
+	r._detailId = _detailId
+	r.Set("detail_id", _detailId)
+	return nil
+}
+
+// Get DetailId Getter
+func (r TaobaoUmpDetailDeleteAPIRequest) GetDetailId() int64 {
+	return r._detailId
+}

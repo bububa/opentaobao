@@ -19,4 +19,49 @@ type TaobaoLbsMessageUploadAPIRequest struct {
 	_body string
 }
 
-// New
+// NewTaobaoLbsMessageUploadRequest 初始化TaobaoLbsMessageUploadAPIRequest对象
+func NewTaobaoLbsMessageUploadRequest() *TaobaoLbsMessageUploadAPIRequest {
+	return &TaobaoLbsMessageUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoLbsMessageUploadAPIRequest) GetApiMethodName() string {
+	return "taobao.lbs.message.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoLbsMessageUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Topic Setter
+// 消息TOPIC
+func (r *TaobaoLbsMessageUploadAPIRequest) SetTopic(_topic string) error {
+	r._topic = _topic
+	r.Set("topic", _topic)
+	return nil
+}
+
+// Get Topic Getter
+func (r TaobaoLbsMessageUploadAPIRequest) GetTopic() string {
+	return r._topic
+}
+
+// Set is Body Setter
+// 消息体 json结构
+func (r *TaobaoLbsMessageUploadAPIRequest) SetBody(_body string) error {
+	r._body = _body
+	r.Set("body", _body)
+	return nil
+}
+
+// Get Body Getter
+func (r TaobaoLbsMessageUploadAPIRequest) GetBody() string {
+	return r._body
+}

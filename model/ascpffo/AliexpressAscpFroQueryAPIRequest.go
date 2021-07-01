@@ -17,4 +17,36 @@ type AliexpressAscpFroQueryAPIRequest struct {
 	_fulfillmentReverseOrderQuery *FulfillmentReverseOrderQueryDto
 }
 
-// New
+// NewAliexpressAscpFroQueryRequest 初始化AliexpressAscpFroQueryAPIRequest对象
+func NewAliexpressAscpFroQueryRequest() *AliexpressAscpFroQueryAPIRequest {
+	return &AliexpressAscpFroQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressAscpFroQueryAPIRequest) GetApiMethodName() string {
+	return "aliexpress.ascp.fro.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressAscpFroQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FulfillmentReverseOrderQuery Setter
+// dto
+func (r *AliexpressAscpFroQueryAPIRequest) SetFulfillmentReverseOrderQuery(_fulfillmentReverseOrderQuery *FulfillmentReverseOrderQueryDto) error {
+	r._fulfillmentReverseOrderQuery = _fulfillmentReverseOrderQuery
+	r.Set("fulfillment_reverse_order_query", _fulfillmentReverseOrderQuery)
+	return nil
+}
+
+// Get FulfillmentReverseOrderQuery Getter
+func (r AliexpressAscpFroQueryAPIRequest) GetFulfillmentReverseOrderQuery() *FulfillmentReverseOrderQueryDto {
+	return r._fulfillmentReverseOrderQuery
+}

@@ -17,4 +17,36 @@ type AlibabaIdleIsvOrderQueryAPIRequest struct {
 	_paramAppraiseIsvOrderQuery *AppraiseIsvOrderQuery
 }
 
-// New
+// NewAlibabaIdleIsvOrderQueryRequest 初始化AlibabaIdleIsvOrderQueryAPIRequest对象
+func NewAlibabaIdleIsvOrderQueryRequest() *AlibabaIdleIsvOrderQueryAPIRequest {
+	return &AlibabaIdleIsvOrderQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleIsvOrderQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.isv.order.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleIsvOrderQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamAppraiseIsvOrderQuery Setter
+// 系统自动生成
+func (r *AlibabaIdleIsvOrderQueryAPIRequest) SetParamAppraiseIsvOrderQuery(_paramAppraiseIsvOrderQuery *AppraiseIsvOrderQuery) error {
+	r._paramAppraiseIsvOrderQuery = _paramAppraiseIsvOrderQuery
+	r.Set("param_appraise_isv_order_query", _paramAppraiseIsvOrderQuery)
+	return nil
+}
+
+// Get ParamAppraiseIsvOrderQuery Getter
+func (r AlibabaIdleIsvOrderQueryAPIRequest) GetParamAppraiseIsvOrderQuery() *AppraiseIsvOrderQuery {
+	return r._paramAppraiseIsvOrderQuery
+}

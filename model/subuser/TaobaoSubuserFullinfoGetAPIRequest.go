@@ -21,4 +21,62 @@ type TaobaoSubuserFullinfoGetAPIRequest struct {
 	_subNick string
 }
 
-// New
+// NewTaobaoSubuserFullinfoGetRequest 初始化TaobaoSubuserFullinfoGetAPIRequest对象
+func NewTaobaoSubuserFullinfoGetRequest() *TaobaoSubuserFullinfoGetAPIRequest {
+	return &TaobaoSubuserFullinfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSubuserFullinfoGetAPIRequest) GetApiMethodName() string {
+	return "taobao.subuser.fullinfo.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSubuserFullinfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SubId Setter
+// 子账号ID（传参中sub_id和sub_nick至少需要其中一个，若sub_id与sub_nick同时传入并且合法，那么sub_nick优先，以sub_nick查询子账号）
+func (r *TaobaoSubuserFullinfoGetAPIRequest) SetSubId(_subId int64) error {
+	r._subId = _subId
+	r.Set("sub_id", _subId)
+	return nil
+}
+
+// Get SubId Getter
+func (r TaobaoSubuserFullinfoGetAPIRequest) GetSubId() int64 {
+	return r._subId
+}
+
+// Set is Fields Setter
+// 传入所需要的参数信息（若不需要获取子账号或主账号的企业邮箱地址，则无需传入该参数；若需要获取子账号或主账号的企业邮箱地址，则需要传入fields；可选参数值为subuser_email和user_email，传入其他参数值均无效；两个参数都需要则以逗号隔开传入即可，例如：subuser_email,user_email）
+func (r *TaobaoSubuserFullinfoGetAPIRequest) SetFields(_fields string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// Get Fields Getter
+func (r TaobaoSubuserFullinfoGetAPIRequest) GetFields() string {
+	return r._fields
+}
+
+// Set is SubNick Setter
+// 子账号用户名（传参中sub_id和sub_nick至少需要其中一个，若sub_id与sub_nick同时传入并且合法，那么sub_nick优先，以sub_nick查询子账号）
+func (r *TaobaoSubuserFullinfoGetAPIRequest) SetSubNick(_subNick string) error {
+	r._subNick = _subNick
+	r.Set("sub_nick", _subNick)
+	return nil
+}
+
+// Get SubNick Getter
+func (r TaobaoSubuserFullinfoGetAPIRequest) GetSubNick() string {
+	return r._subNick
+}

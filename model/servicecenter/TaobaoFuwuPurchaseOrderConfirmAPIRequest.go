@@ -17,4 +17,36 @@ type TaobaoFuwuPurchaseOrderConfirmAPIRequest struct {
 	_paramOrderConfirmQueryDTO *OrderConfirmQueryDto
 }
 
-// New
+// NewTaobaoFuwuPurchaseOrderConfirmRequest 初始化TaobaoFuwuPurchaseOrderConfirmAPIRequest对象
+func NewTaobaoFuwuPurchaseOrderConfirmRequest() *TaobaoFuwuPurchaseOrderConfirmAPIRequest {
+	return &TaobaoFuwuPurchaseOrderConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFuwuPurchaseOrderConfirmAPIRequest) GetApiMethodName() string {
+	return "taobao.fuwu.purchase.order.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFuwuPurchaseOrderConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamOrderConfirmQueryDTO Setter
+// 内购服务下单接口参数
+func (r *TaobaoFuwuPurchaseOrderConfirmAPIRequest) SetParamOrderConfirmQueryDTO(_paramOrderConfirmQueryDTO *OrderConfirmQueryDto) error {
+	r._paramOrderConfirmQueryDTO = _paramOrderConfirmQueryDTO
+	r.Set("param_order_confirm_query_d_t_o", _paramOrderConfirmQueryDTO)
+	return nil
+}
+
+// Get ParamOrderConfirmQueryDTO Getter
+func (r TaobaoFuwuPurchaseOrderConfirmAPIRequest) GetParamOrderConfirmQueryDTO() *OrderConfirmQueryDto {
+	return r._paramOrderConfirmQueryDTO
+}

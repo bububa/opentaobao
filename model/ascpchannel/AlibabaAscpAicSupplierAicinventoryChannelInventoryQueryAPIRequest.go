@@ -17,4 +17,36 @@ type AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest struct {
 	_merchantInventoryQueryRequest *MerchantInventoryQuery
 }
 
-// New
+// NewAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest 初始化AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest对象
+func NewAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest() *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest {
+	return &AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.aic.supplier.aicinventory.channel.inventory.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MerchantInventoryQueryRequest Setter
+// 商家仓库存查询请求参数
+func (r *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) SetMerchantInventoryQueryRequest(_merchantInventoryQueryRequest *MerchantInventoryQuery) error {
+	r._merchantInventoryQueryRequest = _merchantInventoryQueryRequest
+	r.Set("merchant_inventory_query_request", _merchantInventoryQueryRequest)
+	return nil
+}
+
+// Get MerchantInventoryQueryRequest Getter
+func (r AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) GetMerchantInventoryQueryRequest() *MerchantInventoryQuery {
+	return r._merchantInventoryQueryRequest
+}

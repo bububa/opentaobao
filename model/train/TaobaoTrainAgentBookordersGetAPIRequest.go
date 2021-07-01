@@ -17,4 +17,36 @@ type TaobaoTrainAgentBookordersGetAPIRequest struct {
 	_agentId int64
 }
 
-// New
+// NewTaobaoTrainAgentBookordersGetRequest 初始化TaobaoTrainAgentBookordersGetAPIRequest对象
+func NewTaobaoTrainAgentBookordersGetRequest() *TaobaoTrainAgentBookordersGetAPIRequest {
+	return &TaobaoTrainAgentBookordersGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTrainAgentBookordersGetAPIRequest) GetApiMethodName() string {
+	return "taobao.train.agent.bookorders.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTrainAgentBookordersGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AgentId Setter
+// 代理商id
+func (r *TaobaoTrainAgentBookordersGetAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// Get AgentId Getter
+func (r TaobaoTrainAgentBookordersGetAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}

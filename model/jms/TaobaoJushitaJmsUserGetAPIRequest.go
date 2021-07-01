@@ -17,4 +17,36 @@ type TaobaoJushitaJmsUserGetAPIRequest struct {
 	_userNick string
 }
 
-// New
+// NewTaobaoJushitaJmsUserGetRequest 初始化TaobaoJushitaJmsUserGetAPIRequest对象
+func NewTaobaoJushitaJmsUserGetRequest() *TaobaoJushitaJmsUserGetAPIRequest {
+	return &TaobaoJushitaJmsUserGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoJushitaJmsUserGetAPIRequest) GetApiMethodName() string {
+	return "taobao.jushita.jms.user.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoJushitaJmsUserGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UserNick Setter
+// 需要查询的用户名
+func (r *TaobaoJushitaJmsUserGetAPIRequest) SetUserNick(_userNick string) error {
+	r._userNick = _userNick
+	r.Set("user_nick", _userNick)
+	return nil
+}
+
+// Get UserNick Getter
+func (r TaobaoJushitaJmsUserGetAPIRequest) GetUserNick() string {
+	return r._userNick
+}

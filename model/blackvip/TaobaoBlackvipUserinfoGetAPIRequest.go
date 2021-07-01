@@ -15,4 +15,23 @@ type TaobaoBlackvipUserinfoGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoBlackvipUserinfoGetRequest 初始化TaobaoBlackvipUserinfoGetAPIRequest对象
+func NewTaobaoBlackvipUserinfoGetRequest() *TaobaoBlackvipUserinfoGetAPIRequest {
+	return &TaobaoBlackvipUserinfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBlackvipUserinfoGetAPIRequest) GetApiMethodName() string {
+	return "taobao.blackvip.userinfo.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBlackvipUserinfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

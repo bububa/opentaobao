@@ -17,4 +17,36 @@ type CainiaoWaybillIiProductAPIRequest struct {
 	_cpCode string
 }
 
-// New
+// NewCainiaoWaybillIiProductRequest 初始化CainiaoWaybillIiProductAPIRequest对象
+func NewCainiaoWaybillIiProductRequest() *CainiaoWaybillIiProductAPIRequest {
+	return &CainiaoWaybillIiProductAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoWaybillIiProductAPIRequest) GetApiMethodName() string {
+	return "cainiao.waybill.ii.product"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoWaybillIiProductAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CpCode Setter
+// 快递公司code
+func (r *CainiaoWaybillIiProductAPIRequest) SetCpCode(_cpCode string) error {
+	r._cpCode = _cpCode
+	r.Set("cp_code", _cpCode)
+	return nil
+}
+
+// Get CpCode Getter
+func (r CainiaoWaybillIiProductAPIRequest) GetCpCode() string {
+	return r._cpCode
+}

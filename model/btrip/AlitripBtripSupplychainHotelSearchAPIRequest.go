@@ -17,4 +17,36 @@ type AlitripBtripSupplychainHotelSearchAPIRequest struct {
 	_rq *OpenApiSearchRq
 }
 
-// New
+// NewAlitripBtripSupplychainHotelSearchRequest 初始化AlitripBtripSupplychainHotelSearchAPIRequest对象
+func NewAlitripBtripSupplychainHotelSearchRequest() *AlitripBtripSupplychainHotelSearchAPIRequest {
+	return &AlitripBtripSupplychainHotelSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.supplychain.hotel.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Rq Setter
+// 入参
+func (r *AlitripBtripSupplychainHotelSearchAPIRequest) SetRq(_rq *OpenApiSearchRq) error {
+	r._rq = _rq
+	r.Set("rq", _rq)
+	return nil
+}
+
+// Get Rq Getter
+func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetRq() *OpenApiSearchRq {
+	return r._rq
+}

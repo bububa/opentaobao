@@ -17,4 +17,36 @@ type TmallPromotagTagRemovetagAPIRequest struct {
 	_tagId int64
 }
 
-// New
+// NewTmallPromotagTagRemovetagRequest 初始化TmallPromotagTagRemovetagAPIRequest对象
+func NewTmallPromotagTagRemovetagRequest() *TmallPromotagTagRemovetagAPIRequest {
+	return &TmallPromotagTagRemovetagAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallPromotagTagRemovetagAPIRequest) GetApiMethodName() string {
+	return "tmall.promotag.tag.removetag"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallPromotagTagRemovetagAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TagId Setter
+// 需要删除的标签id
+func (r *TmallPromotagTagRemovetagAPIRequest) SetTagId(_tagId int64) error {
+	r._tagId = _tagId
+	r.Set("tag_id", _tagId)
+	return nil
+}
+
+// Get TagId Getter
+func (r TmallPromotagTagRemovetagAPIRequest) GetTagId() int64 {
+	return r._tagId
+}

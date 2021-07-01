@@ -25,4 +25,36 @@ type TmallChannelProductsGetAPIRequest struct {
 	_topQueryProductDO *TopQueryProductDo
 }
 
-// New
+// NewTmallChannelProductsGetRequest 初始化TmallChannelProductsGetAPIRequest对象
+func NewTmallChannelProductsGetRequest() *TmallChannelProductsGetAPIRequest {
+	return &TmallChannelProductsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallChannelProductsGetAPIRequest) GetApiMethodName() string {
+	return "tmall.channel.products.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallChannelProductsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TopQueryProductDO Setter
+// top_query_product_d_o
+func (r *TmallChannelProductsGetAPIRequest) SetTopQueryProductDO(_topQueryProductDO *TopQueryProductDo) error {
+	r._topQueryProductDO = _topQueryProductDO
+	r.Set("top_query_product_d_o", _topQueryProductDO)
+	return nil
+}
+
+// Get TopQueryProductDO Getter
+func (r TmallChannelProductsGetAPIRequest) GetTopQueryProductDO() *TopQueryProductDo {
+	return r._topQueryProductDO
+}

@@ -17,4 +17,36 @@ type AlibabaAlihealthBookingReserveTreatAPIRequest struct {
 	_treat *IsvReserveRequest
 }
 
-// New
+// NewAlibabaAlihealthBookingReserveTreatRequest 初始化AlibabaAlihealthBookingReserveTreatAPIRequest对象
+func NewAlibabaAlihealthBookingReserveTreatRequest() *AlibabaAlihealthBookingReserveTreatAPIRequest {
+	return &AlibabaAlihealthBookingReserveTreatAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthBookingReserveTreatAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.booking.reserve.treat"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthBookingReserveTreatAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Treat Setter
+// treat
+func (r *AlibabaAlihealthBookingReserveTreatAPIRequest) SetTreat(_treat *IsvReserveRequest) error {
+	r._treat = _treat
+	r.Set("treat", _treat)
+	return nil
+}
+
+// Get Treat Getter
+func (r AlibabaAlihealthBookingReserveTreatAPIRequest) GetTreat() *IsvReserveRequest {
+	return r._treat
+}

@@ -19,4 +19,49 @@ type TaobaoOpentradeSpecialItemsBindAPIRequest struct {
 	_itemIds []int64
 }
 
-// New
+// NewTaobaoOpentradeSpecialItemsBindRequest 初始化TaobaoOpentradeSpecialItemsBindAPIRequest对象
+func NewTaobaoOpentradeSpecialItemsBindRequest() *TaobaoOpentradeSpecialItemsBindAPIRequest {
+	return &TaobaoOpentradeSpecialItemsBindAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpentradeSpecialItemsBindAPIRequest) GetApiMethodName() string {
+	return "taobao.opentrade.special.items.bind"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpentradeSpecialItemsBindAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MiniappId Setter
+// 绑定专属下单场景的C端小程序ID
+func (r *TaobaoOpentradeSpecialItemsBindAPIRequest) SetMiniappId(_miniappId int64) error {
+	r._miniappId = _miniappId
+	r.Set("miniapp_id", _miniappId)
+	return nil
+}
+
+// Get MiniappId Getter
+func (r TaobaoOpentradeSpecialItemsBindAPIRequest) GetMiniappId() int64 {
+	return r._miniappId
+}
+
+// Set is ItemIds Setter
+// 本次待绑定的商品ID列表
+func (r *TaobaoOpentradeSpecialItemsBindAPIRequest) SetItemIds(_itemIds []int64) error {
+	r._itemIds = _itemIds
+	r.Set("item_ids", _itemIds)
+	return nil
+}
+
+// Get ItemIds Getter
+func (r TaobaoOpentradeSpecialItemsBindAPIRequest) GetItemIds() []int64 {
+	return r._itemIds
+}

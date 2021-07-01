@@ -17,4 +17,36 @@ type TaobaoRdcAligeniusRefundsCheckAPIRequest struct {
 	_param *RefundCheckDto
 }
 
-// New
+// NewTaobaoRdcAligeniusRefundsCheckRequest 初始化TaobaoRdcAligeniusRefundsCheckAPIRequest对象
+func NewTaobaoRdcAligeniusRefundsCheckRequest() *TaobaoRdcAligeniusRefundsCheckAPIRequest {
+	return &TaobaoRdcAligeniusRefundsCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoRdcAligeniusRefundsCheckAPIRequest) GetApiMethodName() string {
+	return "taobao.rdc.aligenius.refunds.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoRdcAligeniusRefundsCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参
+func (r *TaobaoRdcAligeniusRefundsCheckAPIRequest) SetParam(_param *RefundCheckDto) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r TaobaoRdcAligeniusRefundsCheckAPIRequest) GetParam() *RefundCheckDto {
+	return r._param
+}

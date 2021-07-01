@@ -17,4 +17,36 @@ type AlibabaWdkSupplierOrderListAPIRequest struct {
 	_supplierOrderQueryRequest *SupplierOrderQueryRequest
 }
 
-// New
+// NewAlibabaWdkSupplierOrderListRequest 初始化AlibabaWdkSupplierOrderListAPIRequest对象
+func NewAlibabaWdkSupplierOrderListRequest() *AlibabaWdkSupplierOrderListAPIRequest {
+	return &AlibabaWdkSupplierOrderListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkSupplierOrderListAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.supplier.order.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkSupplierOrderListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SupplierOrderQueryRequest Setter
+// 查询参数
+func (r *AlibabaWdkSupplierOrderListAPIRequest) SetSupplierOrderQueryRequest(_supplierOrderQueryRequest *SupplierOrderQueryRequest) error {
+	r._supplierOrderQueryRequest = _supplierOrderQueryRequest
+	r.Set("supplier_order_query_request", _supplierOrderQueryRequest)
+	return nil
+}
+
+// Get SupplierOrderQueryRequest Getter
+func (r AlibabaWdkSupplierOrderListAPIRequest) GetSupplierOrderQueryRequest() *SupplierOrderQueryRequest {
+	return r._supplierOrderQueryRequest
+}

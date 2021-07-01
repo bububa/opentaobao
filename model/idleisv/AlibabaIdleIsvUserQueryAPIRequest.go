@@ -15,4 +15,23 @@ type AlibabaIdleIsvUserQueryAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaIdleIsvUserQueryRequest 初始化AlibabaIdleIsvUserQueryAPIRequest对象
+func NewAlibabaIdleIsvUserQueryRequest() *AlibabaIdleIsvUserQueryAPIRequest {
+	return &AlibabaIdleIsvUserQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleIsvUserQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.isv.user.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleIsvUserQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

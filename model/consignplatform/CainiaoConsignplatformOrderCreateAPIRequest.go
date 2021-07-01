@@ -17,4 +17,36 @@ type CainiaoConsignplatformOrderCreateAPIRequest struct {
 	_createRequest *OrderCreateRequest
 }
 
-// New
+// NewCainiaoConsignplatformOrderCreateRequest 初始化CainiaoConsignplatformOrderCreateAPIRequest对象
+func NewCainiaoConsignplatformOrderCreateRequest() *CainiaoConsignplatformOrderCreateAPIRequest {
+	return &CainiaoConsignplatformOrderCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoConsignplatformOrderCreateAPIRequest) GetApiMethodName() string {
+	return "cainiao.consignplatform.order.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoConsignplatformOrderCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CreateRequest Setter
+// 订单创建入参
+func (r *CainiaoConsignplatformOrderCreateAPIRequest) SetCreateRequest(_createRequest *OrderCreateRequest) error {
+	r._createRequest = _createRequest
+	r.Set("create_request", _createRequest)
+	return nil
+}
+
+// Get CreateRequest Getter
+func (r CainiaoConsignplatformOrderCreateAPIRequest) GetCreateRequest() *OrderCreateRequest {
+	return r._createRequest
+}

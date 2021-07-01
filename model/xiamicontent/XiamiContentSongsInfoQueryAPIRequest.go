@@ -23,4 +23,75 @@ type XiamiContentSongsInfoQueryAPIRequest struct {
 	_page *PagingVo
 }
 
-// New
+// NewXiamiContentSongsInfoQueryRequest 初始化XiamiContentSongsInfoQueryAPIRequest对象
+func NewXiamiContentSongsInfoQueryRequest() *XiamiContentSongsInfoQueryAPIRequest {
+	return &XiamiContentSongsInfoQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r XiamiContentSongsInfoQueryAPIRequest) GetApiMethodName() string {
+	return "xiami.content.songs.info.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r XiamiContentSongsInfoQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SearchTerms Setter
+// 搜索条件 key支持songName/singerName/copyrightStatus/publishStatus/keyword
+func (r *XiamiContentSongsInfoQueryAPIRequest) SetSearchTerms(_searchTerms []SearchTermsDto) error {
+	r._searchTerms = _searchTerms
+	r.Set("search_terms", _searchTerms)
+	return nil
+}
+
+// Get SearchTerms Getter
+func (r XiamiContentSongsInfoQueryAPIRequest) GetSearchTerms() []SearchTermsDto {
+	return r._searchTerms
+}
+
+// Set is TagOptional Setter
+// tag搜索条件，tag尽量不要超过50个
+func (r *XiamiContentSongsInfoQueryAPIRequest) SetTagOptional(_tagOptional *SongCatsSearchDto) error {
+	r._tagOptional = _tagOptional
+	r.Set("tag_optional", _tagOptional)
+	return nil
+}
+
+// Get TagOptional Getter
+func (r XiamiContentSongsInfoQueryAPIRequest) GetTagOptional() *SongCatsSearchDto {
+	return r._tagOptional
+}
+
+// Set is OrderBy Setter
+// 排序,默认按照最新排序 1最新 2本周最热 3本月最热
+func (r *XiamiContentSongsInfoQueryAPIRequest) SetOrderBy(_orderBy int64) error {
+	r._orderBy = _orderBy
+	r.Set("order_by", _orderBy)
+	return nil
+}
+
+// Get OrderBy Getter
+func (r XiamiContentSongsInfoQueryAPIRequest) GetOrderBy() int64 {
+	return r._orderBy
+}
+
+// Set is Page Setter
+// 分页信息
+func (r *XiamiContentSongsInfoQueryAPIRequest) SetPage(_page *PagingVo) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// Get Page Getter
+func (r XiamiContentSongsInfoQueryAPIRequest) GetPage() *PagingVo {
+	return r._page
+}

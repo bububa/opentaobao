@@ -26,4 +26,75 @@ type AlitripTicketSkusBatchUploadAPIRequest struct {
 	_ticketPriceRules []TicketPriceRule
 }
 
-// New
+// NewAlitripTicketSkusBatchUploadRequest 初始化AlitripTicketSkusBatchUploadAPIRequest对象
+func NewAlitripTicketSkusBatchUploadRequest() *AlitripTicketSkusBatchUploadAPIRequest {
+	return &AlitripTicketSkusBatchUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTicketSkusBatchUploadAPIRequest) GetApiMethodName() string {
+	return "alitrip.ticket.skus.batch.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTicketSkusBatchUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AliProductId Setter
+// 特殊必填，阿里标准收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
+func (r *AlitripTicketSkusBatchUploadAPIRequest) SetAliProductId(_aliProductId int64) error {
+	r._aliProductId = _aliProductId
+	r.Set("ali_product_id", _aliProductId)
+	return nil
+}
+
+// Get AliProductId Getter
+func (r AlitripTicketSkusBatchUploadAPIRequest) GetAliProductId() int64 {
+	return r._aliProductId
+}
+
+// Set is OutProductId Setter
+// 特殊必填，商户收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
+func (r *AlitripTicketSkusBatchUploadAPIRequest) SetOutProductId(_outProductId string) error {
+	r._outProductId = _outProductId
+	r.Set("out_product_id", _outProductId)
+	return nil
+}
+
+// Get OutProductId Getter
+func (r AlitripTicketSkusBatchUploadAPIRequest) GetOutProductId() string {
+	return r._outProductId
+}
+
+// Set is ItemId Setter
+// 特殊必填，淘宝商品id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
+func (r *AlitripTicketSkusBatchUploadAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r AlitripTicketSkusBatchUploadAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is TicketPriceRules Setter
+// 必填，各票种下sku的价格库存参数。
+func (r *AlitripTicketSkusBatchUploadAPIRequest) SetTicketPriceRules(_ticketPriceRules []TicketPriceRule) error {
+	r._ticketPriceRules = _ticketPriceRules
+	r.Set("ticket_price_rules", _ticketPriceRules)
+	return nil
+}
+
+// Get TicketPriceRules Getter
+func (r AlitripTicketSkusBatchUploadAPIRequest) GetTicketPriceRules() []TicketPriceRule {
+	return r._ticketPriceRules
+}

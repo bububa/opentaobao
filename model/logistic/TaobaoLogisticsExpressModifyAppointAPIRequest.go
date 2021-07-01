@@ -17,4 +17,36 @@ type TaobaoLogisticsExpressModifyAppointAPIRequest struct {
 	_expressModifyAppointTopRequest *ExpressModifyAppointTopRequestDto
 }
 
-// New
+// NewTaobaoLogisticsExpressModifyAppointRequest 初始化TaobaoLogisticsExpressModifyAppointAPIRequest对象
+func NewTaobaoLogisticsExpressModifyAppointRequest() *TaobaoLogisticsExpressModifyAppointAPIRequest {
+	return &TaobaoLogisticsExpressModifyAppointAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoLogisticsExpressModifyAppointAPIRequest) GetApiMethodName() string {
+	return "taobao.logistics.express.modify.appoint"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoLogisticsExpressModifyAppointAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ExpressModifyAppointTopRequest Setter
+// 改约请求对象
+func (r *TaobaoLogisticsExpressModifyAppointAPIRequest) SetExpressModifyAppointTopRequest(_expressModifyAppointTopRequest *ExpressModifyAppointTopRequestDto) error {
+	r._expressModifyAppointTopRequest = _expressModifyAppointTopRequest
+	r.Set("express_modify_appoint_top_request", _expressModifyAppointTopRequest)
+	return nil
+}
+
+// Get ExpressModifyAppointTopRequest Getter
+func (r TaobaoLogisticsExpressModifyAppointAPIRequest) GetExpressModifyAppointTopRequest() *ExpressModifyAppointTopRequestDto {
+	return r._expressModifyAppointTopRequest
+}

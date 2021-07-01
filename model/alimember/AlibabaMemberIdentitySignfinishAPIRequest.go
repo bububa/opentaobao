@@ -17,4 +17,36 @@ type AlibabaMemberIdentitySignfinishAPIRequest struct {
 	_signFinish *SignIdentityFinishRequest
 }
 
-// New
+// NewAlibabaMemberIdentitySignfinishRequest 初始化AlibabaMemberIdentitySignfinishAPIRequest对象
+func NewAlibabaMemberIdentitySignfinishRequest() *AlibabaMemberIdentitySignfinishAPIRequest {
+	return &AlibabaMemberIdentitySignfinishAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMemberIdentitySignfinishAPIRequest) GetApiMethodName() string {
+	return "alibaba.member.identity.signfinish"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMemberIdentitySignfinishAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SignFinish Setter
+// 签约确认信息
+func (r *AlibabaMemberIdentitySignfinishAPIRequest) SetSignFinish(_signFinish *SignIdentityFinishRequest) error {
+	r._signFinish = _signFinish
+	r.Set("sign_finish", _signFinish)
+	return nil
+}
+
+// Get SignFinish Getter
+func (r AlibabaMemberIdentitySignfinishAPIRequest) GetSignFinish() *SignIdentityFinishRequest {
+	return r._signFinish
+}

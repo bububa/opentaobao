@@ -17,4 +17,36 @@ type AliexpressAscpFfoQueryAPIRequest struct {
 	_fulfillmentForwardOrderQuery *FulfillmentForwardOrderQueryDto
 }
 
-// New
+// NewAliexpressAscpFfoQueryRequest 初始化AliexpressAscpFfoQueryAPIRequest对象
+func NewAliexpressAscpFfoQueryRequest() *AliexpressAscpFfoQueryAPIRequest {
+	return &AliexpressAscpFfoQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressAscpFfoQueryAPIRequest) GetApiMethodName() string {
+	return "aliexpress.ascp.ffo.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressAscpFfoQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FulfillmentForwardOrderQuery Setter
+// dto
+func (r *AliexpressAscpFfoQueryAPIRequest) SetFulfillmentForwardOrderQuery(_fulfillmentForwardOrderQuery *FulfillmentForwardOrderQueryDto) error {
+	r._fulfillmentForwardOrderQuery = _fulfillmentForwardOrderQuery
+	r.Set("fulfillment_forward_order_query", _fulfillmentForwardOrderQuery)
+	return nil
+}
+
+// Get FulfillmentForwardOrderQuery Getter
+func (r AliexpressAscpFfoQueryAPIRequest) GetFulfillmentForwardOrderQuery() *FulfillmentForwardOrderQueryDto {
+	return r._fulfillmentForwardOrderQuery
+}

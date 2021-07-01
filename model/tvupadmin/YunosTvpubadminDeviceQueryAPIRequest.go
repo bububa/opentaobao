@@ -25,4 +25,88 @@ type YunosTvpubadminDeviceQueryAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewYunosTvpubadminDeviceQueryRequest 初始化YunosTvpubadminDeviceQueryAPIRequest对象
+func NewYunosTvpubadminDeviceQueryRequest() *YunosTvpubadminDeviceQueryAPIRequest {
+	return &YunosTvpubadminDeviceQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminDeviceQueryAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.device.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminDeviceQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TerminalType Setter
+// 终端类型
+func (r *YunosTvpubadminDeviceQueryAPIRequest) SetTerminalType(_terminalType string) error {
+	r._terminalType = _terminalType
+	r.Set("terminal_type", _terminalType)
+	return nil
+}
+
+// Get TerminalType Getter
+func (r YunosTvpubadminDeviceQueryAPIRequest) GetTerminalType() string {
+	return r._terminalType
+}
+
+// Set is BrandId Setter
+// 品牌ID
+func (r *YunosTvpubadminDeviceQueryAPIRequest) SetBrandId(_brandId int64) error {
+	r._brandId = _brandId
+	r.Set("brand_id", _brandId)
+	return nil
+}
+
+// Get BrandId Getter
+func (r YunosTvpubadminDeviceQueryAPIRequest) GetBrandId() int64 {
+	return r._brandId
+}
+
+// Set is License Setter
+// 牌照方
+func (r *YunosTvpubadminDeviceQueryAPIRequest) SetLicense(_license int64) error {
+	r._license = _license
+	r.Set("license", _license)
+	return nil
+}
+
+// Get License Getter
+func (r YunosTvpubadminDeviceQueryAPIRequest) GetLicense() int64 {
+	return r._license
+}
+
+// Set is PageNo Setter
+// 页码值
+func (r *YunosTvpubadminDeviceQueryAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r YunosTvpubadminDeviceQueryAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 每页条数
+func (r *YunosTvpubadminDeviceQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r YunosTvpubadminDeviceQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

@@ -17,4 +17,36 @@ type YoukuWenyuvideoPersionSearchAPIRequest struct {
 	_personName string
 }
 
-// New
+// NewYoukuWenyuvideoPersionSearchRequest 初始化YoukuWenyuvideoPersionSearchAPIRequest对象
+func NewYoukuWenyuvideoPersionSearchRequest() *YoukuWenyuvideoPersionSearchAPIRequest {
+	return &YoukuWenyuvideoPersionSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YoukuWenyuvideoPersionSearchAPIRequest) GetApiMethodName() string {
+	return "youku.wenyuvideo.persion.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YoukuWenyuvideoPersionSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PersonName Setter
+// 人物名字，搜索规则是完全匹配，即只返回同名人物列表
+func (r *YoukuWenyuvideoPersionSearchAPIRequest) SetPersonName(_personName string) error {
+	r._personName = _personName
+	r.Set("person_name", _personName)
+	return nil
+}
+
+// Get PersonName Getter
+func (r YoukuWenyuvideoPersionSearchAPIRequest) GetPersonName() string {
+	return r._personName
+}

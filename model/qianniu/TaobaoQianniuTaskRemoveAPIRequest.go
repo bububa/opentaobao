@@ -17,4 +17,36 @@ type TaobaoQianniuTaskRemoveAPIRequest struct {
 	_metadataId int64
 }
 
-// New
+// NewTaobaoQianniuTaskRemoveRequest 初始化TaobaoQianniuTaskRemoveAPIRequest对象
+func NewTaobaoQianniuTaskRemoveRequest() *TaobaoQianniuTaskRemoveAPIRequest {
+	return &TaobaoQianniuTaskRemoveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQianniuTaskRemoveAPIRequest) GetApiMethodName() string {
+	return "taobao.qianniu.task.remove"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQianniuTaskRemoveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MetadataId Setter
+// 对于发起人删除一个任务，请使用这个字段，同时清除所有处理人。
+func (r *TaobaoQianniuTaskRemoveAPIRequest) SetMetadataId(_metadataId int64) error {
+	r._metadataId = _metadataId
+	r.Set("metadata_id", _metadataId)
+	return nil
+}
+
+// Get MetadataId Getter
+func (r TaobaoQianniuTaskRemoveAPIRequest) GetMetadataId() int64 {
+	return r._metadataId
+}

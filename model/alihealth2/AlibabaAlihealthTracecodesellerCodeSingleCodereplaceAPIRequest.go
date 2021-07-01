@@ -21,4 +21,62 @@ type AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest struct {
 	_oldCode string
 }
 
-// New
+// NewAlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest 初始化AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest对象
+func NewAlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest() *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest {
+	return &AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.tracecodeseller.code.single.codereplace"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is EntInfoId Setter
+// 企业id
+func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) SetEntInfoId(_entInfoId string) error {
+	r._entInfoId = _entInfoId
+	r.Set("ent_info_id", _entInfoId)
+	return nil
+}
+
+// Get EntInfoId Getter
+func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) GetEntInfoId() string {
+	return r._entInfoId
+}
+
+// Set is NewCode Setter
+// 新码
+func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) SetNewCode(_newCode string) error {
+	r._newCode = _newCode
+	r.Set("new_code", _newCode)
+	return nil
+}
+
+// Get NewCode Getter
+func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) GetNewCode() string {
+	return r._newCode
+}
+
+// Set is OldCode Setter
+// 老码
+func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) SetOldCode(_oldCode string) error {
+	r._oldCode = _oldCode
+	r.Set("old_code", _oldCode)
+	return nil
+}
+
+// Get OldCode Getter
+func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) GetOldCode() string {
+	return r._oldCode
+}

@@ -19,4 +19,49 @@ type TaobaoPromotionmiscItemActivityListGetAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewTaobaoPromotionmiscItemActivityListGetRequest 初始化TaobaoPromotionmiscItemActivityListGetAPIRequest对象
+func NewTaobaoPromotionmiscItemActivityListGetRequest() *TaobaoPromotionmiscItemActivityListGetAPIRequest {
+	return &TaobaoPromotionmiscItemActivityListGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPromotionmiscItemActivityListGetAPIRequest) GetApiMethodName() string {
+	return "taobao.promotionmisc.item.activity.list.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPromotionmiscItemActivityListGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PageNo Setter
+// 页码。
+func (r *TaobaoPromotionmiscItemActivityListGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r TaobaoPromotionmiscItemActivityListGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 每页记录数，最大支持50 。
+func (r *TaobaoPromotionmiscItemActivityListGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoPromotionmiscItemActivityListGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

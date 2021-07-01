@@ -17,4 +17,36 @@ type AlibabaInteractSensorSocialAPIRequest struct {
 	_id string
 }
 
-// New
+// NewAlibabaInteractSensorSocialRequest 初始化AlibabaInteractSensorSocialAPIRequest对象
+func NewAlibabaInteractSensorSocialRequest() *AlibabaInteractSensorSocialAPIRequest {
+	return &AlibabaInteractSensorSocialAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractSensorSocialAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.sensor.social"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractSensorSocialAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Id Setter
+// 系统自动生成
+func (r *AlibabaInteractSensorSocialAPIRequest) SetId(_id string) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r AlibabaInteractSensorSocialAPIRequest) GetId() string {
+	return r._id
+}

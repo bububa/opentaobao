@@ -19,4 +19,49 @@ type TaobaoSimbaInsightRelatedwordsGetAPIRequest struct {
 	_number int64
 }
 
-// New
+// NewTaobaoSimbaInsightRelatedwordsGetRequest 初始化TaobaoSimbaInsightRelatedwordsGetAPIRequest对象
+func NewTaobaoSimbaInsightRelatedwordsGetRequest() *TaobaoSimbaInsightRelatedwordsGetAPIRequest {
+	return &TaobaoSimbaInsightRelatedwordsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaInsightRelatedwordsGetAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.insight.relatedwords.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaInsightRelatedwordsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BidwordList Setter
+// 要查询的词列表
+func (r *TaobaoSimbaInsightRelatedwordsGetAPIRequest) SetBidwordList(_bidwordList []string) error {
+	r._bidwordList = _bidwordList
+	r.Set("bidword_list", _bidwordList)
+	return nil
+}
+
+// Get BidwordList Getter
+func (r TaobaoSimbaInsightRelatedwordsGetAPIRequest) GetBidwordList() []string {
+	return r._bidwordList
+}
+
+// Set is Number Setter
+// 表示返回数据的条数
+func (r *TaobaoSimbaInsightRelatedwordsGetAPIRequest) SetNumber(_number int64) error {
+	r._number = _number
+	r.Set("number", _number)
+	return nil
+}
+
+// Get Number Getter
+func (r TaobaoSimbaInsightRelatedwordsGetAPIRequest) GetNumber() int64 {
+	return r._number
+}

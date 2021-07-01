@@ -17,4 +17,36 @@ type TaobaoOmniorderPrintSaleJudgeAPIRequest struct {
 	_subUid int64
 }
 
-// New
+// NewTaobaoOmniorderPrintSaleJudgeRequest 初始化TaobaoOmniorderPrintSaleJudgeAPIRequest对象
+func NewTaobaoOmniorderPrintSaleJudgeRequest() *TaobaoOmniorderPrintSaleJudgeAPIRequest {
+	return &TaobaoOmniorderPrintSaleJudgeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetApiMethodName() string {
+	return "taobao.omniorder.print.sale.judge"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SubUid Setter
+// 用户子账号ID
+func (r *TaobaoOmniorderPrintSaleJudgeAPIRequest) SetSubUid(_subUid int64) error {
+	r._subUid = _subUid
+	r.Set("sub_uid", _subUid)
+	return nil
+}
+
+// Get SubUid Getter
+func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetSubUid() int64 {
+	return r._subUid
+}

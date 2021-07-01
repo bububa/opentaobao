@@ -17,4 +17,36 @@ type AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest struct {
 	_param *QueryPayResultParam
 }
 
-// New
+// NewAlibabaDamaiMaitixDistributionCmbQuerypayresultRequest 初始化AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest对象
+func NewAlibabaDamaiMaitixDistributionCmbQuerypayresultRequest() *AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest {
+	return &AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.maitix.distribution.cmb.querypayresult"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参param
+func (r *AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest) SetParam(_param *QueryPayResultParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest) GetParam() *QueryPayResultParam {
+	return r._param
+}

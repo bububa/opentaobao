@@ -17,4 +17,36 @@ type AlibabaAlihealthMedicalDoctorMsgSendAPIRequest struct {
 	_inquiry *OuterMsgPullRequest
 }
 
-// New
+// NewAlibabaAlihealthMedicalDoctorMsgSendRequest 初始化AlibabaAlihealthMedicalDoctorMsgSendAPIRequest对象
+func NewAlibabaAlihealthMedicalDoctorMsgSendRequest() *AlibabaAlihealthMedicalDoctorMsgSendAPIRequest {
+	return &AlibabaAlihealthMedicalDoctorMsgSendAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthMedicalDoctorMsgSendAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.medical.doctor.msg.send"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthMedicalDoctorMsgSendAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Inquiry Setter
+// request
+func (r *AlibabaAlihealthMedicalDoctorMsgSendAPIRequest) SetInquiry(_inquiry *OuterMsgPullRequest) error {
+	r._inquiry = _inquiry
+	r.Set("inquiry", _inquiry)
+	return nil
+}
+
+// Get Inquiry Getter
+func (r AlibabaAlihealthMedicalDoctorMsgSendAPIRequest) GetInquiry() *OuterMsgPullRequest {
+	return r._inquiry
+}

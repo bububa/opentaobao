@@ -19,4 +19,49 @@ type YunosOsupdateModelSearchAPIRequest struct {
 	_name string
 }
 
-// New
+// NewYunosOsupdateModelSearchRequest 初始化YunosOsupdateModelSearchAPIRequest对象
+func NewYunosOsupdateModelSearchRequest() *YunosOsupdateModelSearchAPIRequest {
+	return &YunosOsupdateModelSearchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosOsupdateModelSearchAPIRequest) GetApiMethodName() string {
+	return "yunos.osupdate.model.search"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosOsupdateModelSearchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AppId Setter
+// 应用ID
+func (r *YunosOsupdateModelSearchAPIRequest) SetAppId(_appId int64) error {
+	r._appId = _appId
+	r.Set("app_id", _appId)
+	return nil
+}
+
+// Get AppId Getter
+func (r YunosOsupdateModelSearchAPIRequest) GetAppId() int64 {
+	return r._appId
+}
+
+// Set is Name Setter
+// 关键词
+func (r *YunosOsupdateModelSearchAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r YunosOsupdateModelSearchAPIRequest) GetName() string {
+	return r._name
+}

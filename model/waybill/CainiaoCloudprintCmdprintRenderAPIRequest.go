@@ -17,4 +17,36 @@ type CainiaoCloudprintCmdprintRenderAPIRequest struct {
 	_params *CmdRenderParams
 }
 
-// New
+// NewCainiaoCloudprintCmdprintRenderRequest 初始化CainiaoCloudprintCmdprintRenderAPIRequest对象
+func NewCainiaoCloudprintCmdprintRenderRequest() *CainiaoCloudprintCmdprintRenderAPIRequest {
+	return &CainiaoCloudprintCmdprintRenderAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoCloudprintCmdprintRenderAPIRequest) GetApiMethodName() string {
+	return "cainiao.cloudprint.cmdprint.render"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoCloudprintCmdprintRenderAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Params Setter
+// 参数对象
+func (r *CainiaoCloudprintCmdprintRenderAPIRequest) SetParams(_params *CmdRenderParams) error {
+	r._params = _params
+	r.Set("params", _params)
+	return nil
+}
+
+// Get Params Getter
+func (r CainiaoCloudprintCmdprintRenderAPIRequest) GetParams() *CmdRenderParams {
+	return r._params
+}

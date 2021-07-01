@@ -17,4 +17,36 @@ type AlibabaScbpEffectAccountListAPIRequest struct {
 	_p4pAccountReportQuery *AccountQuery
 }
 
-// New
+// NewAlibabaScbpEffectAccountListRequest 初始化AlibabaScbpEffectAccountListAPIRequest对象
+func NewAlibabaScbpEffectAccountListRequest() *AlibabaScbpEffectAccountListAPIRequest {
+	return &AlibabaScbpEffectAccountListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpEffectAccountListAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.effect.account.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpEffectAccountListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is P4pAccountReportQuery Setter
+// AccountQuery
+func (r *AlibabaScbpEffectAccountListAPIRequest) SetP4pAccountReportQuery(_p4pAccountReportQuery *AccountQuery) error {
+	r._p4pAccountReportQuery = _p4pAccountReportQuery
+	r.Set("p4p_account_report_query", _p4pAccountReportQuery)
+	return nil
+}
+
+// Get P4pAccountReportQuery Getter
+func (r AlibabaScbpEffectAccountListAPIRequest) GetP4pAccountReportQuery() *AccountQuery {
+	return r._p4pAccountReportQuery
+}

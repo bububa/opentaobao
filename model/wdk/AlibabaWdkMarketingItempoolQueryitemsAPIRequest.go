@@ -17,4 +17,36 @@ type AlibabaWdkMarketingItempoolQueryitemsAPIRequest struct {
 	_param *ActivitySkuQuery
 }
 
-// New
+// NewAlibabaWdkMarketingItempoolQueryitemsRequest 初始化AlibabaWdkMarketingItempoolQueryitemsAPIRequest对象
+func NewAlibabaWdkMarketingItempoolQueryitemsRequest() *AlibabaWdkMarketingItempoolQueryitemsAPIRequest {
+	return &AlibabaWdkMarketingItempoolQueryitemsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMarketingItempoolQueryitemsAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.marketing.itempool.queryitems"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMarketingItempoolQueryitemsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 查询入参
+func (r *AlibabaWdkMarketingItempoolQueryitemsAPIRequest) SetParam(_param *ActivitySkuQuery) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaWdkMarketingItempoolQueryitemsAPIRequest) GetParam() *ActivitySkuQuery {
+	return r._param
+}

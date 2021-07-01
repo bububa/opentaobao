@@ -21,4 +21,62 @@ type YoukuOttDvbRenewFeedbackAPIRequest struct {
 	_failReason string
 }
 
-// New
+// NewYoukuOttDvbRenewFeedbackRequest 初始化YoukuOttDvbRenewFeedbackAPIRequest对象
+func NewYoukuOttDvbRenewFeedbackRequest() *YoukuOttDvbRenewFeedbackAPIRequest {
+	return &YoukuOttDvbRenewFeedbackAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YoukuOttDvbRenewFeedbackAPIRequest) GetApiMethodName() string {
+	return "youku.ott.dvb.renew.feedback"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YoukuOttDvbRenewFeedbackAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 订单id
+func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r YoukuOttDvbRenewFeedbackAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// Set is IsSuccess Setter
+// 是否成功
+func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetIsSuccess(_isSuccess bool) error {
+	r._isSuccess = _isSuccess
+	r.Set("is_success", _isSuccess)
+	return nil
+}
+
+// Get IsSuccess Getter
+func (r YoukuOttDvbRenewFeedbackAPIRequest) GetIsSuccess() bool {
+	return r._isSuccess
+}
+
+// Set is FailReason Setter
+// 失败原因（可无）
+func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetFailReason(_failReason string) error {
+	r._failReason = _failReason
+	r.Set("fail_reason", _failReason)
+	return nil
+}
+
+// Get FailReason Getter
+func (r YoukuOttDvbRenewFeedbackAPIRequest) GetFailReason() string {
+	return r._failReason
+}

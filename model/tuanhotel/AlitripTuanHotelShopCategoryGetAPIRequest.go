@@ -15,4 +15,23 @@ type AlitripTuanHotelShopCategoryGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlitripTuanHotelShopCategoryGetRequest 初始化AlitripTuanHotelShopCategoryGetAPIRequest对象
+func NewAlitripTuanHotelShopCategoryGetRequest() *AlitripTuanHotelShopCategoryGetAPIRequest {
+	return &AlitripTuanHotelShopCategoryGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTuanHotelShopCategoryGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.tuan.hotel.shop.category.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTuanHotelShopCategoryGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

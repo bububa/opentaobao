@@ -17,4 +17,36 @@ type TaobaoFeedflowItemCampaignAddAPIRequest struct {
 	_campaign *CampaignDto
 }
 
-// New
+// NewTaobaoFeedflowItemCampaignAddRequest 初始化TaobaoFeedflowItemCampaignAddAPIRequest对象
+func NewTaobaoFeedflowItemCampaignAddRequest() *TaobaoFeedflowItemCampaignAddAPIRequest {
+	return &TaobaoFeedflowItemCampaignAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFeedflowItemCampaignAddAPIRequest) GetApiMethodName() string {
+	return "taobao.feedflow.item.campaign.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFeedflowItemCampaignAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Campaign Setter
+// 计划信息
+func (r *TaobaoFeedflowItemCampaignAddAPIRequest) SetCampaign(_campaign *CampaignDto) error {
+	r._campaign = _campaign
+	r.Set("campaign", _campaign)
+	return nil
+}
+
+// Get Campaign Getter
+func (r TaobaoFeedflowItemCampaignAddAPIRequest) GetCampaign() *CampaignDto {
+	return r._campaign
+}

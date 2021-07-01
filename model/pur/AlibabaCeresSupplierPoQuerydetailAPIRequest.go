@@ -17,4 +17,36 @@ type AlibabaCeresSupplierPoQuerydetailAPIRequest struct {
 	_poNo string
 }
 
-// New
+// NewAlibabaCeresSupplierPoQuerydetailRequest 初始化AlibabaCeresSupplierPoQuerydetailAPIRequest对象
+func NewAlibabaCeresSupplierPoQuerydetailRequest() *AlibabaCeresSupplierPoQuerydetailAPIRequest {
+	return &AlibabaCeresSupplierPoQuerydetailAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCeresSupplierPoQuerydetailAPIRequest) GetApiMethodName() string {
+	return "alibaba.ceres.supplier.po.querydetail"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCeresSupplierPoQuerydetailAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PoNo Setter
+// 订单编号
+func (r *AlibabaCeresSupplierPoQuerydetailAPIRequest) SetPoNo(_poNo string) error {
+	r._poNo = _poNo
+	r.Set("po_no", _poNo)
+	return nil
+}
+
+// Get PoNo Getter
+func (r AlibabaCeresSupplierPoQuerydetailAPIRequest) GetPoNo() string {
+	return r._poNo
+}

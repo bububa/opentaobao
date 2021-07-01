@@ -25,4 +25,88 @@ type AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest struct {
 	_statusReason string
 }
 
-// New
+// NewAlibabaAlihealthExaminationReserveCertificateNotifyRequest 初始化AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest对象
+func NewAlibabaAlihealthExaminationReserveCertificateNotifyRequest() *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest {
+	return &AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.examination.reserve.certificate.notify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UniqReserveCode Setter
+// 服务商预约凭证
+func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
+	r._uniqReserveCode = _uniqReserveCode
+	r.Set("uniq_reserve_code", _uniqReserveCode)
+	return nil
+}
+
+// Get UniqReserveCode Getter
+func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetUniqReserveCode() string {
+	return r._uniqReserveCode
+}
+
+// Set is ReserveNumber Setter
+// 健康预约凭证
+func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetReserveNumber(_reserveNumber string) error {
+	r._reserveNumber = _reserveNumber
+	r.Set("reserve_number", _reserveNumber)
+	return nil
+}
+
+// Get ReserveNumber Getter
+func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetReserveNumber() string {
+	return r._reserveNumber
+}
+
+// Set is ReportStatus Setter
+// 预约成功（ISSUED），预约失败(FAIL)
+func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetReportStatus(_reportStatus string) error {
+	r._reportStatus = _reportStatus
+	r.Set("report_status", _reportStatus)
+	return nil
+}
+
+// Get ReportStatus Getter
+func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetReportStatus() string {
+	return r._reportStatus
+}
+
+// Set is CheckNo Setter
+// 到检凭证，exam_done状态下，该字段必填
+func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetCheckNo(_checkNo string) error {
+	r._checkNo = _checkNo
+	r.Set("check_no", _checkNo)
+	return nil
+}
+
+// Get CheckNo Getter
+func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetCheckNo() string {
+	return r._checkNo
+}
+
+// Set is StatusReason Setter
+// 预约状态原因，描述预约状态如FAIL时的原因
+func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetStatusReason(_statusReason string) error {
+	r._statusReason = _statusReason
+	r.Set("status_reason", _statusReason)
+	return nil
+}
+
+// Get StatusReason Getter
+func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetStatusReason() string {
+	return r._statusReason
+}

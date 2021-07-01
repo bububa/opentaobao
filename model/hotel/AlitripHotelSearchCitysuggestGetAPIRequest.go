@@ -19,4 +19,49 @@ type AlitripHotelSearchCitysuggestGetAPIRequest struct {
 	_userId int64
 }
 
-// New
+// NewAlitripHotelSearchCitysuggestGetRequest 初始化AlitripHotelSearchCitysuggestGetAPIRequest对象
+func NewAlitripHotelSearchCitysuggestGetRequest() *AlitripHotelSearchCitysuggestGetAPIRequest {
+	return &AlitripHotelSearchCitysuggestGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.hotel.search.citysuggest.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is KeyWords Setter
+// 用户输入的词
+func (r *AlitripHotelSearchCitysuggestGetAPIRequest) SetKeyWords(_keyWords string) error {
+	r._keyWords = _keyWords
+	r.Set("key_words", _keyWords)
+	return nil
+}
+
+// Get KeyWords Getter
+func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetKeyWords() string {
+	return r._keyWords
+}
+
+// Set is UserId Setter
+// 用户id
+func (r *AlitripHotelSearchCitysuggestGetAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetUserId() int64 {
+	return r._userId
+}

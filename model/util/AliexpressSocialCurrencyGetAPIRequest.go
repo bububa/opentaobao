@@ -15,4 +15,23 @@ type AliexpressSocialCurrencyGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAliexpressSocialCurrencyGetRequest 初始化AliexpressSocialCurrencyGetAPIRequest对象
+func NewAliexpressSocialCurrencyGetRequest() *AliexpressSocialCurrencyGetAPIRequest {
+	return &AliexpressSocialCurrencyGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressSocialCurrencyGetAPIRequest) GetApiMethodName() string {
+	return "aliexpress.social.currency.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressSocialCurrencyGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

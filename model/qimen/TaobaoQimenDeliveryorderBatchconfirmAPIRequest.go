@@ -17,4 +17,36 @@ type TaobaoQimenDeliveryorderBatchconfirmAPIRequest struct {
 	_request *DeliveryOrderBatchConfirmRequest
 }
 
-// New
+// NewTaobaoQimenDeliveryorderBatchconfirmRequest 初始化TaobaoQimenDeliveryorderBatchconfirmAPIRequest对象
+func NewTaobaoQimenDeliveryorderBatchconfirmRequest() *TaobaoQimenDeliveryorderBatchconfirmAPIRequest {
+	return &TaobaoQimenDeliveryorderBatchconfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenDeliveryorderBatchconfirmAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.deliveryorder.batchconfirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenDeliveryorderBatchconfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenDeliveryorderBatchconfirmAPIRequest) SetRequest(_request *DeliveryOrderBatchConfirmRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenDeliveryorderBatchconfirmAPIRequest) GetRequest() *DeliveryOrderBatchConfirmRequest {
+	return r._request
+}

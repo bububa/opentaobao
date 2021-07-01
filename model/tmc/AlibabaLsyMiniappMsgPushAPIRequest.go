@@ -25,4 +25,88 @@ type AlibabaLsyMiniappMsgPushAPIRequest struct {
 	_params string
 }
 
-// New
+// NewAlibabaLsyMiniappMsgPushRequest 初始化AlibabaLsyMiniappMsgPushAPIRequest对象
+func NewAlibabaLsyMiniappMsgPushRequest() *AlibabaLsyMiniappMsgPushAPIRequest {
+	return &AlibabaLsyMiniappMsgPushAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetApiMethodName() string {
+	return "alibaba.lsy.miniapp.msg.push"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AppId Setter
+// 小程序ID
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetAppId(_appId string) error {
+	r._appId = _appId
+	r.Set("app_id", _appId)
+	return nil
+}
+
+// Get AppId Getter
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetAppId() string {
+	return r._appId
+}
+
+// Set is MsgId Setter
+// 消息ID
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetMsgId(_msgId int64) error {
+	r._msgId = _msgId
+	r.Set("msg_id", _msgId)
+	return nil
+}
+
+// Get MsgId Getter
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetMsgId() int64 {
+	return r._msgId
+}
+
+// Set is StoreId Setter
+// 摊位ID
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// Get StoreId Getter
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetStoreId() int64 {
+	return r._storeId
+}
+
+// Set is TemplateId Setter
+// 消息模板，miaoling_msg_isv_clue - 线索通知消息
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetTemplateId(_templateId string) error {
+	r._templateId = _templateId
+	r.Set("template_id", _templateId)
+	return nil
+}
+
+// Get TemplateId Getter
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetTemplateId() string {
+	return r._templateId
+}
+
+// Set is Params Setter
+// 消息参数
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetParams(_params string) error {
+	r._params = _params
+	r.Set("params", _params)
+	return nil
+}
+
+// Get Params Getter
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetParams() string {
+	return r._params
+}

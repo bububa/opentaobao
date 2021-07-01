@@ -17,4 +17,36 @@ type TaobaoFeedflowItemTargetValidlistAPIRequest struct {
 	_campaignId int64
 }
 
-// New
+// NewTaobaoFeedflowItemTargetValidlistRequest 初始化TaobaoFeedflowItemTargetValidlistAPIRequest对象
+func NewTaobaoFeedflowItemTargetValidlistRequest() *TaobaoFeedflowItemTargetValidlistAPIRequest {
+	return &TaobaoFeedflowItemTargetValidlistAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFeedflowItemTargetValidlistAPIRequest) GetApiMethodName() string {
+	return "taobao.feedflow.item.target.validlist"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFeedflowItemTargetValidlistAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CampaignId Setter
+// 计划id
+func (r *TaobaoFeedflowItemTargetValidlistAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// Get CampaignId Getter
+func (r TaobaoFeedflowItemTargetValidlistAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
+}

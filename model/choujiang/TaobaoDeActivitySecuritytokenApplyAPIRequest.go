@@ -17,4 +17,36 @@ type TaobaoDeActivitySecuritytokenApplyAPIRequest struct {
 	_eventKey string
 }
 
-// New
+// NewTaobaoDeActivitySecuritytokenApplyRequest 初始化TaobaoDeActivitySecuritytokenApplyAPIRequest对象
+func NewTaobaoDeActivitySecuritytokenApplyRequest() *TaobaoDeActivitySecuritytokenApplyAPIRequest {
+	return &TaobaoDeActivitySecuritytokenApplyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoDeActivitySecuritytokenApplyAPIRequest) GetApiMethodName() string {
+	return "taobao.de.activity.securitytoken.apply"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoDeActivitySecuritytokenApplyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is EventKey Setter
+// 运营和cp约定的事件唯一标示
+func (r *TaobaoDeActivitySecuritytokenApplyAPIRequest) SetEventKey(_eventKey string) error {
+	r._eventKey = _eventKey
+	r.Set("event_key", _eventKey)
+	return nil
+}
+
+// Get EventKey Getter
+func (r TaobaoDeActivitySecuritytokenApplyAPIRequest) GetEventKey() string {
+	return r._eventKey
+}

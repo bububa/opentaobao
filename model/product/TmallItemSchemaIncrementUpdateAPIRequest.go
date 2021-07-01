@@ -19,4 +19,49 @@ type TmallItemSchemaIncrementUpdateAPIRequest struct {
 	_xmlData string
 }
 
-// New
+// NewTmallItemSchemaIncrementUpdateRequest 初始化TmallItemSchemaIncrementUpdateAPIRequest对象
+func NewTmallItemSchemaIncrementUpdateRequest() *TmallItemSchemaIncrementUpdateAPIRequest {
+	return &TmallItemSchemaIncrementUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallItemSchemaIncrementUpdateAPIRequest) GetApiMethodName() string {
+	return "tmall.item.schema.increment.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallItemSchemaIncrementUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 需要编辑的商品ID
+func (r *TmallItemSchemaIncrementUpdateAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r TmallItemSchemaIncrementUpdateAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// Set is XmlData Setter
+// 根据tmall.item.increment.update.schema.get生成的商品增量编辑规则入参数据。需要更新的字段，一定要在入参的XML重点update_fields字段中明确指明
+func (r *TmallItemSchemaIncrementUpdateAPIRequest) SetXmlData(_xmlData string) error {
+	r._xmlData = _xmlData
+	r.Set("xml_data", _xmlData)
+	return nil
+}
+
+// Get XmlData Getter
+func (r TmallItemSchemaIncrementUpdateAPIRequest) GetXmlData() string {
+	return r._xmlData
+}

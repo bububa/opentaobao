@@ -17,4 +17,36 @@ type AlibabaScbpShowcaseDeleteproductAPIRequest struct {
 	_windowIdList []int64
 }
 
-// New
+// NewAlibabaScbpShowcaseDeleteproductRequest 初始化AlibabaScbpShowcaseDeleteproductAPIRequest对象
+func NewAlibabaScbpShowcaseDeleteproductRequest() *AlibabaScbpShowcaseDeleteproductAPIRequest {
+	return &AlibabaScbpShowcaseDeleteproductAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpShowcaseDeleteproductAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.showcase.deleteproduct"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpShowcaseDeleteproductAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WindowIdList Setter
+// 橱窗idList
+func (r *AlibabaScbpShowcaseDeleteproductAPIRequest) SetWindowIdList(_windowIdList []int64) error {
+	r._windowIdList = _windowIdList
+	r.Set("window_id_list", _windowIdList)
+	return nil
+}
+
+// Get WindowIdList Getter
+func (r AlibabaScbpShowcaseDeleteproductAPIRequest) GetWindowIdList() []int64 {
+	return r._windowIdList
+}

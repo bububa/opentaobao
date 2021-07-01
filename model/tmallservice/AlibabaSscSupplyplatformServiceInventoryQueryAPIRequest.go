@@ -23,4 +23,75 @@ type AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest struct {
 	_providerId int64
 }
 
-// New
+// NewAlibabaSscSupplyplatformServiceInventoryQueryRequest 初始化AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest对象
+func NewAlibabaSscSupplyplatformServiceInventoryQueryRequest() *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest {
+	return &AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.ssc.supplyplatform.service.inventory.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StartDay Setter
+// 查询开始日期。yyyy-MM-dd格式
+func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetStartDay(_startDay string) error {
+	r._startDay = _startDay
+	r.Set("start_day", _startDay)
+	return nil
+}
+
+// Get StartDay Getter
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetStartDay() string {
+	return r._startDay
+}
+
+// Set is EndDay Setter
+// 查询结束日期。与start间隔不能超过31天。yyyy-MM-dd格式
+func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetEndDay(_endDay string) error {
+	r._endDay = _endDay
+	r.Set("end_day", _endDay)
+	return nil
+}
+
+// Get EndDay Getter
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetEndDay() string {
+	return r._endDay
+}
+
+// Set is ProviderType Setter
+// 服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参
+func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetProviderType(_providerType string) error {
+	r._providerType = _providerType
+	r.Set("provider_type", _providerType)
+	return nil
+}
+
+// Get ProviderType Getter
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetProviderType() string {
+	return r._providerType
+}
+
+// Set is ProviderId Setter
+// 服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参
+func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetProviderId(_providerId int64) error {
+	r._providerId = _providerId
+	r.Set("provider_id", _providerId)
+	return nil
+}
+
+// Get ProviderId Getter
+func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetProviderId() int64 {
+	return r._providerId
+}

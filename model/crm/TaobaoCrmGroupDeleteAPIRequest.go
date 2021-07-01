@@ -17,4 +17,36 @@ type TaobaoCrmGroupDeleteAPIRequest struct {
 	_groupId int64
 }
 
-// New
+// NewTaobaoCrmGroupDeleteRequest 初始化TaobaoCrmGroupDeleteAPIRequest对象
+func NewTaobaoCrmGroupDeleteRequest() *TaobaoCrmGroupDeleteAPIRequest {
+	return &TaobaoCrmGroupDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCrmGroupDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.crm.group.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCrmGroupDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is GroupId Setter
+// 要删除的分组id
+func (r *TaobaoCrmGroupDeleteAPIRequest) SetGroupId(_groupId int64) error {
+	r._groupId = _groupId
+	r.Set("group_id", _groupId)
+	return nil
+}
+
+// Get GroupId Getter
+func (r TaobaoCrmGroupDeleteAPIRequest) GetGroupId() int64 {
+	return r._groupId
+}

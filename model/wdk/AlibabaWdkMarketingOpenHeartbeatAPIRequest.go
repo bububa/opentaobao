@@ -17,4 +17,36 @@ type AlibabaWdkMarketingOpenHeartbeatAPIRequest struct {
 	_heartBeat *HeartBeatBo
 }
 
-// New
+// NewAlibabaWdkMarketingOpenHeartbeatRequest 初始化AlibabaWdkMarketingOpenHeartbeatAPIRequest对象
+func NewAlibabaWdkMarketingOpenHeartbeatRequest() *AlibabaWdkMarketingOpenHeartbeatAPIRequest {
+	return &AlibabaWdkMarketingOpenHeartbeatAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.marketing.open.heartbeat"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is HeartBeat Setter
+// 心跳信息
+func (r *AlibabaWdkMarketingOpenHeartbeatAPIRequest) SetHeartBeat(_heartBeat *HeartBeatBo) error {
+	r._heartBeat = _heartBeat
+	r.Set("heart_beat", _heartBeat)
+	return nil
+}
+
+// Get HeartBeat Getter
+func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetHeartBeat() *HeartBeatBo {
+	return r._heartBeat
+}

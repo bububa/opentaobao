@@ -25,4 +25,88 @@ type AlibabaItApAddressGetAPIRequest struct {
 	_timestampInternal int64
 }
 
-// New
+// NewAlibabaItApAddressGetRequest 初始化AlibabaItApAddressGetAPIRequest对象
+func NewAlibabaItApAddressGetRequest() *AlibabaItApAddressGetAPIRequest {
+	return &AlibabaItApAddressGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaItApAddressGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.it.ap.address.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaItApAddressGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Signature Setter
+// 签名
+func (r *AlibabaItApAddressGetAPIRequest) SetSignature(_signature string) error {
+	r._signature = _signature
+	r.Set("signature", _signature)
+	return nil
+}
+
+// Get Signature Getter
+func (r AlibabaItApAddressGetAPIRequest) GetSignature() string {
+	return r._signature
+}
+
+// Set is Language Setter
+// 语言
+func (r *AlibabaItApAddressGetAPIRequest) SetLanguage(_language string) error {
+	r._language = _language
+	r.Set("language", _language)
+	return nil
+}
+
+// Get Language Getter
+func (r AlibabaItApAddressGetAPIRequest) GetLanguage() string {
+	return r._language
+}
+
+// Set is AppKeyInternal Setter
+// 分配的ak
+func (r *AlibabaItApAddressGetAPIRequest) SetAppKeyInternal(_appKeyInternal string) error {
+	r._appKeyInternal = _appKeyInternal
+	r.Set("app_key_internal", _appKeyInternal)
+	return nil
+}
+
+// Get AppKeyInternal Getter
+func (r AlibabaItApAddressGetAPIRequest) GetAppKeyInternal() string {
+	return r._appKeyInternal
+}
+
+// Set is Mac Setter
+// ap的mac
+func (r *AlibabaItApAddressGetAPIRequest) SetMac(_mac string) error {
+	r._mac = _mac
+	r.Set("mac", _mac)
+	return nil
+}
+
+// Get Mac Getter
+func (r AlibabaItApAddressGetAPIRequest) GetMac() string {
+	return r._mac
+}
+
+// Set is TimestampInternal Setter
+// 当前时间戳，毫秒
+func (r *AlibabaItApAddressGetAPIRequest) SetTimestampInternal(_timestampInternal int64) error {
+	r._timestampInternal = _timestampInternal
+	r.Set("timestamp_internal", _timestampInternal)
+	return nil
+}
+
+// Get TimestampInternal Getter
+func (r AlibabaItApAddressGetAPIRequest) GetTimestampInternal() int64 {
+	return r._timestampInternal
+}

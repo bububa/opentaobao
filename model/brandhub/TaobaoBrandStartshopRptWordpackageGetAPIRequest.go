@@ -27,4 +27,101 @@ type TaobaoBrandStartshopRptWordpackageGetAPIRequest struct {
 	_pageIndex string
 }
 
-// New
+// NewTaobaoBrandStartshopRptWordpackageGetRequest 初始化TaobaoBrandStartshopRptWordpackageGetAPIRequest对象
+func NewTaobaoBrandStartshopRptWordpackageGetRequest() *TaobaoBrandStartshopRptWordpackageGetAPIRequest {
+	return &TaobaoBrandStartshopRptWordpackageGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetApiMethodName() string {
+	return "taobao.brand.startshop.rpt.wordpackage.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StartDate Setter
+// 开始日期
+func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetStartDate(_startDate string) error {
+	r._startDate = _startDate
+	r.Set("start_date", _startDate)
+	return nil
+}
+
+// Get StartDate Getter
+func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetStartDate() string {
+	return r._startDate
+}
+
+// Set is EndDate Setter
+// 结束日期
+func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetEndDate(_endDate string) error {
+	r._endDate = _endDate
+	r.Set("end_date", _endDate)
+	return nil
+}
+
+// Get EndDate Getter
+func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetEndDate() string {
+	return r._endDate
+}
+
+// Set is Effect Setter
+// 转化周期
+func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetEffect(_effect string) error {
+	r._effect = _effect
+	r.Set("effect", _effect)
+	return nil
+}
+
+// Get Effect Getter
+func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetEffect() string {
+	return r._effect
+}
+
+// Set is TrafficType Setter
+// 流量类型
+func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetTrafficType(_trafficType string) error {
+	r._trafficType = _trafficType
+	r.Set("traffic_type", _trafficType)
+	return nil
+}
+
+// Get TrafficType Getter
+func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetTrafficType() string {
+	return r._trafficType
+}
+
+// Set is PageSize Setter
+// 每页显示条数(0,200]
+func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetPageSize(_pageSize string) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetPageSize() string {
+	return r._pageSize
+}
+
+// Set is PageIndex Setter
+// 当前页数 ,从1开始
+func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetPageIndex(_pageIndex string) error {
+	r._pageIndex = _pageIndex
+	r.Set("page_index", _pageIndex)
+	return nil
+}
+
+// Get PageIndex Getter
+func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetPageIndex() string {
+	return r._pageIndex
+}

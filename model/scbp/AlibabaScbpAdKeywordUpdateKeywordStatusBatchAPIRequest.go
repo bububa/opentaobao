@@ -21,4 +21,62 @@ type AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest struct {
 	_topContext *TopContextDto
 }
 
-// New
+// NewAlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest 初始化AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest对象
+func NewAlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest() *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest {
+	return &AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.ad.keyword.update.keyword.status.batch"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CampaignId Setter
+// 计划id
+func (r *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// Get CampaignId Getter
+func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
+}
+
+// Set is KeywordUpdateQuery Setter
+// 更新数据
+func (r *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) SetKeywordUpdateQuery(_keywordUpdateQuery *KeywordUpdateQuery) error {
+	r._keywordUpdateQuery = _keywordUpdateQuery
+	r.Set("keyword_update_query", _keywordUpdateQuery)
+	return nil
+}
+
+// Get KeywordUpdateQuery Getter
+func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) GetKeywordUpdateQuery() *KeywordUpdateQuery {
+	return r._keywordUpdateQuery
+}
+
+// Set is TopContext Setter
+// 用户信息
+func (r *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+	r._topContext = _topContext
+	r.Set("top_context", _topContext)
+	return nil
+}
+
+// Get TopContext Getter
+func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) GetTopContext() *TopContextDto {
+	return r._topContext
+}

@@ -19,4 +19,49 @@ type CainiaoIotTicketDetailQueryAPIRequest struct {
 	_ticketId int64
 }
 
-// New
+// NewCainiaoIotTicketDetailQueryRequest 初始化CainiaoIotTicketDetailQueryAPIRequest对象
+func NewCainiaoIotTicketDetailQueryRequest() *CainiaoIotTicketDetailQueryAPIRequest {
+	return &CainiaoIotTicketDetailQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoIotTicketDetailQueryAPIRequest) GetApiMethodName() string {
+	return "cainiao.iot.ticket.detail.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoIotTicketDetailQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SpCode Setter
+// 服务商唯一编码
+func (r *CainiaoIotTicketDetailQueryAPIRequest) SetSpCode(_spCode string) error {
+	r._spCode = _spCode
+	r.Set("sp_code", _spCode)
+	return nil
+}
+
+// Get SpCode Getter
+func (r CainiaoIotTicketDetailQueryAPIRequest) GetSpCode() string {
+	return r._spCode
+}
+
+// Set is TicketId Setter
+// 工单Id
+func (r *CainiaoIotTicketDetailQueryAPIRequest) SetTicketId(_ticketId int64) error {
+	r._ticketId = _ticketId
+	r.Set("ticket_id", _ticketId)
+	return nil
+}
+
+// Get TicketId Getter
+func (r CainiaoIotTicketDetailQueryAPIRequest) GetTicketId() int64 {
+	return r._ticketId
+}

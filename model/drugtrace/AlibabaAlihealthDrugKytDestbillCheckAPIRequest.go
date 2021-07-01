@@ -21,4 +21,62 @@ type AlibabaAlihealthDrugKytDestbillCheckAPIRequest struct {
 	_checkType string
 }
 
-// New
+// NewAlibabaAlihealthDrugKytDestbillCheckRequest 初始化AlibabaAlihealthDrugKytDestbillCheckAPIRequest对象
+func NewAlibabaAlihealthDrugKytDestbillCheckRequest() *AlibabaAlihealthDrugKytDestbillCheckAPIRequest {
+	return &AlibabaAlihealthDrugKytDestbillCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDrugKytDestbillCheckAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.drug.kyt.destbill.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDrugKytDestbillCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RefEntId Setter
+// 企业ID
+func (r *AlibabaAlihealthDrugKytDestbillCheckAPIRequest) SetRefEntId(_refEntId string) error {
+	r._refEntId = _refEntId
+	r.Set("ref_ent_id", _refEntId)
+	return nil
+}
+
+// Get RefEntId Getter
+func (r AlibabaAlihealthDrugKytDestbillCheckAPIRequest) GetRefEntId() string {
+	return r._refEntId
+}
+
+// Set is BillCode Setter
+// 单据号
+func (r *AlibabaAlihealthDrugKytDestbillCheckAPIRequest) SetBillCode(_billCode string) error {
+	r._billCode = _billCode
+	r.Set("bill_code", _billCode)
+	return nil
+}
+
+// Get BillCode Getter
+func (r AlibabaAlihealthDrugKytDestbillCheckAPIRequest) GetBillCode() string {
+	return r._billCode
+}
+
+// Set is CheckType Setter
+// 审核状态，'Y'审批通过 'N' 审批不通过
+func (r *AlibabaAlihealthDrugKytDestbillCheckAPIRequest) SetCheckType(_checkType string) error {
+	r._checkType = _checkType
+	r.Set("check_type", _checkType)
+	return nil
+}
+
+// Get CheckType Getter
+func (r AlibabaAlihealthDrugKytDestbillCheckAPIRequest) GetCheckType() string {
+	return r._checkType
+}

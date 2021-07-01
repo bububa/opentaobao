@@ -15,4 +15,23 @@ type TaobaoSimbaCampaignAreaoptionsGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoSimbaCampaignAreaoptionsGetRequest 初始化TaobaoSimbaCampaignAreaoptionsGetAPIRequest对象
+func NewTaobaoSimbaCampaignAreaoptionsGetRequest() *TaobaoSimbaCampaignAreaoptionsGetAPIRequest {
+	return &TaobaoSimbaCampaignAreaoptionsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaCampaignAreaoptionsGetAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.campaign.areaoptions.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaCampaignAreaoptionsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

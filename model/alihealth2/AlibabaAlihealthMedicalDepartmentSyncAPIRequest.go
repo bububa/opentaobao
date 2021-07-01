@@ -17,4 +17,36 @@ type AlibabaAlihealthMedicalDepartmentSyncAPIRequest struct {
 	_saveRequest *CommonRequest4Top
 }
 
-// New
+// NewAlibabaAlihealthMedicalDepartmentSyncRequest 初始化AlibabaAlihealthMedicalDepartmentSyncAPIRequest对象
+func NewAlibabaAlihealthMedicalDepartmentSyncRequest() *AlibabaAlihealthMedicalDepartmentSyncAPIRequest {
+	return &AlibabaAlihealthMedicalDepartmentSyncAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthMedicalDepartmentSyncAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.medical.department.sync"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthMedicalDepartmentSyncAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SaveRequest Setter
+// 接口入参
+func (r *AlibabaAlihealthMedicalDepartmentSyncAPIRequest) SetSaveRequest(_saveRequest *CommonRequest4Top) error {
+	r._saveRequest = _saveRequest
+	r.Set("save_request", _saveRequest)
+	return nil
+}
+
+// Get SaveRequest Getter
+func (r AlibabaAlihealthMedicalDepartmentSyncAPIRequest) GetSaveRequest() *CommonRequest4Top {
+	return r._saveRequest
+}

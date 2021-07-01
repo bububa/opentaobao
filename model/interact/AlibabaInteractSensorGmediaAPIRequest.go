@@ -15,4 +15,23 @@ type AlibabaInteractSensorGmediaAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaInteractSensorGmediaRequest 初始化AlibabaInteractSensorGmediaAPIRequest对象
+func NewAlibabaInteractSensorGmediaRequest() *AlibabaInteractSensorGmediaAPIRequest {
+	return &AlibabaInteractSensorGmediaAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractSensorGmediaAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.sensor.gmedia"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractSensorGmediaAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

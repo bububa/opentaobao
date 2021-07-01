@@ -19,4 +19,49 @@ type TaobaoTxpItemItemlistgetAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewTaobaoTxpItemItemlistgetRequest 初始化TaobaoTxpItemItemlistgetAPIRequest对象
+func NewTaobaoTxpItemItemlistgetRequest() *TaobaoTxpItemItemlistgetAPIRequest {
+	return &TaobaoTxpItemItemlistgetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTxpItemItemlistgetAPIRequest) GetApiMethodName() string {
+	return "taobao.txp.item.itemlistget"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTxpItemItemlistgetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BeginPage Setter
+// 第几页
+func (r *TaobaoTxpItemItemlistgetAPIRequest) SetBeginPage(_beginPage int64) error {
+	r._beginPage = _beginPage
+	r.Set("begin_page", _beginPage)
+	return nil
+}
+
+// Get BeginPage Getter
+func (r TaobaoTxpItemItemlistgetAPIRequest) GetBeginPage() int64 {
+	return r._beginPage
+}
+
+// Set is PageSize Setter
+// 每页多少条
+func (r *TaobaoTxpItemItemlistgetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoTxpItemItemlistgetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

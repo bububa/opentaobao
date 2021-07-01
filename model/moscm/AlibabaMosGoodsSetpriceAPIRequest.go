@@ -17,4 +17,36 @@ type AlibabaMosGoodsSetpriceAPIRequest struct {
 	_priceDtoList []PriceDto
 }
 
-// New
+// NewAlibabaMosGoodsSetpriceRequest 初始化AlibabaMosGoodsSetpriceAPIRequest对象
+func NewAlibabaMosGoodsSetpriceRequest() *AlibabaMosGoodsSetpriceAPIRequest {
+	return &AlibabaMosGoodsSetpriceAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosGoodsSetpriceAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.goods.setprice"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosGoodsSetpriceAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PriceDtoList Setter
+// 价格变更对象列表
+func (r *AlibabaMosGoodsSetpriceAPIRequest) SetPriceDtoList(_priceDtoList []PriceDto) error {
+	r._priceDtoList = _priceDtoList
+	r.Set("price_dto_list", _priceDtoList)
+	return nil
+}
+
+// Get PriceDtoList Getter
+func (r AlibabaMosGoodsSetpriceAPIRequest) GetPriceDtoList() []PriceDto {
+	return r._priceDtoList
+}

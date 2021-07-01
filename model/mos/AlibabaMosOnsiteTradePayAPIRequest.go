@@ -17,4 +17,36 @@ type AlibabaMosOnsiteTradePayAPIRequest struct {
 	_onsiteTradePayRequest *OnsiteTradePayRequest
 }
 
-// New
+// NewAlibabaMosOnsiteTradePayRequest 初始化AlibabaMosOnsiteTradePayAPIRequest对象
+func NewAlibabaMosOnsiteTradePayRequest() *AlibabaMosOnsiteTradePayAPIRequest {
+	return &AlibabaMosOnsiteTradePayAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosOnsiteTradePayAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.onsite.trade.pay"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosOnsiteTradePayAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OnsiteTradePayRequest Setter
+// 创建订单请求参数
+func (r *AlibabaMosOnsiteTradePayAPIRequest) SetOnsiteTradePayRequest(_onsiteTradePayRequest *OnsiteTradePayRequest) error {
+	r._onsiteTradePayRequest = _onsiteTradePayRequest
+	r.Set("onsite_trade_pay_request", _onsiteTradePayRequest)
+	return nil
+}
+
+// Get OnsiteTradePayRequest Getter
+func (r AlibabaMosOnsiteTradePayAPIRequest) GetOnsiteTradePayRequest() *OnsiteTradePayRequest {
+	return r._onsiteTradePayRequest
+}

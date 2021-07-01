@@ -17,4 +17,36 @@ type AlibabaWdkUmsOutboundAPIRequest struct {
 	_erpOutputOrderDto *ErpOutputOrderDto
 }
 
-// New
+// NewAlibabaWdkUmsOutboundRequest 初始化AlibabaWdkUmsOutboundAPIRequest对象
+func NewAlibabaWdkUmsOutboundRequest() *AlibabaWdkUmsOutboundAPIRequest {
+	return &AlibabaWdkUmsOutboundAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkUmsOutboundAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.ums.outbound"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkUmsOutboundAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ErpOutputOrderDto Setter
+// 出库-ERP下发单请求dto
+func (r *AlibabaWdkUmsOutboundAPIRequest) SetErpOutputOrderDto(_erpOutputOrderDto *ErpOutputOrderDto) error {
+	r._erpOutputOrderDto = _erpOutputOrderDto
+	r.Set("erp_output_order_dto", _erpOutputOrderDto)
+	return nil
+}
+
+// Get ErpOutputOrderDto Getter
+func (r AlibabaWdkUmsOutboundAPIRequest) GetErpOutputOrderDto() *ErpOutputOrderDto {
+	return r._erpOutputOrderDto
+}

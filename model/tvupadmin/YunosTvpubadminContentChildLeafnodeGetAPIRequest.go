@@ -15,4 +15,23 @@ type YunosTvpubadminContentChildLeafnodeGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewYunosTvpubadminContentChildLeafnodeGetRequest 初始化YunosTvpubadminContentChildLeafnodeGetAPIRequest对象
+func NewYunosTvpubadminContentChildLeafnodeGetRequest() *YunosTvpubadminContentChildLeafnodeGetAPIRequest {
+	return &YunosTvpubadminContentChildLeafnodeGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentChildLeafnodeGetAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.child.leafnode.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentChildLeafnodeGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

@@ -17,4 +17,36 @@ type TaobaoItemUpdateDelistingTmallAPIRequest struct {
 	_numIid int64
 }
 
-// New
+// NewTaobaoItemUpdateDelistingTmallRequest 初始化TaobaoItemUpdateDelistingTmallAPIRequest对象
+func NewTaobaoItemUpdateDelistingTmallRequest() *TaobaoItemUpdateDelistingTmallAPIRequest {
+	return &TaobaoItemUpdateDelistingTmallAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoItemUpdateDelistingTmallAPIRequest) GetApiMethodName() string {
+	return "taobao.item.update.delisting.tmall"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoItemUpdateDelistingTmallAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is NumIid Setter
+// 商品数字ID，该参数必须
+func (r *TaobaoItemUpdateDelistingTmallAPIRequest) SetNumIid(_numIid int64) error {
+	r._numIid = _numIid
+	r.Set("num_iid", _numIid)
+	return nil
+}
+
+// Get NumIid Getter
+func (r TaobaoItemUpdateDelistingTmallAPIRequest) GetNumIid() int64 {
+	return r._numIid
+}

@@ -17,4 +17,36 @@ type TaobaoFilmAccountPhoneQueryAPIRequest struct {
 	_phone string
 }
 
-// New
+// NewTaobaoFilmAccountPhoneQueryRequest 初始化TaobaoFilmAccountPhoneQueryAPIRequest对象
+func NewTaobaoFilmAccountPhoneQueryRequest() *TaobaoFilmAccountPhoneQueryAPIRequest {
+	return &TaobaoFilmAccountPhoneQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFilmAccountPhoneQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.film.account.phone.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFilmAccountPhoneQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Phone Setter
+// 11位手机号码
+func (r *TaobaoFilmAccountPhoneQueryAPIRequest) SetPhone(_phone string) error {
+	r._phone = _phone
+	r.Set("phone", _phone)
+	return nil
+}
+
+// Get Phone Getter
+func (r TaobaoFilmAccountPhoneQueryAPIRequest) GetPhone() string {
+	return r._phone
+}

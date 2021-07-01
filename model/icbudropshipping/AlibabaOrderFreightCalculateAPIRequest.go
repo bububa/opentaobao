@@ -18,4 +18,36 @@ type AlibabaOrderFreightCalculateAPIRequest struct {
 	_paramMultiFreightTemplateRequest *MultiFreightTemplateRequest
 }
 
-// New
+// NewAlibabaOrderFreightCalculateRequest 初始化AlibabaOrderFreightCalculateAPIRequest对象
+func NewAlibabaOrderFreightCalculateRequest() *AlibabaOrderFreightCalculateAPIRequest {
+	return &AlibabaOrderFreightCalculateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaOrderFreightCalculateAPIRequest) GetApiMethodName() string {
+	return "alibaba.order.freight.calculate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaOrderFreightCalculateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamMultiFreightTemplateRequest Setter
+// {}
+func (r *AlibabaOrderFreightCalculateAPIRequest) SetParamMultiFreightTemplateRequest(_paramMultiFreightTemplateRequest *MultiFreightTemplateRequest) error {
+	r._paramMultiFreightTemplateRequest = _paramMultiFreightTemplateRequest
+	r.Set("param_multi_freight_template_request", _paramMultiFreightTemplateRequest)
+	return nil
+}
+
+// Get ParamMultiFreightTemplateRequest Getter
+func (r AlibabaOrderFreightCalculateAPIRequest) GetParamMultiFreightTemplateRequest() *MultiFreightTemplateRequest {
+	return r._paramMultiFreightTemplateRequest
+}

@@ -17,4 +17,36 @@ type AlibabaMiddleClaimsresultReceiveAPIRequest struct {
 	_claimsResultDTO *ClaimsResultDto
 }
 
-// New
+// NewAlibabaMiddleClaimsresultReceiveRequest 初始化AlibabaMiddleClaimsresultReceiveAPIRequest对象
+func NewAlibabaMiddleClaimsresultReceiveRequest() *AlibabaMiddleClaimsresultReceiveAPIRequest {
+	return &AlibabaMiddleClaimsresultReceiveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMiddleClaimsresultReceiveAPIRequest) GetApiMethodName() string {
+	return "alibaba.middle.claimsresult.receive"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMiddleClaimsresultReceiveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ClaimsResultDTO Setter
+// 理赔结果实体
+func (r *AlibabaMiddleClaimsresultReceiveAPIRequest) SetClaimsResultDTO(_claimsResultDTO *ClaimsResultDto) error {
+	r._claimsResultDTO = _claimsResultDTO
+	r.Set("claims_result_d_t_o", _claimsResultDTO)
+	return nil
+}
+
+// Get ClaimsResultDTO Getter
+func (r AlibabaMiddleClaimsresultReceiveAPIRequest) GetClaimsResultDTO() *ClaimsResultDto {
+	return r._claimsResultDTO
+}

@@ -17,4 +17,36 @@ type AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest struc
 	_reportDiagnoseImMessageRequest *ReportDiagnoseImMessageRequest
 }
 
-// New
+// NewAlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest 初始化AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest对象
+func NewAlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest() *AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest {
+	return &AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.examination.report.diagnose.tempmessage.receive"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ReportDiagnoseImMessageRequest Setter
+// 入参对象
+func (r *AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) SetReportDiagnoseImMessageRequest(_reportDiagnoseImMessageRequest *ReportDiagnoseImMessageRequest) error {
+	r._reportDiagnoseImMessageRequest = _reportDiagnoseImMessageRequest
+	r.Set("report_diagnose_im_message_request", _reportDiagnoseImMessageRequest)
+	return nil
+}
+
+// Get ReportDiagnoseImMessageRequest Getter
+func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) GetReportDiagnoseImMessageRequest() *ReportDiagnoseImMessageRequest {
+	return r._reportDiagnoseImMessageRequest
+}

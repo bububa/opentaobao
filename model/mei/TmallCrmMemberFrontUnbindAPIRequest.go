@@ -17,4 +17,36 @@ type TmallCrmMemberFrontUnbindAPIRequest struct {
 	_userNick string
 }
 
-// New
+// NewTmallCrmMemberFrontUnbindRequest 初始化TmallCrmMemberFrontUnbindAPIRequest对象
+func NewTmallCrmMemberFrontUnbindRequest() *TmallCrmMemberFrontUnbindAPIRequest {
+	return &TmallCrmMemberFrontUnbindAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallCrmMemberFrontUnbindAPIRequest) GetApiMethodName() string {
+	return "tmall.crm.member.front.unbind"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallCrmMemberFrontUnbindAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UserNick Setter
+// 会员昵称
+func (r *TmallCrmMemberFrontUnbindAPIRequest) SetUserNick(_userNick string) error {
+	r._userNick = _userNick
+	r.Set("user_nick", _userNick)
+	return nil
+}
+
+// Get UserNick Getter
+func (r TmallCrmMemberFrontUnbindAPIRequest) GetUserNick() string {
+	return r._userNick
+}

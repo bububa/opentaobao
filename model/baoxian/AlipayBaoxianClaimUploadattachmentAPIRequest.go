@@ -31,4 +31,127 @@ type AlipayBaoxianClaimUploadattachmentAPIRequest struct {
 	_uploadUser string
 }
 
-// New
+// NewAlipayBaoxianClaimUploadattachmentRequest 初始化AlipayBaoxianClaimUploadattachmentAPIRequest对象
+func NewAlipayBaoxianClaimUploadattachmentRequest() *AlipayBaoxianClaimUploadattachmentAPIRequest {
+	return &AlipayBaoxianClaimUploadattachmentAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetApiMethodName() string {
+	return "alipay.baoxian.claim.uploadattachment"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OutBizNo Setter
+// 外部业务号，唯一
+func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetOutBizNo(_outBizNo string) error {
+	r._outBizNo = _outBizNo
+	r.Set("out_biz_no", _outBizNo)
+	return nil
+}
+
+// Get OutBizNo Getter
+func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetOutBizNo() string {
+	return r._outBizNo
+}
+
+// Set is BizSource Setter
+// 业务来源
+func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetBizSource(_bizSource string) error {
+	r._bizSource = _bizSource
+	r.Set("biz_source", _bizSource)
+	return nil
+}
+
+// Get BizSource Getter
+func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetBizSource() string {
+	return r._bizSource
+}
+
+// Set is SpNo Setter
+// 标准产品ID
+func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetSpNo(_spNo string) error {
+	r._spNo = _spNo
+	r.Set("sp_no", _spNo)
+	return nil
+}
+
+// Get SpNo Getter
+func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetSpNo() string {
+	return r._spNo
+}
+
+// Set is AttachmentKey Setter
+// 文件名,必须带后缀名。例如：test.png,test.doc,test.pdf
+func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetAttachmentKey(_attachmentKey string) error {
+	r._attachmentKey = _attachmentKey
+	r.Set("attachment_key", _attachmentKey)
+	return nil
+}
+
+// Get AttachmentKey Getter
+func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetAttachmentKey() string {
+	return r._attachmentKey
+}
+
+// Set is AttachmentByte Setter
+// 文件字节数组
+func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetAttachmentByte(_attachmentByte *model.File) error {
+	r._attachmentByte = _attachmentByte
+	r.Set("attachment_byte", _attachmentByte)
+	return nil
+}
+
+// Get AttachmentByte Getter
+func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetAttachmentByte() *model.File {
+	return r._attachmentByte
+}
+
+// Set is Base64Bytes Setter
+// 是否base格式的字节数组
+func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetBase64Bytes(_base64Bytes bool) error {
+	r._base64Bytes = _base64Bytes
+	r.Set("base64_bytes", _base64Bytes)
+	return nil
+}
+
+// Get Base64Bytes Getter
+func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetBase64Bytes() bool {
+	return r._base64Bytes
+}
+
+// Set is PolicyBizNo Setter
+// 保单外部业务单号
+func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetPolicyBizNo(_policyBizNo string) error {
+	r._policyBizNo = _policyBizNo
+	r.Set("policy_biz_no", _policyBizNo)
+	return nil
+}
+
+// Get PolicyBizNo Getter
+func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetPolicyBizNo() string {
+	return r._policyBizNo
+}
+
+// Set is UploadUser Setter
+// 上传者用户标识
+func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetUploadUser(_uploadUser string) error {
+	r._uploadUser = _uploadUser
+	r.Set("upload_user", _uploadUser)
+	return nil
+}
+
+// Get UploadUser Getter
+func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetUploadUser() string {
+	return r._uploadUser
+}

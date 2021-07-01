@@ -17,4 +17,36 @@ type AliyunAlinkDataStatReportAPIRequest struct {
 	_paramBean *OuterDataBean
 }
 
-// New
+// NewAliyunAlinkDataStatReportRequest 初始化AliyunAlinkDataStatReportAPIRequest对象
+func NewAliyunAlinkDataStatReportRequest() *AliyunAlinkDataStatReportAPIRequest {
+	return &AliyunAlinkDataStatReportAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliyunAlinkDataStatReportAPIRequest) GetApiMethodName() string {
+	return "aliyun.alink.data.stat.report"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliyunAlinkDataStatReportAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamBean Setter
+// 入参对象
+func (r *AliyunAlinkDataStatReportAPIRequest) SetParamBean(_paramBean *OuterDataBean) error {
+	r._paramBean = _paramBean
+	r.Set("param_bean", _paramBean)
+	return nil
+}
+
+// Get ParamBean Getter
+func (r AliyunAlinkDataStatReportAPIRequest) GetParamBean() *OuterDataBean {
+	return r._paramBean
+}

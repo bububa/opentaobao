@@ -17,4 +17,36 @@ type AlibabaAlihealthMdeerScienceDeletearticleAPIRequest struct {
 	_articleId int64
 }
 
-// New
+// NewAlibabaAlihealthMdeerScienceDeletearticleRequest 初始化AlibabaAlihealthMdeerScienceDeletearticleAPIRequest对象
+func NewAlibabaAlihealthMdeerScienceDeletearticleRequest() *AlibabaAlihealthMdeerScienceDeletearticleAPIRequest {
+	return &AlibabaAlihealthMdeerScienceDeletearticleAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.mdeer.science.deletearticle"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ArticleId Setter
+// 文章ID
+func (r *AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) SetArticleId(_articleId int64) error {
+	r._articleId = _articleId
+	r.Set("article_id", _articleId)
+	return nil
+}
+
+// Get ArticleId Getter
+func (r AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) GetArticleId() int64 {
+	return r._articleId
+}

@@ -17,4 +17,36 @@ type AlibabaIcbuProductInventoryUpdateAPIRequest struct {
 	_requestParam *ProductInventoryRequest
 }
 
-// New
+// NewAlibabaIcbuProductInventoryUpdateRequest 初始化AlibabaIcbuProductInventoryUpdateAPIRequest对象
+func NewAlibabaIcbuProductInventoryUpdateRequest() *AlibabaIcbuProductInventoryUpdateAPIRequest {
+	return &AlibabaIcbuProductInventoryUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIcbuProductInventoryUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.icbu.product.inventory.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIcbuProductInventoryUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RequestParam Setter
+// 更新请求
+func (r *AlibabaIcbuProductInventoryUpdateAPIRequest) SetRequestParam(_requestParam *ProductInventoryRequest) error {
+	r._requestParam = _requestParam
+	r.Set("request_param", _requestParam)
+	return nil
+}
+
+// Get RequestParam Getter
+func (r AlibabaIcbuProductInventoryUpdateAPIRequest) GetRequestParam() *ProductInventoryRequest {
+	return r._requestParam
+}

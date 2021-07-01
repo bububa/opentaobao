@@ -21,4 +21,62 @@ type AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest struct {
 	_topContext *TopContextDto
 }
 
-// New
+// NewAlibabaScbpAdGroupDeleteAdGroupBatchRequest 初始化AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest对象
+func NewAlibabaScbpAdGroupDeleteAdGroupBatchRequest() *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest {
+	return &AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.ad.group.delete.ad.group.batch"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CampaignId Setter
+// 计划id
+func (r *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// Get CampaignId Getter
+func (r AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
+}
+
+// Set is AdGroupBatchOperation Setter
+// 请求参数
+func (r *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) SetAdGroupBatchOperation(_adGroupBatchOperation *AdGroupBatchOperationDto) error {
+	r._adGroupBatchOperation = _adGroupBatchOperation
+	r.Set("ad_group_batch_operation", _adGroupBatchOperation)
+	return nil
+}
+
+// Get AdGroupBatchOperation Getter
+func (r AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) GetAdGroupBatchOperation() *AdGroupBatchOperationDto {
+	return r._adGroupBatchOperation
+}
+
+// Set is TopContext Setter
+// 用户信息
+func (r *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+	r._topContext = _topContext
+	r.Set("top_context", _topContext)
+	return nil
+}
+
+// Get TopContext Getter
+func (r AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) GetTopContext() *TopContextDto {
+	return r._topContext
+}

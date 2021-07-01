@@ -17,4 +17,36 @@ type AlibabaAlihealthDruguseQueryAPIRequest struct {
 	_command *SafeMedicationReqCommand
 }
 
-// New
+// NewAlibabaAlihealthDruguseQueryRequest 初始化AlibabaAlihealthDruguseQueryAPIRequest对象
+func NewAlibabaAlihealthDruguseQueryRequest() *AlibabaAlihealthDruguseQueryAPIRequest {
+	return &AlibabaAlihealthDruguseQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDruguseQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.druguse.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDruguseQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Command Setter
+// 入参
+func (r *AlibabaAlihealthDruguseQueryAPIRequest) SetCommand(_command *SafeMedicationReqCommand) error {
+	r._command = _command
+	r.Set("command", _command)
+	return nil
+}
+
+// Get Command Getter
+func (r AlibabaAlihealthDruguseQueryAPIRequest) GetCommand() *SafeMedicationReqCommand {
+	return r._command
+}

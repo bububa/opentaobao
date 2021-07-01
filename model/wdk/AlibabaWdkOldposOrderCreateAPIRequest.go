@@ -17,4 +17,36 @@ type AlibabaWdkOldposOrderCreateAPIRequest struct {
 	_posOrderCreateRequest *PosOrderCreateRequest
 }
 
-// New
+// NewAlibabaWdkOldposOrderCreateRequest 初始化AlibabaWdkOldposOrderCreateAPIRequest对象
+func NewAlibabaWdkOldposOrderCreateRequest() *AlibabaWdkOldposOrderCreateAPIRequest {
+	return &AlibabaWdkOldposOrderCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkOldposOrderCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.oldpos.order.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkOldposOrderCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PosOrderCreateRequest Setter
+// 入参
+func (r *AlibabaWdkOldposOrderCreateAPIRequest) SetPosOrderCreateRequest(_posOrderCreateRequest *PosOrderCreateRequest) error {
+	r._posOrderCreateRequest = _posOrderCreateRequest
+	r.Set("pos_order_create_request", _posOrderCreateRequest)
+	return nil
+}
+
+// Get PosOrderCreateRequest Getter
+func (r AlibabaWdkOldposOrderCreateAPIRequest) GetPosOrderCreateRequest() *PosOrderCreateRequest {
+	return r._posOrderCreateRequest
+}

@@ -17,4 +17,36 @@ type YunosTvpubadminManageTopicFindbyidAPIRequest struct {
 	_id int64
 }
 
-// New
+// NewYunosTvpubadminManageTopicFindbyidRequest 初始化YunosTvpubadminManageTopicFindbyidAPIRequest对象
+func NewYunosTvpubadminManageTopicFindbyidRequest() *YunosTvpubadminManageTopicFindbyidAPIRequest {
+	return &YunosTvpubadminManageTopicFindbyidAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminManageTopicFindbyidAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.manage.topic.findbyid"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminManageTopicFindbyidAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Id Setter
+// 专题id
+func (r *YunosTvpubadminManageTopicFindbyidAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r YunosTvpubadminManageTopicFindbyidAPIRequest) GetId() int64 {
+	return r._id
+}

@@ -17,4 +17,36 @@ type YunosCloudcardBatchOpermsgSendAPIRequest struct {
 	_operBatchMsg *OperBatchMsg
 }
 
-// New
+// NewYunosCloudcardBatchOpermsgSendRequest 初始化YunosCloudcardBatchOpermsgSendAPIRequest对象
+func NewYunosCloudcardBatchOpermsgSendRequest() *YunosCloudcardBatchOpermsgSendAPIRequest {
+	return &YunosCloudcardBatchOpermsgSendAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosCloudcardBatchOpermsgSendAPIRequest) GetApiMethodName() string {
+	return "yunos.cloudcard.batch.opermsg.send"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosCloudcardBatchOpermsgSendAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OperBatchMsg Setter
+// YUNOS生活服务群消息
+func (r *YunosCloudcardBatchOpermsgSendAPIRequest) SetOperBatchMsg(_operBatchMsg *OperBatchMsg) error {
+	r._operBatchMsg = _operBatchMsg
+	r.Set("oper_batch_msg", _operBatchMsg)
+	return nil
+}
+
+// Get OperBatchMsg Getter
+func (r YunosCloudcardBatchOpermsgSendAPIRequest) GetOperBatchMsg() *OperBatchMsg {
+	return r._operBatchMsg
+}

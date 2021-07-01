@@ -17,4 +17,36 @@ type AlibabaWdkMerchantRoutingRegisterAPIRequest struct {
 	_merchantRoutingInfoRegister *MerchantRoutingInfoRegisterDo
 }
 
-// New
+// NewAlibabaWdkMerchantRoutingRegisterRequest 初始化AlibabaWdkMerchantRoutingRegisterAPIRequest对象
+func NewAlibabaWdkMerchantRoutingRegisterRequest() *AlibabaWdkMerchantRoutingRegisterAPIRequest {
+	return &AlibabaWdkMerchantRoutingRegisterAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMerchantRoutingRegisterAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.merchant.routing.register"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMerchantRoutingRegisterAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MerchantRoutingInfoRegister Setter
+// 接口入参
+func (r *AlibabaWdkMerchantRoutingRegisterAPIRequest) SetMerchantRoutingInfoRegister(_merchantRoutingInfoRegister *MerchantRoutingInfoRegisterDo) error {
+	r._merchantRoutingInfoRegister = _merchantRoutingInfoRegister
+	r.Set("merchant_routing_info_register", _merchantRoutingInfoRegister)
+	return nil
+}
+
+// Get MerchantRoutingInfoRegister Getter
+func (r AlibabaWdkMerchantRoutingRegisterAPIRequest) GetMerchantRoutingInfoRegister() *MerchantRoutingInfoRegisterDo {
+	return r._merchantRoutingInfoRegister
+}

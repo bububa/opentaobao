@@ -27,4 +27,36 @@ type TaobaoCaipiaoMarketingPutAPIRequest struct {
 	_detail *WangcaiMarketingDetail
 }
 
-// New
+// NewTaobaoCaipiaoMarketingPutRequest 初始化TaobaoCaipiaoMarketingPutAPIRequest对象
+func NewTaobaoCaipiaoMarketingPutRequest() *TaobaoCaipiaoMarketingPutAPIRequest {
+	return &TaobaoCaipiaoMarketingPutAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCaipiaoMarketingPutAPIRequest) GetApiMethodName() string {
+	return "taobao.caipiao.marketing.put"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCaipiaoMarketingPutAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Detail Setter
+// 活动详情设置
+func (r *TaobaoCaipiaoMarketingPutAPIRequest) SetDetail(_detail *WangcaiMarketingDetail) error {
+	r._detail = _detail
+	r.Set("detail", _detail)
+	return nil
+}
+
+// Get Detail Getter
+func (r TaobaoCaipiaoMarketingPutAPIRequest) GetDetail() *WangcaiMarketingDetail {
+	return r._detail
+}

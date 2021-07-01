@@ -17,4 +17,36 @@ type TaobaoOpenimChatlogsImportAPIRequest struct {
 	_messages []TextMessage
 }
 
-// New
+// NewTaobaoOpenimChatlogsImportRequest 初始化TaobaoOpenimChatlogsImportAPIRequest对象
+func NewTaobaoOpenimChatlogsImportRequest() *TaobaoOpenimChatlogsImportAPIRequest {
+	return &TaobaoOpenimChatlogsImportAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpenimChatlogsImportAPIRequest) GetApiMethodName() string {
+	return "taobao.openim.chatlogs.import"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpenimChatlogsImportAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Messages Setter
+// 消息序列
+func (r *TaobaoOpenimChatlogsImportAPIRequest) SetMessages(_messages []TextMessage) error {
+	r._messages = _messages
+	r.Set("messages", _messages)
+	return nil
+}
+
+// Get Messages Getter
+func (r TaobaoOpenimChatlogsImportAPIRequest) GetMessages() []TextMessage {
+	return r._messages
+}

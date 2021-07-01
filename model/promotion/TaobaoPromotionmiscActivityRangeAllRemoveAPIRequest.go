@@ -17,4 +17,36 @@ type TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest struct {
 	_activityId int64
 }
 
-// New
+// NewTaobaoPromotionmiscActivityRangeAllRemoveRequest 初始化TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest对象
+func NewTaobaoPromotionmiscActivityRangeAllRemoveRequest() *TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest {
+	return &TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest) GetApiMethodName() string {
+	return "taobao.promotionmisc.activity.range.all.remove"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ActivityId Setter
+// 活动id。
+func (r *TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest) SetActivityId(_activityId int64) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// Get ActivityId Getter
+func (r TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest) GetActivityId() int64 {
+	return r._activityId
+}

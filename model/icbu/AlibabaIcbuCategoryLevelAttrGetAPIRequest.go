@@ -17,4 +17,36 @@ type AlibabaIcbuCategoryLevelAttrGetAPIRequest struct {
 	_attributeValueRequest *LevelAttributeValueRequest
 }
 
-// New
+// NewAlibabaIcbuCategoryLevelAttrGetRequest 初始化AlibabaIcbuCategoryLevelAttrGetAPIRequest对象
+func NewAlibabaIcbuCategoryLevelAttrGetRequest() *AlibabaIcbuCategoryLevelAttrGetAPIRequest {
+	return &AlibabaIcbuCategoryLevelAttrGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIcbuCategoryLevelAttrGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.icbu.category.level.attr.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIcbuCategoryLevelAttrGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AttributeValueRequest Setter
+// 属性值request对象
+func (r *AlibabaIcbuCategoryLevelAttrGetAPIRequest) SetAttributeValueRequest(_attributeValueRequest *LevelAttributeValueRequest) error {
+	r._attributeValueRequest = _attributeValueRequest
+	r.Set("attribute_value_request", _attributeValueRequest)
+	return nil
+}
+
+// Get AttributeValueRequest Getter
+func (r AlibabaIcbuCategoryLevelAttrGetAPIRequest) GetAttributeValueRequest() *LevelAttributeValueRequest {
+	return r._attributeValueRequest
+}

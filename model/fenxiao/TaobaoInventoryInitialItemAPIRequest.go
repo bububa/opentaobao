@@ -20,4 +20,49 @@ type TaobaoInventoryInitialItemAPIRequest struct {
 	_storeInventorys string
 }
 
-// New
+// NewTaobaoInventoryInitialItemRequest 初始化TaobaoInventoryInitialItemAPIRequest对象
+func NewTaobaoInventoryInitialItemRequest() *TaobaoInventoryInitialItemAPIRequest {
+	return &TaobaoInventoryInitialItemAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoInventoryInitialItemAPIRequest) GetApiMethodName() string {
+	return "taobao.inventory.initial.item"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoInventoryInitialItemAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ScItemId Setter
+// 后端商品id
+func (r *TaobaoInventoryInitialItemAPIRequest) SetScItemId(_scItemId int64) error {
+	r._scItemId = _scItemId
+	r.Set("sc_item_id", _scItemId)
+	return nil
+}
+
+// Get ScItemId Getter
+func (r TaobaoInventoryInitialItemAPIRequest) GetScItemId() int64 {
+	return r._scItemId
+}
+
+// Set is StoreInventorys Setter
+// 商品初始库存信息： [{"storeCode":"必选,商家仓库编号","inventoryType":"可选，库存类型 1：正常,2：损坏,3：冻结,10：质押,11-20:用户自定义,默认为1","quantity":"必选,数量"}]
+func (r *TaobaoInventoryInitialItemAPIRequest) SetStoreInventorys(_storeInventorys string) error {
+	r._storeInventorys = _storeInventorys
+	r.Set("store_inventorys", _storeInventorys)
+	return nil
+}
+
+// Get StoreInventorys Getter
+func (r TaobaoInventoryInitialItemAPIRequest) GetStoreInventorys() string {
+	return r._storeInventorys
+}

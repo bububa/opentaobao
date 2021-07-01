@@ -17,4 +17,36 @@ type AlibabaWdkChannelUserSyncAPIRequest struct {
 	_userSyncInfo *UserSyncInfo
 }
 
-// New
+// NewAlibabaWdkChannelUserSyncRequest 初始化AlibabaWdkChannelUserSyncAPIRequest对象
+func NewAlibabaWdkChannelUserSyncRequest() *AlibabaWdkChannelUserSyncAPIRequest {
+	return &AlibabaWdkChannelUserSyncAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkChannelUserSyncAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.channel.user.sync"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkChannelUserSyncAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UserSyncInfo Setter
+// 会员信息
+func (r *AlibabaWdkChannelUserSyncAPIRequest) SetUserSyncInfo(_userSyncInfo *UserSyncInfo) error {
+	r._userSyncInfo = _userSyncInfo
+	r.Set("user_sync_info", _userSyncInfo)
+	return nil
+}
+
+// Get UserSyncInfo Getter
+func (r AlibabaWdkChannelUserSyncAPIRequest) GetUserSyncInfo() *UserSyncInfo {
+	return r._userSyncInfo
+}

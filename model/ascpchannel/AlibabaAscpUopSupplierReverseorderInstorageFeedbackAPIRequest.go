@@ -17,4 +17,36 @@ type AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest struct {
 	_instorageFeedbackRequest *Instoragefeedbackrequest
 }
 
-// New
+// NewAlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest 初始化AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest对象
+func NewAlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest() *AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest {
+	return &AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.uop.supplier.reverseorder.instorage.feedback"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is InstorageFeedbackRequest Setter
+// 销退单入库结果请求
+func (r *AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) SetInstorageFeedbackRequest(_instorageFeedbackRequest *Instoragefeedbackrequest) error {
+	r._instorageFeedbackRequest = _instorageFeedbackRequest
+	r.Set("instorage_feedback_request", _instorageFeedbackRequest)
+	return nil
+}
+
+// Get InstorageFeedbackRequest Getter
+func (r AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) GetInstorageFeedbackRequest() *Instoragefeedbackrequest {
+	return r._instorageFeedbackRequest
+}

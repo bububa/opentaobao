@@ -19,4 +19,49 @@ type AlibabaKclubKcQueryknowledgeAPIRequest struct {
 	_auth *TenancyAuth
 }
 
-// New
+// NewAlibabaKclubKcQueryknowledgeRequest 初始化AlibabaKclubKcQueryknowledgeAPIRequest对象
+func NewAlibabaKclubKcQueryknowledgeRequest() *AlibabaKclubKcQueryknowledgeAPIRequest {
+	return &AlibabaKclubKcQueryknowledgeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaKclubKcQueryknowledgeAPIRequest) GetApiMethodName() string {
+	return "alibaba.kclub.kc.queryknowledge"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaKclubKcQueryknowledgeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is KcQaQuery Setter
+// 查询条件
+func (r *AlibabaKclubKcQueryknowledgeAPIRequest) SetKcQaQuery(_kcQaQuery *KcQaQuery) error {
+	r._kcQaQuery = _kcQaQuery
+	r.Set("kc_qa_query", _kcQaQuery)
+	return nil
+}
+
+// Get KcQaQuery Getter
+func (r AlibabaKclubKcQueryknowledgeAPIRequest) GetKcQaQuery() *KcQaQuery {
+	return r._kcQaQuery
+}
+
+// Set is Auth Setter
+// 鉴权
+func (r *AlibabaKclubKcQueryknowledgeAPIRequest) SetAuth(_auth *TenancyAuth) error {
+	r._auth = _auth
+	r.Set("auth", _auth)
+	return nil
+}
+
+// Get Auth Getter
+func (r AlibabaKclubKcQueryknowledgeAPIRequest) GetAuth() *TenancyAuth {
+	return r._auth
+}

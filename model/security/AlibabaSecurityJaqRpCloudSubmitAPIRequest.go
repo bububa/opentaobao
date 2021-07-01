@@ -17,4 +17,36 @@ type AlibabaSecurityJaqRpCloudSubmitAPIRequest struct {
 	_verifyToken string
 }
 
-// New
+// NewAlibabaSecurityJaqRpCloudSubmitRequest 初始化AlibabaSecurityJaqRpCloudSubmitAPIRequest对象
+func NewAlibabaSecurityJaqRpCloudSubmitRequest() *AlibabaSecurityJaqRpCloudSubmitAPIRequest {
+	return &AlibabaSecurityJaqRpCloudSubmitAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSecurityJaqRpCloudSubmitAPIRequest) GetApiMethodName() string {
+	return "alibaba.security.jaq.rp.cloud.submit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSecurityJaqRpCloudSubmitAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is VerifyToken Setter
+// 认证token
+func (r *AlibabaSecurityJaqRpCloudSubmitAPIRequest) SetVerifyToken(_verifyToken string) error {
+	r._verifyToken = _verifyToken
+	r.Set("verify_token", _verifyToken)
+	return nil
+}
+
+// Get VerifyToken Getter
+func (r AlibabaSecurityJaqRpCloudSubmitAPIRequest) GetVerifyToken() string {
+	return r._verifyToken
+}

@@ -23,4 +23,75 @@ type TaobaoWlbOrderJzwithinsConsignAPIRequest struct {
 	_jzConsignArgs *JzConsignArgsNew
 }
 
-// New
+// NewTaobaoWlbOrderJzwithinsConsignRequest 初始化TaobaoWlbOrderJzwithinsConsignAPIRequest对象
+func NewTaobaoWlbOrderJzwithinsConsignRequest() *TaobaoWlbOrderJzwithinsConsignAPIRequest {
+	return &TaobaoWlbOrderJzwithinsConsignAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.order.jzwithins.consign"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Tid Setter
+// 淘宝交易订单号
+func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// Get Tid Getter
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// Set is TmsPartner Setter
+// 物流服务商信息
+func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetTmsPartner(_tmsPartner *JzPartnerNew) error {
+	r._tmsPartner = _tmsPartner
+	r.Set("tms_partner", _tmsPartner)
+	return nil
+}
+
+// Get TmsPartner Getter
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetTmsPartner() *JzPartnerNew {
+	return r._tmsPartner
+}
+
+// Set is InsPartner Setter
+// 物流服务商信息
+func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetInsPartner(_insPartner *JzPartnerNew) error {
+	r._insPartner = _insPartner
+	r.Set("ins_partner", _insPartner)
+	return nil
+}
+
+// Get InsPartner Getter
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetInsPartner() *JzPartnerNew {
+	return r._insPartner
+}
+
+// Set is JzConsignArgs Setter
+// 家装物流发货参数
+func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetJzConsignArgs(_jzConsignArgs *JzConsignArgsNew) error {
+	r._jzConsignArgs = _jzConsignArgs
+	r.Set("jz_consign_args", _jzConsignArgs)
+	return nil
+}
+
+// Get JzConsignArgs Getter
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetJzConsignArgs() *JzConsignArgsNew {
+	return r._jzConsignArgs
+}

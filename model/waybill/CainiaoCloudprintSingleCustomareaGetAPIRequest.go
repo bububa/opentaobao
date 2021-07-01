@@ -17,4 +17,36 @@ type CainiaoCloudprintSingleCustomareaGetAPIRequest struct {
 	_sellerId int64
 }
 
-// New
+// NewCainiaoCloudprintSingleCustomareaGetRequest 初始化CainiaoCloudprintSingleCustomareaGetAPIRequest对象
+func NewCainiaoCloudprintSingleCustomareaGetRequest() *CainiaoCloudprintSingleCustomareaGetAPIRequest {
+	return &CainiaoCloudprintSingleCustomareaGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoCloudprintSingleCustomareaGetAPIRequest) GetApiMethodName() string {
+	return "cainiao.cloudprint.single.customarea.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoCloudprintSingleCustomareaGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SellerId Setter
+// 这是商家用户id
+func (r *CainiaoCloudprintSingleCustomareaGetAPIRequest) SetSellerId(_sellerId int64) error {
+	r._sellerId = _sellerId
+	r.Set("seller_id", _sellerId)
+	return nil
+}
+
+// Get SellerId Getter
+func (r CainiaoCloudprintSingleCustomareaGetAPIRequest) GetSellerId() int64 {
+	return r._sellerId
+}

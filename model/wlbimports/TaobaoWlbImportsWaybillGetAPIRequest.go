@@ -17,4 +17,36 @@ type TaobaoWlbImportsWaybillGetAPIRequest struct {
 	_orderCode string
 }
 
-// New
+// NewTaobaoWlbImportsWaybillGetRequest 初始化TaobaoWlbImportsWaybillGetAPIRequest对象
+func NewTaobaoWlbImportsWaybillGetRequest() *TaobaoWlbImportsWaybillGetAPIRequest {
+	return &TaobaoWlbImportsWaybillGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbImportsWaybillGetAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.imports.waybill.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbImportsWaybillGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderCode Setter
+// 物流订单号
+func (r *TaobaoWlbImportsWaybillGetAPIRequest) SetOrderCode(_orderCode string) error {
+	r._orderCode = _orderCode
+	r.Set("order_code", _orderCode)
+	return nil
+}
+
+// Get OrderCode Getter
+func (r TaobaoWlbImportsWaybillGetAPIRequest) GetOrderCode() string {
+	return r._orderCode
+}

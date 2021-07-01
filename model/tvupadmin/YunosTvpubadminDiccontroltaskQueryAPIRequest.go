@@ -25,4 +25,88 @@ type YunosTvpubadminDiccontroltaskQueryAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewYunosTvpubadminDiccontroltaskQueryRequest 初始化YunosTvpubadminDiccontroltaskQueryAPIRequest对象
+func NewYunosTvpubadminDiccontroltaskQueryRequest() *YunosTvpubadminDiccontroltaskQueryAPIRequest {
+	return &YunosTvpubadminDiccontroltaskQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.diccontroltask.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Name Setter
+// 任务名称
+func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetName() string {
+	return r._name
+}
+
+// Set is Status Setter
+// 任务状态
+func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// Get Status Getter
+func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetStatus() int64 {
+	return r._status
+}
+
+// Set is License Setter
+// 牌照方
+func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetLicense(_license int64) error {
+	r._license = _license
+	r.Set("license", _license)
+	return nil
+}
+
+// Get License Getter
+func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetLicense() int64 {
+	return r._license
+}
+
+// Set is PageNo Setter
+// 当前页码值
+func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 每页条数
+func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

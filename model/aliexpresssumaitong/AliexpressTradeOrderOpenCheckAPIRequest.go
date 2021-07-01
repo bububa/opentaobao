@@ -19,4 +19,49 @@ type AliexpressTradeOrderOpenCheckAPIRequest struct {
 	_paramClientInfo *ClientInfo
 }
 
-// New
+// NewAliexpressTradeOrderOpenCheckRequest 初始化AliexpressTradeOrderOpenCheckAPIRequest对象
+func NewAliexpressTradeOrderOpenCheckRequest() *AliexpressTradeOrderOpenCheckAPIRequest {
+	return &AliexpressTradeOrderOpenCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressTradeOrderOpenCheckAPIRequest) GetApiMethodName() string {
+	return "aliexpress.trade.order.open.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressTradeOrderOpenCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamPreCreateOrderRequest Setter
+// 预下单入参
+func (r *AliexpressTradeOrderOpenCheckAPIRequest) SetParamPreCreateOrderRequest(_paramPreCreateOrderRequest *PreCreateOrderRequest) error {
+	r._paramPreCreateOrderRequest = _paramPreCreateOrderRequest
+	r.Set("param_pre_create_order_request", _paramPreCreateOrderRequest)
+	return nil
+}
+
+// Get ParamPreCreateOrderRequest Getter
+func (r AliexpressTradeOrderOpenCheckAPIRequest) GetParamPreCreateOrderRequest() *PreCreateOrderRequest {
+	return r._paramPreCreateOrderRequest
+}
+
+// Set is ParamClientInfo Setter
+// 客户端信息
+func (r *AliexpressTradeOrderOpenCheckAPIRequest) SetParamClientInfo(_paramClientInfo *ClientInfo) error {
+	r._paramClientInfo = _paramClientInfo
+	r.Set("param_client_info", _paramClientInfo)
+	return nil
+}
+
+// Get ParamClientInfo Getter
+func (r AliexpressTradeOrderOpenCheckAPIRequest) GetParamClientInfo() *ClientInfo {
+	return r._paramClientInfo
+}

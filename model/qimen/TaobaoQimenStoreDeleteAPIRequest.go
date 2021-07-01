@@ -17,4 +17,36 @@ type TaobaoQimenStoreDeleteAPIRequest struct {
 	_storeId int64
 }
 
-// New
+// NewTaobaoQimenStoreDeleteRequest 初始化TaobaoQimenStoreDeleteAPIRequest对象
+func NewTaobaoQimenStoreDeleteRequest() *TaobaoQimenStoreDeleteAPIRequest {
+	return &TaobaoQimenStoreDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenStoreDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.store.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenStoreDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StoreId Setter
+// 要删除的门店id
+func (r *TaobaoQimenStoreDeleteAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// Get StoreId Getter
+func (r TaobaoQimenStoreDeleteAPIRequest) GetStoreId() int64 {
+	return r._storeId
+}

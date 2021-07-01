@@ -17,4 +17,36 @@ type AlibabaTclsAelophyMerchantIdMixAPIRequest struct {
 	_unionUid string
 }
 
-// New
+// NewAlibabaTclsAelophyMerchantIdMixRequest 初始化AlibabaTclsAelophyMerchantIdMixAPIRequest对象
+func NewAlibabaTclsAelophyMerchantIdMixRequest() *AlibabaTclsAelophyMerchantIdMixAPIRequest {
+	return &AlibabaTclsAelophyMerchantIdMixAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTclsAelophyMerchantIdMixAPIRequest) GetApiMethodName() string {
+	return "alibaba.tcls.aelophy.merchant.id.mix"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTclsAelophyMerchantIdMixAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UnionUid Setter
+// 商家用户id
+func (r *AlibabaTclsAelophyMerchantIdMixAPIRequest) SetUnionUid(_unionUid string) error {
+	r._unionUid = _unionUid
+	r.Set("union_uid", _unionUid)
+	return nil
+}
+
+// Get UnionUid Getter
+func (r AlibabaTclsAelophyMerchantIdMixAPIRequest) GetUnionUid() string {
+	return r._unionUid
+}

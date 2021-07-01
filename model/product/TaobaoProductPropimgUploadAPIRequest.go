@@ -25,4 +25,88 @@ type TaobaoProductPropimgUploadAPIRequest struct {
 	_position int64
 }
 
-// New
+// NewTaobaoProductPropimgUploadRequest 初始化TaobaoProductPropimgUploadAPIRequest对象
+func NewTaobaoProductPropimgUploadRequest() *TaobaoProductPropimgUploadAPIRequest {
+	return &TaobaoProductPropimgUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoProductPropimgUploadAPIRequest) GetApiMethodName() string {
+	return "taobao.product.propimg.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoProductPropimgUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Id Setter
+// 产品属性图片ID
+func (r *TaobaoProductPropimgUploadAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r TaobaoProductPropimgUploadAPIRequest) GetId() int64 {
+	return r._id
+}
+
+// Set is ProductId Setter
+// 产品ID.Product的id
+func (r *TaobaoProductPropimgUploadAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// Get ProductId Getter
+func (r TaobaoProductPropimgUploadAPIRequest) GetProductId() int64 {
+	return r._productId
+}
+
+// Set is Props Setter
+// 属性串.目前仅支持颜色属性.调用taobao.itemprops.get获取类目属性,取得颜色属性pid,再用taobao.itempropvalues.get取得vid;格式:pid:vid,只能传入一个颜色pid:vid串;
+func (r *TaobaoProductPropimgUploadAPIRequest) SetProps(_props string) error {
+	r._props = _props
+	r.Set("props", _props)
+	return nil
+}
+
+// Get Props Getter
+func (r TaobaoProductPropimgUploadAPIRequest) GetProps() string {
+	return r._props
+}
+
+// Set is Image Setter
+// 图片内容.图片最大为2M,只支持JPG,GIF.
+func (r *TaobaoProductPropimgUploadAPIRequest) SetImage(_image *model.File) error {
+	r._image = _image
+	r.Set("image", _image)
+	return nil
+}
+
+// Get Image Getter
+func (r TaobaoProductPropimgUploadAPIRequest) GetImage() *model.File {
+	return r._image
+}
+
+// Set is Position Setter
+// 图片序号
+func (r *TaobaoProductPropimgUploadAPIRequest) SetPosition(_position int64) error {
+	r._position = _position
+	r.Set("position", _position)
+	return nil
+}
+
+// Get Position Getter
+func (r TaobaoProductPropimgUploadAPIRequest) GetPosition() int64 {
+	return r._position
+}

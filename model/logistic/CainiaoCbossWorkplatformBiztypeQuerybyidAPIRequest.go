@@ -17,4 +17,36 @@ type CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest struct {
 	_bizTypeId string
 }
 
-// New
+// NewCainiaoCbossWorkplatformBiztypeQuerybyidRequest 初始化CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest对象
+func NewCainiaoCbossWorkplatformBiztypeQuerybyidRequest() *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest {
+	return &CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) GetApiMethodName() string {
+	return "cainiao.cboss.workplatform.biztype.querybyid"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BizTypeId Setter
+// 业务类型id
+func (r *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) SetBizTypeId(_bizTypeId string) error {
+	r._bizTypeId = _bizTypeId
+	r.Set("biz_type_id", _bizTypeId)
+	return nil
+}
+
+// Get BizTypeId Getter
+func (r CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) GetBizTypeId() string {
+	return r._bizTypeId
+}

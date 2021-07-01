@@ -21,4 +21,62 @@ type AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest struct {
 	_type string
 }
 
-// New
+// NewAlibabaAilabsIotDeviceListUpdateNotifyRequest 初始化AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest对象
+func NewAlibabaAilabsIotDeviceListUpdateNotifyRequest() *AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest {
+	return &AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetApiMethodName() string {
+	return "alibaba.ailabs.iot.device.list.update.notify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Token Setter
+// 用户OAuth授权后的token
+func (r *AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) SetToken(_token string) error {
+	r._token = _token
+	r.Set("token", _token)
+	return nil
+}
+
+// Get Token Getter
+func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetToken() string {
+	return r._token
+}
+
+// Set is SkillId Setter
+// 厂商在天猫精灵开放平台申请的技能id
+func (r *AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) SetSkillId(_skillId string) error {
+	r._skillId = _skillId
+	r.Set("skill_id", _skillId)
+	return nil
+}
+
+// Get SkillId Getter
+func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetSkillId() string {
+	return r._skillId
+}
+
+// Set is Type Setter
+// 更新类型 1：设备更新 2：场景更新
+func (r *AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetType() string {
+	return r._type
+}

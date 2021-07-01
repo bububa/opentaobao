@@ -17,4 +17,36 @@ type AlibabaMosStoreRecordscreenpointinfoAPIRequest struct {
 	_screenPointInfo string
 }
 
-// New
+// NewAlibabaMosStoreRecordscreenpointinfoRequest 初始化AlibabaMosStoreRecordscreenpointinfoAPIRequest对象
+func NewAlibabaMosStoreRecordscreenpointinfoRequest() *AlibabaMosStoreRecordscreenpointinfoAPIRequest {
+	return &AlibabaMosStoreRecordscreenpointinfoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosStoreRecordscreenpointinfoAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.store.recordscreenpointinfo"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosStoreRecordscreenpointinfoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ScreenPointInfo Setter
+// 云屏埋点信息
+func (r *AlibabaMosStoreRecordscreenpointinfoAPIRequest) SetScreenPointInfo(_screenPointInfo string) error {
+	r._screenPointInfo = _screenPointInfo
+	r.Set("screen_point_info", _screenPointInfo)
+	return nil
+}
+
+// Get ScreenPointInfo Getter
+func (r AlibabaMosStoreRecordscreenpointinfoAPIRequest) GetScreenPointInfo() string {
+	return r._screenPointInfo
+}

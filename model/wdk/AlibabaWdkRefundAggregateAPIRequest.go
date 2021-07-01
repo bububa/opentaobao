@@ -17,4 +17,36 @@ type AlibabaWdkRefundAggregateAPIRequest struct {
 	_refundAggregateQueryRequest *RefundAggregateQueryRequest
 }
 
-// New
+// NewAlibabaWdkRefundAggregateRequest 初始化AlibabaWdkRefundAggregateAPIRequest对象
+func NewAlibabaWdkRefundAggregateRequest() *AlibabaWdkRefundAggregateAPIRequest {
+	return &AlibabaWdkRefundAggregateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkRefundAggregateAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.refund.aggregate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkRefundAggregateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RefundAggregateQueryRequest Setter
+// 系统自动生成
+func (r *AlibabaWdkRefundAggregateAPIRequest) SetRefundAggregateQueryRequest(_refundAggregateQueryRequest *RefundAggregateQueryRequest) error {
+	r._refundAggregateQueryRequest = _refundAggregateQueryRequest
+	r.Set("refund_aggregate_query_request", _refundAggregateQueryRequest)
+	return nil
+}
+
+// Get RefundAggregateQueryRequest Getter
+func (r AlibabaWdkRefundAggregateAPIRequest) GetRefundAggregateQueryRequest() *RefundAggregateQueryRequest {
+	return r._refundAggregateQueryRequest
+}

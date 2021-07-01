@@ -19,4 +19,49 @@ type AlibabaFundplatformAccountChargeAPIRequest struct {
 	_paramChargeRequest *ChargeRequest
 }
 
-// New
+// NewAlibabaFundplatformAccountChargeRequest 初始化AlibabaFundplatformAccountChargeAPIRequest对象
+func NewAlibabaFundplatformAccountChargeRequest() *AlibabaFundplatformAccountChargeAPIRequest {
+	return &AlibabaFundplatformAccountChargeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaFundplatformAccountChargeAPIRequest) GetApiMethodName() string {
+	return "alibaba.fundplatform.account.charge"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaFundplatformAccountChargeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamLong Setter
+// 用户ID
+func (r *AlibabaFundplatformAccountChargeAPIRequest) SetParamLong(_paramLong int64) error {
+	r._paramLong = _paramLong
+	r.Set("param_long", _paramLong)
+	return nil
+}
+
+// Get ParamLong Getter
+func (r AlibabaFundplatformAccountChargeAPIRequest) GetParamLong() int64 {
+	return r._paramLong
+}
+
+// Set is ParamChargeRequest Setter
+// 入参对象
+func (r *AlibabaFundplatformAccountChargeAPIRequest) SetParamChargeRequest(_paramChargeRequest *ChargeRequest) error {
+	r._paramChargeRequest = _paramChargeRequest
+	r.Set("param_charge_request", _paramChargeRequest)
+	return nil
+}
+
+// Get ParamChargeRequest Getter
+func (r AlibabaFundplatformAccountChargeAPIRequest) GetParamChargeRequest() *ChargeRequest {
+	return r._paramChargeRequest
+}

@@ -17,4 +17,36 @@ type AliexpressSolutionBatchProductInventoryUpdateAPIRequest struct {
 	_mutipleProductUpdateList []SynchronizeProductRequestDto
 }
 
-// New
+// NewAliexpressSolutionBatchProductInventoryUpdateRequest 初始化AliexpressSolutionBatchProductInventoryUpdateAPIRequest对象
+func NewAliexpressSolutionBatchProductInventoryUpdateRequest() *AliexpressSolutionBatchProductInventoryUpdateAPIRequest {
+	return &AliexpressSolutionBatchProductInventoryUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressSolutionBatchProductInventoryUpdateAPIRequest) GetApiMethodName() string {
+	return "aliexpress.solution.batch.product.inventory.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressSolutionBatchProductInventoryUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MutipleProductUpdateList Setter
+// The product list, in which the inventory needs to be updated. Maximum 20 products.
+func (r *AliexpressSolutionBatchProductInventoryUpdateAPIRequest) SetMutipleProductUpdateList(_mutipleProductUpdateList []SynchronizeProductRequestDto) error {
+	r._mutipleProductUpdateList = _mutipleProductUpdateList
+	r.Set("mutiple_product_update_list", _mutipleProductUpdateList)
+	return nil
+}
+
+// Get MutipleProductUpdateList Getter
+func (r AliexpressSolutionBatchProductInventoryUpdateAPIRequest) GetMutipleProductUpdateList() []SynchronizeProductRequestDto {
+	return r._mutipleProductUpdateList
+}

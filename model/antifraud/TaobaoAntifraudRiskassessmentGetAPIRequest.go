@@ -17,4 +17,36 @@ type TaobaoAntifraudRiskassessmentGetAPIRequest struct {
 	_collinadataContext *CollinadataContext
 }
 
-// New
+// NewTaobaoAntifraudRiskassessmentGetRequest 初始化TaobaoAntifraudRiskassessmentGetAPIRequest对象
+func NewTaobaoAntifraudRiskassessmentGetRequest() *TaobaoAntifraudRiskassessmentGetAPIRequest {
+	return &TaobaoAntifraudRiskassessmentGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAntifraudRiskassessmentGetAPIRequest) GetApiMethodName() string {
+	return "taobao.antifraud.riskassessment.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAntifraudRiskassessmentGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CollinadataContext Setter
+// 风控查询参数
+func (r *TaobaoAntifraudRiskassessmentGetAPIRequest) SetCollinadataContext(_collinadataContext *CollinadataContext) error {
+	r._collinadataContext = _collinadataContext
+	r.Set("collinadata_context", _collinadataContext)
+	return nil
+}
+
+// Get CollinadataContext Getter
+func (r TaobaoAntifraudRiskassessmentGetAPIRequest) GetCollinadataContext() *CollinadataContext {
+	return r._collinadataContext
+}

@@ -1,7 +1,7 @@
 package idle
 
-// TopResult 结构体
-type TopResult struct {
+// AlibabaIdleRentItemAddTopResult 结构体
+type AlibabaIdleRentItemAddTopResult struct {
 	// 商品id
 	Data int64 `json:"data,omitempty" xml:"data,omitempty"`
 	// 错误码

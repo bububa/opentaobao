@@ -17,4 +17,36 @@ type TaobaoTrainAgentHoldseatConfirmAPIRequest struct {
 	_holdSeatParam *HoldSeatParam
 }
 
-// New
+// NewTaobaoTrainAgentHoldseatConfirmRequest 初始化TaobaoTrainAgentHoldseatConfirmAPIRequest对象
+func NewTaobaoTrainAgentHoldseatConfirmRequest() *TaobaoTrainAgentHoldseatConfirmAPIRequest {
+	return &TaobaoTrainAgentHoldseatConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTrainAgentHoldseatConfirmAPIRequest) GetApiMethodName() string {
+	return "taobao.train.agent.holdseat.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTrainAgentHoldseatConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is HoldSeatParam Setter
+// 占座入参
+func (r *TaobaoTrainAgentHoldseatConfirmAPIRequest) SetHoldSeatParam(_holdSeatParam *HoldSeatParam) error {
+	r._holdSeatParam = _holdSeatParam
+	r.Set("hold_seat_param", _holdSeatParam)
+	return nil
+}
+
+// Get HoldSeatParam Getter
+func (r TaobaoTrainAgentHoldseatConfirmAPIRequest) GetHoldSeatParam() *HoldSeatParam {
+	return r._holdSeatParam
+}

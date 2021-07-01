@@ -15,4 +15,23 @@ type TmallServicecenterServiceTypeQueryallAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTmallServicecenterServiceTypeQueryallRequest 初始化TmallServicecenterServiceTypeQueryallAPIRequest对象
+func NewTmallServicecenterServiceTypeQueryallRequest() *TmallServicecenterServiceTypeQueryallAPIRequest {
+	return &TmallServicecenterServiceTypeQueryallAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterServiceTypeQueryallAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.service.type.queryall"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterServiceTypeQueryallAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

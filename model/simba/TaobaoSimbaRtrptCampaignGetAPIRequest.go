@@ -19,4 +19,49 @@ type TaobaoSimbaRtrptCampaignGetAPIRequest struct {
 	_theDate string
 }
 
-// New
+// NewTaobaoSimbaRtrptCampaignGetRequest 初始化TaobaoSimbaRtrptCampaignGetAPIRequest对象
+func NewTaobaoSimbaRtrptCampaignGetRequest() *TaobaoSimbaRtrptCampaignGetAPIRequest {
+	return &TaobaoSimbaRtrptCampaignGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaRtrptCampaignGetAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.rtrpt.campaign.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaRtrptCampaignGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 用户名
+func (r *TaobaoSimbaRtrptCampaignGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaRtrptCampaignGetAPIRequest) GetNick() string {
+	return r._nick
+}
+
+// Set is TheDate Setter
+// 日期，格式yyyy-mm-dd
+func (r *TaobaoSimbaRtrptCampaignGetAPIRequest) SetTheDate(_theDate string) error {
+	r._theDate = _theDate
+	r.Set("the_date", _theDate)
+	return nil
+}
+
+// Get TheDate Getter
+func (r TaobaoSimbaRtrptCampaignGetAPIRequest) GetTheDate() string {
+	return r._theDate
+}

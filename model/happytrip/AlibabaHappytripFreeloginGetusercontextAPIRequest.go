@@ -17,4 +17,36 @@ type AlibabaHappytripFreeloginGetusercontextAPIRequest struct {
 	_req *SsoParamDto
 }
 
-// New
+// NewAlibabaHappytripFreeloginGetusercontextRequest 初始化AlibabaHappytripFreeloginGetusercontextAPIRequest对象
+func NewAlibabaHappytripFreeloginGetusercontextRequest() *AlibabaHappytripFreeloginGetusercontextAPIRequest {
+	return &AlibabaHappytripFreeloginGetusercontextAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaHappytripFreeloginGetusercontextAPIRequest) GetApiMethodName() string {
+	return "alibaba.happytrip.freelogin.getusercontext"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaHappytripFreeloginGetusercontextAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Req Setter
+// 请求入参
+func (r *AlibabaHappytripFreeloginGetusercontextAPIRequest) SetReq(_req *SsoParamDto) error {
+	r._req = _req
+	r.Set("req", _req)
+	return nil
+}
+
+// Get Req Getter
+func (r AlibabaHappytripFreeloginGetusercontextAPIRequest) GetReq() *SsoParamDto {
+	return r._req
+}

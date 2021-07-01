@@ -19,4 +19,49 @@ type TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest struct {
 	_catType int64
 }
 
-// New
+// NewTaobaoAlitripTravelBaseinfoCitiesGetRequest 初始化TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest对象
+func NewTaobaoAlitripTravelBaseinfoCitiesGetRequest() *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest {
+	return &TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.travel.baseinfo.cities.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is IocType Setter
+// 1-获取目的地城市列表 2-获取出发地城市列表
+func (r *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) SetIocType(_iocType int64) error {
+	r._iocType = _iocType
+	r.Set("ioc_type", _iocType)
+	return nil
+}
+
+// Get IocType Getter
+func (r TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) GetIocType() int64 {
+	return r._iocType
+}
+
+// Set is CatType Setter
+// 1-境内跟团游 2-境内自由行 3-出境跟团游 4-出境自由行 5-境外当地玩乐 6-国际邮轮 9-境内邮轮
+func (r *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) SetCatType(_catType int64) error {
+	r._catType = _catType
+	r.Set("cat_type", _catType)
+	return nil
+}
+
+// Get CatType Getter
+func (r TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) GetCatType() int64 {
+	return r._catType
+}

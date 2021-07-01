@@ -19,4 +19,49 @@ type TaobaoTradeCloseAPIRequest struct {
 	_closeReason string
 }
 
-// New
+// NewTaobaoTradeCloseRequest 初始化TaobaoTradeCloseAPIRequest对象
+func NewTaobaoTradeCloseRequest() *TaobaoTradeCloseAPIRequest {
+	return &TaobaoTradeCloseAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTradeCloseAPIRequest) GetApiMethodName() string {
+	return "taobao.trade.close"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTradeCloseAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Tid Setter
+// 主订单或子订单编号。
+func (r *TaobaoTradeCloseAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// Get Tid Getter
+func (r TaobaoTradeCloseAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// Set is CloseReason Setter
+// 交易关闭原因。可以选择的理由有：1.未及时付款2、买家不想买了3、买家信息填写错误，重新拍4、恶意买家/同行捣乱5、缺货6、买家拍错了7、同城见面交易
+func (r *TaobaoTradeCloseAPIRequest) SetCloseReason(_closeReason string) error {
+	r._closeReason = _closeReason
+	r.Set("close_reason", _closeReason)
+	return nil
+}
+
+// Get CloseReason Getter
+func (r TaobaoTradeCloseAPIRequest) GetCloseReason() string {
+	return r._closeReason
+}

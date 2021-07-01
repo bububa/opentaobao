@@ -18,4 +18,36 @@ type TaobaoXhotelCityCoordinatesBatchUploadAPIRequest struct {
 	_coordinateList []Coordinate
 }
 
-// New
+// NewTaobaoXhotelCityCoordinatesBatchUploadRequest 初始化TaobaoXhotelCityCoordinatesBatchUploadAPIRequest对象
+func NewTaobaoXhotelCityCoordinatesBatchUploadRequest() *TaobaoXhotelCityCoordinatesBatchUploadAPIRequest {
+	return &TaobaoXhotelCityCoordinatesBatchUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.city.coordinates.batch.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CoordinateList Setter
+// 经纬度列表
+func (r *TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) SetCoordinateList(_coordinateList []Coordinate) error {
+	r._coordinateList = _coordinateList
+	r.Set("coordinate_list", _coordinateList)
+	return nil
+}
+
+// Get CoordinateList Getter
+func (r TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) GetCoordinateList() []Coordinate {
+	return r._coordinateList
+}

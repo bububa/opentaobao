@@ -19,4 +19,49 @@ type TaobaoSkusCustomGetAPIRequest struct {
 	_fields string
 }
 
-// New
+// NewTaobaoSkusCustomGetRequest 初始化TaobaoSkusCustomGetAPIRequest对象
+func NewTaobaoSkusCustomGetRequest() *TaobaoSkusCustomGetAPIRequest {
+	return &TaobaoSkusCustomGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSkusCustomGetAPIRequest) GetApiMethodName() string {
+	return "taobao.skus.custom.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSkusCustomGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OuterId Setter
+// Sku的外部商家ID
+func (r *TaobaoSkusCustomGetAPIRequest) SetOuterId(_outerId string) error {
+	r._outerId = _outerId
+	r.Set("outer_id", _outerId)
+	return nil
+}
+
+// Get OuterId Getter
+func (r TaobaoSkusCustomGetAPIRequest) GetOuterId() string {
+	return r._outerId
+}
+
+// Set is Fields Setter
+// 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”隔开
+func (r *TaobaoSkusCustomGetAPIRequest) SetFields(_fields string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// Get Fields Getter
+func (r TaobaoSkusCustomGetAPIRequest) GetFields() string {
+	return r._fields
+}

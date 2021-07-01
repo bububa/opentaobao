@@ -23,4 +23,75 @@ type TmallServicecenterWorkcardEvaluateAPIRequest struct {
 	_workcardId int64
 }
 
-// New
+// NewTmallServicecenterWorkcardEvaluateRequest 初始化TmallServicecenterWorkcardEvaluateAPIRequest对象
+func NewTmallServicecenterWorkcardEvaluateRequest() *TmallServicecenterWorkcardEvaluateAPIRequest {
+	return &TmallServicecenterWorkcardEvaluateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.workcard.evaluate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PassEvaluation Setter
+// 是否鉴定通过
+func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetPassEvaluation(_passEvaluation bool) error {
+	r._passEvaluation = _passEvaluation
+	r.Set("pass_evaluation", _passEvaluation)
+	return nil
+}
+
+// Get PassEvaluation Getter
+func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetPassEvaluation() bool {
+	return r._passEvaluation
+}
+
+// Set is FailCode Setter
+// 鉴定不通过时的原因编码
+func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetFailCode(_failCode int64) error {
+	r._failCode = _failCode
+	r.Set("fail_code", _failCode)
+	return nil
+}
+
+// Get FailCode Getter
+func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetFailCode() int64 {
+	return r._failCode
+}
+
+// Set is PicUrlList Setter
+// 鉴定结果图片列表
+func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetPicUrlList(_picUrlList []string) error {
+	r._picUrlList = _picUrlList
+	r.Set("pic_url_list", _picUrlList)
+	return nil
+}
+
+// Get PicUrlList Getter
+func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetPicUrlList() []string {
+	return r._picUrlList
+}
+
+// Set is WorkcardId Setter
+// 工单id
+func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetWorkcardId(_workcardId int64) error {
+	r._workcardId = _workcardId
+	r.Set("workcard_id", _workcardId)
+	return nil
+}
+
+// Get WorkcardId Getter
+func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetWorkcardId() int64 {
+	return r._workcardId
+}

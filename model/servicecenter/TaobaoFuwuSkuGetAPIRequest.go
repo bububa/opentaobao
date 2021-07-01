@@ -19,4 +19,49 @@ type TaobaoFuwuSkuGetAPIRequest struct {
 	_nick string
 }
 
-// New
+// NewTaobaoFuwuSkuGetRequest 初始化TaobaoFuwuSkuGetAPIRequest对象
+func NewTaobaoFuwuSkuGetRequest() *TaobaoFuwuSkuGetAPIRequest {
+	return &TaobaoFuwuSkuGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFuwuSkuGetAPIRequest) GetApiMethodName() string {
+	return "taobao.fuwu.sku.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFuwuSkuGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ArticleCode Setter
+// 服务code
+func (r *TaobaoFuwuSkuGetAPIRequest) SetArticleCode(_articleCode string) error {
+	r._articleCode = _articleCode
+	r.Set("article_code", _articleCode)
+	return nil
+}
+
+// Get ArticleCode Getter
+func (r TaobaoFuwuSkuGetAPIRequest) GetArticleCode() string {
+	return r._articleCode
+}
+
+// Set is Nick Setter
+// 用户的淘宝nick
+func (r *TaobaoFuwuSkuGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoFuwuSkuGetAPIRequest) GetNick() string {
+	return r._nick
+}

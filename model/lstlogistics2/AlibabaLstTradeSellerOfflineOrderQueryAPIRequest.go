@@ -17,4 +17,36 @@ type AlibabaLstTradeSellerOfflineOrderQueryAPIRequest struct {
 	_offlineOrderQueryParam *LstOfflineOrderQueryParam
 }
 
-// New
+// NewAlibabaLstTradeSellerOfflineOrderQueryRequest 初始化AlibabaLstTradeSellerOfflineOrderQueryAPIRequest对象
+func NewAlibabaLstTradeSellerOfflineOrderQueryRequest() *AlibabaLstTradeSellerOfflineOrderQueryAPIRequest {
+	return &AlibabaLstTradeSellerOfflineOrderQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstTradeSellerOfflineOrderQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.trade.seller.offline.order.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstTradeSellerOfflineOrderQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OfflineOrderQueryParam Setter
+// 入参
+func (r *AlibabaLstTradeSellerOfflineOrderQueryAPIRequest) SetOfflineOrderQueryParam(_offlineOrderQueryParam *LstOfflineOrderQueryParam) error {
+	r._offlineOrderQueryParam = _offlineOrderQueryParam
+	r.Set("offline_order_query_param", _offlineOrderQueryParam)
+	return nil
+}
+
+// Get OfflineOrderQueryParam Getter
+func (r AlibabaLstTradeSellerOfflineOrderQueryAPIRequest) GetOfflineOrderQueryParam() *LstOfflineOrderQueryParam {
+	return r._offlineOrderQueryParam
+}

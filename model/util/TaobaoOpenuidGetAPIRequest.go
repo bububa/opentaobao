@@ -15,4 +15,23 @@ type TaobaoOpenuidGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoOpenuidGetRequest 初始化TaobaoOpenuidGetAPIRequest对象
+func NewTaobaoOpenuidGetRequest() *TaobaoOpenuidGetAPIRequest {
+	return &TaobaoOpenuidGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpenuidGetAPIRequest) GetApiMethodName() string {
+	return "taobao.openuid.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpenuidGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

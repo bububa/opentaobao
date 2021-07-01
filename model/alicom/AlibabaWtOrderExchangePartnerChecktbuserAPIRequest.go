@@ -17,4 +17,36 @@ type AlibabaWtOrderExchangePartnerChecktbuserAPIRequest struct {
 	_outExchangeModel *OutExchangeModel
 }
 
-// New
+// NewAlibabaWtOrderExchangePartnerChecktbuserRequest 初始化AlibabaWtOrderExchangePartnerChecktbuserAPIRequest对象
+func NewAlibabaWtOrderExchangePartnerChecktbuserRequest() *AlibabaWtOrderExchangePartnerChecktbuserAPIRequest {
+	return &AlibabaWtOrderExchangePartnerChecktbuserAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWtOrderExchangePartnerChecktbuserAPIRequest) GetApiMethodName() string {
+	return "alibaba.wt.order.exchange.partner.checktbuser"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWtOrderExchangePartnerChecktbuserAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OutExchangeModel Setter
+// model入参
+func (r *AlibabaWtOrderExchangePartnerChecktbuserAPIRequest) SetOutExchangeModel(_outExchangeModel *OutExchangeModel) error {
+	r._outExchangeModel = _outExchangeModel
+	r.Set("out_exchange_model", _outExchangeModel)
+	return nil
+}
+
+// Get OutExchangeModel Getter
+func (r AlibabaWtOrderExchangePartnerChecktbuserAPIRequest) GetOutExchangeModel() *OutExchangeModel {
+	return r._outExchangeModel
+}

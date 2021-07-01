@@ -17,4 +17,36 @@ type AlibabaSecurityJaqRpFetchmaterialAPIRequest struct {
 	_securityKey string
 }
 
-// New
+// NewAlibabaSecurityJaqRpFetchmaterialRequest 初始化AlibabaSecurityJaqRpFetchmaterialAPIRequest对象
+func NewAlibabaSecurityJaqRpFetchmaterialRequest() *AlibabaSecurityJaqRpFetchmaterialAPIRequest {
+	return &AlibabaSecurityJaqRpFetchmaterialAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSecurityJaqRpFetchmaterialAPIRequest) GetApiMethodName() string {
+	return "alibaba.security.jaq.rp.fetchmaterial"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSecurityJaqRpFetchmaterialAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SecurityKey Setter
+// 消息服务推送的key
+func (r *AlibabaSecurityJaqRpFetchmaterialAPIRequest) SetSecurityKey(_securityKey string) error {
+	r._securityKey = _securityKey
+	r.Set("security_key", _securityKey)
+	return nil
+}
+
+// Get SecurityKey Getter
+func (r AlibabaSecurityJaqRpFetchmaterialAPIRequest) GetSecurityKey() string {
+	return r._securityKey
+}

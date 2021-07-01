@@ -17,4 +17,36 @@ type TaobaoSungariDisposeQueryAPIRequest struct {
 	_paramList []string
 }
 
-// New
+// NewTaobaoSungariDisposeQueryRequest 初始化TaobaoSungariDisposeQueryAPIRequest对象
+func NewTaobaoSungariDisposeQueryRequest() *TaobaoSungariDisposeQueryAPIRequest {
+	return &TaobaoSungariDisposeQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSungariDisposeQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.sungari.dispose.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSungariDisposeQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamList Setter
+// 查询的key列表
+func (r *TaobaoSungariDisposeQueryAPIRequest) SetParamList(_paramList []string) error {
+	r._paramList = _paramList
+	r.Set("param_list", _paramList)
+	return nil
+}
+
+// Get ParamList Getter
+func (r TaobaoSungariDisposeQueryAPIRequest) GetParamList() []string {
+	return r._paramList
+}

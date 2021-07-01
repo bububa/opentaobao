@@ -17,4 +17,36 @@ type AlibabaDamaiMevOpenChangeticketAPIRequest struct {
 	_ticketIdOpenParam *TicketIdOpenParam
 }
 
-// New
+// NewAlibabaDamaiMevOpenChangeticketRequest 初始化AlibabaDamaiMevOpenChangeticketAPIRequest对象
+func NewAlibabaDamaiMevOpenChangeticketRequest() *AlibabaDamaiMevOpenChangeticketAPIRequest {
+	return &AlibabaDamaiMevOpenChangeticketAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDamaiMevOpenChangeticketAPIRequest) GetApiMethodName() string {
+	return "alibaba.damai.mev.open.changeticket"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDamaiMevOpenChangeticketAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TicketIdOpenParam Setter
+// 入参ticketIdOpenParam
+func (r *AlibabaDamaiMevOpenChangeticketAPIRequest) SetTicketIdOpenParam(_ticketIdOpenParam *TicketIdOpenParam) error {
+	r._ticketIdOpenParam = _ticketIdOpenParam
+	r.Set("ticket_id_open_param", _ticketIdOpenParam)
+	return nil
+}
+
+// Get TicketIdOpenParam Getter
+func (r AlibabaDamaiMevOpenChangeticketAPIRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
+	return r._ticketIdOpenParam
+}

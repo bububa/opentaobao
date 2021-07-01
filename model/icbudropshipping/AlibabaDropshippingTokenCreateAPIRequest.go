@@ -15,4 +15,23 @@ type AlibabaDropshippingTokenCreateAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaDropshippingTokenCreateRequest 初始化AlibabaDropshippingTokenCreateAPIRequest对象
+func NewAlibabaDropshippingTokenCreateRequest() *AlibabaDropshippingTokenCreateAPIRequest {
+	return &AlibabaDropshippingTokenCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaDropshippingTokenCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.dropshipping.token.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaDropshippingTokenCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

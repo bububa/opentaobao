@@ -17,4 +17,36 @@ type TmallProductSpecGetAPIRequest struct {
 	_specId int64
 }
 
-// New
+// NewTmallProductSpecGetRequest 初始化TmallProductSpecGetAPIRequest对象
+func NewTmallProductSpecGetRequest() *TmallProductSpecGetAPIRequest {
+	return &TmallProductSpecGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallProductSpecGetAPIRequest) GetApiMethodName() string {
+	return "tmall.product.spec.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallProductSpecGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SpecId Setter
+// 要获取信息的产品规格信息。
+func (r *TmallProductSpecGetAPIRequest) SetSpecId(_specId int64) error {
+	r._specId = _specId
+	r.Set("spec_id", _specId)
+	return nil
+}
+
+// Get SpecId Getter
+func (r TmallProductSpecGetAPIRequest) GetSpecId() int64 {
+	return r._specId
+}

@@ -17,4 +17,36 @@ type AlibabaEleFengniaoUserTimeQueryAPIRequest struct {
 	_param *PredictDeliveryTimeParam
 }
 
-// New
+// NewAlibabaEleFengniaoUserTimeQueryRequest 初始化AlibabaEleFengniaoUserTimeQueryAPIRequest对象
+func NewAlibabaEleFengniaoUserTimeQueryRequest() *AlibabaEleFengniaoUserTimeQueryAPIRequest {
+	return &AlibabaEleFengniaoUserTimeQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEleFengniaoUserTimeQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.ele.fengniao.user.time.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEleFengniaoUserTimeQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 询T入参
+func (r *AlibabaEleFengniaoUserTimeQueryAPIRequest) SetParam(_param *PredictDeliveryTimeParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaEleFengniaoUserTimeQueryAPIRequest) GetParam() *PredictDeliveryTimeParam {
+	return r._param
+}

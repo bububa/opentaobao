@@ -19,4 +19,49 @@ type AlibabaRetailElectronicCertificatePreConfirmAPIRequest struct {
 	_code int64
 }
 
-// New
+// NewAlibabaRetailElectronicCertificatePreConfirmRequest 初始化AlibabaRetailElectronicCertificatePreConfirmAPIRequest对象
+func NewAlibabaRetailElectronicCertificatePreConfirmRequest() *AlibabaRetailElectronicCertificatePreConfirmAPIRequest {
+	return &AlibabaRetailElectronicCertificatePreConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaRetailElectronicCertificatePreConfirmAPIRequest) GetApiMethodName() string {
+	return "alibaba.retail.electronic.certificate.pre.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaRetailElectronicCertificatePreConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DeviceId Setter
+// 设备ID
+func (r *AlibabaRetailElectronicCertificatePreConfirmAPIRequest) SetDeviceId(_deviceId string) error {
+	r._deviceId = _deviceId
+	r.Set("device_id", _deviceId)
+	return nil
+}
+
+// Get DeviceId Getter
+func (r AlibabaRetailElectronicCertificatePreConfirmAPIRequest) GetDeviceId() string {
+	return r._deviceId
+}
+
+// Set is Code Setter
+// 核销码
+func (r *AlibabaRetailElectronicCertificatePreConfirmAPIRequest) SetCode(_code int64) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// Get Code Getter
+func (r AlibabaRetailElectronicCertificatePreConfirmAPIRequest) GetCode() int64 {
+	return r._code
+}

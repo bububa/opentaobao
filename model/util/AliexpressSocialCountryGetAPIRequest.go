@@ -17,4 +17,36 @@ type AliexpressSocialCountryGetAPIRequest struct {
 	_language string
 }
 
-// New
+// NewAliexpressSocialCountryGetRequest 初始化AliexpressSocialCountryGetAPIRequest对象
+func NewAliexpressSocialCountryGetRequest() *AliexpressSocialCountryGetAPIRequest {
+	return &AliexpressSocialCountryGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressSocialCountryGetAPIRequest) GetApiMethodName() string {
+	return "aliexpress.social.country.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressSocialCountryGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Language Setter
+// 语言
+func (r *AliexpressSocialCountryGetAPIRequest) SetLanguage(_language string) error {
+	r._language = _language
+	r.Set("language", _language)
+	return nil
+}
+
+// Get Language Getter
+func (r AliexpressSocialCountryGetAPIRequest) GetLanguage() string {
+	return r._language
+}

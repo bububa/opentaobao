@@ -29,4 +29,114 @@ type AlibabaServicecenterSpserviceorderQueryAPIRequest struct {
 	_spServiceOrderId int64
 }
 
-// New
+// NewAlibabaServicecenterSpserviceorderQueryRequest 初始化AlibabaServicecenterSpserviceorderQueryAPIRequest对象
+func NewAlibabaServicecenterSpserviceorderQueryRequest() *AlibabaServicecenterSpserviceorderQueryAPIRequest {
+	return &AlibabaServicecenterSpserviceorderQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaServicecenterSpserviceorderQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.servicecenter.spserviceorder.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaServicecenterSpserviceorderQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StatusCodes Setter
+// 状态码，可传多个
+func (r *AlibabaServicecenterSpserviceorderQueryAPIRequest) SetStatusCodes(_statusCodes string) error {
+	r._statusCodes = _statusCodes
+	r.Set("status_codes", _statusCodes)
+	return nil
+}
+
+// Get StatusCodes Getter
+func (r AlibabaServicecenterSpserviceorderQueryAPIRequest) GetStatusCodes() string {
+	return r._statusCodes
+}
+
+// Set is CurrentPage Setter
+// 查询第几页，默认1
+func (r *AlibabaServicecenterSpserviceorderQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// Get CurrentPage Getter
+func (r AlibabaServicecenterSpserviceorderQueryAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// Set is PageSize Setter
+// 每页大小，默认50，最大50
+func (r *AlibabaServicecenterSpserviceorderQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r AlibabaServicecenterSpserviceorderQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is GmtModifiedEnd Setter
+// 服务单修改时间(时间段15分钟以内)(包含时分秒)
+func (r *AlibabaServicecenterSpserviceorderQueryAPIRequest) SetGmtModifiedEnd(_gmtModifiedEnd string) error {
+	r._gmtModifiedEnd = _gmtModifiedEnd
+	r.Set("gmt_modified_end", _gmtModifiedEnd)
+	return nil
+}
+
+// Get GmtModifiedEnd Getter
+func (r AlibabaServicecenterSpserviceorderQueryAPIRequest) GetGmtModifiedEnd() string {
+	return r._gmtModifiedEnd
+}
+
+// Set is GmtModifiedStart Setter
+// 服务单修改时间(包含时分秒)
+func (r *AlibabaServicecenterSpserviceorderQueryAPIRequest) SetGmtModifiedStart(_gmtModifiedStart string) error {
+	r._gmtModifiedStart = _gmtModifiedStart
+	r.Set("gmt_modified_start", _gmtModifiedStart)
+	return nil
+}
+
+// Get GmtModifiedStart Getter
+func (r AlibabaServicecenterSpserviceorderQueryAPIRequest) GetGmtModifiedStart() string {
+	return r._gmtModifiedStart
+}
+
+// Set is MasterParentBizOrderId Setter
+// 实物主订单id(消费者在淘宝订单里看到的订单号)
+func (r *AlibabaServicecenterSpserviceorderQueryAPIRequest) SetMasterParentBizOrderId(_masterParentBizOrderId int64) error {
+	r._masterParentBizOrderId = _masterParentBizOrderId
+	r.Set("master_parent_biz_order_id", _masterParentBizOrderId)
+	return nil
+}
+
+// Get MasterParentBizOrderId Getter
+func (r AlibabaServicecenterSpserviceorderQueryAPIRequest) GetMasterParentBizOrderId() int64 {
+	return r._masterParentBizOrderId
+}
+
+// Set is SpServiceOrderId Setter
+// 服务单id
+func (r *AlibabaServicecenterSpserviceorderQueryAPIRequest) SetSpServiceOrderId(_spServiceOrderId int64) error {
+	r._spServiceOrderId = _spServiceOrderId
+	r.Set("sp_service_order_id", _spServiceOrderId)
+	return nil
+}
+
+// Get SpServiceOrderId Getter
+func (r AlibabaServicecenterSpserviceorderQueryAPIRequest) GetSpServiceOrderId() int64 {
+	return r._spServiceOrderId
+}

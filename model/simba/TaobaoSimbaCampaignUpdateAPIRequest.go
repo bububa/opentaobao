@@ -23,4 +23,75 @@ type TaobaoSimbaCampaignUpdateAPIRequest struct {
 	_nick string
 }
 
-// New
+// NewTaobaoSimbaCampaignUpdateRequest 初始化TaobaoSimbaCampaignUpdateAPIRequest对象
+func NewTaobaoSimbaCampaignUpdateRequest() *TaobaoSimbaCampaignUpdateAPIRequest {
+	return &TaobaoSimbaCampaignUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaCampaignUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.campaign.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaCampaignUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OnlineStatus Setter
+// 用户设置的上下限状态；offline-下线；online-上线；
+func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetOnlineStatus(_onlineStatus string) error {
+	r._onlineStatus = _onlineStatus
+	r.Set("online_status", _onlineStatus)
+	return nil
+}
+
+// Get OnlineStatus Getter
+func (r TaobaoSimbaCampaignUpdateAPIRequest) GetOnlineStatus() string {
+	return r._onlineStatus
+}
+
+// Set is CampaignId Setter
+// 推广计划Id
+func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// Get CampaignId Getter
+func (r TaobaoSimbaCampaignUpdateAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
+}
+
+// Set is Title Setter
+// 推广计划名称，不能多余40个字符，不能和客户其他推广计划同名。
+func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetTitle(_title string) error {
+	r._title = _title
+	r.Set("title", _title)
+	return nil
+}
+
+// Get Title Getter
+func (r TaobaoSimbaCampaignUpdateAPIRequest) GetTitle() string {
+	return r._title
+}
+
+// Set is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaCampaignUpdateAPIRequest) GetNick() string {
+	return r._nick
+}

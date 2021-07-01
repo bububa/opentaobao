@@ -17,4 +17,36 @@ type TaobaoAlitripTravelItemElementQueryAPIRequest struct {
 	_outerIds []string
 }
 
-// New
+// NewTaobaoAlitripTravelItemElementQueryRequest 初始化TaobaoAlitripTravelItemElementQueryAPIRequest对象
+func NewTaobaoAlitripTravelItemElementQueryRequest() *TaobaoAlitripTravelItemElementQueryAPIRequest {
+	return &TaobaoAlitripTravelItemElementQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripTravelItemElementQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.travel.item.element.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripTravelItemElementQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OuterIds Setter
+// 需要查询的资源元素列表，最大列表长度为50
+func (r *TaobaoAlitripTravelItemElementQueryAPIRequest) SetOuterIds(_outerIds []string) error {
+	r._outerIds = _outerIds
+	r.Set("outer_ids", _outerIds)
+	return nil
+}
+
+// Get OuterIds Getter
+func (r TaobaoAlitripTravelItemElementQueryAPIRequest) GetOuterIds() []string {
+	return r._outerIds
+}

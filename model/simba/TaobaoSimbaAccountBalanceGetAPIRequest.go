@@ -17,4 +17,36 @@ type TaobaoSimbaAccountBalanceGetAPIRequest struct {
 	_nick string
 }
 
-// New
+// NewTaobaoSimbaAccountBalanceGetRequest 初始化TaobaoSimbaAccountBalanceGetAPIRequest对象
+func NewTaobaoSimbaAccountBalanceGetRequest() *TaobaoSimbaAccountBalanceGetAPIRequest {
+	return &TaobaoSimbaAccountBalanceGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaAccountBalanceGetAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.account.balance.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaAccountBalanceGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaAccountBalanceGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaAccountBalanceGetAPIRequest) GetNick() string {
+	return r._nick
+}

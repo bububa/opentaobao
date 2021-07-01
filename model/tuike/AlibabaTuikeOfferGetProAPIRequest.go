@@ -21,4 +21,62 @@ type AlibabaTuikeOfferGetProAPIRequest struct {
 	_queryString string
 }
 
-// New
+// NewAlibabaTuikeOfferGetProRequest 初始化AlibabaTuikeOfferGetProAPIRequest对象
+func NewAlibabaTuikeOfferGetProRequest() *AlibabaTuikeOfferGetProAPIRequest {
+	return &AlibabaTuikeOfferGetProAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTuikeOfferGetProAPIRequest) GetApiMethodName() string {
+	return "alibaba.tuike.offer.get.pro"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTuikeOfferGetProAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is LoginId Setter
+// 用户ID
+func (r *AlibabaTuikeOfferGetProAPIRequest) SetLoginId(_loginId string) error {
+	r._loginId = _loginId
+	r.Set("login_id", _loginId)
+	return nil
+}
+
+// Get LoginId Getter
+func (r AlibabaTuikeOfferGetProAPIRequest) GetLoginId() string {
+	return r._loginId
+}
+
+// Set is IsvCode Setter
+// 标识调用方
+func (r *AlibabaTuikeOfferGetProAPIRequest) SetIsvCode(_isvCode string) error {
+	r._isvCode = _isvCode
+	r.Set("isv_code", _isvCode)
+	return nil
+}
+
+// Get IsvCode Getter
+func (r AlibabaTuikeOfferGetProAPIRequest) GetIsvCode() string {
+	return r._isvCode
+}
+
+// Set is QueryString Setter
+// 搜索查询参数(json)
+func (r *AlibabaTuikeOfferGetProAPIRequest) SetQueryString(_queryString string) error {
+	r._queryString = _queryString
+	r.Set("query_string", _queryString)
+	return nil
+}
+
+// Get QueryString Getter
+func (r AlibabaTuikeOfferGetProAPIRequest) GetQueryString() string {
+	return r._queryString
+}

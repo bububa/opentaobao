@@ -21,4 +21,62 @@ type AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest struct {
 	_location int64
 }
 
-// New
+// NewAlibabaServicecenterFulfiltaskBuyeraddressChangeRequest 初始化AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest对象
+func NewAlibabaServicecenterFulfiltaskBuyeraddressChangeRequest() *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest {
+	return &AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetApiMethodName() string {
+	return "alibaba.servicecenter.fulfiltask.buyeraddress.change"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FulfilTaskId Setter
+// 核销单id
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
+	r._fulfilTaskId = _fulfilTaskId
+	r.Set("fulfil_task_id", _fulfilTaskId)
+	return nil
+}
+
+// Get FulfilTaskId Getter
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetFulfilTaskId() int64 {
+	return r._fulfilTaskId
+}
+
+// Set is AddressDetail Setter
+// 详细地址
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetAddressDetail(_addressDetail string) error {
+	r._addressDetail = _addressDetail
+	r.Set("address_detail", _addressDetail)
+	return nil
+}
+
+// Get AddressDetail Getter
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetAddressDetail() string {
+	return r._addressDetail
+}
+
+// Set is Location Setter
+// 地址编码
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetLocation(_location int64) error {
+	r._location = _location
+	r.Set("location", _location)
+	return nil
+}
+
+// Get Location Getter
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetLocation() int64 {
+	return r._location
+}

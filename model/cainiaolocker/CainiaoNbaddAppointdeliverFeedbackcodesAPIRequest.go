@@ -15,4 +15,23 @@ type CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewCainiaoNbaddAppointdeliverFeedbackcodesRequest 初始化CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest对象
+func NewCainiaoNbaddAppointdeliverFeedbackcodesRequest() *CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest {
+	return &CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest) GetApiMethodName() string {
+	return "cainiao.nbadd.appointdeliver.feedbackcodes"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

@@ -19,4 +19,49 @@ type AlibabaAliqinFcIotCardofferAPIRequest struct {
 	_billsource string
 }
 
-// New
+// NewAlibabaAliqinFcIotCardofferRequest 初始化AlibabaAliqinFcIotCardofferAPIRequest对象
+func NewAlibabaAliqinFcIotCardofferRequest() *AlibabaAliqinFcIotCardofferAPIRequest {
+	return &AlibabaAliqinFcIotCardofferAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAliqinFcIotCardofferAPIRequest) GetApiMethodName() string {
+	return "alibaba.aliqin.fc.iot.cardoffer"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAliqinFcIotCardofferAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Billreal Setter
+// 具体ICCID的值
+func (r *AlibabaAliqinFcIotCardofferAPIRequest) SetBillreal(_billreal string) error {
+	r._billreal = _billreal
+	r.Set("billreal", _billreal)
+	return nil
+}
+
+// Get Billreal Getter
+func (r AlibabaAliqinFcIotCardofferAPIRequest) GetBillreal() string {
+	return r._billreal
+}
+
+// Set is Billsource Setter
+// ICCID
+func (r *AlibabaAliqinFcIotCardofferAPIRequest) SetBillsource(_billsource string) error {
+	r._billsource = _billsource
+	r.Set("billsource", _billsource)
+	return nil
+}
+
+// Get Billsource Getter
+func (r AlibabaAliqinFcIotCardofferAPIRequest) GetBillsource() string {
+	return r._billsource
+}

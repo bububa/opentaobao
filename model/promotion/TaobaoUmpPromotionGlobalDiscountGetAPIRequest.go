@@ -15,4 +15,23 @@ type TaobaoUmpPromotionGlobalDiscountGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoUmpPromotionGlobalDiscountGetRequest 初始化TaobaoUmpPromotionGlobalDiscountGetAPIRequest对象
+func NewTaobaoUmpPromotionGlobalDiscountGetRequest() *TaobaoUmpPromotionGlobalDiscountGetAPIRequest {
+	return &TaobaoUmpPromotionGlobalDiscountGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpPromotionGlobalDiscountGetAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.promotion.global.discount.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpPromotionGlobalDiscountGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

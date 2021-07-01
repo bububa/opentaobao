@@ -17,4 +17,36 @@ type TaobaoFeedflowItemAdzoneRptdailylistAPIRequest struct {
 	_rptQueryDTO *RptQueryDto
 }
 
-// New
+// NewTaobaoFeedflowItemAdzoneRptdailylistRequest 初始化TaobaoFeedflowItemAdzoneRptdailylistAPIRequest对象
+func NewTaobaoFeedflowItemAdzoneRptdailylistRequest() *TaobaoFeedflowItemAdzoneRptdailylistAPIRequest {
+	return &TaobaoFeedflowItemAdzoneRptdailylistAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFeedflowItemAdzoneRptdailylistAPIRequest) GetApiMethodName() string {
+	return "taobao.feedflow.item.adzone.rptdailylist"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFeedflowItemAdzoneRptdailylistAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RptQueryDTO Setter
+// 查询参数
+func (r *TaobaoFeedflowItemAdzoneRptdailylistAPIRequest) SetRptQueryDTO(_rptQueryDTO *RptQueryDto) error {
+	r._rptQueryDTO = _rptQueryDTO
+	r.Set("rpt_query_d_t_o", _rptQueryDTO)
+	return nil
+}
+
+// Get RptQueryDTO Getter
+func (r TaobaoFeedflowItemAdzoneRptdailylistAPIRequest) GetRptQueryDTO() *RptQueryDto {
+	return r._rptQueryDTO
+}

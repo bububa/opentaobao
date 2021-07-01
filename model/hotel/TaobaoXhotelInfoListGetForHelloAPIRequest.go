@@ -17,4 +17,36 @@ type TaobaoXhotelInfoListGetForHelloAPIRequest struct {
 	_hotelInfoParam *HotelInfoParam
 }
 
-// New
+// NewTaobaoXhotelInfoListGetForHelloRequest 初始化TaobaoXhotelInfoListGetForHelloAPIRequest对象
+func NewTaobaoXhotelInfoListGetForHelloRequest() *TaobaoXhotelInfoListGetForHelloAPIRequest {
+	return &TaobaoXhotelInfoListGetForHelloAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelInfoListGetForHelloAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.info.list.get.for.hello"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelInfoListGetForHelloAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is HotelInfoParam Setter
+// 参数封装模型
+func (r *TaobaoXhotelInfoListGetForHelloAPIRequest) SetHotelInfoParam(_hotelInfoParam *HotelInfoParam) error {
+	r._hotelInfoParam = _hotelInfoParam
+	r.Set("hotel_info_param", _hotelInfoParam)
+	return nil
+}
+
+// Get HotelInfoParam Getter
+func (r TaobaoXhotelInfoListGetForHelloAPIRequest) GetHotelInfoParam() *HotelInfoParam {
+	return r._hotelInfoParam
+}

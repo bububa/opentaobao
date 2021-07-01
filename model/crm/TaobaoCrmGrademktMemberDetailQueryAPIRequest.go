@@ -19,4 +19,49 @@ type TaobaoCrmGrademktMemberDetailQueryAPIRequest struct {
 	_parameter string
 }
 
-// New
+// NewTaobaoCrmGrademktMemberDetailQueryRequest 初始化TaobaoCrmGrademktMemberDetailQueryAPIRequest对象
+func NewTaobaoCrmGrademktMemberDetailQueryRequest() *TaobaoCrmGrademktMemberDetailQueryAPIRequest {
+	return &TaobaoCrmGrademktMemberDetailQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCrmGrademktMemberDetailQueryAPIRequest) GetApiMethodName() string {
+	return "taobao.crm.grademkt.member.detail.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCrmGrademktMemberDetailQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Feather Setter
+// 扩展字段
+func (r *TaobaoCrmGrademktMemberDetailQueryAPIRequest) SetFeather(_feather string) error {
+	r._feather = _feather
+	r.Set("feather", _feather)
+	return nil
+}
+
+// Get Feather Getter
+func (r TaobaoCrmGrademktMemberDetailQueryAPIRequest) GetFeather() string {
+	return r._feather
+}
+
+// Set is Parameter Setter
+// 创建营销详情，生成方法见http://open.taobao.com/doc/detail.htm?id=101281
+func (r *TaobaoCrmGrademktMemberDetailQueryAPIRequest) SetParameter(_parameter string) error {
+	r._parameter = _parameter
+	r.Set("parameter", _parameter)
+	return nil
+}
+
+// Get Parameter Getter
+func (r TaobaoCrmGrademktMemberDetailQueryAPIRequest) GetParameter() string {
+	return r._parameter
+}

@@ -17,4 +17,36 @@ type AlitripAgentFlightSellRefundListAPIRequest struct {
 	_param *RefundListRequestDto
 }
 
-// New
+// NewAlitripAgentFlightSellRefundListRequest 初始化AlitripAgentFlightSellRefundListAPIRequest对象
+func NewAlitripAgentFlightSellRefundListRequest() *AlitripAgentFlightSellRefundListAPIRequest {
+	return &AlitripAgentFlightSellRefundListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripAgentFlightSellRefundListAPIRequest) GetApiMethodName() string {
+	return "alitrip.agent.flight.sell.refund.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripAgentFlightSellRefundListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 请求对象
+func (r *AlitripAgentFlightSellRefundListAPIRequest) SetParam(_param *RefundListRequestDto) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlitripAgentFlightSellRefundListAPIRequest) GetParam() *RefundListRequestDto {
+	return r._param
+}

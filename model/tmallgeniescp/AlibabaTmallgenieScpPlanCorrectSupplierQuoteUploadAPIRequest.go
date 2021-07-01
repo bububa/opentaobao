@@ -17,4 +17,36 @@ type AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest struct {
 	_netDemandRequest *NetDemandRequest
 }
 
-// New
+// NewAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadRequest 初始化AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest对象
+func NewAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadRequest() *AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest {
+	return &AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest) GetApiMethodName() string {
+	return "alibaba.tmallgenie.scp.plan.correct.supplier.quote.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is NetDemandRequest Setter
+// 对象
+func (r *AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest) SetNetDemandRequest(_netDemandRequest *NetDemandRequest) error {
+	r._netDemandRequest = _netDemandRequest
+	r.Set("net_demand_request", _netDemandRequest)
+	return nil
+}
+
+// Get NetDemandRequest Getter
+func (r AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest) GetNetDemandRequest() *NetDemandRequest {
+	return r._netDemandRequest
+}

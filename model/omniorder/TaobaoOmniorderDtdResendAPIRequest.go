@@ -17,4 +17,36 @@ type TaobaoOmniorderDtdResendAPIRequest struct {
 	_mainOrderId int64
 }
 
-// New
+// NewTaobaoOmniorderDtdResendRequest 初始化TaobaoOmniorderDtdResendAPIRequest对象
+func NewTaobaoOmniorderDtdResendRequest() *TaobaoOmniorderDtdResendAPIRequest {
+	return &TaobaoOmniorderDtdResendAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOmniorderDtdResendAPIRequest) GetApiMethodName() string {
+	return "taobao.omniorder.dtd.resend"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOmniorderDtdResendAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MainOrderId Setter
+// 淘宝主订单ID
+func (r *TaobaoOmniorderDtdResendAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+	r._mainOrderId = _mainOrderId
+	r.Set("main_order_id", _mainOrderId)
+	return nil
+}
+
+// Get MainOrderId Getter
+func (r TaobaoOmniorderDtdResendAPIRequest) GetMainOrderId() int64 {
+	return r._mainOrderId
+}

@@ -17,4 +17,36 @@ type AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest struct {
 	_couponStatisticsParamDo *CouponStatisticsParamDo
 }
 
-// New
+// NewAlibabaTxcsBrandmarketingCouponStatisticsGetRequest 初始化AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest对象
+func NewAlibabaTxcsBrandmarketingCouponStatisticsGetRequest() *AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest {
+	return &AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.txcs.brandmarketing.coupon.statistics.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CouponStatisticsParamDo Setter
+// 请求信息
+func (r *AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) SetCouponStatisticsParamDo(_couponStatisticsParamDo *CouponStatisticsParamDo) error {
+	r._couponStatisticsParamDo = _couponStatisticsParamDo
+	r.Set("coupon_statistics_param_do", _couponStatisticsParamDo)
+	return nil
+}
+
+// Get CouponStatisticsParamDo Getter
+func (r AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) GetCouponStatisticsParamDo() *CouponStatisticsParamDo {
+	return r._couponStatisticsParamDo
+}

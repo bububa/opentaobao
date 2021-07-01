@@ -17,4 +17,36 @@ type AlitripTuanHotelItemInfoGetAPIRequest struct {
 	_itemId int64
 }
 
-// New
+// NewAlitripTuanHotelItemInfoGetRequest 初始化AlitripTuanHotelItemInfoGetAPIRequest对象
+func NewAlitripTuanHotelItemInfoGetRequest() *AlitripTuanHotelItemInfoGetAPIRequest {
+	return &AlitripTuanHotelItemInfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTuanHotelItemInfoGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.tuan.hotel.item.info.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTuanHotelItemInfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemId Setter
+// 宝贝ID
+func (r *AlitripTuanHotelItemInfoGetAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// Get ItemId Getter
+func (r AlitripTuanHotelItemInfoGetAPIRequest) GetItemId() int64 {
+	return r._itemId
+}

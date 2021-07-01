@@ -17,4 +17,36 @@ type AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest struct {
 	_frequencyRequest *FrequencyRequest
 }
 
-// New
+// NewAlibabaAlihealthOutflowFrequencySaveorupdateRequest 初始化AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest对象
+func NewAlibabaAlihealthOutflowFrequencySaveorupdateRequest() *AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest {
+	return &AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.outflow.frequency.saveorupdate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FrequencyRequest Setter
+// 系统自动生成
+func (r *AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest) SetFrequencyRequest(_frequencyRequest *FrequencyRequest) error {
+	r._frequencyRequest = _frequencyRequest
+	r.Set("frequency_request", _frequencyRequest)
+	return nil
+}
+
+// Get FrequencyRequest Getter
+func (r AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest) GetFrequencyRequest() *FrequencyRequest {
+	return r._frequencyRequest
+}

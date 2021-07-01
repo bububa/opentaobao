@@ -23,4 +23,49 @@ type TaobaoWirelessVideoCheckAPIRequest struct {
 	_interval int64
 }
 
-// New
+// NewTaobaoWirelessVideoCheckRequest 初始化TaobaoWirelessVideoCheckAPIRequest对象
+func NewTaobaoWirelessVideoCheckRequest() *TaobaoWirelessVideoCheckAPIRequest {
+	return &TaobaoWirelessVideoCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWirelessVideoCheckAPIRequest) GetApiMethodName() string {
+	return "taobao.wireless.video.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWirelessVideoCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Url Setter
+// 视频的URL，必须为淘系安全域名地址。视频格式支持flv、mp4。
+func (r *TaobaoWirelessVideoCheckAPIRequest) SetUrl(_url string) error {
+	r._url = _url
+	r.Set("url", _url)
+	return nil
+}
+
+// Get Url Getter
+func (r TaobaoWirelessVideoCheckAPIRequest) GetUrl() string {
+	return r._url
+}
+
+// Set is Interval Setter
+// 视频截帧间隔，取值范围为[1, 60]，单位为秒。 截帧最多张数为200张，请根据视频时长，合理设置截帧间隔。
+func (r *TaobaoWirelessVideoCheckAPIRequest) SetInterval(_interval int64) error {
+	r._interval = _interval
+	r.Set("interval", _interval)
+	return nil
+}
+
+// Get Interval Getter
+func (r TaobaoWirelessVideoCheckAPIRequest) GetInterval() int64 {
+	return r._interval
+}

@@ -19,4 +19,49 @@ type TaobaoOpentradeGroupMemberInfosAPIRequest struct {
 	_openUserIds []string
 }
 
-// New
+// NewTaobaoOpentradeGroupMemberInfosRequest 初始化TaobaoOpentradeGroupMemberInfosAPIRequest对象
+func NewTaobaoOpentradeGroupMemberInfosRequest() *TaobaoOpentradeGroupMemberInfosAPIRequest {
+	return &TaobaoOpentradeGroupMemberInfosAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpentradeGroupMemberInfosAPIRequest) GetApiMethodName() string {
+	return "taobao.opentrade.group.member.infos"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpentradeGroupMemberInfosAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is GroupId Setter
+// 团id
+func (r *TaobaoOpentradeGroupMemberInfosAPIRequest) SetGroupId(_groupId int64) error {
+	r._groupId = _groupId
+	r.Set("group_id", _groupId)
+	return nil
+}
+
+// Get GroupId Getter
+func (r TaobaoOpentradeGroupMemberInfosAPIRequest) GetGroupId() int64 {
+	return r._groupId
+}
+
+// Set is OpenUserIds Setter
+// 用户openId列表
+func (r *TaobaoOpentradeGroupMemberInfosAPIRequest) SetOpenUserIds(_openUserIds []string) error {
+	r._openUserIds = _openUserIds
+	r.Set("open_user_ids", _openUserIds)
+	return nil
+}
+
+// Get OpenUserIds Getter
+func (r TaobaoOpentradeGroupMemberInfosAPIRequest) GetOpenUserIds() []string {
+	return r._openUserIds
+}

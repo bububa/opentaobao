@@ -20,4 +20,49 @@ type TaobaoTmcTopicGroupAddAPIRequest struct {
 	_topics []string
 }
 
-// New
+// NewTaobaoTmcTopicGroupAddRequest 初始化TaobaoTmcTopicGroupAddAPIRequest对象
+func NewTaobaoTmcTopicGroupAddRequest() *TaobaoTmcTopicGroupAddAPIRequest {
+	return &TaobaoTmcTopicGroupAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTmcTopicGroupAddAPIRequest) GetApiMethodName() string {
+	return "taobao.tmc.topic.group.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTmcTopicGroupAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is GroupName Setter
+// 消息分组名，如果不存在，会自动创建
+func (r *TaobaoTmcTopicGroupAddAPIRequest) SetGroupName(_groupName string) error {
+	r._groupName = _groupName
+	r.Set("group_name", _groupName)
+	return nil
+}
+
+// Get GroupName Getter
+func (r TaobaoTmcTopicGroupAddAPIRequest) GetGroupName() string {
+	return r._groupName
+}
+
+// Set is Topics Setter
+// 消息topic名称，多个以逗号(,)分割
+func (r *TaobaoTmcTopicGroupAddAPIRequest) SetTopics(_topics []string) error {
+	r._topics = _topics
+	r.Set("topics", _topics)
+	return nil
+}
+
+// Get Topics Getter
+func (r TaobaoTmcTopicGroupAddAPIRequest) GetTopics() []string {
+	return r._topics
+}

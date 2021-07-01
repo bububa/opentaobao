@@ -17,4 +17,36 @@ type AlibabaIdleTransferpayQueryAPIRequest struct {
 	_param *PayQueryRequest
 }
 
-// New
+// NewAlibabaIdleTransferpayQueryRequest 初始化AlibabaIdleTransferpayQueryAPIRequest对象
+func NewAlibabaIdleTransferpayQueryRequest() *AlibabaIdleTransferpayQueryAPIRequest {
+	return &AlibabaIdleTransferpayQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleTransferpayQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.transferpay.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleTransferpayQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参
+func (r *AlibabaIdleTransferpayQueryAPIRequest) SetParam(_param *PayQueryRequest) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaIdleTransferpayQueryAPIRequest) GetParam() *PayQueryRequest {
+	return r._param
+}

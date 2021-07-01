@@ -19,4 +19,49 @@ type CainiaoCbossWorkplatformBiztypeQueryallAPIRequest struct {
 	_tradeId string
 }
 
-// New
+// NewCainiaoCbossWorkplatformBiztypeQueryallRequest 初始化CainiaoCbossWorkplatformBiztypeQueryallAPIRequest对象
+func NewCainiaoCbossWorkplatformBiztypeQueryallRequest() *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest {
+	return &CainiaoCbossWorkplatformBiztypeQueryallAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetApiMethodName() string {
+	return "cainiao.cboss.workplatform.biztype.queryall"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Level Setter
+// level
+func (r *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) SetLevel(_level int64) error {
+	r._level = _level
+	r.Set("level", _level)
+	return nil
+}
+
+// Get Level Getter
+func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetLevel() int64 {
+	return r._level
+}
+
+// Set is TradeId Setter
+// tradeId
+func (r *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) SetTradeId(_tradeId string) error {
+	r._tradeId = _tradeId
+	r.Set("trade_id", _tradeId)
+	return nil
+}
+
+// Get TradeId Getter
+func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetTradeId() string {
+	return r._tradeId
+}

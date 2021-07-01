@@ -17,4 +17,36 @@ type AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest struct {
 	_par0 *PageTenantSubAdminsRequest
 }
 
-// New
+// NewAlibabaMoziVdsTenantApiServicePagesubadminsRequest 初始化AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest对象
+func NewAlibabaMoziVdsTenantApiServicePagesubadminsRequest() *AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest {
+	return &AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest) GetApiMethodName() string {
+	return "alibaba.mozi.vds.tenant.api.service.pagesubadmins"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Par0 Setter
+// 入参
+func (r *AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest) SetPar0(_par0 *PageTenantSubAdminsRequest) error {
+	r._par0 = _par0
+	r.Set("par0", _par0)
+	return nil
+}
+
+// Get Par0 Getter
+func (r AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest) GetPar0() *PageTenantSubAdminsRequest {
+	return r._par0
+}

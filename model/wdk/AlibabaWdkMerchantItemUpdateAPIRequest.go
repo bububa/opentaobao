@@ -21,4 +21,62 @@ type AlibabaWdkMerchantItemUpdateAPIRequest struct {
 	_params string
 }
 
-// New
+// NewAlibabaWdkMerchantItemUpdateRequest 初始化AlibabaWdkMerchantItemUpdateAPIRequest对象
+func NewAlibabaWdkMerchantItemUpdateRequest() *AlibabaWdkMerchantItemUpdateAPIRequest {
+	return &AlibabaWdkMerchantItemUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMerchantItemUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.merchant.item.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMerchantItemUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SkuCode Setter
+// 商品编码
+func (r *AlibabaWdkMerchantItemUpdateAPIRequest) SetSkuCode(_skuCode string) error {
+	r._skuCode = _skuCode
+	r.Set("sku_code", _skuCode)
+	return nil
+}
+
+// Get SkuCode Getter
+func (r AlibabaWdkMerchantItemUpdateAPIRequest) GetSkuCode() string {
+	return r._skuCode
+}
+
+// Set is MerchantCode Setter
+// 门店编码
+func (r *AlibabaWdkMerchantItemUpdateAPIRequest) SetMerchantCode(_merchantCode string) error {
+	r._merchantCode = _merchantCode
+	r.Set("merchant_code", _merchantCode)
+	return nil
+}
+
+// Get MerchantCode Getter
+func (r AlibabaWdkMerchantItemUpdateAPIRequest) GetMerchantCode() string {
+	return r._merchantCode
+}
+
+// Set is Params Setter
+// 修改字段的json
+func (r *AlibabaWdkMerchantItemUpdateAPIRequest) SetParams(_params string) error {
+	r._params = _params
+	r.Set("params", _params)
+	return nil
+}
+
+// Get Params Getter
+func (r AlibabaWdkMerchantItemUpdateAPIRequest) GetParams() string {
+	return r._params
+}

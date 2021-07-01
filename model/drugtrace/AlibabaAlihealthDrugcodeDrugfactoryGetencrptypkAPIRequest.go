@@ -17,4 +17,36 @@ type AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIRequest struct {
 	_refEntId string
 }
 
-// New
+// NewAlibabaAlihealthDrugcodeDrugfactoryGetencrptypkRequest 初始化AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIRequest对象
+func NewAlibabaAlihealthDrugcodeDrugfactoryGetencrptypkRequest() *AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIRequest {
+	return &AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.drugcode.drugfactory.getencrptypk"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RefEntId Setter
+// 企业Id
+func (r *AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIRequest) SetRefEntId(_refEntId string) error {
+	r._refEntId = _refEntId
+	r.Set("ref_ent_id", _refEntId)
+	return nil
+}
+
+// Get RefEntId Getter
+func (r AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIRequest) GetRefEntId() string {
+	return r._refEntId
+}

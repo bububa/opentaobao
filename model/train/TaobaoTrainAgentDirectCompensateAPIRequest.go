@@ -17,4 +17,36 @@ type TaobaoTrainAgentDirectCompensateAPIRequest struct {
 	_compensateParam *CompensateParam
 }
 
-// New
+// NewTaobaoTrainAgentDirectCompensateRequest 初始化TaobaoTrainAgentDirectCompensateAPIRequest对象
+func NewTaobaoTrainAgentDirectCompensateRequest() *TaobaoTrainAgentDirectCompensateAPIRequest {
+	return &TaobaoTrainAgentDirectCompensateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTrainAgentDirectCompensateAPIRequest) GetApiMethodName() string {
+	return "taobao.train.agent.direct.compensate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTrainAgentDirectCompensateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CompensateParam Setter
+// 出票成功补偿入参
+func (r *TaobaoTrainAgentDirectCompensateAPIRequest) SetCompensateParam(_compensateParam *CompensateParam) error {
+	r._compensateParam = _compensateParam
+	r.Set("compensate_param", _compensateParam)
+	return nil
+}
+
+// Get CompensateParam Getter
+func (r TaobaoTrainAgentDirectCompensateAPIRequest) GetCompensateParam() *CompensateParam {
+	return r._compensateParam
+}

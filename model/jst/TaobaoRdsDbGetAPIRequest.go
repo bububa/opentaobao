@@ -19,4 +19,49 @@ type TaobaoRdsDbGetAPIRequest struct {
 	_dbStatus int64
 }
 
-// New
+// NewTaobaoRdsDbGetRequest 初始化TaobaoRdsDbGetAPIRequest对象
+func NewTaobaoRdsDbGetRequest() *TaobaoRdsDbGetAPIRequest {
+	return &TaobaoRdsDbGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoRdsDbGetAPIRequest) GetApiMethodName() string {
+	return "taobao.rds.db.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoRdsDbGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is InstanceName Setter
+// rds的实例名
+func (r *TaobaoRdsDbGetAPIRequest) SetInstanceName(_instanceName string) error {
+	r._instanceName = _instanceName
+	r.Set("instance_name", _instanceName)
+	return nil
+}
+
+// Get InstanceName Getter
+func (r TaobaoRdsDbGetAPIRequest) GetInstanceName() string {
+	return r._instanceName
+}
+
+// Set is DbStatus Setter
+// 数据库状态，默认值1
+func (r *TaobaoRdsDbGetAPIRequest) SetDbStatus(_dbStatus int64) error {
+	r._dbStatus = _dbStatus
+	r.Set("db_status", _dbStatus)
+	return nil
+}
+
+// Get DbStatus Getter
+func (r TaobaoRdsDbGetAPIRequest) GetDbStatus() int64 {
+	return r._dbStatus
+}

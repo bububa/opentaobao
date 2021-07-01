@@ -17,4 +17,36 @@ type TaobaoBusAgentMultipleRefundConfirmAPIRequest struct {
 	_paramAgentMultipleRefundRQ *AgentMultipleRefundRq
 }
 
-// New
+// NewTaobaoBusAgentMultipleRefundConfirmRequest 初始化TaobaoBusAgentMultipleRefundConfirmAPIRequest对象
+func NewTaobaoBusAgentMultipleRefundConfirmRequest() *TaobaoBusAgentMultipleRefundConfirmAPIRequest {
+	return &TaobaoBusAgentMultipleRefundConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBusAgentMultipleRefundConfirmAPIRequest) GetApiMethodName() string {
+	return "taobao.bus.agent.multiple.refund.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBusAgentMultipleRefundConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamAgentMultipleRefundRQ Setter
+// 入参
+func (r *TaobaoBusAgentMultipleRefundConfirmAPIRequest) SetParamAgentMultipleRefundRQ(_paramAgentMultipleRefundRQ *AgentMultipleRefundRq) error {
+	r._paramAgentMultipleRefundRQ = _paramAgentMultipleRefundRQ
+	r.Set("param_agent_multiple_refund_r_q", _paramAgentMultipleRefundRQ)
+	return nil
+}
+
+// Get ParamAgentMultipleRefundRQ Getter
+func (r TaobaoBusAgentMultipleRefundConfirmAPIRequest) GetParamAgentMultipleRefundRQ() *AgentMultipleRefundRq {
+	return r._paramAgentMultipleRefundRQ
+}

@@ -17,4 +17,36 @@ type TaobaoOmniorderStoreSdtcancelAPIRequest struct {
 	_packageId int64
 }
 
-// New
+// NewTaobaoOmniorderStoreSdtcancelRequest 初始化TaobaoOmniorderStoreSdtcancelAPIRequest对象
+func NewTaobaoOmniorderStoreSdtcancelRequest() *TaobaoOmniorderStoreSdtcancelAPIRequest {
+	return &TaobaoOmniorderStoreSdtcancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOmniorderStoreSdtcancelAPIRequest) GetApiMethodName() string {
+	return "taobao.omniorder.store.sdtcancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOmniorderStoreSdtcancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PackageId Setter
+// 取号返回的packageId
+func (r *TaobaoOmniorderStoreSdtcancelAPIRequest) SetPackageId(_packageId int64) error {
+	r._packageId = _packageId
+	r.Set("package_id", _packageId)
+	return nil
+}
+
+// Get PackageId Getter
+func (r TaobaoOmniorderStoreSdtcancelAPIRequest) GetPackageId() int64 {
+	return r._packageId
+}

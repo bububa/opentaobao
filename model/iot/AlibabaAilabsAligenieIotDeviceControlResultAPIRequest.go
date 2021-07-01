@@ -25,4 +25,88 @@ type AlibabaAilabsAligenieIotDeviceControlResultAPIRequest struct {
 	_ackCode string
 }
 
-// New
+// NewAlibabaAilabsAligenieIotDeviceControlResultRequest 初始化AlibabaAilabsAligenieIotDeviceControlResultAPIRequest对象
+func NewAlibabaAilabsAligenieIotDeviceControlResultRequest() *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest {
+	return &AlibabaAilabsAligenieIotDeviceControlResultAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetApiMethodName() string {
+	return "alibaba.ailabs.aligenie.iot.device.control.result"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RequestToken Setter
+// 请求token
+func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetRequestToken(_requestToken string) error {
+	r._requestToken = _requestToken
+	r.Set("request_token", _requestToken)
+	return nil
+}
+
+// Get RequestToken Getter
+func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetRequestToken() string {
+	return r._requestToken
+}
+
+// Set is DeviceId Setter
+// 设备ID
+func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetDeviceId(_deviceId string) error {
+	r._deviceId = _deviceId
+	r.Set("device_id", _deviceId)
+	return nil
+}
+
+// Get DeviceId Getter
+func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetDeviceId() string {
+	return r._deviceId
+}
+
+// Set is Type Setter
+// 操作类型 1：控制操作 0:查询
+func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetType() int64 {
+	return r._type
+}
+
+// Set is Control Setter
+// 控制成功
+func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetControl(_control bool) error {
+	r._control = _control
+	r.Set("control", _control)
+	return nil
+}
+
+// Get Control Getter
+func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetControl() bool {
+	return r._control
+}
+
+// Set is AckCode Setter
+// 厂商执行返回ackCode
+func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetAckCode(_ackCode string) error {
+	r._ackCode = _ackCode
+	r.Set("ack_code", _ackCode)
+	return nil
+}
+
+// Get AckCode Getter
+func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetAckCode() string {
+	return r._ackCode
+}

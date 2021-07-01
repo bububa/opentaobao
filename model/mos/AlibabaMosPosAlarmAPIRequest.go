@@ -17,4 +17,36 @@ type AlibabaMosPosAlarmAPIRequest struct {
 	_param0 *PosLogDto
 }
 
-// New
+// NewAlibabaMosPosAlarmRequest 初始化AlibabaMosPosAlarmAPIRequest对象
+func NewAlibabaMosPosAlarmRequest() *AlibabaMosPosAlarmAPIRequest {
+	return &AlibabaMosPosAlarmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosPosAlarmAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.pos.alarm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosPosAlarmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 参数
+func (r *AlibabaMosPosAlarmAPIRequest) SetParam0(_param0 *PosLogDto) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r AlibabaMosPosAlarmAPIRequest) GetParam0() *PosLogDto {
+	return r._param0
+}

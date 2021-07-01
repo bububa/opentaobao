@@ -18,4 +18,23 @@ type TaobaoFeedflowAccountGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoFeedflowAccountGetRequest 初始化TaobaoFeedflowAccountGetAPIRequest对象
+func NewTaobaoFeedflowAccountGetRequest() *TaobaoFeedflowAccountGetAPIRequest {
+	return &TaobaoFeedflowAccountGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFeedflowAccountGetAPIRequest) GetApiMethodName() string {
+	return "taobao.feedflow.account.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFeedflowAccountGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

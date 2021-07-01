@@ -21,4 +21,62 @@ type AlitripMerchantGalaxyMemberCardAPIRequest struct {
 	_cardType string
 }
 
-// New
+// NewAlitripMerchantGalaxyMemberCardRequest 初始化AlitripMerchantGalaxyMemberCardAPIRequest对象
+func NewAlitripMerchantGalaxyMemberCardRequest() *AlitripMerchantGalaxyMemberCardAPIRequest {
+	return &AlitripMerchantGalaxyMemberCardAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripMerchantGalaxyMemberCardAPIRequest) GetApiMethodName() string {
+	return "alitrip.merchant.galaxy.member.card"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripMerchantGalaxyMemberCardAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TenantKey Setter
+// 租户信息
+func (r *AlitripMerchantGalaxyMemberCardAPIRequest) SetTenantKey(_tenantKey string) error {
+	r._tenantKey = _tenantKey
+	r.Set("tenant_key", _tenantKey)
+	return nil
+}
+
+// Get TenantKey Getter
+func (r AlitripMerchantGalaxyMemberCardAPIRequest) GetTenantKey() string {
+	return r._tenantKey
+}
+
+// Set is FliggyLevel Setter
+// 飞猪等级
+func (r *AlitripMerchantGalaxyMemberCardAPIRequest) SetFliggyLevel(_fliggyLevel string) error {
+	r._fliggyLevel = _fliggyLevel
+	r.Set("fliggy_level", _fliggyLevel)
+	return nil
+}
+
+// Get FliggyLevel Getter
+func (r AlitripMerchantGalaxyMemberCardAPIRequest) GetFliggyLevel() string {
+	return r._fliggyLevel
+}
+
+// Set is CardType Setter
+// 卡类型
+func (r *AlitripMerchantGalaxyMemberCardAPIRequest) SetCardType(_cardType string) error {
+	r._cardType = _cardType
+	r.Set("card_type", _cardType)
+	return nil
+}
+
+// Get CardType Getter
+func (r AlitripMerchantGalaxyMemberCardAPIRequest) GetCardType() string {
+	return r._cardType
+}

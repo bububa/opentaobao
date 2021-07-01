@@ -17,4 +17,36 @@ type AlibabaMemberCheckmerchantAPIRequest struct {
 	_openMerchantId string
 }
 
-// New
+// NewAlibabaMemberCheckmerchantRequest 初始化AlibabaMemberCheckmerchantAPIRequest对象
+func NewAlibabaMemberCheckmerchantRequest() *AlibabaMemberCheckmerchantAPIRequest {
+	return &AlibabaMemberCheckmerchantAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMemberCheckmerchantAPIRequest) GetApiMethodName() string {
+	return "alibaba.member.checkmerchant"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMemberCheckmerchantAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OpenMerchantId Setter
+// 混淆后的商家id
+func (r *AlibabaMemberCheckmerchantAPIRequest) SetOpenMerchantId(_openMerchantId string) error {
+	r._openMerchantId = _openMerchantId
+	r.Set("open_merchant_id", _openMerchantId)
+	return nil
+}
+
+// Get OpenMerchantId Getter
+func (r AlibabaMemberCheckmerchantAPIRequest) GetOpenMerchantId() string {
+	return r._openMerchantId
+}

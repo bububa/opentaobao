@@ -21,4 +21,62 @@ type AlibabaLstSpeakerConfigureAPIRequest struct {
 	_params string
 }
 
-// New
+// NewAlibabaLstSpeakerConfigureRequest 初始化AlibabaLstSpeakerConfigureAPIRequest对象
+func NewAlibabaLstSpeakerConfigureRequest() *AlibabaLstSpeakerConfigureAPIRequest {
+	return &AlibabaLstSpeakerConfigureAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstSpeakerConfigureAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.speaker.configure"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstSpeakerConfigureAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DeviceCode Setter
+// 设备编码
+func (r *AlibabaLstSpeakerConfigureAPIRequest) SetDeviceCode(_deviceCode string) error {
+	r._deviceCode = _deviceCode
+	r.Set("device_code", _deviceCode)
+	return nil
+}
+
+// Get DeviceCode Getter
+func (r AlibabaLstSpeakerConfigureAPIRequest) GetDeviceCode() string {
+	return r._deviceCode
+}
+
+// Set is Command Setter
+// 命令类型setPayTime,adjustVolume，syncAudio，syncAudioAdvert
+func (r *AlibabaLstSpeakerConfigureAPIRequest) SetCommand(_command string) error {
+	r._command = _command
+	r.Set("command", _command)
+	return nil
+}
+
+// Get Command Getter
+func (r AlibabaLstSpeakerConfigureAPIRequest) GetCommand() string {
+	return r._command
+}
+
+// Set is Params Setter
+// 数据体，根据命令不同而不同
+func (r *AlibabaLstSpeakerConfigureAPIRequest) SetParams(_params string) error {
+	r._params = _params
+	r.Set("params", _params)
+	return nil
+}
+
+// Get Params Getter
+func (r AlibabaLstSpeakerConfigureAPIRequest) GetParams() string {
+	return r._params
+}

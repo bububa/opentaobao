@@ -17,4 +17,36 @@ type AlibabaAlscCrmCardSearchcardAPIRequest struct {
 	_paramSearchCardOpenReq *SearchCardOpenReq
 }
 
-// New
+// NewAlibabaAlscCrmCardSearchcardRequest 初始化AlibabaAlscCrmCardSearchcardAPIRequest对象
+func NewAlibabaAlscCrmCardSearchcardRequest() *AlibabaAlscCrmCardSearchcardAPIRequest {
+	return &AlibabaAlscCrmCardSearchcardAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmCardSearchcardAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.card.searchcard"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmCardSearchcardAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamSearchCardOpenReq Setter
+// 请求对象
+func (r *AlibabaAlscCrmCardSearchcardAPIRequest) SetParamSearchCardOpenReq(_paramSearchCardOpenReq *SearchCardOpenReq) error {
+	r._paramSearchCardOpenReq = _paramSearchCardOpenReq
+	r.Set("param_search_card_open_req", _paramSearchCardOpenReq)
+	return nil
+}
+
+// Get ParamSearchCardOpenReq Getter
+func (r AlibabaAlscCrmCardSearchcardAPIRequest) GetParamSearchCardOpenReq() *SearchCardOpenReq {
+	return r._paramSearchCardOpenReq
+}

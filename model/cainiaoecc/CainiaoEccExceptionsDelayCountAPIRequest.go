@@ -15,4 +15,23 @@ type CainiaoEccExceptionsDelayCountAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewCainiaoEccExceptionsDelayCountRequest 初始化CainiaoEccExceptionsDelayCountAPIRequest对象
+func NewCainiaoEccExceptionsDelayCountRequest() *CainiaoEccExceptionsDelayCountAPIRequest {
+	return &CainiaoEccExceptionsDelayCountAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoEccExceptionsDelayCountAPIRequest) GetApiMethodName() string {
+	return "cainiao.ecc.exceptions.delay.count"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoEccExceptionsDelayCountAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

@@ -17,4 +17,36 @@ type AlitripBtripOpenplatformAddressGetAPIRequest struct {
 	_rq *OpenApiJumpInfoRq
 }
 
-// New
+// NewAlitripBtripOpenplatformAddressGetRequest 初始化AlitripBtripOpenplatformAddressGetAPIRequest对象
+func NewAlitripBtripOpenplatformAddressGetRequest() *AlitripBtripOpenplatformAddressGetAPIRequest {
+	return &AlitripBtripOpenplatformAddressGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripOpenplatformAddressGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.openplatform.address.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripOpenplatformAddressGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Rq Setter
+// 入参
+func (r *AlitripBtripOpenplatformAddressGetAPIRequest) SetRq(_rq *OpenApiJumpInfoRq) error {
+	r._rq = _rq
+	r.Set("rq", _rq)
+	return nil
+}
+
+// Get Rq Getter
+func (r AlitripBtripOpenplatformAddressGetAPIRequest) GetRq() *OpenApiJumpInfoRq {
+	return r._rq
+}

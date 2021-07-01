@@ -19,4 +19,49 @@ type AlibabaKclubKcQaSearchPageAPIRequest struct {
 	_auth *TenancyAuth
 }
 
-// New
+// NewAlibabaKclubKcQaSearchPageRequest 初始化AlibabaKclubKcQaSearchPageAPIRequest对象
+func NewAlibabaKclubKcQaSearchPageRequest() *AlibabaKclubKcQaSearchPageAPIRequest {
+	return &AlibabaKclubKcQaSearchPageAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaKclubKcQaSearchPageAPIRequest) GetApiMethodName() string {
+	return "alibaba.kclub.kc.qa.search.page"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaKclubKcQaSearchPageAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 查询参数
+func (r *AlibabaKclubKcQaSearchPageAPIRequest) SetQuery(_query *KcSearchQuestionQuery) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r AlibabaKclubKcQaSearchPageAPIRequest) GetQuery() *KcSearchQuestionQuery {
+	return r._query
+}
+
+// Set is Auth Setter
+// 鉴权
+func (r *AlibabaKclubKcQaSearchPageAPIRequest) SetAuth(_auth *TenancyAuth) error {
+	r._auth = _auth
+	r.Set("auth", _auth)
+	return nil
+}
+
+// Get Auth Getter
+func (r AlibabaKclubKcQaSearchPageAPIRequest) GetAuth() *TenancyAuth {
+	return r._auth
+}

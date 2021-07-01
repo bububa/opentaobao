@@ -21,4 +21,62 @@ type AlibabaCampusAclNewCheckuserroleAPIRequest struct {
 	_workbenchcontext *WorkBenchContext
 }
 
-// New
+// NewAlibabaCampusAclNewCheckuserroleRequest 初始化AlibabaCampusAclNewCheckuserroleAPIRequest对象
+func NewAlibabaCampusAclNewCheckuserroleRequest() *AlibabaCampusAclNewCheckuserroleAPIRequest {
+	return &AlibabaCampusAclNewCheckuserroleAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCampusAclNewCheckuserroleAPIRequest) GetApiMethodName() string {
+	return "alibaba.campus.acl.new.checkuserrole"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCampusAclNewCheckuserroleAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UserId Setter
+// 用户账号
+func (r *AlibabaCampusAclNewCheckuserroleAPIRequest) SetUserId(_userId string) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r AlibabaCampusAclNewCheckuserroleAPIRequest) GetUserId() string {
+	return r._userId
+}
+
+// Set is RoleKey Setter
+// 角色key
+func (r *AlibabaCampusAclNewCheckuserroleAPIRequest) SetRoleKey(_roleKey string) error {
+	r._roleKey = _roleKey
+	r.Set("role_key", _roleKey)
+	return nil
+}
+
+// Get RoleKey Getter
+func (r AlibabaCampusAclNewCheckuserroleAPIRequest) GetRoleKey() string {
+	return r._roleKey
+}
+
+// Set is Workbenchcontext Setter
+// 系统入参
+func (r *AlibabaCampusAclNewCheckuserroleAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+	r._workbenchcontext = _workbenchcontext
+	r.Set("workbenchcontext", _workbenchcontext)
+	return nil
+}
+
+// Get Workbenchcontext Getter
+func (r AlibabaCampusAclNewCheckuserroleAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
+	return r._workbenchcontext
+}

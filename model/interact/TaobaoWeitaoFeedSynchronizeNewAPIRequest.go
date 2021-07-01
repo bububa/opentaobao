@@ -31,4 +31,127 @@ type TaobaoWeitaoFeedSynchronizeNewAPIRequest struct {
 	_sbizId string
 }
 
-// New
+// NewTaobaoWeitaoFeedSynchronizeNewRequest 初始化TaobaoWeitaoFeedSynchronizeNewAPIRequest对象
+func NewTaobaoWeitaoFeedSynchronizeNewRequest() *TaobaoWeitaoFeedSynchronizeNewAPIRequest {
+	return &TaobaoWeitaoFeedSynchronizeNewAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetApiMethodName() string {
+	return "taobao.weitao.feed.synchronize.new"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FeedType Setter
+// 广播类型：粉丝猜价格461、投票有礼462、粉丝抢红包463、盖楼有礼464、加购有礼465
+func (r *TaobaoWeitaoFeedSynchronizeNewAPIRequest) SetFeedType(_feedType int64) error {
+	r._feedType = _feedType
+	r.Set("feed_type", _feedType)
+	return nil
+}
+
+// Get FeedType Getter
+func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetFeedType() int64 {
+	return r._feedType
+}
+
+// Set is DetailUrl Setter
+// feed点击跳转的活动地址
+func (r *TaobaoWeitaoFeedSynchronizeNewAPIRequest) SetDetailUrl(_detailUrl string) error {
+	r._detailUrl = _detailUrl
+	r.Set("detail_url", _detailUrl)
+	return nil
+}
+
+// Get DetailUrl Getter
+func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetDetailUrl() string {
+	return r._detailUrl
+}
+
+// Set is EndTime Setter
+// feed展示结束时间
+func (r *TaobaoWeitaoFeedSynchronizeNewAPIRequest) SetEndTime(_endTime int64) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// Get EndTime Getter
+func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetEndTime() int64 {
+	return r._endTime
+}
+
+// Set is StartTime Setter
+// feed展示开始时间
+func (r *TaobaoWeitaoFeedSynchronizeNewAPIRequest) SetStartTime(_startTime int64) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// Get StartTime Getter
+func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetStartTime() int64 {
+	return r._startTime
+}
+
+// Set is Summary Setter
+// feed描述
+func (r *TaobaoWeitaoFeedSynchronizeNewAPIRequest) SetSummary(_summary string) error {
+	r._summary = _summary
+	r.Set("summary", _summary)
+	return nil
+}
+
+// Get Summary Getter
+func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetSummary() string {
+	return r._summary
+}
+
+// Set is Title Setter
+// feed标题
+func (r *TaobaoWeitaoFeedSynchronizeNewAPIRequest) SetTitle(_title string) error {
+	r._title = _title
+	r.Set("title", _title)
+	return nil
+}
+
+// Get Title Getter
+func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetTitle() string {
+	return r._title
+}
+
+// Set is ItemIds Setter
+// 宝贝列表，用于card展示，0~2个宝贝ID
+func (r *TaobaoWeitaoFeedSynchronizeNewAPIRequest) SetItemIds(_itemIds []string) error {
+	r._itemIds = _itemIds
+	r.Set("item_ids", _itemIds)
+	return nil
+}
+
+// Get ItemIds Getter
+func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetItemIds() []string {
+	return r._itemIds
+}
+
+// Set is SbizId Setter
+// 活动ID
+func (r *TaobaoWeitaoFeedSynchronizeNewAPIRequest) SetSbizId(_sbizId string) error {
+	r._sbizId = _sbizId
+	r.Set("sbiz_id", _sbizId)
+	return nil
+}
+
+// Get SbizId Getter
+func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetSbizId() string {
+	return r._sbizId
+}

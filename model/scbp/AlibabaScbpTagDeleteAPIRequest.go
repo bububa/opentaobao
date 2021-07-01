@@ -17,4 +17,36 @@ type AlibabaScbpTagDeleteAPIRequest struct {
 	_tagName string
 }
 
-// New
+// NewAlibabaScbpTagDeleteRequest 初始化AlibabaScbpTagDeleteAPIRequest对象
+func NewAlibabaScbpTagDeleteRequest() *AlibabaScbpTagDeleteAPIRequest {
+	return &AlibabaScbpTagDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpTagDeleteAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.tag.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpTagDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TagName Setter
+// 关键词分组名
+func (r *AlibabaScbpTagDeleteAPIRequest) SetTagName(_tagName string) error {
+	r._tagName = _tagName
+	r.Set("tag_name", _tagName)
+	return nil
+}
+
+// Get TagName Getter
+func (r AlibabaScbpTagDeleteAPIRequest) GetTagName() string {
+	return r._tagName
+}

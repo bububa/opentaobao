@@ -17,4 +17,36 @@ type TaobaoMixnickPlaytoweAPIRequest struct {
 	_mixMix string
 }
 
-// New
+// NewTaobaoMixnickPlaytoweRequest 初始化TaobaoMixnickPlaytoweAPIRequest对象
+func NewTaobaoMixnickPlaytoweRequest() *TaobaoMixnickPlaytoweAPIRequest {
+	return &TaobaoMixnickPlaytoweAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMixnickPlaytoweAPIRequest) GetApiMethodName() string {
+	return "taobao.mixnick.playtowe"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMixnickPlaytoweAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MixMix Setter
+// 用户的混淆nick
+func (r *TaobaoMixnickPlaytoweAPIRequest) SetMixMix(_mixMix string) error {
+	r._mixMix = _mixMix
+	r.Set("mix_mix", _mixMix)
+	return nil
+}
+
+// Get MixMix Getter
+func (r TaobaoMixnickPlaytoweAPIRequest) GetMixMix() string {
+	return r._mixMix
+}

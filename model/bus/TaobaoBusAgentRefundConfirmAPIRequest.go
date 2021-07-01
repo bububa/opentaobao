@@ -17,4 +17,36 @@ type TaobaoBusAgentRefundConfirmAPIRequest struct {
 	_paramAgentConfirmReturnAndRefundRQ *AgentConfirmReturnAndRefundRq
 }
 
-// New
+// NewTaobaoBusAgentRefundConfirmRequest 初始化TaobaoBusAgentRefundConfirmAPIRequest对象
+func NewTaobaoBusAgentRefundConfirmRequest() *TaobaoBusAgentRefundConfirmAPIRequest {
+	return &TaobaoBusAgentRefundConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBusAgentRefundConfirmAPIRequest) GetApiMethodName() string {
+	return "taobao.bus.agent.refund.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBusAgentRefundConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamAgentConfirmReturnAndRefundRQ Setter
+// 入参
+func (r *TaobaoBusAgentRefundConfirmAPIRequest) SetParamAgentConfirmReturnAndRefundRQ(_paramAgentConfirmReturnAndRefundRQ *AgentConfirmReturnAndRefundRq) error {
+	r._paramAgentConfirmReturnAndRefundRQ = _paramAgentConfirmReturnAndRefundRQ
+	r.Set("param_agent_confirm_return_and_refund_r_q", _paramAgentConfirmReturnAndRefundRQ)
+	return nil
+}
+
+// Get ParamAgentConfirmReturnAndRefundRQ Getter
+func (r TaobaoBusAgentRefundConfirmAPIRequest) GetParamAgentConfirmReturnAndRefundRQ() *AgentConfirmReturnAndRefundRq {
+	return r._paramAgentConfirmReturnAndRefundRQ
+}

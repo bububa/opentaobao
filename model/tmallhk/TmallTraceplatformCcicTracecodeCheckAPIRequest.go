@@ -19,4 +19,49 @@ type TmallTraceplatformCcicTracecodeCheckAPIRequest struct {
 	_hideCode string
 }
 
-// New
+// NewTmallTraceplatformCcicTracecodeCheckRequest 初始化TmallTraceplatformCcicTracecodeCheckAPIRequest对象
+func NewTmallTraceplatformCcicTracecodeCheckRequest() *TmallTraceplatformCcicTracecodeCheckAPIRequest {
+	return &TmallTraceplatformCcicTracecodeCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallTraceplatformCcicTracecodeCheckAPIRequest) GetApiMethodName() string {
+	return "tmall.traceplatform.ccic.tracecode.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallTraceplatformCcicTracecodeCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ShortTracecode Setter
+// 15为溯源短码，必选
+func (r *TmallTraceplatformCcicTracecodeCheckAPIRequest) SetShortTracecode(_shortTracecode string) error {
+	r._shortTracecode = _shortTracecode
+	r.Set("short_tracecode", _shortTracecode)
+	return nil
+}
+
+// Get ShortTracecode Getter
+func (r TmallTraceplatformCcicTracecodeCheckAPIRequest) GetShortTracecode() string {
+	return r._shortTracecode
+}
+
+// Set is HideCode Setter
+// 6位暗码，必选
+func (r *TmallTraceplatformCcicTracecodeCheckAPIRequest) SetHideCode(_hideCode string) error {
+	r._hideCode = _hideCode
+	r.Set("hide_code", _hideCode)
+	return nil
+}
+
+// Get HideCode Getter
+func (r TmallTraceplatformCcicTracecodeCheckAPIRequest) GetHideCode() string {
+	return r._hideCode
+}

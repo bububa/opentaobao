@@ -17,4 +17,36 @@ type AlibabaSellerVendorOrderDetailAPIRequest struct {
 	_orderNo string
 }
 
-// New
+// NewAlibabaSellerVendorOrderDetailRequest 初始化AlibabaSellerVendorOrderDetailAPIRequest对象
+func NewAlibabaSellerVendorOrderDetailRequest() *AlibabaSellerVendorOrderDetailAPIRequest {
+	return &AlibabaSellerVendorOrderDetailAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSellerVendorOrderDetailAPIRequest) GetApiMethodName() string {
+	return "alibaba.seller.vendor.order.detail"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSellerVendorOrderDetailAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderNo Setter
+// 订单编号
+func (r *AlibabaSellerVendorOrderDetailAPIRequest) SetOrderNo(_orderNo string) error {
+	r._orderNo = _orderNo
+	r.Set("order_no", _orderNo)
+	return nil
+}
+
+// Get OrderNo Getter
+func (r AlibabaSellerVendorOrderDetailAPIRequest) GetOrderNo() string {
+	return r._orderNo
+}

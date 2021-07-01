@@ -17,4 +17,36 @@ type XiamiContentSongsAudioGetrefrainAPIRequest struct {
 	_songIds []int64
 }
 
-// New
+// NewXiamiContentSongsAudioGetrefrainRequest 初始化XiamiContentSongsAudioGetrefrainAPIRequest对象
+func NewXiamiContentSongsAudioGetrefrainRequest() *XiamiContentSongsAudioGetrefrainAPIRequest {
+	return &XiamiContentSongsAudioGetrefrainAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r XiamiContentSongsAudioGetrefrainAPIRequest) GetApiMethodName() string {
+	return "xiami.content.songs.audio.getrefrain"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r XiamiContentSongsAudioGetrefrainAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SongIds Setter
+// 歌曲ID
+func (r *XiamiContentSongsAudioGetrefrainAPIRequest) SetSongIds(_songIds []int64) error {
+	r._songIds = _songIds
+	r.Set("song_ids", _songIds)
+	return nil
+}
+
+// Get SongIds Getter
+func (r XiamiContentSongsAudioGetrefrainAPIRequest) GetSongIds() []int64 {
+	return r._songIds
+}

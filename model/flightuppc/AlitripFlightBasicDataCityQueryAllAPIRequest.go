@@ -15,4 +15,23 @@ type AlitripFlightBasicDataCityQueryAllAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlitripFlightBasicDataCityQueryAllRequest 初始化AlitripFlightBasicDataCityQueryAllAPIRequest对象
+func NewAlitripFlightBasicDataCityQueryAllRequest() *AlitripFlightBasicDataCityQueryAllAPIRequest {
+	return &AlitripFlightBasicDataCityQueryAllAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripFlightBasicDataCityQueryAllAPIRequest) GetApiMethodName() string {
+	return "alitrip.flight.basic.data.city.queryAll"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripFlightBasicDataCityQueryAllAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

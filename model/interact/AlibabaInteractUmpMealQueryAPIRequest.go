@@ -15,4 +15,23 @@ type AlibabaInteractUmpMealQueryAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaInteractUmpMealQueryRequest 初始化AlibabaInteractUmpMealQueryAPIRequest对象
+func NewAlibabaInteractUmpMealQueryRequest() *AlibabaInteractUmpMealQueryAPIRequest {
+	return &AlibabaInteractUmpMealQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractUmpMealQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.ump.meal.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractUmpMealQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

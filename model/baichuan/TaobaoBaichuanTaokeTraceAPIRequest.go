@@ -17,4 +17,36 @@ type TaobaoBaichuanTaokeTraceAPIRequest struct {
 	_name string
 }
 
-// New
+// NewTaobaoBaichuanTaokeTraceRequest 初始化TaobaoBaichuanTaokeTraceAPIRequest对象
+func NewTaobaoBaichuanTaokeTraceRequest() *TaobaoBaichuanTaokeTraceAPIRequest {
+	return &TaobaoBaichuanTaokeTraceAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBaichuanTaokeTraceAPIRequest) GetApiMethodName() string {
+	return "taobao.baichuan.taoke.trace"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBaichuanTaokeTraceAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Name Setter
+// name
+func (r *TaobaoBaichuanTaokeTraceAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// Get Name Getter
+func (r TaobaoBaichuanTaokeTraceAPIRequest) GetName() string {
+	return r._name
+}

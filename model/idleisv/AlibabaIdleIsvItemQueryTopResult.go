@@ -1,9 +1,9 @@
 package idleisv
 
-// TopResult 结构体
-type TopResult struct {
+// AlibabaIdleIsvItemQueryTopResult 结构体
+type AlibabaIdleIsvItemQueryTopResult struct {
 	// data
-	Data bool `json:"data,omitempty" xml:"data,omitempty"`
+	Data *IdleItemApiDo `json:"data,omitempty" xml:"data,omitempty"`
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

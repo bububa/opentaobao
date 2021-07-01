@@ -17,4 +17,36 @@ type TaobaoQimenStockchangeReportAPIRequest struct {
 	_request *StockChangeReportRequest
 }
 
-// New
+// NewTaobaoQimenStockchangeReportRequest 初始化TaobaoQimenStockchangeReportAPIRequest对象
+func NewTaobaoQimenStockchangeReportRequest() *TaobaoQimenStockchangeReportAPIRequest {
+	return &TaobaoQimenStockchangeReportAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenStockchangeReportAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.stockchange.report"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenStockchangeReportAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenStockchangeReportAPIRequest) SetRequest(_request *StockChangeReportRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenStockchangeReportAPIRequest) GetRequest() *StockChangeReportRequest {
+	return r._request
+}

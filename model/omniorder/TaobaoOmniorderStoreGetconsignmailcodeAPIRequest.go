@@ -27,4 +27,101 @@ type TaobaoOmniorderStoreGetconsignmailcodeAPIRequest struct {
 	_sdtExtendInfoDTO *SdtExtendInfoDto
 }
 
-// New
+// NewTaobaoOmniorderStoreGetconsignmailcodeRequest 初始化TaobaoOmniorderStoreGetconsignmailcodeAPIRequest对象
+func NewTaobaoOmniorderStoreGetconsignmailcodeRequest() *TaobaoOmniorderStoreGetconsignmailcodeAPIRequest {
+	return &TaobaoOmniorderStoreGetconsignmailcodeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) GetApiMethodName() string {
+	return "taobao.omniorder.store.getconsignmailcode"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StoreId Setter
+// 门店ID
+func (r *TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// Get StoreId Getter
+func (r TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) GetStoreId() int64 {
+	return r._storeId
+}
+
+// Set is SenderContact Setter
+// 发件人联系电话，如空则表示使用门店信息中的电话号码
+func (r *TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) SetSenderContact(_senderContact string) error {
+	r._senderContact = _senderContact
+	r.Set("sender_contact", _senderContact)
+	return nil
+}
+
+// Get SenderContact Getter
+func (r TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) GetSenderContact() string {
+	return r._senderContact
+}
+
+// Set is Channel Setter
+// 淘宝(TB)、天猫(TM)、京东(JD)、当当(DD)、拍拍(PP)、易讯(YX)、ebay(EBAY)、QQ网购(QQ)      、亚马逊(AMAZON)、苏宁(SN)、国美(GM)、唯品会(WPH)、聚美(JM)、乐蜂(LF)、蘑菇街(MGJ)      、聚尚(JS)、拍鞋(PX)、银泰(YT)、1号店(YHD)、凡客(VANCL)、邮乐(YL)、优购(YG)、阿里      巴巴(1688)、其他(OTHERS)
+func (r *TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) SetChannel(_channel string) error {
+	r._channel = _channel
+	r.Set("channel", _channel)
+	return nil
+}
+
+// Get Channel Getter
+func (r TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) GetChannel() string {
+	return r._channel
+}
+
+// Set is Trades Setter
+// 订单信息，目前一次请求只支持一个主订单
+func (r *TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) SetTrades(_trades []TradeOrderInfoDto) error {
+	r._trades = _trades
+	r.Set("trades", _trades)
+	return nil
+}
+
+// Get Trades Getter
+func (r TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) GetTrades() []TradeOrderInfoDto {
+	return r._trades
+}
+
+// Set is Receiver Setter
+// 收件人信息
+func (r *TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) SetReceiver(_receiver *ReceiverDto) error {
+	r._receiver = _receiver
+	r.Set("receiver", _receiver)
+	return nil
+}
+
+// Get Receiver Getter
+func (r TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) GetReceiver() *ReceiverDto {
+	return r._receiver
+}
+
+// Set is SdtExtendInfoDTO Setter
+// 扩展信息
+func (r *TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) SetSdtExtendInfoDTO(_sdtExtendInfoDTO *SdtExtendInfoDto) error {
+	r._sdtExtendInfoDTO = _sdtExtendInfoDTO
+	r.Set("sdt_extend_info_d_t_o", _sdtExtendInfoDTO)
+	return nil
+}
+
+// Get SdtExtendInfoDTO Getter
+func (r TaobaoOmniorderStoreGetconsignmailcodeAPIRequest) GetSdtExtendInfoDTO() *SdtExtendInfoDto {
+	return r._sdtExtendInfoDTO
+}

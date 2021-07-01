@@ -17,4 +17,36 @@ type AlibabaAlihealthBookingReserveCancelAPIRequest struct {
 	_cancel *IsvReserveRequest
 }
 
-// New
+// NewAlibabaAlihealthBookingReserveCancelRequest 初始化AlibabaAlihealthBookingReserveCancelAPIRequest对象
+func NewAlibabaAlihealthBookingReserveCancelRequest() *AlibabaAlihealthBookingReserveCancelAPIRequest {
+	return &AlibabaAlihealthBookingReserveCancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthBookingReserveCancelAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.booking.reserve.cancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthBookingReserveCancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Cancel Setter
+// cancel
+func (r *AlibabaAlihealthBookingReserveCancelAPIRequest) SetCancel(_cancel *IsvReserveRequest) error {
+	r._cancel = _cancel
+	r.Set("cancel", _cancel)
+	return nil
+}
+
+// Get Cancel Getter
+func (r AlibabaAlihealthBookingReserveCancelAPIRequest) GetCancel() *IsvReserveRequest {
+	return r._cancel
+}

@@ -17,4 +17,36 @@ type AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest struct {
 	_xmlDataSlot string
 }
 
-// New
+// NewAlibabaAscmSettlementInvoiceSynchronizationImRequest 初始化AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest对象
+func NewAlibabaAscmSettlementInvoiceSynchronizationImRequest() *AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest {
+	return &AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascm.settlement.invoice.synchronization.im"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is XmlDataSlot Setter
+// im invoice xml
+func (r *AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) SetXmlDataSlot(_xmlDataSlot string) error {
+	r._xmlDataSlot = _xmlDataSlot
+	r.Set("xml_data_slot", _xmlDataSlot)
+	return nil
+}
+
+// Get XmlDataSlot Getter
+func (r AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) GetXmlDataSlot() string {
+	return r._xmlDataSlot
+}

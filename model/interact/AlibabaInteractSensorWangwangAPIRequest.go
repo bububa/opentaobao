@@ -15,4 +15,23 @@ type AlibabaInteractSensorWangwangAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaInteractSensorWangwangRequest 初始化AlibabaInteractSensorWangwangAPIRequest对象
+func NewAlibabaInteractSensorWangwangRequest() *AlibabaInteractSensorWangwangAPIRequest {
+	return &AlibabaInteractSensorWangwangAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractSensorWangwangAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.sensor.wangwang"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractSensorWangwangAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

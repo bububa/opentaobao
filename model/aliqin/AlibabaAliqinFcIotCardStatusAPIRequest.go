@@ -17,4 +17,36 @@ type AlibabaAliqinFcIotCardStatusAPIRequest struct {
 	_iccid string
 }
 
-// New
+// NewAlibabaAliqinFcIotCardStatusRequest 初始化AlibabaAliqinFcIotCardStatusAPIRequest对象
+func NewAlibabaAliqinFcIotCardStatusRequest() *AlibabaAliqinFcIotCardStatusAPIRequest {
+	return &AlibabaAliqinFcIotCardStatusAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAliqinFcIotCardStatusAPIRequest) GetApiMethodName() string {
+	return "alibaba.aliqin.fc.iot.cardStatus"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAliqinFcIotCardStatusAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Iccid Setter
+// SIM卡号
+func (r *AlibabaAliqinFcIotCardStatusAPIRequest) SetIccid(_iccid string) error {
+	r._iccid = _iccid
+	r.Set("iccid", _iccid)
+	return nil
+}
+
+// Get Iccid Getter
+func (r AlibabaAliqinFcIotCardStatusAPIRequest) GetIccid() string {
+	return r._iccid
+}

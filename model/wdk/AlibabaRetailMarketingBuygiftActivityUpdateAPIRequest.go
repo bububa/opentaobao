@@ -17,4 +17,36 @@ type AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest struct {
 	_param *BuyGiftActivityOperateRequest
 }
 
-// New
+// NewAlibabaRetailMarketingBuygiftActivityUpdateRequest 初始化AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest对象
+func NewAlibabaRetailMarketingBuygiftActivityUpdateRequest() *AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest {
+	return &AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.retail.marketing.buygift.activity.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 更新单品买赠活动参数
+func (r *AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) SetParam(_param *BuyGiftActivityOperateRequest) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) GetParam() *BuyGiftActivityOperateRequest {
+	return r._param
+}

@@ -35,4 +35,153 @@ type TaobaoSimbaRptAdgroupbaseGetAPIRequest struct {
 	_source string
 }
 
-// New
+// NewTaobaoSimbaRptAdgroupbaseGetRequest 初始化TaobaoSimbaRptAdgroupbaseGetAPIRequest对象
+func NewTaobaoSimbaRptAdgroupbaseGetRequest() *TaobaoSimbaRptAdgroupbaseGetAPIRequest {
+	return &TaobaoSimbaRptAdgroupbaseGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.rpt.adgroupbase.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SubwayToken Setter
+// 权限校验参数
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetSubwayToken(_subwayToken string) error {
+	r._subwayToken = _subwayToken
+	r.Set("subway_token", _subwayToken)
+	return nil
+}
+
+// Get SubwayToken Getter
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetSubwayToken() string {
+	return r._subwayToken
+}
+
+// Set is Nick Setter
+// 昵称
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetNick() string {
+	return r._nick
+}
+
+// Set is CampaignId Setter
+// 推广计划id
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// Get CampaignId Getter
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
+}
+
+// Set is AdgroupId Setter
+// 推广组id
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}
+
+// Set is StartTime Setter
+// 开始时间，格式yyyy-mm-dd
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// Get StartTime Getter
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetStartTime() string {
+	return r._startTime
+}
+
+// Set is EndTime Setter
+// 结束时间，格式yyyy-mm-dd
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// Get EndTime Getter
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetEndTime() string {
+	return r._endTime
+}
+
+// Set is SearchType Setter
+// 报表类型（搜索：SEARCH,类目出价：CAT,<br/>定向投放：NOSEARCH）可以一次取多个例如：SEARCH,CAT
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetSearchType(_searchType string) error {
+	r._searchType = _searchType
+	r.Set("search_type", _searchType)
+	return nil
+}
+
+// Get SearchType Getter
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetSearchType() string {
+	return r._searchType
+}
+
+// Set is PageNo Setter
+// 页码
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is PageSize Setter
+// 每页大小
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is Source Setter
+// 数据来源（PC站内：1，PC站外：2，无线站内：4，无线站外 : 5）可多选，以逗号分隔
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetSource(_source string) error {
+	r._source = _source
+	r.Set("source", _source)
+	return nil
+}
+
+// Get Source Getter
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetSource() string {
+	return r._source
+}

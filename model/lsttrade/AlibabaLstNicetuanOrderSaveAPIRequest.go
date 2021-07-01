@@ -17,4 +17,36 @@ type AlibabaLstNicetuanOrderSaveAPIRequest struct {
 	_param *NicetuanMainOrderParam
 }
 
-// New
+// NewAlibabaLstNicetuanOrderSaveRequest 初始化AlibabaLstNicetuanOrderSaveAPIRequest对象
+func NewAlibabaLstNicetuanOrderSaveRequest() *AlibabaLstNicetuanOrderSaveAPIRequest {
+	return &AlibabaLstNicetuanOrderSaveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstNicetuanOrderSaveAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.nicetuan.order.save"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstNicetuanOrderSaveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 订单数据
+func (r *AlibabaLstNicetuanOrderSaveAPIRequest) SetParam(_param *NicetuanMainOrderParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaLstNicetuanOrderSaveAPIRequest) GetParam() *NicetuanMainOrderParam {
+	return r._param
+}

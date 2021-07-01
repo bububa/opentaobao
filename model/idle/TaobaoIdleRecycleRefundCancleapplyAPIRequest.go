@@ -17,4 +17,36 @@ type TaobaoIdleRecycleRefundCancleapplyAPIRequest struct {
 	_bizOrderId int64
 }
 
-// New
+// NewTaobaoIdleRecycleRefundCancleapplyRequest 初始化TaobaoIdleRecycleRefundCancleapplyAPIRequest对象
+func NewTaobaoIdleRecycleRefundCancleapplyRequest() *TaobaoIdleRecycleRefundCancleapplyAPIRequest {
+	return &TaobaoIdleRecycleRefundCancleapplyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoIdleRecycleRefundCancleapplyAPIRequest) GetApiMethodName() string {
+	return "taobao.idle.recycle.refund.cancleapply"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoIdleRecycleRefundCancleapplyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BizOrderId Setter
+// 订单号
+func (r *TaobaoIdleRecycleRefundCancleapplyAPIRequest) SetBizOrderId(_bizOrderId int64) error {
+	r._bizOrderId = _bizOrderId
+	r.Set("biz_order_id", _bizOrderId)
+	return nil
+}
+
+// Get BizOrderId Getter
+func (r TaobaoIdleRecycleRefundCancleapplyAPIRequest) GetBizOrderId() int64 {
+	return r._bizOrderId
+}

@@ -17,4 +17,36 @@ type AlitripAgentFlightSellModifyApproveAPIRequest struct {
 	_param *ModifyApproveRequestDto
 }
 
-// New
+// NewAlitripAgentFlightSellModifyApproveRequest 初始化AlitripAgentFlightSellModifyApproveAPIRequest对象
+func NewAlitripAgentFlightSellModifyApproveRequest() *AlitripAgentFlightSellModifyApproveAPIRequest {
+	return &AlitripAgentFlightSellModifyApproveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripAgentFlightSellModifyApproveAPIRequest) GetApiMethodName() string {
+	return "alitrip.agent.flight.sell.modify.approve"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripAgentFlightSellModifyApproveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参对象
+func (r *AlitripAgentFlightSellModifyApproveAPIRequest) SetParam(_param *ModifyApproveRequestDto) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlitripAgentFlightSellModifyApproveAPIRequest) GetParam() *ModifyApproveRequestDto {
+	return r._param
+}

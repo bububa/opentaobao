@@ -19,4 +19,49 @@ type AlibabaMjMoscarnivalReceiveencryptAPIRequest struct {
 	_activityId int64
 }
 
-// New
+// NewAlibabaMjMoscarnivalReceiveencryptRequest 初始化AlibabaMjMoscarnivalReceiveencryptAPIRequest对象
+func NewAlibabaMjMoscarnivalReceiveencryptRequest() *AlibabaMjMoscarnivalReceiveencryptAPIRequest {
+	return &AlibabaMjMoscarnivalReceiveencryptAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMjMoscarnivalReceiveencryptAPIRequest) GetApiMethodName() string {
+	return "alibaba.mj.moscarnival.receiveencrypt"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMjMoscarnivalReceiveencryptAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Mobile Setter
+// 加密手机号码
+func (r *AlibabaMjMoscarnivalReceiveencryptAPIRequest) SetMobile(_mobile string) error {
+	r._mobile = _mobile
+	r.Set("mobile", _mobile)
+	return nil
+}
+
+// Get Mobile Getter
+func (r AlibabaMjMoscarnivalReceiveencryptAPIRequest) GetMobile() string {
+	return r._mobile
+}
+
+// Set is ActivityId Setter
+// 活动id
+func (r *AlibabaMjMoscarnivalReceiveencryptAPIRequest) SetActivityId(_activityId int64) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// Get ActivityId Getter
+func (r AlibabaMjMoscarnivalReceiveencryptAPIRequest) GetActivityId() int64 {
+	return r._activityId
+}

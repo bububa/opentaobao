@@ -19,4 +19,49 @@ type AlibabaAlihealthReserveDentalUnbinditemAPIRequest struct {
 	_spItemId string
 }
 
-// New
+// NewAlibabaAlihealthReserveDentalUnbinditemRequest 初始化AlibabaAlihealthReserveDentalUnbinditemAPIRequest对象
+func NewAlibabaAlihealthReserveDentalUnbinditemRequest() *AlibabaAlihealthReserveDentalUnbinditemAPIRequest {
+	return &AlibabaAlihealthReserveDentalUnbinditemAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthReserveDentalUnbinditemAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.reserve.dental.unbinditem"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthReserveDentalUnbinditemAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SpStoreId Setter
+// 服务商门店id
+func (r *AlibabaAlihealthReserveDentalUnbinditemAPIRequest) SetSpStoreId(_spStoreId string) error {
+	r._spStoreId = _spStoreId
+	r.Set("sp_store_id", _spStoreId)
+	return nil
+}
+
+// Get SpStoreId Getter
+func (r AlibabaAlihealthReserveDentalUnbinditemAPIRequest) GetSpStoreId() string {
+	return r._spStoreId
+}
+
+// Set is SpItemId Setter
+// 服务商商品id
+func (r *AlibabaAlihealthReserveDentalUnbinditemAPIRequest) SetSpItemId(_spItemId string) error {
+	r._spItemId = _spItemId
+	r.Set("sp_item_id", _spItemId)
+	return nil
+}
+
+// Get SpItemId Getter
+func (r AlibabaAlihealthReserveDentalUnbinditemAPIRequest) GetSpItemId() string {
+	return r._spItemId
+}

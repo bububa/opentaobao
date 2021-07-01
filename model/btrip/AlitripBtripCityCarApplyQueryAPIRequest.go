@@ -17,4 +17,36 @@ type AlitripBtripCityCarApplyQueryAPIRequest struct {
 	_rq *CityCarApplyQueryRq
 }
 
-// New
+// NewAlitripBtripCityCarApplyQueryRequest 初始化AlitripBtripCityCarApplyQueryAPIRequest对象
+func NewAlitripBtripCityCarApplyQueryRequest() *AlitripBtripCityCarApplyQueryAPIRequest {
+	return &AlitripBtripCityCarApplyQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripCityCarApplyQueryAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.city.car.apply.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripCityCarApplyQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Rq Setter
+// 入参对象
+func (r *AlitripBtripCityCarApplyQueryAPIRequest) SetRq(_rq *CityCarApplyQueryRq) error {
+	r._rq = _rq
+	r.Set("rq", _rq)
+	return nil
+}
+
+// Get Rq Getter
+func (r AlitripBtripCityCarApplyQueryAPIRequest) GetRq() *CityCarApplyQueryRq {
+	return r._rq
+}

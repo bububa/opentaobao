@@ -17,4 +17,36 @@ type TmallTrendStyleProduceinfoUploadAPIRequest struct {
 	_styleProduceInfoBoList []StyleProduceInfoBO
 }
 
-// New
+// NewTmallTrendStyleProduceinfoUploadRequest 初始化TmallTrendStyleProduceinfoUploadAPIRequest对象
+func NewTmallTrendStyleProduceinfoUploadRequest() *TmallTrendStyleProduceinfoUploadAPIRequest {
+	return &TmallTrendStyleProduceinfoUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallTrendStyleProduceinfoUploadAPIRequest) GetApiMethodName() string {
+	return "tmall.trend.style.produceinfo.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallTrendStyleProduceinfoUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StyleProduceInfoBoList Setter
+// 款式生产信息列表，单次同步最对1000条
+func (r *TmallTrendStyleProduceinfoUploadAPIRequest) SetStyleProduceInfoBoList(_styleProduceInfoBoList []StyleProduceInfoBO) error {
+	r._styleProduceInfoBoList = _styleProduceInfoBoList
+	r.Set("style_produce_info_bo_list", _styleProduceInfoBoList)
+	return nil
+}
+
+// Get StyleProduceInfoBoList Getter
+func (r TmallTrendStyleProduceinfoUploadAPIRequest) GetStyleProduceInfoBoList() []StyleProduceInfoBO {
+	return r._styleProduceInfoBoList
+}

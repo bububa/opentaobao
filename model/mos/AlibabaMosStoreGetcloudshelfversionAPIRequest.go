@@ -17,4 +17,36 @@ type AlibabaMosStoreGetcloudshelfversionAPIRequest struct {
 	_screenNo string
 }
 
-// New
+// NewAlibabaMosStoreGetcloudshelfversionRequest 初始化AlibabaMosStoreGetcloudshelfversionAPIRequest对象
+func NewAlibabaMosStoreGetcloudshelfversionRequest() *AlibabaMosStoreGetcloudshelfversionAPIRequest {
+	return &AlibabaMosStoreGetcloudshelfversionAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosStoreGetcloudshelfversionAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.store.getcloudshelfversion"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosStoreGetcloudshelfversionAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ScreenNo Setter
+// 屏编号
+func (r *AlibabaMosStoreGetcloudshelfversionAPIRequest) SetScreenNo(_screenNo string) error {
+	r._screenNo = _screenNo
+	r.Set("screen_no", _screenNo)
+	return nil
+}
+
+// Get ScreenNo Getter
+func (r AlibabaMosStoreGetcloudshelfversionAPIRequest) GetScreenNo() string {
+	return r._screenNo
+}

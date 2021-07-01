@@ -21,4 +21,62 @@ type AlibabaIsvDigitalsmsCreatetemplateAPIRequest struct {
 	_applyRemark string
 }
 
-// New
+// NewAlibabaIsvDigitalsmsCreatetemplateRequest 初始化AlibabaIsvDigitalsmsCreatetemplateAPIRequest对象
+func NewAlibabaIsvDigitalsmsCreatetemplateRequest() *AlibabaIsvDigitalsmsCreatetemplateAPIRequest {
+	return &AlibabaIsvDigitalsmsCreatetemplateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetApiMethodName() string {
+	return "alibaba.isv.digitalsms.createtemplate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TemplateName Setter
+// 模板名称
+func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetTemplateName(_templateName string) error {
+	r._templateName = _templateName
+	r.Set("template_name", _templateName)
+	return nil
+}
+
+// Get TemplateName Getter
+func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetTemplateName() string {
+	return r._templateName
+}
+
+// Set is TemplateContents Setter
+// 系统自动生成
+func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDto) error {
+	r._templateContents = _templateContents
+	r.Set("template_contents", _templateContents)
+	return nil
+}
+
+// Get TemplateContents Getter
+func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetTemplateContents() []DigitalSmsTemplateContentDto {
+	return r._templateContents
+}
+
+// Set is ApplyRemark Setter
+// 申请说明
+func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetApplyRemark(_applyRemark string) error {
+	r._applyRemark = _applyRemark
+	r.Set("apply_remark", _applyRemark)
+	return nil
+}
+
+// Get ApplyRemark Getter
+func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetApplyRemark() string {
+	return r._applyRemark
+}

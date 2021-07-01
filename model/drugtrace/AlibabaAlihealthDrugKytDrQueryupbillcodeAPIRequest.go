@@ -19,4 +19,49 @@ type AlibabaAlihealthDrugKytDrQueryupbillcodeAPIRequest struct {
 	_refEntId string
 }
 
-// New
+// NewAlibabaAlihealthDrugKytDrQueryupbillcodeRequest 初始化AlibabaAlihealthDrugKytDrQueryupbillcodeAPIRequest对象
+func NewAlibabaAlihealthDrugKytDrQueryupbillcodeRequest() *AlibabaAlihealthDrugKytDrQueryupbillcodeAPIRequest {
+	return &AlibabaAlihealthDrugKytDrQueryupbillcodeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDrugKytDrQueryupbillcodeAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.drug.kyt.dr.queryupbillcode"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDrugKytDrQueryupbillcodeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Code Setter
+// 追溯码
+func (r *AlibabaAlihealthDrugKytDrQueryupbillcodeAPIRequest) SetCode(_code string) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// Get Code Getter
+func (r AlibabaAlihealthDrugKytDrQueryupbillcodeAPIRequest) GetCode() string {
+	return r._code
+}
+
+// Set is RefEntId Setter
+// 企业ID （一般为要查询单据的收货企业）
+func (r *AlibabaAlihealthDrugKytDrQueryupbillcodeAPIRequest) SetRefEntId(_refEntId string) error {
+	r._refEntId = _refEntId
+	r.Set("ref_ent_id", _refEntId)
+	return nil
+}
+
+// Get RefEntId Getter
+func (r AlibabaAlihealthDrugKytDrQueryupbillcodeAPIRequest) GetRefEntId() string {
+	return r._refEntId
+}

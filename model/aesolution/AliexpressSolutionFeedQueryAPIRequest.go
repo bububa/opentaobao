@@ -17,4 +17,36 @@ type AliexpressSolutionFeedQueryAPIRequest struct {
 	_jobId int64
 }
 
-// New
+// NewAliexpressSolutionFeedQueryRequest 初始化AliexpressSolutionFeedQueryAPIRequest对象
+func NewAliexpressSolutionFeedQueryRequest() *AliexpressSolutionFeedQueryAPIRequest {
+	return &AliexpressSolutionFeedQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressSolutionFeedQueryAPIRequest) GetApiMethodName() string {
+	return "aliexpress.solution.feed.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressSolutionFeedQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is JobId Setter
+// job id
+func (r *AliexpressSolutionFeedQueryAPIRequest) SetJobId(_jobId int64) error {
+	r._jobId = _jobId
+	r.Set("job_id", _jobId)
+	return nil
+}
+
+// Get JobId Getter
+func (r AliexpressSolutionFeedQueryAPIRequest) GetJobId() int64 {
+	return r._jobId
+}

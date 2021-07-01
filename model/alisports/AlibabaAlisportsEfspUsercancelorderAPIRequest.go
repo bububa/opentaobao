@@ -19,4 +19,49 @@ type AlibabaAlisportsEfspUsercancelorderAPIRequest struct {
 	_alipayId string
 }
 
-// New
+// NewAlibabaAlisportsEfspUsercancelorderRequest 初始化AlibabaAlisportsEfspUsercancelorderAPIRequest对象
+func NewAlibabaAlisportsEfspUsercancelorderRequest() *AlibabaAlisportsEfspUsercancelorderAPIRequest {
+	return &AlibabaAlisportsEfspUsercancelorderAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlisportsEfspUsercancelorderAPIRequest) GetApiMethodName() string {
+	return "alibaba.alisports.efsp.usercancelorder"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlisportsEfspUsercancelorderAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderNo Setter
+// 订单编号
+func (r *AlibabaAlisportsEfspUsercancelorderAPIRequest) SetOrderNo(_orderNo string) error {
+	r._orderNo = _orderNo
+	r.Set("order_no", _orderNo)
+	return nil
+}
+
+// Get OrderNo Getter
+func (r AlibabaAlisportsEfspUsercancelorderAPIRequest) GetOrderNo() string {
+	return r._orderNo
+}
+
+// Set is AlipayId Setter
+// 用户支付宝ID
+func (r *AlibabaAlisportsEfspUsercancelorderAPIRequest) SetAlipayId(_alipayId string) error {
+	r._alipayId = _alipayId
+	r.Set("alipay_id", _alipayId)
+	return nil
+}
+
+// Get AlipayId Getter
+func (r AlibabaAlisportsEfspUsercancelorderAPIRequest) GetAlipayId() string {
+	return r._alipayId
+}

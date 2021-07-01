@@ -19,4 +19,49 @@ type TaobaoOpenimIoscertSandboxSetAPIRequest struct {
 	_password string
 }
 
-// New
+// NewTaobaoOpenimIoscertSandboxSetRequest 初始化TaobaoOpenimIoscertSandboxSetAPIRequest对象
+func NewTaobaoOpenimIoscertSandboxSetRequest() *TaobaoOpenimIoscertSandboxSetAPIRequest {
+	return &TaobaoOpenimIoscertSandboxSetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpenimIoscertSandboxSetAPIRequest) GetApiMethodName() string {
+	return "taobao.openim.ioscert.sandbox.set"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpenimIoscertSandboxSetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Cert Setter
+// 证书内容,base64编码
+func (r *TaobaoOpenimIoscertSandboxSetAPIRequest) SetCert(_cert string) error {
+	r._cert = _cert
+	r.Set("cert", _cert)
+	return nil
+}
+
+// Get Cert Getter
+func (r TaobaoOpenimIoscertSandboxSetAPIRequest) GetCert() string {
+	return r._cert
+}
+
+// Set is Password Setter
+// 系统自动生成
+func (r *TaobaoOpenimIoscertSandboxSetAPIRequest) SetPassword(_password string) error {
+	r._password = _password
+	r.Set("password", _password)
+	return nil
+}
+
+// Get Password Getter
+func (r TaobaoOpenimIoscertSandboxSetAPIRequest) GetPassword() string {
+	return r._password
+}

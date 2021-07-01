@@ -19,4 +19,49 @@ type AlibabaCampusCoreAppGetappusagesAPIRequest struct {
 	_workBenchContext *WorkBenchContext
 }
 
-// New
+// NewAlibabaCampusCoreAppGetappusagesRequest 初始化AlibabaCampusCoreAppGetappusagesAPIRequest对象
+func NewAlibabaCampusCoreAppGetappusagesRequest() *AlibabaCampusCoreAppGetappusagesAPIRequest {
+	return &AlibabaCampusCoreAppGetappusagesAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetApiMethodName() string {
+	return "alibaba.campus.core.app.getappusages"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Appid Setter
+// 应用id
+func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetAppid(_appid int64) error {
+	r._appid = _appid
+	r.Set("appid", _appid)
+	return nil
+}
+
+// Get Appid Getter
+func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetAppid() int64 {
+	return r._appid
+}
+
+// Set is WorkBenchContext Setter
+// WorkBenchContext
+func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+	r._workBenchContext = _workBenchContext
+	r.Set("work_bench_context", _workBenchContext)
+	return nil
+}
+
+// Get WorkBenchContext Getter
+func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetWorkBenchContext() *WorkBenchContext {
+	return r._workBenchContext
+}

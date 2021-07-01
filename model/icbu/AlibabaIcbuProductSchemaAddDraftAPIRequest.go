@@ -17,4 +17,36 @@ type AlibabaIcbuProductSchemaAddDraftAPIRequest struct {
 	_paramProductTopPublishRequest *ProductTopPublishRequest
 }
 
-// New
+// NewAlibabaIcbuProductSchemaAddDraftRequest 初始化AlibabaIcbuProductSchemaAddDraftAPIRequest对象
+func NewAlibabaIcbuProductSchemaAddDraftRequest() *AlibabaIcbuProductSchemaAddDraftAPIRequest {
+	return &AlibabaIcbuProductSchemaAddDraftAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIcbuProductSchemaAddDraftAPIRequest) GetApiMethodName() string {
+	return "alibaba.icbu.product.schema.add.draft"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIcbuProductSchemaAddDraftAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamProductTopPublishRequest Setter
+// 发布入参
+func (r *AlibabaIcbuProductSchemaAddDraftAPIRequest) SetParamProductTopPublishRequest(_paramProductTopPublishRequest *ProductTopPublishRequest) error {
+	r._paramProductTopPublishRequest = _paramProductTopPublishRequest
+	r.Set("param_product_top_publish_request", _paramProductTopPublishRequest)
+	return nil
+}
+
+// Get ParamProductTopPublishRequest Getter
+func (r AlibabaIcbuProductSchemaAddDraftAPIRequest) GetParamProductTopPublishRequest() *ProductTopPublishRequest {
+	return r._paramProductTopPublishRequest
+}

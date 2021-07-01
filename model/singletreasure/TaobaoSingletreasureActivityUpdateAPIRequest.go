@@ -17,4 +17,36 @@ type TaobaoSingletreasureActivityUpdateAPIRequest struct {
 	_activityInfo *ActivityInfoCreateDto
 }
 
-// New
+// NewTaobaoSingletreasureActivityUpdateRequest 初始化TaobaoSingletreasureActivityUpdateAPIRequest对象
+func NewTaobaoSingletreasureActivityUpdateRequest() *TaobaoSingletreasureActivityUpdateAPIRequest {
+	return &TaobaoSingletreasureActivityUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSingletreasureActivityUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.singletreasure.activity.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSingletreasureActivityUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ActivityInfo Setter
+// 系统入参
+func (r *TaobaoSingletreasureActivityUpdateAPIRequest) SetActivityInfo(_activityInfo *ActivityInfoCreateDto) error {
+	r._activityInfo = _activityInfo
+	r.Set("activity_info", _activityInfo)
+	return nil
+}
+
+// Get ActivityInfo Getter
+func (r TaobaoSingletreasureActivityUpdateAPIRequest) GetActivityInfo() *ActivityInfoCreateDto {
+	return r._activityInfo
+}

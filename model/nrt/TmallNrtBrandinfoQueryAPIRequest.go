@@ -15,4 +15,23 @@ type TmallNrtBrandinfoQueryAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTmallNrtBrandinfoQueryRequest 初始化TmallNrtBrandinfoQueryAPIRequest对象
+func NewTmallNrtBrandinfoQueryRequest() *TmallNrtBrandinfoQueryAPIRequest {
+	return &TmallNrtBrandinfoQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrtBrandinfoQueryAPIRequest) GetApiMethodName() string {
+	return "tmall.nrt.brandinfo.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrtBrandinfoQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

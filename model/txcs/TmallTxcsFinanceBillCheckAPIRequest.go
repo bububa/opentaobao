@@ -19,4 +19,49 @@ type TmallTxcsFinanceBillCheckAPIRequest struct {
 	_ouCode string
 }
 
-// New
+// NewTmallTxcsFinanceBillCheckRequest 初始化TmallTxcsFinanceBillCheckAPIRequest对象
+func NewTmallTxcsFinanceBillCheckRequest() *TmallTxcsFinanceBillCheckAPIRequest {
+	return &TmallTxcsFinanceBillCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallTxcsFinanceBillCheckAPIRequest) GetApiMethodName() string {
+	return "tmall.txcs.finance.bill.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallTxcsFinanceBillCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StatementBillFeeDetailQuery Setter
+// 查询参数
+func (r *TmallTxcsFinanceBillCheckAPIRequest) SetStatementBillFeeDetailQuery(_statementBillFeeDetailQuery *StatementBillFeeDetailQuery) error {
+	r._statementBillFeeDetailQuery = _statementBillFeeDetailQuery
+	r.Set("statement_bill_fee_detail_query", _statementBillFeeDetailQuery)
+	return nil
+}
+
+// Get StatementBillFeeDetailQuery Getter
+func (r TmallTxcsFinanceBillCheckAPIRequest) GetStatementBillFeeDetailQuery() *StatementBillFeeDetailQuery {
+	return r._statementBillFeeDetailQuery
+}
+
+// Set is OuCode Setter
+// 门店编码
+func (r *TmallTxcsFinanceBillCheckAPIRequest) SetOuCode(_ouCode string) error {
+	r._ouCode = _ouCode
+	r.Set("ou_code", _ouCode)
+	return nil
+}
+
+// Get OuCode Getter
+func (r TmallTxcsFinanceBillCheckAPIRequest) GetOuCode() string {
+	return r._ouCode
+}

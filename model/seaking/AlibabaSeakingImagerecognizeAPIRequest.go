@@ -23,4 +23,75 @@ type AlibabaSeakingImagerecognizeAPIRequest struct {
 	_url string
 }
 
-// New
+// NewAlibabaSeakingImagerecognizeRequest 初始化AlibabaSeakingImagerecognizeAPIRequest对象
+func NewAlibabaSeakingImagerecognizeRequest() *AlibabaSeakingImagerecognizeAPIRequest {
+	return &AlibabaSeakingImagerecognizeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetApiMethodName() string {
+	return "alibaba.seaking.imagerecognize"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Extra Setter
+// 扩展信息
+func (r *AlibabaSeakingImagerecognizeAPIRequest) SetExtra(_extra *Extra) error {
+	r._extra = _extra
+	r.Set("extra", _extra)
+	return nil
+}
+
+// Get Extra Getter
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetExtra() *Extra {
+	return r._extra
+}
+
+// Set is Identifier Setter
+// erp用户id
+func (r *AlibabaSeakingImagerecognizeAPIRequest) SetIdentifier(_identifier string) error {
+	r._identifier = _identifier
+	r.Set("identifier", _identifier)
+	return nil
+}
+
+// Get Identifier Getter
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetIdentifier() string {
+	return r._identifier
+}
+
+// Set is IdentifierType Setter
+// 调用来源(erp名称)
+func (r *AlibabaSeakingImagerecognizeAPIRequest) SetIdentifierType(_identifierType string) error {
+	r._identifierType = _identifierType
+	r.Set("identifier_type", _identifierType)
+	return nil
+}
+
+// Get IdentifierType Getter
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetIdentifierType() string {
+	return r._identifierType
+}
+
+// Set is Url Setter
+// 图片url
+func (r *AlibabaSeakingImagerecognizeAPIRequest) SetUrl(_url string) error {
+	r._url = _url
+	r.Set("url", _url)
+	return nil
+}
+
+// Get Url Getter
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetUrl() string {
+	return r._url
+}

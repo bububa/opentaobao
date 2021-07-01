@@ -21,4 +21,62 @@ type TmallCarcenterVehicleCvmappingInsertAPIRequest struct {
 	_supplierChassisCid string
 }
 
-// New
+// NewTmallCarcenterVehicleCvmappingInsertRequest 初始化TmallCarcenterVehicleCvmappingInsertAPIRequest对象
+func NewTmallCarcenterVehicleCvmappingInsertRequest() *TmallCarcenterVehicleCvmappingInsertAPIRequest {
+	return &TmallCarcenterVehicleCvmappingInsertAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetApiMethodName() string {
+	return "tmall.carcenter.vehicle.cvmapping.insert"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Status Setter
+// 状态
+func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// Get Status Getter
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetStatus() int64 {
+	return r._status
+}
+
+// Set is SupplierVersionCid Setter
+// 版本ID
+func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierVersionCid(_supplierVersionCid string) error {
+	r._supplierVersionCid = _supplierVersionCid
+	r.Set("supplier_version_cid", _supplierVersionCid)
+	return nil
+}
+
+// Get SupplierVersionCid Getter
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetSupplierVersionCid() string {
+	return r._supplierVersionCid
+}
+
+// Set is SupplierChassisCid Setter
+// 底盘ID
+func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierChassisCid(_supplierChassisCid string) error {
+	r._supplierChassisCid = _supplierChassisCid
+	r.Set("supplier_chassis_cid", _supplierChassisCid)
+	return nil
+}
+
+// Get SupplierChassisCid Getter
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetSupplierChassisCid() string {
+	return r._supplierChassisCid
+}

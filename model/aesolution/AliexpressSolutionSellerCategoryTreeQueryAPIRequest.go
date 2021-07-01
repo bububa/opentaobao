@@ -19,4 +19,49 @@ type AliexpressSolutionSellerCategoryTreeQueryAPIRequest struct {
 	_filterNoPermission bool
 }
 
-// New
+// NewAliexpressSolutionSellerCategoryTreeQueryRequest 初始化AliexpressSolutionSellerCategoryTreeQueryAPIRequest对象
+func NewAliexpressSolutionSellerCategoryTreeQueryRequest() *AliexpressSolutionSellerCategoryTreeQueryAPIRequest {
+	return &AliexpressSolutionSellerCategoryTreeQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressSolutionSellerCategoryTreeQueryAPIRequest) GetApiMethodName() string {
+	return "aliexpress.solution.seller.category.tree.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressSolutionSellerCategoryTreeQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CategoryId Setter
+// parent category ID. To obtain the root categories, setting the category_id = 0
+func (r *AliexpressSolutionSellerCategoryTreeQueryAPIRequest) SetCategoryId(_categoryId int64) error {
+	r._categoryId = _categoryId
+	r.Set("category_id", _categoryId)
+	return nil
+}
+
+// Get CategoryId Getter
+func (r AliexpressSolutionSellerCategoryTreeQueryAPIRequest) GetCategoryId() int64 {
+	return r._categoryId
+}
+
+// Set is FilterNoPermission Setter
+// filter the categories which seller does not have permission
+func (r *AliexpressSolutionSellerCategoryTreeQueryAPIRequest) SetFilterNoPermission(_filterNoPermission bool) error {
+	r._filterNoPermission = _filterNoPermission
+	r.Set("filter_no_permission", _filterNoPermission)
+	return nil
+}
+
+// Get FilterNoPermission Getter
+func (r AliexpressSolutionSellerCategoryTreeQueryAPIRequest) GetFilterNoPermission() bool {
+	return r._filterNoPermission
+}

@@ -15,4 +15,23 @@ type TaobaoCaipiaoGoodsInfoGetAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoCaipiaoGoodsInfoGetRequest 初始化TaobaoCaipiaoGoodsInfoGetAPIRequest对象
+func NewTaobaoCaipiaoGoodsInfoGetRequest() *TaobaoCaipiaoGoodsInfoGetAPIRequest {
+	return &TaobaoCaipiaoGoodsInfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCaipiaoGoodsInfoGetAPIRequest) GetApiMethodName() string {
+	return "taobao.caipiao.goods.info.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCaipiaoGoodsInfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

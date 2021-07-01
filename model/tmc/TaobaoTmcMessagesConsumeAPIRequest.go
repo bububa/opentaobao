@@ -19,4 +19,49 @@ type TaobaoTmcMessagesConsumeAPIRequest struct {
 	_quantity int64
 }
 
-// New
+// NewTaobaoTmcMessagesConsumeRequest 初始化TaobaoTmcMessagesConsumeAPIRequest对象
+func NewTaobaoTmcMessagesConsumeRequest() *TaobaoTmcMessagesConsumeAPIRequest {
+	return &TaobaoTmcMessagesConsumeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTmcMessagesConsumeAPIRequest) GetApiMethodName() string {
+	return "taobao.tmc.messages.consume"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTmcMessagesConsumeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is GroupName Setter
+// 用户分组名称，不传表示消费默认分组，如果应用没有设置用户分组，传入分组名称将会返回错误
+func (r *TaobaoTmcMessagesConsumeAPIRequest) SetGroupName(_groupName string) error {
+	r._groupName = _groupName
+	r.Set("group_name", _groupName)
+	return nil
+}
+
+// Get GroupName Getter
+func (r TaobaoTmcMessagesConsumeAPIRequest) GetGroupName() string {
+	return r._groupName
+}
+
+// Set is Quantity Setter
+// 每次批量消费消息的条数，最小值：10；最大值：200
+func (r *TaobaoTmcMessagesConsumeAPIRequest) SetQuantity(_quantity int64) error {
+	r._quantity = _quantity
+	r.Set("quantity", _quantity)
+	return nil
+}
+
+// Get Quantity Getter
+func (r TaobaoTmcMessagesConsumeAPIRequest) GetQuantity() int64 {
+	return r._quantity
+}

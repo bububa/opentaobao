@@ -17,4 +17,36 @@ type TaobaoWangwangAbstractInitializeAPIRequest struct {
 	_charset string
 }
 
-// New
+// NewTaobaoWangwangAbstractInitializeRequest 初始化TaobaoWangwangAbstractInitializeAPIRequest对象
+func NewTaobaoWangwangAbstractInitializeRequest() *TaobaoWangwangAbstractInitializeAPIRequest {
+	return &TaobaoWangwangAbstractInitializeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWangwangAbstractInitializeAPIRequest) GetApiMethodName() string {
+	return "taobao.wangwang.abstract.initialize"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWangwangAbstractInitializeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Charset Setter
+// 传入参数的字符集
+func (r *TaobaoWangwangAbstractInitializeAPIRequest) SetCharset(_charset string) error {
+	r._charset = _charset
+	r.Set("charset", _charset)
+	return nil
+}
+
+// Get Charset Getter
+func (r TaobaoWangwangAbstractInitializeAPIRequest) GetCharset() string {
+	return r._charset
+}

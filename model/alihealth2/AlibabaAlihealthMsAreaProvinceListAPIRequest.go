@@ -15,4 +15,23 @@ type AlibabaAlihealthMsAreaProvinceListAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaAlihealthMsAreaProvinceListRequest 初始化AlibabaAlihealthMsAreaProvinceListAPIRequest对象
+func NewAlibabaAlihealthMsAreaProvinceListRequest() *AlibabaAlihealthMsAreaProvinceListAPIRequest {
+	return &AlibabaAlihealthMsAreaProvinceListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthMsAreaProvinceListAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.ms.area.province.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthMsAreaProvinceListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

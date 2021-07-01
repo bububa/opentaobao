@@ -21,4 +21,62 @@ type TaobaoMiniappDistributionOrderItemsBindAPIRequest struct {
 	_distributeId int64
 }
 
-// New
+// NewTaobaoMiniappDistributionOrderItemsBindRequest 初始化TaobaoMiniappDistributionOrderItemsBindAPIRequest对象
+func NewTaobaoMiniappDistributionOrderItemsBindRequest() *TaobaoMiniappDistributionOrderItemsBindAPIRequest {
+	return &TaobaoMiniappDistributionOrderItemsBindAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetApiMethodName() string {
+	return "taobao.miniapp.distribution.order.items.bind"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TargetEntityList Setter
+// 商品id列表
+func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetTargetEntityList(_targetEntityList []string) error {
+	r._targetEntityList = _targetEntityList
+	r.Set("target_entity_list", _targetEntityList)
+	return nil
+}
+
+// Get TargetEntityList Getter
+func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetTargetEntityList() []string {
+	return r._targetEntityList
+}
+
+// Set is AddBind Setter
+// true表示新增绑定，false表示解绑
+func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetAddBind(_addBind bool) error {
+	r._addBind = _addBind
+	r.Set("add_bind", _addBind)
+	return nil
+}
+
+// Get AddBind Getter
+func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetAddBind() bool {
+	return r._addBind
+}
+
+// Set is DistributeId Setter
+// 投放计划标识id
+func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetDistributeId(_distributeId int64) error {
+	r._distributeId = _distributeId
+	r.Set("distribute_id", _distributeId)
+	return nil
+}
+
+// Get DistributeId Getter
+func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetDistributeId() int64 {
+	return r._distributeId
+}

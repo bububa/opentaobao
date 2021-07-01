@@ -19,4 +19,49 @@ type AlibabaCampusAclNewGetappmenutreeAPIRequest struct {
 	_withpermission bool
 }
 
-// New
+// NewAlibabaCampusAclNewGetappmenutreeRequest 初始化AlibabaCampusAclNewGetappmenutreeAPIRequest对象
+func NewAlibabaCampusAclNewGetappmenutreeRequest() *AlibabaCampusAclNewGetappmenutreeAPIRequest {
+	return &AlibabaCampusAclNewGetappmenutreeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCampusAclNewGetappmenutreeAPIRequest) GetApiMethodName() string {
+	return "alibaba.campus.acl.new.getappmenutree"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCampusAclNewGetappmenutreeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Workbenchcontext Setter
+// 系统入参
+func (r *AlibabaCampusAclNewGetappmenutreeAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+	r._workbenchcontext = _workbenchcontext
+	r.Set("workbenchcontext", _workbenchcontext)
+	return nil
+}
+
+// Get Workbenchcontext Getter
+func (r AlibabaCampusAclNewGetappmenutreeAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
+	return r._workbenchcontext
+}
+
+// Set is Withpermission Setter
+// 是否关联查询出菜单下的权限
+func (r *AlibabaCampusAclNewGetappmenutreeAPIRequest) SetWithpermission(_withpermission bool) error {
+	r._withpermission = _withpermission
+	r.Set("withpermission", _withpermission)
+	return nil
+}
+
+// Get Withpermission Getter
+func (r AlibabaCampusAclNewGetappmenutreeAPIRequest) GetWithpermission() bool {
+	return r._withpermission
+}

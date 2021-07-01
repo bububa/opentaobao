@@ -22,5 +22,5 @@ type TaobaoWlbImportThreeplOfflineConsignAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *TopResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoWlbImportThreeplOfflineConsignTopResult `json:"result,omitempty" xml:"result,omitempty"`
 }

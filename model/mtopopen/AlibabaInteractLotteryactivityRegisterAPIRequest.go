@@ -17,4 +17,36 @@ type AlibabaInteractLotteryactivityRegisterAPIRequest struct {
 	_paramTopUpdateActivityLotteryInfoParam *TopUpdateActivityLotteryInfoParam
 }
 
-// New
+// NewAlibabaInteractLotteryactivityRegisterRequest 初始化AlibabaInteractLotteryactivityRegisterAPIRequest对象
+func NewAlibabaInteractLotteryactivityRegisterRequest() *AlibabaInteractLotteryactivityRegisterAPIRequest {
+	return &AlibabaInteractLotteryactivityRegisterAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractLotteryactivityRegisterAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.lotteryactivity.register"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractLotteryactivityRegisterAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamTopUpdateActivityLotteryInfoParam Setter
+// 入参
+func (r *AlibabaInteractLotteryactivityRegisterAPIRequest) SetParamTopUpdateActivityLotteryInfoParam(_paramTopUpdateActivityLotteryInfoParam *TopUpdateActivityLotteryInfoParam) error {
+	r._paramTopUpdateActivityLotteryInfoParam = _paramTopUpdateActivityLotteryInfoParam
+	r.Set("param_top_update_activity_lottery_info_param", _paramTopUpdateActivityLotteryInfoParam)
+	return nil
+}
+
+// Get ParamTopUpdateActivityLotteryInfoParam Getter
+func (r AlibabaInteractLotteryactivityRegisterAPIRequest) GetParamTopUpdateActivityLotteryInfoParam() *TopUpdateActivityLotteryInfoParam {
+	return r._paramTopUpdateActivityLotteryInfoParam
+}

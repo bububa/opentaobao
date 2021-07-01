@@ -17,4 +17,36 @@ type AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest struct {
 	_couponQrcodeParamDo *CouponQrcodeParamDo
 }
 
-// New
+// NewAlibabaTxcsBrandmarketingCouponQrcodeGetRequest 初始化AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest对象
+func NewAlibabaTxcsBrandmarketingCouponQrcodeGetRequest() *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest {
+	return &AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.txcs.brandmarketing.coupon.qrcode.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CouponQrcodeParamDo Setter
+// 请求信息
+func (r *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) SetCouponQrcodeParamDo(_couponQrcodeParamDo *CouponQrcodeParamDo) error {
+	r._couponQrcodeParamDo = _couponQrcodeParamDo
+	r.Set("coupon_qrcode_param_do", _couponQrcodeParamDo)
+	return nil
+}
+
+// Get CouponQrcodeParamDo Getter
+func (r AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) GetCouponQrcodeParamDo() *CouponQrcodeParamDo {
+	return r._couponQrcodeParamDo
+}

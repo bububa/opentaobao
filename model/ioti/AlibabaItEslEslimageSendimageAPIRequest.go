@@ -17,4 +17,36 @@ type AlibabaItEslEslimageSendimageAPIRequest struct {
 	_mac string
 }
 
-// New
+// NewAlibabaItEslEslimageSendimageRequest 初始化AlibabaItEslEslimageSendimageAPIRequest对象
+func NewAlibabaItEslEslimageSendimageRequest() *AlibabaItEslEslimageSendimageAPIRequest {
+	return &AlibabaItEslEslimageSendimageAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaItEslEslimageSendimageAPIRequest) GetApiMethodName() string {
+	return "alibaba.it.esl.eslimage.sendimage"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaItEslEslimageSendimageAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Mac Setter
+// 价签地址
+func (r *AlibabaItEslEslimageSendimageAPIRequest) SetMac(_mac string) error {
+	r._mac = _mac
+	r.Set("mac", _mac)
+	return nil
+}
+
+// Get Mac Getter
+func (r AlibabaItEslEslimageSendimageAPIRequest) GetMac() string {
+	return r._mac
+}

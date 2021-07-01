@@ -17,4 +17,36 @@ type AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest struct {
 	_modifyMailNoRequest *Modifymailnorequest
 }
 
-// New
+// NewAlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest 初始化AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest对象
+func NewAlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest() *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest {
+	return &AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.uop.supplier.consignorder.notify.tms.change"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ModifyMailNoRequest Setter
+// 修改运单号请求模型
+func (r *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) SetModifyMailNoRequest(_modifyMailNoRequest *Modifymailnorequest) error {
+	r._modifyMailNoRequest = _modifyMailNoRequest
+	r.Set("modify_mail_no_request", _modifyMailNoRequest)
+	return nil
+}
+
+// Get ModifyMailNoRequest Getter
+func (r AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) GetModifyMailNoRequest() *Modifymailnorequest {
+	return r._modifyMailNoRequest
+}

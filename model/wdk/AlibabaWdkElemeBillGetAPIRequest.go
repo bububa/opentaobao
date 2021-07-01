@@ -17,4 +17,36 @@ type AlibabaWdkElemeBillGetAPIRequest struct {
 	_eleBillRequest *EleBillRequest
 }
 
-// New
+// NewAlibabaWdkElemeBillGetRequest 初始化AlibabaWdkElemeBillGetAPIRequest对象
+func NewAlibabaWdkElemeBillGetRequest() *AlibabaWdkElemeBillGetAPIRequest {
+	return &AlibabaWdkElemeBillGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkElemeBillGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.eleme.bill.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkElemeBillGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is EleBillRequest Setter
+// 对账单查询参数
+func (r *AlibabaWdkElemeBillGetAPIRequest) SetEleBillRequest(_eleBillRequest *EleBillRequest) error {
+	r._eleBillRequest = _eleBillRequest
+	r.Set("ele_bill_request", _eleBillRequest)
+	return nil
+}
+
+// Get EleBillRequest Getter
+func (r AlibabaWdkElemeBillGetAPIRequest) GetEleBillRequest() *EleBillRequest {
+	return r._eleBillRequest
+}

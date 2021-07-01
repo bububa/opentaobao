@@ -17,4 +17,36 @@ type TaobaoXhotelServicetimeGetAPIRequest struct {
 	_hid int64
 }
 
-// New
+// NewTaobaoXhotelServicetimeGetRequest 初始化TaobaoXhotelServicetimeGetAPIRequest对象
+func NewTaobaoXhotelServicetimeGetRequest() *TaobaoXhotelServicetimeGetAPIRequest {
+	return &TaobaoXhotelServicetimeGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelServicetimeGetAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.servicetime.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelServicetimeGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Hid Setter
+// 酒店id
+func (r *TaobaoXhotelServicetimeGetAPIRequest) SetHid(_hid int64) error {
+	r._hid = _hid
+	r.Set("hid", _hid)
+	return nil
+}
+
+// Get Hid Getter
+func (r TaobaoXhotelServicetimeGetAPIRequest) GetHid() int64 {
+	return r._hid
+}

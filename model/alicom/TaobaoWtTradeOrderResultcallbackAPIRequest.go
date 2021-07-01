@@ -17,4 +17,36 @@ type TaobaoWtTradeOrderResultcallbackAPIRequest struct {
 	_param0 *OrderResultDto
 }
 
-// New
+// NewTaobaoWtTradeOrderResultcallbackRequest 初始化TaobaoWtTradeOrderResultcallbackAPIRequest对象
+func NewTaobaoWtTradeOrderResultcallbackRequest() *TaobaoWtTradeOrderResultcallbackAPIRequest {
+	return &TaobaoWtTradeOrderResultcallbackAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWtTradeOrderResultcallbackAPIRequest) GetApiMethodName() string {
+	return "taobao.wt.trade.order.resultcallback"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWtTradeOrderResultcallbackAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 系统自动生成
+func (r *TaobaoWtTradeOrderResultcallbackAPIRequest) SetParam0(_param0 *OrderResultDto) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r TaobaoWtTradeOrderResultcallbackAPIRequest) GetParam0() *OrderResultDto {
+	return r._param0
+}

@@ -17,4 +17,36 @@ type TmallItemHscodeDetailGetAPIRequest struct {
 	_hscode string
 }
 
-// New
+// NewTmallItemHscodeDetailGetRequest 初始化TmallItemHscodeDetailGetAPIRequest对象
+func NewTmallItemHscodeDetailGetRequest() *TmallItemHscodeDetailGetAPIRequest {
+	return &TmallItemHscodeDetailGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallItemHscodeDetailGetAPIRequest) GetApiMethodName() string {
+	return "tmall.item.hscode.detail.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallItemHscodeDetailGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Hscode Setter
+// hscode
+func (r *TmallItemHscodeDetailGetAPIRequest) SetHscode(_hscode string) error {
+	r._hscode = _hscode
+	r.Set("hscode", _hscode)
+	return nil
+}
+
+// Get Hscode Getter
+func (r TmallItemHscodeDetailGetAPIRequest) GetHscode() string {
+	return r._hscode
+}

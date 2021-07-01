@@ -17,4 +17,36 @@ type AlibabaFundplatformAccountJourQueryInfoAPIRequest struct {
 	_paramFundAccountJournalQueryReq *FundAccountJournalQueryReq
 }
 
-// New
+// NewAlibabaFundplatformAccountJourQueryInfoRequest 初始化AlibabaFundplatformAccountJourQueryInfoAPIRequest对象
+func NewAlibabaFundplatformAccountJourQueryInfoRequest() *AlibabaFundplatformAccountJourQueryInfoAPIRequest {
+	return &AlibabaFundplatformAccountJourQueryInfoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaFundplatformAccountJourQueryInfoAPIRequest) GetApiMethodName() string {
+	return "alibaba.fundplatform.account.jour.query.info"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaFundplatformAccountJourQueryInfoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamFundAccountJournalQueryReq Setter
+// 入参对象
+func (r *AlibabaFundplatformAccountJourQueryInfoAPIRequest) SetParamFundAccountJournalQueryReq(_paramFundAccountJournalQueryReq *FundAccountJournalQueryReq) error {
+	r._paramFundAccountJournalQueryReq = _paramFundAccountJournalQueryReq
+	r.Set("param_fund_account_journal_query_req", _paramFundAccountJournalQueryReq)
+	return nil
+}
+
+// Get ParamFundAccountJournalQueryReq Getter
+func (r AlibabaFundplatformAccountJourQueryInfoAPIRequest) GetParamFundAccountJournalQueryReq() *FundAccountJournalQueryReq {
+	return r._paramFundAccountJournalQueryReq
+}

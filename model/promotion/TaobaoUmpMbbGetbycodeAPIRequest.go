@@ -17,4 +17,36 @@ type TaobaoUmpMbbGetbycodeAPIRequest struct {
 	_code string
 }
 
-// New
+// NewTaobaoUmpMbbGetbycodeRequest 初始化TaobaoUmpMbbGetbycodeAPIRequest对象
+func NewTaobaoUmpMbbGetbycodeRequest() *TaobaoUmpMbbGetbycodeAPIRequest {
+	return &TaobaoUmpMbbGetbycodeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpMbbGetbycodeAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.mbb.getbycode"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpMbbGetbycodeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Code Setter
+// 营销积木块code
+func (r *TaobaoUmpMbbGetbycodeAPIRequest) SetCode(_code string) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// Get Code Getter
+func (r TaobaoUmpMbbGetbycodeAPIRequest) GetCode() string {
+	return r._code
+}

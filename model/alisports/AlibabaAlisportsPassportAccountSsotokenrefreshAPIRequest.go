@@ -23,4 +23,75 @@ type AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest struct {
 	_secret string
 }
 
-// New
+// NewAlibabaAlisportsPassportAccountSsotokenrefreshRequest 初始化AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest对象
+func NewAlibabaAlisportsPassportAccountSsotokenrefreshRequest() *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest {
+	return &AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetApiMethodName() string {
+	return "alibaba.alisports.passport.account.ssotokenrefresh"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AlispAppKey Setter
+// 应用appkey
+func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetAlispAppKey(_alispAppKey string) error {
+	r._alispAppKey = _alispAppKey
+	r.Set("alisp_app_key", _alispAppKey)
+	return nil
+}
+
+// Get AlispAppKey Getter
+func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetAlispAppKey() string {
+	return r._alispAppKey
+}
+
+// Set is AlispTime Setter
+// 当前时间戳[精确到秒,10位]
+func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetAlispTime(_alispTime string) error {
+	r._alispTime = _alispTime
+	r.Set("alisp_time", _alispTime)
+	return nil
+}
+
+// Get AlispTime Getter
+func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetAlispTime() string {
+	return r._alispTime
+}
+
+// Set is AlispSign Setter
+// 签名
+func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetAlispSign(_alispSign string) error {
+	r._alispSign = _alispSign
+	r.Set("alisp_sign", _alispSign)
+	return nil
+}
+
+// Get AlispSign Getter
+func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetAlispSign() string {
+	return r._alispSign
+}
+
+// Set is Secret Setter
+// 登录成功返回的access_token(access_token是TOP保留关键字，只能改名，望谅解)
+func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetSecret(_secret string) error {
+	r._secret = _secret
+	r.Set("secret", _secret)
+	return nil
+}
+
+// Get Secret Getter
+func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetSecret() string {
+	return r._secret
+}

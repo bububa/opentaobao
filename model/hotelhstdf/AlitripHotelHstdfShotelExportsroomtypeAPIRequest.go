@@ -17,4 +17,36 @@ type AlitripHotelHstdfShotelExportsroomtypeAPIRequest struct {
 	_hid int64
 }
 
-// New
+// NewAlitripHotelHstdfShotelExportsroomtypeRequest 初始化AlitripHotelHstdfShotelExportsroomtypeAPIRequest对象
+func NewAlitripHotelHstdfShotelExportsroomtypeRequest() *AlitripHotelHstdfShotelExportsroomtypeAPIRequest {
+	return &AlitripHotelHstdfShotelExportsroomtypeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripHotelHstdfShotelExportsroomtypeAPIRequest) GetApiMethodName() string {
+	return "alitrip.hotel.hstdf.shotel.exportsroomtype"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripHotelHstdfShotelExportsroomtypeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Hid Setter
+// 卖家酒店id
+func (r *AlitripHotelHstdfShotelExportsroomtypeAPIRequest) SetHid(_hid int64) error {
+	r._hid = _hid
+	r.Set("hid", _hid)
+	return nil
+}
+
+// Get Hid Getter
+func (r AlitripHotelHstdfShotelExportsroomtypeAPIRequest) GetHid() int64 {
+	return r._hid
+}

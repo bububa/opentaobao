@@ -19,4 +19,49 @@ type TaobaoCrmGroupMoveAPIRequest struct {
 	_toGroupId int64
 }
 
-// New
+// NewTaobaoCrmGroupMoveRequest 初始化TaobaoCrmGroupMoveAPIRequest对象
+func NewTaobaoCrmGroupMoveRequest() *TaobaoCrmGroupMoveAPIRequest {
+	return &TaobaoCrmGroupMoveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCrmGroupMoveAPIRequest) GetApiMethodName() string {
+	return "taobao.crm.group.move"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCrmGroupMoveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FromGroupId Setter
+// 需要移动的分组
+func (r *TaobaoCrmGroupMoveAPIRequest) SetFromGroupId(_fromGroupId int64) error {
+	r._fromGroupId = _fromGroupId
+	r.Set("from_group_id", _fromGroupId)
+	return nil
+}
+
+// Get FromGroupId Getter
+func (r TaobaoCrmGroupMoveAPIRequest) GetFromGroupId() int64 {
+	return r._fromGroupId
+}
+
+// Set is ToGroupId Setter
+// 目的分组
+func (r *TaobaoCrmGroupMoveAPIRequest) SetToGroupId(_toGroupId int64) error {
+	r._toGroupId = _toGroupId
+	r.Set("to_group_id", _toGroupId)
+	return nil
+}
+
+// Get ToGroupId Getter
+func (r TaobaoCrmGroupMoveAPIRequest) GetToGroupId() int64 {
+	return r._toGroupId
+}

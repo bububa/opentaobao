@@ -15,4 +15,23 @@ type AlibabaInteractCurrentMixusernickAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaInteractCurrentMixusernickRequest 初始化AlibabaInteractCurrentMixusernickAPIRequest对象
+func NewAlibabaInteractCurrentMixusernickRequest() *AlibabaInteractCurrentMixusernickAPIRequest {
+	return &AlibabaInteractCurrentMixusernickAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractCurrentMixusernickAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.current.mixusernick"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractCurrentMixusernickAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

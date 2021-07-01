@@ -17,4 +17,36 @@ type AlibabaIworkMcMsgSenddefaultAPIRequest struct {
 	_messageEvent *DefaultMessageEvent
 }
 
-// New
+// NewAlibabaIworkMcMsgSenddefaultRequest 初始化AlibabaIworkMcMsgSenddefaultAPIRequest对象
+func NewAlibabaIworkMcMsgSenddefaultRequest() *AlibabaIworkMcMsgSenddefaultAPIRequest {
+	return &AlibabaIworkMcMsgSenddefaultAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIworkMcMsgSenddefaultAPIRequest) GetApiMethodName() string {
+	return "alibaba.iwork.mc.msg.senddefault"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIworkMcMsgSenddefaultAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MessageEvent Setter
+// 消息对象
+func (r *AlibabaIworkMcMsgSenddefaultAPIRequest) SetMessageEvent(_messageEvent *DefaultMessageEvent) error {
+	r._messageEvent = _messageEvent
+	r.Set("message_event", _messageEvent)
+	return nil
+}
+
+// Get MessageEvent Getter
+func (r AlibabaIworkMcMsgSenddefaultAPIRequest) GetMessageEvent() *DefaultMessageEvent {
+	return r._messageEvent
+}

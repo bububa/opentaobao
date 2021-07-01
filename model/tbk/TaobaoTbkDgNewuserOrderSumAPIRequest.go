@@ -27,4 +27,101 @@ type TaobaoTbkDgNewuserOrderSumAPIRequest struct {
 	_settleMonth string
 }
 
-// New
+// NewTaobaoTbkDgNewuserOrderSumRequest 初始化TaobaoTbkDgNewuserOrderSumAPIRequest对象
+func NewTaobaoTbkDgNewuserOrderSumRequest() *TaobaoTbkDgNewuserOrderSumAPIRequest {
+	return &TaobaoTbkDgNewuserOrderSumAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetApiMethodName() string {
+	return "taobao.tbk.dg.newuser.order.sum"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PageSize Setter
+// 页大小，默认20，1~100
+func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// Set is AdzoneId Setter
+// mm_xxx_xxx_xxx的第三位
+func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
+	return nil
+}
+
+// Get AdzoneId Getter
+func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
+}
+
+// Set is PageNo Setter
+// 页码，默认1
+func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// Get PageNo Getter
+func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// Set is SiteId Setter
+// mm_xxx_xxx_xxx的第二位
+func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSiteId(_siteId int64) error {
+	r._siteId = _siteId
+	r.Set("site_id", _siteId)
+	return nil
+}
+
+// Get SiteId Getter
+func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetSiteId() int64 {
+	return r._siteId
+}
+
+// Set is ActivityId Setter
+// 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
+func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetActivityId(_activityId string) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// Get ActivityId Getter
+func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetActivityId() string {
+	return r._activityId
+}
+
+// Set is SettleMonth Setter
+// 结算月份
+func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSettleMonth(_settleMonth string) error {
+	r._settleMonth = _settleMonth
+	r.Set("settle_month", _settleMonth)
+	return nil
+}
+
+// Get SettleMonth Getter
+func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetSettleMonth() string {
+	return r._settleMonth
+}

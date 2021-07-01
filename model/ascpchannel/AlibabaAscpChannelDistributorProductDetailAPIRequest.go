@@ -17,4 +17,36 @@ type AlibabaAscpChannelDistributorProductDetailAPIRequest struct {
 	_productDetailRequest *ProductDetailQueryRequestForDistributor
 }
 
-// New
+// NewAlibabaAscpChannelDistributorProductDetailRequest 初始化AlibabaAscpChannelDistributorProductDetailAPIRequest对象
+func NewAlibabaAscpChannelDistributorProductDetailRequest() *AlibabaAscpChannelDistributorProductDetailAPIRequest {
+	return &AlibabaAscpChannelDistributorProductDetailAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpChannelDistributorProductDetailAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.channel.distributor.product.detail"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpChannelDistributorProductDetailAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ProductDetailRequest Setter
+// 产品详情查询入参
+func (r *AlibabaAscpChannelDistributorProductDetailAPIRequest) SetProductDetailRequest(_productDetailRequest *ProductDetailQueryRequestForDistributor) error {
+	r._productDetailRequest = _productDetailRequest
+	r.Set("product_detail_request", _productDetailRequest)
+	return nil
+}
+
+// Get ProductDetailRequest Getter
+func (r AlibabaAscpChannelDistributorProductDetailAPIRequest) GetProductDetailRequest() *ProductDetailQueryRequestForDistributor {
+	return r._productDetailRequest
+}

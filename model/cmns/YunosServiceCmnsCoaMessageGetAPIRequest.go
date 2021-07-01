@@ -17,4 +17,36 @@ type YunosServiceCmnsCoaMessageGetAPIRequest struct {
 	_mid int64
 }
 
-// New
+// NewYunosServiceCmnsCoaMessageGetRequest 初始化YunosServiceCmnsCoaMessageGetAPIRequest对象
+func NewYunosServiceCmnsCoaMessageGetRequest() *YunosServiceCmnsCoaMessageGetAPIRequest {
+	return &YunosServiceCmnsCoaMessageGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosServiceCmnsCoaMessageGetAPIRequest) GetApiMethodName() string {
+	return "yunos.service.cmns.coa.message.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosServiceCmnsCoaMessageGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Mid Setter
+// 消息id
+func (r *YunosServiceCmnsCoaMessageGetAPIRequest) SetMid(_mid int64) error {
+	r._mid = _mid
+	r.Set("mid", _mid)
+	return nil
+}
+
+// Get Mid Getter
+func (r YunosServiceCmnsCoaMessageGetAPIRequest) GetMid() int64 {
+	return r._mid
+}

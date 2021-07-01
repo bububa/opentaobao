@@ -17,4 +17,36 @@ type AlibabaWdkTradeRefundQueryAPIRequest struct {
 	_refundGoodsQueryRequest *RefundGoodsQueryRequest
 }
 
-// New
+// NewAlibabaWdkTradeRefundQueryRequest 初始化AlibabaWdkTradeRefundQueryAPIRequest对象
+func NewAlibabaWdkTradeRefundQueryRequest() *AlibabaWdkTradeRefundQueryAPIRequest {
+	return &AlibabaWdkTradeRefundQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkTradeRefundQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.trade.refund.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkTradeRefundQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RefundGoodsQueryRequest Setter
+// 查询请求
+func (r *AlibabaWdkTradeRefundQueryAPIRequest) SetRefundGoodsQueryRequest(_refundGoodsQueryRequest *RefundGoodsQueryRequest) error {
+	r._refundGoodsQueryRequest = _refundGoodsQueryRequest
+	r.Set("refund_goods_query_request", _refundGoodsQueryRequest)
+	return nil
+}
+
+// Get RefundGoodsQueryRequest Getter
+func (r AlibabaWdkTradeRefundQueryAPIRequest) GetRefundGoodsQueryRequest() *RefundGoodsQueryRequest {
+	return r._refundGoodsQueryRequest
+}

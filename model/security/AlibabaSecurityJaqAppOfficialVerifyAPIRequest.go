@@ -17,4 +17,36 @@ type AlibabaSecurityJaqAppOfficialVerifyAPIRequest struct {
 	_officialAppVerifyRequest *OfficialAppVerifyRequest
 }
 
-// New
+// NewAlibabaSecurityJaqAppOfficialVerifyRequest 初始化AlibabaSecurityJaqAppOfficialVerifyAPIRequest对象
+func NewAlibabaSecurityJaqAppOfficialVerifyRequest() *AlibabaSecurityJaqAppOfficialVerifyAPIRequest {
+	return &AlibabaSecurityJaqAppOfficialVerifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSecurityJaqAppOfficialVerifyAPIRequest) GetApiMethodName() string {
+	return "alibaba.security.jaq.app.official.verify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSecurityJaqAppOfficialVerifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OfficialAppVerifyRequest Setter
+// 验证参数
+func (r *AlibabaSecurityJaqAppOfficialVerifyAPIRequest) SetOfficialAppVerifyRequest(_officialAppVerifyRequest *OfficialAppVerifyRequest) error {
+	r._officialAppVerifyRequest = _officialAppVerifyRequest
+	r.Set("official_app_verify_request", _officialAppVerifyRequest)
+	return nil
+}
+
+// Get OfficialAppVerifyRequest Getter
+func (r AlibabaSecurityJaqAppOfficialVerifyAPIRequest) GetOfficialAppVerifyRequest() *OfficialAppVerifyRequest {
+	return r._officialAppVerifyRequest
+}

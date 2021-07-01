@@ -19,4 +19,49 @@ type AlibabaAlihealthDrugKytGetcodebillinfoAPIRequest struct {
 	_code string
 }
 
-// New
+// NewAlibabaAlihealthDrugKytGetcodebillinfoRequest 初始化AlibabaAlihealthDrugKytGetcodebillinfoAPIRequest对象
+func NewAlibabaAlihealthDrugKytGetcodebillinfoRequest() *AlibabaAlihealthDrugKytGetcodebillinfoAPIRequest {
+	return &AlibabaAlihealthDrugKytGetcodebillinfoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthDrugKytGetcodebillinfoAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.drug.kyt.getcodebillinfo"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthDrugKytGetcodebillinfoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RefEntId Setter
+// 企业ID
+func (r *AlibabaAlihealthDrugKytGetcodebillinfoAPIRequest) SetRefEntId(_refEntId string) error {
+	r._refEntId = _refEntId
+	r.Set("ref_ent_id", _refEntId)
+	return nil
+}
+
+// Get RefEntId Getter
+func (r AlibabaAlihealthDrugKytGetcodebillinfoAPIRequest) GetRefEntId() string {
+	return r._refEntId
+}
+
+// Set is Code Setter
+// 码
+func (r *AlibabaAlihealthDrugKytGetcodebillinfoAPIRequest) SetCode(_code string) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// Get Code Getter
+func (r AlibabaAlihealthDrugKytGetcodebillinfoAPIRequest) GetCode() string {
+	return r._code
+}

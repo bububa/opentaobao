@@ -17,4 +17,36 @@ type AlibabaLstBranddatashareSuppliersListQueryAPIRequest struct {
 	_query *LstBmSupplierQuery
 }
 
-// New
+// NewAlibabaLstBranddatashareSuppliersListQueryRequest 初始化AlibabaLstBranddatashareSuppliersListQueryAPIRequest对象
+func NewAlibabaLstBranddatashareSuppliersListQueryRequest() *AlibabaLstBranddatashareSuppliersListQueryAPIRequest {
+	return &AlibabaLstBranddatashareSuppliersListQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstBranddatashareSuppliersListQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.branddatashare.suppliers.list.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstBranddatashareSuppliersListQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 入参
+func (r *AlibabaLstBranddatashareSuppliersListQueryAPIRequest) SetQuery(_query *LstBmSupplierQuery) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r AlibabaLstBranddatashareSuppliersListQueryAPIRequest) GetQuery() *LstBmSupplierQuery {
+	return r._query
+}

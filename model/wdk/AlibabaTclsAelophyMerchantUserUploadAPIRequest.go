@@ -17,4 +17,36 @@ type AlibabaTclsAelophyMerchantUserUploadAPIRequest struct {
 	_userInfoList []MerchantUserInfo
 }
 
-// New
+// NewAlibabaTclsAelophyMerchantUserUploadRequest 初始化AlibabaTclsAelophyMerchantUserUploadAPIRequest对象
+func NewAlibabaTclsAelophyMerchantUserUploadRequest() *AlibabaTclsAelophyMerchantUserUploadAPIRequest {
+	return &AlibabaTclsAelophyMerchantUserUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaTclsAelophyMerchantUserUploadAPIRequest) GetApiMethodName() string {
+	return "alibaba.tcls.aelophy.merchant.user.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaTclsAelophyMerchantUserUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UserInfoList Setter
+// 渠道用户信息
+func (r *AlibabaTclsAelophyMerchantUserUploadAPIRequest) SetUserInfoList(_userInfoList []MerchantUserInfo) error {
+	r._userInfoList = _userInfoList
+	r.Set("user_info_list", _userInfoList)
+	return nil
+}
+
+// Get UserInfoList Getter
+func (r AlibabaTclsAelophyMerchantUserUploadAPIRequest) GetUserInfoList() []MerchantUserInfo {
+	return r._userInfoList
+}

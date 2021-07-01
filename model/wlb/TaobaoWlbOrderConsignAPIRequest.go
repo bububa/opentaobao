@@ -17,4 +17,36 @@ type TaobaoWlbOrderConsignAPIRequest struct {
 	_wlbOrderCode string
 }
 
-// New
+// NewTaobaoWlbOrderConsignRequest 初始化TaobaoWlbOrderConsignAPIRequest对象
+func NewTaobaoWlbOrderConsignRequest() *TaobaoWlbOrderConsignAPIRequest {
+	return &TaobaoWlbOrderConsignAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWlbOrderConsignAPIRequest) GetApiMethodName() string {
+	return "taobao.wlb.order.consign"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWlbOrderConsignAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WlbOrderCode Setter
+// 物流宝订单编号
+func (r *TaobaoWlbOrderConsignAPIRequest) SetWlbOrderCode(_wlbOrderCode string) error {
+	r._wlbOrderCode = _wlbOrderCode
+	r.Set("wlb_order_code", _wlbOrderCode)
+	return nil
+}
+
+// Get WlbOrderCode Getter
+func (r TaobaoWlbOrderConsignAPIRequest) GetWlbOrderCode() string {
+	return r._wlbOrderCode
+}

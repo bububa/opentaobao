@@ -17,4 +17,36 @@ type AlitripBtripCorpopDepartSyncAPIRequest struct {
 	_rq *BtripDepartSyncRq
 }
 
-// New
+// NewAlitripBtripCorpopDepartSyncRequest 初始化AlitripBtripCorpopDepartSyncAPIRequest对象
+func NewAlitripBtripCorpopDepartSyncRequest() *AlitripBtripCorpopDepartSyncAPIRequest {
+	return &AlitripBtripCorpopDepartSyncAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripCorpopDepartSyncAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.corpop.depart.sync"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripCorpopDepartSyncAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Rq Setter
+// 同步部门请求
+func (r *AlitripBtripCorpopDepartSyncAPIRequest) SetRq(_rq *BtripDepartSyncRq) error {
+	r._rq = _rq
+	r.Set("rq", _rq)
+	return nil
+}
+
+// Get Rq Getter
+func (r AlitripBtripCorpopDepartSyncAPIRequest) GetRq() *BtripDepartSyncRq {
+	return r._rq
+}

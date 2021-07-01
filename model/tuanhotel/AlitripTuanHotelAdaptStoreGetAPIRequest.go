@@ -19,4 +19,49 @@ type AlitripTuanHotelAdaptStoreGetAPIRequest struct {
 	_hidList []int64
 }
 
-// New
+// NewAlitripTuanHotelAdaptStoreGetRequest 初始化AlitripTuanHotelAdaptStoreGetAPIRequest对象
+func NewAlitripTuanHotelAdaptStoreGetRequest() *AlitripTuanHotelAdaptStoreGetAPIRequest {
+	return &AlitripTuanHotelAdaptStoreGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTuanHotelAdaptStoreGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.tuan.hotel.adapt.store.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTuanHotelAdaptStoreGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ShidList Setter
+// 标准酒店ID列表,逗号分割。与hid_list二者只能选一
+func (r *AlitripTuanHotelAdaptStoreGetAPIRequest) SetShidList(_shidList []int64) error {
+	r._shidList = _shidList
+	r.Set("shid_list", _shidList)
+	return nil
+}
+
+// Get ShidList Getter
+func (r AlitripTuanHotelAdaptStoreGetAPIRequest) GetShidList() []int64 {
+	return r._shidList
+}
+
+// Set is HidList Setter
+// 物理酒店ID列表，逗号分割。与shid_list二者只能选一
+func (r *AlitripTuanHotelAdaptStoreGetAPIRequest) SetHidList(_hidList []int64) error {
+	r._hidList = _hidList
+	r.Set("hid_list", _hidList)
+	return nil
+}
+
+// Get HidList Getter
+func (r AlitripTuanHotelAdaptStoreGetAPIRequest) GetHidList() []int64 {
+	return r._hidList
+}

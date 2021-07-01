@@ -17,4 +17,36 @@ type AlitripTicketRuleQueryAPIRequest struct {
 	_outRuleId string
 }
 
-// New
+// NewAlitripTicketRuleQueryRequest 初始化AlitripTicketRuleQueryAPIRequest对象
+func NewAlitripTicketRuleQueryRequest() *AlitripTicketRuleQueryAPIRequest {
+	return &AlitripTicketRuleQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripTicketRuleQueryAPIRequest) GetApiMethodName() string {
+	return "alitrip.ticket.rule.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripTicketRuleQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OutRuleId Setter
+// 卖家景点规则编码
+func (r *AlitripTicketRuleQueryAPIRequest) SetOutRuleId(_outRuleId string) error {
+	r._outRuleId = _outRuleId
+	r.Set("out_rule_id", _outRuleId)
+	return nil
+}
+
+// Get OutRuleId Getter
+func (r AlitripTicketRuleQueryAPIRequest) GetOutRuleId() string {
+	return r._outRuleId
+}

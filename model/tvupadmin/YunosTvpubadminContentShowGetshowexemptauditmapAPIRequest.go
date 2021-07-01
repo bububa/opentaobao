@@ -19,4 +19,49 @@ type YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest struct {
 	_license int64
 }
 
-// New
+// NewYunosTvpubadminContentShowGetshowexemptauditmapRequest 初始化YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest对象
+func NewYunosTvpubadminContentShowGetshowexemptauditmapRequest() *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest {
+	return &YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.show.getshowexemptauditmap"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ShowLongIds Setter
+// 节目longid
+func (r *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) SetShowLongIds(_showLongIds string) error {
+	r._showLongIds = _showLongIds
+	r.Set("show_long_ids", _showLongIds)
+	return nil
+}
+
+// Get ShowLongIds Getter
+func (r YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) GetShowLongIds() string {
+	return r._showLongIds
+}
+
+// Set is License Setter
+// 牌照id
+func (r *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) SetLicense(_license int64) error {
+	r._license = _license
+	r.Set("license", _license)
+	return nil
+}
+
+// Get License Getter
+func (r YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) GetLicense() int64 {
+	return r._license
+}

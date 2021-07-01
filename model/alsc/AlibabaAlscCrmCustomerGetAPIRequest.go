@@ -17,4 +17,36 @@ type AlibabaAlscCrmCustomerGetAPIRequest struct {
 	_paramCustomerIdQueryOpenReq *CustomerIdQueryOpenReq
 }
 
-// New
+// NewAlibabaAlscCrmCustomerGetRequest 初始化AlibabaAlscCrmCustomerGetAPIRequest对象
+func NewAlibabaAlscCrmCustomerGetRequest() *AlibabaAlscCrmCustomerGetAPIRequest {
+	return &AlibabaAlscCrmCustomerGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlscCrmCustomerGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.alsc.crm.customer.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlscCrmCustomerGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamCustomerIdQueryOpenReq Setter
+// 顾客详情查询条件
+func (r *AlibabaAlscCrmCustomerGetAPIRequest) SetParamCustomerIdQueryOpenReq(_paramCustomerIdQueryOpenReq *CustomerIdQueryOpenReq) error {
+	r._paramCustomerIdQueryOpenReq = _paramCustomerIdQueryOpenReq
+	r.Set("param_customer_id_query_open_req", _paramCustomerIdQueryOpenReq)
+	return nil
+}
+
+// Get ParamCustomerIdQueryOpenReq Getter
+func (r AlibabaAlscCrmCustomerGetAPIRequest) GetParamCustomerIdQueryOpenReq() *CustomerIdQueryOpenReq {
+	return r._paramCustomerIdQueryOpenReq
+}

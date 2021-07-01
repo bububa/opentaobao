@@ -19,4 +19,36 @@ type TaobaoAlitripFlightchangeAddAPIRequest struct {
 	_flightChangeDataDo *FlightChangeDataDo
 }
 
-// New
+// NewTaobaoAlitripFlightchangeAddRequest 初始化TaobaoAlitripFlightchangeAddAPIRequest对象
+func NewTaobaoAlitripFlightchangeAddRequest() *TaobaoAlitripFlightchangeAddAPIRequest {
+	return &TaobaoAlitripFlightchangeAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripFlightchangeAddAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.flightchange.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripFlightchangeAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FlightChangeDataDo Setter
+// 录入参数类
+func (r *TaobaoAlitripFlightchangeAddAPIRequest) SetFlightChangeDataDo(_flightChangeDataDo *FlightChangeDataDo) error {
+	r._flightChangeDataDo = _flightChangeDataDo
+	r.Set("flight_change_data_do", _flightChangeDataDo)
+	return nil
+}
+
+// Get FlightChangeDataDo Getter
+func (r TaobaoAlitripFlightchangeAddAPIRequest) GetFlightChangeDataDo() *FlightChangeDataDo {
+	return r._flightChangeDataDo
+}

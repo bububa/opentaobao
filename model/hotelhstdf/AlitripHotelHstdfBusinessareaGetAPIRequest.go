@@ -17,4 +17,36 @@ type AlitripHotelHstdfBusinessareaGetAPIRequest struct {
 	_paramGetByTrdiDivisionIdParam *GetByTrdiDivisionIdParam
 }
 
-// New
+// NewAlitripHotelHstdfBusinessareaGetRequest 初始化AlitripHotelHstdfBusinessareaGetAPIRequest对象
+func NewAlitripHotelHstdfBusinessareaGetRequest() *AlitripHotelHstdfBusinessareaGetAPIRequest {
+	return &AlitripHotelHstdfBusinessareaGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripHotelHstdfBusinessareaGetAPIRequest) GetApiMethodName() string {
+	return "alitrip.hotel.hstdf.businessarea.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripHotelHstdfBusinessareaGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamGetByTrdiDivisionIdParam Setter
+// 请求参数封装
+func (r *AlitripHotelHstdfBusinessareaGetAPIRequest) SetParamGetByTrdiDivisionIdParam(_paramGetByTrdiDivisionIdParam *GetByTrdiDivisionIdParam) error {
+	r._paramGetByTrdiDivisionIdParam = _paramGetByTrdiDivisionIdParam
+	r.Set("param_get_by_trdi_division_id_param", _paramGetByTrdiDivisionIdParam)
+	return nil
+}
+
+// Get ParamGetByTrdiDivisionIdParam Getter
+func (r AlitripHotelHstdfBusinessareaGetAPIRequest) GetParamGetByTrdiDivisionIdParam() *GetByTrdiDivisionIdParam {
+	return r._paramGetByTrdiDivisionIdParam
+}

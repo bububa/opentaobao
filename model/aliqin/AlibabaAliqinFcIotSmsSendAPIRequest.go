@@ -25,4 +25,88 @@ type AlibabaAliqinFcIotSmsSendAPIRequest struct {
 	_smsTemplateCode string
 }
 
-// New
+// NewAlibabaAliqinFcIotSmsSendRequest 初始化AlibabaAliqinFcIotSmsSendAPIRequest对象
+func NewAlibabaAliqinFcIotSmsSendRequest() *AlibabaAliqinFcIotSmsSendAPIRequest {
+	return &AlibabaAliqinFcIotSmsSendAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAliqinFcIotSmsSendAPIRequest) GetApiMethodName() string {
+	return "alibaba.aliqin.fc.iot.sms.send"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAliqinFcIotSmsSendAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Extend Setter
+// 公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用
+func (r *AlibabaAliqinFcIotSmsSendAPIRequest) SetExtend(_extend string) error {
+	r._extend = _extend
+	r.Set("extend", _extend)
+	return nil
+}
+
+// Get Extend Getter
+func (r AlibabaAliqinFcIotSmsSendAPIRequest) GetExtend() string {
+	return r._extend
+}
+
+// Set is SmsType Setter
+// 短信类型，传入值请填写normal
+func (r *AlibabaAliqinFcIotSmsSendAPIRequest) SetSmsType(_smsType string) error {
+	r._smsType = _smsType
+	r.Set("sms_type", _smsType)
+	return nil
+}
+
+// Get SmsType Getter
+func (r AlibabaAliqinFcIotSmsSendAPIRequest) GetSmsType() string {
+	return r._smsType
+}
+
+// Set is SmsParam Setter
+// 短信模板变量，传参规则{"key":"value"}，key的名字须和申请模板中的变量名一致，多个变量之间以逗号隔开。示例：针对模板“验证码${code}，您正在进行${product}身份验证，打死不要告诉别人哦！”，传参时需传入{"code":"1234","product":"alidayu"}
+func (r *AlibabaAliqinFcIotSmsSendAPIRequest) SetSmsParam(_smsParam string) error {
+	r._smsParam = _smsParam
+	r.Set("sms_param", _smsParam)
+	return nil
+}
+
+// Get SmsParam Getter
+func (r AlibabaAliqinFcIotSmsSendAPIRequest) GetSmsParam() string {
+	return r._smsParam
+}
+
+// Set is RecNum Setter
+// 短信接收号码。
+func (r *AlibabaAliqinFcIotSmsSendAPIRequest) SetRecNum(_recNum string) error {
+	r._recNum = _recNum
+	r.Set("rec_num", _recNum)
+	return nil
+}
+
+// Get RecNum Getter
+func (r AlibabaAliqinFcIotSmsSendAPIRequest) GetRecNum() string {
+	return r._recNum
+}
+
+// Set is SmsTemplateCode Setter
+// 短信模板ID，传入的模板必须是在阿里大于“管理中心-短信模板管理”中的可用模板。示例：SMS_585014
+func (r *AlibabaAliqinFcIotSmsSendAPIRequest) SetSmsTemplateCode(_smsTemplateCode string) error {
+	r._smsTemplateCode = _smsTemplateCode
+	r.Set("sms_template_code", _smsTemplateCode)
+	return nil
+}
+
+// Get SmsTemplateCode Getter
+func (r AlibabaAliqinFcIotSmsSendAPIRequest) GetSmsTemplateCode() string {
+	return r._smsTemplateCode
+}

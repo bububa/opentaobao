@@ -25,4 +25,88 @@ type TaobaoSimbaInsightCatstopwordnewGetAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewTaobaoSimbaInsightCatstopwordnewGetRequest 初始化TaobaoSimbaInsightCatstopwordnewGetAPIRequest对象
+func NewTaobaoSimbaInsightCatstopwordnewGetRequest() *TaobaoSimbaInsightCatstopwordnewGetAPIRequest {
+	return &TaobaoSimbaInsightCatstopwordnewGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaInsightCatstopwordnewGetAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.insight.catstopwordnew.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaInsightCatstopwordnewGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CatId Setter
+// 类目id
+func (r *TaobaoSimbaInsightCatstopwordnewGetAPIRequest) SetCatId(_catId string) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// Get CatId Getter
+func (r TaobaoSimbaInsightCatstopwordnewGetAPIRequest) GetCatId() string {
+	return r._catId
+}
+
+// Set is StartDate Setter
+// 查询开始时间，格式必须为：yyyy-MM-dd
+func (r *TaobaoSimbaInsightCatstopwordnewGetAPIRequest) SetStartDate(_startDate string) error {
+	r._startDate = _startDate
+	r.Set("start_date", _startDate)
+	return nil
+}
+
+// Get StartDate Getter
+func (r TaobaoSimbaInsightCatstopwordnewGetAPIRequest) GetStartDate() string {
+	return r._startDate
+}
+
+// Set is EndDate Setter
+// 查询截止时间，格式只能是：yyyy-MM-dd
+func (r *TaobaoSimbaInsightCatstopwordnewGetAPIRequest) SetEndDate(_endDate string) error {
+	r._endDate = _endDate
+	r.Set("end_date", _endDate)
+	return nil
+}
+
+// Get EndDate Getter
+func (r TaobaoSimbaInsightCatstopwordnewGetAPIRequest) GetEndDate() string {
+	return r._endDate
+}
+
+// Set is Dimension Setter
+// 表示查询的维度，比如选择click，则查询该类目下点击量最大的词，可供选择的值有：impression, click, cost, ctr, cpc, coverage, transactiontotal, transactionshippingtotal, favtotal, roi
+func (r *TaobaoSimbaInsightCatstopwordnewGetAPIRequest) SetDimension(_dimension string) error {
+	r._dimension = _dimension
+	r.Set("dimension", _dimension)
+	return nil
+}
+
+// Get Dimension Getter
+func (r TaobaoSimbaInsightCatstopwordnewGetAPIRequest) GetDimension() string {
+	return r._dimension
+}
+
+// Set is PageSize Setter
+// 返回前多少条数据
+func (r *TaobaoSimbaInsightCatstopwordnewGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r TaobaoSimbaInsightCatstopwordnewGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

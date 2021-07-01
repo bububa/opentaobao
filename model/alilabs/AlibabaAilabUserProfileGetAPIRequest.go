@@ -19,4 +19,49 @@ type AlibabaAilabUserProfileGetAPIRequest struct {
 	_clientId string
 }
 
-// New
+// NewAlibabaAilabUserProfileGetRequest 初始化AlibabaAilabUserProfileGetAPIRequest对象
+func NewAlibabaAilabUserProfileGetRequest() *AlibabaAilabUserProfileGetAPIRequest {
+	return &AlibabaAilabUserProfileGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAilabUserProfileGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.ailab.user.profile.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAilabUserProfileGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OpenUid Setter
+// open uid
+func (r *AlibabaAilabUserProfileGetAPIRequest) SetOpenUid(_openUid string) error {
+	r._openUid = _openUid
+	r.Set("open_uid", _openUid)
+	return nil
+}
+
+// Get OpenUid Getter
+func (r AlibabaAilabUserProfileGetAPIRequest) GetOpenUid() string {
+	return r._openUid
+}
+
+// Set is ClientId Setter
+// client id
+func (r *AlibabaAilabUserProfileGetAPIRequest) SetClientId(_clientId string) error {
+	r._clientId = _clientId
+	r.Set("client_id", _clientId)
+	return nil
+}
+
+// Get ClientId Getter
+func (r AlibabaAilabUserProfileGetAPIRequest) GetClientId() string {
+	return r._clientId
+}

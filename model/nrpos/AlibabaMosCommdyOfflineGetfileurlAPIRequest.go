@@ -17,4 +17,36 @@ type AlibabaMosCommdyOfflineGetfileurlAPIRequest struct {
 	_fileKeys []string
 }
 
-// New
+// NewAlibabaMosCommdyOfflineGetfileurlRequest 初始化AlibabaMosCommdyOfflineGetfileurlAPIRequest对象
+func NewAlibabaMosCommdyOfflineGetfileurlRequest() *AlibabaMosCommdyOfflineGetfileurlAPIRequest {
+	return &AlibabaMosCommdyOfflineGetfileurlAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMosCommdyOfflineGetfileurlAPIRequest) GetApiMethodName() string {
+	return "alibaba.mos.commdy.offline.getfileurl"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMosCommdyOfflineGetfileurlAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FileKeys Setter
+// 离线文件名称
+func (r *AlibabaMosCommdyOfflineGetfileurlAPIRequest) SetFileKeys(_fileKeys []string) error {
+	r._fileKeys = _fileKeys
+	r.Set("file_keys", _fileKeys)
+	return nil
+}
+
+// Get FileKeys Getter
+func (r AlibabaMosCommdyOfflineGetfileurlAPIRequest) GetFileKeys() []string {
+	return r._fileKeys
+}

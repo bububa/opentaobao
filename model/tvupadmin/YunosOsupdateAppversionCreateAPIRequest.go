@@ -17,4 +17,36 @@ type YunosOsupdateAppversionCreateAPIRequest struct {
 	_appVersion *TvAppVersion
 }
 
-// New
+// NewYunosOsupdateAppversionCreateRequest 初始化YunosOsupdateAppversionCreateAPIRequest对象
+func NewYunosOsupdateAppversionCreateRequest() *YunosOsupdateAppversionCreateAPIRequest {
+	return &YunosOsupdateAppversionCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosOsupdateAppversionCreateAPIRequest) GetApiMethodName() string {
+	return "yunos.osupdate.appversion.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosOsupdateAppversionCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AppVersion Setter
+// 应用版本信息
+func (r *YunosOsupdateAppversionCreateAPIRequest) SetAppVersion(_appVersion *TvAppVersion) error {
+	r._appVersion = _appVersion
+	r.Set("app_version", _appVersion)
+	return nil
+}
+
+// Get AppVersion Getter
+func (r YunosOsupdateAppversionCreateAPIRequest) GetAppVersion() *TvAppVersion {
+	return r._appVersion
+}

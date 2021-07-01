@@ -17,4 +17,36 @@ type TaobaoAlitripBuyerGetAPIRequest struct {
 	_requestAxb *RequestAxbDo
 }
 
-// New
+// NewTaobaoAlitripBuyerGetRequest 初始化TaobaoAlitripBuyerGetAPIRequest对象
+func NewTaobaoAlitripBuyerGetRequest() *TaobaoAlitripBuyerGetAPIRequest {
+	return &TaobaoAlitripBuyerGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAlitripBuyerGetAPIRequest) GetApiMethodName() string {
+	return "taobao.alitrip.buyer.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAlitripBuyerGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RequestAxb Setter
+// 敏感信息查询请求参数
+func (r *TaobaoAlitripBuyerGetAPIRequest) SetRequestAxb(_requestAxb *RequestAxbDo) error {
+	r._requestAxb = _requestAxb
+	r.Set("request_axb", _requestAxb)
+	return nil
+}
+
+// Get RequestAxb Getter
+func (r TaobaoAlitripBuyerGetAPIRequest) GetRequestAxb() *RequestAxbDo {
+	return r._requestAxb
+}

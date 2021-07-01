@@ -17,4 +17,36 @@ type AlibabaWdkFulfillBoxPostBackBoxAPIRequest struct {
 	_returnBoxContainerRequest *ReturnBoxContainerRequest
 }
 
-// New
+// NewAlibabaWdkFulfillBoxPostBackBoxRequest 初始化AlibabaWdkFulfillBoxPostBackBoxAPIRequest对象
+func NewAlibabaWdkFulfillBoxPostBackBoxRequest() *AlibabaWdkFulfillBoxPostBackBoxAPIRequest {
+	return &AlibabaWdkFulfillBoxPostBackBoxAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkFulfillBoxPostBackBoxAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.fulfill.box.post.back.box"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkFulfillBoxPostBackBoxAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ReturnBoxContainerRequest Setter
+// RT收箱回传请求参数
+func (r *AlibabaWdkFulfillBoxPostBackBoxAPIRequest) SetReturnBoxContainerRequest(_returnBoxContainerRequest *ReturnBoxContainerRequest) error {
+	r._returnBoxContainerRequest = _returnBoxContainerRequest
+	r.Set("return_box_container_request", _returnBoxContainerRequest)
+	return nil
+}
+
+// Get ReturnBoxContainerRequest Getter
+func (r AlibabaWdkFulfillBoxPostBackBoxAPIRequest) GetReturnBoxContainerRequest() *ReturnBoxContainerRequest {
+	return r._returnBoxContainerRequest
+}

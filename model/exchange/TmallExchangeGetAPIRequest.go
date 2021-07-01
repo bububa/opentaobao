@@ -19,4 +19,49 @@ type TmallExchangeGetAPIRequest struct {
 	_fields []string
 }
 
-// New
+// NewTmallExchangeGetRequest 初始化TmallExchangeGetAPIRequest对象
+func NewTmallExchangeGetRequest() *TmallExchangeGetAPIRequest {
+	return &TmallExchangeGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallExchangeGetAPIRequest) GetApiMethodName() string {
+	return "tmall.exchange.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallExchangeGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is DisputeId Setter
+// 换货单号ID
+func (r *TmallExchangeGetAPIRequest) SetDisputeId(_disputeId int64) error {
+	r._disputeId = _disputeId
+	r.Set("dispute_id", _disputeId)
+	return nil
+}
+
+// Get DisputeId Getter
+func (r TmallExchangeGetAPIRequest) GetDisputeId() int64 {
+	return r._disputeId
+}
+
+// Set is Fields Setter
+// 返回字段。目前支持dispute_id, bizorder_id, num, buyer_nick, status, created, modified, reason, title, buyer_logistic_no, seller_logistic_no, bought_sku, exchange_sku, buyer_address, address, buyer_phone, buyer_logistic_name, seller_logistic_name, alipay_no, buyer_name, seller_nick
+func (r *TmallExchangeGetAPIRequest) SetFields(_fields []string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// Get Fields Getter
+func (r TmallExchangeGetAPIRequest) GetFields() []string {
+	return r._fields
+}

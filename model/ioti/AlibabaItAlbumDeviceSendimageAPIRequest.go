@@ -17,4 +17,36 @@ type AlibabaItAlbumDeviceSendimageAPIRequest struct {
 	_mac string
 }
 
-// New
+// NewAlibabaItAlbumDeviceSendimageRequest 初始化AlibabaItAlbumDeviceSendimageAPIRequest对象
+func NewAlibabaItAlbumDeviceSendimageRequest() *AlibabaItAlbumDeviceSendimageAPIRequest {
+	return &AlibabaItAlbumDeviceSendimageAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaItAlbumDeviceSendimageAPIRequest) GetApiMethodName() string {
+	return "alibaba.it.album.device.sendimage"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaItAlbumDeviceSendimageAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Mac Setter
+// 下发图片mac地址
+func (r *AlibabaItAlbumDeviceSendimageAPIRequest) SetMac(_mac string) error {
+	r._mac = _mac
+	r.Set("mac", _mac)
+	return nil
+}
+
+// Get Mac Getter
+func (r AlibabaItAlbumDeviceSendimageAPIRequest) GetMac() string {
+	return r._mac
+}

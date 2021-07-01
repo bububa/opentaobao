@@ -19,4 +19,49 @@ type AlibabaFootscanMiniImageUploadAPIRequest struct {
 	_reqData *CheckParam
 }
 
-// New
+// NewAlibabaFootscanMiniImageUploadRequest 初始化AlibabaFootscanMiniImageUploadAPIRequest对象
+func NewAlibabaFootscanMiniImageUploadRequest() *AlibabaFootscanMiniImageUploadAPIRequest {
+	return &AlibabaFootscanMiniImageUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaFootscanMiniImageUploadAPIRequest) GetApiMethodName() string {
+	return "alibaba.footscan.mini.image.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaFootscanMiniImageUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Token Setter
+// 平台分配的token
+func (r *AlibabaFootscanMiniImageUploadAPIRequest) SetToken(_token string) error {
+	r._token = _token
+	r.Set("token", _token)
+	return nil
+}
+
+// Get Token Getter
+func (r AlibabaFootscanMiniImageUploadAPIRequest) GetToken() string {
+	return r._token
+}
+
+// Set is ReqData Setter
+// 请求数据
+func (r *AlibabaFootscanMiniImageUploadAPIRequest) SetReqData(_reqData *CheckParam) error {
+	r._reqData = _reqData
+	r.Set("req_data", _reqData)
+	return nil
+}
+
+// Get ReqData Getter
+func (r AlibabaFootscanMiniImageUploadAPIRequest) GetReqData() *CheckParam {
+	return r._reqData
+}

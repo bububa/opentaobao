@@ -18,4 +18,36 @@ type TaobaoWirelessPictureCheckAPIRequest struct {
 	_url string
 }
 
-// New
+// NewTaobaoWirelessPictureCheckRequest 初始化TaobaoWirelessPictureCheckAPIRequest对象
+func NewTaobaoWirelessPictureCheckRequest() *TaobaoWirelessPictureCheckAPIRequest {
+	return &TaobaoWirelessPictureCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWirelessPictureCheckAPIRequest) GetApiMethodName() string {
+	return "taobao.wireless.picture.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWirelessPictureCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Url Setter
+// 图片的URL,URL必须为淘系安全域名地址。图片格式支持png,jpg,webp
+func (r *TaobaoWirelessPictureCheckAPIRequest) SetUrl(_url string) error {
+	r._url = _url
+	r.Set("url", _url)
+	return nil
+}
+
+// Get Url Getter
+func (r TaobaoWirelessPictureCheckAPIRequest) GetUrl() string {
+	return r._url
+}

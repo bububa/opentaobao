@@ -18,4 +18,36 @@ type CainiaoCntecSupplierOrderServiceAPIRequest struct {
 	_queryConditioin *SupplierOrderQueryDto
 }
 
-// New
+// NewCainiaoCntecSupplierOrderServiceRequest 初始化CainiaoCntecSupplierOrderServiceAPIRequest对象
+func NewCainiaoCntecSupplierOrderServiceRequest() *CainiaoCntecSupplierOrderServiceAPIRequest {
+	return &CainiaoCntecSupplierOrderServiceAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoCntecSupplierOrderServiceAPIRequest) GetApiMethodName() string {
+	return "cainiao.cntec.supplier.order.service"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoCntecSupplierOrderServiceAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is QueryConditioin Setter
+// 系统自动生成
+func (r *CainiaoCntecSupplierOrderServiceAPIRequest) SetQueryConditioin(_queryConditioin *SupplierOrderQueryDto) error {
+	r._queryConditioin = _queryConditioin
+	r.Set("query_conditioin", _queryConditioin)
+	return nil
+}
+
+// Get QueryConditioin Getter
+func (r CainiaoCntecSupplierOrderServiceAPIRequest) GetQueryConditioin() *SupplierOrderQueryDto {
+	return r._queryConditioin
+}

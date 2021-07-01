@@ -19,4 +19,49 @@ type AlibabaLstShiporderQueryAPIRequest struct {
 	_outOrderId string
 }
 
-// New
+// NewAlibabaLstShiporderQueryRequest 初始化AlibabaLstShiporderQueryAPIRequest对象
+func NewAlibabaLstShiporderQueryRequest() *AlibabaLstShiporderQueryAPIRequest {
+	return &AlibabaLstShiporderQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstShiporderQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.shiporder.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstShiporderQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Source Setter
+// 零售通
+func (r *AlibabaLstShiporderQueryAPIRequest) SetSource(_source string) error {
+	r._source = _source
+	r.Set("source", _source)
+	return nil
+}
+
+// Get Source Getter
+func (r AlibabaLstShiporderQueryAPIRequest) GetSource() string {
+	return r._source
+}
+
+// Set is OutOrderId Setter
+// 订单
+func (r *AlibabaLstShiporderQueryAPIRequest) SetOutOrderId(_outOrderId string) error {
+	r._outOrderId = _outOrderId
+	r.Set("out_order_id", _outOrderId)
+	return nil
+}
+
+// Get OutOrderId Getter
+func (r AlibabaLstShiporderQueryAPIRequest) GetOutOrderId() string {
+	return r._outOrderId
+}

@@ -17,4 +17,36 @@ type AlibabaMoziBucAccountPageallAPIRequest struct {
 	_pageAll *PageAllAccountsRequest
 }
 
-// New
+// NewAlibabaMoziBucAccountPageallRequest 初始化AlibabaMoziBucAccountPageallAPIRequest对象
+func NewAlibabaMoziBucAccountPageallRequest() *AlibabaMoziBucAccountPageallAPIRequest {
+	return &AlibabaMoziBucAccountPageallAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMoziBucAccountPageallAPIRequest) GetApiMethodName() string {
+	return "alibaba.mozi.buc.account.pageall"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMoziBucAccountPageallAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PageAll Setter
+// 查询租户内所有人员和账号
+func (r *AlibabaMoziBucAccountPageallAPIRequest) SetPageAll(_pageAll *PageAllAccountsRequest) error {
+	r._pageAll = _pageAll
+	r.Set("page_all", _pageAll)
+	return nil
+}
+
+// Get PageAll Getter
+func (r AlibabaMoziBucAccountPageallAPIRequest) GetPageAll() *PageAllAccountsRequest {
+	return r._pageAll
+}

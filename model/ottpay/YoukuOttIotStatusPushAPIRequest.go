@@ -17,4 +17,36 @@ type YoukuOttIotStatusPushAPIRequest struct {
 	_changeInfo string
 }
 
-// New
+// NewYoukuOttIotStatusPushRequest 初始化YoukuOttIotStatusPushAPIRequest对象
+func NewYoukuOttIotStatusPushRequest() *YoukuOttIotStatusPushAPIRequest {
+	return &YoukuOttIotStatusPushAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YoukuOttIotStatusPushAPIRequest) GetApiMethodName() string {
+	return "youku.ott.iot.status.push"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YoukuOttIotStatusPushAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ChangeInfo Setter
+// 变更信息
+func (r *YoukuOttIotStatusPushAPIRequest) SetChangeInfo(_changeInfo string) error {
+	r._changeInfo = _changeInfo
+	r.Set("change_info", _changeInfo)
+	return nil
+}
+
+// Get ChangeInfo Getter
+func (r YoukuOttIotStatusPushAPIRequest) GetChangeInfo() string {
+	return r._changeInfo
+}

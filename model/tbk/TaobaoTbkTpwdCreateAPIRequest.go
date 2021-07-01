@@ -25,4 +25,88 @@ type TaobaoTbkTpwdCreateAPIRequest struct {
 	_userId string
 }
 
-// New
+// NewTaobaoTbkTpwdCreateRequest 初始化TaobaoTbkTpwdCreateAPIRequest对象
+func NewTaobaoTbkTpwdCreateRequest() *TaobaoTbkTpwdCreateAPIRequest {
+	return &TaobaoTbkTpwdCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTbkTpwdCreateAPIRequest) GetApiMethodName() string {
+	return "taobao.tbk.tpwd.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTbkTpwdCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Url Setter
+// 联盟官方渠道获取的淘客推广链接，请注意，不要随意篡改官方生成的链接，否则可能无法生成淘口令
+func (r *TaobaoTbkTpwdCreateAPIRequest) SetUrl(_url string) error {
+	r._url = _url
+	r.Set("url", _url)
+	return nil
+}
+
+// Get Url Getter
+func (r TaobaoTbkTpwdCreateAPIRequest) GetUrl() string {
+	return r._url
+}
+
+// Set is Text Setter
+// 兼容旧版本api参数，无实际作用
+func (r *TaobaoTbkTpwdCreateAPIRequest) SetText(_text string) error {
+	r._text = _text
+	r.Set("text", _text)
+	return nil
+}
+
+// Get Text Getter
+func (r TaobaoTbkTpwdCreateAPIRequest) GetText() string {
+	return r._text
+}
+
+// Set is Logo Setter
+// 兼容旧版本api参数，无实际作用
+func (r *TaobaoTbkTpwdCreateAPIRequest) SetLogo(_logo string) error {
+	r._logo = _logo
+	r.Set("logo", _logo)
+	return nil
+}
+
+// Get Logo Getter
+func (r TaobaoTbkTpwdCreateAPIRequest) GetLogo() string {
+	return r._logo
+}
+
+// Set is Ext Setter
+// 兼容旧版本api参数，无实际作用
+func (r *TaobaoTbkTpwdCreateAPIRequest) SetExt(_ext string) error {
+	r._ext = _ext
+	r.Set("ext", _ext)
+	return nil
+}
+
+// Get Ext Getter
+func (r TaobaoTbkTpwdCreateAPIRequest) GetExt() string {
+	return r._ext
+}
+
+// Set is UserId Setter
+// 兼容旧版本api参数，无实际作用
+func (r *TaobaoTbkTpwdCreateAPIRequest) SetUserId(_userId string) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// Get UserId Getter
+func (r TaobaoTbkTpwdCreateAPIRequest) GetUserId() string {
+	return r._userId
+}

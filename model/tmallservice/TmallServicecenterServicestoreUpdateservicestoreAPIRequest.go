@@ -30,4 +30,36 @@ type TmallServicecenterServicestoreUpdateservicestoreAPIRequest struct {
 	_serviceStore *ServiceStoreDto
 }
 
-// New
+// NewTmallServicecenterServicestoreUpdateservicestoreRequest 初始化TmallServicecenterServicestoreUpdateservicestoreAPIRequest对象
+func NewTmallServicecenterServicestoreUpdateservicestoreRequest() *TmallServicecenterServicestoreUpdateservicestoreAPIRequest {
+	return &TmallServicecenterServicestoreUpdateservicestoreAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetApiMethodName() string {
+	return "tmall.servicecenter.servicestore.updateservicestore"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ServiceStore Setter
+// 网点
+func (r *TmallServicecenterServicestoreUpdateservicestoreAPIRequest) SetServiceStore(_serviceStore *ServiceStoreDto) error {
+	r._serviceStore = _serviceStore
+	r.Set("service_store", _serviceStore)
+	return nil
+}
+
+// Get ServiceStore Getter
+func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetServiceStore() *ServiceStoreDto {
+	return r._serviceStore
+}

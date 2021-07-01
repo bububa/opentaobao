@@ -19,4 +19,49 @@ type TaobaoUmpActivityAddAPIRequest struct {
 	_content string
 }
 
-// New
+// NewTaobaoUmpActivityAddRequest 初始化TaobaoUmpActivityAddAPIRequest对象
+func NewTaobaoUmpActivityAddRequest() *TaobaoUmpActivityAddAPIRequest {
+	return &TaobaoUmpActivityAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoUmpActivityAddAPIRequest) GetApiMethodName() string {
+	return "taobao.ump.activity.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoUmpActivityAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ToolId Setter
+// 工具id
+func (r *TaobaoUmpActivityAddAPIRequest) SetToolId(_toolId int64) error {
+	r._toolId = _toolId
+	r.Set("tool_id", _toolId)
+	return nil
+}
+
+// Get ToolId Getter
+func (r TaobaoUmpActivityAddAPIRequest) GetToolId() int64 {
+	return r._toolId
+}
+
+// Set is Content Setter
+// 活动内容，通过ump sdk里面的MarkeitngTool来生成，name必须属于“营销标签词库”——https://huodong.m.taobao.com/api/data/v2/5fe5e737d3314fa2973297f86f7bff3a.js?file=5fe5e737d3314fa2973297f86f7bff3a.js中的word值中的一种。
+func (r *TaobaoUmpActivityAddAPIRequest) SetContent(_content string) error {
+	r._content = _content
+	r.Set("content", _content)
+	return nil
+}
+
+// Get Content Getter
+func (r TaobaoUmpActivityAddAPIRequest) GetContent() string {
+	return r._content
+}

@@ -17,4 +17,36 @@ type AlibabaWdkUmsShiftGetAPIRequest struct {
 	_warehouseCode string
 }
 
-// New
+// NewAlibabaWdkUmsShiftGetRequest 初始化AlibabaWdkUmsShiftGetAPIRequest对象
+func NewAlibabaWdkUmsShiftGetRequest() *AlibabaWdkUmsShiftGetAPIRequest {
+	return &AlibabaWdkUmsShiftGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkUmsShiftGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.ums.shift.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkUmsShiftGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WarehouseCode Setter
+// 店仓code，指的是库调对象，对应一个物理店或仓编码
+func (r *AlibabaWdkUmsShiftGetAPIRequest) SetWarehouseCode(_warehouseCode string) error {
+	r._warehouseCode = _warehouseCode
+	r.Set("warehouse_code", _warehouseCode)
+	return nil
+}
+
+// Get WarehouseCode Getter
+func (r AlibabaWdkUmsShiftGetAPIRequest) GetWarehouseCode() string {
+	return r._warehouseCode
+}

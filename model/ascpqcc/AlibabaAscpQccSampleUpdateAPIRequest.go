@@ -17,4 +17,36 @@ type AlibabaAscpQccSampleUpdateAPIRequest struct {
 	_updateRequest *UpdateSampleRequest
 }
 
-// New
+// NewAlibabaAscpQccSampleUpdateRequest 初始化AlibabaAscpQccSampleUpdateAPIRequest对象
+func NewAlibabaAscpQccSampleUpdateRequest() *AlibabaAscpQccSampleUpdateAPIRequest {
+	return &AlibabaAscpQccSampleUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpQccSampleUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.qcc.sample.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpQccSampleUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is UpdateRequest Setter
+// 更新请求参数
+func (r *AlibabaAscpQccSampleUpdateAPIRequest) SetUpdateRequest(_updateRequest *UpdateSampleRequest) error {
+	r._updateRequest = _updateRequest
+	r.Set("update_request", _updateRequest)
+	return nil
+}
+
+// Get UpdateRequest Getter
+func (r AlibabaAscpQccSampleUpdateAPIRequest) GetUpdateRequest() *UpdateSampleRequest {
+	return r._updateRequest
+}

@@ -23,4 +23,75 @@ type AlibabaPricePromotionItemDeleteAPIRequest struct {
 	_uniqueId string
 }
 
-// New
+// NewAlibabaPricePromotionItemDeleteRequest 初始化AlibabaPricePromotionItemDeleteAPIRequest对象
+func NewAlibabaPricePromotionItemDeleteRequest() *AlibabaPricePromotionItemDeleteAPIRequest {
+	return &AlibabaPricePromotionItemDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaPricePromotionItemDeleteAPIRequest) GetApiMethodName() string {
+	return "alibaba.price.promotion.item.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaPricePromotionItemDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SkuCodes Setter
+// 商品code
+func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetSkuCodes(_skuCodes []string) error {
+	r._skuCodes = _skuCodes
+	r.Set("sku_codes", _skuCodes)
+	return nil
+}
+
+// Get SkuCodes Getter
+func (r AlibabaPricePromotionItemDeleteAPIRequest) GetSkuCodes() []string {
+	return r._skuCodes
+}
+
+// Set is OuCode Setter
+// toB渠道店OU
+func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetOuCode(_ouCode string) error {
+	r._ouCode = _ouCode
+	r.Set("ou_code", _ouCode)
+	return nil
+}
+
+// Get OuCode Getter
+func (r AlibabaPricePromotionItemDeleteAPIRequest) GetOuCode() string {
+	return r._ouCode
+}
+
+// Set is OuterPromotionCode Setter
+// 外部档期编码
+func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetOuterPromotionCode(_outerPromotionCode string) error {
+	r._outerPromotionCode = _outerPromotionCode
+	r.Set("outer_promotion_code", _outerPromotionCode)
+	return nil
+}
+
+// Get OuterPromotionCode Getter
+func (r AlibabaPricePromotionItemDeleteAPIRequest) GetOuterPromotionCode() string {
+	return r._outerPromotionCode
+}
+
+// Set is UniqueId Setter
+// 盒马唯一标识
+func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetUniqueId(_uniqueId string) error {
+	r._uniqueId = _uniqueId
+	r.Set("unique_id", _uniqueId)
+	return nil
+}
+
+// Get UniqueId Getter
+func (r AlibabaPricePromotionItemDeleteAPIRequest) GetUniqueId() string {
+	return r._uniqueId
+}

@@ -17,4 +17,36 @@ type AlibabaAlihouseNewhomeProjectQueryAPIRequest struct {
 	_outerId string
 }
 
-// New
+// NewAlibabaAlihouseNewhomeProjectQueryRequest 初始化AlibabaAlihouseNewhomeProjectQueryAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectQueryRequest() *AlibabaAlihouseNewhomeProjectQueryAPIRequest {
+	return &AlibabaAlihouseNewhomeProjectQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihouseNewhomeProjectQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihouse.newhome.project.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihouseNewhomeProjectQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OuterId Setter
+// 外部楼盘/小区id
+func (r *AlibabaAlihouseNewhomeProjectQueryAPIRequest) SetOuterId(_outerId string) error {
+	r._outerId = _outerId
+	r.Set("outer_id", _outerId)
+	return nil
+}
+
+// Get OuterId Getter
+func (r AlibabaAlihouseNewhomeProjectQueryAPIRequest) GetOuterId() string {
+	return r._outerId
+}

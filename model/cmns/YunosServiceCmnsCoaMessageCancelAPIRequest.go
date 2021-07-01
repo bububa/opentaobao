@@ -17,4 +17,36 @@ type YunosServiceCmnsCoaMessageCancelAPIRequest struct {
 	_mid int64
 }
 
-// New
+// NewYunosServiceCmnsCoaMessageCancelRequest 初始化YunosServiceCmnsCoaMessageCancelAPIRequest对象
+func NewYunosServiceCmnsCoaMessageCancelRequest() *YunosServiceCmnsCoaMessageCancelAPIRequest {
+	return &YunosServiceCmnsCoaMessageCancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosServiceCmnsCoaMessageCancelAPIRequest) GetApiMethodName() string {
+	return "yunos.service.cmns.coa.message.cancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosServiceCmnsCoaMessageCancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Mid Setter
+// 消息ID
+func (r *YunosServiceCmnsCoaMessageCancelAPIRequest) SetMid(_mid int64) error {
+	r._mid = _mid
+	r.Set("mid", _mid)
+	return nil
+}
+
+// Get Mid Getter
+func (r YunosServiceCmnsCoaMessageCancelAPIRequest) GetMid() int64 {
+	return r._mid
+}

@@ -15,4 +15,23 @@ type AlibabaInteractCoinBuyerAddAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaInteractCoinBuyerAddRequest 初始化AlibabaInteractCoinBuyerAddAPIRequest对象
+func NewAlibabaInteractCoinBuyerAddRequest() *AlibabaInteractCoinBuyerAddAPIRequest {
+	return &AlibabaInteractCoinBuyerAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractCoinBuyerAddAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.coin.buyer.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractCoinBuyerAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

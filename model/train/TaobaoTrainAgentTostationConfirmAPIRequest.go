@@ -19,4 +19,49 @@ type TaobaoTrainAgentTostationConfirmAPIRequest struct {
 	_agentId int64
 }
 
-// New
+// NewTaobaoTrainAgentTostationConfirmRequest 初始化TaobaoTrainAgentTostationConfirmAPIRequest对象
+func NewTaobaoTrainAgentTostationConfirmRequest() *TaobaoTrainAgentTostationConfirmAPIRequest {
+	return &TaobaoTrainAgentTostationConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTrainAgentTostationConfirmAPIRequest) GetApiMethodName() string {
+	return "taobao.train.agent.tostation.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTrainAgentTostationConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MainOrderId Setter
+// 淘宝的主订单号
+func (r *TaobaoTrainAgentTostationConfirmAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+	r._mainOrderId = _mainOrderId
+	r.Set("main_order_id", _mainOrderId)
+	return nil
+}
+
+// Get MainOrderId Getter
+func (r TaobaoTrainAgentTostationConfirmAPIRequest) GetMainOrderId() int64 {
+	return r._mainOrderId
+}
+
+// Set is AgentId Setter
+// 代理商id
+func (r *TaobaoTrainAgentTostationConfirmAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// Get AgentId Getter
+func (r TaobaoTrainAgentTostationConfirmAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}

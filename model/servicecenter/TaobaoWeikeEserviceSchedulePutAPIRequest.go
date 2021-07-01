@@ -19,4 +19,49 @@ type TaobaoWeikeEserviceSchedulePutAPIRequest struct {
 	_csSchedulings []CsSchedulingOneDayDto
 }
 
-// New
+// NewTaobaoWeikeEserviceSchedulePutRequest 初始化TaobaoWeikeEserviceSchedulePutAPIRequest对象
+func NewTaobaoWeikeEserviceSchedulePutRequest() *TaobaoWeikeEserviceSchedulePutAPIRequest {
+	return &TaobaoWeikeEserviceSchedulePutAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetApiMethodName() string {
+	return "taobao.weike.eservice.schedule.put"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OrderId Setter
+// 订单ID
+func (r *TaobaoWeikeEserviceSchedulePutAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// Get OrderId Getter
+func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// Set is CsSchedulings Setter
+// 按天排班信息
+func (r *TaobaoWeikeEserviceSchedulePutAPIRequest) SetCsSchedulings(_csSchedulings []CsSchedulingOneDayDto) error {
+	r._csSchedulings = _csSchedulings
+	r.Set("cs_schedulings", _csSchedulings)
+	return nil
+}
+
+// Get CsSchedulings Getter
+func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetCsSchedulings() []CsSchedulingOneDayDto {
+	return r._csSchedulings
+}

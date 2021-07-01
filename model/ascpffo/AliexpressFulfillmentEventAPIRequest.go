@@ -17,4 +17,36 @@ type AliexpressFulfillmentEventAPIRequest struct {
 	_param *FulfillmentOrderStatusUpdateRequest
 }
 
-// New
+// NewAliexpressFulfillmentEventRequest 初始化AliexpressFulfillmentEventAPIRequest对象
+func NewAliexpressFulfillmentEventRequest() *AliexpressFulfillmentEventAPIRequest {
+	return &AliexpressFulfillmentEventAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliexpressFulfillmentEventAPIRequest) GetApiMethodName() string {
+	return "aliexpress.fulfillment.event"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliexpressFulfillmentEventAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 入参对象
+func (r *AliexpressFulfillmentEventAPIRequest) SetParam(_param *FulfillmentOrderStatusUpdateRequest) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AliexpressFulfillmentEventAPIRequest) GetParam() *FulfillmentOrderStatusUpdateRequest {
+	return r._param
+}

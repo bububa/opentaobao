@@ -17,4 +17,36 @@ type TaobaoTrainMomentGetAPIRequest struct {
 	_param *TrainMomentTopParam
 }
 
-// New
+// NewTaobaoTrainMomentGetRequest 初始化TaobaoTrainMomentGetAPIRequest对象
+func NewTaobaoTrainMomentGetRequest() *TaobaoTrainMomentGetAPIRequest {
+	return &TaobaoTrainMomentGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTrainMomentGetAPIRequest) GetApiMethodName() string {
+	return "taobao.train.moment.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTrainMomentGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 出参
+func (r *TaobaoTrainMomentGetAPIRequest) SetParam(_param *TrainMomentTopParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r TaobaoTrainMomentGetAPIRequest) GetParam() *TrainMomentTopParam {
+	return r._param
+}

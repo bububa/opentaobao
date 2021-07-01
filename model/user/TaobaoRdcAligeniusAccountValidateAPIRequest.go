@@ -15,4 +15,23 @@ type TaobaoRdcAligeniusAccountValidateAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoRdcAligeniusAccountValidateRequest 初始化TaobaoRdcAligeniusAccountValidateAPIRequest对象
+func NewTaobaoRdcAligeniusAccountValidateRequest() *TaobaoRdcAligeniusAccountValidateAPIRequest {
+	return &TaobaoRdcAligeniusAccountValidateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoRdcAligeniusAccountValidateAPIRequest) GetApiMethodName() string {
+	return "taobao.rdc.aligenius.account.validate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoRdcAligeniusAccountValidateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

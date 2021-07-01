@@ -19,4 +19,49 @@ type TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest struct {
 	_inventoryAdjustInfo *InventoryAdjustInfo
 }
 
-// New
+// NewTaobaoJstAstrolabeStoreinventoryAdjustRequest 初始化TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest对象
+func NewTaobaoJstAstrolabeStoreinventoryAdjustRequest() *TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest {
+	return &TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest) GetApiMethodName() string {
+	return "taobao.jst.astrolabe.storeinventory.adjust"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OperationTime Setter
+// 操作时间
+func (r *TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest) SetOperationTime(_operationTime string) error {
+	r._operationTime = _operationTime
+	r.Set("operation_time", _operationTime)
+	return nil
+}
+
+// Get OperationTime Getter
+func (r TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest) GetOperationTime() string {
+	return r._operationTime
+}
+
+// Set is InventoryAdjustInfo Setter
+// 库存调整信息
+func (r *TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest) SetInventoryAdjustInfo(_inventoryAdjustInfo *InventoryAdjustInfo) error {
+	r._inventoryAdjustInfo = _inventoryAdjustInfo
+	r.Set("inventory_adjust_info", _inventoryAdjustInfo)
+	return nil
+}
+
+// Get InventoryAdjustInfo Getter
+func (r TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest) GetInventoryAdjustInfo() *InventoryAdjustInfo {
+	return r._inventoryAdjustInfo
+}

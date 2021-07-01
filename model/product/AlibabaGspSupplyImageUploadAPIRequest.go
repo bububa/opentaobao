@@ -19,4 +19,49 @@ type AlibabaGspSupplyImageUploadAPIRequest struct {
 	_fileContent *model.File
 }
 
-// New
+// NewAlibabaGspSupplyImageUploadRequest 初始化AlibabaGspSupplyImageUploadAPIRequest对象
+func NewAlibabaGspSupplyImageUploadRequest() *AlibabaGspSupplyImageUploadAPIRequest {
+	return &AlibabaGspSupplyImageUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaGspSupplyImageUploadAPIRequest) GetApiMethodName() string {
+	return "alibaba.gsp.supply.image.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaGspSupplyImageUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FileName Setter
+// 图片名称
+func (r *AlibabaGspSupplyImageUploadAPIRequest) SetFileName(_fileName string) error {
+	r._fileName = _fileName
+	r.Set("file_name", _fileName)
+	return nil
+}
+
+// Get FileName Getter
+func (r AlibabaGspSupplyImageUploadAPIRequest) GetFileName() string {
+	return r._fileName
+}
+
+// Set is FileContent Setter
+// 图片文件流，像素宽度不小于500，不大于2000，像素长度不小于500，不大于2000
+func (r *AlibabaGspSupplyImageUploadAPIRequest) SetFileContent(_fileContent *model.File) error {
+	r._fileContent = _fileContent
+	r.Set("file_content", _fileContent)
+	return nil
+}
+
+// Get FileContent Getter
+func (r AlibabaGspSupplyImageUploadAPIRequest) GetFileContent() *model.File {
+	return r._fileContent
+}

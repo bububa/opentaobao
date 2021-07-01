@@ -19,4 +19,49 @@ type AlibabaSecurityJaqWsgriskdataReportAPIRequest struct {
 	_extParam string
 }
 
-// New
+// NewAlibabaSecurityJaqWsgriskdataReportRequest 初始化AlibabaSecurityJaqWsgriskdataReportAPIRequest对象
+func NewAlibabaSecurityJaqWsgriskdataReportRequest() *AlibabaSecurityJaqWsgriskdataReportAPIRequest {
+	return &AlibabaSecurityJaqWsgriskdataReportAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSecurityJaqWsgriskdataReportAPIRequest) GetApiMethodName() string {
+	return "alibaba.security.jaq.wsgriskdata.report"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSecurityJaqWsgriskdataReportAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Wua Setter
+// wua串
+func (r *AlibabaSecurityJaqWsgriskdataReportAPIRequest) SetWua(_wua string) error {
+	r._wua = _wua
+	r.Set("wua", _wua)
+	return nil
+}
+
+// Get Wua Getter
+func (r AlibabaSecurityJaqWsgriskdataReportAPIRequest) GetWua() string {
+	return r._wua
+}
+
+// Set is ExtParam Setter
+// mtopappkey是mtop的appkey
+func (r *AlibabaSecurityJaqWsgriskdataReportAPIRequest) SetExtParam(_extParam string) error {
+	r._extParam = _extParam
+	r.Set("ext_param", _extParam)
+	return nil
+}
+
+// Get ExtParam Getter
+func (r AlibabaSecurityJaqWsgriskdataReportAPIRequest) GetExtParam() string {
+	return r._extParam
+}

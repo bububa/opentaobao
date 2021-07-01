@@ -18,4 +18,36 @@ type TmallServiceSettleadjustmentModifyAPIRequest struct {
 	_paramSettleAdjustmentRequest *SettleAdjustmentRequest
 }
 
-// New
+// NewTmallServiceSettleadjustmentModifyRequest 初始化TmallServiceSettleadjustmentModifyAPIRequest对象
+func NewTmallServiceSettleadjustmentModifyRequest() *TmallServiceSettleadjustmentModifyAPIRequest {
+	return &TmallServiceSettleadjustmentModifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallServiceSettleadjustmentModifyAPIRequest) GetApiMethodName() string {
+	return "tmall.service.settleadjustment.modify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallServiceSettleadjustmentModifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamSettleAdjustmentRequest Setter
+// 结算调整单父节点
+func (r *TmallServiceSettleadjustmentModifyAPIRequest) SetParamSettleAdjustmentRequest(_paramSettleAdjustmentRequest *SettleAdjustmentRequest) error {
+	r._paramSettleAdjustmentRequest = _paramSettleAdjustmentRequest
+	r.Set("param_settle_adjustment_request", _paramSettleAdjustmentRequest)
+	return nil
+}
+
+// Get ParamSettleAdjustmentRequest Getter
+func (r TmallServiceSettleadjustmentModifyAPIRequest) GetParamSettleAdjustmentRequest() *SettleAdjustmentRequest {
+	return r._paramSettleAdjustmentRequest
+}

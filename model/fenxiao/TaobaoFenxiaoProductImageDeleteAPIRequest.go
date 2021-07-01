@@ -21,4 +21,62 @@ type TaobaoFenxiaoProductImageDeleteAPIRequest struct {
 	_properties string
 }
 
-// New
+// NewTaobaoFenxiaoProductImageDeleteRequest 初始化TaobaoFenxiaoProductImageDeleteAPIRequest对象
+func NewTaobaoFenxiaoProductImageDeleteRequest() *TaobaoFenxiaoProductImageDeleteAPIRequest {
+	return &TaobaoFenxiaoProductImageDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.fenxiao.product.image.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ProductId Setter
+// 产品ID
+func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// Get ProductId Getter
+func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetProductId() int64 {
+	return r._productId
+}
+
+// Set is Position Setter
+// 图片位置
+func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetPosition(_position int64) error {
+	r._position = _position
+	r.Set("position", _position)
+	return nil
+}
+
+// Get Position Getter
+func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetPosition() int64 {
+	return r._position
+}
+
+// Set is Properties Setter
+// properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
+func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetProperties(_properties string) error {
+	r._properties = _properties
+	r.Set("properties", _properties)
+	return nil
+}
+
+// Get Properties Getter
+func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetProperties() string {
+	return r._properties
+}

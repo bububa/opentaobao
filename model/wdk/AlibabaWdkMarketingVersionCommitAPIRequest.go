@@ -17,4 +17,36 @@ type AlibabaWdkMarketingVersionCommitAPIRequest struct {
 	_param *SeasonVersionCommitParam
 }
 
-// New
+// NewAlibabaWdkMarketingVersionCommitRequest 初始化AlibabaWdkMarketingVersionCommitAPIRequest对象
+func NewAlibabaWdkMarketingVersionCommitRequest() *AlibabaWdkMarketingVersionCommitAPIRequest {
+	return &AlibabaWdkMarketingVersionCommitAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMarketingVersionCommitAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.marketing.version.commit"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMarketingVersionCommitAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 版本号提交参数
+func (r *AlibabaWdkMarketingVersionCommitAPIRequest) SetParam(_param *SeasonVersionCommitParam) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaWdkMarketingVersionCommitAPIRequest) GetParam() *SeasonVersionCommitParam {
+	return r._param
+}

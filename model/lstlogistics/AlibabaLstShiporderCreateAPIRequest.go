@@ -17,4 +17,36 @@ type AlibabaLstShiporderCreateAPIRequest struct {
 	_shipOrder *LstThirdPartMainShipOrderCreateDto
 }
 
-// New
+// NewAlibabaLstShiporderCreateRequest 初始化AlibabaLstShiporderCreateAPIRequest对象
+func NewAlibabaLstShiporderCreateRequest() *AlibabaLstShiporderCreateAPIRequest {
+	return &AlibabaLstShiporderCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaLstShiporderCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.lst.shiporder.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaLstShiporderCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ShipOrder Setter
+// 创建发货单入参
+func (r *AlibabaLstShiporderCreateAPIRequest) SetShipOrder(_shipOrder *LstThirdPartMainShipOrderCreateDto) error {
+	r._shipOrder = _shipOrder
+	r.Set("ship_order", _shipOrder)
+	return nil
+}
+
+// Get ShipOrder Getter
+func (r AlibabaLstShiporderCreateAPIRequest) GetShipOrder() *LstThirdPartMainShipOrderCreateDto {
+	return r._shipOrder
+}

@@ -17,4 +17,36 @@ type TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest struct {
 	_param *SyncIdentifyRefundCaseDto
 }
 
-// New
+// NewTaobaoRdcAligeniusIdentificationCaseUpdateRequest 初始化TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest对象
+func NewTaobaoRdcAligeniusIdentificationCaseUpdateRequest() *TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest {
+	return &TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest) GetApiMethodName() string {
+	return "taobao.rdc.aligenius.identification.case.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 请求参数
+func (r *TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest) SetParam(_param *SyncIdentifyRefundCaseDto) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r TaobaoRdcAligeniusIdentificationCaseUpdateAPIRequest) GetParam() *SyncIdentifyRefundCaseDto {
+	return r._param
+}

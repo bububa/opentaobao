@@ -17,4 +17,36 @@ type TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest struct {
 	_request *DeliveryOrderBatchCreateAnswerRequest
 }
 
-// New
+// NewTaobaoQimenDeliveryorderBatchcreateAnswerRequest 初始化TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest对象
+func NewTaobaoQimenDeliveryorderBatchcreateAnswerRequest() *TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest {
+	return &TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.deliveryorder.batchcreate.answer"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Request Setter
+//
+func (r *TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) SetRequest(_request *DeliveryOrderBatchCreateAnswerRequest) error {
+	r._request = _request
+	r.Set("request", _request)
+	return nil
+}
+
+// Get Request Getter
+func (r TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) GetRequest() *DeliveryOrderBatchCreateAnswerRequest {
+	return r._request
+}

@@ -17,4 +17,36 @@ type YunosTvpubadminContentVideoSubmitauditresultAPIRequest struct {
 	_licenseAuditResult string
 }
 
-// New
+// NewYunosTvpubadminContentVideoSubmitauditresultRequest 初始化YunosTvpubadminContentVideoSubmitauditresultAPIRequest对象
+func NewYunosTvpubadminContentVideoSubmitauditresultRequest() *YunosTvpubadminContentVideoSubmitauditresultAPIRequest {
+	return &YunosTvpubadminContentVideoSubmitauditresultAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentVideoSubmitauditresultAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.video.submitauditresult"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentVideoSubmitauditresultAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is LicenseAuditResult Setter
+// 审核结果，json格式
+func (r *YunosTvpubadminContentVideoSubmitauditresultAPIRequest) SetLicenseAuditResult(_licenseAuditResult string) error {
+	r._licenseAuditResult = _licenseAuditResult
+	r.Set("license_audit_result", _licenseAuditResult)
+	return nil
+}
+
+// Get LicenseAuditResult Getter
+func (r YunosTvpubadminContentVideoSubmitauditresultAPIRequest) GetLicenseAuditResult() string {
+	return r._licenseAuditResult
+}

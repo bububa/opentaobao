@@ -21,4 +21,62 @@ type TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest struct {
 	_startId int64
 }
 
-// New
+// NewTaobaoWdkEquipmentConveyorExceptionslidewaylogGetRequest 初始化TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest对象
+func NewTaobaoWdkEquipmentConveyorExceptionslidewaylogGetRequest() *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest {
+	return &TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) GetApiMethodName() string {
+	return "taobao.wdk.equipment.conveyor.exceptionslidewaylog.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WarehouseId Setter
+// 仓库Id
+func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) SetWarehouseId(_warehouseId int64) error {
+	r._warehouseId = _warehouseId
+	r.Set("warehouse_id", _warehouseId)
+	return nil
+}
+
+// Get WarehouseId Getter
+func (r TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) GetWarehouseId() int64 {
+	return r._warehouseId
+}
+
+// Set is ConveyorId Setter
+// 悬挂链Id，即wcsNum
+func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) SetConveyorId(_conveyorId int64) error {
+	r._conveyorId = _conveyorId
+	r.Set("conveyor_id", _conveyorId)
+	return nil
+}
+
+// Get ConveyorId Getter
+func (r TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) GetConveyorId() int64 {
+	return r._conveyorId
+}
+
+// Set is StartId Setter
+// 数据库id最小值
+func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) SetStartId(_startId int64) error {
+	r._startId = _startId
+	r.Set("start_id", _startId)
+	return nil
+}
+
+// Get StartId Getter
+func (r TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) GetStartId() int64 {
+	return r._startId
+}

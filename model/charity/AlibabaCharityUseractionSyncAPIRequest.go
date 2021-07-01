@@ -17,4 +17,36 @@ type AlibabaCharityUseractionSyncAPIRequest struct {
 	_channelUserActionDto *ChannelUserActionDto
 }
 
-// New
+// NewAlibabaCharityUseractionSyncRequest 初始化AlibabaCharityUseractionSyncAPIRequest对象
+func NewAlibabaCharityUseractionSyncRequest() *AlibabaCharityUseractionSyncAPIRequest {
+	return &AlibabaCharityUseractionSyncAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCharityUseractionSyncAPIRequest) GetApiMethodName() string {
+	return "alibaba.charity.useraction.sync"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCharityUseractionSyncAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ChannelUserActionDto Setter
+// 用户公益行为
+func (r *AlibabaCharityUseractionSyncAPIRequest) SetChannelUserActionDto(_channelUserActionDto *ChannelUserActionDto) error {
+	r._channelUserActionDto = _channelUserActionDto
+	r.Set("channel_user_action_dto", _channelUserActionDto)
+	return nil
+}
+
+// Get ChannelUserActionDto Getter
+func (r AlibabaCharityUseractionSyncAPIRequest) GetChannelUserActionDto() *ChannelUserActionDto {
+	return r._channelUserActionDto
+}

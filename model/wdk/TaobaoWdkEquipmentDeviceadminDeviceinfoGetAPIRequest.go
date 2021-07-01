@@ -19,4 +19,49 @@ type TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest struct {
 	_deviceType int64
 }
 
-// New
+// NewTaobaoWdkEquipmentDeviceadminDeviceinfoGetRequest 初始化TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest对象
+func NewTaobaoWdkEquipmentDeviceadminDeviceinfoGetRequest() *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest {
+	return &TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) GetApiMethodName() string {
+	return "taobao.wdk.equipment.deviceadmin.deviceinfo.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WarehouseCode Setter
+// 仓编码
+func (r *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) SetWarehouseCode(_warehouseCode string) error {
+	r._warehouseCode = _warehouseCode
+	r.Set("warehouse_code", _warehouseCode)
+	return nil
+}
+
+// Get WarehouseCode Getter
+func (r TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) GetWarehouseCode() string {
+	return r._warehouseCode
+}
+
+// Set is DeviceType Setter
+// 设备类型
+func (r *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) SetDeviceType(_deviceType int64) error {
+	r._deviceType = _deviceType
+	r.Set("device_type", _deviceType)
+	return nil
+}
+
+// Get DeviceType Getter
+func (r TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) GetDeviceType() int64 {
+	return r._deviceType
+}

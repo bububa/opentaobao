@@ -23,4 +23,75 @@ type AlibabaShenjingCoreActivityGetappshowlistAPIRequest struct {
 	_size int64
 }
 
-// New
+// NewAlibabaShenjingCoreActivityGetappshowlistRequest 初始化AlibabaShenjingCoreActivityGetappshowlistAPIRequest对象
+func NewAlibabaShenjingCoreActivityGetappshowlistRequest() *AlibabaShenjingCoreActivityGetappshowlistAPIRequest {
+	return &AlibabaShenjingCoreActivityGetappshowlistAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetApiMethodName() string {
+	return "alibaba.shenjing.core.activity.getappshowlist"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is WorkBenchContext Setter
+// 验权对象
+func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+	r._workBenchContext = _workBenchContext
+	r.Set("work_bench_context", _workBenchContext)
+	return nil
+}
+
+// Get WorkBenchContext Getter
+func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetWorkBenchContext() *WorkBenchContext {
+	return r._workBenchContext
+}
+
+// Set is Timestamp1 Setter
+// 时间戳
+func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetTimestamp1(_timestamp1 int64) error {
+	r._timestamp1 = _timestamp1
+	r.Set("timestamp1", _timestamp1)
+	return nil
+}
+
+// Get Timestamp1 Getter
+func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetTimestamp1() int64 {
+	return r._timestamp1
+}
+
+// Set is Page Setter
+// 页码
+func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetPage(_page int64) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// Get Page Getter
+func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetPage() int64 {
+	return r._page
+}
+
+// Set is Size Setter
+// 一页行数
+func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetSize(_size int64) error {
+	r._size = _size
+	r.Set("size", _size)
+	return nil
+}
+
+// Get Size Getter
+func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetSize() int64 {
+	return r._size
+}

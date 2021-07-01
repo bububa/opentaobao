@@ -19,4 +19,49 @@ type AlibabaAilabsTmallgenieAuthDeviceListAPIRequest struct {
 	_userOpenId string
 }
 
-// New
+// NewAlibabaAilabsTmallgenieAuthDeviceListRequest 初始化AlibabaAilabsTmallgenieAuthDeviceListAPIRequest对象
+func NewAlibabaAilabsTmallgenieAuthDeviceListRequest() *AlibabaAilabsTmallgenieAuthDeviceListAPIRequest {
+	return &AlibabaAilabsTmallgenieAuthDeviceListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetApiMethodName() string {
+	return "alibaba.ailabs.tmallgenie.auth.device.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ClientId Setter
+// 客户id
+func (r *AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) SetClientId(_clientId string) error {
+	r._clientId = _clientId
+	r.Set("client_id", _clientId)
+	return nil
+}
+
+// Get ClientId Getter
+func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetClientId() string {
+	return r._clientId
+}
+
+// Set is UserOpenId Setter
+// 用户开放id
+func (r *AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) SetUserOpenId(_userOpenId string) error {
+	r._userOpenId = _userOpenId
+	r.Set("user_open_id", _userOpenId)
+	return nil
+}
+
+// Get UserOpenId Getter
+func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetUserOpenId() string {
+	return r._userOpenId
+}

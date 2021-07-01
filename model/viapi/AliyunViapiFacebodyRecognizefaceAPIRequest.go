@@ -19,4 +19,49 @@ type AliyunViapiFacebodyRecognizefaceAPIRequest struct {
 	_imageType int64
 }
 
-// New
+// NewAliyunViapiFacebodyRecognizefaceRequest 初始化AliyunViapiFacebodyRecognizefaceAPIRequest对象
+func NewAliyunViapiFacebodyRecognizefaceRequest() *AliyunViapiFacebodyRecognizefaceAPIRequest {
+	return &AliyunViapiFacebodyRecognizefaceAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetApiMethodName() string {
+	return "aliyun.viapi.facebody.recognizeface"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ImageUrl Setter
+// 待检测图片链接
+func (r *AliyunViapiFacebodyRecognizefaceAPIRequest) SetImageUrl(_imageUrl string) error {
+	r._imageUrl = _imageUrl
+	r.Set("image_url", _imageUrl)
+	return nil
+}
+
+// Get ImageUrl Getter
+func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetImageUrl() string {
+	return r._imageUrl
+}
+
+// Set is ImageType Setter
+// 图片类型, ,取值范围[0:ImageURL, 1:ImageContent]
+func (r *AliyunViapiFacebodyRecognizefaceAPIRequest) SetImageType(_imageType int64) error {
+	r._imageType = _imageType
+	r.Set("image_type", _imageType)
+	return nil
+}
+
+// Get ImageType Getter
+func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetImageType() int64 {
+	return r._imageType
+}

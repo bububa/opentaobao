@@ -17,4 +17,36 @@ type AlibabaPricePromotionCreateAPIRequest struct {
 	_promotionActivityDo *PromotionActivityDo
 }
 
-// New
+// NewAlibabaPricePromotionCreateRequest 初始化AlibabaPricePromotionCreateAPIRequest对象
+func NewAlibabaPricePromotionCreateRequest() *AlibabaPricePromotionCreateAPIRequest {
+	return &AlibabaPricePromotionCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaPricePromotionCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.price.promotion.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaPricePromotionCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is PromotionActivityDo Setter
+// 档期活动参数
+func (r *AlibabaPricePromotionCreateAPIRequest) SetPromotionActivityDo(_promotionActivityDo *PromotionActivityDo) error {
+	r._promotionActivityDo = _promotionActivityDo
+	r.Set("promotion_activity_do", _promotionActivityDo)
+	return nil
+}
+
+// Get PromotionActivityDo Getter
+func (r AlibabaPricePromotionCreateAPIRequest) GetPromotionActivityDo() *PromotionActivityDo {
+	return r._promotionActivityDo
+}

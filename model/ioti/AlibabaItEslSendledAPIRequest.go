@@ -19,4 +19,49 @@ type AlibabaItEslSendledAPIRequest struct {
 	_type string
 }
 
-// New
+// NewAlibabaItEslSendledRequest 初始化AlibabaItEslSendledAPIRequest对象
+func NewAlibabaItEslSendledRequest() *AlibabaItEslSendledAPIRequest {
+	return &AlibabaItEslSendledAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaItEslSendledAPIRequest) GetApiMethodName() string {
+	return "alibaba.it.esl.sendled"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaItEslSendledAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is MacAp Setter
+// mac
+func (r *AlibabaItEslSendledAPIRequest) SetMacAp(_macAp string) error {
+	r._macAp = _macAp
+	r.Set("mac_ap", _macAp)
+	return nil
+}
+
+// Get MacAp Getter
+func (r AlibabaItEslSendledAPIRequest) GetMacAp() string {
+	return r._macAp
+}
+
+// Set is Type Setter
+// 0、1、2、3：关蓝绿红
+func (r *AlibabaItEslSendledAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// Get Type Getter
+func (r AlibabaItEslSendledAPIRequest) GetType() string {
+	return r._type
+}

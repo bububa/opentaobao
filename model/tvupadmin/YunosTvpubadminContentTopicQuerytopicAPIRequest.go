@@ -17,4 +17,36 @@ type YunosTvpubadminContentTopicQuerytopicAPIRequest struct {
 	_topicAuditQuery string
 }
 
-// New
+// NewYunosTvpubadminContentTopicQuerytopicRequest 初始化YunosTvpubadminContentTopicQuerytopicAPIRequest对象
+func NewYunosTvpubadminContentTopicQuerytopicRequest() *YunosTvpubadminContentTopicQuerytopicAPIRequest {
+	return &YunosTvpubadminContentTopicQuerytopicAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.content.topic.querytopic"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TopicAuditQuery Setter
+// TopicAuditQueryBO
+func (r *YunosTvpubadminContentTopicQuerytopicAPIRequest) SetTopicAuditQuery(_topicAuditQuery string) error {
+	r._topicAuditQuery = _topicAuditQuery
+	r.Set("topic_audit_query", _topicAuditQuery)
+	return nil
+}
+
+// Get TopicAuditQuery Getter
+func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetTopicAuditQuery() string {
+	return r._topicAuditQuery
+}

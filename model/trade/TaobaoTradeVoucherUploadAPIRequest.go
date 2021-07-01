@@ -23,4 +23,75 @@ type TaobaoTradeVoucherUploadAPIRequest struct {
 	_buyerNick string
 }
 
-// New
+// NewTaobaoTradeVoucherUploadRequest 初始化TaobaoTradeVoucherUploadAPIRequest对象
+func NewTaobaoTradeVoucherUploadRequest() *TaobaoTradeVoucherUploadAPIRequest {
+	return &TaobaoTradeVoucherUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoTradeVoucherUploadAPIRequest) GetApiMethodName() string {
+	return "taobao.trade.voucher.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoTradeVoucherUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FileName Setter
+// 上传文件的名称
+func (r *TaobaoTradeVoucherUploadAPIRequest) SetFileName(_fileName string) error {
+	r._fileName = _fileName
+	r.Set("file_name", _fileName)
+	return nil
+}
+
+// Get FileName Getter
+func (r TaobaoTradeVoucherUploadAPIRequest) GetFileName() string {
+	return r._fileName
+}
+
+// Set is FileData Setter
+// 文件
+func (r *TaobaoTradeVoucherUploadAPIRequest) SetFileData(_fileData *model.File) error {
+	r._fileData = _fileData
+	r.Set("file_data", _fileData)
+	return nil
+}
+
+// Get FileData Getter
+func (r TaobaoTradeVoucherUploadAPIRequest) GetFileData() *model.File {
+	return r._fileData
+}
+
+// Set is SellerNick Setter
+// 该笔订单的卖家Nick
+func (r *TaobaoTradeVoucherUploadAPIRequest) SetSellerNick(_sellerNick string) error {
+	r._sellerNick = _sellerNick
+	r.Set("seller_nick", _sellerNick)
+	return nil
+}
+
+// Get SellerNick Getter
+func (r TaobaoTradeVoucherUploadAPIRequest) GetSellerNick() string {
+	return r._sellerNick
+}
+
+// Set is BuyerNick Setter
+// 该笔订单的买家Nick（混淆nick）
+func (r *TaobaoTradeVoucherUploadAPIRequest) SetBuyerNick(_buyerNick string) error {
+	r._buyerNick = _buyerNick
+	r.Set("buyer_nick", _buyerNick)
+	return nil
+}
+
+// Get BuyerNick Getter
+func (r TaobaoTradeVoucherUploadAPIRequest) GetBuyerNick() string {
+	return r._buyerNick
+}

@@ -19,4 +19,49 @@ type AlibabaIdleIsvPvListAPIRequest struct {
 	_brandModelInfo []IdleNewPubValueDo
 }
 
-// New
+// NewAlibabaIdleIsvPvListRequest 初始化AlibabaIdleIsvPvListAPIRequest对象
+func NewAlibabaIdleIsvPvListRequest() *AlibabaIdleIsvPvListAPIRequest {
+	return &AlibabaIdleIsvPvListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIdleIsvPvListAPIRequest) GetApiMethodName() string {
+	return "alibaba.idle.isv.pv.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIdleIsvPvListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ChannelCatId Setter
+// 闲鱼渠道类目的id
+func (r *AlibabaIdleIsvPvListAPIRequest) SetChannelCatId(_channelCatId string) error {
+	r._channelCatId = _channelCatId
+	r.Set("channel_cat_id", _channelCatId)
+	return nil
+}
+
+// Get ChannelCatId Getter
+func (r AlibabaIdleIsvPvListAPIRequest) GetChannelCatId() string {
+	return r._channelCatId
+}
+
+// Set is BrandModelInfo Setter
+// 系统自动生成
+func (r *AlibabaIdleIsvPvListAPIRequest) SetBrandModelInfo(_brandModelInfo []IdleNewPubValueDo) error {
+	r._brandModelInfo = _brandModelInfo
+	r.Set("brand_model_info", _brandModelInfo)
+	return nil
+}
+
+// Get BrandModelInfo Getter
+func (r AlibabaIdleIsvPvListAPIRequest) GetBrandModelInfo() []IdleNewPubValueDo {
+	return r._brandModelInfo
+}

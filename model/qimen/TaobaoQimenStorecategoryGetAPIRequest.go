@@ -17,4 +17,36 @@ type TaobaoQimenStorecategoryGetAPIRequest struct {
 	_remark string
 }
 
-// New
+// NewTaobaoQimenStorecategoryGetRequest 初始化TaobaoQimenStorecategoryGetAPIRequest对象
+func NewTaobaoQimenStorecategoryGetRequest() *TaobaoQimenStorecategoryGetAPIRequest {
+	return &TaobaoQimenStorecategoryGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQimenStorecategoryGetAPIRequest) GetApiMethodName() string {
+	return "taobao.qimen.storecategory.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQimenStorecategoryGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Remark Setter
+// 备注
+func (r *TaobaoQimenStorecategoryGetAPIRequest) SetRemark(_remark string) error {
+	r._remark = _remark
+	r.Set("remark", _remark)
+	return nil
+}
+
+// Get Remark Getter
+func (r TaobaoQimenStorecategoryGetAPIRequest) GetRemark() string {
+	return r._remark
+}

@@ -19,4 +19,49 @@ type TaobaoDeActivityDeliveryAddrConfirmAPIRequest struct {
 	_addressSign string
 }
 
-// New
+// NewTaobaoDeActivityDeliveryAddrConfirmRequest 初始化TaobaoDeActivityDeliveryAddrConfirmAPIRequest对象
+func NewTaobaoDeActivityDeliveryAddrConfirmRequest() *TaobaoDeActivityDeliveryAddrConfirmAPIRequest {
+	return &TaobaoDeActivityDeliveryAddrConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoDeActivityDeliveryAddrConfirmAPIRequest) GetApiMethodName() string {
+	return "taobao.de.activity.delivery.addr.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoDeActivityDeliveryAddrConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SerialNumber Setter
+// 加密流水号
+func (r *TaobaoDeActivityDeliveryAddrConfirmAPIRequest) SetSerialNumber(_serialNumber string) error {
+	r._serialNumber = _serialNumber
+	r.Set("serial_number", _serialNumber)
+	return nil
+}
+
+// Get SerialNumber Getter
+func (r TaobaoDeActivityDeliveryAddrConfirmAPIRequest) GetSerialNumber() string {
+	return r._serialNumber
+}
+
+// Set is AddressSign Setter
+// 地址Sign
+func (r *TaobaoDeActivityDeliveryAddrConfirmAPIRequest) SetAddressSign(_addressSign string) error {
+	r._addressSign = _addressSign
+	r.Set("address_sign", _addressSign)
+	return nil
+}
+
+// Get AddressSign Getter
+func (r TaobaoDeActivityDeliveryAddrConfirmAPIRequest) GetAddressSign() string {
+	return r._addressSign
+}

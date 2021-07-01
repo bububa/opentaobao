@@ -19,4 +19,49 @@ type AlibabaAlihealthNrSpuQueryAPIRequest struct {
 	_options *TopAlihealthSpuQueryOptions
 }
 
-// New
+// NewAlibabaAlihealthNrSpuQueryRequest 初始化AlibabaAlihealthNrSpuQueryAPIRequest对象
+func NewAlibabaAlihealthNrSpuQueryRequest() *AlibabaAlihealthNrSpuQueryAPIRequest {
+	return &AlibabaAlihealthNrSpuQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthNrSpuQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.nr.spu.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthNrSpuQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 标品查询条件
+func (r *AlibabaAlihealthNrSpuQueryAPIRequest) SetQuery(_query *TopAlihealthSpuQuery) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r AlibabaAlihealthNrSpuQueryAPIRequest) GetQuery() *TopAlihealthSpuQuery {
+	return r._query
+}
+
+// Set is Options Setter
+// 查询选择器
+func (r *AlibabaAlihealthNrSpuQueryAPIRequest) SetOptions(_options *TopAlihealthSpuQueryOptions) error {
+	r._options = _options
+	r.Set("options", _options)
+	return nil
+}
+
+// Get Options Getter
+func (r AlibabaAlihealthNrSpuQueryAPIRequest) GetOptions() *TopAlihealthSpuQueryOptions {
+	return r._options
+}

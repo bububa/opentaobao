@@ -17,4 +17,36 @@ type AlibabaWdkStockPublishAPIRequest struct {
 	_batchStockPublishDto *BatchStockPublishDto
 }
 
-// New
+// NewAlibabaWdkStockPublishRequest 初始化AlibabaWdkStockPublishAPIRequest对象
+func NewAlibabaWdkStockPublishRequest() *AlibabaWdkStockPublishAPIRequest {
+	return &AlibabaWdkStockPublishAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkStockPublishAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.stock.publish"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkStockPublishAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BatchStockPublishDto Setter
+// 批量参数
+func (r *AlibabaWdkStockPublishAPIRequest) SetBatchStockPublishDto(_batchStockPublishDto *BatchStockPublishDto) error {
+	r._batchStockPublishDto = _batchStockPublishDto
+	r.Set("batch_stock_publish_dto", _batchStockPublishDto)
+	return nil
+}
+
+// Get BatchStockPublishDto Getter
+func (r AlibabaWdkStockPublishAPIRequest) GetBatchStockPublishDto() *BatchStockPublishDto {
+	return r._batchStockPublishDto
+}

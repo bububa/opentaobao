@@ -19,4 +19,49 @@ type AlibabaSecurityJaqAppShieldAPIRequest struct {
 	_channel *ShieldChannel
 }
 
-// New
+// NewAlibabaSecurityJaqAppShieldRequest 初始化AlibabaSecurityJaqAppShieldAPIRequest对象
+func NewAlibabaSecurityJaqAppShieldRequest() *AlibabaSecurityJaqAppShieldAPIRequest {
+	return &AlibabaSecurityJaqAppShieldAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaSecurityJaqAppShieldAPIRequest) GetApiMethodName() string {
+	return "alibaba.security.jaq.app.shield"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaSecurityJaqAppShieldAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AppInfo Setter
+// 待加固的应用信息
+func (r *AlibabaSecurityJaqAppShieldAPIRequest) SetAppInfo(_appInfo *ScanAppInfo) error {
+	r._appInfo = _appInfo
+	r.Set("app_info", _appInfo)
+	return nil
+}
+
+// Get AppInfo Getter
+func (r AlibabaSecurityJaqAppShieldAPIRequest) GetAppInfo() *ScanAppInfo {
+	return r._appInfo
+}
+
+// Set is Channel Setter
+// 渠道列表,多渠道加固时填写
+func (r *AlibabaSecurityJaqAppShieldAPIRequest) SetChannel(_channel *ShieldChannel) error {
+	r._channel = _channel
+	r.Set("channel", _channel)
+	return nil
+}
+
+// Get Channel Getter
+func (r AlibabaSecurityJaqAppShieldAPIRequest) GetChannel() *ShieldChannel {
+	return r._channel
+}

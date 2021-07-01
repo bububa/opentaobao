@@ -15,4 +15,23 @@ type AlibabaInteractSensorCalendarAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaInteractSensorCalendarRequest 初始化AlibabaInteractSensorCalendarAPIRequest对象
+func NewAlibabaInteractSensorCalendarRequest() *AlibabaInteractSensorCalendarAPIRequest {
+	return &AlibabaInteractSensorCalendarAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractSensorCalendarAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.sensor.calendar"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractSensorCalendarAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

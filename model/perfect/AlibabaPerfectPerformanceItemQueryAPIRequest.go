@@ -17,4 +17,36 @@ type AlibabaPerfectPerformanceItemQueryAPIRequest struct {
 	_itemPerfectPerformanceQueryReq *ItemPerfectPerformanceQueryReq
 }
 
-// New
+// NewAlibabaPerfectPerformanceItemQueryRequest 初始化AlibabaPerfectPerformanceItemQueryAPIRequest对象
+func NewAlibabaPerfectPerformanceItemQueryRequest() *AlibabaPerfectPerformanceItemQueryAPIRequest {
+	return &AlibabaPerfectPerformanceItemQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaPerfectPerformanceItemQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.perfect.performance.item.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaPerfectPerformanceItemQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemPerfectPerformanceQueryReq Setter
+// 查询入参
+func (r *AlibabaPerfectPerformanceItemQueryAPIRequest) SetItemPerfectPerformanceQueryReq(_itemPerfectPerformanceQueryReq *ItemPerfectPerformanceQueryReq) error {
+	r._itemPerfectPerformanceQueryReq = _itemPerfectPerformanceQueryReq
+	r.Set("item_perfect_performance_query_req", _itemPerfectPerformanceQueryReq)
+	return nil
+}
+
+// Get ItemPerfectPerformanceQueryReq Getter
+func (r AlibabaPerfectPerformanceItemQueryAPIRequest) GetItemPerfectPerformanceQueryReq() *ItemPerfectPerformanceQueryReq {
+	return r._itemPerfectPerformanceQueryReq
+}

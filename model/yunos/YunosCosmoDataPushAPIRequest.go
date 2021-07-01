@@ -19,4 +19,49 @@ type YunosCosmoDataPushAPIRequest struct {
 	_jsonModel string
 }
 
-// New
+// NewYunosCosmoDataPushRequest 初始化YunosCosmoDataPushAPIRequest对象
+func NewYunosCosmoDataPushRequest() *YunosCosmoDataPushAPIRequest {
+	return &YunosCosmoDataPushAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosCosmoDataPushAPIRequest) GetApiMethodName() string {
+	return "yunos.cosmo.data.push"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosCosmoDataPushAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is AppId Setter
+// 业务方数据源唯一标识，由COSMO平台颁发
+func (r *YunosCosmoDataPushAPIRequest) SetAppId(_appId string) error {
+	r._appId = _appId
+	r.Set("app_id", _appId)
+	return nil
+}
+
+// Get AppId Getter
+func (r YunosCosmoDataPushAPIRequest) GetAppId() string {
+	return r._appId
+}
+
+// Set is JsonModel Setter
+// 业务方推送数据，List结构的JSON序列化字符串
+func (r *YunosCosmoDataPushAPIRequest) SetJsonModel(_jsonModel string) error {
+	r._jsonModel = _jsonModel
+	r.Set("json_model", _jsonModel)
+	return nil
+}
+
+// Get JsonModel Getter
+func (r YunosCosmoDataPushAPIRequest) GetJsonModel() string {
+	return r._jsonModel
+}

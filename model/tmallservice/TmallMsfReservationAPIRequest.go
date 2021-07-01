@@ -17,4 +17,36 @@ type TmallMsfReservationAPIRequest struct {
 	_reservInfo *ReservationDto
 }
 
-// New
+// NewTmallMsfReservationRequest 初始化TmallMsfReservationAPIRequest对象
+func NewTmallMsfReservationRequest() *TmallMsfReservationAPIRequest {
+	return &TmallMsfReservationAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallMsfReservationAPIRequest) GetApiMethodName() string {
+	return "tmall.msf.reservation"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallMsfReservationAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ReservInfo Setter
+// 预约内容
+func (r *TmallMsfReservationAPIRequest) SetReservInfo(_reservInfo *ReservationDto) error {
+	r._reservInfo = _reservInfo
+	r.Set("reserv_info", _reservInfo)
+	return nil
+}
+
+// Get ReservInfo Getter
+func (r TmallMsfReservationAPIRequest) GetReservInfo() *ReservationDto {
+	return r._reservInfo
+}

@@ -17,4 +17,36 @@ type AlibabaAilabsAligenieVideoalbumPushAPIRequest struct {
 	_param1 []RawVideoAlbum
 }
 
-// New
+// NewAlibabaAilabsAligenieVideoalbumPushRequest 初始化AlibabaAilabsAligenieVideoalbumPushAPIRequest对象
+func NewAlibabaAilabsAligenieVideoalbumPushRequest() *AlibabaAilabsAligenieVideoalbumPushAPIRequest {
+	return &AlibabaAilabsAligenieVideoalbumPushAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAilabsAligenieVideoalbumPushAPIRequest) GetApiMethodName() string {
+	return "alibaba.ailabs.aligenie.videoalbum.push"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAilabsAligenieVideoalbumPushAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param1 Setter
+// 视频合辑数据
+func (r *AlibabaAilabsAligenieVideoalbumPushAPIRequest) SetParam1(_param1 []RawVideoAlbum) error {
+	r._param1 = _param1
+	r.Set("param1", _param1)
+	return nil
+}
+
+// Get Param1 Getter
+func (r AlibabaAilabsAligenieVideoalbumPushAPIRequest) GetParam1() []RawVideoAlbum {
+	return r._param1
+}

@@ -19,4 +19,49 @@ type TaobaoItemPropimgDeleteAPIRequest struct {
 	_numIid int64
 }
 
-// New
+// NewTaobaoItemPropimgDeleteRequest 初始化TaobaoItemPropimgDeleteAPIRequest对象
+func NewTaobaoItemPropimgDeleteRequest() *TaobaoItemPropimgDeleteAPIRequest {
+	return &TaobaoItemPropimgDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoItemPropimgDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.item.propimg.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoItemPropimgDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Id Setter
+// 商品属性图片ID
+func (r *TaobaoItemPropimgDeleteAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// Get Id Getter
+func (r TaobaoItemPropimgDeleteAPIRequest) GetId() int64 {
+	return r._id
+}
+
+// Set is NumIid Setter
+// 商品数字ID，必选
+func (r *TaobaoItemPropimgDeleteAPIRequest) SetNumIid(_numIid int64) error {
+	r._numIid = _numIid
+	r.Set("num_iid", _numIid)
+	return nil
+}
+
+// Get NumIid Getter
+func (r TaobaoItemPropimgDeleteAPIRequest) GetNumIid() int64 {
+	return r._numIid
+}

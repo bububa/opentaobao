@@ -21,4 +21,62 @@ type TaobaoQianniuKefuevalGetAPIRequest struct {
 	_etime string
 }
 
-// New
+// NewTaobaoQianniuKefuevalGetRequest 初始化TaobaoQianniuKefuevalGetAPIRequest对象
+func NewTaobaoQianniuKefuevalGetRequest() *TaobaoQianniuKefuevalGetAPIRequest {
+	return &TaobaoQianniuKefuevalGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoQianniuKefuevalGetAPIRequest) GetApiMethodName() string {
+	return "taobao.qianniu.kefueval.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoQianniuKefuevalGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is QueryIds Setter
+// 客服的nick，多个用逗号分隔，不要超过10个，带cntaobao的长nick
+func (r *TaobaoQianniuKefuevalGetAPIRequest) SetQueryIds(_queryIds string) error {
+	r._queryIds = _queryIds
+	r.Set("query_ids", _queryIds)
+	return nil
+}
+
+// Get QueryIds Getter
+func (r TaobaoQianniuKefuevalGetAPIRequest) GetQueryIds() string {
+	return r._queryIds
+}
+
+// Set is Btime Setter
+// 开始时间，格式yyyyMMddHHmmss
+func (r *TaobaoQianniuKefuevalGetAPIRequest) SetBtime(_btime string) error {
+	r._btime = _btime
+	r.Set("btime", _btime)
+	return nil
+}
+
+// Get Btime Getter
+func (r TaobaoQianniuKefuevalGetAPIRequest) GetBtime() string {
+	return r._btime
+}
+
+// Set is Etime Setter
+// 结束时间，格式yyyyMMddHHmmss
+func (r *TaobaoQianniuKefuevalGetAPIRequest) SetEtime(_etime string) error {
+	r._etime = _etime
+	r.Set("etime", _etime)
+	return nil
+}
+
+// Get Etime Getter
+func (r TaobaoQianniuKefuevalGetAPIRequest) GetEtime() string {
+	return r._etime
+}

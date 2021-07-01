@@ -17,4 +17,36 @@ type AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest struct {
 	_returnWarehouseResult *ReturnWarehouseResult
 }
 
-// New
+// NewAlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest 初始化AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest对象
+func NewAlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest() *AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest {
+	return &AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ReturnWarehouseResult Setter
+// 退仓结果
+func (r *AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) SetReturnWarehouseResult(_returnWarehouseResult *ReturnWarehouseResult) error {
+	r._returnWarehouseResult = _returnWarehouseResult
+	r.Set("return_warehouse_result", _returnWarehouseResult)
+	return nil
+}
+
+// Get ReturnWarehouseResult Getter
+func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) GetReturnWarehouseResult() *ReturnWarehouseResult {
+	return r._returnWarehouseResult
+}

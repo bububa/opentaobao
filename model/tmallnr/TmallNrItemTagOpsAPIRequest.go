@@ -17,4 +17,36 @@ type TmallNrItemTagOpsAPIRequest struct {
 	_tagReqDTO *TagReqDto
 }
 
-// New
+// NewTmallNrItemTagOpsRequest 初始化TmallNrItemTagOpsAPIRequest对象
+func NewTmallNrItemTagOpsRequest() *TmallNrItemTagOpsAPIRequest {
+	return &TmallNrItemTagOpsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallNrItemTagOpsAPIRequest) GetApiMethodName() string {
+	return "tmall.nr.item.tag.ops"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallNrItemTagOpsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TagReqDTO Setter
+// 请求入参
+func (r *TmallNrItemTagOpsAPIRequest) SetTagReqDTO(_tagReqDTO *TagReqDto) error {
+	r._tagReqDTO = _tagReqDTO
+	r.Set("tag_req_d_t_o", _tagReqDTO)
+	return nil
+}
+
+// Get TagReqDTO Getter
+func (r TmallNrItemTagOpsAPIRequest) GetTagReqDTO() *TagReqDto {
+	return r._tagReqDTO
+}

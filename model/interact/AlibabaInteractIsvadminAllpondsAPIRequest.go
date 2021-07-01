@@ -15,4 +15,23 @@ type AlibabaInteractIsvadminAllpondsAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaInteractIsvadminAllpondsRequest 初始化AlibabaInteractIsvadminAllpondsAPIRequest对象
+func NewAlibabaInteractIsvadminAllpondsRequest() *AlibabaInteractIsvadminAllpondsAPIRequest {
+	return &AlibabaInteractIsvadminAllpondsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaInteractIsvadminAllpondsAPIRequest) GetApiMethodName() string {
+	return "alibaba.interact.isvadmin.allponds"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaInteractIsvadminAllpondsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

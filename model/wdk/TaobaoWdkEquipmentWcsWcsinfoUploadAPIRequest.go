@@ -17,4 +17,36 @@ type TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest struct {
 	_param0 string
 }
 
-// New
+// NewTaobaoWdkEquipmentWcsWcsinfoUploadRequest 初始化TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest对象
+func NewTaobaoWdkEquipmentWcsWcsinfoUploadRequest() *TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest {
+	return &TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest) GetApiMethodName() string {
+	return "taobao.wdk.equipment.wcs.wcsinfo.upload"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param0 Setter
+// 上传信息
+func (r *TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest) SetParam0(_param0 string) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// Get Param0 Getter
+func (r TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest) GetParam0() string {
+	return r._param0
+}

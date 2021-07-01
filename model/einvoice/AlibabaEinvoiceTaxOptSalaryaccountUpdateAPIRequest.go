@@ -17,4 +17,36 @@ type AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest struct {
 	_paramTaxOptimizationEmployeeAssetUpdateDTO *TaxOptimizationEmployeeAssetUpdateDto
 }
 
-// New
+// NewAlibabaEinvoiceTaxOptSalaryaccountUpdateRequest 初始化AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest对象
+func NewAlibabaEinvoiceTaxOptSalaryaccountUpdateRequest() *AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest {
+	return &AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.tax.opt.salaryaccount.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamTaxOptimizationEmployeeAssetUpdateDTO Setter
+// 入参
+func (r *AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) SetParamTaxOptimizationEmployeeAssetUpdateDTO(_paramTaxOptimizationEmployeeAssetUpdateDTO *TaxOptimizationEmployeeAssetUpdateDto) error {
+	r._paramTaxOptimizationEmployeeAssetUpdateDTO = _paramTaxOptimizationEmployeeAssetUpdateDTO
+	r.Set("param_tax_optimization_employee_asset_update_d_t_o", _paramTaxOptimizationEmployeeAssetUpdateDTO)
+	return nil
+}
+
+// Get ParamTaxOptimizationEmployeeAssetUpdateDTO Getter
+func (r AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) GetParamTaxOptimizationEmployeeAssetUpdateDTO() *TaxOptimizationEmployeeAssetUpdateDto {
+	return r._paramTaxOptimizationEmployeeAssetUpdateDTO
+}

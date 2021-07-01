@@ -17,4 +17,36 @@ type AlitripPlatformPoiRawPoioutbypoiidsAPIRequest struct {
 	_fliggyPoiidParam *FliggyPoiIdParam
 }
 
-// New
+// NewAlitripPlatformPoiRawPoioutbypoiidsRequest 初始化AlitripPlatformPoiRawPoioutbypoiidsAPIRequest对象
+func NewAlitripPlatformPoiRawPoioutbypoiidsRequest() *AlitripPlatformPoiRawPoioutbypoiidsAPIRequest {
+	return &AlitripPlatformPoiRawPoioutbypoiidsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) GetApiMethodName() string {
+	return "alitrip.platform.poi.raw.poioutbypoiids"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FliggyPoiidParam Setter
+// 查询参数
+func (r *AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) SetFliggyPoiidParam(_fliggyPoiidParam *FliggyPoiIdParam) error {
+	r._fliggyPoiidParam = _fliggyPoiidParam
+	r.Set("fliggy_poiid_param", _fliggyPoiidParam)
+	return nil
+}
+
+// Get FliggyPoiidParam Getter
+func (r AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) GetFliggyPoiidParam() *FliggyPoiIdParam {
+	return r._fliggyPoiidParam
+}

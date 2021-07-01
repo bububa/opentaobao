@@ -17,4 +17,36 @@ type TaobaoXhotelFastinvoiceCompleteAPIRequest struct {
 	_invoiceInfoParam *InvoiceInfoParam
 }
 
-// New
+// NewTaobaoXhotelFastinvoiceCompleteRequest 初始化TaobaoXhotelFastinvoiceCompleteAPIRequest对象
+func NewTaobaoXhotelFastinvoiceCompleteRequest() *TaobaoXhotelFastinvoiceCompleteAPIRequest {
+	return &TaobaoXhotelFastinvoiceCompleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelFastinvoiceCompleteAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.fastinvoice.complete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelFastinvoiceCompleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is InvoiceInfoParam Setter
+// 无
+func (r *TaobaoXhotelFastinvoiceCompleteAPIRequest) SetInvoiceInfoParam(_invoiceInfoParam *InvoiceInfoParam) error {
+	r._invoiceInfoParam = _invoiceInfoParam
+	r.Set("invoice_info_param", _invoiceInfoParam)
+	return nil
+}
+
+// Get InvoiceInfoParam Getter
+func (r TaobaoXhotelFastinvoiceCompleteAPIRequest) GetInvoiceInfoParam() *InvoiceInfoParam {
+	return r._invoiceInfoParam
+}

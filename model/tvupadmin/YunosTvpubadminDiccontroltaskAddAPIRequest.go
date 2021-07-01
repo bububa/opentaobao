@@ -17,4 +17,36 @@ type YunosTvpubadminDiccontroltaskAddAPIRequest struct {
 	_task *DicControlTaskDo
 }
 
-// New
+// NewYunosTvpubadminDiccontroltaskAddRequest 初始化YunosTvpubadminDiccontroltaskAddAPIRequest对象
+func NewYunosTvpubadminDiccontroltaskAddRequest() *YunosTvpubadminDiccontroltaskAddAPIRequest {
+	return &YunosTvpubadminDiccontroltaskAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminDiccontroltaskAddAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.diccontroltask.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminDiccontroltaskAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Task Setter
+// 任务信息
+func (r *YunosTvpubadminDiccontroltaskAddAPIRequest) SetTask(_task *DicControlTaskDo) error {
+	r._task = _task
+	r.Set("task", _task)
+	return nil
+}
+
+// Get Task Getter
+func (r YunosTvpubadminDiccontroltaskAddAPIRequest) GetTask() *DicControlTaskDo {
+	return r._task
+}

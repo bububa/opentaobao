@@ -15,4 +15,23 @@ type TaobaoCaipiaoSignstatusCheckAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewTaobaoCaipiaoSignstatusCheckRequest 初始化TaobaoCaipiaoSignstatusCheckAPIRequest对象
+func NewTaobaoCaipiaoSignstatusCheckRequest() *TaobaoCaipiaoSignstatusCheckAPIRequest {
+	return &TaobaoCaipiaoSignstatusCheckAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCaipiaoSignstatusCheckAPIRequest) GetApiMethodName() string {
+	return "taobao.caipiao.signstatus.check"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCaipiaoSignstatusCheckAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

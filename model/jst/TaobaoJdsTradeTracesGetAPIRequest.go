@@ -17,4 +17,36 @@ type TaobaoJdsTradeTracesGetAPIRequest struct {
 	_tid int64
 }
 
-// New
+// NewTaobaoJdsTradeTracesGetRequest 初始化TaobaoJdsTradeTracesGetAPIRequest对象
+func NewTaobaoJdsTradeTracesGetRequest() *TaobaoJdsTradeTracesGetAPIRequest {
+	return &TaobaoJdsTradeTracesGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoJdsTradeTracesGetAPIRequest) GetApiMethodName() string {
+	return "taobao.jds.trade.traces.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoJdsTradeTracesGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Tid Setter
+// 淘宝的订单tid
+func (r *TaobaoJdsTradeTracesGetAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// Get Tid Getter
+func (r TaobaoJdsTradeTracesGetAPIRequest) GetTid() int64 {
+	return r._tid
+}

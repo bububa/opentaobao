@@ -17,4 +17,36 @@ type YunosTvpubadminManageTopicListAPIRequest struct {
 	_query string
 }
 
-// New
+// NewYunosTvpubadminManageTopicListRequest 初始化YunosTvpubadminManageTopicListAPIRequest对象
+func NewYunosTvpubadminManageTopicListRequest() *YunosTvpubadminManageTopicListAPIRequest {
+	return &YunosTvpubadminManageTopicListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosTvpubadminManageTopicListAPIRequest) GetApiMethodName() string {
+	return "yunos.tvpubadmin.manage.topic.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosTvpubadminManageTopicListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 查询条件
+func (r *YunosTvpubadminManageTopicListAPIRequest) SetQuery(_query string) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r YunosTvpubadminManageTopicListAPIRequest) GetQuery() string {
+	return r._query
+}

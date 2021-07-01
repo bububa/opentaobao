@@ -21,4 +21,62 @@ type TaobaoSimbaSalestarCreativesGetAPIRequest struct {
 	_adgroupId int64
 }
 
-// New
+// NewTaobaoSimbaSalestarCreativesGetRequest 初始化TaobaoSimbaSalestarCreativesGetAPIRequest对象
+func NewTaobaoSimbaSalestarCreativesGetRequest() *TaobaoSimbaSalestarCreativesGetAPIRequest {
+	return &TaobaoSimbaSalestarCreativesGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaSalestarCreativesGetAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.salestar.creatives.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaSalestarCreativesGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaSalestarCreativesGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaSalestarCreativesGetAPIRequest) GetNick() string {
+	return r._nick
+}
+
+// Set is CreativeIds Setter
+// 创意Id数组，最多200个
+func (r *TaobaoSimbaSalestarCreativesGetAPIRequest) SetCreativeIds(_creativeIds []int64) error {
+	r._creativeIds = _creativeIds
+	r.Set("creative_ids", _creativeIds)
+	return nil
+}
+
+// Get CreativeIds Getter
+func (r TaobaoSimbaSalestarCreativesGetAPIRequest) GetCreativeIds() []int64 {
+	return r._creativeIds
+}
+
+// Set is AdgroupId Setter
+// 推广组Id
+func (r *TaobaoSimbaSalestarCreativesGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoSimbaSalestarCreativesGetAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}

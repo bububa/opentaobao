@@ -17,4 +17,36 @@ type AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest struct {
 	_param *RemoveTenantAdminsRequest
 }
 
-// New
+// NewAlibabaMoziVdsTenantApiServiceRemoveadminRequest 初始化AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest对象
+func NewAlibabaMoziVdsTenantApiServiceRemoveadminRequest() *AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest {
+	return &AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) GetApiMethodName() string {
+	return "alibaba.mozi.vds.tenant.api.service.removeadmin"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Param Setter
+// 请求入参
+func (r *AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) SetParam(_param *RemoveTenantAdminsRequest) error {
+	r._param = _param
+	r.Set("param", _param)
+	return nil
+}
+
+// Get Param Getter
+func (r AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) GetParam() *RemoveTenantAdminsRequest {
+	return r._param
+}

@@ -17,4 +17,36 @@ type TaobaoSimbaKeywordFindbyidsAPIRequest struct {
 	_bidwordIds []int64
 }
 
-// New
+// NewTaobaoSimbaKeywordFindbyidsRequest 初始化TaobaoSimbaKeywordFindbyidsAPIRequest对象
+func NewTaobaoSimbaKeywordFindbyidsRequest() *TaobaoSimbaKeywordFindbyidsAPIRequest {
+	return &TaobaoSimbaKeywordFindbyidsAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaKeywordFindbyidsAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.keyword.findbyids"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaKeywordFindbyidsAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BidwordIds Setter
+// 关键词ids
+func (r *TaobaoSimbaKeywordFindbyidsAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
+	r._bidwordIds = _bidwordIds
+	r.Set("bidword_ids", _bidwordIds)
+	return nil
+}
+
+// Get BidwordIds Getter
+func (r TaobaoSimbaKeywordFindbyidsAPIRequest) GetBidwordIds() []int64 {
+	return r._bidwordIds
+}

@@ -23,4 +23,75 @@ type AlibabaWdkItemPriceUpdateAPIRequest struct {
 	_skuMemberPrice int64
 }
 
-// New
+// NewAlibabaWdkItemPriceUpdateRequest 初始化AlibabaWdkItemPriceUpdateAPIRequest对象
+func NewAlibabaWdkItemPriceUpdateRequest() *AlibabaWdkItemPriceUpdateAPIRequest {
+	return &AlibabaWdkItemPriceUpdateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkItemPriceUpdateAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.item.price.update"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkItemPriceUpdateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is StoreId Setter
+// 盒马门店id
+func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetStoreId(_storeId string) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// Get StoreId Getter
+func (r AlibabaWdkItemPriceUpdateAPIRequest) GetStoreId() string {
+	return r._storeId
+}
+
+// Set is SkuCode Setter
+// 商品编码
+func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetSkuCode(_skuCode string) error {
+	r._skuCode = _skuCode
+	r.Set("sku_code", _skuCode)
+	return nil
+}
+
+// Get SkuCode Getter
+func (r AlibabaWdkItemPriceUpdateAPIRequest) GetSkuCode() string {
+	return r._skuCode
+}
+
+// Set is SkuPrice Setter
+// 价格，单位是分
+func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetSkuPrice(_skuPrice int64) error {
+	r._skuPrice = _skuPrice
+	r.Set("sku_price", _skuPrice)
+	return nil
+}
+
+// Get SkuPrice Getter
+func (r AlibabaWdkItemPriceUpdateAPIRequest) GetSkuPrice() int64 {
+	return r._skuPrice
+}
+
+// Set is SkuMemberPrice Setter
+// 会员价格，单位是分，且不能大于价格
+func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetSkuMemberPrice(_skuMemberPrice int64) error {
+	r._skuMemberPrice = _skuMemberPrice
+	r.Set("sku_member_price", _skuMemberPrice)
+	return nil
+}
+
+// Get SkuMemberPrice Getter
+func (r AlibabaWdkItemPriceUpdateAPIRequest) GetSkuMemberPrice() int64 {
+	return r._skuMemberPrice
+}

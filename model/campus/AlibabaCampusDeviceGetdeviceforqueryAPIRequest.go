@@ -19,4 +19,49 @@ type AlibabaCampusDeviceGetdeviceforqueryAPIRequest struct {
 	_workBenchContext *WorkBenchContext
 }
 
-// New
+// NewAlibabaCampusDeviceGetdeviceforqueryRequest 初始化AlibabaCampusDeviceGetdeviceforqueryAPIRequest对象
+func NewAlibabaCampusDeviceGetdeviceforqueryRequest() *AlibabaCampusDeviceGetdeviceforqueryAPIRequest {
+	return &AlibabaCampusDeviceGetdeviceforqueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.campus.device.getdeviceforquery"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Query Setter
+// 系统自动生成
+func (r *AlibabaCampusDeviceGetdeviceforqueryAPIRequest) SetQuery(_query *DeviceApiQuery) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// Get Query Getter
+func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetQuery() *DeviceApiQuery {
+	return r._query
+}
+
+// Set is WorkBenchContext Setter
+// 平台统一参数
+func (r *AlibabaCampusDeviceGetdeviceforqueryAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+	r._workBenchContext = _workBenchContext
+	r.Set("work_bench_context", _workBenchContext)
+	return nil
+}
+
+// Get WorkBenchContext Getter
+func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetWorkBenchContext() *WorkBenchContext {
+	return r._workBenchContext
+}

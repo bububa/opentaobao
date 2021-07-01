@@ -17,4 +17,36 @@ type TaobaoBusOrderSetAPIRequest struct {
 	_paramB2BCreateOrderRQ *B2BCreateOrderRq
 }
 
-// New
+// NewTaobaoBusOrderSetRequest 初始化TaobaoBusOrderSetAPIRequest对象
+func NewTaobaoBusOrderSetRequest() *TaobaoBusOrderSetAPIRequest {
+	return &TaobaoBusOrderSetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBusOrderSetAPIRequest) GetApiMethodName() string {
+	return "taobao.bus.order.set"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBusOrderSetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamB2BCreateOrderRQ Setter
+// 下单参数
+func (r *TaobaoBusOrderSetAPIRequest) SetParamB2BCreateOrderRQ(_paramB2BCreateOrderRQ *B2BCreateOrderRq) error {
+	r._paramB2BCreateOrderRQ = _paramB2BCreateOrderRQ
+	r.Set("param_b2_b_create_order_r_q", _paramB2BCreateOrderRQ)
+	return nil
+}
+
+// Get ParamB2BCreateOrderRQ Getter
+func (r TaobaoBusOrderSetAPIRequest) GetParamB2BCreateOrderRQ() *B2BCreateOrderRq {
+	return r._paramB2BCreateOrderRQ
+}

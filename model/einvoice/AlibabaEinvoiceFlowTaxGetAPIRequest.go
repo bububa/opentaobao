@@ -18,4 +18,36 @@ type AlibabaEinvoiceFlowTaxGetAPIRequest struct {
 	_flowId string
 }
 
-// New
+// NewAlibabaEinvoiceFlowTaxGetRequest 初始化AlibabaEinvoiceFlowTaxGetAPIRequest对象
+func NewAlibabaEinvoiceFlowTaxGetRequest() *AlibabaEinvoiceFlowTaxGetAPIRequest {
+	return &AlibabaEinvoiceFlowTaxGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceFlowTaxGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.flow.tax.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceFlowTaxGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is FlowId Setter
+// 入驻开通工单ID
+func (r *AlibabaEinvoiceFlowTaxGetAPIRequest) SetFlowId(_flowId string) error {
+	r._flowId = _flowId
+	r.Set("flow_id", _flowId)
+	return nil
+}
+
+// Get FlowId Getter
+func (r AlibabaEinvoiceFlowTaxGetAPIRequest) GetFlowId() string {
+	return r._flowId
+}

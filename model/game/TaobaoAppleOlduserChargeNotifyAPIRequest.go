@@ -21,4 +21,62 @@ type TaobaoAppleOlduserChargeNotifyAPIRequest struct {
 	_mainData *AppleTopOldSignNotifyDo
 }
 
-// New
+// NewTaobaoAppleOlduserChargeNotifyRequest 初始化TaobaoAppleOlduserChargeNotifyAPIRequest对象
+func NewTaobaoAppleOlduserChargeNotifyRequest() *TaobaoAppleOlduserChargeNotifyAPIRequest {
+	return &TaobaoAppleOlduserChargeNotifyAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAppleOlduserChargeNotifyAPIRequest) GetApiMethodName() string {
+	return "taobao.apple.olduser.charge.notify"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAppleOlduserChargeNotifyAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ResultCode Setter
+// 结果code
+func (r *TaobaoAppleOlduserChargeNotifyAPIRequest) SetResultCode(_resultCode string) error {
+	r._resultCode = _resultCode
+	r.Set("result_code", _resultCode)
+	return nil
+}
+
+// Get ResultCode Getter
+func (r TaobaoAppleOlduserChargeNotifyAPIRequest) GetResultCode() string {
+	return r._resultCode
+}
+
+// Set is ResultMsg Setter
+// 结果信息说明
+func (r *TaobaoAppleOlduserChargeNotifyAPIRequest) SetResultMsg(_resultMsg string) error {
+	r._resultMsg = _resultMsg
+	r.Set("result_msg", _resultMsg)
+	return nil
+}
+
+// Get ResultMsg Getter
+func (r TaobaoAppleOlduserChargeNotifyAPIRequest) GetResultMsg() string {
+	return r._resultMsg
+}
+
+// Set is MainData Setter
+// 业务参数
+func (r *TaobaoAppleOlduserChargeNotifyAPIRequest) SetMainData(_mainData *AppleTopOldSignNotifyDo) error {
+	r._mainData = _mainData
+	r.Set("main_data", _mainData)
+	return nil
+}
+
+// Get MainData Getter
+func (r TaobaoAppleOlduserChargeNotifyAPIRequest) GetMainData() *AppleTopOldSignNotifyDo {
+	return r._mainData
+}

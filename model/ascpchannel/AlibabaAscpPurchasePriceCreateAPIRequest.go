@@ -17,4 +17,36 @@ type AlibabaAscpPurchasePriceCreateAPIRequest struct {
 	_createRequest *AlibabaAscpPurchasePriceCreateRequest
 }
 
-// New
+// NewAlibabaAscpPurchasePriceCreateRequest 初始化AlibabaAscpPurchasePriceCreateAPIRequest对象
+func NewAlibabaAscpPurchasePriceCreateRequest() *AlibabaAscpPurchasePriceCreateAPIRequest {
+	return &AlibabaAscpPurchasePriceCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAscpPurchasePriceCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.ascp.purchase.price.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAscpPurchasePriceCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CreateRequest Setter
+// 采购价创建/更新请求
+func (r *AlibabaAscpPurchasePriceCreateAPIRequest) SetCreateRequest(_createRequest *AlibabaAscpPurchasePriceCreateRequest) error {
+	r._createRequest = _createRequest
+	r.Set("create_request", _createRequest)
+	return nil
+}
+
+// Get CreateRequest Getter
+func (r AlibabaAscpPurchasePriceCreateAPIRequest) GetCreateRequest() *AlibabaAscpPurchasePriceCreateRequest {
+	return r._createRequest
+}

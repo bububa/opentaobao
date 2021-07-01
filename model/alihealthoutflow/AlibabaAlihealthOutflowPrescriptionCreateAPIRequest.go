@@ -17,4 +17,36 @@ type AlibabaAlihealthOutflowPrescriptionCreateAPIRequest struct {
 	_createRequest *PrescriptionOutflowUpdateRequest
 }
 
-// New
+// NewAlibabaAlihealthOutflowPrescriptionCreateRequest 初始化AlibabaAlihealthOutflowPrescriptionCreateAPIRequest对象
+func NewAlibabaAlihealthOutflowPrescriptionCreateRequest() *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest {
+	return &AlibabaAlihealthOutflowPrescriptionCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetApiMethodName() string {
+	return "alibaba.alihealth.outflow.prescription.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CreateRequest Setter
+// 保存处方入参
+func (r *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) SetCreateRequest(_createRequest *PrescriptionOutflowUpdateRequest) error {
+	r._createRequest = _createRequest
+	r.Set("create_request", _createRequest)
+	return nil
+}
+
+// Get CreateRequest Getter
+func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetCreateRequest() *PrescriptionOutflowUpdateRequest {
+	return r._createRequest
+}

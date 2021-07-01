@@ -17,4 +17,36 @@ type CainiaoCntecItemChangeMessageAPIRequest struct {
 	_itemChangeMessage *SupplyItemChangeMessage
 }
 
-// New
+// NewCainiaoCntecItemChangeMessageRequest 初始化CainiaoCntecItemChangeMessageAPIRequest对象
+func NewCainiaoCntecItemChangeMessageRequest() *CainiaoCntecItemChangeMessageAPIRequest {
+	return &CainiaoCntecItemChangeMessageAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r CainiaoCntecItemChangeMessageAPIRequest) GetApiMethodName() string {
+	return "cainiao.cntec.item.change.message"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r CainiaoCntecItemChangeMessageAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ItemChangeMessage Setter
+// 供应商商品变更信息
+func (r *CainiaoCntecItemChangeMessageAPIRequest) SetItemChangeMessage(_itemChangeMessage *SupplyItemChangeMessage) error {
+	r._itemChangeMessage = _itemChangeMessage
+	r.Set("item_change_message", _itemChangeMessage)
+	return nil
+}
+
+// Get ItemChangeMessage Getter
+func (r CainiaoCntecItemChangeMessageAPIRequest) GetItemChangeMessage() *SupplyItemChangeMessage {
+	return r._itemChangeMessage
+}

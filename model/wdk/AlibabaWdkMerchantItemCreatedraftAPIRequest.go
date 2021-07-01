@@ -17,4 +17,36 @@ type AlibabaWdkMerchantItemCreatedraftAPIRequest struct {
 	_params string
 }
 
-// New
+// NewAlibabaWdkMerchantItemCreatedraftRequest 初始化AlibabaWdkMerchantItemCreatedraftAPIRequest对象
+func NewAlibabaWdkMerchantItemCreatedraftRequest() *AlibabaWdkMerchantItemCreatedraftAPIRequest {
+	return &AlibabaWdkMerchantItemCreatedraftAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkMerchantItemCreatedraftAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.merchant.item.createdraft"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkMerchantItemCreatedraftAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Params Setter
+// 商品信息json
+func (r *AlibabaWdkMerchantItemCreatedraftAPIRequest) SetParams(_params string) error {
+	r._params = _params
+	r.Set("params", _params)
+	return nil
+}
+
+// Get Params Getter
+func (r AlibabaWdkMerchantItemCreatedraftAPIRequest) GetParams() string {
+	return r._params
+}

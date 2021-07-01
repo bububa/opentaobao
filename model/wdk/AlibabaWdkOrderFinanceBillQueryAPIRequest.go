@@ -17,4 +17,36 @@ type AlibabaWdkOrderFinanceBillQueryAPIRequest struct {
 	_billQueryRequest *WdkOpenOrderFinanceBillQueryRequest
 }
 
-// New
+// NewAlibabaWdkOrderFinanceBillQueryRequest 初始化AlibabaWdkOrderFinanceBillQueryAPIRequest对象
+func NewAlibabaWdkOrderFinanceBillQueryRequest() *AlibabaWdkOrderFinanceBillQueryAPIRequest {
+	return &AlibabaWdkOrderFinanceBillQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkOrderFinanceBillQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.order.finance.bill.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkOrderFinanceBillQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BillQueryRequest Setter
+// 入参
+func (r *AlibabaWdkOrderFinanceBillQueryAPIRequest) SetBillQueryRequest(_billQueryRequest *WdkOpenOrderFinanceBillQueryRequest) error {
+	r._billQueryRequest = _billQueryRequest
+	r.Set("bill_query_request", _billQueryRequest)
+	return nil
+}
+
+// Get BillQueryRequest Getter
+func (r AlibabaWdkOrderFinanceBillQueryAPIRequest) GetBillQueryRequest() *WdkOpenOrderFinanceBillQueryRequest {
+	return r._billQueryRequest
+}

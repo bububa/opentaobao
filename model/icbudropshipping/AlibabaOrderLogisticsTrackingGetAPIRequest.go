@@ -17,4 +17,36 @@ type AlibabaOrderLogisticsTrackingGetAPIRequest struct {
 	_tradeId int64
 }
 
-// New
+// NewAlibabaOrderLogisticsTrackingGetRequest 初始化AlibabaOrderLogisticsTrackingGetAPIRequest对象
+func NewAlibabaOrderLogisticsTrackingGetRequest() *AlibabaOrderLogisticsTrackingGetAPIRequest {
+	return &AlibabaOrderLogisticsTrackingGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaOrderLogisticsTrackingGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.order.logistics.tracking.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaOrderLogisticsTrackingGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is TradeId Setter
+// order id
+func (r *AlibabaOrderLogisticsTrackingGetAPIRequest) SetTradeId(_tradeId int64) error {
+	r._tradeId = _tradeId
+	r.Set("trade_id", _tradeId)
+	return nil
+}
+
+// Get TradeId Getter
+func (r AlibabaOrderLogisticsTrackingGetAPIRequest) GetTradeId() int64 {
+	return r._tradeId
+}

@@ -19,4 +19,49 @@ type TaobaoBanamadpcItemAddAPIRequest struct {
 	_xml string
 }
 
-// New
+// NewTaobaoBanamadpcItemAddRequest 初始化TaobaoBanamadpcItemAddAPIRequest对象
+func NewTaobaoBanamadpcItemAddRequest() *TaobaoBanamadpcItemAddAPIRequest {
+	return &TaobaoBanamadpcItemAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoBanamadpcItemAddAPIRequest) GetApiMethodName() string {
+	return "taobao.banamadpc.item.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoBanamadpcItemAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CatId Setter
+// 类目id
+func (r *TaobaoBanamadpcItemAddAPIRequest) SetCatId(_catId int64) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// Get CatId Getter
+func (r TaobaoBanamadpcItemAddAPIRequest) GetCatId() int64 {
+	return r._catId
+}
+
+// Set is Xml Setter
+// 商品的schema xml
+func (r *TaobaoBanamadpcItemAddAPIRequest) SetXml(_xml string) error {
+	r._xml = _xml
+	r.Set("xml", _xml)
+	return nil
+}
+
+// Get Xml Getter
+func (r TaobaoBanamadpcItemAddAPIRequest) GetXml() string {
+	return r._xml
+}

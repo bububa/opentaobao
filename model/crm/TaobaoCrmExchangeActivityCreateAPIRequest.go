@@ -17,4 +17,36 @@ type TaobaoCrmExchangeActivityCreateAPIRequest struct {
 	_exchangeActivityCreateDto *ExchangeActivityCreateDto
 }
 
-// New
+// NewTaobaoCrmExchangeActivityCreateRequest 初始化TaobaoCrmExchangeActivityCreateAPIRequest对象
+func NewTaobaoCrmExchangeActivityCreateRequest() *TaobaoCrmExchangeActivityCreateAPIRequest {
+	return &TaobaoCrmExchangeActivityCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCrmExchangeActivityCreateAPIRequest) GetApiMethodName() string {
+	return "taobao.crm.exchange.activity.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCrmExchangeActivityCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ExchangeActivityCreateDto Setter
+// 创建积分兑换活动
+func (r *TaobaoCrmExchangeActivityCreateAPIRequest) SetExchangeActivityCreateDto(_exchangeActivityCreateDto *ExchangeActivityCreateDto) error {
+	r._exchangeActivityCreateDto = _exchangeActivityCreateDto
+	r.Set("exchange_activity_create_dto", _exchangeActivityCreateDto)
+	return nil
+}
+
+// Get ExchangeActivityCreateDto Getter
+func (r TaobaoCrmExchangeActivityCreateAPIRequest) GetExchangeActivityCreateDto() *ExchangeActivityCreateDto {
+	return r._exchangeActivityCreateDto
+}

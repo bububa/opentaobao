@@ -23,4 +23,75 @@ type TaobaoSebpOrganizationGetorderinfoAPIRequest struct {
 	_startTime string
 }
 
-// New
+// NewTaobaoSebpOrganizationGetorderinfoRequest 初始化TaobaoSebpOrganizationGetorderinfoAPIRequest对象
+func NewTaobaoSebpOrganizationGetorderinfoRequest() *TaobaoSebpOrganizationGetorderinfoAPIRequest {
+	return &TaobaoSebpOrganizationGetorderinfoAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetApiMethodName() string {
+	return "taobao.sebp.organization.getorderinfo"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ModifyDate Setter
+// null-请求所有，20200616-请求2020年6月16号的变更信息
+func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetModifyDate(_modifyDate string) error {
+	r._modifyDate = _modifyDate
+	r.Set("modify_date", _modifyDate)
+	return nil
+}
+
+// Get ModifyDate Getter
+func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetModifyDate() string {
+	return r._modifyDate
+}
+
+// Set is PageNum Setter
+// 第几页
+func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetPageNum(_pageNum int64) error {
+	r._pageNum = _pageNum
+	r.Set("page_num", _pageNum)
+	return nil
+}
+
+// Get PageNum Getter
+func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetPageNum() int64 {
+	return r._pageNum
+}
+
+// Set is EndTime Setter
+// 查询实时数据时，必传，开始时间结束时间间隔不能超过4个小时
+func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// Get EndTime Getter
+func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetEndTime() string {
+	return r._endTime
+}
+
+// Set is StartTime Setter
+// 查询实时数据时，必传，开始时间不能早于2天前
+func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// Get StartTime Getter
+func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetStartTime() string {
+	return r._startTime
+}

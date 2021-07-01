@@ -19,4 +19,49 @@ type AlibabaWdkCouponTemplateQueryumpactidAPIRequest struct {
 	_wdkCouponType int64
 }
 
-// New
+// NewAlibabaWdkCouponTemplateQueryumpactidRequest 初始化AlibabaWdkCouponTemplateQueryumpactidAPIRequest对象
+func NewAlibabaWdkCouponTemplateQueryumpactidRequest() *AlibabaWdkCouponTemplateQueryumpactidAPIRequest {
+	return &AlibabaWdkCouponTemplateQueryumpactidAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaWdkCouponTemplateQueryumpactidAPIRequest) GetApiMethodName() string {
+	return "alibaba.wdk.coupon.template.queryumpactid"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaWdkCouponTemplateQueryumpactidAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is SourceIds Setter
+// 券模版id列表
+func (r *AlibabaWdkCouponTemplateQueryumpactidAPIRequest) SetSourceIds(_sourceIds []int64) error {
+	r._sourceIds = _sourceIds
+	r.Set("source_ids", _sourceIds)
+	return nil
+}
+
+// Get SourceIds Getter
+func (r AlibabaWdkCouponTemplateQueryumpactidAPIRequest) GetSourceIds() []int64 {
+	return r._sourceIds
+}
+
+// Set is WdkCouponType Setter
+// 优惠券类型
+func (r *AlibabaWdkCouponTemplateQueryumpactidAPIRequest) SetWdkCouponType(_wdkCouponType int64) error {
+	r._wdkCouponType = _wdkCouponType
+	r.Set("wdk_coupon_type", _wdkCouponType)
+	return nil
+}
+
+// Get WdkCouponType Getter
+func (r AlibabaWdkCouponTemplateQueryumpactidAPIRequest) GetWdkCouponType() int64 {
+	return r._wdkCouponType
+}

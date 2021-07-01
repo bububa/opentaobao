@@ -17,4 +17,36 @@ type TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest struct {
 	_url string
 }
 
-// New
+// NewTmallMarketingLiuliangbaoSpreadlinkCreateRequest 初始化TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest对象
+func NewTmallMarketingLiuliangbaoSpreadlinkCreateRequest() *TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest {
+	return &TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) GetApiMethodName() string {
+	return "tmall.marketing.liuliangbao.spreadlink.create"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Url Setter
+// 活动链接，必须为淘系链接
+func (r *TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) SetUrl(_url string) error {
+	r._url = _url
+	r.Set("url", _url)
+	return nil
+}
+
+// Get Url Getter
+func (r TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) GetUrl() string {
+	return r._url
+}

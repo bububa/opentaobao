@@ -16,4 +16,23 @@ type AlibabaEinvoiceSerialnoBatchGenerateAPIRequest struct {
 	model.Params
 }
 
-// New
+// NewAlibabaEinvoiceSerialnoBatchGenerateRequest 初始化AlibabaEinvoiceSerialnoBatchGenerateAPIRequest对象
+func NewAlibabaEinvoiceSerialnoBatchGenerateRequest() *AlibabaEinvoiceSerialnoBatchGenerateAPIRequest {
+	return &AlibabaEinvoiceSerialnoBatchGenerateAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaEinvoiceSerialnoBatchGenerateAPIRequest) GetApiMethodName() string {
+	return "alibaba.einvoice.serialno.batch.generate"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaEinvoiceSerialnoBatchGenerateAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}

@@ -17,4 +17,36 @@ type AlibabaFundplatformCardordersInfoQueryAPIRequest struct {
 	_parameters *CardMakingInfoQueryRequest
 }
 
-// New
+// NewAlibabaFundplatformCardordersInfoQueryRequest 初始化AlibabaFundplatformCardordersInfoQueryAPIRequest对象
+func NewAlibabaFundplatformCardordersInfoQueryRequest() *AlibabaFundplatformCardordersInfoQueryAPIRequest {
+	return &AlibabaFundplatformCardordersInfoQueryAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaFundplatformCardordersInfoQueryAPIRequest) GetApiMethodName() string {
+	return "alibaba.fundplatform.cardorders.info.query"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaFundplatformCardordersInfoQueryAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Parameters Setter
+// 请求结构体
+func (r *AlibabaFundplatformCardordersInfoQueryAPIRequest) SetParameters(_parameters *CardMakingInfoQueryRequest) error {
+	r._parameters = _parameters
+	r.Set("parameters", _parameters)
+	return nil
+}
+
+// Get Parameters Getter
+func (r AlibabaFundplatformCardordersInfoQueryAPIRequest) GetParameters() *CardMakingInfoQueryRequest {
+	return r._parameters
+}

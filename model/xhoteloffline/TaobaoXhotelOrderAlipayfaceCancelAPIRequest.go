@@ -25,4 +25,88 @@ type TaobaoXhotelOrderAlipayfaceCancelAPIRequest struct {
 	_outUuid string
 }
 
-// New
+// NewTaobaoXhotelOrderAlipayfaceCancelRequest 初始化TaobaoXhotelOrderAlipayfaceCancelAPIRequest对象
+func NewTaobaoXhotelOrderAlipayfaceCancelRequest() *TaobaoXhotelOrderAlipayfaceCancelAPIRequest {
+	return &TaobaoXhotelOrderAlipayfaceCancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetApiMethodName() string {
+	return "taobao.xhotel.order.alipayface.cancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Tid Setter
+// 淘宝订单ID，必选
+func (r *TaobaoXhotelOrderAlipayfaceCancelAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// Get Tid Getter
+func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// Set is ReasonText Setter
+// 原因描述
+func (r *TaobaoXhotelOrderAlipayfaceCancelAPIRequest) SetReasonText(_reasonText string) error {
+	r._reasonText = _reasonText
+	r.Set("reason_text", _reasonText)
+	return nil
+}
+
+// Get ReasonText Getter
+func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetReasonText() string {
+	return r._reasonText
+}
+
+// Set is OutId Setter
+// 外部订单号
+func (r *TaobaoXhotelOrderAlipayfaceCancelAPIRequest) SetOutId(_outId string) error {
+	r._outId = _outId
+	r.Set("out_id", _outId)
+	return nil
+}
+
+// Get OutId Getter
+func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetOutId() string {
+	return r._outId
+}
+
+// Set is NotifyUrl Setter
+// 预留后续用
+func (r *TaobaoXhotelOrderAlipayfaceCancelAPIRequest) SetNotifyUrl(_notifyUrl string) error {
+	r._notifyUrl = _notifyUrl
+	r.Set("notify_url", _notifyUrl)
+	return nil
+}
+
+// Get NotifyUrl Getter
+func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetNotifyUrl() string {
+	return r._notifyUrl
+}
+
+// Set is OutUuid Setter
+// 请求流水号
+func (r *TaobaoXhotelOrderAlipayfaceCancelAPIRequest) SetOutUuid(_outUuid string) error {
+	r._outUuid = _outUuid
+	r.Set("out_uuid", _outUuid)
+	return nil
+}
+
+// Get OutUuid Getter
+func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetOutUuid() string {
+	return r._outUuid
+}

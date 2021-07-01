@@ -17,4 +17,36 @@ type TaobaoCrmMemberGroupGetAPIRequest struct {
 	_buyerNick string
 }
 
-// New
+// NewTaobaoCrmMemberGroupGetRequest 初始化TaobaoCrmMemberGroupGetAPIRequest对象
+func NewTaobaoCrmMemberGroupGetRequest() *TaobaoCrmMemberGroupGetAPIRequest {
+	return &TaobaoCrmMemberGroupGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoCrmMemberGroupGetAPIRequest) GetApiMethodName() string {
+	return "taobao.crm.member.group.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoCrmMemberGroupGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is BuyerNick Setter
+// 会员Nick
+func (r *TaobaoCrmMemberGroupGetAPIRequest) SetBuyerNick(_buyerNick string) error {
+	r._buyerNick = _buyerNick
+	r.Set("buyer_nick", _buyerNick)
+	return nil
+}
+
+// Get BuyerNick Getter
+func (r TaobaoCrmMemberGroupGetAPIRequest) GetBuyerNick() string {
+	return r._buyerNick
+}

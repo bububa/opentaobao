@@ -19,4 +19,49 @@ type TaobaoOpenmallTradeAddressParseAPIRequest struct {
 	_distributor string
 }
 
-// New
+// NewTaobaoOpenmallTradeAddressParseRequest 初始化TaobaoOpenmallTradeAddressParseAPIRequest对象
+func NewTaobaoOpenmallTradeAddressParseRequest() *TaobaoOpenmallTradeAddressParseAPIRequest {
+	return &TaobaoOpenmallTradeAddressParseAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpenmallTradeAddressParseAPIRequest) GetApiMethodName() string {
+	return "taobao.openmall.trade.address.parse"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpenmallTradeAddressParseAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is RawAddress Setter
+// 需解析的地址信息，建议只传地址选择器中的省市区，街道门牌号等用户手动输入数据不传
+func (r *TaobaoOpenmallTradeAddressParseAPIRequest) SetRawAddress(_rawAddress string) error {
+	r._rawAddress = _rawAddress
+	r.Set("raw_address", _rawAddress)
+	return nil
+}
+
+// Get RawAddress Getter
+func (r TaobaoOpenmallTradeAddressParseAPIRequest) GetRawAddress() string {
+	return r._rawAddress
+}
+
+// Set is Distributor Setter
+// 渠道商分销者淘宝账号
+func (r *TaobaoOpenmallTradeAddressParseAPIRequest) SetDistributor(_distributor string) error {
+	r._distributor = _distributor
+	r.Set("distributor", _distributor)
+	return nil
+}
+
+// Get Distributor Getter
+func (r TaobaoOpenmallTradeAddressParseAPIRequest) GetDistributor() string {
+	return r._distributor
+}

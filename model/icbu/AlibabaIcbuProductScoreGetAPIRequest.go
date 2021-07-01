@@ -17,4 +17,36 @@ type AlibabaIcbuProductScoreGetAPIRequest struct {
 	_productId string
 }
 
-// New
+// NewAlibabaIcbuProductScoreGetRequest 初始化AlibabaIcbuProductScoreGetAPIRequest对象
+func NewAlibabaIcbuProductScoreGetRequest() *AlibabaIcbuProductScoreGetAPIRequest {
+	return &AlibabaIcbuProductScoreGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIcbuProductScoreGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.icbu.product.score.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIcbuProductScoreGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ProductId Setter
+// 混淆后的商品ID
+func (r *AlibabaIcbuProductScoreGetAPIRequest) SetProductId(_productId string) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// Get ProductId Getter
+func (r AlibabaIcbuProductScoreGetAPIRequest) GetProductId() string {
+	return r._productId
+}

@@ -19,4 +19,49 @@ type TmallTxcsFinanceBillConfirmAPIRequest struct {
 	_statementBillConfirmDTO *StatementBillConfirmDto
 }
 
-// New
+// NewTmallTxcsFinanceBillConfirmRequest 初始化TmallTxcsFinanceBillConfirmAPIRequest对象
+func NewTmallTxcsFinanceBillConfirmRequest() *TmallTxcsFinanceBillConfirmAPIRequest {
+	return &TmallTxcsFinanceBillConfirmAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TmallTxcsFinanceBillConfirmAPIRequest) GetApiMethodName() string {
+	return "tmall.txcs.finance.bill.confirm"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TmallTxcsFinanceBillConfirmAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is OuCode Setter
+// 门店ID
+func (r *TmallTxcsFinanceBillConfirmAPIRequest) SetOuCode(_ouCode string) error {
+	r._ouCode = _ouCode
+	r.Set("ou_code", _ouCode)
+	return nil
+}
+
+// Get OuCode Getter
+func (r TmallTxcsFinanceBillConfirmAPIRequest) GetOuCode() string {
+	return r._ouCode
+}
+
+// Set is StatementBillConfirmDTO Setter
+// 系统自动生成
+func (r *TmallTxcsFinanceBillConfirmAPIRequest) SetStatementBillConfirmDTO(_statementBillConfirmDTO *StatementBillConfirmDto) error {
+	r._statementBillConfirmDTO = _statementBillConfirmDTO
+	r.Set("statement_bill_confirm_d_t_o", _statementBillConfirmDTO)
+	return nil
+}
+
+// Get StatementBillConfirmDTO Getter
+func (r TmallTxcsFinanceBillConfirmAPIRequest) GetStatementBillConfirmDTO() *StatementBillConfirmDto {
+	return r._statementBillConfirmDTO
+}

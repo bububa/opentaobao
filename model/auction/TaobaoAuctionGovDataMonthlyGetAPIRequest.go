@@ -29,4 +29,75 @@ type TaobaoAuctionGovDataMonthlyGetAPIRequest struct {
 	_endMonth string
 }
 
-// New
+// NewTaobaoAuctionGovDataMonthlyGetRequest 初始化TaobaoAuctionGovDataMonthlyGetAPIRequest对象
+func NewTaobaoAuctionGovDataMonthlyGetRequest() *TaobaoAuctionGovDataMonthlyGetAPIRequest {
+	return &TaobaoAuctionGovDataMonthlyGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetApiMethodName() string {
+	return "taobao.auction.gov.data.monthly.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CourtName Setter
+// 法院名称
+func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetCourtName(_courtName string) error {
+	r._courtName = _courtName
+	r.Set("court_name", _courtName)
+	return nil
+}
+
+// Get CourtName Getter
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetCourtName() string {
+	return r._courtName
+}
+
+// Set is IsIncludeSub Setter
+// 统计数据是够包含下属法院
+func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
+	r._isIncludeSub = _isIncludeSub
+	r.Set("is_include_sub", _isIncludeSub)
+	return nil
+}
+
+// Get IsIncludeSub Getter
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetIsIncludeSub() bool {
+	return r._isIncludeSub
+}
+
+// Set is StartMonth Setter
+// 开始月份
+func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetStartMonth(_startMonth string) error {
+	r._startMonth = _startMonth
+	r.Set("start_month", _startMonth)
+	return nil
+}
+
+// Get StartMonth Getter
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetStartMonth() string {
+	return r._startMonth
+}
+
+// Set is EndMonth Setter
+// 截止月份(统计数据包含这个月)
+func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetEndMonth(_endMonth string) error {
+	r._endMonth = _endMonth
+	r.Set("end_month", _endMonth)
+	return nil
+}
+
+// Get EndMonth Getter
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetEndMonth() string {
+	return r._endMonth
+}

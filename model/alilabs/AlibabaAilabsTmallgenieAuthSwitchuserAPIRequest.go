@@ -23,4 +23,75 @@ type AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest struct {
 	_uuid string
 }
 
-// New
+// NewAlibabaAilabsTmallgenieAuthSwitchuserRequest 初始化AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest对象
+func NewAlibabaAilabsTmallgenieAuthSwitchuserRequest() *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest {
+	return &AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetApiMethodName() string {
+	return "alibaba.ailabs.tmallgenie.auth.switchuser"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ClientId Setter
+// client_id
+func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetClientId(_clientId string) error {
+	r._clientId = _clientId
+	r.Set("client_id", _clientId)
+	return nil
+}
+
+// Get ClientId Getter
+func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetClientId() string {
+	return r._clientId
+}
+
+// Set is NewUserOpenId Setter
+// 目标用户openId
+func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetNewUserOpenId(_newUserOpenId string) error {
+	r._newUserOpenId = _newUserOpenId
+	r.Set("new_user_open_id", _newUserOpenId)
+	return nil
+}
+
+// Get NewUserOpenId Getter
+func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetNewUserOpenId() string {
+	return r._newUserOpenId
+}
+
+// Set is OldUserOpenId Setter
+// 当前拥有设备权限的用户openId
+func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetOldUserOpenId(_oldUserOpenId string) error {
+	r._oldUserOpenId = _oldUserOpenId
+	r.Set("old_user_open_id", _oldUserOpenId)
+	return nil
+}
+
+// Get OldUserOpenId Getter
+func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetOldUserOpenId() string {
+	return r._oldUserOpenId
+}
+
+// Set is Uuid Setter
+// 设备uuid
+func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetUuid(_uuid string) error {
+	r._uuid = _uuid
+	r.Set("uuid", _uuid)
+	return nil
+}
+
+// Get Uuid Getter
+func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetUuid() string {
+	return r._uuid
+}

@@ -17,4 +17,36 @@ type AlibabaNlifeStoreTradedetailGetAPIRequest struct {
 	_procurementNo string
 }
 
-// New
+// NewAlibabaNlifeStoreTradedetailGetRequest 初始化AlibabaNlifeStoreTradedetailGetAPIRequest对象
+func NewAlibabaNlifeStoreTradedetailGetRequest() *AlibabaNlifeStoreTradedetailGetAPIRequest {
+	return &AlibabaNlifeStoreTradedetailGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaNlifeStoreTradedetailGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.nlife.store.tradedetail.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaNlifeStoreTradedetailGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ProcurementNo Setter
+// 集团采购单号
+func (r *AlibabaNlifeStoreTradedetailGetAPIRequest) SetProcurementNo(_procurementNo string) error {
+	r._procurementNo = _procurementNo
+	r.Set("procurement_no", _procurementNo)
+	return nil
+}
+
+// Get ProcurementNo Getter
+func (r AlibabaNlifeStoreTradedetailGetAPIRequest) GetProcurementNo() string {
+	return r._procurementNo
+}

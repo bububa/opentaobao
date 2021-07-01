@@ -21,4 +21,62 @@ type AlibabaAliqinFcVoiceGetdetailAPIRequest struct {
 	_queryDate int64
 }
 
-// New
+// NewAlibabaAliqinFcVoiceGetdetailRequest 初始化AlibabaAliqinFcVoiceGetdetailAPIRequest对象
+func NewAlibabaAliqinFcVoiceGetdetailRequest() *AlibabaAliqinFcVoiceGetdetailAPIRequest {
+	return &AlibabaAliqinFcVoiceGetdetailAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetApiMethodName() string {
+	return "alibaba.aliqin.fc.voice.getdetail"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is CallId Setter
+// 呼叫唯一ID
+func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetCallId(_callId string) error {
+	r._callId = _callId
+	r.Set("call_id", _callId)
+	return nil
+}
+
+// Get CallId Getter
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetCallId() string {
+	return r._callId
+}
+
+// Set is ProdId Setter
+// 语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009
+func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetProdId(_prodId int64) error {
+	r._prodId = _prodId
+	r.Set("prod_id", _prodId)
+	return nil
+}
+
+// Get ProdId Getter
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetProdId() int64 {
+	return r._prodId
+}
+
+// Set is QueryDate Setter
+// Unix时间戳，会查询这个时间点对应那一天的记录（单位毫秒）
+func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetQueryDate(_queryDate int64) error {
+	r._queryDate = _queryDate
+	r.Set("query_date", _queryDate)
+	return nil
+}
+
+// Get QueryDate Getter
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetQueryDate() int64 {
+	return r._queryDate
+}

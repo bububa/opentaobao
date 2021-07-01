@@ -19,4 +19,49 @@ type AlibabaIcbuProductGetAPIRequest struct {
 	_productId string
 }
 
-// New
+// NewAlibabaIcbuProductGetRequest 初始化AlibabaIcbuProductGetAPIRequest对象
+func NewAlibabaIcbuProductGetRequest() *AlibabaIcbuProductGetAPIRequest {
+	return &AlibabaIcbuProductGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaIcbuProductGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.icbu.product.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaIcbuProductGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Language Setter
+// 商品语种，目前只支持ENGLISH
+func (r *AlibabaIcbuProductGetAPIRequest) SetLanguage(_language string) error {
+	r._language = _language
+	r.Set("language", _language)
+	return nil
+}
+
+// Get Language Getter
+func (r AlibabaIcbuProductGetAPIRequest) GetLanguage() string {
+	return r._language
+}
+
+// Set is ProductId Setter
+// 混淆后的商品ID
+func (r *AlibabaIcbuProductGetAPIRequest) SetProductId(_productId string) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// Get ProductId Getter
+func (r AlibabaIcbuProductGetAPIRequest) GetProductId() string {
+	return r._productId
+}

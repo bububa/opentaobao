@@ -17,4 +17,36 @@ type TaobaoElifeLifecardConsumeAPIRequest struct {
 	_consumeRequest *ConsumeRequest
 }
 
-// New
+// NewTaobaoElifeLifecardConsumeRequest 初始化TaobaoElifeLifecardConsumeAPIRequest对象
+func NewTaobaoElifeLifecardConsumeRequest() *TaobaoElifeLifecardConsumeAPIRequest {
+	return &TaobaoElifeLifecardConsumeAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoElifeLifecardConsumeAPIRequest) GetApiMethodName() string {
+	return "taobao.elife.lifecard.consume"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoElifeLifecardConsumeAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ConsumeRequest Setter
+// 交易请求参数
+func (r *TaobaoElifeLifecardConsumeAPIRequest) SetConsumeRequest(_consumeRequest *ConsumeRequest) error {
+	r._consumeRequest = _consumeRequest
+	r.Set("consume_request", _consumeRequest)
+	return nil
+}
+
+// Get ConsumeRequest Getter
+func (r TaobaoElifeLifecardConsumeAPIRequest) GetConsumeRequest() *ConsumeRequest {
+	return r._consumeRequest
+}

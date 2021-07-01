@@ -23,4 +23,75 @@ type YunosServiceCmnsCoaMessageAcksListAPIRequest struct {
 	_pageSize int64
 }
 
-// New
+// NewYunosServiceCmnsCoaMessageAcksListRequest 初始化YunosServiceCmnsCoaMessageAcksListAPIRequest对象
+func NewYunosServiceCmnsCoaMessageAcksListRequest() *YunosServiceCmnsCoaMessageAcksListAPIRequest {
+	return &YunosServiceCmnsCoaMessageAcksListAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetApiMethodName() string {
+	return "yunos.service.cmns.coa.message.acks.list"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Mid Setter
+// 消息id
+func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetMid(_mid int64) error {
+	r._mid = _mid
+	r.Set("mid", _mid)
+	return nil
+}
+
+// Get Mid Getter
+func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetMid() int64 {
+	return r._mid
+}
+
+// Set is Did Setter
+// 设备id
+func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetDid(_did int64) error {
+	r._did = _did
+	r.Set("did", _did)
+	return nil
+}
+
+// Get Did Getter
+func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetDid() int64 {
+	return r._did
+}
+
+// Set is PageIndex Setter
+// 分页查询页码
+func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetPageIndex(_pageIndex int64) error {
+	r._pageIndex = _pageIndex
+	r.Set("page_index", _pageIndex)
+	return nil
+}
+
+// Get PageIndex Getter
+func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetPageIndex() int64 {
+	return r._pageIndex
+}
+
+// Set is PageSize Setter
+// 分页每页数据集数
+func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// Get PageSize Getter
+func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}

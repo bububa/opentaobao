@@ -17,4 +17,36 @@ type AlibabaScbpAdKeywordRankGetAPIRequest struct {
 	_keyword string
 }
 
-// New
+// NewAlibabaScbpAdKeywordRankGetRequest 初始化AlibabaScbpAdKeywordRankGetAPIRequest对象
+func NewAlibabaScbpAdKeywordRankGetRequest() *AlibabaScbpAdKeywordRankGetAPIRequest {
+	return &AlibabaScbpAdKeywordRankGetAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaScbpAdKeywordRankGetAPIRequest) GetApiMethodName() string {
+	return "alibaba.scbp.ad.keyword.rank.get"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaScbpAdKeywordRankGetAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Keyword Setter
+// 查询预估排名的关键词
+func (r *AlibabaScbpAdKeywordRankGetAPIRequest) SetKeyword(_keyword string) error {
+	r._keyword = _keyword
+	r.Set("keyword", _keyword)
+	return nil
+}
+
+// Get Keyword Getter
+func (r AlibabaScbpAdKeywordRankGetAPIRequest) GetKeyword() string {
+	return r._keyword
+}

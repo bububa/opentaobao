@@ -19,4 +19,49 @@ type TaobaoSimbaSalestarAdgroupDeleteAPIRequest struct {
 	_adgroupId int64
 }
 
-// New
+// NewTaobaoSimbaSalestarAdgroupDeleteRequest 初始化TaobaoSimbaSalestarAdgroupDeleteAPIRequest对象
+func NewTaobaoSimbaSalestarAdgroupDeleteRequest() *TaobaoSimbaSalestarAdgroupDeleteAPIRequest {
+	return &TaobaoSimbaSalestarAdgroupDeleteAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaSalestarAdgroupDeleteAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.salestar.adgroup.delete"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaSalestarAdgroupDeleteAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaSalestarAdgroupDeleteAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// Get Nick Getter
+func (r TaobaoSimbaSalestarAdgroupDeleteAPIRequest) GetNick() string {
+	return r._nick
+}
+
+// Set is AdgroupId Setter
+// 推广组Id
+func (r *TaobaoSimbaSalestarAdgroupDeleteAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoSimbaSalestarAdgroupDeleteAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}

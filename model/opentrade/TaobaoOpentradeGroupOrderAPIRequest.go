@@ -17,4 +17,36 @@ type TaobaoOpentradeGroupOrderAPIRequest struct {
 	_groupId int64
 }
 
-// New
+// NewTaobaoOpentradeGroupOrderRequest 初始化TaobaoOpentradeGroupOrderAPIRequest对象
+func NewTaobaoOpentradeGroupOrderRequest() *TaobaoOpentradeGroupOrderAPIRequest {
+	return &TaobaoOpentradeGroupOrderAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoOpentradeGroupOrderAPIRequest) GetApiMethodName() string {
+	return "taobao.opentrade.group.order"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoOpentradeGroupOrderAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is GroupId Setter
+// 团id
+func (r *TaobaoOpentradeGroupOrderAPIRequest) SetGroupId(_groupId int64) error {
+	r._groupId = _groupId
+	r.Set("group_id", _groupId)
+	return nil
+}
+
+// Get GroupId Getter
+func (r TaobaoOpentradeGroupOrderAPIRequest) GetGroupId() int64 {
+	return r._groupId
+}

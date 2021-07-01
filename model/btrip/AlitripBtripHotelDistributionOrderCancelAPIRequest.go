@@ -17,4 +17,36 @@ type AlitripBtripHotelDistributionOrderCancelAPIRequest struct {
 	_paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq
 }
 
-// New
+// NewAlitripBtripHotelDistributionOrderCancelRequest 初始化AlitripBtripHotelDistributionOrderCancelAPIRequest对象
+func NewAlitripBtripHotelDistributionOrderCancelRequest() *AlitripBtripHotelDistributionOrderCancelAPIRequest {
+	return &AlitripBtripHotelDistributionOrderCancelAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlitripBtripHotelDistributionOrderCancelAPIRequest) GetApiMethodName() string {
+	return "alitrip.btrip.hotel.distribution.order.cancel"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlitripBtripHotelDistributionOrderCancelAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ParamBtripHotelOrderOperateRq Setter
+// 取消订单接口入参
+func (r *AlitripBtripHotelDistributionOrderCancelAPIRequest) SetParamBtripHotelOrderOperateRq(_paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq) error {
+	r._paramBtripHotelOrderOperateRq = _paramBtripHotelOrderOperateRq
+	r.Set("param_btrip_hotel_order_operate_rq", _paramBtripHotelOrderOperateRq)
+	return nil
+}
+
+// Get ParamBtripHotelOrderOperateRq Getter
+func (r AlitripBtripHotelDistributionOrderCancelAPIRequest) GetParamBtripHotelOrderOperateRq() *BtripHotelOrderOperateRq {
+	return r._paramBtripHotelOrderOperateRq
+}

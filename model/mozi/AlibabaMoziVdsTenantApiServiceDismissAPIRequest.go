@@ -17,4 +17,36 @@ type AlibabaMoziVdsTenantApiServiceDismissAPIRequest struct {
 	_par0 *DismissOrganizationSupervisorRequest
 }
 
-// New
+// NewAlibabaMoziVdsTenantApiServiceDismissRequest 初始化AlibabaMoziVdsTenantApiServiceDismissAPIRequest对象
+func NewAlibabaMoziVdsTenantApiServiceDismissRequest() *AlibabaMoziVdsTenantApiServiceDismissAPIRequest {
+	return &AlibabaMoziVdsTenantApiServiceDismissAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r AlibabaMoziVdsTenantApiServiceDismissAPIRequest) GetApiMethodName() string {
+	return "alibaba.mozi.vds.tenant.api.service.dismiss"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r AlibabaMoziVdsTenantApiServiceDismissAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Par0 Setter
+// 第一个入参
+func (r *AlibabaMoziVdsTenantApiServiceDismissAPIRequest) SetPar0(_par0 *DismissOrganizationSupervisorRequest) error {
+	r._par0 = _par0
+	r.Set("par0", _par0)
+	return nil
+}
+
+// Get Par0 Getter
+func (r AlibabaMoziVdsTenantApiServiceDismissAPIRequest) GetPar0() *DismissOrganizationSupervisorRequest {
+	return r._par0
+}

@@ -19,4 +19,49 @@ type TaobaoSimbaKeywordAddAPIRequest struct {
 	_adgroupId int64
 }
 
-// New
+// NewTaobaoSimbaKeywordAddRequest 初始化TaobaoSimbaKeywordAddAPIRequest对象
+func NewTaobaoSimbaKeywordAddRequest() *TaobaoSimbaKeywordAddAPIRequest {
+	return &TaobaoSimbaKeywordAddAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoSimbaKeywordAddAPIRequest) GetApiMethodName() string {
+	return "taobao.simba.keyword.add"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoSimbaKeywordAddAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is Bidwords Setter
+// 关键词相关信息
+func (r *TaobaoSimbaKeywordAddAPIRequest) SetBidwords(_bidwords []SiriusBidwordDto) error {
+	r._bidwords = _bidwords
+	r.Set("bidwords", _bidwords)
+	return nil
+}
+
+// Get Bidwords Getter
+func (r TaobaoSimbaKeywordAddAPIRequest) GetBidwords() []SiriusBidwordDto {
+	return r._bidwords
+}
+
+// Set is AdgroupId Setter
+// 推广单元id
+func (r *TaobaoSimbaKeywordAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// Get AdgroupId Getter
+func (r TaobaoSimbaKeywordAddAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}

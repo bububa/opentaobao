@@ -17,4 +17,36 @@ type TaobaoLogisticsAddressRemoveAPIRequest struct {
 	_contactId int64
 }
 
-// New
+// NewTaobaoLogisticsAddressRemoveRequest 初始化TaobaoLogisticsAddressRemoveAPIRequest对象
+func NewTaobaoLogisticsAddressRemoveRequest() *TaobaoLogisticsAddressRemoveAPIRequest {
+	return &TaobaoLogisticsAddressRemoveAPIRequest{
+		Params: model.NewParams(),
+	}
+}
+
+// GetApiMethodName IRequest interface 方法, 获取Api method
+func (r TaobaoLogisticsAddressRemoveAPIRequest) GetApiMethodName() string {
+	return "taobao.logistics.address.remove"
+}
+
+// GetApiParams IRequest interface 方法, 获取API参数
+func (r TaobaoLogisticsAddressRemoveAPIRequest) GetApiParams() url.Values {
+	params := url.Values{}
+	for k, v := range r.GetRawParams() {
+		params.Set(k, v.String())
+	}
+	return params
+}
+
+// Set is ContactId Setter
+// 地址库ID
+func (r *TaobaoLogisticsAddressRemoveAPIRequest) SetContactId(_contactId int64) error {
+	r._contactId = _contactId
+	r.Set("contact_id", _contactId)
+	return nil
+}
+
+// Get ContactId Getter
+func (r TaobaoLogisticsAddressRemoveAPIRequest) GetContactId() int64 {
+	return r._contactId
+}
