@@ -14,8 +14,10 @@ var (
 	version = "dev"     // set at compile time with -ldflags
 	commit  = "none"    // set at compile time with -ldflags
 	date    = "unknown" // set at compile time with -ldflags
-	GitDate = ""
 	builtBy = "unknown" // set at compile time with -ldflags
+
+	// GitDate derived from goreleaser build flag
+	GitDate = ""
 )
 
 func main() {

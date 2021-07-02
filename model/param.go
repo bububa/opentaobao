@@ -24,7 +24,7 @@ type ParamValue struct {
 	fd  *File
 }
 
-// NewStringiParamValue 新建string类型值
+// NewStringParamValue 新建string类型值
 func NewStringParamValue(str string) *ParamValue {
 	return &ParamValue{
 		str: str,
