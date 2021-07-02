@@ -13,17 +13,38 @@ import (
 type ApiParamType = string
 
 const (
-	STRING_PARAM_TYPE     ApiParamType = "String"
-	NUMBER_PARAM_TYPE     ApiParamType = "Number"
-	DATE_PARAM_TYPE       ApiParamType = "Date"
+	// STRING_PARAM_TYPE 字符串类型
+	STRING_PARAM_TYPE ApiParamType = "String"
+
+	// NUMBER_PARAM_TYPE 数值类型
+	NUMBER_PARAM_TYPE ApiParamType = "Number"
+
+	// DATE_PARAM_TYPE 日期类型
+	DATE_PARAM_TYPE ApiParamType = "Date"
+
+	// FIELD_LIST_PARAM_TYPE 列表类型
 	FIELD_LIST_PARAM_TYPE ApiParamType = "Field List"
-	BOOLEAN_PARAM_TYPE    ApiParamType = "Boolean"
-	PRICE_PARAM_TYPE      ApiParamType = "Price"
-	BYTE_PARAM_TYPE       ApiParamType = "byte"
-	BYTES_PARAM_TYPE      ApiParamType = "byte[]"
-	JSON_PARAM_TYPE       ApiParamType = "Json"
-	RESULT_PARAM_TYPE     ApiParamType = "Result"
-	UNKNOWN_PARAM_TYPE    ApiParamType = ""
+
+	// BOOLEAN_PARAM_TYPE 布尔类型
+	BOOLEAN_PARAM_TYPE ApiParamType = "Boolean"
+
+	// PRICE_PARAM_TYPE 价格类型
+	PRICE_PARAM_TYPE ApiParamType = "Price"
+
+	// BYTE_PARAM_TYPE byte 类型
+	BYTE_PARAM_TYPE ApiParamType = "byte"
+
+	// BYTES_PARAM_TYPE bytes 类型
+	BYTES_PARAM_TYPE ApiParamType = "byte[]"
+
+	// JSON_PARAM_TYPE json 类型
+	JSON_PARAM_TYPE ApiParamType = "Json"
+
+	// RESULT_PARAM_TYPE Result 类型
+	RESULT_PARAM_TYPE ApiParamType = "Result"
+
+	// UNKNOWN_PARAM_TYPE 未知类型
+	UNKNOWN_PARAM_TYPE ApiParamType = ""
 )
 
 // ApiDocResponse 下载淘宝API文档返回结果

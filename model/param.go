@@ -13,7 +13,7 @@ type File struct {
 	Name string
 }
 
-// MultipartFilename multipart/form 中文件名
+// MultipartFileName multipart/form 中文件名
 func (f File) MultipartFileName() string {
 	return fmt.Sprintf("@%s", f.Name)
 }

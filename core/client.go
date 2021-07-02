@@ -48,7 +48,7 @@ func (c SDKClient) IsDebug() bool {
 	return c.debug
 }
 
-// UseSandBox 使用沙箱环境
+// UseSandbox 使用沙箱环境
 func (c *SDKClient) UseSandbox() {
 	c.sandbox = true
 }

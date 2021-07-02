@@ -2,8 +2,15 @@
 package opentaobao
 
 const (
+    // GitVersion git version from build flag
 	GitVersion = "{{ .GitVersion }}"
+
+    // GitCommit git commit from build flag
 	GitCommit = "{{ .GitCommit }}"
+
+    // GitDate git date from build flag
 	GitDate = "{{ .Date }}"
+
+    // GitBuiltBy from build flag
 	GitBuiltBy = "{{ .GitBuiltBy }}"
 )

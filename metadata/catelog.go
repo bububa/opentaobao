@@ -25,7 +25,7 @@ type ApiCatelogData struct {
 	TreeCategories []ApiTreeCategory `json:"treeCategories,omitempty"` // 类目树列表
 }
 
-// ApiTreeCatelog 淘宝API文档类目树结构体
+// ApiTreeCategory 淘宝API文档类目树结构体
 type ApiTreeCategory struct {
 	Id           int64            `json:"id,omitempty"`           // api catelog tree id
 	Name         string           `json:"name,omitempty"`         // api catelog tree name

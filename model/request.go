@@ -9,22 +9,36 @@ import (
 type APIFormat = string
 
 const (
+
+	// JSON json api format
 	JSON APIFormat = "json"
-	XML  APIFormat = "xml"
+
+	// XML xml api format
+	XML APIFormat = "xml"
 )
 
 // SignMethod API签名方法
 type SignMethod = string
 
 const (
-	MD5  SignMethod = "md5"
+
+	// MD5 md5 sign method
+	MD5 SignMethod = "md5"
+
+	// HMAC hmac sign method
 	HMAC SignMethod = "hmac"
 )
 
 const (
+
+	// DEFAULT_SIGN_METHOD 默认签名方法
 	DEFAULT_SIGN_METHOD = MD5
+
+	// DEFAULT_API_VERSION 默认API版本
 	DEFAULT_API_VERSION = "2.0"
-	DEFAULT_API_FORMAT  = JSON
+
+	// DEFALUT_API_FORMAT 默认api返回格式
+	DEFAULT_API_FORMAT = JSON
 )
 
 // CommonRequest API请求通用参数
