@@ -1,6 +1,4 @@
-/*
-阿里健康医生 model
-
-https://open.taobao.com/API.htm?docId=43570&docType=2
-*/
+// Package alihealthoutflow 包含阿里健康医生相关结构体
+//
+// https://open.taobao.com/API.htm?docId=43570&docType=2
 package alihealthoutflow

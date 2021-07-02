@@ -12,6 +12,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
+// PrintError print debug error
 func PrintError(err error, debug bool) {
 	if !debug {
 		return
@@ -19,6 +20,7 @@ func PrintError(err error, debug bool) {
 	log.Println("[DEBUG] [ERROR]", err)
 }
 
+// PrintStringResponse print debug string response
 func PrintStringResponse(str string, debug bool) {
 	if !debug {
 		return
@@ -26,6 +28,7 @@ func PrintStringResponse(str string, debug bool) {
 	log.Println("[DEBUG] [RESPONSE]", str)
 }
 
+// PrintGetRequest print debug get request url
 func PrintGetRequest(url string, debug bool) {
 	if !debug {
 		return
@@ -33,6 +36,7 @@ func PrintGetRequest(url string, debug bool) {
 	log.Println("[DEBUG] [API] GET", url)
 }
 
+// PrintPostJSONRequest print debug post json data
 func PrintPostJSONRequest(url string, data string, debug bool) {
 	if !debug {
 		return
@@ -48,6 +52,7 @@ func PrintPostJSONRequest(url string, data string, debug bool) {
 	log.Printf(format, url, body)
 }
 
+// PrintPostMultipartRequest print debug multipart/form post body
 func PrintPostMultipartRequest(url string, body []byte, debug bool) {
 	if !debug {
 		return
@@ -55,6 +60,7 @@ func PrintPostMultipartRequest(url string, body []byte, debug bool) {
 	log.Println("[DEBUG] [API] multipart/form-data POST", url)
 }
 
+// DecodeJSONHttpResponse debug json.Decoder
 func DecodeJSONHttpResponse(r io.Reader, v interface{}, debug bool) error {
 	if !debug {
 		return json.NewDecoder(r).Decode(v)
@@ -74,6 +80,7 @@ func DecodeJSONHttpResponse(r io.Reader, v interface{}, debug bool) error {
 	return json.Unmarshal(body, v)
 }
 
+// DecodeXMLHttpResponse debug xml.Decoder
 func DecodeXMLHttpResponse(r io.Reader, v interface{}, debug bool) error {
 	body, err := ioutil.ReadAll(r)
 	if err != nil {

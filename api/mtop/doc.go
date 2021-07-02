@@ -1,6 +1,4 @@
-/*
-手机淘宝API
-
-https://open.taobao.com/API.htm?docId=23431&docType=2
-*/
+// Package mtop 包含手机淘宝API相关方法
+//
+// https://open.taobao.com/API.htm?docId=23431&docType=2
 package mtop

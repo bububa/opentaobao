@@ -1,6 +1,4 @@
-/*
-交易开放
-
-https://open.taobao.com/API.htm?docId=49615&docType=2
-*/
+// Package opentrade 包含交易开放相关方法
+//
+// https://open.taobao.com/API.htm?docId=49615&docType=2
 package opentrade

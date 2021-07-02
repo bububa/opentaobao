@@ -1,6 +1,4 @@
-/*
-淘宝小程序API model
-
-https://open.taobao.com/API.htm?docId=54266&docType=2
-*/
+// Package miniapp 包含淘宝小程序API相关结构体
+//
+// https://open.taobao.com/API.htm?docId=54266&docType=2
 package miniapp

@@ -1,2 +1,2 @@
-// API请求及返回对象结构体
+// Package model 包含API请求及返回对象结构体
 package model

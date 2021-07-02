@@ -1,6 +1,4 @@
-/*
-飞猪商业化API model
-
-https://open.taobao.com/API.htm?docId=55665&docType=2
-*/
+// Package alitripbp 包含飞猪商业化API相关结构体
+//
+// https://open.taobao.com/API.htm?docId=55665&docType=2
 package alitripbp

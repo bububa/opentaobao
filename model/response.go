@@ -2,7 +2,7 @@ package model
 
 import "encoding/xml"
 
-// API请求失败Error结构体
+// ErrorResponse API请求失败Error结构体
 type ErrorResponse struct {
 	XMLName   xml.Name `xml:"error_response"`
 	RequestId string   `json:"request_id,omitempty" xml:"request_id,omitempty"` // 平台颁发的每次请求访问的唯一标识
@@ -12,7 +12,7 @@ type ErrorResponse struct {
 	SubMsg    string   `json:"sub_msg,omitempty" xml:"sub_msg,omitempty"`       // 请求失败返回的子错误信息
 }
 
-// implement Error interface
+// Error implement Error interface
 func (c ErrorResponse) Error() string {
 	if c.SubMsg != "" {
 		return c.SubMsg
@@ -20,12 +20,12 @@ func (c ErrorResponse) Error() string {
 	return c.Msg
 }
 
-// 通用返回参数
+// CommonResponse 通用返回参数
 type CommonResponse struct {
 	ErrorResponse *ErrorResponse `json:"error_response,omitempty" xml:"error_response,omitempty"` // 请求访问失败时返回的根节点
 }
 
-// implement IResponse interface
+// B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D implement IResponse interface
 func (c CommonResponse) B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D() error {
 	if c.ErrorResponse == nil {
 		return nil
@@ -33,7 +33,7 @@ func (c CommonResponse) B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D() error {
 	return c.ErrorResponse
 }
 
-// API Response interace
+// IResponse is API Response interace
 type IResponse interface {
 	B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D() error
 }

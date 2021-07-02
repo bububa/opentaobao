@@ -1,6 +1,4 @@
-/*
-消息amp通道
-
-https://open.taobao.com/API.htm?docId=50611&docType=2
-*/
+// Package msgamp 包含消息amp通道相关方法
+//
+// https://open.taobao.com/API.htm?docId=50611&docType=2
 package msgamp

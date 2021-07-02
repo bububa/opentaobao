@@ -1,6 +1,4 @@
-/*
-百川-ctg model
-
-https://open.taobao.com/API.htm?docId=28682&docType=2
-*/
+// Package baichuanctg 包含百川-ctg相关结构体
+//
+// https://open.taobao.com/API.htm?docId=28682&docType=2
 package baichuanctg

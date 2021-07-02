@@ -1,6 +1,4 @@
-/*
-零售通订单履行 model
-
-https://open.taobao.com/API.htm?docId=53484&docType=2
-*/
+// Package lstlogistics 包含零售通订单履行相关结构体
+//
+// https://open.taobao.com/API.htm?docId=53484&docType=2
 package lstlogistics

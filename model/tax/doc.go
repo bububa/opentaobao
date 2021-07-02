@@ -1,6 +1,4 @@
-/*
-业务平台事业部-税务平台API model
-
-https://open.taobao.com/API.htm?docId=41740&docType=2
-*/
+// Package tax 包含业务平台事业部-税务平台API相关结构体
+//
+// https://open.taobao.com/API.htm?docId=41740&docType=2
 package tax

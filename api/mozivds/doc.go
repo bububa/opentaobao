@@ -1,6 +1,4 @@
-/*
-MOZI 租户
-
-https://open.taobao.com/API.htm?docId=51055&docType=2
-*/
+// Package mozivds 包含MOZI 租户相关方法
+//
+// https://open.taobao.com/API.htm?docId=51055&docType=2
 package mozivds

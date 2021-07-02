@@ -1,2 +1,2 @@
-// API 请求方法
+// Package api 包含API 请求方法
 package api

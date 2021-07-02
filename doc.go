@@ -1,4 +1,4 @@
-// 淘宝开放平台 Golang SDK
+// Package opentaobao 为淘宝开放平台 Golang SDK
 package opentaobao
 
 const (
