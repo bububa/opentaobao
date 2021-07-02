@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkUmsInventoryPublishAPIResponse
-初始化覆盖实物库存 API返回值
-alibaba.wdk.ums.inventory.publish
-
-先去库存这边查询当前实物库存有多少的量，然后算出来需要增加的量。接下来调用ums原来的入库语义的接口进行库存的增量补充 */
+// AlibabaWdkUmsInventoryPublishAPIResponse 初始化覆盖实物库存 API返回值
+// alibaba.wdk.ums.inventory.publish
+//
+// 先去库存这边查询当前实物库存有多少的量，然后算出来需要增加的量。接下来调用ums原来的入库语义的接口进行库存的增量补充
 type AlibabaWdkUmsInventoryPublishAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkUmsInventoryPublishAPIResponseModel

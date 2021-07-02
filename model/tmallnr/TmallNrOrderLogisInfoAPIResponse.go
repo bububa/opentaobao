@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrOrderLogisInfoAPIResponse
-区域零售订单获取取件码 API返回值
-tmall.nr.order.logis.info
-
-区域零售订单获取取件码，方便商家系统接入，获取取件码打印信息进行打印。 */
+// TmallNrOrderLogisInfoAPIResponse 区域零售订单获取取件码 API返回值
+// tmall.nr.order.logis.info
+//
+// 区域零售订单获取取件码，方便商家系统接入，获取取件码打印信息进行打印。
 type TmallNrOrderLogisInfoAPIResponse struct {
 	model.CommonResponse
 	TmallNrOrderLogisInfoAPIResponseModel

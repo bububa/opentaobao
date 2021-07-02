@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPerfectPerformanceItemQueryAPIResponse
-商品完美履约信息查询 API返回值
-alibaba.perfect.performance.item.query
-
-同城零售商品完美履约信息查询 */
+// AlibabaPerfectPerformanceItemQueryAPIResponse 商品完美履约信息查询 API返回值
+// alibaba.perfect.performance.item.query
+//
+// 同城零售商品完美履约信息查询
 type AlibabaPerfectPerformanceItemQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaPerfectPerformanceItemQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripAxinTransPayImgUploadAPIResponse
-上传图片到支付宝图片空间接口 API返回值
-taobao.alitrip.axin.trans.pay.img.upload
-
-阿信供销平台-上传图片到支付宝图片空间接口 */
+// TaobaoAlitripAxinTransPayImgUploadAPIResponse 上传图片到支付宝图片空间接口 API返回值
+// taobao.alitrip.axin.trans.pay.img.upload
+//
+// 阿信供销平台-上传图片到支付宝图片空间接口
 type TaobaoAlitripAxinTransPayImgUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripAxinTransPayImgUploadAPIResponseModel

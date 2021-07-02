@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmGrademktMemberDetailCreateAPIRequest
-会员等级营销-创建商品等级营销明细 API请求
-taobao.crm.grademkt.member.detail.create
-
-创建商品等级营销明细 */
+// TaobaoCrmGrademktMemberDetailCreateAPIRequest 会员等级营销-创建商品等级营销明细 API请求
+// taobao.crm.grademkt.member.detail.create
+//
+// 创建商品等级营销明细
 type TaobaoCrmGrademktMemberDetailCreateAPIRequest struct {
 	model.Params
 	// 扩展字段

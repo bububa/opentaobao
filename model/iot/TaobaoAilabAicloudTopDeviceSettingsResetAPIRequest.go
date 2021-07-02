@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest
-重置设备个性化设置 API请求
-taobao.ailab.aicloud.top.device.settings.reset
-
-重置设备个性化设置 */
+// TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest 重置设备个性化设置 API请求
+// taobao.ailab.aicloud.top.device.settings.reset
+//
+// 重置设备个性化设置
 type TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest struct {
 	model.Params
 	// 账户体系隔离

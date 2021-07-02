@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoGameDeliveryvoucherRollbackvoucherAPIResponse
-回滚券 API返回值
-taobao.game.deliveryvoucher.rollbackvoucher
-
-提货券发券接口：同步券和订单的关联信息 */
+// TaobaoGameDeliveryvoucherRollbackvoucherAPIResponse 回滚券 API返回值
+// taobao.game.deliveryvoucher.rollbackvoucher
+//
+// 提货券发券接口：同步券和订单的关联信息
 type TaobaoGameDeliveryvoucherRollbackvoucherAPIResponse struct {
 	model.CommonResponse
 	TaobaoGameDeliveryvoucherRollbackvoucherAPIResponseModel

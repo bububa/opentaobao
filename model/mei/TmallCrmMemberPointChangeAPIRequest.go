@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCrmMemberPointChangeAPIRequest
-会员积分变更 API请求
-tmall.crm.member.point.change
-
-品牌CRM项目中，会员积分变更接口。 */
+// TmallCrmMemberPointChangeAPIRequest 会员积分变更 API请求
+// tmall.crm.member.point.change
+//
+// 品牌CRM项目中，会员积分变更接口。
 type TmallCrmMemberPointChangeAPIRequest struct {
 	model.Params
 	// 更改积分数值

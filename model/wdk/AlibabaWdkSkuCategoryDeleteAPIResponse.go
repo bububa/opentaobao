@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkSkuCategoryDeleteAPIResponse
-商家类目删除接口 API返回值
-alibaba.wdk.sku.category.delete
-
-商家类目删除接口 */
+// AlibabaWdkSkuCategoryDeleteAPIResponse 商家类目删除接口 API返回值
+// alibaba.wdk.sku.category.delete
+//
+// 商家类目删除接口
 type AlibabaWdkSkuCategoryDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkSkuCategoryDeleteAPIResponseModel

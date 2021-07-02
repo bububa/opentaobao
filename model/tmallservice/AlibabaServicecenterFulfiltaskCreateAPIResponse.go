@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaServicecenterFulfiltaskCreateAPIResponse
-合单生成核销单 API返回值
-alibaba.servicecenter.fulfiltask.create
-
-服务对工单进行合单，合单的结果是生成核销单 */
+// AlibabaServicecenterFulfiltaskCreateAPIResponse 合单生成核销单 API返回值
+// alibaba.servicecenter.fulfiltask.create
+//
+// 服务对工单进行合单，合单的结果是生成核销单
 type AlibabaServicecenterFulfiltaskCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaServicecenterFulfiltaskCreateAPIResponseModel

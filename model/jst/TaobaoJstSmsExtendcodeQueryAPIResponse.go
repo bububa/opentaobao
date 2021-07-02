@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstSmsExtendcodeQueryAPIResponse
-聚石塔扩展码查询 API返回值
-taobao.jst.sms.extendcode.query
-
-聚石塔扩展码查询 */
+// TaobaoJstSmsExtendcodeQueryAPIResponse 聚石塔扩展码查询 API返回值
+// taobao.jst.sms.extendcode.query
+//
+// 聚石塔扩展码查询
 type TaobaoJstSmsExtendcodeQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsExtendcodeQueryAPIResponseModel

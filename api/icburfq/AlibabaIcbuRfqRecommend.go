@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/icburfq"
 )
 
-/* AlibabaIcbuRfqRecommend
-rfq推荐
-alibaba.icbu.rfq.recommend
-
-rfq推荐 */
+// AlibabaIcbuRfqRecommend rfq推荐
+// alibaba.icbu.rfq.recommend
+//
+// rfq推荐
 func AlibabaIcbuRfqRecommend(clt *core.SDKClient, req *icburfq.AlibabaIcbuRfqRecommendAPIRequest, session string) (*icburfq.AlibabaIcbuRfqRecommendAPIResponse, error) {
 	var resp icburfq.AlibabaIcbuRfqRecommendAPIResponse
 	err := clt.Post(req, &resp, session)

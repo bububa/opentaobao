@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJushitaJdpUsersGetAPIRequest
-获取开通的订单同步服务的用户 API请求
-taobao.jushita.jdp.users.get
-
-获取开通的订单同步服务的用户，含有rds的路由关系 */
+// TaobaoJushitaJdpUsersGetAPIRequest 获取开通的订单同步服务的用户 API请求
+// taobao.jushita.jdp.users.get
+//
+// 获取开通的订单同步服务的用户，含有rds的路由关系
 type TaobaoJushitaJdpUsersGetAPIRequest struct {
 	model.Params
 	// 此参数一般不用传，用于查询最后更改时间在某个时间段内的用户

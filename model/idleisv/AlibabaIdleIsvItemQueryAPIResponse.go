@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleIsvItemQueryAPIResponse
-服务商闲鱼商品查询 API返回值
-alibaba.idle.isv.item.query
-
-服务商ISV闲鱼商品查询 */
+// AlibabaIdleIsvItemQueryAPIResponse 服务商闲鱼商品查询 API返回值
+// alibaba.idle.isv.item.query
+//
+// 服务商ISV闲鱼商品查询
 type AlibabaIdleIsvItemQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleIsvItemQueryAPIResponseModel

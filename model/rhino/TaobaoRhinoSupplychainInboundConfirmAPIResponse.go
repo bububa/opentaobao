@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRhinoSupplychainInboundConfirmAPIResponse
-WMS003成衣入库确认 API返回值
-taobao.rhino.supplychain.inbound.confirm
-
-【WMS003】【同步成衣入库完成信息】 */
+// TaobaoRhinoSupplychainInboundConfirmAPIResponse WMS003成衣入库确认 API返回值
+// taobao.rhino.supplychain.inbound.confirm
+//
+// 【WMS003】【同步成衣入库完成信息】
 type TaobaoRhinoSupplychainInboundConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoRhinoSupplychainInboundConfirmAPIResponseModel

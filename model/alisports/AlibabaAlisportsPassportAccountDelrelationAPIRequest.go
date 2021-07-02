@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsPassportAccountDelrelationAPIRequest
-阿里体育会员系统--取消三方关联接口 API请求
-alibaba.alisports.passport.account.delrelation
-
-阿里体育会员系统--取消三方关联接口 */
+// AlibabaAlisportsPassportAccountDelrelationAPIRequest 阿里体育会员系统--取消三方关联接口 API请求
+// alibaba.alisports.passport.account.delrelation
+//
+// 阿里体育会员系统--取消三方关联接口
 type AlibabaAlisportsPassportAccountDelrelationAPIRequest struct {
 	model.Params
 	// 业务appkey

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/moziacl"
 )
 
-/* AlibabaMoziAclRoleAdd
-新增一个角色
-alibaba.mozi.acl.role.add
-
-新增一个角色 */
+// AlibabaMoziAclRoleAdd 新增一个角色
+// alibaba.mozi.acl.role.add
+//
+// 新增一个角色
 func AlibabaMoziAclRoleAdd(clt *core.SDKClient, req *moziacl.AlibabaMoziAclRoleAddAPIRequest, session string) (*moziacl.AlibabaMoziAclRoleAddAPIResponse, error) {
 	var resp moziacl.AlibabaMoziAclRoleAddAPIResponse
 	err := clt.Post(req, &resp, session)

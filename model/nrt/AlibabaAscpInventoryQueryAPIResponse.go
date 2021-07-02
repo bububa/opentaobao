@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpInventoryQueryAPIResponse
-商品库存查询接口 API返回值
-alibaba.ascp.inventory.query
-
-新零售联盟商家库存查询接口，用于商家商品库存数量感知查询 */
+// AlibabaAscpInventoryQueryAPIResponse 商品库存查询接口 API返回值
+// alibaba.ascp.inventory.query
+//
+// 新零售联盟商家库存查询接口，用于商家商品库存数量感知查询
 type AlibabaAscpInventoryQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpInventoryQueryAPIResponseModel

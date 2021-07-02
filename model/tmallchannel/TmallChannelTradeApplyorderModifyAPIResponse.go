@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallChannelTradeApplyorderModifyAPIResponse
-供应商修改申请单 API返回值
-tmall.channel.trade.applyorder.modify
-
-上游供应商修改申请单, 目前只允许修改价格+件数且sku数量必须完全一致 */
+// TmallChannelTradeApplyorderModifyAPIResponse 供应商修改申请单 API返回值
+// tmall.channel.trade.applyorder.modify
+//
+// 上游供应商修改申请单, 目前只允许修改价格+件数且sku数量必须完全一致
 type TmallChannelTradeApplyorderModifyAPIResponse struct {
 	model.CommonResponse
 	TmallChannelTradeApplyorderModifyAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstTradeSellerOfflineOrderQueryAPIResponse
-供应商-线下订单-查询接口 API返回值
-alibaba.lst.trade.seller.offline.order.query
-
-供应商线下订单数据上传后查询物流状态 */
+// AlibabaLstTradeSellerOfflineOrderQueryAPIResponse 供应商-线下订单-查询接口 API返回值
+// alibaba.lst.trade.seller.offline.order.query
+//
+// 供应商线下订单数据上传后查询物流状态
 type AlibabaLstTradeSellerOfflineOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstTradeSellerOfflineOrderQueryAPIResponseModel

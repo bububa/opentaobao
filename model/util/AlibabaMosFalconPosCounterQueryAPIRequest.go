@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosFalconPosCounterQueryAPIRequest
-云POS查看专柜属性 API请求
-alibaba.mos.falcon.pos.counter.query
-
-银泰商业获取专柜是否支持小数等属性查看 */
+// AlibabaMosFalconPosCounterQueryAPIRequest 云POS查看专柜属性 API请求
+// alibaba.mos.falcon.pos.counter.query
+//
+// 银泰商业获取专柜是否支持小数等属性查看
 type AlibabaMosFalconPosCounterQueryAPIRequest struct {
 	model.Params
 	// 设备序列号

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCloudgameUserMixuseridCheckAPIResponse
-云游戏混淆用户ID校验 API返回值
-alibaba.cloudgame.user.mixuserid.check
-
-验证混淆用户ID是否合法 */
+// AlibabaCloudgameUserMixuseridCheckAPIResponse 云游戏混淆用户ID校验 API返回值
+// alibaba.cloudgame.user.mixuserid.check
+//
+// 验证混淆用户ID是否合法
 type AlibabaCloudgameUserMixuseridCheckAPIResponse struct {
 	model.CommonResponse
 	AlibabaCloudgameUserMixuseridCheckAPIResponseModel

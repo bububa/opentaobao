@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaHourReportAccountGetAPIResponse
-账户级别小时报表获取 API返回值
-taobao.simba.hour.report.account.get
-
-获取账户小时实时报表数据 */
+// TaobaoSimbaHourReportAccountGetAPIResponse 账户级别小时报表获取 API返回值
+// taobao.simba.hour.report.account.get
+//
+// 获取账户小时实时报表数据
 type TaobaoSimbaHourReportAccountGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaHourReportAccountGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSingletreasureActivityQueryAPIResponse
-查询活动列表接口 API返回值
-taobao.singletreasure.activity.query
-
-查询活动列表接口 */
+// TaobaoSingletreasureActivityQueryAPIResponse 查询活动列表接口 API返回值
+// taobao.singletreasure.activity.query
+//
+// 查询活动列表接口
 type TaobaoSingletreasureActivityQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoSingletreasureActivityQueryAPIResponseModel

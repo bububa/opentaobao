@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMessageSendtextAPIRequest
-故事机发送文本留言 API请求
-taobao.ailab.aicloud.top.message.sendtext
-
-故事机文本留言 */
+// TaobaoAilabAicloudTopMessageSendtextAPIRequest 故事机发送文本留言 API请求
+// taobao.ailab.aicloud.top.message.sendtext
+//
+// 故事机文本留言
 type TaobaoAilabAicloudTopMessageSendtextAPIRequest struct {
 	model.Params
 	// 账户体系隔离

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseContractdownloadAPIRequest
-天猫开新车租后合同下载 API请求
-tmall.car.lease.contractdownload
-
-天猫开新车租后合同下载 */
+// TmallCarLeaseContractdownloadAPIRequest 天猫开新车租后合同下载 API请求
+// tmall.car.lease.contractdownload
+//
+// 天猫开新车租后合同下载
 type TmallCarLeaseContractdownloadAPIRequest struct {
 	model.Params
 	// 天猫开新车订单id

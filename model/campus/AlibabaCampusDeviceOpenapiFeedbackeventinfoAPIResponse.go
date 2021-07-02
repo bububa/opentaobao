@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIResponse
-IVS事件处理反馈接口 API返回值
-alibaba.campus.device.openapi.feedbackeventinfo
-
-提供给第三方ISV的的事件信息处理反馈的接口 */
+// AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIResponse IVS事件处理反馈接口 API返回值
+// alibaba.campus.device.openapi.feedbackeventinfo
+//
+// 提供给第三方ISV的的事件信息处理反馈的接口
 type AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIResponseModel

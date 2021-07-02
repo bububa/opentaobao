@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusNumbersUpdateAPIResponse
-汽车票车次更新服务 API返回值
-taobao.bus.numbers.update
-
-用于汽车票车次信息的新增、更新和逻辑删除 */
+// TaobaoBusNumbersUpdateAPIResponse 汽车票车次更新服务 API返回值
+// taobao.bus.numbers.update
+//
+// 用于汽车票车次信息的新增、更新和逻辑删除
 type TaobaoBusNumbersUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusNumbersUpdateAPIResponseModel

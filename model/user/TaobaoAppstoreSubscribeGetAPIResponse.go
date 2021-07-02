@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAppstoreSubscribeGetAPIResponse
-查询appstore应用订购关系 API返回值
-taobao.appstore.subscribe.get
-
-查询appstore应用订购关系(对于新上架的多版本应用，建议使用taobao.vas.subscribe.get) */
+// TaobaoAppstoreSubscribeGetAPIResponse 查询appstore应用订购关系 API返回值
+// taobao.appstore.subscribe.get
+//
+// 查询appstore应用订购关系(对于新上架的多版本应用，建议使用taobao.vas.subscribe.get)
 type TaobaoAppstoreSubscribeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAppstoreSubscribeGetAPIResponseModel

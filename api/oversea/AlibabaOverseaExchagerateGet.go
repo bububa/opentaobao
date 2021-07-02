@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/oversea"
 )
 
-/* AlibabaOverseaExchagerateGet
-汇率信息获取
-alibaba.oversea.exchagerate.get
-
-提供外部汇率查询接口 */
+// AlibabaOverseaExchagerateGet 汇率信息获取
+// alibaba.oversea.exchagerate.get
+//
+// 提供外部汇率查询接口
 func AlibabaOverseaExchagerateGet(clt *core.SDKClient, req *oversea.AlibabaOverseaExchagerateGetAPIRequest, session string) (*oversea.AlibabaOverseaExchagerateGetAPIResponse, error) {
 	var resp oversea.AlibabaOverseaExchagerateGetAPIResponse
 	err := clt.Post(req, &resp, session)

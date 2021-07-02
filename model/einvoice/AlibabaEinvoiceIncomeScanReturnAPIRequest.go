@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceIncomeScanReturnAPIRequest
-进项扫描状态回传 API请求
-alibaba.einvoice.income.scan.return
-
-回传进项扫描每个阶段的状态，比如ocr开始，ocr结束，查验开始，查验结束等 */
+// AlibabaEinvoiceIncomeScanReturnAPIRequest 进项扫描状态回传 API请求
+// alibaba.einvoice.income.scan.return
+//
+// 回传进项扫描每个阶段的状态，比如ocr开始，ocr结束，查验开始，查验结束等
 type AlibabaEinvoiceIncomeScanReturnAPIRequest struct {
 	model.Params
 	// 扫描的批次号

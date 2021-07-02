@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelBaseinfoCitiesGetAPIResponse
-【API3.0】度假线路商品发布时基础信息获取接口：地址数据查询 API返回值
-taobao.alitrip.travel.baseinfo.cities.get
-
-旅行度假新商品发布时可用的扩展接口，用于获取可用的出发地或目的地城市列表。 */
+// TaobaoAlitripTravelBaseinfoCitiesGetAPIResponse 【API3.0】度假线路商品发布时基础信息获取接口：地址数据查询 API返回值
+// taobao.alitrip.travel.baseinfo.cities.get
+//
+// 旅行度假新商品发布时可用的扩展接口，用于获取可用的出发地或目的地城市列表。
 type TaobaoAlitripTravelBaseinfoCitiesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTravelBaseinfoCitiesGetAPIResponseModel

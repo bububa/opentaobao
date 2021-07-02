@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenSingleitemQueryAPIResponse
-商品查询接口 API返回值
-taobao.qimen.singleitem.query
-
-商品查询接口 */
+// TaobaoQimenSingleitemQueryAPIResponse 商品查询接口 API返回值
+// taobao.qimen.singleitem.query
+//
+// 商品查询接口
 type TaobaoQimenSingleitemQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenSingleitemQueryAPIResponseModel

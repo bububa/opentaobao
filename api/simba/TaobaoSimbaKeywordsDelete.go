@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-/* TaobaoSimbaKeywordsDelete
-删除一批关键词
-taobao.simba.keywords.delete
-
-删除一批关键词 */
+// TaobaoSimbaKeywordsDelete 删除一批关键词
+// taobao.simba.keywords.delete
+//
+// 删除一批关键词
 func TaobaoSimbaKeywordsDelete(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsDeleteAPIRequest, session string) (*simba.TaobaoSimbaKeywordsDeleteAPIResponse, error) {
 	var resp simba.TaobaoSimbaKeywordsDeleteAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyMemberCardAPIRequest
-星河-获取会员卡信息 API请求
-alitrip.merchant.galaxy.member.card
-
-星河=根据会员等级获取会员的权益 */
+// AlitripMerchantGalaxyMemberCardAPIRequest 星河-获取会员卡信息 API请求
+// alitrip.merchant.galaxy.member.card
+//
+// 星河=根据会员等级获取会员的权益
 type AlitripMerchantGalaxyMemberCardAPIRequest struct {
 	model.Params
 	// 租户信息

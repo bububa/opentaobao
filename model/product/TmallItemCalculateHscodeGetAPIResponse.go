@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemCalculateHscodeGetAPIResponse
-算法获取hscode API返回值
-tmall.item.calculate.hscode.get
-
-算法获取hscode */
+// TmallItemCalculateHscodeGetAPIResponse 算法获取hscode API返回值
+// tmall.item.calculate.hscode.get
+//
+// 算法获取hscode
 type TmallItemCalculateHscodeGetAPIResponse struct {
 	model.CommonResponse
 	TmallItemCalculateHscodeGetAPIResponseModel

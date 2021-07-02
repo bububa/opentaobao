@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkReverseRefundAPIResponse
-退款打款 API返回值
-alibaba.wdk.reverse.refund
-
-五道口退款打款开放能力接口 */
+// AlibabaWdkReverseRefundAPIResponse 退款打款 API返回值
+// alibaba.wdk.reverse.refund
+//
+// 五道口退款打款开放能力接口
 type AlibabaWdkReverseRefundAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkReverseRefundAPIResponseModel

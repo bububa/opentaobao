@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUmpActivitiesGetAPIRequest
-查询活动列表 API请求
-taobao.ump.activities.get
-
-查询活动列表 */
+// TaobaoUmpActivitiesGetAPIRequest 查询活动列表 API请求
+// taobao.ump.activities.get
+//
+// 查询活动列表
 type TaobaoUmpActivitiesGetAPIRequest struct {
 	model.Params
 	// 工具id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyMemberTokenAPIRequest
-星河-校验token API请求
-alitrip.merchant.galaxy.member.token
-
-校验或者刷新token */
+// AlitripMerchantGalaxyMemberTokenAPIRequest 星河-校验token API请求
+// alitrip.merchant.galaxy.member.token
+//
+// 校验或者刷新token
 type AlitripMerchantGalaxyMemberTokenAPIRequest struct {
 	model.Params
 	// 租户身份信息

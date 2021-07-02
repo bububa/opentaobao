@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsChangedGetAPIRequest
-分页获取修改过的关键词ID、宝贝id、修改时间 API请求
-taobao.simba.keywords.changed.get
-
-分页获取修改过的关键词ID、宝贝id、修改时间 */
+// TaobaoSimbaKeywordsChangedGetAPIRequest 分页获取修改过的关键词ID、宝贝id、修改时间 API请求
+// taobao.simba.keywords.changed.get
+//
+// 分页获取修改过的关键词ID、宝贝id、修改时间
 type TaobaoSimbaKeywordsChangedGetAPIRequest struct {
 	model.Params
 	// 主人昵称

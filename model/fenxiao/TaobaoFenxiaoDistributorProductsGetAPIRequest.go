@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoDistributorProductsGetAPIRequest
-分销商查询产品信息 API请求
-taobao.fenxiao.distributor.products.get
-
-分销商查询供应商产品信息 */
+// TaobaoFenxiaoDistributorProductsGetAPIRequest 分销商查询产品信息 API请求
+// taobao.fenxiao.distributor.products.get
+//
+// 分销商查询供应商产品信息
 type TaobaoFenxiaoDistributorProductsGetAPIRequest struct {
 	model.Params
 	// order_by

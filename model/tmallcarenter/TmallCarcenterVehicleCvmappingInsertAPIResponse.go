@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarcenterVehicleCvmappingInsertAPIResponse
-EPC车辆版本信息与底盘信息库关系绑定 API返回值
-tmall.carcenter.vehicle.cvmapping.insert
-
-EPC车辆版本信息与底盘信息库关系绑定 */
+// TmallCarcenterVehicleCvmappingInsertAPIResponse EPC车辆版本信息与底盘信息库关系绑定 API返回值
+// tmall.carcenter.vehicle.cvmapping.insert
+//
+// EPC车辆版本信息与底盘信息库关系绑定
 type TmallCarcenterVehicleCvmappingInsertAPIResponse struct {
 	model.CommonResponse
 	TmallCarcenterVehicleCvmappingInsertAPIResponseModel

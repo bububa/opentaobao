@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIResponse
-往来单位查询 API返回值
-alibaba.alihealth.drugtrace.top.lsyd.query.listparts
-
-查询往来单位列表 */
+// AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIResponse 往来单位查询 API返回值
+// alibaba.alihealth.drugtrace.top.lsyd.query.listparts
+//
+// 查询往来单位列表
 type AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIResponseModel

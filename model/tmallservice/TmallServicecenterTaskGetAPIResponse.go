@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterTaskGetAPIResponse
-服务工单拉取 API返回值
-tmall.servicecenter.task.get
-
-接口供服务供应商通过交易主订单查询其未拉取的任务类工单 */
+// TmallServicecenterTaskGetAPIResponse 服务工单拉取 API返回值
+// tmall.servicecenter.task.get
+//
+// 接口供服务供应商通过交易主订单查询其未拉取的任务类工单
 type TmallServicecenterTaskGetAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterTaskGetAPIResponseModel

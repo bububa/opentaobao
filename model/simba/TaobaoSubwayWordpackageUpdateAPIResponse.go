@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSubwayWordpackageUpdateAPIResponse
-批量更新词包 API返回值
-taobao.subway.wordpackage.update
-
-批量更新词包 */
+// TaobaoSubwayWordpackageUpdateAPIResponse 批量更新词包 API返回值
+// taobao.subway.wordpackage.update
+//
+// 批量更新词包
 type TaobaoSubwayWordpackageUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSubwayWordpackageUpdateAPIResponseModel

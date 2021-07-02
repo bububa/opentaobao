@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelElementsSearchAPIRequest
-商家元素搜索 API请求
-alitrip.travel.elements.search
-
-提供商家维护的景点、酒店、餐饮等元素搜索 */
+// AlitripTravelElementsSearchAPIRequest 商家元素搜索 API请求
+// alitrip.travel.elements.search
+//
+// 提供商家维护的景点、酒店、餐饮等元素搜索
 type AlitripTravelElementsSearchAPIRequest struct {
 	model.Params
 	// 商家id

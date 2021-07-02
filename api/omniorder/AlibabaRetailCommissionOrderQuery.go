@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-/* AlibabaRetailCommissionOrderQuery
-分销订单查询
-alibaba.retail.commission.order.query
-
-查询商家的分销订单 */
+// AlibabaRetailCommissionOrderQuery 分销订单查询
+// alibaba.retail.commission.order.query
+//
+// 查询商家的分销订单
 func AlibabaRetailCommissionOrderQuery(clt *core.SDKClient, req *omniorder.AlibabaRetailCommissionOrderQueryAPIRequest, session string) (*omniorder.AlibabaRetailCommissionOrderQueryAPIResponse, error) {
 	var resp omniorder.AlibabaRetailCommissionOrderQueryAPIResponse
 	err := clt.Post(req, &resp, session)

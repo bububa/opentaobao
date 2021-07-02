@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressTradeDsOrderGetAPIResponse
-买家查询订单详情 API返回值
-aliexpress.trade.ds.order.get
-
-买家查询订单详情，用于dropshipper */
+// AliexpressTradeDsOrderGetAPIResponse 买家查询订单详情 API返回值
+// aliexpress.trade.ds.order.get
+//
+// 买家查询订单详情，用于dropshipper
 type AliexpressTradeDsOrderGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressTradeDsOrderGetAPIResponseModel

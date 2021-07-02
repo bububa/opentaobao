@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoIotTicketSpMaintainVtwoCreateAPIResponse
-服务商制定维修费方案 API返回值
-cainiao.iot.ticket.sp.maintain.vtwo.create
-
-服务商制定维修费方案 */
+// CainiaoIotTicketSpMaintainVtwoCreateAPIResponse 服务商制定维修费方案 API返回值
+// cainiao.iot.ticket.sp.maintain.vtwo.create
+//
+// 服务商制定维修费方案
 type CainiaoIotTicketSpMaintainVtwoCreateAPIResponse struct {
 	model.CommonResponse
 	CainiaoIotTicketSpMaintainVtwoCreateAPIResponseModel

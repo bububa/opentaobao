@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeitaoFeedSynchronizeNewAPIResponse
-推广淘小铺isv 活动到微淘feed API返回值
-taobao.weitao.feed.synchronize.new
-
-推广微淘互动应用活动到微淘 */
+// TaobaoWeitaoFeedSynchronizeNewAPIResponse 推广淘小铺isv 活动到微淘feed API返回值
+// taobao.weitao.feed.synchronize.new
+//
+// 推广微淘互动应用活动到微淘
 type TaobaoWeitaoFeedSynchronizeNewAPIResponse struct {
 	model.CommonResponse
 	TaobaoWeitaoFeedSynchronizeNewAPIResponseModel

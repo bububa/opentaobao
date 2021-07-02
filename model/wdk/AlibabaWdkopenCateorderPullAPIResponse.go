@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkopenCateorderPullAPIResponse
-商户回传餐饮加工单状态 API返回值
-alibaba.wdkopen.cateorder.pull
-
-商户回传餐饮加工单状态 */
+// AlibabaWdkopenCateorderPullAPIResponse 商户回传餐饮加工单状态 API返回值
+// alibaba.wdkopen.cateorder.pull
+//
+// 商户回传餐饮加工单状态
 type AlibabaWdkopenCateorderPullAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkopenCateorderPullAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdCampaignDeleteAPIResponse
-删除计划 API返回值
-alibaba.scbp.ad.campaign.delete
-
-删除计划 */
+// AlibabaScbpAdCampaignDeleteAPIResponse 删除计划 API返回值
+// alibaba.scbp.ad.campaign.delete
+//
+// 删除计划
 type AlibabaScbpAdCampaignDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdCampaignDeleteAPIResponseModel

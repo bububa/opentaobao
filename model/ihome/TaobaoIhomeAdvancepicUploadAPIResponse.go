@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoIhomeAdvancepicUploadAPIResponse
-ihome图片上传 API返回值
-taobao.ihome.advancepic.upload
-
-ihome 定制业务编辑器投稿素材上传 */
+// TaobaoIhomeAdvancepicUploadAPIResponse ihome图片上传 API返回值
+// taobao.ihome.advancepic.upload
+//
+// ihome 定制业务编辑器投稿素材上传
 type TaobaoIhomeAdvancepicUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoIhomeAdvancepicUploadAPIResponseModel

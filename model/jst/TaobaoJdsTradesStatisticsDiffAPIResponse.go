@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJdsTradesStatisticsDiffAPIResponse
-订单全链路状态统计差异比较 API返回值
-taobao.jds.trades.statistics.diff
-
-订单全链路状态统计差异比较 */
+// TaobaoJdsTradesStatisticsDiffAPIResponse 订单全链路状态统计差异比较 API返回值
+// taobao.jds.trades.statistics.diff
+//
+// 订单全链路状态统计差异比较
 type TaobaoJdsTradesStatisticsDiffAPIResponse struct {
 	model.CommonResponse
 	TaobaoJdsTradesStatisticsDiffAPIResponseModel

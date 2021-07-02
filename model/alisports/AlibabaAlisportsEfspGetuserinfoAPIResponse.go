@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsEfspGetuserinfoAPIResponse
-获取用户详细信息 API返回值
-alibaba.alisports.efsp.getuserinfo
-
-阿里体育-体育健身-获取用户详细信息 */
+// AlibabaAlisportsEfspGetuserinfoAPIResponse 获取用户详细信息 API返回值
+// alibaba.alisports.efsp.getuserinfo
+//
+// 阿里体育-体育健身-获取用户详细信息
 type AlibabaAlisportsEfspGetuserinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsEfspGetuserinfoAPIResponseModel

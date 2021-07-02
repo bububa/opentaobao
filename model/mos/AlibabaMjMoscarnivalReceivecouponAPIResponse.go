@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjMoscarnivalReceivecouponAPIResponse
-根据手机号码领券 API返回值
-alibaba.mj.moscarnival.receivecoupon
-
-根据手机号码领券 */
+// AlibabaMjMoscarnivalReceivecouponAPIResponse 根据手机号码领券 API返回值
+// alibaba.mj.moscarnival.receivecoupon
+//
+// 根据手机号码领券
 type AlibabaMjMoscarnivalReceivecouponAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjMoscarnivalReceivecouponAPIResponseModel

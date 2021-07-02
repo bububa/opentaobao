@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterTpFundsSendQueryAPIResponse
-服务商资金权益发放的查询接口 API返回值
-tmall.servicecenter.tp.funds.send.query
-
-服务商资金权益发放结果的查询接口 */
+// TmallServicecenterTpFundsSendQueryAPIResponse 服务商资金权益发放的查询接口 API返回值
+// tmall.servicecenter.tp.funds.send.query
+//
+// 服务商资金权益发放结果的查询接口
 type TmallServicecenterTpFundsSendQueryAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterTpFundsSendQueryAPIResponseModel

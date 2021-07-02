@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkWholesaleOutboundorderCommitAPIResponse
-盒马帮发货信息回传接口 API返回值
-alibaba.wdk.wholesale.outboundorder.commit
-
-盒马帮发货信息回传接口 */
+// AlibabaWdkWholesaleOutboundorderCommitAPIResponse 盒马帮发货信息回传接口 API返回值
+// alibaba.wdk.wholesale.outboundorder.commit
+//
+// 盒马帮发货信息回传接口
 type AlibabaWdkWholesaleOutboundorderCommitAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkWholesaleOutboundorderCommitAPIResponseModel

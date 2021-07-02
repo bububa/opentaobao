@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuTaskmetasGetAPIResponse
-任务元查询接口 API返回值
-taobao.qianniu.taskmetas.get
-
-任务元查询接口 */
+// TaobaoQianniuTaskmetasGetAPIResponse 任务元查询接口 API返回值
+// taobao.qianniu.taskmetas.get
+//
+// 任务元查询接口
 type TaobaoQianniuTaskmetasGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuTaskmetasGetAPIResponseModel

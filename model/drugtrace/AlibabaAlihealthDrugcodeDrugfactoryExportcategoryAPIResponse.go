@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugcodeDrugfactoryExportcategoryAPIResponse
-导出临床药品目录 API返回值
-alibaba.alihealth.drugcode.drugfactory.exportcategory
-
-导出临床药品目录 */
+// AlibabaAlihealthDrugcodeDrugfactoryExportcategoryAPIResponse 导出临床药品目录 API返回值
+// alibaba.alihealth.drugcode.drugfactory.exportcategory
+//
+// 导出临床药品目录
 type AlibabaAlihealthDrugcodeDrugfactoryExportcategoryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugcodeDrugfactoryExportcategoryAPIResponseModel

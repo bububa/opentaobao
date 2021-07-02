@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIworkCoreHrsGetpersonAPIResponse
-获取神鲸用户基本信息 API返回值
-alibaba.iwork.core.hrs.getperson
-
-神鲸用户的基本信息查询，根据PERSON_ID或者用户ACCOUNT_ID查询 */
+// AlibabaIworkCoreHrsGetpersonAPIResponse 获取神鲸用户基本信息 API返回值
+// alibaba.iwork.core.hrs.getperson
+//
+// 神鲸用户的基本信息查询，根据PERSON_ID或者用户ACCOUNT_ID查询
 type AlibabaIworkCoreHrsGetpersonAPIResponse struct {
 	model.CommonResponse
 	AlibabaIworkCoreHrsGetpersonAPIResponseModel

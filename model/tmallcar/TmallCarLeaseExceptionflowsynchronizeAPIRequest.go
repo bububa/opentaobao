@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseExceptionflowsynchronizeAPIRequest
-天猫开新车租后异常流线下处理状态通知接口 API请求
-tmall.car.lease.exceptionflowsynchronize
-
-天猫开新车租后异常流线下处理状态通知接口 */
+// TmallCarLeaseExceptionflowsynchronizeAPIRequest 天猫开新车租后异常流线下处理状态通知接口 API请求
+// tmall.car.lease.exceptionflowsynchronize
+//
+// 天猫开新车租后异常流线下处理状态通知接口
 type TmallCarLeaseExceptionflowsynchronizeAPIRequest struct {
 	model.Params
 	// 天猫开新车订单id

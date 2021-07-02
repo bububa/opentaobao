@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalLogisticsCarrierQuerylistAPIResponse
-实际承运商查询 API返回值
-cainiao.global.logistics.carrier.querylist
-
-查询出所有的实际承运商 */
+// CainiaoGlobalLogisticsCarrierQuerylistAPIResponse 实际承运商查询 API返回值
+// cainiao.global.logistics.carrier.querylist
+//
+// 查询出所有的实际承运商
 type CainiaoGlobalLogisticsCarrierQuerylistAPIResponse struct {
 	model.CommonResponse
 	CainiaoGlobalLogisticsCarrierQuerylistAPIResponseModel

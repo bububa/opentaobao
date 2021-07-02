@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkChannelOrderCreateAPIResponse
-创建订单 API返回值
-alibaba.wdk.channel.order.create
-
-外部商家创建订单 */
+// AlibabaWdkChannelOrderCreateAPIResponse 创建订单 API返回值
+// alibaba.wdk.channel.order.create
+//
+// 外部商家创建订单
 type AlibabaWdkChannelOrderCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkChannelOrderCreateAPIResponseModel

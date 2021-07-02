@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItApAddressSetAPIRequest
-setApAddressNew API请求
-alibaba.it.ap.address.set
-
-该接口可为ISV系统提供 ap位置信息维护的功能 */
+// AlibabaItApAddressSetAPIRequest setApAddressNew API请求
+// alibaba.it.ap.address.set
+//
+// 该接口可为ISV系统提供 ap位置信息维护的功能
 type AlibabaItApAddressSetAPIRequest struct {
 	model.Params
 	// 城市

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthlab"
 )
 
-/* AlibabaAlihealthLabItemSync
-阿里健康检验检测商品发布
-alibaba.alihealth.lab.item.sync
-
-iSV发布检验检测商品基本信息给健康，内部关联一个淘宝商品或SKU */
+// AlibabaAlihealthLabItemSync 阿里健康检验检测商品发布
+// alibaba.alihealth.lab.item.sync
+//
+// iSV发布检验检测商品基本信息给健康，内部关联一个淘宝商品或SKU
 func AlibabaAlihealthLabItemSync(clt *core.SDKClient, req *alihealthlab.AlibabaAlihealthLabItemSyncAPIRequest, session string) (*alihealthlab.AlibabaAlihealthLabItemSyncAPIResponse, error) {
 	var resp alihealthlab.AlibabaAlihealthLabItemSyncAPIResponse
 	err := clt.Post(req, &resp, session)

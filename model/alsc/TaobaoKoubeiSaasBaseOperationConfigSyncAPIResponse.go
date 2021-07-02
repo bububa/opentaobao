@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse
-商家基础经营设置信息同步 API返回值
-taobao.koubei.saas.base.operation.config.sync
-
-ISV接入口碑SAAS后, 经营设置数据同步到口碑SAAS */
+// TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse 商家基础经营设置信息同步 API返回值
+// taobao.koubei.saas.base.operation.config.sync
+//
+// ISV接入口碑SAAS后, 经营设置数据同步到口碑SAAS
 type TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponseModel

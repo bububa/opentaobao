@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminManageTopicContentlistAPIRequest
-查看专题内容列表 API请求
-yunos.tvpubadmin.manage.topic.contentlist
-
-查看专题内容列表 */
+// YunosTvpubadminManageTopicContentlistAPIRequest 查看专题内容列表 API请求
+// yunos.tvpubadmin.manage.topic.contentlist
+//
+// 查看专题内容列表
 type YunosTvpubadminManageTopicContentlistAPIRequest struct {
 	model.Params
 	// 节目查询参数

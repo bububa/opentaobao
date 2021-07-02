@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelCityCoordinatesBatchUploadAPIResponse
-上传信息计算飞猪国际城市 API返回值
-taobao.xhotel.city.coordinates.batch.upload
-
-给供应商提供计算对应飞猪城市的服务，免去城市名称匹配流程，加快对接流程。目前只适用于国际城市，国内+港澳台暂不支持。
-非实时计算接口，每次批量上传不少于1条的数据，后端离线计算，请于30分钟后再下载结果。 */
+// TaobaoXhotelCityCoordinatesBatchUploadAPIResponse 上传信息计算飞猪国际城市 API返回值
+// taobao.xhotel.city.coordinates.batch.upload
+//
+// 给供应商提供计算对应飞猪城市的服务，免去城市名称匹配流程，加快对接流程。目前只适用于国际城市，国内+港澳台暂不支持。
+// 非实时计算接口，每次批量上传不少于1条的数据，后端离线计算，请于30分钟后再下载结果。
 type TaobaoXhotelCityCoordinatesBatchUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelCityCoordinatesBatchUploadAPIResponseModel

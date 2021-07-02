@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpShowcaseDeleteproductAPIRequest
-批量删除橱窗商品 API请求
-alibaba.scbp.showcase.deleteproduct
-
-批量删除橱窗商品 */
+// AlibabaScbpShowcaseDeleteproductAPIRequest 批量删除橱窗商品 API请求
+// alibaba.scbp.showcase.deleteproduct
+//
+// 批量删除橱窗商品
 type AlibabaScbpShowcaseDeleteproductAPIRequest struct {
 	model.Params
 	// 橱窗idList

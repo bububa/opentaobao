@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelCrsdriverArrangeAPIResponse
-CRS接送机商家派司机接口 API返回值
-alitrip.travel.crsdriver.arrange
-
-提供给CRS接送机商家派司机的API */
+// AlitripTravelCrsdriverArrangeAPIResponse CRS接送机商家派司机接口 API返回值
+// alitrip.travel.crsdriver.arrange
+//
+// 提供给CRS接送机商家派司机的API
 type AlitripTravelCrsdriverArrangeAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelCrsdriverArrangeAPIResponseModel

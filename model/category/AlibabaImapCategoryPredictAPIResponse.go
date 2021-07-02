@@ -6,13 +6,12 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaImapCategoryPredictAPIResponse
-类目预测接口 API返回值
-alibaba.imap.category.predict
-
-* 类目预测接口
-     * 【必填字段】 title, srcChannelId, srcCategoryId, targetChannelId
-     * 【非必填，但有最好填上】itemId, barcode, brandName, pvPairDOList, srcCatNamePathList */
+// AlibabaImapCategoryPredictAPIResponse 类目预测接口 API返回值
+// alibaba.imap.category.predict
+//
+// * 类目预测接口
+//      * 【必填字段】 title, srcChannelId, srcCategoryId, targetChannelId
+//      * 【非必填，但有最好填上】itemId, barcode, brandName, pvPairDOList, srcCatNamePathList
 type AlibabaImapCategoryPredictAPIResponse struct {
 	model.CommonResponse
 	AlibabaImapCategoryPredictAPIResponseModel

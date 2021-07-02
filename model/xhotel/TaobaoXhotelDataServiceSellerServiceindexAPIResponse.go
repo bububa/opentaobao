@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelDataServiceSellerServiceindexAPIResponse
-卖家服务指数查询 API返回值
-taobao.xhotel.data.service.seller.serviceindex
-
-卖家服务指数查询 */
+// TaobaoXhotelDataServiceSellerServiceindexAPIResponse 卖家服务指数查询 API返回值
+// taobao.xhotel.data.service.seller.serviceindex
+//
+// 卖家服务指数查询
 type TaobaoXhotelDataServiceSellerServiceindexAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelDataServiceSellerServiceindexAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewGetappmenutreeAPIResponse
-查询应用下的菜单树 API返回值
-alibaba.campus.acl.new.getappmenutree
-
-查询应用下的菜单树 */
+// AlibabaCampusAclNewGetappmenutreeAPIResponse 查询应用下的菜单树 API返回值
+// alibaba.campus.acl.new.getappmenutree
+//
+// 查询应用下的菜单树
 type AlibabaCampusAclNewGetappmenutreeAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclNewGetappmenutreeAPIResponseModel

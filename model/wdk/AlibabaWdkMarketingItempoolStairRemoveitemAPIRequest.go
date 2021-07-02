@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItempoolStairRemoveitemAPIRequest
-删除换购活动商品 API请求
-alibaba.wdk.marketing.itempool.stair.removeitem
-
-删除换购商品 */
+// AlibabaWdkMarketingItempoolStairRemoveitemAPIRequest 删除换购活动商品 API请求
+// alibaba.wdk.marketing.itempool.stair.removeitem
+//
+// 删除换购商品
 type AlibabaWdkMarketingItempoolStairRemoveitemAPIRequest struct {
 	model.Params
 	// 商品sku信息

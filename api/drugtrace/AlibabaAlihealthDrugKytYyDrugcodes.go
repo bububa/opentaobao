@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-/* AlibabaAlihealthDrugKytYyDrugcodes
-查询药品是否赋码
-alibaba.alihealth.drug.kyt.yy.drugcodes
-
-药品是否赋码 */
+// AlibabaAlihealthDrugKytYyDrugcodes 查询药品是否赋码
+// alibaba.alihealth.drug.kyt.yy.drugcodes
+//
+// 药品是否赋码
 func AlibabaAlihealthDrugKytYyDrugcodes(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytYyDrugcodesAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytYyDrugcodesAPIResponse, error) {
 	var resp drugtrace.AlibabaAlihealthDrugKytYyDrugcodesAPIResponse
 	err := clt.Post(req, &resp, session)

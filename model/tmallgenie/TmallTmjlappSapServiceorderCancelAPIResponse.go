@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTmjlappSapServiceorderCancelAPIResponse
-取消售后服务单 API返回值
-tmall.tmjlapp.sap.serviceorder.cancel
-
-SAP跟天猫精灵app接口对接，用户在app取消sap售后服务工单 */
+// TmallTmjlappSapServiceorderCancelAPIResponse 取消售后服务单 API返回值
+// tmall.tmjlapp.sap.serviceorder.cancel
+//
+// SAP跟天猫精灵app接口对接，用户在app取消sap售后服务工单
 type TmallTmjlappSapServiceorderCancelAPIResponse struct {
 	model.CommonResponse
 	TmallTmjlappSapServiceorderCancelAPIResponseModel

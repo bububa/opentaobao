@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappDistributionOrderCreateAPIResponse
-创建小程序投放计划 API返回值
-taobao.miniapp.distribution.order.create
-
-帮助商家，创建小程序的投放计划。 */
+// TaobaoMiniappDistributionOrderCreateAPIResponse 创建小程序投放计划 API返回值
+// taobao.miniapp.distribution.order.create
+//
+// 帮助商家，创建小程序的投放计划。
 type TaobaoMiniappDistributionOrderCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappDistributionOrderCreateAPIResponseModel

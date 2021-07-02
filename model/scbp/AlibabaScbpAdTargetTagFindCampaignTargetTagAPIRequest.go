@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest
-查询标签数据 API请求
-alibaba.scbp.ad.target.tag.find.campaign.target.tag
-
-查询标签数据 */
+// AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest 查询标签数据 API请求
+// alibaba.scbp.ad.target.tag.find.campaign.target.tag
+//
+// 查询标签数据
 type AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest struct {
 	model.Params
 	// 计划id

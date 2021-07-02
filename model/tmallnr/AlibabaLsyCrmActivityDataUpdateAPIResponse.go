@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLsyCrmActivityDataUpdateAPIResponse
-私域导购数据回流接口 API返回值
-alibaba.lsy.crm.activity.data.update
-
-私域导购数据回流接口 */
+// AlibabaLsyCrmActivityDataUpdateAPIResponse 私域导购数据回流接口 API返回值
+// alibaba.lsy.crm.activity.data.update
+//
+// 私域导购数据回流接口
 type AlibabaLsyCrmActivityDataUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaLsyCrmActivityDataUpdateAPIResponseModel

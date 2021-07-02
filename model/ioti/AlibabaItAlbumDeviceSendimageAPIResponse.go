@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItAlbumDeviceSendimageAPIResponse
-相框设备厂测刷图接口 API返回值
-alibaba.it.album.device.sendimage
-
-提供传入电子相框设备mac，mac需属于厂测白名单设备，将设备刷新为系统默认的厂测图片 */
+// AlibabaItAlbumDeviceSendimageAPIResponse 相框设备厂测刷图接口 API返回值
+// alibaba.it.album.device.sendimage
+//
+// 提供传入电子相框设备mac，mac需属于厂测白名单设备，将设备刷新为系统默认的厂测图片
 type AlibabaItAlbumDeviceSendimageAPIResponse struct {
 	model.CommonResponse
 	AlibabaItAlbumDeviceSendimageAPIResponseModel

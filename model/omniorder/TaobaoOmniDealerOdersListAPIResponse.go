@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniDealerOdersListAPIResponse
-全渠道经销商订单列表 API返回值
-taobao.omni.dealer.oders.list
-
-全渠道经销商订单列表查询 */
+// TaobaoOmniDealerOdersListAPIResponse 全渠道经销商订单列表 API返回值
+// taobao.omni.dealer.oders.list
+//
+// 全渠道经销商订单列表查询
 type TaobaoOmniDealerOdersListAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniDealerOdersListAPIResponseModel

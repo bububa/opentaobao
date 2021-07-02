@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsergrowthDhhDeliveryAskAPIRequest
-广告曝光前判定接口V2 API请求
-taobao.usergrowth.dhh.delivery.ask
-
-提供给媒体在曝光广告前调用 */
+// TaobaoUsergrowthDhhDeliveryAskAPIRequest 广告曝光前判定接口V2 API请求
+// taobao.usergrowth.dhh.delivery.ask
+//
+// 提供给媒体在曝光广告前调用
 type TaobaoUsergrowthDhhDeliveryAskAPIRequest struct {
 	model.Params
 	// 预留json参数，与手淘团队单独沟通

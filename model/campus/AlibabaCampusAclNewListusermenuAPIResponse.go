@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewListusermenuAPIResponse
-查询用户有权限的菜单树 API返回值
-alibaba.campus.acl.new.listusermenu
-
-查询用户有权限的菜单树 */
+// AlibabaCampusAclNewListusermenuAPIResponse 查询用户有权限的菜单树 API返回值
+// alibaba.campus.acl.new.listusermenu
+//
+// 查询用户有权限的菜单树
 type AlibabaCampusAclNewListusermenuAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclNewListusermenuAPIResponseModel

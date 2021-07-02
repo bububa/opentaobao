@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceMerchantAddAPIRequest
-发票中台-同平台授权税号适用商户 API请求
-alibaba.einvoice.merchant.add
-
-适用于以下场景：
-业务税号入驻成功后，需要将税号授权给同平台下其他商户，使得其他商户也具备开票能力 */
+// AlibabaEinvoiceMerchantAddAPIRequest 发票中台-同平台授权税号适用商户 API请求
+// alibaba.einvoice.merchant.add
+//
+// 适用于以下场景：
+// 业务税号入驻成功后，需要将税号授权给同平台下其他商户，使得其他商户也具备开票能力
 type AlibabaEinvoiceMerchantAddAPIRequest struct {
 	model.Params
 	// 验证码，门店绑定已入驻税号接口返回的taxToken

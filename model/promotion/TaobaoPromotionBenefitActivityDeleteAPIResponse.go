@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionBenefitActivityDeleteAPIResponse
-删除关联的活动权益 API返回值
-taobao.promotion.benefit.activity.delete
-
-删除关联的活动权益 */
+// TaobaoPromotionBenefitActivityDeleteAPIResponse 删除关联的活动权益 API返回值
+// taobao.promotion.benefit.activity.delete
+//
+// 删除关联的活动权益
 type TaobaoPromotionBenefitActivityDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionBenefitActivityDeleteAPIResponseModel

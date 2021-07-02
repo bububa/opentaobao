@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIResponse
-报告解读订单状态更新 API返回值
-alibaba.alihealth.examination.report.diagnose.order.status
-
-报告解读订单状态更新 */
+// AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIResponse 报告解读订单状态更新 API返回值
+// alibaba.alihealth.examination.report.diagnose.order.status
+//
+// 报告解读订单状态更新
 type AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIResponseModel

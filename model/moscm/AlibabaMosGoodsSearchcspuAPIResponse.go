@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosGoodsSearchcspuAPIResponse
-cspu查询 API返回值
-alibaba.mos.goods.searchcspu
-
-商品信息查询（仅用于商品上传数据验证，不能用于商品下载，有限流） */
+// AlibabaMosGoodsSearchcspuAPIResponse cspu查询 API返回值
+// alibaba.mos.goods.searchcspu
+//
+// 商品信息查询（仅用于商品上传数据验证，不能用于商品下载，有限流）
 type AlibabaMosGoodsSearchcspuAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosGoodsSearchcspuAPIResponseModel

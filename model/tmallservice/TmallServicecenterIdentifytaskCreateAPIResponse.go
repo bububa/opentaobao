@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterIdentifytaskCreateAPIResponse
-服务商创建核销单 API返回值
-tmall.servicecenter.identifytask.create
-
-服务商调用该接口进行创建核销单操作 */
+// TmallServicecenterIdentifytaskCreateAPIResponse 服务商创建核销单 API返回值
+// tmall.servicecenter.identifytask.create
+//
+// 服务商调用该接口进行创建核销单操作
 type TmallServicecenterIdentifytaskCreateAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterIdentifytaskCreateAPIResponseModel

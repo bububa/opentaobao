@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkOrderRefundGetAPIRequest
-五道口订单退款按ID查询 API请求
-alibaba.wdk.order.refund.get
-
-按照退款ID或者五道口中台订单ID查询退款信息详情 */
+// AlibabaWdkOrderRefundGetAPIRequest 五道口订单退款按ID查询 API请求
+// alibaba.wdk.order.refund.get
+//
+// 按照退款ID或者五道口中台订单ID查询退款信息详情
 type AlibabaWdkOrderRefundGetAPIRequest struct {
 	model.Params
 	// 五道口订单列表（子订单）

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosDeliverySendAPIResponse
-发货 API返回值
-alibaba.mos.delivery.send
-
-订单发货填写快递单 */
+// AlibabaMosDeliverySendAPIResponse 发货 API返回值
+// alibaba.mos.delivery.send
+//
+// 订单发货填写快递单
 type AlibabaMosDeliverySendAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosDeliverySendAPIResponseModel

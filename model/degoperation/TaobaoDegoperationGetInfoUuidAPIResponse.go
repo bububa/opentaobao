@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDegoperationGetInfoUuidAPIResponse
-根据uuid用户抽奖次数限制 API返回值
-taobao.degoperation.get.info.uuid
-
-根据uuid用户抽奖次数限制 */
+// TaobaoDegoperationGetInfoUuidAPIResponse 根据uuid用户抽奖次数限制 API返回值
+// taobao.degoperation.get.info.uuid
+//
+// 根据uuid用户抽奖次数限制
 type TaobaoDegoperationGetInfoUuidAPIResponse struct {
 	model.CommonResponse
 	TaobaoDegoperationGetInfoUuidAPIResponseModel

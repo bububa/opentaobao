@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOcApContracturlGetAPIResponse
-按用户获取支付宝代扣协议链接地址 API返回值
-taobao.oc.ap.contracturl.get
-
-按用户获取支付宝代扣协议链接地址 */
+// TaobaoOcApContracturlGetAPIResponse 按用户获取支付宝代扣协议链接地址 API返回值
+// taobao.oc.ap.contracturl.get
+//
+// 按用户获取支付宝代扣协议链接地址
 type TaobaoOcApContracturlGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOcApContracturlGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseReserveAPIResponse
-整车租车回传预约信息 API返回值
-tmall.car.lease.reserve
-
-租赁公司回传预约到店信息 */
+// TmallCarLeaseReserveAPIResponse 整车租车回传预约信息 API返回值
+// tmall.car.lease.reserve
+//
+// 租赁公司回传预约到店信息
 type TmallCarLeaseReserveAPIResponse struct {
 	model.CommonResponse
 	TmallCarLeaseReserveAPIResponseModel

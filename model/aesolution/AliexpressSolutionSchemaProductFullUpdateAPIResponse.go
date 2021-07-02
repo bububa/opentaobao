@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionSchemaProductFullUpdateAPIResponse
-aliexpress.solution.schema.product.full.update API返回值
-aliexpress.solution.schema.product.full.update
-
-Schema interface for product full update. QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller. */
+// AliexpressSolutionSchemaProductFullUpdateAPIResponse aliexpress.solution.schema.product.full.update API返回值
+// aliexpress.solution.schema.product.full.update
+//
+// Schema interface for product full update. QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller.
 type AliexpressSolutionSchemaProductFullUpdateAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionSchemaProductFullUpdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDeviceInfoGetAPIResponse
-贩卖机设备信息获取 API返回值
-alibaba.retail.device.info.get
-
-贩卖机设备信息获取 */
+// AlibabaRetailDeviceInfoGetAPIResponse 贩卖机设备信息获取 API返回值
+// alibaba.retail.device.info.get
+//
+// 贩卖机设备信息获取
 type AlibabaRetailDeviceInfoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailDeviceInfoGetAPIResponseModel

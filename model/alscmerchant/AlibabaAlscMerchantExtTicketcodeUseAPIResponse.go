@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscMerchantExtTicketcodeUseAPIResponse
-外部核销服务 API返回值
-alibaba.alsc.merchant.ext.ticketcode.use
-
-外部核销服务 */
+// AlibabaAlscMerchantExtTicketcodeUseAPIResponse 外部核销服务 API返回值
+// alibaba.alsc.merchant.ext.ticketcode.use
+//
+// 外部核销服务
 type AlibabaAlscMerchantExtTicketcodeUseAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel

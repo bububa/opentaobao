@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlihealthDrugStoreSearchAPIResponse
-药品店内搜索 API返回值
-taobao.alihealth.drug.store.search
-
-提供给千牛智能客服，在阿里健康O2O店铺内搜索药品 */
+// TaobaoAlihealthDrugStoreSearchAPIResponse 药品店内搜索 API返回值
+// taobao.alihealth.drug.store.search
+//
+// 提供给千牛智能客服，在阿里健康O2O店铺内搜索药品
 type TaobaoAlihealthDrugStoreSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlihealthDrugStoreSearchAPIResponseModel

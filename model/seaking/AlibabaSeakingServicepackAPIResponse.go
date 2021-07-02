@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingServicepackAPIResponse
-获取海王用户权限包 API返回值
-alibaba.seaking.servicepack
-
-获取海王用户权限包 */
+// AlibabaSeakingServicepackAPIResponse 获取海王用户权限包 API返回值
+// alibaba.seaking.servicepack
+//
+// 获取海王用户权限包
 type AlibabaSeakingServicepackAPIResponse struct {
 	model.CommonResponse
 	AlibabaSeakingServicepackAPIResponseModel

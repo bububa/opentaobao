@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTclsAelophyMerchantChannelOrderCreateAPIResponse
-翱象商家自有渠道 订单创建 API返回值
-alibaba.tcls.aelophy.merchant.channel.order.create
-
-翱象小程序渠道订单创建 */
+// AlibabaTclsAelophyMerchantChannelOrderCreateAPIResponse 翱象商家自有渠道 订单创建 API返回值
+// alibaba.tcls.aelophy.merchant.channel.order.create
+//
+// 翱象小程序渠道订单创建
 type AlibabaTclsAelophyMerchantChannelOrderCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaTclsAelophyMerchantChannelOrderCreateAPIResponseModel

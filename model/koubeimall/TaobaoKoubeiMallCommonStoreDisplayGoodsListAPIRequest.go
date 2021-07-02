@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest
-查询门店推荐菜信息 API请求
-taobao.koubei.mall.common.store.display.goods.list
-
-提供查询口碑商圈内的门店推荐菜信息 */
+// TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest 查询门店推荐菜信息 API请求
+// taobao.koubei.mall.common.store.display.goods.list
+//
+// 提供查询口碑商圈内的门店推荐菜信息
 type TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest struct {
 	model.Params
 	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）

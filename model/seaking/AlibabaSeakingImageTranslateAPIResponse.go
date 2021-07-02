@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingImagetranslateAPIResponse
-图片机器翻译 API返回值
-alibaba.seaking.imagetranslate
-
-图片机器翻译 */
+// AlibabaSeakingImagetranslateAPIResponse 图片机器翻译 API返回值
+// alibaba.seaking.imagetranslate
+//
+// 图片机器翻译
 type AlibabaSeakingImagetranslateAPIResponse struct {
 	model.CommonResponse
 	AlibabaSeakingImagetranslateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziBucAccountListAccountidsAPIResponse
-根据一批账号ID查询账号列表 API返回值
-alibaba.mozi.buc.account.list.accountids
-
-根据一批账号ID查询账号列表 */
+// AlibabaMoziBucAccountListAccountidsAPIResponse 根据一批账号ID查询账号列表 API返回值
+// alibaba.mozi.buc.account.list.accountids
+//
+// 根据一批账号ID查询账号列表
 type AlibabaMoziBucAccountListAccountidsAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziBucAccountListAccountidsAPIResponseModel

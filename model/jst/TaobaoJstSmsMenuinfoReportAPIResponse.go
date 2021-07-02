@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstSmsMenuinfoReportAPIResponse
-聚石塔菜单信息上报 API返回值
-taobao.jst.sms.menuinfo.report
-
-聚石塔菜单信息上报 */
+// TaobaoJstSmsMenuinfoReportAPIResponse 聚石塔菜单信息上报 API返回值
+// taobao.jst.sms.menuinfo.report
+//
+// 聚石塔菜单信息上报
 type TaobaoJstSmsMenuinfoReportAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsMenuinfoReportAPIResponseModel

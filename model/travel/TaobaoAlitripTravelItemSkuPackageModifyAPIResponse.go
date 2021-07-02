@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelItemSkuPackageModifyAPIResponse
-【API3.0】套餐级别日历价格库存增删操作 API返回值
-taobao.alitrip.travel.item.sku.package.modify
-
-【API3.0】套餐级别日历价格库存增删操作 */
+// TaobaoAlitripTravelItemSkuPackageModifyAPIResponse 【API3.0】套餐级别日历价格库存增删操作 API返回值
+// taobao.alitrip.travel.item.sku.package.modify
+//
+// 【API3.0】套餐级别日历价格库存增删操作
 type TaobaoAlitripTravelItemSkuPackageModifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTravelItemSkuPackageModifyAPIResponseModel

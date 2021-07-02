@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRdcAligeniusAccountValidateAPIResponse
-AG商家账号校验 API返回值
-taobao.rdc.aligenius.account.validate
-
-提供应对接AG的erp系统查询其旗下的商家是否为AG商家 */
+// TaobaoRdcAligeniusAccountValidateAPIResponse AG商家账号校验 API返回值
+// taobao.rdc.aligenius.account.validate
+//
+// 提供应对接AG的erp系统查询其旗下的商家是否为AG商家
 type TaobaoRdcAligeniusAccountValidateAPIResponse struct {
 	model.CommonResponse
 	TaobaoRdcAligeniusAccountValidateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyMemberRegisterAPIResponse
-星河-微信小程序会员注册 API返回值
-alitrip.merchant.galaxy.member.register
-
-星河产品=微信小程序注册雅高会员服务 */
+// AlitripMerchantGalaxyMemberRegisterAPIResponse 星河-微信小程序会员注册 API返回值
+// alitrip.merchant.galaxy.member.register
+//
+// 星河产品=微信小程序注册雅高会员服务
 type AlitripMerchantGalaxyMemberRegisterAPIResponse struct {
 	model.CommonResponse
 	AlitripMerchantGalaxyMemberRegisterAPIResponseModel

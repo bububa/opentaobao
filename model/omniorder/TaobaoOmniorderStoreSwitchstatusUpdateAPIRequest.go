@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest
-switchstatus.update API请求
-taobao.omniorder.store.switchstatus.update
-
-变更门店发货、门店自提状态 */
+// TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest switchstatus.update API请求
+// taobao.omniorder.store.switchstatus.update
+//
+// 变更门店发货、门店自提状态
 type TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest struct {
 	model.Params
 	// 门店ID

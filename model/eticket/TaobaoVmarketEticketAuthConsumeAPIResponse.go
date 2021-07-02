@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketAuthConsumeAPIResponse
-核销放行的核销接口 API返回值
-taobao.vmarket.eticket.auth.consume
-
-针对O2O电子凭证核销放行业务，为满足码商能够核销淘宝码而开放的核销接口 */
+// TaobaoVmarketEticketAuthConsumeAPIResponse 核销放行的核销接口 API返回值
+// taobao.vmarket.eticket.auth.consume
+//
+// 针对O2O电子凭证核销放行业务，为满足码商能够核销淘宝码而开放的核销接口
 type TaobaoVmarketEticketAuthConsumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketAuthConsumeAPIResponseModel

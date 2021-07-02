@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpProductListAPIRequest
-查询P4P产品 API请求
-alibaba.scbp.product.list
-
-查询P4P产品 */
+// AlibabaScbpProductListAPIRequest 查询P4P产品 API请求
+// alibaba.scbp.product.list
+//
+// 查询P4P产品
 type AlibabaScbpProductListAPIRequest struct {
 	model.Params
 	// 产品分组标识

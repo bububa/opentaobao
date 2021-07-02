@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkElemeBillGetAPIResponse
-饿了么日维度对账单查询 API返回值
-alibaba.wdk.eleme.bill.get
-
-查询饿了么日维度对账单信息 */
+// AlibabaWdkElemeBillGetAPIResponse 饿了么日维度对账单查询 API返回值
+// alibaba.wdk.eleme.bill.get
+//
+// 查询饿了么日维度对账单信息
 type AlibabaWdkElemeBillGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkElemeBillGetAPIResponseModel

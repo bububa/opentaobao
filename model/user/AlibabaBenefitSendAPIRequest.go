@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBenefitSendAPIRequest
-发奖接口 API请求
-alibaba.benefit.send
-
-发奖接口 */
+// AlibabaBenefitSendAPIRequest 发奖接口 API请求
+// alibaba.benefit.send
+//
+// 发奖接口
 type AlibabaBenefitSendAPIRequest struct {
 	model.Params
 	// 发放的权益(奖品)唯一标识

@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoProductsGetAPIResponse
-获取产品列表 API返回值
-taobao.products.get
-
-根据淘宝会员帐号搜索所有产品信息，推荐使用taobao.products.search
-注意：支持分页，每页最多返回100条,默认值为40,页码从1开始，默认为第一页 */
+// TaobaoProductsGetAPIResponse 获取产品列表 API返回值
+// taobao.products.get
+//
+// 根据淘宝会员帐号搜索所有产品信息，推荐使用taobao.products.search
+// 注意：支持分页，每页最多返回100条,默认值为40,页码从1开始，默认为第一页
 type TaobaoProductsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoProductsGetAPIResponseModel

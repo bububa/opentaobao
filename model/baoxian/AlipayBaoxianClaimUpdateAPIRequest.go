@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlipayBaoxianClaimUpdateAPIRequest
-更新赔案 API请求
-alipay.baoxian.claim.update
-
-更新保险理赔单 */
+// AlipayBaoxianClaimUpdateAPIRequest 更新赔案 API请求
+// alipay.baoxian.claim.update
+//
+// 更新保险理赔单
 type AlipayBaoxianClaimUpdateAPIRequest struct {
 	model.Params
 	// 业务数据

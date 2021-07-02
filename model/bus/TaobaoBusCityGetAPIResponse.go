@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusCityGetAPIResponse
-城市接口 API返回值
-taobao.bus.city.get
-
-汽车票出发城市获取接口，获取所有出发城市 */
+// TaobaoBusCityGetAPIResponse 城市接口 API返回值
+// taobao.bus.city.get
+//
+// 汽车票出发城市获取接口，获取所有出发城市
 type TaobaoBusCityGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusCityGetAPIResponseModel

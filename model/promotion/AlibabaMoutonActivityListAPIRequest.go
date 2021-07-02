@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoutonActivityListAPIRequest
-商家自运营活动列表 API请求
-alibaba.mouton.activity.list
-
-商家查询自己配置的活动列表 */
+// AlibabaMoutonActivityListAPIRequest 商家自运营活动列表 API请求
+// alibaba.mouton.activity.list
+//
+// 商家查询自己配置的活动列表
 type AlibabaMoutonActivityListAPIRequest struct {
 	model.Params
 	// 开始时间

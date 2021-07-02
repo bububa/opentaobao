@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceQrcodeCreateAPIResponse
-扫码开票二维码生成 API返回值
-alibaba.einvoice.qrcode.create
-
-扫码开票功能中的二维码生成接口，pos机等发起请求生成二维码 */
+// AlibabaEinvoiceQrcodeCreateAPIResponse 扫码开票二维码生成 API返回值
+// alibaba.einvoice.qrcode.create
+//
+// 扫码开票功能中的二维码生成接口，pos机等发起请求生成二维码
 type AlibabaEinvoiceQrcodeCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceQrcodeCreateAPIResponseModel

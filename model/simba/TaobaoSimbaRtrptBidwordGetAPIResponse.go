@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRtrptBidwordGetAPIResponse
-获取推广词实时报表数据 API返回值
-taobao.simba.rtrpt.bidword.get
-
-获取推广词报表数据 */
+// TaobaoSimbaRtrptBidwordGetAPIResponse 获取推广词实时报表数据 API返回值
+// taobao.simba.rtrpt.bidword.get
+//
+// 获取推广词报表数据
 type TaobaoSimbaRtrptBidwordGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaRtrptBidwordGetAPIResponseModel

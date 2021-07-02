@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstPosOpenAccountCheckissettledAPIResponse
-校验当前用户是否入驻了零售通门店接口 API返回值
-alibaba.lst.pos.open.account.checkissettled
-
-校验当前用户是否入驻了零售通门店接口 */
+// AlibabaLstPosOpenAccountCheckissettledAPIResponse 校验当前用户是否入驻了零售通门店接口 API返回值
+// alibaba.lst.pos.open.account.checkissettled
+//
+// 校验当前用户是否入驻了零售通门店接口
 type AlibabaLstPosOpenAccountCheckissettledAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstPosOpenAccountCheckissettledAPIResponseModel

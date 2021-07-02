@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripHotelDistributionSearchDetailAPIRequest
-商旅酒店api分销-详情报价接口 API请求
-alitrip.btrip.hotel.distribution.search.detail
-
-商旅酒店api分销-详情报价接口 */
+// AlitripBtripHotelDistributionSearchDetailAPIRequest 商旅酒店api分销-详情报价接口 API请求
+// alitrip.btrip.hotel.distribution.search.detail
+//
+// 商旅酒店api分销-详情报价接口
 type AlitripBtripHotelDistributionSearchDetailAPIRequest struct {
 	model.Params
 	// 详情报价入参

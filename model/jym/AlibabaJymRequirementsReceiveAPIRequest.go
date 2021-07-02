@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaJymRequirementsReceiveAPIRequest
-交易猫需求接单接口 API请求
-alibaba.jym.requirements.receive
-
-交易猫需求接单接口 */
+// AlibabaJymRequirementsReceiveAPIRequest 交易猫需求接单接口 API请求
+// alibaba.jym.requirements.receive
+//
+// 交易猫需求接单接口
 type AlibabaJymRequirementsReceiveAPIRequest struct {
 	model.Params
 	// 需求id

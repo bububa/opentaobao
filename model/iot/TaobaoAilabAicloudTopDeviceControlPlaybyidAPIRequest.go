@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest
-通过id播放歌曲 API请求
-taobao.ailab.aicloud.top.device.control.playbyid
-
-通过id播放歌曲 */
+// TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest 通过id播放歌曲 API请求
+// taobao.ailab.aicloud.top.device.control.playbyid
+//
+// 通过id播放歌曲
 type TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest struct {
 	model.Params
 	// 用户信息

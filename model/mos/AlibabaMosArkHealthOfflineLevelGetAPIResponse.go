@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosArkHealthOfflineLevelGetAPIResponse
-获取mall的离线等级 API返回值
-alibaba.mos.ark.health.offline.level.get
-
-获取mall的离线等级 */
+// AlibabaMosArkHealthOfflineLevelGetAPIResponse 获取mall的离线等级 API返回值
+// alibaba.mos.ark.health.offline.level.get
+//
+// 获取mall的离线等级
 type AlibabaMosArkHealthOfflineLevelGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosArkHealthOfflineLevelGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstVendingCargospaceSaveAPIResponse
-自动售卖机货道数据回流 API返回值
-alibaba.lst.vending.cargospace.save
-
-自动售卖机货道数据回流接口，ISV通过调用此接口上传售卖机货道信息。 */
+// AlibabaLstVendingCargospaceSaveAPIResponse 自动售卖机货道数据回流 API返回值
+// alibaba.lst.vending.cargospace.save
+//
+// 自动售卖机货道数据回流接口，ISV通过调用此接口上传售卖机货道信息。
 type AlibabaLstVendingCargospaceSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstVendingCargospaceSaveAPIResponseModel

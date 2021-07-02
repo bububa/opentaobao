@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripCarInvoiceConfirmAPIResponse
-发票确认接口 API返回值
-alitrip.car.invoice.confirm
-
-飞猪发票回调接口 */
+// AlitripCarInvoiceConfirmAPIResponse 发票确认接口 API返回值
+// alitrip.car.invoice.confirm
+//
+// 飞猪发票回调接口
 type AlitripCarInvoiceConfirmAPIResponse struct {
 	model.CommonResponse
 	AlitripCarInvoiceConfirmAPIResponseModel

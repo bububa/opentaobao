@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreSdtconsignAPIResponse
-通知菜鸟裹裹发货 API返回值
-taobao.omniorder.store.sdtconsign
-
-ISV取完单号后通知菜鸟裹裹发货 */
+// TaobaoOmniorderStoreSdtconsignAPIResponse 通知菜鸟裹裹发货 API返回值
+// taobao.omniorder.store.sdtconsign
+//
+// ISV取完单号后通知菜鸟裹裹发货
 type TaobaoOmniorderStoreSdtconsignAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderStoreSdtconsignAPIResponseModel

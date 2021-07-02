@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxDealGetAPIResponse
-对外部dsp提供交易id查询接口 API返回值
-taobao.tanx.deal.get
-
-对外部dsp提供交易id查询接口 */
+// TaobaoTanxDealGetAPIResponse 对外部dsp提供交易id查询接口 API返回值
+// taobao.tanx.deal.get
+//
+// 对外部dsp提供交易id查询接口
 type TaobaoTanxDealGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxDealGetAPIResponseModel

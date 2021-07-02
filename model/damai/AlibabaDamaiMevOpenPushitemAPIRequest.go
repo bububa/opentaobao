@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMevOpenPushitemAPIRequest
-大麦换验平台-第三方对外开放-票品接口pushItem API请求
-alibaba.damai.mev.open.pushitem
-
-开放接口 推送票品 */
+// AlibabaDamaiMevOpenPushitemAPIRequest 大麦换验平台-第三方对外开放-票品接口pushItem API请求
+// alibaba.damai.mev.open.pushitem
+//
+// 开放接口 推送票品
 type AlibabaDamaiMevOpenPushitemAPIRequest struct {
 	model.Params
 	// 入参pushItemParam

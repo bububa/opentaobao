@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqLoginpreventionResultFetchAPIResponse
-获取登录保护结果 API返回值
-alibaba.security.jaq.loginprevention.result.fetch
-
-获取登录保护结果 */
+// AlibabaSecurityJaqLoginpreventionResultFetchAPIResponse 获取登录保护结果 API返回值
+// alibaba.security.jaq.loginprevention.result.fetch
+//
+// 获取登录保护结果
 type AlibabaSecurityJaqLoginpreventionResultFetchAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqLoginpreventionResultFetchAPIResponseModel

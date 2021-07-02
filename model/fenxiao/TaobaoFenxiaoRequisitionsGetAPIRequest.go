@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoRequisitionsGetAPIRequest
-合作申请查询 API请求
-taobao.fenxiao.requisitions.get
-
-合作申请查询 */
+// TaobaoFenxiaoRequisitionsGetAPIRequest 合作申请查询 API请求
+// taobao.fenxiao.requisitions.get
+//
+// 合作申请查询
 type TaobaoFenxiaoRequisitionsGetAPIRequest struct {
 	model.Params
 	// 申请状态（1-申请中、2-成功、3-被退回、4-已撤消、5-过期）

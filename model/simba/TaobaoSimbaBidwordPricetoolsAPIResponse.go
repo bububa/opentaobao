@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaBidwordPricetoolsAPIResponse
-关键词出价指导工具（新） API返回值
-taobao.simba.bidword.pricetools
-
-关键词出价指导工具（新） */
+// TaobaoSimbaBidwordPricetoolsAPIResponse 关键词出价指导工具（新） API返回值
+// taobao.simba.bidword.pricetools
+//
+// 关键词出价指导工具（新）
 type TaobaoSimbaBidwordPricetoolsAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaBidwordPricetoolsAPIResponseModel

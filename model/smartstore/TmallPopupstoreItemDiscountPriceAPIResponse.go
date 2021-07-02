@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallPopupstoreItemDiscountPriceAPIResponse
-商品优惠价格查询 API返回值
-tmall.popupstore.item.discount.price
-
-商品优惠价格查询 */
+// TmallPopupstoreItemDiscountPriceAPIResponse 商品优惠价格查询 API返回值
+// tmall.popupstore.item.discount.price
+//
+// 商品优惠价格查询
 type TmallPopupstoreItemDiscountPriceAPIResponse struct {
 	model.CommonResponse
 	TmallPopupstoreItemDiscountPriceAPIResponseModel

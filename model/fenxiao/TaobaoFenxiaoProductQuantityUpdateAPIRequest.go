@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductQuantityUpdateAPIRequest
-产品库存修改 API请求
-taobao.fenxiao.product.quantity.update
-
-修改产品库存信息，支持全量修改以及增量修改两种方式 */
+// TaobaoFenxiaoProductQuantityUpdateAPIRequest 产品库存修改 API请求
+// taobao.fenxiao.product.quantity.update
+//
+// 修改产品库存信息，支持全量修改以及增量修改两种方式
 type TaobaoFenxiaoProductQuantityUpdateAPIRequest struct {
 	model.Params
 	// 产品ID

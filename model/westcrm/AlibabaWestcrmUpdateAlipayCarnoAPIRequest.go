@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmUpdateAlipayCarnoAPIRequest
-更新支付宝业务卡号 API请求
-alibaba.westcrm.update.alipay.carno
-
-更新支付宝业务卡号 */
+// AlibabaWestcrmUpdateAlipayCarnoAPIRequest 更新支付宝业务卡号 API请求
+// alibaba.westcrm.update.alipay.carno
+//
+// 更新支付宝业务卡号
 type AlibabaWestcrmUpdateAlipayCarnoAPIRequest struct {
 	model.Params
 	// 商场id

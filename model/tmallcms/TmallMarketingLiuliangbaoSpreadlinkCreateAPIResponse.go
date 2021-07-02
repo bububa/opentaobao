@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMarketingLiuliangbaoSpreadlinkCreateAPIResponse
-创建流量宝活动链接 API返回值
-tmall.marketing.liuliangbao.spreadlink.create
-
-通过源活动链接和商家ID，创建流量宝活动链接 */
+// TmallMarketingLiuliangbaoSpreadlinkCreateAPIResponse 创建流量宝活动链接 API返回值
+// tmall.marketing.liuliangbao.spreadlink.create
+//
+// 通过源活动链接和商家ID，创建流量宝活动链接
 type TmallMarketingLiuliangbaoSpreadlinkCreateAPIResponse struct {
 	model.CommonResponse
 	TmallMarketingLiuliangbaoSpreadlinkCreateAPIResponseModel

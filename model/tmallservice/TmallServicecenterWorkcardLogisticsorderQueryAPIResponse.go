@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardLogisticsorderQueryAPIResponse
-物流单信息查询 API返回值
-tmall.servicecenter.workcard.logisticsorder.query
-
-物流订单信息查询API */
+// TmallServicecenterWorkcardLogisticsorderQueryAPIResponse 物流单信息查询 API返回值
+// tmall.servicecenter.workcard.logisticsorder.query
+//
+// 物流订单信息查询API
 type TmallServicecenterWorkcardLogisticsorderQueryAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardLogisticsorderQueryAPIResponseModel

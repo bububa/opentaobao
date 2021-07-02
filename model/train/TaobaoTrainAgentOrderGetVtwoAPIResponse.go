@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentOrderGetVtwoAPIResponse
-代理商获取订单信息回调APIv2--增加鉴权校验 API返回值
-taobao.train.agent.order.get.vtwo
-
-代理商获取订单信息回调API */
+// TaobaoTrainAgentOrderGetVtwoAPIResponse 代理商获取订单信息回调APIv2--增加鉴权校验 API返回值
+// taobao.train.agent.order.get.vtwo
+//
+// 代理商获取订单信息回调API
 type TaobaoTrainAgentOrderGetVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentOrderGetVtwoAPIResponseModel

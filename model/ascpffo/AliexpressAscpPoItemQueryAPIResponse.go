@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAscpPoItemQueryAPIResponse
-AliExpress采购单明细查询API API返回值
-aliexpress.ascp.po.item.query
-
-AE 供应链仓发 采购单明细查询 */
+// AliexpressAscpPoItemQueryAPIResponse AliExpress采购单明细查询API API返回值
+// aliexpress.ascp.po.item.query
+//
+// AE 供应链仓发 采购单明细查询
 type AliexpressAscpPoItemQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressAscpPoItemQueryAPIResponseModel

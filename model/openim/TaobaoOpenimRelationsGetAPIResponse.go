@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimRelationsGetAPIResponse
-获取openim账号的聊天关系 API返回值
-taobao.openim.relations.get
-
-获取openim账号的聊天关系 */
+// TaobaoOpenimRelationsGetAPIResponse 获取openim账号的聊天关系 API返回值
+// taobao.openim.relations.get
+//
+// 获取openim账号的聊天关系
 type TaobaoOpenimRelationsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimRelationsGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMerchantBrandQueryAPIResponse
-品牌查询接口 API返回值
-alibaba.wdk.merchant.brand.query
-
-三江erp对接时，提供品牌查询的接口 */
+// AlibabaWdkMerchantBrandQueryAPIResponse 品牌查询接口 API返回值
+// alibaba.wdk.merchant.brand.query
+//
+// 三江erp对接时，提供品牌查询的接口
 type AlibabaWdkMerchantBrandQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMerchantBrandQueryAPIResponseModel

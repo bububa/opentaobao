@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizEslBindAPIResponse
-电子价签绑定接口 API返回值
-taobao.uscesl.biz.esl.bind
-
-电子价签商品绑定接口 */
+// TaobaoUsceslBizEslBindAPIResponse 电子价签绑定接口 API返回值
+// taobao.uscesl.biz.esl.bind
+//
+// 电子价签商品绑定接口
 type TaobaoUsceslBizEslBindAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsceslBizEslBindAPIResponseModel

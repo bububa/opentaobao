@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrFulfillLogisticsSyncAPIResponse
-同城配物流信息回传 API返回值
-tmall.nr.fulfill.logistics.sync
-
-同城配业务物流信息回传，通过接口将物流信息同步给天猫 */
+// TmallNrFulfillLogisticsSyncAPIResponse 同城配物流信息回传 API返回值
+// tmall.nr.fulfill.logistics.sync
+//
+// 同城配业务物流信息回传，通过接口将物流信息同步给天猫
 type TmallNrFulfillLogisticsSyncAPIResponse struct {
 	model.CommonResponse
 	TmallNrFulfillLogisticsSyncAPIResponseModel

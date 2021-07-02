@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDegoperationCreateqrcodeAPIRequest
-中奖生成二维码 API请求
-taobao.degoperation.createqrcode
-
-用户中奖后，生成二维码图片链接 */
+// TaobaoDegoperationCreateqrcodeAPIRequest 中奖生成二维码 API请求
+// taobao.degoperation.createqrcode
+//
+// 用户中奖后，生成二维码图片链接
 type TaobaoDegoperationCreateqrcodeAPIRequest struct {
 	model.Params
 	// 设备id

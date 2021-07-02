@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alilabs"
 )
 
-/* TaobaoAilabAicloudTopHotwordsUpdate
-更新热词
-taobao.ailab.aicloud.top.hotwords.update
-
-更新ASR热词 */
+// TaobaoAilabAicloudTopHotwordsUpdate 更新热词
+// taobao.ailab.aicloud.top.hotwords.update
+//
+// 更新ASR热词
 func TaobaoAilabAicloudTopHotwordsUpdate(clt *core.SDKClient, req *alilabs.TaobaoAilabAicloudTopHotwordsUpdateAPIRequest, session string) (*alilabs.TaobaoAilabAicloudTopHotwordsUpdateAPIResponse, error) {
 	var resp alilabs.TaobaoAilabAicloudTopHotwordsUpdateAPIResponse
 	err := clt.Post(req, &resp, session)

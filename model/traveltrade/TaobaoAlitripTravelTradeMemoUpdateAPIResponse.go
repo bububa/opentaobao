@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelTradeMemoUpdateAPIResponse
-修改一笔交易备注 API返回值
-taobao.alitrip.travel.trade.memo.update
-
-更新一笔交易备注 */
+// TaobaoAlitripTravelTradeMemoUpdateAPIResponse 修改一笔交易备注 API返回值
+// taobao.alitrip.travel.trade.memo.update
+//
+// 更新一笔交易备注
 type TaobaoAlitripTravelTradeMemoUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTravelTradeMemoUpdateAPIResponseModel

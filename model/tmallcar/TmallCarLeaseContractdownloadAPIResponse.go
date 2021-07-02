@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseContractdownloadAPIResponse
-天猫开新车租后合同下载 API返回值
-tmall.car.lease.contractdownload
-
-天猫开新车租后合同下载 */
+// TmallCarLeaseContractdownloadAPIResponse 天猫开新车租后合同下载 API返回值
+// tmall.car.lease.contractdownload
+//
+// 天猫开新车租后合同下载
 type TmallCarLeaseContractdownloadAPIResponse struct {
 	model.CommonResponse
 	TmallCarLeaseContractdownloadAPIResponseModel

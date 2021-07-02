@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/fans"
 )
 
-/* TmallFansCashpoolCreate
-创建资金池
-tmall.fans.cashpool.create
-
-商家创建资金池接口 */
+// TmallFansCashpoolCreate 创建资金池
+// tmall.fans.cashpool.create
+//
+// 商家创建资金池接口
 func TmallFansCashpoolCreate(clt *core.SDKClient, req *fans.TmallFansCashpoolCreateAPIRequest, session string) (*fans.TmallFansCashpoolCreateAPIResponse, error) {
 	var resp fans.TmallFansCashpoolCreateAPIResponse
 	err := clt.Post(req, &resp, session)

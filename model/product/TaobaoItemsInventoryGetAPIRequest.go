@@ -6,13 +6,12 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemsInventoryGetAPIRequest
-得到当前会话用户库存中的商品列表 API请求
-taobao.items.inventory.get
-
-获取当前用户作为卖家的仓库中的商品列表，并能根据传入的搜索条件对仓库中的商品列表进行过滤
-只能获得商品的部分信息，商品的详细信息请通过taobao.item.seller.get获取<br/>
-<strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong> */
+// TaobaoItemsInventoryGetAPIRequest 得到当前会话用户库存中的商品列表 API请求
+// taobao.items.inventory.get
+//
+// 获取当前用户作为卖家的仓库中的商品列表，并能根据传入的搜索条件对仓库中的商品列表进行过滤
+// 只能获得商品的部分信息，商品的详细信息请通过taobao.item.seller.get获取<br/>
+// <strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 type TaobaoItemsInventoryGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表。可选值为 Item 商品结构体中的以下字段： approve_status,num_iid,title,nick,type,cid,pic_url,num,props,valid_thru, list_time,price,has_discount,has_invoice,has_warranty,has_showcase, modified,delist_time,postage_id,seller_cids,outer_id；字段之间用“,”分隔。<br> 不支持其他字段，如果需要获取其他字段数据，调用taobao.item.seller.get。

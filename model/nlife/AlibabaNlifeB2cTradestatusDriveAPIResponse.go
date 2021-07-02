@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2cTradestatusDriveAPIResponse
-b2c订单状态驱动 API返回值
-alibaba.nlife.b2c.tradestatus.drive
-
-用于驱动零售+订单状态 */
+// AlibabaNlifeB2cTradestatusDriveAPIResponse b2c订单状态驱动 API返回值
+// alibaba.nlife.b2c.tradestatus.drive
+//
+// 用于驱动零售+订单状态
 type AlibabaNlifeB2cTradestatusDriveAPIResponse struct {
 	model.CommonResponse
 	AlibabaNlifeB2cTradestatusDriveAPIResponseModel

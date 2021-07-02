@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDeliveryTemplateUpdateAPIResponse
-修改运费模板 API返回值
-taobao.delivery.template.update
-
-修改运费模板 */
+// TaobaoDeliveryTemplateUpdateAPIResponse 修改运费模板 API返回值
+// taobao.delivery.template.update
+//
+// 修改运费模板
 type TaobaoDeliveryTemplateUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoDeliveryTemplateUpdateAPIResponseModel

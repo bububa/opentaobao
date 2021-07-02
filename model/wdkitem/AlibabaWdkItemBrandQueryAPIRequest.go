@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkItemBrandQueryAPIRequest
-品牌信息查询 API请求
-alibaba.wdk.item.brand.query
-
-品牌信息查询 */
+// AlibabaWdkItemBrandQueryAPIRequest 品牌信息查询 API请求
+// alibaba.wdk.item.brand.query
+//
+// 品牌信息查询
 type AlibabaWdkItemBrandQueryAPIRequest struct {
 	model.Params
 	// 查询关键词，不填则查询全部

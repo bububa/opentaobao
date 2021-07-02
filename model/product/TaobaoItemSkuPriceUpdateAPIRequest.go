@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemSkuPriceUpdateAPIRequest
-更新商品SKU的价格 API请求
-taobao.item.sku.price.update
-
-更新商品SKU的价格 */
+// TaobaoItemSkuPriceUpdateAPIRequest 更新商品SKU的价格 API请求
+// taobao.item.sku.price.update
+//
+// 更新商品SKU的价格
 type TaobaoItemSkuPriceUpdateAPIRequest struct {
 	model.Params
 	// Sku所属商品数字id，可通过 taobao.item.get 获取

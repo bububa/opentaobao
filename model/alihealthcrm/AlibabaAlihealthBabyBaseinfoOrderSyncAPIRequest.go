@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest
-alibaba.alihealth.baby.baseinfo.order.sync API请求
-alibaba.alihealth.baby.baseinfo.order.sync
-
-育学园将订单信息回传给我们 */
+// AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest alibaba.alihealth.baby.baseinfo.order.sync API请求
+// alibaba.alihealth.baby.baseinfo.order.sync
+//
+// 育学园将订单信息回传给我们
 type AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest struct {
 	model.Params
 	// 健康id

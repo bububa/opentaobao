@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionmiscMjsActivityGetAPIResponse
-查询满就送活动 API返回值
-taobao.promotionmisc.mjs.activity.get
-
-查询满就送活动 */
+// TaobaoPromotionmiscMjsActivityGetAPIResponse 查询满就送活动 API返回值
+// taobao.promotionmisc.mjs.activity.get
+//
+// 查询满就送活动
 type TaobaoPromotionmiscMjsActivityGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionmiscMjsActivityGetAPIResponseModel

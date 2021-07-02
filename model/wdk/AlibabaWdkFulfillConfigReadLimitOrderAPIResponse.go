@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkFulfillConfigReadLimitOrderAPIResponse
-根据仓code查询仓限单配置 API返回值
-alibaba.wdk.fulfill.config.read.limit.order
-
-根据仓code查询仓限单配置 */
+// AlibabaWdkFulfillConfigReadLimitOrderAPIResponse 根据仓code查询仓限单配置 API返回值
+// alibaba.wdk.fulfill.config.read.limit.order
+//
+// 根据仓code查询仓限单配置
 type AlibabaWdkFulfillConfigReadLimitOrderAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkFulfillConfigReadLimitOrderAPIResponseModel

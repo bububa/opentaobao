@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSubwayAutomatchRptGetAPIResponse
-查询流量智选天级报告 API返回值
-taobao.subway.automatch.rpt.get
-
-查询流量智选天级报告 */
+// TaobaoSubwayAutomatchRptGetAPIResponse 查询流量智选天级报告 API返回值
+// taobao.subway.automatch.rpt.get
+//
+// 查询流量智选天级报告
 type TaobaoSubwayAutomatchRptGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSubwayAutomatchRptGetAPIResponseModel

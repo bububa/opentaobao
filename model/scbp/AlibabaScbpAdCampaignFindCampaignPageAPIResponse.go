@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdCampaignFindCampaignPageAPIResponse
-分页查询计划 API返回值
-alibaba.scbp.ad.campaign.find.campaign.page
-
-分页查询计划 */
+// AlibabaScbpAdCampaignFindCampaignPageAPIResponse 分页查询计划 API返回值
+// alibaba.scbp.ad.campaign.find.campaign.page
+//
+// 分页查询计划
 type AlibabaScbpAdCampaignFindCampaignPageAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdCampaignFindCampaignPageAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaChongzhiQueryecardsAPIResponse
-查询指定商家的可用的话费宝贝接口 API返回值
-alibaba.chongzhi.queryecards
-
-查询指定商家的可用的话费宝贝 */
+// AlibabaChongzhiQueryecardsAPIResponse 查询指定商家的可用的话费宝贝接口 API返回值
+// alibaba.chongzhi.queryecards
+//
+// 查询指定商家的可用的话费宝贝
 type AlibabaChongzhiQueryecardsAPIResponse struct {
 	model.CommonResponse
 	AlibabaChongzhiQueryecardsAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinVaccinateCompleteAPIRequest
-接种完成反馈接口 API请求
-alibaba.health.vaccin.vaccinate.complete
-
-ISV 将用户完成接种的疫苗同步给免疫规划中心 */
+// AlibabaHealthVaccinVaccinateCompleteAPIRequest 接种完成反馈接口 API请求
+// alibaba.health.vaccin.vaccinate.complete
+//
+// ISV 将用户完成接种的疫苗同步给免疫规划中心
 type AlibabaHealthVaccinVaccinateCompleteAPIRequest struct {
 	model.Params
 	// 支付宝用户 ID

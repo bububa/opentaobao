@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoGameDeliveryvoucherWatchAPIResponse
-监控预约数据 API返回值
-taobao.game.deliveryvoucher.watch
-
-监控预约数据 */
+// TaobaoGameDeliveryvoucherWatchAPIResponse 监控预约数据 API返回值
+// taobao.game.deliveryvoucher.watch
+//
+// 监控预约数据
 type TaobaoGameDeliveryvoucherWatchAPIResponse struct {
 	model.CommonResponse
 	TaobaoGameDeliveryvoucherWatchAPIResponseModel

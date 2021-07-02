@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAplatformWeakgetAPIResponse
-活动平台弱登录接口 API返回值
-taobao.aplatform.weakget
-
-无线活动平台的开放接口，提供商品信息等的读操作 */
+// TaobaoAplatformWeakgetAPIResponse 活动平台弱登录接口 API返回值
+// taobao.aplatform.weakget
+//
+// 无线活动平台的开放接口，提供商品信息等的读操作
 type TaobaoAplatformWeakgetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAplatformWeakgetAPIResponseModel

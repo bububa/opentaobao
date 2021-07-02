@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTxcsFinanceInvoiceInputAPIResponse
-供应商发票录入 API返回值
-tmall.txcs.finance.invoice.input
-
-提供天猫超市外部合作商家财务：供应商发票录入 */
+// TmallTxcsFinanceInvoiceInputAPIResponse 供应商发票录入 API返回值
+// tmall.txcs.finance.invoice.input
+//
+// 提供天猫超市外部合作商家财务：供应商发票录入
 type TmallTxcsFinanceInvoiceInputAPIResponse struct {
 	model.CommonResponse
 	TmallTxcsFinanceInvoiceInputAPIResponseModel

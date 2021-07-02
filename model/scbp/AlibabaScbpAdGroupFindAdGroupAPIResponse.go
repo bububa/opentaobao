@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdGroupFindAdGroupAPIResponse
-查询推广组 API返回值
-alibaba.scbp.ad.group.find.ad.group
-
-查询推广组 */
+// AlibabaScbpAdGroupFindAdGroupAPIResponse 查询推广组 API返回值
+// alibaba.scbp.ad.group.find.ad.group
+//
+// 查询推广组
 type AlibabaScbpAdGroupFindAdGroupAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdGroupFindAdGroupAPIResponseModel

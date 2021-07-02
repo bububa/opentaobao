@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaServicecenterSpserviceorderQueryAPIResponse
-服务供应链服务单查询 API返回值
-alibaba.servicecenter.spserviceorder.query
-
-服务供应链服务单查询，服务商通过此接口拉取用户的购买的服务信息，以此为依据为用户提供安装维修等服务 */
+// AlibabaServicecenterSpserviceorderQueryAPIResponse 服务供应链服务单查询 API返回值
+// alibaba.servicecenter.spserviceorder.query
+//
+// 服务供应链服务单查询，服务商通过此接口拉取用户的购买的服务信息，以此为依据为用户提供安装维修等服务
 type AlibabaServicecenterSpserviceorderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaServicecenterSpserviceorderQueryAPIResponseModel

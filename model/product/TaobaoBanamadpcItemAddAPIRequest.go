@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBanamadpcItemAddAPIRequest
-新发商品 API请求
-taobao.banamadpc.item.add
-
-巴拿马供应商通过此接口新发商品 */
+// TaobaoBanamadpcItemAddAPIRequest 新发商品 API请求
+// taobao.banamadpc.item.add
+//
+// 巴拿马供应商通过此接口新发商品
 type TaobaoBanamadpcItemAddAPIRequest struct {
 	model.Params
 	// 类目id

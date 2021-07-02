@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTotoroAuxproductPushAPIResponse
-廉航辅营产品投放 API返回值
-taobao.alitrip.totoro.auxproduct.push
-
-廉航辅营产品投放接口 */
+// TaobaoAlitripTotoroAuxproductPushAPIResponse 廉航辅营产品投放 API返回值
+// taobao.alitrip.totoro.auxproduct.push
+//
+// 廉航辅营产品投放接口
 type TaobaoAlitripTotoroAuxproductPushAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTotoroAuxproductPushAPIResponseModel

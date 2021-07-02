@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMobilePromotionCouponApplyAPIRequest
-优惠券领取(手淘专用) API请求
-taobao.mobile.promotion.coupon.apply
-
-优惠券领取 */
+// TaobaoMobilePromotionCouponApplyAPIRequest 优惠券领取(手淘专用) API请求
+// taobao.mobile.promotion.coupon.apply
+//
+// 优惠券领取
 type TaobaoMobilePromotionCouponApplyAPIRequest struct {
 	model.Params
 	// 请求唯一id，问题排查

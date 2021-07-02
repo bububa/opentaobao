@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWangwangAbstractDeletewordAPIResponse
-删除关键词 API返回值
-taobao.wangwang.abstract.deleteword
-
-删除关键词，只支持json返回 */
+// TaobaoWangwangAbstractDeletewordAPIResponse 删除关键词 API返回值
+// taobao.wangwang.abstract.deleteword
+//
+// 删除关键词，只支持json返回
 type TaobaoWangwangAbstractDeletewordAPIResponse struct {
 	model.CommonResponse
 	TaobaoWangwangAbstractDeletewordAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbOrderCreateAPIRequest
-创建物流宝订单 API请求
-taobao.wlb.order.create
-
-创建物流宝订单，由外部ISV或者ERP，Elink，淘宝交易产生 */
+// TaobaoWlbOrderCreateAPIRequest 创建物流宝订单 API请求
+// taobao.wlb.order.create
+//
+// 创建物流宝订单，由外部ISV或者ERP，Elink，淘宝交易产生
 type TaobaoWlbOrderCreateAPIRequest struct {
 	model.Params
 	// 投递时延要求:  （1）INSTANT_ARRIVED： 当日达  （2）TOMMORROY_MORNING_ARRIVED：次晨达  （3）TOMMORROY_ARRIVED：次日达  （4）工作日：WORK_DAY  （5）节假日：WEEKED_DAY

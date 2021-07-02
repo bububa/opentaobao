@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBeehiveItemCpsUrlAPIResponse
-分佣链接生成接口 API返回值
-taobao.beehive.item.cps.url
-
-传入包括itemId,accountId,bizType在内的参数，对应参数返回分佣链接 */
+// TaobaoBeehiveItemCpsUrlAPIResponse 分佣链接生成接口 API返回值
+// taobao.beehive.item.cps.url
+//
+// 传入包括itemId,accountId,bizType在内的参数，对应参数返回分佣链接
 type TaobaoBeehiveItemCpsUrlAPIResponse struct {
 	model.CommonResponse
 	TaobaoBeehiveItemCpsUrlAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionCouponAddAPIResponse
-创建店铺优惠券接口 API返回值
-taobao.promotion.coupon.add
-
-创建店铺优惠券。有效期内的店铺优惠券总数量不超过50张 */
+// TaobaoPromotionCouponAddAPIResponse 创建店铺优惠券接口 API返回值
+// taobao.promotion.coupon.add
+//
+// 创建店铺优惠券。有效期内的店铺优惠券总数量不超过50张
 type TaobaoPromotionCouponAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionCouponAddAPIResponseModel

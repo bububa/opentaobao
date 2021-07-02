@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleRentOrderSenditemAPIRequest
-确认发货 API请求
-alibaba.idle.rent.order.senditem
-
-确认发货 */
+// AlibabaIdleRentOrderSenditemAPIRequest 确认发货 API请求
+// alibaba.idle.rent.order.senditem
+//
+// 确认发货
 type AlibabaIdleRentOrderSenditemAPIRequest struct {
 	model.Params
 	// 订单id

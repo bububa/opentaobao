@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRefundsApplyGetAPIResponse
-查询买家申请的退款列表 API返回值
-taobao.refunds.apply.get
-
-查询买家申请的退款列表，且查询外店的退款列表时需要指定交易类型 */
+// TaobaoRefundsApplyGetAPIResponse 查询买家申请的退款列表 API返回值
+// taobao.refunds.apply.get
+//
+// 查询买家申请的退款列表，且查询外店的退款列表时需要指定交易类型
 type TaobaoRefundsApplyGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoRefundsApplyGetAPIResponseModel

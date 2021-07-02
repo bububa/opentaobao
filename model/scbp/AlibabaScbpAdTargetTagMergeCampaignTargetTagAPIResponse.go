@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIResponse
-标签增删改 API返回值
-alibaba.scbp.ad.target.tag.merge.campaign.target.tag
-
-标签增删改 */
+// AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIResponse 标签增删改 API返回值
+// alibaba.scbp.ad.target.tag.merge.campaign.target.tag
+//
+// 标签增删改
 type AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIResponseModel

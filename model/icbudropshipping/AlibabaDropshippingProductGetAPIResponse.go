@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDropshippingProductGetAPIResponse
-阿里巴巴dropshipping 产品信息获取 API返回值
-alibaba.dropshipping.product.get
-
-阿里巴巴dropshipping 产品信息获取 */
+// AlibabaDropshippingProductGetAPIResponse 阿里巴巴dropshipping 产品信息获取 API返回值
+// alibaba.dropshipping.product.get
+//
+// 阿里巴巴dropshipping 产品信息获取
 type AlibabaDropshippingProductGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaDropshippingProductGetAPIResponseModel

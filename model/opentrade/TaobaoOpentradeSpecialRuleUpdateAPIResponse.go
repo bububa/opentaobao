@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeSpecialRuleUpdateAPIResponse
-专属下单更新限购规则 API返回值
-taobao.opentrade.special.rule.update
-
-对于专属下单的交易场景更新限购规则 */
+// TaobaoOpentradeSpecialRuleUpdateAPIResponse 专属下单更新限购规则 API返回值
+// taobao.opentrade.special.rule.update
+//
+// 对于专属下单的交易场景更新限购规则
 type TaobaoOpentradeSpecialRuleUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeSpecialRuleUpdateAPIResponseModel

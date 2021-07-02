@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentAdvertManagescheduleAPIResponse
-广告牌照管控修改 API返回值
-yunos.tvpubadmin.content.advert.manageschedule
-
-广告牌照管控修改 */
+// YunosTvpubadminContentAdvertManagescheduleAPIResponse 广告牌照管控修改 API返回值
+// yunos.tvpubadmin.content.advert.manageschedule
+//
+// 广告牌照管控修改
 type YunosTvpubadminContentAdvertManagescheduleAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentAdvertManagescheduleAPIResponseModel

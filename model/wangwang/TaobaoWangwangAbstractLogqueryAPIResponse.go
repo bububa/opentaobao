@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWangwangAbstractLogqueryAPIResponse
-模糊聊天记录查询 API返回值
-taobao.wangwang.abstract.logquery
-
-模糊聊天记录查询 */
+// TaobaoWangwangAbstractLogqueryAPIResponse 模糊聊天记录查询 API返回值
+// taobao.wangwang.abstract.logquery
+//
+// 模糊聊天记录查询
 type TaobaoWangwangAbstractLogqueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoWangwangAbstractLogqueryAPIResponseModel

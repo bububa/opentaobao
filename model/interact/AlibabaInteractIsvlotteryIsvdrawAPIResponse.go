@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractIsvlotteryIsvdrawAPIResponse
-天猫奖池鉴权接口 API返回值
-alibaba.interact.isvlottery.isvdraw
-
-鉴权接口，为tida.isvdraw接口鉴权 */
+// AlibabaInteractIsvlotteryIsvdrawAPIResponse 天猫奖池鉴权接口 API返回值
+// alibaba.interact.isvlottery.isvdraw
+//
+// 鉴权接口，为tida.isvdraw接口鉴权
 type AlibabaInteractIsvlotteryIsvdrawAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractIsvlotteryIsvdrawAPIResponseModel

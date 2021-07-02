@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordAddAPIRequest
-外贸直通车加词 API请求
-alibaba.scbp.ad.keyword.add
-
-外贸直通车加词服务 */
+// AlibabaScbpAdKeywordAddAPIRequest 外贸直通车加词 API请求
+// alibaba.scbp.ad.keyword.add
+//
+// 外贸直通车加词服务
 type AlibabaScbpAdKeywordAddAPIRequest struct {
 	model.Params
 	// 加入的词

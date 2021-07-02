@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttPayOrderAuthpayAPIRequest
-委托代扣服务 API请求
-youku.ott.pay.order.authpay
-
-应用中心sdk连续包月委托代扣服务 */
+// YoukuOttPayOrderAuthpayAPIRequest 委托代扣服务 API请求
+// youku.ott.pay.order.authpay
+//
+// 应用中心sdk连续包月委托代扣服务
 type YoukuOttPayOrderAuthpayAPIRequest struct {
 	model.Params
 	// cp用户名

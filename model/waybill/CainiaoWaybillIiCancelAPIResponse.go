@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoWaybillIiCancelAPIResponse
-商家取消获取的电子面单号 API返回值
-cainiao.waybill.ii.cancel
-
-面单号有误需要取消的时候，调用该接口取消获取的电子面单。 */
+// CainiaoWaybillIiCancelAPIResponse 商家取消获取的电子面单号 API返回值
+// cainiao.waybill.ii.cancel
+//
+// 面单号有误需要取消的时候，调用该接口取消获取的电子面单。
 type CainiaoWaybillIiCancelAPIResponse struct {
 	model.CommonResponse
 	CainiaoWaybillIiCancelAPIResponseModel

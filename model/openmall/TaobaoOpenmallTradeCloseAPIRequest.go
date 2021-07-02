@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallTradeCloseAPIRequest
-关闭订单 API请求
-taobao.openmall.trade.close
-
-关闭订单 */
+// TaobaoOpenmallTradeCloseAPIRequest 关闭订单 API请求
+// taobao.openmall.trade.close
+//
+// 关闭订单
 type TaobaoOpenmallTradeCloseAPIRequest struct {
 	model.Params
 	// 分销者信息

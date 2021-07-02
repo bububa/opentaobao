@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/ihome"
 )
 
-/* AlibabaIhomeCtomContentPublishStatus
-实拍图发布审核状态查询API
-alibaba.ihome.ctom.content.publish.status
-
-实拍图发布审核状态查询API */
+// AlibabaIhomeCtomContentPublishStatus 实拍图发布审核状态查询API
+// alibaba.ihome.ctom.content.publish.status
+//
+// 实拍图发布审核状态查询API
 func AlibabaIhomeCtomContentPublishStatus(clt *core.SDKClient, req *ihome.AlibabaIhomeCtomContentPublishStatusAPIRequest, session string) (*ihome.AlibabaIhomeCtomContentPublishStatusAPIResponse, error) {
 	var resp ihome.AlibabaIhomeCtomContentPublishStatusAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkDgMaterialOptionalAPIRequest
-淘宝客-推广者-物料搜索 API请求
-taobao.tbk.dg.material.optional
-
-通用物料搜索API（导购） */
+// TaobaoTbkDgMaterialOptionalAPIRequest 淘宝客-推广者-物料搜索 API请求
+// taobao.tbk.dg.material.optional
+//
+// 通用物料搜索API（导购）
 type TaobaoTbkDgMaterialOptionalAPIRequest struct {
 	model.Params
 	// 商品筛选(特定媒体支持)-店铺dsr评分。筛选大于等于当前设置的店铺dsr评分的商品0-50000之间

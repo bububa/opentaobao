@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpProductStatusUpdateAPIResponse
-修改P4P产品推广状态 API返回值
-alibaba.scbp.product.status.update
-
-修改P4P产品推广状态 */
+// AlibabaScbpProductStatusUpdateAPIResponse 修改P4P产品推广状态 API返回值
+// alibaba.scbp.product.status.update
+//
+// 修改P4P产品推广状态
 type AlibabaScbpProductStatusUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpProductStatusUpdateAPIResponseModel

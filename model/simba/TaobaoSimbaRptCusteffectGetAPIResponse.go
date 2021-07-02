@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptCusteffectGetAPIResponse
-用户账户报表效果数据查询（只有汇总数据，无分类数据） API返回值
-taobao.simba.rpt.custeffect.get
-
-用户账户报表效果数据查询（只有汇总数据，无分类数据） */
+// TaobaoSimbaRptCusteffectGetAPIResponse 用户账户报表效果数据查询（只有汇总数据，无分类数据） API返回值
+// taobao.simba.rpt.custeffect.get
+//
+// 用户账户报表效果数据查询（只有汇总数据，无分类数据）
 type TaobaoSimbaRptCusteffectGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaRptCusteffectGetAPIResponseModel

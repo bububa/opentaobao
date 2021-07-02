@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIfpFulfillWarehouseTokenQueryAPIResponse
-同城令牌打印接口 API返回值
-alibaba.ifp.fulfill.warehouse.token.query
-
-用于仓内作业打印包裹信息 */
+// AlibabaIfpFulfillWarehouseTokenQueryAPIResponse 同城令牌打印接口 API返回值
+// alibaba.ifp.fulfill.warehouse.token.query
+//
+// 用于仓内作业打印包裹信息
 type AlibabaIfpFulfillWarehouseTokenQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaIfpFulfillWarehouseTokenQueryAPIResponseModel

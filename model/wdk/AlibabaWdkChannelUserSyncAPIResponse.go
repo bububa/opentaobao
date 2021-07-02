@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkChannelUserSyncAPIResponse
-会员同步 API返回值
-alibaba.wdk.channel.user.sync
-
-会员同步 */
+// AlibabaWdkChannelUserSyncAPIResponse 会员同步 API返回值
+// alibaba.wdk.channel.user.sync
+//
+// 会员同步
 type AlibabaWdkChannelUserSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkChannelUserSyncAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyOrderQueryAPIResponse
-星河-单个订单详细信息查询 API返回值
-alitrip.merchant.galaxy.order.query
-
-为用户提供酒店订单的详细信息查询能力 */
+// AlitripMerchantGalaxyOrderQueryAPIResponse 星河-单个订单详细信息查询 API返回值
+// alitrip.merchant.galaxy.order.query
+//
+// 为用户提供酒店订单的详细信息查询能力
 type AlitripMerchantGalaxyOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlitripMerchantGalaxyOrderQueryAPIResponseModel

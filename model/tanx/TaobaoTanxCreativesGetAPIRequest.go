@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxCreativesGetAPIRequest
-批量获取DSP用户的创意审核结果 API请求
-taobao.tanx.creatives.get
-
-批量获取DSP用户的创意审核结果 */
+// TaobaoTanxCreativesGetAPIRequest 批量获取DSP用户的创意审核结果 API请求
+// taobao.tanx.creatives.get
+//
+// 批量获取DSP用户的创意审核结果
 type TaobaoTanxCreativesGetAPIRequest struct {
 	model.Params
 	// DSP的memberId

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsPassportAccountGetaccountinfoAPIResponse
-获取会员信息 API返回值
-alibaba.alisports.passport.account.getaccountinfo
-
-获取阿里体育会员信息 */
+// AlibabaAlisportsPassportAccountGetaccountinfoAPIResponse 获取会员信息 API返回值
+// alibaba.alisports.passport.account.getaccountinfo
+//
+// 获取阿里体育会员信息
 type AlibabaAlisportsPassportAccountGetaccountinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsPassportAccountGetaccountinfoAPIResponseModel

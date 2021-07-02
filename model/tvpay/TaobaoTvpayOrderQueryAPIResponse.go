@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTvpayOrderQueryAPIResponse
-tv支付查询订单状态 API返回值
-taobao.tvpay.order.query
-
-tv支付查询订单状态 */
+// TaobaoTvpayOrderQueryAPIResponse tv支付查询订单状态 API返回值
+// taobao.tvpay.order.query
+//
+// tv支付查询订单状态
 type TaobaoTvpayOrderQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoTvpayOrderQueryAPIResponseModel

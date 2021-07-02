@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-/* TaobaoXhotelBnbownerAdd
-民宿房东信息添加
-taobao.xhotel.bnbowner.add
-
-添加和更新民宿房东的信息 */
+// TaobaoXhotelBnbownerAdd 民宿房东信息添加
+// taobao.xhotel.bnbowner.add
+//
+// 添加和更新民宿房东的信息
 func TaobaoXhotelBnbownerAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbownerAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelBnbownerAddAPIResponse, error) {
 	var resp xhotelitem.TaobaoXhotelBnbownerAddAPIResponse
 	err := clt.Post(req, &resp, session)

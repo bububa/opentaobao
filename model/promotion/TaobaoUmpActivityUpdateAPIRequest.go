@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUmpActivityUpdateAPIRequest
-修改活动信息 API请求
-taobao.ump.activity.update
-
-修改营销活动 */
+// TaobaoUmpActivityUpdateAPIRequest 修改活动信息 API请求
+// taobao.ump.activity.update
+//
+// 修改营销活动
 type TaobaoUmpActivityUpdateAPIRequest struct {
 	model.Params
 	// 活动id

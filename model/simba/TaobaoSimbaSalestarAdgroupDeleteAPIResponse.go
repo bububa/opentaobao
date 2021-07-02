@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSalestarAdgroupDeleteAPIResponse
-(新)销量明星删除推广单元接口 API返回值
-taobao.simba.salestar.adgroup.delete
-
-删除一个推广组 */
+// TaobaoSimbaSalestarAdgroupDeleteAPIResponse (新)销量明星删除推广单元接口 API返回值
+// taobao.simba.salestar.adgroup.delete
+//
+// 删除一个推广组
 type TaobaoSimbaSalestarAdgroupDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaSalestarAdgroupDeleteAPIResponseModel

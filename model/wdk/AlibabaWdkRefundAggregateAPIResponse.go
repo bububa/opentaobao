@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkRefundAggregateAPIResponse
-淘鲜达退款单按门店聚合查询 API返回值
-alibaba.wdk.refund.aggregate
-
-淘鲜达退款单按门店聚合查询 */
+// AlibabaWdkRefundAggregateAPIResponse 淘鲜达退款单按门店聚合查询 API返回值
+// alibaba.wdk.refund.aggregate
+//
+// 淘鲜达退款单按门店聚合查询
 type AlibabaWdkRefundAggregateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkRefundAggregateAPIResponseModel

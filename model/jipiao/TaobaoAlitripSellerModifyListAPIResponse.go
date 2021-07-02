@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripSellerModifyListAPIResponse
-【机票代理商订单】改签订单列表 API返回值
-taobao.alitrip.seller.modify.list
-
-提供机票代理商查询改签订单列表 */
+// TaobaoAlitripSellerModifyListAPIResponse 【机票代理商订单】改签订单列表 API返回值
+// taobao.alitrip.seller.modify.list
+//
+// 提供机票代理商查询改签订单列表
 type TaobaoAlitripSellerModifyListAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripSellerModifyListAPIResponseModel

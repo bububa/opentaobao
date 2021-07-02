@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* XiamiContentArtistInfoQueryAPIRequest
-搜索艺人列表 API请求
-xiami.content.artist.info.query
-
-根据查询条件，搜索相关艺人列表 */
+// XiamiContentArtistInfoQueryAPIRequest 搜索艺人列表 API请求
+// xiami.content.artist.info.query
+//
+// 根据查询条件，搜索相关艺人列表
 type XiamiContentArtistInfoQueryAPIRequest struct {
 	model.Params
 	// 性别：1男性 2女性 3乐队

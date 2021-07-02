@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailElectronicCertificatePreConfirmAPIResponse
-贩卖机开始核销接口 API返回值
-alibaba.retail.electronic.certificate.pre.confirm
-
-零售终端贩卖机开始核销接口,返回待领的商品ID */
+// AlibabaRetailElectronicCertificatePreConfirmAPIResponse 贩卖机开始核销接口 API返回值
+// alibaba.retail.electronic.certificate.pre.confirm
+//
+// 零售终端贩卖机开始核销接口,返回待领的商品ID
 type AlibabaRetailElectronicCertificatePreConfirmAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailElectronicCertificatePreConfirmAPIResponseModel

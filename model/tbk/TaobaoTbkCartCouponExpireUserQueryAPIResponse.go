@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkCartCouponExpireUserQueryAPIResponse
-购物车催付优惠券到期查询用户信息 API返回值
-taobao.tbk.cart.coupon.expire.user.query
-
-购物车催付根据对应规则查询用户信息。 */
+// TaobaoTbkCartCouponExpireUserQueryAPIResponse 购物车催付优惠券到期查询用户信息 API返回值
+// taobao.tbk.cart.coupon.expire.user.query
+//
+// 购物车催付根据对应规则查询用户信息。
 type TaobaoTbkCartCouponExpireUserQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkCartCouponExpireUserQueryAPIResponseModel

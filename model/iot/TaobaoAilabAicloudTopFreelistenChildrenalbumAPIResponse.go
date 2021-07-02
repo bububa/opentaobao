@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopFreelistenChildrenalbumAPIResponse
-儿童音频列表 API返回值
-taobao.ailab.aicloud.top.freelisten.childrenalbum
-
-儿童音频列表 */
+// TaobaoAilabAicloudTopFreelistenChildrenalbumAPIResponse 儿童音频列表 API返回值
+// taobao.ailab.aicloud.top.freelisten.childrenalbum
+//
+// 儿童音频列表
 type TaobaoAilabAicloudTopFreelistenChildrenalbumAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopFreelistenChildrenalbumAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMsfReceiveAPIResponse
-签收接口 API返回值
-tmall.msf.receive
-
-签收接口 */
+// TmallMsfReceiveAPIResponse 签收接口 API返回值
+// tmall.msf.receive
+//
+// 签收接口
 type TmallMsfReceiveAPIResponse struct {
 	model.CommonResponse
 	TmallMsfReceiveAPIResponseModel

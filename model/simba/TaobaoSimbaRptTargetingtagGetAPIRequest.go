@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptTargetingtagGetAPIRequest
-搜索人群离线报表 API请求
-taobao.simba.rpt.targetingtag.get
-
-获取搜搜人群实时报表 */
+// TaobaoSimbaRptTargetingtagGetAPIRequest 搜索人群离线报表 API请求
+// taobao.simba.rpt.targetingtag.get
+//
+// 获取搜搜人群实时报表
 type TaobaoSimbaRptTargetingtagGetAPIRequest struct {
 	model.Params
 	// 用户旺旺名称

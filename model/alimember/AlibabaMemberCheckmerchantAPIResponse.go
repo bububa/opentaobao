@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMemberCheckmerchantAPIResponse
-校验商家身份 API返回值
-alibaba.member.checkmerchant
-
-校验商家身份 */
+// AlibabaMemberCheckmerchantAPIResponse 校验商家身份 API返回值
+// alibaba.member.checkmerchant
+//
+// 校验商家身份
 type AlibabaMemberCheckmerchantAPIResponse struct {
 	model.CommonResponse
 	AlibabaMemberCheckmerchantAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentTableauditQuerymetaitemAPIResponse
-运营位管控-查询魔盒运营位元数据列表 API返回值
-yunos.tvpubadmin.content.tableaudit.querymetaitem
-
-运营位管控-查询魔盒运营位元数据列表 */
+// YunosTvpubadminContentTableauditQuerymetaitemAPIResponse 运营位管控-查询魔盒运营位元数据列表 API返回值
+// yunos.tvpubadmin.content.tableaudit.querymetaitem
+//
+// 运营位管控-查询魔盒运营位元数据列表
 type YunosTvpubadminContentTableauditQuerymetaitemAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentTableauditQuerymetaitemAPIResponseModel

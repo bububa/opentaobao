@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIResponse
-19-销售预测数量（销管）回传接口 API返回值
-alibaba.tmallgenie.scp.plan.saleforcast.saler.upload
-
-销售预测数量（销管）回传接口 */
+// AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIResponse 19-销售预测数量（销管）回传接口 API返回值
+// alibaba.tmallgenie.scp.plan.saleforcast.saler.upload
+//
+// 销售预测数量（销管）回传接口
 type AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIResponseModel

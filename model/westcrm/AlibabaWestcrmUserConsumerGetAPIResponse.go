@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmUserConsumerGetAPIResponse
-获取指定用户的消费总额 API返回值
-alibaba.westcrm.user.consumer.get
-
-获取指定用户的消费总额 */
+// AlibabaWestcrmUserConsumerGetAPIResponse 获取指定用户的消费总额 API返回值
+// alibaba.westcrm.user.consumer.get
+//
+// 获取指定用户的消费总额
 type AlibabaWestcrmUserConsumerGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWestcrmUserConsumerGetAPIResponseModel

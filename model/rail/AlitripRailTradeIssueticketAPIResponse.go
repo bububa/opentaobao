@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripRailTradeIssueticketAPIResponse
-德铁出票成功接口 API返回值
-alitrip.rail.trade.issueticket
-
-出票成功回调接口 */
+// AlitripRailTradeIssueticketAPIResponse 德铁出票成功接口 API返回值
+// alitrip.rail.trade.issueticket
+//
+// 出票成功回调接口
 type AlitripRailTradeIssueticketAPIResponse struct {
 	model.CommonResponse
 	AlitripRailTradeIssueticketAPIResponseModel

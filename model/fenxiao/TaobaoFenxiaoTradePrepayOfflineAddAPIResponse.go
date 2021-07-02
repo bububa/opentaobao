@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoTradePrepayOfflineAddAPIResponse
-线下预存款流水增加 API返回值
-taobao.fenxiao.trade.prepay.offline.add
-
-渠道分销供应商上传线下流水预存款（增加） */
+// TaobaoFenxiaoTradePrepayOfflineAddAPIResponse 线下预存款流水增加 API返回值
+// taobao.fenxiao.trade.prepay.offline.add
+//
+// 渠道分销供应商上传线下流水预存款（增加）
 type TaobaoFenxiaoTradePrepayOfflineAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoTradePrepayOfflineAddAPIResponseModel

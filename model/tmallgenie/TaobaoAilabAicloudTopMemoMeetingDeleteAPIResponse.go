@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoMeetingDeleteAPIResponse
-天猫精灵会议删除 API返回值
-taobao.ailab.aicloud.top.memo.meeting.delete
-
-天猫精灵会议删除 */
+// TaobaoAilabAicloudTopMemoMeetingDeleteAPIResponse 天猫精灵会议删除 API返回值
+// taobao.ailab.aicloud.top.memo.meeting.delete
+//
+// 天猫精灵会议删除
 type TaobaoAilabAicloudTopMemoMeetingDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMemoMeetingDeleteAPIResponseModel

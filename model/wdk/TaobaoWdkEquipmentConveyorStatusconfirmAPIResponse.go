@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWdkEquipmentConveyorStatusconfirmAPIResponse
-悬挂链状态回传确认 API返回值
-taobao.wdk.equipment.conveyor.statusconfirm
-
-悬挂链状态回传确认 */
+// TaobaoWdkEquipmentConveyorStatusconfirmAPIResponse 悬挂链状态回传确认 API返回值
+// taobao.wdk.equipment.conveyor.statusconfirm
+//
+// 悬挂链状态回传确认
 type TaobaoWdkEquipmentConveyorStatusconfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoWdkEquipmentConveyorStatusconfirmAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelAllianceSettleOrderSynAPIResponse
-菲住联盟分账成功订单同步 API返回值
-alitrip.hotel.alliance.settle.order.syn
-
-用于菲住联盟分账成功订单同步 */
+// AlitripHotelAllianceSettleOrderSynAPIResponse 菲住联盟分账成功订单同步 API返回值
+// alitrip.hotel.alliance.settle.order.syn
+//
+// 用于菲住联盟分账成功订单同步
 type AlitripHotelAllianceSettleOrderSynAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelAllianceSettleOrderSynAPIResponseModel

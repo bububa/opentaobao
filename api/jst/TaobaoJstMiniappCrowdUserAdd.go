@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-/* TaobaoJstMiniappCrowdUserAdd
-小程序添加用户到指定的活动
-taobao.jst.miniapp.crowd.user.add
-
-小程序添加用户到指定的活动 */
+// TaobaoJstMiniappCrowdUserAdd 小程序添加用户到指定的活动
+// taobao.jst.miniapp.crowd.user.add
+//
+// 小程序添加用户到指定的活动
 func TaobaoJstMiniappCrowdUserAdd(clt *core.SDKClient, req *jst.TaobaoJstMiniappCrowdUserAddAPIRequest, session string) (*jst.TaobaoJstMiniappCrowdUserAddAPIResponse, error) {
 	var resp jst.TaobaoJstMiniappCrowdUserAddAPIResponse
 	err := clt.Post(req, &resp, session)

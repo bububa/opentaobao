@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSalestarCreativeUpdateAPIResponse
-销量明星更新创意相关接口 API返回值
-taobao.simba.salestar.creative.update
-
-更新一个创意的信息，可以设置创意标题、创意图片 */
+// TaobaoSimbaSalestarCreativeUpdateAPIResponse 销量明星更新创意相关接口 API返回值
+// taobao.simba.salestar.creative.update
+//
+// 更新一个创意的信息，可以设置创意标题、创意图片
 type TaobaoSimbaSalestarCreativeUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaSalestarCreativeUpdateAPIResponseModel

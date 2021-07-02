@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosGoodsSetpriceAPIResponse
-价格变更接口 API返回值
-alibaba.mos.goods.setprice
-
-价格变更接口，供供应商修改价格时使用。 */
+// AlibabaMosGoodsSetpriceAPIResponse 价格变更接口 API返回值
+// alibaba.mos.goods.setprice
+//
+// 价格变更接口，供供应商修改价格时使用。
 type AlibabaMosGoodsSetpriceAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosGoodsSetpriceAPIResponseModel

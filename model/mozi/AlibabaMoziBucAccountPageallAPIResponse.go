@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziBucAccountPageallAPIResponse
-查询租户内内所有账号 API返回值
-alibaba.mozi.buc.account.pageall
-
-查询租户内内所有账号 */
+// AlibabaMoziBucAccountPageallAPIResponse 查询租户内内所有账号 API返回值
+// alibaba.mozi.buc.account.pageall
+//
+// 查询租户内内所有账号
 type AlibabaMoziBucAccountPageallAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziBucAccountPageallAPIResponseModel

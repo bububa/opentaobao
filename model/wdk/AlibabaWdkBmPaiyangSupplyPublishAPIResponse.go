@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkBmPaiyangSupplyPublishAPIResponse
-派样商品库存变更同步接口 API返回值
-alibaba.wdk.bm.paiyang.supply.publish
-
-淘鲜达接入第三方进行派样，第三方同步大仓和门店的库存变更信息。 */
+// AlibabaWdkBmPaiyangSupplyPublishAPIResponse 派样商品库存变更同步接口 API返回值
+// alibaba.wdk.bm.paiyang.supply.publish
+//
+// 淘鲜达接入第三方进行派样，第三方同步大仓和门店的库存变更信息。
 type AlibabaWdkBmPaiyangSupplyPublishAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkBmPaiyangSupplyPublishAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdAccountLevelGetAPIResponse
-查询推广账户等级 API返回值
-alibaba.scbp.ad.account.level.get
-
-查询推广账户等级 */
+// AlibabaScbpAdAccountLevelGetAPIResponse 查询推广账户等级 API返回值
+// alibaba.scbp.ad.account.level.get
+//
+// 查询推广账户等级
 type AlibabaScbpAdAccountLevelGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdAccountLevelGetAPIResponseModel

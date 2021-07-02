@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPictureUpdateAPIRequest
-修改图片名字 API请求
-taobao.picture.update
-
-修改指定图片的图片名 */
+// TaobaoPictureUpdateAPIRequest 修改图片名字 API请求
+// taobao.picture.update
+//
+// 修改指定图片的图片名
 type TaobaoPictureUpdateAPIRequest struct {
 	model.Params
 	// 要更改名字的图片的id

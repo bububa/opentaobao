@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvmbosCommonOperationAPIRequest
-应用中心通用服务接口 API请求
-yunos.tvmbos.common.operation
-
-应用中心相关接口的代理 */
+// YunosTvmbosCommonOperationAPIRequest 应用中心通用服务接口 API请求
+// yunos.tvmbos.common.operation
+//
+// 应用中心相关接口的代理
 type YunosTvmbosCommonOperationAPIRequest struct {
 	model.Params
 	// 接口名

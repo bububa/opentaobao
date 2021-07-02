@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest
-按编号查询采购申请/经销采购单 API请求
-taobao.fenxiao.dealer.requisitionorder.query
-
-按编号查询采购申请/经销采购单，目前支持供应商和分销商查询。 */
+// TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest 按编号查询采购申请/经销采购单 API请求
+// taobao.fenxiao.dealer.requisitionorder.query
+//
+// 按编号查询采购申请/经销采购单，目前支持供应商和分销商查询。
 type TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest struct {
 	model.Params
 	// 经销采购单编号。<br/>多个编号用英文符号的逗号隔开。最多支持50个经销采购单编号的查询。

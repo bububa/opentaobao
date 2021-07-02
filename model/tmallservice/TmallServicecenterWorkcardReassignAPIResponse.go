@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardReassignAPIResponse
-工单改派门店 API返回值
-tmall.servicecenter.workcard.reassign
-
-工单改派门店 */
+// TmallServicecenterWorkcardReassignAPIResponse 工单改派门店 API返回值
+// tmall.servicecenter.workcard.reassign
+//
+// 工单改派门店
 type TmallServicecenterWorkcardReassignAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardReassignAPIResponseModel

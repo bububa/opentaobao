@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceBillForwordCreateAPIResponse
-扫码开票结算单同步前开发票 API返回值
-alibaba.einvoice.bill.forword.create
-
-扫码开票结算单同步前开发票，会将数据同步到结算单中 */
+// AlibabaEinvoiceBillForwordCreateAPIResponse 扫码开票结算单同步前开发票 API返回值
+// alibaba.einvoice.bill.forword.create
+//
+// 扫码开票结算单同步前开发票，会将数据同步到结算单中
 type AlibabaEinvoiceBillForwordCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceBillForwordCreateAPIResponseModel

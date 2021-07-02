@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqAppOfficialApplyAPIResponse
-聚安全官方应用申请 API返回值
-alibaba.security.jaq.app.official.apply
-
-官方应用申请接口 */
+// AlibabaSecurityJaqAppOfficialApplyAPIResponse 聚安全官方应用申请 API返回值
+// alibaba.security.jaq.app.official.apply
+//
+// 官方应用申请接口
 type AlibabaSecurityJaqAppOfficialApplyAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqAppOfficialApplyAPIResponseModel

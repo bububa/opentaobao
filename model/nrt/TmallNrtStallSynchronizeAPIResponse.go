@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtStallSynchronizeAPIResponse
-摊位信息同步 API返回值
-tmall.nrt.stall.synchronize
-
-摊位信息同步 */
+// TmallNrtStallSynchronizeAPIResponse 摊位信息同步 API返回值
+// tmall.nrt.stall.synchronize
+//
+// 摊位信息同步
 type TmallNrtStallSynchronizeAPIResponse struct {
 	model.CommonResponse
 	TmallNrtStallSynchronizeAPIResponseModel

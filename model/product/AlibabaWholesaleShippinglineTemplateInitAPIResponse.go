@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWholesaleShippinglineTemplateInitAPIResponse
-创建初始模板 API返回值
-alibaba.wholesale.shippingline.template.init
-
-创建默认的几种运费模板 */
+// AlibabaWholesaleShippinglineTemplateInitAPIResponse 创建初始模板 API返回值
+// alibaba.wholesale.shippingline.template.init
+//
+// 创建默认的几种运费模板
 type AlibabaWholesaleShippinglineTemplateInitAPIResponse struct {
 	model.CommonResponse
 	AlibabaWholesaleShippinglineTemplateInitAPIResponseModel

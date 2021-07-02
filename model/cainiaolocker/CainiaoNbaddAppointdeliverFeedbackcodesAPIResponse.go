@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse
-服务质量反馈编码列表 API返回值
-cainiao.nbadd.appointdeliver.feedbackcodes
-
-服务质量反馈编码列表，建议获取数据后缓存在本地，定时刷新即可 */
+// CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse 服务质量反馈编码列表 API返回值
+// cainiao.nbadd.appointdeliver.feedbackcodes
+//
+// 服务质量反馈编码列表，建议获取数据后缓存在本地，定时刷新即可
 type CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse struct {
 	model.CommonResponse
 	CainiaoNbaddAppointdeliverFeedbackcodesAPIResponseModel

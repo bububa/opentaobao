@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/qianniu"
 )
 
-/* TaobaoDaogoubaoOrderStatisticsTotal
-销售订单总额统计
-taobao.daogoubao.order.statistics.total
-
-对接千牛端数字中心 */
+// TaobaoDaogoubaoOrderStatisticsTotal 销售订单总额统计
+// taobao.daogoubao.order.statistics.total
+//
+// 对接千牛端数字中心
 func TaobaoDaogoubaoOrderStatisticsTotal(clt *core.SDKClient, req *qianniu.TaobaoDaogoubaoOrderStatisticsTotalAPIRequest, session string) (*qianniu.TaobaoDaogoubaoOrderStatisticsTotalAPIResponse, error) {
 	var resp qianniu.TaobaoDaogoubaoOrderStatisticsTotalAPIResponse
 	err := clt.Post(req, &resp, session)

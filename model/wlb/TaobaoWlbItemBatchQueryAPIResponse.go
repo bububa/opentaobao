@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbItemBatchQueryAPIResponse
-批次库存查询接口 API返回值
-taobao.wlb.item.batch.query
-
-根据用户id，item id list和store code来查询商品库存信息和批次信息 */
+// TaobaoWlbItemBatchQueryAPIResponse 批次库存查询接口 API返回值
+// taobao.wlb.item.batch.query
+//
+// 根据用户id，item id list和store code来查询商品库存信息和批次信息
 type TaobaoWlbItemBatchQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbItemBatchQueryAPIResponseModel

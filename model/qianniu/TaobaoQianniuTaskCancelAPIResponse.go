@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuTaskCancelAPIResponse
-取消轻任务 API返回值
-taobao.qianniu.task.cancel
-
-由任务发起者调用 */
+// TaobaoQianniuTaskCancelAPIResponse 取消轻任务 API返回值
+// taobao.qianniu.task.cancel
+//
+// 由任务发起者调用
 type TaobaoQianniuTaskCancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuTaskCancelAPIResponseModel

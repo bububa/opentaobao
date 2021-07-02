@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDiccontroltaskUpdateAPIRequest
-停开服任务状态变更 API请求
-yunos.tvpubadmin.diccontroltask.update
-
-停开服任务状态变更 */
+// YunosTvpubadminDiccontroltaskUpdateAPIRequest 停开服任务状态变更 API请求
+// yunos.tvpubadmin.diccontroltask.update
+//
+// 停开服任务状态变更
 type YunosTvpubadminDiccontroltaskUpdateAPIRequest struct {
 	model.Params
 	// 任务ID

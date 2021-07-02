@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAppleCardActiveCancelNotifyAPIResponse
-苹果卡密取消激活回调接口 API返回值
-taobao.apple.card.active.cancel.notify
-
-苹果卡密取消激活回调接口 */
+// TaobaoAppleCardActiveCancelNotifyAPIResponse 苹果卡密取消激活回调接口 API返回值
+// taobao.apple.card.active.cancel.notify
+//
+// 苹果卡密取消激活回调接口
 type TaobaoAppleCardActiveCancelNotifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoAppleCardActiveCancelNotifyAPIResponseModel

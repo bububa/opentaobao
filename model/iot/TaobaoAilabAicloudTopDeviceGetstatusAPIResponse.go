@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceGetstatusAPIResponse
-获取设备状态 API返回值
-taobao.ailab.aicloud.top.device.getstatus
-
-获取设备状态 */
+// TaobaoAilabAicloudTopDeviceGetstatusAPIResponse 获取设备状态 API返回值
+// taobao.ailab.aicloud.top.device.getstatus
+//
+// 获取设备状态
 type TaobaoAilabAicloudTopDeviceGetstatusAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceGetstatusAPIResponseModel

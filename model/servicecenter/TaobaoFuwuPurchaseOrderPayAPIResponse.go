@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFuwuPurchaseOrderPayAPIResponse
-内购服务订单付款页获取接口 API返回值
-taobao.fuwu.purchase.order.pay
-
-通过接口获取某一订单的付款页面链接 */
+// TaobaoFuwuPurchaseOrderPayAPIResponse 内购服务订单付款页获取接口 API返回值
+// taobao.fuwu.purchase.order.pay
+//
+// 通过接口获取某一订单的付款页面链接
 type TaobaoFuwuPurchaseOrderPayAPIResponse struct {
 	model.CommonResponse
 	TaobaoFuwuPurchaseOrderPayAPIResponseModel

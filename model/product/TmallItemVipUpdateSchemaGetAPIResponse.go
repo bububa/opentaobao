@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemVipUpdateSchemaGetAPIResponse
-vip商家编辑商品的规则获取接口 API返回值
-tmall.item.vip.update.schema.get
-
-获取vip商家编辑商品的规则 */
+// TmallItemVipUpdateSchemaGetAPIResponse vip商家编辑商品的规则获取接口 API返回值
+// tmall.item.vip.update.schema.get
+//
+// 获取vip商家编辑商品的规则
 type TmallItemVipUpdateSchemaGetAPIResponse struct {
 	model.CommonResponse
 	TmallItemVipUpdateSchemaGetAPIResponseModel

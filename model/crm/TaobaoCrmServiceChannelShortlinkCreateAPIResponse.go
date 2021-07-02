@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmServiceChannelShortlinkCreateAPIResponse
-ECRM创建淘短链服务 API返回值
-taobao.crm.service.channel.shortlink.create
-
-可生成店铺宝贝、店铺首页、活动链接、订单链接等4种可呼起手机淘宝APP至对应页面的淘短链。 */
+// TaobaoCrmServiceChannelShortlinkCreateAPIResponse ECRM创建淘短链服务 API返回值
+// taobao.crm.service.channel.shortlink.create
+//
+// 可生成店铺宝贝、店铺首页、活动链接、订单链接等4种可呼起手机淘宝APP至对应页面的淘短链。
 type TaobaoCrmServiceChannelShortlinkCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmServiceChannelShortlinkCreateAPIResponseModel

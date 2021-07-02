@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoMerchantContractCancelAPIResponse
-蜂鸟商户解约接口 API返回值
-alibaba.ele.fengniao.merchant.contract.cancel
-
-通过调用此接口，商家及商家下的所有门店解除蜂鸟物流服务 */
+// AlibabaEleFengniaoMerchantContractCancelAPIResponse 蜂鸟商户解约接口 API返回值
+// alibaba.ele.fengniao.merchant.contract.cancel
+//
+// 通过调用此接口，商家及商家下的所有门店解除蜂鸟物流服务
 type AlibabaEleFengniaoMerchantContractCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoMerchantContractCancelAPIResponseModel

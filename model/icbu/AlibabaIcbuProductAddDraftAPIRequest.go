@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductAddDraftAPIRequest
-ICBU商品发布草稿接口 API请求
-alibaba.icbu.product.add.draft
-
-发布商品草稿,支持sourcing/一口价商品，支持英文和多种语言原发商品 */
+// AlibabaIcbuProductAddDraftAPIRequest ICBU商品发布草稿接口 API请求
+// alibaba.icbu.product.add.draft
+//
+// 发布商品草稿,支持sourcing/一口价商品，支持英文和多种语言原发商品
 type AlibabaIcbuProductAddDraftAPIRequest struct {
 	model.Params
 	// 商品属性和属性值

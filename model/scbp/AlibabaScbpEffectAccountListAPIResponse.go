@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpEffectAccountListAPIResponse
-账户-报表 API返回值
-alibaba.scbp.effect.account.list
-
-账户-报表,支持最近7天，最近30天，以及180天内时间区间。 */
+// AlibabaScbpEffectAccountListAPIResponse 账户-报表 API返回值
+// alibaba.scbp.effect.account.list
+//
+// 账户-报表,支持最近7天，最近30天，以及180天内时间区间。
 type AlibabaScbpEffectAccountListAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpEffectAccountListAPIResponseModel

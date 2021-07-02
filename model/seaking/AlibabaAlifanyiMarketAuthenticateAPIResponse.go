@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlifanyiMarketAuthenticateAPIResponse
-第三方授权 API返回值
-alibaba.alifanyi.market.authenticate
-
-第三方授权，获取授权码 */
+// AlibabaAlifanyiMarketAuthenticateAPIResponse 第三方授权 API返回值
+// alibaba.alifanyi.market.authenticate
+//
+// 第三方授权，获取授权码
 type AlibabaAlifanyiMarketAuthenticateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlifanyiMarketAuthenticateAPIResponseModel

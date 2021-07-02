@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignBudgetUpdateAPIRequest
-更新一个推广计划的日限额 API请求
-taobao.simba.campaign.budget.update
-
-更新一个推广计划的日限额 */
+// TaobaoSimbaCampaignBudgetUpdateAPIRequest 更新一个推广计划的日限额 API请求
+// taobao.simba.campaign.budget.update
+//
+// 更新一个推广计划的日限额
 type TaobaoSimbaCampaignBudgetUpdateAPIRequest struct {
 	model.Params
 	// 是否平滑消耗：false-否，true-是

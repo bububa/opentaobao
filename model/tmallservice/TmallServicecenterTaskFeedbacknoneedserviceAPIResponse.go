@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterTaskFeedbacknoneedserviceAPIResponse
-服务商反馈无需安装工单接口 API返回值
-tmall.servicecenter.task.feedbacknoneedservice
-
-服务商反馈无需安装工单接口 */
+// TmallServicecenterTaskFeedbacknoneedserviceAPIResponse 服务商反馈无需安装工单接口 API返回值
+// tmall.servicecenter.task.feedbacknoneedservice
+//
+// 服务商反馈无需安装工单接口
 type TmallServicecenterTaskFeedbacknoneedserviceAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterTaskFeedbacknoneedserviceAPIResponseModel

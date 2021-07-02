@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsOrdersDetailGetAPIResponse
-批量查询物流订单,返回详细信息 API返回值
-taobao.logistics.orders.detail.get
-
-查询物流订单的详细信息，涉及用户隐私字段。 */
+// TaobaoLogisticsOrdersDetailGetAPIResponse 批量查询物流订单,返回详细信息 API返回值
+// taobao.logistics.orders.detail.get
+//
+// 查询物流订单的详细信息，涉及用户隐私字段。
 type TaobaoLogisticsOrdersDetailGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsOrdersDetailGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest
-修改门店发货配置内容 API请求
-taobao.omniorder.store.deliverconfig.update
-
-修改门店发货配置内容 */
+// TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest 修改门店发货配置内容 API请求
+// taobao.omniorder.store.deliverconfig.update
+//
+// 修改门店发货配置内容
 type TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest struct {
 	model.Params
 	// 门店ID

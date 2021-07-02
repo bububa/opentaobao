@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentShowSetexemptauditAPIRequest
-迎客松节目设置免审开关 API请求
-yunos.tvpubadmin.content.show.setexemptaudit
-
-迎客松节目设置免审开关 */
+// YunosTvpubadminContentShowSetexemptauditAPIRequest 迎客松节目设置免审开关 API请求
+// yunos.tvpubadmin.content.show.setexemptaudit
+//
+// 迎客松节目设置免审开关
 type YunosTvpubadminContentShowSetexemptauditAPIRequest struct {
 	model.Params
 	// 节目longid

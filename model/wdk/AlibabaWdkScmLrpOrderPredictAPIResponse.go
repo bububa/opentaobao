@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkScmLrpOrderPredictAPIResponse
-单量预测 API返回值
-alibaba.wdk.scm.lrp.order.predict
-
-提供基于门店和配送站的订单量预测，可用于提前安排人力资源 */
+// AlibabaWdkScmLrpOrderPredictAPIResponse 单量预测 API返回值
+// alibaba.wdk.scm.lrp.order.predict
+//
+// 提供基于门店和配送站的订单量预测，可用于提前安排人力资源
 type AlibabaWdkScmLrpOrderPredictAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkScmLrpOrderPredictAPIResponseModel

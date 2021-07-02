@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMydataOverviewIndicatorBasicGetAPIResponse
-我的效果-获取公司询盘流量行业表现 API返回值
-alibaba.mydata.overview.indicator.basic.get
-
-获取公司询盘流量行业表现 */
+// AlibabaMydataOverviewIndicatorBasicGetAPIResponse 我的效果-获取公司询盘流量行业表现 API返回值
+// alibaba.mydata.overview.indicator.basic.get
+//
+// 获取公司询盘流量行业表现
 type AlibabaMydataOverviewIndicatorBasicGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaMydataOverviewIndicatorBasicGetAPIResponseModel

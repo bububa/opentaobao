@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsvonAddAPIRequest
-创建一批关键词 API请求
-taobao.simba.keywordsvon.add
-
-创建一批关键词 */
+// TaobaoSimbaKeywordsvonAddAPIRequest 创建一批关键词 API请求
+// taobao.simba.keywordsvon.add
+//
+// 创建一批关键词
 type TaobaoSimbaKeywordsvonAddAPIRequest struct {
 	model.Params
 	// 主人昵称

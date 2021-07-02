@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFlowWalletSignAPIResponse
-流量平台用户签约情况查询 API返回值
-alibaba.aliqin.flow.wallet.sign
-
-流量平台用户签约情况查询 */
+// AlibabaAliqinFlowWalletSignAPIResponse 流量平台用户签约情况查询 API返回值
+// alibaba.aliqin.flow.wallet.sign
+//
+// 流量平台用户签约情况查询
 type AlibabaAliqinFlowWalletSignAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFlowWalletSignAPIResponseModel

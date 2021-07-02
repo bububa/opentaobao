@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTraceplatformTicketPictureUploadAPIResponse
-上传小票图片 API返回值
-tmall.traceplatform.ticket.picture.upload
-
-uploadPicture */
+// TmallTraceplatformTicketPictureUploadAPIResponse 上传小票图片 API返回值
+// tmall.traceplatform.ticket.picture.upload
+//
+// uploadPicture
 type TmallTraceplatformTicketPictureUploadAPIResponse struct {
 	model.CommonResponse
 	TmallTraceplatformTicketPictureUploadAPIResponseModel

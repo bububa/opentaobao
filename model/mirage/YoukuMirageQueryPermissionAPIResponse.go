@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuMirageQueryPermissionAPIResponse
-优酷播控查询是否可播API API返回值
-youku.mirage.query.permission
-
-根据节目ID或者VID查询视频或者节目是否可以播放 */
+// YoukuMirageQueryPermissionAPIResponse 优酷播控查询是否可播API API返回值
+// youku.mirage.query.permission
+//
+// 根据节目ID或者VID查询视频或者节目是否可以播放
 type YoukuMirageQueryPermissionAPIResponse struct {
 	model.CommonResponse
 	YoukuMirageQueryPermissionAPIResponseModel

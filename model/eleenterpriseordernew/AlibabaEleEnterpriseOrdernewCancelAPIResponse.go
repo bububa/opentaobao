@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseOrdernewCancelAPIResponse
-订单取消 API返回值
-alibaba.ele.enterprise.ordernew.cancel
-
-订单取消 */
+// AlibabaEleEnterpriseOrdernewCancelAPIResponse 订单取消 API返回值
+// alibaba.ele.enterprise.ordernew.cancel
+//
+// 订单取消
 type AlibabaEleEnterpriseOrdernewCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseOrdernewCancelAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopLikeDeleteAPIRequest
-取消收藏 API请求
-taobao.ailab.aicloud.top.like.delete
-
-取消收藏 */
+// TaobaoAilabAicloudTopLikeDeleteAPIRequest 取消收藏 API请求
+// taobao.ailab.aicloud.top.like.delete
+//
+// 取消收藏
 type TaobaoAilabAicloudTopLikeDeleteAPIRequest struct {
 	model.Params
 	// 扩展信息，用于存放APP类型等

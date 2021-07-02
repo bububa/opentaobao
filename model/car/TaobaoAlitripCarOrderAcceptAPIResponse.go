@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripCarOrderAcceptAPIResponse
-确认接单 API返回值
-taobao.alitrip.car.order.accept
-
-用来接收服务商确认接单信息 */
+// TaobaoAlitripCarOrderAcceptAPIResponse 确认接单 API返回值
+// taobao.alitrip.car.order.accept
+//
+// 用来接收服务商确认接单信息
 type TaobaoAlitripCarOrderAcceptAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripCarOrderAcceptAPIResponseModel

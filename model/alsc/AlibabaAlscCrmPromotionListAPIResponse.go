@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmPromotionListAPIResponse
-获取促销规则列表 API返回值
-alibaba.alsc.crm.promotion.list
-
-获取品牌的促销规则列表 */
+// AlibabaAlscCrmPromotionListAPIResponse 获取促销规则列表 API返回值
+// alibaba.alsc.crm.promotion.list
+//
+// 获取品牌的促销规则列表
 type AlibabaAlscCrmPromotionListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmPromotionListAPIResponseModel

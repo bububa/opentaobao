@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractActivityAddcommentAPIRequest
-微淘评论接口 API请求
-alibaba.interact.activity.addcomment
-
-发表评论，并返回楼层 */
+// AlibabaInteractActivityAddcommentAPIRequest 微淘评论接口 API请求
+// alibaba.interact.activity.addcomment
+//
+// 发表评论，并返回楼层
 type AlibabaInteractActivityAddcommentAPIRequest struct {
 	model.Params
 	// 该字段为评论内容

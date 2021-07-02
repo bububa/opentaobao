@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallProductSpecAddAPIResponse
-添加产品规格 API返回值
-tmall.product.spec.add
-
-增加产品规格 */
+// TmallProductSpecAddAPIResponse 添加产品规格 API返回值
+// tmall.product.spec.add
+//
+// 增加产品规格
 type TmallProductSpecAddAPIResponse struct {
 	model.CommonResponse
 	TmallProductSpecAddAPIResponseModel

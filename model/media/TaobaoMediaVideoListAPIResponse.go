@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMediaVideoListAPIResponse
-获取商家视频列表 API返回值
-taobao.media.video.list
-
-用于获取授权商家的视频列表 */
+// TaobaoMediaVideoListAPIResponse 获取商家视频列表 API返回值
+// taobao.media.video.list
+//
+// 用于获取授权商家的视频列表
 type TaobaoMediaVideoListAPIResponse struct {
 	model.CommonResponse
 	TaobaoMediaVideoListAPIResponseModel

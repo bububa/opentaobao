@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSellerVendorServiceVendorprocessAPIResponse
-服务商客户关联信息 API返回值
-alibaba.seller.vendor.service.vendorprocess
-
-服务商客户关联信息 */
+// AlibabaSellerVendorServiceVendorprocessAPIResponse 服务商客户关联信息 API返回值
+// alibaba.seller.vendor.service.vendorprocess
+//
+// 服务商客户关联信息
 type AlibabaSellerVendorServiceVendorprocessAPIResponse struct {
 	model.CommonResponse
 	AlibabaSellerVendorServiceVendorprocessAPIResponseModel

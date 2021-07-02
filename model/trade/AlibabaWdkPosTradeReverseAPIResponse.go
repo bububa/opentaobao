@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkPosTradeReverseAPIResponse
-轻pos品牌营销退款接口 API返回值
-alibaba.wdk.pos.trade.reverse
-
-轻pos品牌营销场景，商家调用退款接口 */
+// AlibabaWdkPosTradeReverseAPIResponse 轻pos品牌营销退款接口 API返回值
+// alibaba.wdk.pos.trade.reverse
+//
+// 轻pos品牌营销场景，商家调用退款接口
 type AlibabaWdkPosTradeReverseAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkPosTradeReverseAPIResponseModel

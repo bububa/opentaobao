@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkUmsOrderGetAPIResponse
-查询店仓作业单据清单 （库存对账辅助）-回流单 API返回值
-alibaba.wdk.ums.order.get
-
-查询店仓作业单据清单 （库存对账辅助）-回流单 */
+// AlibabaWdkUmsOrderGetAPIResponse 查询店仓作业单据清单 （库存对账辅助）-回流单 API返回值
+// alibaba.wdk.ums.order.get
+//
+// 查询店仓作业单据清单 （库存对账辅助）-回流单
 type AlibabaWdkUmsOrderGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkUmsOrderGetAPIResponseModel

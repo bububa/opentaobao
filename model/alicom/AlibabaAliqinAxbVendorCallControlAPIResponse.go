@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinAxbVendorCallControlAPIResponse
-转呼控制接口 API返回值
-alibaba.aliqin.axb.vendor.call.control
-
-转呼控制接口，用于查询小号绑定关系，控制呼叫转接目标 */
+// AlibabaAliqinAxbVendorCallControlAPIResponse 转呼控制接口 API返回值
+// alibaba.aliqin.axb.vendor.call.control
+//
+// 转呼控制接口，用于查询小号绑定关系，控制呼叫转接目标
 type AlibabaAliqinAxbVendorCallControlAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinAxbVendorCallControlAPIResponseModel

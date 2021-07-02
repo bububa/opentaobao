@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpProductPreferentialUpdateAPIRequest
-设置P4P产品优先推广状态 API请求
-alibaba.scbp.product.preferential.update
-
-设置P4P产品优先推广状态 */
+// AlibabaScbpProductPreferentialUpdateAPIRequest 设置P4P产品优先推广状态 API请求
+// alibaba.scbp.product.preferential.update
+//
+// 设置P4P产品优先推广状态
 type AlibabaScbpProductPreferentialUpdateAPIRequest struct {
 	model.Params
 	// 关键词ID

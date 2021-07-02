@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceMerchantDeleteAPIResponse
-发票中台-同平台取消授权税号适用商户 API返回值
-alibaba.einvoice.merchant.delete
-
-税号授权给同平台下其他商户使用后，可以使用此接口取消授权，被取消授权的商户失去开票能力 */
+// AlibabaEinvoiceMerchantDeleteAPIResponse 发票中台-同平台取消授权税号适用商户 API返回值
+// alibaba.einvoice.merchant.delete
+//
+// 税号授权给同平台下其他商户使用后，可以使用此接口取消授权，被取消授权的商户失去开票能力
 type AlibabaEinvoiceMerchantDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceMerchantDeleteAPIResponseModel

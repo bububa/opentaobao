@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkReverseApplyrefundAPIResponse
-逆向申请接口 API返回值
-alibaba.wdk.reverse.applyrefund
-
-逆向渲染 */
+// AlibabaWdkReverseApplyrefundAPIResponse 逆向申请接口 API返回值
+// alibaba.wdk.reverse.applyrefund
+//
+// 逆向渲染
 type AlibabaWdkReverseApplyrefundAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkReverseApplyrefundAPIResponseModel

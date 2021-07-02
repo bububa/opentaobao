@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCreativeAddAPIRequest
-增加创意 API请求
-taobao.simba.creative.add
-
-创建一个创意 */
+// TaobaoSimbaCreativeAddAPIRequest 增加创意 API请求
+// taobao.simba.creative.add
+//
+// 创建一个创意
 type TaobaoSimbaCreativeAddAPIRequest struct {
 	model.Params
 	// 推广组Id

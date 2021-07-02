@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthPregnancyTaginfoAddrankAPIResponse
-点击标签后排序接口 API返回值
-alibaba.alihealth.pregnancy.taginfo.addrank
-
-备孕管理--点击标签后排序接口 */
+// AlibabaAlihealthPregnancyTaginfoAddrankAPIResponse 点击标签后排序接口 API返回值
+// alibaba.alihealth.pregnancy.taginfo.addrank
+//
+// 备孕管理--点击标签后排序接口
 type AlibabaAlihealthPregnancyTaginfoAddrankAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthPregnancyTaginfoAddrankAPIResponseModel

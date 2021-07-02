@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeVrSyncAPIRequest
-VR关系数据同步 API请求
-alibaba.alihouse.newhome.vr.sync
-
-对接易居VR关系数据迁移 */
+// AlibabaAlihouseNewhomeVrSyncAPIRequest VR关系数据同步 API请求
+// alibaba.alihouse.newhome.vr.sync
+//
+// 对接易居VR关系数据迁移
 type AlibabaAlihouseNewhomeVrSyncAPIRequest struct {
 	model.Params
 	// VR提取码

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCardExpandcardQueryAPIResponse
-购物金卡查询 API返回值
-taobao.card.expandcard.query
-
-购物金充值信息查询接口，会返回余额等信息。 */
+// TaobaoCardExpandcardQueryAPIResponse 购物金卡查询 API返回值
+// taobao.card.expandcard.query
+//
+// 购物金充值信息查询接口，会返回余额等信息。
 type TaobaoCardExpandcardQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoCardExpandcardQueryAPIResponseModel

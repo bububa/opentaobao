@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWtOrderExchangePartnerChecktbuserAPIResponse
-积分兑换校验淘宝账号是否存在 API返回值
-alibaba.wt.order.exchange.partner.checktbuser
-
-积分兑换之前校验淘宝账号是否存在 */
+// AlibabaWtOrderExchangePartnerChecktbuserAPIResponse 积分兑换校验淘宝账号是否存在 API返回值
+// alibaba.wt.order.exchange.partner.checktbuser
+//
+// 积分兑换之前校验淘宝账号是否存在
 type AlibabaWtOrderExchangePartnerChecktbuserAPIResponse struct {
 	model.CommonResponse
 	AlibabaWtOrderExchangePartnerChecktbuserAPIResponseModel

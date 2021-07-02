@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlicomExchangeCreatebymixnickAPIResponse
-代理商积分兑换接口tae API返回值
-alibaba.alicom.exchange.createbymixnick
-
-代理商调用该接口来进行积分兑换，tae */
+// AlibabaAlicomExchangeCreatebymixnickAPIResponse 代理商积分兑换接口tae API返回值
+// alibaba.alicom.exchange.createbymixnick
+//
+// 代理商调用该接口来进行积分兑换，tae
 type AlibabaAlicomExchangeCreatebymixnickAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlicomExchangeCreatebymixnickAPIResponseModel

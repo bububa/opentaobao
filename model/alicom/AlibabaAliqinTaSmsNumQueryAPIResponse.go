@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinTaSmsNumQueryAPIResponse
-短信查询 API返回值
-alibaba.aliqin.ta.sms.num.query
-
-查询短信发送揭露 */
+// AlibabaAliqinTaSmsNumQueryAPIResponse 短信查询 API返回值
+// alibaba.aliqin.ta.sms.num.query
+//
+// 查询短信发送揭露
 type AlibabaAliqinTaSmsNumQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinTaSmsNumQueryAPIResponseModel

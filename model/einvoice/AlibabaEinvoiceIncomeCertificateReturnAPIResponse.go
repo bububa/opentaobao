@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceIncomeCertificateReturnAPIResponse
-服务商回传进项认证结果 API返回值
-alibaba.einvoice.income.certificate.return
-
-服务商回传客户端agent所处环境的设备列表，比如扫描仪 */
+// AlibabaEinvoiceIncomeCertificateReturnAPIResponse 服务商回传进项认证结果 API返回值
+// alibaba.einvoice.income.certificate.return
+//
+// 服务商回传客户端agent所处环境的设备列表，比如扫描仪
 type AlibabaEinvoiceIncomeCertificateReturnAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceIncomeCertificateReturnAPIResponseModel

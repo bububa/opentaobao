@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthoutflow"
 )
 
-/* AlibabaAlihealthOutflowOperationinfoSync
-处方外流-操作信息同步
-alibaba.alihealth.outflow.operationinfo.sync
-
-阿里健康-处方外流-对外提供同步操作信息功能 */
+// AlibabaAlihealthOutflowOperationinfoSync 处方外流-操作信息同步
+// alibaba.alihealth.outflow.operationinfo.sync
+//
+// 阿里健康-处方外流-对外提供同步操作信息功能
 func AlibabaAlihealthOutflowOperationinfoSync(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowOperationinfoSyncAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowOperationinfoSyncAPIResponse, error) {
 	var resp alihealthoutflow.AlibabaAlihealthOutflowOperationinfoSyncAPIResponse
 	err := clt.Post(req, &resp, session)

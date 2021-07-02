@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripUppcMemberGainAPIRequest
-航司权益数据回流 API请求
-alitrip.uppc.member.gain
-
-航司权益数据回流 */
+// AlitripUppcMemberGainAPIRequest 航司权益数据回流 API请求
+// alitrip.uppc.member.gain
+//
+// 航司权益数据回流
 type AlitripUppcMemberGainAPIRequest struct {
 	model.Params
 	// 请求唯一标识

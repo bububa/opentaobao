@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRateplanGetAPIRequest
-价格计划rateplan查询 API请求
-taobao.xhotel.rateplan.get
-
-酒店产品库rateplan查询 */
+// TaobaoXhotelRateplanGetAPIRequest 价格计划rateplan查询 API请求
+// taobao.xhotel.rateplan.get
+//
+// 酒店产品库rateplan查询
 type TaobaoXhotelRateplanGetAPIRequest struct {
 	model.Params
 	// 废弃，使用rateplan_code

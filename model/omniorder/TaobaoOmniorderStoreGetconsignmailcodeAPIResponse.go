@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreGetconsignmailcodeAPIResponse
-全渠道门店物流菜鸟裹裹取号 API返回值
-taobao.omniorder.store.getconsignmailcode
-
-用于ISV获取全渠道门店物流订单菜鸟裹裹门店的物流快递取号 */
+// TaobaoOmniorderStoreGetconsignmailcodeAPIResponse 全渠道门店物流菜鸟裹裹取号 API返回值
+// taobao.omniorder.store.getconsignmailcode
+//
+// 用于ISV获取全渠道门店物流订单菜鸟裹裹门店的物流快递取号
 type TaobaoOmniorderStoreGetconsignmailcodeAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderStoreGetconsignmailcodeAPIResponseModel

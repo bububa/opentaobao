@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelTradeDeliverAPIResponse
-飞猪度假-订单发货接口 API返回值
-alitrip.travel.trade.deliver
-
-航旅度假无需物流普通商品发货接口（不支持二次预约商品），只支持子订单级别发货 */
+// AlitripTravelTradeDeliverAPIResponse 飞猪度假-订单发货接口 API返回值
+// alitrip.travel.trade.deliver
+//
+// 航旅度假无需物流普通商品发货接口（不支持二次预约商品），只支持子订单级别发货
 type AlitripTravelTradeDeliverAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelTradeDeliverAPIResponseModel

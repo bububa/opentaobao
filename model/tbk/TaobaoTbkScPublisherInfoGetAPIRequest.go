@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkScPublisherInfoGetAPIRequest
-淘宝客-公用-私域用户备案信息查询 API请求
-taobao.tbk.sc.publisher.info.get
-
-查询已生成的渠道id或会员运营id的相关信息。 */
+// TaobaoTbkScPublisherInfoGetAPIRequest 淘宝客-公用-私域用户备案信息查询 API请求
+// taobao.tbk.sc.publisher.info.get
+//
+// 查询已生成的渠道id或会员运营id的相关信息。
 type TaobaoTbkScPublisherInfoGetAPIRequest struct {
 	model.Params
 	// 类型，必选 1:渠道信息；2:会员信息

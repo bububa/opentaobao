@@ -6,13 +6,12 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusSpaceBuildingGetbycampusidAPIResponse
-根据园区ID获取楼宇 API返回值
-alibaba.campus.space.building.getbycampusid
-
-根据园区ID获取楼宇
-HSF接口名称：com.alibaba.campus.api.space.service.top.BuildingApiTopService
-HSF方法名称：getBuildingList */
+// AlibabaCampusSpaceBuildingGetbycampusidAPIResponse 根据园区ID获取楼宇 API返回值
+// alibaba.campus.space.building.getbycampusid
+//
+// 根据园区ID获取楼宇
+// HSF接口名称：com.alibaba.campus.api.space.service.top.BuildingApiTopService
+// HSF方法名称：getBuildingList
 type AlibabaCampusSpaceBuildingGetbycampusidAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusSpaceBuildingGetbycampusidAPIResponseModel

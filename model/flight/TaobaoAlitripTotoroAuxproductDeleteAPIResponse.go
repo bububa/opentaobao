@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTotoroAuxproductDeleteAPIResponse
-廉航辅营产品删除 API返回值
-taobao.alitrip.totoro.auxproduct.delete
-
-廉航辅营产品删除接口 */
+// TaobaoAlitripTotoroAuxproductDeleteAPIResponse 廉航辅营产品删除 API返回值
+// taobao.alitrip.totoro.auxproduct.delete
+//
+// 廉航辅营产品删除接口
 type TaobaoAlitripTotoroAuxproductDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTotoroAuxproductDeleteAPIResponseModel

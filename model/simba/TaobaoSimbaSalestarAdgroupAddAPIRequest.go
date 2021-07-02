@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSalestarAdgroupAddAPIRequest
-(新)创建一个推广组 API请求
-taobao.simba.salestar.adgroup.add
-
-创建一个推广组 */
+// TaobaoSimbaSalestarAdgroupAddAPIRequest (新)创建一个推广组 API请求
+// taobao.simba.salestar.adgroup.add
+//
+// 创建一个推广组
 type TaobaoSimbaSalestarAdgroupAddAPIRequest struct {
 	model.Params
 	// 推广计划Id

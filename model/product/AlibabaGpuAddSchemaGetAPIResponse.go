@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaGpuAddSchemaGetAPIResponse
-获取产品发布规则接口 API返回值
-alibaba.gpu.add.schema.get
-
-获取产品发布规则接口 */
+// AlibabaGpuAddSchemaGetAPIResponse 获取产品发布规则接口 API返回值
+// alibaba.gpu.add.schema.get
+//
+// 获取产品发布规则接口
 type AlibabaGpuAddSchemaGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaGpuAddSchemaGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainMomentGetAPIResponse
-火车票时刻表 API返回值
-taobao.train.moment.get
-
-查询火车票车次时刻表 */
+// TaobaoTrainMomentGetAPIResponse 火车票时刻表 API返回值
+// taobao.train.moment.get
+//
+// 查询火车票车次时刻表
 type TaobaoTrainMomentGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainMomentGetAPIResponseModel

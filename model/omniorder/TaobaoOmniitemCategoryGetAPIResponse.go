@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemCategoryGetAPIResponse
-全渠道商品轻发布类目信息 API返回值
-taobao.omniitem.category.get
-
-全渠道商品轻发布类目信息 */
+// TaobaoOmniitemCategoryGetAPIResponse 全渠道商品轻发布类目信息 API返回值
+// taobao.omniitem.category.get
+//
+// 全渠道商品轻发布类目信息
 type TaobaoOmniitemCategoryGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniitemCategoryGetAPIResponseModel

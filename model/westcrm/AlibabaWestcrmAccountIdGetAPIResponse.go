@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmAccountIdGetAPIResponse
-根据支付宝id查询IB的id API返回值
-alibaba.westcrm.account.id.get
-
-根据支付宝id查询IB的id */
+// AlibabaWestcrmAccountIdGetAPIResponse 根据支付宝id查询IB的id API返回值
+// alibaba.westcrm.account.id.get
+//
+// 根据支付宝id查询IB的id
 type AlibabaWestcrmAccountIdGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWestcrmAccountIdGetAPIResponseModel

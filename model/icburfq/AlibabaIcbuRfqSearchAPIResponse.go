@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuRfqSearchAPIResponse
-查询RFQ API返回值
-alibaba.icbu.rfq.search
-
-用于查询RFQ的信息 */
+// AlibabaIcbuRfqSearchAPIResponse 查询RFQ API返回值
+// alibaba.icbu.rfq.search
+//
+// 用于查询RFQ的信息
 type AlibabaIcbuRfqSearchAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuRfqSearchAPIResponseModel

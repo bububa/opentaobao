@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCreativeDeleteAPIRequest
-删除创意 API请求
-taobao.simba.creative.delete
-
-删除一个创意 */
+// TaobaoSimbaCreativeDeleteAPIRequest 删除创意 API请求
+// taobao.simba.creative.delete
+//
+// 删除一个创意
 type TaobaoSimbaCreativeDeleteAPIRequest struct {
 	model.Params
 	// 主人昵称

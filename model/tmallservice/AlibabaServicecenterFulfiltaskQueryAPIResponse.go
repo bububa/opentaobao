@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaServicecenterFulfiltaskQueryAPIResponse
-核销单查询 API返回值
-alibaba.servicecenter.fulfiltask.query
-
-当系统生成核销单之后，需要派单到服务商，服务商根据核销里的服务信息和用户信息，给消费者提供服务 */
+// AlibabaServicecenterFulfiltaskQueryAPIResponse 核销单查询 API返回值
+// alibaba.servicecenter.fulfiltask.query
+//
+// 当系统生成核销单之后，需要派单到服务商，服务商根据核销里的服务信息和用户信息，给消费者提供服务
 type AlibabaServicecenterFulfiltaskQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaServicecenterFulfiltaskQueryAPIResponseModel

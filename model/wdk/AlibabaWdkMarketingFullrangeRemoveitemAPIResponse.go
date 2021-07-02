@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingFullrangeRemoveitemAPIResponse
-全场活动删除购品 API返回值
-alibaba.wdk.marketing.fullrange.removeitem
-
-删除换购商品 */
+// AlibabaWdkMarketingFullrangeRemoveitemAPIResponse 全场活动删除购品 API返回值
+// alibaba.wdk.marketing.fullrange.removeitem
+//
+// 删除换购商品
 type AlibabaWdkMarketingFullrangeRemoveitemAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingFullrangeRemoveitemAPIResponseModel

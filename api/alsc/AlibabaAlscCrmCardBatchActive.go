@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-/* AlibabaAlscCrmCardBatchActive
-批量激活卡
-alibaba.alsc.crm.card.batch.active
-
-批量激活卡 */
+// AlibabaAlscCrmCardBatchActive 批量激活卡
+// alibaba.alsc.crm.card.batch.active
+//
+// 批量激活卡
 func AlibabaAlscCrmCardBatchActive(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardBatchActiveAPIRequest, session string) (*alsc.AlibabaAlscCrmCardBatchActiveAPIResponse, error) {
 	var resp alsc.AlibabaAlscCrmCardBatchActiveAPIResponse
 	err := clt.Post(req, &resp, session)

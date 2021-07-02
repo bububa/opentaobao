@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceStatsAPIRequest
-获取设备统计数据 API请求
-yunos.tvpubadmin.device.stats
-
-获取设备统计数据 */
+// YunosTvpubadminDeviceStatsAPIRequest 获取设备统计数据 API请求
+// yunos.tvpubadmin.device.stats
+//
+// 获取设备统计数据
 type YunosTvpubadminDeviceStatsAPIRequest struct {
 	model.Params
 	// 厂商名称

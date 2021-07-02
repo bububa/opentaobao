@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimIoscertProductionSetAPIRequest
-设置ios证书 API请求
-taobao.openim.ioscert.production.set
-
-设置ios证书 */
+// TaobaoOpenimIoscertProductionSetAPIRequest 设置ios证书 API请求
+// taobao.openim.ioscert.production.set
+//
+// 设置ios证书
 type TaobaoOpenimIoscertProductionSetAPIRequest struct {
 	model.Params
 	// 证书密码

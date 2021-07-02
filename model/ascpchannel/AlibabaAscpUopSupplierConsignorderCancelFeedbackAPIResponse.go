@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIResponse
-商家仓wms取消发货反馈回告服务 API返回值
-alibaba.ascp.uop.supplier.consignorder.cancel.feedback
-
-履约单纬度通知商家仓wms取消发货结果反馈回告服务 */
+// AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIResponse 商家仓wms取消发货反馈回告服务 API返回值
+// alibaba.ascp.uop.supplier.consignorder.cancel.feedback
+//
+// 履约单纬度通知商家仓wms取消发货结果反馈回告服务
 type AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTaeBillsGetAPIResponse
-tae查询账单明细 API返回值
-taobao.tae.bills.get
-
-tae查询账单明细 */
+// TaobaoTaeBillsGetAPIResponse tae查询账单明细 API返回值
+// taobao.tae.bills.get
+//
+// tae查询账单明细
 type TaobaoTaeBillsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTaeBillsGetAPIResponseModel

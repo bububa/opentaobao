@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTvpayPromotionInfoGetAPIRequest
-tv支付查询消费抽奖配置 API请求
-taobao.tvpay.promotion.info.get
-
-查询消费抽奖配置 */
+// TaobaoTvpayPromotionInfoGetAPIRequest tv支付查询消费抽奖配置 API请求
+// taobao.tvpay.promotion.info.get
+//
+// 查询消费抽奖配置
 type TaobaoTvpayPromotionInfoGetAPIRequest struct {
 	model.Params
 	// 设备id

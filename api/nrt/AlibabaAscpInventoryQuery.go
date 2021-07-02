@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/nrt"
 )
 
-/* AlibabaAscpInventoryQuery
-商品库存查询接口
-alibaba.ascp.inventory.query
-
-新零售联盟商家库存查询接口，用于商家商品库存数量感知查询 */
+// AlibabaAscpInventoryQuery 商品库存查询接口
+// alibaba.ascp.inventory.query
+//
+// 新零售联盟商家库存查询接口，用于商家商品库存数量感知查询
 func AlibabaAscpInventoryQuery(clt *core.SDKClient, req *nrt.AlibabaAscpInventoryQueryAPIRequest, session string) (*nrt.AlibabaAscpInventoryQueryAPIResponse, error) {
 	var resp nrt.AlibabaAscpInventoryQueryAPIResponse
 	err := clt.Post(req, &resp, session)

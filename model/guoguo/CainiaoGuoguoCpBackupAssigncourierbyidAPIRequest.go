@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest
-根据菜鸟账号ID指派小件员 API请求
-cainiao.guoguo.cp.backup.assigncourierbyid
-
-根据菜鸟账号ID指派小件员 */
+// CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest 根据菜鸟账号ID指派小件员 API请求
+// cainiao.guoguo.cp.backup.assigncourierbyid
+//
+// 根据菜鸟账号ID指派小件员
 type CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest struct {
 	model.Params
 	// 指派/改派原因

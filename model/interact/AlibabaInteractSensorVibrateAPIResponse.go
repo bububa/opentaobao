@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorVibrateAPIResponse
-客户端震动 API返回值
-alibaba.interact.sensor.vibrate
-
-客户端震动 */
+// AlibabaInteractSensorVibrateAPIResponse 客户端震动 API返回值
+// alibaba.interact.sensor.vibrate
+//
+// 客户端震动
 type AlibabaInteractSensorVibrateAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorVibrateAPIResponseModel

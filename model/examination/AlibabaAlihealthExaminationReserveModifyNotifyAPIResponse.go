@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveModifyNotifyAPIResponse
-通知改期结果 API返回值
-alibaba.alihealth.examination.reserve.modify.notify
-
-体检状态为改期中，服务上通知健康是否改期成功 */
+// AlibabaAlihealthExaminationReserveModifyNotifyAPIResponse 通知改期结果 API返回值
+// alibaba.alihealth.examination.reserve.modify.notify
+//
+// 体检状态为改期中，服务上通知健康是否改期成功
 type AlibabaAlihealthExaminationReserveModifyNotifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationReserveModifyNotifyAPIResponseModel

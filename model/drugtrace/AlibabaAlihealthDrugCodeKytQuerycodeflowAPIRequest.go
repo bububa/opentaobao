@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest
-码流向查询 API请求
-alibaba.alihealth.drug.code.kyt.querycodeflow
-
-追溯码流向查询 */
+// AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest 码流向查询 API请求
+// alibaba.alihealth.drug.code.kyt.querycodeflow
+//
+// 追溯码流向查询
 type AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest struct {
 	model.Params
 	// 企业ID

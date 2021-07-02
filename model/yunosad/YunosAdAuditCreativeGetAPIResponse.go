@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosAdAuditCreativeGetAPIResponse
-获取单个创意审核状态 API返回值
-yunos.ad.audit.creative.get
-
-获取单个创意审核状态 */
+// YunosAdAuditCreativeGetAPIResponse 获取单个创意审核状态 API返回值
+// yunos.ad.audit.creative.get
+//
+// 获取单个创意审核状态
 type YunosAdAuditCreativeGetAPIResponse struct {
 	model.CommonResponse
 	YunosAdAuditCreativeGetAPIResponseModel

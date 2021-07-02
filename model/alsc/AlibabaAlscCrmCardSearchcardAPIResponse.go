@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCardSearchcardAPIResponse
-搜索卡实例列表(支持号段查询) API返回值
-alibaba.alsc.crm.card.searchcard
-
-搜索卡实例列表(支持号段查询) */
+// AlibabaAlscCrmCardSearchcardAPIResponse 搜索卡实例列表(支持号段查询) API返回值
+// alibaba.alsc.crm.card.searchcard
+//
+// 搜索卡实例列表(支持号段查询)
 type AlibabaAlscCrmCardSearchcardAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCardSearchcardAPIResponseModel

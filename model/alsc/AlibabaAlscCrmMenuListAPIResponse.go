@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmMenuListAPIResponse
-获取特价菜单 API返回值
-alibaba.alsc.crm.menu.list
-
-获取特价菜单 */
+// AlibabaAlscCrmMenuListAPIResponse 获取特价菜单 API返回值
+// alibaba.alsc.crm.menu.list
+//
+// 获取特价菜单
 type AlibabaAlscCrmMenuListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmMenuListAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeMessageAddAPIResponse
-卖家创建换货留言 API返回值
-tmall.exchange.message.add
-
-卖家创建换货留言 */
+// TmallExchangeMessageAddAPIResponse 卖家创建换货留言 API返回值
+// tmall.exchange.message.add
+//
+// 卖家创建换货留言
 type TmallExchangeMessageAddAPIResponse struct {
 	model.CommonResponse
 	TmallExchangeMessageAddAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstVasTradeflowSaveAPIResponse
-交易信息回流 API返回值
-alibaba.lst.vas.tradeflow.save
-
-自动售货机交易信息同步接口，ISV通过此接口上传售货机交易信息。 */
+// AlibabaLstVasTradeflowSaveAPIResponse 交易信息回流 API返回值
+// alibaba.lst.vas.tradeflow.save
+//
+// 自动售货机交易信息同步接口，ISV通过此接口上传售货机交易信息。
 type AlibabaLstVasTradeflowSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstVasTradeflowSaveAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsIotDeviceListGetAPIResponse
-获取iot设备列表 API返回值
-alibaba.ailabs.iot.device.list.get
-
-通过此接口获取用户名下的iot设备列表 */
+// AlibabaAilabsIotDeviceListGetAPIResponse 获取iot设备列表 API返回值
+// alibaba.ailabs.iot.device.list.get
+//
+// 通过此接口获取用户名下的iot设备列表
 type AlibabaAilabsIotDeviceListGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsIotDeviceListGetAPIResponseModel

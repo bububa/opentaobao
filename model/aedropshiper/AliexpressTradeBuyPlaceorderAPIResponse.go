@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressTradeBuyPlaceorderAPIResponse
-AE下单API API返回值
-aliexpress.trade.buy.placeorder
-
-A006_INVALID_ACCOUNT_INFO */
+// AliexpressTradeBuyPlaceorderAPIResponse AE下单API API返回值
+// aliexpress.trade.buy.placeorder
+//
+// A006_INVALID_ACCOUNT_INFO
 type AliexpressTradeBuyPlaceorderAPIResponse struct {
 	model.CommonResponse
 	AliexpressTradeBuyPlaceorderAPIResponseModel

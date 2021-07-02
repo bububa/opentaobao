@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest
-上传小件员GPS位置信息 API请求
-cainiao.guoguo.cp.nborderfrontr.uploadcoordinate
-
-上传小件员GPS位置信息 */
+// CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest 上传小件员GPS位置信息 API请求
+// cainiao.guoguo.cp.nborderfrontr.uploadcoordinate
+//
+// 上传小件员GPS位置信息
 type CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest struct {
 	model.Params
 	// 小件员所在公司编号

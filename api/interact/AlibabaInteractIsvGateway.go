@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-/* AlibabaInteractIsvGateway
-isv调用gateway
-alibaba.interact.isv.gateway
-
-isv能够调用jae本身的server */
+// AlibabaInteractIsvGateway isv调用gateway
+// alibaba.interact.isv.gateway
+//
+// isv能够调用jae本身的server
 func AlibabaInteractIsvGateway(clt *core.SDKClient, req *interact.AlibabaInteractIsvGatewayAPIRequest, session string) (*interact.AlibabaInteractIsvGatewayAPIResponse, error) {
 	var resp interact.AlibabaInteractIsvGatewayAPIResponse
 	err := clt.Post(req, &resp, session)

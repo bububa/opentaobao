@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthPregnancyPostsDataAPIRequest
-发回帖子信息同步 API请求
-alibaba.alihealth.pregnancy.posts.data
-
-发回帖子信息同步 */
+// AlibabaAlihealthPregnancyPostsDataAPIRequest 发回帖子信息同步 API请求
+// alibaba.alihealth.pregnancy.posts.data
+//
+// 发回帖子信息同步
 type AlibabaAlihealthPregnancyPostsDataAPIRequest struct {
 	model.Params
 	// 用户id

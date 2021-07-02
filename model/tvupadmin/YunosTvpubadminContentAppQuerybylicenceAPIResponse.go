@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentAppQuerybylicenceAPIResponse
-按牌照查询应用 API返回值
-yunos.tvpubadmin.content.app.querybylicence
-
-按牌照查询应用 */
+// YunosTvpubadminContentAppQuerybylicenceAPIResponse 按牌照查询应用 API返回值
+// yunos.tvpubadmin.content.app.querybylicence
+//
+// 按牌照查询应用
 type YunosTvpubadminContentAppQuerybylicenceAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentAppQuerybylicenceAPIResponseModel

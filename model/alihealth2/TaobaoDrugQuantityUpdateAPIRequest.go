@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDrugQuantityUpdateAPIRequest
-商家更新库存 API请求
-taobao.drug.quantity.update
-
-商家通过top接口可以直接修改商品库存 */
+// TaobaoDrugQuantityUpdateAPIRequest 商家更新库存 API请求
+// taobao.drug.quantity.update
+//
+// 商家通过top接口可以直接修改商品库存
 type TaobaoDrugQuantityUpdateAPIRequest struct {
 	model.Params
 	// 外部店铺ID

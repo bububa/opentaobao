@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallDeviceBrandMemberurlGetAPIRequest
-获取智能硬件旗舰店入会码 API请求
-tmall.device.brand.memberurl.get
-
-获取旗舰店在智能硬件上的入会码 */
+// TmallDeviceBrandMemberurlGetAPIRequest 获取智能硬件旗舰店入会码 API请求
+// tmall.device.brand.memberurl.get
+//
+// 获取旗舰店在智能硬件上的入会码
 type TmallDeviceBrandMemberurlGetAPIRequest struct {
 	model.Params
 	// 设备DeviceCode

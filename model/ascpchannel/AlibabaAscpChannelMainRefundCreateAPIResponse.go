@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpChannelMainRefundCreateAPIResponse
-淘外分销逆向创单（未发货整单退） API返回值
-alibaba.ascp.channel.main.refund.create
-
-淘外分销解决方案--订单--逆向创单（未发货整单退） */
+// AlibabaAscpChannelMainRefundCreateAPIResponse 淘外分销逆向创单（未发货整单退） API返回值
+// alibaba.ascp.channel.main.refund.create
+//
+// 淘外分销解决方案--订单--逆向创单（未发货整单退）
 type AlibabaAscpChannelMainRefundCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpChannelMainRefundCreateAPIResponseModel

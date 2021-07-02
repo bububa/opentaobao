@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTmicQuestionnaireOptionGetAPIRequest
-获取单题选项 API请求
-tmall.tmic.questionnaire.option.get
-
-根据具体题号，获取当前题目的选项列表 */
+// TmallTmicQuestionnaireOptionGetAPIRequest 获取单题选项 API请求
+// tmall.tmic.questionnaire.option.get
+//
+// 根据具体题号，获取当前题目的选项列表
 type TmallTmicQuestionnaireOptionGetAPIRequest struct {
 	model.Params
 	// 问卷唯一编码，从问卷信息接口应答中获取

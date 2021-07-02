@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPicturePicturesCountAPIRequest
-图片总数查询 API请求
-taobao.picture.pictures.count
-
-图片总数查询 */
+// TaobaoPicturePicturesCountAPIRequest 图片总数查询 API请求
+// taobao.picture.pictures.count
+//
+// 图片总数查询
 type TaobaoPicturePicturesCountAPIRequest struct {
 	model.Params
 	// 查询上传开始时间点,格式:yyyy-MM-dd HH:mm:ss

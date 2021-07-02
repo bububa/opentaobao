@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkItemMorebarcodeOpsAPIResponse
-商品一品多码维护操作 API返回值
-alibaba.wdk.item.morebarcode.ops
-
-商品一品多码维护操作 */
+// AlibabaWdkItemMorebarcodeOpsAPIResponse 商品一品多码维护操作 API返回值
+// alibaba.wdk.item.morebarcode.ops
+//
+// 商品一品多码维护操作
 type AlibabaWdkItemMorebarcodeOpsAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkItemMorebarcodeOpsAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKfcKeywordSearchAPIRequest
-关键词过滤匹配 API请求
-taobao.kfc.keyword.search
-
-对输入的文本信息进行禁忌关键词匹配，返回匹配的结果 */
+// TaobaoKfcKeywordSearchAPIRequest 关键词过滤匹配 API请求
+// taobao.kfc.keyword.search
+//
+// 对输入的文本信息进行禁忌关键词匹配，返回匹配的结果
 type TaobaoKfcKeywordSearchAPIRequest struct {
 	model.Params
 	// 发布信息的淘宝会员名，可以不传

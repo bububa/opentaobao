@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziFusionReentryEmployeeAccountAPIResponse
-重新入职并且重新启用账号 API返回值
-alibaba.mozi.fusion.reentry.employee.account
-
-重新入职并且重新启用账号 */
+// AlibabaMoziFusionReentryEmployeeAccountAPIResponse 重新入职并且重新启用账号 API返回值
+// alibaba.mozi.fusion.reentry.employee.account
+//
+// 重新入职并且重新启用账号
 type AlibabaMoziFusionReentryEmployeeAccountAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziFusionReentryEmployeeAccountAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMarketingPromotionKfcAPIResponse
-定向优惠活动名称与描述违禁词检查 API返回值
-taobao.marketing.promotion.kfc
-
-活动名称与描述违禁词检查 */
+// TaobaoMarketingPromotionKfcAPIResponse 定向优惠活动名称与描述违禁词检查 API返回值
+// taobao.marketing.promotion.kfc
+//
+// 活动名称与描述违禁词检查
 type TaobaoMarketingPromotionKfcAPIResponse struct {
 	model.CommonResponse
 	TaobaoMarketingPromotionKfcAPIResponseModel

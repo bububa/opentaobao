@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemPriceUpdateAPIRequest
-更新商品价格 API请求
-taobao.item.price.update
-
-更新商品价格 */
+// TaobaoItemPriceUpdateAPIRequest 更新商品价格 API请求
+// taobao.item.price.update
+//
+// 更新商品价格
 type TaobaoItemPriceUpdateAPIRequest struct {
 	model.Params
 	// 所在地省份。如浙江 具体可以下载http://dl.open.taobao.com/sdk/商品城市列表.rar 取到

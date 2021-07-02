@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaichuanTaopasswordConfigAPIResponse
-淘口令配置数据 API返回值
-alibaba.baichuan.taopassword.config
-
-百川淘口令规则配置接口 */
+// AlibabaBaichuanTaopasswordConfigAPIResponse 淘口令配置数据 API返回值
+// alibaba.baichuan.taopassword.config
+//
+// 百川淘口令规则配置接口
 type AlibabaBaichuanTaopasswordConfigAPIResponse struct {
 	model.CommonResponse
 	AlibabaBaichuanTaopasswordConfigAPIResponseModel

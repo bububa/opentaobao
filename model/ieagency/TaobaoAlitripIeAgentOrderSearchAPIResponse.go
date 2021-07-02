@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripIeAgentOrderSearchAPIResponse
-【国际机票】订单列表查询 API返回值
-taobao.alitrip.ie.agent.order.search
-
-根据指定条件查询国际机票订单列表 */
+// TaobaoAlitripIeAgentOrderSearchAPIResponse 【国际机票】订单列表查询 API返回值
+// taobao.alitrip.ie.agent.order.search
+//
+// 根据指定条件查询国际机票订单列表
 type TaobaoAlitripIeAgentOrderSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripIeAgentOrderSearchAPIResponseModel

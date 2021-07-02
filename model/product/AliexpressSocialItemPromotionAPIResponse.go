@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialItemPromotionAPIResponse
-获取推广链接 API返回值
-aliexpress.social.item.promotion
-
-获取商品社交推广链接 */
+// AliexpressSocialItemPromotionAPIResponse 获取推广链接 API返回值
+// aliexpress.social.item.promotion
+//
+// 获取商品社交推广链接
 type AliexpressSocialItemPromotionAPIResponse struct {
 	model.CommonResponse
 	AliexpressSocialItemPromotionAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBillBookBillsGetAPIRequest
-查询虚拟账户明细数据(自研发商家专用) API请求
-taobao.bill.book.bills.get
-
-查询虚拟账户明细数据 */
+// TaobaoBillBookBillsGetAPIRequest 查询虚拟账户明细数据(自研发商家专用) API请求
+// taobao.bill.book.bills.get
+//
+// 查询虚拟账户明细数据
 type TaobaoBillBookBillsGetAPIRequest struct {
 	model.Params
 	// 虚拟账户科目编号

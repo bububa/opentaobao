@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterIdentifytaskCreateAPIRequest
-服务商创建核销单 API请求
-tmall.servicecenter.identifytask.create
-
-服务商调用该接口进行创建核销单操作 */
+// TmallServicecenterIdentifytaskCreateAPIRequest 服务商创建核销单 API请求
+// tmall.servicecenter.identifytask.create
+//
+// 服务商调用该接口进行创建核销单操作
 type TmallServicecenterIdentifytaskCreateAPIRequest struct {
 	model.Params
 	// 工单列表

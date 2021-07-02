@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponse
-异步开方处方详情 API返回值
-alibaba.alihealth.asyncprescribe.prescription.detail
-
-异步开方处方查询 */
+// AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponse 异步开方处方详情 API返回值
+// alibaba.alihealth.asyncprescribe.prescription.detail
+//
+// 异步开方处方查询
 type AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponseModel

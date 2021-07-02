@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/store"
 )
 
-/* TaobaoPlaceStoreRelationQuery
-门店关系查询
-taobao.place.store.relation.query
-
-查询门店关系 */
+// TaobaoPlaceStoreRelationQuery 门店关系查询
+// taobao.place.store.relation.query
+//
+// 查询门店关系
 func TaobaoPlaceStoreRelationQuery(clt *core.SDKClient, req *store.TaobaoPlaceStoreRelationQueryAPIRequest, session string) (*store.TaobaoPlaceStoreRelationQueryAPIResponse, error) {
 	var resp store.TaobaoPlaceStoreRelationQueryAPIResponse
 	err := clt.Post(req, &resp, session)

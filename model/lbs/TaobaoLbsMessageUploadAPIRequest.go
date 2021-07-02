@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLbsMessageUploadAPIRequest
-lbs数据采集 API请求
-taobao.lbs.message.upload
-
-lbs数据采集 */
+// TaobaoLbsMessageUploadAPIRequest lbs数据采集 API请求
+// taobao.lbs.message.upload
+//
+// lbs数据采集
 type TaobaoLbsMessageUploadAPIRequest struct {
 	model.Params
 	// 消息TOPIC

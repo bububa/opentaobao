@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkWholesaleOrderCommitAPIResponse
-盒马帮采购确认订单接口 API返回值
-alibaba.wdk.wholesale.order.commit
-
-盒马帮采购确认订单接口 */
+// AlibabaWdkWholesaleOrderCommitAPIResponse 盒马帮采购确认订单接口 API返回值
+// alibaba.wdk.wholesale.order.commit
+//
+// 盒马帮采购确认订单接口
 type AlibabaWdkWholesaleOrderCommitAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkWholesaleOrderCommitAPIResponseModel

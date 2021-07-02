@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/trade"
 )
 
-/* TaobaoKoubeiTribeOpenOrderPage
-口碑综合体订单列表信息查询
-taobao.koubei.tribe.open.order.page
-
-查询口碑商圈用户的订单列表信息 */
+// TaobaoKoubeiTribeOpenOrderPage 口碑综合体订单列表信息查询
+// taobao.koubei.tribe.open.order.page
+//
+// 查询口碑商圈用户的订单列表信息
 func TaobaoKoubeiTribeOpenOrderPage(clt *core.SDKClient, req *trade.TaobaoKoubeiTribeOpenOrderPageAPIRequest, session string) (*trade.TaobaoKoubeiTribeOpenOrderPageAPIResponse, error) {
 	var resp trade.TaobaoKoubeiTribeOpenOrderPageAPIResponse
 	err := clt.Post(req, &resp, session)

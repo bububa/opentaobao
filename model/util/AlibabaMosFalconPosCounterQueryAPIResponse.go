@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosFalconPosCounterQueryAPIResponse
-云POS查看专柜属性 API返回值
-alibaba.mos.falcon.pos.counter.query
-
-银泰商业获取专柜是否支持小数等属性查看 */
+// AlibabaMosFalconPosCounterQueryAPIResponse 云POS查看专柜属性 API返回值
+// alibaba.mos.falcon.pos.counter.query
+//
+// 银泰商业获取专柜是否支持小数等属性查看
 type AlibabaMosFalconPosCounterQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosFalconPosCounterQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRoomtypeDeletePublicAPIRequest
-商家删除房型数据接口 API请求
-taobao.xhotel.roomtype.delete.public
-
-房型删除TOP接口 */
+// TaobaoXhotelRoomtypeDeletePublicAPIRequest 商家删除房型数据接口 API请求
+// taobao.xhotel.roomtype.delete.public
+//
+// 房型删除TOP接口
 type TaobaoXhotelRoomtypeDeletePublicAPIRequest struct {
 	model.Params
 	// 房型rid ，传参方式：rid    或者   outer_id+vendor

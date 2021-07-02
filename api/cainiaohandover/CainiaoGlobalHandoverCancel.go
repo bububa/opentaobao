@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/cainiaohandover"
 )
 
-/* CainiaoGlobalHandoverCancel
-取消交接单
-cainiao.global.handover.cancel
-
-提供给ISV通过该接口取消交接单 */
+// CainiaoGlobalHandoverCancel 取消交接单
+// cainiao.global.handover.cancel
+//
+// 提供给ISV通过该接口取消交接单
 func CainiaoGlobalHandoverCancel(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverCancelAPIRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverCancelAPIResponse, error) {
 	var resp cainiaohandover.CainiaoGlobalHandoverCancelAPIResponse
 	err := clt.Post(req, &resp, session)

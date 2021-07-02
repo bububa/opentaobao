@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusDisableqrcodeSetAPIResponse
-自助机失效二维码 API返回值
-taobao.bus.disableqrcode.set
-
-使创建的二维码失效 */
+// TaobaoBusDisableqrcodeSetAPIResponse 自助机失效二维码 API返回值
+// taobao.bus.disableqrcode.set
+//
+// 使创建的二维码失效
 type TaobaoBusDisableqrcodeSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusDisableqrcodeSetAPIResponseModel

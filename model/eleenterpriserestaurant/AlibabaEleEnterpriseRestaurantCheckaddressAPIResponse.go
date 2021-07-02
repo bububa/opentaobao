@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseRestaurantCheckaddressAPIResponse
-检查地址是否在餐厅配送范围内 API返回值
-alibaba.ele.enterprise.restaurant.checkaddress
-
-检查地址是否在餐厅配送范围内 */
+// AlibabaEleEnterpriseRestaurantCheckaddressAPIResponse 检查地址是否在餐厅配送范围内 API返回值
+// alibaba.ele.enterprise.restaurant.checkaddress
+//
+// 检查地址是否在餐厅配送范围内
 type AlibabaEleEnterpriseRestaurantCheckaddressAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseRestaurantCheckaddressAPIResponseModel

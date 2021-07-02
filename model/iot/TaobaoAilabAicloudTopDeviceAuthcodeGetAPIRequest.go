@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest
-获取设备授权码 API请求
-taobao.ailab.aicloud.top.device.authcode.get
-
-获取设备授权码 */
+// TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest 获取设备授权码 API请求
+// taobao.ailab.aicloud.top.device.authcode.get
+//
+// 获取设备授权码
 type TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest struct {
 	model.Params
 	// 账户体系隔离，即硬件接入平台中取得的schema key。

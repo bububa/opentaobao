@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyWechatInfoAPIResponse
-星河-获取微信用户的信息 API返回值
-alitrip.merchant.galaxy.wechat.info
-
-获取微信用户的openId和unionId */
+// AlitripMerchantGalaxyWechatInfoAPIResponse 星河-获取微信用户的信息 API返回值
+// alitrip.merchant.galaxy.wechat.info
+//
+// 获取微信用户的openId和unionId
 type AlitripMerchantGalaxyWechatInfoAPIResponse struct {
 	model.CommonResponse
 	AlitripMerchantGalaxyWechatInfoAPIResponseModel

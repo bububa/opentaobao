@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTopOaidDecryptAPIResponse
-OAID解密 API返回值
-taobao.top.oaid.decrypt
-
-解码OAID(Open Addressee ID)，返回收件人信息。 */
+// TaobaoTopOaidDecryptAPIResponse OAID解密 API返回值
+// taobao.top.oaid.decrypt
+//
+// 解码OAID(Open Addressee ID)，返回收件人信息。
 type TaobaoTopOaidDecryptAPIResponse struct {
 	model.CommonResponse
 	TaobaoTopOaidDecryptAPIResponseModel

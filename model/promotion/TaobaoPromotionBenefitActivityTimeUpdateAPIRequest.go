@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionBenefitActivityTimeUpdateAPIRequest
-更新关联活动有效时间 API请求
-taobao.promotion.benefit.activity.time.update
-
-更新关联权益的活动有效时间 */
+// TaobaoPromotionBenefitActivityTimeUpdateAPIRequest 更新关联活动有效时间 API请求
+// taobao.promotion.benefit.activity.time.update
+//
+// 更新关联权益的活动有效时间
 type TaobaoPromotionBenefitActivityTimeUpdateAPIRequest struct {
 	model.Params
 	// ISV活动关联权益后获得的关联ID

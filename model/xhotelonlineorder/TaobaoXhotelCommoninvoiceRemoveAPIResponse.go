@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelCommoninvoiceRemoveAPIResponse
-常用发票信息删除接口 API返回值
-taobao.xhotel.commoninvoice.remove
-
-常用发票信息删除接口 */
+// TaobaoXhotelCommoninvoiceRemoveAPIResponse 常用发票信息删除接口 API返回值
+// taobao.xhotel.commoninvoice.remove
+//
+// 常用发票信息删除接口
 type TaobaoXhotelCommoninvoiceRemoveAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelCommoninvoiceRemoveAPIResponseModel

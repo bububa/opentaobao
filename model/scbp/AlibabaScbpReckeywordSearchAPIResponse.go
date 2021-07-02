@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpReckeywordSearchAPIResponse
-推荐词-词推词 API返回值
-alibaba.scbp.reckeyword.search
-
-推荐词-词推词 */
+// AlibabaScbpReckeywordSearchAPIResponse 推荐词-词推词 API返回值
+// alibaba.scbp.reckeyword.search
+//
+// 推荐词-词推词
 type AlibabaScbpReckeywordSearchAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpReckeywordSearchAPIResponseModel

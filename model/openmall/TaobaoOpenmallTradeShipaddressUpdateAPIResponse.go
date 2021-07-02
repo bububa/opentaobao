@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallTradeShipaddressUpdateAPIResponse
-Openmall订单收货地址修改 API返回值
-taobao.openmall.trade.shipaddress.update
-
-Openmall订单收货地址修改 */
+// TaobaoOpenmallTradeShipaddressUpdateAPIResponse Openmall订单收货地址修改 API返回值
+// taobao.openmall.trade.shipaddress.update
+//
+// Openmall订单收货地址修改
 type TaobaoOpenmallTradeShipaddressUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenmallTradeShipaddressUpdateAPIResponseModel

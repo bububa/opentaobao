@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripAgentFlightSellModifyBackfillAPIResponse
-销售改签回填 API返回值
-alitrip.agent.flight.sell.modify.backfill
-
-销售改签回填 */
+// AlitripAgentFlightSellModifyBackfillAPIResponse 销售改签回填 API返回值
+// alitrip.agent.flight.sell.modify.backfill
+//
+// 销售改签回填
 type AlitripAgentFlightSellModifyBackfillAPIResponse struct {
 	model.CommonResponse
 	AlitripAgentFlightSellModifyBackfillAPIResponseModel

@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOrderFreightCalculateAPIResponse
-阿里巴巴下单场景运费方案计算 API返回值
-alibaba.order.freight.calculate
-
-icbu开展 drop shipping 业务，阿里巴巴下单场景运费方案计算
-alibaba Create order scenario freight calculation */
+// AlibabaOrderFreightCalculateAPIResponse 阿里巴巴下单场景运费方案计算 API返回值
+// alibaba.order.freight.calculate
+//
+// icbu开展 drop shipping 业务，阿里巴巴下单场景运费方案计算
+// alibaba Create order scenario freight calculation
 type AlibabaOrderFreightCalculateAPIResponse struct {
 	model.CommonResponse
 	AlibabaOrderFreightCalculateAPIResponseModel

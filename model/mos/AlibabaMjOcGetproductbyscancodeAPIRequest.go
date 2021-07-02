@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjOcGetproductbyscancodeAPIRequest
-POS商品查询接口 API请求
-alibaba.mj.oc.getproductbyscancode
-
-此API用于在银泰商场中，POS端扫码获取商品信息 */
+// AlibabaMjOcGetproductbyscancodeAPIRequest POS商品查询接口 API请求
+// alibaba.mj.oc.getproductbyscancode
+//
+// 此API用于在银泰商场中，POS端扫码获取商品信息
 type AlibabaMjOcGetproductbyscancodeAPIRequest struct {
 	model.Params
 	// 码, 对应的信息可能是款号，也有可能是具体的某一个商品

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardPushAPIRequest
-推送服务工单信息 API请求
-tmall.servicecenter.workcard.push
-
-服务商家推送工单信息到天猫。 */
+// TmallServicecenterWorkcardPushAPIRequest 推送服务工单信息 API请求
+// tmall.servicecenter.workcard.push
+//
+// 服务商家推送工单信息到天猫。
 type TmallServicecenterWorkcardPushAPIRequest struct {
 	model.Params
 	// 属性列表。使用半角分号隔开,字符串前后都需要有半角分号

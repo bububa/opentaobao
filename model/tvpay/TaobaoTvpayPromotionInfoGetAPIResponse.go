@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTvpayPromotionInfoGetAPIResponse
-tv支付查询消费抽奖配置 API返回值
-taobao.tvpay.promotion.info.get
-
-查询消费抽奖配置 */
+// TaobaoTvpayPromotionInfoGetAPIResponse tv支付查询消费抽奖配置 API返回值
+// taobao.tvpay.promotion.info.get
+//
+// 查询消费抽奖配置
 type TaobaoTvpayPromotionInfoGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTvpayPromotionInfoGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodesellerChannelSearchAPIRequest
-查询渠道商api API请求
-alibaba.alihealth.tracecodeseller.channel.search
-
-查询渠道商api */
+// AlibabaAlihealthTracecodesellerChannelSearchAPIRequest 查询渠道商api API请求
+// alibaba.alihealth.tracecodeseller.channel.search
+//
+// 查询渠道商api
 type AlibabaAlihealthTracecodesellerChannelSearchAPIRequest struct {
 	model.Params
 	// 身份认证

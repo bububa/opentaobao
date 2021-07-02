@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenStoreprocessConfirmAPIResponse
-仓内加工单确认接口 API返回值
-taobao.qimen.storeprocess.confirm
-
-WMS调用奇门的接口,回传仓内加工单创建情况 */
+// TaobaoQimenStoreprocessConfirmAPIResponse 仓内加工单确认接口 API返回值
+// taobao.qimen.storeprocess.confirm
+//
+// WMS调用奇门的接口,回传仓内加工单创建情况
 type TaobaoQimenStoreprocessConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenStoreprocessConfirmAPIResponseModel

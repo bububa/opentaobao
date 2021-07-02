@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTagAddAPIResponse
-创建关键词分组 API返回值
-alibaba.scbp.tag.add
-
-创建关键词分组 */
+// AlibabaScbpTagAddAPIResponse 创建关键词分组 API返回值
+// alibaba.scbp.tag.add
+//
+// 创建关键词分组
 type AlibabaScbpTagAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpTagAddAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse
-提交发薪账单 API返回值
-alibaba.einvoice.tax.opt.salarybill.commitbill
-
-提交发薪账单 */
+// AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse 提交发薪账单 API返回值
+// alibaba.einvoice.tax.opt.salarybill.commitbill
+//
+// 提交发薪账单
 type AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelHstdfShotelExnotmatchroomAPIResponse
-导出一个hid下所有未匹配rid的接口 API返回值
-alitrip.hotel.hstdf.shotel.exnotmatchroom
-
-导出一个卖家hid下所有未匹配的rid信息，包括rid，名称、英文名称、床型、窗型、面积、对外系统id */
+// AlitripHotelHstdfShotelExnotmatchroomAPIResponse 导出一个hid下所有未匹配rid的接口 API返回值
+// alitrip.hotel.hstdf.shotel.exnotmatchroom
+//
+// 导出一个卖家hid下所有未匹配的rid信息，包括rid，名称、英文名称、床型、窗型、面积、对外系统id
 type AlitripHotelHstdfShotelExnotmatchroomAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelHstdfShotelExnotmatchroomAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCharityUseractionSyncAPIResponse
-用户公益行为同步 API返回值
-alibaba.charity.useraction.sync
-
-外部公益活动，用户公益行为同步 */
+// AlibabaCharityUseractionSyncAPIResponse 用户公益行为同步 API返回值
+// alibaba.charity.useraction.sync
+//
+// 外部公益活动，用户公益行为同步
 type AlibabaCharityUseractionSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaCharityUseractionSyncAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsQscoreGetAPIResponse
-取得一个推广组的所有关键词的质量得分或者根据关键词Id列表取得一组关键词的质量得分 API返回值
-taobao.simba.keywords.qscore.get
-
-取得一个推广组的所有关键词的质量得分列表 */
+// TaobaoSimbaKeywordsQscoreGetAPIResponse 取得一个推广组的所有关键词的质量得分或者根据关键词Id列表取得一组关键词的质量得分 API返回值
+// taobao.simba.keywords.qscore.get
+//
+// 取得一个推广组的所有关键词的质量得分列表
 type TaobaoSimbaKeywordsQscoreGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaKeywordsQscoreGetAPIResponseModel

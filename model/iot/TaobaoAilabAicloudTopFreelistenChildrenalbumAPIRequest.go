@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest
-儿童音频列表 API请求
-taobao.ailab.aicloud.top.freelisten.childrenalbum
-
-儿童音频列表 */
+// TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest 儿童音频列表 API请求
+// taobao.ailab.aicloud.top.freelisten.childrenalbum
+//
+// 儿童音频列表
 type TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest struct {
 	model.Params
 	// 账户体系隔离

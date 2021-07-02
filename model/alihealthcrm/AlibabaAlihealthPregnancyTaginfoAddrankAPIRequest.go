@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest
-点击标签后排序接口 API请求
-alibaba.alihealth.pregnancy.taginfo.addrank
-
-备孕管理--点击标签后排序接口 */
+// AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest 点击标签后排序接口 API请求
+// alibaba.alihealth.pregnancy.taginfo.addrank
+//
+// 备孕管理--点击标签后排序接口
 type AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest struct {
 	model.Params
 	// 用户id

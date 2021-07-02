@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceIncomeTokenReturnAPIResponse
-服务商回传税号token API返回值
-alibaba.einvoice.income.token.return
-
-服务商回传税号token，用来勾选抵扣认证 */
+// AlibabaEinvoiceIncomeTokenReturnAPIResponse 服务商回传税号token API返回值
+// alibaba.einvoice.income.token.return
+//
+// 服务商回传税号token，用来勾选抵扣认证
 type AlibabaEinvoiceIncomeTokenReturnAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceIncomeTokenReturnAPIResponseModel

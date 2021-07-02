@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallRefundCreateAPIRequest
-创建OpenMall退款单 API请求
-taobao.openmall.refund.create
-
-创建OpenMall退款单
-如存在未完结的退款单，则返回该退款单ID */
+// TaobaoOpenmallRefundCreateAPIRequest 创建OpenMall退款单 API请求
+// taobao.openmall.refund.create
+//
+// 创建OpenMall退款单
+// 如存在未完结的退款单，则返回该退款单ID
 type TaobaoOpenmallRefundCreateAPIRequest struct {
 	model.Params
 	// 分销者联盟身份

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiDriverBlacklistAddAPIResponse
-添加司机黑名单 API返回值
-alibaba.happytrip.taxi.driver.blacklist.add
-
-实现用户1对1永久拉黑司机，如果不支持永久拉黑，则在自动解禁黑名单司机时需回调通知欢行 */
+// AlibabaHappytripTaxiDriverBlacklistAddAPIResponse 添加司机黑名单 API返回值
+// alibaba.happytrip.taxi.driver.blacklist.add
+//
+// 实现用户1对1永久拉黑司机，如果不支持永久拉黑，则在自动解禁黑名单司机时需回调通知欢行
 type AlibabaHappytripTaxiDriverBlacklistAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaHappytripTaxiDriverBlacklistAddAPIResponseModel

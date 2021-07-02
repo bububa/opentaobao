@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductSkuAddAPIRequest
-产品sku添加接口 API请求
-taobao.fenxiao.product.sku.add
-
-添加产品SKU信息 */
+// TaobaoFenxiaoProductSkuAddAPIRequest 产品sku添加接口 API请求
+// taobao.fenxiao.product.sku.add
+//
+// 添加产品SKU信息
 type TaobaoFenxiaoProductSkuAddAPIRequest struct {
 	model.Params
 	// 产品ID

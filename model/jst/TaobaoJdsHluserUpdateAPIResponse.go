@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJdsHluserUpdateAPIResponse
-订单全链路用户信息修改 API返回值
-taobao.jds.hluser.update
-
-订单全链路用户信息修改，比如是否开放买家端展示 */
+// TaobaoJdsHluserUpdateAPIResponse 订单全链路用户信息修改 API返回值
+// taobao.jds.hluser.update
+//
+// 订单全链路用户信息修改，比如是否开放买家端展示
 type TaobaoJdsHluserUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoJdsHluserUpdateAPIResponseModel

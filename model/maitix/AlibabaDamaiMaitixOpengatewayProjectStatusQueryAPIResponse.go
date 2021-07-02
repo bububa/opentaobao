@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponse
-分销状态查询接口queryProjectStatusByProjectId API返回值
-alibaba.damai.maitix.opengateway.project.status.query
-
-queryProjectStatusByProjectId */
+// AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponse 分销状态查询接口queryProjectStatusByProjectId API返回值
+// alibaba.damai.maitix.opengateway.project.status.query
+//
+// queryProjectStatusByProjectId
 type AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponseModel

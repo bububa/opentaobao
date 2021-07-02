@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractMediaArtworkAPIResponse
-原图相关鉴权接口 API返回值
-alibaba.interact.media.artwork
-
-拍摄并上传原图相关鉴权接口 */
+// AlibabaInteractMediaArtworkAPIResponse 原图相关鉴权接口 API返回值
+// alibaba.interact.media.artwork
+//
+// 拍摄并上传原图相关鉴权接口
 type AlibabaInteractMediaArtworkAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractMediaArtworkAPIResponseModel

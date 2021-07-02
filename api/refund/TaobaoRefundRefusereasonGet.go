@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/refund"
 )
 
-/* TaobaoRefundRefusereasonGet
-获取拒绝原因列表
-taobao.refund.refusereason.get
-
-获取商家拒绝原因列表 */
+// TaobaoRefundRefusereasonGet 获取拒绝原因列表
+// taobao.refund.refusereason.get
+//
+// 获取商家拒绝原因列表
 func TaobaoRefundRefusereasonGet(clt *core.SDKClient, req *refund.TaobaoRefundRefusereasonGetAPIRequest, session string) (*refund.TaobaoRefundRefusereasonGetAPIResponse, error) {
 	var resp refund.TaobaoRefundRefusereasonGetAPIResponse
 	err := clt.Post(req, &resp, session)

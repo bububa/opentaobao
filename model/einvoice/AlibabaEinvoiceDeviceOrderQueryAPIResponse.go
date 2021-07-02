@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceDeviceOrderQueryAPIResponse
-查询税控设备加盘订购单详情 API返回值
-alibaba.einvoice.device.order.query
-
-查询税控设备订购单详情 */
+// AlibabaEinvoiceDeviceOrderQueryAPIResponse 查询税控设备加盘订购单详情 API返回值
+// alibaba.einvoice.device.order.query
+//
+// 查询税控设备订购单详情
 type AlibabaEinvoiceDeviceOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceDeviceOrderQueryAPIResponseModel

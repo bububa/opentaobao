@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemUpdateListingAPIRequest
-一口价商品上架 API请求
-taobao.item.update.listing
-
-* 单个商品上架<br/>* 输入的num_iid必须属于当前会话用户 */
+// TaobaoItemUpdateListingAPIRequest 一口价商品上架 API请求
+// taobao.item.update.listing
+//
+// * 单个商品上架<br/>* 输入的num_iid必须属于当前会话用户
 type TaobaoItemUpdateListingAPIRequest struct {
 	model.Params
 	// 商品数字ID，该参数必须

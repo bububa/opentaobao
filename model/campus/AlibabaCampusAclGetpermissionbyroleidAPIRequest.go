@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclGetpermissionbyroleidAPIRequest
-根据角色Id查询权限 API请求
-alibaba.campus.acl.getpermissionbyroleid
-
-根据角色查询权限 */
+// AlibabaCampusAclGetpermissionbyroleidAPIRequest 根据角色Id查询权限 API请求
+// alibaba.campus.acl.getpermissionbyroleid
+//
+// 根据角色查询权限
 type AlibabaCampusAclGetpermissionbyroleidAPIRequest struct {
 	model.Params
 	// 系统id

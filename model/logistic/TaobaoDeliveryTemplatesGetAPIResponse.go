@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDeliveryTemplatesGetAPIResponse
-获取用户下所有模板 API返回值
-taobao.delivery.templates.get
-
-根据用户ID获取用户下所有模板 */
+// TaobaoDeliveryTemplatesGetAPIResponse 获取用户下所有模板 API返回值
+// taobao.delivery.templates.get
+//
+// 根据用户ID获取用户下所有模板
 type TaobaoDeliveryTemplatesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoDeliveryTemplatesGetAPIResponseModel

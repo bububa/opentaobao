@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuTvDesktopToyouRecommendAPIRequest
-TV桌面为你推荐接口 API请求
-youku.tv.desktop.toyou.recommend
-
-提供为你推荐数据 */
+// YoukuTvDesktopToyouRecommendAPIRequest TV桌面为你推荐接口 API请求
+// youku.tv.desktop.toyou.recommend
+//
+// 提供为你推荐数据
 type YoukuTvDesktopToyouRecommendAPIRequest struct {
 	model.Params
 	// 用户登陆token

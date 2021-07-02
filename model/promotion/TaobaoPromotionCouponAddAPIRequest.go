@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionCouponAddAPIRequest
-创建店铺优惠券接口 API请求
-taobao.promotion.coupon.add
-
-创建店铺优惠券。有效期内的店铺优惠券总数量不超过50张 */
+// TaobaoPromotionCouponAddAPIRequest 创建店铺优惠券接口 API请求
+// taobao.promotion.coupon.add
+//
+// 创建店铺优惠券。有效期内的店铺优惠券总数量不超过50张
 type TaobaoPromotionCouponAddAPIRequest struct {
 	model.Params
 	// 优惠券的面额，必须是3，5，10，20，50，100

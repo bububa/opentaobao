@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/user"
 )
 
-/* TaobaoMiniappEleuserinfoGet
-获取饿了么用户信息
-taobao.miniapp.eleuserinfo.get
-
-获取饿了么用户信息 */
+// TaobaoMiniappEleuserinfoGet 获取饿了么用户信息
+// taobao.miniapp.eleuserinfo.get
+//
+// 获取饿了么用户信息
 func TaobaoMiniappEleuserinfoGet(clt *core.SDKClient, req *user.TaobaoMiniappEleuserinfoGetAPIRequest, session string) (*user.TaobaoMiniappEleuserinfoGetAPIResponse, error) {
 	var resp user.TaobaoMiniappEleuserinfoGetAPIResponse
 	err := clt.Post(req, &resp, session)

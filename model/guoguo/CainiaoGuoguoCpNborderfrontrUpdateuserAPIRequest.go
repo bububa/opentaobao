@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest
-小件员信息变更 API请求
-cainiao.guoguo.cp.nborderfrontr.updateuser
-
-小件员信息变更 */
+// CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest 小件员信息变更 API请求
+// cainiao.guoguo.cp.nborderfrontr.updateuser
+//
+// 小件员信息变更
 type CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest struct {
 	model.Params
 	// 姓名

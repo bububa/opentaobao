@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceApksAPIResponse
-获取停开服apk列表 API返回值
-yunos.tvpubadmin.device.apks
-
-获取停开服apk列表 */
+// YunosTvpubadminDeviceApksAPIResponse 获取停开服apk列表 API返回值
+// yunos.tvpubadmin.device.apks
+//
+// 获取停开服apk列表
 type YunosTvpubadminDeviceApksAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminDeviceApksAPIResponseModel

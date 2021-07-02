@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressUsergrowthSearchItemsGetAPIResponse
-第三方平台搜索AE商品 API返回值
-aliexpress.usergrowth.search.items.get
-
-第三方平台的搜索服务   获取AE商品list */
+// AliexpressUsergrowthSearchItemsGetAPIResponse 第三方平台搜索AE商品 API返回值
+// aliexpress.usergrowth.search.items.get
+//
+// 第三方平台的搜索服务   获取AE商品list
 type AliexpressUsergrowthSearchItemsGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressUsergrowthSearchItemsGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTaotvCarouselChannelAllAPIResponse
-获取所有频道列表 API返回值
-taobao.taotv.carousel.channel.all
-
-获取所有频道列表，按照序号升序 */
+// TaobaoTaotvCarouselChannelAllAPIResponse 获取所有频道列表 API返回值
+// taobao.taotv.carousel.channel.all
+//
+// 获取所有频道列表，按照序号升序
 type TaobaoTaotvCarouselChannelAllAPIResponse struct {
 	model.CommonResponse
 	TaobaoTaotvCarouselChannelAllAPIResponseModel

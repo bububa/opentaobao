@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoicePaperCommonReturnAPIResponse
-纸票通用回传接口 API返回值
-alibaba.einvoice.paper.common.return
-
-纸票通用回传接口（打印回传、注册回传等），只返回成功or失败 */
+// AlibabaEinvoicePaperCommonReturnAPIResponse 纸票通用回传接口 API返回值
+// alibaba.einvoice.paper.common.return
+//
+// 纸票通用回传接口（打印回传、注册回传等），只返回成功or失败
 type AlibabaEinvoicePaperCommonReturnAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoicePaperCommonReturnAPIResponseModel

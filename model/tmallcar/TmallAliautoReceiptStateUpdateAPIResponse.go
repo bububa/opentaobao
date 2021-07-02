@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallAliautoReceiptStateUpdateAPIResponse
-服务工单状态更新 API返回值
-tmall.aliauto.receipt.state.update
-
-二轮车服务工单状态更新 */
+// TmallAliautoReceiptStateUpdateAPIResponse 服务工单状态更新 API返回值
+// tmall.aliauto.receipt.state.update
+//
+// 二轮车服务工单状态更新
 type TmallAliautoReceiptStateUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallAliautoReceiptStateUpdateAPIResponseModel

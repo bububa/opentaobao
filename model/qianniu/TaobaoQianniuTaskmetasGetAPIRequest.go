@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuTaskmetasGetAPIRequest
-任务元查询接口 API请求
-taobao.qianniu.taskmetas.get
-
-任务元查询接口 */
+// TaobaoQianniuTaskmetasGetAPIRequest 任务元查询接口 API请求
+// taobao.qianniu.taskmetas.get
+//
+// 任务元查询接口
 type TaobaoQianniuTaskmetasGetAPIRequest struct {
 	model.Params
 	// 发起任务人的uid

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateHotproductDownloadAPIRequest
-联盟营销爆品下载接口 API请求
-aliexpress.affiliate.hotproduct.download
-
-查询联盟爆品API */
+// AliexpressAffiliateHotproductDownloadAPIRequest 联盟营销爆品下载接口 API请求
+// aliexpress.affiliate.hotproduct.download
+//
+// 查询联盟爆品API
 type AliexpressAffiliateHotproductDownloadAPIRequest struct {
 	model.Params
 	// trackingId

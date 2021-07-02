@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstPosOpenInventorySyncinventorydataAPIResponse
-商品库存修改同步接口(最多20条库存信息) API返回值
-alibaba.lst.pos.open.inventory.syncinventorydata
-
-商品库存修改同步接口(最多20条库存信息) */
+// AlibabaLstPosOpenInventorySyncinventorydataAPIResponse 商品库存修改同步接口(最多20条库存信息) API返回值
+// alibaba.lst.pos.open.inventory.syncinventorydata
+//
+// 商品库存修改同步接口(最多20条库存信息)
 type AlibabaLstPosOpenInventorySyncinventorydataAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstPosOpenInventorySyncinventorydataAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaodianServerDateGetAPIResponse
-服务器时间获取 API返回值
-taobao.baodian.server.date.get
-
-获取服务器时间 */
+// TaobaoBaodianServerDateGetAPIResponse 服务器时间获取 API返回值
+// taobao.baodian.server.date.get
+//
+// 获取服务器时间
 type TaobaoBaodianServerDateGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaodianServerDateGetAPIResponseModel

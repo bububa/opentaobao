@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodesellerCodeActiveAPIRequest
-上传激活码的文件 API请求
-alibaba.alihealth.tracecodeseller.code.active
-
-上传商品的激活码文件，存到系统中 */
+// AlibabaAlihealthTracecodesellerCodeActiveAPIRequest 上传激活码的文件 API请求
+// alibaba.alihealth.tracecodeseller.code.active
+//
+// 上传商品的激活码文件，存到系统中
 type AlibabaAlihealthTracecodesellerCodeActiveAPIRequest struct {
 	model.Params
 	// 文件名

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRegionPriceQueryAPIResponse
-区域价格查询 API返回值
-taobao.region.price.query
-
-区域价格查询 */
+// TaobaoRegionPriceQueryAPIResponse 区域价格查询 API返回值
+// taobao.region.price.query
+//
+// 区域价格查询
 type TaobaoRegionPriceQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoRegionPriceQueryAPIResponseModel

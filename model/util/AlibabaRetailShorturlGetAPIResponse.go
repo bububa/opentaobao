@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailShorturlGetAPIResponse
-短链接获取 API返回值
-alibaba.retail.shorturl.get
-
-短链接获取 */
+// AlibabaRetailShorturlGetAPIResponse 短链接获取 API返回值
+// alibaba.retail.shorturl.get
+//
+// 短链接获取
 type AlibabaRetailShorturlGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailShorturlGetAPIResponseModel

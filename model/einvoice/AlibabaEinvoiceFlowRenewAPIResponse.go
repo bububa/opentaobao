@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceFlowRenewAPIResponse
-工单(入驻、加盘、续约)续约 API返回值
-alibaba.einvoice.flow.renew
-
-工单(含入驻、加盘、续约工单)续约能力开放 */
+// AlibabaEinvoiceFlowRenewAPIResponse 工单(入驻、加盘、续约)续约 API返回值
+// alibaba.einvoice.flow.renew
+//
+// 工单(含入驻、加盘、续约工单)续约能力开放
 type AlibabaEinvoiceFlowRenewAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceFlowRenewAPIResponseModel

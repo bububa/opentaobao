@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest
-Dropshipper查找商品信息接口 API请求
-aliexpress.postproduct.redefining.findaeproductbyidfordropshipper
-
-提供给Dropshipper的通过商品ID查找商品信息的接口，只有特定买家可以使用 */
+// AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest Dropshipper查找商品信息接口 API请求
+// aliexpress.postproduct.redefining.findaeproductbyidfordropshipper
+//
+// 提供给Dropshipper的通过商品ID查找商品信息的接口，只有特定买家可以使用
 type AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest struct {
 	model.Params
 	// 商品ID

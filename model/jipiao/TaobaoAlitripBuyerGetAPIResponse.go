@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripBuyerGetAPIResponse
-敏感信息查询 API返回值
-taobao.alitrip.buyer.get
-
-针对商家提供统一的TOP接口，可以根据订单获取订单对应买家联系电话（阿里小号）。 */
+// TaobaoAlitripBuyerGetAPIResponse 敏感信息查询 API返回值
+// taobao.alitrip.buyer.get
+//
+// 针对商家提供统一的TOP接口，可以根据订单获取订单对应买家联系电话（阿里小号）。
 type TaobaoAlitripBuyerGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripBuyerGetAPIResponseModel

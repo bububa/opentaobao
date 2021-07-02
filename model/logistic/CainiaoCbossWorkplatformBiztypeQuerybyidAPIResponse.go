@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCbossWorkplatformBiztypeQuerybyidAPIResponse
-菜鸟工单平台根据业务类型id查询业务类型详细信息 API返回值
-cainiao.cboss.workplatform.biztype.querybyid
-
-菜鸟工单平台根据业务类型id查询业务类型详细信息。 目前调用者ISV */
+// CainiaoCbossWorkplatformBiztypeQuerybyidAPIResponse 菜鸟工单平台根据业务类型id查询业务类型详细信息 API返回值
+// cainiao.cboss.workplatform.biztype.querybyid
+//
+// 菜鸟工单平台根据业务类型id查询业务类型详细信息。 目前调用者ISV
 type CainiaoCbossWorkplatformBiztypeQuerybyidAPIResponse struct {
 	model.CommonResponse
 	CainiaoCbossWorkplatformBiztypeQuerybyidAPIResponseModel

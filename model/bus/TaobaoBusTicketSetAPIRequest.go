@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusTicketSetAPIRequest
-出票接口 API请求
-taobao.bus.ticket.set
-
-提供给汽车票商家出票使用 */
+// TaobaoBusTicketSetAPIRequest 出票接口 API请求
+// taobao.bus.ticket.set
+//
+// 提供给汽车票商家出票使用
 type TaobaoBusTicketSetAPIRequest struct {
 	model.Params
 	// 系统自动生成

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSubwayCiaGetAPIRequest
-查询单元智能出价信息 API请求
-taobao.subway.cia.get
-
-查询单元智能出价信息 */
+// TaobaoSubwayCiaGetAPIRequest 查询单元智能出价信息 API请求
+// taobao.subway.cia.get
+//
+// 查询单元智能出价信息
 type TaobaoSubwayCiaGetAPIRequest struct {
 	model.Params
 	// 主人昵称

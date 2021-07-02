@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtPayMerchantStallSigningModifyAPIResponse
-三级商户进件修改 API返回值
-tmall.nrt.pay.merchant.stall.signing.modify
-
-三级商户进件修改 */
+// TmallNrtPayMerchantStallSigningModifyAPIResponse 三级商户进件修改 API返回值
+// tmall.nrt.pay.merchant.stall.signing.modify
+//
+// 三级商户进件修改
 type TmallNrtPayMerchantStallSigningModifyAPIResponse struct {
 	model.CommonResponse
 	TmallNrtPayMerchantStallSigningModifyAPIResponseModel

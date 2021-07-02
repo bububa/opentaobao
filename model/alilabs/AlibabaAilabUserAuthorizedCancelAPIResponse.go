@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabUserAuthorizedCancelAPIResponse
-取消账号授权 API返回值
-alibaba.ailab.user.authorized.cancel
-
-三方用户取消授权给天猫精灵用户 */
+// AlibabaAilabUserAuthorizedCancelAPIResponse 取消账号授权 API返回值
+// alibaba.ailab.user.authorized.cancel
+//
+// 三方用户取消授权给天猫精灵用户
 type AlibabaAilabUserAuthorizedCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabUserAuthorizedCancelAPIResponseModel

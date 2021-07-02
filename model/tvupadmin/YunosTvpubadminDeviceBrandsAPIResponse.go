@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceBrandsAPIResponse
-获取终端类型下品牌列表 API返回值
-yunos.tvpubadmin.device.brands
-
-获取终端类型下品牌列表 */
+// YunosTvpubadminDeviceBrandsAPIResponse 获取终端类型下品牌列表 API返回值
+// yunos.tvpubadmin.device.brands
+//
+// 获取终端类型下品牌列表
 type YunosTvpubadminDeviceBrandsAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminDeviceBrandsAPIResponseModel

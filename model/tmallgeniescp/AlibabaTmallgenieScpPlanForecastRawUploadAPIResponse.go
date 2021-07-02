@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse
-17-供应商预测（原料-二级物料）回传接口 API返回值
-alibaba.tmallgenie.scp.plan.forecast.raw.upload
-
-供应商预测（原料-二级物料）回传接口 */
+// AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse 17-供应商预测（原料-二级物料）回传接口 API返回值
+// alibaba.tmallgenie.scp.plan.forecast.raw.upload
+//
+// 供应商预测（原料-二级物料）回传接口
 type AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanForecastRawUploadAPIResponseModel

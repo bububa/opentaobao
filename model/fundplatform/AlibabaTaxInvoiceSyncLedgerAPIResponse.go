@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTaxInvoiceSyncLedgerAPIResponse
-同步底账数据 API返回值
-alibaba.tax.invoice.sync.ledger
-
-接收第三方服务（如：票易通）同步过来的底账发票数据 */
+// AlibabaTaxInvoiceSyncLedgerAPIResponse 同步底账数据 API返回值
+// alibaba.tax.invoice.sync.ledger
+//
+// 接收第三方服务（如：票易通）同步过来的底账发票数据
 type AlibabaTaxInvoiceSyncLedgerAPIResponse struct {
 	model.CommonResponse
 	AlibabaTaxInvoiceSyncLedgerAPIResponseModel

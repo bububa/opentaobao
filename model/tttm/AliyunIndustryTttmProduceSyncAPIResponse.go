@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunIndustryTttmProduceSyncAPIResponse
-天天特卖生产进度同步 API返回值
-aliyun.industry.tttm.produce.sync
-
-天天特卖生产进度同步 */
+// AliyunIndustryTttmProduceSyncAPIResponse 天天特卖生产进度同步 API返回值
+// aliyun.industry.tttm.produce.sync
+//
+// 天天特卖生产进度同步
 type AliyunIndustryTttmProduceSyncAPIResponse struct {
 	model.CommonResponse
 	AliyunIndustryTttmProduceSyncAPIResponseModel

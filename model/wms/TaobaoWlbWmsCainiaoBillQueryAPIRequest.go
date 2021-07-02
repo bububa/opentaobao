@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsCainiaoBillQueryAPIRequest
-查询单据列表 API请求
-taobao.wlb.wms.cainiao.bill.query
-
-查询单据列表 */
+// TaobaoWlbWmsCainiaoBillQueryAPIRequest 查询单据列表 API请求
+// taobao.wlb.wms.cainiao.bill.query
+//
+// 查询单据列表
 type TaobaoWlbWmsCainiaoBillQueryAPIRequest struct {
 	model.Params
 	// 结束时间，此字段检索订单最后修改时间， 格式 yyyy-MM-dd HH:mm:ss。

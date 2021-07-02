@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingPriceAPIRequest
-促销价签服务 API请求
-alibaba.wdk.marketing.price
-
-获取营销-促销商品中的实时价格 */
+// AlibabaWdkMarketingPriceAPIRequest 促销价签服务 API请求
+// alibaba.wdk.marketing.price
+//
+// 获取营销-促销商品中的实时价格
 type AlibabaWdkMarketingPriceAPIRequest struct {
 	model.Params
 	// 单页大小

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusTvmbookorderSetAPIResponse
-线下自助机通知出票接口 API返回值
-taobao.bus.tvmbookorder.set
-
-出票，当成功的时候告知出票；当失败的时候告知出票失败，飞猪退款给用户。 */
+// TaobaoBusTvmbookorderSetAPIResponse 线下自助机通知出票接口 API返回值
+// taobao.bus.tvmbookorder.set
+//
+// 出票，当成功的时候告知出票；当失败的时候告知出票失败，飞猪退款给用户。
 type TaobaoBusTvmbookorderSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusTvmbookorderSetAPIResponseModel

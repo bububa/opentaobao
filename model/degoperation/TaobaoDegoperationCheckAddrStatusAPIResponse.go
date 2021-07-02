@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDegoperationCheckAddrStatusAPIResponse
-地址 API返回值
-taobao.degoperation.check.addr.status
-
-激励 */
+// TaobaoDegoperationCheckAddrStatusAPIResponse 地址 API返回值
+// taobao.degoperation.check.addr.status
+//
+// 激励
 type TaobaoDegoperationCheckAddrStatusAPIResponse struct {
 	model.CommonResponse
 	TaobaoDegoperationCheckAddrStatusAPIResponseModel

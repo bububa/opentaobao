@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoEndpointLockerTopOrderTrackingNewAPIResponse
-事件回传接口 API返回值
-cainiao.endpoint.locker.top.order.tracking.new
-
-用于合作公司通知入站、出站信息到菜鸟，共定义了5个操作，1个投件操作，3个取件操作，1个超时提醒。 */
+// CainiaoEndpointLockerTopOrderTrackingNewAPIResponse 事件回传接口 API返回值
+// cainiao.endpoint.locker.top.order.tracking.new
+//
+// 用于合作公司通知入站、出站信息到菜鸟，共定义了5个操作，1个投件操作，3个取件操作，1个超时提醒。
 type CainiaoEndpointLockerTopOrderTrackingNewAPIResponse struct {
 	model.CommonResponse
 	CainiaoEndpointLockerTopOrderTrackingNewAPIResponseModel

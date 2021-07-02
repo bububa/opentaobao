@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentExpressSetVtwoAPIResponse
-线下票回填物流信息v2--增加鉴权校验 API返回值
-taobao.train.agent.express.set.vtwo
-
-线下票回填物流信息服务 */
+// TaobaoTrainAgentExpressSetVtwoAPIResponse 线下票回填物流信息v2--增加鉴权校验 API返回值
+// taobao.train.agent.express.set.vtwo
+//
+// 线下票回填物流信息服务
 type TaobaoTrainAgentExpressSetVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentExpressSetVtwoAPIResponseModel

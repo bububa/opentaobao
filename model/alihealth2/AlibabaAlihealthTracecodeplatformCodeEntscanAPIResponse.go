@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodeplatformCodeEntscanAPIResponse
-药品商家扫码 API返回值
-alibaba.alihealth.tracecodeplatform.code.entscan
-
-药品商家扫描药品监管码，只有该商家的药才返回 */
+// AlibabaAlihealthTracecodeplatformCodeEntscanAPIResponse 药品商家扫码 API返回值
+// alibaba.alihealth.tracecodeplatform.code.entscan
+//
+// 药品商家扫描药品监管码，只有该商家的药才返回
 type AlibabaAlihealthTracecodeplatformCodeEntscanAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthTracecodeplatformCodeEntscanAPIResponseModel

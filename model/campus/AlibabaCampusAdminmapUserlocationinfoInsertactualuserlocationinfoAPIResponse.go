@@ -6,13 +6,12 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIResponse
-上传用户实时位置 API返回值
-alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo
-
-上传用户实时位置
-HSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService
-HSF方法名称：insertActualUserLocationInfo */
+// AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIResponse 上传用户实时位置 API返回值
+// alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo
+//
+// 上传用户实时位置
+// HSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService
+// HSF方法名称：insertActualUserLocationInfo
 type AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIResponseModel

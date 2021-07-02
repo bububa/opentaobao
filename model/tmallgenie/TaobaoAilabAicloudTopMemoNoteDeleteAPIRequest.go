@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest
-天猫精灵备忘录删除 API请求
-taobao.ailab.aicloud.top.memo.note.delete
-
-删除天猫精灵用户设置的备忘录 */
+// TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest 天猫精灵备忘录删除 API请求
+// taobao.ailab.aicloud.top.memo.note.delete
+//
+// 删除天猫精灵用户设置的备忘录
 type TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest struct {
 	model.Params
 	// schema

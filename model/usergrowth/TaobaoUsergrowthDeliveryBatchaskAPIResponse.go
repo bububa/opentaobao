@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsergrowthDeliveryBatchaskAPIResponse
-广告投放批量询问 API返回值
-taobao.usergrowth.delivery.batchask
-
-提供给媒体在曝光广告前调用， 返回是否曝光以及报价 */
+// TaobaoUsergrowthDeliveryBatchaskAPIResponse 广告投放批量询问 API返回值
+// taobao.usergrowth.delivery.batchask
+//
+// 提供给媒体在曝光广告前调用， 返回是否曝光以及报价
 type TaobaoUsergrowthDeliveryBatchaskAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsergrowthDeliveryBatchaskAPIResponseModel

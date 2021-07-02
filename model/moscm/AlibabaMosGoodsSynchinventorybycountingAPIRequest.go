@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosGoodsSynchinventorybycountingAPIRequest
-以盘点方式调整库存：传入商品实际库存 API请求
-alibaba.mos.goods.synchinventorybycounting
-
-以盘点方式调整库存：传入商品实际库存
-盘点单自动判断数量增减 */
+// AlibabaMosGoodsSynchinventorybycountingAPIRequest 以盘点方式调整库存：传入商品实际库存 API请求
+// alibaba.mos.goods.synchinventorybycounting
+//
+// 以盘点方式调整库存：传入商品实际库存
+// 盘点单自动判断数量增减
 type AlibabaMosGoodsSynchinventorybycountingAPIRequest struct {
 	model.Params
 	// 专柜信息

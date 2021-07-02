@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpLocationGetAPIResponse
-2-IBP查询CDC和RDC数据接口 API返回值
-alibaba.tmallgenie.scp.location.get
-
-天猫精灵供应链-计划域-IBP查询CDC和RDC数据接口 */
+// AlibabaTmallgenieScpLocationGetAPIResponse 2-IBP查询CDC和RDC数据接口 API返回值
+// alibaba.tmallgenie.scp.location.get
+//
+// 天猫精灵供应链-计划域-IBP查询CDC和RDC数据接口
 type AlibabaTmallgenieScpLocationGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpLocationGetAPIResponseModel

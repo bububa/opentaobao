@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-/* TmallItemVipSchemaAdd
-大商家商品发布接口
-tmall.item.vip.schema.add
-
-大商家商品发布接口 */
+// TmallItemVipSchemaAdd 大商家商品发布接口
+// tmall.item.vip.schema.add
+//
+// 大商家商品发布接口
 func TmallItemVipSchemaAdd(clt *core.SDKClient, req *product.TmallItemVipSchemaAddAPIRequest, session string) (*product.TmallItemVipSchemaAddAPIResponse, error) {
 	var resp product.TmallItemVipSchemaAddAPIResponse
 	err := clt.Post(req, &resp, session)

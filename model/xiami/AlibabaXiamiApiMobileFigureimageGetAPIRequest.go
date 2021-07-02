@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaXiamiApiMobileFigureimageGetAPIRequest
-获取手机banner图 API请求
-alibaba.xiami.api.mobile.figureimage.get
-
-获取手机banner图 */
+// AlibabaXiamiApiMobileFigureimageGetAPIRequest 获取手机banner图 API请求
+// alibaba.xiami.api.mobile.figureimage.get
+//
+// 获取手机banner图
 type AlibabaXiamiApiMobileFigureimageGetAPIRequest struct {
 	model.Params
 	// 分页限制

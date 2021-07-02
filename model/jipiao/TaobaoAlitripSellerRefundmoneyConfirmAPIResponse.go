@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripSellerRefundmoneyConfirmAPIResponse
-【机票代理商订单】确认退款 API返回值
-taobao.alitrip.seller.refundmoney.confirm
-
-代理人确认退票申请单的退款 */
+// TaobaoAlitripSellerRefundmoneyConfirmAPIResponse 【机票代理商订单】确认退款 API返回值
+// taobao.alitrip.seller.refundmoney.confirm
+//
+// 代理人确认退票申请单的退款
 type TaobaoAlitripSellerRefundmoneyConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripSellerRefundmoneyConfirmAPIResponseModel

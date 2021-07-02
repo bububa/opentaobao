@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpReckeywordSysGetAPIResponse
-系统推荐 API返回值
-alibaba.scbp.reckeyword.sys.get
-
-查询系统推荐词 */
+// AlibabaScbpReckeywordSysGetAPIResponse 系统推荐 API返回值
+// alibaba.scbp.reckeyword.sys.get
+//
+// 查询系统推荐词
 type AlibabaScbpReckeywordSysGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpReckeywordSysGetAPIResponseModel

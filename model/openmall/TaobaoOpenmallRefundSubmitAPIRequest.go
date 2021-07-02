@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallRefundSubmitAPIRequest
-提交OpenMall退款单物流 API请求
-taobao.openmall.refund.submit
-
-提交OpenMall退款单物流 */
+// TaobaoOpenmallRefundSubmitAPIRequest 提交OpenMall退款单物流 API请求
+// taobao.openmall.refund.submit
+//
+// 提交OpenMall退款单物流
 type TaobaoOpenmallRefundSubmitAPIRequest struct {
 	model.Params
 	// 渠道

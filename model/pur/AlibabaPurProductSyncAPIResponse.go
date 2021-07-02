@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPurProductSyncAPIResponse
-同步产品 API返回值
-alibaba.pur.product.sync
-
-同步产品 */
+// AlibabaPurProductSyncAPIResponse 同步产品 API返回值
+// alibaba.pur.product.sync
+//
+// 同步产品
 type AlibabaPurProductSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaPurProductSyncAPIResponseModel

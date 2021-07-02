@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMdeerVideoSyncAPIRequest
-合作伙伴视频同步给医知鹿接口 API请求
-alibaba.alihealth.mdeer.video.sync
-
-合伙做伴内容同步接口，用来视频同步 */
+// AlibabaAlihealthMdeerVideoSyncAPIRequest 合作伙伴视频同步给医知鹿接口 API请求
+// alibaba.alihealth.mdeer.video.sync
+//
+// 合伙做伴内容同步接口，用来视频同步
 type AlibabaAlihealthMdeerVideoSyncAPIRequest struct {
 	model.Params
 	// 合作方头像url

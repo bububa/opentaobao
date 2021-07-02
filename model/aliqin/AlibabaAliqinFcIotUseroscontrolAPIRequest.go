@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotUseroscontrolAPIRequest
-物联卡用户管理停开机功能 API请求
-alibaba.aliqin.fc.iot.useroscontrol
-
-物联网针对用户级管理停开支持 */
+// AlibabaAliqinFcIotUseroscontrolAPIRequest 物联卡用户管理停开机功能 API请求
+// alibaba.aliqin.fc.iot.useroscontrol
+//
+// 物联网针对用户级管理停开支持
 type AlibabaAliqinFcIotUseroscontrolAPIRequest struct {
 	model.Params
 	// 物联卡的iccid

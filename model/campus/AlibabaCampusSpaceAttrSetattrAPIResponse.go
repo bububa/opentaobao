@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusSpaceAttrSetattrAPIResponse
-新增业务属性实例接口 API返回值
-alibaba.campus.space.attr.setattr
-
-新增业务属性实例接口 */
+// AlibabaCampusSpaceAttrSetattrAPIResponse 新增业务属性实例接口 API返回值
+// alibaba.campus.space.attr.setattr
+//
+// 新增业务属性实例接口
 type AlibabaCampusSpaceAttrSetattrAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusSpaceAttrSetattrAPIResponseModel

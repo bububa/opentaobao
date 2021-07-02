@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallSupplychainChannelProductQuantityGetAPIRequest
-渠道库存查询接口 API请求
-tmall.supplychain.channel.product.quantity.get
-
-渠道库存查询接口 */
+// TmallSupplychainChannelProductQuantityGetAPIRequest 渠道库存查询接口 API请求
+// tmall.supplychain.channel.product.quantity.get
+//
+// 渠道库存查询接口
 type TmallSupplychainChannelProductQuantityGetAPIRequest struct {
 	model.Params
 	// 产品数字ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseRestaurantMixAPIResponse
-混合搜索店铺 API返回值
-alibaba.ele.enterprise.restaurant.mix
-
-混合搜索店铺 */
+// AlibabaEleEnterpriseRestaurantMixAPIResponse 混合搜索店铺 API返回值
+// alibaba.ele.enterprise.restaurant.mix
+//
+// 混合搜索店铺
 type AlibabaEleEnterpriseRestaurantMixAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseRestaurantMixAPIResponseModel

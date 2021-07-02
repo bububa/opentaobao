@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionFeedListGetAPIRequest
-aliexpress.solution.feed.list.get API请求
-aliexpress.solution.feed.list.get
-
-API to query the feed list belonged to a seller */
+// AliexpressSolutionFeedListGetAPIRequest aliexpress.solution.feed.list.get API请求
+// aliexpress.solution.feed.list.get
+//
+// API to query the feed list belonged to a seller
 type AliexpressSolutionFeedListGetAPIRequest struct {
 	model.Params
 	// current page

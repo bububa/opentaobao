@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelDataServiceOrderDetailAPIRequest
-服务订单详情 API请求
-taobao.xhotel.data.service.order.detail
-
-服务订单详情top接口构建 */
+// TaobaoXhotelDataServiceOrderDetailAPIRequest 服务订单详情 API请求
+// taobao.xhotel.data.service.order.detail
+//
+// 服务订单详情top接口构建
 type TaobaoXhotelDataServiceOrderDetailAPIRequest struct {
 	model.Params
 	// 查询开始日期

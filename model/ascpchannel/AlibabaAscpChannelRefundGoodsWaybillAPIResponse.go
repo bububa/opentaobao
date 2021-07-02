@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpChannelRefundGoodsWaybillAPIResponse
-淘外分销退货回传物流单号 API返回值
-alibaba.ascp.channel.refund.goods.waybill
-
-淘外分销退货回传物流单号 */
+// AlibabaAscpChannelRefundGoodsWaybillAPIResponse 淘外分销退货回传物流单号 API返回值
+// alibaba.ascp.channel.refund.goods.waybill
+//
+// 淘外分销退货回传物流单号
 type AlibabaAscpChannelRefundGoodsWaybillAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpChannelRefundGoodsWaybillAPIResponseModel

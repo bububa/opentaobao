@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegalCaseMediateRecordSaveAPIResponse
-新增调解结果 API返回值
-alibaba.legal.case.mediate.record.save
-
-增加调解沟通记录 */
+// AlibabaLegalCaseMediateRecordSaveAPIResponse 新增调解结果 API返回值
+// alibaba.legal.case.mediate.record.save
+//
+// 增加调解沟通记录
 type AlibabaLegalCaseMediateRecordSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalCaseMediateRecordSaveAPIResponseModel

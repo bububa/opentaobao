@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeUserCreateAPIResponse
-支付宝医疗健康疫苗用户创建 API返回值
-alibaba.health.vaccin.notice.user.create
-
-支付宝医疗健康疫苗用户创建 */
+// AlibabaHealthVaccinNoticeUserCreateAPIResponse 支付宝医疗健康疫苗用户创建 API返回值
+// alibaba.health.vaccin.notice.user.create
+//
+// 支付宝医疗健康疫苗用户创建
 type AlibabaHealthVaccinNoticeUserCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthVaccinNoticeUserCreateAPIResponseModel

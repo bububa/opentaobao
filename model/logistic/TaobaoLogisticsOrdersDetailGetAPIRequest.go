@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsOrdersDetailGetAPIRequest
-批量查询物流订单,返回详细信息 API请求
-taobao.logistics.orders.detail.get
-
-查询物流订单的详细信息，涉及用户隐私字段。 */
+// TaobaoLogisticsOrdersDetailGetAPIRequest 批量查询物流订单,返回详细信息 API请求
+// taobao.logistics.orders.detail.get
+//
+// 查询物流订单的详细信息，涉及用户隐私字段。
 type TaobaoLogisticsOrdersDetailGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表.可选值:Shipping 物流数据结构中所有字段.fileds中可以指定返回以上任意一个或者多个字段,以","分隔.

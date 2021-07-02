@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstMiniappOpenidMessageSendAPIResponse
-单个openId用户短信发送 API返回值
-taobao.jst.miniapp.openid.message.send
-
-单个openId用户短信发送 */
+// TaobaoJstMiniappOpenidMessageSendAPIResponse 单个openId用户短信发送 API返回值
+// taobao.jst.miniapp.openid.message.send
+//
+// 单个openId用户短信发送
 type TaobaoJstMiniappOpenidMessageSendAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstMiniappOpenidMessageSendAPIResponseModel

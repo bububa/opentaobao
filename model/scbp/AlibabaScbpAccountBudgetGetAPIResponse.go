@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAccountBudgetGetAPIResponse
-查询日消耗预算 API返回值
-alibaba.scbp.account.budget.get
-
-查询日消耗预算 */
+// AlibabaScbpAccountBudgetGetAPIResponse 查询日消耗预算 API返回值
+// alibaba.scbp.account.budget.get
+//
+// 查询日消耗预算
 type AlibabaScbpAccountBudgetGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAccountBudgetGetAPIResponseModel

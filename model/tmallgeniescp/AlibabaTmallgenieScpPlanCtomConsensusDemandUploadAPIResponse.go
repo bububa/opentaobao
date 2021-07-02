@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIResponse
-22-C2M共识需求回传接口 API返回值
-alibaba.tmallgenie.scp.plan.ctom.consensus.demand.upload
-
-C2M 共识需求回传接口 */
+// AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIResponse 22-C2M共识需求回传接口 API返回值
+// alibaba.tmallgenie.scp.plan.ctom.consensus.demand.upload
+//
+// C2M 共识需求回传接口
 type AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIResponseModel

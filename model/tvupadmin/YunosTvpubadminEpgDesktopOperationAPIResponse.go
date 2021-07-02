@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminEpgDesktopOperationAPIResponse
-影视桌面运营通用接口 API返回值
-yunos.tvpubadmin.epg.desktop.operation
-
-影视桌面运营通用接口 */
+// YunosTvpubadminEpgDesktopOperationAPIResponse 影视桌面运营通用接口 API返回值
+// yunos.tvpubadmin.epg.desktop.operation
+//
+// 影视桌面运营通用接口
 type YunosTvpubadminEpgDesktopOperationAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminEpgDesktopOperationAPIResponseModel

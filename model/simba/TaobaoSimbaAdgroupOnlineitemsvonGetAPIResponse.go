@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponse
-获取用户上架在线销售的全部宝贝 API返回值
-taobao.simba.adgroup.onlineitemsvon.get
-
-获取用户上架在线销售的全部宝贝 */
+// TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponse 获取用户上架在线销售的全部宝贝 API返回值
+// taobao.simba.adgroup.onlineitemsvon.get
+//
+// 获取用户上架在线销售的全部宝贝
 type TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkCouponAbandonAPIResponse
-废券 API返回值
-alibaba.wdk.coupon.abandon
-
-优惠券废弃 */
+// AlibabaWdkCouponAbandonAPIResponse 废券 API返回值
+// alibaba.wdk.coupon.abandon
+//
+// 优惠券废弃
 type AlibabaWdkCouponAbandonAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkCouponAbandonAPIResponseModel

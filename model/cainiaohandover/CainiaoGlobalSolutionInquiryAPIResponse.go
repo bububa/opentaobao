@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalSolutionInquiryAPIResponse
-解决方案询盘 API返回值
-cainiao.global.solution.inquiry
-
-根据交易单号查询可用的解决方案 */
+// CainiaoGlobalSolutionInquiryAPIResponse 解决方案询盘 API返回值
+// cainiao.global.solution.inquiry
+//
+// 根据交易单号查询可用的解决方案
 type CainiaoGlobalSolutionInquiryAPIResponse struct {
 	model.CommonResponse
 	CainiaoGlobalSolutionInquiryAPIResponseModel

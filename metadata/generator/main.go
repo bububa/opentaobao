@@ -68,5 +68,5 @@ func genGoDoc() error {
 		"GitBuiltBy": builtBy,
 	}
 	tmpl.Execute(fd, tpl)
-	return nil
+	return gofmt(targetFile)
 }

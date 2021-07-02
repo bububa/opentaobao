@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFlowWalletChargeRuleAPIRequest
-流量钱包直充（根据号码归属地省份路由） API请求
-alibaba.aliqin.flow.wallet.charge.rule
-
-流量钱包直充（根据号码归属地省份路由） */
+// AlibabaAliqinFlowWalletChargeRuleAPIRequest 流量钱包直充（根据号码归属地省份路由） API请求
+// alibaba.aliqin.flow.wallet.charge.rule
+//
+// 流量钱包直充（根据号码归属地省份路由）
 type AlibabaAliqinFlowWalletChargeRuleAPIRequest struct {
 	model.Params
 	// 号码

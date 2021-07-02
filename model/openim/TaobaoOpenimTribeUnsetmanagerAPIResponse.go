@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimTribeUnsetmanagerAPIResponse
-OPENIM群取消管理员 API返回值
-taobao.openim.tribe.unsetmanager
-
-OPENIM群取消管理员 */
+// TaobaoOpenimTribeUnsetmanagerAPIResponse OPENIM群取消管理员 API返回值
+// taobao.openim.tribe.unsetmanager
+//
+// OPENIM群取消管理员
 type TaobaoOpenimTribeUnsetmanagerAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimTribeUnsetmanagerAPIResponseModel

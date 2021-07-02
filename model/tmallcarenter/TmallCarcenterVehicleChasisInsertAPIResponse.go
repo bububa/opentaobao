@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarcenterVehicleChasisInsertAPIResponse
-EPC车型底盘压缩库新增接口 API返回值
-tmall.carcenter.vehicle.chasis.insert
-
-EPC车型底盘压缩库新增接口 */
+// TmallCarcenterVehicleChasisInsertAPIResponse EPC车型底盘压缩库新增接口 API返回值
+// tmall.carcenter.vehicle.chasis.insert
+//
+// EPC车型底盘压缩库新增接口
 type TmallCarcenterVehicleChasisInsertAPIResponse struct {
 	model.CommonResponse
 	TmallCarcenterVehicleChasisInsertAPIResponseModel

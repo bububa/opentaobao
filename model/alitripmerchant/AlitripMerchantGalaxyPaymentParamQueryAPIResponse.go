@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyPaymentParamQueryAPIResponse
-星河-支付参数查询接口 API返回值
-alitrip.merchant.galaxy.payment.param.query
-
-获取微信小程序的支付参数，供微信小程序调起支付请求。参数都为校验字段，不涉及用户隐私数据 */
+// AlitripMerchantGalaxyPaymentParamQueryAPIResponse 星河-支付参数查询接口 API返回值
+// alitrip.merchant.galaxy.payment.param.query
+//
+// 获取微信小程序的支付参数，供微信小程序调起支付请求。参数都为校验字段，不涉及用户隐私数据
 type AlitripMerchantGalaxyPaymentParamQueryAPIResponse struct {
 	model.CommonResponse
 	AlitripMerchantGalaxyPaymentParamQueryAPIResponseModel

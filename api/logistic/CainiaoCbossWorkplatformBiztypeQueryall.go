@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-/* CainiaoCbossWorkplatformBiztypeQueryall
-菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型
-cainiao.cboss.workplatform.biztype.queryall
-
-菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型。 目前调用者ISV */
+// CainiaoCbossWorkplatformBiztypeQueryall 菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型
+// cainiao.cboss.workplatform.biztype.queryall
+//
+// 菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型。 目前调用者ISV
 func CainiaoCbossWorkplatformBiztypeQueryall(clt *core.SDKClient, req *logistic.CainiaoCbossWorkplatformBiztypeQueryallAPIRequest, session string) (*logistic.CainiaoCbossWorkplatformBiztypeQueryallAPIResponse, error) {
 	var resp logistic.CainiaoCbossWorkplatformBiztypeQueryallAPIResponse
 	err := clt.Post(req, &resp, session)

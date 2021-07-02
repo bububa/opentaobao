@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIvrNumCallAPIResponse
-ivr呼叫 API返回值
-alibaba.aliqin.fc.ivr.num.call
-
-ivr呼叫 */
+// AlibabaAliqinFcIvrNumCallAPIResponse ivr呼叫 API返回值
+// alibaba.aliqin.fc.ivr.num.call
+//
+// ivr呼叫
 type AlibabaAliqinFcIvrNumCallAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcIvrNumCallAPIResponseModel

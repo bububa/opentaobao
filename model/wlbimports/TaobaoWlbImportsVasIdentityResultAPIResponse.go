@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbImportsVasIdentityResultAPIResponse
-集货鉴定结果 API返回值
-taobao.wlb.imports.vas.identity.result
-
-集货鉴定结果查询 */
+// TaobaoWlbImportsVasIdentityResultAPIResponse 集货鉴定结果 API返回值
+// taobao.wlb.imports.vas.identity.result
+//
+// 集货鉴定结果查询
 type TaobaoWlbImportsVasIdentityResultAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbImportsVasIdentityResultAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/opentrade"
 )
 
-/* TaobaoOpentradeGroupOrder
-组团购获取订单列表
-taobao.opentrade.group.order
-
-组团购场景下，获取开团的订单列表 */
+// TaobaoOpentradeGroupOrder 组团购获取订单列表
+// taobao.opentrade.group.order
+//
+// 组团购场景下，获取开团的订单列表
 func TaobaoOpentradeGroupOrder(clt *core.SDKClient, req *opentrade.TaobaoOpentradeGroupOrderAPIRequest, session string) (*opentrade.TaobaoOpentradeGroupOrderAPIResponse, error) {
 	var resp opentrade.TaobaoOpentradeGroupOrderAPIResponse
 	err := clt.Post(req, &resp, session)

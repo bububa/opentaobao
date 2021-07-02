@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthAlipaypfmUseridDecryptAPIResponse
-用户标识解密接口 API返回值
-alibaba.alihealth.alipaypfm.userid.decrypt
-
-用户唯一表示加密传输，调用方解密 */
+// AlibabaAlihealthAlipaypfmUseridDecryptAPIResponse 用户标识解密接口 API返回值
+// alibaba.alihealth.alipaypfm.userid.decrypt
+//
+// 用户唯一表示加密传输，调用方解密
 type AlibabaAlihealthAlipaypfmUseridDecryptAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthAlipaypfmUseridDecryptAPIResponseModel

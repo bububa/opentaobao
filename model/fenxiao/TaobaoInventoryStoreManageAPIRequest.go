@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInventoryStoreManageAPIRequest
-创建或更新仓库 API请求
-taobao.inventory.store.manage
-
-创建商家仓或者更新商家仓信息 */
+// TaobaoInventoryStoreManageAPIRequest 创建或更新仓库 API请求
+// taobao.inventory.store.manage
+//
+// 创建商家仓或者更新商家仓信息
 type TaobaoInventoryStoreManageAPIRequest struct {
 	model.Params
 	// 参数定义，ADD：新建; UPDATE：更新

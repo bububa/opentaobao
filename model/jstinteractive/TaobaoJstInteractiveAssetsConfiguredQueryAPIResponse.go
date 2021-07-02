@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstInteractiveAssetsConfiguredQueryAPIResponse
-查询已配置的任务素材列表接口 API返回值
-taobao.jst.interactive.assets.configured.query
-
-查询已配置任务素材列表 */
+// TaobaoJstInteractiveAssetsConfiguredQueryAPIResponse 查询已配置的任务素材列表接口 API返回值
+// taobao.jst.interactive.assets.configured.query
+//
+// 查询已配置任务素材列表
 type TaobaoJstInteractiveAssetsConfiguredQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstInteractiveAssetsConfiguredQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosOrderqsMisbigposOrderQueryAPIResponse
-大pos新选单退 API返回值
-alibaba.mos.orderqs.misbigpos.order.query
-
-大pos新选单退 */
+// AlibabaMosOrderqsMisbigposOrderQueryAPIResponse 大pos新选单退 API返回值
+// alibaba.mos.orderqs.misbigpos.order.query
+//
+// 大pos新选单退
 type AlibabaMosOrderqsMisbigposOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosOrderqsMisbigposOrderQueryAPIResponseModel

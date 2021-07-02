@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMerchantCategoryQueryAPIRequest
-三江erp对接类目查询接口 API请求
-alibaba.wdk.merchant.category.query
-
-三江erp对接类目查询接口 */
+// AlibabaWdkMerchantCategoryQueryAPIRequest 三江erp对接类目查询接口 API请求
+// alibaba.wdk.merchant.category.query
+//
+// 三江erp对接类目查询接口
 type AlibabaWdkMerchantCategoryQueryAPIRequest struct {
 	model.Params
 	// 搜索关键词，可不填就查全部

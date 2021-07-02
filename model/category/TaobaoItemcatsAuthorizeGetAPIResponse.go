@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemcatsAuthorizeGetAPIResponse
-查询商家被授权品牌列表和类目列表 API返回值
-taobao.itemcats.authorize.get
-
-查询B商家被授权品牌列表、类目列表和 c 商家新品类目列表 */
+// TaobaoItemcatsAuthorizeGetAPIResponse 查询商家被授权品牌列表和类目列表 API返回值
+// taobao.itemcats.authorize.get
+//
+// 查询B商家被授权品牌列表、类目列表和 c 商家新品类目列表
 type TaobaoItemcatsAuthorizeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemcatsAuthorizeGetAPIResponseModel

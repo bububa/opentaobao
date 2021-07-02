@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLatourStrategyShowAPIResponse
-阿里巴巴权益投放接口 API返回值
-alibaba.latour.strategy.show
-
-阿里巴巴权益平台权益投放接口 */
+// AlibabaLatourStrategyShowAPIResponse 阿里巴巴权益投放接口 API返回值
+// alibaba.latour.strategy.show
+//
+// 阿里巴巴权益平台权益投放接口
 type AlibabaLatourStrategyShowAPIResponse struct {
 	model.CommonResponse
 	AlibabaLatourStrategyShowAPIResponseModel

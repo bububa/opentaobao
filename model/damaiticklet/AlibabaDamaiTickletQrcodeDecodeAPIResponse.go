@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiTickletQrcodeDecodeAPIResponse
-票夹-动态二维码-解码 API返回值
-alibaba.damai.ticklet.qrcode.decode
-
-对于票夹的动态二维码进行解码 */
+// AlibabaDamaiTickletQrcodeDecodeAPIResponse 票夹-动态二维码-解码 API返回值
+// alibaba.damai.ticklet.qrcode.decode
+//
+// 对于票夹的动态二维码进行解码
 type AlibabaDamaiTickletQrcodeDecodeAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiTickletQrcodeDecodeAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptAdgroupcreativebaseGetAPIRequest
-推广组下创意报表基础数据查询(汇总数据，不分类型) API请求
-taobao.simba.rpt.adgroupcreativebase.get
-
-推广组下创意报表基础数据查询(汇总数据，不分类型) */
+// TaobaoSimbaRptAdgroupcreativebaseGetAPIRequest 推广组下创意报表基础数据查询(汇总数据，不分类型) API请求
+// taobao.simba.rpt.adgroupcreativebase.get
+//
+// 推广组下创意报表基础数据查询(汇总数据，不分类型)
 type TaobaoSimbaRptAdgroupcreativebaseGetAPIRequest struct {
 	model.Params
 	// 权限验证信息

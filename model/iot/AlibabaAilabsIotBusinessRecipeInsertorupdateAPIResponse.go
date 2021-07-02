@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsIotBusinessRecipeInsertorupdateAPIResponse
-插入和更新食谱 API返回值
-alibaba.ailabs.iot.business.recipe.insertorupdate
-
-插入和更新食谱，将isv的食谱添加到云端进行存储 */
+// AlibabaAilabsIotBusinessRecipeInsertorupdateAPIResponse 插入和更新食谱 API返回值
+// alibaba.ailabs.iot.business.recipe.insertorupdate
+//
+// 插入和更新食谱，将isv的食谱添加到云端进行存储
 type AlibabaAilabsIotBusinessRecipeInsertorupdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsIotBusinessRecipeInsertorupdateAPIResponseModel

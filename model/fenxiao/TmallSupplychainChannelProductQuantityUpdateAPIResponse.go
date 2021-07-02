@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallSupplychainChannelProductQuantityUpdateAPIResponse
-渠道无仓库存更新接口 API返回值
-tmall.supplychain.channel.product.quantity.update
-
-渠道无仓库存更新接口 */
+// TmallSupplychainChannelProductQuantityUpdateAPIResponse 渠道无仓库存更新接口 API返回值
+// tmall.supplychain.channel.product.quantity.update
+//
+// 渠道无仓库存更新接口
 type TmallSupplychainChannelProductQuantityUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallSupplychainChannelProductQuantityUpdateAPIResponseModel

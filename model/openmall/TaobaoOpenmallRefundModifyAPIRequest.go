@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallRefundModifyAPIRequest
-修改OpenMall退款申请 API请求
-taobao.openmall.refund.modify
-
-修改OpenMall退款申请 */
+// TaobaoOpenmallRefundModifyAPIRequest 修改OpenMall退款申请 API请求
+// taobao.openmall.refund.modify
+//
+// 修改OpenMall退款申请
 type TaobaoOpenmallRefundModifyAPIRequest struct {
 	model.Params
 	// 退款类型，可选值refund（仅退款）、return_and_refund（退款退货）

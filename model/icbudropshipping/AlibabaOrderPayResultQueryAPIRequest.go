@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOrderPayResultQueryAPIRequest
-alibaba查询订单支付结果 API请求
-alibaba.order.pay.result.query
-
-alibaba查询订单支付结果 */
+// AlibabaOrderPayResultQueryAPIRequest alibaba查询订单支付结果 API请求
+// alibaba.order.pay.result.query
+//
+// alibaba查询订单支付结果
 type AlibabaOrderPayResultQueryAPIRequest struct {
 	model.Params
 	// order id

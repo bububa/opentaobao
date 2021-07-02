@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoBimTradeorderConsignAPIResponse
-驱动保税交易订单发货 API返回值
-cainiao.bim.tradeorder.consign
-
-驱动保税交易订单发货 */
+// CainiaoBimTradeorderConsignAPIResponse 驱动保税交易订单发货 API返回值
+// cainiao.bim.tradeorder.consign
+//
+// 驱动保税交易订单发货
 type CainiaoBimTradeorderConsignAPIResponse struct {
 	model.CommonResponse
 	CainiaoBimTradeorderConsignAPIResponseModel

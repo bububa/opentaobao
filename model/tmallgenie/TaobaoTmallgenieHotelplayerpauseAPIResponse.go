@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmallgenieHotelplayerpauseAPIResponse
-天猫精灵酒店播放暂停 API返回值
-taobao.tmallgenie.hotelplayerpause
-
-酒店推送指令给天猫精灵停止播放音乐 */
+// TaobaoTmallgenieHotelplayerpauseAPIResponse 天猫精灵酒店播放暂停 API返回值
+// taobao.tmallgenie.hotelplayerpause
+//
+// 酒店推送指令给天猫精灵停止播放音乐
 type TaobaoTmallgenieHotelplayerpauseAPIResponse struct {
 	model.CommonResponse
 	TaobaoTmallgenieHotelplayerpauseAPIResponseModel

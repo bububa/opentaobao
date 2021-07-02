@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCrmMemberFrontUnbindAPIResponse
-品牌会员解绑 API返回值
-tmall.crm.member.front.unbind
-
-品牌会员解绑功能 */
+// TmallCrmMemberFrontUnbindAPIResponse 品牌会员解绑 API返回值
+// tmall.crm.member.front.unbind
+//
+// 品牌会员解绑功能
 type TmallCrmMemberFrontUnbindAPIResponse struct {
 	model.CommonResponse
 	TmallCrmMemberFrontUnbindAPIResponseModel

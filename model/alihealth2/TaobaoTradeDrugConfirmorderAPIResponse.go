@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradeDrugConfirmorderAPIResponse
-阿里健康020接单 API返回值
-taobao.trade.drug.confirmorder
-
-阿里健康020接单 */
+// TaobaoTradeDrugConfirmorderAPIResponse 阿里健康020接单 API返回值
+// taobao.trade.drug.confirmorder
+//
+// 阿里健康020接单
 type TaobaoTradeDrugConfirmorderAPIResponse struct {
 	model.CommonResponse
 	TaobaoTradeDrugConfirmorderAPIResponseModel

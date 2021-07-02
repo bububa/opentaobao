@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenAccountIndexFindAPIRequest
-Open Account索引查询 API请求
-taobao.open.account.index.find
-
-Open Account索引查询 */
+// TaobaoOpenAccountIndexFindAPIRequest Open Account索引查询 API请求
+// taobao.open.account.index.find
+//
+// Open Account索引查询
 type TaobaoOpenAccountIndexFindAPIRequest struct {
 	model.Params
 	// int MOBILE         = 1;int EMAIL          = 2;int ISV_ACCOUNT_ID = 3;int LOGIN_ID       = 4;int OPEN_ID        = 5;

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusNumbersStockpriceUpdateAPIResponse
-汽车票更新价格库存 API返回值
-taobao.bus.numbers.stockprice.update
-
-用于汽车票代理商更新价格库存 */
+// TaobaoBusNumbersStockpriceUpdateAPIResponse 汽车票更新价格库存 API返回值
+// taobao.bus.numbers.stockprice.update
+//
+// 用于汽车票代理商更新价格库存
 type TaobaoBusNumbersStockpriceUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusNumbersStockpriceUpdateAPIResponseModel

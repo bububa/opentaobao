@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWangwangAbstractGetwordlistAPIResponse
-获取关键词列表 API返回值
-taobao.wangwang.abstract.getwordlist
-
-获取关键词列表，只支持json返回 */
+// TaobaoWangwangAbstractGetwordlistAPIResponse 获取关键词列表 API返回值
+// taobao.wangwang.abstract.getwordlist
+//
+// 获取关键词列表，只支持json返回
 type TaobaoWangwangAbstractGetwordlistAPIResponse struct {
 	model.CommonResponse
 	TaobaoWangwangAbstractGetwordlistAPIResponseModel

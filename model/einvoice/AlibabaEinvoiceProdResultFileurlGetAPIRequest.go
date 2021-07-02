@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceProdResultFileurlGetAPIRequest
-发票中台-发票文件下载地址查询 API请求
-alibaba.einvoice.prod.result.fileurl.get
-
-发票文件下载地址查询，外部ISV通过该接口可以查对应发票文件 */
+// AlibabaEinvoiceProdResultFileurlGetAPIRequest 发票中台-发票文件下载地址查询 API请求
+// alibaba.einvoice.prod.result.fileurl.get
+//
+// 发票文件下载地址查询，外部ISV通过该接口可以查对应发票文件
 type AlibabaEinvoiceProdResultFileurlGetAPIRequest struct {
 	model.Params
 	// 业务平台商户ID/卖家用户ID

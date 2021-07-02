@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripCarOrderStatusAPIRequest
-商家订单状态改变通知接口（神州专车接口） API请求
-taobao.alitrip.car.order.status
-
-商家订单状态改变通知接口，神州专车专用接口！ */
+// TaobaoAlitripCarOrderStatusAPIRequest 商家订单状态改变通知接口（神州专车接口） API请求
+// taobao.alitrip.car.order.status
+//
+// 商家订单状态改变通知接口，神州专车专用接口！
 type TaobaoAlitripCarOrderStatusAPIRequest struct {
 	model.Params
 	// 固定值：statusChanged

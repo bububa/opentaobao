@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaServicecenterWorkcardCancelAPIRequest
-服务平台工单取消接口 API请求
-alibaba.servicecenter.workcard.cancel
-
-取消服务工单 */
+// AlibabaServicecenterWorkcardCancelAPIRequest 服务平台工单取消接口 API请求
+// alibaba.servicecenter.workcard.cancel
+//
+// 取消服务工单
 type AlibabaServicecenterWorkcardCancelAPIRequest struct {
 	model.Params
 	// 工单id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSmartstoreDeviceAddAPIResponse
-智慧门店设备创建 API返回值
-taobao.smartstore.device.add
-
-智慧门店设备创建 */
+// TaobaoSmartstoreDeviceAddAPIResponse 智慧门店设备创建 API返回值
+// taobao.smartstore.device.add
+//
+// 智慧门店设备创建
 type TaobaoSmartstoreDeviceAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoSmartstoreDeviceAddAPIResponseModel

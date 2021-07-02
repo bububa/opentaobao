@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServiceSettleadjustmentCancelAPIResponse
-取消结算调整单 API返回值
-tmall.service.settleadjustment.cancel
-
-提供给服务商在对取消已经发起的结算调整单。
-通过说明调整单ID进行结算调整单取消。 */
+// TmallServiceSettleadjustmentCancelAPIResponse 取消结算调整单 API返回值
+// tmall.service.settleadjustment.cancel
+//
+// 提供给服务商在对取消已经发起的结算调整单。
+// 通过说明调整单ID进行结算调整单取消。
 type TmallServiceSettleadjustmentCancelAPIResponse struct {
 	model.CommonResponse
 	TmallServiceSettleadjustmentCancelAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWaybillShengxianGetAPIResponse
-商家获取生鲜电子面单号 API返回值
-taobao.wlb.waybill.shengxian.get
-
-商家通过交易订单号获取电子面单接口 */
+// TaobaoWlbWaybillShengxianGetAPIResponse 商家获取生鲜电子面单号 API返回值
+// taobao.wlb.waybill.shengxian.get
+//
+// 商家通过交易订单号获取电子面单接口
 type TaobaoWlbWaybillShengxianGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWaybillShengxianGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeReviewChangestatusAPIResponse
-楼盘测评草稿状态同步 API返回值
-alibaba.alihouse.newhome.review.changestatus
-
-楼盘测评草稿状态更新 */
+// AlibabaAlihouseNewhomeReviewChangestatusAPIResponse 楼盘测评草稿状态同步 API返回值
+// alibaba.alihouse.newhome.review.changestatus
+//
+// 楼盘测评草稿状态更新
 type AlibabaAlihouseNewhomeReviewChangestatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihouseNewhomeReviewChangestatusAPIResponseModel

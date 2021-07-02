@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTicketProductQueryAPIResponse
-【门票API2.0】门票商品查询接口 API返回值
-alitrip.ticket.product.query
-
-门票商品查询接口：返回商家上传的门票商品信息 */
+// AlitripTicketProductQueryAPIResponse 【门票API2.0】门票商品查询接口 API返回值
+// alitrip.ticket.product.query
+//
+// 门票商品查询接口：返回商家上传的门票商品信息
 type AlitripTicketProductQueryAPIResponse struct {
 	model.CommonResponse
 	AlitripTicketProductQueryAPIResponseModel

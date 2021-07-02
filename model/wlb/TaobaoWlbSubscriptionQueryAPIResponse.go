@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbSubscriptionQueryAPIResponse
-查询商家定购的所有服务 API返回值
-taobao.wlb.subscription.query
-
-查询商家定购的所有服务,可通过入参状态来筛选 */
+// TaobaoWlbSubscriptionQueryAPIResponse 查询商家定购的所有服务 API返回值
+// taobao.wlb.subscription.query
+//
+// 查询商家定购的所有服务,可通过入参状态来筛选
 type TaobaoWlbSubscriptionQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbSubscriptionQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRoomtypeGetAPIRequest
-房型查询接口 API请求
-taobao.xhotel.roomtype.get
-
-房型查询房型查询接口返回结果增加date_confirm字段 */
+// TaobaoXhotelRoomtypeGetAPIRequest 房型查询接口 API请求
+// taobao.xhotel.roomtype.get
+//
+// 房型查询房型查询接口返回结果增加date_confirm字段
 type TaobaoXhotelRoomtypeGetAPIRequest struct {
 	model.Params
 	// 废弃，使用商家房型ID

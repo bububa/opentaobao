@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttIotDevicelistChangeAPIResponse
-iot设备列表变化接口 API返回值
-youku.ott.iot.devicelist.change
-
-iot设备列表变化接口 */
+// YoukuOttIotDevicelistChangeAPIResponse iot设备列表变化接口 API返回值
+// youku.ott.iot.devicelist.change
+//
+// iot设备列表变化接口
 type YoukuOttIotDevicelistChangeAPIResponse struct {
 	model.CommonResponse
 	YoukuOttIotDevicelistChangeAPIResponseModel

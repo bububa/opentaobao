@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstLogisticsSendinfoQueryAPIResponse
-供应商-异云-查询主订单包含的物流单 API返回值
-alibaba.lst.logistics.sendinfo.query
-
-查询主订单包含的物流单 */
+// AlibabaLstLogisticsSendinfoQueryAPIResponse 供应商-异云-查询主订单包含的物流单 API返回值
+// alibaba.lst.logistics.sendinfo.query
+//
+// 查询主订单包含的物流单
 type AlibabaLstLogisticsSendinfoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstLogisticsSendinfoQueryAPIResponseModel

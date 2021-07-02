@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpCnskuUpdateAPIResponse
-供应链中台货品修改接口 API返回值
-alibaba.ascp.cnsku.update
-
-供应链中台货品修改接口 */
+// AlibabaAscpCnskuUpdateAPIResponse 供应链中台货品修改接口 API返回值
+// alibaba.ascp.cnsku.update
+//
+// 供应链中台货品修改接口
 type AlibabaAscpCnskuUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpCnskuUpdateAPIResponseModel

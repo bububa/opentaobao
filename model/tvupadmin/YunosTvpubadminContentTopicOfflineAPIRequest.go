@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentTopicOfflineAPIRequest
-迎客松专题下线 API请求
-yunos.tvpubadmin.content.topic.offline
-
-迎客松专题下线 */
+// YunosTvpubadminContentTopicOfflineAPIRequest 迎客松专题下线 API请求
+// yunos.tvpubadmin.content.topic.offline
+//
+// 迎客松专题下线
 type YunosTvpubadminContentTopicOfflineAPIRequest struct {
 	model.Params
 	// id

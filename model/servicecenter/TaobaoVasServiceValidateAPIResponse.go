@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVasServiceValidateAPIResponse
-增值服务订购服务验证 API返回值
-taobao.vas.service.validate
-
-增值服务订购服务验证 */
+// TaobaoVasServiceValidateAPIResponse 增值服务订购服务验证 API返回值
+// taobao.vas.service.validate
+//
+// 增值服务订购服务验证
 type TaobaoVasServiceValidateAPIResponse struct {
 	model.CommonResponse
 	TaobaoVasServiceValidateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleApprizeOrderFulfillmentAPIResponse
-鉴定担保资金订单履约 API返回值
-alibaba.idle.apprize.order.fulfillment
-
-服务商针对自己的服务订单进行履约 */
+// AlibabaIdleApprizeOrderFulfillmentAPIResponse 鉴定担保资金订单履约 API返回值
+// alibaba.idle.apprize.order.fulfillment
+//
+// 服务商针对自己的服务订单进行履约
 type AlibabaIdleApprizeOrderFulfillmentAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleApprizeOrderFulfillmentAPIResponseModel

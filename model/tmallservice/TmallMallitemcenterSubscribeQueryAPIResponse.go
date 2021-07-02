@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMallitemcenterSubscribeQueryAPIResponse
-天猫服务订购信息查询接口 API返回值
-tmall.mallitemcenter.subscribe.query
-
-查询商家服务订购信息 */
+// TmallMallitemcenterSubscribeQueryAPIResponse 天猫服务订购信息查询接口 API返回值
+// tmall.mallitemcenter.subscribe.query
+//
+// 查询商家服务订购信息
 type TmallMallitemcenterSubscribeQueryAPIResponse struct {
 	model.CommonResponse
 	TmallMallitemcenterSubscribeQueryAPIResponseModel

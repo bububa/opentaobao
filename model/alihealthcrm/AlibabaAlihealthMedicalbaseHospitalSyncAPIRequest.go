@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest
-互联网医院批量导入接口 API请求
-alibaba.alihealth.medicalbase.hospital.sync
-
-互联网医院isv批量通过接口批量导入 */
+// AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest 互联网医院批量导入接口 API请求
+// alibaba.alihealth.medicalbase.hospital.sync
+//
+// 互联网医院isv批量通过接口批量导入
 type AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest struct {
 	model.Params
 	// 是否需要用户授权

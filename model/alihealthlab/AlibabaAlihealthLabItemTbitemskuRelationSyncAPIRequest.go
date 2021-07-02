@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest
-阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步 API请求
-alibaba.alihealth.lab.item.tbitemsku.relation.sync
-
-阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步 */
+// AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest 阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步 API请求
+// alibaba.alihealth.lab.item.tbitemsku.relation.sync
+//
+// 阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步
 type AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest struct {
 	model.Params
 	// EFFECTIVE 有效，INVALID 无效

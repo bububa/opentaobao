@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsCainiaoBillQueryAPIResponse
-查询单据列表 API返回值
-taobao.wlb.wms.cainiao.bill.query
-
-查询单据列表 */
+// TaobaoWlbWmsCainiaoBillQueryAPIResponse 查询单据列表 API返回值
+// taobao.wlb.wms.cainiao.bill.query
+//
+// 查询单据列表
 type TaobaoWlbWmsCainiaoBillQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsCainiaoBillQueryAPIResponseModel

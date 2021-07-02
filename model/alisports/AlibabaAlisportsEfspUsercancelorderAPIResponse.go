@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsEfspUsercancelorderAPIResponse
-用户取消订单 API返回值
-alibaba.alisports.efsp.usercancelorder
-
-用户取消订单 */
+// AlibabaAlisportsEfspUsercancelorderAPIResponse 用户取消订单 API返回值
+// alibaba.alisports.efsp.usercancelorder
+//
+// 用户取消订单
 type AlibabaAlisportsEfspUsercancelorderAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsEfspUsercancelorderAPIResponseModel

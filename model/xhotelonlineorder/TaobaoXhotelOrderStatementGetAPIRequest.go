@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderStatementGetAPIRequest
-查询账单信息 API请求
-taobao.xhotel.order.statement.get
-
-阿里根据此接口定义输出订单账务明细，结账状态发生变化时阿里需推送账单信息。系统商可实时调用该接口来查询订单的详情 */
+// TaobaoXhotelOrderStatementGetAPIRequest 查询账单信息 API请求
+// taobao.xhotel.order.statement.get
+//
+// 阿里根据此接口定义输出订单账务明细，结账状态发生变化时阿里需推送账单信息。系统商可实时调用该接口来查询订单的详情
 type TaobaoXhotelOrderStatementGetAPIRequest struct {
 	model.Params
 	// 要查询的tid列表，逗号分隔,列表查询;当此值不为空时候，其余参数忽略。最多单次20条。

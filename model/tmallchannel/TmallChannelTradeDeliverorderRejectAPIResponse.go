@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallChannelTradeDeliverorderRejectAPIResponse
-供应商拒绝收货确认单 API返回值
-tmall.channel.trade.deliverorder.reject
-
-供应商拒绝收货确认单 */
+// TmallChannelTradeDeliverorderRejectAPIResponse 供应商拒绝收货确认单 API返回值
+// tmall.channel.trade.deliverorder.reject
+//
+// 供应商拒绝收货确认单
 type TmallChannelTradeDeliverorderRejectAPIResponse struct {
 	model.CommonResponse
 	TmallChannelTradeDeliverorderRejectAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalLogisticOrderCreateAPIRequest
-创建物流订单 API请求
-cainiao.global.logistic.order.create
-
-创建物流订单 */
+// CainiaoGlobalLogisticOrderCreateAPIRequest 创建物流订单 API请求
+// cainiao.global.logistic.order.create
+//
+// 创建物流订单
 type CainiaoGlobalLogisticOrderCreateAPIRequest struct {
 	model.Params
 	// 订单参数

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentChangeordersGetAPIResponse
-获取待改签订单 API返回值
-taobao.train.agent.changeorders.get
-
-代理商用来获取待改签的订单列表及数量，防止代理商掉单。 */
+// TaobaoTrainAgentChangeordersGetAPIResponse 获取待改签订单 API返回值
+// taobao.train.agent.changeorders.get
+//
+// 代理商用来获取待改签的订单列表及数量，防止代理商掉单。
 type TaobaoTrainAgentChangeordersGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentChangeordersGetAPIResponseModel

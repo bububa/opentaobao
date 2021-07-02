@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaHourReportAdgroupGetAPIRequest
-推广单元小时级别实时报表查询 API请求
-taobao.simba.hour.report.adgroup.get
-
-推广单元小时级别实时报表查询 */
+// TaobaoSimbaHourReportAdgroupGetAPIRequest 推广单元小时级别实时报表查询 API请求
+// taobao.simba.hour.report.adgroup.get
+//
+// 推广单元小时级别实时报表查询
 type TaobaoSimbaHourReportAdgroupGetAPIRequest struct {
 	model.Params
 	// 昵称

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosAppstoreOpenReportadAPIRequest
-外投广告上报接口 API请求
-yunos.appstore.open.reportad
-
-外投广告回流上报接口 */
+// YunosAppstoreOpenReportadAPIRequest 外投广告上报接口 API请求
+// yunos.appstore.open.reportad
+//
+// 外投广告回流上报接口
 type YunosAppstoreOpenReportadAPIRequest struct {
 	model.Params
 	// 广告跟踪id列表

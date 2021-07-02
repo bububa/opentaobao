@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosGoodsBulkinputcspuAPIResponse
-批量录入商品信息 API返回值
-alibaba.mos.goods.bulkinputcspu
-
-用于商品信息的批量导入到银泰商品中台 */
+// AlibabaMosGoodsBulkinputcspuAPIResponse 批量录入商品信息 API返回值
+// alibaba.mos.goods.bulkinputcspu
+//
+// 用于商品信息的批量导入到银泰商品中台
 type AlibabaMosGoodsBulkinputcspuAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosGoodsBulkinputcspuAPIResponseModel

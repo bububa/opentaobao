@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWttUserRegioninfoByipGetAPIResponse
-根据ip获取省市信息 API返回值
-alibaba.wtt.user.regioninfo.byip.get
-
-通过ip获取省市信息 */
+// AlibabaWttUserRegioninfoByipGetAPIResponse 根据ip获取省市信息 API返回值
+// alibaba.wtt.user.regioninfo.byip.get
+//
+// 通过ip获取省市信息
 type AlibabaWttUserRegioninfoByipGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWttUserRegioninfoByipGetAPIResponseModel

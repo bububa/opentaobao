@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDeliveryTemplateGetAPIRequest
-获取用户指定运费模板信息 API请求
-taobao.delivery.template.get
-
-获取用户指定运费模板信息 */
+// TaobaoDeliveryTemplateGetAPIRequest 获取用户指定运费模板信息 API请求
+// taobao.delivery.template.get
+//
+// 获取用户指定运费模板信息
 type TaobaoDeliveryTemplateGetAPIRequest struct {
 	model.Params
 	// 需要查询的运费模板ID列表

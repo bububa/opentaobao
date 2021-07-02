@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliyunindepDigitalsmsCreatetemplateAPIResponse
-数字短信模板创建 API返回值
-alibaba.aliyunindep.digitalsms.createtemplate
-
-数字短信模板创建，给阿里云一方产品使用，类型：9 */
+// AlibabaAliyunindepDigitalsmsCreatetemplateAPIResponse 数字短信模板创建 API返回值
+// alibaba.aliyunindep.digitalsms.createtemplate
+//
+// 数字短信模板创建，给阿里云一方产品使用，类型：9
 type AlibabaAliyunindepDigitalsmsCreatetemplateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliyunindepDigitalsmsCreatetemplateAPIResponseModel

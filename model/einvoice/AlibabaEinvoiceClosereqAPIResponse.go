@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceClosereqAPIResponse
-关闭开票失败请求（失败列表可重试） API返回值
-alibaba.einvoice.closereq
-
-关闭失败开票请求，避免造成重复开票 */
+// AlibabaEinvoiceClosereqAPIResponse 关闭开票失败请求（失败列表可重试） API返回值
+// alibaba.einvoice.closereq
+//
+// 关闭失败开票请求，避免造成重复开票
 type AlibabaEinvoiceClosereqAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceClosereqAPIResponseModel

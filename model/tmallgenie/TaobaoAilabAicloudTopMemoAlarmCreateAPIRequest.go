@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest
-天猫精灵闹钟创建 API请求
-taobao.ailab.aicloud.top.memo.alarm.create
-
-天猫精灵闹钟创建 */
+// TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest 天猫精灵闹钟创建 API请求
+// taobao.ailab.aicloud.top.memo.alarm.create
+//
+// 天猫精灵闹钟创建
 type TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest struct {
 	model.Params
 	// 扩展信息json段，用于存放APP类型，APP版本等等信息。

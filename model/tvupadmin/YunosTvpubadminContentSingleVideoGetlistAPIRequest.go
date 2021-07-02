@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentSingleVideoGetlistAPIRequest
-单视频审核获取视频列表 API请求
-yunos.tvpubadmin.content.single.video.getlist
-
-牌照方在审核单视频时获取单视频列表接口 */
+// YunosTvpubadminContentSingleVideoGetlistAPIRequest 单视频审核获取视频列表 API请求
+// yunos.tvpubadmin.content.single.video.getlist
+//
+// 牌照方在审核单视频时获取单视频列表接口
 type YunosTvpubadminContentSingleVideoGetlistAPIRequest struct {
 	model.Params
 	// 视频外部来源类型: 1:YOUKU, 2:MONGO_TV, 3:TAOTVMEDIA, 4:GOLIVE

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytDrAssociateequiAPIRequest
-疫苗单据与设备绑定 API请求
-alibaba.alihealth.drug.kyt.dr.associateequi
-
-疫苗单据与设备绑定 */
+// AlibabaAlihealthDrugKytDrAssociateequiAPIRequest 疫苗单据与设备绑定 API请求
+// alibaba.alihealth.drug.kyt.dr.associateequi
+//
+// 疫苗单据与设备绑定
 type AlibabaAlihealthDrugKytDrAssociateequiAPIRequest struct {
 	model.Params
 	// 企业refentid

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorMakeupAPIResponse
-美妆虚拟试装 API返回值
-alibaba.interact.sensor.makeup
-
-手机淘宝美妆类目虚拟试妆权限，客户端能力（JS－API） */
+// AlibabaInteractSensorMakeupAPIResponse 美妆虚拟试装 API返回值
+// alibaba.interact.sensor.makeup
+//
+// 手机淘宝美妆类目虚拟试妆权限，客户端能力（JS－API）
 type AlibabaInteractSensorMakeupAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorMakeupAPIResponseModel

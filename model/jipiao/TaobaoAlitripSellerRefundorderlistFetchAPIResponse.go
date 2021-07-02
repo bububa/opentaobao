@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripSellerRefundorderlistFetchAPIResponse
-【机票代理商】——退票订单列表提取 API返回值
-taobao.alitrip.seller.refundorderlist.fetch
-
-代理商纬度退票订单列表提取 */
+// TaobaoAlitripSellerRefundorderlistFetchAPIResponse 【机票代理商】——退票订单列表提取 API返回值
+// taobao.alitrip.seller.refundorderlist.fetch
+//
+// 代理商纬度退票订单列表提取
 type TaobaoAlitripSellerRefundorderlistFetchAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripSellerRefundorderlistFetchAPIResponseModel

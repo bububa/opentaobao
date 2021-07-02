@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstSecretGetAPIResponse
-获取订单消费者的隐私号码 API返回值
-taobao.jst.secret.get
-
-根据订单号获取消费者的隐私号 */
+// TaobaoJstSecretGetAPIResponse 获取订单消费者的隐私号码 API返回值
+// taobao.jst.secret.get
+//
+// 根据订单号获取消费者的隐私号
 type TaobaoJstSecretGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSecretGetAPIResponseModel

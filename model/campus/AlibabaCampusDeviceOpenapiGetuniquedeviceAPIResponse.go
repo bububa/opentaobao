@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusDeviceOpenapiGetuniquedeviceAPIResponse
-根据设备uuid获取设备信息 API返回值
-alibaba.campus.device.openapi.getuniquedevice
-
-根据设备uuid获取设备信息 */
+// AlibabaCampusDeviceOpenapiGetuniquedeviceAPIResponse 根据设备uuid获取设备信息 API返回值
+// alibaba.campus.device.openapi.getuniquedevice
+//
+// 根据设备uuid获取设备信息
 type AlibabaCampusDeviceOpenapiGetuniquedeviceAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusDeviceOpenapiGetuniquedeviceAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoNoteListAPIRequest
-查询天猫精灵用户设置的所有备忘录 API请求
-taobao.ailab.aicloud.top.memo.note.list
-
-查询天猫精灵用户设置的所有备忘录 */
+// TaobaoAilabAicloudTopMemoNoteListAPIRequest 查询天猫精灵用户设置的所有备忘录 API请求
+// taobao.ailab.aicloud.top.memo.note.list
+//
+// 查询天猫精灵用户设置的所有备忘录
 type TaobaoAilabAicloudTopMemoNoteListAPIRequest struct {
 	model.Params
 	// schema

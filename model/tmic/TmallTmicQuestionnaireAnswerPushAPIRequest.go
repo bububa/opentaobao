@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTmicQuestionnaireAnswerPushAPIRequest
-提交单题答案 API请求
-tmall.tmic.questionnaire.answer.push
-
-问卷单题回答的提交 */
+// TmallTmicQuestionnaireAnswerPushAPIRequest 提交单题答案 API请求
+// tmall.tmic.questionnaire.answer.push
+//
+// 问卷单题回答的提交
 type TmallTmicQuestionnaireAnswerPushAPIRequest struct {
 	model.Params
 	// 问卷填答id，从问卷信息接口的应答中获取

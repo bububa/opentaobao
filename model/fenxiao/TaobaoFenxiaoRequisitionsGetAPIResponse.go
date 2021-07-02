@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoRequisitionsGetAPIResponse
-合作申请查询 API返回值
-taobao.fenxiao.requisitions.get
-
-合作申请查询 */
+// TaobaoFenxiaoRequisitionsGetAPIResponse 合作申请查询 API返回值
+// taobao.fenxiao.requisitions.get
+//
+// 合作申请查询
 type TaobaoFenxiaoRequisitionsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoRequisitionsGetAPIResponseModel

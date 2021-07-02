@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxQualificationFindAPIRequest
-资质查询接口 API请求
-taobao.tanx.qualification.find
-
-资质查询接口 */
+// TaobaoTanxQualificationFindAPIRequest 资质查询接口 API请求
+// taobao.tanx.qualification.find
+//
+// 资质查询接口
 type TaobaoTanxQualificationFindAPIRequest struct {
 	model.Params
 	// dsp客户在tanx的memberId

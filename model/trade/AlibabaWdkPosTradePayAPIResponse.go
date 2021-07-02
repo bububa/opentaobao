@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkPosTradePayAPIResponse
-轻pos品牌营销支付接口 API返回值
-alibaba.wdk.pos.trade.pay
-
-轻pos场景，外部商家支付后调用开放平台把支付信息回传给五道口交易 */
+// AlibabaWdkPosTradePayAPIResponse 轻pos品牌营销支付接口 API返回值
+// alibaba.wdk.pos.trade.pay
+//
+// 轻pos场景，外部商家支付后调用开放平台把支付信息回传给五道口交易
 type AlibabaWdkPosTradePayAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkPosTradePayAPIResponseModel

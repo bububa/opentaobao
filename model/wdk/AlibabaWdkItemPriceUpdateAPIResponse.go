@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkItemPriceUpdateAPIResponse
-五道口商品中心价格修改 API返回值
-alibaba.wdk.item.price.update
-
-修改门店商品售价和会员价 */
+// AlibabaWdkItemPriceUpdateAPIResponse 五道口商品中心价格修改 API返回值
+// alibaba.wdk.item.price.update
+//
+// 修改门店商品售价和会员价
 type AlibabaWdkItemPriceUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkItemPriceUpdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleIsvMediaUploadAPIRequest
-闲鱼服务商-图片上传 API请求
-alibaba.idle.isv.media.upload
-
-供外部服务商ISV进行闲鱼商品发布时上传商品所需图片 */
+// AlibabaIdleIsvMediaUploadAPIRequest 闲鱼服务商-图片上传 API请求
+// alibaba.idle.isv.media.upload
+//
+// 供外部服务商ISV进行闲鱼商品发布时上传商品所需图片
 type AlibabaIdleIsvMediaUploadAPIRequest struct {
 	model.Params
 	// 多媒体字节数组

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFuwuSpBillreordAddAPIResponse
-内购服务确认单明细上传接口 API返回值
-taobao.fuwu.sp.billreord.add
-
-isv能通过该接口上传确认单明细数据 */
+// TaobaoFuwuSpBillreordAddAPIResponse 内购服务确认单明细上传接口 API返回值
+// taobao.fuwu.sp.billreord.add
+//
+// isv能通过该接口上传确认单明细数据
 type TaobaoFuwuSpBillreordAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoFuwuSpBillreordAddAPIResponseModel

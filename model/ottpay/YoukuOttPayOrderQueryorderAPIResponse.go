@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttPayOrderQueryorderAPIResponse
-查询订单 API返回值
-youku.ott.pay.order.queryorder
-
-通过订单号查询订单信息 */
+// YoukuOttPayOrderQueryorderAPIResponse 查询订单 API返回值
+// youku.ott.pay.order.queryorder
+//
+// 通过订单号查询订单信息
 type YoukuOttPayOrderQueryorderAPIResponse struct {
 	model.CommonResponse
 	YoukuOttPayOrderQueryorderAPIResponseModel

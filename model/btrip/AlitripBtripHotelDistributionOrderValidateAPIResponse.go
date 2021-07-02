@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripHotelDistributionOrderValidateAPIResponse
-商旅酒店API分销下单前校验 API返回值
-alitrip.btrip.hotel.distribution.order.validate
-
-商旅酒店API分销下单前校验 */
+// AlitripBtripHotelDistributionOrderValidateAPIResponse 商旅酒店API分销下单前校验 API返回值
+// alitrip.btrip.hotel.distribution.order.validate
+//
+// 商旅酒店API分销下单前校验
 type AlitripBtripHotelDistributionOrderValidateAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripHotelDistributionOrderValidateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingDiagnosistitleAPIResponse
-标题诊断 API返回值
-alibaba.seaking.diagnosistitle
-
-标题诊断 */
+// AlibabaSeakingDiagnosistitleAPIResponse 标题诊断 API返回值
+// alibaba.seaking.diagnosistitle
+//
+// 标题诊断
 type AlibabaSeakingDiagnosistitleAPIResponse struct {
 	model.CommonResponse
 	AlibabaSeakingDiagnosistitleAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosServiceCmnsCoaMessageAckAPIResponse
-消息回执查询 API返回值
-yunos.service.cmns.coa.message.ack
-
-第三方应用开发者调用此接口查询设备是否收到消息，只能查询此appKey床发的消息 */
+// YunosServiceCmnsCoaMessageAckAPIResponse 消息回执查询 API返回值
+// yunos.service.cmns.coa.message.ack
+//
+// 第三方应用开发者调用此接口查询设备是否收到消息，只能查询此appKey床发的消息
 type YunosServiceCmnsCoaMessageAckAPIResponse struct {
 	model.CommonResponse
 	YunosServiceCmnsCoaMessageAckAPIResponseModel

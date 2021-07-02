@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenOrderCallbackAPIResponse
-配送拦截接口 API返回值
-taobao.qimen.order.callback
-
-配送拦截 */
+// TaobaoQimenOrderCallbackAPIResponse 配送拦截接口 API返回值
+// taobao.qimen.order.callback
+//
+// 配送拦截
 type TaobaoQimenOrderCallbackAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenOrderCallbackAPIResponseModel

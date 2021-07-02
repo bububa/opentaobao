@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosServiceCmnsCoaDeviceIsonlineAPIResponse
-根据设备id查询设备是否在线 API返回值
-yunos.service.cmns.coa.device.isonline
-
-根据设备id查询设备是否在线 */
+// YunosServiceCmnsCoaDeviceIsonlineAPIResponse 根据设备id查询设备是否在线 API返回值
+// yunos.service.cmns.coa.device.isonline
+//
+// 根据设备id查询设备是否在线
 type YunosServiceCmnsCoaDeviceIsonlineAPIResponse struct {
 	model.CommonResponse
 	YunosServiceCmnsCoaDeviceIsonlineAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallHkClearanceGetAPIResponse
-天猫国际-清关材料查询 API返回值
-tmall.hk.clearance.get
-
-提供订单收货人身份信息查询功能。 */
+// TmallHkClearanceGetAPIResponse 天猫国际-清关材料查询 API返回值
+// tmall.hk.clearance.get
+//
+// 提供订单收货人身份信息查询功能。
 type TmallHkClearanceGetAPIResponse struct {
 	model.CommonResponse
 	TmallHkClearanceGetAPIResponseModel

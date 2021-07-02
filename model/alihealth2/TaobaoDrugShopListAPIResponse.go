@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDrugShopListAPIResponse
-查询卖家外卖店列表 API返回值
-taobao.drug.shop.list
-
-查询卖家外卖店列表 */
+// TaobaoDrugShopListAPIResponse 查询卖家外卖店列表 API返回值
+// taobao.drug.shop.list
+//
+// 查询卖家外卖店列表
 type TaobaoDrugShopListAPIResponse struct {
 	model.CommonResponse
 	TaobaoDrugShopListAPIResponseModel

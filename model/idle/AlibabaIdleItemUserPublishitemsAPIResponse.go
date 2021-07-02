@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleItemUserPublishitemsAPIResponse
-发布的商品列表 API返回值
-alibaba.idle.item.user.publishitems
-
-为服务商的卖家提供发布的闲鱼商品列表 */
+// AlibabaIdleItemUserPublishitemsAPIResponse 发布的商品列表 API返回值
+// alibaba.idle.item.user.publishitems
+//
+// 为服务商的卖家提供发布的闲鱼商品列表
 type AlibabaIdleItemUserPublishitemsAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleItemUserPublishitemsAPIResponseModel

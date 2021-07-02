@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialLocaleGetAPIResponse
-Locale获取接口 API返回值
-aliexpress.social.locale.get
-
-新增Locale获取接口 */
+// AliexpressSocialLocaleGetAPIResponse Locale获取接口 API返回值
+// aliexpress.social.locale.get
+//
+// 新增Locale获取接口
 type AliexpressSocialLocaleGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressSocialLocaleGetAPIResponseModel

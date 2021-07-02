@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLarkIotOrderConfirmorderAPIRequest
-iot渠道卖品落单 API请求
-taobao.lark.iot.order.confirmorder
-
-云智对接无人超市，接收无人超市订单信息 */
+// TaobaoLarkIotOrderConfirmorderAPIRequest iot渠道卖品落单 API请求
+// taobao.lark.iot.order.confirmorder
+//
+// 云智对接无人超市，接收无人超市订单信息
 type TaobaoLarkIotOrderConfirmorderAPIRequest struct {
 	model.Params
 	// 渠道编码

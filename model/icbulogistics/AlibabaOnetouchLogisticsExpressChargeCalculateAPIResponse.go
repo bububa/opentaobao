@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOnetouchLogisticsExpressChargeCalculateAPIResponse
-计算快递运费&下单参数校验 API返回值
-alibaba.onetouch.logistics.express.charge.calculate
-
-计算快递运费、下单参数校验 */
+// AlibabaOnetouchLogisticsExpressChargeCalculateAPIResponse 计算快递运费&下单参数校验 API返回值
+// alibaba.onetouch.logistics.express.charge.calculate
+//
+// 计算快递运费、下单参数校验
 type AlibabaOnetouchLogisticsExpressChargeCalculateAPIResponse struct {
 	model.CommonResponse
 	AlibabaOnetouchLogisticsExpressChargeCalculateAPIResponseModel

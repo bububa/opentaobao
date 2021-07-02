@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziAclRoleRemoveAPIResponse
-删除角色 API返回值
-alibaba.mozi.acl.role.remove
-
-根据传入的角色code、租户id，删除租户内对应的角色 */
+// AlibabaMoziAclRoleRemoveAPIResponse 删除角色 API返回值
+// alibaba.mozi.acl.role.remove
+//
+// 根据传入的角色code、租户id，删除租户内对应的角色
 type AlibabaMoziAclRoleRemoveAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziAclRoleRemoveAPIResponseModel

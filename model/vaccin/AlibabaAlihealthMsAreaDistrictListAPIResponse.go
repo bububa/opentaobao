@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMsAreaDistrictListAPIResponse
-疫苗预约地市信息查询 API返回值
-alibaba.alihealth.ms.area.district.list
-
-微信小程序疫苗预约地市信息查询 */
+// AlibabaAlihealthMsAreaDistrictListAPIResponse 疫苗预约地市信息查询 API返回值
+// alibaba.alihealth.ms.area.district.list
+//
+// 微信小程序疫苗预约地市信息查询
 type AlibabaAlihealthMsAreaDistrictListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthMsAreaDistrictListAPIResponseModel

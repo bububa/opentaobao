@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallRefundMessageGetAPIRequest
-openmall获取退款单留言 API请求
-taobao.openmall.refund.message.get
-
-openmall获取退款单留言 */
+// TaobaoOpenmallRefundMessageGetAPIRequest openmall获取退款单留言 API请求
+// taobao.openmall.refund.message.get
+//
+// openmall获取退款单留言
 type TaobaoOpenmallRefundMessageGetAPIRequest struct {
 	model.Params
 	// 分销者身份

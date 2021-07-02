@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripItFareAddowAPIResponse
-【国际机票自有政策】单条单程添加 API返回值
-taobao.alitrip.it.fare.addow
-
-自有政策单程添加接口，重复的老数据会被删除，重复判断规则同excel */
+// TaobaoAlitripItFareAddowAPIResponse 【国际机票自有政策】单条单程添加 API返回值
+// taobao.alitrip.it.fare.addow
+//
+// 自有政策单程添加接口，重复的老数据会被删除，重复判断规则同excel
 type TaobaoAlitripItFareAddowAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripItFareAddowAPIResponseModel

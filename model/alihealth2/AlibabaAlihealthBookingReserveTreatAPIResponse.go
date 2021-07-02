@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthBookingReserveTreatAPIResponse
-确认就诊 API返回值
-alibaba.alihealth.booking.reserve.treat
-
-统一预约平台，ISV确认就诊 */
+// AlibabaAlihealthBookingReserveTreatAPIResponse 确认就诊 API返回值
+// alibaba.alihealth.booking.reserve.treat
+//
+// 统一预约平台，ISV确认就诊
 type AlibabaAlihealthBookingReserveTreatAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthBookingReserveTreatAPIResponseModel

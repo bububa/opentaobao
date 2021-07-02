@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradeDrugConfirmorderAPIRequest
-阿里健康020接单 API请求
-taobao.trade.drug.confirmorder
-
-阿里健康020接单 */
+// TaobaoTradeDrugConfirmorderAPIRequest 阿里健康020接单 API请求
+// taobao.trade.drug.confirmorder
+//
+// 阿里健康020接单
 type TaobaoTradeDrugConfirmorderAPIRequest struct {
 	model.Params
 	// 代送宝 代送商ID

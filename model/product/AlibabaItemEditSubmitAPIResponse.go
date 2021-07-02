@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItemEditSubmitAPIResponse
-商品编辑提交schema信息 API返回值
-alibaba.item.edit.submit
-
-商品编辑提交schema信息 */
+// AlibabaItemEditSubmitAPIResponse 商品编辑提交schema信息 API返回值
+// alibaba.item.edit.submit
+//
+// 商品编辑提交schema信息
 type AlibabaItemEditSubmitAPIResponse struct {
 	model.CommonResponse
 	AlibabaItemEditSubmitAPIResponseModel

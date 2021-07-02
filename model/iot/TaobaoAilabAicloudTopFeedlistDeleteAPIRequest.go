@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopFeedlistDeleteAPIRequest
-删除单条对话流信息 API请求
-taobao.ailab.aicloud.top.feedlist.delete
-
-删除指定的某一条对话流信息 */
+// TaobaoAilabAicloudTopFeedlistDeleteAPIRequest 删除单条对话流信息 API请求
+// taobao.ailab.aicloud.top.feedlist.delete
+//
+// 删除指定的某一条对话流信息
 type TaobaoAilabAicloudTopFeedlistDeleteAPIRequest struct {
 	model.Params
 	// 扩展信息，用于存放APP类型等

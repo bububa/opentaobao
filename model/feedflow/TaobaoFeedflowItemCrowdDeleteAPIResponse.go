@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemCrowdDeleteAPIResponse
-删除单品人群 API返回值
-taobao.feedflow.item.crowd.delete
-
-删除单品人群 */
+// TaobaoFeedflowItemCrowdDeleteAPIResponse 删除单品人群 API返回值
+// taobao.feedflow.item.crowd.delete
+//
+// 删除单品人群
 type TaobaoFeedflowItemCrowdDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemCrowdDeleteAPIResponseModel

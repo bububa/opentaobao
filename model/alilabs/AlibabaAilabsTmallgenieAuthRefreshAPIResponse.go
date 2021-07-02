@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsTmallgenieAuthRefreshAPIResponse
-刷新token API返回值
-alibaba.ailabs.tmallgenie.auth.refresh
-
-通过此接口刷新天猫精灵授权token */
+// AlibabaAilabsTmallgenieAuthRefreshAPIResponse 刷新token API返回值
+// alibaba.ailabs.tmallgenie.auth.refresh
+//
+// 通过此接口刷新天猫精灵授权token
 type AlibabaAilabsTmallgenieAuthRefreshAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsTmallgenieAuthRefreshAPIResponseModel

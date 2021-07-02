@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMessageSendtextAPIResponse
-故事机发送文本留言 API返回值
-taobao.ailab.aicloud.top.message.sendtext
-
-故事机文本留言 */
+// TaobaoAilabAicloudTopMessageSendtextAPIResponse 故事机发送文本留言 API返回值
+// taobao.ailab.aicloud.top.message.sendtext
+//
+// 故事机文本留言
 type TaobaoAilabAicloudTopMessageSendtextAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMessageSendtextAPIResponseModel

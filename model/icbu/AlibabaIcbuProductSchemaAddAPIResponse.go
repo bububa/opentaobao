@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductSchemaAddAPIResponse
-（新）商品发布新接口 API返回值
-alibaba.icbu.product.schema.add
-
-提供发布ICBU商品的入口 */
+// AlibabaIcbuProductSchemaAddAPIResponse （新）商品发布新接口 API返回值
+// alibaba.icbu.product.schema.add
+//
+// 提供发布ICBU商品的入口
 type AlibabaIcbuProductSchemaAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuProductSchemaAddAPIResponseModel

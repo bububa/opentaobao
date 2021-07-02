@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripOpenCostCenterEntitySetAPIResponse
-设置成本中心人员信息 API返回值
-alitrip.btrip.open.cost.center.entity.set
-
-设置成本中心人员信息 */
+// AlitripBtripOpenCostCenterEntitySetAPIResponse 设置成本中心人员信息 API返回值
+// alitrip.btrip.open.cost.center.entity.set
+//
+// 设置成本中心人员信息
 type AlitripBtripOpenCostCenterEntitySetAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripOpenCostCenterEntitySetAPIResponseModel

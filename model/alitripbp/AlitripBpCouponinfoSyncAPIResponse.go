@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBpCouponinfoSyncAPIResponse
-飞猪广告券信息同步接口 API返回值
-alitrip.bp.couponinfo.sync
-
-飞猪商业化券信息同步 */
+// AlitripBpCouponinfoSyncAPIResponse 飞猪广告券信息同步接口 API返回值
+// alitrip.bp.couponinfo.sync
+//
+// 飞猪商业化券信息同步
 type AlitripBpCouponinfoSyncAPIResponse struct {
 	model.CommonResponse
 	AlitripBpCouponinfoSyncAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthBookingReserveCancelAPIResponse
-取消预约 API返回值
-alibaba.alihealth.booking.reserve.cancel
-
-消费医疗统一预约平台，ISV取消预约 */
+// AlibabaAlihealthBookingReserveCancelAPIResponse 取消预约 API返回值
+// alibaba.alihealth.booking.reserve.cancel
+//
+// 消费医疗统一预约平台，ISV取消预约
 type AlibabaAlihealthBookingReserveCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthBookingReserveCancelAPIResponseModel

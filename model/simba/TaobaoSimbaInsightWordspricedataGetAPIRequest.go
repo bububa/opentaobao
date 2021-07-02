@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaInsightWordspricedataGetAPIRequest
-关键词按竞价区间的分布数据 API请求
-taobao.simba.insight.wordspricedata.get
-
-获取关键词按竞价区间进行细分的数据 */
+// TaobaoSimbaInsightWordspricedataGetAPIRequest 关键词按竞价区间的分布数据 API请求
+// taobao.simba.insight.wordspricedata.get
+//
+// 获取关键词按竞价区间进行细分的数据
 type TaobaoSimbaInsightWordspricedataGetAPIRequest struct {
 	model.Params
 	// 关键词

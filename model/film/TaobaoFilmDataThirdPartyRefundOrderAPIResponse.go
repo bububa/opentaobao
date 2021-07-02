@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmDataThirdPartyRefundOrderAPIResponse
-退票接口 API返回值
-taobao.film.data.third.party.refund.order
-
-淘票票第三方退票接口 */
+// TaobaoFilmDataThirdPartyRefundOrderAPIResponse 退票接口 API返回值
+// taobao.film.data.third.party.refund.order
+//
+// 淘票票第三方退票接口
 type TaobaoFilmDataThirdPartyRefundOrderAPIResponse struct {
 	model.CommonResponse
 	TaobaoFilmDataThirdPartyRefundOrderAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstMiniappOpenidMessageSendAPIRequest
-单个openId用户短信发送 API请求
-taobao.jst.miniapp.openid.message.send
-
-单个openId用户短信发送 */
+// TaobaoJstMiniappOpenidMessageSendAPIRequest 单个openId用户短信发送 API请求
+// taobao.jst.miniapp.openid.message.send
+//
+// 单个openId用户短信发送
 type TaobaoJstMiniappOpenidMessageSendAPIRequest struct {
 	model.Params
 	// 短信签名

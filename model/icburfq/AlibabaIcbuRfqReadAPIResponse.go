@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuRfqReadAPIResponse
-是否已读RFQ API返回值
-alibaba.icbu.rfq.read
-
-是否已读RFQ */
+// AlibabaIcbuRfqReadAPIResponse 是否已读RFQ API返回值
+// alibaba.icbu.rfq.read
+//
+// 是否已读RFQ
 type AlibabaIcbuRfqReadAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuRfqReadAPIResponseModel

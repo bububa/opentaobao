@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-/* AlibabaSecurityJaqRpOcrCheck
-ocr同时实名校验
-alibaba.security.jaq.rp.ocr.check
-
-聚安全实人认证证件OCR识别功能接口 */
+// AlibabaSecurityJaqRpOcrCheck ocr同时实名校验
+// alibaba.security.jaq.rp.ocr.check
+//
+// 聚安全实人认证证件OCR识别功能接口
 func AlibabaSecurityJaqRpOcrCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpOcrCheckAPIRequest, session string) (*security.AlibabaSecurityJaqRpOcrCheckAPIResponse, error) {
 	var resp security.AlibabaSecurityJaqRpOcrCheckAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTuanHotelImageUploadAPIResponse
-图片上传接口 API返回值
-alitrip.tuan.hotel.image.upload
-
-用户调用此接口完成外网图片上传至卖家图片中心，此接口返回图片中心的图片地址 */
+// AlitripTuanHotelImageUploadAPIResponse 图片上传接口 API返回值
+// alitrip.tuan.hotel.image.upload
+//
+// 用户调用此接口完成外网图片上传至卖家图片中心，此接口返回图片中心的图片地址
 type AlitripTuanHotelImageUploadAPIResponse struct {
 	model.CommonResponse
 	AlitripTuanHotelImageUploadAPIResponseModel

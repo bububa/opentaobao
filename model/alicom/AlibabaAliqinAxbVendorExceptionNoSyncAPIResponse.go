@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse
-中心化供应商异常号码状态同步接口 API返回值
-alibaba.aliqin.axb.vendor.exception.no.sync
-
-用于中心化供应商同步异常号码 */
+// AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse 中心化供应商异常号码状态同步接口 API返回值
+// alibaba.aliqin.axb.vendor.exception.no.sync
+//
+// 用于中心化供应商同步异常号码
 type AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinAxbVendorExceptionNoSyncAPIResponseModel

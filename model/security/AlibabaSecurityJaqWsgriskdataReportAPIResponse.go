@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqWsgriskdataReportAPIResponse
-无线保镖SDK风控数据上报 API返回值
-alibaba.security.jaq.wsgriskdata.report
-
-无线保镖sdk根据用户的需要，上报数据到聚安全云端 */
+// AlibabaSecurityJaqWsgriskdataReportAPIResponse 无线保镖SDK风控数据上报 API返回值
+// alibaba.security.jaq.wsgriskdata.report
+//
+// 无线保镖sdk根据用户的需要，上报数据到聚安全云端
 type AlibabaSecurityJaqWsgriskdataReportAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqWsgriskdataReportAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallFansCashpoolCheckpayAPIResponse
-检查资金池付款状态 API返回值
-tmall.fans.cashpool.checkpay
-
-检查资金池付款状态 */
+// TmallFansCashpoolCheckpayAPIResponse 检查资金池付款状态 API返回值
+// tmall.fans.cashpool.checkpay
+//
+// 检查资金池付款状态
 type TmallFansCashpoolCheckpayAPIResponse struct {
 	model.CommonResponse
 	TmallFansCashpoolCheckpayAPIResponseModel

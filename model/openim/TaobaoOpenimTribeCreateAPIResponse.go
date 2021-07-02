@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimTribeCreateAPIResponse
-创建群 API返回值
-taobao.openim.tribe.create
-
-创建一个openim的群 */
+// TaobaoOpenimTribeCreateAPIResponse 创建群 API返回值
+// taobao.openim.tribe.create
+//
+// 创建一个openim的群
 type TaobaoOpenimTribeCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimTribeCreateAPIResponseModel

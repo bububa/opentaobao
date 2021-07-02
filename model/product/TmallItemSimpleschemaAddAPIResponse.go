@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemSimpleschemaAddAPIResponse
-天猫简化发布商品 API返回值
-tmall.item.simpleschema.add
-
-天猫简化版schema发布商品。 */
+// TmallItemSimpleschemaAddAPIResponse 天猫简化发布商品 API返回值
+// tmall.item.simpleschema.add
+//
+// 天猫简化版schema发布商品。
 type TmallItemSimpleschemaAddAPIResponse struct {
 	model.CommonResponse
 	TmallItemSimpleschemaAddAPIResponseModel

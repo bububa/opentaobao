@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTaobaoMicdetailAlihealthQuerystoresAPIResponse
-疫苗预约门店列表查询 API返回值
-alibaba.taobao.micdetail.alihealth.querystores
-
-微信小程序疫苗预约门店列表查询 */
+// AlibabaTaobaoMicdetailAlihealthQuerystoresAPIResponse 疫苗预约门店列表查询 API返回值
+// alibaba.taobao.micdetail.alihealth.querystores
+//
+// 微信小程序疫苗预约门店列表查询
 type AlibabaTaobaoMicdetailAlihealthQuerystoresAPIResponse struct {
 	model.CommonResponse
 	AlibabaTaobaoMicdetailAlihealthQuerystoresAPIResponseModel

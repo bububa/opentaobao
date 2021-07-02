@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleRentItemQueryAPIResponse
-查询租赁商品信息 API返回值
-alibaba.idle.rent.item.query
-
-查询租赁商品信息 */
+// AlibabaIdleRentItemQueryAPIResponse 查询租赁商品信息 API返回值
+// alibaba.idle.rent.item.query
+//
+// 查询租赁商品信息
 type AlibabaIdleRentItemQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleRentItemQueryAPIResponseModel

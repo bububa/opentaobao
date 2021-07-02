@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMusicSearchAPIRequest
-对外音乐搜索服务 API请求
-taobao.ailab.aicloud.top.music.search
-
-供厂商获取音乐列表 */
+// TaobaoAilabAicloudTopMusicSearchAPIRequest 对外音乐搜索服务 API请求
+// taobao.ailab.aicloud.top.music.search
+//
+// 供厂商获取音乐列表
 type TaobaoAilabAicloudTopMusicSearchAPIRequest struct {
 	model.Params
 	// botId值

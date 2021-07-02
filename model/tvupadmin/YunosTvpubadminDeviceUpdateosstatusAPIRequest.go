@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceUpdateosstatusAPIRequest
-更新系统版本审核状态 API请求
-yunos.tvpubadmin.device.updateosstatus
-
-更新系统版本审核状态 */
+// YunosTvpubadminDeviceUpdateosstatusAPIRequest 更新系统版本审核状态 API请求
+// yunos.tvpubadmin.device.updateosstatus
+//
+// 更新系统版本审核状态
 type YunosTvpubadminDeviceUpdateosstatusAPIRequest struct {
 	model.Params
 	// 升级ID

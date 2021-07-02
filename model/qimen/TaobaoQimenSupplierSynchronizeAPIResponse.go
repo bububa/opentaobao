@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenSupplierSynchronizeAPIResponse
-供应商同步接口 API返回值
-taobao.qimen.supplier.synchronize
-
-这个接口用来同步供应商信息 */
+// TaobaoQimenSupplierSynchronizeAPIResponse 供应商同步接口 API返回值
+// taobao.qimen.supplier.synchronize
+//
+// 这个接口用来同步供应商信息
 type TaobaoQimenSupplierSynchronizeAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenSupplierSynchronizeAPIResponseModel

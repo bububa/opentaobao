@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSebpIsvUserCheckAPIResponse
-淘小铺账户实名校验接口 API返回值
-taobao.sebp.isv.user.check
-
-校验淘小铺账户和身份信息匹配成功 */
+// TaobaoSebpIsvUserCheckAPIResponse 淘小铺账户实名校验接口 API返回值
+// taobao.sebp.isv.user.check
+//
+// 校验淘小铺账户和身份信息匹配成功
 type TaobaoSebpIsvUserCheckAPIResponse struct {
 	model.CommonResponse
 	TaobaoSebpIsvUserCheckAPIResponseModel

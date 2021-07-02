@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorAudioAPIResponse
-声音 API返回值
-alibaba.interact.sensor.audio
-
-客户端声音 */
+// AlibabaInteractSensorAudioAPIResponse 声音 API返回值
+// alibaba.interact.sensor.audio
+//
+// 客户端声音
 type AlibabaInteractSensorAudioAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorAudioAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmOpenAssertRefundAPIResponse
-资产核销回退接口 API返回值
-alibaba.alsc.crm.open.assert.refund
-
-回退已经核销的储值积分券资产 */
+// AlibabaAlscCrmOpenAssertRefundAPIResponse 资产核销回退接口 API返回值
+// alibaba.alsc.crm.open.assert.refund
+//
+// 回退已经核销的储值积分券资产
 type AlibabaAlscCrmOpenAssertRefundAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmOpenAssertRefundAPIResponseModel

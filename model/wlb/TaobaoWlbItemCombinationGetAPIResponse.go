@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbItemCombinationGetAPIResponse
-根据商品id查询商品组合关系 API返回值
-taobao.wlb.item.combination.get
-
-根据商品id查询商品组合关系 */
+// TaobaoWlbItemCombinationGetAPIResponse 根据商品id查询商品组合关系 API返回值
+// taobao.wlb.item.combination.get
+//
+// 根据商品id查询商品组合关系
 type TaobaoWlbItemCombinationGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbItemCombinationGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentHandleticketConfirmAPIRequest
-代理商出票中 API请求
-taobao.train.agent.handleticket.confirm
-
-代理商出票中 */
+// TaobaoTrainAgentHandleticketConfirmAPIRequest 代理商出票中 API请求
+// taobao.train.agent.handleticket.confirm
+//
+// 代理商出票中
 type TaobaoTrainAgentHandleticketConfirmAPIRequest struct {
 	model.Params
 	// 扩展参数

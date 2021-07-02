@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJuItemsSearchAPIResponse
-聚划算商品搜索接口 API返回值
-taobao.ju.items.search
-
-搜索聚划算商品 */
+// TaobaoJuItemsSearchAPIResponse 聚划算商品搜索接口 API返回值
+// taobao.ju.items.search
+//
+// 搜索聚划算商品
 type TaobaoJuItemsSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoJuItemsSearchAPIResponseModel

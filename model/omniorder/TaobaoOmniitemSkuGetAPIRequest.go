@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemSkuGetAPIRequest
-获取全渠道门店商品sku API请求
-taobao.omniitem.sku.get
-
-通过skuId或者skuOutId查询全渠道门店商品sku信息 */
+// TaobaoOmniitemSkuGetAPIRequest 获取全渠道门店商品sku API请求
+// taobao.omniitem.sku.get
+//
+// 通过skuId或者skuOutId查询全渠道门店商品sku信息
 type TaobaoOmniitemSkuGetAPIRequest struct {
 	model.Params
 	// 商品id

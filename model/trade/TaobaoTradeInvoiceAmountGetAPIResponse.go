@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradeInvoiceAmountGetAPIResponse
-获取订单应开票金额 API返回值
-taobao.trade.invoice.amount.get
-
-订单应开票金额计算 */
+// TaobaoTradeInvoiceAmountGetAPIResponse 获取订单应开票金额 API返回值
+// taobao.trade.invoice.amount.get
+//
+// 订单应开票金额计算
 type TaobaoTradeInvoiceAmountGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTradeInvoiceAmountGetAPIResponseModel

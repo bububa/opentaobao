@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest
-作业小票查询接口 API请求
-alibaba.wdk.fulfill.batch.query.by.batchids
-
-根据节点等条件查询履约单小票信息 */
+// AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest 作业小票查询接口 API请求
+// alibaba.wdk.fulfill.batch.query.by.batchids
+//
+// 根据节点等条件查询履约单小票信息
 type AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest struct {
 	model.Params
 	// 作业节点类型： WAREHOUSE：仓  DELIVERY_DOCK：配送站 SHOP：经营店

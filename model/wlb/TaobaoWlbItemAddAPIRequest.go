@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbItemAddAPIRequest
-添加单个物流宝商品 API请求
-taobao.wlb.item.add
-
-添加物流宝商品，支持物流宝子商品和属性添加 */
+// TaobaoWlbItemAddAPIRequest 添加单个物流宝商品 API请求
+// taobao.wlb.item.add
+//
+// 添加物流宝商品，支持物流宝子商品和属性添加
 type TaobaoWlbItemAddAPIRequest struct {
 	model.Params
 	// 商品名称

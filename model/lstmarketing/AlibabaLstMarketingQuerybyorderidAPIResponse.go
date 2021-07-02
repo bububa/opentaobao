@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstMarketingQuerybyorderidAPIResponse
-根据订单查询营销信息 API返回值
-alibaba.lst.marketing.querybyorderid
-
-根据订单查询营销信息 */
+// AlibabaLstMarketingQuerybyorderidAPIResponse 根据订单查询营销信息 API返回值
+// alibaba.lst.marketing.querybyorderid
+//
+// 根据订单查询营销信息
 type AlibabaLstMarketingQuerybyorderidAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstMarketingQuerybyorderidAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-/* AlibabaAlscCrmRechargeAccountflowsGet
-分页查询储值流水
-alibaba.alsc.crm.recharge.accountflows.get
-
-增加分页查询储值流水接口 */
+// AlibabaAlscCrmRechargeAccountflowsGet 分页查询储值流水
+// alibaba.alsc.crm.recharge.accountflows.get
+//
+// 增加分页查询储值流水接口
 func AlibabaAlscCrmRechargeAccountflowsGet(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeAccountflowsGetAPIRequest, session string) (*alsc.AlibabaAlscCrmRechargeAccountflowsGetAPIResponse, error) {
 	var resp alsc.AlibabaAlscCrmRechargeAccountflowsGetAPIResponse
 	err := clt.Post(req, &resp, session)

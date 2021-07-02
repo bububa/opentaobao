@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKoubeiTribeOpenOrderPageAPIRequest
-口碑综合体订单列表信息查询 API请求
-taobao.koubei.tribe.open.order.page
-
-查询口碑商圈用户的订单列表信息 */
+// TaobaoKoubeiTribeOpenOrderPageAPIRequest 口碑综合体订单列表信息查询 API请求
+// taobao.koubei.tribe.open.order.page
+//
+// 查询口碑商圈用户的订单列表信息
 type TaobaoKoubeiTribeOpenOrderPageAPIRequest struct {
 	model.Params
 	// 订单状态；ALL（全部），WAIT_PAY（代付款），WAIT_CONSUME（代消费）

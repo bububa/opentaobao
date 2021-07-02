@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJushitaJdpUsersGetAPIResponse
-获取开通的订单同步服务的用户 API返回值
-taobao.jushita.jdp.users.get
-
-获取开通的订单同步服务的用户，含有rds的路由关系 */
+// TaobaoJushitaJdpUsersGetAPIResponse 获取开通的订单同步服务的用户 API返回值
+// taobao.jushita.jdp.users.get
+//
+// 获取开通的订单同步服务的用户，含有rds的路由关系
 type TaobaoJushitaJdpUsersGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoJushitaJdpUsersGetAPIResponseModel

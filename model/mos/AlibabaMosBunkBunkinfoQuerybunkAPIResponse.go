@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosBunkBunkinfoQuerybunkAPIResponse
-根据合同号查询铺位信息 API返回值
-alibaba.mos.bunk.bunkinfo.querybunk
-
-根据合同号查询铺位信息 */
+// AlibabaMosBunkBunkinfoQuerybunkAPIResponse 根据合同号查询铺位信息 API返回值
+// alibaba.mos.bunk.bunkinfo.querybunk
+//
+// 根据合同号查询铺位信息
 type AlibabaMosBunkBunkinfoQuerybunkAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosBunkBunkinfoQuerybunkAPIResponseModel

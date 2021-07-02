@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripOpenCostCenterNewAPIResponse
-新增成本中心 API返回值
-alitrip.btrip.open.cost.center.new
-
-新增成本中心 */
+// AlitripBtripOpenCostCenterNewAPIResponse 新增成本中心 API返回值
+// alitrip.btrip.open.cost.center.new
+//
+// 新增成本中心
 type AlitripBtripOpenCostCenterNewAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripOpenCostCenterNewAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTargetAdPlanForbiddenWordModifyAPIResponse
-定向推广-新增或删除屏蔽词 API返回值
-alibaba.scbp.target.ad.plan.forbidden.word.modify
-
-定向推广-新增或删除屏蔽词 */
+// AlibabaScbpTargetAdPlanForbiddenWordModifyAPIResponse 定向推广-新增或删除屏蔽词 API返回值
+// alibaba.scbp.target.ad.plan.forbidden.word.modify
+//
+// 定向推广-新增或删除屏蔽词
 type AlibabaScbpTargetAdPlanForbiddenWordModifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpTargetAdPlanForbiddenWordModifyAPIResponseModel

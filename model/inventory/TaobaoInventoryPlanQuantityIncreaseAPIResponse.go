@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInventoryPlanQuantityIncreaseAPIResponse
-计划库存的增量编辑 API返回值
-taobao.inventory.plan.quantity.increase
-
-计划库存的增量编辑 */
+// TaobaoInventoryPlanQuantityIncreaseAPIResponse 计划库存的增量编辑 API返回值
+// taobao.inventory.plan.quantity.increase
+//
+// 计划库存的增量编辑
 type TaobaoInventoryPlanQuantityIncreaseAPIResponse struct {
 	model.CommonResponse
 	TaobaoInventoryPlanQuantityIncreaseAPIResponseModel

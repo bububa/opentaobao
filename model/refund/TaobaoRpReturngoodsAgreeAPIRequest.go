@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRpReturngoodsAgreeAPIRequest
-卖家同意退货 API请求
-taobao.rp.returngoods.agree
-
-卖家同意退货，支持淘宝和天猫的订单。 */
+// TaobaoRpReturngoodsAgreeAPIRequest 卖家同意退货 API请求
+// taobao.rp.returngoods.agree
+//
+// 卖家同意退货，支持淘宝和天猫的订单。
 type TaobaoRpReturngoodsAgreeAPIRequest struct {
 	model.Params
 	// 退款编号

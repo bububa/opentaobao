@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstIcItemInfoQueryAPIResponse
-商品信息查询 API返回值
-alibaba.lst.ic.item.info.query
-
-查询商品信息 */
+// AlibabaLstIcItemInfoQueryAPIResponse 商品信息查询 API返回值
+// alibaba.lst.ic.item.info.query
+//
+// 查询商品信息
 type AlibabaLstIcItemInfoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstIcItemInfoQueryAPIResponseModel

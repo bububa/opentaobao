@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstAstrolabeStoreinventoryIteminitialAPIResponse
-库存初始化接口 API返回值
-taobao.jst.astrolabe.storeinventory.iteminitial
-
-ERP调用奇门的接口，对门店的库存进行初始化 */
+// TaobaoJstAstrolabeStoreinventoryIteminitialAPIResponse 库存初始化接口 API返回值
+// taobao.jst.astrolabe.storeinventory.iteminitial
+//
+// ERP调用奇门的接口，对门店的库存进行初始化
 type TaobaoJstAstrolabeStoreinventoryIteminitialAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstAstrolabeStoreinventoryIteminitialAPIResponseModel

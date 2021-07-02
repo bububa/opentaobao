@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIResponse
-聚安全获取异步图文识别结果接口 API返回值
-alibaba.security.jaq.ocr.image.async.detect.results.fetch
-
-获取异步图像字符识别结果接口根据图像检测接口返回taskid来获取对应图像的检测结果 */
+// AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIResponse 聚安全获取异步图文识别结果接口 API返回值
+// alibaba.security.jaq.ocr.image.async.detect.results.fetch
+//
+// 获取异步图像字符识别结果接口根据图像检测接口返回taskid来获取对应图像的检测结果
 type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignPlatformUpdateAPIRequest
-更新一个推广计划的平台设置 API请求
-taobao.simba.campaign.platform.update
-
-更新一个推广计划的平台设置 */
+// TaobaoSimbaCampaignPlatformUpdateAPIRequest 更新一个推广计划的平台设置 API请求
+// taobao.simba.campaign.platform.update
+//
+// 更新一个推广计划的平台设置
 type TaobaoSimbaCampaignPlatformUpdateAPIRequest struct {
 	model.Params
 	// 推广计划Id

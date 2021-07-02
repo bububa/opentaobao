@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpStartAPIRequest
-聚安全实人认证开始 API请求
-alibaba.security.jaq.rp.start
-
-聚安全实人认证开始 */
+// AlibabaSecurityJaqRpStartAPIRequest 聚安全实人认证开始 API请求
+// alibaba.security.jaq.rp.start
+//
+// 聚安全实人认证开始
 type AlibabaSecurityJaqRpStartAPIRequest struct {
 	model.Params
 	// token

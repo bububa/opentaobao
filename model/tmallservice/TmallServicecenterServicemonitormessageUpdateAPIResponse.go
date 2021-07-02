@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterServicemonitormessageUpdateAPIResponse
-服务商更新预警消息状态 API返回值
-tmall.servicecenter.servicemonitormessage.update
-
-服务商收到预警后，需要进行回复已读状态，并可填写备注 */
+// TmallServicecenterServicemonitormessageUpdateAPIResponse 服务商更新预警消息状态 API返回值
+// tmall.servicecenter.servicemonitormessage.update
+//
+// 服务商收到预警后，需要进行回复已读状态，并可填写备注
 type TmallServicecenterServicemonitormessageUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterServicemonitormessageUpdateAPIResponseModel

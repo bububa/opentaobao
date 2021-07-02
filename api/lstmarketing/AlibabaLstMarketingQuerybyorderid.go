@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/lstmarketing"
 )
 
-/* AlibabaLstMarketingQuerybyorderid
-根据订单查询营销信息
-alibaba.lst.marketing.querybyorderid
-
-根据订单查询营销信息 */
+// AlibabaLstMarketingQuerybyorderid 根据订单查询营销信息
+// alibaba.lst.marketing.querybyorderid
+//
+// 根据订单查询营销信息
 func AlibabaLstMarketingQuerybyorderid(clt *core.SDKClient, req *lstmarketing.AlibabaLstMarketingQuerybyorderidAPIRequest, session string) (*lstmarketing.AlibabaLstMarketingQuerybyorderidAPIResponse, error) {
 	var resp lstmarketing.AlibabaLstMarketingQuerybyorderidAPIResponse
 	err := clt.Post(req, &resp, session)

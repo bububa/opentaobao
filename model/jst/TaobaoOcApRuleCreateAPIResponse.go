@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOcApRuleCreateAPIResponse
-创建分账规则 API返回值
-taobao.oc.ap.rule.create
-
-OC分账业务功能支持，用于创建分账规则 */
+// TaobaoOcApRuleCreateAPIResponse 创建分账规则 API返回值
+// taobao.oc.ap.rule.create
+//
+// OC分账业务功能支持，用于创建分账规则
 type TaobaoOcApRuleCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOcApRuleCreateAPIResponseModel

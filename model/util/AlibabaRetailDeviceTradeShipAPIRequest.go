@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDeviceTradeShipAPIRequest
-贩卖机掉货成功通知 API请求
-alibaba.retail.device.trade.ship
-
-贩卖机发货 */
+// AlibabaRetailDeviceTradeShipAPIRequest 贩卖机掉货成功通知 API请求
+// alibaba.retail.device.trade.ship
+//
+// 贩卖机发货
 type AlibabaRetailDeviceTradeShipAPIRequest struct {
 	model.Params
 	// 设备类型

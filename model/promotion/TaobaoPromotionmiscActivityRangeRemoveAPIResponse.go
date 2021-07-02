@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionmiscActivityRangeRemoveAPIResponse
-去除活动参与的商品 API返回值
-taobao.promotionmisc.activity.range.remove
-
-去除活动参与的商品 */
+// TaobaoPromotionmiscActivityRangeRemoveAPIResponse 去除活动参与的商品 API返回值
+// taobao.promotionmisc.activity.range.remove
+//
+// 去除活动参与的商品
 type TaobaoPromotionmiscActivityRangeRemoveAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionmiscActivityRangeRemoveAPIResponseModel

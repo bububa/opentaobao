@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstVendingTradeflowQueryAPIResponse
-自动售卖机交易流水查询 API返回值
-alibaba.lst.vending.tradeflow.query
-
-零售通自动售卖机交易流水查询接口，品牌商通过此接口同步商品交易数据。 */
+// AlibabaLstVendingTradeflowQueryAPIResponse 自动售卖机交易流水查询 API返回值
+// alibaba.lst.vending.tradeflow.query
+//
+// 零售通自动售卖机交易流水查询接口，品牌商通过此接口同步商品交易数据。
 type AlibabaLstVendingTradeflowQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstVendingTradeflowQueryAPIResponseModel

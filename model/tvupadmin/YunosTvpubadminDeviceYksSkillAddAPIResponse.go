@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceYksSkillAddAPIResponse
-添加技能 API返回值
-yunos.tvpubadmin.device.yks.skill.add
-
-添加技能 */
+// YunosTvpubadminDeviceYksSkillAddAPIResponse 添加技能 API返回值
+// yunos.tvpubadmin.device.yks.skill.add
+//
+// 添加技能
 type YunosTvpubadminDeviceYksSkillAddAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminDeviceYksSkillAddAPIResponseModel

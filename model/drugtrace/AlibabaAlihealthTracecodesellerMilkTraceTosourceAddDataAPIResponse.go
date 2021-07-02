@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse
-奶粉溯源-同步数据 API返回值
-alibaba.alihealth.tracecodeseller.milk.trace.tosource.add.data
-
-奶粉溯源-同步数据 */
+// AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse 奶粉溯源-同步数据 API返回值
+// alibaba.alihealth.tracecodeseller.milk.trace.tosource.add.data
+//
+// 奶粉溯源-同步数据
 type AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponseModel

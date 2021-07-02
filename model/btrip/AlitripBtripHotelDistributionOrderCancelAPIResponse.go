@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripHotelDistributionOrderCancelAPIResponse
-商旅酒店API分销取消订单 API返回值
-alitrip.btrip.hotel.distribution.order.cancel
-
-商旅酒店API分销取消订单 */
+// AlitripBtripHotelDistributionOrderCancelAPIResponse 商旅酒店API分销取消订单 API返回值
+// alitrip.btrip.hotel.distribution.order.cancel
+//
+// 商旅酒店API分销取消订单
 type AlitripBtripHotelDistributionOrderCancelAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripHotelDistributionOrderCancelAPIResponseModel

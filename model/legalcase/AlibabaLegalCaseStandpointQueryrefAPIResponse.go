@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegalCaseStandpointQueryrefAPIResponse
-查询推送口径信息 API返回值
-alibaba.legal.case.standpoint.queryref
-
-查询推送口径信息 */
+// AlibabaLegalCaseStandpointQueryrefAPIResponse 查询推送口径信息 API返回值
+// alibaba.legal.case.standpoint.queryref
+//
+// 查询推送口径信息
 type AlibabaLegalCaseStandpointQueryrefAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalCaseStandpointQueryrefAPIResponseModel

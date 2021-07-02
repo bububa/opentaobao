@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelHstdfShotelExportsroomtypeAPIResponse
-导出一个卖家房型下的所有标准房型 API返回值
-alitrip.hotel.hstdf.shotel.exportsroomtype
-
-导出一个卖家酒店下的所有标准房型 */
+// AlitripHotelHstdfShotelExportsroomtypeAPIResponse 导出一个卖家房型下的所有标准房型 API返回值
+// alitrip.hotel.hstdf.shotel.exportsroomtype
+//
+// 导出一个卖家酒店下的所有标准房型
 type AlitripHotelHstdfShotelExportsroomtypeAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelHstdfShotelExportsroomtypeAPIResponseModel

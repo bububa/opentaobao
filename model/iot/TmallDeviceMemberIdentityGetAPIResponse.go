@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallDeviceMemberIdentityGetAPIResponse
-智能硬件会员判断 API返回值
-tmall.device.member.identity.get
-
-用来识别该用户是否是商家会员· */
+// TmallDeviceMemberIdentityGetAPIResponse 智能硬件会员判断 API返回值
+// tmall.device.member.identity.get
+//
+// 用来识别该用户是否是商家会员·
 type TmallDeviceMemberIdentityGetAPIResponse struct {
 	model.CommonResponse
 	TmallDeviceMemberIdentityGetAPIResponseModel

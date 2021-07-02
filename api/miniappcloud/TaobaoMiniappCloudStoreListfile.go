@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/miniappcloud"
 )
 
-/* TaobaoMiniappCloudStoreListfile
-云存储根据文件名反查地址
-taobao.miniapp.cloud.store.listfile
-
-云存储中，根据文件名反查地址 */
+// TaobaoMiniappCloudStoreListfile 云存储根据文件名反查地址
+// taobao.miniapp.cloud.store.listfile
+//
+// 云存储中，根据文件名反查地址
 func TaobaoMiniappCloudStoreListfile(clt *core.SDKClient, req *miniappcloud.TaobaoMiniappCloudStoreListfileAPIRequest, session string) (*miniappcloud.TaobaoMiniappCloudStoreListfileAPIResponse, error) {
 	var resp miniappcloud.TaobaoMiniappCloudStoreListfileAPIResponse
 	err := clt.Post(req, &resp, session)

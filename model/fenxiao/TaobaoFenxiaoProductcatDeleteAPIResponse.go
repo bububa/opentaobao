@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductcatDeleteAPIResponse
-删除产品线 API返回值
-taobao.fenxiao.productcat.delete
-
-删除产品线 */
+// TaobaoFenxiaoProductcatDeleteAPIResponse 删除产品线 API返回值
+// taobao.fenxiao.productcat.delete
+//
+// 删除产品线
 type TaobaoFenxiaoProductcatDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductcatDeleteAPIResponseModel

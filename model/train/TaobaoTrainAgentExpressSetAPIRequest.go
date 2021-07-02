@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentExpressSetAPIRequest
-线下票回填物流信息 API请求
-taobao.train.agent.express.set
-
-线下票回填物流信息服务 */
+// TaobaoTrainAgentExpressSetAPIRequest 线下票回填物流信息 API请求
+// taobao.train.agent.express.set
+//
+// 线下票回填物流信息服务
 type TaobaoTrainAgentExpressSetAPIRequest struct {
 	model.Params
 	// 订单号

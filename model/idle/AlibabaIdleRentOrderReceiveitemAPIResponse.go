@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleRentOrderReceiveitemAPIResponse
-确认签收 API返回值
-alibaba.idle.rent.order.receiveitem
-
-确认揽收/签收 */
+// AlibabaIdleRentOrderReceiveitemAPIResponse 确认签收 API返回值
+// alibaba.idle.rent.order.receiveitem
+//
+// 确认揽收/签收
 type AlibabaIdleRentOrderReceiveitemAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleRentOrderReceiveitemAPIResponseModel

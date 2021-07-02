@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenlinkSessionGetAPIResponse
-获取授权session信息 API返回值
-taobao.openlink.session.get
-
-帮助第三方isv生成三方session */
+// TaobaoOpenlinkSessionGetAPIResponse 获取授权session信息 API返回值
+// taobao.openlink.session.get
+//
+// 帮助第三方isv生成三方session
 type TaobaoOpenlinkSessionGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenlinkSessionGetAPIResponseModel

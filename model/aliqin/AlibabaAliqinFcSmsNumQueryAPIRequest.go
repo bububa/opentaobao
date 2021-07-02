@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcSmsNumQueryAPIRequest
-短信发送记录查询 API请求
-alibaba.aliqin.fc.sms.num.query
-
-短信发送记录查询。 */
+// AlibabaAliqinFcSmsNumQueryAPIRequest 短信发送记录查询 API请求
+// alibaba.aliqin.fc.sms.num.query
+//
+// 短信发送记录查询。
 type AlibabaAliqinFcSmsNumQueryAPIRequest struct {
 	model.Params
 	// 短信发送流水

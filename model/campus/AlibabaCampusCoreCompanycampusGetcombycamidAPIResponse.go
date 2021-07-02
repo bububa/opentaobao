@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusCoreCompanycampusGetcombycamidAPIResponse
-根据园区ID获取运营公司信息 API返回值
-alibaba.campus.core.companycampus.getcombycamid
-
-根据园区ID获取运营公司信息 */
+// AlibabaCampusCoreCompanycampusGetcombycamidAPIResponse 根据园区ID获取运营公司信息 API返回值
+// alibaba.campus.core.companycampus.getcombycamid
+//
+// 根据园区ID获取运营公司信息
 type AlibabaCampusCoreCompanycampusGetcombycamidAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusCoreCompanycampusGetcombycamidAPIResponseModel

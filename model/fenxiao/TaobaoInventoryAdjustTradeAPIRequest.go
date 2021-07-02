@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInventoryAdjustTradeAPIRequest
-交易库存调整单 API请求
-taobao.inventory.adjust.trade
-
-商家交易调整库存，淘宝交易、B2B经销等 */
+// TaobaoInventoryAdjustTradeAPIRequest 交易库存调整单 API请求
+// taobao.inventory.adjust.trade
+//
+// 商家交易调整库存，淘宝交易、B2B经销等
 type TaobaoInventoryAdjustTradeAPIRequest struct {
 	model.Params
 	// 订单类型：B2C、B2B

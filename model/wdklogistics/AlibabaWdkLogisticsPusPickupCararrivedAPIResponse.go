@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkLogisticsPusPickupCararrivedAPIResponse
-自提业务-车辆到达上报车牌号 API返回值
-alibaba.wdk.logistics.pus.pickup.cararrived
-
-自提业务-汽车自提,车辆到达上报车牌号 */
+// AlibabaWdkLogisticsPusPickupCararrivedAPIResponse 自提业务-车辆到达上报车牌号 API返回值
+// alibaba.wdk.logistics.pus.pickup.cararrived
+//
+// 自提业务-汽车自提,车辆到达上报车牌号
 type AlibabaWdkLogisticsPusPickupCararrivedAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkLogisticsPusPickupCararrivedAPIResponseModel

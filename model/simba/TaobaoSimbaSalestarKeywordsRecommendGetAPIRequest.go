@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSalestarKeywordsRecommendGetAPIRequest
-销量明星api相关接口 API请求
-taobao.simba.salestar.keywords.recommend.get
-
-取得一个推广组的推荐关键词列表 */
+// TaobaoSimbaSalestarKeywordsRecommendGetAPIRequest 销量明星api相关接口 API请求
+// taobao.simba.salestar.keywords.recommend.get
+//
+// 取得一个推广组的推荐关键词列表
 type TaobaoSimbaSalestarKeywordsRecommendGetAPIRequest struct {
 	model.Params
 	// 推广组ID

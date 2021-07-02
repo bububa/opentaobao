@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappAppSellerConfigCompleteAPIResponse
-商家完成小程序相关配置 API返回值
-taobao.miniapp.app.seller.config.complete
-
-通过该接口告知平台商家已经完成小程序相关的必要设置，可进行后续操作。主要用于小部件、客服插件等场景。 */
+// TaobaoMiniappAppSellerConfigCompleteAPIResponse 商家完成小程序相关配置 API返回值
+// taobao.miniapp.app.seller.config.complete
+//
+// 通过该接口告知平台商家已经完成小程序相关的必要设置，可进行后续操作。主要用于小部件、客服插件等场景。
 type TaobaoMiniappAppSellerConfigCompleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappAppSellerConfigCompleteAPIResponseModel

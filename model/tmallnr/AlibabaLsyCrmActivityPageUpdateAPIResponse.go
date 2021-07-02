@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLsyCrmActivityPageUpdateAPIResponse
-ISV活动页面创建修改 API返回值
-alibaba.lsy.crm.activity.page.update
-
-ISV活动页面创建修改 */
+// AlibabaLsyCrmActivityPageUpdateAPIResponse ISV活动页面创建修改 API返回值
+// alibaba.lsy.crm.activity.page.update
+//
+// ISV活动页面创建修改
 type AlibabaLsyCrmActivityPageUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaLsyCrmActivityPageUpdateAPIResponseModel

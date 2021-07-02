@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimChatlogsGetAPIResponse
-openim聊天记录查询接口 API返回值
-taobao.openim.chatlogs.get
-
-查询openim账号聊天记录 */
+// TaobaoOpenimChatlogsGetAPIResponse openim聊天记录查询接口 API返回值
+// taobao.openim.chatlogs.get
+//
+// 查询openim账号聊天记录
 type TaobaoOpenimChatlogsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimChatlogsGetAPIResponseModel

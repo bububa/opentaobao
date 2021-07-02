@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTargetAdPlanCrowdIdGetAPIResponse
-定向推广-人群标签ID获取(店铺老客、优选人群) API返回值
-alibaba.scbp.target.ad.plan.crowd.id.get
-
-定向推广-人群标签ID获取(店铺老客、优选人群) */
+// AlibabaScbpTargetAdPlanCrowdIdGetAPIResponse 定向推广-人群标签ID获取(店铺老客、优选人群) API返回值
+// alibaba.scbp.target.ad.plan.crowd.id.get
+//
+// 定向推广-人群标签ID获取(店铺老客、优选人群)
 type AlibabaScbpTargetAdPlanCrowdIdGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpTargetAdPlanCrowdIdGetAPIResponseModel

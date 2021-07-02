@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminManageTopicContentdeleteAPIResponse
-删除专题下内容 API返回值
-yunos.tvpubadmin.manage.topic.contentdelete
-
-删除专题下内容信息 */
+// YunosTvpubadminManageTopicContentdeleteAPIResponse 删除专题下内容 API返回值
+// yunos.tvpubadmin.manage.topic.contentdelete
+//
+// 删除专题下内容信息
 type YunosTvpubadminManageTopicContentdeleteAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminManageTopicContentdeleteAPIResponseModel

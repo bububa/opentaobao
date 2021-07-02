@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytQuerydruginfoAPIResponse
-码查询药品 API返回值
-alibaba.alihealth.drug.kyt.querydruginfo
-
-通过追溯码查询药品信息 */
+// AlibabaAlihealthDrugKytQuerydruginfoAPIResponse 码查询药品 API返回值
+// alibaba.alihealth.drug.kyt.querydruginfo
+//
+// 通过追溯码查询药品信息
 type AlibabaAlihealthDrugKytQuerydruginfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytQuerydruginfoAPIResponseModel

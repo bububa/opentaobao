@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoOrderPushAPIResponse
-推送订单 API返回值
-alibaba.ele.fengniao.order.push
-
-推送淘宝订单至蜂鸟开放平台配送 */
+// AlibabaEleFengniaoOrderPushAPIResponse 推送订单 API返回值
+// alibaba.ele.fengniao.order.push
+//
+// 推送淘宝订单至蜂鸟开放平台配送
 type AlibabaEleFengniaoOrderPushAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoOrderPushAPIResponseModel

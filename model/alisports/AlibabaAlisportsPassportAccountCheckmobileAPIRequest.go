@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsPassportAccountCheckmobileAPIRequest
-阿里体育会员系统--手机号验证接口 API请求
-alibaba.alisports.passport.account.checkmobile
-
-验证三方用户的手机号，获取对应的阿里体育会员id */
+// AlibabaAlisportsPassportAccountCheckmobileAPIRequest 阿里体育会员系统--手机号验证接口 API请求
+// alibaba.alisports.passport.account.checkmobile
+//
+// 验证三方用户的手机号，获取对应的阿里体育会员id
 type AlibabaAlisportsPassportAccountCheckmobileAPIRequest struct {
 	model.Params
 	// 业务appkey

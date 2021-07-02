@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBanamadpcItemRenderAPIResponse
-新发商品发布页 API返回值
-taobao.banamadpc.item.render
-
-巴拿马供应商通过此接口新发商品发布页 */
+// TaobaoBanamadpcItemRenderAPIResponse 新发商品发布页 API返回值
+// taobao.banamadpc.item.render
+//
+// 巴拿马供应商通过此接口新发商品发布页
 type TaobaoBanamadpcItemRenderAPIResponse struct {
 	model.CommonResponse
 	TaobaoBanamadpcItemRenderAPIResponseModel

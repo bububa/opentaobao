@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripTrainCitySuggestAPIResponse
-火车票城市搜索 API返回值
-alitrip.btrip.train.city.suggest
-
-阿里商旅提供火车票搜索接口，方便OA厂商更精准的对接 */
+// AlitripBtripTrainCitySuggestAPIResponse 火车票城市搜索 API返回值
+// alitrip.btrip.train.city.suggest
+//
+// 阿里商旅提供火车票搜索接口，方便OA厂商更精准的对接
 type AlitripBtripTrainCitySuggestAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripTrainCitySuggestAPIResponseModel

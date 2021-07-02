@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceUnbindAPIResponse
-解绑设备 API返回值
-taobao.ailab.aicloud.top.device.unbind
-
-解绑设备 */
+// TaobaoAilabAicloudTopDeviceUnbindAPIResponse 解绑设备 API返回值
+// taobao.ailab.aicloud.top.device.unbind
+//
+// 解绑设备
 type TaobaoAilabAicloudTopDeviceUnbindAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceUnbindAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthStoreCertificateCreateAPIResponse
-仓库换证审批 API返回值
-alibaba.alihealth.store.certificate.create
-
-仓库侧换证发起审批 */
+// AlibabaAlihealthStoreCertificateCreateAPIResponse 仓库换证审批 API返回值
+// alibaba.alihealth.store.certificate.create
+//
+// 仓库侧换证发起审批
 type AlibabaAlihealthStoreCertificateCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthStoreCertificateCreateAPIResponseModel

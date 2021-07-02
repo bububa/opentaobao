@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterTpFundsRecoverQueryAPIResponse
-服务商资金权益逆向扣回的查询接口 API返回值
-tmall.servicecenter.tp.funds.recover.query
-
-服务商资金权益逆向扣回的查询接口 */
+// TmallServicecenterTpFundsRecoverQueryAPIResponse 服务商资金权益逆向扣回的查询接口 API返回值
+// tmall.servicecenter.tp.funds.recover.query
+//
+// 服务商资金权益逆向扣回的查询接口
 type TmallServicecenterTpFundsRecoverQueryAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterTpFundsRecoverQueryAPIResponseModel

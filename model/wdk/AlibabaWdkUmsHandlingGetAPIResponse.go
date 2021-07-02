@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkUmsHandlingGetAPIResponse
-加工单-回流单（新接口） API返回值
-alibaba.wdk.ums.handling.get
-
-加工单-回流单（新接口） */
+// AlibabaWdkUmsHandlingGetAPIResponse 加工单-回流单（新接口） API返回值
+// alibaba.wdk.ums.handling.get
+//
+// 加工单-回流单（新接口）
 type AlibabaWdkUmsHandlingGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkUmsHandlingGetAPIResponseModel

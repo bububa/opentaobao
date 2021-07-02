@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlicomOrderPreauthorizeFulfillmentAPIResponse
-履约结果 API返回值
-alibaba.alicom.order.preauthorize.fulfillment
-
-预授权-履约结果 */
+// AlibabaAlicomOrderPreauthorizeFulfillmentAPIResponse 履约结果 API返回值
+// alibaba.alicom.order.preauthorize.fulfillment
+//
+// 预授权-履约结果
 type AlibabaAlicomOrderPreauthorizeFulfillmentAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlicomOrderPreauthorizeFulfillmentAPIResponseModel

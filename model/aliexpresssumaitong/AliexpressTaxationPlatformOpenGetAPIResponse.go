@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressTaxationPlatformOpenGetAPIResponse
-平台固定参数获取 API返回值
-aliexpress.taxation.platform.open.get
-
-Aliexpress开放平台固定参数获取 */
+// AliexpressTaxationPlatformOpenGetAPIResponse 平台固定参数获取 API返回值
+// aliexpress.taxation.platform.open.get
+//
+// Aliexpress开放平台固定参数获取
 type AliexpressTaxationPlatformOpenGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressTaxationPlatformOpenGetAPIResponseModel

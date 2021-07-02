@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2cTradestatusDriveAPIRequest
-b2c订单状态驱动 API请求
-alibaba.nlife.b2c.tradestatus.drive
-
-用于驱动零售+订单状态 */
+// AlibabaNlifeB2cTradestatusDriveAPIRequest b2c订单状态驱动 API请求
+// alibaba.nlife.b2c.tradestatus.drive
+//
+// 用于驱动零售+订单状态
 type AlibabaNlifeB2cTradestatusDriveAPIRequest struct {
 	model.Params
 	// 零售门店在零售+平台的ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAccountIsarrearsGetAPIResponse
-查询关键词推广账户是否欠款 API返回值
-alibaba.scbp.account.isarrears.get
-
-查询关键词推广账户是否欠款 */
+// AlibabaScbpAccountIsarrearsGetAPIResponse 查询关键词推广账户是否欠款 API返回值
+// alibaba.scbp.account.isarrears.get
+//
+// 查询关键词推广账户是否欠款
 type AlibabaScbpAccountIsarrearsGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAccountIsarrearsGetAPIResponseModel

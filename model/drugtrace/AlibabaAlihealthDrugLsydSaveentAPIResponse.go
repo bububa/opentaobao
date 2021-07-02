@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugLsydSaveentAPIResponse
-零售药店往来单位新增 API返回值
-alibaba.alihealth.drug.lsyd.saveent
-
-新增往来单位企业记录 */
+// AlibabaAlihealthDrugLsydSaveentAPIResponse 零售药店往来单位新增 API返回值
+// alibaba.alihealth.drug.lsyd.saveent
+//
+// 新增往来单位企业记录
 type AlibabaAlihealthDrugLsydSaveentAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugLsydSaveentAPIResponseModel

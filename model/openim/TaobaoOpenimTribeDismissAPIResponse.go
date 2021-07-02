@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimTribeDismissAPIResponse
-OPENIM群解散 API返回值
-taobao.openim.tribe.dismiss
-
-OPENIM群解散 */
+// TaobaoOpenimTribeDismissAPIResponse OPENIM群解散 API返回值
+// taobao.openim.tribe.dismiss
+//
+// OPENIM群解散
 type TaobaoOpenimTribeDismissAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimTribeDismissAPIResponseModel

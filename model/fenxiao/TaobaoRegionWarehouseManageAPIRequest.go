@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRegionWarehouseManageAPIRequest
-编辑仓库覆盖范围 API请求
-taobao.region.warehouse.manage
-
-编辑仓库覆盖范围 */
+// TaobaoRegionWarehouseManageAPIRequest 编辑仓库覆盖范围 API请求
+// taobao.region.warehouse.manage
+//
+// 编辑仓库覆盖范围
 type TaobaoRegionWarehouseManageAPIRequest struct {
 	model.Params
 	// 仓库编码

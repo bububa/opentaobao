@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTraceplatformAwdcInfoUploadAPIResponse
-AWDC提交溯源信息 API返回值
-tmall.traceplatform.awdc.info.upload
-
-天猫溯源-AWDC-上传溯源信息 */
+// TmallTraceplatformAwdcInfoUploadAPIResponse AWDC提交溯源信息 API返回值
+// tmall.traceplatform.awdc.info.upload
+//
+// 天猫溯源-AWDC-上传溯源信息
 type TmallTraceplatformAwdcInfoUploadAPIResponse struct {
 	model.CommonResponse
 	TmallTraceplatformAwdcInfoUploadAPIResponseModel

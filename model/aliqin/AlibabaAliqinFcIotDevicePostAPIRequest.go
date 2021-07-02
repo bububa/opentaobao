@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotDevicePostAPIRequest
-商家提交设备信息 API请求
-alibaba.aliqin.fc.iot.device.post
-
-物联网商家设备信息录入 */
+// AlibabaAliqinFcIotDevicePostAPIRequest 商家提交设备信息 API请求
+// alibaba.aliqin.fc.iot.device.post
+//
+// 物联网商家设备信息录入
 type AlibabaAliqinFcIotDevicePostAPIRequest struct {
 	model.Params
 	// 15位imei号

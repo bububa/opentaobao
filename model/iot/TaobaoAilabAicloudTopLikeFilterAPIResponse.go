@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopLikeFilterAPIResponse
-过滤列表歌曲存在于收藏列表的 API返回值
-taobao.ailab.aicloud.top.like.filter
-
-过滤出传入列表歌曲存在于收藏列表的 */
+// TaobaoAilabAicloudTopLikeFilterAPIResponse 过滤列表歌曲存在于收藏列表的 API返回值
+// taobao.ailab.aicloud.top.like.filter
+//
+// 过滤出传入列表歌曲存在于收藏列表的
 type TaobaoAilabAicloudTopLikeFilterAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopLikeFilterAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeGroupActivtiyQueryAPIRequest
-组团活动信息查询 API请求
-taobao.opentrade.group.activtiy.query
-
-组团购场景下，团购活动信息查询 */
+// TaobaoOpentradeGroupActivtiyQueryAPIRequest 组团活动信息查询 API请求
+// taobao.opentrade.group.activtiy.query
+//
+// 组团购场景下，团购活动信息查询
 type TaobaoOpentradeGroupActivtiyQueryAPIRequest struct {
 	model.Params
 	// 分页参数，每页大小

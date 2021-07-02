@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailMarketingItempoolActivitySkuAddAPIResponse
-商品池活动新增商品 API返回值
-alibaba.retail.marketing.itempool.activity.sku.add
-
-新增或更新商品池活动商品信息【同城零售】 */
+// AlibabaRetailMarketingItempoolActivitySkuAddAPIResponse 商品池活动新增商品 API返回值
+// alibaba.retail.marketing.itempool.activity.sku.add
+//
+// 新增或更新商品池活动商品信息【同城零售】
 type AlibabaRetailMarketingItempoolActivitySkuAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailMarketingItempoolActivitySkuAddAPIResponseModel

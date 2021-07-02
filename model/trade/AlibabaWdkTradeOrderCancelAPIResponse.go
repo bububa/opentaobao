@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkTradeOrderCancelAPIResponse
-外部交易订单取消接口 API返回值
-alibaba.wdk.trade.order.cancel
-
-通过该接口可以再盒马取消交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理 */
+// AlibabaWdkTradeOrderCancelAPIResponse 外部交易订单取消接口 API返回值
+// alibaba.wdk.trade.order.cancel
+//
+// 通过该接口可以再盒马取消交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理
 type AlibabaWdkTradeOrderCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkTradeOrderCancelAPIResponseModel

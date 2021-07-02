@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstTradeSellerOrderFundbillListQueryAPIResponse
-结算明细数据查询（卖家视角） API返回值
-alibaba.lst.trade.seller.order.fundbill.list.query
-
-提供For供应商的结算接口，以交易账单维度提供开放数据，满足供应商自动化结算的诉求 */
+// AlibabaLstTradeSellerOrderFundbillListQueryAPIResponse 结算明细数据查询（卖家视角） API返回值
+// alibaba.lst.trade.seller.order.fundbill.list.query
+//
+// 提供For供应商的结算接口，以交易账单维度提供开放数据，满足供应商自动化结算的诉求
 type AlibabaLstTradeSellerOrderFundbillListQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstTradeSellerOrderFundbillListQueryAPIResponseModel

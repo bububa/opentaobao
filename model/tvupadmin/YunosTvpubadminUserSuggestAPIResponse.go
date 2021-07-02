@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminUserSuggestAPIResponse
-获取关联账户列表 API返回值
-yunos.tvpubadmin.user.suggest
-
-获取关联账户列表 */
+// YunosTvpubadminUserSuggestAPIResponse 获取关联账户列表 API返回值
+// yunos.tvpubadmin.user.suggest
+//
+// 获取关联账户列表
 type YunosTvpubadminUserSuggestAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminUserSuggestAPIResponseModel

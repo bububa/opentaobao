@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMydataOverviewIndustryGetAPIResponse
-我的效果-获取Top行业列表 API返回值
-alibaba.mydata.overview.industry.get
-
-获取数据管家我的效果API可以使用的行业 */
+// AlibabaMydataOverviewIndustryGetAPIResponse 我的效果-获取Top行业列表 API返回值
+// alibaba.mydata.overview.industry.get
+//
+// 获取数据管家我的效果API可以使用的行业
 type AlibabaMydataOverviewIndustryGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaMydataOverviewIndustryGetAPIResponseModel

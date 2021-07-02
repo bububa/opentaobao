@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* XiamiContentArtistInfoQueryAPIResponse
-搜索艺人列表 API返回值
-xiami.content.artist.info.query
-
-根据查询条件，搜索相关艺人列表 */
+// XiamiContentArtistInfoQueryAPIResponse 搜索艺人列表 API返回值
+// xiami.content.artist.info.query
+//
+// 根据查询条件，搜索相关艺人列表
 type XiamiContentArtistInfoQueryAPIResponse struct {
 	model.CommonResponse
 	XiamiContentArtistInfoQueryAPIResponseModel

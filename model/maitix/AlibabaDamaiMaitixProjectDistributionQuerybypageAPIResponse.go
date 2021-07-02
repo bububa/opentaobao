@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponse
-分销项目分页查询项目列表服务 API返回值
-alibaba.damai.maitix.project.distribution.querybypage
-
-分销项目分页查询项目列表服务 */
+// AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponse 分销项目分页查询项目列表服务 API返回值
+// alibaba.damai.maitix.project.distribution.querybypage
+//
+// 分销项目分页查询项目列表服务
 type AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponseModel

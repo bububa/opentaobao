@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingDiscountItemAddAsyncAPIResponse
-特价批量新增商品 API返回值
-alibaba.wdk.marketing.discount.item.add.async
-
-新分组模型下新增商品 */
+// AlibabaWdkMarketingDiscountItemAddAsyncAPIResponse 特价批量新增商品 API返回值
+// alibaba.wdk.marketing.discount.item.add.async
+//
+// 新分组模型下新增商品
 type AlibabaWdkMarketingDiscountItemAddAsyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingDiscountItemAddAsyncAPIResponseModel

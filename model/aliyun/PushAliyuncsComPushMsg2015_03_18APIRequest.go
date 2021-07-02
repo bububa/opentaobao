@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* PushAliyuncsComPushMsg2015_03_18APIRequest
-消息推送 API请求
-push.aliyuncs.com.pushMsg.2015-03-18
-
-消息推送  ,支持指定用户/账号/广播等模式 */
+// PushAliyuncsComPushMsg2015_03_18APIRequest 消息推送 API请求
+// push.aliyuncs.com.pushMsg.2015-03-18
+//
+// 消息推送  ,支持指定用户/账号/广播等模式
 type PushAliyuncsComPushMsg2015_03_18APIRequest struct {
 	model.Params
 	// 用户账号列表,以换行区分,仅sendType为3时有效

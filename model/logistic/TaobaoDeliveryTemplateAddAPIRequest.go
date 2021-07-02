@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDeliveryTemplateAddAPIRequest
-新增运费模板 API请求
-taobao.delivery.template.add
-
-增加运费模板的外部接口 */
+// TaobaoDeliveryTemplateAddAPIRequest 新增运费模板 API请求
+// taobao.delivery.template.add
+//
+// 增加运费模板的外部接口
 type TaobaoDeliveryTemplateAddAPIRequest struct {
 	model.Params
 	// 运费模板的名称，长度不能超过50个字节

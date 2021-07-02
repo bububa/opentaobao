@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenStoreCreateAPIResponse
-门店新增接口 API返回值
-taobao.qimen.store.create
-
-isv调用接口来讲线下门店同步到线上 */
+// TaobaoQimenStoreCreateAPIResponse 门店新增接口 API返回值
+// taobao.qimen.store.create
+//
+// isv调用接口来讲线下门店同步到线上
 type TaobaoQimenStoreCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenStoreCreateAPIResponseModel

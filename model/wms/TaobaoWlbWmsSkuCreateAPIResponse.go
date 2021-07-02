@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsSkuCreateAPIResponse
-商品同步 API返回值
-taobao.wlb.wms.sku.create
-
-商品同步 */
+// TaobaoWlbWmsSkuCreateAPIResponse 商品同步 API返回值
+// taobao.wlb.wms.sku.create
+//
+// 商品同步
 type TaobaoWlbWmsSkuCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsSkuCreateAPIResponseModel

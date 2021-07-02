@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeStoreDeliversGetAPIRequest
-获取门店采购单下的发货单列表 API请求
-alibaba.nlife.store.delivers.get
-
-获取门店采购单下的发货单列表 */
+// AlibabaNlifeStoreDeliversGetAPIRequest 获取门店采购单下的发货单列表 API请求
+// alibaba.nlife.store.delivers.get
+//
+// 获取门店采购单下的发货单列表
 type AlibabaNlifeStoreDeliversGetAPIRequest struct {
 	model.Params
 	// 门店采购订单号

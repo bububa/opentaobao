@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTuanHotelRelatePoiGetAPIRequest
-酒店团购关联POI API请求
-alitrip.tuan.hotel.relate.poi.get
-
-查询酒店团购关联POI */
+// AlitripTuanHotelRelatePoiGetAPIRequest 酒店团购关联POI API请求
+// alitrip.tuan.hotel.relate.poi.get
+//
+// 查询酒店团购关联POI
 type AlitripTuanHotelRelatePoiGetAPIRequest struct {
 	model.Params
 	// 关键字

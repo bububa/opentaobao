@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingAuthmachineapiAPIResponse
-机翻Api授权 API返回值
-alibaba.seaking.authmachineapi
-
-机翻Api授权 */
+// AlibabaSeakingAuthmachineapiAPIResponse 机翻Api授权 API返回值
+// alibaba.seaking.authmachineapi
+//
+// 机翻Api授权
 type AlibabaSeakingAuthmachineapiAPIResponse struct {
 	model.CommonResponse
 	AlibabaSeakingAuthmachineapiAPIResponseModel

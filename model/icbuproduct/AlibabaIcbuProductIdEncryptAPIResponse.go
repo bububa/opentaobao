@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductIdEncryptAPIResponse
-ICBU国际站商品加密接口 API返回值
-alibaba.icbu.product.id.encrypt
-
-ICBU国际站，对混淆的产品ID加密。 */
+// AlibabaIcbuProductIdEncryptAPIResponse ICBU国际站商品加密接口 API返回值
+// alibaba.icbu.product.id.encrypt
+//
+// ICBU国际站，对混淆的产品ID加密。
 type AlibabaIcbuProductIdEncryptAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuProductIdEncryptAPIResponseModel

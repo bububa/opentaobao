@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFlowWalletCheckBalanceAPIResponse
-商家预存余额检查 API返回值
-alibaba.aliqin.flow.wallet.check.balance
-
-检查商家CRM预存余额是否足够进行活动 */
+// AlibabaAliqinFlowWalletCheckBalanceAPIResponse 商家预存余额检查 API返回值
+// alibaba.aliqin.flow.wallet.check.balance
+//
+// 检查商家CRM预存余额是否足够进行活动
 type AlibabaAliqinFlowWalletCheckBalanceAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFlowWalletCheckBalanceAPIResponseModel

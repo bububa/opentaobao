@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* SlbAliyuncsComDeleteLoadBalancerListener2013_02_21APIResponse
-删除 slb listener API返回值
-slb.aliyuncs.com.DeleteLoadBalancerListener.2013-02-21
-
-delete_vip */
+// SlbAliyuncsComDeleteLoadBalancerListener2013_02_21APIResponse 删除 slb listener API返回值
+// slb.aliyuncs.com.DeleteLoadBalancerListener.2013-02-21
+//
+// delete_vip
 type SlbAliyuncsComDeleteLoadBalancerListener2013_02_21APIResponse struct {
 	model.CommonResponse
 	SlbAliyuncsComDeleteLoadBalancerListener2013_02_21APIResponseModel

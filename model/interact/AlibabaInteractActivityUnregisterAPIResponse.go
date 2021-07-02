@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractActivityUnregisterAPIResponse
-ISV互动应用活动关闭服务 API返回值
-alibaba.interact.activity.unregister
-
-卖家在ISV互动应用中设置的活动主动关闭的服务 */
+// AlibabaInteractActivityUnregisterAPIResponse ISV互动应用活动关闭服务 API返回值
+// alibaba.interact.activity.unregister
+//
+// 卖家在ISV互动应用中设置的活动主动关闭的服务
 type AlibabaInteractActivityUnregisterAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractActivityUnregisterAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSebpIsvUserSignAPIRequest
-淘小铺三方签约同步 API请求
-taobao.sebp.isv.user.sign
-
-同步淘小铺三方服务签约信息 */
+// TaobaoSebpIsvUserSignAPIRequest 淘小铺三方签约同步 API请求
+// taobao.sebp.isv.user.sign
+//
+// 同步淘小铺三方服务签约信息
 type TaobaoSebpIsvUserSignAPIRequest struct {
 	model.Params
 	// 淘宝账号

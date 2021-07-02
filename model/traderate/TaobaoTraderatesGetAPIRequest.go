@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTraderatesGetAPIRequest
-搜索评价信息 API请求
-taobao.traderates.get
-
-搜索评价信息，只能获取距今180天内的评价记录(只支持查询卖家给出或得到的评价)。 */
+// TaobaoTraderatesGetAPIRequest 搜索评价信息 API请求
+// taobao.traderates.get
+//
+// 搜索评价信息，只能获取距今180天内的评价记录(只支持查询卖家给出或得到的评价)。
 type TaobaoTraderatesGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表。可选值：TradeRate 结构中的所有字段，多个字段之间用“,”分隔

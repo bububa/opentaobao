@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorGravityAPIResponse
-重力感应 API返回值
-alibaba.interact.sensor.gravity
-
-native获取重力感应 */
+// AlibabaInteractSensorGravityAPIResponse 重力感应 API返回值
+// alibaba.interact.sensor.gravity
+//
+// native获取重力感应
 type AlibabaInteractSensorGravityAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorGravityAPIResponseModel

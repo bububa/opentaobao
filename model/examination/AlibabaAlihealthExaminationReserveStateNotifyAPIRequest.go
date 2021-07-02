@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveStateNotifyAPIRequest
-体检机构对接_体检状态主动通知 API请求
-alibaba.alihealth.examination.reserve.state.notify
-
-到了体检当天后，服务商主动通知体检预约状态 */
+// AlibabaAlihealthExaminationReserveStateNotifyAPIRequest 体检机构对接_体检状态主动通知 API请求
+// alibaba.alihealth.examination.reserve.state.notify
+//
+// 到了体检当天后，服务商主动通知体检预约状态
 type AlibabaAlihealthExaminationReserveStateNotifyAPIRequest struct {
 	model.Params
 	// 服务商预约凭证

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFootscanMiniSavedAPIResponse
-更新报告状态 API返回值
-alibaba.footscan.mini.saved
-
-更新报告状态接口 */
+// AlibabaFootscanMiniSavedAPIResponse 更新报告状态 API返回值
+// alibaba.footscan.mini.saved
+//
+// 更新报告状态接口
 type AlibabaFootscanMiniSavedAPIResponse struct {
 	model.CommonResponse
 	AlibabaFootscanMiniSavedAPIResponseModel

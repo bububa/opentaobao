@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest
-查询上游出库单明细(带追溯码信息) API请求
-alibaba.alihealth.drug.bill.upbill.detail.withcode
-
-查询上游出库单明细(带追溯码信息) */
+// AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest 查询上游出库单明细(带追溯码信息) API请求
+// alibaba.alihealth.drug.bill.upbill.detail.withcode
+//
+// 查询上游出库单明细(带追溯码信息)
 type AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest struct {
 	model.Params
 	// 企业id

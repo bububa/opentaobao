@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthPrescriptionAuthGetAPIResponse
-阿里健康处方平台获取授权码 API返回值
-alibaba.alihealth.prescription.auth.get
-
-获取处方用户授权 */
+// AlibabaAlihealthPrescriptionAuthGetAPIResponse 阿里健康处方平台获取授权码 API返回值
+// alibaba.alihealth.prescription.auth.get
+//
+// 获取处方用户授权
 type AlibabaAlihealthPrescriptionAuthGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthPrescriptionAuthGetAPIResponseModel

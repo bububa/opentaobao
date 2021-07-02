@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugCodeCodeCheckHospitalAPIResponse
-码核查状态同步-医院 API返回值
-alibaba.alihealth.drug.code.code.check.hospital
-
-码核查状态同步-医院 */
+// AlibabaAlihealthDrugCodeCodeCheckHospitalAPIResponse 码核查状态同步-医院 API返回值
+// alibaba.alihealth.drug.code.code.check.hospital
+//
+// 码核查状态同步-医院
 type AlibabaAlihealthDrugCodeCodeCheckHospitalAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugCodeCodeCheckHospitalAPIResponseModel

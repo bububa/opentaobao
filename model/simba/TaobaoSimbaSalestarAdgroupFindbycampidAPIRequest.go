@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest
-(销量明星)批量获取推广计划下的推广组信息 API请求
-taobao.simba.salestar.adgroup.findbycampid
-
-批量得到推广计划下的推广组 */
+// TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest (销量明星)批量获取推广计划下的推广组信息 API请求
+// taobao.simba.salestar.adgroup.findbycampid
+//
+// 批量得到推广计划下的推广组
 type TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest struct {
 	model.Params
 	// 推广计划Id

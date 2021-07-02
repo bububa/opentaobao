@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreSdtquerystationAPIResponse
-速店通查询站点信息 API返回值
-taobao.omniorder.store.sdtquerystation
-
-速店通查询站点信息 */
+// TaobaoOmniorderStoreSdtquerystationAPIResponse 速店通查询站点信息 API返回值
+// taobao.omniorder.store.sdtquerystation
+//
+// 速店通查询站点信息
 type TaobaoOmniorderStoreSdtquerystationAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderStoreSdtquerystationAPIResponseModel

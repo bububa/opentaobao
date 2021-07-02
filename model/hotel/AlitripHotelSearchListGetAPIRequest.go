@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelSearchListGetAPIRequest
-酒店搜索List接口 API请求
-alitrip.hotel.search.list.get
-
-酒店搜索List接口 */
+// AlitripHotelSearchListGetAPIRequest 酒店搜索List接口 API请求
+// alitrip.hotel.search.list.get
+//
+// 酒店搜索List接口
 type AlitripHotelSearchListGetAPIRequest struct {
 	model.Params
 	// 入参

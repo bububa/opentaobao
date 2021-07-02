@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosAppstoreOpenReportadAPIResponse
-外投广告上报接口 API返回值
-yunos.appstore.open.reportad
-
-外投广告回流上报接口 */
+// YunosAppstoreOpenReportadAPIResponse 外投广告上报接口 API返回值
+// yunos.appstore.open.reportad
+//
+// 外投广告回流上报接口
 type YunosAppstoreOpenReportadAPIResponse struct {
 	model.CommonResponse
 	YunosAppstoreOpenReportadAPIResponseModel

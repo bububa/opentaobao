@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxBiddingrefusesGetAPIRequest
-tanx竞价失败反馈api API请求
-taobao.tanx.biddingrefuses.get
-
-竞价失败反馈根据创意id查询API提供 */
+// TaobaoTanxBiddingrefusesGetAPIRequest tanx竞价失败反馈api API请求
+// taobao.tanx.biddingrefuses.get
+//
+// 竞价失败反馈根据创意id查询API提供
 type TaobaoTanxBiddingrefusesGetAPIRequest struct {
 	model.Params
 	// dsp的创意id

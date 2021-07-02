@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoNoteDeleteAPIResponse
-天猫精灵备忘录删除 API返回值
-taobao.ailab.aicloud.top.memo.note.delete
-
-删除天猫精灵用户设置的备忘录 */
+// TaobaoAilabAicloudTopMemoNoteDeleteAPIResponse 天猫精灵备忘录删除 API返回值
+// taobao.ailab.aicloud.top.memo.note.delete
+//
+// 删除天猫精灵用户设置的备忘录
 type TaobaoAilabAicloudTopMemoNoteDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMemoNoteDeleteAPIResponseModel

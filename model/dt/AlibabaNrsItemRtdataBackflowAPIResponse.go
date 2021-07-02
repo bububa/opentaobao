@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNrsItemRtdataBackflowAPIResponse
-RT竞价数据回流 API返回值
-alibaba.nrs.item.rtdata.backflow
-
-回流竞品价格数据，用与后续OCR识别价签数据，做精确化数据纠正 */
+// AlibabaNrsItemRtdataBackflowAPIResponse RT竞价数据回流 API返回值
+// alibaba.nrs.item.rtdata.backflow
+//
+// 回流竞品价格数据，用与后续OCR识别价签数据，做精确化数据纠正
 type AlibabaNrsItemRtdataBackflowAPIResponse struct {
 	model.CommonResponse
 	AlibabaNrsItemRtdataBackflowAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterSettlementStoretransferAuditAPIRequest
-新康众审批门店分账 API请求
-tmall.servicecenter.settlement.storetransfer.audit
-
-新康众审批门店分账 */
+// TmallServicecenterSettlementStoretransferAuditAPIRequest 新康众审批门店分账 API请求
+// tmall.servicecenter.settlement.storetransfer.audit
+//
+// 新康众审批门店分账
 type TmallServicecenterSettlementStoretransferAuditAPIRequest struct {
 	model.Params
 	// 审批通过

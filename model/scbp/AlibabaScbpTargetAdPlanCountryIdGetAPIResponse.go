@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTargetAdPlanCountryIdGetAPIResponse
-定向推广-国家标签ID获取 API返回值
-alibaba.scbp.target.ad.plan.country.id.get
-
-定向推广-国家标签ID获取 */
+// AlibabaScbpTargetAdPlanCountryIdGetAPIResponse 定向推广-国家标签ID获取 API返回值
+// alibaba.scbp.target.ad.plan.country.id.get
+//
+// 定向推广-国家标签ID获取
 type AlibabaScbpTargetAdPlanCountryIdGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpTargetAdPlanCountryIdGetAPIResponseModel

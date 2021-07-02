@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsQscoreSplitGetAPIRequest
-新质量分服务 API请求
-taobao.simba.keywords.qscore.split.get
-
-获取关键词新的质量分 */
+// TaobaoSimbaKeywordsQscoreSplitGetAPIRequest 新质量分服务 API请求
+// taobao.simba.keywords.qscore.split.get
+//
+// 获取关键词新的质量分
 type TaobaoSimbaKeywordsQscoreSplitGetAPIRequest struct {
 	model.Params
 	// 账号昵称

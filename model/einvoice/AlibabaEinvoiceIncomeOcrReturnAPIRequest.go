@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceIncomeOcrReturnAPIRequest
-服务商回传发票ocr的结果 API请求
-alibaba.einvoice.income.ocr.return
-
-服务商回传发票ocr的结果，分两种场景：扫描驱动服务商主动回传；阿里主动发起的ocr回传 */
+// AlibabaEinvoiceIncomeOcrReturnAPIRequest 服务商回传发票ocr的结果 API请求
+// alibaba.einvoice.income.ocr.return
+//
+// 服务商回传发票ocr的结果，分两种场景：扫描驱动服务商主动回传；阿里主动发起的ocr回传
 type AlibabaEinvoiceIncomeOcrReturnAPIRequest struct {
 	model.Params
 	// 校验码，ocr结果为普票，success=true并且invoiceKind=1时必填

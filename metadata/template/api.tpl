@@ -5,11 +5,10 @@ import (
     "github.com/bububa/opentaobao/model/{{ .Pkg }}"
 )
 
-/* {{ .Name }} 
-{{ .ChineseName }} 
-{{ .ApiName }}
-
-{{ .Desc }} */
+// {{ .Name }} {{ .ChineseName }} 
+// {{ .ApiName }}
+//
+{{ .Desc }}
 func {{ .Name }}(clt *core.SDKClient, req *{{ .Pkg }}.{{ .Name }}APIRequest, session string) (*{{ .Pkg }}.{{ .Name }}APIResponse, error) {
     var resp {{ .Pkg }}.{{ .Name }}APIResponse
     err := clt.Post(req, &resp, session)

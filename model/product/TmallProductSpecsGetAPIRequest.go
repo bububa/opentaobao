@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallProductSpecsGetAPIRequest
-获取产品的规格信息 API请求
-tmall.product.specs.get
-
-按product_id或品牌下载产品规格，返回一组的产品规格信息。 */
+// TmallProductSpecsGetAPIRequest 获取产品的规格信息 API请求
+// tmall.product.specs.get
+//
+// 按product_id或品牌下载产品规格，返回一组的产品规格信息。
 type TmallProductSpecsGetAPIRequest struct {
 	model.Params
 	// 产品的ID。这个不能和properties和cat_id同时起效果<br>properties 和cat_id 均不传时，该参数必传。

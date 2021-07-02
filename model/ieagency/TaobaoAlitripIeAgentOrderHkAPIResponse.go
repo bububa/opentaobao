@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripIeAgentOrderHkAPIResponse
-【国际机票】手工预定回填PNR API返回值
-taobao.alitrip.ie.agent.order.hk
-
-代理商通过手工预定PNR，并回填。 */
+// TaobaoAlitripIeAgentOrderHkAPIResponse 【国际机票】手工预定回填PNR API返回值
+// taobao.alitrip.ie.agent.order.hk
+//
+// 代理商通过手工预定PNR，并回填。
 type TaobaoAlitripIeAgentOrderHkAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripIeAgentOrderHkAPIResponseModel

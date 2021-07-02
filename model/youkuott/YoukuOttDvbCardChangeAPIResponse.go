@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttDvbCardChangeAPIResponse
-dvb ca卡替换 API返回值
-youku.ott.dvb.card.change
-
-dvb 更换ca卡 */
+// YoukuOttDvbCardChangeAPIResponse dvb ca卡替换 API返回值
+// youku.ott.dvb.card.change
+//
+// dvb 更换ca卡
 type YoukuOttDvbCardChangeAPIResponse struct {
 	model.CommonResponse
 	YoukuOttDvbCardChangeAPIResponseModel

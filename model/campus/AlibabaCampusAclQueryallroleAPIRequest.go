@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclQueryallroleAPIRequest
-查询全部角色 API请求
-alibaba.campus.acl.queryallrole
-
-查询全部园区 */
+// AlibabaCampusAclQueryallroleAPIRequest 查询全部角色 API请求
+// alibaba.campus.acl.queryallrole
+//
+// 查询全部园区
 type AlibabaCampusAclQueryallroleAPIRequest struct {
 	model.Params
 	// 公司id不填统一SYS_000

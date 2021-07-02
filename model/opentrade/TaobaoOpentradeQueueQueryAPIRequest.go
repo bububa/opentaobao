@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeQueueQueryAPIRequest
-尖货交易排队信息查询 API请求
-taobao.opentrade.queue.query
-
-尖货交易排队信息查询 */
+// TaobaoOpentradeQueueQueryAPIRequest 尖货交易排队信息查询 API请求
+// taobao.opentrade.queue.query
+//
+// 尖货交易排队信息查询
 type TaobaoOpentradeQueueQueryAPIRequest struct {
 	model.Params
 	// 排队用户状态，新用户为NEW

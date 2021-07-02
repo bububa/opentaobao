@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoGameDeliveryvoucherEvaluateAPIResponse
-卡券评价回传 API返回值
-taobao.game.deliveryvoucher.evaluate
-
-卡券ISV回传商品评价 */
+// TaobaoGameDeliveryvoucherEvaluateAPIResponse 卡券评价回传 API返回值
+// taobao.game.deliveryvoucher.evaluate
+//
+// 卡券ISV回传商品评价
 type TaobaoGameDeliveryvoucherEvaluateAPIResponse struct {
 	model.CommonResponse
 	TaobaoGameDeliveryvoucherEvaluateAPIResponseModel

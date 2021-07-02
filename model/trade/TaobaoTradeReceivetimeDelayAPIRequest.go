@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradeReceivetimeDelayAPIRequest
-延长交易收货时间 API请求
-taobao.trade.receivetime.delay
-
-延长交易收货时间 */
+// TaobaoTradeReceivetimeDelayAPIRequest 延长交易收货时间 API请求
+// taobao.trade.receivetime.delay
+//
+// 延长交易收货时间
 type TaobaoTradeReceivetimeDelayAPIRequest struct {
 	model.Params
 	// 主订单号

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeSpecialUsersQueryAPIRequest
-专属下单标记信息查询 API请求
-taobao.opentrade.special.users.query
-
-专属下单标记信息查询 */
+// TaobaoOpentradeSpecialUsersQueryAPIRequest 专属下单标记信息查询 API请求
+// taobao.opentrade.special.users.query
+//
+// 专属下单标记信息查询
 type TaobaoOpentradeSpecialUsersQueryAPIRequest struct {
 	model.Params
 	// 用户openId列表，多个以逗号(,)分割

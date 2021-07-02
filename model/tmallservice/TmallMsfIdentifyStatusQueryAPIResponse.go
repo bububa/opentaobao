@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMsfIdentifyStatusQueryAPIResponse
-喵师傅定案核销状态查询 API返回值
-tmall.msf.identify.status.query
-
-喵师傅定案核销状态查询，供服务商erp系统调用 */
+// TmallMsfIdentifyStatusQueryAPIResponse 喵师傅定案核销状态查询 API返回值
+// tmall.msf.identify.status.query
+//
+// 喵师傅定案核销状态查询，供服务商erp系统调用
 type TmallMsfIdentifyStatusQueryAPIResponse struct {
 	model.CommonResponse
 	TmallMsfIdentifyStatusQueryAPIResponseModel

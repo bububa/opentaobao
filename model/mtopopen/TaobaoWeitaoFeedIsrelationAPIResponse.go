@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeitaoFeedIsrelationAPIResponse
-是否关注 API返回值
-taobao.weitao.feed.isrelation
-
-判断用户是否关注对应的公共账号 */
+// TaobaoWeitaoFeedIsrelationAPIResponse 是否关注 API返回值
+// taobao.weitao.feed.isrelation
+//
+// 判断用户是否关注对应的公共账号
 type TaobaoWeitaoFeedIsrelationAPIResponse struct {
 	model.CommonResponse
 	TaobaoWeitaoFeedIsrelationAPIResponseModel

@@ -6,13 +6,12 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusSpaceGroupGetlistAPIRequest
-多条件查询空间分组信息 API请求
-alibaba.campus.space.group.getlist
-
-多条件查询空间分组信息
-HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService
-HSF方法名称：getList */
+// AlibabaCampusSpaceGroupGetlistAPIRequest 多条件查询空间分组信息 API请求
+// alibaba.campus.space.group.getlist
+//
+// 多条件查询空间分组信息
+// HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService
+// HSF方法名称：getList
 type AlibabaCampusSpaceGroupGetlistAPIRequest struct {
 	model.Params
 	// 查询条件封装

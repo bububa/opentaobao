@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemSizemappingTemplateUpdateAPIRequest
-更新天猫商品尺码表模板 API请求
-tmall.item.sizemapping.template.update
-
-更新天猫商品尺码表模板 */
+// TmallItemSizemappingTemplateUpdateAPIRequest 更新天猫商品尺码表模板 API请求
+// tmall.item.sizemapping.template.update
+//
+// 更新天猫商品尺码表模板
 type TmallItemSizemappingTemplateUpdateAPIRequest struct {
 	model.Params
 	// 尺码表模板ID

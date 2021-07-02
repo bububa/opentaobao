@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/opentrade"
 )
 
-/* TaobaoOpentradeGroupJoin
-组团购场景参团
-taobao.opentrade.group.join
-
-组团购场景下，用户参团 */
+// TaobaoOpentradeGroupJoin 组团购场景参团
+// taobao.opentrade.group.join
+//
+// 组团购场景下，用户参团
 func TaobaoOpentradeGroupJoin(clt *core.SDKClient, req *opentrade.TaobaoOpentradeGroupJoinAPIRequest, session string) (*opentrade.TaobaoOpentradeGroupJoinAPIResponse, error) {
 	var resp opentrade.TaobaoOpentradeGroupJoinAPIResponse
 	err := clt.Post(req, &resp, session)

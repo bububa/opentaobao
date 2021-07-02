@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttDvbCardChangeAPIRequest
-dvb ca卡替换 API请求
-youku.ott.dvb.card.change
-
-dvb 更换ca卡 */
+// YoukuOttDvbCardChangeAPIRequest dvb ca卡替换 API请求
+// youku.ott.dvb.card.change
+//
+// dvb 更换ca卡
 type YoukuOttDvbCardChangeAPIRequest struct {
 	model.Params
 	// 老卡id

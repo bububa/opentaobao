@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWdkEquipmentConveyorSystemeventGetAPIResponse
-获取悬挂链系统事件 API返回值
-taobao.wdk.equipment.conveyor.systemevent.get
-
-五道口悬挂链系统事件查询 */
+// TaobaoWdkEquipmentConveyorSystemeventGetAPIResponse 获取悬挂链系统事件 API返回值
+// taobao.wdk.equipment.conveyor.systemevent.get
+//
+// 五道口悬挂链系统事件查询
 type TaobaoWdkEquipmentConveyorSystemeventGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWdkEquipmentConveyorSystemeventGetAPIResponseModel

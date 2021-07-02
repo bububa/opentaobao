@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/aesolution"
 )
 
-/* AliexpressSolutionOrderFulfill
-fulfill order
-aliexpress.solution.order.fulfill
-
-fulfill order for seller */
+// AliexpressSolutionOrderFulfill fulfill order
+// aliexpress.solution.order.fulfill
+//
+// fulfill order for seller
 func AliexpressSolutionOrderFulfill(clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderFulfillAPIRequest, session string) (*aesolution.AliexpressSolutionOrderFulfillAPIResponse, error) {
 	var resp aesolution.AliexpressSolutionOrderFulfillAPIResponse
 	err := clt.Post(req, &resp, session)

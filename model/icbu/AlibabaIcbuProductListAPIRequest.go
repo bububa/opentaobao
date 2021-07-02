@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductListAPIRequest
-商品查询 API请求
-alibaba.icbu.product.list
-
-根据类目ID和商品名称查询商品概要信息。结果以修改时间倒序返回，支持分页，每页最多30个。每次调用都是独立的请求，不记录调用的上下文。 */
+// AlibabaIcbuProductListAPIRequest 商品查询 API请求
+// alibaba.icbu.product.list
+//
+// 根据类目ID和商品名称查询商品概要信息。结果以修改时间倒序返回，支持分页，每页最多30个。每次调用都是独立的请求，不记录调用的上下文。
 type AlibabaIcbuProductListAPIRequest struct {
 	model.Params
 	// 类目ID

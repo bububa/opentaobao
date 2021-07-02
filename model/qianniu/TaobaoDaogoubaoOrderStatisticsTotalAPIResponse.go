@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDaogoubaoOrderStatisticsTotalAPIResponse
-销售订单总额统计 API返回值
-taobao.daogoubao.order.statistics.total
-
-对接千牛端数字中心 */
+// TaobaoDaogoubaoOrderStatisticsTotalAPIResponse 销售订单总额统计 API返回值
+// taobao.daogoubao.order.statistics.total
+//
+// 对接千牛端数字中心
 type TaobaoDaogoubaoOrderStatisticsTotalAPIResponse struct {
 	model.CommonResponse
 	TaobaoDaogoubaoOrderStatisticsTotalAPIResponseModel

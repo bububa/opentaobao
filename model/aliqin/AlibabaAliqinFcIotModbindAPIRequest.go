@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotModbindAPIRequest
-物联网绑定/换绑API API请求
-alibaba.aliqin.fc.iot.modbind
-
-支持用户的设备的换绑和解绑操作 */
+// AlibabaAliqinFcIotModbindAPIRequest 物联网绑定/换绑API API请求
+// alibaba.aliqin.fc.iot.modbind
+//
+// 支持用户的设备的换绑和解绑操作
 type AlibabaAliqinFcIotModbindAPIRequest struct {
 	model.Params
 	// chgBind：换绑；unBind：解绑

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptTargetingtagbaseGetAPIRequest
-定向基础报表 API请求
-taobao.simba.rpt.targetingtagbase.get
-
-获取定向基础报表 */
+// TaobaoSimbaRptTargetingtagbaseGetAPIRequest 定向基础报表 API请求
+// taobao.simba.rpt.targetingtagbase.get
+//
+// 获取定向基础报表
 type TaobaoSimbaRptTargetingtagbaseGetAPIRequest struct {
 	model.Params
 	// 被操作者昵称

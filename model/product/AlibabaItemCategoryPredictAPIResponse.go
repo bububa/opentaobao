@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItemCategoryPredictAPIResponse
-商品发布类目预测 API返回值
-alibaba.item.category.predict
-
-<font color='red'>商品发布类目预测接口，预测匹配的结果存在一定误差，需要商家二次确认，避免类目配置错误产生其他影响。</font> */
+// AlibabaItemCategoryPredictAPIResponse 商品发布类目预测 API返回值
+// alibaba.item.category.predict
+//
+// <font color='red'>商品发布类目预测接口，预测匹配的结果存在一定误差，需要商家二次确认，避免类目配置错误产生其他影响。</font>
 type AlibabaItemCategoryPredictAPIResponse struct {
 	model.CommonResponse
 	AlibabaItemCategoryPredictAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMemberIdentityRescindfinishAPIResponse
-取消确认 API返回值
-alibaba.member.identity.rescindfinish
-
-取消确认 */
+// AlibabaMemberIdentityRescindfinishAPIResponse 取消确认 API返回值
+// alibaba.member.identity.rescindfinish
+//
+// 取消确认
 type AlibabaMemberIdentityRescindfinishAPIResponse struct {
 	model.CommonResponse
 	AlibabaMemberIdentityRescindfinishAPIResponseModel

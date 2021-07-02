@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoGradesGetAPIResponse
-分销商等级查询 API返回值
-taobao.fenxiao.grades.get
-
-根据供应商ID，查询他的分销商等级信息 */
+// TaobaoFenxiaoGradesGetAPIResponse 分销商等级查询 API返回值
+// taobao.fenxiao.grades.get
+//
+// 根据供应商ID，查询他的分销商等级信息
 type TaobaoFenxiaoGradesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoGradesGetAPIResponseModel

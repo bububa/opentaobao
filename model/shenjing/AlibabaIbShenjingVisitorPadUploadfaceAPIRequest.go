@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIbShenjingVisitorPadUploadfaceAPIRequest
-访客PAD上传人脸 API请求
-alibaba.ib.shenjing.visitor.pad.uploadface
-
-访客PAD端上传人脸。 */
+// AlibabaIbShenjingVisitorPadUploadfaceAPIRequest 访客PAD上传人脸 API请求
+// alibaba.ib.shenjing.visitor.pad.uploadface
+//
+// 访客PAD端上传人脸。
 type AlibabaIbShenjingVisitorPadUploadfaceAPIRequest struct {
 	model.Params
 	// 访客ID

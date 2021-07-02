@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignBudgetGetAPIRequest
-取得一个推广计划的日限额 API请求
-taobao.simba.campaign.budget.get
-
-取得一个推广计划的日限额 */
+// TaobaoSimbaCampaignBudgetGetAPIRequest 取得一个推广计划的日限额 API请求
+// taobao.simba.campaign.budget.get
+//
+// 取得一个推广计划的日限额
 type TaobaoSimbaCampaignBudgetGetAPIRequest struct {
 	model.Params
 	// 主人昵称

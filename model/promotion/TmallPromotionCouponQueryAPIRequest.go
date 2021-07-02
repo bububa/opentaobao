@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallPromotionCouponQueryAPIRequest
-查询可用优惠券列表 API请求
-tmall.promotion.coupon.query
-
-查询用户的可用优惠券列表，仅包含优惠券基本信息和用户nick */
+// TmallPromotionCouponQueryAPIRequest 查询可用优惠券列表 API请求
+// tmall.promotion.coupon.query
+//
+// 查询用户的可用优惠券列表，仅包含优惠券基本信息和用户nick
 type TmallPromotionCouponQueryAPIRequest struct {
 	model.Params
 	// 业务类型

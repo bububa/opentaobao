@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingFeedbackAPIRequest
-API服务发布成功商品ID回传 API请求
-alibaba.seaking.feedback
-
-API服务发布成功商品ID回传，用于跟进商品id后续的使用情况 */
+// AlibabaSeakingFeedbackAPIRequest API服务发布成功商品ID回传 API请求
+// alibaba.seaking.feedback
+//
+// API服务发布成功商品ID回传，用于跟进商品id后续的使用情况
 type AlibabaSeakingFeedbackAPIRequest struct {
 	model.Params
 	// api 接口名字

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQtReportUpdateAPIRequest
-更新质检报告 API请求
-taobao.qt.report.update
-
-更新质检报告 */
+// TaobaoQtReportUpdateAPIRequest 更新质检报告 API请求
+// taobao.qt.report.update
+//
+// 更新质检报告
 type TaobaoQtReportUpdateAPIRequest struct {
 	model.Params
 	// 收费项code

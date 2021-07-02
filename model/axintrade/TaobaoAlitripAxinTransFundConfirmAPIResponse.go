@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripAxinTransFundConfirmAPIResponse
-确认资金单 API返回值
-taobao.alitrip.axin.trans.fund.confirm
-
-通过外部订单号进行资金结算 */
+// TaobaoAlitripAxinTransFundConfirmAPIResponse 确认资金单 API返回值
+// taobao.alitrip.axin.trans.fund.confirm
+//
+// 通过外部订单号进行资金结算
 type TaobaoAlitripAxinTransFundConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripAxinTransFundConfirmAPIResponseModel

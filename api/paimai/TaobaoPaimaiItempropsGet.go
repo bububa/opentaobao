@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/paimai"
 )
 
-/* TaobaoPaimaiItempropsGet
-拍卖相关类目属性
-taobao.paimai.itemprops.get
-
-读取拍卖相关类目属性 */
+// TaobaoPaimaiItempropsGet 拍卖相关类目属性
+// taobao.paimai.itemprops.get
+//
+// 读取拍卖相关类目属性
 func TaobaoPaimaiItempropsGet(clt *core.SDKClient, req *paimai.TaobaoPaimaiItempropsGetAPIRequest, session string) (*paimai.TaobaoPaimaiItempropsGetAPIResponse, error) {
 	var resp paimai.TaobaoPaimaiItempropsGetAPIResponse
 	err := clt.Post(req, &resp, session)

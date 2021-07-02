@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductcatAddAPIRequest
-新增产品线 API请求
-taobao.fenxiao.productcat.add
-
-新增产品线 */
+// TaobaoFenxiaoProductcatAddAPIRequest 新增产品线 API请求
+// taobao.fenxiao.productcat.add
+//
+// 新增产品线
 type TaobaoFenxiaoProductcatAddAPIRequest struct {
 	model.Params
 	// 产品线名称

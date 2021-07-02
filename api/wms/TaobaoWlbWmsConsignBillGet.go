@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wms"
 )
 
-/* TaobaoWlbWmsConsignBillGet
-获取销售订单发货信息
-taobao.wlb.wms.consign.bill.get
-
-获取销售订单发货信息 */
+// TaobaoWlbWmsConsignBillGet 获取销售订单发货信息
+// taobao.wlb.wms.consign.bill.get
+//
+// 获取销售订单发货信息
 func TaobaoWlbWmsConsignBillGet(clt *core.SDKClient, req *wms.TaobaoWlbWmsConsignBillGetAPIRequest, session string) (*wms.TaobaoWlbWmsConsignBillGetAPIResponse, error) {
 	var resp wms.TaobaoWlbWmsConsignBillGetAPIResponse
 	err := clt.Post(req, &resp, session)

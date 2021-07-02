@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclGetrolebyempidAPIResponse
-根据用户查询角色 API返回值
-alibaba.campus.acl.getrolebyempid
-
-根据用户查询角色 */
+// AlibabaCampusAclGetrolebyempidAPIResponse 根据用户查询角色 API返回值
+// alibaba.campus.acl.getrolebyempid
+//
+// 根据用户查询角色
 type AlibabaCampusAclGetrolebyempidAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclGetrolebyempidAPIResponseModel

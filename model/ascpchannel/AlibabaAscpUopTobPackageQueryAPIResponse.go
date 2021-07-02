@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpUopTobPackageQueryAPIResponse
-B2B包裹查询接口 API返回值
-alibaba.ascp.uop.tob.package.query
-
-供应链中台TOB包裹查询接口 */
+// AlibabaAscpUopTobPackageQueryAPIResponse B2B包裹查询接口 API返回值
+// alibaba.ascp.uop.tob.package.query
+//
+// 供应链中台TOB包裹查询接口
 type AlibabaAscpUopTobPackageQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpUopTobPackageQueryAPIResponseModel

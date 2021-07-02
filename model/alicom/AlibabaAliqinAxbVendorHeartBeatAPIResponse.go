@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinAxbVendorHeartBeatAPIResponse
-供应商心跳上报接口 API返回值
-alibaba.aliqin.axb.vendor.heart.beat
-
-供应商上报自己的心跳信息 */
+// AlibabaAliqinAxbVendorHeartBeatAPIResponse 供应商心跳上报接口 API返回值
+// alibaba.aliqin.axb.vendor.heart.beat
+//
+// 供应商上报自己的心跳信息
 type AlibabaAliqinAxbVendorHeartBeatAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinAxbVendorHeartBeatAPIResponseModel

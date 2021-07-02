@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziAclPermissionPageRolepermissionAPIResponse
-分页查询角色下包含的权限列表 API返回值
-alibaba.mozi.acl.permission.page.rolepermission
-
-根据传入的角色name，分页查询该角色包含的权限列表 */
+// AlibabaMoziAclPermissionPageRolepermissionAPIResponse 分页查询角色下包含的权限列表 API返回值
+// alibaba.mozi.acl.permission.page.rolepermission
+//
+// 根据传入的角色name，分页查询该角色包含的权限列表
 type AlibabaMoziAclPermissionPageRolepermissionAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziAclPermissionPageRolepermissionAPIResponseModel

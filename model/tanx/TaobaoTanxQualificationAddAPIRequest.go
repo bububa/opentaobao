@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxQualificationAddAPIRequest
-提交资质接口 API请求
-taobao.tanx.qualification.add
-
-dsp客户提交客户资质和行业资质 */
+// TaobaoTanxQualificationAddAPIRequest 提交资质接口 API请求
+// taobao.tanx.qualification.add
+//
+// dsp客户提交客户资质和行业资质
 type TaobaoTanxQualificationAddAPIRequest struct {
 	model.Params
 	// dsp客户新增资质dto

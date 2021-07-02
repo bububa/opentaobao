@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaichuanOrderurlGetAPIResponse
-百川订单详情 API返回值
-taobao.baichuan.orderurl.get
-
-百川订单详情 */
+// TaobaoBaichuanOrderurlGetAPIResponse 百川订单详情 API返回值
+// taobao.baichuan.orderurl.get
+//
+// 百川订单详情
 type TaobaoBaichuanOrderurlGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaichuanOrderurlGetAPIResponseModel

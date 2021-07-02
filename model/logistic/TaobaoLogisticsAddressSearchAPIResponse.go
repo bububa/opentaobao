@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsAddressSearchAPIResponse
-查询卖家地址库 API返回值
-taobao.logistics.address.search
-
-通过此接口查询卖家地址库， */
+// TaobaoLogisticsAddressSearchAPIResponse 查询卖家地址库 API返回值
+// taobao.logistics.address.search
+//
+// 通过此接口查询卖家地址库，
 type TaobaoLogisticsAddressSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsAddressSearchAPIResponseModel

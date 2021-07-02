@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelHstdfBusinessareaGetAPIResponse
-根据城市查询商圈 API返回值
-alitrip.hotel.hstdf.businessarea.get
-
-根据cityId分页查询商圈信息 */
+// AlitripHotelHstdfBusinessareaGetAPIResponse 根据城市查询商圈 API返回值
+// alitrip.hotel.hstdf.businessarea.get
+//
+// 根据cityId分页查询商圈信息
 type AlitripHotelHstdfBusinessareaGetAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelHstdfBusinessareaGetAPIResponseModel

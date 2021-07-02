@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpLogisticsOfflineSendAPIResponse
-自己联系物流发货 API返回值
-alibaba.ascp.logistics.offline.send
-
-用户调用该接口可实现自己联系发货，使用该接口发货，交易订单状态会直接变成卖家已发货 */
+// AlibabaAscpLogisticsOfflineSendAPIResponse 自己联系物流发货 API返回值
+// alibaba.ascp.logistics.offline.send
+//
+// 用户调用该接口可实现自己联系发货，使用该接口发货，交易订单状态会直接变成卖家已发货
 type AlibabaAscpLogisticsOfflineSendAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpLogisticsOfflineSendAPIResponseModel

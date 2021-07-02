@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPictureUpdateAPIResponse
-修改图片名字 API返回值
-taobao.picture.update
-
-修改指定图片的图片名 */
+// TaobaoPictureUpdateAPIResponse 修改图片名字 API返回值
+// taobao.picture.update
+//
+// 修改指定图片的图片名
 type TaobaoPictureUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoPictureUpdateAPIResponseModel

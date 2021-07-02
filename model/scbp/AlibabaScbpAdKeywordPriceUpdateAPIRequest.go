@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordPriceUpdateAPIRequest
-关键词改价 API请求
-alibaba.scbp.ad.keyword.price.update
-
-关键词改价 */
+// AlibabaScbpAdKeywordPriceUpdateAPIRequest 关键词改价 API请求
+// alibaba.scbp.ad.keyword.price.update
+//
+// 关键词改价
 type AlibabaScbpAdKeywordPriceUpdateAPIRequest struct {
 	model.Params
 	// 只能取ascci字符

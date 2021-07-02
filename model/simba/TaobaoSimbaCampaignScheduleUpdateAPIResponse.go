@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignScheduleUpdateAPIResponse
-更新一个推广计划的分时折扣设置 API返回值
-taobao.simba.campaign.schedule.update
-
-更新一个推广计划的分时折扣设置 */
+// TaobaoSimbaCampaignScheduleUpdateAPIResponse 更新一个推广计划的分时折扣设置 API返回值
+// taobao.simba.campaign.schedule.update
+//
+// 更新一个推广计划的分时折扣设置
 type TaobaoSimbaCampaignScheduleUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCampaignScheduleUpdateAPIResponseModel

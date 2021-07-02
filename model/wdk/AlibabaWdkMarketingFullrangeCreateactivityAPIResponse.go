@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingFullrangeCreateactivityAPIResponse
-创建全场活动 API返回值
-alibaba.wdk.marketing.fullrange.createactivity
-
-创建全场活动 */
+// AlibabaWdkMarketingFullrangeCreateactivityAPIResponse 创建全场活动 API返回值
+// alibaba.wdk.marketing.fullrange.createactivity
+//
+// 创建全场活动
 type AlibabaWdkMarketingFullrangeCreateactivityAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingFullrangeCreateactivityAPIResponseModel

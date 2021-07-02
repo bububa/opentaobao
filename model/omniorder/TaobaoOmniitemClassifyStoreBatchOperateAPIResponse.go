@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemClassifyStoreBatchOperateAPIResponse
-批量添加/删除门店和分类的关联关系 API返回值
-taobao.omniitem.classify.store.batch.operate
-
-批量添加/删除门店和分类的关联关系 */
+// TaobaoOmniitemClassifyStoreBatchOperateAPIResponse 批量添加/删除门店和分类的关联关系 API返回值
+// taobao.omniitem.classify.store.batch.operate
+//
+// 批量添加/删除门店和分类的关联关系
 type TaobaoOmniitemClassifyStoreBatchOperateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniitemClassifyStoreBatchOperateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAiArTmjlAppDetectAPIResponse
-天猫精灵扫一扫入口的服务 API返回值
-alibaba.ai.ar.tmjl.app.detect
-
-天猫精灵扫一扫入口的图像检测服务 */
+// AlibabaAiArTmjlAppDetectAPIResponse 天猫精灵扫一扫入口的服务 API返回值
+// alibaba.ai.ar.tmjl.app.detect
+//
+// 天猫精灵扫一扫入口的图像检测服务
 type AlibabaAiArTmjlAppDetectAPIResponse struct {
 	model.CommonResponse
 	AlibabaAiArTmjlAppDetectAPIResponseModel

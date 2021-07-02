@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorTakephotoAPIResponse
-takePhoto API返回值
-alibaba.interact.sensor.takephoto
-
-客户端takePhoto */
+// AlibabaInteractSensorTakephotoAPIResponse takePhoto API返回值
+// alibaba.interact.sensor.takephoto
+//
+// 客户端takePhoto
 type AlibabaInteractSensorTakephotoAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorTakephotoAPIResponseModel

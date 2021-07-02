@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/nrt"
 )
 
-/* TmallNrtStallPayratioSynchronize
-同步摊位收银比例
-tmall.nrt.stall.payratio.synchronize
-
-ISV同步摊位收银比例到阿里 */
+// TmallNrtStallPayratioSynchronize 同步摊位收银比例
+// tmall.nrt.stall.payratio.synchronize
+//
+// ISV同步摊位收银比例到阿里
 func TmallNrtStallPayratioSynchronize(clt *core.SDKClient, req *nrt.TmallNrtStallPayratioSynchronizeAPIRequest, session string) (*nrt.TmallNrtStallPayratioSynchronizeAPIResponse, error) {
 	var resp nrt.TmallNrtStallPayratioSynchronizeAPIResponse
 	err := clt.Post(req, &resp, session)

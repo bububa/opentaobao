@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReportDiagnoseOrderSubmitAPIRequest
-体检报告人工解读订单 API请求
-alibaba.alihealth.examination.report.diagnose.order.submit
-
-体检报告人工解读订单信息推送给ISV，进行人工解读 */
+// AlibabaAlihealthExaminationReportDiagnoseOrderSubmitAPIRequest 体检报告人工解读订单 API请求
+// alibaba.alihealth.examination.report.diagnose.order.submit
+//
+// 体检报告人工解读订单信息推送给ISV，进行人工解读
 type AlibabaAlihealthExaminationReportDiagnoseOrderSubmitAPIRequest struct {
 	model.Params
 	// 订单ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaKbalgoAlscpoisGetAPIResponse
-百度批量获取本地poi接口 API返回值
-alibaba.kbalgo.alscpois.get
-
-接口用于百度方获取本地生活poi数据，分页获取。 */
+// AlibabaKbalgoAlscpoisGetAPIResponse 百度批量获取本地poi接口 API返回值
+// alibaba.kbalgo.alscpois.get
+//
+// 接口用于百度方获取本地生活poi数据，分页获取。
 type AlibabaKbalgoAlscpoisGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaKbalgoAlscpoisGetAPIResponseModel

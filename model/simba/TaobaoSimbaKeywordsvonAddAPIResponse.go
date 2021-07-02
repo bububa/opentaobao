@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsvonAddAPIResponse
-创建一批关键词 API返回值
-taobao.simba.keywordsvon.add
-
-创建一批关键词 */
+// TaobaoSimbaKeywordsvonAddAPIResponse 创建一批关键词 API返回值
+// taobao.simba.keywordsvon.add
+//
+// 创建一批关键词
 type TaobaoSimbaKeywordsvonAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaKeywordsvonAddAPIResponseModel

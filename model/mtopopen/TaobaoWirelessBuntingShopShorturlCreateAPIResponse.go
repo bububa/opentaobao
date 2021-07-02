@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWirelessBuntingShopShorturlCreateAPIResponse
-通过店铺id取得短链 API返回值
-taobao.wireless.bunting.shop.shorturl.create
-
-通过店铺id取得短链 */
+// TaobaoWirelessBuntingShopShorturlCreateAPIResponse 通过店铺id取得短链 API返回值
+// taobao.wireless.bunting.shop.shorturl.create
+//
+// 通过店铺id取得短链
 type TaobaoWirelessBuntingShopShorturlCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoWirelessBuntingShopShorturlCreateAPIResponseModel

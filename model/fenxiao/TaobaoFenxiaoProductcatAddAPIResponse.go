@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductcatAddAPIResponse
-新增产品线 API返回值
-taobao.fenxiao.productcat.add
-
-新增产品线 */
+// TaobaoFenxiaoProductcatAddAPIResponse 新增产品线 API返回值
+// taobao.fenxiao.productcat.add
+//
+// 新增产品线
 type TaobaoFenxiaoProductcatAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductcatAddAPIResponseModel

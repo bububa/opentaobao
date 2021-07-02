@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLocationRelationEditAPIResponse
-地点关联关系增量编辑 API返回值
-taobao.location.relation.edit
-
-地点关联关系增量编辑 */
+// TaobaoLocationRelationEditAPIResponse 地点关联关系增量编辑 API返回值
+// taobao.location.relation.edit
+//
+// 地点关联关系增量编辑
 type TaobaoLocationRelationEditAPIResponse struct {
 	model.CommonResponse
 	TaobaoLocationRelationEditAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxQualificationAddAPIResponse
-提交资质接口 API返回值
-taobao.tanx.qualification.add
-
-dsp客户提交客户资质和行业资质 */
+// TaobaoTanxQualificationAddAPIResponse 提交资质接口 API返回值
+// taobao.tanx.qualification.add
+//
+// dsp客户提交客户资质和行业资质
 type TaobaoTanxQualificationAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxQualificationAddAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/c2m"
 )
 
-/* TaobaoTxpItemItemlistget
-淘小铺商品接口
-taobao.txp.item.itemlistget
-
-淘小铺商品的查询服务。 */
+// TaobaoTxpItemItemlistget 淘小铺商品接口
+// taobao.txp.item.itemlistget
+//
+// 淘小铺商品的查询服务。
 func TaobaoTxpItemItemlistget(clt *core.SDKClient, req *c2m.TaobaoTxpItemItemlistgetAPIRequest, session string) (*c2m.TaobaoTxpItemItemlistgetAPIResponse, error) {
 	var resp c2m.TaobaoTxpItemItemlistgetAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotQryPersoninfoAPIResponse
-查询物联卡个人实人认证信息 API返回值
-alibaba.aliqin.fc.iot.qry.personinfo
-
-查询物联卡个人实人认证信息 */
+// AlibabaAliqinFcIotQryPersoninfoAPIResponse 查询物联卡个人实人认证信息 API返回值
+// alibaba.aliqin.fc.iot.qry.personinfo
+//
+// 查询物联卡个人实人认证信息
 type AlibabaAliqinFcIotQryPersoninfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcIotQryPersoninfoAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinVaccinateCompleteAPIResponse
-接种完成反馈接口 API返回值
-alibaba.health.vaccin.vaccinate.complete
-
-ISV 将用户完成接种的疫苗同步给免疫规划中心 */
+// AlibabaHealthVaccinVaccinateCompleteAPIResponse 接种完成反馈接口 API返回值
+// alibaba.health.vaccin.vaccinate.complete
+//
+// ISV 将用户完成接种的疫苗同步给免疫规划中心
 type AlibabaHealthVaccinVaccinateCompleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthVaccinVaccinateCompleteAPIResponseModel

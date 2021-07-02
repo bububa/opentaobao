@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKfcKeywordSearchAPIResponse
-关键词过滤匹配 API返回值
-taobao.kfc.keyword.search
-
-对输入的文本信息进行禁忌关键词匹配，返回匹配的结果 */
+// TaobaoKfcKeywordSearchAPIResponse 关键词过滤匹配 API返回值
+// taobao.kfc.keyword.search
+//
+// 对输入的文本信息进行禁忌关键词匹配，返回匹配的结果
 type TaobaoKfcKeywordSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoKfcKeywordSearchAPIResponseModel

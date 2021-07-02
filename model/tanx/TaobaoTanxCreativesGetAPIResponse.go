@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxCreativesGetAPIResponse
-批量获取DSP用户的创意审核结果 API返回值
-taobao.tanx.creatives.get
-
-批量获取DSP用户的创意审核结果 */
+// TaobaoTanxCreativesGetAPIResponse 批量获取DSP用户的创意审核结果 API返回值
+// taobao.tanx.creatives.get
+//
+// 批量获取DSP用户的创意审核结果
 type TaobaoTanxCreativesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxCreativesGetAPIResponseModel

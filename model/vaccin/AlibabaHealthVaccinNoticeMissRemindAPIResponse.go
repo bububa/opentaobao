@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeMissRemindAPIResponse
-疫苗漏种提醒 API返回值
-alibaba.health.vaccin.notice.miss.remind
-
-医生消息提醒适龄儿童按计划接种 */
+// AlibabaHealthVaccinNoticeMissRemindAPIResponse 疫苗漏种提醒 API返回值
+// alibaba.health.vaccin.notice.miss.remind
+//
+// 医生消息提醒适龄儿童按计划接种
 type AlibabaHealthVaccinNoticeMissRemindAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthVaccinNoticeMissRemindAPIResponseModel

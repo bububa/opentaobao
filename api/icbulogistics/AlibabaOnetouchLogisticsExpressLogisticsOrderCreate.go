@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/icbulogistics"
 )
 
-/* AlibabaOnetouchLogisticsExpressLogisticsOrderCreate
-快递下单
-alibaba.onetouch.logistics.express.logistics.order.create
-
-快递下单 */
+// AlibabaOnetouchLogisticsExpressLogisticsOrderCreate 快递下单
+// alibaba.onetouch.logistics.express.logistics.order.create
+//
+// 快递下单
 func AlibabaOnetouchLogisticsExpressLogisticsOrderCreate(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest, session string) (*icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponse, error) {
 	var resp icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponse
 	err := clt.Post(req, &resp, session)

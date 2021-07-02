@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkUmsShiftGetAPIResponse
-移库单获取 API返回值
-alibaba.wdk.ums.shift.get
-
-移库单获取 */
+// AlibabaWdkUmsShiftGetAPIResponse 移库单获取 API返回值
+// alibaba.wdk.ums.shift.get
+//
+// 移库单获取
 type AlibabaWdkUmsShiftGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkUmsShiftGetAPIResponseModel

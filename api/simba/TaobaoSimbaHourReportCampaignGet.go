@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-/* TaobaoSimbaHourReportCampaignGet
-计划维度小时报表获取
-taobao.simba.hour.report.campaign.get
-
-计划维度小时报表获取 */
+// TaobaoSimbaHourReportCampaignGet 计划维度小时报表获取
+// taobao.simba.hour.report.campaign.get
+//
+// 计划维度小时报表获取
 func TaobaoSimbaHourReportCampaignGet(clt *core.SDKClient, req *simba.TaobaoSimbaHourReportCampaignGetAPIRequest, session string) (*simba.TaobaoSimbaHourReportCampaignGetAPIResponse, error) {
 	var resp simba.TaobaoSimbaHourReportCampaignGetAPIResponse
 	err := clt.Post(req, &resp, session)

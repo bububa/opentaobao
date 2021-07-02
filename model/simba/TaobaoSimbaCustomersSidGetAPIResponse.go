@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCustomersSidGetAPIResponse
-查看功能权限 API返回值
-taobao.simba.customers.sid.get
-
-查询用户是否拥有某个功能权限 */
+// TaobaoSimbaCustomersSidGetAPIResponse 查看功能权限 API返回值
+// taobao.simba.customers.sid.get
+//
+// 查询用户是否拥有某个功能权限
 type TaobaoSimbaCustomersSidGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCustomersSidGetAPIResponseModel

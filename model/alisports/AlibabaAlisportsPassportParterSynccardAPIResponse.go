@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsPassportParterSynccardAPIResponse
-阿里体育-卡信息同步接口 API返回值
-alibaba.alisports.passport.parter.synccard
-
-运享通修改卡号的时候，通知更新到阿里体育和支付宝卡包中 */
+// AlibabaAlisportsPassportParterSynccardAPIResponse 阿里体育-卡信息同步接口 API返回值
+// alibaba.alisports.passport.parter.synccard
+//
+// 运享通修改卡号的时候，通知更新到阿里体育和支付宝卡包中
 type AlibabaAlisportsPassportParterSynccardAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsPassportParterSynccardAPIResponseModel

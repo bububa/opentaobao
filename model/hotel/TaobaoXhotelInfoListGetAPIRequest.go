@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelInfoListGetAPIRequest
-酒店详细信息查询 API请求
-taobao.xhotel.info.list.get
-
-获取酒店详情信息 */
+// TaobaoXhotelInfoListGetAPIRequest 酒店详细信息查询 API请求
+// taobao.xhotel.info.list.get
+//
+// 获取酒店详情信息
 type TaobaoXhotelInfoListGetAPIRequest struct {
 	model.Params
 	// 城市code

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVasSubscSearchAPIRequest
-订购记录导出 API请求
-taobao.vas.subsc.search
-
-用于ISV查询自己名下的应用及收费项目的订购记录 */
+// TaobaoVasSubscSearchAPIRequest 订购记录导出 API请求
+// taobao.vas.subsc.search
+//
+// 用于ISV查询自己名下的应用及收费项目的订购记录
 type TaobaoVasSubscSearchAPIRequest struct {
 	model.Params
 	// 一页包含的记录数

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-/* TaobaoTradeOrdersortGet
-获取前N有礼活动的开奖订单列表
-taobao.trade.ordersort.get
-
-获取前N有礼活动的开奖订单列表 */
+// TaobaoTradeOrdersortGet 获取前N有礼活动的开奖订单列表
+// taobao.trade.ordersort.get
+//
+// 获取前N有礼活动的开奖订单列表
 func TaobaoTradeOrdersortGet(clt *core.SDKClient, req *promotion.TaobaoTradeOrdersortGetAPIRequest, session string) (*promotion.TaobaoTradeOrdersortGetAPIResponse, error) {
 	var resp promotion.TaobaoTradeOrdersortGetAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItempoolStairAdditemAPIRequest
-商品池阶梯商品添加 API请求
-alibaba.wdk.marketing.itempool.stair.additem
-
-添加商品池阶梯商品 */
+// AlibabaWdkMarketingItempoolStairAdditemAPIRequest 商品池阶梯商品添加 API请求
+// alibaba.wdk.marketing.itempool.stair.additem
+//
+// 添加商品池阶梯商品
 type AlibabaWdkMarketingItempoolStairAdditemAPIRequest struct {
 	model.Params
 	// 系统自动生成

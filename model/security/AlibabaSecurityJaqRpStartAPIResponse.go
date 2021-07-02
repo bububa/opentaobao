@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpStartAPIResponse
-聚安全实人认证开始 API返回值
-alibaba.security.jaq.rp.start
-
-聚安全实人认证开始 */
+// AlibabaSecurityJaqRpStartAPIResponse 聚安全实人认证开始 API返回值
+// alibaba.security.jaq.rp.start
+//
+// 聚安全实人认证开始
 type AlibabaSecurityJaqRpStartAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqRpStartAPIResponseModel

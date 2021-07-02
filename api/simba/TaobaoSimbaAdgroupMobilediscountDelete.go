@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-/* TaobaoSimbaAdgroupMobilediscountDelete
-批量删除adgroup的移动溢价
-taobao.simba.adgroup.mobilediscount.delete
-
-批量删除adgroup的移动溢价 */
+// TaobaoSimbaAdgroupMobilediscountDelete 批量删除adgroup的移动溢价
+// taobao.simba.adgroup.mobilediscount.delete
+//
+// 批量删除adgroup的移动溢价
 func TaobaoSimbaAdgroupMobilediscountDelete(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest, session string) (*simba.TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse, error) {
 	var resp simba.TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse
 	err := clt.Post(req, &resp, session)

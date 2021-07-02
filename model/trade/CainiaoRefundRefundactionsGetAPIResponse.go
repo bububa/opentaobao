@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoRefundRefundactionsGetAPIResponse
-判断该订单能执行的逆向操作集合列表 API返回值
-cainiao.refund.refundactions.get
-
-判断该订单能执行的逆向操作集合列表 */
+// CainiaoRefundRefundactionsGetAPIResponse 判断该订单能执行的逆向操作集合列表 API返回值
+// cainiao.refund.refundactions.get
+//
+// 判断该订单能执行的逆向操作集合列表
 type CainiaoRefundRefundactionsGetAPIResponse struct {
 	model.CommonResponse
 	CainiaoRefundRefundactionsGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentShowGetlistAPIRequest
-节目审核获取节目列表 API请求
-yunos.tvpubadmin.content.show.getlist
-
-节目审核获取节目列表 */
+// YunosTvpubadminContentShowGetlistAPIRequest 节目审核获取节目列表 API请求
+// yunos.tvpubadmin.content.show.getlist
+//
+// 节目审核获取节目列表
 type YunosTvpubadminContentShowGetlistAPIRequest struct {
 	model.Params
 	// 视频外部来源类型: 1:YOUKU, 2:MONGO_TV, 3:TAOTVMEDIA, 4:GOLIVE

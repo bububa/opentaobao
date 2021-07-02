@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKoubeiMallCommonMallNearListAPIResponse
-根据POI查询附近商圈列表信息 API返回值
-taobao.koubei.mall.common.mall.near.list
-
-通过用户/终端设备地理位置POI信息，查询附近商圈信息 */
+// TaobaoKoubeiMallCommonMallNearListAPIResponse 根据POI查询附近商圈列表信息 API返回值
+// taobao.koubei.mall.common.mall.near.list
+//
+// 通过用户/终端设备地理位置POI信息，查询附近商圈信息
 type TaobaoKoubeiMallCommonMallNearListAPIResponse struct {
 	model.CommonResponse
 	TaobaoKoubeiMallCommonMallNearListAPIResponseModel

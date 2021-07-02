@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest
-天下秀回传订单执行状态变动 API请求
-alibaba.pictures.dengta.ims.order.status.change
-
-天下秀回传订单执行状态变动 */
+// AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest 天下秀回传订单执行状态变动 API请求
+// alibaba.pictures.dengta.ims.order.status.change
+//
+// 天下秀回传订单执行状态变动
 type AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest struct {
 	model.Params
 	// 状态发生的时间 2020-01-02 10:02:03

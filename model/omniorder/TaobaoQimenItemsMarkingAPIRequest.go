@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenItemsMarkingAPIRequest
-商品通自动打标 API请求
-taobao.qimen.items.marking
-
-调用该接口，对商品进行XXXX标的打标、去标的动作。 */
+// TaobaoQimenItemsMarkingAPIRequest 商品通自动打标 API请求
+// taobao.qimen.items.marking
+//
+// 调用该接口，对商品进行XXXX标的打标、去标的动作。
 type TaobaoQimenItemsMarkingAPIRequest struct {
 	model.Params
 	// 操作类型，string（50），ADD=打标，DELETE=去标，必填

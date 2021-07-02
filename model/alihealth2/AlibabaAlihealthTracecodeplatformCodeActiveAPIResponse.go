@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodeplatformCodeActiveAPIResponse
-正大鸡蛋激活追溯码 API返回值
-alibaba.alihealth.tracecodeplatform.code.active
-
-用于正大鸡蛋激活追溯码 */
+// AlibabaAlihealthTracecodeplatformCodeActiveAPIResponse 正大鸡蛋激活追溯码 API返回值
+// alibaba.alihealth.tracecodeplatform.code.active
+//
+// 用于正大鸡蛋激活追溯码
 type AlibabaAlihealthTracecodeplatformCodeActiveAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthTracecodeplatformCodeActiveAPIResponseModel

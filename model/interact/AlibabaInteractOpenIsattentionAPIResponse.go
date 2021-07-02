@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractOpenIsattentionAPIResponse
-判断用户是否收藏某个店铺 API返回值
-alibaba.interact.open.isattention
-
-判断用户是否收藏某个店铺 */
+// AlibabaInteractOpenIsattentionAPIResponse 判断用户是否收藏某个店铺 API返回值
+// alibaba.interact.open.isattention
+//
+// 判断用户是否收藏某个店铺
 type AlibabaInteractOpenIsattentionAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractOpenIsattentionAPIResponseModel

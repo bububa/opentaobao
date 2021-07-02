@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkItemMerchantstoreskuCreateAPIRequest
-门店商品信息新建 API请求
-alibaba.wdk.item.merchantstoresku.create
-
-门店商品信息新建 */
+// AlibabaWdkItemMerchantstoreskuCreateAPIRequest 门店商品信息新建 API请求
+// alibaba.wdk.item.merchantstoresku.create
+//
+// 门店商品信息新建
 type AlibabaWdkItemMerchantstoreskuCreateAPIRequest struct {
 	model.Params
 	// 门店编码

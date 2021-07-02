@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAftersaleGetAPIResponse
-查询用户售后服务模板 API返回值
-taobao.aftersale.get
-
-查询用户设置的售后服务模板，仅返回标题和id */
+// TaobaoAftersaleGetAPIResponse 查询用户售后服务模板 API返回值
+// taobao.aftersale.get
+//
+// 查询用户设置的售后服务模板，仅返回标题和id
 type TaobaoAftersaleGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAftersaleGetAPIResponseModel

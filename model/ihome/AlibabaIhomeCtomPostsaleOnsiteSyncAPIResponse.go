@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIhomeCtomPostsaleOnsiteSyncAPIResponse
-售后上门信息同步 API返回值
-alibaba.ihome.ctom.postsale.onsite.sync
-
-用于三维家同步售后单上门人员和时间信息 */
+// AlibabaIhomeCtomPostsaleOnsiteSyncAPIResponse 售后上门信息同步 API返回值
+// alibaba.ihome.ctom.postsale.onsite.sync
+//
+// 用于三维家同步售后单上门人员和时间信息
 type AlibabaIhomeCtomPostsaleOnsiteSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaIhomeCtomPostsaleOnsiteSyncAPIResponseModel

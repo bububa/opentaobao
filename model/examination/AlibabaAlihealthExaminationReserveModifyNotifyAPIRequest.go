@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest
-通知改期结果 API请求
-alibaba.alihealth.examination.reserve.modify.notify
-
-体检状态为改期中，服务上通知健康是否改期成功 */
+// AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest 通知改期结果 API请求
+// alibaba.alihealth.examination.reserve.modify.notify
+//
+// 体检状态为改期中，服务上通知健康是否改期成功
 type AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest struct {
 	model.Params
 	// 旧的预约日期

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstInteractiveActivityQueryAPIResponse
-互动任务活动查询接口 API返回值
-taobao.jst.interactive.activity.query
-
-互动任务活动查询接口 */
+// TaobaoJstInteractiveActivityQueryAPIResponse 互动任务活动查询接口 API返回值
+// taobao.jst.interactive.activity.query
+//
+// 互动任务活动查询接口
 type TaobaoJstInteractiveActivityQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstInteractiveActivityQueryAPIResponseModel

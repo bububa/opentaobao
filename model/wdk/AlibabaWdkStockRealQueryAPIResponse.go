@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkStockRealQueryAPIResponse
-仓内实时库存查询 API返回值
-alibaba.wdk.stock.real.query
-
-查询仓内实时库存信息 */
+// AlibabaWdkStockRealQueryAPIResponse 仓内实时库存查询 API返回值
+// alibaba.wdk.stock.real.query
+//
+// 查询仓内实时库存信息
 type AlibabaWdkStockRealQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkStockRealQueryAPIResponseModel

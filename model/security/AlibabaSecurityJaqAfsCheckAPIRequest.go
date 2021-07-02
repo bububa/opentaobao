@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqAfsCheckAPIRequest
-反欺诈二次验证接口 API请求
-alibaba.security.jaq.afs.check
-
-反欺诈二次验证接口 */
+// AlibabaSecurityJaqAfsCheckAPIRequest 反欺诈二次验证接口 API请求
+// alibaba.security.jaq.afs.check
+//
+// 反欺诈二次验证接口
 type AlibabaSecurityJaqAfsCheckAPIRequest struct {
 	model.Params
 	// 上报平台枚举值 1标识Android端 2标识iOS端 3标识PC端及其他

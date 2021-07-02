@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMallitemcenterSupplierAbilityUpdateAPIResponse
-门店服务能力授权接口 API返回值
-tmall.mallitemcenter.supplier.ability.update
-
-门店服务能力授权 */
+// TmallMallitemcenterSupplierAbilityUpdateAPIResponse 门店服务能力授权接口 API返回值
+// tmall.mallitemcenter.supplier.ability.update
+//
+// 门店服务能力授权
 type TmallMallitemcenterSupplierAbilityUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallMallitemcenterSupplierAbilityUpdateAPIResponseModel

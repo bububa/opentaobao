@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripPlatformDivisionsGetdivisionbynameAPIResponse
-根据中文名称与行政区划级别查询行政区划数据 API返回值
-alitrip.platform.divisions.getdivisionbyname
-
-根据中文名称与行政区划级别查询行政区划数据 */
+// AlitripPlatformDivisionsGetdivisionbynameAPIResponse 根据中文名称与行政区划级别查询行政区划数据 API返回值
+// alitrip.platform.divisions.getdivisionbyname
+//
+// 根据中文名称与行政区划级别查询行政区划数据
 type AlitripPlatformDivisionsGetdivisionbynameAPIResponse struct {
 	model.CommonResponse
 	AlitripPlatformDivisionsGetdivisionbynameAPIResponseModel

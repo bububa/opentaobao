@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoUserTimeQueryAPIResponse
-蜂鸟询用户T API返回值
-alibaba.ele.fengniao.user.time.query
-
-蜂鸟询用户T */
+// AlibabaEleFengniaoUserTimeQueryAPIResponse 蜂鸟询用户T API返回值
+// alibaba.ele.fengniao.user.time.query
+//
+// 蜂鸟询用户T
 type AlibabaEleFengniaoUserTimeQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoUserTimeQueryAPIResponseModel

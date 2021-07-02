@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse
-获取未读的消息数量 API返回值
-taobao.ailab.aicloud.top.message.get.unread.count
-
-开放获取未读留言数量的接口 */
+// TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse 获取未读的消息数量 API返回值
+// taobao.ailab.aicloud.top.message.get.unread.count
+//
+// 开放获取未读留言数量的接口
 type TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponseModel

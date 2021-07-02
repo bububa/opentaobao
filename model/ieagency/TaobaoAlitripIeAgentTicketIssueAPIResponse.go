@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripIeAgentTicketIssueAPIResponse
-【国际机票】手工出票 API返回值
-taobao.alitrip.ie.agent.ticket.issue
-
-代理商手工出票，并回填票号 */
+// TaobaoAlitripIeAgentTicketIssueAPIResponse 【国际机票】手工出票 API返回值
+// taobao.alitrip.ie.agent.ticket.issue
+//
+// 代理商手工出票，并回填票号
 type TaobaoAlitripIeAgentTicketIssueAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripIeAgentTicketIssueAPIResponseModel

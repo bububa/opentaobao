@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminManageDialogDeleteAPIResponse
-删除全局弹窗 API返回值
-yunos.tvpubadmin.manage.dialog.delete
-
-删除全局弹窗 */
+// YunosTvpubadminManageDialogDeleteAPIResponse 删除全局弹窗 API返回值
+// yunos.tvpubadmin.manage.dialog.delete
+//
+// 删除全局弹窗
 type YunosTvpubadminManageDialogDeleteAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminManageDialogDeleteAPIResponseModel

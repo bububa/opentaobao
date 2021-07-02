@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkOrderSyncAPIResponse
-五道口外部订单同步 API返回值
-alibaba.wdk.order.sync
-
-外部商户使用自助POS下单订单同步到五道口 */
+// AlibabaWdkOrderSyncAPIResponse 五道口外部订单同步 API返回值
+// alibaba.wdk.order.sync
+//
+// 外部商户使用自助POS下单订单同步到五道口
 type AlibabaWdkOrderSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkOrderSyncAPIResponseModel

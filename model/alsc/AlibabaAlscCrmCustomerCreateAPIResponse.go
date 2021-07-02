@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCustomerCreateAPIResponse
-创建顾客 API返回值
-alibaba.alsc.crm.customer.create
-
-开放本地生活创建顾客功能 */
+// AlibabaAlscCrmCustomerCreateAPIResponse 创建顾客 API返回值
+// alibaba.alsc.crm.customer.create
+//
+// 开放本地生活创建顾客功能
 type AlibabaAlscCrmCustomerCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCustomerCreateAPIResponseModel

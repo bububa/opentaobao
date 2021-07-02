@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest
-商品池新增商品 API请求
-alibaba.wdk.marketing.itempool.item.add.async
-
-新分组模型下新增商品 */
+// AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest 商品池新增商品 API请求
+// alibaba.wdk.marketing.itempool.item.add.async
+//
+// 新分组模型下新增商品
 type AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest struct {
 	model.Params
 	// 阶梯商品信息

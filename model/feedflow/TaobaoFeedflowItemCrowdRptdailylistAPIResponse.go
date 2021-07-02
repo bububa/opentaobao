@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemCrowdRptdailylistAPIResponse
-定向分日数据查询 API返回值
-taobao.feedflow.item.crowd.rptdailylist
-
-定向分日数据查询 */
+// TaobaoFeedflowItemCrowdRptdailylistAPIResponse 定向分日数据查询 API返回值
+// taobao.feedflow.item.crowd.rptdailylist
+//
+// 定向分日数据查询
 type TaobaoFeedflowItemCrowdRptdailylistAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemCrowdRptdailylistAPIResponseModel

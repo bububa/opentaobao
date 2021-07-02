@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripFlightBasicDataCityQueryAllAPIResponse
-机票基础数据城市数据查询 API返回值
-alitrip.flight.basic.data.city.queryAll
-
-机票基础数据城市数据查询top接口 */
+// AlitripFlightBasicDataCityQueryAllAPIResponse 机票基础数据城市数据查询 API返回值
+// alitrip.flight.basic.data.city.queryAll
+//
+// 机票基础数据城市数据查询top接口
 type AlitripFlightBasicDataCityQueryAllAPIResponse struct {
 	model.CommonResponse
 	AlitripFlightBasicDataCityQueryAllAPIResponseModel

@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytQueryactivetimeAPIRequest
-药品激活状态同步 API请求
-alibaba.alihealth.drug.kyt.queryactivetime
-
-根据赋码资源（CodeVersion + resCode）获得最新激活时间
-应用于各地市对接前进行药品目录匹配，医保中心存在的药品可能比较陈旧杂乱 */
+// AlibabaAlihealthDrugKytQueryactivetimeAPIRequest 药品激活状态同步 API请求
+// alibaba.alihealth.drug.kyt.queryactivetime
+//
+// 根据赋码资源（CodeVersion + resCode）获得最新激活时间
+// 应用于各地市对接前进行药品目录匹配，医保中心存在的药品可能比较陈旧杂乱
 type AlibabaAlihealthDrugKytQueryactivetimeAPIRequest struct {
 	model.Params
 	// 社保局(所属地市名称)

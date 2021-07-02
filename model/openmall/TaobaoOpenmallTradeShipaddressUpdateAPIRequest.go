@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallTradeShipaddressUpdateAPIRequest
-Openmall订单收货地址修改 API请求
-taobao.openmall.trade.shipaddress.update
-
-Openmall订单收货地址修改 */
+// TaobaoOpenmallTradeShipaddressUpdateAPIRequest Openmall订单收货地址修改 API请求
+// taobao.openmall.trade.shipaddress.update
+//
+// Openmall订单收货地址修改
 type TaobaoOpenmallTradeShipaddressUpdateAPIRequest struct {
 	model.Params
 	// 媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick

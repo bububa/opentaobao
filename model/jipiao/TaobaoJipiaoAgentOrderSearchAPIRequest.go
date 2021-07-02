@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJipiaoAgentOrderSearchAPIRequest
-【机票代理商订单】订单搜索 API请求
-taobao.jipiao.agent.order.search
-
-卖家根据条件查询淘宝订单id列表 */
+// TaobaoJipiaoAgentOrderSearchAPIRequest 【机票代理商订单】订单搜索 API请求
+// taobao.jipiao.agent.order.search
+//
+// 卖家根据条件查询淘宝订单id列表
 type TaobaoJipiaoAgentOrderSearchAPIRequest struct {
 	model.Params
 	// 创建订单时间范围的开始时间，注意：当前搜索条件开始结束时间范围不能超过三天，默认开始时间为当前时间往前推三天 （具体天数可能调整）

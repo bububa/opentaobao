@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopHotwordsGetAPIResponse
-获取热词 API返回值
-taobao.ailab.aicloud.top.hotwords.get
-
-获取ASR热词 */
+// TaobaoAilabAicloudTopHotwordsGetAPIResponse 获取热词 API返回值
+// taobao.ailab.aicloud.top.hotwords.get
+//
+// 获取ASR热词
 type TaobaoAilabAicloudTopHotwordsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopHotwordsGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeReturngoodsRefuseAPIRequest
-卖家拒绝确认收货 API请求
-tmall.exchange.returngoods.refuse
-
-卖家拒绝买家换货申请 */
+// TmallExchangeReturngoodsRefuseAPIRequest 卖家拒绝确认收货 API请求
+// tmall.exchange.returngoods.refuse
+//
+// 卖家拒绝买家换货申请
 type TmallExchangeReturngoodsRefuseAPIRequest struct {
 	model.Params
 	// 凭证图片

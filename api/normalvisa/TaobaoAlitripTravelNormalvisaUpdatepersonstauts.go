@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/normalvisa"
 )
 
-/* TaobaoAlitripTravelNormalvisaUpdatepersonstauts
-更新签证办理进度
-taobao.alitrip.travel.normalvisa.updatepersonstauts
-
-更新签证办理进度 */
+// TaobaoAlitripTravelNormalvisaUpdatepersonstauts 更新签证办理进度
+// taobao.alitrip.travel.normalvisa.updatepersonstauts
+//
+// 更新签证办理进度
 func TaobaoAlitripTravelNormalvisaUpdatepersonstauts(clt *core.SDKClient, req *normalvisa.TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest, session string) (*normalvisa.TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIResponse, error) {
 	var resp normalvisa.TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIResponse
 	err := clt.Post(req, &resp, session)

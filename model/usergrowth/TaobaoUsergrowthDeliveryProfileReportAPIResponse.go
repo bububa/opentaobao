@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsergrowthDeliveryProfileReportAPIResponse
-标签上报 API返回值
-taobao.usergrowth.delivery.profile.report
-
-渠道上报标签信息 */
+// TaobaoUsergrowthDeliveryProfileReportAPIResponse 标签上报 API返回值
+// taobao.usergrowth.delivery.profile.report
+//
+// 渠道上报标签信息
 type TaobaoUsergrowthDeliveryProfileReportAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsergrowthDeliveryProfileReportAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/axindata"
 )
 
-/* TaobaoAlitripTravelAxinPoiDetailQuery
-景点poi详情查询-阿信
-taobao.alitrip.travel.axin.poi.detail.query
-
-景点poi详情查询-阿信 */
+// TaobaoAlitripTravelAxinPoiDetailQuery 景点poi详情查询-阿信
+// taobao.alitrip.travel.axin.poi.detail.query
+//
+// 景点poi详情查询-阿信
 func TaobaoAlitripTravelAxinPoiDetailQuery(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest, session string) (*axindata.TaobaoAlitripTravelAxinPoiDetailQueryAPIResponse, error) {
 	var resp axindata.TaobaoAlitripTravelAxinPoiDetailQueryAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest
-售后上门信息同步 API请求
-alibaba.ihome.ctom.postsale.onsite.sync
-
-用于三维家同步售后单上门人员和时间信息 */
+// AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest 售后上门信息同步 API请求
+// alibaba.ihome.ctom.postsale.onsite.sync
+//
+// 用于三维家同步售后单上门人员和时间信息
 type AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest struct {
 	model.Params
 	// 预约后展示给客户的员工联系方式

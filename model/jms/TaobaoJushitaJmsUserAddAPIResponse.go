@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJushitaJmsUserAddAPIResponse
-添加ONS消息同步用户 API返回值
-taobao.jushita.jms.user.add
-
-添加ONS消息同步用户 */
+// TaobaoJushitaJmsUserAddAPIResponse 添加ONS消息同步用户 API返回值
+// taobao.jushita.jms.user.add
+//
+// 添加ONS消息同步用户
 type TaobaoJushitaJmsUserAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoJushitaJmsUserAddAPIResponseModel

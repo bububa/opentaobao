@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMediaFileAddAPIResponse
-多媒体平台文件添加 API返回值
-taobao.media.file.add
-
-用户通过top上传文件到多媒体平台 */
+// TaobaoMediaFileAddAPIResponse 多媒体平台文件添加 API返回值
+// taobao.media.file.add
+//
+// 用户通过top上传文件到多媒体平台
 type TaobaoMediaFileAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoMediaFileAddAPIResponseModel

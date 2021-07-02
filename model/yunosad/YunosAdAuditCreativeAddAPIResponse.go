@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosAdAuditCreativeAddAPIResponse
-单个创意预审接口 API返回值
-yunos.ad.audit.creative.add
-
-YunOS广告业务第三方DSP单个创意预审接口 */
+// YunosAdAuditCreativeAddAPIResponse 单个创意预审接口 API返回值
+// yunos.ad.audit.creative.add
+//
+// YunOS广告业务第三方DSP单个创意预审接口
 type YunosAdAuditCreativeAddAPIResponse struct {
 	model.CommonResponse
 	YunosAdAuditCreativeAddAPIResponseModel

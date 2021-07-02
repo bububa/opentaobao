@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKaolaScitemAddAPIResponse
-考拉货品新增接口 API返回值
-taobao.kaola.scitem.add
-
-考拉货品新增接口 */
+// TaobaoKaolaScitemAddAPIResponse 考拉货品新增接口 API返回值
+// taobao.kaola.scitem.add
+//
+// 考拉货品新增接口
 type TaobaoKaolaScitemAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoKaolaScitemAddAPIResponseModel

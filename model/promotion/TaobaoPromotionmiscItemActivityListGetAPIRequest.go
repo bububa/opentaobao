@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionmiscItemActivityListGetAPIRequest
-查询无条件单品优惠活动列表 API请求
-taobao.promotionmisc.item.activity.list.get
-
-查询无条件单品优惠活动列表 */
+// TaobaoPromotionmiscItemActivityListGetAPIRequest 查询无条件单品优惠活动列表 API请求
+// taobao.promotionmisc.item.activity.list.get
+//
+// 查询无条件单品优惠活动列表
 type TaobaoPromotionmiscItemActivityListGetAPIRequest struct {
 	model.Params
 	// 页码。

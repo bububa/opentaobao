@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-/* TaobaoOmniorderGuideDataGet
-获取全渠道导购产品数据
-taobao.omniorder.guide.data.get
-
-获取全渠道导购产品，目前包括随心购、随身购扫码、加购和交易数据。 */
+// TaobaoOmniorderGuideDataGet 获取全渠道导购产品数据
+// taobao.omniorder.guide.data.get
+//
+// 获取全渠道导购产品，目前包括随心购、随身购扫码、加购和交易数据。
 func TaobaoOmniorderGuideDataGet(clt *core.SDKClient, req *omniorder.TaobaoOmniorderGuideDataGetAPIRequest, session string) (*omniorder.TaobaoOmniorderGuideDataGetAPIResponse, error) {
 	var resp omniorder.TaobaoOmniorderGuideDataGetAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItApAddressGetAPIResponse
-getApAddressByMacNew API返回值
-alibaba.it.ap.address.get
-
-根据ap 的mac地址查询ap的结构化位置信息 */
+// AlibabaItApAddressGetAPIResponse getApAddressByMacNew API返回值
+// alibaba.it.ap.address.get
+//
+// 根据ap 的mac地址查询ap的结构化位置信息
 type AlibabaItApAddressGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaItApAddressGetAPIResponseModel

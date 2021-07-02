@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytRelationdetailAPIRequest
-关联关系处理详情 API请求
-alibaba.alihealth.drug.kyt.relationdetail
-
-关联关系处理详情 */
+// AlibabaAlihealthDrugKytRelationdetailAPIRequest 关联关系处理详情 API请求
+// alibaba.alihealth.drug.kyt.relationdetail
+//
+// 关联关系处理详情
 type AlibabaAlihealthDrugKytRelationdetailAPIRequest struct {
 	model.Params
 	// 码激活文件上传信息标识

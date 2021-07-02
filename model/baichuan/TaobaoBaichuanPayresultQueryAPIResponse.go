@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaichuanPayresultQueryAPIResponse
-百川支付完成回调 API返回值
-taobao.baichuan.payresult.query
-
-百川支付完成回调 */
+// TaobaoBaichuanPayresultQueryAPIResponse 百川支付完成回调 API返回值
+// taobao.baichuan.payresult.query
+//
+// 百川支付完成回调
 type TaobaoBaichuanPayresultQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaichuanPayresultQueryAPIResponseModel

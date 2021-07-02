@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeGroupActivtiyQueryAPIResponse
-组团活动信息查询 API返回值
-taobao.opentrade.group.activtiy.query
-
-组团购场景下，团购活动信息查询 */
+// TaobaoOpentradeGroupActivtiyQueryAPIResponse 组团活动信息查询 API返回值
+// taobao.opentrade.group.activtiy.query
+//
+// 组团购场景下，团购活动信息查询
 type TaobaoOpentradeGroupActivtiyQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeGroupActivtiyQueryAPIResponseModel

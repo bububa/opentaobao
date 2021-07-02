@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcMsgSendrecordAPIResponse
-消息发送记录查询 API返回值
-taobao.tmc.msg.sendrecord
-
-查询单条消息发送记录，只返回返回条数和时间。 */
+// TaobaoTmcMsgSendrecordAPIResponse 消息发送记录查询 API返回值
+// taobao.tmc.msg.sendrecord
+//
+// 查询单条消息发送记录，只返回返回条数和时间。
 type TaobaoTmcMsgSendrecordAPIResponse struct {
 	model.CommonResponse
 	TaobaoTmcMsgSendrecordAPIResponseModel

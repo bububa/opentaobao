@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripSellerRefundorderlistFetchAPIRequest
-【机票代理商】——退票订单列表提取 API请求
-taobao.alitrip.seller.refundorderlist.fetch
-
-代理商纬度退票订单列表提取 */
+// TaobaoAlitripSellerRefundorderlistFetchAPIRequest 【机票代理商】——退票订单列表提取 API请求
+// taobao.alitrip.seller.refundorderlist.fetch
+//
+// 代理商纬度退票订单列表提取
 type TaobaoAlitripSellerRefundorderlistFetchAPIRequest struct {
 	model.Params
 	// 提取数据的开始时间

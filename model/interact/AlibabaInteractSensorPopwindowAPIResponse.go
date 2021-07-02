@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorPopwindowAPIResponse
-popwindow API返回值
-alibaba.interact.sensor.popwindow
-
-popwindow */
+// AlibabaInteractSensorPopwindowAPIResponse popwindow API返回值
+// alibaba.interact.sensor.popwindow
+//
+// popwindow
 type AlibabaInteractSensorPopwindowAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorPopwindowAPIResponseModel

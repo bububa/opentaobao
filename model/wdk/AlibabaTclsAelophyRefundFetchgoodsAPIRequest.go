@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTclsAelophyRefundFetchgoodsAPIRequest
-saas 售后逆向 商户发起逆向取货 API请求
-alibaba.tcls.aelophy.refund.fetchgoods
-
-saas 售后逆向 商户发起逆向取货 */
+// AlibabaTclsAelophyRefundFetchgoodsAPIRequest saas 售后逆向 商户发起逆向取货 API请求
+// alibaba.tcls.aelophy.refund.fetchgoods
+//
+// saas 售后逆向 商户发起逆向取货
 type AlibabaTclsAelophyRefundFetchgoodsAPIRequest struct {
 	model.Params
 	// 经营店ID

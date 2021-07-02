@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPicturePicturesGetAPIRequest
-图片获取 API请求
-taobao.picture.pictures.get
-
-图片空间对外的图片获取接口，该接口只针对分页获取，获取某一页的图片，该接口不支持总数的查询asd */
+// TaobaoPicturePicturesGetAPIRequest 图片获取 API请求
+// taobao.picture.pictures.get
+//
+// 图片空间对外的图片获取接口，该接口只针对分页获取，获取某一页的图片，该接口不支持总数的查询asd
 type TaobaoPicturePicturesGetAPIRequest struct {
 	model.Params
 	// 查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss

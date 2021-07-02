@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusHistoryorderGetAPIRequest
-历史订单查询（对账） API请求
-taobao.bus.historyorder.get
-
-历史订单查询，对账接口 */
+// TaobaoBusHistoryorderGetAPIRequest 历史订单查询（对账） API请求
+// taobao.bus.historyorder.get
+//
+// 历史订单查询，对账接口
 type TaobaoBusHistoryorderGetAPIRequest struct {
 	model.Params
 	// 开始时间 2017-04-23 13:33:43

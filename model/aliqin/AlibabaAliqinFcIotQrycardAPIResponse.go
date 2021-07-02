@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotQrycardAPIResponse
-查询终端信息 API返回值
-alibaba.aliqin.fc.iot.qrycard
-
-查询终端信息 */
+// AlibabaAliqinFcIotQrycardAPIResponse 查询终端信息 API返回值
+// alibaba.aliqin.fc.iot.qrycard
+//
+// 查询终端信息
 type AlibabaAliqinFcIotQrycardAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcIotQrycardAPIResponseModel

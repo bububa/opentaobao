@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMsfVerifyAPIRequest
-喵师傅核销接口 API请求
-tmall.msf.verify
-
-msf服务核销的top接口 */
+// TmallMsfVerifyAPIRequest 喵师傅核销接口 API请求
+// tmall.msf.verify
+//
+// msf服务核销的top接口
 type TmallMsfVerifyAPIRequest struct {
 	model.Params
 	// 111

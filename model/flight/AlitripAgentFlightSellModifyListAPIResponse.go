@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripAgentFlightSellModifyListAPIResponse
-销售改签单列表 API返回值
-alitrip.agent.flight.sell.modify.list
-
-销售改签单列表 */
+// AlitripAgentFlightSellModifyListAPIResponse 销售改签单列表 API返回值
+// alitrip.agent.flight.sell.modify.list
+//
+// 销售改签单列表
 type AlitripAgentFlightSellModifyListAPIResponse struct {
 	model.CommonResponse
 	AlitripAgentFlightSellModifyListAPIResponseModel

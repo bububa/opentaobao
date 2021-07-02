@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/dmp"
 )
 
-/* TaobaoDmpCrowdsGet
-查询人群服务
-taobao.dmp.crowds.get
-
-查询人群服务 */
+// TaobaoDmpCrowdsGet 查询人群服务
+// taobao.dmp.crowds.get
+//
+// 查询人群服务
 func TaobaoDmpCrowdsGet(clt *core.SDKClient, req *dmp.TaobaoDmpCrowdsGetAPIRequest, session string) (*dmp.TaobaoDmpCrowdsGetAPIResponse, error) {
 	var resp dmp.TaobaoDmpCrowdsGetAPIResponse
 	err := clt.Post(req, &resp, session)

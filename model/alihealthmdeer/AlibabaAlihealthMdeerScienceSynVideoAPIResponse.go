@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMdeerScienceSynVideoAPIResponse
-视频同步【保存/更新】 API返回值
-alibaba.alihealth.mdeer.science.synVideo
-
-视频同步【保存/更新】 */
+// AlibabaAlihealthMdeerScienceSynVideoAPIResponse 视频同步【保存/更新】 API返回值
+// alibaba.alihealth.mdeer.science.synVideo
+//
+// 视频同步【保存/更新】
 type AlibabaAlihealthMdeerScienceSynVideoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthMdeerScienceSynVideoAPIResponseModel

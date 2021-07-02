@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAsrDataservicePromotionruleWriteAPIResponse
-业务优惠规则写入 API返回值
-alibaba.asr.dataservice.promotionrule.write
-
-星巴克优惠规则写入 */
+// AlibabaAsrDataservicePromotionruleWriteAPIResponse 业务优惠规则写入 API返回值
+// alibaba.asr.dataservice.promotionrule.write
+//
+// 星巴克优惠规则写入
 type AlibabaAsrDataservicePromotionruleWriteAPIResponse struct {
 	model.CommonResponse
 	AlibabaAsrDataservicePromotionruleWriteAPIResponseModel

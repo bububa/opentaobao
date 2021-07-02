@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqCaptchaSendAPIRequest
-聚安全安全验证发起接口 API请求
-alibaba.security.jaq.captcha.send
-
-聚安全安全验证发起 */
+// AlibabaSecurityJaqCaptchaSendAPIRequest 聚安全安全验证发起接口 API请求
+// alibaba.security.jaq.captcha.send
+//
+// 聚安全安全验证发起
 type AlibabaSecurityJaqCaptchaSendAPIRequest struct {
 	model.Params
 	// 验证码发送渠道类型 1-短信 3-邮件

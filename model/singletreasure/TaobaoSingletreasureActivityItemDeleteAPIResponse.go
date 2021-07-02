@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSingletreasureActivityItemDeleteAPIResponse
-删除单品优惠接口 API返回值
-taobao.singletreasure.activity.item.delete
-
-删除单品优惠接口 */
+// TaobaoSingletreasureActivityItemDeleteAPIResponse 删除单品优惠接口 API返回值
+// taobao.singletreasure.activity.item.delete
+//
+// 删除单品优惠接口
 type TaobaoSingletreasureActivityItemDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoSingletreasureActivityItemDeleteAPIResponseModel

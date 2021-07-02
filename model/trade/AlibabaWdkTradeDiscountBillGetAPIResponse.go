@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkTradeDiscountBillGetAPIResponse
-订单优惠账单查询 API返回值
-alibaba.wdk.trade.discount.bill.get
-
-商家查询订单优惠账单 */
+// AlibabaWdkTradeDiscountBillGetAPIResponse 订单优惠账单查询 API返回值
+// alibaba.wdk.trade.discount.bill.get
+//
+// 商家查询订单优惠账单
 type AlibabaWdkTradeDiscountBillGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkTradeDiscountBillGetAPIResponseModel

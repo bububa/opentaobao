@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIResponse
-删除楼盘预售证 API返回值
-alibaba.alihouse.newhome.project.presalepermit.delete
-
-删除楼盘预售证信息 */
+// AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIResponse 删除楼盘预售证 API返回值
+// alibaba.alihouse.newhome.project.presalepermit.delete
+//
+// 删除楼盘预售证信息
 type AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIResponseModel

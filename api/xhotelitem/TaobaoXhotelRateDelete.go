@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-/* TaobaoXhotelRateDelete
-rate删除接口
-taobao.xhotel.rate.delete
-
-酒店产品库rate删除 */
+// TaobaoXhotelRateDelete rate删除接口
+// taobao.xhotel.rate.delete
+//
+// 酒店产品库rate删除
 func TaobaoXhotelRateDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateDeleteAPIRequest, session string) (*xhotelitem.TaobaoXhotelRateDeleteAPIResponse, error) {
 	var resp xhotelitem.TaobaoXhotelRateDeleteAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripGrouptourProductUploadAPIResponse
-新版跟团游商品维护接口 API返回值
-alitrip.grouptour.product.upload
-
-新版跟团游商品维护接口 */
+// AlitripGrouptourProductUploadAPIResponse 新版跟团游商品维护接口 API返回值
+// alitrip.grouptour.product.upload
+//
+// 新版跟团游商品维护接口
 type AlitripGrouptourProductUploadAPIResponse struct {
 	model.CommonResponse
 	AlitripGrouptourProductUploadAPIResponseModel

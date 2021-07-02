@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse
-天猫服务平台一键求助单服务商备注更新接口 API返回值
-tmall.servicecenter.anomalyrecourse.remark.update
-
-一键求助服务商可以回传备注 */
+// TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse 天猫服务平台一键求助单服务商备注更新接口 API返回值
+// tmall.servicecenter.anomalyrecourse.remark.update
+//
+// 一键求助服务商可以回传备注
 type TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponseModel

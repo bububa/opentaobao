@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMtopUploadTokenGetAPIResponse
-获取文件上传授权 API返回值
-taobao.mtop.upload.token.get
-
-获取mtop文件上传授权 */
+// TaobaoMtopUploadTokenGetAPIResponse 获取文件上传授权 API返回值
+// taobao.mtop.upload.token.get
+//
+// 获取mtop文件上传授权
 type TaobaoMtopUploadTokenGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoMtopUploadTokenGetAPIResponseModel

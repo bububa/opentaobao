@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoicePaperReturnAPIRequest
-纸质发票结果回传 API请求
-alibaba.einvoice.paper.return
-
-纸质发票结果回传 */
+// AlibabaEinvoicePaperReturnAPIRequest 纸质发票结果回传 API请求
+// alibaba.einvoice.paper.return
+//
+// 纸质发票结果回传
 type AlibabaEinvoicePaperReturnAPIRequest struct {
 	model.Params
 	// 发票密文，密码区的字符串

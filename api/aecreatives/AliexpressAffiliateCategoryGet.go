@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/aecreatives"
 )
 
-/* AliexpressAffiliateCategoryGet
-AE流量推广类目信息获取API
-aliexpress.affiliate.category.get
-
-获取AE流量推广类目的API */
+// AliexpressAffiliateCategoryGet AE流量推广类目信息获取API
+// aliexpress.affiliate.category.get
+//
+// 获取AE流量推广类目的API
 func AliexpressAffiliateCategoryGet(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateCategoryGetAPIRequest, session string) (*aecreatives.AliexpressAffiliateCategoryGetAPIResponse, error) {
 	var resp aecreatives.AliexpressAffiliateCategoryGetAPIResponse
 	err := clt.Post(req, &resp, session)

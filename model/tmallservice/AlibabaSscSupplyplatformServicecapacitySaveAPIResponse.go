@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSscSupplyplatformServicecapacitySaveAPIResponse
-保存服务容量 API返回值
-alibaba.ssc.supplyplatform.servicecapacity.save
-
-保存服务容量 */
+// AlibabaSscSupplyplatformServicecapacitySaveAPIResponse 保存服务容量 API返回值
+// alibaba.ssc.supplyplatform.servicecapacity.save
+//
+// 保存服务容量
 type AlibabaSscSupplyplatformServicecapacitySaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaSscSupplyplatformServicecapacitySaveAPIResponseModel

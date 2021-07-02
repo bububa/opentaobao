@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsDummySendAPIResponse
-无需物流（虚拟）发货处理 API返回值
-taobao.logistics.dummy.send
-
-用户调用该接口可实现无需物流（虚拟）发货,使用该接口发货，交易订单状态会直接变成卖家已发货 */
+// TaobaoLogisticsDummySendAPIResponse 无需物流（虚拟）发货处理 API返回值
+// taobao.logistics.dummy.send
+//
+// 用户调用该接口可实现无需物流（虚拟）发货,使用该接口发货，交易订单状态会直接变成卖家已发货
 type TaobaoLogisticsDummySendAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsDummySendAPIResponseModel

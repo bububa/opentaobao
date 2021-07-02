@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStorecategoryGetAPIResponse
-获取门店类目信息 API返回值
-taobao.place.storecategory.get
-
-获取门店类目信息 */
+// TaobaoPlaceStorecategoryGetAPIResponse 获取门店类目信息 API返回值
+// taobao.place.storecategory.get
+//
+// 获取门店类目信息
 type TaobaoPlaceStorecategoryGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoPlaceStorecategoryGetAPIResponseModel

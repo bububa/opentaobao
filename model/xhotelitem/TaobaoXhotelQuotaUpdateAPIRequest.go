@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelQuotaUpdateAPIRequest
-库存更新接口 API请求
-taobao.xhotel.quota.update
-
-库存更新接口 */
+// TaobaoXhotelQuotaUpdateAPIRequest 库存更新接口 API请求
+// taobao.xhotel.quota.update
+//
+// 库存更新接口
 type TaobaoXhotelQuotaUpdateAPIRequest struct {
 	model.Params
 	// 库存类型,0: 普通库存, 1: 普通保留房库存, 2:协议保留房库存

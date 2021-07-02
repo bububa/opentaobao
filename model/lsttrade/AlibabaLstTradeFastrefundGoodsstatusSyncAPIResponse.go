@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstTradeFastrefundGoodsstatusSyncAPIResponse
-卖家退款单商品状态同步 API返回值
-alibaba.lst.trade.fastrefund.goodsstatus.sync
-
-卖家退款单商品状态同步 */
+// AlibabaLstTradeFastrefundGoodsstatusSyncAPIResponse 卖家退款单商品状态同步 API返回值
+// alibaba.lst.trade.fastrefund.goodsstatus.sync
+//
+// 卖家退款单商品状态同步
 type AlibabaLstTradeFastrefundGoodsstatusSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstTradeFastrefundGoodsstatusSyncAPIResponseModel

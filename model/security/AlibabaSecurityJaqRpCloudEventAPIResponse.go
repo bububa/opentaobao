@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpCloudEventAPIResponse
-事件上报 API返回值
-alibaba.security.jaq.rp.cloud.event
-
-事件上报接口 */
+// AlibabaSecurityJaqRpCloudEventAPIResponse 事件上报 API返回值
+// alibaba.security.jaq.rp.cloud.event
+//
+// 事件上报接口
 type AlibabaSecurityJaqRpCloudEventAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqRpCloudEventAPIResponseModel

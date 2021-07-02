@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusSpaceGetbyidsAPIResponse
-根据ids和类型查询空间列表 API返回值
-alibaba.campus.space.getbyids
-
-根据ids和类型查询空间列表 */
+// AlibabaCampusSpaceGetbyidsAPIResponse 根据ids和类型查询空间列表 API返回值
+// alibaba.campus.space.getbyids
+//
+// 根据ids和类型查询空间列表
 type AlibabaCampusSpaceGetbyidsAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusSpaceGetbyidsAPIResponseModel

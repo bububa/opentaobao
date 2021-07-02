@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInventoryPlanEditAPIResponse
-设置计划库存 API返回值
-taobao.inventory.plan.edit
-
-初始化计划库存，或者编辑已经存在的计划库存 */
+// TaobaoInventoryPlanEditAPIResponse 设置计划库存 API返回值
+// taobao.inventory.plan.edit
+//
+// 初始化计划库存，或者编辑已经存在的计划库存
 type TaobaoInventoryPlanEditAPIResponse struct {
 	model.CommonResponse
 	TaobaoInventoryPlanEditAPIResponseModel

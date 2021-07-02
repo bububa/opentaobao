@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCbossWorkplatformBiztypeQueryallAPIResponse
-菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型 API返回值
-cainiao.cboss.workplatform.biztype.queryall
-
-菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型。 目前调用者ISV */
+// CainiaoCbossWorkplatformBiztypeQueryallAPIResponse 菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型 API返回值
+// cainiao.cboss.workplatform.biztype.queryall
+//
+// 菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型。 目前调用者ISV
 type CainiaoCbossWorkplatformBiztypeQueryallAPIResponse struct {
 	model.CommonResponse
 	CainiaoCbossWorkplatformBiztypeQueryallAPIResponseModel

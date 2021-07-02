@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPentaprismTaskQueryitemAPIResponse
-查询任务当前进度 API返回值
-taobao.pentaprism.task.queryitem
-
-外网用户查询五棱镜任务系统当前进度 */
+// TaobaoPentaprismTaskQueryitemAPIResponse 查询任务当前进度 API返回值
+// taobao.pentaprism.task.queryitem
+//
+// 外网用户查询五棱镜任务系统当前进度
 type TaobaoPentaprismTaskQueryitemAPIResponse struct {
 	model.CommonResponse
 	TaobaoPentaprismTaskQueryitemAPIResponseModel

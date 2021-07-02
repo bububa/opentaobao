@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionOrderFulfillAPIResponse
-fulfill order API返回值
-aliexpress.solution.order.fulfill
-
-fulfill order for seller */
+// AliexpressSolutionOrderFulfillAPIResponse fulfill order API返回值
+// aliexpress.solution.order.fulfill
+//
+// fulfill order for seller
 type AliexpressSolutionOrderFulfillAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionOrderFulfillAPIResponseModel

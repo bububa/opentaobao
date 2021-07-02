@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelMultiplerateDeleteAPIRequest
-复杂价格删除 API请求
-taobao.xhotel.multiplerate.delete
-
-酒店产品库rate删除 */
+// TaobaoXhotelMultiplerateDeleteAPIRequest 复杂价格删除 API请求
+// taobao.xhotel.multiplerate.delete
+//
+// 酒店产品库rate删除
 type TaobaoXhotelMultiplerateDeleteAPIRequest struct {
 	model.Params
 	// 渠道，和推送房价所使用的渠道保持一致

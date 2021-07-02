@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-/* AlibabaAlihealthDrugtraceTopLsydQueryGetentinfo
-通过企业名得到唯一标识ref_ent_id及企业ent_id
-alibaba.alihealth.drugtrace.top.lsyd.query.getentinfo
-
-根据企业名称查询ID */
+// AlibabaAlihealthDrugtraceTopLsydQueryGetentinfo 通过企业名得到唯一标识ref_ent_id及企业ent_id
+// alibaba.alihealth.drugtrace.top.lsyd.query.getentinfo
+//
+// 根据企业名称查询ID
 func AlibabaAlihealthDrugtraceTopLsydQueryGetentinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoAPIResponse, error) {
 	var resp drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoAPIResponse
 	err := clt.Post(req, &resp, session)

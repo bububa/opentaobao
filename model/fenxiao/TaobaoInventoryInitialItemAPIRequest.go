@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInventoryInitialItemAPIRequest
-商品库存初始化 API请求
-taobao.inventory.initial.item
-
-建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。
-商家仓商品初始化在各个仓中库存 */
+// TaobaoInventoryInitialItemAPIRequest 商品库存初始化 API请求
+// taobao.inventory.initial.item
+//
+// 建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。
+// 商家仓商品初始化在各个仓中库存
 type TaobaoInventoryInitialItemAPIRequest struct {
 	model.Params
 	// 后端商品id

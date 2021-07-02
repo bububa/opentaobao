@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelUpdateAPIRequest
-酒店更新接口（ID不存在自动新增） API请求
-taobao.xhotel.update
-
-酒店更新接口 */
+// TaobaoXhotelUpdateAPIRequest 酒店更新接口（ID不存在自动新增） API请求
+// taobao.xhotel.update
+//
+// 酒店更新接口
 type TaobaoXhotelUpdateAPIRequest struct {
 	model.Params
 	// （已废弃）请使用outer_id来标识要修改的酒店

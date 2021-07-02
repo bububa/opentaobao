@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimUsersGetAPIResponse
-批量获取用户信息 API返回值
-taobao.openim.users.get
-
-批量获取用户信息 */
+// TaobaoOpenimUsersGetAPIResponse 批量获取用户信息 API返回值
+// taobao.openim.users.get
+//
+// 批量获取用户信息
 type TaobaoOpenimUsersGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimUsersGetAPIResponseModel

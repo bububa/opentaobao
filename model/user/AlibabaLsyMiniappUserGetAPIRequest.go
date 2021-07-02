@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLsyMiniappUserGetAPIRequest
-零售云小程序获取登录用户信息 API请求
-alibaba.lsy.miniapp.user.get
-
-零售云小程序，通过授权码获取登录的卖家账号信息 */
+// AlibabaLsyMiniappUserGetAPIRequest 零售云小程序获取登录用户信息 API请求
+// alibaba.lsy.miniapp.user.get
+//
+// 零售云小程序，通过授权码获取登录的卖家账号信息
 type AlibabaLsyMiniappUserGetAPIRequest struct {
 	model.Params
 	// 当前时间戳，毫秒

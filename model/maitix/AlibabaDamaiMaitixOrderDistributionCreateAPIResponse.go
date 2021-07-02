@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixOrderDistributionCreateAPIResponse
-大麦-新分销下单 API返回值
-alibaba.damai.maitix.order.distribution.create
-
-createDistributionOrder */
+// AlibabaDamaiMaitixOrderDistributionCreateAPIResponse 大麦-新分销下单 API返回值
+// alibaba.damai.maitix.order.distribution.create
+//
+// createDistributionOrder
 type AlibabaDamaiMaitixOrderDistributionCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixOrderDistributionCreateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkTradeOrderQueryAPIResponse
-查询外部交易订单接口 API返回值
-alibaba.wdk.trade.order.query
-
-通过该接口可以在盒马查询交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理 */
+// AlibabaWdkTradeOrderQueryAPIResponse 查询外部交易订单接口 API返回值
+// alibaba.wdk.trade.order.query
+//
+// 通过该接口可以在盒马查询交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理
 type AlibabaWdkTradeOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkTradeOrderQueryAPIResponseModel

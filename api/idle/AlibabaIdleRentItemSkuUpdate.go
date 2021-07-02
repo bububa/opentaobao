@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-/* AlibabaIdleRentItemSkuUpdate
-更新/增加sku信息
-alibaba.idle.rent.item.sku.update
-
-更新/增加sku信息 */
+// AlibabaIdleRentItemSkuUpdate 更新/增加sku信息
+// alibaba.idle.rent.item.sku.update
+//
+// 更新/增加sku信息
 func AlibabaIdleRentItemSkuUpdate(clt *core.SDKClient, req *idle.AlibabaIdleRentItemSkuUpdateAPIRequest, session string) (*idle.AlibabaIdleRentItemSkuUpdateAPIResponse, error) {
 	var resp idle.AlibabaIdleRentItemSkuUpdateAPIResponse
 	err := clt.Post(req, &resp, session)

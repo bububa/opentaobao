@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelProductSkuOverrideAPIRequest
-（供销）产品级别日历价格库存修改，全量覆盖 API请求
-taobao.alitrip.travel.product.sku.override
-
-（供销）产品级别日历价格库存修改，全量覆盖 */
+// TaobaoAlitripTravelProductSkuOverrideAPIRequest （供销）产品级别日历价格库存修改，全量覆盖 API请求
+// taobao.alitrip.travel.product.sku.override
+//
+// （供销）产品级别日历价格库存修改，全量覆盖
 type TaobaoAlitripTravelProductSkuOverrideAPIRequest struct {
 	model.Params
 	// 商品 外部商家编码。itemId和outProductId至少填写一个

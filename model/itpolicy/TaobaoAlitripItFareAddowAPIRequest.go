@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripItFareAddowAPIRequest
-【国际机票自有政策】单条单程添加 API请求
-taobao.alitrip.it.fare.addow
-
-自有政策单程添加接口，重复的老数据会被删除，重复判断规则同excel */
+// TaobaoAlitripItFareAddowAPIRequest 【国际机票自有政策】单条单程添加 API请求
+// taobao.alitrip.it.fare.addow
+//
+// 自有政策单程添加接口，重复的老数据会被删除，重复判断规则同excel
 type TaobaoAlitripItFareAddowAPIRequest struct {
 	model.Params
 	// 外部政策ID,1、自行输入的ID，建议为唯一id，有些操作可以使用此id 最多50个字符

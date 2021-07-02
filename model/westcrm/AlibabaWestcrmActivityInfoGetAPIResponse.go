@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmActivityInfoGetAPIResponse
-获取活动详情 API返回值
-alibaba.westcrm.activity.info.get
-
-根据id查询活动详情 */
+// AlibabaWestcrmActivityInfoGetAPIResponse 获取活动详情 API返回值
+// alibaba.westcrm.activity.info.get
+//
+// 根据id查询活动详情
 type AlibabaWestcrmActivityInfoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWestcrmActivityInfoGetAPIResponseModel

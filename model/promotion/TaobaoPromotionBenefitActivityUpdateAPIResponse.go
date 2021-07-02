@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionBenefitActivityUpdateAPIResponse
-修改关联的活动权益 API返回值
-taobao.promotion.benefit.activity.update
-
-修改卖家活动中关联的对应的权益。 */
+// TaobaoPromotionBenefitActivityUpdateAPIResponse 修改关联的活动权益 API返回值
+// taobao.promotion.benefit.activity.update
+//
+// 修改卖家活动中关联的对应的权益。
 type TaobaoPromotionBenefitActivityUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionBenefitActivityUpdateAPIResponseModel

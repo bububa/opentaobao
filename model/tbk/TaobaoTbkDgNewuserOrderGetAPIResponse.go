@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkDgNewuserOrderGetAPIResponse
-淘宝客-推广者-新用户订单明细查询 API返回值
-taobao.tbk.dg.newuser.order.get
-
-拉新API */
+// TaobaoTbkDgNewuserOrderGetAPIResponse 淘宝客-推广者-新用户订单明细查询 API返回值
+// taobao.tbk.dg.newuser.order.get
+//
+// 拉新API
 type TaobaoTbkDgNewuserOrderGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkDgNewuserOrderGetAPIResponseModel

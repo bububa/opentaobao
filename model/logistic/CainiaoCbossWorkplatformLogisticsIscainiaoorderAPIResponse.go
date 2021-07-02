@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse
-根据交易单号判断是否为菜鸟发货订单 API返回值
-cainiao.cboss.workplatform.logistics.iscainiaoorder
-
-根据交易单号判断是否为菜鸟发货订单 */
+// CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse 根据交易单号判断是否为菜鸟发货订单 API返回值
+// cainiao.cboss.workplatform.logistics.iscainiaoorder
+//
+// 根据交易单号判断是否为菜鸟发货订单
 type CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse struct {
 	model.CommonResponse
 	CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponseModel

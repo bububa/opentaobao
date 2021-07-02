@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponse
-非药单码替换 API返回值
-alibaba.alihealth.tracecodeseller.code.single.codereplace
-
-提供非药追溯码单码替换功能 */
+// AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponse 非药单码替换 API返回值
+// alibaba.alihealth.tracecodeseller.code.single.codereplace
+//
+// 提供非药追溯码单码替换功能
 type AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponseModel

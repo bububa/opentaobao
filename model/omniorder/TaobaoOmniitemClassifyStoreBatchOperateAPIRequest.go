@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemClassifyStoreBatchOperateAPIRequest
-批量添加/删除门店和分类的关联关系 API请求
-taobao.omniitem.classify.store.batch.operate
-
-批量添加/删除门店和分类的关联关系 */
+// TaobaoOmniitemClassifyStoreBatchOperateAPIRequest 批量添加/删除门店和分类的关联关系 API请求
+// taobao.omniitem.classify.store.batch.operate
+//
+// 批量添加/删除门店和分类的关联关系
 type TaobaoOmniitemClassifyStoreBatchOperateAPIRequest struct {
 	model.Params
 	// 商家门店ID

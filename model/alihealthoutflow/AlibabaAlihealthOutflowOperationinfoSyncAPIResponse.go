@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthOutflowOperationinfoSyncAPIResponse
-处方外流-操作信息同步 API返回值
-alibaba.alihealth.outflow.operationinfo.sync
-
-阿里健康-处方外流-对外提供同步操作信息功能 */
+// AlibabaAlihealthOutflowOperationinfoSyncAPIResponse 处方外流-操作信息同步 API返回值
+// alibaba.alihealth.outflow.operationinfo.sync
+//
+// 阿里健康-处方外流-对外提供同步操作信息功能
 type AlibabaAlihealthOutflowOperationinfoSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthOutflowOperationinfoSyncAPIResponseModel

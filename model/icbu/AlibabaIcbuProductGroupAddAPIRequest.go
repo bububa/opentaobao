@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductGroupAddAPIRequest
-增加商品分组 API请求
-alibaba.icbu.product.group.add
-
-增加商品分组 */
+// AlibabaIcbuProductGroupAddAPIRequest 增加商品分组 API请求
+// alibaba.icbu.product.group.add
+//
+// 增加商品分组
 type AlibabaIcbuProductGroupAddAPIRequest struct {
 	model.Params
 	// 分组名称

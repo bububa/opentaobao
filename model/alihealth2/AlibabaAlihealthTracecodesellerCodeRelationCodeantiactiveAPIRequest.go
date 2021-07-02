@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest
-解除码的关联关系 API请求
-alibaba.alihealth.tracecodeseller.code.relation.codeantiactive
-
-解除码的关联关系 */
+// AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest 解除码的关联关系 API请求
+// alibaba.alihealth.tracecodeseller.code.relation.codeantiactive
+//
+// 解除码的关联关系
 type AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest struct {
 	model.Params
 	// 顶层码

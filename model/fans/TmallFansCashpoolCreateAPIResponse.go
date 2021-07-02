@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallFansCashpoolCreateAPIResponse
-创建资金池 API返回值
-tmall.fans.cashpool.create
-
-商家创建资金池接口 */
+// TmallFansCashpoolCreateAPIResponse 创建资金池 API返回值
+// tmall.fans.cashpool.create
+//
+// 商家创建资金池接口
 type TmallFansCashpoolCreateAPIResponse struct {
 	model.CommonResponse
 	TmallFansCashpoolCreateAPIResponseModel

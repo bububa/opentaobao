@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMedicalImDataUploadAPIResponse
-三方IM图片音频消息上传 API返回值
-alibaba.alihealth.medical.im.data.upload
-
-三方IM图片音频消息上传 */
+// AlibabaAlihealthMedicalImDataUploadAPIResponse 三方IM图片音频消息上传 API返回值
+// alibaba.alihealth.medical.im.data.upload
+//
+// 三方IM图片音频消息上传
 type AlibabaAlihealthMedicalImDataUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthMedicalImDataUploadAPIResponseModel

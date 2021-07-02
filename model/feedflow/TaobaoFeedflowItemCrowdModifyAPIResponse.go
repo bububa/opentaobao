@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemCrowdModifyAPIResponse
-覆盖单元下同类型定向人群 API返回值
-taobao.feedflow.item.crowd.modify
-
-覆盖单元下同类型定向人群 */
+// TaobaoFeedflowItemCrowdModifyAPIResponse 覆盖单元下同类型定向人群 API返回值
+// taobao.feedflow.item.crowd.modify
+//
+// 覆盖单元下同类型定向人群
 type TaobaoFeedflowItemCrowdModifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemCrowdModifyAPIResponseModel

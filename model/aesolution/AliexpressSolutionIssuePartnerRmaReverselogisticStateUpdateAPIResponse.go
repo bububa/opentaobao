@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIResponse
-aliexpress.solution.issue.partner.rma.reverselogistic.state.update API返回值
-aliexpress.solution.issue.partner.rma.reverselogistic.state.update
-
-Updates the reverse logistics state for after sales services */
+// AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIResponse aliexpress.solution.issue.partner.rma.reverselogistic.state.update API返回值
+// aliexpress.solution.issue.partner.rma.reverselogistic.state.update
+//
+// Updates the reverse logistics state for after sales services
 type AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIResponseModel

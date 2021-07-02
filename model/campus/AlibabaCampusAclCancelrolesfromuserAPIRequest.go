@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclCancelrolesfromuserAPIRequest
-撤销用户授予的角色 API请求
-alibaba.campus.acl.cancelrolesfromuser
-
-撤销用户授予的角色 */
+// AlibabaCampusAclCancelrolesfromuserAPIRequest 撤销用户授予的角色 API请求
+// alibaba.campus.acl.cancelrolesfromuser
+//
+// 撤销用户授予的角色
 type AlibabaCampusAclCancelrolesfromuserAPIRequest struct {
 	model.Params
 	// 系统自动生成

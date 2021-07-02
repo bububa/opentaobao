@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenStockoutConfirmAPIResponse
-出库单确认接口 API返回值
-taobao.qimen.stockout.confirm
-
-货品出库后，WMS将状态回传给ERP */
+// TaobaoQimenStockoutConfirmAPIResponse 出库单确认接口 API返回值
+// taobao.qimen.stockout.confirm
+//
+// 货品出库后，WMS将状态回传给ERP
 type TaobaoQimenStockoutConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenStockoutConfirmAPIResponseModel

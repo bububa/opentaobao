@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqResourceFetchAPIRequest
-获取资源文件 API请求
-alibaba.security.jaq.resource.fetch
-
-在前向化验证流程中提供资源文件服务 */
+// AlibabaSecurityJaqResourceFetchAPIRequest 获取资源文件 API请求
+// alibaba.security.jaq.resource.fetch
+//
+// 在前向化验证流程中提供资源文件服务
 type AlibabaSecurityJaqResourceFetchAPIRequest struct {
 	model.Params
 	// 设备类型可能值有：android ios wp

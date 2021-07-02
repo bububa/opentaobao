@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoElifeLifecardConsumeAPIResponse
-品牌惠卡券核销 API返回值
-taobao.elife.lifecard.consume
-
-用户线上购买生活汇品牌惠虚拟消费卡，线下购物时，商家码枪核销，涉及用户虚拟卡余额扣减操作 */
+// TaobaoElifeLifecardConsumeAPIResponse 品牌惠卡券核销 API返回值
+// taobao.elife.lifecard.consume
+//
+// 用户线上购买生活汇品牌惠虚拟消费卡，线下购物时，商家码枪核销，涉及用户虚拟卡余额扣减操作
 type TaobaoElifeLifecardConsumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoElifeLifecardConsumeAPIResponseModel

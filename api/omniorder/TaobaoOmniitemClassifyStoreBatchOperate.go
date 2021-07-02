@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-/* TaobaoOmniitemClassifyStoreBatchOperate
-批量添加/删除门店和分类的关联关系
-taobao.omniitem.classify.store.batch.operate
-
-批量添加/删除门店和分类的关联关系 */
+// TaobaoOmniitemClassifyStoreBatchOperate 批量添加/删除门店和分类的关联关系
+// taobao.omniitem.classify.store.batch.operate
+//
+// 批量添加/删除门店和分类的关联关系
 func TaobaoOmniitemClassifyStoreBatchOperate(clt *core.SDKClient, req *omniorder.TaobaoOmniitemClassifyStoreBatchOperateAPIRequest, session string) (*omniorder.TaobaoOmniitemClassifyStoreBatchOperateAPIResponse, error) {
 	var resp omniorder.TaobaoOmniitemClassifyStoreBatchOperateAPIResponse
 	err := clt.Post(req, &resp, session)

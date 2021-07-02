@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCloudpushNoticeAndroidAPIResponse
-百川云推送发送通知给android API返回值
-taobao.cloudpush.notice.android
-
-百川云推送发送通知给android */
+// TaobaoCloudpushNoticeAndroidAPIResponse 百川云推送发送通知给android API返回值
+// taobao.cloudpush.notice.android
+//
+// 百川云推送发送通知给android
 type TaobaoCloudpushNoticeAndroidAPIResponse struct {
 	model.CommonResponse
 	TaobaoCloudpushNoticeAndroidAPIResponseModel

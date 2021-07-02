@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoWaybillIiGetAPIResponse
-电子面单云打印接口 API返回值
-cainiao.waybill.ii.get
-
-菜鸟电子面单的云打印申请电子面单号的方法 */
+// CainiaoWaybillIiGetAPIResponse 电子面单云打印接口 API返回值
+// cainiao.waybill.ii.get
+//
+// 菜鸟电子面单的云打印申请电子面单号的方法
 type CainiaoWaybillIiGetAPIResponse struct {
 	model.CommonResponse
 	CainiaoWaybillIiGetAPIResponseModel

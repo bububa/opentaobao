@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmIsMemberGetAPIResponse
-查询是否是亲橙里会员 API返回值
-alibaba.westcrm.is.member.get
-
-根据淘宝Id查询是否是亲橙里会员 */
+// AlibabaWestcrmIsMemberGetAPIResponse 查询是否是亲橙里会员 API返回值
+// alibaba.westcrm.is.member.get
+//
+// 根据淘宝Id查询是否是亲橙里会员
 type AlibabaWestcrmIsMemberGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWestcrmIsMemberGetAPIResponseModel

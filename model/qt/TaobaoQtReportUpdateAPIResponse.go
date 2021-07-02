@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQtReportUpdateAPIResponse
-更新质检报告 API返回值
-taobao.qt.report.update
-
-更新质检报告 */
+// TaobaoQtReportUpdateAPIResponse 更新质检报告 API返回值
+// taobao.qt.report.update
+//
+// 更新质检报告
 type TaobaoQtReportUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoQtReportUpdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTxcsFinanceVerifyStatementBillAPIRequest
-供应商核销单录入 API请求
-tmall.txcs.finance.verify.statement.bill
-
-供应商核销单录入 */
+// TmallTxcsFinanceVerifyStatementBillAPIRequest 供应商核销单录入 API请求
+// tmall.txcs.finance.verify.statement.bill
+//
+// 供应商核销单录入
 type TmallTxcsFinanceVerifyStatementBillAPIRequest struct {
 	model.Params
 	// 门店ID

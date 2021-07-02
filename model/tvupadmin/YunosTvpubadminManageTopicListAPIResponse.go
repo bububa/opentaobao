@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminManageTopicListAPIResponse
-专题内容操作列表 API返回值
-yunos.tvpubadmin.manage.topic.list
-
-获取外部可操作编辑的专题列表 */
+// YunosTvpubadminManageTopicListAPIResponse 专题内容操作列表 API返回值
+// yunos.tvpubadmin.manage.topic.list
+//
+// 获取外部可操作编辑的专题列表
 type YunosTvpubadminManageTopicListAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminManageTopicListAPIResponseModel

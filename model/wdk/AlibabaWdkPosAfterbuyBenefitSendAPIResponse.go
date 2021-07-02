@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkPosAfterbuyBenefitSendAPIResponse
-生态pos购后发放权益 API返回值
-alibaba.wdk.pos.afterbuy.benefit.send
-
-生态pos购后发放权益接口开放 */
+// AlibabaWdkPosAfterbuyBenefitSendAPIResponse 生态pos购后发放权益 API返回值
+// alibaba.wdk.pos.afterbuy.benefit.send
+//
+// 生态pos购后发放权益接口开放
 type AlibabaWdkPosAfterbuyBenefitSendAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkPosAfterbuyBenefitSendAPIResponseModel

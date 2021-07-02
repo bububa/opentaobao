@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardCompleteAPIResponse
-工单完结 API返回值
-tmall.servicecenter.workcard.complete
-
-工单完结 */
+// TmallServicecenterWorkcardCompleteAPIResponse 工单完结 API返回值
+// tmall.servicecenter.workcard.complete
+//
+// 工单完结
 type TmallServicecenterWorkcardCompleteAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardCompleteAPIResponseModel

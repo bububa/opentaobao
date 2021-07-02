@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixDistributionExchangepointQueryAPIResponse
-分销查询取票点接口 API返回值
-alibaba.damai.maitix.distribution.exchangepoint.query
-
-分销查询取票点接口 */
+// AlibabaDamaiMaitixDistributionExchangepointQueryAPIResponse 分销查询取票点接口 API返回值
+// alibaba.damai.maitix.distribution.exchangepoint.query
+//
+// 分销查询取票点接口
 type AlibabaDamaiMaitixDistributionExchangepointQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixDistributionExchangepointQueryAPIResponseModel

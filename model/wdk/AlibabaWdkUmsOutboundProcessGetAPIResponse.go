@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkUmsOutboundProcessGetAPIResponse
-出库业务UMS异步处理结果返回 API返回值
-alibaba.wdk.ums.outbound.process.get
-
-出库业务UMS异步处理结果返回 */
+// AlibabaWdkUmsOutboundProcessGetAPIResponse 出库业务UMS异步处理结果返回 API返回值
+// alibaba.wdk.ums.outbound.process.get
+//
+// 出库业务UMS异步处理结果返回
 type AlibabaWdkUmsOutboundProcessGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkUmsOutboundProcessGetAPIResponseModel

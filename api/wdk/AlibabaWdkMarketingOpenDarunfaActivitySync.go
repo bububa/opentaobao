@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-/* AlibabaWdkMarketingOpenDarunfaActivitySync
-活动数据同步
-alibaba.wdk.marketing.open.darunfa.activity.sync
-
-大润发活动数据同步 */
+// AlibabaWdkMarketingOpenDarunfaActivitySync 活动数据同步
+// alibaba.wdk.marketing.open.darunfa.activity.sync
+//
+// 大润发活动数据同步
 func AlibabaWdkMarketingOpenDarunfaActivitySync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest, session string) (*wdk.AlibabaWdkMarketingOpenDarunfaActivitySyncAPIResponse, error) {
 	var resp wdk.AlibabaWdkMarketingOpenDarunfaActivitySyncAPIResponse
 	err := clt.Post(req, &resp, session)

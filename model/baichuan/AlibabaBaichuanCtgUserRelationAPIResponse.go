@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaichuanCtgUserRelationAPIResponse
-用户 API返回值
-alibaba.baichuan.ctg.user.relation
-
-提供给优酷查询道长和淘宝账户的绑定关系 */
+// AlibabaBaichuanCtgUserRelationAPIResponse 用户 API返回值
+// alibaba.baichuan.ctg.user.relation
+//
+// 提供给优酷查询道长和淘宝账户的绑定关系
 type AlibabaBaichuanCtgUserRelationAPIResponse struct {
 	model.CommonResponse
 	AlibabaBaichuanCtgUserRelationAPIResponseModel

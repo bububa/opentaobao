@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderAlipayfaceSettleAPIResponse
-信用住订单结账接口 API返回值
-taobao.xhotel.order.alipayface.settle
-
-用于离店付订单在客人离店后，发起结账以及扣款等后续动作 */
+// TaobaoXhotelOrderAlipayfaceSettleAPIResponse 信用住订单结账接口 API返回值
+// taobao.xhotel.order.alipayface.settle
+//
+// 用于离店付订单在客人离店后，发起结账以及扣款等后续动作
 type TaobaoXhotelOrderAlipayfaceSettleAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelOrderAlipayfaceSettleAPIResponseModel

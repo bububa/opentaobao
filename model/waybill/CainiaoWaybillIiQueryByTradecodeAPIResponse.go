@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoWaybillIiQueryByTradecodeAPIResponse
-通过订单号查询电子面单通接口 API返回值
-cainiao.waybill.ii.query.by.tradecode
-
-通过订单号查看面单的信息 */
+// CainiaoWaybillIiQueryByTradecodeAPIResponse 通过订单号查询电子面单通接口 API返回值
+// cainiao.waybill.ii.query.by.tradecode
+//
+// 通过订单号查看面单的信息
 type CainiaoWaybillIiQueryByTradecodeAPIResponse struct {
 	model.CommonResponse
 	CainiaoWaybillIiQueryByTradecodeAPIResponseModel

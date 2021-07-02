@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKoubeiMallCommonItemDetailQueryAPIResponse
-查询商品详情信息 API返回值
-taobao.koubei.mall.common.item.detail.query
-
-查询口碑综合体内商品详情信息 */
+// TaobaoKoubeiMallCommonItemDetailQueryAPIResponse 查询商品详情信息 API返回值
+// taobao.koubei.mall.common.item.detail.query
+//
+// 查询口碑综合体内商品详情信息
 type TaobaoKoubeiMallCommonItemDetailQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoKoubeiMallCommonItemDetailQueryAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-/* TmallDeviceMemberIdentityGet
-智能硬件会员判断
-tmall.device.member.identity.get
-
-用来识别该用户是否是商家会员· */
+// TmallDeviceMemberIdentityGet 智能硬件会员判断
+// tmall.device.member.identity.get
+//
+// 用来识别该用户是否是商家会员·
 func TmallDeviceMemberIdentityGet(clt *core.SDKClient, req *iot.TmallDeviceMemberIdentityGetAPIRequest, session string) (*iot.TmallDeviceMemberIdentityGetAPIResponse, error) {
 	var resp iot.TmallDeviceMemberIdentityGetAPIResponse
 	err := clt.Post(req, &resp, session)

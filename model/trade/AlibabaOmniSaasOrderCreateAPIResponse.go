@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOmniSaasOrderCreateAPIResponse
-订单创建接口 API返回值
-alibaba.omni.saas.order.create
-
-服务商利用现有的saas系统和阿里完成交易系统的对接 */
+// AlibabaOmniSaasOrderCreateAPIResponse 订单创建接口 API返回值
+// alibaba.omni.saas.order.create
+//
+// 服务商利用现有的saas系统和阿里完成交易系统的对接
 type AlibabaOmniSaasOrderCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaOmniSaasOrderCreateAPIResponseModel

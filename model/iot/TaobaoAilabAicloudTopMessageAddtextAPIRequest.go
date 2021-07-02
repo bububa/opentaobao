@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMessageAddtextAPIRequest
-精灵代说 API请求
-taobao.ailab.aicloud.top.message.addtext
-
-精灵代说 */
+// TaobaoAilabAicloudTopMessageAddtextAPIRequest 精灵代说 API请求
+// taobao.ailab.aicloud.top.message.addtext
+//
+// 精灵代说
 type TaobaoAilabAicloudTopMessageAddtextAPIRequest struct {
 	model.Params
 	// 用户信息

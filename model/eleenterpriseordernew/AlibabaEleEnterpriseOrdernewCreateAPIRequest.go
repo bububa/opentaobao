@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseOrdernewCreateAPIRequest
-创建订单 API请求
-alibaba.ele.enterprise.ordernew.create
-
-创建订单 */
+// AlibabaEleEnterpriseOrdernewCreateAPIRequest 创建订单 API请求
+// alibaba.ele.enterprise.ordernew.create
+//
+// 创建订单
 type AlibabaEleEnterpriseOrdernewCreateAPIRequest struct {
 	model.Params
 	// 订单来源地址经度

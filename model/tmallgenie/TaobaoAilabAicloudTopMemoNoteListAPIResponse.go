@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoNoteListAPIResponse
-查询天猫精灵用户设置的所有备忘录 API返回值
-taobao.ailab.aicloud.top.memo.note.list
-
-查询天猫精灵用户设置的所有备忘录 */
+// TaobaoAilabAicloudTopMemoNoteListAPIResponse 查询天猫精灵用户设置的所有备忘录 API返回值
+// taobao.ailab.aicloud.top.memo.note.list
+//
+// 查询天猫精灵用户设置的所有备忘录
 type TaobaoAilabAicloudTopMemoNoteListAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMemoNoteListAPIResponseModel

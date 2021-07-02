@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDataItemGetAPIResponse
-获取商品 API返回值
-alibaba.data.item.get
-
-获取商品信息，作为客户端Weex鉴权的虚拟api */
+// AlibabaDataItemGetAPIResponse 获取商品 API返回值
+// alibaba.data.item.get
+//
+// 获取商品信息，作为客户端Weex鉴权的虚拟api
 type AlibabaDataItemGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaDataItemGetAPIResponseModel

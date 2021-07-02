@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjOcOutboundAPIResponse
-零售商品发货 API返回值
-alibaba.mj.oc.outbound
-
-用于接收发货的数据 */
+// AlibabaMjOcOutboundAPIResponse 零售商品发货 API返回值
+// alibaba.mj.oc.outbound
+//
+// 用于接收发货的数据
 type AlibabaMjOcOutboundAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcOutboundAPIResponseModel

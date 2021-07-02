@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBrandStartshopRptCreativeGetAPIResponse
-明星店铺创意报表数据查询 API返回值
-taobao.brand.startshop.rpt.creative.get
-
-获取明星店铺广告creative分日报表数据，只能查询近90天内的数据，包括展现量，点击量等 */
+// TaobaoBrandStartshopRptCreativeGetAPIResponse 明星店铺创意报表数据查询 API返回值
+// taobao.brand.startshop.rpt.creative.get
+//
+// 获取明星店铺广告creative分日报表数据，只能查询近90天内的数据，包括展现量，点击量等
 type TaobaoBrandStartshopRptCreativeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBrandStartshopRptCreativeGetAPIResponseModel

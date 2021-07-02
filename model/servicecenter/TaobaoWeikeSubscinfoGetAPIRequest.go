@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeikeSubscinfoGetAPIRequest
-需求订单查询接口 API请求
-taobao.weike.subscinfo.get
-
-需求订单查询接口 */
+// TaobaoWeikeSubscinfoGetAPIRequest 需求订单查询接口 API请求
+// taobao.weike.subscinfo.get
+//
+// 需求订单查询接口
 type TaobaoWeikeSubscinfoGetAPIRequest struct {
 	model.Params
 	// 商家旺旺名称

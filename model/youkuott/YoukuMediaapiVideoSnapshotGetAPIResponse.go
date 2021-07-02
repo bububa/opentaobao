@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuMediaapiVideoSnapshotGetAPIResponse
-根据视频ID查询视频缩微图 API返回值
-youku.mediaapi.video.snapshot.get
-
-根据视频ID查询视频缩微图 */
+// YoukuMediaapiVideoSnapshotGetAPIResponse 根据视频ID查询视频缩微图 API返回值
+// youku.mediaapi.video.snapshot.get
+//
+// 根据视频ID查询视频缩微图
 type YoukuMediaapiVideoSnapshotGetAPIResponse struct {
 	model.CommonResponse
 	YoukuMediaapiVideoSnapshotGetAPIResponseModel

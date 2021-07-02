@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMydataSelfProductDateGetAPIResponse
-获取客户产品相关表现数据的可用时间范围 API返回值
-alibaba.mydata.self.product.date.get
-
-获取客户产品相关表现数据的可用时间范围 */
+// AlibabaMydataSelfProductDateGetAPIResponse 获取客户产品相关表现数据的可用时间范围 API返回值
+// alibaba.mydata.self.product.date.get
+//
+// 获取客户产品相关表现数据的可用时间范围
 type AlibabaMydataSelfProductDateGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaMydataSelfProductDateGetAPIResponseModel

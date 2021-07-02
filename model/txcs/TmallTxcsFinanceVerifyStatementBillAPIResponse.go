@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTxcsFinanceVerifyStatementBillAPIResponse
-供应商核销单录入 API返回值
-tmall.txcs.finance.verify.statement.bill
-
-供应商核销单录入 */
+// TmallTxcsFinanceVerifyStatementBillAPIResponse 供应商核销单录入 API返回值
+// tmall.txcs.finance.verify.statement.bill
+//
+// 供应商核销单录入
 type TmallTxcsFinanceVerifyStatementBillAPIResponse struct {
 	model.CommonResponse
 	TmallTxcsFinanceVerifyStatementBillAPIResponseModel

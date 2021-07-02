@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmallgenieHotelwelcomeAPIRequest
-酒店欢迎词推送 API请求
-taobao.tmallgenie.hotelwelcome
-
-推送欢迎词，让天猫精灵播放 */
+// TaobaoTmallgenieHotelwelcomeAPIRequest 酒店欢迎词推送 API请求
+// taobao.tmallgenie.hotelwelcome
+//
+// 推送欢迎词，让天猫精灵播放
 type TaobaoTmallgenieHotelwelcomeAPIRequest struct {
 	model.Params
 	// 房间号

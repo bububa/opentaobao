@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest
-用户测评结果回传接口 API请求
-alibaba.alihealth.alipaypfm.assess.result.sync
-
-用户测评结果回传接口 */
+// AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest 用户测评结果回传接口 API请求
+// alibaba.alihealth.alipaypfm.assess.result.sync
+//
+// 用户测评结果回传接口
 type AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest struct {
 	model.Params
 	// userId

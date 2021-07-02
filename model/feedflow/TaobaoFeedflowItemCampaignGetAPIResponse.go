@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemCampaignGetAPIResponse
-通过计划id查询计划 API返回值
-taobao.feedflow.item.campaign.get
-
-通过计划id查询计划 */
+// TaobaoFeedflowItemCampaignGetAPIResponse 通过计划id查询计划 API返回值
+// taobao.feedflow.item.campaign.get
+//
+// 通过计划id查询计划
 type TaobaoFeedflowItemCampaignGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemCampaignGetAPIResponseModel

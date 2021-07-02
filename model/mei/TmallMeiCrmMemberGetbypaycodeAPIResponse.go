@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMeiCrmMemberGetbypaycodeAPIResponse
-支付码获取会员信息 API返回值
-tmall.mei.crm.member.getbypaycode
-
-通过支付码获取会员信息 */
+// TmallMeiCrmMemberGetbypaycodeAPIResponse 支付码获取会员信息 API返回值
+// tmall.mei.crm.member.getbypaycode
+//
+// 通过支付码获取会员信息
 type TmallMeiCrmMemberGetbypaycodeAPIResponse struct {
 	model.CommonResponse
 	TmallMeiCrmMemberGetbypaycodeAPIResponseModel

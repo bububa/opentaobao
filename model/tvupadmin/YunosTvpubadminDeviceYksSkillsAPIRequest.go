@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceYksSkillsAPIRequest
-根据设备id获取技能列表 API请求
-yunos.tvpubadmin.device.yks.skills
-
-根据设备id获取技能列表 */
+// YunosTvpubadminDeviceYksSkillsAPIRequest 根据设备id获取技能列表 API请求
+// yunos.tvpubadmin.device.yks.skills
+//
+// 根据设备id获取技能列表
 type YunosTvpubadminDeviceYksSkillsAPIRequest struct {
 	model.Params
 	// 设备id

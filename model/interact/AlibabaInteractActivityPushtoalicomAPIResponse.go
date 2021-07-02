@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractActivityPushtoalicomAPIResponse
-小铺isv推广流量活动到流量聚乐部 API返回值
-alibaba.interact.activity.pushtoalicom
-
-涉及到流量包的小铺isv，将活动推送到流量聚乐部 */
+// AlibabaInteractActivityPushtoalicomAPIResponse 小铺isv推广流量活动到流量聚乐部 API返回值
+// alibaba.interact.activity.pushtoalicom
+//
+// 涉及到流量包的小铺isv，将活动推送到流量聚乐部
 type AlibabaInteractActivityPushtoalicomAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractActivityPushtoalicomAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoScitemMapDeleteAPIResponse
-失效指定用户的商品与后端商品的映射关系 API返回值
-taobao.scitem.map.delete
-
-根据后端商品Id，失效指定用户的商品与后端商品的映射关系 */
+// TaobaoScitemMapDeleteAPIResponse 失效指定用户的商品与后端商品的映射关系 API返回值
+// taobao.scitem.map.delete
+//
+// 根据后端商品Id，失效指定用户的商品与后端商品的映射关系
 type TaobaoScitemMapDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoScitemMapDeleteAPIResponseModel

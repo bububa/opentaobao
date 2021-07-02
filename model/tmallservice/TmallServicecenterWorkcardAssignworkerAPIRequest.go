@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardAssignworkerAPIRequest
-服务商分派工人 API请求
-tmall.servicecenter.workcard.assignworker
-
-服务商调用该接口分派工人给具体的工单 */
+// TmallServicecenterWorkcardAssignworkerAPIRequest 服务商分派工人 API请求
+// tmall.servicecenter.workcard.assignworker
+//
+// 服务商调用该接口分派工人给具体的工单
 type TmallServicecenterWorkcardAssignworkerAPIRequest struct {
 	model.Params
 	// 需要指派的工人id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveStateAPIResponse
-体检机构对接_体检状态查询 API返回值
-alibaba.alihealth.examination.reserve.state
-
-体检机构对接_体检状态查询 */
+// AlibabaAlihealthExaminationReserveStateAPIResponse 体检机构对接_体检状态查询 API返回值
+// alibaba.alihealth.examination.reserve.state
+//
+// 体检机构对接_体检状态查询
 type AlibabaAlihealthExaminationReserveStateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationReserveStateAPIResponseModel

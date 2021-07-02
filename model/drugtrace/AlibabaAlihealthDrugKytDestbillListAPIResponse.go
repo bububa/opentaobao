@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytDestbillListAPIResponse
-直调单据查询 API返回值
-alibaba.alihealth.drug.kyt.destbill.list
-
-为药企提供直调单据查询功能 */
+// AlibabaAlihealthDrugKytDestbillListAPIResponse 直调单据查询 API返回值
+// alibaba.alihealth.drug.kyt.destbill.list
+//
+// 为药企提供直调单据查询功能
 type AlibabaAlihealthDrugKytDestbillListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytDestbillListAPIResponseModel

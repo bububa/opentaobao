@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripAxinTransFundQueryByOrderAPIResponse
-通过外部订单ID查询所有资金单 API返回值
-taobao.alitrip.axin.trans.fund.query.by.order
-
-阿信供销平台-通过外部订单ID查询所有资金单 */
+// TaobaoAlitripAxinTransFundQueryByOrderAPIResponse 通过外部订单ID查询所有资金单 API返回值
+// taobao.alitrip.axin.trans.fund.query.by.order
+//
+// 阿信供销平台-通过外部订单ID查询所有资金单
 type TaobaoAlitripAxinTransFundQueryByOrderAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripAxinTransFundQueryByOrderAPIResponseModel

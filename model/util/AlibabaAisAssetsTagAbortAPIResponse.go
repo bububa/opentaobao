@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAisAssetsTagAbortAPIResponse
-基础设施资产标签废弃 API返回值
-alibaba.ais.assets.tag.abort
-
-提供浪潮，英业达等厂商供应阿里巴巴基础设施资产的标签QR code未使用的废弃 */
+// AlibabaAisAssetsTagAbortAPIResponse 基础设施资产标签废弃 API返回值
+// alibaba.ais.assets.tag.abort
+//
+// 提供浪潮，英业达等厂商供应阿里巴巴基础设施资产的标签QR code未使用的废弃
 type AlibabaAisAssetsTagAbortAPIResponse struct {
 	model.CommonResponse
 	AlibabaAisAssetsTagAbortAPIResponseModel

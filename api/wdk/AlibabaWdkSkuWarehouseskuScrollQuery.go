@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-/* AlibabaWdkSkuWarehouseskuScrollQuery
-仓商品遍历接口(游标)
-alibaba.wdk.sku.warehousesku.scroll.query
-
-提供仓商品数据接口查询 */
+// AlibabaWdkSkuWarehouseskuScrollQuery 仓商品遍历接口(游标)
+// alibaba.wdk.sku.warehousesku.scroll.query
+//
+// 提供仓商品数据接口查询
 func AlibabaWdkSkuWarehouseskuScrollQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest, session string) (*wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIResponse, error) {
 	var resp wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingExpirePromotionQueryAPIResponse
-短保优惠查询 API返回值
-alibaba.wdk.marketing.expire.promotion.query
-
-短保优惠查询 */
+// AlibabaWdkMarketingExpirePromotionQueryAPIResponse 短保优惠查询 API返回值
+// alibaba.wdk.marketing.expire.promotion.query
+//
+// 短保优惠查询
 type AlibabaWdkMarketingExpirePromotionQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingExpirePromotionQueryAPIResponseModel

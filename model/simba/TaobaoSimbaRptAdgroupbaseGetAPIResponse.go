@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptAdgroupbaseGetAPIResponse
-推广组基础报表数据对象 API返回值
-taobao.simba.rpt.adgroupbase.get
-
-推广组基础报表数据对象 */
+// TaobaoSimbaRptAdgroupbaseGetAPIResponse 推广组基础报表数据对象 API返回值
+// taobao.simba.rpt.adgroupbase.get
+//
+// 推广组基础报表数据对象
 type TaobaoSimbaRptAdgroupbaseGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaRptAdgroupbaseGetAPIResponseModel

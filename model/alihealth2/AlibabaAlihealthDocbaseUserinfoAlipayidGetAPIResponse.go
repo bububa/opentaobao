@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIResponse
-根据健康ID获取支付宝ID API返回值
-alibaba.alihealth.docbase.userinfo.alipayid.get
-
-根据健康ID获取支付宝ID */
+// AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIResponse 根据健康ID获取支付宝ID API返回值
+// alibaba.alihealth.docbase.userinfo.alipayid.get
+//
+// 根据健康ID获取支付宝ID
 type AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIResponseModel

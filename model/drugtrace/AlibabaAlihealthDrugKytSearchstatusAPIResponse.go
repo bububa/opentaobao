@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytSearchstatusAPIResponse
-单据处理状态查询 API返回值
-alibaba.alihealth.drug.kyt.searchstatus
-
-单据处理状态查询 */
+// AlibabaAlihealthDrugKytSearchstatusAPIResponse 单据处理状态查询 API返回值
+// alibaba.alihealth.drug.kyt.searchstatus
+//
+// 单据处理状态查询
 type AlibabaAlihealthDrugKytSearchstatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytSearchstatusAPIResponseModel

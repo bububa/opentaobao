@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripInvoiceGetAPIResponse
-获取用户可用发票列表 API返回值
-alitrip.btrip.invoice.get
-
-差旅申请用户获取可用发票列表 */
+// AlitripBtripInvoiceGetAPIResponse 获取用户可用发票列表 API返回值
+// alitrip.btrip.invoice.get
+//
+// 差旅申请用户获取可用发票列表
 type AlitripBtripInvoiceGetAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripInvoiceGetAPIResponseModel

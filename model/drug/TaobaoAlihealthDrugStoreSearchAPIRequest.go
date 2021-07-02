@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlihealthDrugStoreSearchAPIRequest
-药品店内搜索 API请求
-taobao.alihealth.drug.store.search
-
-提供给千牛智能客服，在阿里健康O2O店铺内搜索药品 */
+// TaobaoAlihealthDrugStoreSearchAPIRequest 药品店内搜索 API请求
+// taobao.alihealth.drug.store.search
+//
+// 提供给千牛智能客服，在阿里健康O2O店铺内搜索药品
 type TaobaoAlihealthDrugStoreSearchAPIRequest struct {
 	model.Params
 	// 搜索关键字

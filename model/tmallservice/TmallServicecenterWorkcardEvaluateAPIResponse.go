@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardEvaluateAPIResponse
-服务商反馈鉴定结果 API返回值
-tmall.servicecenter.workcard.evaluate
-
-服务商反馈鉴定结果 */
+// TmallServicecenterWorkcardEvaluateAPIResponse 服务商反馈鉴定结果 API返回值
+// tmall.servicecenter.workcard.evaluate
+//
+// 服务商反馈鉴定结果
 type TmallServicecenterWorkcardEvaluateAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardEvaluateAPIResponseModel

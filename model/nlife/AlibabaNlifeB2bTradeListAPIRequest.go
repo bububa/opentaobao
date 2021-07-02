@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2bTradeListAPIRequest
-获取企业下的采购单列表 API请求
-alibaba.nlife.b2b.trade.list
-
-获取指定门店下的采购单列表 */
+// AlibabaNlifeB2bTradeListAPIRequest 获取企业下的采购单列表 API请求
+// alibaba.nlife.b2b.trade.list
+//
+// 获取指定门店下的采购单列表
 type AlibabaNlifeB2bTradeListAPIRequest struct {
 	model.Params
 	// 采购单生效时间开始范围

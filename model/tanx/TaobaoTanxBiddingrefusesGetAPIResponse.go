@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxBiddingrefusesGetAPIResponse
-tanx竞价失败反馈api API返回值
-taobao.tanx.biddingrefuses.get
-
-竞价失败反馈根据创意id查询API提供 */
+// TaobaoTanxBiddingrefusesGetAPIResponse tanx竞价失败反馈api API返回值
+// taobao.tanx.biddingrefuses.get
+//
+// 竞价失败反馈根据创意id查询API提供
 type TaobaoTanxBiddingrefusesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxBiddingrefusesGetAPIResponseModel

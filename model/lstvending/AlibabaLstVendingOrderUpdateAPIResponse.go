@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstVendingOrderUpdateAPIResponse
-自动售货机订单物流信息回传 API返回值
-alibaba.lst.vending.order.update
-
-零售通与设备供应商进行订单对接，通过此接口回流订单物流信息。 */
+// AlibabaLstVendingOrderUpdateAPIResponse 自动售货机订单物流信息回传 API返回值
+// alibaba.lst.vending.order.update
+//
+// 零售通与设备供应商进行订单对接，通过此接口回流订单物流信息。
 type AlibabaLstVendingOrderUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstVendingOrderUpdateAPIResponseModel

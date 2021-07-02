@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeRefusereasonGetAPIRequest
-获取拒绝换货原因列表 API请求
-tmall.exchange.refusereason.get
-
-获取拒绝换货原因列表 */
+// TmallExchangeRefusereasonGetAPIRequest 获取拒绝换货原因列表 API请求
+// tmall.exchange.refusereason.get
+//
+// 获取拒绝换货原因列表
 type TmallExchangeRefusereasonGetAPIRequest struct {
 	model.Params
 	// 换货单号ID

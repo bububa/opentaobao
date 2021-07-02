@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdReportQueryKeywordEffectAPIResponse
-关键词报告 API返回值
-alibaba.scbp.ad.report.query.keyword.effect
-
-关键词报告 */
+// AlibabaScbpAdReportQueryKeywordEffectAPIResponse 关键词报告 API返回值
+// alibaba.scbp.ad.report.query.keyword.effect
+//
+// 关键词报告
 type AlibabaScbpAdReportQueryKeywordEffectAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdReportQueryKeywordEffectAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixOrderDirectrefundAPIResponse
-大麦-直接退票 API返回值
-alibaba.damai.maitix.order.directrefund
-
-大麦-退票 */
+// AlibabaDamaiMaitixOrderDirectrefundAPIResponse 大麦-直接退票 API返回值
+// alibaba.damai.maitix.order.directrefund
+//
+// 大麦-退票
 type AlibabaDamaiMaitixOrderDirectrefundAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixOrderDirectrefundAPIResponseModel

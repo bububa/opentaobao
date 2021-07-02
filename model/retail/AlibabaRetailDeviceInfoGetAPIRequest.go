@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDeviceInfoGetAPIRequest
-贩卖机设备信息获取 API请求
-alibaba.retail.device.info.get
-
-贩卖机设备信息获取 */
+// AlibabaRetailDeviceInfoGetAPIRequest 贩卖机设备信息获取 API请求
+// alibaba.retail.device.info.get
+//
+// 贩卖机设备信息获取
 type AlibabaRetailDeviceInfoGetAPIRequest struct {
 	model.Params
 	// 外部设备ID

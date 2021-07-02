@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingAuthmachineapiAPIRequest
-机翻Api授权 API请求
-alibaba.seaking.authmachineapi
-
-机翻Api授权 */
+// AlibabaSeakingAuthmachineapiAPIRequest 机翻Api授权 API请求
+// alibaba.seaking.authmachineapi
+//
+// 机翻Api授权
 type AlibabaSeakingAuthmachineapiAPIRequest struct {
 	model.Params
 	// erp名称

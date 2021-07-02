@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialDiscategoryGetAPIResponse
-展示类目获取接口 API返回值
-aliexpress.social.discategory.get
-
-AE展示类目获取接口 */
+// AliexpressSocialDiscategoryGetAPIResponse 展示类目获取接口 API返回值
+// aliexpress.social.discategory.get
+//
+// AE展示类目获取接口
 type AliexpressSocialDiscategoryGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressSocialDiscategoryGetAPIResponseModel

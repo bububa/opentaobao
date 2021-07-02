@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/seaking"
 )
 
-/* AlibabaSeakingTranslate
-MT定制接口
-alibaba.seaking.translate
-
-MT定制接口 */
+// AlibabaSeakingTranslate MT定制接口
+// alibaba.seaking.translate
+//
+// MT定制接口
 func AlibabaSeakingTranslate(clt *core.SDKClient, req *seaking.AlibabaSeakingTranslateAPIRequest, session string) (*seaking.AlibabaSeakingTranslateAPIResponse, error) {
 	var resp seaking.AlibabaSeakingTranslateAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsergrowthDeliveryAskAPIResponse
-广告投放询问 API返回值
-taobao.usergrowth.delivery.ask
-
-提供给媒体在曝光广告前调用， 返回是否曝光以及曝光的物料信息 */
+// TaobaoUsergrowthDeliveryAskAPIResponse 广告投放询问 API返回值
+// taobao.usergrowth.delivery.ask
+//
+// 提供给媒体在曝光广告前调用， 返回是否曝光以及曝光的物料信息
 type TaobaoUsergrowthDeliveryAskAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsergrowthDeliveryAskAPIResponseModel

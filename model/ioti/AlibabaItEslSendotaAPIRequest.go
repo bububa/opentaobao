@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItEslSendotaAPIRequest
-电子价签ota接口 API请求
-alibaba.it.esl.sendota
-
-厂测接口，电子价签ota接口 */
+// AlibabaItEslSendotaAPIRequest 电子价签ota接口 API请求
+// alibaba.it.esl.sendota
+//
+// 厂测接口，电子价签ota接口
 type AlibabaItEslSendotaAPIRequest struct {
 	model.Params
 	// mac

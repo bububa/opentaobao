@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateLinkGenerateAPIRequest
-联盟推广链接生成 API请求
-aliexpress.affiliate.link.generate
-
-AE联盟推广链接生成接口 */
+// AliexpressAffiliateLinkGenerateAPIRequest 联盟推广链接生成 API请求
+// aliexpress.affiliate.link.generate
+//
+// AE联盟推广链接生成接口
 type AliexpressAffiliateLinkGenerateAPIRequest struct {
 	model.Params
 	// API请求签名

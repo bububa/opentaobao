@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelSearchCitysuggestGetAPIResponse
-城市Suggest接口 API返回值
-alitrip.hotel.search.citysuggest.get
-
-城市Suggest接口 */
+// AlitripHotelSearchCitysuggestGetAPIResponse 城市Suggest接口 API返回值
+// alitrip.hotel.search.citysuggest.get
+//
+// 城市Suggest接口
 type AlitripHotelSearchCitysuggestGetAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelSearchCitysuggestGetAPIResponseModel

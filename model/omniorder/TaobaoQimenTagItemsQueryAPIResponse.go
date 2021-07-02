@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenTagItemsQueryAPIResponse
-打标结果查询-标维度 API返回值
-taobao.qimen.tag.items.query
-
-调用该接口，查询打了某个标的商品列表。说明：该接口调用后，返回值的时间较长，建议不要经常调用。 */
+// TaobaoQimenTagItemsQueryAPIResponse 打标结果查询-标维度 API返回值
+// taobao.qimen.tag.items.query
+//
+// 调用该接口，查询打了某个标的商品列表。说明：该接口调用后，返回值的时间较长，建议不要经常调用。
 type TaobaoQimenTagItemsQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenTagItemsQueryAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-/* YunosTvpubadminManageTopicAdd
-新增专题
-yunos.tvpubadmin.manage.topic.add
-
-专题新增 */
+// YunosTvpubadminManageTopicAdd 新增专题
+// yunos.tvpubadmin.manage.topic.add
+//
+// 专题新增
 func YunosTvpubadminManageTopicAdd(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageTopicAddAPIRequest, session string) (*tvupadmin.YunosTvpubadminManageTopicAddAPIResponse, error) {
 	var resp tvupadmin.YunosTvpubadminManageTopicAddAPIResponse
 	err := clt.Post(req, &resp, session)

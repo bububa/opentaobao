@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradeConfirmfeeGetAPIResponse
-获取交易确认收货费用 API返回值
-taobao.trade.confirmfee.get
-
-获取交易确认收货费用，可以获取主订单或子订单的确认收货费用 */
+// TaobaoTradeConfirmfeeGetAPIResponse 获取交易确认收货费用 API返回值
+// taobao.trade.confirmfee.get
+//
+// 获取交易确认收货费用，可以获取主订单或子订单的确认收货费用
 type TaobaoTradeConfirmfeeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTradeConfirmfeeGetAPIResponseModel

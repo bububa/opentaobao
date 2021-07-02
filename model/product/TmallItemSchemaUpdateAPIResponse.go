@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemSchemaUpdateAPIResponse
-天猫根据规则编辑商品 API返回值
-tmall.item.schema.update
-
-天猫根据规则编辑商品 */
+// TmallItemSchemaUpdateAPIResponse 天猫根据规则编辑商品 API返回值
+// tmall.item.schema.update
+//
+// 天猫根据规则编辑商品
 type TmallItemSchemaUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallItemSchemaUpdateAPIResponseModel

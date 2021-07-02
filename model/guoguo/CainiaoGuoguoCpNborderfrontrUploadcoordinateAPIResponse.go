@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIResponse
-上传小件员GPS位置信息 API返回值
-cainiao.guoguo.cp.nborderfrontr.uploadcoordinate
-
-上传小件员GPS位置信息 */
+// CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIResponse 上传小件员GPS位置信息 API返回值
+// cainiao.guoguo.cp.nborderfrontr.uploadcoordinate
+//
+// 上传小件员GPS位置信息
 type CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIResponse struct {
 	model.CommonResponse
 	CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIResponseModel

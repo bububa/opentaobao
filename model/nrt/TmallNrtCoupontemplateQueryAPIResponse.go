@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtCoupontemplateQueryAPIResponse
-券模板查询 API返回值
-tmall.nrt.coupontemplate.query
-
-新零售场景，商家拉取在新零售工作台设置的券数据 */
+// TmallNrtCoupontemplateQueryAPIResponse 券模板查询 API返回值
+// tmall.nrt.coupontemplate.query
+//
+// 新零售场景，商家拉取在新零售工作台设置的券数据
 type TmallNrtCoupontemplateQueryAPIResponse struct {
 	model.CommonResponse
 	TmallNrtCoupontemplateQueryAPIResponseModel

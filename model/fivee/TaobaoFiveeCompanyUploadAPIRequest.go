@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFiveeCompanyUploadAPIRequest
-上传商信息接口 API请求
-taobao.fivee.company.upload
-
-资质共享平台上传资质证照 */
+// TaobaoFiveeCompanyUploadAPIRequest 上传商信息接口 API请求
+// taobao.fivee.company.upload
+//
+// 资质共享平台上传资质证照
 type TaobaoFiveeCompanyUploadAPIRequest struct {
 	model.Params
 	// bu身份标识

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterServicemonitormessageSearchAPIRequest
-根据时间段查询服务商的服务预警消息列表(15分钟内) API请求
-tmall.servicecenter.servicemonitormessage.search
-
-根据时间段查询服务商的服务预警消息列表(15分钟内) */
+// TmallServicecenterServicemonitormessageSearchAPIRequest 根据时间段查询服务商的服务预警消息列表(15分钟内) API请求
+// tmall.servicecenter.servicemonitormessage.search
+//
+// 根据时间段查询服务商的服务预警消息列表(15分钟内)
 type TmallServicecenterServicemonitormessageSearchAPIRequest struct {
 	model.Params
 	// 开始时间long值

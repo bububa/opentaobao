@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponse
-接收发生变化的抖音帐号 API返回值
-alibaba.pictures.dengta.ims.douyin.account.changed
-
-接收发生变化的抖音帐号 */
+// AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponse 接收发生变化的抖音帐号 API返回值
+// alibaba.pictures.dengta.ims.douyin.account.changed
+//
+// 接收发生变化的抖音帐号
 type AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponse struct {
 	model.CommonResponse
 	AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponseModel

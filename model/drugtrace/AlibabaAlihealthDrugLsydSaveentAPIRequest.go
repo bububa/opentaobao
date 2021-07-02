@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugLsydSaveentAPIRequest
-零售药店往来单位新增 API请求
-alibaba.alihealth.drug.lsyd.saveent
-
-新增往来单位企业记录 */
+// AlibabaAlihealthDrugLsydSaveentAPIRequest 零售药店往来单位新增 API请求
+// alibaba.alihealth.drug.lsyd.saveent
+//
+// 新增往来单位企业记录
 type AlibabaAlihealthDrugLsydSaveentAPIRequest struct {
 	model.Params
 	// 添加企业唯一标识

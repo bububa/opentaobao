@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCharityCharitytimeQueryAPIRequest
-查询公益3小时公益时汇总 API请求
-alibaba.charity.charitytime.query
-
-查询公益3小时公益时汇总 */
+// AlibabaCharityCharitytimeQueryAPIRequest 查询公益3小时公益时汇总 API请求
+// alibaba.charity.charitytime.query
+//
+// 查询公益3小时公益时汇总
 type AlibabaCharityCharitytimeQueryAPIRequest struct {
 	model.Params
 	// 公益类型

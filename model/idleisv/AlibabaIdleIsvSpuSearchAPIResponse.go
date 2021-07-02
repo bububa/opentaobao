@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleIsvSpuSearchAPIResponse
-spu搜索接口 API返回值
-alibaba.idle.isv.spu.search
-
-搜索的品牌和型号，供服务商进行选择 */
+// AlibabaIdleIsvSpuSearchAPIResponse spu搜索接口 API返回值
+// alibaba.idle.isv.spu.search
+//
+// 搜索的品牌和型号，供服务商进行选择
 type AlibabaIdleIsvSpuSearchAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleIsvSpuSearchAPIResponseModel

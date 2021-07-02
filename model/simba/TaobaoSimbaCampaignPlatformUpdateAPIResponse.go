@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignPlatformUpdateAPIResponse
-更新一个推广计划的平台设置 API返回值
-taobao.simba.campaign.platform.update
-
-更新一个推广计划的平台设置 */
+// TaobaoSimbaCampaignPlatformUpdateAPIResponse 更新一个推广计划的平台设置 API返回值
+// taobao.simba.campaign.platform.update
+//
+// 更新一个推广计划的平台设置
 type TaobaoSimbaCampaignPlatformUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCampaignPlatformUpdateAPIResponseModel

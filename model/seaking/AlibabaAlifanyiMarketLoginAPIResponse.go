@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlifanyiMarketLoginAPIResponse
-登陆用户 API返回值
-alibaba.alifanyi.market.login
-
-企业或组织购买软件服务后可登陆阿里翻译众包系统，接口返回该企业的用户。 */
+// AlibabaAlifanyiMarketLoginAPIResponse 登陆用户 API返回值
+// alibaba.alifanyi.market.login
+//
+// 企业或组织购买软件服务后可登陆阿里翻译众包系统，接口返回该企业的用户。
 type AlibabaAlifanyiMarketLoginAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlifanyiMarketLoginAPIResponseModel

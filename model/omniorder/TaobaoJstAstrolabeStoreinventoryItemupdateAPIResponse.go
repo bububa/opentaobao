@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstAstrolabeStoreinventoryItemupdateAPIResponse
-库存增量更新接口 API返回值
-taobao.jst.astrolabe.storeinventory.itemupdate
-
-ERP调用该接口，增量更新门店或电商仓库存，该接口一次可以同时增量更新多个门店的多个商品的非确定性库存。 */
+// TaobaoJstAstrolabeStoreinventoryItemupdateAPIResponse 库存增量更新接口 API返回值
+// taobao.jst.astrolabe.storeinventory.itemupdate
+//
+// ERP调用该接口，增量更新门店或电商仓库存，该接口一次可以同时增量更新多个门店的多个商品的非确定性库存。
 type TaobaoJstAstrolabeStoreinventoryItemupdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstAstrolabeStoreinventoryItemupdateAPIResponseModel

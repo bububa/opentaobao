@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaodianServerSdkConfigGetAPIResponse
-获取宝点SDK的配置项（已迁移） API返回值
-taobao.baodian.server.sdk.config.get
-
-获取SDK各种配置项（已迁移） */
+// TaobaoBaodianServerSdkConfigGetAPIResponse 获取宝点SDK的配置项（已迁移） API返回值
+// taobao.baodian.server.sdk.config.get
+//
+// 获取SDK各种配置项（已迁移）
 type TaobaoBaodianServerSdkConfigGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaodianServerSdkConfigGetAPIResponseModel

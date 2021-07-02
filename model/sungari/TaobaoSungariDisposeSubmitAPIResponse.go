@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSungariDisposeSubmitAPIResponse
-商品商家处置提交任务 API返回值
-taobao.sungari.dispose.submit
-
-商品商家处置信息接口，提供政府部门发送处置信息给阿里 */
+// TaobaoSungariDisposeSubmitAPIResponse 商品商家处置提交任务 API返回值
+// taobao.sungari.dispose.submit
+//
+// 商品商家处置信息接口，提供政府部门发送处置信息给阿里
 type TaobaoSungariDisposeSubmitAPIResponse struct {
 	model.CommonResponse
 	TaobaoSungariDisposeSubmitAPIResponseModel

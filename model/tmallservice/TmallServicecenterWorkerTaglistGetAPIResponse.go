@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkerTaglistGetAPIResponse
-获取工人标签 API返回值
-tmall.servicecenter.worker.taglist.get
-
-服务商获取对应工人的标签 */
+// TmallServicecenterWorkerTaglistGetAPIResponse 获取工人标签 API返回值
+// tmall.servicecenter.worker.taglist.get
+//
+// 服务商获取对应工人的标签
 type TmallServicecenterWorkerTaglistGetAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkerTaglistGetAPIResponseModel

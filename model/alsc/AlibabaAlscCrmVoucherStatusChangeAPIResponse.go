@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmVoucherStatusChangeAPIResponse
-优惠券状态更改 API返回值
-alibaba.alsc.crm.voucher.status.change
-
-核销优惠券 */
+// AlibabaAlscCrmVoucherStatusChangeAPIResponse 优惠券状态更改 API返回值
+// alibaba.alsc.crm.voucher.status.change
+//
+// 核销优惠券
 type AlibabaAlscCrmVoucherStatusChangeAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmVoucherStatusChangeAPIResponseModel

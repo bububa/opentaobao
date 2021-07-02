@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTvpayAccessDataGetAPIResponse
-tv支付 API返回值
-taobao.tvpay.access.data.get
-
-在匿名用户支付后尝试为其登陆绑定的淘宝账号 */
+// TaobaoTvpayAccessDataGetAPIResponse tv支付 API返回值
+// taobao.tvpay.access.data.get
+//
+// 在匿名用户支付后尝试为其登陆绑定的淘宝账号
 type TaobaoTvpayAccessDataGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTvpayAccessDataGetAPIResponseModel

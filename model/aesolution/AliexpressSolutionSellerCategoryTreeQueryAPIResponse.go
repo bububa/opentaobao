@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionSellerCategoryTreeQueryAPIResponse
-aliexpress.solution.seller.category.tree.query API返回值
-aliexpress.solution.seller.category.tree.query
-
-API for seller to query the category tree. Support only displaying the categories which seller have permissions to publish products. */
+// AliexpressSolutionSellerCategoryTreeQueryAPIResponse aliexpress.solution.seller.category.tree.query API返回值
+// aliexpress.solution.seller.category.tree.query
+//
+// API for seller to query the category tree. Support only displaying the categories which seller have permissions to publish products.
 type AliexpressSolutionSellerCategoryTreeQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionSellerCategoryTreeQueryAPIResponseModel

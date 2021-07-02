@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkSkuCombineskuUpdateAPIResponse
-组合商品更新接口 API返回值
-alibaba.wdk.sku.combinesku.update
-
-组合商品修改接口 */
+// AlibabaWdkSkuCombineskuUpdateAPIResponse 组合商品更新接口 API返回值
+// alibaba.wdk.sku.combinesku.update
+//
+// 组合商品修改接口
 type AlibabaWdkSkuCombineskuUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkSkuCombineskuUpdateAPIResponseModel

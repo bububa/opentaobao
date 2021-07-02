@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoChainstoreContractChangeAPIResponse
-门店改签合同接口 API返回值
-alibaba.ele.fengniao.chainstore.contract.change
-
-通过调用接口，门店改签物流服务包 */
+// AlibabaEleFengniaoChainstoreContractChangeAPIResponse 门店改签合同接口 API返回值
+// alibaba.ele.fengniao.chainstore.contract.change
+//
+// 通过调用接口，门店改签物流服务包
 type AlibabaEleFengniaoChainstoreContractChangeAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoChainstoreContractChangeAPIResponseModel

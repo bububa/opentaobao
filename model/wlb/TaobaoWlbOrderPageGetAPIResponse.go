@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbOrderPageGetAPIResponse
-分页查询物流宝订单 API返回值
-taobao.wlb.order.page.get
-
-分页查询物流宝订单 */
+// TaobaoWlbOrderPageGetAPIResponse 分页查询物流宝订单 API返回值
+// taobao.wlb.order.page.get
+//
+// 分页查询物流宝订单
 type TaobaoWlbOrderPageGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbOrderPageGetAPIResponseModel

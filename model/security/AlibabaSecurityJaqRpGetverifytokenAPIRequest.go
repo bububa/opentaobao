@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpGetverifytokenAPIRequest
-聚安全实人认证获取认证会话token API请求
-alibaba.security.jaq.rp.getverifytoken
-
-聚安全实人认证获取认证会话token */
+// AlibabaSecurityJaqRpGetverifytokenAPIRequest 聚安全实人认证获取认证会话token API请求
+// alibaba.security.jaq.rp.getverifytoken
+//
+// 聚安全实人认证获取认证会话token
 type AlibabaSecurityJaqRpGetverifytokenAPIRequest struct {
 	model.Params
 	// 账号，强烈建议填写，区别用户的唯一标识

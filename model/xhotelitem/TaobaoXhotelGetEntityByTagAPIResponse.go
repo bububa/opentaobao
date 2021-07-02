@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelGetEntityByTagAPIResponse
-根据标签查询实体 API返回值
-taobao.xhotel.get.entity.by.tag
-
-根据标签查询实体 */
+// TaobaoXhotelGetEntityByTagAPIResponse 根据标签查询实体 API返回值
+// taobao.xhotel.get.entity.by.tag
+//
+// 根据标签查询实体
 type TaobaoXhotelGetEntityByTagAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelGetEntityByTagAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmJobStatusUpdateAPIRequest
-更新工单状态 API请求
-alibaba.westcrm.job.status.update
-
-更新工单处理状态 */
+// AlibabaWestcrmJobStatusUpdateAPIRequest 更新工单状态 API请求
+// alibaba.westcrm.job.status.update
+//
+// 更新工单处理状态
 type AlibabaWestcrmJobStatusUpdateAPIRequest struct {
 	model.Params
 	// 状态

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpCloudSubmitAPIResponse
-实人认证云服务提交接口 API返回值
-alibaba.security.jaq.rp.cloud.submit
-
-聚安全实人认证提交认证接口 */
+// AlibabaSecurityJaqRpCloudSubmitAPIResponse 实人认证云服务提交接口 API返回值
+// alibaba.security.jaq.rp.cloud.submit
+//
+// 聚安全实人认证提交认证接口
 type AlibabaSecurityJaqRpCloudSubmitAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqRpCloudSubmitAPIResponseModel

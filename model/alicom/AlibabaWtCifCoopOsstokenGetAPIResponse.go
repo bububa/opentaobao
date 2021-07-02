@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWtCifCoopOsstokenGetAPIResponse
-获取oss签名接口 API返回值
-alibaba.wt.cif.coop.osstoken.get
-
-商家合作上传oss图片获取token接口 */
+// AlibabaWtCifCoopOsstokenGetAPIResponse 获取oss签名接口 API返回值
+// alibaba.wt.cif.coop.osstoken.get
+//
+// 商家合作上传oss图片获取token接口
 type AlibabaWtCifCoopOsstokenGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWtCifCoopOsstokenGetAPIResponseModel

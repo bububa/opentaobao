@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupsbycampaignidGetAPIRequest
-批量得到推广计划下的推广单元 API请求
-taobao.simba.adgroupsbycampaignid.get
-
-根据推广计划ID分页获取推广计划下的推广单元信息 */
+// TaobaoSimbaAdgroupsbycampaignidGetAPIRequest 批量得到推广计划下的推广单元 API请求
+// taobao.simba.adgroupsbycampaignid.get
+//
+// 根据推广计划ID分页获取推广计划下的推广单元信息
 type TaobaoSimbaAdgroupsbycampaignidGetAPIRequest struct {
 	model.Params
 	// 主人昵称

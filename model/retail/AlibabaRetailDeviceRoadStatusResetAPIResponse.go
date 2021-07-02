@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDeviceRoadStatusResetAPIResponse
-贩卖机货道解锁 API返回值
-alibaba.retail.device.road.status.reset
-
-贩卖机货道解锁 */
+// AlibabaRetailDeviceRoadStatusResetAPIResponse 贩卖机货道解锁 API返回值
+// alibaba.retail.device.road.status.reset
+//
+// 贩卖机货道解锁
 type AlibabaRetailDeviceRoadStatusResetAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailDeviceRoadStatusResetAPIResponseModel

@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallTradeBatchGetAPIRequest
-批量获取openmall订单 API请求
-taobao.openmall.trade.batch.get
-
-批量获取openmall订单
-注意：该接口数据存在延迟，实时数据请通过taobao.openmall.trade.get获取 */
+// TaobaoOpenmallTradeBatchGetAPIRequest 批量获取openmall订单 API请求
+// taobao.openmall.trade.batch.get
+//
+// 批量获取openmall订单
+// 注意：该接口数据存在延迟，实时数据请通过taobao.openmall.trade.get获取
 type TaobaoOpenmallTradeBatchGetAPIRequest struct {
 	model.Params
 	// 查询范围结束时间，闭区间

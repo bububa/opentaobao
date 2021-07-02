@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-/* AlibabaWdkCouponSkuRemove
-优惠券商品删除
-alibaba.wdk.coupon.sku.remove
-
-优惠券商品删除 */
+// AlibabaWdkCouponSkuRemove 优惠券商品删除
+// alibaba.wdk.coupon.sku.remove
+//
+// 优惠券商品删除
 func AlibabaWdkCouponSkuRemove(clt *core.SDKClient, req *promotion.AlibabaWdkCouponSkuRemoveAPIRequest, session string) (*promotion.AlibabaWdkCouponSkuRemoveAPIResponse, error) {
 	var resp promotion.AlibabaWdkCouponSkuRemoveAPIResponse
 	err := clt.Post(req, &resp, session)

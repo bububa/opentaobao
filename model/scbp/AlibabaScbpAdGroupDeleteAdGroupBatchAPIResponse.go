@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdGroupDeleteAdGroupBatchAPIResponse
-删除推广单元 API返回值
-alibaba.scbp.ad.group.delete.ad.group.batch
-
-删除推广单元 */
+// AlibabaScbpAdGroupDeleteAdGroupBatchAPIResponse 删除推广单元 API返回值
+// alibaba.scbp.ad.group.delete.ad.group.batch
+//
+// 删除推广单元
 type AlibabaScbpAdGroupDeleteAdGroupBatchAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdGroupDeleteAdGroupBatchAPIResponseModel

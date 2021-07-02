@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaKoubeishopsPropertyGetAPIResponse
-口碑店铺列表推荐 API返回值
-alibaba.koubeishops.property.get
-
-推荐用户附近的美食门店 */
+// AlibabaKoubeishopsPropertyGetAPIResponse 口碑店铺列表推荐 API返回值
+// alibaba.koubeishops.property.get
+//
+// 推荐用户附近的美食门店
 type AlibabaKoubeishopsPropertyGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaKoubeishopsPropertyGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmMemberMessageHandleAPIResponse
-处理Usc会员消息接口 API返回值
-alibaba.westcrm.member.message.handle
-
-处理Usc会员消息接口 */
+// AlibabaWestcrmMemberMessageHandleAPIResponse 处理Usc会员消息接口 API返回值
+// alibaba.westcrm.member.message.handle
+//
+// 处理Usc会员消息接口
 type AlibabaWestcrmMemberMessageHandleAPIResponse struct {
 	model.CommonResponse
 	AlibabaWestcrmMemberMessageHandleAPIResponseModel

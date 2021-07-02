@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelDetailInfoGetAPIResponse
-详情页动态信息接口 API返回值
-alitrip.hotel.detail.info.get
-
-酒店详情页动态信息TOP方法 */
+// AlitripHotelDetailInfoGetAPIResponse 详情页动态信息接口 API返回值
+// alitrip.hotel.detail.info.get
+//
+// 酒店详情页动态信息TOP方法
 type AlitripHotelDetailInfoGetAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelDetailInfoGetAPIResponseModel

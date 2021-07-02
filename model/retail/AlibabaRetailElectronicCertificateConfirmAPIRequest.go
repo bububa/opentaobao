@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailElectronicCertificateConfirmAPIRequest
-确认核销接口 API请求
-alibaba.retail.electronic.certificate.confirm
-
-确认核销接口 */
+// AlibabaRetailElectronicCertificateConfirmAPIRequest 确认核销接口 API请求
+// alibaba.retail.electronic.certificate.confirm
+//
+// 确认核销接口
 type AlibabaRetailElectronicCertificateConfirmAPIRequest struct {
 	model.Params
 	// 核销码

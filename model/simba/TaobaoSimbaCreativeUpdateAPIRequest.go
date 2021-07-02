@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCreativeUpdateAPIRequest
-修改创意与 API请求
-taobao.simba.creative.update
-
-更新一个创意的信息，可以设置创意标题、创意图片 */
+// TaobaoSimbaCreativeUpdateAPIRequest 修改创意与 API请求
+// taobao.simba.creative.update
+//
+// 更新一个创意的信息，可以设置创意标题、创意图片
 type TaobaoSimbaCreativeUpdateAPIRequest struct {
 	model.Params
 	// 推广组Id

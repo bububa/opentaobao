@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTagListAPIResponse
-查询所有分组 API返回值
-alibaba.scbp.tag.list
-
-查询所有分组 */
+// AlibabaScbpTagListAPIResponse 查询所有分组 API返回值
+// alibaba.scbp.tag.list
+//
+// 查询所有分组
 type AlibabaScbpTagListAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpTagListAPIResponseModel

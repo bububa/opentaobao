@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixOrderQueryAPIResponse
-大麦-查询分销单 API返回值
-alibaba.damai.maitix.order.query
-
-查询分销单 */
+// AlibabaDamaiMaitixOrderQueryAPIResponse 大麦-查询分销单 API返回值
+// alibaba.damai.maitix.order.query
+//
+// 查询分销单
 type AlibabaDamaiMaitixOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixOrderQueryAPIResponseModel

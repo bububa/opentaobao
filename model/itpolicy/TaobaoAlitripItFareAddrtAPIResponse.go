@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripItFareAddrtAPIResponse
-【国际机票自有政策】单条往返添加 API返回值
-taobao.alitrip.it.fare.addrt
-
-自有政策往返添加接口 */
+// TaobaoAlitripItFareAddrtAPIResponse 【国际机票自有政策】单条往返添加 API返回值
+// taobao.alitrip.it.fare.addrt
+//
+// 自有政策往返添加接口
 type TaobaoAlitripItFareAddrtAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripItFareAddrtAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItempoolAddcategoryAPIResponse
-增加商品池里面的类目 API返回值
-alibaba.wdk.marketing.itempool.addcategory
-
-增加商品池里面的类目 */
+// AlibabaWdkMarketingItempoolAddcategoryAPIResponse 增加商品池里面的类目 API返回值
+// alibaba.wdk.marketing.itempool.addcategory
+//
+// 增加商品池里面的类目
 type AlibabaWdkMarketingItempoolAddcategoryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingItempoolAddcategoryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcMessagesConfirmAPIRequest
-确认消费消息的状态 API请求
-taobao.tmc.messages.confirm
-
-确认消费消息的状态 */
+// TaobaoTmcMessagesConfirmAPIRequest 确认消费消息的状态 API请求
+// taobao.tmc.messages.confirm
+//
+// 确认消费消息的状态
 type TaobaoTmcMessagesConfirmAPIRequest struct {
 	model.Params
 	// 分组名称，不传代表默认分组

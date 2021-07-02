@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveReportNofifyAPIRequest
-服务商主动通知体检报告 API请求
-alibaba.alihealth.examination.reserve.report.nofify
-
-服务商主动回传用户的体检报告数据 */
+// AlibabaAlihealthExaminationReserveReportNofifyAPIRequest 服务商主动通知体检报告 API请求
+// alibaba.alihealth.examination.reserve.report.nofify
+//
+// 服务商主动回传用户的体检报告数据
 type AlibabaAlihealthExaminationReserveReportNofifyAPIRequest struct {
 	model.Params
 	// 服务商预约凭证

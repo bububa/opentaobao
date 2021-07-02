@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusRefundfeeGetAPIResponse
-查询退票费用明细 API返回值
-taobao.bus.refundfee.get
-
-查询退票的费用信息 */
+// TaobaoBusRefundfeeGetAPIResponse 查询退票费用明细 API返回值
+// taobao.bus.refundfee.get
+//
+// 查询退票的费用信息
 type TaobaoBusRefundfeeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusRefundfeeGetAPIResponseModel

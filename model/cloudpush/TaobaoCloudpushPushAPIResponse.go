@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCloudpushPushAPIResponse
-百川用户使用云推送高级推送接口 API返回值
-taobao.cloudpush.push
-
-百川用户使用云推送高级推送接口 */
+// TaobaoCloudpushPushAPIResponse 百川用户使用云推送高级推送接口 API返回值
+// taobao.cloudpush.push
+//
+// 百川用户使用云推送高级推送接口
 type TaobaoCloudpushPushAPIResponse struct {
 	model.CommonResponse
 	TaobaoCloudpushPushAPIResponseModel

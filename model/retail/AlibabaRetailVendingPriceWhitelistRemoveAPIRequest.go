@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailVendingPriceWhitelistRemoveAPIRequest
-价格管控白名单去除 API请求
-alibaba.retail.vending.price.whitelist.remove
-
-商家价格管控白名单去除 */
+// AlibabaRetailVendingPriceWhitelistRemoveAPIRequest 价格管控白名单去除 API请求
+// alibaba.retail.vending.price.whitelist.remove
+//
+// 商家价格管控白名单去除
 type AlibabaRetailVendingPriceWhitelistRemoveAPIRequest struct {
 	model.Params
 	// 淘宝用户ID

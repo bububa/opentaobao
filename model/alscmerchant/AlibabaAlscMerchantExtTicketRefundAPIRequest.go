@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscMerchantExtTicketRefundAPIRequest
-口碑凭证售后退 API请求
-alibaba.alsc.merchant.ext.ticket.refund
-
-口碑凭证售后退 */
+// AlibabaAlscMerchantExtTicketRefundAPIRequest 口碑凭证售后退 API请求
+// alibaba.alsc.merchant.ext.ticket.refund
+//
+// 口碑凭证售后退
 type AlibabaAlscMerchantExtTicketRefundAPIRequest struct {
 	model.Params
 	// 券核销流水号，针对该次核销发起售后退操作

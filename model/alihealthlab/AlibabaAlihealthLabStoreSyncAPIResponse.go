@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthLabStoreSyncAPIResponse
-阿里健康检验检测业务，isv门店同步到健康 API返回值
-alibaba.alihealth.lab.store.sync
-
-阿里健康检验检测业务，isv门店同步到健康。支持门店的上线、下线操作 */
+// AlibabaAlihealthLabStoreSyncAPIResponse 阿里健康检验检测业务，isv门店同步到健康 API返回值
+// alibaba.alihealth.lab.store.sync
+//
+// 阿里健康检验检测业务，isv门店同步到健康。支持门店的上线、下线操作
 type AlibabaAlihealthLabStoreSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthLabStoreSyncAPIResponseModel

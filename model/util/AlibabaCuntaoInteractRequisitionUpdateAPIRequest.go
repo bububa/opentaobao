@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCuntaoInteractRequisitionUpdateAPIRequest
-更新物料制作状态 API请求
-alibaba.cuntao.interact.requisition.update
-
-村淘物料下沉，更新物料制作状态 */
+// AlibabaCuntaoInteractRequisitionUpdateAPIRequest 更新物料制作状态 API请求
+// alibaba.cuntao.interact.requisition.update
+//
+// 村淘物料下沉，更新物料制作状态
 type AlibabaCuntaoInteractRequisitionUpdateAPIRequest struct {
 	model.Params
 	// 物料制作状态

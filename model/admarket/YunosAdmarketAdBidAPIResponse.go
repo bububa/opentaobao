@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosAdmarketAdBidAPIResponse
-广告竞价服务 API返回值
-yunos.admarket.ad.bid
-
-广告竞价服务 */
+// YunosAdmarketAdBidAPIResponse 广告竞价服务 API返回值
+// yunos.admarket.ad.bid
+//
+// 广告竞价服务
 type YunosAdmarketAdBidAPIResponse struct {
 	model.CommonResponse
 	YunosAdmarketAdBidAPIResponseModel

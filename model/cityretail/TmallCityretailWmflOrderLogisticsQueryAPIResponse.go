@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCityretailWmflOrderLogisticsQueryAPIResponse
-完美履约订单物流状态查询接口 API返回值
-tmall.cityretail.wmfl.order.logistics.query
-
-完美履约订单物流状态查询接口，该接口只能查询未完结的履约单以及完结的3天内订单 */
+// TmallCityretailWmflOrderLogisticsQueryAPIResponse 完美履约订单物流状态查询接口 API返回值
+// tmall.cityretail.wmfl.order.logistics.query
+//
+// 完美履约订单物流状态查询接口，该接口只能查询未完结的履约单以及完结的3天内订单
 type TmallCityretailWmflOrderLogisticsQueryAPIResponse struct {
 	model.CommonResponse
 	TmallCityretailWmflOrderLogisticsQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemQuantityUpdateAPIResponse
-天猫商品/SKU库存更新接口 API返回值
-tmall.item.quantity.update
-
-天猫商品/SKU库存更新接口；支持商品库存更新；支持同一商品下的SKU批量更新。 */
+// TmallItemQuantityUpdateAPIResponse 天猫商品/SKU库存更新接口 API返回值
+// tmall.item.quantity.update
+//
+// 天猫商品/SKU库存更新接口；支持商品库存更新；支持同一商品下的SKU批量更新。
 type TmallItemQuantityUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallItemQuantityUpdateAPIResponseModel

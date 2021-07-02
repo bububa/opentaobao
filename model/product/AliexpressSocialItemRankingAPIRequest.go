@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialItemRankingAPIRequest
-社交排行榜 API请求
-aliexpress.social.item.ranking
-
-社交商品成交排行榜 */
+// AliexpressSocialItemRankingAPIRequest 社交排行榜 API请求
+// aliexpress.social.item.ranking
+//
+// 社交商品成交排行榜
 type AliexpressSocialItemRankingAPIRequest struct {
 	model.Params
 	// 币种

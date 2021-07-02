@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytStorebilldeleteAPIResponse
-零售端单据删除 API返回值
-alibaba.alihealth.drug.kyt.storebilldelete
-
-零售端单据删除 */
+// AlibabaAlihealthDrugKytStorebilldeleteAPIResponse 零售端单据删除 API返回值
+// alibaba.alihealth.drug.kyt.storebilldelete
+//
+// 零售端单据删除
 type AlibabaAlihealthDrugKytStorebilldeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytStorebilldeleteAPIResponseModel

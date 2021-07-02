@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaInsightCatsforecastnewGetAPIResponse
-获取词的相关类目预测数据 API返回值
-taobao.simba.insight.catsforecastnew.get
-
-根据给定的词，预测这些词的相关类目 */
+// TaobaoSimbaInsightCatsforecastnewGetAPIResponse 获取词的相关类目预测数据 API返回值
+// taobao.simba.insight.catsforecastnew.get
+//
+// 根据给定的词，预测这些词的相关类目
 type TaobaoSimbaInsightCatsforecastnewGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaInsightCatsforecastnewGetAPIResponseModel

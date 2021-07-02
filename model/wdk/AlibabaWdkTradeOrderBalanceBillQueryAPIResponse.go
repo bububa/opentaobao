@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkTradeOrderBalanceBillQueryAPIResponse
-分页拉取订单数据 API返回值
-alibaba.wdk.trade.order.balance.bill.query
-
-提供接口供外部调用，分页拉取订单数据 */
+// AlibabaWdkTradeOrderBalanceBillQueryAPIResponse 分页拉取订单数据 API返回值
+// alibaba.wdk.trade.order.balance.bill.query
+//
+// 提供接口供外部调用，分页拉取订单数据
 type AlibabaWdkTradeOrderBalanceBillQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkTradeOrderBalanceBillQueryAPIResponseModel

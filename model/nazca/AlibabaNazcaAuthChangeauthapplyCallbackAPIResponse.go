@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNazcaAuthChangeauthapplyCallbackAPIResponse
-变更认证回调 API返回值
-alibaba.nazca.auth.changeauthapply.callback
-
-变更认证回调 */
+// AlibabaNazcaAuthChangeauthapplyCallbackAPIResponse 变更认证回调 API返回值
+// alibaba.nazca.auth.changeauthapply.callback
+//
+// 变更认证回调
 type AlibabaNazcaAuthChangeauthapplyCallbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaNazcaAuthChangeauthapplyCallbackAPIResponseModel

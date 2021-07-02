@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytUploadb2cbillAPIResponse
-快易通零售B2C API返回值
-alibaba.alihealth.drug.kyt.uploadb2cbill
-
-快易通零售B2C单据上传 */
+// AlibabaAlihealthDrugKytUploadb2cbillAPIResponse 快易通零售B2C API返回值
+// alibaba.alihealth.drug.kyt.uploadb2cbill
+//
+// 快易通零售B2C单据上传
 type AlibabaAlihealthDrugKytUploadb2cbillAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytUploadb2cbillAPIResponseModel

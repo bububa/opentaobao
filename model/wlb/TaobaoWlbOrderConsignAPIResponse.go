@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbOrderConsignAPIResponse
-物流宝订单已发货通知接口 API返回值
-taobao.wlb.order.consign
-
-如果erp导入淘宝交易订单到物流宝，当物流宝订单已发货的时候，erp需要调用该接口来通知物流订单和淘宝交易订单已发货 */
+// TaobaoWlbOrderConsignAPIResponse 物流宝订单已发货通知接口 API返回值
+// taobao.wlb.order.consign
+//
+// 如果erp导入淘宝交易订单到物流宝，当物流宝订单已发货的时候，erp需要调用该接口来通知物流订单和淘宝交易订单已发货
 type TaobaoWlbOrderConsignAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbOrderConsignAPIResponseModel

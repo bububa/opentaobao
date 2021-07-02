@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* TmallServicecenterTaskQueryrefund
-查询任务类工单是否退款
-tmall.servicecenter.task.queryrefund
-
-查询任务类工单是否退款 */
+// TmallServicecenterTaskQueryrefund 查询任务类工单是否退款
+// tmall.servicecenter.task.queryrefund
+//
+// 查询任务类工单是否退款
 func TmallServicecenterTaskQueryrefund(clt *core.SDKClient, req *tmallservice.TmallServicecenterTaskQueryrefundAPIRequest, session string) (*tmallservice.TmallServicecenterTaskQueryrefundAPIResponse, error) {
 	var resp tmallservice.TmallServicecenterTaskQueryrefundAPIResponse
 	err := clt.Post(req, &resp, session)

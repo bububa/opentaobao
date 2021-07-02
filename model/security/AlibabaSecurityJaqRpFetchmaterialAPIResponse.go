@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpFetchmaterialAPIResponse
-聚安全实人认证获取结果接口 API返回值
-alibaba.security.jaq.rp.fetchmaterial
-
-聚安全实人认证获取结果接口 */
+// AlibabaSecurityJaqRpFetchmaterialAPIResponse 聚安全实人认证获取结果接口 API返回值
+// alibaba.security.jaq.rp.fetchmaterial
+//
+// 聚安全实人认证获取结果接口
 type AlibabaSecurityJaqRpFetchmaterialAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqRpFetchmaterialAPIResponseModel

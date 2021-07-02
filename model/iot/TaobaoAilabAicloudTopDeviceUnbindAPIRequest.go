@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceUnbindAPIRequest
-解绑设备 API请求
-taobao.ailab.aicloud.top.device.unbind
-
-解绑设备 */
+// TaobaoAilabAicloudTopDeviceUnbindAPIRequest 解绑设备 API请求
+// taobao.ailab.aicloud.top.device.unbind
+//
+// 解绑设备
 type TaobaoAilabAicloudTopDeviceUnbindAPIRequest struct {
 	model.Params
 	// 账户体系隔离

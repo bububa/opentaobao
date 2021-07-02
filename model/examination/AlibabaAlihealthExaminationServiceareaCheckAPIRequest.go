@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationServiceareaCheckAPIRequest
-体检机构对接_上门检测服务范围查询 API请求
-alibaba.alihealth.examination.servicearea.check
-
-体检机构对接_上门检测服务范围查询 */
+// AlibabaAlihealthExaminationServiceareaCheckAPIRequest 体检机构对接_上门检测服务范围查询 API请求
+// alibaba.alihealth.examination.servicearea.check
+//
+// 体检机构对接_上门检测服务范围查询
 type AlibabaAlihealthExaminationServiceareaCheckAPIRequest struct {
 	model.Params
 	// 机构套餐编码

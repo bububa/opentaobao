@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsEfspUserplaceorderAPIResponse
-用户完成支付同步订单 API返回值
-alibaba.alisports.efsp.userplaceorder
-
-用户完成支付同步订单 */
+// AlibabaAlisportsEfspUserplaceorderAPIResponse 用户完成支付同步订单 API返回值
+// alibaba.alisports.efsp.userplaceorder
+//
+// 用户完成支付同步订单
 type AlibabaAlisportsEfspUserplaceorderAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsEfspUserplaceorderAPIResponseModel

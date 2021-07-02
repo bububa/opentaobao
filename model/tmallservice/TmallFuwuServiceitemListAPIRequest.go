@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallFuwuServiceitemListAPIRequest
-获取服务商品扩展信息 API请求
-tmall.fuwu.serviceitem.list
-
-获取服务商品扩展信息 */
+// TmallFuwuServiceitemListAPIRequest 获取服务商品扩展信息 API请求
+// tmall.fuwu.serviceitem.list
+//
+// 获取服务商品扩展信息
 type TmallFuwuServiceitemListAPIRequest struct {
 	model.Params
 	// 商品所属卖家账号id

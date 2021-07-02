@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractActivityApplyAPIRequest
-ISV报名官方活动(中心化流量) API请求
-alibaba.interact.activity.apply
-
-支持商家将使用isv创建的活动所对应的权益信息同步到手淘，供过滤是否在中心化流量入口透出 */
+// AlibabaInteractActivityApplyAPIRequest ISV报名官方活动(中心化流量) API请求
+// alibaba.interact.activity.apply
+//
+// 支持商家将使用isv创建的活动所对应的权益信息同步到手淘，供过滤是否在中心化流量入口透出
 type AlibabaInteractActivityApplyAPIRequest struct {
 	model.Params
 	// 活动发放的权益类型，1:支付宝红包2:流量包3:淘金币4:集分宝5:优惠卷

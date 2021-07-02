@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCardBatchSellAPIResponse
-批量开卡（售卡） API返回值
-alibaba.alsc.crm.card.batch.sell
-
-批量开卡（售卡） */
+// AlibabaAlscCrmCardBatchSellAPIResponse 批量开卡（售卡） API返回值
+// alibaba.alsc.crm.card.batch.sell
+//
+// 批量开卡（售卡）
 type AlibabaAlscCrmCardBatchSellAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCardBatchSellAPIResponseModel

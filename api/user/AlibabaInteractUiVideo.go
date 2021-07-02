@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/user"
 )
 
-/* AlibabaInteractUiVideo
-视频播放
-alibaba.interact.ui.video
-
-Weex页面播放视频 */
+// AlibabaInteractUiVideo 视频播放
+// alibaba.interact.ui.video
+//
+// Weex页面播放视频
 func AlibabaInteractUiVideo(clt *core.SDKClient, req *user.AlibabaInteractUiVideoAPIRequest, session string) (*user.AlibabaInteractUiVideoAPIResponse, error) {
 	var resp user.AlibabaInteractUiVideoAPIResponse
 	err := clt.Post(req, &resp, session)

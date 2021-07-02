@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmOpenCustomerGetAPIResponse
-查询会员资产 API返回值
-alibaba.alsc.crm.open.customer.get
-
-查询会员身份，资产等 */
+// AlibabaAlscCrmOpenCustomerGetAPIResponse 查询会员资产 API返回值
+// alibaba.alsc.crm.open.customer.get
+//
+// 查询会员身份，资产等
 type AlibabaAlscCrmOpenCustomerGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmOpenCustomerGetAPIResponseModel

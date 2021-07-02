@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaXiamiApiSearchHotwordsGetAPIResponse
-搜索热词 API返回值
-alibaba.xiami.api.search.hotwords.get
-
-搜索热词 */
+// AlibabaXiamiApiSearchHotwordsGetAPIResponse 搜索热词 API返回值
+// alibaba.xiami.api.search.hotwords.get
+//
+// 搜索热词
 type AlibabaXiamiApiSearchHotwordsGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaXiamiApiSearchHotwordsGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrFulfillCancelAPIResponse
-取消上门揽件 API返回值
-tmall.nr.fulfill.cancel
-
-新零售门店业务取消上门揽件 */
+// TmallNrFulfillCancelAPIResponse 取消上门揽件 API返回值
+// tmall.nr.fulfill.cancel
+//
+// 新零售门店业务取消上门揽件
 type TmallNrFulfillCancelAPIResponse struct {
 	model.CommonResponse
 	TmallNrFulfillCancelAPIResponseModel

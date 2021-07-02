@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunCosmoGatewayInvokeAPIResponse
-alios cosmo服务调用 API返回值
-aliyun.cosmo.gateway.invoke
-
-AliOS cosmo服务分发平台对外调用接口 */
+// AliyunCosmoGatewayInvokeAPIResponse alios cosmo服务调用 API返回值
+// aliyun.cosmo.gateway.invoke
+//
+// AliOS cosmo服务分发平台对外调用接口
 type AliyunCosmoGatewayInvokeAPIResponse struct {
 	model.CommonResponse
 	AliyunCosmoGatewayInvokeAPIResponseModel

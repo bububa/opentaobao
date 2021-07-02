@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsBotsSkilsListAPIResponse
-对外设备获取技能列表 API返回值
-alibaba.ailabs.bots.skils.list
-
-获取ai开放平台技能列表 */
+// AlibabaAilabsBotsSkilsListAPIResponse 对外设备获取技能列表 API返回值
+// alibaba.ailabs.bots.skils.list
+//
+// 获取ai开放平台技能列表
 type AlibabaAilabsBotsSkilsListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsBotsSkilsListAPIResponseModel

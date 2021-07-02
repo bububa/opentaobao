@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMerchantStoreitemQueryAPIRequest
-门店商品信心查询 API请求
-alibaba.wdk.merchant.storeitem.query
-
-门店商品信心查询 */
+// AlibabaWdkMerchantStoreitemQueryAPIRequest 门店商品信心查询 API请求
+// alibaba.wdk.merchant.storeitem.query
+//
+// 门店商品信心查询
 type AlibabaWdkMerchantStoreitemQueryAPIRequest struct {
 	model.Params
 	// 商品编码

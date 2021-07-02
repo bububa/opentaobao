@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorGutilAPIResponse
-canvas工具包 API返回值
-alibaba.interact.sensor.gutil
-
-canvas工具包 */
+// AlibabaInteractSensorGutilAPIResponse canvas工具包 API返回值
+// alibaba.interact.sensor.gutil
+//
+// canvas工具包
 type AlibabaInteractSensorGutilAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorGutilAPIResponseModel

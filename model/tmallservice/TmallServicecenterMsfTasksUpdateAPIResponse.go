@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterMsfTasksUpdateAPIResponse
-喵师傅工人任务批量完成接口 API返回值
-tmall.servicecenter.msf.tasks.update
-
-喵师傅工人任务批量完成接口 */
+// TmallServicecenterMsfTasksUpdateAPIResponse 喵师傅工人任务批量完成接口 API返回值
+// tmall.servicecenter.msf.tasks.update
+//
+// 喵师傅工人任务批量完成接口
 type TmallServicecenterMsfTasksUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterMsfTasksUpdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiEcSearchProjectSearchAPIResponse
-大麦电商对外搜索服务 API返回值
-alibaba.damai.ec.search.project.search
-
-大麦电商对外搜索服务 */
+// AlibabaDamaiEcSearchProjectSearchAPIResponse 大麦电商对外搜索服务 API返回值
+// alibaba.damai.ec.search.project.search
+//
+// 大麦电商对外搜索服务
 type AlibabaDamaiEcSearchProjectSearchAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiEcSearchProjectSearchAPIResponseModel

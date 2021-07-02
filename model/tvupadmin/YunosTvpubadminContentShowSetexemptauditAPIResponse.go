@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentShowSetexemptauditAPIResponse
-迎客松节目设置免审开关 API返回值
-yunos.tvpubadmin.content.show.setexemptaudit
-
-迎客松节目设置免审开关 */
+// YunosTvpubadminContentShowSetexemptauditAPIResponse 迎客松节目设置免审开关 API返回值
+// yunos.tvpubadmin.content.show.setexemptaudit
+//
+// 迎客松节目设置免审开关
 type YunosTvpubadminContentShowSetexemptauditAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentShowSetexemptauditAPIResponseModel

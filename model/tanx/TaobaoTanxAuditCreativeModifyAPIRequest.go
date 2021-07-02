@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxAuditCreativeModifyAPIRequest
-创意修改接口 API请求
-taobao.tanx.audit.creative.modify
-
-创意修改接口 */
+// TaobaoTanxAuditCreativeModifyAPIRequest 创意修改接口 API请求
+// taobao.tanx.audit.creative.modify
+//
+// 创意修改接口
 type TaobaoTanxAuditCreativeModifyAPIRequest struct {
 	model.Params
 	// DSP用户ID

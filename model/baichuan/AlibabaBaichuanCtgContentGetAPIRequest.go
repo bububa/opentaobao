@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaichuanCtgContentGetAPIRequest
-百川内容平台内容获取 API请求
-alibaba.baichuan.ctg.content.get
-
-百川内容平台内容获取 */
+// AlibabaBaichuanCtgContentGetAPIRequest 百川内容平台内容获取 API请求
+// alibaba.baichuan.ctg.content.get
+//
+// 百川内容平台内容获取
 type AlibabaBaichuanCtgContentGetAPIRequest struct {
 	model.Params
 	// 投放位置

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeikePerformancePutAPIRequest
-提交客服绩效接口 API请求
-taobao.weike.performance.put
-
-提交客服绩效接口 */
+// TaobaoWeikePerformancePutAPIRequest 提交客服绩效接口 API请求
+// taobao.weike.performance.put
+//
+// 提交客服绩效接口
 type TaobaoWeikePerformancePutAPIRequest struct {
 	model.Params
 	// 订单id

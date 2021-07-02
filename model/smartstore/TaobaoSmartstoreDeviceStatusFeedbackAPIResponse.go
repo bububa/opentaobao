@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSmartstoreDeviceStatusFeedbackAPIResponse
-设备在线状态回流 API返回值
-taobao.smartstore.device.status.feedback
-
-智能硬件设备状态回流 */
+// TaobaoSmartstoreDeviceStatusFeedbackAPIResponse 设备在线状态回流 API返回值
+// taobao.smartstore.device.status.feedback
+//
+// 智能硬件设备状态回流
 type TaobaoSmartstoreDeviceStatusFeedbackAPIResponse struct {
 	model.CommonResponse
 	TaobaoSmartstoreDeviceStatusFeedbackAPIResponseModel

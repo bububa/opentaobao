@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSellerCouponAuthVerifyAPIResponse
-优惠券校验 API返回值
-alibaba.seller.coupon.auth.verify
-
-优惠券校验 */
+// AlibabaSellerCouponAuthVerifyAPIResponse 优惠券校验 API返回值
+// alibaba.seller.coupon.auth.verify
+//
+// 优惠券校验
 type AlibabaSellerCouponAuthVerifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaSellerCouponAuthVerifyAPIResponseModel

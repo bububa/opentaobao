@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuPhotobankGroupOperateAPIResponse
-图片银行分组操作接口 API返回值
-alibaba.icbu.photobank.group.operate
-
-修改用户图片银行的分组信息，包括 新增分组，删除分组，分组重命名 */
+// AlibabaIcbuPhotobankGroupOperateAPIResponse 图片银行分组操作接口 API返回值
+// alibaba.icbu.photobank.group.operate
+//
+// 修改用户图片银行的分组信息，包括 新增分组，删除分组，分组重命名
 type AlibabaIcbuPhotobankGroupOperateAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuPhotobankGroupOperateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstPosOpenGoodsGetgoodsbypagingAPIResponse
-分页查询用户全量的门店域商品接口(每页最多20条) API返回值
-alibaba.lst.pos.open.goods.getgoodsbypaging
-
-分页查询用户全量的门店域商品接口(每页最多20条) */
+// AlibabaLstPosOpenGoodsGetgoodsbypagingAPIResponse 分页查询用户全量的门店域商品接口(每页最多20条) API返回值
+// alibaba.lst.pos.open.goods.getgoodsbypaging
+//
+// 分页查询用户全量的门店域商品接口(每页最多20条)
 type AlibabaLstPosOpenGoodsGetgoodsbypagingAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstPosOpenGoodsGetgoodsbypagingAPIResponseModel

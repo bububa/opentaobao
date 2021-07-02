@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDiccontroltaskQueryAPIResponse
-停开服任务列表 API返回值
-yunos.tvpubadmin.diccontroltask.query
-
-牌照方对终端设备的停开服管理 */
+// YunosTvpubadminDiccontroltaskQueryAPIResponse 停开服任务列表 API返回值
+// yunos.tvpubadmin.diccontroltask.query
+//
+// 牌照方对终端设备的停开服管理
 type YunosTvpubadminDiccontroltaskQueryAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminDiccontroltaskQueryAPIResponseModel

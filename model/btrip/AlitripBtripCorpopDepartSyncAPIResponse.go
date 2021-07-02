@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripCorpopDepartSyncAPIResponse
-外部部门同步 API返回值
-alitrip.btrip.corpop.depart.sync
-
-同步外部平台部门信息至商旅内部 */
+// AlitripBtripCorpopDepartSyncAPIResponse 外部部门同步 API返回值
+// alitrip.btrip.corpop.depart.sync
+//
+// 同步外部平台部门信息至商旅内部
 type AlitripBtripCorpopDepartSyncAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripCorpopDepartSyncAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlinkDeviceInfoUpdateAPIRequest
-更新设备昵称等信息 API请求
-alibaba.alink.device.info.update
-
-更新设备昵称等信息 */
+// AlibabaAlinkDeviceInfoUpdateAPIRequest 更新设备昵称等信息 API请求
+// alibaba.alink.device.info.update
+//
+// 更新设备昵称等信息
 type AlibabaAlinkDeviceInfoUpdateAPIRequest struct {
 	model.Params
 	// 设备id

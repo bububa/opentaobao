@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimTribeGettribeinfoAPIResponse
-获取群信息 API返回值
-taobao.openim.tribe.gettribeinfo
-
-获取群信息 */
+// TaobaoOpenimTribeGettribeinfoAPIResponse 获取群信息 API返回值
+// taobao.openim.tribe.gettribeinfo
+//
+// 获取群信息
 type TaobaoOpenimTribeGettribeinfoAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimTribeGettribeinfoAPIResponseModel

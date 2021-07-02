@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterReservecondUpdateAPIResponse
-主动预约条件更新 API返回值
-tmall.servicecenter.reservecond.update
-
-1、设置主动预约开通条件 */
+// TmallServicecenterReservecondUpdateAPIResponse 主动预约条件更新 API返回值
+// tmall.servicecenter.reservecond.update
+//
+// 1、设置主动预约开通条件
 type TmallServicecenterReservecondUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterReservecondUpdateAPIResponseModel

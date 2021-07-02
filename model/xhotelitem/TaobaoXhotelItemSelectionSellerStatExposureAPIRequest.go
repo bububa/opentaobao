@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelItemSelectionSellerStatExposureAPIRequest
-选品曝光趋势 API请求
-taobao.xhotel.item.selection.seller.stat.exposure
-
-用于提供给商家获取选品曝光趋势 */
+// TaobaoXhotelItemSelectionSellerStatExposureAPIRequest 选品曝光趋势 API请求
+// taobao.xhotel.item.selection.seller.stat.exposure
+//
+// 用于提供给商家获取选品曝光趋势
 type TaobaoXhotelItemSelectionSellerStatExposureAPIRequest struct {
 	model.Params
 	// 日期 默认为昨天

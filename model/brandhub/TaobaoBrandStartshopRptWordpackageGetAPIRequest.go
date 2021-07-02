@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBrandStartshopRptWordpackageGetAPIRequest
-明星店铺品牌流量包报表数据查询 API请求
-taobao.brand.startshop.rpt.wordpackage.get
-
-获取明星店铺广告词包分日报表数据，只能查询近90天内的数据，包括展现量，点击量等 */
+// TaobaoBrandStartshopRptWordpackageGetAPIRequest 明星店铺品牌流量包报表数据查询 API请求
+// taobao.brand.startshop.rpt.wordpackage.get
+//
+// 获取明星店铺广告词包分日报表数据，只能查询近90天内的数据，包括展现量，点击量等
 type TaobaoBrandStartshopRptWordpackageGetAPIRequest struct {
 	model.Params
 	// 开始日期

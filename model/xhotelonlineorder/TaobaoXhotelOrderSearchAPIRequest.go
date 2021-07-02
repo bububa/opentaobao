@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderSearchAPIRequest
-酒店产品库订单查询 API请求
-taobao.xhotel.order.search
-
-酒店产品库订单查询功能，查询90天内的订单 */
+// TaobaoXhotelOrderSearchAPIRequest 酒店产品库订单查询 API请求
+// taobao.xhotel.order.search
+//
+// 酒店产品库订单查询功能，查询90天内的订单
 type TaobaoXhotelOrderSearchAPIRequest struct {
 	model.Params
 	// 酒店订单oids列表，多个oid用英文逗号隔开，一次不超过20个。

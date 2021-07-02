@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTaeBookBillsGetAPIRequest
-tae查询虚拟账户明细数据 API请求
-taobao.tae.book.bills.get
-
-tae查询虚拟账户明细数据 */
+// TaobaoTaeBookBillsGetAPIRequest tae查询虚拟账户明细数据 API请求
+// taobao.tae.book.bills.get
+//
+// tae查询虚拟账户明细数据
 type TaobaoTaeBookBillsGetAPIRequest struct {
 	model.Params
 	// 记账开始时间

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentDeviceGetterminaltypemapAPIResponse
-获取终端类型表 API返回值
-yunos.tvpubadmin.content.device.getterminaltypemap
-
-获取终端类型表 */
+// YunosTvpubadminContentDeviceGetterminaltypemapAPIResponse 获取终端类型表 API返回值
+// yunos.tvpubadmin.content.device.getterminaltypemap
+//
+// 获取终端类型表
 type YunosTvpubadminContentDeviceGetterminaltypemapAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentDeviceGetterminaltypemapAPIResponseModel

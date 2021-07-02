@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractIsvadminBindAPIRequest
-创建及绑定互动实例 API请求
-alibaba.interact.isvadmin.bind
-
-创建互动实例，并绑定奖池 */
+// AlibabaInteractIsvadminBindAPIRequest 创建及绑定互动实例 API请求
+// alibaba.interact.isvadmin.bind
+//
+// 创建互动实例，并绑定奖池
 type AlibabaInteractIsvadminBindAPIRequest struct {
 	model.Params
 	// 描述信息

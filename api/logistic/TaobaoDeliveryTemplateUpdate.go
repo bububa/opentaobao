@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-/* TaobaoDeliveryTemplateUpdate
-修改运费模板
-taobao.delivery.template.update
-
-修改运费模板 */
+// TaobaoDeliveryTemplateUpdate 修改运费模板
+// taobao.delivery.template.update
+//
+// 修改运费模板
 func TaobaoDeliveryTemplateUpdate(clt *core.SDKClient, req *logistic.TaobaoDeliveryTemplateUpdateAPIRequest, session string) (*logistic.TaobaoDeliveryTemplateUpdateAPIResponse, error) {
 	var resp logistic.TaobaoDeliveryTemplateUpdateAPIResponse
 	err := clt.Post(req, &resp, session)

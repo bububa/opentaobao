@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunIndustryTttmOrderQueryAPIResponse
-天天特卖数字工厂订单获取 API返回值
-aliyun.industry.tttm.order.query
-
-获取阿里云数字工厂内天天特卖业务的订单 */
+// AliyunIndustryTttmOrderQueryAPIResponse 天天特卖数字工厂订单获取 API返回值
+// aliyun.industry.tttm.order.query
+//
+// 获取阿里云数字工厂内天天特卖业务的订单
 type AliyunIndustryTttmOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AliyunIndustryTttmOrderQueryAPIResponseModel

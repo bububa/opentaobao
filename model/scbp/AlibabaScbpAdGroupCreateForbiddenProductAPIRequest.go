@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdGroupCreateForbiddenProductAPIRequest
-创建屏蔽品 API请求
-alibaba.scbp.ad.group.create.forbidden.product
-
-创建屏蔽品 */
+// AlibabaScbpAdGroupCreateForbiddenProductAPIRequest 创建屏蔽品 API请求
+// alibaba.scbp.ad.group.create.forbidden.product
+//
+// 创建屏蔽品
 type AlibabaScbpAdGroupCreateForbiddenProductAPIRequest struct {
 	model.Params
 	// 计划id

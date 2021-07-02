@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripVehicleOrderSearchAPIResponse
-用车订单查询接口 API返回值
-alitrip.btrip.vehicle.order.search
-
-企业获取商旅用车订单数据 */
+// AlitripBtripVehicleOrderSearchAPIResponse 用车订单查询接口 API返回值
+// alitrip.btrip.vehicle.order.search
+//
+// 企业获取商旅用车订单数据
 type AlitripBtripVehicleOrderSearchAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripVehicleOrderSearchAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeGroupQueryAPIRequest
-组团购场景查询商品组团详情 API请求
-taobao.opentrade.group.query
-
-组团购场景下，查询商品开团详情 */
+// TaobaoOpentradeGroupQueryAPIRequest 组团购场景查询商品组团详情 API请求
+// taobao.opentrade.group.query
+//
+// 组团购场景下，查询商品开团详情
 type TaobaoOpentradeGroupQueryAPIRequest struct {
 	model.Params
 	// 商品id

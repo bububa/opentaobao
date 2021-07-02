@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStoreCreateAPIResponse
-商户门店创建接口 API返回值
-taobao.place.store.create
-
-用于商家创建线下门店 */
+// TaobaoPlaceStoreCreateAPIResponse 商户门店创建接口 API返回值
+// taobao.place.store.create
+//
+// 用于商家创建线下门店
 type TaobaoPlaceStoreCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoPlaceStoreCreateAPIResponseModel

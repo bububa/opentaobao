@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegMsgPostAPIResponse
-集团法务消息发送 API返回值
-alibaba.leg.msg.post
-
-消息发送能力 */
+// AlibabaLegMsgPostAPIResponse 集团法务消息发送 API返回值
+// alibaba.leg.msg.post
+//
+// 消息发送能力
 type AlibabaLegMsgPostAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegMsgPostAPIResponseModel

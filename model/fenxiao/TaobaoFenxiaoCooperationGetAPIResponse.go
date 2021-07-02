@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoCooperationGetAPIResponse
-供应商或分销商获取合作关系信息 API返回值
-taobao.fenxiao.cooperation.get
-
-获取供应商的合作关系信息 */
+// TaobaoFenxiaoCooperationGetAPIResponse 供应商或分销商获取合作关系信息 API返回值
+// taobao.fenxiao.cooperation.get
+//
+// 获取供应商的合作关系信息
 type TaobaoFenxiaoCooperationGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoCooperationGetAPIResponseModel

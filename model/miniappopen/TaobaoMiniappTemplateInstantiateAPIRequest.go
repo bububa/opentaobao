@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappTemplateInstantiateAPIRequest
-构建实例化应用 API请求
-taobao.miniapp.template.instantiate
-
-实例化saas化的小程序 */
+// TaobaoMiniappTemplateInstantiateAPIRequest 构建实例化应用 API请求
+// taobao.miniapp.template.instantiate
+//
+// 实例化saas化的小程序
 type TaobaoMiniappTemplateInstantiateAPIRequest struct {
 	model.Params
 	// 投放端,目前可投放： taobao(淘宝),tmall(天猫)，taobao为必填，需要模板在这些端上已经发布上线

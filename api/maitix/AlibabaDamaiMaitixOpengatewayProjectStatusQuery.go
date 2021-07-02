@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/maitix"
 )
 
-/* AlibabaDamaiMaitixOpengatewayProjectStatusQuery
-分销状态查询接口queryProjectStatusByProjectId
-alibaba.damai.maitix.opengateway.project.status.query
-
-queryProjectStatusByProjectId */
+// AlibabaDamaiMaitixOpengatewayProjectStatusQuery 分销状态查询接口queryProjectStatusByProjectId
+// alibaba.damai.maitix.opengateway.project.status.query
+//
+// queryProjectStatusByProjectId
 func AlibabaDamaiMaitixOpengatewayProjectStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponse, error) {
 	var resp maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoTradeUpdateAPIResponse
-更新蜂鸟扣费状态 API返回值
-alibaba.ele.fengniao.trade.update
-
-汇金扣费成功后，回调该接口更新扣费状态 */
+// AlibabaEleFengniaoTradeUpdateAPIResponse 更新蜂鸟扣费状态 API返回值
+// alibaba.ele.fengniao.trade.update
+//
+// 汇金扣费成功后，回调该接口更新扣费状态
 type AlibabaEleFengniaoTradeUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoTradeUpdateAPIResponseModel

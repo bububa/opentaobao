@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuPhotobankGroupListAPIRequest
-图片银行分组信息获取 API请求
-alibaba.icbu.photobank.group.list
-
-图片银行分组信息获取 */
+// AlibabaIcbuPhotobankGroupListAPIRequest 图片银行分组信息获取 API请求
+// alibaba.icbu.photobank.group.list
+//
+// 图片银行分组信息获取
 type AlibabaIcbuPhotobankGroupListAPIRequest struct {
 	model.Params
 	// 补充信息

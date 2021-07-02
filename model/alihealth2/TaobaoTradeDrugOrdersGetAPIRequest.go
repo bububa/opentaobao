@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradeDrugOrdersGetAPIRequest
-阿里健康获取某一药店全部订单 API请求
-taobao.trade.drug.orders.get
-
-阿里健康获取某一药店全部订单 */
+// TaobaoTradeDrugOrdersGetAPIRequest 阿里健康获取某一药店全部订单 API请求
+// taobao.trade.drug.orders.get
+//
+// 阿里健康获取某一药店全部订单
 type TaobaoTradeDrugOrdersGetAPIRequest struct {
 	model.Params
 	// 外卖分店ID

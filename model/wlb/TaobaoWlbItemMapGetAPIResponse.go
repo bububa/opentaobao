@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbItemMapGetAPIResponse
-根据物流宝商品ID查询商品映射关系 API返回值
-taobao.wlb.item.map.get
-
-根据物流宝商品ID查询商品映射关系 */
+// TaobaoWlbItemMapGetAPIResponse 根据物流宝商品ID查询商品映射关系 API返回值
+// taobao.wlb.item.map.get
+//
+// 根据物流宝商品ID查询商品映射关系
 type TaobaoWlbItemMapGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbItemMapGetAPIResponseModel

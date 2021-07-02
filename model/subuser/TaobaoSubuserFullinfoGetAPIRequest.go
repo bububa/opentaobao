@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSubuserFullinfoGetAPIRequest
-获取指定账户子账号的详细信息 API请求
-taobao.subuser.fullinfo.get
-
-获取指定账户子账号的详细信息，其中包括子账号的账号信息以及员工、部门、职务信息（只能通过主账号登陆并查询属于该主账号下的某个子账号详细信息） */
+// TaobaoSubuserFullinfoGetAPIRequest 获取指定账户子账号的详细信息 API请求
+// taobao.subuser.fullinfo.get
+//
+// 获取指定账户子账号的详细信息，其中包括子账号的账号信息以及员工、部门、职务信息（只能通过主账号登陆并查询属于该主账号下的某个子账号详细信息）
 type TaobaoSubuserFullinfoGetAPIRequest struct {
 	model.Params
 	// 子账号ID（传参中sub_id和sub_nick至少需要其中一个，若sub_id与sub_nick同时传入并且合法，那么sub_nick优先，以sub_nick查询子账号）

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFundplatformCardordersStatusMakeFinishAPIResponse
-制卡商通知制卡完成 API返回值
-alibaba.fundplatform.cardorders.status.make.finish
-
-当制卡完成后，制卡商需要调用该接口，通知我们制卡已完成。 */
+// AlibabaFundplatformCardordersStatusMakeFinishAPIResponse 制卡商通知制卡完成 API返回值
+// alibaba.fundplatform.cardorders.status.make.finish
+//
+// 当制卡完成后，制卡商需要调用该接口，通知我们制卡已完成。
 type AlibabaFundplatformCardordersStatusMakeFinishAPIResponse struct {
 	model.CommonResponse
 	AlibabaFundplatformCardordersStatusMakeFinishAPIResponseModel

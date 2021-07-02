@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemClassifyQueryAPIRequest
-查询分类信息 API请求
-taobao.omniitem.classify.query
-
-通过查询关键字，分页查询分类信息 */
+// TaobaoOmniitemClassifyQueryAPIRequest 查询分类信息 API请求
+// taobao.omniitem.classify.query
+//
+// 通过查询关键字，分页查询分类信息
 type TaobaoOmniitemClassifyQueryAPIRequest struct {
 	model.Params
 	// 查询关键词

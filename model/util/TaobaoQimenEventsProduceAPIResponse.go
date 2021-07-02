@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenEventsProduceAPIResponse
-批量发送奇门事件 API返回值
-taobao.qimen.events.produce
-
-批量发送消息 */
+// TaobaoQimenEventsProduceAPIResponse 批量发送奇门事件 API返回值
+// taobao.qimen.events.produce
+//
+// 批量发送消息
 type TaobaoQimenEventsProduceAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenEventsProduceAPIResponseModel

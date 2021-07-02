@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlinkDeviceUnifyStatusSetAPIRequest
-设置设备标准属性状态 API请求
-alibaba.alink.device.unify.status.set
-
-操作用户绑定的设备 */
+// AlibabaAlinkDeviceUnifyStatusSetAPIRequest 设置设备标准属性状态 API请求
+// alibaba.alink.device.unify.status.set
+//
+// 操作用户绑定的设备
 type AlibabaAlinkDeviceUnifyStatusSetAPIRequest struct {
 	model.Params
 	// uuid

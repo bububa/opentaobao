@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscMerchantExtTicketRefundAPIResponse
-口碑凭证售后退 API返回值
-alibaba.alsc.merchant.ext.ticket.refund
-
-口碑凭证售后退 */
+// AlibabaAlscMerchantExtTicketRefundAPIResponse 口碑凭证售后退 API返回值
+// alibaba.alsc.merchant.ext.ticket.refund
+//
+// 口碑凭证售后退
 type AlibabaAlscMerchantExtTicketRefundAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscMerchantExtTicketRefundAPIResponseModel

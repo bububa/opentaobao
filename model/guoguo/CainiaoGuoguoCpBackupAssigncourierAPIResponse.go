@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGuoguoCpBackupAssigncourierAPIResponse
-CP兜底后指定接单的小件员 API返回值
-cainiao.guoguo.cp.backup.assigncourier
-
-CP兜底后指定接单的小件员；CP改派小件员 */
+// CainiaoGuoguoCpBackupAssigncourierAPIResponse CP兜底后指定接单的小件员 API返回值
+// cainiao.guoguo.cp.backup.assigncourier
+//
+// CP兜底后指定接单的小件员；CP改派小件员
 type CainiaoGuoguoCpBackupAssigncourierAPIResponse struct {
 	model.CommonResponse
 	CainiaoGuoguoCpBackupAssigncourierAPIResponseModel

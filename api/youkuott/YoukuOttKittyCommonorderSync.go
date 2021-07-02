@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/youkuott"
 )
 
-/* YoukuOttKittyCommonorderSync
-运营商一般订单同步
-youku.ott.kitty.commonorder.sync
-
-运营商一般订单同步 */
+// YoukuOttKittyCommonorderSync 运营商一般订单同步
+// youku.ott.kitty.commonorder.sync
+//
+// 运营商一般订单同步
 func YoukuOttKittyCommonorderSync(clt *core.SDKClient, req *youkuott.YoukuOttKittyCommonorderSyncAPIRequest, session string) (*youkuott.YoukuOttKittyCommonorderSyncAPIResponse, error) {
 	var resp youkuott.YoukuOttKittyCommonorderSyncAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthOutflowDrugSupervisionQueryAPIResponse
-监管平台药品查询 API返回值
-alibaba.alihealth.outflow.drug.supervision.query
-
-获取监管平台药品数据 */
+// AlibabaAlihealthOutflowDrugSupervisionQueryAPIResponse 监管平台药品查询 API返回值
+// alibaba.alihealth.outflow.drug.supervision.query
+//
+// 获取监管平台药品数据
 type AlibabaAlihealthOutflowDrugSupervisionQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthOutflowDrugSupervisionQueryAPIResponseModel

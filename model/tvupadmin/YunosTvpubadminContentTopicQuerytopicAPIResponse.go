@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentTopicQuerytopicAPIResponse
-迎客松专题查询 API返回值
-yunos.tvpubadmin.content.topic.querytopic
-
-迎客松专题查询 */
+// YunosTvpubadminContentTopicQuerytopicAPIResponse 迎客松专题查询 API返回值
+// yunos.tvpubadmin.content.topic.querytopic
+//
+// 迎客松专题查询
 type YunosTvpubadminContentTopicQuerytopicAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentTopicQuerytopicAPIResponseModel

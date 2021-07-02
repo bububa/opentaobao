@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttKittyCommonorderSyncAPIResponse
-运营商一般订单同步 API返回值
-youku.ott.kitty.commonorder.sync
-
-运营商一般订单同步 */
+// YoukuOttKittyCommonorderSyncAPIResponse 运营商一般订单同步 API返回值
+// youku.ott.kitty.commonorder.sync
+//
+// 运营商一般订单同步
 type YoukuOttKittyCommonorderSyncAPIResponse struct {
 	model.CommonResponse
 	YoukuOttKittyCommonorderSyncAPIResponseModel

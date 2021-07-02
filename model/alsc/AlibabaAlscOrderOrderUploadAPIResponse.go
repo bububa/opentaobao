@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscOrderOrderUploadAPIResponse
-订单回流 API返回值
-alibaba.alsc.order.order.upload
-
-第三方订单回流 */
+// AlibabaAlscOrderOrderUploadAPIResponse 订单回流 API返回值
+// alibaba.alsc.order.order.upload
+//
+// 第三方订单回流
 type AlibabaAlscOrderOrderUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscOrderOrderUploadAPIResponseModel

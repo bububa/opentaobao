@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalHandoverSavedraftAPIResponse
-创建交接单草稿 API返回值
-cainiao.global.handover.savedraft
-
-提供给ISV通过该接口创建交接单草稿 */
+// CainiaoGlobalHandoverSavedraftAPIResponse 创建交接单草稿 API返回值
+// cainiao.global.handover.savedraft
+//
+// 提供给ISV通过该接口创建交接单草稿
 type CainiaoGlobalHandoverSavedraftAPIResponse struct {
 	model.CommonResponse
 	CainiaoGlobalHandoverSavedraftAPIResponseModel

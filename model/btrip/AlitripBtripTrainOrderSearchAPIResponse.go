@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripTrainOrderSearchAPIResponse
-获取火车票订单列表 API返回值
-alitrip.btrip.train.order.search
-
-第三方OA厂商获取自己的火车票数据 */
+// AlitripBtripTrainOrderSearchAPIResponse 获取火车票订单列表 API返回值
+// alitrip.btrip.train.order.search
+//
+// 第三方OA厂商获取自己的火车票数据
 type AlitripBtripTrainOrderSearchAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripTrainOrderSearchAPIResponseModel

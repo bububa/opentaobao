@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJymMemberRealnameVerifyWithoutuidAPIResponse
-用户实名认证 API返回值
-taobao.jym.member.realname.verify.withoutuid
-
-开放用户实名认证接口使用 */
+// TaobaoJymMemberRealnameVerifyWithoutuidAPIResponse 用户实名认证 API返回值
+// taobao.jym.member.realname.verify.withoutuid
+//
+// 开放用户实名认证接口使用
 type TaobaoJymMemberRealnameVerifyWithoutuidAPIResponse struct {
 	model.CommonResponse
 	TaobaoJymMemberRealnameVerifyWithoutuidAPIResponseModel

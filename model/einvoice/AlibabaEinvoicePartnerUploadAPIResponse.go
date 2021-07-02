@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoicePartnerUploadAPIResponse
-服务商发票上传接口（非授权） API返回值
-alibaba.einvoice.partner.upload
-
-服务商发票上传接口（非授权） */
+// AlibabaEinvoicePartnerUploadAPIResponse 服务商发票上传接口（非授权） API返回值
+// alibaba.einvoice.partner.upload
+//
+// 服务商发票上传接口（非授权）
 type AlibabaEinvoicePartnerUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoicePartnerUploadAPIResponseModel

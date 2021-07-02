@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbItemUpdateAPIRequest
-物流宝商品修改 API请求
-taobao.wlb.item.update
-
-修改物流宝商品信息 */
+// TaobaoWlbItemUpdateAPIRequest 物流宝商品修改 API请求
+// taobao.wlb.item.update
+//
+// 修改物流宝商品信息
 type TaobaoWlbItemUpdateAPIRequest struct {
 	model.Params
 	// 需要修改的商品属性值的列表，如果属性不存在，则新增属性

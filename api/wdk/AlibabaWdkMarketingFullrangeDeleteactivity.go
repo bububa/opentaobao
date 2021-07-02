@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-/* AlibabaWdkMarketingFullrangeDeleteactivity
-全场活动删除活动接口
-alibaba.wdk.marketing.fullrange.deleteactivity
-
-全场活动删除活动 */
+// AlibabaWdkMarketingFullrangeDeleteactivity 全场活动删除活动接口
+// alibaba.wdk.marketing.fullrange.deleteactivity
+//
+// 全场活动删除活动
 func AlibabaWdkMarketingFullrangeDeleteactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingFullrangeDeleteactivityAPIResponse, error) {
 	var resp wdk.AlibabaWdkMarketingFullrangeDeleteactivityAPIResponse
 	err := clt.Post(req, &resp, session)

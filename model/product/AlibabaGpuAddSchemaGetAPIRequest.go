@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaGpuAddSchemaGetAPIRequest
-获取产品发布规则接口 API请求
-alibaba.gpu.add.schema.get
-
-获取产品发布规则接口 */
+// AlibabaGpuAddSchemaGetAPIRequest 获取产品发布规则接口 API请求
+// alibaba.gpu.add.schema.get
+//
+// 获取产品发布规则接口
 type AlibabaGpuAddSchemaGetAPIRequest struct {
 	model.Params
 	// 叶子类目ID

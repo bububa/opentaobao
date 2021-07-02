@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmTfavatarBillSalePaymentQueryAPIResponse
-获取影院卖品账单--支付账单 API返回值
-taobao.film.tfavatar.bill.sale.payment.query
-
-获取影院卖品账单--支付账单 */
+// TaobaoFilmTfavatarBillSalePaymentQueryAPIResponse 获取影院卖品账单--支付账单 API返回值
+// taobao.film.tfavatar.bill.sale.payment.query
+//
+// 获取影院卖品账单--支付账单
 type TaobaoFilmTfavatarBillSalePaymentQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoFilmTfavatarBillSalePaymentQueryAPIResponseModel

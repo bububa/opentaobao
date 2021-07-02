@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFundplatformAccountChargeAPIResponse
-资金平台余额账户充值 API返回值
-alibaba.fundplatform.account.charge
-
-资金平台余额账户充值【创建账户&返回付款URL】 */
+// AlibabaFundplatformAccountChargeAPIResponse 资金平台余额账户充值 API返回值
+// alibaba.fundplatform.account.charge
+//
+// 资金平台余额账户充值【创建账户&返回付款URL】
 type AlibabaFundplatformAccountChargeAPIResponse struct {
 	model.CommonResponse
 	AlibabaFundplatformAccountChargeAPIResponseModel

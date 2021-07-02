@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripCityCarApplyApproveAPIResponse
-三方市内用车申请单审批 API返回值
-alitrip.btrip.city.car.apply.approve
-
-三方市内用车申请单审批 */
+// AlitripBtripCityCarApplyApproveAPIResponse 三方市内用车申请单审批 API返回值
+// alitrip.btrip.city.car.apply.approve
+//
+// 三方市内用车申请单审批
 type AlitripBtripCityCarApplyApproveAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripCityCarApplyApproveAPIResponseModel

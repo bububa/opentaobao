@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionFeedListGetAPIResponse
-aliexpress.solution.feed.list.get API返回值
-aliexpress.solution.feed.list.get
-
-API to query the feed list belonged to a seller */
+// AliexpressSolutionFeedListGetAPIResponse aliexpress.solution.feed.list.get API返回值
+// aliexpress.solution.feed.list.get
+//
+// API to query the feed list belonged to a seller
 type AliexpressSolutionFeedListGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionFeedListGetAPIResponseModel

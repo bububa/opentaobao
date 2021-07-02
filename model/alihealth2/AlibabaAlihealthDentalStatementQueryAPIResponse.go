@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDentalStatementQueryAPIResponse
-ISV查询对账单 API返回值
-alibaba.alihealth.dental.statement.query
-
-ISV查询对账单 */
+// AlibabaAlihealthDentalStatementQueryAPIResponse ISV查询对账单 API返回值
+// alibaba.alihealth.dental.statement.query
+//
+// ISV查询对账单
 type AlibabaAlihealthDentalStatementQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDentalStatementQueryAPIResponseModel

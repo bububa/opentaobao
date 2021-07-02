@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBillBillsGetAPIRequest
-查询账单明细数据(自研发商家专用) API请求
-taobao.bill.bills.get
-
-查询账单明细数据 */
+// TaobaoBillBillsGetAPIRequest 查询账单明细数据(自研发商家专用) API请求
+// taobao.bill.bills.get
+//
+// 查询账单明细数据
 type TaobaoBillBillsGetAPIRequest struct {
 	model.Params
 	// 传入需要返回的字段,参见Bill结构体

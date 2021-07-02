@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewRemoveroleAPIResponse
-删除角色 API返回值
-alibaba.campus.acl.new.removerole
-
-删除角色 */
+// AlibabaCampusAclNewRemoveroleAPIResponse 删除角色 API返回值
+// alibaba.campus.acl.new.removerole
+//
+// 删除角色
 type AlibabaCampusAclNewRemoveroleAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclNewRemoveroleAPIResponseModel

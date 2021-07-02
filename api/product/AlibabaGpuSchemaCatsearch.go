@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-/* AlibabaGpuSchemaCatsearch
-按类目查询spu接口
-alibaba.gpu.schema.catsearch
-
-按类目查询spu的schema接口 */
+// AlibabaGpuSchemaCatsearch 按类目查询spu接口
+// alibaba.gpu.schema.catsearch
+//
+// 按类目查询spu的schema接口
 func AlibabaGpuSchemaCatsearch(clt *core.SDKClient, req *product.AlibabaGpuSchemaCatsearchAPIRequest, session string) (*product.AlibabaGpuSchemaCatsearchAPIResponse, error) {
 	var resp product.AlibabaGpuSchemaCatsearchAPIResponse
 	err := clt.Post(req, &resp, session)

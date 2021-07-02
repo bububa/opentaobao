@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoNextoneLogisticsWarehouseUpdateAPIRequest
-AG退货入仓状态写接口 API请求
-taobao.nextone.logistics.warehouse.update
-
-商家上传退货入仓状态给ag */
+// TaobaoNextoneLogisticsWarehouseUpdateAPIRequest AG退货入仓状态写接口 API请求
+// taobao.nextone.logistics.warehouse.update
+//
+// 商家上传退货入仓状态给ag
 type TaobaoNextoneLogisticsWarehouseUpdateAPIRequest struct {
 	model.Params
 	// 退款编号

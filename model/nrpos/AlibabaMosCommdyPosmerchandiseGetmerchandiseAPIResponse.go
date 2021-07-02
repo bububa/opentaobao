@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIResponse
-去前置机商品在线查询 API返回值
-alibaba.mos.commdy.posmerchandise.getmerchandise
-
-去前置机商品在线查询接口 */
+// AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIResponse 去前置机商品在线查询 API返回值
+// alibaba.mos.commdy.posmerchandise.getmerchandise
+//
+// 去前置机商品在线查询接口
 type AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIResponseModel

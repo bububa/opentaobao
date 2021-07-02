@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytDrGetupteminfoAPIResponse
-获取上游温度信息（疫苗） API返回值
-alibaba.alihealth.drug.kyt.dr.getupteminfo
-
-根据追溯码及企业ID获取上游运输及存储温度信息（疫苗） */
+// AlibabaAlihealthDrugKytDrGetupteminfoAPIResponse 获取上游温度信息（疫苗） API返回值
+// alibaba.alihealth.drug.kyt.dr.getupteminfo
+//
+// 根据追溯码及企业ID获取上游运输及存储温度信息（疫苗）
 type AlibabaAlihealthDrugKytDrGetupteminfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytDrGetupteminfoAPIResponseModel

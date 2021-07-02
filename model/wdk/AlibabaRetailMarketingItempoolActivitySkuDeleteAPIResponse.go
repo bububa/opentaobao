@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponse
-删除商品池活动商品【同城零售】 API返回值
-alibaba.retail.marketing.itempool.activity.sku.delete
-
-删除商品池活动商品信息【同城零售】 */
+// AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponse 删除商品池活动商品【同城零售】 API返回值
+// alibaba.retail.marketing.itempool.activity.sku.delete
+//
+// 删除商品池活动商品信息【同城零售】
 type AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponseModel

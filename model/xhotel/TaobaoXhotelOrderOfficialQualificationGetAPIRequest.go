@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderOfficialQualificationGetAPIRequest
-官网信用住用户资质校验 API请求
-taobao.xhotel.order.official.qualification.get
-
-官网信用住在下单前对用户进行资质校验，资质校验通过才能进行信用支付 */
+// TaobaoXhotelOrderOfficialQualificationGetAPIRequest 官网信用住用户资质校验 API请求
+// taobao.xhotel.order.official.qualification.get
+//
+// 官网信用住在下单前对用户进行资质校验，资质校验通过才能进行信用支付
 type TaobaoXhotelOrderOfficialQualificationGetAPIRequest struct {
 	model.Params
 	// 卖家接收阿里旅行订单状态变更的服务地址（需要实现阿里旅行提供的服务通知规范）

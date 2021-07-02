@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBrandhubSpecialshowRptCampaignGetAPIResponse
-品牌号品牌特秀计划报表数据查询 API返回值
-taobao.brandhub.specialshow.rpt.campaign.get
-
-获取品牌号品牌特秀广告campaign分日报表数据，只能查询近90天内的数据，包括展现量，点击量等 */
+// TaobaoBrandhubSpecialshowRptCampaignGetAPIResponse 品牌号品牌特秀计划报表数据查询 API返回值
+// taobao.brandhub.specialshow.rpt.campaign.get
+//
+// 获取品牌号品牌特秀广告campaign分日报表数据，只能查询近90天内的数据，包括展现量，点击量等
 type TaobaoBrandhubSpecialshowRptCampaignGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBrandhubSpecialshowRptCampaignGetAPIResponseModel

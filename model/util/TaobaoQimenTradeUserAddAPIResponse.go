@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenTradeUserAddAPIResponse
-添加奇门订单链路用户 API返回值
-taobao.qimen.trade.user.add
-
-添加奇门订单链路用户 */
+// TaobaoQimenTradeUserAddAPIResponse 添加奇门订单链路用户 API返回值
+// taobao.qimen.trade.user.add
+//
+// 添加奇门订单链路用户
 type TaobaoQimenTradeUserAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenTradeUserAddAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizApActivateAPIRequest
-激活AP价签通讯模块 API请求
-taobao.uscesl.biz.ap.activate
-
-激活AP价签通讯模块 */
+// TaobaoUsceslBizApActivateAPIRequest 激活AP价签通讯模块 API请求
+// taobao.uscesl.biz.ap.activate
+//
+// 激活AP价签通讯模块
 type TaobaoUsceslBizApActivateAPIRequest struct {
 	model.Params
 	// AP的mac地址

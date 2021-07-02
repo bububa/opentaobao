@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalHandoverPdfGetAPIRequest
-获取面单PDF文件数据 API请求
-cainiao.global.handover.pdf.get
-
-返回指定大包面单的PDF文件数据 */
+// CainiaoGlobalHandoverPdfGetAPIRequest 获取面单PDF文件数据 API请求
+// cainiao.global.handover.pdf.get
+//
+// 返回指定大包面单的PDF文件数据
 type CainiaoGlobalHandoverPdfGetAPIRequest struct {
 	model.Params
 	// 用户信息

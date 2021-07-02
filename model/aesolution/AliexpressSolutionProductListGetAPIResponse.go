@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionProductListGetAPIResponse
-Get product list API返回值
-aliexpress.solution.product.list.get
-
-Get product list */
+// AliexpressSolutionProductListGetAPIResponse Get product list API返回值
+// aliexpress.solution.product.list.get
+//
+// Get product list
 type AliexpressSolutionProductListGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionProductListGetAPIResponseModel

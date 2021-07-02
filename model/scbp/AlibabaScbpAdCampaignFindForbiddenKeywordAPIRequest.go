@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest
-查询屏蔽词 API请求
-alibaba.scbp.ad.campaign.find.forbidden.keyword
-
-查询屏蔽词 */
+// AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest 查询屏蔽词 API请求
+// alibaba.scbp.ad.campaign.find.forbidden.keyword
+//
+// 查询屏蔽词
 type AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest struct {
 	model.Params
 	// 计划id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaJymRequirementOrdersOperationNotifyAPIRequest
-交易猫需求订单操作接口 API请求
-alibaba.jym.requirement.orders.operation.notify
-
-交易猫需求订单操作接口 */
+// AlibabaJymRequirementOrdersOperationNotifyAPIRequest 交易猫需求订单操作接口 API请求
+// alibaba.jym.requirement.orders.operation.notify
+//
+// 交易猫需求订单操作接口
 type AlibabaJymRequirementOrdersOperationNotifyAPIRequest struct {
 	model.Params
 	// 需求订单操作

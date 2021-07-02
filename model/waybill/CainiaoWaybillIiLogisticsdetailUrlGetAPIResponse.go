@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoWaybillIiLogisticsdetailUrlGetAPIResponse
-电子面单物流详情授权url获取 API返回值
-cainiao.waybill.ii.logisticsdetail.url.get
-
-获取电子面单物流详情授权访问的H5 url */
+// CainiaoWaybillIiLogisticsdetailUrlGetAPIResponse 电子面单物流详情授权url获取 API返回值
+// cainiao.waybill.ii.logisticsdetail.url.get
+//
+// 获取电子面单物流详情授权访问的H5 url
 type CainiaoWaybillIiLogisticsdetailUrlGetAPIResponse struct {
 	model.CommonResponse
 	CainiaoWaybillIiLogisticsdetailUrlGetAPIResponseModel

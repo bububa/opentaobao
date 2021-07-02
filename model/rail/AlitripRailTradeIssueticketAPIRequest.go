@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripRailTradeIssueticketAPIRequest
-德铁出票成功接口 API请求
-alitrip.rail.trade.issueticket
-
-出票成功回调接口 */
+// AlitripRailTradeIssueticketAPIRequest 德铁出票成功接口 API请求
+// alitrip.rail.trade.issueticket
+//
+// 出票成功回调接口
 type AlitripRailTradeIssueticketAPIRequest struct {
 	model.Params
 	// 代理商订单号

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeikeEserviceScheduleGetAPIRequest
-客服排班信息查询接口 API请求
-taobao.weike.eservice.schedule.get
-
-客服排班信息查询接口 */
+// TaobaoWeikeEserviceScheduleGetAPIRequest 客服排班信息查询接口 API请求
+// taobao.weike.eservice.schedule.get
+//
+// 客服排班信息查询接口
 type TaobaoWeikeEserviceScheduleGetAPIRequest struct {
 	model.Params
 	// 订单ID，orderId、sellerNick、spNick三者不能同时为Null

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/refund"
 )
 
-/* TaobaoSpecialRefundGet
-特殊部分退纠纷单查询
-taobao.special.refund.get
-
-获取单笔特殊部分退的纠纷单查询 */
+// TaobaoSpecialRefundGet 特殊部分退纠纷单查询
+// taobao.special.refund.get
+//
+// 获取单笔特殊部分退的纠纷单查询
 func TaobaoSpecialRefundGet(clt *core.SDKClient, req *refund.TaobaoSpecialRefundGetAPIRequest, session string) (*refund.TaobaoSpecialRefundGetAPIResponse, error) {
 	var resp refund.TaobaoSpecialRefundGetAPIResponse
 	err := clt.Post(req, &resp, session)

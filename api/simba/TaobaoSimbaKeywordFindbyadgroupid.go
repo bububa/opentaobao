@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-/* TaobaoSimbaKeywordFindbyadgroupid
-根据推广单元id获取关键词
-taobao.simba.keyword.findbyadgroupid
-
-根据一个关键词Id列表取得一组关键词 */
+// TaobaoSimbaKeywordFindbyadgroupid 根据推广单元id获取关键词
+// taobao.simba.keyword.findbyadgroupid
+//
+// 根据一个关键词Id列表取得一组关键词
 func TaobaoSimbaKeywordFindbyadgroupid(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordFindbyadgroupidAPIRequest, session string) (*simba.TaobaoSimbaKeywordFindbyadgroupidAPIResponse, error) {
 	var resp simba.TaobaoSimbaKeywordFindbyadgroupidAPIResponse
 	err := clt.Post(req, &resp, session)

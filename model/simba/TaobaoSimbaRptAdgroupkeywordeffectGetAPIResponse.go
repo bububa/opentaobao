@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptAdgroupkeywordeffectGetAPIResponse
-推广组下的词效果报表数据查询(明细数据不分类型查询) API返回值
-taobao.simba.rpt.adgroupkeywordeffect.get
-
-推广组下的词效果报表数据查询(明细数据不分类型查询) */
+// TaobaoSimbaRptAdgroupkeywordeffectGetAPIResponse 推广组下的词效果报表数据查询(明细数据不分类型查询) API返回值
+// taobao.simba.rpt.adgroupkeywordeffect.get
+//
+// 推广组下的词效果报表数据查询(明细数据不分类型查询)
 type TaobaoSimbaRptAdgroupkeywordeffectGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaRptAdgroupkeywordeffectGetAPIResponseModel

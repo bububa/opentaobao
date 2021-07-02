@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoNlpWordAPIResponse
-文本语言词法分析 API返回值
-taobao.nlp.word
-
-提供文本语言处理中的词法分析功能,开放中文分词和词权重计算功能。 */
+// TaobaoNlpWordAPIResponse 文本语言词法分析 API返回值
+// taobao.nlp.word
+//
+// 提供文本语言处理中的词法分析功能,开放中文分词和词权重计算功能。
 type TaobaoNlpWordAPIResponse struct {
 	model.CommonResponse
 	TaobaoNlpWordAPIResponseModel

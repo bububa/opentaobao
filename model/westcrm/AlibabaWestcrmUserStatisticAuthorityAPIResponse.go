@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmUserStatisticAuthorityAPIResponse
-获取指定用户是否含有会员权益统计权限 API返回值
-alibaba.westcrm.user.statistic.authority
-
-获取指定用户是否含有会员权益统计权限 */
+// AlibabaWestcrmUserStatisticAuthorityAPIResponse 获取指定用户是否含有会员权益统计权限 API返回值
+// alibaba.westcrm.user.statistic.authority
+//
+// 获取指定用户是否含有会员权益统计权限
 type AlibabaWestcrmUserStatisticAuthorityAPIResponse struct {
 	model.CommonResponse
 	AlibabaWestcrmUserStatisticAuthorityAPIResponseModel

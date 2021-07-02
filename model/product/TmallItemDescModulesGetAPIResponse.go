@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemDescModulesGetAPIResponse
-商品描述模块信息获取 API返回值
-tmall.item.desc.modules.get
-
-商品描述模块信息获取，包括运营设定的类目级别的模块信息以及用户自定义模块数量约束。 */
+// TmallItemDescModulesGetAPIResponse 商品描述模块信息获取 API返回值
+// tmall.item.desc.modules.get
+//
+// 商品描述模块信息获取，包括运营设定的类目级别的模块信息以及用户自定义模块数量约束。
 type TmallItemDescModulesGetAPIResponse struct {
 	model.CommonResponse
 	TmallItemDescModulesGetAPIResponseModel

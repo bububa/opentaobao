@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFundplatformAccountChargeNotifyAPIResponse
-账户充值成功通知 API返回值
-alibaba.fundplatform.account.charge.notify
-
-通知外部业务方充值成功 */
+// AlibabaFundplatformAccountChargeNotifyAPIResponse 账户充值成功通知 API返回值
+// alibaba.fundplatform.account.charge.notify
+//
+// 通知外部业务方充值成功
 type AlibabaFundplatformAccountChargeNotifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaFundplatformAccountChargeNotifyAPIResponseModel

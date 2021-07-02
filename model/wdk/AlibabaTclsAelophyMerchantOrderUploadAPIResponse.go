@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTclsAelophyMerchantOrderUploadAPIResponse
-商家订单数据上传 API返回值
-alibaba.tcls.aelophy.merchant.order.upload
-
-商家订单数据上传 */
+// AlibabaTclsAelophyMerchantOrderUploadAPIResponse 商家订单数据上传 API返回值
+// alibaba.tcls.aelophy.merchant.order.upload
+//
+// 商家订单数据上传
 type AlibabaTclsAelophyMerchantOrderUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTclsAelophyMerchantOrderUploadAPIResponseModel

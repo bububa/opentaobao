@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclGetmenubyempidAPIResponse
-查询用户的菜单 API返回值
-alibaba.campus.acl.getmenubyempid
-
-查询用户的菜单 */
+// AlibabaCampusAclGetmenubyempidAPIResponse 查询用户的菜单 API返回值
+// alibaba.campus.acl.getmenubyempid
+//
+// 查询用户的菜单
 type AlibabaCampusAclGetmenubyempidAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclGetmenubyempidAPIResponseModel

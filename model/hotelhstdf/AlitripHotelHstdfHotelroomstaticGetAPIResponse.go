@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelHstdfHotelroomstaticGetAPIResponse
-根据类型查询静态字段 API返回值
-alitrip.hotel.hstdf.hotelroomstatic.get
-
-根据类型查询分页静态字段 */
+// AlitripHotelHstdfHotelroomstaticGetAPIResponse 根据类型查询静态字段 API返回值
+// alitrip.hotel.hstdf.hotelroomstatic.get
+//
+// 根据类型查询分页静态字段
 type AlitripHotelHstdfHotelroomstaticGetAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelHstdfHotelroomstaticGetAPIResponseModel

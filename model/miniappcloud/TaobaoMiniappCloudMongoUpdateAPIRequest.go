@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappCloudMongoUpdateAPIRequest
-更新MongoDB中的数据 API请求
-taobao.miniapp.cloud.mongo.update
-
-更新MongoDB中的数据 */
+// TaobaoMiniappCloudMongoUpdateAPIRequest 更新MongoDB中的数据 API请求
+// taobao.miniapp.cloud.mongo.update
+//
+// 更新MongoDB中的数据
 type TaobaoMiniappCloudMongoUpdateAPIRequest struct {
 	model.Params
 	// MongoDB表名

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest
-删除关键词 API请求
-alibaba.scbp.ad.keyword.delete.keyword.batch
-
-删除关键词 */
+// AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest 删除关键词 API请求
+// alibaba.scbp.ad.keyword.delete.keyword.batch
+//
+// 删除关键词
 type AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest struct {
 	model.Params
 	// 计划id

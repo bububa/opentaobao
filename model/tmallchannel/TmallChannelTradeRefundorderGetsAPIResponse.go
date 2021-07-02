@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallChannelTradeRefundorderGetsAPIResponse
-供应商查询退款单 API返回值
-tmall.channel.trade.refundorder.gets
-
-供应商分页查询退款单 */
+// TmallChannelTradeRefundorderGetsAPIResponse 供应商查询退款单 API返回值
+// tmall.channel.trade.refundorder.gets
+//
+// 供应商分页查询退款单
 type TmallChannelTradeRefundorderGetsAPIResponse struct {
 	model.CommonResponse
 	TmallChannelTradeRefundorderGetsAPIResponseModel

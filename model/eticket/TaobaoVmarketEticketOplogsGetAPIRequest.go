@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketOplogsGetAPIRequest
-电子凭证操作日志查询 API请求
-taobao.vmarket.eticket.oplogs.get
-
-电子凭证核销日志查询 */
+// TaobaoVmarketEticketOplogsGetAPIRequest 电子凭证操作日志查询 API请求
+// taobao.vmarket.eticket.oplogs.get
+//
+// 电子凭证核销日志查询
 type TaobaoVmarketEticketOplogsGetAPIRequest struct {
 	model.Params
 	// 0:全部 1:核销 2:冲正

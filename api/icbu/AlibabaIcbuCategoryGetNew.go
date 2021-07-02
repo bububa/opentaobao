@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/icbu"
 )
 
-/* AlibabaIcbuCategoryGetNew
-（新）ICBU类目树获取接口
-alibaba.icbu.category.get.new
-
-获取商品发布类目 */
+// AlibabaIcbuCategoryGetNew （新）ICBU类目树获取接口
+// alibaba.icbu.category.get.new
+//
+// 获取商品发布类目
 func AlibabaIcbuCategoryGetNew(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryGetNewAPIRequest, session string) (*icbu.AlibabaIcbuCategoryGetNewAPIResponse, error) {
 	var resp icbu.AlibabaIcbuCategoryGetNewAPIResponse
 	err := clt.Post(req, &resp, session)

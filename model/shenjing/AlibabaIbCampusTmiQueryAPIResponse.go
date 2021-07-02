@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIbCampusTmiQueryAPIResponse
-IB智慧园区-查询TMI流水 API返回值
-alibaba.ib.campus.tmi.query
-
-获取特定银行账户的银行流水 */
+// AlibabaIbCampusTmiQueryAPIResponse IB智慧园区-查询TMI流水 API返回值
+// alibaba.ib.campus.tmi.query
+//
+// 获取特定银行账户的银行流水
 type AlibabaIbCampusTmiQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaIbCampusTmiQueryAPIResponseModel

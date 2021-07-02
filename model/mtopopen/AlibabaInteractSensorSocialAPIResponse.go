@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorSocialAPIResponse
-社交组件 API返回值
-alibaba.interact.sensor.social
-
-赞，评论 ，关注 新增接口 */
+// AlibabaInteractSensorSocialAPIResponse 社交组件 API返回值
+// alibaba.interact.sensor.social
+//
+// 赞，评论 ，关注 新增接口
 type AlibabaInteractSensorSocialAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorSocialAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse
-获取全国疫情统计数据 API返回值
-alibaba.alihealth.nocov.alldiseaseinfo.get
-
-获取全国疫情统计数据 */
+// AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse 获取全国疫情统计数据 API返回值
+// alibaba.alihealth.nocov.alldiseaseinfo.get
+//
+// 获取全国疫情统计数据
 type AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponseModel

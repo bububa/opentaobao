@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegalSuitCourtLawyerPushAPIResponse
-推荐律师接口 API返回值
-alibaba.legal.suit.court.lawyer.push
-
-为诉讼系统推荐律师 */
+// AlibabaLegalSuitCourtLawyerPushAPIResponse 推荐律师接口 API返回值
+// alibaba.legal.suit.court.lawyer.push
+//
+// 为诉讼系统推荐律师
 type AlibabaLegalSuitCourtLawyerPushAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalSuitCourtLawyerPushAPIResponseModel

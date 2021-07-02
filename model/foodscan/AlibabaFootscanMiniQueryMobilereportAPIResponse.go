@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFootscanMiniQueryMobilereportAPIResponse
-根据scanId查询报告 API返回值
-alibaba.footscan.mini.query.mobilereport
-
-根据scanId查询报告 */
+// AlibabaFootscanMiniQueryMobilereportAPIResponse 根据scanId查询报告 API返回值
+// alibaba.footscan.mini.query.mobilereport
+//
+// 根据scanId查询报告
 type AlibabaFootscanMiniQueryMobilereportAPIResponse struct {
 	model.CommonResponse
 	AlibabaFootscanMiniQueryMobilereportAPIResponseModel

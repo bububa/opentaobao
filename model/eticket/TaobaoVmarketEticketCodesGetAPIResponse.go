@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketCodesGetAPIResponse
-电子凭证码列表查询 API返回值
-taobao.vmarket.eticket.codes.get
-
-查询某个订单的所有码的列表 */
+// TaobaoVmarketEticketCodesGetAPIResponse 电子凭证码列表查询 API返回值
+// taobao.vmarket.eticket.codes.get
+//
+// 查询某个订单的所有码的列表
 type TaobaoVmarketEticketCodesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketCodesGetAPIResponseModel

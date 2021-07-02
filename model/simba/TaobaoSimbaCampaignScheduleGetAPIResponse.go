@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignScheduleGetAPIResponse
-取得一个推广计划的分时折扣设置 API返回值
-taobao.simba.campaign.schedule.get
-
-取得一个推广计划的分时折扣设置 */
+// TaobaoSimbaCampaignScheduleGetAPIResponse 取得一个推广计划的分时折扣设置 API返回值
+// taobao.simba.campaign.schedule.get
+//
+// 取得一个推广计划的分时折扣设置
 type TaobaoSimbaCampaignScheduleGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCampaignScheduleGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeStoreDeliverdetailGetAPIResponse
-查询发货单详情 API返回值
-alibaba.nlife.store.deliverdetail.get
-
-查询发货单详情 */
+// AlibabaNlifeStoreDeliverdetailGetAPIResponse 查询发货单详情 API返回值
+// alibaba.nlife.store.deliverdetail.get
+//
+// 查询发货单详情
 type AlibabaNlifeStoreDeliverdetailGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaNlifeStoreDeliverdetailGetAPIResponseModel

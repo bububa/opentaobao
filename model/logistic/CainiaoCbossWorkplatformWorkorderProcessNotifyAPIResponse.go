@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCbossWorkplatformWorkorderProcessNotifyAPIResponse
-菜鸟工单系统的工单进度下发 API返回值
-cainiao.cboss.workplatform.workorder.process.notify
-
-菜鸟工单系统的工单进度下发（SPI） */
+// CainiaoCbossWorkplatformWorkorderProcessNotifyAPIResponse 菜鸟工单系统的工单进度下发 API返回值
+// cainiao.cboss.workplatform.workorder.process.notify
+//
+// 菜鸟工单系统的工单进度下发（SPI）
 type CainiaoCbossWorkplatformWorkorderProcessNotifyAPIResponse struct {
 	model.CommonResponse
 	CainiaoCbossWorkplatformWorkorderProcessNotifyAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponse
-根据订单id获取单条订单详情 API返回值
-alibaba.alihealth.nr.trade.order.getorderdetail
-
-阿里健康O2O，获取订单详情，修复组合商品价格精度问题 */
+// AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponse 根据订单id获取单条订单详情 API返回值
+// alibaba.alihealth.nr.trade.order.getorderdetail
+//
+// 阿里健康O2O，获取订单详情，修复组合商品价格精度问题
 type AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponseModel

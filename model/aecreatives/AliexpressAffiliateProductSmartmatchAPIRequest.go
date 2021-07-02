@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateProductSmartmatchAPIRequest
-联盟物料智能推荐api API请求
-aliexpress.affiliate.product.smartmatch
-
-联盟物料算法智能推荐 */
+// AliexpressAffiliateProductSmartmatchAPIRequest 联盟物料智能推荐api API请求
+// aliexpress.affiliate.product.smartmatch
+//
+// 联盟物料算法智能推荐
 type AliexpressAffiliateProductSmartmatchAPIRequest struct {
 	model.Params
 	// 接入APP信息

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripIeAgentRefundSearchAPIRequest
-卖家查询退票申请 API请求
-taobao.alitrip.ie.agent.refund.search
-
-卖家查询退票申请 */
+// TaobaoAlitripIeAgentRefundSearchAPIRequest 卖家查询退票申请 API请求
+// taobao.alitrip.ie.agent.refund.search
+//
+// 卖家查询退票申请
 type TaobaoAlitripIeAgentRefundSearchAPIRequest struct {
 	model.Params
 	// 查询起始时间

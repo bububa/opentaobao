@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenChannelinventoryQueryAPIResponse
-渠道库存查询接口 API返回值
-taobao.qimen.channelinventory.query
-
-渠道库存查询 */
+// TaobaoQimenChannelinventoryQueryAPIResponse 渠道库存查询接口 API返回值
+// taobao.qimen.channelinventory.query
+//
+// 渠道库存查询
 type TaobaoQimenChannelinventoryQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenChannelinventoryQueryAPIResponseModel

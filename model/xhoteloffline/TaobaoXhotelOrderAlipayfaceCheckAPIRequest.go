@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderAlipayfaceCheckAPIRequest
-线下信用住买家资格校验接口 API请求
-taobao.xhotel.order.alipayface.check
-
-接口用于校验买家是否具有使用酒店信用住的资格 */
+// TaobaoXhotelOrderAlipayfaceCheckAPIRequest 线下信用住买家资格校验接口 API请求
+// taobao.xhotel.order.alipayface.check
+//
+// 接口用于校验买家是否具有使用酒店信用住的资格
 type TaobaoXhotelOrderAlipayfaceCheckAPIRequest struct {
 	model.Params
 	// 总的收费金额，单位为分

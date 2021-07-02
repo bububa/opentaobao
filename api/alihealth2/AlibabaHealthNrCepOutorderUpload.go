@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-/* AlibabaHealthNrCepOutorderUpload
-线上订单收货验收单、出入库单据生成接口
-alibaba.health.nr.cep.outorder.upload
-
-线上订单收货验收单、出入库单据生成接口 */
+// AlibabaHealthNrCepOutorderUpload 线上订单收货验收单、出入库单据生成接口
+// alibaba.health.nr.cep.outorder.upload
+//
+// 线上订单收货验收单、出入库单据生成接口
 func AlibabaHealthNrCepOutorderUpload(clt *core.SDKClient, req *alihealth2.AlibabaHealthNrCepOutorderUploadAPIRequest, session string) (*alihealth2.AlibabaHealthNrCepOutorderUploadAPIResponse, error) {
 	var resp alihealth2.AlibabaHealthNrCepOutorderUploadAPIResponse
 	err := clt.Post(req, &resp, session)

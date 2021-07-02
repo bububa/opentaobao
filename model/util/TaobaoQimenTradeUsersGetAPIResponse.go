@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenTradeUsersGetAPIResponse
-获取奇门用户列表 API返回值
-taobao.qimen.trade.users.get
-
-获取已开通奇门订单服务的用户列表 */
+// TaobaoQimenTradeUsersGetAPIResponse 获取奇门用户列表 API返回值
+// taobao.qimen.trade.users.get
+//
+// 获取已开通奇门订单服务的用户列表
 type TaobaoQimenTradeUsersGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenTradeUsersGetAPIResponseModel

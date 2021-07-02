@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCustomerUpdateAPIResponse
-更新顾客信息 API返回值
-alibaba.alsc.crm.customer.update
-
-更新顾客信息 */
+// AlibabaAlscCrmCustomerUpdateAPIResponse 更新顾客信息 API返回值
+// alibaba.alsc.crm.customer.update
+//
+// 更新顾客信息
 type AlibabaAlscCrmCustomerUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCustomerUpdateAPIResponseModel

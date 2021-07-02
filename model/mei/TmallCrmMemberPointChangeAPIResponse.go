@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCrmMemberPointChangeAPIResponse
-会员积分变更 API返回值
-tmall.crm.member.point.change
-
-品牌CRM项目中，会员积分变更接口。 */
+// TmallCrmMemberPointChangeAPIResponse 会员积分变更 API返回值
+// tmall.crm.member.point.change
+//
+// 品牌CRM项目中，会员积分变更接口。
 type TmallCrmMemberPointChangeAPIResponse struct {
 	model.CommonResponse
 	TmallCrmMemberPointChangeAPIResponseModel

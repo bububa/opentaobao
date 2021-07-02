@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripGrouptourProductUploadAPIRequest
-新版跟团游商品维护接口 API请求
-alitrip.grouptour.product.upload
-
-新版跟团游商品维护接口 */
+// AlitripGrouptourProductUploadAPIRequest 新版跟团游商品维护接口 API请求
+// alitrip.grouptour.product.upload
+//
+// 新版跟团游商品维护接口
 type AlitripGrouptourProductUploadAPIRequest struct {
 	model.Params
 	// 新发布商品时必填。去程交通。1-飞机，2-火车，3-汽，4-船，100-其他

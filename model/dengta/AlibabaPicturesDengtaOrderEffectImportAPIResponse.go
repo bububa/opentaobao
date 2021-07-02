@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPicturesDengtaOrderEffectImportAPIResponse
-天下秀订单数据导入 API返回值
-alibaba.pictures.dengta.order.effect.import
-
-提供接口给天下秀，天下秀订单数据效果生成时回流到灯塔系统 */
+// AlibabaPicturesDengtaOrderEffectImportAPIResponse 天下秀订单数据导入 API返回值
+// alibaba.pictures.dengta.order.effect.import
+//
+// 提供接口给天下秀，天下秀订单数据效果生成时回流到灯塔系统
 type AlibabaPicturesDengtaOrderEffectImportAPIResponse struct {
 	model.CommonResponse
 	AlibabaPicturesDengtaOrderEffectImportAPIResponseModel

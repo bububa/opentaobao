@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest
-检查地址是否在餐厅配送范围内 API请求
-alibaba.ele.enterprise.restaurant.checkaddress
-
-检查地址是否在餐厅配送范围内 */
+// AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest 检查地址是否在餐厅配送范围内 API请求
+// alibaba.ele.enterprise.restaurant.checkaddress
+//
+// 检查地址是否在餐厅配送范围内
 type AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest struct {
 	model.Params
 	// 餐厅Id

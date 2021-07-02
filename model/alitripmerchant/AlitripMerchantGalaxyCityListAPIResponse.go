@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyCityListAPIResponse
-星河-酒店城市列表展示 API返回值
-alitrip.merchant.galaxy.city.list
-
-雅高酒店城市列表展示，并且首字母列出酒店城市 */
+// AlitripMerchantGalaxyCityListAPIResponse 星河-酒店城市列表展示 API返回值
+// alitrip.merchant.galaxy.city.list
+//
+// 雅高酒店城市列表展示，并且首字母列出酒店城市
 type AlitripMerchantGalaxyCityListAPIResponse struct {
 	model.CommonResponse
 	AlitripMerchantGalaxyCityListAPIResponseModel

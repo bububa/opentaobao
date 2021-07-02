@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-/* TaobaoXhotelGet
-酒店查询接口
-taobao.xhotel.get
-
-酒店查询接口 */
+// TaobaoXhotelGet 酒店查询接口
+// taobao.xhotel.get
+//
+// 酒店查询接口
 func TaobaoXhotelGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelGetAPIRequest, session string) (*xhotelitem.TaobaoXhotelGetAPIResponse, error) {
 	var resp xhotelitem.TaobaoXhotelGetAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorClipbroadAPIResponse
-Weex页面设置或读取剪切板 API返回值
-alibaba.interact.sensor.clipbroad
-
-Weex页面设置或读取剪切板 */
+// AlibabaInteractSensorClipbroadAPIResponse Weex页面设置或读取剪切板 API返回值
+// alibaba.interact.sensor.clipbroad
+//
+// Weex页面设置或读取剪切板
 type AlibabaInteractSensorClipbroadAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorClipbroadAPIResponseModel

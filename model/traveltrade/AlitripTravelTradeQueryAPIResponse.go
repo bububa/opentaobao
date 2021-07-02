@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelTradeQueryAPIResponse
-飞猪度假-订单详情查询接口 API返回值
-alitrip.travel.trade.query
-
-飞猪度假订单详情查询接口 */
+// AlitripTravelTradeQueryAPIResponse 飞猪度假-订单详情查询接口 API返回值
+// alitrip.travel.trade.query
+//
+// 飞猪度假订单详情查询接口
 type AlitripTravelTradeQueryAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelTradeQueryAPIResponseModel

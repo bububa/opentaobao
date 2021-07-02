@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelTradeServiceinfoWriteAPIResponse
-订单服务信息写入接口 API返回值
-alitrip.travel.trade.serviceinfo.write
-
-订单服务信息写入接口 */
+// AlitripTravelTradeServiceinfoWriteAPIResponse 订单服务信息写入接口 API返回值
+// alitrip.travel.trade.serviceinfo.write
+//
+// 订单服务信息写入接口
 type AlitripTravelTradeServiceinfoWriteAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelTradeServiceinfoWriteAPIResponseModel

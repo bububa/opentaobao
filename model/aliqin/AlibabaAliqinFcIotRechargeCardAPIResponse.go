@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotRechargeCardAPIResponse
-按终端号订购增值业务 API返回值
-alibaba.aliqin.fc.iot.rechargeCard
-
-按终端号订购增值业务 */
+// AlibabaAliqinFcIotRechargeCardAPIResponse 按终端号订购增值业务 API返回值
+// alibaba.aliqin.fc.iot.rechargeCard
+//
+// 按终端号订购增值业务
 type AlibabaAliqinFcIotRechargeCardAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcIotRechargeCardAPIResponseModel

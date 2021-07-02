@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJushitaJmsGroupGetAPIResponse
-查询ONS分组 API返回值
-taobao.jushita.jms.group.get
-
-查询当前appkey在ONS中已有的分组 */
+// TaobaoJushitaJmsGroupGetAPIResponse 查询ONS分组 API返回值
+// taobao.jushita.jms.group.get
+//
+// 查询当前appkey在ONS中已有的分组
 type TaobaoJushitaJmsGroupGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoJushitaJmsGroupGetAPIResponseModel

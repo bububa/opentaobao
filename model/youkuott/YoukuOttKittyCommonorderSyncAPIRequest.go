@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttKittyCommonorderSyncAPIRequest
-运营商一般订单同步 API请求
-youku.ott.kitty.commonorder.sync
-
-运营商一般订单同步 */
+// YoukuOttKittyCommonorderSyncAPIRequest 运营商一般订单同步 API请求
+// youku.ott.kitty.commonorder.sync
+//
+// 运营商一般订单同步
 type YoukuOttKittyCommonorderSyncAPIRequest struct {
 	model.Params
 	// 运营商订单id,最好是16位及以上唯一ID

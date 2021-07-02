@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductGradepriceUpdateAPIResponse
-根据sku设置折扣价 API返回值
-taobao.fenxiao.product.gradeprice.update
-
-供应商可以针对产品不同的sku，指定对应交易类型（代销or经销）方式下，设定折扣方式（按等级or指定分销商）以及对应优惠后的采购价格 */
+// TaobaoFenxiaoProductGradepriceUpdateAPIResponse 根据sku设置折扣价 API返回值
+// taobao.fenxiao.product.gradeprice.update
+//
+// 供应商可以针对产品不同的sku，指定对应交易类型（代销or经销）方式下，设定折扣方式（按等级or指定分销商）以及对应优惠后的采购价格
 type TaobaoFenxiaoProductGradepriceUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductGradepriceUpdateAPIResponseModel

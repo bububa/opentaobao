@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmMembersGetAPIRequest
-获取卖家的会员（基本查询） API请求
-taobao.crm.members.get
-
-查询卖家的会员，进行基本的查询，返回符合条件的会员列表 */
+// TaobaoCrmMembersGetAPIRequest 获取卖家的会员（基本查询） API请求
+// taobao.crm.members.get
+//
+// 查询卖家的会员，进行基本的查询，返回符合条件的会员列表
 type TaobaoCrmMembersGetAPIRequest struct {
 	model.Params
 	// 买家的昵称

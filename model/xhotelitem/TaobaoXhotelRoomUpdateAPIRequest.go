@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRoomUpdateAPIRequest
-房型库存推送接口（全量推送） API请求
-taobao.xhotel.room.update
-
-此接口用于更新一个酒店商品，根据传入的gid更新商品信息，该商品必须为对应的发布者才能执行更新操作。如果对应的商品在酒店系统中不存在，则会返回错误提示。 */
+// TaobaoXhotelRoomUpdateAPIRequest 房型库存推送接口（全量推送） API请求
+// taobao.xhotel.room.update
+//
+// 此接口用于更新一个酒店商品，根据传入的gid更新商品信息，该商品必须为对应的发布者才能执行更新操作。如果对应的商品在酒店系统中不存在，则会返回错误提示。
 type TaobaoXhotelRoomUpdateAPIRequest struct {
 	model.Params
 	// 废弃，使用out_rid

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCrmOmsRuleSyncAPIResponse
-商家ERP订单处理规则同步 API返回值
-cainiao.crm.oms.rule.sync
-
-将商家ERP订单处理规则同步到菜鸟CRM系统 */
+// CainiaoCrmOmsRuleSyncAPIResponse 商家ERP订单处理规则同步 API返回值
+// cainiao.crm.oms.rule.sync
+//
+// 将商家ERP订单处理规则同步到菜鸟CRM系统
 type CainiaoCrmOmsRuleSyncAPIResponse struct {
 	model.CommonResponse
 	CainiaoCrmOmsRuleSyncAPIResponseModel

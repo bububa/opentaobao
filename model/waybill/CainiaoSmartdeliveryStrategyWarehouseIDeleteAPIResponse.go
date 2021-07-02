@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse
-删除智能发货引擎仓策略 API返回值
-cainiao.smartdelivery.strategy.warehouse.i.delete
-
-删除智能发货引擎仓策略 */
+// CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse 删除智能发货引擎仓策略 API返回值
+// cainiao.smartdelivery.strategy.warehouse.i.delete
+//
+// 删除智能发货引擎仓策略
 type CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse struct {
 	model.CommonResponse
 	CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponseModel

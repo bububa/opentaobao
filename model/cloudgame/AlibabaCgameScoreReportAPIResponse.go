@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCgameScoreReportAPIResponse
-云游戏战绩上传通用接口 API返回值
-alibaba.cgame.score.report
-
-阿里云游戏, CP游戏合作方通用游戏结果回传接口 */
+// AlibabaCgameScoreReportAPIResponse 云游戏战绩上传通用接口 API返回值
+// alibaba.cgame.score.report
+//
+// 阿里云游戏, CP游戏合作方通用游戏结果回传接口
 type AlibabaCgameScoreReportAPIResponse struct {
 	model.CommonResponse
 	AlibabaCgameScoreReportAPIResponseModel

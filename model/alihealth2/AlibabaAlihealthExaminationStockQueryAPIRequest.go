@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationStockQueryAPIRequest
-体检机构对接_体检套餐库存查询 API请求
-alibaba.alihealth.examination.stock.query
-
-体检机构对接_体检套餐库存查询 */
+// AlibabaAlihealthExaminationStockQueryAPIRequest 体检机构对接_体检套餐库存查询 API请求
+// alibaba.alihealth.examination.stock.query
+//
+// 体检机构对接_体检套餐库存查询
 type AlibabaAlihealthExaminationStockQueryAPIRequest struct {
 	model.Params
 	// 商户唯一码

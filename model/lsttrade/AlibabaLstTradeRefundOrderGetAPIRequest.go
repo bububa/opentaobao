@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstTradeRefundOrderGetAPIRequest
-零售通退款订单查询 API请求
-alibaba.lst.trade.refund.order.get
-
-零售通退款订单查询 */
+// AlibabaLstTradeRefundOrderGetAPIRequest 零售通退款订单查询 API请求
+// alibaba.lst.trade.refund.order.get
+//
+// 零售通退款订单查询
 type AlibabaLstTradeRefundOrderGetAPIRequest struct {
 	model.Params
 	// 退款单id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductMapAddAPIRequest
-创建分销和后端商品映射关系 API请求
-taobao.fenxiao.product.map.add
-
-创建分销和供应链商品映射关系。 */
+// TaobaoFenxiaoProductMapAddAPIRequest 创建分销和后端商品映射关系 API请求
+// taobao.fenxiao.product.map.add
+//
+// 创建分销和供应链商品映射关系。
 type TaobaoFenxiaoProductMapAddAPIRequest struct {
 	model.Params
 	// 分销产品id。

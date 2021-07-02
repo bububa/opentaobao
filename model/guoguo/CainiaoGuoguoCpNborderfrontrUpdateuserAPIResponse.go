@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse
-小件员信息变更 API返回值
-cainiao.guoguo.cp.nborderfrontr.updateuser
-
-小件员信息变更 */
+// CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse 小件员信息变更 API返回值
+// cainiao.guoguo.cp.nborderfrontr.updateuser
+//
+// 小件员信息变更
 type CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse struct {
 	model.CommonResponse
 	CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel

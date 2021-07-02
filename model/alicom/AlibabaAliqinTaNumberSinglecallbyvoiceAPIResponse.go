@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse
-根据号码tts单呼 API返回值
-alibaba.aliqin.ta.number.singlecallbyvoice
-
-根据号码语音单呼 */
+// AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse 根据号码tts单呼 API返回值
+// alibaba.aliqin.ta.number.singlecallbyvoice
+//
+// 根据号码语音单呼
 type AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponseModel

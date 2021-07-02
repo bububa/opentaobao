@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjMemberHasbindAPIResponse
-喵街会员是否绑定 API返回值
-alibaba.mj.member.hasbind
-
-喵街检测用户是否为数字化会员 */
+// AlibabaMjMemberHasbindAPIResponse 喵街会员是否绑定 API返回值
+// alibaba.mj.member.hasbind
+//
+// 喵街检测用户是否为数字化会员
 type AlibabaMjMemberHasbindAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjMemberHasbindAPIResponseModel

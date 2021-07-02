@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuQuotationPostAPIResponse
-供应商提交报价 API返回值
-alibaba.icbu.quotation.post
-
-供应商对RFQ进行报价 */
+// AlibabaIcbuQuotationPostAPIResponse 供应商提交报价 API返回值
+// alibaba.icbu.quotation.post
+//
+// 供应商对RFQ进行报价
 type AlibabaIcbuQuotationPostAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuQuotationPostAPIResponseModel

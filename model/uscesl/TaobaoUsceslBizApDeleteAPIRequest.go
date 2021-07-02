@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizApDeleteAPIRequest
-删除价签AP设备 API请求
-taobao.uscesl.biz.ap.delete
-
-删除价签AP设备 */
+// TaobaoUsceslBizApDeleteAPIRequest 删除价签AP设备 API请求
+// taobao.uscesl.biz.ap.delete
+//
+// 删除价签AP设备
 type TaobaoUsceslBizApDeleteAPIRequest struct {
 	model.Params
 	// ap的MAC地址

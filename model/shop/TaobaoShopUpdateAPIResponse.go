@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoShopUpdateAPIResponse
-更新店铺基本信息 API返回值
-taobao.shop.update
-
-目前只支持标题、公告和描述的更新 */
+// TaobaoShopUpdateAPIResponse 更新店铺基本信息 API返回值
+// taobao.shop.update
+//
+// 目前只支持标题、公告和描述的更新
 type TaobaoShopUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoShopUpdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateOrderGetAPIRequest
-AE流量订单详情获取API API请求
-aliexpress.affiliate.order.get
-
-联盟推广订单效果获取API */
+// AliexpressAffiliateOrderGetAPIRequest AE流量订单详情获取API API请求
+// aliexpress.affiliate.order.get
+//
+// 联盟推广订单效果获取API
 type AliexpressAffiliateOrderGetAPIRequest struct {
 	model.Params
 	// 安全签名

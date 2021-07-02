@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoBimTradeorderConsignAPIRequest
-驱动保税交易订单发货 API请求
-cainiao.bim.tradeorder.consign
-
-驱动保税交易订单发货 */
+// CainiaoBimTradeorderConsignAPIRequest 驱动保税交易订单发货 API请求
+// cainiao.bim.tradeorder.consign
+//
+// 驱动保税交易订单发货
 type CainiaoBimTradeorderConsignAPIRequest struct {
 	model.Params
 	// 交易单号

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallBrandItemCouponProtectAPIRequest
-全域新品店铺优惠券免除 API请求
-tmall.brand.item.coupon.protect
-
-全域新品店铺优惠券免除申请打标接口 */
+// TmallBrandItemCouponProtectAPIRequest 全域新品店铺优惠券免除 API请求
+// tmall.brand.item.coupon.protect
+//
+// 全域新品店铺优惠券免除申请打标接口
 type TmallBrandItemCouponProtectAPIRequest struct {
 	model.Params
 	// 天猫商品id

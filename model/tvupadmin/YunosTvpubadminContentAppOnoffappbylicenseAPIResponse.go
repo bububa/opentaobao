@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentAppOnoffappbylicenseAPIResponse
-应用上下架操作 API返回值
-yunos.tvpubadmin.content.app.onoffappbylicense
-
-应用上下架操作 */
+// YunosTvpubadminContentAppOnoffappbylicenseAPIResponse 应用上下架操作 API返回值
+// yunos.tvpubadmin.content.app.onoffappbylicense
+//
+// 应用上下架操作
 type YunosTvpubadminContentAppOnoffappbylicenseAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentAppOnoffappbylicenseAPIResponseModel

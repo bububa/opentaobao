@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTuikeWebUnionOrderQueryAPIResponse
-推客网盟合作抽佣订单查询接口 API返回值
-alibaba.tuike.web.union.order.query
-
-推客网盟合作抽佣订单查询接口 */
+// AlibabaTuikeWebUnionOrderQueryAPIResponse 推客网盟合作抽佣订单查询接口 API返回值
+// alibaba.tuike.web.union.order.query
+//
+// 推客网盟合作抽佣订单查询接口
 type AlibabaTuikeWebUnionOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaTuikeWebUnionOrderQueryAPIResponseModel

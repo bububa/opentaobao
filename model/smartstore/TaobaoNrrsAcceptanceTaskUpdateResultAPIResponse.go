@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoNrrsAcceptanceTaskUpdateResultAPIResponse
-更新验收任务支付宝结果 API返回值
-taobao.nrrs.acceptance.task.updateResult
-
-智慧门店商家验收任务检查相关接口-更新支付宝的验收结果。 */
+// TaobaoNrrsAcceptanceTaskUpdateResultAPIResponse 更新验收任务支付宝结果 API返回值
+// taobao.nrrs.acceptance.task.updateResult
+//
+// 智慧门店商家验收任务检查相关接口-更新支付宝的验收结果。
 type TaobaoNrrsAcceptanceTaskUpdateResultAPIResponse struct {
 	model.CommonResponse
 	TaobaoNrrsAcceptanceTaskUpdateResultAPIResponseModel

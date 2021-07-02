@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpProductGroupGetAPIResponse
-查询指定产品分组的下一层子分组 API返回值
-alibaba.scbp.product.group.get
-
-查询指定产品分组的下一层子分组 */
+// AlibabaScbpProductGroupGetAPIResponse 查询指定产品分组的下一层子分组 API返回值
+// alibaba.scbp.product.group.get
+//
+// 查询指定产品分组的下一层子分组
 type AlibabaScbpProductGroupGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpProductGroupGetAPIResponseModel

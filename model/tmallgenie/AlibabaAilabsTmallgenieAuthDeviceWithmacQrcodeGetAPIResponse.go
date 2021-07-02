@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIResponse
-根据mac查询设备的安全二维码 API返回值
-alibaba.ailabs.tmallgenie.auth.device.withmac.qrcode.get
-
-根据mac查询二维码详细信息 */
+// AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIResponse 根据mac查询设备的安全二维码 API返回值
+// alibaba.ailabs.tmallgenie.auth.device.withmac.qrcode.get
+//
+// 根据mac查询二维码详细信息
 type AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIResponseModel

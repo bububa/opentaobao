@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/icbuseller"
 )
 
-/* AlibabaSellerCouponAuthVerify
-优惠券校验
-alibaba.seller.coupon.auth.verify
-
-优惠券校验 */
+// AlibabaSellerCouponAuthVerify 优惠券校验
+// alibaba.seller.coupon.auth.verify
+//
+// 优惠券校验
 func AlibabaSellerCouponAuthVerify(clt *core.SDKClient, req *icbuseller.AlibabaSellerCouponAuthVerifyAPIRequest, session string) (*icbuseller.AlibabaSellerCouponAuthVerifyAPIResponse, error) {
 	var resp icbuseller.AlibabaSellerCouponAuthVerifyAPIResponse
 	err := clt.Post(req, &resp, session)

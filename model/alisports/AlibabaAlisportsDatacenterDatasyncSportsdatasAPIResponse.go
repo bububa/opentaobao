@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsDatacenterDatasyncSportsdatasAPIResponse
-阿里体育运动数据同步统一接口 API返回值
-alibaba.alisports.datacenter.datasync.sportsdatas
-
-给单方提供同步运动数据到阿里体育的接口 */
+// AlibabaAlisportsDatacenterDatasyncSportsdatasAPIResponse 阿里体育运动数据同步统一接口 API返回值
+// alibaba.alisports.datacenter.datasync.sportsdatas
+//
+// 给单方提供同步运动数据到阿里体育的接口
 type AlibabaAlisportsDatacenterDatasyncSportsdatasAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsDatacenterDatasyncSportsdatasAPIResponseModel

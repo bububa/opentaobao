@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcMessagesConfirmAPIResponse
-确认消费消息的状态 API返回值
-taobao.tmc.messages.confirm
-
-确认消费消息的状态 */
+// TaobaoTmcMessagesConfirmAPIResponse 确认消费消息的状态 API返回值
+// taobao.tmc.messages.confirm
+//
+// 确认消费消息的状态
 type TaobaoTmcMessagesConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoTmcMessagesConfirmAPIResponseModel

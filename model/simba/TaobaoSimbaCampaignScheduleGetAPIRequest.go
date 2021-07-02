@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignScheduleGetAPIRequest
-取得一个推广计划的分时折扣设置 API请求
-taobao.simba.campaign.schedule.get
-
-取得一个推广计划的分时折扣设置 */
+// TaobaoSimbaCampaignScheduleGetAPIRequest 取得一个推广计划的分时折扣设置 API请求
+// taobao.simba.campaign.schedule.get
+//
+// 取得一个推广计划的分时折扣设置
 type TaobaoSimbaCampaignScheduleGetAPIRequest struct {
 	model.Params
 	// 主人昵称

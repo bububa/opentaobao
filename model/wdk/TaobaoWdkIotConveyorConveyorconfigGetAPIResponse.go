@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWdkIotConveyorConveyorconfigGetAPIResponse
-获取悬挂链基本配置信息 API返回值
-taobao.wdk.iot.conveyor.conveyorconfig.get
-
-用于从云端WCS获取悬挂链基本配置信息 */
+// TaobaoWdkIotConveyorConveyorconfigGetAPIResponse 获取悬挂链基本配置信息 API返回值
+// taobao.wdk.iot.conveyor.conveyorconfig.get
+//
+// 用于从云端WCS获取悬挂链基本配置信息
 type TaobaoWdkIotConveyorConveyorconfigGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWdkIotConveyorConveyorconfigGetAPIResponseModel

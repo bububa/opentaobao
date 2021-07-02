@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWirelessPictureCheckAPIResponse
-无线开放图片内容安全检查 API返回值
-taobao.wireless.picture.check
-
-无线开放内容检查，提供涉黄暴力政治图片检查。更详情介绍见 <a href="https://help.aliyun.com/document_detail/70292.html" target="blank">阿里云内容安全</a>
-此API会进行两个场景审核，平均RT为1s。 */
+// TaobaoWirelessPictureCheckAPIResponse 无线开放图片内容安全检查 API返回值
+// taobao.wireless.picture.check
+//
+// 无线开放内容检查，提供涉黄暴力政治图片检查。更详情介绍见 <a href="https://help.aliyun.com/document_detail/70292.html" target="blank">阿里云内容安全</a>
+// 此API会进行两个场景审核，平均RT为1s。
 type TaobaoWirelessPictureCheckAPIResponse struct {
 	model.CommonResponse
 	TaobaoWirelessPictureCheckAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlinkMessageConfigSetAPIRequest
-消息提醒开关 API请求
-alibaba.alink.message.config.set
-
-阿里智能消息开关 */
+// AlibabaAlinkMessageConfigSetAPIRequest 消息提醒开关 API请求
+// alibaba.alink.message.config.set
+//
+// 阿里智能消息开关
 type AlibabaAlinkMessageConfigSetAPIRequest struct {
 	model.Params
 	// 设备id

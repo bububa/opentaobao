@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDeActivityLuckydrawAPIResponse
-抽奖 API返回值
-taobao.de.activity.luckydraw
-
-用于激励平台对外提供抽奖功能，包括但不限于集分宝、红包、宝点、淘金币、淘彩票等 */
+// TaobaoDeActivityLuckydrawAPIResponse 抽奖 API返回值
+// taobao.de.activity.luckydraw
+//
+// 用于激励平台对外提供抽奖功能，包括但不限于集分宝、红包、宝点、淘金币、淘彩票等
 type TaobaoDeActivityLuckydrawAPIResponse struct {
 	model.CommonResponse
 	TaobaoDeActivityLuckydrawAPIResponseModel

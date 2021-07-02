@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductGradepriceGetAPIRequest
-等级折扣查询 API请求
-taobao.fenxiao.product.gradeprice.get
-
-等级折扣查询 */
+// TaobaoFenxiaoProductGradepriceGetAPIRequest 等级折扣查询 API请求
+// taobao.fenxiao.product.gradeprice.get
+//
+// 等级折扣查询
 type TaobaoFenxiaoProductGradepriceGetAPIRequest struct {
 	model.Params
 	// 产品id

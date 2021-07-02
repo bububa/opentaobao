@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWlborderGetAPIResponse
-根据物流宝订单编号查询物流宝订单概要信息 API返回值
-taobao.wlb.wlborder.get
-
-根据物流宝订单编号查询物流宝订单概要信息 */
+// TaobaoWlbWlborderGetAPIResponse 根据物流宝订单编号查询物流宝订单概要信息 API返回值
+// taobao.wlb.wlborder.get
+//
+// 根据物流宝订单编号查询物流宝订单概要信息
 type TaobaoWlbWlborderGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWlborderGetAPIResponseModel

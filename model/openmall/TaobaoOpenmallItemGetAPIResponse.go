@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallItemGetAPIResponse
-获取商品详情物料 API返回值
-taobao.openmall.item.get
-
-获取联盟开放的openmall商品 */
+// TaobaoOpenmallItemGetAPIResponse 获取商品详情物料 API返回值
+// taobao.openmall.item.get
+//
+// 获取联盟开放的openmall商品
 type TaobaoOpenmallItemGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenmallItemGetAPIResponseModel

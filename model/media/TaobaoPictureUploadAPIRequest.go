@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPictureUploadAPIRequest
-上传单张图片 API请求
-taobao.picture.upload
-
-图片空间上传接口 */
+// TaobaoPictureUploadAPIRequest 上传单张图片 API请求
+// taobao.picture.upload
+//
+// 图片空间上传接口
 type TaobaoPictureUploadAPIRequest struct {
 	model.Params
 	// 图片分类ID，设置具体某个分类ID或设置0上传到默认分类，只能传入一个分类

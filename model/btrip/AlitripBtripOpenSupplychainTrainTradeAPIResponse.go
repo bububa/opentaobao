@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripOpenSupplychainTrainTradeAPIResponse
-商旅火车票交易流水接口 API返回值
-alitrip.btrip.open.supplychain.train.trade
-
-商旅火车票交易流水接口 */
+// AlitripBtripOpenSupplychainTrainTradeAPIResponse 商旅火车票交易流水接口 API返回值
+// alitrip.btrip.open.supplychain.train.trade
+//
+// 商旅火车票交易流水接口
 type AlitripBtripOpenSupplychainTrainTradeAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripOpenSupplychainTrainTradeAPIResponseModel

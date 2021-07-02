@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAutonaviApiTrafficboardImageGetAPIResponse
-交通看板-栅格情报获取 API返回值
-alibaba.autonavi.api.trafficboard.image.get
-
-获取指定情报板ID的二进制数据（图片） */
+// AlibabaAutonaviApiTrafficboardImageGetAPIResponse 交通看板-栅格情报获取 API返回值
+// alibaba.autonavi.api.trafficboard.image.get
+//
+// 获取指定情报板ID的二进制数据（图片）
 type AlibabaAutonaviApiTrafficboardImageGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAutonaviApiTrafficboardImageGetAPIResponseModel

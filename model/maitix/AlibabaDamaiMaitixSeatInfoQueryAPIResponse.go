@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixSeatInfoQueryAPIResponse
-分销商查询座位信息 API返回值
-alibaba.damai.maitix.seat.info.query
-
-分销查询座位文案信息 */
+// AlibabaDamaiMaitixSeatInfoQueryAPIResponse 分销商查询座位信息 API返回值
+// alibaba.damai.maitix.seat.info.query
+//
+// 分销查询座位文案信息
 type AlibabaDamaiMaitixSeatInfoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixSeatInfoQueryAPIResponseModel

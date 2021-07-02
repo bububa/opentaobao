@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreConsignedAPIResponse
-Pos端门店发货 API返回值
-taobao.omniorder.store.consigned
-
-ISV Pos端门店发货，通知星盘 */
+// TaobaoOmniorderStoreConsignedAPIResponse Pos端门店发货 API返回值
+// taobao.omniorder.store.consigned
+//
+// ISV Pos端门店发货，通知星盘
 type TaobaoOmniorderStoreConsignedAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderStoreConsignedAPIResponseModel

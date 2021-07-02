@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaToolsItemsTopGetAPIRequest
-取得一个关键词的推广组排名列表 API请求
-taobao.simba.tools.items.top.get
-
-取得一个关键词的推广组排名列表 */
+// TaobaoSimbaToolsItemsTopGetAPIRequest 取得一个关键词的推广组排名列表 API请求
+// taobao.simba.tools.items.top.get
+//
+// 取得一个关键词的推广组排名列表
 type TaobaoSimbaToolsItemsTopGetAPIRequest struct {
 	model.Params
 	// 主人昵称

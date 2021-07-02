@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponse
-品牌营销导购员券推广统计数据回流 API返回值
-alibaba.txcs.brandmarketing.coupon.statistics.get
-
-请求券统计数据回流 */
+// AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponse 品牌营销导购员券推广统计数据回流 API返回值
+// alibaba.txcs.brandmarketing.coupon.statistics.get
+//
+// 请求券统计数据回流
 type AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponseModel

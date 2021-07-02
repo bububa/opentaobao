@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminUserRightsAPIResponse
-获取用户权益 API返回值
-yunos.tvpubadmin.user.rights
-
-获取用户权益 */
+// YunosTvpubadminUserRightsAPIResponse 获取用户权益 API返回值
+// yunos.tvpubadmin.user.rights
+//
+// 获取用户权益
 type YunosTvpubadminUserRightsAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminUserRightsAPIResponseModel

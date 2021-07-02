@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterServicestoreCreateAPIResponse
-创建门店 API返回值
-tmall.servicecenter.servicestore.create
-
-用于创建门店/网点。多个业务共用 */
+// TmallServicecenterServicestoreCreateAPIResponse 创建门店 API返回值
+// tmall.servicecenter.servicestore.create
+//
+// 用于创建门店/网点。多个业务共用
 type TmallServicecenterServicestoreCreateAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterServicestoreCreateAPIResponseModel

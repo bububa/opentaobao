@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIhomeCtomPostsaleStatusSyncAPIRequest
-C2M售后状态同步 API请求
-alibaba.ihome.ctom.postsale.status.sync
-
-供给三维家同步定制、成品商品售后进度状态 */
+// AlibabaIhomeCtomPostsaleStatusSyncAPIRequest C2M售后状态同步 API请求
+// alibaba.ihome.ctom.postsale.status.sync
+//
+// 供给三维家同步定制、成品商品售后进度状态
 type AlibabaIhomeCtomPostsaleStatusSyncAPIRequest struct {
 	model.Params
 	// 三维家服务ID

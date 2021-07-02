@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDeviceVendingRegisterAPIRequest
-贩卖机设备注册 API请求
-alibaba.retail.device.vending.register
-
-贩卖机注册 */
+// AlibabaRetailDeviceVendingRegisterAPIRequest 贩卖机设备注册 API请求
+// alibaba.retail.device.vending.register
+//
+// 贩卖机注册
 type AlibabaRetailDeviceVendingRegisterAPIRequest struct {
 	model.Params
 	// 设备名称

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWaybillShengxianGetAPIRequest
-商家获取生鲜电子面单号 API请求
-taobao.wlb.waybill.shengxian.get
-
-商家通过交易订单号获取电子面单接口 */
+// TaobaoWlbWaybillShengxianGetAPIRequest 商家获取生鲜电子面单号 API请求
+// taobao.wlb.waybill.shengxian.get
+//
+// 商家通过交易订单号获取电子面单接口
 type TaobaoWlbWaybillShengxianGetAPIRequest struct {
 	model.Params
 	// 物流服务方代码，生鲜配送：YXSR

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbImportThreeplResourceGetAPIResponse
-3PL直邮获取资源列表 API返回值
-taobao.wlb.import.threepl.resource.get
-
-获取3pl直邮的发货可用资源 */
+// TaobaoWlbImportThreeplResourceGetAPIResponse 3PL直邮获取资源列表 API返回值
+// taobao.wlb.import.threepl.resource.get
+//
+// 获取3pl直邮的发货可用资源
 type TaobaoWlbImportThreeplResourceGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbImportThreeplResourceGetAPIResponseModel

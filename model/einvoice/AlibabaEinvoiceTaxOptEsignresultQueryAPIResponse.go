@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceTaxOptEsignresultQueryAPIResponse
-查询用户签约税优结果 API返回值
-alibaba.einvoice.tax.opt.esignresult.query
-
-查询用户是否已经签约 */
+// AlibabaEinvoiceTaxOptEsignresultQueryAPIResponse 查询用户签约税优结果 API返回值
+// alibaba.einvoice.tax.opt.esignresult.query
+//
+// 查询用户是否已经签约
 type AlibabaEinvoiceTaxOptEsignresultQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceTaxOptEsignresultQueryAPIResponseModel

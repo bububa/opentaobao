@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenuidGetAPIResponse
-获取授权账号对应的OpenUid API返回值
-taobao.openuid.get
-
-获取授权账号对应的OpenUid */
+// TaobaoOpenuidGetAPIResponse 获取授权账号对应的OpenUid API返回值
+// taobao.openuid.get
+//
+// 获取授权账号对应的OpenUid
 type TaobaoOpenuidGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenuidGetAPIResponseModel

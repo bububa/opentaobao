@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest
-上传订单同城快递单号 API请求
-alibaba.health.nr.logistics.deliveryno.update
-
-上传订单同城快递单号 */
+// AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest 上传订单同城快递单号 API请求
+// alibaba.health.nr.logistics.deliveryno.update
+//
+// 上传订单同城快递单号
 type AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest struct {
 	model.Params
 	// 订单ID

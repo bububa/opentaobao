@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlicomWttOpentradeGetgiftdetailsAPIResponse
-存送业务查询奖品信息 API返回值
-alibaba.alicom.wtt.opentrade.getgiftdetails
-
-话费宝充值送查询奖品信息 */
+// AlibabaAlicomWttOpentradeGetgiftdetailsAPIResponse 存送业务查询奖品信息 API返回值
+// alibaba.alicom.wtt.opentrade.getgiftdetails
+//
+// 话费宝充值送查询奖品信息
 type AlibabaAlicomWttOpentradeGetgiftdetailsAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlicomWttOpentradeGetgiftdetailsAPIResponseModel

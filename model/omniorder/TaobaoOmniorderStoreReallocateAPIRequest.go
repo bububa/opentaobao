@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreReallocateAPIRequest
-rellocate API请求
-taobao.omniorder.store.reallocate
-
-门店发货提供改派接口 */
+// TaobaoOmniorderStoreReallocateAPIRequest rellocate API请求
+// taobao.omniorder.store.reallocate
+//
+// 门店发货提供改派接口
 type TaobaoOmniorderStoreReallocateAPIRequest struct {
 	model.Params
 	// 主订单号

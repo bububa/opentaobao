@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegalCaseCommonNoticeAPIResponse
-消息通知 API返回值
-alibaba.legal.case.common.notice
-
-同步通知给诉讼系统 */
+// AlibabaLegalCaseCommonNoticeAPIResponse 消息通知 API返回值
+// alibaba.legal.case.common.notice
+//
+// 同步通知给诉讼系统
 type AlibabaLegalCaseCommonNoticeAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalCaseCommonNoticeAPIResponseModel

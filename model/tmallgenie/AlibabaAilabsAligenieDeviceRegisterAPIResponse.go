@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsAligenieDeviceRegisterAPIResponse
-天猫精灵开放平台获取设备秘钥 API返回值
-alibaba.ailabs.aligenie.device.register
-
-向天猫精灵inside平台注册设备mac地址，并获取设备的唯一密钥 */
+// AlibabaAilabsAligenieDeviceRegisterAPIResponse 天猫精灵开放平台获取设备秘钥 API返回值
+// alibaba.ailabs.aligenie.device.register
+//
+// 向天猫精灵inside平台注册设备mac地址，并获取设备的唯一密钥
 type AlibabaAilabsAligenieDeviceRegisterAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsAligenieDeviceRegisterAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsStockOutBillGetAPIResponse
-通过订单号获取单个出库单发货信息 API返回值
-taobao.wlb.wms.stock.out.bill.get
-
-通过订单号获取单个出库单发货信息 */
+// TaobaoWlbWmsStockOutBillGetAPIResponse 通过订单号获取单个出库单发货信息 API返回值
+// taobao.wlb.wms.stock.out.bill.get
+//
+// 通过订单号获取单个出库单发货信息
 type TaobaoWlbWmsStockOutBillGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsStockOutBillGetAPIResponseModel

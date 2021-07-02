@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbInventoryDetailGetAPIResponse
-查询库存详情 API返回值
-taobao.wlb.inventory.detail.get
-
-查询库存详情，通过商品ID获取发送请求的卖家的库存详情 */
+// TaobaoWlbInventoryDetailGetAPIResponse 查询库存详情 API返回值
+// taobao.wlb.inventory.detail.get
+//
+// 查询库存详情，通过商品ID获取发送请求的卖家的库存详情
 type TaobaoWlbInventoryDetailGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbInventoryDetailGetAPIResponseModel

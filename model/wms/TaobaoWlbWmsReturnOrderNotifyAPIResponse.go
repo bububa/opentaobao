@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsReturnOrderNotifyAPIResponse
-销售退货通知 API返回值
-taobao.wlb.wms.return.order.notify
-
-销售退货通知 */
+// TaobaoWlbWmsReturnOrderNotifyAPIResponse 销售退货通知 API返回值
+// taobao.wlb.wms.return.order.notify
+//
+// 销售退货通知
 type TaobaoWlbWmsReturnOrderNotifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsReturnOrderNotifyAPIResponseModel

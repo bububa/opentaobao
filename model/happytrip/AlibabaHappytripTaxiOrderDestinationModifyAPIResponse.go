@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiOrderDestinationModifyAPIResponse
-修改目的地 API返回值
-alibaba.happytrip.taxi.order.destination.modify
-
-通知ISV修改订单信息 */
+// AlibabaHappytripTaxiOrderDestinationModifyAPIResponse 修改目的地 API返回值
+// alibaba.happytrip.taxi.order.destination.modify
+//
+// 通知ISV修改订单信息
 type AlibabaHappytripTaxiOrderDestinationModifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaHappytripTaxiOrderDestinationModifyAPIResponseModel

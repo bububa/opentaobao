@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemSkuPriceUpdateAPIResponse
-更新商品SKU的价格 API返回值
-taobao.item.sku.price.update
-
-更新商品SKU的价格 */
+// TaobaoItemSkuPriceUpdateAPIResponse 更新商品SKU的价格 API返回值
+// taobao.item.sku.price.update
+//
+// 更新商品SKU的价格
 type TaobaoItemSkuPriceUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemSkuPriceUpdateAPIResponseModel

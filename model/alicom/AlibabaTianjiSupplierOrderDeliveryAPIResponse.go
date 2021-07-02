@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTianjiSupplierOrderDeliveryAPIResponse
-天机供应商发货 API返回值
-alibaba.tianji.supplier.order.delivery
-
-天机供应商发货 */
+// AlibabaTianjiSupplierOrderDeliveryAPIResponse 天机供应商发货 API返回值
+// alibaba.tianji.supplier.order.delivery
+//
+// 天机供应商发货
 type AlibabaTianjiSupplierOrderDeliveryAPIResponse struct {
 	model.CommonResponse
 	AlibabaTianjiSupplierOrderDeliveryAPIResponseModel

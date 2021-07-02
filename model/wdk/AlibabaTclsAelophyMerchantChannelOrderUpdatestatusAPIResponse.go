@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIResponse
-翱象商家自有渠道 订单状态更新 API返回值
-alibaba.tcls.aelophy.merchant.channel.order.updatestatus
-
-订单状态变更 */
+// AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIResponse 翱象商家自有渠道 订单状态更新 API返回值
+// alibaba.tcls.aelophy.merchant.channel.order.updatestatus
+//
+// 订单状态变更
 type AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIResponseModel

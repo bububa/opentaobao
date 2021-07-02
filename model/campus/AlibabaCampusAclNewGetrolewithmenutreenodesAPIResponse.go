@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse
-根据角色id查询权限 API返回值
-alibaba.campus.acl.new.getrolewithmenutreenodes
-
-根据角色id查询权限 */
+// AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse 根据角色id查询权限 API返回值
+// alibaba.campus.acl.new.getrolewithmenutreenodes
+//
+// 根据角色id查询权限
 type AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponseModel

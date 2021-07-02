@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxQualificationPictureUploadAPIRequest
-资质图片上传接口 API请求
-taobao.tanx.qualification.picture.upload
-
-资质图片上传接口 */
+// TaobaoTanxQualificationPictureUploadAPIRequest 资质图片上传接口 API请求
+// taobao.tanx.qualification.picture.upload
+//
+// 资质图片上传接口
 type TaobaoTanxQualificationPictureUploadAPIRequest struct {
 	model.Params
 	// dsp用户id

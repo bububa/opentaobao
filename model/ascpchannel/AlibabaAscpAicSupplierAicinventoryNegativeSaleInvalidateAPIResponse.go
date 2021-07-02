@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIResponse
-负卖库存失效接口 API返回值
-alibaba.ascp.aic.supplier.aicinventory.negative.sale.invalidate
-
-失效负卖库存数据 */
+// AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIResponse 负卖库存失效接口 API返回值
+// alibaba.ascp.aic.supplier.aicinventory.negative.sale.invalidate
+//
+// 失效负卖库存数据
 type AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIResponseModel

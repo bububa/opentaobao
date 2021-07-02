@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-/* AlibabaCampusAclQueryallrole
-查询全部角色
-alibaba.campus.acl.queryallrole
-
-查询全部园区 */
+// AlibabaCampusAclQueryallrole 查询全部角色
+// alibaba.campus.acl.queryallrole
+//
+// 查询全部园区
 func AlibabaCampusAclQueryallrole(clt *core.SDKClient, req *campus.AlibabaCampusAclQueryallroleAPIRequest, session string) (*campus.AlibabaCampusAclQueryallroleAPIResponse, error) {
 	var resp campus.AlibabaCampusAclQueryallroleAPIResponse
 	err := clt.Post(req, &resp, session)

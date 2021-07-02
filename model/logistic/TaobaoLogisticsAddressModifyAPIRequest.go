@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsAddressModifyAPIRequest
-卖家地址库修改 API请求
-taobao.logistics.address.modify
-
-卖家地址库修改 */
+// TaobaoLogisticsAddressModifyAPIRequest 卖家地址库修改 API请求
+// taobao.logistics.address.modify
+//
+// 卖家地址库修改
 type TaobaoLogisticsAddressModifyAPIRequest struct {
 	model.Params
 	// 地址库ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterSettlementStoretransferAuditAPIResponse
-新康众审批门店分账 API返回值
-tmall.servicecenter.settlement.storetransfer.audit
-
-新康众审批门店分账 */
+// TmallServicecenterSettlementStoretransferAuditAPIResponse 新康众审批门店分账 API返回值
+// tmall.servicecenter.settlement.storetransfer.audit
+//
+// 新康众审批门店分账
 type TmallServicecenterSettlementStoretransferAuditAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterSettlementStoretransferAuditAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductBatchUpdateDisplayAPIResponse
-商品批量上下架接口 API返回值
-alibaba.icbu.product.batch.update.display
-
-给国际站的三方服务商提供批量上下架接口 */
+// AlibabaIcbuProductBatchUpdateDisplayAPIResponse 商品批量上下架接口 API返回值
+// alibaba.icbu.product.batch.update.display
+//
+// 给国际站的三方服务商提供批量上下架接口
 type AlibabaIcbuProductBatchUpdateDisplayAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuProductBatchUpdateDisplayAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbItemUpdateAPIResponse
-物流宝商品修改 API返回值
-taobao.wlb.item.update
-
-修改物流宝商品信息 */
+// TaobaoWlbItemUpdateAPIResponse 物流宝商品修改 API返回值
+// taobao.wlb.item.update
+//
+// 修改物流宝商品信息
 type TaobaoWlbItemUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbItemUpdateAPIResponseModel

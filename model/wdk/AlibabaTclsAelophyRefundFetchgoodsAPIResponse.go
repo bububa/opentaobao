@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTclsAelophyRefundFetchgoodsAPIResponse
-saas 售后逆向 商户发起逆向取货 API返回值
-alibaba.tcls.aelophy.refund.fetchgoods
-
-saas 售后逆向 商户发起逆向取货 */
+// AlibabaTclsAelophyRefundFetchgoodsAPIResponse saas 售后逆向 商户发起逆向取货 API返回值
+// alibaba.tcls.aelophy.refund.fetchgoods
+//
+// saas 售后逆向 商户发起逆向取货
 type AlibabaTclsAelophyRefundFetchgoodsAPIResponse struct {
 	model.CommonResponse
 	AlibabaTclsAelophyRefundFetchgoodsAPIResponseModel

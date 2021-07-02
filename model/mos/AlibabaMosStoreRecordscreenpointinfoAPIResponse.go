@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosStoreRecordscreenpointinfoAPIResponse
-云屏埋点数据记录接口 API返回值
-alibaba.mos.store.recordscreenpointinfo
-
-记录云屏埋点数据 */
+// AlibabaMosStoreRecordscreenpointinfoAPIResponse 云屏埋点数据记录接口 API返回值
+// alibaba.mos.store.recordscreenpointinfo
+//
+// 记录云屏埋点数据
 type AlibabaMosStoreRecordscreenpointinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosStoreRecordscreenpointinfoAPIResponseModel

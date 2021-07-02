@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest
-创建经销采购申请 API请求
-taobao.fenxiao.dealer.requisitionorder.create
-
-创建经销采购申请 */
+// TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest 创建经销采购申请 API请求
+// taobao.fenxiao.dealer.requisitionorder.create
+//
+// 创建经销采购申请
 type TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest struct {
 	model.Params
 	// 配送方式。SELF_PICKUP：自提；LOGISTICS：仓库发货

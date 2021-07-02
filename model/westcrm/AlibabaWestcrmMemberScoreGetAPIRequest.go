@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmMemberScoreGetAPIRequest
-获取会员某时间段积分 API请求
-alibaba.westcrm.member.score.get
-
-获取会员某时间段积分 */
+// AlibabaWestcrmMemberScoreGetAPIRequest 获取会员某时间段积分 API请求
+// alibaba.westcrm.member.score.get
+//
+// 获取会员某时间段积分
 type AlibabaWestcrmMemberScoreGetAPIRequest struct {
 	model.Params
 	// requestId

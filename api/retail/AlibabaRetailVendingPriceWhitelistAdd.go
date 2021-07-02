@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/retail"
 )
 
-/* AlibabaRetailVendingPriceWhitelistAdd
-贩卖机价格修改白名单
-alibaba.retail.vending.price.whitelist.add
-
-贩卖机价格修改白名单 */
+// AlibabaRetailVendingPriceWhitelistAdd 贩卖机价格修改白名单
+// alibaba.retail.vending.price.whitelist.add
+//
+// 贩卖机价格修改白名单
 func AlibabaRetailVendingPriceWhitelistAdd(clt *core.SDKClient, req *retail.AlibabaRetailVendingPriceWhitelistAddAPIRequest, session string) (*retail.AlibabaRetailVendingPriceWhitelistAddAPIResponse, error) {
 	var resp retail.AlibabaRetailVendingPriceWhitelistAddAPIResponse
 	err := clt.Post(req, &resp, session)

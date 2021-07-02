@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse
-容器被悬挂链扫描 API返回值
-taobao.wdk.equipment.conveyor.wcsbtoc.containerscannedbyconveyor
-
-容器被悬挂链扫描 */
+// TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse 容器被悬挂链扫描 API返回值
+// taobao.wdk.equipment.conveyor.wcsbtoc.containerscannedbyconveyor
+//
+// 容器被悬挂链扫描
 type TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse struct {
 	model.CommonResponse
 	TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponseModel

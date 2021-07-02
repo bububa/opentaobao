@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytSearchstatusAPIRequest
-单据处理状态查询 API请求
-alibaba.alihealth.drug.kyt.searchstatus
-
-单据处理状态查询 */
+// AlibabaAlihealthDrugKytSearchstatusAPIRequest 单据处理状态查询 API请求
+// alibaba.alihealth.drug.kyt.searchstatus
+//
+// 单据处理状态查询
 type AlibabaAlihealthDrugKytSearchstatusAPIRequest struct {
 	model.Params
 	// 企业ref_ent_id（货主企业的ref_ent_id）

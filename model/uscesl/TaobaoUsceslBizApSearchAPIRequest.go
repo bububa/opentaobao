@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizApSearchAPIRequest
-AP列表查询 API请求
-taobao.uscesl.biz.ap.search
-
-查询当前门店下登记的AP列表 */
+// TaobaoUsceslBizApSearchAPIRequest AP列表查询 API请求
+// taobao.uscesl.biz.ap.search
+//
+// 查询当前门店下登记的AP列表
 type TaobaoUsceslBizApSearchAPIRequest struct {
 	model.Params
 	// 商家编码

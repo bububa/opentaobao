@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIsvDigitalsmsCreatetemplateAPIResponse
-数字短信模板创建 API返回值
-alibaba.isv.digitalsms.createtemplate
-
-数字短信模板创建，给聚石塔，类型：2 */
+// AlibabaIsvDigitalsmsCreatetemplateAPIResponse 数字短信模板创建 API返回值
+// alibaba.isv.digitalsms.createtemplate
+//
+// 数字短信模板创建，给聚石塔，类型：2
 type AlibabaIsvDigitalsmsCreatetemplateAPIResponse struct {
 	model.CommonResponse
 	AlibabaIsvDigitalsmsCreatetemplateAPIResponseModel

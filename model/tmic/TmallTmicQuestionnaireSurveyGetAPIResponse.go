@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTmicQuestionnaireSurveyGetAPIResponse
-天猫新品创新中心问卷数据获取 API返回值
-tmall.tmic.questionnaire.survey.get
-
-天猫新品创新中心问卷数据获取 */
+// TmallTmicQuestionnaireSurveyGetAPIResponse 天猫新品创新中心问卷数据获取 API返回值
+// tmall.tmic.questionnaire.survey.get
+//
+// 天猫新品创新中心问卷数据获取
 type TmallTmicQuestionnaireSurveyGetAPIResponse struct {
 	model.CommonResponse
 	TmallTmicQuestionnaireSurveyGetAPIResponseModel

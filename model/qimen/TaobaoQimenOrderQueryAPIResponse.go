@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenOrderQueryAPIResponse
-根据收件人信息查询交易单号接口 API返回值
-taobao.qimen.order.query
-
-WMS 调用该接口，根据收件人信息查询平台交易订单号。 */
+// TaobaoQimenOrderQueryAPIResponse 根据收件人信息查询交易单号接口 API返回值
+// taobao.qimen.order.query
+//
+// WMS 调用该接口，根据收件人信息查询平台交易订单号。
 type TaobaoQimenOrderQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenOrderQueryAPIResponseModel

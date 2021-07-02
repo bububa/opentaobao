@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeRcChangestatusAPIRequest
-图文草稿状态更新 API请求
-alibaba.alihouse.newhome.rc.changestatus
-
-图文草稿状态更新 */
+// AlibabaAlihouseNewhomeRcChangestatusAPIRequest 图文草稿状态更新 API请求
+// alibaba.alihouse.newhome.rc.changestatus
+//
+// 图文草稿状态更新
 type AlibabaAlihouseNewhomeRcChangestatusAPIRequest struct {
 	model.Params
 	// 外部图文id

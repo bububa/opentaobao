@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest
-sso_token刷新 API请求
-alibaba.alisports.passport.account.ssotokenrefresh
-
-sso_token刷新 */
+// AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest sso_token刷新 API请求
+// alibaba.alisports.passport.account.ssotokenrefresh
+//
+// sso_token刷新
 type AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest struct {
 	model.Params
 	// 应用appkey

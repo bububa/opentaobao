@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstSpeakerConfigureSyncaudioAPIResponse
-音频同步 API返回值
-alibaba.lst.speaker.configure.syncaudio
-
-音频同步 */
+// AlibabaLstSpeakerConfigureSyncaudioAPIResponse 音频同步 API返回值
+// alibaba.lst.speaker.configure.syncaudio
+//
+// 音频同步
 type AlibabaLstSpeakerConfigureSyncaudioAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstSpeakerConfigureSyncaudioAPIResponseModel

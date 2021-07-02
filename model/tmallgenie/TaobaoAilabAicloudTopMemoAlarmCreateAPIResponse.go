@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoAlarmCreateAPIResponse
-天猫精灵闹钟创建 API返回值
-taobao.ailab.aicloud.top.memo.alarm.create
-
-天猫精灵闹钟创建 */
+// TaobaoAilabAicloudTopMemoAlarmCreateAPIResponse 天猫精灵闹钟创建 API返回值
+// taobao.ailab.aicloud.top.memo.alarm.create
+//
+// 天猫精灵闹钟创建
 type TaobaoAilabAicloudTopMemoAlarmCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMemoAlarmCreateAPIResponseModel

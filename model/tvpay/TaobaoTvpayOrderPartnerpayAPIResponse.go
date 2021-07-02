@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTvpayOrderPartnerpayAPIResponse
-tv支付第三方支付订单 API返回值
-taobao.tvpay.order.partnerpay
-
-tv支付第三方发起并支付订单（使用设备授权） */
+// TaobaoTvpayOrderPartnerpayAPIResponse tv支付第三方支付订单 API返回值
+// taobao.tvpay.order.partnerpay
+//
+// tv支付第三方发起并支付订单（使用设备授权）
 type TaobaoTvpayOrderPartnerpayAPIResponse struct {
 	model.CommonResponse
 	TaobaoTvpayOrderPartnerpayAPIResponseModel

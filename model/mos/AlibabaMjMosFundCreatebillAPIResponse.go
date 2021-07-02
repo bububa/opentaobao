@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjMosFundCreatebillAPIResponse
-创建一个付款单 API返回值
-alibaba.mj.mos.fund.createbill
-
-创建一个付款单 */
+// AlibabaMjMosFundCreatebillAPIResponse 创建一个付款单 API返回值
+// alibaba.mj.mos.fund.createbill
+//
+// 创建一个付款单
 type AlibabaMjMosFundCreatebillAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjMosFundCreatebillAPIResponseModel

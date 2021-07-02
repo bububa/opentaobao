@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlinkDeviceUnbindAPIResponse
-解绑设备 API返回值
-alibaba.alink.device.unbind
-
-阿里智能解绑设备 */
+// AlibabaAlinkDeviceUnbindAPIResponse 解绑设备 API返回值
+// alibaba.alink.device.unbind
+//
+// 阿里智能解绑设备
 type AlibabaAlinkDeviceUnbindAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlinkDeviceUnbindAPIResponseModel

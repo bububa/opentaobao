@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardReservefailAPIRequest
-预约失败 API请求
-tmall.servicecenter.workcard.reservefail
-
-服务商调用该接口回传工单预约失败 */
+// TmallServicecenterWorkcardReservefailAPIRequest 预约失败 API请求
+// tmall.servicecenter.workcard.reservefail
+//
+// 服务商调用该接口回传工单预约失败
 type TmallServicecenterWorkcardReservefailAPIRequest struct {
 	model.Params
 	// 核销单外部id

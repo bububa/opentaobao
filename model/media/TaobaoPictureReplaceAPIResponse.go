@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPictureReplaceAPIResponse
-替换图片 API返回值
-taobao.picture.replace
-
-替换一张图片，只替换图片数据，图片名称，图片分类等保持不变。 */
+// TaobaoPictureReplaceAPIResponse 替换图片 API返回值
+// taobao.picture.replace
+//
+// 替换一张图片，只替换图片数据，图片名称，图片分类等保持不变。
 type TaobaoPictureReplaceAPIResponse struct {
 	model.CommonResponse
 	TaobaoPictureReplaceAPIResponseModel

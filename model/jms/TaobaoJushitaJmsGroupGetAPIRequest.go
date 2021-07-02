@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJushitaJmsGroupGetAPIRequest
-查询ONS分组 API请求
-taobao.jushita.jms.group.get
-
-查询当前appkey在ONS中已有的分组 */
+// TaobaoJushitaJmsGroupGetAPIRequest 查询ONS分组 API请求
+// taobao.jushita.jms.group.get
+//
+// 查询当前appkey在ONS中已有的分组
 type TaobaoJushitaJmsGroupGetAPIRequest struct {
 	model.Params
 	// 页码

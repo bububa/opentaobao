@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCardQryphysicalAPIResponse
-查询物理卡 API返回值
-alibaba.alsc.crm.card.qryphysical
-
-查询物理卡 */
+// AlibabaAlscCrmCardQryphysicalAPIResponse 查询物理卡 API返回值
+// alibaba.alsc.crm.card.qryphysical
+//
+// 查询物理卡
 type AlibabaAlscCrmCardQryphysicalAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCardQryphysicalAPIResponseModel

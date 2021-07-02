@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailElectronicCertificateConfirmAPIResponse
-确认核销接口 API返回值
-alibaba.retail.electronic.certificate.confirm
-
-确认核销接口 */
+// AlibabaRetailElectronicCertificateConfirmAPIResponse 确认核销接口 API返回值
+// alibaba.retail.electronic.certificate.confirm
+//
+// 确认核销接口
 type AlibabaRetailElectronicCertificateConfirmAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailElectronicCertificateConfirmAPIResponseModel

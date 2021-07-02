@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest
-零配方案上报设备 API请求
-taobao.ailab.aicloud.smarthome.top.genielink.reportdevice
-
-零配方案中设备联网成功之后上报设备 */
+// TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest 零配方案上报设备 API请求
+// taobao.ailab.aicloud.smarthome.top.genielink.reportdevice
+//
+// 零配方案中设备联网成功之后上报设备
 type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest struct {
 	model.Params
 	// 供应商id

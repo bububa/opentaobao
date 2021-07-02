@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeLineSyncAPIResponse
-环线数据同步 API返回值
-alibaba.alihouse.newhome.line.sync
-
-环线数据同步 */
+// AlibabaAlihouseNewhomeLineSyncAPIResponse 环线数据同步 API返回值
+// alibaba.alihouse.newhome.line.sync
+//
+// 环线数据同步
 type AlibabaAlihouseNewhomeLineSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihouseNewhomeLineSyncAPIResponseModel

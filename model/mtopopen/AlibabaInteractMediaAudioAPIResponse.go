@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractMediaAudioAPIResponse
-音频相关鉴权接口 API返回值
-alibaba.interact.media.audio
-
-新音频包的鉴权接口 */
+// AlibabaInteractMediaAudioAPIResponse 音频相关鉴权接口 API返回值
+// alibaba.interact.media.audio
+//
+// 新音频包的鉴权接口
 type AlibabaInteractMediaAudioAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractMediaAudioAPIResponseModel

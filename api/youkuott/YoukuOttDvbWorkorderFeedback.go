@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/youkuott"
 )
 
-/* YoukuOttDvbWorkorderFeedback
-dvb工单反馈
-youku.ott.dvb.workorder.feedback
-
-dvb工单处理结果反馈 */
+// YoukuOttDvbWorkorderFeedback dvb工单反馈
+// youku.ott.dvb.workorder.feedback
+//
+// dvb工单处理结果反馈
 func YoukuOttDvbWorkorderFeedback(clt *core.SDKClient, req *youkuott.YoukuOttDvbWorkorderFeedbackAPIRequest, session string) (*youkuott.YoukuOttDvbWorkorderFeedbackAPIResponse, error) {
 	var resp youkuott.YoukuOttDvbWorkorderFeedbackAPIResponse
 	err := clt.Post(req, &resp, session)

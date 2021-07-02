@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionFeedInvalidateAPIResponse
-aliexpress.solution.feed.invalidate API返回值
-aliexpress.solution.feed.invalidate
-
-Api for invalidating specific feeds based on job Ids. Please use aliexpress.solution.feed.list.get to determine which job Ids needs to be sent for invalidation. */
+// AliexpressSolutionFeedInvalidateAPIResponse aliexpress.solution.feed.invalidate API返回值
+// aliexpress.solution.feed.invalidate
+//
+// Api for invalidating specific feeds based on job Ids. Please use aliexpress.solution.feed.list.get to determine which job Ids needs to be sent for invalidation.
 type AliexpressSolutionFeedInvalidateAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionFeedInvalidateAPIResponseModel

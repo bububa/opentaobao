@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPurSupplierInvoicecreateAPIResponse
-preInvoice创建 API返回值
-alibaba.pur.supplier.invoicecreate
-
-preInvoice创建 */
+// AlibabaPurSupplierInvoicecreateAPIResponse preInvoice创建 API返回值
+// alibaba.pur.supplier.invoicecreate
+//
+// preInvoice创建
 type AlibabaPurSupplierInvoicecreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaPurSupplierInvoicecreateAPIResponseModel

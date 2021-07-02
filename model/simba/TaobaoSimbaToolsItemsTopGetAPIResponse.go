@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaToolsItemsTopGetAPIResponse
-取得一个关键词的推广组排名列表 API返回值
-taobao.simba.tools.items.top.get
-
-取得一个关键词的推广组排名列表 */
+// TaobaoSimbaToolsItemsTopGetAPIResponse 取得一个关键词的推广组排名列表 API返回值
+// taobao.simba.tools.items.top.get
+//
+// 取得一个关键词的推广组排名列表
 type TaobaoSimbaToolsItemsTopGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaToolsItemsTopGetAPIResponseModel

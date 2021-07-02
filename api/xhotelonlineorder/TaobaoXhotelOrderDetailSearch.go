@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelonlineorder"
 )
 
-/* TaobaoXhotelOrderDetailSearch
-订单详情查询
-taobao.xhotel.order.detail.search
-
-提供订单详情查询 */
+// TaobaoXhotelOrderDetailSearch 订单详情查询
+// taobao.xhotel.order.detail.search
+//
+// 提供订单详情查询
 func TaobaoXhotelOrderDetailSearch(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIRequest, session string) (*xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIResponse, error) {
 	var resp xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIResponse
 	err := clt.Post(req, &resp, session)

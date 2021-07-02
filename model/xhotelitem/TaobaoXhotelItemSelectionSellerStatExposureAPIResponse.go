@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelItemSelectionSellerStatExposureAPIResponse
-选品曝光趋势 API返回值
-taobao.xhotel.item.selection.seller.stat.exposure
-
-用于提供给商家获取选品曝光趋势 */
+// TaobaoXhotelItemSelectionSellerStatExposureAPIResponse 选品曝光趋势 API返回值
+// taobao.xhotel.item.selection.seller.stat.exposure
+//
+// 用于提供给商家获取选品曝光趋势
 type TaobaoXhotelItemSelectionSellerStatExposureAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelItemSelectionSellerStatExposureAPIResponseModel

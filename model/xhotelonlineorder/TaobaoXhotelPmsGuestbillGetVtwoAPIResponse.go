@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelPmsGuestbillGetVtwoAPIResponse
-客人PMS账单信息查询 API返回值
-taobao.xhotel.pms.guestbill.get.vtwo
-
-从pms获取客人账单信息 */
+// TaobaoXhotelPmsGuestbillGetVtwoAPIResponse 客人PMS账单信息查询 API返回值
+// taobao.xhotel.pms.guestbill.get.vtwo
+//
+// 从pms获取客人账单信息
 type TaobaoXhotelPmsGuestbillGetVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelPmsGuestbillGetVtwoAPIResponseModel

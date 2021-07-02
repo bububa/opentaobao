@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest
-批量得到推广组 API请求
-taobao.simba.adgroupsbyadgroupids.get
-
-批量得到推广组 */
+// TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest 批量得到推广组 API请求
+// taobao.simba.adgroupsbyadgroupids.get
+//
+// 批量得到推广组
 type TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest struct {
 	model.Params
 	// 主人昵称

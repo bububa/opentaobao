@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleRentOrderCheckstatusUploadAPIResponse
-上传验收结果 API返回值
-alibaba.idle.rent.order.checkstatus.upload
-
-上传验收结果 */
+// AlibabaIdleRentOrderCheckstatusUploadAPIResponse 上传验收结果 API返回值
+// alibaba.idle.rent.order.checkstatus.upload
+//
+// 上传验收结果
 type AlibabaIdleRentOrderCheckstatusUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleRentOrderCheckstatusUploadAPIResponseModel

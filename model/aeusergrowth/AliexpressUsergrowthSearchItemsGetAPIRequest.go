@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressUsergrowthSearchItemsGetAPIRequest
-第三方平台搜索AE商品 API请求
-aliexpress.usergrowth.search.items.get
-
-第三方平台的搜索服务   获取AE商品list */
+// AliexpressUsergrowthSearchItemsGetAPIRequest 第三方平台搜索AE商品 API请求
+// aliexpress.usergrowth.search.items.get
+//
+// 第三方平台的搜索服务   获取AE商品list
 type AliexpressUsergrowthSearchItemsGetAPIRequest struct {
 	model.Params
 	// user input keypods

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptCampadgroupbaseGetAPIResponse
-推广计划下的推广组报表基础数据查询(只有汇总数据，无分类类型) API返回值
-taobao.simba.rpt.campadgroupbase.get
-
-推广计划下的推广组报表基础数据查询(只有汇总数据，无分类类型) */
+// TaobaoSimbaRptCampadgroupbaseGetAPIResponse 推广计划下的推广组报表基础数据查询(只有汇总数据，无分类类型) API返回值
+// taobao.simba.rpt.campadgroupbase.get
+//
+// 推广计划下的推广组报表基础数据查询(只有汇总数据，无分类类型)
 type TaobaoSimbaRptCampadgroupbaseGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaRptCampadgroupbaseGetAPIResponseModel

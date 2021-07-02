@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIResponse
-查询招行支付状态api API返回值
-alibaba.damai.maitix.distribution.cmb.querypayresult
-
-queryPayResult */
+// AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIResponse 查询招行支付状态api API返回值
+// alibaba.damai.maitix.distribution.cmb.querypayresult
+//
+// queryPayResult
 type AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIResponseModel

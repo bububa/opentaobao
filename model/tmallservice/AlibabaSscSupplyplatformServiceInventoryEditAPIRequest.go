@@ -6,14 +6,13 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSscSupplyplatformServiceInventoryEditAPIRequest
-编辑服务库存 API请求
-alibaba.ssc.supplyplatform.service.inventory.edit
-
-实时编辑服务库存。只支持增加或减少库存，不支持设置绝对库存值。
-需要自己处理好幂等逻辑。
-要先查询当前库存值，并基于返回结果做编辑操作。
-参考alibaba.ssc.supplyplatform.service.inventory.query和alibaba.ssc.supplyplatform.servicecapacity.save */
+// AlibabaSscSupplyplatformServiceInventoryEditAPIRequest 编辑服务库存 API请求
+// alibaba.ssc.supplyplatform.service.inventory.edit
+//
+// 实时编辑服务库存。只支持增加或减少库存，不支持设置绝对库存值。
+// 需要自己处理好幂等逻辑。
+// 要先查询当前库存值，并基于返回结果做编辑操作。
+// 参考alibaba.ssc.supplyplatform.service.inventory.query和alibaba.ssc.supplyplatform.servicecapacity.save
 type AlibabaSscSupplyplatformServiceInventoryEditAPIRequest struct {
 	model.Params
 	// 服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参

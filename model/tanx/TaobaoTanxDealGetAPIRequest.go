@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxDealGetAPIRequest
-对外部dsp提供交易id查询接口 API请求
-taobao.tanx.deal.get
-
-对外部dsp提供交易id查询接口 */
+// TaobaoTanxDealGetAPIRequest 对外部dsp提供交易id查询接口 API请求
+// taobao.tanx.deal.get
+//
+// 对外部dsp提供交易id查询接口
 type TaobaoTanxDealGetAPIRequest struct {
 	model.Params
 	// dsp用户id

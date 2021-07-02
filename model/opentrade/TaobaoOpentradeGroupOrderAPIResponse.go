@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeGroupOrderAPIResponse
-组团购获取订单列表 API返回值
-taobao.opentrade.group.order
-
-组团购场景下，获取开团的订单列表 */
+// TaobaoOpentradeGroupOrderAPIResponse 组团购获取订单列表 API返回值
+// taobao.opentrade.group.order
+//
+// 组团购场景下，获取开团的订单列表
 type TaobaoOpentradeGroupOrderAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeGroupOrderAPIResponseModel

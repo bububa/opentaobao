@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcTopicGroupDeleteAPIResponse
-删除消息topic分组路由 API返回值
-taobao.tmc.topic.group.delete
-
-删除根据topic名称路由消息到不同的分组关系 */
+// TaobaoTmcTopicGroupDeleteAPIResponse 删除消息topic分组路由 API返回值
+// taobao.tmc.topic.group.delete
+//
+// 删除根据topic名称路由消息到不同的分组关系
 type TaobaoTmcTopicGroupDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoTmcTopicGroupDeleteAPIResponseModel

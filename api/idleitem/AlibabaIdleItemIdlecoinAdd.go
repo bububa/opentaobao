@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/idleitem"
 )
 
-/* AlibabaIdleItemIdlecoinAdd
-免费送商品发送
-alibaba.idle.item.idlecoin.add
-
-免费送商品发布 */
+// AlibabaIdleItemIdlecoinAdd 免费送商品发送
+// alibaba.idle.item.idlecoin.add
+//
+// 免费送商品发布
 func AlibabaIdleItemIdlecoinAdd(clt *core.SDKClient, req *idleitem.AlibabaIdleItemIdlecoinAddAPIRequest, session string) (*idleitem.AlibabaIdleItemIdlecoinAddAPIResponse, error) {
 	var resp idleitem.AlibabaIdleItemIdlecoinAddAPIResponse
 	err := clt.Post(req, &resp, session)

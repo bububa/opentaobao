@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFundplatformCardordersInfoQueryAPIResponse
-根据制卡单分页查询卡信息 API返回值
-alibaba.fundplatform.cardorders.info.query
-
-该接口由汇金实现，外部调用。通过制卡单号分页查询卡信息 */
+// AlibabaFundplatformCardordersInfoQueryAPIResponse 根据制卡单分页查询卡信息 API返回值
+// alibaba.fundplatform.cardorders.info.query
+//
+// 该接口由汇金实现，外部调用。通过制卡单号分页查询卡信息
 type AlibabaFundplatformCardordersInfoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaFundplatformCardordersInfoQueryAPIResponseModel

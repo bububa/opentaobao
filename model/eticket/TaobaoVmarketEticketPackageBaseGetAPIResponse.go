@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketPackageBaseGetAPIResponse
-获取包基本信息 API返回值
-taobao.vmarket.eticket.package.base.get
-
-获取包基本信息 */
+// TaobaoVmarketEticketPackageBaseGetAPIResponse 获取包基本信息 API返回值
+// taobao.vmarket.eticket.package.base.get
+//
+// 获取包基本信息
 type TaobaoVmarketEticketPackageBaseGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketPackageBaseGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingOpenVersionCountAPIResponse
-版本数量查询 API返回值
-alibaba.wdk.marketing.open.version.count
-
-版本数量查询 */
+// AlibabaWdkMarketingOpenVersionCountAPIResponse 版本数量查询 API返回值
+// alibaba.wdk.marketing.open.version.count
+//
+// 版本数量查询
 type AlibabaWdkMarketingOpenVersionCountAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingOpenVersionCountAPIResponseModel

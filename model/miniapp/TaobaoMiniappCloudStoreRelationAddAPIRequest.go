@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappCloudStoreRelationAddAPIRequest
-云存储添加 API请求
-taobao.miniapp.cloud.store.relation.add
-
-用于用户上传文件之后回写云存储的关联关系 */
+// TaobaoMiniappCloudStoreRelationAddAPIRequest 云存储添加 API请求
+// taobao.miniapp.cloud.store.relation.add
+//
+// 用于用户上传文件之后回写云存储的关联关系
 type TaobaoMiniappCloudStoreRelationAddAPIRequest struct {
 	model.Params
 	// 环境 test/online

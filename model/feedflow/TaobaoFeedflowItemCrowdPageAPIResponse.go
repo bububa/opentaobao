@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemCrowdPageAPIResponse
-分页查询单品单元下人群列表 API返回值
-taobao.feedflow.item.crowd.page
-
-分页查询单品单元下人群列表 */
+// TaobaoFeedflowItemCrowdPageAPIResponse 分页查询单品单元下人群列表 API返回值
+// taobao.feedflow.item.crowd.page
+//
+// 分页查询单品单元下人群列表
 type TaobaoFeedflowItemCrowdPageAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemCrowdPageAPIResponseModel

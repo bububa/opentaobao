@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripIeAgentRefundNewMultiplerefundsAPIResponse
-补退接口 API返回值
-taobao.alitrip.ie.agent.refund.new.multiplerefunds
-
-1. 补退接口， 可以进行多次退款 */
+// TaobaoAlitripIeAgentRefundNewMultiplerefundsAPIResponse 补退接口 API返回值
+// taobao.alitrip.ie.agent.refund.new.multiplerefunds
+//
+// 1. 补退接口， 可以进行多次退款
 type TaobaoAlitripIeAgentRefundNewMultiplerefundsAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripIeAgentRefundNewMultiplerefundsAPIResponseModel

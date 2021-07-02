@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleAgreementPayQueryAPIResponse
-代扣详情查询 API返回值
-alibaba.idle.agreement.pay.query
-
-查询代扣结果 */
+// AlibabaIdleAgreementPayQueryAPIResponse 代扣详情查询 API返回值
+// alibaba.idle.agreement.pay.query
+//
+// 查询代扣结果
 type AlibabaIdleAgreementPayQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleAgreementPayQueryAPIResponseModel

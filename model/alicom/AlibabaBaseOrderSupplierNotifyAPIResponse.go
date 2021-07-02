@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaseOrderSupplierNotifyAPIResponse
-阿里通信运营商信息回传 API返回值
-alibaba.base.order.supplier.notify
-
-接收阿里通信流量运营商信息回传 */
+// AlibabaBaseOrderSupplierNotifyAPIResponse 阿里通信运营商信息回传 API返回值
+// alibaba.base.order.supplier.notify
+//
+// 接收阿里通信流量运营商信息回传
 type AlibabaBaseOrderSupplierNotifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaBaseOrderSupplierNotifyAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizStoreInsertAPIRequest
-新增电子价签商家门店接口 API请求
-taobao.uscesl.biz.store.insert
-
-新增电子价签商家门店接口 */
+// TaobaoUsceslBizStoreInsertAPIRequest 新增电子价签商家门店接口 API请求
+// taobao.uscesl.biz.store.insert
+//
+// 新增电子价签商家门店接口
 type TaobaoUsceslBizStoreInsertAPIRequest struct {
 	model.Params
 	// 门店名称

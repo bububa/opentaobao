@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMobilePromotionCouponApplyAPIResponse
-优惠券领取(手淘专用) API返回值
-taobao.mobile.promotion.coupon.apply
-
-优惠券领取 */
+// TaobaoMobilePromotionCouponApplyAPIResponse 优惠券领取(手淘专用) API返回值
+// taobao.mobile.promotion.coupon.apply
+//
+// 优惠券领取
 type TaobaoMobilePromotionCouponApplyAPIResponse struct {
 	model.CommonResponse
 	TaobaoMobilePromotionCouponApplyAPIResponseModel

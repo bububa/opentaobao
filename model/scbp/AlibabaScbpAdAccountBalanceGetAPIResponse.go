@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdAccountBalanceGetAPIResponse
-查询账户余额 API返回值
-alibaba.scbp.ad.account.balance.get
-
-查询推广账户余额 */
+// AlibabaScbpAdAccountBalanceGetAPIResponse 查询账户余额 API返回值
+// alibaba.scbp.ad.account.balance.get
+//
+// 查询推广账户余额
 type AlibabaScbpAdAccountBalanceGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdAccountBalanceGetAPIResponseModel

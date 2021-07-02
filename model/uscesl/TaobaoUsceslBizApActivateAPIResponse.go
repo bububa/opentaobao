@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizApActivateAPIResponse
-激活AP价签通讯模块 API返回值
-taobao.uscesl.biz.ap.activate
-
-激活AP价签通讯模块 */
+// TaobaoUsceslBizApActivateAPIResponse 激活AP价签通讯模块 API返回值
+// taobao.uscesl.biz.ap.activate
+//
+// 激活AP价签通讯模块
 type TaobaoUsceslBizApActivateAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsceslBizApActivateAPIResponseModel

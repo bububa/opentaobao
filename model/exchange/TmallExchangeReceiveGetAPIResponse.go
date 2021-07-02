@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeReceiveGetAPIResponse
-卖家查询换货列表 API返回值
-tmall.exchange.receive.get
-
-卖家查询换货列表 */
+// TmallExchangeReceiveGetAPIResponse 卖家查询换货列表 API返回值
+// tmall.exchange.receive.get
+//
+// 卖家查询换货列表
 type TmallExchangeReceiveGetAPIResponse struct {
 	model.CommonResponse
 	TmallExchangeReceiveGetAPIResponseModel

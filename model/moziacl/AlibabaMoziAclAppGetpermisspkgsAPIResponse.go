@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziAclAppGetpermisspkgsAPIResponse
-分页获取应用的权限套餐 API返回值
-alibaba.mozi.acl.app.getpermisspkgs
-
-分页查询应用下的权限套餐列表 */
+// AlibabaMoziAclAppGetpermisspkgsAPIResponse 分页获取应用的权限套餐 API返回值
+// alibaba.mozi.acl.app.getpermisspkgs
+//
+// 分页查询应用下的权限套餐列表
 type AlibabaMoziAclAppGetpermisspkgsAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziAclAppGetpermisspkgsAPIResponseModel

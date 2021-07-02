@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiOrderCreateAPIResponse
-用户叫车 API返回值
-alibaba.happytrip.taxi.order.create
-
-用户根据需要发起叫车请求，在发起请求之前必须事先获得order id. */
+// AlibabaHappytripTaxiOrderCreateAPIResponse 用户叫车 API返回值
+// alibaba.happytrip.taxi.order.create
+//
+// 用户根据需要发起叫车请求，在发起请求之前必须事先获得order id.
 type AlibabaHappytripTaxiOrderCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaHappytripTaxiOrderCreateAPIResponseModel

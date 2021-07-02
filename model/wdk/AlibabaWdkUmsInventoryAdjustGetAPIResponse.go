@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkUmsInventoryAdjustGetAPIResponse
-库调单-回流单 API返回值
-alibaba.wdk.ums.inventory.adjust.get
-
-库调单-回流单 */
+// AlibabaWdkUmsInventoryAdjustGetAPIResponse 库调单-回流单 API返回值
+// alibaba.wdk.ums.inventory.adjust.get
+//
+// 库调单-回流单
 type AlibabaWdkUmsInventoryAdjustGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkUmsInventoryAdjustGetAPIResponseModel

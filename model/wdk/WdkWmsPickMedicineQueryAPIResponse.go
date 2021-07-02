@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* WdkWmsPickMedicineQueryAPIResponse
-查询拣货单中的药品信息 API返回值
-wdk.wms.pick.medicine.query
-
-联营商药机查询拣货单中的药品信息 */
+// WdkWmsPickMedicineQueryAPIResponse 查询拣货单中的药品信息 API返回值
+// wdk.wms.pick.medicine.query
+//
+// 联营商药机查询拣货单中的药品信息
 type WdkWmsPickMedicineQueryAPIResponse struct {
 	model.CommonResponse
 	WdkWmsPickMedicineQueryAPIResponseModel

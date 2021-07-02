@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2bTradeRefundListAPIRequest
-获取采购退货单列表 API请求
-alibaba.nlife.b2b.trade.refund.list
-
-获取采购退货单列表 */
+// AlibabaNlifeB2bTradeRefundListAPIRequest 获取采购退货单列表 API请求
+// alibaba.nlife.b2b.trade.refund.list
+//
+// 获取采购退货单列表
 type AlibabaNlifeB2bTradeRefundListAPIRequest struct {
 	model.Params
 	// 采购退货单创建时间开始范围

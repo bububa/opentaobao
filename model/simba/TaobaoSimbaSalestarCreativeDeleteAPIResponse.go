@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSalestarCreativeDeleteAPIResponse
-(新)销量明星删除创意相关接口 API返回值
-taobao.simba.salestar.creative.delete
-
-删除一个创意 */
+// TaobaoSimbaSalestarCreativeDeleteAPIResponse (新)销量明星删除创意相关接口 API返回值
+// taobao.simba.salestar.creative.delete
+//
+// 删除一个创意
 type TaobaoSimbaSalestarCreativeDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaSalestarCreativeDeleteAPIResponseModel

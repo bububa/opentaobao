@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceAppupgradequeryAPIRequest
-应用升级查询 API请求
-yunos.tvpubadmin.device.appupgradequery
-
-应用升级查询 */
+// YunosTvpubadminDeviceAppupgradequeryAPIRequest 应用升级查询 API请求
+// yunos.tvpubadmin.device.appupgradequery
+//
+// 应用升级查询
 type YunosTvpubadminDeviceAppupgradequeryAPIRequest struct {
 	model.Params
 	// 牌照方

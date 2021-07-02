@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateOrderListbyindexAPIResponse
-AE联盟推广者订单查询接口-按游标索引查询 API返回值
-aliexpress.affiliate.order.listbyindex
-
-AE联盟推广者订单按游标查询接口 */
+// AliexpressAffiliateOrderListbyindexAPIResponse AE联盟推广者订单查询接口-按游标索引查询 API返回值
+// aliexpress.affiliate.order.listbyindex
+//
+// AE联盟推广者订单按游标查询接口
 type AliexpressAffiliateOrderListbyindexAPIResponse struct {
 	model.CommonResponse
 	AliexpressAffiliateOrderListbyindexAPIResponseModel

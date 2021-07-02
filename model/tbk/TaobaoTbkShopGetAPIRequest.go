@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkShopGetAPIRequest
-淘宝客-推广者-店铺搜索 API请求
-taobao.tbk.shop.get
-
-淘宝客店铺查询 */
+// TaobaoTbkShopGetAPIRequest 淘宝客-推广者-店铺搜索 API请求
+// taobao.tbk.shop.get
+//
+// 淘宝客店铺查询
 type TaobaoTbkShopGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDeviceRoadStatusResetAPIRequest
-贩卖机货道解锁 API请求
-alibaba.retail.device.road.status.reset
-
-贩卖机货道解锁 */
+// AlibabaRetailDeviceRoadStatusResetAPIRequest 贩卖机货道解锁 API请求
+// alibaba.retail.device.road.status.reset
+//
+// 贩卖机货道解锁
 type AlibabaRetailDeviceRoadStatusResetAPIRequest struct {
 	model.Params
 	// 设备外部编码

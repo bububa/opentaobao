@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreSdtcancelAPIResponse
-通知速店通取消取号 API返回值
-taobao.omniorder.store.sdtcancel
-
-通知速店通取消取号 */
+// TaobaoOmniorderStoreSdtcancelAPIResponse 通知速店通取消取号 API返回值
+// taobao.omniorder.store.sdtcancel
+//
+// 通知速店通取消取号
 type TaobaoOmniorderStoreSdtcancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderStoreSdtcancelAPIResponseModel

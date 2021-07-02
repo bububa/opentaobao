@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappItemsGetAPIResponse
-批量获取商品信息 API返回值
-taobao.miniapp.items.get
-
-获取商品公开属性，只允许在商家应用环境中使用 */
+// TaobaoMiniappItemsGetAPIResponse 批量获取商品信息 API返回值
+// taobao.miniapp.items.get
+//
+// 获取商品公开属性，只允许在商家应用环境中使用
 type TaobaoMiniappItemsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappItemsGetAPIResponseModel

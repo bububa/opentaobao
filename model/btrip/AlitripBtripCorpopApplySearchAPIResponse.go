@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripCorpopApplySearchAPIResponse
-【商旅】搜索审批单列表 API返回值
-alitrip.btrip.corpop.apply.search
-
-【商旅】搜索审批单列表 */
+// AlitripBtripCorpopApplySearchAPIResponse 【商旅】搜索审批单列表 API返回值
+// alitrip.btrip.corpop.apply.search
+//
+// 【商旅】搜索审批单列表
 type AlitripBtripCorpopApplySearchAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripCorpopApplySearchAPIResponseModel

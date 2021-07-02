@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingImagetranslateAPIRequest
-图片机器翻译 API请求
-alibaba.seaking.imagetranslate
-
-图片机器翻译 */
+// AlibabaSeakingImagetranslateAPIRequest 图片机器翻译 API请求
+// alibaba.seaking.imagetranslate
+//
+// 图片机器翻译
 type AlibabaSeakingImagetranslateAPIRequest struct {
 	model.Params
 	// erp用户id

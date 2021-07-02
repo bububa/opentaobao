@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupidsChangedGetAPIResponse
-获取修改的推广组ID API返回值
-taobao.simba.adgroupids.changed.get
-
-获取修改的推广组ID */
+// TaobaoSimbaAdgroupidsChangedGetAPIResponse 获取修改的推广组ID API返回值
+// taobao.simba.adgroupids.changed.get
+//
+// 获取修改的推广组ID
 type TaobaoSimbaAdgroupidsChangedGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaAdgroupidsChangedGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMsfVerifyAPIResponse
-喵师傅核销接口 API返回值
-tmall.msf.verify
-
-msf服务核销的top接口 */
+// TmallMsfVerifyAPIResponse 喵师傅核销接口 API返回值
+// tmall.msf.verify
+//
+// msf服务核销的top接口
 type TmallMsfVerifyAPIResponse struct {
 	model.CommonResponse
 	TmallMsfVerifyAPIResponseModel

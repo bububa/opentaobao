@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemSchemaUpdateAPIRequest
-天猫根据规则编辑商品 API请求
-tmall.item.schema.update
-
-天猫根据规则编辑商品 */
+// TmallItemSchemaUpdateAPIRequest 天猫根据规则编辑商品 API请求
+// tmall.item.schema.update
+//
+// 天猫根据规则编辑商品
 type TmallItemSchemaUpdateAPIRequest struct {
 	model.Params
 	// 需要编辑的商品ID

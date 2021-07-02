@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAsrDataservicePromotionruleDeleteAPIResponse
-优惠规则删除 API返回值
-alibaba.asr.dataservice.promotionrule.delete
-
-删除优惠规则，例如星巴克删除优惠规则 */
+// AlibabaAsrDataservicePromotionruleDeleteAPIResponse 优惠规则删除 API返回值
+// alibaba.asr.dataservice.promotionrule.delete
+//
+// 删除优惠规则，例如星巴克删除优惠规则
 type AlibabaAsrDataservicePromotionruleDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaAsrDataservicePromotionruleDeleteAPIResponseModel

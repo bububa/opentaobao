@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFlowCobrandcardSysnAPIRequest
-联名卡信息同步 API请求
-alibaba.aliqin.flow.cobrandcard.sysn
-
-提供给浙江移动同步联名卡信息接口。 */
+// AlibabaAliqinFlowCobrandcardSysnAPIRequest 联名卡信息同步 API请求
+// alibaba.aliqin.flow.cobrandcard.sysn
+//
+// 提供给浙江移动同步联名卡信息接口。
 type AlibabaAliqinFlowCobrandcardSysnAPIRequest struct {
 	model.Params
 	// 淘宝nick

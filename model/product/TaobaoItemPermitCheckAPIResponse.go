@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemPermitCheckAPIResponse
-发品资质校验 API返回值
-taobao.item.permit.check
-
-对淘宝商品发品、编辑前的预校验接口 */
+// TaobaoItemPermitCheckAPIResponse 发品资质校验 API返回值
+// taobao.item.permit.check
+//
+// 对淘宝商品发品、编辑前的预校验接口
 type TaobaoItemPermitCheckAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemPermitCheckAPIResponseModel

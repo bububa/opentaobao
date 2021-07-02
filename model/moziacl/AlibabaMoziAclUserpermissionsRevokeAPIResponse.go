@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziAclUserpermissionsRevokeAPIResponse
-回收账户权限 API返回值
-alibaba.mozi.acl.userpermissions.revoke
-
-调用此接口，会根据入参回收该账户下的该批权限点 */
+// AlibabaMoziAclUserpermissionsRevokeAPIResponse 回收账户权限 API返回值
+// alibaba.mozi.acl.userpermissions.revoke
+//
+// 调用此接口，会根据入参回收该账户下的该批权限点
 type AlibabaMoziAclUserpermissionsRevokeAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziAclUserpermissionsRevokeAPIResponseModel

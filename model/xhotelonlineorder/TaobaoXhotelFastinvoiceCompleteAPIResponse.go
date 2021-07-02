@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelFastinvoiceCompleteAPIResponse
-极速开票开票请求完成 API返回值
-taobao.xhotel.fastinvoice.complete
-
-极速开票开票请求回传,用于更新航信开票请求数据 */
+// TaobaoXhotelFastinvoiceCompleteAPIResponse 极速开票开票请求完成 API返回值
+// taobao.xhotel.fastinvoice.complete
+//
+// 极速开票开票请求回传,用于更新航信开票请求数据
 type TaobaoXhotelFastinvoiceCompleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelFastinvoiceCompleteAPIResponseModel

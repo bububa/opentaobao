@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoScitemOutercodeGetAPIResponse
-根据outerCode查询商品 API返回值
-taobao.scitem.outercode.get
-
-根据outerCode查询商品 */
+// TaobaoScitemOutercodeGetAPIResponse 根据outerCode查询商品 API返回值
+// taobao.scitem.outercode.get
+//
+// 根据outerCode查询商品
 type TaobaoScitemOutercodeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoScitemOutercodeGetAPIResponseModel

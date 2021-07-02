@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRdcAligeniusIdentificationCaseUpdateAPIResponse
-鉴定工单信息同步 API返回值
-taobao.rdc.aligenius.identification.case.update
-
-同步商家鉴定工单信息 */
+// TaobaoRdcAligeniusIdentificationCaseUpdateAPIResponse 鉴定工单信息同步 API返回值
+// taobao.rdc.aligenius.identification.case.update
+//
+// 同步商家鉴定工单信息
 type TaobaoRdcAligeniusIdentificationCaseUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoRdcAligeniusIdentificationCaseUpdateAPIResponseModel

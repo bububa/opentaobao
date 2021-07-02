@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkSopoPushTriggerAPIResponse
-猫超共享库存寄售sopo推送触发 API返回值
-alibaba.wdk.sopo.push.trigger
-
-猫超共享库存寄售sopo触发推送给商家 */
+// AlibabaWdkSopoPushTriggerAPIResponse 猫超共享库存寄售sopo推送触发 API返回值
+// alibaba.wdk.sopo.push.trigger
+//
+// 猫超共享库存寄售sopo触发推送给商家
 type AlibabaWdkSopoPushTriggerAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkSopoPushTriggerAPIResponseModel

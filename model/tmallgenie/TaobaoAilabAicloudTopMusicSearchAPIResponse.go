@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMusicSearchAPIResponse
-对外音乐搜索服务 API返回值
-taobao.ailab.aicloud.top.music.search
-
-供厂商获取音乐列表 */
+// TaobaoAilabAicloudTopMusicSearchAPIResponse 对外音乐搜索服务 API返回值
+// taobao.ailab.aicloud.top.music.search
+//
+// 供厂商获取音乐列表
 type TaobaoAilabAicloudTopMusicSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMusicSearchAPIResponseModel

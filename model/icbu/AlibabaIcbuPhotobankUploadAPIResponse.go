@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuPhotobankUploadAPIResponse
-图片银行图片上传开放接口 API返回值
-alibaba.icbu.photobank.upload
-
-图片银行图片上传开放接口 */
+// AlibabaIcbuPhotobankUploadAPIResponse 图片银行图片上传开放接口 API返回值
+// alibaba.icbu.photobank.upload
+//
+// 图片银行图片上传开放接口
 type AlibabaIcbuPhotobankUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuPhotobankUploadAPIResponseModel

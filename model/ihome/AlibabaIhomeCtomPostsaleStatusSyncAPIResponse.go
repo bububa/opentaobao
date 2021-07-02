@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIhomeCtomPostsaleStatusSyncAPIResponse
-C2M售后状态同步 API返回值
-alibaba.ihome.ctom.postsale.status.sync
-
-供给三维家同步定制、成品商品售后进度状态 */
+// AlibabaIhomeCtomPostsaleStatusSyncAPIResponse C2M售后状态同步 API返回值
+// alibaba.ihome.ctom.postsale.status.sync
+//
+// 供给三维家同步定制、成品商品售后进度状态
 type AlibabaIhomeCtomPostsaleStatusSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaIhomeCtomPostsaleStatusSyncAPIResponseModel

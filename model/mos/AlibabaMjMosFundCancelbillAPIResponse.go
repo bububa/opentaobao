@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjMosFundCancelbillAPIResponse
-取消付款单 API返回值
-alibaba.mj.mos.fund.cancelbill
-
-取消付款单 */
+// AlibabaMjMosFundCancelbillAPIResponse 取消付款单 API返回值
+// alibaba.mj.mos.fund.cancelbill
+//
+// 取消付款单
 type AlibabaMjMosFundCancelbillAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjMosFundCancelbillAPIResponseModel

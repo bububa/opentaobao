@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziFusionDimissionEmployeeAccountAPIResponse
-人员离职 API返回值
-alibaba.mozi.fusion.dimission.employee.account
-
-人员离职并且回收账号 */
+// AlibabaMoziFusionDimissionEmployeeAccountAPIResponse 人员离职 API返回值
+// alibaba.mozi.fusion.dimission.employee.account
+//
+// 人员离职并且回收账号
 type AlibabaMoziFusionDimissionEmployeeAccountAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziFusionDimissionEmployeeAccountAPIResponseModel

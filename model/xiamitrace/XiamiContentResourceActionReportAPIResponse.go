@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* XiamiContentResourceActionReportAPIResponse
-曲库开放平台内容行为上报接口 API返回值
-xiami.content.resource.action.report
-
-合作方对接入的曲库开放内容上报行为日志 */
+// XiamiContentResourceActionReportAPIResponse 曲库开放平台内容行为上报接口 API返回值
+// xiami.content.resource.action.report
+//
+// 合作方对接入的曲库开放内容上报行为日志
 type XiamiContentResourceActionReportAPIResponse struct {
 	model.CommonResponse
 	XiamiContentResourceActionReportAPIResponseModel

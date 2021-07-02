@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/exchange"
 )
 
-/* TmallExchangeMessageAdd
-卖家创建换货留言
-tmall.exchange.message.add
-
-卖家创建换货留言 */
+// TmallExchangeMessageAdd 卖家创建换货留言
+// tmall.exchange.message.add
+//
+// 卖家创建换货留言
 func TmallExchangeMessageAdd(clt *core.SDKClient, req *exchange.TmallExchangeMessageAddAPIRequest, session string) (*exchange.TmallExchangeMessageAddAPIResponse, error) {
 	var resp exchange.TmallExchangeMessageAddAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaGlobalVirtualSendcodeAPIRequest
-国际虚拟商品发码服务 API请求
-alibaba.global.virtual.sendcode
-
-global virtual send code service */
+// AlibabaGlobalVirtualSendcodeAPIRequest 国际虚拟商品发码服务 API请求
+// alibaba.global.virtual.sendcode
+//
+// global virtual send code service
 type AlibabaGlobalVirtualSendcodeAPIRequest struct {
 	model.Params
 	// trade order id

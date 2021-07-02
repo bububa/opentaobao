@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOcTradesBytagGetAPIResponse
-标签查询订单 API返回值
-taobao.oc.trades.bytag.get
-
-根据标签查询订单编号 */
+// TaobaoOcTradesBytagGetAPIResponse 标签查询订单 API返回值
+// taobao.oc.trades.bytag.get
+//
+// 根据标签查询订单编号
 type TaobaoOcTradesBytagGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOcTradesBytagGetAPIResponseModel

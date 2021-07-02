@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpPurchasePriceCreateAPIResponse
-ascp采购价写入接口 API返回值
-alibaba.ascp.purchase.price.create
-
-供应链平台采购价创建或修改接口 */
+// AlibabaAscpPurchasePriceCreateAPIResponse ascp采购价写入接口 API返回值
+// alibaba.ascp.purchase.price.create
+//
+// 供应链平台采购价创建或修改接口
 type AlibabaAscpPurchasePriceCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpPurchasePriceCreateAPIResponseModel

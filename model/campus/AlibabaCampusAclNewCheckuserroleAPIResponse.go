@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewCheckuserroleAPIResponse
-校验用户是否有角色 API返回值
-alibaba.campus.acl.new.checkuserrole
-
-校验用户是否有角色 */
+// AlibabaCampusAclNewCheckuserroleAPIResponse 校验用户是否有角色 API返回值
+// alibaba.campus.acl.new.checkuserrole
+//
+// 校验用户是否有角色
 type AlibabaCampusAclNewCheckuserroleAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclNewCheckuserroleAPIResponseModel

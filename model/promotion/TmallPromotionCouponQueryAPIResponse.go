@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallPromotionCouponQueryAPIResponse
-查询可用优惠券列表 API返回值
-tmall.promotion.coupon.query
-
-查询用户的可用优惠券列表，仅包含优惠券基本信息和用户nick */
+// TmallPromotionCouponQueryAPIResponse 查询可用优惠券列表 API返回值
+// tmall.promotion.coupon.query
+//
+// 查询用户的可用优惠券列表，仅包含优惠券基本信息和用户nick
 type TmallPromotionCouponQueryAPIResponse struct {
 	model.CommonResponse
 	TmallPromotionCouponQueryAPIResponseModel

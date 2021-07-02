@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIResponse
-修改关键词状态 API返回值
-alibaba.scbp.ad.keyword.update.keyword.status.batch
-
-修改关键词状态 */
+// AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIResponse 修改关键词状态 API返回值
+// alibaba.scbp.ad.keyword.update.keyword.status.batch
+//
+// 修改关键词状态
 type AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIResponseModel

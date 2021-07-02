@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingOpenHeartbeatAPIResponse
-心跳服务【10s一次】 API返回值
-alibaba.wdk.marketing.open.heartbeat
-
-商家数据同步心跳服务 */
+// AlibabaWdkMarketingOpenHeartbeatAPIResponse 心跳服务【10s一次】 API返回值
+// alibaba.wdk.marketing.open.heartbeat
+//
+// 商家数据同步心跳服务
 type AlibabaWdkMarketingOpenHeartbeatAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingOpenHeartbeatAPIResponseModel

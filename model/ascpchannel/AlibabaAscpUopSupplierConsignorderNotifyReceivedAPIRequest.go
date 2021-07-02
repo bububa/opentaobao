@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest
-商家仓物流发货推单接单回告 API请求
-alibaba.ascp.uop.supplier.consignorder.notify.received
-
-ASCP通过该接口接收商家仓开始接单生产订单对应的物流订单信息 */
+// AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest 商家仓物流发货推单接单回告 API请求
+// alibaba.ascp.uop.supplier.consignorder.notify.received
+//
+// ASCP通过该接口接收商家仓开始接单生产订单对应的物流订单信息
 type AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest struct {
 	model.Params
 	// qimen.alibaba.ascp.uop.consignorder.notify报文中的supplierId字段值

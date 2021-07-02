@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoShopcatsListGetAPIResponse
-获取前台展示的店铺类目 API返回值
-taobao.shopcats.list.get
-
-获取淘宝面向买家的浏览导航类目（跟后台卖家商品管理的类目有差异） */
+// TaobaoShopcatsListGetAPIResponse 获取前台展示的店铺类目 API返回值
+// taobao.shopcats.list.get
+//
+// 获取淘宝面向买家的浏览导航类目（跟后台卖家商品管理的类目有差异）
 type TaobaoShopcatsListGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoShopcatsListGetAPIResponseModel

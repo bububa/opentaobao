@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItemPublishPropsGetAPIRequest
-商品级联属性信息获取 API请求
-alibaba.item.publish.props.get
-
-新商品发布，商品级联属性信息获取 */
+// AlibabaItemPublishPropsGetAPIRequest 商品级联属性信息获取 API请求
+// alibaba.item.publish.props.get
+//
+// 新商品发布，商品级联属性信息获取
 type AlibabaItemPublishPropsGetAPIRequest struct {
 	model.Params
 	// 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版

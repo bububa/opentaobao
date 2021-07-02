@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosServiceCmnsCoaMessageCancelAPIResponse
-CMNS消息撤回 API返回值
-yunos.service.cmns.coa.message.cancel
-
-此接口用户撤回之前已经发出去的消息，根据消息ID撤回，只能撤回此appKey创建的消息。 */
+// YunosServiceCmnsCoaMessageCancelAPIResponse CMNS消息撤回 API返回值
+// yunos.service.cmns.coa.message.cancel
+//
+// 此接口用户撤回之前已经发出去的消息，根据消息ID撤回，只能撤回此appKey创建的消息。
 type YunosServiceCmnsCoaMessageCancelAPIResponse struct {
 	model.CommonResponse
 	YunosServiceCmnsCoaMessageCancelAPIResponseModel

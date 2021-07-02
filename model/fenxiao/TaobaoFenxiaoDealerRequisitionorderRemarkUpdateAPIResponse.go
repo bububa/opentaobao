@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIResponse
-修改经销采购单备注 API返回值
-taobao.fenxiao.dealer.requisitionorder.remark.update
-
-供应商修改经销采购单备注 */
+// TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIResponse 修改经销采购单备注 API返回值
+// taobao.fenxiao.dealer.requisitionorder.remark.update
+//
+// 供应商修改经销采购单备注
 type TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIResponseModel

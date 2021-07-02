@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclGetmenubyempidAPIRequest
-查询用户的菜单 API请求
-alibaba.campus.acl.getmenubyempid
-
-查询用户的菜单 */
+// AlibabaCampusAclGetmenubyempidAPIRequest 查询用户的菜单 API请求
+// alibaba.campus.acl.getmenubyempid
+//
+// 查询用户的菜单
 type AlibabaCampusAclGetmenubyempidAPIRequest struct {
 	model.Params
 	// 账户id

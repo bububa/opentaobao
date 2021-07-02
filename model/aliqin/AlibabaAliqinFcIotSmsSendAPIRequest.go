@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotSmsSendAPIRequest
-物联网短信发送 API请求
-alibaba.aliqin.fc.iot.sms.send
-
-发送物联网短信，只允许使用物联网短信模板 */
+// AlibabaAliqinFcIotSmsSendAPIRequest 物联网短信发送 API请求
+// alibaba.aliqin.fc.iot.sms.send
+//
+// 发送物联网短信，只允许使用物联网短信模板
 type AlibabaAliqinFcIotSmsSendAPIRequest struct {
 	model.Params
 	// 公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用

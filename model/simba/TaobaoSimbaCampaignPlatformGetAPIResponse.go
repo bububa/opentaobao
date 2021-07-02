@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignPlatformGetAPIResponse
-取得一个推广计划的投放平台设置 API返回值
-taobao.simba.campaign.platform.get
-
-获得一个推广计划的投放平台设置 */
+// TaobaoSimbaCampaignPlatformGetAPIResponse 取得一个推广计划的投放平台设置 API返回值
+// taobao.simba.campaign.platform.get
+//
+// 获得一个推广计划的投放平台设置
 type TaobaoSimbaCampaignPlatformGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCampaignPlatformGetAPIResponseModel

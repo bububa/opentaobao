@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalHandoverSavedraftAPIRequest
-创建交接单草稿 API请求
-cainiao.global.handover.savedraft
-
-提供给ISV通过该接口创建交接单草稿 */
+// CainiaoGlobalHandoverSavedraftAPIRequest 创建交接单草稿 API请求
+// cainiao.global.handover.savedraft
+//
+// 提供给ISV通过该接口创建交接单草稿
 type CainiaoGlobalHandoverSavedraftAPIRequest struct {
 	model.Params
 	// 用户信息

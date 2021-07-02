@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseCartnewQueryAPIResponse
-新版购物车查询 API返回值
-alibaba.ele.enterprise.cartnew.query
-
-新版购物车查询 */
+// AlibabaEleEnterpriseCartnewQueryAPIResponse 新版购物车查询 API返回值
+// alibaba.ele.enterprise.cartnew.query
+//
+// 新版购物车查询
 type AlibabaEleEnterpriseCartnewQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseCartnewQueryAPIResponseModel

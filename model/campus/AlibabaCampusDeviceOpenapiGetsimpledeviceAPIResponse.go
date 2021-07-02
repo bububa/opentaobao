@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusDeviceOpenapiGetsimpledeviceAPIResponse
-获取单个设备的基础信息(仅包含设备id,code,是否启用,位置信息,描述等基础信息) API返回值
-alibaba.campus.device.openapi.getsimpledevice
-
-获取指定设备的基础信息(仅包含设备id,code,是否启用,位置信息,描述等基础信息) */
+// AlibabaCampusDeviceOpenapiGetsimpledeviceAPIResponse 获取单个设备的基础信息(仅包含设备id,code,是否启用,位置信息,描述等基础信息) API返回值
+// alibaba.campus.device.openapi.getsimpledevice
+//
+// 获取指定设备的基础信息(仅包含设备id,code,是否启用,位置信息,描述等基础信息)
 type AlibabaCampusDeviceOpenapiGetsimpledeviceAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusDeviceOpenapiGetsimpledeviceAPIResponseModel

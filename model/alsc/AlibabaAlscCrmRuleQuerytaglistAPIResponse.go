@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmRuleQuerytaglistAPIResponse
-查询标签列表 API返回值
-alibaba.alsc.crm.rule.querytaglist
-
-查询标签列表 */
+// AlibabaAlscCrmRuleQuerytaglistAPIResponse 查询标签列表 API返回值
+// alibaba.alsc.crm.rule.querytaglist
+//
+// 查询标签列表
 type AlibabaAlscCrmRuleQuerytaglistAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmRuleQuerytaglistAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripShipProductSynccallAPIResponse
-全量同步回调 API返回值
-alitrip.ship.product.synccall
-
-全量同步接口 */
+// AlitripShipProductSynccallAPIResponse 全量同步回调 API返回值
+// alitrip.ship.product.synccall
+//
+// 全量同步接口
 type AlitripShipProductSynccallAPIResponse struct {
 	model.CommonResponse
 	AlitripShipProductSynccallAPIResponseModel

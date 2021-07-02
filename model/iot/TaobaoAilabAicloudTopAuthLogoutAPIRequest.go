@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopAuthLogoutAPIRequest
-登出 API请求
-taobao.ailab.aicloud.top.auth.logout
-
-登出 */
+// TaobaoAilabAicloudTopAuthLogoutAPIRequest 登出 API请求
+// taobao.ailab.aicloud.top.auth.logout
+//
+// 登出
 type TaobaoAilabAicloudTopAuthLogoutAPIRequest struct {
 	model.Params
 	// 用户ID，此处传入第三方账户体系的用户id

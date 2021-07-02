@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusAgentRefundConfirmAPIResponse
-汽车票退票和退款二合一接口 API返回值
-taobao.bus.agent.refund.confirm
-
-1.商家退票成功后，回调飞猪平台汽车票退票接口，平台进行退票和退款操作。 */
+// TaobaoBusAgentRefundConfirmAPIResponse 汽车票退票和退款二合一接口 API返回值
+// taobao.bus.agent.refund.confirm
+//
+// 1.商家退票成功后，回调飞猪平台汽车票退票接口，平台进行退票和退款操作。
 type TaobaoBusAgentRefundConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusAgentRefundConfirmAPIResponseModel

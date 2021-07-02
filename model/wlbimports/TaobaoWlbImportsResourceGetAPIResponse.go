@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbImportsResourceGetAPIResponse
-获取所有服务列表 API返回值
-taobao.wlb.imports.resource.get
-
-一般进口TOP接口，获取所有服务列表。 */
+// TaobaoWlbImportsResourceGetAPIResponse 获取所有服务列表 API返回值
+// taobao.wlb.imports.resource.get
+//
+// 一般进口TOP接口，获取所有服务列表。
 type TaobaoWlbImportsResourceGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbImportsResourceGetAPIResponseModel

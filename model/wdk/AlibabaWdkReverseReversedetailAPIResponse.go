@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkReverseReversedetailAPIResponse
-退款详情 API返回值
-alibaba.wdk.reverse.reversedetail
-
-退款详情 */
+// AlibabaWdkReverseReversedetailAPIResponse 退款详情 API返回值
+// alibaba.wdk.reverse.reversedetail
+//
+// 退款详情
 type AlibabaWdkReverseReversedetailAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkReverseReversedetailAPIResponseModel

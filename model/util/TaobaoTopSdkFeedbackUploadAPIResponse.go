@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTopSdkFeedbackUploadAPIResponse
-sdk信息回调 API返回值
-taobao.top.sdk.feedback.upload
-
-sdk回调客户端基本信息到开放平台，用于做监控之类，有助于帮助isv监控系统稳定性 */
+// TaobaoTopSdkFeedbackUploadAPIResponse sdk信息回调 API返回值
+// taobao.top.sdk.feedback.upload
+//
+// sdk回调客户端基本信息到开放平台，用于做监控之类，有助于帮助isv监控系统稳定性
 type TaobaoTopSdkFeedbackUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoTopSdkFeedbackUploadAPIResponseModel

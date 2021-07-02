@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMaQrcodeCommonCreateAPIRequest
-创建码平台常用二维码 API请求
-taobao.ma.qrcode.common.create
-
-创建码平台对外提供的常用二维码接口，不适于码平台业务类型的码创建，如不支持包裹码、媒体码等，业务类型的码需要单独提供API。 */
+// TaobaoMaQrcodeCommonCreateAPIRequest 创建码平台常用二维码 API请求
+// taobao.ma.qrcode.common.create
+//
+// 创建码平台对外提供的常用二维码接口，不适于码平台业务类型的码创建，如不支持包裹码、媒体码等，业务类型的码需要单独提供API。
 type TaobaoMaQrcodeCommonCreateAPIRequest struct {
 	model.Params
 	// 要制作的二维码业务类型：page:无线页面类型item:宝贝ID类型url:普通的URL连接类型shop:店铺ID类型

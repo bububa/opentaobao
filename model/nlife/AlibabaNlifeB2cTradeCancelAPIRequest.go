@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2cTradeCancelAPIRequest
-零售+平台取消订单 API请求
-alibaba.nlife.b2c.trade.cancel
-
-零售+平台取消订单接口 */
+// AlibabaNlifeB2cTradeCancelAPIRequest 零售+平台取消订单 API请求
+// alibaba.nlife.b2c.trade.cancel
+//
+// 零售+平台取消订单接口
 type AlibabaNlifeB2cTradeCancelAPIRequest struct {
 	model.Params
 	// 零售+平台订单号，和out_trade_no不能同时为空

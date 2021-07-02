@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/bus"
 )
 
-/* TaobaoBusOrderSet
-汽车票下单接口
-taobao.bus.order.set
-
-提供给汽车票商家进行下单 */
+// TaobaoBusOrderSet 汽车票下单接口
+// taobao.bus.order.set
+//
+// 提供给汽车票商家进行下单
 func TaobaoBusOrderSet(clt *core.SDKClient, req *bus.TaobaoBusOrderSetAPIRequest, session string) (*bus.TaobaoBusOrderSetAPIResponse, error) {
 	var resp bus.TaobaoBusOrderSetAPIResponse
 	err := clt.Post(req, &resp, session)

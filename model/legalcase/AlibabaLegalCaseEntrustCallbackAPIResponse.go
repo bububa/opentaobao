@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegalCaseEntrustCallbackAPIResponse
-委托回调接口 API返回值
-alibaba.legal.case.entrust.callback
-
-委托回调接口 */
+// AlibabaLegalCaseEntrustCallbackAPIResponse 委托回调接口 API返回值
+// alibaba.legal.case.entrust.callback
+//
+// 委托回调接口
 type AlibabaLegalCaseEntrustCallbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalCaseEntrustCallbackAPIResponseModel

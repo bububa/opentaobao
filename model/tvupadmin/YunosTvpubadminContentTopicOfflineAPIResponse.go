@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentTopicOfflineAPIResponse
-迎客松专题下线 API返回值
-yunos.tvpubadmin.content.topic.offline
-
-迎客松专题下线 */
+// YunosTvpubadminContentTopicOfflineAPIResponse 迎客松专题下线 API返回值
+// yunos.tvpubadmin.content.topic.offline
+//
+// 迎客松专题下线
 type YunosTvpubadminContentTopicOfflineAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentTopicOfflineAPIResponseModel

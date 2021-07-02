@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-/* AlibabaTianjiSupplierOrderDelivery
-天机供应商发货
-alibaba.tianji.supplier.order.delivery
-
-天机供应商发货 */
+// AlibabaTianjiSupplierOrderDelivery 天机供应商发货
+// alibaba.tianji.supplier.order.delivery
+//
+// 天机供应商发货
 func AlibabaTianjiSupplierOrderDelivery(clt *core.SDKClient, req *alicom.AlibabaTianjiSupplierOrderDeliveryAPIRequest, session string) (*alicom.AlibabaTianjiSupplierOrderDeliveryAPIResponse, error) {
 	var resp alicom.AlibabaTianjiSupplierOrderDeliveryAPIResponse
 	err := clt.Post(req, &resp, session)

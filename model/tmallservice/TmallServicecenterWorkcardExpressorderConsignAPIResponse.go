@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardExpressorderConsignAPIResponse
-物流订单呼叫运力 API返回值
-tmall.servicecenter.workcard.expressorder.consign
-
-天猫服务寄送类业务，服务商履约完成后进行寄回操作呼叫运力 */
+// TmallServicecenterWorkcardExpressorderConsignAPIResponse 物流订单呼叫运力 API返回值
+// tmall.servicecenter.workcard.expressorder.consign
+//
+// 天猫服务寄送类业务，服务商履约完成后进行寄回操作呼叫运力
 type TmallServicecenterWorkcardExpressorderConsignAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardExpressorderConsignAPIResponseModel

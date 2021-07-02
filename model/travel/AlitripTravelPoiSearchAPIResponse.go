@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelPoiSearchAPIResponse
-POI信息查询 API返回值
-alitrip.travel.poi.search
-
-POI信息查询，用于商品更新使用 */
+// AlitripTravelPoiSearchAPIResponse POI信息查询 API返回值
+// alitrip.travel.poi.search
+//
+// POI信息查询，用于商品更新使用
 type AlitripTravelPoiSearchAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelPoiSearchAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemQuantityUpdateAPIRequest
-宝贝/SKU库存修改 API请求
-taobao.item.quantity.update
-
-提供按照全量或增量形式修改宝贝/SKU库存的功能 */
+// TaobaoItemQuantityUpdateAPIRequest 宝贝/SKU库存修改 API请求
+// taobao.item.quantity.update
+//
+// 提供按照全量或增量形式修改宝贝/SKU库存的功能
 type TaobaoItemQuantityUpdateAPIRequest struct {
 	model.Params
 	// 商品数字ID，必填参数

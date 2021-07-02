@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingServicepackAPIRequest
-获取海王用户权限包 API请求
-alibaba.seaking.servicepack
-
-获取海王用户权限包 */
+// AlibabaSeakingServicepackAPIRequest 获取海王用户权限包 API请求
+// alibaba.seaking.servicepack
+//
+// 获取海王用户权限包
 type AlibabaSeakingServicepackAPIRequest struct {
 	model.Params
 	// 验证类型

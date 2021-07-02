@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstShiporderCancelAPIResponse
-零售通发货单取消 API返回值
-alibaba.lst.shiporder.cancel
-
-通过该接口可以取消零售通运保保发货单，并处理相关业务流程。 */
+// AlibabaLstShiporderCancelAPIResponse 零售通发货单取消 API返回值
+// alibaba.lst.shiporder.cancel
+//
+// 通过该接口可以取消零售通运保保发货单，并处理相关业务流程。
 type AlibabaLstShiporderCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstShiporderCancelAPIResponseModel

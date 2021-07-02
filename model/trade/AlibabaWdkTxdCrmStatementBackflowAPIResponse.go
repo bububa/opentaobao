@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkTxdCrmStatementBackflowAPIResponse
-淘鲜达商家会员账单回流 API返回值
-alibaba.wdk.txd.crm.statement.backflow
-
-淘鲜达商家会员账单回流 */
+// AlibabaWdkTxdCrmStatementBackflowAPIResponse 淘鲜达商家会员账单回流 API返回值
+// alibaba.wdk.txd.crm.statement.backflow
+//
+// 淘鲜达商家会员账单回流
 type AlibabaWdkTxdCrmStatementBackflowAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkTxdCrmStatementBackflowAPIResponseModel

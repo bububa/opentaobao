@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTxcsFinanceBillConfirmAPIResponse
-供应商账单确认 API返回值
-tmall.txcs.finance.bill.confirm
-
-提供天猫超市外部合作商家：财务账单对账 */
+// TmallTxcsFinanceBillConfirmAPIResponse 供应商账单确认 API返回值
+// tmall.txcs.finance.bill.confirm
+//
+// 提供天猫超市外部合作商家：财务账单对账
 type TmallTxcsFinanceBillConfirmAPIResponse struct {
 	model.CommonResponse
 	TmallTxcsFinanceBillConfirmAPIResponseModel

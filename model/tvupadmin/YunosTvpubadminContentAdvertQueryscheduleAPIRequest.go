@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentAdvertQueryscheduleAPIRequest
-广告牌照管控查询 API请求
-yunos.tvpubadmin.content.advert.queryschedule
-
-广告牌照管控查询 */
+// YunosTvpubadminContentAdvertQueryscheduleAPIRequest 广告牌照管控查询 API请求
+// yunos.tvpubadmin.content.advert.queryschedule
+//
+// 广告牌照管控查询
 type YunosTvpubadminContentAdvertQueryscheduleAPIRequest struct {
 	model.Params
 	// 查询范围: 1-牌照，4-uuid

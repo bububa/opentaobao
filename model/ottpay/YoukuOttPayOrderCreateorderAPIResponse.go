@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttPayOrderCreateorderAPIResponse
-创建订单 API返回值
-youku.ott.pay.order.createorder
-
-ottpay创建订单 */
+// YoukuOttPayOrderCreateorderAPIResponse 创建订单 API返回值
+// youku.ott.pay.order.createorder
+//
+// ottpay创建订单
 type YoukuOttPayOrderCreateorderAPIResponse struct {
 	model.CommonResponse
 	YoukuOttPayOrderCreateorderAPIResponseModel

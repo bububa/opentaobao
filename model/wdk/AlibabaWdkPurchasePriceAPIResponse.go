@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkPurchasePriceAPIResponse
-rt回传采购价 API返回值
-alibaba.wdk.purchase.price
-
-猫超共享库存项目-rt回传采购价 */
+// AlibabaWdkPurchasePriceAPIResponse rt回传采购价 API返回值
+// alibaba.wdk.purchase.price
+//
+// 猫超共享库存项目-rt回传采购价
 type AlibabaWdkPurchasePriceAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkPurchasePriceAPIResponseModel

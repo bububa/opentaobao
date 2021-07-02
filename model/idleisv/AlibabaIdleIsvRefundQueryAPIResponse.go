@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleIsvRefundQueryAPIResponse
-闲鱼已验货交易订单退款信息查询 API返回值
-alibaba.idle.isv.refund.query
-
-闲鱼服务商交易订单退款信息查询-单个退款查询 */
+// AlibabaIdleIsvRefundQueryAPIResponse 闲鱼已验货交易订单退款信息查询 API返回值
+// alibaba.idle.isv.refund.query
+//
+// 闲鱼服务商交易订单退款信息查询-单个退款查询
 type AlibabaIdleIsvRefundQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleIsvRefundQueryAPIResponseModel

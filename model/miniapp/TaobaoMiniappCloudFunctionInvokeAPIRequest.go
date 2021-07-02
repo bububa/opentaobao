@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappCloudFunctionInvokeAPIRequest
-外部触发云函数 API请求
-taobao.miniapp.cloud.function.invoke
-
-用户isv从外部触发聚石塔云函数的执行。 */
+// TaobaoMiniappCloudFunctionInvokeAPIRequest 外部触发云函数 API请求
+// taobao.miniapp.cloud.function.invoke
+//
+// 用户isv从外部触发聚石塔云函数的执行。
 type TaobaoMiniappCloudFunctionInvokeAPIRequest struct {
 	model.Params
 	// 云函数名称

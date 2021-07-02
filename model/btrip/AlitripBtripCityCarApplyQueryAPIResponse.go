@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripCityCarApplyQueryAPIResponse
-三方市内用车申请单查询 API返回值
-alitrip.btrip.city.car.apply.query
-
-三方市内用车申请单查询 */
+// AlitripBtripCityCarApplyQueryAPIResponse 三方市内用车申请单查询 API返回值
+// alitrip.btrip.city.car.apply.query
+//
+// 三方市内用车申请单查询
 type AlitripBtripCityCarApplyQueryAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripCityCarApplyQueryAPIResponseModel

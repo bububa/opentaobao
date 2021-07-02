@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPricePromotionActivityQueryAPIRequest
-查询盒马帮档期活动详情 API请求
-alibaba.price.promotion.activity.query
-
-查询盒马帮档期活动详情 */
+// AlibabaPricePromotionActivityQueryAPIRequest 查询盒马帮档期活动详情 API请求
+// alibaba.price.promotion.activity.query
+//
+// 查询盒马帮档期活动详情
 type AlibabaPricePromotionActivityQueryAPIRequest struct {
 	model.Params
 	// 页码

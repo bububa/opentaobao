@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSubwayCiaGetAPIResponse
-查询单元智能出价信息 API返回值
-taobao.subway.cia.get
-
-查询单元智能出价信息 */
+// TaobaoSubwayCiaGetAPIResponse 查询单元智能出价信息 API返回值
+// taobao.subway.cia.get
+//
+// 查询单元智能出价信息
 type TaobaoSubwayCiaGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSubwayCiaGetAPIResponseModel

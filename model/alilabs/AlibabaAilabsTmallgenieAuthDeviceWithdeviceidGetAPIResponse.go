@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIResponse
-根据三方ID查询设备注册激活信息 API返回值
-alibaba.ailabs.tmallgenie.auth.device.withdeviceid.get
-
-根据三方ID查询设备注册激活信息 */
+// AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIResponse 根据三方ID查询设备注册激活信息 API返回值
+// alibaba.ailabs.tmallgenie.auth.device.withdeviceid.get
+//
+// 根据三方ID查询设备注册激活信息
 type AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIResponseModel

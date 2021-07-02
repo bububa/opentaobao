@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoEccExceptionsDelayCountAPIResponse
-菜鸟控制塔包裹滞留异常统计信息获取 API返回值
-cainiao.ecc.exceptions.delay.count
-
-菜鸟控制塔包裹滞留异常统计信息获取 */
+// CainiaoEccExceptionsDelayCountAPIResponse 菜鸟控制塔包裹滞留异常统计信息获取 API返回值
+// cainiao.ecc.exceptions.delay.count
+//
+// 菜鸟控制塔包裹滞留异常统计信息获取
 type CainiaoEccExceptionsDelayCountAPIResponse struct {
 	model.CommonResponse
 	CainiaoEccExceptionsDelayCountAPIResponseModel

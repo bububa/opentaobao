@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceUnitorderCheckAPIResponse
-服务商订购单上传核对 API返回值
-alibaba.einvoice.unitorder.check
-
-开票服务商回传收到的订购单用于电子发票平台核对 */
+// AlibabaEinvoiceUnitorderCheckAPIResponse 服务商订购单上传核对 API返回值
+// alibaba.einvoice.unitorder.check
+//
+// 开票服务商回传收到的订购单用于电子发票平台核对
 type AlibabaEinvoiceUnitorderCheckAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceUnitorderCheckAPIResponseModel

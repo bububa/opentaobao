@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/cloudpush"
 )
 
-/* TaobaoCloudpushMessageAndroid
-百川云推送发送消息给android
-taobao.cloudpush.message.android
-
-百川用户使用云推送发送消息给android */
+// TaobaoCloudpushMessageAndroid 百川云推送发送消息给android
+// taobao.cloudpush.message.android
+//
+// 百川用户使用云推送发送消息给android
 func TaobaoCloudpushMessageAndroid(clt *core.SDKClient, req *cloudpush.TaobaoCloudpushMessageAndroidAPIRequest, session string) (*cloudpush.TaobaoCloudpushMessageAndroidAPIResponse, error) {
 	var resp cloudpush.TaobaoCloudpushMessageAndroidAPIResponse
 	err := clt.Post(req, &resp, session)

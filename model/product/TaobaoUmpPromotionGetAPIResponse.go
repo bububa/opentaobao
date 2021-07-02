@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUmpPromotionGetAPIResponse
-商品优惠详情查询 API返回值
-taobao.ump.promotion.get
-
-商品优惠详情查询，可查询商品设置的详细优惠。包括限时折扣，满就送等官方优惠以及第三方优惠。 */
+// TaobaoUmpPromotionGetAPIResponse 商品优惠详情查询 API返回值
+// taobao.ump.promotion.get
+//
+// 商品优惠详情查询，可查询商品设置的详细优惠。包括限时折扣，满就送等官方优惠以及第三方优惠。
 type TaobaoUmpPromotionGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoUmpPromotionGetAPIResponseModel

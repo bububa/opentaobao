@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* TmallServicecenterWorkerTaglistGet
-获取工人标签
-tmall.servicecenter.worker.taglist.get
-
-服务商获取对应工人的标签 */
+// TmallServicecenterWorkerTaglistGet 获取工人标签
+// tmall.servicecenter.worker.taglist.get
+//
+// 服务商获取对应工人的标签
 func TmallServicecenterWorkerTaglistGet(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerTaglistGetAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerTaglistGetAPIResponse, error) {
 	var resp tmallservice.TmallServicecenterWorkerTaglistGetAPIResponse
 	err := clt.Post(req, &resp, session)

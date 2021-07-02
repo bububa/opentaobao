@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRtrptCreativeGetAPIResponse
-获取创意实时报表数据 API返回值
-taobao.simba.rtrpt.creative.get
-
-获取创意实时报表数据 */
+// TaobaoSimbaRtrptCreativeGetAPIResponse 获取创意实时报表数据 API返回值
+// taobao.simba.rtrpt.creative.get
+//
+// 获取创意实时报表数据
 type TaobaoSimbaRtrptCreativeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaRtrptCreativeGetAPIResponseModel

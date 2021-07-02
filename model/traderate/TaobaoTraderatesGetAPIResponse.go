@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTraderatesGetAPIResponse
-搜索评价信息 API返回值
-taobao.traderates.get
-
-搜索评价信息，只能获取距今180天内的评价记录(只支持查询卖家给出或得到的评价)。 */
+// TaobaoTraderatesGetAPIResponse 搜索评价信息 API返回值
+// taobao.traderates.get
+//
+// 搜索评价信息，只能获取距今180天内的评价记录(只支持查询卖家给出或得到的评价)。
 type TaobaoTraderatesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTraderatesGetAPIResponseModel

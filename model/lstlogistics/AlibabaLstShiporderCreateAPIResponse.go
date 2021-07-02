@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstShiporderCreateAPIResponse
-零售通发货单创建 API返回值
-alibaba.lst.shiporder.create
-
-通过该接口可以创建零售通运保保发货单，并处理相关业务流程。 */
+// AlibabaLstShiporderCreateAPIResponse 零售通发货单创建 API返回值
+// alibaba.lst.shiporder.create
+//
+// 通过该接口可以创建零售通运保保发货单，并处理相关业务流程。
 type AlibabaLstShiporderCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstShiporderCreateAPIResponseModel

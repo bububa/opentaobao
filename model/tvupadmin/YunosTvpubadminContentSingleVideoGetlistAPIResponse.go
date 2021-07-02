@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentSingleVideoGetlistAPIResponse
-单视频审核获取视频列表 API返回值
-yunos.tvpubadmin.content.single.video.getlist
-
-牌照方在审核单视频时获取单视频列表接口 */
+// YunosTvpubadminContentSingleVideoGetlistAPIResponse 单视频审核获取视频列表 API返回值
+// yunos.tvpubadmin.content.single.video.getlist
+//
+// 牌照方在审核单视频时获取单视频列表接口
 type YunosTvpubadminContentSingleVideoGetlistAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentSingleVideoGetlistAPIResponseModel

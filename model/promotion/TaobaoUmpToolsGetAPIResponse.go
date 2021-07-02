@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUmpToolsGetAPIResponse
-查询工具列表 API返回值
-taobao.ump.tools.get
-
-查询工具列表 */
+// TaobaoUmpToolsGetAPIResponse 查询工具列表 API返回值
+// taobao.ump.tools.get
+//
+// 查询工具列表
 type TaobaoUmpToolsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoUmpToolsGetAPIResponseModel

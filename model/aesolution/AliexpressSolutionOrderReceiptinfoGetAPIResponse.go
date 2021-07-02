@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionOrderReceiptinfoGetAPIResponse
-Get Order Receipt Info API返回值
-aliexpress.solution.order.receiptinfo.get
-
-Get Order Receipt Info, Support multi stores requirements for Turkey sellers. */
+// AliexpressSolutionOrderReceiptinfoGetAPIResponse Get Order Receipt Info API返回值
+// aliexpress.solution.order.receiptinfo.get
+//
+// Get Order Receipt Info, Support multi stores requirements for Turkey sellers.
 type AliexpressSolutionOrderReceiptinfoGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionOrderReceiptinfoGetAPIResponseModel

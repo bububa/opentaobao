@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodesellerChannelSearchAPIResponse
-查询渠道商api API返回值
-alibaba.alihealth.tracecodeseller.channel.search
-
-查询渠道商api */
+// AlibabaAlihealthTracecodesellerChannelSearchAPIResponse 查询渠道商api API返回值
+// alibaba.alihealth.tracecodeseller.channel.search
+//
+// 查询渠道商api
 type AlibabaAlihealthTracecodesellerChannelSearchAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthTracecodesellerChannelSearchAPIResponseModel

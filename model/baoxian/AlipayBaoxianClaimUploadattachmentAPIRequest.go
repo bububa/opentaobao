@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlipayBaoxianClaimUploadattachmentAPIRequest
-资料上传接口 API请求
-alipay.baoxian.claim.uploadattachment
-
-给合作伙伴上传申请理赔材料 */
+// AlipayBaoxianClaimUploadattachmentAPIRequest 资料上传接口 API请求
+// alipay.baoxian.claim.uploadattachment
+//
+// 给合作伙伴上传申请理赔材料
 type AlipayBaoxianClaimUploadattachmentAPIRequest struct {
 	model.Params
 	// 外部业务号，唯一

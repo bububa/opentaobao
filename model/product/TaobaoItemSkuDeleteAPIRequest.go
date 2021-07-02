@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemSkuDeleteAPIRequest
-删除SKU API请求
-taobao.item.sku.delete
-
-删除一个sku的数据<br/>需要删除的sku通过属性properties进行匹配查找 */
+// TaobaoItemSkuDeleteAPIRequest 删除SKU API请求
+// taobao.item.sku.delete
+//
+// 删除一个sku的数据<br/>需要删除的sku通过属性properties进行匹配查找
 type TaobaoItemSkuDeleteAPIRequest struct {
 	model.Params
 	// Sku所属商品数字id，可通过 taobao.item.get 获取。必选

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingAititlegenerateAPIRequest
-标题智能优化 API请求
-alibaba.seaking.aititlegenerate
-
-标题智能优化 */
+// AlibabaSeakingAititlegenerateAPIRequest 标题智能优化 API请求
+// alibaba.seaking.aititlegenerate
+//
+// 标题智能优化
 type AlibabaSeakingAititlegenerateAPIRequest struct {
 	model.Params
 	// erp用户id

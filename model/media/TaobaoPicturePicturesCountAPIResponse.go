@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPicturePicturesCountAPIResponse
-图片总数查询 API返回值
-taobao.picture.pictures.count
-
-图片总数查询 */
+// TaobaoPicturePicturesCountAPIResponse 图片总数查询 API返回值
+// taobao.picture.pictures.count
+//
+// 图片总数查询
 type TaobaoPicturePicturesCountAPIResponse struct {
 	model.CommonResponse
 	TaobaoPicturePicturesCountAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappTemplateOfflineappAPIResponse
-下线实例化应用 API返回值
-taobao.miniapp.template.offlineapp
-
-对指定的实例化小程序进行下线,需要指定clients和app_version */
+// TaobaoMiniappTemplateOfflineappAPIResponse 下线实例化应用 API返回值
+// taobao.miniapp.template.offlineapp
+//
+// 对指定的实例化小程序进行下线,需要指定clients和app_version
 type TaobaoMiniappTemplateOfflineappAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappTemplateOfflineappAPIResponseModel

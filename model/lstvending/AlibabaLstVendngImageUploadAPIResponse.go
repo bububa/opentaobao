@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstVendngImageUploadAPIResponse
-售货机商品图片上传 API返回值
-alibaba.lst.vendng.image.upload
-
-零售通自动售货机商品图片上传接口，主要为ISV厂商提供图片同步的通道，从而建立统一的商品图片库。 */
+// AlibabaLstVendngImageUploadAPIResponse 售货机商品图片上传 API返回值
+// alibaba.lst.vendng.image.upload
+//
+// 零售通自动售货机商品图片上传接口，主要为ISV厂商提供图片同步的通道，从而建立统一的商品图片库。
 type AlibabaLstVendngImageUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstVendngImageUploadAPIResponseModel

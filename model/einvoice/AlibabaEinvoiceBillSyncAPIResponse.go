@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceBillSyncAPIResponse
-结算单同步 API返回值
-alibaba.einvoice.bill.sync
-
-电子发票业务，服务商同步结算单，包括结算单的增删改功能。最终用于开发票 */
+// AlibabaEinvoiceBillSyncAPIResponse 结算单同步 API返回值
+// alibaba.einvoice.bill.sync
+//
+// 电子发票业务，服务商同步结算单，包括结算单的增删改功能。最终用于开发票
 type AlibabaEinvoiceBillSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceBillSyncAPIResponseModel

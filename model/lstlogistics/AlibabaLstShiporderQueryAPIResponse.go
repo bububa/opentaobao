@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstShiporderQueryAPIResponse
-零售通发货单查询 API返回值
-alibaba.lst.shiporder.query
-
-通过该接口可以查询零售通运保保发货单，并处理相关业务流程。 */
+// AlibabaLstShiporderQueryAPIResponse 零售通发货单查询 API返回值
+// alibaba.lst.shiporder.query
+//
+// 通过该接口可以查询零售通运保保发货单，并处理相关业务流程。
 type AlibabaLstShiporderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstShiporderQueryAPIResponseModel

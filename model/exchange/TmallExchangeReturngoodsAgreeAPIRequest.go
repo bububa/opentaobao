@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeReturngoodsAgreeAPIRequest
-卖家确认收货 API请求
-tmall.exchange.returngoods.agree
-
-卖家确认收货 */
+// TmallExchangeReturngoodsAgreeAPIRequest 卖家确认收货 API请求
+// tmall.exchange.returngoods.agree
+//
+// 卖家确认收货
 type TmallExchangeReturngoodsAgreeAPIRequest struct {
 	model.Params
 	// 换货单号ID

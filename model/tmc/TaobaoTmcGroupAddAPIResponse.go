@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcGroupAddAPIResponse
-为已开通用户添加用户分组 API返回值
-taobao.tmc.group.add
-
-为已开通用户添加用户分组，授权消息使用 */
+// TaobaoTmcGroupAddAPIResponse 为已开通用户添加用户分组 API返回值
+// taobao.tmc.group.add
+//
+// 为已开通用户添加用户分组，授权消息使用
 type TaobaoTmcGroupAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoTmcGroupAddAPIResponseModel

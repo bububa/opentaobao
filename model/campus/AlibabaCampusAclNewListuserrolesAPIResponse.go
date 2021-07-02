@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewListuserrolesAPIResponse
-查询并标记用户选择的角色 API返回值
-alibaba.campus.acl.new.listuserroles
-
-查询并标记用户选择的角色 */
+// AlibabaCampusAclNewListuserrolesAPIResponse 查询并标记用户选择的角色 API返回值
+// alibaba.campus.acl.new.listuserroles
+//
+// 查询并标记用户选择的角色
 type AlibabaCampusAclNewListuserrolesAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclNewListuserrolesAPIResponseModel

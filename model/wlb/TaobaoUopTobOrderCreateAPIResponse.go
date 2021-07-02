@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUopTobOrderCreateAPIResponse
-ToB仓储发货 API返回值
-taobao.uop.tob.order.create
-
-ToB仓储发货 */
+// TaobaoUopTobOrderCreateAPIResponse ToB仓储发货 API返回值
+// taobao.uop.tob.order.create
+//
+// ToB仓储发货
 type TaobaoUopTobOrderCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoUopTobOrderCreateAPIResponseModel

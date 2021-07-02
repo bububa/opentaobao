@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoIdleRecycleRefundReturngoodsAPIResponse
-闲鱼回收退货V2 API返回值
-taobao.idle.recycle.refund.returngoods
-
-回收商买家退货，填写退货运单号 */
+// TaobaoIdleRecycleRefundReturngoodsAPIResponse 闲鱼回收退货V2 API返回值
+// taobao.idle.recycle.refund.returngoods
+//
+// 回收商买家退货，填写退货运单号
 type TaobaoIdleRecycleRefundReturngoodsAPIResponse struct {
 	model.CommonResponse
 	TaobaoIdleRecycleRefundReturngoodsAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRefundsApplyGetAPIRequest
-查询买家申请的退款列表 API请求
-taobao.refunds.apply.get
-
-查询买家申请的退款列表，且查询外店的退款列表时需要指定交易类型 */
+// TaobaoRefundsApplyGetAPIRequest 查询买家申请的退款列表 API请求
+// taobao.refunds.apply.get
+//
+// 查询买家申请的退款列表，且查询外店的退款列表时需要指定交易类型
 type TaobaoRefundsApplyGetAPIRequest struct {
 	model.Params
 	// 需要返回的字段。目前支持有：refund_id, tid, title, buyer_nick, seller_nick, total_fee, status, created, refund_fee

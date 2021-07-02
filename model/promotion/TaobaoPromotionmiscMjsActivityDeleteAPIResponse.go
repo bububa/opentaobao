@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionmiscMjsActivityDeleteAPIResponse
-删除满就送活动 API返回值
-taobao.promotionmisc.mjs.activity.delete
-
-删除满就送活动 */
+// TaobaoPromotionmiscMjsActivityDeleteAPIResponse 删除满就送活动 API返回值
+// taobao.promotionmisc.mjs.activity.delete
+//
+// 删除满就送活动
 type TaobaoPromotionmiscMjsActivityDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionmiscMjsActivityDeleteAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMobilePromotionBenefitActivitySendAPIResponse
-手淘专用单用户发放接口 API返回值
-taobao.mobile.promotion.benefit.activity.send
-
-卖家活动中需要通过该API来发放对应的权益。手淘专用单用户发放接口。 */
+// TaobaoMobilePromotionBenefitActivitySendAPIResponse 手淘专用单用户发放接口 API返回值
+// taobao.mobile.promotion.benefit.activity.send
+//
+// 卖家活动中需要通过该API来发放对应的权益。手淘专用单用户发放接口。
 type TaobaoMobilePromotionBenefitActivitySendAPIResponse struct {
 	model.CommonResponse
 	TaobaoMobilePromotionBenefitActivitySendAPIResponseModel

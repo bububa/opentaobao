@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMdeerScienceDeletearticleAPIResponse
-文章删除 API返回值
-alibaba.alihealth.mdeer.science.deletearticle
-
-三方同步文章删除 */
+// AlibabaAlihealthMdeerScienceDeletearticleAPIResponse 文章删除 API返回值
+// alibaba.alihealth.mdeer.science.deletearticle
+//
+// 三方同步文章删除
 type AlibabaAlihealthMdeerScienceDeletearticleAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthMdeerScienceDeletearticleAPIResponseModel

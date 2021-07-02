@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleParttimeJobsyncAPIRequest
-兼职岗位同步 API请求
-alibaba.idle.parttime.jobsync
-
-服务商同步岗位信息给闲鱼 */
+// AlibabaIdleParttimeJobsyncAPIRequest 兼职岗位同步 API请求
+// alibaba.idle.parttime.jobsync
+//
+// 服务商同步岗位信息给闲鱼
 type AlibabaIdleParttimeJobsyncAPIRequest struct {
 	model.Params
 	// 岗位列表

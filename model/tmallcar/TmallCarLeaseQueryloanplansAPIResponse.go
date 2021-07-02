@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseQueryloanplansAPIResponse
-天猫开新车租后查询还款计划 API返回值
-tmall.car.lease.queryloanplans
-
-天猫开新车租后查询还款计划 */
+// TmallCarLeaseQueryloanplansAPIResponse 天猫开新车租后查询还款计划 API返回值
+// tmall.car.lease.queryloanplans
+//
+// 天猫开新车租后查询还款计划
 type TmallCarLeaseQueryloanplansAPIResponse struct {
 	model.CommonResponse
 	TmallCarLeaseQueryloanplansAPIResponseModel

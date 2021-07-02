@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest
-ISV条码库查询接口 API请求
-alibaba.lst.pos.open.goods.getgoodsbybarcode
-
-ISV条码库查询接口 */
+// AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest ISV条码库查询接口 API请求
+// alibaba.lst.pos.open.goods.getgoodsbybarcode
+//
+// ISV条码库查询接口
 type AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest struct {
 	model.Params
 	// 商品条码

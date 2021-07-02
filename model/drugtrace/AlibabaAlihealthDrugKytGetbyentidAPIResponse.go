@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytGetbyentidAPIResponse
-根据企业主键查看企业详细信息 API返回值
-alibaba.alihealth.drug.kyt.getbyentid
-
-根据企业主键查看企业详细信息 */
+// AlibabaAlihealthDrugKytGetbyentidAPIResponse 根据企业主键查看企业详细信息 API返回值
+// alibaba.alihealth.drug.kyt.getbyentid
+//
+// 根据企业主键查看企业详细信息
 type AlibabaAlihealthDrugKytGetbyentidAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytGetbyentidAPIResponseModel

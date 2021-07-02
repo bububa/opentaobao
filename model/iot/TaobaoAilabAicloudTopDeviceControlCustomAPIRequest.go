@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlCustomAPIRequest
-设备控制自定义扩展接口 API请求
-taobao.ailab.aicloud.top.device.control.custom
-
-设备控制自定义扩展接口 */
+// TaobaoAilabAicloudTopDeviceControlCustomAPIRequest 设备控制自定义扩展接口 API请求
+// taobao.ailab.aicloud.top.device.control.custom
+//
+// 设备控制自定义扩展接口
 type TaobaoAilabAicloudTopDeviceControlCustomAPIRequest struct {
 	model.Params
 	// 用户信息

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-/* AlibabaAliqinFlowCobrandcardSysn
-联名卡信息同步
-alibaba.aliqin.flow.cobrandcard.sysn
-
-提供给浙江移动同步联名卡信息接口。 */
+// AlibabaAliqinFlowCobrandcardSysn 联名卡信息同步
+// alibaba.aliqin.flow.cobrandcard.sysn
+//
+// 提供给浙江移动同步联名卡信息接口。
 func AlibabaAliqinFlowCobrandcardSysn(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowCobrandcardSysnAPIRequest, session string) (*alicom.AlibabaAliqinFlowCobrandcardSysnAPIResponse, error) {
 	var resp alicom.AlibabaAliqinFlowCobrandcardSysnAPIResponse
 	err := clt.Post(req, &resp, session)

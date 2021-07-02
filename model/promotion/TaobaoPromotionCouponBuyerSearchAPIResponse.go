@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionCouponBuyerSearchAPIResponse
-查询买家在相关app领取的优惠券信息 API返回值
-taobao.promotion.coupon.buyer.search
-
-查询买家在相关app领取的优惠券信息 */
+// TaobaoPromotionCouponBuyerSearchAPIResponse 查询买家在相关app领取的优惠券信息 API返回值
+// taobao.promotion.coupon.buyer.search
+//
+// 查询买家在相关app领取的优惠券信息
 type TaobaoPromotionCouponBuyerSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionCouponBuyerSearchAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoEticketMerchantMaFailsendAPIRequest
-码商发码失败回调接口 API请求
-taobao.eticket.merchant.ma.failsend
-
-针对一次发码通知，码商无法完成发码，则可以通过此接口告知电子凭证 */
+// TaobaoEticketMerchantMaFailsendAPIRequest 码商发码失败回调接口 API请求
+// taobao.eticket.merchant.ma.failsend
+//
+// 针对一次发码通知，码商无法完成发码，则可以通过此接口告知电子凭证
 type TaobaoEticketMerchantMaFailsendAPIRequest struct {
 	model.Params
 	// 业务id（订单号）

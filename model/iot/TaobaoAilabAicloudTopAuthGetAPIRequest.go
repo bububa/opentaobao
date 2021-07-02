@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopAuthGetAPIRequest
-登陆 API请求
-taobao.ailab.aicloud.top.auth.get
-
-登陆 */
+// TaobaoAilabAicloudTopAuthGetAPIRequest 登陆 API请求
+// taobao.ailab.aicloud.top.auth.get
+//
+// 登陆
 type TaobaoAilabAicloudTopAuthGetAPIRequest struct {
 	model.Params
 	// 用户ID，此处传入第三方账户体系的用户id

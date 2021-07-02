@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse
-根据追溯码获取69码 API返回值
-alibaba.alihealth.drug.getbarcode.bytraccode
-
-根据追溯码获取69码 */
+// AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse 根据追溯码获取69码 API返回值
+// alibaba.alihealth.drug.getbarcode.bytraccode
+//
+// 根据追溯码获取69码
 type AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponseModel

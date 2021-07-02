@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJushitaJdpUserAddAPIRequest
-添加数据推送用户 API请求
-taobao.jushita.jdp.user.add
-
-提供给接入数据推送的应用添加数据推送服务的用户 */
+// TaobaoJushitaJdpUserAddAPIRequest 添加数据推送用户 API请求
+// taobao.jushita.jdp.user.add
+//
+// 提供给接入数据推送的应用添加数据推送服务的用户
 type TaobaoJushitaJdpUserAddAPIRequest struct {
 	model.Params
 	// RDS实例名称

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailCommissionStatusChangeAPIResponse
-分佣状态变更 API返回值
-alibaba.retail.commission.status.change
-
-分佣系统，分佣状态变更接口 */
+// AlibabaRetailCommissionStatusChangeAPIResponse 分佣状态变更 API返回值
+// alibaba.retail.commission.status.change
+//
+// 分佣系统，分佣状态变更接口
 type AlibabaRetailCommissionStatusChangeAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailCommissionStatusChangeAPIResponseModel

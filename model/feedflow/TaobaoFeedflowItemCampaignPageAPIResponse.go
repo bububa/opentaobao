@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemCampaignPageAPIResponse
-批量查询计划列表 API返回值
-taobao.feedflow.item.campaign.page
-
-批量查询计划列表 */
+// TaobaoFeedflowItemCampaignPageAPIResponse 批量查询计划列表 API返回值
+// taobao.feedflow.item.campaign.page
+//
+// 批量查询计划列表
 type TaobaoFeedflowItemCampaignPageAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemCampaignPageAPIResponseModel

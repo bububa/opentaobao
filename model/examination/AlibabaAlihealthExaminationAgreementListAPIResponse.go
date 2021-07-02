@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationAgreementListAPIResponse
-isv协议获取 API返回值
-alibaba.alihealth.examination.agreement.list
-
-isv协议获取 */
+// AlibabaAlihealthExaminationAgreementListAPIResponse isv协议获取 API返回值
+// alibaba.alihealth.examination.agreement.list
+//
+// isv协议获取
 type AlibabaAlihealthExaminationAgreementListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationAgreementListAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMerchantItemCreatedraftAPIResponse
-新建商品草稿 API返回值
-alibaba.wdk.merchant.item.createdraft
-
-新建商品草稿erp接口 */
+// AlibabaWdkMerchantItemCreatedraftAPIResponse 新建商品草稿 API返回值
+// alibaba.wdk.merchant.item.createdraft
+//
+// 新建商品草稿erp接口
 type AlibabaWdkMerchantItemCreatedraftAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMerchantItemCreatedraftAPIResponseModel

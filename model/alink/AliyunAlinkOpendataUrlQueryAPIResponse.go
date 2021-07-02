@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunAlinkOpendataUrlQueryAPIResponse
-开放数据授权访问URL查询 API返回值
-aliyun.alink.opendata.url.query
-
-厂商数据授权访问URL查询 */
+// AliyunAlinkOpendataUrlQueryAPIResponse 开放数据授权访问URL查询 API返回值
+// aliyun.alink.opendata.url.query
+//
+// 厂商数据授权访问URL查询
 type AliyunAlinkOpendataUrlQueryAPIResponse struct {
 	model.CommonResponse
 	AliyunAlinkOpendataUrlQueryAPIResponseModel

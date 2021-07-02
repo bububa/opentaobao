@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTclsAelophyBillVerificateCallbackAPIResponse
-翱象ERP核销回调 API返回值
-alibaba.tcls.aelophy.bill.verificate.callback
-
-翱象ERP核销回调 */
+// AlibabaTclsAelophyBillVerificateCallbackAPIResponse 翱象ERP核销回调 API返回值
+// alibaba.tcls.aelophy.bill.verificate.callback
+//
+// 翱象ERP核销回调
 type AlibabaTclsAelophyBillVerificateCallbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaTclsAelophyBillVerificateCallbackAPIResponseModel

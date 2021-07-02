@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMsfIdentifyStatusQueryAPIRequest
-喵师傅定案核销状态查询 API请求
-tmall.msf.identify.status.query
-
-喵师傅定案核销状态查询，供服务商erp系统调用 */
+// TmallMsfIdentifyStatusQueryAPIRequest 喵师傅定案核销状态查询 API请求
+// tmall.msf.identify.status.query
+//
+// 喵师傅定案核销状态查询，供服务商erp系统调用
 type TmallMsfIdentifyStatusQueryAPIRequest struct {
 	model.Params
 	// 天猫订单号

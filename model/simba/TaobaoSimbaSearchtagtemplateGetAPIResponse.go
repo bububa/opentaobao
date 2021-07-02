@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSearchtagtemplateGetAPIResponse
-获取搜索人群TOP用户可添加人群信息 API返回值
-taobao.simba.searchtagtemplate.get
-
-获取搜索人群用户可添加人群信息 */
+// TaobaoSimbaSearchtagtemplateGetAPIResponse 获取搜索人群TOP用户可添加人群信息 API返回值
+// taobao.simba.searchtagtemplate.get
+//
+// 获取搜索人群用户可添加人群信息
 type TaobaoSimbaSearchtagtemplateGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaSearchtagtemplateGetAPIResponseModel

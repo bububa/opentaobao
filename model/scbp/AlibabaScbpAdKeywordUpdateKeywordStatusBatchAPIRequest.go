@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest
-修改关键词状态 API请求
-alibaba.scbp.ad.keyword.update.keyword.status.batch
-
-修改关键词状态 */
+// AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest 修改关键词状态 API请求
+// alibaba.scbp.ad.keyword.update.keyword.status.batch
+//
+// 修改关键词状态
 type AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest struct {
 	model.Params
 	// 计划id

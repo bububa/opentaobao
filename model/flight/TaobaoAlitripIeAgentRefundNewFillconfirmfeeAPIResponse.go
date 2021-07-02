@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIResponse
-新模型-回填申请单费用 API返回值
-taobao.alitrip.ie.agent.refund.new.fillconfirmfee
-
-1. 回填退票费用 */
+// TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIResponse 新模型-回填申请单费用 API返回值
+// taobao.alitrip.ie.agent.refund.new.fillconfirmfee
+//
+// 1. 回填退票费用
 type TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIResponseModel

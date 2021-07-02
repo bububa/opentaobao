@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRdsDbCreateaccountAPIResponse
-rds创建数据库账户 API返回值
-taobao.rds.db.createaccount
-
-rds创建数据库账户 */
+// TaobaoRdsDbCreateaccountAPIResponse rds创建数据库账户 API返回值
+// taobao.rds.db.createaccount
+//
+// rds创建数据库账户
 type TaobaoRdsDbCreateaccountAPIResponse struct {
 	model.CommonResponse
 	TaobaoRdsDbCreateaccountAPIResponseModel

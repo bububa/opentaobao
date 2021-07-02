@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinTaNumberSinglecallbyttsAPIRequest
-根据号码tts单呼 API请求
-alibaba.aliqin.ta.number.singlecallbytts
-
-将语音验证码和语音通知发布至聚石塔渠道 */
+// AlibabaAliqinTaNumberSinglecallbyttsAPIRequest 根据号码tts单呼 API请求
+// alibaba.aliqin.ta.number.singlecallbytts
+//
+// 将语音验证码和语音通知发布至聚石塔渠道
 type AlibabaAliqinTaNumberSinglecallbyttsAPIRequest struct {
 	model.Params
 	// 被叫号码

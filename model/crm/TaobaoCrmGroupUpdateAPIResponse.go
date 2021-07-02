@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmGroupUpdateAPIResponse
-修改一个已经存在的分组 API返回值
-taobao.crm.group.update
-
-修改一个已经存在的分组，接口返回分组的修改是否成功 */
+// TaobaoCrmGroupUpdateAPIResponse 修改一个已经存在的分组 API返回值
+// taobao.crm.group.update
+//
+// 修改一个已经存在的分组，接口返回分组的修改是否成功
 type TaobaoCrmGroupUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmGroupUpdateAPIResponseModel

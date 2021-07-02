@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* TmallServicecenterServicemonitormessageSearch
-根据时间段查询服务商的服务预警消息列表(15分钟内)
-tmall.servicecenter.servicemonitormessage.search
-
-根据时间段查询服务商的服务预警消息列表(15分钟内) */
+// TmallServicecenterServicemonitormessageSearch 根据时间段查询服务商的服务预警消息列表(15分钟内)
+// tmall.servicecenter.servicemonitormessage.search
+//
+// 根据时间段查询服务商的服务预警消息列表(15分钟内)
 func TmallServicecenterServicemonitormessageSearch(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicemonitormessageSearchAPIRequest, session string) (*tmallservice.TmallServicecenterServicemonitormessageSearchAPIResponse, error) {
 	var resp tmallservice.TmallServicecenterServicemonitormessageSearchAPIResponse
 	err := clt.Post(req, &resp, session)

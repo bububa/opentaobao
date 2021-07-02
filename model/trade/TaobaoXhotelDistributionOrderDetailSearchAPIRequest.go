@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelDistributionOrderDetailSearchAPIRequest
-分销渠道订单详情查询 API请求
-taobao.xhotel.distribution.order.detail.search
-
-该接口用于提供酒店分销渠道的订单详情查询 */
+// TaobaoXhotelDistributionOrderDetailSearchAPIRequest 分销渠道订单详情查询 API请求
+// taobao.xhotel.distribution.order.detail.search
+//
+// 该接口用于提供酒店分销渠道的订单详情查询
 type TaobaoXhotelDistributionOrderDetailSearchAPIRequest struct {
 	model.Params
 	// 外部分销渠道的订单号（与tid必填其一）

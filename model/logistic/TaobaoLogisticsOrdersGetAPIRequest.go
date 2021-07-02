@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsOrdersGetAPIRequest
-批量查询物流订单 API请求
-taobao.logistics.orders.get
-
-批量查询物流订单。 */
+// TaobaoLogisticsOrdersGetAPIRequest 批量查询物流订单 API请求
+// taobao.logistics.orders.get
+//
+// 批量查询物流订单。
 type TaobaoLogisticsOrdersGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表.可选值:Shipping 物流数据结构中的以下字段: <br><br/>tid,order_code,seller_nick,buyer_nick,delivery_start, delivery_end,out_sid,item_title,receiver_name, created,modified,status,type,freight_payer,seller_confirm,company_name,sub_tids,is_spilt；<br>多个字段之间用","分隔。如tid,seller_nick,buyer_nick,delivery_start。

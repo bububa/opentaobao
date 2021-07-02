@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/feedflow"
 )
 
-/* TaobaoFeedflowItemAdgroupModify
-信息流单元修改
-taobao.feedflow.item.adgroup.modify
-
-信息流单元修改 */
+// TaobaoFeedflowItemAdgroupModify 信息流单元修改
+// taobao.feedflow.item.adgroup.modify
+//
+// 信息流单元修改
 func TaobaoFeedflowItemAdgroupModify(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupModifyAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupModifyAPIResponse, error) {
 	var resp feedflow.TaobaoFeedflowItemAdgroupModifyAPIResponse
 	err := clt.Post(req, &resp, session)

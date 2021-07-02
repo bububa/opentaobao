@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemAdgroupDeleteAPIResponse
-根据单元id删除单元 API返回值
-taobao.feedflow.item.adgroup.delete
-
-根据单元id删除单元 */
+// TaobaoFeedflowItemAdgroupDeleteAPIResponse 根据单元id删除单元 API返回值
+// taobao.feedflow.item.adgroup.delete
+//
+// 根据单元id删除单元
 type TaobaoFeedflowItemAdgroupDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemAdgroupDeleteAPIResponseModel

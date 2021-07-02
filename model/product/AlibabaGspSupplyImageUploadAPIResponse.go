@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaGspSupplyImageUploadAPIResponse
-gsp图片上传 API返回值
-alibaba.gsp.supply.image.upload
-
-上传图片至目标海外平台的素材空间 */
+// AlibabaGspSupplyImageUploadAPIResponse gsp图片上传 API返回值
+// alibaba.gsp.supply.image.upload
+//
+// 上传图片至目标海外平台的素材空间
 type AlibabaGspSupplyImageUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaGspSupplyImageUploadAPIResponseModel

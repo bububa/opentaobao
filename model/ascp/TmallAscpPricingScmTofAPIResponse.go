@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallAscpPricingScmTofAPIResponse
-TOF&SCM营销域对接-成本录入设置 API返回值
-tmall.ascp.pricing.scm.tof
-
-TOF&SCM营销域对接-成本录入设置 */
+// TmallAscpPricingScmTofAPIResponse TOF&SCM营销域对接-成本录入设置 API返回值
+// tmall.ascp.pricing.scm.tof
+//
+// TOF&SCM营销域对接-成本录入设置
 type TmallAscpPricingScmTofAPIResponse struct {
 	model.CommonResponse
 	TmallAscpPricingScmTofAPIResponseModel

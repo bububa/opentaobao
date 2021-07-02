@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegalCaseCommonEnumdataAPIResponse
-获取通用枚举值接口 API返回值
-alibaba.legal.case.common.enumdata
-
-获取通用枚举值接口 */
+// AlibabaLegalCaseCommonEnumdataAPIResponse 获取通用枚举值接口 API返回值
+// alibaba.legal.case.common.enumdata
+//
+// 获取通用枚举值接口
 type AlibabaLegalCaseCommonEnumdataAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalCaseCommonEnumdataAPIResponseModel

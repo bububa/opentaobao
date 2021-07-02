@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJdsTradesStatisticsDiffAPIRequest
-订单全链路状态统计差异比较 API请求
-taobao.jds.trades.statistics.diff
-
-订单全链路状态统计差异比较 */
+// TaobaoJdsTradesStatisticsDiffAPIRequest 订单全链路状态统计差异比较 API请求
+// taobao.jds.trades.statistics.diff
+//
+// 订单全链路状态统计差异比较
 type TaobaoJdsTradesStatisticsDiffAPIRequest struct {
 	model.Params
 	// 查询的日期，格式如YYYYMMDD的日期对应的数字

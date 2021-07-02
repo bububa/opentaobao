@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressTradeOrderOpenQueryAPIRequest
-Aliexpress开放平台订单查询 API请求
-aliexpress.trade.order.open.query
-
-Aliexpress开放平台订单信息查询 */
+// AliexpressTradeOrderOpenQueryAPIRequest Aliexpress开放平台订单查询 API请求
+// aliexpress.trade.order.open.query
+//
+// Aliexpress开放平台订单信息查询
 type AliexpressTradeOrderOpenQueryAPIRequest struct {
 	model.Params
 	// 买家用户id

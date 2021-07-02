@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsSkuGetAPIRequest
-商品信息查询 API请求
-taobao.wlb.wms.sku.get
-
-商品信息查询 */
+// TaobaoWlbWmsSkuGetAPIRequest 商品信息查询 API请求
+// taobao.wlb.wms.sku.get
+//
+// 商品信息查询
 type TaobaoWlbWmsSkuGetAPIRequest struct {
 	model.Params
 	// 菜鸟商品ID,与itemcode必须有一个值不为空

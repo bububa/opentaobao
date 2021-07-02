@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNewretailPurchasePriceSaveAPIResponse
-共享库存 采购价上传接口 API返回值
-alibaba.newretail.purchase.price.save
-
-共享库存业务 供应商上传商品采购价 */
+// AlibabaNewretailPurchasePriceSaveAPIResponse 共享库存 采购价上传接口 API返回值
+// alibaba.newretail.purchase.price.save
+//
+// 共享库存业务 供应商上传商品采购价
 type AlibabaNewretailPurchasePriceSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaNewretailPurchasePriceSaveAPIResponseModel

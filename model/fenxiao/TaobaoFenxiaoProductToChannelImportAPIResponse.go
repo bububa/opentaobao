@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductToChannelImportAPIResponse
-产品导入到渠道 API返回值
-taobao.fenxiao.product.to.channel.import
-
-支持供应商将已有产品导入到某个渠道销售 */
+// TaobaoFenxiaoProductToChannelImportAPIResponse 产品导入到渠道 API返回值
+// taobao.fenxiao.product.to.channel.import
+//
+// 支持供应商将已有产品导入到某个渠道销售
 type TaobaoFenxiaoProductToChannelImportAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductToChannelImportAPIResponseModel

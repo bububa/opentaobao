@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJdsTradeTracesGetAPIResponse
-获取单条订单跟踪详情 API返回值
-taobao.jds.trade.traces.get
-
-获取聚石塔数据共享的交易全链路信息 */
+// TaobaoJdsTradeTracesGetAPIResponse 获取单条订单跟踪详情 API返回值
+// taobao.jds.trade.traces.get
+//
+// 获取聚石塔数据共享的交易全链路信息
 type TaobaoJdsTradeTracesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoJdsTradeTracesGetAPIResponseModel

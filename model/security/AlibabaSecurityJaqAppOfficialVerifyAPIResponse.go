@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqAppOfficialVerifyAPIResponse
-聚安全验证官方应用接口 API返回值
-alibaba.security.jaq.app.official.verify
-
-接入用户来查询应用是否为官方应用 */
+// AlibabaSecurityJaqAppOfficialVerifyAPIResponse 聚安全验证官方应用接口 API返回值
+// alibaba.security.jaq.app.official.verify
+//
+// 接入用户来查询应用是否为官方应用
 type AlibabaSecurityJaqAppOfficialVerifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqAppOfficialVerifyAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-/* TaobaoOmniitemClassifyDelete
-删除一个分类
-taobao.omniitem.classify.delete
-
-删除一个分类 */
+// TaobaoOmniitemClassifyDelete 删除一个分类
+// taobao.omniitem.classify.delete
+//
+// 删除一个分类
 func TaobaoOmniitemClassifyDelete(clt *core.SDKClient, req *omniorder.TaobaoOmniitemClassifyDeleteAPIRequest, session string) (*omniorder.TaobaoOmniitemClassifyDeleteAPIResponse, error) {
 	var resp omniorder.TaobaoOmniitemClassifyDeleteAPIResponse
 	err := clt.Post(req, &resp, session)

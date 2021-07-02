@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallChannelTradeOrderCreateAPIResponse
-创建渠道分销单 API返回值
-tmall.channel.trade.order.create
-
-创建渠道分销单 */
+// TmallChannelTradeOrderCreateAPIResponse 创建渠道分销单 API返回值
+// tmall.channel.trade.order.create
+//
+// 创建渠道分销单
 type TmallChannelTradeOrderCreateAPIResponse struct {
 	model.CommonResponse
 	TmallChannelTradeOrderCreateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemCarturlGetAPIRequest
-加购URL获取 API请求
-taobao.item.carturl.get
-
-获取加购URL，支持添加商品到购物车 */
+// TaobaoItemCarturlGetAPIRequest 加购URL获取 API请求
+// taobao.item.carturl.get
+//
+// 获取加购URL，支持添加商品到购物车
 type TaobaoItemCarturlGetAPIRequest struct {
 	model.Params
 	// 商品信息，格式为 商品ID_SKU ID_数量，多条记录以逗号(,)分割

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappMesssageReplyAPIResponse
-轻店铺下行回复接口 API返回值
-taobao.miniapp.messsage.reply
-
-外部 isv 调用该进口来进行轻店铺消息的回复 */
+// TaobaoMiniappMesssageReplyAPIResponse 轻店铺下行回复接口 API返回值
+// taobao.miniapp.messsage.reply
+//
+// 外部 isv 调用该进口来进行轻店铺消息的回复
 type TaobaoMiniappMesssageReplyAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappMesssageReplyAPIResponseModel

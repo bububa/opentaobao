@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-/* AlitripBtripProjectModify
-变更项目
-alitrip.btrip.project.modify
-
-变更项目 */
+// AlitripBtripProjectModify 变更项目
+// alitrip.btrip.project.modify
+//
+// 变更项目
 func AlitripBtripProjectModify(clt *core.SDKClient, req *btrip.AlitripBtripProjectModifyAPIRequest, session string) (*btrip.AlitripBtripProjectModifyAPIResponse, error) {
 	var resp btrip.AlitripBtripProjectModifyAPIResponse
 	err := clt.Post(req, &resp, session)

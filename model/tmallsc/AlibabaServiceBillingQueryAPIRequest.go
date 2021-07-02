@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaServiceBillingQueryAPIRequest
-服务平台结算出账信息 API请求
-alibaba.service.billing.query
-
-服务平台结算单明细查询服务 */
+// AlibabaServiceBillingQueryAPIRequest 服务平台结算出账信息 API请求
+// alibaba.service.billing.query
+//
+// 服务平台结算单明细查询服务
 type AlibabaServiceBillingQueryAPIRequest struct {
 	model.Params
 	// 账单查询开始时间。格式示例 2019-03-26 17:15:28

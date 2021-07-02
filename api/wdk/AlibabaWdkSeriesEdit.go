@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-/* AlibabaWdkSeriesEdit
-系列品变更-更新系列
-alibaba.wdk.series.edit
-
-系列品变更-更新系列 */
+// AlibabaWdkSeriesEdit 系列品变更-更新系列
+// alibaba.wdk.series.edit
+//
+// 系列品变更-更新系列
 func AlibabaWdkSeriesEdit(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesEditAPIRequest, session string) (*wdk.AlibabaWdkSeriesEditAPIResponse, error) {
 	var resp wdk.AlibabaWdkSeriesEditAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsChangedGetAPIResponse
-分页获取修改过的关键词ID、宝贝id、修改时间 API返回值
-taobao.simba.keywords.changed.get
-
-分页获取修改过的关键词ID、宝贝id、修改时间 */
+// TaobaoSimbaKeywordsChangedGetAPIResponse 分页获取修改过的关键词ID、宝贝id、修改时间 API返回值
+// taobao.simba.keywords.changed.get
+//
+// 分页获取修改过的关键词ID、宝贝id、修改时间
 type TaobaoSimbaKeywordsChangedGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaKeywordsChangedGetAPIResponseModel

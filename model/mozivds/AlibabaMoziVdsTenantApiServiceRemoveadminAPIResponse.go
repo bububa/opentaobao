@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziVdsTenantApiServiceRemoveadminAPIResponse
-删除租户管理员服务 API返回值
-alibaba.mozi.vds.tenant.api.service.removeadmin
-
-删除租户管理员top服务 */
+// AlibabaMoziVdsTenantApiServiceRemoveadminAPIResponse 删除租户管理员服务 API返回值
+// alibaba.mozi.vds.tenant.api.service.removeadmin
+//
+// 删除租户管理员top服务
 type AlibabaMoziVdsTenantApiServiceRemoveadminAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziVdsTenantApiServiceRemoveadminAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallProductSpecAddAPIRequest
-添加产品规格 API请求
-tmall.product.spec.add
-
-增加产品规格 */
+// TmallProductSpecAddAPIRequest 添加产品规格 API请求
+// tmall.product.spec.add
+//
+// 增加产品规格
 type TmallProductSpecAddAPIRequest struct {
 	model.Params
 	// 产品ID

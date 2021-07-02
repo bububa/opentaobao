@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenInventoryreserveCancelAPIResponse
-库存预占取消接口 API返回值
-taobao.qimen.inventoryreserve.cancel
-
-库存预占取消 */
+// TaobaoQimenInventoryreserveCancelAPIResponse 库存预占取消接口 API返回值
+// taobao.qimen.inventoryreserve.cancel
+//
+// 库存预占取消
 type TaobaoQimenInventoryreserveCancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenInventoryreserveCancelAPIResponseModel

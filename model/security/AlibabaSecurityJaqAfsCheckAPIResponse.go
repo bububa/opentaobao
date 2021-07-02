@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqAfsCheckAPIResponse
-反欺诈二次验证接口 API返回值
-alibaba.security.jaq.afs.check
-
-反欺诈二次验证接口 */
+// AlibabaSecurityJaqAfsCheckAPIResponse 反欺诈二次验证接口 API返回值
+// alibaba.security.jaq.afs.check
+//
+// 反欺诈二次验证接口
 type AlibabaSecurityJaqAfsCheckAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqAfsCheckAPIResponseModel

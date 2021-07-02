@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRateRelationshipwithrpGetAPIResponse
-根据gid查询卖家下所有的rpId API返回值
-taobao.xhotel.rate.relationshipwithrp.get
-
-根据gid查询卖家下所有的rpId，可分页，默认展示第一页的数据 */
+// TaobaoXhotelRateRelationshipwithrpGetAPIResponse 根据gid查询卖家下所有的rpId API返回值
+// taobao.xhotel.rate.relationshipwithrp.get
+//
+// 根据gid查询卖家下所有的rpId，可分页，默认展示第一页的数据
 type TaobaoXhotelRateRelationshipwithrpGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelRateRelationshipwithrpGetAPIResponseModel

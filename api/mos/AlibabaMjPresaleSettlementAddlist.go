@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-/* AlibabaMjPresaleSettlementAddlist
-预售结算数据回传
-alibaba.mj.presale.settlement.addlist
-
-用于预售活动结算数据的回传。 */
+// AlibabaMjPresaleSettlementAddlist 预售结算数据回传
+// alibaba.mj.presale.settlement.addlist
+//
+// 用于预售活动结算数据的回传。
 func AlibabaMjPresaleSettlementAddlist(clt *core.SDKClient, req *mos.AlibabaMjPresaleSettlementAddlistAPIRequest, session string) (*mos.AlibabaMjPresaleSettlementAddlistAPIResponse, error) {
 	var resp mos.AlibabaMjPresaleSettlementAddlistAPIResponse
 	err := clt.Post(req, &resp, session)

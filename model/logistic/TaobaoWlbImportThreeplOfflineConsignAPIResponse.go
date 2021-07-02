@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbImportThreeplOfflineConsignAPIResponse
-3PL直邮线下发货 API返回值
-taobao.wlb.import.threepl.offline.consign
-
-菜鸟认证直邮线下发货 */
+// TaobaoWlbImportThreeplOfflineConsignAPIResponse 3PL直邮线下发货 API返回值
+// taobao.wlb.import.threepl.offline.consign
+//
+// 菜鸟认证直邮线下发货
 type TaobaoWlbImportThreeplOfflineConsignAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbImportThreeplOfflineConsignAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuCategorySchemaLevelGetAPIResponse
-(新)层级属性获取 API返回值
-alibaba.icbu.category.schema.level.get
-
-将表单中层级属性的子属性返回 */
+// AlibabaIcbuCategorySchemaLevelGetAPIResponse (新)层级属性获取 API返回值
+// alibaba.icbu.category.schema.level.get
+//
+// 将表单中层级属性的子属性返回
 type AlibabaIcbuCategorySchemaLevelGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuCategorySchemaLevelGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest
-商家数据-选品整体概况 API请求
-taobao.xhotel.item.selection.seller.stat.summary
-
-商家数据-选品整体概况 */
+// TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest 商家数据-选品整体概况 API请求
+// taobao.xhotel.item.selection.seller.stat.summary
+//
+// 商家数据-选品整体概况
 type TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest struct {
 	model.Params
 	// vendor 默认为all

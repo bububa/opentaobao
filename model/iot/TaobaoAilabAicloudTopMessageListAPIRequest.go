@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMessageListAPIRequest
-获取留言列表 API请求
-taobao.ailab.aicloud.top.message.list
-
-根据指定参数获取留言列表 */
+// TaobaoAilabAicloudTopMessageListAPIRequest 获取留言列表 API请求
+// taobao.ailab.aicloud.top.message.list
+//
+// 根据指定参数获取留言列表
 type TaobaoAilabAicloudTopMessageListAPIRequest struct {
 	model.Params
 	// 账户体系隔离

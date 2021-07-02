@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNazcaTokenIssuecertapplyGetAPIResponse
-根据token获取出证申请信息 API返回值
-alibaba.nazca.token.issuecertapply.get
-
-根据token获取出证申请信息 */
+// AlibabaNazcaTokenIssuecertapplyGetAPIResponse 根据token获取出证申请信息 API返回值
+// alibaba.nazca.token.issuecertapply.get
+//
+// 根据token获取出证申请信息
 type AlibabaNazcaTokenIssuecertapplyGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaNazcaTokenIssuecertapplyGetAPIResponseModel

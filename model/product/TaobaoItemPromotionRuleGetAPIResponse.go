@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemPromotionRuleGetAPIResponse
-获取商品已生效营销活动更新规则 API返回值
-taobao.item.promotion.rule.get
-
-获取商品已生效的更新规则信息，主要包含库存禁止修改，商品一口价禁止修改，库存减少锁定等规则生效信息 */
+// TaobaoItemPromotionRuleGetAPIResponse 获取商品已生效营销活动更新规则 API返回值
+// taobao.item.promotion.rule.get
+//
+// 获取商品已生效的更新规则信息，主要包含库存禁止修改，商品一口价禁止修改，库存减少锁定等规则生效信息
 type TaobaoItemPromotionRuleGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemPromotionRuleGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupUpdateAPIRequest
-更新一个推广组的信息 API请求
-taobao.simba.adgroup.update
-
-更新一个推广组的信息，可以设置默认出价、是否上线、非搜索出价、非搜索是否使用默认出价 */
+// TaobaoSimbaAdgroupUpdateAPIRequest 更新一个推广组的信息 API请求
+// taobao.simba.adgroup.update
+//
+// 更新一个推广组的信息，可以设置默认出价、是否上线、非搜索出价、非搜索是否使用默认出价
 type TaobaoSimbaAdgroupUpdateAPIRequest struct {
 	model.Params
 	// 非搜索是否使用默认出价，false-不用；true-使用；默认为true;

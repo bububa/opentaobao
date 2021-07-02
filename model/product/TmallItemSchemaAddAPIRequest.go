@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemSchemaAddAPIRequest
-天猫根据规则发布商品 API请求
-tmall.item.schema.add
-
-天猫TopSchema发布商品。 */
+// TmallItemSchemaAddAPIRequest 天猫根据规则发布商品 API请求
+// tmall.item.schema.add
+//
+// 天猫TopSchema发布商品。
 type TmallItemSchemaAddAPIRequest struct {
 	model.Params
 	// 商品发布的目标类目，必须是叶子类目

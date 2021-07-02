@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotCardStatusAPIResponse
-物联卡状态查询 API返回值
-alibaba.aliqin.fc.iot.cardStatus
-
-物联卡状态查询 */
+// AlibabaAliqinFcIotCardStatusAPIResponse 物联卡状态查询 API返回值
+// alibaba.aliqin.fc.iot.cardStatus
+//
+// 物联卡状态查询
 type AlibabaAliqinFcIotCardStatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcIotCardStatusAPIResponseModel

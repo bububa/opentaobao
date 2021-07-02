@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscmSettlementInvoiceSynchronizationImAPIResponse
-英迈发票同步到结算 API返回值
-alibaba.ascm.settlement.invoice.synchronization.im
-
-外部供应商通过此API将发货的发票信息推送给供应链中台结算系统 */
+// AlibabaAscmSettlementInvoiceSynchronizationImAPIResponse 英迈发票同步到结算 API返回值
+// alibaba.ascm.settlement.invoice.synchronization.im
+//
+// 外部供应商通过此API将发货的发票信息推送给供应链中台结算系统
 type AlibabaAscmSettlementInvoiceSynchronizationImAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscmSettlementInvoiceSynchronizationImAPIResponseModel

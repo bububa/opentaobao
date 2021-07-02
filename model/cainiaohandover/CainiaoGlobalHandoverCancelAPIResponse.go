@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalHandoverCancelAPIResponse
-取消交接单 API返回值
-cainiao.global.handover.cancel
-
-提供给ISV通过该接口取消交接单 */
+// CainiaoGlobalHandoverCancelAPIResponse 取消交接单 API返回值
+// cainiao.global.handover.cancel
+//
+// 提供给ISV通过该接口取消交接单
 type CainiaoGlobalHandoverCancelAPIResponse struct {
 	model.CommonResponse
 	CainiaoGlobalHandoverCancelAPIResponseModel

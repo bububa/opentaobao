@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaGpuSchemaCatsearchAPIResponse
-按类目查询spu接口 API返回值
-alibaba.gpu.schema.catsearch
-
-按类目查询spu的schema接口 */
+// AlibabaGpuSchemaCatsearchAPIResponse 按类目查询spu接口 API返回值
+// alibaba.gpu.schema.catsearch
+//
+// 按类目查询spu的schema接口
 type AlibabaGpuSchemaCatsearchAPIResponse struct {
 	model.CommonResponse
 	AlibabaGpuSchemaCatsearchAPIResponseModel

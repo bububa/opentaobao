@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceYksSkillDeleteAPIResponse
-技能删除 API返回值
-yunos.tvpubadmin.device.yks.skill.delete
-
-删除技能 */
+// YunosTvpubadminDeviceYksSkillDeleteAPIResponse 技能删除 API返回值
+// yunos.tvpubadmin.device.yks.skill.delete
+//
+// 删除技能
 type YunosTvpubadminDeviceYksSkillDeleteAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminDeviceYksSkillDeleteAPIResponseModel

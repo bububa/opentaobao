@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTopSecretRegisterAPIResponse
-注册加密账号 API返回值
-taobao.top.secret.register
-
-提供给isv注册非淘系账号秘钥，isv依赖sdk自主加、解密 */
+// TaobaoTopSecretRegisterAPIResponse 注册加密账号 API返回值
+// taobao.top.secret.register
+//
+// 提供给isv注册非淘系账号秘钥，isv依赖sdk自主加、解密
 type TaobaoTopSecretRegisterAPIResponse struct {
 	model.CommonResponse
 	TaobaoTopSecretRegisterAPIResponseModel

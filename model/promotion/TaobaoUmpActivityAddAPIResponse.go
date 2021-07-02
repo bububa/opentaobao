@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUmpActivityAddAPIResponse
-新增优惠活动 API返回值
-taobao.ump.activity.add
-
-新增优惠活动。设置优惠活动的基本信息，比如活动时间，活动针对的对象（可以是满足某些条件的买家） */
+// TaobaoUmpActivityAddAPIResponse 新增优惠活动 API返回值
+// taobao.ump.activity.add
+//
+// 新增优惠活动。设置优惠活动的基本信息，比如活动时间，活动针对的对象（可以是满足某些条件的买家）
 type TaobaoUmpActivityAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoUmpActivityAddAPIResponseModel

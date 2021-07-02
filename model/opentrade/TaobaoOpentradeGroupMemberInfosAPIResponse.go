@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeGroupMemberInfosAPIResponse
-组团购批量获取用户参团信息 API返回值
-taobao.opentrade.group.member.infos
-
-组团购场景下，获取用户参团信息 */
+// TaobaoOpentradeGroupMemberInfosAPIResponse 组团购批量获取用户参团信息 API返回值
+// taobao.opentrade.group.member.infos
+//
+// 组团购场景下，获取用户参团信息
 type TaobaoOpentradeGroupMemberInfosAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeGroupMemberInfosAPIResponseModel

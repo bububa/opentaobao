@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponse
-智能发货引擎策略仓设置 API返回值
-cainiao.smartdelivery.strategy.warehouse.i.update
-
-智能发货引擎发货策略设置仓维度 */
+// CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponse 智能发货引擎策略仓设置 API返回值
+// cainiao.smartdelivery.strategy.warehouse.i.update
+//
+// 智能发货引擎发货策略设置仓维度
 type CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponse struct {
 	model.CommonResponse
 	CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponseModel

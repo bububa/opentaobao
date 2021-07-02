@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVasServiceGetServTimesAPIResponse
-查询某个用户图片空间的使用情况 API返回值
-taobao.vas.service.getServTimes
-
-查询某个用户图片空间的使用情况 */
+// TaobaoVasServiceGetServTimesAPIResponse 查询某个用户图片空间的使用情况 API返回值
+// taobao.vas.service.getServTimes
+//
+// 查询某个用户图片空间的使用情况
 type TaobaoVasServiceGetServTimesAPIResponse struct {
 	model.CommonResponse
 	TaobaoVasServiceGetServTimesAPIResponseModel

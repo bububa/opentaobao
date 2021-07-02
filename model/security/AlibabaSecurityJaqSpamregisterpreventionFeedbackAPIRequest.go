@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest
-保护结果反馈 API请求
-alibaba.security.jaq.spamregisterprevention.feedback
-
-用户通过这个接口对垃圾注册防控结果进行反馈 */
+// AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest 保护结果反馈 API请求
+// alibaba.security.jaq.spamregisterprevention.feedback
+//
+// 用户通过这个接口对垃圾注册防控结果进行反馈
 type AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest struct {
 	model.Params
 	// 查询接口返回的id

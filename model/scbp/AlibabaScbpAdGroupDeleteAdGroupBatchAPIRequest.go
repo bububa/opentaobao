@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest
-删除推广单元 API请求
-alibaba.scbp.ad.group.delete.ad.group.batch
-
-删除推广单元 */
+// AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest 删除推广单元 API请求
+// alibaba.scbp.ad.group.delete.ad.group.batch
+//
+// 删除推广单元
 type AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest struct {
 	model.Params
 	// 计划id

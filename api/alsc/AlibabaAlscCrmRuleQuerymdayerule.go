@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-/* AlibabaAlscCrmRuleQuerymdayerule
-查询品牌下的会员日规则
-alibaba.alsc.crm.rule.querymdayerule
-
-查询品牌下的会员日规则 */
+// AlibabaAlscCrmRuleQuerymdayerule 查询品牌下的会员日规则
+// alibaba.alsc.crm.rule.querymdayerule
+//
+// 查询品牌下的会员日规则
 func AlibabaAlscCrmRuleQuerymdayerule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQuerymdayeruleAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleQuerymdayeruleAPIResponse, error) {
 	var resp alsc.AlibabaAlscCrmRuleQuerymdayeruleAPIResponse
 	err := clt.Post(req, &resp, session)

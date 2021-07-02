@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjOcOfflineMaxticketnoGetAPIResponse
-pos机获取线下最大小票号 API返回值
-alibaba.mj.oc.offline.maxticketno.get
-
-给pos机提供线下最大小票号查询 */
+// AlibabaMjOcOfflineMaxticketnoGetAPIResponse pos机获取线下最大小票号 API返回值
+// alibaba.mj.oc.offline.maxticketno.get
+//
+// 给pos机提供线下最大小票号查询
 type AlibabaMjOcOfflineMaxticketnoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcOfflineMaxticketnoGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelCityGetAPIRequest
-酒店城市数据获取接口 API请求
-taobao.xhotel.city.get
-
-引流API，对外提供酒店城市数据 */
+// TaobaoXhotelCityGetAPIRequest 酒店城市数据获取接口 API请求
+// taobao.xhotel.city.get
+//
+// 引流API，对外提供酒店城市数据
 type TaobaoXhotelCityGetAPIRequest struct {
 	model.Params
 	// 分页读取的开始下标,从0开始

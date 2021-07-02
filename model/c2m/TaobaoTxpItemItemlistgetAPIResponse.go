@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTxpItemItemlistgetAPIResponse
-淘小铺商品接口 API返回值
-taobao.txp.item.itemlistget
-
-淘小铺商品的查询服务。 */
+// TaobaoTxpItemItemlistgetAPIResponse 淘小铺商品接口 API返回值
+// taobao.txp.item.itemlistget
+//
+// 淘小铺商品的查询服务。
 type TaobaoTxpItemItemlistgetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTxpItemItemlistgetAPIResponseModel

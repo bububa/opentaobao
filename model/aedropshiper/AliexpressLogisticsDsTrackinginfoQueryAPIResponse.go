@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressLogisticsDsTrackinginfoQueryAPIResponse
-查询物流追踪信息 API返回值
-aliexpress.logistics.ds.trackinginfo.query
-
-Dropshipper查询物流追踪信息 */
+// AliexpressLogisticsDsTrackinginfoQueryAPIResponse 查询物流追踪信息 API返回值
+// aliexpress.logistics.ds.trackinginfo.query
+//
+// Dropshipper查询物流追踪信息
 type AliexpressLogisticsDsTrackinginfoQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressLogisticsDsTrackinginfoQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthCodesellerGetuserawardAPIResponse
-贩卖机扫码查询领奖状态 API返回值
-alibaba.alihealth.codeseller.getuseraward
-
-贩卖机扫码查询领奖状态 */
+// AlibabaAlihealthCodesellerGetuserawardAPIResponse 贩卖机扫码查询领奖状态 API返回值
+// alibaba.alihealth.codeseller.getuseraward
+//
+// 贩卖机扫码查询领奖状态
 type AlibabaAlihealthCodesellerGetuserawardAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthCodesellerGetuserawardAPIResponseModel

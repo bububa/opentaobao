@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimTribelogsImportAPIRequest
-openim群聊天记录导入 API请求
-taobao.openim.tribelogs.import
-
-openim群聊天记录导入 */
+// TaobaoOpenimTribelogsImportAPIRequest openim群聊天记录导入 API请求
+// taobao.openim.tribelogs.import
+//
+// openim群聊天记录导入
 type TaobaoOpenimTribelogsImportAPIRequest struct {
 	model.Params
 	// 群号。必须为已存在的群，且群主属于本app

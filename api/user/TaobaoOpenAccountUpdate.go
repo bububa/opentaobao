@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/user"
 )
 
-/* TaobaoOpenAccountUpdate
-Open Account数据更新
-taobao.open.account.update
-
-Open Account数据更新 */
+// TaobaoOpenAccountUpdate Open Account数据更新
+// taobao.open.account.update
+//
+// Open Account数据更新
 func TaobaoOpenAccountUpdate(clt *core.SDKClient, req *user.TaobaoOpenAccountUpdateAPIRequest, session string) (*user.TaobaoOpenAccountUpdateAPIResponse, error) {
 	var resp user.TaobaoOpenAccountUpdateAPIResponse
 	err := clt.Post(req, &resp, session)

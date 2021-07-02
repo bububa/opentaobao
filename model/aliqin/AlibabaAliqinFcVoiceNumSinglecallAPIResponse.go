@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcVoiceNumSinglecallAPIResponse
-语音通知 API返回值
-alibaba.aliqin.fc.voice.num.singlecall
-
-向指定手机号码发起单向呼叫，播放指定的语音文件内容。使用前需要在阿里大于管理中心添加去电显示号码与语音文件。 */
+// AlibabaAliqinFcVoiceNumSinglecallAPIResponse 语音通知 API返回值
+// alibaba.aliqin.fc.voice.num.singlecall
+//
+// 向指定手机号码发起单向呼叫，播放指定的语音文件内容。使用前需要在阿里大于管理中心添加去电显示号码与语音文件。
 type AlibabaAliqinFcVoiceNumSinglecallAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcVoiceNumSinglecallAPIResponseModel

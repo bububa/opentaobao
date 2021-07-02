@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoRefundRefundactionsDisplayAPIResponse
-退货退款操作的展示信息(展现给买家) API返回值
-cainiao.refund.refundactions.display
-
-退货退款操作的展示信息(展现给买家) */
+// CainiaoRefundRefundactionsDisplayAPIResponse 退货退款操作的展示信息(展现给买家) API返回值
+// cainiao.refund.refundactions.display
+//
+// 退货退款操作的展示信息(展现给买家)
 type CainiaoRefundRefundactionsDisplayAPIResponse struct {
 	model.CommonResponse
 	CainiaoRefundRefundactionsDisplayAPIResponseModel

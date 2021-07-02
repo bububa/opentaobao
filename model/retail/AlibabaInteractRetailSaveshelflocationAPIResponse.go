@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractRetailSaveshelflocationAPIResponse
-保存地理位置和货架关系 API返回值
-alibaba.interact.retail.saveshelflocation
-
-保存地理位置和货架关系 */
+// AlibabaInteractRetailSaveshelflocationAPIResponse 保存地理位置和货架关系 API返回值
+// alibaba.interact.retail.saveshelflocation
+//
+// 保存地理位置和货架关系
 type AlibabaInteractRetailSaveshelflocationAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractRetailSaveshelflocationAPIResponseModel

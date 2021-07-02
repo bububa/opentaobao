@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTraderateImprImprwordsGetAPIResponse
-评价大家印象印象短语接口 API返回值
-taobao.traderate.impr.imprwords.get
-
-根据淘宝后台类目的一级类目和叶子类目 */
+// TaobaoTraderateImprImprwordsGetAPIResponse 评价大家印象印象短语接口 API返回值
+// taobao.traderate.impr.imprwords.get
+//
+// 根据淘宝后台类目的一级类目和叶子类目
 type TaobaoTraderateImprImprwordsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTraderateImprImprwordsGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTvpayAppinfoGetAPIResponse
-tv支付获取应用信息 API返回值
-taobao.tvpay.appinfo.get
-
-tv支付获取应用信息 */
+// TaobaoTvpayAppinfoGetAPIResponse tv支付获取应用信息 API返回值
+// taobao.tvpay.appinfo.get
+//
+// tv支付获取应用信息
 type TaobaoTvpayAppinfoGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTvpayAppinfoGetAPIResponseModel

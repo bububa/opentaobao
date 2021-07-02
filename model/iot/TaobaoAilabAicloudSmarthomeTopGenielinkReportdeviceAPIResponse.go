@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIResponse
-零配方案上报设备 API返回值
-taobao.ailab.aicloud.smarthome.top.genielink.reportdevice
-
-零配方案中设备联网成功之后上报设备 */
+// TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIResponse 零配方案上报设备 API返回值
+// taobao.ailab.aicloud.smarthome.top.genielink.reportdevice
+//
+// 零配方案中设备联网成功之后上报设备
 type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIResponseModel

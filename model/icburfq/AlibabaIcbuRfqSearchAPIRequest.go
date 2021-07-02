@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuRfqSearchAPIRequest
-查询RFQ API请求
-alibaba.icbu.rfq.search
-
-用于查询RFQ的信息 */
+// AlibabaIcbuRfqSearchAPIRequest 查询RFQ API请求
+// alibaba.icbu.rfq.search
+//
+// 用于查询RFQ的信息
 type AlibabaIcbuRfqSearchAPIRequest struct {
 	model.Params
 	// 验证

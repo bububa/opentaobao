@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest
-供应商/分销商关闭采购申请/经销采购单 API请求
-taobao.fenxiao.dealer.requisitionorder.close
-
-供应商或分销商关闭采购申请/经销采购单 */
+// TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest 供应商/分销商关闭采购申请/经销采购单 API请求
+// taobao.fenxiao.dealer.requisitionorder.close
+//
+// 供应商或分销商关闭采购申请/经销采购单
 type TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest struct {
 	model.Params
 	// 经销采购单编号

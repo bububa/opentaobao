@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoScitemUpdateAPIResponse
-根据商品ID或商家编码修改后端商品 API返回值
-taobao.scitem.update
-
-根据商品ID或商家编码修改后端商品 */
+// TaobaoScitemUpdateAPIResponse 根据商品ID或商家编码修改后端商品 API返回值
+// taobao.scitem.update
+//
+// 根据商品ID或商家编码修改后端商品
 type TaobaoScitemUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoScitemUpdateAPIResponseModel

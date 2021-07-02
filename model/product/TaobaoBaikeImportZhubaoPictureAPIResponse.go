@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaikeImportZhubaoPictureAPIResponse
-百科图片数据导入 API返回值
-taobao.baike.import.zhubao.picture
-
-用于接入外部--图片--录入到商品百科中 */
+// TaobaoBaikeImportZhubaoPictureAPIResponse 百科图片数据导入 API返回值
+// taobao.baike.import.zhubao.picture
+//
+// 用于接入外部--图片--录入到商品百科中
 type TaobaoBaikeImportZhubaoPictureAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaikeImportZhubaoPictureAPIResponseModel

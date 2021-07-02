@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkTraceUrlGetAPIResponse
-溯源url透出 API返回值
-alibaba.wdk.trace.url.get
-
-根据shopId和skuCode返回商品溯源url */
+// AlibabaWdkTraceUrlGetAPIResponse 溯源url透出 API返回值
+// alibaba.wdk.trace.url.get
+//
+// 根据shopId和skuCode返回商品溯源url
 type AlibabaWdkTraceUrlGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkTraceUrlGetAPIResponseModel

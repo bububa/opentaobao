@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/shop"
 )
 
-/* AlibabaDataCouponGet
-获取优惠券信息
-alibaba.data.coupon.get
-
-获取优惠券信息，仅作客户端鉴权虚拟api使用 */
+// AlibabaDataCouponGet 获取优惠券信息
+// alibaba.data.coupon.get
+//
+// 获取优惠券信息，仅作客户端鉴权虚拟api使用
 func AlibabaDataCouponGet(clt *core.SDKClient, req *shop.AlibabaDataCouponGetAPIRequest, session string) (*shop.AlibabaDataCouponGetAPIResponse, error) {
 	var resp shop.AlibabaDataCouponGetAPIResponse
 	err := clt.Post(req, &resp, session)

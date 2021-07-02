@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaichuanTaopasswordCheckAPIRequest
-淘口令检查 API请求
-alibaba.baichuan.taopassword.check
-
-检查当前文本是否为淘口令 */
+// AlibabaBaichuanTaopasswordCheckAPIRequest 淘口令检查 API请求
+// alibaba.baichuan.taopassword.check
+//
+// 检查当前文本是否为淘口令
 type AlibabaBaichuanTaopasswordCheckAPIRequest struct {
 	model.Params
 	// 参数DTO

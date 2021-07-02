@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBeneiftDrawAPIRequest
-抽奖接口 API请求
-alibaba.beneift.draw
-
-抽奖接口 */
+// AlibabaBeneiftDrawAPIRequest 抽奖接口 API请求
+// alibaba.beneift.draw
+//
+// 抽奖接口
 type AlibabaBeneiftDrawAPIRequest struct {
 	model.Params
 	// 奖池唯一标识，奖池创建时即生成

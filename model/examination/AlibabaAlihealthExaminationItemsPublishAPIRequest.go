@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationItemsPublishAPIRequest
-单项/加项包信息同步 API请求
-alibaba.alihealth.examination.items.publish
-
-体检机构对接_单项/加项包信息发布／更新 */
+// AlibabaAlihealthExaminationItemsPublishAPIRequest 单项/加项包信息同步 API请求
+// alibaba.alihealth.examination.items.publish
+//
+// 体检机构对接_单项/加项包信息发布／更新
 type AlibabaAlihealthExaminationItemsPublishAPIRequest struct {
 	model.Params
 	// 商品id，机构保证全局唯一

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseOrdernewGettrackinginfoAPIResponse
-订单配送信息跟踪 API返回值
-alibaba.ele.enterprise.ordernew.gettrackinginfo
-
-订单配送信息跟踪 */
+// AlibabaEleEnterpriseOrdernewGettrackinginfoAPIResponse 订单配送信息跟踪 API返回值
+// alibaba.ele.enterprise.ordernew.gettrackinginfo
+//
+// 订单配送信息跟踪
 type AlibabaEleEnterpriseOrdernewGettrackinginfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseOrdernewGettrackinginfoAPIResponseModel

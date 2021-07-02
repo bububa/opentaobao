@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkItemFuturepriceQueryAPIResponse
-单个商品未来价查询接口 API返回值
-alibaba.wdk.item.futureprice.query
-
-查询单个商品未来价，融合了未来基础售价+未来促销价 */
+// AlibabaWdkItemFuturepriceQueryAPIResponse 单个商品未来价查询接口 API返回值
+// alibaba.wdk.item.futureprice.query
+//
+// 查询单个商品未来价，融合了未来基础售价+未来促销价
 type AlibabaWdkItemFuturepriceQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkItemFuturepriceQueryAPIResponseModel

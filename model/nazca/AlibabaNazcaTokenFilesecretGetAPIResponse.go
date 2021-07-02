@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNazcaTokenFilesecretGetAPIResponse
-获取文件秘钥 API返回值
-alibaba.nazca.token.filesecret.get
-
-获取文件秘钥 */
+// AlibabaNazcaTokenFilesecretGetAPIResponse 获取文件秘钥 API返回值
+// alibaba.nazca.token.filesecret.get
+//
+// 获取文件秘钥
 type AlibabaNazcaTokenFilesecretGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaNazcaTokenFilesecretGetAPIResponseModel

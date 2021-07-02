@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductSkusGetAPIResponse
-SKU查询接口 API返回值
-taobao.fenxiao.product.skus.get
-
-产品sku查询 */
+// TaobaoFenxiaoProductSkusGetAPIResponse SKU查询接口 API返回值
+// taobao.fenxiao.product.skus.get
+//
+// 产品sku查询
 type TaobaoFenxiaoProductSkusGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductSkusGetAPIResponseModel

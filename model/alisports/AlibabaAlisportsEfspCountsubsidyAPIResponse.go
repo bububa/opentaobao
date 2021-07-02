@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsEfspCountsubsidyAPIResponse
-计算补助金额 API返回值
-alibaba.alisports.efsp.countsubsidy
-
-计算补助金额 */
+// AlibabaAlisportsEfspCountsubsidyAPIResponse 计算补助金额 API返回值
+// alibaba.alisports.efsp.countsubsidy
+//
+// 计算补助金额
 type AlibabaAlisportsEfspCountsubsidyAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsEfspCountsubsidyAPIResponseModel

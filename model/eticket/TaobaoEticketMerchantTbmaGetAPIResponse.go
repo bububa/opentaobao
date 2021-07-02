@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoEticketMerchantTbmaGetAPIResponse
-码商查询淘宝码接口 API返回值
-taobao.eticket.merchant.tbma.get
-
-码商查询淘宝码接口 */
+// TaobaoEticketMerchantTbmaGetAPIResponse 码商查询淘宝码接口 API返回值
+// taobao.eticket.merchant.tbma.get
+//
+// 码商查询淘宝码接口
 type TaobaoEticketMerchantTbmaGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoEticketMerchantTbmaGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemClassifyOperatorAPIResponse
-添加/修改分类 API返回值
-taobao.omniitem.classify.operator
-
-添加/修改分类 */
+// TaobaoOmniitemClassifyOperatorAPIResponse 添加/修改分类 API返回值
+// taobao.omniitem.classify.operator
+//
+// 添加/修改分类
 type TaobaoOmniitemClassifyOperatorAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniitemClassifyOperatorAPIResponseModel

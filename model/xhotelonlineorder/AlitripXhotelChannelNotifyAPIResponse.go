@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripXhotelChannelNotifyAPIResponse
-分销渠道各类通知接口 API返回值
-alitrip.xhotel.channel.notify
-
-分销渠道支付通知 */
+// AlitripXhotelChannelNotifyAPIResponse 分销渠道各类通知接口 API返回值
+// alitrip.xhotel.channel.notify
+//
+// 分销渠道支付通知
 type AlitripXhotelChannelNotifyAPIResponse struct {
 	model.CommonResponse
 	AlitripXhotelChannelNotifyAPIResponseModel

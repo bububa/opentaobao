@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsDatacenterDatasyncFatscaledataAPIResponse
-阿里体育接入体脂秤数据 API返回值
-alibaba.alisports.datacenter.datasync.fatscaledata
-
-阿里体育数据中心接入体脂秤数据 */
+// AlibabaAlisportsDatacenterDatasyncFatscaledataAPIResponse 阿里体育接入体脂秤数据 API返回值
+// alibaba.alisports.datacenter.datasync.fatscaledata
+//
+// 阿里体育数据中心接入体脂秤数据
 type AlibabaAlisportsDatacenterDatasyncFatscaledataAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsDatacenterDatasyncFatscaledataAPIResponseModel

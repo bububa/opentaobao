@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderOfficialSettlePutAPIResponse
-官网信用住结账接口 API返回值
-taobao.xhotel.order.official.settle.put
-
-用于酒店官网信用住商家结账调用 */
+// TaobaoXhotelOrderOfficialSettlePutAPIResponse 官网信用住结账接口 API返回值
+// taobao.xhotel.order.official.settle.put
+//
+// 用于酒店官网信用住商家结账调用
 type TaobaoXhotelOrderOfficialSettlePutAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelOrderOfficialSettlePutAPIResponseModel

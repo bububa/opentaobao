@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKaolaScitemAddAPIRequest
-考拉货品新增接口 API请求
-taobao.kaola.scitem.add
-
-考拉货品新增接口 */
+// TaobaoKaolaScitemAddAPIRequest 考拉货品新增接口 API请求
+// taobao.kaola.scitem.add
+//
+// 考拉货品新增接口
 type TaobaoKaolaScitemAddAPIRequest struct {
 	model.Params
 	// 待新增的货品

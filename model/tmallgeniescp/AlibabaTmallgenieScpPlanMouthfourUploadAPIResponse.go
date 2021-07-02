@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanMouthfourUploadAPIResponse
-21-M+4PR 回传接口接口 API返回值
-alibaba.tmallgenie.scp.plan.mouthfour.upload
-
-M+4 PR 回传接口 */
+// AlibabaTmallgenieScpPlanMouthfourUploadAPIResponse 21-M+4PR 回传接口接口 API返回值
+// alibaba.tmallgenie.scp.plan.mouthfour.upload
+//
+// M+4 PR 回传接口
 type AlibabaTmallgenieScpPlanMouthfourUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanMouthfourUploadAPIResponseModel

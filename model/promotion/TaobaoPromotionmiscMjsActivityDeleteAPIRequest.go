@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionmiscMjsActivityDeleteAPIRequest
-删除满就送活动 API请求
-taobao.promotionmisc.mjs.activity.delete
-
-删除满就送活动 */
+// TaobaoPromotionmiscMjsActivityDeleteAPIRequest 删除满就送活动 API请求
+// taobao.promotionmisc.mjs.activity.delete
+//
+// 删除满就送活动
 type TaobaoPromotionmiscMjsActivityDeleteAPIRequest struct {
 	model.Params
 	// 活动id。

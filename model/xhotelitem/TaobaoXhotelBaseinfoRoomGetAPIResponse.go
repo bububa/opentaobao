@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelBaseinfoRoomGetAPIResponse
-酒店房型与房价查询 API返回值
-taobao.xhotel.baseinfo.room.get
-
-根据outHid/hid获取酒店的房型和价格信息 */
+// TaobaoXhotelBaseinfoRoomGetAPIResponse 酒店房型与房价查询 API返回值
+// taobao.xhotel.baseinfo.room.get
+//
+// 根据outHid/hid获取酒店的房型和价格信息
 type TaobaoXhotelBaseinfoRoomGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelBaseinfoRoomGetAPIResponseModel

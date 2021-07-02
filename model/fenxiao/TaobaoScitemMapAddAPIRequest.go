@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoScitemMapAddAPIRequest
-创建IC商品与后端商品的映射关系 API请求
-taobao.scitem.map.add
-
-创建IC商品或分销商品与后端商品的映射关系 */
+// TaobaoScitemMapAddAPIRequest 创建IC商品与后端商品的映射关系 API请求
+// taobao.scitem.map.add
+//
+// 创建IC商品或分销商品与后端商品的映射关系
 type TaobaoScitemMapAddAPIRequest struct {
 	model.Params
 	// 前台ic商品id

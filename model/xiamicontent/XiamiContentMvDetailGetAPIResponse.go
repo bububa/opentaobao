@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* XiamiContentMvDetailGetAPIResponse
-获取mv详情 API返回值
-xiami.content.mv.detail.get
-
-获取mv详情 */
+// XiamiContentMvDetailGetAPIResponse 获取mv详情 API返回值
+// xiami.content.mv.detail.get
+//
+// 获取mv详情
 type XiamiContentMvDetailGetAPIResponse struct {
 	model.CommonResponse
 	XiamiContentMvDetailGetAPIResponseModel

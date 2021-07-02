@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFlowCobrandcardSysnAPIResponse
-联名卡信息同步 API返回值
-alibaba.aliqin.flow.cobrandcard.sysn
-
-提供给浙江移动同步联名卡信息接口。 */
+// AlibabaAliqinFlowCobrandcardSysnAPIResponse 联名卡信息同步 API返回值
+// alibaba.aliqin.flow.cobrandcard.sysn
+//
+// 提供给浙江移动同步联名卡信息接口。
 type AlibabaAliqinFlowCobrandcardSysnAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFlowCobrandcardSysnAPIResponseModel

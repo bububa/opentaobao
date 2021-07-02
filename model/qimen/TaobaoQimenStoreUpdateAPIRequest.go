@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenStoreUpdateAPIRequest
-门店更新接口 API请求
-taobao.qimen.store.update
-
-商家在ERP等系统中调用该接口，更新门店信息 */
+// TaobaoQimenStoreUpdateAPIRequest 门店更新接口 API请求
+// taobao.qimen.store.update
+//
+// 商家在ERP等系统中调用该接口，更新门店信息
 type TaobaoQimenStoreUpdateAPIRequest struct {
 	model.Params
 	// 门店名称

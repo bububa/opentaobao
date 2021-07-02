@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappTemplateOnlineappAPIResponse
-上线实例化应用 API返回值
-taobao.miniapp.template.onlineapp
-
-将指定的预览版本发布上线，预览版本号由构建实例化或更新实例化接口返回。 */
+// TaobaoMiniappTemplateOnlineappAPIResponse 上线实例化应用 API返回值
+// taobao.miniapp.template.onlineapp
+//
+// 将指定的预览版本发布上线，预览版本号由构建实例化或更新实例化接口返回。
 type TaobaoMiniappTemplateOnlineappAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappTemplateOnlineappAPIResponseModel

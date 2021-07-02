@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-/* TaobaoQimenDeliveryorderBatchcreateAnswer
-发货单创建结果通知接口(批量)
-taobao.qimen.deliveryorder.batchcreate.answer
-
-WMS调用接口，用于异步化的批量发货单创建结果通知。（如菜鸟发货单批量创建结果的返回） */
+// TaobaoQimenDeliveryorderBatchcreateAnswer 发货单创建结果通知接口(批量)
+// taobao.qimen.deliveryorder.batchcreate.answer
+//
+// WMS调用接口，用于异步化的批量发货单创建结果通知。（如菜鸟发货单批量创建结果的返回）
 func TaobaoQimenDeliveryorderBatchcreateAnswer(clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest, session string) (*qimen.TaobaoQimenDeliveryorderBatchcreateAnswerAPIResponse, error) {
 	var resp qimen.TaobaoQimenDeliveryorderBatchcreateAnswerAPIResponse
 	err := clt.Post(req, &resp, session)

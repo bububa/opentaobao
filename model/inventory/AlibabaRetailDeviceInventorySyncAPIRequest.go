@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDeviceInventorySyncAPIRequest
-库存同步接口 API请求
-alibaba.retail.device.inventory.sync
-
-商库存同步接口 */
+// AlibabaRetailDeviceInventorySyncAPIRequest 库存同步接口 API请求
+// alibaba.retail.device.inventory.sync
+//
+// 商库存同步接口
 type AlibabaRetailDeviceInventorySyncAPIRequest struct {
 	model.Params
 	// 设备类型

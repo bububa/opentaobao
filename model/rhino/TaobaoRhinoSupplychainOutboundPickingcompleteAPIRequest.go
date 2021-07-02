@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest
-【WMS005】接收成衣捡配完成通知 API请求
-taobao.rhino.supplychain.outbound.pickingcomplete
-
-接收成衣捡配完成通知,WMS005 */
+// TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest 【WMS005】接收成衣捡配完成通知 API请求
+// taobao.rhino.supplychain.outbound.pickingcomplete
+//
+// 接收成衣捡配完成通知,WMS005
 type TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest struct {
 	model.Params
 	// 捡配完成消息

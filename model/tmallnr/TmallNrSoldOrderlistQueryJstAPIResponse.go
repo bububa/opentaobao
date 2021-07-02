@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrSoldOrderlistQueryJstAPIResponse
-已入塔商家查询订单列表 API返回值
-tmall.nr.sold.orderlist.query.jst
-
-该服务用于已入聚石塔的商家，获取订单列表信息； */
+// TmallNrSoldOrderlistQueryJstAPIResponse 已入塔商家查询订单列表 API返回值
+// tmall.nr.sold.orderlist.query.jst
+//
+// 该服务用于已入聚石塔的商家，获取订单列表信息；
 type TmallNrSoldOrderlistQueryJstAPIResponse struct {
 	model.CommonResponse
 	TmallNrSoldOrderlistQueryJstAPIResponseModel

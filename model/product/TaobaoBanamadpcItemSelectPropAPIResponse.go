@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBanamadpcItemSelectPropAPIResponse
-获取子属性 API返回值
-taobao.banamadpc.item.select.prop
-
-巴拿马供应商通过此接口获取子属性 */
+// TaobaoBanamadpcItemSelectPropAPIResponse 获取子属性 API返回值
+// taobao.banamadpc.item.select.prop
+//
+// 巴拿马供应商通过此接口获取子属性
 type TaobaoBanamadpcItemSelectPropAPIResponse struct {
 	model.CommonResponse
 	TaobaoBanamadpcItemSelectPropAPIResponseModel

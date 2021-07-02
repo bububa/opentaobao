@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-/* TaobaoPlaceStoreTagsUpdate
-门店打标去标
-taobao.place.store.tags.update
-
-门店打标去标 */
+// TaobaoPlaceStoreTagsUpdate 门店打标去标
+// taobao.place.store.tags.update
+//
+// 门店打标去标
 func TaobaoPlaceStoreTagsUpdate(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreTagsUpdateAPIRequest, session string) (*alsc.TaobaoPlaceStoreTagsUpdateAPIResponse, error) {
 	var resp alsc.TaobaoPlaceStoreTagsUpdateAPIResponse
 	err := clt.Post(req, &resp, session)

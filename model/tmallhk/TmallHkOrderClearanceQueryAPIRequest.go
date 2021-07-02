@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallHkOrderClearanceQueryAPIRequest
-天猫国际订单清关信息 API请求
-tmall.hk.order.clearance.query
-
-天猫国际订单清关信息查询 */
+// TmallHkOrderClearanceQueryAPIRequest 天猫国际订单清关信息 API请求
+// tmall.hk.order.clearance.query
+//
+// 天猫国际订单清关信息查询
 type TmallHkOrderClearanceQueryAPIRequest struct {
 	model.Params
 	// 交易主订单号

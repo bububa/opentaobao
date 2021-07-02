@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemItemImageUploadAPIResponse
-全渠道商品上传图片 API返回值
-taobao.omniitem.item.image.upload
-
-全渠道商品上传图片 */
+// TaobaoOmniitemItemImageUploadAPIResponse 全渠道商品上传图片 API返回值
+// taobao.omniitem.item.image.upload
+//
+// 全渠道商品上传图片
 type TaobaoOmniitemItemImageUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniitemItemImageUploadAPIResponseModel

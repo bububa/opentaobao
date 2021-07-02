@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest
-获取用户上架在线销售的全部宝贝 API请求
-taobao.simba.adgroup.onlineitemsvon.get
-
-获取用户上架在线销售的全部宝贝 */
+// TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest 获取用户上架在线销售的全部宝贝 API请求
+// taobao.simba.adgroup.onlineitemsvon.get
+//
+// 获取用户上架在线销售的全部宝贝
 type TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest struct {
 	model.Params
 	// 主人昵称

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosOsupdateModelSearchAPIRequest
-机型检索 API请求
-yunos.osupdate.model.search
-
-机型检索 */
+// YunosOsupdateModelSearchAPIRequest 机型检索 API请求
+// yunos.osupdate.model.search
+//
+// 机型检索
 type YunosOsupdateModelSearchAPIRequest struct {
 	model.Params
 	// 应用ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMerchantStoreitemUpdateAPIRequest
-修改门店商品 API请求
-alibaba.wdk.merchant.storeitem.update
-
-修改门店商品 */
+// AlibabaWdkMerchantStoreitemUpdateAPIRequest 修改门店商品 API请求
+// alibaba.wdk.merchant.storeitem.update
+//
+// 修改门店商品
 type AlibabaWdkMerchantStoreitemUpdateAPIRequest struct {
 	model.Params
 	// 商品编码

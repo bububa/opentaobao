@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripOpenplatformAddressGetAPIResponse
-【商旅】开放平台对外页面跳转 API返回值
-alitrip.btrip.openplatform.address.get
-
-获取类目预定页跳转地址 */
+// AlitripBtripOpenplatformAddressGetAPIResponse 【商旅】开放平台对外页面跳转 API返回值
+// alitrip.btrip.openplatform.address.get
+//
+// 获取类目预定页跳转地址
 type AlitripBtripOpenplatformAddressGetAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripOpenplatformAddressGetAPIResponseModel

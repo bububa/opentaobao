@@ -6,14 +6,13 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripGrouptoursProductUploadAPIRequest
-跟团游 产品维护接口 API请求
-alitrip.grouptours.product.upload
-
-跟团游 产品维护接口。
-接口同时支持新商品发布 和 现有商品编辑：
-1）只上传out_product_id的情况：如果out_product_id已经关联过某个商品id，则认为是编辑现有商品，否则认为是新发布一个商品。
-2）同时上传out_product_id和item_id，则认为是将out_product_id与item_id进行关联，同时对该商品进行编辑。 */
+// AlitripGrouptoursProductUploadAPIRequest 跟团游 产品维护接口 API请求
+// alitrip.grouptours.product.upload
+//
+// 跟团游 产品维护接口。
+// 接口同时支持新商品发布 和 现有商品编辑：
+// 1）只上传out_product_id的情况：如果out_product_id已经关联过某个商品id，则认为是编辑现有商品，否则认为是新发布一个商品。
+// 2）同时上传out_product_id和item_id，则认为是将out_product_id与item_id进行关联，同时对该商品进行编辑。
 type AlitripGrouptoursProductUploadAPIRequest struct {
 	model.Params
 	// 商家自定义商品编码。注：商品基本信息维护、价格库存维护，商品查询都以该编码为主键。

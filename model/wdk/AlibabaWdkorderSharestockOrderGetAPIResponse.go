@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkorderSharestockOrderGetAPIResponse
-猫超商户订单拉取 API返回值
-alibaba.wdkorder.sharestock.order.get
-
-商户拉取猫超订单数据 */
+// AlibabaWdkorderSharestockOrderGetAPIResponse 猫超商户订单拉取 API返回值
+// alibaba.wdkorder.sharestock.order.get
+//
+// 商户拉取猫超订单数据
 type AlibabaWdkorderSharestockOrderGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkorderSharestockOrderGetAPIResponseModel

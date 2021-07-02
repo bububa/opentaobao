@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/util"
 )
 
-/* TaobaoOpenuidGet
-获取授权账号对应的OpenUid
-taobao.openuid.get
-
-获取授权账号对应的OpenUid */
+// TaobaoOpenuidGet 获取授权账号对应的OpenUid
+// taobao.openuid.get
+//
+// 获取授权账号对应的OpenUid
 func TaobaoOpenuidGet(clt *core.SDKClient, req *util.TaobaoOpenuidGetAPIRequest, session string) (*util.TaobaoOpenuidGetAPIResponse, error) {
 	var resp util.TaobaoOpenuidGetAPIResponse
 	err := clt.Post(req, &resp, session)

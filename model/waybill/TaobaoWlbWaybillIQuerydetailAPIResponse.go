@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWaybillIQuerydetailAPIResponse
-查面单号状态v1.0 API返回值
-taobao.wlb.waybill.i.querydetail
-
-查看面单号的当前状态，如签收、发货、失效等。 */
+// TaobaoWlbWaybillIQuerydetailAPIResponse 查面单号状态v1.0 API返回值
+// taobao.wlb.waybill.i.querydetail
+//
+// 查看面单号的当前状态，如签收、发货、失效等。
 type TaobaoWlbWaybillIQuerydetailAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWaybillIQuerydetailAPIResponseModel

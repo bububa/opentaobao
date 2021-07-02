@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkPosTradeCreateAPIResponse
-轻pos品牌营销下单接口 API返回值
-alibaba.wdk.pos.trade.create
-
-提供给石基进行轻pos品牌营销下单 */
+// AlibabaWdkPosTradeCreateAPIResponse 轻pos品牌营销下单接口 API返回值
+// alibaba.wdk.pos.trade.create
+//
+// 提供给石基进行轻pos品牌营销下单
 type AlibabaWdkPosTradeCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkPosTradeCreateAPIResponseModel

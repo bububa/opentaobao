@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodesellerBillUploadAPIResponse
-上传入出库单api API返回值
-alibaba.alihealth.tracecodeseller.bill.upload
-
-上传入出库单api */
+// AlibabaAlihealthTracecodesellerBillUploadAPIResponse 上传入出库单api API返回值
+// alibaba.alihealth.tracecodeseller.bill.upload
+//
+// 上传入出库单api
 type AlibabaAlihealthTracecodesellerBillUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthTracecodesellerBillUploadAPIResponseModel

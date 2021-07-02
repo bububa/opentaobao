@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugCodeKytYyApplycodeAPIResponse
-医院药品子码申请接口 API返回值
-alibaba.alihealth.drug.code.kyt.yy.applycode
-
-根据父码及所属企业ID生成子码信息 */
+// AlibabaAlihealthDrugCodeKytYyApplycodeAPIResponse 医院药品子码申请接口 API返回值
+// alibaba.alihealth.drug.code.kyt.yy.applycode
+//
+// 根据父码及所属企业ID生成子码信息
 type AlibabaAlihealthDrugCodeKytYyApplycodeAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugCodeKytYyApplycodeAPIResponseModel

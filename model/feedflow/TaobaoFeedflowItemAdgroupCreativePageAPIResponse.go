@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemAdgroupCreativePageAPIResponse
-信息流单元下查看创意 API返回值
-taobao.feedflow.item.adgroup.creative.page
-
-信息流单元下查看创意 */
+// TaobaoFeedflowItemAdgroupCreativePageAPIResponse 信息流单元下查看创意 API返回值
+// taobao.feedflow.item.adgroup.creative.page
+//
+// 信息流单元下查看创意
 type TaobaoFeedflowItemAdgroupCreativePageAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemAdgroupCreativePageAPIResponseModel

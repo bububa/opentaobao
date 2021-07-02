@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeStoreItemdetailsGetAPIRequest
-批量获取零售加商品详情信息 API请求
-alibaba.nlife.store.itemdetails.get
-
-批量获取零售加平台上的商品详情信息 */
+// AlibabaNlifeStoreItemdetailsGetAPIRequest 批量获取零售加商品详情信息 API请求
+// alibaba.nlife.store.itemdetails.get
+//
+// 批量获取零售加平台上的商品详情信息
 type AlibabaNlifeStoreItemdetailsGetAPIRequest struct {
 	model.Params
 	// 门店ID/设备号

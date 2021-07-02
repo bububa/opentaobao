@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
 
-/* TmallNrSellerStorerangeRead
-门店服务范围读取
-tmall.nr.seller.storerange.read
-
-读取卖家所属门店的服务范围 */
+// TmallNrSellerStorerangeRead 门店服务范围读取
+// tmall.nr.seller.storerange.read
+//
+// 读取卖家所属门店的服务范围
 func TmallNrSellerStorerangeRead(clt *core.SDKClient, req *tmallnr.TmallNrSellerStorerangeReadAPIRequest, session string) (*tmallnr.TmallNrSellerStorerangeReadAPIResponse, error) {
 	var resp tmallnr.TmallNrSellerStorerangeReadAPIResponse
 	err := clt.Post(req, &resp, session)

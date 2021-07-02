@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPictureChangecategoryAPIResponse
-修改图片的分类 API返回值
-taobao.picture.changecategory
-
-把批量的图片移动到某个分类下 */
+// TaobaoPictureChangecategoryAPIResponse 修改图片的分类 API返回值
+// taobao.picture.changecategory
+//
+// 把批量的图片移动到某个分类下
 type TaobaoPictureChangecategoryAPIResponse struct {
 	model.CommonResponse
 	TaobaoPictureChangecategoryAPIResponseModel

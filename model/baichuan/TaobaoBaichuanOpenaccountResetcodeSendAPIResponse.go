@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaichuanOpenaccountResetcodeSendAPIResponse
-百川发送找回密码验证码 API返回值
-taobao.baichuan.openaccount.resetcode.send
-
-百川发送找回密码验证码 */
+// TaobaoBaichuanOpenaccountResetcodeSendAPIResponse 百川发送找回密码验证码 API返回值
+// taobao.baichuan.openaccount.resetcode.send
+//
+// 百川发送找回密码验证码
 type TaobaoBaichuanOpenaccountResetcodeSendAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaichuanOpenaccountResetcodeSendAPIResponseModel

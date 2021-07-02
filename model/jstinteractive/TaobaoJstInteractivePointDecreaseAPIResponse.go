@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstInteractivePointDecreaseAPIResponse
-互动积分扣减接口 API返回值
-taobao.jst.interactive.point.decrease
-
-扣减用户的互动积分 */
+// TaobaoJstInteractivePointDecreaseAPIResponse 互动积分扣减接口 API返回值
+// taobao.jst.interactive.point.decrease
+//
+// 扣减用户的互动积分
 type TaobaoJstInteractivePointDecreaseAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstInteractivePointDecreaseAPIResponseModel

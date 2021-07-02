@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdGroupFindForbiddenProductAPIResponse
-查询屏蔽品 API返回值
-alibaba.scbp.ad.group.find.forbidden.product
-
-查询屏蔽品 */
+// AlibabaScbpAdGroupFindForbiddenProductAPIResponse 查询屏蔽品 API返回值
+// alibaba.scbp.ad.group.find.forbidden.product
+//
+// 查询屏蔽品
 type AlibabaScbpAdGroupFindForbiddenProductAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdGroupFindForbiddenProductAPIResponseModel

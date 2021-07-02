@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AccountAliyuncsComCreateAppForBid2013_07_01APIResponse
-给当前渠道下的用户创建app API返回值
-account.aliyuncs.com.CreateAppForBid.2013-07-01
-
-给自己渠道下的用户创建app */
+// AccountAliyuncsComCreateAppForBid2013_07_01APIResponse 给当前渠道下的用户创建app API返回值
+// account.aliyuncs.com.CreateAppForBid.2013-07-01
+//
+// 给自己渠道下的用户创建app
 type AccountAliyuncsComCreateAppForBid2013_07_01APIResponse struct {
 	model.CommonResponse
 	AccountAliyuncsComCreateAppForBid2013_07_01APIResponseModel

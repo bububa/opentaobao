@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenDeliveryorderBatchconfirmAPIResponse
-发货单确认接口 API返回值
-taobao.qimen.deliveryorder.batchconfirm
-
-taobao.qimen.deliveryorder.batchconfirm */
+// TaobaoQimenDeliveryorderBatchconfirmAPIResponse 发货单确认接口 API返回值
+// taobao.qimen.deliveryorder.batchconfirm
+//
+// taobao.qimen.deliveryorder.batchconfirm
 type TaobaoQimenDeliveryorderBatchconfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenDeliveryorderBatchconfirmAPIResponseModel

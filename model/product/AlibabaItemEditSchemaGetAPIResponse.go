@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItemEditSchemaGetAPIResponse
-商品编辑获取schema信息 API返回值
-alibaba.item.edit.schema.get
-
-商品编辑时，获取商品规则信息 */
+// AlibabaItemEditSchemaGetAPIResponse 商品编辑获取schema信息 API返回值
+// alibaba.item.edit.schema.get
+//
+// 商品编辑时，获取商品规则信息
 type AlibabaItemEditSchemaGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaItemEditSchemaGetAPIResponseModel

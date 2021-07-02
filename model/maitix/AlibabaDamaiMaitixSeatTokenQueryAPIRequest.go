@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixSeatTokenQueryAPIRequest
-分销商选座获取qtoken API请求
-alibaba.damai.maitix.seat.token.query
-
-选座分销，分销商查询token */
+// AlibabaDamaiMaitixSeatTokenQueryAPIRequest 分销商选座获取qtoken API请求
+// alibaba.damai.maitix.seat.token.query
+//
+// 选座分销，分销商查询token
 type AlibabaDamaiMaitixSeatTokenQueryAPIRequest struct {
 	model.Params
 	// 场次ID-必填

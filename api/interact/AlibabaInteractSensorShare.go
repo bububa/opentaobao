@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-/* AlibabaInteractSensorShare
-分享
-alibaba.interact.sensor.share
-
-客户端分享 */
+// AlibabaInteractSensorShare 分享
+// alibaba.interact.sensor.share
+//
+// 客户端分享
 func AlibabaInteractSensorShare(clt *core.SDKClient, req *interact.AlibabaInteractSensorShareAPIRequest, session string) (*interact.AlibabaInteractSensorShareAPIResponse, error) {
 	var resp interact.AlibabaInteractSensorShareAPIResponse
 	err := clt.Post(req, &resp, session)

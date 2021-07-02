@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpOcrAPIResponse
-聚安全实人认证证件OCR识别功能接口 API返回值
-alibaba.security.jaq.rp.ocr
-
-聚安全实人认证证件OCR识别功能接口 */
+// AlibabaSecurityJaqRpOcrAPIResponse 聚安全实人认证证件OCR识别功能接口 API返回值
+// alibaba.security.jaq.rp.ocr
+//
+// 聚安全实人认证证件OCR识别功能接口
 type AlibabaSecurityJaqRpOcrAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqRpOcrAPIResponseModel

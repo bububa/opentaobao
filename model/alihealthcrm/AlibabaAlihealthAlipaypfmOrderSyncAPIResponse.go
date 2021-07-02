@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthAlipaypfmOrderSyncAPIResponse
-订单数据回传接口 API返回值
-alibaba.alihealth.alipaypfm.order.sync
-
-订单数据回传接口，各个isv通过我们渠道产生订单需要回传进行统计 */
+// AlibabaAlihealthAlipaypfmOrderSyncAPIResponse 订单数据回传接口 API返回值
+// alibaba.alihealth.alipaypfm.order.sync
+//
+// 订单数据回传接口，各个isv通过我们渠道产生订单需要回传进行统计
 type AlibabaAlihealthAlipaypfmOrderSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthAlipaypfmOrderSyncAPIResponseModel

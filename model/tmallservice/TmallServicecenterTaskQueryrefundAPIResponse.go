@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterTaskQueryrefundAPIResponse
-查询任务类工单是否退款 API返回值
-tmall.servicecenter.task.queryrefund
-
-查询任务类工单是否退款 */
+// TmallServicecenterTaskQueryrefundAPIResponse 查询任务类工单是否退款 API返回值
+// tmall.servicecenter.task.queryrefund
+//
+// 查询任务类工单是否退款
 type TmallServicecenterTaskQueryrefundAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterTaskQueryrefundAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAiUserQuickTokenBindAPIRequest
-人工智能实验室精灵用户绑定第三方Token接口 API请求
-alibaba.ai.user.quick.token.bind
-
-人工智能实验室精灵用户绑定第三方Token接口 */
+// AlibabaAiUserQuickTokenBindAPIRequest 人工智能实验室精灵用户绑定第三方Token接口 API请求
+// alibaba.ai.user.quick.token.bind
+//
+// 人工智能实验室精灵用户绑定第三方Token接口
 type AlibabaAiUserQuickTokenBindAPIRequest struct {
 	model.Params
 	// Oauth协议访问令牌

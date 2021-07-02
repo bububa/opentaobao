@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosStoreGetstorelistAPIResponse
-根据屏编号获取专柜集 API返回值
-alibaba.mos.store.getstorelist
-
-根据屏编号获取专柜集 */
+// AlibabaMosStoreGetstorelistAPIResponse 根据屏编号获取专柜集 API返回值
+// alibaba.mos.store.getstorelist
+//
+// 根据屏编号获取专柜集
 type AlibabaMosStoreGetstorelistAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosStoreGetstorelistAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpPresalespackageConsignAPIResponse
-预售预包尾款推单发货 API返回值
-alibaba.ascp.presalespackage.consign
-
-预售预包尾款发货后推单处理 */
+// AlibabaAscpPresalespackageConsignAPIResponse 预售预包尾款推单发货 API返回值
+// alibaba.ascp.presalespackage.consign
+//
+// 预售预包尾款发货后推单处理
 type AlibabaAscpPresalespackageConsignAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpPresalespackageConsignAPIResponseModel

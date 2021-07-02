@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTopOpenidConvertAPIResponse
-混淆nick转openid API返回值
-taobao.top.openid.convert
-
-混淆nick转openid，生成混淆nick必须与当前请求的isv匹配 */
+// TaobaoTopOpenidConvertAPIResponse 混淆nick转openid API返回值
+// taobao.top.openid.convert
+//
+// 混淆nick转openid，生成混淆nick必须与当前请求的isv匹配
 type TaobaoTopOpenidConvertAPIResponse struct {
 	model.CommonResponse
 	TaobaoTopOpenidConvertAPIResponseModel

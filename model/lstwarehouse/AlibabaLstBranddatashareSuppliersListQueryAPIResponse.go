@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstBranddatashareSuppliersListQueryAPIResponse
-品牌数据授权的供应商列表 API返回值
-alibaba.lst.branddatashare.suppliers.list.query
-
-品牌商查询品牌数据授权的供应商列表 */
+// AlibabaLstBranddatashareSuppliersListQueryAPIResponse 品牌数据授权的供应商列表 API返回值
+// alibaba.lst.branddatashare.suppliers.list.query
+//
+// 品牌商查询品牌数据授权的供应商列表
 type AlibabaLstBranddatashareSuppliersListQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstBranddatashareSuppliersListQueryAPIResponseModel

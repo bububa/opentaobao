@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemClassifyDeleteAPIRequest
-删除一个分类 API请求
-taobao.omniitem.classify.delete
-
-删除一个分类 */
+// TaobaoOmniitemClassifyDeleteAPIRequest 删除一个分类 API请求
+// taobao.omniitem.classify.delete
+//
+// 删除一个分类
 type TaobaoOmniitemClassifyDeleteAPIRequest struct {
 	model.Params
 	// 分类ID

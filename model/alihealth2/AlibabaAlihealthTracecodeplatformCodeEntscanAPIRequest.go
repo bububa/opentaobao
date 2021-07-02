@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest
-药品商家扫码 API请求
-alibaba.alihealth.tracecodeplatform.code.entscan
-
-药品商家扫描药品监管码，只有该商家的药才返回 */
+// AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest 药品商家扫码 API请求
+// alibaba.alihealth.tracecodeplatform.code.entscan
+//
+// 药品商家扫描药品监管码，只有该商家的药才返回
 type AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest struct {
 	model.Params
 	// 药监码

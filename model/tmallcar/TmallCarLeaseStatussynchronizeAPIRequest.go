@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseStatussynchronizeAPIRequest
-天猫开新车租后状态同步 API请求
-tmall.car.lease.statussynchronize
-
-天猫开新车租后状态同步 */
+// TmallCarLeaseStatussynchronizeAPIRequest 天猫开新车租后状态同步 API请求
+// tmall.car.lease.statussynchronize
+//
+// 天猫开新车租后状态同步
 type TmallCarLeaseStatussynchronizeAPIRequest struct {
 	model.Params
 	// 天猫开新车订单号

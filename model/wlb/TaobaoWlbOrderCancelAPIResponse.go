@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbOrderCancelAPIResponse
-取消物流宝订单 API返回值
-taobao.wlb.order.cancel
-
-取消物流宝订单 */
+// TaobaoWlbOrderCancelAPIResponse 取消物流宝订单 API返回值
+// taobao.wlb.order.cancel
+//
+// 取消物流宝订单
 type TaobaoWlbOrderCancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbOrderCancelAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductImageDeleteAPIRequest
-产品图片删除 API请求
-taobao.fenxiao.product.image.delete
-
-产品图片删除，只删除图片信息，不真正删除图片 */
+// TaobaoFenxiaoProductImageDeleteAPIRequest 产品图片删除 API请求
+// taobao.fenxiao.product.image.delete
+//
+// 产品图片删除，只删除图片信息，不真正删除图片
 type TaobaoFenxiaoProductImageDeleteAPIRequest struct {
 	model.Params
 	// 产品ID

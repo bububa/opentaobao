@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardSuspendAPIRequest
-工单挂起 API请求
-tmall.servicecenter.workcard.suspend
-
-工单挂起 */
+// TmallServicecenterWorkcardSuspendAPIRequest 工单挂起 API请求
+// tmall.servicecenter.workcard.suspend
+//
+// 工单挂起
 type TmallServicecenterWorkcardSuspendAPIRequest struct {
 	model.Params
 	// 预约时间

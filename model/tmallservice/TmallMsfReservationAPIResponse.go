@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMsfReservationAPIResponse
-喵师傅服务预约API API返回值
-tmall.msf.reservation
-
-喵师傅预约api */
+// TmallMsfReservationAPIResponse 喵师傅服务预约API API返回值
+// tmall.msf.reservation
+//
+// 喵师傅预约api
 type TmallMsfReservationAPIResponse struct {
 	model.CommonResponse
 	TmallMsfReservationAPIResponseModel

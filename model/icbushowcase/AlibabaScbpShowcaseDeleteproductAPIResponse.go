@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpShowcaseDeleteproductAPIResponse
-批量删除橱窗商品 API返回值
-alibaba.scbp.showcase.deleteproduct
-
-批量删除橱窗商品 */
+// AlibabaScbpShowcaseDeleteproductAPIResponse 批量删除橱窗商品 API返回值
+// alibaba.scbp.showcase.deleteproduct
+//
+// 批量删除橱窗商品
 type AlibabaScbpShowcaseDeleteproductAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpShowcaseDeleteproductAPIResponseModel

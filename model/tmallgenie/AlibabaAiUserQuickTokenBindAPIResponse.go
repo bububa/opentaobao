@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAiUserQuickTokenBindAPIResponse
-人工智能实验室精灵用户绑定第三方Token接口 API返回值
-alibaba.ai.user.quick.token.bind
-
-人工智能实验室精灵用户绑定第三方Token接口 */
+// AlibabaAiUserQuickTokenBindAPIResponse 人工智能实验室精灵用户绑定第三方Token接口 API返回值
+// alibaba.ai.user.quick.token.bind
+//
+// 人工智能实验室精灵用户绑定第三方Token接口
 type AlibabaAiUserQuickTokenBindAPIResponse struct {
 	model.CommonResponse
 	AlibabaAiUserQuickTokenBindAPIResponseModel

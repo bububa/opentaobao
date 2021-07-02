@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeConsigngoodsAPIRequest
-卖家发货 API请求
-tmall.exchange.consigngoods
-
-卖家发货 */
+// TmallExchangeConsigngoodsAPIRequest 卖家发货 API请求
+// tmall.exchange.consigngoods
+//
+// 卖家发货
 type TmallExchangeConsigngoodsAPIRequest struct {
 	model.Params
 	// 换货单号ID

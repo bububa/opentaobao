@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstLogisticsTraceQueryAPIResponse
-供应商-异云-查询运单物流追踪信息 API返回值
-alibaba.lst.logistics.trace.query
-
-查询LP单物流追踪信息 */
+// AlibabaLstLogisticsTraceQueryAPIResponse 供应商-异云-查询运单物流追踪信息 API返回值
+// alibaba.lst.logistics.trace.query
+//
+// 查询LP单物流追踪信息
 type AlibabaLstLogisticsTraceQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstLogisticsTraceQueryAPIResponseModel

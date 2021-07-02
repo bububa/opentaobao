@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItemPublishPropsGetAPIResponse
-商品级联属性信息获取 API返回值
-alibaba.item.publish.props.get
-
-新商品发布，商品级联属性信息获取 */
+// AlibabaItemPublishPropsGetAPIResponse 商品级联属性信息获取 API返回值
+// alibaba.item.publish.props.get
+//
+// 新商品发布，商品级联属性信息获取
 type AlibabaItemPublishPropsGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaItemPublishPropsGetAPIResponseModel

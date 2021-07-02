@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractCurrentMixusernickAPIResponse
-手淘混淆nick开放接口鉴权专用 API返回值
-alibaba.interact.current.mixusernick
-
-手淘混淆nick开放接口鉴权专用，无数据输入输出。 */
+// AlibabaInteractCurrentMixusernickAPIResponse 手淘混淆nick开放接口鉴权专用 API返回值
+// alibaba.interact.current.mixusernick
+//
+// 手淘混淆nick开放接口鉴权专用，无数据输入输出。
 type AlibabaInteractCurrentMixusernickAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractCurrentMixusernickAPIResponseModel

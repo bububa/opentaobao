@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItEslSendledAPIResponse
-厂测LED控制 API返回值
-alibaba.it.esl.sendled
-
-针对厂测生产的的价签，增加led闪灯的接口，进行led 闪灯测试 */
+// AlibabaItEslSendledAPIResponse 厂测LED控制 API返回值
+// alibaba.it.esl.sendled
+//
+// 针对厂测生产的的价签，增加led闪灯的接口，进行led 闪灯测试
 type AlibabaItEslSendledAPIResponse struct {
 	model.CommonResponse
 	AlibabaItEslSendledAPIResponseModel

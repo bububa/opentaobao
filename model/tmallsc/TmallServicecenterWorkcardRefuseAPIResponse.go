@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardRefuseAPIResponse
-买家拒收 API返回值
-tmall.servicecenter.workcard.refuse
-
-买家拒收通知接口 */
+// TmallServicecenterWorkcardRefuseAPIResponse 买家拒收 API返回值
+// tmall.servicecenter.workcard.refuse
+//
+// 买家拒收通知接口
 type TmallServicecenterWorkcardRefuseAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardRefuseAPIResponseModel

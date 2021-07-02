@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tanx"
 )
 
-/* TaobaoTanxCreativeAdd
-创意预审新增接口
-taobao.tanx.creative.add
-
-创意预审新增接口 */
+// TaobaoTanxCreativeAdd 创意预审新增接口
+// taobao.tanx.creative.add
+//
+// 创意预审新增接口
 func TaobaoTanxCreativeAdd(clt *core.SDKClient, req *tanx.TaobaoTanxCreativeAddAPIRequest, session string) (*tanx.TaobaoTanxCreativeAddAPIResponse, error) {
 	var resp tanx.TaobaoTanxCreativeAddAPIResponse
 	err := clt.Post(req, &resp, session)

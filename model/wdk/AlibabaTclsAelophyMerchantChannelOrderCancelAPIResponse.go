@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTclsAelophyMerchantChannelOrderCancelAPIResponse
-翱象商家自有渠道 交易订单取消 API返回值
-alibaba.tcls.aelophy.merchant.channel.order.cancel
-
-翱象小程序用户取消订单 */
+// AlibabaTclsAelophyMerchantChannelOrderCancelAPIResponse 翱象商家自有渠道 交易订单取消 API返回值
+// alibaba.tcls.aelophy.merchant.channel.order.cancel
+//
+// 翱象小程序用户取消订单
 type AlibabaTclsAelophyMerchantChannelOrderCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaTclsAelophyMerchantChannelOrderCancelAPIResponseModel

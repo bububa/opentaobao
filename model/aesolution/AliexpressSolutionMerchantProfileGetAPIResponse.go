@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionMerchantProfileGetAPIResponse
-aliexpress.solution.merchant.profile.get API返回值
-aliexpress.solution.merchant.profile.get
-
-API for oversea sellers to obtain the normal information, e.g. store id, registration country code. */
+// AliexpressSolutionMerchantProfileGetAPIResponse aliexpress.solution.merchant.profile.get API返回值
+// aliexpress.solution.merchant.profile.get
+//
+// API for oversea sellers to obtain the normal information, e.g. store id, registration country code.
 type AliexpressSolutionMerchantProfileGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionMerchantProfileGetAPIResponseModel

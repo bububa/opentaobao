@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiProviderAccountBalanceAPIResponse
-供应商渠道余额 API返回值
-alibaba.happytrip.taxi.provider.account.balance
-
-查询不同供应商不同渠道账户余额 */
+// AlibabaHappytripTaxiProviderAccountBalanceAPIResponse 供应商渠道余额 API返回值
+// alibaba.happytrip.taxi.provider.account.balance
+//
+// 查询不同供应商不同渠道账户余额
 type AlibabaHappytripTaxiProviderAccountBalanceAPIResponse struct {
 	model.CommonResponse
 	AlibabaHappytripTaxiProviderAccountBalanceAPIResponseModel

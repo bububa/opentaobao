@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaImapFixedmappingQueryAPIResponse
-查询两个渠道之间的固定映射关系，不通过算法兜底 API返回值
-alibaba.imap.fixedmapping.query
-
-查询两个渠道之间的固定映射关系，不通过算法兜底 */
+// AlibabaImapFixedmappingQueryAPIResponse 查询两个渠道之间的固定映射关系，不通过算法兜底 API返回值
+// alibaba.imap.fixedmapping.query
+//
+// 查询两个渠道之间的固定映射关系，不通过算法兜底
 type AlibabaImapFixedmappingQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaImapFixedmappingQueryAPIResponseModel

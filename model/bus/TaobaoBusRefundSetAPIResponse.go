@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusRefundSetAPIResponse
-B2B退票申请接口 API返回值
-taobao.bus.refund.set
-
-B2B业务支持退票 */
+// TaobaoBusRefundSetAPIResponse B2B退票申请接口 API返回值
+// taobao.bus.refund.set
+//
+// B2B业务支持退票
 type TaobaoBusRefundSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusRefundSetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMerchantRoutingRegisterAPIResponse
-商家注册更新路由信息 API返回值
-alibaba.wdk.merchant.routing.register
-
-商家注册更新路由信息 */
+// AlibabaWdkMerchantRoutingRegisterAPIResponse 商家注册更新路由信息 API返回值
+// alibaba.wdk.merchant.routing.register
+//
+// 商家注册更新路由信息
 type AlibabaWdkMerchantRoutingRegisterAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMerchantRoutingRegisterAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeAgreeAPIResponse
-卖家同意换货申请 API返回值
-tmall.exchange.agree
-
-卖家同意换货申请 */
+// TmallExchangeAgreeAPIResponse 卖家同意换货申请 API返回值
+// tmall.exchange.agree
+//
+// 卖家同意换货申请
 type TmallExchangeAgreeAPIResponse struct {
 	model.CommonResponse
 	TmallExchangeAgreeAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialInsDirectresultUpdateAPIRequest
-ISV更新INS私信发送的结果 API请求
-aliexpress.social.ins.directresult.update
-
-ISV更新INS私信发送的结果 */
+// AliexpressSocialInsDirectresultUpdateAPIRequest ISV更新INS私信发送的结果 API请求
+// aliexpress.social.ins.directresult.update
+//
+// ISV更新INS私信发送的结果
 type AliexpressSocialInsDirectresultUpdateAPIRequest struct {
 	model.Params
 	// 回调id,在获取图片时会返回

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMcTaskChargeLaunchAPIRequest
-云码充电宝投放链路 API请求
-tmall.mc.task.charge.launch
-
-云码充电宝投放链路，用于判断用户是否有匹配的投放计划 */
+// TmallMcTaskChargeLaunchAPIRequest 云码充电宝投放链路 API请求
+// tmall.mc.task.charge.launch
+//
+// 云码充电宝投放链路，用于判断用户是否有匹配的投放计划
 type TmallMcTaskChargeLaunchAPIRequest struct {
 	model.Params
 	// 外部设备编码

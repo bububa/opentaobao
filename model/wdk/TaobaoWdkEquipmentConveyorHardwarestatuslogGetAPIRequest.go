@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest
-硬件状态变化日志查询 API请求
-taobao.wdk.equipment.conveyor.hardwarestatuslog.get
-
-硬件状态变化日志查询 */
+// TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest 硬件状态变化日志查询 API请求
+// taobao.wdk.equipment.conveyor.hardwarestatuslog.get
+//
+// 硬件状态变化日志查询
 type TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest struct {
 	model.Params
 	// 仓库Id

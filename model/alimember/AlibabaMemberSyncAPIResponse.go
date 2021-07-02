@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMemberSyncAPIResponse
-会员信息同步 API返回值
-alibaba.member.sync
-
-会员信息同步 */
+// AlibabaMemberSyncAPIResponse 会员信息同步 API返回值
+// alibaba.member.sync
+//
+// 会员信息同步
 type AlibabaMemberSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaMemberSyncAPIResponseModel

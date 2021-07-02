@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeVideoSyncAPIResponse
-视频草稿信息同步 API返回值
-alibaba.alihouse.newhome.video.sync
-
-接收视频信息记录 */
+// AlibabaAlihouseNewhomeVideoSyncAPIResponse 视频草稿信息同步 API返回值
+// alibaba.alihouse.newhome.video.sync
+//
+// 接收视频信息记录
 type AlibabaAlihouseNewhomeVideoSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihouseNewhomeVideoSyncAPIResponseModel

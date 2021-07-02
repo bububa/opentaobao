@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqUrlScanAPIResponse
-恶意网址检测接口 API返回值
-alibaba.security.jaq.url.scan
-
-url扫描接口 */
+// AlibabaSecurityJaqUrlScanAPIResponse 恶意网址检测接口 API返回值
+// alibaba.security.jaq.url.scan
+//
+// url扫描接口
 type AlibabaSecurityJaqUrlScanAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqUrlScanAPIResponseModel

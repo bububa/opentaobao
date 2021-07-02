@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtMemberSynchronizeAPIResponse
-新零售会员同步接口 API返回值
-tmall.nrt.member.synchronize
-
-新零售会员上翻接口，商家的会员信息同步至阿里侧 */
+// TmallNrtMemberSynchronizeAPIResponse 新零售会员同步接口 API返回值
+// tmall.nrt.member.synchronize
+//
+// 新零售会员上翻接口，商家的会员信息同步至阿里侧
 type TmallNrtMemberSynchronizeAPIResponse struct {
 	model.CommonResponse
 	TmallNrtMemberSynchronizeAPIResponseModel

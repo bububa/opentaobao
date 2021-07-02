@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleParttimeSynclogAPIRequest
-兼职同步日志 API请求
-alibaba.idle.parttime.synclog
-
-提供给供应商查询的接口 */
+// AlibabaIdleParttimeSynclogAPIRequest 兼职同步日志 API请求
+// alibaba.idle.parttime.synclog
+//
+// 提供给供应商查询的接口
 type AlibabaIdleParttimeSynclogAPIRequest struct {
 	model.Params
 	// 查询岗位同步开始时间

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBanamadpcItemUpdateAPIResponse
-编辑商品 API返回值
-taobao.banamadpc.item.update
-
-巴拿马供应商通过此接口编辑商品 */
+// TaobaoBanamadpcItemUpdateAPIResponse 编辑商品 API返回值
+// taobao.banamadpc.item.update
+//
+// 巴拿马供应商通过此接口编辑商品
 type TaobaoBanamadpcItemUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoBanamadpcItemUpdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDentalStoreAuditQueryAPIResponse
-ISV查询门店审核状态 API返回值
-alibaba.alihealth.dental.store.audit.query
-
-ISV查询门店审核状态 */
+// AlibabaAlihealthDentalStoreAuditQueryAPIResponse ISV查询门店审核状态 API返回值
+// alibaba.alihealth.dental.store.audit.query
+//
+// ISV查询门店审核状态
 type AlibabaAlihealthDentalStoreAuditQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDentalStoreAuditQueryAPIResponseModel

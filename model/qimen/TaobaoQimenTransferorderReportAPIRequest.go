@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenTransferorderReportAPIRequest
-调拨单通知 API请求
-taobao.qimen.transferorder.report
-
-调拨单通知 */
+// TaobaoQimenTransferorderReportAPIRequest 调拨单通知 API请求
+// taobao.qimen.transferorder.report
+//
+// 调拨单通知
 type TaobaoQimenTransferorderReportAPIRequest struct {
 	model.Params
 	//

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkBmStockPublishAPIResponse
-品牌营销涉及到的商品的库存同步接口 API返回值
-alibaba.wdk.bm.stock.publish
-
-用于操作sku的库存 */
+// AlibabaWdkBmStockPublishAPIResponse 品牌营销涉及到的商品的库存同步接口 API返回值
+// alibaba.wdk.bm.stock.publish
+//
+// 用于操作sku的库存
 type AlibabaWdkBmStockPublishAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkBmStockPublishAPIResponseModel

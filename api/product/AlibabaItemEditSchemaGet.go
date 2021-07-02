@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-/* AlibabaItemEditSchemaGet
-商品编辑获取schema信息
-alibaba.item.edit.schema.get
-
-商品编辑时，获取商品规则信息 */
+// AlibabaItemEditSchemaGet 商品编辑获取schema信息
+// alibaba.item.edit.schema.get
+//
+// 商品编辑时，获取商品规则信息
 func AlibabaItemEditSchemaGet(clt *core.SDKClient, req *product.AlibabaItemEditSchemaGetAPIRequest, session string) (*product.AlibabaItemEditSchemaGetAPIResponse, error) {
 	var resp product.AlibabaItemEditSchemaGetAPIResponse
 	err := clt.Post(req, &resp, session)

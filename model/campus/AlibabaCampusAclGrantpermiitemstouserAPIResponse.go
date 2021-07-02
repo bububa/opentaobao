@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclGrantpermiitemstouserAPIResponse
-给人直接授权 API返回值
-alibaba.campus.acl.grantpermiitemstouser
-
-给人直接授权 */
+// AlibabaCampusAclGrantpermiitemstouserAPIResponse 给人直接授权 API返回值
+// alibaba.campus.acl.grantpermiitemstouser
+//
+// 给人直接授权
 type AlibabaCampusAclGrantpermiitemstouserAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclGrantpermiitemstouserAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytDrDrugrecalAPIResponse
-疫苗药品召回 API返回值
-alibaba.alihealth.drug.kyt.dr.drugrecal
-
-生产企业发布的召回信息，按照批次进行召回，收货和发货环节的单据处理中调用接口进行查询； */
+// AlibabaAlihealthDrugKytDrDrugrecalAPIResponse 疫苗药品召回 API返回值
+// alibaba.alihealth.drug.kyt.dr.drugrecal
+//
+// 生产企业发布的召回信息，按照批次进行召回，收货和发货环节的单据处理中调用接口进行查询；
 type AlibabaAlihealthDrugKytDrDrugrecalAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytDrDrugrecalAPIResponseModel

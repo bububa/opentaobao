@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuBuyerTagGetAPIResponse
-判断买家是否有某些标 API返回值
-taobao.qianniu.buyer.tag.get
-
-判断某个买家是否有某些标 */
+// TaobaoQianniuBuyerTagGetAPIResponse 判断买家是否有某些标 API返回值
+// taobao.qianniu.buyer.tag.get
+//
+// 判断某个买家是否有某些标
 type TaobaoQianniuBuyerTagGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuBuyerTagGetAPIResponseModel

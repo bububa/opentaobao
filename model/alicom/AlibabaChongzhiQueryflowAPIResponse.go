@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaChongzhiQueryflowAPIResponse
-查询指定商家的可用的流量宝贝接口 API返回值
-alibaba.chongzhi.queryflow
-
-查询指定商家的可用的流量宝贝 */
+// AlibabaChongzhiQueryflowAPIResponse 查询指定商家的可用的流量宝贝接口 API返回值
+// alibaba.chongzhi.queryflow
+//
+// 查询指定商家的可用的流量宝贝
 type AlibabaChongzhiQueryflowAPIResponse struct {
 	model.CommonResponse
 	AlibabaChongzhiQueryflowAPIResponseModel

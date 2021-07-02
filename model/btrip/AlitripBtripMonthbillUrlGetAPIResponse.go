@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripMonthbillUrlGetAPIResponse
-月账单数据查询 API返回值
-alitrip.btrip.monthbill.url.get
-
-月账单数据查询 */
+// AlitripBtripMonthbillUrlGetAPIResponse 月账单数据查询 API返回值
+// alitrip.btrip.monthbill.url.get
+//
+// 月账单数据查询
 type AlitripBtripMonthbillUrlGetAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripMonthbillUrlGetAPIResponseModel

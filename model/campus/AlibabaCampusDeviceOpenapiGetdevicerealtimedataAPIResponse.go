@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIResponse
-获取指定设备下指定参数的实时值 API返回值
-alibaba.campus.device.openapi.getdevicerealtimedata
-
-获取指定设备下指定参数的实时值 */
+// AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIResponse 获取指定设备下指定参数的实时值 API返回值
+// alibaba.campus.device.openapi.getdevicerealtimedata
+//
+// 获取指定设备下指定参数的实时值
 type AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIResponseModel

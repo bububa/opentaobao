@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCardBindcustomerAPIResponse
-卡号绑定顾客 API返回值
-alibaba.alsc.crm.card.bindcustomer
-
-为卡号绑定顾客 */
+// AlibabaAlscCrmCardBindcustomerAPIResponse 卡号绑定顾客 API返回值
+// alibaba.alsc.crm.card.bindcustomer
+//
+// 为卡号绑定顾客
 type AlibabaAlscCrmCardBindcustomerAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCardBindcustomerAPIResponseModel

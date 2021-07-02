@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFootscanMiniImageUploadAPIResponse
-商家端图片上传 API返回值
-alibaba.footscan.mini.image.upload
-
-提供图片上传功能，同时进行图片的检测 */
+// AlibabaFootscanMiniImageUploadAPIResponse 商家端图片上传 API返回值
+// alibaba.footscan.mini.image.upload
+//
+// 提供图片上传功能，同时进行图片的检测
 type AlibabaFootscanMiniImageUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaFootscanMiniImageUploadAPIResponseModel

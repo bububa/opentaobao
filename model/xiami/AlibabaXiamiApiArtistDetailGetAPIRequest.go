@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaXiamiApiArtistDetailGetAPIRequest
-艺人详情 API请求
-alibaba.xiami.api.artist.detail.get
-
-艺人详情 */
+// AlibabaXiamiApiArtistDetailGetAPIRequest 艺人详情 API请求
+// alibaba.xiami.api.artist.detail.get
+//
+// 艺人详情
 type AlibabaXiamiApiArtistDetailGetAPIRequest struct {
 	model.Params
 	// 艺人id

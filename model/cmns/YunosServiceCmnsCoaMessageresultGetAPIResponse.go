@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosServiceCmnsCoaMessageresultGetAPIResponse
-CMNS消息发送到达查询 API返回值
-yunos.service.cmns.coa.messageresult.get
-
-CMNS消息发送到达查询,根据消息ID查询，仅能查询该appKey所发送的消息 */
+// YunosServiceCmnsCoaMessageresultGetAPIResponse CMNS消息发送到达查询 API返回值
+// yunos.service.cmns.coa.messageresult.get
+//
+// CMNS消息发送到达查询,根据消息ID查询，仅能查询该appKey所发送的消息
 type YunosServiceCmnsCoaMessageresultGetAPIResponse struct {
 	model.CommonResponse
 	YunosServiceCmnsCoaMessageresultGetAPIResponseModel

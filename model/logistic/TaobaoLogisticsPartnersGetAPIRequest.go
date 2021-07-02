@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsPartnersGetAPIRequest
-查询支持起始地到目的地范围的物流公司 API请求
-taobao.logistics.partners.get
-
-查询物流公司信息（可以查询目的地可不可达情况） */
+// TaobaoLogisticsPartnersGetAPIRequest 查询支持起始地到目的地范围的物流公司 API请求
+// taobao.logistics.partners.get
+//
+// 查询物流公司信息（可以查询目的地可不可达情况）
 type TaobaoLogisticsPartnersGetAPIRequest struct {
 	model.Params
 	// 物流公司揽货地地区码（必须是区、县一级的）.参考:http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html或者调用 taobao.areas.get 获取

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclQueryallemppermiitemAPIResponse
-查询员工全部权限(包括角色下面的权限) API返回值
-alibaba.campus.acl.queryallemppermiitem
-
-查询员工全部权限(包括角色下面的权限) */
+// AlibabaCampusAclQueryallemppermiitemAPIResponse 查询员工全部权限(包括角色下面的权限) API返回值
+// alibaba.campus.acl.queryallemppermiitem
+//
+// 查询员工全部权限(包括角色下面的权限)
 type AlibabaCampusAclQueryallemppermiitemAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclQueryallemppermiitemAPIResponseModel

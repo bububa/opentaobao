@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRpRefundsAgreeAPIRequest
-同意退款 API请求
-taobao.rp.refunds.agree
-
-卖家同意退款，支持批量退款，只允许子账号操作。淘宝退款一次最多能退20笔，总金额不超过6000元；天猫退款一次最多能退30笔，总金额不超过10000元。 */
+// TaobaoRpRefundsAgreeAPIRequest 同意退款 API请求
+// taobao.rp.refunds.agree
+//
+// 卖家同意退款，支持批量退款，只允许子账号操作。淘宝退款一次最多能退20笔，总金额不超过6000元；天猫退款一次最多能退30笔，总金额不超过10000元。
 type TaobaoRpRefundsAgreeAPIRequest struct {
 	model.Params
 	// 短信验证码，如果退款金额达到一定的数量，后端会返回调用失败，并同时往卖家的手机发送一条短信验证码。接下来用收到的短信验证码再次发起API调用即可完成退款操作。

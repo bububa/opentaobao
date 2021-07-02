@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelHmsPartnerInfoGetAPIResponse
-获取合作商信息 API返回值
-alitrip.hotel.hms.partner.info.get
-
-用于给到未来酒店读取与飞猪酒店合作的合作商信息，开展单体联盟业务 */
+// AlitripHotelHmsPartnerInfoGetAPIResponse 获取合作商信息 API返回值
+// alitrip.hotel.hms.partner.info.get
+//
+// 用于给到未来酒店读取与飞猪酒店合作的合作商信息，开展单体联盟业务
 type AlitripHotelHmsPartnerInfoGetAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelHmsPartnerInfoGetAPIResponseModel

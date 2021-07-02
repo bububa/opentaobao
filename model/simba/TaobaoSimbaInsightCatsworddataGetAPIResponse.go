@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaInsightCatsworddataGetAPIResponse
-获取类目下关键词的数据 API返回值
-taobao.simba.insight.catsworddata.get
-
-获取给定词在给定类目下的详细数据 */
+// TaobaoSimbaInsightCatsworddataGetAPIResponse 获取类目下关键词的数据 API返回值
+// taobao.simba.insight.catsworddata.get
+//
+// 获取给定词在给定类目下的详细数据
 type TaobaoSimbaInsightCatsworddataGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaInsightCatsworddataGetAPIResponseModel

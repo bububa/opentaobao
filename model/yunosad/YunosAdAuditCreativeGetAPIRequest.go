@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosAdAuditCreativeGetAPIRequest
-获取单个创意审核状态 API请求
-yunos.ad.audit.creative.get
-
-获取单个创意审核状态 */
+// YunosAdAuditCreativeGetAPIRequest 获取单个创意审核状态 API请求
+// yunos.ad.audit.creative.get
+//
+// 获取单个创意审核状态
 type YunosAdAuditCreativeGetAPIRequest struct {
 	model.Params
 	// 第三方的dspId

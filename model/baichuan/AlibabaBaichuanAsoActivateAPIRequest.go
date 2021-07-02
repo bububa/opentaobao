@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaichuanAsoActivateAPIRequest
-设备安装活动激活 API请求
-alibaba.baichuan.aso.activate
-
-设备安装活动激活 */
+// AlibabaBaichuanAsoActivateAPIRequest 设备安装活动激活 API请求
+// alibaba.baichuan.aso.activate
+//
+// 设备安装活动激活
 type AlibabaBaichuanAsoActivateAPIRequest struct {
 	model.Params
 	// 来源

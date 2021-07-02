@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractLotteryactivityRegisterAPIResponse
-回传抽奖相关参数 API返回值
-alibaba.interact.lotteryactivity.register
-
-提供接口供三方应用将数据回传到平台 */
+// AlibabaInteractLotteryactivityRegisterAPIResponse 回传抽奖相关参数 API返回值
+// alibaba.interact.lotteryactivity.register
+//
+// 提供接口供三方应用将数据回传到平台
 type AlibabaInteractLotteryactivityRegisterAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractLotteryactivityRegisterAPIResponseModel

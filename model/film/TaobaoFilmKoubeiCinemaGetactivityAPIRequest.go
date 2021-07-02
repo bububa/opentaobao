@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmKoubeiCinemaGetactivityAPIRequest
-口碑-影院营销数据查询 API请求
-taobao.film.koubei.cinema.getactivity
-
-口碑-影院营销数据查询 */
+// TaobaoFilmKoubeiCinemaGetactivityAPIRequest 口碑-影院营销数据查询 API请求
+// taobao.film.koubei.cinema.getactivity
+//
+// 口碑-影院营销数据查询
 type TaobaoFilmKoubeiCinemaGetactivityAPIRequest struct {
 	model.Params
 	// 用户账号

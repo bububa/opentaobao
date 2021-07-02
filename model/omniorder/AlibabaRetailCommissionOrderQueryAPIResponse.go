@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailCommissionOrderQueryAPIResponse
-分销订单查询 API返回值
-alibaba.retail.commission.order.query
-
-查询商家的分销订单 */
+// AlibabaRetailCommissionOrderQueryAPIResponse 分销订单查询 API返回值
+// alibaba.retail.commission.order.query
+//
+// 查询商家的分销订单
 type AlibabaRetailCommissionOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailCommissionOrderQueryAPIResponseModel

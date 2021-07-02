@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDiccontroltaskGetinfoAPIResponse
-获取停开服任务详情 API返回值
-yunos.tvpubadmin.diccontroltask.getinfo
-
-获取停开服任务详情 */
+// YunosTvpubadminDiccontroltaskGetinfoAPIResponse 获取停开服任务详情 API返回值
+// yunos.tvpubadmin.diccontroltask.getinfo
+//
+// 获取停开服任务详情
 type YunosTvpubadminDiccontroltaskGetinfoAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminDiccontroltaskGetinfoAPIResponseModel

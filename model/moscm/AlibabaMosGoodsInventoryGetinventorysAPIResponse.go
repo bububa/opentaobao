@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosGoodsInventoryGetinventorysAPIResponse
-可售库存查询 API返回值
-alibaba.mos.goods.inventory.getinventorys
-
-查询商品的可售、在库和占库数量 */
+// AlibabaMosGoodsInventoryGetinventorysAPIResponse 可售库存查询 API返回值
+// alibaba.mos.goods.inventory.getinventorys
+//
+// 查询商品的可售、在库和占库数量
 type AlibabaMosGoodsInventoryGetinventorysAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosGoodsInventoryGetinventorysAPIResponseModel

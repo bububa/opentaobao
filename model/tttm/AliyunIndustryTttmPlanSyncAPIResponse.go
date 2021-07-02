@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunIndustryTttmPlanSyncAPIResponse
-天天特卖生产计划单同步 API返回值
-aliyun.industry.tttm.plan.sync
-
-ERP系统向天天特卖同步生产计划单的数据 */
+// AliyunIndustryTttmPlanSyncAPIResponse 天天特卖生产计划单同步 API返回值
+// aliyun.industry.tttm.plan.sync
+//
+// ERP系统向天天特卖同步生产计划单的数据
 type AliyunIndustryTttmPlanSyncAPIResponse struct {
 	model.CommonResponse
 	AliyunIndustryTttmPlanSyncAPIResponseModel

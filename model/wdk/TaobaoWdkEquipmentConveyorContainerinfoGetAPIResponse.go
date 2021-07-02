@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWdkEquipmentConveyorContainerinfoGetAPIResponse
-获取批次或波次中容器的信息 API返回值
-taobao.wdk.equipment.conveyor.containerinfo.get
-
-获取批次或波次中容器的信息 */
+// TaobaoWdkEquipmentConveyorContainerinfoGetAPIResponse 获取批次或波次中容器的信息 API返回值
+// taobao.wdk.equipment.conveyor.containerinfo.get
+//
+// 获取批次或波次中容器的信息
 type TaobaoWdkEquipmentConveyorContainerinfoGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWdkEquipmentConveyorContainerinfoGetAPIResponseModel

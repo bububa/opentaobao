@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAuctionGovDataRealtimeGetAPIResponse
-获取实时(今日)统计数据 API返回值
-taobao.auction.gov.data.realtime.get
-
-提供查询当日法院及下属法院的拍卖统计数据 */
+// TaobaoAuctionGovDataRealtimeGetAPIResponse 获取实时(今日)统计数据 API返回值
+// taobao.auction.gov.data.realtime.get
+//
+// 提供查询当日法院及下属法院的拍卖统计数据
 type TaobaoAuctionGovDataRealtimeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAuctionGovDataRealtimeGetAPIResponseModel

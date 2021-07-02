@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripBusTicketsInsuranceRecommendAPIResponse
-汽车票保险推荐 API返回值
-taobao.alitrip.bus.tickets.insurance.recommend
-
-获取推荐保险内容 */
+// TaobaoAlitripBusTicketsInsuranceRecommendAPIResponse 汽车票保险推荐 API返回值
+// taobao.alitrip.bus.tickets.insurance.recommend
+//
+// 获取推荐保险内容
 type TaobaoAlitripBusTicketsInsuranceRecommendAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripBusTicketsInsuranceRecommendAPIResponseModel

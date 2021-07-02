@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoIotTicketSpMaintainUpdateAPIResponse
-IoT售后服务商维修方案更新 API返回值
-cainiao.iot.ticket.sp.maintain.update
-
-IoT售后服务商维修方案更新 */
+// CainiaoIotTicketSpMaintainUpdateAPIResponse IoT售后服务商维修方案更新 API返回值
+// cainiao.iot.ticket.sp.maintain.update
+//
+// IoT售后服务商维修方案更新
 type CainiaoIotTicketSpMaintainUpdateAPIResponse struct {
 	model.CommonResponse
 	CainiaoIotTicketSpMaintainUpdateAPIResponseModel

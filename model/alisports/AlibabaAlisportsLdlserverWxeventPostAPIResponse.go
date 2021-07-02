@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsLdlserverWxeventPostAPIResponse
-乐动力线-微信设备绑定通知 API返回值
-alibaba.alisports.ldlserver.wxevent.post
-
-转发弹外微信服务到弹内 */
+// AlibabaAlisportsLdlserverWxeventPostAPIResponse 乐动力线-微信设备绑定通知 API返回值
+// alibaba.alisports.ldlserver.wxevent.post
+//
+// 转发弹外微信服务到弹内
 type AlibabaAlisportsLdlserverWxeventPostAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsLdlserverWxeventPostAPIResponseModel

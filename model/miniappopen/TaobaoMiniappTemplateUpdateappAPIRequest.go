@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappTemplateUpdateappAPIRequest
-更新实例化应用 API请求
-taobao.miniapp.template.updateapp
-
-商家应用c端模板实例化小程序更新，生成新的版本，但不会自动上线新版本 */
+// TaobaoMiniappTemplateUpdateappAPIRequest 更新实例化应用 API请求
+// taobao.miniapp.template.updateapp
+//
+// 商家应用c端模板实例化小程序更新，生成新的版本，但不会自动上线新版本
 type TaobaoMiniappTemplateUpdateappAPIRequest struct {
 	model.Params
 	// 要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)

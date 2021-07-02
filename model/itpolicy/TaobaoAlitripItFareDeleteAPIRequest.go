@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripItFareDeleteAPIRequest
-【国际机票自有政策】单条删除 API请求
-taobao.alitrip.it.fare.delete
-
-自有政策删除接口，可以根据fareId或outId删除，根据outId删除时，如果outId不唯一，返回失败 */
+// TaobaoAlitripItFareDeleteAPIRequest 【国际机票自有政策】单条删除 API请求
+// taobao.alitrip.it.fare.delete
+//
+// 自有政策删除接口，可以根据fareId或outId删除，根据outId删除时，如果outId不唯一，返回失败
 type TaobaoAlitripItFareDeleteAPIRequest struct {
 	model.Params
 	// json格式的字符串，扩展属性，预留

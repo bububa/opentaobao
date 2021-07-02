@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimTribeGetalltribesAPIResponse
-获取用户群列表 API返回值
-taobao.openim.tribe.getalltribes
-
-OPENIM群服务获取用户群列表 */
+// TaobaoOpenimTribeGetalltribesAPIResponse 获取用户群列表 API返回值
+// taobao.openim.tribe.getalltribes
+//
+// OPENIM群服务获取用户群列表
 type TaobaoOpenimTribeGetalltribesAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimTribeGetalltribesAPIResponseModel

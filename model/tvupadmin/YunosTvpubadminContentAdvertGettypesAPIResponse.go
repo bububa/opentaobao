@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentAdvertGettypesAPIResponse
-获取广告位类型 API返回值
-yunos.tvpubadmin.content.advert.gettypes
-
-获取广告位类型 */
+// YunosTvpubadminContentAdvertGettypesAPIResponse 获取广告位类型 API返回值
+// yunos.tvpubadmin.content.advert.gettypes
+//
+// 获取广告位类型
 type YunosTvpubadminContentAdvertGettypesAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentAdvertGettypesAPIResponseModel

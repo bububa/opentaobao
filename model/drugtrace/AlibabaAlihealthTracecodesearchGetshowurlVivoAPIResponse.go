@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodesearchGetshowurlVivoAPIResponse
-获取药品扫码落地页vivo API返回值
-alibaba.alihealth.tracecodesearch.getshowurl.vivo
-
-获取药品扫码落地页vivo */
+// AlibabaAlihealthTracecodesearchGetshowurlVivoAPIResponse 获取药品扫码落地页vivo API返回值
+// alibaba.alihealth.tracecodesearch.getshowurl.vivo
+//
+// 获取药品扫码落地页vivo
 type AlibabaAlihealthTracecodesearchGetshowurlVivoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthTracecodesearchGetshowurlVivoAPIResponseModel

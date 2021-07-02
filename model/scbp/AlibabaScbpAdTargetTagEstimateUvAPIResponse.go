@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdTargetTagEstimateUvAPIResponse
-标签人群预估 API返回值
-alibaba.scbp.ad.target.tag.estimate.uv
-
-标签人群预估 */
+// AlibabaScbpAdTargetTagEstimateUvAPIResponse 标签人群预估 API返回值
+// alibaba.scbp.ad.target.tag.estimate.uv
+//
+// 标签人群预估
 type AlibabaScbpAdTargetTagEstimateUvAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdTargetTagEstimateUvAPIResponseModel

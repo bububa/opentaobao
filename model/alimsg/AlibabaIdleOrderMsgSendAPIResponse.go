@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleOrderMsgSendAPIResponse
-虚拟发货消息发送接口 API返回值
-alibaba.idle.order.msg.send
-
-用户下单后服务商期望自动发货，该接口用于给用户发送文本消息，主要用于卡券类等虚拟商品场景 */
+// AlibabaIdleOrderMsgSendAPIResponse 虚拟发货消息发送接口 API返回值
+// alibaba.idle.order.msg.send
+//
+// 用户下单后服务商期望自动发货，该接口用于给用户发送文本消息，主要用于卡券类等虚拟商品场景
 type AlibabaIdleOrderMsgSendAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleOrderMsgSendAPIResponseModel

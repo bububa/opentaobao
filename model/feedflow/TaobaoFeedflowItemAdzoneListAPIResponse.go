@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemAdzoneListAPIResponse
-批量查询可用广告位列表 API返回值
-taobao.feedflow.item.adzone.list
-
-批量查询可用广告位列表 */
+// TaobaoFeedflowItemAdzoneListAPIResponse 批量查询可用广告位列表 API返回值
+// taobao.feedflow.item.adzone.list
+//
+// 批量查询可用广告位列表
 type TaobaoFeedflowItemAdzoneListAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemAdzoneListAPIResponseModel

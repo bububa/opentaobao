@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoEndpointLockerTopStationAddorupdateAPIResponse
-增加更新代收点 API返回值
-cainiao.endpoint.locker.top.station.addorupdate
-
-新增或者修改代收点相关信息 */
+// CainiaoEndpointLockerTopStationAddorupdateAPIResponse 增加更新代收点 API返回值
+// cainiao.endpoint.locker.top.station.addorupdate
+//
+// 新增或者修改代收点相关信息
 type CainiaoEndpointLockerTopStationAddorupdateAPIResponse struct {
 	model.CommonResponse
 	CainiaoEndpointLockerTopStationAddorupdateAPIResponseModel

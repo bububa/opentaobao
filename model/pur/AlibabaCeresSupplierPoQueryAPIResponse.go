@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCeresSupplierPoQueryAPIResponse
-采购供应商订单查询接口 API返回值
-alibaba.ceres.supplier.po.query
-
-采购供应商订单查询接口 */
+// AlibabaCeresSupplierPoQueryAPIResponse 采购供应商订单查询接口 API返回值
+// alibaba.ceres.supplier.po.query
+//
+// 采购供应商订单查询接口
 type AlibabaCeresSupplierPoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaCeresSupplierPoQueryAPIResponseModel

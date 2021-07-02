@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTuikeSingleOfferGetAPIResponse
-查询1688推客平台卖家推广中的商品信息 API返回值
-alibaba.tuike.single.offer.get
-
-查询单个推客商品信息的接口 */
+// AlibabaTuikeSingleOfferGetAPIResponse 查询1688推客平台卖家推广中的商品信息 API返回值
+// alibaba.tuike.single.offer.get
+//
+// 查询单个推客商品信息的接口
 type AlibabaTuikeSingleOfferGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTuikeSingleOfferGetAPIResponseModel

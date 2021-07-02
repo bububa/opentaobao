@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelGetAPIResponse
-酒店查询接口 API返回值
-taobao.xhotel.get
-
-酒店查询接口 */
+// TaobaoXhotelGetAPIResponse 酒店查询接口 API返回值
+// taobao.xhotel.get
+//
+// 酒店查询接口
 type TaobaoXhotelGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripSellerRefundFillfeeAPIRequest
-机票代理商】回填手续费 API请求
-taobao.alitrip.seller.refund.fillfee
-
-回填手续费 */
+// TaobaoAlitripSellerRefundFillfeeAPIRequest 机票代理商】回填手续费 API请求
+// taobao.alitrip.seller.refund.fillfee
+//
+// 回填手续费
 type TaobaoAlitripSellerRefundFillfeeAPIRequest struct {
 	model.Params
 	// 申请单ID

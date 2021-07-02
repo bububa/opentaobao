@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIResponse
-按网格仓查中心仓（带缓存） API返回值
-wdk.logistic.network.warehouse.resource.relation.query.to.codes
-
-盒马集市，网格仓查询中心仓 */
+// WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIResponse 按网格仓查中心仓（带缓存） API返回值
+// wdk.logistic.network.warehouse.resource.relation.query.to.codes
+//
+// 盒马集市，网格仓查询中心仓
 type WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIResponse struct {
 	model.CommonResponse
 	WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemOptionPageAPIResponse
-分页查询定向标签列表 API返回值
-taobao.feedflow.item.option.page
-
-分页查询定向标签列表 */
+// TaobaoFeedflowItemOptionPageAPIResponse 分页查询定向标签列表 API返回值
+// taobao.feedflow.item.option.page
+//
+// 分页查询定向标签列表
 type TaobaoFeedflowItemOptionPageAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemOptionPageAPIResponseModel

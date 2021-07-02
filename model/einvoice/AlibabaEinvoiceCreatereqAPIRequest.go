@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceCreatereqAPIRequest
-ERP开票请求接口 API请求
-alibaba.einvoice.createreq
-
-ERP发起开票请求 */
+// AlibabaEinvoiceCreatereqAPIRequest ERP开票请求接口 API请求
+// alibaba.einvoice.createreq
+//
+// ERP发起开票请求
 type AlibabaEinvoiceCreatereqAPIRequest struct {
 	model.Params
 	// 默认：0。对于商家对个人开具，为0;对于商家对企业开具，为1;

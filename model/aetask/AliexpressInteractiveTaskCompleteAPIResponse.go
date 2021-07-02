@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressInteractiveTaskCompleteAPIResponse
-任务完成接口 API返回值
-aliexpress.interactive.task.complete
-
-用户完成任务 */
+// AliexpressInteractiveTaskCompleteAPIResponse 任务完成接口 API返回值
+// aliexpress.interactive.task.complete
+//
+// 用户完成任务
 type AliexpressInteractiveTaskCompleteAPIResponse struct {
 	model.CommonResponse
 	AliexpressInteractiveTaskCompleteAPIResponseModel

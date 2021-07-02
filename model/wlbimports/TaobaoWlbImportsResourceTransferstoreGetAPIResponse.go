@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbImportsResourceTransferstoreGetAPIResponse
-根据指定的资源获取所有中转仓列表 API返回值
-taobao.wlb.imports.resource.transferstore.get
-
-根据指定的资源获取所有中转仓列表 */
+// TaobaoWlbImportsResourceTransferstoreGetAPIResponse 根据指定的资源获取所有中转仓列表 API返回值
+// taobao.wlb.imports.resource.transferstore.get
+//
+// 根据指定的资源获取所有中转仓列表
 type TaobaoWlbImportsResourceTransferstoreGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbImportsResourceTransferstoreGetAPIResponseModel

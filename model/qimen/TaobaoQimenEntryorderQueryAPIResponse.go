@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenEntryorderQueryAPIResponse
-入库单查询接口 API返回值
-taobao.qimen.entryorder.query
-
-ERP调用接口，查询入库单信息; */
+// TaobaoQimenEntryorderQueryAPIResponse 入库单查询接口 API返回值
+// taobao.qimen.entryorder.query
+//
+// ERP调用接口，查询入库单信息;
 type TaobaoQimenEntryorderQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenEntryorderQueryAPIResponseModel

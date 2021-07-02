@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardCallRecordAPIResponse
-回访记录回传API API返回值
-tmall.servicecenter.workcard.call.record
-
-客满回访信息登记 */
+// TmallServicecenterWorkcardCallRecordAPIResponse 回访记录回传API API返回值
+// tmall.servicecenter.workcard.call.record
+//
+// 客满回访信息登记
 type TmallServicecenterWorkcardCallRecordAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardCallRecordAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIbizapiBrandSubscribeAPIResponse
-关注品牌号 API返回值
-alibaba.ibizapi.brand.subscribe
-
-关注品牌号服务 */
+// AlibabaIbizapiBrandSubscribeAPIResponse 关注品牌号 API返回值
+// alibaba.ibizapi.brand.subscribe
+//
+// 关注品牌号服务
 type AlibabaIbizapiBrandSubscribeAPIResponse struct {
 	model.CommonResponse
 	AlibabaIbizapiBrandSubscribeAPIResponseModel

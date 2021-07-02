@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-/* AlibabaAliqinFlowWalletSign
-流量平台用户签约情况查询
-alibaba.aliqin.flow.wallet.sign
-
-流量平台用户签约情况查询 */
+// AlibabaAliqinFlowWalletSign 流量平台用户签约情况查询
+// alibaba.aliqin.flow.wallet.sign
+//
+// 流量平台用户签约情况查询
 func AlibabaAliqinFlowWalletSign(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletSignAPIRequest, session string) (*alicom.AlibabaAliqinFlowWalletSignAPIResponse, error) {
 	var resp alicom.AlibabaAliqinFlowWalletSignAPIResponse
 	err := clt.Post(req, &resp, session)

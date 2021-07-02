@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractIsvGatewayAPIResponse
-isv调用gateway API返回值
-alibaba.interact.isv.gateway
-
-isv能够调用jae本身的server */
+// AlibabaInteractIsvGatewayAPIResponse isv调用gateway API返回值
+// alibaba.interact.isv.gateway
+//
+// isv能够调用jae本身的server
 type AlibabaInteractIsvGatewayAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractIsvGatewayAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoDiscountsGetAPIRequest
-获取折扣信息 API请求
-taobao.fenxiao.discounts.get
-
-查询折扣信息 */
+// TaobaoFenxiaoDiscountsGetAPIRequest 获取折扣信息 API请求
+// taobao.fenxiao.discounts.get
+//
+// 查询折扣信息
 type TaobaoFenxiaoDiscountsGetAPIRequest struct {
 	model.Params
 	// 折扣ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionProductInfoGetAPIRequest
-Get Single Product Info API请求
-aliexpress.solution.product.info.get
-
-Get Single Product Info */
+// AliexpressSolutionProductInfoGetAPIRequest Get Single Product Info API请求
+// aliexpress.solution.product.info.get
+//
+// Get Single Product Info
 type AliexpressSolutionProductInfoGetAPIRequest struct {
 	model.Params
 	// product ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceRedCreatereqAPIResponse
-发票冲红接口 API返回值
-alibaba.einvoice.red.createreq
-
-发票冲红接口，通过蓝票流水号或者发票号码+发票代码进行冲红 */
+// AlibabaEinvoiceRedCreatereqAPIResponse 发票冲红接口 API返回值
+// alibaba.einvoice.red.createreq
+//
+// 发票冲红接口，通过蓝票流水号或者发票号码+发票代码进行冲红
 type AlibabaEinvoiceRedCreatereqAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceRedCreatereqAPIResponseModel

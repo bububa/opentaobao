@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStoregroupUpdateAPIRequest
-门店库修改基本信息 API请求
-taobao.place.storegroup.update
-
-门店库修改基本信息 */
+// TaobaoPlaceStoregroupUpdateAPIRequest 门店库修改基本信息 API请求
+// taobao.place.storegroup.update
+//
+// 门店库修改基本信息
 type TaobaoPlaceStoregroupUpdateAPIRequest struct {
 	model.Params
 	// 库id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytQuerybatchprodAPIResponse
-批次产品查询(根据企业名和批次号查询产品信息) API返回值
-alibaba.alihealth.drug.kyt.querybatchprod
-
-根据企业名和批次号查询药品信息，支持使用更名之前的老企业名查询，支持批次号大小写模糊，应用于药店或医院入库环节，通过在入库环节获取赋码的产品目录，可强制要求对相应的产品必须进行扫码入库； */
+// AlibabaAlihealthDrugKytQuerybatchprodAPIResponse 批次产品查询(根据企业名和批次号查询产品信息) API返回值
+// alibaba.alihealth.drug.kyt.querybatchprod
+//
+// 根据企业名和批次号查询药品信息，支持使用更名之前的老企业名查询，支持批次号大小写模糊，应用于药店或医院入库环节，通过在入库环节获取赋码的产品目录，可强制要求对相应的产品必须进行扫码入库；
 type AlibabaAlihealthDrugKytQuerybatchprodAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytQuerybatchprodAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingBuygiftItemAddAsyncAPIRequest
-批量发布买赠商品 API请求
-alibaba.wdk.marketing.buygift.item.add.async
-
-批量发布买赠商品 */
+// AlibabaWdkMarketingBuygiftItemAddAsyncAPIRequest 批量发布买赠商品 API请求
+// alibaba.wdk.marketing.buygift.item.add.async
+//
+// 批量发布买赠商品
 type AlibabaWdkMarketingBuygiftItemAddAsyncAPIRequest struct {
 	model.Params
 	// sku信息

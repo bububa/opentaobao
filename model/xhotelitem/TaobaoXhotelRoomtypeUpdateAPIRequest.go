@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRoomtypeUpdateAPIRequest
-房型更新接口（ID不存在自动新增） API请求
-taobao.xhotel.roomtype.update
-
-酒店房型更新或添加 */
+// TaobaoXhotelRoomtypeUpdateAPIRequest 房型更新接口（ID不存在自动新增） API请求
+// taobao.xhotel.roomtype.update
+//
+// 酒店房型更新或添加
 type TaobaoXhotelRoomtypeUpdateAPIRequest struct {
 	model.Params
 	// 房型名称。不能超过30字；添加房型时为必须

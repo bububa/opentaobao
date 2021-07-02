@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmRuleQuerympriceruleAPIResponse
-查询品牌下的会员价规则 API返回值
-alibaba.alsc.crm.rule.querympricerule
-
-查询品牌下的会员价规则 */
+// AlibabaAlscCrmRuleQuerympriceruleAPIResponse 查询品牌下的会员价规则 API返回值
+// alibaba.alsc.crm.rule.querympricerule
+//
+// 查询品牌下的会员价规则
 type AlibabaAlscCrmRuleQuerympriceruleAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmRuleQuerympriceruleAPIResponseModel

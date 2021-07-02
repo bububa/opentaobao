@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDeviceOrderQueryAPIRequest
-贩卖机订单查询 API请求
-alibaba.retail.device.order.query
-
-贩卖机订单查询 */
+// AlibabaRetailDeviceOrderQueryAPIRequest 贩卖机订单查询 API请求
+// alibaba.retail.device.order.query
+//
+// 贩卖机订单查询
 type AlibabaRetailDeviceOrderQueryAPIRequest struct {
 	model.Params
 	// 阿里设备物理ID

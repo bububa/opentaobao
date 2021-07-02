@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLbsMessageUploadAPIResponse
-lbs数据采集 API返回值
-taobao.lbs.message.upload
-
-lbs数据采集 */
+// TaobaoLbsMessageUploadAPIResponse lbs数据采集 API返回值
+// taobao.lbs.message.upload
+//
+// lbs数据采集
 type TaobaoLbsMessageUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoLbsMessageUploadAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceYksSkillOnlineAPIResponse
-迎客松技能上架接口 API返回值
-yunos.tvpubadmin.device.yks.skill.online
-
-迎客松技能上架接口 */
+// YunosTvpubadminDeviceYksSkillOnlineAPIResponse 迎客松技能上架接口 API返回值
+// yunos.tvpubadmin.device.yks.skill.online
+//
+// 迎客松技能上架接口
 type YunosTvpubadminDeviceYksSkillOnlineAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminDeviceYksSkillOnlineAPIResponseModel

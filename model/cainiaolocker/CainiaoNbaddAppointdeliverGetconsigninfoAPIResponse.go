@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoNbaddAppointdeliverGetconsigninfoAPIResponse
-获取支持定时派送服务发货信息 API返回值
-cainiao.nbadd.appointdeliver.getconsigninfo
-
-获取支持定时派送服务发货信息 */
+// CainiaoNbaddAppointdeliverGetconsigninfoAPIResponse 获取支持定时派送服务发货信息 API返回值
+// cainiao.nbadd.appointdeliver.getconsigninfo
+//
+// 获取支持定时派送服务发货信息
 type CainiaoNbaddAppointdeliverGetconsigninfoAPIResponse struct {
 	model.CommonResponse
 	CainiaoNbaddAppointdeliverGetconsigninfoAPIResponseModel

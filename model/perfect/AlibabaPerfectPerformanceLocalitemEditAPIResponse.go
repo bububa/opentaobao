@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPerfectPerformanceLocalitemEditAPIResponse
-同城购定制发品编辑 API返回值
-alibaba.perfect.performance.localitem.edit
-
-同城购业务定制化发品接口，同城购业务线专用 */
+// AlibabaPerfectPerformanceLocalitemEditAPIResponse 同城购定制发品编辑 API返回值
+// alibaba.perfect.performance.localitem.edit
+//
+// 同城购业务定制化发品接口，同城购业务线专用
 type AlibabaPerfectPerformanceLocalitemEditAPIResponse struct {
 	model.CommonResponse
 	AlibabaPerfectPerformanceLocalitemEditAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/topoaid"
 )
 
-/* TaobaoTopOaidDecrypt
-OAID解密
-taobao.top.oaid.decrypt
-
-解码OAID(Open Addressee ID)，返回收件人信息。 */
+// TaobaoTopOaidDecrypt OAID解密
+// taobao.top.oaid.decrypt
+//
+// 解码OAID(Open Addressee ID)，返回收件人信息。
 func TaobaoTopOaidDecrypt(clt *core.SDKClient, req *topoaid.TaobaoTopOaidDecryptAPIRequest, session string) (*topoaid.TaobaoTopOaidDecryptAPIResponse, error) {
 	var resp topoaid.TaobaoTopOaidDecryptAPIResponse
 	err := clt.Post(req, &resp, session)

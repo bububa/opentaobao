@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpGetverifytokenAPIResponse
-聚安全实人认证获取认证会话token API返回值
-alibaba.security.jaq.rp.getverifytoken
-
-聚安全实人认证获取认证会话token */
+// AlibabaSecurityJaqRpGetverifytokenAPIResponse 聚安全实人认证获取认证会话token API返回值
+// alibaba.security.jaq.rp.getverifytoken
+//
+// 聚安全实人认证获取认证会话token
 type AlibabaSecurityJaqRpGetverifytokenAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqRpGetverifytokenAPIResponseModel

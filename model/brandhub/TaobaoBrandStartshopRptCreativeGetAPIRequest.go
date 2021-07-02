@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBrandStartshopRptCreativeGetAPIRequest
-明星店铺创意报表数据查询 API请求
-taobao.brand.startshop.rpt.creative.get
-
-获取明星店铺广告creative分日报表数据，只能查询近90天内的数据，包括展现量，点击量等 */
+// TaobaoBrandStartshopRptCreativeGetAPIRequest 明星店铺创意报表数据查询 API请求
+// taobao.brand.startshop.rpt.creative.get
+//
+// 获取明星店铺广告creative分日报表数据，只能查询近90天内的数据，包括展现量，点击量等
 type TaobaoBrandStartshopRptCreativeGetAPIRequest struct {
 	model.Params
 	// 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5

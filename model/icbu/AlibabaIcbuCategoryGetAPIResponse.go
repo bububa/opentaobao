@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuCategoryGetAPIResponse
-商品发布类目获取 API返回值
-alibaba.icbu.category.get
-
-获取商品发布类目 */
+// AlibabaIcbuCategoryGetAPIResponse 商品发布类目获取 API返回值
+// alibaba.icbu.category.get
+//
+// 获取商品发布类目
 type AlibabaIcbuCategoryGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuCategoryGetAPIResponseModel

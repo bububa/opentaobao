@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDevicePayUrlGetAPIResponse
-贩卖机支付二维链接获取 API返回值
-alibaba.retail.device.payUrl.get
-
-贩卖机支付二维链接获取 */
+// AlibabaRetailDevicePayUrlGetAPIResponse 贩卖机支付二维链接获取 API返回值
+// alibaba.retail.device.payUrl.get
+//
+// 贩卖机支付二维链接获取
 type AlibabaRetailDevicePayUrlGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailDevicePayUrlGetAPIResponseModel

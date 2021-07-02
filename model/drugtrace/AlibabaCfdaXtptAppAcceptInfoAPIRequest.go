@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCfdaXtptAppAcceptInfoAPIRequest
-协同平台数据下行接口 API请求
-alibaba.cfda.xtpt.app.accept.info
-
-协同平台数据下行接口 */
+// AlibabaCfdaXtptAppAcceptInfoAPIRequest 协同平台数据下行接口 API请求
+// alibaba.cfda.xtpt.app.accept.info
+//
+// 协同平台数据下行接口
 type AlibabaCfdaXtptAppAcceptInfoAPIRequest struct {
 	model.Params
 	// 接入系统唯一标识，由协同平台分配

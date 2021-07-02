@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeMessagesGetAPIRequest
-查询换货订单留言列表 API请求
-tmall.exchange.messages.get
-
-查询换货订单留言列表 */
+// TmallExchangeMessagesGetAPIRequest 查询换货订单留言列表 API请求
+// tmall.exchange.messages.get
+//
+// 查询换货订单留言列表
 type TmallExchangeMessagesGetAPIRequest struct {
 	model.Params
 	// 留言创建角色。具体包括：卖家主账户(1)、卖家子账户(2)、小二(3)、买家(4)、系统(5)、系统超时(6)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuTaskFinishAPIResponse
-完成轻任务 API返回值
-taobao.qianniu.task.finish
-
-由任务执行者调用 */
+// TaobaoQianniuTaskFinishAPIResponse 完成轻任务 API返回值
+// taobao.qianniu.task.finish
+//
+// 由任务执行者调用
 type TaobaoQianniuTaskFinishAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuTaskFinishAPIResponseModel

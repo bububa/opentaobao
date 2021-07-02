@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIResponse
-体检报告人工解读总结回传 API返回值
-alibaba.alihealth.examination.report.diagnose.order.summary
-
-记录体检报告人工解读总结 */
+// AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIResponse 体检报告人工解读总结回传 API返回值
+// alibaba.alihealth.examination.report.diagnose.order.summary
+//
+// 记录体检报告人工解读总结
 type AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIResponseModel

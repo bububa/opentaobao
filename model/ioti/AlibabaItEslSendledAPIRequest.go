@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItEslSendledAPIRequest
-厂测LED控制 API请求
-alibaba.it.esl.sendled
-
-针对厂测生产的的价签，增加led闪灯的接口，进行led 闪灯测试 */
+// AlibabaItEslSendledAPIRequest 厂测LED控制 API请求
+// alibaba.it.esl.sendled
+//
+// 针对厂测生产的的价签，增加led闪灯的接口，进行led 闪灯测试
 type AlibabaItEslSendledAPIRequest struct {
 	model.Params
 	// mac

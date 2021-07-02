@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinAxbVendorSmsInterceptAPIResponse
-AXB短信托收推送接口 API返回值
-alibaba.aliqin.axb.vendor.sms.intercept
-
-用于给供应商推送需要托收的短信 */
+// AlibabaAliqinAxbVendorSmsInterceptAPIResponse AXB短信托收推送接口 API返回值
+// alibaba.aliqin.axb.vendor.sms.intercept
+//
+// 用于给供应商推送需要托收的短信
 type AlibabaAliqinAxbVendorSmsInterceptAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinAxbVendorSmsInterceptAPIResponseModel

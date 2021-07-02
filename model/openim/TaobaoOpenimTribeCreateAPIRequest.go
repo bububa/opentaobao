@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimTribeCreateAPIRequest
-创建群 API请求
-taobao.openim.tribe.create
-
-创建一个openim的群 */
+// TaobaoOpenimTribeCreateAPIRequest 创建群 API请求
+// taobao.openim.tribe.create
+//
+// 创建一个openim的群
 type TaobaoOpenimTribeCreateAPIRequest struct {
 	model.Params
 	// 用户信息

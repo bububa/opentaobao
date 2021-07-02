@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingDiagnosistitleAPIRequest
-标题诊断 API请求
-alibaba.seaking.diagnosistitle
-
-标题诊断 */
+// AlibabaSeakingDiagnosistitleAPIRequest 标题诊断 API请求
+// alibaba.seaking.diagnosistitle
+//
+// 标题诊断
 type AlibabaSeakingDiagnosistitleAPIRequest struct {
 	model.Params
 	// 类目id,没有的时候传-1

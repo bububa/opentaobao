@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/vaccin"
 )
 
-/* AlibabaHealthVaccinNoticeMissRemind
-疫苗漏种提醒
-alibaba.health.vaccin.notice.miss.remind
-
-医生消息提醒适龄儿童按计划接种 */
+// AlibabaHealthVaccinNoticeMissRemind 疫苗漏种提醒
+// alibaba.health.vaccin.notice.miss.remind
+//
+// 医生消息提醒适龄儿童按计划接种
 func AlibabaHealthVaccinNoticeMissRemind(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeMissRemindAPIRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeMissRemindAPIResponse, error) {
 	var resp vaccin.AlibabaHealthVaccinNoticeMissRemindAPIResponse
 	err := clt.Post(req, &resp, session)

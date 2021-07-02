@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqOcrImageSyncDetectAPIResponse
-聚安全图文识别同步检测接口 API返回值
-alibaba.security.jaq.ocr.image.sync.detect
-
-图像字符识别同步检测接口 */
+// AlibabaSecurityJaqOcrImageSyncDetectAPIResponse 聚安全图文识别同步检测接口 API返回值
+// alibaba.security.jaq.ocr.image.sync.detect
+//
+// 图像字符识别同步检测接口
 type AlibabaSecurityJaqOcrImageSyncDetectAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqOcrImageSyncDetectAPIResponseModel

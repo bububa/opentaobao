@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2cCodeConvertAPIResponse
-b2c转码 API返回值
-alibaba.nlife.b2c.code.convert
-
-将商品的URL转码，ISV将该码写入RFID */
+// AlibabaNlifeB2cCodeConvertAPIResponse b2c转码 API返回值
+// alibaba.nlife.b2c.code.convert
+//
+// 将商品的URL转码，ISV将该码写入RFID
 type AlibabaNlifeB2cCodeConvertAPIResponse struct {
 	model.CommonResponse
 	AlibabaNlifeB2cCodeConvertAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2cMemberDiscountruleGetAPIResponse
-会员抵扣规则 API返回值
-alibaba.nlife.b2c.member.discountrule.get
-
-获取企业会员抵扣规则 */
+// AlibabaNlifeB2cMemberDiscountruleGetAPIResponse 会员抵扣规则 API返回值
+// alibaba.nlife.b2c.member.discountrule.get
+//
+// 获取企业会员抵扣规则
 type AlibabaNlifeB2cMemberDiscountruleGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaNlifeB2cMemberDiscountruleGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkBmPaiyangStatDataQueryAPIResponse
-派样统计数据查询 API返回值
-alibaba.wdk.bm.paiyang.stat.data.query
-
-派样统计数据查询 */
+// AlibabaWdkBmPaiyangStatDataQueryAPIResponse 派样统计数据查询 API返回值
+// alibaba.wdk.bm.paiyang.stat.data.query
+//
+// 派样统计数据查询
 type AlibabaWdkBmPaiyangStatDataQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkBmPaiyangStatDataQueryAPIResponseModel

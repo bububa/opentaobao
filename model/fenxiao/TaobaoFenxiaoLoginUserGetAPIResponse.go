@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoLoginUserGetAPIResponse
-获取分销用户登录信息 API返回值
-taobao.fenxiao.login.user.get
-
-获取用户登录信息 */
+// TaobaoFenxiaoLoginUserGetAPIResponse 获取分销用户登录信息 API返回值
+// taobao.fenxiao.login.user.get
+//
+// 获取用户登录信息
 type TaobaoFenxiaoLoginUserGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoLoginUserGetAPIResponseModel

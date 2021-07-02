@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkItemInfoGetAPIRequest
-淘宝客-公用-淘宝客商品详情查询(简版) API请求
-taobao.tbk.item.info.get
-
-淘宝客商品详情查询（简版） */
+// TaobaoTbkItemInfoGetAPIRequest 淘宝客-公用-淘宝客商品详情查询(简版) API请求
+// taobao.tbk.item.info.get
+//
+// 淘宝客商品详情查询（简版）
 type TaobaoTbkItemInfoGetAPIRequest struct {
 	model.Params
 	// 商品ID串，用,分割，最大40个

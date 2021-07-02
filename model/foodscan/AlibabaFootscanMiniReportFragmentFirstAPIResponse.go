@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFootscanMiniReportFragmentFirstAPIResponse
-第一只脚生成报告接口 API返回值
-alibaba.footscan.mini.report.fragment.first
-
-第一只脚生成报告接口 */
+// AlibabaFootscanMiniReportFragmentFirstAPIResponse 第一只脚生成报告接口 API返回值
+// alibaba.footscan.mini.report.fragment.first
+//
+// 第一只脚生成报告接口
 type AlibabaFootscanMiniReportFragmentFirstAPIResponse struct {
 	model.CommonResponse
 	AlibabaFootscanMiniReportFragmentFirstAPIResponseModel

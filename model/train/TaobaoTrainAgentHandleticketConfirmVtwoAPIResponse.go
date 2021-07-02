@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse
-代理商出票中v2--增加鉴权校验 API返回值
-taobao.train.agent.handleticket.confirm.vtwo
-
-代理商出票中 */
+// TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse 代理商出票中v2--增加鉴权校验 API返回值
+// taobao.train.agent.handleticket.confirm.vtwo
+//
+// 代理商出票中
 type TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentHandleticketConfirmVtwoAPIResponseModel

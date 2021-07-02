@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentHoldseatConfirmAPIResponse
-火车票代理商接口——确认占座是否成功 API返回值
-taobao.train.agent.holdseat.confirm
-
-火车票代理商接口——确认占座是否成功 */
+// TaobaoTrainAgentHoldseatConfirmAPIResponse 火车票代理商接口——确认占座是否成功 API返回值
+// taobao.train.agent.holdseat.confirm
+//
+// 火车票代理商接口——确认占座是否成功
 type TaobaoTrainAgentHoldseatConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentHoldseatConfirmAPIResponseModel

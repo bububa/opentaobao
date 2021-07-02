@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthNrRxQueryimageAPIResponse
-o2o查看处方图片 API返回值
-alibaba.alihealth.nr.rx.queryimage
-
-o2o商家查看处方图片，包括电子图片与纸质图片 */
+// AlibabaAlihealthNrRxQueryimageAPIResponse o2o查看处方图片 API返回值
+// alibaba.alihealth.nr.rx.queryimage
+//
+// o2o商家查看处方图片，包括电子图片与纸质图片
 type AlibabaAlihealthNrRxQueryimageAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthNrRxQueryimageAPIResponseModel

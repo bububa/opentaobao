@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAuthCertGetAPIRequest
-获取证书数据 API请求
-alibaba.auth.cert.get
-
-获取证书数据 */
+// AlibabaAuthCertGetAPIRequest 获取证书数据 API请求
+// alibaba.auth.cert.get
+//
+// 获取证书数据
 type AlibabaAuthCertGetAPIRequest struct {
 	model.Params
 	// 认证商

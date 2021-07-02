@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopFeedlistGetAPIRequest
-获取对话流列表 API请求
-taobao.ailab.aicloud.top.feedlist.get
-
-获取指定应用的对话流信息 */
+// TaobaoAilabAicloudTopFeedlistGetAPIRequest 获取对话流列表 API请求
+// taobao.ailab.aicloud.top.feedlist.get
+//
+// 获取指定应用的对话流信息
 type TaobaoAilabAicloudTopFeedlistGetAPIRequest struct {
 	model.Params
 	// 用户信息

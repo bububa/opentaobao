@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/happytrip"
 )
 
-/* AlibabaHappytripTaxiDriverBlacklistRemove
-移除司机黑名单
-alibaba.happytrip.taxi.driver.blacklist.remove
-
-移除司机黑名单 */
+// AlibabaHappytripTaxiDriverBlacklistRemove 移除司机黑名单
+// alibaba.happytrip.taxi.driver.blacklist.remove
+//
+// 移除司机黑名单
 func AlibabaHappytripTaxiDriverBlacklistRemove(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponse, error) {
 	var resp happytrip.AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponse
 	err := clt.Post(req, &resp, session)

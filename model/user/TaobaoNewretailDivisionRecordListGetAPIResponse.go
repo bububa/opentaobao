@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoNewretailDivisionRecordListGetAPIResponse
-导购分佣明细列表 API返回值
-taobao.newretail.division.record.list.get
-
-提供分页查询导购分佣明细的能力 */
+// TaobaoNewretailDivisionRecordListGetAPIResponse 导购分佣明细列表 API返回值
+// taobao.newretail.division.record.list.get
+//
+// 提供分页查询导购分佣明细的能力
 type TaobaoNewretailDivisionRecordListGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoNewretailDivisionRecordListGetAPIResponseModel

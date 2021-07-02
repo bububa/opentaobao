@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest
-往来单位查询 API请求
-alibaba.alihealth.drugtrace.top.lsyd.query.listparts
-
-查询往来单位列表 */
+// AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest 往来单位查询 API请求
+// alibaba.alihealth.drugtrace.top.lsyd.query.listparts
+//
+// 查询往来单位列表
 type AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest struct {
 	model.Params
 	// 企业唯一标识

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlicomWttOpentradeCreateorderAPIResponse
-充值送活动下单接口 API返回值
-alibaba.alicom.wtt.opentrade.createorder
-
-提供给话费宝创建淘宝订单 */
+// AlibabaAlicomWttOpentradeCreateorderAPIResponse 充值送活动下单接口 API返回值
+// alibaba.alicom.wtt.opentrade.createorder
+//
+// 提供给话费宝创建淘宝订单
 type AlibabaAlicomWttOpentradeCreateorderAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlicomWttOpentradeCreateorderAPIResponseModel

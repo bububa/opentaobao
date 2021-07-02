@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcQueueGetAPIResponse
-获取消息队列积压情况 API返回值
-taobao.tmc.queue.get
-
-根据appkey和groupName获取消息队列积压情况 */
+// TaobaoTmcQueueGetAPIResponse 获取消息队列积压情况 API返回值
+// taobao.tmc.queue.get
+//
+// 根据appkey和groupName获取消息队列积压情况
 type TaobaoTmcQueueGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTmcQueueGetAPIResponseModel

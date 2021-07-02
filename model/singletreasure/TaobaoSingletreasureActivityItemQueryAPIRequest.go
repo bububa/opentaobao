@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSingletreasureActivityItemQueryAPIRequest
-查询活动下的优惠信息 API请求
-taobao.singletreasure.activity.item.query
-
-分页查询活动下的商品优惠信息 */
+// TaobaoSingletreasureActivityItemQueryAPIRequest 查询活动下的优惠信息 API请求
+// taobao.singletreasure.activity.item.query
+//
+// 分页查询活动下的商品优惠信息
 type TaobaoSingletreasureActivityItemQueryAPIRequest struct {
 	model.Params
 	// 活动Id

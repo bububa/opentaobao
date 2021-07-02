@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosMiniappActivityCallAPIResponse
-调用活动接口 API返回值
-yunos.miniapp.activity.call
-
-用于小程序调用活动接口 */
+// YunosMiniappActivityCallAPIResponse 调用活动接口 API返回值
+// yunos.miniapp.activity.call
+//
+// 用于小程序调用活动接口
 type YunosMiniappActivityCallAPIResponse struct {
 	model.CommonResponse
 	YunosMiniappActivityCallAPIResponseModel

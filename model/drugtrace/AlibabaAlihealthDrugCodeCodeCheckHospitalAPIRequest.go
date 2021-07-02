@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest
-码核查状态同步-医院 API请求
-alibaba.alihealth.drug.code.code.check.hospital
-
-码核查状态同步-医院 */
+// AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest 码核查状态同步-医院 API请求
+// alibaba.alihealth.drug.code.code.check.hospital
+//
+// 码核查状态同步-医院
 type AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest struct {
 	model.Params
 	// 认证企业refEntId

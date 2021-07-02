@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIResponse
-分时间段获取用户历史位置信息 API返回值
-alibaba.campus.adminmap.userlocationinfo.getuserlocationinfologs
-
-分时间段获取用户历史位置信息 */
+// AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIResponse 分时间段获取用户历史位置信息 API返回值
+// alibaba.campus.adminmap.userlocationinfo.getuserlocationinfologs
+//
+// 分时间段获取用户历史位置信息
 type AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziVdsTenantApiServiceGetadminAPIResponse
-获取员工租户管理员信息（查询员工是否为租户管理员） API返回值
-alibaba.mozi.vds.tenant.api.service.getadmin
-
-获取员工租户管理员信息（查询员工是否为租户管理员） */
+// AlibabaMoziVdsTenantApiServiceGetadminAPIResponse 获取员工租户管理员信息（查询员工是否为租户管理员） API返回值
+// alibaba.mozi.vds.tenant.api.service.getadmin
+//
+// 获取员工租户管理员信息（查询员工是否为租户管理员）
 type AlibabaMoziVdsTenantApiServiceGetadminAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziVdsTenantApiServiceGetadminAPIResponseModel

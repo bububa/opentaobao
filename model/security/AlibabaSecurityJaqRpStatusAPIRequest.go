@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpStatusAPIRequest
-聚安全实人认证查询状态接口 API请求
-alibaba.security.jaq.rp.status
-
-聚安全实人认证查询状态接口 */
+// AlibabaSecurityJaqRpStatusAPIRequest 聚安全实人认证查询状态接口 API请求
+// alibaba.security.jaq.rp.status
+//
+// 聚安全实人认证查询状态接口
 type AlibabaSecurityJaqRpStatusAPIRequest struct {
 	model.Params
 	// 账号id

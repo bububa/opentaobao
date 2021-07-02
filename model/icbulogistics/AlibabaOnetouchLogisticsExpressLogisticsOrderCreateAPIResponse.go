@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponse
-快递下单 API返回值
-alibaba.onetouch.logistics.express.logistics.order.create
-
-快递下单 */
+// AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponse 快递下单 API返回值
+// alibaba.onetouch.logistics.express.logistics.order.create
+//
+// 快递下单
 type AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponseModel

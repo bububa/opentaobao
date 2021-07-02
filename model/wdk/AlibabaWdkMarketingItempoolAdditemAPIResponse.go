@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItempoolAdditemAPIResponse
-增加商品池里面的商品 API返回值
-alibaba.wdk.marketing.itempool.additem
-
-增加商品池里面的商品 */
+// AlibabaWdkMarketingItempoolAdditemAPIResponse 增加商品池里面的商品 API返回值
+// alibaba.wdk.marketing.itempool.additem
+//
+// 增加商品池里面的商品
 type AlibabaWdkMarketingItempoolAdditemAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingItempoolAdditemAPIResponseModel

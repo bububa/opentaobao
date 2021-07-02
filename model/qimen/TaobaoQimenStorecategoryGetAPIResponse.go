@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenStorecategoryGetAPIResponse
-门店类目获取接口 API返回值
-taobao.qimen.storecategory.get
-
-商家在ERP中调用该接口，获取门店类目 */
+// TaobaoQimenStorecategoryGetAPIResponse 门店类目获取接口 API返回值
+// taobao.qimen.storecategory.get
+//
+// 商家在ERP中调用该接口，获取门店类目
 type TaobaoQimenStorecategoryGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenStorecategoryGetAPIResponseModel

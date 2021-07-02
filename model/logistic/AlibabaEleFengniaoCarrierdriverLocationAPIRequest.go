@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoCarrierdriverLocationAPIRequest
-查询骑手当前位置 API请求
-alibaba.ele.fengniao.carrierdriver.location
-
-查询骑手当前位置 */
+// AlibabaEleFengniaoCarrierdriverLocationAPIRequest 查询骑手当前位置 API请求
+// alibaba.ele.fengniao.carrierdriver.location
+//
+// 查询骑手当前位置
 type AlibabaEleFengniaoCarrierdriverLocationAPIRequest struct {
 	model.Params
 	// appid

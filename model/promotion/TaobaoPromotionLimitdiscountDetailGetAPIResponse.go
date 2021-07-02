@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionLimitdiscountDetailGetAPIResponse
-限时打折详情查询 API返回值
-taobao.promotion.limitdiscount.detail.get
-
-限时打折详情查询。查询出指定限时打折的对应商品记录信息。 */
+// TaobaoPromotionLimitdiscountDetailGetAPIResponse 限时打折详情查询 API返回值
+// taobao.promotion.limitdiscount.detail.get
+//
+// 限时打折详情查询。查询出指定限时打折的对应商品记录信息。
 type TaobaoPromotionLimitdiscountDetailGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionLimitdiscountDetailGetAPIResponseModel

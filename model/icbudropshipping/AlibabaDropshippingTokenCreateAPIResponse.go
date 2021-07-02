@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDropshippingTokenCreateAPIResponse
-国际站dropshipping 选品token 创建 API返回值
-alibaba.dropshipping.token.create
-
-国际站dropshipping 选品token 创建，用于让买家有权限访问我们指定的 商品场馆 */
+// AlibabaDropshippingTokenCreateAPIResponse 国际站dropshipping 选品token 创建 API返回值
+// alibaba.dropshipping.token.create
+//
+// 国际站dropshipping 选品token 创建，用于让买家有权限访问我们指定的 商品场馆
 type AlibabaDropshippingTokenCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaDropshippingTokenCreateAPIResponseModel

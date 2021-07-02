@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupidsDeletedGetAPIResponse
-获取删除的推广组ID API返回值
-taobao.simba.adgroupids.deleted.get
-
-获取删除的推广组ID */
+// TaobaoSimbaAdgroupidsDeletedGetAPIResponse 获取删除的推广组ID API返回值
+// taobao.simba.adgroupids.deleted.get
+//
+// 获取删除的推广组ID
 type TaobaoSimbaAdgroupidsDeletedGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaAdgroupidsDeletedGetAPIResponseModel

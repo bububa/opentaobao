@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-/* AlibabaWdkorderSharestockInsuranceRefundget
-共享库存投保业务售后逆向订单数据获取
-alibaba.wdkorder.sharestock.insurance.refundget
-
-共享库存投保业务售后逆向订单数据获取 */
+// AlibabaWdkorderSharestockInsuranceRefundget 共享库存投保业务售后逆向订单数据获取
+// alibaba.wdkorder.sharestock.insurance.refundget
+//
+// 共享库存投保业务售后逆向订单数据获取
 func AlibabaWdkorderSharestockInsuranceRefundget(clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockInsuranceRefundgetAPIRequest, session string) (*wdk.AlibabaWdkorderSharestockInsuranceRefundgetAPIResponse, error) {
 	var resp wdk.AlibabaWdkorderSharestockInsuranceRefundgetAPIResponse
 	err := clt.Post(req, &resp, session)

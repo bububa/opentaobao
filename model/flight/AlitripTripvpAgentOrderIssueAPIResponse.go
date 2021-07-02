@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTripvpAgentOrderIssueAPIResponse
-廉航辅营正向订单出货接口 API返回值
-alitrip.tripvp.agent.order.issue
-
-廉航辅营正向订单出货接口 */
+// AlitripTripvpAgentOrderIssueAPIResponse 廉航辅营正向订单出货接口 API返回值
+// alitrip.tripvp.agent.order.issue
+//
+// 廉航辅营正向订单出货接口
 type AlitripTripvpAgentOrderIssueAPIResponse struct {
 	model.CommonResponse
 	AlitripTripvpAgentOrderIssueAPIResponseModel

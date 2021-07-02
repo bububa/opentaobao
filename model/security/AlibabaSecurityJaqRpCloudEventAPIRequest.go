@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpCloudEventAPIRequest
-事件上报 API请求
-alibaba.security.jaq.rp.cloud.event
-
-事件上报接口 */
+// AlibabaSecurityJaqRpCloudEventAPIRequest 事件上报 API请求
+// alibaba.security.jaq.rp.cloud.event
+//
+// 事件上报接口
 type AlibabaSecurityJaqRpCloudEventAPIRequest struct {
 	model.Params
 	// 认证token

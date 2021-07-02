@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmMemberinfoUpdateAPIRequest
-编辑会员资料 API请求
-taobao.crm.memberinfo.update
-
-编辑会员的基本资料，接口返回会员信息修改是否成功 */
+// TaobaoCrmMemberinfoUpdateAPIRequest 编辑会员资料 API请求
+// taobao.crm.memberinfo.update
+//
+// 编辑会员的基本资料，接口返回会员信息修改是否成功
 type TaobaoCrmMemberinfoUpdateAPIRequest struct {
 	model.Params
 	// 买家昵称

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallTradeAddressParseAPIResponse
-openmall服务地址区域码解析 API返回值
-taobao.openmall.trade.address.parse
-
-openmall服务，解析地址区域码，获取创建订单等接口中的区域码信息 */
+// TaobaoOpenmallTradeAddressParseAPIResponse openmall服务地址区域码解析 API返回值
+// taobao.openmall.trade.address.parse
+//
+// openmall服务，解析地址区域码，获取创建订单等接口中的区域码信息
 type TaobaoOpenmallTradeAddressParseAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenmallTradeAddressParseAPIResponseModel

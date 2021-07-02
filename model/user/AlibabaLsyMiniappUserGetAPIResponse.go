@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLsyMiniappUserGetAPIResponse
-零售云小程序获取登录用户信息 API返回值
-alibaba.lsy.miniapp.user.get
-
-零售云小程序，通过授权码获取登录的卖家账号信息 */
+// AlibabaLsyMiniappUserGetAPIResponse 零售云小程序获取登录用户信息 API返回值
+// alibaba.lsy.miniapp.user.get
+//
+// 零售云小程序，通过授权码获取登录的卖家账号信息
 type AlibabaLsyMiniappUserGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaLsyMiniappUserGetAPIResponseModel

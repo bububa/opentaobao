@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmOpenRechargeOperateAPIResponse
-储值操作接口 API返回值
-alibaba.alsc.crm.open.recharge.operate
-
-储值操作接口 */
+// AlibabaAlscCrmOpenRechargeOperateAPIResponse 储值操作接口 API返回值
+// alibaba.alsc.crm.open.recharge.operate
+//
+// 储值操作接口
 type AlibabaAlscCrmOpenRechargeOperateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmOpenRechargeOperateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleParttimeNotifyAPIResponse
-兼职通知接口 API返回值
-alibaba.idle.parttime.notify
-
-服务商侧有岗位状态变更对我们进行通知(岗位关闭, 录取状态) */
+// AlibabaIdleParttimeNotifyAPIResponse 兼职通知接口 API返回值
+// alibaba.idle.parttime.notify
+//
+// 服务商侧有岗位状态变更对我们进行通知(岗位关闭, 录取状态)
 type AlibabaIdleParttimeNotifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleParttimeNotifyAPIResponseModel

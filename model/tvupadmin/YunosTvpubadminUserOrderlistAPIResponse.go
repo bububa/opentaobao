@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminUserOrderlistAPIResponse
-获取用户订单列表 API返回值
-yunos.tvpubadmin.user.orderlist
-
-获取用户订单列表 */
+// YunosTvpubadminUserOrderlistAPIResponse 获取用户订单列表 API返回值
+// yunos.tvpubadmin.user.orderlist
+//
+// 获取用户订单列表
 type YunosTvpubadminUserOrderlistAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminUserOrderlistAPIResponseModel

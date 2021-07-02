@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsAligenieIotDeviceControlResultAPIResponse
-设备控制结果 API返回值
-alibaba.ailabs.aligenie.iot.device.control.result
-
-智能IOT解决外部厂商在云云模式在用户通过天猫精灵下发设备指令过程中，厂商指令完成，回调结果通知 */
+// AlibabaAilabsAligenieIotDeviceControlResultAPIResponse 设备控制结果 API返回值
+// alibaba.ailabs.aligenie.iot.device.control.result
+//
+// 智能IOT解决外部厂商在云云模式在用户通过天猫精灵下发设备指令过程中，厂商指令完成，回调结果通知
 type AlibabaAilabsAligenieIotDeviceControlResultAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsAligenieIotDeviceControlResultAPIResponseModel

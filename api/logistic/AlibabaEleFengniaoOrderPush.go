@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-/* AlibabaEleFengniaoOrderPush
-推送订单
-alibaba.ele.fengniao.order.push
-
-推送淘宝订单至蜂鸟开放平台配送 */
+// AlibabaEleFengniaoOrderPush 推送订单
+// alibaba.ele.fengniao.order.push
+//
+// 推送淘宝订单至蜂鸟开放平台配送
 func AlibabaEleFengniaoOrderPush(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoOrderPushAPIRequest, session string) (*logistic.AlibabaEleFengniaoOrderPushAPIResponse, error) {
 	var resp logistic.AlibabaEleFengniaoOrderPushAPIResponse
 	err := clt.Post(req, &resp, session)

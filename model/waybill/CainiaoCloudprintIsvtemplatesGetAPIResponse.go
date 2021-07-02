@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCloudprintIsvtemplatesGetAPIResponse
-获取商家使用的标准模板 API返回值
-cainiao.cloudprint.isvtemplates.get
-
-获取商家使用的标准模板 */
+// CainiaoCloudprintIsvtemplatesGetAPIResponse 获取商家使用的标准模板 API返回值
+// cainiao.cloudprint.isvtemplates.get
+//
+// 获取商家使用的标准模板
 type CainiaoCloudprintIsvtemplatesGetAPIResponse struct {
 	model.CommonResponse
 	CainiaoCloudprintIsvtemplatesGetAPIResponseModel

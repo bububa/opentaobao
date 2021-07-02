@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenOrderprocessQueryAPIResponse
-订单流水查询接口 API返回值
-taobao.qimen.orderprocess.query
-
-ERP调用订单流水查询接口 */
+// TaobaoQimenOrderprocessQueryAPIResponse 订单流水查询接口 API返回值
+// taobao.qimen.orderprocess.query
+//
+// ERP调用订单流水查询接口
 type TaobaoQimenOrderprocessQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenOrderprocessQueryAPIResponseModel

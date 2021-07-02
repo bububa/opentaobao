@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstSmsOfficialaccountOrderAPIResponse
-聚石塔订购公众号 API返回值
-taobao.jst.sms.officialaccount.order
-
-聚石塔订购公众号接口 */
+// TaobaoJstSmsOfficialaccountOrderAPIResponse 聚石塔订购公众号 API返回值
+// taobao.jst.sms.officialaccount.order
+//
+// 聚石塔订购公众号接口
 type TaobaoJstSmsOfficialaccountOrderAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsOfficialaccountOrderAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbOutInventoryChangeNotifyAPIRequest
-外部库存变化通知（企业物流用户使用） API请求
-taobao.wlb.out.inventory.change.notify
-
-拥有自有仓的企业物流用户通过该接口把自有仓的库存通知到物流宝，由物流宝维护该库存，控制前台显示库存的准确性。 */
+// TaobaoWlbOutInventoryChangeNotifyAPIRequest 外部库存变化通知（企业物流用户使用） API请求
+// taobao.wlb.out.inventory.change.notify
+//
+// 拥有自有仓的企业物流用户通过该接口把自有仓的库存通知到物流宝，由物流宝维护该库存，控制前台显示库存的准确性。
 type TaobaoWlbOutInventoryChangeNotifyAPIRequest struct {
 	model.Params
 	// WLB_ITEM--物流宝商品 IC_ITEM--淘宝商品 IC_SKU--淘宝sku

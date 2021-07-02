@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsOrderCancelNotifyAPIResponse
-单据取消接口 API返回值
-taobao.wlb.wms.order.cancel.notify
-
-单据取消接口 */
+// TaobaoWlbWmsOrderCancelNotifyAPIResponse 单据取消接口 API返回值
+// taobao.wlb.wms.order.cancel.notify
+//
+// 单据取消接口
 type TaobaoWlbWmsOrderCancelNotifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsOrderCancelNotifyAPIResponseModel

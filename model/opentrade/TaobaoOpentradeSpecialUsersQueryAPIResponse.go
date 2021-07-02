@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeSpecialUsersQueryAPIResponse
-专属下单标记信息查询 API返回值
-taobao.opentrade.special.users.query
-
-专属下单标记信息查询 */
+// TaobaoOpentradeSpecialUsersQueryAPIResponse 专属下单标记信息查询 API返回值
+// taobao.opentrade.special.users.query
+//
+// 专属下单标记信息查询
 type TaobaoOpentradeSpecialUsersQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeSpecialUsersQueryAPIResponseModel

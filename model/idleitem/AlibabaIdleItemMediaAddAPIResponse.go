@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleItemMediaAddAPIResponse
-图片上传 API返回值
-alibaba.idle.item.media.add
-
-上传图片 */
+// AlibabaIdleItemMediaAddAPIResponse 图片上传 API返回值
+// alibaba.idle.item.media.add
+//
+// 上传图片
 type AlibabaIdleItemMediaAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleItemMediaAddAPIResponseModel

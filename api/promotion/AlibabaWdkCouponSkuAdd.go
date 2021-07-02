@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-/* AlibabaWdkCouponSkuAdd
-优惠券商品增加
-alibaba.wdk.coupon.sku.add
-
-优惠券商品增加 */
+// AlibabaWdkCouponSkuAdd 优惠券商品增加
+// alibaba.wdk.coupon.sku.add
+//
+// 优惠券商品增加
 func AlibabaWdkCouponSkuAdd(clt *core.SDKClient, req *promotion.AlibabaWdkCouponSkuAddAPIRequest, session string) (*promotion.AlibabaWdkCouponSkuAddAPIResponse, error) {
 	var resp promotion.AlibabaWdkCouponSkuAddAPIResponse
 	err := clt.Post(req, &resp, session)

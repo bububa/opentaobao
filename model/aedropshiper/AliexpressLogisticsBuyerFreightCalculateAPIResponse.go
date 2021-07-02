@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressLogisticsBuyerFreightCalculateAPIResponse
-提供给买家使用的运费计算接口 API返回值
-aliexpress.logistics.buyer.freight.calculate
-
-提供给买家使用的运费计算接口 */
+// AliexpressLogisticsBuyerFreightCalculateAPIResponse 提供给买家使用的运费计算接口 API返回值
+// aliexpress.logistics.buyer.freight.calculate
+//
+// 提供给买家使用的运费计算接口
 type AliexpressLogisticsBuyerFreightCalculateAPIResponse struct {
 	model.CommonResponse
 	AliexpressLogisticsBuyerFreightCalculateAPIResponseModel

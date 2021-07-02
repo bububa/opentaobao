@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkDgVegasTljCreateAPIResponse
-淘宝客-推广者-淘礼金创建 API返回值
-taobao.tbk.dg.vegas.tlj.create
-
-创建淘礼金 */
+// TaobaoTbkDgVegasTljCreateAPIResponse 淘宝客-推广者-淘礼金创建 API返回值
+// taobao.tbk.dg.vegas.tlj.create
+//
+// 创建淘礼金
 type TaobaoTbkDgVegasTljCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkDgVegasTljCreateAPIResponseModel

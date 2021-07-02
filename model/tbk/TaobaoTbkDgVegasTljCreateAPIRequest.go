@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkDgVegasTljCreateAPIRequest
-淘宝客-推广者-淘礼金创建 API请求
-taobao.tbk.dg.vegas.tlj.create
-
-创建淘礼金 */
+// TaobaoTbkDgVegasTljCreateAPIRequest 淘宝客-推广者-淘礼金创建 API请求
+// taobao.tbk.dg.vegas.tlj.create
+//
+// 创建淘礼金
 type TaobaoTbkDgVegasTljCreateAPIRequest struct {
 	model.Params
 	// CPS佣金计划类型

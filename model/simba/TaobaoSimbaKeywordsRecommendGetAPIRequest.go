@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsRecommendGetAPIRequest
-取得一个推广组的推荐关键词列表 API请求
-taobao.simba.keywords.recommend.get
-
-取得一个推广组的推荐关键词列表 */
+// TaobaoSimbaKeywordsRecommendGetAPIRequest 取得一个推广组的推荐关键词列表 API请求
+// taobao.simba.keywords.recommend.get
+//
+// 取得一个推广组的推荐关键词列表
 type TaobaoSimbaKeywordsRecommendGetAPIRequest struct {
 	model.Params
 	// 主人昵称

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponse
-修改推广单元 API返回值
-alibaba.scbp.ad.group.update.ad.group.batch
-
-修改推广单元 */
+// AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponse 修改推广单元 API返回值
+// alibaba.scbp.ad.group.update.ad.group.batch
+//
+// 修改推广单元
 type AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponseModel

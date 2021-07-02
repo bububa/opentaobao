@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuDspDeliveryResourceMultigetAPIResponse
-优酷实时批量获取可投放设备资源 API返回值
-youku.dsp.delivery.resource.multiget
-
-优酷实时获取可投放设备资源信息,为第三方渠道提供素材获取人群识别的api,支持批量获取 */
+// YoukuDspDeliveryResourceMultigetAPIResponse 优酷实时批量获取可投放设备资源 API返回值
+// youku.dsp.delivery.resource.multiget
+//
+// 优酷实时获取可投放设备资源信息,为第三方渠道提供素材获取人群识别的api,支持批量获取
 type YoukuDspDeliveryResourceMultigetAPIResponse struct {
 	model.CommonResponse
 	YoukuDspDeliveryResourceMultigetAPIResponseModel

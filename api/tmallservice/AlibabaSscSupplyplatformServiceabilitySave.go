@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* AlibabaSscSupplyplatformServiceabilitySave
-保存服务能力
-alibaba.ssc.supplyplatform.serviceability.save
-
-保存服务能力 */
+// AlibabaSscSupplyplatformServiceabilitySave 保存服务能力
+// alibaba.ssc.supplyplatform.serviceability.save
+//
+// 保存服务能力
 func AlibabaSscSupplyplatformServiceabilitySave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceabilitySaveAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceabilitySaveAPIResponse, error) {
 	var resp tmallservice.AlibabaSscSupplyplatformServiceabilitySaveAPIResponse
 	err := clt.Post(req, &resp, session)

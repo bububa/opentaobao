@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleParttimeSynclogAPIResponse
-兼职同步日志 API返回值
-alibaba.idle.parttime.synclog
-
-提供给供应商查询的接口 */
+// AlibabaIdleParttimeSynclogAPIResponse 兼职同步日志 API返回值
+// alibaba.idle.parttime.synclog
+//
+// 提供给供应商查询的接口
 type AlibabaIdleParttimeSynclogAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleParttimeSynclogAPIResponseModel

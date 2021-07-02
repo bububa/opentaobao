@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMessageSendAPIRequest
-发送留言 API请求
-taobao.ailab.aicloud.top.message.send
-
-供准入的外部用户实现发送留言功能，APP端发送，设备端读取 */
+// TaobaoAilabAicloudTopMessageSendAPIRequest 发送留言 API请求
+// taobao.ailab.aicloud.top.message.send
+//
+// 供准入的外部用户实现发送留言功能，APP端发送，设备端读取
 type TaobaoAilabAicloudTopMessageSendAPIRequest struct {
 	model.Params
 	// 扩展信息，用于存放APP类型等

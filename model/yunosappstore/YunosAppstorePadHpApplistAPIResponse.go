@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosAppstorePadHpApplistAPIResponse
-查询HpPad appList API返回值
-yunos.appstore.pad.hp.applist
-
-提供hp pad应用群数据 */
+// YunosAppstorePadHpApplistAPIResponse 查询HpPad appList API返回值
+// yunos.appstore.pad.hp.applist
+//
+// 提供hp pad应用群数据
 type YunosAppstorePadHpApplistAPIResponse struct {
 	model.CommonResponse
 	YunosAppstorePadHpApplistAPIResponseModel

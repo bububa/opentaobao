@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/jms"
 )
 
-/* TaobaoJushitaJmsUserAdd
-添加ONS消息同步用户
-taobao.jushita.jms.user.add
-
-添加ONS消息同步用户 */
+// TaobaoJushitaJmsUserAdd 添加ONS消息同步用户
+// taobao.jushita.jms.user.add
+//
+// 添加ONS消息同步用户
 func TaobaoJushitaJmsUserAdd(clt *core.SDKClient, req *jms.TaobaoJushitaJmsUserAddAPIRequest, session string) (*jms.TaobaoJushitaJmsUserAddAPIResponse, error) {
 	var resp jms.TaobaoJushitaJmsUserAddAPIResponse
 	err := clt.Post(req, &resp, session)

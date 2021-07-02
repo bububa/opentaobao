@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWirelessShareTpwdQueryAPIResponse
-查询解析淘口令 API返回值
-taobao.wireless.share.tpwd.query
-
-查询解析淘口令 */
+// TaobaoWirelessShareTpwdQueryAPIResponse 查询解析淘口令 API返回值
+// taobao.wireless.share.tpwd.query
+//
+// 查询解析淘口令
 type TaobaoWirelessShareTpwdQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoWirelessShareTpwdQueryAPIResponseModel

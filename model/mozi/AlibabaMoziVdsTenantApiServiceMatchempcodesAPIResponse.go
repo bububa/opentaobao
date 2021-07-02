@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziVdsTenantApiServiceMatchempcodesAPIResponse
-校验组-员工是否匹配 API返回值
-alibaba.mozi.vds.tenant.api.service.matchempcodes
-
-校验组-员工是否匹配 */
+// AlibabaMoziVdsTenantApiServiceMatchempcodesAPIResponse 校验组-员工是否匹配 API返回值
+// alibaba.mozi.vds.tenant.api.service.matchempcodes
+//
+// 校验组-员工是否匹配
 type AlibabaMoziVdsTenantApiServiceMatchempcodesAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziVdsTenantApiServiceMatchempcodesAPIResponseModel

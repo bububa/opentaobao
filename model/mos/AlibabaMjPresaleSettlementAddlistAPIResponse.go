@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjPresaleSettlementAddlistAPIResponse
-预售结算数据回传 API返回值
-alibaba.mj.presale.settlement.addlist
-
-用于预售活动结算数据的回传。 */
+// AlibabaMjPresaleSettlementAddlistAPIResponse 预售结算数据回传 API返回值
+// alibaba.mj.presale.settlement.addlist
+//
+// 用于预售活动结算数据的回传。
 type AlibabaMjPresaleSettlementAddlistAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjPresaleSettlementAddlistAPIResponseModel

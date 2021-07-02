@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptTargetingtagGetAPIResponse
-搜索人群离线报表 API返回值
-taobao.simba.rpt.targetingtag.get
-
-获取搜搜人群实时报表 */
+// TaobaoSimbaRptTargetingtagGetAPIResponse 搜索人群离线报表 API返回值
+// taobao.simba.rpt.targetingtag.get
+//
+// 获取搜搜人群实时报表
 type TaobaoSimbaRptTargetingtagGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaRptTargetingtagGetAPIResponseModel

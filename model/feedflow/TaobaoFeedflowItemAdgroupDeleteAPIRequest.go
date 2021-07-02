@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemAdgroupDeleteAPIRequest
-根据单元id删除单元 API请求
-taobao.feedflow.item.adgroup.delete
-
-根据单元id删除单元 */
+// TaobaoFeedflowItemAdgroupDeleteAPIRequest 根据单元id删除单元 API请求
+// taobao.feedflow.item.adgroup.delete
+//
+// 根据单元id删除单元
 type TaobaoFeedflowItemAdgroupDeleteAPIRequest struct {
 	model.Params
 	// 计划id

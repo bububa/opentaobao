@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcMessageProduceAPIResponse
-发布单条消息 API返回值
-taobao.tmc.message.produce
-
-发布单条消息 */
+// TaobaoTmcMessageProduceAPIResponse 发布单条消息 API返回值
+// taobao.tmc.message.produce
+//
+// 发布单条消息
 type TaobaoTmcMessageProduceAPIResponse struct {
 	model.CommonResponse
 	TaobaoTmcMessageProduceAPIResponseModel

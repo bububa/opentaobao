@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkFulfillBatchOnTaskStatusChangedAPIResponse
-物流管控作业状态回传 API返回值
-alibaba.wdk.fulfill.batch.on.task.status.changed
-
-物流管控作业状态回传 */
+// AlibabaWdkFulfillBatchOnTaskStatusChangedAPIResponse 物流管控作业状态回传 API返回值
+// alibaba.wdk.fulfill.batch.on.task.status.changed
+//
+// 物流管控作业状态回传
 type AlibabaWdkFulfillBatchOnTaskStatusChangedAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkFulfillBatchOnTaskStatusChangedAPIResponseModel

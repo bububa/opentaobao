@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeGroupSyncAPIRequest
-组团购场景创建或更新组团活动 API请求
-taobao.opentrade.group.sync
-
-组团购场景中创建团购活动 */
+// TaobaoOpentradeGroupSyncAPIRequest 组团购场景创建或更新组团活动 API请求
+// taobao.opentrade.group.sync
+//
+// 组团购场景中创建团购活动
 type TaobaoOpentradeGroupSyncAPIRequest struct {
 	model.Params
 	// 组团活动开始时间

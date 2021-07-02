@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkorderSharestockFulfillGetAPIResponse
-商户订单履约数据获取 API返回值
-alibaba.wdkorder.sharestock.fulfill.get
-
-商户订单履约数据获取 */
+// AlibabaWdkorderSharestockFulfillGetAPIResponse 商户订单履约数据获取 API返回值
+// alibaba.wdkorder.sharestock.fulfill.get
+//
+// 商户订单履约数据获取
 type AlibabaWdkorderSharestockFulfillGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkorderSharestockFulfillGetAPIResponseModel

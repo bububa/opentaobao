@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCrmOmsRuleSyncAPIRequest
-商家ERP订单处理规则同步 API请求
-cainiao.crm.oms.rule.sync
-
-将商家ERP订单处理规则同步到菜鸟CRM系统 */
+// CainiaoCrmOmsRuleSyncAPIRequest 商家ERP订单处理规则同步 API请求
+// cainiao.crm.oms.rule.sync
+//
+// 将商家ERP订单处理规则同步到菜鸟CRM系统
 type CainiaoCrmOmsRuleSyncAPIRequest struct {
 	model.Params
 	// 店铺nick

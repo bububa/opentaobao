@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest
-容器被预分拣器分配到悬挂链 API请求
-taobao.wdk.equipment.conveyor.wcsbtoc.containerassignedtoconveyor
-
-容器被预分拣器分配到悬挂链 */
+// TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest 容器被预分拣器分配到悬挂链 API请求
+// taobao.wdk.equipment.conveyor.wcsbtoc.containerassignedtoconveyor
+//
+// 容器被预分拣器分配到悬挂链
 type TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest struct {
 	model.Params
 	// warehouse_code

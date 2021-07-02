@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest
-健康证服务商预约结果通知阿里健康 API请求
-alibaba.alihealth.examination.reserve.certificate.notify
-
-当ISV执行完健康证预约成功之后， 调用通知阿里健康 */
+// AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest 健康证服务商预约结果通知阿里健康 API请求
+// alibaba.alihealth.examination.reserve.certificate.notify
+//
+// 当ISV执行完健康证预约成功之后， 调用通知阿里健康
 type AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest struct {
 	model.Params
 	// 服务商预约凭证

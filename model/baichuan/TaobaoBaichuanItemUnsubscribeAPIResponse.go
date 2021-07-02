@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaichuanItemUnsubscribeAPIResponse
-单个删除订阅关系 API返回值
-taobao.baichuan.item.unsubscribe
-
-删除单个商品订阅关系 */
+// TaobaoBaichuanItemUnsubscribeAPIResponse 单个删除订阅关系 API返回值
+// taobao.baichuan.item.unsubscribe
+//
+// 删除单个商品订阅关系
 type TaobaoBaichuanItemUnsubscribeAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaichuanItemUnsubscribeAPIResponseModel

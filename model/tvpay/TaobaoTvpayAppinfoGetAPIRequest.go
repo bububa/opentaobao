@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTvpayAppinfoGetAPIRequest
-tv支付获取应用信息 API请求
-taobao.tvpay.appinfo.get
-
-tv支付获取应用信息 */
+// TaobaoTvpayAppinfoGetAPIRequest tv支付获取应用信息 API请求
+// taobao.tvpay.appinfo.get
+//
+// tv支付获取应用信息
 type TaobaoTvpayAppinfoGetAPIRequest struct {
 	model.Params
 	// 设备id

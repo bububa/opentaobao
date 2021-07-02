@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-/* AlibabaMosPosAlarm
-pos故障报警
-alibaba.mos.pos.alarm
-
-故障报警 */
+// AlibabaMosPosAlarm pos故障报警
+// alibaba.mos.pos.alarm
+//
+// 故障报警
 func AlibabaMosPosAlarm(clt *core.SDKClient, req *mos.AlibabaMosPosAlarmAPIRequest, session string) (*mos.AlibabaMosPosAlarmAPIResponse, error) {
 	var resp mos.AlibabaMosPosAlarmAPIResponse
 	err := clt.Post(req, &resp, session)

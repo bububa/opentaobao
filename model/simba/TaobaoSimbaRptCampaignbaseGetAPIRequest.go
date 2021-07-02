@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptCampaignbaseGetAPIRequest
-推广计划报表基础数据对象 API请求
-taobao.simba.rpt.campaignbase.get
-
-推广计划报表基础数据对象 */
+// TaobaoSimbaRptCampaignbaseGetAPIRequest 推广计划报表基础数据对象 API请求
+// taobao.simba.rpt.campaignbase.get
+//
+// 推广计划报表基础数据对象
 type TaobaoSimbaRptCampaignbaseGetAPIRequest struct {
 	model.Params
 	// 权限校验参数

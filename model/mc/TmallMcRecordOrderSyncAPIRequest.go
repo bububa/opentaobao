@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMcRecordOrderSyncAPIRequest
-订单信息同步 API请求
-tmall.mc.record.order.sync
-
-订单信息同步(零售云接口) */
+// TmallMcRecordOrderSyncAPIRequest 订单信息同步 API请求
+// tmall.mc.record.order.sync
+//
+// 订单信息同步(零售云接口)
 type TmallMcRecordOrderSyncAPIRequest struct {
 	model.Params
 	// 设备编码

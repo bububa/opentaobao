@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenStockchangeReportAPIResponse
-库存异动通知接口 API返回值
-taobao.qimen.stockchange.report
-
-WMS调用奇门的接口,将库存异动信息信息回传给ERP */
+// TaobaoQimenStockchangeReportAPIResponse 库存异动通知接口 API返回值
+// taobao.qimen.stockchange.report
+//
+// WMS调用奇门的接口,将库存异动信息信息回传给ERP
 type TaobaoQimenStockchangeReportAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenStockchangeReportAPIResponseModel

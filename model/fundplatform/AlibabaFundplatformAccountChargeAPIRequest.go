@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFundplatformAccountChargeAPIRequest
-资金平台余额账户充值 API请求
-alibaba.fundplatform.account.charge
-
-资金平台余额账户充值【创建账户&返回付款URL】 */
+// AlibabaFundplatformAccountChargeAPIRequest 资金平台余额账户充值 API请求
+// alibaba.fundplatform.account.charge
+//
+// 资金平台余额账户充值【创建账户&返回付款URL】
 type AlibabaFundplatformAccountChargeAPIRequest struct {
 	model.Params
 	// 用户ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest
-分时间段获取用户历史位置信息 API请求
-alibaba.campus.adminmap.userlocationinfo.getuserlocationinfologs
-
-分时间段获取用户历史位置信息 */
+// AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest 分时间段获取用户历史位置信息 API请求
+// alibaba.campus.adminmap.userlocationinfo.getuserlocationinfologs
+//
+// 分时间段获取用户历史位置信息
 type AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest struct {
 	model.Params
 	// 环境参数

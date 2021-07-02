@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttAlicbFacadeserviceGetdataAPIResponse
-影视SDK获取设备能力值 API返回值
-youku.ott.alicb.facadeservice.getdata
-
-影视SDK获取设备能力值 */
+// YoukuOttAlicbFacadeserviceGetdataAPIResponse 影视SDK获取设备能力值 API返回值
+// youku.ott.alicb.facadeservice.getdata
+//
+// 影视SDK获取设备能力值
 type YoukuOttAlicbFacadeserviceGetdataAPIResponse struct {
 	model.CommonResponse
 	YoukuOttAlicbFacadeserviceGetdataAPIResponseModel

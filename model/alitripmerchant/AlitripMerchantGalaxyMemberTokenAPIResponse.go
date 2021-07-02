@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyMemberTokenAPIResponse
-星河-校验token API返回值
-alitrip.merchant.galaxy.member.token
-
-校验或者刷新token */
+// AlitripMerchantGalaxyMemberTokenAPIResponse 星河-校验token API返回值
+// alitrip.merchant.galaxy.member.token
+//
+// 校验或者刷新token
 type AlitripMerchantGalaxyMemberTokenAPIResponse struct {
 	model.CommonResponse
 	AlitripMerchantGalaxyMemberTokenAPIResponseModel

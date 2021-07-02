@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptAdgroupkeywordeffectGetAPIRequest
-推广组下的词效果报表数据查询(明细数据不分类型查询) API请求
-taobao.simba.rpt.adgroupkeywordeffect.get
-
-推广组下的词效果报表数据查询(明细数据不分类型查询) */
+// TaobaoSimbaRptAdgroupkeywordeffectGetAPIRequest 推广组下的词效果报表数据查询(明细数据不分类型查询) API请求
+// taobao.simba.rpt.adgroupkeywordeffect.get
+//
+// 推广组下的词效果报表数据查询(明细数据不分类型查询)
 type TaobaoSimbaRptAdgroupkeywordeffectGetAPIRequest struct {
 	model.Params
 	// 主人昵称

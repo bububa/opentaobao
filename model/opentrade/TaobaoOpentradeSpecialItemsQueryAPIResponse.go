@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeSpecialItemsQueryAPIResponse
-专属下单获取商品绑定信息 API返回值
-taobao.opentrade.special.items.query
-
-专属下单获取商品绑定信息 */
+// TaobaoOpentradeSpecialItemsQueryAPIResponse 专属下单获取商品绑定信息 API返回值
+// taobao.opentrade.special.items.query
+//
+// 专属下单获取商品绑定信息
 type TaobaoOpentradeSpecialItemsQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeSpecialItemsQueryAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-/* AlibabaMoutonActivityList
-商家自运营活动列表
-alibaba.mouton.activity.list
-
-商家查询自己配置的活动列表 */
+// AlibabaMoutonActivityList 商家自运营活动列表
+// alibaba.mouton.activity.list
+//
+// 商家查询自己配置的活动列表
 func AlibabaMoutonActivityList(clt *core.SDKClient, req *promotion.AlibabaMoutonActivityListAPIRequest, session string) (*promotion.AlibabaMoutonActivityListAPIResponse, error) {
 	var resp promotion.AlibabaMoutonActivityListAPIResponse
 	err := clt.Post(req, &resp, session)

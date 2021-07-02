@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeCreateOrderAPIResponse
-订单创建 API返回值
-taobao.opentrade.create.order
-
-交易开放创建订单 */
+// TaobaoOpentradeCreateOrderAPIResponse 订单创建 API返回值
+// taobao.opentrade.create.order
+//
+// 交易开放创建订单
 type TaobaoOpentradeCreateOrderAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeCreateOrderAPIResponseModel

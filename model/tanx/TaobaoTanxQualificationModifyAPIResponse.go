@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxQualificationModifyAPIResponse
-修改资质接口 API返回值
-taobao.tanx.qualification.modify
-
-对dsp上传过的资质进行修改 */
+// TaobaoTanxQualificationModifyAPIResponse 修改资质接口 API返回值
+// taobao.tanx.qualification.modify
+//
+// 对dsp上传过的资质进行修改
 type TaobaoTanxQualificationModifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxQualificationModifyAPIResponseModel

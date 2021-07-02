@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMessageSendaudioAPIResponse
-发送语音留言 API返回值
-taobao.ailab.aicloud.top.message.sendaudio
-
-将语音的二进制byte[]通过TOP接口发送保存 */
+// TaobaoAilabAicloudTopMessageSendaudioAPIResponse 发送语音留言 API返回值
+// taobao.ailab.aicloud.top.message.sendaudio
+//
+// 将语音的二进制byte[]通过TOP接口发送保存
 type TaobaoAilabAicloudTopMessageSendaudioAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMessageSendaudioAPIResponseModel

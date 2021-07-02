@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWdkIotDeviceadminMqttTokenGetAPIResponse
-获取MQTT访问令牌 API返回值
-taobao.wdk.iot.deviceadmin.mqtt.token.get
-
-智能硬件设备动态注册和获取mqtt设备信息 */
+// TaobaoWdkIotDeviceadminMqttTokenGetAPIResponse 获取MQTT访问令牌 API返回值
+// taobao.wdk.iot.deviceadmin.mqtt.token.get
+//
+// 智能硬件设备动态注册和获取mqtt设备信息
 type TaobaoWdkIotDeviceadminMqttTokenGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWdkIotDeviceadminMqttTokenGetAPIResponseModel

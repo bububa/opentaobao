@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripIeAgentShoppingPushAPIResponse
-国际机票大卖家Shopping推送 API返回值
-taobao.alitrip.ie.agent.shopping.push
-
-用于国际机票大卖家主动推送Shopping结果更新缓存报价。 */
+// TaobaoAlitripIeAgentShoppingPushAPIResponse 国际机票大卖家Shopping推送 API返回值
+// taobao.alitrip.ie.agent.shopping.push
+//
+// 用于国际机票大卖家主动推送Shopping结果更新缓存报价。
 type TaobaoAlitripIeAgentShoppingPushAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripIeAgentShoppingPushAPIResponseModel

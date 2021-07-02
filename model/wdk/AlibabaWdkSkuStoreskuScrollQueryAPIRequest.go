@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkSkuStoreskuScrollQueryAPIRequest
-门店商品批量查询接口 API请求
-alibaba.wdk.sku.storesku.scroll.query
-
-提供门店商品批量查询接口 */
+// AlibabaWdkSkuStoreskuScrollQueryAPIRequest 门店商品批量查询接口 API请求
+// alibaba.wdk.sku.storesku.scroll.query
+//
+// 提供门店商品批量查询接口
 type AlibabaWdkSkuStoreskuScrollQueryAPIRequest struct {
 	model.Params
 	// 经营的id

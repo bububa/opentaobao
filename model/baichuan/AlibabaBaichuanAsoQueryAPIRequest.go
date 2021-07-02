@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaichuanAsoQueryAPIRequest
-查询app在设备上的安装信息 API请求
-alibaba.baichuan.aso.query
-
-查询app在设备上的安装信息 */
+// AlibabaBaichuanAsoQueryAPIRequest 查询app在设备上的安装信息 API请求
+// alibaba.baichuan.aso.query
+//
+// 查询app在设备上的安装信息
 type AlibabaBaichuanAsoQueryAPIRequest struct {
 	model.Params
 	// 1-tmail,2-taobao

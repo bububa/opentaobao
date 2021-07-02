@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTagDeleteAPIResponse
-删除关键词分组 API返回值
-alibaba.scbp.tag.delete
-
-删除关键词分组 */
+// AlibabaScbpTagDeleteAPIResponse 删除关键词分组 API返回值
+// alibaba.scbp.tag.delete
+//
+// 删除关键词分组
 type AlibabaScbpTagDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpTagDeleteAPIResponseModel

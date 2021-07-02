@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmMembersSearchAPIResponse
-获取卖家会员（高级查询） API返回值
-taobao.crm.members.search
-
-会员列表的高级查询，接口返回符合条件的会员列表.<br><br/>注：建议获取09年以后的数据，09年之前的数据不是很完整 */
+// TaobaoCrmMembersSearchAPIResponse 获取卖家会员（高级查询） API返回值
+// taobao.crm.members.search
+//
+// 会员列表的高级查询，接口返回符合条件的会员列表.<br><br/>注：建议获取09年以后的数据，09年之前的数据不是很完整
 type TaobaoCrmMembersSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmMembersSearchAPIResponseModel

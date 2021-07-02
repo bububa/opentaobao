@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinPovUpdateAPIResponse
-新增/变更接种点信息 API返回值
-alibaba.health.vaccin.pov.update
-
-ISV 将疫苗的接种点信息同步到免疫规划中心，提醒用户接种时可提供接种点详情。 */
+// AlibabaHealthVaccinPovUpdateAPIResponse 新增/变更接种点信息 API返回值
+// alibaba.health.vaccin.pov.update
+//
+// ISV 将疫苗的接种点信息同步到免疫规划中心，提醒用户接种时可提供接种点详情。
 type AlibabaHealthVaccinPovUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthVaccinPovUpdateAPIResponseModel

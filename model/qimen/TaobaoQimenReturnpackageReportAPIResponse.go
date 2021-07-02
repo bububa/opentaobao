@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenReturnpackageReportAPIResponse
-退货包裹状态通知接口 API返回值
-taobao.qimen.returnpackage.report
-
-退货包裹状态通知接口 */
+// TaobaoQimenReturnpackageReportAPIResponse 退货包裹状态通知接口 API返回值
+// taobao.qimen.returnpackage.report
+//
+// 退货包裹状态通知接口
 type TaobaoQimenReturnpackageReportAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenReturnpackageReportAPIResponseModel

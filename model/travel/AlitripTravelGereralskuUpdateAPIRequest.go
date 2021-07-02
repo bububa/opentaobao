@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelGereralskuUpdateAPIRequest
-发布SKU信息（如果properties重复 则更新） API请求
-alitrip.travel.gereralsku.update
-
-发布SKU信息（如果properties重复 则更新） */
+// AlitripTravelGereralskuUpdateAPIRequest 发布SKU信息（如果properties重复 则更新） API请求
+// alitrip.travel.gereralsku.update
+//
+// 发布SKU信息（如果properties重复 则更新）
 type AlitripTravelGereralskuUpdateAPIRequest struct {
 	model.Params
 	// 淘宝商品ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRecycleOfnpreredpacketGetAPIResponse
-服务商查询前置补贴红包的最新数据 API返回值
-taobao.recycle.ofnpreredpacket.get
-
-服务商查询前置补贴红包的最新数据 */
+// TaobaoRecycleOfnpreredpacketGetAPIResponse 服务商查询前置补贴红包的最新数据 API返回值
+// taobao.recycle.ofnpreredpacket.get
+//
+// 服务商查询前置补贴红包的最新数据
 type TaobaoRecycleOfnpreredpacketGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoRecycleOfnpreredpacketGetAPIResponseModel

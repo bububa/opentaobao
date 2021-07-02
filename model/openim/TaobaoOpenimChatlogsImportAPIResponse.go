@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimChatlogsImportAPIResponse
-openim单聊消息导入 API返回值
-taobao.openim.chatlogs.import
-
-提供openim账号的聊天消息导入功能 */
+// TaobaoOpenimChatlogsImportAPIResponse openim单聊消息导入 API返回值
+// taobao.openim.chatlogs.import
+//
+// 提供openim账号的聊天消息导入功能
 type TaobaoOpenimChatlogsImportAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimChatlogsImportAPIResponseModel

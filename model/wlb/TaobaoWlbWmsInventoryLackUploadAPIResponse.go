@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsInventoryLackUploadAPIResponse
-缺货通知 API返回值
-taobao.wlb.wms.inventory.lack.upload
-
-缺货通知 */
+// TaobaoWlbWmsInventoryLackUploadAPIResponse 缺货通知 API返回值
+// taobao.wlb.wms.inventory.lack.upload
+//
+// 缺货通知
 type TaobaoWlbWmsInventoryLackUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsInventoryLackUploadAPIResponseModel

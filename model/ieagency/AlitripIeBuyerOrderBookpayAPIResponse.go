@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripIeBuyerOrderBookpayAPIResponse
-【国际机票】下单预定支付 API返回值
-alitrip.ie.buyer.order.bookpay
-
-【国际机票】 生单预定支付接口 */
+// AlitripIeBuyerOrderBookpayAPIResponse 【国际机票】下单预定支付 API返回值
+// alitrip.ie.buyer.order.bookpay
+//
+// 【国际机票】 生单预定支付接口
 type AlitripIeBuyerOrderBookpayAPIResponse struct {
 	model.CommonResponse
 	AlitripIeBuyerOrderBookpayAPIResponseModel

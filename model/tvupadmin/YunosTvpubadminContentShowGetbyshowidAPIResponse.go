@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentShowGetbyshowidAPIResponse
-迎客松根据节目id获取节目元数据 API返回值
-yunos.tvpubadmin.content.show.getbyshowid
-
-迎客松根据节目id获取节目元数据 */
+// YunosTvpubadminContentShowGetbyshowidAPIResponse 迎客松根据节目id获取节目元数据 API返回值
+// yunos.tvpubadmin.content.show.getbyshowid
+//
+// 迎客松根据节目id获取节目元数据
 type YunosTvpubadminContentShowGetbyshowidAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentShowGetbyshowidAPIResponseModel

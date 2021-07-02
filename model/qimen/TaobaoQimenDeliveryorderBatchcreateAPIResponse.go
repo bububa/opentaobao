@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenDeliveryorderBatchcreateAPIResponse
-发货单创建批量接口 API返回值
-taobao.qimen.deliveryorder.batchcreate
-
-ERP调用接口，将发货信息批量推送给WMS */
+// TaobaoQimenDeliveryorderBatchcreateAPIResponse 发货单创建批量接口 API返回值
+// taobao.qimen.deliveryorder.batchcreate
+//
+// ERP调用接口，将发货信息批量推送给WMS
 type TaobaoQimenDeliveryorderBatchcreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenDeliveryorderBatchcreateAPIResponseModel

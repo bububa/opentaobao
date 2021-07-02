@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstTradeSellerOrderListQueryAPIResponse
-订单列表查看(卖家视角) API返回值
-alibaba.lst.trade.seller.order.list.query
-
-卖家视角订单查询，查询授权经销商订单列表 */
+// AlibabaLstTradeSellerOrderListQueryAPIResponse 订单列表查看(卖家视角) API返回值
+// alibaba.lst.trade.seller.order.list.query
+//
+// 卖家视角订单查询，查询授权经销商订单列表
 type AlibabaLstTradeSellerOrderListQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstTradeSellerOrderListQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTripvpAgentOrderSearchAPIResponse
-【国际机票】查询辅营订单列表 API返回值
-alitrip.tripvp.agent.order.search
-
-【国际机票】查询辅营订单列表 */
+// AlitripTripvpAgentOrderSearchAPIResponse 【国际机票】查询辅营订单列表 API返回值
+// alitrip.tripvp.agent.order.search
+//
+// 【国际机票】查询辅营订单列表
 type AlitripTripvpAgentOrderSearchAPIResponse struct {
 	model.CommonResponse
 	AlitripTripvpAgentOrderSearchAPIResponseModel

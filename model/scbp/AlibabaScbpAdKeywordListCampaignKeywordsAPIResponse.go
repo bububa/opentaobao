@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordListCampaignKeywordsAPIResponse
-获取计划关键词 API返回值
-alibaba.scbp.ad.keyword.list.campaign.keywords
-
-获取计划关键词 */
+// AlibabaScbpAdKeywordListCampaignKeywordsAPIResponse 获取计划关键词 API返回值
+// alibaba.scbp.ad.keyword.list.campaign.keywords
+//
+// 获取计划关键词
 type AlibabaScbpAdKeywordListCampaignKeywordsAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdKeywordListCampaignKeywordsAPIResponseModel

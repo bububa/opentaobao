@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeQueueQueryAPIResponse
-尖货交易排队信息查询 API返回值
-taobao.opentrade.queue.query
-
-尖货交易排队信息查询 */
+// TaobaoOpentradeQueueQueryAPIResponse 尖货交易排队信息查询 API返回值
+// taobao.opentrade.queue.query
+//
+// 尖货交易排队信息查询
 type TaobaoOpentradeQueueQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeQueueQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclUpdategrantroletouserAPIRequest
-修改用户到角色关系 API请求
-alibaba.campus.acl.updategrantroletouser
-
-修改用户到角色关系 */
+// AlibabaCampusAclUpdategrantroletouserAPIRequest 修改用户到角色关系 API请求
+// alibaba.campus.acl.updategrantroletouser
+//
+// 修改用户到角色关系
 type AlibabaCampusAclUpdategrantroletouserAPIRequest struct {
 	model.Params
 	// 公司id

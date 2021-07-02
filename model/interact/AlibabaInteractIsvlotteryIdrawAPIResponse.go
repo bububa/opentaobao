@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractIsvlotteryIdrawAPIResponse
-互动到店抽奖 API返回值
-alibaba.interact.isvlottery.idraw
-
-互动到店抽奖 */
+// AlibabaInteractIsvlotteryIdrawAPIResponse 互动到店抽奖 API返回值
+// alibaba.interact.isvlottery.idraw
+//
+// 互动到店抽奖
 type AlibabaInteractIsvlotteryIdrawAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractIsvlotteryIdrawAPIResponseModel

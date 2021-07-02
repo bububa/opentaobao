@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsAddressModifyAPIResponse
-卖家地址库修改 API返回值
-taobao.logistics.address.modify
-
-卖家地址库修改 */
+// TaobaoLogisticsAddressModifyAPIResponse 卖家地址库修改 API返回值
+// taobao.logistics.address.modify
+//
+// 卖家地址库修改
 type TaobaoLogisticsAddressModifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsAddressModifyAPIResponseModel

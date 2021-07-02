@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCloudprintCustomareaUpdateAPIResponse
-自定义区内容更新 API返回值
-cainiao.cloudprint.customarea.update
-
-自定义区内容更新 */
+// CainiaoCloudprintCustomareaUpdateAPIResponse 自定义区内容更新 API返回值
+// cainiao.cloudprint.customarea.update
+//
+// 自定义区内容更新
 type CainiaoCloudprintCustomareaUpdateAPIResponse struct {
 	model.CommonResponse
 	CainiaoCloudprintCustomareaUpdateAPIResponseModel

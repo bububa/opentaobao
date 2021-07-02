@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest
-删除人群实例中的指定买家 API请求
-taobao.crm.exchange.crowdinstance.delete
-
-删除人群实例中的指定买家 */
+// TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest 删除人群实例中的指定买家 API请求
+// taobao.crm.exchange.crowdinstance.delete
+//
+// 删除人群实例中的指定买家
 type TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest struct {
 	model.Params
 	// 操作原因

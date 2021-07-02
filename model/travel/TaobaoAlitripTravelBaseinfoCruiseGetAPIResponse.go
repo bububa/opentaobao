@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse
-【API3.0】度假线路商品发布时基础信息获取接口：邮轮扩展信息获取 API返回值
-taobao.alitrip.travel.baseinfo.cruise.get
-
-旅行度假新商品发布时可用的扩展接口，用于获取邮轮类目相关扩展信息。 */
+// TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse 【API3.0】度假线路商品发布时基础信息获取接口：邮轮扩展信息获取 API返回值
+// taobao.alitrip.travel.baseinfo.cruise.get
+//
+// 旅行度假新商品发布时可用的扩展接口，用于获取邮轮类目相关扩展信息。
 type TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTravelBaseinfoCruiseGetAPIResponseModel

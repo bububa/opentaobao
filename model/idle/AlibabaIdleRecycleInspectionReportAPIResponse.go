@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleRecycleInspectionReportAPIResponse
-鉴定报告 API返回值
-alibaba.idle.recycle.inspection.report
-
-回收商鉴定报告 */
+// AlibabaIdleRecycleInspectionReportAPIResponse 鉴定报告 API返回值
+// alibaba.idle.recycle.inspection.report
+//
+// 回收商鉴定报告
 type AlibabaIdleRecycleInspectionReportAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleRecycleInspectionReportAPIResponseModel

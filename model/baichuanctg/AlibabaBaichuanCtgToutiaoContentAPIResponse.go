@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaichuanCtgToutiaoContentAPIResponse
-微博输出头条数据 API返回值
-alibaba.baichuan.ctg.toutiao.content
-
-百川头条内容获取 */
+// AlibabaBaichuanCtgToutiaoContentAPIResponse 微博输出头条数据 API返回值
+// alibaba.baichuan.ctg.toutiao.content
+//
+// 百川头条内容获取
 type AlibabaBaichuanCtgToutiaoContentAPIResponse struct {
 	model.CommonResponse
 	AlibabaBaichuanCtgToutiaoContentAPIResponseModel

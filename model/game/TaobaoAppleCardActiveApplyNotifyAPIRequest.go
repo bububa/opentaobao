@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAppleCardActiveApplyNotifyAPIRequest
-苹果卡密申请激活回调接口 API请求
-taobao.apple.card.active.apply.notify
-
-苹果卡密申请激活回调接口 */
+// TaobaoAppleCardActiveApplyNotifyAPIRequest 苹果卡密申请激活回调接口 API请求
+// taobao.apple.card.active.apply.notify
+//
+// 苹果卡密申请激活回调接口
 type TaobaoAppleCardActiveApplyNotifyAPIRequest struct {
 	model.Params
 	// 卡列表

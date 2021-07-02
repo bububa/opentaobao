@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCfdaXtptAppAcceptInfoAPIResponse
-协同平台数据下行接口 API返回值
-alibaba.cfda.xtpt.app.accept.info
-
-协同平台数据下行接口 */
+// AlibabaCfdaXtptAppAcceptInfoAPIResponse 协同平台数据下行接口 API返回值
+// alibaba.cfda.xtpt.app.accept.info
+//
+// 协同平台数据下行接口
 type AlibabaCfdaXtptAppAcceptInfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaCfdaXtptAppAcceptInfoAPIResponseModel

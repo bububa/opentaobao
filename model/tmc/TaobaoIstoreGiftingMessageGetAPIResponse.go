@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoIstoreGiftingMessageGetAPIResponse
-gifting消息获取 API返回值
-taobao.istore.gifting.message.get
-
-该api通过参数查询对应的gifting消息 */
+// TaobaoIstoreGiftingMessageGetAPIResponse gifting消息获取 API返回值
+// taobao.istore.gifting.message.get
+//
+// 该api通过参数查询对应的gifting消息
 type TaobaoIstoreGiftingMessageGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoIstoreGiftingMessageGetAPIResponseModel

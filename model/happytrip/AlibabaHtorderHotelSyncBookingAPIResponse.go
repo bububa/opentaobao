@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHtorderHotelSyncBookingAPIResponse
-未来酒店亲橙客栈预订信息同步 API返回值
-alibaba.htorder.hotel.sync.booking
-
-未来酒店亲橙客栈预订信息同步 */
+// AlibabaHtorderHotelSyncBookingAPIResponse 未来酒店亲橙客栈预订信息同步 API返回值
+// alibaba.htorder.hotel.sync.booking
+//
+// 未来酒店亲橙客栈预订信息同步
 type AlibabaHtorderHotelSyncBookingAPIResponse struct {
 	model.CommonResponse
 	AlibabaHtorderHotelSyncBookingAPIResponseModel

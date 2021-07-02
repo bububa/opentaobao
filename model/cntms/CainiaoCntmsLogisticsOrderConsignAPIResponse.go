@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCntmsLogisticsOrderConsignAPIResponse
-菜鸟配商家仓库发货 API返回值
-cainiao.cntms.logistics.order.consign
-
-商家包装打印面单结束后，通知菜鸟包裹要发货 */
+// CainiaoCntmsLogisticsOrderConsignAPIResponse 菜鸟配商家仓库发货 API返回值
+// cainiao.cntms.logistics.order.consign
+//
+// 商家包装打印面单结束后，通知菜鸟包裹要发货
 type CainiaoCntmsLogisticsOrderConsignAPIResponse struct {
 	model.CommonResponse
 	CainiaoCntmsLogisticsOrderConsignAPIResponseModel

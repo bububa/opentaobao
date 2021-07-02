@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInventoryQueryAPIRequest
-查询商品库存信息 API请求
-taobao.inventory.query
-
-建议使用新接口：tmall.inventory.query.forstore ，新ISV不推荐使用。
-商家查询商品总体库存信息 */
+// TaobaoInventoryQueryAPIRequest 查询商品库存信息 API请求
+// taobao.inventory.query
+//
+// 建议使用新接口：tmall.inventory.query.forstore ，新ISV不推荐使用。
+// 商家查询商品总体库存信息
 type TaobaoInventoryQueryAPIRequest struct {
 	model.Params
 	// 后端商品ID 列表，控制到50个

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbImportsResourceTransferstoreGetAPIRequest
-根据指定的资源获取所有中转仓列表 API请求
-taobao.wlb.imports.resource.transferstore.get
-
-根据指定的资源获取所有中转仓列表 */
+// TaobaoWlbImportsResourceTransferstoreGetAPIRequest 根据指定的资源获取所有中转仓列表 API请求
+// taobao.wlb.imports.resource.transferstore.get
+//
+// 根据指定的资源获取所有中转仓列表
 type TaobaoWlbImportsResourceTransferstoreGetAPIRequest struct {
 	model.Params
 	// 通过taobao.wlb.imports.resource.get接口查询出来的资源ID

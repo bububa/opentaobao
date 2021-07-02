@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFundplatformAccountQueryInfoAPIResponse
-查询账户信息 API返回值
-alibaba.fundplatform.account.query.info
-
-外部查询资金平台用户账户信息 */
+// AlibabaFundplatformAccountQueryInfoAPIResponse 查询账户信息 API返回值
+// alibaba.fundplatform.account.query.info
+//
+// 外部查询资金平台用户账户信息
 type AlibabaFundplatformAccountQueryInfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaFundplatformAccountQueryInfoAPIResponseModel

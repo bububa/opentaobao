@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaServicecenterWorkcardCreateAPIResponse
-服务平台工单创建接口 API返回值
-alibaba.servicecenter.workcard.create
-
-创建服务平台工单 */
+// AlibabaServicecenterWorkcardCreateAPIResponse 服务平台工单创建接口 API返回值
+// alibaba.servicecenter.workcard.create
+//
+// 创建服务平台工单
 type AlibabaServicecenterWorkcardCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaServicecenterWorkcardCreateAPIResponseModel

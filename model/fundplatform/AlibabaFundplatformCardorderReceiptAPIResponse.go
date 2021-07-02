@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFundplatformCardorderReceiptAPIResponse
-通知确认收货 API返回值
-alibaba.fundplatform.cardorder.receipt
-
-告知卡商这一批储值卡已经被用户确认收货 */
+// AlibabaFundplatformCardorderReceiptAPIResponse 通知确认收货 API返回值
+// alibaba.fundplatform.cardorder.receipt
+//
+// 告知卡商这一批储值卡已经被用户确认收货
 type AlibabaFundplatformCardorderReceiptAPIResponse struct {
 	model.CommonResponse
 	AlibabaFundplatformCardorderReceiptAPIResponseModel

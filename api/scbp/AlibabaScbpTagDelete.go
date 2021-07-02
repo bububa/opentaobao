@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-/* AlibabaScbpTagDelete
-删除关键词分组
-alibaba.scbp.tag.delete
-
-删除关键词分组 */
+// AlibabaScbpTagDelete 删除关键词分组
+// alibaba.scbp.tag.delete
+//
+// 删除关键词分组
 func AlibabaScbpTagDelete(clt *core.SDKClient, req *scbp.AlibabaScbpTagDeleteAPIRequest, session string) (*scbp.AlibabaScbpTagDeleteAPIResponse, error) {
 	var resp scbp.AlibabaScbpTagDeleteAPIResponse
 	err := clt.Post(req, &resp, session)

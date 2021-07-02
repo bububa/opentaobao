@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInteractiveListGetbyuserAPIResponse
-用户获取视频互动列表 API返回值
-taobao.interactive.list.getbyuser
-
-根据用户来获取用户编辑的互动列表 */
+// TaobaoInteractiveListGetbyuserAPIResponse 用户获取视频互动列表 API返回值
+// taobao.interactive.list.getbyuser
+//
+// 根据用户来获取用户编辑的互动列表
 type TaobaoInteractiveListGetbyuserAPIResponse struct {
 	model.CommonResponse
 	TaobaoInteractiveListGetbyuserAPIResponseModel

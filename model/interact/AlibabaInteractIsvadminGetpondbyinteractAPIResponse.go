@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractIsvadminGetpondbyinteractAPIResponse
-根据互动实例ID查询奖池信息 API返回值
-alibaba.interact.isvadmin.getpondbyinteract
-
-根据互动实例ID查询奖池信息 */
+// AlibabaInteractIsvadminGetpondbyinteractAPIResponse 根据互动实例ID查询奖池信息 API返回值
+// alibaba.interact.isvadmin.getpondbyinteract
+//
+// 根据互动实例ID查询奖池信息
 type AlibabaInteractIsvadminGetpondbyinteractAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractIsvadminGetpondbyinteractAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest
-上传单据后处理状态查询 API请求
-alibaba.alihealth.drugtrace.top.lsyd.query.billstatus
-
-单据处理状态查询 */
+// AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest 上传单据后处理状态查询 API请求
+// alibaba.alihealth.drugtrace.top.lsyd.query.billstatus
+//
+// 单据处理状态查询
 type AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest struct {
 	model.Params
 	// 企业ID

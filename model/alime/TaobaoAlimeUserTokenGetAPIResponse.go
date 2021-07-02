@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlimeUserTokenGetAPIResponse
-获取用户免登录令牌 API返回值
-taobao.alime.user.token.get
-
-根据第三账号信息获取用户的免登录令牌 */
+// TaobaoAlimeUserTokenGetAPIResponse 获取用户免登录令牌 API返回值
+// taobao.alime.user.token.get
+//
+// 根据第三账号信息获取用户的免登录令牌
 type TaobaoAlimeUserTokenGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlimeUserTokenGetAPIResponseModel

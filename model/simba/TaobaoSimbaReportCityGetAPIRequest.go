@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaReportCityGetAPIRequest
-获取城市维度报表 API请求
-taobao.simba.report.city.get
-
-获取城市维度报表 */
+// TaobaoSimbaReportCityGetAPIRequest 获取城市维度报表 API请求
+// taobao.simba.report.city.get
+//
+// 获取城市维度报表
 type TaobaoSimbaReportCityGetAPIRequest struct {
 	model.Params
 	// 昵称

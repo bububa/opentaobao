@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelMultiplerateUpdateAPIResponse
-复杂价格推送接口（全量更新） API返回值
-taobao.xhotel.multiplerate.update
-
-酒店产品库复杂rate（多人价，连住价等）更新
-同时完全涵盖taobao.xhotel.rate.update的功能 */
+// TaobaoXhotelMultiplerateUpdateAPIResponse 复杂价格推送接口（全量更新） API返回值
+// taobao.xhotel.multiplerate.update
+//
+// 酒店产品库复杂rate（多人价，连住价等）更新
+// 同时完全涵盖taobao.xhotel.rate.update的功能
 type TaobaoXhotelMultiplerateUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelMultiplerateUpdateAPIResponseModel

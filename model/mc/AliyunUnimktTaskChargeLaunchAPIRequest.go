@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunUnimktTaskChargeLaunchAPIRequest
-云码权益查询 API请求
-aliyun.unimkt.task.charge.launch
-
-云码线上流量投放链路，用于判断用户是否有匹配的投放计划 */
+// AliyunUnimktTaskChargeLaunchAPIRequest 云码权益查询 API请求
+// aliyun.unimkt.task.charge.launch
+//
+// 云码线上流量投放链路，用于判断用户是否有匹配的投放计划
 type AliyunUnimktTaskChargeLaunchAPIRequest struct {
 	model.Params
 	// 服务商附加url参数

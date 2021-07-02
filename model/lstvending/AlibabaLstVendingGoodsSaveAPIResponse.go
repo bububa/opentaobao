@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstVendingGoodsSaveAPIResponse
-自动售卖机商品回传 API返回值
-alibaba.lst.vending.goods.save
-
-零售通自动售卖机商品数据回流。 */
+// AlibabaLstVendingGoodsSaveAPIResponse 自动售卖机商品回传 API返回值
+// alibaba.lst.vending.goods.save
+//
+// 零售通自动售卖机商品数据回流。
 type AlibabaLstVendingGoodsSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstVendingGoodsSaveAPIResponseModel

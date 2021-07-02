@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFootscanMiniSavedAPIRequest
-更新报告状态 API请求
-alibaba.footscan.mini.saved
-
-更新报告状态接口 */
+// AlibabaFootscanMiniSavedAPIRequest 更新报告状态 API请求
+// alibaba.footscan.mini.saved
+//
+// 更新报告状态接口
 type AlibabaFootscanMiniSavedAPIRequest struct {
 	model.Params
 	// 平台分配的token

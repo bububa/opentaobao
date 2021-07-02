@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelHouseAddAPIResponse
-非标准民宿房源添加 API返回值
-taobao.xhotel.house.add
-
-添加酒店或更新酒店 */
+// TaobaoXhotelHouseAddAPIResponse 非标准民宿房源添加 API返回值
+// taobao.xhotel.house.add
+//
+// 添加酒店或更新酒店
 type TaobaoXhotelHouseAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelHouseAddAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoChainstoreUpdateAPIResponse
-修改门店信息接口 API返回值
-alibaba.ele.fengniao.chainstore.update
-
-修改门店的经纬度，文本地址，电话，门店名 */
+// AlibabaEleFengniaoChainstoreUpdateAPIResponse 修改门店信息接口 API返回值
+// alibaba.ele.fengniao.chainstore.update
+//
+// 修改门店的经纬度，文本地址，电话，门店名
 type AlibabaEleFengniaoChainstoreUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoChainstoreUpdateAPIResponseModel

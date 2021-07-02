@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeProjectSubmitAPIResponse
-提交楼盘信息 API返回值
-alibaba.alihouse.newhome.project.submit
-
-提交楼盘信息 */
+// AlibabaAlihouseNewhomeProjectSubmitAPIResponse 提交楼盘信息 API返回值
+// alibaba.alihouse.newhome.project.submit
+//
+// 提交楼盘信息
 type AlibabaAlihouseNewhomeProjectSubmitAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihouseNewhomeProjectSubmitAPIResponseModel

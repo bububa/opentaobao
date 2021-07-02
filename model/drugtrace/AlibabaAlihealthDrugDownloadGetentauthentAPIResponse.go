@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugDownloadGetentauthentAPIResponse
-获取授权企业列表 API返回值
-alibaba.alihealth.drug.download.getentauthent
-
-D2D数据落地获取授权企业列表 */
+// AlibabaAlihealthDrugDownloadGetentauthentAPIResponse 获取授权企业列表 API返回值
+// alibaba.alihealth.drug.download.getentauthent
+//
+// D2D数据落地获取授权企业列表
 type AlibabaAlihealthDrugDownloadGetentauthentAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugDownloadGetentauthentAPIResponseModel

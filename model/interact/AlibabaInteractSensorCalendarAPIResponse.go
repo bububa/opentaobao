@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorCalendarAPIResponse
-天猫互动游戏开放平台需要授权的传感器类接口(日历提醒) API返回值
-alibaba.interact.sensor.calendar
-
-天猫互动游戏开放平台需要授权的传感器类接口(日历提醒) */
+// AlibabaInteractSensorCalendarAPIResponse 天猫互动游戏开放平台需要授权的传感器类接口(日历提醒) API返回值
+// alibaba.interact.sensor.calendar
+//
+// 天猫互动游戏开放平台需要授权的传感器类接口(日历提醒)
 type AlibabaInteractSensorCalendarAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorCalendarAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlLampAPIResponse
-台灯控制 API返回值
-taobao.ailab.aicloud.top.device.control.lamp
-
-台灯控制 */
+// TaobaoAilabAicloudTopDeviceControlLampAPIResponse 台灯控制 API返回值
+// taobao.ailab.aicloud.top.device.control.lamp
+//
+// 台灯控制
 type TaobaoAilabAicloudTopDeviceControlLampAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceControlLampAPIResponseModel

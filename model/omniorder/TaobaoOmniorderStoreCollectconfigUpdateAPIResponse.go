@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreCollectconfigUpdateAPIResponse
-门店自提配置修改 API返回值
-taobao.omniorder.store.collectconfig.update
-
-修改门店自提配置内容 */
+// TaobaoOmniorderStoreCollectconfigUpdateAPIResponse 门店自提配置修改 API返回值
+// taobao.omniorder.store.collectconfig.update
+//
+// 修改门店自提配置内容
 type TaobaoOmniorderStoreCollectconfigUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderStoreCollectconfigUpdateAPIResponseModel

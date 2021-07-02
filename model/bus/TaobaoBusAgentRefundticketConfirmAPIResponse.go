@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusAgentRefundticketConfirmAPIResponse
-商家top回调退款明细 API返回值
-taobao.bus.agent.refundticket.confirm
-
-商家通过top回调告知平台退款明细 */
+// TaobaoBusAgentRefundticketConfirmAPIResponse 商家top回调退款明细 API返回值
+// taobao.bus.agent.refundticket.confirm
+//
+// 商家通过top回调告知平台退款明细
 type TaobaoBusAgentRefundticketConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusAgentRefundticketConfirmAPIResponseModel

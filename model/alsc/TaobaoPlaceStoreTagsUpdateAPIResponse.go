@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStoreTagsUpdateAPIResponse
-门店打标去标 API返回值
-taobao.place.store.tags.update
-
-门店打标去标 */
+// TaobaoPlaceStoreTagsUpdateAPIResponse 门店打标去标 API返回值
+// taobao.place.store.tags.update
+//
+// 门店打标去标
 type TaobaoPlaceStoreTagsUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoPlaceStoreTagsUpdateAPIResponseModel

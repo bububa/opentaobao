@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeGetAPIRequest
-获取单笔换货详情 API请求
-tmall.exchange.get
-
-获取单笔换货详情 */
+// TmallExchangeGetAPIRequest 获取单笔换货详情 API请求
+// tmall.exchange.get
+//
+// 获取单笔换货详情
 type TmallExchangeGetAPIRequest struct {
 	model.Params
 	// 换货单号ID

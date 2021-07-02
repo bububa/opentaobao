@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse
-迎客松查看小酷宝桌面坑位元数据列表 API返回值
-yunos.tvpubadmin.content.tableaudit.querychilddesktop
-
-迎客松查看小酷宝桌面坑位元数据列表 */
+// YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse 迎客松查看小酷宝桌面坑位元数据列表 API返回值
+// yunos.tvpubadmin.content.tableaudit.querychilddesktop
+//
+// 迎客松查看小酷宝桌面坑位元数据列表
 type YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentTableauditQuerychilddesktopAPIResponseModel

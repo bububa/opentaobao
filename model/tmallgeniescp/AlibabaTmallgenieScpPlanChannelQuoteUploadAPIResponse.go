@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse
-9.1-同步渠道配额 API返回值
-alibaba.tmallgenie.scp.plan.channel.quote.upload
-
-同步渠道配额 */
+// AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse 9.1-同步渠道配额 API返回值
+// alibaba.tmallgenie.scp.plan.channel.quote.upload
+//
+// 同步渠道配额
 type AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponseModel

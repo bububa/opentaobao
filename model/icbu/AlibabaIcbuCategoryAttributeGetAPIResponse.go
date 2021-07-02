@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuCategoryAttributeGetAPIResponse
-类目属性获取 API返回值
-alibaba.icbu.category.attribute.get
-
-根据类目ID获取系统定义的属性 */
+// AlibabaIcbuCategoryAttributeGetAPIResponse 类目属性获取 API返回值
+// alibaba.icbu.category.attribute.get
+//
+// 根据类目ID获取系统定义的属性
 type AlibabaIcbuCategoryAttributeGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuCategoryAttributeGetAPIResponseModel

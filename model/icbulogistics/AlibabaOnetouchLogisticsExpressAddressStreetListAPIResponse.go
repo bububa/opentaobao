@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOnetouchLogisticsExpressAddressStreetListAPIResponse
-四级地址库-街道 API返回值
-alibaba.onetouch.logistics.express.address.street.list
-
-四级地址库-街道模糊查询 */
+// AlibabaOnetouchLogisticsExpressAddressStreetListAPIResponse 四级地址库-街道 API返回值
+// alibaba.onetouch.logistics.express.address.street.list
+//
+// 四级地址库-街道模糊查询
 type AlibabaOnetouchLogisticsExpressAddressStreetListAPIResponse struct {
 	model.CommonResponse
 	AlibabaOnetouchLogisticsExpressAddressStreetListAPIResponseModel

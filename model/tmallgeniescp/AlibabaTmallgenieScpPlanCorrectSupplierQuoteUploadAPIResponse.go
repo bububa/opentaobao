@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIResponse
-供应商校准后的配额同步 API返回值
-alibaba.tmallgenie.scp.plan.correct.supplier.quote.upload
-
-供应商校准后的配额同步 */
+// AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIResponse 供应商校准后的配额同步 API返回值
+// alibaba.tmallgenie.scp.plan.correct.supplier.quote.upload
+//
+// 供应商校准后的配额同步
 type AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIResponseModel

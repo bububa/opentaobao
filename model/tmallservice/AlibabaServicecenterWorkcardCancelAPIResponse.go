@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaServicecenterWorkcardCancelAPIResponse
-服务平台工单取消接口 API返回值
-alibaba.servicecenter.workcard.cancel
-
-取消服务工单 */
+// AlibabaServicecenterWorkcardCancelAPIResponse 服务平台工单取消接口 API返回值
+// alibaba.servicecenter.workcard.cancel
+//
+// 取消服务工单
 type AlibabaServicecenterWorkcardCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaServicecenterWorkcardCancelAPIResponseModel

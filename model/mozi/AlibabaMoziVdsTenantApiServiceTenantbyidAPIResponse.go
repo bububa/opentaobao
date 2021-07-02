@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziVdsTenantApiServiceTenantbyidAPIResponse
-按租户ID查询租户信息 API返回值
-alibaba.mozi.vds.tenant.api.service.tenantbyid
-
-按租户ID查询租户信息 */
+// AlibabaMoziVdsTenantApiServiceTenantbyidAPIResponse 按租户ID查询租户信息 API返回值
+// alibaba.mozi.vds.tenant.api.service.tenantbyid
+//
+// 按租户ID查询租户信息
 type AlibabaMoziVdsTenantApiServiceTenantbyidAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziVdsTenantApiServiceTenantbyidAPIResponseModel

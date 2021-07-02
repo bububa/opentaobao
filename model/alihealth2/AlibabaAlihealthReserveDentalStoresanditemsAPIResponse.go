@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthReserveDentalStoresanditemsAPIResponse
-查询商户门店，商品列表 API返回值
-alibaba.alihealth.reserve.dental.storesanditems
-
-查询商户门店，商品列表 */
+// AlibabaAlihealthReserveDentalStoresanditemsAPIResponse 查询商户门店，商品列表 API返回值
+// alibaba.alihealth.reserve.dental.storesanditems
+//
+// 查询商户门店，商品列表
 type AlibabaAlihealthReserveDentalStoresanditemsAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthReserveDentalStoresanditemsAPIResponseModel

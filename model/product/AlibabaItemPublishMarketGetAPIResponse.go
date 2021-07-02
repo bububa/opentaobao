@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItemPublishMarketGetAPIResponse
-获取商家可发布商品的市场信息 API返回值
-alibaba.item.publish.market.get
-
-获取商家可发布商品的市场信息 */
+// AlibabaItemPublishMarketGetAPIResponse 获取商家可发布商品的市场信息 API返回值
+// alibaba.item.publish.market.get
+//
+// 获取商家可发布商品的市场信息
 type AlibabaItemPublishMarketGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaItemPublishMarketGetAPIResponseModel

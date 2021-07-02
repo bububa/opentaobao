@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-/* AlibabaAlihealthDrugtraceTopYljgQueryListparts
-往来单位查询
-alibaba.alihealth.drugtrace.top.yljg.query.listparts
-
-查询往来单位列表 */
+// AlibabaAlihealthDrugtraceTopYljgQueryListparts 往来单位查询
+// alibaba.alihealth.drugtrace.top.yljg.query.listparts
+//
+// 查询往来单位列表
 func AlibabaAlihealthDrugtraceTopYljgQueryListparts(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIResponse, error) {
 	var resp drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIResponse
 	err := clt.Post(req, &resp, session)

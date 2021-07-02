@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsStockInOrderNotifyAPIRequest
-入库通知单 API请求
-taobao.wlb.wms.stock.in.order.notify
-
-入库通知单 */
+// TaobaoWlbWmsStockInOrderNotifyAPIRequest 入库通知单 API请求
+// taobao.wlb.wms.stock.in.order.notify
+//
+// 入库通知单
 type TaobaoWlbWmsStockInOrderNotifyAPIRequest struct {
 	model.Params
 	// 仓库编码

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/openim"
 )
 
-/* TaobaoOpenimUsersAdd
-添加用户
-taobao.openim.users.add
-
-导入用户 */
+// TaobaoOpenimUsersAdd 添加用户
+// taobao.openim.users.add
+//
+// 导入用户
 func TaobaoOpenimUsersAdd(clt *core.SDKClient, req *openim.TaobaoOpenimUsersAddAPIRequest, session string) (*openim.TaobaoOpenimUsersAddAPIResponse, error) {
 	var resp openim.TaobaoOpenimUsersAddAPIResponse
 	err := clt.Post(req, &resp, session)

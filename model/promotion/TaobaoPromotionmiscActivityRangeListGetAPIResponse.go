@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionmiscActivityRangeListGetAPIResponse
-查询活动参与的商品 API返回值
-taobao.promotionmisc.activity.range.list.get
-
-查询活动参与的商品 */
+// TaobaoPromotionmiscActivityRangeListGetAPIResponse 查询活动参与的商品 API返回值
+// taobao.promotionmisc.activity.range.list.get
+//
+// 查询活动参与的商品
 type TaobaoPromotionmiscActivityRangeListGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionmiscActivityRangeListGetAPIResponseModel

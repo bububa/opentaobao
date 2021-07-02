@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenOrderstatusUpdateAPIRequest
-订单状态更新接口 API请求
-taobao.qimen.orderstatus.update
-
-星盘和ISV，可以通过此接口，来更新订单状态。此接口应用于使用阿里星盘分单，且使用商家系统（非阿里掌柜）接单/拒单的模式下更新订单状态。 */
+// TaobaoQimenOrderstatusUpdateAPIRequest 订单状态更新接口 API请求
+// taobao.qimen.orderstatus.update
+//
+// 星盘和ISV，可以通过此接口，来更新订单状态。此接口应用于使用阿里星盘分单，且使用商家系统（非阿里掌柜）接单/拒单的模式下更新订单状态。
 type TaobaoQimenOrderstatusUpdateAPIRequest struct {
 	model.Params
 	// 星盘派单号

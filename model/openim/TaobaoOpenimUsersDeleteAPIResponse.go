@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimUsersDeleteAPIResponse
-删除用户 API返回值
-taobao.openim.users.delete
-
-批量删除用户 */
+// TaobaoOpenimUsersDeleteAPIResponse 删除用户 API返回值
+// taobao.openim.users.delete
+//
+// 批量删除用户
 type TaobaoOpenimUsersDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimUsersDeleteAPIResponseModel

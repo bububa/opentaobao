@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest
-openTaoBaoId解绑设备 API请求
-taobao.ailab.aicloud.top.device.openid.unbind
-
-openTaoBaoId解绑设备 */
+// TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest openTaoBaoId解绑设备 API请求
+// taobao.ailab.aicloud.top.device.openid.unbind
+//
+// openTaoBaoId解绑设备
 type TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest struct {
 	model.Params
 	// 淘宝openId

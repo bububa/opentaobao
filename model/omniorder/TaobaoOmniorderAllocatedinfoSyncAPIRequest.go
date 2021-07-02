@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderAllocatedinfoSyncAPIRequest
-分单结果同步给星盘 API请求
-taobao.omniorder.allocatedinfo.sync
-
-ISV分单完成，将分单结果同步给星盘 */
+// TaobaoOmniorderAllocatedinfoSyncAPIRequest 分单结果同步给星盘 API请求
+// taobao.omniorder.allocatedinfo.sync
+//
+// ISV分单完成，将分单结果同步给星盘
 type TaobaoOmniorderAllocatedinfoSyncAPIRequest struct {
 	model.Params
 	// 淘宝交易主订单ID

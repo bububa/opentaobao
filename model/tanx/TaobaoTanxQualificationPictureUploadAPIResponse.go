@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxQualificationPictureUploadAPIResponse
-资质图片上传接口 API返回值
-taobao.tanx.qualification.picture.upload
-
-资质图片上传接口 */
+// TaobaoTanxQualificationPictureUploadAPIResponse 资质图片上传接口 API返回值
+// taobao.tanx.qualification.picture.upload
+//
+// 资质图片上传接口
 type TaobaoTanxQualificationPictureUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxQualificationPictureUploadAPIResponseModel

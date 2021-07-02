@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStoregroupUpdateAPIResponse
-门店库修改基本信息 API返回值
-taobao.place.storegroup.update
-
-门店库修改基本信息 */
+// TaobaoPlaceStoregroupUpdateAPIResponse 门店库修改基本信息 API返回值
+// taobao.place.storegroup.update
+//
+// 门店库修改基本信息
 type TaobaoPlaceStoregroupUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoPlaceStoregroupUpdateAPIResponseModel

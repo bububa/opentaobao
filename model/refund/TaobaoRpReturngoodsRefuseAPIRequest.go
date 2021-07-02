@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRpReturngoodsRefuseAPIRequest
-卖家拒绝退货 API请求
-taobao.rp.returngoods.refuse
-
-卖家拒绝退货，目前仅支持天猫退货。 */
+// TaobaoRpReturngoodsRefuseAPIRequest 卖家拒绝退货 API请求
+// taobao.rp.returngoods.refuse
+//
+// 卖家拒绝退货，目前仅支持天猫退货。
 type TaobaoRpReturngoodsRefuseAPIRequest struct {
 	model.Params
 	// 退款编号

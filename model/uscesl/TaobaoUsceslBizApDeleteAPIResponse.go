@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizApDeleteAPIResponse
-删除价签AP设备 API返回值
-taobao.uscesl.biz.ap.delete
-
-删除价签AP设备 */
+// TaobaoUsceslBizApDeleteAPIResponse 删除价签AP设备 API返回值
+// taobao.uscesl.biz.ap.delete
+//
+// 删除价签AP设备
 type TaobaoUsceslBizApDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsceslBizApDeleteAPIResponseModel

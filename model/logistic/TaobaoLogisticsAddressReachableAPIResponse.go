@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsAddressReachableAPIResponse
-判定服务是否可达 API返回值
-taobao.logistics.address.reachable
-
-根据输入的目标地址，判断服务是否可达。
-现已支持筛单的快递公司共15家：中国邮政、EMS、国通、汇通、快捷、全峰、优速、圆通、宅急送、中通、顺丰、天天、韵达、德邦快递、申通 */
+// TaobaoLogisticsAddressReachableAPIResponse 判定服务是否可达 API返回值
+// taobao.logistics.address.reachable
+//
+// 根据输入的目标地址，判断服务是否可达。
+// 现已支持筛单的快递公司共15家：中国邮政、EMS、国通、汇通、快捷、全峰、优速、圆通、宅急送、中通、顺丰、天天、韵达、德邦快递、申通
 type TaobaoLogisticsAddressReachableAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsAddressReachableAPIResponseModel

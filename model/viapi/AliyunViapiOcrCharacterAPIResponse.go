@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunViapiOcrCharacterAPIResponse
-通用文字识别 API返回值
-aliyun.viapi.ocr.character
-
-获取通用的文字信息。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html ) */
+// AliyunViapiOcrCharacterAPIResponse 通用文字识别 API返回值
+// aliyun.viapi.ocr.character
+//
+// 获取通用的文字信息。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )
 type AliyunViapiOcrCharacterAPIResponse struct {
 	model.CommonResponse
 	AliyunViapiOcrCharacterAPIResponseModel

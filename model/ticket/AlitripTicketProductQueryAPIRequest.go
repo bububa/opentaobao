@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTicketProductQueryAPIRequest
-【门票API2.0】门票商品查询接口 API请求
-alitrip.ticket.product.query
-
-门票商品查询接口：返回商家上传的门票商品信息 */
+// AlitripTicketProductQueryAPIRequest 【门票API2.0】门票商品查询接口 API请求
+// alitrip.ticket.product.query
+//
+// 门票商品查询接口：返回商家上传的门票商品信息
 type AlitripTicketProductQueryAPIRequest struct {
 	model.Params
 	// 商户自定义收费项目编码。与ali_product_id，item_id 三者至少填写一个

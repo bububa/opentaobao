@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderOfflineSettleCancelAPIResponse
-线下信用住取消结账专用接口 API返回值
-taobao.xhotel.order.offline.settle.cancel
-
-线下信用住取消结账专用接口 */
+// TaobaoXhotelOrderOfflineSettleCancelAPIResponse 线下信用住取消结账专用接口 API返回值
+// taobao.xhotel.order.offline.settle.cancel
+//
+// 线下信用住取消结账专用接口
 type TaobaoXhotelOrderOfflineSettleCancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelOrderOfflineSettleCancelAPIResponseModel

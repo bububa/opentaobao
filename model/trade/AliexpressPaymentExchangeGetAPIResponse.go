@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressPaymentExchangeGetAPIResponse
-getExchange API返回值
-aliexpress.payment.exchange.get
-
-提供国际汇率服务 */
+// AliexpressPaymentExchangeGetAPIResponse getExchange API返回值
+// aliexpress.payment.exchange.get
+//
+// 提供国际汇率服务
 type AliexpressPaymentExchangeGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressPaymentExchangeGetAPIResponseModel

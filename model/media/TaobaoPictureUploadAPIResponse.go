@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPictureUploadAPIResponse
-上传单张图片 API返回值
-taobao.picture.upload
-
-图片空间上传接口 */
+// TaobaoPictureUploadAPIResponse 上传单张图片 API返回值
+// taobao.picture.upload
+//
+// 图片空间上传接口
 type TaobaoPictureUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoPictureUploadAPIResponseModel

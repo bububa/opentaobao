@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemQuantityUpdateAPIResponse
-宝贝/SKU库存修改 API返回值
-taobao.item.quantity.update
-
-提供按照全量或增量形式修改宝贝/SKU库存的功能 */
+// TaobaoItemQuantityUpdateAPIResponse 宝贝/SKU库存修改 API返回值
+// taobao.item.quantity.update
+//
+// 提供按照全量或增量形式修改宝贝/SKU库存的功能
 type TaobaoItemQuantityUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemQuantityUpdateAPIResponseModel

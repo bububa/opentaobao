@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkChannelOrderUsercancelAPIResponse
-用户发起售中取消 API返回值
-alibaba.wdk.channel.order.usercancel
-
-用户发起售中取消 */
+// AlibabaWdkChannelOrderUsercancelAPIResponse 用户发起售中取消 API返回值
+// alibaba.wdk.channel.order.usercancel
+//
+// 用户发起售中取消
 type AlibabaWdkChannelOrderUsercancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkChannelOrderUsercancelAPIResponseModel

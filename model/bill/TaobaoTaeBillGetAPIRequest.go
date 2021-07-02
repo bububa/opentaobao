@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTaeBillGetAPIRequest
-tae查询单笔账单明细 API请求
-taobao.tae.bill.get
-
-查询单笔账单明细 */
+// TaobaoTaeBillGetAPIRequest tae查询单笔账单明细 API请求
+// taobao.tae.bill.get
+//
+// 查询单笔账单明细
 type TaobaoTaeBillGetAPIRequest struct {
 	model.Params
 	// 账单编号

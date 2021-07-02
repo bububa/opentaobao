@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiDriverLocationGetAPIResponse
-司机位置 API返回值
-alibaba.happytrip.taxi.driver.location.get
-
-获取司机实时位置 */
+// AlibabaHappytripTaxiDriverLocationGetAPIResponse 司机位置 API返回值
+// alibaba.happytrip.taxi.driver.location.get
+//
+// 获取司机实时位置
 type AlibabaHappytripTaxiDriverLocationGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaHappytripTaxiDriverLocationGetAPIResponseModel

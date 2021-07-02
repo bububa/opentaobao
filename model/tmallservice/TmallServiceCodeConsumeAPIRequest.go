@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServiceCodeConsumeAPIRequest
-天猫服务平台服务核销 API请求
-tmall.service.code.consume
-
-天猫服务平台－服务核销 */
+// TmallServiceCodeConsumeAPIRequest 天猫服务平台服务核销 API请求
+// tmall.service.code.consume
+//
+// 天猫服务平台－服务核销
 type TmallServiceCodeConsumeAPIRequest struct {
 	model.Params
 	// 核销码

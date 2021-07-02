@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIworkMcMsgSenddefaultAPIResponse
-给注册用户发送消息 API返回值
-alibaba.iwork.mc.msg.senddefault
-
-给神鲸注册用户发送对应操作结果的消息 */
+// AlibabaIworkMcMsgSenddefaultAPIResponse 给注册用户发送消息 API返回值
+// alibaba.iwork.mc.msg.senddefault
+//
+// 给神鲸注册用户发送对应操作结果的消息
 type AlibabaIworkMcMsgSenddefaultAPIResponse struct {
 	model.CommonResponse
 	AlibabaIworkMcMsgSenddefaultAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxQualificationFindAPIResponse
-资质查询接口 API返回值
-taobao.tanx.qualification.find
-
-资质查询接口 */
+// TaobaoTanxQualificationFindAPIResponse 资质查询接口 API返回值
+// taobao.tanx.qualification.find
+//
+// 资质查询接口
 type TaobaoTanxQualificationFindAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxQualificationFindAPIResponseModel

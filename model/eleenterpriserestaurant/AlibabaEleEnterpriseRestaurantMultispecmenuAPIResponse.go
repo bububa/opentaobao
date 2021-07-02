@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseRestaurantMultispecmenuAPIResponse
-查询餐厅菜单 API返回值
-alibaba.ele.enterprise.restaurant.multispecmenu
-
-查询餐厅菜单 */
+// AlibabaEleEnterpriseRestaurantMultispecmenuAPIResponse 查询餐厅菜单 API返回值
+// alibaba.ele.enterprise.restaurant.multispecmenu
+//
+// 查询餐厅菜单
 type AlibabaEleEnterpriseRestaurantMultispecmenuAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseRestaurantMultispecmenuAPIResponseModel

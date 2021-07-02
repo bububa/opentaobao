@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripPlatformPoiRawPoioutbypoiidsAPIResponse
-根据poiId输出飞猪poi数据 API返回值
-alitrip.platform.poi.raw.poioutbypoiids
-
-根据poiId输出飞猪poi数据 */
+// AlitripPlatformPoiRawPoioutbypoiidsAPIResponse 根据poiId输出飞猪poi数据 API返回值
+// alitrip.platform.poi.raw.poioutbypoiids
+//
+// 根据poiId输出飞猪poi数据
 type AlitripPlatformPoiRawPoioutbypoiidsAPIResponse struct {
 	model.CommonResponse
 	AlitripPlatformPoiRawPoioutbypoiidsAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopEarthquakeSendAPIResponse
-地震局发送地震消息 API返回值
-taobao.ailab.aicloud.top.earthquake.send
-
-地震局发送地震消息给天猫精灵，天猫精灵根据地震消息判断发送地震消息给危险区域用户 */
+// TaobaoAilabAicloudTopEarthquakeSendAPIResponse 地震局发送地震消息 API返回值
+// taobao.ailab.aicloud.top.earthquake.send
+//
+// 地震局发送地震消息给天猫精灵，天猫精灵根据地震消息判断发送地震消息给危险区域用户
 type TaobaoAilabAicloudTopEarthquakeSendAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopEarthquakeSendAPIResponseModel

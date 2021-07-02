@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscSaasCodecCodeAttrsQueryAPIResponse
-码业务属性查询 API返回值
-alibaba.alsc.saas.codec.code.attrs.query
-
-码业务属性查询 */
+// AlibabaAlscSaasCodecCodeAttrsQueryAPIResponse 码业务属性查询 API返回值
+// alibaba.alsc.saas.codec.code.attrs.query
+//
+// 码业务属性查询
 type AlibabaAlscSaasCodecCodeAttrsQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscSaasCodecCodeAttrsQueryAPIResponseModel

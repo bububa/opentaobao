@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDrugShopListAPIRequest
-查询卖家外卖店列表 API请求
-taobao.drug.shop.list
-
-查询卖家外卖店列表 */
+// TaobaoDrugShopListAPIRequest 查询卖家外卖店列表 API请求
+// taobao.drug.shop.list
+//
+// 查询卖家外卖店列表
 type TaobaoDrugShopListAPIRequest struct {
 	model.Params
 	// 查询关键字

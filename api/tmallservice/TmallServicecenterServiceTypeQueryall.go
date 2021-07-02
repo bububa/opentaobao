@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* TmallServicecenterServiceTypeQueryall
-服务供应链服务类型
-tmall.servicecenter.service.type.queryall
-
-查询天猫服务类型列表 */
+// TmallServicecenterServiceTypeQueryall 服务供应链服务类型
+// tmall.servicecenter.service.type.queryall
+//
+// 查询天猫服务类型列表
 func TmallServicecenterServiceTypeQueryall(clt *core.SDKClient, req *tmallservice.TmallServicecenterServiceTypeQueryallAPIRequest, session string) (*tmallservice.TmallServicecenterServiceTypeQueryallAPIResponse, error) {
 	var resp tmallservice.TmallServicecenterServiceTypeQueryallAPIResponse
 	err := clt.Post(req, &resp, session)

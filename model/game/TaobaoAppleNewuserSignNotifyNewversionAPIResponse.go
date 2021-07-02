@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAppleNewuserSignNotifyNewversionAPIResponse
-新用户签约结果通知接口v2 API返回值
-taobao.apple.newuser.sign.notify.newversion
-
-资和信主动通知签约结果 */
+// TaobaoAppleNewuserSignNotifyNewversionAPIResponse 新用户签约结果通知接口v2 API返回值
+// taobao.apple.newuser.sign.notify.newversion
+//
+// 资和信主动通知签约结果
 type TaobaoAppleNewuserSignNotifyNewversionAPIResponse struct {
 	model.CommonResponse
 	TaobaoAppleNewuserSignNotifyNewversionAPIResponseModel

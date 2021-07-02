@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziAclRoleAddAPIResponse
-新增一个角色 API返回值
-alibaba.mozi.acl.role.add
-
-新增一个角色 */
+// AlibabaMoziAclRoleAddAPIResponse 新增一个角色 API返回值
+// alibaba.mozi.acl.role.add
+//
+// 新增一个角色
 type AlibabaMoziAclRoleAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziAclRoleAddAPIResponseModel

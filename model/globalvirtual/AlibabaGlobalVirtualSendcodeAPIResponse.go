@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaGlobalVirtualSendcodeAPIResponse
-国际虚拟商品发码服务 API返回值
-alibaba.global.virtual.sendcode
-
-global virtual send code service */
+// AlibabaGlobalVirtualSendcodeAPIResponse 国际虚拟商品发码服务 API返回值
+// alibaba.global.virtual.sendcode
+//
+// global virtual send code service
 type AlibabaGlobalVirtualSendcodeAPIResponse struct {
 	model.CommonResponse
 	AlibabaGlobalVirtualSendcodeAPIResponseModel

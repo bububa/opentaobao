@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkTimeGetAPIResponse
-获得当前系统时间 API返回值
-alibaba.wdk.time.get
-
-获得当前系统时间 */
+// AlibabaWdkTimeGetAPIResponse 获得当前系统时间 API返回值
+// alibaba.wdk.time.get
+//
+// 获得当前系统时间
 type AlibabaWdkTimeGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkTimeGetAPIResponseModel

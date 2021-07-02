@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemVipSchemaAddAPIResponse
-大商家商品发布接口 API返回值
-tmall.item.vip.schema.add
-
-大商家商品发布接口 */
+// TmallItemVipSchemaAddAPIResponse 大商家商品发布接口 API返回值
+// tmall.item.vip.schema.add
+//
+// 大商家商品发布接口
 type TmallItemVipSchemaAddAPIResponse struct {
 	model.CommonResponse
 	TmallItemVipSchemaAddAPIResponseModel

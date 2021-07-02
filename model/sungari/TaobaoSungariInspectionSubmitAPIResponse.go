@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSungariInspectionSubmitAPIResponse
-抽检指令录入 API返回值
-taobao.sungari.inspection.submit
-
-抽检指令录入 */
+// TaobaoSungariInspectionSubmitAPIResponse 抽检指令录入 API返回值
+// taobao.sungari.inspection.submit
+//
+// 抽检指令录入
 type TaobaoSungariInspectionSubmitAPIResponse struct {
 	model.CommonResponse
 	TaobaoSungariInspectionSubmitAPIResponseModel

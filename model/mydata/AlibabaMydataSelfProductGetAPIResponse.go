@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMydataSelfProductGetAPIResponse
-获取客户产品相关表现数据 API返回值
-alibaba.mydata.self.product.get
-
-获取客户产品相关表现数据 */
+// AlibabaMydataSelfProductGetAPIResponse 获取客户产品相关表现数据 API返回值
+// alibaba.mydata.self.product.get
+//
+// 获取客户产品相关表现数据
 type AlibabaMydataSelfProductGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaMydataSelfProductGetAPIResponseModel

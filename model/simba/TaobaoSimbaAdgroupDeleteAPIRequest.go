@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupDeleteAPIRequest
-删除一个推广组 API请求
-taobao.simba.adgroup.delete
-
-删除一个推广组 */
+// TaobaoSimbaAdgroupDeleteAPIRequest 删除一个推广组 API请求
+// taobao.simba.adgroup.delete
+//
+// 删除一个推广组
 type TaobaoSimbaAdgroupDeleteAPIRequest struct {
 	model.Params
 	// 主人昵称

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytDrStorageuploadAPIResponse
-疫苗存储温度上传 API返回值
-alibaba.alihealth.drug.kyt.dr.storageupload
-
-疫苗存储温度上传 */
+// AlibabaAlihealthDrugKytDrStorageuploadAPIResponse 疫苗存储温度上传 API返回值
+// alibaba.alihealth.drug.kyt.dr.storageupload
+//
+// 疫苗存储温度上传
 type AlibabaAlihealthDrugKytDrStorageuploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytDrStorageuploadAPIResponseModel

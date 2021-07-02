@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpEffectKeywordSingleGetAPIResponse
-单个关键词效果报表 API返回值
-alibaba.scbp.effect.keyword.single.get
-
-单个关键词效果报表 */
+// AlibabaScbpEffectKeywordSingleGetAPIResponse 单个关键词效果报表 API返回值
+// alibaba.scbp.effect.keyword.single.get
+//
+// 单个关键词效果报表
 type AlibabaScbpEffectKeywordSingleGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpEffectKeywordSingleGetAPIResponseModel

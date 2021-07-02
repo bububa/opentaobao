@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallRefundBatchGetAPIResponse
-批量获取openmall退款单 API返回值
-taobao.openmall.refund.batch.get
-
-批量获取openmall退款单
-注意：该接口信息存在延迟，如需实时详情请访问taobao.openmall.refund.get */
+// TaobaoOpenmallRefundBatchGetAPIResponse 批量获取openmall退款单 API返回值
+// taobao.openmall.refund.batch.get
+//
+// 批量获取openmall退款单
+// 注意：该接口信息存在延迟，如需实时详情请访问taobao.openmall.refund.get
 type TaobaoOpenmallRefundBatchGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenmallRefundBatchGetAPIResponseModel

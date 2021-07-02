@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPictureCategoryAddAPIRequest
-新增图片分类信息 API请求
-taobao.picture.category.add
-
-同一卖家最多添加500个图片分类，图片分类名称长度最大为20个字符 */
+// TaobaoPictureCategoryAddAPIRequest 新增图片分类信息 API请求
+// taobao.picture.category.add
+//
+// 同一卖家最多添加500个图片分类，图片分类名称长度最大为20个字符
 type TaobaoPictureCategoryAddAPIRequest struct {
 	model.Params
 	// 图片分类名称，最大长度20字符，中文字符算2个字符，不能为空

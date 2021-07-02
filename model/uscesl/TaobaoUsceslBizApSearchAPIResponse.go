@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizApSearchAPIResponse
-AP列表查询 API返回值
-taobao.uscesl.biz.ap.search
-
-查询当前门店下登记的AP列表 */
+// TaobaoUsceslBizApSearchAPIResponse AP列表查询 API返回值
+// taobao.uscesl.biz.ap.search
+//
+// 查询当前门店下登记的AP列表
 type TaobaoUsceslBizApSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsceslBizApSearchAPIResponseModel

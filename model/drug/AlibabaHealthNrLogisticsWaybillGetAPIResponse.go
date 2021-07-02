@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthNrLogisticsWaybillGetAPIResponse
-电子面单查询接口 API返回值
-alibaba.health.nr.logistics.waybill.get
-
-商家登录后根据订单号查询物流单号及电子面单信息 */
+// AlibabaHealthNrLogisticsWaybillGetAPIResponse 电子面单查询接口 API返回值
+// alibaba.health.nr.logistics.waybill.get
+//
+// 商家登录后根据订单号查询物流单号及电子面单信息
 type AlibabaHealthNrLogisticsWaybillGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthNrLogisticsWaybillGetAPIResponseModel

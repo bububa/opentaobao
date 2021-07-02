@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemSkusGetAPIResponse
-根据商品ID列表获取SKU信息 API返回值
-taobao.item.skus.get
-
-* 获取多个商品下的所有sku
-<br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong> */
+// TaobaoItemSkusGetAPIResponse 根据商品ID列表获取SKU信息 API返回值
+// taobao.item.skus.get
+//
+// * 获取多个商品下的所有sku
+// <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 type TaobaoItemSkusGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemSkusGetAPIResponseModel

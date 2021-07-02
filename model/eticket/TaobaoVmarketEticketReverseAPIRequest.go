@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketReverseAPIRequest
-电子凭证冲正接口 API请求
-taobao.vmarket.eticket.reverse
-
-电子凭证平台冲正接口 */
+// TaobaoVmarketEticketReverseAPIRequest 电子凭证冲正接口 API请求
+// taobao.vmarket.eticket.reverse
+//
+// 电子凭证平台冲正接口
 type TaobaoVmarketEticketReverseAPIRequest struct {
 	model.Params
 	// 进行验码的电子凭证订单的订单ID

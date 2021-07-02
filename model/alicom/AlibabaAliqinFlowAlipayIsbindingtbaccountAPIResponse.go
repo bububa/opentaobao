@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse
-判断支付宝用户是否绑定淘宝账号 API返回值
-alibaba.aliqin.flow.alipay.isbindingtbaccount
-
-判断支付宝用户是否绑定淘宝账号 */
+// AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse 判断支付宝用户是否绑定淘宝账号 API返回值
+// alibaba.aliqin.flow.alipay.isbindingtbaccount
+//
+// 判断支付宝用户是否绑定淘宝账号
 type AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponseModel

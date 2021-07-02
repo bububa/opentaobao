@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest
-创建推广单元 API请求
-alibaba.scbp.ad.group.create.ad.group.batch
-
-创建推广单元 */
+// AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest 创建推广单元 API请求
+// alibaba.scbp.ad.group.create.ad.group.batch
+//
+// 创建推广单元
 type AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest struct {
 	model.Params
 	// 计划id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest
-薄荷同步三方记录 API请求
-alibaba.fmhealth.weight.lossplan.syncweightdata
-
-用于三方薄荷同步数据到健康会员 */
+// AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest 薄荷同步三方记录 API请求
+// alibaba.fmhealth.weight.lossplan.syncweightdata
+//
+// 用于三方薄荷同步数据到健康会员
 type AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest struct {
 	model.Params
 	// 阿里健康id

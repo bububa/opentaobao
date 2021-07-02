@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemCreativeRptdailylistAPIResponse
-创意分日数据查询 API返回值
-taobao.feedflow.item.creative.rptdailylist
-
-创意分日数据查询 */
+// TaobaoFeedflowItemCreativeRptdailylistAPIResponse 创意分日数据查询 API返回值
+// taobao.feedflow.item.creative.rptdailylist
+//
+// 创意分日数据查询
 type TaobaoFeedflowItemCreativeRptdailylistAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemCreativeRptdailylistAPIResponseModel

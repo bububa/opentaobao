@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosOrderRefundListGetAPIResponse
-批量查询交易退货信息 API返回值
-alibaba.mos.order.refund.list.get
-
-批量查询多个退货单的退货明细 */
+// AlibabaMosOrderRefundListGetAPIResponse 批量查询交易退货信息 API返回值
+// alibaba.mos.order.refund.list.get
+//
+// 批量查询多个退货单的退货明细
 type AlibabaMosOrderRefundListGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosOrderRefundListGetAPIResponseModel

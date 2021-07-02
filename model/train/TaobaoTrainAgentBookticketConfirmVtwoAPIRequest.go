@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentBookticketConfirmVtwoAPIRequest
-火车票代理商接口——确认出票是否成功v2--增加鉴权校验 API请求
-taobao.train.agent.bookticket.confirm.vtwo
-
-火车票代理商接口——确认出票是否成功 */
+// TaobaoTrainAgentBookticketConfirmVtwoAPIRequest 火车票代理商接口——确认出票是否成功v2--增加鉴权校验 API请求
+// taobao.train.agent.bookticket.confirm.vtwo
+//
+// 火车票代理商接口——确认出票是否成功
 type TaobaoTrainAgentBookticketConfirmVtwoAPIRequest struct {
 	model.Params
 	// 错误的子订单号123434,123432

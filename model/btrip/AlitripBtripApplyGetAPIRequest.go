@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripApplyGetAPIRequest
-获取单个审批单 API请求
-alitrip.btrip.apply.get
-
-获取单个审批单的详情数据 */
+// AlitripBtripApplyGetAPIRequest 获取单个审批单 API请求
+// alitrip.btrip.apply.get
+//
+// 获取单个审批单的详情数据
 type AlitripBtripApplyGetAPIRequest struct {
 	model.Params
 	// 外部审批单id

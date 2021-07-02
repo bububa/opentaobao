@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbOrderCreateAPIResponse
-创建物流宝订单 API返回值
-taobao.wlb.order.create
-
-创建物流宝订单，由外部ISV或者ERP，Elink，淘宝交易产生 */
+// TaobaoWlbOrderCreateAPIResponse 创建物流宝订单 API返回值
+// taobao.wlb.order.create
+//
+// 创建物流宝订单，由外部ISV或者ERP，Elink，淘宝交易产生
 type TaobaoWlbOrderCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbOrderCreateAPIResponseModel

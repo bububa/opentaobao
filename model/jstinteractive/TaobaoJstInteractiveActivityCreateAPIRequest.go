@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstInteractiveActivityCreateAPIRequest
-互动任务活动创建接口 API请求
-taobao.jst.interactive.activity.create
-
-调用活动创建接口为小程序创建互动任务活动，任务列表仅在活动期间内返回 */
+// TaobaoJstInteractiveActivityCreateAPIRequest 互动任务活动创建接口 API请求
+// taobao.jst.interactive.activity.create
+//
+// 调用活动创建接口为小程序创建互动任务活动，任务列表仅在活动期间内返回
 type TaobaoJstInteractiveActivityCreateAPIRequest struct {
 	model.Params
 	// 小程序id

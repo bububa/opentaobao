@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlipayBaoxianClaimSurveyConclusionSubmitAPIResponse
-保险退货服务商勘察结论提交接口 API返回值
-alipay.baoxian.claim.survey.conclusion.submit
-
-保险退货服务商提交勘察结论 */
+// AlipayBaoxianClaimSurveyConclusionSubmitAPIResponse 保险退货服务商勘察结论提交接口 API返回值
+// alipay.baoxian.claim.survey.conclusion.submit
+//
+// 保险退货服务商提交勘察结论
 type AlipayBaoxianClaimSurveyConclusionSubmitAPIResponse struct {
 	model.CommonResponse
 	AlipayBaoxianClaimSurveyConclusionSubmitAPIResponseModel

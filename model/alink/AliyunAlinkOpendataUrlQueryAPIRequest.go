@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunAlinkOpendataUrlQueryAPIRequest
-开放数据授权访问URL查询 API请求
-aliyun.alink.opendata.url.query
-
-厂商数据授权访问URL查询 */
+// AliyunAlinkOpendataUrlQueryAPIRequest 开放数据授权访问URL查询 API请求
+// aliyun.alink.opendata.url.query
+//
+// 厂商数据授权访问URL查询
 type AliyunAlinkOpendataUrlQueryAPIRequest struct {
 	model.Params
 	// 授权key，厂家在物联平台申请的云端授权key

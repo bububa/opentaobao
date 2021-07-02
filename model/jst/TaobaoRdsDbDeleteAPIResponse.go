@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRdsDbDeleteAPIResponse
-RDS数据库删除 API返回值
-taobao.rds.db.delete
-
-通过api删除用户RDS的数据库 */
+// TaobaoRdsDbDeleteAPIResponse RDS数据库删除 API返回值
+// taobao.rds.db.delete
+//
+// 通过api删除用户RDS的数据库
 type TaobaoRdsDbDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoRdsDbDeleteAPIResponseModel

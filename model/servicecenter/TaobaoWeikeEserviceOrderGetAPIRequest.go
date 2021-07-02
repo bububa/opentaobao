@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeikeEserviceOrderGetAPIRequest
-客服外包订单查询 API请求
-taobao.weike.eservice.order.get
-
-用于客服外包中服务商查询订单列表 */
+// TaobaoWeikeEserviceOrderGetAPIRequest 客服外包订单查询 API请求
+// taobao.weike.eservice.order.get
+//
+// 用于客服外包中服务商查询订单列表
 type TaobaoWeikeEserviceOrderGetAPIRequest struct {
 	model.Params
 	// 订单服务开始日期

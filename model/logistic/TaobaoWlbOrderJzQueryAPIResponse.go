@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbOrderJzQueryAPIResponse
-家装业务查询物流公司api API返回值
-taobao.wlb.order.jz.query
-
-家装业务查询物流公司api */
+// TaobaoWlbOrderJzQueryAPIResponse 家装业务查询物流公司api API返回值
+// taobao.wlb.order.jz.query
+//
+// 家装业务查询物流公司api
 type TaobaoWlbOrderJzQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbOrderJzQueryAPIResponseModel

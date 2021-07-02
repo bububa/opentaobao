@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest
-获取计划关键词 API请求
-alibaba.scbp.ad.keyword.list.campaign.keywords
-
-获取计划关键词 */
+// AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest 获取计划关键词 API请求
+// alibaba.scbp.ad.keyword.list.campaign.keywords
+//
+// 获取计划关键词
 type AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest struct {
 	model.Params
 	// 计划id

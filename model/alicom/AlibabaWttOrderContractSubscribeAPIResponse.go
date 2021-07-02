@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWttOrderContractSubscribeAPIResponse
-分销商合约生产 API返回值
-alibaba.wtt.order.contract.subscribe
-
-分销商合约生产 */
+// AlibabaWttOrderContractSubscribeAPIResponse 分销商合约生产 API返回值
+// alibaba.wtt.order.contract.subscribe
+//
+// 分销商合约生产
 type AlibabaWttOrderContractSubscribeAPIResponse struct {
 	model.CommonResponse
 	AlibabaWttOrderContractSubscribeAPIResponseModel

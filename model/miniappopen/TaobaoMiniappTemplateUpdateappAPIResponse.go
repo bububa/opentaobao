@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappTemplateUpdateappAPIResponse
-更新实例化应用 API返回值
-taobao.miniapp.template.updateapp
-
-商家应用c端模板实例化小程序更新，生成新的版本，但不会自动上线新版本 */
+// TaobaoMiniappTemplateUpdateappAPIResponse 更新实例化应用 API返回值
+// taobao.miniapp.template.updateapp
+//
+// 商家应用c端模板实例化小程序更新，生成新的版本，但不会自动上线新版本
 type TaobaoMiniappTemplateUpdateappAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappTemplateUpdateappAPIResponseModel

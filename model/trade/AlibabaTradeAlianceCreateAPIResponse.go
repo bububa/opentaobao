@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTradeAlianceCreateAPIResponse
-推客平台订单回流 API返回值
-alibaba.trade.aliance.create
-
-推客平台订单回流 */
+// AlibabaTradeAlianceCreateAPIResponse 推客平台订单回流 API返回值
+// alibaba.trade.aliance.create
+//
+// 推客平台订单回流
 type AlibabaTradeAlianceCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaTradeAlianceCreateAPIResponseModel

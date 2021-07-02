@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIResponse
-天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新 API返回值
-alibaba.aliyun.aicloud.iot.vision.saas.ctcc.jiangsu.cloud.watcher.status.update
-
-天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新 */
+// AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIResponse 天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新 API返回值
+// alibaba.aliyun.aicloud.iot.vision.saas.ctcc.jiangsu.cloud.watcher.status.update
+//
+// 天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新
 type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIResponseModel

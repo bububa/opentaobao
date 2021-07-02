@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSscServicecenterServicestoreQueryAPIResponse
-根据天猫id查询门店信息 API返回值
-alibaba.ssc.servicecenter.servicestore.query
-
-根据天猫id查询门店信息 */
+// AlibabaSscServicecenterServicestoreQueryAPIResponse 根据天猫id查询门店信息 API返回值
+// alibaba.ssc.servicecenter.servicestore.query
+//
+// 根据天猫id查询门店信息
 type AlibabaSscServicecenterServicestoreQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaSscServicecenterServicestoreQueryAPIResponseModel

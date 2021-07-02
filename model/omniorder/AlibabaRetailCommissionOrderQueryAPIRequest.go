@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailCommissionOrderQueryAPIRequest
-分销订单查询 API请求
-alibaba.retail.commission.order.query
-
-查询商家的分销订单 */
+// AlibabaRetailCommissionOrderQueryAPIRequest 分销订单查询 API请求
+// alibaba.retail.commission.order.query
+//
+// 查询商家的分销订单
 type AlibabaRetailCommissionOrderQueryAPIRequest struct {
 	model.Params
 	// 页码，默认第一页

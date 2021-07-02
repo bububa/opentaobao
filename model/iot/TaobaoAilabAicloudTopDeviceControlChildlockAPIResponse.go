@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse
-设备儿童锁 API返回值
-taobao.ailab.aicloud.top.device.control.childlock
-
-设备儿童锁 */
+// TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse 设备儿童锁 API返回值
+// taobao.ailab.aicloud.top.device.control.childlock
+//
+// 设备儿童锁
 type TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceControlChildlockAPIResponseModel

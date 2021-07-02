@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmShopListGetAPIResponse
-获取商圈商户信息列表 API返回值
-alibaba.westcrm.shop.list.get
-
-获取商圈商户信息列表 */
+// AlibabaWestcrmShopListGetAPIResponse 获取商圈商户信息列表 API返回值
+// alibaba.westcrm.shop.list.get
+//
+// 获取商圈商户信息列表
 type AlibabaWestcrmShopListGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWestcrmShopListGetAPIResponseModel

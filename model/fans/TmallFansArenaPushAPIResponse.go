@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallFansArenaPushAPIResponse
-消息推送 API返回值
-tmall.fans.arena.push
-
-超级擂台消息推送 */
+// TmallFansArenaPushAPIResponse 消息推送 API返回值
+// tmall.fans.arena.push
+//
+// 超级擂台消息推送
 type TmallFansArenaPushAPIResponse struct {
 	model.CommonResponse
 	TmallFansArenaPushAPIResponseModel

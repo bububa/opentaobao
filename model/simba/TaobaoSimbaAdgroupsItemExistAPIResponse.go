@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupsItemExistAPIResponse
-商品是否推广 API返回值
-taobao.simba.adgroups.item.exist
-
-判断在一个推广计划中是否已经推广了一个商品 */
+// TaobaoSimbaAdgroupsItemExistAPIResponse 商品是否推广 API返回值
+// taobao.simba.adgroups.item.exist
+//
+// 判断在一个推广计划中是否已经推广了一个商品
 type TaobaoSimbaAdgroupsItemExistAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaAdgroupsItemExistAPIResponseModel

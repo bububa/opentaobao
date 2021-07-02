@@ -6,13 +6,12 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIResponse
-根据userId(支持单个或批量)获取用户实时位置信息 API返回值
-alibaba.campus.adminmap.userlocationinfo.getactualuserlocationinfobyids
-
-根据userId(支持单个或批量)获取用户实时位置信息
-HSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService
-HSF方法名称：getActualUserLocationInfoByIds */
+// AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIResponse 根据userId(支持单个或批量)获取用户实时位置信息 API返回值
+// alibaba.campus.adminmap.userlocationinfo.getactualuserlocationinfobyids
+//
+// 根据userId(支持单个或批量)获取用户实时位置信息
+// HSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService
+// HSF方法名称：getActualUserLocationInfoByIds
 type AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketBeforeconsumeAPIResponse
-电子凭证验码前置确认 API返回值
-taobao.vmarket.eticket.beforeconsume
-
-商家验码之前的调用接口，用来同步到最新的订单状态并判断是否可以进行验码操作 */
+// TaobaoVmarketEticketBeforeconsumeAPIResponse 电子凭证验码前置确认 API返回值
+// taobao.vmarket.eticket.beforeconsume
+//
+// 商家验码之前的调用接口，用来同步到最新的订单状态并判断是否可以进行验码操作
 type TaobaoVmarketEticketBeforeconsumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketBeforeconsumeAPIResponseModel

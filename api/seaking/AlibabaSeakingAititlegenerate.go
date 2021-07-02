@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/seaking"
 )
 
-/* AlibabaSeakingAititlegenerate
-标题智能优化
-alibaba.seaking.aititlegenerate
-
-标题智能优化 */
+// AlibabaSeakingAititlegenerate 标题智能优化
+// alibaba.seaking.aititlegenerate
+//
+// 标题智能优化
 func AlibabaSeakingAititlegenerate(clt *core.SDKClient, req *seaking.AlibabaSeakingAititlegenerateAPIRequest, session string) (*seaking.AlibabaSeakingAititlegenerateAPIResponse, error) {
 	var resp seaking.AlibabaSeakingAititlegenerateAPIResponse
 	err := clt.Post(req, &resp, session)

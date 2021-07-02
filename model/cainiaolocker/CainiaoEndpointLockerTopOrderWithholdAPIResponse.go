@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoEndpointLockerTopOrderWithholdAPIResponse
-代扣支付 API返回值
-cainiao.endpoint.locker.top.order.withhold
-
-提供代扣，允许有一笔欠款。 */
+// CainiaoEndpointLockerTopOrderWithholdAPIResponse 代扣支付 API返回值
+// cainiao.endpoint.locker.top.order.withhold
+//
+// 提供代扣，允许有一笔欠款。
 type CainiaoEndpointLockerTopOrderWithholdAPIResponse struct {
 	model.CommonResponse
 	CainiaoEndpointLockerTopOrderWithholdAPIResponseModel

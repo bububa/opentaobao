@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRateUpdateAPIRequest
-价格推送接口（全量更新） API请求
-taobao.xhotel.rate.update
-
-酒店产品库rate更新 */
+// TaobaoXhotelRateUpdateAPIRequest 价格推送接口（全量更新） API请求
+// taobao.xhotel.rate.update
+//
+// 酒店产品库rate更新
 type TaobaoXhotelRateUpdateAPIRequest struct {
 	model.Params
 	// 每日价格和房价专有库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+180 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)

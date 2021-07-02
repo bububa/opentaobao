@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpUopCnReverseWarehouseorderUpdateAPIResponse
-供应链中台逆向入库单修改服务 API返回值
-alibaba.ascp.uop.cn.reverse.warehouseorder.update
-
-供应链中台逆向入库单修改服务 */
+// AlibabaAscpUopCnReverseWarehouseorderUpdateAPIResponse 供应链中台逆向入库单修改服务 API返回值
+// alibaba.ascp.uop.cn.reverse.warehouseorder.update
+//
+// 供应链中台逆向入库单修改服务
 type AlibabaAscpUopCnReverseWarehouseorderUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpUopCnReverseWarehouseorderUpdateAPIResponseModel

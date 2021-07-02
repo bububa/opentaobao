@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelRateGetmixratelistGetAPIResponse
-酒店评论接口 API返回值
-alitrip.hotel.rate.getmixratelist.get
-
-酒店评论接口 */
+// AlitripHotelRateGetmixratelistGetAPIResponse 酒店评论接口 API返回值
+// alitrip.hotel.rate.getmixratelist.get
+//
+// 酒店评论接口
 type AlitripHotelRateGetmixratelistGetAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelRateGetmixratelistGetAPIResponseModel

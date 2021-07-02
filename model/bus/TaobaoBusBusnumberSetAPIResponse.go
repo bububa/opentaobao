@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusBusnumberSetAPIResponse
-商家汽车票车次更新通知接口 API返回值
-taobao.bus.busnumber.set
-
-商家汽车票车次更新后，调用该接口通知平台。 */
+// TaobaoBusBusnumberSetAPIResponse 商家汽车票车次更新通知接口 API返回值
+// taobao.bus.busnumber.set
+//
+// 商家汽车票车次更新后，调用该接口通知平台。
 type TaobaoBusBusnumberSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusBusnumberSetAPIResponseModel

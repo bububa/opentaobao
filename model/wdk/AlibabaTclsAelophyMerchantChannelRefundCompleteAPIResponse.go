@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTclsAelophyMerchantChannelRefundCompleteAPIResponse
-翱象商家自有渠道 逆向单完成 API返回值
-alibaba.tcls.aelophy.merchant.channel.refund.complete
-
-翱象小程序 退款完成 */
+// AlibabaTclsAelophyMerchantChannelRefundCompleteAPIResponse 翱象商家自有渠道 逆向单完成 API返回值
+// alibaba.tcls.aelophy.merchant.channel.refund.complete
+//
+// 翱象小程序 退款完成
 type AlibabaTclsAelophyMerchantChannelRefundCompleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaTclsAelophyMerchantChannelRefundCompleteAPIResponseModel

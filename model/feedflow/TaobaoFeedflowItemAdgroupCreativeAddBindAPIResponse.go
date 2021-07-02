@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemAdgroupCreativeAddBindAPIResponse
-信息流新增并且绑定创意 API返回值
-taobao.feedflow.item.adgroup.creative.add.bind
-
-信息流新增并且绑定创意 */
+// TaobaoFeedflowItemAdgroupCreativeAddBindAPIResponse 信息流新增并且绑定创意 API返回值
+// taobao.feedflow.item.adgroup.creative.add.bind
+//
+// 信息流新增并且绑定创意
 type TaobaoFeedflowItemAdgroupCreativeAddBindAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemAdgroupCreativeAddBindAPIResponseModel

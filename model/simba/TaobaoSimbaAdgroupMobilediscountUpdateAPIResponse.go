@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupMobilediscountUpdateAPIResponse
-对推广组进行单独移动溢价 API返回值
-taobao.simba.adgroup.mobilediscount.update
-
-对推广组进行单独移动溢价 */
+// TaobaoSimbaAdgroupMobilediscountUpdateAPIResponse 对推广组进行单独移动溢价 API返回值
+// taobao.simba.adgroup.mobilediscount.update
+//
+// 对推广组进行单独移动溢价
 type TaobaoSimbaAdgroupMobilediscountUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaAdgroupMobilediscountUpdateAPIResponseModel

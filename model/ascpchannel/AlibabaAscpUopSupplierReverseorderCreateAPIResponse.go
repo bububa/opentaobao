@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpUopSupplierReverseorderCreateAPIResponse
-商家ERP发起创建销退单服务 API返回值
-alibaba.ascp.uop.supplier.reverseorder.create
-
-商家在收到消费者实物退货后，在ERP发起创建销退单服务 */
+// AlibabaAscpUopSupplierReverseorderCreateAPIResponse 商家ERP发起创建销退单服务 API返回值
+// alibaba.ascp.uop.supplier.reverseorder.create
+//
+// 商家在收到消费者实物退货后，在ERP发起创建销退单服务
 type AlibabaAscpUopSupplierReverseorderCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpUopSupplierReverseorderCreateAPIResponseModel

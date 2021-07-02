@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest
-微信公众号价格变化通知 API请求
-alibaba.pictures.dengta.wxaccount.price.change
-
-微信公众号推广价格变更通知接口 */
+// AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest 微信公众号价格变化通知 API请求
+// alibaba.pictures.dengta.wxaccount.price.change
+//
+// 微信公众号推广价格变更通知接口
 type AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest struct {
 	model.Params
 	// id

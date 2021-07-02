@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2bTradeRefundListAPIResponse
-获取采购退货单列表 API返回值
-alibaba.nlife.b2b.trade.refund.list
-
-获取采购退货单列表 */
+// AlibabaNlifeB2bTradeRefundListAPIResponse 获取采购退货单列表 API返回值
+// alibaba.nlife.b2b.trade.refund.list
+//
+// 获取采购退货单列表
 type AlibabaNlifeB2bTradeRefundListAPIResponse struct {
 	model.CommonResponse
 	AlibabaNlifeB2bTradeRefundListAPIResponseModel

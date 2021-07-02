@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemCombineGetAPIResponse
-组合商品获取接口 API返回值
-tmall.item.combine.get
-
-查询组合商品的SKU信息 */
+// TmallItemCombineGetAPIResponse 组合商品获取接口 API返回值
+// tmall.item.combine.get
+//
+// 查询组合商品的SKU信息
 type TmallItemCombineGetAPIResponse struct {
 	model.CommonResponse
 	TmallItemCombineGetAPIResponseModel

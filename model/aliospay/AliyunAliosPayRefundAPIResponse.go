@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunAliosPayRefundAPIResponse
-退款接口 API返回值
-aliyun.alios.pay.refund
-
-商户用来发起退款的接口 */
+// AliyunAliosPayRefundAPIResponse 退款接口 API返回值
+// aliyun.alios.pay.refund
+//
+// 商户用来发起退款的接口
 type AliyunAliosPayRefundAPIResponse struct {
 	model.CommonResponse
 	AliyunAliosPayRefundAPIResponseModel

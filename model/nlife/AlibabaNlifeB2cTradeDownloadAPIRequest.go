@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2cTradeDownloadAPIRequest
-b2c下载订单 API请求
-alibaba.nlife.b2c.trade.download
-
-下载零售商在零售+平台创建的订单 */
+// AlibabaNlifeB2cTradeDownloadAPIRequest b2c下载订单 API请求
+// alibaba.nlife.b2c.trade.download
+//
+// 下载零售商在零售+平台创建的订单
 type AlibabaNlifeB2cTradeDownloadAPIRequest struct {
 	model.Params
 	// 页码

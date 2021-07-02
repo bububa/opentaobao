@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsConsignOrderNotifyAPIRequest
-发货订单通知 API请求
-taobao.wlb.wms.consign.order.notify
-
-发货订单通知 */
+// TaobaoWlbWmsConsignOrderNotifyAPIRequest 发货订单通知 API请求
+// taobao.wlb.wms.consign.order.notify
+//
+// 发货订单通知
 type TaobaoWlbWmsConsignOrderNotifyAPIRequest struct {
 	model.Params
 	// ERP订单号

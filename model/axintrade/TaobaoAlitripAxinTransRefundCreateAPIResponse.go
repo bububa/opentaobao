@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripAxinTransRefundCreateAPIResponse
-阿信创建退款单 API返回值
-taobao.alitrip.axin.trans.refund.create
-
-阿信供销平台-创建退款单服务 */
+// TaobaoAlitripAxinTransRefundCreateAPIResponse 阿信创建退款单 API返回值
+// taobao.alitrip.axin.trans.refund.create
+//
+// 阿信供销平台-创建退款单服务
 type TaobaoAlitripAxinTransRefundCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripAxinTransRefundCreateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallSupplychainChannelProductReleaseAPIRequest
-供应商铺货 API请求
-tmall.supplychain.channel.product.release
-
-供应商渠道铺货接口 */
+// TmallSupplychainChannelProductReleaseAPIRequest 供应商铺货 API请求
+// tmall.supplychain.channel.product.release
+//
+// 供应商渠道铺货接口
 type TmallSupplychainChannelProductReleaseAPIRequest struct {
 	model.Params
 	// 产品数字ID

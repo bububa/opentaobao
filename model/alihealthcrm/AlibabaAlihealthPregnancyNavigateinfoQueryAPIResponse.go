@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthPregnancyNavigateinfoQueryAPIResponse
-查询底导数据 API返回值
-alibaba.alihealth.pregnancy.navigateinfo.query
-
-备孕管理--获取底部导航信息 */
+// AlibabaAlihealthPregnancyNavigateinfoQueryAPIResponse 查询底导数据 API返回值
+// alibaba.alihealth.pregnancy.navigateinfo.query
+//
+// 备孕管理--获取底部导航信息
 type AlibabaAlihealthPregnancyNavigateinfoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthPregnancyNavigateinfoQueryAPIResponseModel

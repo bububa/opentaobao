@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCloudprintCustomareaUpdateAPIRequest
-自定义区内容更新 API请求
-cainiao.cloudprint.customarea.update
-
-自定义区内容更新 */
+// CainiaoCloudprintCustomareaUpdateAPIRequest 自定义区内容更新 API请求
+// cainiao.cloudprint.customarea.update
+//
+// 自定义区内容更新
 type CainiaoCloudprintCustomareaUpdateAPIRequest struct {
 	model.Params
 	// 自定义区id（不可修改）

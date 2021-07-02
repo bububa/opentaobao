@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse
-退单和申诉 API返回值
-alibaba.ele.enterprise.ordernew.getrefundinfo
-
-退单和申诉 */
+// AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse 退单和申诉 API返回值
+// alibaba.ele.enterprise.ordernew.getrefundinfo
+//
+// 退单和申诉
 type AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponseModel

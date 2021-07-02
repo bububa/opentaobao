@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-/* AlibabaMarketingLotterySchemaCreate
-抽奖平台抽奖方案创建接口
-alibaba.marketing.lottery.schema.create
-
-抽奖平台抽奖方案创建接口 */
+// AlibabaMarketingLotterySchemaCreate 抽奖平台抽奖方案创建接口
+// alibaba.marketing.lottery.schema.create
+//
+// 抽奖平台抽奖方案创建接口
 func AlibabaMarketingLotterySchemaCreate(clt *core.SDKClient, req *promotion.AlibabaMarketingLotterySchemaCreateAPIRequest, session string) (*promotion.AlibabaMarketingLotterySchemaCreateAPIResponse, error) {
 	var resp promotion.AlibabaMarketingLotterySchemaCreateAPIResponse
 	err := clt.Post(req, &resp, session)

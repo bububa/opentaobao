@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/dengta"
 )
 
-/* AlibabaPicturesDengtaOrderStatusChangeNew
-天下秀订单状态变更通知
-alibaba.pictures.dengta.order.status.change.new
-
-天下秀订单状态变更通知 */
+// AlibabaPicturesDengtaOrderStatusChangeNew 天下秀订单状态变更通知
+// alibaba.pictures.dengta.order.status.change.new
+//
+// 天下秀订单状态变更通知
 func AlibabaPicturesDengtaOrderStatusChangeNew(clt *core.SDKClient, req *dengta.AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest, session string) (*dengta.AlibabaPicturesDengtaOrderStatusChangeNewAPIResponse, error) {
 	var resp dengta.AlibabaPicturesDengtaOrderStatusChangeNewAPIResponse
 	err := clt.Post(req, &resp, session)

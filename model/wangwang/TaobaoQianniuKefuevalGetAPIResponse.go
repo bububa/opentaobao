@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuKefuevalGetAPIResponse
-客服评价详情接口 API返回值
-taobao.qianniu.kefueval.get
-
-获取买家对客服的服务评价 */
+// TaobaoQianniuKefuevalGetAPIResponse 客服评价详情接口 API返回值
+// taobao.qianniu.kefueval.get
+//
+// 获取买家对客服的服务评价
 type TaobaoQianniuKefuevalGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuKefuevalGetAPIResponseModel

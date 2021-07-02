@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrInventoryUpdateAPIResponse
-门店业务同步库存 API返回值
-tmall.nr.inventory.update
-
-用于商家每日同步更新门店库存 */
+// TmallNrInventoryUpdateAPIResponse 门店业务同步库存 API返回值
+// tmall.nr.inventory.update
+//
+// 用于商家每日同步更新门店库存
 type TmallNrInventoryUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallNrInventoryUpdateAPIResponseModel

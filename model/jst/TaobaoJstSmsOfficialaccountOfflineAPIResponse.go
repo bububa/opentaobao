@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstSmsOfficialaccountOfflineAPIResponse
-聚石塔公众号下线 API返回值
-taobao.jst.sms.officialaccount.offline
-
-聚石塔公众号下线 */
+// TaobaoJstSmsOfficialaccountOfflineAPIResponse 聚石塔公众号下线 API返回值
+// taobao.jst.sms.officialaccount.offline
+//
+// 聚石塔公众号下线
 type TaobaoJstSmsOfficialaccountOfflineAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsOfficialaccountOfflineAPIResponseModel

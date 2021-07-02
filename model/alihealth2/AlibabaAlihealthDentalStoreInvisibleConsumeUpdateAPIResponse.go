@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIResponse
-门店无隐形消费签约 API返回值
-alibaba.alihealth.dental.store.invisible.consume.update
-
-门店无隐形消费签约 */
+// AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIResponse 门店无隐形消费签约 API返回值
+// alibaba.alihealth.dental.store.invisible.consume.update
+//
+// 门店无隐形消费签约
 type AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIResponseModel

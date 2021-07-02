@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCityretailWmflConvertWarehouseAPIResponse
-同城零售完美履约转仓 API返回值
-taobao.cityretail.wmfl.convert.warehouse
-
-同城零售完美履约转仓 */
+// TaobaoCityretailWmflConvertWarehouseAPIResponse 同城零售完美履约转仓 API返回值
+// taobao.cityretail.wmfl.convert.warehouse
+//
+// 同城零售完美履约转仓
 type TaobaoCityretailWmflConvertWarehouseAPIResponse struct {
 	model.CommonResponse
 	TaobaoCityretailWmflConvertWarehouseAPIResponseModel

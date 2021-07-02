@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaXiamiApiCollectDetailGetAPIResponse
-虾米音乐精选集详情接口 API返回值
-alibaba.xiami.api.collect.detail.get
-
-虾米音乐精选集详情接口 */
+// AlibabaXiamiApiCollectDetailGetAPIResponse 虾米音乐精选集详情接口 API返回值
+// alibaba.xiami.api.collect.detail.get
+//
+// 虾米音乐精选集详情接口
 type AlibabaXiamiApiCollectDetailGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaXiamiApiCollectDetailGetAPIResponseModel

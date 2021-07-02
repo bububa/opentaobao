@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoWaybillPrivacySellerOrderGetAPIResponse
-隐私面单商家订单查询 API返回值
-cainiao.waybill.privacy.seller.order.get
-
-商家查询最近100天隐私面单记录 */
+// CainiaoWaybillPrivacySellerOrderGetAPIResponse 隐私面单商家订单查询 API返回值
+// cainiao.waybill.privacy.seller.order.get
+//
+// 商家查询最近100天隐私面单记录
 type CainiaoWaybillPrivacySellerOrderGetAPIResponse struct {
 	model.CommonResponse
 	CainiaoWaybillPrivacySellerOrderGetAPIResponseModel

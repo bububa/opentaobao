@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest
-获取未读的消息数量 API请求
-taobao.ailab.aicloud.top.message.get.unread.count
-
-开放获取未读留言数量的接口 */
+// TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest 获取未读的消息数量 API请求
+// taobao.ailab.aicloud.top.message.get.unread.count
+//
+// 开放获取未读留言数量的接口
 type TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest struct {
 	model.Params
 	// 账户体系隔离

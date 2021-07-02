@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopFeedlistGetAPIResponse
-获取对话流列表 API返回值
-taobao.ailab.aicloud.top.feedlist.get
-
-获取指定应用的对话流信息 */
+// TaobaoAilabAicloudTopFeedlistGetAPIResponse 获取对话流列表 API返回值
+// taobao.ailab.aicloud.top.feedlist.get
+//
+// 获取指定应用的对话流信息
 type TaobaoAilabAicloudTopFeedlistGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopFeedlistGetAPIResponseModel

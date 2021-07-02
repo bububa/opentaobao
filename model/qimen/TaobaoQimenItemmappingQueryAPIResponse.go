@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenItemmappingQueryAPIResponse
-前后端商品映射查询接口 API返回值
-taobao.qimen.itemmapping.query
-
-前后端商品映射查询接口 */
+// TaobaoQimenItemmappingQueryAPIResponse 前后端商品映射查询接口 API返回值
+// taobao.qimen.itemmapping.query
+//
+// 前后端商品映射查询接口
 type TaobaoQimenItemmappingQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenItemmappingQueryAPIResponseModel

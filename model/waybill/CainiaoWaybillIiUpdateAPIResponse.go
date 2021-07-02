@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoWaybillIiUpdateAPIResponse
-电子面单云打印更新接口 API返回值
-cainiao.waybill.ii.update
-
-商家更新电子面单号对应的面单信息。 */
+// CainiaoWaybillIiUpdateAPIResponse 电子面单云打印更新接口 API返回值
+// cainiao.waybill.ii.update
+//
+// 商家更新电子面单号对应的面单信息。
 type CainiaoWaybillIiUpdateAPIResponse struct {
 	model.CommonResponse
 	CainiaoWaybillIiUpdateAPIResponseModel

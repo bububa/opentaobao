@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallInventoryQueryForstoreAPIResponse
-查询后端商品仓库库存 API返回值
-tmall.inventory.query.forstore
-
-商家查询后端商品仓库库存 */
+// TmallInventoryQueryForstoreAPIResponse 查询后端商品仓库库存 API返回值
+// tmall.inventory.query.forstore
+//
+// 商家查询后端商品仓库库存
 type TmallInventoryQueryForstoreAPIResponse struct {
 	model.CommonResponse
 	TmallInventoryQueryForstoreAPIResponseModel

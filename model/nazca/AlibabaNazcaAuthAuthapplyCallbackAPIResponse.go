@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNazcaAuthAuthapplyCallbackAPIResponse
-认证的统一回调接口 API返回值
-alibaba.nazca.auth.authapply.callback
-
-认证的统一回调接口 */
+// AlibabaNazcaAuthAuthapplyCallbackAPIResponse 认证的统一回调接口 API返回值
+// alibaba.nazca.auth.authapply.callback
+//
+// 认证的统一回调接口
 type AlibabaNazcaAuthAuthapplyCallbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaNazcaAuthAuthapplyCallbackAPIResponseModel

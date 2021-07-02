@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelVisaApplicantImportAPIResponse
-签证申请人导入 API返回值
-alitrip.travel.visa.applicant.import
-
-签证线下申请人导入接口。供商家将线下的签证申请人信息导入，进行签证线上化办理 */
+// AlitripTravelVisaApplicantImportAPIResponse 签证申请人导入 API返回值
+// alitrip.travel.visa.applicant.import
+//
+// 签证线下申请人导入接口。供商家将线下的签证申请人信息导入，进行签证线上化办理
 type AlitripTravelVisaApplicantImportAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelVisaApplicantImportAPIResponseModel

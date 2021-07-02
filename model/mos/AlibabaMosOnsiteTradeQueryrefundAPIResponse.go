@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosOnsiteTradeQueryrefundAPIResponse
-退款查询 API返回值
-alibaba.mos.onsite.trade.queryrefund
-
-商户可使用该接口查询退款请求是否执行成功。 */
+// AlibabaMosOnsiteTradeQueryrefundAPIResponse 退款查询 API返回值
+// alibaba.mos.onsite.trade.queryrefund
+//
+// 商户可使用该接口查询退款请求是否执行成功。
 type AlibabaMosOnsiteTradeQueryrefundAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosOnsiteTradeQueryrefundAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse
-末端配配送作业回传 API返回值
-alibaba.wdk.fulfill.dms.delivery.work.order.callback
-
-末端配配送作业回传。 */
+// AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse 末端配配送作业回传 API返回值
+// alibaba.wdk.fulfill.dms.delivery.work.order.callback
+//
+// 末端配配送作业回传。
 type AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponseModel

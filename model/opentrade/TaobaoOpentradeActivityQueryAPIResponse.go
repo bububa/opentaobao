@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeActivityQueryAPIResponse
-查询尖货活动信息 API返回值
-taobao.opentrade.activity.query
-
-尖货交易活动信息配置，查询尖货活动信息 */
+// TaobaoOpentradeActivityQueryAPIResponse 查询尖货活动信息 API返回值
+// taobao.opentrade.activity.query
+//
+// 尖货交易活动信息配置，查询尖货活动信息
 type TaobaoOpentradeActivityQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeActivityQueryAPIResponseModel

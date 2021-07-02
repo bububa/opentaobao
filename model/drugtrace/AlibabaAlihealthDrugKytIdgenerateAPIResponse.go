@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytIdgenerateAPIResponse
-终端(医疗机构|零售药店)ID生成接口 API返回值
-alibaba.alihealth.drug.kyt.idgenerate
-
-终端(医疗机构|零售药店)ID生成接口 */
+// AlibabaAlihealthDrugKytIdgenerateAPIResponse 终端(医疗机构|零售药店)ID生成接口 API返回值
+// alibaba.alihealth.drug.kyt.idgenerate
+//
+// 终端(医疗机构|零售药店)ID生成接口
 type AlibabaAlihealthDrugKytIdgenerateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytIdgenerateAPIResponseModel

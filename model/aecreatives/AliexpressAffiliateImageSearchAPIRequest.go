@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateImageSearchAPIRequest
-图搜 API请求
-aliexpress.affiliate.image.search
-
-图片搜索接口 */
+// AliexpressAffiliateImageSearchAPIRequest 图搜 API请求
+// aliexpress.affiliate.image.search
+//
+// 图片搜索接口
 type AliexpressAffiliateImageSearchAPIRequest struct {
 	model.Params
 	// API signature

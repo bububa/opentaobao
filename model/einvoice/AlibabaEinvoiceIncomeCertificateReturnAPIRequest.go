@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceIncomeCertificateReturnAPIRequest
-服务商回传进项认证结果 API请求
-alibaba.einvoice.income.certificate.return
-
-服务商回传客户端agent所处环境的设备列表，比如扫描仪 */
+// AlibabaEinvoiceIncomeCertificateReturnAPIRequest 服务商回传进项认证结果 API请求
+// alibaba.einvoice.income.certificate.return
+//
+// 服务商回传客户端agent所处环境的设备列表，比如扫描仪
 type AlibabaEinvoiceIncomeCertificateReturnAPIRequest struct {
 	model.Params
 	// 错误码，success=false时必填

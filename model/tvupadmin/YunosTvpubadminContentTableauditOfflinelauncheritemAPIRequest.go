@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest
-运营位管理-联盟一体机下线运营位内容 API请求
-yunos.tvpubadmin.content.tableaudit.offlinelauncheritem
-
-运营位管理-联盟一体机下线运营位内容 */
+// YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest 运营位管理-联盟一体机下线运营位内容 API请求
+// yunos.tvpubadmin.content.tableaudit.offlinelauncheritem
+//
+// 运营位管理-联盟一体机下线运营位内容
 type YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest struct {
 	model.Params
 	// 元数据主键id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCloudprintCustomaresGetAPIResponse
-获取商家的自定义区模板信息 API返回值
-cainiao.cloudprint.customares.get
-
-供isv使用，获取商家的自定义区的模板信息 */
+// CainiaoCloudprintCustomaresGetAPIResponse 获取商家的自定义区模板信息 API返回值
+// cainiao.cloudprint.customares.get
+//
+// 供isv使用，获取商家的自定义区的模板信息
 type CainiaoCloudprintCustomaresGetAPIResponse struct {
 	model.CommonResponse
 	CainiaoCloudprintCustomaresGetAPIResponseModel

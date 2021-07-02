@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest
-单品人群建议出价 API请求
-taobao.feedflow.item.algo.crowd.suggest
-
-给超级推荐的广告主查看建议出价 */
+// TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest 单品人群建议出价 API请求
+// taobao.feedflow.item.algo.crowd.suggest
+//
+// 给超级推荐的广告主查看建议出价
 type TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest struct {
 	model.Params
 	// 人群列表

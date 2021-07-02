@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* M_kvstoreAliyuncsComDescribeRegions2015_03_01APIResponse
-查看Region列表 API返回值
-m-kvstore.aliyuncs.com.DescribeRegions.2015-03-01
-
-查看Region列表 */
+// M_kvstoreAliyuncsComDescribeRegions2015_03_01APIResponse 查看Region列表 API返回值
+// m-kvstore.aliyuncs.com.DescribeRegions.2015-03-01
+//
+// 查看Region列表
 type M_kvstoreAliyuncsComDescribeRegions2015_03_01APIResponse struct {
 	model.CommonResponse
 	M_kvstoreAliyuncsComDescribeRegions2015_03_01APIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytDrSinglerelationAPIRequest
-多融单码关联关系查询 API请求
-alibaba.alihealth.drug.kyt.dr.singlerelation
-
-单码关联关系查询 */
+// AlibabaAlihealthDrugKytDrSinglerelationAPIRequest 多融单码关联关系查询 API请求
+// alibaba.alihealth.drug.kyt.dr.singlerelation
+//
+// 单码关联关系查询
 type AlibabaAlihealthDrugKytDrSinglerelationAPIRequest struct {
 	model.Params
 	// 追溯码

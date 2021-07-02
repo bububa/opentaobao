@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaServiceSettlementQueryAPIResponse
-服务平台结算单明细查询服务 API返回值
-alibaba.service.settlement.query
-
-给服务商提供结算单明细查询功能 */
+// AlibabaServiceSettlementQueryAPIResponse 服务平台结算单明细查询服务 API返回值
+// alibaba.service.settlement.query
+//
+// 给服务商提供结算单明细查询功能
 type AlibabaServiceSettlementQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaServiceSettlementQueryAPIResponseModel

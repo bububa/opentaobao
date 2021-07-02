@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminManageDialogAddAPIResponse
-新增全局弹窗 API返回值
-yunos.tvpubadmin.manage.dialog.add
-
-新增全局弹窗 */
+// YunosTvpubadminManageDialogAddAPIResponse 新增全局弹窗 API返回值
+// yunos.tvpubadmin.manage.dialog.add
+//
+// 新增全局弹窗
 type YunosTvpubadminManageDialogAddAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminManageDialogAddAPIResponseModel

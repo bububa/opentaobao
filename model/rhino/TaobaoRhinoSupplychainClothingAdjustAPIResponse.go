@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRhinoSupplychainClothingAdjustAPIResponse
-同步成衣仓盘点数据 API返回值
-taobao.rhino.supplychain.clothing.adjust
-
-同步成衣仓盘点数据 */
+// TaobaoRhinoSupplychainClothingAdjustAPIResponse 同步成衣仓盘点数据 API返回值
+// taobao.rhino.supplychain.clothing.adjust
+//
+// 同步成衣仓盘点数据
 type TaobaoRhinoSupplychainClothingAdjustAPIResponse struct {
 	model.CommonResponse
 	TaobaoRhinoSupplychainClothingAdjustAPIResponseModel

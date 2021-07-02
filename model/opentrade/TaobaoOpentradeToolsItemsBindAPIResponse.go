@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeToolsItemsBindAPIResponse
-交易开放商品绑定 API返回值
-taobao.opentrade.tools.items.bind
-
-交易开放商品绑定 */
+// TaobaoOpentradeToolsItemsBindAPIResponse 交易开放商品绑定 API返回值
+// taobao.opentrade.tools.items.bind
+//
+// 交易开放商品绑定
 type TaobaoOpentradeToolsItemsBindAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeToolsItemsBindAPIResponseModel

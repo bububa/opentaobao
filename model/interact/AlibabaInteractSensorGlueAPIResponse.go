@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorGlueAPIResponse
-视频播放 API返回值
-alibaba.interact.sensor.glue
-
-视频播放 */
+// AlibabaInteractSensorGlueAPIResponse 视频播放 API返回值
+// alibaba.interact.sensor.glue
+//
+// 视频播放
 type AlibabaInteractSensorGlueAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorGlueAPIResponseModel

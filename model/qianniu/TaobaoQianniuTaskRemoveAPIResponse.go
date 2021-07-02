@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuTaskRemoveAPIResponse
-轻任务删除接口 API返回值
-taobao.qianniu.task.remove
-
-轻任务删除接口。 */
+// TaobaoQianniuTaskRemoveAPIResponse 轻任务删除接口 API返回值
+// taobao.qianniu.task.remove
+//
+// 轻任务删除接口。
 type TaobaoQianniuTaskRemoveAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuTaskRemoveAPIResponseModel

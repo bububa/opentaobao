@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusGuardDataSyncAPIRequest
-卡巴数据同步 API请求
-alibaba.campus.guard.data.sync
-
-数据同步门禁系统 */
+// AlibabaCampusGuardDataSyncAPIRequest 卡巴数据同步 API请求
+// alibaba.campus.guard.data.sync
+//
+// 数据同步门禁系统
 type AlibabaCampusGuardDataSyncAPIRequest struct {
 	model.Params
 	// 1-刷卡流水

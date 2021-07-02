@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemsSellerListGetAPIResponse
-批量获取商品详细信息 API返回值
-taobao.items.seller.list.get
-
-批量获取商品详细信息
-<br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong> */
+// TaobaoItemsSellerListGetAPIResponse 批量获取商品详细信息 API返回值
+// taobao.items.seller.list.get
+//
+// 批量获取商品详细信息
+// <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 type TaobaoItemsSellerListGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemsSellerListGetAPIResponseModel

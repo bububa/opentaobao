@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptCustbaseGetAPIRequest
-客户账户报表基础数据对象 API请求
-taobao.simba.rpt.custbase.get
-
-客户账户报表基础数据对象 */
+// TaobaoSimbaRptCustbaseGetAPIRequest 客户账户报表基础数据对象 API请求
+// taobao.simba.rpt.custbase.get
+//
+// 客户账户报表基础数据对象
 type TaobaoSimbaRptCustbaseGetAPIRequest struct {
 	model.Params
 	// 权限验证信息

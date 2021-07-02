@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceOrderRefundUpdateAPIResponse
-回传订单退款审核结果 API返回值
-alibaba.einvoice.order.refund.update
-
-ISV回传订单退款审核结果 */
+// AlibabaEinvoiceOrderRefundUpdateAPIResponse 回传订单退款审核结果 API返回值
+// alibaba.einvoice.order.refund.update
+//
+// ISV回传订单退款审核结果
 type AlibabaEinvoiceOrderRefundUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceOrderRefundUpdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductGradepriceGetAPIResponse
-等级折扣查询 API返回值
-taobao.fenxiao.product.gradeprice.get
-
-等级折扣查询 */
+// TaobaoFenxiaoProductGradepriceGetAPIResponse 等级折扣查询 API返回值
+// taobao.fenxiao.product.gradeprice.get
+//
+// 等级折扣查询
 type TaobaoFenxiaoProductGradepriceGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductGradepriceGetAPIResponseModel

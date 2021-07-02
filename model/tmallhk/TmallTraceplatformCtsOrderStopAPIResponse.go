@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTraceplatformCtsOrderStopAPIResponse
-CTS截断订单 API返回值
-tmall.traceplatform.cts.order.stop
-
-截断CTS订单 */
+// TmallTraceplatformCtsOrderStopAPIResponse CTS截断订单 API返回值
+// tmall.traceplatform.cts.order.stop
+//
+// 截断CTS订单
 type TmallTraceplatformCtsOrderStopAPIResponse struct {
 	model.CommonResponse
 	TmallTraceplatformCtsOrderStopAPIResponseModel

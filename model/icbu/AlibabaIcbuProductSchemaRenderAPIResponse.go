@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductSchemaRenderAPIResponse
-（新）获取商品信息 API返回值
-alibaba.icbu.product.schema.render
-
-获取ICBU商品发布的字段填写规则和单个商品对应填写数据，适用于单个商品编辑场景，不包括草稿。 */
+// AlibabaIcbuProductSchemaRenderAPIResponse （新）获取商品信息 API返回值
+// alibaba.icbu.product.schema.render
+//
+// 获取ICBU商品发布的字段填写规则和单个商品对应填写数据，适用于单个商品编辑场景，不包括草稿。
 type AlibabaIcbuProductSchemaRenderAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuProductSchemaRenderAPIResponseModel

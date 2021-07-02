@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarXcarSynchronizeCarLinePicsDataAPIResponse
-爱卡车系图片数据接入 API返回值
-tmall.car.xcar.synchronize.car.line.pics.data
-
-爱卡车系图片数据同步天猫汽车 */
+// TmallCarXcarSynchronizeCarLinePicsDataAPIResponse 爱卡车系图片数据接入 API返回值
+// tmall.car.xcar.synchronize.car.line.pics.data
+//
+// 爱卡车系图片数据同步天猫汽车
 type TmallCarXcarSynchronizeCarLinePicsDataAPIResponse struct {
 	model.CommonResponse
 	TmallCarXcarSynchronizeCarLinePicsDataAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappCloudMongoUpdateAPIResponse
-更新MongoDB中的数据 API返回值
-taobao.miniapp.cloud.mongo.update
-
-更新MongoDB中的数据 */
+// TaobaoMiniappCloudMongoUpdateAPIResponse 更新MongoDB中的数据 API返回值
+// taobao.miniapp.cloud.mongo.update
+//
+// 更新MongoDB中的数据
 type TaobaoMiniappCloudMongoUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappCloudMongoUpdateAPIResponseModel

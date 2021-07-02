@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthNrCepWarstqtyBatchupdateAPIResponse
-批量更新ISV库存 API返回值
-alibaba.health.nr.cep.warstqty.batchupdate
-
-青岛医保服务-ISV批量更新孔雀翎中库存数据 */
+// AlibabaHealthNrCepWarstqtyBatchupdateAPIResponse 批量更新ISV库存 API返回值
+// alibaba.health.nr.cep.warstqty.batchupdate
+//
+// 青岛医保服务-ISV批量更新孔雀翎中库存数据
 type AlibabaHealthNrCepWarstqtyBatchupdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthNrCepWarstqtyBatchupdateAPIResponseModel

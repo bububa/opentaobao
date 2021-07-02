@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-/* TaobaoSimbaAdgroupAdd
-创建一个推广组
-taobao.simba.adgroup.add
-
-创建一个推广组 */
+// TaobaoSimbaAdgroupAdd 创建一个推广组
+// taobao.simba.adgroup.add
+//
+// 创建一个推广组
 func TaobaoSimbaAdgroupAdd(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupAddAPIRequest, session string) (*simba.TaobaoSimbaAdgroupAddAPIResponse, error) {
 	var resp simba.TaobaoSimbaAdgroupAddAPIResponse
 	err := clt.Post(req, &resp, session)

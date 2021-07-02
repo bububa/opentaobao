@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelHouseAddAPIRequest
-非标准民宿房源添加 API请求
-taobao.xhotel.house.add
-
-添加酒店或更新酒店 */
+// TaobaoXhotelHouseAddAPIRequest 非标准民宿房源添加 API请求
+// taobao.xhotel.house.add
+//
+// 添加酒店或更新酒店
 type TaobaoXhotelHouseAddAPIRequest struct {
 	model.Params
 	// 外部酒店ID, 这是卖家自己系统中的ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketQrcodeUploadAPIResponse
-码商二维码图片上传 API返回值
-taobao.vmarket.eticket.qrcode.upload
-
-电子凭证的码商可以通过这个接口，上传他们发送的二维码图片 */
+// TaobaoVmarketEticketQrcodeUploadAPIResponse 码商二维码图片上传 API返回值
+// taobao.vmarket.eticket.qrcode.upload
+//
+// 电子凭证的码商可以通过这个接口，上传他们发送的二维码图片
 type TaobaoVmarketEticketQrcodeUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketQrcodeUploadAPIResponseModel

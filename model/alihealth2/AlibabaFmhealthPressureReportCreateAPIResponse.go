@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFmhealthPressureReportCreateAPIResponse
-血压报告接口 API返回值
-alibaba.fmhealth.pressure.report.create
-
-生成用户血压测量报告 */
+// AlibabaFmhealthPressureReportCreateAPIResponse 血压报告接口 API返回值
+// alibaba.fmhealth.pressure.report.create
+//
+// 生成用户血压测量报告
 type AlibabaFmhealthPressureReportCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaFmhealthPressureReportCreateAPIResponseModel

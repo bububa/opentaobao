@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest
-零头出入库单据上传 API请求
-alibaba.alihealth.drug.kyt.remnantbill.upload
-
-零头出入库单据上传 */
+// AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest 零头出入库单据上传 API请求
+// alibaba.alihealth.drug.kyt.remnantbill.upload
+//
+// 零头出入库单据上传
 type AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest struct {
 	model.Params
 	// 企业ID

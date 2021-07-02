@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateOrderListbyindexAPIRequest
-AE联盟推广者订单查询接口-按游标索引查询 API请求
-aliexpress.affiliate.order.listbyindex
-
-AE联盟推广者订单按游标查询接口 */
+// AliexpressAffiliateOrderListbyindexAPIRequest AE联盟推广者订单查询接口-按游标索引查询 API请求
+// aliexpress.affiliate.order.listbyindex
+//
+// AE联盟推广者订单按游标查询接口
 type AliexpressAffiliateOrderListbyindexAPIRequest struct {
 	model.Params
 	// 开始时间

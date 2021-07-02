@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaServicecenterSpserviceorderUpdateAPIRequest
-服务供应链服务单更新 API请求
-alibaba.servicecenter.spserviceorder.update
-
-服务供应链服务单更新，服务商通过此接口将商品的sn等信息推送到服务单中 */
+// AlibabaServicecenterSpserviceorderUpdateAPIRequest 服务供应链服务单更新 API请求
+// alibaba.servicecenter.spserviceorder.update
+//
+// 服务供应链服务单更新，服务商通过此接口将商品的sn等信息推送到服务单中
 type AlibabaServicecenterSpserviceorderUpdateAPIRequest struct {
 	model.Params
 	// 服务单id

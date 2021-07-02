@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallChannelTradeOrderStopAPIResponse
-供应商停止发货 API返回值
-tmall.channel.trade.order.stop
-
-供应商停止发货 */
+// TmallChannelTradeOrderStopAPIResponse 供应商停止发货 API返回值
+// tmall.channel.trade.order.stop
+//
+// 供应商停止发货
 type TmallChannelTradeOrderStopAPIResponse struct {
 	model.CommonResponse
 	TmallChannelTradeOrderStopAPIResponseModel

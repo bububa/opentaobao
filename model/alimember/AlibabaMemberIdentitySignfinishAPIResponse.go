@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMemberIdentitySignfinishAPIResponse
-签约确认 API返回值
-alibaba.member.identity.signfinish
-
-签约确认 */
+// AlibabaMemberIdentitySignfinishAPIResponse 签约确认 API返回值
+// alibaba.member.identity.signfinish
+//
+// 签约确认
 type AlibabaMemberIdentitySignfinishAPIResponse struct {
 	model.CommonResponse
 	AlibabaMemberIdentitySignfinishAPIResponseModel

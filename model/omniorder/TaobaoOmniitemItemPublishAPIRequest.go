@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemItemPublishAPIRequest
-全渠道门店商品轻发布 API请求
-taobao.omniitem.item.publish
-
-全渠道门店商品轻发布 */
+// TaobaoOmniitemItemPublishAPIRequest 全渠道门店商品轻发布 API请求
+// taobao.omniitem.item.publish
+//
+// 全渠道门店商品轻发布
 type TaobaoOmniitemItemPublishAPIRequest struct {
 	model.Params
 	// 发布商品信息

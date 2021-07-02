@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardReserveAPIRequest
-工单预约 API请求
-tmall.servicecenter.workcard.reserve
-
-服务工单更新通用接口 */
+// TmallServicecenterWorkcardReserveAPIRequest 工单预约 API请求
+// tmall.servicecenter.workcard.reserve
+//
+// 服务工单更新通用接口
 type TmallServicecenterWorkcardReserveAPIRequest struct {
 	model.Params
 	// 工单id

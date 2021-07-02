@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMarketingFaceSkindetectAPIResponse
-肌肤检测 API返回值
-tmall.marketing.face.skindetect
-
-提供人脸肌肤属性报告 */
+// TmallMarketingFaceSkindetectAPIResponse 肌肤检测 API返回值
+// tmall.marketing.face.skindetect
+//
+// 提供人脸肌肤属性报告
 type TmallMarketingFaceSkindetectAPIResponse struct {
 	model.CommonResponse
 	TmallMarketingFaceSkindetectAPIResponseModel

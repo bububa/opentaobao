@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignUpdateAPIRequest
-更新一个推广计划 API请求
-taobao.simba.campaign.update
-
-更新一个推广计划，可以设置推广计划名字，修改推广计划上下线状态。 */
+// TaobaoSimbaCampaignUpdateAPIRequest 更新一个推广计划 API请求
+// taobao.simba.campaign.update
+//
+// 更新一个推广计划，可以设置推广计划名字，修改推广计划上下线状态。
 type TaobaoSimbaCampaignUpdateAPIRequest struct {
 	model.Params
 	// 用户设置的上下限状态；offline-下线；online-上线；

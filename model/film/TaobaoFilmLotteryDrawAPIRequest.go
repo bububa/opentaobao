@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmLotteryDrawAPIRequest
-淘票票抽奖发放权益API API请求
-taobao.film.lottery.draw
-
-对外第三方合作渠道通过抽奖形式发码 */
+// TaobaoFilmLotteryDrawAPIRequest 淘票票抽奖发放权益API API请求
+// taobao.film.lottery.draw
+//
+// 对外第三方合作渠道通过抽奖形式发码
 type TaobaoFilmLotteryDrawAPIRequest struct {
 	model.Params
 	// 账号ID

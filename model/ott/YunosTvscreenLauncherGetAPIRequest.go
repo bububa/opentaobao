@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvscreenLauncherGetAPIRequest
-一体机桌面 API请求
-yunos.tvscreen.launcher.get
-
-LCTS一体机桌面后台,提供基于运营坑位适配的桌面服务 */
+// YunosTvscreenLauncherGetAPIRequest 一体机桌面 API请求
+// yunos.tvscreen.launcher.get
+//
+// LCTS一体机桌面后台,提供基于运营坑位适配的桌面服务
 type YunosTvscreenLauncherGetAPIRequest struct {
 	model.Params
 	// 设备属性

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceIncomeDeviceReturnAPIResponse
-服务商回传客户端设备列表 API返回值
-alibaba.einvoice.income.device.return
-
-服务商回传客户端agent所处环境的设备列表，比如扫描仪 */
+// AlibabaEinvoiceIncomeDeviceReturnAPIResponse 服务商回传客户端设备列表 API返回值
+// alibaba.einvoice.income.device.return
+//
+// 服务商回传客户端agent所处环境的设备列表，比如扫描仪
 type AlibabaEinvoiceIncomeDeviceReturnAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceIncomeDeviceReturnAPIResponseModel

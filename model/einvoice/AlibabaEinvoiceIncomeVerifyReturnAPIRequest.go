@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceIncomeVerifyReturnAPIRequest
-服务商回传发票查验的结果 API请求
-alibaba.einvoice.income.verify.return
-
-服务商回传发票查验的结果，分两种场景：扫描驱动服务商主动回传；阿里主动发起的查验回传 */
+// AlibabaEinvoiceIncomeVerifyReturnAPIRequest 服务商回传发票查验的结果 API请求
+// alibaba.einvoice.income.verify.return
+//
+// 服务商回传发票查验的结果，分两种场景：扫描驱动服务商主动回传；阿里主动发起的查验回传
 type AlibabaEinvoiceIncomeVerifyReturnAPIRequest struct {
 	model.Params
 	// 校验码，success=true时必填

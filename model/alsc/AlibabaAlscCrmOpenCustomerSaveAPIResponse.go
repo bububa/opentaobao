@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmOpenCustomerSaveAPIResponse
-保存和更新顾客 API返回值
-alibaba.alsc.crm.open.customer.save
-
-用来保存顾客，如果已经存在的话，则更新顾客 */
+// AlibabaAlscCrmOpenCustomerSaveAPIResponse 保存和更新顾客 API返回值
+// alibaba.alsc.crm.open.customer.save
+//
+// 用来保存顾客，如果已经存在的话，则更新顾客
 type AlibabaAlscCrmOpenCustomerSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmOpenCustomerSaveAPIResponseModel

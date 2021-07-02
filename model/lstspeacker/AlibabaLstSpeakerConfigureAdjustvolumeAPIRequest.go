@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest
-音箱音量调节 API请求
-alibaba.lst.speaker.configure.adjustvolume
-
-音箱音量调节 */
+// AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest 音箱音量调节 API请求
+// alibaba.lst.speaker.configure.adjustvolume
+//
+// 音箱音量调节
 type AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest struct {
 	model.Params
 	// 设备编码

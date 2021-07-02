@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappDistributionItemsBindAPIResponse
-小程序投放-商品绑定/解绑 API返回值
-taobao.miniapp.distribution.items.bind
-
-提供给使用了投放插件的服务商，可以调用该API实现帮助商家更新已创建的投放单中的绑定商品信息。 */
+// TaobaoMiniappDistributionItemsBindAPIResponse 小程序投放-商品绑定/解绑 API返回值
+// taobao.miniapp.distribution.items.bind
+//
+// 提供给使用了投放插件的服务商，可以调用该API实现帮助商家更新已创建的投放单中的绑定商品信息。
 type TaobaoMiniappDistributionItemsBindAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappDistributionItemsBindAPIResponseModel

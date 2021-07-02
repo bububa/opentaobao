@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelEntityConfigAPIResponse
-飞猪商品各实体通用配置 API返回值
-taobao.xhotel.entity.config
-
-飞猪商品各实体通用配置服务 */
+// TaobaoXhotelEntityConfigAPIResponse 飞猪商品各实体通用配置 API返回值
+// taobao.xhotel.entity.config
+//
+// 飞猪商品各实体通用配置服务
 type TaobaoXhotelEntityConfigAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelEntityConfigAPIResponseModel

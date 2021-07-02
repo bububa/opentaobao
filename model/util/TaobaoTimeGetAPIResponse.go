@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTimeGetAPIResponse
-获取淘宝系统当前时间 API返回值
-taobao.time.get
-
-获取淘宝系统当前时间 */
+// TaobaoTimeGetAPIResponse 获取淘宝系统当前时间 API返回值
+// taobao.time.get
+//
+// 获取淘宝系统当前时间
 type TaobaoTimeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTimeGetAPIResponseModel

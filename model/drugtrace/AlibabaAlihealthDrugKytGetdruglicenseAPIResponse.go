@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytGetdruglicenseAPIResponse
-获取药品资质信息 API返回值
-alibaba.alihealth.drug.kyt.getdruglicense
-
-获取药品的资质信息。 */
+// AlibabaAlihealthDrugKytGetdruglicenseAPIResponse 获取药品资质信息 API返回值
+// alibaba.alihealth.drug.kyt.getdruglicense
+//
+// 获取药品的资质信息。
 type AlibabaAlihealthDrugKytGetdruglicenseAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytGetdruglicenseAPIResponseModel

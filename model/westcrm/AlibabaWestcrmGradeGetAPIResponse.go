@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmGradeGetAPIResponse
-获取等级列表 API返回值
-alibaba.westcrm.grade.get
-
-获取会员卡等级列表 */
+// AlibabaWestcrmGradeGetAPIResponse 获取等级列表 API返回值
+// alibaba.westcrm.grade.get
+//
+// 获取会员卡等级列表
 type AlibabaWestcrmGradeGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWestcrmGradeGetAPIResponseModel

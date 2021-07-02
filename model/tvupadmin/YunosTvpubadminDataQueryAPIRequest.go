@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDataQueryAPIRequest
-魔盒统计数据查询接口 API请求
-yunos.tvpubadmin.data.query
-
-用于华数查询魔盒上的一些用户统计数据 */
+// YunosTvpubadminDataQueryAPIRequest 魔盒统计数据查询接口 API请求
+// yunos.tvpubadmin.data.query
+//
+// 用于华数查询魔盒上的一些用户统计数据
 type YunosTvpubadminDataQueryAPIRequest struct {
 	model.Params
 	// 表名

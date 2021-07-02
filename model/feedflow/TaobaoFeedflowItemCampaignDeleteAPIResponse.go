@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemCampaignDeleteAPIResponse
-删除计划 API返回值
-taobao.feedflow.item.campaign.delete
-
-删除计划 */
+// TaobaoFeedflowItemCampaignDeleteAPIResponse 删除计划 API返回值
+// taobao.feedflow.item.campaign.delete
+//
+// 删除计划
 type TaobaoFeedflowItemCampaignDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemCampaignDeleteAPIResponseModel

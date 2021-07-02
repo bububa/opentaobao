@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegalCaseStandpointFeedbackAPIResponse
-新增或更新 反馈口径(采纳口径/不采纳口径) API返回值
-alibaba.legal.case.standpoint.feedback
-
-新增或更新 反馈口径(采纳口径/不采纳口径) */
+// AlibabaLegalCaseStandpointFeedbackAPIResponse 新增或更新 反馈口径(采纳口径/不采纳口径) API返回值
+// alibaba.legal.case.standpoint.feedback
+//
+// 新增或更新 反馈口径(采纳口径/不采纳口径)
 type AlibabaLegalCaseStandpointFeedbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalCaseStandpointFeedbackAPIResponseModel

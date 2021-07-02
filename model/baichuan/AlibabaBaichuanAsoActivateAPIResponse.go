@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaichuanAsoActivateAPIResponse
-设备安装活动激活 API返回值
-alibaba.baichuan.aso.activate
-
-设备安装活动激活 */
+// AlibabaBaichuanAsoActivateAPIResponse 设备安装活动激活 API返回值
+// alibaba.baichuan.aso.activate
+//
+// 设备安装活动激活
 type AlibabaBaichuanAsoActivateAPIResponse struct {
 	model.CommonResponse
 	AlibabaBaichuanAsoActivateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoElifeLifecardQueryAPIResponse
-查询交易结果 API返回值
-taobao.elife.lifecard.query
-
-卖家在交易状态不明的情况下, 查询交易结果. */
+// TaobaoElifeLifecardQueryAPIResponse 查询交易结果 API返回值
+// taobao.elife.lifecard.query
+//
+// 卖家在交易状态不明的情况下, 查询交易结果.
 type TaobaoElifeLifecardQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoElifeLifecardQueryAPIResponseModel

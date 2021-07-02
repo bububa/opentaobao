@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoServicePackageQueryAPIResponse
-预采购服务包查询接口 API返回值
-alibaba.ele.fengniao.service.package.query
-
-查询门店所在经纬度可用服务包的接口 */
+// AlibabaEleFengniaoServicePackageQueryAPIResponse 预采购服务包查询接口 API返回值
+// alibaba.ele.fengniao.service.package.query
+//
+// 查询门店所在经纬度可用服务包的接口
 type AlibabaEleFengniaoServicePackageQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoServicePackageQueryAPIResponseModel

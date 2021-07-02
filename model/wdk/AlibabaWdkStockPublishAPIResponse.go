@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkStockPublishAPIResponse
-五道口库存发布接口（针对外部渠道） API返回值
-alibaba.wdk.stock.publish
-
-五道口库存发布接口（针对外部渠道） */
+// AlibabaWdkStockPublishAPIResponse 五道口库存发布接口（针对外部渠道） API返回值
+// alibaba.wdk.stock.publish
+//
+// 五道口库存发布接口（针对外部渠道）
 type AlibabaWdkStockPublishAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkStockPublishAPIResponseModel

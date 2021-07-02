@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelProductSkuOverrideAPIResponse
-（供销）产品级别日历价格库存修改，全量覆盖 API返回值
-taobao.alitrip.travel.product.sku.override
-
-（供销）产品级别日历价格库存修改，全量覆盖 */
+// TaobaoAlitripTravelProductSkuOverrideAPIResponse （供销）产品级别日历价格库存修改，全量覆盖 API返回值
+// taobao.alitrip.travel.product.sku.override
+//
+// （供销）产品级别日历价格库存修改，全量覆盖
 type TaobaoAlitripTravelProductSkuOverrideAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTravelProductSkuOverrideAPIResponseModel

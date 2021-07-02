@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegalSuitFileUploadAPIRequest
-诉讼文件上传接口 API请求
-alibaba.legal.suit.file.upload
-
-上传文件接口 */
+// AlibabaLegalSuitFileUploadAPIRequest 诉讼文件上传接口 API请求
+// alibaba.legal.suit.file.upload
+//
+// 上传文件接口
 type AlibabaLegalSuitFileUploadAPIRequest struct {
 	model.Params
 	// 文件

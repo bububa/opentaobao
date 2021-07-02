@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemDeleteAPIRequest
-删除单条商品 API请求
-taobao.item.delete
-
-删除单条商品 */
+// TaobaoItemDeleteAPIRequest 删除单条商品 API请求
+// taobao.item.delete
+//
+// 删除单条商品
 type TaobaoItemDeleteAPIRequest struct {
 	model.Params
 	// 商品数字ID，该参数必须

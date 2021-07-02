@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsTmallgenieAuthGetcodeAPIRequest
-获取token API请求
-alibaba.ailabs.tmallgenie.auth.getcode
-
-获取天猫精灵authCode */
+// AlibabaAilabsTmallgenieAuthGetcodeAPIRequest 获取token API请求
+// alibaba.ailabs.tmallgenie.auth.getcode
+//
+// 获取天猫精灵authCode
 type AlibabaAilabsTmallgenieAuthGetcodeAPIRequest struct {
 	model.Params
 	// 授权参数

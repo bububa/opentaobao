@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaXiamiApiContractSignAPIResponse
-提供签约链接 API返回值
-alibaba.xiami.api.contract.sign
-
-提供签约链接。in：商家id；out：签约url */
+// AlibabaXiamiApiContractSignAPIResponse 提供签约链接 API返回值
+// alibaba.xiami.api.contract.sign
+//
+// 提供签约链接。in：商家id；out：签约url
 type AlibabaXiamiApiContractSignAPIResponse struct {
 	model.CommonResponse
 	AlibabaXiamiApiContractSignAPIResponseModel

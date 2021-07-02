@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPricePromotionActivityDeleteAPIResponse
-删除档期活动 API返回值
-alibaba.price.promotion.activity.delete
-
-删除盒马帮档期活动 */
+// AlibabaPricePromotionActivityDeleteAPIResponse 删除档期活动 API返回值
+// alibaba.price.promotion.activity.delete
+//
+// 删除盒马帮档期活动
 type AlibabaPricePromotionActivityDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaPricePromotionActivityDeleteAPIResponseModel

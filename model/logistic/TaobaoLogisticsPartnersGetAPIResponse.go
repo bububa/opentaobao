@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsPartnersGetAPIResponse
-查询支持起始地到目的地范围的物流公司 API返回值
-taobao.logistics.partners.get
-
-查询物流公司信息（可以查询目的地可不可达情况） */
+// TaobaoLogisticsPartnersGetAPIResponse 查询支持起始地到目的地范围的物流公司 API返回值
+// taobao.logistics.partners.get
+//
+// 查询物流公司信息（可以查询目的地可不可达情况）
 type TaobaoLogisticsPartnersGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsPartnersGetAPIResponseModel

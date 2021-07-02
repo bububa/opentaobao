@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosSupplierBasisGetsupplierinfoAPIResponse
-获取供应商基础信息 API返回值
-alibaba.mos.supplier.basis.getsupplierinfo
-
-基于供应商id获取供应商基础脱敏信息 */
+// AlibabaMosSupplierBasisGetsupplierinfoAPIResponse 获取供应商基础信息 API返回值
+// alibaba.mos.supplier.basis.getsupplierinfo
+//
+// 基于供应商id获取供应商基础脱敏信息
 type AlibabaMosSupplierBasisGetsupplierinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosSupplierBasisGetsupplierinfoAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveCancelAPIRequest
-体检机构对接_预约取消 API请求
-alibaba.alihealth.examination.reserve.cancel
-
-体检机构对接_体检取消 */
+// AlibabaAlihealthExaminationReserveCancelAPIRequest 体检机构对接_预约取消 API请求
+// alibaba.alihealth.examination.reserve.cancel
+//
+// 体检机构对接_体检取消
 type AlibabaAlihealthExaminationReserveCancelAPIRequest struct {
 	model.Params
 	// 商户唯一码

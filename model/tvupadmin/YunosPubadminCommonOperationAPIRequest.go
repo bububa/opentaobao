@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosPubadminCommonOperationAPIRequest
-内部迎客松通用服务 API请求
-yunos.pubadmin.common.operation
-
-内部迎客松通用服务 */
+// YunosPubadminCommonOperationAPIRequest 内部迎客松通用服务 API请求
+// yunos.pubadmin.common.operation
+//
+// 内部迎客松通用服务
 type YunosPubadminCommonOperationAPIRequest struct {
 	model.Params
 	// 入参json串

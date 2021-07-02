@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRoomGetAPIResponse
-room实体查询 API返回值
-taobao.xhotel.room.get
-
-此接口用于查询一个商品，根据传入的gid查询商品信息。卖家只能查询自己的商品。 */
+// TaobaoXhotelRoomGetAPIResponse room实体查询 API返回值
+// taobao.xhotel.room.get
+//
+// 此接口用于查询一个商品，根据传入的gid查询商品信息。卖家只能查询自己的商品。
 type TaobaoXhotelRoomGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelRoomGetAPIResponseModel

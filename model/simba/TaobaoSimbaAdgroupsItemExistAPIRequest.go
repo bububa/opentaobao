@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupsItemExistAPIRequest
-商品是否推广 API请求
-taobao.simba.adgroups.item.exist
-
-判断在一个推广计划中是否已经推广了一个商品 */
+// TaobaoSimbaAdgroupsItemExistAPIRequest 商品是否推广 API请求
+// taobao.simba.adgroups.item.exist
+//
+// 判断在一个推广计划中是否已经推广了一个商品
 type TaobaoSimbaAdgroupsItemExistAPIRequest struct {
 	model.Params
 	// 主人昵称

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest
-活动数据同步 API请求
-alibaba.wdk.marketing.open.darunfa.activity.sync
-
-大润发活动数据同步 */
+// AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest 活动数据同步 API请求
+// alibaba.wdk.marketing.open.darunfa.activity.sync
+//
+// 大润发活动数据同步
 type AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest struct {
 	model.Params
 	// 大润发活动数据

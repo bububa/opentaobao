@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstPosOpenGoodsSyncgoodsdataAPIResponse
-门店商品批量同步接口(最多10条商品信息) API返回值
-alibaba.lst.pos.open.goods.syncgoodsdata
-
-门店商品批量同步接口(最多10条商品信息) */
+// AlibabaLstPosOpenGoodsSyncgoodsdataAPIResponse 门店商品批量同步接口(最多10条商品信息) API返回值
+// alibaba.lst.pos.open.goods.syncgoodsdata
+//
+// 门店商品批量同步接口(最多10条商品信息)
 type AlibabaLstPosOpenGoodsSyncgoodsdataAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstPosOpenGoodsSyncgoodsdataAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinTaSmsNumSendAPIRequest
-短信发送 API请求
-alibaba.aliqin.ta.sms.num.send
-
-短信发送 */
+// AlibabaAliqinTaSmsNumSendAPIRequest 短信发送 API请求
+// alibaba.aliqin.ta.sms.num.send
+//
+// 短信发送
 type AlibabaAliqinTaSmsNumSendAPIRequest struct {
 	model.Params
 	// 公共回传参数

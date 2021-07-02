@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenCombineitemDeleteAPIResponse
-组合货品删除接口 API返回值
-taobao.qimen.combineitem.delete
-
-组合货品删除 */
+// TaobaoQimenCombineitemDeleteAPIResponse 组合货品删除接口 API返回值
+// taobao.qimen.combineitem.delete
+//
+// 组合货品删除
 type TaobaoQimenCombineitemDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenCombineitemDeleteAPIResponseModel

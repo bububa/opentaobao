@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTraceplatformTicketPictureUploadAPIRequest
-上传小票图片 API请求
-tmall.traceplatform.ticket.picture.upload
-
-uploadPicture */
+// TmallTraceplatformTicketPictureUploadAPIRequest 上传小票图片 API请求
+// tmall.traceplatform.ticket.picture.upload
+//
+// uploadPicture
 type TmallTraceplatformTicketPictureUploadAPIRequest struct {
 	model.Params
 	// 子订单号

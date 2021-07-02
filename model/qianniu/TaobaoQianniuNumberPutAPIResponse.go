@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuNumberPutAPIResponse
-ISV上传数据接口 API返回值
-taobao.qianniu.number.put
-
-ISV提供给卖家使用的业务数据，需要通过这个接口上传到千牛数据中心。 */
+// TaobaoQianniuNumberPutAPIResponse ISV上传数据接口 API返回值
+// taobao.qianniu.number.put
+//
+// ISV提供给卖家使用的业务数据，需要通过这个接口上传到千牛数据中心。
 type TaobaoQianniuNumberPutAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuNumberPutAPIResponseModel

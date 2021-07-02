@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBeneiftDrawAPIResponse
-抽奖接口 API返回值
-alibaba.beneift.draw
-
-抽奖接口 */
+// AlibabaBeneiftDrawAPIResponse 抽奖接口 API返回值
+// alibaba.beneift.draw
+//
+// 抽奖接口
 type AlibabaBeneiftDrawAPIResponse struct {
 	model.CommonResponse
 	AlibabaBeneiftDrawAPIResponseModel

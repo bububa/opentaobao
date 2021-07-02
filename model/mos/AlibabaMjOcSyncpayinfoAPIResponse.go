@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjOcSyncpayinfoAPIResponse
-支付参考号回传 API返回值
-alibaba.mj.oc.syncpayinfo
-
-支付参考号同步到oc */
+// AlibabaMjOcSyncpayinfoAPIResponse 支付参考号回传 API返回值
+// alibaba.mj.oc.syncpayinfo
+//
+// 支付参考号同步到oc
 type AlibabaMjOcSyncpayinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcSyncpayinfoAPIResponseModel

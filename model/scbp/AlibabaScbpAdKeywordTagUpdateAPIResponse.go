@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordTagUpdateAPIResponse
-修改关键词所属分组 API返回值
-alibaba.scbp.ad.keyword.tag.update
-
-修改关键词所属分组 */
+// AlibabaScbpAdKeywordTagUpdateAPIResponse 修改关键词所属分组 API返回值
+// alibaba.scbp.ad.keyword.tag.update
+//
+// 修改关键词所属分组
 type AlibabaScbpAdKeywordTagUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdKeywordTagUpdateAPIResponseModel

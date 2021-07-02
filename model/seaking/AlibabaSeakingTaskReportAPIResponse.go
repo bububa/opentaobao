@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingTaskReportAPIResponse
-跳转任务发布成功商品ID回传 API返回值
-alibaba.seaking.task.report
-
-跳转任务发布成功商品ID回传 */
+// AlibabaSeakingTaskReportAPIResponse 跳转任务发布成功商品ID回传 API返回值
+// alibaba.seaking.task.report
+//
+// 跳转任务发布成功商品ID回传
 type AlibabaSeakingTaskReportAPIResponse struct {
 	model.CommonResponse
 	AlibabaSeakingTaskReportAPIResponseModel

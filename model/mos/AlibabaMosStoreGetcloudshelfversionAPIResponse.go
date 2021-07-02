@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosStoreGetcloudshelfversionAPIResponse
-获取云货架版本信息 API返回值
-alibaba.mos.store.getcloudshelfversion
-
-根据屏编号获取云货架版本信息 */
+// AlibabaMosStoreGetcloudshelfversionAPIResponse 获取云货架版本信息 API返回值
+// alibaba.mos.store.getcloudshelfversion
+//
+// 根据屏编号获取云货架版本信息
 type AlibabaMosStoreGetcloudshelfversionAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosStoreGetcloudshelfversionAPIResponseModel

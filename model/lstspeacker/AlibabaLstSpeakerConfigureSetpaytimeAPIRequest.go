@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstSpeakerConfigureSetpaytimeAPIRequest
-音箱播放配置 API请求
-alibaba.lst.speaker.configure.setpaytime
-
-音箱播放配置 */
+// AlibabaLstSpeakerConfigureSetpaytimeAPIRequest 音箱播放配置 API请求
+// alibaba.lst.speaker.configure.setpaytime
+//
+// 音箱播放配置
 type AlibabaLstSpeakerConfigureSetpaytimeAPIRequest struct {
 	model.Params
 	// 设备编码

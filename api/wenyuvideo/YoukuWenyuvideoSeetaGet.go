@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wenyuvideo"
 )
 
-/* YoukuWenyuvideoSeetaGet
-只看TA
-youku.wenyuvideo.seeta.get
-
-只看Ta对外输出 */
+// YoukuWenyuvideoSeetaGet 只看TA
+// youku.wenyuvideo.seeta.get
+//
+// 只看Ta对外输出
 func YoukuWenyuvideoSeetaGet(clt *core.SDKClient, req *wenyuvideo.YoukuWenyuvideoSeetaGetAPIRequest, session string) (*wenyuvideo.YoukuWenyuvideoSeetaGetAPIResponse, error) {
 	var resp wenyuvideo.YoukuWenyuvideoSeetaGetAPIResponse
 	err := clt.Post(req, &resp, session)

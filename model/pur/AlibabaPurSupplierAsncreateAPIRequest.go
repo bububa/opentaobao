@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPurSupplierAsncreateAPIRequest
-asn创建 API请求
-alibaba.pur.supplier.asncreate
-
-asn创建 */
+// AlibabaPurSupplierAsncreateAPIRequest asn创建 API请求
+// alibaba.pur.supplier.asncreate
+//
+// asn创建
 type AlibabaPurSupplierAsncreateAPIRequest struct {
 	model.Params
 	// asn头信息

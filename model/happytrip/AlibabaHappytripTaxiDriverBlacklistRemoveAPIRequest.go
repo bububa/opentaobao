@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest
-移除司机黑名单 API请求
-alibaba.happytrip.taxi.driver.blacklist.remove
-
-移除司机黑名单 */
+// AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest 移除司机黑名单 API请求
+// alibaba.happytrip.taxi.driver.blacklist.remove
+//
+// 移除司机黑名单
 type AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest struct {
 	model.Params
 	// 供应商单号

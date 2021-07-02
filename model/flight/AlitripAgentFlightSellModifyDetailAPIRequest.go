@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripAgentFlightSellModifyDetailAPIRequest
-销售改签详情 API请求
-alitrip.agent.flight.sell.modify.detail
-
-销售改签详情 */
+// AlitripAgentFlightSellModifyDetailAPIRequest 销售改签详情 API请求
+// alitrip.agent.flight.sell.modify.detail
+//
+// 销售改签详情
 type AlitripAgentFlightSellModifyDetailAPIRequest struct {
 	model.Params
 	// 申请单号

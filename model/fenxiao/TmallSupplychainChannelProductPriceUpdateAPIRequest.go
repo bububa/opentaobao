@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallSupplychainChannelProductPriceUpdateAPIRequest
-渠道价格更新接口 API请求
-tmall.supplychain.channel.product.price.update
-
-更新渠道产品价格 */
+// TmallSupplychainChannelProductPriceUpdateAPIRequest 渠道价格更新接口 API请求
+// tmall.supplychain.channel.product.price.update
+//
+// 更新渠道产品价格
 type TmallSupplychainChannelProductPriceUpdateAPIRequest struct {
 	model.Params
 	// 币种，非必填，仅支持当商品记为外币价格时使用

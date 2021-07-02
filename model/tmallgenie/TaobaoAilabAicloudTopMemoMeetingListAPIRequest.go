@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoMeetingListAPIRequest
-天猫精灵会议查询 API请求
-taobao.ailab.aicloud.top.memo.meeting.list
-
-查询天猫精灵用户设置的所有会议 */
+// TaobaoAilabAicloudTopMemoMeetingListAPIRequest 天猫精灵会议查询 API请求
+// taobao.ailab.aicloud.top.memo.meeting.list
+//
+// 查询天猫精灵用户设置的所有会议
 type TaobaoAilabAicloudTopMemoMeetingListAPIRequest struct {
 	model.Params
 	// schema

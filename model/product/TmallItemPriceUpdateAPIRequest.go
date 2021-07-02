@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemPriceUpdateAPIRequest
-天猫商品/SKU价格更新接口 API请求
-tmall.item.price.update
-
-天猫商品/SKU价格更新接口，支持商品、SKU价格同时更新，支持同一商品下的SKU批量更新。 */
+// TmallItemPriceUpdateAPIRequest 天猫商品/SKU价格更新接口 API请求
+// tmall.item.price.update
+//
+// 天猫商品/SKU价格更新接口，支持商品、SKU价格同时更新，支持同一商品下的SKU批量更新。
 type TmallItemPriceUpdateAPIRequest struct {
 	model.Params
 	// 商品ID

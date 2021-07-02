@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenAccountTokenApplyAPIResponse
-申请免登Open Account Token API返回值
-taobao.open.account.token.apply
-
-申请免登Open Account Token */
+// TaobaoOpenAccountTokenApplyAPIResponse 申请免登Open Account Token API返回值
+// taobao.open.account.token.apply
+//
+// 申请免登Open Account Token
 type TaobaoOpenAccountTokenApplyAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenAccountTokenApplyAPIResponseModel

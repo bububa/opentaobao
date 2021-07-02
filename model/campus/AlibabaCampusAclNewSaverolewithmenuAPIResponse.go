@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewSaverolewithmenuAPIResponse
-保存角色级联保存角色和权限的关系 API返回值
-alibaba.campus.acl.new.saverolewithmenu
-
-保存角色级联保存角色和权限的关系 */
+// AlibabaCampusAclNewSaverolewithmenuAPIResponse 保存角色级联保存角色和权限的关系 API返回值
+// alibaba.campus.acl.new.saverolewithmenu
+//
+// 保存角色级联保存角色和权限的关系
 type AlibabaCampusAclNewSaverolewithmenuAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclNewSaverolewithmenuAPIResponseModel

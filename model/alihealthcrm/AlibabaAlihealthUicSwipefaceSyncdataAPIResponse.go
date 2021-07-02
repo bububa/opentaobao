@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthUicSwipefaceSyncdataAPIResponse
-刷脸测睡眠数据同步 API返回值
-alibaba.alihealth.uic.swipeface.syncdata
-
-刷脸测睡眠数据同步，三方数据回传 */
+// AlibabaAlihealthUicSwipefaceSyncdataAPIResponse 刷脸测睡眠数据同步 API返回值
+// alibaba.alihealth.uic.swipeface.syncdata
+//
+// 刷脸测睡眠数据同步，三方数据回传
 type AlibabaAlihealthUicSwipefaceSyncdataAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthUicSwipefaceSyncdataAPIResponseModel

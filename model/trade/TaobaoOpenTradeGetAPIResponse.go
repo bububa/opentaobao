@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenTradeGetAPIResponse
-获取单笔交易的部分信息(商家应用使用) API返回值
-taobao.open.trade.get
-
-获取单笔交易的部分信息</br>
-1.入参fields中传入buyer_nick ，才能返回buyer_open_id */
+// TaobaoOpenTradeGetAPIResponse 获取单笔交易的部分信息(商家应用使用) API返回值
+// taobao.open.trade.get
+//
+// 获取单笔交易的部分信息</br>
+// 1.入参fields中传入buyer_nick ，才能返回buyer_open_id
 type TaobaoOpenTradeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenTradeGetAPIResponseModel

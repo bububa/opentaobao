@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalHandoverParcelQueryAPIResponse
-获取交接单小包信息 API返回值
-cainiao.global.handover.parcel.query
-
-提供给ISV通过该接口查询小包信息 */
+// CainiaoGlobalHandoverParcelQueryAPIResponse 获取交接单小包信息 API返回值
+// cainiao.global.handover.parcel.query
+//
+// 提供给ISV通过该接口查询小包信息
 type CainiaoGlobalHandoverParcelQueryAPIResponse struct {
 	model.CommonResponse
 	CainiaoGlobalHandoverParcelQueryAPIResponseModel

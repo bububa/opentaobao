@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthNrLogisticsDeliverynoUpdateAPIResponse
-上传订单同城快递单号 API返回值
-alibaba.health.nr.logistics.deliveryno.update
-
-上传订单同城快递单号 */
+// AlibabaHealthNrLogisticsDeliverynoUpdateAPIResponse 上传订单同城快递单号 API返回值
+// alibaba.health.nr.logistics.deliveryno.update
+//
+// 上传订单同城快递单号
 type AlibabaHealthNrLogisticsDeliverynoUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthNrLogisticsDeliverynoUpdateAPIResponseModel

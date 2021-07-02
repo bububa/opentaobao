@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIResponse
-单据流向查询 API返回值
-alibaba.alihealth.drug.code.advance.bill.flow.direction
-
-单据流向查询 */
+// AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIResponse 单据流向查询 API返回值
+// alibaba.alihealth.drug.code.advance.bill.flow.direction
+//
+// 单据流向查询
 type AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIResponseModel

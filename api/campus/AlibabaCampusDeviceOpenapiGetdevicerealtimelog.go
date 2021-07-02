@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-/* AlibabaCampusDeviceOpenapiGetdevicerealtimelog
-根据设备uuid获取设备采集信息
-alibaba.campus.device.openapi.getdevicerealtimelog
-
-根据设备uuid获取设备采集信息 */
+// AlibabaCampusDeviceOpenapiGetdevicerealtimelog 根据设备uuid获取设备采集信息
+// alibaba.campus.device.openapi.getdevicerealtimelog
+//
+// 根据设备uuid获取设备采集信息
 func AlibabaCampusDeviceOpenapiGetdevicerealtimelog(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest, session string) (*campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIResponse, error) {
 	var resp campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIResponse
 	err := clt.Post(req, &resp, session)

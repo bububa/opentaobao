@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosOcTradeSyncbanksaleAPIResponse
-云闪付、银行卡销售数据回传接口 API返回值
-alibaba.mos.oc.trade.syncbanksale
-
-云闪付、银行卡销售数据回传 */
+// AlibabaMosOcTradeSyncbanksaleAPIResponse 云闪付、银行卡销售数据回传接口 API返回值
+// alibaba.mos.oc.trade.syncbanksale
+//
+// 云闪付、银行卡销售数据回传
 type AlibabaMosOcTradeSyncbanksaleAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosOcTradeSyncbanksaleAPIResponseModel

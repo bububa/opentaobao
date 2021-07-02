@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemItemImageUploadAPIRequest
-全渠道商品上传图片 API请求
-taobao.omniitem.item.image.upload
-
-全渠道商品上传图片 */
+// TaobaoOmniitemItemImageUploadAPIRequest 全渠道商品上传图片 API请求
+// taobao.omniitem.item.image.upload
+//
+// 全渠道商品上传图片
 type TaobaoOmniitemItemImageUploadAPIRequest struct {
 	model.Params
 	// 商品图片信息，允许png、jpg、gif图片格式,3M以内

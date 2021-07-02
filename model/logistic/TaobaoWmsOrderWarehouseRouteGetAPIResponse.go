@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWmsOrderWarehouseRouteGetAPIResponse
-获取订单仓库路由信息 API返回值
-taobao.wms.order.warehouse.route.get
-
-获取订单仓库路由信息 */
+// TaobaoWmsOrderWarehouseRouteGetAPIResponse 获取订单仓库路由信息 API返回值
+// taobao.wms.order.warehouse.route.get
+//
+// 获取订单仓库路由信息
 type TaobaoWmsOrderWarehouseRouteGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWmsOrderWarehouseRouteGetAPIResponseModel

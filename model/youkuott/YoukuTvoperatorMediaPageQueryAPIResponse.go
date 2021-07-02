@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuTvoperatorMediaPageQueryAPIResponse
-运营商全量媒资分页查询 API返回值
-youku.tvoperator.media.page.query
-
-分页获取渠道全量媒资 */
+// YoukuTvoperatorMediaPageQueryAPIResponse 运营商全量媒资分页查询 API返回值
+// youku.tvoperator.media.page.query
+//
+// 分页获取渠道全量媒资
 type YoukuTvoperatorMediaPageQueryAPIResponse struct {
 	model.CommonResponse
 	YoukuTvoperatorMediaPageQueryAPIResponseModel

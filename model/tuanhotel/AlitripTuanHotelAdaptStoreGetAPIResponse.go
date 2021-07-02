@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTuanHotelAdaptStoreGetAPIResponse
-酒店团购套餐关联适用门店 API返回值
-alitrip.tuan.hotel.adapt.store.get
-
-输入shid，返回关联门店详情信息 */
+// AlitripTuanHotelAdaptStoreGetAPIResponse 酒店团购套餐关联适用门店 API返回值
+// alitrip.tuan.hotel.adapt.store.get
+//
+// 输入shid，返回关联门店详情信息
 type AlitripTuanHotelAdaptStoreGetAPIResponse struct {
 	model.CommonResponse
 	AlitripTuanHotelAdaptStoreGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopAuthLogoutAPIResponse
-登出 API返回值
-taobao.ailab.aicloud.top.auth.logout
-
-登出 */
+// TaobaoAilabAicloudTopAuthLogoutAPIResponse 登出 API返回值
+// taobao.ailab.aicloud.top.auth.logout
+//
+// 登出
 type TaobaoAilabAicloudTopAuthLogoutAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopAuthLogoutAPIResponseModel

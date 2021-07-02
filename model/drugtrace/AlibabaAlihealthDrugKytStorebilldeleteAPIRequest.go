@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytStorebilldeleteAPIRequest
-零售端单据删除 API请求
-alibaba.alihealth.drug.kyt.storebilldelete
-
-零售端单据删除 */
+// AlibabaAlihealthDrugKytStorebilldeleteAPIRequest 零售端单据删除 API请求
+// alibaba.alihealth.drug.kyt.storebilldelete
+//
+// 零售端单据删除
 type AlibabaAlihealthDrugKytStorebilldeleteAPIRequest struct {
 	model.Params
 	// 企业ID

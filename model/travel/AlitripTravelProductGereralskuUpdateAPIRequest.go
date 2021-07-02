@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelProductGereralskuUpdateAPIRequest
-(供销)船票通用类目sku新增&编辑API API请求
-alitrip.travel.product.gereralsku.update
-
-发布SKU信息（如果properties重复 则更新） */
+// AlitripTravelProductGereralskuUpdateAPIRequest (供销)船票通用类目sku新增&编辑API API请求
+// alitrip.travel.product.gereralsku.update
+//
+// 发布SKU信息（如果properties重复 则更新）
 type AlitripTravelProductGereralskuUpdateAPIRequest struct {
 	model.Params
 	// sku销售属性别名；如套餐1 需要调整成其他 需要在这里修改

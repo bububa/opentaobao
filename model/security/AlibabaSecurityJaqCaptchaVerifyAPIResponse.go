@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqCaptchaVerifyAPIResponse
-聚安全安全验证检查接口 API返回值
-alibaba.security.jaq.captcha.verify
-
-聚安全安全验证检查 */
+// AlibabaSecurityJaqCaptchaVerifyAPIResponse 聚安全安全验证检查接口 API返回值
+// alibaba.security.jaq.captcha.verify
+//
+// 聚安全安全验证检查
 type AlibabaSecurityJaqCaptchaVerifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqCaptchaVerifyAPIResponseModel

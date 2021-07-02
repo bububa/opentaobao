@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrZqsPlanQueryAPIResponse
-周期送配送明细查询 API返回值
-tmall.nr.zqs.plan.query
-
-周期送配送明细查询 */
+// TmallNrZqsPlanQueryAPIResponse 周期送配送明细查询 API返回值
+// tmall.nr.zqs.plan.query
+//
+// 周期送配送明细查询
 type TmallNrZqsPlanQueryAPIResponse struct {
 	model.CommonResponse
 	TmallNrZqsPlanQueryAPIResponseModel

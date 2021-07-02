@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSalestarKeywordsDeleteAPIResponse
-销量明星关键词删除 API返回值
-taobao.simba.salestar.keywords.delete
-
-（新）关键词删除相关接口 */
+// TaobaoSimbaSalestarKeywordsDeleteAPIResponse 销量明星关键词删除 API返回值
+// taobao.simba.salestar.keywords.delete
+//
+// （新）关键词删除相关接口
 type TaobaoSimbaSalestarKeywordsDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaSalestarKeywordsDeleteAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOverseaExchagerateGetAPIResponse
-汇率信息获取 API返回值
-alibaba.oversea.exchagerate.get
-
-提供外部汇率查询接口 */
+// AlibabaOverseaExchagerateGetAPIResponse 汇率信息获取 API返回值
+// alibaba.oversea.exchagerate.get
+//
+// 提供外部汇率查询接口
 type AlibabaOverseaExchagerateGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaOverseaExchagerateGetAPIResponseModel

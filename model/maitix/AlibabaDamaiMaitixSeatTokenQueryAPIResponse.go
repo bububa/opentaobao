@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixSeatTokenQueryAPIResponse
-分销商选座获取qtoken API返回值
-alibaba.damai.maitix.seat.token.query
-
-选座分销，分销商查询token */
+// AlibabaDamaiMaitixSeatTokenQueryAPIResponse 分销商选座获取qtoken API返回值
+// alibaba.damai.maitix.seat.token.query
+//
+// 选座分销，分销商查询token
 type AlibabaDamaiMaitixSeatTokenQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixSeatTokenQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripEmployeeQueryAPIResponse
-企业员工查询 API返回值
-alitrip.btrip.employee.query
-
-企业员工查询 */
+// AlitripBtripEmployeeQueryAPIResponse 企业员工查询 API返回值
+// alitrip.btrip.employee.query
+//
+// 企业员工查询
 type AlitripBtripEmployeeQueryAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripEmployeeQueryAPIResponseModel

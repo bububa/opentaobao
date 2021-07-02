@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbInventorylogQueryAPIRequest
-根据商品ID查询所有库存变更记录 API请求
-taobao.wlb.inventorylog.query
-
-通过商品ID等几个条件来分页查询库存变更记录 */
+// TaobaoWlbInventorylogQueryAPIRequest 根据商品ID查询所有库存变更记录 API请求
+// taobao.wlb.inventorylog.query
+//
+// 通过商品ID等几个条件来分页查询库存变更记录
 type TaobaoWlbInventorylogQueryAPIRequest struct {
 	model.Params
 	// 商品ID

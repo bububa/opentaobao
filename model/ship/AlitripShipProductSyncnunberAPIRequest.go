@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripShipProductSyncnunberAPIRequest
-船票班次变更回调 API请求
-alitrip.ship.product.syncnunber
-
-船票班次变更回调 */
+// AlitripShipProductSyncnunberAPIRequest 船票班次变更回调 API请求
+// alitrip.ship.product.syncnunber
+//
+// 船票班次变更回调
 type AlitripShipProductSyncnunberAPIRequest struct {
 	model.Params
 	// 出发城市

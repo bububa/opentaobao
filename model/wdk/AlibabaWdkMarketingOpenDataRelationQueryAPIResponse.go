@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingOpenDataRelationQueryAPIResponse
-数据关联关系查询 API返回值
-alibaba.wdk.marketing.open.data.relation.query
-
-数据关联关系查询 */
+// AlibabaWdkMarketingOpenDataRelationQueryAPIResponse 数据关联关系查询 API返回值
+// alibaba.wdk.marketing.open.data.relation.query
+//
+// 数据关联关系查询
 type AlibabaWdkMarketingOpenDataRelationQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingOpenDataRelationQueryAPIResponseModel

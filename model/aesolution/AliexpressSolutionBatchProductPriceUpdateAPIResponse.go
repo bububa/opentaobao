@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionBatchProductPriceUpdateAPIResponse
-aliexpress.solution.batch.product.price.update API返回值
-aliexpress.solution.batch.product.price.update
-
-batch product price update operation for oversea sellers */
+// AliexpressSolutionBatchProductPriceUpdateAPIResponse aliexpress.solution.batch.product.price.update API返回值
+// aliexpress.solution.batch.product.price.update
+//
+// batch product price update operation for oversea sellers
 type AliexpressSolutionBatchProductPriceUpdateAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionBatchProductPriceUpdateAPIResponseModel

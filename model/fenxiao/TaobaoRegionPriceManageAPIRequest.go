@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRegionPriceManageAPIRequest
-编辑区域价格 API请求
-taobao.region.price.manage
-
-编辑区域价格 */
+// TaobaoRegionPriceManageAPIRequest 编辑区域价格 API请求
+// taobao.region.price.manage
+//
+// 编辑区域价格
 type TaobaoRegionPriceManageAPIRequest struct {
 	model.Params
 	// 商品id

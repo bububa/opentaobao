@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjOcCalldispatcherAPIResponse
-呼叫运力 API返回值
-alibaba.mj.oc.calldispatcher
-
-定时达呼叫运力接口 */
+// AlibabaMjOcCalldispatcherAPIResponse 呼叫运力 API返回值
+// alibaba.mj.oc.calldispatcher
+//
+// 定时达呼叫运力接口
 type AlibabaMjOcCalldispatcherAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcCalldispatcherAPIResponseModel

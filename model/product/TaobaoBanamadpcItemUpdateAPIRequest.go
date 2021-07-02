@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBanamadpcItemUpdateAPIRequest
-编辑商品 API请求
-taobao.banamadpc.item.update
-
-巴拿马供应商通过此接口编辑商品 */
+// TaobaoBanamadpcItemUpdateAPIRequest 编辑商品 API请求
+// taobao.banamadpc.item.update
+//
+// 巴拿马供应商通过此接口编辑商品
 type TaobaoBanamadpcItemUpdateAPIRequest struct {
 	model.Params
 	// 商品的schema xml

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkChannelCommentCreateAPIResponse
-差评导入 API返回值
-alibaba.wdk.channel.comment.create
-
-差评导入 */
+// AlibabaWdkChannelCommentCreateAPIResponse 差评导入 API返回值
+// alibaba.wdk.channel.comment.create
+//
+// 差评导入
 type AlibabaWdkChannelCommentCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkChannelCommentCreateAPIResponseModel

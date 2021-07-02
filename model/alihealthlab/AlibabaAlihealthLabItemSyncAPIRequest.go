@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthLabItemSyncAPIRequest
-阿里健康检验检测商品发布 API请求
-alibaba.alihealth.lab.item.sync
-
-iSV发布检验检测商品基本信息给健康，内部关联一个淘宝商品或SKU */
+// AlibabaAlihealthLabItemSyncAPIRequest 阿里健康检验检测商品发布 API请求
+// alibaba.alihealth.lab.item.sync
+//
+// iSV发布检验检测商品基本信息给健康，内部关联一个淘宝商品或SKU
 type AlibabaAlihealthLabItemSyncAPIRequest struct {
 	model.Params
 	// 检验检测项目isv侧编码

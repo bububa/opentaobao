@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmActivityListGetAPIRequest
-获取活动列表接口 API请求
-alibaba.westcrm.activity.list.get
-
-获取活动列表提供给友盟&互动屏 */
+// AlibabaWestcrmActivityListGetAPIRequest 获取活动列表接口 API请求
+// alibaba.westcrm.activity.list.get
+//
+// 获取活动列表提供给友盟&互动屏
 type AlibabaWestcrmActivityListGetAPIRequest struct {
 	model.Params
 	// 活动状态

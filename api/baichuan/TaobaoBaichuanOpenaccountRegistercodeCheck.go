@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-/* TaobaoBaichuanOpenaccountRegistercodeCheck
-百川检查注册验证码
-taobao.baichuan.openaccount.registercode.check
-
-百川检查注册验证码 */
+// TaobaoBaichuanOpenaccountRegistercodeCheck 百川检查注册验证码
+// taobao.baichuan.openaccount.registercode.check
+//
+// 百川检查注册验证码
 func TaobaoBaichuanOpenaccountRegistercodeCheck(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountRegistercodeCheckAPIResponse, error) {
 	var resp baichuan.TaobaoBaichuanOpenaccountRegistercodeCheckAPIResponse
 	err := clt.Post(req, &resp, session)

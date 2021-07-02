@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmLotterySendcodeAPIResponse
-淘票票外部直发券 API返回值
-taobao.film.lottery.sendcode
-
-淘票票外部直发券 */
+// TaobaoFilmLotterySendcodeAPIResponse 淘票票外部直发券 API返回值
+// taobao.film.lottery.sendcode
+//
+// 淘票票外部直发券
 type TaobaoFilmLotterySendcodeAPIResponse struct {
 	model.CommonResponse
 	TaobaoFilmLotterySendcodeAPIResponseModel

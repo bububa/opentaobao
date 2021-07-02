@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreAccpetedAPIRequest
-Pos端门店接单接口 API请求
-taobao.omniorder.store.accpeted
-
-ISV Pos端门店接单，通知星盘 */
+// TaobaoOmniorderStoreAccpetedAPIRequest Pos端门店接单接口 API请求
+// taobao.omniorder.store.accpeted
+//
+// ISV Pos端门店接单，通知星盘
 type TaobaoOmniorderStoreAccpetedAPIRequest struct {
 	model.Params
 	// 淘宝交易主订单ID

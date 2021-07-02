@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalHandoverCommitAPIResponse
-提交发布交接单 API返回值
-cainiao.global.handover.commit
-
-提供给ISV通过该接口提交发布交接单 */
+// CainiaoGlobalHandoverCommitAPIResponse 提交发布交接单 API返回值
+// cainiao.global.handover.commit
+//
+// 提供给ISV通过该接口提交发布交接单
 type CainiaoGlobalHandoverCommitAPIResponse struct {
 	model.CommonResponse
 	CainiaoGlobalHandoverCommitAPIResponseModel

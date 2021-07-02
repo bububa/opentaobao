@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFundplatformCardorderMakeAPIRequest
-通知制卡商制卡 API请求
-alibaba.fundplatform.cardorder.make
-
-该接口由内部定义，外部制卡商实现。当需要制卡商进行制卡操作时，将会调用该接口。 */
+// AlibabaFundplatformCardorderMakeAPIRequest 通知制卡商制卡 API请求
+// alibaba.fundplatform.cardorder.make
+//
+// 该接口由内部定义，外部制卡商实现。当需要制卡商进行制卡操作时，将会调用该接口。
 type AlibabaFundplatformCardorderMakeAPIRequest struct {
 	model.Params
 	// 物流信息

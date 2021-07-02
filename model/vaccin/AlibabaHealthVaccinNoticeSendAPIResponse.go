@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeSendAPIResponse
-发送消息提醒 API返回值
-alibaba.health.vaccin.notice.send
-
-ISV 通过免疫规划中心给用户发送短信或者支付宝 PUSH 提醒。 */
+// AlibabaHealthVaccinNoticeSendAPIResponse 发送消息提醒 API返回值
+// alibaba.health.vaccin.notice.send
+//
+// ISV 通过免疫规划中心给用户发送短信或者支付宝 PUSH 提醒。
 type AlibabaHealthVaccinNoticeSendAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthVaccinNoticeSendAPIResponseModel

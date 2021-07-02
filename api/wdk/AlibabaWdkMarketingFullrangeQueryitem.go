@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-/* AlibabaWdkMarketingFullrangeQueryitem
-全场活动查询换购品
-alibaba.wdk.marketing.fullrange.queryitem
-
-全场活动查询换购品 */
+// AlibabaWdkMarketingFullrangeQueryitem 全场活动查询换购品
+// alibaba.wdk.marketing.fullrange.queryitem
+//
+// 全场活动查询换购品
 func AlibabaWdkMarketingFullrangeQueryitem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeQueryitemAPIRequest, session string) (*wdk.AlibabaWdkMarketingFullrangeQueryitemAPIResponse, error) {
 	var resp wdk.AlibabaWdkMarketingFullrangeQueryitemAPIResponse
 	err := clt.Post(req, &resp, session)

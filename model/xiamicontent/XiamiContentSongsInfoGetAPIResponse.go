@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* XiamiContentSongsInfoGetAPIResponse
-获取歌曲信息 API返回值
-xiami.content.songs.info.get
-
-(批量)获取歌曲信息 */
+// XiamiContentSongsInfoGetAPIResponse 获取歌曲信息 API返回值
+// xiami.content.songs.info.get
+//
+// (批量)获取歌曲信息
 type XiamiContentSongsInfoGetAPIResponse struct {
 	model.CommonResponse
 	XiamiContentSongsInfoGetAPIResponseModel

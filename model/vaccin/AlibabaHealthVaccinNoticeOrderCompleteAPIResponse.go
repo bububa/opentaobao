@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeOrderCompleteAPIResponse
-疫苗接种完成(带支付宝提醒) API返回值
-alibaba.health.vaccin.notice.order.complete
-
-用户到店完成接种,ISV感知通知阿里健康完成接种,并通知用户! */
+// AlibabaHealthVaccinNoticeOrderCompleteAPIResponse 疫苗接种完成(带支付宝提醒) API返回值
+// alibaba.health.vaccin.notice.order.complete
+//
+// 用户到店完成接种,ISV感知通知阿里健康完成接种,并通知用户!
 type AlibabaHealthVaccinNoticeOrderCompleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthVaccinNoticeOrderCompleteAPIResponseModel

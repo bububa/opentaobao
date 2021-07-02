@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIResponse
-补发单物流信息回传 API返回值
-taobao.rdc.aligenius.warehouse.resend.logistics.msg.post
-
-补发单erp物流信息回传平台 */
+// TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIResponse 补发单物流信息回传 API返回值
+// taobao.rdc.aligenius.warehouse.resend.logistics.msg.post
+//
+// 补发单erp物流信息回传平台
 type TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIResponse struct {
 	model.CommonResponse
 	TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIResponseModel

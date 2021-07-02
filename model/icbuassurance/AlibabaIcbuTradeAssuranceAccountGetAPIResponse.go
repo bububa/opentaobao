@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuTradeAssuranceAccountGetAPIResponse
-icbu信保账户信息 API返回值
-alibaba.icbu.trade.assurance.account.get
-
-icbu交易信用保障开通状态&额度信息查询 */
+// AlibabaIcbuTradeAssuranceAccountGetAPIResponse icbu信保账户信息 API返回值
+// alibaba.icbu.trade.assurance.account.get
+//
+// icbu交易信用保障开通状态&额度信息查询
 type AlibabaIcbuTradeAssuranceAccountGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuTradeAssuranceAccountGetAPIResponseModel

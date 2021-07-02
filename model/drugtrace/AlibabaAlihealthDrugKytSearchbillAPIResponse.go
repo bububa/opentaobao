@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytSearchbillAPIResponse
-通过时间段批量查询入出库单信息 API返回值
-alibaba.alihealth.drug.kyt.searchbill
-
-通过时间段批量查询入出库单信息 */
+// AlibabaAlihealthDrugKytSearchbillAPIResponse 通过时间段批量查询入出库单信息 API返回值
+// alibaba.alihealth.drug.kyt.searchbill
+//
+// 通过时间段批量查询入出库单信息
 type AlibabaAlihealthDrugKytSearchbillAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytSearchbillAPIResponseModel

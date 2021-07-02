@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsSkuUpdateAPIRequest
-商品信息的更新 API请求
-taobao.wlb.wms.sku.update
-
-商品信息的更新 */
+// TaobaoWlbWmsSkuUpdateAPIRequest 商品信息的更新 API请求
+// taobao.wlb.wms.sku.update
+//
+// 商品信息的更新
 type TaobaoWlbWmsSkuUpdateAPIRequest struct {
 	model.Params
 	// 外部系统ID

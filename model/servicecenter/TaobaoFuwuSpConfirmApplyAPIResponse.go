@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFuwuSpConfirmApplyAPIResponse
-内购服务确认单申请接口 API返回值
-taobao.fuwu.sp.confirm.apply
-
-isv能通过该接口发起确认申请单 */
+// TaobaoFuwuSpConfirmApplyAPIResponse 内购服务确认单申请接口 API返回值
+// taobao.fuwu.sp.confirm.apply
+//
+// isv能通过该接口发起确认申请单
 type TaobaoFuwuSpConfirmApplyAPIResponse struct {
 	model.CommonResponse
 	TaobaoFuwuSpConfirmApplyAPIResponseModel

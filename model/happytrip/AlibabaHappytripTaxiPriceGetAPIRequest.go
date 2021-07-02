@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiPriceGetAPIRequest
-获取价格预估信息 API请求
-alibaba.happytrip.taxi.price.get
-
-打车价格预估 */
+// AlibabaHappytripTaxiPriceGetAPIRequest 获取价格预估信息 API请求
+// alibaba.happytrip.taxi.price.get
+//
+// 打车价格预估
 type AlibabaHappytripTaxiPriceGetAPIRequest struct {
 	model.Params
 	// 出发地纬度

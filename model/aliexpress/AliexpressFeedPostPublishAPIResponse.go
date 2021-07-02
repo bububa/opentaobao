@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressFeedPostPublishAPIResponse
-同步帖子 API返回值
-aliexpress.feed.post.publish
-
-站外平台同步帖子至AE FEED域 */
+// AliexpressFeedPostPublishAPIResponse 同步帖子 API返回值
+// aliexpress.feed.post.publish
+//
+// 站外平台同步帖子至AE FEED域
 type AliexpressFeedPostPublishAPIResponse struct {
 	model.CommonResponse
 	AliexpressFeedPostPublishAPIResponseModel

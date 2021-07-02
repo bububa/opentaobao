@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* AlibabaSscSupplyplatformServicestoreSave
-保存网点
-alibaba.ssc.supplyplatform.servicestore.save
-
-网点创建、修改 */
+// AlibabaSscSupplyplatformServicestoreSave 保存网点
+// alibaba.ssc.supplyplatform.servicestore.save
+//
+// 网点创建、修改
 func AlibabaSscSupplyplatformServicestoreSave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIResponse, error) {
 	var resp tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIResponse
 	err := clt.Post(req, &resp, session)

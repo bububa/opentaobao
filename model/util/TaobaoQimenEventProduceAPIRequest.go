@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenEventProduceAPIRequest
-发出奇门事件 API请求
-taobao.qimen.event.produce
-
-当订单被处理时，用于通知奇门系统。 */
+// TaobaoQimenEventProduceAPIRequest 发出奇门事件 API请求
+// taobao.qimen.event.produce
+//
+// 当订单被处理时，用于通知奇门系统。
 type TaobaoQimenEventProduceAPIRequest struct {
 	model.Params
 	// 事件状态，如QIMEN_ERP_TRANSFER，QIMEN_ERP_CHECK

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemStoreUpdateSchemaGetAPIRequest
-天猫门店商品修改规则获取 API请求
-tmall.item.store.update.schema.get
-
-天猫门店商品修改规则获取 */
+// TmallItemStoreUpdateSchemaGetAPIRequest 天猫门店商品修改规则获取 API请求
+// tmall.item.store.update.schema.get
+//
+// 天猫门店商品修改规则获取
 type TmallItemStoreUpdateSchemaGetAPIRequest struct {
 	model.Params
 	// 主商品ID

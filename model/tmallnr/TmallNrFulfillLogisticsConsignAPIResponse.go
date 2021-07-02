@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrFulfillLogisticsConsignAPIResponse
-同城配门店备货通知 API返回值
-tmall.nr.fulfill.logistics.consign
-
-同城配业务备货通知，商家告诉平台门店的货已经准备好，可以发货了； */
+// TmallNrFulfillLogisticsConsignAPIResponse 同城配门店备货通知 API返回值
+// tmall.nr.fulfill.logistics.consign
+//
+// 同城配业务备货通知，商家告诉平台门店的货已经准备好，可以发货了；
 type TmallNrFulfillLogisticsConsignAPIResponse struct {
 	model.CommonResponse
 	TmallNrFulfillLogisticsConsignAPIResponseModel

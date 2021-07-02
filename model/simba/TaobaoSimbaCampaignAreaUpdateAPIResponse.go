@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignAreaUpdateAPIResponse
-更新一个推广计划的投放地域 API返回值
-taobao.simba.campaign.area.update
-
-更新一个推广计划的投放地域 */
+// TaobaoSimbaCampaignAreaUpdateAPIResponse 更新一个推广计划的投放地域 API返回值
+// taobao.simba.campaign.area.update
+//
+// 更新一个推广计划的投放地域
 type TaobaoSimbaCampaignAreaUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCampaignAreaUpdateAPIResponseModel

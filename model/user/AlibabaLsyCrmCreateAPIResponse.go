@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLsyCrmCreateAPIResponse
-创建客资 API返回值
-alibaba.lsy.crm.create
-
-欢客调用该接口进行客资创建 */
+// AlibabaLsyCrmCreateAPIResponse 创建客资 API返回值
+// alibaba.lsy.crm.create
+//
+// 欢客调用该接口进行客资创建
 type AlibabaLsyCrmCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaLsyCrmCreateAPIResponseModel

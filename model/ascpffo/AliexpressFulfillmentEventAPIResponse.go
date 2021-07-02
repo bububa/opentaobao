@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressFulfillmentEventAPIResponse
-AE履约事件处理 API返回值
-aliexpress.fulfillment.event
-
-AE用 履约底层声明发货能力 */
+// AliexpressFulfillmentEventAPIResponse AE履约事件处理 API返回值
+// aliexpress.fulfillment.event
+//
+// AE用 履约底层声明发货能力
 type AliexpressFulfillmentEventAPIResponse struct {
 	model.CommonResponse
 	AliexpressFulfillmentEventAPIResponseModel

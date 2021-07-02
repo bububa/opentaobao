@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCreativesChangedGetAPIRequest
-分页获取修改过的广告创意ID和修改时间 API请求
-taobao.simba.creatives.changed.get
-
-分页获取修改过的广告创意ID和修改时间 */
+// TaobaoSimbaCreativesChangedGetAPIRequest 分页获取修改过的广告创意ID和修改时间 API请求
+// taobao.simba.creatives.changed.get
+//
+// 分页获取修改过的广告创意ID和修改时间
 type TaobaoSimbaCreativesChangedGetAPIRequest struct {
 	model.Params
 	// 主人昵称

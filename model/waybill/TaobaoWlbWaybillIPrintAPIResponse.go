@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWaybillIPrintAPIResponse
-打印确认接口v1.0 API返回值
-taobao.wlb.waybill.i.print
-
-打印面单前的校验接口，判断面单号信息与订单信息是否匹配。 */
+// TaobaoWlbWaybillIPrintAPIResponse 打印确认接口v1.0 API返回值
+// taobao.wlb.waybill.i.print
+//
+// 打印面单前的校验接口，判断面单号信息与订单信息是否匹配。
 type TaobaoWlbWaybillIPrintAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWaybillIPrintAPIResponseModel

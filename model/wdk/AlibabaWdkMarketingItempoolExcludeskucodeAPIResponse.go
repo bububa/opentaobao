@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItempoolExcludeskucodeAPIResponse
-商品池排除商品【品类优惠使用】 API返回值
-alibaba.wdk.marketing.itempool.excludeskucode
-
-品类优惠新增排除池 */
+// AlibabaWdkMarketingItempoolExcludeskucodeAPIResponse 商品池排除商品【品类优惠使用】 API返回值
+// alibaba.wdk.marketing.itempool.excludeskucode
+//
+// 品类优惠新增排除池
 type AlibabaWdkMarketingItempoolExcludeskucodeAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingItempoolExcludeskucodeAPIResponseModel

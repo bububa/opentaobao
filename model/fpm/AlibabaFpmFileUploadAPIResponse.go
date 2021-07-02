@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFpmFileUploadAPIResponse
-结算单文件上传 API返回值
-alibaba.fpm.file.upload
-
-结算单文件上传 */
+// AlibabaFpmFileUploadAPIResponse 结算单文件上传 API返回值
+// alibaba.fpm.file.upload
+//
+// 结算单文件上传
 type AlibabaFpmFileUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaFpmFileUploadAPIResponseModel

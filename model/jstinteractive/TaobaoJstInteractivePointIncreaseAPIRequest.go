@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstInteractivePointIncreaseAPIRequest
-互动积分发放接口 API请求
-taobao.jst.interactive.point.increase
-
-向用户发放互动积分 */
+// TaobaoJstInteractivePointIncreaseAPIRequest 互动积分发放接口 API请求
+// taobao.jst.interactive.point.increase
+//
+// 向用户发放互动积分
 type TaobaoJstInteractivePointIncreaseAPIRequest struct {
 	model.Params
 	// 发放的积分值

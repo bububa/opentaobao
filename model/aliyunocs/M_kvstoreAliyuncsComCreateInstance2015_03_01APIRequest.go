@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest
-创建OCS实例 API请求
-m-kvstore.aliyuncs.com.CreateInstance.2015-03-01
-
-创建OCS实例 */
+// M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest 创建OCS实例 API请求
+// m-kvstore.aliyuncs.com.CreateInstance.2015-03-01
+//
+// 创建OCS实例
 type M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest struct {
 	model.Params
 	// 实例昵称长度为2-128个字符，以大小写英文字母或中文开头，不支持字符@/:="<>{[]}和空格

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallPopupstoreItemDiscountPriceAPIRequest
-商品优惠价格查询 API请求
-tmall.popupstore.item.discount.price
-
-商品优惠价格查询 */
+// TmallPopupstoreItemDiscountPriceAPIRequest 商品优惠价格查询 API请求
+// tmall.popupstore.item.discount.price
+//
+// 商品优惠价格查询
 type TmallPopupstoreItemDiscountPriceAPIRequest struct {
 	model.Params
 	// 商品id列表

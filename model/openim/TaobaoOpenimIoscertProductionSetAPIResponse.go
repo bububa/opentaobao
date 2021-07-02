@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimIoscertProductionSetAPIResponse
-设置ios证书 API返回值
-taobao.openim.ioscert.production.set
-
-设置ios证书 */
+// TaobaoOpenimIoscertProductionSetAPIResponse 设置ios证书 API返回值
+// taobao.openim.ioscert.production.set
+//
+// 设置ios证书
 type TaobaoOpenimIoscertProductionSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimIoscertProductionSetAPIResponseModel

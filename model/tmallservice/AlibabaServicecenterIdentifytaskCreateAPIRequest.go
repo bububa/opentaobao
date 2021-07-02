@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaServicecenterIdentifytaskCreateAPIRequest
-创建核销单 API请求
-alibaba.servicecenter.identifytask.create
-
-创建核销单 */
+// AlibabaServicecenterIdentifytaskCreateAPIRequest 创建核销单 API请求
+// alibaba.servicecenter.identifytask.create
+//
+// 创建核销单
 type AlibabaServicecenterIdentifytaskCreateAPIRequest struct {
 	model.Params
 	// 工单集合

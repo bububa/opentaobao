@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStoreExtendUpdateAPIResponse
-商户门店拓展信息更新接口 API返回值
-taobao.place.store.extend.update
-
-更新商户门店拓展信息（tags、attribute、bizAtrribute）更新接口 */
+// TaobaoPlaceStoreExtendUpdateAPIResponse 商户门店拓展信息更新接口 API返回值
+// taobao.place.store.extend.update
+//
+// 更新商户门店拓展信息（tags、attribute、bizAtrribute）更新接口
 type TaobaoPlaceStoreExtendUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoPlaceStoreExtendUpdateAPIResponseModel

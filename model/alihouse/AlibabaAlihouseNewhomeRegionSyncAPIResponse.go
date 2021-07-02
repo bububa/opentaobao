@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeRegionSyncAPIResponse
-城区数据同步 API返回值
-alibaba.alihouse.newhome.region.sync
-
-城区数据同步 */
+// AlibabaAlihouseNewhomeRegionSyncAPIResponse 城区数据同步 API返回值
+// alibaba.alihouse.newhome.region.sync
+//
+// 城区数据同步
 type AlibabaAlihouseNewhomeRegionSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihouseNewhomeRegionSyncAPIResponseModel

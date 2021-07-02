@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpIndustryDisivisonQueryAPIResponse
-查询服务支持地区列表 API返回值
-alibaba.ascp.industry.disivison.query
-
-商家获取服务支持地区 */
+// AlibabaAscpIndustryDisivisonQueryAPIResponse 查询服务支持地区列表 API返回值
+// alibaba.ascp.industry.disivison.query
+//
+// 商家获取服务支持地区
 type AlibabaAscpIndustryDisivisonQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpIndustryDisivisonQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemCatpropsModificationGetAPIResponse
-查询商品类目属性变更 API返回值
-taobao.item.catprops.modification.get
-
-查询商品类目属性变更信息 */
+// TaobaoItemCatpropsModificationGetAPIResponse 查询商品类目属性变更 API返回值
+// taobao.item.catprops.modification.get
+//
+// 查询商品类目属性变更信息
 type TaobaoItemCatpropsModificationGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemCatpropsModificationGetAPIResponseModel

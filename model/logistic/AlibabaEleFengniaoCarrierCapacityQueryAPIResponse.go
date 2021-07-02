@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoCarrierCapacityQueryAPIResponse
-按照门店查询骑手运力状态查询 API返回值
-alibaba.ele.fengniao.carrier.capacity.query
-
-提供给大润发，用于按照站点纬度查询大润发每个配送站的实时上班骑手数、到店骑手数、活跃骑手数量 */
+// AlibabaEleFengniaoCarrierCapacityQueryAPIResponse 按照门店查询骑手运力状态查询 API返回值
+// alibaba.ele.fengniao.carrier.capacity.query
+//
+// 提供给大润发，用于按照站点纬度查询大润发每个配送站的实时上班骑手数、到店骑手数、活跃骑手数量
 type AlibabaEleFengniaoCarrierCapacityQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoCarrierCapacityQueryAPIResponseModel

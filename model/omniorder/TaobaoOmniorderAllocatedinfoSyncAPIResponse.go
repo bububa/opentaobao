@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderAllocatedinfoSyncAPIResponse
-分单结果同步给星盘 API返回值
-taobao.omniorder.allocatedinfo.sync
-
-ISV分单完成，将分单结果同步给星盘 */
+// TaobaoOmniorderAllocatedinfoSyncAPIResponse 分单结果同步给星盘 API返回值
+// taobao.omniorder.allocatedinfo.sync
+//
+// ISV分单完成，将分单结果同步给星盘
 type TaobaoOmniorderAllocatedinfoSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderAllocatedinfoSyncAPIResponseModel

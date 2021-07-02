@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelItemBaseModifyAPIRequest
-【API3.0】度假线路商品编辑接口 API请求
-taobao.alitrip.travel.item.base.modify
-
-旅行度假新商品基本信息修改接口 第三版。提供商家通过TOP API方式修改商品除sku外的基本信息。 */
+// TaobaoAlitripTravelItemBaseModifyAPIRequest 【API3.0】度假线路商品编辑接口 API请求
+// taobao.alitrip.travel.item.base.modify
+//
+// 旅行度假新商品基本信息修改接口 第三版。提供商家通过TOP API方式修改商品除sku外的基本信息。
 type TaobaoAlitripTravelItemBaseModifyAPIRequest struct {
 	model.Params
 	// 跟团游商品相关信息

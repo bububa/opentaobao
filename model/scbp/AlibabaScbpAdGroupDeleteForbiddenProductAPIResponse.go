@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdGroupDeleteForbiddenProductAPIResponse
-删除屏蔽品 API返回值
-alibaba.scbp.ad.group.delete.forbidden.product
-
-删除屏蔽品 */
+// AlibabaScbpAdGroupDeleteForbiddenProductAPIResponse 删除屏蔽品 API返回值
+// alibaba.scbp.ad.group.delete.forbidden.product
+//
+// 删除屏蔽品
 type AlibabaScbpAdGroupDeleteForbiddenProductAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdGroupDeleteForbiddenProductAPIResponseModel

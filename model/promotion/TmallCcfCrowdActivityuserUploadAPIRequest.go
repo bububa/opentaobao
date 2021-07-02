@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCcfCrowdActivityuserUploadAPIRequest
-品牌营销活动用户上传 API请求
-tmall.ccf.crowd.activityuser.upload
-
-搜集ISV的活动用户信息，将其沉淀为活动人群数据 */
+// TmallCcfCrowdActivityuserUploadAPIRequest 品牌营销活动用户上传 API请求
+// tmall.ccf.crowd.activityuser.upload
+//
+// 搜集ISV的活动用户信息，将其沉淀为活动人群数据
 type TmallCcfCrowdActivityuserUploadAPIRequest struct {
 	model.Params
 	// 活动id

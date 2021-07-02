@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeCreateOrderAPIRequest
-订单创建 API请求
-taobao.opentrade.create.order
-
-交易开放创建订单 */
+// TaobaoOpentradeCreateOrderAPIRequest 订单创建 API请求
+// taobao.opentrade.create.order
+//
+// 交易开放创建订单
 type TaobaoOpentradeCreateOrderAPIRequest struct {
 	model.Params
 	// 外部订单ID

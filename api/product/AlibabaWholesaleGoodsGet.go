@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-/* AlibabaWholesaleGoodsGet
-查询阿里巴巴批发市场商品详情
-alibaba.wholesale.goods.get
-
-查询阿里巴巴批发市场商品详情 */
+// AlibabaWholesaleGoodsGet 查询阿里巴巴批发市场商品详情
+// alibaba.wholesale.goods.get
+//
+// 查询阿里巴巴批发市场商品详情
 func AlibabaWholesaleGoodsGet(clt *core.SDKClient, req *product.AlibabaWholesaleGoodsGetAPIRequest, session string) (*product.AlibabaWholesaleGoodsGetAPIResponse, error) {
 	var resp product.AlibabaWholesaleGoodsGetAPIResponse
 	err := clt.Post(req, &resp, session)

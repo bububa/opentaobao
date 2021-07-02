@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/store"
 )
 
-/* TaobaoPlaceStoregroupUpdate
-门店库修改基本信息
-taobao.place.storegroup.update
-
-门店库修改基本信息 */
+// TaobaoPlaceStoregroupUpdate 门店库修改基本信息
+// taobao.place.storegroup.update
+//
+// 门店库修改基本信息
 func TaobaoPlaceStoregroupUpdate(clt *core.SDKClient, req *store.TaobaoPlaceStoregroupUpdateAPIRequest, session string) (*store.TaobaoPlaceStoregroupUpdateAPIResponse, error) {
 	var resp store.TaobaoPlaceStoregroupUpdateAPIResponse
 	err := clt.Post(req, &resp, session)

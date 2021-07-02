@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoElifeLifecardReconAPIResponse
-查询对账文件地址接口 API返回值
-taobao.elife.lifecard.recon
-
-查询对账文件地址接口 */
+// TaobaoElifeLifecardReconAPIResponse 查询对账文件地址接口 API返回值
+// taobao.elife.lifecard.recon
+//
+// 查询对账文件地址接口
 type TaobaoElifeLifecardReconAPIResponse struct {
 	model.CommonResponse
 	TaobaoElifeLifecardReconAPIResponseModel

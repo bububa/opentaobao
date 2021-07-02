@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripCostCenterEntityDeleteAPIResponse
-删除外部成本中心人员信息 API返回值
-alitrip.btrip.cost.center.entity.delete
-
-删除外部成本中心人员信息 */
+// AlitripBtripCostCenterEntityDeleteAPIResponse 删除外部成本中心人员信息 API返回值
+// alitrip.btrip.cost.center.entity.delete
+//
+// 删除外部成本中心人员信息
 type AlitripBtripCostCenterEntityDeleteAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripCostCenterEntityDeleteAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkopenCateorderPullAPIRequest
-商户回传餐饮加工单状态 API请求
-alibaba.wdkopen.cateorder.pull
-
-商户回传餐饮加工单状态 */
+// AlibabaWdkopenCateorderPullAPIRequest 商户回传餐饮加工单状态 API请求
+// alibaba.wdkopen.cateorder.pull
+//
+// 商户回传餐饮加工单状态
 type AlibabaWdkopenCateorderPullAPIRequest struct {
 	model.Params
 	// 经营店ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripCarOrderCompleteAPIResponse
-服务完成API API返回值
-taobao.alitrip.car.order.complete
-
-用来接收服务商订单流程完成信息 */
+// TaobaoAlitripCarOrderCompleteAPIResponse 服务完成API API返回值
+// taobao.alitrip.car.order.complete
+//
+// 用来接收服务商订单流程完成信息
 type TaobaoAlitripCarOrderCompleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripCarOrderCompleteAPIResponseModel

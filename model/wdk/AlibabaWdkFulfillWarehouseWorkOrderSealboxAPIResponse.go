@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIResponse
-仓封箱回告 API返回值
-alibaba.wdk.fulfill.warehouse.work.order.sealbox
-
-仓封箱回告箱与包裹的关系 */
+// AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIResponse 仓封箱回告 API返回值
+// alibaba.wdk.fulfill.warehouse.work.order.sealbox
+//
+// 仓封箱回告箱与包裹的关系
 type AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIResponseModel

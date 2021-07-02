@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCloudpushPushAPIRequest
-百川用户使用云推送高级推送接口 API请求
-taobao.cloudpush.push
-
-百川用户使用云推送高级推送接口 */
+// TaobaoCloudpushPushAPIRequest 百川用户使用云推送高级推送接口 API请求
+// taobao.cloudpush.push
+//
+// 百川用户使用云推送高级推送接口
 type TaobaoCloudpushPushAPIRequest struct {
 	model.Params
 	// 推送目标: device:推送给设备; account:推送给指定帐号,tag:推送给自定义标签; all: 推送给全部

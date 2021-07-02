@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaKclubKcQueryknowledgeAPIResponse
-知识云-通用知识查询服务 API返回值
-alibaba.kclub.kc.queryknowledge
-
-知识云-通用知识查询服务。通过租户id、类目id、知识类型、知识状态等条件查询类目。 */
+// AlibabaKclubKcQueryknowledgeAPIResponse 知识云-通用知识查询服务 API返回值
+// alibaba.kclub.kc.queryknowledge
+//
+// 知识云-通用知识查询服务。通过租户id、类目id、知识类型、知识状态等条件查询类目。
 type AlibabaKclubKcQueryknowledgeAPIResponse struct {
 	model.CommonResponse
 	AlibabaKclubKcQueryknowledgeAPIResponseModel

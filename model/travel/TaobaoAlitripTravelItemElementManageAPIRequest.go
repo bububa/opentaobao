@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelItemElementManageAPIRequest
-【API3.0】资源元素管理接口 API请求
-taobao.alitrip.travel.item.element.manage
-
-资源元素管理接口：提供商家管理（增删改）基本资源元素信息。基本资源元素可供多个商品共享 */
+// TaobaoAlitripTravelItemElementManageAPIRequest 【API3.0】资源元素管理接口 API请求
+// taobao.alitrip.travel.item.element.manage
+//
+// 资源元素管理接口：提供商家管理（增删改）基本资源元素信息。基本资源元素可供多个商品共享
 type TaobaoAlitripTravelItemElementManageAPIRequest struct {
 	model.Params
 	// 必填，操作类型：1-新增，2-修改，3-删除。。特别注意：删除 为逻辑删除，即该outer_id所对应的元素还存在但是会置为无效状态，重新编辑修改即可恢复为有效状态。因此该id一旦使用将不可重复

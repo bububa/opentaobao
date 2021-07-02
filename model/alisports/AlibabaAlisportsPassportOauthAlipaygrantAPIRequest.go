@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsPassportOauthAlipaygrantAPIRequest
-阿里体育会员系统-支付宝授权接口 API请求
-alibaba.alisports.passport.oauth.alipaygrant
-
-开放给乐心运动使用的支付宝授权接口 */
+// AlibabaAlisportsPassportOauthAlipaygrantAPIRequest 阿里体育会员系统-支付宝授权接口 API请求
+// alibaba.alisports.passport.oauth.alipaygrant
+//
+// 开放给乐心运动使用的支付宝授权接口
 type AlibabaAlisportsPassportOauthAlipaygrantAPIRequest struct {
 	model.Params
 	// 阿里体育分配的用户appkey

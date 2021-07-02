@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMevOpenDeletePaperformatAPIResponse
-大麦换验平台-第三方对外开放-票纸版式接口deletePaperFormat API返回值
-alibaba.damai.mev.open.delete.paperformat
-
-deletePaperFormat */
+// AlibabaDamaiMevOpenDeletePaperformatAPIResponse 大麦换验平台-第三方对外开放-票纸版式接口deletePaperFormat API返回值
+// alibaba.damai.mev.open.delete.paperformat
+//
+// deletePaperFormat
 type AlibabaDamaiMevOpenDeletePaperformatAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMevOpenDeletePaperformatAPIResponseModel

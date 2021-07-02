@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaichuanItemSubscribeRelationQueryAPIResponse
-查询单个订阅关系 API返回值
-taobao.baichuan.item.subscribe.relation.query
-
-查询单个订阅关系 */
+// TaobaoBaichuanItemSubscribeRelationQueryAPIResponse 查询单个订阅关系 API返回值
+// taobao.baichuan.item.subscribe.relation.query
+//
+// 查询单个订阅关系
 type TaobaoBaichuanItemSubscribeRelationQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaichuanItemSubscribeRelationQueryAPIResponseModel

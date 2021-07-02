@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIResponse
-aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create API返回值
-aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create
-
-Receives information about reverse logistics tracking info */
+// AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIResponse aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create API返回值
+// aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create
+//
+// Receives information about reverse logistics tracking info
 type AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIResponseModel

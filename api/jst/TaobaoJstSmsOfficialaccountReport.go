@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-/* TaobaoJstSmsOfficialaccountReport
-聚石塔公众号信息上报
-taobao.jst.sms.officialaccount.report
-
-聚石塔公众号信息上报 */
+// TaobaoJstSmsOfficialaccountReport 聚石塔公众号信息上报
+// taobao.jst.sms.officialaccount.report
+//
+// 聚石塔公众号信息上报
 func TaobaoJstSmsOfficialaccountReport(clt *core.SDKClient, req *jst.TaobaoJstSmsOfficialaccountReportAPIRequest, session string) (*jst.TaobaoJstSmsOfficialaccountReportAPIResponse, error) {
 	var resp jst.TaobaoJstSmsOfficialaccountReportAPIResponse
 	err := clt.Post(req, &resp, session)

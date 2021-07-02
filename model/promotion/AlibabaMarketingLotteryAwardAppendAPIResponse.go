@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMarketingLotteryAwardAppendAPIResponse
-抽奖平台奖品添加接口 API返回值
-alibaba.marketing.lottery.award.append
-
-抽奖平台奖品添加接口，目前仅用于奖池众筹项目 */
+// AlibabaMarketingLotteryAwardAppendAPIResponse 抽奖平台奖品添加接口 API返回值
+// alibaba.marketing.lottery.award.append
+//
+// 抽奖平台奖品添加接口，目前仅用于奖池众筹项目
 type AlibabaMarketingLotteryAwardAppendAPIResponse struct {
 	model.CommonResponse
 	AlibabaMarketingLotteryAwardAppendAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleRecycleSpuTemplateModifyAPIResponse
-闲鱼接收回收商spu模板挂载信息 API返回值
-alibaba.idle.recycle.spu.template.modify
-
-闲鱼接收回收商spu模板挂载信息 */
+// AlibabaIdleRecycleSpuTemplateModifyAPIResponse 闲鱼接收回收商spu模板挂载信息 API返回值
+// alibaba.idle.recycle.spu.template.modify
+//
+// 闲鱼接收回收商spu模板挂载信息
 type AlibabaIdleRecycleSpuTemplateModifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleRecycleSpuTemplateModifyAPIResponseModel

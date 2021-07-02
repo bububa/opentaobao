@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenInventoryruleCreateAPIResponse
-渠道间库存规则设置接口 API返回值
-taobao.qimen.inventoryrule.create
-
-渠道间库存规则设置 */
+// TaobaoQimenInventoryruleCreateAPIResponse 渠道间库存规则设置接口 API返回值
+// taobao.qimen.inventoryrule.create
+//
+// 渠道间库存规则设置
 type TaobaoQimenInventoryruleCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenInventoryruleCreateAPIResponseModel

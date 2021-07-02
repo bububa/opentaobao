@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveIsvModifyAPIRequest
-ISV调TOP主动发起改期信息 API请求
-alibaba.alihealth.examination.reserve.isv.modify
-
-体检机构对接_ISV发起体检套餐改期 */
+// AlibabaAlihealthExaminationReserveIsvModifyAPIRequest ISV调TOP主动发起改期信息 API请求
+// alibaba.alihealth.examination.reserve.isv.modify
+//
+// 体检机构对接_ISV发起体检套餐改期
 type AlibabaAlihealthExaminationReserveIsvModifyAPIRequest struct {
 	model.Params
 	// 阿里健康预约唯一标识

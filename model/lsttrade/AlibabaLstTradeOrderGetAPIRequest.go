@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstTradeOrderGetAPIRequest
-零售通交易订单查询--品牌商视角 API请求
-alibaba.lst.trade.order.get
-
-根据订单id查询零售通交易订单 */
+// AlibabaLstTradeOrderGetAPIRequest 零售通交易订单查询--品牌商视角 API请求
+// alibaba.lst.trade.order.get
+//
+// 根据订单id查询零售通交易订单
 type AlibabaLstTradeOrderGetAPIRequest struct {
 	model.Params
 	// 主订单id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTagRenameAPIResponse
-重命名关键词分组 API返回值
-alibaba.scbp.tag.rename
-
-重命名关键词分组 */
+// AlibabaScbpTagRenameAPIResponse 重命名关键词分组 API返回值
+// alibaba.scbp.tag.rename
+//
+// 重命名关键词分组
 type AlibabaScbpTagRenameAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpTagRenameAPIResponseModel

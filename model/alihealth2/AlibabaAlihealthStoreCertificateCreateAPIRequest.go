@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthStoreCertificateCreateAPIRequest
-仓库换证审批 API请求
-alibaba.alihealth.store.certificate.create
-
-仓库侧换证发起审批 */
+// AlibabaAlihealthStoreCertificateCreateAPIRequest 仓库换证审批 API请求
+// alibaba.alihealth.store.certificate.create
+//
+// 仓库侧换证发起审批
 type AlibabaAlihealthStoreCertificateCreateAPIRequest struct {
 	model.Params
 	// 仓库code

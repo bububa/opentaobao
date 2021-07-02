@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkCouponTemplateCreateAPIResponse
-优惠券模版创建 API返回值
-alibaba.wdk.coupon.template.create
-
-开放给外部商家创建优惠券模版 */
+// AlibabaWdkCouponTemplateCreateAPIResponse 优惠券模版创建 API返回值
+// alibaba.wdk.coupon.template.create
+//
+// 开放给外部商家创建优惠券模版
 type AlibabaWdkCouponTemplateCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkCouponTemplateCreateAPIResponseModel

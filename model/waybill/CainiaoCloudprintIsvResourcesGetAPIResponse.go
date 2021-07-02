@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCloudprintIsvResourcesGetAPIResponse
-isv资源查询 API返回值
-cainiao.cloudprint.isv.resources.get
-
-isv资源查询，包括isv模板、打印项、预设的自定义区等 */
+// CainiaoCloudprintIsvResourcesGetAPIResponse isv资源查询 API返回值
+// cainiao.cloudprint.isv.resources.get
+//
+// isv资源查询，包括isv模板、打印项、预设的自定义区等
 type CainiaoCloudprintIsvResourcesGetAPIResponse struct {
 	model.CommonResponse
 	CainiaoCloudprintIsvResourcesGetAPIResponseModel

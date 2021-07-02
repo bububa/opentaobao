@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripRailTradeRefundAPIResponse
-退票接口 API返回值
-alitrip.rail.trade.refund
-
-退票接口 */
+// AlitripRailTradeRefundAPIResponse 退票接口 API返回值
+// alitrip.rail.trade.refund
+//
+// 退票接口
 type AlitripRailTradeRefundAPIResponse struct {
 	model.CommonResponse
 	AlitripRailTradeRefundAPIResponseModel

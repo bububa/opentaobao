@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTargetAdCampaignEffectAPIRequest
-定向推广-获取计划维度推广效果 API请求
-alibaba.scbp.target.ad.campaign.effect
-
-定向推广-获取计划维度推广效果 */
+// AlibabaScbpTargetAdCampaignEffectAPIRequest 定向推广-获取计划维度推广效果 API请求
+// alibaba.scbp.target.ad.campaign.effect
+//
+// 定向推广-获取计划维度推广效果
 type AlibabaScbpTargetAdCampaignEffectAPIRequest struct {
 	model.Params
 	// 统计区间 只能为1 7 30

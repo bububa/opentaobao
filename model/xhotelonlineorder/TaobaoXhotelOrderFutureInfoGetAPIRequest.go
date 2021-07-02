@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderFutureInfoGetAPIRequest
-获取(查询)订单变更信息 API请求
-taobao.xhotel.order.future.info.get
-
-支持操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令 */
+// TaobaoXhotelOrderFutureInfoGetAPIRequest 获取(查询)订单变更信息 API请求
+// taobao.xhotel.order.future.info.get
+//
+// 支持操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令
 type TaobaoXhotelOrderFutureInfoGetAPIRequest struct {
 	model.Params
 	// 请求流水号

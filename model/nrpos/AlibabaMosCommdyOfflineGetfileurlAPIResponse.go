@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosCommdyOfflineGetfileurlAPIResponse
-去前置机pos商品离线文件下载地址查询接口 API返回值
-alibaba.mos.commdy.offline.getfileurl
-
-去前置机-pos查询离线文件下载地址接口 */
+// AlibabaMosCommdyOfflineGetfileurlAPIResponse 去前置机pos商品离线文件下载地址查询接口 API返回值
+// alibaba.mos.commdy.offline.getfileurl
+//
+// 去前置机-pos查询离线文件下载地址接口
 type AlibabaMosCommdyOfflineGetfileurlAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosCommdyOfflineGetfileurlAPIResponseModel

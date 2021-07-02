@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuAnnexUploadAPIResponse
-上传附件获取附件files_str API返回值
-alibaba.icbu.annex.upload
-
-上传附件获取附件files_str */
+// AlibabaIcbuAnnexUploadAPIResponse 上传附件获取附件files_str API返回值
+// alibaba.icbu.annex.upload
+//
+// 上传附件获取附件files_str
 type AlibabaIcbuAnnexUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuAnnexUploadAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaXiamiApiArtistMusiclistGetAPIRequest
-热门艺人 API请求
-alibaba.xiami.api.artist.musiclist.get
-
-热门艺人 */
+// AlibabaXiamiApiArtistMusiclistGetAPIRequest 热门艺人 API请求
+// alibaba.xiami.api.artist.musiclist.get
+//
+// 热门艺人
 type AlibabaXiamiApiArtistMusiclistGetAPIRequest struct {
 	model.Params
 	// 语种, 有all, chinese, musician, english, japanese, korea

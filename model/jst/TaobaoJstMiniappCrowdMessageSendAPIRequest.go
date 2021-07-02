@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstMiniappCrowdMessageSendAPIRequest
-小程序活动短信发送 API请求
-taobao.jst.miniapp.crowd.message.send
-
-小程序活动短信发送 */
+// TaobaoJstMiniappCrowdMessageSendAPIRequest 小程序活动短信发送 API请求
+// taobao.jst.miniapp.crowd.message.send
+//
+// 小程序活动短信发送
 type TaobaoJstMiniappCrowdMessageSendAPIRequest struct {
 	model.Params
 	// 短信签名

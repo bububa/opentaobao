@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsInventoryQueryAPIRequest
-菜鸟商品库存查询 API请求
-taobao.wlb.wms.inventory.query
-
-支持按汇总（不分批次和渠道的总的库存数量）、渠道、批次三类方式查询商品实时库存 */
+// TaobaoWlbWmsInventoryQueryAPIRequest 菜鸟商品库存查询 API请求
+// taobao.wlb.wms.inventory.query
+//
+// 支持按汇总（不分批次和渠道的总的库存数量）、渠道、批次三类方式查询商品实时库存
 type TaobaoWlbWmsInventoryQueryAPIRequest struct {
 	model.Params
 	// 菜鸟商品ID

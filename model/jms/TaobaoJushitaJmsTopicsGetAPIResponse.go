@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJushitaJmsTopicsGetAPIResponse
-根据用户nick获取开通的消息列表 API返回值
-taobao.jushita.jms.topics.get
-
-根据用户nick获取开通的消息列表 */
+// TaobaoJushitaJmsTopicsGetAPIResponse 根据用户nick获取开通的消息列表 API返回值
+// taobao.jushita.jms.topics.get
+//
+// 根据用户nick获取开通的消息列表
 type TaobaoJushitaJmsTopicsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoJushitaJmsTopicsGetAPIResponseModel

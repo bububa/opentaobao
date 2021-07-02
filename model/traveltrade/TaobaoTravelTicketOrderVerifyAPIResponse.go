@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTravelTicketOrderVerifyAPIResponse
-飞猪门票核销通知 API返回值
-taobao.travel.ticket.order.verify
-
-系统商通过TOP接口调用通知飞猪门票核销情况 */
+// TaobaoTravelTicketOrderVerifyAPIResponse 飞猪门票核销通知 API返回值
+// taobao.travel.ticket.order.verify
+//
+// 系统商通过TOP接口调用通知飞猪门票核销情况
 type TaobaoTravelTicketOrderVerifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoTravelTicketOrderVerifyAPIResponseModel

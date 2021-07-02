@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFlowWalletQueryChargeAPIResponse
-查询流量充值状态 API返回值
-alibaba.aliqin.flow.wallet.query.charge
-
-查询流量充值状态 */
+// AlibabaAliqinFlowWalletQueryChargeAPIResponse 查询流量充值状态 API返回值
+// alibaba.aliqin.flow.wallet.query.charge
+//
+// 查询流量充值状态
 type AlibabaAliqinFlowWalletQueryChargeAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFlowWalletQueryChargeAPIResponseModel

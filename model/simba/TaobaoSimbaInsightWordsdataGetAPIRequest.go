@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaInsightWordsdataGetAPIRequest
-获取关键词的大盘数据 API请求
-taobao.simba.insight.wordsdata.get
-
-获取关键词的详细数据 */
+// TaobaoSimbaInsightWordsdataGetAPIRequest 获取关键词的大盘数据 API请求
+// taobao.simba.insight.wordsdata.get
+//
+// 获取关键词的详细数据
 type TaobaoSimbaInsightWordsdataGetAPIRequest struct {
 	model.Params
 	// 关键词列表，最多可传100个。

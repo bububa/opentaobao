@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusTvmbookorderSetAPIRequest
-线下自助机通知出票接口 API请求
-taobao.bus.tvmbookorder.set
-
-出票，当成功的时候告知出票；当失败的时候告知出票失败，飞猪退款给用户。 */
+// TaobaoBusTvmbookorderSetAPIRequest 线下自助机通知出票接口 API请求
+// taobao.bus.tvmbookorder.set
+//
+// 出票，当成功的时候告知出票；当失败的时候告知出票失败，飞猪退款给用户。
 type TaobaoBusTvmbookorderSetAPIRequest struct {
 	model.Params
 	// 飞猪订单号

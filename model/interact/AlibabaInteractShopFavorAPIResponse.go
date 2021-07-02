@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractShopFavorAPIResponse
-店铺收藏 API返回值
-alibaba.interact.shop.favor
-
-店铺收藏mtop接口开放鉴权接口，无入参出参，无安全风险，mtop接口开发 酒仙。 */
+// AlibabaInteractShopFavorAPIResponse 店铺收藏 API返回值
+// alibaba.interact.shop.favor
+//
+// 店铺收藏mtop接口开放鉴权接口，无入参出参，无安全风险，mtop接口开发 酒仙。
 type AlibabaInteractShopFavorAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractShopFavorAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponse
-储值流水详细 API返回值
-alibaba.alsc.crm.recharge.account.flowdetail.get
-
-查询储值流水详细接口 */
+// AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponse 储值流水详细 API返回值
+// alibaba.alsc.crm.recharge.account.flowdetail.get
+//
+// 查询储值流水详细接口
 type AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowAccountRptdailylistAPIResponse
-获取广告主分日数据 API返回值
-taobao.feedflow.account.rptdailylist
-
-获取广告主分日数据 */
+// TaobaoFeedflowAccountRptdailylistAPIResponse 获取广告主分日数据 API返回值
+// taobao.feedflow.account.rptdailylist
+//
+// 获取广告主分日数据
 type TaobaoFeedflowAccountRptdailylistAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowAccountRptdailylistAPIResponseModel

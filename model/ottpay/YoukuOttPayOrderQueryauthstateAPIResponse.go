@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttPayOrderQueryauthstateAPIResponse
-查询连包签约状态 API返回值
-youku.ott.pay.order.queryauthstate
-
-查询CP用户连包商品签约状态 */
+// YoukuOttPayOrderQueryauthstateAPIResponse 查询连包签约状态 API返回值
+// youku.ott.pay.order.queryauthstate
+//
+// 查询CP用户连包商品签约状态
 type YoukuOttPayOrderQueryauthstateAPIResponse struct {
 	model.CommonResponse
 	YoukuOttPayOrderQueryauthstateAPIResponseModel

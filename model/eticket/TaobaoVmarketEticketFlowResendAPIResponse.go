@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketFlowResendAPIResponse
-业务重新触发发码短信 API返回值
-taobao.vmarket.eticket.flow.resend
-
-业务重新触发发码短信 */
+// TaobaoVmarketEticketFlowResendAPIResponse 业务重新触发发码短信 API返回值
+// taobao.vmarket.eticket.flow.resend
+//
+// 业务重新触发发码短信
 type TaobaoVmarketEticketFlowResendAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketFlowResendAPIResponseModel

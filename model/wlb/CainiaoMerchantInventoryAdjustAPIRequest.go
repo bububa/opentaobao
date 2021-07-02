@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoMerchantInventoryAdjustAPIRequest
-商家库存调整 API请求
-cainiao.merchant.inventory.adjust
-
-商家仓库存调整接口，目前仅支持全量更新 */
+// CainiaoMerchantInventoryAdjustAPIRequest 商家库存调整 API请求
+// cainiao.merchant.inventory.adjust
+//
+// 商家仓库存调整接口，目前仅支持全量更新
 type CainiaoMerchantInventoryAdjustAPIRequest struct {
 	model.Params
 	// 商家仓编辑库存

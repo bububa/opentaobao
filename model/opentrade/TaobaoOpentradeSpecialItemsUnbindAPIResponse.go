@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeSpecialItemsUnbindAPIResponse
-专属下单场景商品解绑 API返回值
-taobao.opentrade.special.items.unbind
-
-专属下单场景商品解绑 */
+// TaobaoOpentradeSpecialItemsUnbindAPIResponse 专属下单场景商品解绑 API返回值
+// taobao.opentrade.special.items.unbind
+//
+// 专属下单场景商品解绑
 type TaobaoOpentradeSpecialItemsUnbindAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeSpecialItemsUnbindAPIResponseModel

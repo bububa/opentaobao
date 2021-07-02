@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUserAvatarGetAPIResponse
-淘宝用户头像查询 API返回值
-taobao.user.avatar.get
-
-根据混淆nick查询用户头像 */
+// TaobaoUserAvatarGetAPIResponse 淘宝用户头像查询 API返回值
+// taobao.user.avatar.get
+//
+// 根据混淆nick查询用户头像
 type TaobaoUserAvatarGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoUserAvatarGetAPIResponseModel

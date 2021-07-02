@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaichuanItemSubscribeAPIResponse
-单个商品订阅 API返回值
-taobao.baichuan.item.subscribe
-
-百川单个商品订阅 */
+// TaobaoBaichuanItemSubscribeAPIResponse 单个商品订阅 API返回值
+// taobao.baichuan.item.subscribe
+//
+// 百川单个商品订阅
 type TaobaoBaichuanItemSubscribeAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaichuanItemSubscribeAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRegionPriceCancleAPIRequest
-取消区域价格 API请求
-taobao.region.price.cancle
-
-取消区域价格 */
+// TaobaoRegionPriceCancleAPIRequest 取消区域价格 API请求
+// taobao.region.price.cancle
+//
+// 取消区域价格
 type TaobaoRegionPriceCancleAPIRequest struct {
 	model.Params
 	// 商品

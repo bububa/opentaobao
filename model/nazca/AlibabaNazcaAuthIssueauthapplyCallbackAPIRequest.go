@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest
-出证申请回调 API请求
-alibaba.nazca.auth.issueauthapply.callback
-
-出证申请回调 */
+// AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest 出证申请回调 API请求
+// alibaba.nazca.auth.issueauthapply.callback
+//
+// 出证申请回调
 type AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest struct {
 	model.Params
 	// 合同编号

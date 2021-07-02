@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest
-单品搜索人群修改状态 API请求
-taobao.simba.serchcrowd.state.batch.update
-
-暂停或启用单品推广搜索人群溢价 */
+// TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest 单品搜索人群修改状态 API请求
+// taobao.simba.serchcrowd.state.batch.update
+//
+// 暂停或启用单品推广搜索人群溢价
 type TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest struct {
 	model.Params
 	// 被操作者的淘宝昵称

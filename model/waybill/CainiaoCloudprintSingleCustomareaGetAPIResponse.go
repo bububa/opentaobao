@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCloudprintSingleCustomareaGetAPIResponse
-获取商家单一自定义区 API返回值
-cainiao.cloudprint.single.customarea.get
-
-商家所有快递公司模板只有一个自定义区 */
+// CainiaoCloudprintSingleCustomareaGetAPIResponse 获取商家单一自定义区 API返回值
+// cainiao.cloudprint.single.customarea.get
+//
+// 商家所有快递公司模板只有一个自定义区
 type CainiaoCloudprintSingleCustomareaGetAPIResponse struct {
 	model.CommonResponse
 	CainiaoCloudprintSingleCustomareaGetAPIResponseModel

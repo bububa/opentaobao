@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusCoreAppGetappusagesAPIResponse
-根据应用ID获得应用所在的园区 API返回值
-alibaba.campus.core.app.getappusages
-
-传入应用的id,  获得用户授权的园区 */
+// AlibabaCampusCoreAppGetappusagesAPIResponse 根据应用ID获得应用所在的园区 API返回值
+// alibaba.campus.core.app.getappusages
+//
+// 传入应用的id,  获得用户授权的园区
 type AlibabaCampusCoreAppGetappusagesAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusCoreAppGetappusagesAPIResponseModel

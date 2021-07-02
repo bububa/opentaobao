@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlicomOrderPreauthorizeCreateAPIResponse
-业务办理结果 API返回值
-alibaba.alicom.order.preauthorize.create
-
-授授权:签约结果通知 */
+// AlibabaAlicomOrderPreauthorizeCreateAPIResponse 业务办理结果 API返回值
+// alibaba.alicom.order.preauthorize.create
+//
+// 授授权:签约结果通知
 type AlibabaAlicomOrderPreauthorizeCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlicomOrderPreauthorizeCreateAPIResponseModel

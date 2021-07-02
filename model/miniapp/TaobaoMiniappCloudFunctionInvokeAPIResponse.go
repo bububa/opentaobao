@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappCloudFunctionInvokeAPIResponse
-外部触发云函数 API返回值
-taobao.miniapp.cloud.function.invoke
-
-用户isv从外部触发聚石塔云函数的执行。 */
+// TaobaoMiniappCloudFunctionInvokeAPIResponse 外部触发云函数 API返回值
+// taobao.miniapp.cloud.function.invoke
+//
+// 用户isv从外部触发聚石塔云函数的执行。
 type TaobaoMiniappCloudFunctionInvokeAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappCloudFunctionInvokeAPIResponseModel

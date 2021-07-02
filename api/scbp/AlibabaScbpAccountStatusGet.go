@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-/* AlibabaScbpAccountStatusGet
-查询账户级别关键词推广状态
-alibaba.scbp.account.status.get
-
-查询账户级别关键词推广状态 */
+// AlibabaScbpAccountStatusGet 查询账户级别关键词推广状态
+// alibaba.scbp.account.status.get
+//
+// 查询账户级别关键词推广状态
 func AlibabaScbpAccountStatusGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountStatusGetAPIRequest, session string) (*scbp.AlibabaScbpAccountStatusGetAPIResponse, error) {
 	var resp scbp.AlibabaScbpAccountStatusGetAPIResponse
 	err := clt.Post(req, &resp, session)

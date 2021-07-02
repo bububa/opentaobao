@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderOfficialCancelAPIRequest
-官网信用住订单取消 API请求
-taobao.xhotel.order.official.cancel
-
-官网信用住订单取消 */
+// TaobaoXhotelOrderOfficialCancelAPIRequest 官网信用住订单取消 API请求
+// taobao.xhotel.order.official.cancel
+//
+// 官网信用住订单取消
 type TaobaoXhotelOrderOfficialCancelAPIRequest struct {
 	model.Params
 	// 淘宝订单号,必选

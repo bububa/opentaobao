@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest
-设备播放暂停 API请求
-taobao.ailab.aicloud.top.device.control.pauseandresume
-
-设备播放暂停 */
+// TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest 设备播放暂停 API请求
+// taobao.ailab.aicloud.top.device.control.pauseandresume
+//
+// 设备播放暂停
 type TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest struct {
 	model.Params
 	// 用户信息

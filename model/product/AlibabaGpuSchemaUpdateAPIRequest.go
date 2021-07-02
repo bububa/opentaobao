@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaGpuSchemaUpdateAPIRequest
-产品更新接口 API请求
-alibaba.gpu.schema.update
-
-产品更新接口 */
+// AlibabaGpuSchemaUpdateAPIRequest 产品更新接口 API请求
+// alibaba.gpu.schema.update
+//
+// 产品更新接口
 type AlibabaGpuSchemaUpdateAPIRequest struct {
 	model.Params
 	// 产品ID

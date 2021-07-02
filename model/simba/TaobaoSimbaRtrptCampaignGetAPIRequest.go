@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRtrptCampaignGetAPIRequest
-获取推广计划实时报表数据 API请求
-taobao.simba.rtrpt.campaign.get
-
-获取推广计划实时报表数据 */
+// TaobaoSimbaRtrptCampaignGetAPIRequest 获取推广计划实时报表数据 API请求
+// taobao.simba.rtrpt.campaign.get
+//
+// 获取推广计划实时报表数据
 type TaobaoSimbaRtrptCampaignGetAPIRequest struct {
 	model.Params
 	// 用户名

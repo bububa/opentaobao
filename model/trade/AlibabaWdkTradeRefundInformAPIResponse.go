@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkTradeRefundInformAPIResponse
-外部渠道通知淘鲜达退款成功接口 API返回值
-alibaba.wdk.trade.refund.inform
-
-该接口用于外部渠道退款成功后，通知淘鲜达底层履约完成退款流程。 */
+// AlibabaWdkTradeRefundInformAPIResponse 外部渠道通知淘鲜达退款成功接口 API返回值
+// alibaba.wdk.trade.refund.inform
+//
+// 该接口用于外部渠道退款成功后，通知淘鲜达底层履约完成退款流程。
 type AlibabaWdkTradeRefundInformAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkTradeRefundInformAPIResponseModel

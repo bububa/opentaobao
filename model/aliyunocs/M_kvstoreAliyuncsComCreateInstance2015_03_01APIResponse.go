@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* M_kvstoreAliyuncsComCreateInstance2015_03_01APIResponse
-创建OCS实例 API返回值
-m-kvstore.aliyuncs.com.CreateInstance.2015-03-01
-
-创建OCS实例 */
+// M_kvstoreAliyuncsComCreateInstance2015_03_01APIResponse 创建OCS实例 API返回值
+// m-kvstore.aliyuncs.com.CreateInstance.2015-03-01
+//
+// 创建OCS实例
 type M_kvstoreAliyuncsComCreateInstance2015_03_01APIResponse struct {
 	model.CommonResponse
 	M_kvstoreAliyuncsComCreateInstance2015_03_01APIResponseModel

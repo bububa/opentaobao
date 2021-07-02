@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytVaGetentinfoAPIResponse
-通过企业名得到唯一标识（ref_ent_id）及企业ID(ent_id) API返回值
-alibaba.alihealth.drug.kyt.va.getentinfo
-
-根据企业名称查询企业唯一标识（ref_ent_id）及企业ID(ent_id) */
+// AlibabaAlihealthDrugKytVaGetentinfoAPIResponse 通过企业名得到唯一标识（ref_ent_id）及企业ID(ent_id) API返回值
+// alibaba.alihealth.drug.kyt.va.getentinfo
+//
+// 根据企业名称查询企业唯一标识（ref_ent_id）及企业ID(ent_id)
 type AlibabaAlihealthDrugKytVaGetentinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytVaGetentinfoAPIResponseModel

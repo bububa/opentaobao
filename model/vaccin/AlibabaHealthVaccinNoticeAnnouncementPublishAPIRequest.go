@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest
-支付宝疫苗POV公告通知 API请求
-alibaba.health.vaccin.notice.announcement.publish
-
-支付宝疫苗POV发布公告提醒信息 */
+// AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest 支付宝疫苗POV公告通知 API请求
+// alibaba.health.vaccin.notice.announcement.publish
+//
+// 支付宝疫苗POV发布公告提醒信息
 type AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest struct {
 	model.Params
 	// 接种点编码（通知方）

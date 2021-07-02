@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstMiniappCrowdCreateAPIResponse
-小程序活动创建 API返回值
-taobao.jst.miniapp.crowd.create
-
-小程序活动创建 */
+// TaobaoJstMiniappCrowdCreateAPIResponse 小程序活动创建 API返回值
+// taobao.jst.miniapp.crowd.create
+//
+// 小程序活动创建
 type TaobaoJstMiniappCrowdCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstMiniappCrowdCreateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoWaybillIiQueryByWaybillcodeAPIResponse
-通过面单号查询面单信息 API返回值
-cainiao.waybill.ii.query.by.waybillcode
-
-通过面单号查看面单号的当前状态，如签收、发货、失效等。 */
+// CainiaoWaybillIiQueryByWaybillcodeAPIResponse 通过面单号查询面单信息 API返回值
+// cainiao.waybill.ii.query.by.waybillcode
+//
+// 通过面单号查看面单号的当前状态，如签收、发货、失效等。
 type CainiaoWaybillIiQueryByWaybillcodeAPIResponse struct {
 	model.CommonResponse
 	CainiaoWaybillIiQueryByWaybillcodeAPIResponseModel

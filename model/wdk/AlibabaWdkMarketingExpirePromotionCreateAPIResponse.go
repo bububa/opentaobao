@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingExpirePromotionCreateAPIResponse
-短保优惠创建 API返回值
-alibaba.wdk.marketing.expire.promotion.create
-
-过期优惠优惠信息录入 */
+// AlibabaWdkMarketingExpirePromotionCreateAPIResponse 短保优惠创建 API返回值
+// alibaba.wdk.marketing.expire.promotion.create
+//
+// 过期优惠优惠信息录入
 type AlibabaWdkMarketingExpirePromotionCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingExpirePromotionCreateAPIResponseModel

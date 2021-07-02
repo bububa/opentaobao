@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdCampaignFindCampaignEffectAPIRequest
-批量查询计划效果数据 API请求
-alibaba.scbp.ad.campaign.find.campaign.effect
-
-批量查询计划效果数据 */
+// AlibabaScbpAdCampaignFindCampaignEffectAPIRequest 批量查询计划效果数据 API请求
+// alibaba.scbp.ad.campaign.find.campaign.effect
+//
+// 批量查询计划效果数据
 type AlibabaScbpAdCampaignFindCampaignEffectAPIRequest struct {
 	model.Params
 	// 计划id集合

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIworkMcMsgSendmobileAPIResponse
-发送消息给手机用户 API返回值
-alibaba.iwork.mc.msg.sendmobile
-
-给手机用户发送对应操作结果的消息 */
+// AlibabaIworkMcMsgSendmobileAPIResponse 发送消息给手机用户 API返回值
+// alibaba.iwork.mc.msg.sendmobile
+//
+// 给手机用户发送对应操作结果的消息
 type AlibabaIworkMcMsgSendmobileAPIResponse struct {
 	model.CommonResponse
 	AlibabaIworkMcMsgSendmobileAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionSchemaProductInstancePostAPIResponse
-aliexpress.solution.schema.product.instance.post API返回值
-aliexpress.solution.schema.product.instance.post
-
-Upload product based on json schema instance.QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller. */
+// AliexpressSolutionSchemaProductInstancePostAPIResponse aliexpress.solution.schema.product.instance.post API返回值
+// aliexpress.solution.schema.product.instance.post
+//
+// Upload product based on json schema instance.QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller.
 type AliexpressSolutionSchemaProductInstancePostAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionSchemaProductInstancePostAPIResponseModel

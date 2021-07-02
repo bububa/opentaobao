@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse
-摩卡确认入职后往入职单据表写数据接口 API返回值
-alibaba.wdk.hrworkbench.moka.entry.receipt.write
-
-摩卡确认入职后往入职单据表写数据接口 */
+// AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse 摩卡确认入职后往入职单据表写数据接口 API返回值
+// alibaba.wdk.hrworkbench.moka.entry.receipt.write
+//
+// 摩卡确认入职后往入职单据表写数据接口
 type AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponseModel

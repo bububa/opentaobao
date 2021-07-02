@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreRefusedAPIResponse
-Pos端门店拒单 API返回值
-taobao.omniorder.store.refused
-
-ISV Pos端门店拒单，通知星盘 */
+// TaobaoOmniorderStoreRefusedAPIResponse Pos端门店拒单 API返回值
+// taobao.omniorder.store.refused
+//
+// ISV Pos端门店拒单，通知星盘
 type TaobaoOmniorderStoreRefusedAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderStoreRefusedAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeProjectDynamicDeleteAPIResponse
-楼盘快讯删除 API返回值
-alibaba.alihouse.newhome.project.dynamic.delete
-
-楼盘快讯删除 */
+// AlibabaAlihouseNewhomeProjectDynamicDeleteAPIResponse 楼盘快讯删除 API返回值
+// alibaba.alihouse.newhome.project.dynamic.delete
+//
+// 楼盘快讯删除
 type AlibabaAlihouseNewhomeProjectDynamicDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihouseNewhomeProjectDynamicDeleteAPIResponseModel

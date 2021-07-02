@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseReserveAPIRequest
-整车租车回传预约信息 API请求
-tmall.car.lease.reserve
-
-租赁公司回传预约到店信息 */
+// TmallCarLeaseReserveAPIRequest 整车租车回传预约信息 API请求
+// tmall.car.lease.reserve
+//
+// 租赁公司回传预约到店信息
 type TmallCarLeaseReserveAPIRequest struct {
 	model.Params
 	// 买家id

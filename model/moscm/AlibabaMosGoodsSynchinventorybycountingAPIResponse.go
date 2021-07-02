@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosGoodsSynchinventorybycountingAPIResponse
-以盘点方式调整库存：传入商品实际库存 API返回值
-alibaba.mos.goods.synchinventorybycounting
-
-以盘点方式调整库存：传入商品实际库存
-盘点单自动判断数量增减 */
+// AlibabaMosGoodsSynchinventorybycountingAPIResponse 以盘点方式调整库存：传入商品实际库存 API返回值
+// alibaba.mos.goods.synchinventorybycounting
+//
+// 以盘点方式调整库存：传入商品实际库存
+// 盘点单自动判断数量增减
 type AlibabaMosGoodsSynchinventorybycountingAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosGoodsSynchinventorybycountingAPIResponseModel

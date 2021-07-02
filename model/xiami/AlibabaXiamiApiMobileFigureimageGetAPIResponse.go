@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaXiamiApiMobileFigureimageGetAPIResponse
-获取手机banner图 API返回值
-alibaba.xiami.api.mobile.figureimage.get
-
-获取手机banner图 */
+// AlibabaXiamiApiMobileFigureimageGetAPIResponse 获取手机banner图 API返回值
+// alibaba.xiami.api.mobile.figureimage.get
+//
+// 获取手机banner图
 type AlibabaXiamiApiMobileFigureimageGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaXiamiApiMobileFigureimageGetAPIResponseModel

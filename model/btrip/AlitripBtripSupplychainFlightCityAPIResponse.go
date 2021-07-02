@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripSupplychainFlightCityAPIResponse
-机场数据查询 API返回值
-alitrip.btrip.supplychain.flight.city
-
-机场数据查询 */
+// AlitripBtripSupplychainFlightCityAPIResponse 机场数据查询 API返回值
+// alitrip.btrip.supplychain.flight.city
+//
+// 机场数据查询
 type AlitripBtripSupplychainFlightCityAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripSupplychainFlightCityAPIResponseModel

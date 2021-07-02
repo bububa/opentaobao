@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkChannelOrderRefundConfirmAPIRequest
-退款确认 API请求
-alibaba.wdk.channel.order.refund.confirm
-
-退款确认 */
+// AlibabaWdkChannelOrderRefundConfirmAPIRequest 退款确认 API请求
+// alibaba.wdk.channel.order.refund.confirm
+//
+// 退款确认
 type AlibabaWdkChannelOrderRefundConfirmAPIRequest struct {
 	model.Params
 	// 退款确认信息

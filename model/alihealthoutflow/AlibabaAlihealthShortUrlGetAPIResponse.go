@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthShortUrlGetAPIResponse
-支付宝短链跳转三方h5通用接口 API返回值
-alibaba.alihealth.short.url.get
-
-支付宝短链跳转三方h5通用接口 */
+// AlibabaAlihealthShortUrlGetAPIResponse 支付宝短链跳转三方h5通用接口 API返回值
+// alibaba.alihealth.short.url.get
+//
+// 支付宝短链跳转三方h5通用接口
 type AlibabaAlihealthShortUrlGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthShortUrlGetAPIResponseModel

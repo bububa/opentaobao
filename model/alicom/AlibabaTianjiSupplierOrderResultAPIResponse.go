@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTianjiSupplierOrderResultAPIResponse
-供应商处理订单接口（订购成功/失败、发货） API返回值
-alibaba.tianji.supplier.order.result
-
-供应商处理订单接口（订购成功/失败、发货） */
+// AlibabaTianjiSupplierOrderResultAPIResponse 供应商处理订单接口（订购成功/失败、发货） API返回值
+// alibaba.tianji.supplier.order.result
+//
+// 供应商处理订单接口（订购成功/失败、发货）
 type AlibabaTianjiSupplierOrderResultAPIResponse struct {
 	model.CommonResponse
 	AlibabaTianjiSupplierOrderResultAPIResponseModel

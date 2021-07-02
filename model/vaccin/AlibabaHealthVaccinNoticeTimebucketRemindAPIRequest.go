@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest
-疫苗预约时间段提醒 API请求
-alibaba.health.vaccin.notice.timebucket.remind
-
-疫苗预约时间段提醒 */
+// AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest 疫苗预约时间段提醒 API请求
+// alibaba.health.vaccin.notice.timebucket.remind
+//
+// 疫苗预约时间段提醒
 type AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest struct {
 	model.Params
 	// 432421

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthBabyRemindBatchSendAPIResponse
-批量发送母婴提醒 API返回值
-alibaba.alihealth.baby.remind.batch.send
-
-批量发送母婴提醒 */
+// AlibabaAlihealthBabyRemindBatchSendAPIResponse 批量发送母婴提醒 API返回值
+// alibaba.alihealth.baby.remind.batch.send
+//
+// 批量发送母婴提醒
 type AlibabaAlihealthBabyRemindBatchSendAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthBabyRemindBatchSendAPIResponseModel

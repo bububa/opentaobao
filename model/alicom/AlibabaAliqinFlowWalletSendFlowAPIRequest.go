@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFlowWalletSendFlowAPIRequest
-流量发放 API请求
-alibaba.aliqin.flow.wallet.send.flow
-
-阿里通信流量下发功能，允许用户补发 */
+// AlibabaAliqinFlowWalletSendFlowAPIRequest 流量发放 API请求
+// alibaba.aliqin.flow.wallet.send.flow
+//
+// 阿里通信流量下发功能，允许用户补发
 type AlibabaAliqinFlowWalletSendFlowAPIRequest struct {
 	model.Params
 	// 混淆用户名

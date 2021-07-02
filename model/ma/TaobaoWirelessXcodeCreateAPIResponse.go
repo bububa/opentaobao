@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWirelessXcodeCreateAPIResponse
-创建二维码/短连接 API返回值
-taobao.wireless.xcode.create
-
-创建码平台的普通二维码或者长连接转短连接服务 */
+// TaobaoWirelessXcodeCreateAPIResponse 创建二维码/短连接 API返回值
+// taobao.wireless.xcode.create
+//
+// 创建码平台的普通二维码或者长连接转短连接服务
 type TaobaoWirelessXcodeCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoWirelessXcodeCreateAPIResponseModel

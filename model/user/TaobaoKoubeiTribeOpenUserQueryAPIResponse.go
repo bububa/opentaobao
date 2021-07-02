@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKoubeiTribeOpenUserQueryAPIResponse
-获取用户openId API返回值
-taobao.koubei.tribe.open.user.query
-
-口碑综合体通过手机号码获取加密后的用户openId */
+// TaobaoKoubeiTribeOpenUserQueryAPIResponse 获取用户openId API返回值
+// taobao.koubei.tribe.open.user.query
+//
+// 口碑综合体通过手机号码获取加密后的用户openId
 type TaobaoKoubeiTribeOpenUserQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoKoubeiTribeOpenUserQueryAPIResponseModel

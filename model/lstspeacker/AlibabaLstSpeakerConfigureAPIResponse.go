@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstSpeakerConfigureAPIResponse
-零售通音箱配置通用泛化调用接口 API返回值
-alibaba.lst.speaker.configure
-
-零售通音箱配置通用泛化调用接口，包括内容、音量、音频等内容 */
+// AlibabaLstSpeakerConfigureAPIResponse 零售通音箱配置通用泛化调用接口 API返回值
+// alibaba.lst.speaker.configure
+//
+// 零售通音箱配置通用泛化调用接口，包括内容、音量、音频等内容
 type AlibabaLstSpeakerConfigureAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstSpeakerConfigureAPIResponseModel

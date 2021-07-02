@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/xiami"
 )
 
-/* AlibabaXiamiApiRadioMyselfGet
-我的电台
-alibaba.xiami.api.radio.myself.get
-
-我的电台 */
+// AlibabaXiamiApiRadioMyselfGet 我的电台
+// alibaba.xiami.api.radio.myself.get
+//
+// 我的电台
 func AlibabaXiamiApiRadioMyselfGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiRadioMyselfGetAPIRequest, session string) (*xiami.AlibabaXiamiApiRadioMyselfGetAPIResponse, error) {
 	var resp xiami.AlibabaXiamiApiRadioMyselfGetAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenExpressinfoQueryAPIResponse
-配送公司信息查询接口 API返回值
-taobao.qimen.expressinfo.query
-
-配送公司信息查询 */
+// TaobaoQimenExpressinfoQueryAPIResponse 配送公司信息查询接口 API返回值
+// taobao.qimen.expressinfo.query
+//
+// 配送公司信息查询
 type TaobaoQimenExpressinfoQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenExpressinfoQueryAPIResponseModel

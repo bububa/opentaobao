@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-/* AlibabaInteractLotterydrawDodraw
-无线端抽奖接口
-alibaba.interact.lotterydraw.dodraw
-
-商家抽奖平台无线端抽奖接口开放 */
+// AlibabaInteractLotterydrawDodraw 无线端抽奖接口
+// alibaba.interact.lotterydraw.dodraw
+//
+// 商家抽奖平台无线端抽奖接口开放
 func AlibabaInteractLotterydrawDodraw(clt *core.SDKClient, req *promotion.AlibabaInteractLotterydrawDodrawAPIRequest, session string) (*promotion.AlibabaInteractLotterydrawDodrawAPIResponse, error) {
 	var resp promotion.AlibabaInteractLotterydrawDodrawAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallSupplychainChannelProductQuantityGetAPIResponse
-渠道库存查询接口 API返回值
-tmall.supplychain.channel.product.quantity.get
-
-渠道库存查询接口 */
+// TmallSupplychainChannelProductQuantityGetAPIResponse 渠道库存查询接口 API返回值
+// tmall.supplychain.channel.product.quantity.get
+//
+// 渠道库存查询接口
 type TmallSupplychainChannelProductQuantityGetAPIResponse struct {
 	model.CommonResponse
 	TmallSupplychainChannelProductQuantityGetAPIResponseModel

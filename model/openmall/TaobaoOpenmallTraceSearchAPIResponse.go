@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallTraceSearchAPIResponse
-获取Openmall订单物流流转信息 API返回值
-taobao.openmall.trace.search
-
-获取Openmall订单物流流转信息 */
+// TaobaoOpenmallTraceSearchAPIResponse 获取Openmall订单物流流转信息 API返回值
+// taobao.openmall.trace.search
+//
+// 获取Openmall订单物流流转信息
 type TaobaoOpenmallTraceSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenmallTraceSearchAPIResponseModel

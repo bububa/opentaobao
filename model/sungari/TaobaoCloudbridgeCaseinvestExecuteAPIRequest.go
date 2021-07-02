@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCloudbridgeCaseinvestExecuteAPIRequest
-红盾云桥案件协查服务 API请求
-taobao.cloudbridge.caseinvest.execute
-
-通过API接口直接提供政府部门录入及查询函件服务 */
+// TaobaoCloudbridgeCaseinvestExecuteAPIRequest 红盾云桥案件协查服务 API请求
+// taobao.cloudbridge.caseinvest.execute
+//
+// 通过API接口直接提供政府部门录入及查询函件服务
 type TaobaoCloudbridgeCaseinvestExecuteAPIRequest struct {
 	model.Params
 	// 方法名称

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelItemElementQueryAPIResponse
-【API3.0】资源元素查询接口 API返回值
-taobao.alitrip.travel.item.element.query
-
-提供资源元素查询接口，支持商家查询已经发布过的资源元素 */
+// TaobaoAlitripTravelItemElementQueryAPIResponse 【API3.0】资源元素查询接口 API返回值
+// taobao.alitrip.travel.item.element.query
+//
+// 提供资源元素查询接口，支持商家查询已经发布过的资源元素
 type TaobaoAlitripTravelItemElementQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTravelItemElementQueryAPIResponseModel

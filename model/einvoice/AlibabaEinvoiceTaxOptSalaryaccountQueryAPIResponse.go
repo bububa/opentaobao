@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceTaxOptSalaryaccountQueryAPIResponse
-查询用户的发薪账号 API返回值
-alibaba.einvoice.tax.opt.salaryaccount.query
-
-查询用户的发薪账号状态 */
+// AlibabaEinvoiceTaxOptSalaryaccountQueryAPIResponse 查询用户的发薪账号 API返回值
+// alibaba.einvoice.tax.opt.salaryaccount.query
+//
+// 查询用户的发薪账号状态
 type AlibabaEinvoiceTaxOptSalaryaccountQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceTaxOptSalaryaccountQueryAPIResponseModel

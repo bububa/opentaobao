@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugScanQuerycodeAPIRequest
-查询药监码对应的有效期和包装规格 API请求
-alibaba.alihealth.drug.scan.querycode
-
-查询药监码对应的有效期和包装规格 */
+// AlibabaAlihealthDrugScanQuerycodeAPIRequest 查询药监码对应的有效期和包装规格 API请求
+// alibaba.alihealth.drug.scan.querycode
+//
+// 查询药监码对应的有效期和包装规格
 type AlibabaAlihealthDrugScanQuerycodeAPIRequest struct {
 	model.Params
 	// 溯源码

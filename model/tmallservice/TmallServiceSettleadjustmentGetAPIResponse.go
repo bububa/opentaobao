@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServiceSettleadjustmentGetAPIResponse
-查询结算调整单单条记录 API返回值
-tmall.service.settleadjustment.get
-
-提供给服务商通过结算调整单id获取结算调整单信息 */
+// TmallServiceSettleadjustmentGetAPIResponse 查询结算调整单单条记录 API返回值
+// tmall.service.settleadjustment.get
+//
+// 提供给服务商通过结算调整单id获取结算调整单信息
 type TmallServiceSettleadjustmentGetAPIResponse struct {
 	model.CommonResponse
 	TmallServiceSettleadjustmentGetAPIResponseModel

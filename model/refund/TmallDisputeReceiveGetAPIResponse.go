@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallDisputeReceiveGetAPIResponse
-天猫逆向纠纷查询 API返回值
-tmall.dispute.receive.get
-
-展示商家所有退款信息 */
+// TmallDisputeReceiveGetAPIResponse 天猫逆向纠纷查询 API返回值
+// tmall.dispute.receive.get
+//
+// 展示商家所有退款信息
 type TmallDisputeReceiveGetAPIResponse struct {
 	model.CommonResponse
 	TmallDisputeReceiveGetAPIResponseModel

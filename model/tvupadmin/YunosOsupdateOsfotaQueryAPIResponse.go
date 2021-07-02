@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosOsupdateOsfotaQueryAPIResponse
-系统升级分页查询 API返回值
-yunos.osupdate.osfota.query
-
-分页查询osoupdate系统升级列表 */
+// YunosOsupdateOsfotaQueryAPIResponse 系统升级分页查询 API返回值
+// yunos.osupdate.osfota.query
+//
+// 分页查询osoupdate系统升级列表
 type YunosOsupdateOsfotaQueryAPIResponse struct {
 	model.CommonResponse
 	YunosOsupdateOsfotaQueryAPIResponseModel

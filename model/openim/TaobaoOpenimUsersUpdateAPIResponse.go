@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimUsersUpdateAPIResponse
-批量更新用户信息 API返回值
-taobao.openim.users.update
-
-批量更新用户信息 */
+// TaobaoOpenimUsersUpdateAPIResponse 批量更新用户信息 API返回值
+// taobao.openim.users.update
+//
+// 批量更新用户信息
 type TaobaoOpenimUsersUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimUsersUpdateAPIResponseModel

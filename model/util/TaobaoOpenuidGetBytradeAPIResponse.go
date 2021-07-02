@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenuidGetBytradeAPIResponse
-通过订单获取对应买家的openUID API返回值
-taobao.openuid.get.bytrade
-
-通过订单获取对应买家的openUID,需要卖家授权 */
+// TaobaoOpenuidGetBytradeAPIResponse 通过订单获取对应买家的openUID API返回值
+// taobao.openuid.get.bytrade
+//
+// 通过订单获取对应买家的openUID,需要卖家授权
 type TaobaoOpenuidGetBytradeAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenuidGetBytradeAPIResponseModel

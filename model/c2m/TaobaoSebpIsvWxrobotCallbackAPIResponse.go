@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSebpIsvWxrobotCallbackAPIResponse
-isv机器人回调接口 API返回值
-taobao.sebp.isv.wxrobot.callback
-
-机器人入群回调，进行校验、功能开通等操作 */
+// TaobaoSebpIsvWxrobotCallbackAPIResponse isv机器人回调接口 API返回值
+// taobao.sebp.isv.wxrobot.callback
+//
+// 机器人入群回调，进行校验、功能开通等操作
 type TaobaoSebpIsvWxrobotCallbackAPIResponse struct {
 	model.CommonResponse
 	TaobaoSebpIsvWxrobotCallbackAPIResponseModel

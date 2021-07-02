@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorGyroAPIResponse
-陀螺仪 API返回值
-alibaba.interact.sensor.gyro
-
-客户端陀螺仪 */
+// AlibabaInteractSensorGyroAPIResponse 陀螺仪 API返回值
+// alibaba.interact.sensor.gyro
+//
+// 客户端陀螺仪
 type AlibabaInteractSensorGyroAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorGyroAPIResponseModel

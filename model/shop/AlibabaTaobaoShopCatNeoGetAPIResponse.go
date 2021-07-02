@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTaobaoShopCatNeoGetAPIResponse
-店铺mtop接口鉴权虚拟api API返回值
-alibaba.taobao.shop.cat.neo.get
-
-获取优惠券信息，仅作客户端鉴权虚拟api使用 */
+// AlibabaTaobaoShopCatNeoGetAPIResponse 店铺mtop接口鉴权虚拟api API返回值
+// alibaba.taobao.shop.cat.neo.get
+//
+// 获取优惠券信息，仅作客户端鉴权虚拟api使用
 type AlibabaTaobaoShopCatNeoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTaobaoShopCatNeoGetAPIResponseModel

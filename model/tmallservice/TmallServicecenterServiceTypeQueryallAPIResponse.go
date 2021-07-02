@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterServiceTypeQueryallAPIResponse
-服务供应链服务类型 API返回值
-tmall.servicecenter.service.type.queryall
-
-查询天猫服务类型列表 */
+// TmallServicecenterServiceTypeQueryallAPIResponse 服务供应链服务类型 API返回值
+// tmall.servicecenter.service.type.queryall
+//
+// 查询天猫服务类型列表
 type TmallServicecenterServiceTypeQueryallAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterServiceTypeQueryallAPIResponseModel

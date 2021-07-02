@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmRuleQuerygrowruleAPIResponse
-查询品牌下的会员成长规则 API返回值
-alibaba.alsc.crm.rule.querygrowrule
-
-查询品牌下的会员成长规则 */
+// AlibabaAlscCrmRuleQuerygrowruleAPIResponse 查询品牌下的会员成长规则 API返回值
+// alibaba.alsc.crm.rule.querygrowrule
+//
+// 查询品牌下的会员成长规则
 type AlibabaAlscCrmRuleQuerygrowruleAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmRuleQuerygrowruleAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest
-批量删除adgroup的移动溢价 API请求
-taobao.simba.adgroup.mobilediscount.delete
-
-批量删除adgroup的移动溢价 */
+// TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest 批量删除adgroup的移动溢价 API请求
+// taobao.simba.adgroup.mobilediscount.delete
+//
+// 批量删除adgroup的移动溢价
 type TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest struct {
 	model.Params
 	// 昵称

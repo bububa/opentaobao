@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTaxInvoiceSyncAPIResponse
-第三方开票回调API API返回值
-alibaba.tax.invoice.sync
-
-该接口只提供给俄罗斯供应商开具发票使用，请勿申请。 */
+// AlibabaTaxInvoiceSyncAPIResponse 第三方开票回调API API返回值
+// alibaba.tax.invoice.sync
+//
+// 该接口只提供给俄罗斯供应商开具发票使用，请勿申请。
 type AlibabaTaxInvoiceSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaTaxInvoiceSyncAPIResponseModel

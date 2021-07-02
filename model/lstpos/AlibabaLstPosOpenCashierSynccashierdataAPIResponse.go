@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstPosOpenCashierSynccashierdataAPIResponse
-收银快照同步接口(最多10条订单信息) API返回值
-alibaba.lst.pos.open.cashier.synccashierdata
-
-收银快照同步接口(最多10条订单信息) */
+// AlibabaLstPosOpenCashierSynccashierdataAPIResponse 收银快照同步接口(最多10条订单信息) API返回值
+// alibaba.lst.pos.open.cashier.synccashierdata
+//
+// 收银快照同步接口(最多10条订单信息)
 type AlibabaLstPosOpenCashierSynccashierdataAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstPosOpenCashierSynccashierdataAPIResponseModel

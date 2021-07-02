@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStoregroupDeleteAPIResponse
-删除门店库 API返回值
-taobao.place.storegroup.delete
-
-删除门店库 */
+// TaobaoPlaceStoregroupDeleteAPIResponse 删除门店库 API返回值
+// taobao.place.storegroup.delete
+//
+// 删除门店库
 type TaobaoPlaceStoregroupDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoPlaceStoregroupDeleteAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIResponse
-预售商家仓出库 API返回值
-alibaba.ascp.uop.taobao.presalesorder.consignconfirm
-
-预售商家仓出库 */
+// AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIResponse 预售商家仓出库 API返回值
+// alibaba.ascp.uop.taobao.presalesorder.consignconfirm
+//
+// 预售商家仓出库
 type AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest
-根据uuid操作设备 API请求
-alibaba.campus.device.openapi.operatedevice
-
-根据uuid操作设备 */
+// AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest 根据uuid操作设备 API请求
+// alibaba.campus.device.openapi.operatedevice
+//
+// 根据uuid操作设备
 type AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest struct {
 	model.Params
 	// 请求发送端信息

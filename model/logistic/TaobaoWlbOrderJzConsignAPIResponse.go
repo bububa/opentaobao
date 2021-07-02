@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbOrderJzConsignAPIResponse
-家装发货接口 API返回值
-taobao.wlb.order.jz.consign
-
-家装类订单使用该接口发货 */
+// TaobaoWlbOrderJzConsignAPIResponse 家装发货接口 API返回值
+// taobao.wlb.order.jz.consign
+//
+// 家装类订单使用该接口发货
 type TaobaoWlbOrderJzConsignAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbOrderJzConsignAPIResponseModel

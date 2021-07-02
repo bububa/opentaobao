@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAuctionGovDataTopnGetAPIRequest
-根据不同维度，获取排行榜列表 API请求
-taobao.auction.gov.data.topn.get
-
-根据不同时间维度(周,月,年)，获取(成交额或发拍件数)排行榜列表 */
+// TaobaoAuctionGovDataTopnGetAPIRequest 根据不同维度，获取排行榜列表 API请求
+// taobao.auction.gov.data.topn.get
+//
+// 根据不同时间维度(周,月,年)，获取(成交额或发拍件数)排行榜列表
 type TaobaoAuctionGovDataTopnGetAPIRequest struct {
 	model.Params
 	// 周期类型  （2：周，3：月，4：年）

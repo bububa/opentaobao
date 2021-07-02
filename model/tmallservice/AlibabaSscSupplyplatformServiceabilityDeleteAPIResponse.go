@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse
-删除服务能力 API返回值
-alibaba.ssc.supplyplatform.serviceability.delete
-
-删除服务能力 */
+// AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse 删除服务能力 API返回值
+// alibaba.ssc.supplyplatform.serviceability.delete
+//
+// 删除服务能力
 type AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaSscSupplyplatformServiceabilityDeleteAPIResponseModel

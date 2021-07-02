@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTopOnceTokenGetAPIResponse
-网关一次性token获取 API返回值
-taobao.top.once.token.get
-
-网关一次性token获取 */
+// TaobaoTopOnceTokenGetAPIResponse 网关一次性token获取 API返回值
+// taobao.top.once.token.get
+//
+// 网关一次性token获取
 type TaobaoTopOnceTokenGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTopOnceTokenGetAPIResponseModel

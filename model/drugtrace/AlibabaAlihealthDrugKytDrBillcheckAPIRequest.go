@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytDrBillcheckAPIRequest
-疫苗追溯验证 API请求
-alibaba.alihealth.drug.kyt.dr.billcheck
-
-各级疾控在入库完成后，需要做追溯信息验证 */
+// AlibabaAlihealthDrugKytDrBillcheckAPIRequest 疫苗追溯验证 API请求
+// alibaba.alihealth.drug.kyt.dr.billcheck
+//
+// 各级疾控在入库完成后，需要做追溯信息验证
 type AlibabaAlihealthDrugKytDrBillcheckAPIRequest struct {
 	model.Params
 	// 调用企业ID

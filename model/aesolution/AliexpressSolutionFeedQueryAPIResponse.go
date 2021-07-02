@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionFeedQueryAPIResponse
-aliexpress.solution.feed.query API返回值
-aliexpress.solution.feed.query
-
-API for query the execution result of feed. */
+// AliexpressSolutionFeedQueryAPIResponse aliexpress.solution.feed.query API返回值
+// aliexpress.solution.feed.query
+//
+// API for query the execution result of feed.
 type AliexpressSolutionFeedQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionFeedQueryAPIResponseModel

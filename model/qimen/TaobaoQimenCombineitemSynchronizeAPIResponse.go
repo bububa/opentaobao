@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenCombineitemSynchronizeAPIResponse
-组合商品接口 API返回值
-taobao.qimen.combineitem.synchronize
-
-ERP调用奇门的接口,将商品信息同步给WMS */
+// TaobaoQimenCombineitemSynchronizeAPIResponse 组合商品接口 API返回值
+// taobao.qimen.combineitem.synchronize
+//
+// ERP调用奇门的接口,将商品信息同步给WMS
 type TaobaoQimenCombineitemSynchronizeAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenCombineitemSynchronizeAPIResponseModel

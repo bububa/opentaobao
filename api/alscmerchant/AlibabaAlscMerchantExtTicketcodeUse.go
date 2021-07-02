@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alscmerchant"
 )
 
-/* AlibabaAlscMerchantExtTicketcodeUse
-外部核销服务
-alibaba.alsc.merchant.ext.ticketcode.use
-
-外部核销服务 */
+// AlibabaAlscMerchantExtTicketcodeUse 外部核销服务
+// alibaba.alsc.merchant.ext.ticketcode.use
+//
+// 外部核销服务
 func AlibabaAlscMerchantExtTicketcodeUse(clt *core.SDKClient, req *alscmerchant.AlibabaAlscMerchantExtTicketcodeUseAPIRequest, session string) (*alscmerchant.AlibabaAlscMerchantExtTicketcodeUseAPIResponse, error) {
 	var resp alscmerchant.AlibabaAlscMerchantExtTicketcodeUseAPIResponse
 	err := clt.Post(req, &resp, session)

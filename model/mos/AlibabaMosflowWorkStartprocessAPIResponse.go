@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosflowWorkStartprocessAPIResponse
-发起流程 API返回值
-alibaba.mosflow.work.startprocess
-
-业务发起流程审批 */
+// AlibabaMosflowWorkStartprocessAPIResponse 发起流程 API返回值
+// alibaba.mosflow.work.startprocess
+//
+// 业务发起流程审批
 type AlibabaMosflowWorkStartprocessAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosflowWorkStartprocessAPIResponseModel

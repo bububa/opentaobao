@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingImagerecognizeAPIRequest
-图片语种识别 API请求
-alibaba.seaking.imagerecognize
-
-图片语种识别 */
+// AlibabaSeakingImagerecognizeAPIRequest 图片语种识别 API请求
+// alibaba.seaking.imagerecognize
+//
+// 图片语种识别
 type AlibabaSeakingImagerecognizeAPIRequest struct {
 	model.Params
 	// 扩展信息

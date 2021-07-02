@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/bus"
 )
 
-/* TaobaoBusDisableqrcodeSet
-自助机失效二维码
-taobao.bus.disableqrcode.set
-
-使创建的二维码失效 */
+// TaobaoBusDisableqrcodeSet 自助机失效二维码
+// taobao.bus.disableqrcode.set
+//
+// 使创建的二维码失效
 func TaobaoBusDisableqrcodeSet(clt *core.SDKClient, req *bus.TaobaoBusDisableqrcodeSetAPIRequest, session string) (*bus.TaobaoBusDisableqrcodeSetAPIResponse, error) {
 	var resp bus.TaobaoBusDisableqrcodeSetAPIResponse
 	err := clt.Post(req, &resp, session)

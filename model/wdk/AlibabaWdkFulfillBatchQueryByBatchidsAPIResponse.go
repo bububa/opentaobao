@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkFulfillBatchQueryByBatchidsAPIResponse
-作业小票查询接口 API返回值
-alibaba.wdk.fulfill.batch.query.by.batchids
-
-根据节点等条件查询履约单小票信息 */
+// AlibabaWdkFulfillBatchQueryByBatchidsAPIResponse 作业小票查询接口 API返回值
+// alibaba.wdk.fulfill.batch.query.by.batchids
+//
+// 根据节点等条件查询履约单小票信息
 type AlibabaWdkFulfillBatchQueryByBatchidsAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkFulfillBatchQueryByBatchidsAPIResponseModel

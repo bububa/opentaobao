@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlimeUserTokenAdvanceGetAPIRequest
-获取用户免登录令牌v2 API请求
-taobao.alime.user.token.advance.get
-
-根据第三账号信息获取用户的免登录令牌 */
+// TaobaoAlimeUserTokenAdvanceGetAPIRequest 获取用户免登录令牌v2 API请求
+// taobao.alime.user.token.advance.get
+//
+// 根据第三账号信息获取用户的免登录令牌
 type TaobaoAlimeUserTokenAdvanceGetAPIRequest struct {
 	model.Params
 	// 路由id, 一般为用户id，用于异地容灾

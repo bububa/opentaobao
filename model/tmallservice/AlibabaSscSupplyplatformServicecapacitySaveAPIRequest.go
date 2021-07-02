@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSscSupplyplatformServicecapacitySaveAPIRequest
-保存服务容量 API请求
-alibaba.ssc.supplyplatform.servicecapacity.save
-
-保存服务容量 */
+// AlibabaSscSupplyplatformServicecapacitySaveAPIRequest 保存服务容量 API请求
+// alibaba.ssc.supplyplatform.servicecapacity.save
+//
+// 保存服务容量
 type AlibabaSscSupplyplatformServicecapacitySaveAPIRequest struct {
 	model.Params
 	// 服务提供者类型。service_store 网点；worker 工人；supplier 服务商

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDapHuaweiCardinfosAPIResponse
-华为负一屏卡片查询 API返回值
-alibaba.alihealth.dap.huawei.cardinfos
-
-医疗健康频道卡片华为负一屏 */
+// AlibabaAlihealthDapHuaweiCardinfosAPIResponse 华为负一屏卡片查询 API返回值
+// alibaba.alihealth.dap.huawei.cardinfos
+//
+// 医疗健康频道卡片华为负一屏
 type AlibabaAlihealthDapHuaweiCardinfosAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDapHuaweiCardinfosAPIResponseModel

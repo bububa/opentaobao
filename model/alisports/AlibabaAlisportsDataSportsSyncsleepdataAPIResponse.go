@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsDataSportsSyncsleepdataAPIResponse
-阿里体育数据中心用户睡眠数据同步接口 API返回值
-alibaba.alisports.data.sports.syncsleepdata
-
-阿里体育数据中心用户睡眠数据同步接口 */
+// AlibabaAlisportsDataSportsSyncsleepdataAPIResponse 阿里体育数据中心用户睡眠数据同步接口 API返回值
+// alibaba.alisports.data.sports.syncsleepdata
+//
+// 阿里体育数据中心用户睡眠数据同步接口
 type AlibabaAlisportsDataSportsSyncsleepdataAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsDataSportsSyncsleepdataAPIResponseModel

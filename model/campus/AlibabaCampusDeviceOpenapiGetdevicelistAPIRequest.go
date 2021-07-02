@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusDeviceOpenapiGetdevicelistAPIRequest
-多条件查询设备分组 API请求
-alibaba.campus.device.openapi.getdevicelist
-
-多条件查询设备分组 */
+// AlibabaCampusDeviceOpenapiGetdevicelistAPIRequest 多条件查询设备分组 API请求
+// alibaba.campus.device.openapi.getdevicelist
+//
+// 多条件查询设备分组
 type AlibabaCampusDeviceOpenapiGetdevicelistAPIRequest struct {
 	model.Params
 	// 请求发送端信息

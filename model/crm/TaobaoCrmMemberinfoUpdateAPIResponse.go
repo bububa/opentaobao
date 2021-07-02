@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmMemberinfoUpdateAPIResponse
-编辑会员资料 API返回值
-taobao.crm.memberinfo.update
-
-编辑会员的基本资料，接口返回会员信息修改是否成功 */
+// TaobaoCrmMemberinfoUpdateAPIResponse 编辑会员资料 API返回值
+// taobao.crm.memberinfo.update
+//
+// 编辑会员的基本资料，接口返回会员信息修改是否成功
 type TaobaoCrmMemberinfoUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmMemberinfoUpdateAPIResponseModel

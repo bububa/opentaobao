@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoChainstoreRangesAPIRequest
-蜂鸟查询门店配送范围接口 API请求
-alibaba.ele.fengniao.chainstore.ranges
-
-蜂鸟查询门店配送范围接口 */
+// AlibabaEleFengniaoChainstoreRangesAPIRequest 蜂鸟查询门店配送范围接口 API请求
+// alibaba.ele.fengniao.chainstore.ranges
+//
+// 蜂鸟查询门店配送范围接口
 type AlibabaEleFengniaoChainstoreRangesAPIRequest struct {
 	model.Params
 	// 商户code

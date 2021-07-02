@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytUploadb2cbillAPIRequest
-快易通零售B2C API请求
-alibaba.alihealth.drug.kyt.uploadb2cbill
-
-快易通零售B2C单据上传 */
+// AlibabaAlihealthDrugKytUploadb2cbillAPIRequest 快易通零售B2C API请求
+// alibaba.alihealth.drug.kyt.uploadb2cbill
+//
+// 快易通零售B2C单据上传
 type AlibabaAlihealthDrugKytUploadb2cbillAPIRequest struct {
 	model.Params
 	// 单据号【20位以内的唯一编码，可以使用16位UUID】

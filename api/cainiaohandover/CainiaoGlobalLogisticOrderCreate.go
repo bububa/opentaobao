@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/cainiaohandover"
 )
 
-/* CainiaoGlobalLogisticOrderCreate
-创建物流订单
-cainiao.global.logistic.order.create
-
-创建物流订单 */
+// CainiaoGlobalLogisticOrderCreate 创建物流订单
+// cainiao.global.logistic.order.create
+//
+// 创建物流订单
 func CainiaoGlobalLogisticOrderCreate(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalLogisticOrderCreateAPIRequest, session string) (*cainiaohandover.CainiaoGlobalLogisticOrderCreateAPIResponse, error) {
 	var resp cainiaohandover.CainiaoGlobalLogisticOrderCreateAPIResponse
 	err := clt.Post(req, &resp, session)

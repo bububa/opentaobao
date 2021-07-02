@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoBmsOrderConsignConfirmAPIResponse
-BMS出库通知 API返回值
-cainiao.bms.order.consign.confirm
-
-BMS出库后，通知ISV */
+// CainiaoBmsOrderConsignConfirmAPIResponse BMS出库通知 API返回值
+// cainiao.bms.order.consign.confirm
+//
+// BMS出库后，通知ISV
 type CainiaoBmsOrderConsignConfirmAPIResponse struct {
 	model.CommonResponse
 	CainiaoBmsOrderConsignConfirmAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceCreateResultsIncrementGetAPIRequest
-ERP增量开票结果获取 API请求
-alibaba.einvoice.create.results.increment.get
-
-增量开票结果获取 */
+// AlibabaEinvoiceCreateResultsIncrementGetAPIRequest ERP增量开票结果获取 API请求
+// alibaba.einvoice.create.results.increment.get
+//
+// 增量开票结果获取
 type AlibabaEinvoiceCreateResultsIncrementGetAPIRequest struct {
 	model.Params
 	// 开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)

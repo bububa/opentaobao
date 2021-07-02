@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsAligenieOpencontentScenepushAPIResponse
-音频场景接入接口 API返回值
-alibaba.ailabs.aligenie.opencontent.scenepush
-
-天猫精灵音频挂靠场景接入 */
+// AlibabaAilabsAligenieOpencontentScenepushAPIResponse 音频场景接入接口 API返回值
+// alibaba.ailabs.aligenie.opencontent.scenepush
+//
+// 天猫精灵音频挂靠场景接入
 type AlibabaAilabsAligenieOpencontentScenepushAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsAligenieOpencontentScenepushAPIResponseModel

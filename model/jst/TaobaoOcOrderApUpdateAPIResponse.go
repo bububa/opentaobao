@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOcOrderApUpdateAPIResponse
-按OC订单分账 API返回值
-taobao.oc.order.ap.update
-
-对OC订单执行分账操作 */
+// TaobaoOcOrderApUpdateAPIResponse 按OC订单分账 API返回值
+// taobao.oc.order.ap.update
+//
+// 对OC订单执行分账操作
 type TaobaoOcOrderApUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOcOrderApUpdateAPIResponseModel

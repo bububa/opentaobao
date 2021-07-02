@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusTvmqueryorderGetAPIResponse
-线下自助机查询订单信息 API返回值
-taobao.bus.tvmqueryorder.get
-
-查询订单详情 */
+// TaobaoBusTvmqueryorderGetAPIResponse 线下自助机查询订单信息 API返回值
+// taobao.bus.tvmqueryorder.get
+//
+// 查询订单详情
 type TaobaoBusTvmqueryorderGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusTvmqueryorderGetAPIResponseModel

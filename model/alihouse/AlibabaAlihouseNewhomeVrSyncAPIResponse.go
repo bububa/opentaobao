@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeVrSyncAPIResponse
-VR关系数据同步 API返回值
-alibaba.alihouse.newhome.vr.sync
-
-对接易居VR关系数据迁移 */
+// AlibabaAlihouseNewhomeVrSyncAPIResponse VR关系数据同步 API返回值
+// alibaba.alihouse.newhome.vr.sync
+//
+// 对接易居VR关系数据迁移
 type AlibabaAlihouseNewhomeVrSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihouseNewhomeVrSyncAPIResponseModel

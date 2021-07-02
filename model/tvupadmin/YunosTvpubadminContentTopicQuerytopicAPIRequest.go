@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentTopicQuerytopicAPIRequest
-迎客松专题查询 API请求
-yunos.tvpubadmin.content.topic.querytopic
-
-迎客松专题查询 */
+// YunosTvpubadminContentTopicQuerytopicAPIRequest 迎客松专题查询 API请求
+// yunos.tvpubadmin.content.topic.querytopic
+//
+// 迎客松专题查询
 type YunosTvpubadminContentTopicQuerytopicAPIRequest struct {
 	model.Params
 	// TopicAuditQueryBO

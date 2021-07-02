@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstNicetuanOrderSaveAPIResponse
-十荟团订单同步至零售通 API返回值
-alibaba.lst.nicetuan.order.save
-
-十荟团订单同步至零售通，十荟团单向写到零售通 */
+// AlibabaLstNicetuanOrderSaveAPIResponse 十荟团订单同步至零售通 API返回值
+// alibaba.lst.nicetuan.order.save
+//
+// 十荟团订单同步至零售通，十荟团单向写到零售通
 type AlibabaLstNicetuanOrderSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstNicetuanOrderSaveAPIResponseModel

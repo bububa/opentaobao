@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuBuyerTagGetAPIRequest
-判断买家是否有某些标 API请求
-taobao.qianniu.buyer.tag.get
-
-判断某个买家是否有某些标 */
+// TaobaoQianniuBuyerTagGetAPIRequest 判断买家是否有某些标 API请求
+// taobao.qianniu.buyer.tag.get
+//
+// 判断某个买家是否有某些标
 type TaobaoQianniuBuyerTagGetAPIRequest struct {
 	model.Params
 	// 买家nick

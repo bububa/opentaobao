@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkCouponSpreadApplyAPIRequest
-普通发券 API请求
-alibaba.wdk.coupon.spread.apply
-
-优惠券发放 */
+// AlibabaWdkCouponSpreadApplyAPIRequest 普通发券 API请求
+// alibaba.wdk.coupon.spread.apply
+//
+// 优惠券发放
 type AlibabaWdkCouponSpreadApplyAPIRequest struct {
 	model.Params
 	// 参数对象

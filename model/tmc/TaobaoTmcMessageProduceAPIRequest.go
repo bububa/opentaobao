@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcMessageProduceAPIRequest
-发布单条消息 API请求
-taobao.tmc.message.produce
-
-发布单条消息 */
+// TaobaoTmcMessageProduceAPIRequest 发布单条消息 API请求
+// taobao.tmc.message.produce
+//
+// 发布单条消息
 type TaobaoTmcMessageProduceAPIRequest struct {
 	model.Params
 	// 消息内容的JSON表述，必须按照topic的定义来填充

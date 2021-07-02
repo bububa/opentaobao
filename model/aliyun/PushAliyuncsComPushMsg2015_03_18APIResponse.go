@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* PushAliyuncsComPushMsg2015_03_18APIResponse
-消息推送 API返回值
-push.aliyuncs.com.pushMsg.2015-03-18
-
-消息推送  ,支持指定用户/账号/广播等模式 */
+// PushAliyuncsComPushMsg2015_03_18APIResponse 消息推送 API返回值
+// push.aliyuncs.com.pushMsg.2015-03-18
+//
+// 消息推送  ,支持指定用户/账号/广播等模式
 type PushAliyuncsComPushMsg2015_03_18APIResponse struct {
 	model.CommonResponse
 	PushAliyuncsComPushMsg2015_03_18APIResponseModel

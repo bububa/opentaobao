@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDutyfreeStockQueryAPIResponse
-对外库存查询接口 API返回值
-alibaba.dutyfree.stock.query
-
-对外部服务提供库存查询接口 */
+// AlibabaDutyfreeStockQueryAPIResponse 对外库存查询接口 API返回值
+// alibaba.dutyfree.stock.query
+//
+// 对外部服务提供库存查询接口
 type AlibabaDutyfreeStockQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaDutyfreeStockQueryAPIResponseModel

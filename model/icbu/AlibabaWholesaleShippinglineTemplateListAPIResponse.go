@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWholesaleShippinglineTemplateListAPIResponse
-获取运费模板 API返回值
-alibaba.wholesale.shippingline.template.list
-
-查询运费模板信息 */
+// AlibabaWholesaleShippinglineTemplateListAPIResponse 获取运费模板 API返回值
+// alibaba.wholesale.shippingline.template.list
+//
+// 查询运费模板信息
 type AlibabaWholesaleShippinglineTemplateListAPIResponse struct {
 	model.CommonResponse
 	AlibabaWholesaleShippinglineTemplateListAPIResponseModel

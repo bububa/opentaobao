@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreReallocateAPIResponse
-rellocate API返回值
-taobao.omniorder.store.reallocate
-
-门店发货提供改派接口 */
+// TaobaoOmniorderStoreReallocateAPIResponse rellocate API返回值
+// taobao.omniorder.store.reallocate
+//
+// 门店发货提供改派接口
 type TaobaoOmniorderStoreReallocateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderStoreReallocateAPIResponseModel

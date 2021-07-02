@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleAppraiseSpuRegisterModifyAPIResponse
-验货宝服务商spu挂载 API返回值
-alibaba.idle.appraise.spu.register.modify
-
-闲鱼接收回收商spu模板挂载信息 */
+// AlibabaIdleAppraiseSpuRegisterModifyAPIResponse 验货宝服务商spu挂载 API返回值
+// alibaba.idle.appraise.spu.register.modify
+//
+// 闲鱼接收回收商spu模板挂载信息
 type AlibabaIdleAppraiseSpuRegisterModifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleAppraiseSpuRegisterModifyAPIResponseModel

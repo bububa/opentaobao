@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFlowAlipayPublishAPIRequest
-流量钱包流量发放-面向支付宝用户 API请求
-alibaba.aliqin.flow.alipay.publish
-
-用户淘宝流量钱包商家给支付宝用户发放流量 */
+// AlibabaAliqinFlowAlipayPublishAPIRequest 流量钱包流量发放-面向支付宝用户 API请求
+// alibaba.aliqin.flow.alipay.publish
+//
+// 用户淘宝流量钱包商家给支付宝用户发放流量
 type AlibabaAliqinFlowAlipayPublishAPIRequest struct {
 	model.Params
 	// 用户的支付宝ID

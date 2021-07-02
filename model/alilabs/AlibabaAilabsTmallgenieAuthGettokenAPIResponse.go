@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsTmallgenieAuthGettokenAPIResponse
-设备授权 API返回值
-alibaba.ailabs.tmallgenie.auth.gettoken
-
-获取设备授权码 */
+// AlibabaAilabsTmallgenieAuthGettokenAPIResponse 设备授权 API返回值
+// alibaba.ailabs.tmallgenie.auth.gettoken
+//
+// 获取设备授权码
 type AlibabaAilabsTmallgenieAuthGettokenAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsTmallgenieAuthGettokenAPIResponseModel

@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemsSellerListGetAPIRequest
-批量获取商品详细信息 API请求
-taobao.items.seller.list.get
-
-批量获取商品详细信息
-<br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong> */
+// TaobaoItemsSellerListGetAPIRequest 批量获取商品详细信息 API请求
+// taobao.items.seller.list.get
+//
+// 批量获取商品详细信息
+// <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 type TaobaoItemsSellerListGetAPIRequest struct {
 	model.Params
 	// 需要返回的商品字段列表。可选值：点击返回结果中的Item结构体中能展示出来的所有字段，多个字段用“,”分隔。注：返回所有sku信息的字段名称是sku而不是skus。

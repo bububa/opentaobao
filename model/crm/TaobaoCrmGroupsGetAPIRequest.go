@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmGroupsGetAPIRequest
-查询卖家的分组 API请求
-taobao.crm.groups.get
-
-查询卖家的分组，返回查询到的分组列表，分页返回分组 */
+// TaobaoCrmGroupsGetAPIRequest 查询卖家的分组 API请求
+// taobao.crm.groups.get
+//
+// 查询卖家的分组，返回查询到的分组列表，分页返回分组
 type TaobaoCrmGroupsGetAPIRequest struct {
 	model.Params
 	// 每页显示的记录数，其最大值不能超过100条，最小值为1，默认20条

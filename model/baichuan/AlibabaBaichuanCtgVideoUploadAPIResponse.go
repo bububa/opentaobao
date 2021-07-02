@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaichuanCtgVideoUploadAPIResponse
-提供优酷的短视频入淘API API返回值
-alibaba.baichuan.ctg.video.upload
-
-提供优酷的短视频入淘API */
+// AlibabaBaichuanCtgVideoUploadAPIResponse 提供优酷的短视频入淘API API返回值
+// alibaba.baichuan.ctg.video.upload
+//
+// 提供优酷的短视频入淘API
 type AlibabaBaichuanCtgVideoUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaBaichuanCtgVideoUploadAPIResponseModel

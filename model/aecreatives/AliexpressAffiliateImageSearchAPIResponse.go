@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateImageSearchAPIResponse
-图搜 API返回值
-aliexpress.affiliate.image.search
-
-图片搜索接口 */
+// AliexpressAffiliateImageSearchAPIResponse 图搜 API返回值
+// aliexpress.affiliate.image.search
+//
+// 图片搜索接口
 type AliexpressAffiliateImageSearchAPIResponse struct {
 	model.CommonResponse
 	AliexpressAffiliateImageSearchAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/nazca"
 )
 
-/* AlibabaNazcaTokenFilesecretGet
-获取文件秘钥
-alibaba.nazca.token.filesecret.get
-
-获取文件秘钥 */
+// AlibabaNazcaTokenFilesecretGet 获取文件秘钥
+// alibaba.nazca.token.filesecret.get
+//
+// 获取文件秘钥
 func AlibabaNazcaTokenFilesecretGet(clt *core.SDKClient, req *nazca.AlibabaNazcaTokenFilesecretGetAPIRequest, session string) (*nazca.AlibabaNazcaTokenFilesecretGetAPIResponse, error) {
 	var resp nazca.AlibabaNazcaTokenFilesecretGetAPIResponse
 	err := clt.Post(req, &resp, session)

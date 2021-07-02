@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentHandrefundRefundfeeAPIResponse
-代理商手动退款接口 API返回值
-taobao.train.agent.handrefund.refundfee
-
-火车票代理商手动退款接口 */
+// TaobaoTrainAgentHandrefundRefundfeeAPIResponse 代理商手动退款接口 API返回值
+// taobao.train.agent.handrefund.refundfee
+//
+// 火车票代理商手动退款接口
 type TaobaoTrainAgentHandrefundRefundfeeAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentHandrefundRefundfeeAPIResponseModel

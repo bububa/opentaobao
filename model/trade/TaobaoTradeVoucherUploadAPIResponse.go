@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradeVoucherUploadAPIResponse
-淘宝交易凭证上传 API返回值
-taobao.trade.voucher.upload
-
-定制化交易流程中，涉及到 买家自定义 图片、声音、视频 等多富媒体文件，且该商品或服务的附属sku，通过此接口上传作为交易凭证。 */
+// TaobaoTradeVoucherUploadAPIResponse 淘宝交易凭证上传 API返回值
+// taobao.trade.voucher.upload
+//
+// 定制化交易流程中，涉及到 买家自定义 图片、声音、视频 等多富媒体文件，且该商品或服务的附属sku，通过此接口上传作为交易凭证。
 type TaobaoTradeVoucherUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoTradeVoucherUploadAPIResponseModel

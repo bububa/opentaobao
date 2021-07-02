@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketSendAPIResponse
-商家电子凭证发码成功回调接口 API返回值
-taobao.vmarket.eticket.send
-
-外部商家成功发码回调接口 */
+// TaobaoVmarketEticketSendAPIResponse 商家电子凭证发码成功回调接口 API返回值
+// taobao.vmarket.eticket.send
+//
+// 外部商家成功发码回调接口
 type TaobaoVmarketEticketSendAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketSendAPIResponseModel

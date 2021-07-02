@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytRemnantbillUploadAPIResponse
-零头出入库单据上传 API返回值
-alibaba.alihealth.drug.kyt.remnantbill.upload
-
-零头出入库单据上传 */
+// AlibabaAlihealthDrugKytRemnantbillUploadAPIResponse 零头出入库单据上传 API返回值
+// alibaba.alihealth.drug.kyt.remnantbill.upload
+//
+// 零头出入库单据上传
 type AlibabaAlihealthDrugKytRemnantbillUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytRemnantbillUploadAPIResponseModel

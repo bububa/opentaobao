@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLarkIotOrderGetcinemasAPIResponse
-获取iot渠道开放的影院 API返回值
-taobao.lark.iot.order.getcinemas
-
-iot渠道拉取有权限访问的影院 */
+// TaobaoLarkIotOrderGetcinemasAPIResponse 获取iot渠道开放的影院 API返回值
+// taobao.lark.iot.order.getcinemas
+//
+// iot渠道拉取有权限访问的影院
 type TaobaoLarkIotOrderGetcinemasAPIResponse struct {
 	model.CommonResponse
 	TaobaoLarkIotOrderGetcinemasAPIResponseModel

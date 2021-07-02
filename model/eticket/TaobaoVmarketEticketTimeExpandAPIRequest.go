@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketTimeExpandAPIRequest
-订单延时接口 API请求
-taobao.vmarket.eticket.time.expand
-
-提供码商操作订单延期接口 */
+// TaobaoVmarketEticketTimeExpandAPIRequest 订单延时接口 API请求
+// taobao.vmarket.eticket.time.expand
+//
+// 提供码商操作订单延期接口
 type TaobaoVmarketEticketTimeExpandAPIRequest struct {
 	model.Params
 	// 订单ID

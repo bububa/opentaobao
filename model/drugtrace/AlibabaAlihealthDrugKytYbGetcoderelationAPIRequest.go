@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest
-医保-查询码的所有子码 API请求
-alibaba.alihealth.drug.kyt.yb.getcoderelation
-
-应用于药店或医院入库环节，通过扫码获取下级码进行入库；
-通过码查询所有子码以及包装比例 */
+// AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest 医保-查询码的所有子码 API请求
+// alibaba.alihealth.drug.kyt.yb.getcoderelation
+//
+// 应用于药店或医院入库环节，通过扫码获取下级码进行入库；
+// 通过码查询所有子码以及包装比例
 type AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest struct {
 	model.Params
 	// 社保局(所属地市名称)

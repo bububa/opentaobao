@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkPosTradeCloseAPIResponse
-轻pos品牌营销关单接口 API返回值
-alibaba.wdk.pos.trade.close
-
-轻pos品牌营销场景，提供关单接口给外部商家 */
+// AlibabaWdkPosTradeCloseAPIResponse 轻pos品牌营销关单接口 API返回值
+// alibaba.wdk.pos.trade.close
+//
+// 轻pos品牌营销场景，提供关单接口给外部商家
 type AlibabaWdkPosTradeCloseAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkPosTradeCloseAPIResponseModel

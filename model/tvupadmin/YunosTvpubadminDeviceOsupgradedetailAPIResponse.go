@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceOsupgradedetailAPIResponse
-获取系统升级详情 API返回值
-yunos.tvpubadmin.device.osupgradedetail
-
-获取系统升级详情 */
+// YunosTvpubadminDeviceOsupgradedetailAPIResponse 获取系统升级详情 API返回值
+// yunos.tvpubadmin.device.osupgradedetail
+//
+// 获取系统升级详情
 type YunosTvpubadminDeviceOsupgradedetailAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminDeviceOsupgradedetailAPIResponseModel

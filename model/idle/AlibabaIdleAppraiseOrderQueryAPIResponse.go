@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleAppraiseOrderQueryAPIResponse
-闲鱼验货担保订单详情查询V1 API返回值
-alibaba.idle.appraise.order.query
-
-鉴定商调用该接口获取订单状态 */
+// AlibabaIdleAppraiseOrderQueryAPIResponse 闲鱼验货担保订单详情查询V1 API返回值
+// alibaba.idle.appraise.order.query
+//
+// 鉴定商调用该接口获取订单状态
 type AlibabaIdleAppraiseOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleAppraiseOrderQueryAPIResponseModel

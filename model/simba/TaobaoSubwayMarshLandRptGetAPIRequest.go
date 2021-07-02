@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSubwayMarshLandRptGetAPIRequest
-获取捡漏词包分时报表数据 API请求
-taobao.subway.marsh.land.rpt.get
-
-获取捡漏词包分时报表数据 */
+// TaobaoSubwayMarshLandRptGetAPIRequest 获取捡漏词包分时报表数据 API请求
+// taobao.subway.marsh.land.rpt.get
+//
+// 获取捡漏词包分时报表数据
 type TaobaoSubwayMarshLandRptGetAPIRequest struct {
 	model.Params
 	// 主人昵称

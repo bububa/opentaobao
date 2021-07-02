@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreConsignedAPIRequest
-Pos端门店发货 API请求
-taobao.omniorder.store.consigned
-
-ISV Pos端门店发货，通知星盘 */
+// TaobaoOmniorderStoreConsignedAPIRequest Pos端门店发货 API请求
+// taobao.omniorder.store.consigned
+//
+// ISV Pos端门店发货，通知星盘
 type TaobaoOmniorderStoreConsignedAPIRequest struct {
 	model.Params
 	// 跟踪Id

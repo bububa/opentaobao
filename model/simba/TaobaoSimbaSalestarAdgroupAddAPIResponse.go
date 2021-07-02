@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSalestarAdgroupAddAPIResponse
-(新)创建一个推广组 API返回值
-taobao.simba.salestar.adgroup.add
-
-创建一个推广组 */
+// TaobaoSimbaSalestarAdgroupAddAPIResponse (新)创建一个推广组 API返回值
+// taobao.simba.salestar.adgroup.add
+//
+// 创建一个推广组
 type TaobaoSimbaSalestarAdgroupAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaSalestarAdgroupAddAPIResponseModel

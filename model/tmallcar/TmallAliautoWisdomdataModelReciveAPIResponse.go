@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallAliautoWisdomdataModelReciveAPIResponse
-第三方车型数据上传 API返回值
-tmall.aliauto.wisdomdata.model.recive
-
-天猫汽车对外提供的汽车车型数据上传接口 */
+// TmallAliautoWisdomdataModelReciveAPIResponse 第三方车型数据上传 API返回值
+// tmall.aliauto.wisdomdata.model.recive
+//
+// 天猫汽车对外提供的汽车车型数据上传接口
 type TmallAliautoWisdomdataModelReciveAPIResponse struct {
 	model.CommonResponse
 	TmallAliautoWisdomdataModelReciveAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCntecShopkeeperSupplyStatisticsQueryAPIResponse
-团购业务供货商查询门店统计数据 API返回值
-cainiao.cntec.shopkeeper.supply.statistics.query
-
-查询门店售卖商品统计数据 */
+// CainiaoCntecShopkeeperSupplyStatisticsQueryAPIResponse 团购业务供货商查询门店统计数据 API返回值
+// cainiao.cntec.shopkeeper.supply.statistics.query
+//
+// 查询门店售卖商品统计数据
 type CainiaoCntecShopkeeperSupplyStatisticsQueryAPIResponse struct {
 	model.CommonResponse
 	CainiaoCntecShopkeeperSupplyStatisticsQueryAPIResponseModel

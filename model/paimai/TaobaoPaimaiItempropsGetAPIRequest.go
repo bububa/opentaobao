@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPaimaiItempropsGetAPIRequest
-拍卖相关类目属性 API请求
-taobao.paimai.itemprops.get
-
-读取拍卖相关类目属性 */
+// TaobaoPaimaiItempropsGetAPIRequest 拍卖相关类目属性 API请求
+// taobao.paimai.itemprops.get
+//
+// 读取拍卖相关类目属性
 type TaobaoPaimaiItempropsGetAPIRequest struct {
 	model.Params
 	// 获取类目的类型：1代表集市、2代表天猫

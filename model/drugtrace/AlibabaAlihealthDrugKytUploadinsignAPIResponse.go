@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytUploadinsignAPIResponse
-仓库批量扫码回传接口 API返回值
-alibaba.alihealth.drug.kyt.uploadinsign
-
-连锁总部仓库在采购入库或者销售出库环节，批量采集追溯码之后回传到码上放心平台。 */
+// AlibabaAlihealthDrugKytUploadinsignAPIResponse 仓库批量扫码回传接口 API返回值
+// alibaba.alihealth.drug.kyt.uploadinsign
+//
+// 连锁总部仓库在采购入库或者销售出库环节，批量采集追溯码之后回传到码上放心平台。
 type AlibabaAlihealthDrugKytUploadinsignAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytUploadinsignAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoIotTicketSpCancleAPIResponse
-Iot售后服务商取消工单 API返回值
-cainiao.iot.ticket.sp.cancle
-
-IoT售后服务商取消接单 */
+// CainiaoIotTicketSpCancleAPIResponse Iot售后服务商取消工单 API返回值
+// cainiao.iot.ticket.sp.cancle
+//
+// IoT售后服务商取消接单
 type CainiaoIotTicketSpCancleAPIResponse struct {
 	model.CommonResponse
 	CainiaoIotTicketSpCancleAPIResponseModel

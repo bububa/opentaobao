@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMedicalRegistrationSyncnewAPIResponse
-阿里健康新挂号数据回传 API返回值
-alibaba.alihealth.medical.registration.syncnew
-
-阿里健康新挂号记录回传接口 */
+// AlibabaAlihealthMedicalRegistrationSyncnewAPIResponse 阿里健康新挂号数据回传 API返回值
+// alibaba.alihealth.medical.registration.syncnew
+//
+// 阿里健康新挂号记录回传接口
 type AlibabaAlihealthMedicalRegistrationSyncnewAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthMedicalRegistrationSyncnewAPIResponseModel

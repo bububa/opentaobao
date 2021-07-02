@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjMoscarnivalReceiveencryptAPIResponse
-根据加密手机号领券 API返回值
-alibaba.mj.moscarnival.receiveencrypt
-
-根据加密手机号领券 */
+// AlibabaMjMoscarnivalReceiveencryptAPIResponse 根据加密手机号领券 API返回值
+// alibaba.mj.moscarnival.receiveencrypt
+//
+// 根据加密手机号领券
 type AlibabaMjMoscarnivalReceiveencryptAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjMoscarnivalReceiveencryptAPIResponseModel

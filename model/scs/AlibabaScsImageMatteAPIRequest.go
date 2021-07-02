@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScsImageMatteAPIRequest
-阿里妈妈智能创意平台在线抠图 API请求
-alibaba.scs.image.matte
-
-该API对外输出一个在线抠图(Deep Image Matting)接口，合作方可以通过该接口利用深度学习抠图算法从图片中抠出目标对象(比如商品或者人物轮廓) */
+// AlibabaScsImageMatteAPIRequest 阿里妈妈智能创意平台在线抠图 API请求
+// alibaba.scs.image.matte
+//
+// 该API对外输出一个在线抠图(Deep Image Matting)接口，合作方可以通过该接口利用深度学习抠图算法从图片中抠出目标对象(比如商品或者人物轮廓)
 type AlibabaScsImageMatteAPIRequest struct {
 	model.Params
 	// 资源位ID，接入前由智能创意平台分配

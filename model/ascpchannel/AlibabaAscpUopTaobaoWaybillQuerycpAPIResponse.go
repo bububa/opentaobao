@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpUopTaobaoWaybillQuerycpAPIResponse
-查询电子面单开放的CP列表 API返回值
-alibaba.ascp.uop.taobao.waybill.querycp
-
-查询电子面单开放的CP列表 */
+// AlibabaAscpUopTaobaoWaybillQuerycpAPIResponse 查询电子面单开放的CP列表 API返回值
+// alibaba.ascp.uop.taobao.waybill.querycp
+//
+// 查询电子面单开放的CP列表
 type AlibabaAscpUopTaobaoWaybillQuerycpAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpUopTaobaoWaybillQuerycpAPIResponseModel

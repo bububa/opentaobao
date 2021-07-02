@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarFpcarGetcarNotifyAPIRequest
-门店通知用户提车 API请求
-tmall.car.fpcar.getcar.notify
-
-提供给外部(大搜或其它合作方)的接口-门店通知用户提车 */
+// TmallCarFpcarGetcarNotifyAPIRequest 门店通知用户提车 API请求
+// tmall.car.fpcar.getcar.notify
+//
+// 提供给外部(大搜或其它合作方)的接口-门店通知用户提车
 type TmallCarFpcarGetcarNotifyAPIRequest struct {
 	model.Params
 	// 商品宝贝id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderAlipayfaceCancelAPIResponse
-线下信用住订单取消 API返回值
-taobao.xhotel.order.alipayface.cancel
-
-提供给卖家进行线下信用住的订单取消。此接口仅仅支持线下信用住订单的取消 */
+// TaobaoXhotelOrderAlipayfaceCancelAPIResponse 线下信用住订单取消 API返回值
+// taobao.xhotel.order.alipayface.cancel
+//
+// 提供给卖家进行线下信用住的订单取消。此接口仅仅支持线下信用住订单的取消
 type TaobaoXhotelOrderAlipayfaceCancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelOrderAlipayfaceCancelAPIResponseModel

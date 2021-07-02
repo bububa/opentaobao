@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItempropsGetAPIResponse
-获取标准商品类目属性 API返回值
-taobao.itemprops.get
-
-通过设置必要的参数，来获取商品后台标准类目属性，以及这些属性里面详细的属性值prop_values。 */
+// TaobaoItempropsGetAPIResponse 获取标准商品类目属性 API返回值
+// taobao.itemprops.get
+//
+// 通过设置必要的参数，来获取商品后台标准类目属性，以及这些属性里面详细的属性值prop_values。
 type TaobaoItempropsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItempropsGetAPIResponseModel

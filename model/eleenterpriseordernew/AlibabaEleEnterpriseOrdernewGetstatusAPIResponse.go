@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseOrdernewGetstatusAPIResponse
-订单状态查询接口 API返回值
-alibaba.ele.enterprise.ordernew.getstatus
-
-订单状态查询接口 */
+// AlibabaEleEnterpriseOrdernewGetstatusAPIResponse 订单状态查询接口 API返回值
+// alibaba.ele.enterprise.ordernew.getstatus
+//
+// 订单状态查询接口
 type AlibabaEleEnterpriseOrdernewGetstatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseOrdernewGetstatusAPIResponseModel

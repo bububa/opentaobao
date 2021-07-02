@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallTradeCloseAPIResponse
-关闭订单 API返回值
-taobao.openmall.trade.close
-
-关闭订单 */
+// TaobaoOpenmallTradeCloseAPIResponse 关闭订单 API返回值
+// taobao.openmall.trade.close
+//
+// 关闭订单
 type TaobaoOpenmallTradeCloseAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenmallTradeCloseAPIResponseModel

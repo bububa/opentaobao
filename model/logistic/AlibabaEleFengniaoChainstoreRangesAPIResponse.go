@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoChainstoreRangesAPIResponse
-蜂鸟查询门店配送范围接口 API返回值
-alibaba.ele.fengniao.chainstore.ranges
-
-蜂鸟查询门店配送范围接口 */
+// AlibabaEleFengniaoChainstoreRangesAPIResponse 蜂鸟查询门店配送范围接口 API返回值
+// alibaba.ele.fengniao.chainstore.ranges
+//
+// 蜂鸟查询门店配送范围接口
 type AlibabaEleFengniaoChainstoreRangesAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoChainstoreRangesAPIResponseModel

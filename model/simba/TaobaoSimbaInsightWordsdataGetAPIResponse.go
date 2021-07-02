@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaInsightWordsdataGetAPIResponse
-获取关键词的大盘数据 API返回值
-taobao.simba.insight.wordsdata.get
-
-获取关键词的详细数据 */
+// TaobaoSimbaInsightWordsdataGetAPIResponse 获取关键词的大盘数据 API返回值
+// taobao.simba.insight.wordsdata.get
+//
+// 获取关键词的详细数据
 type TaobaoSimbaInsightWordsdataGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaInsightWordsdataGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsUserSpeechGuideAPIResponse
-引导语推荐接口 API返回值
-alibaba.ailabs.user.speech.guide
-
-根据用户的语音query，返回相应的引导语推荐 */
+// AlibabaAilabsUserSpeechGuideAPIResponse 引导语推荐接口 API返回值
+// alibaba.ailabs.user.speech.guide
+//
+// 根据用户的语音query，返回相应的引导语推荐
 type AlibabaAilabsUserSpeechGuideAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsUserSpeechGuideAPIResponseModel

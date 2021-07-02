@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthPwApplynodeUpdateAPIResponse
-申请节点变更回调 API返回值
-alibaba.alihealth.pw.applynode.update
-
-基金会回调阿里健康更新药品援助申请单的状态 */
+// AlibabaAlihealthPwApplynodeUpdateAPIResponse 申请节点变更回调 API返回值
+// alibaba.alihealth.pw.applynode.update
+//
+// 基金会回调阿里健康更新药品援助申请单的状态
 type AlibabaAlihealthPwApplynodeUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthPwApplynodeUpdateAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-/* AlibabaAlscCrmOpenAssertRefund
-资产核销回退接口
-alibaba.alsc.crm.open.assert.refund
-
-回退已经核销的储值积分券资产 */
+// AlibabaAlscCrmOpenAssertRefund 资产核销回退接口
+// alibaba.alsc.crm.open.assert.refund
+//
+// 回退已经核销的储值积分券资产
 func AlibabaAlscCrmOpenAssertRefund(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenAssertRefundAPIRequest, session string) (*alsc.AlibabaAlscCrmOpenAssertRefundAPIResponse, error) {
 	var resp alsc.AlibabaAlscCrmOpenAssertRefundAPIResponse
 	err := clt.Post(req, &resp, session)

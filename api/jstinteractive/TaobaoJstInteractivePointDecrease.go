@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/jstinteractive"
 )
 
-/* TaobaoJstInteractivePointDecrease
-互动积分扣减接口
-taobao.jst.interactive.point.decrease
-
-扣减用户的互动积分 */
+// TaobaoJstInteractivePointDecrease 互动积分扣减接口
+// taobao.jst.interactive.point.decrease
+//
+// 扣减用户的互动积分
 func TaobaoJstInteractivePointDecrease(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractivePointDecreaseAPIRequest, session string) (*jstinteractive.TaobaoJstInteractivePointDecreaseAPIResponse, error) {
 	var resp jstinteractive.TaobaoJstInteractivePointDecreaseAPIResponse
 	err := clt.Post(req, &resp, session)

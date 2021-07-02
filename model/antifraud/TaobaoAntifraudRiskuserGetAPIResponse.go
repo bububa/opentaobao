@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAntifraudRiskuserGetAPIResponse
-反欺诈用户风险查询 API返回值
-taobao.antifraud.riskuser.get
-
-根据用户基础信息，核实平台上的用户是否存在欺诈风险 */
+// TaobaoAntifraudRiskuserGetAPIResponse 反欺诈用户风险查询 API返回值
+// taobao.antifraud.riskuser.get
+//
+// 根据用户基础信息，核实平台上的用户是否存在欺诈风险
 type TaobaoAntifraudRiskuserGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAntifraudRiskuserGetAPIResponseModel

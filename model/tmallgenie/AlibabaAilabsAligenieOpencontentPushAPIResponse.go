@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsAligenieOpencontentPushAPIResponse
-天猫精灵内容接入标准接口 API返回值
-alibaba.ailabs.aligenie.opencontent.push
-
-第三方内容接入天猫精灵内容库，供相关技能使用 */
+// AlibabaAilabsAligenieOpencontentPushAPIResponse 天猫精灵内容接入标准接口 API返回值
+// alibaba.ailabs.aligenie.opencontent.push
+//
+// 第三方内容接入天猫精灵内容库，供相关技能使用
 type AlibabaAilabsAligenieOpencontentPushAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsAligenieOpencontentPushAPIResponseModel

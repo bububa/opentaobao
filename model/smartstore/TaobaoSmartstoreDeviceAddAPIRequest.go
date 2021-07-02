@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSmartstoreDeviceAddAPIRequest
-智慧门店设备创建 API请求
-taobao.smartstore.device.add
-
-智慧门店设备创建 */
+// TaobaoSmartstoreDeviceAddAPIRequest 智慧门店设备创建 API请求
+// taobao.smartstore.device.add
+//
+// 智慧门店设备创建
 type TaobaoSmartstoreDeviceAddAPIRequest struct {
 	model.Params
 	// mac地址

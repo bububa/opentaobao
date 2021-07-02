@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxNativetemplatesGetAPIRequest
-批量获取本地模板信息 API请求
-taobao.tanx.nativetemplates.get
-
-根据传入的本地模板ID批量返回本地模板 */
+// TaobaoTanxNativetemplatesGetAPIRequest 批量获取本地模板信息 API请求
+// taobao.tanx.nativetemplates.get
+//
+// 根据传入的本地模板ID批量返回本地模板
 type TaobaoTanxNativetemplatesGetAPIRequest struct {
 	model.Params
 	// dsp在tanx的memberid

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRpRefundReviewAPIResponse
-审核退款单 API返回值
-taobao.rp.refund.review
-
-审核退款单，标志是否可用于批量退款，目前仅支持天猫订单。 */
+// TaobaoRpRefundReviewAPIResponse 审核退款单 API返回值
+// taobao.rp.refund.review
+//
+// 审核退款单，标志是否可用于批量退款，目前仅支持天猫订单。
 type TaobaoRpRefundReviewAPIResponse struct {
 	model.CommonResponse
 	TaobaoRpRefundReviewAPIResponseModel

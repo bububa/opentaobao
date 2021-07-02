@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItempoolActivityCreateAPIResponse
-创建活动新接口 API返回值
-alibaba.wdk.marketing.itempool.activity.create
-
-创建活动新接口，支持新工具玩法 */
+// AlibabaWdkMarketingItempoolActivityCreateAPIResponse 创建活动新接口 API返回值
+// alibaba.wdk.marketing.itempool.activity.create
+//
+// 创建活动新接口，支持新工具玩法
 type AlibabaWdkMarketingItempoolActivityCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingItempoolActivityCreateAPIResponseModel

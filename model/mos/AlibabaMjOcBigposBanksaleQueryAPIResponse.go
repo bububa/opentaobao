@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjOcBigposBanksaleQueryAPIResponse
-大pos银行卡查账接口 API返回值
-alibaba.mj.oc.bigpos.banksale.query
-
-大pos银行卡查账接口，给收银员查询银行卡销售记录，便于调账 */
+// AlibabaMjOcBigposBanksaleQueryAPIResponse 大pos银行卡查账接口 API返回值
+// alibaba.mj.oc.bigpos.banksale.query
+//
+// 大pos银行卡查账接口，给收银员查询银行卡销售记录，便于调账
 type AlibabaMjOcBigposBanksaleQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcBigposBanksaleQueryAPIResponseModel

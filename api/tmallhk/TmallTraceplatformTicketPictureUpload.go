@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tmallhk"
 )
 
-/* TmallTraceplatformTicketPictureUpload
-上传小票图片
-tmall.traceplatform.ticket.picture.upload
-
-uploadPicture */
+// TmallTraceplatformTicketPictureUpload 上传小票图片
+// tmall.traceplatform.ticket.picture.upload
+//
+// uploadPicture
 func TmallTraceplatformTicketPictureUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformTicketPictureUploadAPIRequest, session string) (*tmallhk.TmallTraceplatformTicketPictureUploadAPIResponse, error) {
 	var resp tmallhk.TmallTraceplatformTicketPictureUploadAPIResponse
 	err := clt.Post(req, &resp, session)

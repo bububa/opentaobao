@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaInsightRelatedwordsGetAPIResponse
-获取词的相关词 API返回值
-taobao.simba.insight.relatedwords.get
-
-获取给定词的若干相关词，返回结果中越相关的权重越大，排在越前面，根据number参数对返回结果进行截断。 */
+// TaobaoSimbaInsightRelatedwordsGetAPIResponse 获取词的相关词 API返回值
+// taobao.simba.insight.relatedwords.get
+//
+// 获取给定词的若干相关词，返回结果中越相关的权重越大，排在越前面，根据number参数对返回结果进行截断。
 type TaobaoSimbaInsightRelatedwordsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaInsightRelatedwordsGetAPIResponseModel

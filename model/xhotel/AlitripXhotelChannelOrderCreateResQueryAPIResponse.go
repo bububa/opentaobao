@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripXhotelChannelOrderCreateResQueryAPIResponse
-分销订单查询订单创建结果 API返回值
-alitrip.xhotel.channel.order.create.res.query
-
-针对分销渠道订单，在调用创建订单接口失败1分钟后，调用此接口，用以确认订单是否创建成功。 */
+// AlitripXhotelChannelOrderCreateResQueryAPIResponse 分销订单查询订单创建结果 API返回值
+// alitrip.xhotel.channel.order.create.res.query
+//
+// 针对分销渠道订单，在调用创建订单接口失败1分钟后，调用此接口，用以确认订单是否创建成功。
 type AlitripXhotelChannelOrderCreateResQueryAPIResponse struct {
 	model.CommonResponse
 	AlitripXhotelChannelOrderCreateResQueryAPIResponseModel

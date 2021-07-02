@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentDeviceGetvendorAPIRequest
-查询设备Vendor信息 API请求
-yunos.tvpubadmin.content.device.getvendor
-
-查询设备Vendor信息 */
+// YunosTvpubadminContentDeviceGetvendorAPIRequest 查询设备Vendor信息 API请求
+// yunos.tvpubadmin.content.device.getvendor
+//
+// 查询设备Vendor信息
 type YunosTvpubadminContentDeviceGetvendorAPIRequest struct {
 	model.Params
 	// license

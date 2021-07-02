@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* XiamiContentSongsInfoQueryAPIResponse
-搜索歌曲列表 API返回值
-xiami.content.songs.info.query
-
-多维度查询歌曲列表 */
+// XiamiContentSongsInfoQueryAPIResponse 搜索歌曲列表 API返回值
+// xiami.content.songs.info.query
+//
+// 多维度查询歌曲列表
 type XiamiContentSongsInfoQueryAPIResponse struct {
 	model.CommonResponse
 	XiamiContentSongsInfoQueryAPIResponseModel

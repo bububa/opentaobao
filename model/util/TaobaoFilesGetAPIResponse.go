@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilesGetAPIResponse
-业务文件获取 API返回值
-taobao.files.get
-
-获取业务方暂存给ISV的文件列表 */
+// TaobaoFilesGetAPIResponse 业务文件获取 API返回值
+// taobao.files.get
+//
+// 获取业务方暂存给ISV的文件列表
 type TaobaoFilesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFilesGetAPIResponseModel

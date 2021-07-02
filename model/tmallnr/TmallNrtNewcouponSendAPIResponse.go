@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtNewcouponSendAPIResponse
-券发放接口 API返回值
-tmall.nrt.newcoupon.send
-
-券发放接口 */
+// TmallNrtNewcouponSendAPIResponse 券发放接口 API返回值
+// tmall.nrt.newcoupon.send
+//
+// 券发放接口
 type TmallNrtNewcouponSendAPIResponse struct {
 	model.CommonResponse
 	TmallNrtNewcouponSendAPIResponseModel

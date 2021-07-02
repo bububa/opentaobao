@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelVisaApplicantUpdateAPIResponse
-飞猪度假-普通签证-申请人进度推进接口 API返回值
-alitrip.travel.visa.applicant.update
-
-普通签证订单的申请人进度推进接口，用于商家代用户填写申请人基本信息 或 推进单个申请人的签证进度。 */
+// AlitripTravelVisaApplicantUpdateAPIResponse 飞猪度假-普通签证-申请人进度推进接口 API返回值
+// alitrip.travel.visa.applicant.update
+//
+// 普通签证订单的申请人进度推进接口，用于商家代用户填写申请人基本信息 或 推进单个申请人的签证进度。
 type AlitripTravelVisaApplicantUpdateAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelVisaApplicantUpdateAPIResponseModel

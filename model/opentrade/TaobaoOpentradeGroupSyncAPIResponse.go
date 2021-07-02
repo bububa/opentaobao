@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeGroupSyncAPIResponse
-组团购场景创建或更新组团活动 API返回值
-taobao.opentrade.group.sync
-
-组团购场景中创建团购活动 */
+// TaobaoOpentradeGroupSyncAPIResponse 组团购场景创建或更新组团活动 API返回值
+// taobao.opentrade.group.sync
+//
+// 组团购场景中创建团购活动
 type TaobaoOpentradeGroupSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeGroupSyncAPIResponseModel

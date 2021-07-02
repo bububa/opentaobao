@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoEticketMerchantMaDelayAPIRequest
-凭证延期 API请求
-taobao.eticket.merchant.ma.delay
-
-订单延期 */
+// TaobaoEticketMerchantMaDelayAPIRequest 凭证延期 API请求
+// taobao.eticket.merchant.ma.delay
+//
+// 订单延期
 type TaobaoEticketMerchantMaDelayAPIRequest struct {
 	model.Params
 	// 业务类型

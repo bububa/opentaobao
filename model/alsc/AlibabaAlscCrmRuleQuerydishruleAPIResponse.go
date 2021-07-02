@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmRuleQuerydishruleAPIResponse
-查询品牌下的入会菜品规则 API返回值
-alibaba.alsc.crm.rule.querydishrule
-
-查询品牌下的入会菜品规则 */
+// AlibabaAlscCrmRuleQuerydishruleAPIResponse 查询品牌下的入会菜品规则 API返回值
+// alibaba.alsc.crm.rule.querydishrule
+//
+// 查询品牌下的入会菜品规则
 type AlibabaAlscCrmRuleQuerydishruleAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmRuleQuerydishruleAPIResponseModel

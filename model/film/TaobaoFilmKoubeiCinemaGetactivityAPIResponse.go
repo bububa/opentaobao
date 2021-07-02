@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmKoubeiCinemaGetactivityAPIResponse
-口碑-影院营销数据查询 API返回值
-taobao.film.koubei.cinema.getactivity
-
-口碑-影院营销数据查询 */
+// TaobaoFilmKoubeiCinemaGetactivityAPIResponse 口碑-影院营销数据查询 API返回值
+// taobao.film.koubei.cinema.getactivity
+//
+// 口碑-影院营销数据查询
 type TaobaoFilmKoubeiCinemaGetactivityAPIResponse struct {
 	model.CommonResponse
 	TaobaoFilmKoubeiCinemaGetactivityAPIResponseModel

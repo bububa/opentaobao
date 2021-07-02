@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmExchangeCrowdinstanceAddAPIResponse
-向活动人群实例中增加买家 API返回值
-taobao.crm.exchange.crowdinstance.add
-
-向活动人群实例中增加买家 */
+// TaobaoCrmExchangeCrowdinstanceAddAPIResponse 向活动人群实例中增加买家 API返回值
+// taobao.crm.exchange.crowdinstance.add
+//
+// 向活动人群实例中增加买家
 type TaobaoCrmExchangeCrowdinstanceAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmExchangeCrowdinstanceAddAPIResponseModel

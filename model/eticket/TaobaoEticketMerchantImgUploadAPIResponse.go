@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoEticketMerchantImgUploadAPIResponse
-码商上传二维码图片 API返回值
-taobao.eticket.merchant.img.upload
-
-电子凭证的码商可以通过这个接口，上传二维码图片 */
+// TaobaoEticketMerchantImgUploadAPIResponse 码商上传二维码图片 API返回值
+// taobao.eticket.merchant.img.upload
+//
+// 电子凭证的码商可以通过这个接口，上传二维码图片
 type TaobaoEticketMerchantImgUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoEticketMerchantImgUploadAPIResponseModel

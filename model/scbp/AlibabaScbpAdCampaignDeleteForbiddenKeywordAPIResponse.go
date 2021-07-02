@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIResponse
-删除屏蔽词 API返回值
-alibaba.scbp.ad.campaign.delete.forbidden.keyword
-
-删除屏蔽词 */
+// AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIResponse 删除屏蔽词 API返回值
+// alibaba.scbp.ad.campaign.delete.forbidden.keyword
+//
+// 删除屏蔽词
 type AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIResponseModel

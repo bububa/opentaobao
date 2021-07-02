@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyBrandSearchAPIResponse
-星河-品牌搜索 API返回值
-alitrip.merchant.galaxy.brand.search
-
-星河服务=获取雅高品牌信息 */
+// AlitripMerchantGalaxyBrandSearchAPIResponse 星河-品牌搜索 API返回值
+// alitrip.merchant.galaxy.brand.search
+//
+// 星河服务=获取雅高品牌信息
 type AlitripMerchantGalaxyBrandSearchAPIResponse struct {
 	model.CommonResponse
 	AlitripMerchantGalaxyBrandSearchAPIResponseModel

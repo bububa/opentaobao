@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIbShenjingVisitorPadOpendoorAPIResponse
-访客发起开门 API返回值
-alibaba.ib.shenjing.visitor.pad.opendoor
-
-访客PAD端录入完人脸后，可以点击开门按钮开门。 */
+// AlibabaIbShenjingVisitorPadOpendoorAPIResponse 访客发起开门 API返回值
+// alibaba.ib.shenjing.visitor.pad.opendoor
+//
+// 访客PAD端录入完人脸后，可以点击开门按钮开门。
 type AlibabaIbShenjingVisitorPadOpendoorAPIResponse struct {
 	model.CommonResponse
 	AlibabaIbShenjingVisitorPadOpendoorAPIResponseModel

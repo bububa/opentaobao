@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceMerchantResultGetAPIRequest
-商家自研ERP开票结果获取 API请求
-alibaba.einvoice.merchant.result.get
-
-商家自研ERP开票结果获取 */
+// AlibabaEinvoiceMerchantResultGetAPIRequest 商家自研ERP开票结果获取 API请求
+// alibaba.einvoice.merchant.result.get
+//
+// 商家自研ERP开票结果获取
 type AlibabaEinvoiceMerchantResultGetAPIRequest struct {
 	model.Params
 	// 流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高

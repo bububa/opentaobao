@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuTvDesktopToyouRecommendAPIResponse
-TV桌面为你推荐接口 API返回值
-youku.tv.desktop.toyou.recommend
-
-提供为你推荐数据 */
+// YoukuTvDesktopToyouRecommendAPIResponse TV桌面为你推荐接口 API返回值
+// youku.tv.desktop.toyou.recommend
+//
+// 提供为你推荐数据
 type YoukuTvDesktopToyouRecommendAPIResponse struct {
 	model.CommonResponse
 	YoukuTvDesktopToyouRecommendAPIResponseModel

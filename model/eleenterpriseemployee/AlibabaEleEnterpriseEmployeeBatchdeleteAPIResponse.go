@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse
-批量删除员工 API返回值
-alibaba.ele.enterprise.employee.batchdelete
-
-批量删除员工 */
+// AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse 批量删除员工 API返回值
+// alibaba.ele.enterprise.employee.batchdelete
+//
+// 批量删除员工
 type AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponseModel

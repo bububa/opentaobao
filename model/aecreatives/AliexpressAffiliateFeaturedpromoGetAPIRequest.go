@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateFeaturedpromoGetAPIRequest
-联盟主题推广活动信息获取 API请求
-aliexpress.affiliate.featuredpromo.get
-
-获取联盟主题推广活动信息 */
+// AliexpressAffiliateFeaturedpromoGetAPIRequest 联盟主题推广活动信息获取 API请求
+// aliexpress.affiliate.featuredpromo.get
+//
+// 获取联盟主题推广活动信息
 type AliexpressAffiliateFeaturedpromoGetAPIRequest struct {
 	model.Params
 	// 请求签名

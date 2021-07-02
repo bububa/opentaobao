@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemUpdateSchemaGetAPIResponse
-天猫编辑商品规则获取 API返回值
-tmall.item.update.schema.get
-
-Schema方式编辑天猫商品时，编辑商品规则获取 */
+// TmallItemUpdateSchemaGetAPIResponse 天猫编辑商品规则获取 API返回值
+// tmall.item.update.schema.get
+//
+// Schema方式编辑天猫商品时，编辑商品规则获取
 type TmallItemUpdateSchemaGetAPIResponse struct {
 	model.CommonResponse
 	TmallItemUpdateSchemaGetAPIResponseModel

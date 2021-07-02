@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmDataThirdPartyRefundOrderAPIRequest
-退票接口 API请求
-taobao.film.data.third.party.refund.order
-
-淘票票第三方退票接口 */
+// TaobaoFilmDataThirdPartyRefundOrderAPIRequest 退票接口 API请求
+// taobao.film.data.third.party.refund.order
+//
+// 淘票票第三方退票接口
 type TaobaoFilmDataThirdPartyRefundOrderAPIRequest struct {
 	model.Params
 	// 淘宝账号ID，此ID是一串数字。可自行百度查看如何获取或者咨询淘票票技术人员提供

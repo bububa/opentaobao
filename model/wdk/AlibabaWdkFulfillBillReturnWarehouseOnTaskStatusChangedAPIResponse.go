@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIResponse
-退仓结果回传 API返回值
-alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed
-
-退货入仓结果回传 */
+// AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIResponse 退仓结果回传 API返回值
+// alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed
+//
+// 退货入仓结果回传
 type AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIResponseModel

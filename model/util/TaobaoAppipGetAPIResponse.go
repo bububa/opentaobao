@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAppipGetAPIResponse
-获取ISV发起请求服务器IP API返回值
-taobao.appip.get
-
-获取ISV发起请求服务器IP */
+// TaobaoAppipGetAPIResponse 获取ISV发起请求服务器IP API返回值
+// taobao.appip.get
+//
+// 获取ISV发起请求服务器IP
 type TaobaoAppipGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAppipGetAPIResponseModel

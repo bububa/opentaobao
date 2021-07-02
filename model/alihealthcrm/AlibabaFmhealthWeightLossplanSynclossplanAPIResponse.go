@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFmhealthWeightLossplanSynclossplanAPIResponse
-减重计划--同步减重计划 API返回值
-alibaba.fmhealth.weight.lossplan.synclossplan
-
-减重计划--三方同步用户初始化减重计划给我们 */
+// AlibabaFmhealthWeightLossplanSynclossplanAPIResponse 减重计划--同步减重计划 API返回值
+// alibaba.fmhealth.weight.lossplan.synclossplan
+//
+// 减重计划--三方同步用户初始化减重计划给我们
 type AlibabaFmhealthWeightLossplanSynclossplanAPIResponse struct {
 	model.CommonResponse
 	AlibabaFmhealthWeightLossplanSynclossplanAPIResponseModel

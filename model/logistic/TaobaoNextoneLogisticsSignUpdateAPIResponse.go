@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoNextoneLogisticsSignUpdateAPIResponse
-AG物流签收状态写接口 API返回值
-taobao.nextone.logistics.sign.update
-
-商家上传退货的签收状态给AG */
+// TaobaoNextoneLogisticsSignUpdateAPIResponse AG物流签收状态写接口 API返回值
+// taobao.nextone.logistics.sign.update
+//
+// 商家上传退货的签收状态给AG
 type TaobaoNextoneLogisticsSignUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoNextoneLogisticsSignUpdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuCgameScoreReportAPIResponse
-云游戏战绩上传 API返回值
-youku.cgame.score.report
-
-云游戏战绩上传API */
+// YoukuCgameScoreReportAPIResponse 云游戏战绩上传 API返回值
+// youku.cgame.score.report
+//
+// 云游戏战绩上传API
 type YoukuCgameScoreReportAPIResponse struct {
 	model.CommonResponse
 	YoukuCgameScoreReportAPIResponseModel

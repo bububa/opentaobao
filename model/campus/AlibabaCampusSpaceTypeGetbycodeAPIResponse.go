@@ -6,13 +6,12 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusSpaceTypeGetbycodeAPIResponse
-根据类别编码查询类别 API返回值
-alibaba.campus.space.type.getbycode
-
-根据类别编码查询类别
-HSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService
-HSF方法名称：getByCode */
+// AlibabaCampusSpaceTypeGetbycodeAPIResponse 根据类别编码查询类别 API返回值
+// alibaba.campus.space.type.getbycode
+//
+// 根据类别编码查询类别
+// HSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService
+// HSF方法名称：getByCode
 type AlibabaCampusSpaceTypeGetbycodeAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusSpaceTypeGetbycodeAPIResponseModel

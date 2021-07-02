@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelPmsGuestbillGetVtwoAPIRequest
-客人PMS账单信息查询 API请求
-taobao.xhotel.pms.guestbill.get.vtwo
-
-从pms获取客人账单信息 */
+// TaobaoXhotelPmsGuestbillGetVtwoAPIRequest 客人PMS账单信息查询 API请求
+// taobao.xhotel.pms.guestbill.get.vtwo
+//
+// 从pms获取客人账单信息
 type TaobaoXhotelPmsGuestbillGetVtwoAPIRequest struct {
 	model.Params
 	// 开票点税号

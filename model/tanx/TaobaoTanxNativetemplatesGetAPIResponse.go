@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxNativetemplatesGetAPIResponse
-批量获取本地模板信息 API返回值
-taobao.tanx.nativetemplates.get
-
-根据传入的本地模板ID批量返回本地模板 */
+// TaobaoTanxNativetemplatesGetAPIResponse 批量获取本地模板信息 API返回值
+// taobao.tanx.nativetemplates.get
+//
+// 根据传入的本地模板ID批量返回本地模板
 type TaobaoTanxNativetemplatesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxNativetemplatesGetAPIResponseModel

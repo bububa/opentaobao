@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wms"
 )
 
-/* TaobaoWlbWmsStockInOrderNotify
-入库通知单
-taobao.wlb.wms.stock.in.order.notify
-
-入库通知单 */
+// TaobaoWlbWmsStockInOrderNotify 入库通知单
+// taobao.wlb.wms.stock.in.order.notify
+//
+// 入库通知单
 func TaobaoWlbWmsStockInOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsStockInOrderNotifyAPIRequest, session string) (*wms.TaobaoWlbWmsStockInOrderNotifyAPIResponse, error) {
 	var resp wms.TaobaoWlbWmsStockInOrderNotifyAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminAdmOttQueryAPIResponse
-优酷OTT端广告素材查询 API返回值
-yunos.tvpubadmin.adm.ott.query
-
-查询广告素材 */
+// YunosTvpubadminAdmOttQueryAPIResponse 优酷OTT端广告素材查询 API返回值
+// yunos.tvpubadmin.adm.ott.query
+//
+// 查询广告素材
 type YunosTvpubadminAdmOttQueryAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminAdmOttQueryAPIResponseModel

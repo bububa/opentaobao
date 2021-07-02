@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthOutflowVerifyAPIResponse
-处方外流药店通过核销码核销处方 API返回值
-alibaba.alihealth.outflow.verify
-
-处方外流药店通过核销码核销处方 */
+// AlibabaAlihealthOutflowVerifyAPIResponse 处方外流药店通过核销码核销处方 API返回值
+// alibaba.alihealth.outflow.verify
+//
+// 处方外流药店通过核销码核销处方
 type AlibabaAlihealthOutflowVerifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthOutflowVerifyAPIResponseModel

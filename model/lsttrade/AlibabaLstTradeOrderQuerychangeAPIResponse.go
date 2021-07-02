@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstTradeOrderQuerychangeAPIResponse
-订单id批量查询（品牌商视角） API返回值
-alibaba.lst.trade.order.querychange
-
-根据品牌和时间段查询有变更记录的订单id */
+// AlibabaLstTradeOrderQuerychangeAPIResponse 订单id批量查询（品牌商视角） API返回值
+// alibaba.lst.trade.order.querychange
+//
+// 根据品牌和时间段查询有变更记录的订单id
 type AlibabaLstTradeOrderQuerychangeAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstTradeOrderQuerychangeAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIResponse
-获取关键词的新版实时排名 API返回值
-taobao.simba.keywords.realtime.ranking.batch.get
-
-根据关键词ID获取关键词的新版实时排名 */
+// TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIResponse 获取关键词的新版实时排名 API返回值
+// taobao.simba.keywords.realtime.ranking.batch.get
+//
+// 根据关键词ID获取关键词的新版实时排名
 type TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIResponseModel

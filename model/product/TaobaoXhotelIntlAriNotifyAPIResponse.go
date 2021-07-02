@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelIntlAriNotifyAPIResponse
-国际酒店集团价库变更通知 API返回值
-taobao.xhotel.intl.ari.notify
-
-国际酒店集团价库变更时通知变更内容，平台及时更新价库信息，保证价库新鲜度 */
+// TaobaoXhotelIntlAriNotifyAPIResponse 国际酒店集团价库变更通知 API返回值
+// taobao.xhotel.intl.ari.notify
+//
+// 国际酒店集团价库变更时通知变更内容，平台及时更新价库信息，保证价库新鲜度
 type TaobaoXhotelIntlAriNotifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelIntlAriNotifyAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelItemSingleQueryAPIResponse
-【API3.0】度假单个商品查询接口 API返回值
-taobao.alitrip.travel.item.single.query
-
-旅行度假新商品查询接口（单个商品查询） 第三版 */
+// TaobaoAlitripTravelItemSingleQueryAPIResponse 【API3.0】度假单个商品查询接口 API返回值
+// taobao.alitrip.travel.item.single.query
+//
+// 旅行度假新商品查询接口（单个商品查询） 第三版
 type TaobaoAlitripTravelItemSingleQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTravelItemSingleQueryAPIResponseModel

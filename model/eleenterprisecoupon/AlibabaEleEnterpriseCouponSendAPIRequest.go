@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseCouponSendAPIRequest
-发放优惠券 API请求
-alibaba.ele.enterprise.coupon.send
-
-发放优惠券 */
+// AlibabaEleEnterpriseCouponSendAPIRequest 发放优惠券 API请求
+// alibaba.ele.enterprise.coupon.send
+//
+// 发放优惠券
 type AlibabaEleEnterpriseCouponSendAPIRequest struct {
 	model.Params
 	// 手机号

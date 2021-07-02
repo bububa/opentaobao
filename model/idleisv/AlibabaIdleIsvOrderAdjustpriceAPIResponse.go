@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleIsvOrderAdjustpriceAPIResponse
-闲鱼服务商订单价格修改接口 API返回值
-alibaba.idle.isv.order.adjustprice
-
-闲鱼用户通过授权的服务商修改订单价格和邮费 */
+// AlibabaIdleIsvOrderAdjustpriceAPIResponse 闲鱼服务商订单价格修改接口 API返回值
+// alibaba.idle.isv.order.adjustprice
+//
+// 闲鱼用户通过授权的服务商修改订单价格和邮费
 type AlibabaIdleIsvOrderAdjustpriceAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleIsvOrderAdjustpriceAPIResponseModel

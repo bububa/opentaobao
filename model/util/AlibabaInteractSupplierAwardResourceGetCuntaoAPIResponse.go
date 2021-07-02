@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSupplierAwardResourceGetCuntaoAPIResponse
-权益池信息查询 API返回值
-alibaba.interact.supplier.award.resource.get.cuntao
-
-农村淘宝营销互动权益池信息查询 */
+// AlibabaInteractSupplierAwardResourceGetCuntaoAPIResponse 权益池信息查询 API返回值
+// alibaba.interact.supplier.award.resource.get.cuntao
+//
+// 农村淘宝营销互动权益池信息查询
 type AlibabaInteractSupplierAwardResourceGetCuntaoAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSupplierAwardResourceGetCuntaoAPIResponseModel

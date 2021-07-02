@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItempoolDeleteactivityAPIResponse
-删除商品池活动 API返回值
-alibaba.wdk.marketing.itempool.deleteactivity
-
-删除商品池活动 */
+// AlibabaWdkMarketingItempoolDeleteactivityAPIResponse 删除商品池活动 API返回值
+// alibaba.wdk.marketing.itempool.deleteactivity
+//
+// 删除商品池活动
 type AlibabaWdkMarketingItempoolDeleteactivityAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingItempoolDeleteactivityAPIResponseModel

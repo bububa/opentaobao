@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvscreenAdminCommonOperationAPIResponse
-一体机桌面通用接口 API返回值
-yunos.tvscreen.admin.common.operation
-
-一体机桌面通用接口 */
+// YunosTvscreenAdminCommonOperationAPIResponse 一体机桌面通用接口 API返回值
+// yunos.tvscreen.admin.common.operation
+//
+// 一体机桌面通用接口
 type YunosTvscreenAdminCommonOperationAPIResponse struct {
 	model.CommonResponse
 	YunosTvscreenAdminCommonOperationAPIResponseModel

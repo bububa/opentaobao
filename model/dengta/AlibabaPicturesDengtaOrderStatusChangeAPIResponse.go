@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPicturesDengtaOrderStatusChangeAPIResponse
-天下秀订单状态变更通知 API返回值
-alibaba.pictures.dengta.order.status.change
-
-天下秀订单状态变更通知 */
+// AlibabaPicturesDengtaOrderStatusChangeAPIResponse 天下秀订单状态变更通知 API返回值
+// alibaba.pictures.dengta.order.status.change
+//
+// 天下秀订单状态变更通知
 type AlibabaPicturesDengtaOrderStatusChangeAPIResponse struct {
 	model.CommonResponse
 	AlibabaPicturesDengtaOrderStatusChangeAPIResponseModel

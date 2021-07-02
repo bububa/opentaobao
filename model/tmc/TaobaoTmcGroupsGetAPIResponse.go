@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcGroupsGetAPIResponse
-获取自定义用户分组列表 API返回值
-taobao.tmc.groups.get
-
-获取自定义用户分组列表 */
+// TaobaoTmcGroupsGetAPIResponse 获取自定义用户分组列表 API返回值
+// taobao.tmc.groups.get
+//
+// 获取自定义用户分组列表
 type TaobaoTmcGroupsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTmcGroupsGetAPIResponseModel

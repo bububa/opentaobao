@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmGradeSetAPIRequest
-卖家设置等级规则 API请求
-taobao.crm.grade.set
-
-设置等级信息，可以设置层级等级，也可以单独设置一个等级。出于安全原因，折扣现最低只能设置到700即7折。 */
+// TaobaoCrmGradeSetAPIRequest 卖家设置等级规则 API请求
+// taobao.crm.grade.set
+//
+// 设置等级信息，可以设置层级等级，也可以单独设置一个等级。出于安全原因，折扣现最低只能设置到700即7折。
 type TaobaoCrmGradeSetAPIRequest struct {
 	model.Params
 	// 只对设置的层级等级有效，必须要在amount和count参数中选择一个<br><br/>amount参数的填写规范：升级到下一个级别的需要的交易额，单位为分,必须全部填写.例如10000,20000,30000，其中10000表示非会员升级到普通的所需的交易额，20000表示普通升级到高级所需的交易额，层级等级中最高等级的下一个等级默认为0。会员等级越高，所需交易额必须越高。

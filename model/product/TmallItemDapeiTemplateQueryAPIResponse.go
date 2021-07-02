@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemDapeiTemplateQueryAPIResponse
-搭配查询接口 API返回值
-tmall.item.dapei.template.query
-
-根据条件获取搭配内容 */
+// TmallItemDapeiTemplateQueryAPIResponse 搭配查询接口 API返回值
+// tmall.item.dapei.template.query
+//
+// 根据条件获取搭配内容
 type TmallItemDapeiTemplateQueryAPIResponse struct {
 	model.CommonResponse
 	TmallItemDapeiTemplateQueryAPIResponseModel

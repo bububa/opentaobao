@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest
-获取垃圾注册防控结果 API请求
-alibaba.security.jaq.spamregisterprevention.result.fetch
-
-获取垃圾注册防控结果 */
+// AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest 获取垃圾注册防控结果 API请求
+// alibaba.security.jaq.spamregisterprevention.result.fetch
+//
+// 获取垃圾注册防控结果
 type AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest struct {
 	model.Params
 	// 账号绑定的手机号码

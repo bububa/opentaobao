@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiOrderAssignAPIResponse
-订单指派 API返回值
-alibaba.happytrip.taxi.order.assign
-
-通知供应商订单指派成功 */
+// AlibabaHappytripTaxiOrderAssignAPIResponse 订单指派 API返回值
+// alibaba.happytrip.taxi.order.assign
+//
+// 通知供应商订单指派成功
 type AlibabaHappytripTaxiOrderAssignAPIResponse struct {
 	model.CommonResponse
 	AlibabaHappytripTaxiOrderAssignAPIResponseModel

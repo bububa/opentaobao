@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallProductUpdateSchemaGetAPIResponse
-产品更新规则获取接口 API返回值
-tmall.product.update.schema.get
-
-获取用户更新产品的规则 */
+// TmallProductUpdateSchemaGetAPIResponse 产品更新规则获取接口 API返回值
+// tmall.product.update.schema.get
+//
+// 获取用户更新产品的规则
 type TmallProductUpdateSchemaGetAPIResponse struct {
 	model.CommonResponse
 	TmallProductUpdateSchemaGetAPIResponseModel

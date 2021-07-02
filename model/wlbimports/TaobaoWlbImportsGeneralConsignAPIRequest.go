@@ -6,14 +6,13 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbImportsGeneralConsignAPIRequest
-一般进口发货 API请求
-taobao.wlb.imports.general.consign
-
-将订单信息发送到菜鸟海外转运仓；
-业务规则：
-1）交易订单为待发货状态。
-2）单笔订单多个商品，交易金额不能大于1000人民币。 */
+// TaobaoWlbImportsGeneralConsignAPIRequest 一般进口发货 API请求
+// taobao.wlb.imports.general.consign
+//
+// 将订单信息发送到菜鸟海外转运仓；
+// 业务规则：
+// 1）交易订单为待发货状态。
+// 2）单笔订单多个商品，交易金额不能大于1000人民币。
 type TaobaoWlbImportsGeneralConsignAPIRequest struct {
 	model.Params
 	// 交易订单id

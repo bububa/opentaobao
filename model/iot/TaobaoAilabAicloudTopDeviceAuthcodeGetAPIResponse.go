@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse
-获取设备授权码 API返回值
-taobao.ailab.aicloud.top.device.authcode.get
-
-获取设备授权码 */
+// TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse 获取设备授权码 API返回值
+// taobao.ailab.aicloud.top.device.authcode.get
+//
+// 获取设备授权码
 type TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponseModel

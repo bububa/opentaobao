@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosFinanceBankinfoQuerybankAPIResponse
-供应商银行账号查询 API返回值
-alibaba.mos.finance.bankinfo.querybank
-
-查询供应商对应的银行账号信息 */
+// AlibabaMosFinanceBankinfoQuerybankAPIResponse 供应商银行账号查询 API返回值
+// alibaba.mos.finance.bankinfo.querybank
+//
+// 查询供应商对应的银行账号信息
 type AlibabaMosFinanceBankinfoQuerybankAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosFinanceBankinfoQuerybankAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsOfflineSendAPIRequest
-自己联系物流（线下物流）发货 API请求
-taobao.logistics.offline.send
-
-用户调用该接口可实现自己联系发货（线下物流），使用该接口发货，交易订单状态会直接变成卖家已发货。不支持货到付款、在线下单类型的订单。 */
+// TaobaoLogisticsOfflineSendAPIRequest 自己联系物流（线下物流）发货 API请求
+// taobao.logistics.offline.send
+//
+// 用户调用该接口可实现自己联系发货（线下物流），使用该接口发货，交易订单状态会直接变成卖家已发货。不支持货到付款、在线下单类型的订单。
 type TaobaoLogisticsOfflineSendAPIRequest struct {
 	model.Params
 	// 需要拆单发货的子订单集合，针对的是一笔交易下有多个子订单需要分开发货的场景；1次可传人多个子订单号，子订单间用逗号隔开；为空表示不做拆单发货。

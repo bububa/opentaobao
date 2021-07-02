@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-/* AlitripAgentFlightSellModifyApprove
-销售改签确认
-alitrip.agent.flight.sell.modify.approve
-
-销售改签确认 */
+// AlitripAgentFlightSellModifyApprove 销售改签确认
+// alitrip.agent.flight.sell.modify.approve
+//
+// 销售改签确认
 func AlitripAgentFlightSellModifyApprove(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyApproveAPIRequest, session string) (*flight.AlitripAgentFlightSellModifyApproveAPIResponse, error) {
 	var resp flight.AlitripAgentFlightSellModifyApproveAPIResponse
 	err := clt.Post(req, &resp, session)

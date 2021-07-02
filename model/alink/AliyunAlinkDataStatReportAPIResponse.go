@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunAlinkDataStatReportAPIResponse
-外部离线统计数据上报 API返回值
-aliyun.alink.data.stat.report
-
-外部合作厂商上报设备的明细数据，或者离线统计数据。 */
+// AliyunAlinkDataStatReportAPIResponse 外部离线统计数据上报 API返回值
+// aliyun.alink.data.stat.report
+//
+// 外部合作厂商上报设备的明细数据，或者离线统计数据。
 type AliyunAlinkDataStatReportAPIResponse struct {
 	model.CommonResponse
 	AliyunAlinkDataStatReportAPIResponseModel

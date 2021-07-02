@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleIsvPvListAPIResponse
-闲鱼已验货pv查询 API返回值
-alibaba.idle.isv.pv.list
-
-根据闲鱼渠道类目查询对应的品牌和型号清单，供服务商进行选择 */
+// AlibabaIdleIsvPvListAPIResponse 闲鱼已验货pv查询 API返回值
+// alibaba.idle.isv.pv.list
+//
+// 根据闲鱼渠道类目查询对应的品牌和型号清单，供服务商进行选择
 type AlibabaIdleIsvPvListAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleIsvPvListAPIResponseModel

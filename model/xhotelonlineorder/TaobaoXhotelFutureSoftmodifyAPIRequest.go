@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelFutureSoftmodifyAPIRequest
-未来酒店信息下发 API请求
-taobao.xhotel.future.softmodify
-
-未来酒店信息下发，包含PMS订单查询和自助入住 */
+// TaobaoXhotelFutureSoftmodifyAPIRequest 未来酒店信息下发 API请求
+// taobao.xhotel.future.softmodify
+//
+// 未来酒店信息下发，包含PMS订单查询和自助入住
 type TaobaoXhotelFutureSoftmodifyAPIRequest struct {
 	model.Params
 	// 超时时长，默认3s

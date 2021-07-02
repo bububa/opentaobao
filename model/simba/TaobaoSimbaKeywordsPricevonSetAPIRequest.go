@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsPricevonSetAPIRequest
-设置一批关键词的信息 API请求
-taobao.simba.keywords.pricevon.set
-
-设置一批关键词的信息，包含无线出价、计算机出价和关键词匹配方式 */
+// TaobaoSimbaKeywordsPricevonSetAPIRequest 设置一批关键词的信息 API请求
+// taobao.simba.keywords.pricevon.set
+//
+// 设置一批关键词的信息，包含无线出价、计算机出价和关键词匹配方式
 type TaobaoSimbaKeywordsPricevonSetAPIRequest struct {
 	model.Params
 	// 主人昵称

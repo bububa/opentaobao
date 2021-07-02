@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/shop"
 )
 
-/* TaobaoShopUpdate
-更新店铺基本信息
-taobao.shop.update
-
-目前只支持标题、公告和描述的更新 */
+// TaobaoShopUpdate 更新店铺基本信息
+// taobao.shop.update
+//
+// 目前只支持标题、公告和描述的更新
 func TaobaoShopUpdate(clt *core.SDKClient, req *shop.TaobaoShopUpdateAPIRequest, session string) (*shop.TaobaoShopUpdateAPIResponse, error) {
 	var resp shop.TaobaoShopUpdateAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSebpOrganizationGetorderinfoAPIResponse
-淘小铺机构订单信息 API返回值
-taobao.sebp.organization.getorderinfo
-
-淘小铺合作机构获取机构订单信息，用于机构结算使用 */
+// TaobaoSebpOrganizationGetorderinfoAPIResponse 淘小铺机构订单信息 API返回值
+// taobao.sebp.organization.getorderinfo
+//
+// 淘小铺合作机构获取机构订单信息，用于机构结算使用
 type TaobaoSebpOrganizationGetorderinfoAPIResponse struct {
 	model.CommonResponse
 	TaobaoSebpOrganizationGetorderinfoAPIResponseModel

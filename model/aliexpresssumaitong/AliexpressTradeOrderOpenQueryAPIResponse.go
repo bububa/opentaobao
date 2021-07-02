@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressTradeOrderOpenQueryAPIResponse
-Aliexpress开放平台订单查询 API返回值
-aliexpress.trade.order.open.query
-
-Aliexpress开放平台订单信息查询 */
+// AliexpressTradeOrderOpenQueryAPIResponse Aliexpress开放平台订单查询 API返回值
+// aliexpress.trade.order.open.query
+//
+// Aliexpress开放平台订单信息查询
 type AliexpressTradeOrderOpenQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressTradeOrderOpenQueryAPIResponseModel

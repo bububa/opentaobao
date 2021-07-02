@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeQueueUsersMarkAPIRequest
-尖货交易可购买用户标记 API请求
-taobao.opentrade.queue.users.mark
-
-尖货交易用户标记信息回传，根据openId标记用户可购买商品 */
+// TaobaoOpentradeQueueUsersMarkAPIRequest 尖货交易可购买用户标记 API请求
+// taobao.opentrade.queue.users.mark
+//
+// 尖货交易用户标记信息回传，根据openId标记用户可购买商品
 type TaobaoOpentradeQueueUsersMarkAPIRequest struct {
 	model.Params
 	// 用户状态，可任意传入，后续查询返回

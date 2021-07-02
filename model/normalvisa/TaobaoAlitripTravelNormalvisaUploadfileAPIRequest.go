@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelNormalvisaUploadfileAPIRequest
-上传电子签证 API请求
-taobao.alitrip.travel.normalvisa.uploadfile
-
-上传电子签证 */
+// TaobaoAlitripTravelNormalvisaUploadfileAPIRequest 上传电子签证 API请求
+// taobao.alitrip.travel.normalvisa.uploadfile
+//
+// 上传电子签证
 type TaobaoAlitripTravelNormalvisaUploadfileAPIRequest struct {
 	model.Params
 	// 文件

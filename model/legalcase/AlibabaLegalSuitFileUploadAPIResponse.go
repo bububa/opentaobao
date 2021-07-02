@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegalSuitFileUploadAPIResponse
-诉讼文件上传接口 API返回值
-alibaba.legal.suit.file.upload
-
-上传文件接口 */
+// AlibabaLegalSuitFileUploadAPIResponse 诉讼文件上传接口 API返回值
+// alibaba.legal.suit.file.upload
+//
+// 上传文件接口
 type AlibabaLegalSuitFileUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalSuitFileUploadAPIResponseModel

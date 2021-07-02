@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoOrderConfirmPaidAPIRequest
-确认收款 API请求
-taobao.fenxiao.order.confirm.paid
-
-供应商确认收款（非支付宝交易）。 */
+// TaobaoFenxiaoOrderConfirmPaidAPIRequest 确认收款 API请求
+// taobao.fenxiao.order.confirm.paid
+//
+// 供应商确认收款（非支付宝交易）。
 type TaobaoFenxiaoOrderConfirmPaidAPIRequest struct {
 	model.Params
 	// 采购单编号。

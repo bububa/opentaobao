@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest
-获取活动保护结果 API请求
-alibaba.security.jaq.campaignprevention.result.fetch
-
-获取活动保护结果 */
+// AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest 获取活动保护结果 API请求
+// alibaba.security.jaq.campaignprevention.result.fetch
+//
+// 获取活动保护结果
 type AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest struct {
 	model.Params
 	// 电话号码。手机号码的格式为国家码-手机号的格式，如中国手机号86-13088889999或美国手机号001-9096185426，如果不加国家码都视为中国手机号码【phone_number ,email, (user_id,id_type)三种必选其一】

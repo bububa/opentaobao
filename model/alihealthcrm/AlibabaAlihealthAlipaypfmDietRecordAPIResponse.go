@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthAlipaypfmDietRecordAPIResponse
-用户每日摄入卡路里总量回传接口 API返回值
-alibaba.alihealth.alipaypfm.diet.record
-
-用户每日摄入卡路里总量回传接口 */
+// AlibabaAlihealthAlipaypfmDietRecordAPIResponse 用户每日摄入卡路里总量回传接口 API返回值
+// alibaba.alihealth.alipaypfm.diet.record
+//
+// 用户每日摄入卡路里总量回传接口
 type AlibabaAlihealthAlipaypfmDietRecordAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthAlipaypfmDietRecordAPIResponseModel

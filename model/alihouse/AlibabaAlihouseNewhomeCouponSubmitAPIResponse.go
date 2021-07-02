@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihouseNewhomeCouponSubmitAPIResponse
-提交专车优惠券活动 API返回值
-alibaba.alihouse.newhome.coupon.submit
-
-提交专车优惠券活动 */
+// AlibabaAlihouseNewhomeCouponSubmitAPIResponse 提交专车优惠券活动 API返回值
+// alibaba.alihouse.newhome.coupon.submit
+//
+// 提交专车优惠券活动
 type AlibabaAlihouseNewhomeCouponSubmitAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihouseNewhomeCouponSubmitAPIResponseModel

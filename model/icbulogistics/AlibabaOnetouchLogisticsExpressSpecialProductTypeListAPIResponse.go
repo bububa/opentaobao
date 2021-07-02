@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIResponse
-获取商品类型配置项 API返回值
-alibaba.onetouch.logistics.express.special.product.type.list
-
-获取商品类型配置项 */
+// AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIResponse 获取商品类型配置项 API返回值
+// alibaba.onetouch.logistics.express.special.product.type.list
+//
+// 获取商品类型配置项
 type AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIResponse struct {
 	model.CommonResponse
 	AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTuanHotelShopCategoryGetAPIResponse
-商家店铺类目查询 API返回值
-alitrip.tuan.hotel.shop.category.get
-
-查询商家店铺类目信息 */
+// AlitripTuanHotelShopCategoryGetAPIResponse 商家店铺类目查询 API返回值
+// alitrip.tuan.hotel.shop.category.get
+//
+// 查询商家店铺类目信息
 type AlitripTuanHotelShopCategoryGetAPIResponse struct {
 	model.CommonResponse
 	AlitripTuanHotelShopCategoryGetAPIResponseModel

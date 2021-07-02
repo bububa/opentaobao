@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTclsAelophyMerchantIdMixAPIResponse
-商家用户id混淆 API返回值
-alibaba.tcls.aelophy.merchant.id.mix
-
-商家用户id混淆 */
+// AlibabaTclsAelophyMerchantIdMixAPIResponse 商家用户id混淆 API返回值
+// alibaba.tcls.aelophy.merchant.id.mix
+//
+// 商家用户id混淆
 type AlibabaTclsAelophyMerchantIdMixAPIResponse struct {
 	model.CommonResponse
 	AlibabaTclsAelophyMerchantIdMixAPIResponseModel

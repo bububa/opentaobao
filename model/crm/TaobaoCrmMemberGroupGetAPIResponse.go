@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmMemberGroupGetAPIResponse
-获取买家身上的标签 API返回值
-taobao.crm.member.group.get
-
-获取买家身上的标签，不返回标签的总人数 */
+// TaobaoCrmMemberGroupGetAPIResponse 获取买家身上的标签 API返回值
+// taobao.crm.member.group.get
+//
+// 获取买家身上的标签，不返回标签的总人数
 type TaobaoCrmMemberGroupGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmMemberGroupGetAPIResponseModel

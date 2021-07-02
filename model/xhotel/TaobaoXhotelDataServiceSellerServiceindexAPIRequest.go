@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelDataServiceSellerServiceindexAPIRequest
-卖家服务指数查询 API请求
-taobao.xhotel.data.service.seller.serviceindex
-
-卖家服务指数查询 */
+// TaobaoXhotelDataServiceSellerServiceindexAPIRequest 卖家服务指数查询 API请求
+// taobao.xhotel.data.service.seller.serviceindex
+//
+// 卖家服务指数查询
 type TaobaoXhotelDataServiceSellerServiceindexAPIRequest struct {
 	model.Params
 	// 渠道商名称

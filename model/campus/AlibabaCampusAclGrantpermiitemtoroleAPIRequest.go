@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclGrantpermiitemtoroleAPIRequest
-权限赋予角色 API请求
-alibaba.campus.acl.grantpermiitemtorole
-
-权限赋予角色 */
+// AlibabaCampusAclGrantpermiitemtoroleAPIRequest 权限赋予角色 API请求
+// alibaba.campus.acl.grantpermiitemtorole
+//
+// 权限赋予角色
 type AlibabaCampusAclGrantpermiitemtoroleAPIRequest struct {
 	model.Params
 	// 公司ID,不填统一初始化SYS_000

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuCategoryIdMappingAPIRequest
-新旧属性的映射 API请求
-alibaba.icbu.category.id.mapping
-
-商品发布接口升级，需要传入新的类目。这个接口 根据旧的类目id，获取新的类目id */
+// AlibabaIcbuCategoryIdMappingAPIRequest 新旧属性的映射 API请求
+// alibaba.icbu.category.id.mapping
+//
+// 商品发布接口升级，需要传入新的类目。这个接口 根据旧的类目id，获取新的类目id
 type AlibabaIcbuCategoryIdMappingAPIRequest struct {
 	model.Params
 	// 发布类目id

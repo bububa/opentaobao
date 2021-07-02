@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeActivityQueryAPIRequest
-查询尖货活动信息 API请求
-taobao.opentrade.activity.query
-
-尖货交易活动信息配置，查询尖货活动信息 */
+// TaobaoOpentradeActivityQueryAPIRequest 查询尖货活动信息 API请求
+// taobao.opentrade.activity.query
+//
+// 尖货交易活动信息配置，查询尖货活动信息
 type TaobaoOpentradeActivityQueryAPIRequest struct {
 	model.Params
 	// 活动结束时间

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanCurrentPoGetAPIResponse
-11-同步本周的po单（从W-1周到W+4周） API返回值
-alibaba.tmallgenie.scp.plan.current.po.get
-
-11-同步本周的po单（从W-1周到W+4周） */
+// AlibabaTmallgenieScpPlanCurrentPoGetAPIResponse 11-同步本周的po单（从W-1周到W+4周） API返回值
+// alibaba.tmallgenie.scp.plan.current.po.get
+//
+// 11-同步本周的po单（从W-1周到W+4周）
 type AlibabaTmallgenieScpPlanCurrentPoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanCurrentPoGetAPIResponseModel

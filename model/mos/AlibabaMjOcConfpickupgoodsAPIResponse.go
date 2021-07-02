@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjOcConfpickupgoodsAPIResponse
-提货核销 API返回值
-alibaba.mj.oc.confpickupgoods
-
-此API用于在银泰商场中，消费者在提货中心提货时， 商户后台调用此接口进行提货核销操作 */
+// AlibabaMjOcConfpickupgoodsAPIResponse 提货核销 API返回值
+// alibaba.mj.oc.confpickupgoods
+//
+// 此API用于在银泰商场中，消费者在提货中心提货时， 商户后台调用此接口进行提货核销操作
 type AlibabaMjOcConfpickupgoodsAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcConfpickupgoodsAPIResponseModel

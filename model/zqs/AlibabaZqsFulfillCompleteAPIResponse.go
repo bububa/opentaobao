@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaZqsFulfillCompleteAPIResponse
-周期购履约完成接口 API返回值
-alibaba.zqs.fulfill.complete
-
-周期购履约完成接口 */
+// AlibabaZqsFulfillCompleteAPIResponse 周期购履约完成接口 API返回值
+// alibaba.zqs.fulfill.complete
+//
+// 周期购履约完成接口
 type AlibabaZqsFulfillCompleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaZqsFulfillCompleteAPIResponseModel

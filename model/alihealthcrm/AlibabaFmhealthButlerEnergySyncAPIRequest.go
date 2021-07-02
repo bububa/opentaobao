@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFmhealthButlerEnergySyncAPIRequest
-同步用户消耗能量 API请求
-alibaba.fmhealth.butler.energy.sync
-
-同步用户消耗能量，用户消耗s点或卡路里后，同步给健康平台 */
+// AlibabaFmhealthButlerEnergySyncAPIRequest 同步用户消耗能量 API请求
+// alibaba.fmhealth.butler.energy.sync
+//
+// 同步用户消耗能量，用户消耗s点或卡路里后，同步给健康平台
 type AlibabaFmhealthButlerEnergySyncAPIRequest struct {
 	model.Params
 	// 阿里用户id

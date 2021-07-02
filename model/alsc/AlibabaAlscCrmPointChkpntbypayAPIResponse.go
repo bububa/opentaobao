@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmPointChkpntbypayAPIResponse
-校验支付链路中的积分抵扣是否合法 API返回值
-alibaba.alsc.crm.point.chkpntbypay
-
-校验支付链路中的积分抵扣是否合法 */
+// AlibabaAlscCrmPointChkpntbypayAPIResponse 校验支付链路中的积分抵扣是否合法 API返回值
+// alibaba.alsc.crm.point.chkpntbypay
+//
+// 校验支付链路中的积分抵扣是否合法
 type AlibabaAlscCrmPointChkpntbypayAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmPointChkpntbypayAPIResponseModel

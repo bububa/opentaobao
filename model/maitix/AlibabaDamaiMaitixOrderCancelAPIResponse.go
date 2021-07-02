@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixOrderCancelAPIResponse
-大麦-库存释放 API返回值
-alibaba.damai.maitix.order.cancel
-
-库存释放 */
+// AlibabaDamaiMaitixOrderCancelAPIResponse 大麦-库存释放 API返回值
+// alibaba.damai.maitix.order.cancel
+//
+// 库存释放
 type AlibabaDamaiMaitixOrderCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixOrderCancelAPIResponseModel

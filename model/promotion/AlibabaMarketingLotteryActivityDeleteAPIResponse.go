@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMarketingLotteryActivityDeleteAPIResponse
-抽奖平台活动删除接口 API返回值
-alibaba.marketing.lottery.activity.delete
-
-抽奖平台活动删除接口 */
+// AlibabaMarketingLotteryActivityDeleteAPIResponse 抽奖平台活动删除接口 API返回值
+// alibaba.marketing.lottery.activity.delete
+//
+// 抽奖平台活动删除接口
 type AlibabaMarketingLotteryActivityDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaMarketingLotteryActivityDeleteAPIResponseModel

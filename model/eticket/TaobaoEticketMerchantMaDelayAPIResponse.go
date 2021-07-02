@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoEticketMerchantMaDelayAPIResponse
-凭证延期 API返回值
-taobao.eticket.merchant.ma.delay
-
-订单延期 */
+// TaobaoEticketMerchantMaDelayAPIResponse 凭证延期 API返回值
+// taobao.eticket.merchant.ma.delay
+//
+// 订单延期
 type TaobaoEticketMerchantMaDelayAPIResponse struct {
 	model.CommonResponse
 	TaobaoEticketMerchantMaDelayAPIResponseModel

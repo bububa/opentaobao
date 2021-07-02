@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIResponse
-获取盲底文件处理结果 API返回值
-alibaba.alihealth.drugcode.drugfactory.getblindresult
-
-获取盲底文件处理结果 */
+// AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIResponse 获取盲底文件处理结果 API返回值
+// alibaba.alihealth.drugcode.drugfactory.getblindresult
+//
+// 获取盲底文件处理结果
 type AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIResponseModel

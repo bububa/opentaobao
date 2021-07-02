@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenItemsMarkingAPIResponse
-商品通自动打标 API返回值
-taobao.qimen.items.marking
-
-调用该接口，对商品进行XXXX标的打标、去标的动作。 */
+// TaobaoQimenItemsMarkingAPIResponse 商品通自动打标 API返回值
+// taobao.qimen.items.marking
+//
+// 调用该接口，对商品进行XXXX标的打标、去标的动作。
 type TaobaoQimenItemsMarkingAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenItemsMarkingAPIResponseModel

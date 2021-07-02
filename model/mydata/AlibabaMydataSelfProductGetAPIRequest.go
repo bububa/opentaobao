@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMydataSelfProductGetAPIRequest
-获取客户产品相关表现数据 API请求
-alibaba.mydata.self.product.get
-
-获取客户产品相关表现数据 */
+// AlibabaMydataSelfProductGetAPIRequest 获取客户产品相关表现数据 API请求
+// alibaba.mydata.self.product.get
+//
+// 获取客户产品相关表现数据
 type AlibabaMydataSelfProductGetAPIRequest struct {
 	model.Params
 	// 统计周期，可以为"day", "week", "month"

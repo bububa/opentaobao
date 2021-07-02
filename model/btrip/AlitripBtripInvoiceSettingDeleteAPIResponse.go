@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripInvoiceSettingDeleteAPIResponse
-发票删除 API返回值
-alitrip.btrip.invoice.setting.delete
-
-发票删除 */
+// AlitripBtripInvoiceSettingDeleteAPIResponse 发票删除 API返回值
+// alitrip.btrip.invoice.setting.delete
+//
+// 发票删除
 type AlitripBtripInvoiceSettingDeleteAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripInvoiceSettingDeleteAPIResponseModel

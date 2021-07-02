@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlinkMessageConfigListAPIResponse
-查询消息开关配置列表 API返回值
-alibaba.alink.message.config.list
-
-阿里智能获取消息开关配置列表 */
+// AlibabaAlinkMessageConfigListAPIResponse 查询消息开关配置列表 API返回值
+// alibaba.alink.message.config.list
+//
+// 阿里智能获取消息开关配置列表
 type AlibabaAlinkMessageConfigListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlinkMessageConfigListAPIResponseModel

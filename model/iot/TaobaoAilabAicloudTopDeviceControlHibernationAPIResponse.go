@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlHibernationAPIResponse
-定时休眠 API返回值
-taobao.ailab.aicloud.top.device.control.hibernation
-
-定时休眠 */
+// TaobaoAilabAicloudTopDeviceControlHibernationAPIResponse 定时休眠 API返回值
+// taobao.ailab.aicloud.top.device.control.hibernation
+//
+// 定时休眠
 type TaobaoAilabAicloudTopDeviceControlHibernationAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceControlHibernationAPIResponseModel

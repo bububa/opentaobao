@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeCustomizationRefundEnableAPIResponse
-定制订单设置允许仅退款 API返回值
-taobao.opentrade.customization.refund.enable
-
-定制订单设置允许仅退款 */
+// TaobaoOpentradeCustomizationRefundEnableAPIResponse 定制订单设置允许仅退款 API返回值
+// taobao.opentrade.customization.refund.enable
+//
+// 定制订单设置允许仅退款
 type TaobaoOpentradeCustomizationRefundEnableAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeCustomizationRefundEnableAPIResponseModel

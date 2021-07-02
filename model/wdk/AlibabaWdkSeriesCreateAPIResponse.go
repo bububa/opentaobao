@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkSeriesCreateAPIResponse
-系列品变更-新增系列 API返回值
-alibaba.wdk.series.create
-
-系列品变更-新增系列 */
+// AlibabaWdkSeriesCreateAPIResponse 系列品变更-新增系列 API返回值
+// alibaba.wdk.series.create
+//
+// 系列品变更-新增系列
 type AlibabaWdkSeriesCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkSeriesCreateAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alisports"
 )
 
-/* AlibabaAlisportsEfspUserwriteoff
-用户核销
-alibaba.alisports.efsp.userwriteoff
-
-用户核销 */
+// AlibabaAlisportsEfspUserwriteoff 用户核销
+// alibaba.alisports.efsp.userwriteoff
+//
+// 用户核销
 func AlibabaAlisportsEfspUserwriteoff(clt *core.SDKClient, req *alisports.AlibabaAlisportsEfspUserwriteoffAPIRequest, session string) (*alisports.AlibabaAlisportsEfspUserwriteoffAPIResponse, error) {
 	var resp alisports.AlibabaAlisportsEfspUserwriteoffAPIResponse
 	err := clt.Post(req, &resp, session)

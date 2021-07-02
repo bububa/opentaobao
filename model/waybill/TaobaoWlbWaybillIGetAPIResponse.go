@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWaybillIGetAPIResponse
-获取物流服务商电子面单号v1.0 API返回值
-taobao.wlb.waybill.i.get
-
-商家根据订单信息，实时、批量获取指定物流服务商的电子面单号。 */
+// TaobaoWlbWaybillIGetAPIResponse 获取物流服务商电子面单号v1.0 API返回值
+// taobao.wlb.waybill.i.get
+//
+// 商家根据订单信息，实时、批量获取指定物流服务商的电子面单号。
 type TaobaoWlbWaybillIGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWaybillIGetAPIResponseModel

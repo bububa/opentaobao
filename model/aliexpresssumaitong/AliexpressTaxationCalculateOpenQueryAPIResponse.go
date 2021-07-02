@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressTaxationCalculateOpenQueryAPIResponse
-关务所需的申报清关字段 API返回值
-aliexpress.taxation.calculate.open.query
-
-关务所需的申报清关字段 */
+// AliexpressTaxationCalculateOpenQueryAPIResponse 关务所需的申报清关字段 API返回值
+// aliexpress.taxation.calculate.open.query
+//
+// 关务所需的申报清关字段
 type AliexpressTaxationCalculateOpenQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressTaxationCalculateOpenQueryAPIResponseModel

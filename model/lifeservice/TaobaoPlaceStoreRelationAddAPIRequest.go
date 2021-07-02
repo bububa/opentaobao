@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStoreRelationAddAPIRequest
-门店关系新增 API请求
-taobao.place.store.relation.add
-
-新增授权用户的门店关系信息 */
+// TaobaoPlaceStoreRelationAddAPIRequest 门店关系新增 API请求
+// taobao.place.store.relation.add
+//
+// 新增授权用户的门店关系信息
 type TaobaoPlaceStoreRelationAddAPIRequest struct {
 	model.Params
 	// 关系B的门店ID

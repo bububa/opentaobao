@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionProductPostAPIResponse
-Product posting API API返回值
-aliexpress.solution.product.post
-
-Product posting API for Oversea merchants, simplifying the complexity of integration that sellers and merchants face. For example, these sellers can use their own category and attributes instead of mapping those from AE. */
+// AliexpressSolutionProductPostAPIResponse Product posting API API返回值
+// aliexpress.solution.product.post
+//
+// Product posting API for Oversea merchants, simplifying the complexity of integration that sellers and merchants face. For example, these sellers can use their own category and attributes instead of mapping those from AE.
 type AliexpressSolutionProductPostAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionProductPostAPIResponseModel

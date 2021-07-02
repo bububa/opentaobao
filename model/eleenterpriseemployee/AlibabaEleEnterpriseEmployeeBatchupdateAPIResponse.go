@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse
-批量新增更新员工 API返回值
-alibaba.ele.enterprise.employee.batchupdate
-
-批量新增更新员工 */
+// AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse 批量新增更新员工 API返回值
+// alibaba.ele.enterprise.employee.batchupdate
+//
+// 批量新增更新员工
 type AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseEmployeeBatchupdateAPIResponseModel

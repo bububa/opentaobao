@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsPassportAccountBindthirdidAPIResponse
-阿里体育三方ID绑定接口 API返回值
-alibaba.alisports.passport.account.bindthirdid
-
-阿里体育三方ID绑定接口 */
+// AlibabaAlisportsPassportAccountBindthirdidAPIResponse 阿里体育三方ID绑定接口 API返回值
+// alibaba.alisports.passport.account.bindthirdid
+//
+// 阿里体育三方ID绑定接口
 type AlibabaAlisportsPassportAccountBindthirdidAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsPassportAccountBindthirdidAPIResponseModel

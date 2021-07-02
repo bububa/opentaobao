@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIResponse
-删除网点覆盖的服务 API返回值
-tmall.servicecenter.servicestore.deleteservicestorecoverservice
-
-天猫服务平台删除网点覆盖的服务，
-必选字段：serviceStoreCode、bizType */
+// TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIResponse 删除网点覆盖的服务 API返回值
+// tmall.servicecenter.servicestore.deleteservicestorecoverservice
+//
+// 天猫服务平台删除网点覆盖的服务，
+// 必选字段：serviceStoreCode、bizType
 type TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIResponseModel

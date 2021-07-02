@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoEticketMerchantMaResendAPIResponse
-电子凭证重发回调接口 API返回值
-taobao.eticket.merchant.ma.resend
-
-码商重发电子凭证回调接口 */
+// TaobaoEticketMerchantMaResendAPIResponse 电子凭证重发回调接口 API返回值
+// taobao.eticket.merchant.ma.resend
+//
+// 码商重发电子凭证回调接口
 type TaobaoEticketMerchantMaResendAPIResponse struct {
 	model.CommonResponse
 	TaobaoEticketMerchantMaResendAPIResponseModel

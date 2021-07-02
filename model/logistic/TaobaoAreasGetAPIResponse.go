@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAreasGetAPIResponse
-查询地址区域 API返回值
-taobao.areas.get
-
-查询标准地址区域代码信息。可以直接参考最新的行政区域代码：
-<a href="http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/" target="_blank"> http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/</a> */
+// TaobaoAreasGetAPIResponse 查询地址区域 API返回值
+// taobao.areas.get
+//
+// 查询标准地址区域代码信息。可以直接参考最新的行政区域代码：
+// <a href="http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/" target="_blank"> http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/</a>
 type TaobaoAreasGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAreasGetAPIResponseModel

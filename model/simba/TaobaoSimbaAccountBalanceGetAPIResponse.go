@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAccountBalanceGetAPIResponse
-获取实时余额，”元”为单位 API返回值
-taobao.simba.account.balance.get
-
-获取实时余额，”元”为单位 */
+// TaobaoSimbaAccountBalanceGetAPIResponse 获取实时余额，”元”为单位 API返回值
+// taobao.simba.account.balance.get
+//
+// 获取实时余额，”元”为单位
 type TaobaoSimbaAccountBalanceGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaAccountBalanceGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse
-查询会员等级规则 API返回值
-alibaba.alsc.crm.rule.level.querylevelrule
-
-查询会员等级规则 */
+// AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse 查询会员等级规则 API返回值
+// alibaba.alsc.crm.rule.level.querylevelrule
+//
+// 查询会员等级规则
 type AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponseModel

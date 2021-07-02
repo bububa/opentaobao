@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNrsItemPricetagRecognizeAPIResponse
-价签识别 API返回值
-alibaba.nrs.item.pricetag.recognize
-
-商品价签识别，用于识别RT上传的竞品分析照片，返回价签内容 */
+// AlibabaNrsItemPricetagRecognizeAPIResponse 价签识别 API返回值
+// alibaba.nrs.item.pricetag.recognize
+//
+// 商品价签识别，用于识别RT上传的竞品分析照片，返回价签内容
 type AlibabaNrsItemPricetagRecognizeAPIResponse struct {
 	model.CommonResponse
 	AlibabaNrsItemPricetagRecognizeAPIResponseModel

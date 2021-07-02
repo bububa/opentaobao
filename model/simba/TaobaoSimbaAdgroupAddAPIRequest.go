@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupAddAPIRequest
-创建一个推广组 API请求
-taobao.simba.adgroup.add
-
-创建一个推广组 */
+// TaobaoSimbaAdgroupAddAPIRequest 创建一个推广组 API请求
+// taobao.simba.adgroup.add
+//
+// 创建一个推广组
 type TaobaoSimbaAdgroupAddAPIRequest struct {
 	model.Params
 	// 主人昵称

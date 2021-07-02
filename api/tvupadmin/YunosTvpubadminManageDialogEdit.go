@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-/* YunosTvpubadminManageDialogEdit
-编辑全局弹窗
-yunos.tvpubadmin.manage.dialog.edit
-
-编辑全局弹窗 */
+// YunosTvpubadminManageDialogEdit 编辑全局弹窗
+// yunos.tvpubadmin.manage.dialog.edit
+//
+// 编辑全局弹窗
 func YunosTvpubadminManageDialogEdit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageDialogEditAPIRequest, session string) (*tvupadmin.YunosTvpubadminManageDialogEditAPIResponse, error) {
 	var resp tvupadmin.YunosTvpubadminManageDialogEditAPIResponse
 	err := clt.Post(req, &resp, session)

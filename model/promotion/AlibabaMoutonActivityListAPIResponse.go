@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoutonActivityListAPIResponse
-商家自运营活动列表 API返回值
-alibaba.mouton.activity.list
-
-商家查询自己配置的活动列表 */
+// AlibabaMoutonActivityListAPIResponse 商家自运营活动列表 API返回值
+// alibaba.mouton.activity.list
+//
+// 商家查询自己配置的活动列表
 type AlibabaMoutonActivityListAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoutonActivityListAPIResponseModel

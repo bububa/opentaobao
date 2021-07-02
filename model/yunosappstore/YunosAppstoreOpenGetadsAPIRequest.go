@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosAppstoreOpenGetadsAPIRequest
-获取外投广告 API请求
-yunos.appstore.open.getads
-
-将广告外投给外部合作伙伴 */
+// YunosAppstoreOpenGetadsAPIRequest 获取外投广告 API请求
+// yunos.appstore.open.getads
+//
+// 将广告外投给外部合作伙伴
 type YunosAppstoreOpenGetadsAPIRequest struct {
 	model.Params
 	// 请求id

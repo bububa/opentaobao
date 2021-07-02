@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanHistoryPoGetAPIResponse
-【已废除】11-同步历史所有的po单 API返回值
-alibaba.tmallgenie.scp.plan.history.po.get
-
-同步历史po单 */
+// AlibabaTmallgenieScpPlanHistoryPoGetAPIResponse 【已废除】11-同步历史所有的po单 API返回值
+// alibaba.tmallgenie.scp.plan.history.po.get
+//
+// 同步历史po单
 type AlibabaTmallgenieScpPlanHistoryPoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanHistoryPoGetAPIResponseModel

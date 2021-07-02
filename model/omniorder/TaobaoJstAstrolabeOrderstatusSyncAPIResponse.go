@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstAstrolabeOrderstatusSyncAPIResponse
-线下门店派单以及单据相关操作接口 API返回值
-taobao.jst.astrolabe.orderstatus.sync
-
-针对ERP系统部署在门店的商家，将派单状态回流到星盘 */
+// TaobaoJstAstrolabeOrderstatusSyncAPIResponse 线下门店派单以及单据相关操作接口 API返回值
+// taobao.jst.astrolabe.orderstatus.sync
+//
+// 针对ERP系统部署在门店的商家，将派单状态回流到星盘
 type TaobaoJstAstrolabeOrderstatusSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstAstrolabeOrderstatusSyncAPIResponseModel

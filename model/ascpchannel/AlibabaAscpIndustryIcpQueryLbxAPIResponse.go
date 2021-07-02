@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpIndustryIcpQueryLbxAPIResponse
-icp订单号查询lbx订单号 API返回值
-alibaba.ascp.industry.icp.query.lbx
-
-根据icp订单号查询lbx订单号 */
+// AlibabaAscpIndustryIcpQueryLbxAPIResponse icp订单号查询lbx订单号 API返回值
+// alibaba.ascp.industry.icp.query.lbx
+//
+// 根据icp订单号查询lbx订单号
 type AlibabaAscpIndustryIcpQueryLbxAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpIndustryIcpQueryLbxAPIResponseModel

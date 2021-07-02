@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketManageNotifyAPIResponse
-主动发起通知接口 API返回值
-taobao.vmarket.eticket.manage.notify
-
-外部合作商家主动发起通知接口 */
+// TaobaoVmarketEticketManageNotifyAPIResponse 主动发起通知接口 API返回值
+// taobao.vmarket.eticket.manage.notify
+//
+// 外部合作商家主动发起通知接口
 type TaobaoVmarketEticketManageNotifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketManageNotifyAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMemberCardGetAPIResponse
-查询会员卡信息 API返回值
-alibaba.wdk.member.card.get
-
-根据会员卡查询会员信息 */
+// AlibabaWdkMemberCardGetAPIResponse 查询会员卡信息 API返回值
+// alibaba.wdk.member.card.get
+//
+// 根据会员卡查询会员信息
 type AlibabaWdkMemberCardGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMemberCardGetAPIResponseModel

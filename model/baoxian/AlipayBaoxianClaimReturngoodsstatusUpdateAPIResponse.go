@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlipayBaoxianClaimReturngoodsstatusUpdateAPIResponse
-更新理赔单退货货物状态 API返回值
-alipay.baoxian.claim.returngoodsstatus.update
-
-更新理赔单退货货物状态 */
+// AlipayBaoxianClaimReturngoodsstatusUpdateAPIResponse 更新理赔单退货货物状态 API返回值
+// alipay.baoxian.claim.returngoodsstatus.update
+//
+// 更新理赔单退货货物状态
 type AlipayBaoxianClaimReturngoodsstatusUpdateAPIResponse struct {
 	model.CommonResponse
 	AlipayBaoxianClaimReturngoodsstatusUpdateAPIResponseModel

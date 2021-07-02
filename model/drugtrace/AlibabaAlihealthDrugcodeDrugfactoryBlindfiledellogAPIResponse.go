@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponse
-接收盲底文件删除日志 API返回值
-alibaba.alihealth.drugcode.drugfactory.blindfiledellog
-
-临床用药试验-接收盲底文件删除日志 */
+// AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponse 接收盲底文件删除日志 API返回值
+// alibaba.alihealth.drugcode.drugfactory.blindfiledellog
+//
+// 临床用药试验-接收盲底文件删除日志
 type AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponseModel

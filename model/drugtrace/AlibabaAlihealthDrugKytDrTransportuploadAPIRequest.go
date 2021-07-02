@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytDrTransportuploadAPIRequest
-疫苗运输温度上传 API请求
-alibaba.alihealth.drug.kyt.dr.transportupload
-
-疫苗运输温度上传 */
+// AlibabaAlihealthDrugKytDrTransportuploadAPIRequest 疫苗运输温度上传 API请求
+// alibaba.alihealth.drug.kyt.dr.transportupload
+//
+// 疫苗运输温度上传
 type AlibabaAlihealthDrugKytDrTransportuploadAPIRequest struct {
 	model.Params
 	// 企业RefEntid，是指该单据的所有者。         如企业A上传了一个出库单，您为A的单据上传运输温度，那么此时RefEntid即为A的ID。         若您本企业上传了一个单据，您为这个单据上传温度，此时RefEntid即为您本企业的ID。

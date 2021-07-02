@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTaotvVideoPlaylistAllAPIResponse
-获取播单列表 API返回值
-taobao.taotv.video.playlist.all
-
-根据牌照和视频源等获取播单列表 */
+// TaobaoTaotvVideoPlaylistAllAPIResponse 获取播单列表 API返回值
+// taobao.taotv.video.playlist.all
+//
+// 根据牌照和视频源等获取播单列表
 type TaobaoTaotvVideoPlaylistAllAPIResponse struct {
 	model.CommonResponse
 	TaobaoTaotvVideoPlaylistAllAPIResponseModel

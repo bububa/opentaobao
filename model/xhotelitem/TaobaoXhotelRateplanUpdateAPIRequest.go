@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRateplanUpdateAPIRequest
-价格计划rateplan更新或添加 API请求
-taobao.xhotel.rateplan.update
-
-酒店产品库rateplan更新或添加 */
+// TaobaoXhotelRateplanUpdateAPIRequest 价格计划rateplan更新或添加 API请求
+// taobao.xhotel.rateplan.update
+//
+// 酒店产品库rateplan更新或添加
 type TaobaoXhotelRateplanUpdateAPIRequest struct {
 	model.Params
 	// 在淘宝搜索页面展示的房价名称；（添加RP时为必须）。注意该名称不要包含早餐相关信息，如果想维护早餐信息，请设置breakfast_count字段即可。

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoMeetingListAPIResponse
-天猫精灵会议查询 API返回值
-taobao.ailab.aicloud.top.memo.meeting.list
-
-查询天猫精灵用户设置的所有会议 */
+// TaobaoAilabAicloudTopMemoMeetingListAPIResponse 天猫精灵会议查询 API返回值
+// taobao.ailab.aicloud.top.memo.meeting.list
+//
+// 查询天猫精灵用户设置的所有会议
 type TaobaoAilabAicloudTopMemoMeetingListAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMemoMeetingListAPIResponseModel

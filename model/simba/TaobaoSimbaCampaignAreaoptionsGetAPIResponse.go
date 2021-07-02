@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignAreaoptionsGetAPIResponse
-取得推广计划的可设置投放地域列表 API返回值
-taobao.simba.campaign.areaoptions.get
-
-取得推广计划的可设置投放地域列表 */
+// TaobaoSimbaCampaignAreaoptionsGetAPIResponse 取得推广计划的可设置投放地域列表 API返回值
+// taobao.simba.campaign.areaoptions.get
+//
+// 取得推广计划的可设置投放地域列表
 type TaobaoSimbaCampaignAreaoptionsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCampaignAreaoptionsGetAPIResponseModel

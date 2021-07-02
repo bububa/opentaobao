@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoEticketMerchantMaAvailableAPIResponse
-电子凭证核销前校验接口 API返回值
-taobao.eticket.merchant.ma.available
-
-商家验码之前的调用接口，用来判断是否可以进行核销操作 */
+// TaobaoEticketMerchantMaAvailableAPIResponse 电子凭证核销前校验接口 API返回值
+// taobao.eticket.merchant.ma.available
+//
+// 商家验码之前的调用接口，用来判断是否可以进行核销操作
 type TaobaoEticketMerchantMaAvailableAPIResponse struct {
 	model.CommonResponse
 	TaobaoEticketMerchantMaAvailableAPIResponseModel

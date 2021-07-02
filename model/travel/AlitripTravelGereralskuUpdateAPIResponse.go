@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelGereralskuUpdateAPIResponse
-发布SKU信息（如果properties重复 则更新） API返回值
-alitrip.travel.gereralsku.update
-
-发布SKU信息（如果properties重复 则更新） */
+// AlitripTravelGereralskuUpdateAPIResponse 发布SKU信息（如果properties重复 则更新） API返回值
+// alitrip.travel.gereralsku.update
+//
+// 发布SKU信息（如果properties重复 则更新）
 type AlitripTravelGereralskuUpdateAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelGereralskuUpdateAPIResponseModel

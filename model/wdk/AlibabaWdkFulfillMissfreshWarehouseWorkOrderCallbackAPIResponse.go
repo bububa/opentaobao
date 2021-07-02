@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackAPIResponse
-每日优鲜仓作业单回传接口 API返回值
-alibaba.wdk.fulfill.missfresh.warehouse.work.order.callback
-
-家乐福仓作业单回传接口 */
+// AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackAPIResponse 每日优鲜仓作业单回传接口 API返回值
+// alibaba.wdk.fulfill.missfresh.warehouse.work.order.callback
+//
+// 家乐福仓作业单回传接口
 type AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackAPIResponseModel

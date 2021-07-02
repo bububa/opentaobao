@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderUpdateAPIResponse
-酒店订单发货接口 API返回值
-taobao.xhotel.order.update
-
-卖家确认订单或者取消订单，适用于预付、面付、信用住订单 */
+// TaobaoXhotelOrderUpdateAPIResponse 酒店订单发货接口 API返回值
+// taobao.xhotel.order.update
+//
+// 卖家确认订单或者取消订单，适用于预付、面付、信用住订单
 type TaobaoXhotelOrderUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelOrderUpdateAPIResponseModel

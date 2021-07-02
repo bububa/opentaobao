@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpChannelDistributorProductListAPIResponse
-供应链渠道中心淘外分销品批量查询(分销商专用) API返回值
-alibaba.ascp.channel.distributor.product.list
-
-此api为淘外分销的品批量查询标准api，淘外分销商专用 */
+// AlibabaAscpChannelDistributorProductListAPIResponse 供应链渠道中心淘外分销品批量查询(分销商专用) API返回值
+// alibaba.ascp.channel.distributor.product.list
+//
+// 此api为淘外分销的品批量查询标准api，淘外分销商专用
 type AlibabaAscpChannelDistributorProductListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpChannelDistributorProductListAPIResponseModel

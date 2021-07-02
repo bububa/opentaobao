@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCaipiaoGoodsInfoGetAPIResponse
-根据卖家id与appkey获取商品信息 API返回值
-taobao.caipiao.goods.info.get
-
-根据卖家id与appkey获取商品信息。 */
+// TaobaoCaipiaoGoodsInfoGetAPIResponse 根据卖家id与appkey获取商品信息 API返回值
+// taobao.caipiao.goods.info.get
+//
+// 根据卖家id与appkey获取商品信息。
 type TaobaoCaipiaoGoodsInfoGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoCaipiaoGoodsInfoGetAPIResponseModel

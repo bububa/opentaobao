@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse
-阿里健康医保支付信息获取 API返回值
-alibaba.alihealth.nr.trade.medical.insurance.get
-
-阿里健康医保支付信息获取 */
+// AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse 阿里健康医保支付信息获取 API返回值
+// alibaba.alihealth.nr.trade.medical.insurance.get
+//
+// 阿里健康医保支付信息获取
 type AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponseModel

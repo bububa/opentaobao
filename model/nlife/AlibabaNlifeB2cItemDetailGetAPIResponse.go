@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2cItemDetailGetAPIResponse
-b2c码详情查询 API返回值
-alibaba.nlife.b2c.item.detail.get
-
-根据零售+平台生成的唯一码获取对应详情 */
+// AlibabaNlifeB2cItemDetailGetAPIResponse b2c码详情查询 API返回值
+// alibaba.nlife.b2c.item.detail.get
+//
+// 根据零售+平台生成的唯一码获取对应详情
 type AlibabaNlifeB2cItemDetailGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaNlifeB2cItemDetailGetAPIResponseModel

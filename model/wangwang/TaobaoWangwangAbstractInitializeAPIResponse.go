@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWangwangAbstractInitializeAPIResponse
-模糊查询服务初始化 API返回值
-taobao.wangwang.abstract.initialize
-
-模糊查询服务初始化，只支持json返回 */
+// TaobaoWangwangAbstractInitializeAPIResponse 模糊查询服务初始化 API返回值
+// taobao.wangwang.abstract.initialize
+//
+// 模糊查询服务初始化，只支持json返回
 type TaobaoWangwangAbstractInitializeAPIResponse struct {
 	model.CommonResponse
 	TaobaoWangwangAbstractInitializeAPIResponseModel

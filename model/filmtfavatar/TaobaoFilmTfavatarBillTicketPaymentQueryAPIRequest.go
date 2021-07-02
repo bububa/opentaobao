@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmTfavatarBillTicketPaymentQueryAPIRequest
-获取影院票务账单-支付订单 API请求
-taobao.film.tfavatar.bill.ticket.payment.query
-
-获取影院票务账单-支付订单 */
+// TaobaoFilmTfavatarBillTicketPaymentQueryAPIRequest 获取影院票务账单-支付订单 API请求
+// taobao.film.tfavatar.bill.ticket.payment.query
+//
+// 获取影院票务账单-支付订单
 type TaobaoFilmTfavatarBillTicketPaymentQueryAPIRequest struct {
 	model.Params
 	// 自运营开放平台APPKEY

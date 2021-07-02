@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSerchcrowdGetAPIRequest
-根据推广单元id获取搜索溢价人群 API请求
-taobao.simba.serchcrowd.get
-
-根据推广单元id获取搜索溢价人群 */
+// TaobaoSimbaSerchcrowdGetAPIRequest 根据推广单元id获取搜索溢价人群 API请求
+// taobao.simba.serchcrowd.get
+//
+// 根据推广单元id获取搜索溢价人群
 type TaobaoSimbaSerchcrowdGetAPIRequest struct {
 	model.Params
 	// 被操作者的淘宝昵称

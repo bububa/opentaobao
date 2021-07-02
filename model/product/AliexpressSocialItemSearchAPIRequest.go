@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialItemSearchAPIRequest
-AE社交选品 API请求
-aliexpress.social.item.search
-
-AE社交选品,通过各种筛选条件对社交商品池进行筛选 */
+// AliexpressSocialItemSearchAPIRequest AE社交选品 API请求
+// aliexpress.social.item.search
+//
+// AE社交选品,通过各种筛选条件对社交商品池进行筛选
 type AliexpressSocialItemSearchAPIRequest struct {
 	model.Params
 	// 是否有视频

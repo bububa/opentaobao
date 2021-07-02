@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponse
-设备播放暂停 API返回值
-taobao.ailab.aicloud.top.device.control.pauseandresume
-
-设备播放暂停 */
+// TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponse 设备播放暂停 API返回值
+// taobao.ailab.aicloud.top.device.control.pauseandresume
+//
+// 设备播放暂停
 type TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponseModel

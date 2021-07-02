@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentVideoSubmitauditresultAPIResponse
-迎客松提交视频审核结果 API返回值
-yunos.tvpubadmin.content.video.submitauditresult
-
-迎客松提交视频审核结果 */
+// YunosTvpubadminContentVideoSubmitauditresultAPIResponse 迎客松提交视频审核结果 API返回值
+// yunos.tvpubadmin.content.video.submitauditresult
+//
+// 迎客松提交视频审核结果
 type YunosTvpubadminContentVideoSubmitauditresultAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentVideoSubmitauditresultAPIResponseModel

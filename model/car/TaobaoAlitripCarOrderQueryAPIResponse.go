@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripCarOrderQueryAPIResponse
-飞猪订单状态查询接口 API返回值
-taobao.alitrip.car.order.query
-
-提供给直连商家查询在飞猪平台上产生的订单 */
+// TaobaoAlitripCarOrderQueryAPIResponse 飞猪订单状态查询接口 API返回值
+// taobao.alitrip.car.order.query
+//
+// 提供给直连商家查询在飞猪平台上产生的订单
 type TaobaoAlitripCarOrderQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripCarOrderQueryAPIResponseModel

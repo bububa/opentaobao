@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductGroupAddAPIResponse
-增加商品分组 API返回值
-alibaba.icbu.product.group.add
-
-增加商品分组 */
+// AlibabaIcbuProductGroupAddAPIResponse 增加商品分组 API返回值
+// alibaba.icbu.product.group.add
+//
+// 增加商品分组
 type AlibabaIcbuProductGroupAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuProductGroupAddAPIResponseModel

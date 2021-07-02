@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBuynowOrderCreateAPIResponse
-阿里巴巴买家buynow下单接口 API返回值
-alibaba.buynow.order.create
-
-阿里巴巴买家下单接口 */
+// AlibabaBuynowOrderCreateAPIResponse 阿里巴巴买家buynow下单接口 API返回值
+// alibaba.buynow.order.create
+//
+// 阿里巴巴买家下单接口
 type AlibabaBuynowOrderCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaBuynowOrderCreateAPIResponseModel

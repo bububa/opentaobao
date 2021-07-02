@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse
-查询设备模板 API返回值
-alibaba.campus.device.openapi.gettemplatelist
-
-查询设备模板信息 */
+// AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse 查询设备模板 API返回值
+// alibaba.campus.device.openapi.gettemplatelist
+//
+// 查询设备模板信息
 type AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusDeviceOpenapiGettemplatelistAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizEslUnbindAPIRequest
-电子价签解绑接口 API请求
-taobao.uscesl.biz.esl.unbind
-
-电子价签解绑接口 */
+// TaobaoUsceslBizEslUnbindAPIRequest 电子价签解绑接口 API请求
+// taobao.uscesl.biz.esl.unbind
+//
+// 电子价签解绑接口
 type TaobaoUsceslBizEslUnbindAPIRequest struct {
 	model.Params
 	// 价签条码

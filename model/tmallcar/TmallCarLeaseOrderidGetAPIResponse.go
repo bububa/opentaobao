@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseOrderidGetAPIResponse
-天猫开新车查询订单id API返回值
-tmall.car.lease.orderid.get
-
-天猫开新车查询订单id */
+// TmallCarLeaseOrderidGetAPIResponse 天猫开新车查询订单id API返回值
+// tmall.car.lease.orderid.get
+//
+// 天猫开新车查询订单id
 type TmallCarLeaseOrderidGetAPIResponse struct {
 	model.CommonResponse
 	TmallCarLeaseOrderidGetAPIResponseModel

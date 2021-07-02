@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardVerifycodeResendAPIResponse
-重发核销码 API返回值
-tmall.servicecenter.workcard.verifycode.resend
-
-重发核销码 */
+// TmallServicecenterWorkcardVerifycodeResendAPIResponse 重发核销码 API返回值
+// tmall.servicecenter.workcard.verifycode.resend
+//
+// 重发核销码
 type TmallServicecenterWorkcardVerifycodeResendAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardVerifycodeResendAPIResponseModel

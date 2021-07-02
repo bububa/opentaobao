@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse
-批量删除adgroup的移动溢价 API返回值
-taobao.simba.adgroup.mobilediscount.delete
-
-批量删除adgroup的移动溢价 */
+// TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse 批量删除adgroup的移动溢价 API返回值
+// taobao.simba.adgroup.mobilediscount.delete
+//
+// 批量删除adgroup的移动溢价
 type TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaAdgroupMobilediscountDeleteAPIResponseModel

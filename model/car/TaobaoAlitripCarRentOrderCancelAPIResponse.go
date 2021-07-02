@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripCarRentOrderCancelAPIResponse
-租车-取消订单 API返回值
-taobao.alitrip.car.rent.order.cancel
-
-服务商主动取消用户订单或者拒绝取消订单. */
+// TaobaoAlitripCarRentOrderCancelAPIResponse 租车-取消订单 API返回值
+// taobao.alitrip.car.rent.order.cancel
+//
+// 服务商主动取消用户订单或者拒绝取消订单.
 type TaobaoAlitripCarRentOrderCancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripCarRentOrderCancelAPIResponseModel

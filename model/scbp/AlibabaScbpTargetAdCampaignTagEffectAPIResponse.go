@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTargetAdCampaignTagEffectAPIResponse
-定向推广-获取推广计划定向效果数据 API返回值
-alibaba.scbp.target.ad.campaign.tag.effect
-
-定向推广-获取推广计划定向效果数据 */
+// AlibabaScbpTargetAdCampaignTagEffectAPIResponse 定向推广-获取推广计划定向效果数据 API返回值
+// alibaba.scbp.target.ad.campaign.tag.effect
+//
+// 定向推广-获取推广计划定向效果数据
 type AlibabaScbpTargetAdCampaignTagEffectAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpTargetAdCampaignTagEffectAPIResponseModel

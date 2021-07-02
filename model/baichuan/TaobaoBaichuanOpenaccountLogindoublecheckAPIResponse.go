@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaichuanOpenaccountLogindoublecheckAPIResponse
-百川登录二次验证 API返回值
-taobao.baichuan.openaccount.logindoublecheck
-
-百川登录二次验证 */
+// TaobaoBaichuanOpenaccountLogindoublecheckAPIResponse 百川登录二次验证 API返回值
+// taobao.baichuan.openaccount.logindoublecheck
+//
+// 百川登录二次验证
 type TaobaoBaichuanOpenaccountLogindoublecheckAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaichuanOpenaccountLogindoublecheckAPIResponseModel

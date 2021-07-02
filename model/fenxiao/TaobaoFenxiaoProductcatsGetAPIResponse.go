@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductcatsGetAPIResponse
-查询产品线列表 API返回值
-taobao.fenxiao.productcats.get
-
-查询供应商的所有产品线数据。根据登陆用户来查询，不需要其他入参 */
+// TaobaoFenxiaoProductcatsGetAPIResponse 查询产品线列表 API返回值
+// taobao.fenxiao.productcats.get
+//
+// 查询供应商的所有产品线数据。根据登陆用户来查询，不需要其他入参
 type TaobaoFenxiaoProductcatsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductcatsGetAPIResponseModel

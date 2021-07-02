@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotCardofferAPIResponse
-查询物联网卡上订购的offer API返回值
-alibaba.aliqin.fc.iot.cardoffer
-
-查询物联网卡上订购的offer */
+// AlibabaAliqinFcIotCardofferAPIResponse 查询物联网卡上订购的offer API返回值
+// alibaba.aliqin.fc.iot.cardoffer
+//
+// 查询物联网卡上订购的offer
 type AlibabaAliqinFcIotCardofferAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcIotCardofferAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthmdeer"
 )
 
-/* AlibabaAlihealthMdeerScienceDeletearticle
-文章删除
-alibaba.alihealth.mdeer.science.deletearticle
-
-三方同步文章删除 */
+// AlibabaAlihealthMdeerScienceDeletearticle 文章删除
+// alibaba.alihealth.mdeer.science.deletearticle
+//
+// 三方同步文章删除
 func AlibabaAlihealthMdeerScienceDeletearticle(clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIRequest, session string) (*alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIResponse, error) {
 	var resp alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIResponse
 	err := clt.Post(req, &resp, session)

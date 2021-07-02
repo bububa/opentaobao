@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcAuthGetAPIResponse
-TMC授权token API返回值
-taobao.tmc.auth.get
-
-TMC连接授权Token */
+// TaobaoTmcAuthGetAPIResponse TMC授权token API返回值
+// taobao.tmc.auth.get
+//
+// TMC连接授权Token
 type TaobaoTmcAuthGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTmcAuthGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelPoiSearchAPIRequest
-POI信息查询 API请求
-alitrip.travel.poi.search
-
-POI信息查询，用于商品更新使用 */
+// AlitripTravelPoiSearchAPIRequest POI信息查询 API请求
+// alitrip.travel.poi.search
+//
+// POI信息查询，用于商品更新使用
 type AlitripTravelPoiSearchAPIRequest struct {
 	model.Params
 	// POI信息ID；

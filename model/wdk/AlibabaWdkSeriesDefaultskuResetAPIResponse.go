@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkSeriesDefaultskuResetAPIResponse
-系列品商品变更-重置默认商品 API返回值
-alibaba.wdk.series.defaultsku.reset
-
-系列品商品变更-重置默认商品 */
+// AlibabaWdkSeriesDefaultskuResetAPIResponse 系列品商品变更-重置默认商品 API返回值
+// alibaba.wdk.series.defaultsku.reset
+//
+// 系列品商品变更-重置默认商品
 type AlibabaWdkSeriesDefaultskuResetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkSeriesDefaultskuResetAPIResponseModel

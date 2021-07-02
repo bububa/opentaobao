@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRdcAligeniusOrdermsgUpdateAPIResponse
-订单消息状态回传 API返回值
-taobao.rdc.aligenius.ordermsg.update
-
-用于订单消息处理状态回传 */
+// TaobaoRdcAligeniusOrdermsgUpdateAPIResponse 订单消息状态回传 API返回值
+// taobao.rdc.aligenius.ordermsg.update
+//
+// 用于订单消息处理状态回传
 type TaobaoRdcAligeniusOrdermsgUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoRdcAligeniusOrdermsgUpdateAPIResponseModel

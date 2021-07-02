@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptTargetingtageffectGetAPIRequest
-获取定向效果报表数据 API请求
-taobao.simba.rpt.targetingtageffect.get
-
-获取定向效果报表数据 */
+// TaobaoSimbaRptTargetingtageffectGetAPIRequest 获取定向效果报表数据 API请求
+// taobao.simba.rpt.targetingtageffect.get
+//
+// 获取定向效果报表数据
 type TaobaoSimbaRptTargetingtageffectGetAPIRequest struct {
 	model.Params
 	// 被操作者昵称

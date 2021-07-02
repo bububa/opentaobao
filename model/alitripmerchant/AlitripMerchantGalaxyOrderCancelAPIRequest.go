@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyOrderCancelAPIRequest
-星河-取消预订 API请求
-alitrip.merchant.galaxy.order.cancel
-
-雅高酒店用户使用该接口，取消酒店预订 */
+// AlitripMerchantGalaxyOrderCancelAPIRequest 星河-取消预订 API请求
+// alitrip.merchant.galaxy.order.cancel
+//
+// 雅高酒店用户使用该接口，取消酒店预订
 type AlitripMerchantGalaxyOrderCancelAPIRequest struct {
 	model.Params
 	// 租户标识

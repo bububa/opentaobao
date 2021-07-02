@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLsyMiniappMsgPushAPIResponse
-零售云小程序消息推送 API返回值
-alibaba.lsy.miniapp.msg.push
-
-零售云小程序消息推送，推送消息至零售云（喵零等） */
+// AlibabaLsyMiniappMsgPushAPIResponse 零售云小程序消息推送 API返回值
+// alibaba.lsy.miniapp.msg.push
+//
+// 零售云小程序消息推送，推送消息至零售云（喵零等）
 type AlibabaLsyMiniappMsgPushAPIResponse struct {
 	model.CommonResponse
 	AlibabaLsyMiniappMsgPushAPIResponseModel

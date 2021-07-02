@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse
-点播url API返回值
-taobao.ailab.aicloud.top.device.control.playurl
-
-点播url */
+// TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse 点播url API返回值
+// taobao.ailab.aicloud.top.device.control.playurl
+//
+// 点播url
 type TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponseModel

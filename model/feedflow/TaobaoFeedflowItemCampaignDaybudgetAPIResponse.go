@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemCampaignDaybudgetAPIResponse
-获取当日投放日预算总额 API返回值
-taobao.feedflow.item.campaign.daybudget
-
-获取当日投放日预算总额 */
+// TaobaoFeedflowItemCampaignDaybudgetAPIResponse 获取当日投放日预算总额 API返回值
+// taobao.feedflow.item.campaign.daybudget
+//
+// 获取当日投放日预算总额
 type TaobaoFeedflowItemCampaignDaybudgetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemCampaignDaybudgetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytUploadretailAPIResponse
-门店销售扫码回传接口 API返回值
-alibaba.alihealth.drug.kyt.uploadretail
-
-门店在销售给顾客时，扫描追溯码的数据按照单据回传； */
+// AlibabaAlihealthDrugKytUploadretailAPIResponse 门店销售扫码回传接口 API返回值
+// alibaba.alihealth.drug.kyt.uploadretail
+//
+// 门店在销售给顾客时，扫描追溯码的数据按照单据回传；
 type AlibabaAlihealthDrugKytUploadretailAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytUploadretailAPIResponseModel

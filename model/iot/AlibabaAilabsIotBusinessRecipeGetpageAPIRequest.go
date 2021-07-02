@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsIotBusinessRecipeGetpageAPIRequest
-分页查询食谱 API请求
-alibaba.ailabs.iot.business.recipe.getpage
-
-分页查询食谱数据 */
+// AlibabaAilabsIotBusinessRecipeGetpageAPIRequest 分页查询食谱 API请求
+// alibaba.ailabs.iot.business.recipe.getpage
+//
+// 分页查询食谱数据
 type AlibabaAilabsIotBusinessRecipeGetpageAPIRequest struct {
 	model.Params
 	// 开放账号id

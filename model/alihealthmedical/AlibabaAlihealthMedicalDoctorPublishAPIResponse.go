@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMedicalDoctorPublishAPIResponse
-三方机构医生信息上传 API返回值
-alibaba.alihealth.medical.doctor.publish
-
-三方机构上传医生信息 */
+// AlibabaAlihealthMedicalDoctorPublishAPIResponse 三方机构医生信息上传 API返回值
+// alibaba.alihealth.medical.doctor.publish
+//
+// 三方机构上传医生信息
 type AlibabaAlihealthMedicalDoctorPublishAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthMedicalDoctorPublishAPIResponseModel

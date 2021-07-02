@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSalestarAdgroupFindbycampidAPIResponse
-(销量明星)批量获取推广计划下的推广组信息 API返回值
-taobao.simba.salestar.adgroup.findbycampid
-
-批量得到推广计划下的推广组 */
+// TaobaoSimbaSalestarAdgroupFindbycampidAPIResponse (销量明星)批量获取推广计划下的推广组信息 API返回值
+// taobao.simba.salestar.adgroup.findbycampid
+//
+// 批量得到推广计划下的推广组
 type TaobaoSimbaSalestarAdgroupFindbycampidAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaSalestarAdgroupFindbycampidAPIResponseModel

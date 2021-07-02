@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenAccountTokenValidateAPIResponse
-open account token验证 API返回值
-taobao.open.account.token.validate
-
-open account token验证 */
+// TaobaoOpenAccountTokenValidateAPIResponse open account token验证 API返回值
+// taobao.open.account.token.validate
+//
+// open account token验证
 type TaobaoOpenAccountTokenValidateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenAccountTokenValidateAPIResponseModel

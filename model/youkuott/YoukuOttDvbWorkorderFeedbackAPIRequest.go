@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttDvbWorkorderFeedbackAPIRequest
-dvb工单反馈 API请求
-youku.ott.dvb.workorder.feedback
-
-dvb工单处理结果反馈 */
+// YoukuOttDvbWorkorderFeedbackAPIRequest dvb工单反馈 API请求
+// youku.ott.dvb.workorder.feedback
+//
+// dvb工单处理结果反馈
 type YoukuOttDvbWorkorderFeedbackAPIRequest struct {
 	model.Params
 	// 工单id

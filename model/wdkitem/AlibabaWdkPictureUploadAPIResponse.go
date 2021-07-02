@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkPictureUploadAPIResponse
-图片上传接口 API返回值
-alibaba.wdk.picture.upload
-
-上传图片 */
+// AlibabaWdkPictureUploadAPIResponse 图片上传接口 API返回值
+// alibaba.wdk.picture.upload
+//
+// 上传图片
 type AlibabaWdkPictureUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkPictureUploadAPIResponseModel

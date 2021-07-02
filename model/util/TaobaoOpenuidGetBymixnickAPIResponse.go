@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenuidGetBymixnickAPIResponse
-通过mixnick转换openuid API返回值
-taobao.openuid.get.bymixnick
-
-通过mixnick转换openuid */
+// TaobaoOpenuidGetBymixnickAPIResponse 通过mixnick转换openuid API返回值
+// taobao.openuid.get.bymixnick
+//
+// 通过mixnick转换openuid
 type TaobaoOpenuidGetBymixnickAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenuidGetBymixnickAPIResponseModel

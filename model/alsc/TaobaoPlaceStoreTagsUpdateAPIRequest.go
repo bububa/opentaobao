@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStoreTagsUpdateAPIRequest
-门店打标去标 API请求
-taobao.place.store.tags.update
-
-门店打标去标 */
+// TaobaoPlaceStoreTagsUpdateAPIRequest 门店打标去标 API请求
+// taobao.place.store.tags.update
+//
+// 门店打标去标
 type TaobaoPlaceStoreTagsUpdateAPIRequest struct {
 	model.Params
 	// 门店信息

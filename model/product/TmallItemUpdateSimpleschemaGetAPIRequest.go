@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemUpdateSimpleschemaGetAPIRequest
-官网同购编辑商品的get接口 API请求
-tmall.item.update.simpleschema.get
-
-官网同购编辑商品的get接口 */
+// TmallItemUpdateSimpleschemaGetAPIRequest 官网同购编辑商品的get接口 API请求
+// tmall.item.update.simpleschema.get
+//
+// 官网同购编辑商品的get接口
 type TmallItemUpdateSimpleschemaGetAPIRequest struct {
 	model.Params
 	// 商品id

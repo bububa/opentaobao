@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaXiamiApiArtistAlbumsGetAPIRequest
-艺人专辑 API请求
-alibaba.xiami.api.artist.albums.get
-
-艺人专辑 */
+// AlibabaXiamiApiArtistAlbumsGetAPIRequest 艺人专辑 API请求
+// alibaba.xiami.api.artist.albums.get
+//
+// 艺人专辑
 type AlibabaXiamiApiArtistAlbumsGetAPIRequest struct {
 	model.Params
 	// 歌曲数量

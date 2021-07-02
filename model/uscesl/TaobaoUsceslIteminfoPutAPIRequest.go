@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslIteminfoPutAPIRequest
-电子价签显示用商品信息写入 API请求
-taobao.uscesl.iteminfo.put
-
-用于电子价签上显示的商品信息的写入，包含价格及促销信息 */
+// TaobaoUsceslIteminfoPutAPIRequest 电子价签显示用商品信息写入 API请求
+// taobao.uscesl.iteminfo.put
+//
+// 用于电子价签上显示的商品信息的写入，包含价格及促销信息
 type TaobaoUsceslIteminfoPutAPIRequest struct {
 	model.Params
 	// 型号

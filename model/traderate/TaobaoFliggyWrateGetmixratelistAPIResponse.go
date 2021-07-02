@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFliggyWrateGetmixratelistAPIResponse
-飞猪通用评价接口 API返回值
-taobao.fliggy.wrate.getmixratelist
-
-飞猪评价通用接口 */
+// TaobaoFliggyWrateGetmixratelistAPIResponse 飞猪通用评价接口 API返回值
+// taobao.fliggy.wrate.getmixratelist
+//
+// 飞猪评价通用接口
 type TaobaoFliggyWrateGetmixratelistAPIResponse struct {
 	model.CommonResponse
 	TaobaoFliggyWrateGetmixratelistAPIResponseModel

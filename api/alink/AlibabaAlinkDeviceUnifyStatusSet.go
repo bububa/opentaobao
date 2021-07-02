@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alink"
 )
 
-/* AlibabaAlinkDeviceUnifyStatusSet
-设置设备标准属性状态
-alibaba.alink.device.unify.status.set
-
-操作用户绑定的设备 */
+// AlibabaAlinkDeviceUnifyStatusSet 设置设备标准属性状态
+// alibaba.alink.device.unify.status.set
+//
+// 操作用户绑定的设备
 func AlibabaAlinkDeviceUnifyStatusSet(clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnifyStatusSetAPIRequest, session string) (*alink.AlibabaAlinkDeviceUnifyStatusSetAPIResponse, error) {
 	var resp alink.AlibabaAlinkDeviceUnifyStatusSetAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemClassifyStoreQueryAPIResponse
-根据门店查分类信息 API返回值
-taobao.omniitem.classify.store.query
-
-根据门店查分类信息 */
+// TaobaoOmniitemClassifyStoreQueryAPIResponse 根据门店查分类信息 API返回值
+// taobao.omniitem.classify.store.query
+//
+// 根据门店查分类信息
 type TaobaoOmniitemClassifyStoreQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniitemClassifyStoreQueryAPIResponseModel

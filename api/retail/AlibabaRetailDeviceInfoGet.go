@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/retail"
 )
 
-/* AlibabaRetailDeviceInfoGet
-贩卖机设备信息获取
-alibaba.retail.device.info.get
-
-贩卖机设备信息获取 */
+// AlibabaRetailDeviceInfoGet 贩卖机设备信息获取
+// alibaba.retail.device.info.get
+//
+// 贩卖机设备信息获取
 func AlibabaRetailDeviceInfoGet(clt *core.SDKClient, req *retail.AlibabaRetailDeviceInfoGetAPIRequest, session string) (*retail.AlibabaRetailDeviceInfoGetAPIResponse, error) {
 	var resp retail.AlibabaRetailDeviceInfoGetAPIResponse
 	err := clt.Post(req, &resp, session)

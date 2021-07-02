@@ -213,6 +213,13 @@ func clearDesc(desc string, inline bool) string {
 	desc = strings.ReplaceAll(desc, "*/", "")
 	if inline {
 		desc = strings.ReplaceAll(desc, "\n", "")
+	} else {
+		lines := strings.Split(desc, "\n")
+		var arr []string
+		for _, line := range lines {
+			arr = append(arr, fmt.Sprintf("// %s", line))
+		}
+		desc = strings.Join(arr, "\n")
 	}
 	return desc
 }

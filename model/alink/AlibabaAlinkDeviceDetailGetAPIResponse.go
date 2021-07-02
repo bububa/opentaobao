@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlinkDeviceDetailGetAPIResponse
-获取设备详情 API返回值
-alibaba.alink.device.detail.get
-
-阿里智能获取设备详情 */
+// AlibabaAlinkDeviceDetailGetAPIResponse 获取设备详情 API返回值
+// alibaba.alink.device.detail.get
+//
+// 阿里智能获取设备详情
 type AlibabaAlinkDeviceDetailGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlinkDeviceDetailGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* XiamiContentSongsInfoQueryAPIRequest
-搜索歌曲列表 API请求
-xiami.content.songs.info.query
-
-多维度查询歌曲列表 */
+// XiamiContentSongsInfoQueryAPIRequest 搜索歌曲列表 API请求
+// xiami.content.songs.info.query
+//
+// 多维度查询歌曲列表
 type XiamiContentSongsInfoQueryAPIRequest struct {
 	model.Params
 	// 搜索条件 key支持songName/singerName/copyrightStatus/publishStatus/keyword

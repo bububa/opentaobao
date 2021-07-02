@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVasSubscSearchAPIResponse
-订购记录导出 API返回值
-taobao.vas.subsc.search
-
-用于ISV查询自己名下的应用及收费项目的订购记录 */
+// TaobaoVasSubscSearchAPIResponse 订购记录导出 API返回值
+// taobao.vas.subsc.search
+//
+// 用于ISV查询自己名下的应用及收费项目的订购记录
 type TaobaoVasSubscSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoVasSubscSearchAPIResponseModel

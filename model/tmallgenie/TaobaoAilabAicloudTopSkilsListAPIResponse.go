@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopSkilsListAPIResponse
-获取硬件平台设备下挂载的技能列表 API返回值
-taobao.ailab.aicloud.top.skils.list
-
-提供给在硬件平台接入设备的技能列表 */
+// TaobaoAilabAicloudTopSkilsListAPIResponse 获取硬件平台设备下挂载的技能列表 API返回值
+// taobao.ailab.aicloud.top.skils.list
+//
+// 提供给在硬件平台接入设备的技能列表
 type TaobaoAilabAicloudTopSkilsListAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopSkilsListAPIResponseModel

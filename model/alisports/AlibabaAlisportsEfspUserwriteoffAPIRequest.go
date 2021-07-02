@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsEfspUserwriteoffAPIRequest
-用户核销 API请求
-alibaba.alisports.efsp.userwriteoff
-
-用户核销 */
+// AlibabaAlisportsEfspUserwriteoffAPIRequest 用户核销 API请求
+// alibaba.alisports.efsp.userwriteoff
+//
+// 用户核销
 type AlibabaAlisportsEfspUserwriteoffAPIRequest struct {
 	model.Params
 	// 订单编号

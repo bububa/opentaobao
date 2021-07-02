@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRtrptCustGetAPIResponse
-获取账户实时报表数据 API返回值
-taobao.simba.rtrpt.cust.get
-
-获取账户实时报表数据 */
+// TaobaoSimbaRtrptCustGetAPIResponse 获取账户实时报表数据 API返回值
+// taobao.simba.rtrpt.cust.get
+//
+// 获取账户实时报表数据
 type TaobaoSimbaRtrptCustGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaRtrptCustGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketStoreGetAPIResponse
-获取电子凭证预约门店信息 API返回值
-taobao.vmarket.eticket.store.get
-
-用于给外部商家查询电子凭证预约门店信息 */
+// TaobaoVmarketEticketStoreGetAPIResponse 获取电子凭证预约门店信息 API返回值
+// taobao.vmarket.eticket.store.get
+//
+// 用于给外部商家查询电子凭证预约门店信息
 type TaobaoVmarketEticketStoreGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketStoreGetAPIResponseModel

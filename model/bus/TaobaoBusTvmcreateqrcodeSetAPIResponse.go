@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusTvmcreateqrcodeSetAPIResponse
-自助机生成支付宝支付二维码 API返回值
-taobao.bus.tvmcreateqrcode.set
-
-用于汽车票线下自助机调用获取支付宝的二维码 */
+// TaobaoBusTvmcreateqrcodeSetAPIResponse 自助机生成支付宝支付二维码 API返回值
+// taobao.bus.tvmcreateqrcode.set
+//
+// 用于汽车票线下自助机调用获取支付宝的二维码
 type TaobaoBusTvmcreateqrcodeSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusTvmcreateqrcodeSetAPIResponseModel

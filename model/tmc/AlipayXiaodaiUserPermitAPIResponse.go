@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlipayXiaodaiUserPermitAPIResponse
-阿里金融用户授权 API返回值
-alipay.xiaodai.user.permit
-
-阿里金融为用户开通消息通道接口 */
+// AlipayXiaodaiUserPermitAPIResponse 阿里金融用户授权 API返回值
+// alipay.xiaodai.user.permit
+//
+// 阿里金融为用户开通消息通道接口
 type AlipayXiaodaiUserPermitAPIResponse struct {
 	model.CommonResponse
 	AlipayXiaodaiUserPermitAPIResponseModel

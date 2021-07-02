@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpEffectProductSingleGetAPIResponse
-单个产品的报表 API返回值
-alibaba.scbp.effect.product.single.get
-
-单个产品的报表 */
+// AlibabaScbpEffectProductSingleGetAPIResponse 单个产品的报表 API返回值
+// alibaba.scbp.effect.product.single.get
+//
+// 单个产品的报表
 type AlibabaScbpEffectProductSingleGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpEffectProductSingleGetAPIResponseModel

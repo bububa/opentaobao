@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentBookordersGetAPIResponse
-代理商获取待出票订单列表 API返回值
-taobao.train.agent.bookorders.get
-
-代理商获取待出票订单列表，只返回订单号 */
+// TaobaoTrainAgentBookordersGetAPIResponse 代理商获取待出票订单列表 API返回值
+// taobao.train.agent.bookorders.get
+//
+// 代理商获取待出票订单列表，只返回订单号
 type TaobaoTrainAgentBookordersGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentBookordersGetAPIResponseModel

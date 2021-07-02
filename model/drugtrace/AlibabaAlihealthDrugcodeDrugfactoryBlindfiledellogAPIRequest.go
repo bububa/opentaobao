@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest
-接收盲底文件删除日志 API请求
-alibaba.alihealth.drugcode.drugfactory.blindfiledellog
-
-临床用药试验-接收盲底文件删除日志 */
+// AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest 接收盲底文件删除日志 API请求
+// alibaba.alihealth.drugcode.drugfactory.blindfiledellog
+//
+// 临床用药试验-接收盲底文件删除日志
 type AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest struct {
 	model.Params
 	// 药厂企业id

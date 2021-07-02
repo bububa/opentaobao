@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstSmsOfficialaccountCancelAPIResponse
-聚石塔取消公众号订购 API返回值
-taobao.jst.sms.officialaccount.cancel
-
-聚石塔取消公众号订购 */
+// TaobaoJstSmsOfficialaccountCancelAPIResponse 聚石塔取消公众号订购 API返回值
+// taobao.jst.sms.officialaccount.cancel
+//
+// 聚石塔取消公众号订购
 type TaobaoJstSmsOfficialaccountCancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsOfficialaccountCancelAPIResponseModel

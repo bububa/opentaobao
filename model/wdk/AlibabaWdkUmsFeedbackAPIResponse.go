@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkUmsFeedbackAPIResponse
-质量反馈（入库辅助）-ERP下发单 API返回值
-alibaba.wdk.ums.feedback
-
-质量反馈（入库辅助）-ERP下发单 */
+// AlibabaWdkUmsFeedbackAPIResponse 质量反馈（入库辅助）-ERP下发单 API返回值
+// alibaba.wdk.ums.feedback
+//
+// 质量反馈（入库辅助）-ERP下发单
 type AlibabaWdkUmsFeedbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkUmsFeedbackAPIResponseModel

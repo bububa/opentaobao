@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentTableauditOfflinelauncheritemAPIResponse
-运营位管理-联盟一体机下线运营位内容 API返回值
-yunos.tvpubadmin.content.tableaudit.offlinelauncheritem
-
-运营位管理-联盟一体机下线运营位内容 */
+// YunosTvpubadminContentTableauditOfflinelauncheritemAPIResponse 运营位管理-联盟一体机下线运营位内容 API返回值
+// yunos.tvpubadmin.content.tableaudit.offlinelauncheritem
+//
+// 运营位管理-联盟一体机下线运营位内容
 type YunosTvpubadminContentTableauditOfflinelauncheritemAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentTableauditOfflinelauncheritemAPIResponseModel

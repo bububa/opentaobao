@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponse
-移除司机黑名单 API返回值
-alibaba.happytrip.taxi.driver.blacklist.remove
-
-移除司机黑名单 */
+// AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponse 移除司机黑名单 API返回值
+// alibaba.happytrip.taxi.driver.blacklist.remove
+//
+// 移除司机黑名单
 type AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponse struct {
 	model.CommonResponse
 	AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponseModel

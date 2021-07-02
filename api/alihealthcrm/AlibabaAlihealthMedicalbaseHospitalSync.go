@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthcrm"
 )
 
-/* AlibabaAlihealthMedicalbaseHospitalSync
-互联网医院批量导入接口
-alibaba.alihealth.medicalbase.hospital.sync
-
-互联网医院isv批量通过接口批量导入 */
+// AlibabaAlihealthMedicalbaseHospitalSync 互联网医院批量导入接口
+// alibaba.alihealth.medicalbase.hospital.sync
+//
+// 互联网医院isv批量通过接口批量导入
 func AlibabaAlihealthMedicalbaseHospitalSync(clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest, session string) (*alihealthcrm.AlibabaAlihealthMedicalbaseHospitalSyncAPIResponse, error) {
 	var resp alihealthcrm.AlibabaAlihealthMedicalbaseHospitalSyncAPIResponse
 	err := clt.Post(req, &resp, session)

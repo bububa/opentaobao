@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttDvbFirstorderFeedbackAPIRequest
-dvb首次安装订单反馈 API请求
-youku.ott.dvb.firstorder.feedback
-
-dvb首次安装订单反馈 */
+// YoukuOttDvbFirstorderFeedbackAPIRequest dvb首次安装订单反馈 API请求
+// youku.ott.dvb.firstorder.feedback
+//
+// dvb首次安装订单反馈
 type YoukuOttDvbFirstorderFeedbackAPIRequest struct {
 	model.Params
 	// 订单id

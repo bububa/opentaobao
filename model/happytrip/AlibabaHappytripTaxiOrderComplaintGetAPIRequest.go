@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiOrderComplaintGetAPIRequest
-投诉详情 API请求
-alibaba.happytrip.taxi.order.complaint.get
-
-获取投诉处理进度详情 */
+// AlibabaHappytripTaxiOrderComplaintGetAPIRequest 投诉详情 API请求
+// alibaba.happytrip.taxi.order.complaint.get
+//
+// 获取投诉处理进度详情
 type AlibabaHappytripTaxiOrderComplaintGetAPIRequest struct {
 	model.Params
 	// 供应商订单号

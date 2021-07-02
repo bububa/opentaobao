@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopLikeAddAPIRequest
-增加收藏 API请求
-taobao.ailab.aicloud.top.like.add
-
-将制定内容加入收藏 */
+// TaobaoAilabAicloudTopLikeAddAPIRequest 增加收藏 API请求
+// taobao.ailab.aicloud.top.like.add
+//
+// 将制定内容加入收藏
 type TaobaoAilabAicloudTopLikeAddAPIRequest struct {
 	model.Params
 	// 扩展信息，用于存放APP类型等

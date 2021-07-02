@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDegUserGamegiftQueryAPIResponse
-用户数娱游戏礼包查询 API返回值
-taobao.deg.user.gamegift.query
-
-查询用户数娱礼包列表 */
+// TaobaoDegUserGamegiftQueryAPIResponse 用户数娱游戏礼包查询 API返回值
+// taobao.deg.user.gamegift.query
+//
+// 查询用户数娱礼包列表
 type TaobaoDegUserGamegiftQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoDegUserGamegiftQueryAPIResponseModel

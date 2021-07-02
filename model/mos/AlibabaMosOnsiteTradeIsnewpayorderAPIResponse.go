@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosOnsiteTradeIsnewpayorderAPIResponse
-是否为新支付订单 API返回值
-alibaba.mos.onsite.trade.isnewpayorder
-
-退款时，老支付宝手淘退款接口需要查一下该订单是否为新支付订单 */
+// AlibabaMosOnsiteTradeIsnewpayorderAPIResponse 是否为新支付订单 API返回值
+// alibaba.mos.onsite.trade.isnewpayorder
+//
+// 退款时，老支付宝手淘退款接口需要查一下该订单是否为新支付订单
 type AlibabaMosOnsiteTradeIsnewpayorderAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosOnsiteTradeIsnewpayorderAPIResponseModel

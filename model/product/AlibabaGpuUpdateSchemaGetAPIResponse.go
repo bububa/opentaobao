@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaGpuUpdateSchemaGetAPIResponse
-获取产品编辑schema规则的接口 API返回值
-alibaba.gpu.update.schema.get
-
-获取产品编辑schema规则的接口 */
+// AlibabaGpuUpdateSchemaGetAPIResponse 获取产品编辑schema规则的接口 API返回值
+// alibaba.gpu.update.schema.get
+//
+// 获取产品编辑schema规则的接口
 type AlibabaGpuUpdateSchemaGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaGpuUpdateSchemaGetAPIResponseModel

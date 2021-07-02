@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclUpdategrantroletouserAPIResponse
-修改用户到角色关系 API返回值
-alibaba.campus.acl.updategrantroletouser
-
-修改用户到角色关系 */
+// AlibabaCampusAclUpdategrantroletouserAPIResponse 修改用户到角色关系 API返回值
+// alibaba.campus.acl.updategrantroletouser
+//
+// 修改用户到角色关系
 type AlibabaCampusAclUpdategrantroletouserAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclUpdategrantroletouserAPIResponseModel

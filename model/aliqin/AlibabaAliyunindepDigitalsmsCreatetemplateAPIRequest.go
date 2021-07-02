@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest
-数字短信模板创建 API请求
-alibaba.aliyunindep.digitalsms.createtemplate
-
-数字短信模板创建，给阿里云一方产品使用，类型：9 */
+// AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest 数字短信模板创建 API请求
+// alibaba.aliyunindep.digitalsms.createtemplate
+//
+// 数字短信模板创建，给阿里云一方产品使用，类型：9
 type AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest struct {
 	model.Params
 	// 模板名称

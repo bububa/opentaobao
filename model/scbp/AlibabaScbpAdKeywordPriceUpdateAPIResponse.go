@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordPriceUpdateAPIResponse
-关键词改价 API返回值
-alibaba.scbp.ad.keyword.price.update
-
-关键词改价 */
+// AlibabaScbpAdKeywordPriceUpdateAPIResponse 关键词改价 API返回值
+// alibaba.scbp.ad.keyword.price.update
+//
+// 关键词改价
 type AlibabaScbpAdKeywordPriceUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdKeywordPriceUpdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMarketingLotteryRuleSaveAPIResponse
-抽奖平台抽奖规则保存接口 API返回值
-alibaba.marketing.lottery.rule.save
-
-抽奖平台抽奖规则保存接口，对于同一主体，保存新规则会失效老的规则 */
+// AlibabaMarketingLotteryRuleSaveAPIResponse 抽奖平台抽奖规则保存接口 API返回值
+// alibaba.marketing.lottery.rule.save
+//
+// 抽奖平台抽奖规则保存接口，对于同一主体，保存新规则会失效老的规则
 type AlibabaMarketingLotteryRuleSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaMarketingLotteryRuleSaveAPIResponseModel

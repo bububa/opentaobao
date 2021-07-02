@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductSkuDeleteAPIResponse
-产品SKU删除接口 API返回值
-taobao.fenxiao.product.sku.delete
-
-根据sku properties删除sku数据 */
+// TaobaoFenxiaoProductSkuDeleteAPIResponse 产品SKU删除接口 API返回值
+// taobao.fenxiao.product.sku.delete
+//
+// 根据sku properties删除sku数据
 type TaobaoFenxiaoProductSkuDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductSkuDeleteAPIResponseModel

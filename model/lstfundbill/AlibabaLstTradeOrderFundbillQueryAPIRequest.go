@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstTradeOrderFundbillQueryAPIRequest
-结算明细数据查询（品牌商视角） API请求
-alibaba.lst.trade.order.fundbill.query
-
-按照指定日期提供交易账单维度的结算明细数据，比供应商工作台上的结算账单还多一些数据项。 */
+// AlibabaLstTradeOrderFundbillQueryAPIRequest 结算明细数据查询（品牌商视角） API请求
+// alibaba.lst.trade.order.fundbill.query
+//
+// 按照指定日期提供交易账单维度的结算明细数据，比供应商工作台上的结算账单还多一些数据项。
 type AlibabaLstTradeOrderFundbillQueryAPIRequest struct {
 	model.Params
 	// 每页最大记录数

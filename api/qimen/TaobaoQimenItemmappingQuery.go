@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-/* TaobaoQimenItemmappingQuery
-前后端商品映射查询接口
-taobao.qimen.itemmapping.query
-
-前后端商品映射查询接口 */
+// TaobaoQimenItemmappingQuery 前后端商品映射查询接口
+// taobao.qimen.itemmapping.query
+//
+// 前后端商品映射查询接口
 func TaobaoQimenItemmappingQuery(clt *core.SDKClient, req *qimen.TaobaoQimenItemmappingQueryAPIRequest, session string) (*qimen.TaobaoQimenItemmappingQueryAPIResponse, error) {
 	var resp qimen.TaobaoQimenItemmappingQueryAPIResponse
 	err := clt.Post(req, &resp, session)

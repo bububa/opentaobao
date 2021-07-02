@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugUpdatebarcodeBytraccodeAPIRequest
-根据追溯码修改69码 API请求
-alibaba.alihealth.drug.updatebarcode.bytraccode
-
-根据追溯码修改69码 */
+// AlibabaAlihealthDrugUpdatebarcodeBytraccodeAPIRequest 根据追溯码修改69码 API请求
+// alibaba.alihealth.drug.updatebarcode.bytraccode
+//
+// 根据追溯码修改69码
 type AlibabaAlihealthDrugUpdatebarcodeBytraccodeAPIRequest struct {
 	model.Params
 	// 追溯码

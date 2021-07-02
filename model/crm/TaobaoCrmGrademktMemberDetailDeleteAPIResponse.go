@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmGrademktMemberDetailDeleteAPIResponse
-会员等级营销-删除商品等级营销明细 API返回值
-taobao.crm.grademkt.member.detail.delete
-
-删除商品等级营销明细 */
+// TaobaoCrmGrademktMemberDetailDeleteAPIResponse 会员等级营销-删除商品等级营销明细 API返回值
+// taobao.crm.grademkt.member.detail.delete
+//
+// 删除商品等级营销明细
 type TaobaoCrmGrademktMemberDetailDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmGrademktMemberDetailDeleteAPIResponseModel

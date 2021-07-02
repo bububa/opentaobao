@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleItemMediaAddAPIRequest
-图片上传 API请求
-alibaba.idle.item.media.add
-
-上传图片 */
+// AlibabaIdleItemMediaAddAPIRequest 图片上传 API请求
+// alibaba.idle.item.media.add
+//
+// 上传图片
 type AlibabaIdleItemMediaAddAPIRequest struct {
 	model.Params
 	// 多媒体文件字节流，图片<5M,视频<8M

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpChannelSalesOrderCreateAPIResponse
-供应链渠道销售单创建接口 API返回值
-alibaba.ascp.channel.sales.order.create
-
-阿里巴巴供应链渠道销售订单创建接口 */
+// AlibabaAscpChannelSalesOrderCreateAPIResponse 供应链渠道销售单创建接口 API返回值
+// alibaba.ascp.channel.sales.order.create
+//
+// 阿里巴巴供应链渠道销售订单创建接口
 type AlibabaAscpChannelSalesOrderCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpChannelSalesOrderCreateAPIResponseModel

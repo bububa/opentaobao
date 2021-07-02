@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseOrdernewGetAPIResponse
-查询订单详情 API返回值
-alibaba.ele.enterprise.ordernew.get
-
-查询订单详情 */
+// AlibabaEleEnterpriseOrdernewGetAPIResponse 查询订单详情 API返回值
+// alibaba.ele.enterprise.ordernew.get
+//
+// 查询订单详情
 type AlibabaEleEnterpriseOrdernewGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseOrdernewGetAPIResponseModel

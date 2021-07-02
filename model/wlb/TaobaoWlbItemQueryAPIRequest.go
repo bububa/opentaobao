@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbItemQueryAPIRequest
-分页查询商品 API请求
-taobao.wlb.item.query
-
-根据状态、卖家、SKU等信息查询商品列表 */
+// TaobaoWlbItemQueryAPIRequest 分页查询商品 API请求
+// taobao.wlb.item.query
+//
+// 根据状态、卖家、SKU等信息查询商品列表
 type TaobaoWlbItemQueryAPIRequest struct {
 	model.Params
 	// 是否是最小库存单元，只有最小库存单元的商品才可以有库存,值只能给"true","false"来表示;  若值不在范围内，则按true处理

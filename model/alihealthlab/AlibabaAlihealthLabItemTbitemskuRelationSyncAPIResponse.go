@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthLabItemTbitemskuRelationSyncAPIResponse
-阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步 API返回值
-alibaba.alihealth.lab.item.tbitemsku.relation.sync
-
-阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步 */
+// AlibabaAlihealthLabItemTbitemskuRelationSyncAPIResponse 阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步 API返回值
+// alibaba.alihealth.lab.item.tbitemsku.relation.sync
+//
+// 阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步
 type AlibabaAlihealthLabItemTbitemskuRelationSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthLabItemTbitemskuRelationSyncAPIResponseModel

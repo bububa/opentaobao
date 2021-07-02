@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateProductSmartmatchAPIResponse
-联盟物料智能推荐api API返回值
-aliexpress.affiliate.product.smartmatch
-
-联盟物料算法智能推荐 */
+// AliexpressAffiliateProductSmartmatchAPIResponse 联盟物料智能推荐api API返回值
+// aliexpress.affiliate.product.smartmatch
+//
+// 联盟物料算法智能推荐
 type AliexpressAffiliateProductSmartmatchAPIResponse struct {
 	model.CommonResponse
 	AliexpressAffiliateProductSmartmatchAPIResponseModel

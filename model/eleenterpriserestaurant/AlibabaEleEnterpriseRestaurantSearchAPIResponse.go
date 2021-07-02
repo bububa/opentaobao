@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseRestaurantSearchAPIResponse
-餐厅列表 API返回值
-alibaba.ele.enterprise.restaurant.search
-
-餐厅列表 */
+// AlibabaEleEnterpriseRestaurantSearchAPIResponse 餐厅列表 API返回值
+// alibaba.ele.enterprise.restaurant.search
+//
+// 餐厅列表
 type AlibabaEleEnterpriseRestaurantSearchAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseRestaurantSearchAPIResponseModel

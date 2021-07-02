@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDeActivityLuckydrawAPIRequest
-抽奖 API请求
-taobao.de.activity.luckydraw
-
-用于激励平台对外提供抽奖功能，包括但不限于集分宝、红包、宝点、淘金币、淘彩票等 */
+// TaobaoDeActivityLuckydrawAPIRequest 抽奖 API请求
+// taobao.de.activity.luckydraw
+//
+// 用于激励平台对外提供抽奖功能，包括但不限于集分宝、红包、宝点、淘金币、淘彩票等
 type TaobaoDeActivityLuckydrawAPIRequest struct {
 	model.Params
 	// 运营和cp约定的事件唯一标示

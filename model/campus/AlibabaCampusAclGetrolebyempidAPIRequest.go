@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclGetrolebyempidAPIRequest
-根据用户查询角色 API请求
-alibaba.campus.acl.getrolebyempid
-
-根据用户查询角色 */
+// AlibabaCampusAclGetrolebyempidAPIRequest 根据用户查询角色 API请求
+// alibaba.campus.acl.getrolebyempid
+//
+// 根据用户查询角色
 type AlibabaCampusAclGetrolebyempidAPIRequest struct {
 	model.Params
 	// 公司id

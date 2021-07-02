@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-/* TaobaoOcOrderCreate
-创建OC订单
-taobao.oc.order.create
-
-创建OC订单接口 */
+// TaobaoOcOrderCreate 创建OC订单
+// taobao.oc.order.create
+//
+// 创建OC订单接口
 func TaobaoOcOrderCreate(clt *core.SDKClient, req *jst.TaobaoOcOrderCreateAPIRequest, session string) (*jst.TaobaoOcOrderCreateAPIResponse, error) {
 	var resp jst.TaobaoOcOrderCreateAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKoubeiMallCommonStorePageAPIRequest
-分页查询综合体内的门店列表信息 API请求
-taobao.koubei.mall.common.store.page
-
-分页查询综合体内的门店列表信息 */
+// TaobaoKoubeiMallCommonStorePageAPIRequest 分页查询综合体内的门店列表信息 API请求
+// taobao.koubei.mall.common.store.page
+//
+// 分页查询综合体内的门店列表信息
 type TaobaoKoubeiMallCommonStorePageAPIRequest struct {
 	model.Params
 	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）

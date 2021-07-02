@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoIotTicketSpMailSignUploadAPIResponse
-IoT售后服务商签收客户邮寄设备附件上传 API返回值
-cainiao.iot.ticket.sp.mail.sign.upload
-
-IoT售后服务商签收客户邮寄设备附件上传 */
+// CainiaoIotTicketSpMailSignUploadAPIResponse IoT售后服务商签收客户邮寄设备附件上传 API返回值
+// cainiao.iot.ticket.sp.mail.sign.upload
+//
+// IoT售后服务商签收客户邮寄设备附件上传
 type CainiaoIotTicketSpMailSignUploadAPIResponse struct {
 	model.CommonResponse
 	CainiaoIotTicketSpMailSignUploadAPIResponseModel

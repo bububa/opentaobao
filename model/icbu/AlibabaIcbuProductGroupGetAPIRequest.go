@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductGroupGetAPIRequest
-分组信息获取 API请求
-alibaba.icbu.product.group.get
-
-分组信息获取 */
+// AlibabaIcbuProductGroupGetAPIRequest 分组信息获取 API请求
+// alibaba.icbu.product.group.get
+//
+// 分组信息获取
 type AlibabaIcbuProductGroupGetAPIRequest struct {
 	model.Params
 	// 分组ID，传-1获得所有一级分组

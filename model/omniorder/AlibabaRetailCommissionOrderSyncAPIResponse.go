@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailCommissionOrderSyncAPIResponse
-分佣数据传输 API返回值
-alibaba.retail.commission.order.sync
-
-同步分佣结果 */
+// AlibabaRetailCommissionOrderSyncAPIResponse 分佣数据传输 API返回值
+// alibaba.retail.commission.order.sync
+//
+// 同步分佣结果
 type AlibabaRetailCommissionOrderSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailCommissionOrderSyncAPIResponseModel

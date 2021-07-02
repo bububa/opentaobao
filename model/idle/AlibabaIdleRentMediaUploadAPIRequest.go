@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleRentMediaUploadAPIRequest
-闲鱼多媒体上传接口 API请求
-alibaba.idle.rent.media.upload
-
-上传多媒体信息，包括图片、视频（暂不支持） */
+// AlibabaIdleRentMediaUploadAPIRequest 闲鱼多媒体上传接口 API请求
+// alibaba.idle.rent.media.upload
+//
+// 上传多媒体信息，包括图片、视频（暂不支持）
 type AlibabaIdleRentMediaUploadAPIRequest struct {
 	model.Params
 	// 多媒体字节数组

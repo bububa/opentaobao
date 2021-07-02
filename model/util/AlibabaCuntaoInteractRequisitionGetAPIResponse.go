@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCuntaoInteractRequisitionGetAPIResponse
-供应商获取物料申请单列表 API返回值
-alibaba.cuntao.interact.requisition.get
-
-供应商获取物料申请单列表 */
+// AlibabaCuntaoInteractRequisitionGetAPIResponse 供应商获取物料申请单列表 API返回值
+// alibaba.cuntao.interact.requisition.get
+//
+// 供应商获取物料申请单列表
 type AlibabaCuntaoInteractRequisitionGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaCuntaoInteractRequisitionGetAPIResponseModel

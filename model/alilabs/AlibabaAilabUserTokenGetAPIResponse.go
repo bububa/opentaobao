@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabUserTokenGetAPIResponse
-三方账号获取 token API返回值
-alibaba.ailab.user.token.get
-
-inside 设备的三方 app，通过 extId、schema 生成 token */
+// AlibabaAilabUserTokenGetAPIResponse 三方账号获取 token API返回值
+// alibaba.ailab.user.token.get
+//
+// inside 设备的三方 app，通过 extId、schema 生成 token
 type AlibabaAilabUserTokenGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabUserTokenGetAPIResponseModel

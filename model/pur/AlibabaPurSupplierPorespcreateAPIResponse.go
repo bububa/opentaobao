@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPurSupplierPorespcreateAPIResponse
-po反馈创建 API返回值
-alibaba.pur.supplier.porespcreate
-
-PO反馈接口 */
+// AlibabaPurSupplierPorespcreateAPIResponse po反馈创建 API返回值
+// alibaba.pur.supplier.porespcreate
+//
+// PO反馈接口
 type AlibabaPurSupplierPorespcreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaPurSupplierPorespcreateAPIResponseModel

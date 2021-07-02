@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelBnbroomtypeAddAPIRequest
-民宿新增房源 API请求
-taobao.xhotel.bnbroomtype.add
-
-添加民宿房源 */
+// TaobaoXhotelBnbroomtypeAddAPIRequest 民宿新增房源 API请求
+// taobao.xhotel.bnbroomtype.add
+//
+// 添加民宿房源
 type TaobaoXhotelBnbroomtypeAddAPIRequest struct {
 	model.Params
 	// 销售渠道,默认taobao

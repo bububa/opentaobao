@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderAlipayfaceCreateAPIRequest
-信用住支付创建接口 API请求
-taobao.xhotel.order.alipayface.create
-
-用于创建一笔信用住支付，主要应用场景是线下信用住 */
+// TaobaoXhotelOrderAlipayfaceCreateAPIRequest 信用住支付创建接口 API请求
+// taobao.xhotel.order.alipayface.create
+//
+// 用于创建一笔信用住支付，主要应用场景是线下信用住
 type TaobaoXhotelOrderAlipayfaceCreateAPIRequest struct {
 	model.Params
 	// 总房费,单位为分

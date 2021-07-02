@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceAmountCheckAPIResponse
-开票量核对接口 API返回值
-alibaba.einvoice.amount.check
-
-跟开票服务商核对历史开票量，用来对账 */
+// AlibabaEinvoiceAmountCheckAPIResponse 开票量核对接口 API返回值
+// alibaba.einvoice.amount.check
+//
+// 跟开票服务商核对历史开票量，用来对账
 type AlibabaEinvoiceAmountCheckAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceAmountCheckAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDentalItemBindAPIRequest
-ISV绑定外部门店id和外部商品id API请求
-alibaba.alihealth.dental.item.bind
-
-ISV绑定外部门店id和外部商品id */
+// AlibabaAlihealthDentalItemBindAPIRequest ISV绑定外部门店id和外部商品id API请求
+// alibaba.alihealth.dental.item.bind
+//
+// ISV绑定外部门店id和外部商品id
 type AlibabaAlihealthDentalItemBindAPIRequest struct {
 	model.Params
 	// bind_list

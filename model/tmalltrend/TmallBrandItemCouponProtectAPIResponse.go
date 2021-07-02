@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallBrandItemCouponProtectAPIResponse
-全域新品店铺优惠券免除 API返回值
-tmall.brand.item.coupon.protect
-
-全域新品店铺优惠券免除申请打标接口 */
+// TmallBrandItemCouponProtectAPIResponse 全域新品店铺优惠券免除 API返回值
+// tmall.brand.item.coupon.protect
+//
+// 全域新品店铺优惠券免除申请打标接口
 type TmallBrandItemCouponProtectAPIResponse struct {
 	model.CommonResponse
 	TmallBrandItemCouponProtectAPIResponseModel

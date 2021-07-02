@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallAliautoServiceReceiptGetAPIResponse
-isv查询服务工单详情 API返回值
-tmall.aliauto.service.receipt.get
-
-isv查询服务工单详情 */
+// TmallAliautoServiceReceiptGetAPIResponse isv查询服务工单详情 API返回值
+// tmall.aliauto.service.receipt.get
+//
+// isv查询服务工单详情
 type TmallAliautoServiceReceiptGetAPIResponse struct {
 	model.CommonResponse
 	TmallAliautoServiceReceiptGetAPIResponseModel

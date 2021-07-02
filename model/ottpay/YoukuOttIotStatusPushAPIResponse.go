@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttIotStatusPushAPIResponse
-iot设备状态变化通知接口 API返回值
-youku.ott.iot.status.push
-
-ott iot设备状态通知 */
+// YoukuOttIotStatusPushAPIResponse iot设备状态变化通知接口 API返回值
+// youku.ott.iot.status.push
+//
+// ott iot设备状态通知
 type YoukuOttIotStatusPushAPIResponse struct {
 	model.CommonResponse
 	YoukuOttIotStatusPushAPIResponseModel

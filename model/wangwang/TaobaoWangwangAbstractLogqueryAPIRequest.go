@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWangwangAbstractLogqueryAPIRequest
-模糊聊天记录查询 API请求
-taobao.wangwang.abstract.logquery
-
-模糊聊天记录查询 */
+// TaobaoWangwangAbstractLogqueryAPIRequest 模糊聊天记录查询 API请求
+// taobao.wangwang.abstract.logquery
+//
+// 模糊聊天记录查询
 type TaobaoWangwangAbstractLogqueryAPIRequest struct {
 	model.Params
 	// 买家id，有cntaobao前缀

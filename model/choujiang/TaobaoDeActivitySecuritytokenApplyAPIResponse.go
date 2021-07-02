@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDeActivitySecuritytokenApplyAPIResponse
-安全token获取 API返回值
-taobao.de.activity.securitytoken.apply
-
-新增接口，这个接口是用于在手机端进行抽奖时候的验证使用 */
+// TaobaoDeActivitySecuritytokenApplyAPIResponse 安全token获取 API返回值
+// taobao.de.activity.securitytoken.apply
+//
+// 新增接口，这个接口是用于在手机端进行抽奖时候的验证使用
 type TaobaoDeActivitySecuritytokenApplyAPIResponse struct {
 	model.CommonResponse
 	TaobaoDeActivitySecuritytokenApplyAPIResponseModel

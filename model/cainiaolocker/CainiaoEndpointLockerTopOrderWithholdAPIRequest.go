@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoEndpointLockerTopOrderWithholdAPIRequest
-代扣支付 API请求
-cainiao.endpoint.locker.top.order.withhold
-
-提供代扣，允许有一笔欠款。 */
+// CainiaoEndpointLockerTopOrderWithholdAPIRequest 代扣支付 API请求
+// cainiao.endpoint.locker.top.order.withhold
+//
+// 提供代扣，允许有一笔欠款。
 type CainiaoEndpointLockerTopOrderWithholdAPIRequest struct {
 	model.Params
 	// 柜子公司编码

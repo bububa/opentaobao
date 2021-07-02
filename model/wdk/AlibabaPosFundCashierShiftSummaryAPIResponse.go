@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPosFundCashierShiftSummaryAPIResponse
-收银换班数据同步 API返回值
-alibaba.pos.fund.cashier.shift.summary
-
-收银换班数据同步，将每天收银换班的数据回流给商家。 */
+// AlibabaPosFundCashierShiftSummaryAPIResponse 收银换班数据同步 API返回值
+// alibaba.pos.fund.cashier.shift.summary
+//
+// 收银换班数据同步，将每天收银换班的数据回流给商家。
 type AlibabaPosFundCashierShiftSummaryAPIResponse struct {
 	model.CommonResponse
 	AlibabaPosFundCashierShiftSummaryAPIResponseModel

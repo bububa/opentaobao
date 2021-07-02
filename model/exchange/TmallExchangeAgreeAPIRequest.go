@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeAgreeAPIRequest
-卖家同意换货申请 API请求
-tmall.exchange.agree
-
-卖家同意换货申请 */
+// TmallExchangeAgreeAPIRequest 卖家同意换货申请 API请求
+// tmall.exchange.agree
+//
+// 卖家同意换货申请
 type TmallExchangeAgreeAPIRequest struct {
 	model.Params
 	// 邮政编码

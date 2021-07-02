@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthReserveDentalMarkitemAPIRequest
-标记商品是否可预约 API请求
-alibaba.alihealth.reserve.dental.markitem
-
-标记商品是否可预约 */
+// AlibabaAlihealthReserveDentalMarkitemAPIRequest 标记商品是否可预约 API请求
+// alibaba.alihealth.reserve.dental.markitem
+//
+// 标记商品是否可预约
 type AlibabaAlihealthReserveDentalMarkitemAPIRequest struct {
 	model.Params
 	// 平台商品id

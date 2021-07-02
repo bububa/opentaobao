@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaBidwordPricetoolsAPIRequest
-关键词出价指导工具（新） API请求
-taobao.simba.bidword.pricetools
-
-关键词出价指导工具（新） */
+// TaobaoSimbaBidwordPricetoolsAPIRequest 关键词出价指导工具（新） API请求
+// taobao.simba.bidword.pricetools
+//
+// 关键词出价指导工具（新）
 type TaobaoSimbaBidwordPricetoolsAPIRequest struct {
 	model.Params
 	// 关键词id

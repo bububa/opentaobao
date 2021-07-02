@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInventoryWarehouseQueryAPIRequest
-分页查询商家仓信息 API请求
-taobao.inventory.warehouse.query
-
-分页查询商家仓信息 */
+// TaobaoInventoryWarehouseQueryAPIRequest 分页查询商家仓信息 API请求
+// taobao.inventory.warehouse.query
+//
+// 分页查询商家仓信息
 type TaobaoInventoryWarehouseQueryAPIRequest struct {
 	model.Params
 	// 页码

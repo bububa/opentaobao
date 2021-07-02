@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusLastplaceGetAPIResponse
-获取目的地数据 API返回值
-taobao.bus.lastplace.get
-
-传入城市 获取对应的目的地 */
+// TaobaoBusLastplaceGetAPIResponse 获取目的地数据 API返回值
+// taobao.bus.lastplace.get
+//
+// 传入城市 获取对应的目的地
 type TaobaoBusLastplaceGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusLastplaceGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkOrderListAPIResponse
-五道口订单拉取 API返回值
-alibaba.wdk.order.list
-
-五道口交易订单拉取接口 */
+// AlibabaWdkOrderListAPIResponse 五道口订单拉取 API返回值
+// alibaba.wdk.order.list
+//
+// 五道口交易订单拉取接口
 type AlibabaWdkOrderListAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkOrderListAPIResponseModel

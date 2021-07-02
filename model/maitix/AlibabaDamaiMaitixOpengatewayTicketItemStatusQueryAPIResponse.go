@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIResponse
-分销状态查询接口queryTicketItemStatusByTicketItemId API返回值
-alibaba.damai.maitix.opengateway.ticketItem.status.query
-
-queryTicketItemStatusByTicketItemId */
+// AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIResponse 分销状态查询接口queryTicketItemStatusByTicketItemId API返回值
+// alibaba.damai.maitix.opengateway.ticketItem.status.query
+//
+// queryTicketItemStatusByTicketItemId
 type AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse
-获取垃圾注册防控结果 API返回值
-alibaba.security.jaq.spamregisterprevention.result.fetch
-
-获取垃圾注册防控结果 */
+// AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse 获取垃圾注册防控结果 API返回值
+// alibaba.security.jaq.spamregisterprevention.result.fetch
+//
+// 获取垃圾注册防控结果
 type AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSearchcrowdBatchAddAPIResponse
-推广单元增加搜索人群 API返回值
-taobao.simba.searchcrowd.batch.add
-
-推广单元新增搜索人群 */
+// TaobaoSimbaSearchcrowdBatchAddAPIResponse 推广单元增加搜索人群 API返回值
+// taobao.simba.searchcrowd.batch.add
+//
+// 推广单元新增搜索人群
 type TaobaoSimbaSearchcrowdBatchAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaSearchcrowdBatchAddAPIResponseModel

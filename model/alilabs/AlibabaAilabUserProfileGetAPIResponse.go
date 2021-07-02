@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabUserProfileGetAPIResponse
-查询用户信息 API返回值
-alibaba.ailab.user.profile.get
-
-提供天猫精灵用户头像、昵称的查询接口，供本田车载天猫精灵使用 */
+// AlibabaAilabUserProfileGetAPIResponse 查询用户信息 API返回值
+// alibaba.ailab.user.profile.get
+//
+// 提供天猫精灵用户头像、昵称的查询接口，供本田车载天猫精灵使用
 type AlibabaAilabUserProfileGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabUserProfileGetAPIResponseModel

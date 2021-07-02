@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardSuspendAPIResponse
-工单挂起 API返回值
-tmall.servicecenter.workcard.suspend
-
-工单挂起 */
+// TmallServicecenterWorkcardSuspendAPIResponse 工单挂起 API返回值
+// tmall.servicecenter.workcard.suspend
+//
+// 工单挂起
 type TmallServicecenterWorkcardSuspendAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardSuspendAPIResponseModel

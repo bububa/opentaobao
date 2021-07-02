@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtBrandinfoQueryAPIResponse
-品牌数据查询 API返回值
-tmall.nrt.brandinfo.query
-
-商家获取自己旗舰店授权的品牌id列表 */
+// TmallNrtBrandinfoQueryAPIResponse 品牌数据查询 API返回值
+// tmall.nrt.brandinfo.query
+//
+// 商家获取自己旗舰店授权的品牌id列表
 type TmallNrtBrandinfoQueryAPIResponse struct {
 	model.CommonResponse
 	TmallNrtBrandinfoQueryAPIResponseModel

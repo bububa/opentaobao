@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-/* YunosTvpubadminManageTopicFindbyid
-根据id获取专题信息
-yunos.tvpubadmin.manage.topic.findbyid
-
-根据id获取专题信息 */
+// YunosTvpubadminManageTopicFindbyid 根据id获取专题信息
+// yunos.tvpubadmin.manage.topic.findbyid
+//
+// 根据id获取专题信息
 func YunosTvpubadminManageTopicFindbyid(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageTopicFindbyidAPIRequest, session string) (*tvupadmin.YunosTvpubadminManageTopicFindbyidAPIResponse, error) {
 	var resp tvupadmin.YunosTvpubadminManageTopicFindbyidAPIResponse
 	err := clt.Post(req, &resp, session)

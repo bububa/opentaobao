@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStoreModifyAPIResponse
-商家修改线下门店 API返回值
-taobao.place.store.modify
-
-用于商家修改线下门店信息 */
+// TaobaoPlaceStoreModifyAPIResponse 商家修改线下门店 API返回值
+// taobao.place.store.modify
+//
+// 用于商家修改线下门店信息
 type TaobaoPlaceStoreModifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoPlaceStoreModifyAPIResponseModel

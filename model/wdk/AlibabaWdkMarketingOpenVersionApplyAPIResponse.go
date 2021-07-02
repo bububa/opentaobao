@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingOpenVersionApplyAPIResponse
-数据同步版本号申请 API返回值
-alibaba.wdk.marketing.open.version.apply
-
-数据同步版本号申请 */
+// AlibabaWdkMarketingOpenVersionApplyAPIResponse 数据同步版本号申请 API返回值
+// alibaba.wdk.marketing.open.version.apply
+//
+// 数据同步版本号申请
 type AlibabaWdkMarketingOpenVersionApplyAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingOpenVersionApplyAPIResponseModel

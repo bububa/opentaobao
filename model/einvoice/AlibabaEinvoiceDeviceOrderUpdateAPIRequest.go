@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceDeviceOrderUpdateAPIRequest
-回传/更新设备订购单 API请求
-alibaba.einvoice.device.order.update
-
-更新设备订购单，同步税控设备信息 */
+// AlibabaEinvoiceDeviceOrderUpdateAPIRequest 回传/更新设备订购单 API请求
+// alibaba.einvoice.device.order.update
+//
+// 更新设备订购单，同步税控设备信息
 type AlibabaEinvoiceDeviceOrderUpdateAPIRequest struct {
 	model.Params
 	// 订购单工单事件：  deploy_finish: 设备就绪，部署完成  isv_reject: 服务商驳回订购单

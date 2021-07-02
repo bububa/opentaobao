@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderAlipayfaceCancelsettleAPIResponse
-信用住订单取消结算接口 API返回值
-taobao.xhotel.order.alipayface.cancelsettle
-
-信用住订单由于客人为出现等原因，最终取消结算,一定要在结算后2个小时之内调用，否则不会成功。 */
+// TaobaoXhotelOrderAlipayfaceCancelsettleAPIResponse 信用住订单取消结算接口 API返回值
+// taobao.xhotel.order.alipayface.cancelsettle
+//
+// 信用住订单由于客人为出现等原因，最终取消结算,一定要在结算后2个小时之内调用，否则不会成功。
 type TaobaoXhotelOrderAlipayfaceCancelsettleAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelOrderAlipayfaceCancelsettleAPIResponseModel

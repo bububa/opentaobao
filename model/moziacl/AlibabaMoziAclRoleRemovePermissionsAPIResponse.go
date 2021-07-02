@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziAclRoleRemovePermissionsAPIResponse
-角色移除功能权限 API返回值
-alibaba.mozi.acl.role.remove.permissions
-
-从角色中移除一批功能权限 */
+// AlibabaMoziAclRoleRemovePermissionsAPIResponse 角色移除功能权限 API返回值
+// alibaba.mozi.acl.role.remove.permissions
+//
+// 从角色中移除一批功能权限
 type AlibabaMoziAclRoleRemovePermissionsAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziAclRoleRemovePermissionsAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseCouponGetAPIResponse
-获取用户优惠券 API返回值
-alibaba.ele.enterprise.coupon.get
-
-获取用户优惠券 */
+// AlibabaEleEnterpriseCouponGetAPIResponse 获取用户优惠券 API返回值
+// alibaba.ele.enterprise.coupon.get
+//
+// 获取用户优惠券
 type AlibabaEleEnterpriseCouponGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseCouponGetAPIResponseModel

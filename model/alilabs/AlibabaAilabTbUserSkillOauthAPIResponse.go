@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabTbUserSkillOauthAPIResponse
-用户技能 Oauth 授权（淘宝 openId） API返回值
-alibaba.ailab.tb.user.skill.oauth
-
-定制机厂商，在用户配网完成后，厂商调用此接口，写入特定技能的 Oauth 信息 */
+// AlibabaAilabTbUserSkillOauthAPIResponse 用户技能 Oauth 授权（淘宝 openId） API返回值
+// alibaba.ailab.tb.user.skill.oauth
+//
+// 定制机厂商，在用户配网完成后，厂商调用此接口，写入特定技能的 Oauth 信息
 type AlibabaAilabTbUserSkillOauthAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabTbUserSkillOauthAPIResponseModel

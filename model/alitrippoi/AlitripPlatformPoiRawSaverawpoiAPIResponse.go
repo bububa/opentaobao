@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripPlatformPoiRawSaverawpoiAPIResponse
-POI开放存储能力 API返回值
-alitrip.platform.poi.raw.saverawpoi
-
-POI开放存储提供离线/在线/纬错更新的能力 */
+// AlitripPlatformPoiRawSaverawpoiAPIResponse POI开放存储能力 API返回值
+// alitrip.platform.poi.raw.saverawpoi
+//
+// POI开放存储提供离线/在线/纬错更新的能力
 type AlitripPlatformPoiRawSaverawpoiAPIResponse struct {
 	model.CommonResponse
 	AlitripPlatformPoiRawSaverawpoiAPIResponseModel

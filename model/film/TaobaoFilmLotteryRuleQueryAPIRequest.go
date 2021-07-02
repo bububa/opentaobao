@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmLotteryRuleQueryAPIRequest
-淘票票抽奖活动查询API(渠道) API请求
-taobao.film.lottery.rule.query
-
-淘票票抽奖活动查询API，渠道维度查询 */
+// TaobaoFilmLotteryRuleQueryAPIRequest 淘票票抽奖活动查询API(渠道) API请求
+// taobao.film.lottery.rule.query
+//
+// 淘票票抽奖活动查询API，渠道维度查询
 type TaobaoFilmLotteryRuleQueryAPIRequest struct {
 	model.Params
 	// 账号类型（TAOBAO\ALIPAY\PHONE）

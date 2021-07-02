@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemClassifyOperatorAPIRequest
-添加/修改分类 API请求
-taobao.omniitem.classify.operator
-
-添加/修改分类 */
+// TaobaoOmniitemClassifyOperatorAPIRequest 添加/修改分类 API请求
+// taobao.omniitem.classify.operator
+//
+// 添加/修改分类
 type TaobaoOmniitemClassifyOperatorAPIRequest struct {
 	model.Params
 	// 分类信息

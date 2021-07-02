@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse
-信息流单元内解绑资源位 API返回值
-taobao.feedflow.item.adgroup.adzone.unbind
-
-信息流单元内解绑资源位 */
+// TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse 信息流单元内解绑资源位 API返回值
+// taobao.feedflow.item.adgroup.adzone.unbind
+//
+// 信息流单元内解绑资源位
 type TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSebpIsvUserCheckAPIRequest
-淘小铺账户实名校验接口 API请求
-taobao.sebp.isv.user.check
-
-校验淘小铺账户和身份信息匹配成功 */
+// TaobaoSebpIsvUserCheckAPIRequest 淘小铺账户实名校验接口 API请求
+// taobao.sebp.isv.user.check
+//
+// 校验淘小铺账户和身份信息匹配成功
 type TaobaoSebpIsvUserCheckAPIRequest struct {
 	model.Params
 	// 淘宝账号

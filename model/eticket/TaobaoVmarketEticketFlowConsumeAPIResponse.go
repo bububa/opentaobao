@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketFlowConsumeAPIResponse
-无交易类凭证核销 API返回值
-taobao.vmarket.eticket.flow.consume
-
-无交易类凭证核销 */
+// TaobaoVmarketEticketFlowConsumeAPIResponse 无交易类凭证核销 API返回值
+// taobao.vmarket.eticket.flow.consume
+//
+// 无交易类凭证核销
 type TaobaoVmarketEticketFlowConsumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketFlowConsumeAPIResponseModel

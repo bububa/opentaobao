@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentReturnticketConfirmVtwoAPIResponse
-退票通知 API返回值
-taobao.train.agent.returnticket.confirm.vtwo
-
-火车票代理商接口——退票通知回调 */
+// TaobaoTrainAgentReturnticketConfirmVtwoAPIResponse 退票通知 API返回值
+// taobao.train.agent.returnticket.confirm.vtwo
+//
+// 火车票代理商接口——退票通知回调
 type TaobaoTrainAgentReturnticketConfirmVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentReturnticketConfirmVtwoAPIResponseModel

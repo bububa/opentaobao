@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJipiaoAgentOrderTicketAPIRequest
-【机票代理商订单】订单回填票号/成功订单 API请求
-taobao.jipiao.agent.order.ticket
-
-淘宝机票代理商回填票号/成功订单 */
+// TaobaoJipiaoAgentOrderTicketAPIRequest 【机票代理商订单】订单回填票号/成功订单 API请求
+// taobao.jipiao.agent.order.ticket
+//
+// 淘宝机票代理商回填票号/成功订单
 type TaobaoJipiaoAgentOrderTicketAPIRequest struct {
 	model.Params
 	// 淘宝系统订单id

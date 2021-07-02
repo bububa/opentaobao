@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminManageTopicAddAPIResponse
-新增专题 API返回值
-yunos.tvpubadmin.manage.topic.add
-
-专题新增 */
+// YunosTvpubadminManageTopicAddAPIResponse 新增专题 API返回值
+// yunos.tvpubadmin.manage.topic.add
+//
+// 专题新增
 type YunosTvpubadminManageTopicAddAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminManageTopicAddAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCntecItemChangeMessageAPIResponse
-商品变更消息 API返回值
-cainiao.cntec.item.change.message
-
-供货商商品信息变更消息 */
+// CainiaoCntecItemChangeMessageAPIResponse 商品变更消息 API返回值
+// cainiao.cntec.item.change.message
+//
+// 供货商商品信息变更消息
 type CainiaoCntecItemChangeMessageAPIResponse struct {
 	model.CommonResponse
 	CainiaoCntecItemChangeMessageAPIResponseModel

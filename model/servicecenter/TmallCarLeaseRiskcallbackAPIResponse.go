@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseRiskcallbackAPIResponse
-整车租赁风控模型回调 API返回值
-tmall.car.lease.riskcallback
-
-租赁公司回调风控结果 */
+// TmallCarLeaseRiskcallbackAPIResponse 整车租赁风控模型回调 API返回值
+// tmall.car.lease.riskcallback
+//
+// 租赁公司回调风控结果
 type TmallCarLeaseRiskcallbackAPIResponse struct {
 	model.CommonResponse
 	TmallCarLeaseRiskcallbackAPIResponseModel

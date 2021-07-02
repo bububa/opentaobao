@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrSellerStorerangeSyncAPIResponse
-同步商户中心服务范围 API返回值
-tmall.nr.seller.storerange.sync
-
-同步商户中心服务范围 */
+// TmallNrSellerStorerangeSyncAPIResponse 同步商户中心服务范围 API返回值
+// tmall.nr.seller.storerange.sync
+//
+// 同步商户中心服务范围
 type TmallNrSellerStorerangeSyncAPIResponse struct {
 	model.CommonResponse
 	TmallNrSellerStorerangeSyncAPIResponseModel

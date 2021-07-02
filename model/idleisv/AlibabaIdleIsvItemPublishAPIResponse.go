@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleIsvItemPublishAPIResponse
-服务商闲鱼商品发布 API返回值
-alibaba.idle.isv.item.publish
-
-服务商ISV闲鱼商品发布 */
+// AlibabaIdleIsvItemPublishAPIResponse 服务商闲鱼商品发布 API返回值
+// alibaba.idle.isv.item.publish
+//
+// 服务商ISV闲鱼商品发布
 type AlibabaIdleIsvItemPublishAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleIsvItemPublishAPIResponseModel

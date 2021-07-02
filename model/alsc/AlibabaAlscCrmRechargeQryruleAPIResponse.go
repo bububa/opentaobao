@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmRechargeQryruleAPIResponse
-储值规则下行 API返回值
-alibaba.alsc.crm.recharge.qryrule
-
-储值规则下行 */
+// AlibabaAlscCrmRechargeQryruleAPIResponse 储值规则下行 API返回值
+// alibaba.alsc.crm.recharge.qryrule
+//
+// 储值规则下行
 type AlibabaAlscCrmRechargeQryruleAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmRechargeQryruleAPIResponseModel

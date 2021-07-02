@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest
-查询发薪结果 API请求
-alibaba.einvoice.tax.opt.salaryresult.query
-
-查询发薪结果 */
+// AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest 查询发薪结果 API请求
+// alibaba.einvoice.tax.opt.salaryresult.query
+//
+// 查询发薪结果
 type AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest struct {
 	model.Params
 	// 发薪流水号

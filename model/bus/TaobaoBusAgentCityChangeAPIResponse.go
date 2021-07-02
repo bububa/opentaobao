@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusAgentCityChangeAPIResponse
-城市变更 API返回值
-taobao.bus.agent.city.change
-
-代理商通知城市变更，比如可售变为不可售等 */
+// TaobaoBusAgentCityChangeAPIResponse 城市变更 API返回值
+// taobao.bus.agent.city.change
+//
+// 代理商通知城市变更，比如可售变为不可售等
 type TaobaoBusAgentCityChangeAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusAgentCityChangeAPIResponseModel

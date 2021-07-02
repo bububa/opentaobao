@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJdsHluserGetAPIResponse
-订单全链路用户信息获取 API返回值
-taobao.jds.hluser.get
-
-订单全链路用户信息获取 */
+// TaobaoJdsHluserGetAPIResponse 订单全链路用户信息获取 API返回值
+// taobao.jds.hluser.get
+//
+// 订单全链路用户信息获取
 type TaobaoJdsHluserGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoJdsHluserGetAPIResponseModel

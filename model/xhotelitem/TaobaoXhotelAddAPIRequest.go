@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelAddAPIRequest
-酒店新增接口（ID重复自动更新） API请求
-taobao.xhotel.add
-
-添加酒店或更新酒店 */
+// TaobaoXhotelAddAPIRequest 酒店新增接口（ID重复自动更新） API请求
+// taobao.xhotel.add
+//
+// 添加酒店或更新酒店
 type TaobaoXhotelAddAPIRequest struct {
 	model.Params
 	// 外部酒店ID, 这是卖家自己系统中的ID

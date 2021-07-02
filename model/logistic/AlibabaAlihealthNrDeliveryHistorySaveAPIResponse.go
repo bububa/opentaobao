@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthNrDeliveryHistorySaveAPIResponse
-物流信息回传接口 API返回值
-alibaba.alihealth.nr.delivery.history.save
-
-商家ERP回传物流信息 */
+// AlibabaAlihealthNrDeliveryHistorySaveAPIResponse 物流信息回传接口 API返回值
+// alibaba.alihealth.nr.delivery.history.save
+//
+// 商家ERP回传物流信息
 type AlibabaAlihealthNrDeliveryHistorySaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthNrDeliveryHistorySaveAPIResponseModel

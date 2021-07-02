@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCreativeAddAPIResponse
-增加创意 API返回值
-taobao.simba.creative.add
-
-创建一个创意 */
+// TaobaoSimbaCreativeAddAPIResponse 增加创意 API返回值
+// taobao.simba.creative.add
+//
+// 创建一个创意
 type TaobaoSimbaCreativeAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCreativeAddAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCgameAvatarUserbodyQueryAPIResponse
-用户Avatar body查询 API返回值
-alibaba.cgame.avatar.userbody.query
-
-Avatar用户body数据查询 */
+// AlibabaCgameAvatarUserbodyQueryAPIResponse 用户Avatar body查询 API返回值
+// alibaba.cgame.avatar.userbody.query
+//
+// Avatar用户body数据查询
 type AlibabaCgameAvatarUserbodyQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaCgameAvatarUserbodyQueryAPIResponseModel

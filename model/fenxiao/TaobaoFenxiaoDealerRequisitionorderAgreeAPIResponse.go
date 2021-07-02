@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoDealerRequisitionorderAgreeAPIResponse
-供应商/分销商通过采购申请/经销采购单申请 API返回值
-taobao.fenxiao.dealer.requisitionorder.agree
-
-供应商或分销商通过采购申请/经销采购单审核 */
+// TaobaoFenxiaoDealerRequisitionorderAgreeAPIResponse 供应商/分销商通过采购申请/经销采购单申请 API返回值
+// taobao.fenxiao.dealer.requisitionorder.agree
+//
+// 供应商或分销商通过采购申请/经销采购单审核
 type TaobaoFenxiaoDealerRequisitionorderAgreeAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoDealerRequisitionorderAgreeAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateHotproductDownloadAPIResponse
-联盟营销爆品下载接口 API返回值
-aliexpress.affiliate.hotproduct.download
-
-查询联盟爆品API */
+// AliexpressAffiliateHotproductDownloadAPIResponse 联盟营销爆品下载接口 API返回值
+// aliexpress.affiliate.hotproduct.download
+//
+// 查询联盟爆品API
 type AliexpressAffiliateHotproductDownloadAPIResponse struct {
 	model.CommonResponse
 	AliexpressAffiliateHotproductDownloadAPIResponseModel

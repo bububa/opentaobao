@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoEndpointLockerTopWithholdQueryAPIResponse
-查询能否代扣 API返回值
-cainiao.endpoint.locker.top.withhold.query
-
-查询是否有代扣欠款，是否签署代扣协议。 */
+// CainiaoEndpointLockerTopWithholdQueryAPIResponse 查询能否代扣 API返回值
+// cainiao.endpoint.locker.top.withhold.query
+//
+// 查询是否有代扣欠款，是否签署代扣协议。
 type CainiaoEndpointLockerTopWithholdQueryAPIResponse struct {
 	model.CommonResponse
 	CainiaoEndpointLockerTopWithholdQueryAPIResponseModel

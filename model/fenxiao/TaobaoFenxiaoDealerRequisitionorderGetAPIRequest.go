@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoDealerRequisitionorderGetAPIRequest
-批量查询采购申请/经销采购单 API请求
-taobao.fenxiao.dealer.requisitionorder.get
-
-批量查询采购申请/经销采购单，目前支持供应商和分销商查询 */
+// TaobaoFenxiaoDealerRequisitionorderGetAPIRequest 批量查询采购申请/经销采购单 API请求
+// taobao.fenxiao.dealer.requisitionorder.get
+//
+// 批量查询采购申请/经销采购单，目前支持供应商和分销商查询
 type TaobaoFenxiaoDealerRequisitionorderGetAPIRequest struct {
 	model.Params
 	// 采购申请/经销采购单最早修改时间

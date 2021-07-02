@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIhomeCtomContentPublishStatusAPIResponse
-实拍图发布审核状态查询API API返回值
-alibaba.ihome.ctom.content.publish.status
-
-实拍图发布审核状态查询API */
+// AlibabaIhomeCtomContentPublishStatusAPIResponse 实拍图发布审核状态查询API API返回值
+// alibaba.ihome.ctom.content.publish.status
+//
+// 实拍图发布审核状态查询API
 type AlibabaIhomeCtomContentPublishStatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaIhomeCtomContentPublishStatusAPIResponseModel

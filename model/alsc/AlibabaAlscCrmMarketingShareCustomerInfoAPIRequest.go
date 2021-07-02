@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest
-查询分享营销客户领券信息 API请求
-alibaba.alsc.crm.marketing.share.customer.info
-
-查询分享营销活动的客户领券信息 */
+// AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest 查询分享营销客户领券信息 API请求
+// alibaba.alsc.crm.marketing.share.customer.info
+//
+// 查询分享营销活动的客户领券信息
 type AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest struct {
 	model.Params
 	// 活动id

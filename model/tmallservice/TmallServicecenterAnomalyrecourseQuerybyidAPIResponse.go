@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterAnomalyrecourseQuerybyidAPIResponse
-根据一键求助id查询指定服务商的一键求助单 API返回值
-tmall.servicecenter.anomalyrecourse.querybyid
-
-根据一键求助id查询指定服务商的一键求助单 */
+// TmallServicecenterAnomalyrecourseQuerybyidAPIResponse 根据一键求助id查询指定服务商的一键求助单 API返回值
+// tmall.servicecenter.anomalyrecourse.querybyid
+//
+// 根据一键求助id查询指定服务商的一键求助单
 type TmallServicecenterAnomalyrecourseQuerybyidAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterAnomalyrecourseQuerybyidAPIResponseModel

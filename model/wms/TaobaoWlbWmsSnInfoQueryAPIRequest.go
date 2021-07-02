@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsSnInfoQueryAPIRequest
-查询单据序列号信息 API请求
-taobao.wlb.wms.sn.info.query
-
-查询仓库作业的各类单据记录的Sn信息 */
+// TaobaoWlbWmsSnInfoQueryAPIRequest 查询单据序列号信息 API请求
+// taobao.wlb.wms.sn.info.query
+//
+// 查询仓库作业的各类单据记录的Sn信息
 type TaobaoWlbWmsSnInfoQueryAPIRequest struct {
 	model.Params
 	// 订单编码

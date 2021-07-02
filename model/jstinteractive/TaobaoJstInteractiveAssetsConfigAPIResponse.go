@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstInteractiveAssetsConfigAPIResponse
-任务素材配置接口 API返回值
-taobao.jst.interactive.assets.config
-
-任务素材配置接口 */
+// TaobaoJstInteractiveAssetsConfigAPIResponse 任务素材配置接口 API返回值
+// taobao.jst.interactive.assets.config
+//
+// 任务素材配置接口
 type TaobaoJstInteractiveAssetsConfigAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstInteractiveAssetsConfigAPIResponseModel

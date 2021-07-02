@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeReceiveGetAPIRequest
-卖家查询换货列表 API请求
-tmall.exchange.receive.get
-
-卖家查询换货列表 */
+// TmallExchangeReceiveGetAPIRequest 卖家查询换货列表 API请求
+// tmall.exchange.receive.get
+//
+// 卖家查询换货列表
 type TmallExchangeReceiveGetAPIRequest struct {
 	model.Params
 	// 查询修改时间段的结束时间点

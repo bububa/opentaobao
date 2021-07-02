@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveReportAPIRequest
-体检机构对接_体检报告查询 API请求
-alibaba.alihealth.examination.reserve.report
-
-体检机构对接_体检报告获取 */
+// AlibabaAlihealthExaminationReserveReportAPIRequest 体检机构对接_体检报告查询 API请求
+// alibaba.alihealth.examination.reserve.report
+//
+// 体检机构对接_体检报告获取
 type AlibabaAlihealthExaminationReserveReportAPIRequest struct {
 	model.Params
 	// 商户唯一码

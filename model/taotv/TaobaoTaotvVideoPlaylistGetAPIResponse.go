@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTaotvVideoPlaylistGetAPIResponse
-根据频道ID获取频道下节目单以及当前播放 API返回值
-taobao.taotv.video.playlist.get
-
-根据频道ID获取频道下节目单以及当前播放 */
+// TaobaoTaotvVideoPlaylistGetAPIResponse 根据频道ID获取频道下节目单以及当前播放 API返回值
+// taobao.taotv.video.playlist.get
+//
+// 根据频道ID获取频道下节目单以及当前播放
 type TaobaoTaotvVideoPlaylistGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTaotvVideoPlaylistGetAPIResponseModel

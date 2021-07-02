@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AccountAliyuncsComListAppkeyByOwnerAndBid2013_07_01APIResponse
-根据渠道id和状态列出appkey API返回值
-account.aliyuncs.com.ListAppkeyByOwnerAndBid.2013-07-01
-
-根据渠道id和状态列出appkey */
+// AccountAliyuncsComListAppkeyByOwnerAndBid2013_07_01APIResponse 根据渠道id和状态列出appkey API返回值
+// account.aliyuncs.com.ListAppkeyByOwnerAndBid.2013-07-01
+//
+// 根据渠道id和状态列出appkey
 type AccountAliyuncsComListAppkeyByOwnerAndBid2013_07_01APIResponse struct {
 	model.CommonResponse
 	AccountAliyuncsComListAppkeyByOwnerAndBid2013_07_01APIResponseModel

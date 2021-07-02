@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpShowcaseSortAPIResponse
-橱窗顺序变更 API返回值
-alibaba.scbp.showcase.sort
-
-橱窗顺序变更 */
+// AlibabaScbpShowcaseSortAPIResponse 橱窗顺序变更 API返回值
+// alibaba.scbp.showcase.sort
+//
+// 橱窗顺序变更
 type AlibabaScbpShowcaseSortAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpShowcaseSortAPIResponseModel

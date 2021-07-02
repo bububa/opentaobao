@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTopAuthTokenCreateAPIResponse
-获取Access Token API返回值
-taobao.top.auth.token.create
-
-用户通过code换获取access_token，https only */
+// TaobaoTopAuthTokenCreateAPIResponse 获取Access Token API返回值
+// taobao.top.auth.token.create
+//
+// 用户通过code换获取access_token，https only
 type TaobaoTopAuthTokenCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoTopAuthTokenCreateAPIResponseModel

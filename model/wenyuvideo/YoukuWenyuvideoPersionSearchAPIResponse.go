@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuWenyuvideoPersionSearchAPIResponse
-根据人物名称查询人物列表 API返回值
-youku.wenyuvideo.persion.search
-
-根据人物名称查询人物列表 */
+// YoukuWenyuvideoPersionSearchAPIResponse 根据人物名称查询人物列表 API返回值
+// youku.wenyuvideo.persion.search
+//
+// 根据人物名称查询人物列表
 type YoukuWenyuvideoPersionSearchAPIResponse struct {
 	model.CommonResponse
 	YoukuWenyuvideoPersionSearchAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosGoodsAdjustAPIResponse
-调整库存 API返回值
-alibaba.mos.goods.adjust
-
-库存调整接口 */
+// AlibabaMosGoodsAdjustAPIResponse 调整库存 API返回值
+// alibaba.mos.goods.adjust
+//
+// 库存调整接口
 type AlibabaMosGoodsAdjustAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosGoodsAdjustAPIResponseModel

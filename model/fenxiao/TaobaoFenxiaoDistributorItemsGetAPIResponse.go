@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoDistributorItemsGetAPIResponse
-查询商品下载记录 API返回值
-taobao.fenxiao.distributor.items.get
-
-供应商查询分销商商品下载记录。 */
+// TaobaoFenxiaoDistributorItemsGetAPIResponse 查询商品下载记录 API返回值
+// taobao.fenxiao.distributor.items.get
+//
+// 供应商查询分销商商品下载记录。
 type TaobaoFenxiaoDistributorItemsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoDistributorItemsGetAPIResponseModel

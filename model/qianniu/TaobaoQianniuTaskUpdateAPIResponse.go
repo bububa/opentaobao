@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuTaskUpdateAPIResponse
-更新轻任务 API返回值
-taobao.qianniu.task.update
-
-由任务执行者调用，sub_status，tag和memo至少提供一个 */
+// TaobaoQianniuTaskUpdateAPIResponse 更新轻任务 API返回值
+// taobao.qianniu.task.update
+//
+// 由任务执行者调用，sub_status，tag和memo至少提供一个
 type TaobaoQianniuTaskUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuTaskUpdateAPIResponseModel

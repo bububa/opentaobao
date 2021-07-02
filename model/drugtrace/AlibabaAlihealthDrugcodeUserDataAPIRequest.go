@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugcodeUserDataAPIRequest
-西安杨森同步用户行为接口 API请求
-alibaba.alihealth.drugcode.user.data
-
-西安杨森同步用户行为接口 */
+// AlibabaAlihealthDrugcodeUserDataAPIRequest 西安杨森同步用户行为接口 API请求
+// alibaba.alihealth.drugcode.user.data
+//
+// 西安杨森同步用户行为接口
 type AlibabaAlihealthDrugcodeUserDataAPIRequest struct {
 	model.Params
 	// 用户信息

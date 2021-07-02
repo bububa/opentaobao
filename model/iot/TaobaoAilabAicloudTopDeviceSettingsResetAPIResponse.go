@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse
-重置设备个性化设置 API返回值
-taobao.ailab.aicloud.top.device.settings.reset
-
-重置设备个性化设置 */
+// TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse 重置设备个性化设置 API返回值
+// taobao.ailab.aicloud.top.device.settings.reset
+//
+// 重置设备个性化设置
 type TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceSettingsResetAPIResponseModel

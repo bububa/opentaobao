@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoOrderRemarkUpdateAPIRequest
-修改采购单备注 API请求
-taobao.fenxiao.order.remark.update
-
-供应商修改采购单备注 */
+// TaobaoFenxiaoOrderRemarkUpdateAPIRequest 修改采购单备注 API请求
+// taobao.fenxiao.order.remark.update
+//
+// 供应商修改采购单备注
 type TaobaoFenxiaoOrderRemarkUpdateAPIRequest struct {
 	model.Params
 	// 采购单编号

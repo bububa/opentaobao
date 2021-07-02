@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleRecycleOrderGetAPIResponse
-闲鱼回收订单查询V2 API返回值
-alibaba.idle.recycle.order.get
-
-闲鱼回收业务中,外部回收商作为交易上买家,闲鱼用户下单后,需要回收商主动拉取交易订单 */
+// AlibabaIdleRecycleOrderGetAPIResponse 闲鱼回收订单查询V2 API返回值
+// alibaba.idle.recycle.order.get
+//
+// 闲鱼回收业务中,外部回收商作为交易上买家,闲鱼用户下单后,需要回收商主动拉取交易订单
 type AlibabaIdleRecycleOrderGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleRecycleOrderGetAPIResponseModel

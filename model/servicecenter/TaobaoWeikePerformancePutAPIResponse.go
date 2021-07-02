@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeikePerformancePutAPIResponse
-提交客服绩效接口 API返回值
-taobao.weike.performance.put
-
-提交客服绩效接口 */
+// TaobaoWeikePerformancePutAPIResponse 提交客服绩效接口 API返回值
+// taobao.weike.performance.put
+//
+// 提交客服绩效接口
 type TaobaoWeikePerformancePutAPIResponse struct {
 	model.CommonResponse
 	TaobaoWeikePerformancePutAPIResponseModel

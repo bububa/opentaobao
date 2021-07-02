@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdReportGetTargetReportAPIResponse
-定向报告 API返回值
-alibaba.scbp.ad.report.get.target.report
-
-定向报告 */
+// AlibabaScbpAdReportGetTargetReportAPIResponse 定向报告 API返回值
+// alibaba.scbp.ad.report.get.target.report
+//
+// 定向报告
 type AlibabaScbpAdReportGetTargetReportAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdReportGetTargetReportAPIResponseModel

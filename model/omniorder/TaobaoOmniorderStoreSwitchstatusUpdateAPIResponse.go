@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreSwitchstatusUpdateAPIResponse
-switchstatus.update API返回值
-taobao.omniorder.store.switchstatus.update
-
-变更门店发货、门店自提状态 */
+// TaobaoOmniorderStoreSwitchstatusUpdateAPIResponse switchstatus.update API返回值
+// taobao.omniorder.store.switchstatus.update
+//
+// 变更门店发货、门店自提状态
 type TaobaoOmniorderStoreSwitchstatusUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderStoreSwitchstatusUpdateAPIResponseModel

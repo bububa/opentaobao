@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlinkMessageHistoryListAPIRequest
-查询消息列表 API请求
-alibaba.alink.message.history.list
-
-查询消息列表 */
+// AlibabaAlinkMessageHistoryListAPIRequest 查询消息列表 API请求
+// alibaba.alink.message.history.list
+//
+// 查询消息列表
 type AlibabaAlinkMessageHistoryListAPIRequest struct {
 	model.Params
 	// 设备id

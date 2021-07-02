@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaLoginAuthsignGetAPIResponse
-获取登陆权限签名 API返回值
-taobao.simba.login.authsign.get
-
-获取登陆权限签名 */
+// TaobaoSimbaLoginAuthsignGetAPIResponse 获取登陆权限签名 API返回值
+// taobao.simba.login.authsign.get
+//
+// 获取登陆权限签名
 type TaobaoSimbaLoginAuthsignGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaLoginAuthsignGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthOutflowFrequencySaveorupdateAPIResponse
-处方外流-药品频次同步接口 API返回值
-alibaba.alihealth.outflow.frequency.saveorupdate
-
-处方外流-药品频次同步接口 */
+// AlibabaAlihealthOutflowFrequencySaveorupdateAPIResponse 处方外流-药品频次同步接口 API返回值
+// alibaba.alihealth.outflow.frequency.saveorupdate
+//
+// 处方外流-药品频次同步接口
 type AlibabaAlihealthOutflowFrequencySaveorupdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthOutflowFrequencySaveorupdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTargetAdCampaignProductEffectAPIRequest
-定向推广-获取计划中产品推广效果 API请求
-alibaba.scbp.target.ad.campaign.product.effect
-
-定向推广-获取计划中产品推广效果 */
+// AlibabaScbpTargetAdCampaignProductEffectAPIRequest 定向推广-获取计划中产品推广效果 API请求
+// alibaba.scbp.target.ad.campaign.product.effect
+//
+// 定向推广-获取计划中产品推广效果
 type AlibabaScbpTargetAdCampaignProductEffectAPIRequest struct {
 	model.Params
 	// TopP4pQuickEffectQuery

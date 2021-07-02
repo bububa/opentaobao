@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStorerelatesubGetAPIRequest
-门店和子门店关系查找 API请求
-taobao.place.storerelatesub.get
-
-门店和子门店关系查找 */
+// TaobaoPlaceStorerelatesubGetAPIRequest 门店和子门店关系查找 API请求
+// taobao.place.storerelatesub.get
+//
+// 门店和子门店关系查找
 type TaobaoPlaceStorerelatesubGetAPIRequest struct {
 	model.Params
 	// 门店Id

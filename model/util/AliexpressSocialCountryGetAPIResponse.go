@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialCountryGetAPIResponse
-获取国家列表 API返回值
-aliexpress.social.country.get
-
-获取目前AE支持的国家列表 */
+// AliexpressSocialCountryGetAPIResponse 获取国家列表 API返回值
+// aliexpress.social.country.get
+//
+// 获取目前AE支持的国家列表
 type AliexpressSocialCountryGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressSocialCountryGetAPIResponseModel

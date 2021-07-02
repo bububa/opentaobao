@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqPornImageSyncDetectAPIResponse
-聚安全智能鉴黄同步检测接口 API返回值
-alibaba.security.jaq.porn.image.sync.detect
-
-同步黄图图像检测接口 */
+// AlibabaSecurityJaqPornImageSyncDetectAPIResponse 聚安全智能鉴黄同步检测接口 API返回值
+// alibaba.security.jaq.porn.image.sync.detect
+//
+// 同步黄图图像检测接口
 type AlibabaSecurityJaqPornImageSyncDetectAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqPornImageSyncDetectAPIResponseModel

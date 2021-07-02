@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallPopupstoreActivityQueryAPIResponse
-查询某段时间内的快闪活动列表 API返回值
-tmall.popupstore.activity.query
-
-提供给ISV查询某一时间段内包含指定appKey的活动列表 */
+// TmallPopupstoreActivityQueryAPIResponse 查询某段时间内的快闪活动列表 API返回值
+// tmall.popupstore.activity.query
+//
+// 提供给ISV查询某一时间段内包含指定appKey的活动列表
 type TmallPopupstoreActivityQueryAPIResponse struct {
 	model.CommonResponse
 	TmallPopupstoreActivityQueryAPIResponseModel

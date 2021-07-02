@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenItemlackReportAPIResponse
-发货单缺货通知接口 API返回值
-taobao.qimen.itemlack.report
-
-WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP */
+// TaobaoQimenItemlackReportAPIResponse 发货单缺货通知接口 API返回值
+// taobao.qimen.itemlack.report
+//
+// WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP
 type TaobaoQimenItemlackReportAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenItemlackReportAPIResponseModel

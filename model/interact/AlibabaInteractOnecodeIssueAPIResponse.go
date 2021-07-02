@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractOnecodeIssueAPIResponse
-onecode代码通用鉴权 API返回值
-alibaba.interact.onecode.issue
-
-手淘开放鉴权接口，仅用于tida接口鉴权，无输入输出。 */
+// AlibabaInteractOnecodeIssueAPIResponse onecode代码通用鉴权 API返回值
+// alibaba.interact.onecode.issue
+//
+// 手淘开放鉴权接口，仅用于tida接口鉴权，无输入输出。
 type AlibabaInteractOnecodeIssueAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractOnecodeIssueAPIResponseModel

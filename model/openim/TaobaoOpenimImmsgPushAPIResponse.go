@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimImmsgPushAPIResponse
-openim标准消息发送 API返回值
-taobao.openim.immsg.push
-
-服务端对openim用户发送标准消息，包括文字、语音、图片等。 */
+// TaobaoOpenimImmsgPushAPIResponse openim标准消息发送 API返回值
+// taobao.openim.immsg.push
+//
+// 服务端对openim用户发送标准消息，包括文字、语音、图片等。
 type TaobaoOpenimImmsgPushAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimImmsgPushAPIResponseModel

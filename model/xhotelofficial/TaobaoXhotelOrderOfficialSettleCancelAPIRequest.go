@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderOfficialSettleCancelAPIRequest
-官网信用住取消结账 API请求
-taobao.xhotel.order.official.settle.cancel
-
-用于官网信用住取消结账 */
+// TaobaoXhotelOrderOfficialSettleCancelAPIRequest 官网信用住取消结账 API请求
+// taobao.xhotel.order.official.settle.cancel
+//
+// 用于官网信用住取消结账
 type TaobaoXhotelOrderOfficialSettleCancelAPIRequest struct {
 	model.Params
 	// 阿里旅行订单号，淘宝订单号或外部订单号二选一必填

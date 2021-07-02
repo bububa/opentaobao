@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-/* AlibabaWdkStockCabinetQuery
-仓内实时库位库存查询
-alibaba.wdk.stock.cabinet.query
-
-查询仓内实时库位库存信息 */
+// AlibabaWdkStockCabinetQuery 仓内实时库位库存查询
+// alibaba.wdk.stock.cabinet.query
+//
+// 查询仓内实时库位库存信息
 func AlibabaWdkStockCabinetQuery(clt *core.SDKClient, req *wdk.AlibabaWdkStockCabinetQueryAPIRequest, session string) (*wdk.AlibabaWdkStockCabinetQueryAPIResponse, error) {
 	var resp wdk.AlibabaWdkStockCabinetQueryAPIResponse
 	err := clt.Post(req, &resp, session)

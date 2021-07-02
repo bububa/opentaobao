@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordRankGetAPIResponse
-获取外贸直通车关键词预估排名 API返回值
-alibaba.scbp.ad.keyword.rank.get
-
-获取外贸直通车关键词预估排名 */
+// AlibabaScbpAdKeywordRankGetAPIResponse 获取外贸直通车关键词预估排名 API返回值
+// alibaba.scbp.ad.keyword.rank.get
+//
+// 获取外贸直通车关键词预估排名
 type AlibabaScbpAdKeywordRankGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdKeywordRankGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusDevicehubOpenapiReportdataAPIResponse
-设备数据上报 API返回值
-alibaba.campus.devicehub.openapi.reportdata
-
-设备数据上报 */
+// AlibabaCampusDevicehubOpenapiReportdataAPIResponse 设备数据上报 API返回值
+// alibaba.campus.devicehub.openapi.reportdata
+//
+// 设备数据上报
 type AlibabaCampusDevicehubOpenapiReportdataAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusDevicehubOpenapiReportdataAPIResponseModel

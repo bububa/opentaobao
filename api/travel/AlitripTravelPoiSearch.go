@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/travel"
 )
 
-/* AlitripTravelPoiSearch
-POI信息查询
-alitrip.travel.poi.search
-
-POI信息查询，用于商品更新使用 */
+// AlitripTravelPoiSearch POI信息查询
+// alitrip.travel.poi.search
+//
+// POI信息查询，用于商品更新使用
 func AlitripTravelPoiSearch(clt *core.SDKClient, req *travel.AlitripTravelPoiSearchAPIRequest, session string) (*travel.AlitripTravelPoiSearchAPIResponse, error) {
 	var resp travel.AlitripTravelPoiSearchAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoModifyaddressOpenAPIResponse
-淘宝自助修改地址服务开通 API返回值
-taobao.modifyaddress.open
-
-商家自助修改地址服务开通 */
+// TaobaoModifyaddressOpenAPIResponse 淘宝自助修改地址服务开通 API返回值
+// taobao.modifyaddress.open
+//
+// 商家自助修改地址服务开通
 type TaobaoModifyaddressOpenAPIResponse struct {
 	model.CommonResponse
 	TaobaoModifyaddressOpenAPIResponseModel

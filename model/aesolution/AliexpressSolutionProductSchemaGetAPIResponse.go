@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionProductSchemaGetAPIResponse
-get product schema API返回值
-aliexpress.solution.product.schema.get
-
-provide a new schema way to post product. With a pair of API, one for getting schema, one for posting instance */
+// AliexpressSolutionProductSchemaGetAPIResponse get product schema API返回值
+// aliexpress.solution.product.schema.get
+//
+// provide a new schema way to post product. With a pair of API, one for getting schema, one for posting instance
 type AliexpressSolutionProductSchemaGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionProductSchemaGetAPIResponseModel

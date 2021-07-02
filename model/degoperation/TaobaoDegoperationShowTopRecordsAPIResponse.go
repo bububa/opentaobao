@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDegoperationShowTopRecordsAPIResponse
-活动中奖记录 API返回值
-taobao.degoperation.show.top.records
-
-活动中奖记录 */
+// TaobaoDegoperationShowTopRecordsAPIResponse 活动中奖记录 API返回值
+// taobao.degoperation.show.top.records
+//
+// 活动中奖记录
 type TaobaoDegoperationShowTopRecordsAPIResponse struct {
 	model.CommonResponse
 	TaobaoDegoperationShowTopRecordsAPIResponseModel

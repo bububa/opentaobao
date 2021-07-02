@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardRepairprogressUpdateAPIRequest
-更新维修进度 API请求
-tmall.servicecenter.workcard.repairprogress.update
-
-提供给外部合作服务商的维修进度更改接口 */
+// TmallServicecenterWorkcardRepairprogressUpdateAPIRequest 更新维修进度 API请求
+// tmall.servicecenter.workcard.repairprogress.update
+//
+// 提供给外部合作服务商的维修进度更改接口
 type TmallServicecenterWorkcardRepairprogressUpdateAPIRequest struct {
 	model.Params
 	// 图片列表

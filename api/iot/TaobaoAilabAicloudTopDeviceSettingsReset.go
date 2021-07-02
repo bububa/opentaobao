@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-/* TaobaoAilabAicloudTopDeviceSettingsReset
-重置设备个性化设置
-taobao.ailab.aicloud.top.device.settings.reset
-
-重置设备个性化设置 */
+// TaobaoAilabAicloudTopDeviceSettingsReset 重置设备个性化设置
+// taobao.ailab.aicloud.top.device.settings.reset
+//
+// 重置设备个性化设置
 func TaobaoAilabAicloudTopDeviceSettingsReset(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse, error) {
 	var resp iot.TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse
 	err := clt.Post(req, &resp, session)

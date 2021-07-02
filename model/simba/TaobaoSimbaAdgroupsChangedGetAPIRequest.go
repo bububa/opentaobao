@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupsChangedGetAPIRequest
-分页获取修改的推广组ID和修改时间 API请求
-taobao.simba.adgroups.changed.get
-
-分页获取修改的推广组ID和修改时间 */
+// TaobaoSimbaAdgroupsChangedGetAPIRequest 分页获取修改的推广组ID和修改时间 API请求
+// taobao.simba.adgroups.changed.get
+//
+// 分页获取修改的推广组ID和修改时间
 type TaobaoSimbaAdgroupsChangedGetAPIRequest struct {
 	model.Params
 	// 主人昵称

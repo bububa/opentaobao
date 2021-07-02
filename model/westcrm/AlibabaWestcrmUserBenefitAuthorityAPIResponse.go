@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmUserBenefitAuthorityAPIResponse
-获取指定用户是否含有会员权益配置菜单权限 API返回值
-alibaba.westcrm.user.benefit.authority
-
-获取指定用户是否含有会员权益配置菜单权限 */
+// AlibabaWestcrmUserBenefitAuthorityAPIResponse 获取指定用户是否含有会员权益配置菜单权限 API返回值
+// alibaba.westcrm.user.benefit.authority
+//
+// 获取指定用户是否含有会员权益配置菜单权限
 type AlibabaWestcrmUserBenefitAuthorityAPIResponse struct {
 	model.CommonResponse
 	AlibabaWestcrmUserBenefitAuthorityAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiOrderCancelAPIResponse
-取消叫车 API返回值
-alibaba.happytrip.taxi.order.cancel
-
-取消叫车订单,行程中的订单不能取消 */
+// AlibabaHappytripTaxiOrderCancelAPIResponse 取消叫车 API返回值
+// alibaba.happytrip.taxi.order.cancel
+//
+// 取消叫车订单,行程中的订单不能取消
 type AlibabaHappytripTaxiOrderCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaHappytripTaxiOrderCancelAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtMemberOpenidAPIResponse
-根据会员手机查询openId API返回值
-tmall.nrt.member.openid
-
-根据会员手机查询openId */
+// TmallNrtMemberOpenidAPIResponse 根据会员手机查询openId API返回值
+// tmall.nrt.member.openid
+//
+// 根据会员手机查询openId
 type TmallNrtMemberOpenidAPIResponse struct {
 	model.CommonResponse
 	TmallNrtMemberOpenidAPIResponseModel

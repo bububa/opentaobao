@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCuntaoInteractRequisitionGetAPIRequest
-供应商获取物料申请单列表 API请求
-alibaba.cuntao.interact.requisition.get
-
-供应商获取物料申请单列表 */
+// AlibabaCuntaoInteractRequisitionGetAPIRequest 供应商获取物料申请单列表 API请求
+// alibaba.cuntao.interact.requisition.get
+//
+// 供应商获取物料申请单列表
 type AlibabaCuntaoInteractRequisitionGetAPIRequest struct {
 	model.Params
 	// 页大小，默认20

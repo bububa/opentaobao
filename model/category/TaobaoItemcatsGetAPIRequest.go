@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemcatsGetAPIRequest
-获取后台供卖家发布商品的标准商品类目 API请求
-taobao.itemcats.get
-
-获取后台供卖家发布商品的标准商品类目。 */
+// TaobaoItemcatsGetAPIRequest 获取后台供卖家发布商品的标准商品类目 API请求
+// taobao.itemcats.get
+//
+// 获取后台供卖家发布商品的标准商品类目。
 type TaobaoItemcatsGetAPIRequest struct {
 	model.Params
 	// 商品所属类目ID列表，用半角逗号(,)分隔 例如:(18957,19562,) (cids、parent_cid至少传一个)

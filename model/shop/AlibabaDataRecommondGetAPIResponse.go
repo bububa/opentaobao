@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDataRecommondGetAPIResponse
-获取推荐信息 API返回值
-alibaba.data.recommond.get
-
-获取优惠券信息，仅作客户端鉴权虚拟api使用 */
+// AlibabaDataRecommondGetAPIResponse 获取推荐信息 API返回值
+// alibaba.data.recommond.get
+//
+// 获取优惠券信息，仅作客户端鉴权虚拟api使用
 type AlibabaDataRecommondGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaDataRecommondGetAPIResponseModel

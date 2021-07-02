@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinAxbVendorPushCallReleaseAPIResponse
-供应商推送通话结束事件 API返回值
-alibaba.aliqin.axb.vendor.push.call.release
-
-通话结束挂断的时候，供应商推送通话结束事件给阿里侧 */
+// AlibabaAliqinAxbVendorPushCallReleaseAPIResponse 供应商推送通话结束事件 API返回值
+// alibaba.aliqin.axb.vendor.push.call.release
+//
+// 通话结束挂断的时候，供应商推送通话结束事件给阿里侧
 type AlibabaAliqinAxbVendorPushCallReleaseAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinAxbVendorPushCallReleaseAPIResponseModel

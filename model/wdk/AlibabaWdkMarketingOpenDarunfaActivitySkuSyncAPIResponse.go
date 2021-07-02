@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIResponse
-营销商品数据同步 API返回值
-alibaba.wdk.marketing.open.darunfa.activity.sku.sync
-
-大润发营销商品数据同步 */
+// AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIResponse 营销商品数据同步 API返回值
+// alibaba.wdk.marketing.open.darunfa.activity.sku.sync
+//
+// 大润发营销商品数据同步
 type AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotModbindAPIResponse
-物联网绑定/换绑API API返回值
-alibaba.aliqin.fc.iot.modbind
-
-支持用户的设备的换绑和解绑操作 */
+// AlibabaAliqinFcIotModbindAPIResponse 物联网绑定/换绑API API返回值
+// alibaba.aliqin.fc.iot.modbind
+//
+// 支持用户的设备的换绑和解绑操作
 type AlibabaAliqinFcIotModbindAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcIotModbindAPIResponseModel

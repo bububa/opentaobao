@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrFulfillCancelReasonQueryAPIResponse
-查询取消履约的原因列表 API返回值
-tmall.nr.fulfill.cancel.reason.query
-
-新零售门店业务查询取消上门揽件的原因列表 */
+// TmallNrFulfillCancelReasonQueryAPIResponse 查询取消履约的原因列表 API返回值
+// tmall.nr.fulfill.cancel.reason.query
+//
+// 新零售门店业务查询取消上门揽件的原因列表
 type TmallNrFulfillCancelReasonQueryAPIResponse struct {
 	model.CommonResponse
 	TmallNrFulfillCancelReasonQueryAPIResponseModel

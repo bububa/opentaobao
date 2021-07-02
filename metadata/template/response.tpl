@@ -6,11 +6,10 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-/* {{ .Name }}APIResponse
-{{ .ChineseName }} API返回值 
-{{ .ApiName }}
-
-{{ .Desc }} */
+// {{ .Name }}APIResponse {{ .ChineseName }} API返回值 
+// {{ .ApiName }}
+//
+{{ .Desc }}
 type {{ .Name }}APIResponse struct {
     model.CommonResponse
     {{ .Name }}APIResponseModel

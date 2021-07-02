@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseTailpaymentbackAPIResponse
-尾款处置方案回传 API返回值
-tmall.car.lease.tailpaymentback
-
-尾款处置方案回传 */
+// TmallCarLeaseTailpaymentbackAPIResponse 尾款处置方案回传 API返回值
+// tmall.car.lease.tailpaymentback
+//
+// 尾款处置方案回传
 type TmallCarLeaseTailpaymentbackAPIResponse struct {
 	model.CommonResponse
 	TmallCarLeaseTailpaymentbackAPIResponseModel

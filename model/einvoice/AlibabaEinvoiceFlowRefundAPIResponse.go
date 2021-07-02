@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceFlowRefundAPIResponse
-退订工单(入驻、加盘、续约) API返回值
-alibaba.einvoice.flow.refund
-
-电子发票工单系统，工单退订能力开放 */
+// AlibabaEinvoiceFlowRefundAPIResponse 退订工单(入驻、加盘、续约) API返回值
+// alibaba.einvoice.flow.refund
+//
+// 电子发票工单系统，工单退订能力开放
 type AlibabaEinvoiceFlowRefundAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceFlowRefundAPIResponseModel

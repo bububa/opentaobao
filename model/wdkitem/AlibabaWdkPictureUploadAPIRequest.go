@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkPictureUploadAPIRequest
-图片上传接口 API请求
-alibaba.wdk.picture.upload
-
-上传图片 */
+// AlibabaWdkPictureUploadAPIRequest 图片上传接口 API请求
+// alibaba.wdk.picture.upload
+//
+// 上传图片
 type AlibabaWdkPictureUploadAPIRequest struct {
 	model.Params
 	// 图片分类ID，设置具体某个分类ID或设置0上传到默认分类，只能传入一个分类

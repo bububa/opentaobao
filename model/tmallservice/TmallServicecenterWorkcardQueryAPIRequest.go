@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardQueryAPIRequest
-工单查询接口 API请求
-tmall.servicecenter.workcard.query
-
-工单查询接口 */
+// TmallServicecenterWorkcardQueryAPIRequest 工单查询接口 API请求
+// tmall.servicecenter.workcard.query
+//
+// 工单查询接口
 type TmallServicecenterWorkcardQueryAPIRequest struct {
 	model.Params
 	// 门店/网点id

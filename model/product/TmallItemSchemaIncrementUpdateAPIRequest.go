@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemSchemaIncrementUpdateAPIRequest
-天猫根据规则增量更新商品 API请求
-tmall.item.schema.increment.update
-
-增量方式修改天猫商品的API。只要是此接口支持增量修改的字段，可以同时更新。（感谢爱慕旗舰店提供API命名） */
+// TmallItemSchemaIncrementUpdateAPIRequest 天猫根据规则增量更新商品 API请求
+// tmall.item.schema.increment.update
+//
+// 增量方式修改天猫商品的API。只要是此接口支持增量修改的字段，可以同时更新。（感谢爱慕旗舰店提供API命名）
 type TmallItemSchemaIncrementUpdateAPIRequest struct {
 	model.Params
 	// 需要编辑的商品ID

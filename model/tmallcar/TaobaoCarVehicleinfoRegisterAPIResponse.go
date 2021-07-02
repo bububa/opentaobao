@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCarVehicleinfoRegisterAPIResponse
-全量车型导入 API返回值
-taobao.car.vehicleinfo.register
-
-全量车型导入 */
+// TaobaoCarVehicleinfoRegisterAPIResponse 全量车型导入 API返回值
+// taobao.car.vehicleinfo.register
+//
+// 全量车型导入
 type TaobaoCarVehicleinfoRegisterAPIResponse struct {
 	model.CommonResponse
 	TaobaoCarVehicleinfoRegisterAPIResponseModel

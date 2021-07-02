@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanFeedbackRawUploadAPIResponse
-15-供应商反馈（原料）同步接口 API返回值
-alibaba.tmallgenie.scp.plan.feedback.raw.upload
-
-供应商反馈（原料）同步接口 */
+// AlibabaTmallgenieScpPlanFeedbackRawUploadAPIResponse 15-供应商反馈（原料）同步接口 API返回值
+// alibaba.tmallgenie.scp.plan.feedback.raw.upload
+//
+// 供应商反馈（原料）同步接口
 type AlibabaTmallgenieScpPlanFeedbackRawUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanFeedbackRawUploadAPIResponseModel

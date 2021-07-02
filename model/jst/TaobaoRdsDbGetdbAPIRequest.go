@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRdsDbGetdbAPIRequest
-rds获取RDS的DB API请求
-taobao.rds.db.getdb
-
-rds获取RDS的DB */
+// TaobaoRdsDbGetdbAPIRequest rds获取RDS的DB API请求
+// taobao.rds.db.getdb
+//
+// rds获取RDS的DB
 type TaobaoRdsDbGetdbAPIRequest struct {
 	model.Params
 	// 账户名

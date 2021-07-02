@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceProdApplyAPIResponse
-提交发票申请 API返回值
-alibaba.einvoice.prod.apply
-
-提交开票申请，如果商户授权自动开票则自动转开票，否则等待商户审核。 */
+// AlibabaEinvoiceProdApplyAPIResponse 提交发票申请 API返回值
+// alibaba.einvoice.prod.apply
+//
+// 提交开票申请，如果商户授权自动开票则自动转开票，否则等待商户审核。
 type AlibabaEinvoiceProdApplyAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceProdApplyAPIResponseModel

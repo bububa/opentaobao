@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMediaFileAddAPIRequest
-多媒体平台文件添加 API请求
-taobao.media.file.add
-
-用户通过top上传文件到多媒体平台 */
+// TaobaoMediaFileAddAPIRequest 多媒体平台文件添加 API请求
+// taobao.media.file.add
+//
+// 用户通过top上传文件到多媒体平台
 type TaobaoMediaFileAddAPIRequest struct {
 	model.Params
 	// 文件属于的那个目录的目录编号

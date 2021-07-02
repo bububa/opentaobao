@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenAccountTokenApplyAPIRequest
-申请免登Open Account Token API请求
-taobao.open.account.token.apply
-
-申请免登Open Account Token */
+// TaobaoOpenAccountTokenApplyAPIRequest 申请免登Open Account Token API请求
+// taobao.open.account.token.apply
+//
+// 申请免登Open Account Token
 type TaobaoOpenAccountTokenApplyAPIRequest struct {
 	model.Params
 	// 时间戳单位是毫秒

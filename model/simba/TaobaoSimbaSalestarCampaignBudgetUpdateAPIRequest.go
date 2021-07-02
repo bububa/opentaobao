@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSalestarCampaignBudgetUpdateAPIRequest
-销量明星跟新预算相关接口 API请求
-taobao.simba.salestar.campaign.budget.update
-
-更新一个推广计划的日限额 */
+// TaobaoSimbaSalestarCampaignBudgetUpdateAPIRequest 销量明星跟新预算相关接口 API请求
+// taobao.simba.salestar.campaign.budget.update
+//
+// 更新一个推广计划的日限额
 type TaobaoSimbaSalestarCampaignBudgetUpdateAPIRequest struct {
 	model.Params
 	// 推广计划Id

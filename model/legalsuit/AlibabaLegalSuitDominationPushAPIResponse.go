@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLegalSuitDominationPushAPIResponse
-更新或者保存管辖信息 API返回值
-alibaba.legal.suit.domination.push
-
-ISV推送管辖信息到诉讼平台 */
+// AlibabaLegalSuitDominationPushAPIResponse 更新或者保存管辖信息 API返回值
+// alibaba.legal.suit.domination.push
+//
+// ISV推送管辖信息到诉讼平台
 type AlibabaLegalSuitDominationPushAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalSuitDominationPushAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/hotel"
 )
 
-/* AlitripHotelSearchCitysuggestGet
-城市Suggest接口
-alitrip.hotel.search.citysuggest.get
-
-城市Suggest接口 */
+// AlitripHotelSearchCitysuggestGet 城市Suggest接口
+// alitrip.hotel.search.citysuggest.get
+//
+// 城市Suggest接口
 func AlitripHotelSearchCitysuggestGet(clt *core.SDKClient, req *hotel.AlitripHotelSearchCitysuggestGetAPIRequest, session string) (*hotel.AlitripHotelSearchCitysuggestGetAPIResponse, error) {
 	var resp hotel.AlitripHotelSearchCitysuggestGetAPIResponse
 	err := clt.Post(req, &resp, session)

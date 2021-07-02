@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJushitaJmsUserGetAPIResponse
-查询某个用户是否同步消息 API返回值
-taobao.jushita.jms.user.get
-
-查询某个用户是否同步消息，只支持单个查询 */
+// TaobaoJushitaJmsUserGetAPIResponse 查询某个用户是否同步消息 API返回值
+// taobao.jushita.jms.user.get
+//
+// 查询某个用户是否同步消息，只支持单个查询
 type TaobaoJushitaJmsUserGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoJushitaJmsUserGetAPIResponseModel

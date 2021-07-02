@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingBuygiftItemRemoveAsyncAPIRequest
-批量删除买赠商品 API请求
-alibaba.wdk.marketing.buygift.item.remove.async
-
-批量删除买赠商品 */
+// AlibabaWdkMarketingBuygiftItemRemoveAsyncAPIRequest 批量删除买赠商品 API请求
+// alibaba.wdk.marketing.buygift.item.remove.async
+//
+// 批量删除买赠商品
 type AlibabaWdkMarketingBuygiftItemRemoveAsyncAPIRequest struct {
 	model.Params
 	// sku信息

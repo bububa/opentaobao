@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-/* AlitripBtripVehicleOrderSearch
-用车订单查询接口
-alitrip.btrip.vehicle.order.search
-
-企业获取商旅用车订单数据 */
+// AlitripBtripVehicleOrderSearch 用车订单查询接口
+// alitrip.btrip.vehicle.order.search
+//
+// 企业获取商旅用车订单数据
 func AlitripBtripVehicleOrderSearch(clt *core.SDKClient, req *btrip.AlitripBtripVehicleOrderSearchAPIRequest, session string) (*btrip.AlitripBtripVehicleOrderSearchAPIResponse, error) {
 	var resp btrip.AlitripBtripVehicleOrderSearchAPIResponse
 	err := clt.Post(req, &resp, session)

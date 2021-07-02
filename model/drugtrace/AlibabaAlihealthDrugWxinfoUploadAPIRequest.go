@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugWxinfoUploadAPIRequest
-小程序数据回传 API请求
-alibaba.alihealth.drug.wxinfo.upload
-
-小程序数据回传 */
+// AlibabaAlihealthDrugWxinfoUploadAPIRequest 小程序数据回传 API请求
+// alibaba.alihealth.drug.wxinfo.upload
+//
+// 小程序数据回传
 type AlibabaAlihealthDrugWxinfoUploadAPIRequest struct {
 	model.Params
 	// 用户信息

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressTradeOrderOpenCheckAPIResponse
-Aliexpress开放平台下单前置检查 API返回值
-aliexpress.trade.order.open.check
-
-Aliexpress开放平台下单前通过下单入参获取token */
+// AliexpressTradeOrderOpenCheckAPIResponse Aliexpress开放平台下单前置检查 API返回值
+// aliexpress.trade.order.open.check
+//
+// Aliexpress开放平台下单前通过下单入参获取token
 type AliexpressTradeOrderOpenCheckAPIResponse struct {
 	model.CommonResponse
 	AliexpressTradeOrderOpenCheckAPIResponseModel

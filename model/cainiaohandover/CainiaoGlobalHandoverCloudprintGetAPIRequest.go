@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalHandoverCloudprintGetAPIRequest
-获取面单云打印数据 API请求
-cainiao.global.handover.cloudprint.get
-
-提供给ISV通过该接口获取面单云打印数据 */
+// CainiaoGlobalHandoverCloudprintGetAPIRequest 获取面单云打印数据 API请求
+// cainiao.global.handover.cloudprint.get
+//
+// 提供给ISV通过该接口获取面单云打印数据
 type CainiaoGlobalHandoverCloudprintGetAPIRequest struct {
 	model.Params
 	// 用户信息

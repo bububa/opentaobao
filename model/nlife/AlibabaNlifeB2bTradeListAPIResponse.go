@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2bTradeListAPIResponse
-获取企业下的采购单列表 API返回值
-alibaba.nlife.b2b.trade.list
-
-获取指定门店下的采购单列表 */
+// AlibabaNlifeB2bTradeListAPIResponse 获取企业下的采购单列表 API返回值
+// alibaba.nlife.b2b.trade.list
+//
+// 获取指定门店下的采购单列表
 type AlibabaNlifeB2bTradeListAPIResponse struct {
 	model.CommonResponse
 	AlibabaNlifeB2bTradeListAPIResponseModel

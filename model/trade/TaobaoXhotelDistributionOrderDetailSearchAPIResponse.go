@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelDistributionOrderDetailSearchAPIResponse
-分销渠道订单详情查询 API返回值
-taobao.xhotel.distribution.order.detail.search
-
-该接口用于提供酒店分销渠道的订单详情查询 */
+// TaobaoXhotelDistributionOrderDetailSearchAPIResponse 分销渠道订单详情查询 API返回值
+// taobao.xhotel.distribution.order.detail.search
+//
+// 该接口用于提供酒店分销渠道的订单详情查询
 type TaobaoXhotelDistributionOrderDetailSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelDistributionOrderDetailSearchAPIResponseModel

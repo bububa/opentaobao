@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponse
-二级物料-LT内的POGAP数据回传 API返回值
-alibaba.tmallgenie.scp.plan.rawpo.gap.return
-
-二级物料-LT内的POGAP数据回传 */
+// AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponse 二级物料-LT内的POGAP数据回传 API返回值
+// alibaba.tmallgenie.scp.plan.rawpo.gap.return
+//
+// 二级物料-LT内的POGAP数据回传
 type AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponseModel

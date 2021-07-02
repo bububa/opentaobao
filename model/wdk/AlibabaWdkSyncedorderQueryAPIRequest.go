@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkSyncedorderQueryAPIRequest
-五道口查询同步订单 API请求
-alibaba.wdk.syncedorder.query
-
-外部商户查询同步到五道口的订单 */
+// AlibabaWdkSyncedorderQueryAPIRequest 五道口查询同步订单 API请求
+// alibaba.wdk.syncedorder.query
+//
+// 外部商户查询同步到五道口的订单
 type AlibabaWdkSyncedorderQueryAPIRequest struct {
 	model.Params
 	// 门店ID

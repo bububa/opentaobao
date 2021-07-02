@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallProductSpecsTicketGetAPIResponse
-产品规格审核信息获取接口 API返回值
-tmall.product.specs.ticket.get
-
-批量根据specId查询产品规格审核信息包括产品规格状态，申请人，拒绝原因等 */
+// TmallProductSpecsTicketGetAPIResponse 产品规格审核信息获取接口 API返回值
+// tmall.product.specs.ticket.get
+//
+// 批量根据specId查询产品规格审核信息包括产品规格状态，申请人，拒绝原因等
 type TmallProductSpecsTicketGetAPIResponse struct {
 	model.CommonResponse
 	TmallProductSpecsTicketGetAPIResponseModel

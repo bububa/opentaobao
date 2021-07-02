@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpCloudRealnameCheckAPIResponse
-验证姓名和证件号 API返回值
-alibaba.security.jaq.rp.cloud.realname.check
-
-验证姓名和证件号 */
+// AlibabaSecurityJaqRpCloudRealnameCheckAPIResponse 验证姓名和证件号 API返回值
+// alibaba.security.jaq.rp.cloud.realname.check
+//
+// 验证姓名和证件号
 type AlibabaSecurityJaqRpCloudRealnameCheckAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqRpCloudRealnameCheckAPIResponseModel

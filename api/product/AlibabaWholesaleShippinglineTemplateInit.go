@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-/* AlibabaWholesaleShippinglineTemplateInit
-创建初始模板
-alibaba.wholesale.shippingline.template.init
-
-创建默认的几种运费模板 */
+// AlibabaWholesaleShippinglineTemplateInit 创建初始模板
+// alibaba.wholesale.shippingline.template.init
+//
+// 创建默认的几种运费模板
 func AlibabaWholesaleShippinglineTemplateInit(clt *core.SDKClient, req *product.AlibabaWholesaleShippinglineTemplateInitAPIRequest, session string) (*product.AlibabaWholesaleShippinglineTemplateInitAPIResponse, error) {
 	var resp product.AlibabaWholesaleShippinglineTemplateInitAPIResponse
 	err := clt.Post(req, &resp, session)

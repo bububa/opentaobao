@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAppleOlduserChargeNotifyAPIRequest
-老用户激活并兑换通知接口 API请求
-taobao.apple.olduser.charge.notify
-
-老用户激活并兑换通知接口 */
+// TaobaoAppleOlduserChargeNotifyAPIRequest 老用户激活并兑换通知接口 API请求
+// taobao.apple.olduser.charge.notify
+//
+// 老用户激活并兑换通知接口
 type TaobaoAppleOlduserChargeNotifyAPIRequest struct {
 	model.Params
 	// 结果code

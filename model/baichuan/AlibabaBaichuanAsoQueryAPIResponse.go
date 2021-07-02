@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaBaichuanAsoQueryAPIResponse
-查询app在设备上的安装信息 API返回值
-alibaba.baichuan.aso.query
-
-查询app在设备上的安装信息 */
+// AlibabaBaichuanAsoQueryAPIResponse 查询app在设备上的安装信息 API返回值
+// alibaba.baichuan.aso.query
+//
+// 查询app在设备上的安装信息
 type AlibabaBaichuanAsoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaBaichuanAsoQueryAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-/* TaobaoBaichuanUserLogin
-百川H5登录
-taobao.baichuan.user.login
-
-百川H5登录 */
+// TaobaoBaichuanUserLogin 百川H5登录
+// taobao.baichuan.user.login
+//
+// 百川H5登录
 func TaobaoBaichuanUserLogin(clt *core.SDKClient, req *baichuan.TaobaoBaichuanUserLoginAPIRequest, session string) (*baichuan.TaobaoBaichuanUserLoginAPIResponse, error) {
 	var resp baichuan.TaobaoBaichuanUserLoginAPIResponse
 	err := clt.Post(req, &resp, session)

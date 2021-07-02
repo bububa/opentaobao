@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappCloudStoreListfileAPIResponse
-云存储根据文件名反查地址 API返回值
-taobao.miniapp.cloud.store.listfile
-
-云存储中，根据文件名反查地址 */
+// TaobaoMiniappCloudStoreListfileAPIResponse 云存储根据文件名反查地址 API返回值
+// taobao.miniapp.cloud.store.listfile
+//
+// 云存储中，根据文件名反查地址
 type TaobaoMiniappCloudStoreListfileAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappCloudStoreListfileAPIResponseModel

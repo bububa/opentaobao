@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionmiscActivityRangeAddAPIResponse
-增加活动参与的商品 API返回值
-taobao.promotionmisc.activity.range.add
-
-增加活动参与的商品，部分商品参与的活动，最大支持指定150个商品。 */
+// TaobaoPromotionmiscActivityRangeAddAPIResponse 增加活动参与的商品 API返回值
+// taobao.promotionmisc.activity.range.add
+//
+// 增加活动参与的商品，部分商品参与的活动，最大支持指定150个商品。
 type TaobaoPromotionmiscActivityRangeAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionmiscActivityRangeAddAPIResponseModel

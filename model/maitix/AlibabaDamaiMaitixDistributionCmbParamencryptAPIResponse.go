@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse
-加密招商一网能支付入参 API返回值
-alibaba.damai.maitix.distribution.cmb.paramencrypt
-
-encryptParam4Cmb */
+// AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse 加密招商一网能支付入参 API返回值
+// alibaba.damai.maitix.distribution.cmb.paramencrypt
+//
+// encryptParam4Cmb
 type AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponseModel

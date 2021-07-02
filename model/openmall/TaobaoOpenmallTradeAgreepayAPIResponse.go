@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallTradeAgreepayAPIResponse
-openmall订单支付 API返回值
-taobao.openmall.trade.agreepay
-
-openmall订单支付 */
+// TaobaoOpenmallTradeAgreepayAPIResponse openmall订单支付 API返回值
+// taobao.openmall.trade.agreepay
+//
+// openmall订单支付
 type TaobaoOpenmallTradeAgreepayAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenmallTradeAgreepayAPIResponseModel

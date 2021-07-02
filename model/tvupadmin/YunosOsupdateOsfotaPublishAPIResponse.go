@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosOsupdateOsfotaPublishAPIResponse
-系统升级发布 API返回值
-yunos.osupdate.osfota.publish
-
-发布osupdate系统升级任务 */
+// YunosOsupdateOsfotaPublishAPIResponse 系统升级发布 API返回值
+// yunos.osupdate.osfota.publish
+//
+// 发布osupdate系统升级任务
 type YunosOsupdateOsfotaPublishAPIResponse struct {
 	model.CommonResponse
 	YunosOsupdateOsfotaPublishAPIResponseModel

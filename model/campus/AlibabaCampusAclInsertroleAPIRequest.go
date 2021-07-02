@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclInsertroleAPIRequest
-新增角色 API请求
-alibaba.campus.acl.insertrole
-
-新增角色 */
+// AlibabaCampusAclInsertroleAPIRequest 新增角色 API请求
+// alibaba.campus.acl.insertrole
+//
+// 新增角色
 type AlibabaCampusAclInsertroleAPIRequest struct {
 	model.Params
 	// 公司id,不填统一为SYS_000

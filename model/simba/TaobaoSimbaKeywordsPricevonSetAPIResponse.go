@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsPricevonSetAPIResponse
-设置一批关键词的信息 API返回值
-taobao.simba.keywords.pricevon.set
-
-设置一批关键词的信息，包含无线出价、计算机出价和关键词匹配方式 */
+// TaobaoSimbaKeywordsPricevonSetAPIResponse 设置一批关键词的信息 API返回值
+// taobao.simba.keywords.pricevon.set
+//
+// 设置一批关键词的信息，包含无线出价、计算机出价和关键词匹配方式
 type TaobaoSimbaKeywordsPricevonSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaKeywordsPricevonSetAPIResponseModel

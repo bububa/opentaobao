@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTianjiDistributorOrderSubmitAPIResponse
-分销商提交受理订单 API返回值
-alibaba.tianji.distributor.order.submit
-
-分销商提交受理订单，如合约订购、充值受理等 */
+// AlibabaTianjiDistributorOrderSubmitAPIResponse 分销商提交受理订单 API返回值
+// alibaba.tianji.distributor.order.submit
+//
+// 分销商提交受理订单，如合约订购、充值受理等
 type AlibabaTianjiDistributorOrderSubmitAPIResponse struct {
 	model.CommonResponse
 	AlibabaTianjiDistributorOrderSubmitAPIResponseModel

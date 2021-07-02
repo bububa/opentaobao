@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRefundMessagesGetAPIRequest
-查询退款留言/凭证列表 API请求
-taobao.refund.messages.get
-
-查询退款留言/凭证列表 */
+// TaobaoRefundMessagesGetAPIRequest 查询退款留言/凭证列表 API请求
+// taobao.refund.messages.get
+//
+// 查询退款留言/凭证列表
 type TaobaoRefundMessagesGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表。可选值：RefundMessage结构体中的所有字段，以半角逗号(,)分隔。

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcUserCancelAPIRequest
-取消用户的消息服务 API请求
-taobao.tmc.user.cancel
-
-取消用户的消息服务 */
+// TaobaoTmcUserCancelAPIRequest 取消用户的消息服务 API请求
+// taobao.tmc.user.cancel
+//
+// 取消用户的消息服务
 type TaobaoTmcUserCancelAPIRequest struct {
 	model.Params
 	// 用户昵称

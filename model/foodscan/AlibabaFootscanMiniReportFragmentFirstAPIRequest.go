@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFootscanMiniReportFragmentFirstAPIRequest
-第一只脚生成报告接口 API请求
-alibaba.footscan.mini.report.fragment.first
-
-第一只脚生成报告接口 */
+// AlibabaFootscanMiniReportFragmentFirstAPIRequest 第一只脚生成报告接口 API请求
+// alibaba.footscan.mini.report.fragment.first
+//
+// 第一只脚生成报告接口
 type AlibabaFootscanMiniReportFragmentFirstAPIRequest struct {
 	model.Params
 	// 平台分配的token

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardConfirmAPIResponse
-服务商确认服务完成 API返回值
-tmall.servicecenter.workcard.confirm
-
-提供给外部合作服务商，用于通知天猫，告知寄修服务厂内操作全部完成 */
+// TmallServicecenterWorkcardConfirmAPIResponse 服务商确认服务完成 API返回值
+// tmall.servicecenter.workcard.confirm
+//
+// 提供给外部合作服务商，用于通知天猫，告知寄修服务厂内操作全部完成
 type TmallServicecenterWorkcardConfirmAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardConfirmAPIResponseModel

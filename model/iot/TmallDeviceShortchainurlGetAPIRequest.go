@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallDeviceShortchainurlGetAPIRequest
-获取二维码短链接 API请求
-tmall.device.shortchainurl.get
-
-获取二维码短链接 */
+// TmallDeviceShortchainurlGetAPIRequest 获取二维码短链接 API请求
+// tmall.device.shortchainurl.get
+//
+// 获取二维码短链接
 type TmallDeviceShortchainurlGetAPIRequest struct {
 	model.Params
 	// 是否需要长期二维码，默认否

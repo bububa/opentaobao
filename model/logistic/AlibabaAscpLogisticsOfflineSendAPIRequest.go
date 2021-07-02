@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpLogisticsOfflineSendAPIRequest
-自己联系物流发货 API请求
-alibaba.ascp.logistics.offline.send
-
-用户调用该接口可实现自己联系发货，使用该接口发货，交易订单状态会直接变成卖家已发货 */
+// AlibabaAscpLogisticsOfflineSendAPIRequest 自己联系物流发货 API请求
+// alibaba.ascp.logistics.offline.send
+//
+// 用户调用该接口可实现自己联系发货，使用该接口发货，交易订单状态会直接变成卖家已发货
 type AlibabaAscpLogisticsOfflineSendAPIRequest struct {
 	model.Params
 	// 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址

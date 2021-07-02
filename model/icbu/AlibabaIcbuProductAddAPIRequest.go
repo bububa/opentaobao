@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductAddAPIRequest
-发布产品 API请求
-alibaba.icbu.product.add
-
-发布商品,支持sourcing/一口价商品，支持英文和多种语言原发商品 */
+// AlibabaIcbuProductAddAPIRequest 发布产品 API请求
+// alibaba.icbu.product.add
+//
+// 发布商品,支持sourcing/一口价商品，支持英文和多种语言原发商品
 type AlibabaIcbuProductAddAPIRequest struct {
 	model.Params
 	// 商品属性和属性值

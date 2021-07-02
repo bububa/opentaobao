@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmRechargeDedutUpdateAPIResponse
-储值消费 API返回值
-alibaba.alsc.crm.recharge.dedut.update
-
-增加储值消费接口 */
+// AlibabaAlscCrmRechargeDedutUpdateAPIResponse 储值消费 API返回值
+// alibaba.alsc.crm.recharge.dedut.update
+//
+// 增加储值消费接口
 type AlibabaAlscCrmRechargeDedutUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmRechargeDedutUpdateAPIResponseModel

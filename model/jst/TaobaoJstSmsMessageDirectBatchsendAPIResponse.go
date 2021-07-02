@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstSmsMessageDirectBatchsendAPIResponse
-聚石塔新短信发送接口 API返回值
-taobao.jst.sms.message.direct.batchsend
-
-聚石塔所见即所得的短信发送接口 */
+// TaobaoJstSmsMessageDirectBatchsendAPIResponse 聚石塔新短信发送接口 API返回值
+// taobao.jst.sms.message.direct.batchsend
+//
+// 聚石塔所见即所得的短信发送接口
 type TaobaoJstSmsMessageDirectBatchsendAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsMessageDirectBatchsendAPIResponseModel

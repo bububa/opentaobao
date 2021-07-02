@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRateplanAddAPIRequest
-酒店产品库rateplan添加 API请求
-taobao.xhotel.rateplan.add
-
-酒店产品库rateplan */
+// TaobaoXhotelRateplanAddAPIRequest 酒店产品库rateplan添加 API请求
+// taobao.xhotel.rateplan.add
+//
+// 酒店产品库rateplan
 type TaobaoXhotelRateplanAddAPIRequest struct {
 	model.Params
 	// 卖家自己系统的Code，简称RateCode

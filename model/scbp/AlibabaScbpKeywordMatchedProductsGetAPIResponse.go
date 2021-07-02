@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpKeywordMatchedProductsGetAPIResponse
-查询和词匹配的推广产品 API返回值
-alibaba.scbp.keyword.matched.products.get
-
-查询和词匹配的推广产品 */
+// AlibabaScbpKeywordMatchedProductsGetAPIResponse 查询和词匹配的推广产品 API返回值
+// alibaba.scbp.keyword.matched.products.get
+//
+// 查询和词匹配的推广产品
 type AlibabaScbpKeywordMatchedProductsGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpKeywordMatchedProductsGetAPIResponseModel

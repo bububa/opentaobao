@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixDistributionDeliveryQueryAPIResponse
-查询分销物流单 API返回值
-alibaba.damai.maitix.distribution.delivery.query
-
-渠道查询物流订单 */
+// AlibabaDamaiMaitixDistributionDeliveryQueryAPIResponse 查询分销物流单 API返回值
+// alibaba.damai.maitix.distribution.delivery.query
+//
+// 渠道查询物流订单
 type AlibabaDamaiMaitixDistributionDeliveryQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixDistributionDeliveryQueryAPIResponseModel

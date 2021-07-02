@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorGmediaAPIResponse
-gmedia API返回值
-alibaba.interact.sensor.gmedia
-
-媒体功能 */
+// AlibabaInteractSensorGmediaAPIResponse gmedia API返回值
+// alibaba.interact.sensor.gmedia
+//
+// 媒体功能
 type AlibabaInteractSensorGmediaAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorGmediaAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpShowcaseStatusAPIResponse
-橱窗状态 API返回值
-alibaba.scbp.showcase.status
-
-查询橱窗状态，如总数、可用数量 */
+// AlibabaScbpShowcaseStatusAPIResponse 橱窗状态 API返回值
+// alibaba.scbp.showcase.status
+//
+// 查询橱窗状态，如总数、可用数量
 type AlibabaScbpShowcaseStatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpShowcaseStatusAPIResponseModel

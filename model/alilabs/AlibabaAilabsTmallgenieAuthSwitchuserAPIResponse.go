@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsTmallgenieAuthSwitchuserAPIResponse
-切换用户 API返回值
-alibaba.ailabs.tmallgenie.auth.switchuser
-
-设备切换授权用户 */
+// AlibabaAilabsTmallgenieAuthSwitchuserAPIResponse 切换用户 API返回值
+// alibaba.ailabs.tmallgenie.auth.switchuser
+//
+// 设备切换授权用户
 type AlibabaAilabsTmallgenieAuthSwitchuserAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsTmallgenieAuthSwitchuserAPIResponseModel

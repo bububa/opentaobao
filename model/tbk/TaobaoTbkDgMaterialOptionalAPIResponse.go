@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkDgMaterialOptionalAPIResponse
-淘宝客-推广者-物料搜索 API返回值
-taobao.tbk.dg.material.optional
-
-通用物料搜索API（导购） */
+// TaobaoTbkDgMaterialOptionalAPIResponse 淘宝客-推广者-物料搜索 API返回值
+// taobao.tbk.dg.material.optional
+//
+// 通用物料搜索API（导购）
 type TaobaoTbkDgMaterialOptionalAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkDgMaterialOptionalAPIResponseModel

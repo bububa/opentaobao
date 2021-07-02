@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripAxinTransPayRegisterAuditAPIResponse
-阿信支付入驻审核通知 API返回值
-taobao.alitrip.axin.trans.pay.register.audit
-
-阿信支付入驻审核通知 */
+// TaobaoAlitripAxinTransPayRegisterAuditAPIResponse 阿信支付入驻审核通知 API返回值
+// taobao.alitrip.axin.trans.pay.register.audit
+//
+// 阿信支付入驻审核通知
 type TaobaoAlitripAxinTransPayRegisterAuditAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripAxinTransPayRegisterAuditAPIResponseModel

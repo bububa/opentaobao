@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-/* TaobaoItemDelete
-删除单条商品
-taobao.item.delete
-
-删除单条商品 */
+// TaobaoItemDelete 删除单条商品
+// taobao.item.delete
+//
+// 删除单条商品
 func TaobaoItemDelete(clt *core.SDKClient, req *product.TaobaoItemDeleteAPIRequest, session string) (*product.TaobaoItemDeleteAPIResponse, error) {
 	var resp product.TaobaoItemDeleteAPIResponse
 	err := clt.Post(req, &resp, session)

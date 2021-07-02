@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrOrderQueryJstAPIResponse
-获取同城配送业务单笔订单 API返回值
-tmall.nr.order.query.jst
-
-同城配送业务获取单笔订单 */
+// TmallNrOrderQueryJstAPIResponse 获取同城配送业务单笔订单 API返回值
+// tmall.nr.order.query.jst
+//
+// 同城配送业务获取单笔订单
 type TmallNrOrderQueryJstAPIResponse struct {
 	model.CommonResponse
 	TmallNrOrderQueryJstAPIResponseModel

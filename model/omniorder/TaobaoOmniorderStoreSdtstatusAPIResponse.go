@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStoreSdtstatusAPIResponse
-菜鸟裹裹运单状态查询 API返回值
-taobao.omniorder.store.sdtstatus
-
-提供给商家查询运力单的状态。 */
+// TaobaoOmniorderStoreSdtstatusAPIResponse 菜鸟裹裹运单状态查询 API返回值
+// taobao.omniorder.store.sdtstatus
+//
+// 提供给商家查询运力单的状态。
 type TaobaoOmniorderStoreSdtstatusAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderStoreSdtstatusAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest
-零售药店查询本企业上游企业出库单据信息 API请求
-alibaba.alihealth.drugtrace.top.lsyd.listupout
-
-查询货主/本企业上游企业出库单据信息 */
+// AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest 零售药店查询本企业上游企业出库单据信息 API请求
+// alibaba.alihealth.drugtrace.top.lsyd.listupout
+//
+// 查询货主/本企业上游企业出库单据信息
 type AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest struct {
 	model.Params
 	// 企业ID

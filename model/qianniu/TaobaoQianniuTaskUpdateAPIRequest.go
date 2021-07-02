@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuTaskUpdateAPIRequest
-更新轻任务 API请求
-taobao.qianniu.task.update
-
-由任务执行者调用，sub_status，tag和memo至少提供一个 */
+// TaobaoQianniuTaskUpdateAPIRequest 更新轻任务 API请求
+// taobao.qianniu.task.update
+//
+// 由任务执行者调用，sub_status，tag和memo至少提供一个
 type TaobaoQianniuTaskUpdateAPIRequest struct {
 	model.Params
 	// 任务ID

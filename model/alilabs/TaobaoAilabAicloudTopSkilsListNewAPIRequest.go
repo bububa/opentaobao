@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopSkilsListNewAPIRequest
-获取产品下挂载的技能列表 API请求
-taobao.ailab.aicloud.top.skils.list.new
-
-星空平台提供的获取产品下挂载的技能列表新接口 */
+// TaobaoAilabAicloudTopSkilsListNewAPIRequest 获取产品下挂载的技能列表 API请求
+// taobao.ailab.aicloud.top.skils.list.new
+//
+// 星空平台提供的获取产品下挂载的技能列表新接口
 type TaobaoAilabAicloudTopSkilsListNewAPIRequest struct {
 	model.Params
 	// 账户体系隔离

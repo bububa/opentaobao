@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthBabyBaseinfoOrderSyncAPIResponse
-alibaba.alihealth.baby.baseinfo.order.sync API返回值
-alibaba.alihealth.baby.baseinfo.order.sync
-
-育学园将订单信息回传给我们 */
+// AlibabaAlihealthBabyBaseinfoOrderSyncAPIResponse alibaba.alihealth.baby.baseinfo.order.sync API返回值
+// alibaba.alihealth.baby.baseinfo.order.sync
+//
+// 育学园将订单信息回传给我们
 type AlibabaAlihealthBabyBaseinfoOrderSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthBabyBaseinfoOrderSyncAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBanamadpcItemSelectPropAPIRequest
-获取子属性 API请求
-taobao.banamadpc.item.select.prop
-
-巴拿马供应商通过此接口获取子属性 */
+// TaobaoBanamadpcItemSelectPropAPIRequest 获取子属性 API请求
+// taobao.banamadpc.item.select.prop
+//
+// 巴拿马供应商通过此接口获取子属性
 type TaobaoBanamadpcItemSelectPropAPIRequest struct {
 	model.Params
 	// 子属性的schema xml

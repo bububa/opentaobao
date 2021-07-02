@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsAligenieOpenvideoScenepushAPIResponse
-视频单集场景接入API API返回值
-alibaba.ailabs.aligenie.openvideo.scenepush
-
-视频单集场景接入API */
+// AlibabaAilabsAligenieOpenvideoScenepushAPIResponse 视频单集场景接入API API返回值
+// alibaba.ailabs.aligenie.openvideo.scenepush
+//
+// 视频单集场景接入API
 type AlibabaAilabsAligenieOpenvideoScenepushAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsAligenieOpenvideoScenepushAPIResponseModel

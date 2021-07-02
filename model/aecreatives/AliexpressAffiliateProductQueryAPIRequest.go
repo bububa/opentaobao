@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateProductQueryAPIRequest
-联盟推广商品获取接口 API请求
-aliexpress.affiliate.product.query
-
-联盟推广商品搜索接口，用于搜索联盟推广商品数据 */
+// AliexpressAffiliateProductQueryAPIRequest 联盟推广商品获取接口 API请求
+// aliexpress.affiliate.product.query
+//
+// 联盟推广商品搜索接口，用于搜索联盟推广商品数据
 type AliexpressAffiliateProductQueryAPIRequest struct {
 	model.Params
 	// 安全签名

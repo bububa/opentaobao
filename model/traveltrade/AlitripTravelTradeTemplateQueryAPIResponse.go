@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelTradeTemplateQueryAPIResponse
-订单服务详情模版查询 API返回值
-alitrip.travel.trade.template.query
-
-通过订单ID获取标注模版信息，商家可以根据模版来填充行业信息 */
+// AlitripTravelTradeTemplateQueryAPIResponse 订单服务详情模版查询 API返回值
+// alitrip.travel.trade.template.query
+//
+// 通过订单ID获取标注模版信息，商家可以根据模版来填充行业信息
 type AlitripTravelTradeTemplateQueryAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelTradeTemplateQueryAPIResponseModel

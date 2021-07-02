@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceTvidAPIResponse
-查询终端信息 API返回值
-yunos.tvpubadmin.device.tvid
-
-通过UUID查询终端信息 */
+// YunosTvpubadminDeviceTvidAPIResponse 查询终端信息 API返回值
+// yunos.tvpubadmin.device.tvid
+//
+// 通过UUID查询终端信息
 type YunosTvpubadminDeviceTvidAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminDeviceTvidAPIResponseModel

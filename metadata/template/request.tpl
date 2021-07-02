@@ -6,11 +6,10 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-/* {{ .Name }}APIRequest
-{{ .ChineseName }} API请求
-{{ .ApiName }}
-
-{{ .Desc }} */
+// {{ .Name }}APIRequest {{ .ChineseName }} API请求
+// {{ .ApiName }}
+// 
+{{ .Desc }}
 type {{ .Name }}APIRequest struct {
     model.Params
 {{- range $v := .RequestParams }}

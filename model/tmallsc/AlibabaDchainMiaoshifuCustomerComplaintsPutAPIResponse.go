@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse
-服务商工人客诉数据上传 API返回值
-alibaba.dchain.miaoshifu.customer.complaints.put
-
-数字服务供应链平台提供给服务商上传工人客诉数据 */
+// AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse 服务商工人客诉数据上传 API返回值
+// alibaba.dchain.miaoshifu.customer.complaints.put
+//
+// 数字服务供应链平台提供给服务商上传工人客诉数据
 type AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse struct {
 	model.CommonResponse
 	AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponseModel

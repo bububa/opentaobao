@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniapppTemplateInstantiateAPIResponse
-（已废弃）构建实例化应用 API返回值
-taobao.miniappp.template.instantiate
-
-实例化saas化的小程序 */
+// TaobaoMiniapppTemplateInstantiateAPIResponse （已废弃）构建实例化应用 API返回值
+// taobao.miniappp.template.instantiate
+//
+// 实例化saas化的小程序
 type TaobaoMiniapppTemplateInstantiateAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniapppTemplateInstantiateAPIResponseModel

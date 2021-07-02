@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-/* CainiaoCbossWorkplatformOperationReply
-菜鸟工单操作回传
-cainiao.cboss.workplatform.operation.reply
-
-菜鸟工单进度下发接口，目前调用者ISV */
+// CainiaoCbossWorkplatformOperationReply 菜鸟工单操作回传
+// cainiao.cboss.workplatform.operation.reply
+//
+// 菜鸟工单进度下发接口，目前调用者ISV
 func CainiaoCbossWorkplatformOperationReply(clt *core.SDKClient, req *logistic.CainiaoCbossWorkplatformOperationReplyAPIRequest, session string) (*logistic.CainiaoCbossWorkplatformOperationReplyAPIResponse, error) {
 	var resp logistic.CainiaoCbossWorkplatformOperationReplyAPIResponse
 	err := clt.Post(req, &resp, session)

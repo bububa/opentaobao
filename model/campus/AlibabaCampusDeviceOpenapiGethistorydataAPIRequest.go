@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusDeviceOpenapiGethistorydataAPIRequest
-查询设备历史数据 API请求
-alibaba.campus.device.openapi.gethistorydata
-
-查询历史数据的接口 */
+// AlibabaCampusDeviceOpenapiGethistorydataAPIRequest 查询设备历史数据 API请求
+// alibaba.campus.device.openapi.gethistorydata
+//
+// 查询历史数据的接口
 type AlibabaCampusDeviceOpenapiGethistorydataAPIRequest struct {
 	model.Params
 	// 请求端信息

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingVersionGenerateAPIResponse
-生成发布使用的版本号 API返回值
-alibaba.wdk.marketing.version.generate
-
-生成发布使用的版本号 */
+// AlibabaWdkMarketingVersionGenerateAPIResponse 生成发布使用的版本号 API返回值
+// alibaba.wdk.marketing.version.generate
+//
+// 生成发布使用的版本号
 type AlibabaWdkMarketingVersionGenerateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingVersionGenerateAPIResponseModel

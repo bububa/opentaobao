@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttPayOrderCreateorderAPIRequest
-创建订单 API请求
-youku.ott.pay.order.createorder
-
-ottpay创建订单 */
+// YoukuOttPayOrderCreateorderAPIRequest 创建订单 API请求
+// youku.ott.pay.order.createorder
+//
+// ottpay创建订单
 type YoukuOttPayOrderCreateorderAPIRequest struct {
 	model.Params
 	// 下单账号， cp账号

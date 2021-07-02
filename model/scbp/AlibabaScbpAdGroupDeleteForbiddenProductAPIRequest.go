@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdGroupDeleteForbiddenProductAPIRequest
-删除屏蔽品 API请求
-alibaba.scbp.ad.group.delete.forbidden.product
-
-删除屏蔽品 */
+// AlibabaScbpAdGroupDeleteForbiddenProductAPIRequest 删除屏蔽品 API请求
+// alibaba.scbp.ad.group.delete.forbidden.product
+//
+// 删除屏蔽品
 type AlibabaScbpAdGroupDeleteForbiddenProductAPIRequest struct {
 	model.Params
 	// 计划id

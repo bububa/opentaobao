@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItemOperateDownshelfAPIResponse
-商品下架 API返回值
-alibaba.item.operate.downshelf
-
-商品下架 */
+// AlibabaItemOperateDownshelfAPIResponse 商品下架 API返回值
+// alibaba.item.operate.downshelf
+//
+// 商品下架
 type AlibabaItemOperateDownshelfAPIResponse struct {
 	model.CommonResponse
 	AlibabaItemOperateDownshelfAPIResponseModel

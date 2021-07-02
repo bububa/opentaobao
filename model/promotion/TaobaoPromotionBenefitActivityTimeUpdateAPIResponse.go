@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionBenefitActivityTimeUpdateAPIResponse
-更新关联活动有效时间 API返回值
-taobao.promotion.benefit.activity.time.update
-
-更新关联权益的活动有效时间 */
+// TaobaoPromotionBenefitActivityTimeUpdateAPIResponse 更新关联活动有效时间 API返回值
+// taobao.promotion.benefit.activity.time.update
+//
+// 更新关联权益的活动有效时间
 type TaobaoPromotionBenefitActivityTimeUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionBenefitActivityTimeUpdateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpTargetAdPlanProductListGetAPIResponse
-定向推广-获取推广计划产品列表 API返回值
-alibaba.scbp.target.ad.plan.product.list.get
-
-定向推广-获取推广计划产品列表 */
+// AlibabaScbpTargetAdPlanProductListGetAPIResponse 定向推广-获取推广计划产品列表 API返回值
+// alibaba.scbp.target.ad.plan.product.list.get
+//
+// 定向推广-获取推广计划产品列表
 type AlibabaScbpTargetAdPlanProductListGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpTargetAdPlanProductListGetAPIResponseModel

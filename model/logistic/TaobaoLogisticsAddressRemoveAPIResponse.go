@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsAddressRemoveAPIResponse
-删除卖家地址库 API返回值
-taobao.logistics.address.remove
-
-用此接口删除卖家地址库 */
+// TaobaoLogisticsAddressRemoveAPIResponse 删除卖家地址库 API返回值
+// taobao.logistics.address.remove
+//
+// 用此接口删除卖家地址库
 type TaobaoLogisticsAddressRemoveAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsAddressRemoveAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradeWtverticalGetAPIResponse
-网厅垂直信息查询接口 API返回值
-taobao.trade.wtvertical.get
-
-网厅订单垂直信息的查询 */
+// TaobaoTradeWtverticalGetAPIResponse 网厅垂直信息查询接口 API返回值
+// taobao.trade.wtvertical.get
+//
+// 网厅订单垂直信息的查询
 type TaobaoTradeWtverticalGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTradeWtverticalGetAPIResponseModel

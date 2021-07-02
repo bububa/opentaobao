@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjOcOnlineTicketnoGetAPIResponse
-线上小票号获取 API返回值
-alibaba.mj.oc.online.ticketno.get
-
-线上小票号获取 */
+// AlibabaMjOcOnlineTicketnoGetAPIResponse 线上小票号获取 API返回值
+// alibaba.mj.oc.online.ticketno.get
+//
+// 线上小票号获取
 type AlibabaMjOcOnlineTicketnoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcOnlineTicketnoGetAPIResponseModel

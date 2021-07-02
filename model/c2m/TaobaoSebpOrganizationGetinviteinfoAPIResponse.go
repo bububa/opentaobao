@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSebpOrganizationGetinviteinfoAPIResponse
-淘小铺机构上下级关系 API返回值
-taobao.sebp.organization.getinviteinfo
-
-机构人员获取机构上下级关系信息 */
+// TaobaoSebpOrganizationGetinviteinfoAPIResponse 淘小铺机构上下级关系 API返回值
+// taobao.sebp.organization.getinviteinfo
+//
+// 机构人员获取机构上下级关系信息
 type TaobaoSebpOrganizationGetinviteinfoAPIResponse struct {
 	model.CommonResponse
 	TaobaoSebpOrganizationGetinviteinfoAPIResponseModel

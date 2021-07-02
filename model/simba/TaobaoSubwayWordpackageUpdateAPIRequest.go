@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSubwayWordpackageUpdateAPIRequest
-批量更新词包 API请求
-taobao.subway.wordpackage.update
-
-批量更新词包 */
+// TaobaoSubwayWordpackageUpdateAPIRequest 批量更新词包 API请求
+// taobao.subway.wordpackage.update
+//
+// 批量更新词包
 type TaobaoSubwayWordpackageUpdateAPIRequest struct {
 	model.Params
 	// 主人昵称

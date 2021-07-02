@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRdsDbGetdbAPIResponse
-rds获取RDS的DB API返回值
-taobao.rds.db.getdb
-
-rds获取RDS的DB */
+// TaobaoRdsDbGetdbAPIResponse rds获取RDS的DB API返回值
+// taobao.rds.db.getdb
+//
+// rds获取RDS的DB
 type TaobaoRdsDbGetdbAPIResponse struct {
 	model.CommonResponse
 	TaobaoRdsDbGetdbAPIResponseModel

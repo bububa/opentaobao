@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallChannelTradeDeliverorderGetAPIRequest
-通过发货单单号获取发货单的详情 API请求
-tmall.channel.trade.deliverorder.get
-
-通过发货单单号获取发货单的详情 */
+// TmallChannelTradeDeliverorderGetAPIRequest 通过发货单单号获取发货单的详情 API请求
+// tmall.channel.trade.deliverorder.get
+//
+// 通过发货单单号获取发货单的详情
 type TmallChannelTradeDeliverorderGetAPIRequest struct {
 	model.Params
 	// 发货单号

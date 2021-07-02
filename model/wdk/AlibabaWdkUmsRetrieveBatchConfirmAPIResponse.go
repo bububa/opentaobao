@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkUmsRetrieveBatchConfirmAPIResponse
-批量消息确认 API返回值
-alibaba.wdk.ums.retrieve.batch.confirm
-
-批量消息确认 */
+// AlibabaWdkUmsRetrieveBatchConfirmAPIResponse 批量消息确认 API返回值
+// alibaba.wdk.ums.retrieve.batch.confirm
+//
+// 批量消息确认
 type AlibabaWdkUmsRetrieveBatchConfirmAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkUmsRetrieveBatchConfirmAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialCurrencyGetAPIResponse
-币种获取接口 API返回值
-aliexpress.social.currency.get
-
-获取目前AE社交支持的币种 */
+// AliexpressSocialCurrencyGetAPIResponse 币种获取接口 API返回值
+// aliexpress.social.currency.get
+//
+// 获取目前AE社交支持的币种
 type AliexpressSocialCurrencyGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressSocialCurrencyGetAPIResponseModel

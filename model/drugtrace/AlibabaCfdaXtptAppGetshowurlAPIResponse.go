@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCfdaXtptAppGetshowurlAPIResponse
-协同平台码查询页面url API返回值
-alibaba.cfda.xtpt.app.getshowurl
-
-协同平台码查询页面url */
+// AlibabaCfdaXtptAppGetshowurlAPIResponse 协同平台码查询页面url API返回值
+// alibaba.cfda.xtpt.app.getshowurl
+//
+// 协同平台码查询页面url
 type AlibabaCfdaXtptAppGetshowurlAPIResponse struct {
 	model.CommonResponse
 	AlibabaCfdaXtptAppGetshowurlAPIResponseModel

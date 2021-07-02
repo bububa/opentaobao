@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripApprovalModifyAPIResponse
-修改审批单 API返回值
-alitrip.btrip.approval.modify
-
-修改审批单 */
+// AlitripBtripApprovalModifyAPIResponse 修改审批单 API返回值
+// alitrip.btrip.approval.modify
+//
+// 修改审批单
 type AlitripBtripApprovalModifyAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripApprovalModifyAPIResponseModel

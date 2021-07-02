@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordCreateKeywordBatchAPIResponse
-关键词添加 API返回值
-alibaba.scbp.ad.keyword.create.keyword.batch
-
-关键词添加 */
+// AlibabaScbpAdKeywordCreateKeywordBatchAPIResponse 关键词添加 API返回值
+// alibaba.scbp.ad.keyword.create.keyword.batch
+//
+// 关键词添加
 type AlibabaScbpAdKeywordCreateKeywordBatchAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdKeywordCreateKeywordBatchAPIResponseModel

@@ -6,14 +6,13 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSmartstoreDeviceShelfFeedbackAPIRequest
-智能硬件云货架数据回流 API请求
-taobao.smartstore.device.shelf.feedback
-
-智慧门店云货架设备回流
-规则：
-1. 回流的设备属于当前授权的用户
-2. 回流的设备属于当前应用添加 */
+// TaobaoSmartstoreDeviceShelfFeedbackAPIRequest 智能硬件云货架数据回流 API请求
+// taobao.smartstore.device.shelf.feedback
+//
+// 智慧门店云货架设备回流
+// 规则：
+// 1. 回流的设备属于当前授权的用户
+// 2. 回流的设备属于当前应用添加
 type TaobaoSmartstoreDeviceShelfFeedbackAPIRequest struct {
 	model.Params
 	// 硬件CODE

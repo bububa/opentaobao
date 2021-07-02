@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradeOrdersortGetAPIResponse
-获取前N有礼活动的开奖订单列表 API返回值
-taobao.trade.ordersort.get
-
-获取前N有礼活动的开奖订单列表 */
+// TaobaoTradeOrdersortGetAPIResponse 获取前N有礼活动的开奖订单列表 API返回值
+// taobao.trade.ordersort.get
+//
+// 获取前N有礼活动的开奖订单列表
 type TaobaoTradeOrdersortGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTradeOrdersortGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripSellerOrderConfirmAPIResponse
-代理商确认机票订单接口 API返回值
-taobao.alitrip.seller.order.confirm
-
-此接口用于代理商确认机票订单。 */
+// TaobaoAlitripSellerOrderConfirmAPIResponse 代理商确认机票订单接口 API返回值
+// taobao.alitrip.seller.order.confirm
+//
+// 此接口用于代理商确认机票订单。
 type TaobaoAlitripSellerOrderConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripSellerOrderConfirmAPIResponseModel

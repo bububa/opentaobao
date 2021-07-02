@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthUserBaseinfoGetAPIResponse
-获取用户基础信息 API返回值
-alibaba.alihealth.user.baseinfo.get
-
-获取用户基础信息 */
+// AlibabaAlihealthUserBaseinfoGetAPIResponse 获取用户基础信息 API返回值
+// alibaba.alihealth.user.baseinfo.get
+//
+// 获取用户基础信息
 type AlibabaAlihealthUserBaseinfoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthUserBaseinfoGetAPIResponseModel

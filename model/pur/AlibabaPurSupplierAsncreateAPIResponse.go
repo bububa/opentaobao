@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPurSupplierAsncreateAPIResponse
-asn创建 API返回值
-alibaba.pur.supplier.asncreate
-
-asn创建 */
+// AlibabaPurSupplierAsncreateAPIResponse asn创建 API返回值
+// alibaba.pur.supplier.asncreate
+//
+// asn创建
 type AlibabaPurSupplierAsncreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaPurSupplierAsncreateAPIResponseModel

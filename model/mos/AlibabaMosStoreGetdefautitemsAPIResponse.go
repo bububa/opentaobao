@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosStoreGetdefautitemsAPIResponse
-获取默认状态下商品列表 API返回值
-alibaba.mos.store.getdefautitems
-
-获取默认状态下商品列表 */
+// AlibabaMosStoreGetdefautitemsAPIResponse 获取默认状态下商品列表 API返回值
+// alibaba.mos.store.getdefautitems
+//
+// 获取默认状态下商品列表
 type AlibabaMosStoreGetdefautitemsAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosStoreGetdefautitemsAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItemdiscountCreateactivityAPIResponse
-创建商品特价活动 API返回值
-alibaba.wdk.marketing.itemdiscount.createactivity
-
-创建商品特价活动 */
+// AlibabaWdkMarketingItemdiscountCreateactivityAPIResponse 创建商品特价活动 API返回值
+// alibaba.wdk.marketing.itemdiscount.createactivity
+//
+// 创建商品特价活动
 type AlibabaWdkMarketingItemdiscountCreateactivityAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingItemdiscountCreateactivityAPIResponseModel

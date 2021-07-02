@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelGetAPIRequest
-酒店查询接口 API请求
-taobao.xhotel.get
-
-酒店查询接口 */
+// TaobaoXhotelGetAPIRequest 酒店查询接口 API请求
+// taobao.xhotel.get
+//
+// 酒店查询接口
 type TaobaoXhotelGetAPIRequest struct {
 	model.Params
 	// 废弃，请使用outer_id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorToastAPIResponse
-toast API返回值
-alibaba.interact.sensor.toast
-
-toast提示 */
+// AlibabaInteractSensorToastAPIResponse toast API返回值
+// alibaba.interact.sensor.toast
+//
+// toast提示
 type AlibabaInteractSensorToastAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorToastAPIResponseModel

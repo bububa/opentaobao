@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallExchangeReturngoodsRefuseAPIResponse
-卖家拒绝确认收货 API返回值
-tmall.exchange.returngoods.refuse
-
-卖家拒绝买家换货申请 */
+// TmallExchangeReturngoodsRefuseAPIResponse 卖家拒绝确认收货 API返回值
+// tmall.exchange.returngoods.refuse
+//
+// 卖家拒绝买家换货申请
 type TmallExchangeReturngoodsRefuseAPIResponse struct {
 	model.CommonResponse
 	TmallExchangeReturngoodsRefuseAPIResponseModel

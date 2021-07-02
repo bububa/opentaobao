@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuProductInventoryUpdateAPIResponse
-icbu商品库存更新 API返回值
-alibaba.icbu.product.inventory.update
-
-更新库存信息 */
+// AlibabaIcbuProductInventoryUpdateAPIResponse icbu商品库存更新 API返回值
+// alibaba.icbu.product.inventory.update
+//
+// 更新库存信息
 type AlibabaIcbuProductInventoryUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuProductInventoryUpdateAPIResponseModel

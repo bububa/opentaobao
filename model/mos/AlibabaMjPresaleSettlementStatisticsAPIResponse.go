@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjPresaleSettlementStatisticsAPIResponse
-预购结算数据统计 API返回值
-alibaba.mj.presale.settlement.statistics
-
-预购结算数据统计 */
+// AlibabaMjPresaleSettlementStatisticsAPIResponse 预购结算数据统计 API返回值
+// alibaba.mj.presale.settlement.statistics
+//
+// 预购结算数据统计
 type AlibabaMjPresaleSettlementStatisticsAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjPresaleSettlementStatisticsAPIResponseModel

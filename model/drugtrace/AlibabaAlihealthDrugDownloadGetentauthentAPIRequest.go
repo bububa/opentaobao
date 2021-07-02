@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugDownloadGetentauthentAPIRequest
-获取授权企业列表 API请求
-alibaba.alihealth.drug.download.getentauthent
-
-D2D数据落地获取授权企业列表 */
+// AlibabaAlihealthDrugDownloadGetentauthentAPIRequest 获取授权企业列表 API请求
+// alibaba.alihealth.drug.download.getentauthent
+//
+// D2D数据落地获取授权企业列表
 type AlibabaAlihealthDrugDownloadGetentauthentAPIRequest struct {
 	model.Params
 	// 授权开始时间

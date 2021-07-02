@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-/* AlitripBtripEmployeeQuery
-企业员工查询
-alitrip.btrip.employee.query
-
-企业员工查询 */
+// AlitripBtripEmployeeQuery 企业员工查询
+// alitrip.btrip.employee.query
+//
+// 企业员工查询
 func AlitripBtripEmployeeQuery(clt *core.SDKClient, req *btrip.AlitripBtripEmployeeQueryAPIRequest, session string) (*btrip.AlitripBtripEmployeeQueryAPIResponse, error) {
 	var resp btrip.AlitripBtripEmployeeQueryAPIResponse
 	err := clt.Post(req, &resp, session)

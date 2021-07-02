@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelAxinPoiDetailQueryAPIResponse
-景点poi详情查询-阿信 API返回值
-taobao.alitrip.travel.axin.poi.detail.query
-
-景点poi详情查询-阿信 */
+// TaobaoAlitripTravelAxinPoiDetailQueryAPIResponse 景点poi详情查询-阿信 API返回值
+// taobao.alitrip.travel.axin.poi.detail.query
+//
+// 景点poi详情查询-阿信
 type TaobaoAlitripTravelAxinPoiDetailQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTravelAxinPoiDetailQueryAPIResponseModel

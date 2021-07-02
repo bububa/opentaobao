@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractActivityApplyAPIResponse
-ISV报名官方活动(中心化流量) API返回值
-alibaba.interact.activity.apply
-
-支持商家将使用isv创建的活动所对应的权益信息同步到手淘，供过滤是否在中心化流量入口透出 */
+// AlibabaInteractActivityApplyAPIResponse ISV报名官方活动(中心化流量) API返回值
+// alibaba.interact.activity.apply
+//
+// 支持商家将使用isv创建的活动所对应的权益信息同步到手淘，供过滤是否在中心化流量入口透出
 type AlibabaInteractActivityApplyAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractActivityApplyAPIResponseModel

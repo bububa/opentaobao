@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceBillEinvoiceListAPIResponse
-扫码开票列表 API返回值
-alibaba.einvoice.bill.einvoice.list
-
-扫码开票列表，包括用户扫二维码开票和结算单同步前的开票数据 */
+// AlibabaEinvoiceBillEinvoiceListAPIResponse 扫码开票列表 API返回值
+// alibaba.einvoice.bill.einvoice.list
+//
+// 扫码开票列表，包括用户扫二维码开票和结算单同步前的开票数据
 type AlibabaEinvoiceBillEinvoiceListAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceBillEinvoiceListAPIResponseModel

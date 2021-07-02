@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappEleuserinfoGetAPIResponse
-获取饿了么用户信息 API返回值
-taobao.miniapp.eleuserinfo.get
-
-获取饿了么用户信息 */
+// TaobaoMiniappEleuserinfoGetAPIResponse 获取饿了么用户信息 API返回值
+// taobao.miniapp.eleuserinfo.get
+//
+// 获取饿了么用户信息
 type TaobaoMiniappEleuserinfoGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappEleuserinfoGetAPIResponseModel

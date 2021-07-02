@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsQscoreSplitGetAPIResponse
-新质量分服务 API返回值
-taobao.simba.keywords.qscore.split.get
-
-获取关键词新的质量分 */
+// TaobaoSimbaKeywordsQscoreSplitGetAPIResponse 新质量分服务 API返回值
+// taobao.simba.keywords.qscore.split.get
+//
+// 获取关键词新的质量分
 type TaobaoSimbaKeywordsQscoreSplitGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaKeywordsQscoreSplitGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopLikeListAPIRequest
-列出收藏列表 API请求
-taobao.ailab.aicloud.top.like.list
-
-列出收藏列表 */
+// TaobaoAilabAicloudTopLikeListAPIRequest 列出收藏列表 API请求
+// taobao.ailab.aicloud.top.like.list
+//
+// 列出收藏列表
 type TaobaoAilabAicloudTopLikeListAPIRequest struct {
 	model.Params
 	// 扩展信息，用于存放APP类型等

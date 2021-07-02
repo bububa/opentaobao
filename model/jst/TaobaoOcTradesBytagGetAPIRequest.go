@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOcTradesBytagGetAPIRequest
-标签查询订单 API请求
-taobao.oc.trades.bytag.get
-
-根据标签查询订单编号 */
+// TaobaoOcTradesBytagGetAPIRequest 标签查询订单 API请求
+// taobao.oc.trades.bytag.get
+//
+// 根据标签查询订单编号
 type TaobaoOcTradesBytagGetAPIRequest struct {
 	model.Params
 	// 分页大小

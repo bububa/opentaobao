@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateOrderGetAPIResponse
-AE流量订单详情获取API API返回值
-aliexpress.affiliate.order.get
-
-联盟推广订单效果获取API */
+// AliexpressAffiliateOrderGetAPIResponse AE流量订单详情获取API API返回值
+// aliexpress.affiliate.order.get
+//
+// 联盟推广订单效果获取API
 type AliexpressAffiliateOrderGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressAffiliateOrderGetAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wangwang"
 )
 
-/* TaobaoWangwangAbstractGetwordlist
-获取关键词列表
-taobao.wangwang.abstract.getwordlist
-
-获取关键词列表，只支持json返回 */
+// TaobaoWangwangAbstractGetwordlist 获取关键词列表
+// taobao.wangwang.abstract.getwordlist
+//
+// 获取关键词列表，只支持json返回
 func TaobaoWangwangAbstractGetwordlist(clt *core.SDKClient, req *wangwang.TaobaoWangwangAbstractGetwordlistAPIRequest, session string) (*wangwang.TaobaoWangwangAbstractGetwordlistAPIResponse, error) {
 	var resp wangwang.TaobaoWangwangAbstractGetwordlistAPIResponse
 	err := clt.Post(req, &resp, session)

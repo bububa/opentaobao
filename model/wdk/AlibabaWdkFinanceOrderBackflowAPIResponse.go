@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkFinanceOrderBackflowAPIResponse
-财务订单回流 API返回值
-alibaba.wdk.finance.order.backflow
-
-星巴克拉取财务订单回流数据 */
+// AlibabaWdkFinanceOrderBackflowAPIResponse 财务订单回流 API返回值
+// alibaba.wdk.finance.order.backflow
+//
+// 星巴克拉取财务订单回流数据
 type AlibabaWdkFinanceOrderBackflowAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkFinanceOrderBackflowAPIResponseModel

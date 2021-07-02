@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotDeviceIsexistAPIRequest
-判断设备是否存在 API请求
-alibaba.aliqin.fc.iot.device.isexist
-
-判断设备是否存在 */
+// AlibabaAliqinFcIotDeviceIsexistAPIRequest 判断设备是否存在 API请求
+// alibaba.aliqin.fc.iot.device.isexist
+//
+// 判断设备是否存在
 type AlibabaAliqinFcIotDeviceIsexistAPIRequest struct {
 	model.Params
 	// 设备编号

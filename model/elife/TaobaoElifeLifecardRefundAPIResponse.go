@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoElifeLifecardRefundAPIResponse
-品牌惠卡券冲正退还 API返回值
-taobao.elife.lifecard.refund
-
-淘宝生活汇消费卡虚拟卡，线下冲正退货接口 */
+// TaobaoElifeLifecardRefundAPIResponse 品牌惠卡券冲正退还 API返回值
+// taobao.elife.lifecard.refund
+//
+// 淘宝生活汇消费卡虚拟卡，线下冲正退货接口
 type TaobaoElifeLifecardRefundAPIResponse struct {
 	model.CommonResponse
 	TaobaoElifeLifecardRefundAPIResponseModel

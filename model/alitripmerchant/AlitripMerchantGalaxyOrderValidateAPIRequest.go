@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyOrderValidateAPIRequest
-星河-订单试单接口 API请求
-alitrip.merchant.galaxy.order.validate
-
-根据用户选择酒店房型、入住人数、预订时间参数，获取是否可预订及价格变化信息 */
+// AlitripMerchantGalaxyOrderValidateAPIRequest 星河-订单试单接口 API请求
+// alitrip.merchant.galaxy.order.validate
+//
+// 根据用户选择酒店房型、入住人数、预订时间参数，获取是否可预订及价格变化信息
 type AlitripMerchantGalaxyOrderValidateAPIRequest struct {
 	model.Params
 	// 租户身份信息

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelFutureSoftmodifyAPIResponse
-未来酒店信息下发 API返回值
-taobao.xhotel.future.softmodify
-
-未来酒店信息下发，包含PMS订单查询和自助入住 */
+// TaobaoXhotelFutureSoftmodifyAPIResponse 未来酒店信息下发 API返回值
+// taobao.xhotel.future.softmodify
+//
+// 未来酒店信息下发，包含PMS订单查询和自助入住
 type TaobaoXhotelFutureSoftmodifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelFutureSoftmodifyAPIResponseModel

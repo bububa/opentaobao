@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPricePromotionItemAddAPIResponse
-新增档期商品 API返回值
-alibaba.price.promotion.item.add
-
-批量新增档期活动商品 */
+// AlibabaPricePromotionItemAddAPIResponse 新增档期商品 API返回值
+// alibaba.price.promotion.item.add
+//
+// 批量新增档期活动商品
 type AlibabaPricePromotionItemAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaPricePromotionItemAddAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionmiscCommonItemActivityDeleteAPIResponse
-删除通用单品优惠活动 API返回值
-taobao.promotionmisc.common.item.activity.delete
-
-删除通用单品优惠活动。 */
+// TaobaoPromotionmiscCommonItemActivityDeleteAPIResponse 删除通用单品优惠活动 API返回值
+// taobao.promotionmisc.common.item.activity.delete
+//
+// 删除通用单品优惠活动。
 type TaobaoPromotionmiscCommonItemActivityDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionmiscCommonItemActivityDeleteAPIResponseModel

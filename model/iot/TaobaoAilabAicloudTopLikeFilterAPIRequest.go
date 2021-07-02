@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopLikeFilterAPIRequest
-过滤列表歌曲存在于收藏列表的 API请求
-taobao.ailab.aicloud.top.like.filter
-
-过滤出传入列表歌曲存在于收藏列表的 */
+// TaobaoAilabAicloudTopLikeFilterAPIRequest 过滤列表歌曲存在于收藏列表的 API请求
+// taobao.ailab.aicloud.top.like.filter
+//
+// 过滤出传入列表歌曲存在于收藏列表的
 type TaobaoAilabAicloudTopLikeFilterAPIRequest struct {
 	model.Params
 	// 账户体系隔离

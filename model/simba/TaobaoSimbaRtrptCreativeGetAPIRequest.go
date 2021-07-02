@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRtrptCreativeGetAPIRequest
-获取创意实时报表数据 API请求
-taobao.simba.rtrpt.creative.get
-
-获取创意实时报表数据 */
+// TaobaoSimbaRtrptCreativeGetAPIRequest 获取创意实时报表数据 API请求
+// taobao.simba.rtrpt.creative.get
+//
+// 获取创意实时报表数据
 type TaobaoSimbaRtrptCreativeGetAPIRequest struct {
 	model.Params
 	// 用户名

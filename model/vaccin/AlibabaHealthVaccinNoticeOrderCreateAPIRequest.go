@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeOrderCreateAPIRequest
-支付宝医疗健康疫苗预约创建 API请求
-alibaba.health.vaccin.notice.order.create
-
-支付宝医疗健康疫苗预约创建 */
+// AlibabaHealthVaccinNoticeOrderCreateAPIRequest 支付宝医疗健康疫苗预约创建 API请求
+// alibaba.health.vaccin.notice.order.create
+//
+// 支付宝医疗健康疫苗预约创建
 type AlibabaHealthVaccinNoticeOrderCreateAPIRequest struct {
 	model.Params
 	// 预约人性别(1男2女)

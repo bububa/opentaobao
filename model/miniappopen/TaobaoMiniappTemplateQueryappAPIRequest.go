@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappTemplateQueryappAPIRequest
-查询实例化应用版本 API请求
-taobao.miniapp.template.queryapp
-
-根据模板id和商家信息，查询实例化小程序版本查询 */
+// TaobaoMiniappTemplateQueryappAPIRequest 查询实例化应用版本 API请求
+// taobao.miniapp.template.queryapp
+//
+// 根据模板id和商家信息，查询实例化小程序版本查询
 type TaobaoMiniappTemplateQueryappAPIRequest struct {
 	model.Params
 	// 分页大小，最大50，按照小程序Id倒序

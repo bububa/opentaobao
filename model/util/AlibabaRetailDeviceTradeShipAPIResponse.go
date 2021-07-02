@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDeviceTradeShipAPIResponse
-贩卖机掉货成功通知 API返回值
-alibaba.retail.device.trade.ship
-
-贩卖机发货 */
+// AlibabaRetailDeviceTradeShipAPIResponse 贩卖机掉货成功通知 API返回值
+// alibaba.retail.device.trade.ship
+//
+// 贩卖机发货
 type AlibabaRetailDeviceTradeShipAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailDeviceTradeShipAPIResponseModel

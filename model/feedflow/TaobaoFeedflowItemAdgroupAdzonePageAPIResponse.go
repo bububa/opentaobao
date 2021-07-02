@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemAdgroupAdzonePageAPIResponse
-信息流单元下查看绑定资源位 API返回值
-taobao.feedflow.item.adgroup.adzone.page
-
-信息流单元下查看绑定资源位 */
+// TaobaoFeedflowItemAdgroupAdzonePageAPIResponse 信息流单元下查看绑定资源位 API返回值
+// taobao.feedflow.item.adgroup.adzone.page
+//
+// 信息流单元下查看绑定资源位
 type TaobaoFeedflowItemAdgroupAdzonePageAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemAdgroupAdzonePageAPIResponseModel

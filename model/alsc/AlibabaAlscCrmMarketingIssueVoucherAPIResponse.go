@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmMarketingIssueVoucherAPIResponse
-发券 API返回值
-alibaba.alsc.crm.marketing.issue.voucher
-
-提供发券功能 */
+// AlibabaAlscCrmMarketingIssueVoucherAPIResponse 发券 API返回值
+// alibaba.alsc.crm.marketing.issue.voucher
+//
+// 提供发券功能
 type AlibabaAlscCrmMarketingIssueVoucherAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmMarketingIssueVoucherAPIResponseModel

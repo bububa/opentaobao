@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIvrNumCallAPIRequest
-ivr呼叫 API请求
-alibaba.aliqin.fc.ivr.num.call
-
-ivr呼叫 */
+// AlibabaAliqinFcIvrNumCallAPIRequest ivr呼叫 API请求
+// alibaba.aliqin.fc.ivr.num.call
+//
+// ivr呼叫
 type AlibabaAliqinFcIvrNumCallAPIRequest struct {
 	model.Params
 	// 被叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500

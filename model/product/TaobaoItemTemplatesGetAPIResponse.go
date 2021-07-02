@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemTemplatesGetAPIResponse
-获取用户宝贝详情页模板名称 API返回值
-taobao.item.templates.get
-
-查询当前登录用户的店铺的宝贝详情页的模板名称 */
+// TaobaoItemTemplatesGetAPIResponse 获取用户宝贝详情页模板名称 API返回值
+// taobao.item.templates.get
+//
+// 查询当前登录用户的店铺的宝贝详情页的模板名称
 type TaobaoItemTemplatesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemTemplatesGetAPIResponseModel

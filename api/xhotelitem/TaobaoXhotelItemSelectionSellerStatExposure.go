@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-/* TaobaoXhotelItemSelectionSellerStatExposure
-选品曝光趋势
-taobao.xhotel.item.selection.seller.stat.exposure
-
-用于提供给商家获取选品曝光趋势 */
+// TaobaoXhotelItemSelectionSellerStatExposure 选品曝光趋势
+// taobao.xhotel.item.selection.seller.stat.exposure
+//
+// 用于提供给商家获取选品曝光趋势
 func TaobaoXhotelItemSelectionSellerStatExposure(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelItemSelectionSellerStatExposureAPIRequest, session string) (*xhotelitem.TaobaoXhotelItemSelectionSellerStatExposureAPIResponse, error) {
 	var resp xhotelitem.TaobaoXhotelItemSelectionSellerStatExposureAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMevOpenChangeticketAPIResponse
-大麦换验平台-第三方对外开放-票单接口changeTicket API返回值
-alibaba.damai.mev.open.changeticket
-
-开放接口 换票 */
+// AlibabaDamaiMevOpenChangeticketAPIResponse 大麦换验平台-第三方对外开放-票单接口changeTicket API返回值
+// alibaba.damai.mev.open.changeticket
+//
+// 开放接口 换票
 type AlibabaDamaiMevOpenChangeticketAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMevOpenChangeticketAPIResponseModel

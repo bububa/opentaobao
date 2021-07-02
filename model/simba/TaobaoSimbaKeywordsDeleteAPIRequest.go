@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsDeleteAPIRequest
-删除一批关键词 API请求
-taobao.simba.keywords.delete
-
-删除一批关键词 */
+// TaobaoSimbaKeywordsDeleteAPIRequest 删除一批关键词 API请求
+// taobao.simba.keywords.delete
+//
+// 删除一批关键词
 type TaobaoSimbaKeywordsDeleteAPIRequest struct {
 	model.Params
 	// 主人昵称

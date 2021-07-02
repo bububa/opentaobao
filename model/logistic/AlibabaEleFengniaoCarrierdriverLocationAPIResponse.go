@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoCarrierdriverLocationAPIResponse
-查询骑手当前位置 API返回值
-alibaba.ele.fengniao.carrierdriver.location
-
-查询骑手当前位置 */
+// AlibabaEleFengniaoCarrierdriverLocationAPIResponse 查询骑手当前位置 API返回值
+// alibaba.ele.fengniao.carrierdriver.location
+//
+// 查询骑手当前位置
 type AlibabaEleFengniaoCarrierdriverLocationAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoCarrierdriverLocationAPIResponseModel

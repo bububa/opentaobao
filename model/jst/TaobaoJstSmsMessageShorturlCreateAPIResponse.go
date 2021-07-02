@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstSmsMessageShorturlCreateAPIResponse
-聚石塔营销效果短链生成 API返回值
-taobao.jst.sms.message.shorturl.create
-
-聚石塔生成淘短链接口 */
+// TaobaoJstSmsMessageShorturlCreateAPIResponse 聚石塔营销效果短链生成 API返回值
+// taobao.jst.sms.message.shorturl.create
+//
+// 聚石塔生成淘短链接口
 type TaobaoJstSmsMessageShorturlCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsMessageShorturlCreateAPIResponseModel

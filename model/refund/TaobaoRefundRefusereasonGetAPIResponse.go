@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRefundRefusereasonGetAPIResponse
-获取拒绝原因列表 API返回值
-taobao.refund.refusereason.get
-
-获取商家拒绝原因列表 */
+// TaobaoRefundRefusereasonGetAPIResponse 获取拒绝原因列表 API返回值
+// taobao.refund.refusereason.get
+//
+// 获取商家拒绝原因列表
 type TaobaoRefundRefusereasonGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoRefundRefusereasonGetAPIResponseModel

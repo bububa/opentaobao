@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMedicalOrderQueryAPIResponse
-三方机构查询订单详情接口 API返回值
-alibaba.alihealth.medical.order.query
-
-查询订单详情，包括评价 */
+// AlibabaAlihealthMedicalOrderQueryAPIResponse 三方机构查询订单详情接口 API返回值
+// alibaba.alihealth.medical.order.query
+//
+// 查询订单详情，包括评价
 type AlibabaAlihealthMedicalOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthMedicalOrderQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminUserRightsAPIRequest
-获取用户权益 API请求
-yunos.tvpubadmin.user.rights
-
-获取用户权益 */
+// YunosTvpubadminUserRightsAPIRequest 获取用户权益 API请求
+// yunos.tvpubadmin.user.rights
+//
+// 获取用户权益
 type YunosTvpubadminUserRightsAPIRequest struct {
 	model.Params
 	// 用户ID

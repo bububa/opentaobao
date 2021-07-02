@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuRfqMyequityAPIResponse
-我的权益 API返回值
-alibaba.icbu.rfq.myequity
-
-查询供应商权益接口 */
+// AlibabaIcbuRfqMyequityAPIResponse 我的权益 API返回值
+// alibaba.icbu.rfq.myequity
+//
+// 查询供应商权益接口
 type AlibabaIcbuRfqMyequityAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuRfqMyequityAPIResponseModel

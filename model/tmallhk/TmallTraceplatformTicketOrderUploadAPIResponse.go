@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTraceplatformTicketOrderUploadAPIResponse
-上传小票数据 API返回值
-tmall.traceplatform.ticket.order.upload
-
-upsertOrderBySeller */
+// TmallTraceplatformTicketOrderUploadAPIResponse 上传小票数据 API返回值
+// tmall.traceplatform.ticket.order.upload
+//
+// upsertOrderBySeller
 type TmallTraceplatformTicketOrderUploadAPIResponse struct {
 	model.CommonResponse
 	TmallTraceplatformTicketOrderUploadAPIResponseModel

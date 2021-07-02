@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunUnimktTaskChargeLaunchAPIResponse
-云码权益查询 API返回值
-aliyun.unimkt.task.charge.launch
-
-云码线上流量投放链路，用于判断用户是否有匹配的投放计划 */
+// AliyunUnimktTaskChargeLaunchAPIResponse 云码权益查询 API返回值
+// aliyun.unimkt.task.charge.launch
+//
+// 云码线上流量投放链路，用于判断用户是否有匹配的投放计划
 type AliyunUnimktTaskChargeLaunchAPIResponse struct {
 	model.CommonResponse
 	AliyunUnimktTaskChargeLaunchAPIResponseModel

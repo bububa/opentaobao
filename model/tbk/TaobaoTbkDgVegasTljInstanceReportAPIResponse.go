@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkDgVegasTljInstanceReportAPIResponse
-淘宝客-推广者-淘礼金发放及使用报表 API返回值
-taobao.tbk.dg.vegas.tlj.instance.report
-
-淘礼金实例维度相关报表数据查询 */
+// TaobaoTbkDgVegasTljInstanceReportAPIResponse 淘宝客-推广者-淘礼金发放及使用报表 API返回值
+// taobao.tbk.dg.vegas.tlj.instance.report
+//
+// 淘礼金实例维度相关报表数据查询
 type TaobaoTbkDgVegasTljInstanceReportAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkDgVegasTljInstanceReportAPIResponseModel

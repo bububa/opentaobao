@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTelecomZhimaOrdernotifyCallbackAPIResponse
-阿里通信芝麻订单通知 API返回值
-alibaba.telecom.zhima.ordernotify.callback
-
-商家通知阿里通信，芝麻订单状态，阿里通信侧进行代扣支付、发货并确认收货 */
+// AlibabaTelecomZhimaOrdernotifyCallbackAPIResponse 阿里通信芝麻订单通知 API返回值
+// alibaba.telecom.zhima.ordernotify.callback
+//
+// 商家通知阿里通信，芝麻订单状态，阿里通信侧进行代扣支付、发货并确认收货
 type AlibabaTelecomZhimaOrdernotifyCallbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaTelecomZhimaOrdernotifyCallbackAPIResponseModel

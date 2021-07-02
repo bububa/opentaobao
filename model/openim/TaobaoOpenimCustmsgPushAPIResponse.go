@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimCustmsgPushAPIResponse
-推送自定义openim消息 API返回值
-taobao.openim.custmsg.push
-
-isv通过该接口给openim用户推送自定义消息 */
+// TaobaoOpenimCustmsgPushAPIResponse 推送自定义openim消息 API返回值
+// taobao.openim.custmsg.push
+//
+// isv通过该接口给openim用户推送自定义消息
 type TaobaoOpenimCustmsgPushAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimCustmsgPushAPIResponseModel

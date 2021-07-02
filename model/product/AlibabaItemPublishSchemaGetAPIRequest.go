@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItemPublishSchemaGetAPIRequest
-获取商品发布规则信息 API请求
-alibaba.item.publish.schema.get
-
-新商品发布，获取商品发布规则信息 */
+// AlibabaItemPublishSchemaGetAPIRequest 获取商品发布规则信息 API请求
+// alibaba.item.publish.schema.get
+//
+// 新商品发布，获取商品发布规则信息
 type AlibabaItemPublishSchemaGetAPIRequest struct {
 	model.Params
 	// 业务扩展参数，需与平台约定好

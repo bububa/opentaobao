@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmGrademktMemberDetailDeleteAPIRequest
-会员等级营销-删除商品等级营销明细 API请求
-taobao.crm.grademkt.member.detail.delete
-
-删除商品等级营销明细 */
+// TaobaoCrmGrademktMemberDetailDeleteAPIRequest 会员等级营销-删除商品等级营销明细 API请求
+// taobao.crm.grademkt.member.detail.delete
+//
+// 删除商品等级营销明细
 type TaobaoCrmGrademktMemberDetailDeleteAPIRequest struct {
 	model.Params
 	// 扩展字段

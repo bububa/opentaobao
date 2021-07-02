@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest
-接收发生变化的抖音帐号 API请求
-alibaba.pictures.dengta.ims.douyin.account.changed
-
-接收发生变化的抖音帐号 */
+// AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest 接收发生变化的抖音帐号 API请求
+// alibaba.pictures.dengta.ims.douyin.account.changed
+//
+// 接收发生变化的抖音帐号
 type AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest struct {
 	model.Params
 	// 天下秀账号ID列表，多个用逗号分隔

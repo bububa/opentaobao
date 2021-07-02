@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorNetworkstatusAPIResponse
-网络状态 API返回值
-alibaba.interact.sensor.networkstatus
-
-客户端网络状态 */
+// AlibabaInteractSensorNetworkstatusAPIResponse 网络状态 API返回值
+// alibaba.interact.sensor.networkstatus
+//
+// 客户端网络状态
 type AlibabaInteractSensorNetworkstatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorNetworkstatusAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionSkuAttributeQueryAPIResponse
-Query the sku attribute information belonged to a specific category API返回值
-aliexpress.solution.sku.attribute.query
-
-Query the sku attribute information belonged to a specific category, customized for oversea merchants. */
+// AliexpressSolutionSkuAttributeQueryAPIResponse Query the sku attribute information belonged to a specific category API返回值
+// aliexpress.solution.sku.attribute.query
+//
+// Query the sku attribute information belonged to a specific category, customized for oversea merchants.
 type AliexpressSolutionSkuAttributeQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionSkuAttributeQueryAPIResponseModel

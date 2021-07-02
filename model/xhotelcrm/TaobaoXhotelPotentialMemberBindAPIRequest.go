@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelPotentialMemberBindAPIRequest
-飞猪酒店商家会员绑定 API请求
-taobao.xhotel.potential.member.bind
-
-支持互通商家发起会员绑定 */
+// TaobaoXhotelPotentialMemberBindAPIRequest 飞猪酒店商家会员绑定 API请求
+// taobao.xhotel.potential.member.bind
+//
+// 支持互通商家发起会员绑定
 type TaobaoXhotelPotentialMemberBindAPIRequest struct {
 	model.Params
 	// 名

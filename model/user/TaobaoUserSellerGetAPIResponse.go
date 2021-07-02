@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUserSellerGetAPIResponse
-查询卖家用户信息 API返回值
-taobao.user.seller.get
-
-查询卖家用户信息（只能查询有店铺的用户） 只能卖家类应用调用。 */
+// TaobaoUserSellerGetAPIResponse 查询卖家用户信息 API返回值
+// taobao.user.seller.get
+//
+// 查询卖家用户信息（只能查询有店铺的用户） 只能卖家类应用调用。
 type TaobaoUserSellerGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoUserSellerGetAPIResponseModel

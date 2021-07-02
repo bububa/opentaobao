@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest
-获取企业冷链设备信息 API请求
-alibaba.alihealth.drug.kyt.dr.vaequipment.list
-
-获取企业冷链设备信息 */
+// AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest 获取企业冷链设备信息 API请求
+// alibaba.alihealth.drug.kyt.dr.vaequipment.list
+//
+// 获取企业冷链设备信息
 type AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest struct {
 	model.Params
 	// 操作企业ID （appkey授权）

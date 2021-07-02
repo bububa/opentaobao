@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSubwayAutomatchRptGetAPIRequest
-查询流量智选天级报告 API请求
-taobao.subway.automatch.rpt.get
-
-查询流量智选天级报告 */
+// TaobaoSubwayAutomatchRptGetAPIRequest 查询流量智选天级报告 API请求
+// taobao.subway.automatch.rpt.get
+//
+// 查询流量智选天级报告
 type TaobaoSubwayAutomatchRptGetAPIRequest struct {
 	model.Params
 	// 主人昵称

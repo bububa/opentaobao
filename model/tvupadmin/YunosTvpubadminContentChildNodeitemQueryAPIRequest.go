@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentChildNodeitemQueryAPIRequest
-查询少儿大厅类目内容 API请求
-yunos.tvpubadmin.content.child.nodeitem.query
-
-查询少儿大厅类目内容信息 */
+// YunosTvpubadminContentChildNodeitemQueryAPIRequest 查询少儿大厅类目内容 API请求
+// yunos.tvpubadmin.content.child.nodeitem.query
+//
+// 查询少儿大厅类目内容信息
 type YunosTvpubadminContentChildNodeitemQueryAPIRequest struct {
 	model.Params
 	// 主键ID

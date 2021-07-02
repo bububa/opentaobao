@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlicomVtOpentradeGetproductinfoAPIResponse
-查询新虚拟产品配置信息 API返回值
-alibaba.alicom.vt.opentrade.getproductinfo
-
-话费宝查询产品信息相关配置 */
+// AlibabaAlicomVtOpentradeGetproductinfoAPIResponse 查询新虚拟产品配置信息 API返回值
+// alibaba.alicom.vt.opentrade.getproductinfo
+//
+// 话费宝查询产品信息相关配置
 type AlibabaAlicomVtOpentradeGetproductinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlicomVtOpentradeGetproductinfoAPIResponseModel

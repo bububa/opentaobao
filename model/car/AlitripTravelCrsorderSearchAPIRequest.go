@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelCrsorderSearchAPIRequest
-CRS接送机订单列表搜索 API请求
-alitrip.travel.crsorder.search
-
-提供给CRS商家搜索订单列表，仅返回订单号列表 */
+// AlitripTravelCrsorderSearchAPIRequest CRS接送机订单列表搜索 API请求
+// alitrip.travel.crsorder.search
+//
+// 提供给CRS商家搜索订单列表，仅返回订单号列表
 type AlitripTravelCrsorderSearchAPIRequest struct {
 	model.Params
 	// 订单状态，10-待派单，20-待用车，30-已取消，40-待处理退款申请，60-已关闭，70-已完成

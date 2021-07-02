@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemsCustomGetAPIResponse
-根据外部ID取商品 API返回值
-taobao.items.custom.get
-
-跟据卖家设定的商品外部id获取商品，只能获取授权卖家的商品
-<br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong> */
+// TaobaoItemsCustomGetAPIResponse 根据外部ID取商品 API返回值
+// taobao.items.custom.get
+//
+// 跟据卖家设定的商品外部id获取商品，只能获取授权卖家的商品
+// <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 type TaobaoItemsCustomGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemsCustomGetAPIResponseModel

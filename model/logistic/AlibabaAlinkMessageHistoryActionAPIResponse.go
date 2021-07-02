@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlinkMessageHistoryActionAPIResponse
-操作历史消息 API返回值
-alibaba.alink.message.history.action
-
-阿里智能操作历史消息 */
+// AlibabaAlinkMessageHistoryActionAPIResponse 操作历史消息 API返回值
+// alibaba.alink.message.history.action
+//
+// 阿里智能操作历史消息
 type AlibabaAlinkMessageHistoryActionAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlinkMessageHistoryActionAPIResponseModel

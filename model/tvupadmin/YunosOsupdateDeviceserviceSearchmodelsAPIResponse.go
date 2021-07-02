@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosOsupdateDeviceserviceSearchmodelsAPIResponse
-根据关键词检索设备型号 API返回值
-yunos.osupdate.deviceservice.searchmodels
-
-根据关键词检索设备型号 */
+// YunosOsupdateDeviceserviceSearchmodelsAPIResponse 根据关键词检索设备型号 API返回值
+// yunos.osupdate.deviceservice.searchmodels
+//
+// 根据关键词检索设备型号
 type YunosOsupdateDeviceserviceSearchmodelsAPIResponse struct {
 	model.CommonResponse
 	YunosOsupdateDeviceserviceSearchmodelsAPIResponseModel

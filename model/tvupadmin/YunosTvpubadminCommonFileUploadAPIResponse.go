@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminCommonFileUploadAPIResponse
-文件上传API API返回值
-yunos.tvpubadmin.common.file.upload
-
-文件上传服务 */
+// YunosTvpubadminCommonFileUploadAPIResponse 文件上传API API返回值
+// yunos.tvpubadmin.common.file.upload
+//
+// 文件上传服务
 type YunosTvpubadminCommonFileUploadAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminCommonFileUploadAPIResponseModel

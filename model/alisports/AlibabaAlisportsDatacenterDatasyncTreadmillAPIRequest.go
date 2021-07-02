@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest
-阿里体育同步跑步机设备数据 API请求
-alibaba.alisports.datacenter.datasync.treadmill
-
-合作方向阿里体育同步跑步机设备的数据 */
+// AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest 阿里体育同步跑步机设备数据 API请求
+// alibaba.alisports.datacenter.datasync.treadmill
+//
+// 合作方向阿里体育同步跑步机设备的数据
 type AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest struct {
 	model.Params
 	// 阿里体育用户id

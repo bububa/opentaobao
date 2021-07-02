@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunViapiImagesegSegmentheadAPIResponse
-头像分割 API返回值
-aliyun.viapi.imageseg.segmenthead
-
-输入一张图片，对图中人头区域进行抠图解析，输出人头png透明图。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html ) */
+// AliyunViapiImagesegSegmentheadAPIResponse 头像分割 API返回值
+// aliyun.viapi.imageseg.segmenthead
+//
+// 输入一张图片，对图中人头区域进行抠图解析，输出人头png透明图。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )
 type AliyunViapiImagesegSegmentheadAPIResponse struct {
 	model.CommonResponse
 	AliyunViapiImagesegSegmentheadAPIResponseModel

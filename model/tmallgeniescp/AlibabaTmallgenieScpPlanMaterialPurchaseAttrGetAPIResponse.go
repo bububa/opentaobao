@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponse
-物料的采购属性查询 API返回值
-alibaba.tmallgenie.scp.plan.material.purchase.attr.get
-
-物料的采购属性查询 */
+// AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponse 物料的采购属性查询 API返回值
+// alibaba.tmallgenie.scp.plan.material.purchase.attr.get
+//
+// 物料的采购属性查询
 type AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponseModel

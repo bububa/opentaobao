@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthNrSpuQueryAPIResponse
-获取标品库标品信息 API返回值
-alibaba.alihealth.nr.spu.query
-
-提供给ERP使用的，获取健康标品库信息 */
+// AlibabaAlihealthNrSpuQueryAPIResponse 获取标品库标品信息 API返回值
+// alibaba.alihealth.nr.spu.query
+//
+// 提供给ERP使用的，获取健康标品库信息
 type AlibabaAlihealthNrSpuQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthNrSpuQueryAPIResponseModel

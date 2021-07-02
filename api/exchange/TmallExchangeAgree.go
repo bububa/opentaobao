@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/exchange"
 )
 
-/* TmallExchangeAgree
-卖家同意换货申请
-tmall.exchange.agree
-
-卖家同意换货申请 */
+// TmallExchangeAgree 卖家同意换货申请
+// tmall.exchange.agree
+//
+// 卖家同意换货申请
 func TmallExchangeAgree(clt *core.SDKClient, req *exchange.TmallExchangeAgreeAPIRequest, session string) (*exchange.TmallExchangeAgreeAPIResponse, error) {
 	var resp exchange.TmallExchangeAgreeAPIResponse
 	err := clt.Post(req, &resp, session)

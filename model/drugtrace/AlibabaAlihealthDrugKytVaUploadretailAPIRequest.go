@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytVaUploadretailAPIRequest
-零售单据上传接口 API请求
-alibaba.alihealth.drug.kyt.va.uploadretail
-
-零售上传单据信息接口 */
+// AlibabaAlihealthDrugKytVaUploadretailAPIRequest 零售单据上传接口 API请求
+// alibaba.alihealth.drug.kyt.va.uploadretail
+//
+// 零售上传单据信息接口
 type AlibabaAlihealthDrugKytVaUploadretailAPIRequest struct {
 	model.Params
 	// 单据编号（唯一）

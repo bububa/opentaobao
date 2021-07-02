@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemSkuAddAPIResponse
-添加SKU API返回值
-taobao.item.sku.add
-
-新增一个sku到num_iid指定的商品中 <br/>传入的iid所对应的商品必须属于当前会话的用户 */
+// TaobaoItemSkuAddAPIResponse 添加SKU API返回值
+// taobao.item.sku.add
+//
+// 新增一个sku到num_iid指定的商品中 <br/>传入的iid所对应的商品必须属于当前会话的用户
 type TaobaoItemSkuAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemSkuAddAPIResponseModel

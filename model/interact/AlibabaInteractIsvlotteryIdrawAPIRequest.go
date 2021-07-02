@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractIsvlotteryIdrawAPIRequest
-互动到店抽奖 API请求
-alibaba.interact.isvlottery.idraw
-
-互动到店抽奖 */
+// AlibabaInteractIsvlotteryIdrawAPIRequest 互动到店抽奖 API请求
+// alibaba.interact.isvlottery.idraw
+//
+// 互动到店抽奖
 type AlibabaInteractIsvlotteryIdrawAPIRequest struct {
 	model.Params
 	// 互动实例ID

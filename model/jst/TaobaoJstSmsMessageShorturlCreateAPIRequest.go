@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstSmsMessageShorturlCreateAPIRequest
-聚石塔营销效果短链生成 API请求
-taobao.jst.sms.message.shorturl.create
-
-聚石塔生成淘短链接口 */
+// TaobaoJstSmsMessageShorturlCreateAPIRequest 聚石塔营销效果短链生成 API请求
+// taobao.jst.sms.message.shorturl.create
+//
+// 聚石塔生成淘短链接口
 type TaobaoJstSmsMessageShorturlCreateAPIRequest struct {
 	model.Params
 	// 是否需要https前缀： true-要  false-不要

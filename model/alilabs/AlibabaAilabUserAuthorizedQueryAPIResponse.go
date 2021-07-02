@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabUserAuthorizedQueryAPIResponse
-查询授权状态接口 API返回值
-alibaba.ailab.user.authorized.query
-
-查询三方用户授权状态 */
+// AlibabaAilabUserAuthorizedQueryAPIResponse 查询授权状态接口 API返回值
+// alibaba.ailab.user.authorized.query
+//
+// 查询三方用户授权状态
 type AlibabaAilabUserAuthorizedQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabUserAuthorizedQueryAPIResponseModel

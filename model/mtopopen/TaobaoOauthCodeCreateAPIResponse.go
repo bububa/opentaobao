@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOauthCodeCreateAPIResponse
-淘宝OauthCode颁发 API返回值
-taobao.oauth.code.create
-
-手淘无线开放的oauthCode颁发接口 */
+// TaobaoOauthCodeCreateAPIResponse 淘宝OauthCode颁发 API返回值
+// taobao.oauth.code.create
+//
+// 手淘无线开放的oauthCode颁发接口
 type TaobaoOauthCodeCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoOauthCodeCreateAPIResponseModel

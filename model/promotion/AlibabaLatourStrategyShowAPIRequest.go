@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLatourStrategyShowAPIRequest
-阿里巴巴权益投放接口 API请求
-alibaba.latour.strategy.show
-
-阿里巴巴权益平台权益投放接口 */
+// AlibabaLatourStrategyShowAPIRequest 阿里巴巴权益投放接口 API请求
+// alibaba.latour.strategy.show
+//
+// 阿里巴巴权益平台权益投放接口
 type AlibabaLatourStrategyShowAPIRequest struct {
 	model.Params
 	// 带出测试权益

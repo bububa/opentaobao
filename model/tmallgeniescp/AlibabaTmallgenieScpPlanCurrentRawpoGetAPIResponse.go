@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanCurrentRawpoGetAPIResponse
-二级物料-PO数据同步 API返回值
-alibaba.tmallgenie.scp.plan.current.rawpo.get
-
-二级物料-PO数据同步（WO-W[TL]) */
+// AlibabaTmallgenieScpPlanCurrentRawpoGetAPIResponse 二级物料-PO数据同步 API返回值
+// alibaba.tmallgenie.scp.plan.current.rawpo.get
+//
+// 二级物料-PO数据同步（WO-W[TL])
 type AlibabaTmallgenieScpPlanCurrentRawpoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanCurrentRawpoGetAPIResponseModel

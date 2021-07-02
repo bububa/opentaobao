@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/happytrip"
 )
 
-/* AlibabaHappytripTaxiPriceGet
-获取价格预估信息
-alibaba.happytrip.taxi.price.get
-
-打车价格预估 */
+// AlibabaHappytripTaxiPriceGet 获取价格预估信息
+// alibaba.happytrip.taxi.price.get
+//
+// 打车价格预估
 func AlibabaHappytripTaxiPriceGet(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiPriceGetAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiPriceGetAPIResponse, error) {
 	var resp happytrip.AlibabaHappytripTaxiPriceGetAPIResponse
 	err := clt.Post(req, &resp, session)

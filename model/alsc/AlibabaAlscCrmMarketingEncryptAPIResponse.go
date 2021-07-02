@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmMarketingEncryptAPIResponse
-加密 API返回值
-alibaba.alsc.crm.marketing.encrypt
-
-加密 */
+// AlibabaAlscCrmMarketingEncryptAPIResponse 加密 API返回值
+// alibaba.alsc.crm.marketing.encrypt
+//
+// 加密
 type AlibabaAlscCrmMarketingEncryptAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmMarketingEncryptAPIResponseModel

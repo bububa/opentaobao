@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceDeviceidConvertAPIResponse
-开放设备id转换内部设备id API返回值
-taobao.ailab.aicloud.top.device.deviceid.convert
-
-将开放设备id转换为内部设备id */
+// TaobaoAilabAicloudTopDeviceDeviceidConvertAPIResponse 开放设备id转换内部设备id API返回值
+// taobao.ailab.aicloud.top.device.deviceid.convert
+//
+// 将开放设备id转换为内部设备id
 type TaobaoAilabAicloudTopDeviceDeviceidConvertAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceDeviceidConvertAPIResponseModel

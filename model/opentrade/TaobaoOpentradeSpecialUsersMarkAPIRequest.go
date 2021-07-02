@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpentradeSpecialUsersMarkAPIRequest
-专属下单可购买用户标记 API请求
-taobao.opentrade.special.users.mark
-
-对于专属下单的交易场景，根据openid标记用户可购买商品 */
+// TaobaoOpentradeSpecialUsersMarkAPIRequest 专属下单可购买用户标记 API请求
+// taobao.opentrade.special.users.mark
+//
+// 对于专属下单的交易场景，根据openid标记用户可购买商品
 type TaobaoOpentradeSpecialUsersMarkAPIRequest struct {
 	model.Params
 	// 是否目标用户，传入true后，用户可购买商品

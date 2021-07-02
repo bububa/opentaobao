@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallPromotionCouponUserAPIResponse
-用户信息查询接口 API返回值
-tmall.promotion.coupon.user
-
-开发给外部合作商（例如：苏宁），通过会员付款码获得会员nick */
+// TmallPromotionCouponUserAPIResponse 用户信息查询接口 API返回值
+// tmall.promotion.coupon.user
+//
+// 开发给外部合作商（例如：苏宁），通过会员付款码获得会员nick
 type TmallPromotionCouponUserAPIResponse struct {
 	model.CommonResponse
 	TmallPromotionCouponUserAPIResponseModel

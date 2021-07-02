@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCreativesChangedGetAPIResponse
-分页获取修改过的广告创意ID和修改时间 API返回值
-taobao.simba.creatives.changed.get
-
-分页获取修改过的广告创意ID和修改时间 */
+// TaobaoSimbaCreativesChangedGetAPIResponse 分页获取修改过的广告创意ID和修改时间 API返回值
+// taobao.simba.creatives.changed.get
+//
+// 分页获取修改过的广告创意ID和修改时间
 type TaobaoSimbaCreativesChangedGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCreativesChangedGetAPIResponseModel

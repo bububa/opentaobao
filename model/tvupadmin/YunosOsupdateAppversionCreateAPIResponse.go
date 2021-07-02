@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosOsupdateAppversionCreateAPIResponse
-创建应用升级任务 API返回值
-yunos.osupdate.appversion.create
-
-创建应用升级任务 */
+// YunosOsupdateAppversionCreateAPIResponse 创建应用升级任务 API返回值
+// yunos.osupdate.appversion.create
+//
+// 创建应用升级任务
 type YunosOsupdateAppversionCreateAPIResponse struct {
 	model.CommonResponse
 	YunosOsupdateAppversionCreateAPIResponseModel

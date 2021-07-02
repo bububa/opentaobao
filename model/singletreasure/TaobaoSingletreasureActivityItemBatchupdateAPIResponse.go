@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSingletreasureActivityItemBatchupdateAPIResponse
-批量修改商品接口 API返回值
-taobao.singletreasure.activity.item.batchupdate
-
-批量修改商品优惠接口 */
+// TaobaoSingletreasureActivityItemBatchupdateAPIResponse 批量修改商品接口 API返回值
+// taobao.singletreasure.activity.item.batchupdate
+//
+// 批量修改商品优惠接口
 type TaobaoSingletreasureActivityItemBatchupdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSingletreasureActivityItemBatchupdateAPIResponseModel

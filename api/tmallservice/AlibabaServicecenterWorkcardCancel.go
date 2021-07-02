@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* AlibabaServicecenterWorkcardCancel
-服务平台工单取消接口
-alibaba.servicecenter.workcard.cancel
-
-取消服务工单 */
+// AlibabaServicecenterWorkcardCancel 服务平台工单取消接口
+// alibaba.servicecenter.workcard.cancel
+//
+// 取消服务工单
 func AlibabaServicecenterWorkcardCancel(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCancelAPIRequest, session string) (*tmallservice.AlibabaServicecenterWorkcardCancelAPIResponse, error) {
 	var resp tmallservice.AlibabaServicecenterWorkcardCancelAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradeDrugRefuseorderAPIRequest
-阿里健康020拒单 API请求
-taobao.trade.drug.refuseorder
-
-阿里健康020拒单 */
+// TaobaoTradeDrugRefuseorderAPIRequest 阿里健康020拒单 API请求
+// taobao.trade.drug.refuseorder
+//
+// 阿里健康020拒单
 type TaobaoTradeDrugRefuseorderAPIRequest struct {
 	model.Params
 	// 订单ID

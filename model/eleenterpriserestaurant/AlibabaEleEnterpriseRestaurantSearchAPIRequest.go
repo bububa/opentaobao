@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseRestaurantSearchAPIRequest
-餐厅列表 API请求
-alibaba.ele.enterprise.restaurant.search
-
-餐厅列表 */
+// AlibabaEleEnterpriseRestaurantSearchAPIRequest 餐厅列表 API请求
+// alibaba.ele.enterprise.restaurant.search
+//
+// 餐厅列表
 type AlibabaEleEnterpriseRestaurantSearchAPIRequest struct {
 	model.Params
 	// longitude和latitude用英文逗号分隔

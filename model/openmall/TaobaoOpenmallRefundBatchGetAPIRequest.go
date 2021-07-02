@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallRefundBatchGetAPIRequest
-批量获取openmall退款单 API请求
-taobao.openmall.refund.batch.get
-
-批量获取openmall退款单
-注意：该接口信息存在延迟，如需实时详情请访问taobao.openmall.refund.get */
+// TaobaoOpenmallRefundBatchGetAPIRequest 批量获取openmall退款单 API请求
+// taobao.openmall.refund.batch.get
+//
+// 批量获取openmall退款单
+// 注意：该接口信息存在延迟，如需实时详情请访问taobao.openmall.refund.get
 type TaobaoOpenmallRefundBatchGetAPIRequest struct {
 	model.Params
 	// 查询范围结束时间，闭区间

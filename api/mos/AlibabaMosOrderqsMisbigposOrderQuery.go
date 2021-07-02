@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-/* AlibabaMosOrderqsMisbigposOrderQuery
-大pos新选单退
-alibaba.mos.orderqs.misbigpos.order.query
-
-大pos新选单退 */
+// AlibabaMosOrderqsMisbigposOrderQuery 大pos新选单退
+// alibaba.mos.orderqs.misbigpos.order.query
+//
+// 大pos新选单退
 func AlibabaMosOrderqsMisbigposOrderQuery(clt *core.SDKClient, req *mos.AlibabaMosOrderqsMisbigposOrderQueryAPIRequest, session string) (*mos.AlibabaMosOrderqsMisbigposOrderQueryAPIResponse, error) {
 	var resp mos.AlibabaMosOrderqsMisbigposOrderQueryAPIResponse
 	err := clt.Post(req, &resp, session)

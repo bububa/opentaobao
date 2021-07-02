@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripShipProductSyncbaseAPIResponse
-基础信息修改回调 API返回值
-alitrip.ship.product.syncbase
-
-基础信息修改回调 */
+// AlitripShipProductSyncbaseAPIResponse 基础信息修改回调 API返回值
+// alitrip.ship.product.syncbase
+//
+// 基础信息修改回调
 type AlitripShipProductSyncbaseAPIResponse struct {
 	model.CommonResponse
 	AlitripShipProductSyncbaseAPIResponseModel

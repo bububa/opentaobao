@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionOrderFulfillAPIRequest
-fulfill order API请求
-aliexpress.solution.order.fulfill
-
-fulfill order for seller */
+// AliexpressSolutionOrderFulfillAPIRequest fulfill order API请求
+// aliexpress.solution.order.fulfill
+//
+// fulfill order for seller
 type AliexpressSolutionOrderFulfillAPIRequest struct {
 	model.Params
 	// Actual logistics service selected by the user (logistics service key: This interface obtains the currently supportable logistics according to all the supportable logistics services listed by api.listLogisticsService. Please visit the forum link http://bbs.seller.aliexpress.com/bbs/read.php?tid=266120&page=1&toread=1#tpc for the detailed list of logistics services supported by the platform.)

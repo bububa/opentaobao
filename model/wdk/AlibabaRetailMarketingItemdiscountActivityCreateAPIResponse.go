@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailMarketingItemdiscountActivityCreateAPIResponse
-创建单品特价活动【同城零售】 API返回值
-alibaba.retail.marketing.itemdiscount.activity.create
-
-同城零售单品特价活动创建 */
+// AlibabaRetailMarketingItemdiscountActivityCreateAPIResponse 创建单品特价活动【同城零售】 API返回值
+// alibaba.retail.marketing.itemdiscount.activity.create
+//
+// 同城零售单品特价活动创建
 type AlibabaRetailMarketingItemdiscountActivityCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailMarketingItemdiscountActivityCreateAPIResponseModel

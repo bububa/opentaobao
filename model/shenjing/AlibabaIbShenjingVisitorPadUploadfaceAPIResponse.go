@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIbShenjingVisitorPadUploadfaceAPIResponse
-访客PAD上传人脸 API返回值
-alibaba.ib.shenjing.visitor.pad.uploadface
-
-访客PAD端上传人脸。 */
+// AlibabaIbShenjingVisitorPadUploadfaceAPIResponse 访客PAD上传人脸 API返回值
+// alibaba.ib.shenjing.visitor.pad.uploadface
+//
+// 访客PAD端上传人脸。
 type AlibabaIbShenjingVisitorPadUploadfaceAPIResponse struct {
 	model.CommonResponse
 	AlibabaIbShenjingVisitorPadUploadfaceAPIResponseModel

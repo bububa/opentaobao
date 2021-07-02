@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappUserInfoGetAPIResponse
-用户开放信息获取 API返回值
-taobao.miniapp.userInfo.get
-
-获取用户的 openId，snsNick（如果用户设置过的话），和加密头像链接 */
+// TaobaoMiniappUserInfoGetAPIResponse 用户开放信息获取 API返回值
+// taobao.miniapp.userInfo.get
+//
+// 获取用户的 openId，snsNick（如果用户设置过的话），和加密头像链接
 type TaobaoMiniappUserInfoGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappUserInfoGetAPIResponseModel

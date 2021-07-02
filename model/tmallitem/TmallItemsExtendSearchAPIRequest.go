@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemsExtendSearchAPIRequest
-搜索天猫商品 API请求
-tmall.items.extend.search
-
-提供天猫商品搜索结果，需要调用精选商品，请改为调用：tmall.selected.items.search */
+// TmallItemsExtendSearchAPIRequest 搜索天猫商品 API请求
+// tmall.items.extend.search
+//
+// 提供天猫商品搜索结果，需要调用精选商品，请改为调用：tmall.selected.items.search
 type TmallItemsExtendSearchAPIRequest struct {
 	model.Params
 	// 表示搜索的关键字，例如搜索query=nike。当输入关键字为中文时，将对他进行URLEncode的UTF-8格式编码，如 耐克，那么q=%E8%80%90%E5%85%8B。

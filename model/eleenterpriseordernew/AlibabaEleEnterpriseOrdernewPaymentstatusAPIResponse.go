@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse
-设置订单支付 API返回值
-alibaba.ele.enterprise.ordernew.paymentstatus
-
-设置订单支付成功 */
+// AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse 设置订单支付 API返回值
+// alibaba.ele.enterprise.ordernew.paymentstatus
+//
+// 设置订单支付成功
 type AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponseModel

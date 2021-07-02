@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelTradeMemoAddAPIRequest
-添加一笔交易备注 API请求
-taobao.alitrip.travel.trade.memo.add
-
-对一笔交易添加备注 */
+// TaobaoAlitripTravelTradeMemoAddAPIRequest 添加一笔交易备注 API请求
+// taobao.alitrip.travel.trade.memo.add
+//
+// 对一笔交易添加备注
 type TaobaoAlitripTravelTradeMemoAddAPIRequest struct {
 	model.Params
 	// 交易ID

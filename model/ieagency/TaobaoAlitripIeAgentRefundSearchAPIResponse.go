@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripIeAgentRefundSearchAPIResponse
-卖家查询退票申请 API返回值
-taobao.alitrip.ie.agent.refund.search
-
-卖家查询退票申请 */
+// TaobaoAlitripIeAgentRefundSearchAPIResponse 卖家查询退票申请 API返回值
+// taobao.alitrip.ie.agent.refund.search
+//
+// 卖家查询退票申请
 type TaobaoAlitripIeAgentRefundSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripIeAgentRefundSearchAPIResponseModel

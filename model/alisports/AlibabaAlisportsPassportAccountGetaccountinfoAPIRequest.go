@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest
-获取会员信息 API请求
-alibaba.alisports.passport.account.getaccountinfo
-
-获取阿里体育会员信息 */
+// AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest 获取会员信息 API请求
+// alibaba.alisports.passport.account.getaccountinfo
+//
+// 获取阿里体育会员信息
 type AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest struct {
 	model.Params
 	// 是否获取详情0否1是 默认0

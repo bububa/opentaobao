@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-/* TaobaoJstSmsStatusQuery
-聚石塔公众号状态查询
-taobao.jst.sms.status.query
-
-聚石塔公众号状态查询 */
+// TaobaoJstSmsStatusQuery 聚石塔公众号状态查询
+// taobao.jst.sms.status.query
+//
+// 聚石塔公众号状态查询
 func TaobaoJstSmsStatusQuery(clt *core.SDKClient, req *jst.TaobaoJstSmsStatusQueryAPIRequest, session string) (*jst.TaobaoJstSmsStatusQueryAPIResponse, error) {
 	var resp jst.TaobaoJstSmsStatusQueryAPIResponse
 	err := clt.Post(req, &resp, session)

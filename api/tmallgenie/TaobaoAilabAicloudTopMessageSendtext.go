@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
 
-/* TaobaoAilabAicloudTopMessageSendtext
-故事机发送文本留言
-taobao.ailab.aicloud.top.message.sendtext
-
-故事机文本留言 */
+// TaobaoAilabAicloudTopMessageSendtext 故事机发送文本留言
+// taobao.ailab.aicloud.top.message.sendtext
+//
+// 故事机文本留言
 func TaobaoAilabAicloudTopMessageSendtext(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMessageSendtextAPIRequest, session string) (*tmallgenie.TaobaoAilabAicloudTopMessageSendtextAPIResponse, error) {
 	var resp tmallgenie.TaobaoAilabAicloudTopMessageSendtextAPIResponse
 	err := clt.Post(req, &resp, session)

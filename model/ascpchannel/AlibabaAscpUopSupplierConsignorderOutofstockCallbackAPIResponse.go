@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIResponse
-履约单纬度的仓缺货回告服务 API返回值
-alibaba.ascp.uop.supplier.consignorder.outofstock.callback
-
-商家仓履约单纬度的仓缺货回告接口 */
+// AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIResponse 履约单纬度的仓缺货回告服务 API返回值
+// alibaba.ascp.uop.supplier.consignorder.outofstock.callback
+//
+// 商家仓履约单纬度的仓缺货回告接口
 type AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIResponseModel

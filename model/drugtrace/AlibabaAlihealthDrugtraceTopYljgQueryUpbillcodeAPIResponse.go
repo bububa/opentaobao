@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugtraceTopYljgQueryUpbillcodeAPIResponse
-通过一个码，查询这个码对应的上游企业出库单的单据号 API返回值
-alibaba.alihealth.drugtrace.top.yljg.query.upbillcode
-
-一个查询上游出库单号的接口。企业在扫码入库时，接口通过扫到的码判定这个码对应的上游企业所属的出库单据号 */
+// AlibabaAlihealthDrugtraceTopYljgQueryUpbillcodeAPIResponse 通过一个码，查询这个码对应的上游企业出库单的单据号 API返回值
+// alibaba.alihealth.drugtrace.top.yljg.query.upbillcode
+//
+// 一个查询上游出库单号的接口。企业在扫码入库时，接口通过扫到的码判定这个码对应的上游企业所属的出库单据号
 type AlibabaAlihealthDrugtraceTopYljgQueryUpbillcodeAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugtraceTopYljgQueryUpbillcodeAPIResponseModel

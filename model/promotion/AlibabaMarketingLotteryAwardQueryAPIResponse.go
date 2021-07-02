@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMarketingLotteryAwardQueryAPIResponse
-抽奖平台查询可用奖品接口 API返回值
-alibaba.marketing.lottery.award.query
-
-抽奖平台查询可用奖品接口 */
+// AlibabaMarketingLotteryAwardQueryAPIResponse 抽奖平台查询可用奖品接口 API返回值
+// alibaba.marketing.lottery.award.query
+//
+// 抽奖平台查询可用奖品接口
 type AlibabaMarketingLotteryAwardQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaMarketingLotteryAwardQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardLogisticsorderUpdateAPIResponse
-物流工单履约状态更新 API返回值
-tmall.servicecenter.workcard.logisticsorder.update
-
-天猫寄送类服务对接外部物流服务商回传物流状态信息 */
+// TmallServicecenterWorkcardLogisticsorderUpdateAPIResponse 物流工单履约状态更新 API返回值
+// tmall.servicecenter.workcard.logisticsorder.update
+//
+// 天猫寄送类服务对接外部物流服务商回传物流状态信息
 type TmallServicecenterWorkcardLogisticsorderUpdateAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardLogisticsorderUpdateAPIResponseModel

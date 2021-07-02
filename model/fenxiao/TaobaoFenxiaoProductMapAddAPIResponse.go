@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductMapAddAPIResponse
-创建分销和后端商品映射关系 API返回值
-taobao.fenxiao.product.map.add
-
-创建分销和供应链商品映射关系。 */
+// TaobaoFenxiaoProductMapAddAPIResponse 创建分销和后端商品映射关系 API返回值
+// taobao.fenxiao.product.map.add
+//
+// 创建分销和供应链商品映射关系。
 type TaobaoFenxiaoProductMapAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductMapAddAPIResponseModel

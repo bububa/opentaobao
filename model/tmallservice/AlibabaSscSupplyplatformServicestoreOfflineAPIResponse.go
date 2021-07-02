@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSscSupplyplatformServicestoreOfflineAPIResponse
-网点下线 API返回值
-alibaba.ssc.supplyplatform.servicestore.offline
-
-网点下线功能 */
+// AlibabaSscSupplyplatformServicestoreOfflineAPIResponse 网点下线 API返回值
+// alibaba.ssc.supplyplatform.servicestore.offline
+//
+// 网点下线功能
 type AlibabaSscSupplyplatformServicestoreOfflineAPIResponse struct {
 	model.CommonResponse
 	AlibabaSscSupplyplatformServicestoreOfflineAPIResponseModel

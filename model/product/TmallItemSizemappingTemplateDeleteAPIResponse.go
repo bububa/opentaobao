@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemSizemappingTemplateDeleteAPIResponse
-删除天猫商品尺码表模板 API返回值
-tmall.item.sizemapping.template.delete
-
-删除天猫商品尺码表模板 */
+// TmallItemSizemappingTemplateDeleteAPIResponse 删除天猫商品尺码表模板 API返回值
+// tmall.item.sizemapping.template.delete
+//
+// 删除天猫商品尺码表模板
 type TmallItemSizemappingTemplateDeleteAPIResponse struct {
 	model.CommonResponse
 	TmallItemSizemappingTemplateDeleteAPIResponseModel

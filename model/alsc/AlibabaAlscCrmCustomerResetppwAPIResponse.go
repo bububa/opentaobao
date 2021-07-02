@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCustomerResetppwAPIResponse
-重置支付密码 API返回值
-alibaba.alsc.crm.customer.resetppw
-
-重置支付密码 */
+// AlibabaAlscCrmCustomerResetppwAPIResponse 重置支付密码 API返回值
+// alibaba.alsc.crm.customer.resetppw
+//
+// 重置支付密码
 type AlibabaAlscCrmCustomerResetppwAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCustomerResetppwAPIResponseModel

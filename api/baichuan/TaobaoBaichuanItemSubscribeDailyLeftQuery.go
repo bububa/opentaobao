@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-/* TaobaoBaichuanItemSubscribeDailyLeftQuery
-查询当天可添加的余量
-taobao.baichuan.item.subscribe.daily.left.query
-
-查询当天可添加的余量 */
+// TaobaoBaichuanItemSubscribeDailyLeftQuery 查询当天可添加的余量
+// taobao.baichuan.item.subscribe.daily.left.query
+//
+// 查询当天可添加的余量
 func TaobaoBaichuanItemSubscribeDailyLeftQuery(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest, session string) (*baichuan.TaobaoBaichuanItemSubscribeDailyLeftQueryAPIResponse, error) {
 	var resp baichuan.TaobaoBaichuanItemSubscribeDailyLeftQueryAPIResponse
 	err := clt.Post(req, &resp, session)

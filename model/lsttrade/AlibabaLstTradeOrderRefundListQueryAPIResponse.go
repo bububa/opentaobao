@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstTradeOrderRefundListQueryAPIResponse
-查询退款单列表(卖家视角) API返回值
-alibaba.lst.trade.order.refund.list.query
-
-查询退款单列表(卖家视角) */
+// AlibabaLstTradeOrderRefundListQueryAPIResponse 查询退款单列表(卖家视角) API返回值
+// alibaba.lst.trade.order.refund.list.query
+//
+// 查询退款单列表(卖家视角)
 type AlibabaLstTradeOrderRefundListQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstTradeOrderRefundListQueryAPIResponseModel

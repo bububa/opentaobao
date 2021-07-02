@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaJymIndustryInformationCallbakAPIResponse
-VMOS回调行业信息系统 API返回值
-alibaba.jym.industry.information.callbak
-
-VMOS回调交易猫行业信息系统 */
+// AlibabaJymIndustryInformationCallbakAPIResponse VMOS回调行业信息系统 API返回值
+// alibaba.jym.industry.information.callbak
+//
+// VMOS回调交易猫行业信息系统
 type AlibabaJymIndustryInformationCallbakAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymIndustryInformationCallbakAPIResponseModel

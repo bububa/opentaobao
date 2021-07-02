@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUmpRangeGetAPIResponse
-查询活动范围 API返回值
-taobao.ump.range.get
-
-查询某个卖家所有参加或者不参加某项活动的物品 */
+// TaobaoUmpRangeGetAPIResponse 查询活动范围 API返回值
+// taobao.ump.range.get
+//
+// 查询某个卖家所有参加或者不参加某项活动的物品
 type TaobaoUmpRangeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoUmpRangeGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusGuardDataSyncAPIResponse
-卡巴数据同步 API返回值
-alibaba.campus.guard.data.sync
-
-数据同步门禁系统 */
+// AlibabaCampusGuardDataSyncAPIResponse 卡巴数据同步 API返回值
+// alibaba.campus.guard.data.sync
+//
+// 数据同步门禁系统
 type AlibabaCampusGuardDataSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusGuardDataSyncAPIResponseModel

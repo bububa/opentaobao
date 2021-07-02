@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkItemInfoGetAPIResponse
-淘宝客-公用-淘宝客商品详情查询(简版) API返回值
-taobao.tbk.item.info.get
-
-淘宝客商品详情查询（简版） */
+// TaobaoTbkItemInfoGetAPIResponse 淘宝客-公用-淘宝客商品详情查询(简版) API返回值
+// taobao.tbk.item.info.get
+//
+// 淘宝客商品详情查询（简版）
 type TaobaoTbkItemInfoGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkItemInfoGetAPIResponseModel

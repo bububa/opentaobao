@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeikeSubscinfoGetAPIResponse
-需求订单查询接口 API返回值
-taobao.weike.subscinfo.get
-
-需求订单查询接口 */
+// TaobaoWeikeSubscinfoGetAPIResponse 需求订单查询接口 API返回值
+// taobao.weike.subscinfo.get
+//
+// 需求订单查询接口
 type TaobaoWeikeSubscinfoGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWeikeSubscinfoGetAPIResponseModel

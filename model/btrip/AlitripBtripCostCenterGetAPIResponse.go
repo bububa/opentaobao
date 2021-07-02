@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripCostCenterGetAPIResponse
-获取用户费用归属 API返回值
-alitrip.btrip.cost.center.get
-
-获取差旅申请用户的费用归属列表 */
+// AlitripBtripCostCenterGetAPIResponse 获取用户费用归属 API返回值
+// alitrip.btrip.cost.center.get
+//
+// 获取差旅申请用户的费用归属列表
 type AlitripBtripCostCenterGetAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripCostCenterGetAPIResponseModel

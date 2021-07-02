@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest
-药厂传输数据 API请求
-alibaba.alihealth.drugcode.drugfactory.transferdata
-
-药厂传输数据 */
+// AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest 药厂传输数据 API请求
+// alibaba.alihealth.drugcode.drugfactory.transferdata
+//
+// 药厂传输数据
 type AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest struct {
 	model.Params
 	// 时间戳(毫秒级别)

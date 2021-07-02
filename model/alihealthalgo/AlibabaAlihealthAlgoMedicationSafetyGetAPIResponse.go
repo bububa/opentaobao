@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthAlgoMedicationSafetyGetAPIResponse
-合理用药api API返回值
-alibaba.alihealth.algo.medication.safety.get
-
-合理用药规则引擎服务 */
+// AlibabaAlihealthAlgoMedicationSafetyGetAPIResponse 合理用药api API返回值
+// alibaba.alihealth.algo.medication.safety.get
+//
+// 合理用药规则引擎服务
 type AlibabaAlihealthAlgoMedicationSafetyGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthAlgoMedicationSafetyGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWdkEquipmentConveyorInfoUploadAPIResponse
-五道口仓库悬挂链信息上报 API返回值
-taobao.wdk.equipment.conveyor.info.upload
-
-五道口仓库悬挂链信息上传 */
+// TaobaoWdkEquipmentConveyorInfoUploadAPIResponse 五道口仓库悬挂链信息上报 API返回值
+// taobao.wdk.equipment.conveyor.info.upload
+//
+// 五道口仓库悬挂链信息上传
 type TaobaoWdkEquipmentConveyorInfoUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoWdkEquipmentConveyorInfoUploadAPIResponseModel

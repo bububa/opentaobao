@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/openim"
 )
 
-/* TaobaoOpenimTribeQuit
-OPENIM群成员退出
-taobao.openim.tribe.quit
-
-OPENIM群成员退出 */
+// TaobaoOpenimTribeQuit OPENIM群成员退出
+// taobao.openim.tribe.quit
+//
+// OPENIM群成员退出
 func TaobaoOpenimTribeQuit(clt *core.SDKClient, req *openim.TaobaoOpenimTribeQuitAPIRequest, session string) (*openim.TaobaoOpenimTribeQuitAPIResponse, error) {
 	var resp openim.TaobaoOpenimTribeQuitAPIResponse
 	err := clt.Post(req, &resp, session)

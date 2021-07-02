@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusTvmpayorderSetAPIResponse
-自助机条形码被动支付 API返回值
-taobao.bus.tvmpayorder.set
-
-汽车票线下自助机条形码支付 */
+// TaobaoBusTvmpayorderSetAPIResponse 自助机条形码被动支付 API返回值
+// taobao.bus.tvmpayorder.set
+//
+// 汽车票线下自助机条形码支付
 type TaobaoBusTvmpayorderSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusTvmpayorderSetAPIResponseModel

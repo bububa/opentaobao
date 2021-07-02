@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest
-根据角色id查询权限 API请求
-alibaba.campus.acl.new.getrolewithmenutreenodes
-
-根据角色id查询权限 */
+// AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest 根据角色id查询权限 API请求
+// alibaba.campus.acl.new.getrolewithmenutreenodes
+//
+// 根据角色id查询权限
 type AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest struct {
 	model.Params
 	// 角色id

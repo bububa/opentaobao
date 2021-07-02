@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingImagetranslateSubmitAPIRequest
-提交图片翻译任务 API请求
-alibaba.seaking.imagetranslate.submit
-
-提交图片翻译任务 */
+// AlibabaSeakingImagetranslateSubmitAPIRequest 提交图片翻译任务 API请求
+// alibaba.seaking.imagetranslate.submit
+//
+// 提交图片翻译任务
 type AlibabaSeakingImagetranslateSubmitAPIRequest struct {
 	model.Params
 	// token来源站点

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmUpdateAlipayCarnoAPIResponse
-更新支付宝业务卡号 API返回值
-alibaba.westcrm.update.alipay.carno
-
-更新支付宝业务卡号 */
+// AlibabaWestcrmUpdateAlipayCarnoAPIResponse 更新支付宝业务卡号 API返回值
+// alibaba.westcrm.update.alipay.carno
+//
+// 更新支付宝业务卡号
 type AlibabaWestcrmUpdateAlipayCarnoAPIResponse struct {
 	model.CommonResponse
 	AlibabaWestcrmUpdateAlipayCarnoAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleRentItemAddAPIResponse
-租赁商品发布 API返回值
-alibaba.idle.rent.item.add
-
-发布闲鱼租赁商品 */
+// AlibabaIdleRentItemAddAPIResponse 租赁商品发布 API返回值
+// alibaba.idle.rent.item.add
+//
+// 发布闲鱼租赁商品
 type AlibabaIdleRentItemAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleRentItemAddAPIResponseModel

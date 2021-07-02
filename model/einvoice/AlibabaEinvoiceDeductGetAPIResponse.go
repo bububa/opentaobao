@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceDeductGetAPIResponse
-发票扣减的接口 API返回值
-alibaba.einvoice.deduct.get
-
-获取历史发票扣减量、每日发票扣减量的接口 */
+// AlibabaEinvoiceDeductGetAPIResponse 发票扣减的接口 API返回值
+// alibaba.einvoice.deduct.get
+//
+// 获取历史发票扣减量、每日发票扣减量的接口
 type AlibabaEinvoiceDeductGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceDeductGetAPIResponseModel

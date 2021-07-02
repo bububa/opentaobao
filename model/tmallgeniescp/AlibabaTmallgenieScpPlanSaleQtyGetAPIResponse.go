@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanSaleQtyGetAPIResponse
-12-同步销售数据 API返回值
-alibaba.tmallgenie.scp.plan.sale.qty.get
-
-同步销售数据 */
+// AlibabaTmallgenieScpPlanSaleQtyGetAPIResponse 12-同步销售数据 API返回值
+// alibaba.tmallgenie.scp.plan.sale.qty.get
+//
+// 同步销售数据
 type AlibabaTmallgenieScpPlanSaleQtyGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanSaleQtyGetAPIResponseModel

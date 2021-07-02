@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminManageTopicContenteditAPIResponse
-专题关联内容编辑 API返回值
-yunos.tvpubadmin.manage.topic.contentedit
-
-编辑专题关联的内容 */
+// YunosTvpubadminManageTopicContenteditAPIResponse 专题关联内容编辑 API返回值
+// yunos.tvpubadmin.manage.topic.contentedit
+//
+// 编辑专题关联的内容
 type YunosTvpubadminManageTopicContenteditAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminManageTopicContenteditAPIResponseModel

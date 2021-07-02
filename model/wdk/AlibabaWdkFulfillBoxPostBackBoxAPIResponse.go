@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkFulfillBoxPostBackBoxAPIResponse
-RT收箱回传 API返回值
-alibaba.wdk.fulfill.box.post.back.box
-
-RT收箱后，信息同步履约，履约同通知UMS 容器管理 */
+// AlibabaWdkFulfillBoxPostBackBoxAPIResponse RT收箱回传 API返回值
+// alibaba.wdk.fulfill.box.post.back.box
+//
+// RT收箱后，信息同步履约，履约同通知UMS 容器管理
 type AlibabaWdkFulfillBoxPostBackBoxAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkFulfillBoxPostBackBoxAPIResponseModel

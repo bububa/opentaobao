@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixOrderConfirmAPIResponse
-大麦-出票 API返回值
-alibaba.damai.maitix.order.confirm
-
-出票 */
+// AlibabaDamaiMaitixOrderConfirmAPIResponse 大麦-出票 API返回值
+// alibaba.damai.maitix.order.confirm
+//
+// 出票
 type AlibabaDamaiMaitixOrderConfirmAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixOrderConfirmAPIResponseModel

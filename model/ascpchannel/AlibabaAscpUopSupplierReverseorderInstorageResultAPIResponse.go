@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpUopSupplierReverseorderInstorageResultAPIResponse
-逆向销退入库单到仓结果回告 API返回值
-alibaba.ascp.uop.supplier.reverseorder.instorage.result
-
-ERP回告销退入库单到仓信息回告 */
+// AlibabaAscpUopSupplierReverseorderInstorageResultAPIResponse 逆向销退入库单到仓结果回告 API返回值
+// alibaba.ascp.uop.supplier.reverseorder.instorage.result
+//
+// ERP回告销退入库单到仓信息回告
 type AlibabaAscpUopSupplierReverseorderInstorageResultAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpUopSupplierReverseorderInstorageResultAPIResponseModel

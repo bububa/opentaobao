@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItEslSendotaAPIResponse
-电子价签ota接口 API返回值
-alibaba.it.esl.sendota
-
-厂测接口，电子价签ota接口 */
+// AlibabaItEslSendotaAPIResponse 电子价签ota接口 API返回值
+// alibaba.it.esl.sendota
+//
+// 厂测接口，电子价签ota接口
 type AlibabaItEslSendotaAPIResponse struct {
 	model.CommonResponse
 	AlibabaItEslSendotaAPIResponseModel

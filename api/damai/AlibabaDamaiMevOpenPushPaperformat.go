@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/damai"
 )
 
-/* AlibabaDamaiMevOpenPushPaperformat
-大麦换验平台-第三方对外开放-票纸版式接口pushPaperFormat
-alibaba.damai.mev.open.push.paperformat
-
-pushPaperFormat */
+// AlibabaDamaiMevOpenPushPaperformat 大麦换验平台-第三方对外开放-票纸版式接口pushPaperFormat
+// alibaba.damai.mev.open.push.paperformat
+//
+// pushPaperFormat
 func AlibabaDamaiMevOpenPushPaperformat(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushPaperformatAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushPaperformatAPIResponse, error) {
 	var resp damai.AlibabaDamaiMevOpenPushPaperformatAPIResponse
 	err := clt.Post(req, &resp, session)

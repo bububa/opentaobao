@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMcDeviceCircleCheckAPIResponse
-云码设备圈选情况查询 API返回值
-tmall.mc.device.circle.check
-
-云码设备圈选情况查询 */
+// TmallMcDeviceCircleCheckAPIResponse 云码设备圈选情况查询 API返回值
+// tmall.mc.device.circle.check
+//
+// 云码设备圈选情况查询
 type TmallMcDeviceCircleCheckAPIResponse struct {
 	model.CommonResponse
 	TmallMcDeviceCircleCheckAPIResponseModel

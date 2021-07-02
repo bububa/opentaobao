@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuWenyuvideoPersionGetAPIResponse
-根据优酷人物ID获取人物详情页，包含相关影视和相关人物 API返回值
-youku.wenyuvideo.persion.get
-
-根据优酷人物ID获取人物详情页，包含相关影视和相关人物 */
+// YoukuWenyuvideoPersionGetAPIResponse 根据优酷人物ID获取人物详情页，包含相关影视和相关人物 API返回值
+// youku.wenyuvideo.persion.get
+//
+// 根据优酷人物ID获取人物详情页，包含相关影视和相关人物
 type YoukuWenyuvideoPersionGetAPIResponse struct {
 	model.CommonResponse
 	YoukuWenyuvideoPersionGetAPIResponseModel

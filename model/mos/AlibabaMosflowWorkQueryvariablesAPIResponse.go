@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosflowWorkQueryvariablesAPIResponse
-获取指定流程上下文参数 API返回值
-alibaba.mosflow.work.queryvariables
-
-业务查询指定流程上下文内容 */
+// AlibabaMosflowWorkQueryvariablesAPIResponse 获取指定流程上下文参数 API返回值
+// alibaba.mosflow.work.queryvariables
+//
+// 业务查询指定流程上下文内容
 type AlibabaMosflowWorkQueryvariablesAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosflowWorkQueryvariablesAPIResponseModel

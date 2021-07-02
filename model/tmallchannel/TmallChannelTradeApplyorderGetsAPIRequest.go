@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallChannelTradeApplyorderGetsAPIRequest
-获取采购申请单列表 API请求
-tmall.channel.trade.applyorder.gets
-
-分页查询采购申请单列表 */
+// TmallChannelTradeApplyorderGetsAPIRequest 获取采购申请单列表 API请求
+// tmall.channel.trade.applyorder.gets
+//
+// 分页查询采购申请单列表
 type TmallChannelTradeApplyorderGetsAPIRequest struct {
 	model.Params
 	// 交易类型

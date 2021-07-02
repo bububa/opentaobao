@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractLoginAlipayauthAPIResponse
-双11到店互动花呗红包获取token鉴权接口 API返回值
-alibaba.interact.login.alipayauth
-
-双11到店互动花呗红包获取token鉴权接口 */
+// AlibabaInteractLoginAlipayauthAPIResponse 双11到店互动花呗红包获取token鉴权接口 API返回值
+// alibaba.interact.login.alipayauth
+//
+// 双11到店互动花呗红包获取token鉴权接口
 type AlibabaInteractLoginAlipayauthAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractLoginAlipayauthAPIResponseModel

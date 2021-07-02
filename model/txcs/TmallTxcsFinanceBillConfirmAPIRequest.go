@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTxcsFinanceBillConfirmAPIRequest
-供应商账单确认 API请求
-tmall.txcs.finance.bill.confirm
-
-提供天猫超市外部合作商家：财务账单对账 */
+// TmallTxcsFinanceBillConfirmAPIRequest 供应商账单确认 API请求
+// tmall.txcs.finance.bill.confirm
+//
+// 提供天猫超市外部合作商家：财务账单对账
 type TmallTxcsFinanceBillConfirmAPIRequest struct {
 	model.Params
 	// 门店ID

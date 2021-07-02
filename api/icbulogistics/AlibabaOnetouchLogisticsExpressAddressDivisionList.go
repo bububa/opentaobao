@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/icbulogistics"
 )
 
-/* AlibabaOnetouchLogisticsExpressAddressDivisionList
-四级地址库-区域
-alibaba.onetouch.logistics.express.address.division.list
-
-四级地址库-区 */
+// AlibabaOnetouchLogisticsExpressAddressDivisionList 四级地址库-区域
+// alibaba.onetouch.logistics.express.address.division.list
+//
+// 四级地址库-区
 func AlibabaOnetouchLogisticsExpressAddressDivisionList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest, session string) (*icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIResponse, error) {
 	var resp icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmGrademktMemberDetailCreateAPIResponse
-会员等级营销-创建商品等级营销明细 API返回值
-taobao.crm.grademkt.member.detail.create
-
-创建商品等级营销明细 */
+// TaobaoCrmGrademktMemberDetailCreateAPIResponse 会员等级营销-创建商品等级营销明细 API返回值
+// taobao.crm.grademkt.member.detail.create
+//
+// 创建商品等级营销明细
 type TaobaoCrmGrademktMemberDetailCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmGrademktMemberDetailCreateAPIResponseModel

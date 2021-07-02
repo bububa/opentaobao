@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorLoginAPIResponse
-获取登陆页面 API返回值
-alibaba.interact.sensor.login
-
-获取登陆页面 */
+// AlibabaInteractSensorLoginAPIResponse 获取登陆页面 API返回值
+// alibaba.interact.sensor.login
+//
+// 获取登陆页面
 type AlibabaInteractSensorLoginAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorLoginAPIResponseModel

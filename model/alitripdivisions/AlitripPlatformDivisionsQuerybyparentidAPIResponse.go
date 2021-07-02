@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripPlatformDivisionsQuerybyparentidAPIResponse
-根据父节点id查询下级行政区划数据 API返回值
-alitrip.platform.divisions.querybyparentid
-
-根据行政区划id查询下一层级行政区划数据 */
+// AlitripPlatformDivisionsQuerybyparentidAPIResponse 根据父节点id查询下级行政区划数据 API返回值
+// alitrip.platform.divisions.querybyparentid
+//
+// 根据行政区划id查询下一层级行政区划数据
 type AlitripPlatformDivisionsQuerybyparentidAPIResponse struct {
 	model.CommonResponse
 	AlitripPlatformDivisionsQuerybyparentidAPIResponseModel

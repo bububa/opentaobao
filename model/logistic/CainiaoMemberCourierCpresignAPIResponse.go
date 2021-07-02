@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoMemberCourierCpresignAPIResponse
-cp清理离职用户信息 API返回值
-cainiao.member.courier.cpresign
-
-CP清理内部离职的用户信息 */
+// CainiaoMemberCourierCpresignAPIResponse cp清理离职用户信息 API返回值
+// cainiao.member.courier.cpresign
+//
+// CP清理内部离职的用户信息
 type CainiaoMemberCourierCpresignAPIResponse struct {
 	model.CommonResponse
 	CainiaoMemberCourierCpresignAPIResponseModel

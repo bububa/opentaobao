@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTuikeOfferZhitokenAPIResponse
-生成阿里口令 API返回值
-alibaba.tuike.offer.zhitoken
-
-推荐链接生产吱口令 */
+// AlibabaTuikeOfferZhitokenAPIResponse 生成阿里口令 API返回值
+// alibaba.tuike.offer.zhitoken
+//
+// 推荐链接生产吱口令
 type AlibabaTuikeOfferZhitokenAPIResponse struct {
 	model.CommonResponse
 	AlibabaTuikeOfferZhitokenAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCreativeidsDeletedGetAPIRequest
-获取删除的创意ID API请求
-taobao.simba.creativeids.deleted.get
-
-获取删除的创意ID */
+// TaobaoSimbaCreativeidsDeletedGetAPIRequest 获取删除的创意ID API请求
+// taobao.simba.creativeids.deleted.get
+//
+// 获取删除的创意ID
 type TaobaoSimbaCreativeidsDeletedGetAPIRequest struct {
 	model.Params
 	// 主人昵称

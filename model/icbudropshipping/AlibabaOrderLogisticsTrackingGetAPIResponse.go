@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOrderLogisticsTrackingGetAPIResponse
-阿里巴巴订单物流轨迹查询 API返回值
-alibaba.order.logistics.tracking.get
-
-阿里巴巴订单物流轨迹查询 */
+// AlibabaOrderLogisticsTrackingGetAPIResponse 阿里巴巴订单物流轨迹查询 API返回值
+// alibaba.order.logistics.tracking.get
+//
+// 阿里巴巴订单物流轨迹查询
 type AlibabaOrderLogisticsTrackingGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaOrderLogisticsTrackingGetAPIResponseModel

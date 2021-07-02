@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappCloudStoreRelationAddAPIResponse
-云存储添加 API返回值
-taobao.miniapp.cloud.store.relation.add
-
-用于用户上传文件之后回写云存储的关联关系 */
+// TaobaoMiniappCloudStoreRelationAddAPIResponse 云存储添加 API返回值
+// taobao.miniapp.cloud.store.relation.add
+//
+// 用于用户上传文件之后回写云存储的关联关系
 type TaobaoMiniappCloudStoreRelationAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappCloudStoreRelationAddAPIResponseModel

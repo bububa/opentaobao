@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstVendingShippingCallbackAPIRequest
-售货机出货回传接口 API请求
-alibaba.lst.vending.shipping.callback
-
-零售通自动售货机商品出货回传接口，同步商品出库最新状态。 */
+// AlibabaLstVendingShippingCallbackAPIRequest 售货机出货回传接口 API请求
+// alibaba.lst.vending.shipping.callback
+//
+// 零售通自动售货机商品出货回传接口，同步商品出库最新状态。
 type AlibabaLstVendingShippingCallbackAPIRequest struct {
 	model.Params
 	// 厂商设备编码

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseOrdernewCancelAPIRequest
-订单取消 API请求
-alibaba.ele.enterprise.ordernew.cancel
-
-订单取消 */
+// AlibabaEleEnterpriseOrdernewCancelAPIRequest 订单取消 API请求
+// alibaba.ele.enterprise.ordernew.cancel
+//
+// 订单取消
 type AlibabaEleEnterpriseOrdernewCancelAPIRequest struct {
 	model.Params
 	// 饿了么订单ID

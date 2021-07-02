@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanNetdemandRawUploadAPIResponse
-二级物料净需求回传(TL+1) API返回值
-alibaba.tmallgenie.scp.plan.netdemand.raw.upload
-
-二级物料净需求回传(TL+1) */
+// AlibabaTmallgenieScpPlanNetdemandRawUploadAPIResponse 二级物料净需求回传(TL+1) API返回值
+// alibaba.tmallgenie.scp.plan.netdemand.raw.upload
+//
+// 二级物料净需求回传(TL+1)
 type AlibabaTmallgenieScpPlanNetdemandRawUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanNetdemandRawUploadAPIResponseModel

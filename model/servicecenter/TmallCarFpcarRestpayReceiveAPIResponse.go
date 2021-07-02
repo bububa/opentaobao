@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarFpcarRestpayReceiveAPIResponse
-门店线下已收尾款 API返回值
-tmall.car.fpcar.restpay.receive
-
-提供给外部(大搜或其它合作方)的接口-门店线下已收尾款(不执行分佣) */
+// TmallCarFpcarRestpayReceiveAPIResponse 门店线下已收尾款 API返回值
+// tmall.car.fpcar.restpay.receive
+//
+// 提供给外部(大搜或其它合作方)的接口-门店线下已收尾款(不执行分佣)
 type TmallCarFpcarRestpayReceiveAPIResponse struct {
 	model.CommonResponse
 	TmallCarFpcarRestpayReceiveAPIResponseModel

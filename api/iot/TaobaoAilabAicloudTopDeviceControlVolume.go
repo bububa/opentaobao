@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlVolume
-设备音量
-taobao.ailab.aicloud.top.device.control.volume
-
-设备音量 */
+// TaobaoAilabAicloudTopDeviceControlVolume 设备音量
+// taobao.ailab.aicloud.top.device.control.volume
+//
+// 设备音量
 func TaobaoAilabAicloudTopDeviceControlVolume(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse, error) {
 	var resp iot.TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse
 	err := clt.Post(req, &resp, session)

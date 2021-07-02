@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalHandoverUpdateAPIResponse
-修改交接单 API返回值
-cainiao.global.handover.update
-
-提供给ISV通过该接口修改交接单 */
+// CainiaoGlobalHandoverUpdateAPIResponse 修改交接单 API返回值
+// cainiao.global.handover.update
+//
+// 提供给ISV通过该接口修改交接单
 type CainiaoGlobalHandoverUpdateAPIResponse struct {
 	model.CommonResponse
 	CainiaoGlobalHandoverUpdateAPIResponseModel

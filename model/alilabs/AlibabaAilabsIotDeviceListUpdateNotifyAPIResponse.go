@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsIotDeviceListUpdateNotifyAPIResponse
-设备列表更新通知 API返回值
-alibaba.ailabs.iot.device.list.update.notify
-
-用于人工智能实验室IoT合作厂商上报三方接入IoT设备列表更新时的通知 */
+// AlibabaAilabsIotDeviceListUpdateNotifyAPIResponse 设备列表更新通知 API返回值
+// alibaba.ailabs.iot.device.list.update.notify
+//
+// 用于人工智能实验室IoT合作厂商上报三方接入IoT设备列表更新时的通知
 type AlibabaAilabsIotDeviceListUpdateNotifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsIotDeviceListUpdateNotifyAPIResponseModel

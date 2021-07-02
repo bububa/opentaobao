@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsCompaniesGetAPIResponse
-查询物流公司信息 API返回值
-taobao.logistics.companies.get
-
-查询淘宝网合作的物流公司信息，用于发货接口。 */
+// TaobaoLogisticsCompaniesGetAPIResponse 查询物流公司信息 API返回值
+// taobao.logistics.companies.get
+//
+// 查询淘宝网合作的物流公司信息，用于发货接口。
 type TaobaoLogisticsCompaniesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsCompaniesGetAPIResponseModel

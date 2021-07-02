@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosPosAlarmAPIResponse
-pos故障报警 API返回值
-alibaba.mos.pos.alarm
-
-故障报警 */
+// AlibabaMosPosAlarmAPIResponse pos故障报警 API返回值
+// alibaba.mos.pos.alarm
+//
+// 故障报警
 type AlibabaMosPosAlarmAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosPosAlarmAPIResponseModel

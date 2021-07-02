@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthNrCepOrderQueryAPIResponse
-订单详情查询接口 API返回值
-alibaba.health.nr.cep.order.query
-
-订单详情查询接口 */
+// AlibabaHealthNrCepOrderQueryAPIResponse 订单详情查询接口 API返回值
+// alibaba.health.nr.cep.order.query
+//
+// 订单详情查询接口
 type AlibabaHealthNrCepOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthNrCepOrderQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCloudbridgeCaseinvestExecuteAPIResponse
-红盾云桥案件协查服务 API返回值
-taobao.cloudbridge.caseinvest.execute
-
-通过API接口直接提供政府部门录入及查询函件服务 */
+// TaobaoCloudbridgeCaseinvestExecuteAPIResponse 红盾云桥案件协查服务 API返回值
+// taobao.cloudbridge.caseinvest.execute
+//
+// 通过API接口直接提供政府部门录入及查询函件服务
 type TaobaoCloudbridgeCaseinvestExecuteAPIResponse struct {
 	model.CommonResponse
 	TaobaoCloudbridgeCaseinvestExecuteAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotQryPersoninfoAPIRequest
-查询物联卡个人实人认证信息 API请求
-alibaba.aliqin.fc.iot.qry.personinfo
-
-查询物联卡个人实人认证信息 */
+// AlibabaAliqinFcIotQryPersoninfoAPIRequest 查询物联卡个人实人认证信息 API请求
+// alibaba.aliqin.fc.iot.qry.personinfo
+//
+// 查询物联卡个人实人认证信息
 type AlibabaAliqinFcIotQryPersoninfoAPIRequest struct {
 	model.Params
 	// 需要查询的iccid

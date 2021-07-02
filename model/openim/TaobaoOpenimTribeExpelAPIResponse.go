@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimTribeExpelAPIResponse
-OPENIM群踢出成员 API返回值
-taobao.openim.tribe.expel
-
-OPENIM群踢出成员 */
+// TaobaoOpenimTribeExpelAPIResponse OPENIM群踢出成员 API返回值
+// taobao.openim.tribe.expel
+//
+// OPENIM群踢出成员
 type TaobaoOpenimTribeExpelAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimTribeExpelAPIResponseModel

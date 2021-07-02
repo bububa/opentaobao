@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-/* AlibabaMjMemberHasbind
-喵街会员是否绑定
-alibaba.mj.member.hasbind
-
-喵街检测用户是否为数字化会员 */
+// AlibabaMjMemberHasbind 喵街会员是否绑定
+// alibaba.mj.member.hasbind
+//
+// 喵街检测用户是否为数字化会员
 func AlibabaMjMemberHasbind(clt *core.SDKClient, req *mos.AlibabaMjMemberHasbindAPIRequest, session string) (*mos.AlibabaMjMemberHasbindAPIResponse, error) {
 	var resp mos.AlibabaMjMemberHasbindAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallDeviceCarturlGetAPIResponse
-添加商品到购物车 API返回值
-tmall.device.carturl.get
-
-获取二维码，支持添加商品到购物车 */
+// TmallDeviceCarturlGetAPIResponse 添加商品到购物车 API返回值
+// tmall.device.carturl.get
+//
+// 获取二维码，支持添加商品到购物车
 type TmallDeviceCarturlGetAPIResponse struct {
 	model.CommonResponse
 	TmallDeviceCarturlGetAPIResponseModel

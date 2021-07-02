@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjOcBigposBanksaleAdjustmentApplyAPIResponse
-大pos银行卡调账申请 API返回值
-alibaba.mj.oc.bigpos.banksale.adjustment.apply
-
-大pos银行卡调账申请 */
+// AlibabaMjOcBigposBanksaleAdjustmentApplyAPIResponse 大pos银行卡调账申请 API返回值
+// alibaba.mj.oc.bigpos.banksale.adjustment.apply
+//
+// 大pos银行卡调账申请
 type AlibabaMjOcBigposBanksaleAdjustmentApplyAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcBigposBanksaleAdjustmentApplyAPIResponseModel

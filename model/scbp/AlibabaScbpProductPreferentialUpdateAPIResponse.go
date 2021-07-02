@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpProductPreferentialUpdateAPIResponse
-设置P4P产品优先推广状态 API返回值
-alibaba.scbp.product.preferential.update
-
-设置P4P产品优先推广状态 */
+// AlibabaScbpProductPreferentialUpdateAPIResponse 设置P4P产品优先推广状态 API返回值
+// alibaba.scbp.product.preferential.update
+//
+// 设置P4P产品优先推广状态
 type AlibabaScbpProductPreferentialUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpProductPreferentialUpdateAPIResponseModel

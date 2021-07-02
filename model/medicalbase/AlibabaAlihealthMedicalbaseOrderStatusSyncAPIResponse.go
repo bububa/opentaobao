@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMedicalbaseOrderStatusSyncAPIResponse
-号源直连订单状态同步接口 API返回值
-alibaba.alihealth.medicalbase.order.status.sync
-
-互联网医院isv批量通过接口批量导入 */
+// AlibabaAlihealthMedicalbaseOrderStatusSyncAPIResponse 号源直连订单状态同步接口 API返回值
+// alibaba.alihealth.medicalbase.order.status.sync
+//
+// 互联网医院isv批量通过接口批量导入
 type AlibabaAlihealthMedicalbaseOrderStatusSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthMedicalbaseOrderStatusSyncAPIResponseModel

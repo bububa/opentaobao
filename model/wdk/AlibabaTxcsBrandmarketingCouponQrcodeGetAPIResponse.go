@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse
-品牌营销导购员券页面二维码获取 API返回值
-alibaba.txcs.brandmarketing.coupon.qrcode.get
-
-构建券页码二维码url */
+// AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse 品牌营销导购员券页面二维码获取 API返回值
+// alibaba.txcs.brandmarketing.coupon.qrcode.get
+//
+// 构建券页码二维码url
 type AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponseModel

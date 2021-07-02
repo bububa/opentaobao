@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttDvbRenewFeedbackAPIRequest
-dvb续费之后的反馈接口 API请求
-youku.ott.dvb.renew.feedback
-
-dvb续费之后的反馈接口 */
+// YoukuOttDvbRenewFeedbackAPIRequest dvb续费之后的反馈接口 API请求
+// youku.ott.dvb.renew.feedback
+//
+// dvb续费之后的反馈接口
 type YoukuOttDvbRenewFeedbackAPIRequest struct {
 	model.Params
 	// 订单id

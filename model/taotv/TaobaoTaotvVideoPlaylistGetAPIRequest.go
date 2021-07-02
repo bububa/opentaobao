@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTaotvVideoPlaylistGetAPIRequest
-根据频道ID获取频道下节目单以及当前播放 API请求
-taobao.taotv.video.playlist.get
-
-根据频道ID获取频道下节目单以及当前播放 */
+// TaobaoTaotvVideoPlaylistGetAPIRequest 根据频道ID获取频道下节目单以及当前播放 API请求
+// taobao.taotv.video.playlist.get
+//
+// 根据频道ID获取频道下节目单以及当前播放
 type TaobaoTaotvVideoPlaylistGetAPIRequest struct {
 	model.Params
 	// 播单id

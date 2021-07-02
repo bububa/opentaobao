@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMarketPictureGetuserpicturesAPIResponse
-读取用户上传图片 API返回值
-taobao.market.picture.getuserpictures
-
-商家通过用户信息，获取用户上传的 */
+// TaobaoMarketPictureGetuserpicturesAPIResponse 读取用户上传图片 API返回值
+// taobao.market.picture.getuserpictures
+//
+// 商家通过用户信息，获取用户上传的
 type TaobaoMarketPictureGetuserpicturesAPIResponse struct {
 	model.CommonResponse
 	TaobaoMarketPictureGetuserpicturesAPIResponseModel

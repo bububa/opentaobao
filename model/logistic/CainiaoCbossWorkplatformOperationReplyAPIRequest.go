@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCbossWorkplatformOperationReplyAPIRequest
-菜鸟工单操作回传 API请求
-cainiao.cboss.workplatform.operation.reply
-
-菜鸟工单进度下发接口，目前调用者ISV */
+// CainiaoCbossWorkplatformOperationReplyAPIRequest 菜鸟工单操作回传 API请求
+// cainiao.cboss.workplatform.operation.reply
+//
+// 菜鸟工单进度下发接口，目前调用者ISV
 type CainiaoCbossWorkplatformOperationReplyAPIRequest struct {
 	model.Params
 	// 工单id

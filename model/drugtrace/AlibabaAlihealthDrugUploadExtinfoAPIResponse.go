@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugUploadExtinfoAPIResponse
-中药饮片及器械对接 API返回值
-alibaba.alihealth.drug.upload.extinfo
-
-中药饮片及器械对接 */
+// AlibabaAlihealthDrugUploadExtinfoAPIResponse 中药饮片及器械对接 API返回值
+// alibaba.alihealth.drug.upload.extinfo
+//
+// 中药饮片及器械对接
 type AlibabaAlihealthDrugUploadExtinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugUploadExtinfoAPIResponseModel

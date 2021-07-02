@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderDtdQueryAPIResponse
-门店自送根据核销码查订单 API返回值
-taobao.omniorder.dtd.query
-
-门店自送根据核销码码查询订单信息 */
+// TaobaoOmniorderDtdQueryAPIResponse 门店自送根据核销码查订单 API返回值
+// taobao.omniorder.dtd.query
+//
+// 门店自送根据核销码码查询订单信息
 type TaobaoOmniorderDtdQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderDtdQueryAPIResponseModel

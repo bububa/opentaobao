@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-/* AlibabaScbpAdCampaignCreate
-创建计划
-alibaba.scbp.ad.campaign.create
-
-创建计划 */
+// AlibabaScbpAdCampaignCreate 创建计划
+// alibaba.scbp.ad.campaign.create
+//
+// 创建计划
 func AlibabaScbpAdCampaignCreate(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignCreateAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignCreateAPIResponse, error) {
 	var resp scbp.AlibabaScbpAdCampaignCreateAPIResponse
 	err := clt.Post(req, &resp, session)

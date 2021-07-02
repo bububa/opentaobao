@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUmpRangeDeleteAPIResponse
-删除活动范围 API返回值
-taobao.ump.range.delete
-
-去指先前指定在某项活动中，某些类型的物品参加或者不参加活动的设置 */
+// TaobaoUmpRangeDeleteAPIResponse 删除活动范围 API返回值
+// taobao.ump.range.delete
+//
+// 去指先前指定在某项活动中，某些类型的物品参加或者不参加活动的设置
 type TaobaoUmpRangeDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoUmpRangeDeleteAPIResponseModel

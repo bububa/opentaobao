@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleRentOrderLogisticsDeliverAPIResponse
-创建揽收物流 API返回值
-alibaba.idle.rent.order.logistics.deliver
-
-创建揽收物流
-商家去物流公司创建物流订单 */
+// AlibabaIdleRentOrderLogisticsDeliverAPIResponse 创建揽收物流 API返回值
+// alibaba.idle.rent.order.logistics.deliver
+//
+// 创建揽收物流
+// 商家去物流公司创建物流订单
 type AlibabaIdleRentOrderLogisticsDeliverAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleRentOrderLogisticsDeliverAPIResponseModel

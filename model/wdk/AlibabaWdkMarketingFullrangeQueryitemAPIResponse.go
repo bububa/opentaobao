@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingFullrangeQueryitemAPIResponse
-全场活动查询换购品 API返回值
-alibaba.wdk.marketing.fullrange.queryitem
-
-全场活动查询换购品 */
+// AlibabaWdkMarketingFullrangeQueryitemAPIResponse 全场活动查询换购品 API返回值
+// alibaba.wdk.marketing.fullrange.queryitem
+//
+// 全场活动查询换购品
 type AlibabaWdkMarketingFullrangeQueryitemAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingFullrangeQueryitemAPIResponseModel

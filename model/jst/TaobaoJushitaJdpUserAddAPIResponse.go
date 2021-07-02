@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJushitaJdpUserAddAPIResponse
-添加数据推送用户 API返回值
-taobao.jushita.jdp.user.add
-
-提供给接入数据推送的应用添加数据推送服务的用户 */
+// TaobaoJushitaJdpUserAddAPIResponse 添加数据推送用户 API返回值
+// taobao.jushita.jdp.user.add
+//
+// 提供给接入数据推送的应用添加数据推送服务的用户
 type TaobaoJushitaJdpUserAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoJushitaJdpUserAddAPIResponseModel

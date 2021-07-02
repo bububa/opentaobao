@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtItemMainSynchronizeAPIResponse
-家装新零售主商品同步至阿里 API返回值
-tmall.nrt.item.main.synchronize
-
-同步红星美凯龙存量商品到阿里 */
+// TmallNrtItemMainSynchronizeAPIResponse 家装新零售主商品同步至阿里 API返回值
+// tmall.nrt.item.main.synchronize
+//
+// 同步红星美凯龙存量商品到阿里
 type TmallNrtItemMainSynchronizeAPIResponse struct {
 	model.CommonResponse
 	TmallNrtItemMainSynchronizeAPIResponseModel

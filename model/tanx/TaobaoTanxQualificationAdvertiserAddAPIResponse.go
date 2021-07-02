@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxQualificationAdvertiserAddAPIResponse
-新增广告主接口 API返回值
-taobao.tanx.qualification.advertiser.add
-
-外部dsp调用接口时会根据广告主名称和类型在tanx系统中新增一个广告主 */
+// TaobaoTanxQualificationAdvertiserAddAPIResponse 新增广告主接口 API返回值
+// taobao.tanx.qualification.advertiser.add
+//
+// 外部dsp调用接口时会根据广告主名称和类型在tanx系统中新增一个广告主
 type TaobaoTanxQualificationAdvertiserAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxQualificationAdvertiserAddAPIResponseModel

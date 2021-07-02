@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaichuanItemSubscribeDailyLeftQueryAPIResponse
-查询当天可添加的余量 API返回值
-taobao.baichuan.item.subscribe.daily.left.query
-
-查询当天可添加的余量 */
+// TaobaoBaichuanItemSubscribeDailyLeftQueryAPIResponse 查询当天可添加的余量 API返回值
+// taobao.baichuan.item.subscribe.daily.left.query
+//
+// 查询当天可添加的余量
 type TaobaoBaichuanItemSubscribeDailyLeftQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaichuanItemSubscribeDailyLeftQueryAPIResponseModel

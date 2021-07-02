@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemUpdateListingTmallAPIResponse
-taobao.item.update.listing天猫分流 API返回值
-taobao.item.update.listing.tmall
-
-* 单个商品上架<br/>* 输入的num_iid必须属于当前会话用户 */
+// TaobaoItemUpdateListingTmallAPIResponse taobao.item.update.listing天猫分流 API返回值
+// taobao.item.update.listing.tmall
+//
+// * 单个商品上架<br/>* 输入的num_iid必须属于当前会话用户
 type TaobaoItemUpdateListingTmallAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemUpdateListingTmallAPIResponseModel

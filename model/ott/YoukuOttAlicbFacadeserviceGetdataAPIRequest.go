@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttAlicbFacadeserviceGetdataAPIRequest
-影视SDK获取设备能力值 API请求
-youku.ott.alicb.facadeservice.getdata
-
-影视SDK获取设备能力值 */
+// YoukuOttAlicbFacadeserviceGetdataAPIRequest 影视SDK获取设备能力值 API请求
+// youku.ott.alicb.facadeservice.getdata
+//
+// 影视SDK获取设备能力值
 type YoukuOttAlicbFacadeserviceGetdataAPIRequest struct {
 	model.Params
 	// 能力维度

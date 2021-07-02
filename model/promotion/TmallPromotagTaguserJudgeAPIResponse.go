@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallPromotagTaguserJudgeAPIResponse
-用户标签判断接口 API返回值
-tmall.promotag.taguser.judge
-
-查询用户是否有标签 */
+// TmallPromotagTaguserJudgeAPIResponse 用户标签判断接口 API返回值
+// tmall.promotag.taguser.judge
+//
+// 查询用户是否有标签
 type TmallPromotagTaguserJudgeAPIResponse struct {
 	model.CommonResponse
 	TmallPromotagTaguserJudgeAPIResponseModel

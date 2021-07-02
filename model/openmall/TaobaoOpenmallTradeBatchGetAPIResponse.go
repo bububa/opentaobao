@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallTradeBatchGetAPIResponse
-批量获取openmall订单 API返回值
-taobao.openmall.trade.batch.get
-
-批量获取openmall订单
-注意：该接口数据存在延迟，实时数据请通过taobao.openmall.trade.get获取 */
+// TaobaoOpenmallTradeBatchGetAPIResponse 批量获取openmall订单 API返回值
+// taobao.openmall.trade.batch.get
+//
+// 批量获取openmall订单
+// 注意：该接口数据存在延迟，实时数据请通过taobao.openmall.trade.get获取
 type TaobaoOpenmallTradeBatchGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenmallTradeBatchGetAPIResponseModel

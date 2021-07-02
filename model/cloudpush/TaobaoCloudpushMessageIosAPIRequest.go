@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCloudpushMessageIosAPIRequest
-百川云推送发送消息给ios API请求
-taobao.cloudpush.message.ios
-
-百川云推送发送消息给iOS设备. */
+// TaobaoCloudpushMessageIosAPIRequest 百川云推送发送消息给ios API请求
+// taobao.cloudpush.message.ios
+//
+// 百川云推送发送消息给iOS设备.
 type TaobaoCloudpushMessageIosAPIRequest struct {
 	model.Params
 	// 发送的消息内容.

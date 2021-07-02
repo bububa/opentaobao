@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleTransferpayQueryAPIResponse
-闲鱼转账结果查询 API返回值
-alibaba.idle.transferpay.query
-
-商家业务 转账支付的结果查询 */
+// AlibabaIdleTransferpayQueryAPIResponse 闲鱼转账结果查询 API返回值
+// alibaba.idle.transferpay.query
+//
+// 商家业务 转账支付的结果查询
 type AlibabaIdleTransferpayQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleTransferpayQueryAPIResponseModel

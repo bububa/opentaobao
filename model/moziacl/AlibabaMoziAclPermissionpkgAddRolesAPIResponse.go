@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziAclPermissionpkgAddRolesAPIResponse
-将角色添加到权限套餐中 API返回值
-alibaba.mozi.acl.permissionpkg.add.roles
-
-此接口是将应用下的一批角色添加到该应用的某个权限套餐中 */
+// AlibabaMoziAclPermissionpkgAddRolesAPIResponse 将角色添加到权限套餐中 API返回值
+// alibaba.mozi.acl.permissionpkg.add.roles
+//
+// 此接口是将应用下的一批角色添加到该应用的某个权限套餐中
 type AlibabaMoziAclPermissionpkgAddRolesAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziAclPermissionpkgAddRolesAPIResponseModel

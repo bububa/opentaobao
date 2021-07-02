@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse
-口碑综合体手机号获取验证码 API返回值
-taobao.koubei.tribe.open.verify.code.apply
-
-口碑综合体通过手机号获取验证码对外开放接口 */
+// TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse 口碑综合体手机号获取验证码 API返回值
+// taobao.koubei.tribe.open.verify.code.apply
+//
+// 口碑综合体通过手机号获取验证码对外开放接口
 type TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse struct {
 	model.CommonResponse
 	TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponseModel

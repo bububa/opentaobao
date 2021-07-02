@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelHstdfShotelMatchshotelselfAPIResponse
-自主匹配标准酒店以及卖家酒店 API返回值
-alitrip.hotel.hstdf.shotel.matchshotelself
-
-商家通过指定的标准酒店id和卖家酒店id进行匹配 */
+// AlitripHotelHstdfShotelMatchshotelselfAPIResponse 自主匹配标准酒店以及卖家酒店 API返回值
+// alitrip.hotel.hstdf.shotel.matchshotelself
+//
+// 商家通过指定的标准酒店id和卖家酒店id进行匹配
 type AlitripHotelHstdfShotelMatchshotelselfAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelHstdfShotelMatchshotelselfAPIResponseModel

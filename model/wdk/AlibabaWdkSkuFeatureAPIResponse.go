@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkSkuFeatureAPIResponse
-商品标记接口 API返回值
-alibaba.wdk.sku.feature
-
-给淘鲜达商品属性之外的打标通用能力，满足商品一些特殊的需求，比如是否参加营销。 */
+// AlibabaWdkSkuFeatureAPIResponse 商品标记接口 API返回值
+// alibaba.wdk.sku.feature
+//
+// 给淘鲜达商品属性之外的打标通用能力，满足商品一些特殊的需求，比如是否参加营销。
 type AlibabaWdkSkuFeatureAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkSkuFeatureAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelProductBaseModifyAPIRequest
-供应商编辑产品API API请求
-taobao.alitrip.travel.product.base.modify
-
-飞猪供销平台供应商可通过该API编辑产品 */
+// TaobaoAlitripTravelProductBaseModifyAPIRequest 供应商编辑产品API API请求
+// taobao.alitrip.travel.product.base.modify
+//
+// 飞猪供销平台供应商可通过该API编辑产品
 type TaobaoAlitripTravelProductBaseModifyAPIRequest struct {
 	model.Params
 	// 详细行程描述结构

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItempoolAdditemAPIRequest
-增加商品池里面的商品 API请求
-alibaba.wdk.marketing.itempool.additem
-
-增加商品池里面的商品 */
+// AlibabaWdkMarketingItempoolAdditemAPIRequest 增加商品池里面的商品 API请求
+// alibaba.wdk.marketing.itempool.additem
+//
+// 增加商品池里面的商品
 type AlibabaWdkMarketingItempoolAdditemAPIRequest struct {
 	model.Params
 	// 商品对象

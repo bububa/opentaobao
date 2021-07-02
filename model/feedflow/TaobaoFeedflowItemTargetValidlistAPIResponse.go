@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemTargetValidlistAPIResponse
-获取有权限的定向列表 API返回值
-taobao.feedflow.item.target.validlist
-
-获取有权限的定向列表 */
+// TaobaoFeedflowItemTargetValidlistAPIResponse 获取有权限的定向列表 API返回值
+// taobao.feedflow.item.target.validlist
+//
+// 获取有权限的定向列表
 type TaobaoFeedflowItemTargetValidlistAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemTargetValidlistAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFeedflowItemCrowdModifybindAPIResponse
-修改人群出价或状态 API返回值
-taobao.feedflow.item.crowd.modifybind
-
-修改人群出价或状态 */
+// TaobaoFeedflowItemCrowdModifybindAPIResponse 修改人群出价或状态 API返回值
+// taobao.feedflow.item.crowd.modifybind
+//
+// 修改人群出价或状态
 type TaobaoFeedflowItemCrowdModifybindAPIResponse struct {
 	model.CommonResponse
 	TaobaoFeedflowItemCrowdModifybindAPIResponseModel

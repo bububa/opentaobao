@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallBrandItemUploadAPIResponse
-天猫品牌新品同步API API返回值
-tmall.brand.item.upload
-
-支撑天猫品牌将各渠道新品信息同步至平台 */
+// TmallBrandItemUploadAPIResponse 天猫品牌新品同步API API返回值
+// tmall.brand.item.upload
+//
+// 支撑天猫品牌将各渠道新品信息同步至平台
 type TmallBrandItemUploadAPIResponse struct {
 	model.CommonResponse
 	TmallBrandItemUploadAPIResponseModel

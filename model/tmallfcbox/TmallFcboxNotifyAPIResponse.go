@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallFcboxNotifyAPIResponse
-丰巢通知接口 API返回值
-tmall.fcbox.notify
-
-tmax接收丰巢快递通知 */
+// TmallFcboxNotifyAPIResponse 丰巢通知接口 API返回值
+// tmall.fcbox.notify
+//
+// tmax接收丰巢快递通知
 type TmallFcboxNotifyAPIResponse struct {
 	model.CommonResponse
 	TmallFcboxNotifyAPIResponseModel

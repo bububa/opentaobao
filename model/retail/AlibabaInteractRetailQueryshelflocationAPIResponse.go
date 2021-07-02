@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractRetailQueryshelflocationAPIResponse
-查询货架和位置数据 API返回值
-alibaba.interact.retail.queryshelflocation
-
-查询货架和位置数据 */
+// AlibabaInteractRetailQueryshelflocationAPIResponse 查询货架和位置数据 API返回值
+// alibaba.interact.retail.queryshelflocation
+//
+// 查询货架和位置数据
 type AlibabaInteractRetailQueryshelflocationAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractRetailQueryshelflocationAPIResponseModel

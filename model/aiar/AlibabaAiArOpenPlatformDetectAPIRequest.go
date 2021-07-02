@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAiArOpenPlatformDetectAPIRequest
-AR开发者平台marker图片检测服务 API请求
-alibaba.ai.ar.open.platform.detect
-
-AR开发者平台marker图片检测服务，给AR SDK 和 阿里火眼app使用 */
+// AlibabaAiArOpenPlatformDetectAPIRequest AR开发者平台marker图片检测服务 API请求
+// alibaba.ai.ar.open.platform.detect
+//
+// AR开发者平台marker图片检测服务，给AR SDK 和 阿里火眼app使用
 type AlibabaAiArOpenPlatformDetectAPIRequest struct {
 	model.Params
 	// 原始图像数据

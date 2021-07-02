@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceIncomeTokenReturnAPIRequest
-服务商回传税号token API请求
-alibaba.einvoice.income.token.return
-
-服务商回传税号token，用来勾选抵扣认证 */
+// AlibabaEinvoiceIncomeTokenReturnAPIRequest 服务商回传税号token API请求
+// alibaba.einvoice.income.token.return
+//
+// 服务商回传税号token，用来勾选抵扣认证
 type AlibabaEinvoiceIncomeTokenReturnAPIRequest struct {
 	model.Params
 	// 税局所在区域，success=true时必填

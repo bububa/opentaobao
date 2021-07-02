@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusTvmcancelorderSetAPIResponse
-线下自助机未付款取消订单 API返回值
-taobao.bus.tvmcancelorder.set
-
-自助机汽车票未付款取消订单 */
+// TaobaoBusTvmcancelorderSetAPIResponse 线下自助机未付款取消订单 API返回值
+// taobao.bus.tvmcancelorder.set
+//
+// 自助机汽车票未付款取消订单
 type TaobaoBusTvmcancelorderSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusTvmcancelorderSetAPIResponseModel

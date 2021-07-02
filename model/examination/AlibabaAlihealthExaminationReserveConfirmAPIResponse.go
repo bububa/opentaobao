@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveConfirmAPIResponse
-体检机构对接_体检套餐预定确认 API返回值
-alibaba.alihealth.examination.reserve.confirm
-
-向体检机构确认用户购买的体检套餐信息 */
+// AlibabaAlihealthExaminationReserveConfirmAPIResponse 体检机构对接_体检套餐预定确认 API返回值
+// alibaba.alihealth.examination.reserve.confirm
+//
+// 向体检机构确认用户购买的体检套餐信息
 type AlibabaAlihealthExaminationReserveConfirmAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationReserveConfirmAPIResponseModel

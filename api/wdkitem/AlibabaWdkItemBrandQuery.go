@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wdkitem"
 )
 
-/* AlibabaWdkItemBrandQuery
-品牌信息查询
-alibaba.wdk.item.brand.query
-
-品牌信息查询 */
+// AlibabaWdkItemBrandQuery 品牌信息查询
+// alibaba.wdk.item.brand.query
+//
+// 品牌信息查询
 func AlibabaWdkItemBrandQuery(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemBrandQueryAPIRequest, session string) (*wdkitem.AlibabaWdkItemBrandQueryAPIResponse, error) {
 	var resp wdkitem.AlibabaWdkItemBrandQueryAPIResponse
 	err := clt.Post(req, &resp, session)

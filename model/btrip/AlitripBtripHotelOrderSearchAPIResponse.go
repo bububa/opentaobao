@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripHotelOrderSearchAPIResponse
-搜索酒店订单列表 API返回值
-alitrip.btrip.hotel.order.search
-
-企业获取商旅酒店订单数据 */
+// AlitripBtripHotelOrderSearchAPIResponse 搜索酒店订单列表 API返回值
+// alitrip.btrip.hotel.order.search
+//
+// 企业获取商旅酒店订单数据
 type AlitripBtripHotelOrderSearchAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripHotelOrderSearchAPIResponseModel

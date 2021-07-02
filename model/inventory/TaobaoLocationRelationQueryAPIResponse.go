@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLocationRelationQueryAPIResponse
-地点关联关系查询 API返回值
-taobao.location.relation.query
-
-地点关联关系查询
-门店和仓库关联关系查询 */
+// TaobaoLocationRelationQueryAPIResponse 地点关联关系查询 API返回值
+// taobao.location.relation.query
+//
+// 地点关联关系查询
+// 门店和仓库关联关系查询
 type TaobaoLocationRelationQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoLocationRelationQueryAPIResponseModel

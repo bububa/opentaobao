@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripRailIrServiceGetAPIResponse
-国际火车票仓位坐席查询 API返回值
-alitrip.rail.ir.service.get
-
-国际火车票标准仓位坐席查询 */
+// AlitripRailIrServiceGetAPIResponse 国际火车票仓位坐席查询 API返回值
+// alitrip.rail.ir.service.get
+//
+// 国际火车票标准仓位坐席查询
 type AlitripRailIrServiceGetAPIResponse struct {
 	model.CommonResponse
 	AlitripRailIrServiceGetAPIResponseModel

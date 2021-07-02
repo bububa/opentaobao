@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkHrworkbenchCdpempsQueryAPIRequest
-homs员工信息核对查询服务 API请求
-alibaba.wdk.hrworkbench.cdpemps.query
-
-给盒马可靠软件服务商Cdp系统，做非阿里编员工数据一致性核对检查 */
+// AlibabaWdkHrworkbenchCdpempsQueryAPIRequest homs员工信息核对查询服务 API请求
+// alibaba.wdk.hrworkbench.cdpemps.query
+//
+// 给盒马可靠软件服务商Cdp系统，做非阿里编员工数据一致性核对检查
 type AlibabaWdkHrworkbenchCdpempsQueryAPIRequest struct {
 	model.Params
 	// 页面大小

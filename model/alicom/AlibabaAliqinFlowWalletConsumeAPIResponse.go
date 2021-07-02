@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFlowWalletConsumeAPIResponse
-流量扣减 API返回值
-alibaba.aliqin.flow.wallet.consume
-
-流量钱包流量扣减接口 */
+// AlibabaAliqinFlowWalletConsumeAPIResponse 流量扣减 API返回值
+// alibaba.aliqin.flow.wallet.consume
+//
+// 流量钱包流量扣减接口
 type AlibabaAliqinFlowWalletConsumeAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFlowWalletConsumeAPIResponseModel

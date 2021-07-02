@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaVisitorGetidsbyqrcodeAPIResponse
-根据访客二维码查访客行程id API返回值
-alibaba.visitor.getidsbyqrcode
-
-根据支付宝阿里访客小程序的动态二维码查询来访行程id */
+// AlibabaVisitorGetidsbyqrcodeAPIResponse 根据访客二维码查访客行程id API返回值
+// alibaba.visitor.getidsbyqrcode
+//
+// 根据支付宝阿里访客小程序的动态二维码查询来访行程id
 type AlibabaVisitorGetidsbyqrcodeAPIResponse struct {
 	model.CommonResponse
 	AlibabaVisitorGetidsbyqrcodeAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDegoperationGetByEventkeyAPIResponse
-通用用户抽奖次数限制 API返回值
-taobao.degoperation.get.by.eventkey
-
-通用用户抽奖次数限制 */
+// TaobaoDegoperationGetByEventkeyAPIResponse 通用用户抽奖次数限制 API返回值
+// taobao.degoperation.get.by.eventkey
+//
+// 通用用户抽奖次数限制
 type TaobaoDegoperationGetByEventkeyAPIResponse struct {
 	model.CommonResponse
 	TaobaoDegoperationGetByEventkeyAPIResponseModel

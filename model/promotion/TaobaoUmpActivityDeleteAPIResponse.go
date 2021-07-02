@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUmpActivityDeleteAPIResponse
-删除营销活动 API返回值
-taobao.ump.activity.delete
-
-删除营销活动。对应的活动详情等将会被全部删除。 */
+// TaobaoUmpActivityDeleteAPIResponse 删除营销活动 API返回值
+// taobao.ump.activity.delete
+//
+// 删除营销活动。对应的活动详情等将会被全部删除。
 type TaobaoUmpActivityDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoUmpActivityDeleteAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpShowcaseUpdateproductAPIResponse
-替换橱窗商品 API返回值
-alibaba.scbp.showcase.updateproduct
-
-替换橱窗商品 */
+// AlibabaScbpShowcaseUpdateproductAPIResponse 替换橱窗商品 API返回值
+// alibaba.scbp.showcase.updateproduct
+//
+// 替换橱窗商品
 type AlibabaScbpShowcaseUpdateproductAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpShowcaseUpdateproductAPIResponseModel

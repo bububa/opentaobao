@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstBmStoreAddAPIResponse
-导入品牌商自有门店 API返回值
-alibaba.lst.bm.store.add
-
-导入品牌商自有门店 */
+// AlibabaLstBmStoreAddAPIResponse 导入品牌商自有门店 API返回值
+// alibaba.lst.bm.store.add
+//
+// 导入品牌商自有门店
 type AlibabaLstBmStoreAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstBmStoreAddAPIResponseModel

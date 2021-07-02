@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelItemSelectionSellerStatHotshidAPIRequest
-供应链选品热销标准酒店覆盖情况 API请求
-taobao.xhotel.item.selection.seller.stat.hotshid
-
-供应链选品热销标准酒店覆盖情况 */
+// TaobaoXhotelItemSelectionSellerStatHotshidAPIRequest 供应链选品热销标准酒店覆盖情况 API请求
+// taobao.xhotel.item.selection.seller.stat.hotshid
+//
+// 供应链选品热销标准酒店覆盖情况
 type TaobaoXhotelItemSelectionSellerStatHotshidAPIRequest struct {
 	model.Params
 	// 日期  默认为昨天

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCardQryAPIResponse
-查询卡实例 API返回值
-alibaba.alsc.crm.card.qry
-
-查询卡实例（优先使用卡实例ID查询，没有则用物理卡号查询） */
+// AlibabaAlscCrmCardQryAPIResponse 查询卡实例 API返回值
+// alibaba.alsc.crm.card.qry
+//
+// 查询卡实例（优先使用卡实例ID查询，没有则用物理卡号查询）
 type AlibabaAlscCrmCardQryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCardQryAPIResponseModel

@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmTfavatarBillTicketRefundQueryAPIResponse
-获取影院票务账单-退款账单 API返回值
-taobao.film.tfavatar.bill.ticket.refund.query
-
-获取影院票务账单-支付订单
-data字段为加密字段, 不可分拆. */
+// TaobaoFilmTfavatarBillTicketRefundQueryAPIResponse 获取影院票务账单-退款账单 API返回值
+// taobao.film.tfavatar.bill.ticket.refund.query
+//
+// 获取影院票务账单-支付订单
+// data字段为加密字段, 不可分拆.
 type TaobaoFilmTfavatarBillTicketRefundQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoFilmTfavatarBillTicketRefundQueryAPIResponseModel

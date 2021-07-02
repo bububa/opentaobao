@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaSerchcrowdStateBatchUpdateAPIResponse
-单品搜索人群修改状态 API返回值
-taobao.simba.serchcrowd.state.batch.update
-
-暂停或启用单品推广搜索人群溢价 */
+// TaobaoSimbaSerchcrowdStateBatchUpdateAPIResponse 单品搜索人群修改状态 API返回值
+// taobao.simba.serchcrowd.state.batch.update
+//
+// 暂停或启用单品推广搜索人群溢价
 type TaobaoSimbaSerchcrowdStateBatchUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaSerchcrowdStateBatchUpdateAPIResponseModel

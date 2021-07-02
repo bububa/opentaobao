@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelDataServiceOrderDetailAPIResponse
-服务订单详情 API返回值
-taobao.xhotel.data.service.order.detail
-
-服务订单详情top接口构建 */
+// TaobaoXhotelDataServiceOrderDetailAPIResponse 服务订单详情 API返回值
+// taobao.xhotel.data.service.order.detail
+//
+// 服务订单详情top接口构建
 type TaobaoXhotelDataServiceOrderDetailAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelDataServiceOrderDetailAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderOfflineSettlePutAPIRequest
-线下信用住结账专用接口 API请求
-taobao.xhotel.order.offline.settle.put
-
-线下信用住结账专用接口 */
+// TaobaoXhotelOrderOfflineSettlePutAPIRequest 线下信用住结账专用接口 API请求
+// taobao.xhotel.order.offline.settle.put
+//
+// 线下信用住结账专用接口
 type TaobaoXhotelOrderOfflineSettlePutAPIRequest struct {
 	model.Params
 	// 淘宝订单id,必须填写

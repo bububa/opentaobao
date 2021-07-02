@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIResponse
-根据分组条件查询分组下的空间单元不包涵业务属性信息 API返回值
-alibaba.campus.adminmap.poiinfo.getlistbygroup
-
-根据分组条件查询分组下的空间单元不包涵业务属性信息 */
+// AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIResponse 根据分组条件查询分组下的空间单元不包涵业务属性信息 API返回值
+// alibaba.campus.adminmap.poiinfo.getlistbygroup
+//
+// 根据分组条件查询分组下的空间单元不包涵业务属性信息
 type AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIResponseModel

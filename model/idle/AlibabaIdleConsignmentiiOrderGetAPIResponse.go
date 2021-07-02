@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleConsignmentiiOrderGetAPIResponse
-闲鱼寄卖V2订单查询 API返回值
-alibaba.idle.consignmentii.order.get
-
-闲鱼寄卖V2服务商以闲鱼交易买家身份查询订单信息 */
+// AlibabaIdleConsignmentiiOrderGetAPIResponse 闲鱼寄卖V2订单查询 API返回值
+// alibaba.idle.consignmentii.order.get
+//
+// 闲鱼寄卖V2服务商以闲鱼交易买家身份查询订单信息
 type AlibabaIdleConsignmentiiOrderGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleConsignmentiiOrderGetAPIResponseModel

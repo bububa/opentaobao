@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripSellerModifyListAPIRequest
-【机票代理商订单】改签订单列表 API请求
-taobao.alitrip.seller.modify.list
-
-提供机票代理商查询改签订单列表 */
+// TaobaoAlitripSellerModifyListAPIRequest 【机票代理商订单】改签订单列表 API请求
+// taobao.alitrip.seller.modify.list
+//
+// 提供机票代理商查询改签订单列表
 type TaobaoAlitripSellerModifyListAPIRequest struct {
 	model.Params
 	// 申请单ID

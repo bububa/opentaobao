@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleFengniaoShippingorderEventAPIResponse
-查询运单事件信息 API返回值
-alibaba.ele.fengniao.shippingorder.event
-
-查询运单事件信息 */
+// AlibabaEleFengniaoShippingorderEventAPIResponse 查询运单事件信息 API返回值
+// alibaba.ele.fengniao.shippingorder.event
+//
+// 查询运单事件信息
 type AlibabaEleFengniaoShippingorderEventAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoShippingorderEventAPIResponseModel

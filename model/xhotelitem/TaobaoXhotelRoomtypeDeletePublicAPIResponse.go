@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRoomtypeDeletePublicAPIResponse
-商家删除房型数据接口 API返回值
-taobao.xhotel.roomtype.delete.public
-
-房型删除TOP接口 */
+// TaobaoXhotelRoomtypeDeletePublicAPIResponse 商家删除房型数据接口 API返回值
+// taobao.xhotel.roomtype.delete.public
+//
+// 房型删除TOP接口
 type TaobaoXhotelRoomtypeDeletePublicAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelRoomtypeDeletePublicAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptCampadgroupeffectGetAPIRequest
-推广计划下的推广组报表效果数据查询(只有汇总数据，无分类类型) API请求
-taobao.simba.rpt.campadgroupeffect.get
-
-推广计划下的推广组报表效果数据查询(只有汇总数据，无分类类型) */
+// TaobaoSimbaRptCampadgroupeffectGetAPIRequest 推广计划下的推广组报表效果数据查询(只有汇总数据，无分类类型) API请求
+// taobao.simba.rpt.campadgroupeffect.get
+//
+// 推广计划下的推广组报表效果数据查询(只有汇总数据，无分类类型)
 type TaobaoSimbaRptCampadgroupeffectGetAPIRequest struct {
 	model.Params
 	// 权限验证信息

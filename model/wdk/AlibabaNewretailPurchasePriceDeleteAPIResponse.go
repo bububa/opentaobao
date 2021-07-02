@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNewretailPurchasePriceDeleteAPIResponse
-共享库存 商户删除采购价 API返回值
-alibaba.newretail.purchase.price.delete
-
-共享库存 商户删除采购价 */
+// AlibabaNewretailPurchasePriceDeleteAPIResponse 共享库存 商户删除采购价 API返回值
+// alibaba.newretail.purchase.price.delete
+//
+// 共享库存 商户删除采购价
 type AlibabaNewretailPurchasePriceDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaNewretailPurchasePriceDeleteAPIResponseModel

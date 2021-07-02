@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSmartstoreDeviceStatusFeedbackAPIRequest
-设备在线状态回流 API请求
-taobao.smartstore.device.status.feedback
-
-智能硬件设备状态回流 */
+// TaobaoSmartstoreDeviceStatusFeedbackAPIRequest 设备在线状态回流 API请求
+// taobao.smartstore.device.status.feedback
+//
+// 智能硬件设备状态回流
 type TaobaoSmartstoreDeviceStatusFeedbackAPIRequest struct {
 	model.Params
 	// ONLINE_WITH_CONTENT("ONLINE_WITH_CONTENT", "设备在线"), OFFLINE("OFFLINE", "设备断线");

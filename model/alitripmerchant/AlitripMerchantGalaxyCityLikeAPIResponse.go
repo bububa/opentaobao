@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyCityLikeAPIResponse
-星河-酒店城市模糊查询 API返回值
-alitrip.merchant.galaxy.city.like
-
-根据城市模糊查询，雅高酒店所在城市的城市信息 */
+// AlitripMerchantGalaxyCityLikeAPIResponse 星河-酒店城市模糊查询 API返回值
+// alitrip.merchant.galaxy.city.like
+//
+// 根据城市模糊查询，雅高酒店所在城市的城市信息
 type AlitripMerchantGalaxyCityLikeAPIResponse struct {
 	model.CommonResponse
 	AlitripMerchantGalaxyCityLikeAPIResponseModel

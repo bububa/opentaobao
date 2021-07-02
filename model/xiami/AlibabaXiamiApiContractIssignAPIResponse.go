@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaXiamiApiContractIssignAPIResponse
-查询是否签约 API返回值
-alibaba.xiami.api.contract.issign
-
-查询是否签约 */
+// AlibabaXiamiApiContractIssignAPIResponse 查询是否签约 API返回值
+// alibaba.xiami.api.contract.issign
+//
+// 查询是否签约
 type AlibabaXiamiApiContractIssignAPIResponse struct {
 	model.CommonResponse
 	AlibabaXiamiApiContractIssignAPIResponseModel

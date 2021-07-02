@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpUopSupplierWaybillQueryAPIResponse
-ERP调用打印面单取号接口 API返回值
-alibaba.ascp.uop.supplier.waybill.query
-
-ERP调用打印面单取号接口 */
+// AlibabaAscpUopSupplierWaybillQueryAPIResponse ERP调用打印面单取号接口 API返回值
+// alibaba.ascp.uop.supplier.waybill.query
+//
+// ERP调用打印面单取号接口
 type AlibabaAscpUopSupplierWaybillQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpUopSupplierWaybillQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthOutflowPrescriptionCreateAPIResponse
-处方外流-创建处方 API返回值
-alibaba.alihealth.outflow.prescription.create
-
-阿里健康-处方外流-对外提供保存处方功能 */
+// AlibabaAlihealthOutflowPrescriptionCreateAPIResponse 处方外流-创建处方 API返回值
+// alibaba.alihealth.outflow.prescription.create
+//
+// 阿里健康-处方外流-对外提供保存处方功能
 type AlibabaAlihealthOutflowPrescriptionCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthOutflowPrescriptionCreateAPIResponseModel

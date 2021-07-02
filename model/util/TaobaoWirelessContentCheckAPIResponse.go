@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWirelessContentCheckAPIResponse
-无线开放内容检查 API返回值
-taobao.wireless.content.check
-
-无线开放内容检查，提供涉黄暴力政治文本检查。更详情介绍见 <a href="https://help.aliyun.com/document_detail/70439.html" target="blank">阿里云内容安全</a> */
+// TaobaoWirelessContentCheckAPIResponse 无线开放内容检查 API返回值
+// taobao.wireless.content.check
+//
+// 无线开放内容检查，提供涉黄暴力政治文本检查。更详情介绍见 <a href="https://help.aliyun.com/document_detail/70439.html" target="blank">阿里云内容安全</a>
 type TaobaoWirelessContentCheckAPIResponse struct {
 	model.CommonResponse
 	TaobaoWirelessContentCheckAPIResponseModel

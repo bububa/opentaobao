@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceIncomeAgentCheckAPIResponse
-agent注册校验 API返回值
-alibaba.einvoice.income.agent.check
-
-agent注册是，需要交易用户填写的agentId是否有效 */
+// AlibabaEinvoiceIncomeAgentCheckAPIResponse agent注册校验 API返回值
+// alibaba.einvoice.income.agent.check
+//
+// agent注册是，需要交易用户填写的agentId是否有效
 type AlibabaEinvoiceIncomeAgentCheckAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceIncomeAgentCheckAPIResponseModel

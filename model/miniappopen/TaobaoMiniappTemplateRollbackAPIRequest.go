@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappTemplateRollbackAPIRequest
-回滚实例化应用 API请求
-taobao.miniapp.template.rollback
-
-将实例化小程序回滚到指定版本 */
+// TaobaoMiniappTemplateRollbackAPIRequest 回滚实例化应用 API请求
+// taobao.miniapp.template.rollback
+//
+// 将实例化小程序回滚到指定版本
 type TaobaoMiniappTemplateRollbackAPIRequest struct {
 	model.Params
 	// 要回滚的投放端,目前可投放： taobao,tmall

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoVmsServiceVehicleinfoUploadAPIRequest
-新能源车--外部车辆信息回传 API请求
-cainiao.vms.service.vehicleinfo.upload
-
-新能源车--外部车辆信息回传 */
+// CainiaoVmsServiceVehicleinfoUploadAPIRequest 新能源车--外部车辆信息回传 API请求
+// cainiao.vms.service.vehicleinfo.upload
+//
+// 新能源车--外部车辆信息回传
 type CainiaoVmsServiceVehicleinfoUploadAPIRequest struct {
 	model.Params
 	// 设备号

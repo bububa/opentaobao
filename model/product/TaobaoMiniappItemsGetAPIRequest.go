@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappItemsGetAPIRequest
-批量获取商品信息 API请求
-taobao.miniapp.items.get
-
-获取商品公开属性，只允许在商家应用环境中使用 */
+// TaobaoMiniappItemsGetAPIRequest 批量获取商品信息 API请求
+// taobao.miniapp.items.get
+//
+// 获取商品公开属性，只允许在商家应用环境中使用
 type TaobaoMiniappItemsGetAPIRequest struct {
 	model.Params
 	// 商品数字id列表，多个num_iid用逗号隔开，一次不超过50个。

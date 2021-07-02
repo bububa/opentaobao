@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceExtinfoGetAPIResponse
-获取设备扩展信息 API返回值
-taobao.ailab.aicloud.top.device.extinfo.get
-
-获取设备扩展信息 */
+// TaobaoAilabAicloudTopDeviceExtinfoGetAPIResponse 获取设备扩展信息 API返回值
+// taobao.ailab.aicloud.top.device.extinfo.get
+//
+// 获取设备扩展信息
 type TaobaoAilabAicloudTopDeviceExtinfoGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceExtinfoGetAPIResponseModel

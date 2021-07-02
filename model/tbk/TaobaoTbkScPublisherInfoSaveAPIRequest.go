@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkScPublisherInfoSaveAPIRequest
-淘宝客-公用-私域用户备案 API请求
-taobao.tbk.sc.publisher.info.save
-
-通过入参渠道管理或会员运营管理的邀请码，生成渠道id或会员运营id，完成渠道或会员的备案。 */
+// TaobaoTbkScPublisherInfoSaveAPIRequest 淘宝客-公用-私域用户备案 API请求
+// taobao.tbk.sc.publisher.info.save
+//
+// 通过入参渠道管理或会员运营管理的邀请码，生成渠道id或会员运营id，完成渠道或会员的备案。
 type TaobaoTbkScPublisherInfoSaveAPIRequest struct {
 	model.Params
 	// 渠道备案 - 来源，取链接的来源

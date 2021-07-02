@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLarkPosBasedataGetworkstationAPIResponse
-根据影城id工作站和macId获取工作站 API返回值
-taobao.lark.pos.basedata.getworkstation
-
-获取单独工作站 */
+// TaobaoLarkPosBasedataGetworkstationAPIResponse 根据影城id工作站和macId获取工作站 API返回值
+// taobao.lark.pos.basedata.getworkstation
+//
+// 获取单独工作站
 type TaobaoLarkPosBasedataGetworkstationAPIResponse struct {
 	model.CommonResponse
 	TaobaoLarkPosBasedataGetworkstationAPIResponseModel

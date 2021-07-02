@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialItemSearchAPIResponse
-AE社交选品 API返回值
-aliexpress.social.item.search
-
-AE社交选品,通过各种筛选条件对社交商品池进行筛选 */
+// AliexpressSocialItemSearchAPIResponse AE社交选品 API返回值
+// aliexpress.social.item.search
+//
+// AE社交选品,通过各种筛选条件对社交商品池进行筛选
 type AliexpressSocialItemSearchAPIResponse struct {
 	model.CommonResponse
 	AliexpressSocialItemSearchAPIResponseModel

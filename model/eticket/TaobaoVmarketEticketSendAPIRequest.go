@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketSendAPIRequest
-商家电子凭证发码成功回调接口 API请求
-taobao.vmarket.eticket.send
-
-外部商家成功发码回调接口 */
+// TaobaoVmarketEticketSendAPIRequest 商家电子凭证发码成功回调接口 API请求
+// taobao.vmarket.eticket.send
+//
+// 外部商家成功发码回调接口
 type TaobaoVmarketEticketSendAPIRequest struct {
 	model.Params
 	// 订单编号

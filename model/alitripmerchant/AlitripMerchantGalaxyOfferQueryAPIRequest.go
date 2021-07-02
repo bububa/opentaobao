@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripMerchantGalaxyOfferQueryAPIRequest
-星河-offer查询 API请求
-alitrip.merchant.galaxy.offer.query
-
-根据offer的ID查询offer信息 */
+// AlitripMerchantGalaxyOfferQueryAPIRequest 星河-offer查询 API请求
+// alitrip.merchant.galaxy.offer.query
+//
+// 根据offer的ID查询offer信息
 type AlitripMerchantGalaxyOfferQueryAPIRequest struct {
 	model.Params
 	// 租户身份信息

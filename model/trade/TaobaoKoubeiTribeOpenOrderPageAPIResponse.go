@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKoubeiTribeOpenOrderPageAPIResponse
-口碑综合体订单列表信息查询 API返回值
-taobao.koubei.tribe.open.order.page
-
-查询口碑商圈用户的订单列表信息 */
+// TaobaoKoubeiTribeOpenOrderPageAPIResponse 口碑综合体订单列表信息查询 API返回值
+// taobao.koubei.tribe.open.order.page
+//
+// 查询口碑商圈用户的订单列表信息
 type TaobaoKoubeiTribeOpenOrderPageAPIResponse struct {
 	model.CommonResponse
 	TaobaoKoubeiTribeOpenOrderPageAPIResponseModel

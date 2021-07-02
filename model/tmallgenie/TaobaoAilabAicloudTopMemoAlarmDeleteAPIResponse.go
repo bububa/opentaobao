@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoAlarmDeleteAPIResponse
-天猫精灵闹钟删除 API返回值
-taobao.ailab.aicloud.top.memo.alarm.delete
-
-天猫精灵闹钟删除 */
+// TaobaoAilabAicloudTopMemoAlarmDeleteAPIResponse 天猫精灵闹钟删除 API返回值
+// taobao.ailab.aicloud.top.memo.alarm.delete
+//
+// 天猫精灵闹钟删除
 type TaobaoAilabAicloudTopMemoAlarmDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMemoAlarmDeleteAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuTaskIncreaseAPIResponse
-增加任务接收人接口 API返回值
-taobao.qianniu.task.increase
-
-根据任务元id增加任务接收人 */
+// TaobaoQianniuTaskIncreaseAPIResponse 增加任务接收人接口 API返回值
+// taobao.qianniu.task.increase
+//
+// 根据任务元id增加任务接收人
 type TaobaoQianniuTaskIncreaseAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuTaskIncreaseAPIResponseModel

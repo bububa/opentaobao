@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/degoperation"
 )
 
-/* TaobaoDegoperationShowTopRecords
-活动中奖记录
-taobao.degoperation.show.top.records
-
-活动中奖记录 */
+// TaobaoDegoperationShowTopRecords 活动中奖记录
+// taobao.degoperation.show.top.records
+//
+// 活动中奖记录
 func TaobaoDegoperationShowTopRecords(clt *core.SDKClient, req *degoperation.TaobaoDegoperationShowTopRecordsAPIRequest, session string) (*degoperation.TaobaoDegoperationShowTopRecordsAPIResponse, error) {
 	var resp degoperation.TaobaoDegoperationShowTopRecordsAPIResponse
 	err := clt.Post(req, &resp, session)

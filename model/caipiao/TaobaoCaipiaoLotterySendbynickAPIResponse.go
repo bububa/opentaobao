@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCaipiaoLotterySendbynickAPIResponse
-卖家使用nick给买家送彩票 API返回值
-taobao.caipiao.lottery.sendbynick
-
-卖家使用nick给买家送彩票，可以指定彩种和注数。赠送成功，返回true; 以下几种情况情况， 返回false: 注数超过100注、卖家未签署支付宝代扣协议、卖家或者买家信息不存在等。 */
+// TaobaoCaipiaoLotterySendbynickAPIResponse 卖家使用nick给买家送彩票 API返回值
+// taobao.caipiao.lottery.sendbynick
+//
+// 卖家使用nick给买家送彩票，可以指定彩种和注数。赠送成功，返回true; 以下几种情况情况， 返回false: 注数超过100注、卖家未签署支付宝代扣协议、卖家或者买家信息不存在等。
 type TaobaoCaipiaoLotterySendbynickAPIResponse struct {
 	model.CommonResponse
 	TaobaoCaipiaoLotterySendbynickAPIResponseModel

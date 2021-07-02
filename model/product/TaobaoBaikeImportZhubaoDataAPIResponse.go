@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaikeImportZhubaoDataAPIResponse
-导入数据到商品百科服务 API返回值
-taobao.baike.import.zhubao.data
-
-用于接入外部数据录入到商品百科中 */
+// TaobaoBaikeImportZhubaoDataAPIResponse 导入数据到商品百科服务 API返回值
+// taobao.baike.import.zhubao.data
+//
+// 用于接入外部数据录入到商品百科中
 type TaobaoBaikeImportZhubaoDataAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaikeImportZhubaoDataAPIResponseModel

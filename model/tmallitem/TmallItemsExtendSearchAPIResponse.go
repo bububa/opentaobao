@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallItemsExtendSearchAPIResponse
-搜索天猫商品 API返回值
-tmall.items.extend.search
-
-提供天猫商品搜索结果，需要调用精选商品，请改为调用：tmall.selected.items.search */
+// TmallItemsExtendSearchAPIResponse 搜索天猫商品 API返回值
+// tmall.items.extend.search
+//
+// 提供天猫商品搜索结果，需要调用精选商品，请改为调用：tmall.selected.items.search
 type TmallItemsExtendSearchAPIResponse struct {
 	model.CommonResponse
 	TmallItemsExtendSearchAPIResponseModel

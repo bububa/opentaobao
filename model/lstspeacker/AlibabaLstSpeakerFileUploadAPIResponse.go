@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstSpeakerFileUploadAPIResponse
-如意音箱音频文件长传 API返回值
-alibaba.lst.speaker.file.upload
-
-如意音箱音频文件长传 */
+// AlibabaLstSpeakerFileUploadAPIResponse 如意音箱音频文件长传 API返回值
+// alibaba.lst.speaker.file.upload
+//
+// 如意音箱音频文件长传
 type AlibabaLstSpeakerFileUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstSpeakerFileUploadAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingItempoolRemoveitemAPIRequest
-移除商品池里面的商品 API请求
-alibaba.wdk.marketing.itempool.removeitem
-
-移除商品池里面的商品 */
+// AlibabaWdkMarketingItempoolRemoveitemAPIRequest 移除商品池里面的商品 API请求
+// alibaba.wdk.marketing.itempool.removeitem
+//
+// 移除商品池里面的商品
 type AlibabaWdkMarketingItempoolRemoveitemAPIRequest struct {
 	model.Params
 	// 商品对象

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUmpMbbsGetAPIResponse
-获取营销积木块列表 API返回值
-taobao.ump.mbbs.get
-
-获取营销积木块列表，可以根据类型获取，也可以将该字段设为空，获取所有的 */
+// TaobaoUmpMbbsGetAPIResponse 获取营销积木块列表 API返回值
+// taobao.ump.mbbs.get
+//
+// 获取营销积木块列表，可以根据类型获取，也可以将该字段设为空，获取所有的
 type TaobaoUmpMbbsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoUmpMbbsGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIResponse
-获取五道口设备管理信息 API返回值
-taobao.wdk.equipment.deviceadmin.deviceinfo.get
-
-通过仓编码获取五道口设备管理信息 */
+// TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIResponse 获取五道口设备管理信息 API返回值
+// taobao.wdk.equipment.deviceadmin.deviceinfo.get
+//
+// 通过仓编码获取五道口设备管理信息
 type TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIResponseModel

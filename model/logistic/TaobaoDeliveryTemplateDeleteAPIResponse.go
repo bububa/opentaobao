@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDeliveryTemplateDeleteAPIResponse
-删除运费模板 API返回值
-taobao.delivery.template.delete
-
-根据用户指定的模板ID删除指定的模板 */
+// TaobaoDeliveryTemplateDeleteAPIResponse 删除运费模板 API返回值
+// taobao.delivery.template.delete
+//
+// 根据用户指定的模板ID删除指定的模板
 type TaobaoDeliveryTemplateDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoDeliveryTemplateDeleteAPIResponseModel

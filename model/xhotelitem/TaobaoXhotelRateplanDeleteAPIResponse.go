@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRateplanDeleteAPIResponse
-价格计划rateplan删除 API返回值
-taobao.xhotel.rateplan.delete
-
-酒店产品库rateplan删除，同时删除级联的rate，请谨慎使用 */
+// TaobaoXhotelRateplanDeleteAPIResponse 价格计划rateplan删除 API返回值
+// taobao.xhotel.rateplan.delete
+//
+// 酒店产品库rateplan删除，同时删除级联的rate，请谨慎使用
 type TaobaoXhotelRateplanDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelRateplanDeleteAPIResponseModel

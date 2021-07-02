@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziFusionCreateEmployeeAccountAPIResponse
-创建MOZI自建人员和账号 API返回值
-alibaba.mozi.fusion.create.employee.account
-
-创建MOZI自建人员和账号 */
+// AlibabaMoziFusionCreateEmployeeAccountAPIResponse 创建MOZI自建人员和账号 API返回值
+// alibaba.mozi.fusion.create.employee.account
+//
+// 创建MOZI自建人员和账号
 type AlibabaMoziFusionCreateEmployeeAccountAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziFusionCreateEmployeeAccountAPIResponseModel

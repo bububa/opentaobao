@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServiceCodeConsumeAPIResponse
-天猫服务平台服务核销 API返回值
-tmall.service.code.consume
-
-天猫服务平台－服务核销 */
+// TmallServiceCodeConsumeAPIResponse 天猫服务平台服务核销 API返回值
+// tmall.service.code.consume
+//
+// 天猫服务平台－服务核销
 type TmallServiceCodeConsumeAPIResponse struct {
 	model.CommonResponse
 	TmallServiceCodeConsumeAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentOrderPayAPIResponse
-代购订单代付接口 API返回值
-taobao.train.agent.order.pay
-
-代购订单代付接口 */
+// TaobaoTrainAgentOrderPayAPIResponse 代购订单代付接口 API返回值
+// taobao.train.agent.order.pay
+//
+// 代购订单代付接口
 type TaobaoTrainAgentOrderPayAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentOrderPayAPIResponseModel

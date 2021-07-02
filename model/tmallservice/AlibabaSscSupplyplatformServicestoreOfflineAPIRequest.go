@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSscSupplyplatformServicestoreOfflineAPIRequest
-网点下线 API请求
-alibaba.ssc.supplyplatform.servicestore.offline
-
-网点下线功能 */
+// AlibabaSscSupplyplatformServicestoreOfflineAPIRequest 网点下线 API请求
+// alibaba.ssc.supplyplatform.servicestore.offline
+//
+// 网点下线功能
 type AlibabaSscSupplyplatformServicestoreOfflineAPIRequest struct {
 	model.Params
 	// 网点编码列表集合,最大支持1000

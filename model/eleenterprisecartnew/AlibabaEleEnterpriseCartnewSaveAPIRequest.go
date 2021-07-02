@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEleEnterpriseCartnewSaveAPIRequest
-新版创建购物车 API请求
-alibaba.ele.enterprise.cartnew.save
-
-新版创建购物车 */
+// AlibabaEleEnterpriseCartnewSaveAPIRequest 新版创建购物车 API请求
+// alibaba.ele.enterprise.cartnew.save
+//
+// 新版创建购物车
 type AlibabaEleEnterpriseCartnewSaveAPIRequest struct {
 	model.Params
 	// 用户11位手机号

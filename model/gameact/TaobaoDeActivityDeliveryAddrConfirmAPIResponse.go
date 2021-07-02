@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDeActivityDeliveryAddrConfirmAPIResponse
-用户收件地址确认 API返回值
-taobao.de.activity.delivery.addr.confirm
-
-用户收件地址确认 */
+// TaobaoDeActivityDeliveryAddrConfirmAPIResponse 用户收件地址确认 API返回值
+// taobao.de.activity.delivery.addr.confirm
+//
+// 用户收件地址确认
 type TaobaoDeActivityDeliveryAddrConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoDeActivityDeliveryAddrConfirmAPIResponseModel

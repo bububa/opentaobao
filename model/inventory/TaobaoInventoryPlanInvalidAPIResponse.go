@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInventoryPlanInvalidAPIResponse
-失效计划库存 API返回值
-taobao.inventory.plan.invalid
-
-计划库存的失效服务 */
+// TaobaoInventoryPlanInvalidAPIResponse 失效计划库存 API返回值
+// taobao.inventory.plan.invalid
+//
+// 计划库存的失效服务
 type TaobaoInventoryPlanInvalidAPIResponse struct {
 	model.CommonResponse
 	TaobaoInventoryPlanInvalidAPIResponseModel

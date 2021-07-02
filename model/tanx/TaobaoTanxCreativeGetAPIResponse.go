@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxCreativeGetAPIResponse
-获取单个审核创意状态 API返回值
-taobao.tanx.creative.get
-
-获取单个审核创意状态 */
+// TaobaoTanxCreativeGetAPIResponse 获取单个审核创意状态 API返回值
+// taobao.tanx.creative.get
+//
+// 获取单个审核创意状态
 type TaobaoTanxCreativeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxCreativeGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusSpaceUnitGetspaceunitwithattrAPIResponse
-空间单元id查业务属性实例 API返回值
-alibaba.campus.space.unit.getspaceunitwithattr
-
-空间单元id查业务属性实例 */
+// AlibabaCampusSpaceUnitGetspaceunitwithattrAPIResponse 空间单元id查业务属性实例 API返回值
+// alibaba.campus.space.unit.getspaceunitwithattr
+//
+// 空间单元id查业务属性实例
 type AlibabaCampusSpaceUnitGetspaceunitwithattrAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusSpaceUnitGetspaceunitwithattrAPIResponseModel

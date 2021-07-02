@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosPubadminCommonOperationAPIResponse
-内部迎客松通用服务 API返回值
-yunos.pubadmin.common.operation
-
-内部迎客松通用服务 */
+// YunosPubadminCommonOperationAPIResponse 内部迎客松通用服务 API返回值
+// yunos.pubadmin.common.operation
+//
+// 内部迎客松通用服务
 type YunosPubadminCommonOperationAPIResponse struct {
 	model.CommonResponse
 	YunosPubadminCommonOperationAPIResponseModel

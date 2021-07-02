@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardReservefailAPIResponse
-预约失败 API返回值
-tmall.servicecenter.workcard.reservefail
-
-服务商调用该接口回传工单预约失败 */
+// TmallServicecenterWorkcardReservefailAPIResponse 预约失败 API返回值
+// tmall.servicecenter.workcard.reservefail
+//
+// 服务商调用该接口回传工单预约失败
 type TmallServicecenterWorkcardReservefailAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardReservefailAPIResponseModel

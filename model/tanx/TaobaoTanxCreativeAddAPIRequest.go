@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTanxCreativeAddAPIRequest
-创意预审新增接口 API请求
-taobao.tanx.creative.add
-
-创意预审新增接口 */
+// TaobaoTanxCreativeAddAPIRequest 创意预审新增接口 API请求
+// taobao.tanx.creative.add
+//
+// 创意预审新增接口
 type TaobaoTanxCreativeAddAPIRequest struct {
 	model.Params
 	// DSP的memberId

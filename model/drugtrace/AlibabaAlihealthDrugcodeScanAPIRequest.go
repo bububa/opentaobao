@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugcodeScanAPIRequest
-查询扫码信息 API请求
-alibaba.alihealth.drugcode.scan
-
-查询扫码信息 */
+// AlibabaAlihealthDrugcodeScanAPIRequest 查询扫码信息 API请求
+// alibaba.alihealth.drugcode.scan
+//
+// 查询扫码信息
 type AlibabaAlihealthDrugcodeScanAPIRequest struct {
 	model.Params
 	// 20位码

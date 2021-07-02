@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmRuleQueryoptplanAPIResponse
-查询运营计划 API返回值
-alibaba.alsc.crm.rule.queryoptplan
-
-查询运营计划 */
+// AlibabaAlscCrmRuleQueryoptplanAPIResponse 查询运营计划 API返回值
+// alibaba.alsc.crm.rule.queryoptplan
+//
+// 查询运营计划
 type AlibabaAlscCrmRuleQueryoptplanAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmRuleQueryoptplanAPIResponseModel

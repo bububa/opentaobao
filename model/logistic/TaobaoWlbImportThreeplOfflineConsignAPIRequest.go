@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbImportThreeplOfflineConsignAPIRequest
-3PL直邮线下发货 API请求
-taobao.wlb.import.threepl.offline.consign
-
-菜鸟认证直邮线下发货 */
+// TaobaoWlbImportThreeplOfflineConsignAPIRequest 3PL直邮线下发货 API请求
+// taobao.wlb.import.threepl.offline.consign
+//
+// 菜鸟认证直邮线下发货
 type TaobaoWlbImportThreeplOfflineConsignAPIRequest struct {
 	model.Params
 	// 交易单号

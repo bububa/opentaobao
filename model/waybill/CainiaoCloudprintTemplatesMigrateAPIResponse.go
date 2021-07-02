@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCloudprintTemplatesMigrateAPIResponse
-云打印模板迁移接口 API返回值
-cainiao.cloudprint.templates.migrate
-
-云打印模板迁移接口 */
+// CainiaoCloudprintTemplatesMigrateAPIResponse 云打印模板迁移接口 API返回值
+// cainiao.cloudprint.templates.migrate
+//
+// 云打印模板迁移接口
 type CainiaoCloudprintTemplatesMigrateAPIResponse struct {
 	model.CommonResponse
 	CainiaoCloudprintTemplatesMigrateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse
-设备音量 API返回值
-taobao.ailab.aicloud.top.device.control.volume
-
-设备音量 */
+// TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse 设备音量 API返回值
+// taobao.ailab.aicloud.top.device.control.volume
+//
+// 设备音量
 type TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceControlVolumeAPIResponseModel

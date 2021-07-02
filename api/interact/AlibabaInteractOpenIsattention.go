@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-/* AlibabaInteractOpenIsattention
-判断用户是否收藏某个店铺
-alibaba.interact.open.isattention
-
-判断用户是否收藏某个店铺 */
+// AlibabaInteractOpenIsattention 判断用户是否收藏某个店铺
+// alibaba.interact.open.isattention
+//
+// 判断用户是否收藏某个店铺
 func AlibabaInteractOpenIsattention(clt *core.SDKClient, req *interact.AlibabaInteractOpenIsattentionAPIRequest, session string) (*interact.AlibabaInteractOpenIsattentionAPIResponse, error) {
 	var resp interact.AlibabaInteractOpenIsattentionAPIResponse
 	err := clt.Post(req, &resp, session)

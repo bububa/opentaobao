@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpIndustryLogisticsSyncAPIResponse
-物流状态同步 API返回值
-alibaba.ascp.industry.logistics.sync
-
-履约物流状态同步 */
+// AlibabaAscpIndustryLogisticsSyncAPIResponse 物流状态同步 API返回值
+// alibaba.ascp.industry.logistics.sync
+//
+// 履约物流状态同步
 type AlibabaAscpIndustryLogisticsSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpIndustryLogisticsSyncAPIResponseModel

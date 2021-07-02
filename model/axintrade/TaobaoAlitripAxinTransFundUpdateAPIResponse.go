@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripAxinTransFundUpdateAPIResponse
-修改资金单接口 API返回值
-taobao.alitrip.axin.trans.fund.update
-
-阿信供销平台-修改资金单接口 */
+// TaobaoAlitripAxinTransFundUpdateAPIResponse 修改资金单接口 API返回值
+// taobao.alitrip.axin.trans.fund.update
+//
+// 阿信供销平台-修改资金单接口
 type TaobaoAlitripAxinTransFundUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripAxinTransFundUpdateAPIResponseModel

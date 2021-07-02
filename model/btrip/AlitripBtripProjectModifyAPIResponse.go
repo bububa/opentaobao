@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripProjectModifyAPIResponse
-变更项目 API返回值
-alitrip.btrip.project.modify
-
-变更项目 */
+// AlitripBtripProjectModifyAPIResponse 变更项目 API返回值
+// alitrip.btrip.project.modify
+//
+// 变更项目
 type AlitripBtripProjectModifyAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripProjectModifyAPIResponseModel

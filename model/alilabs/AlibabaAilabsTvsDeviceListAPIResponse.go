@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsTvsDeviceListAPIResponse
-获取TVS设备列表 API返回值
-alibaba.ailabs.tvs.device.list
-
-获取用户所绑定的TVS设备列表 */
+// AlibabaAilabsTvsDeviceListAPIResponse 获取TVS设备列表 API返回值
+// alibaba.ailabs.tvs.device.list
+//
+// 获取用户所绑定的TVS设备列表
 type AlibabaAilabsTvsDeviceListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsTvsDeviceListAPIResponseModel

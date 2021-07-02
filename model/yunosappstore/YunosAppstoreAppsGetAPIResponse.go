@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosAppstoreAppsGetAPIResponse
-根据包名列表获取应用信息列表 API返回值
-yunos.appstore.apps.get
-
-根据包名列表获取应用信息列表 */
+// YunosAppstoreAppsGetAPIResponse 根据包名列表获取应用信息列表 API返回值
+// yunos.appstore.apps.get
+//
+// 根据包名列表获取应用信息列表
 type YunosAppstoreAppsGetAPIResponse struct {
 	model.CommonResponse
 	YunosAppstoreAppsGetAPIResponseModel

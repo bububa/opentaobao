@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalHandoverContentQueryAPIResponse
-查询大包详情 API返回值
-cainiao.global.handover.content.query
-
-查询大包详情 */
+// CainiaoGlobalHandoverContentQueryAPIResponse 查询大包详情 API返回值
+// cainiao.global.handover.content.query
+//
+// 查询大包详情
 type CainiaoGlobalHandoverContentQueryAPIResponse struct {
 	model.CommonResponse
 	CainiaoGlobalHandoverContentQueryAPIResponseModel

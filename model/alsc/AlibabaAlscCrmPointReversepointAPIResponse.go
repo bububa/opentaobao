@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmPointReversepointAPIResponse
-积分消费回退 API返回值
-alibaba.alsc.crm.point.reversepoint
-
-积分消费回退 */
+// AlibabaAlscCrmPointReversepointAPIResponse 积分消费回退 API返回值
+// alibaba.alsc.crm.point.reversepoint
+//
+// 积分消费回退
 type AlibabaAlscCrmPointReversepointAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmPointReversepointAPIResponseModel

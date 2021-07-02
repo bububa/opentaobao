@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-/* TmallDeviceCarturlGet
-添加商品到购物车
-tmall.device.carturl.get
-
-获取二维码，支持添加商品到购物车 */
+// TmallDeviceCarturlGet 添加商品到购物车
+// tmall.device.carturl.get
+//
+// 获取二维码，支持添加商品到购物车
 func TmallDeviceCarturlGet(clt *core.SDKClient, req *iot.TmallDeviceCarturlGetAPIRequest, session string) (*iot.TmallDeviceCarturlGetAPIResponse, error) {
 	var resp iot.TmallDeviceCarturlGetAPIResponse
 	err := clt.Post(req, &resp, session)

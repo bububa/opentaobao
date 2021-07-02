@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsAligenieDeviceUnbindAPIResponse
-设备解绑操作接口 API返回值
-alibaba.ailabs.aligenie.device.unbind
-
-让开发者能根据设备ID进行解绑操作的接口 */
+// AlibabaAilabsAligenieDeviceUnbindAPIResponse 设备解绑操作接口 API返回值
+// alibaba.ailabs.aligenie.device.unbind
+//
+// 让开发者能根据设备ID进行解绑操作的接口
 type AlibabaAilabsAligenieDeviceUnbindAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsAligenieDeviceUnbindAPIResponseModel

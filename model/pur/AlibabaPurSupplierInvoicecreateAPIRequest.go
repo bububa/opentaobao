@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPurSupplierInvoicecreateAPIRequest
-preInvoice创建 API请求
-alibaba.pur.supplier.invoicecreate
-
-preInvoice创建 */
+// AlibabaPurSupplierInvoicecreateAPIRequest preInvoice创建 API请求
+// alibaba.pur.supplier.invoicecreate
+//
+// preInvoice创建
 type AlibabaPurSupplierInvoicecreateAPIRequest struct {
 	model.Params
 	// 预发票头信息

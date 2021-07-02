@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripXhotelChannelOrderMembertypeSyncAPIResponse
-酒店分销渠道会员类型同步 API返回值
-alitrip.xhotel.channel.order.membertype.sync
-
-酒店分销渠道会员类型同步 */
+// AlitripXhotelChannelOrderMembertypeSyncAPIResponse 酒店分销渠道会员类型同步 API返回值
+// alitrip.xhotel.channel.order.membertype.sync
+//
+// 酒店分销渠道会员类型同步
 type AlitripXhotelChannelOrderMembertypeSyncAPIResponse struct {
 	model.CommonResponse
 	AlitripXhotelChannelOrderMembertypeSyncAPIResponseModel

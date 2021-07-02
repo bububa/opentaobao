@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSungariDisposeQueryAPIResponse
-商品商家处置结果查询 API返回值
-taobao.sungari.dispose.query
-
-红盾云桥同政府合作，将线下寄函的商品商家处置转为线上处理 */
+// TaobaoSungariDisposeQueryAPIResponse 商品商家处置结果查询 API返回值
+// taobao.sungari.dispose.query
+//
+// 红盾云桥同政府合作，将线下寄函的商品商家处置转为线上处理
 type TaobaoSungariDisposeQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoSungariDisposeQueryAPIResponseModel

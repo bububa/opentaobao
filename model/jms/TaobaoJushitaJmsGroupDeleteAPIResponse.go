@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJushitaJmsGroupDeleteAPIResponse
-删除ONS分组 API返回值
-taobao.jushita.jms.group.delete
-
-删除ONS分组 */
+// TaobaoJushitaJmsGroupDeleteAPIResponse 删除ONS分组 API返回值
+// taobao.jushita.jms.group.delete
+//
+// 删除ONS分组
 type TaobaoJushitaJmsGroupDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoJushitaJmsGroupDeleteAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmOpenOrderBackflowAPIResponse
-订单回流接口 API返回值
-alibaba.alsc.crm.open.order.backflow
-
-回流isv订单接口 */
+// AlibabaAlscCrmOpenOrderBackflowAPIResponse 订单回流接口 API返回值
+// alibaba.alsc.crm.open.order.backflow
+//
+// 回流isv订单接口
 type AlibabaAlscCrmOpenOrderBackflowAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmOpenOrderBackflowAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentGrabAccountAPIResponse
-代购抢代理商回传12306账号 API返回值
-taobao.train.agent.grab.account
-
-火车票业务代购抢功能，代理商回传12306账号，用于自营抢票链路出票 */
+// TaobaoTrainAgentGrabAccountAPIResponse 代购抢代理商回传12306账号 API返回值
+// taobao.train.agent.grab.account
+//
+// 火车票业务代购抢功能，代理商回传12306账号，用于自营抢票链路出票
 type TaobaoTrainAgentGrabAccountAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentGrabAccountAPIResponseModel

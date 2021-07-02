@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusTopologyGetallAPIResponse
-获取管理园区的规则拓扑接口 API返回值
-alibaba.campus.topology.getall
-
-获取所属园区的所有规则拓扑图 */
+// AlibabaCampusTopologyGetallAPIResponse 获取管理园区的规则拓扑接口 API返回值
+// alibaba.campus.topology.getall
+//
+// 获取所属园区的所有规则拓扑图
 type AlibabaCampusTopologyGetallAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusTopologyGetallAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationHospitalSpecialTagAPIResponse
-体检机构获取特色服务标签 API返回值
-alibaba.alihealth.examination.hospital.special.tag
-
-体检机构获取特色服务标签列表 */
+// AlibabaAlihealthExaminationHospitalSpecialTagAPIResponse 体检机构获取特色服务标签 API返回值
+// alibaba.alihealth.examination.hospital.special.tag
+//
+// 体检机构获取特色服务标签列表
 type AlibabaAlihealthExaminationHospitalSpecialTagAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationHospitalSpecialTagAPIResponseModel

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-/* TaobaoScitemQuery
-查询后端商品
-taobao.scitem.query
-
-查询后端商品 */
+// TaobaoScitemQuery 查询后端商品
+// taobao.scitem.query
+//
+// 查询后端商品
 func TaobaoScitemQuery(clt *core.SDKClient, req *fenxiao.TaobaoScitemQueryAPIRequest, session string) (*fenxiao.TaobaoScitemQueryAPIResponse, error) {
 	var resp fenxiao.TaobaoScitemQueryAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTripvpAgentOrderSearchAPIRequest
-【国际机票】查询辅营订单列表 API请求
-alitrip.tripvp.agent.order.search
-
-【国际机票】查询辅营订单列表 */
+// AlitripTripvpAgentOrderSearchAPIRequest 【国际机票】查询辅营订单列表 API请求
+// alitrip.tripvp.agent.order.search
+//
+// 【国际机票】查询辅营订单列表
 type AlitripTripvpAgentOrderSearchAPIRequest struct {
 	model.Params
 	// 代理商ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGlobalSolutionInquiryAPIRequest
-解决方案询盘 API请求
-cainiao.global.solution.inquiry
-
-根据交易单号查询可用的解决方案 */
+// CainiaoGlobalSolutionInquiryAPIRequest 解决方案询盘 API请求
+// cainiao.global.solution.inquiry
+//
+// 根据交易单号查询可用的解决方案
 type CainiaoGlobalSolutionInquiryAPIRequest struct {
 	model.Params
 	// 多语言，zh_CN中文、en_US:英文、ru_RU俄语

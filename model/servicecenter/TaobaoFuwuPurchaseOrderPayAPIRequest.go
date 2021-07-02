@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFuwuPurchaseOrderPayAPIRequest
-内购服务订单付款页获取接口 API请求
-taobao.fuwu.purchase.order.pay
-
-通过接口获取某一订单的付款页面链接 */
+// TaobaoFuwuPurchaseOrderPayAPIRequest 内购服务订单付款页获取接口 API请求
+// taobao.fuwu.purchase.order.pay
+//
+// 通过接口获取某一订单的付款页面链接
 type TaobaoFuwuPurchaseOrderPayAPIRequest struct {
 	model.Params
 	// APPKEY，必填

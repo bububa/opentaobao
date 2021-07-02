@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQtReportDeleteAPIResponse
-质检报告删除接口 API返回值
-taobao.qt.report.delete
-
-删除质检报告 */
+// TaobaoQtReportDeleteAPIResponse 质检报告删除接口 API返回值
+// taobao.qt.report.delete
+//
+// 删除质检报告
 type TaobaoQtReportDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoQtReportDeleteAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuPhotobankListAPIRequest
-国际站图片银行查询接口 API请求
-alibaba.icbu.photobank.list
-
-国际站图片银行查询接口 */
+// AlibabaIcbuPhotobankListAPIRequest 国际站图片银行查询接口 API请求
+// alibaba.icbu.photobank.list
+//
+// 国际站图片银行查询接口
 type AlibabaIcbuPhotobankListAPIRequest struct {
 	model.Params
 	// 当前翻页数

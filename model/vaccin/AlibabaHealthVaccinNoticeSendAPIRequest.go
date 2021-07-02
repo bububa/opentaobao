@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeSendAPIRequest
-发送消息提醒 API请求
-alibaba.health.vaccin.notice.send
-
-ISV 通过免疫规划中心给用户发送短信或者支付宝 PUSH 提醒。 */
+// AlibabaHealthVaccinNoticeSendAPIRequest 发送消息提醒 API请求
+// alibaba.health.vaccin.notice.send
+//
+// ISV 通过免疫规划中心给用户发送短信或者支付宝 PUSH 提醒。
 type AlibabaHealthVaccinNoticeSendAPIRequest struct {
 	model.Params
 	// 支付宝用户 ID

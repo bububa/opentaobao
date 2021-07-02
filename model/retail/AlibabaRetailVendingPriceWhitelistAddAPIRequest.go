@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailVendingPriceWhitelistAddAPIRequest
-贩卖机价格修改白名单 API请求
-alibaba.retail.vending.price.whitelist.add
-
-贩卖机价格修改白名单 */
+// AlibabaRetailVendingPriceWhitelistAddAPIRequest 贩卖机价格修改白名单 API请求
+// alibaba.retail.vending.price.whitelist.add
+//
+// 贩卖机价格修改白名单
 type AlibabaRetailVendingPriceWhitelistAddAPIRequest struct {
 	model.Params
 	// 生效时间

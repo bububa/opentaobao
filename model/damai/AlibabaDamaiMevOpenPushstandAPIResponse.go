@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMevOpenPushstandAPIResponse
-大麦换验平台-第三方对外开放-看台接口pushStand API返回值
-alibaba.damai.mev.open.pushstand
-
-pushStand */
+// AlibabaDamaiMevOpenPushstandAPIResponse 大麦换验平台-第三方对外开放-看台接口pushStand API返回值
+// alibaba.damai.mev.open.pushstand
+//
+// pushStand
 type AlibabaDamaiMevOpenPushstandAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMevOpenPushstandAPIResponseModel

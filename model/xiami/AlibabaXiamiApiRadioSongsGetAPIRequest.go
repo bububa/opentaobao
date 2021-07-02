@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaXiamiApiRadioSongsGetAPIRequest
-获取电台歌曲 API请求
-alibaba.xiami.api.radio.songs.get
-
-获取电台songs */
+// AlibabaXiamiApiRadioSongsGetAPIRequest 获取电台歌曲 API请求
+// alibaba.xiami.api.radio.songs.get
+//
+// 获取电台songs
 type AlibabaXiamiApiRadioSongsGetAPIRequest struct {
 	model.Params
 	// 电台类型

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsBotsSkilsListAPIRequest
-对外设备获取技能列表 API请求
-alibaba.ailabs.bots.skils.list
-
-获取ai开放平台技能列表 */
+// AlibabaAilabsBotsSkilsListAPIRequest 对外设备获取技能列表 API请求
+// alibaba.ailabs.bots.skils.list
+//
+// 获取ai开放平台技能列表
 type AlibabaAilabsBotsSkilsListAPIRequest struct {
 	model.Params
 	// 当前页

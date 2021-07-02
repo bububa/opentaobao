@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordDeleteAPIResponse
-外贸直通车删除关键词 API返回值
-alibaba.scbp.ad.keyword.delete
-
-外贸直通车删除关键词 */
+// AlibabaScbpAdKeywordDeleteAPIResponse 外贸直通车删除关键词 API返回值
+// alibaba.scbp.ad.keyword.delete
+//
+// 外贸直通车删除关键词
 type AlibabaScbpAdKeywordDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdKeywordDeleteAPIResponseModel

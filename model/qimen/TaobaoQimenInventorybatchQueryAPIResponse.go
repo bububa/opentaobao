@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQimenInventorybatchQueryAPIResponse
-商品单仓批次库存查询接口 API返回值
-taobao.qimen.inventorybatch.query
-
-ERP 通过该接口查询指定商品的单仓批次库存 */
+// TaobaoQimenInventorybatchQueryAPIResponse 商品单仓批次库存查询接口 API返回值
+// taobao.qimen.inventorybatch.query
+//
+// ERP 通过该接口查询指定商品的单仓批次库存
 type TaobaoQimenInventorybatchQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenInventorybatchQueryAPIResponseModel

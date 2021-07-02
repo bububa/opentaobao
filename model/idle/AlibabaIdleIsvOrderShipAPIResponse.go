@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleIsvOrderShipAPIResponse
-闲鱼无忧购服务商发货 API返回值
-alibaba.idle.isv.order.ship
-
-闲鱼无忧购业务入仓模式下服务商订单发货的接口 */
+// AlibabaIdleIsvOrderShipAPIResponse 闲鱼无忧购服务商发货 API返回值
+// alibaba.idle.isv.order.ship
+//
+// 闲鱼无忧购业务入仓模式下服务商订单发货的接口
 type AlibabaIdleIsvOrderShipAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleIsvOrderShipAPIResponseModel

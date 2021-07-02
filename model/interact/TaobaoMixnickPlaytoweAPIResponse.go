@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMixnickPlaytoweAPIResponse
-互动mixNick转微淘 API返回值
-taobao.mixnick.playtowe
-
-微淘应用的混淆nick转为互动类型混淆nick */
+// TaobaoMixnickPlaytoweAPIResponse 互动mixNick转微淘 API返回值
+// taobao.mixnick.playtowe
+//
+// 微淘应用的混淆nick转为互动类型混淆nick
 type TaobaoMixnickPlaytoweAPIResponse struct {
 	model.CommonResponse
 	TaobaoMixnickPlaytoweAPIResponseModel

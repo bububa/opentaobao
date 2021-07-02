@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaRptAdgroupkeywordbaseGetAPIRequest
-推广组下的词基础报表数据查询(明细数据不分类型查询) API请求
-taobao.simba.rpt.adgroupkeywordbase.get
-
-推广组下的词基础报表数据查询(明细数据不分类型查询) */
+// TaobaoSimbaRptAdgroupkeywordbaseGetAPIRequest 推广组下的词基础报表数据查询(明细数据不分类型查询) API请求
+// taobao.simba.rpt.adgroupkeywordbase.get
+//
+// 推广组下的词基础报表数据查询(明细数据不分类型查询)
 type TaobaoSimbaRptAdgroupkeywordbaseGetAPIRequest struct {
 	model.Params
 	// 主人昵称

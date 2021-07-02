@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse
-卖家查询改签列表 API返回值
-taobao.alitrip.ie.agent.change.querychangelist
-
-提供B2B卖家查看改签列表服务 */
+// TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse 卖家查询改签列表 API返回值
+// taobao.alitrip.ie.agent.change.querychangelist
+//
+// 提供B2B卖家查看改签列表服务
 type TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripIeAgentChangeQuerychangelistAPIResponseModel

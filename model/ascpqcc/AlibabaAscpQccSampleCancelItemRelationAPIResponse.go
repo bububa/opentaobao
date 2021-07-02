@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpQccSampleCancelItemRelationAPIResponse
-魅力惠样品解除父子商品关系 API返回值
-alibaba.ascp.qcc.sample.cancel.item.relation
-
-品控中心魅力惠样品解除父子商品关系 */
+// AlibabaAscpQccSampleCancelItemRelationAPIResponse 魅力惠样品解除父子商品关系 API返回值
+// alibaba.ascp.qcc.sample.cancel.item.relation
+//
+// 品控中心魅力惠样品解除父子商品关系
 type AlibabaAscpQccSampleCancelItemRelationAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpQccSampleCancelItemRelationAPIResponseModel

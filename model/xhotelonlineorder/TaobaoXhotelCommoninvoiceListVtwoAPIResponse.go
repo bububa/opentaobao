@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelCommoninvoiceListVtwoAPIResponse
-用户常用发票信息查询接口 API返回值
-taobao.xhotel.commoninvoice.list.vtwo
-
-获取用户常用发票信息接口 */
+// TaobaoXhotelCommoninvoiceListVtwoAPIResponse 用户常用发票信息查询接口 API返回值
+// taobao.xhotel.commoninvoice.list.vtwo
+//
+// 获取用户常用发票信息接口
 type TaobaoXhotelCommoninvoiceListVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelCommoninvoiceListVtwoAPIResponseModel

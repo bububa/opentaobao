@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbItemQueryAPIResponse
-分页查询商品 API返回值
-taobao.wlb.item.query
-
-根据状态、卖家、SKU等信息查询商品列表 */
+// TaobaoWlbItemQueryAPIResponse 分页查询商品 API返回值
+// taobao.wlb.item.query
+//
+// 根据状态、卖家、SKU等信息查询商品列表
 type TaobaoWlbItemQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbItemQueryAPIResponseModel

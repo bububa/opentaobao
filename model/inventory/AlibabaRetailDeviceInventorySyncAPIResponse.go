@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDeviceInventorySyncAPIResponse
-库存同步接口 API返回值
-alibaba.retail.device.inventory.sync
-
-商库存同步接口 */
+// AlibabaRetailDeviceInventorySyncAPIResponse 库存同步接口 API返回值
+// alibaba.retail.device.inventory.sync
+//
+// 商库存同步接口
 type AlibabaRetailDeviceInventorySyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailDeviceInventorySyncAPIResponseModel

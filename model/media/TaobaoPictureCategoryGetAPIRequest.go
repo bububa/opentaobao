@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPictureCategoryGetAPIRequest
-获取图片分类信息 API请求
-taobao.picture.category.get
-
-获取图片分类信息 */
+// TaobaoPictureCategoryGetAPIRequest 获取图片分类信息 API请求
+// taobao.picture.category.get
+//
+// 获取图片分类信息
 type TaobaoPictureCategoryGetAPIRequest struct {
 	model.Params
 	// 1

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkPosTradeQueryAPIResponse
-轻pos品牌营销查询接口 API返回值
-alibaba.wdk.pos.trade.query
-
-轻pos品牌营销场景，外部商家查询营销信息 */
+// AlibabaWdkPosTradeQueryAPIResponse 轻pos品牌营销查询接口 API返回值
+// alibaba.wdk.pos.trade.query
+//
+// 轻pos品牌营销场景，外部商家查询营销信息
 type AlibabaWdkPosTradeQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkPosTradeQueryAPIResponseModel

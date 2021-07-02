@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse
-体检机构同步发票信息给阿里健康 API返回值
-alibaba.alihealth.examination.invoice.info.notify
-
-体检机构向阿里健康同步发票信息 */
+// AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse 体检机构同步发票信息给阿里健康 API返回值
+// alibaba.alihealth.examination.invoice.info.notify
+//
+// 体检机构向阿里健康同步发票信息
 type AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlimeUserTokenGetAPIRequest
-获取用户免登录令牌 API请求
-taobao.alime.user.token.get
-
-根据第三账号信息获取用户的免登录令牌 */
+// TaobaoAlimeUserTokenGetAPIRequest 获取用户免登录令牌 API请求
+// taobao.alime.user.token.get
+//
+// 根据第三账号信息获取用户的免登录令牌
 type TaobaoAlimeUserTokenGetAPIRequest struct {
 	model.Params
 	// 用户在第三方账号中的唯一id

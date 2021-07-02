@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeUserBindAPIRequest
-支付宝疫苗绑定接种人 API请求
-alibaba.health.vaccin.notice.user.bind
-
-支付宝疫苗绑定接种人 */
+// AlibabaHealthVaccinNoticeUserBindAPIRequest 支付宝疫苗绑定接种人 API请求
+// alibaba.health.vaccin.notice.user.bind
+//
+// 支付宝疫苗绑定接种人
 type AlibabaHealthVaccinNoticeUserBindAPIRequest struct {
 	model.Params
 	// 支付宝ID

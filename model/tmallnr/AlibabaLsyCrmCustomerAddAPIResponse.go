@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLsyCrmCustomerAddAPIResponse
-私域导购添加活动留资入口 API返回值
-alibaba.lsy.crm.customer.add
-
-私域导购添加活动留资入口 */
+// AlibabaLsyCrmCustomerAddAPIResponse 私域导购添加活动留资入口 API返回值
+// alibaba.lsy.crm.customer.add
+//
+// 私域导购添加活动留资入口
 type AlibabaLsyCrmCustomerAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaLsyCrmCustomerAddAPIResponseModel

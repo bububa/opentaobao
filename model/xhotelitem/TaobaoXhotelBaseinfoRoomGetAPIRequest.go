@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelBaseinfoRoomGetAPIRequest
-酒店房型与房价查询 API请求
-taobao.xhotel.baseinfo.room.get
-
-根据outHid/hid获取酒店的房型和价格信息 */
+// TaobaoXhotelBaseinfoRoomGetAPIRequest 酒店房型与房价查询 API请求
+// taobao.xhotel.baseinfo.room.get
+//
+// 根据outHid/hid获取酒店的房型和价格信息
 type TaobaoXhotelBaseinfoRoomGetAPIRequest struct {
 	model.Params
 	// 卖家系统中的酒店ID。

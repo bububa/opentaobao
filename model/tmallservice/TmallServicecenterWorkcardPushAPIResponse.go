@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardPushAPIResponse
-推送服务工单信息 API返回值
-tmall.servicecenter.workcard.push
-
-服务商家推送工单信息到天猫。 */
+// TmallServicecenterWorkcardPushAPIResponse 推送服务工单信息 API返回值
+// tmall.servicecenter.workcard.push
+//
+// 服务商家推送工单信息到天猫。
 type TmallServicecenterWorkcardPushAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkcardPushAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkSeriesSortAPIResponse
-系列品-商品排序 API返回值
-alibaba.wdk.series.sort
-
-系列品商品变更-商品排序 */
+// AlibabaWdkSeriesSortAPIResponse 系列品-商品排序 API返回值
+// alibaba.wdk.series.sort
+//
+// 系列品商品变更-商品排序
 type AlibabaWdkSeriesSortAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkSeriesSortAPIResponseModel

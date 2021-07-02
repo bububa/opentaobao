@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPromotionLimitdiscountGetAPIRequest
-限时打折查询 API请求
-taobao.promotion.limitdiscount.get
-
-分页查询某个卖家的限时打折信息。每页20条数据，按照结束时间降序排列。也可指定某一个限时打折id查询唯一的限时打折信息。 */
+// TaobaoPromotionLimitdiscountGetAPIRequest 限时打折查询 API请求
+// taobao.promotion.limitdiscount.get
+//
+// 分页查询某个卖家的限时打折信息。每页20条数据，按照结束时间降序排列。也可指定某一个限时打折id查询唯一的限时打折信息。
 type TaobaoPromotionLimitdiscountGetAPIRequest struct {
 	model.Params
 	// 限时打折ID。这个针对查询唯一限时打折情况。若此字段不为空，则说明操作为单条限时打折记录查询，其他字段忽略。若想分页按条件查询，这个字段置为空。

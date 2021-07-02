@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignTimetemplateFindAPIResponse
-获取分时折扣模板 API返回值
-taobao.simba.campaign.timetemplate.find
-
-批量得到智能推广推广计划下的推广组 */
+// TaobaoSimbaCampaignTimetemplateFindAPIResponse 获取分时折扣模板 API返回值
+// taobao.simba.campaign.timetemplate.find
+//
+// 批量得到智能推广推广计划下的推广组
 type TaobaoSimbaCampaignTimetemplateFindAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCampaignTimetemplateFindAPIResponseModel

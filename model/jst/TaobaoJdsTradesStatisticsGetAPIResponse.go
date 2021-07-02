@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJdsTradesStatisticsGetAPIResponse
-获取订单数量统计结果 API返回值
-taobao.jds.trades.statistics.get
-
-获取订单数量统计结果 */
+// TaobaoJdsTradesStatisticsGetAPIResponse 获取订单数量统计结果 API返回值
+// taobao.jds.trades.statistics.get
+//
+// 获取订单数量统计结果
 type TaobaoJdsTradesStatisticsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoJdsTradesStatisticsGetAPIResponseModel

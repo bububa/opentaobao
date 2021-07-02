@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordAddAPIResponse
-外贸直通车加词 API返回值
-alibaba.scbp.ad.keyword.add
-
-外贸直通车加词服务 */
+// AlibabaScbpAdKeywordAddAPIResponse 外贸直通车加词 API返回值
+// alibaba.scbp.ad.keyword.add
+//
+// 外贸直通车加词服务
 type AlibabaScbpAdKeywordAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdKeywordAddAPIResponseModel

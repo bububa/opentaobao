@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsInventoryProfitlossGetAPIResponse
-通过订单列表批量获取库存损益单信息 API返回值
-taobao.wlb.wms.inventory.profitloss.get
-
-通过订单列表批量获取库存损益单信息 */
+// TaobaoWlbWmsInventoryProfitlossGetAPIResponse 通过订单列表批量获取库存损益单信息 API返回值
+// taobao.wlb.wms.inventory.profitloss.get
+//
+// 通过订单列表批量获取库存损益单信息
 type TaobaoWlbWmsInventoryProfitlossGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsInventoryProfitlossGetAPIResponseModel

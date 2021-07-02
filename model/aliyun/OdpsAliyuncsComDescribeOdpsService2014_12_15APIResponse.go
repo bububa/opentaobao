@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* OdpsAliyuncsComDescribeOdpsService2014_12_15APIResponse
-查询ODPS服务 API返回值
-odps.aliyuncs.com.DescribeOdpsService.2014-12-15
-
-查询ODPS服务 */
+// OdpsAliyuncsComDescribeOdpsService2014_12_15APIResponse 查询ODPS服务 API返回值
+// odps.aliyuncs.com.DescribeOdpsService.2014-12-15
+//
+// 查询ODPS服务
 type OdpsAliyuncsComDescribeOdpsService2014_12_15APIResponse struct {
 	model.CommonResponse
 	OdpsAliyuncsComDescribeOdpsService2014_12_15APIResponseModel

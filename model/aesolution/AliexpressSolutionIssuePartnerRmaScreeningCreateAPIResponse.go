@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSolutionIssuePartnerRmaScreeningCreateAPIResponse
-aliexpress.solution.issue.partner.rma.screening.create API返回值
-aliexpress.solution.issue.partner.rma.screening.create
-
-Receives information about screening results from after sales partners */
+// AliexpressSolutionIssuePartnerRmaScreeningCreateAPIResponse aliexpress.solution.issue.partner.rma.screening.create API返回值
+// aliexpress.solution.issue.partner.rma.screening.create
+//
+// Receives information about screening results from after sales partners
 type AliexpressSolutionIssuePartnerRmaScreeningCreateAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionIssuePartnerRmaScreeningCreateAPIResponseModel

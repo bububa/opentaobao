@@ -6,15 +6,14 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradesSoldIncrementGetAPIRequest
-查询卖家已卖出的增量交易数据（根据修改时间） API请求
-taobao.trades.sold.increment.get
-
-搜索当前会话用户作为卖家已卖出的增量交易数据（只能获取到三个月以内的交易信息）
-<br/>1. 一次请求只能查询时间跨度为一天的增量交易记录，即end_modified - start_modified <= 1天。
-<br/>2. 返回的数据结果是以订单的修改时间倒序排列的，通过从后往前翻页的方式可以避免漏单问题。
-<br/>3. 返回的数据结果只包含了订单的部分数据，可通过taobao.trade.fullinfo.get获取订单详情。
-<br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=tradeapi" target="_blank">点击查看更多交易API说明</a></strong> */
+// TaobaoTradesSoldIncrementGetAPIRequest 查询卖家已卖出的增量交易数据（根据修改时间） API请求
+// taobao.trades.sold.increment.get
+//
+// 搜索当前会话用户作为卖家已卖出的增量交易数据（只能获取到三个月以内的交易信息）
+// <br/>1. 一次请求只能查询时间跨度为一天的增量交易记录，即end_modified - start_modified <= 1天。
+// <br/>2. 返回的数据结果是以订单的修改时间倒序排列的，通过从后往前翻页的方式可以避免漏单问题。
+// <br/>3. 返回的数据结果只包含了订单的部分数据，可通过taobao.trade.fullinfo.get获取订单详情。
+// <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=tradeapi" target="_blank">点击查看更多交易API说明</a></strong>
 type TaobaoTradesSoldIncrementGetAPIRequest struct {
 	model.Params
 	// 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。rx_audit_status=0为处方药未审核状态

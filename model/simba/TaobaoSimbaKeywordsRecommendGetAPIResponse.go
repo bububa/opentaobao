@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsRecommendGetAPIResponse
-取得一个推广组的推荐关键词列表 API返回值
-taobao.simba.keywords.recommend.get
-
-取得一个推广组的推荐关键词列表 */
+// TaobaoSimbaKeywordsRecommendGetAPIResponse 取得一个推广组的推荐关键词列表 API返回值
+// taobao.simba.keywords.recommend.get
+//
+// 取得一个推广组的推荐关键词列表
 type TaobaoSimbaKeywordsRecommendGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaKeywordsRecommendGetAPIResponseModel

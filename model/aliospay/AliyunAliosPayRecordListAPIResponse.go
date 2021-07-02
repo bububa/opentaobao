@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunAliosPayRecordListAPIResponse
-支付记录批量查询接口 API返回值
-aliyun.alios.pay.record.list
-
-商户用来对账的接口 */
+// AliyunAliosPayRecordListAPIResponse 支付记录批量查询接口 API返回值
+// aliyun.alios.pay.record.list
+//
+// 商户用来对账的接口
 type AliyunAliosPayRecordListAPIResponse struct {
 	model.CommonResponse
 	AliyunAliosPayRecordListAPIResponseModel

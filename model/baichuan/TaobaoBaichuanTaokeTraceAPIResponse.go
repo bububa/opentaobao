@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaichuanTaokeTraceAPIResponse
-百川淘客打点 API返回值
-taobao.baichuan.taoke.trace
-
-百川淘客打点 */
+// TaobaoBaichuanTaokeTraceAPIResponse 百川淘客打点 API返回值
+// taobao.baichuan.taoke.trace
+//
+// 百川淘客打点
 type TaobaoBaichuanTaokeTraceAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaichuanTaokeTraceAPIResponseModel

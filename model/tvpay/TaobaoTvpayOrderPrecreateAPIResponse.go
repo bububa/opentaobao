@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTvpayOrderPrecreateAPIResponse
-tv支付预下单 API返回值
-taobao.tvpay.order.precreate
-
-tv支付预下单 */
+// TaobaoTvpayOrderPrecreateAPIResponse tv支付预下单 API返回值
+// taobao.tvpay.order.precreate
+//
+// tv支付预下单
 type TaobaoTvpayOrderPrecreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoTvpayOrderPrecreateAPIResponseModel

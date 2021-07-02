@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoEticketMerchantMaConsumeAPIRequest
-电子凭证核销接口 API请求
-taobao.eticket.merchant.ma.consume
-
-电子凭证核销接口 */
+// TaobaoEticketMerchantMaConsumeAPIRequest 电子凭证核销接口 API请求
+// taobao.eticket.merchant.ma.consume
+//
+// 电子凭证核销接口
 type TaobaoEticketMerchantMaConsumeAPIRequest struct {
 	model.Params
 	// 业务类型

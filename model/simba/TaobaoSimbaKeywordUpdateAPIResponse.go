@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordUpdateAPIResponse
-（新）关键词更新相关接口 API返回值
-taobao.simba.keyword.update
-
-（新）关键词更新相关接口 */
+// TaobaoSimbaKeywordUpdateAPIResponse （新）关键词更新相关接口 API返回值
+// taobao.simba.keyword.update
+//
+// （新）关键词更新相关接口
 type TaobaoSimbaKeywordUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaKeywordUpdateAPIResponseModel

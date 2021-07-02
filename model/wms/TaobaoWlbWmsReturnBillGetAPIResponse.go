@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsReturnBillGetAPIResponse
-获取销退收货信息 API返回值
-taobao.wlb.wms.return.bill.get
-
-通过订单号获取单个销退单收货信息。 */
+// TaobaoWlbWmsReturnBillGetAPIResponse 获取销退收货信息 API返回值
+// taobao.wlb.wms.return.bill.get
+//
+// 通过订单号获取单个销退单收货信息。
 type TaobaoWlbWmsReturnBillGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsReturnBillGetAPIResponseModel

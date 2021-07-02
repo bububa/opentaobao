@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentChildRootnodeGetAPIResponse
-获取少儿大厅根类目接口 API返回值
-yunos.tvpubadmin.content.child.rootnode.get
-
-通过此接口可获取少儿大厅根类目列表 */
+// YunosTvpubadminContentChildRootnodeGetAPIResponse 获取少儿大厅根类目接口 API返回值
+// yunos.tvpubadmin.content.child.rootnode.get
+//
+// 通过此接口可获取少儿大厅根类目列表
 type YunosTvpubadminContentChildRootnodeGetAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentChildRootnodeGetAPIResponseModel

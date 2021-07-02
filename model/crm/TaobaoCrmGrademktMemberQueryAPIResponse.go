@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmGrademktMemberQueryAPIResponse
-会员等级营销-会员关系查询 API返回值
-taobao.crm.grademkt.member.query
-
-商家通过该接口查询线上店铺会员。 */
+// TaobaoCrmGrademktMemberQueryAPIResponse 会员等级营销-会员关系查询 API返回值
+// taobao.crm.grademkt.member.query
+//
+// 商家通过该接口查询线上店铺会员。
 type TaobaoCrmGrademktMemberQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmGrademktMemberQueryAPIResponseModel

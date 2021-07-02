@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIcbuRfqRecommendAPIResponse
-rfq推荐 API返回值
-alibaba.icbu.rfq.recommend
-
-rfq推荐 */
+// AlibabaIcbuRfqRecommendAPIResponse rfq推荐 API返回值
+// alibaba.icbu.rfq.recommend
+//
+// rfq推荐
 type AlibabaIcbuRfqRecommendAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuRfqRecommendAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignUpdateAPIResponse
-更新一个推广计划 API返回值
-taobao.simba.campaign.update
-
-更新一个推广计划，可以设置推广计划名字，修改推广计划上下线状态。 */
+// TaobaoSimbaCampaignUpdateAPIResponse 更新一个推广计划 API返回值
+// taobao.simba.campaign.update
+//
+// 更新一个推广计划，可以设置推广计划名字，修改推广计划上下线状态。
 type TaobaoSimbaCampaignUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCampaignUpdateAPIResponseModel

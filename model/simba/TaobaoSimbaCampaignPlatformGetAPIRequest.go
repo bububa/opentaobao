@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignPlatformGetAPIRequest
-取得一个推广计划的投放平台设置 API请求
-taobao.simba.campaign.platform.get
-
-获得一个推广计划的投放平台设置 */
+// TaobaoSimbaCampaignPlatformGetAPIRequest 取得一个推广计划的投放平台设置 API请求
+// taobao.simba.campaign.platform.get
+//
+// 获得一个推广计划的投放平台设置
 type TaobaoSimbaCampaignPlatformGetAPIRequest struct {
 	model.Params
 	// 主人昵称

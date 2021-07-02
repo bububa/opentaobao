@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordidsDeletedGetAPIResponse
-获取删除的词ID API返回值
-taobao.simba.keywordids.deleted.get
-
-获取删除的词ID */
+// TaobaoSimbaKeywordidsDeletedGetAPIResponse 获取删除的词ID API返回值
+// taobao.simba.keywordids.deleted.get
+//
+// 获取删除的词ID
 type TaobaoSimbaKeywordidsDeletedGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaKeywordidsDeletedGetAPIResponseModel

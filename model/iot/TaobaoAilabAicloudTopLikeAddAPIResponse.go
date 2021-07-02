@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopLikeAddAPIResponse
-增加收藏 API返回值
-taobao.ailab.aicloud.top.like.add
-
-将制定内容加入收藏 */
+// TaobaoAilabAicloudTopLikeAddAPIResponse 增加收藏 API返回值
+// taobao.ailab.aicloud.top.like.add
+//
+// 将制定内容加入收藏
 type TaobaoAilabAicloudTopLikeAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopLikeAddAPIResponseModel

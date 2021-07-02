@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMoziFusionAddorupdateEmployeeAccountAPIResponse
-添加人员和账号复合接口 API返回值
-alibaba.mozi.fusion.addorupdate.employee.account
-
-添加人员和账号复合接口 */
+// AlibabaMoziFusionAddorupdateEmployeeAccountAPIResponse 添加人员和账号复合接口 API返回值
+// alibaba.mozi.fusion.addorupdate.employee.account
+//
+// 添加人员和账号复合接口
 type AlibabaMoziFusionAddorupdateEmployeeAccountAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziFusionAddorupdateEmployeeAccountAPIResponseModel

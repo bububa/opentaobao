@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRdcAligeniusOrdermsgUpdateAPIRequest
-订单消息状态回传 API请求
-taobao.rdc.aligenius.ordermsg.update
-
-用于订单消息处理状态回传 */
+// TaobaoRdcAligeniusOrdermsgUpdateAPIRequest 订单消息状态回传 API请求
+// taobao.rdc.aligenius.ordermsg.update
+//
+// 用于订单消息处理状态回传
 type TaobaoRdcAligeniusOrdermsgUpdateAPIRequest struct {
 	model.Params
 	// 子订单（消息中传的子订单）

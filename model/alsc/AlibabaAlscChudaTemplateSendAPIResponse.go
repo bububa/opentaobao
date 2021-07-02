@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscChudaTemplateSendAPIResponse
-本地生活触达模板消息发送接口 API返回值
-alibaba.alsc.chuda.template.send
-
-允许三方小程序通过该api发送本地生活触达消息 */
+// AlibabaAlscChudaTemplateSendAPIResponse 本地生活触达模板消息发送接口 API返回值
+// alibaba.alsc.chuda.template.send
+//
+// 允许三方小程序通过该api发送本地生活触达消息
 type AlibabaAlscChudaTemplateSendAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscChudaTemplateSendAPIResponseModel

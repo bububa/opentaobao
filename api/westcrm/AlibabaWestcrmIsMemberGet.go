@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/westcrm"
 )
 
-/* AlibabaWestcrmIsMemberGet
-查询是否是亲橙里会员
-alibaba.westcrm.is.member.get
-
-根据淘宝Id查询是否是亲橙里会员 */
+// AlibabaWestcrmIsMemberGet 查询是否是亲橙里会员
+// alibaba.westcrm.is.member.get
+//
+// 根据淘宝Id查询是否是亲橙里会员
 func AlibabaWestcrmIsMemberGet(clt *core.SDKClient, req *westcrm.AlibabaWestcrmIsMemberGetAPIRequest, session string) (*westcrm.AlibabaWestcrmIsMemberGetAPIResponse, error) {
 	var resp westcrm.AlibabaWestcrmIsMemberGetAPIResponse
 	err := clt.Post(req, &resp, session)

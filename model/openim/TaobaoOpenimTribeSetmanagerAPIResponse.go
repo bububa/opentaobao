@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimTribeSetmanagerAPIResponse
-OPENIM群设置管理员 API返回值
-taobao.openim.tribe.setmanager
-
-OPENIM群设置管理员 */
+// TaobaoOpenimTribeSetmanagerAPIResponse OPENIM群设置管理员 API返回值
+// taobao.openim.tribe.setmanager
+//
+// OPENIM群设置管理员
 type TaobaoOpenimTribeSetmanagerAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimTribeSetmanagerAPIResponseModel

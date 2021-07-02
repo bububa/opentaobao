@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstBranddatashareStockdataQueryAPIResponse
-查询品牌商品实仓库存/周转效能 API返回值
-alibaba.lst.branddatashare.stockdata.query
-
-品牌商查询授权供应商实仓库存数据 */
+// AlibabaLstBranddatashareStockdataQueryAPIResponse 查询品牌商品实仓库存/周转效能 API返回值
+// alibaba.lst.branddatashare.stockdata.query
+//
+// 品牌商查询授权供应商实仓库存数据
 type AlibabaLstBranddatashareStockdataQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstBranddatashareStockdataQueryAPIResponseModel

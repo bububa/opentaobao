@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWestcrmCustomerInfoGetAPIRequest
-会员信息查询接口 API请求
-alibaba.westcrm.customer.info.get
-
-会员信息查询接口 */
+// AlibabaWestcrmCustomerInfoGetAPIRequest 会员信息查询接口 API请求
+// alibaba.westcrm.customer.info.get
+//
+// 会员信息查询接口
 type AlibabaWestcrmCustomerInfoGetAPIRequest struct {
 	model.Params
 	// 园区id

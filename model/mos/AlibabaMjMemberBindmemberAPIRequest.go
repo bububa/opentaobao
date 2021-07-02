@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjMemberBindmemberAPIRequest
-绑定会员 API请求
-alibaba.mj.member.bindmember
-
-用于绑定喵街数字化会员 */
+// AlibabaMjMemberBindmemberAPIRequest 绑定会员 API请求
+// alibaba.mj.member.bindmember
+//
+// 用于绑定喵街数字化会员
 type AlibabaMjMemberBindmemberAPIRequest struct {
 	model.Params
 	// 用户号

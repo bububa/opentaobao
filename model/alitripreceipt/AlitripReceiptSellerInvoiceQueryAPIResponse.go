@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripReceiptSellerInvoiceQueryAPIResponse
-飞猪发票查询 API返回值
-alitrip.receipt.seller.invoice.query
-
-飞猪发票查询 */
+// AlitripReceiptSellerInvoiceQueryAPIResponse 飞猪发票查询 API返回值
+// alitrip.receipt.seller.invoice.query
+//
+// 飞猪发票查询
 type AlitripReceiptSellerInvoiceQueryAPIResponse struct {
 	model.CommonResponse
 	AlitripReceiptSellerInvoiceQueryAPIResponseModel

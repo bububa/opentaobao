@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimSnfilterwordSetfilterAPIRequest
-关键词过滤 API请求
-taobao.openim.snfilterword.setfilter
-
-设置openim关键词过滤 */
+// TaobaoOpenimSnfilterwordSetfilterAPIRequest 关键词过滤 API请求
+// taobao.openim.snfilterword.setfilter
+//
+// 设置openim关键词过滤
 type TaobaoOpenimSnfilterwordSetfilterAPIRequest struct {
 	model.Params
 	// 上传者身份信息，区分不同上传者;只是记录，没有身份校验功能

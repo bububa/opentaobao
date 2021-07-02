@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOverseaTranslateGetAPIResponse
-获取文本翻译信息 API返回值
-alibaba.oversea.translate.get
-
-根据传入的文本信息，获取其目标语言的翻译结果 */
+// AlibabaOverseaTranslateGetAPIResponse 获取文本翻译信息 API返回值
+// alibaba.oversea.translate.get
+//
+// 根据传入的文本信息，获取其目标语言的翻译结果
 type AlibabaOverseaTranslateGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaOverseaTranslateGetAPIResponseModel

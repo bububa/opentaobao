@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-/* YunosTvpubadminDeviceBrands
-获取终端类型下品牌列表
-yunos.tvpubadmin.device.brands
-
-获取终端类型下品牌列表 */
+// YunosTvpubadminDeviceBrands 获取终端类型下品牌列表
+// yunos.tvpubadmin.device.brands
+//
+// 获取终端类型下品牌列表
 func YunosTvpubadminDeviceBrands(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceBrandsAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceBrandsAPIResponse, error) {
 	var resp tvupadmin.YunosTvpubadminDeviceBrandsAPIResponse
 	err := clt.Post(req, &resp, session)

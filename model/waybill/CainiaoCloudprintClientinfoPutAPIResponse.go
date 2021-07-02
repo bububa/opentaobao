@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCloudprintClientinfoPutAPIResponse
-云打印客户端监控信息收集 API返回值
-cainiao.cloudprint.clientinfo.put
-
-云打印客户端监控信息收集 */
+// CainiaoCloudprintClientinfoPutAPIResponse 云打印客户端监控信息收集 API返回值
+// cainiao.cloudprint.clientinfo.put
+//
+// 云打印客户端监控信息收集
 type CainiaoCloudprintClientinfoPutAPIResponse struct {
 	model.CommonResponse
 	CainiaoCloudprintClientinfoPutAPIResponseModel

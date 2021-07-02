@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenmallTradeConfirmAPIResponse
-确认收货 API返回值
-taobao.openmall.trade.confirm
-
-确认订单收货 */
+// TaobaoOpenmallTradeConfirmAPIResponse 确认收货 API返回值
+// taobao.openmall.trade.confirm
+//
+// 确认订单收货
 type TaobaoOpenmallTradeConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenmallTradeConfirmAPIResponseModel

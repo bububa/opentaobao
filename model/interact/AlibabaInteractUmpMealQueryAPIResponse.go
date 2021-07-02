@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractUmpMealQueryAPIResponse
-淘宝卖家搭配套餐查询 API返回值
-alibaba.interact.ump.meal.query
-
-查询卖家在优惠平台设置的搭配套餐列表，每个套餐包括名称、套餐价格、手淘套餐购买链接 */
+// AlibabaInteractUmpMealQueryAPIResponse 淘宝卖家搭配套餐查询 API返回值
+// alibaba.interact.ump.meal.query
+//
+// 查询卖家在优惠平台设置的搭配套餐列表，每个套餐包括名称、套餐价格、手淘套餐购买链接
 type AlibabaInteractUmpMealQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractUmpMealQueryAPIResponseModel

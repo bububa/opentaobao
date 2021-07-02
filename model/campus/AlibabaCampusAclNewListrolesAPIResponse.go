@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewListrolesAPIResponse
-查询全部角色 API返回值
-alibaba.campus.acl.new.listroles
-
-查询全部角色 */
+// AlibabaCampusAclNewListrolesAPIResponse 查询全部角色 API返回值
+// alibaba.campus.acl.new.listroles
+//
+// 查询全部角色
 type AlibabaCampusAclNewListrolesAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclNewListrolesAPIResponseModel

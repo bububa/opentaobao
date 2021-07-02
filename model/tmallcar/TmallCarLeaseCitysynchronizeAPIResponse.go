@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseCitysynchronizeAPIResponse
-天猫开新车租后分期城市信息同步 API返回值
-tmall.car.lease.citysynchronize
-
-天猫开新车租后分期城市信息同步 */
+// TmallCarLeaseCitysynchronizeAPIResponse 天猫开新车租后分期城市信息同步 API返回值
+// tmall.car.lease.citysynchronize
+//
+// 天猫开新车租后分期城市信息同步
 type TmallCarLeaseCitysynchronizeAPIResponse struct {
 	model.CommonResponse
 	TmallCarLeaseCitysynchronizeAPIResponseModel

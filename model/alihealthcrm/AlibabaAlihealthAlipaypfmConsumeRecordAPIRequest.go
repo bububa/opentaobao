@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthAlipaypfmConsumeRecordAPIRequest
-记录用户每日消耗卡路里总量 API请求
-alibaba.alihealth.alipaypfm.consume.record
-
-记录用户每日消耗卡路里总量 */
+// AlibabaAlihealthAlipaypfmConsumeRecordAPIRequest 记录用户每日消耗卡路里总量 API请求
+// alibaba.alihealth.alipaypfm.consume.record
+//
+// 记录用户每日消耗卡路里总量
 type AlibabaAlihealthAlipaypfmConsumeRecordAPIRequest struct {
 	model.Params
 	// 用户健康ID

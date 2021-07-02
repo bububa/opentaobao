@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtEasyhomememberSynAPIResponse
-会员信息同 API返回值
-tmall.nrt.easyhomemember.syn
-
-居然之家将会员信息同步到零售中台 包含基本的会员信息 */
+// TmallNrtEasyhomememberSynAPIResponse 会员信息同 API返回值
+// tmall.nrt.easyhomemember.syn
+//
+// 居然之家将会员信息同步到零售中台 包含基本的会员信息
 type TmallNrtEasyhomememberSynAPIResponse struct {
 	model.CommonResponse
 	TmallNrtEasyhomememberSynAPIResponseModel

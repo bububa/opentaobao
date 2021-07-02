@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItCloudliveGetagentconfigAPIResponse
-线上巡店Agent获取配置 API返回值
-alibaba.it.cloudlive.getagentconfig
-
-线上巡店应用，外部Agent设备获取设备配置信息，根据配置信息链接mqtt，跟云端进行进一步的消息通信。 */
+// AlibabaItCloudliveGetagentconfigAPIResponse 线上巡店Agent获取配置 API返回值
+// alibaba.it.cloudlive.getagentconfig
+//
+// 线上巡店应用，外部Agent设备获取设备配置信息，根据配置信息链接mqtt，跟云端进行进一步的消息通信。
 type AlibabaItCloudliveGetagentconfigAPIResponse struct {
 	model.CommonResponse
 	AlibabaItCloudliveGetagentconfigAPIResponseModel

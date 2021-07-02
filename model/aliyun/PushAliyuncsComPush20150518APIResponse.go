@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* PushAliyuncsComPush20150518APIResponse
-云推送指令API API返回值
-push.aliyuncs.com.push.20150518
-
-阿里云推送新增API，允许一条推送指令同时发布到多个终端上。 */
+// PushAliyuncsComPush20150518APIResponse 云推送指令API API返回值
+// push.aliyuncs.com.push.20150518
+//
+// 阿里云推送新增API，允许一条推送指令同时发布到多个终端上。
 type PushAliyuncsComPush20150518APIResponse struct {
 	model.CommonResponse
 	PushAliyuncsComPush20150518APIResponseModel

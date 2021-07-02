@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtCoupontemplateQueryAPIRequest
-券模板查询 API请求
-tmall.nrt.coupontemplate.query
-
-新零售场景，商家拉取在新零售工作台设置的券数据 */
+// TmallNrtCoupontemplateQueryAPIRequest 券模板查询 API请求
+// tmall.nrt.coupontemplate.query
+//
+// 新零售场景，商家拉取在新零售工作台设置的券数据
 type TmallNrtCoupontemplateQueryAPIRequest struct {
 	model.Params
 	// 券列表

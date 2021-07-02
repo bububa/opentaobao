@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateProductQueryAPIResponse
-联盟推广商品获取接口 API返回值
-aliexpress.affiliate.product.query
-
-联盟推广商品搜索接口，用于搜索联盟推广商品数据 */
+// AliexpressAffiliateProductQueryAPIResponse 联盟推广商品获取接口 API返回值
+// aliexpress.affiliate.product.query
+//
+// 联盟推广商品搜索接口，用于搜索联盟推广商品数据
 type AliexpressAffiliateProductQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressAffiliateProductQueryAPIResponseModel

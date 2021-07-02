@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemItemDeleteAPIRequest
-全渠道商品删除 API请求
-taobao.omniitem.item.delete
-
-全渠道商品删除，能够对门店商品库商品进行删除动作 */
+// TaobaoOmniitemItemDeleteAPIRequest 全渠道商品删除 API请求
+// taobao.omniitem.item.delete
+//
+// 全渠道商品删除，能够对门店商品库商品进行删除动作
 type TaobaoOmniitemItemDeleteAPIRequest struct {
 	model.Params
 	// 条形码

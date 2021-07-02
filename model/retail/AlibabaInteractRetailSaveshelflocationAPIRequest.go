@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractRetailSaveshelflocationAPIRequest
-保存地理位置和货架关系 API请求
-alibaba.interact.retail.saveshelflocation
-
-保存地理位置和货架关系 */
+// AlibabaInteractRetailSaveshelflocationAPIRequest 保存地理位置和货架关系 API请求
+// alibaba.interact.retail.saveshelflocation
+//
+// 保存地理位置和货架关系
 type AlibabaInteractRetailSaveshelflocationAPIRequest struct {
 	model.Params
 	// 门店code

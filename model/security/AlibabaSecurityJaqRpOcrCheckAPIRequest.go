@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqRpOcrCheckAPIRequest
-ocr同时实名校验 API请求
-alibaba.security.jaq.rp.ocr.check
-
-聚安全实人认证证件OCR识别功能接口 */
+// AlibabaSecurityJaqRpOcrCheckAPIRequest ocr同时实名校验 API请求
+// alibaba.security.jaq.rp.ocr.check
+//
+// 聚安全实人认证证件OCR识别功能接口
 type AlibabaSecurityJaqRpOcrCheckAPIRequest struct {
 	model.Params
 	// token

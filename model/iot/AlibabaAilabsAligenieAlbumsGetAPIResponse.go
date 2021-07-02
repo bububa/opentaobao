@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsAligenieAlbumsGetAPIResponse
-专辑详情 API返回值
-alibaba.ailabs.aligenie.albums.get
-
-给予厂商查询专辑下的音频详情 */
+// AlibabaAilabsAligenieAlbumsGetAPIResponse 专辑详情 API返回值
+// alibaba.ailabs.aligenie.albums.get
+//
+// 给予厂商查询专辑下的音频详情
 type AlibabaAilabsAligenieAlbumsGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsAligenieAlbumsGetAPIResponseModel

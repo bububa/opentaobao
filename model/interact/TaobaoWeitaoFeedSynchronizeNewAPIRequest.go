@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeitaoFeedSynchronizeNewAPIRequest
-推广淘小铺isv 活动到微淘feed API请求
-taobao.weitao.feed.synchronize.new
-
-推广微淘互动应用活动到微淘 */
+// TaobaoWeitaoFeedSynchronizeNewAPIRequest 推广淘小铺isv 活动到微淘feed API请求
+// taobao.weitao.feed.synchronize.new
+//
+// 推广微淘互动应用活动到微淘
 type TaobaoWeitaoFeedSynchronizeNewAPIRequest struct {
 	model.Params
 	// 广播类型：粉丝猜价格461、投票有礼462、粉丝抢红包463、盖楼有礼464、加购有礼465

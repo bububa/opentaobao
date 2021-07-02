@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTmicQuestionnaireAnswerPushAPIResponse
-提交单题答案 API返回值
-tmall.tmic.questionnaire.answer.push
-
-问卷单题回答的提交 */
+// TmallTmicQuestionnaireAnswerPushAPIResponse 提交单题答案 API返回值
+// tmall.tmic.questionnaire.answer.push
+//
+// 问卷单题回答的提交
 type TmallTmicQuestionnaireAnswerPushAPIResponse struct {
 	model.CommonResponse
 	TmallTmicQuestionnaireAnswerPushAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallDeviceShortchainurlGetAPIResponse
-获取二维码短链接 API返回值
-tmall.device.shortchainurl.get
-
-获取二维码短链接 */
+// TmallDeviceShortchainurlGetAPIResponse 获取二维码短链接 API返回值
+// tmall.device.shortchainurl.get
+//
+// 获取二维码短链接
 type TmallDeviceShortchainurlGetAPIResponse struct {
 	model.CommonResponse
 	TmallDeviceShortchainurlGetAPIResponseModel

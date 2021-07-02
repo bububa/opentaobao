@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSecurityJaqAppShieldAPIResponse
-应用加固接口 API返回值
-alibaba.security.jaq.app.shield
-
-提交应用进行应用加固,加固后需通过alibaba.security.jaq.app.shieldresult.get接口查询加固结果 */
+// AlibabaSecurityJaqAppShieldAPIResponse 应用加固接口 API返回值
+// alibaba.security.jaq.app.shield
+//
+// 提交应用进行应用加固,加固后需通过alibaba.security.jaq.app.shieldresult.get接口查询加固结果
 type AlibabaSecurityJaqAppShieldAPIResponse struct {
 	model.CommonResponse
 	AlibabaSecurityJaqAppShieldAPIResponseModel

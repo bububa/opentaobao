@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsPassportAccountTokenvalidateAPIResponse
-阿里体育会员系统帐号登录注册token验证接口 API返回值
-alibaba.alisports.passport.account.tokenvalidate
-
-阿里体育会员系统帐号登录注册token验证接口 */
+// AlibabaAlisportsPassportAccountTokenvalidateAPIResponse 阿里体育会员系统帐号登录注册token验证接口 API返回值
+// alibaba.alisports.passport.account.tokenvalidate
+//
+// 阿里体育会员系统帐号登录注册token验证接口
 type AlibabaAlisportsPassportAccountTokenvalidateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsPassportAccountTokenvalidateAPIResponseModel

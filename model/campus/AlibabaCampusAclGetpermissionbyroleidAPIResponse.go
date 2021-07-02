@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclGetpermissionbyroleidAPIResponse
-根据角色Id查询权限 API返回值
-alibaba.campus.acl.getpermissionbyroleid
-
-根据角色查询权限 */
+// AlibabaCampusAclGetpermissionbyroleidAPIResponse 根据角色Id查询权限 API返回值
+// alibaba.campus.acl.getpermissionbyroleid
+//
+// 根据角色查询权限
 type AlibabaCampusAclGetpermissionbyroleidAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclGetpermissionbyroleidAPIResponseModel

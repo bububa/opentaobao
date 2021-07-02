@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/nlife"
 )
 
-/* AlibabaNlifeStoreItemdetailGet
-查询商品的详情信息
-alibaba.nlife.store.itemdetail.get
-
-查询零售加平台上单个商品的详情信息 */
+// AlibabaNlifeStoreItemdetailGet 查询商品的详情信息
+// alibaba.nlife.store.itemdetail.get
+//
+// 查询零售加平台上单个商品的详情信息
 func AlibabaNlifeStoreItemdetailGet(clt *core.SDKClient, req *nlife.AlibabaNlifeStoreItemdetailGetAPIRequest, session string) (*nlife.AlibabaNlifeStoreItemdetailGetAPIResponse, error) {
 	var resp nlife.AlibabaNlifeStoreItemdetailGetAPIResponse
 	err := clt.Post(req, &resp, session)

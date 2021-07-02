@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceCreateResultsIncrementGetAPIResponse
-ERP增量开票结果获取 API返回值
-alibaba.einvoice.create.results.increment.get
-
-增量开票结果获取 */
+// AlibabaEinvoiceCreateResultsIncrementGetAPIResponse ERP增量开票结果获取 API返回值
+// alibaba.einvoice.create.results.increment.get
+//
+// 增量开票结果获取
 type AlibabaEinvoiceCreateResultsIncrementGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceCreateResultsIncrementGetAPIResponseModel

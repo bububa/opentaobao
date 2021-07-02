@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusTvmcreateorderSetAPIResponse
-线下自助机创建订单 API返回值
-taobao.bus.tvmcreateorder.set
-
-提供给汽车票线下自助机的创建订单使用 */
+// TaobaoBusTvmcreateorderSetAPIResponse 线下自助机创建订单 API返回值
+// taobao.bus.tvmcreateorder.set
+//
+// 提供给汽车票线下自助机的创建订单使用
 type TaobaoBusTvmcreateorderSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusTvmcreateorderSetAPIResponseModel

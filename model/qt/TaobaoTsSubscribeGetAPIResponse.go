@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTsSubscribeGetAPIResponse
-淘宝服务订购关系查询 API返回值
-taobao.ts.subscribe.get
-
-ts订购关系状态查询. 暂只支持1口价服务. */
+// TaobaoTsSubscribeGetAPIResponse 淘宝服务订购关系查询 API返回值
+// taobao.ts.subscribe.get
+//
+// ts订购关系状态查询. 暂只支持1口价服务.
 type TaobaoTsSubscribeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTsSubscribeGetAPIResponseModel

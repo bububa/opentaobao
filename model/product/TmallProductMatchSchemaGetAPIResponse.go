@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallProductMatchSchemaGetAPIResponse
-获取匹配产品规则 API返回值
-tmall.product.match.schema.get
-
-ISV发布商品前，需要先查找到产品ID，这个接口返回查找产品规则入参规则 */
+// TmallProductMatchSchemaGetAPIResponse 获取匹配产品规则 API返回值
+// tmall.product.match.schema.get
+//
+// ISV发布商品前，需要先查找到产品ID，这个接口返回查找产品规则入参规则
 type TmallProductMatchSchemaGetAPIResponse struct {
 	model.CommonResponse
 	TmallProductMatchSchemaGetAPIResponseModel

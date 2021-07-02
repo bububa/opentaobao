@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterServicestoreUpdatestatusAPIResponse
-网点/门店状态修改 API返回值
-tmall.servicecenter.servicestore.updatestatus
-
-修改网点/门店状态 */
+// TmallServicecenterServicestoreUpdatestatusAPIResponse 网点/门店状态修改 API返回值
+// tmall.servicecenter.servicestore.updatestatus
+//
+// 修改网点/门店状态
 type TmallServicecenterServicestoreUpdatestatusAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterServicestoreUpdatestatusAPIResponseModel

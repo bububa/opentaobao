@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIResponse
-上门检测服务信息同步 API返回值
-alibaba.alihealth.examination.todoor.serviceinfo.sync
-
-isv同步上门检测服务信息给健康 */
+// AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIResponse 上门检测服务信息同步 API返回值
+// alibaba.alihealth.examination.todoor.serviceinfo.sync
+//
+// isv同步上门检测服务信息给健康
 type AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIResponseModel

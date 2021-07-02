@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCampusIndustryAppAuditQueryAPIResponse
-天猫校园查询学生认证信息 API返回值
-tmall.campus.industry.app.audit.query
-
-天猫校园查询学生认证信息 */
+// TmallCampusIndustryAppAuditQueryAPIResponse 天猫校园查询学生认证信息 API返回值
+// tmall.campus.industry.app.audit.query
+//
+// 天猫校园查询学生认证信息
 type TmallCampusIndustryAppAuditQueryAPIResponse struct {
 	model.CommonResponse
 	TmallCampusIndustryAppAuditQueryAPIResponseModel

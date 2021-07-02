@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMeiCrmCallbackPointChangeAPIResponse
-品牌积分变更回调API API返回值
-tmall.mei.crm.callback.point.change
-
-线下品牌积分变更消息回调API，告诉积分扣减或者累加是否成功。 */
+// TmallMeiCrmCallbackPointChangeAPIResponse 品牌积分变更回调API API返回值
+// tmall.mei.crm.callback.point.change
+//
+// 线下品牌积分变更消息回调API，告诉积分扣减或者累加是否成功。
 type TmallMeiCrmCallbackPointChangeAPIResponse struct {
 	model.CommonResponse
 	TmallMeiCrmCallbackPointChangeAPIResponseModel

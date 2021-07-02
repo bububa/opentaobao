@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelVisaSignSendAPIResponse
-签证批量申请人送签接口 API返回值
-alitrip.travel.visa.sign.send
-
-签证批量申请人送签接口，用于商家批量送签。 */
+// AlitripTravelVisaSignSendAPIResponse 签证批量申请人送签接口 API返回值
+// alitrip.travel.visa.sign.send
+//
+// 签证批量申请人送签接口，用于商家批量送签。
 type AlitripTravelVisaSignSendAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelVisaSignSendAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDropshippingOrderPayAPIResponse
-alibaba dropshipping 支付代扣 API返回值
-alibaba.dropshipping.order.pay
-
-alibaba dropshipping 支付代扣 */
+// AlibabaDropshippingOrderPayAPIResponse alibaba dropshipping 支付代扣 API返回值
+// alibaba.dropshipping.order.pay
+//
+// alibaba dropshipping 支付代扣
 type AlibabaDropshippingOrderPayAPIResponse struct {
 	model.CommonResponse
 	AlibabaDropshippingOrderPayAPIResponseModel

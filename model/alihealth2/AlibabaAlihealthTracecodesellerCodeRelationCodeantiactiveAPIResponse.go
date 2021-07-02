@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIResponse
-解除码的关联关系 API返回值
-alibaba.alihealth.tracecodeseller.code.relation.codeantiactive
-
-解除码的关联关系 */
+// AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIResponse 解除码的关联关系 API返回值
+// alibaba.alihealth.tracecodeseller.code.relation.codeantiactive
+//
+// 解除码的关联关系
 type AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIResponseModel

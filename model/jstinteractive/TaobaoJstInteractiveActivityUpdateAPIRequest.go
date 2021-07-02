@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstInteractiveActivityUpdateAPIRequest
-互动任务活动修改接口 API请求
-taobao.jst.interactive.activity.update
-
-互动任务活动修改接口 */
+// TaobaoJstInteractiveActivityUpdateAPIRequest 互动任务活动修改接口 API请求
+// taobao.jst.interactive.activity.update
+//
+// 互动任务活动修改接口
 type TaobaoJstInteractiveActivityUpdateAPIRequest struct {
 	model.Params
 	// 小程序id

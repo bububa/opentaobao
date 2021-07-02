@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTraceplatformCtsInfoUploadAPIResponse
-CTS提交溯源信息 API返回值
-tmall.traceplatform.cts.info.upload
-
-cts上传溯源信息 */
+// TmallTraceplatformCtsInfoUploadAPIResponse CTS提交溯源信息 API返回值
+// tmall.traceplatform.cts.info.upload
+//
+// cts上传溯源信息
 type TmallTraceplatformCtsInfoUploadAPIResponse struct {
 	model.CommonResponse
 	TmallTraceplatformCtsInfoUploadAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelTradesSearchAPIRequest
-飞猪度假-订单列表搜索接口 API请求
-alitrip.travel.trades.search
-
-订单列表搜索接口：以订单创建、结束时间、订单状态为搜索条件，搜索过滤出满足条件的卖家订单列表。 */
+// AlitripTravelTradesSearchAPIRequest 飞猪度假-订单列表搜索接口 API请求
+// alitrip.travel.trades.search
+//
+// 订单列表搜索接口：以订单创建、结束时间、订单状态为搜索条件，搜索过滤出满足条件的卖家订单列表。
 type AlitripTravelTradesSearchAPIRequest struct {
 	model.Params
 	// 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30

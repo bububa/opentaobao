@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclCancelpermiitemfromroleAPIRequest
-取消角色和权限之间的关系 API请求
-alibaba.campus.acl.cancelpermiitemfromrole
-
-取消角色和权限之间的关系 */
+// AlibabaCampusAclCancelpermiitemfromroleAPIRequest 取消角色和权限之间的关系 API请求
+// alibaba.campus.acl.cancelpermiitemfromrole
+//
+// 取消角色和权限之间的关系
 type AlibabaCampusAclCancelpermiitemfromroleAPIRequest struct {
 	model.Params
 	// 公司ID

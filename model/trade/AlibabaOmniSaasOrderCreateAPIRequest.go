@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaOmniSaasOrderCreateAPIRequest
-订单创建接口 API请求
-alibaba.omni.saas.order.create
-
-服务商利用现有的saas系统和阿里完成交易系统的对接 */
+// AlibabaOmniSaasOrderCreateAPIRequest 订单创建接口 API请求
+// alibaba.omni.saas.order.create
+//
+// 服务商利用现有的saas系统和阿里完成交易系统的对接
 type AlibabaOmniSaasOrderCreateAPIRequest struct {
 	model.Params
 	// 商品列表

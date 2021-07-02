@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* PushAliyuncsComPush20150518APIRequest
-云推送指令API API请求
-push.aliyuncs.com.push.20150518
-
-阿里云推送新增API，允许一条推送指令同时发布到多个终端上。 */
+// PushAliyuncsComPush20150518APIRequest 云推送指令API API请求
+// push.aliyuncs.com.push.20150518
+//
+// 阿里云推送新增API，允许一条推送指令同时发布到多个终端上。
 type PushAliyuncsComPush20150518APIRequest struct {
 	model.Params
 	// 用户账号列表,以换行区分,仅sendType为3时有效

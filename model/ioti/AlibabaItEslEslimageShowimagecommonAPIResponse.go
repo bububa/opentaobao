@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItEslEslimageShowimagecommonAPIResponse
-对混合云提供的刷图接口 API返回值
-alibaba.it.esl.eslimage.showimagecommon
-
-混合云使用，提供给isv和我们混合云环境部署的应用刷图 */
+// AlibabaItEslEslimageShowimagecommonAPIResponse 对混合云提供的刷图接口 API返回值
+// alibaba.it.esl.eslimage.showimagecommon
+//
+// 混合云使用，提供给isv和我们混合云环境部署的应用刷图
 type AlibabaItEslEslimageShowimagecommonAPIResponse struct {
 	model.CommonResponse
 	AlibabaItEslEslimageShowimagecommonAPIResponseModel

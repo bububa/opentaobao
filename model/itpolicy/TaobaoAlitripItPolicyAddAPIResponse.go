@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripItPolicyAddAPIResponse
-【国际机票销售规则】单条新增 API返回值
-taobao.alitrip.it.policy.add
-
-销售规则新增，成功返回taobaoId */
+// TaobaoAlitripItPolicyAddAPIResponse 【国际机票销售规则】单条新增 API返回值
+// taobao.alitrip.it.policy.add
+//
+// 销售规则新增，成功返回taobaoId
 type TaobaoAlitripItPolicyAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripItPolicyAddAPIResponseModel

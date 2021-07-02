@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallPromotagTaguserRemoveAPIResponse
-给用户移除优惠标签 API返回值
-tmall.promotag.taguser.remove
-
-给用户载体去标 */
+// TmallPromotagTaguserRemoveAPIResponse 给用户移除优惠标签 API返回值
+// tmall.promotag.taguser.remove
+//
+// 给用户载体去标
 type TmallPromotagTaguserRemoveAPIResponse struct {
 	model.CommonResponse
 	TmallPromotagTaguserRemoveAPIResponseModel

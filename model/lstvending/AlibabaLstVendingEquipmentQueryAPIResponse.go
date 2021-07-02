@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstVendingEquipmentQueryAPIResponse
-自动售卖机设备信息查询 API返回值
-alibaba.lst.vending.equipment.query
-
-为零售通品牌商提供已租赁的设备信息查询。 */
+// AlibabaLstVendingEquipmentQueryAPIResponse 自动售卖机设备信息查询 API返回值
+// alibaba.lst.vending.equipment.query
+//
+// 为零售通品牌商提供已租赁的设备信息查询。
 type AlibabaLstVendingEquipmentQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstVendingEquipmentQueryAPIResponseModel

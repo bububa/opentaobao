@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallSupplychainChannelProductDownshelfAPIResponse
-产品下架 API返回值
-tmall.supplychain.channel.product.downshelf
-
-产品下架 */
+// TmallSupplychainChannelProductDownshelfAPIResponse 产品下架 API返回值
+// tmall.supplychain.channel.product.downshelf
+//
+// 产品下架
 type TmallSupplychainChannelProductDownshelfAPIResponse struct {
 	model.CommonResponse
 	TmallSupplychainChannelProductDownshelfAPIResponseModel

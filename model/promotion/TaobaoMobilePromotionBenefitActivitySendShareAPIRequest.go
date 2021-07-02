@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMobilePromotionBenefitActivitySendShareAPIRequest
-手淘专用单用户发放接口 API请求
-taobao.mobile.promotion.benefit.activity.send.share
-
-卖家活动中需要通过该API来发放对应的权益。手淘专用、验证分享链路。 */
+// TaobaoMobilePromotionBenefitActivitySendShareAPIRequest 手淘专用单用户发放接口 API请求
+// taobao.mobile.promotion.benefit.activity.send.share
+//
+// 卖家活动中需要通过该API来发放对应的权益。手淘专用、验证分享链路。
 type TaobaoMobilePromotionBenefitActivitySendShareAPIRequest struct {
 	model.Params
 	// 权益类型    其中ALIPAY_COUPON 对应的type值是1

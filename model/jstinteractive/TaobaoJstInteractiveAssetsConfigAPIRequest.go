@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstInteractiveAssetsConfigAPIRequest
-任务素材配置接口 API请求
-taobao.jst.interactive.assets.config
-
-任务素材配置接口 */
+// TaobaoJstInteractiveAssetsConfigAPIRequest 任务素材配置接口 API请求
+// taobao.jst.interactive.assets.config
+//
+// 任务素材配置接口
 type TaobaoJstInteractiveAssetsConfigAPIRequest struct {
 	model.Params
 	// []

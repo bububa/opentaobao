@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytCodeprocessAPIRequest
-关联关系处理查询 API请求
-alibaba.alihealth.drug.kyt.codeprocess
-
-关联关系处理查询 */
+// AlibabaAlihealthDrugKytCodeprocessAPIRequest 关联关系处理查询 API请求
+// alibaba.alihealth.drug.kyt.codeprocess
+//
+// 关联关系处理查询
 type AlibabaAlihealthDrugKytCodeprocessAPIRequest struct {
 	model.Params
 	// 开始时间

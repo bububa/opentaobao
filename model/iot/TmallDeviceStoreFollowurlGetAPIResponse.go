@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallDeviceStoreFollowurlGetAPIResponse
-获取店铺关注链接 API返回值
-tmall.device.store.followurl.get
-
-获取智能硬件上的关注店铺的URL */
+// TmallDeviceStoreFollowurlGetAPIResponse 获取店铺关注链接 API返回值
+// tmall.device.store.followurl.get
+//
+// 获取智能硬件上的关注店铺的URL
 type TmallDeviceStoreFollowurlGetAPIResponse struct {
 	model.CommonResponse
 	TmallDeviceStoreFollowurlGetAPIResponseModel

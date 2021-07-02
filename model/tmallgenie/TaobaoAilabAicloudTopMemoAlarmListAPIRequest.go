@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMemoAlarmListAPIRequest
-天猫精灵闹钟查询 API请求
-taobao.ailab.aicloud.top.memo.alarm.list
-
-查询天猫精灵用户设置的所有闹钟 */
+// TaobaoAilabAicloudTopMemoAlarmListAPIRequest 天猫精灵闹钟查询 API请求
+// taobao.ailab.aicloud.top.memo.alarm.list
+//
+// 查询天猫精灵用户设置的所有闹钟
 type TaobaoAilabAicloudTopMemoAlarmListAPIRequest struct {
 	model.Params
 	// schema

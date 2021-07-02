@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderPrintSaleJudgeAPIResponse
-导购员判断 API返回值
-taobao.omniorder.print.sale.judge
-
-用于判断当前子账号是否导购员 */
+// TaobaoOmniorderPrintSaleJudgeAPIResponse 导购员判断 API返回值
+// taobao.omniorder.print.sale.judge
+//
+// 用于判断当前子账号是否导购员
 type TaobaoOmniorderPrintSaleJudgeAPIResponse struct {
 	model.CommonResponse
 	TaobaoOmniorderPrintSaleJudgeAPIResponseModel

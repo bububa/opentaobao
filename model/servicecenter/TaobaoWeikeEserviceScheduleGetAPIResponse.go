@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeikeEserviceScheduleGetAPIResponse
-客服排班信息查询接口 API返回值
-taobao.weike.eservice.schedule.get
-
-客服排班信息查询接口 */
+// TaobaoWeikeEserviceScheduleGetAPIResponse 客服排班信息查询接口 API返回值
+// taobao.weike.eservice.schedule.get
+//
+// 客服排班信息查询接口
 type TaobaoWeikeEserviceScheduleGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWeikeEserviceScheduleGetAPIResponseModel

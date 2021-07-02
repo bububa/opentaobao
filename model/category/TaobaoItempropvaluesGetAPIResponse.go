@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItempropvaluesGetAPIResponse
-获取标准类目属性值 API返回值
-taobao.itempropvalues.get
-
-获取标准类目属性值 */
+// TaobaoItempropvaluesGetAPIResponse 获取标准类目属性值 API返回值
+// taobao.itempropvalues.get
+//
+// 获取标准类目属性值
 type TaobaoItempropvaluesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItempropvaluesGetAPIResponseModel

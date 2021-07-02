@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallTrendStyleBasicinfoUploadAPIResponse
-3D款式基本信息同步API API返回值
-tmall.trend.style.basicinfo.upload
-
-3D款式基本信息同步至天猫趋势中心 */
+// TmallTrendStyleBasicinfoUploadAPIResponse 3D款式基本信息同步API API返回值
+// tmall.trend.style.basicinfo.upload
+//
+// 3D款式基本信息同步至天猫趋势中心
 type TmallTrendStyleBasicinfoUploadAPIResponse struct {
 	model.CommonResponse
 	TmallTrendStyleBasicinfoUploadAPIResponseModel

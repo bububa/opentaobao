@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcVoiceGetdetailAPIResponse
-获取呼叫详情 API返回值
-alibaba.aliqin.fc.voice.getdetail
-
-通过呼叫id获取呼叫相关的数据 */
+// AlibabaAliqinFcVoiceGetdetailAPIResponse 获取呼叫详情 API返回值
+// alibaba.aliqin.fc.voice.getdetail
+//
+// 通过呼叫id获取呼叫相关的数据
 type AlibabaAliqinFcVoiceGetdetailAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcVoiceGetdetailAPIResponseModel

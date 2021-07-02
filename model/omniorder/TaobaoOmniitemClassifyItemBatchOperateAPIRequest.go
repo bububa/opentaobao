@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniitemClassifyItemBatchOperateAPIRequest
-批量添加/删除商品和分类的关联关系 API请求
-taobao.omniitem.classify.item.batch.operate
-
-批量添加/删除商品和分类的关联关系 */
+// TaobaoOmniitemClassifyItemBatchOperateAPIRequest 批量添加/删除商品和分类的关联关系 API请求
+// taobao.omniitem.classify.item.batch.operate
+//
+// 批量添加/删除商品和分类的关联关系
 type TaobaoOmniitemClassifyItemBatchOperateAPIRequest struct {
 	model.Params
 	// 分类ID

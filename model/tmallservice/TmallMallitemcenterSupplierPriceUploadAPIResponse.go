@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMallitemcenterSupplierPriceUploadAPIResponse
-天猫服务商服务报价上传 API返回值
-tmall.mallitemcenter.supplier.price.upload
-
-天猫服务商上传服务价格 */
+// TmallMallitemcenterSupplierPriceUploadAPIResponse 天猫服务商服务报价上传 API返回值
+// tmall.mallitemcenter.supplier.price.upload
+//
+// 天猫服务商上传服务价格
 type TmallMallitemcenterSupplierPriceUploadAPIResponse struct {
 	model.CommonResponse
 	TmallMallitemcenterSupplierPriceUploadAPIResponseModel

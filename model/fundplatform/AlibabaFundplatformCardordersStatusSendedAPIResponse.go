@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaFundplatformCardordersStatusSendedAPIResponse
-制卡商通知实体卡发货完成 API返回值
-alibaba.fundplatform.cardorders.status.sended
-
-当制卡商将实体卡发货完成后，需要调用该接口，通知我们已发货。 */
+// AlibabaFundplatformCardordersStatusSendedAPIResponse 制卡商通知实体卡发货完成 API返回值
+// alibaba.fundplatform.cardorders.status.sended
+//
+// 当制卡商将实体卡发货完成后，需要调用该接口，通知我们已发货。
 type AlibabaFundplatformCardordersStatusSendedAPIResponse struct {
 	model.CommonResponse
 	AlibabaFundplatformCardordersStatusSendedAPIResponseModel

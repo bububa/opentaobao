@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbItemAddAPIResponse
-添加单个物流宝商品 API返回值
-taobao.wlb.item.add
-
-添加物流宝商品，支持物流宝子商品和属性添加 */
+// TaobaoWlbItemAddAPIResponse 添加单个物流宝商品 API返回值
+// taobao.wlb.item.add
+//
+// 添加物流宝商品，支持物流宝子商品和属性添加
 type TaobaoWlbItemAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbItemAddAPIResponseModel

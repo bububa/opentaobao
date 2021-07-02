@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeikeEserviceSubusersGetAPIResponse
-客服外包订单分配的商家子账号列表 API返回值
-taobao.weike.eservice.subusers.get
-
-获取客服外包订单分配的商家子账号列表，以及授权状态 */
+// TaobaoWeikeEserviceSubusersGetAPIResponse 客服外包订单分配的商家子账号列表 API返回值
+// taobao.weike.eservice.subusers.get
+//
+// 获取客服外包订单分配的商家子账号列表，以及授权状态
 type TaobaoWeikeEserviceSubusersGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWeikeEserviceSubusersGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSebpIsvUserSignAPIResponse
-淘小铺三方签约同步 API返回值
-taobao.sebp.isv.user.sign
-
-同步淘小铺三方服务签约信息 */
+// TaobaoSebpIsvUserSignAPIResponse 淘小铺三方签约同步 API返回值
+// taobao.sebp.isv.user.sign
+//
+// 同步淘小铺三方服务签约信息
 type TaobaoSebpIsvUserSignAPIResponse struct {
 	model.CommonResponse
 	TaobaoSebpIsvUserSignAPIResponseModel

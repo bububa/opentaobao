@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimSnfilterwordSetfilterAPIResponse
-关键词过滤 API返回值
-taobao.openim.snfilterword.setfilter
-
-设置openim关键词过滤 */
+// TaobaoOpenimSnfilterwordSetfilterAPIResponse 关键词过滤 API返回值
+// taobao.openim.snfilterword.setfilter
+//
+// 设置openim关键词过滤
 type TaobaoOpenimSnfilterwordSetfilterAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimSnfilterwordSetfilterAPIResponseModel

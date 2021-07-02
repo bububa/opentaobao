@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelAllianceHidGetAPIResponse
-获取联盟hid API返回值
-alitrip.hotel.alliance.hid.get
-
-获取符合条件的菲住联盟hid，目前支持指定日期上线的菲住联盟hid查询 */
+// AlitripHotelAllianceHidGetAPIResponse 获取联盟hid API返回值
+// alitrip.hotel.alliance.hid.get
+//
+// 获取符合条件的菲住联盟hid，目前支持指定日期上线的菲住联盟hid查询
 type AlitripHotelAllianceHidGetAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelAllianceHidGetAPIResponseModel

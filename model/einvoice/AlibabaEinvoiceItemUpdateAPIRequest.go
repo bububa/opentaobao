@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceItemUpdateAPIRequest
-修改商品开票信息 API请求
-alibaba.einvoice.item.update
-
-ERP通过接口将商品的开票信息同步给阿里发票平台，自动开票时将读取这些开票信息，需要联系阿里小二开通对应的权限 */
+// AlibabaEinvoiceItemUpdateAPIRequest 修改商品开票信息 API请求
+// alibaba.einvoice.item.update
+//
+// ERP通过接口将商品的开票信息同步给阿里发票平台，自动开票时将读取这些开票信息，需要联系阿里小二开通对应的权限
 type AlibabaEinvoiceItemUpdateAPIRequest struct {
 	model.Params
 	// 商品的开票名称，对应发票的货物劳务名称，值DELETE时表示删除

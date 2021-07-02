@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialItemRankingAPIResponse
-社交排行榜 API返回值
-aliexpress.social.item.ranking
-
-社交商品成交排行榜 */
+// AliexpressSocialItemRankingAPIResponse 社交排行榜 API返回值
+// aliexpress.social.item.ranking
+//
+// 社交商品成交排行榜
 type AliexpressSocialItemRankingAPIResponse struct {
 	model.CommonResponse
 	AliexpressSocialItemRankingAPIResponseModel

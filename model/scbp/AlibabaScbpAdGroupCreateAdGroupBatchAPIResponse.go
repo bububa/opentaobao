@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdGroupCreateAdGroupBatchAPIResponse
-创建推广单元 API返回值
-alibaba.scbp.ad.group.create.ad.group.batch
-
-创建推广单元 */
+// AlibabaScbpAdGroupCreateAdGroupBatchAPIResponse 创建推广单元 API返回值
+// alibaba.scbp.ad.group.create.ad.group.batch
+//
+// 创建推广单元
 type AlibabaScbpAdGroupCreateAdGroupBatchAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdGroupCreateAdGroupBatchAPIResponseModel

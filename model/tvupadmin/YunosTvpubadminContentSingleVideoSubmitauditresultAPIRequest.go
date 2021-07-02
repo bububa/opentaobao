@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest
-单视频审核提交审核结果 API请求
-yunos.tvpubadmin.content.single.video.submitauditresult
-
-单视频审核提交审核结果 */
+// YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest 单视频审核提交审核结果 API请求
+// yunos.tvpubadmin.content.single.video.submitauditresult
+//
+// 单视频审核提交审核结果
 type YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest struct {
 	model.Params
 	// 审核人

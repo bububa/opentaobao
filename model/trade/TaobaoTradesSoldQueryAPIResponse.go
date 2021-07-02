@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTradesSoldQueryAPIResponse
-根据收件人信息查询交易单号 API返回值
-taobao.trades.sold.query
-
-根据收件人信息查询交易单号。 */
+// TaobaoTradesSoldQueryAPIResponse 根据收件人信息查询交易单号 API返回值
+// taobao.trades.sold.query
+//
+// 根据收件人信息查询交易单号。
 type TaobaoTradesSoldQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoTradesSoldQueryAPIResponseModel

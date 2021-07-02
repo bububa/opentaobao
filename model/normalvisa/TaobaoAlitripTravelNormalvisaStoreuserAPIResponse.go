@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelNormalvisaStoreuserAPIResponse
-代填办理人信息 API返回值
-taobao.alitrip.travel.normalvisa.storeuser
-
-卖家代填买家填写办理人信息 */
+// TaobaoAlitripTravelNormalvisaStoreuserAPIResponse 代填办理人信息 API返回值
+// taobao.alitrip.travel.normalvisa.storeuser
+//
+// 卖家代填买家填写办理人信息
 type TaobaoAlitripTravelNormalvisaStoreuserAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripTravelNormalvisaStoreuserAPIResponseModel

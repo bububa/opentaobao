@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoMiniappTemplateRollbackAPIResponse
-回滚实例化应用 API返回值
-taobao.miniapp.template.rollback
-
-将实例化小程序回滚到指定版本 */
+// TaobaoMiniappTemplateRollbackAPIResponse 回滚实例化应用 API返回值
+// taobao.miniapp.template.rollback
+//
+// 将实例化小程序回滚到指定版本
 type TaobaoMiniappTemplateRollbackAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappTemplateRollbackAPIResponseModel

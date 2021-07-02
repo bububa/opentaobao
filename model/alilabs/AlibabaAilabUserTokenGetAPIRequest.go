@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabUserTokenGetAPIRequest
-三方账号获取 token API请求
-alibaba.ailab.user.token.get
-
-inside 设备的三方 app，通过 extId、schema 生成 token */
+// AlibabaAilabUserTokenGetAPIRequest 三方账号获取 token API请求
+// alibaba.ailab.user.token.get
+//
+// inside 设备的三方 app，通过 extId、schema 生成 token
 type AlibabaAilabUserTokenGetAPIRequest struct {
 	model.Params
 	// 三方用户的唯一ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoNcwlJhorderQueryAPIResponse
-农村物流集货单查询接口 API返回值
-cainiao.ncwl.jhorder.query
-
-提供给接入商家，查询农村物流集货单 */
+// CainiaoNcwlJhorderQueryAPIResponse 农村物流集货单查询接口 API返回值
+// cainiao.ncwl.jhorder.query
+//
+// 提供给接入商家，查询农村物流集货单
 type CainiaoNcwlJhorderQueryAPIResponse struct {
 	model.CommonResponse
 	CainiaoNcwlJhorderQueryAPIResponseModel

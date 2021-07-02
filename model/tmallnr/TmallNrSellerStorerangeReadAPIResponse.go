@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrSellerStorerangeReadAPIResponse
-门店服务范围读取 API返回值
-tmall.nr.seller.storerange.read
-
-读取卖家所属门店的服务范围 */
+// TmallNrSellerStorerangeReadAPIResponse 门店服务范围读取 API返回值
+// tmall.nr.seller.storerange.read
+//
+// 读取卖家所属门店的服务范围
 type TmallNrSellerStorerangeReadAPIResponse struct {
 	model.CommonResponse
 	TmallNrSellerStorerangeReadAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailVendingRoadItemSyncAPIResponse
-贩卖机库存商品同步 API返回值
-alibaba.retail.vending.road.item.sync
-
-贩卖机库存商品同步 */
+// AlibabaRetailVendingRoadItemSyncAPIResponse 贩卖机库存商品同步 API返回值
+// alibaba.retail.vending.road.item.sync
+//
+// 贩卖机库存商品同步
 type AlibabaRetailVendingRoadItemSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailVendingRoadItemSyncAPIResponseModel

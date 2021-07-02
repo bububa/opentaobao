@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttDvbFirstorderFeedbackAPIResponse
-dvb首次安装订单反馈 API返回值
-youku.ott.dvb.firstorder.feedback
-
-dvb首次安装订单反馈 */
+// YoukuOttDvbFirstorderFeedbackAPIResponse dvb首次安装订单反馈 API返回值
+// youku.ott.dvb.firstorder.feedback
+//
+// dvb首次安装订单反馈
 type YoukuOttDvbFirstorderFeedbackAPIResponse struct {
 	model.CommonResponse
 	YoukuOttDvbFirstorderFeedbackAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvscreenLauncherGetAPIResponse
-一体机桌面 API返回值
-yunos.tvscreen.launcher.get
-
-LCTS一体机桌面后台,提供基于运营坑位适配的桌面服务 */
+// YunosTvscreenLauncherGetAPIResponse 一体机桌面 API返回值
+// yunos.tvscreen.launcher.get
+//
+// LCTS一体机桌面后台,提供基于运营坑位适配的桌面服务
 type YunosTvscreenLauncherGetAPIResponse struct {
 	model.CommonResponse
 	YunosTvscreenLauncherGetAPIResponseModel

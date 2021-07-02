@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTopSecretGetAPIResponse
-获取TOP通道解密秘钥 API返回值
-taobao.top.secret.get
-
-top sdk通过api获取对应解密秘钥 */
+// TaobaoTopSecretGetAPIResponse 获取TOP通道解密秘钥 API返回值
+// taobao.top.secret.get
+//
+// top sdk通过api获取对应解密秘钥
 type TaobaoTopSecretGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTopSecretGetAPIResponseModel

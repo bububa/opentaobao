@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosAccountCallapiAPIResponse
-调用YunOS账号开放API API返回值
-yunos.account.callapi
-
-YunOS账号客户端对外开放的api通过top暴露 */
+// YunosAccountCallapiAPIResponse 调用YunOS账号开放API API返回值
+// yunos.account.callapi
+//
+// YunOS账号客户端对外开放的api通过top暴露
 type YunosAccountCallapiAPIResponse struct {
 	model.CommonResponse
 	YunosAccountCallapiAPIResponseModel

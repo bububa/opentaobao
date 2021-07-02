@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtStallPayratioSynchronizeAPIResponse
-同步摊位收银比例 API返回值
-tmall.nrt.stall.payratio.synchronize
-
-ISV同步摊位收银比例到阿里 */
+// TmallNrtStallPayratioSynchronizeAPIResponse 同步摊位收银比例 API返回值
+// tmall.nrt.stall.payratio.synchronize
+//
+// ISV同步摊位收银比例到阿里
 type TmallNrtStallPayratioSynchronizeAPIResponse struct {
 	model.CommonResponse
 	TmallNrtStallPayratioSynchronizeAPIResponseModel

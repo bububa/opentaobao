@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewUnfreezeroleAPIResponse
-解冻角色 API返回值
-alibaba.campus.acl.new.unfreezerole
-
-解冻角色 */
+// AlibabaCampusAclNewUnfreezeroleAPIResponse 解冻角色 API返回值
+// alibaba.campus.acl.new.unfreezerole
+//
+// 解冻角色
 type AlibabaCampusAclNewUnfreezeroleAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclNewUnfreezeroleAPIResponseModel

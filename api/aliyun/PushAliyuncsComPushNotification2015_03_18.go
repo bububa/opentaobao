@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/aliyun"
 )
 
-/* PushAliyuncsComPushNotification2015_03_18
-推送通知
-push.aliyuncs.com.pushNotification.2015-03-18
-
-pushNotification */
+// PushAliyuncsComPushNotification2015_03_18 推送通知
+// push.aliyuncs.com.pushNotification.2015-03-18
+//
+// pushNotification
 func PushAliyuncsComPushNotification2015_03_18(clt *core.SDKClient, req *aliyun.PushAliyuncsComPushNotification2015_03_18APIRequest, session string) (*aliyun.PushAliyuncsComPushNotification2015_03_18APIResponse, error) {
 	var resp aliyun.PushAliyuncsComPushNotification2015_03_18APIResponse
 	err := clt.Post(req, &resp, session)

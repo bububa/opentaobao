@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCarLeaseItemcarinfoAPIResponse
-整车租赁商品四级车型信息 API返回值
-tmall.car.lease.itemcarinfo
-
-整车租赁项目发布宝贝需要4级车型库，4级车型库信息需要回传 */
+// TmallCarLeaseItemcarinfoAPIResponse 整车租赁商品四级车型信息 API返回值
+// tmall.car.lease.itemcarinfo
+//
+// 整车租赁项目发布宝贝需要4级车型库，4级车型库信息需要回传
 type TmallCarLeaseItemcarinfoAPIResponse struct {
 	model.CommonResponse
 	TmallCarLeaseItemcarinfoAPIResponseModel

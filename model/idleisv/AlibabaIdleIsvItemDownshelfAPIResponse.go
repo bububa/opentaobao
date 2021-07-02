@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleIsvItemDownshelfAPIResponse
-服务商闲鱼商品下架 API返回值
-alibaba.idle.isv.item.downshelf
-
-供外部服务商ISV进行闲鱼商品下架操作 */
+// AlibabaIdleIsvItemDownshelfAPIResponse 服务商闲鱼商品下架 API返回值
+// alibaba.idle.isv.item.downshelf
+//
+// 供外部服务商ISV进行闲鱼商品下架操作
 type AlibabaIdleIsvItemDownshelfAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleIsvItemDownshelfAPIResponseModel

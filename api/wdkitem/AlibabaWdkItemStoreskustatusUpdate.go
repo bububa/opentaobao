@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wdkitem"
 )
 
-/* AlibabaWdkItemStoreskustatusUpdate
-修改门店商品状态
-alibaba.wdk.item.storeskustatus.update
-
-五道口商品 修改门店商品状态 */
+// AlibabaWdkItemStoreskustatusUpdate 修改门店商品状态
+// alibaba.wdk.item.storeskustatus.update
+//
+// 五道口商品 修改门店商品状态
 func AlibabaWdkItemStoreskustatusUpdate(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemStoreskustatusUpdateAPIRequest, session string) (*wdkitem.AlibabaWdkItemStoreskustatusUpdateAPIResponse, error) {
 	var resp wdkitem.AlibabaWdkItemStoreskustatusUpdateAPIResponse
 	err := clt.Post(req, &resp, session)

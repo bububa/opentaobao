@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoEndpointLockerTopOrderNoticeAPIResponse
-手动触发发短信 API返回值
-cainiao.endpoint.locker.top.order.notice
-
-合作公司对订单手动触发短信，有次数限制 */
+// CainiaoEndpointLockerTopOrderNoticeAPIResponse 手动触发发短信 API返回值
+// cainiao.endpoint.locker.top.order.notice
+//
+// 合作公司对订单手动触发短信，有次数限制
 type CainiaoEndpointLockerTopOrderNoticeAPIResponse struct {
 	model.CommonResponse
 	CainiaoEndpointLockerTopOrderNoticeAPIResponseModel

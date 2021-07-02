@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemCatpropsModificationGetAPIRequest
-查询商品类目属性变更 API请求
-taobao.item.catprops.modification.get
-
-查询商品类目属性变更信息 */
+// TaobaoItemCatpropsModificationGetAPIRequest 查询商品类目属性变更 API请求
+// taobao.item.catprops.modification.get
+//
+// 查询商品类目属性变更信息
 type TaobaoItemCatpropsModificationGetAPIRequest struct {
 	model.Params
 	// 类目Id（与商品Id二选一即可）

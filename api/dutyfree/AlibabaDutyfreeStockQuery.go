@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/dutyfree"
 )
 
-/* AlibabaDutyfreeStockQuery
-对外库存查询接口
-alibaba.dutyfree.stock.query
-
-对外部服务提供库存查询接口 */
+// AlibabaDutyfreeStockQuery 对外库存查询接口
+// alibaba.dutyfree.stock.query
+//
+// 对外部服务提供库存查询接口
 func AlibabaDutyfreeStockQuery(clt *core.SDKClient, req *dutyfree.AlibabaDutyfreeStockQueryAPIRequest, session string) (*dutyfree.AlibabaDutyfreeStockQueryAPIResponse, error) {
 	var resp dutyfree.AlibabaDutyfreeStockQueryAPIResponse
 	err := clt.Post(req, &resp, session)

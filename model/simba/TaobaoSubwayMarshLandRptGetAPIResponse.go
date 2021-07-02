@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSubwayMarshLandRptGetAPIResponse
-获取捡漏词包分时报表数据 API返回值
-taobao.subway.marsh.land.rpt.get
-
-获取捡漏词包分时报表数据 */
+// TaobaoSubwayMarshLandRptGetAPIResponse 获取捡漏词包分时报表数据 API返回值
+// taobao.subway.marsh.land.rpt.get
+//
+// 获取捡漏词包分时报表数据
 type TaobaoSubwayMarshLandRptGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSubwayMarshLandRptGetAPIResponseModel

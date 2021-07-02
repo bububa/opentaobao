@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelEntityConfigAPIRequest
-飞猪商品各实体通用配置 API请求
-taobao.xhotel.entity.config
-
-飞猪商品各实体通用配置服务 */
+// TaobaoXhotelEntityConfigAPIRequest 飞猪商品各实体通用配置 API请求
+// taobao.xhotel.entity.config
+//
+// 飞猪商品各实体通用配置服务
 type TaobaoXhotelEntityConfigAPIRequest struct {
 	model.Params
 	// 实体编码，例如酒店编码，房价编码

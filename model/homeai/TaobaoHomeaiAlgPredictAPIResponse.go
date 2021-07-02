@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoHomeaiAlgPredictAPIResponse
-硬装预测接口 API返回值
-taobao.homeai.alg.predict
-
-居然之家硬装预测服务 */
+// TaobaoHomeaiAlgPredictAPIResponse 硬装预测接口 API返回值
+// taobao.homeai.alg.predict
+//
+// 居然之家硬装预测服务
 type TaobaoHomeaiAlgPredictAPIResponse struct {
 	model.CommonResponse
 	TaobaoHomeaiAlgPredictAPIResponseModel

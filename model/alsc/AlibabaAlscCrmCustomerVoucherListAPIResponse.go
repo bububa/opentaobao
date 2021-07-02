@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCustomerVoucherListAPIResponse
-获取顾客优惠券列表 API返回值
-alibaba.alsc.crm.customer.voucher.list
-
-获取顾客优惠券列表 */
+// AlibabaAlscCrmCustomerVoucherListAPIResponse 获取顾客优惠券列表 API返回值
+// alibaba.alsc.crm.customer.voucher.list
+//
+// 获取顾客优惠券列表
 type AlibabaAlscCrmCustomerVoucherListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCustomerVoucherListAPIResponseModel

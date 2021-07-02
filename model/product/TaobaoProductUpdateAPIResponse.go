@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoProductUpdateAPIResponse
-修改一个产品，可以修改主图，不能修改子图片 API返回值
-taobao.product.update
-
-传入产品ID <br/>可修改字段：outer_id,binds,sale_props,name,price,desc,image <br/>注意：1.可以修改主图,不能修改子图片,主图最大500K,目前仅支持GIF,JPG<br/>      2.商城卖家产品发布24小时后不能作删除或修改操作 */
+// TaobaoProductUpdateAPIResponse 修改一个产品，可以修改主图，不能修改子图片 API返回值
+// taobao.product.update
+//
+// 传入产品ID <br/>可修改字段：outer_id,binds,sale_props,name,price,desc,image <br/>注意：1.可以修改主图,不能修改子图片,主图最大500K,目前仅支持GIF,JPG<br/>      2.商城卖家产品发布24小时后不能作删除或修改操作
 type TaobaoProductUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoProductUpdateAPIResponseModel

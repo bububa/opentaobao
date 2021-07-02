@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkHrworkbenchCdpempsQueryAPIResponse
-homs员工信息核对查询服务 API返回值
-alibaba.wdk.hrworkbench.cdpemps.query
-
-给盒马可靠软件服务商Cdp系统，做非阿里编员工数据一致性核对检查 */
+// AlibabaWdkHrworkbenchCdpempsQueryAPIResponse homs员工信息核对查询服务 API返回值
+// alibaba.wdk.hrworkbench.cdpemps.query
+//
+// 给盒马可靠软件服务商Cdp系统，做非阿里编员工数据一致性核对检查
 type AlibabaWdkHrworkbenchCdpempsQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkHrworkbenchCdpempsQueryAPIResponseModel

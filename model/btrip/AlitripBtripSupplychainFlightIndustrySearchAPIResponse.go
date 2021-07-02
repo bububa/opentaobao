@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripSupplychainFlightIndustrySearchAPIResponse
-机票行业搜索接口 API返回值
-alitrip.btrip.supplychain.flight.industry.search
-
-【商旅】机票行业搜索 */
+// AlitripBtripSupplychainFlightIndustrySearchAPIResponse 机票行业搜索接口 API返回值
+// alitrip.btrip.supplychain.flight.industry.search
+//
+// 【商旅】机票行业搜索
 type AlitripBtripSupplychainFlightIndustrySearchAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripSupplychainFlightIndustrySearchAPIResponseModel

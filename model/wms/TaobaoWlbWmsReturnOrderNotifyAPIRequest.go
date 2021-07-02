@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsReturnOrderNotifyAPIRequest
-销售退货通知 API请求
-taobao.wlb.wms.return.order.notify
-
-销售退货通知 */
+// TaobaoWlbWmsReturnOrderNotifyAPIRequest 销售退货通知 API请求
+// taobao.wlb.wms.return.order.notify
+//
+// 销售退货通知
 type TaobaoWlbWmsReturnOrderNotifyAPIRequest struct {
 	model.Params
 	// ERP单据编码

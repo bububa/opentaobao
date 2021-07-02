@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemCarturlGetAPIResponse
-加购URL获取 API返回值
-taobao.item.carturl.get
-
-获取加购URL，支持添加商品到购物车 */
+// TaobaoItemCarturlGetAPIResponse 加购URL获取 API返回值
+// taobao.item.carturl.get
+//
+// 获取加购URL，支持添加商品到购物车
 type TaobaoItemCarturlGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemCarturlGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelCrsorderSearchAPIResponse
-CRS接送机订单列表搜索 API返回值
-alitrip.travel.crsorder.search
-
-提供给CRS商家搜索订单列表，仅返回订单号列表 */
+// AlitripTravelCrsorderSearchAPIResponse CRS接送机订单列表搜索 API返回值
+// alitrip.travel.crsorder.search
+//
+// 提供给CRS商家搜索订单列表，仅返回订单号列表
 type AlitripTravelCrsorderSearchAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelCrsorderSearchAPIResponseModel

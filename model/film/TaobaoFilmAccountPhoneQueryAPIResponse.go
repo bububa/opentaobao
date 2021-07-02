@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFilmAccountPhoneQueryAPIResponse
-根据手机查询匹配账号列表 API返回值
-taobao.film.account.phone.query
-
-根据手机号查询匹配的账号列表 */
+// TaobaoFilmAccountPhoneQueryAPIResponse 根据手机查询匹配账号列表 API返回值
+// taobao.film.account.phone.query
+//
+// 根据手机号查询匹配的账号列表
 type TaobaoFilmAccountPhoneQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoFilmAccountPhoneQueryAPIResponseModel

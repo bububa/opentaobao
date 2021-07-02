@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminDeviceQueryAPIRequest
-获取设备列表 API请求
-yunos.tvpubadmin.device.query
-
-获取设备列表 */
+// YunosTvpubadminDeviceQueryAPIRequest 获取设备列表 API请求
+// yunos.tvpubadmin.device.query
+//
+// 获取设备列表
 type YunosTvpubadminDeviceQueryAPIRequest struct {
 	model.Params
 	// 终端类型

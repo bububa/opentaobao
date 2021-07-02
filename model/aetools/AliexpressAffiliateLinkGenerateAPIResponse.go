@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressAffiliateLinkGenerateAPIResponse
-联盟推广链接生成 API返回值
-aliexpress.affiliate.link.generate
-
-AE联盟推广链接生成接口 */
+// AliexpressAffiliateLinkGenerateAPIResponse 联盟推广链接生成 API返回值
+// aliexpress.affiliate.link.generate
+//
+// AE联盟推广链接生成接口
 type AliexpressAffiliateLinkGenerateAPIResponse struct {
 	model.CommonResponse
 	AliexpressAffiliateLinkGenerateAPIResponseModel

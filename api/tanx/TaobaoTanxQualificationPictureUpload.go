@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/tanx"
 )
 
-/* TaobaoTanxQualificationPictureUpload
-资质图片上传接口
-taobao.tanx.qualification.picture.upload
-
-资质图片上传接口 */
+// TaobaoTanxQualificationPictureUpload 资质图片上传接口
+// taobao.tanx.qualification.picture.upload
+//
+// 资质图片上传接口
 func TaobaoTanxQualificationPictureUpload(clt *core.SDKClient, req *tanx.TaobaoTanxQualificationPictureUploadAPIRequest, session string) (*tanx.TaobaoTanxQualificationPictureUploadAPIResponse, error) {
 	var resp tanx.TaobaoTanxQualificationPictureUploadAPIResponse
 	err := clt.Post(req, &resp, session)

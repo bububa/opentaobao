@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* XiamiApiSongDetailGetAPIRequest
-获取歌曲详情 API请求
-xiami.api.song.detail.get
-
-获取歌曲详情 */
+// XiamiApiSongDetailGetAPIRequest 获取歌曲详情 API请求
+// xiami.api.song.detail.get
+//
+// 获取歌曲详情
 type XiamiApiSongDetailGetAPIRequest struct {
 	model.Params
 	// 歌曲id

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingAititlegenerateAPIResponse
-标题智能优化 API返回值
-alibaba.seaking.aititlegenerate
-
-标题智能优化 */
+// AlibabaSeakingAititlegenerateAPIResponse 标题智能优化 API返回值
+// alibaba.seaking.aititlegenerate
+//
+// 标题智能优化
 type AlibabaSeakingAititlegenerateAPIResponse struct {
 	model.CommonResponse
 	AlibabaSeakingAititlegenerateAPIResponseModel

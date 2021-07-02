@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkDgNewuserOrderGetAPIRequest
-淘宝客-推广者-新用户订单明细查询 API请求
-taobao.tbk.dg.newuser.order.get
-
-拉新API */
+// TaobaoTbkDgNewuserOrderGetAPIRequest 淘宝客-推广者-新用户订单明细查询 API请求
+// taobao.tbk.dg.newuser.order.get
+//
+// 拉新API
 type TaobaoTbkDgNewuserOrderGetAPIRequest struct {
 	model.Params
 	// 页大小，默认20，1~100

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsAddressAddAPIRequest
-卖家地址库新增接口 API请求
-taobao.logistics.address.add
-
-通过此接口新增卖家地址库,卖家最多可添加5条地址库,新增第一条卖家地址，将会自动设为默认地址库 */
+// TaobaoLogisticsAddressAddAPIRequest 卖家地址库新增接口 API请求
+// taobao.logistics.address.add
+//
+// 通过此接口新增卖家地址库,卖家最多可添加5条地址库,新增第一条卖家地址，将会自动设为默认地址库
 type TaobaoLogisticsAddressAddAPIRequest struct {
 	model.Params
 	// 联系人姓名 <font color='red'>长度不可超过20个字节</font>

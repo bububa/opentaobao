@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaImapFixedmappingQueryAPIRequest
-查询两个渠道之间的固定映射关系，不通过算法兜底 API请求
-alibaba.imap.fixedmapping.query
-
-查询两个渠道之间的固定映射关系，不通过算法兜底 */
+// AlibabaImapFixedmappingQueryAPIRequest 查询两个渠道之间的固定映射关系，不通过算法兜底 API请求
+// alibaba.imap.fixedmapping.query
+//
+// 查询两个渠道之间的固定映射关系，不通过算法兜底
 type AlibabaImapFixedmappingQueryAPIRequest struct {
 	model.Params
 	// 密码

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-/* TaobaoOmniitemCategoryGet
-全渠道商品轻发布类目信息
-taobao.omniitem.category.get
-
-全渠道商品轻发布类目信息 */
+// TaobaoOmniitemCategoryGet 全渠道商品轻发布类目信息
+// taobao.omniitem.category.get
+//
+// 全渠道商品轻发布类目信息
 func TaobaoOmniitemCategoryGet(clt *core.SDKClient, req *omniorder.TaobaoOmniitemCategoryGetAPIRequest, session string) (*omniorder.TaobaoOmniitemCategoryGetAPIResponse, error) {
 	var resp omniorder.TaobaoOmniitemCategoryGetAPIResponse
 	err := clt.Post(req, &resp, session)

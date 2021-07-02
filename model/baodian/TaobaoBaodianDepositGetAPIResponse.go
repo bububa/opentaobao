@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBaodianDepositGetAPIResponse
-宝点用户帐户查询（已迁移） API返回值
-taobao.baodian.deposit.get
-
-查询用户宝点帐户信息及当前宝点价格 */
+// TaobaoBaodianDepositGetAPIResponse 宝点用户帐户查询（已迁移） API返回值
+// taobao.baodian.deposit.get
+//
+// 查询用户宝点帐户信息及当前宝点价格
 type TaobaoBaodianDepositGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBaodianDepositGetAPIResponseModel

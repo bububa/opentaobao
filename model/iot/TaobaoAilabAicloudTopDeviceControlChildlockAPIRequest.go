@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest
-设备儿童锁 API请求
-taobao.ailab.aicloud.top.device.control.childlock
-
-设备儿童锁 */
+// TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest 设备儿童锁 API请求
+// taobao.ailab.aicloud.top.device.control.childlock
+//
+// 设备儿童锁
 type TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest struct {
 	model.Params
 	// 用户信息

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallHkOrderClearanceQueryAPIResponse
-天猫国际订单清关信息 API返回值
-tmall.hk.order.clearance.query
-
-天猫国际订单清关信息查询 */
+// TmallHkOrderClearanceQueryAPIResponse 天猫国际订单清关信息 API返回值
+// tmall.hk.order.clearance.query
+//
+// 天猫国际订单清关信息查询
 type TmallHkOrderClearanceQueryAPIResponse struct {
 	model.CommonResponse
 	TmallHkOrderClearanceQueryAPIResponseModel

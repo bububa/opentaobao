@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoConsignplatformOrderCreateAPIResponse
-菜鸟发货工作台创建订单 API返回值
-cainiao.consignplatform.order.create
-
-菜鸟发货工作台，商家或者isv通过api进行订单写入操作 */
+// CainiaoConsignplatformOrderCreateAPIResponse 菜鸟发货工作台创建订单 API返回值
+// cainiao.consignplatform.order.create
+//
+// 菜鸟发货工作台，商家或者isv通过api进行订单写入操作
 type CainiaoConsignplatformOrderCreateAPIResponse struct {
 	model.CommonResponse
 	CainiaoConsignplatformOrderCreateAPIResponseModel

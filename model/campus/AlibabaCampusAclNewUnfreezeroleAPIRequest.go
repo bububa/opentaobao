@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewUnfreezeroleAPIRequest
-解冻角色 API请求
-alibaba.campus.acl.new.unfreezerole
-
-解冻角色 */
+// AlibabaCampusAclNewUnfreezeroleAPIRequest 解冻角色 API请求
+// alibaba.campus.acl.new.unfreezerole
+//
+// 解冻角色
 type AlibabaCampusAclNewUnfreezeroleAPIRequest struct {
 	model.Params
 	// 系统参数

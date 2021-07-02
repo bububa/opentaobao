@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpProductStatusUpdateAPIRequest
-修改P4P产品推广状态 API请求
-alibaba.scbp.product.status.update
-
-修改P4P产品推广状态 */
+// AlibabaScbpProductStatusUpdateAPIRequest 修改P4P产品推广状态 API请求
+// alibaba.scbp.product.status.update
+//
+// 修改P4P产品推广状态
 type AlibabaScbpProductStatusUpdateAPIRequest struct {
 	model.Params
 	// 产品ID列表

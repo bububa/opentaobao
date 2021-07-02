@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingTranslateAPIRequest
-MT定制接口 API请求
-alibaba.seaking.translate
-
-MT定制接口 */
+// AlibabaSeakingTranslateAPIRequest MT定制接口 API请求
+// alibaba.seaking.translate
+//
+// MT定制接口
 type AlibabaSeakingTranslateAPIRequest struct {
 	model.Params
 	// 定制用户id

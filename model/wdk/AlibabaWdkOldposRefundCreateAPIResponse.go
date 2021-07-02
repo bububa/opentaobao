@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkOldposRefundCreateAPIResponse
-五道口外部商户老pos机产生的退款单同步进盒马 API返回值
-alibaba.wdk.oldpos.refund.create
-
-淘鲜达外部商户老pos机产生的退款单同步进淘鲜达 */
+// AlibabaWdkOldposRefundCreateAPIResponse 五道口外部商户老pos机产生的退款单同步进盒马 API返回值
+// alibaba.wdk.oldpos.refund.create
+//
+// 淘鲜达外部商户老pos机产生的退款单同步进淘鲜达
 type AlibabaWdkOldposRefundCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkOldposRefundCreateAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelServicetimeGetAPIResponse
-查询实体对应的服务时间数据 API返回值
-taobao.xhotel.servicetime.get
-
-通过实体来获取对应的服务时间数据 */
+// TaobaoXhotelServicetimeGetAPIResponse 查询实体对应的服务时间数据 API返回值
+// taobao.xhotel.servicetime.get
+//
+// 通过实体来获取对应的服务时间数据
 type TaobaoXhotelServicetimeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelServicetimeGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugcodeApplycertAPIResponse
-申请证书为对接方 API返回值
-alibaba.alihealth.drugcode.applycert
-
-申请证书 为对接方(当前是药厂和中心化系统) */
+// AlibabaAlihealthDrugcodeApplycertAPIResponse 申请证书为对接方 API返回值
+// alibaba.alihealth.drugcode.applycert
+//
+// 申请证书 为对接方(当前是药厂和中心化系统)
 type AlibabaAlihealthDrugcodeApplycertAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugcodeApplycertAPIResponseModel

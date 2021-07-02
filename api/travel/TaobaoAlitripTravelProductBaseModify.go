@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/travel"
 )
 
-/* TaobaoAlitripTravelProductBaseModify
-供应商编辑产品API
-taobao.alitrip.travel.product.base.modify
-
-飞猪供销平台供应商可通过该API编辑产品 */
+// TaobaoAlitripTravelProductBaseModify 供应商编辑产品API
+// taobao.alitrip.travel.product.base.modify
+//
+// 飞猪供销平台供应商可通过该API编辑产品
 func TaobaoAlitripTravelProductBaseModify(clt *core.SDKClient, req *travel.TaobaoAlitripTravelProductBaseModifyAPIRequest, session string) (*travel.TaobaoAlitripTravelProductBaseModifyAPIResponse, error) {
 	var resp travel.TaobaoAlitripTravelProductBaseModifyAPIResponse
 	err := clt.Post(req, &resp, session)

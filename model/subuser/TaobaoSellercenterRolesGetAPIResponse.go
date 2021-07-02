@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSellercenterRolesGetAPIResponse
-获取指定卖家的角色列表 API返回值
-taobao.sellercenter.roles.get
-
-获取指定卖家的角色列表，只能获取属于登陆者自己的信息。 */
+// TaobaoSellercenterRolesGetAPIResponse 获取指定卖家的角色列表 API返回值
+// taobao.sellercenter.roles.get
+//
+// 获取指定卖家的角色列表，只能获取属于登陆者自己的信息。
 type TaobaoSellercenterRolesGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSellercenterRolesGetAPIResponseModel

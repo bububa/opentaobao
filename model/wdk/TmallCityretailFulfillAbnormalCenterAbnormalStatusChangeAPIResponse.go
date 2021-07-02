@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponse
-同城零售履约异常中心异常单处理结果回调接口 API返回值
-tmall.cityretail.fulfill.abnormal.center.abnormal.status.change
-
-同城零售履约异常中心异常单处理结果回调接口 */
+// TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponse 同城零售履约异常中心异常单处理结果回调接口 API返回值
+// tmall.cityretail.fulfill.abnormal.center.abnormal.status.change
+//
+// 同城零售履约异常中心异常单处理结果回调接口
 type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponse struct {
 	model.CommonResponse
 	TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkOrderFinanceBillQueryAPIResponse
-资金合规商家账单 API返回值
-alibaba.wdk.order.finance.bill.query
-
-拉取资金合规商家账单 */
+// AlibabaWdkOrderFinanceBillQueryAPIResponse 资金合规商家账单 API返回值
+// alibaba.wdk.order.finance.bill.query
+//
+// 拉取资金合规商家账单
 type AlibabaWdkOrderFinanceBillQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkOrderFinanceBillQueryAPIResponseModel

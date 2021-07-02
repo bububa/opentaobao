@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAiUserQuickBindAPIRequest
-精灵用户绑定第三方账号信息 API请求
-alibaba.ai.user.quick.bind
-
-人工智能实验室精灵用户绑定第三方账号信息接口，开放给Iot厂商做为厂商上送第三方账号信息的接口 */
+// AlibabaAiUserQuickBindAPIRequest 精灵用户绑定第三方账号信息 API请求
+// alibaba.ai.user.quick.bind
+//
+// 人工智能实验室精灵用户绑定第三方账号信息接口，开放给Iot厂商做为厂商上送第三方账号信息的接口
 type AlibabaAiUserQuickBindAPIRequest struct {
 	model.Params
 	// 交易流水号（唯一即可，不参与业务运算）

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsConsignBillGetAPIResponse
-获取销售订单发货信息 API返回值
-taobao.wlb.wms.consign.bill.get
-
-获取销售订单发货信息 */
+// TaobaoWlbWmsConsignBillGetAPIResponse 获取销售订单发货信息 API返回值
+// taobao.wlb.wms.consign.bill.get
+//
+// 获取销售订单发货信息
 type TaobaoWlbWmsConsignBillGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsConsignBillGetAPIResponseModel

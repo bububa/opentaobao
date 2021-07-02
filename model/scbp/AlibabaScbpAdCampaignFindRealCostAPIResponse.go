@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdCampaignFindRealCostAPIResponse
-批量查询计划消耗数据 API返回值
-alibaba.scbp.ad.campaign.find.real.cost
-
-批量查询计划消耗数据 */
+// AlibabaScbpAdCampaignFindRealCostAPIResponse 批量查询计划消耗数据 API返回值
+// alibaba.scbp.ad.campaign.find.real.cost
+//
+// 批量查询计划消耗数据
 type AlibabaScbpAdCampaignFindRealCostAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdCampaignFindRealCostAPIResponseModel

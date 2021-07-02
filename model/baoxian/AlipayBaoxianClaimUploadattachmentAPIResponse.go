@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlipayBaoxianClaimUploadattachmentAPIResponse
-资料上传接口 API返回值
-alipay.baoxian.claim.uploadattachment
-
-给合作伙伴上传申请理赔材料 */
+// AlipayBaoxianClaimUploadattachmentAPIResponse 资料上传接口 API返回值
+// alipay.baoxian.claim.uploadattachment
+//
+// 给合作伙伴上传申请理赔材料
 type AlipayBaoxianClaimUploadattachmentAPIResponse struct {
 	model.CommonResponse
 	AlipayBaoxianClaimUploadattachmentAPIResponseModel

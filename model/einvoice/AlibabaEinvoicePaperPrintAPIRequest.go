@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoicePaperPrintAPIRequest
-纸票打印接口 API请求
-alibaba.einvoice.paper.print
-
-打印一张已开具成功的纸票 */
+// AlibabaEinvoicePaperPrintAPIRequest 纸票打印接口 API请求
+// alibaba.einvoice.paper.print
+//
+// 打印一张已开具成功的纸票
 type AlibabaEinvoicePaperPrintAPIRequest struct {
 	model.Params
 	// 打印框设置，0=不弹打印设置框，1=弹出打印设置框

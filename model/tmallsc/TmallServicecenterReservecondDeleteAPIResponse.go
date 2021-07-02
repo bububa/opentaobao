@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterReservecondDeleteAPIResponse
-删除主动预约开通条件 API返回值
-tmall.servicecenter.reservecond.delete
-
-删除主动预约开通条件 */
+// TmallServicecenterReservecondDeleteAPIResponse 删除主动预约开通条件 API返回值
+// tmall.servicecenter.reservecond.delete
+//
+// 删除主动预约开通条件
 type TmallServicecenterReservecondDeleteAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterReservecondDeleteAPIResponseModel

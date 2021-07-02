@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDegoperationShowUserRecordsAPIRequest
-用户中奖记录 API请求
-taobao.degoperation.show.user.records
-
-用户中奖记录 */
+// TaobaoDegoperationShowUserRecordsAPIRequest 用户中奖记录 API请求
+// taobao.degoperation.show.user.records
+//
+// 用户中奖记录
 type TaobaoDegoperationShowUserRecordsAPIRequest struct {
 	model.Params
 	// 活动后台配置

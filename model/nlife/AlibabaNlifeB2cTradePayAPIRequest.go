@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2cTradePayAPIRequest
-零售+平台支付订单 API请求
-alibaba.nlife.b2c.trade.pay
-
-零售+平台支付接口，外部商户调用此接口告知零售+支付结果，保持订单状态同步 */
+// AlibabaNlifeB2cTradePayAPIRequest 零售+平台支付订单 API请求
+// alibaba.nlife.b2c.trade.pay
+//
+// 零售+平台支付接口，外部商户调用此接口告知零售+支付结果，保持订单状态同步
 type AlibabaNlifeB2cTradePayAPIRequest struct {
 	model.Params
 	// 零售+平台订单号，和out_trade_no不能同时为空

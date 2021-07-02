@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugCodeErrorReportAPIResponse
-码信息错误上报 API返回值
-alibaba.alihealth.drug.code.error.report
-
-提供码信息错误上报功能，用于数据校对 */
+// AlibabaAlihealthDrugCodeErrorReportAPIResponse 码信息错误上报 API返回值
+// alibaba.alihealth.drug.code.error.report
+//
+// 提供码信息错误上报功能，用于数据校对
 type AlibabaAlihealthDrugCodeErrorReportAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugCodeErrorReportAPIResponseModel

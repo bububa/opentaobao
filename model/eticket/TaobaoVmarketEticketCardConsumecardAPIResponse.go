@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketCardConsumecardAPIResponse
-电子凭证储值卡核销 API返回值
-taobao.vmarket.eticket.card.consumecard
-
-线下商户核销时，ISV调用电子凭证的isv接口来对电子凭证储值卡核销对应金额 */
+// TaobaoVmarketEticketCardConsumecardAPIResponse 电子凭证储值卡核销 API返回值
+// taobao.vmarket.eticket.card.consumecard
+//
+// 线下商户核销时，ISV调用电子凭证的isv接口来对电子凭证储值卡核销对应金额
 type TaobaoVmarketEticketCardConsumecardAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketCardConsumecardAPIResponseModel

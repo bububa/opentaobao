@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripShipProductSyncnunberAPIResponse
-船票班次变更回调 API返回值
-alitrip.ship.product.syncnunber
-
-船票班次变更回调 */
+// AlitripShipProductSyncnunberAPIResponse 船票班次变更回调 API返回值
+// alitrip.ship.product.syncnunber
+//
+// 船票班次变更回调
 type AlitripShipProductSyncnunberAPIResponse struct {
 	model.CommonResponse
 	AlitripShipProductSyncnunberAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizItemLightUpAPIResponse
-商品条码亮灯API API返回值
-taobao.uscesl.biz.item.light.up
-
-亮灯API */
+// TaobaoUsceslBizItemLightUpAPIResponse 商品条码亮灯API API返回值
+// taobao.uscesl.biz.item.light.up
+//
+// 亮灯API
 type TaobaoUsceslBizItemLightUpAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsceslBizItemLightUpAPIResponseModel

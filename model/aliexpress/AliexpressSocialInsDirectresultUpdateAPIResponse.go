@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliexpressSocialInsDirectresultUpdateAPIResponse
-ISV更新INS私信发送的结果 API返回值
-aliexpress.social.ins.directresult.update
-
-ISV更新INS私信发送的结果 */
+// AliexpressSocialInsDirectresultUpdateAPIResponse ISV更新INS私信发送的结果 API返回值
+// aliexpress.social.ins.directresult.update
+//
+// ISV更新INS私信发送的结果
 type AliexpressSocialInsDirectresultUpdateAPIResponse struct {
 	model.CommonResponse
 	AliexpressSocialInsDirectresultUpdateAPIResponseModel

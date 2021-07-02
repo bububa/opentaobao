@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoScitemUpdateAPIRequest
-根据商品ID或商家编码修改后端商品 API请求
-taobao.scitem.update
-
-根据商品ID或商家编码修改后端商品 */
+// TaobaoScitemUpdateAPIRequest 根据商品ID或商家编码修改后端商品 API请求
+// taobao.scitem.update
+//
+// 根据商品ID或商家编码修改后端商品
 type TaobaoScitemUpdateAPIRequest struct {
 	model.Params
 	// 后端商品ID，跟outer_code必须指定一个

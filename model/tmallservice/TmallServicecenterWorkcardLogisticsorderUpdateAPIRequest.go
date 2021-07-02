@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest
-物流工单履约状态更新 API请求
-tmall.servicecenter.workcard.logisticsorder.update
-
-天猫寄送类服务对接外部物流服务商回传物流状态信息 */
+// TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest 物流工单履约状态更新 API请求
+// tmall.servicecenter.workcard.logisticsorder.update
+//
+// 天猫寄送类服务对接外部物流服务商回传物流状态信息
 type TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest struct {
 	model.Params
 	// 体积 单位 立方毫米

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-/* TmallItemStoreSchemaUpdate
-天猫门店商品编辑
-tmall.item.store.schema.update
-
-天猫门店商品编辑 */
+// TmallItemStoreSchemaUpdate 天猫门店商品编辑
+// tmall.item.store.schema.update
+//
+// 天猫门店商品编辑
 func TmallItemStoreSchemaUpdate(clt *core.SDKClient, req *product.TmallItemStoreSchemaUpdateAPIRequest, session string) (*product.TmallItemStoreSchemaUpdateAPIResponse, error) {
 	var resp product.TmallItemStoreSchemaUpdateAPIResponse
 	err := clt.Post(req, &resp, session)

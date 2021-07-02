@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-/* AlibabaIdleRentOrderSenditem
-确认发货
-alibaba.idle.rent.order.senditem
-
-确认发货 */
+// AlibabaIdleRentOrderSenditem 确认发货
+// alibaba.idle.rent.order.senditem
+//
+// 确认发货
 func AlibabaIdleRentOrderSenditem(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderSenditemAPIRequest, session string) (*idle.AlibabaIdleRentOrderSenditemAPIResponse, error) {
 	var resp idle.AlibabaIdleRentOrderSenditemAPIResponse
 	err := clt.Post(req, &resp, session)

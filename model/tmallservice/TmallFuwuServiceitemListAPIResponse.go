@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallFuwuServiceitemListAPIResponse
-获取服务商品扩展信息 API返回值
-tmall.fuwu.serviceitem.list
-
-获取服务商品扩展信息 */
+// TmallFuwuServiceitemListAPIResponse 获取服务商品扩展信息 API返回值
+// tmall.fuwu.serviceitem.list
+//
+// 获取服务商品扩展信息
 type TmallFuwuServiceitemListAPIResponse struct {
 	model.CommonResponse
 	TmallFuwuServiceitemListAPIResponseModel

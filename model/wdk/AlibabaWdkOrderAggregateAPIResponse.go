@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkOrderAggregateAPIResponse
-淘鲜达订单按门店机台号聚合查询 API返回值
-alibaba.wdk.order.aggregate
-
-淘鲜达订单按门店机台号聚合查询 */
+// AlibabaWdkOrderAggregateAPIResponse 淘鲜达订单按门店机台号聚合查询 API返回值
+// alibaba.wdk.order.aggregate
+//
+// 淘鲜达订单按门店机台号聚合查询
 type AlibabaWdkOrderAggregateAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkOrderAggregateAPIResponseModel

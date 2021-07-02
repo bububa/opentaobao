@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminContentAdvertQueryscheduleAPIResponse
-广告牌照管控查询 API返回值
-yunos.tvpubadmin.content.advert.queryschedule
-
-广告牌照管控查询 */
+// YunosTvpubadminContentAdvertQueryscheduleAPIResponse 广告牌照管控查询 API返回值
+// yunos.tvpubadmin.content.advert.queryschedule
+//
+// 广告牌照管控查询
 type YunosTvpubadminContentAdvertQueryscheduleAPIResponse struct {
 	model.CommonResponse
 	YunosTvpubadminContentAdvertQueryscheduleAPIResponseModel

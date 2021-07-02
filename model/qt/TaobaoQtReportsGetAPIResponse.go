@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQtReportsGetAPIResponse
-批量查询质检报告 API返回值
-taobao.qt.reports.get
-
-批量查询质检报告，目前只支持查询qtType=11（天猫真假鉴定）类型的报告 */
+// TaobaoQtReportsGetAPIResponse 批量查询质检报告 API返回值
+// taobao.qt.reports.get
+//
+// 批量查询质检报告，目前只支持查询qtType=11（天猫真假鉴定）类型的报告
 type TaobaoQtReportsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoQtReportsGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbWmsStockInOrderNotifyAPIResponse
-入库通知单 API返回值
-taobao.wlb.wms.stock.in.order.notify
-
-入库通知单 */
+// TaobaoWlbWmsStockInOrderNotifyAPIResponse 入库通知单 API返回值
+// taobao.wlb.wms.stock.in.order.notify
+//
+// 入库通知单
 type TaobaoWlbWmsStockInOrderNotifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsStockInOrderNotifyAPIResponseModel

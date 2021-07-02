@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMessageListAPIResponse
-获取留言列表 API返回值
-taobao.ailab.aicloud.top.message.list
-
-根据指定参数获取留言列表 */
+// TaobaoAilabAicloudTopMessageListAPIResponse 获取留言列表 API返回值
+// taobao.ailab.aicloud.top.message.list
+//
+// 根据指定参数获取留言列表
 type TaobaoAilabAicloudTopMessageListAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMessageListAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse
-计算渠道用户下单快递费 API返回值
-alibaba.damai.maitix.distribution.delivery.calculate
-
-计算渠道用户下单快递费 */
+// AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse 计算渠道用户下单快递费 API返回值
+// alibaba.damai.maitix.distribution.delivery.calculate
+//
+// 计算渠道用户下单快递费
 type AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponseModel

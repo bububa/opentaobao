@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentChangeAgreeVtwoAPIResponse
-代理商同意改签v2--增加鉴权校验 API返回值
-taobao.train.agent.change.agree.vtwo
-
-代理商同意改签接口服务 */
+// TaobaoTrainAgentChangeAgreeVtwoAPIResponse 代理商同意改签v2--增加鉴权校验 API返回值
+// taobao.train.agent.change.agree.vtwo
+//
+// 代理商同意改签接口服务
 type TaobaoTrainAgentChangeAgreeVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentChangeAgreeVtwoAPIResponseModel

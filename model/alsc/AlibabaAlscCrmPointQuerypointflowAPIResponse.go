@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmPointQuerypointflowAPIResponse
-分页查询积分流水 API返回值
-alibaba.alsc.crm.point.querypointflow
-
-分页查询积分流水 */
+// AlibabaAlscCrmPointQuerypointflowAPIResponse 分页查询积分流水 API返回值
+// alibaba.alsc.crm.point.querypointflow
+//
+// 分页查询积分流水
 type AlibabaAlscCrmPointQuerypointflowAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmPointQuerypointflowAPIResponseModel

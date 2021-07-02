@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtStallPayratioSynchronizeAPIRequest
-同步摊位收银比例 API请求
-tmall.nrt.stall.payratio.synchronize
-
-ISV同步摊位收银比例到阿里 */
+// TmallNrtStallPayratioSynchronizeAPIRequest 同步摊位收银比例 API请求
+// tmall.nrt.stall.payratio.synchronize
+//
+// ISV同步摊位收银比例到阿里
 type TmallNrtStallPayratioSynchronizeAPIRequest struct {
 	model.Params
 	// 业务编码

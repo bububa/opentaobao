@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIResponse
-获取加密公钥 API返回值
-alibaba.alihealth.drugcode.drugfactory.getencrptypk
-
-获取服务端给药厂用来加密的公钥 */
+// AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIResponse 获取加密公钥 API返回值
+// alibaba.alihealth.drugcode.drugfactory.getencrptypk
+//
+// 获取服务端给药厂用来加密的公钥
 type AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIResponseModel

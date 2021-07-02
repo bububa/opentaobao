@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmOpenAssertVerifyAPIResponse
-资产核销接口 API返回值
-alibaba.alsc.crm.open.assert.verify
-
-核销储值，积分，券资产 */
+// AlibabaAlscCrmOpenAssertVerifyAPIResponse 资产核销接口 API返回值
+// alibaba.alsc.crm.open.assert.verify
+//
+// 核销储值，积分，券资产
 type AlibabaAlscCrmOpenAssertVerifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmOpenAssertVerifyAPIResponseModel

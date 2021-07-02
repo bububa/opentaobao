@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuOttPayOrderDeleteorderAPIResponse
-退订应用中心支付订单 API返回值
-youku.ott.pay.order.deleteorder
-
-应用中心sdk连续包月退订接口 */
+// YoukuOttPayOrderDeleteorderAPIResponse 退订应用中心支付订单 API返回值
+// youku.ott.pay.order.deleteorder
+//
+// 应用中心sdk连续包月退订接口
 type YoukuOttPayOrderDeleteorderAPIResponse struct {
 	model.CommonResponse
 	YoukuOttPayOrderDeleteorderAPIResponseModel

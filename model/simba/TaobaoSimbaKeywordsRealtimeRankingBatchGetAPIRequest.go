@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest
-获取关键词的新版实时排名 API请求
-taobao.simba.keywords.realtime.ranking.batch.get
-
-根据关键词ID获取关键词的新版实时排名 */
+// TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest 获取关键词的新版实时排名 API请求
+// taobao.simba.keywords.realtime.ranking.batch.get
+//
+// 根据关键词ID获取关键词的新版实时排名
 type TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest struct {
 	model.Params
 	// 旺旺名称

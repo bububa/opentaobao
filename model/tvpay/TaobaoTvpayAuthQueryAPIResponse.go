@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTvpayAuthQueryAPIResponse
-tv支付授权查询 API返回值
-taobao.tvpay.auth.query
-
-查询该用户在指定设备上是否有支付授权 */
+// TaobaoTvpayAuthQueryAPIResponse tv支付授权查询 API返回值
+// taobao.tvpay.auth.query
+//
+// 查询该用户在指定设备上是否有支付授权
 type TaobaoTvpayAuthQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoTvpayAuthQueryAPIResponseModel

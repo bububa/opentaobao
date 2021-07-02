@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInventoryPlanQueryAPIResponse
-计划库存查询 API返回值
-taobao.inventory.plan.query
-
-计划库存查询 */
+// TaobaoInventoryPlanQueryAPIResponse 计划库存查询 API返回值
+// taobao.inventory.plan.query
+//
+// 计划库存查询
 type TaobaoInventoryPlanQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoInventoryPlanQueryAPIResponseModel

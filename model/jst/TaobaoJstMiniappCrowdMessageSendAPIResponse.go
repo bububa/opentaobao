@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstMiniappCrowdMessageSendAPIResponse
-小程序活动短信发送 API返回值
-taobao.jst.miniapp.crowd.message.send
-
-小程序活动短信发送 */
+// TaobaoJstMiniappCrowdMessageSendAPIResponse 小程序活动短信发送 API返回值
+// taobao.jst.miniapp.crowd.message.send
+//
+// 小程序活动短信发送
 type TaobaoJstMiniappCrowdMessageSendAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstMiniappCrowdMessageSendAPIResponseModel

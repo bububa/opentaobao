@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsceslBizLightUpAPIRequest
-价签LED等点亮 API请求
-taobao.uscesl.biz.light.up
-
-价签LED等点亮 */
+// TaobaoUsceslBizLightUpAPIRequest 价签LED等点亮 API请求
+// taobao.uscesl.biz.light.up
+//
+// 价签LED等点亮
 type TaobaoUsceslBizLightUpAPIRequest struct {
 	model.Params
 	// 门店ID

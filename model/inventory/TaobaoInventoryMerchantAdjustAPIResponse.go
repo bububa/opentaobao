@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoInventoryMerchantAdjustAPIResponse
-货品库存商家端调整 API返回值
-taobao.inventory.merchant.adjust
-
-货品库存商家端调整 ，入库，出库，盘点 */
+// TaobaoInventoryMerchantAdjustAPIResponse 货品库存商家端调整 API返回值
+// taobao.inventory.merchant.adjust
+//
+// 货品库存商家端调整 ，入库，出库，盘点
 type TaobaoInventoryMerchantAdjustAPIResponse struct {
 	model.CommonResponse
 	TaobaoInventoryMerchantAdjustAPIResponseModel

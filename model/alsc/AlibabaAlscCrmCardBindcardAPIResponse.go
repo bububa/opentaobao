@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCardBindcardAPIResponse
-绑定物理卡 API返回值
-alibaba.alsc.crm.card.bindcard
-
-将会员卡和实例物理卡绑定在一起 */
+// AlibabaAlscCrmCardBindcardAPIResponse 绑定物理卡 API返回值
+// alibaba.alsc.crm.card.bindcard
+//
+// 将会员卡和实例物理卡绑定在一起
 type AlibabaAlscCrmCardBindcardAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCardBindcardAPIResponseModel

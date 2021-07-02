@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoicePartnerUploadAPIRequest
-服务商发票上传接口（非授权） API请求
-alibaba.einvoice.partner.upload
-
-服务商发票上传接口（非授权） */
+// AlibabaEinvoicePartnerUploadAPIRequest 服务商发票上传接口（非授权） API请求
+// alibaba.einvoice.partner.upload
+//
+// 服务商发票上传接口（非授权）
 type AlibabaEinvoicePartnerUploadAPIRequest struct {
 	model.Params
 	// 原蓝票发票号码

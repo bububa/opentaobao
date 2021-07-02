@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest
-疫苗预约门店列表查询 API请求
-alibaba.taobao.micdetail.alihealth.querystores
-
-微信小程序疫苗预约门店列表查询 */
+// AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest 疫苗预约门店列表查询 API请求
+// alibaba.taobao.micdetail.alihealth.querystores
+//
+// 微信小程序疫苗预约门店列表查询
 type AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest struct {
 	model.Params
 	// 0不查询库存1查询库存

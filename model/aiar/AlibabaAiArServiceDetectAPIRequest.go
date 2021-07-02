@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAiArServiceDetectAPIRequest
-ailab AR图像检索 API请求
-alibaba.ai.ar.service.detect
-
-ailab AR图像检索 */
+// AlibabaAiArServiceDetectAPIRequest ailab AR图像检索 API请求
+// alibaba.ai.ar.service.detect
+//
+// ailab AR图像检索
 type AlibabaAiArServiceDetectAPIRequest struct {
 	model.Params
 	// 原始图像数据

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoRegionWarehouseQueryAPIResponse
-查询仓库覆盖范围 API返回值
-taobao.region.warehouse.query
-
-查询仓库覆盖范围 */
+// TaobaoRegionWarehouseQueryAPIResponse 查询仓库覆盖范围 API返回值
+// taobao.region.warehouse.query
+//
+// 查询仓库覆盖范围
 type TaobaoRegionWarehouseQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoRegionWarehouseQueryAPIResponseModel

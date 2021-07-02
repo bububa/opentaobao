@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/wdkitem"
 )
 
-/* AlibabaWdkItemMorebarcodeOps
-商品一品多码维护操作
-alibaba.wdk.item.morebarcode.ops
-
-商品一品多码维护操作 */
+// AlibabaWdkItemMorebarcodeOps 商品一品多码维护操作
+// alibaba.wdk.item.morebarcode.ops
+//
+// 商品一品多码维护操作
 func AlibabaWdkItemMorebarcodeOps(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMorebarcodeOpsAPIRequest, session string) (*wdkitem.AlibabaWdkItemMorebarcodeOpsAPIResponse, error) {
 	var resp wdkitem.AlibabaWdkItemMorebarcodeOpsAPIResponse
 	err := clt.Post(req, &resp, session)

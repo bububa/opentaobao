@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsConsignOrderCreateandsendAPIRequest
-创建订单并发货 API请求
-taobao.logistics.consign.order.createandsend
-
-创建物流订单，并发货。 */
+// TaobaoLogisticsConsignOrderCreateandsendAPIRequest 创建订单并发货 API请求
+// taobao.logistics.consign.order.createandsend
+//
+// 创建物流订单，并发货。
 type TaobaoLogisticsConsignOrderCreateandsendAPIRequest struct {
 	model.Params
 	// 用户ID

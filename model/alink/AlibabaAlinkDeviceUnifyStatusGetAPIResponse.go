@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlinkDeviceUnifyStatusGetAPIResponse
-查询设备标准属性最新状态 API返回值
-alibaba.alink.device.unify.status.get
-
-查询设备最新标准属性状态 */
+// AlibabaAlinkDeviceUnifyStatusGetAPIResponse 查询设备标准属性最新状态 API返回值
+// alibaba.alink.device.unify.status.get
+//
+// 查询设备最新标准属性状态
 type AlibabaAlinkDeviceUnifyStatusGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlinkDeviceUnifyStatusGetAPIResponseModel

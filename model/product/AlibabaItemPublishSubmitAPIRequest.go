@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItemPublishSubmitAPIRequest
-商品发布 API请求
-alibaba.item.publish.submit
-
-新商品发布，提交商品发布信息 */
+// AlibabaItemPublishSubmitAPIRequest 商品发布 API请求
+// alibaba.item.publish.submit
+//
+// 新商品发布，提交商品发布信息
 type AlibabaItemPublishSubmitAPIRequest struct {
 	model.Params
 	// 业务扩展参数，需与平台约定好

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemAnchorGetAPIResponse
-获取可用宝贝描述规范化模块 API返回值
-taobao.item.anchor.get
-
-根据类目id和宝贝描述规范化打标类型获取该类目可用的宝贝描述模块中的锚点 */
+// TaobaoItemAnchorGetAPIResponse 获取可用宝贝描述规范化模块 API返回值
+// taobao.item.anchor.get
+//
+// 根据类目id和宝贝描述规范化打标类型获取该类目可用的宝贝描述模块中的锚点
 type TaobaoItemAnchorGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemAnchorGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingDiscountItemRemoveAsyncAPIResponse
-特价批量移除商品 API返回值
-alibaba.wdk.marketing.discount.item.remove.async
-
-特价批量移除商品 */
+// AlibabaWdkMarketingDiscountItemRemoveAsyncAPIResponse 特价批量移除商品 API返回值
+// alibaba.wdk.marketing.discount.item.remove.async
+//
+// 特价批量移除商品
 type AlibabaWdkMarketingDiscountItemRemoveAsyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingDiscountItemRemoveAsyncAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeB2cTradeRefundAPIRequest
-零售+请求退款 API请求
-alibaba.nlife.b2c.trade.refund
-
-零售+平台请求退款接口，在零售+平台不会有资金流变动，只是订单状态的更新 */
+// AlibabaNlifeB2cTradeRefundAPIRequest 零售+请求退款 API请求
+// alibaba.nlife.b2c.trade.refund
+//
+// 零售+平台请求退款接口，在零售+平台不会有资金流变动，只是订单状态的更新
 type AlibabaNlifeB2cTradeRefundAPIRequest struct {
 	model.Params
 	// 零售+平台订单号，和out_trade_no不能同时为空

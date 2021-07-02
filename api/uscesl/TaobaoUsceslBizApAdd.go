@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/uscesl"
 )
 
-/* TaobaoUsceslBizApAdd
-新增价签通讯AP设备
-taobao.uscesl.biz.ap.add
-
-根据门店和ap的MAC地址新增 */
+// TaobaoUsceslBizApAdd 新增价签通讯AP设备
+// taobao.uscesl.biz.ap.add
+//
+// 根据门店和ap的MAC地址新增
 func TaobaoUsceslBizApAdd(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizApAddAPIRequest, session string) (*uscesl.TaobaoUsceslBizApAddAPIResponse, error) {
 	var resp uscesl.TaobaoUsceslBizApAddAPIResponse
 	err := clt.Post(req, &resp, session)

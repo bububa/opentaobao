@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketAuthConsumeAPIRequest
-核销放行的核销接口 API请求
-taobao.vmarket.eticket.auth.consume
-
-针对O2O电子凭证核销放行业务，为满足码商能够核销淘宝码而开放的核销接口 */
+// TaobaoVmarketEticketAuthConsumeAPIRequest 核销放行的核销接口 API请求
+// taobao.vmarket.eticket.auth.consume
+//
+// 针对O2O电子凭证核销放行业务，为满足码商能够核销淘宝码而开放的核销接口
 type TaobaoVmarketEticketAuthConsumeAPIRequest struct {
 	model.Params
 	// 核销的码，只支持单个码，多个码核销需要多次调用

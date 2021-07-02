@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjOcWritesaleslipAPIResponse
-开票占库 API返回值
-alibaba.mj.oc.writesaleslip
-
-开票占库 */
+// AlibabaMjOcWritesaleslipAPIResponse 开票占库 API返回值
+// alibaba.mj.oc.writesaleslip
+//
+// 开票占库
 type AlibabaMjOcWritesaleslipAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcWritesaleslipAPIResponseModel

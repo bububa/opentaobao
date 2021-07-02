@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmExchangeActivityCreateAPIResponse
-创建积分兑换活动 API返回值
-taobao.crm.exchange.activity.create
-
-创建针对积分兑换类型的活动 */
+// TaobaoCrmExchangeActivityCreateAPIResponse 创建积分兑换活动 API返回值
+// taobao.crm.exchange.activity.create
+//
+// 创建针对积分兑换类型的活动
 type TaobaoCrmExchangeActivityCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmExchangeActivityCreateAPIResponseModel

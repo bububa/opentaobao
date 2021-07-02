@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductImportFromAuctionAPIResponse
-导入商品生成产品 API返回值
-taobao.fenxiao.product.import.from.auction
-
-供应商选择关联店铺的前台宝贝，导入生成产品 */
+// TaobaoFenxiaoProductImportFromAuctionAPIResponse 导入商品生成产品 API返回值
+// taobao.fenxiao.product.import.from.auction
+//
+// 供应商选择关联店铺的前台宝贝，导入生成产品
 type TaobaoFenxiaoProductImportFromAuctionAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductImportFromAuctionAPIResponseModel

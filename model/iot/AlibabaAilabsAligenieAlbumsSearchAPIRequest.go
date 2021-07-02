@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsAligenieAlbumsSearchAPIRequest
-查询专辑 API请求
-alibaba.ailabs.aligenie.albums.search
-
-搜索类目下的专辑信息 */
+// AlibabaAilabsAligenieAlbumsSearchAPIRequest 查询专辑 API请求
+// alibaba.ailabs.aligenie.albums.search
+//
+// 搜索类目下的专辑信息
 type AlibabaAilabsAligenieAlbumsSearchAPIRequest struct {
 	model.Params
 	// 账户体系隔离

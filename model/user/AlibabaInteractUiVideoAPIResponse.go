@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractUiVideoAPIResponse
-视频播放 API返回值
-alibaba.interact.ui.video
-
-Weex页面播放视频 */
+// AlibabaInteractUiVideoAPIResponse 视频播放 API返回值
+// alibaba.interact.ui.video
+//
+// Weex页面播放视频
 type AlibabaInteractUiVideoAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractUiVideoAPIResponseModel

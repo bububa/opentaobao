@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaKeywordsbykeywordidsGetAPIResponse
-根据一个关键词Id列表取得一组关键词 API返回值
-taobao.simba.keywordsbykeywordids.get
-
-根据一个关键词Id列表取得一组关键词 */
+// TaobaoSimbaKeywordsbykeywordidsGetAPIResponse 根据一个关键词Id列表取得一组关键词 API返回值
+// taobao.simba.keywordsbykeywordids.get
+//
+// 根据一个关键词Id列表取得一组关键词
 type TaobaoSimbaKeywordsbykeywordidsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaKeywordsbykeywordidsGetAPIResponseModel

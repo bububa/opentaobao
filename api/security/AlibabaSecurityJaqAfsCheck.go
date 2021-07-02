@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-/* AlibabaSecurityJaqAfsCheck
-反欺诈二次验证接口
-alibaba.security.jaq.afs.check
-
-反欺诈二次验证接口 */
+// AlibabaSecurityJaqAfsCheck 反欺诈二次验证接口
+// alibaba.security.jaq.afs.check
+//
+// 反欺诈二次验证接口
 func AlibabaSecurityJaqAfsCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqAfsCheckAPIRequest, session string) (*security.AlibabaSecurityJaqAfsCheckAPIResponse, error) {
 	var resp security.AlibabaSecurityJaqAfsCheckAPIResponse
 	err := clt.Post(req, &resp, session)

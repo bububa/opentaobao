@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoBusCancleorderSetAPIResponse
-取消订单 API返回值
-taobao.bus.cancleorder.set
-
-取消订单 */
+// TaobaoBusCancleorderSetAPIResponse 取消订单 API返回值
+// taobao.bus.cancleorder.set
+//
+// 取消订单
 type TaobaoBusCancleorderSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusCancleorderSetAPIResponseModel

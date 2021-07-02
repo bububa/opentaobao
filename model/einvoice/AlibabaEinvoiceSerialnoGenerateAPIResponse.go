@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceSerialnoGenerateAPIResponse
-获取统一开票流水号 API返回值
-alibaba.einvoice.serialno.generate
-
-erp调用开票请求时需要一个开票流水号，此接口就提供了统一的开票流水号，避免了不同系统的冲突 */
+// AlibabaEinvoiceSerialnoGenerateAPIResponse 获取统一开票流水号 API返回值
+// alibaba.einvoice.serialno.generate
+//
+// erp调用开票请求时需要一个开票流水号，此接口就提供了统一的开票流水号，避免了不同系统的冲突
 type AlibabaEinvoiceSerialnoGenerateAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceSerialnoGenerateAPIResponseModel

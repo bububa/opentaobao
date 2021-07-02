@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPictureChangecategoryAPIRequest
-修改图片的分类 API请求
-taobao.picture.changecategory
-
-把批量的图片移动到某个分类下 */
+// TaobaoPictureChangecategoryAPIRequest 修改图片的分类 API请求
+// taobao.picture.changecategory
+//
+// 把批量的图片移动到某个分类下
 type TaobaoPictureChangecategoryAPIRequest struct {
 	model.Params
 	// 要移动的图片的id

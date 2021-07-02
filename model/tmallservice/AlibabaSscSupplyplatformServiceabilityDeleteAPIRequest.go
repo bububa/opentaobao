@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest
-删除服务能力 API请求
-alibaba.ssc.supplyplatform.serviceability.delete
-
-删除服务能力 */
+// AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest 删除服务能力 API请求
+// alibaba.ssc.supplyplatform.serviceability.delete
+//
+// 删除服务能力
 type AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest struct {
 	model.Params
 	// 服务提供者类型。service_store 网点；worker 工人；supplier 服务商

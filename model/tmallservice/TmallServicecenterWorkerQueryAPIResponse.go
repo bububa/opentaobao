@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkerQueryAPIResponse
-工人信息查询 API返回值
-tmall.servicecenter.worker.query
-
-查询服务商对应的工人信息 */
+// TmallServicecenterWorkerQueryAPIResponse 工人信息查询 API返回值
+// tmall.servicecenter.worker.query
+//
+// 查询服务商对应的工人信息
 type TmallServicecenterWorkerQueryAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkerQueryAPIResponseModel

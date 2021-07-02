@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsEfspUserwriteoffAPIResponse
-用户核销 API返回值
-alibaba.alisports.efsp.userwriteoff
-
-用户核销 */
+// AlibabaAlisportsEfspUserwriteoffAPIResponse 用户核销 API返回值
+// alibaba.alisports.efsp.userwriteoff
+//
+// 用户核销
 type AlibabaAlisportsEfspUserwriteoffAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsEfspUserwriteoffAPIResponseModel

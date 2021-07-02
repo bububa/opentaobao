@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdCampaignCreateForbiddenKeywordAPIResponse
-创建屏蔽词 API返回值
-alibaba.scbp.ad.campaign.create.forbidden.keyword
-
-创建屏蔽词 */
+// AlibabaScbpAdCampaignCreateForbiddenKeywordAPIResponse 创建屏蔽词 API返回值
+// alibaba.scbp.ad.campaign.create.forbidden.keyword
+//
+// 创建屏蔽词
 type AlibabaScbpAdCampaignCreateForbiddenKeywordAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdCampaignCreateForbiddenKeywordAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaShenjingCoreActivityGetappshowlistAPIResponse
-获取神鲸活动列表 API返回值
-alibaba.shenjing.core.activity.getappshowlist
-
-获取神鲸活动列表 */
+// AlibabaShenjingCoreActivityGetappshowlistAPIResponse 获取神鲸活动列表 API返回值
+// alibaba.shenjing.core.activity.getappshowlist
+//
+// 获取神鲸活动列表
 type AlibabaShenjingCoreActivityGetappshowlistAPIResponse struct {
 	model.CommonResponse
 	AlibabaShenjingCoreActivityGetappshowlistAPIResponseModel

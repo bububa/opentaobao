@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabUserOpenUidGetAPIResponse
-access token 获取精灵用户 id API返回值
-alibaba.ailab.user.open.uid.get
-
-access token 获取精灵用户 id */
+// AlibabaAilabUserOpenUidGetAPIResponse access token 获取精灵用户 id API返回值
+// alibaba.ailab.user.open.uid.get
+//
+// access token 获取精灵用户 id
 type AlibabaAilabUserOpenUidGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabUserOpenUidGetAPIResponseModel

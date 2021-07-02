@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractIsvadminGetinteractbysellernickAPIResponse
-根据sellerNick获取互动实例列表 API返回值
-alibaba.interact.isvadmin.getinteractbysellernick
-
-根据sellerNick获取互动实例列表 */
+// AlibabaInteractIsvadminGetinteractbysellernickAPIResponse 根据sellerNick获取互动实例列表 API返回值
+// alibaba.interact.isvadmin.getinteractbysellernick
+//
+// 根据sellerNick获取互动实例列表
 type AlibabaInteractIsvadminGetinteractbysellernickAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractIsvadminGetinteractbysellernickAPIResponseModel

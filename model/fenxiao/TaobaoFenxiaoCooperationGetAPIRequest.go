@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoCooperationGetAPIRequest
-供应商或分销商获取合作关系信息 API请求
-taobao.fenxiao.cooperation.get
-
-获取供应商的合作关系信息 */
+// TaobaoFenxiaoCooperationGetAPIRequest 供应商或分销商获取合作关系信息 API请求
+// taobao.fenxiao.cooperation.get
+//
+// 获取供应商的合作关系信息
 type TaobaoFenxiaoCooperationGetAPIRequest struct {
 	model.Params
 	// 合作状态： NORMAL(合作中)、 ENDING(终止中) 、END (终止)

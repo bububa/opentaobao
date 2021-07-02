@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailVendingPriceWhitelistRemoveAPIResponse
-价格管控白名单去除 API返回值
-alibaba.retail.vending.price.whitelist.remove
-
-商家价格管控白名单去除 */
+// AlibabaRetailVendingPriceWhitelistRemoveAPIResponse 价格管控白名单去除 API返回值
+// alibaba.retail.vending.price.whitelist.remove
+//
+// 商家价格管控白名单去除
 type AlibabaRetailVendingPriceWhitelistRemoveAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailVendingPriceWhitelistRemoveAPIResponseModel

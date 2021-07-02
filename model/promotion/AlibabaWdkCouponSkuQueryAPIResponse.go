@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkCouponSkuQueryAPIResponse
-优惠券商品查询 API返回值
-alibaba.wdk.coupon.sku.query
-
-优惠券商品查询 */
+// AlibabaWdkCouponSkuQueryAPIResponse 优惠券商品查询 API返回值
+// alibaba.wdk.coupon.sku.query
+//
+// 优惠券商品查询
 type AlibabaWdkCouponSkuQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkCouponSkuQueryAPIResponseModel

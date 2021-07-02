@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest
-对推广组进行单独移动溢价 API请求
-taobao.simba.adgroup.mobilediscount.update
-
-对推广组进行单独移动溢价 */
+// TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest 对推广组进行单独移动溢价 API请求
+// taobao.simba.adgroup.mobilediscount.update
+//
+// 对推广组进行单独移动溢价
 type TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest struct {
 	model.Params
 	// 推广组id数组(推广组id集合元素个数在1-200个之间，推广组id需要在同一个推广计划中)

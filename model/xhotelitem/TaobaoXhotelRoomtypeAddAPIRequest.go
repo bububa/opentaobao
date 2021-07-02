@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRoomtypeAddAPIRequest
-房型新增接口（ID重复变更新） API请求
-taobao.xhotel.roomtype.add
-
-房型添加或更新 */
+// TaobaoXhotelRoomtypeAddAPIRequest 房型新增接口（ID重复变更新） API请求
+// taobao.xhotel.roomtype.add
+//
+// 房型添加或更新
 type TaobaoXhotelRoomtypeAddAPIRequest struct {
 	model.Params
 	// 卖家房型ID，不能重复建议格式是:酒店code_房型code

@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/util"
 )
 
-/* TaobaoHttpdnsGet
-TOPDNS配置
-taobao.httpdns.get
-
-获取TOP DNS配置 */
+// TaobaoHttpdnsGet TOPDNS配置
+// taobao.httpdns.get
+//
+// 获取TOP DNS配置
 func TaobaoHttpdnsGet(clt *core.SDKClient, req *util.TaobaoHttpdnsGetAPIRequest, session string) (*util.TaobaoHttpdnsGetAPIResponse, error) {
 	var resp util.TaobaoHttpdnsGetAPIResponse
 	err := clt.Post(req, &resp, session)

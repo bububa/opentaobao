@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* SlbAliyuncsComSetLoadBalancerName2013_02_21APIResponse
-配置LoadBalancer的别名。 API返回值
-slb.aliyuncs.com.SetLoadBalancerName.2013-02-21
-
-配置LoadBalancer的别名。 */
+// SlbAliyuncsComSetLoadBalancerName2013_02_21APIResponse 配置LoadBalancer的别名。 API返回值
+// slb.aliyuncs.com.SetLoadBalancerName.2013-02-21
+//
+// 配置LoadBalancer的别名。
 type SlbAliyuncsComSetLoadBalancerName2013_02_21APIResponse struct {
 	model.CommonResponse
 	SlbAliyuncsComSetLoadBalancerName2013_02_21APIResponseModel

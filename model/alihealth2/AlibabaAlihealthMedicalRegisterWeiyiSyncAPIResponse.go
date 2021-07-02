@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthMedicalRegisterWeiyiSyncAPIResponse
-微医数据号源回传 API返回值
-alibaba.alihealth.medical.register.weiyi.sync
-
-微医号源数据回传 */
+// AlibabaAlihealthMedicalRegisterWeiyiSyncAPIResponse 微医数据号源回传 API返回值
+// alibaba.alihealth.medical.register.weiyi.sync
+//
+// 微医号源数据回传
 type AlibabaAlihealthMedicalRegisterWeiyiSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthMedicalRegisterWeiyiSyncAPIResponseModel

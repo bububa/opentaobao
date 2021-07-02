@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAliqinFcIotRechargeCardAPIRequest
-按终端号订购增值业务 API请求
-alibaba.aliqin.fc.iot.rechargeCard
-
-按终端号订购增值业务 */
+// AlibabaAliqinFcIotRechargeCardAPIRequest 按终端号订购增值业务 API请求
+// alibaba.aliqin.fc.iot.rechargeCard
+//
+// 按终端号订购增值业务
 type AlibabaAliqinFcIotRechargeCardAPIRequest struct {
 	model.Params
 	// 外部计费号类型：写‘ICCID’

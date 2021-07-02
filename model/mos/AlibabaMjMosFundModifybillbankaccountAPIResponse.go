@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMjMosFundModifybillbankaccountAPIResponse
-修改付款单的银行账户信息 API返回值
-alibaba.mj.mos.fund.modifybillbankaccount
-
-修改付款单的银行账户信息 */
+// AlibabaMjMosFundModifybillbankaccountAPIResponse 修改付款单的银行账户信息 API返回值
+// alibaba.mj.mos.fund.modifybillbankaccount
+//
+// 修改付款单的银行账户信息
 type AlibabaMjMosFundModifybillbankaccountAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjMosFundModifybillbankaccountAPIResponseModel

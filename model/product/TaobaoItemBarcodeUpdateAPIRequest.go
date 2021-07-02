@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItemBarcodeUpdateAPIRequest
-更新商品条形码信息 API请求
-taobao.item.barcode.update
-
-通过该接口，将商品以及SKU上得条形码信息补全 */
+// TaobaoItemBarcodeUpdateAPIRequest 更新商品条形码信息 API请求
+// taobao.item.barcode.update
+//
+// 通过该接口，将商品以及SKU上得条形码信息补全
 type TaobaoItemBarcodeUpdateAPIRequest struct {
 	model.Params
 	// 被更新商品的ID

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelOrderHotelsignQueryAPIRequest
-获取直连酒店（客栈）签约上线进度信息 API请求
-taobao.xhotel.order.hotelsign.query
-
-获取直连酒店（客栈）签约上线进度信息 */
+// TaobaoXhotelOrderHotelsignQueryAPIRequest 获取直连酒店（客栈）签约上线进度信息 API请求
+// taobao.xhotel.order.hotelsign.query
+//
+// 获取直连酒店（客栈）签约上线进度信息
 type TaobaoXhotelOrderHotelsignQueryAPIRequest struct {
 	model.Params
 	// 请求流水

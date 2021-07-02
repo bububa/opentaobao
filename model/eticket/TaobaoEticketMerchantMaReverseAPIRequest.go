@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoEticketMerchantMaReverseAPIRequest
-电子凭证冲正接口 API请求
-taobao.eticket.merchant.ma.reverse
-
-电子凭证平台冲正接口 */
+// TaobaoEticketMerchantMaReverseAPIRequest 电子凭证冲正接口 API请求
+// taobao.eticket.merchant.ma.reverse
+//
+// 电子凭证平台冲正接口
 type TaobaoEticketMerchantMaReverseAPIRequest struct {
 	model.Params
 	// 业务类型

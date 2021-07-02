@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPlaceStoreQueryAPIResponse
-门店信息查询接口 API返回值
-taobao.place.store.query
-
-根据用户授权信息，获取用户的门店公开信息 */
+// TaobaoPlaceStoreQueryAPIResponse 门店信息查询接口 API返回值
+// taobao.place.store.query
+//
+// 根据用户授权信息，获取用户的门店公开信息
 type TaobaoPlaceStoreQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoPlaceStoreQueryAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsAddressReachablebatchGetAPIResponse
-批量判定服务是否可达 API返回值
-taobao.logistics.address.reachablebatch.get
-
-批量判定服务是否可达 */
+// TaobaoLogisticsAddressReachablebatchGetAPIResponse 批量判定服务是否可达 API返回值
+// taobao.logistics.address.reachablebatch.get
+//
+// 批量判定服务是否可达
 type TaobaoLogisticsAddressReachablebatchGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsAddressReachablebatchGetAPIResponseModel

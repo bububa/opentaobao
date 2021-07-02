@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWlbOrderPageGetAPIRequest
-分页查询物流宝订单 API请求
-taobao.wlb.order.page.get
-
-分页查询物流宝订单 */
+// TaobaoWlbOrderPageGetAPIRequest 分页查询物流宝订单 API请求
+// taobao.wlb.order.page.get
+//
+// 分页查询物流宝订单
 type TaobaoWlbOrderPageGetAPIRequest struct {
 	model.Params
 	// 每页多少条

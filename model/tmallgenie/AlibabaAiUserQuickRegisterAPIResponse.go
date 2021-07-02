@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAiUserQuickRegisterAPIResponse
-精灵用户注册申请 API返回值
-alibaba.ai.user.quick.register
-
-人工智能实验室精灵用户注册申请接口，开放给Iot厂商做厂商会员数据上报 */
+// AlibabaAiUserQuickRegisterAPIResponse 精灵用户注册申请 API返回值
+// alibaba.ai.user.quick.register
+//
+// 人工智能实验室精灵用户注册申请接口，开放给Iot厂商做厂商会员数据上报
 type AlibabaAiUserQuickRegisterAPIResponse struct {
 	model.CommonResponse
 	AlibabaAiUserQuickRegisterAPIResponseModel

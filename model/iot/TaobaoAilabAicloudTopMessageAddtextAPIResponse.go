@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopMessageAddtextAPIResponse
-精灵代说 API返回值
-taobao.ailab.aicloud.top.message.addtext
-
-精灵代说 */
+// TaobaoAilabAicloudTopMessageAddtextAPIResponse 精灵代说 API返回值
+// taobao.ailab.aicloud.top.message.addtext
+//
+// 精灵代说
 type TaobaoAilabAicloudTopMessageAddtextAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopMessageAddtextAPIResponseModel

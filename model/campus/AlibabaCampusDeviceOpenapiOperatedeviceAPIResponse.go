@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse
-根据uuid操作设备 API返回值
-alibaba.campus.device.openapi.operatedevice
-
-根据uuid操作设备 */
+// AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse 根据uuid操作设备 API返回值
+// alibaba.campus.device.openapi.operatedevice
+//
+// 根据uuid操作设备
 type AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusDeviceOpenapiOperatedeviceAPIResponseModel

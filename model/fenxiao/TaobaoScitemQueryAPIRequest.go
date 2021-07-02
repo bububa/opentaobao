@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoScitemQueryAPIRequest
-查询后端商品 API请求
-taobao.scitem.query
-
-查询后端商品 */
+// TaobaoScitemQueryAPIRequest 查询后端商品 API请求
+// taobao.scitem.query
+//
+// 查询后端商品
 type TaobaoScitemQueryAPIRequest struct {
 	model.Params
 	// 商品名称

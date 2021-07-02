@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoIotTicketDetailQueryAPIResponse
-IoT售后工单详情查询 API返回值
-cainiao.iot.ticket.detail.query
-
-Iot售后工单详情信息查询 */
+// CainiaoIotTicketDetailQueryAPIResponse IoT售后工单详情查询 API返回值
+// cainiao.iot.ticket.detail.query
+//
+// Iot售后工单详情信息查询
 type CainiaoIotTicketDetailQueryAPIResponse struct {
 	model.CommonResponse
 	CainiaoIotTicketDetailQueryAPIResponseModel

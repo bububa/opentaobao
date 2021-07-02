@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YoukuWenyuvideoSeetaGetAPIResponse
-只看TA API返回值
-youku.wenyuvideo.seeta.get
-
-只看Ta对外输出 */
+// YoukuWenyuvideoSeetaGetAPIResponse 只看TA API返回值
+// youku.wenyuvideo.seeta.get
+//
+// 只看Ta对外输出
 type YoukuWenyuvideoSeetaGetAPIResponse struct {
 	model.CommonResponse
 	YoukuWenyuvideoSeetaGetAPIResponseModel

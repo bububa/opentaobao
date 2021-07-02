@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkSkuBestCouponAPIResponse
-sku维度最优优惠券信息 API返回值
-taobao.tbk.sku.best.coupon
-
-根据itemid和skuid查询最优优惠券信息 */
+// TaobaoTbkSkuBestCouponAPIResponse sku维度最优优惠券信息 API返回值
+// taobao.tbk.sku.best.coupon
+//
+// 根据itemid和skuid查询最优优惠券信息
 type TaobaoTbkSkuBestCouponAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkSkuBestCouponAPIResponseModel

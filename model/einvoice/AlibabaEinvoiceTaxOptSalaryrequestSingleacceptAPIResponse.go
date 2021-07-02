@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse
-单明细发薪受理 API返回值
-alibaba.einvoice.tax.opt.salaryrequest.singleaccept
-
-单明细发薪受理 */
+// AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse 单明细发薪受理 API返回值
+// alibaba.einvoice.tax.opt.salaryrequest.singleaccept
+//
+// 单明细发薪受理
 type AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponseModel

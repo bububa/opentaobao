@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeOrderCompleteAPIRequest
-疫苗接种完成(带支付宝提醒) API请求
-alibaba.health.vaccin.notice.order.complete
-
-用户到店完成接种,ISV感知通知阿里健康完成接种,并通知用户! */
+// AlibabaHealthVaccinNoticeOrderCompleteAPIRequest 疫苗接种完成(带支付宝提醒) API请求
+// alibaba.health.vaccin.notice.order.complete
+//
+// 用户到店完成接种,ISV感知通知阿里健康完成接种,并通知用户!
 type AlibabaHealthVaccinNoticeOrderCompleteAPIRequest struct {
 	model.Params
 	// 支付宝唯一标识

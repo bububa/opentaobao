@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallNrtItemGetAPIResponse
-家装新零售商品信息查询 API返回值
-tmall.nrt.item.get
-
-查询新零售商品信息 */
+// TmallNrtItemGetAPIResponse 家装新零售商品信息查询 API返回值
+// tmall.nrt.item.get
+//
+// 查询新零售商品信息
 type TmallNrtItemGetAPIResponse struct {
 	model.CommonResponse
 	TmallNrtItemGetAPIResponseModel

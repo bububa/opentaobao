@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallChannelTradeOrderGetsAPIRequest
-分页查询采购单 API请求
-tmall.channel.trade.order.gets
-
-分页查询采购单 */
+// TmallChannelTradeOrderGetsAPIRequest 分页查询采购单 API请求
+// tmall.channel.trade.order.gets
+//
+// 分页查询采购单
 type TmallChannelTradeOrderGetsAPIRequest struct {
 	model.Params
 	// 是否包含子单

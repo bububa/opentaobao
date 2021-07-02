@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoHttpdnsGetAPIResponse
-TOPDNS配置 API返回值
-taobao.httpdns.get
-
-获取TOP DNS配置 */
+// TaobaoHttpdnsGetAPIResponse TOPDNS配置 API返回值
+// taobao.httpdns.get
+//
+// 获取TOP DNS配置
 type TaobaoHttpdnsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoHttpdnsGetAPIResponseModel

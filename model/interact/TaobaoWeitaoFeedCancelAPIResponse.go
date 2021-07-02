@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoWeitaoFeedCancelAPIResponse
-取消广播在timeline、广场中展示 API返回值
-taobao.weitao.feed.cancel
-
-取消广播在timeline和广场中的展示。 */
+// TaobaoWeitaoFeedCancelAPIResponse 取消广播在timeline、广场中展示 API返回值
+// taobao.weitao.feed.cancel
+//
+// 取消广播在timeline和广场中的展示。
 type TaobaoWeitaoFeedCancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoWeitaoFeedCancelAPIResponseModel

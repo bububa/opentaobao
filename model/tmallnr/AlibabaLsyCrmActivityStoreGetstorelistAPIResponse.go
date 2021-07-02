@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLsyCrmActivityStoreGetstorelistAPIResponse
-ISV查询门店 API返回值
-alibaba.lsy.crm.activity.store.getstorelist
-
-ISV查询门店 */
+// AlibabaLsyCrmActivityStoreGetstorelistAPIResponse ISV查询门店 API返回值
+// alibaba.lsy.crm.activity.store.getstorelist
+//
+// ISV查询门店
 type AlibabaLsyCrmActivityStoreGetstorelistAPIResponse struct {
 	model.CommonResponse
 	AlibabaLsyCrmActivityStoreGetstorelistAPIResponseModel

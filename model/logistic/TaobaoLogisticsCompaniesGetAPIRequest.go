@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLogisticsCompaniesGetAPIRequest
-查询物流公司信息 API请求
-taobao.logistics.companies.get
-
-查询淘宝网合作的物流公司信息，用于发货接口。 */
+// TaobaoLogisticsCompaniesGetAPIRequest 查询物流公司信息 API请求
+// taobao.logistics.companies.get
+//
+// 查询淘宝网合作的物流公司信息，用于发货接口。
 type TaobaoLogisticsCompaniesGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表。可选值:LogisticCompany 结构中的所有字段;多个字段间用","逗号隔开.<br/>如:id,code,name,reg_mail_no<br/><br><font color='red'>说明：</font><br/><br>id：物流公司ID<br/><br>code：物流公司code<br/><br>name：物流公司名称<br/><br>reg_mail_no：物流公司对应的运单规则

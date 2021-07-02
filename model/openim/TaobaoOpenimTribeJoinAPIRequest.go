@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOpenimTribeJoinAPIRequest
-OPENIM群主动加入 API请求
-taobao.openim.tribe.join
-
-OPENIM群主动加入 */
+// TaobaoOpenimTribeJoinAPIRequest OPENIM群主动加入 API请求
+// taobao.openim.tribe.join
+//
+// OPENIM群主动加入
 type TaobaoOpenimTribeJoinAPIRequest struct {
 	model.Params
 	// 用户信息

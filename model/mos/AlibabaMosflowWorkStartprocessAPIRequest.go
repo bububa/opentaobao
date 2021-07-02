@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosflowWorkStartprocessAPIRequest
-发起流程 API请求
-alibaba.mosflow.work.startprocess
-
-业务发起流程审批 */
+// AlibabaMosflowWorkStartprocessAPIRequest 发起流程 API请求
+// alibaba.mosflow.work.startprocess
+//
+// 业务发起流程审批
 type AlibabaMosflowWorkStartprocessAPIRequest struct {
 	model.Params
 	// 参数二:额外业务参数,Map的JSON串

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterMsfTasksUpdateAPIRequest
-喵师傅工人任务批量完成接口 API请求
-tmall.servicecenter.msf.tasks.update
-
-喵师傅工人任务批量完成接口 */
+// TmallServicecenterMsfTasksUpdateAPIRequest 喵师傅工人任务批量完成接口 API请求
+// tmall.servicecenter.msf.tasks.update
+//
+// 喵师傅工人任务批量完成接口
 type TmallServicecenterMsfTasksUpdateAPIRequest struct {
 	model.Params
 	// 工人手机号

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopLikeDeleteAPIResponse
-取消收藏 API返回值
-taobao.ailab.aicloud.top.like.delete
-
-取消收藏 */
+// TaobaoAilabAicloudTopLikeDeleteAPIResponse 取消收藏 API返回值
+// taobao.ailab.aicloud.top.like.delete
+//
+// 取消收藏
 type TaobaoAilabAicloudTopLikeDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopLikeDeleteAPIResponseModel

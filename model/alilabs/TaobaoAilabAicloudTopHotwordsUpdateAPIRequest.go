@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAilabAicloudTopHotwordsUpdateAPIRequest
-更新热词 API请求
-taobao.ailab.aicloud.top.hotwords.update
-
-更新ASR热词 */
+// TaobaoAilabAicloudTopHotwordsUpdateAPIRequest 更新热词 API请求
+// taobao.ailab.aicloud.top.hotwords.update
+//
+// 更新ASR热词
 type TaobaoAilabAicloudTopHotwordsUpdateAPIRequest struct {
 	model.Params
 	// schemaKey

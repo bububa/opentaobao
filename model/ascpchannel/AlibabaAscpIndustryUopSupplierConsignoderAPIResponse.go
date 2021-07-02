@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAscpIndustryUopSupplierConsignoderAPIResponse
-商家推单 API返回值
-alibaba.ascp.industry.uop.supplier.consignoder
-
-商家推单 */
+// AlibabaAscpIndustryUopSupplierConsignoderAPIResponse 商家推单 API返回值
+// alibaba.ascp.industry.uop.supplier.consignoder
+//
+// 商家推单
 type AlibabaAscpIndustryUopSupplierConsignoderAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpIndustryUopSupplierConsignoderAPIResponseModel

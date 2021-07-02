@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminCommonFileUploadAPIRequest
-文件上传API API请求
-yunos.tvpubadmin.common.file.upload
-
-文件上传服务 */
+// YunosTvpubadminCommonFileUploadAPIRequest 文件上传API API请求
+// yunos.tvpubadmin.common.file.upload
+//
+// 文件上传服务
 type YunosTvpubadminCommonFileUploadAPIRequest struct {
 	model.Params
 	// 文件字节流

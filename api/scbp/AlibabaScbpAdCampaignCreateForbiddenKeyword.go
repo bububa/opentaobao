@@ -5,11 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-/* AlibabaScbpAdCampaignCreateForbiddenKeyword
-创建屏蔽词
-alibaba.scbp.ad.campaign.create.forbidden.keyword
-
-创建屏蔽词 */
+// AlibabaScbpAdCampaignCreateForbiddenKeyword 创建屏蔽词
+// alibaba.scbp.ad.campaign.create.forbidden.keyword
+//
+// 创建屏蔽词
 func AlibabaScbpAdCampaignCreateForbiddenKeyword(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignCreateForbiddenKeywordAPIResponse, error) {
 	var resp scbp.AlibabaScbpAdCampaignCreateForbiddenKeywordAPIResponse
 	err := clt.Post(req, &resp, session)

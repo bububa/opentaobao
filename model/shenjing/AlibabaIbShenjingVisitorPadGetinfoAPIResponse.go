@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIbShenjingVisitorPadGetinfoAPIResponse
-获取OSS上传参数 API返回值
-alibaba.ib.shenjing.visitor.pad.getinfo
-
-PAD 端获取OSS上传参数，向OSS服务器上传图片。 */
+// AlibabaIbShenjingVisitorPadGetinfoAPIResponse 获取OSS上传参数 API返回值
+// alibaba.ib.shenjing.visitor.pad.getinfo
+//
+// PAD 端获取OSS上传参数，向OSS服务器上传图片。
 type AlibabaIbShenjingVisitorPadGetinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaIbShenjingVisitorPadGetinfoAPIResponseModel

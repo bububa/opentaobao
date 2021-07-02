@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthExaminationReserveConfirmAPIRequest
-体检机构对接_体检套餐预定确认 API请求
-alibaba.alihealth.examination.reserve.confirm
-
-向体检机构确认用户购买的体检套餐信息 */
+// AlibabaAlihealthExaminationReserveConfirmAPIRequest 体检机构对接_体检套餐预定确认 API请求
+// alibaba.alihealth.examination.reserve.confirm
+//
+// 向体检机构确认用户购买的体检套餐信息
 type AlibabaAlihealthExaminationReserveConfirmAPIRequest struct {
 	model.Params
 	// 商户唯一码

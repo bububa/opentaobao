@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSubuserInfoUpdateAPIResponse
-修改指定账户子账号的基本信息 API返回值
-taobao.subuser.info.update
-
-修改指定账户子账号的基本信息（通过主账号登陆只能修改属于该主账号的子账号基本信息） */
+// TaobaoSubuserInfoUpdateAPIResponse 修改指定账户子账号的基本信息 API返回值
+// taobao.subuser.info.update
+//
+// 修改指定账户子账号的基本信息（通过主账号登陆只能修改属于该主账号的子账号基本信息）
 type TaobaoSubuserInfoUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSubuserInfoUpdateAPIResponseModel

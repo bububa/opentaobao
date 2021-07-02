@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoScitemMapQueryAPIResponse
-查找IC商品或分销商品与后端商品的关联信息 API返回值
-taobao.scitem.map.query
-
-查找IC商品或分销商品与后端商品的关联信息。skuId如果不传就查找该itemId下所有的sku */
+// TaobaoScitemMapQueryAPIResponse 查找IC商品或分销商品与后端商品的关联信息 API返回值
+// taobao.scitem.map.query
+//
+// 查找IC商品或分销商品与后端商品的关联信息。skuId如果不传就查找该itemId下所有的sku
 type TaobaoScitemMapQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoScitemMapQueryAPIResponseModel

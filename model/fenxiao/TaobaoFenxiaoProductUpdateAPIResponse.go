@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFenxiaoProductUpdateAPIResponse
-更新产品 API返回值
-taobao.fenxiao.product.update
-
-更新分销平台产品数据，不传更新数据返回失败<br><br/>1. 对sku进行增、删操作时，原有的sku_ids字段会被忽略，请使用sku_properties和sku_properties_del。<br> */
+// TaobaoFenxiaoProductUpdateAPIResponse 更新产品 API返回值
+// taobao.fenxiao.product.update
+//
+// 更新分销平台产品数据，不传更新数据返回失败<br><br/>1. 对sku进行增、删操作时，原有的sku_ids字段会被忽略，请使用sku_properties和sku_properties_del。<br>
 type TaobaoFenxiaoProductUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoProductUpdateAPIResponseModel

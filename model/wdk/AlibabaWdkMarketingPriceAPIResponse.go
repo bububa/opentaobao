@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkMarketingPriceAPIResponse
-促销价签服务 API返回值
-alibaba.wdk.marketing.price
-
-获取营销-促销商品中的实时价格 */
+// AlibabaWdkMarketingPriceAPIResponse 促销价签服务 API返回值
+// alibaba.wdk.marketing.price
+//
+// 获取营销-促销商品中的实时价格
 type AlibabaWdkMarketingPriceAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMarketingPriceAPIResponseModel

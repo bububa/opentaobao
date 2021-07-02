@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest
-天下秀订单状态变更通知 API请求
-alibaba.pictures.dengta.order.status.change.new
-
-天下秀订单状态变更通知 */
+// AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest 天下秀订单状态变更通知 API请求
+// alibaba.pictures.dengta.order.status.change.new
+//
+// 天下秀订单状态变更通知
 type AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest struct {
 	model.Params
 	// 拒绝原因

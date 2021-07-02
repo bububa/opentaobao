@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoOmniorderStorecollectConsumeAPIRequest
-全渠道门店自提核销订单 API请求
-taobao.omniorder.storecollect.consume
-
-全渠道门店自提核销订单 */
+// TaobaoOmniorderStorecollectConsumeAPIRequest 全渠道门店自提核销订单 API请求
+// taobao.omniorder.storecollect.consume
+//
+// 全渠道门店自提核销订单
 type TaobaoOmniorderStorecollectConsumeAPIRequest struct {
 	model.Params
 	// 核销码

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripHotelHstdfPoilocationGetAPIResponse
-根据平台城市id分页查询poi location API返回值
-alitrip.hotel.hstdf.poilocation.get
-
-根据平台城市id分页查询poi location */
+// AlitripHotelHstdfPoilocationGetAPIResponse 根据平台城市id分页查询poi location API返回值
+// alitrip.hotel.hstdf.poilocation.get
+//
+// 根据平台城市id分页查询poi location
 type AlitripHotelHstdfPoilocationGetAPIResponse struct {
 	model.CommonResponse
 	AlitripHotelHstdfPoilocationGetAPIResponseModel

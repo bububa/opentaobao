@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUmpActivityGetAPIResponse
-查询营销活动 API返回值
-taobao.ump.activity.get
-
-查询营销活动 */
+// TaobaoUmpActivityGetAPIResponse 查询营销活动 API返回值
+// taobao.ump.activity.get
+//
+// 查询营销活动
 type TaobaoUmpActivityGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoUmpActivityGetAPIResponseModel

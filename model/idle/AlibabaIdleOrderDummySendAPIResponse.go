@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIdleOrderDummySendAPIResponse
-闲鱼无需物流发货 API返回值
-alibaba.idle.order.dummy.send
-
-适用于电子卡券等虚拟商品不需要物流的商品发货。 */
+// AlibabaIdleOrderDummySendAPIResponse 闲鱼无需物流发货 API返回值
+// alibaba.idle.order.dummy.send
+//
+// 适用于电子卡券等虚拟商品不需要物流的商品发货。
 type AlibabaIdleOrderDummySendAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleOrderDummySendAPIResponseModel

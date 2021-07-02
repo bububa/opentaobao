@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoConsignplatformOrderCancelAPIResponse
-菜鸟发货工作台取消包裹以及订单 API返回值
-cainiao.consignplatform.order.cancel
-
-菜鸟发货工作台，商家或者isv通过api取消包裹、回收单号，如果是裹裹运力会取消小件员上门。最后删除订单信息。 */
+// CainiaoConsignplatformOrderCancelAPIResponse 菜鸟发货工作台取消包裹以及订单 API返回值
+// cainiao.consignplatform.order.cancel
+//
+// 菜鸟发货工作台，商家或者isv通过api取消包裹、回收单号，如果是裹裹运力会取消小件员上门。最后删除订单信息。
 type CainiaoConsignplatformOrderCancelAPIResponse struct {
 	model.CommonResponse
 	CainiaoConsignplatformOrderCancelAPIResponseModel

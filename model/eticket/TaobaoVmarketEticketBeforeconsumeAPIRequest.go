@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoVmarketEticketBeforeconsumeAPIRequest
-电子凭证验码前置确认 API请求
-taobao.vmarket.eticket.beforeconsume
-
-商家验码之前的调用接口，用来同步到最新的订单状态并判断是否可以进行验码操作 */
+// TaobaoVmarketEticketBeforeconsumeAPIRequest 电子凭证验码前置确认 API请求
+// taobao.vmarket.eticket.beforeconsume
+//
+// 商家验码之前的调用接口，用来同步到最新的订单状态并判断是否可以进行验码操作
 type TaobaoVmarketEticketBeforeconsumeAPIRequest struct {
 	model.Params
 	// 需要验码的电子凭证订单ID

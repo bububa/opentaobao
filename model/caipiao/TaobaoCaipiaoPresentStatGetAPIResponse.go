@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCaipiaoPresentStatGetAPIResponse
-获取卖家按天统计的彩票赠送数据 API返回值
-taobao.caipiao.present.stat.get
-
-查询卖家一段时间内按天统计的彩票赠送数据，只支持查询90天以内的数据. */
+// TaobaoCaipiaoPresentStatGetAPIResponse 获取卖家按天统计的彩票赠送数据 API返回值
+// taobao.caipiao.present.stat.get
+//
+// 查询卖家一段时间内按天统计的彩票赠送数据，只支持查询90天以内的数据.
 type TaobaoCaipiaoPresentStatGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoCaipiaoPresentStatGetAPIResponseModel

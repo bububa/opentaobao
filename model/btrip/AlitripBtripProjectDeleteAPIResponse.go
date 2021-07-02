@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripProjectDeleteAPIResponse
-删除项目 API返回值
-alitrip.btrip.project.delete
-
-删除项目 */
+// AlitripBtripProjectDeleteAPIResponse 删除项目 API返回值
+// alitrip.btrip.project.delete
+//
+// 删除项目
 type AlitripBtripProjectDeleteAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripProjectDeleteAPIResponseModel

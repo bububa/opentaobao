@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCampaignBudgetUpdateAPIResponse
-更新一个推广计划的日限额 API返回值
-taobao.simba.campaign.budget.update
-
-更新一个推广计划的日限额 */
+// TaobaoSimbaCampaignBudgetUpdateAPIResponse 更新一个推广计划的日限额 API返回值
+// taobao.simba.campaign.budget.update
+//
+// 更新一个推广计划的日限额
 type TaobaoSimbaCampaignBudgetUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCampaignBudgetUpdateAPIResponseModel

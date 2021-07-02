@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallPromotagTaguserSaveAPIResponse
-给用户打上优惠标签 API返回值
-tmall.promotag.taguser.save
-
-给用户载体打标 */
+// TmallPromotagTaguserSaveAPIResponse 给用户打上优惠标签 API返回值
+// tmall.promotag.taguser.save
+//
+// 给用户载体打标
 type TmallPromotagTaguserSaveAPIResponse struct {
 	model.CommonResponse
 	TmallPromotagTaguserSaveAPIResponseModel

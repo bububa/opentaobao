@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* YunosTvpubadminManageTopicFindbyidAPIRequest
-根据id获取专题信息 API请求
-yunos.tvpubadmin.manage.topic.findbyid
-
-根据id获取专题信息 */
+// YunosTvpubadminManageTopicFindbyidAPIRequest 根据id获取专题信息 API请求
+// yunos.tvpubadmin.manage.topic.findbyid
+//
+// 根据id获取专题信息
 type YunosTvpubadminManageTopicFindbyidAPIRequest struct {
 	model.Params
 	// 专题id

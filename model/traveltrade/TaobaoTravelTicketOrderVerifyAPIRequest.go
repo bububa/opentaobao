@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTravelTicketOrderVerifyAPIRequest
-飞猪门票核销通知 API请求
-taobao.travel.ticket.order.verify
-
-系统商通过TOP接口调用通知飞猪门票核销情况 */
+// TaobaoTravelTicketOrderVerifyAPIRequest 飞猪门票核销通知 API请求
+// taobao.travel.ticket.order.verify
+//
+// 系统商通过TOP接口调用通知飞猪门票核销情况
 type TaobaoTravelTicketOrderVerifyAPIRequest struct {
 	model.Params
 	// 下单订单ID

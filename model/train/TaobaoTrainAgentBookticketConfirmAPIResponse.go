@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTrainAgentBookticketConfirmAPIResponse
-火车票代理商接口——确认出票是否成功 API返回值
-taobao.train.agent.bookticket.confirm
-
-火车票代理商接口——确认出票是否成功 */
+// TaobaoTrainAgentBookticketConfirmAPIResponse 火车票代理商接口——确认出票是否成功 API返回值
+// taobao.train.agent.bookticket.confirm
+//
+// 火车票代理商接口——确认出票是否成功
 type TaobaoTrainAgentBookticketConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentBookticketConfirmAPIResponseModel

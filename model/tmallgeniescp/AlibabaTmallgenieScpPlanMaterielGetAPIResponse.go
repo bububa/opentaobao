@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaTmallgenieScpPlanMaterielGetAPIResponse
-1-IBP同步物料接口 API返回值
-alibaba.tmallgenie.scp.plan.materiel.get
-
-IBP同步物料接口 */
+// AlibabaTmallgenieScpPlanMaterielGetAPIResponse 1-IBP同步物料接口 API返回值
+// alibaba.tmallgenie.scp.plan.materiel.get
+//
+// IBP同步物料接口
 type AlibabaTmallgenieScpPlanMaterielGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanMaterielGetAPIResponseModel

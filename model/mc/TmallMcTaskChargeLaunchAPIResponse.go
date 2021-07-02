@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMcTaskChargeLaunchAPIResponse
-云码充电宝投放链路 API返回值
-tmall.mc.task.charge.launch
-
-云码充电宝投放链路，用于判断用户是否有匹配的投放计划 */
+// TmallMcTaskChargeLaunchAPIResponse 云码充电宝投放链路 API返回值
+// tmall.mc.task.charge.launch
+//
+// 云码充电宝投放链路，用于判断用户是否有匹配的投放计划
 type TmallMcTaskChargeLaunchAPIResponse struct {
 	model.CommonResponse
 	TmallMcTaskChargeLaunchAPIResponseModel

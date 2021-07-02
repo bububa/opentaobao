@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoJstMiniappCrowdCreateAPIRequest
-小程序活动创建 API请求
-taobao.jst.miniapp.crowd.create
-
-小程序活动创建 */
+// TaobaoJstMiniappCrowdCreateAPIRequest 小程序活动创建 API请求
+// taobao.jst.miniapp.crowd.create
+//
+// 小程序活动创建
 type TaobaoJstMiniappCrowdCreateAPIRequest struct {
 	model.Params
 	// 活动开始时间，开始时间和结束时间不能超过1个月

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AccountAliyuncsComCreateApp2013_07_01APIResponse
-给指定用户创建appkey API返回值
-account.aliyuncs.com.CreateApp.2013-07-01
-
-为某个用户创建appkey */
+// AccountAliyuncsComCreateApp2013_07_01APIResponse 给指定用户创建appkey API返回值
+// account.aliyuncs.com.CreateApp.2013-07-01
+//
+// 为某个用户创建appkey
 type AccountAliyuncsComCreateApp2013_07_01APIResponse struct {
 	model.CommonResponse
 	AccountAliyuncsComCreateApp2013_07_01APIResponseModel

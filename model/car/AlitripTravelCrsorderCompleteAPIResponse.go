@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelCrsorderCompleteAPIResponse
-CRS接送机商家服务完成接口 API返回值
-alitrip.travel.crsorder.complete
-
-提供给CRS接送机商家的服务完成回调接口 */
+// AlitripTravelCrsorderCompleteAPIResponse CRS接送机商家服务完成接口 API返回值
+// alitrip.travel.crsorder.complete
+//
+// 提供给CRS接送机商家的服务完成回调接口
 type AlitripTravelCrsorderCompleteAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelCrsorderCompleteAPIResponseModel

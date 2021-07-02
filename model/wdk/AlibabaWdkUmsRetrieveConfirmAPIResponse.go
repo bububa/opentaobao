@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaWdkUmsRetrieveConfirmAPIResponse
-回流单－外部对已拉取到的UMS单据进行确认 API返回值
-alibaba.wdk.ums.retrieve.confirm
-
-回流单－外部对已拉取到的UMS单据进行确认 */
+// AlibabaWdkUmsRetrieveConfirmAPIResponse 回流单－外部对已拉取到的UMS单据进行确认 API返回值
+// alibaba.wdk.ums.retrieve.confirm
+//
+// 回流单－外部对已拉取到的UMS单据进行确认
 type AlibabaWdkUmsRetrieveConfirmAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkUmsRetrieveConfirmAPIResponseModel

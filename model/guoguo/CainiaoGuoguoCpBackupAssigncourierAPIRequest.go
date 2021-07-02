@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoGuoguoCpBackupAssigncourierAPIRequest
-CP兜底后指定接单的小件员 API请求
-cainiao.guoguo.cp.backup.assigncourier
-
-CP兜底后指定接单的小件员；CP改派小件员 */
+// CainiaoGuoguoCpBackupAssigncourierAPIRequest CP兜底后指定接单的小件员 API请求
+// cainiao.guoguo.cp.backup.assigncourier
+//
+// CP兜底后指定接单的小件员；CP改派小件员
 type CainiaoGuoguoCpBackupAssigncourierAPIRequest struct {
 	model.Params
 	// 小件员所在公司编号

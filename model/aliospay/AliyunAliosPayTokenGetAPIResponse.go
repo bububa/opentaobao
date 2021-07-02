@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AliyunAliosPayTokenGetAPIResponse
-获取支付token API返回值
-aliyun.alios.pay.token.get
-
-商户用来获取支付的授权token */
+// AliyunAliosPayTokenGetAPIResponse 获取支付token API返回值
+// aliyun.alios.pay.token.get
+//
+// 商户用来获取支付的授权token
 type AliyunAliosPayTokenGetAPIResponse struct {
 	model.CommonResponse
 	AliyunAliosPayTokenGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelMultiplerateGetAPIRequest
-复杂房价查询接口 API请求
-taobao.xhotel.multiplerate.get
-
-查询复杂房价，支持通过入住人数，连住天数，商品信息，房价信息查询 */
+// TaobaoXhotelMultiplerateGetAPIRequest 复杂房价查询接口 API请求
+// taobao.xhotel.multiplerate.get
+//
+// 查询复杂房价，支持通过入住人数，连住天数，商品信息，房价信息查询
 type TaobaoXhotelMultiplerateGetAPIRequest struct {
 	model.Params
 	// 连住天数(范围1~10)

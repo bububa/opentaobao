@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaNlifeStoreItemsGetAPIResponse
-获取门店的商品列表(在售|已下架|全部) API返回值
-alibaba.nlife.store.items.get
-
-利用该接口可以获取到零售+商品服务中符合条件的商品列表，包括在售的、已下架的或者是所有状态的商品。 */
+// AlibabaNlifeStoreItemsGetAPIResponse 获取门店的商品列表(在售|已下架|全部) API返回值
+// alibaba.nlife.store.items.get
+//
+// 利用该接口可以获取到零售+商品服务中符合条件的商品列表，包括在售的、已下架的或者是所有状态的商品。
 type AlibabaNlifeStoreItemsGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaNlifeStoreItemsGetAPIResponseModel

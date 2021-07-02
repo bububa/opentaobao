@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoStoreFollowurlGetAPIResponse
-获取店铺关注URL API返回值
-taobao.store.followurl.get
-
-获取关注店铺的URL */
+// TaobaoStoreFollowurlGetAPIResponse 获取店铺关注URL API返回值
+// taobao.store.followurl.get
+//
+// 获取关注店铺的URL
 type TaobaoStoreFollowurlGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoStoreFollowurlGetAPIResponseModel

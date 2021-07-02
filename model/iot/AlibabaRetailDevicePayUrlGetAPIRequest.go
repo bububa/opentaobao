@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaRetailDevicePayUrlGetAPIRequest
-贩卖机支付二维链接获取 API请求
-alibaba.retail.device.payUrl.get
-
-贩卖机支付二维链接获取 */
+// AlibabaRetailDevicePayUrlGetAPIRequest 贩卖机支付二维链接获取 API请求
+// alibaba.retail.device.payUrl.get
+//
+// 贩卖机支付二维链接获取
 type AlibabaRetailDevicePayUrlGetAPIRequest struct {
 	model.Params
 	// 外部订单id

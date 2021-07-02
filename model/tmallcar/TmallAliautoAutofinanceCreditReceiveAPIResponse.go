@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallAliautoAutofinanceCreditReceiveAPIResponse
-接收授信结果通知 API返回值
-tmall.aliauto.autofinance.credit.receive
-
-天猫汽车的金融业务场景中，需要接收外部ISV对用户授信申请的通知结果. */
+// TmallAliautoAutofinanceCreditReceiveAPIResponse 接收授信结果通知 API返回值
+// tmall.aliauto.autofinance.credit.receive
+//
+// 天猫汽车的金融业务场景中，需要接收外部ISV对用户授信申请的通知结果.
 type TmallAliautoAutofinanceCreditReceiveAPIResponse struct {
 	model.CommonResponse
 	TmallAliautoAutofinanceCreditReceiveAPIResponseModel

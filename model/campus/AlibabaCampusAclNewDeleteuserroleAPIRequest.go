@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclNewDeleteuserroleAPIRequest
-删除管理员 API请求
-alibaba.campus.acl.new.deleteuserrole
-
-删除管理员 */
+// AlibabaCampusAclNewDeleteuserroleAPIRequest 删除管理员 API请求
+// alibaba.campus.acl.new.deleteuserrole
+//
+// 删除管理员
 type AlibabaCampusAclNewDeleteuserroleAPIRequest struct {
 	model.Params
 	// 系统入参

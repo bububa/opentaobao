@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripTravelVisaApplicantImportAPIRequest
-签证申请人导入 API请求
-alitrip.travel.visa.applicant.import
-
-签证线下申请人导入接口。供商家将线下的签证申请人信息导入，进行签证线上化办理 */
+// AlitripTravelVisaApplicantImportAPIRequest 签证申请人导入 API请求
+// alitrip.travel.visa.applicant.import
+//
+// 签证线下申请人导入接口。供商家将线下的签证申请人信息导入，进行签证线上化办理
 type AlitripTravelVisaApplicantImportAPIRequest struct {
 	model.Params
 	// 国家id。目前支持越南(27027)

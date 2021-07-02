@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthNrCepOutorderUploadAPIResponse
-线上订单收货验收单、出入库单据生成接口 API返回值
-alibaba.health.nr.cep.outorder.upload
-
-线上订单收货验收单、出入库单据生成接口 */
+// AlibabaHealthNrCepOutorderUploadAPIResponse 线上订单收货验收单、出入库单据生成接口 API返回值
+// alibaba.health.nr.cep.outorder.upload
+//
+// 线上订单收货验收单、出入库单据生成接口
 type AlibabaHealthNrCepOutorderUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthNrCepOutorderUploadAPIResponseModel

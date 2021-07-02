@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaSeakingTitlerewriteSubmitAPIResponse
-提交标题改写任务 API返回值
-alibaba.seaking.titlerewrite.submit
-
-提交标题改写任务 */
+// AlibabaSeakingTitlerewriteSubmitAPIResponse 提交标题改写任务 API返回值
+// alibaba.seaking.titlerewrite.submit
+//
+// 提交标题改写任务
 type AlibabaSeakingTitlerewriteSubmitAPIResponse struct {
 	model.CommonResponse
 	AlibabaSeakingTitlerewriteSubmitAPIResponseModel

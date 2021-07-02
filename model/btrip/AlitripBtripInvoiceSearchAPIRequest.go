@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripInvoiceSearchAPIRequest
-根据发票抬头搜索发票 API请求
-alitrip.btrip.invoice.search
-
-用户根据发票抬头搜索发票信息 */
+// AlitripBtripInvoiceSearchAPIRequest 根据发票抬头搜索发票 API请求
+// alitrip.btrip.invoice.search
+//
+// 用户根据发票抬头搜索发票信息
 type AlitripBtripInvoiceSearchAPIRequest struct {
 	model.Params
 	// 企业id

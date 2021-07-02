@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTaotvCarouselCategoryListAPIResponse
-获取轮播分类列表 API返回值
-taobao.taotv.carousel.category.list
-
-获取轮播分类列表 */
+// TaobaoTaotvCarouselCategoryListAPIResponse 获取轮播分类列表 API返回值
+// taobao.taotv.carousel.category.list
+//
+// 获取轮播分类列表
 type TaobaoTaotvCarouselCategoryListAPIResponse struct {
 	model.CommonResponse
 	TaobaoTaotvCarouselCategoryListAPIResponseModel

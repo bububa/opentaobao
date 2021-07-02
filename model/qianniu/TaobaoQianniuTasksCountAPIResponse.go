@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuTasksCountAPIResponse
-任务查询条数接口 API返回值
-taobao.qianniu.tasks.count
-
-任务查询条数接口 */
+// TaobaoQianniuTasksCountAPIResponse 任务查询条数接口 API返回值
+// taobao.qianniu.tasks.count
+//
+// 任务查询条数接口
 type TaobaoQianniuTasksCountAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuTasksCountAPIResponseModel

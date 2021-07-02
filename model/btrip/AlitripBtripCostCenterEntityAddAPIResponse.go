@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripCostCenterEntityAddAPIResponse
-增加外部成本中心人员信息 API返回值
-alitrip.btrip.cost.center.entity.add
-
-增加外部成本中心人员信息 */
+// AlitripBtripCostCenterEntityAddAPIResponse 增加外部成本中心人员信息 API返回值
+// alitrip.btrip.cost.center.entity.add
+//
+// 增加外部成本中心人员信息
 type AlitripBtripCostCenterEntityAddAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripCostCenterEntityAddAPIResponseModel

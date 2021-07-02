@@ -6,12 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripTravelItemShelveAPIRequest
-【API3.0】度假线路商品上下架接口 API请求
-taobao.alitrip.travel.item.shelve
-
-旅行度假新商品发布接口 第三版：度假商品上下架接口
-注意：定时上下架功能，目前只支持接送、租车类目。 */
+// TaobaoAlitripTravelItemShelveAPIRequest 【API3.0】度假线路商品上下架接口 API请求
+// taobao.alitrip.travel.item.shelve
+//
+// 旅行度假新商品发布接口 第三版：度假商品上下架接口
+// 注意：定时上下架功能，目前只支持接送、租车类目。
 type TaobaoAlitripTravelItemShelveAPIRequest struct {
 	model.Params
 	// 商品id。itemId和outProductId至少填写一个

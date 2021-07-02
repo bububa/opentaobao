@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoIotTicketSpVtwoAcceptAPIResponse
-IoT售后服务商确认接单 API返回值
-cainiao.iot.ticket.sp.vtwo.accept
-
-IoT售后服务商确认接单 */
+// CainiaoIotTicketSpVtwoAcceptAPIResponse IoT售后服务商确认接单 API返回值
+// cainiao.iot.ticket.sp.vtwo.accept
+//
+// IoT售后服务商确认接单
 type CainiaoIotTicketSpVtwoAcceptAPIResponse struct {
 	model.CommonResponse
 	CainiaoIotTicketSpVtwoAcceptAPIResponseModel

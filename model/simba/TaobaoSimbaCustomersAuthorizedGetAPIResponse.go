@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoSimbaCustomersAuthorizedGetAPIResponse
-取得当前登录用户的授权账户列表 API返回值
-taobao.simba.customers.authorized.get
-
-取得当前登录用户的授权账户列表 */
+// TaobaoSimbaCustomersAuthorizedGetAPIResponse 取得当前登录用户的授权账户列表 API返回值
+// taobao.simba.customers.authorized.get
+//
+// 取得当前登录用户的授权账户列表
 type TaobaoSimbaCustomersAuthorizedGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoSimbaCustomersAuthorizedGetAPIResponseModel

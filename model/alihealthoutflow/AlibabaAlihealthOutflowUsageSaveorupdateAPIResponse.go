@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthOutflowUsageSaveorupdateAPIResponse
-处方外流-用法字典表 API返回值
-alibaba.alihealth.outflow.usage.saveorupdate
-
-阿里健康-处方外流-对外提供用法字典表维护功能 */
+// AlibabaAlihealthOutflowUsageSaveorupdateAPIResponse 处方外流-用法字典表 API返回值
+// alibaba.alihealth.outflow.usage.saveorupdate
+//
+// 阿里健康-处方外流-对外提供用法字典表维护功能
 type AlibabaAlihealthOutflowUsageSaveorupdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthOutflowUsageSaveorupdateAPIResponseModel

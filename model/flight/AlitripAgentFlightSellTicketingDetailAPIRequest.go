@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripAgentFlightSellTicketingDetailAPIRequest
-销售出票详情 API请求
-alitrip.agent.flight.sell.ticketing.detail
-
-销售出票详情 */
+// AlitripAgentFlightSellTicketingDetailAPIRequest 销售出票详情 API请求
+// alitrip.agent.flight.sell.ticketing.detail
+//
+// 销售出票详情
 type AlitripAgentFlightSellTicketingDetailAPIRequest struct {
 	model.Params
 	// 国内国际标识

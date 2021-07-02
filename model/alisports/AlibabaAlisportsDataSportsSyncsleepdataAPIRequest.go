@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlisportsDataSportsSyncsleepdataAPIRequest
-阿里体育数据中心用户睡眠数据同步接口 API请求
-alibaba.alisports.data.sports.syncsleepdata
-
-阿里体育数据中心用户睡眠数据同步接口 */
+// AlibabaAlisportsDataSportsSyncsleepdataAPIRequest 阿里体育数据中心用户睡眠数据同步接口 API请求
+// alibaba.alisports.data.sports.syncsleepdata
+//
+// 阿里体育数据中心用户睡眠数据同步接口
 type AlibabaAlisportsDataSportsSyncsleepdataAPIRequest struct {
 	model.Params
 	// 应用appkey

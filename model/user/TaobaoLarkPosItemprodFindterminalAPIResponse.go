@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoLarkPosItemprodFindterminalAPIResponse
-终端配置支持 API返回值
-taobao.lark.pos.itemprod.findterminal
-
-终端配置支持,读取如果不存在则创建和远程的连接配置并返回 */
+// TaobaoLarkPosItemprodFindterminalAPIResponse 终端配置支持 API返回值
+// taobao.lark.pos.itemprod.findterminal
+//
+// 终端配置支持,读取如果不存在则创建和远程的连接配置并返回
 type TaobaoLarkPosItemprodFindterminalAPIResponse struct {
 	model.CommonResponse
 	TaobaoLarkPosItemprodFindterminalAPIResponseModel

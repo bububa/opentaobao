@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTmcUserGetAPIResponse
-获取用户已开通消息 API返回值
-taobao.tmc.user.get
-
-查询指定用户开通的消息通道和组 */
+// TaobaoTmcUserGetAPIResponse 获取用户已开通消息 API返回值
+// taobao.tmc.user.get
+//
+// 查询指定用户开通的消息通道和组
 type TaobaoTmcUserGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTmcUserGetAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelRoomtypeConflictDataAPIResponse
-商家床型冲突数据接口 API返回值
-taobao.xhotel.roomtype.conflict.data
-
-商家床型冲突数据接口 */
+// TaobaoXhotelRoomtypeConflictDataAPIResponse 商家床型冲突数据接口 API返回值
+// taobao.xhotel.roomtype.conflict.data
+//
+// 商家床型冲突数据接口
 type TaobaoXhotelRoomtypeConflictDataAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelRoomtypeConflictDataAPIResponseModel

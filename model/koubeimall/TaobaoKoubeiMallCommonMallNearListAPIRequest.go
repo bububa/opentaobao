@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoKoubeiMallCommonMallNearListAPIRequest
-根据POI查询附近商圈列表信息 API请求
-taobao.koubei.mall.common.mall.near.list
-
-通过用户/终端设备地理位置POI信息，查询附近商圈信息 */
+// TaobaoKoubeiMallCommonMallNearListAPIRequest 根据POI查询附近商圈列表信息 API请求
+// taobao.koubei.mall.common.mall.near.list
+//
+// 通过用户/终端设备地理位置POI信息，查询附近商圈信息
 type TaobaoKoubeiMallCommonMallNearListAPIRequest struct {
 	model.Params
 	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）

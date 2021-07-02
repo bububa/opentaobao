@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaArgusUpdateredriskAPIResponse
-更新红线价格 API返回值
-alibaba.argus.updateredrisk
-
-商品健康中心新增红线价格规则 */
+// AlibabaArgusUpdateredriskAPIResponse 更新红线价格 API返回值
+// alibaba.argus.updateredrisk
+//
+// 商品健康中心新增红线价格规则
 type AlibabaArgusUpdateredriskAPIResponse struct {
 	model.CommonResponse
 	AlibabaArgusUpdateredriskAPIResponseModel

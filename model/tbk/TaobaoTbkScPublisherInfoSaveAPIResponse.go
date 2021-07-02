@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoTbkScPublisherInfoSaveAPIResponse
-淘宝客-公用-私域用户备案 API返回值
-taobao.tbk.sc.publisher.info.save
-
-通过入参渠道管理或会员运营管理的邀请码，生成渠道id或会员运营id，完成渠道或会员的备案。 */
+// TaobaoTbkScPublisherInfoSaveAPIResponse 淘宝客-公用-私域用户备案 API返回值
+// taobao.tbk.sc.publisher.info.save
+//
+// 通过入参渠道管理或会员运营管理的邀请码，生成渠道id或会员运营id，完成渠道或会员的备案。
 type TaobaoTbkScPublisherInfoSaveAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkScPublisherInfoSaveAPIResponseModel

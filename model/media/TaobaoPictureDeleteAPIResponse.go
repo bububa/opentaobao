@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoPictureDeleteAPIResponse
-删除图片空间图片 API返回值
-taobao.picture.delete
-
-删除图片空间图片 */
+// TaobaoPictureDeleteAPIResponse 删除图片空间图片 API返回值
+// taobao.picture.delete
+//
+// 删除图片空间图片
 type TaobaoPictureDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoPictureDeleteAPIResponseModel

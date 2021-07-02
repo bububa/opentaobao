@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripUppcMemberGainAPIResponse
-航司权益数据回流 API返回值
-alitrip.uppc.member.gain
-
-航司权益数据回流 */
+// AlitripUppcMemberGainAPIResponse 航司权益数据回流 API返回值
+// alitrip.uppc.member.gain
+//
+// 航司权益数据回流
 type AlitripUppcMemberGainAPIResponse struct {
 	model.CommonResponse
 	AlitripUppcMemberGainAPIResponseModel

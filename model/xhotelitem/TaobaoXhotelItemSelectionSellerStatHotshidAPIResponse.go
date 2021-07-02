@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelItemSelectionSellerStatHotshidAPIResponse
-供应链选品热销标准酒店覆盖情况 API返回值
-taobao.xhotel.item.selection.seller.stat.hotshid
-
-供应链选品热销标准酒店覆盖情况 */
+// TaobaoXhotelItemSelectionSellerStatHotshidAPIResponse 供应链选品热销标准酒店覆盖情况 API返回值
+// taobao.xhotel.item.selection.seller.stat.hotshid
+//
+// 供应链选品热销标准酒店覆盖情况
 type TaobaoXhotelItemSelectionSellerStatHotshidAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelItemSelectionSellerStatHotshidAPIResponseModel

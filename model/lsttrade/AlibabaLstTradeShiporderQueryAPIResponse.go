@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaLstTradeShiporderQueryAPIResponse
-供应商数据开放--发货单接口 API返回值
-alibaba.lst.trade.shiporder.query
-
-供应商数据开放--发货单接口 */
+// AlibabaLstTradeShiporderQueryAPIResponse 供应商数据开放--发货单接口 API返回值
+// alibaba.lst.trade.shiporder.query
+//
+// 供应商数据开放--发货单接口
 type AlibabaLstTradeShiporderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstTradeShiporderQueryAPIResponseModel

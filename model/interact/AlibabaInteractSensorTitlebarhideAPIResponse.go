@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaInteractSensorTitlebarhideAPIResponse
-隐藏titleBar API返回值
-alibaba.interact.sensor.titlebarhide
-
-隐藏titleBar */
+// AlibabaInteractSensorTitlebarhideAPIResponse 隐藏titleBar API返回值
+// alibaba.interact.sensor.titlebarhide
+//
+// 隐藏titleBar
 type AlibabaInteractSensorTitlebarhideAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractSensorTitlebarhideAPIResponseModel

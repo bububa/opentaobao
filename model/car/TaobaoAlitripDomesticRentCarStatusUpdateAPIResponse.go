@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoAlitripDomesticRentCarStatusUpdateAPIResponse
-航旅国内租车订单状态更新 API返回值
-taobao.alitrip.domestic.rent.car.status.update
-
-航旅国内租车订单状态更新 */
+// TaobaoAlitripDomesticRentCarStatusUpdateAPIResponse 航旅国内租车订单状态更新 API返回值
+// taobao.alitrip.domestic.rent.car.status.update
+//
+// 航旅国内租车订单状态更新
 type TaobaoAlitripDomesticRentCarStatusUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripDomesticRentCarStatusUpdateAPIResponseModel

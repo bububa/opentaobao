@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaItemPublishSubmitAPIResponse
-商品发布 API返回值
-alibaba.item.publish.submit
-
-新商品发布，提交商品发布信息 */
+// AlibabaItemPublishSubmitAPIResponse 商品发布 API返回值
+// alibaba.item.publish.submit
+//
+// 新商品发布，提交商品发布信息
 type AlibabaItemPublishSubmitAPIResponse struct {
 	model.CommonResponse
 	AlibabaItemPublishSubmitAPIResponseModel

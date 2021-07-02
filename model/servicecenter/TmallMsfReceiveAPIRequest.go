@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallMsfReceiveAPIRequest
-签收接口 API请求
-tmall.msf.receive
-
-签收接口 */
+// TmallMsfReceiveAPIRequest 签收接口 API请求
+// tmall.msf.receive
+//
+// 签收接口
 type TmallMsfReceiveAPIRequest struct {
 	model.Params
 	// 1

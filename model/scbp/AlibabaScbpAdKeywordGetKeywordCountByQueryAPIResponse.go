@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaScbpAdKeywordGetKeywordCountByQueryAPIResponse
-计划关键词数目 API返回值
-alibaba.scbp.ad.keyword.get.keyword.count.by.query
-
-计划关键词数目 */
+// AlibabaScbpAdKeywordGetKeywordCountByQueryAPIResponse 计划关键词数目 API返回值
+// alibaba.scbp.ad.keyword.get.keyword.count.by.query
+//
+// 计划关键词数目
 type AlibabaScbpAdKeywordGetKeywordCountByQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdKeywordGetKeywordCountByQueryAPIResponseModel

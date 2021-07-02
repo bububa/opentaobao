@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripBtripInvoiceSettingAddAPIResponse
-发票设置 API返回值
-alitrip.btrip.invoice.setting.add
-
-发票设置 */
+// AlitripBtripInvoiceSettingAddAPIResponse 发票设置 API返回值
+// alitrip.btrip.invoice.setting.add
+//
+// 发票设置
 type AlitripBtripInvoiceSettingAddAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripInvoiceSettingAddAPIResponseModel

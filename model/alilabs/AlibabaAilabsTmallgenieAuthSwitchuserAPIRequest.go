@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest
-切换用户 API请求
-alibaba.ailabs.tmallgenie.auth.switchuser
-
-设备切换授权用户 */
+// AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest 切换用户 API请求
+// alibaba.ailabs.tmallgenie.auth.switchuser
+//
+// 设备切换授权用户
 type AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest struct {
 	model.Params
 	// client_id

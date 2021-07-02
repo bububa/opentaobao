@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaMosStoreGetdefautitemsAPIRequest
-获取默认状态下商品列表 API请求
-alibaba.mos.store.getdefautitems
-
-获取默认状态下商品列表 */
+// AlibabaMosStoreGetdefautitemsAPIRequest 获取默认状态下商品列表 API请求
+// alibaba.mos.store.getdefautitems
+//
+// 获取默认状态下商品列表
 type AlibabaMosStoreGetdefautitemsAPIRequest struct {
 	model.Params
 	// 屏编号

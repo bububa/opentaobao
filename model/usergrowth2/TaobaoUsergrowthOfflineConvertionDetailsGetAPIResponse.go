@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoUsergrowthOfflineConvertionDetailsGetAPIResponse
-淘系用增线下转化明细 API返回值
-taobao.usergrowth.offline.convertion.details.get
-
-淘系用增增长-线下拉新：为渠道提供返回拉新转化数据接口 */
+// TaobaoUsergrowthOfflineConvertionDetailsGetAPIResponse 淘系用增线下转化明细 API返回值
+// taobao.usergrowth.offline.convertion.details.get
+//
+// 淘系用增增长-线下拉新：为渠道提供返回拉新转化数据接口
 type TaobaoUsergrowthOfflineConvertionDetailsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsergrowthOfflineConvertionDetailsGetAPIResponseModel

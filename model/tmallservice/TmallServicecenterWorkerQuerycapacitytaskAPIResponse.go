@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallServicecenterWorkerQuerycapacitytaskAPIResponse
-查询需求容量 API返回值
-tmall.servicecenter.worker.querycapacitytask
-
-查询需求容量 */
+// TmallServicecenterWorkerQuerycapacitytaskAPIResponse 查询需求容量 API返回值
+// tmall.servicecenter.worker.querycapacitytask
+//
+// 查询需求容量
 type TmallServicecenterWorkerQuerycapacitytaskAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterWorkerQuerycapacitytaskAPIResponseModel

@@ -6,14 +6,13 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlitripFreetourProductUploadAPIRequest
-自由行商品发布及编辑接口 API请求
-alitrip.freetour.product.upload
-
-自由行 产品维护接口。
-接口同时支持新商品发布 和 现有商品编辑：
-1）只上传out_product_id的情况：如果out_product_id已经关联过某个商品id，则认为是编辑现有商品，否则认为是新发布一个商品。
-2）同时上传out_product_id和item_id，则认为是将out_product_id与item_id进行关联，同时对该商品进行编辑。 */
+// AlitripFreetourProductUploadAPIRequest 自由行商品发布及编辑接口 API请求
+// alitrip.freetour.product.upload
+//
+// 自由行 产品维护接口。
+// 接口同时支持新商品发布 和 现有商品编辑：
+// 1）只上传out_product_id的情况：如果out_product_id已经关联过某个商品id，则认为是编辑现有商品，否则认为是新发布一个商品。
+// 2）同时上传out_product_id和item_id，则认为是将out_product_id与item_id进行关联，同时对该商品进行编辑。
 type AlitripFreetourProductUploadAPIRequest struct {
 	model.Params
 	// 新发布商品时必填。去程交通。1-飞机，2-火车，3-汽，4-船，100-其他

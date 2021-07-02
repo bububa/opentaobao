@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusSpaceFloorGetbyidAPIResponse
-根据id获取楼层 API返回值
-alibaba.campus.space.floor.getbyid
-
-根据id获取楼层 */
+// AlibabaCampusSpaceFloorGetbyidAPIResponse 根据id获取楼层 API返回值
+// alibaba.campus.space.floor.getbyid
+//
+// 根据id获取楼层
 type AlibabaCampusSpaceFloorGetbyidAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusSpaceFloorGetbyidAPIResponseModel

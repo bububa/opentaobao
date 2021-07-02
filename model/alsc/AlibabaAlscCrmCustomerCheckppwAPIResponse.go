@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmCustomerCheckppwAPIResponse
-校验支付密码 API返回值
-alibaba.alsc.crm.customer.checkppw
-
-校验支付密码 */
+// AlibabaAlscCrmCustomerCheckppwAPIResponse 校验支付密码 API返回值
+// alibaba.alsc.crm.customer.checkppw
+//
+// 校验支付密码
 type AlibabaAlscCrmCustomerCheckppwAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmCustomerCheckppwAPIResponseModel

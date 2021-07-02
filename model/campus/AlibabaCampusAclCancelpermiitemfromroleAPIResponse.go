@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaCampusAclCancelpermiitemfromroleAPIResponse
-取消角色和权限之间的关系 API返回值
-alibaba.campus.acl.cancelpermiitemfromrole
-
-取消角色和权限之间的关系 */
+// AlibabaCampusAclCancelpermiitemfromroleAPIResponse 取消角色和权限之间的关系 API返回值
+// alibaba.campus.acl.cancelpermiitemfromrole
+//
+// 取消角色和权限之间的关系
 type AlibabaCampusAclCancelpermiitemfromroleAPIResponse struct {
 	model.CommonResponse
 	AlibabaCampusAclCancelpermiitemfromroleAPIResponseModel

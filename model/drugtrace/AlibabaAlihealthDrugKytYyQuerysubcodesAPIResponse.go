@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthDrugKytYyQuerysubcodesAPIResponse
-查询一个码的所有子码 API返回值
-alibaba.alihealth.drug.kyt.yy.querysubcodes
-
-单码的了码查询 */
+// AlibabaAlihealthDrugKytYyQuerysubcodesAPIResponse 查询一个码的所有子码 API返回值
+// alibaba.alihealth.drug.kyt.yy.querysubcodes
+//
+// 单码的了码查询
 type AlibabaAlihealthDrugKytYyQuerysubcodesAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytYyQuerysubcodesAPIResponseModel

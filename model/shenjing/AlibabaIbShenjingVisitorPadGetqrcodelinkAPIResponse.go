@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse
-pad获取二维码 API返回值
-alibaba.ib.shenjing.visitor.pad.getqrcodelink
-
-pad获取二维码链接。扫码录入人脸。 */
+// AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse pad获取二维码 API返回值
+// alibaba.ib.shenjing.visitor.pad.getqrcodelink
+//
+// pad获取二维码链接。扫码录入人脸。
 type AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse struct {
 	model.CommonResponse
 	AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel

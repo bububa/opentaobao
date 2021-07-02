@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoItempropvaluesGetAPIRequest
-获取标准类目属性值 API请求
-taobao.itempropvalues.get
-
-获取标准类目属性值 */
+// TaobaoItempropvaluesGetAPIRequest 获取标准类目属性值 API请求
+// taobao.itempropvalues.get
+//
+// 获取标准类目属性值
 type TaobaoItempropvaluesGetAPIRequest struct {
 	model.Params
 	// 需要返回的字段。目前支持有：cid,pid,prop_name,vid,name,name_alias,status,sort_order

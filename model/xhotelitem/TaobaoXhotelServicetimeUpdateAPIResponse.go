@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelServicetimeUpdateAPIResponse
-飞猪酒店多维度服务时间维护接口 API返回值
-taobao.xhotel.servicetime.update
-
-飞猪酒店多维度服务时间维护，支持卖家维度，supplier维度，酒店维度 */
+// TaobaoXhotelServicetimeUpdateAPIResponse 飞猪酒店多维度服务时间维护接口 API返回值
+// taobao.xhotel.servicetime.update
+//
+// 飞猪酒店多维度服务时间维护，支持卖家维度，supplier维度，酒店维度
 type TaobaoXhotelServicetimeUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelServicetimeUpdateAPIResponseModel

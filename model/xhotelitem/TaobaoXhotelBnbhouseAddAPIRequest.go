@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoXhotelBnbhouseAddAPIRequest
-民宿门店信息添加 API请求
-taobao.xhotel.bnbhouse.add
-
-添加和更新民宿门店的信息 */
+// TaobaoXhotelBnbhouseAddAPIRequest 民宿门店信息添加 API请求
+// taobao.xhotel.bnbhouse.add
+//
+// 添加和更新民宿门店的信息
 type TaobaoXhotelBnbhouseAddAPIRequest struct {
 	model.Params
 	// 外部房东id

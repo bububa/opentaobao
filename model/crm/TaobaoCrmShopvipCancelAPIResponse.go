@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoCrmShopvipCancelAPIResponse
-卖家取消店铺vip的优惠 API返回值
-taobao.crm.shopvip.cancel
-
-此接口用于取消VIP优惠 */
+// TaobaoCrmShopvipCancelAPIResponse 卖家取消店铺vip的优惠 API返回值
+// taobao.crm.shopvip.cancel
+//
+// 此接口用于取消VIP优惠
 type TaobaoCrmShopvipCancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoCrmShopvipCancelAPIResponseModel

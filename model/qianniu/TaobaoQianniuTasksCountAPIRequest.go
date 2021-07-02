@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoQianniuTasksCountAPIRequest
-任务查询条数接口 API请求
-taobao.qianniu.tasks.count
-
-任务查询条数接口 */
+// TaobaoQianniuTasksCountAPIRequest 任务查询条数接口 API请求
+// taobao.qianniu.tasks.count
+//
+// 任务查询条数接口
 type TaobaoQianniuTasksCountAPIRequest struct {
 	model.Params
 	// 业务类型

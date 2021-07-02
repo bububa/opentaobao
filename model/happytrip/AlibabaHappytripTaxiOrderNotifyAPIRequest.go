@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHappytripTaxiOrderNotifyAPIRequest
-状态通知 API请求
-alibaba.happytrip.taxi.order.notify
-
-当订单发生变化是供应商通过状态通知API通知欢行，欢行获取最新的订单详情和状态进行业务处理。 */
+// AlibabaHappytripTaxiOrderNotifyAPIRequest 状态通知 API请求
+// alibaba.happytrip.taxi.order.notify
+//
+// 当订单发生变化是供应商通过状态通知API通知欢行，欢行获取最新的订单详情和状态进行业务处理。
 type AlibabaHappytripTaxiOrderNotifyAPIRequest struct {
 	model.Params
 	// 返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象表示的毫秒数

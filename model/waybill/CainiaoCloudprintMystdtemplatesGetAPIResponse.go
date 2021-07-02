@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCloudprintMystdtemplatesGetAPIResponse
-获取用户使用的菜鸟电子面单模板信息 API返回值
-cainiao.cloudprint.mystdtemplates.get
-
-获取用户使用的菜鸟电子面单 */
+// CainiaoCloudprintMystdtemplatesGetAPIResponse 获取用户使用的菜鸟电子面单模板信息 API返回值
+// cainiao.cloudprint.mystdtemplates.get
+//
+// 获取用户使用的菜鸟电子面单
 type CainiaoCloudprintMystdtemplatesGetAPIResponse struct {
 	model.CommonResponse
 	CainiaoCloudprintMystdtemplatesGetAPIResponseModel

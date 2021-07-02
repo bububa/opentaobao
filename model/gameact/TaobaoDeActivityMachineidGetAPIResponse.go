@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoDeActivityMachineidGetAPIResponse
-获取设备号 API返回值
-taobao.de.activity.machineid.get
-
-获取机器设备id */
+// TaobaoDeActivityMachineidGetAPIResponse 获取设备号 API返回值
+// taobao.de.activity.machineid.get
+//
+// 获取机器设备id
 type TaobaoDeActivityMachineidGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoDeActivityMachineidGetAPIResponseModel

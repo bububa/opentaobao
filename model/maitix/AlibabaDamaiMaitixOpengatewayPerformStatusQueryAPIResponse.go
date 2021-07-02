@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIResponse
-分销状态查询接口queryPerformStatusByPerformId API返回值
-alibaba.damai.maitix.opengateway.perform.status.query
-
-queryPerformStatusByPerformId */
+// AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIResponse 分销状态查询接口queryPerformStatusByPerformId API返回值
+// alibaba.damai.maitix.opengateway.perform.status.query
+//
+// queryPerformStatusByPerformId
 type AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIResponseModel

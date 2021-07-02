@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoFiveeCompanyUploadAPIResponse
-上传商信息接口 API返回值
-taobao.fivee.company.upload
-
-资质共享平台上传资质证照 */
+// TaobaoFiveeCompanyUploadAPIResponse 上传商信息接口 API返回值
+// taobao.fivee.company.upload
+//
+// 资质共享平台上传资质证照
 type TaobaoFiveeCompanyUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoFiveeCompanyUploadAPIResponseModel

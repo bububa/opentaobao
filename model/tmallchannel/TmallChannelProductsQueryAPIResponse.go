@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TmallChannelProductsQueryAPIResponse
-渠道中心-查询产品列表 API返回值
-tmall.channel.products.query
-
-渠道中心，供应商查询其产品数据，返回同时符合所有查询条件的产品信息 */
+// TmallChannelProductsQueryAPIResponse 渠道中心-查询产品列表 API返回值
+// tmall.channel.products.query
+//
+// 渠道中心，供应商查询其产品数据，返回同时符合所有查询条件的产品信息
 type TmallChannelProductsQueryAPIResponse struct {
 	model.CommonResponse
 	TmallChannelProductsQueryAPIResponseModel

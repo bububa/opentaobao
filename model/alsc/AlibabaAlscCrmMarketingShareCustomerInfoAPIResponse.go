@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlscCrmMarketingShareCustomerInfoAPIResponse
-查询分享营销客户领券信息 API返回值
-alibaba.alsc.crm.marketing.share.customer.info
-
-查询分享营销活动的客户领券信息 */
+// AlibabaAlscCrmMarketingShareCustomerInfoAPIResponse 查询分享营销客户领券信息 API返回值
+// alibaba.alsc.crm.marketing.share.customer.info
+//
+// 查询分享营销活动的客户领券信息
 type AlibabaAlscCrmMarketingShareCustomerInfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscCrmMarketingShareCustomerInfoAPIResponseModel

@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* CainiaoCbossWorkplatformWorkorderCreateAPIResponse
-菜鸟工单创建接口 API返回值
-cainiao.cboss.workplatform.workorder.create
-
-菜鸟工单创建接口，目前调用者ISV */
+// CainiaoCbossWorkplatformWorkorderCreateAPIResponse 菜鸟工单创建接口 API返回值
+// cainiao.cboss.workplatform.workorder.create
+//
+// 菜鸟工单创建接口，目前调用者ISV
 type CainiaoCbossWorkplatformWorkorderCreateAPIResponse struct {
 	model.CommonResponse
 	CainiaoCbossWorkplatformWorkorderCreateAPIResponseModel

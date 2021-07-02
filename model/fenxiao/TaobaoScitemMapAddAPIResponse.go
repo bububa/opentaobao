@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* TaobaoScitemMapAddAPIResponse
-创建IC商品与后端商品的映射关系 API返回值
-taobao.scitem.map.add
-
-创建IC商品或分销商品与后端商品的映射关系 */
+// TaobaoScitemMapAddAPIResponse 创建IC商品与后端商品的映射关系 API返回值
+// taobao.scitem.map.add
+//
+// 创建IC商品或分销商品与后端商品的映射关系
 type TaobaoScitemMapAddAPIResponse struct {
 	model.CommonResponse
 	TaobaoScitemMapAddAPIResponseModel

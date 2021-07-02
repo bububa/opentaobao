@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaHealthVaccinNoticeOrderCancelAPIResponse
-福州疫苗取消预约 API返回值
-alibaba.health.vaccin.notice.order.cancel
-
-福州疫苗用户取消预约接口 */
+// AlibabaHealthVaccinNoticeOrderCancelAPIResponse 福州疫苗取消预约 API返回值
+// alibaba.health.vaccin.notice.order.cancel
+//
+// 福州疫苗用户取消预约接口
 type AlibabaHealthVaccinNoticeOrderCancelAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthVaccinNoticeOrderCancelAPIResponseModel

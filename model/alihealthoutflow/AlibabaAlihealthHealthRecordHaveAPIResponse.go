@@ -6,11 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-/* AlibabaAlihealthHealthRecordHaveAPIResponse
-判断用户的慢健康健康档案是否建设完成 API返回值
-alibaba.alihealth.health.record.have
-
-判断用户的慢健康健康档案是否建设完成 */
+// AlibabaAlihealthHealthRecordHaveAPIResponse 判断用户的慢健康健康档案是否建设完成 API返回值
+// alibaba.alihealth.health.record.have
+//
+// 判断用户的慢健康健康档案是否建设完成
 type AlibabaAlihealthHealthRecordHaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthHealthRecordHaveAPIResponseModel
